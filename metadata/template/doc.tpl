@@ -2,7 +2,7 @@
 package opentaobao
 
 const (
-	GitTag      = "{{ .Tag }}"
-	GitRevision = "{{ .Revision }}"
-	GitSummary  = "{{ .Summary }}"
+	GitTag      = "{{ .GitTag }}"
+	GitRevision = "{{ .GitRevision }}"
+	GitSummary  = "{{ .GitSummary }}"
 )

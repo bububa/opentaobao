@@ -1,7 +1,7 @@
 package tmallservice
 
-// ServiceStoreDTO 
-type ServiceStoreDTO struct {
+// ServiceStoreDto 
+type ServiceStoreDto struct {
 
     // 城市
     AddressCity   string `json:"address_city,omitempty"`
@@ -45,6 +45,12 @@ type ServiceStoreDTO struct {
     // 公司名
     CompanyName   string `json:"company_name,omitempty"`
 
+    // 品牌认证有效期
+    GmtBrandCertificationExpire   string `json:"gmt_brand_certification_expire,omitempty"`
+
+    // 门店id
+    Id   int64 `json:"id,omitempty"`
+
     // 纬度
     Latitude   string `json:"latitude,omitempty"`
 
@@ -70,22 +76,19 @@ type ServiceStoreDTO struct {
     ServiceMobile   string `json:"service_mobile,omitempty"`
 
     // 网点/门店编码
-    ServiceStoreCode   string `json:"service_store_code,omitempty"`
+    ServiceStoreAlias   string `json:"service_store_alias,omitempty"`
 
     // 网点名称
     ServiceStoreName   string `json:"service_store_name,omitempty"`
 
-    // 统一社会信用代码
-    SocialCreditCode   string `json:"social_credit_code,omitempty"`
-
     // 门店类型
     Type   int64 `json:"type,omitempty"`
 
-    // 别名
-    ServiceStoreAlias   string `json:"service_store_alias,omitempty"`
-
-    // 支付宝账户身份证号
+    // 支付宝账号身份证
     AlipayAccountIdNumber   string `json:"alipay_account_id_number,omitempty"`
+
+    // 照片集合
+    PhotoCollections   string `json:"photo_collections,omitempty"`
 
     // 法人身份证正面
     LegalPersonIdCardPic   string `json:"legal_person_id_card_pic,omitempty"`
@@ -98,5 +101,8 @@ type ServiceStoreDTO struct {
 
     // 营业执照照片
     LicensePhoto   string `json:"license_photo,omitempty"`
+
+    // 网点编码
+    ServiceStoreCode   string `json:"service_store_code,omitempty"`
 
 }
