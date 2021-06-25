@@ -3,6 +3,9 @@ package main
 import (
 	"flag"
 	"log"
+	"os"
+	"path/filepath"
+	"text/template"
 )
 
 var (
@@ -24,8 +27,35 @@ func main() {
 	if meta == "" {
 		log.Fatalln("missing metadata dir")
 	}
-	err := Gen(meta, patch, pkg)
-	if err != nil {
+	if err := Gen(meta, patch, pkg); err != nil {
 		log.Fatalln(err)
 	}
+	if err := genGoDoc(); err != nil {
+		log.Fatalln(err)
+	}
+}
+
+func genGoDoc() error {
+	wd, err := os.Getwd()
+	if err != nil {
+		return err
+	}
+	filePath := filepath.Join(wd, "metadata/template/doc.tpl")
+	tmpl, err := template.ParseFiles(filePath)
+	if err != nil {
+		return err
+	}
+	targetFile := filepath.Join(wd, "doc.go")
+	fd, err := os.Create(targetFile)
+	if err != nil {
+		return err
+	}
+	defer fd.Close()
+	tpl := map[string]string{
+		"GitTag":      GitTag,
+		"GitRevision": GitRevision,
+		"GitSummary":  GitSummary,
+	}
+	tmpl.Execute(fd, tpl)
+	return nil
 }
