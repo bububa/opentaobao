@@ -2,7 +2,7 @@
 package opentaobao
 
 const (
-	GitTag      = ""
-	GitRevision = "e5f94a6"
-	GitSummary  = "e5f94a6"
+	GitTag      = "v1.0.0"
+	GitRevision = "41976d1"
+	GitSummary  = "v1.0.0-dirty"
 )
