@@ -1,0 +1,76 @@
+{
+	"name": "taobao.apple.newuser.activate.notify",
+	"apiChineseName": "新用户激活通知接口",
+	"description": "资和信主动通知激活结果",
+	"requestParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果对应值，00位成功，其他为失败"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "处理结果中文描述"
+		},
+		{
+			"name": "main_data",
+			"type": "AppleTopActivateNotifyDo",
+			"description": "主业务参数",
+			"subParams": [
+				{
+					"name": "card_no",
+					"type": "String",
+					"description": "电子卡卡号"
+				},
+				{
+					"name": "goods_id",
+					"type": "String",
+					"description": "商品编号"
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "商户唯一订单号"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "附加信息，后续可以扩展"
+				},
+				{
+					"name": "uci",
+					"type": "String",
+					"description": "商户上送UCI"
+				},
+				{
+					"name": "face_price",
+					"type": "String",
+					"description": "面值，单位分"
+				},
+				{
+					"name": "gateway_order_no",
+					"type": "String",
+					"description": "网关订单号"
+				},
+				{
+					"name": "card_pass",
+					"type": "String",
+					"description": "电子卡密码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "处理结果说明"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "处理结果码"
+		}
+	]
+}

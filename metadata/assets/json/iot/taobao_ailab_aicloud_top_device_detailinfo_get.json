@@ -1,0 +1,104 @@
+{
+	"name": "taobao.ailab.aicloud.top.device.detailinfo.get",
+	"apiChineseName": "获取设备详细信息",
+	"description": "获取设备详细信息",
+	"requestParams": [
+		{
+			"name": "origin_user_id",
+			"type": "String",
+			"description": "三方用户id或淘宝openId"
+		},
+		{
+			"name": "schema_key",
+			"type": "String",
+			"description": "账号秘钥"
+		},
+		{
+			"name": "user_type",
+			"type": "String",
+			"description": "三方传extUser，淘宝传openTaoBaoUser"
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "TopDeviceDetailInfoDto",
+					"description": "设备详细信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id",
+							"required": true
+						},
+						{
+							"name": "device_ip",
+							"type": "String",
+							"description": "设备联网的ip地址",
+							"required": true
+						},
+						{
+							"name": "device_mac",
+							"type": "String",
+							"description": "Mac地址",
+							"required": true
+						},
+						{
+							"name": "ext_device_id",
+							"type": "String",
+							"description": "外部设备id",
+							"required": true
+						},
+						{
+							"name": "ext_device_type",
+							"type": "String",
+							"description": "外部设备类型，chinaMobile:中国移动，chinaTelecom:上海电信，chinaUnicom:中国联通",
+							"required": true
+						},
+						{
+							"name": "firmware_version",
+							"type": "String",
+							"description": "设备当前的固件版本",
+							"required": true
+						},
+						{
+							"name": "sn",
+							"type": "String",
+							"description": "设备序列号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

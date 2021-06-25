@@ -1,0 +1,29 @@
+{
+	"name": "taobao.bus.cancleorder.set",
+	"apiChineseName": "取消订单",
+	"description": "取消订单",
+	"requestParams": [
+		{
+			"name": "ali_order_id",
+			"type": "String",
+			"description": "阿里订单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_code1",
+			"type": "String",
+			"description": "错误代码"
+		},
+		{
+			"name": "error_msg1",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "success1",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

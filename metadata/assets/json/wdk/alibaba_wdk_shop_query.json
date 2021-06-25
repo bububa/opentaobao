@@ -1,0 +1,125 @@
+{
+	"name": "alibaba.wdk.shop.query",
+	"apiChineseName": "门店查询接口",
+	"description": "根据门店code查询门店信息",
+	"requestParams": [
+		{
+			"name": "ou_code",
+			"type": "String",
+			"description": "如果不传，返回所有"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResults",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "models",
+					"type": "ShopDo[]",
+					"description": "返回门店信息列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "门店编码(所属的OU的编码)",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态（默认、营业中、待维护、停用）",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "类型（默认、盒马鲜生店、自定义店、盒马B2C、盒马外卖店、盒马物流中心店、盒马配送站、盒马便利店）",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "地址",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商户编码",
+							"required": true
+						},
+						{
+							"name": "prov_name",
+							"type": "String",
+							"description": "省份名称",
+							"required": true
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市名称",
+							"required": true
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "地区名称",
+							"required": true
+						},
+						{
+							"name": "flag",
+							"type": "String",
+							"description": "门店标记（正式、测试）",
+							"required": true
+						},
+						{
+							"name": "ou_code",
+							"type": "String",
+							"description": "门店编码",
+							"required": true
+						},
+						{
+							"name": "prov_code",
+							"type": "String",
+							"description": "省份编码",
+							"required": true
+						},
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市编码",
+							"required": true
+						},
+						{
+							"name": "area_code",
+							"type": "String",
+							"description": "地区编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "异常编码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "异常信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "true",
+					"required": true
+				}
+			]
+		}
+	]
+}

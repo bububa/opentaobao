@@ -1,0 +1,106 @@
+{
+	"name": "tmall.car.lease.consume",
+	"apiChineseName": "汽车租赁核销",
+	"description": "租赁公司回传信息，核销",
+	"requestParams": [
+		{
+			"name": "cosume_code_req_d_t_o",
+			"type": "CosumeCodeReqDto",
+			"description": "核销请求",
+			"subParams": [
+				{
+					"name": "biz_id",
+					"type": "String",
+					"description": "业务id"
+				},
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "业务类型,整车租赁传入：car_lease",
+					"required": true
+				},
+				{
+					"name": "car_no",
+					"type": "String",
+					"description": "车牌号",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "核销码",
+					"required": true
+				},
+				{
+					"name": "identity_no",
+					"type": "String",
+					"description": "身份证",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店id",
+					"required": true
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "门店名字",
+					"required": true
+				},
+				{
+					"name": "vin",
+					"type": "String",
+					"description": "车架号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果集合",
+			"subParams": [
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "耗时",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误吗",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误提示",
+					"required": true
+				},
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "当前时间",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "无需关心了",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功与否",
+					"required": true
+				}
+			]
+		}
+	]
+}

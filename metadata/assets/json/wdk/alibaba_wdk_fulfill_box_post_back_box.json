@@ -1,0 +1,61 @@
+{
+	"name": "alibaba.wdk.fulfill.box.post.back.box",
+	"apiChineseName": "RT收箱回传",
+	"description": "RT收箱后，信息同步履约，履约同通知UMS 容器管理",
+	"requestParams": [
+		{
+			"name": "return_box_container_request",
+			"type": "ReturnBoxContainerRequest",
+			"description": "RT收箱回传请求参数",
+			"subParams": [
+				{
+					"name": "box_code_list",
+					"type": "String[]",
+					"description": "周转箱列表"
+				},
+				{
+					"name": "hand_over_no",
+					"type": "String",
+					"description": "收箱交接单号"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓编号"
+				},
+				{
+					"name": "operate_time",
+					"type": "Date",
+					"description": "操作时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fulfill_logistic_single_result",
+			"type": "FulfillLogisticDefaultResult",
+			"description": "fulfillLogisticSingleResult",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_desc",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

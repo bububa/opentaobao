@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.price.promotion.activity.delete",
+	"apiChineseName": "删除档期活动",
+	"description": "删除盒马帮档期活动",
+	"requestParams": [
+		{
+			"name": "outer_promotion_code",
+			"type": "String",
+			"description": "外部主键",
+			"required": true
+		},
+		{
+			"name": "ou_code",
+			"type": "String",
+			"description": "经营店OU",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "String[]",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "total_record",
+					"type": "Number",
+					"description": "totalRecord",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

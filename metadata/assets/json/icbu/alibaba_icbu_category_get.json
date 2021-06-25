@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.icbu.category.get",
+	"apiChineseName": "商品发布类目获取",
+	"description": "获取商品发布类目",
+	"requestParams": [
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "发布类目id,必须大于等于0， 如果为0，则查询所有一级类目",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "category",
+			"type": "PostCategory",
+			"description": "类目信息",
+			"subParams": [
+				{
+					"name": "parent_ids",
+					"type": "Number[]",
+					"description": "父类目ID数组"
+				},
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "类目层级"
+				},
+				{
+					"name": "leaf_category",
+					"type": "Boolean",
+					"description": "是否叶子类目（只有叶子类目才能发布商品）"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "类目名称"
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "类目ID"
+				},
+				{
+					"name": "child_ids",
+					"type": "Number[]",
+					"description": "子类目ID数组"
+				}
+			]
+		}
+	]
+}

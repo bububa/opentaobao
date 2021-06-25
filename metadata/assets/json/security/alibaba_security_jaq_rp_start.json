@@ -1,0 +1,291 @@
+{
+	"name": "alibaba.security.jaq.rp.start",
+	"apiChineseName": "聚安全实人认证开始",
+	"description": "聚安全实人认证开始",
+	"requestParams": [
+		{
+			"name": "verify_token",
+			"type": "String",
+			"description": "token",
+			"required": true
+		},
+		{
+			"name": "client_info",
+			"type": "RpClientInfo",
+			"description": "客户端信息，如果是服务端接入，里面的参数可为空",
+			"required": true,
+			"subParams": [
+				{
+					"name": "os_version",
+					"type": "String",
+					"description": "os版本号"
+				},
+				{
+					"name": "umid_token",
+					"type": "String",
+					"description": "umid_token"
+				},
+				{
+					"name": "wua_token",
+					"type": "String",
+					"description": "无线端用于风控的token"
+				},
+				{
+					"name": "ip",
+					"type": "String",
+					"description": "ip地址"
+				},
+				{
+					"name": "timestamp_info",
+					"type": "String",
+					"description": "时间戳"
+				},
+				{
+					"name": "wua",
+					"type": "String",
+					"description": "无线端用于风控的wua数据"
+				},
+				{
+					"name": "app_name",
+					"type": "String",
+					"description": "应用名"
+				},
+				{
+					"name": "app_version",
+					"type": "String",
+					"description": "应用版本"
+				},
+				{
+					"name": "session_id",
+					"type": "String",
+					"description": "session_id"
+				},
+				{
+					"name": "os_name",
+					"type": "String",
+					"description": "客户端OS名称"
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "原始设备号"
+				},
+				{
+					"name": "client_type",
+					"type": "String",
+					"description": "客户端类别"
+				},
+				{
+					"name": "app_key_info",
+					"type": "String",
+					"description": "appKey"
+				},
+				{
+					"name": "rp_sdk_version",
+					"type": "String",
+					"description": "认证SDK版本号"
+				},
+				{
+					"name": "rp_sdk_name",
+					"type": "String",
+					"description": "认证SDK名字"
+				},
+				{
+					"name": "extend_map",
+					"description": "xxx"
+				},
+				{
+					"name": "liveness_sdk_version",
+					"type": "String",
+					"description": "活体sdk版本"
+				},
+				{
+					"name": "liveness_sdk_name",
+					"type": "String",
+					"description": "活体sdk名字"
+				},
+				{
+					"name": "manufacturer",
+					"type": "String",
+					"description": "制造商"
+				},
+				{
+					"name": "mobile_model",
+					"type": "String",
+					"description": "手机型号"
+				},
+				{
+					"name": "cpu_arch",
+					"type": "String",
+					"description": "架构"
+				},
+				{
+					"name": "total_memory",
+					"type": "String",
+					"description": "总内存"
+				},
+				{
+					"name": "available_memory",
+					"type": "String",
+					"description": "剩余内存"
+				}
+			]
+		},
+		{
+			"name": "extra_data",
+			"type": "Json",
+			"description": "扩展信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "RpStartResult",
+			"description": "返回结果信息",
+			"subParams": [
+				{
+					"name": "source",
+					"type": "String",
+					"description": "客户端来源",
+					"required": true
+				},
+				{
+					"name": "biz",
+					"type": "String",
+					"description": "业务点",
+					"required": true
+				},
+				{
+					"name": "steps",
+					"type": "RpStepItem[]",
+					"description": "认证步骤对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "json_assist",
+							"type": "String",
+							"description": "jsonAssist",
+							"required": true
+						},
+						{
+							"name": "properties",
+							"type": "RpStepProperty[]",
+							"description": "步骤信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "is_optional",
+									"type": "Boolean",
+									"description": "是否可选",
+									"required": true
+								},
+								{
+									"name": "property",
+									"type": "RpProperty",
+									"description": "材料类别",
+									"required": true,
+									"subParams": [
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "Number",
+											"description": "code",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "step_type",
+							"type": "RpStepType",
+							"description": "stepType",
+							"required": true,
+							"subParams": [
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "desc",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "name",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "Number",
+									"description": "code",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "upload_token",
+					"type": "StsUploadToken",
+					"description": "上传的token信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "token",
+							"type": "String",
+							"description": "token",
+							"required": true
+						},
+						{
+							"name": "expiration",
+							"type": "String",
+							"description": "过期时间",
+							"required": true
+						},
+						{
+							"name": "access_key_secret",
+							"type": "String",
+							"description": "secret",
+							"required": true
+						},
+						{
+							"name": "access_key_id",
+							"type": "String",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "path",
+							"type": "String",
+							"description": "path",
+							"required": true
+						},
+						{
+							"name": "end_point",
+							"type": "String",
+							"description": "end_point",
+							"required": true
+						},
+						{
+							"name": "bucket_name",
+							"type": "String",
+							"description": "bucket_name",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "extra_info",
+					"type": "String",
+					"description": "辅助信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

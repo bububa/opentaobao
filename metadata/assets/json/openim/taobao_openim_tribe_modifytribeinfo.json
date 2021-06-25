@@ -1,0 +1,57 @@
+{
+	"name": "taobao.openim.tribe.modifytribeinfo",
+	"apiChineseName": "OPENIM群信息修改",
+	"description": "OPENIM群信息修改",
+	"requestParams": [
+		{
+			"name": "user",
+			"type": "OpenImUser",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "taobao_account",
+					"type": "Boolean",
+					"description": "是否为淘宝账号"
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "账户appkey",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "tribe_name",
+			"type": "String",
+			"description": "群名称",
+			"required": true
+		},
+		{
+			"name": "notice",
+			"type": "String",
+			"description": "群公告",
+			"required": true
+		},
+		{
+			"name": "tribe_id",
+			"type": "Number",
+			"description": "群id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tribe_code",
+			"type": "Number",
+			"description": "群服务code"
+		}
+	]
+}

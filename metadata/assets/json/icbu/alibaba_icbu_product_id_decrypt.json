@@ -1,0 +1,26 @@
+{
+	"name": "alibaba.icbu.product.id.decrypt",
+	"apiChineseName": "商品ID解密",
+	"description": "对混淆的产品ID解密",
+	"requestParams": [
+		{
+			"name": "language",
+			"type": "String",
+			"description": "语种",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "String",
+			"description": "混淆后的商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "商品ID"
+		}
+	]
+}

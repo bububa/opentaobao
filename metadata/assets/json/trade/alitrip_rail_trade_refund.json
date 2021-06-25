@@ -1,0 +1,92 @@
+{
+	"name": "alitrip.rail.trade.refund",
+	"apiChineseName": "退票接口",
+	"description": "退票接口",
+	"requestParams": [
+		{
+			"name": "refund_param",
+			"type": "RefundReq",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商id",
+					"required": true
+				},
+				{
+					"name": "agent_order_id",
+					"type": "String",
+					"description": "代理商订单号",
+					"required": true
+				},
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "退票申请单号",
+					"required": true
+				},
+				{
+					"name": "charge_fee",
+					"type": "Number",
+					"description": "手续费(单位分)"
+				},
+				{
+					"name": "fail_code",
+					"type": "String",
+					"description": "退票失败码"
+				},
+				{
+					"name": "fail_reason",
+					"type": "String",
+					"description": "退票失败原因"
+				},
+				{
+					"name": "refund_fee",
+					"type": "Number",
+					"description": "应退额(单位分)"
+				},
+				{
+					"name": "status",
+					"type": "Boolean",
+					"description": "退票成功标志",
+					"required": true
+				},
+				{
+					"name": "tp_order_id",
+					"type": "Number",
+					"description": "平台订单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "接口返回对象",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "接口成功/失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,55 @@
+{
+	"name": "taobao.openim.chatlogs.import",
+	"apiChineseName": "openim单聊消息导入",
+	"description": "提供openim账号的聊天消息导入功能",
+	"requestParams": [
+		{
+			"name": "messages",
+			"type": "TextMessage[]",
+			"description": "消息序列",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "from_id",
+					"description": "发送方userid",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "消息",
+					"required": true
+				},
+				{
+					"name": "time",
+					"type": "Number",
+					"description": "消息时间。UTC时间，精确到秒。必须在一个月内",
+					"required": true
+				},
+				{
+					"name": "to_id",
+					"description": "接受方userid",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

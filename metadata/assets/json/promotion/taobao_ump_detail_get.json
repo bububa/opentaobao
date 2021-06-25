@@ -1,0 +1,20 @@
+{
+	"name": "taobao.ump.detail.get",
+	"apiChineseName": "查询活动详情",
+	"description": "查询活动详情",
+	"requestParams": [
+		{
+			"name": "detail_id",
+			"type": "Number",
+			"description": "活动详情的id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "content",
+			"type": "String",
+			"description": "活动详情信息，可以通过ump sdk中的MarketingTool来进行处理"
+		}
+	]
+}

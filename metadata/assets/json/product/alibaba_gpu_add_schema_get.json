@@ -1,0 +1,31 @@
+{
+	"name": "alibaba.gpu.add.schema.get",
+	"apiChineseName": "获取产品发布规则接口",
+	"description": "获取产品发布规则接口",
+	"requestParams": [
+		{
+			"name": "leaf_cat_id",
+			"type": "Number",
+			"description": "叶子类目ID",
+			"required": true
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "品牌ID"
+		},
+		{
+			"name": "provider_id",
+			"type": "Number",
+			"description": "当前用户所在渠道如0代表天猫，8代表淘宝",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "add_product_rule",
+			"type": "String",
+			"description": "返回产品发布规则"
+		}
+	]
+}

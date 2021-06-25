@@ -1,0 +1,107 @@
+{
+	"name": "alitrip.ticket.scenic.query",
+	"apiChineseName": "【门票API2.0】卖家已发布门票商品列表查询接口（根据景点维度查询）",
+	"description": "查询卖家已发布过的门票商品列表，根据景点维度聚合查询。如果卖家在该景点下未发布过任何商品，则查询不到数据！",
+	"requestParams": [
+		{
+			"name": "ali_scenic_id",
+			"type": "Number",
+			"description": "标准景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前分页。每页默认最多返回20条数据"
+		},
+		{
+			"name": "out_scenic_id",
+			"type": "String",
+			"description": "商家景点ID。ali_scenic_id，out_scenic_id二者至少需要填写一个"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "first_result",
+			"type": "ScenicAndProductResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "scenic_list",
+					"type": "Scenic[]",
+					"description": "景点列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ali_scenic_id",
+							"type": "String",
+							"description": "标准景点ID",
+							"required": true
+						},
+						{
+							"name": "ali_scenic_name",
+							"type": "String",
+							"description": "标准景点名称",
+							"required": true
+						},
+						{
+							"name": "out_scenic_id",
+							"type": "String",
+							"description": "商家景点ID",
+							"required": true
+						},
+						{
+							"name": "out_scenic_name",
+							"type": "String",
+							"description": "商家景点名称",
+							"required": true
+						},
+						{
+							"name": "product_list",
+							"type": "Product[]",
+							"description": "收费项目列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "ali_product_id",
+									"type": "String",
+									"description": "标准收费项目ID",
+									"required": true
+								},
+								{
+									"name": "ali_product_name",
+									"type": "String",
+									"description": "标准收费项目名称",
+									"required": true
+								},
+								{
+									"name": "out_product_id",
+									"type": "String",
+									"description": "商家收费项目ID",
+									"required": true
+								},
+								{
+									"name": "out_product_name",
+									"type": "String",
+									"description": "商家收费项目名称",
+									"required": true
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品ID",
+									"required": true
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

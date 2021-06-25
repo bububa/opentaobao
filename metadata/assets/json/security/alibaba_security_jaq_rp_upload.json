@@ -1,0 +1,75 @@
+{
+	"name": "alibaba.security.jaq.rp.upload",
+	"apiChineseName": "聚安全实人认证上传认证信息",
+	"description": "聚安全实人认证上传认证信息",
+	"requestParams": [
+		{
+			"name": "verify_token",
+			"type": "String",
+			"description": "认证会话token",
+			"required": true
+		},
+		{
+			"name": "elements",
+			"type": "Element[]",
+			"description": "此次需要上传的认证信息的列表",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名称, 常用名称：姓名(Name); 身份证(Identity_Code); 手机(Mobile); 身份证正面(Identity_Front_Pic);身份证背面(Identity_back_pic);半身照(UpperBody_pic);地址(Address)",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "值，如果为oss地址，格式如下oss://bucketname:xxxx.jpg",
+					"required": true
+				},
+				{
+					"name": "value_meta",
+					"type": "String",
+					"description": "类型, 如果是姓名，身份证，则是ValueType；如果是图片则是PhotoType；如果是JSON格式，则是JsonType",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "RpUploadResult",
+			"description": "返回信息",
+			"subParams": [
+				{
+					"name": "upload_status",
+					"type": "UploadStatus",
+					"description": "上传状态信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "code",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "upload_id",
+					"type": "String",
+					"description": "上传id",
+					"required": true
+				}
+			]
+		}
+	]
+}

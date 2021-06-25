@@ -1,0 +1,104 @@
+{
+	"name": "taobao.bus.seatprice.get",
+	"apiChineseName": "汽车票余票接口",
+	"description": "提供给商家，查询汽车票班次余票",
+	"requestParams": [
+		{
+			"name": "param_bus_seat_price_r_q",
+			"type": "BusSeatPriceRq",
+			"description": "余票请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "schedule_id",
+					"type": "String",
+					"description": "车次ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "B2BBusSeatPriceDto",
+					"description": "余票对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "dep_city_name",
+							"type": "String",
+							"description": "出发城市",
+							"required": true
+						},
+						{
+							"name": "dep_time",
+							"type": "String",
+							"description": "出发时间",
+							"required": true
+						},
+						{
+							"name": "full_price",
+							"type": "Number",
+							"description": "车次全价",
+							"required": true
+						},
+						{
+							"name": "last_place_name",
+							"type": "String",
+							"description": "目的地",
+							"required": true
+						},
+						{
+							"name": "schedule_id",
+							"type": "String",
+							"description": "车次ID",
+							"required": true
+						},
+						{
+							"name": "stock",
+							"type": "Number",
+							"description": "余票数量",
+							"required": true
+						},
+						{
+							"name": "service_price",
+							"type": "Number",
+							"description": "服务费",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "server_i_p",
+					"type": "String",
+					"description": "serverIP",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否查询成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

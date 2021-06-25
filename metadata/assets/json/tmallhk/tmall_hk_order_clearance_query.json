@@ -1,0 +1,475 @@
+{
+	"name": "tmall.hk.order.clearance.query",
+	"apiChineseName": "天猫国际订单清关信息",
+	"description": "天猫国际订单清关信息查询",
+	"requestParams": [
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "交易主订单号",
+			"required": true
+		},
+		{
+			"name": "business_symbol",
+			"type": "String",
+			"description": "调用方业务身份(由国际侧配置提供给调用方)",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "结果码"
+		},
+		{
+			"name": "response_message",
+			"type": "String",
+			"description": "结果描述"
+		},
+		{
+			"name": "obj",
+			"type": "ClearanceDataDo",
+			"description": "清关数据封装",
+			"subParams": [
+				{
+					"name": "biz_order_d_o",
+					"type": "ClearanceBizOrderDo",
+					"description": "订单数据封装",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "淘系订单id",
+							"required": true
+						},
+						{
+							"name": "buyer_id",
+							"type": "Number",
+							"description": "淘系买家id",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "order_line_list",
+							"type": "ClearanceOrderLineDo[]",
+							"description": "子订单列表封装",
+							"required": true,
+							"subParams": [
+								{
+									"name": "actual_value",
+									"type": "Number",
+									"description": "货款",
+									"required": true
+								},
+								{
+									"name": "auction_price",
+									"type": "Number",
+									"description": "商品单价",
+									"required": true
+								},
+								{
+									"name": "brand_name",
+									"type": "String",
+									"description": "品牌名称",
+									"required": true
+								},
+								{
+									"name": "category_id",
+									"type": "String",
+									"description": "根类目",
+									"required": true
+								},
+								{
+									"name": "declaration",
+									"type": "Json",
+									"description": "申报要素",
+									"required": true
+								},
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "淘系商品id",
+									"required": true
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "item_url",
+									"type": "String",
+									"description": "商品链接",
+									"required": true
+								},
+								{
+									"name": "original_country",
+									"type": "String",
+									"description": "原产国",
+									"required": true
+								},
+								{
+									"name": "pay_status",
+									"type": "Number",
+									"description": "付款状态",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "商品购买数量",
+									"required": true
+								},
+								{
+									"name": "refund_status",
+									"type": "Number",
+									"description": "退款状态",
+									"required": true
+								},
+								{
+									"name": "root_cat",
+									"type": "String",
+									"description": "主类目",
+									"required": true
+								},
+								{
+									"name": "sale_unit",
+									"type": "String",
+									"description": "销售单位",
+									"required": true
+								},
+								{
+									"name": "sc_item_id",
+									"type": "Number",
+									"description": "货品id",
+									"required": true
+								},
+								{
+									"name": "sell_property",
+									"type": "String",
+									"description": "销售属性",
+									"required": true
+								},
+								{
+									"name": "sub_order_id",
+									"type": "Number",
+									"description": "子订单id",
+									"required": true
+								},
+								{
+									"name": "tax_d_o",
+									"type": "ClearanceTaxDo",
+									"description": "税费封装",
+									"required": true,
+									"subParams": [
+										{
+											"name": "custom_duty_fee",
+											"type": "Number",
+											"description": "关税，主\u0026子",
+											"required": true
+										},
+										{
+											"name": "customs_coupon_fee",
+											"type": "Number",
+											"description": "优惠，主\u0026子",
+											"required": true
+										},
+										{
+											"name": "customs_insurance_fee",
+											"type": "Number",
+											"description": "保费，主\u0026子",
+											"required": true
+										},
+										{
+											"name": "customs_sub_total_fee",
+											"type": "Number",
+											"description": "完税价，子订单",
+											"required": true
+										},
+										{
+											"name": "customs_total_fee",
+											"type": "Number",
+											"description": "完税价，主订单",
+											"required": true
+										},
+										{
+											"name": "excise_duty_fee",
+											"type": "Number",
+											"description": "消费税，主\u0026子",
+											"required": true
+										},
+										{
+											"name": "hscode",
+											"type": "String",
+											"description": "海关税收编码",
+											"required": true
+										},
+										{
+											"name": "order_line_total_tax_fee",
+											"type": "Number",
+											"description": "税费，子订单",
+											"required": true
+										},
+										{
+											"name": "order_total_tax_fee",
+											"type": "Number",
+											"description": "总税费，主订单",
+											"required": true
+										},
+										{
+											"name": "post_fee",
+											"type": "Number",
+											"description": "邮费，主\u0026子",
+											"required": true
+										},
+										{
+											"name": "tariff_custom_fee",
+											"type": "Number",
+											"description": "给海关的税费中的关税，主\u0026子",
+											"required": true
+										},
+										{
+											"name": "tariff_excise_fee",
+											"type": "Number",
+											"description": "给海关的税费中的消费税，主\u0026子",
+											"required": true
+										},
+										{
+											"name": "tariff_fee",
+											"type": "Number",
+											"description": "给海关的税费，主\u0026子",
+											"required": true
+										},
+										{
+											"name": "tariff_vat_fee",
+											"type": "Number",
+											"description": "给海关的税费中的增值税，主\u0026子",
+											"required": true
+										},
+										{
+											"name": "vat_fee",
+											"type": "Number",
+											"description": "增值税，主\u0026子",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "unit_d_o",
+									"type": "ClearanceUnitDo",
+									"description": "计量单位封装",
+									"required": true,
+									"subParams": [
+										{
+											"name": "first_quantity",
+											"type": "String",
+											"description": "第一数量，最多4位小数",
+											"required": true
+										},
+										{
+											"name": "first_unit",
+											"type": "String",
+											"description": "第一单位，单位编码",
+											"required": true
+										},
+										{
+											"name": "second_quantity",
+											"type": "String",
+											"description": "第二数量，最多4位小数",
+											"required": true
+										},
+										{
+											"name": "second_unit",
+											"type": "String",
+											"description": "第二单位，单位编码",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "virtual_item_id",
+									"type": "String",
+									"description": "镜像商品ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pay_status",
+							"type": "Number",
+							"description": "付款状态",
+							"required": true
+						},
+						{
+							"name": "post_fee",
+							"type": "Number",
+							"description": "邮费",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "Number",
+							"description": "退款状态",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家id",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家昵称",
+							"required": true
+						},
+						{
+							"name": "seller_wang_wang_id",
+							"type": "String",
+							"description": "卖家旺旺",
+							"required": true
+						},
+						{
+							"name": "tax_d_o",
+							"type": "ClearanceTaxDo",
+							"description": "税费封装",
+							"required": true,
+							"subParams": [
+								{
+									"name": "custom_duty_fee",
+									"type": "Number",
+									"description": "关税，主\u0026子",
+									"required": true
+								},
+								{
+									"name": "customs_coupon_fee",
+									"type": "Number",
+									"description": "优惠，主\u0026子",
+									"required": true
+								},
+								{
+									"name": "customs_insurance_fee",
+									"type": "Number",
+									"description": "保费，主\u0026子",
+									"required": true
+								},
+								{
+									"name": "customs_sub_total_fee",
+									"type": "Number",
+									"description": "完税价，子订单",
+									"required": true
+								},
+								{
+									"name": "customs_total_fee",
+									"type": "Number",
+									"description": "完税价，主订单",
+									"required": true
+								},
+								{
+									"name": "excise_duty_fee",
+									"type": "Number",
+									"description": "消费税，主\u0026子",
+									"required": true
+								},
+								{
+									"name": "hscode",
+									"type": "String",
+									"description": "海关税收编码",
+									"required": true
+								},
+								{
+									"name": "order_line_total_tax_fee",
+									"type": "Number",
+									"description": "税费，子订单",
+									"required": true
+								},
+								{
+									"name": "order_total_tax_fee",
+									"type": "Number",
+									"description": "总税费，主订单",
+									"required": true
+								},
+								{
+									"name": "post_fee",
+									"type": "Number",
+									"description": "邮费，主\u0026子",
+									"required": true
+								},
+								{
+									"name": "tariff_custom_fee",
+									"type": "Number",
+									"description": "给海关的税费中的关税，主\u0026子",
+									"required": true
+								},
+								{
+									"name": "tariff_excise_fee",
+									"type": "Number",
+									"description": "给海关的税费中的消费税，主\u0026子",
+									"required": true
+								},
+								{
+									"name": "tariff_fee",
+									"type": "Number",
+									"description": "给海关的税费，主\u0026子",
+									"required": true
+								},
+								{
+									"name": "tariff_vat_fee",
+									"type": "Number",
+									"description": "给海关的税费中的增值税，主\u0026子",
+									"required": true
+								},
+								{
+									"name": "vat_fee",
+									"type": "Number",
+									"description": "增值税，主\u0026子",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "tf",
+							"type": "Number",
+							"description": "买家实付款",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "pay_order_d_o",
+					"type": "ClearancePayOrderDo",
+					"description": "支付单封装",
+					"required": true,
+					"subParams": [
+						{
+							"name": "alipay_buyer_id",
+							"type": "String",
+							"description": "支付宝买家ID",
+							"required": true
+						},
+						{
+							"name": "pay_order_id",
+							"type": "Number",
+							"description": "支付单号",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "succeeded",
+			"type": "Boolean",
+			"description": "是否正常"
+		}
+	]
+}

@@ -1,0 +1,120 @@
+{
+	"name": "taobao.wdk.equipment.deviceadmin.deviceinfo.get",
+	"apiChineseName": "获取五道口设备管理信息",
+	"description": "通过仓编码获取五道口设备管理信息",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "仓编码",
+			"required": true
+		},
+		{
+			"name": "device_type",
+			"type": "Number",
+			"description": "设备类型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HmResult",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "models",
+					"type": "DeviceInfoDto[]",
+					"description": "设备列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id",
+							"required": true
+						},
+						{
+							"name": "display_name",
+							"type": "String",
+							"description": "设备名称",
+							"required": true
+						},
+						{
+							"name": "vendor_name",
+							"type": "String",
+							"description": "开发商名称",
+							"required": true
+						},
+						{
+							"name": "device_type",
+							"type": "Number",
+							"description": "设备类型",
+							"required": true
+						},
+						{
+							"name": "is_on_vehicle",
+							"type": "Number",
+							"description": "是否车载设备",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "仓编码",
+							"required": true
+						},
+						{
+							"name": "plate_number",
+							"type": "String",
+							"description": "车牌号码",
+							"required": true
+						},
+						{
+							"name": "business_code",
+							"type": "Number",
+							"description": "业务代码",
+							"required": true
+						},
+						{
+							"name": "area_code",
+							"type": "Number",
+							"description": "安装位置",
+							"required": true
+						},
+						{
+							"name": "group_id",
+							"type": "Number",
+							"description": "设备分组id",
+							"required": true
+						},
+						{
+							"name": "group_device_index",
+							"type": "Number",
+							"description": "分组中设备索引号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

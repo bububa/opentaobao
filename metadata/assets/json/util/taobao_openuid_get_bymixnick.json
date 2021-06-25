@@ -1,0 +1,20 @@
+{
+	"name": "taobao.openuid.get.bymixnick",
+	"apiChineseName": "通过mixnick转换openuid",
+	"description": "通过mixnick转换openuid",
+	"requestParams": [
+		{
+			"name": "mix_nick",
+			"type": "String",
+			"description": "无线类应用获取到的混淆的nick",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "open_uid",
+			"type": "String",
+			"description": "OpenUID"
+		}
+	]
+}

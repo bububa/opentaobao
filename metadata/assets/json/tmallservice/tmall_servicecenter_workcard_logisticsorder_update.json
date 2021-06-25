@@ -1,0 +1,122 @@
+{
+	"name": "tmall.servicecenter.workcard.logisticsorder.update",
+	"apiChineseName": "物流工单履约状态更新",
+	"description": "天猫寄送类服务对接外部物流服务商回传物流状态信息",
+	"requestParams": [
+		{
+			"name": "volume",
+			"type": "Number",
+			"description": "体积 单位 立方毫米"
+		},
+		{
+			"name": "weight",
+			"type": "Number",
+			"description": "重量 单位 克"
+		},
+		{
+			"name": "comment",
+			"type": "String",
+			"description": "备注说明"
+		},
+		{
+			"name": "express_code",
+			"type": "String",
+			"description": "物流单号（展示给消费者）"
+		},
+		{
+			"name": "express_company",
+			"type": "String",
+			"description": "物流公司名词（展示给消费者）"
+		},
+		{
+			"name": "courier_mobile",
+			"type": "String",
+			"description": "小件员手机号码"
+		},
+		{
+			"name": "courier_name",
+			"type": "String",
+			"description": "小件员姓名"
+		},
+		{
+			"name": "got_code",
+			"type": "String",
+			"description": "取件码"
+		},
+		{
+			"name": "logistics_order_id",
+			"type": "Number",
+			"description": "物流订单号",
+			"required": true
+		},
+		{
+			"name": "cost",
+			"type": "Number",
+			"description": "金额 单位分"
+		},
+		{
+			"name": "goods_info",
+			"type": "String",
+			"description": "1、以下状态时必填： 包裹已揽收完成 2、字符串格式为：json 串 例子： [{ \"name\": \"上衣\", \"count\": 1 }, { \"name\": \"裤子\", \"count\": 2 }]"
+		},
+		{
+			"name": "status_code",
+			"type": "String",
+			"description": "物流创建 ：create 物流取消 ：cancel 分派小件员：assign 已经分派小件员: assigned 包裹上门揽收: pickup_door 包裹已揽收完成: pickup_finished 包裹派送中: dispatching 包裹已签收: signed",
+			"required": true
+		},
+		{
+			"name": "sub_express_codes",
+			"type": "String[]",
+			"description": "物流子单号",
+			"maxListSize": 999
+		},
+		{
+			"name": "delivery_time",
+			"type": "Date",
+			"description": "预计送达时间  dispatching节点时必填"
+		},
+		{
+			"name": "sign_time",
+			"type": "Date",
+			"description": "签收时间 signed节点时必填"
+		},
+		{
+			"name": "pickup_finish_time",
+			"type": "Date",
+			"description": "揽收完成时间 pickup_finished节点时必填"
+		},
+		{
+			"name": "pickup_door_time",
+			"type": "Date",
+			"description": "上门揽收时间 pickup_door节点时必填"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "错误描述信息",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true 成功  false  失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,123 @@
+{
+	"name": "alibaba.alsc.crm.open.recharge.operate",
+	"apiChineseName": "储值操作接口",
+	"description": "储值操作接口",
+	"requestParams": [
+		{
+			"name": "param_recharge_operate_open_req",
+			"type": "RechargeOperateOpenReq",
+			"description": "储值操作参数",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "saas品牌id",
+					"required": true
+				},
+				{
+					"name": "change_value",
+					"type": "Number",
+					"description": "操作储值"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客id"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "operate_type",
+					"type": "Number",
+					"description": "1-充值(charge) 2-冻结(freeze) 3-核销(verify) 4-充值回退(refund)"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部id"
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "outer_type",
+					"type": "String",
+					"description": "外部id类型，wechat：微信openId ；alipay：支付宝"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "操作备注"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求幂等id",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "saas门店id",
+					"required": true
+				},
+				{
+					"name": "new_outer_order_id",
+					"type": "String",
+					"description": "回退单号,operate_type为4退款时必填"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "操作是否成功",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

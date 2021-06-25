@@ -1,0 +1,21 @@
+package tmallservice
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/tmallservice"
+)
+
+/* 
+根据天猫id查询门店信息 
+alibaba.ssc.servicecenter.servicestore.query
+
+根据天猫id查询门店信息
+*/
+func AlibabaSscServicecenterServicestoreQuery(clt *core.SDKClient, req *tmallservice.AlibabaSscServicecenterServicestoreQueryRequest, session string) (*tmallservice.AlibabaSscServicecenterServicestoreQueryResponse, error) {
+    var resp tmallservice.AlibabaSscServicecenterServicestoreQueryAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

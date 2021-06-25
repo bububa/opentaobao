@@ -1,0 +1,106 @@
+{
+	"name": "alibaba.wdk.oldpos.refund.create",
+	"apiChineseName": "五道口外部商户老pos机产生的退款单同步进盒马",
+	"description": "淘鲜达外部商户老pos机产生的退款单同步进淘鲜达",
+	"requestParams": [
+		{
+			"name": "pos_refund_create_request",
+			"type": "PosRefundCreateRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部主订单号"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店code"
+				},
+				{
+					"name": "out_sub_order_id",
+					"type": "String",
+					"description": "外部子订单号"
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "skuCode"
+				},
+				{
+					"name": "refund_amount_sale",
+					"type": "Number",
+					"description": "库存单位退货数量"
+				},
+				{
+					"name": "refund_amount_stock",
+					"type": "String",
+					"description": "销售单位退货数量"
+				},
+				{
+					"name": "stock_unit",
+					"type": "String",
+					"description": "库存单位"
+				},
+				{
+					"name": "sale_unit",
+					"type": "String",
+					"description": "销售单位"
+				},
+				{
+					"name": "refund_fee",
+					"type": "Number",
+					"description": "退款金额，单位分"
+				},
+				{
+					"name": "refund_type",
+					"type": "Number",
+					"description": "退款类型 1：仅退款 2：退货退款"
+				},
+				{
+					"name": "refund_speed_type",
+					"type": "Number",
+					"description": "退款速度类型 1：闪退,未离开货架  2：标准，离开货架"
+				},
+				{
+					"name": "weight_item",
+					"type": "Boolean",
+					"description": "是否称重商品"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PosRefundCreateResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "returnCode",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "returnMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

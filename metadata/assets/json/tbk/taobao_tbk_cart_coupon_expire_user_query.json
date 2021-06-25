@@ -1,0 +1,65 @@
+{
+	"name": "taobao.tbk.cart.coupon.expire.user.query",
+	"apiChineseName": "购物车催付优惠券到期查询用户信息",
+	"description": "购物车催付根据对应规则查询用户信息。",
+	"requestParams": [
+		{
+			"name": "rule_id",
+			"type": "String",
+			"description": "规则ID，由接口提供方分配",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小",
+			"maxValue": 10000
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "页码，从0开始"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "user_rule_info_list",
+			"type": "UserRuleInfo []",
+			"description": "用户规则信息集合",
+			"subParams": [
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "用户在TOP上的openId",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "每条记录离线任务生成，代表当时离线任务的时间戳",
+					"required": true
+				},
+				{
+					"name": "item_list",
+					"type": "MapData[]",
+					"description": "用户对应的商品详细信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_id_list",
+							"type": "Number[]",
+							"description": "商品ID对应的sku集合",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品ID",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

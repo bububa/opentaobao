@@ -1,0 +1,206 @@
+{
+	"name": "alibaba.alsc.crm.point.querypointflow",
+	"apiChineseName": "分页查询积分流水",
+	"description": "分页查询积分流水",
+	"requestParams": [
+		{
+			"name": "param_page_query_point_flow_open_req",
+			"type": "PageQueryPointFlowOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌id"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客id",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "截止时间"
+				},
+				{
+					"name": "out_biz_id",
+					"type": "String",
+					"description": "关联交易ID,模糊查询"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "第几页,从1开始计数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小，默认20"
+				},
+				{
+					"name": "point_flow_type",
+					"type": "String",
+					"description": "积分流水类型,类型参考枚举类"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "开始时间"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID,shop_id和out_shop_id不可同时为空"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌id,brandId与out_brand_id不可同时为空"
+				},
+				{
+					"name": "biz_channel",
+					"type": "String",
+					"description": "CS是辰森，KRY是客如云"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "has_next_page",
+					"type": "Boolean",
+					"description": "是否有下一页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "PointFlowOpenInfo[]",
+					"description": "积分流水对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_type",
+							"type": "String",
+							"description": "业务场景",
+							"required": true
+						},
+						{
+							"name": "biz_type_description",
+							"type": "String",
+							"description": "业务类型描述",
+							"required": true
+						},
+						{
+							"name": "change_point",
+							"type": "Number",
+							"description": "变更积分",
+							"required": true
+						},
+						{
+							"name": "flow_id",
+							"type": "String",
+							"description": "流水id",
+							"required": true
+						},
+						{
+							"name": "operator_name",
+							"type": "String",
+							"description": "操作员名",
+							"required": true
+						},
+						{
+							"name": "out_biz_id",
+							"type": "String",
+							"description": "交易单号",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "变更原因",
+							"required": true
+						},
+						{
+							"name": "remain_point",
+							"type": "Number",
+							"description": "剩余积分",
+							"required": true
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "店铺名称",
+							"required": true
+						},
+						{
+							"name": "time",
+							"type": "Date",
+							"description": "交易时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "总条数",
+					"required": true
+				}
+			]
+		}
+	]
+}

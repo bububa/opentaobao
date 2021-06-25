@@ -1,0 +1,46 @@
+{
+	"name": "taobao.item.carturl.get",
+	"apiChineseName": "加购URL获取",
+	"description": "获取加购URL，支持添加商品到购物车",
+	"requestParams": [
+		{
+			"name": "item_ids",
+			"type": "String[]",
+			"description": "商品信息，格式为 商品ID_SKU ID_数量，多条记录以逗号(,)分割",
+			"required": true,
+			"maxListSize": 9
+		},
+		{
+			"name": "callback_url",
+			"type": "String",
+			"description": "回调地址，需要是EWS域名地址。可不填，默认到购物车页面"
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "商家Nick，优先使用user_id"
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "商家ID"
+		},
+		{
+			"name": "ext_params",
+			"type": "String",
+			"description": "扩展属性，关注店铺的时候会传递下去，格式为K:V|K:V格式"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "端类型，默认是tb，可选tb,hm"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "加购的URL地址"
+		}
+	]
+}

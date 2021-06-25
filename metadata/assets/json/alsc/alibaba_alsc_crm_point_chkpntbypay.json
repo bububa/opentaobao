@@ -1,0 +1,85 @@
+{
+	"name": "alibaba.alsc.crm.point.chkpntbypay",
+	"apiChineseName": "校验支付链路中的积分抵扣是否合法",
+	"description": "校验支付链路中的积分抵扣是否合法",
+	"requestParams": [
+		{
+			"name": "param_consume_point_by_pay_open_req",
+			"type": "ConsumePointByPayOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌id"
+				},
+				{
+					"name": "change_point",
+					"type": "Number",
+					"description": "变更积分",
+					"required": true
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客id",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌id,brandId与out_brand_id不可同时为空"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "业务数据:是否合法",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

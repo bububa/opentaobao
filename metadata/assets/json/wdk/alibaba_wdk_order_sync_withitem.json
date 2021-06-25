@@ -1,0 +1,456 @@
+{
+	"name": "alibaba.wdk.order.sync.withitem",
+	"apiChineseName": "订单和商品同步接口",
+	"description": "轻pos,将订单和商品的信息一起传到盒马这边，进行创单和添加商品处理。",
+	"requestParams": [
+		{
+			"name": "pos_order_and_item_sync",
+			"type": "PosOrderAndItemSyncDo",
+			"description": "商家传过来的交易和商品信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "item_infos",
+					"type": "ItemInfo[]",
+					"description": "商品信息",
+					"subParams": [
+						{
+							"name": "life_status",
+							"type": "String",
+							"description": "商品状态：商品在机构内的生命周期，商品状态；A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡，传ATCRD",
+							"required": true
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称：商品名称；显示在手机APP商品详情页，对商品直观的描述，通常包含了品牌、规格等信息。商品名称也会显示在pos小票上。附：淘鲜达系统的商品品名禁止出现“专供”，“特供”，“聚划算”字样。",
+							"required": true
+						},
+						{
+							"name": "item_type_new",
+							"type": "String",
+							"description": "商品类型：商品类型类型 1:普通商品、2:加工半成品、3:加工成品、4:原材料、5:耗材",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码：商品编码（此字段不能修改），商品在商家的唯一编码，传商家本地ERP一致的商品编码（货号）",
+							"required": true
+						},
+						{
+							"name": "merchant_cat_code",
+							"type": "String",
+							"description": "商家类目编码：商家类目code，可以为空"
+						},
+						{
+							"name": "inventory_util",
+							"type": "String",
+							"description": "库存单位：库存单位（此字段一经录入不能修改），存储的最小单位，从计量单位表中选择，如果没有对应的单位，可以由运营联系淘鲜达的运营新增单位。填写下列单位选项：毫升、升、加仑、屉、批、面、刀、幅、册、口、床、捆、壶、版、平方米、米、厘米、毫米、笼、坛、节、筒、半只、卡、板、双、粒、令、筐、碗、排、盘、顶、本、封、颗、付、辆、台、次、张、g、盆、组、扎、只、支、提、套、束、片、枚、篮、棵、卷、听、罐、根、副、份、朵、对、袋、打、串、杯、把、kg、件、箱、块、条、瓶、桶、包、盒、个。若新增的单位需要支持小数点库存，联系飞观。手机淘宝中淘鲜达价格展示是用的库存单位。商家在填写商品库存单位时，应注意此单位展示合理性；在库存和销售单位实际不一致的情况（例如某类商品库存使用kg，销售使用g）之外，建议商品库存单位和销售单位一致。",
+							"required": true
+						},
+						{
+							"name": "org_name",
+							"type": "String",
+							"description": "机构名称：机构名称，由淘鲜达商家运营分配",
+							"required": true
+						},
+						{
+							"name": "org_code",
+							"type": "String",
+							"description": "机构编码：机构编码，由淘鲜达商家运营分配",
+							"required": true
+						},
+						{
+							"name": "back_cat_code",
+							"type": "String",
+							"description": "盒马类目ID：需要商家把自己的类目对应到盒马的类目上，填写盒马类目ID，如果商家不填写，系统则会进行类目预测，将预测到的类目填写进去"
+						},
+						{
+							"name": "producer_place",
+							"type": "String",
+							"description": "产地：需要传淘鲜达产地库中的值；国内产地传值格式：中国|省|市。若不能确定产地，可以传“见产品外包装”。国外产地只需要传国家名",
+							"required": true
+						},
+						{
+							"name": "supplier_no",
+							"type": "String",
+							"description": "供应商ID：供应商ID；淘鲜达合作商家填虚拟供应商ID，一共2个（自营、联营），由淘鲜达运营帮忙创建，联营商品需填写联营供应商ID，该商品可以通过联营供应商RF枪扫码入库库存"
+						},
+						{
+							"name": "sale_spec",
+							"type": "String",
+							"description": "销售规格描述：商品销售单位对应的含量表达；APP展示重要字段，体现售卖单位中含有的商品数量，通常描述为“550g/份”等样式。填字符串。"
+						},
+						{
+							"name": "short_title",
+							"type": "String",
+							"description": "商品简称：对于商品的描述进行简化的表达，以便在拣货、标签等页面上能够进行直接展示；最多40个字符，会显示在pos屏幕上"
+						},
+						{
+							"name": "sku_price",
+							"type": "Number",
+							"description": "门店商品售价：商品一个库存单位的售卖价格，2位小数",
+							"required": true
+						},
+						{
+							"name": "member_price",
+							"type": "Number",
+							"description": "门店商品会员售价：会员正常购买该商品的售价，2位小数"
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "重量"
+						},
+						{
+							"name": "import_flag",
+							"type": "Number",
+							"description": "是否进口：是否进口,是否进口；原产地非中国，都填是 1：是? 0：否（默认为0）",
+							"required": true
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名称：商品的品牌名字，需要先在淘鲜达提供的品牌库中匹配，如果匹配不上的直接传ERP中的品牌值",
+							"required": true
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "净含量：商品包装规格的描述，建议跟销售规格描述填写一致",
+							"required": true
+						},
+						{
+							"name": "storage",
+							"type": "String",
+							"description": "存储条件：存储条件；填常温、冷藏、冷冻、热链、鲜活",
+							"required": true
+						},
+						{
+							"name": "period",
+							"type": "Number",
+							"description": "保质天数：商品的保质期天数，必须为整数，0代表不管理保质期",
+							"required": true
+						},
+						{
+							"name": "weight_flag",
+							"type": "Number",
+							"description": "是否称重：是否称重（此字段一经录入不能修改）；若库存单位是kg，或g，此字段填是，其他的填否 1：是? 0：否（默认为0)",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "条码：包含商品包装上已经印刷的条码，也包含企业内部的自编条码用于打印在食品包装上",
+							"required": true
+						},
+						{
+							"name": "label_style_type",
+							"type": "String",
+							"description": "标价签类型：标价签类型；商品在门店陈列时，采用的售价标签类型。因不采用电子价签，建议商家填默认值“无价签”",
+							"required": true
+						},
+						{
+							"name": "sale_util",
+							"type": "String",
+							"description": "售卖单位"
+						},
+						{
+							"name": "avg_weight",
+							"type": "Number",
+							"description": "均重"
+						}
+					]
+				},
+				{
+					"name": "order_info",
+					"type": "OrderInfoDo",
+					"description": "订单流水信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pay_channels",
+							"type": "ReceiptPayChannelDo[]",
+							"description": "小票付款渠道",
+							"subParams": [
+								{
+									"name": "pay_amount",
+									"type": "Number",
+									"description": "付款金额",
+									"required": true
+								},
+								{
+									"name": "pay_type",
+									"type": "String",
+									"description": "付款类型， 现金、支票、银行卡、支付宝、微信",
+									"required": true
+								},
+								{
+									"name": "index",
+									"type": "Number",
+									"description": "序号"
+								},
+								{
+									"name": "serial_num",
+									"type": "String",
+									"description": "流水号",
+									"required": true
+								},
+								{
+									"name": "pos_no",
+									"type": "String",
+									"description": "款机号"
+								},
+								{
+									"name": "store_id",
+									"type": "String",
+									"description": "渠道店id"
+								},
+								{
+									"name": "pay_code",
+									"type": "String",
+									"description": "付款码"
+								},
+								{
+									"name": "channel_order_id",
+									"type": "String",
+									"description": "外部支付单号"
+								}
+							]
+						},
+						{
+							"name": "sub_orders",
+							"type": "SubOrderInfoDo[]",
+							"description": "商品明细",
+							"subParams": [
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "单位"
+								},
+								{
+									"name": "scan_barcode",
+									"type": "String",
+									"description": "扫描条码"
+								},
+								{
+									"name": "temporary_discount",
+									"type": "Number",
+									"description": "临时折扣"
+								},
+								{
+									"name": "promotion_discount",
+									"type": "Number",
+									"description": "子订单优惠总金额"
+								},
+								{
+									"name": "member_discount",
+									"type": "Number",
+									"description": "会员优惠"
+								},
+								{
+									"name": "deal_amt",
+									"type": "Number",
+									"description": "成交金额（填写会校验）"
+								},
+								{
+									"name": "deal_price",
+									"type": "Number",
+									"description": "成交单价"
+								},
+								{
+									"name": "selling_price",
+									"type": "Number",
+									"description": "售价金额"
+								},
+								{
+									"name": "original_price",
+									"type": "Number",
+									"description": "商品原售价",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "数量",
+									"required": true
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "item_barcode",
+									"type": "String",
+									"description": "商品条码"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "商品编码",
+									"required": true
+								},
+								{
+									"name": "index",
+									"type": "Number",
+									"description": "序号"
+								},
+								{
+									"name": "serial_num",
+									"type": "String",
+									"description": "子订单流水号",
+									"required": true
+								},
+								{
+									"name": "pos_no",
+									"type": "String",
+									"description": "款机号"
+								},
+								{
+									"name": "store_id",
+									"type": "String",
+									"description": "渠道店id"
+								}
+							]
+						},
+						{
+							"name": "order_from",
+							"type": "String",
+							"description": "来源，商家级别，当前取值：RENRENLE / SANJIANG"
+						},
+						{
+							"name": "original_trd_time",
+							"type": "Date",
+							"description": "原交易时间"
+						},
+						{
+							"name": "original_serial_num",
+							"type": "String",
+							"description": "原流水号"
+						},
+						{
+							"name": "original_pos_no",
+							"type": "String",
+							"description": "原款机号"
+						},
+						{
+							"name": "discount_amt",
+							"type": "Number",
+							"description": "折扣优惠金额"
+						},
+						{
+							"name": "overflow_amt",
+							"type": "Number",
+							"description": "损溢金额"
+						},
+						{
+							"name": "member_discount",
+							"type": "Number",
+							"description": "会员优惠"
+						},
+						{
+							"name": "member_card_num",
+							"type": "String",
+							"description": "会员卡号"
+						},
+						{
+							"name": "change_amt",
+							"type": "Number",
+							"description": "找零金额"
+						},
+						{
+							"name": "actual_amt",
+							"type": "Number",
+							"description": "实收金额"
+						},
+						{
+							"name": "ask_amt",
+							"type": "Number",
+							"description": "应收金额"
+						},
+						{
+							"name": "op_name",
+							"type": "String",
+							"description": "收银员姓名",
+							"required": true
+						},
+						{
+							"name": "op_num",
+							"type": "String",
+							"description": "收银员工号",
+							"required": true
+						},
+						{
+							"name": "trd_type",
+							"type": "Number",
+							"description": "交易类型"
+						},
+						{
+							"name": "trd_time",
+							"type": "Date",
+							"description": "成交时间"
+						},
+						{
+							"name": "serial_num",
+							"type": "String",
+							"description": "流水号",
+							"required": true
+						},
+						{
+							"name": "pos_no",
+							"type": "String",
+							"description": "款机号",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "渠道店id",
+							"required": true
+						},
+						{
+							"name": "ali_user_id",
+							"type": "String",
+							"description": "阿里userID"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "调用返回的结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "调用接口服务内部返回成功，外部success成功只代表接口调用成功，服务内部成功用参数表示",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "调用接口返回错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "调用接口返回错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口返回成功失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"name": "tmall.item.calculate.hscode.get",
+	"apiChineseName": "算法获取hscode",
+	"description": "算法获取hscode",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "Json []",
+			"description": "算法返回预测的hscode数据"
+		}
+	]
+}

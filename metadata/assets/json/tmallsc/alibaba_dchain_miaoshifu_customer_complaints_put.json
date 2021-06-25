@@ -1,0 +1,113 @@
+{
+	"name": "alibaba.dchain.miaoshifu.customer.complaints.put",
+	"apiChineseName": "服务商工人客诉数据上传",
+	"description": "数字服务供应链平台提供给服务商上传工人客诉数据",
+	"requestParams": [
+		{
+			"name": "worker_customer_complaint_save_cmd",
+			"type": "WorkerCustomerComplaintSaveCmd",
+			"description": "服务工人客诉对象",
+			"subParams": [
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "商家昵称",
+					"required": true
+				},
+				{
+					"name": "workcard_id",
+					"type": "Number",
+					"description": "工单号",
+					"required": true
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "外部单号"
+				},
+				{
+					"name": "out_type",
+					"type": "Number",
+					"description": "外部单号类型，1：服务商系统工单号，2：CCO系统工单号"
+				},
+				{
+					"name": "id_number",
+					"type": "String",
+					"description": "工人身份证号码",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "客诉类型:1:服务态度,2:服务质量,3:服务时效,4:服务乱收费,5:服务不规范",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "Number",
+					"description": "客诉来源：1：服务商  2：消费者 3：商家",
+					"required": true
+				},
+				{
+					"name": "treatment_measures",
+					"type": "String",
+					"description": "处理措施，解决方案文字描述"
+				},
+				{
+					"name": "idempotent_id",
+					"type": "String",
+					"description": "幂等键，请求唯一标识",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "客诉发起时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "整改完成时间"
+				},
+				{
+					"name": "established",
+					"type": "Number",
+					"description": "是否成立：1：成立，0：不成立",
+					"required": true
+				},
+				{
+					"name": "extend_info",
+					"type": "String",
+					"description": "扩展字段，json对象字符串，如：{\"serviceCode\":\"浴霸安装\"}"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "display_msg",
+			"type": "String",
+			"description": "对外展示的错误信息"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功，true：成功，false失败，当未false时，result_value为null"
+		},
+		{
+			"name": "result_error_code",
+			"type": "String",
+			"description": "错误码，异常返回码"
+		},
+		{
+			"name": "result_value",
+			"type": "Number",
+			"description": "客诉记录唯一标识ID"
+		},
+		{
+			"name": "result_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

@@ -1,0 +1,70 @@
+{
+	"name": "taobao.subway.wordpackage.get",
+	"apiChineseName": "获取词包列表",
+	"description": "获取流量智选、捡漏词包等词包列表",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称",
+			"required": true
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "SiriusItemWordPackageDto []",
+			"description": "词包结果列表",
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "word_package_id",
+					"type": "Number",
+					"description": "词包id",
+					"required": true
+				},
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "词包在线状态（0:关闭，1:开启）",
+					"required": true
+				},
+				{
+					"name": "pc_bid_price",
+					"type": "Number",
+					"description": "pc端出价",
+					"required": true
+				},
+				{
+					"name": "package_type",
+					"type": "Number",
+					"description": "词包类型（1:流量智选，19:捡漏词包）",
+					"required": true
+				},
+				{
+					"name": "word_package_name",
+					"type": "String",
+					"description": "词包名称",
+					"required": true
+				},
+				{
+					"name": "wl_bid_price",
+					"type": "Number",
+					"description": "无线端出价",
+					"required": true
+				}
+			]
+		}
+	]
+}

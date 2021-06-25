@@ -1,0 +1,78 @@
+{
+	"name": "taobao.jst.sms.status.query",
+	"apiChineseName": "聚石塔公众号状态查询",
+	"description": "聚石塔公众号状态查询",
+	"requestParams": [
+		{
+			"name": "official_account_status_query_request",
+			"type": "JstBaseRequest",
+			"description": "公众号状态信息查询请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SmsResponse",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "response_code",
+					"type": "String",
+					"description": "系统异常",
+					"required": true
+				},
+				{
+					"name": "response_success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "SmsStateModel",
+					"description": "返回值",
+					"required": true,
+					"subParams": [
+						{
+							"name": "manufacturer",
+							"type": "String",
+							"description": "品牌",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "1 审核中；2 审核不通过；3 待上线；4 已上线；5 已下线",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "success fail",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "CHANNEL（通道）、PUB（LOGO和名称）",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

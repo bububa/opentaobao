@@ -1,0 +1,62 @@
+{
+	"name": "taobao.fenxiao.product.gradeprice.get",
+	"apiChineseName": "等级折扣查询",
+	"description": "等级折扣查询",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品id",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "skuId"
+		},
+		{
+			"name": "trade_type",
+			"type": "Number",
+			"description": "经、代销模式（1：代销、2：经销）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "操作是否成功"
+		},
+		{
+			"name": "grade_discounts",
+			"type": "GradeDiscount []",
+			"description": "等级折扣列表",
+			"subParams": [
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "skuId"
+				},
+				{
+					"name": "trade_type",
+					"type": "Number",
+					"description": "模式：1-代销、2-经销"
+				},
+				{
+					"name": "discount_type",
+					"type": "Number",
+					"description": "折扣类型：1-等级、2-分销商折扣"
+				},
+				{
+					"name": "discount_id",
+					"type": "Number",
+					"description": "等级ID或分销商ID"
+				},
+				{
+					"name": "price",
+					"type": "Price",
+					"description": "采购价格"
+				}
+			]
+		}
+	]
+}

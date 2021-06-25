@@ -1,0 +1,83 @@
+{
+	"name": "alibaba.aliqin.axb.vendor.sms.intercept",
+	"apiChineseName": "AXB短信托收推送接口",
+	"description": "用于给供应商推送需要托收的短信",
+	"requestParams": [
+		{
+			"name": "sms_intercept_request",
+			"type": "SmsInterceptRequest",
+			"description": "短信托收结构体",
+			"subParams": [
+				{
+					"name": "secret_no",
+					"type": "String",
+					"description": "中间号",
+					"required": true
+				},
+				{
+					"name": "call_no",
+					"type": "String",
+					"description": "短信发送主叫号码",
+					"required": true
+				},
+				{
+					"name": "sms_content",
+					"type": "String",
+					"description": "短信内容，请使用UCS2进行编码",
+					"required": true
+				},
+				{
+					"name": "mt_time",
+					"type": "Date",
+					"description": "短信时间撮",
+					"required": true
+				},
+				{
+					"name": "call_id",
+					"type": "String",
+					"description": "每次呼叫行为和短信行为的唯一ID",
+					"required": true
+				},
+				{
+					"name": "subs_id",
+					"type": "String",
+					"description": "对应阿里侧的绑定关系ID",
+					"required": true
+				},
+				{
+					"name": "vendor_key",
+					"type": "String",
+					"description": "分配给供应商的KEY",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "响应结构体",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "此字段忽略，只用判断code是否为OK",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应的业务CODE：OK代表请求成功，非OK的错误码建议进行重试",
+					"required": true
+				}
+			]
+		}
+	]
+}

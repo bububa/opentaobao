@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.wdk.pos.trade.pay",
+	"apiChineseName": "轻pos品牌营销支付接口",
+	"description": "轻pos场景，外部商家支付后调用开放平台把支付信息回传给五道口交易",
+	"requestParams": [
+		{
+			"name": "pay_request",
+			"type": "FastBuyPosPayRequest",
+			"description": "支付请求",
+			"subParams": [
+				{
+					"name": "alipay_trade_id",
+					"type": "String",
+					"description": "外部支付宝交易号"
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部唯一订单号",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店id"
+				},
+				{
+					"name": "out_shop_code",
+					"type": "String",
+					"description": "外部门店编码"
+				},
+				{
+					"name": "pay_fee",
+					"type": "Number",
+					"description": "实际支付金额"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FastBuyPosPayResult",
+			"description": "支付结果",
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回的错误码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

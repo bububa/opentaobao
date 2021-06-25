@@ -1,0 +1,82 @@
+{
+	"name": "taobao.tanx.creative.add",
+	"apiChineseName": "创意预审新增接口",
+	"description": "创意预审新增接口",
+	"requestParams": [
+		{
+			"name": "member_id",
+			"type": "Number",
+			"description": "DSP的memberId",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "dsp用户身份认证的TOKEN",
+			"required": true
+		},
+		{
+			"name": "sign_time",
+			"type": "Number",
+			"description": "当前时间戳，1970-01-01后的秒数",
+			"required": true
+		},
+		{
+			"name": "creative_id",
+			"type": "String",
+			"description": "创意id",
+			"required": true
+		},
+		{
+			"name": "adboard_type",
+			"type": "String",
+			"description": "广告类目 如果有多个，以逗号分隔",
+			"required": true
+		},
+		{
+			"name": "sensitive_type",
+			"type": "String",
+			"description": "敏感词类目，多个的话以逗号分隔"
+		},
+		{
+			"name": "adboard_data",
+			"type": "String",
+			"description": "创意代码",
+			"required": true
+		},
+		{
+			"name": "destination_url",
+			"type": "String",
+			"description": "目标地址",
+			"required": true
+		},
+		{
+			"name": "adboard_size",
+			"type": "String",
+			"description": "创意尺寸,中间以小写字母x分隔",
+			"required": true
+		},
+		{
+			"name": "creative_package_format",
+			"type": "Number",
+			"description": "创意封装类型：1 Htmlsnippet(pc网页),2 vast-nonlinear（视频暂停）,3vast-linear（视频贴片） 4 vast-companion(视频伴随),5 Html5(无线banner或app)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "调用的成功信息或失败信息"
+		},
+		{
+			"name": "code",
+			"type": "Number",
+			"description": "调用返回码"
+		},
+		{
+			"name": "is_ok",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

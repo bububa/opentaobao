@@ -1,0 +1,60 @@
+{
+	"name": "taobao.ailab.aicloud.smarthome.top.genielink.reportdevice",
+	"apiChineseName": "零配方案上报设备",
+	"description": "零配方案中设备联网成功之后上报设备",
+	"requestParams": [
+		{
+			"name": "vendor_id",
+			"type": "Number",
+			"description": "供应商id"
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备id"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "设备状态，online上线，offline下线"
+		},
+		{
+			"name": "extensions",
+			"type": "String",
+			"description": "保留字段json字符串"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "status_code",
+					"type": "Number",
+					"description": "statusCode",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "result",
+					"required": true
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "exception",
+					"required": true
+				}
+			]
+		}
+	]
+}

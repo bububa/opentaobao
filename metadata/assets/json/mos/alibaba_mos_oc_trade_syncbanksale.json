@@ -1,0 +1,189 @@
+{
+	"name": "alibaba.mos.oc.trade.syncbanksale",
+	"apiChineseName": "云闪付、银行卡销售数据回传接口",
+	"description": "云闪付、银行卡销售数据回传",
+	"requestParams": [
+		{
+			"name": "pos_bank_sale_info_dto",
+			"type": "PosBankSaleInfoDto",
+			"description": "pos云闪付、银行卡销售数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单号，唯一幂等字段",
+					"required": true
+				},
+				{
+					"name": "original_order_id",
+					"type": "String",
+					"description": "原订单号"
+				},
+				{
+					"name": "sequence_no",
+					"type": "String",
+					"description": "小票号",
+					"required": true
+				},
+				{
+					"name": "payment_channel",
+					"type": "String",
+					"description": "支付渠道。001：云闪付、002：银行卡",
+					"required": true
+				},
+				{
+					"name": "card_no",
+					"type": "String",
+					"description": "卡号"
+				},
+				{
+					"name": "trade_time",
+					"type": "String",
+					"description": "交易时间。yyyy-MM-dd HH:mm:ss",
+					"required": true
+				},
+				{
+					"name": "sale_type",
+					"type": "String",
+					"description": "销售类型。0：销售，1：退款退货",
+					"required": true
+				},
+				{
+					"name": "sub_sale_type",
+					"type": "String",
+					"description": "销售类型子类。001：消费，002：撤销，006：退款退货",
+					"required": true
+				},
+				{
+					"name": "trade_amount",
+					"type": "Number",
+					"description": "交易金额。单位：分",
+					"required": true
+				},
+				{
+					"name": "bank_code",
+					"type": "String",
+					"description": "银行编码"
+				},
+				{
+					"name": "bank_name",
+					"type": "String",
+					"description": "银行名字"
+				},
+				{
+					"name": "terminal_no",
+					"type": "String",
+					"description": "终端编号"
+				},
+				{
+					"name": "bank_shop_no",
+					"type": "String",
+					"description": "银行商户号"
+				},
+				{
+					"name": "pos_trace_no",
+					"type": "String",
+					"description": "商户流水号，查询流水号",
+					"required": true
+				},
+				{
+					"name": "batch_no",
+					"type": "String",
+					"description": "批次号"
+				},
+				{
+					"name": "trade_ref_no",
+					"type": "String",
+					"description": "交易参考号，系统跟踪号",
+					"required": true
+				},
+				{
+					"name": "pay_type_no",
+					"type": "Number",
+					"description": "支付类型行号",
+					"required": true
+				},
+				{
+					"name": "store_no",
+					"type": "String",
+					"description": "外部门店号，类似HZ01",
+					"required": true
+				},
+				{
+					"name": "operate_time",
+					"type": "String",
+					"description": "操作时间。yyyy-MM-dd HH:mm:ss",
+					"required": true
+				},
+				{
+					"name": "rback",
+					"type": "String",
+					"description": "冲正标志，供银行卡调账使用，表字段需要，不由接口传入，默认为00"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "cashier",
+					"type": "String",
+					"description": "收银员"
+				},
+				{
+					"name": "ip",
+					"type": "String",
+					"description": "ip地址"
+				},
+				{
+					"name": "mac",
+					"type": "String",
+					"description": "mac地址"
+				},
+				{
+					"name": "communicate_type",
+					"type": "String",
+					"description": "通讯类型。001：网线，002:电话"
+				},
+				{
+					"name": "encrypte_summary",
+					"type": "String",
+					"description": "加密摘要，未脱敏号加密"
+				},
+				{
+					"name": "extend_param",
+					"type": "String",
+					"description": "扩展字段"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "resultDTO",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

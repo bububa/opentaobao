@@ -1,0 +1,43 @@
+{
+	"name": "alibaba.aliqin.flow.publish",
+	"apiChineseName": "流量发放(用户id)",
+	"description": "阿里通信流量下发功能，允许用户补发",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户id",
+			"required": true
+		},
+		{
+			"name": "flow",
+			"type": "String",
+			"description": "流量",
+			"required": true
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "原因",
+			"required": true
+		},
+		{
+			"name": "serial",
+			"type": "String",
+			"description": "唯一流水号（字母+数字）",
+			"required": true
+		},
+		{
+			"name": "always",
+			"type": "String",
+			"description": "设置true为始终发送成功"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "value",
+			"type": "String",
+			"description": "true为成功，其他为失败"
+		}
+	]
+}

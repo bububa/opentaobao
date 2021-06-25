@@ -1,0 +1,19 @@
+{
+	"name": "taobao.simba.account.balance.get",
+	"apiChineseName": "获取实时余额，”元”为单位",
+	"description": "获取实时余额，”元”为单位",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "balance",
+			"type": "String",
+			"description": "实时余额，”元”为单位"
+		}
+	]
+}

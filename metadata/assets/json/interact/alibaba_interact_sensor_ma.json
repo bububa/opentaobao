@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.sensor.ma",
+	"apiChineseName": "码相关API",
+	"description": "码相关API",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "result=0"
+		}
+	]
+}

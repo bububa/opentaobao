@@ -1,0 +1,29 @@
+{
+	"name": "tmall.item.update.simpleschema.get",
+	"apiChineseName": "官网同购编辑商品的get接口",
+	"description": "官网同购编辑商品的get接口",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error",
+			"type": "Boolean",
+			"description": "返回结果"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "商品信息"
+		}
+	]
+}

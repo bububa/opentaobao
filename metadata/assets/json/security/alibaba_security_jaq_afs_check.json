@@ -1,0 +1,43 @@
+{
+	"name": "alibaba.security.jaq.afs.check",
+	"apiChineseName": "反欺诈二次验证接口",
+	"description": "反欺诈二次验证接口",
+	"requestParams": [
+		{
+			"name": "platform",
+			"type": "Number",
+			"description": "上报平台枚举值 1标识Android端 2标识iOS端 3标识PC端及其他",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token，来自客户端上报",
+			"required": true
+		},
+		{
+			"name": "session_id",
+			"type": "String",
+			"description": "会话ID，来自客户端上报",
+			"required": true
+		},
+		{
+			"name": "sig",
+			"type": "String",
+			"description": "签名串，来自客户端上报",
+			"required": true
+		},
+		{
+			"name": "afs_key",
+			"type": "String",
+			"description": "用户接入的时候获取的风控key"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "验证结果"
+		}
+	]
+}

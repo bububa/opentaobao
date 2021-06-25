@@ -1,0 +1,140 @@
+{
+	"name": "taobao.tae.bill.get",
+	"apiChineseName": "tae查询单笔账单明细",
+	"description": "查询单笔账单明细",
+	"requestParams": [
+		{
+			"name": "bid",
+			"type": "Number",
+			"description": "账单编号"
+		},
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "传入需要返回的字段",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "账单编号",
+			"required": true
+		},
+		{
+			"name": "account_id",
+			"type": "Number",
+			"description": "虚拟账户科目编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "bill",
+			"type": "BillDto",
+			"description": "账单明细",
+			"subParams": [
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "账单金额,退款时返回的是负数"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "String",
+					"description": "修改时间"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "0-未支付,1-支付成功,2-支付失败"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "交易子订单编号"
+				},
+				{
+					"name": "biz_time",
+					"type": "Date",
+					"description": "业务时间,订单交易完成的时间"
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "账单金额,退款时返回的是负数"
+				},
+				{
+					"name": "alipay_notice",
+					"type": "String",
+					"description": "支付宝备注"
+				},
+				{
+					"name": "alipay_outno",
+					"type": "String",
+					"description": "支付宝商户订单号"
+				},
+				{
+					"name": "obj_alipay_id",
+					"type": "String",
+					"description": "目标支付宝账户编号"
+				},
+				{
+					"name": "trade_id",
+					"type": "String",
+					"description": "交易订单编号"
+				},
+				{
+					"name": "alipay_id",
+					"type": "String",
+					"description": "支付宝账户编号"
+				},
+				{
+					"name": "account_id",
+					"type": "Number",
+					"description": "科目编号"
+				},
+				{
+					"name": "alipay_mail",
+					"type": "String",
+					"description": "支付宝账户名称"
+				},
+				{
+					"name": "obj_alipay_mail",
+					"type": "String",
+					"description": "目标支付宝账户名称"
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间,收取佣金时支付宝的扣款时间"
+				},
+				{
+					"name": "bid",
+					"type": "Number",
+					"description": "账单编号"
+				},
+				{
+					"name": "book_time",
+					"type": "Date",
+					"description": "记账时间"
+				},
+				{
+					"name": "num_iid",
+					"type": "String",
+					"description": "所属商品编号"
+				},
+				{
+					"name": "alipay_no",
+					"type": "String",
+					"description": "支付宝交易号,暂不提供"
+				}
+			]
+		}
+	]
+}

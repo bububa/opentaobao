@@ -1,0 +1,20 @@
+{
+	"name": "taobao.top.auth.token.refresh",
+	"apiChineseName": "刷新Access Token",
+	"description": "根据refresh_token重新生成token，目前只有服务市场订购类应用可以刷新token，其他类型应用（如商家后台）使用固定时长token，不提供刷新功能。",
+	"requestParams": [
+		{
+			"name": "refresh_token",
+			"type": "String",
+			"description": "grantType==refresh_token 时需要",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "token_result",
+			"type": "Json",
+			"description": "返回的是json信息"
+		}
+	]
+}

@@ -1,0 +1,81 @@
+{
+	"name": "tmall.car.lease.freedownpayment.put",
+	"apiChineseName": "同步直租车免首付商品活动信息",
+	"description": "汽车行业直租车免首付需求中，用与对商品打标，活动范围设置，在消费者端商品详情页、订单等环节透出，表示该商品为直租免首付商品。",
+	"requestParams": [
+		{
+			"name": "pre_end_time",
+			"type": "String",
+			"description": "活动预热结束时间:格式：yyyy.MM.dd HH:mm:ss",
+			"required": true
+		},
+		{
+			"name": "pre_start_time",
+			"type": "String",
+			"description": "活动预热开始时间:格式：yyyy.MM.dd HH:mm:ss",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		},
+		{
+			"name": "time_range_list",
+			"type": "String",
+			"description": "活动时间范围节点(json格式字符串)：\u003cbr/\u003e 开始时间(startTime),格式：yyyy.MM.dd HH:mm:ss \u003cbr/\u003e  结束时间(endTime),格式：yyyy.MM.dd HH:mm:ss \u003cbr/\u003e  名额(amount)",
+			"required": true
+		},
+		{
+			"name": "ref_activity_id",
+			"type": "String",
+			"description": "外部活动ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "当前时间",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "返回对象,成功：true，失败：false",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "耗费时间",
+					"required": true
+				}
+			]
+		}
+	]
+}

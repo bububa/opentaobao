@@ -1,0 +1,268 @@
+{
+	"name": "taobao.wlb.wms.return.order.notify",
+	"apiChineseName": "销售退货通知",
+	"description": "销售退货通知",
+	"requestParams": [
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "ERP单据编码"
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓库编码"
+		},
+		{
+			"name": "order_flag",
+			"type": "String",
+			"description": "用字符串格式来表示订单标记列表：比如VISIT^ SELLER_AFFORD^SYNC_RETURN_BILL 等，中间用“^”来隔开 ----------------------------------------  订单标记list（所有字母全部大写）： 9:VISIT-上门12: SELLER_AFFORD 是否卖家承担运费 默认是，即没 13: SYNC_RETURN_BILL，同时退回发票"
+		},
+		{
+			"name": "prev_order_code",
+			"type": "String",
+			"description": "来源单据号，销售退货时填充原发货的LBX号"
+		},
+		{
+			"name": "tms_service_code",
+			"type": "String",
+			"description": "快递公司编码"
+		},
+		{
+			"name": "tms_order_code",
+			"type": "String",
+			"description": "运单号"
+		},
+		{
+			"name": "return_reason",
+			"type": "String",
+			"description": "销退时请提供退货的原因"
+		},
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "买家昵称"
+		},
+		{
+			"name": "sender_info",
+			"type": "Senderinfowlbwmsreturnordernotify",
+			"description": "发件人信息",
+			"subParams": [
+				{
+					"name": "sender_zip_code",
+					"type": "String",
+					"description": "发件人邮编"
+				},
+				{
+					"name": "sender_province",
+					"type": "String",
+					"description": "发件人省份"
+				},
+				{
+					"name": "sender_city",
+					"type": "String",
+					"description": "发件人城市"
+				},
+				{
+					"name": "sender_area",
+					"type": "String",
+					"description": "发件人区县"
+				},
+				{
+					"name": "sender_town",
+					"type": "String",
+					"description": "发件人镇村"
+				},
+				{
+					"name": "sender_address",
+					"type": "String",
+					"description": "发件人地址"
+				},
+				{
+					"name": "sender_name",
+					"type": "String",
+					"description": "发件人姓名"
+				},
+				{
+					"name": "sender_mobile",
+					"type": "String",
+					"description": "发件人手机，手机与电话二选一传入"
+				},
+				{
+					"name": "sender_phone",
+					"type": "String",
+					"description": "发件人电话"
+				}
+			]
+		},
+		{
+			"name": "receiver_info",
+			"type": "Receiverinfowlbwmsreturnordernotify",
+			"description": "收件人信息",
+			"subParams": [
+				{
+					"name": "receiver_zip_code",
+					"type": "String",
+					"description": "收件人邮编"
+				},
+				{
+					"name": "receiver_province",
+					"type": "String",
+					"description": "收件人省份"
+				},
+				{
+					"name": "receiver_city",
+					"type": "String",
+					"description": "收件人城市"
+				},
+				{
+					"name": "receiver_area",
+					"type": "String",
+					"description": "收件人区县"
+				},
+				{
+					"name": "receiver_town",
+					"type": "String",
+					"description": "收件人镇村"
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "收件人地址"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件人姓名"
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "收件人手机，手机与电话二选一传入"
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "收件人电话"
+				},
+				{
+					"name": "receiver_nick",
+					"type": "String",
+					"description": "收件人名称"
+				}
+			]
+		},
+		{
+			"name": "order_item_list",
+			"type": "Orderitemlistwlbwmsreturnordernotify[]",
+			"description": "商品信息列表",
+			"maxListSize": 50000,
+			"subParams": [
+				{
+					"name": "order_item",
+					"type": "Orderitemwlbwmsreturnordernotify",
+					"description": "1",
+					"subParams": [
+						{
+							"name": "order_item_id",
+							"type": "String",
+							"description": "平台交易订单编码,淘系交易请传入交易单号"
+						},
+						{
+							"name": "order_source_code",
+							"type": "String",
+							"description": "平台交易订单编码,淘系交易请传入交易单号"
+						},
+						{
+							"name": "sub_source_code",
+							"type": "String",
+							"description": "平台交易子订单编码，交易单号传入，子交易编号必填"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "后端商品ID"
+						},
+						{
+							"name": "item_quantity",
+							"type": "Number",
+							"description": "商品数量"
+						},
+						{
+							"name": "extend_fields",
+							"type": "String",
+							"description": "扩展属性, key-value结构，格式要求： 以英文分号“;”分隔每组key-value，以英文冒号“:”分隔key与value。如果value中带有分号，需要转成下划线“_”，如果带有冒号，需要转成中划线“-”"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "extend_fields",
+			"type": "String",
+			"description": "扩展属性, key-value结构，格式要求： 以英文分号“;”分隔每组key-value，以英文冒号“:”分隔key与value。如果value中带有分号，需要转成下划线“_”，如果带有冒号，需要转成中划线“-”"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "order_source",
+			"type": "String",
+			"description": "订单来源 201 淘宝，202 1688，203 苏宁，204 亚马逊中国，205 当当，206 ebay，207 唯品会，208 1号店，209 国美，210 拍拍，211 聚美优品，212 乐峰，214 京东，301 其他"
+		},
+		{
+			"name": "order_type",
+			"type": "String",
+			"description": "订单类型 501 销退入库"
+		},
+		{
+			"name": "owner_user_id",
+			"type": "String",
+			"description": "货主ID"
+		},
+		{
+			"name": "order_create_time",
+			"type": "Date",
+			"description": "ERP订单创建时间"
+		},
+		{
+			"name": "tms_service_name",
+			"type": "String",
+			"description": "快递公司名称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "create_time",
+			"type": "Date",
+			"description": "订单创建时间"
+		},
+		{
+			"name": "store_order_code",
+			"type": "String",
+			"description": "LBX929829111"
+		},
+		{
+			"name": "wl_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "wl_error_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "wl_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

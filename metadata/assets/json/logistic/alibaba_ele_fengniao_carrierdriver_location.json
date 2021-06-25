@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.ele.fengniao.carrierdriver.location",
+	"apiChineseName": "查询骑手当前位置",
+	"description": "查询骑手当前位置",
+	"requestParams": [
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "appid"
+		},
+		{
+			"name": "partner_order_code",
+			"type": "String",
+			"description": "外部订单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "location",
+			"type": "Location",
+			"description": "location",
+			"subParams": [
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度",
+					"required": true
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "纬度",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "state",
+			"type": "Number",
+			"description": "运单状态"
+		},
+		{
+			"name": "carrier_driver_phone",
+			"type": "String",
+			"description": "骑手电话"
+		},
+		{
+			"name": "carrier_driver_name",
+			"type": "String",
+			"description": "骑手姓名"
+		},
+		{
+			"name": "occurred_at",
+			"type": "Number",
+			"description": "运单状态变化时间点"
+		}
+	]
+}

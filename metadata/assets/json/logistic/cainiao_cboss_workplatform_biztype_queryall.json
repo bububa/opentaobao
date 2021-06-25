@@ -1,0 +1,40 @@
+{
+	"name": "cainiao.cboss.workplatform.biztype.queryall",
+	"apiChineseName": "菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型",
+	"description": "菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型。 目前调用者ISV",
+	"requestParams": [
+		{
+			"name": "level",
+			"type": "Number",
+			"description": "level"
+		},
+		{
+			"name": "trade_id",
+			"type": "String",
+			"description": "tradeId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "biz_type_json",
+			"type": "String",
+			"description": "bizTypeJson"
+		},
+		{
+			"name": "res_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "res_error_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "res_error_msg",
+			"type": "String",
+			"description": "errorMsg"
+		}
+	]
+}

@@ -1,0 +1,203 @@
+{
+	"name": "alibaba.ssc.supplyplatform.servicestore.save",
+	"apiChineseName": "保存网点",
+	"description": "网点创建、修改",
+	"requestParams": [
+		{
+			"name": "service_store_save_req",
+			"type": "ServiceStoreSaveForTopReqDTO",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "alipay_account_id_number",
+					"type": "String",
+					"description": "支付宝账号"
+				},
+				{
+					"name": "legal_person_id_card_pic_back",
+					"type": "String",
+					"description": "法人身份证反面l-使用阿里图片服务"
+				},
+				{
+					"name": "service_store_name",
+					"type": "String",
+					"description": "网点名称-唯一",
+					"required": true
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "维度，必须是数字"
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "公司名称"
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展属性，底层必须是map结构"
+				},
+				{
+					"name": "legal_person_id_number",
+					"type": "String",
+					"description": "法人身份证"
+				},
+				{
+					"name": "manager_name",
+					"type": "String",
+					"description": "网点负责人姓名"
+				},
+				{
+					"name": "legal_person_id_card_pic",
+					"type": "String",
+					"description": "法人身份证照片l-使用阿里图片服务"
+				},
+				{
+					"name": "social_credit_code",
+					"type": "String",
+					"description": "统一社会信用代码"
+				},
+				{
+					"name": "address_id",
+					"type": "Number",
+					"description": "网点地址编码经纬度和详细地址id二选一"
+				},
+				{
+					"name": "legal_person_name",
+					"type": "String",
+					"description": "法人姓名"
+				},
+				{
+					"name": "brand_certification",
+					"type": "String",
+					"description": "品牌认证图片url-使用阿里图片服务"
+				},
+				{
+					"name": "service_store_mail",
+					"type": "String",
+					"description": "网点邮箱"
+				},
+				{
+					"name": "manager_phone",
+					"type": "String",
+					"description": "网点负责人电话"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "精度，必须是数字"
+				},
+				{
+					"name": "front_photo",
+					"type": "String",
+					"description": "门头照片-使用阿里图片服务"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "certificated_brand_ids",
+					"type": "String",
+					"description": "认证的天猫品牌id集合-找运营支持"
+				},
+				{
+					"name": "business_hours",
+					"type": "String",
+					"description": "营业时间,小时维度"
+				},
+				{
+					"name": "alipay_account_id",
+					"type": "String",
+					"description": "支付宝账号id"
+				},
+				{
+					"name": "alipay_account",
+					"type": "String",
+					"description": "支付宝账号注册的信息--如用手机号或者邮箱"
+				},
+				{
+					"name": "service_store_code",
+					"type": "String",
+					"description": "网点code和网点id选其一"
+				},
+				{
+					"name": "license_photo",
+					"type": "String",
+					"description": "营业执照照片-使用阿里图片服务"
+				},
+				{
+					"name": "alipay_account_name",
+					"type": "String",
+					"description": "支付宝账号真实姓名"
+				},
+				{
+					"name": "service_store_id",
+					"type": "Number",
+					"description": "网点id和网点code选其一"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "对外服务电话"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对外展示的错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "ServiceStoreCreateDto",
+					"description": "返回对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "service_store_id",
+							"type": "Number",
+							"description": "网点id",
+							"required": true
+						},
+						{
+							"name": "secret",
+							"type": "String",
+							"description": "秘钥--内嵌核销页面使用",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,59 @@
+{
+	"name": "taobao.ailab.aicloud.top.device.settings.reset",
+	"apiChineseName": "重置设备个性化设置",
+	"description": "重置设备个性化设置",
+	"requestParams": [
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id"
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		},
+		{
+			"name": "param1",
+			"type": "String",
+			"description": "设备id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "业务结果是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "网络请求是否成功"
+		},
+		{
+			"name": "extend_info",
+			"type": "String",
+			"description": "扩展字段"
+		}
+	]
+}

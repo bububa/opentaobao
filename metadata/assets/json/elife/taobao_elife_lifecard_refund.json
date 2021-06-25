@@ -1,0 +1,82 @@
+{
+	"name": "taobao.elife.lifecard.refund",
+	"apiChineseName": "品牌惠卡券冲正退还",
+	"description": "淘宝生活汇消费卡虚拟卡，线下冲正退货接口",
+	"requestParams": [
+		{
+			"name": "refund_request",
+			"type": "RefundRequest",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "金额分",
+					"required": true
+				},
+				{
+					"name": "op_id",
+					"type": "String",
+					"description": "操作流水号, 商家全系统唯一",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "收银员名称"
+				},
+				{
+					"name": "original_op_id",
+					"type": "String",
+					"description": "原正向核销交易的流水号",
+					"required": true
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "门店编号",
+					"required": true
+				},
+				{
+					"name": "pay_code",
+					"type": "String",
+					"description": "原正向核销交易的核销码",
+					"required": true
+				},
+				{
+					"name": "sale_ticket",
+					"type": "String",
+					"description": "原正向核销交易的小票信息"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "返回码，成功为空"
+		},
+		{
+			"name": "amount",
+			"type": "Number",
+			"description": "本金"
+		},
+		{
+			"name": "inflate_amount",
+			"type": "Number",
+			"description": "膨胀金"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "successed",
+			"type": "Boolean",
+			"description": "成功失败标志"
+		}
+	]
+}

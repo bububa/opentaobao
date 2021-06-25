@@ -1,0 +1,244 @@
+{
+	"name": "alibaba.alsc.crm.menu.list",
+	"apiChineseName": "获取特价菜单",
+	"description": "获取特价菜单",
+	"requestParams": [
+		{
+			"name": "menu_open_req",
+			"type": "MenuOpenReq",
+			"description": "获取特价菜单请求参数",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID"
+				},
+				{
+					"name": "deleted",
+					"type": "Boolean",
+					"description": "已删除数据"
+				},
+				{
+					"name": "need_count",
+					"type": "Boolean",
+					"description": "是否需要总数"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "第几页,从1开始计数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小，默认20"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "SaaS门店ID"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "String",
+					"description": "最后修改时间"
+				},
+				{
+					"name": "last_id",
+					"type": "String",
+					"description": "最后ID"
+				},
+				{
+					"name": "menu_id",
+					"type": "String",
+					"description": "特价菜单ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Json",
+					"description": "当前页码",
+					"required": true
+				},
+				{
+					"name": "has_next_page",
+					"type": "Boolean",
+					"description": "是否有下一页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Json",
+					"description": "当前每页显示数量",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果显示",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Json",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "total_size",
+					"type": "Json",
+					"description": "总数量",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "MenuOpenInfo[]",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "effect_end",
+							"type": "String",
+							"description": "生效时段结束",
+							"required": true
+						},
+						{
+							"name": "effect_start",
+							"type": "String",
+							"description": "生效时段起始",
+							"required": true
+						},
+						{
+							"name": "menu_id",
+							"type": "String",
+							"description": "特价菜单id",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "特价菜单名称",
+							"required": true
+						},
+						{
+							"name": "pro_discount",
+							"type": "String",
+							"description": "统一折扣价",
+							"required": true
+						},
+						{
+							"name": "pro_mode",
+							"type": "String",
+							"description": "特价模式：统一折扣、不同菜不同折扣",
+							"required": true
+						},
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "是否逻辑删除",
+							"required": true
+						},
+						{
+							"name": "menu_detail_open_info_list",
+							"type": "MenuDetailOpenInfo[]",
+							"description": "菜品集合",
+							"required": true,
+							"subParams": [
+								{
+									"name": "pro_discount",
+									"type": "String",
+									"description": "折扣率",
+									"required": true
+								},
+								{
+									"name": "pro_type",
+									"type": "String",
+									"description": "0-折扣，1-固定价",
+									"required": true
+								},
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "规格ID",
+									"required": true
+								},
+								{
+									"name": "dish_out_no",
+									"type": "String",
+									"description": "外部规菜品D",
+									"required": true
+								},
+								{
+									"name": "sku_out_no",
+									"type": "String",
+									"description": "外部规则ID",
+									"required": true
+								},
+								{
+									"name": "dish_id",
+									"type": "String",
+									"description": "菜品ID",
+									"required": true
+								},
+								{
+									"name": "pro_price",
+									"type": "Number",
+									"description": "固定价",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

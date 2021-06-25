@@ -1,0 +1,29 @@
+{
+	"name": "alibaba.scbp.tag.list",
+	"apiChineseName": "查询所有分组",
+	"description": "查询所有分组",
+	"responseParams": [
+		{
+			"name": "tag_list",
+			"type": "TagGroup []",
+			"description": "所有分组",
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "分组名称"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "分组ID，不对外暴露"
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "关键词数"
+				}
+			]
+		}
+	]
+}

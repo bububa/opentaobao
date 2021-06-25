@@ -1,0 +1,68 @@
+{
+	"name": "taobao.logistics.trace.search",
+	"apiChineseName": "物流流转信息查询",
+	"description": "用户根据淘宝交易号查询物流流转信息，如2010-8-10 15：23：00到达杭州集散地。\u003cbr/\u003e此接口的返回信息都由物流公司提供。（备注：使用线下发货（offline.send）的运单，不支持运单状态的实时跟踪，只要一发货，状态就会变为\u003cstatus\u003e对方已签收\u003c/status\u003e，该字段仅对线上发货（online.send）的运单有效。）",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "淘宝交易号，请勿传非淘宝交易号",
+			"required": true
+		},
+		{
+			"name": "is_split",
+			"type": "Number",
+			"description": "表明是否是拆单，默认值0，1表示拆单"
+		},
+		{
+			"name": "sub_tid",
+			"type": "Number[]",
+			"description": "拆单子订单列表，当is_split=1时，需要传人；对应的数据是：子订单号的列表。",
+			"maxListSize": 50
+		}
+	],
+	"responseParams": [
+		{
+			"name": "out_sid",
+			"type": "String",
+			"description": "运单号"
+		},
+		{
+			"name": "company_name",
+			"type": "String",
+			"description": "物流公司名称"
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易号"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "订单的物流状态（仅支持线上发货online订单，线下发货offline发出后直接变为已签收）\n* 等候发送给物流公司\n*已提交给物流公司,等待物流公司接单\n*已经确认消息接收，等待物流公司接单\n*物流公司已接单\n*物流公司不接单\n*物流公司揽收失败\n*物流公司揽收成功\n*签收失败\n*对方已签收\n*对方拒绝签收"
+		},
+		{
+			"name": "trace_list",
+			"type": "TransitStepInfo []",
+			"description": "流转信息列表",
+			"subParams": [
+				{
+					"name": "status_time",
+					"type": "String",
+					"description": "状态发生的时间"
+				},
+				{
+					"name": "status_desc",
+					"type": "String",
+					"description": "状态描述"
+				},
+				{
+					"name": "action",
+					"type": "String",
+					"description": "节点说明 ，指明当前节点揽收、派送，签收。"
+				}
+			]
+		}
+	]
+}

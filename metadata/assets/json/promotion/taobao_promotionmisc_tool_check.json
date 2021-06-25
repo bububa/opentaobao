@@ -1,0 +1,58 @@
+{
+	"name": "taobao.promotionmisc.tool.check",
+	"apiChineseName": "UMP工具检测",
+	"description": "UMP工具检测。ISV通过该接口检测（通过taobao.ump.tool.add）创建的UMP工具（tool）是否符合规范，如果不符合，则返回错误信息和对应的解决方案的；工具检测通过后才可以提交工具审核邮件，提交工具审核时，需提供该接口的返回值。",
+	"requestParams": [
+		{
+			"name": "tool_id",
+			"type": "Number",
+			"description": "工具ID, taobao.ump.tool.add成功后返回的id。",
+			"required": true,
+			"minValue": 10
+		},
+		{
+			"name": "meta_allow",
+			"type": "String",
+			"description": "可使用的元数据。PRD审核后，会告诉isv可使用的元数据。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "check_tool_module",
+			"type": "CheckToolModule",
+			"description": "工具审核结果。",
+			"subParams": [
+				{
+					"name": "is_pass",
+					"type": "String",
+					"description": "工具是否检测通过。"
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "工具检测结果中的错误信息。"
+				},
+				{
+					"name": "meta_def",
+					"type": "String",
+					"description": "工具中已经使用的元数据。"
+				},
+				{
+					"name": "check_url",
+					"type": "String",
+					"description": "工具审核的URL，工具检测通过后，ISV需要把该URL和工具基本信息一起提交UMP工具技术审核。"
+				}
+			]
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "工具检测动作是否成功。检测是否通过请查看返回值default_model里的is_pass。"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "接口调用错误信息描述。"
+		}
+	]
+}

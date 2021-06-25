@@ -1,0 +1,44 @@
+{
+	"name": "alibaba.tcls.aelophy.refund.disagree",
+	"apiChineseName": "saas 售后逆向 商户拒绝用户逆向申请",
+	"description": "saas 售后逆向 商户拒绝用户逆向申请",
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "String",
+			"description": "退款单ID"
+		},
+		{
+			"name": "reject_reason",
+			"type": "String",
+			"description": "拒绝原因"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回码说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,35 @@
+{
+	"name": "cainiao.bim.tradeorder.consign",
+	"apiChineseName": "驱动保税交易订单发货",
+	"description": "驱动保税交易订单发货",
+	"requestParams": [
+		{
+			"name": "trade_id",
+			"type": "String",
+			"description": "交易单号",
+			"required": true
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓储编码，ERP指定仓库发货时需要传值，编码由菜鸟提供"
+		},
+		{
+			"name": "res_id",
+			"type": "String",
+			"description": "选择的线路ID非必填字段"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "store_order_code",
+			"type": "String",
+			"description": "菜鸟仓库作业单据号"
+		},
+		{
+			"name": "lg_order_code",
+			"type": "String",
+			"description": "菜鸟物流订单号,格式为LP开头"
+		}
+	]
+}

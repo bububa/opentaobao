@@ -1,0 +1,58 @@
+{
+	"name": "taobao.nlp.similarity",
+	"apiChineseName": "文本语言相似度",
+	"description": "文本语言相似度计算，提供余弦距离、编辑距离和simHash三种相似度计算。返回文本相似度区间为0-1之间，0为完全不相似，1为完全相似。",
+	"requestParams": [
+		{
+			"name": "texts",
+			"type": "Texts",
+			"description": "多文本内容",
+			"required": true,
+			"subParams": [
+				{
+					"name": "id",
+					"type": "String",
+					"description": "业务处理ID",
+					"required": true
+				},
+				{
+					"name": "content_src",
+					"type": "String",
+					"description": "文本相似度匹配文本",
+					"required": true
+				},
+				{
+					"name": "content_dst",
+					"type": "String",
+					"description": "文本相似度匹配文本内容模板",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "文本相似度匹配类型：1为余弦距离，2为编辑距离，3为simHash距离",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "simresult",
+			"type": "SimResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "top_result",
+					"type": "String",
+					"description": "返回文本处理内容"
+				},
+				{
+					"name": "top_status",
+					"type": "Boolean",
+					"description": "返回结果为true则运行成功，为false则运行失败"
+				}
+			]
+		}
+	]
+}

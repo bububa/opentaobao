@@ -1,0 +1,61 @@
+{
+	"name": "taobao.traderate.add",
+	"apiChineseName": "新增单个评价",
+	"description": "新增单个评价(\u003cfont color=\"red\"\u003e注：在评价之前需要对订单成功的时间进行判定（end_time）,如果超过15天，不能再通过该接口进行评价\u003c/font\u003e)",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易ID",
+			"required": true
+		},
+		{
+			"name": "oid",
+			"type": "Number",
+			"description": "子订单ID"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "评价结果,可选值:good(好评),neutral(中评),bad(差评)",
+			"required": true
+		},
+		{
+			"name": "role",
+			"type": "String",
+			"description": "评价者角色,可选值:seller(卖家),buyer(买家)",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "评价内容,最大长度: 500个汉字 .注意：当评价结果为good时就不用输入评价内容.评价内容为neutral/bad的时候需要输入评价内容"
+		},
+		{
+			"name": "anony",
+			"type": "Boolean",
+			"description": "是否匿名,卖家评不能匿名。可选值:true(匿名),false(非匿名)。注意：如果交易订单匿名，则评价也匿名"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trade_rate",
+			"type": "TradeRateRequest",
+			"description": "返回tid、oid、create",
+			"subParams": [
+				{
+					"name": "created",
+					"type": "Date"
+				},
+				{
+					"name": "oid",
+					"type": "Number"
+				},
+				{
+					"name": "tid",
+					"type": "Number"
+				}
+			]
+		}
+	]
+}

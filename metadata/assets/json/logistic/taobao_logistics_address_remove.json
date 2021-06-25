@@ -1,0 +1,27 @@
+{
+	"name": "taobao.logistics.address.remove",
+	"apiChineseName": "删除卖家地址库",
+	"description": "用此接口删除卖家地址库",
+	"requestParams": [
+		{
+			"name": "contact_id",
+			"type": "Number",
+			"description": "地址库ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "address_result",
+			"type": "AddressResult",
+			"description": "只返回修改日期modify_date",
+			"subParams": [
+				{
+					"name": "modify_date",
+					"type": "Date",
+					"description": "修改日期时间"
+				}
+			]
+		}
+	]
+}

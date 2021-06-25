@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.wdk.pos.trade.reverse",
+	"apiChineseName": "轻pos品牌营销退款接口",
+	"description": "轻pos品牌营销场景，商家调用退款接口",
+	"requestParams": [
+		{
+			"name": "reverse_request",
+			"type": "FastBuyPosReverseRequest",
+			"description": "退款请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部唯一订单号",
+					"required": true
+				},
+				{
+					"name": "out_refund_id",
+					"type": "String",
+					"description": "外部退款单号",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店id"
+				},
+				{
+					"name": "operator_num",
+					"type": "String",
+					"description": "退款操作员工工号"
+				},
+				{
+					"name": "refund_alipay_trade_id",
+					"type": "String",
+					"description": "逆向支付宝交易号，对账使用"
+				},
+				{
+					"name": "out_shop_code",
+					"type": "String",
+					"description": "外部门店编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FastBuyPosReverseResult",
+			"description": "退款结果",
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回的错误码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回的错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口是否成功",
+					"required": true
+				},
+				{
+					"name": "result_status",
+					"type": "Number",
+					"description": "退款状态: 1为成功,2为失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

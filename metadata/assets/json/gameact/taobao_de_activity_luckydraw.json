@@ -1,0 +1,164 @@
+{
+	"name": "taobao.de.activity.luckydraw",
+	"apiChineseName": "抽奖",
+	"description": "用于激励平台对外提供抽奖功能，包括但不限于集分宝、红包、宝点、淘金币、淘彩票等",
+	"requestParams": [
+		{
+			"name": "event_key",
+			"type": "String",
+			"description": "运营和cp约定的事件唯一标示",
+			"required": true
+		},
+		{
+			"name": "sequence_id",
+			"type": "Number",
+			"description": "时间戳",
+			"required": true
+		},
+		{
+			"name": "account_id",
+			"type": "String",
+			"description": "用户的串ID"
+		},
+		{
+			"name": "machine_id",
+			"type": "String",
+			"description": "机器设备号",
+			"required": true
+		},
+		{
+			"name": "confirm_key",
+			"type": "String",
+			"description": "确认签名key"
+		},
+		{
+			"name": "behavior_key",
+			"type": "String",
+			"description": "行为Key"
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "渠道"
+		},
+		{
+			"name": "market",
+			"type": "String",
+			"description": "使用市场"
+		},
+		{
+			"name": "device_model",
+			"type": "String",
+			"description": "盒型号"
+		},
+		{
+			"name": "distrib_channel",
+			"type": "String",
+			"description": "魔盒分发渠道"
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "魔盒UUID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "award_v_o",
+			"type": "AwardVO",
+			"description": "中奖奖品",
+			"subParams": [
+				{
+					"name": "award_id",
+					"type": "Number",
+					"description": "奖品id"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "活动名称"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动id"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "1:集分宝 2：红包 3：彩票 4：宝点  5：淘金币"
+				},
+				{
+					"name": "type_name",
+					"type": "String",
+					"description": "根据类型展示不同的名称"
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "数量"
+				},
+				{
+					"name": "unit",
+					"type": "String",
+					"description": "发奖单位"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "单位为分"
+				},
+				{
+					"name": "simple_desc",
+					"type": "String",
+					"description": "简短描述"
+				},
+				{
+					"name": "full_desc",
+					"type": "String",
+					"description": "完整描述"
+				},
+				{
+					"name": "hyperlink_desc",
+					"type": "String",
+					"description": "超链文案"
+				},
+				{
+					"name": "hyperlink_url",
+					"type": "String",
+					"description": "超链url"
+				},
+				{
+					"name": "serial_number",
+					"type": "String",
+					"description": "加密串，对外流水号"
+				},
+				{
+					"name": "group_code",
+					"type": "Number",
+					"description": "分组编码"
+				},
+				{
+					"name": "group_desc",
+					"type": "String",
+					"description": "分组描述"
+				}
+			]
+		},
+		{
+			"name": "is_lucky",
+			"type": "Boolean",
+			"description": "123"
+		},
+		{
+			"name": "total_amount",
+			"type": "Number",
+			"description": "数娱积分/金牌余额"
+		},
+		{
+			"name": "access_amount",
+			"type": "Number",
+			"description": "可用抽奖次数"
+		}
+	]
+}

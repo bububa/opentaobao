@@ -1,0 +1,111 @@
+{
+	"name": "taobao.rdc.aligenius.warehouse.resend.logistics.msg.post",
+	"apiChineseName": "补发单物流信息回传",
+	"description": "补发单erp物流信息回传平台",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "SendResendLogisticsMsgDto",
+			"description": "参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号"
+				},
+				{
+					"name": "goods_item_list",
+					"type": "GoodsItem[]",
+					"description": "该运单所包含的货品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "oid",
+							"type": "Number",
+							"description": "子订单编号"
+						},
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "货品数量",
+							"required": true
+						},
+						{
+							"name": "goods_id",
+							"type": "String",
+							"description": "货品ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "运单状态（-1=废单，1=已下发）",
+					"required": true
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "主订单",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "描述",
+					"required": true
+				},
+				{
+					"name": "biz_id",
+					"type": "String",
+					"description": "发货单唯一标识"
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "物流公司名称"
+				},
+				{
+					"name": "source_id",
+					"type": "String",
+					"description": "平台补发单唯一标识",
+					"required": true
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "成功发货的发货单运单号，菜鸟为LP单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "fail_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "fail_code",
+					"type": "String",
+					"description": "错误code",
+					"required": true
+				},
+				{
+					"name": "success_flag",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

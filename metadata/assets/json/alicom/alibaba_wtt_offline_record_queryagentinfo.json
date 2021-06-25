@@ -1,0 +1,102 @@
+{
+	"name": "alibaba.wtt.offline.record.queryagentinfo",
+	"apiChineseName": "线下推广充送等业务订单来源",
+	"description": "线下推广充送等业务订单来源的查询接口",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "淘宝订单号",
+			"required": true
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "业务号码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "OfflineOrderRecordExtInfo",
+					"description": "接口返回报文体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "agent_info_adress",
+							"type": "String",
+							"description": "网点地址",
+							"required": true
+						},
+						{
+							"name": "agent_info_name",
+							"type": "String",
+							"description": "网点名称",
+							"required": true
+						},
+						{
+							"name": "agent_info_id",
+							"type": "Number",
+							"description": "网点id",
+							"required": true
+						},
+						{
+							"name": "phone_no",
+							"type": "String",
+							"description": "客户经理联系电话",
+							"required": true
+						},
+						{
+							"name": "agent_name",
+							"type": "String",
+							"description": "客户经理姓名",
+							"required": true
+						},
+						{
+							"name": "agent_id",
+							"type": "Number",
+							"description": "客户经理id",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "地市",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "接口返回描述",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "接口返回码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

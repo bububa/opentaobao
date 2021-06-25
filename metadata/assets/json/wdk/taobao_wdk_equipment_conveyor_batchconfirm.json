@@ -1,0 +1,45 @@
+{
+	"name": "taobao.wdk.equipment.conveyor.batchconfirm",
+	"apiChineseName": "五道口悬挂链信息批量确认",
+	"description": "批量消息确认",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "仓库code"
+		},
+		{
+			"name": "uuids",
+			"type": "String[]",
+			"description": "待确认的uuid列表",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopWcsResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

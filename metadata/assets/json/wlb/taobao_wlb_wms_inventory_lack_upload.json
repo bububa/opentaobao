@@ -1,0 +1,90 @@
+{
+	"name": "taobao.wlb.wms.inventory.lack.upload",
+	"apiChineseName": "缺货通知",
+	"description": "缺货通知",
+	"requestParams": [
+		{
+			"name": "content",
+			"type": "WlbWmsInventoryLackUpload",
+			"description": "缺货通知信息",
+			"subParams": [
+				{
+					"name": "create_time",
+					"type": "String",
+					"description": "创建时间"
+				},
+				{
+					"name": "out_biz_code",
+					"type": "String",
+					"description": "外部业务编码;消息ID，用于去重"
+				},
+				{
+					"name": "store_order_code",
+					"type": "String",
+					"description": "仓储订单编码"
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "订单编码"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "item_list",
+					"type": "ItemListWlbWmsInventoryLackUpload[]",
+					"description": "商品信息列表",
+					"subParams": [
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "报缺原因（系统报缺，实物报缺）"
+						},
+						{
+							"name": "item_qty",
+							"type": "Number",
+							"description": "应发商品数量"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "后端商品ID"
+						},
+						{
+							"name": "lack_qty",
+							"type": "Number",
+							"description": "商品缺货数量"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "WlbWmsInventoryLackUploadResp",
+			"description": "缺货回告",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,214 @@
+{
+	"name": "alibaba.wdk.marketing.itempool.createactivity",
+	"apiChineseName": "添加商品池活动",
+	"description": "添加商品池活动",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "ItemPoolActivity",
+			"description": "创建活动请求入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "limit_info",
+					"type": "LimitInfo",
+					"description": "通用限购信息，-1为不限制，默认为不限制",
+					"subParams": [
+						{
+							"name": "daily_limit_cnt",
+							"type": "Number",
+							"description": "活动每日总限购"
+						},
+						{
+							"name": "user_daily_limit_cnt",
+							"type": "Number",
+							"description": "每人每日限购"
+						},
+						{
+							"name": "user_limit_cnt",
+							"type": "Number",
+							"description": "每人活动期间总限购"
+						},
+						{
+							"name": "total_limit_cnt",
+							"type": "Number",
+							"description": "活动期间总限购"
+						}
+					]
+				},
+				{
+					"name": "terminals",
+					"type": "Number[]",
+					"description": "优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "参加活动的渠道店ids",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "活动结束时间，时间戳",
+					"required": true
+				},
+				{
+					"name": "rule_stairs",
+					"type": "Rulestairs[]",
+					"description": "商品池活动的梯度列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "enable_multiple",
+							"type": "Boolean",
+							"description": "活动是否上不封顶"
+						},
+						{
+							"name": "amount_at",
+							"type": "Boolean",
+							"description": "是否使用满元条件，不能与满件、N件Y折同时使用。此选项为true时，countAt和countBegin必须为false"
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "满多少元[单位为分，传入700，代表满7元]，amountAt为true时，必须设置"
+						},
+						{
+							"name": "count_at",
+							"type": "Boolean",
+							"description": "是否使用满件条件，不能与满元、N件Y折同时使用。此选项为true时，countBegin和amountAt必须为false"
+						},
+						{
+							"name": "count_begin",
+							"type": "Boolean",
+							"description": "是否使用N件Y折或N件Y元，不能与满元、满件同时使用。此选项为true时，countAt和amountAt必须为false"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "满多少件或者第多少件开始参与活动[传入4，代表满4件打折或者第4件打折]。该值与countBegin和countAt相关，如果countBegin为true，则为N件Y折活动，如果countAt为true，则为满件活动"
+						},
+						{
+							"name": "decrease",
+							"type": "Boolean",
+							"description": "是否使用减钱功能，不能与打折功能同时使用，此选项为true时，discount必须为false"
+						},
+						{
+							"name": "decrease_money",
+							"type": "Number",
+							"description": "减多少元[单位为分，传入700，代表减7元]，decrease为true时，必须设置"
+						},
+						{
+							"name": "discount",
+							"type": "Boolean",
+							"description": "是否使用打折功能，不能与减钱功能同时使用，此选项为true时，decrease必须为false"
+						},
+						{
+							"name": "discount_rate",
+							"type": "Number",
+							"description": "打几折[单位为分，传入900，代表打9折]，discount为true时，必须设置"
+						},
+						{
+							"name": "can_extra_item_num",
+							"type": "Number",
+							"description": "可换购的数量"
+						},
+						{
+							"name": "is_exchange",
+							"type": "Boolean",
+							"description": "是否为换购活动"
+						},
+						{
+							"name": "fix_price",
+							"type": "Boolean",
+							"description": "是否一口价"
+						},
+						{
+							"name": "fix_price_amount",
+							"type": "Number",
+							"description": "一口价[单位为分]"
+						}
+					]
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间，时间戳",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "商品池活动详情描述,不超过30个英文字符",
+					"required": true
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "商品池活动名称,不超过10个英文字符",
+					"required": true
+				},
+				{
+					"name": "member_limit",
+					"type": "Number",
+					"description": "会员维度活动参与人群限制：-1:不限制 1:会员专享 2:非会员专享"
+				},
+				{
+					"name": "merchant_crowd_code",
+					"type": "String",
+					"description": "商家人群编码"
+				},
+				{
+					"name": "txd_crowd_code",
+					"type": "String",
+					"description": "淘鲜达人群编码"
+				},
+				{
+					"name": "is_category",
+					"type": "Boolean",
+					"description": "是否是类目活动"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "创建活动返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "创建成功时会返回五道口活动id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "创建活动是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

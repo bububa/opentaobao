@@ -1,0 +1,12 @@
+{
+	"name": "account.aliyuncs.com.ListAppkeyByOwnerAndBid.2013-07-01",
+	"apiChineseName": "根据渠道id和状态列出appkey",
+	"description": "根据渠道id和状态列出appkey",
+	"responseParams": [
+		{
+			"name": "result_data",
+			"type": "String",
+			"description": "return result"
+		}
+	]
+}

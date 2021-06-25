@@ -1,0 +1,55 @@
+{
+	"name": "alibaba.alihealth.nr.trade.medical.insurance.get",
+	"apiChineseName": "阿里健康医保支付信息获取",
+	"description": "阿里健康医保支付信息获取",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "淘宝订单ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResponseResult",
+			"description": "返回值总",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "MedicalInsurancePaymentDto",
+					"description": "返回值=数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "fund_bill_list",
+							"type": "FundBillDto[]",
+							"description": "医保支付金额信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "fund_channel",
+									"type": "String",
+									"description": "支付渠道代码",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "金额",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "industry_sepc_detail",
+							"type": "String",
+							"description": "医保局返回的医保支付内容",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

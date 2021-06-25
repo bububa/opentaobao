@@ -1,0 +1,72 @@
+{
+	"name": "alipay.baoxian.claim.survey.conclusion.submit",
+	"apiChineseName": "保险退货服务商勘察结论提交接口",
+	"description": "保险退货服务商提交勘察结论",
+	"requestParams": [
+		{
+			"name": "facilitator_survey_conclusions",
+			"type": "InsFacilitatorSurveyConclusionDto[]",
+			"description": "勘察结论",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "biz_no",
+					"type": "String",
+					"description": "业务单号"
+				},
+				{
+					"name": "logistics_no",
+					"type": "String",
+					"description": "物流单号"
+				},
+				{
+					"name": "survey_attachments",
+					"type": "String",
+					"description": "勘察附件"
+				},
+				{
+					"name": "survey_conclusion",
+					"type": "String",
+					"description": "勘察结论"
+				},
+				{
+					"name": "survey_conclusion_desc",
+					"type": "String",
+					"description": "勘察结论描述"
+				},
+				{
+					"name": "extend_info",
+					"type": "String",
+					"description": "扩展参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AliSceneResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "biz_error_code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "biz_error_msg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

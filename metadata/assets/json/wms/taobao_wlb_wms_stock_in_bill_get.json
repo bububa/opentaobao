@@ -1,0 +1,134 @@
+{
+	"name": "taobao.wlb.wms.stock.in.bill.get",
+	"apiChineseName": "获取入库单信息",
+	"description": "获取入库单信息",
+	"requestParams": [
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "ERP订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据"
+		},
+		{
+			"name": "cn_order_code",
+			"type": "String",
+			"description": "菜鸟订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "stock_in_info",
+			"type": "CainiaoStockInBillStockininfo",
+			"description": "入库单信息",
+			"subParams": [
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "ERP订单号"
+				},
+				{
+					"name": "cn_order_code",
+					"type": "String",
+					"description": "菜鸟订单编码"
+				},
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "单据类型：  904 普通入库 306 B2B入库单 601 采购入库"
+				},
+				{
+					"name": "confirm_time",
+					"type": "Date",
+					"description": "仓库订单完成时间"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "入库单状态 WMS_ACCEPT 接单成功 WMS_REJECT 接单失败WMS_CONFIRMED 仓库生产完成"
+				},
+				{
+					"name": "order_item_list",
+					"type": "CainiaoStockInBillOrderitemlist[]",
+					"description": "入库单信息",
+					"subParams": [
+						{
+							"name": "order_item",
+							"type": "CainiaoStockInBillOrderitem",
+							"description": "入库单信息",
+							"subParams": [
+								{
+									"name": "order_item_id",
+									"type": "String",
+									"description": "ERP订单明细ID"
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品ID"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "商家编码"
+								},
+								{
+									"name": "apply_qty",
+									"type": "Number",
+									"description": "通知数量"
+								},
+								{
+									"name": "inventory_item_list",
+									"type": "CainiaoStockInBillInventoryitemlist[]",
+									"description": "仓库收货商品信息",
+									"subParams": [
+										{
+											"name": "inventory_item",
+											"type": "CainiaoStockInBillInventoryitem",
+											"description": "仓库收货商品信息",
+											"subParams": [
+												{
+													"name": "inventory_type",
+													"type": "Number",
+													"description": "库存类型1 可销售库存 101残次品"
+												},
+												{
+													"name": "item_qty",
+													"type": "Number",
+													"description": "数量"
+												},
+												{
+													"name": "due_date",
+													"type": "Date",
+													"description": "商品保质期信息，失效日期"
+												},
+												{
+													"name": "produce_date",
+													"type": "Date",
+													"description": "商品保质期信息，生产日期"
+												},
+												{
+													"name": "produce_code",
+													"type": "String",
+													"description": "生产编码，同一商品可能因商家不同有不同编码"
+												},
+												{
+													"name": "produce_area",
+													"type": "String",
+													"description": "生产地区，仓库采集的商品信息，供记录参考"
+												},
+												{
+													"name": "batch_code",
+													"type": "String",
+													"description": "批次号"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

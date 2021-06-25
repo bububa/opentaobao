@@ -1,0 +1,116 @@
+{
+	"name": "taobao.fenxiao.requisitions.get",
+	"apiChineseName": "合作申请查询",
+	"description": "合作申请查询",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "申请状态（1-申请中、2-成功、3-被退回、4-已撤消、5-过期）"
+		},
+		{
+			"name": "apply_start",
+			"type": "Date",
+			"description": "申请开始时间yyyy-MM-dd"
+		},
+		{
+			"name": "apply_end",
+			"type": "Date",
+			"description": "申请结束时间yyyy-MM-dd"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码（大于0的整数，默认1）"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页记录数（默认20，最大50）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "操作是否成功"
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "结果记录数"
+		},
+		{
+			"name": "requisitions",
+			"type": "Requisition []",
+			"description": "合作申请",
+			"subParams": [
+				{
+					"name": "requisition_id",
+					"type": "Number",
+					"description": "合作申请ID"
+				},
+				{
+					"name": "distributor_id",
+					"type": "Number",
+					"description": "分销商id"
+				},
+				{
+					"name": "distributor_nick",
+					"type": "String",
+					"description": "分销商nick"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "申请状态（1-申请中、2-成功、3-被退回、4-已撤消、5-过期）"
+				},
+				{
+					"name": "dist_is_xiaobao",
+					"type": "Number",
+					"description": "是否消保(0-不是、1-是)"
+				},
+				{
+					"name": "dist_shop_address",
+					"type": "String",
+					"description": "店铺地址"
+				},
+				{
+					"name": "dist_level",
+					"type": "Number",
+					"description": "店铺星级"
+				},
+				{
+					"name": "dist_appraise",
+					"type": "Number",
+					"description": "好评率"
+				},
+				{
+					"name": "dist_open_date",
+					"type": "Date",
+					"description": "开店时间"
+				},
+				{
+					"name": "dist_category",
+					"type": "Number",
+					"description": "主营类目"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "申请时间"
+				},
+				{
+					"name": "dist_message",
+					"type": "String",
+					"description": "分销申请加盟时，给供应商的留言"
+				},
+				{
+					"name": "dist_category_name",
+					"type": "String",
+					"description": "主营类目名称"
+				}
+			]
+		}
+	]
+}

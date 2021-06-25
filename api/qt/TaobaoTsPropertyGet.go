@@ -1,0 +1,21 @@
+package qt
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/qt"
+)
+
+/* 
+淘宝服务属性查询 
+taobao.ts.property.get
+
+淘宝服务属性查询
+*/
+func TaobaoTsPropertyGet(clt *core.SDKClient, req *qt.TaobaoTsPropertyGetRequest, session string) (*qt.TaobaoTsPropertyGetResponse, error) {
+    var resp qt.TaobaoTsPropertyGetAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

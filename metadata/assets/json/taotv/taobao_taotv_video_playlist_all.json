@@ -1,0 +1,83 @@
+{
+	"name": "taobao.taotv.video.playlist.all",
+	"apiChineseName": "获取播单列表",
+	"description": "根据牌照和视频源等获取播单列表",
+	"requestParams": [
+		{
+			"name": "system_info",
+			"type": "String",
+			"description": "系统信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model_list",
+					"type": "Model[]",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "play_list_id",
+							"type": "Number",
+							"description": "playListId",
+							"required": true
+						},
+						{
+							"name": "play_list_name",
+							"type": "String",
+							"description": "playListName",
+							"required": true
+						},
+						{
+							"name": "bg_pic",
+							"type": "String",
+							"description": "bgPic",
+							"required": true
+						},
+						{
+							"name": "modify_time",
+							"type": "Date",
+							"description": "modifyTime",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "createTime",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,43 @@
+{
+	"name": "taobao.tanx.qualification.picture.upload",
+	"apiChineseName": "资质图片上传接口",
+	"description": "资质图片上传接口",
+	"requestParams": [
+		{
+			"name": "member_id",
+			"type": "Number",
+			"description": "dsp用户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "dsp用户检验token",
+			"required": true
+		},
+		{
+			"name": "sign_time",
+			"type": "Number",
+			"description": "1970年到现在的时间，毫秒",
+			"required": true
+		},
+		{
+			"name": "file_byte",
+			"type": "byte[]",
+			"description": "File文件getByte后的二进制数组",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "返回是否成功"
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "上传后返回的url"
+		}
+	]
+}

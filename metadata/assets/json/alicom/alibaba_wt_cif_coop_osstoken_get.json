@@ -1,0 +1,99 @@
+{
+	"name": "alibaba.wt.cif.coop.osstoken.get",
+	"apiChineseName": "获取oss签名接口",
+	"description": "商家合作上传oss图片获取token接口",
+	"requestParams": [
+		{
+			"name": "app_name",
+			"type": "String",
+			"description": "调用方的应用名"
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "系统分配的source"
+		},
+		{
+			"name": "biz",
+			"type": "String",
+			"description": "系统分配的biz"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "OssTokenResponse",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "expiration",
+							"type": "String",
+							"description": "失效时间",
+							"required": true
+						},
+						{
+							"name": "security_token",
+							"type": "String",
+							"description": "token",
+							"required": true
+						},
+						{
+							"name": "access_key_secret",
+							"type": "String",
+							"description": "accessKeySecret",
+							"required": true
+						},
+						{
+							"name": "access_key_id",
+							"type": "String",
+							"description": "accessKeyId",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "status",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "desc",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

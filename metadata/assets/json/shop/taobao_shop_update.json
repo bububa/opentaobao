@@ -1,0 +1,41 @@
+{
+	"name": "taobao.shop.update",
+	"apiChineseName": "更新店铺基本信息",
+	"description": "目前只支持标题、公告和描述的更新",
+	"requestParams": [
+		{
+			"name": "title",
+			"type": "String",
+			"description": "店铺标题。不超过30个字符；过滤敏感词，如淘咖啡、阿里巴巴等。title, bulletin和desc至少必须传一个"
+		},
+		{
+			"name": "bulletin",
+			"type": "String",
+			"description": "店铺公告。不超过1024个字符"
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "店铺描述。10～2000个字符以内"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "shop",
+			"type": "Shop",
+			"description": "店铺信息",
+			"subParams": [
+				{
+					"name": "sid",
+					"type": "Number",
+					"description": "店铺编号"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "最后修改时间。格式：yyyy-MM-dd HH:mm:ss"
+				}
+			]
+		}
+	]
+}

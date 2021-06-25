@@ -1,0 +1,208 @@
+{
+	"name": "alibaba.wdk.sku.storesku.scroll.query",
+	"apiChineseName": "门店商品批量查询接口",
+	"description": "提供门店商品批量查询接口",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "经营的id"
+		},
+		{
+			"name": "scroll_id",
+			"type": "String",
+			"description": "历游标，首次调用传递null，后续传递ScrollPageResult.getScrollId()"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiScrollPageResult",
+			"description": "请求结果",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "门店商品总数",
+					"required": true
+				},
+				{
+					"name": "scroll_id",
+					"type": "String",
+					"description": "游标",
+					"required": true
+				},
+				{
+					"name": "page_count",
+					"type": "Number",
+					"description": "页码数",
+					"required": true
+				},
+				{
+					"name": "model_list",
+					"type": "WdkOpenMerchantStoreSkuDo[]",
+					"description": "门店商品模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "经营店ID",
+							"required": true
+						},
+						{
+							"name": "supplier_no",
+							"type": "String",
+							"description": "供应商code",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "short_title",
+							"type": "String",
+							"description": "商品简称",
+							"required": true
+						},
+						{
+							"name": "life_status",
+							"type": "String",
+							"description": "商品状态；A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "条码",
+							"required": true
+						},
+						{
+							"name": "sku_price",
+							"type": "Number",
+							"description": "商品（渠道）价格",
+							"required": true
+						},
+						{
+							"name": "member_price",
+							"type": "Number",
+							"description": "会员价",
+							"required": true
+						},
+						{
+							"name": "business_type",
+							"type": "Number",
+							"description": "业务类型",
+							"required": true
+						},
+						{
+							"name": "online_sale_flag",
+							"type": "Number",
+							"description": "APP可售",
+							"required": true
+						},
+						{
+							"name": "channel_code",
+							"type": "Number",
+							"description": "渠道类型",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "线上渠道店code",
+							"required": true
+						},
+						{
+							"name": "sale_spec",
+							"type": "String",
+							"description": "商品销售单位对应的含量表达；APP展示重要字段，体现售卖单位中含有的商品数量，通常描述为“550g/份”等样式。填字符串。",
+							"required": true
+						},
+						{
+							"name": "processing_time",
+							"type": "Number",
+							"description": "加工时间",
+							"required": true
+						},
+						{
+							"name": "test_flag",
+							"type": "Number",
+							"description": "是否测试商品",
+							"required": true
+						},
+						{
+							"name": "service_flag",
+							"type": "Number",
+							"description": "是否服务商品",
+							"required": true
+						},
+						{
+							"name": "back_cat_code",
+							"type": "String",
+							"description": "标准类目编码",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条目数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码索引",
+					"required": true
+				}
+			]
+		}
+	]
+}

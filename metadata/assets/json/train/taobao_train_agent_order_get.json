@@ -1,0 +1,270 @@
+{
+	"name": "taobao.train.agent.order.get",
+	"apiChineseName": "代理商获取订单信息回调API",
+	"description": "代理商获取订单信息回调API",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "淘宝的主订单号",
+			"required": true
+		},
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ttp_order_id",
+			"type": "Number",
+			"description": "ttp_order_id"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "返回错误。"
+		},
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "主订单id"
+		},
+		{
+			"name": "tickets",
+			"type": "ToAgentTicketInfo []",
+			"description": "火车票信息。",
+			"subParams": [
+				{
+					"name": "student_info",
+					"type": "StudentInfo",
+					"description": "学生信息",
+					"subParams": [
+						{
+							"name": "card",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "classes",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "depart_ment",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "eductional_system",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "entrance_year",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "from_city",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "school_name",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "school_province",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "student_no",
+							"type": "String",
+							"description": "demo"
+						},
+						{
+							"name": "to_city",
+							"type": "String",
+							"description": "demo"
+						}
+					]
+				},
+				{
+					"name": "sub_order_id",
+					"type": "String",
+					"description": "淘宝火车票子订单id."
+				},
+				{
+					"name": "from_station",
+					"type": "String",
+					"description": "出发站"
+				},
+				{
+					"name": "from_time",
+					"type": "String",
+					"description": "出发时间"
+				},
+				{
+					"name": "to_station",
+					"type": "String",
+					"description": "到达站"
+				},
+				{
+					"name": "seat",
+					"type": "Number",
+					"description": "坐席"
+				},
+				{
+					"name": "train_num",
+					"type": "String",
+					"description": "车次"
+				},
+				{
+					"name": "passenger_name",
+					"type": "String",
+					"description": "乘客姓名"
+				},
+				{
+					"name": "certificate_num",
+					"type": "String",
+					"description": "证件编号"
+				},
+				{
+					"name": "certificate_type",
+					"type": "String",
+					"description": "证件类型，0:身份证 1:护照 4:港澳通行证 5:台湾通行证"
+				},
+				{
+					"name": "insurance_price",
+					"type": "Number",
+					"description": "保险价格，精确到分，例如10元，输入1000。"
+				},
+				{
+					"name": "ticket_price",
+					"type": "Number",
+					"description": "单张票价(不包含保险价格),例如100元,输出为10000,精确到分."
+				},
+				{
+					"name": "birthday",
+					"type": "String",
+					"description": "乘客生日"
+				},
+				{
+					"name": "to_time",
+					"type": "String",
+					"description": "到站时间"
+				},
+				{
+					"name": "tag",
+					"type": "Number",
+					"description": "1:单程票"
+				},
+				{
+					"name": "insurance_unit_price",
+					"type": "Number",
+					"description": "保险的单一价格"
+				},
+				{
+					"name": "passenger_type",
+					"type": "Number",
+					"description": "0:成人 1:儿童 2：学生"
+				}
+			]
+		},
+		{
+			"name": "total_price",
+			"type": "Number",
+			"description": "整个订单的总价,包括每张票价及保险价格,价格精确到分,例如100元,输出为10000."
+		},
+		{
+			"name": "telephone",
+			"type": "String",
+			"description": "移动电话"
+		},
+		{
+			"name": "mailing",
+			"type": "Boolean",
+			"description": "是否需要保险邮件地址"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "保险邮件地址"
+		},
+		{
+			"name": "relation_name",
+			"type": "String",
+			"description": "联系人姓名"
+		},
+		{
+			"name": "company_name",
+			"type": "String",
+			"description": "如果是公司发票，需要公司名称，如果不需要公司名称，返回no"
+		},
+		{
+			"name": "order_status",
+			"type": "Number",
+			"description": "1-已付款，2-关闭，3-成功"
+		},
+		{
+			"name": "latest_issue_time",
+			"type": "Date",
+			"description": "最晚出票时间"
+		},
+		{
+			"name": "order_type",
+			"type": "Number",
+			"description": "订单类型0:默认订单类型走代理商账号；1：走12306客户绑定的账号；2：线下邮寄票"
+		},
+		{
+			"name": "paper_type",
+			"type": "Number",
+			"description": "纸质票类型: 1 靠窗,2 连坐,3 上铺,4 中铺,5 下铺,6 是否同包厢"
+		},
+		{
+			"name": "paper_backup",
+			"type": "Number",
+			"description": "当下铺/靠窗/连坐无票时,是否支持非下铺/非靠窗/非连坐(0不接受,1接受)"
+		},
+		{
+			"name": "paper_low_seat_count",
+			"type": "Number",
+			"description": "至少接受下铺/靠窗/连坐数量"
+		},
+		{
+			"name": "transport_name",
+			"type": "String",
+			"description": "线下票收件人姓名"
+		},
+		{
+			"name": "transport_phone",
+			"type": "String",
+			"description": "线下票收件人手机号"
+		},
+		{
+			"name": "transport_address",
+			"type": "String",
+			"description": "线下票收件人地址"
+		},
+		{
+			"name": "transport_price",
+			"type": "Number",
+			"description": "快递费（分）"
+		},
+		{
+			"name": "service_price",
+			"type": "Number",
+			"description": "手续费总价（分）"
+		},
+		{
+			"name": "extend_params",
+			"type": "String",
+			"description": "扩展字段"
+		}
+	]
+}

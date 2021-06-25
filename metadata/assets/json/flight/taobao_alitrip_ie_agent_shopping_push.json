@@ -1,0 +1,93 @@
+{
+	"name": "taobao.alitrip.ie.agent.shopping.push",
+	"apiChineseName": "国际机票大卖家Shopping推送",
+	"description": "用于国际机票大卖家主动推送Shopping结果更新缓存报价。",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "ShoppingPushRq",
+			"description": "政策推送结构体",
+			"subParams": [
+				{
+					"name": "channel_id",
+					"type": "Number",
+					"description": "渠道id",
+					"required": true
+				},
+				{
+					"name": "cid",
+					"type": "String",
+					"description": "cid",
+					"required": true
+				},
+				{
+					"name": "trip_type",
+					"type": "Number",
+					"description": "行程类型，1：单程；2：往返；5:  多程",
+					"required": true
+				},
+				{
+					"name": "from_city",
+					"type": "String",
+					"description": "出发地 IATA 三字码代码; 如果为多程,最多三程六段，按照 PEK/HKG,HKG/SHA 格式请求",
+					"required": true
+				},
+				{
+					"name": "to_city",
+					"type": "String",
+					"description": "目的地城市 、到达城市IATA 三字码代码 ；多程为空"
+				},
+				{
+					"name": "from_date",
+					"type": "String",
+					"description": "去程日期，格式为 YYYYMMDD ；如果为多程，20180729,20180804方式传输数据",
+					"required": true
+				},
+				{
+					"name": "ret_date",
+					"type": "String",
+					"description": "回程日期，格式为 YYYYMMDD（不传此参数或者留空表示单程/多程）"
+				},
+				{
+					"name": "search_rs",
+					"type": "String",
+					"description": "政策详情，同大卖家API搜索结果返回的json字符串格式；",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ShoppingPushRs",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "err_routing_msg_list",
+					"type": "Json[]",
+					"description": "errRoutingMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

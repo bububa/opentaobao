@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.scbp.ad.keyword.add",
+	"apiChineseName": "外贸直通车加词",
+	"description": "外贸直通车加词服务",
+	"requestParams": [
+		{
+			"name": "ad_keyword",
+			"type": "String",
+			"description": "加入的词",
+			"required": true
+		},
+		{
+			"name": "price_str",
+			"type": "String",
+			"description": "词的出价",
+			"required": true
+		},
+		{
+			"name": "tag_name",
+			"type": "String",
+			"description": "分组名"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "请求加入的词"
+		},
+		{
+			"name": "is_added",
+			"type": "Boolean",
+			"description": "该词是否加入成功"
+		},
+		{
+			"name": "invalid_type",
+			"type": "String",
+			"description": "加词失败的原因"
+		},
+		{
+			"name": "repeat_keyword",
+			"type": "String",
+			"description": "系统中存在归一化重复的词"
+		}
+	]
+}

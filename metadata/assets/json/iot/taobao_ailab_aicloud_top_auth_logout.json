@@ -1,0 +1,37 @@
+{
+	"name": "taobao.ailab.aicloud.top.auth.logout",
+	"apiChineseName": "登出",
+	"description": "登出",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id",
+			"required": true
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数",
+			"required": true
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离，建议传入设备uuid",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo错误码信息，成功返回null"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

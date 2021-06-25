@@ -1,0 +1,12 @@
+{
+	"name": "taobao.miniapp.user.phone.get",
+	"apiChineseName": "获取当前授权用户手机号码",
+	"description": "在商家应用中，获取当前授权用户手机号码",
+	"responseParams": [
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "用户手机号码"
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"name": "taobao.fenxiao.dealer.requisitionorder.remark.update",
+	"apiChineseName": "修改经销采购单备注",
+	"description": "供应商修改经销采购单备注",
+	"requestParams": [
+		{
+			"name": "dealer_order_id",
+			"type": "Number",
+			"description": "经销采购单ID",
+			"required": true
+		},
+		{
+			"name": "supplier_memo",
+			"type": "String",
+			"description": "备注留言，可为空"
+		},
+		{
+			"name": "supplier_memo_flag",
+			"type": "Number",
+			"description": "旗子的标记，必选。\u003cbr/\u003e1-5之间的数字。\u003cbr/\u003e非1-5之间，都采用1作为默认。\u003cbr/\u003e1:红色\u003cbr/\u003e2:黄色\u003cbr/\u003e3:绿色\u003cbr/\u003e4:蓝色\u003cbr/\u003e5:粉红色",
+			"required": true,
+			"maxValue": 5,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "操作是否成功"
+		}
+	]
+}

@@ -1,0 +1,125 @@
+{
+	"name": "taobao.simba.insight.wordsdata.get",
+	"apiChineseName": "获取关键词的大盘数据",
+	"description": "获取关键词的详细数据",
+	"requestParams": [
+		{
+			"name": "bidword_list",
+			"type": "String[]",
+			"description": "关键词列表，最多可传100个。",
+			"required": true,
+			"maxListSize": 100
+		},
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "word_data_list",
+			"type": "InsightWordDataDTO []",
+			"description": "关键词大盘数据列表",
+			"subParams": [
+				{
+					"name": "impression",
+					"type": "Number",
+					"description": "展现量"
+				},
+				{
+					"name": "click",
+					"type": "Number",
+					"description": "点击量"
+				},
+				{
+					"name": "cost",
+					"type": "Number",
+					"description": "花费，单位（分）"
+				},
+				{
+					"name": "directtransaction",
+					"type": "Number",
+					"description": "直接成交金额"
+				},
+				{
+					"name": "indirecttransaction",
+					"type": "Number",
+					"description": "间接成交金额"
+				},
+				{
+					"name": "directtransactionshipping",
+					"type": "Number",
+					"description": "直接成交笔数"
+				},
+				{
+					"name": "indirecttransactionshipping",
+					"type": "Number",
+					"description": "间接成交笔数"
+				},
+				{
+					"name": "favitemtotal",
+					"type": "Number",
+					"description": "宝贝搜藏数"
+				},
+				{
+					"name": "favshoptotal",
+					"type": "Number",
+					"description": "店铺搜藏数"
+				},
+				{
+					"name": "transactionshippingtotal",
+					"type": "Number",
+					"description": "总的成交笔数"
+				},
+				{
+					"name": "transactiontotal",
+					"type": "Number",
+					"description": "成交总金额"
+				},
+				{
+					"name": "favtotal",
+					"type": "Number",
+					"description": "总的收藏数，包括宝贝收藏和店铺收藏"
+				},
+				{
+					"name": "competition",
+					"type": "Number",
+					"description": "竞争度"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率"
+				},
+				{
+					"name": "cpc",
+					"type": "String",
+					"description": "平均点击花费"
+				},
+				{
+					"name": "roi",
+					"type": "String",
+					"description": "投入产出比"
+				},
+				{
+					"name": "coverage",
+					"type": "String",
+					"description": "点击转化率"
+				},
+				{
+					"name": "bidword",
+					"type": "String",
+					"description": "关键词"
+				}
+			]
+		}
+	]
+}

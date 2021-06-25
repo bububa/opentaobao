@@ -1,0 +1,341 @@
+{
+	"name": "cainiao.waybill.ii.get",
+	"apiChineseName": "电子面单云打印接口",
+	"description": "菜鸟电子面单的云打印申请电子面单号的方法",
+	"requestParams": [
+		{
+			"name": "param_waybill_cloud_print_apply_new_request",
+			"type": "WaybillCloudPrintApplyNewRequest",
+			"description": "入参信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "\u003ca href=\"http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.8cf9Nj\u0026treeId=17\u0026articleId=105085\u0026docType=1#1\"\u003e物流公司Code\u003c/a\u003e，长度小于20",
+					"required": true
+				},
+				{
+					"name": "product_code",
+					"type": "String",
+					"description": "目前已经不推荐使用此字段，请不要使用"
+				},
+				{
+					"name": "sender",
+					"type": "UserInfoDto",
+					"description": "发货人信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "address",
+							"type": "AddressDto",
+							"description": "发货地址需要通过\u003ca href=\"http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.3OFCPk\u0026treeId=17\u0026articleId=104860\u0026docType=1\"\u003esearch接口\u003c/a\u003e",
+							"required": true,
+							"subParams": [
+								{
+									"name": "city",
+									"type": "String",
+									"description": "城市，长度小于20"
+								},
+								{
+									"name": "detail",
+									"type": "String",
+									"description": "详细地址，长度小于256",
+									"required": true
+								},
+								{
+									"name": "district",
+									"type": "String",
+									"description": "区，长度小于20"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省，长度小于20",
+									"required": true
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "街道，长度小于30"
+								}
+							]
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "手机号码（手机号和固定电话不能同时为空），长度小于20"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "姓名，长度小于40",
+							"required": true
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "固定电话（手机号和固定电话不能同时为空），长度小于20"
+						}
+					]
+				},
+				{
+					"name": "trade_order_info_dtos",
+					"type": "TradeOrderInfoDto[]",
+					"description": "请求面单信息，数量限制为10",
+					"required": true,
+					"subParams": [
+						{
+							"name": "logistics_services",
+							"type": "String",
+							"description": "物流服务值（详见https://support-cnkuaidi.taobao.com/doc.htm#?docId=106156\u0026docType=1，如无特殊服务请置空）"
+						},
+						{
+							"name": "object_id",
+							"type": "String",
+							"description": "\u003ca href=\"http://open.taobao.com/docs/doc.htm?docType=1\u0026articleId=105086\u0026treeId=17\u0026platformId=17#6\"\u003e请求ID\u003c/a\u003e",
+							"required": true
+						},
+						{
+							"name": "order_info",
+							"type": "OrderInfoDto",
+							"description": "订单信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "order_channels_type",
+									"type": "String",
+									"description": "\u003ca href=\"http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.8cf9Nj\u0026treeId=17\u0026articleId=105085\u0026docType=1#2\"\u003e订单渠道平台编码\u003c/a\u003e",
+									"required": true
+								},
+								{
+									"name": "trade_order_list",
+									"type": "String[]",
+									"description": "订单号,数量限制100，订单号（只限传入数字、字母、下划线和中划线，为避免出现冲突，请按电商平台真实订单号传入，请避免使用同个订单号重复取号）",
+									"required": true
+								},
+								{
+									"name": "out_trade_order_list",
+									"type": "String[]",
+									"description": "外部电商平台交易单号集合，非必填，数量限制100"
+								},
+								{
+									"name": "out_trade_sub_order_list",
+									"type": "String[]",
+									"description": "外部电商平台交易子单号集合，非必填，数量限制100"
+								}
+							]
+						},
+						{
+							"name": "package_info",
+							"type": "PackageInfoDto",
+							"description": "包裹信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "String",
+									"description": "包裹id，用于拆合单场景（只能传入数字、字母和下划线；批量请求时值不得重复，大小写敏感，即123A,123a 不可当做不同ID，否则存在一定可能取号失败）"
+								},
+								{
+									"name": "items",
+									"type": "Item[]",
+									"description": "商品信息,数量限制为100",
+									"required": true,
+									"subParams": [
+										{
+											"name": "count",
+											"type": "Number",
+											"description": "数量",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "名称",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "volume",
+									"type": "Number",
+									"description": "体积, 单位 ml"
+								},
+								{
+									"name": "weight",
+									"type": "Number",
+									"description": "重量,单位 g"
+								},
+								{
+									"name": "total_packages_count",
+									"type": "Number",
+									"description": "子母件模式中的总包裹数/总件数，用于打印当前包裹处于总件数的位置比如5-2，可以表示总包裹数为5，当前为第2个包裹，只有快运公司需要传入，其他的可以不用传入"
+								},
+								{
+									"name": "packaging_description",
+									"type": "String",
+									"description": "大件快运中的包装方式描述"
+								},
+								{
+									"name": "goods_description",
+									"type": "String",
+									"description": "大件快运中的货品描述，比如服装，家具"
+								}
+							]
+						},
+						{
+							"name": "recipient",
+							"type": "RecipientInfoDto",
+							"description": "收件人信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "address",
+									"type": "AddressDto",
+									"description": "地址",
+									"required": true,
+									"subParams": [
+										{
+											"name": "city",
+											"type": "String",
+											"description": "城市"
+										},
+										{
+											"name": "detail",
+											"type": "String",
+											"description": "详细地址",
+											"required": true
+										},
+										{
+											"name": "district",
+											"type": "String",
+											"description": "区"
+										},
+										{
+											"name": "province",
+											"type": "String",
+											"description": "省",
+											"required": true
+										},
+										{
+											"name": "town",
+											"type": "String",
+											"description": "街道"
+										}
+									]
+								},
+								{
+									"name": "mobile",
+									"type": "String",
+									"description": "手机号码"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "姓名",
+									"required": true
+								},
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "固定电话"
+								},
+								{
+									"name": "oaid",
+									"type": "String",
+									"description": "淘宝订单收件人ID (Open Addressee ID)，长度不超过128个字符，淘宝订单加密情况用于解密。"
+								},
+								{
+									"name": "tid",
+									"type": "String",
+									"description": "电商平台真实交易订单号，针对电商平台订单隐私加密场景使用，非必填，如果填写则必须是电商平台真实的交易订单ID"
+								},
+								{
+									"name": "caid",
+									"type": "String",
+									"description": "菜鸟解密地址ID，用于电商平台收件人信息加密的场景使用，非订单加密场景请勿使用。"
+								}
+							]
+						},
+						{
+							"name": "template_url",
+							"type": "String",
+							"description": "云打印标准模板URL（组装云打印结果使用，值格式http://cloudprint.cainiao.com/template/standard/${模板ID}）",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "使用者ID（使用电子面单账号的实际商家ID，如存在一个电子面单账号多个店铺使用时，请传入店铺的商家ID）",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓code， 仓库WMS系统对接落地配业务，其它场景请不要使用"
+				},
+				{
+					"name": "resource_code",
+					"type": "String",
+					"description": "配送资源code， 仓库WMS系统对接落地配业务，其它场景请不要使用"
+				},
+				{
+					"name": "dms_sorting",
+					"type": "Boolean",
+					"description": "是否使用智分宝预分拣， 仓库WMS系统对接落地配业务，其它场景请不要使用"
+				},
+				{
+					"name": "three_pl_timing",
+					"type": "Boolean",
+					"description": "订单上是否带3PLtiming属性, 该属性需要严格与订单上属性保持一致，如果不确定，请使用默认false。"
+				},
+				{
+					"name": "need_encrypt",
+					"type": "Boolean",
+					"description": "设定取号返回的云打印报文是否加密"
+				},
+				{
+					"name": "multi_packages_shipment",
+					"type": "Boolean",
+					"description": "快递公司支持一票多件，快运公司子母件请勿使用该参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "modules",
+			"type": "WaybillCloudPrintResponse []",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "object_id",
+					"type": "String",
+					"description": "请求id",
+					"required": true
+				},
+				{
+					"name": "waybill_code",
+					"type": "String",
+					"description": "面单号, 子母件模式下为子面单号",
+					"required": true
+				},
+				{
+					"name": "print_data",
+					"type": "String",
+					"description": "云打印内容（encryptedData表示加密结果，data表示非加密结果）;模板内容,具体解释见\u003ca href=\"http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.8cf9Nj\u0026treeId=17\u0026articleId=105085\u0026docType=1#12\"\u003e链接\u003c/a\u003e",
+					"required": true
+				},
+				{
+					"name": "parent_waybill_code",
+					"type": "String",
+					"description": "子母件中的母单号，当为子母件模式时，需要此单号为实际挂载物流详情的单号，需要使用此单号进行发货，查询物流详情，非子母件，此字段为空",
+					"required": true
+				}
+			]
+		}
+	]
+}

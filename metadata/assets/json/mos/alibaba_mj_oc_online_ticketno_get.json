@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.mj.oc.online.ticketno.get",
+	"apiChineseName": "线上小票号获取",
+	"description": "线上小票号获取",
+	"requestParams": [
+		{
+			"name": "out_store_no",
+			"type": "String",
+			"description": "外部门店号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "是否成功"
+		},
+		{
+			"name": "errors_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "errors_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		}
+	]
+}

@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.legal.case.standpoint.savestandpoint",
+	"apiChineseName": "新增反馈口径",
+	"description": "新增反馈口径 ,从外部接受反馈的口径",
+	"requestParams": [
+		{
+			"name": "defense_caliber",
+			"type": "String",
+			"description": "答辩口径",
+			"required": true
+		},
+		{
+			"name": "standpoint_desc",
+			"type": "String",
+			"description": "口径描述",
+			"required": true
+		},
+		{
+			"name": "suit_id",
+			"type": "Number",
+			"description": "案件id",
+			"required": true
+		},
+		{
+			"name": "entrust_id",
+			"type": "Number",
+			"description": "委托id",
+			"required": true
+		},
+		{
+			"name": "submit_people",
+			"type": "String",
+			"description": "提交人"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "content",
+			"type": "Number",
+			"description": "反馈的新增口径id"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

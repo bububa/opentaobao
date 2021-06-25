@@ -1,0 +1,342 @@
+{
+	"name": "alibaba.wdk.trade.order.cancel",
+	"apiChineseName": "外部交易订单取消接口",
+	"description": "通过该接口可以再盒马取消交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理",
+	"requestParams": [
+		{
+			"name": "trade",
+			"type": "TradeOrder",
+			"description": "待取消的订单",
+			"subParams": [
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店标识",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "业务订单标识",
+					"required": true
+				},
+				{
+					"name": "sub_biz_order_ids",
+					"type": "String[]",
+					"description": "业务子订单标识(允许为null)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OrderResult",
+			"description": "执行结果",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否取消成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "OrderObject",
+					"description": "取消的订单",
+					"required": true,
+					"subParams": [
+						{
+							"name": "discount_fee",
+							"type": "Number",
+							"description": "优惠金额",
+							"required": true
+						},
+						{
+							"name": "user_nick",
+							"type": "String",
+							"description": "用户昵称",
+							"required": true
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单状态\tPAID_DONE 已付款  \tACCEPT_ORDER 已接单  \tPICK_ORDER 已拣货  \tSHIPPED 已发货  \tTRADE_SUCCESS 交易成功  \tTRADE_CLOSE 交易关闭",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "支付时间",
+							"required": true
+						},
+						{
+							"name": "origin_fee",
+							"type": "Number",
+							"description": "订单原金额",
+							"required": true
+						},
+						{
+							"name": "user_mem",
+							"type": "String",
+							"description": "用户备注",
+							"required": true
+						},
+						{
+							"name": "order_fulfill_status",
+							"type": "String",
+							"description": "订单履约状态\tACCEPTED 接单  \tREJECTED 拒单  \tCANCELED 取消订单  \tSHIPPING 揽收（配送中）  \tREFUSED 用户拒收  \tSHIPPED  \tTIMEOUTSHIPPED 超时签收  \tRESHIPPED 二次妥投  \tOUTOFSTOCK 缺货出  \tFOODPROCESSDONE 加工完成  \tPACKAGED 打包完成  \tREFUNDED 逆向终态（已取货入站\u0026退款完成）",
+							"required": true
+						},
+						{
+							"name": "deliverer",
+							"type": "OrderDeliverer",
+							"description": "配送人员信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "deliverer_code",
+									"type": "String",
+									"description": "配送人员编码",
+									"required": true
+								},
+								{
+									"name": "deliverer_phone",
+									"type": "String",
+									"description": "配送人员电话",
+									"required": true
+								},
+								{
+									"name": "deliverer_name",
+									"type": "String",
+									"description": "配送人员姓名",
+									"required": true
+								},
+								{
+									"name": "pickup_end_time",
+									"type": "Date",
+									"description": "拣货结束时间",
+									"required": true
+								},
+								{
+									"name": "pickup_start_time",
+									"type": "Date",
+									"description": "拣货开始时间",
+									"required": true
+								},
+								{
+									"name": "batch_end_time",
+									"type": "Date",
+									"description": "批次结束时间",
+									"required": true
+								},
+								{
+									"name": "batch_start_time",
+									"type": "Date",
+									"description": "批次开始时间",
+									"required": true
+								},
+								{
+									"name": "sign_time",
+									"type": "Date",
+									"description": "签收时间",
+									"required": true
+								},
+								{
+									"name": "dispatch_end_time",
+									"type": "Date",
+									"description": "配送结束时间",
+									"required": true
+								},
+								{
+									"name": "dispatch_start_time",
+									"type": "Date",
+									"description": "配送开始时间",
+									"required": true
+								},
+								{
+									"name": "package_end_time",
+									"type": "Date",
+									"description": "打包结束时间",
+									"required": true
+								},
+								{
+									"name": "package_start_time",
+									"type": "Date",
+									"description": "打包开始时间",
+									"required": true
+								},
+								{
+									"name": "sign_memo",
+									"type": "String",
+									"description": "签收备注",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pay_fee",
+							"type": "Number",
+							"description": "实际支付金额",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "门店标识",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "买家标识",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "业务订单标识",
+							"required": true
+						},
+						{
+							"name": "delivery",
+							"type": "OrderDelivery",
+							"description": "收货人信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "delivery_fee",
+									"type": "Number",
+									"description": "配送费用金额",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "sub_orders",
+							"type": "Suborders[]",
+							"description": "子订单",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sale_unit",
+									"type": "String",
+									"description": "销售单位（非标品）",
+									"required": true
+								},
+								{
+									"name": "order_fulfill_status",
+									"type": "String",
+									"description": "订单履约状态",
+									"required": true
+								},
+								{
+									"name": "sale_quantity",
+									"type": "Number",
+									"description": "销售数量",
+									"required": true
+								},
+								{
+									"name": "sku_name",
+									"type": "String",
+									"description": "sku名称",
+									"required": true
+								},
+								{
+									"name": "sale_price",
+									"type": "Number",
+									"description": "销售单价",
+									"required": true
+								},
+								{
+									"name": "biz_order_id",
+									"type": "String",
+									"description": "业务订单标识",
+									"required": true
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "订单状态",
+									"required": true
+								},
+								{
+									"name": "merchant_code",
+									"type": "String",
+									"description": "商家编码",
+									"required": true
+								},
+								{
+									"name": "handling",
+									"type": "Boolean",
+									"description": "是否加工",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "sku编码",
+									"required": true
+								},
+								{
+									"name": "handling_type",
+									"type": "String",
+									"description": "加工方式",
+									"required": true
+								},
+								{
+									"name": "out_order_id",
+									"type": "String",
+									"description": "外部关联订单标识",
+									"required": true
+								},
+								{
+									"name": "origin_fee",
+									"type": "Number",
+									"description": "订单金额",
+									"required": true
+								},
+								{
+									"name": "cancel_node_type",
+									"type": "String",
+									"description": "取消时的作业节点:WAREHOUSE和DELIVERY_DOCK",
+									"required": true
+								},
+								{
+									"name": "cancel_result_code",
+									"type": "String",
+									"description": "取消结果: SUCCESS-已拦截，FAILURE-未拦截，SYSTEM_ERROR-系统异常，PARAM_ERROR-参数错误，BUSINESS_ERROR-业务异常",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "业务订单标识",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,92 @@
+{
+	"name": "alibaba.wdk.reverse.refund",
+	"apiChineseName": "退款打款",
+	"description": "五道口退款打款开放能力接口",
+	"requestParams": [
+		{
+			"name": "open_refund_req_d_t_o",
+			"type": "OpenRefundReqDto",
+			"description": "退款打款请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店ID",
+					"required": true
+				},
+				{
+					"name": "sub_biz_order_id",
+					"type": "String",
+					"description": "淘系子单单号",
+					"required": true
+				},
+				{
+					"name": "agent",
+					"type": "String",
+					"description": "退款操作人",
+					"required": true
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "退款备注",
+					"required": true
+				},
+				{
+					"name": "refund_channel_list",
+					"type": "ChannelRefundDto[]",
+					"description": "退款渠道",
+					"required": true,
+					"subParams": [
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "退款渠道编码",
+							"required": true
+						},
+						{
+							"name": "refund_amount",
+							"type": "Number",
+							"description": "渠道对应的退款金额(单位分)",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Number",
+					"description": "退款单ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

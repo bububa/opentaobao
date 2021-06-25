@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.wdk.sku.feature",
+	"apiChineseName": "商品标记接口",
+	"description": "给淘鲜达商品属性之外的打标通用能力，满足商品一些特殊的需求，比如是否参加营销。",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "SkuFeatureDo",
+			"description": "SkuFeatureDo",
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码"
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "门店编码，用来给特定门店商品标记"
+				},
+				{
+					"name": "org_code",
+					"type": "String",
+					"description": "机构编码, 可以指定机构的商品标记，如果要全量商品请填写商家编码"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码，"
+				},
+				{
+					"name": "feature_code",
+					"type": "String",
+					"description": "标记编码，需要和调用方约定"
+				},
+				{
+					"name": "feature_value",
+					"type": "String",
+					"description": "标记值，需要和调用方约定"
+				},
+				{
+					"name": "add",
+					"type": "Boolean",
+					"description": "是否添加，默认是添加"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用成功标志，不表示业务是否成功",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "业务是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

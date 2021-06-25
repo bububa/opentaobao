@@ -1,0 +1,150 @@
+{
+	"name": "alibaba.price.promotion.item.add",
+	"apiChineseName": "新增档期商品",
+	"description": "批量新增档期活动商品",
+	"requestParams": [
+		{
+			"name": "promotion_content",
+			"type": "PromotionContent",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "customer_merchant_code",
+					"type": "String",
+					"description": "客户商家编码"
+				},
+				{
+					"name": "promotion_sku_list",
+					"type": "PromotionSku[]",
+					"description": "sku列表",
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码"
+						},
+						{
+							"name": "purchase_price",
+							"type": "String",
+							"description": "采购进价"
+						},
+						{
+							"name": "purchase_price_start_time",
+							"type": "Date",
+							"description": "采购进价开始时间"
+						},
+						{
+							"name": "purchase_price_end_time",
+							"type": "Date",
+							"description": "采购进价结束时间"
+						},
+						{
+							"name": "promotion_price",
+							"type": "String",
+							"description": "促销售价"
+						},
+						{
+							"name": "promotion_price_start_time",
+							"type": "Date",
+							"description": "促销售价开始时间"
+						},
+						{
+							"name": "promotion_price_end_time",
+							"type": "Date",
+							"description": "促销售价结束时间"
+						},
+						{
+							"name": "time_stamp",
+							"type": "Number",
+							"description": "时间戳"
+						}
+					]
+				},
+				{
+					"name": "customer_code",
+					"type": "String",
+					"description": "客户编码"
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "客户门店"
+				},
+				{
+					"name": "outer_promotion_code",
+					"type": "String",
+					"description": "促销档期编码"
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码"
+				},
+				{
+					"name": "promotion_type",
+					"type": "String",
+					"description": "进售价类型"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "PromotionContentResult",
+					"description": "结果内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_message_list",
+							"type": "String[]",
+							"description": "错误信息",
+							"required": true
+						},
+						{
+							"name": "sku_code_unique_id_str",
+							"type": "String",
+							"description": "唯一标示",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "编码",
+					"required": true
+				},
+				{
+					"name": "total_record",
+					"type": "Number",
+					"description": "数量",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "信息",
+					"required": true
+				},
+				{
+					"name": "succ_and_not_null",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

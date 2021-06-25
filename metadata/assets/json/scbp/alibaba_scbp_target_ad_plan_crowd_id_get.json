@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.scbp.target.ad.plan.crowd.id.get",
+	"apiChineseName": "定向推广-人群标签ID获取(店铺老客、优选人群)",
+	"description": "定向推广-人群标签ID获取(店铺老客、优选人群)",
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "CrowdView []",
+			"description": "结果list",
+			"subParams": [
+				{
+					"name": "crowd_list",
+					"type": "CrowdInfo[]",
+					"description": "人群list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "crowd_name",
+							"type": "String",
+							"description": "人群中文名称",
+							"required": true
+						},
+						{
+							"name": "crowd_id",
+							"type": "String",
+							"description": "人群id",
+							"required": true
+						},
+						{
+							"name": "estimate_count_list",
+							"type": "Number[]",
+							"description": "人群预估数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "crowd_type",
+					"type": "String",
+					"description": "人群类型(店铺老客、优选人群)",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"name": "taobao.promotion.benefit.activity.delete",
+	"apiChineseName": "删除关联的活动权益",
+	"description": "删除关联的活动权益",
+	"requestParams": [
+		{
+			"name": "relation_id",
+			"type": "Number",
+			"description": "ISV活动关联权益后获得的关联ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "删除是否成功"
+		}
+	]
+}

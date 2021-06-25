@@ -1,0 +1,326 @@
+{
+	"name": "alibaba.wdk.coupon.contract.create",
+	"apiChineseName": "营销券合同创建接口",
+	"description": "营销券合同创建接口",
+	"requestParams": [
+		{
+			"name": "create_contract_instance_request",
+			"type": "CreateContractInstanceRequest",
+			"description": "调用入参",
+			"subParams": [
+				{
+					"name": "out_object_id",
+					"type": "String",
+					"description": "外部合同id，全局唯一"
+				},
+				{
+					"name": "purchaser_id",
+					"type": "Number",
+					"description": "采购者id"
+				},
+				{
+					"name": "purchaser_name",
+					"type": "String",
+					"description": "采购者名称"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "合同名称"
+				},
+				{
+					"name": "creator",
+					"type": "String",
+					"description": "创建人"
+				},
+				{
+					"name": "creator_id",
+					"type": "Number",
+					"description": "创建人id"
+				},
+				{
+					"name": "contract_template",
+					"type": "CreateContractTemplateRequest",
+					"description": "合同模版",
+					"subParams": [
+						{
+							"name": "coupon_config_list",
+							"type": "Couponconfiglist[]",
+							"description": "提货券配置列表",
+							"subParams": [
+								{
+									"name": "view_total_amount",
+									"type": "String",
+									"description": "提货券面额，单位：元，用于展示"
+								},
+								{
+									"name": "view_amount",
+									"type": "String",
+									"description": "提货券面额，单位：元，用于展示"
+								},
+								{
+									"name": "use_total_amount",
+									"type": "Number",
+									"description": "提货券总金额（单位：分）"
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "面额相应数量"
+								},
+								{
+									"name": "use_amount",
+									"type": "Number",
+									"description": "提货券面额（单位：分）"
+								}
+							]
+						},
+						{
+							"name": "second_sign_day",
+							"type": "String",
+							"description": "乙方签约日期-日"
+						},
+						{
+							"name": "second_sign_month",
+							"type": "String",
+							"description": "乙方签约日期-月"
+						},
+						{
+							"name": "second_sign_year",
+							"type": "String",
+							"description": "乙方签约日期-年"
+						},
+						{
+							"name": "second_legal_person",
+							"type": "String",
+							"description": "乙方法人"
+						},
+						{
+							"name": "first_sign_day",
+							"type": "String",
+							"description": "甲方签约日期-日"
+						},
+						{
+							"name": "first_sign_month",
+							"type": "String",
+							"description": "甲方签约日期-月"
+						},
+						{
+							"name": "first_sign_year",
+							"type": "String",
+							"description": "甲方签约日期-年"
+						},
+						{
+							"name": "first_legal_person",
+							"type": "String",
+							"description": "甲方法人"
+						},
+						{
+							"name": "second_account_no",
+							"type": "String",
+							"description": "乙方银行账号"
+						},
+						{
+							"name": "second_bank_name",
+							"type": "String",
+							"description": "乙方开户行"
+						},
+						{
+							"name": "second_account_name",
+							"type": "String",
+							"description": "乙方账户名称"
+						},
+						{
+							"name": "first_account_no",
+							"type": "String",
+							"description": "甲方银行账号"
+						},
+						{
+							"name": "first_bank_name",
+							"type": "String",
+							"description": "甲方开户行"
+						},
+						{
+							"name": "first_account_name",
+							"type": "String",
+							"description": "甲方账户名称"
+						},
+						{
+							"name": "discount",
+							"type": "String",
+							"description": "甲方为提供乙方的折扣数"
+						},
+						{
+							"name": "pay_time_out_day",
+							"type": "String",
+							"description": "乙方支付甲方款项超时天数"
+						},
+						{
+							"name": "invoice_type_simple_name",
+							"type": "String",
+							"description": "发票类型简写"
+						},
+						{
+							"name": "bond",
+							"type": "String",
+							"description": "保证金（单位：元）"
+						},
+						{
+							"name": "max_credit_amount",
+							"type": "String",
+							"description": "最高赊销额度（单位：元）"
+						},
+						{
+							"name": "contract_end_day",
+							"type": "String",
+							"description": "合同有效期结束时间-日"
+						},
+						{
+							"name": "contract_end_month",
+							"type": "String",
+							"description": "合同有效期结束时间-月"
+						},
+						{
+							"name": "contract_end_year",
+							"type": "String",
+							"description": "合同有效期结束时间-年"
+						},
+						{
+							"name": "contract_start_day",
+							"type": "String",
+							"description": "合同有效期开始时间-日"
+						},
+						{
+							"name": "contract_start_month",
+							"type": "String",
+							"description": "合同有效期开始时间-月"
+						},
+						{
+							"name": "contract_start_year",
+							"type": "String",
+							"description": "合同有效期开始时间-年"
+						},
+						{
+							"name": "coupon_end_day",
+							"type": "String",
+							"description": "券使用的结束时间-日"
+						},
+						{
+							"name": "coupon_end_month",
+							"type": "String",
+							"description": "券使用的结束时间-月"
+						},
+						{
+							"name": "coupon_end_year",
+							"type": "String",
+							"description": "券使用的结束时间-年"
+						},
+						{
+							"name": "coupon_start_day",
+							"type": "String",
+							"description": "券使用的开始时间-日"
+						},
+						{
+							"name": "coupon_start_month",
+							"type": "String",
+							"description": "券使用的开始时间-月"
+						},
+						{
+							"name": "coupon_start_year",
+							"type": "String",
+							"description": "券使用的开始时间-年"
+						},
+						{
+							"name": "poi_detail_address",
+							"type": "String",
+							"description": "门店详细地址"
+						},
+						{
+							"name": "poi_street",
+							"type": "String",
+							"description": "门店所在街道"
+						},
+						{
+							"name": "poi_area",
+							"type": "String",
+							"description": "门店所在区"
+						},
+						{
+							"name": "poi_city",
+							"type": "String",
+							"description": "门店所在市"
+						},
+						{
+							"name": "not_provider_item_infos",
+							"type": "String[]",
+							"description": "不提供的商品信息，传入格式同providerItemInfos"
+						},
+						{
+							"name": "provider_item_infos",
+							"type": "String[]",
+							"description": "提供的商品信息，需要传入一个String的List，每个字符串描述一个商品"
+						},
+						{
+							"name": "poi_name",
+							"type": "String",
+							"description": "大润发超市名称"
+						},
+						{
+							"name": "second_company_address",
+							"type": "String",
+							"description": "乙方公司地址"
+						},
+						{
+							"name": "second_company_name",
+							"type": "String",
+							"description": "乙方公司名称"
+						},
+						{
+							"name": "first_company_address",
+							"type": "String",
+							"description": "甲方公司地址"
+						},
+						{
+							"name": "first_company_name",
+							"type": "String",
+							"description": "甲方公司名称"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Number",
+					"description": "合同ID",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误码说明",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

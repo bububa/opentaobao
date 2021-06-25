@@ -1,0 +1,72 @@
+{
+	"name": "taobao.vmarket.eticket.card.consumecard",
+	"apiChineseName": "电子凭证储值卡核销",
+	"description": "线下商户核销时，ISV调用电子凭证的isv接口来对电子凭证储值卡核销对应金额",
+	"requestParams": [
+		{
+			"name": "card_id",
+			"type": "String",
+			"description": "卡号",
+			"required": true
+		},
+		{
+			"name": "card_level",
+			"type": "Number",
+			"description": "卡内等级",
+			"required": true
+		},
+		{
+			"name": "consume_value",
+			"type": "Number",
+			"description": "核销金额，精确到分，例如1.99元=199",
+			"required": true
+		},
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "买家昵称",
+			"required": true
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "核销原因",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店id"
+		},
+		{
+			"name": "operator_id",
+			"type": "Number",
+			"description": "操作人id",
+			"required": true
+		},
+		{
+			"name": "consume_serial_num",
+			"type": "String",
+			"description": "核销流水号，外部ISV全局唯一",
+			"required": true
+		},
+		{
+			"name": "consume_code",
+			"type": "String",
+			"description": "核销code"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "安全token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resultcode",
+			"type": "Number",
+			"description": "正确返回值"
+		}
+	]
+}

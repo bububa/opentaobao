@@ -1,0 +1,42 @@
+{
+	"name": "taobao.vmarket.eticket.flow.consume",
+	"apiChineseName": "无交易类凭证核销",
+	"description": "无交易类凭证核销",
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "业务单号",
+			"required": true
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "凭证码",
+			"required": true
+		},
+		{
+			"name": "biz_type",
+			"type": "Number",
+			"description": "淘宝业务提供的业务类型值，请联系相关业务运营取得",
+			"required": true
+		},
+		{
+			"name": "operator",
+			"type": "String",
+			"description": "核销操作人"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "执行成功"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误提示信息"
+		}
+	]
+}

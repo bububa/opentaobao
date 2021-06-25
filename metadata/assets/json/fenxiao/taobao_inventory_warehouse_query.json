@@ -1,0 +1,70 @@
+{
+	"name": "taobao.inventory.warehouse.query",
+	"apiChineseName": "分页查询商家仓信息",
+	"description": "分页查询商家仓信息",
+	"requestParams": [
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PaginationResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总条数",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "仓库信息数组",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

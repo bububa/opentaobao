@@ -1,0 +1,54 @@
+{
+	"name": "taobao.item.img.upload",
+	"apiChineseName": "添加商品图片",
+	"description": "添加一张商品图片到num_iid指定的商品中 \n传入的num_iid所对应的商品必须属于当前会话的用户 \n如果更新图片需要设置itemimg_id，且该itemimg_id的图片记录需要属于传入的num_iid对应的商品。如果新增图片则不用设置 。\n使用taobao.item.seller.get中返回的item_imgs字段获取图片id。\n商品图片有数量和大小上的限制，根据卖家享有的服务（如：卖家订购了多图服务等），商品图片数量限制不同。",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "商品图片id(如果是更新图片，则需要传该参数)"
+		},
+		{
+			"name": "num_iid",
+			"type": "Number",
+			"description": "商品数字ID，该参数必须",
+			"required": true,
+			"minValue": 0
+		},
+		{
+			"name": "position",
+			"type": "Number",
+			"description": "图片序号"
+		},
+		{
+			"name": "image",
+			"type": "byte[]",
+			"description": "商品图片内容类型:JPG;最大:3M 。支持的文件类型：jpg,jpeg,png",
+			"maxLength": 3145728
+		},
+		{
+			"name": "is_major",
+			"type": "Boolean",
+			"description": "是否将该图片设为主图,可选值:true,false;默认值:false(非主图)"
+		},
+		{
+			"name": "is_rectangle",
+			"type": "Boolean",
+			"description": "是否3:4长方形图片，绑定3:4主图视频时用于上传3:4商品主图"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item_img",
+			"type": "ItemImg",
+			"description": "商品图片结构",
+			"subParams": [
+				{
+					"name": "url",
+					"type": "String",
+					"description": "图片链接地址"
+				}
+			]
+		}
+	]
+}

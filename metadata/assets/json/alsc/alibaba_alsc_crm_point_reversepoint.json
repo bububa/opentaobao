@@ -1,0 +1,130 @@
+{
+	"name": "alibaba.alsc.crm.point.reversepoint",
+	"apiChineseName": "积分消费回退",
+	"description": "积分消费回退",
+	"requestParams": [
+		{
+			"name": "param_reverse_consume_point_open_req",
+			"type": "ReverseConsumePointOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "业务场景",
+					"required": true
+				},
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌id"
+				},
+				{
+					"name": "change_point",
+					"type": "Number",
+					"description": "变更积分数"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客id"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人id",
+					"required": true
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人名",
+					"required": true
+				},
+				{
+					"name": "out_biz_id",
+					"type": "String",
+					"description": "关联交易号/订单号",
+					"required": true
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "变更理由"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求幂等UUID",
+					"required": true
+				},
+				{
+					"name": "reverse_order_id",
+					"type": "String",
+					"description": "反向操作的业务ID,如退单号",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID,shop_id和out_shop_id不可同时为空"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌id,brandId与out_brand_id不可同时为空"
+				},
+				{
+					"name": "biz_channel",
+					"type": "String",
+					"description": "外部渠道，CS是辰森，客如云是KRY",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "业务数据",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

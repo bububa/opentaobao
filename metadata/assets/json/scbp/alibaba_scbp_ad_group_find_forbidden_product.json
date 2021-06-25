@@ -1,0 +1,66 @@
+{
+	"name": "alibaba.scbp.ad.group.find.forbidden.product",
+	"apiChineseName": "查询屏蔽品",
+	"description": "查询屏蔽品",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "ForbiddenProductDto []",
+			"description": "返回列表",
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "标题",
+					"required": true
+				},
+				{
+					"name": "img_url",
+					"type": "String",
+					"description": "图片地址",
+					"required": true
+				}
+			]
+		}
+	]
+}

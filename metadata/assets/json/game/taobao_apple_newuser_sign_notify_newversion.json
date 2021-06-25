@@ -1,0 +1,77 @@
+{
+	"name": "taobao.apple.newuser.sign.notify.newversion",
+	"apiChineseName": "新用户签约结果通知接口v2",
+	"description": "资和信主动通知签约结果",
+	"requestParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果code",
+			"required": true
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果信息说明"
+		},
+		{
+			"name": "main_data",
+			"type": "AppleTopNewSignNotifyDo",
+			"description": "业务参数",
+			"subParams": [
+				{
+					"name": "tut",
+					"type": "String",
+					"description": "TopUpTocken"
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "商户订单号"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "附加信息，后续可以扩展"
+				},
+				{
+					"name": "user_no",
+					"type": "String",
+					"description": "商户上送的用户Id"
+				},
+				{
+					"name": "uci",
+					"type": "String",
+					"description": "商户上送UCI"
+				},
+				{
+					"name": "mai",
+					"type": "String",
+					"description": "Mask id"
+				},
+				{
+					"name": "query_id",
+					"type": "String",
+					"description": "网关请求流水号,每次请求唯一"
+				},
+				{
+					"name": "tuci",
+					"type": "String",
+					"description": "商户上送tUCI"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "处理结果说明"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "处理结果码"
+		}
+	]
+}

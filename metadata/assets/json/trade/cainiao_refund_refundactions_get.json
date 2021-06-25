@@ -1,0 +1,92 @@
+{
+	"name": "cainiao.refund.refundactions.get",
+	"apiChineseName": "判断该订单能执行的逆向操作集合列表",
+	"description": "判断该订单能执行的逆向操作集合列表",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "子订单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BizResult",
+			"description": "返回结果对象",
+			"subParams": [
+				{
+					"name": "status_code",
+					"type": "String",
+					"description": "调用错误时，错误code",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "OrderRefundActionResponse",
+					"description": "该订单支持的退款退货操作的集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "support_refund_actions",
+							"type": "Supportrefundactions[]",
+							"description": "该订单支持的退款退货操作的集合",
+							"required": true,
+							"subParams": [
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "退款退货操作的描述",
+									"required": true
+								},
+								{
+									"name": "default_label",
+									"type": "String",
+									"description": "退款退货操作按钮的建议描述，仅仅是一个建议，ISV可以自己定义",
+									"required": true
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "退款退货操作的Code，由系统定义，目前支持的方式有：refundFeeOnly(仅退款)，refundFeeWithGoods(退货退款),swithGoods(换货)",
+									"required": true
+								},
+								{
+									"name": "in_process",
+									"type": "String",
+									"description": "一个纠纷单可能已经在处理流程中，比如退款退货操作，买家已经提交申请，卖家正在审核中，则该字段是true",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "operation_user_id",
+							"type": "String",
+							"description": "操作用户ID",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "子订单ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true表示成功，false表示失败",
+					"required": true
+				},
+				{
+					"name": "status_message",
+					"type": "String",
+					"description": "调用错误时，错误描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

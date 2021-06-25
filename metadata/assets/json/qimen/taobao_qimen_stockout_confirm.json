@@ -1,0 +1,330 @@
+{
+	"name": "taobao.qimen.stockout.confirm",
+	"apiChineseName": "出库单确认接口",
+	"description": "货品出库后，WMS将状态回传给ERP",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Struct",
+			"subParams": [
+				{
+					"name": "deliveryOrder",
+					"type": "DeliveryOrder",
+					"description": "deliveryOrder",
+					"subParams": [
+						{
+							"name": "totalOrderLines",
+							"type": "Number",
+							"description": "单据总行数"
+						},
+						{
+							"name": "deliveryOrderCode",
+							"type": "String",
+							"description": "出库单号",
+							"required": true
+						},
+						{
+							"name": "deliveryOrderId",
+							"type": "String",
+							"description": "仓储系统出库单号"
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "出库单类型",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "出库单状态"
+						},
+						{
+							"name": "outBizCode",
+							"type": "String",
+							"description": "外部业务编码"
+						},
+						{
+							"name": "confirmType",
+							"type": "Number",
+							"description": "支持出库单多次发货的状态位"
+						},
+						{
+							"name": "logisticsCode",
+							"type": "String",
+							"description": "物流公司编码"
+						},
+						{
+							"name": "logisticsName",
+							"type": "String",
+							"description": "物流公司名称"
+						},
+						{
+							"name": "expressCode",
+							"type": "String",
+							"description": "运单号"
+						},
+						{
+							"name": "orderConfirmTime",
+							"type": "String",
+							"description": "订单完成时间"
+						},
+						{
+							"name": "responsibleDepartment",
+							"type": "String",
+							"description": "该笔出库单的费用承担部门或责任部门"
+						},
+						{
+							"name": "subOrderType",
+							"type": "String",
+							"description": "出库单确认其他出库单的子类型，用于 orderType设置为其他 出库单时设置"
+						}
+					]
+				},
+				{
+					"name": "packages",
+					"type": "Package[]",
+					"description": "packages",
+					"subParams": [
+						{
+							"name": "logisticsName",
+							"type": "String",
+							"description": "物流公司名称"
+						},
+						{
+							"name": "expressCode",
+							"type": "String",
+							"description": "运单号"
+						},
+						{
+							"name": "packageCode",
+							"type": "String",
+							"description": "包裹编号"
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "包裹长度(厘米)"
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "包裹宽度(厘米)"
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "包裹高度(厘米)"
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "包裹重量(千克)"
+						},
+						{
+							"name": "volume",
+							"type": "String",
+							"description": "包裹体积(升)"
+						},
+						{
+							"name": "packageMaterialList",
+							"type": "PackageMaterial[]",
+							"description": "packageMaterialList",
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "包材型号"
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "包材的数量"
+								}
+							]
+						},
+						{
+							"name": "items",
+							"type": "Item[]",
+							"description": "items",
+							"subParams": [
+								{
+									"name": "itemCode",
+									"type": "String",
+									"description": "商品编码",
+									"required": true
+								},
+								{
+									"name": "itemId",
+									"type": "String",
+									"description": "商品仓储系统编码"
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "包裹内该商品的数量",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "orderLines",
+					"subParams": [
+						{
+							"name": "outBizCode",
+							"type": "String",
+							"description": "外部业务编码"
+						},
+						{
+							"name": "orderLineNo",
+							"type": "String",
+							"description": "单据行号"
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "商品仓储系统编码"
+						},
+						{
+							"name": "itemName",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型"
+						},
+						{
+							"name": "actualQty",
+							"type": "Number",
+							"description": "实发商品数量",
+							"required": true
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编号"
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "生产日期"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "过期日期"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "batchs",
+							"subParams": [
+								{
+									"name": "batchCode",
+									"type": "String",
+									"description": "批次编号"
+								},
+								{
+									"name": "productDate",
+									"type": "String",
+									"description": "生产日期"
+								},
+								{
+									"name": "expireDate",
+									"type": "String",
+									"description": "过期日期"
+								},
+								{
+									"name": "produceCode",
+									"type": "String",
+									"description": "生产批号"
+								},
+								{
+									"name": "inventoryType",
+									"type": "String",
+									"description": "库存类型"
+								},
+								{
+									"name": "actualQty",
+									"type": "Number",
+									"description": "实发数量"
+								}
+							]
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "单位"
+						},
+						{
+							"name": "snList",
+							"type": "SnList",
+							"description": "snList",
+							"subParams": [
+								{
+									"name": "sn",
+									"type": "String[]",
+									"description": "sn"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Struct",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

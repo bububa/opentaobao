@@ -1,0 +1,26 @@
+{
+	"name": "taobao.qianniu.task.increase",
+	"apiChineseName": "增加任务接收人接口",
+	"description": "根据任务元id增加任务接收人",
+	"requestParams": [
+		{
+			"name": "metadata_id",
+			"type": "Number",
+			"description": "任务元id",
+			"required": true
+		},
+		{
+			"name": "tasks",
+			"type": "String",
+			"description": "任务列表，JSON格式，例如： tasks =[{ \"receiver_uid\" : 123, \"receiver_nick\" : \"nick\"}, { \"receiver_uid\" : 456, \"receiver_nick\" : \"nick2\"} ]",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否添加成功"
+		}
+	]
+}

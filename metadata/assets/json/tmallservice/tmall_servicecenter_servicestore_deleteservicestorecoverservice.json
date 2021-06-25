@@ -1,0 +1,64 @@
+{
+	"name": "tmall.servicecenter.servicestore.deleteservicestorecoverservice",
+	"apiChineseName": "删除网点覆盖的服务",
+	"description": "天猫服务平台删除网点覆盖的服务，\n必选字段：serviceStoreCode、bizType",
+	"requestParams": [
+		{
+			"name": "service_store_code",
+			"type": "String",
+			"description": "网点编码",
+			"required": true
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务类型",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "gmtModified",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

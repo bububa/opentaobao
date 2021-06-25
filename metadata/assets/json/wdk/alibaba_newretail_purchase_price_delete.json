@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.newretail.purchase.price.delete",
+	"apiChineseName": "共享库存 商户删除采购价",
+	"description": "共享库存 商户删除采购价",
+	"requestParams": [
+		{
+			"name": "delete_purchase_price_request",
+			"type": "DeletePurchasePriceRequest",
+			"description": "调用入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "请求幂等ID"
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品skucode",
+					"required": true
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "门店ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopBaseResult",
+			"description": "拆单结果对象",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "表示调用是否成功",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回码说明",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				}
+			]
+		}
+	]
+}

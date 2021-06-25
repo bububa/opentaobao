@@ -1,0 +1,52 @@
+{
+	"name": "taobao.wireless.content.check",
+	"apiChineseName": "无线开放内容检查",
+	"description": "无线开放内容检查，提供涉黄暴力政治文本检查。更详情介绍见 \u003ca href=\"https://help.aliyun.com/document_detail/70439.html\" target=\"blank\"\u003e阿里云内容安全\u003c/a\u003e",
+	"requestParams": [
+		{
+			"name": "text",
+			"type": "String",
+			"description": "待检查的文本",
+			"required": true,
+			"maxLength": 10000
+		}
+	],
+	"responseParams": [
+		{
+			"name": "check_results",
+			"type": "Checkpoints []",
+			"description": "检查结果",
+			"subParams": [
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "检查的场景。antispam为黄暴政",
+					"required": true
+				},
+				{
+					"name": "label",
+					"type": "String",
+					"description": "检查的场景标签。normal：正常文本 spam：含垃圾信息；ad：广告；politics：涉政；terrorism：暴恐；abuse：辱骂；porn：色情；flood：灌水；contraband：违禁；meaningless：无意义",
+					"required": true
+				},
+				{
+					"name": "suggestion",
+					"type": "String",
+					"description": "结果建议",
+					"required": true
+				},
+				{
+					"name": "rate",
+					"type": "String",
+					"description": "结果准确度",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "suggestion",
+			"type": "String",
+			"description": "综合结果建议。建议用户执行的操作，取值范围： pass：文本正常； review：需要人工审核； block：文本违规，可以直接删除或者做限制处理"
+		}
+	]
+}

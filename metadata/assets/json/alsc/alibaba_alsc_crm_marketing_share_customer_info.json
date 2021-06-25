@@ -1,0 +1,107 @@
+{
+	"name": "alibaba.alsc.crm.marketing.share.customer.info",
+	"apiChineseName": "查询分享营销客户领券信息",
+	"description": "查询分享营销活动的客户领券信息",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "String",
+			"description": "活动id",
+			"required": true
+		},
+		{
+			"name": "customer_id",
+			"type": "String",
+			"description": "会员id",
+			"required": true
+		},
+		{
+			"name": "brand_id",
+			"type": "String",
+			"description": "品牌id(brandId和outerBrandId必传其一)"
+		},
+		{
+			"name": "operator_id",
+			"type": "String",
+			"description": "操作人"
+		},
+		{
+			"name": "operator_name",
+			"type": "String",
+			"description": "操作人姓名"
+		},
+		{
+			"name": "out_brand_id",
+			"type": "String",
+			"description": "外部品牌id"
+		},
+		{
+			"name": "out_shop_id",
+			"type": "String",
+			"description": "外部门店id"
+		},
+		{
+			"name": "request_id",
+			"type": "String",
+			"description": "请求幂等id"
+		},
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "门店id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "ShareMarketingCustomerVoucherInfo",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "share_data",
+							"type": "Json",
+							"description": "推荐人分享后领取的券（券模板id和对应券实例个数）",
+							"required": true
+						},
+						{
+							"name": "shared_received",
+							"type": "Json",
+							"description": "被推荐人领取后，给推荐人的奖励（券模板id和对应券实例个数）",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误展示",
+					"required": true
+				}
+			]
+		}
+	]
+}

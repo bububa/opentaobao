@@ -1,0 +1,116 @@
+{
+	"name": "alibaba.scbp.ad.keyword.update.keyword.status.batch",
+	"apiChineseName": "修改关键词状态",
+	"description": "修改关键词状态",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "keyword_update_query",
+			"type": "KeywordUpdateQuery",
+			"description": "更新数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "update_type",
+					"type": "String",
+					"description": "更新类型"
+				},
+				{
+					"name": "update_info",
+					"type": "KeywordInfo",
+					"description": "更新实体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键id"
+						},
+						{
+							"name": "online_status",
+							"type": "Number",
+							"description": "线上状态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "keyword_list",
+					"type": "KeywordInfo[]",
+					"description": "关键词集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键id",
+							"required": true
+						},
+						{
+							"name": "word",
+							"type": "String",
+							"description": "词"
+						},
+						{
+							"name": "online_status",
+							"type": "Number",
+							"description": "状态"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "ErrorKeyword []",
+			"description": "返回错误集合",
+			"subParams": [
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "关键词",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "类型",
+					"required": true
+				},
+				{
+					"name": "repeat_keyword",
+					"type": "String",
+					"description": "重复关键 词",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"name": "alibaba.ele.fengniao.chainstore.contract.change",
+	"apiChineseName": "门店改签合同接口",
+	"description": "通过调用接口，门店改签物流服务包",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "Param",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "service_package_code",
+					"type": "String",
+					"description": "服务包code"
+				},
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "appid"
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商户code"
+				},
+				{
+					"name": "chainstore_code",
+					"type": "String",
+					"description": "门店code"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "msg"
+		}
+	]
+}

@@ -1,0 +1,61 @@
+{
+	"name": "alibaba.scbp.ad.group.create.forbidden.product",
+	"apiChineseName": "创建屏蔽品",
+	"description": "创建屏蔽品",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "forbidden_product_batch_operation",
+			"type": "ForbiddenProductBatchOperationDto",
+			"description": "查询条件",
+			"required": true,
+			"subParams": [
+				{
+					"name": "forbidden_product_operation_list",
+					"type": "ForbiddenProductOperationDto[]",
+					"description": "查询条件",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "产品id",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "返回结果"
+		}
+	]
+}

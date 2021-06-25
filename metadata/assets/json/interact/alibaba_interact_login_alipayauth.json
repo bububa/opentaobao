@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.login.alipayauth",
+	"apiChineseName": "双11到店互动花呗红包获取token鉴权接口",
+	"description": "双11到店互动花呗红包获取token鉴权接口",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "返回值"
+		}
+	]
+}

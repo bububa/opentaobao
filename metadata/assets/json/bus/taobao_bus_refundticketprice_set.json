@@ -1,0 +1,78 @@
+{
+	"name": "taobao.bus.refundticketprice.set",
+	"apiChineseName": "汽车票退款申请接口",
+	"description": "汽车票代理商利用该接口申请退票",
+	"requestParams": [
+		{
+			"name": "offline_refund_ticket_rq",
+			"type": "OfflineRefundTicketPriceRq",
+			"description": "退票申请入参",
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商店铺id"
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "top平台用户唯一识别"
+				},
+				{
+					"name": "list_refund_infos",
+					"type": "SingleRefundInfo[]",
+					"description": "退票信息集合",
+					"subParams": [
+						{
+							"name": "card_no",
+							"type": "String",
+							"description": "乘客身份证后四位"
+						},
+						{
+							"name": "refund_price",
+							"type": "String",
+							"description": "退票价格"
+						},
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘客姓名"
+						},
+						{
+							"name": "refund_procedure_price",
+							"type": "String",
+							"description": "退票手续费"
+						},
+						{
+							"name": "refund_detail",
+							"type": "String",
+							"description": "退款详情"
+						},
+						{
+							"name": "agent_order_id",
+							"type": "String",
+							"description": "代理商订单号"
+						},
+						{
+							"name": "refund_ticket_time",
+							"type": "String",
+							"description": "退票时间"
+						},
+						{
+							"name": "agent_ticket_id",
+							"type": "String",
+							"description": "代理商票ID"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "退票成功"
+		}
+	]
+}

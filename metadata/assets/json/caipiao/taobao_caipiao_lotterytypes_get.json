@@ -1,0 +1,29 @@
+{
+	"name": "taobao.caipiao.lotterytypes.get",
+	"apiChineseName": "获取可用的彩种列表",
+	"description": "获取彩票系统支持的可用于赠送的彩种列表",
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "彩种个数"
+		},
+		{
+			"name": "results",
+			"type": "LotteryType []",
+			"description": "彩种的数据结构",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "彩种ID"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "彩种名称"
+				}
+			]
+		}
+	]
+}

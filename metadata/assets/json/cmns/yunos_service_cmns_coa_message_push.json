@@ -1,0 +1,94 @@
+{
+	"name": "yunos.service.cmns.coa.message.push",
+	"apiChineseName": "消息推送接口",
+	"description": "调用CMNS系统的pushMessage接口实现消息通知到YUNOS设备的第三方应用软件。",
+	"requestParams": [
+		{
+			"name": "push_request",
+			"type": "PushRequest",
+			"description": "消息推送请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "device_type",
+					"type": "Number",
+					"description": "设备类型，1：android or yunos，2：ios,当deviceType不指定时，服务器端对msg json字段按照android格式解析"
+				},
+				{
+					"name": "expiration",
+					"type": "Number",
+					"description": "消息过期时间,相对时间(即多少秒后过期,最多7天),单位S,不填默认1小时过期"
+				},
+				{
+					"name": "ios_environment",
+					"type": "Number",
+					"description": "仅IOS应用推送时使用，0代表生成环境，1代表沙箱环境，默认值为0"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "消息内容, 为json字符串,格式详见http://open.yunos.com/doc/detail?spm=a2c01.7698725.0002.40.ZNPFOJ\u0026documentId=102975",
+					"required": true
+				},
+				{
+					"name": "receiver",
+					"type": "Receiver",
+					"description": "消息发送对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "data",
+							"type": "String[]",
+							"description": "deviceToken值，最多1000个",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "只能填写deviceToken",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "消息类型，当前type只能取1，即只能发送给应用透传消息",
+					"required": true
+				},
+				{
+					"name": "priority",
+					"type": "Number",
+					"description": "消息发送优先级，范围为1-5，数字越高，优先级越大，不设置默认优先级为2"
+				},
+				{
+					"name": "biz_app_key",
+					"type": "String",
+					"description": "业务应用appKey,top调用不需要传此参数"
+				},
+				{
+					"name": "collapse_key",
+					"type": "String",
+					"description": "去重码，为应用自己维护的消息唯一标记"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "mid",
+			"type": "Number",
+			"description": "消息ID，失败则为null"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "消息发送提示"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "200:消息发送成功"
+		}
+	]
+}

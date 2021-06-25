@@ -1,0 +1,398 @@
+{
+	"name": "taobao.qimen.singleitem.query",
+	"apiChineseName": "商品查询接口",
+	"description": "商品查询接口",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "RequestDO",
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码,H123,string(50),必填,"
+				},
+				{
+					"name": "itemCode",
+					"type": "String",
+					"description": "商品编码,S1234,string(50),必填,"
+				},
+				{
+					"name": "itemId",
+					"type": "String",
+					"description": "仓储系统商品编码,C123,string(50),必填,"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "ResponseDO",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure,success,string(10),必填,",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码,0,string(50),,",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息,invalid appkey,string(100),,",
+					"required": true
+				},
+				{
+					"name": "item",
+					"type": "Item",
+					"description": "item",
+					"required": true,
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "goodsCode",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "itemName",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "shortName",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "englishName",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "barCode",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "skuProperty",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "stockUnit",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "volume",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "grossWeight",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "netWeight",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "color",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "size",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "categoryId",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "categoryName",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "pricingCategory",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "safetyStock",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "itemType",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "tagPrice",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "retailPrice",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "costPrice",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "purchasePrice",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "seasonCode",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "seasonName",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "brandCode",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "brandName",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "isSNMgmt",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "isShelfLifeMgmt",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "shelfLife",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "rejectLifecycle",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "lockupLifecycle",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "adventLifecycle",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "isBatchMgmt",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "batchRemark",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "packCode",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "pcs",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "originAddress",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "approvalNumber",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "isFragile",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "isHazardous",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "createTime",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "updateTime",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "isValid",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "isSku",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "packageMaterial",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "isAreaSale",
+							"type": "String",
+							"description": "奇门仓储字段,H123,string(50),必填,",
+							"required": true
+						},
+						{
+							"name": "isLiquid",
+							"type": "String",
+							"description": "是否液体, Y/N,  (默认为N)",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

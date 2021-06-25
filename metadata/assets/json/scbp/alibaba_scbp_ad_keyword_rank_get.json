@@ -1,0 +1,20 @@
+{
+	"name": "alibaba.scbp.ad.keyword.rank.get",
+	"apiChineseName": "获取外贸直通车关键词预估排名",
+	"description": "获取外贸直通车关键词预估排名",
+	"requestParams": [
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "查询预估排名的关键词",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rank_location",
+			"type": "Number",
+			"description": "关键词的预估排名"
+		}
+	]
+}

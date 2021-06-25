@@ -1,0 +1,20 @@
+{
+	"name": "tmall.item.hscode.detail.get",
+	"apiChineseName": "通过hscode获取计量单位",
+	"description": "通过hscode获取计量单位和销售单位",
+	"requestParams": [
+		{
+			"name": "hscode",
+			"type": "String",
+			"description": "hscode",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "Json []",
+			"description": "返回的计量单位和销售单位"
+		}
+	]
+}

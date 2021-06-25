@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.wdk.item.merchant.category.query",
+	"apiChineseName": "查询商品的商家叶子类目",
+	"description": "查询商品的商家叶子类目",
+	"requestParams": [
+		{
+			"name": "query_request",
+			"type": "WdkOpenSkuMerchantCatServiceQueryRequest",
+			"description": "请求",
+			"subParams": [
+				{
+					"name": "sku_code_list",
+					"type": "String[]",
+					"description": "商品skuCode"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "WdkOpenSkuMerchantCatServiceQueryResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或失败",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "sku_code_category_code_map",
+					"type": "Json",
+					"description": "{\"skuCode\":\"categoryCode\"}，skuCode和商家叶子类目编码映射关系",
+					"required": true
+				}
+			]
+		}
+	]
+}

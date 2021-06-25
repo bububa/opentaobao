@@ -1,0 +1,12 @@
+{
+	"name": "taobao.top.ipout.get",
+	"apiChineseName": "获取开放平台出口IP段",
+	"description": "获取开放平台出口IP段",
+	"responseParams": [
+		{
+			"name": "ip_list",
+			"type": "String",
+			"description": "TOP网关出口IP列表"
+		}
+	]
+}

@@ -1,0 +1,68 @@
+{
+	"name": "tmall.supplychain.channel.product.price.update",
+	"apiChineseName": "渠道价格更新接口",
+	"description": "更新渠道产品价格",
+	"requestParams": [
+		{
+			"name": "currency_type",
+			"type": "String",
+			"description": "币种，非必填，仅支持当商品记为外币价格时使用"
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品数字ID",
+			"required": true
+		},
+		{
+			"name": "price_type",
+			"type": "Number",
+			"description": "1.指导价(默认) 2.区域价"
+		},
+		{
+			"name": "sku_price",
+			"type": "String",
+			"description": "属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。"
+		},
+		{
+			"name": "product_price",
+			"type": "String",
+			"description": "产品价格，必填"
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "SKU ID"
+		},
+		{
+			"name": "channel_code",
+			"type": "Number",
+			"description": "渠道编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果"
+				}
+			]
+		}
+	]
+}

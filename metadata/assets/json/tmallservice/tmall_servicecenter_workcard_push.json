@@ -1,0 +1,68 @@
+{
+	"name": "tmall.servicecenter.workcard.push",
+	"apiChineseName": "推送服务工单信息",
+	"description": "服务商家推送工单信息到天猫。",
+	"requestParams": [
+		{
+			"name": "attributes",
+			"type": "String",
+			"description": "属性列表。使用半角分号隔开,字符串前后都需要有半角分号"
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "描述"
+		},
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "淘宝交易订单号",
+			"required": true
+		},
+		{
+			"name": "service_reserve_time",
+			"type": "String",
+			"description": "服务预约安装时间"
+		},
+		{
+			"name": "service_reserve_address",
+			"type": "String",
+			"description": "服务预约安装地址。四级地址与街道地址用空格隔开"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "0=初始化, 3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "workcard_result",
+			"type": "ResultBase",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "value",
+					"type": "Number",
+					"description": "值"
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			]
+		}
+	]
+}

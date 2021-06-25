@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.alink.device.unify.status.get",
+	"apiChineseName": "查询设备标准属性最新状态",
+	"description": "查询设备最新标准属性状态",
+	"requestParams": [
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopServiceResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "接口返回数据",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "详细描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,266 @@
+{
+	"name": "alibaba.wdk.finance.order.backflow",
+	"apiChineseName": "财务订单回流",
+	"description": "星巴克拉取财务订单回流数据",
+	"requestParams": [
+		{
+			"name": "finance_order_detail_request",
+			"type": "FinanceOrderDetailRequest",
+			"description": "财务订单回流入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数",
+					"required": true
+				},
+				{
+					"name": "sale_channel",
+					"type": "String",
+					"description": "销售渠道"
+				},
+				{
+					"name": "sale_source",
+					"type": "String",
+					"description": "销售来源"
+				},
+				{
+					"name": "trade_type",
+					"type": "String",
+					"description": "交易类型"
+				},
+				{
+					"name": "shop_codes",
+					"type": "null[]",
+					"description": "门店编码list"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "开始时间",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品",
+			"subParams": [
+				{
+					"name": "models",
+					"type": "FinanceOrderDetailResponse",
+					"description": "调用接口返回的具体结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pagination",
+							"type": "Pagination",
+							"description": "分页信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "total_page",
+									"type": "Number",
+									"description": "总页数",
+									"required": true
+								},
+								{
+									"name": "total_count",
+									"type": "Number",
+									"description": "总记录数",
+									"required": true
+								},
+								{
+									"name": "page_size",
+									"type": "Number",
+									"description": "页容量",
+									"required": true
+								},
+								{
+									"name": "current_page",
+									"type": "Number",
+									"description": "当前页码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "finance_order_details",
+							"type": "FinanceOrderDetail[]",
+							"description": "财务订单信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "币种",
+									"required": true
+								},
+								{
+									"name": "untax_sale_total_amount",
+									"type": "Number",
+									"description": "未税销售净额",
+									"required": true
+								},
+								{
+									"name": "sale_total_amount",
+									"type": "Number",
+									"description": "含税销售净额",
+									"required": true
+								},
+								{
+									"name": "untax_discount_amount",
+									"type": "Number",
+									"description": "未税优惠金额",
+									"required": true
+								},
+								{
+									"name": "discount_amount",
+									"type": "Number",
+									"description": "含税优惠金额",
+									"required": true
+								},
+								{
+									"name": "untax_amount",
+									"type": "Number",
+									"description": "未税金额",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "含税金额",
+									"required": true
+								},
+								{
+									"name": "unit_price",
+									"type": "Number",
+									"description": "含税商品单价（元）",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "交易数量",
+									"required": true
+								},
+								{
+									"name": "tax_rate",
+									"type": "String",
+									"description": "税率",
+									"required": true
+								},
+								{
+									"name": "sale_channel",
+									"type": "String",
+									"description": "销售渠道",
+									"required": true
+								},
+								{
+									"name": "sale_source",
+									"type": "String",
+									"description": "销售来源",
+									"required": true
+								},
+								{
+									"name": "trade_type",
+									"type": "String",
+									"description": "交易类型",
+									"required": true
+								},
+								{
+									"name": "sku_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "商品编码",
+									"required": true
+								},
+								{
+									"name": "p_trade_id",
+									"type": "String",
+									"description": "业务主订单id",
+									"required": true
+								},
+								{
+									"name": "shop_name",
+									"type": "String",
+									"description": "门店名称",
+									"required": true
+								},
+								{
+									"name": "shop_code",
+									"type": "String",
+									"description": "门店编码",
+									"required": true
+								},
+								{
+									"name": "trade_time",
+									"type": "String",
+									"description": "交易时间，用户实际下单时间，格式：HH:mm:ss",
+									"required": true
+								},
+								{
+									"name": "biz_date",
+									"type": "String",
+									"description": "业务日期，用户实际下单日期，格式：yyyyMMdd",
+									"required": true
+								},
+								{
+									"name": "biz_uk",
+									"type": "String",
+									"description": "业务主键",
+									"required": true
+								},
+								{
+									"name": "trade_type_code",
+									"type": "Number",
+									"description": "交易类型编码      * 88 - 销售      * 99 - 退款",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "调用接口返回错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "调用接口返回错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用接口返回成功失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"name": "cainiao.waybill.ii.logisticsdetail.url.get",
+	"apiChineseName": "电子面单物流详情授权url获取",
+	"description": "获取电子面单物流详情授权访问的H5 url",
+	"requestParams": [
+		{
+			"name": "cp_code",
+			"type": "String",
+			"description": "快递公司编码",
+			"required": true
+		},
+		{
+			"name": "waybill_code",
+			"type": "String",
+			"description": "电子面单单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "url",
+			"type": "String",
+			"description": "授权访问的url"
+		}
+	]
+}

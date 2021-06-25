@@ -1,0 +1,370 @@
+{
+	"name": "alibaba.wdk.sku.merchantsku.scroll.query",
+	"apiChineseName": "商家商品批量查询接口",
+	"description": "提供主档商品数据接口查询",
+	"requestParams": [
+		{
+			"name": "org_no",
+			"type": "String",
+			"description": "HM"
+		},
+		{
+			"name": "scroll_id",
+			"type": "String",
+			"description": "第一次为null，后面从结果中获取"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiScrollPageResult",
+			"description": "请求结果对象",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "条目总数",
+					"required": true
+				},
+				{
+					"name": "scroll_id",
+					"type": "String",
+					"description": "第一次调用会返回scroll_id 但并不包含数据，后续每次都必须指定上一次返回scroll_id，并且后续搜索结果中都会返回scroll_id及对应匹配的数据，后续查询该参数必填",
+					"required": true
+				},
+				{
+					"name": "page_count",
+					"type": "Number",
+					"description": "结果页数",
+					"required": true
+				},
+				{
+					"name": "model_list",
+					"type": "WdkOpenMerchantSkuDo[]",
+					"description": "商品主档对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "orgainza_no",
+							"type": "String",
+							"description": "机构编码",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "short_title",
+							"type": "String",
+							"description": "商品简称",
+							"required": true
+						},
+						{
+							"name": "barcodes",
+							"type": "String[]",
+							"description": "条码",
+							"required": true
+						},
+						{
+							"name": "life_status",
+							"type": "String",
+							"description": "商品生命周期状态(A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡)",
+							"required": true
+						},
+						{
+							"name": "back_cat_code",
+							"type": "String",
+							"description": "平台类目编码",
+							"required": true
+						},
+						{
+							"name": "retailer_cat_code",
+							"type": "String",
+							"description": "商家类目编码",
+							"required": true
+						},
+						{
+							"name": "item_type",
+							"type": "Number",
+							"description": "商品经营方式(1001-普通商品， 2001-加工成品，2002-加工半成品，3001-原材料，4001-耗材，6001-组合商品)",
+							"required": true
+						},
+						{
+							"name": "invoice_content",
+							"type": "String",
+							"description": "商品销项税率",
+							"required": true
+						},
+						{
+							"name": "sale_flag",
+							"type": "Number",
+							"description": "是否可售: 1 - 可售， 0 - 不可售",
+							"required": true
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率",
+							"required": true
+						},
+						{
+							"name": "hangdling_flag",
+							"type": "Number",
+							"description": "是否加工商品",
+							"required": true
+						},
+						{
+							"name": "goods_nature",
+							"type": "Number",
+							"description": "存货性质（此字段一经录入不能修改）；此字段可传：原材料、办公品、服务项目、成品、半成品。与是否加工字段组合成商品类型字段。商品类型有5种：耗材、原材料、加工半成品、加工产成品、普通商品。若存货性质是成品，是否加工为是，则商品类型为“加工产成品”；若存货性质是成品，是否加工为否，则商品类型为“普通商品”；若存货性质是半成品，是否加工为是，则商品性质为“加工半成品”",
+							"required": true
+						},
+						{
+							"name": "suggested_price",
+							"type": "Number",
+							"description": "建议零售价",
+							"required": true
+						},
+						{
+							"name": "brand_code",
+							"type": "String",
+							"description": "品牌编码",
+							"required": true
+						},
+						{
+							"name": "supplier_no",
+							"type": "String",
+							"description": "供应商code",
+							"required": true
+						},
+						{
+							"name": "producer_name",
+							"type": "String",
+							"description": "生产商名称",
+							"required": true
+						},
+						{
+							"name": "producer_address",
+							"type": "String",
+							"description": "生产商地址",
+							"required": true
+						},
+						{
+							"name": "product_code",
+							"type": "String",
+							"description": "产品标准号",
+							"required": true
+						},
+						{
+							"name": "factory_no",
+							"type": "String",
+							"description": "厂方货号",
+							"required": true
+						},
+						{
+							"name": "component",
+							"type": "String",
+							"description": "成份",
+							"required": true
+						},
+						{
+							"name": "sale_spec",
+							"type": "String",
+							"description": "销售规格描述",
+							"required": true
+						},
+						{
+							"name": "sale_unit",
+							"type": "String",
+							"description": "售卖单位",
+							"required": true
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "净含量",
+							"required": true
+						},
+						{
+							"name": "allow_app_sale",
+							"type": "Number",
+							"description": "是否APP可售",
+							"required": true
+						},
+						{
+							"name": "big_flag",
+							"type": "Number",
+							"description": "是否大件",
+							"required": true
+						},
+						{
+							"name": "weight_flag",
+							"type": "Number",
+							"description": "是否称重",
+							"required": true
+						},
+						{
+							"name": "import_flag",
+							"type": "Number",
+							"description": "是否进口",
+							"required": true
+						},
+						{
+							"name": "storage",
+							"type": "String",
+							"description": "存储条件；填常温、冷藏、冷冻、热链、鲜活",
+							"required": true
+						},
+						{
+							"name": "period",
+							"type": "Number",
+							"description": "保质天数",
+							"required": true
+						},
+						{
+							"name": "producer_place",
+							"type": "String",
+							"description": "淘鲜达产地库中的值；国内产地传值格式：中国|省|市。若不能确定产地，可以传“见产品外包装”（按商家支持，需要提前通知技术配置）。国外产地只需要传国家名",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "重量（单位统一为g）。称重品（weight_flag为1）该字段不填。",
+							"required": true
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "长度(深)",
+							"required": true
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "宽度（宽）",
+							"required": true
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "高度（高）",
+							"required": true
+						},
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "主图链接",
+							"required": true
+						},
+						{
+							"name": "sku_pic_urls",
+							"type": "String",
+							"description": "商品其他图片",
+							"required": true
+						},
+						{
+							"name": "rich_txt_tfs",
+							"type": "String",
+							"description": "商品图文详情",
+							"required": true
+						},
+						{
+							"name": "sub_title",
+							"type": "String",
+							"description": "商品卖点",
+							"required": true
+						},
+						{
+							"name": "title1",
+							"type": "String",
+							"description": "卖点一名称",
+							"required": true
+						},
+						{
+							"name": "subtitle1",
+							"type": "String",
+							"description": "卖点一内容",
+							"required": true
+						},
+						{
+							"name": "title2",
+							"type": "String",
+							"description": "卖点二名称",
+							"required": true
+						},
+						{
+							"name": "subtitle2",
+							"type": "String",
+							"description": "卖点二内容",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "当前页码",
+					"required": true
+				}
+			]
+		}
+	]
+}

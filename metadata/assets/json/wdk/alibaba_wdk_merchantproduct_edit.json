@@ -1,0 +1,238 @@
+{
+	"name": "alibaba.wdk.merchantproduct.edit",
+	"apiChineseName": "商家产品服务-编辑产品",
+	"description": "商家产品服务-编辑产品",
+	"requestParams": [
+		{
+			"name": "req",
+			"type": "MerchantProductRequest",
+			"description": "产品编辑入参",
+			"subParams": [
+				{
+					"name": "transport_weight",
+					"type": "String",
+					"description": "运输: 重量,单位: (g)"
+				},
+				{
+					"name": "expiration_days",
+					"type": "Number",
+					"description": "保质期(天)"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题"
+				},
+				{
+					"name": "rt_category_id",
+					"type": "Number",
+					"description": "商家类目ID"
+				},
+				{
+					"name": "tax_invoice",
+					"type": "String",
+					"description": "税率"
+				},
+				{
+					"name": "inventory_unit",
+					"type": "String",
+					"description": "库存单位"
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "价格,小数点2位"
+				},
+				{
+					"name": "transport_height",
+					"type": "String",
+					"description": "运输: 高度(mm)"
+				},
+				{
+					"name": "package_num",
+					"type": "Number",
+					"description": "箱规数/包装数"
+				},
+				{
+					"name": "height",
+					"type": "String",
+					"description": "销售: 高度(mm)"
+				},
+				{
+					"name": "cat_props",
+					"type": "CatProps[]",
+					"description": "类目属性信息",
+					"subParams": [
+						{
+							"name": "property_id",
+							"type": "Number",
+							"description": "类目属性ID"
+						},
+						{
+							"name": "property_text",
+							"type": "String",
+							"description": "类目属性名称"
+						},
+						{
+							"name": "value_id",
+							"type": "Number",
+							"description": "类目值ID"
+						},
+						{
+							"name": "value_text",
+							"type": "String",
+							"description": "类目值名称"
+						}
+					]
+				},
+				{
+					"name": "length",
+					"type": "String",
+					"description": "销售: 长度(mm)"
+				},
+				{
+					"name": "specification",
+					"type": "String",
+					"description": "规格"
+				},
+				{
+					"name": "weight",
+					"type": "String",
+					"description": "销售: 重量(g)"
+				},
+				{
+					"name": "step_quantity",
+					"type": "Number",
+					"description": "APP购买步长"
+				},
+				{
+					"name": "transport_width",
+					"type": "String",
+					"description": "运输: 宽度(mm)"
+				},
+				{
+					"name": "market_categories",
+					"description": "铺货渠道类目(key: 渠道编码, value: 渠道类目)"
+				},
+				{
+					"name": "transport_length",
+					"type": "String",
+					"description": "运输: 长度(mm)"
+				},
+				{
+					"name": "volume",
+					"type": "String",
+					"description": "销售: 体积(cm^3)"
+				},
+				{
+					"name": "standard_category_id",
+					"type": "Number",
+					"description": "阿里标准叶子类目"
+				},
+				{
+					"name": "purchase_quantity",
+					"type": "Number",
+					"description": "最小起订量"
+				},
+				{
+					"name": "width",
+					"type": "String",
+					"description": "销售: 宽度(mm)"
+				},
+				{
+					"name": "rt_item_code",
+					"type": "Number",
+					"description": "RT商品ID",
+					"required": true
+				},
+				{
+					"name": "avg_weight",
+					"type": "String",
+					"description": "均重"
+				},
+				{
+					"name": "is_shelflife",
+					"type": "Boolean",
+					"description": "效期方式(true:有效期,false:无效期)"
+				},
+				{
+					"name": "yx_category_id",
+					"type": "String",
+					"description": "优鲜类目ID"
+				},
+				{
+					"name": "is_weight",
+					"type": "Boolean",
+					"description": "是否称重"
+				},
+				{
+					"name": "rt_category_name_path",
+					"type": "String",
+					"description": "商家类目名路径"
+				},
+				{
+					"name": "transport_volume",
+					"type": "String",
+					"description": "运输: 体积,单位: (cm^3)"
+				},
+				{
+					"name": "yx_category_name_path",
+					"type": "String",
+					"description": "优鲜类目名路径"
+				},
+				{
+					"name": "barcodes",
+					"type": "String[]",
+					"description": "商品条码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "产品编辑返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "MerchantProductResponse",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sc_ids",
+							"type": "Number[]",
+							"description": "货品id",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "[\"123\",\"456\"]",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

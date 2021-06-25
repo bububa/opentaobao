@@ -1,0 +1,54 @@
+{
+	"name": "alibaba.ele.fengniao.cancel.merchant",
+	"apiChineseName": "商户取消",
+	"description": "商户取消配送",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "Param",
+			"description": "参数param",
+			"required": true,
+			"subParams": [
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "appId",
+					"required": true
+				},
+				{
+					"name": "partner_order_code",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "channel_id",
+					"type": "String",
+					"description": "渠道code"
+				},
+				{
+					"name": "order_cancel_desc",
+					"type": "String",
+					"description": "取消原因描述"
+				},
+				{
+					"name": "order_cancel_code",
+					"type": "Number",
+					"description": "取消code"
+				},
+				{
+					"name": "order_cancel_reason_code",
+					"type": "Number",
+					"description": "取消原因code  1:用户取消"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		}
+	]
+}

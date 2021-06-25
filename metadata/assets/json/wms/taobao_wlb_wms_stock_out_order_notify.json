@@ -1,0 +1,272 @@
+{
+	"name": "taobao.wlb.wms.stock.out.order.notify",
+	"apiChineseName": "出库单通知",
+	"description": "出库单通知",
+	"requestParams": [
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓储编码",
+			"required": true
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "ERP单据ID",
+			"required": true
+		},
+		{
+			"name": "order_type",
+			"type": "Number",
+			"description": "单据类型 301 调拨出库单、901普通出库单、903 其他出库单 305 B2B出库",
+			"required": true
+		},
+		{
+			"name": "outbound_type_desc",
+			"type": "String",
+			"description": "ERP可选择性文本透传至WMS"
+		},
+		{
+			"name": "order_create_time",
+			"type": "Date",
+			"description": "订单创建时间",
+			"required": true
+		},
+		{
+			"name": "send_time",
+			"type": "Date",
+			"description": "要求出库日期"
+		},
+		{
+			"name": "receiver_info",
+			"type": "Receiverwlbwmsstockoutordernotify",
+			"description": "收件人信息",
+			"subParams": [
+				{
+					"name": "receiver_city",
+					"type": "String",
+					"description": "收件方城市"
+				},
+				{
+					"name": "receiver_area",
+					"type": "String",
+					"description": "收件方区县"
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "收件方手机"
+				},
+				{
+					"name": "receiver_province",
+					"type": "String",
+					"description": "收件方省份"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件方名称"
+				},
+				{
+					"name": "receiver_code",
+					"type": "String",
+					"description": "退供场景ECP填充供应商编码，调拨出库单ECP填充调拨入仓库编码, B2B出库单填写分销商ID(无分销ID的null)"
+				},
+				{
+					"name": "receiver_zip_code",
+					"type": "String",
+					"description": "收件方邮编"
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "收件方地址"
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "收件方电话"
+				}
+			]
+		},
+		{
+			"name": "sender_info",
+			"type": "Senderwlbwmsstockoutordernotify",
+			"description": "发货方信息",
+			"subParams": [
+				{
+					"name": "sender_town",
+					"type": "String",
+					"description": "发件方镇"
+				},
+				{
+					"name": "sender_zip_code",
+					"type": "String",
+					"description": "发件方邮编"
+				},
+				{
+					"name": "sender_address",
+					"type": "String",
+					"description": "发件方地址"
+				},
+				{
+					"name": "sender_name",
+					"type": "String",
+					"description": "发件方名称"
+				},
+				{
+					"name": "sender_province",
+					"type": "String",
+					"description": "发件方省份"
+				},
+				{
+					"name": "sender_area",
+					"type": "String",
+					"description": "发件方区县"
+				},
+				{
+					"name": "sender_city",
+					"type": "String",
+					"description": "发件方城市"
+				},
+				{
+					"name": "sender_mobile",
+					"type": "String",
+					"description": "发件方手机"
+				},
+				{
+					"name": "sender_phone",
+					"type": "String",
+					"description": "发件方电话"
+				}
+			]
+		},
+		{
+			"name": "transport_mode",
+			"type": "String",
+			"description": "出库方式"
+		},
+		{
+			"name": "carriers_name",
+			"type": "String",
+			"description": "承运商名称"
+		},
+		{
+			"name": "pick_name",
+			"type": "String",
+			"description": "取件人姓名"
+		},
+		{
+			"name": "pick_call",
+			"type": "String",
+			"description": "取件人电话"
+		},
+		{
+			"name": "pick_id",
+			"type": "String",
+			"description": "取件人身份证ID"
+		},
+		{
+			"name": "car_no",
+			"type": "String",
+			"description": "车牌号"
+		},
+		{
+			"name": "order_item_list",
+			"type": "Orderitemlistwlbwmsstockoutordernotify[]",
+			"description": "订单商品信息列表",
+			"maxListSize": 5000,
+			"subParams": [
+				{
+					"name": "order_item",
+					"type": "Orderitemwlbwmsstockoutordernotify",
+					"description": "订单商品信息",
+					"subParams": [
+						{
+							"name": "produce_date",
+							"type": "Date",
+							"description": "生产日期"
+						},
+						{
+							"name": "item_quantity",
+							"type": "Number",
+							"description": "商品数量"
+						},
+						{
+							"name": "batch_code",
+							"type": "String",
+							"description": "批次号"
+						},
+						{
+							"name": "order_item_id",
+							"type": "String",
+							"description": "ERP主键ID"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "ERP商品ID"
+						},
+						{
+							"name": "produce_code",
+							"type": "String",
+							"description": "生产编码，同一商品可能因商家不同有不同编码"
+						},
+						{
+							"name": "extend_fields",
+							"type": "String",
+							"description": "订单商品拓展属性数据"
+						},
+						{
+							"name": "inventory_type",
+							"type": "Number",
+							"description": "库存类型"
+						},
+						{
+							"name": "due_date",
+							"type": "Date",
+							"description": "到货日期"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "prev_order_code",
+			"type": "String",
+			"description": "前物流订单号，如退货入库单可能会用到"
+		},
+		{
+			"name": "extend_fields",
+			"type": "String",
+			"description": "拓展属性"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "wl_error_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "wl_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "wl_error_msg",
+			"type": "String",
+			"description": "错误详细"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "仓储订单编码"
+		}
+	]
+}

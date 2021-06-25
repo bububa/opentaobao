@@ -1,0 +1,298 @@
+{
+	"name": "taobao.wlb.wms.stock.in.order.notify",
+	"apiChineseName": "入库通知单",
+	"description": "入库通知单",
+	"requestParams": [
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓库编码",
+			"required": true
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "入库单据编码",
+			"required": true
+		},
+		{
+			"name": "order_type",
+			"type": "Number",
+			"description": "单据类型 601普通入库单、501销退入库单、302 调拨入库单、904其他入库单、306 B2B入库",
+			"required": true
+		},
+		{
+			"name": "inbound_type_desc",
+			"type": "String",
+			"description": "可选择性文本透传至WMS，比如加工归还、委外归还、借出归还、内部归还等"
+		},
+		{
+			"name": "order_flag",
+			"type": "String",
+			"description": "订单标记以逗号分隔：  9:上门退货入库 13: 退货时是否收取发票，默认不收取（即没13为多选项，如1,2,8,9）"
+		},
+		{
+			"name": "order_create_time",
+			"type": "Date",
+			"description": "单据创建时间",
+			"required": true
+		},
+		{
+			"name": "supplier_code",
+			"type": "String",
+			"description": "供应商编码，往来单位编码"
+		},
+		{
+			"name": "supplier_name",
+			"type": "String",
+			"description": "供应商名称 ，往来单位名称"
+		},
+		{
+			"name": "tms_service_code",
+			"type": "String",
+			"description": "配送公司编码，拒收（非妥投）的销退订单，由ERP填充原单配送公司编码"
+		},
+		{
+			"name": "tms_service_name",
+			"type": "String",
+			"description": "快递公司名称"
+		},
+		{
+			"name": "tms_order_code",
+			"type": "String",
+			"description": "运单号\u0026托运单号 1)\t入库单支持多运单号录入 2)\t销退场景下如果是拒收（非妥投运单）由ERP填充原运单号"
+		},
+		{
+			"name": "prev_order_code",
+			"type": "String",
+			"description": "来源单据号，如销售退货时填充原销售订单号"
+		},
+		{
+			"name": "return_reason",
+			"type": "String",
+			"description": "销退时请提供退货的原因"
+		},
+		{
+			"name": "expect_start_time",
+			"type": "String",
+			"description": "预期送达开始时间"
+		},
+		{
+			"name": "expect_end_time",
+			"type": "String",
+			"description": "预期送达结束时间"
+		},
+		{
+			"name": "receiver_info",
+			"type": "Receiverinfowlbwmsstockinordernotifywl",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "receiver_city",
+					"type": "String",
+					"description": "收件人城市"
+				},
+				{
+					"name": "receiver_area",
+					"type": "String",
+					"description": "收件人区县"
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "收件人手机"
+				},
+				{
+					"name": "receiver_province",
+					"type": "String",
+					"description": "收件人省份"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件人名称"
+				},
+				{
+					"name": "receiver_zip_code",
+					"type": "String",
+					"description": "收件人邮编"
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "收件方地址"
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "收件人手机"
+				},
+				{
+					"name": "receiver_town",
+					"type": "String",
+					"description": "收件人镇"
+				}
+			]
+		},
+		{
+			"name": "sender_info",
+			"type": "Senderinfowlbwmsstockinordernotifywl",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "sender_zip_code",
+					"type": "String",
+					"description": "发件方邮编"
+				},
+				{
+					"name": "sender_town",
+					"type": "String",
+					"description": "发件方镇"
+				},
+				{
+					"name": "sender_address",
+					"type": "String",
+					"description": "发件方地址"
+				},
+				{
+					"name": "sender_name",
+					"type": "String",
+					"description": "发件方名称，销退场景下填写买家名称； 调拨场景下填写调拨出仓库名称；"
+				},
+				{
+					"name": "sender_province",
+					"type": "String",
+					"description": "发件方省份"
+				},
+				{
+					"name": "sender_area",
+					"type": "String",
+					"description": "发件方区县"
+				},
+				{
+					"name": "sender_code",
+					"type": "String",
+					"description": "发件方编码，销退场景下填写买家nick，旺旺号等； 调拨场景下填写调拨出仓库编码；"
+				},
+				{
+					"name": "sender_city",
+					"type": "String",
+					"description": "发件方城市"
+				},
+				{
+					"name": "sender_mobile",
+					"type": "String",
+					"description": "发件方手机"
+				},
+				{
+					"name": "sender_phone",
+					"type": "String",
+					"description": "发件方电话"
+				}
+			]
+		},
+		{
+			"name": "order_item_list",
+			"type": "Orderitemlistwlbwmsstockinordernotifywl[]",
+			"description": "系统自动生成",
+			"required": true,
+			"maxListSize": 5000,
+			"subParams": [
+				{
+					"name": "order_item",
+					"type": "Orderitemwlbwmsstockinordernotifywl",
+					"description": "订单商品",
+					"required": true,
+					"subParams": [
+						{
+							"name": "produce_code",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "item_quantity",
+							"type": "Number",
+							"description": "商品数量",
+							"required": true
+						},
+						{
+							"name": "batch_code",
+							"type": "String",
+							"description": "批次编号"
+						},
+						{
+							"name": "order_item_id",
+							"type": "String",
+							"description": "单据明细ID",
+							"required": true
+						},
+						{
+							"name": "extend_fields",
+							"type": "String",
+							"description": "订单商品拓展属性"
+						},
+						{
+							"name": "inventory_type",
+							"type": "Number",
+							"description": "库存类型 1 正品 101 残次 102 机损 103 箱损 201 冻结库存 301 在途库存",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "后端商品ID",
+							"required": true
+						},
+						{
+							"name": "due_date",
+							"type": "Date",
+							"description": "失效日期"
+						},
+						{
+							"name": "purchase_price",
+							"type": "Number",
+							"description": "采购价格"
+						},
+						{
+							"name": "produce_date",
+							"type": "Date",
+							"description": "生产日期"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "extend_fields",
+			"type": "String",
+			"description": "扩展属性, key-value结构，格式要求： 以英文分号“;”分隔每组key-value，以英文冒号“:”分隔key与value。如果value中带有分号，需要转成下划线“_”，如果带有冒号，需要转成中划线“-”"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注，销退入库订单需要留言备注填充到此字段"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "wl_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "wl_error_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "wl_error_msg",
+			"type": "String",
+			"description": "错误详细"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "仓储订单编码"
+		}
+	]
+}

@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.scbp.ad.group.create.ad.group.batch",
+	"apiChineseName": "创建推广单元",
+	"description": "创建推广单元",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "ad_group_batch_operation",
+			"type": "AdGroupBatchOperationDto",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "ad_group_operation_list",
+					"type": "AdGroupOperationDto[]",
+					"description": "入参",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "产品id",
+							"required": true
+						},
+						{
+							"name": "online_status",
+							"type": "Number",
+							"description": "线上状态"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "返回结果"
+		}
+	]
+}

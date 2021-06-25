@@ -1,0 +1,236 @@
+{
+	"name": "alibaba.wdk.marketing.open.darunfa.activity.sync",
+	"apiChineseName": "活动数据同步",
+	"description": "大润发活动数据同步",
+	"requestParams": [
+		{
+			"name": "activity_list",
+			"type": "DrfTxdActivityBo[]",
+			"description": "大润发活动数据",
+			"required": true,
+			"maxListSize": 200,
+			"subParams": [
+				{
+					"name": "activity_channel",
+					"type": "String",
+					"description": "换购机台"
+				},
+				{
+					"name": "celling_amount",
+					"type": "Number",
+					"description": "封顶金额，单位：分"
+				},
+				{
+					"name": "is_multi_mix",
+					"type": "Number",
+					"description": "是否多阶梯可叠加，0--否，1--是"
+				},
+				{
+					"name": "item_overlay",
+					"type": "Number",
+					"description": "是否单商品累计，0--否，1--是"
+				},
+				{
+					"name": "discount_fee_model",
+					"type": "Number",
+					"description": "是否可贬值；0--否，1--是"
+				},
+				{
+					"name": "enable_multiple",
+					"type": "Number",
+					"description": "是否上不封顶；0--否，1--是"
+				},
+				{
+					"name": "pool_rules",
+					"type": "String",
+					"description": "商品池规则"
+				},
+				{
+					"name": "pool_num",
+					"type": "Number",
+					"description": "商品池数量"
+				},
+				{
+					"name": "merchant_crowd_code",
+					"type": "String",
+					"description": "商家人群编码"
+				},
+				{
+					"name": "total_day_limit",
+					"type": "Number",
+					"description": "活动每日限购"
+				},
+				{
+					"name": "user_day_limit",
+					"type": "Number",
+					"description": "用户每日限购"
+				},
+				{
+					"name": "total_limit",
+					"type": "Number",
+					"description": "活动总限购"
+				},
+				{
+					"name": "user_limit",
+					"type": "Number",
+					"description": "用户数量总限购"
+				},
+				{
+					"name": "fix_price",
+					"type": "Number",
+					"description": "一口价【分】"
+				},
+				{
+					"name": "count_at",
+					"type": "Number",
+					"description": "第N件活动规则"
+				},
+				{
+					"name": "discount_type",
+					"type": "Number",
+					"description": "单品特价类型；1-一口价；2-打折；3-减钱"
+				},
+				{
+					"name": "activity_type",
+					"type": "Number",
+					"description": "?营销中台活动类型"
+				},
+				{
+					"name": "terminals",
+					"type": "String",
+					"description": "1--pos,2--App;1,2--pos\u0026App"
+				},
+				{
+					"name": "store_ids",
+					"type": "String",
+					"description": "门店Id"
+				},
+				{
+					"name": "activity_content",
+					"type": "String",
+					"description": "活动描述"
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称"
+				},
+				{
+					"name": "promotion_id",
+					"type": "String",
+					"description": "中台活动Id（全局唯一）"
+				},
+				{
+					"name": "limit_weight",
+					"type": "Number",
+					"description": "限购权重，实际限购=限购值/限购权重"
+				},
+				{
+					"name": "update_time",
+					"type": "Number",
+					"description": "更新时间"
+				},
+				{
+					"name": "insert_time",
+					"type": "Number",
+					"description": "插入时间"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "0--不可用；1--可用"
+				},
+				{
+					"name": "end_date",
+					"type": "Number",
+					"description": "活动结束时间"
+				},
+				{
+					"name": "start_date",
+					"type": "Number",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "stair_rules",
+					"type": "String",
+					"description": "商品池阶梯规则"
+				},
+				{
+					"name": "is_check_all_cond",
+					"type": "Number",
+					"description": "是否叠加逻辑分组与阶梯条件；0-否，1-是"
+				},
+				{
+					"name": "txd_activity_id",
+					"type": "Number",
+					"description": "淘鲜达活动Id"
+				}
+			]
+		},
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "门店Id",
+			"required": true
+		},
+		{
+			"name": "version_id",
+			"type": "Number",
+			"description": "版本ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "WdkMarketOpenResult",
+			"description": "结果信息",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true--成功，false--失败",
+					"required": true
+				},
+				{
+					"name": "activity_list",
+					"type": "SyncActivityResultBo[]",
+					"description": "活动数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_ids",
+							"type": "String",
+							"description": "门店ID",
+							"required": true
+						},
+						{
+							"name": "version_id",
+							"type": "Number",
+							"description": "版本ID",
+							"required": true
+						},
+						{
+							"name": "promotion_id",
+							"type": "String",
+							"description": "大润发活动ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,60 @@
+{
+	"name": "alitrip.travel.crsorder.search",
+	"apiChineseName": "CRS接送机订单列表搜索",
+	"description": "提供给CRS商家搜索订单列表，仅返回订单号列表",
+	"requestParams": [
+		{
+			"name": "crs_order_status",
+			"type": "Number",
+			"description": "订单状态，10-待派单，20-待用车，30-已取消，40-待处理退款申请，60-已关闭，70-已完成",
+			"required": true
+		},
+		{
+			"name": "begin_car_use_time",
+			"type": "Date",
+			"description": "用车时间-起始"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小，默认20"
+		},
+		{
+			"name": "end_car_use_time",
+			"type": "Date",
+			"description": "用车时间-终止"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页，默认值1"
+		},
+		{
+			"name": "end_pay_time",
+			"type": "Date",
+			"description": "支付时间-终止"
+		},
+		{
+			"name": "begin_pay_time",
+			"type": "Date",
+			"description": "支付时间-起始"
+		},
+		{
+			"name": "begin_cancel_time",
+			"type": "Date",
+			"description": "取消时间-起始"
+		},
+		{
+			"name": "end_cancel_time",
+			"type": "Date",
+			"description": "取消时间-终止"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order_string_list",
+			"type": "String []",
+			"description": "订单id列表（string类型）"
+		}
+	]
+}

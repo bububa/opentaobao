@@ -1,0 +1,174 @@
+{
+	"name": "taobao.qimen.stockchange.report",
+	"apiChineseName": "库存异动通知接口",
+	"description": "WMS调用奇门的接口,将库存异动信息信息回传给ERP",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "StockChangeReportRequest",
+			"subParams": [
+				{
+					"name": "items",
+					"type": "Item[]",
+					"description": "item",
+					"subParams": [
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码",
+							"required": true
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						},
+						{
+							"name": "orderCode",
+							"type": "String",
+							"description": "引起异动的单据编码",
+							"required": true
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "单据类型(JYCK=一般交易出库单;HHCK=换货出库;BFCK=补发出库;PTCK=普通出库单;DBCK=调拨出库;B2BRK=B2B入 库;B2BCK=B2B出库;QTCK=其他出库;SCRK=生产入库;LYRK=领用入库;CCRK=残次品入库;CGRK=采购入库;DBRK= 调拨入库;QTRK= 其他入 库;XTRK= 销退入库;HHRK= 换货入库;CNJG= 仓内加工单)"
+						},
+						{
+							"name": "outBizCode",
+							"type": "String",
+							"description": "外部业务编码(消息ID;用于去重;用来保证因为网络等原因导致重复传输;请求不会被重复处理)",
+							"required": true
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品ID"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;ZT=在途库存)"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "商品变化量(可为正为负)",
+							"required": true
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编码"
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "商品生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "商品过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "changeTime",
+							"type": "String",
+							"description": "异动时间(YYYY-MM-DD HH:MM:SS)"
+						},
+						{
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "batchs",
+							"subParams": [
+								{
+									"name": "batchCode",
+									"type": "String",
+									"description": "批次编号"
+								},
+								{
+									"name": "productDate",
+									"type": "String",
+									"description": "生产日期(YYYY-MM-DD)"
+								},
+								{
+									"name": "expireDate",
+									"type": "String",
+									"description": "过期日期(YYYY-MM-DD)"
+								},
+								{
+									"name": "produceCode",
+									"type": "String",
+									"description": "生产批号"
+								},
+								{
+									"name": "inventoryType",
+									"type": "String",
+									"description": "库存类型(ZP=正品;CC=残次;JS=机损 XS= 箱损;ZT=在途库存)"
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "异动数量(要求batchs节点下所有的异动数量之和等于orderline中的异动数量)"
+								}
+							]
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "isLocked",
+							"type": "String",
+							"description": "isLocked"
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

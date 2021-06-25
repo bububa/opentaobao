@@ -1,0 +1,30 @@
+{
+	"name": "taobao.simba.salestar.adgroup.delete",
+	"apiChineseName": "(新)销量明星删除推广单元接口",
+	"description": "删除一个推广组",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "删除失败时透出的原因，仅当success为false是有效"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "表示接口调用成功，当推广单元不存在等情况下也会返回true"
+		}
+	]
+}

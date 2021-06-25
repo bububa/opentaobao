@@ -1,0 +1,205 @@
+{
+	"name": "aliexpress.social.item.ranking",
+	"apiChineseName": "社交排行榜",
+	"description": "社交商品成交排行榜",
+	"requestParams": [
+		{
+			"name": "currency",
+			"type": "String",
+			"description": "币种"
+		},
+		{
+			"name": "country_list",
+			"type": "String[]",
+			"description": "国家列表",
+			"maxListSize": 20
+		},
+		{
+			"name": "locale",
+			"type": "String",
+			"description": "locale，格式为language+\"_\"+country"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "cate_id",
+			"type": "Number",
+			"description": "类目ID"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "返回包装类型",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "ItemSearchResult[]",
+					"description": "返回类型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "item_title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "item_url",
+							"type": "String",
+							"description": "商品链接",
+							"required": true
+						},
+						{
+							"name": "item_main_pic",
+							"type": "String",
+							"description": "商品主图",
+							"required": true
+						},
+						{
+							"name": "item_origin_price_min",
+							"type": "String",
+							"description": "商品原价最低值",
+							"required": true
+						},
+						{
+							"name": "item_origin_price_max",
+							"type": "String",
+							"description": "商品原价最高值",
+							"required": true
+						},
+						{
+							"name": "item_price_discount_min",
+							"type": "String",
+							"description": "商品折扣价最低值",
+							"required": true
+						},
+						{
+							"name": "item_price_discount_max",
+							"type": "String",
+							"description": "商品折扣价最高值",
+							"required": true
+						},
+						{
+							"name": "item_discount_rate",
+							"type": "String",
+							"description": "商品折扣率",
+							"required": true
+						},
+						{
+							"name": "pub_time",
+							"type": "String",
+							"description": "商品发布时间",
+							"required": true
+						},
+						{
+							"name": "comment_score",
+							"type": "String",
+							"description": "商品评价分数",
+							"required": true
+						},
+						{
+							"name": "shop_url",
+							"type": "String",
+							"description": "店铺URL",
+							"required": true
+						},
+						{
+							"name": "commission_rate",
+							"type": "String",
+							"description": "佣金比例",
+							"required": true
+						},
+						{
+							"name": "item_pics",
+							"type": "String",
+							"description": "商品图片地址",
+							"required": true
+						},
+						{
+							"name": "item_videos",
+							"type": "String",
+							"description": "商品视频地址",
+							"required": true
+						},
+						{
+							"name": "seller_layer",
+							"type": "String",
+							"description": "卖家服务等级",
+							"required": true
+						},
+						{
+							"name": "sales30_day_semantic",
+							"type": "String",
+							"description": "30天销量语义化信息",
+							"required": true
+						},
+						{
+							"name": "comment30_day_semantic",
+							"type": "String",
+							"description": "30天评论数语义化信息",
+							"required": true
+						},
+						{
+							"name": "favorite_cnt_semantic",
+							"type": "String",
+							"description": "收藏数语义化信息",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总条数",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数",
+					"required": true
+				}
+			]
+		}
+	]
+}

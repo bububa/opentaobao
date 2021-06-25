@@ -1,0 +1,218 @@
+{
+	"name": "alibaba.scbp.ad.campaign.find.campaign.page",
+	"apiChineseName": "分页查询计划",
+	"description": "分页查询计划",
+	"requestParams": [
+		{
+			"name": "campaign_query",
+			"type": "CampaignQueryDto",
+			"description": "请求实体类",
+			"required": true,
+			"subParams": [
+				{
+					"name": "title",
+					"type": "String",
+					"description": "计划标题，配合exactMatch使用"
+				},
+				{
+					"name": "sub_type",
+					"type": "String",
+					"description": "子类型"
+				},
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "推广状态"
+				},
+				{
+					"name": "exact_match",
+					"type": "Boolean",
+					"description": "标题是否精确匹配"
+				},
+				{
+					"name": "type_list",
+					"type": "Number[]",
+					"description": "计划类型列表"
+				},
+				{
+					"name": "sub_type_list",
+					"type": "String[]",
+					"description": "计划子类型列表"
+				},
+				{
+					"name": "cate_id",
+					"type": "Number",
+					"description": "类目id"
+				},
+				{
+					"name": "pkg_cfg_id_list",
+					"type": "Number[]",
+					"description": "方案包配置id列表"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "当前页数"
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "每页数量"
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总数量"
+		},
+		{
+			"name": "result_list",
+			"type": "CampaignDto []",
+			"description": "返回数据",
+			"subParams": [
+				{
+					"name": "title",
+					"type": "String",
+					"description": "计划标题",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "计划开始时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "计划结束时间",
+					"required": true
+				},
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "用户上下线",
+					"required": true
+				},
+				{
+					"name": "settle_status",
+					"type": "Number",
+					"description": "结算上下线",
+					"required": true
+				},
+				{
+					"name": "settle_reason",
+					"type": "String",
+					"description": "结算上下线原因",
+					"required": true
+				},
+				{
+					"name": "settle_time",
+					"type": "Date",
+					"description": "settleTime",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "计划类型",
+					"required": true
+				},
+				{
+					"name": "campaign_model",
+					"type": "Number",
+					"description": "计划模型",
+					"required": true
+				},
+				{
+					"name": "top_time",
+					"type": "Date",
+					"description": "置顶时间",
+					"required": true
+				},
+				{
+					"name": "settle_version",
+					"type": "Number",
+					"description": "结算版本",
+					"required": true
+				},
+				{
+					"name": "scene_id",
+					"type": "Number",
+					"description": "场景ID",
+					"required": true
+				},
+				{
+					"name": "properties",
+					"type": "Json",
+					"description": "Campaign扩展属性",
+					"required": true
+				},
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "member_id",
+					"type": "Number",
+					"description": "广告用户ID",
+					"required": true
+				},
+				{
+					"name": "cust_id",
+					"type": "Number",
+					"description": "客户ID",
+					"required": true
+				},
+				{
+					"name": "biz_number",
+					"type": "Number",
+					"description": "业务流水号",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "实体主键",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "计划创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "计划修改时间",
+					"required": true
+				}
+			]
+		}
+	]
+}

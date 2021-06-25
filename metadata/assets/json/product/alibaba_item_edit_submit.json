@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.item.edit.submit",
+	"apiChineseName": "商品编辑提交schema信息",
+	"description": "商品编辑提交schema信息",
+	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务扩展参数，需与平台约定好"
+		},
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "商品类目ID。若不需要修改商品类目，则不用填写"
+		},
+		{
+			"name": "spu_id",
+			"type": "Number",
+			"description": "产品ID，若不需要修改关联的产品信息，则不需要填写"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "编辑后的schema信息，通过alibaba.item.edit.schema.get获取",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_time",
+			"type": "String",
+			"description": "商品更新时间"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID"
+		},
+		{
+			"name": "market",
+			"type": "String",
+			"description": "商品所属市场"
+		}
+	]
+}

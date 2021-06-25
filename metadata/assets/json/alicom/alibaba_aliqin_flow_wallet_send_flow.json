@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.aliqin.flow.wallet.send.flow",
+	"apiChineseName": "流量发放",
+	"description": "阿里通信流量下发功能，允许用户补发",
+	"requestParams": [
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "混淆用户名"
+		},
+		{
+			"name": "real_nick",
+			"type": "String",
+			"description": "真实用户名称，如果填写这个字段，buyer_nick失效"
+		},
+		{
+			"name": "serial",
+			"type": "String",
+			"description": "唯一流水号，字母+数字组合",
+			"required": true
+		},
+		{
+			"name": "flow",
+			"type": "String",
+			"description": "流量",
+			"required": true
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "购物送",
+			"required": true
+		},
+		{
+			"name": "always",
+			"type": "String",
+			"description": "设置true为始终发送成功"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "value",
+			"type": "String",
+			"description": "true为成功"
+		}
+	]
+}

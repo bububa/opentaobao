@@ -1,0 +1,104 @@
+{
+	"name": "alibaba.wdk.marketing.expire.promotion.query",
+	"apiChineseName": "短保优惠查询",
+	"description": "短保优惠查询",
+	"requestParams": [
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "店铺id",
+			"required": true
+		},
+		{
+			"name": "sku_code",
+			"type": "String",
+			"description": "商品skucode",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ExpirePromotionBo",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "shop_ids",
+							"type": "String[]",
+							"description": "门店",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家code",
+							"required": true
+						},
+						{
+							"name": "period_infos",
+							"type": "ExpirePeriodInfo[]",
+							"description": "优惠详情",
+							"required": true,
+							"subParams": [
+								{
+									"name": "promotion_value",
+									"type": "Number",
+									"description": "优惠值",
+									"required": true
+								},
+								{
+									"name": "end_hour",
+									"type": "Number",
+									"description": "优惠结束时间（距离过期时间）",
+									"required": true
+								},
+								{
+									"name": "start_hour",
+									"type": "Number",
+									"description": "优惠开始时间（距离过期时间）",
+									"required": true
+								},
+								{
+									"name": "out_id",
+									"type": "Number",
+									"description": "外部优惠id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

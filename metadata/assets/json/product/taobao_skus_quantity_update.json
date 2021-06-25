@@ -1,0 +1,163 @@
+{
+	"name": "taobao.skus.quantity.update",
+	"apiChineseName": "SKU库存修改",
+	"description": "提供按照全量/增量的方式批量修改SKU库存的功能",
+	"requestParams": [
+		{
+			"name": "num_iid",
+			"type": "Number",
+			"description": "商品数字ID，必填参数",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "库存更新方式，可选。1为全量更新，2为增量更新。如果不填，默认为全量更新。当选择全量更新时，如果库存更新值传入的是负数，会出错并返回错误码；当选择增量更新时，如果库存更新值为负数且绝对值大于当前库存，则sku库存会设置为0."
+		},
+		{
+			"name": "skuid_quantities",
+			"type": "String",
+			"description": "sku库存批量修改入参，用于指定一批sku和每个sku的库存修改值，特殊可填。格式为skuId:库存修改值;skuId:库存修改值。最多支持20个SKU同时修改。"
+		},
+		{
+			"name": "outerid_quantities",
+			"type": "String",
+			"description": "特殊可选，skuIdQuantities为空的时候用该字段通过outerId来指定sku和其库存修改值。格式为outerId:库存修改值;outerId:库存修改值。当skuIdQuantities不为空的时候该字段失效。当一个outerId对应多个sku时，所有匹配到的sku都会被修改库存。最多支持20个SKU同时修改。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item",
+			"type": "Item",
+			"description": "iid、numIid、num和modified，skus中每个sku的skuId、quantity和modified",
+			"subParams": [
+				{
+					"name": "iid",
+					"type": "String",
+					"description": "商品id(注意：iid近期即将废弃，请用num_iid参数)"
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品数字id"
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "商品数量"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "商品修改时间（格式：yyyy-MM-dd HH:mm:ss）"
+				},
+				{
+					"name": "skus",
+					"type": "Sku[]",
+					"description": "Sku列表。fields中只设置sku可以返回Sku结构体中所有字段，如果设置为sku.sku_id、sku.properties、sku.quantity等形式就只会返回相应的字段",
+					"subParams": [
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "sku的id"
+						},
+						{
+							"name": "iid",
+							"type": "String",
+							"description": "sku所属商品id(注意：iid近期即将废弃，请用num_iid参数)"
+						},
+						{
+							"name": "num_iid",
+							"type": "Number",
+							"description": "sku所属商品数字id"
+						},
+						{
+							"name": "properties",
+							"type": "String",
+							"description": "sku的销售属性组合字符串（颜色，大小，等等，可通过类目API获取某类目下的销售属性）,格式是p1:v1;p2:v2"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "属于这个sku的商品的数量，"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "属于这个sku的商品的价格 取值范围:0-100000000;精确到2位小数;单位:元。如:200.07，表示:200元7分。"
+						},
+						{
+							"name": "created",
+							"type": "String",
+							"description": "sku创建日期 时间格式：yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "modified",
+							"type": "String",
+							"description": "sku最后修改日期 时间格式：yyyy-MM-dd HH:mm:ss"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "sku状态。 normal:正常 ；delete:删除,淘宝天猫此字段无效"
+						},
+						{
+							"name": "properties_name",
+							"type": "String",
+							"description": "sku所对应的销售属性的中文名字串，格式如：pid1:vid1:pid_name1:vid_name1;pid2:vid2:pid_name2:vid_name2\u0026hellip;\u0026hellip;"
+						},
+						{
+							"name": "sku_spec_id",
+							"type": "Number",
+							"description": "表示SKu上的产品规格信息"
+						},
+						{
+							"name": "with_hold_quantity",
+							"type": "Number",
+							"description": "商品在付款减库存的状态下，该sku上未付款的订单数量"
+						},
+						{
+							"name": "sku_delivery_time",
+							"type": "String",
+							"description": "sku级别发货时间"
+						},
+						{
+							"name": "change_prop",
+							"type": "String",
+							"description": "基础色数据"
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "商家设置的外部id。天猫和集市的卖家，需要登录才能获取到自己的商家编码，不能获取到他人的商家编码。"
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "商品级别的条形码"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date"
+						},
+						{
+							"name": "sku_feature",
+							"type": "Json",
+							"description": "skuFeature"
+						},
+						{
+							"name": "delivery_time_type",
+							"type": "String",
+							"description": "skuDeliveryTimeType"
+						},
+						{
+							"name": "spec_id",
+							"type": "String",
+							"description": "specId"
+						}
+					]
+				}
+			]
+		}
+	]
+}

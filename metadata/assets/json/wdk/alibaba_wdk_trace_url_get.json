@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.wdk.trace.url.get",
+	"apiChineseName": "溯源url透出",
+	"description": "根据shopId和skuCode返回商品溯源url",
+	"requestParams": [
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "所属门店code",
+			"required": true
+		},
+		{
+			"name": "source_code",
+			"type": "String",
+			"description": "来源编码",
+			"required": true
+		},
+		{
+			"name": "scan_code",
+			"type": "String",
+			"description": "barCode 或者skuCode",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "data"
+		},
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

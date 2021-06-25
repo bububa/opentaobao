@@ -1,0 +1,216 @@
+{
+	"name": "taobao.wlb.wms.sku.update",
+	"apiChineseName": "商品信息的更新",
+	"description": "商品信息的更新",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "外部系统ID",
+			"required": true
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓库编码"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "商品名称"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "商品标题"
+		},
+		{
+			"name": "category",
+			"type": "String",
+			"description": "商品类别编码（外部系统类别）"
+		},
+		{
+			"name": "category_name",
+			"type": "String",
+			"description": "商品类别名称"
+		},
+		{
+			"name": "brand",
+			"type": "String",
+			"description": "品牌编码"
+		},
+		{
+			"name": "brand_name",
+			"type": "String",
+			"description": "品牌名称"
+		},
+		{
+			"name": "specification",
+			"type": "String",
+			"description": "规格"
+		},
+		{
+			"name": "color",
+			"type": "String",
+			"description": "颜色"
+		},
+		{
+			"name": "size",
+			"type": "String",
+			"description": "尺码"
+		},
+		{
+			"name": "gross_weight",
+			"type": "Number",
+			"description": "毛重，单位克"
+		},
+		{
+			"name": "net_weight",
+			"type": "Number",
+			"description": "净重，单位克"
+		},
+		{
+			"name": "length",
+			"type": "Number",
+			"description": "长度，单位毫米"
+		},
+		{
+			"name": "width",
+			"type": "Number",
+			"description": "宽度，单位毫米"
+		},
+		{
+			"name": "height",
+			"type": "Number",
+			"description": "高度，单位毫米"
+		},
+		{
+			"name": "volume",
+			"type": "Number",
+			"description": "体积，单位立方厘米"
+		},
+		{
+			"name": "pcs",
+			"type": "Number",
+			"description": "箱规"
+		},
+		{
+			"name": "origin_address",
+			"type": "Number",
+			"description": "产地"
+		},
+		{
+			"name": "approval_number",
+			"type": "String",
+			"description": "批准文号"
+		},
+		{
+			"name": "is_shelflife",
+			"type": "Boolean",
+			"description": "是否启用保质期管理"
+		},
+		{
+			"name": "lifecycle",
+			"type": "Number",
+			"description": "商品保质期天数"
+		},
+		{
+			"name": "reject_lifecycle",
+			"type": "Number",
+			"description": "保质期禁收天数"
+		},
+		{
+			"name": "lockup_lifecycle",
+			"type": "Number",
+			"description": "保质期禁售天数"
+		},
+		{
+			"name": "advent_lifecycle",
+			"type": "Number",
+			"description": "保质期预警天数"
+		},
+		{
+			"name": "is_sn_mgt",
+			"type": "Boolean",
+			"description": "是否启用序列号管理"
+		},
+		{
+			"name": "is_hygroscopic",
+			"type": "Boolean",
+			"description": "是否易碎品"
+		},
+		{
+			"name": "is_danger",
+			"type": "Boolean",
+			"description": "是否危险品"
+		},
+		{
+			"name": "tag_price",
+			"type": "Number",
+			"description": "吊牌价，单位分"
+		},
+		{
+			"name": "item_price",
+			"type": "Number",
+			"description": "零售价，单位分"
+		},
+		{
+			"name": "cost_price",
+			"type": "Number",
+			"description": "成本价，单位分"
+		},
+		{
+			"name": "is_batch_mgt",
+			"type": "Boolean",
+			"description": "是否启用批次管理"
+		},
+		{
+			"name": "use_yn",
+			"type": "Boolean",
+			"description": "启用标识",
+			"required": true
+		},
+		{
+			"name": "extend_fields",
+			"type": "String",
+			"description": "拓展属性"
+		},
+		{
+			"name": "bar_code",
+			"type": "String",
+			"description": "条形码，多条码请用”;”分隔；条码更新只技术增量更新，已有条码无法修改，只能在原条码基础上增加新的条码。例：原商品条码为：BAR001，要增加一条新条码BAR002时，此字段内容应填写为：BAR001;BAR002"
+		},
+		{
+			"name": "attribute",
+			"type": "String",
+			"description": "商品属性编码"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "商品类型:NORMAL-普通商品、 COMBINE-组合商品、 DISTRIBUTION-分销商品"
+		},
+		{
+			"name": "is_area_sale",
+			"type": "Boolean",
+			"description": "是否区域销售属性"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "wl_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "wl_error_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "wl_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

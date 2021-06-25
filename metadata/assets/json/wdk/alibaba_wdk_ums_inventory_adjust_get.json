@@ -1,0 +1,152 @@
+{
+	"name": "alibaba.wdk.ums.inventory.adjust.get",
+	"apiChineseName": "库调单-回流单",
+	"description": "库调单-回流单",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "店仓code，指的是库调对象，对应一个物理店或仓编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "StockChangeDto[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "warehouseCode",
+							"required": true
+						},
+						{
+							"name": "document_no",
+							"type": "String",
+							"description": "documentNo",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid",
+							"required": true
+						},
+						{
+							"name": "occurrence_date",
+							"type": "Date",
+							"description": "occurrenceDate",
+							"required": true
+						},
+						{
+							"name": "adjust_describe",
+							"type": "String",
+							"description": "adjustDescribe",
+							"required": true
+						},
+						{
+							"name": "supplier_code",
+							"type": "String",
+							"description": "supplierCode",
+							"required": true
+						},
+						{
+							"name": "dept_code",
+							"type": "String",
+							"description": "部门编码",
+							"required": true
+						},
+						{
+							"name": "item_list",
+							"type": "StockChangeDetailDto[]",
+							"description": "itemList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "batch_code",
+									"type": "String",
+									"description": "batchCode",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "quantity",
+									"required": true
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "itemCode",
+									"required": true
+								},
+								{
+									"name": "reason",
+									"type": "String",
+									"description": "reason",
+									"required": true
+								},
+								{
+									"name": "biz_order_code",
+									"type": "String",
+									"description": "bizOrderCode",
+									"required": true
+								},
+								{
+									"name": "cabinet_code",
+									"type": "String",
+									"description": "cabinetCode",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "remark",
+							"required": true
+						},
+						{
+							"name": "document_type",
+							"type": "Number",
+							"description": "单据类型",
+							"required": true
+						},
+						{
+							"name": "cost_duty_dept_code",
+							"type": "String",
+							"description": "费用承担部门（按需取）",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

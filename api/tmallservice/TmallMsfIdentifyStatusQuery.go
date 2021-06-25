@@ -1,0 +1,21 @@
+package tmallservice
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/tmallservice"
+)
+
+/* 
+喵师傅定案核销状态查询 
+tmall.msf.identify.status.query
+
+喵师傅定案核销状态查询，供服务商erp系统调用
+*/
+func TmallMsfIdentifyStatusQuery(clt *core.SDKClient, req *tmallservice.TmallMsfIdentifyStatusQueryRequest, session string) (*tmallservice.TmallMsfIdentifyStatusQueryResponse, error) {
+    var resp tmallservice.TmallMsfIdentifyStatusQueryAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

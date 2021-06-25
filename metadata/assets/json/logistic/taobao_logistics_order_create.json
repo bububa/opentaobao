@@ -1,0 +1,68 @@
+{
+	"name": "taobao.logistics.order.create",
+	"apiChineseName": "创建物流订单",
+	"description": "用户调用该接口可以创建物流订单。目前仅支持手工订单的创建，创建完毕后默认自动使用“自己联系”的方式发货并且初始状态为”已发货“。也可以通过可选参数选择是否发货以及何种方式进行发货。",
+	"requestParams": [
+		{
+			"name": "logis_type",
+			"type": "String",
+			"description": "发货方式,默认为自己联系发货。可选值:ONLINE(在线下单)、OFFLINE(自己联系)。"
+		},
+		{
+			"name": "logis_company_code",
+			"type": "String",
+			"description": "发货的物流公司代码，如申通=STO，圆通=YTO。is_consign=true时，此项必填。"
+		},
+		{
+			"name": "mail_no",
+			"type": "String",
+			"description": "发货的物流公司运单号。在logis_type=OFFLINE且is_consign=true时，此项必填。"
+		},
+		{
+			"name": "goods_names",
+			"type": "String",
+			"description": "运送的货物名称列表，用|号隔开",
+			"required": true
+		},
+		{
+			"name": "goods_quantities",
+			"type": "String",
+			"description": "运送货物的数量列表，用|号隔开",
+			"required": true
+		},
+		{
+			"name": "item_values",
+			"type": "String",
+			"description": "运送货物的单价列表(注意：单位为分），用|号隔开",
+			"required": true
+		},
+		{
+			"name": "seller_wangwang_id",
+			"type": "String",
+			"description": "卖家旺旺号",
+			"required": true
+		},
+		{
+			"name": "trade_id",
+			"type": "Number",
+			"description": "订单的交易号码"
+		},
+		{
+			"name": "is_consign",
+			"type": "Boolean",
+			"description": "创建订单同时是否进行发货，默认发货。"
+		},
+		{
+			"name": "shipping",
+			"type": "Number",
+			"description": "运费承担方式。1为买家承担运费，2为卖家承担运费，其他值为错误参数。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trade_id",
+			"type": "Number",
+			"description": "淘宝物流订单交易号，如返回-1则表示错误。如果在新建订单时传入trade_id,此处会返回此id，如果未传入trade_id，此处会返回淘宝物流分配的交易号码。"
+		}
+	]
+}

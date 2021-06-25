@@ -1,0 +1,243 @@
+{
+	"name": "taobao.wlb.waybill.i.print",
+	"apiChineseName": "打印确认接口v1.0",
+	"description": "打印面单前的校验接口，判断面单号信息与订单信息是否匹配。",
+	"requestParams": [
+		{
+			"name": "waybill_apply_print_check_request",
+			"type": "WaybillApplyPrintCheckRequest",
+			"description": "打印请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "print_check_info_cols",
+					"type": "PrintCheckInfo[]",
+					"description": "面单详情信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "shipping_branch_code",
+							"type": "String",
+							"description": "发货网点编码"
+						},
+						{
+							"name": "consignee_name",
+							"type": "String",
+							"description": "收件人姓名",
+							"required": true
+						},
+						{
+							"name": "send_phone",
+							"type": "String",
+							"description": "发件人联系方式"
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "包裹重量 单位为G(克)"
+						},
+						{
+							"name": "waybill_code",
+							"type": "String",
+							"description": "电子面单单号",
+							"required": true
+						},
+						{
+							"name": "consignee_address",
+							"type": "WaybillAddress",
+							"description": "收\\发货地址",
+							"required": true,
+							"subParams": [
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区名称（三级地址）"
+								},
+								{
+									"name": "division_id",
+									"type": "Number",
+									"description": "末级地址"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省名称（一级地址）",
+									"required": true
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "街道\\镇名称（四级地址）"
+								},
+								{
+									"name": "address_detail",
+									"type": "String",
+									"description": "详细地址",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "市名称（二级地址）"
+								}
+							]
+						},
+						{
+							"name": "product_type",
+							"type": "String",
+							"description": "快递服务产品类型编码"
+						},
+						{
+							"name": "send_name",
+							"type": "String",
+							"description": "发件人姓名"
+						},
+						{
+							"name": "consignee_branch_code",
+							"type": "String",
+							"description": "收货网点编码"
+						},
+						{
+							"name": "logistics_service_list",
+							"type": "LogisticsService[]",
+							"description": "物流服务能力集合",
+							"subParams": [
+								{
+									"name": "service_value4_json",
+									"type": "String",
+									"description": "服务类型值，json格式表示"
+								},
+								{
+									"name": "service_code",
+									"type": "String",
+									"description": "服务编码"
+								}
+							]
+						},
+						{
+							"name": "consignee_branch_name",
+							"type": "String",
+							"description": "收货网点信息"
+						},
+						{
+							"name": "shipping_branch_name",
+							"type": "String",
+							"description": "发货网点信息"
+						},
+						{
+							"name": "short_address",
+							"type": "String",
+							"description": "拣货规则（大头笔信息）"
+						},
+						{
+							"name": "volume",
+							"type": "Number",
+							"description": "包裹体积 单位为ML(毫升)或立方厘米"
+						},
+						{
+							"name": "consignee_phone",
+							"type": "String",
+							"description": "consigneePhone",
+							"required": true
+						},
+						{
+							"name": "shipping_address",
+							"type": "WaybillAddress",
+							"description": "收\\发货地址",
+							"required": true,
+							"subParams": [
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区名称（三级地址）"
+								},
+								{
+									"name": "division_id",
+									"type": "Number",
+									"description": "末级地址"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省名称（一级地址）",
+									"required": true
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "街道\\镇名称（四级地址）"
+								},
+								{
+									"name": "address_detail",
+									"type": "String",
+									"description": "详细地址",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "市名称（二级地址）"
+								}
+							]
+						},
+						{
+							"name": "real_user_id",
+							"type": "Number",
+							"description": "使用者ID"
+						},
+						{
+							"name": "package_center_code",
+							"type": "String",
+							"description": "集包地、目的地中心代码。打 印时根据该 code 生成目的地 中心的条码，条码生成的算法 与对应的电子面单条码一致"
+						},
+						{
+							"name": "package_center_name",
+							"type": "String",
+							"description": "集包地、目的地中心名称"
+						},
+						{
+							"name": "print_config",
+							"type": "String",
+							"description": "打标设置字段，直接传给ali-lodop。不用管具体含义。"
+						}
+					]
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "物流服务商Code",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "waybill_apply_print_check_infos",
+			"type": "WaybillApplyPrintCheckInfo []",
+			"description": "面单打印信息",
+			"subParams": [
+				{
+					"name": "notice_code",
+					"type": "String",
+					"description": "打印提示信息编码"
+				},
+				{
+					"name": "print_quantity",
+					"type": "Number",
+					"description": "打印次数"
+				},
+				{
+					"name": "notice_message",
+					"type": "String",
+					"description": "打印提示信息"
+				},
+				{
+					"name": "waybill_code",
+					"type": "String",
+					"description": "电子面单号"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,55 @@
+{
+	"name": "alibaba.security.jaq.rp.getverifytoken",
+	"apiChineseName": "聚安全实人认证获取认证会话token",
+	"description": "聚安全实人认证获取认证会话token",
+	"requestParams": [
+		{
+			"name": "account_id",
+			"type": "String",
+			"description": "账号，强烈建议填写，区别用户的唯一标识"
+		},
+		{
+			"name": "ticket_id",
+			"type": "String",
+			"description": "选填，作为一次验证的唯一标识，每次验证需更换。如果不是验证类型可不填"
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "客户端来源",
+			"required": true
+		},
+		{
+			"name": "biz",
+			"type": "String",
+			"description": "业务点",
+			"required": true
+		},
+		{
+			"name": "extra_data",
+			"type": "Json",
+			"description": "额外信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "RpInitResultBo",
+			"description": "token信息",
+			"subParams": [
+				{
+					"name": "expire",
+					"type": "Number",
+					"description": "过期时间",
+					"required": true
+				},
+				{
+					"name": "verify_token",
+					"type": "String",
+					"description": "token",
+					"required": true
+				}
+			]
+		}
+	]
+}

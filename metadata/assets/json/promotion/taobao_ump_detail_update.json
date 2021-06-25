@@ -1,0 +1,26 @@
+{
+	"name": "taobao.ump.detail.update",
+	"apiChineseName": "修改活动详情",
+	"description": "更新活动详情",
+	"requestParams": [
+		{
+			"name": "detail_id",
+			"type": "Number",
+			"description": "活动详情id",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "活动详情内容，可以通过ump sdk中的MarketingTool来生成这个内容",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		}
+	]
+}

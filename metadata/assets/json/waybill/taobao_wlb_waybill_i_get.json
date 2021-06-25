@@ -1,0 +1,404 @@
+{
+	"name": "taobao.wlb.waybill.i.get",
+	"apiChineseName": "获取物流服务商电子面单号v1.0",
+	"description": "商家根据订单信息，实时、批量获取指定物流服务商的电子面单号。",
+	"requestParams": [
+		{
+			"name": "waybill_apply_new_request",
+			"type": "WaybillApplyNewRequest",
+			"description": "面单申请",
+			"required": true,
+			"subParams": [
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "物流服务商编码",
+					"required": true
+				},
+				{
+					"name": "shipping_address",
+					"type": "WaybillAddress",
+					"description": "收\\发货地址",
+					"required": true,
+					"subParams": [
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区名称（三级地址）"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省名称（一级地址）",
+							"required": true
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "街道\\镇名称（四级地址）"
+						},
+						{
+							"name": "address_detail",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市名称（二级地址）"
+						}
+					]
+				},
+				{
+					"name": "trade_order_info_cols",
+					"type": "TradeOrderInfo[]",
+					"description": "订单数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "consignee_name",
+							"type": "String",
+							"description": "收货人",
+							"required": true
+						},
+						{
+							"name": "order_channels_type",
+							"type": "String",
+							"description": "订单渠道",
+							"required": true
+						},
+						{
+							"name": "trade_order_list",
+							"type": "String[]",
+							"description": "交易订单列表",
+							"required": true
+						},
+						{
+							"name": "consignee_phone",
+							"type": "String",
+							"description": "收货人联系方式",
+							"required": true
+						},
+						{
+							"name": "consignee_address",
+							"type": "WaybillAddress",
+							"description": "收\\发货地址",
+							"required": true,
+							"subParams": [
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区名称（三级地址）"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省名称（一级地址）",
+									"required": true
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "街道\\镇名称（四级地址）"
+								},
+								{
+									"name": "address_detail",
+									"type": "String",
+									"description": "详细地址",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "市名称（二级地址）"
+								}
+							]
+						},
+						{
+							"name": "send_phone",
+							"type": "String",
+							"description": "发货人联系方式"
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "包裹重量（克）"
+						},
+						{
+							"name": "send_name",
+							"type": "String",
+							"description": "发货人姓名"
+						},
+						{
+							"name": "package_items",
+							"type": "PackageItem[]",
+							"description": "包裹里面的商品名称",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "商品数量",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "logistics_service_list",
+							"type": "LogisticsService[]",
+							"description": "物流服务能力集合",
+							"subParams": [
+								{
+									"name": "service_value4_json",
+									"type": "String",
+									"description": "服务类型值，json格式表示"
+								},
+								{
+									"name": "service_code",
+									"type": "String",
+									"description": "服务编码"
+								}
+							]
+						},
+						{
+							"name": "product_type",
+							"type": "String",
+							"description": "快递服务产品类型编码",
+							"required": true
+						},
+						{
+							"name": "real_user_id",
+							"type": "Number",
+							"description": "使用者ID",
+							"required": true
+						},
+						{
+							"name": "volume",
+							"type": "Number",
+							"description": "包裹体积（立方厘米）"
+						},
+						{
+							"name": "package_id",
+							"type": "String",
+							"description": "包裹号(或者ERP订单号)"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "waybill_apply_new_cols",
+			"type": "WaybillApplyNewInfo []",
+			"description": "面单申请接口返回信息",
+			"subParams": [
+				{
+					"name": "short_address",
+					"type": "String",
+					"description": "根据收货地址返回大头笔信息"
+				},
+				{
+					"name": "trade_order_info",
+					"type": "TradeOrderInfo",
+					"description": "面单对应的订单列",
+					"subParams": [
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "consignee_name",
+							"type": "String",
+							"description": "收货人"
+						},
+						{
+							"name": "ali_order",
+							"type": "Boolean",
+							"description": "是否阿里系订单"
+						},
+						{
+							"name": "short_address",
+							"type": "String",
+							"description": "大头笔"
+						},
+						{
+							"name": "order_channels_type",
+							"type": "String",
+							"description": "订单渠道"
+						},
+						{
+							"name": "trade_order_list",
+							"type": "String[]",
+							"description": "交易订单列表"
+						},
+						{
+							"name": "waybill_code",
+							"type": "String",
+							"description": "面单号"
+						},
+						{
+							"name": "consignee_phone",
+							"type": "String",
+							"description": "收货人联系方式"
+						},
+						{
+							"name": "consignee_address",
+							"type": "WaybillAddress",
+							"description": "收货人地址",
+							"subParams": [
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区名称（三级地址）"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省名称（一级地址）"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "街道\\镇名称（四级地址）"
+								},
+								{
+									"name": "address_detail",
+									"type": "String",
+									"description": "详细地址"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "市名称（二级地址）"
+								}
+							]
+						},
+						{
+							"name": "send_phone",
+							"type": "String",
+							"description": "发货人联系方式"
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "包裹重量（克）"
+						},
+						{
+							"name": "send_name",
+							"type": "String",
+							"description": "发货人姓名"
+						},
+						{
+							"name": "order_type",
+							"type": "Number",
+							"description": "订单渠道来源"
+						},
+						{
+							"name": "package_items",
+							"type": "PackageItem[]",
+							"description": "包裹中的商品类型",
+							"subParams": [
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "商品数量"
+								}
+							]
+						},
+						{
+							"name": "logistics_service_list",
+							"type": "LogisticsService[]",
+							"description": "物流服务能力集合",
+							"subParams": [
+								{
+									"name": "service_value4_json",
+									"type": "String",
+									"description": "服务类型值，json格式表示"
+								},
+								{
+									"name": "service_code",
+									"type": "String",
+									"description": "服务编码"
+								}
+							]
+						},
+						{
+							"name": "product_type",
+							"type": "String",
+							"description": "快递服务产品类型编码"
+						},
+						{
+							"name": "real_user_id",
+							"type": "Number",
+							"description": "使用者ID"
+						},
+						{
+							"name": "volume",
+							"type": "Number",
+							"description": "包裹体积（立方厘米）"
+						},
+						{
+							"name": "package_id",
+							"type": "String",
+							"description": "包裹号(或者ERP订单号)"
+						}
+					]
+				},
+				{
+					"name": "waybill_code",
+					"type": "String",
+					"description": "返回的面单号"
+				},
+				{
+					"name": "package_center_code",
+					"type": "String",
+					"description": "集包地代码"
+				},
+				{
+					"name": "package_center_name",
+					"type": "String",
+					"description": "集包地名称"
+				},
+				{
+					"name": "print_config",
+					"type": "String",
+					"description": "打印配置项，传给ali-print组件"
+				},
+				{
+					"name": "shipping_branch_code",
+					"type": "String",
+					"description": "面单号对应的物流服务商网点（分支机构）代码"
+				},
+				{
+					"name": "consignee_branch_name",
+					"type": "String",
+					"description": "包裹对应的派件（收件）物流服务商网点（分支机构）名称"
+				},
+				{
+					"name": "shipping_branch_name",
+					"type": "String",
+					"description": "面单号对于的物流服务商网点（分支机构）名称"
+				},
+				{
+					"name": "consignee_branch_code",
+					"type": "String",
+					"description": "包裹对应的派件（收件）物流服务商网点（分支机构）代码"
+				}
+			]
+		}
+	]
+}

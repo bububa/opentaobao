@@ -1,0 +1,122 @@
+{
+	"name": "alibaba.lsy.miniapp.user.get",
+	"apiChineseName": "零售云小程序获取登录用户信息",
+	"description": "零售云小程序，通过授权码获取登录的卖家账号信息",
+	"requestParams": [
+		{
+			"name": "time_stamp",
+			"type": "String",
+			"description": "当前时间戳，毫秒",
+			"required": true
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "获取用户信息的授权码，在小程序中获取",
+			"required": true
+		},
+		{
+			"name": "signature",
+			"type": "String",
+			"description": "请求参数签名，sha1(所有入参+appSecret，按字符串升序排列)",
+			"required": true
+		},
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "系统分配的小程序ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MiniAppResult",
+			"description": "响应内容",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误提示",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "UserInfoDto",
+					"description": "用户数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "signature",
+							"type": "String",
+							"description": "返回数据签名，signature = sha1（raw_data 下所有字段 + appSecret，按字符串升级排列），用于校验关键数据是否被篡改",
+							"required": true
+						},
+						{
+							"name": "raw_data",
+							"type": "UserInfoBaseDto",
+							"description": "用户相关的原始数据",
+							"required": true,
+							"subParams": [
+								{
+									"name": "union_id",
+									"type": "String",
+									"description": "同一个开放平台帐号下，用户的 UnionID 是唯一的",
+									"required": true
+								},
+								{
+									"name": "open_uid",
+									"type": "String",
+									"description": "小程序用户唯一识别",
+									"required": true
+								},
+								{
+									"name": "app_id",
+									"type": "String",
+									"description": "小程序ID",
+									"required": true
+								},
+								{
+									"name": "corp_id",
+									"type": "String",
+									"description": "小程序开发主体ID",
+									"required": true
+								},
+								{
+									"name": "login_type",
+									"type": "String",
+									"description": "登录类型",
+									"required": true
+								},
+								{
+									"name": "extra_info",
+									"type": "String",
+									"description": "不同业务/登录方式的扩展字段",
+									"required": true
+								},
+								{
+									"name": "user_nick",
+									"type": "String",
+									"description": "登录用户昵称",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,80 @@
+{
+	"name": "taobao.region.price.query",
+	"apiChineseName": "区域价格查询",
+	"description": "区域价格查询",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "无sku可传0"
+		},
+		{
+			"name": "regional_price_dtos",
+			"type": "RegionalPriceDto[]",
+			"description": "不传则返回所有设置的区域价格",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区县，特殊可选"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省",
+					"required": true
+				},
+				{
+					"name": "street",
+					"type": "String",
+					"description": "街道，特殊可选"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

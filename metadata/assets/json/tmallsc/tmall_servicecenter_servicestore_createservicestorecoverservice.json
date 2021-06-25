@@ -1,0 +1,76 @@
+{
+	"name": "tmall.servicecenter.servicestore.createservicestorecoverservice",
+	"apiChineseName": "新增网点覆盖的服务",
+	"description": "新增网点覆盖的服务，唯一性校验：服务商淘宝账号+网点编码+biz_type\n前提是网点要存在，\n如果需要新增的网点覆盖的服务已存在，会新增失败。\n网点覆盖的服务包含了业务类型(比如电器预约安装)、天猫服务的servicecode列表、授权的类目和品牌",
+	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务类型",
+			"required": true
+		},
+		{
+			"name": "category_ids_and_brand_ids",
+			"type": "String",
+			"description": "json格式，在某个业务类型(biz_type)下类目和品牌的授权关系,比如空调授权了格力和美的，热水器授权了美的和林内，洗衣机和冰箱都授权了美的和松下",
+			"required": true
+		},
+		{
+			"name": "service_codes",
+			"type": "String",
+			"description": "serviceCodes列表,|分隔",
+			"required": true
+		},
+		{
+			"name": "service_store_code",
+			"type": "String",
+			"description": "网点编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "gmtModified",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Number",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

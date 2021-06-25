@@ -1,0 +1,169 @@
+{
+	"name": "taobao.wangwang.abstract.logquery",
+	"apiChineseName": "模糊聊天记录查询",
+	"description": "模糊聊天记录查询",
+	"requestParams": [
+		{
+			"name": "to_id",
+			"type": "String",
+			"description": "买家id，有cntaobao前缀",
+			"required": true
+		},
+		{
+			"name": "from_id",
+			"type": "String",
+			"description": "卖家id，有cntaobao前缀",
+			"required": true
+		},
+		{
+			"name": "count",
+			"type": "Number",
+			"description": "获取记录条数，默认值是1000",
+			"minValue": 1
+		},
+		{
+			"name": "next_key",
+			"type": "String",
+			"description": "设置了这个值，那么聊天记录就从这个点开始查询"
+		},
+		{
+			"name": "charset",
+			"type": "String",
+			"description": "传入参数的字符集"
+		},
+		{
+			"name": "start_date",
+			"type": "Number",
+			"description": "utc",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "Number",
+			"description": "utc",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "0或-1，表示错误或正确，错误时有错误信息.\u003cbr/\u003e为-1时就只有error_msg字段是有效的。"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "例如单词长度太长等。\u003cbr/\u003e当ret_code不为0时这个值存在。"
+		},
+		{
+			"name": "from_id",
+			"type": "String",
+			"description": "卖家id"
+		},
+		{
+			"name": "to_id",
+			"type": "String",
+			"description": "买家id"
+		},
+		{
+			"name": "url_lists",
+			"type": "UrlList []",
+			"description": "当direction为1时有效，url列表",
+			"subParams": [
+				{
+					"name": "url",
+					"type": "String",
+					"description": "url列表"
+				}
+			]
+		},
+		{
+			"name": "word_count_lists",
+			"type": "WordCountList []",
+			"description": "当direction为1时有效，关键词统计列表",
+			"subParams": [
+				{
+					"name": "word",
+					"type": "String",
+					"description": "关键词"
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "关键词数量"
+				}
+			]
+		},
+		{
+			"name": "is_sliced",
+			"type": "Number",
+			"description": "0或1\u003cbr/\u003e其他返回时，是由于用户名等参数设置有误等引起的远端服务错误"
+		},
+		{
+			"name": "next_key",
+			"type": "String",
+			"description": "当is_sliced为1时有效"
+		},
+		{
+			"name": "msg_lists",
+			"type": "MsgList []",
+			"description": "消息列表",
+			"subParams": [
+				{
+					"name": "word_lists",
+					"type": "WordCountList[]",
+					"description": "当direction=1有效，（关键词，数量）列表",
+					"subParams": [
+						{
+							"name": "word",
+							"type": "String",
+							"description": "关键词"
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "关键词数量"
+						}
+					]
+				},
+				{
+					"name": "url_lists",
+					"type": "UrlList[]",
+					"description": "当direction=1有效，url列表",
+					"subParams": [
+						{
+							"name": "url",
+							"type": "String",
+							"description": "url列表"
+						}
+					]
+				},
+				{
+					"name": "direction",
+					"type": "Number",
+					"description": "表示消息方向\u003cbr/\u003e0:from_id-\u003eto_id\u003cbr/\u003e1:to_id-\u003efrom_id"
+				},
+				{
+					"name": "time",
+					"type": "Number",
+					"description": "utc时间"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "消息类型"
+				},
+				{
+					"name": "length",
+					"type": "Number",
+					"description": "当direction=1有效，消息长度"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "当direction=0有效，完整消息内容"
+				}
+			]
+		}
+	]
+}

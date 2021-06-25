@@ -1,0 +1,63 @@
+{
+	"name": "taobao.wt.trade.order.resultcallback",
+	"apiChineseName": "商家回调接口",
+	"description": "阿里通信定制服务，商家发货后进行调用该接口，用于自动发货并确认收货",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "OrderResultDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "结果描述"
+				},
+				{
+					"name": "order_no",
+					"type": "Number",
+					"description": "天猫交易订单号",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "商家处理结果是否成功标志",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonRtnDo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

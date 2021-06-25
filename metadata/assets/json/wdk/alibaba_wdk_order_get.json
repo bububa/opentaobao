@@ -1,0 +1,510 @@
+{
+	"name": "alibaba.wdk.order.get",
+	"apiChineseName": "交易订单详情查询",
+	"description": "五道口三江单据查询接口",
+	"requestParams": [
+		{
+			"name": "id_list_query_req",
+			"type": "IdListQueryRequest",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "biz_id_list",
+					"type": "Number[]",
+					"description": "中台订单号"
+				},
+				{
+					"name": "tb_biz_id_list",
+					"type": "Number[]",
+					"description": "淘系订单号"
+				},
+				{
+					"name": "order_from",
+					"type": "Number",
+					"description": "渠道来源"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回数据",
+			"subParams": [
+				{
+					"name": "orders",
+					"type": "Order[]",
+					"description": "订单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "业务订单号",
+							"required": true
+						},
+						{
+							"name": "discount_amt",
+							"type": "Number",
+							"description": "商品优惠总额",
+							"required": true
+						},
+						{
+							"name": "original_amt",
+							"type": "Number",
+							"description": "商品总金额（优惠前）",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "成交时间",
+							"required": true
+						},
+						{
+							"name": "post_fee",
+							"type": "Number",
+							"description": "配送费",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "门店编码",
+							"required": true
+						},
+						{
+							"name": "trd_type",
+							"type": "Number",
+							"description": "销售类型（正向销售1：逆向销售2。本接口应返回2）",
+							"required": true
+						},
+						{
+							"name": "member_discount_amt",
+							"type": "Number",
+							"description": "会员价优惠总金额",
+							"required": true
+						},
+						{
+							"name": "member_card_num",
+							"type": "String",
+							"description": "会员卡号",
+							"required": true
+						},
+						{
+							"name": "operator_id",
+							"type": "String",
+							"description": "收银员编号",
+							"required": true
+						},
+						{
+							"name": "tb_biz_order_id",
+							"type": "Number",
+							"description": "淘宝主订单号",
+							"required": true
+						},
+						{
+							"name": "operator_name",
+							"type": "String",
+							"description": "收银员名字",
+							"required": true
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "orderStatus",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "merchantCode",
+							"required": true
+						},
+						{
+							"name": "member_point",
+							"type": "String",
+							"description": "memberPoint",
+							"required": true
+						},
+						{
+							"name": "package_time",
+							"type": "Date",
+							"description": "打包时间",
+							"required": true
+						},
+						{
+							"name": "gift_coupon",
+							"type": "String",
+							"description": "赠券，格式为 券ID_券金额， 金额单位为分",
+							"required": true
+						},
+						{
+							"name": "duty_code",
+							"type": "String",
+							"description": "一串唯一的字符串",
+							"required": true
+						},
+						{
+							"name": "trade_attributes",
+							"type": "Json",
+							"description": "map格式的json字符串，部分key含义如下。wdkMemberValue:手机号或者卡号 wdkMemberSource:carNum or phoneNum memDegrade：1表示在线降级，2表示离线降级",
+							"required": true
+						},
+						{
+							"name": "open_uid",
+							"type": "String",
+							"description": "买家open_uid",
+							"required": true
+						},
+						{
+							"name": "order_from",
+							"type": "Number",
+							"description": "渠道来源",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "渠道店id",
+							"required": true
+						},
+						{
+							"name": "out_shop_id",
+							"type": "String",
+							"description": "外部门店id",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部订单号",
+							"required": true
+						},
+						{
+							"name": "order_client",
+							"type": "String",
+							"description": "app或pos",
+							"required": true
+						},
+						{
+							"name": "pay_amt",
+							"type": "Number",
+							"description": "支付金额，单位分",
+							"required": true
+						},
+						{
+							"name": "sub_orders",
+							"type": "SubOrder[]",
+							"description": "子订单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "biz_order_id",
+									"type": "Number",
+									"description": "业务子订单id",
+									"required": true
+								},
+								{
+									"name": "item_code",
+									"type": "Number",
+									"description": "商品id",
+									"required": true
+								},
+								{
+									"name": "original_amt",
+									"type": "Number",
+									"description": "正向：售价金额（购买数量*原售价）。逆向：退款金额",
+									"required": true
+								},
+								{
+									"name": "parent_id",
+									"type": "Number",
+									"description": "父订单id",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "商品原价",
+									"required": true
+								},
+								{
+									"name": "promotion_info",
+									"type": "String",
+									"description": "促销信息(json格式)。例如:[{\"activity_id\":\"1234\",\"activity_name\":\"五一促销\",\"activity_type\":1,\"activity_desc\":\"优惠卡券\"}]",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "购买数量",
+									"required": true
+								},
+								{
+									"name": "store_id",
+									"type": "String",
+									"description": "门店编码",
+									"required": true
+								},
+								{
+									"name": "trd_type",
+									"type": "Number",
+									"description": "销售类型（正向销售1：逆向销售2。本接口应返回2）",
+									"required": true
+								},
+								{
+									"name": "promotion_discount_amt",
+									"type": "Number",
+									"description": "促销优惠总金额",
+									"required": true
+								},
+								{
+									"name": "member_discount_amt",
+									"type": "Number",
+									"description": "会员价优惠金额",
+									"required": true
+								},
+								{
+									"name": "share_discount_amt",
+									"type": "Number",
+									"description": "其它分摊优惠金额",
+									"required": true
+								},
+								{
+									"name": "sell_unit",
+									"type": "String",
+									"description": "非标品销售单位",
+									"required": true
+								},
+								{
+									"name": "ns_quantity",
+									"type": "String",
+									"description": "非标品购买数量",
+									"required": true
+								},
+								{
+									"name": "tb_biz_order_id",
+									"type": "Number",
+									"description": "淘宝子订单号",
+									"required": true
+								},
+								{
+									"name": "pick_amount_stock",
+									"type": "String",
+									"description": "库存单位拣货数量",
+									"required": true
+								},
+								{
+									"name": "buy_amount_stock",
+									"type": "String",
+									"description": "库存单位购买数量",
+									"required": true
+								},
+								{
+									"name": "member_point",
+									"type": "String",
+									"description": "memberPoint",
+									"required": true
+								},
+								{
+									"name": "order_type",
+									"type": "String",
+									"description": "子订单类型，当前取值[COMMON|GIFT],分别表示 普通|赠品 订单",
+									"required": true
+								},
+								{
+									"name": "txd_pmt_amt",
+									"type": "Number",
+									"description": "淘鲜达平台优惠券中平台出资金额，单位分",
+									"required": true
+								},
+								{
+									"name": "pick_amt",
+									"type": "Number",
+									"description": "拣货金额",
+									"required": true
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "揽件",
+									"required": true
+								},
+								{
+									"name": "status_change_time",
+									"type": "Json",
+									"description": "statusChangeTime",
+									"required": true
+								},
+								{
+									"name": "stock_unit",
+									"type": "String",
+									"description": "库存单位",
+									"required": true
+								},
+								{
+									"name": "sale_unit",
+									"type": "String",
+									"description": "销售单位",
+									"required": true
+								},
+								{
+									"name": "trade_sub_attributes",
+									"type": "Json",
+									"description": "tradeSubAttributes",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "商品skuCode",
+									"required": true
+								},
+								{
+									"name": "out_sku_code",
+									"type": "String",
+									"description": "外部skucode",
+									"required": true
+								},
+								{
+									"name": "out_order_id",
+									"type": "String",
+									"description": "外部订单号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pay_channels",
+							"type": "PayChannel[]",
+							"description": "支付渠道列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "biz_order_id",
+									"type": "Number",
+									"description": "所属淘宝主订单号",
+									"required": true
+								},
+								{
+									"name": "order_channel",
+									"type": "String",
+									"description": "销售渠道（POS，APP);订单来源（淘宝、京东、三江购物网）。如：APP|淘宝",
+									"required": true
+								},
+								{
+									"name": "pay_amount",
+									"type": "Number",
+									"description": "当前渠道付款金额(分)",
+									"required": true
+								},
+								{
+									"name": "pay_type",
+									"type": "Number",
+									"description": "当前渠道付款类型：0-付款码支付，1-盒马在线码－普通支付（pos），2-盒马在线码－免密协议支付（pos），3-银联刷卡（旧pos），4-现金（pos），5-支付宝离线码（pos），6-支付宝快捷支付（app），7-支付平台, 8-国际支付宝, 9-支付宝当面付, 10-网商银行信任付, 11-支付宝, 12-支付宝, 13-网商银行融易收, 14-现金, 15-银行卡, 16-支票, 17-三江购物券, 18-三江赊销",
+									"required": true
+								},
+								{
+									"name": "pos_no",
+									"type": "String",
+									"description": "交易订单POS机器号",
+									"required": true
+								},
+								{
+									"name": "store_id",
+									"type": "String",
+									"description": "门店编码",
+									"required": true
+								},
+								{
+									"name": "trd_type",
+									"type": "Number",
+									"description": "销售类型（正向销售1：逆向销售2。本接口应返回2）",
+									"required": true
+								},
+								{
+									"name": "actual_pay_amount",
+									"type": "Number",
+									"description": "实付抹分金额(分)",
+									"required": true
+								},
+								{
+									"name": "adjust_amount",
+									"type": "Number",
+									"description": "adjustAmount",
+									"required": true
+								},
+								{
+									"name": "promotion_card_info",
+									"type": "String",
+									"description": "promotionCardInfo",
+									"required": true
+								},
+								{
+									"name": "pay_attributes",
+									"type": "String",
+									"description": "\"扩展属性，根据payType不同，可存放相关内容。MAP\u003cString,String\u003e的json化字符串子订单列表,key列表 \"btn\"  // 银行卡凭证号,bank_trade_no \"bmi\"  // 银行卡商户号,bank_merchant_id \"bti\"  // 银行卡终端号,bank_term_id \"brn\"  // 银行卡系统参考号,bank_ref_no \"damt\" // 优惠金额，discount_amount \"tno\"  // 支付工具号tool_no \"tsn\"  // 支付工具流水号，tool_serail_no\"",
+									"required": true
+								},
+								{
+									"name": "pmt_alipay_promotion_amt",
+									"type": "Number",
+									"description": "支付宝优惠金额，单位分",
+									"required": true
+								},
+								{
+									"name": "pmt_alipay_reduce_amt",
+									"type": "Number",
+									"description": "支付宝随机立减金额，单位分",
+									"required": true
+								},
+								{
+									"name": "pmt_koubei_coupon_amt",
+									"type": "Number",
+									"description": "口碑券的优惠金额，单位分",
+									"required": true
+								},
+								{
+									"name": "koubei_coupon_info",
+									"type": "String",
+									"description": "口碑优惠信息，是一个json数组",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "total_number",
+					"type": "Number",
+					"description": "返回本查询条件下的数据总数",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "returnCode",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "returnMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,106 @@
+{
+	"name": "taobao.wdk.equipment.conveyor.wcsbtoc.containerassignedtoconveyor",
+	"apiChineseName": "容器被预分拣器分配到悬挂链",
+	"description": "容器被预分拣器分配到悬挂链",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "warehouse_code"
+		},
+		{
+			"name": "wcs_num",
+			"type": "Number",
+			"description": "wcs_num"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopWcsResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "service_error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "service_error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "WcsContainerAssignedToConveyorDto[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "warehouseCode",
+							"required": true
+						},
+						{
+							"name": "warehouse_id",
+							"type": "Number",
+							"description": "warehouseId",
+							"required": true
+						},
+						{
+							"name": "batch_code",
+							"type": "String",
+							"description": "batchCode",
+							"required": true
+						},
+						{
+							"name": "container_code",
+							"type": "String",
+							"description": "containerCode",
+							"required": true
+						},
+						{
+							"name": "wave_code",
+							"type": "String",
+							"description": "waveCode",
+							"required": true
+						},
+						{
+							"name": "conveyor_id",
+							"type": "Number",
+							"description": "conveyorId",
+							"required": true
+						},
+						{
+							"name": "conveyor_assigned_time",
+							"type": "String",
+							"description": "conveyorAssignedTime",
+							"required": true
+						},
+						{
+							"name": "assigned_conveyor",
+							"type": "Number",
+							"description": "assignedConveyor",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

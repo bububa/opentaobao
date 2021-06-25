@@ -1,0 +1,106 @@
+{
+	"name": "alibaba.scbp.ad.keyword.query.keyword.rank.price",
+	"apiChineseName": "查询关键词前五名排价",
+	"description": "查询关键词前五名排价",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "keyword_query",
+			"type": "KeywordQuery",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "keyword_list",
+					"type": "KeywordInfo[]",
+					"description": "请求集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "word",
+							"type": "String",
+							"description": "词",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "KeywordRankPriceDto",
+			"description": "返回参数",
+			"subParams": [
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "关键词的id",
+					"required": true
+				},
+				{
+					"name": "company_id",
+					"type": "Number",
+					"description": "公司ID",
+					"required": true
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划ID",
+					"required": true
+				},
+				{
+					"name": "price_list",
+					"type": "Number[]",
+					"description": "价格列表(计划)(不建议直接使用)",
+					"required": true
+				},
+				{
+					"name": "price_array",
+					"type": "String[]",
+					"description": "价格列表(计划)(元)(低价处理后结果)",
+					"required": true
+				},
+				{
+					"name": "cust_price_list",
+					"type": "Number[]",
+					"description": "价格列表(客户)(不建议直接使用)",
+					"required": true
+				},
+				{
+					"name": "cust_price_array",
+					"type": "String[]",
+					"description": "价格列表(客户)(元)(低价处理后结果)",
+					"required": true
+				}
+			]
+		}
+	]
+}

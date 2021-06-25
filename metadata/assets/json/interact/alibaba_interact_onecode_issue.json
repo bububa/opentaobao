@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.onecode.issue",
+	"apiChineseName": "onecode代码通用鉴权",
+	"description": "手淘开放鉴权接口，仅用于tida接口鉴权，无输入输出。",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "result=0"
+		}
+	]
+}

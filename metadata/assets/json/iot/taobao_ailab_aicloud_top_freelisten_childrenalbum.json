@@ -1,0 +1,75 @@
+{
+	"name": "taobao.ailab.aicloud.top.freelisten.childrenalbum",
+	"apiChineseName": "儿童音频列表",
+	"description": "儿童音频列表",
+	"requestParams": [
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id"
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		},
+		{
+			"name": "param1",
+			"type": "String",
+			"description": "音频类型，目前只支持以下几种类型：英语儿歌 英语故事 双语故事 国学启蒙 古典名著 成语故事 寓言故事 神话故事 诗词朗读 诗词婉唱 谚语故事 胎教音乐 经典儿歌 摇篮曲 睡前故事 绘本故事 儿童故事 儿童百科 经典故事 公主故事 名人故事 胎教故事"
+		},
+		{
+			"name": "param2",
+			"type": "Number",
+			"description": "页数"
+		},
+		{
+			"name": "param3",
+			"type": "Number",
+			"description": "每页条目数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model_list",
+					"type": "Json[]",
+					"description": "List\u003cMap\u003cString, Object\u003e\u003e数据结构，List中的每一个条目是一个Map对象，key为属性名称，value为对应的值",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "返回状态",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "网络请求是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

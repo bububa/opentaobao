@@ -1,0 +1,52 @@
+{
+	"name": "taobao.banamadpc.item.update",
+	"apiChineseName": "编辑商品",
+	"description": "巴拿马供应商通过此接口编辑商品",
+	"requestParams": [
+		{
+			"name": "xml",
+			"type": "String",
+			"description": "商品的schema xml",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "无",
+			"subParams": [
+				{
+					"name": "er_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "er_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

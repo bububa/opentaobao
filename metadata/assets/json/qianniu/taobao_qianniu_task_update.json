@@ -1,0 +1,70 @@
+{
+	"name": "taobao.qianniu.task.update",
+	"apiChineseName": "更新轻任务",
+	"description": "由任务执行者调用，sub_status，tag和memo至少提供一个",
+	"requestParams": [
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务ID",
+			"required": true
+		},
+		{
+			"name": "sub_status",
+			"type": "String",
+			"description": "子任务状态，由业务方自定义"
+		},
+		{
+			"name": "tag",
+			"type": "String",
+			"description": "任务标签"
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "任务备注。当memo_mode为1时，memo将采用追加方式。"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "状态值，多个以逗号分隔"
+		},
+		{
+			"name": "remind_time",
+			"type": "Number",
+			"description": "提醒时间，时间的毫秒数"
+		},
+		{
+			"name": "biz_param",
+			"type": "String",
+			"description": "应用自定义参数"
+		},
+		{
+			"name": "remind_flag",
+			"type": "Number",
+			"description": "0为不提醒，1为全部提醒，2为PC提醒，3为移动提醒，4为已提醒，5为已忽略。"
+		},
+		{
+			"name": "memo_mode",
+			"type": "Number",
+			"description": "表示memo字段的更新策略。如需采用追加方式的，请将此字段设置为1。"
+		},
+		{
+			"name": "priority",
+			"type": "Number",
+			"description": "默认填0，数字越大优化级越高。当前常用0和1."
+		},
+		{
+			"name": "is_deleted",
+			"type": "Number",
+			"description": "0表示没有删除，1表示删除"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

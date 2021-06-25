@@ -1,0 +1,100 @@
+{
+	"name": "alibaba.security.jaq.url.scan",
+	"apiChineseName": "恶意网址检测接口",
+	"description": "url扫描接口",
+	"requestParams": [
+		{
+			"name": "param_url_scan_param_list",
+			"type": "UrlScanParamList",
+			"description": "扫描参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "url_scan_param_items",
+					"type": "UrlScanParamItem[]",
+					"description": "扫描参数列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "data",
+							"type": "String",
+							"description": "需要扫描的url",
+							"required": true
+						},
+						{
+							"name": "flag",
+							"type": "String",
+							"description": "参数标记，用于识别返回结果对应的参数",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "UrlScanResult",
+			"description": "扫描结果",
+			"subParams": [
+				{
+					"name": "event_id",
+					"type": "String",
+					"description": "请求标志唯一id",
+					"required": true
+				},
+				{
+					"name": "url_result_item_list",
+					"type": "UrlScanResultItem[]",
+					"description": "扫描详细结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "风险类型的描述文字",
+							"required": true
+						},
+						{
+							"name": "flag",
+							"type": "String",
+							"description": "用户传入的flag",
+							"required": true
+						},
+						{
+							"name": "official",
+							"type": "String",
+							"description": "被仿冒的官方网址",
+							"required": true
+						},
+						{
+							"name": "result_code",
+							"type": "String",
+							"description": "扫描结果码 SAFE-安全 NOT_SAFE-不安全 UN_KNOWN-未知",
+							"required": true
+						},
+						{
+							"name": "risk_type",
+							"type": "String",
+							"description": "url风险类型 Phishing-钓鱼网站 Malware-恶意程序 Porn-色情网站 Gambling-赌博网站 Illegal-违法网站 Other-其他",
+							"required": true
+						},
+						{
+							"name": "source",
+							"type": "String",
+							"description": "黑名单来源",
+							"required": true
+						},
+						{
+							"name": "target",
+							"type": "String",
+							"description": "被钓鱼网站仿冒的对象",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

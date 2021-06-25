@@ -1,0 +1,609 @@
+{
+	"name": "alibaba.wdk.hrworkbench.moka.entry.receipt.write",
+	"apiChineseName": "摩卡确认入职后往入职单据表写数据接口",
+	"description": "摩卡确认入职后往入职单据表写数据接口",
+	"requestParams": [
+		{
+			"name": "param_sync_entry_receipt_request",
+			"type": "SyncEntryReceiptRequest",
+			"description": "确认入职后入职单据请求",
+			"subParams": [
+				{
+					"name": "address_info",
+					"type": "AddressInfo[]",
+					"description": "地址信息",
+					"subParams": [
+						{
+							"name": "address_type",
+							"type": "String",
+							"description": "地址类型"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市"
+						},
+						{
+							"name": "state",
+							"type": "String",
+							"description": "省份"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "详细地址"
+						}
+					]
+				},
+				{
+					"name": "contact_info",
+					"type": "ContactInfo[]",
+					"description": "联系人信息",
+					"subParams": [
+						{
+							"name": "contact_name",
+							"type": "String",
+							"description": "联系人姓名"
+						},
+						{
+							"name": "contact_type",
+							"type": "String",
+							"description": "联系人类型"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "联系人手机号"
+						}
+					]
+				},
+				{
+					"name": "education_exp_info",
+					"type": "EducationExpInfo[]",
+					"description": "教育经历",
+					"subParams": [
+						{
+							"name": "education",
+							"type": "String",
+							"description": "学历"
+						},
+						{
+							"name": "gmt_end",
+							"type": "String",
+							"description": "开始日期"
+						},
+						{
+							"name": "gmt_start",
+							"type": "String",
+							"description": "结束日期"
+						},
+						{
+							"name": "major",
+							"type": "String",
+							"description": "专业"
+						},
+						{
+							"name": "school",
+							"type": "String",
+							"description": "学校"
+						},
+						{
+							"name": "schooling_years",
+							"type": "String",
+							"description": "学制年数"
+						}
+					]
+				},
+				{
+					"name": "employee_basic",
+					"type": "EmployeeBasic",
+					"description": "员工主要信息",
+					"subParams": [
+						{
+							"name": "e_mail",
+							"type": "String",
+							"description": "私人邮箱"
+						},
+						{
+							"name": "account_name",
+							"type": "String",
+							"description": "开户名"
+						},
+						{
+							"name": "amount_of_civil_disputes",
+							"type": "String",
+							"description": "民事纠纷金额"
+						},
+						{
+							"name": "attachment",
+							"type": "String",
+							"description": "附件* {\"身份证-正面\":\"url\"}"
+						},
+						{
+							"name": "bank_account",
+							"type": "String",
+							"description": "银行账号"
+						},
+						{
+							"name": "bank_branch",
+							"type": "String",
+							"description": "开户银行"
+						},
+						{
+							"name": "bank_country",
+							"type": "String",
+							"description": "银行国家"
+						},
+						{
+							"name": "bank_subbranch",
+							"type": "String",
+							"description": "开户支行"
+						},
+						{
+							"name": "basic_salary",
+							"type": "String",
+							"description": "基本工资"
+						},
+						{
+							"name": "birthday",
+							"type": "String",
+							"description": "生日"
+						},
+						{
+							"name": "companies_employed",
+							"type": "String",
+							"description": "companiesEmployed"
+						},
+						{
+							"name": "computer_operate",
+							"type": "String",
+							"description": "电脑操作"
+						},
+						{
+							"name": "crime_desc",
+							"type": "String",
+							"description": "行政处罚或犯罪记录具体描述"
+						},
+						{
+							"name": "degree",
+							"type": "String",
+							"description": "最高学位"
+						},
+						{
+							"name": "diseases_name",
+							"type": "String",
+							"description": "是否有重大疾病/手术记录"
+						},
+						{
+							"name": "education",
+							"type": "String",
+							"description": "最高学历"
+						},
+						{
+							"name": "emp_sub_type",
+							"type": "String",
+							"description": "员工子类"
+						},
+						{
+							"name": "emp_type",
+							"type": "String",
+							"description": "员工类型"
+						},
+						{
+							"name": "end_time_employed",
+							"type": "String",
+							"description": "曾受雇的结束时间"
+						},
+						{
+							"name": "entry_assistant",
+							"type": "String",
+							"description": "入职小管家"
+						},
+						{
+							"name": "gmt_entry",
+							"type": "String",
+							"description": "入职时间"
+						},
+						{
+							"name": "gmt_health_cert_end",
+							"type": "String",
+							"description": "健康证到期日期"
+						},
+						{
+							"name": "gmt_orig_regular",
+							"type": "String",
+							"description": "转正日期"
+						},
+						{
+							"name": "house_fund_pay_time",
+							"type": "String",
+							"description": "住房公积金截止日期"
+						},
+						{
+							"name": "hukou_type",
+							"type": "String",
+							"description": "户口类型"
+						},
+						{
+							"name": "is_crime",
+							"type": "String",
+							"description": "是否有无犯罪记录"
+						},
+						{
+							"name": "is_disability",
+							"type": "String",
+							"description": "是否有残疾证"
+						},
+						{
+							"name": "is_diseases",
+							"type": "String",
+							"description": "是否有重大疾病/手术记录"
+						},
+						{
+							"name": "is_employed",
+							"type": "String",
+							"description": "是否曾受雇与本公司/联营商家/促销厂商"
+						},
+						{
+							"name": "is_internal_referral",
+							"type": "String",
+							"description": "是否内部推荐"
+						},
+						{
+							"name": "is_oversea",
+							"type": "String",
+							"description": "是否海外"
+						},
+						{
+							"name": "is_pay_house_fund",
+							"type": "String",
+							"description": "是否缴纳住房公积金"
+						},
+						{
+							"name": "is_pay_social_security",
+							"type": "String",
+							"description": "是否缴纳社保"
+						},
+						{
+							"name": "is_still_civil_disputes",
+							"type": "String",
+							"description": "与其他单位仍有民事纠纷"
+						},
+						{
+							"name": "job_employed",
+							"type": "String",
+							"description": "曾担任的职务"
+						},
+						{
+							"name": "job_level",
+							"type": "String",
+							"description": "层级"
+						},
+						{
+							"name": "location_employed",
+							"type": "String",
+							"description": "曾受雇的工作地点"
+						},
+						{
+							"name": "location_no",
+							"type": "String",
+							"description": "工作地点"
+						},
+						{
+							"name": "marriage",
+							"type": "String",
+							"description": "婚姻状况"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "手机号"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "姓名"
+						},
+						{
+							"name": "nation",
+							"type": "String",
+							"description": "民族"
+						},
+						{
+							"name": "nation_country",
+							"type": "String",
+							"description": "国籍"
+						},
+						{
+							"name": "native_place",
+							"type": "String",
+							"description": "籍贯"
+						},
+						{
+							"name": "org_code",
+							"type": "String",
+							"description": "部门组织"
+						},
+						{
+							"name": "other_skill",
+							"type": "String",
+							"description": "其他技能"
+						},
+						{
+							"name": "post_no",
+							"type": "String",
+							"description": "职位"
+						},
+						{
+							"name": "referral_name",
+							"type": "String",
+							"description": "推荐人姓名"
+						},
+						{
+							"name": "referral_relation",
+							"type": "String",
+							"description": "推荐人关系"
+						},
+						{
+							"name": "salary_type",
+							"type": "String",
+							"description": "计薪方式"
+						},
+						{
+							"name": "service_company",
+							"type": "String",
+							"description": "服务公司"
+						},
+						{
+							"name": "sex",
+							"type": "String",
+							"description": "性别"
+						},
+						{
+							"name": "sign_company",
+							"type": "String",
+							"description": "法人公司"
+						},
+						{
+							"name": "source",
+							"type": "String",
+							"description": "招聘渠道"
+						},
+						{
+							"name": "start_time_employed",
+							"type": "String",
+							"description": "曾受雇的开始时间"
+						},
+						{
+							"name": "super_name",
+							"type": "String",
+							"description": "实线主管"
+						},
+						{
+							"name": "unemployment_pay_time",
+							"type": "String",
+							"description": "失业保险缴纳截止日期"
+						},
+						{
+							"name": "virt_name",
+							"type": "String",
+							"description": "虚线主管"
+						},
+						{
+							"name": "level_salary",
+							"type": "String",
+							"description": "层级工资"
+						},
+						{
+							"name": "performance_pay",
+							"type": "String",
+							"description": "绩效奖金"
+						},
+						{
+							"name": "meal_allowance",
+							"type": "String",
+							"description": "餐补"
+						}
+					]
+				},
+				{
+					"name": "family_info",
+					"type": "FamilyInfo[]",
+					"description": "家庭信息",
+					"subParams": [
+						{
+							"name": "contact",
+							"type": "String",
+							"description": "手机号码"
+						},
+						{
+							"name": "family_name",
+							"type": "String",
+							"description": "家庭成员姓名"
+						},
+						{
+							"name": "post",
+							"type": "String",
+							"description": "职位"
+						},
+						{
+							"name": "relationship",
+							"type": "String",
+							"description": "关系"
+						},
+						{
+							"name": "work_company",
+							"type": "String",
+							"description": "工作单位"
+						}
+					]
+				},
+				{
+					"name": "job_exp_info",
+					"type": "JobExpInfo[]",
+					"description": "工作履历",
+					"subParams": [
+						{
+							"name": "department",
+							"type": "String",
+							"description": "部门"
+						},
+						{
+							"name": "dimission_reason",
+							"type": "String",
+							"description": "离职原因"
+						},
+						{
+							"name": "gmt_end",
+							"type": "String",
+							"description": "结束日期"
+						},
+						{
+							"name": "gmt_start",
+							"type": "String",
+							"description": "开始日期"
+						},
+						{
+							"name": "position",
+							"type": "String",
+							"description": "职位"
+						},
+						{
+							"name": "salary_by_month",
+							"type": "String",
+							"description": "薪资（月）"
+						},
+						{
+							"name": "company",
+							"type": "String",
+							"description": "工作单位"
+						}
+					]
+				},
+				{
+					"name": "offer_license_info",
+					"type": "OfferLicenseInfo[]",
+					"description": "证件信息",
+					"subParams": [
+						{
+							"name": "first",
+							"type": "String",
+							"description": "是否首选证件"
+						},
+						{
+							"name": "gmt_begin",
+							"type": "String",
+							"description": "证件开始时间"
+						},
+						{
+							"name": "gmt_validity",
+							"type": "String",
+							"description": "证件结束日期"
+						},
+						{
+							"name": "license_country",
+							"type": "String",
+							"description": "证件国家"
+						},
+						{
+							"name": "license_type",
+							"type": "String",
+							"description": "证件类型"
+						},
+						{
+							"name": "license_value",
+							"type": "String",
+							"description": "证件号码"
+						}
+					]
+				},
+				{
+					"name": "related_party_info",
+					"type": "RelatedPartyInfo[]",
+					"description": "关联方申报信息",
+					"subParams": [
+						{
+							"name": "department",
+							"type": "String",
+							"description": "所在部门"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "姓名"
+						},
+						{
+							"name": "post",
+							"type": "String",
+							"description": "职位"
+						},
+						{
+							"name": "related_party_type",
+							"type": "String",
+							"description": "关联方类型"
+						},
+						{
+							"name": "relation",
+							"type": "String",
+							"description": "关系"
+						}
+					]
+				},
+				{
+					"name": "language_info",
+					"type": "LanguageInfo[]",
+					"description": "语言信息",
+					"subParams": [
+						{
+							"name": "language",
+							"type": "String",
+							"description": "语言"
+						},
+						{
+							"name": "degree",
+							"type": "String",
+							"description": "程度"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "data"
+		},
+		{
+			"name": "fail",
+			"type": "Boolean",
+			"description": "失败"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "结果信息"
+		},
+		{
+			"name": "succ_and_not_null",
+			"type": "Boolean",
+			"description": "成功并且结果非空"
+		},
+		{
+			"name": "succ_and_null",
+			"type": "Boolean",
+			"description": "成功结果为空"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "trace_id"
+		}
+	]
+}

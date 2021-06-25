@@ -1,0 +1,20 @@
+{
+	"name": "taobao.ump.activity.delete",
+	"apiChineseName": "删除营销活动",
+	"description": "删除营销活动。对应的活动详情等将会被全部删除。",
+	"requestParams": [
+		{
+			"name": "act_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		}
+	]
+}

@@ -1,0 +1,71 @@
+{
+	"name": "taobao.caipiao.goods.info.input",
+	"apiChineseName": "录入参加送彩票商品信息",
+	"description": "录入参加送彩票商品信息，如果录入成功，返回true，如果录入失败，返回false，后端会根据商品id与赠送类型（goodsid_presenttype_uk）来决定是新增数据还是修改数据。",
+	"requestParams": [
+		{
+			"name": "goods_id",
+			"type": "Number",
+			"description": "商品在淘宝的唯一id，不可为空",
+			"required": true
+		},
+		{
+			"name": "goods_title",
+			"type": "String",
+			"description": "商品标题"
+		},
+		{
+			"name": "goods_price",
+			"type": "Price",
+			"description": "商品价格,保留两位小数，不可为空",
+			"required": true
+		},
+		{
+			"name": "goods_image",
+			"type": "String",
+			"description": "商品主图地址"
+		},
+		{
+			"name": "present_type",
+			"type": "Number",
+			"description": "赠送类型：0-满就送；1-好评送；2-分享送；3-游戏送；4-收藏送，不可为空",
+			"required": true
+		},
+		{
+			"name": "act_start_date",
+			"type": "String",
+			"description": "活动开始时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空",
+			"required": true
+		},
+		{
+			"name": "act_end_date",
+			"type": "String",
+			"description": "活动结束时间，格式需严格遵守yyyy-MM-dd HH:mm:ss，不可为空",
+			"required": true
+		},
+		{
+			"name": "goods_type",
+			"type": "Number",
+			"description": "商品类目编号，不可为空",
+			"required": true
+		},
+		{
+			"name": "lottery_type_id",
+			"type": "Number",
+			"description": "彩种id,不可为空",
+			"required": true
+		},
+		{
+			"name": "goods_desc",
+			"type": "String",
+			"description": "店铺相关商品参加的送彩票活动描述"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "input_result",
+			"type": "Boolean",
+			"description": "录入操作是否成功"
+		}
+	]
+}

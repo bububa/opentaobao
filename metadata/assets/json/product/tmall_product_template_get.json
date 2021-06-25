@@ -1,0 +1,62 @@
+{
+	"name": "tmall.product.template.get",
+	"apiChineseName": "产品接口",
+	"description": "产品模板获取接口，对于非关键属性的类目，发布达尔文(监管)产品时，必须先根据类目获取产品模板。\u003cbr/\u003e\u003cbr/\u003e产品模板定义产品发布需要的类目属性，包括：\u003cbr/\u003e\u003cbr/\u003e   关键属性:关键属性可以在类目上不存在。不存在的PID，默认为输入，没有子属性。属性名称在prop_name_str中取\u003cbr/\u003e   绑定属性:内容为属性ID(PID)的列表,绑定属性肯定在类目上有，对应属性的类目特征，子属性请根据PID到类目上去取\u003cbr/\u003e\u003cbr/\u003e   过滤属性:内容有属性ID(PID)列表，很重要的属性，filter_properties包含的属性，必须填写\u003cbr/\u003e\u003cbr/\u003e   如果获取不到模板，非关键属性类目是不能发布产品的\u003cbr/\u003e",
+	"requestParams": [
+		{
+			"name": "cid",
+			"type": "Number",
+			"description": "类目ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "template",
+			"type": "SpuTemplateDO",
+			"description": "见SpuTemplateDO说明",
+			"subParams": [
+				{
+					"name": "key_properties",
+					"type": "Number[]",
+					"description": "产品关键属性，内容为属性ID(PID)的列表，注意关键属性可以在类目上不存在。不存在的PID，默认为输入，没有子属性。属性名称在prop_name_str中取"
+				},
+				{
+					"name": "affect_properties",
+					"type": "Number[]",
+					"description": "产品绑定属性，内容为属性ID(PID)的列表,绑定属性肯定在类目上有，对应属性的类目特征，子属性请根据PID到类目上去取"
+				},
+				{
+					"name": "filter_properties",
+					"type": "Number[]",
+					"description": "过滤属性，内容有属性ID(PID)列表，很重要的属性，filter_properties包含的属性，必须填写"
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "类目ID"
+				},
+				{
+					"name": "template_id",
+					"type": "Number",
+					"description": "模板ID，发布产品，必须放到Product中"
+				},
+				{
+					"name": "commodity_id",
+					"type": "Number",
+					"description": "品类ID，和类目ID类似"
+				},
+				{
+					"name": "prop_name_str",
+					"type": "String",
+					"description": "属性名称扁平化结构，只保证不在类目上的CP有值"
+				},
+				{
+					"name": "prop_features",
+					"type": "String",
+					"description": "预留"
+				}
+			]
+		}
+	]
+}

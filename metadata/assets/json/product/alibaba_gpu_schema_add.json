@@ -1,0 +1,37 @@
+{
+	"name": "alibaba.gpu.schema.add",
+	"apiChineseName": "使用schema文件发布产品",
+	"description": "使用Schema文件发布一个产品",
+	"requestParams": [
+		{
+			"name": "leaf_cat_id",
+			"type": "Number",
+			"description": "叶子类目ID",
+			"required": true
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "品牌ID"
+		},
+		{
+			"name": "schema_xml_fields",
+			"type": "String",
+			"description": "根据alibaba.gpu.add.schema.get获取的规则提交上来的schema",
+			"required": true
+		},
+		{
+			"name": "provider_id",
+			"type": "Number",
+			"description": "当前用户所在渠道如0代表天猫，8代表淘宝",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "add_product_result",
+			"type": "String",
+			"description": "产品发布的结果"
+		}
+	]
+}

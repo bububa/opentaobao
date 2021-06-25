@@ -1,0 +1,56 @@
+{
+	"name": "alibaba.icbu.photobank.group.list",
+	"apiChineseName": "图片银行分组信息获取",
+	"description": "图片银行分组信息获取",
+	"requestParams": [
+		{
+			"name": "extra_context",
+			"type": "Json",
+			"description": "补充信息"
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "查询图片分组信息，如果传入id，则获取当前分组和所有子分组信息，否则获取所有一级分组信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "groups",
+			"type": "PhotoAlbumGroup []",
+			"description": "groups",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "id",
+					"required": true
+				},
+				{
+					"name": "level1",
+					"type": "Number",
+					"description": "level1",
+					"required": true
+				},
+				{
+					"name": "level2",
+					"type": "Number",
+					"description": "level2",
+					"required": true
+				},
+				{
+					"name": "level3",
+					"type": "Number",
+					"description": "level3",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "name",
+					"required": true
+				}
+			]
+		}
+	]
+}

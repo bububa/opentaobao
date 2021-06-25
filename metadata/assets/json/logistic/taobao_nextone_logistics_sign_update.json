@@ -1,0 +1,52 @@
+{
+	"name": "taobao.nextone.logistics.sign.update",
+	"apiChineseName": "AG物流签收状态写接口",
+	"description": "商家上传退货的签收状态给AG",
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款编号",
+			"required": true
+		},
+		{
+			"name": "sign_status",
+			"type": "Number",
+			"description": "货物签收状态",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "Json",
+					"description": "返回数据",
+					"required": true
+				},
+				{
+					"name": "error_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

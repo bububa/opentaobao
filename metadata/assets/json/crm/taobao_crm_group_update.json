@@ -1,0 +1,29 @@
+{
+	"name": "taobao.crm.group.update",
+	"apiChineseName": "修改一个已经存在的分组",
+	"description": "修改一个已经存在的分组，接口返回分组的修改是否成功",
+	"requestParams": [
+		{
+			"name": "group_id",
+			"type": "Number",
+			"description": "分组的id",
+			"required": true,
+			"maxLength": 19,
+			"minValue": 1
+		},
+		{
+			"name": "new_group_name",
+			"type": "String",
+			"description": "新的分组名，分组名称不能包含|或者：",
+			"required": true,
+			"maxLength": 15
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "分组修改是否成功"
+		}
+	]
+}

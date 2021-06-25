@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.sensor.gyro",
+	"apiChineseName": "陀螺仪",
+	"description": "客户端陀螺仪",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "return=0 表示正确"
+		}
+	]
+}

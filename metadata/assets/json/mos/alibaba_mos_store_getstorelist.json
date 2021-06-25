@@ -1,0 +1,104 @@
+{
+	"name": "alibaba.mos.store.getstorelist",
+	"apiChineseName": "根据屏编号获取专柜集",
+	"description": "根据屏编号获取专柜集",
+	"requestParams": [
+		{
+			"name": "screen_no",
+			"type": "String",
+			"description": "屏编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "MjStoresTopVo",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_default",
+							"type": "Number",
+							"description": "默认选中的专柜，0为全部品牌",
+							"required": true
+						},
+						{
+							"name": "store_info_list",
+							"type": "StoreInfo[]",
+							"description": "storeInfoList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "store_pic",
+									"type": "String",
+									"description": "图片",
+									"required": true
+								},
+								{
+									"name": "store_id",
+									"type": "Number",
+									"description": "专柜ID",
+									"required": true
+								},
+								{
+									"name": "store_name",
+									"type": "String",
+									"description": "专柜名字",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "version",
+							"type": "Number",
+							"description": "版本",
+							"required": true
+						},
+						{
+							"name": "screen_type",
+							"type": "Number",
+							"description": "1：普通 2：刷脸",
+							"required": true
+						},
+						{
+							"name": "mall_id",
+							"type": "Number",
+							"description": "商场id",
+							"required": true
+						},
+						{
+							"name": "out_mall_id",
+							"type": "String",
+							"description": "外部门店号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

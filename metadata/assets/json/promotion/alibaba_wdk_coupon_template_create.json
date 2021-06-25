@@ -1,0 +1,446 @@
+{
+	"name": "alibaba.wdk.coupon.template.create",
+	"apiChineseName": "优惠券模版创建",
+	"description": "开放给外部商家创建优惠券模版",
+	"requestParams": [
+		{
+			"name": "param_coupon_template_operate_request",
+			"type": "CouponTemplateOperateRequest",
+			"description": "请求",
+			"subParams": [
+				{
+					"name": "coupon_template",
+					"type": "CouponTemplate",
+					"description": "券模版",
+					"required": true,
+					"subParams": [
+						{
+							"name": "apply_limit_config",
+							"type": "CouponTemplateApplyLimitConfig",
+							"description": "领取限制",
+							"required": true,
+							"subParams": [
+								{
+									"name": "apply_end_time",
+									"type": "Date",
+									"description": "优惠券最后能领取时间(超过这个时间，优惠券不能领取)"
+								},
+								{
+									"name": "coupon_daily_lmt",
+									"type": "Number",
+									"description": "优惠券每日限领数（-1表示不限制）"
+								},
+								{
+									"name": "coupon_total_lmt",
+									"type": "Number",
+									"description": "优惠券总数（-1表示不限制）",
+									"required": true
+								},
+								{
+									"name": "personal_daily_lmt",
+									"type": "Number",
+									"description": "每人每日限领（-1表示不限制）"
+								},
+								{
+									"name": "personal_lmt",
+									"type": "Number",
+									"description": "个人总领取限制数量（-1表示不限制）"
+								},
+								{
+									"name": "apply_start_time",
+									"type": "Date",
+									"description": "优惠券最早能领取时间(在这时间之前，优惠券不能领取)"
+								}
+							]
+						},
+						{
+							"name": "common_config",
+							"type": "CouponTemplateCommonConfig",
+							"description": "基础信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "apply_channels",
+									"type": "String[]",
+									"description": "申请渠道 anonymousOffline"
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "优惠券活动描述",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "模板状态 NORMAL(1, \"有效\"), DELETE(-1, \"删除\"), ENDING(0, \"结束领取\"), NOUSE(-2, \"无效\"), WDK_COUPON_DRAFT(-999, \"草稿\"),"
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "优惠券名称",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "优惠券类型 UNIT_PRICE(10,\"unitPrice\",\"单品定价券\"), FULL_AMOUNT_REDUCE(11, \"fullAmountReduce\", \"满元减券\"), FULL_AMOUNT_DISCOUNT(12, \"fullAmountDiscount\", \"满元折券\"), FULL_COUNT_REDUCE(13, \"fullCountReduce\", \"满件减券\"), FULL_COUNT_DISCOUNT(14, \"fullCountDiscount\", \"满件折券\"), VOUCHER(15, \"voucher\", \"抵用券\"),",
+									"required": true
+								},
+								{
+									"name": "send_type",
+									"type": "String",
+									"description": "优惠券发放方式 ANONYMOUS(\"anonymous\",\"匿名券\"), REGISTERED(\"registered\",\"记名券\"),"
+								}
+							]
+						},
+						{
+							"name": "condition_config",
+							"type": "CouponTemplateConditionConfig",
+							"description": "生效条件",
+							"subParams": [
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "门槛金额"
+								},
+								{
+									"name": "amount_at",
+									"type": "Boolean",
+									"description": "是否生效满元条件"
+								},
+								{
+									"name": "categories",
+									"type": "String[]",
+									"description": "生效类目"
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "门槛件数"
+								},
+								{
+									"name": "count_at",
+									"type": "Boolean",
+									"description": "是否生效满件条件"
+								},
+								{
+									"name": "only_member_self",
+									"type": "Boolean",
+									"description": "是否限制本人使用"
+								},
+								{
+									"name": "range_type",
+									"type": "Number",
+									"description": "券的使用范围 COUPON_RANGE_STORE(1, \"rangeShop\", \"店铺券\"), COUPON_RANGE_ITEM(2, \"rangeItem\", \"商品券\"), COUPON_RANGE_CATEGORY(3, \"rangeCategory\", \"品类券\"), COUPON_RANGE_SELLER(307,\"rangeSeller\", \"卖家券\"),"
+								},
+								{
+									"name": "shop_ids",
+									"type": "String[]",
+									"description": "生效门店"
+								},
+								{
+									"name": "terminals",
+									"type": "Number[]",
+									"description": "生效终端:  1.app 2.pos"
+								},
+								{
+									"name": "user_crowd_config",
+									"type": "CouponTemplateUserCrowdConfig",
+									"description": "人群信息",
+									"subParams": [
+										{
+											"name": "merchant_customize_crowd_name",
+											"type": "String",
+											"description": "商家自定义人群"
+										},
+										{
+											"name": "platform_crowd_name",
+											"type": "String",
+											"description": "平台人群"
+										}
+									]
+								},
+								{
+									"name": "max_use_count_per_order",
+									"type": "Number",
+									"description": "单笔订单最大可用张数"
+								},
+								{
+									"name": "max_effect_amount",
+									"type": "Number",
+									"description": "最大优惠金额"
+								},
+								{
+									"name": "exclude_item_rules",
+									"type": "Number[]",
+									"description": "排除的商品规则 1:专柜品"
+								},
+								{
+									"name": "merchant_categories",
+									"type": "String[]",
+									"description": "生效商家类目"
+								}
+							]
+						},
+						{
+							"name": "discount_config",
+							"type": "CouponTemplateDiscountConfig",
+							"description": "优惠效果",
+							"subParams": [
+								{
+									"name": "decrease",
+									"type": "Boolean",
+									"description": "是否减钱"
+								},
+								{
+									"name": "decrease_money",
+									"type": "Number",
+									"description": "减钱金额"
+								},
+								{
+									"name": "discount",
+									"type": "Boolean",
+									"description": "是否打折"
+								},
+								{
+									"name": "discount_rate",
+									"type": "Number",
+									"description": "打折额度"
+								},
+								{
+									"name": "fix_price_amount",
+									"type": "Number",
+									"description": "优惠后的固定价格"
+								},
+								{
+									"name": "fix_price",
+									"type": "Boolean",
+									"description": "是否固定价格"
+								}
+							]
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "模板表主键 创建时为空"
+						},
+						{
+							"name": "investment_config",
+							"type": "CouponTemplateInvestmentConfig",
+							"description": "出资人配置",
+							"subParams": [
+								{
+									"name": "investment_info_list",
+									"type": "InvestmentInfo[]",
+									"description": "出资人配置",
+									"subParams": [
+										{
+											"name": "investor",
+											"type": "String",
+											"description": "出资人"
+										},
+										{
+											"name": "investor_ratio",
+											"type": "Number",
+											"description": "出资比例 2000 = 20%"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "option_config",
+							"type": "CouponTemplateOptionConfig",
+							"description": "其他配置--拓展信息",
+							"subParams": [
+								{
+									"name": "out_coupon_template_id",
+									"type": "String",
+									"description": "外部优惠券模板id"
+								},
+								{
+									"name": "out_coupon_type",
+									"type": "String",
+									"description": "外部优惠券类型"
+								},
+								{
+									"name": "logo_url",
+									"type": "String",
+									"description": "优惠券logo url"
+								},
+								{
+									"name": "picture_url",
+									"type": "String",
+									"description": "券图片"
+								},
+								{
+									"name": "contract_instance_id",
+									"type": "Number",
+									"description": "合同ID"
+								},
+								{
+									"name": "purchase_id",
+									"type": "Number",
+									"description": "采买者ID"
+								}
+							]
+						},
+						{
+							"name": "participate_config",
+							"type": "CouponTemplateParticipateConfig",
+							"description": "参与者",
+							"subParams": [
+								{
+									"name": "participate_list",
+									"type": "LogicGroup[]",
+									"description": "参与者列表",
+									"subParams": [
+										{
+											"name": "number",
+											"type": "Number",
+											"description": "参与者分组序号"
+										},
+										{
+											"name": "wdk_group_name",
+											"type": "String",
+											"description": "五道口参与者名称"
+										},
+										{
+											"name": "logic_group_type",
+											"type": "Number",
+											"description": "逻辑分组类型  COMMON(1, \"普通分组\"), EXCHANGE(2, \"换购分组\"), BUY_GIFT(3, \"买赠分组\"), EXCHANGE_TJ_OVERLAY(4, \"特价换购叠加分组\"),"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "source_id",
+							"type": "Number",
+							"description": "ump模板ID"
+						},
+						{
+							"name": "time_limit_config",
+							"type": "CouponTemplateTimeLimitConfig",
+							"description": "实例有效时间配置",
+							"subParams": [
+								{
+									"name": "end_valid_time",
+									"type": "Date",
+									"description": "优惠券结束时间"
+								},
+								{
+									"name": "start_valid_time",
+									"type": "Date",
+									"description": "优惠券开始时间"
+								},
+								{
+									"name": "valid_time_type",
+									"type": "Number",
+									"description": "优惠券有效时间类型 RANGE(1,\"开始/结束时间\"), DURATION(2,\"固定时长\"),"
+								},
+								{
+									"name": "validity_period",
+									"type": "Number",
+									"description": "优惠券有效时长，单位为秒（固定有效时长的优惠券）"
+								}
+							]
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "优惠券模版uuid"
+						},
+						{
+							"name": "compatible_config",
+							"type": "CouponTemplateCompatibleConfig",
+							"description": "兼容历史逻辑配置",
+							"subParams": [
+								{
+									"name": "valid_till_night",
+									"type": "Number",
+									"description": "是否要求优惠券在一天的23:59:59失效 1表示最后一秒失效"
+								}
+							]
+						},
+						{
+							"name": "unique_id",
+							"type": "String",
+							"description": "幂等id，外部透传"
+						}
+					]
+				},
+				{
+					"name": "user_info",
+					"type": "UserInfo",
+					"description": "用户信息",
+					"subParams": [
+						{
+							"name": "source",
+							"type": "String",
+							"description": "来源"
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "用户id"
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "用户名称"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "CouponTemplateOperateResponse",
+					"description": "返回",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "模板表主键",
+							"required": true
+						},
+						{
+							"name": "source_id",
+							"type": "Number",
+							"description": "ump模板ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标志",
+					"required": true
+				}
+			]
+		}
+	]
+}

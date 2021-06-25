@@ -1,0 +1,233 @@
+{
+	"name": "taobao.scitem.add",
+	"apiChineseName": "发布后端商品",
+	"description": "发布后端商品",
+	"requestParams": [
+		{
+			"name": "item_name",
+			"type": "String",
+			"description": "商品名称",
+			"required": true
+		},
+		{
+			"name": "outer_code",
+			"type": "String",
+			"description": "商家编码",
+			"required": true
+		},
+		{
+			"name": "item_type",
+			"type": "Number",
+			"description": "0.普通供应链商品 1.供应链组合主商品"
+		},
+		{
+			"name": "properties",
+			"type": "String",
+			"description": "商品属性格式是  p1:v1,p2:v2,p3:v3"
+		},
+		{
+			"name": "bar_code",
+			"type": "String",
+			"description": "条形码"
+		},
+		{
+			"name": "wms_code",
+			"type": "String",
+			"description": "仓储商编码"
+		},
+		{
+			"name": "is_friable",
+			"type": "Number",
+			"description": "是否易碎 0：不是  1：是"
+		},
+		{
+			"name": "is_dangerous",
+			"type": "Number",
+			"description": "是否危险 0：不是  1：是"
+		},
+		{
+			"name": "is_costly",
+			"type": "Number",
+			"description": "是否是贵重品 0:不是 1：是"
+		},
+		{
+			"name": "is_warranty",
+			"type": "Number",
+			"description": "是否保质期：0:不是 1：是"
+		},
+		{
+			"name": "weight",
+			"type": "Number",
+			"description": "重量 单位：g"
+		},
+		{
+			"name": "length",
+			"type": "Number",
+			"description": "长度 单位：mm"
+		},
+		{
+			"name": "width",
+			"type": "Number",
+			"description": "宽 单位：mm"
+		},
+		{
+			"name": "height",
+			"type": "Number",
+			"description": "高 单位：mm"
+		},
+		{
+			"name": "volume",
+			"type": "Number",
+			"description": "体积：立方厘米"
+		},
+		{
+			"name": "price",
+			"type": "Number",
+			"description": "价格 单位：分"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "remark"
+		},
+		{
+			"name": "matter_status",
+			"type": "Number",
+			"description": "0:液体，1：粉体，2：固体"
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "品牌id"
+		},
+		{
+			"name": "brand_name",
+			"type": "String",
+			"description": "brand_Name"
+		},
+		{
+			"name": "spu_id",
+			"type": "Number",
+			"description": "spuId或是cspuid"
+		},
+		{
+			"name": "is_area_sale",
+			"type": "Number",
+			"description": "1表示区域销售，0或是空是非区域销售"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "sc_item",
+			"type": "ScItem",
+			"description": "后台商品信息",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "商品名称"
+				},
+				{
+					"name": "outer_code",
+					"type": "String",
+					"description": "商家编码"
+				},
+				{
+					"name": "item_type",
+					"type": "Number",
+					"description": "1.普通供应链商品 2.供应链组合主商品"
+				},
+				{
+					"name": "properties",
+					"type": "String",
+					"description": "商品属性格式是  p1:v1,p2:v2,p3:v3"
+				},
+				{
+					"name": "bar_code",
+					"type": "String",
+					"description": "条形码"
+				},
+				{
+					"name": "wms_code",
+					"type": "String",
+					"description": "仓储商编码，可以支持多个，格式wmsname:code"
+				},
+				{
+					"name": "is_friable",
+					"type": "Boolean",
+					"description": "是否易碎 false ：不是  true：是"
+				},
+				{
+					"name": "is_dangerous",
+					"type": "Boolean",
+					"description": "是否危险 false：不是  true：是"
+				},
+				{
+					"name": "is_costly",
+					"type": "Boolean",
+					"description": "贵重品:false:不是 true：是"
+				},
+				{
+					"name": "is_warranty",
+					"type": "Boolean",
+					"description": "是否保质期：false:不是 true：是"
+				},
+				{
+					"name": "weight",
+					"type": "Number",
+					"description": "重量.单位：克"
+				},
+				{
+					"name": "length",
+					"type": "Number",
+					"description": "长度 单位：mm"
+				},
+				{
+					"name": "width",
+					"type": "Number",
+					"description": "宽 单位：mm"
+				},
+				{
+					"name": "height",
+					"type": "Number",
+					"description": "高 单位：mm"
+				},
+				{
+					"name": "volume",
+					"type": "Number",
+					"description": "体积：立方厘米"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "价格：分（吊牌价）"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "matter_status",
+					"type": "String",
+					"description": "LIQUID:液体，1：粉体，SOLID：固体"
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "品牌id"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名称"
+				}
+			]
+		}
+	]
+}

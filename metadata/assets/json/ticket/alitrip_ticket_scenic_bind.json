@@ -1,0 +1,77 @@
+{
+	"name": "alitrip.ticket.scenic.bind",
+	"apiChineseName": "【门票API2.0】门票景点绑定接口",
+	"description": "门票景点绑定接口，用于建立阿里标准景点id与商家系统景点id的映射关系。该接口同时支持新建和修改映射关系，当用户没有为ali_scenic_id建立过映射关系时，则判断为新建映射关系，否则为修改。可以通过设置update_out_scenic_id来修改ali_scenic_id与out_scenic_id的映射关系。",
+	"requestParams": [
+		{
+			"name": "ali_scenic_id",
+			"type": "Number",
+			"description": "必填，阿里旅行对应的景点编码",
+			"required": true
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "商户景点城市"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "商户景点地址"
+		},
+		{
+			"name": "out_scenic_name",
+			"type": "String",
+			"description": "商户景点名称"
+		},
+		{
+			"name": "province",
+			"type": "String",
+			"description": "商户景点省份"
+		},
+		{
+			"name": "out_scenic_id",
+			"type": "String",
+			"description": "必填，商户系统中的景点编码，用于与ali_scenic_id建立映射关系",
+			"required": true
+		},
+		{
+			"name": "update_out_scenic_id",
+			"type": "String",
+			"description": "可选，如果需要更新out_scenic_id与ali_scenic_id的映射关系时 需要填写"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "first_result",
+			"type": "TicketScenicResult",
+			"description": "景点绑定结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "out_scenic_id",
+					"type": "String",
+					"description": "商家景点编码",
+					"required": true
+				},
+				{
+					"name": "ali_scenic_id",
+					"type": "Number",
+					"description": "阿里标准景点库ID",
+					"required": true
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "扩展字段，预留",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,64 @@
+{
+	"name": "taobao.ailab.aicloud.top.like.delete",
+	"apiChineseName": "取消收藏",
+	"description": "取消收藏",
+	"requestParams": [
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id",
+			"required": true
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "收藏类型，目前支持四种：story,children_song,music,program，分别表示故事、儿童、音乐和节目",
+			"required": true
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "来源",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "资源的记录ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "具体结果值"
+		}
+	]
+}

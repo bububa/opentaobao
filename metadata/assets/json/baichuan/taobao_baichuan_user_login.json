@@ -1,0 +1,19 @@
+{
+	"name": "taobao.baichuan.user.login",
+	"apiChineseName": "百川H5登录",
+	"description": "百川H5登录",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "name"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "name"
+		}
+	]
+}

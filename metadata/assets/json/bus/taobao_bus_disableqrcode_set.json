@@ -1,0 +1,30 @@
+{
+	"name": "taobao.bus.disableqrcode.set",
+	"apiChineseName": "自助机失效二维码",
+	"description": "使创建的二维码失效",
+	"requestParams": [
+		{
+			"name": "alitrip_order_id",
+			"type": "String",
+			"description": "飞猪订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "errorMsg"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

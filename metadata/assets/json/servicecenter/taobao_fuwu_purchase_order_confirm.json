@@ -1,0 +1,61 @@
+{
+	"name": "taobao.fuwu.purchase.order.confirm",
+	"apiChineseName": "服务市场内购服务下单接口",
+	"description": "通过传入服务市场商品的itemcode等信息，返回给服务商内购服务的下单链接",
+	"requestParams": [
+		{
+			"name": "param_order_confirm_query_d_t_o",
+			"type": "OrderConfirmQueryDto",
+			"description": "内购服务下单接口参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "APPKEY，必填",
+					"required": true
+				},
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "内购服务的规格CODE，必填",
+					"required": true
+				},
+				{
+					"name": "cyc_unit",
+					"type": "String",
+					"description": "周期单位(必选 数值1:年 2:月， 3：天)，必填",
+					"required": true
+				},
+				{
+					"name": "cyc_num",
+					"type": "String",
+					"description": "周期数量，必填",
+					"required": true
+				},
+				{
+					"name": "out_trade_code",
+					"type": "String",
+					"description": "使用该参数完成查询订单等操作，可选"
+				},
+				{
+					"name": "device_type",
+					"type": "String",
+					"description": "设备类型，目前只支持PC，可选"
+				},
+				{
+					"name": "quantity",
+					"type": "String",
+					"description": "计量型服务的数量，如果是计量型内购服务，则必填"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "url",
+			"type": "String",
+			"description": "下单页面url"
+		}
+	]
+}

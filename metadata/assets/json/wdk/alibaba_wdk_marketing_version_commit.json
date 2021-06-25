@@ -1,0 +1,54 @@
+{
+	"name": "alibaba.wdk.marketing.version.commit",
+	"apiChineseName": "提交版本号",
+	"description": "提交版本号，标识结束此版本操作",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "SeasonVersionCommitParam",
+			"description": "版本号提交参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "season_version",
+					"type": "Number",
+					"description": "generate的版本号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "档期版本号",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

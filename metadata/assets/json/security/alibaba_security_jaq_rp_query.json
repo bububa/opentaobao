@@ -1,0 +1,266 @@
+{
+	"name": "alibaba.security.jaq.rp.query",
+	"apiChineseName": "聚安全实人认证查询认证结果",
+	"description": "聚安全实人认证查询认证结果",
+	"requestParams": [
+		{
+			"name": "verify_token",
+			"type": "String",
+			"description": "token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "RpAuditResultBo",
+			"description": "返回结果信息",
+			"subParams": [
+				{
+					"name": "review_status",
+					"type": "Boolean",
+					"description": "复核状态被置位",
+					"required": true
+				},
+				{
+					"name": "grade_certified",
+					"type": "Boolean",
+					"description": "如果 curGrade 和 requireGrade 相同则 gradeCertified 返回 true, 相反则返回false",
+					"required": true
+				},
+				{
+					"name": "require_grade",
+					"type": "RpGradeBo",
+					"description": "要求的实人级别",
+					"required": true,
+					"subParams": [
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "desc",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "level",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "cur_grade",
+					"type": "RpGradeBo",
+					"description": "当前的实人级别",
+					"required": true,
+					"subParams": [
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "desc",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "level",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "biz",
+					"type": "String",
+					"description": "当前的biz",
+					"required": true
+				},
+				{
+					"name": "audit_status",
+					"type": "RpAuditStatusBo",
+					"description": "当前的审核状态",
+					"required": true,
+					"subParams": [
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "code",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "rp_audit_details",
+					"type": "RpAuditDetails",
+					"description": "结果信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "audit_finish_time",
+							"type": "Json",
+							"description": "预计审核结束时间",
+							"required": true
+						},
+						{
+							"name": "material_details",
+							"type": "RpAuditMaterialDetail[]",
+							"description": "材料审核结论",
+							"required": true,
+							"subParams": [
+								{
+									"name": "security",
+									"type": "Boolean",
+									"description": "是否安全原因",
+									"required": true
+								},
+								{
+									"name": "display",
+									"type": "String",
+									"description": "展示用的文案",
+									"required": true
+								},
+								{
+									"name": "suggestion",
+									"type": "String",
+									"description": "给用户的建议",
+									"required": true
+								},
+								{
+									"name": "intercept",
+									"type": "Boolean",
+									"description": "intercept",
+									"required": true
+								},
+								{
+									"name": "text",
+									"type": "String",
+									"description": "材料结论文本描述",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "材料结论编码",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "材料结论分类",
+									"required": true
+								},
+								{
+									"name": "material_type",
+									"type": "String",
+									"description": "材料类别",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "comparison_details",
+							"type": "RpAuditComparisonDetail[]",
+							"description": "结果信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "result_type",
+									"type": "RpAuditType",
+									"description": "实人认证审核类别",
+									"required": true,
+									"subParams": [
+										{
+											"name": "desc",
+											"type": "String",
+											"description": "desc",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "Number",
+											"description": "code",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "value",
+									"type": "RpAuditValue",
+									"description": "实人认证审核结果",
+									"required": true,
+									"subParams": [
+										{
+											"name": "desc",
+											"type": "String",
+											"description": "desc",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "Number",
+											"description": "code",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "score",
+									"type": "String",
+									"description": "比对分值",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "review_deadline",
+							"type": "Json",
+							"description": "复核截止时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "review_type",
+					"type": "String",
+					"description": "复核类型",
+					"required": true
+				}
+			]
+		}
+	]
+}

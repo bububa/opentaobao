@@ -1,0 +1,20 @@
+{
+	"name": "taobao.delivery.template.delete",
+	"apiChineseName": "删除运费模板",
+	"description": "根据用户指定的模板ID删除指定的模板",
+	"requestParams": [
+		{
+			"name": "template_id",
+			"type": "Number",
+			"description": "运费模板ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "complete",
+			"type": "Boolean",
+			"description": "表示删除成功还是失败"
+		}
+	]
+}

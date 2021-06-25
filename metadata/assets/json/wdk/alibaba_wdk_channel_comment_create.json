@@ -1,0 +1,129 @@
+{
+	"name": "alibaba.wdk.channel.comment.create",
+	"apiChineseName": "差评导入",
+	"description": "差评导入",
+	"requestParams": [
+		{
+			"name": "comment_create_info",
+			"type": "CommentCreateInfo",
+			"description": "差评信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_comment_id",
+					"type": "String",
+					"description": "商家评价Id",
+					"required": true
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "履约门店名称",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "履约门店Id",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "盒马主单号",
+					"required": true
+				},
+				{
+					"name": "sub_biz_order_id",
+					"type": "String",
+					"description": "盒马子单号",
+					"required": true
+				},
+				{
+					"name": "category",
+					"type": "String",
+					"description": "类目名称",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "商品金额",
+					"required": true
+				},
+				{
+					"name": "sku_name",
+					"type": "String",
+					"description": "商品名称",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "comment_date",
+					"type": "Date",
+					"description": "评价日期",
+					"required": true
+				},
+				{
+					"name": "comment_star",
+					"type": "String",
+					"description": "评价星级",
+					"required": true
+				},
+				{
+					"name": "comment_content",
+					"type": "String",
+					"description": "评价内容",
+					"required": true
+				},
+				{
+					"name": "comment_pics",
+					"type": "String",
+					"description": "评价图片",
+					"required": true
+				},
+				{
+					"name": "comment_tag",
+					"type": "String",
+					"description": "评价标签"
+				},
+				{
+					"name": "comment_reason",
+					"type": "String",
+					"description": "差评原因"
+				},
+				{
+					"name": "review_reason",
+					"type": "String",
+					"description": "差评回评"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

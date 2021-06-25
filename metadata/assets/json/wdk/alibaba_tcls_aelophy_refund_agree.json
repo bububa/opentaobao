@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.tcls.aelophy.refund.agree",
+	"apiChineseName": "saas 售后逆向 商户同意用户逆向申请",
+	"description": "saas 售后逆向 商户同意用户逆向申请",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "门店ID"
+		},
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "外部订单ID"
+		},
+		{
+			"name": "refund_id",
+			"type": "String",
+			"description": "退款单ID"
+		},
+		{
+			"name": "audit_memo",
+			"type": "String",
+			"description": "审核说明"
+		},
+		{
+			"name": "sub_refund_list",
+			"type": "Subrefundlist[]",
+			"description": "外部子订单列表",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "out_sub_order_id",
+					"type": "String",
+					"description": "外部子订单ID"
+				},
+				{
+					"name": "refund_fee",
+					"type": "Number",
+					"description": "退款金额"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回码说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

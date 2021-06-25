@@ -1,0 +1,559 @@
+{
+	"name": "alibaba.ascp.cnsku.update",
+	"apiChineseName": "供应链中台货品修改接口",
+	"description": "供应链中台货品修改接口",
+	"requestParams": [
+		{
+			"name": "cnsku",
+			"type": "CnskuDto",
+			"description": "待新增的货品",
+			"required": true,
+			"subParams": [
+				{
+					"name": "cnsku_id",
+					"type": "Number",
+					"description": "货品id",
+					"required": true
+				},
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "owner_id",
+					"type": "Number",
+					"description": "货主id",
+					"required": true
+				},
+				{
+					"name": "brand",
+					"type": "String",
+					"description": "品牌"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "前端skuId"
+				},
+				{
+					"name": "height",
+					"type": "Number",
+					"description": "高度"
+				},
+				{
+					"name": "sku_category",
+					"type": "Number",
+					"description": "货品分类"
+				},
+				{
+					"name": "weight",
+					"type": "Number",
+					"description": "重量",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本号"
+				},
+				{
+					"name": "volume",
+					"type": "Number",
+					"description": "体积"
+				},
+				{
+					"name": "reserve_price",
+					"type": "Number",
+					"description": "吊牌价"
+				},
+				{
+					"name": "whc_bar_code",
+					"type": "String",
+					"description": "条形码( 格式如：条码1#条码2#条码3，多条码中间用 # 分隔)",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品标题",
+					"required": true
+				},
+				{
+					"name": "package_material",
+					"type": "String",
+					"description": "包装材料"
+				},
+				{
+					"name": "cnsku_extend_d_t_o",
+					"type": "CnskuExtendDto",
+					"description": "扩展字段",
+					"subParams": [
+						{
+							"name": "deliver_requirements",
+							"type": "String",
+							"description": "配送要求（1：顺丰优先配）"
+						},
+						{
+							"name": "is_precious",
+							"type": "Boolean",
+							"description": "是否贵品"
+						},
+						{
+							"name": "picture_url",
+							"type": "String",
+							"description": "商品图片"
+						},
+						{
+							"name": "cnsku_sn_sample_d_t_o_list",
+							"type": "null[]",
+							"description": "sn 示例"
+						},
+						{
+							"name": "main_composition",
+							"type": "String",
+							"description": "主要成分"
+						},
+						{
+							"name": "is_imported",
+							"type": "Boolean",
+							"description": "是否进口"
+						},
+						{
+							"name": "trans_width",
+							"type": "Number",
+							"description": "运输单元宽"
+						},
+						{
+							"name": "package_unit",
+							"type": "String",
+							"description": "包装单位"
+						},
+						{
+							"name": "temperature_requirement",
+							"type": "String",
+							"description": "温度标识 1:常温 2:5°C-12°C 3:0°C-4°C 4:-18°C-0°C"
+						},
+						{
+							"name": "trans_length",
+							"type": "Number",
+							"description": "运输单元长"
+						},
+						{
+							"name": "include_battery",
+							"type": "String",
+							"description": "是否包含电池(默认无电池) 1:无电池, 2:内置电池, 3:外置电池"
+						},
+						{
+							"name": "package_material_class",
+							"type": "String",
+							"description": "商品使用的包材材质"
+						},
+						{
+							"name": "type_property",
+							"type": "String",
+							"description": "3w货品分类属性（大电用）空调属性，内外机"
+						},
+						{
+							"name": "manufacturer",
+							"type": "String",
+							"description": "生产厂家"
+						},
+						{
+							"name": "inner_length",
+							"type": "Number",
+							"description": "内长"
+						},
+						{
+							"name": "trans_image_url",
+							"type": "String",
+							"description": "运输单元体积照片"
+						},
+						{
+							"name": "load_bearing",
+							"type": "Number",
+							"description": "承重"
+						},
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "货品图片"
+						},
+						{
+							"name": "is_produce_code_mgt",
+							"type": "Boolean",
+							"description": "是否生产批号管理"
+						},
+						{
+							"name": "is_drugs",
+							"type": "Boolean",
+							"description": "是否监管"
+						},
+						{
+							"name": "brand_country",
+							"type": "String",
+							"description": "原产国"
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "币种"
+						},
+						{
+							"name": "producing_area",
+							"type": "String",
+							"description": "产地"
+						},
+						{
+							"name": "trans_height",
+							"type": "Number",
+							"description": "运输单元高"
+						},
+						{
+							"name": "trans_volume",
+							"type": "Number",
+							"description": "运输单元体积"
+						},
+						{
+							"name": "inner_height",
+							"type": "Number",
+							"description": "内高"
+						},
+						{
+							"name": "record_url",
+							"type": "String",
+							"description": "备案链接"
+						},
+						{
+							"name": "trans_weight",
+							"type": "Number",
+							"description": "运输单元重量"
+						},
+						{
+							"name": "material_type",
+							"type": "Number",
+							"description": "包材类型 1:空白箱 2：菜鸟联盟包材"
+						},
+						{
+							"name": "package_material_mode",
+							"type": "Number",
+							"description": "商品使用的包材范围 1：商家包材 2：CP包材"
+						},
+						{
+							"name": "classification",
+							"type": "String",
+							"description": "存储分类"
+						},
+						{
+							"name": "tax_code",
+							"type": "String",
+							"description": "税收分类编码"
+						},
+						{
+							"name": "www_bar_code",
+							"type": "String",
+							"description": "大电barCode"
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "税率标示"
+						},
+						{
+							"name": "inner_width",
+							"type": "Number",
+							"description": "内宽"
+						},
+						{
+							"name": "dosage_forms",
+							"type": "String",
+							"description": "剂型"
+						}
+					]
+				},
+				{
+					"name": "cnsku_feature_d_t_o",
+					"type": "CnskuFeatureDto",
+					"description": "feature标签",
+					"subParams": [
+						{
+							"name": "is_sn_mgt",
+							"type": "Boolean",
+							"description": "是否启用序列号（sn）管理"
+						},
+						{
+							"name": "sn_mode",
+							"type": "String",
+							"description": "SN管理模式"
+						},
+						{
+							"name": "origin_address",
+							"type": "String",
+							"description": "产地"
+						},
+						{
+							"name": "sku_price",
+							"type": "Number",
+							"description": "零售价"
+						},
+						{
+							"name": "lifecycle",
+							"type": "Number",
+							"description": "有效期天数"
+						},
+						{
+							"name": "is_precious",
+							"type": "Boolean",
+							"description": "是否贵品"
+						},
+						{
+							"name": "is_standard_carton",
+							"type": "Boolean",
+							"description": "是否规范运输单元"
+						},
+						{
+							"name": "gray_flag",
+							"type": "String",
+							"description": "服务产品标"
+						},
+						{
+							"name": "whc_category",
+							"type": "String",
+							"description": "商品类目"
+						},
+						{
+							"name": "whc_sn_out_mode",
+							"type": "Boolean",
+							"description": "sn出库管理"
+						},
+						{
+							"name": "is_danger",
+							"type": "Boolean",
+							"description": "是否危险品"
+						},
+						{
+							"name": "net_weight",
+							"type": "Number",
+							"description": "净重"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "计量单位"
+						},
+						{
+							"name": "size",
+							"type": "String",
+							"description": "尺寸"
+						},
+						{
+							"name": "material_group",
+							"type": "String",
+							"description": "包材分组"
+						},
+						{
+							"name": "reject_lifecycle",
+							"type": "Number",
+							"description": "保质期禁收天数"
+						},
+						{
+							"name": "whc_sn_in_mode",
+							"type": "Boolean",
+							"description": "sn入库管理"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商家商品编码"
+						},
+						{
+							"name": "is_unified_all_wh",
+							"type": "Boolean",
+							"description": "是否统一全仓数据-销售单元"
+						},
+						{
+							"name": "lockup_lifecycle",
+							"type": "Number",
+							"description": "保质期禁售天数"
+						},
+						{
+							"name": "advent_lifecycle",
+							"type": "Number",
+							"description": "保质期临期天数"
+						},
+						{
+							"name": "is_unified_all_wh_carton",
+							"type": "Boolean",
+							"description": "是否统一全仓数据-运输单元"
+						},
+						{
+							"name": "goods_value",
+							"type": "String",
+							"description": "对应货值 单位元 小数点后保留2位"
+						},
+						{
+							"name": "need_measure_image_carton",
+							"type": "Boolean",
+							"description": "是否需要测量图片-运输单元"
+						},
+						{
+							"name": "is_po_mgt",
+							"type": "Boolean",
+							"description": "是否Po管理"
+						},
+						{
+							"name": "use_yn",
+							"type": "Boolean",
+							"description": "是否启用标识"
+						},
+						{
+							"name": "goods_no",
+							"type": "String",
+							"description": "货号"
+						},
+						{
+							"name": "pcs",
+							"type": "Number",
+							"description": "箱规"
+						},
+						{
+							"name": "material_class",
+							"type": "String",
+							"description": "包材分类"
+						},
+						{
+							"name": "cost_price",
+							"type": "Number",
+							"description": "成本价"
+						},
+						{
+							"name": "specification",
+							"type": "String",
+							"description": "规格"
+						},
+						{
+							"name": "specification_type",
+							"type": "String",
+							"description": "规格类型，20：大件；10：中小件"
+						},
+						{
+							"name": "packaging_scheme",
+							"type": "String",
+							"description": "包装方式：1 原箱发货"
+						},
+						{
+							"name": "cn_product_code",
+							"type": "String",
+							"description": "产品编码"
+						},
+						{
+							"name": "approval_number",
+							"type": "String",
+							"description": "批准文号"
+						},
+						{
+							"name": "is_hygroscopic",
+							"type": "Boolean",
+							"description": "是否易碎品"
+						},
+						{
+							"name": "cn_cubage",
+							"type": "String",
+							"description": "容积"
+						},
+						{
+							"name": "is_standard",
+							"type": "Boolean",
+							"description": "是否规范销售单元"
+						},
+						{
+							"name": "is_batch_mgt",
+							"type": "Boolean",
+							"description": "是否启用批次管理标识"
+						},
+						{
+							"name": "is_shelflife",
+							"type": "Boolean",
+							"description": "是否效期管理"
+						},
+						{
+							"name": "need_measure_image",
+							"type": "Boolean",
+							"description": "是否需要测量图片-销售单元"
+						}
+					]
+				},
+				{
+					"name": "length",
+					"type": "Number",
+					"description": "长度"
+				},
+				{
+					"name": "width",
+					"type": "Number",
+					"description": "宽度"
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "淘系叶子类目id"
+				},
+				{
+					"name": "update_feature_map",
+					"description": "需要向featureMap中增加的属性列表（新增\u0026更新接口使用）"
+				},
+				{
+					"name": "remove_feature_map",
+					"description": "需要向featureMap中删除的属性列表（更新接口使用）"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "货品类型",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "option",
+			"type": "UpdateCnskuOption",
+			"description": "修改选项",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sync_wms",
+					"type": "Boolean",
+					"description": "是否同步到wms, 为空时默认下发"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_messages",
+			"type": "String []",
+			"description": "异常信息"
+		},
+		{
+			"name": "data",
+			"type": "Json",
+			"description": "货品id"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "is_system_failed",
+			"type": "Boolean",
+			"description": "是否系统异常"
+		},
+		{
+			"name": "sys_error_code",
+			"type": "String",
+			"description": "异常信息Code"
+		}
+	]
+}

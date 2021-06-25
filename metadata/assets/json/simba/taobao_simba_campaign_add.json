@@ -1,0 +1,73 @@
+{
+	"name": "taobao.simba.campaign.add",
+	"apiChineseName": "创建一个推广计划",
+	"description": "创建一个推广计划",
+	"requestParams": [
+		{
+			"name": "title",
+			"type": "String",
+			"description": "推广计划名称，不能多余20个汉字，不能和客户其他推广计划同名。",
+			"required": true,
+			"maxLength": 20
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "计划类型，当前仅支持两种标准推广0，销量明星16，默认为0"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "campaign",
+			"type": "Campaign",
+			"description": "创建的推广计划",
+			"subParams": [
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "主人昵称"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "推广计划ID"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "推广计划名称，不能多余20个汉字"
+				},
+				{
+					"name": "settle_status",
+					"type": "String",
+					"description": "推广计划结算状态，offline-下线；online-上线，"
+				},
+				{
+					"name": "settle_reason",
+					"type": "String",
+					"description": "推广计划结算下线原因，1-余额不足；2-超过日限额，以分号分隔多个下线原因"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "最后修改时间"
+				},
+				{
+					"name": "online_status",
+					"type": "String",
+					"description": "用户设置的上下限状态；offline-下线；online-上线；"
+				}
+			]
+		}
+	]
+}

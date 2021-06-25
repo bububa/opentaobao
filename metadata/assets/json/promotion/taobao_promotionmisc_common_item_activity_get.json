@@ -1,0 +1,63 @@
+{
+	"name": "taobao.promotionmisc.common.item.activity.get",
+	"apiChineseName": "查询通用单品优惠活动",
+	"description": "查询通用单品优惠活动。",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "优惠活动ID",
+			"required": true,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否查询成功"
+		},
+		{
+			"name": "activity",
+			"type": "CommonItemActivity",
+			"description": "优惠活动",
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "优惠活动ID"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "活动名称，不能超过32字符"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动描述，不能超过100字符"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "活动结束时间"
+				},
+				{
+					"name": "is_user_tag",
+					"type": "Boolean",
+					"description": "是否指定人群标签"
+				},
+				{
+					"name": "user_tag",
+					"type": "String",
+					"description": "人群标签值"
+				}
+			]
+		}
+	]
+}

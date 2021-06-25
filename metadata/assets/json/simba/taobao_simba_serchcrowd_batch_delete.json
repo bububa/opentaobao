@@ -1,0 +1,42 @@
+{
+	"name": "taobao.simba.serchcrowd.batch.delete",
+	"apiChineseName": "单品搜索人群批量取消溢价",
+	"description": "删除单品搜索人群溢价功能",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "被操作者的淘宝昵称",
+			"required": true
+		},
+		{
+			"name": "sub_nick",
+			"type": "String",
+			"description": "子帐号nick"
+		},
+		{
+			"name": "adgroup_crowd_ids",
+			"type": "Number[]",
+			"description": "需要删除的人群id",
+			"required": true,
+			"maxListSize": 200
+		}
+	],
+	"responseParams": [
+		{
+			"name": "delete_list",
+			"type": "Json []",
+			"description": "result"
+		},
+		{
+			"name": "error_d_t_o_list",
+			"type": "Json []",
+			"description": "errorDTOList"
+		},
+		{
+			"name": "key",
+			"type": "String",
+			"description": "key"
+		}
+	]
+}

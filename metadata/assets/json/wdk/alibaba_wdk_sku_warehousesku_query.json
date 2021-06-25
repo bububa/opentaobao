@@ -1,0 +1,285 @@
+{
+	"name": "alibaba.wdk.sku.warehousesku.query",
+	"apiChineseName": "仓商品查询接口(指定商品编码)",
+	"description": "提供指定仓商品编码查询",
+	"requestParams": [
+		{
+			"name": "sku_code_list",
+			"type": "String[]",
+			"description": "商品编码",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "仓编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误内容",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "WarehouseSkuDo[]",
+					"description": "数据集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "barcodes",
+							"type": "WarehouseSkuBarcodeDo[]",
+							"description": "商品条码",
+							"required": true,
+							"subParams": [
+								{
+									"name": "barcode",
+									"type": "String",
+									"description": "条码",
+									"required": true
+								},
+								{
+									"name": "height",
+									"type": "String",
+									"description": "高",
+									"required": true
+								},
+								{
+									"name": "length",
+									"type": "String",
+									"description": "长",
+									"required": true
+								},
+								{
+									"name": "main_flag",
+									"type": "Boolean",
+									"description": "是否主条码",
+									"required": true
+								},
+								{
+									"name": "spu_spec",
+									"type": "String",
+									"description": "规格",
+									"required": true
+								},
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "单位",
+									"required": true
+								},
+								{
+									"name": "weight",
+									"type": "Number",
+									"description": "重量，单位g",
+									"required": true
+								},
+								{
+									"name": "width",
+									"type": "String",
+									"description": "宽",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名称",
+							"required": true
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "含量",
+							"required": true
+						},
+						{
+							"name": "delivery_spec",
+							"type": "String",
+							"description": "配货规格",
+							"required": true
+						},
+						{
+							"name": "delivery_unit",
+							"type": "String",
+							"description": "配货单位",
+							"required": true
+						},
+						{
+							"name": "delivery_way",
+							"type": "String",
+							"description": "配送方式，1-统配、2-直配、3-越库",
+							"required": true
+						},
+						{
+							"name": "forbid_receive_days",
+							"type": "Number",
+							"description": "禁收时限",
+							"required": true
+						},
+						{
+							"name": "forbid_sales_days",
+							"type": "Number",
+							"description": "禁售时限",
+							"required": true
+						},
+						{
+							"name": "gmt_create_time",
+							"type": "Date",
+							"description": "新建时间",
+							"required": true
+						},
+						{
+							"name": "import_flag",
+							"type": "Boolean",
+							"description": "是否进口商品",
+							"required": true
+						},
+						{
+							"name": "input_tax_rate",
+							"type": "String",
+							"description": "进项税率",
+							"required": true
+						},
+						{
+							"name": "inventory_unit",
+							"type": "String",
+							"description": "库存单位",
+							"required": true
+						},
+						{
+							"name": "life_status",
+							"type": "String",
+							"description": "商品状态，A-正常、T-暂时停采、C-淘汰出清、R-清退、L-季节性商品休眠、D-删除封挡、E-停售(紧急下架)、U-未启用（只是建档，还未进货）",
+							"required": true
+						},
+						{
+							"name": "merchant_cat_id",
+							"type": "Number",
+							"description": "商品类目",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "overload_rate",
+							"type": "String",
+							"description": "超收比例",
+							"required": true
+						},
+						{
+							"name": "period",
+							"type": "Number",
+							"description": "保质期天数",
+							"required": true
+						},
+						{
+							"name": "producer_name",
+							"type": "String",
+							"description": "厂商名称",
+							"required": true
+						},
+						{
+							"name": "producer_place",
+							"type": "String",
+							"description": "产地，多个产地使用逗号分割",
+							"required": true
+						},
+						{
+							"name": "purchase_spec",
+							"type": "String",
+							"description": "采购规格",
+							"required": true
+						},
+						{
+							"name": "purchase_unit",
+							"type": "String",
+							"description": "采购单位",
+							"required": true
+						},
+						{
+							"name": "short_title",
+							"type": "String",
+							"description": "简称",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "storage",
+							"type": "String",
+							"description": "存储方式，241-常温、242-冷藏、243-冷冻、635-热链、636-室温、637-鲜活",
+							"required": true
+						},
+						{
+							"name": "supplier_no",
+							"type": "String",
+							"description": "当前供应商编码",
+							"required": true
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "进项税率",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "仓编码",
+							"required": true
+						},
+						{
+							"name": "warn_days",
+							"type": "Number",
+							"description": "保质期预警天数",
+							"required": true
+						},
+						{
+							"name": "weight_flag",
+							"type": "Boolean",
+							"description": "是否称重商品",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

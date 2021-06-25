@@ -1,0 +1,21 @@
+package qimen
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/qimen"
+)
+
+/* 
+发货单确认接口 
+taobao.qimen.deliveryorder.confirm
+
+taobao.qimen.deliveryorder.confirm
+*/
+func TaobaoQimenDeliveryorderConfirm(clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderConfirmRequest, session string) (*qimen.TaobaoQimenDeliveryorderConfirmResponse, error) {
+    var resp qimen.TaobaoQimenDeliveryorderConfirmAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

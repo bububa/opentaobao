@@ -1,0 +1,220 @@
+{
+	"name": "alibaba.interact.lotteryactivity.register",
+	"apiChineseName": "回传抽奖相关参数",
+	"description": "提供接口供三方应用将数据回传到平台",
+	"requestParams": [
+		{
+			"name": "param_top_update_activity_lottery_info_param",
+			"type": "TopUpdateActivityLotteryInfoParam",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_biz_id",
+					"type": "String",
+					"description": "商家通过isv创建的活动id",
+					"required": true
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "isv的appkey",
+					"required": true
+				},
+				{
+					"name": "banner_url",
+					"type": "String",
+					"description": "可随意传，目前没有用到，扩展字段",
+					"required": true
+				},
+				{
+					"name": "benefit_amount",
+					"type": "String",
+					"description": "商家创建的红包总额",
+					"required": true
+				},
+				{
+					"name": "benefit_attribute",
+					"type": "String",
+					"description": "可随意传，目前没有用到，扩展字段",
+					"required": true
+				},
+				{
+					"name": "benefit_denomination",
+					"type": "Number",
+					"description": "商家创建的红包面额",
+					"required": true
+				},
+				{
+					"name": "benefit_id",
+					"type": "Number",
+					"description": "商家选择使用的红包权益id",
+					"required": true
+				},
+				{
+					"name": "benefit_type",
+					"type": "String",
+					"description": "目前填1，代表支付宝红包",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "目前必须填4，代表互动城",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "商家创建的isv活动的结束时间",
+					"required": true
+				},
+				{
+					"name": "lottery_activity_end_date",
+					"type": "Number",
+					"description": "抽奖活动开始时间，long型",
+					"required": true
+				},
+				{
+					"name": "lottery_activity_start_date",
+					"type": "Number",
+					"description": "抽奖活动结束时间",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "抽奖活动名称",
+					"required": true
+				},
+				{
+					"name": "prize_ext_attribute",
+					"type": "String",
+					"description": "奖品扩展字段",
+					"required": true
+				},
+				{
+					"name": "prize_name",
+					"type": "String",
+					"description": "1元红包",
+					"required": true
+				},
+				{
+					"name": "prize_param_attribute",
+					"type": "String",
+					"description": "奖品扩展字段",
+					"required": true
+				},
+				{
+					"name": "prize_quantity",
+					"type": "String",
+					"description": "奖品总数",
+					"required": true
+				},
+				{
+					"name": "prize_remain_quantity",
+					"type": "String",
+					"description": "奖品总数",
+					"required": true
+				},
+				{
+					"name": "prize_type",
+					"type": "String",
+					"description": "必须填1，代表红包",
+					"required": true
+				},
+				{
+					"name": "probability",
+					"type": "String",
+					"description": "0～1之间，代表奖池的概率",
+					"required": true
+				},
+				{
+					"name": "win_permission_activity_count",
+					"type": "Number",
+					"description": "用户活动期间总共中奖次数限制",
+					"required": true
+				},
+				{
+					"name": "win_permission_day_count",
+					"type": "Number",
+					"description": "用户每天总共中奖次数限制",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "商家创建的isv活动的开始时间",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "ActivityLotteryWriteResult",
+					"description": "返回的数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "activity_id",
+							"type": "Number",
+							"description": "isv活动的id",
+							"required": true
+						},
+						{
+							"name": "h5_url",
+							"type": "String",
+							"description": "isv活动url",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module_map",
+					"type": "Modulemap",
+					"description": "xxx",
+					"required": true,
+					"subParams": [
+						{
+							"name": "empty",
+							"type": "Boolean",
+							"description": "false",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "注册抽奖活动失败",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "方便追踪请求的唯一标识",
+					"required": true
+				}
+			]
+		}
+	]
+}

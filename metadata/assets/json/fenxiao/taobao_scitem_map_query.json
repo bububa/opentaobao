@@ -1,0 +1,72 @@
+{
+	"name": "taobao.scitem.map.query",
+	"apiChineseName": "查找IC商品或分销商品与后端商品的关联信息",
+	"description": "查找IC商品或分销商品与后端商品的关联信息。skuId如果不传就查找该itemId下所有的sku",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "map_type为1：前台ic商品id\u003cbr/\u003emap_type为2：分销productid",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "map_type为1：前台ic商品skuid \u003cbr/\u003emap_type为2：分销商品的skuid"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "sc_item_maps",
+			"type": "ScItemMap []",
+			"description": "后端商品映射列表",
+			"subParams": [
+				{
+					"name": "map_type",
+					"type": "Number",
+					"description": "1:前台和后台关系\u003cbr/\u003e7:分销和后台关系"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "map_type=1时，item_id为IC商品id\u003cbr/\u003e\u003cbr/\u003emap_type=7时，item_id为分销商品id"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "当宝贝下没SKU时该字段为空"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "Ic商家id(分销商id)"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "Ic商家nick(分销商nick)"
+				},
+				{
+					"name": "rel_item_id",
+					"type": "Number",
+					"description": "后端商品ID"
+				},
+				{
+					"name": "rel_user_nick",
+					"type": "String",
+					"description": "后端商品所有者名称"
+				},
+				{
+					"name": "rel_user_id",
+					"type": "Number",
+					"description": "后端商品所有者id"
+				},
+				{
+					"name": "rel_outer_code",
+					"type": "String",
+					"description": "后端商品所有者商家编码"
+				}
+			]
+		}
+	]
+}

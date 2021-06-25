@@ -1,0 +1,50 @@
+{
+	"name": "alibaba.security.jaq.spamregisterprevention.feedback",
+	"apiChineseName": "保护结果反馈",
+	"description": "用户通过这个接口对垃圾注册防控结果进行反馈",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "查询接口返回的id",
+			"required": true
+		},
+		{
+			"name": "jaq_decision",
+			"type": "Number",
+			"description": "聚安全返回的决定信息。当feedBack为0时可以不添",
+			"required": true
+		},
+		{
+			"name": "customer_decision",
+			"type": "Number",
+			"description": "用户自己的决定信息。当feedBack为0时可以不添。",
+			"required": true
+		},
+		{
+			"name": "feed_back",
+			"type": "Number",
+			"description": "用户不认同聚安全返回结果的原因类型。0：同意判定；1：和三方结果不符；2：用户投诉；3:经过人工review判断;9:\t其他。",
+			"required": true
+		},
+		{
+			"name": "deny_reason",
+			"type": "String",
+			"description": "用户不认同聚安全返回结果的原因描述"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "feed_back_result",
+			"type": "JaqFeedBackResult",
+			"description": "feedBack返回结果",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "feedBack返回信息"
+				}
+			]
+		}
+	]
+}

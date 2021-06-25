@@ -1,0 +1,170 @@
+{
+	"name": "taobao.wlb.subscription.query",
+	"apiChineseName": "查询商家定购的所有服务",
+	"description": "查询商家定购的所有服务,可通过入参状态来筛选",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "状态 \u003cbr/\u003eAUDITING 1-待审核; \u003cbr/\u003eCANCEL 2-撤销 ;\u003cbr/\u003eCHECKED 3-审核通过 ;\u003cbr/\u003eFAILED 4-审核未通过 ;\u003cbr/\u003eSYNCHRONIZING 5-同步中;\u003cbr/\u003e只允许输入上面指定的值，且可以为空，为空时查询所有状态。若输错了，则按AUDITING处理。"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "结果总数"
+		},
+		{
+			"name": "seller_subscription_list",
+			"type": "WlbSellerSubscription []",
+			"description": "卖家定购的服务列表",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "定购ID"
+				},
+				{
+					"name": "subscriber_user_id",
+					"type": "Number",
+					"description": "定购用户ID"
+				},
+				{
+					"name": "subscriber_user_nick",
+					"type": "String",
+					"description": "定购用户NICK"
+				},
+				{
+					"name": "provider_user_id",
+					"type": "Number",
+					"description": "服务商ID"
+				},
+				{
+					"name": "service_id",
+					"type": "Number",
+					"description": "服务ID"
+				},
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "定购有效开始日期"
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "定购有效结束日期"
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "服务编码"
+				},
+				{
+					"name": "service_name",
+					"type": "String",
+					"description": "服务名"
+				},
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "服务类型，\u003cbr/\u003eSTORE 1-仓储、\u003cbr/\u003eTMS 2-TMS、\u003cbr/\u003ePACKAGE 3-包装服务\u003cbr/\u003eSUPPLIER 4-供货\u003cbr/\u003eINSTALL 5-安装\u003cbr/\u003eCOMPLEX_SERVICE 100-综合服务"
+				},
+				{
+					"name": "parent_id",
+					"type": "Number",
+					"description": "父定购ID\u003cbr/\u003e可通过该字段来得之服务上下级关系。\u003cbr/\u003e例定购了仓储服务，下又有TMS服务。\u003cbr/\u003e该字段保存仓储服务ID。"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态\u003cbr/\u003eAUDITING 1-待审核\u003cbr/\u003eCANCEL 2-撤销\u003cbr/\u003eCHECKED 3-审核通过\u003cbr/\u003eFAILED 4-审核未通过\u003cbr/\u003eSYNCHRONIZING 5-同步中"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "wlb_partner_address",
+					"type": "WlbPartnerAddress",
+					"description": "联系人地址信息",
+					"subParams": [
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市"
+						},
+						{
+							"name": "borough",
+							"type": "String",
+							"description": "区"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "详细地址"
+						},
+						{
+							"name": "zip",
+							"type": "String",
+							"description": "邮编"
+						}
+					]
+				},
+				{
+					"name": "wlb_partner_contact",
+					"type": "WlbPartnerContact",
+					"description": "联系人联系详情",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "仓库联系人姓名"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "联系电话"
+						}
+					]
+				},
+				{
+					"name": "is_own_service",
+					"type": "Number",
+					"description": "判断该仓库是否是实体仓，还是虚拟仓，null是实体仓，10:代表虚拟仓"
+				},
+				{
+					"name": "service_alias",
+					"type": "String",
+					"description": "自有仓的别名，当当前订购记录为自有仓时才会有值"
+				}
+			]
+		}
+	]
+}

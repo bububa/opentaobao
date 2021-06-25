@@ -1,0 +1,98 @@
+{
+	"name": "alibaba.servicecenter.workcard.create",
+	"apiChineseName": "服务平台工单创建接口",
+	"description": "创建服务平台工单",
+	"requestParams": [
+		{
+			"name": "sp_service_order_id",
+			"type": "Number",
+			"description": "服务单id",
+			"required": true
+		},
+		{
+			"name": "service_sequence",
+			"type": "Number",
+			"description": "申请工单时的序号，对应服务单上的serviceSequence。用于控制幂等，防重复提交"
+		},
+		{
+			"name": "service_count",
+			"type": "Number",
+			"description": "申请次数"
+		},
+		{
+			"name": "attributes",
+			"type": "String",
+			"description": "工单属性，json格式字符串"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "工单外部唯一键单号"
+		},
+		{
+			"name": "service_provider",
+			"type": "ServiceProviderDto",
+			"description": "服务提供者信息",
+			"subParams": [
+				{
+					"name": "tp_nick",
+					"type": "String",
+					"description": "服务商nick"
+				},
+				{
+					"name": "tp_id",
+					"type": "Number",
+					"description": "服务商id"
+				},
+				{
+					"name": "seller_store_name",
+					"type": "String",
+					"description": "商家网点名称"
+				},
+				{
+					"name": "seller_store_code",
+					"type": "String",
+					"description": "商家网点编号"
+				},
+				{
+					"name": "seller_store_id",
+					"type": "Number",
+					"description": "商家网点id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "返回参数",
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "显示信息,如：服务单失效，无法发起",
+					"required": true
+				},
+				{
+					"name": "workcard_id",
+					"type": "Number",
+					"description": "工单Id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息code",
+					"required": true
+				}
+			]
+		}
+	]
+}

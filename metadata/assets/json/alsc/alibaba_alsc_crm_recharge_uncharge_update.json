@@ -1,0 +1,279 @@
+{
+	"name": "alibaba.alsc.crm.recharge.uncharge.update",
+	"apiChineseName": "充值退款",
+	"description": "充值退款",
+	"requestParams": [
+		{
+			"name": "param_uncharge_open_req",
+			"type": "UnchargeOpenReq",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "SaaS品牌ID(不能和outbrandid同时为空)"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID(不能和brandid同时为空)"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "SaaS门店ID(不能和outshopid同时为空)"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID(不能和sopid同时为空)"
+				},
+				{
+					"name": "card_id",
+					"type": "String",
+					"description": "卡号"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人ID(SaaS Id）",
+					"required": true
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "退储值订单Id，必填（kry是paymentItemId）,外部保证唯一，作为退款幂等号",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id，幂等",
+					"required": true
+				},
+				{
+					"name": "src_outer_order_id",
+					"type": "String",
+					"description": "原充值订单Id，必填（kry是srcPaymentItemId）",
+					"required": true
+				},
+				{
+					"name": "biz_channel",
+					"type": "String",
+					"description": "CS是辰森，KRY是客如云",
+					"required": true
+				},
+				{
+					"name": "src_out_pay_id",
+					"type": "String",
+					"description": "原支付单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "RechargeAccountFlowDetailOpenInfo",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "account_id",
+							"type": "String",
+							"description": "储值账户id",
+							"required": true
+						},
+						{
+							"name": "affected_property_list",
+							"type": "RechargeAccountPropertyOpenInfo[]",
+							"description": "操作储值资产信息列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "账户类型",
+									"required": true
+								},
+								{
+									"name": "value",
+									"type": "Number",
+									"description": "账户值",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "after_property_list",
+							"type": "RechargeAccountPropertyOpenInfo[]",
+							"description": "操作后储值资产信息列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "账户类型",
+									"required": true
+								},
+								{
+									"name": "value",
+									"type": "Number",
+									"description": "账户值",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "before_property_list",
+							"type": "RechargeAccountPropertyOpenInfo[]",
+							"description": "操作前储值资产信息列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "账户类型",
+									"required": true
+								},
+								{
+									"name": "value",
+									"type": "Number",
+									"description": "账户值",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "brand_id",
+							"type": "String",
+							"description": "品牌Id",
+							"required": true
+						},
+						{
+							"name": "current_value",
+							"type": "Number",
+							"description": "交易后剩余总金额",
+							"required": true
+						},
+						{
+							"name": "ext_info",
+							"type": "Extinfo",
+							"description": "扩展信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "empty",
+									"type": "Boolean",
+									"description": "null",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "flow_id",
+							"type": "String",
+							"description": "储值账户流水id",
+							"required": true
+						},
+						{
+							"name": "flow_type",
+							"type": "String",
+							"description": "储值相关的交易类型",
+							"required": true
+						},
+						{
+							"name": "operator",
+							"type": "String",
+							"description": "操作人ID",
+							"required": true
+						},
+						{
+							"name": "operator_name",
+							"type": "String",
+							"description": "操作人",
+							"required": true
+						},
+						{
+							"name": "order_src",
+							"type": "Number",
+							"description": "外部订单来源",
+							"required": true
+						},
+						{
+							"name": "order_time",
+							"type": "Date",
+							"description": "交易时间",
+							"required": true
+						},
+						{
+							"name": "order_value",
+							"type": "Number",
+							"description": "交易总金额，增加为正数，减少为负数",
+							"required": true
+						},
+						{
+							"name": "outer_order_id",
+							"type": "String",
+							"description": "外部交易单号id",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "交易门店ID",
+							"required": true
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "交易门店名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

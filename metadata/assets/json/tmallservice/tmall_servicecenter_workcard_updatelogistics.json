@@ -1,0 +1,56 @@
+{
+	"name": "tmall.servicecenter.workcard.updatelogistics",
+	"apiChineseName": "更新物流进度",
+	"description": "提供给外部合作服务商的物流进度更改接口",
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单号",
+			"required": true
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "工单操作",
+			"required": true
+		},
+		{
+			"name": "express_company",
+			"type": "String",
+			"description": "快递公司"
+		},
+		{
+			"name": "express_code",
+			"type": "String",
+			"description": "快递号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "返回信息",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否失败",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误原因描述",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

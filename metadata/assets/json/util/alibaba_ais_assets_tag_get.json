@@ -1,0 +1,108 @@
+{
+	"name": "alibaba.ais.assets.tag.get",
+	"apiChineseName": "基础设施资产标签获取",
+	"description": "提供浪潮，英业达等厂商供应阿里巴巴基础设施资产的标签QR code获取",
+	"requestParams": [
+		{
+			"name": "u_nonce",
+			"type": "String",
+			"description": "二维码生成唯一标识",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseRep",
+			"description": "最外层结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "接口请求返回码",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "接口请求返回消息",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "AssetQrCodeDto[]",
+					"description": "内层大对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "mpn",
+							"type": "String",
+							"description": "阿里侧部件型号(请求参数)",
+							"required": true
+						},
+						{
+							"name": "sn",
+							"type": "String",
+							"description": "实物SN(请求参数)",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "请求生产条码数量",
+							"required": true
+						},
+						{
+							"name": "manufacture",
+							"type": "String",
+							"description": "厂商代码(请求参数)",
+							"required": true
+						},
+						{
+							"name": "nonce",
+							"type": "String",
+							"description": "单批次请求唯一标识",
+							"required": true
+						},
+						{
+							"name": "qr_code_string_list",
+							"type": "String[]",
+							"description": "生产二维码信息字符串",
+							"required": true
+						},
+						{
+							"name": "device_brand_code",
+							"type": "String",
+							"description": "整机厂商code(请求参数)",
+							"required": true
+						},
+						{
+							"name": "spare_brand_code",
+							"type": "String",
+							"description": "配件厂商code(请求参数)",
+							"required": true
+						},
+						{
+							"name": "entity_source",
+							"type": "String",
+							"description": "实物来源",
+							"required": true
+						},
+						{
+							"name": "asset_type",
+							"type": "String",
+							"description": "资产类型",
+							"required": true
+						},
+						{
+							"name": "spare_category_code",
+							"type": "String",
+							"description": "配件类型code(请求参数)",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

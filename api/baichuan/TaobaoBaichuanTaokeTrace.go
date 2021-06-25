@@ -1,0 +1,21 @@
+package baichuan
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/baichuan"
+)
+
+/* 
+百川淘客打点 
+taobao.baichuan.taoke.trace
+
+百川淘客打点
+*/
+func TaobaoBaichuanTaokeTrace(clt *core.SDKClient, req *baichuan.TaobaoBaichuanTaokeTraceRequest, session string) (*baichuan.TaobaoBaichuanTaokeTraceResponse, error) {
+    var resp baichuan.TaobaoBaichuanTaokeTraceAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

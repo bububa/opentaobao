@@ -1,0 +1,72 @@
+{
+	"name": "taobao.openlink.session.get",
+	"apiChineseName": "获取授权session信息",
+	"description": "帮助第三方isv生成三方session",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "授权码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "SessionInfo",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "openId",
+							"required": true
+						},
+						{
+							"name": "skey",
+							"type": "String",
+							"description": "skey",
+							"required": true
+						},
+						{
+							"name": "access_token",
+							"type": "String",
+							"description": "accessToken",
+							"required": true
+						},
+						{
+							"name": "union_id",
+							"type": "String",
+							"description": "unionId",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

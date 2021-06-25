@@ -1,0 +1,148 @@
+{
+	"name": "alibaba.scbp.ad.report.query.single.keyword.effect",
+	"apiChineseName": "单个关键词报告",
+	"description": "单个关键词报告",
+	"requestParams": [
+		{
+			"name": "keyword_report_operation",
+			"type": "KeywordReportOperationDto",
+			"description": "返回详情",
+			"required": true,
+			"subParams": [
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "效果报告模糊搜索关键词",
+					"required": true
+				},
+				{
+					"name": "date_begin",
+					"type": "String",
+					"description": "开始时间(yyyy-MM-dd)"
+				},
+				{
+					"name": "date_end",
+					"type": "String",
+					"description": "结束时间(yyyy-MM-dd)",
+					"required": true
+				},
+				{
+					"name": "date_range",
+					"type": "Number",
+					"description": "时间段",
+					"required": true
+				},
+				{
+					"name": "campaign_type",
+					"type": "Number",
+					"description": "营销目标"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划ID"
+				},
+				{
+					"name": "order_field",
+					"type": "String",
+					"description": "排序字段(impr/click/ctr/cost/cpc)"
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "排序方式(asc/desc)"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页数量",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "KeywordReportDto",
+			"description": "返回参数",
+			"subParams": [
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "keyword_effect_list",
+					"type": "KeywordEffectDto[]",
+					"description": "返回详情集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "keyword",
+							"type": "String",
+							"description": "关键词",
+							"required": true
+						},
+						{
+							"name": "stat_date",
+							"type": "String",
+							"description": "日期(yyyy-MM-dd)",
+							"required": true
+						},
+						{
+							"name": "impr",
+							"type": "Number",
+							"description": "曝光",
+							"required": true
+						},
+						{
+							"name": "click",
+							"type": "String",
+							"description": "点击",
+							"required": true
+						},
+						{
+							"name": "cost",
+							"type": "String",
+							"description": "消耗",
+							"required": true
+						},
+						{
+							"name": "online_min",
+							"type": "String",
+							"description": "推广时长",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

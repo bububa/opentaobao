@@ -1,0 +1,26 @@
+{
+	"name": "taobao.crm.grademkt.member.detail.query",
+	"apiChineseName": "会员等级营销-等级营销活动查询",
+	"description": "商家通过该接口查询等级营销活动",
+	"requestParams": [
+		{
+			"name": "feather",
+			"type": "String",
+			"description": "扩展字段",
+			"required": true
+		},
+		{
+			"name": "parameter",
+			"type": "String",
+			"description": "创建营销详情，生成方法见http://open.taobao.com/doc/detail.htm?id=101281",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "totalCount为记录总数"
+		}
+	]
+}

@@ -1,0 +1,21 @@
+package wdk
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/wdk"
+)
+
+/* 
+创建全场活动 
+alibaba.wdk.marketing.fullrange.createactivity
+
+创建全场活动
+*/
+func AlibabaWdkMarketingFullrangeCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingFullrangeCreateactivityRequest, session string) (*wdk.AlibabaWdkMarketingFullrangeCreateactivityResponse, error) {
+    var resp wdk.AlibabaWdkMarketingFullrangeCreateactivityAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

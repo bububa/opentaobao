@@ -1,0 +1,274 @@
+{
+	"name": "taobao.xhotel.info.list.get",
+	"apiChineseName": "酒店详细信息查询",
+	"description": "获取酒店详情信息",
+	"requestParams": [
+		{
+			"name": "city_code",
+			"type": "Number",
+			"description": "城市code",
+			"required": true
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "分页参数：当前页数，从1开始计数。\u003cbr/\u003e默认值：1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页参数：每页酒店数量。最小值1，最大值为50。默认值：20"
+		},
+		{
+			"name": "pid",
+			"type": "String",
+			"description": "pid"
+		},
+		{
+			"name": "shid",
+			"type": "Number",
+			"description": "标准酒店id，如果需要查询单条酒店的信息，需要传入此参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "酒店总数"
+		},
+		{
+			"name": "hotels",
+			"type": "SHotelInfoObject []",
+			"description": "标准酒店信息",
+			"subParams": [
+				{
+					"name": "shid",
+					"type": "Number",
+					"description": "标准酒店ID"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "酒店名称"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "酒店地址"
+				},
+				{
+					"name": "pic_urls",
+					"type": "String",
+					"description": "图片url，多张图片使用\",\"隔开"
+				},
+				{
+					"name": "services",
+					"type": "String",
+					"description": "服务设施"
+				},
+				{
+					"name": "lat",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "lng",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "rate_number",
+					"type": "Number",
+					"description": "评论数"
+				},
+				{
+					"name": "rate_score",
+					"type": "String",
+					"description": "评分"
+				},
+				{
+					"name": "tel",
+					"type": "String",
+					"description": "电话，包括三种类型：\u003cbr/\u003e1.固定电话，例如：0086-010-85322688\u003cbr/\u003e2.移动电话，例如：13869696363\u003cbr/\u003e3.400或800电话，例如：0086-4006123928"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "酒店类型"
+				},
+				{
+					"name": "province",
+					"type": "Number",
+					"description": "省的code"
+				},
+				{
+					"name": "city",
+					"type": "Number",
+					"description": "市的code"
+				},
+				{
+					"name": "district",
+					"type": "Number",
+					"description": "地区的值"
+				},
+				{
+					"name": "star",
+					"type": "String",
+					"description": "酒店星级，1-5星，0是客栈"
+				},
+				{
+					"name": "opening_time",
+					"type": "String",
+					"description": "酒店开业时间"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "酒店描述"
+				},
+				{
+					"name": "hotel_facilities",
+					"type": "String",
+					"description": "酒店设施"
+				},
+				{
+					"name": "brand",
+					"type": "String",
+					"description": "酒店品牌"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "酒店状态,0,营业中；-1，筹建中；-2，暂停营业；-3，已停业；"
+				},
+				{
+					"name": "pc_detail_url",
+					"type": "String",
+					"description": "酒店detail页面的url"
+				},
+				{
+					"name": "h5_detail_url",
+					"type": "String",
+					"description": "H5的detail页面的URL"
+				},
+				{
+					"name": "rooms",
+					"type": "SRoomType[]",
+					"description": "房型信息",
+					"subParams": [
+						{
+							"name": "srid",
+							"type": "Number",
+							"description": "匹配的标准房型"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "房型名"
+						},
+						{
+							"name": "floor",
+							"type": "String",
+							"description": "楼层"
+						},
+						{
+							"name": "internet",
+							"type": "String",
+							"description": "宽带服务\u003cbr/\u003e\"0\",\"有线上网(免费),\u003cbr/\u003e\"1\",\"有线上网(无)\",\u003cbr/\u003e\"2\",\"有线上网(收费)\",\u003cbr/\u003e\"3\",\"有线上网(部分有且免费)\",\u003cbr/\u003e\"4\",\"有线上网(部分有且收费)\""
+						},
+						{
+							"name": "shid",
+							"type": "Number",
+							"description": "shid"
+						},
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "pic_url"
+						},
+						{
+							"name": "facility",
+							"type": "String",
+							"description": "facility"
+						},
+						{
+							"name": "max_occupancy",
+							"type": "Number",
+							"description": "最大入住人数"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "面积"
+						},
+						{
+							"name": "extend",
+							"type": "String",
+							"description": "扩展字段"
+						},
+						{
+							"name": "created_time",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "window_type",
+							"type": "String",
+							"description": "窗型，枚举类型\u003cbr/\u003e0, 无窗,\u003cbr/\u003e1, 有窗;"
+						},
+						{
+							"name": "bed",
+							"type": "String",
+							"description": "床型。json格式：[{\"bedType\":\"大床\",\"bedSize\":\"1.5m\"},{\"bedType\":\"双床\",\"bedSize\":\"1.2m\"}]"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态。0:正常;-1:删除"
+						}
+					]
+				},
+				{
+					"name": "bnb_hotel",
+					"type": "Boolean",
+					"description": "是否为民宿类型"
+				},
+				{
+					"name": "check_in_time",
+					"type": "String",
+					"description": "入住时间"
+				},
+				{
+					"name": "check_out_time",
+					"type": "String",
+					"description": "离店时间"
+				},
+				{
+					"name": "pet_info",
+					"type": "String",
+					"description": "宠物信息"
+				},
+				{
+					"name": "foreign_type",
+					"type": "Number",
+					"description": "外宾类型"
+				},
+				{
+					"name": "foreign_desc",
+					"type": "String",
+					"description": "外宾描述"
+				},
+				{
+					"name": "decorate_time",
+					"type": "String",
+					"description": "酒店装修时间"
+				}
+			]
+		}
+	]
+}

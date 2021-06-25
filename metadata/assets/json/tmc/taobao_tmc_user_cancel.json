@@ -1,0 +1,25 @@
+{
+	"name": "taobao.tmc.user.cancel",
+	"apiChineseName": "取消用户的消息服务",
+	"description": "取消用户的消息服务",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "用户昵称",
+			"required": true
+		},
+		{
+			"name": "user_platform",
+			"type": "String",
+			"description": "用户所属的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功,如果为false并且没有错误码，表示删除的用户不存在。"
+		}
+	]
+}

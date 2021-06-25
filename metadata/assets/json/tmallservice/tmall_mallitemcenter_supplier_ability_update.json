@@ -1,0 +1,83 @@
+{
+	"name": "tmall.mallitemcenter.supplier.ability.update",
+	"apiChineseName": "门店服务能力授权接口",
+	"description": "门店服务能力授权",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "EnableServiceStoreRequestDto",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "门店名称",
+					"required": true
+				},
+				{
+					"name": "enable",
+					"type": "Boolean",
+					"description": "是否启用"
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "服务编码",
+					"required": true
+				},
+				{
+					"name": "service_sku_list",
+					"type": "String[]",
+					"description": "服务sku列表",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_type",
+					"type": "Number",
+					"description": "错误类型",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "result_data",
+					"type": "Boolean",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true或false",
+					"required": true
+				}
+			]
+		}
+	]
+}

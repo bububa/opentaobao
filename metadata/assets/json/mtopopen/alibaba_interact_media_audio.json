@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.media.audio",
+	"apiChineseName": "音频相关鉴权接口",
+	"description": "新音频包的鉴权接口",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "String",
+			"description": "系统自动生成"
+		}
+	]
+}

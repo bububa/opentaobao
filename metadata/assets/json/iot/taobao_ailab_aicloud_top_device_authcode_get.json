@@ -1,0 +1,48 @@
+{
+	"name": "taobao.ailab.aicloud.top.device.authcode.get",
+	"apiChineseName": "获取设备授权码",
+	"description": "获取设备授权码",
+	"requestParams": [
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离，即硬件接入平台中取得的schema key。",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id，由开发者或厂商自行定义，每一schema key下唯一即可",
+			"required": true
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "(废弃) 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数",
+			"required": true
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "设备授权码，后续流程中所述的auth code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo错误码信息，成功返回null"
+		}
+	]
+}

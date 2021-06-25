@@ -1,0 +1,307 @@
+{
+	"name": "taobao.qimen.returnorder.create",
+	"apiChineseName": "退货入库单创建接口",
+	"description": "ERP调用奇门的接口,创建退货单信息;该接口和入库单的区别就是该接口是从入库单接口中单独剥离出来的，专门处理退货引起的入 库操作",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "ReturnOrderCreateRequest",
+			"subParams": [
+				{
+					"name": "returnOrder",
+					"type": "ReturnOrder",
+					"description": "退货单信息",
+					"subParams": [
+						{
+							"name": "returnOrderCode",
+							"type": "String",
+							"description": "ERP的退货入库单编码",
+							"required": true
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码(统仓统配等无需ERP指定仓储编码的情况填OTHER)",
+							"required": true
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "单据类型(THRK=退货入库;HHRK=换货入库;只传英文编码)"
+						},
+						{
+							"name": "orderFlag",
+							"type": "String",
+							"description": "用字符串格式来表示订单标记列表(比如VISIT^ SELLER_AFFORD^SYNC_RETURN_BILL等;中间用“^”来隔开订单标记list (所 有字母全部大写) VISIT=上门；SELLER_AFFORD=是否卖家承担运费(默认是)SYNC_RETURN_BILL=同时退回发票)"
+						},
+						{
+							"name": "preDeliveryOrderCode",
+							"type": "String",
+							"description": "原出库单号(ERP分配)",
+							"required": true
+						},
+						{
+							"name": "preDeliveryOrderId",
+							"type": "String",
+							"description": "原出库单号(WMS分配)"
+						},
+						{
+							"name": "logisticsCode",
+							"type": "String",
+							"description": "物流公司编码(SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通、ZTO=中通(ZTO)、HTKY=百世汇通、 UC=优速、STO=申通、TTKDEX=天天快递、QFKD=全峰、FAST=快捷、POSTB=邮政小包、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、 AMAZON=亚马逊物流、OTHER=其他;只传英文编码)",
+							"required": true
+						},
+						{
+							"name": "logisticsName",
+							"type": "String",
+							"description": "物流公司名称"
+						},
+						{
+							"name": "expressCode",
+							"type": "String",
+							"description": "运单号"
+						},
+						{
+							"name": "returnReason",
+							"type": "String",
+							"description": "退货原因"
+						},
+						{
+							"name": "buyerNick",
+							"type": "String",
+							"description": "买家昵称"
+						},
+						{
+							"name": "senderInfo",
+							"type": "SenderInfo",
+							"description": "发件人信息",
+							"subParams": [
+								{
+									"name": "company",
+									"type": "String",
+									"description": "公司名称"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "姓名",
+									"required": true
+								},
+								{
+									"name": "zipCode",
+									"type": "String",
+									"description": "邮编"
+								},
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "固定电话"
+								},
+								{
+									"name": "mobile",
+									"type": "String",
+									"description": "移动电话",
+									"required": true
+								},
+								{
+									"name": "email",
+									"type": "String",
+									"description": "电子邮箱"
+								},
+								{
+									"name": "countryCode",
+									"type": "String",
+									"description": "国家二字码"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省份",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "城市",
+									"required": true
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区域"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "村镇"
+								},
+								{
+									"name": "detailAddress",
+									"type": "String",
+									"description": "详细地址",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "sourcePlatformCode",
+							"type": "String",
+							"description": "订单来源平台编码, string (50),TB= 淘宝 、TM=天猫 、JD=京东、DD=当当、PP=拍拍、YX=易讯、EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂、MGJ=蘑菇街、JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿里巴巴、POS=POS门店、MIA=蜜芽、GW=商家官网、CT=村淘、YJWD=云集微店、PDD=拼多多、OTHERS=其他,"
+						},
+						{
+							"name": "sourcePlatformName",
+							"type": "String",
+							"description": "订单来源平台名称"
+						},
+						{
+							"name": "shopNick",
+							"type": "String",
+							"description": "店铺名称"
+						},
+						{
+							"name": "sellerNick",
+							"type": "String",
+							"description": "卖家名称"
+						}
+					]
+				},
+				{
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "订单信息",
+					"subParams": [
+						{
+							"name": "orderLineNo",
+							"type": "String",
+							"description": "单据行号"
+						},
+						{
+							"name": "sourceOrderCode",
+							"type": "String",
+							"description": "交易平台订单"
+						},
+						{
+							"name": "subSourceOrderCode",
+							"type": "String",
+							"description": "交易平台子订单编码"
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码",
+							"required": true
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品编码(条件为提供后端（仓储系统）商品编码的仓储系统)"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;默认为ZP)"
+						},
+						{
+							"name": "planQty",
+							"type": "Number",
+							"description": "应收商品数量",
+							"required": true
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编码"
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "snList",
+							"type": "SnList",
+							"description": "sn列表",
+							"subParams": [
+								{
+									"name": "sn",
+									"type": "String[]",
+									"description": "sn编码"
+								}
+							]
+						},
+						{
+							"name": "orderFlag",
+							"type": "String",
+							"description": "用字符串格式来表示订单标记列表(比如VISIT^ SELLER_AFFORD^SYNC_RETURN_BILL等;中间用“^”来隔开订单标记list (所 有字母全部大写) VISIT=上门；SELLER_AFFORD=是否卖家承担运费(默认是)SYNC_RETURN_BILL=同时退回发票)",
+							"required": true
+						},
+						{
+							"name": "returnReason",
+							"type": "String",
+							"description": "退货原因",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "returnOrderId",
+					"type": "String",
+					"description": "仓储系统退货单编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"name": "taobao.top.auth.token.create",
+	"apiChineseName": "获取Access Token",
+	"description": "用户通过code换获取access_token，https only",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "授权code，grantType==authorization_code 时需要",
+			"required": true
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "与生成code的uuid配对"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "token_result",
+			"type": "Json",
+			"description": "返回的是json信息，和之前调用https://oauth.taobao.com/tac/token https://oauth.alibaba.com/token 换token返回的字段信息一致"
+		}
+	]
+}

@@ -1,0 +1,66 @@
+{
+	"name": "taobao.messageaccount.messsage.mass.send",
+	"apiChineseName": "消息号开放-消息群发",
+	"description": "外部 isv 调用该进口来进行消息号消息的群发",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "MassMessageDto",
+			"description": "参数",
+			"subParams": [
+				{
+					"name": "create_time",
+					"type": "Number",
+					"description": "创建时间"
+				},
+				{
+					"name": "content",
+					"description": "内容"
+				},
+				{
+					"name": "content_type",
+					"type": "String",
+					"description": "内容类型"
+				},
+				{
+					"name": "task_name",
+					"type": "String",
+					"description": "任务名称"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

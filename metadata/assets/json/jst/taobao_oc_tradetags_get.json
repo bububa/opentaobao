@@ -1,0 +1,121 @@
+{
+	"name": "taobao.oc.tradetags.get",
+	"apiChineseName": "根据订单查询订单标签",
+	"description": "根据订单查询订单标签。\u003cbr/\u003e\n返回的tag说明:1为官方标，2为自定义标，3为主站只读标签。\u003cbr/\u003e\n官方标签和自定义标签请看taobao.oc.tradetag.attach 接口说明\u003cbr/\u003e\n主站只读标签请看:http://open.taobao.com/doc/detail.htm?id=102865\u003cbr/\u003e",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易主订单id",
+			"required": true
+		},
+		{
+			"name": "history",
+			"type": "Number",
+			"description": "是否查询历史标签"
+		},
+		{
+			"name": "tag_types",
+			"type": "String[]",
+			"description": "不填，则默认只查询1,2。1为官方标，2为自定义标，3为主站只读标签",
+			"maxListSize": 20
+		},
+		{
+			"name": "tag_names",
+			"type": "String[]",
+			"description": "不填，则不做标签名称过滤",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trade_tags",
+			"type": "TradeTagRelationDo []",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "记录的最新修改时间"
+				},
+				{
+					"name": "tag_type",
+					"type": "Number",
+					"description": "标签类型       1：官方标签      2：自定义标签     3：主站只读标签"
+				},
+				{
+					"name": "gmt_created",
+					"type": "Date",
+					"description": "记录的创建时间"
+				},
+				{
+					"name": "tag_name",
+					"type": "String",
+					"description": "标签名称"
+				},
+				{
+					"name": "tag_value",
+					"type": "String",
+					"description": "标签值，json格式"
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "订单id"
+				},
+				{
+					"name": "visible",
+					"type": "Number",
+					"description": "该标签在消费者端是否显示,0:不显示,1：显示"
+				},
+				{
+					"name": "history_trade_tag_relations",
+					"type": "HistoryTradeRelationDo[]",
+					"description": "该标签操作的历史记录",
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "订单标签记录id"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "记录的最新修改时间"
+						},
+						{
+							"name": "tag_type",
+							"type": "Number",
+							"description": "标签类型       1：官方标签      2：自定义标签"
+						},
+						{
+							"name": "gmt_created",
+							"type": "Date",
+							"description": "记录的创建时间"
+						},
+						{
+							"name": "visible",
+							"type": "Number",
+							"description": "该标签在消费者端是否显示,0:不显示,1：显示"
+						},
+						{
+							"name": "tid",
+							"type": "Number",
+							"description": "订单id"
+						},
+						{
+							"name": "tag_name",
+							"type": "String",
+							"description": "标签名称"
+						},
+						{
+							"name": "tag_value",
+							"type": "String",
+							"description": "标签值，json格式"
+						}
+					]
+				}
+			]
+		}
+	]
+}

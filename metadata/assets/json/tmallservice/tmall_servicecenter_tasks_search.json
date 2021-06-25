@@ -1,0 +1,365 @@
+{
+	"name": "tmall.servicecenter.tasks.search",
+	"apiChineseName": "查询任务类工单信息",
+	"description": "查询任务类工单信息",
+	"requestParams": [
+		{
+			"name": "start",
+			"type": "Number",
+			"description": "开始时间:  开始时间和结束时间不能超过15分钟",
+			"required": true
+		},
+		{
+			"name": "end",
+			"type": "Number",
+			"description": "结束时间:  开始时间和结束时间不能超过15分钟",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_task_packet",
+			"type": "ServiceTaskPacket",
+			"description": "ServicePacket\u003cServiceTaskDO\u003e",
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "服务名字"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "service_list",
+					"type": "ServiceTaskDO[]",
+					"description": "服务工单DO",
+					"subParams": [
+						{
+							"name": "actual_total_fee",
+							"type": "Number",
+							"description": "交易实付金额"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "合同id"
+						},
+						{
+							"name": "order_relation_id",
+							"type": "Number",
+							"description": "订购关系ID"
+						},
+						{
+							"name": "parent_biz_order_id",
+							"type": "Number",
+							"description": "主交易订单编号"
+						},
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "交易订单编号"
+						},
+						{
+							"name": "service_order_id",
+							"type": "Number",
+							"description": "服务订单编号"
+						},
+						{
+							"name": "service_name",
+							"type": "String",
+							"description": "服务名称"
+						},
+						{
+							"name": "service_product",
+							"type": "String",
+							"description": "服务产品"
+						},
+						{
+							"name": "service_phone",
+							"type": "String",
+							"description": "服务电话"
+						},
+						{
+							"name": "service_count",
+							"type": "Number",
+							"description": "服务次数"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "工单名称"
+						},
+						{
+							"name": "task_memo",
+							"type": "String",
+							"description": "工单描述"
+						},
+						{
+							"name": "task_status",
+							"type": "Number",
+							"description": "工单状态"
+						},
+						{
+							"name": "task_type",
+							"type": "Number",
+							"description": "工单类型"
+						},
+						{
+							"name": "tp_id",
+							"type": "Number",
+							"description": "供应商编号"
+						},
+						{
+							"name": "tp_name",
+							"type": "String",
+							"description": "服务提供商名称"
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "付款时间"
+						},
+						{
+							"name": "pay_time_number",
+							"type": "Number",
+							"description": "付款时间"
+						},
+						{
+							"name": "auction_id",
+							"type": "Number",
+							"description": "商品编号"
+						},
+						{
+							"name": "auction_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "auction_price",
+							"type": "Number",
+							"description": "商品价格"
+						},
+						{
+							"name": "task_price",
+							"type": "Number",
+							"description": "商品价格"
+						},
+						{
+							"name": "ext_price",
+							"type": "Number",
+							"description": "扩展价格"
+						},
+						{
+							"name": "model_number",
+							"type": "String",
+							"description": "型号"
+						},
+						{
+							"name": "category",
+							"type": "String",
+							"description": "类目"
+						},
+						{
+							"name": "brand",
+							"type": "String",
+							"description": "品牌"
+						},
+						{
+							"name": "auction_serial_num",
+							"type": "String",
+							"description": "商品序列号"
+						},
+						{
+							"name": "attribute",
+							"type": "String",
+							"description": "属性"
+						},
+						{
+							"name": "receive_time",
+							"type": "Date",
+							"description": "收货日期"
+						},
+						{
+							"name": "receive_time_number",
+							"type": "Number",
+							"description": "收货日期"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家id"
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "店铺名称"
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家nick"
+						},
+						{
+							"name": "seller_phone",
+							"type": "String",
+							"description": "卖家电话"
+						},
+						{
+							"name": "seller_mobile",
+							"type": "String",
+							"description": "卖家手机"
+						},
+						{
+							"name": "buyer_id",
+							"type": "Number",
+							"description": "买家id"
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "买家nick"
+						},
+						{
+							"name": "buyer_name",
+							"type": "String",
+							"description": "买家名称"
+						},
+						{
+							"name": "buyer_address",
+							"type": "String",
+							"description": "买家地址"
+						},
+						{
+							"name": "buyer_zip_code",
+							"type": "String",
+							"description": "买家邮编"
+						},
+						{
+							"name": "buyer_phone",
+							"type": "String",
+							"description": "买家电话"
+						},
+						{
+							"name": "buyer_mobile",
+							"type": "String",
+							"description": "买家电话"
+						},
+						{
+							"name": "buyer_mail",
+							"type": "String",
+							"description": "买家邮箱"
+						},
+						{
+							"name": "apply_date",
+							"type": "Date",
+							"description": "申请日期"
+						},
+						{
+							"name": "apply_date_number",
+							"type": "Number",
+							"description": "申请日期"
+						},
+						{
+							"name": "expect_date",
+							"type": "Date",
+							"description": "期望日期"
+						},
+						{
+							"name": "expect_date_number",
+							"type": "Number",
+							"description": "期望日期"
+						},
+						{
+							"name": "effect_date",
+							"type": "Date",
+							"description": "生效日期"
+						},
+						{
+							"name": "effect_date_number",
+							"type": "Number",
+							"description": "生效日期"
+						},
+						{
+							"name": "expire_date",
+							"type": "Date",
+							"description": "失效日期"
+						},
+						{
+							"name": "expire_date_number",
+							"type": "Number",
+							"description": "失效日期"
+						},
+						{
+							"name": "life_cycle",
+							"type": "Number",
+							"description": "有效期"
+						},
+						{
+							"name": "flag",
+							"type": "Number",
+							"description": "异常标识"
+						},
+						{
+							"name": "memo",
+							"type": "String",
+							"description": "备注信息"
+						},
+						{
+							"name": "tp_feedback_info",
+							"type": "String",
+							"description": "服务商反馈信息"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "gmt_modify",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "canceler",
+							"type": "String",
+							"description": "服务取消人"
+						},
+						{
+							"name": "cancel_date",
+							"type": "Date",
+							"description": "服务取消时间"
+						},
+						{
+							"name": "cancel_memo",
+							"type": "String",
+							"description": "服务取消备注"
+						},
+						{
+							"name": "contract_id",
+							"type": "Number",
+							"description": "合同id"
+						},
+						{
+							"name": "auction_sku_properties",
+							"type": "String",
+							"description": "商品以及sku的属性信息，比如计价因子长度，高度，灯头数等"
+						},
+						{
+							"name": "buy_amount",
+							"type": "Number",
+							"description": "购买的商品数量"
+						},
+						{
+							"name": "buyer_location",
+							"type": "Number",
+							"description": "买家location"
+						}
+					]
+				}
+			]
+		}
+	]
+}

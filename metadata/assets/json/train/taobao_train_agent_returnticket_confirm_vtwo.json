@@ -1,0 +1,70 @@
+{
+	"name": "taobao.train.agent.returnticket.confirm.vtwo",
+	"apiChineseName": "退票通知",
+	"description": "火车票代理商接口——退票通知回调",
+	"requestParams": [
+		{
+			"name": "buyer_id",
+			"type": "Number",
+			"description": "用户id",
+			"required": true
+		},
+		{
+			"name": "agree_return",
+			"type": "Boolean",
+			"description": "是否同意退票",
+			"required": true
+		},
+		{
+			"name": "refund_fee",
+			"type": "Number",
+			"description": "退票金额，单位分",
+			"required": true
+		},
+		{
+			"name": "main_biz_order_id",
+			"type": "Number",
+			"description": "淘宝主订单id",
+			"required": true
+		},
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id",
+			"required": true
+		},
+		{
+			"name": "refuse_return_reason",
+			"type": "String",
+			"description": "拒绝退票原因"
+		},
+		{
+			"name": "sub_biz_order_id",
+			"type": "Number",
+			"description": "淘宝子订单id",
+			"required": true
+		},
+		{
+			"name": "close_refund_notify",
+			"type": "Boolean",
+			"description": "关闭通知用户 true:关闭 false:不关闭"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "resultCode"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "resultMsg"
+		}
+	]
+}

@@ -1,0 +1,231 @@
+{
+	"name": "taobao.wlb.order.jz.consign",
+	"apiChineseName": "家装发货接口",
+	"description": "家装类订单使用该接口发货",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易号",
+			"required": true
+		},
+		{
+			"name": "sender_id",
+			"type": "Number",
+			"description": "卖家联系人地址库ID，可以通过taobao.logistics.address.search接口查询到地址库ID。如果为空，取的卖家的默认取货地址"
+		},
+		{
+			"name": "jz_receiver_to",
+			"type": "JzReceiverTo",
+			"description": "家装收货人信息,如果为空,则取默认收货信息",
+			"subParams": [
+				{
+					"name": "tele_phone",
+					"type": "String",
+					"description": "座机号"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "收货人名称"
+				},
+				{
+					"name": "street",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "zip_code",
+					"type": "String",
+					"description": "邮编"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家"
+				}
+			]
+		},
+		{
+			"name": "jz_top_args",
+			"type": "JzTopArgs",
+			"description": "发货参数",
+			"subParams": [
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号"
+				},
+				{
+					"name": "package_weight",
+					"type": "String",
+					"description": "包裹重量"
+				},
+				{
+					"name": "zy_consign_time",
+					"type": "String",
+					"description": "自有物流发货时间"
+				},
+				{
+					"name": "package_volume",
+					"type": "String",
+					"description": "包裹体积"
+				},
+				{
+					"name": "zy_company",
+					"type": "String",
+					"description": "自有物流公司名称"
+				},
+				{
+					"name": "package_remark",
+					"type": "String",
+					"description": "包裹备注"
+				},
+				{
+					"name": "zy_phone_number",
+					"type": "String",
+					"description": "自有物流公司电话"
+				},
+				{
+					"name": "package_number",
+					"type": "String",
+					"description": "包裹数量"
+				}
+			]
+		},
+		{
+			"name": "lg_tp_dto",
+			"type": "Tpdto",
+			"description": "物流公司信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "公司名称"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "公司编码"
+				}
+			]
+		},
+		{
+			"name": "ins_tp_dto",
+			"type": "Tpdto",
+			"description": "安装公司信息,需要安装时,才填写",
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "公司名称"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "公司编码"
+				}
+			]
+		},
+		{
+			"name": "ins_receiver_to",
+			"type": "JzReceiverTo",
+			"description": "安装收货人信息,如果为空,则取默认收货人信息",
+			"subParams": [
+				{
+					"name": "tele_phone",
+					"type": "String",
+					"description": "座机号"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "收货人名称"
+				},
+				{
+					"name": "street",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "zip_code",
+					"type": "String",
+					"description": "邮编"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省"
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_error_msg",
+			"type": "String",
+			"description": "错误信息描述"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

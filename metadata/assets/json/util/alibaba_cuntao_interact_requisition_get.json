@@ -1,0 +1,74 @@
+{
+	"name": "alibaba.cuntao.interact.requisition.get",
+	"apiChineseName": "供应商获取物料申请单列表",
+	"description": "供应商获取物料申请单列表",
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小，默认20"
+		},
+		{
+			"name": "gmt_create_end",
+			"type": "Number",
+			"description": "截止时间戳，开区间"
+		},
+		{
+			"name": "gmt_create_start",
+			"type": "Number",
+			"description": "开始时间戳，闭区间"
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "页码，从0开始"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "ListDto",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "申请单总数",
+							"required": true
+						},
+						{
+							"name": "list",
+							"type": "Json[]",
+							"description": "申请单列表",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "异常时返回的code",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "异常时返回的描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

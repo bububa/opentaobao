@@ -1,0 +1,225 @@
+{
+	"name": "taobao.logistics.orders.detail.get",
+	"apiChineseName": "批量查询物流订单,返回详细信息",
+	"description": "查询物流订单的详细信息，涉及用户隐私字段。",
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "需返回的字段列表.可选值:Shipping 物流数据结构中所有字段.fileds中可以指定返回以上任意一个或者多个字段,以\",\"分隔.",
+			"required": true
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易ID.如果加入tid参数的话,不用传其他的参数,但是仅会返回一条物流订单信息."
+		},
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "买家昵称"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "物流状态.可查看数据结构 Shipping 中的status字段."
+		},
+		{
+			"name": "seller_confirm",
+			"type": "String",
+			"description": "卖家是否发货.可选值:yes(是),no(否).如:yes."
+		},
+		{
+			"name": "receiver_name",
+			"type": "String",
+			"description": "收货人姓名"
+		},
+		{
+			"name": "start_created",
+			"type": "Date",
+			"description": "创建时间开始.格式:yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "end_created",
+			"type": "Date",
+			"description": "创建时间结束.格式:yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "freight_payer",
+			"type": "String",
+			"description": "谁承担运费.可选值:buyer(买家),seller(卖家).如:buyer"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "物流方式.可选值:post(平邮),express(快递),ems(EMS).如:post"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码.该字段没传 或 值\u003c1 ,则默认page_no为1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数.该字段没传 或 值\u003c1 ，则默认page_size为40",
+			"maxValue": 100
+		}
+	],
+	"responseParams": [
+		{
+			"name": "shippings",
+			"type": "Shipping []",
+			"description": "获取的物流订单详情列表.返回的Shipping包含的具体信息为入参fields请求的字段信息.",
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "交易ID"
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "物流订单编号"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "物流订单状态,可选值:CREATED(订单已创建) RECREATED(订单重新创建) CANCELLED(订单已取消) CLOSED(订单关闭) SENDING(等候发送给物流公司) ACCEPTING(已发送给物流公司,等待接单) ACCEPTED(物流公司已接单) REJECTED(物流公司不接单) PICK_UP(物流公司揽收成功) PICK_UP_FAILED(物流公司揽收失败) LOST(物流公司丢单) REJECTED_BY_RECEIVER(对方拒签) ACCEPTED_BY_RECEIVER(发货方式在线下单：对方已签收；自己联系：卖家已发货)"
+				},
+				{
+					"name": "is_quick_cod_order",
+					"type": "Boolean",
+					"description": "标示为是否快捷COD订单"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家昵称"
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家昵称"
+				},
+				{
+					"name": "delivery_start",
+					"type": "Date",
+					"description": "预约取货开始时间"
+				},
+				{
+					"name": "delivery_end",
+					"type": "Date",
+					"description": "预约取货结束时间"
+				},
+				{
+					"name": "out_sid",
+					"type": "String",
+					"description": "运单号.具体一个物流公司的运单号码."
+				},
+				{
+					"name": "item_title",
+					"type": "String",
+					"description": "货物名称"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件人姓名"
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "收件人电话"
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "收件人手机号码"
+				},
+				{
+					"name": "location",
+					"type": "Location",
+					"description": "收件人地址信息(在传输请求参数Fields字段时，必须使用“receiver_location”才能返回此字段)",
+					"subParams": [
+						{
+							"name": "zip",
+							"type": "String",
+							"description": "邮政编码"
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "详细地址，最大256个字节（128个中文）"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "所在城市（中文名称）"
+						},
+						{
+							"name": "state",
+							"type": "String",
+							"description": "所在省份（中文名称）"
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家名称"
+						},
+						{
+							"name": "district",
+							"type": "String",
+							"description": "区/县（只适用于物流API）"
+						}
+					]
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "物流方式.可选值:free(卖家包邮),post(平邮),express(快递),ems(EMS)."
+				},
+				{
+					"name": "freight_payer",
+					"type": "String",
+					"description": "谁承担运费.可选值:buyer(买家承担),seller(卖家承担运费)."
+				},
+				{
+					"name": "seller_confirm",
+					"type": "String",
+					"description": "卖家是否确认发货.可选值:yes(是),no(否)."
+				},
+				{
+					"name": "company_name",
+					"type": "String",
+					"description": "物流公司名称"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "运单创建时间"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "运单修改时间"
+				},
+				{
+					"name": "sub_tids",
+					"type": "Number[]",
+					"description": "拆单子订单列表，对应的数据是：该物流订单下的全部子订单"
+				},
+				{
+					"name": "is_split",
+					"type": "Number",
+					"description": "表明是否是拆单，默认值0，1表示拆单"
+				}
+			]
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "搜索到的物流订单列表总数"
+		}
+	]
+}

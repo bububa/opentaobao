@@ -1,0 +1,135 @@
+{
+	"name": "taobao.promotion.coupon.buyer.search",
+	"apiChineseName": "查询买家在相关app领取的优惠券信息",
+	"description": "查询买家在相关app领取的优惠券信息",
+	"requestParams": [
+		{
+			"name": "seller_nick",
+			"type": "String",
+			"description": "卖家昵称"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "券状态  \"正常\",1 \"已删除\",-1 \"已使用\",-2 \"冻结\",0"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页数据 建议20左右",
+			"maxValue": 20,
+			"minValue": 1
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前第几页  从第一页开始",
+			"maxValue": 999,
+			"minValue": 1
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "结束时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果码"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "invoke_result",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "buyer_coupon_infos",
+			"type": "BuyerCouponInfo []",
+			"description": "结果集",
+			"subParams": [
+				{
+					"name": "title",
+					"type": "String",
+					"description": "券名称"
+				},
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "卖家ID"
+				},
+				{
+					"name": "status_name",
+					"type": "String",
+					"description": "状态名称"
+				},
+				{
+					"name": "coupon_type_name",
+					"type": "String",
+					"description": "券类型"
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "面额"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "券生效时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "券失效时间"
+				},
+				{
+					"name": "start_fee",
+					"type": "Number",
+					"description": "满足金额阀值  如订单满多少元才可用"
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "mtop 店铺链接"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家名称"
+				},
+				{
+					"name": "spread_id",
+					"type": "String",
+					"description": "券对外ID"
+				},
+				{
+					"name": "coupon_type",
+					"type": "Number",
+					"description": "券类型"
+				},
+				{
+					"name": "shop_name",
+					"type": "String",
+					"description": "店铺名称"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态信息"
+				}
+			]
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "符合条件的总数，用于分页判断"
+		}
+	]
+}

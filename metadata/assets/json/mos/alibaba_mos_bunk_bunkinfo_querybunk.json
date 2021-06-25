@@ -1,0 +1,143 @@
+{
+	"name": "alibaba.mos.bunk.bunkinfo.querybunk",
+	"apiChineseName": "根据合同号查询铺位信息",
+	"description": "根据合同号查询铺位信息",
+	"requestParams": [
+		{
+			"name": "store_no",
+			"type": "String",
+			"description": "门店号"
+		},
+		{
+			"name": "status_list",
+			"type": "String[]",
+			"description": "合同状态集合",
+			"maxListSize": 20
+		},
+		{
+			"name": "contract_codes",
+			"type": "String[]",
+			"description": "合同号集合",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "全链路追踪id",
+					"required": true
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总量",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "BunkSimpleDto[]",
+					"description": "返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_no",
+							"type": "String",
+							"description": "门店号",
+							"required": true
+						},
+						{
+							"name": "acreage",
+							"type": "String",
+							"description": "铺位面积",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "铺位类型",
+							"required": true
+						},
+						{
+							"name": "number",
+							"type": "String",
+							"description": "铺位编号",
+							"required": true
+						},
+						{
+							"name": "cp_id",
+							"type": "String",
+							"description": "铺位ID",
+							"required": true
+						},
+						{
+							"name": "contract_code",
+							"type": "String",
+							"description": "合同号",
+							"required": true
+						},
+						{
+							"name": "floor_name",
+							"type": "String",
+							"description": "楼层名称",
+							"required": true
+						},
+						{
+							"name": "floor_id",
+							"type": "String",
+							"description": "楼层ID",
+							"required": true
+						},
+						{
+							"name": "contract_id",
+							"type": "String",
+							"description": "合同系统编号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "extra",
+					"type": "Json",
+					"description": "其他",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Json",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "titles",
+					"type": "String[]",
+					"description": "结果标题",
+					"required": true
+				}
+			]
+		}
+	]
+}

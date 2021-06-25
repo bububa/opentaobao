@@ -1,0 +1,263 @@
+{
+	"name": "alibaba.alsc.crm.open.rule.get",
+	"apiChineseName": "查询规则",
+	"description": "查询会员规则",
+	"requestParams": [
+		{
+			"name": "param_rule_open_req",
+			"type": "RuleOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "saas品牌id"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部id"
+				},
+				{
+					"name": "outer_type",
+					"type": "String",
+					"description": "外部id类型，wechat：微信openId  alipay：支付宝"
+				},
+				{
+					"name": "physical_card_id",
+					"type": "String",
+					"description": "物理卡id"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "saas门店id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "RuleOpenInfo",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "point_deduction_rule",
+							"type": "PointDeductionRuleOpenInfo",
+							"description": "积分规则",
+							"required": true,
+							"subParams": [
+								{
+									"name": "member_point_deduction_rules",
+									"type": "MemberPointDeductionRuleOpenInfo[]",
+									"description": "积分扣减规则",
+									"required": true,
+									"subParams": [
+										{
+											"name": "consume_money",
+											"type": "Number",
+											"description": "消费金额",
+											"required": true
+										},
+										{
+											"name": "deducted_point",
+											"type": "Number",
+											"description": "抵扣积分",
+											"required": true
+										},
+										{
+											"name": "enable",
+											"type": "Boolean",
+											"description": "是否允许该等级进行积分抵现",
+											"required": true
+										},
+										{
+											"name": "has_upper_limit",
+											"type": "Boolean",
+											"description": "单次使用是否有抵扣上限",
+											"required": true
+										},
+										{
+											"name": "level_id",
+											"type": "String",
+											"description": "会员等级ID",
+											"required": true
+										},
+										{
+											"name": "max_point",
+											"type": "Number",
+											"description": "单次使用的抵扣上限",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "with_coupon",
+									"type": "Boolean",
+									"description": "是否与优惠券同享",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "recharge_rule_open_info",
+							"type": "RechargeRuleOpenInfo",
+							"description": "储值规则",
+							"required": true,
+							"subParams": [
+								{
+									"name": "rule_id",
+									"type": "String",
+									"description": "规则id",
+									"required": true
+								},
+								{
+									"name": "rule_name",
+									"type": "String",
+									"description": "规则名称",
+									"required": true
+								},
+								{
+									"name": "full_gift_switch",
+									"type": "Boolean",
+									"description": "满赠开关：false-关，true-开，默认关闭",
+									"required": true
+								},
+								{
+									"name": "gift_type",
+									"type": "String",
+									"description": "满赠类型：0-CUSTOMIZED自定义按金额（默认），1-PROPERTIONAL按百分比、",
+									"required": true
+								},
+								{
+									"name": "pay_no_pwd_switch",
+									"type": "Boolean",
+									"description": "免密开关:0-关闭（默认），1-开启",
+									"required": true
+								},
+								{
+									"name": "pay_no_pwd_credit",
+									"type": "Number",
+									"description": "免密额度:-1表示不限额，单位为分，默认200_00L",
+									"required": true
+								},
+								{
+									"name": "deduction_order",
+									"type": "String",
+									"description": "扣减顺序：1-PERCENT_DEDUCT比例、2-REAL_BEFORE_GIFT_DEDUCT先实储后赠送、3-GIFT_BEFORE_REAL_DEDUCT先增储后实储",
+									"required": true
+								},
+								{
+									"name": "shop_id",
+									"type": "String",
+									"description": "门店id",
+									"required": true
+								},
+								{
+									"name": "list_recharge_rule_detail_infos",
+									"type": "RechargeRuleDetailOpenInfo[]",
+									"description": "规则明细列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "remark",
+											"type": "String",
+											"description": "备注",
+											"required": true
+										},
+										{
+											"name": "gift_point",
+											"type": "Number",
+											"description": "赠送金额* 比例送55%：5500L * 金额送55.00元：5500L",
+											"required": true
+										},
+										{
+											"name": "gift_value",
+											"type": "Number",
+											"description": "赠送积分 * 送10分：10L",
+											"required": true
+										},
+										{
+											"name": "real_value",
+											"type": "Number",
+											"description": "储值金额  * 100元：10000L",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "voucher_template_setting_open_infos",
+							"type": "VoucherTemplateSettingOpenInfo[]",
+							"description": "券模板规则设置",
+							"required": true,
+							"subParams": [
+								{
+									"name": "order_channel",
+									"type": "String",
+									"description": "渠道POS,移动门店",
+									"required": true
+								},
+								{
+									"name": "per_day",
+									"type": "Number",
+									"description": "每天限制",
+									"required": true
+								},
+								{
+									"name": "per_order",
+									"type": "Number",
+									"description": "每单限制",
+									"required": true
+								},
+								{
+									"name": "voucher_template_ids",
+									"type": "String[]",
+									"description": "适配的券模板id列表，为空代表适配全部",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

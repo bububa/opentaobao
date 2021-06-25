@@ -1,0 +1,122 @@
+{
+	"name": "alibaba.wdk.ums.order.get",
+	"apiChineseName": "查询店仓作业单据清单 （库存对账辅助）-回流单",
+	"description": "查询店仓作业单据清单 （库存对账辅助）-回流单",
+	"requestParams": [
+		{
+			"name": "query_erpbill_dto",
+			"type": "QueryErpBillDto",
+			"description": "查询单据的dto",
+			"required": true,
+			"subParams": [
+				{
+					"name": "begin_date",
+					"type": "Date",
+					"description": "单据创建的开始时间点",
+					"required": true
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "单据创建的结束时间点",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "第几页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数(最大1024)",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "单据类型",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "店仓code，指的是查询对象，对应一个物理店或仓编码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UtmsPageResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "ErpBillDto[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "orderCode",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "status",
+							"required": true
+						},
+						{
+							"name": "create_date",
+							"type": "Date",
+							"description": "createDate",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "warehouseCode",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "type",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				}
+			]
+		}
+	]
+}

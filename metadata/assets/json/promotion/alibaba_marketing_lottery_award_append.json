@@ -1,0 +1,63 @@
+{
+	"name": "alibaba.marketing.lottery.award.append",
+	"apiChineseName": "抽奖平台奖品添加接口",
+	"description": "抽奖平台奖品添加接口，目前仅用于奖池众筹项目",
+	"requestParams": [
+		{
+			"name": "lottery_award_append",
+			"type": "LotteryAwardAppendDto",
+			"description": "奖品添加请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "award_list",
+					"type": "LotteryAwardCreateDto[]",
+					"description": "奖品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "award_type",
+							"type": "Number",
+							"description": "奖品类型",
+							"required": true
+						},
+						{
+							"name": "award_inst_id",
+							"type": "String",
+							"description": "奖品实例id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "lottery_activity_id",
+					"type": "Number",
+					"description": "抽奖活动id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "奖品添加成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "Number",
+			"description": "code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用成功"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msg"
+		}
+	]
+}

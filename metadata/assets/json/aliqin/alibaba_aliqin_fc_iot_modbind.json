@@ -1,0 +1,81 @@
+{
+	"name": "alibaba.aliqin.fc.iot.modbind",
+	"apiChineseName": "物联网绑定/换绑API",
+	"description": "支持用户的设备的换绑和解绑操作",
+	"requestParams": [
+		{
+			"name": "opion_type",
+			"type": "String",
+			"description": "chgBind：换绑；unBind：解绑",
+			"required": true
+		},
+		{
+			"name": "bill_real",
+			"type": "String",
+			"description": "物联卡和iccid保持一致",
+			"required": true
+		},
+		{
+			"name": "iccid",
+			"type": "String",
+			"description": "iccid （20位）",
+			"required": true
+		},
+		{
+			"name": "newimei",
+			"type": "String",
+			"description": "换绑的时候必传，换的新设备imei"
+		},
+		{
+			"name": "imei",
+			"type": "String",
+			"description": "目前绑定的设备imei",
+			"required": true
+		},
+		{
+			"name": "bill_source",
+			"type": "String",
+			"description": "物联卡业务：若无特殊为ICCID",
+			"required": true
+		},
+		{
+			"name": "mid_pat_channel",
+			"type": "String",
+			"description": "若无特殊物联卡传入122",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

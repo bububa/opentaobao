@@ -1,0 +1,107 @@
+{
+	"name": "taobao.simba.serchcrowd.state.batch.update",
+	"apiChineseName": "单品搜索人群修改状态",
+	"description": "暂停或启用单品推广搜索人群溢价",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "被操作者的淘宝昵称",
+			"required": true
+		},
+		{
+			"name": "adgroup_crowd_ids",
+			"type": "Number[]",
+			"description": "需要修改出价的人群包id,批量传入时用,分割",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广单元id",
+			"required": true
+		},
+		{
+			"name": "state",
+			"type": "Number",
+			"description": "人群状态,0:暂停;1:启用"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_list",
+			"type": "Json []",
+			"description": "部分失败时返回错误List"
+		},
+		{
+			"name": "adgrouptargetingtags",
+			"type": "AdgroupTargetingTagDto []",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "price_mode",
+					"type": "Number",
+					"description": "出价方式1:溢价;0:出价",
+					"required": true
+				},
+				{
+					"name": "discount",
+					"type": "Number",
+					"description": "返回的溢价比例,乘的关系,discount=121,代表溢价21%",
+					"required": true
+				},
+				{
+					"name": "crowd",
+					"type": "CrowdDto",
+					"description": "人群信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "业务类型",
+							"required": true
+						},
+						{
+							"name": "cust_id",
+							"type": "Number",
+							"description": "用户id",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "用户的nickname",
+							"required": true
+						},
+						{
+							"name": "template_id",
+							"type": "Number",
+							"description": "定向人群包的模版id",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "定向人群类型",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "定向人群上下线状态",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "定向人群Id",
+					"required": true
+				}
+			]
+		}
+	]
+}

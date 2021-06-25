@@ -1,0 +1,51 @@
+{
+	"name": "tmall.servicecenter.servicestore.updatestatus",
+	"apiChineseName": "网点/门店状态修改",
+	"description": "修改网点/门店状态",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "门店id",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态。1 营业，0歇业，-1彻底关店"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务类型。不同业务传不同的值",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "方法调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

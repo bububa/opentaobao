@@ -1,0 +1,102 @@
+{
+	"name": "taobao.tvpay.auth.apply",
+	"apiChineseName": "tv支付申请设备授权",
+	"description": "为用户在指定设备上申请支付授权",
+	"requestParams": [
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备id",
+			"required": true
+		},
+		{
+			"name": "from",
+			"type": "String",
+			"description": "请求来源"
+		},
+		{
+			"name": "biz_scene",
+			"type": "String",
+			"description": "场景"
+		},
+		{
+			"name": "item_name",
+			"type": "String",
+			"description": "商品名称"
+		},
+		{
+			"name": "operate_type",
+			"type": "String",
+			"description": "授权类型"
+		},
+		{
+			"name": "out_approve_id",
+			"type": "String",
+			"description": "外部订单号"
+		},
+		{
+			"name": "total_fee",
+			"type": "String",
+			"description": "金额"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ApplyAuthResultDo",
+					"description": "结构体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "auth_mode",
+							"type": "String",
+							"description": "授权方式",
+							"required": true
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "手机号",
+							"required": true
+						},
+						{
+							"name": "qr_code_url",
+							"type": "String",
+							"description": "二维码地址",
+							"required": true
+						},
+						{
+							"name": "qr_code",
+							"type": "String",
+							"description": "qrcode",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

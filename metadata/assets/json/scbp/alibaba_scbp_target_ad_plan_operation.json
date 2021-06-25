@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.scbp.target.ad.plan.operation",
+	"apiChineseName": "定向推广-计划开启/暂停/删除",
+	"description": "定向推广-计划开启/暂停/删除",
+	"requestParams": [
+		{
+			"name": "top_p4p_modify_quick_campaign_d_t_o",
+			"type": "TopP4pModifyQuickCampaignDto",
+			"description": "TopP4pModifyQuickCampaignDTO",
+			"required": true,
+			"subParams": [
+				{
+					"name": "action",
+					"type": "Number",
+					"description": "操作类型，0=计划暂停，1=计划开启，2=计划删除",
+					"required": true
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "修改成功记录数"
+		}
+	]
+}

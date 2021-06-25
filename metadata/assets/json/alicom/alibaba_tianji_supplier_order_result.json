@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.tianji.supplier.order.result",
+	"apiChineseName": "供应商处理订单接口（订购成功/失败、发货）",
+	"description": "供应商处理订单接口（订购成功/失败、发货）",
+	"requestParams": [
+		{
+			"name": "supplier_order_result_model",
+			"type": "SupplierOrderResultModel",
+			"description": "供应商处理订单结果反馈参数",
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "业务类型：7-合约机分销、",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "交易订单号",
+					"required": true
+				},
+				{
+					"name": "out_order_no",
+					"type": "String",
+					"description": "供应商外部订单号",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "订购结果状态",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "结果"
+		}
+	]
+}

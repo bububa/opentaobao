@@ -1,0 +1,40 @@
+{
+	"name": "tmall.item.sizemapping.template.get",
+	"apiChineseName": "获取天猫商品尺码表模板",
+	"description": "获取天猫商品尺码表模板",
+	"requestParams": [
+		{
+			"name": "template_id",
+			"type": "Number",
+			"description": "尺码表模板ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "size_mapping_template",
+			"type": "Model",
+			"description": "尺码表模板",
+			"subParams": [
+				{
+					"name": "template_content",
+					"type": "String",
+					"description": "尺码表模板内容，格式为\"尺码值:维度名称:数值,尺码值:维度名称:数值\"。其中，数值的单位，长度单位为厘米（cm），体重单位为公斤（kg）。",
+					"required": true
+				},
+				{
+					"name": "template_name",
+					"type": "String",
+					"description": "尺码表模板名称",
+					"required": true
+				},
+				{
+					"name": "template_id",
+					"type": "Number",
+					"description": "尺码表模板ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

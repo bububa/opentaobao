@@ -1,0 +1,142 @@
+{
+	"name": "tmall.cityretail.fulfill.abnormal.center.abnormal.status.change",
+	"apiChineseName": "同城零售履约异常中心异常单处理结果回调接口",
+	"description": "同城零售履约异常中心异常单处理结果回调接口",
+	"requestParams": [
+		{
+			"name": "abnormal_status_change_dto",
+			"type": "AbnormalStatusChangeDto[]",
+			"description": "入参",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "is_final",
+					"type": "String",
+					"description": "是否终态"
+				},
+				{
+					"name": "current_lng_lat",
+					"type": "String",
+					"description": "当前经纬度"
+				},
+				{
+					"name": "operate_time",
+					"type": "String",
+					"description": "操作时间"
+				},
+				{
+					"name": "operate_user_name",
+					"type": "String",
+					"description": "处理人名称"
+				},
+				{
+					"name": "operate_user_code",
+					"type": "String",
+					"description": "处理人"
+				},
+				{
+					"name": "node_code",
+					"type": "String",
+					"description": "节点Code"
+				},
+				{
+					"name": "node_type",
+					"type": "String",
+					"description": "节点类型"
+				},
+				{
+					"name": "abnormal_accept_id",
+					"type": "String",
+					"description": "异常受理单ID"
+				},
+				{
+					"name": "abnormal_order_id",
+					"type": "String",
+					"description": "异常单ID"
+				},
+				{
+					"name": "status_change_type",
+					"type": "String",
+					"description": "状态变更类型"
+				},
+				{
+					"name": "abnormal_content_dto",
+					"type": "AbnormalContentDto",
+					"description": "参数",
+					"subParams": [
+						{
+							"name": "operate_desc",
+							"type": "String",
+							"description": "操作描述"
+						},
+						{
+							"name": "operate_result",
+							"type": "String",
+							"description": "处理结果"
+						},
+						{
+							"name": "abnormal_process_quantity",
+							"type": "String",
+							"description": "处理数量"
+						},
+						{
+							"name": "abnormal_quantity",
+							"type": "String",
+							"description": "上报数量"
+						}
+					]
+				},
+				{
+					"name": "abnormal_coordination_id",
+					"type": "String",
+					"description": "异常协同单ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fulfill_single_result",
+			"type": "FulfillSingleResult",
+			"description": "响应参数",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "处理结果",
+					"required": true
+				},
+				{
+					"name": "biz_exception",
+					"type": "Boolean",
+					"description": "是否业务异常",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "异常信息",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "异常描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

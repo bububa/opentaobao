@@ -1,0 +1,99 @@
+{
+	"name": "aliexpress.social.discategory.get",
+	"apiChineseName": "展示类目获取接口",
+	"description": "AE展示类目获取接口",
+	"requestParams": [
+		{
+			"name": "locale",
+			"type": "String",
+			"description": "Locale值，格式为language+\"_\"+country"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "CategoryDto[]",
+					"description": "result",
+					"required": true,
+					"subParams": [
+						{
+							"name": "childrens",
+							"type": "CategoryDto[]",
+							"description": "子节点",
+							"required": true,
+							"subParams": [
+								{
+									"name": "childrens",
+									"type": "CategoryDto[]",
+									"description": "子节点",
+									"required": true,
+									"subParams": [
+										{
+											"name": "category_name",
+											"type": "String",
+											"description": "类目名称",
+											"required": true
+										},
+										{
+											"name": "category_id",
+											"type": "String",
+											"description": "类目ID",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "category_name",
+									"type": "String",
+									"description": "类目名称",
+									"required": true
+								},
+								{
+									"name": "category_id",
+									"type": "String",
+									"description": "类目ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "category_name",
+							"type": "String",
+							"description": "类目名称",
+							"required": true
+						},
+						{
+							"name": "category_id",
+							"type": "String",
+							"description": "类目ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

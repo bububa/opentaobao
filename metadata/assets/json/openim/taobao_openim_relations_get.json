@@ -1,0 +1,67 @@
+{
+	"name": "taobao.openim.relations.get",
+	"apiChineseName": "获取openim账号的聊天关系",
+	"description": "获取openim账号的聊天关系",
+	"requestParams": [
+		{
+			"name": "beg_date",
+			"type": "String",
+			"description": "查询起始日期。格式yyyyMMdd。不得早于一个月",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "查询结束日期。格式yyyyMMdd。不得早于一个月",
+			"required": true
+		},
+		{
+			"name": "user",
+			"type": "OpenImUser",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "taobao_account",
+					"type": "Boolean",
+					"description": "是否为淘宝账号"
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "账户appkey"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "users",
+			"type": "OpenImUser []",
+			"description": "用户信息列表",
+			"subParams": [
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "用户id"
+				},
+				{
+					"name": "taobao_account",
+					"type": "Boolean",
+					"description": "是否为淘宝账号"
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "账户appkey"
+				}
+			]
+		}
+	]
+}

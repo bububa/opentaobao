@@ -1,0 +1,109 @@
+{
+	"name": "alibaba.mosflow.work.startprocess",
+	"apiChineseName": "发起流程",
+	"description": "业务发起流程审批",
+	"requestParams": [
+		{
+			"name": "variables",
+			"type": "String",
+			"description": "参数二:额外业务参数,Map的JSON串"
+		},
+		{
+			"name": "parameter_entity",
+			"type": "ParameterEntity",
+			"description": "流程必传参数",
+			"subParams": [
+				{
+					"name": "process_definition_key",
+					"type": "String",
+					"description": "流程定义KEY,发起流程的唯一标",
+					"required": true
+				},
+				{
+					"name": "process_type",
+					"type": "String",
+					"description": "流程审批类型",
+					"required": true
+				},
+				{
+					"name": "business_data_url",
+					"type": "String",
+					"description": "业务详情页URL",
+					"required": true
+				},
+				{
+					"name": "start_user_role_name",
+					"type": "String",
+					"description": "发起人角色名称"
+				},
+				{
+					"name": "oper_id",
+					"type": "String",
+					"description": "操作人ID",
+					"required": true
+				},
+				{
+					"name": "form_id",
+					"type": "String",
+					"description": "业务表单ID(系统-业务类型-编号)",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题",
+					"required": true
+				},
+				{
+					"name": "store_no",
+					"type": "String",
+					"description": "门店NO",
+					"required": true
+				},
+				{
+					"name": "cc_user_ids",
+					"type": "String",
+					"description": "抄送人(非必传)"
+				},
+				{
+					"name": "oper_id_type",
+					"type": "String",
+					"description": "发起人ID类型(1:淘宝UserId,2:MIS系统 OuterId)",
+					"required": true
+				},
+				{
+					"name": "yz_code",
+					"type": "String",
+					"description": "业种code"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "流程发起描述信息(会展示在审批日志中)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Json",
+			"description": "响应参数"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "操作是否成功"
+		},
+		{
+			"name": "result_message",
+			"type": "String",
+			"description": "异常信息"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "异常Code"
+		}
+	]
+}

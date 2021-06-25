@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.tcls.fulfill.qa.order.create",
+	"apiChineseName": "创单接口",
+	"description": "根据历史测试履约单号，复制一个同样镜像的履约单号并下发给大润发仓（api实现已经限制了测试数据）",
+	"requestParams": [
+		{
+			"name": "fulfill_order_id",
+			"type": "String",
+			"description": "原始履约单号",
+			"required": true
+		},
+		{
+			"name": "target_ip",
+			"type": "String",
+			"description": "目标ip"
+		},
+		{
+			"name": "creator",
+			"type": "String",
+			"description": "执行人姓名",
+			"required": true
+		},
+		{
+			"name": "job_no",
+			"type": "String",
+			"description": "执行人工号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "鹰眼id"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "返回素材id"
+		},
+		{
+			"name": "rt_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "rt_error_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "rt_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

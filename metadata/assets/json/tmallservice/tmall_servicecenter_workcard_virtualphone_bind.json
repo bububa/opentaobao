@@ -1,0 +1,72 @@
+{
+	"name": "tmall.servicecenter.workcard.virtualphone.bind",
+	"apiChineseName": "工单维度虚拟中间号绑定",
+	"description": "服务供应链洗护服务ERP项目中，客服呼叫消费者的功能。\n叫消费者的手机号虚拟号码给到客服。",
+	"requestParams": [
+		{
+			"name": "workcard_request",
+			"type": "WorkcardBaseRequest",
+			"description": "绑定阿里通讯号入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "request_source",
+					"type": "WorkcardRequestSource",
+					"description": "请求来源账号",
+					"required": true,
+					"subParams": [
+						{
+							"name": "real_tp_nick",
+							"type": "String",
+							"description": "入驻服务商工作台的淘宝账号"
+						},
+						{
+							"name": "service_store_code",
+							"type": "String",
+							"description": "门店Code"
+						}
+					]
+				},
+				{
+					"name": "workcard_id",
+					"type": "Number",
+					"description": "工单ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "String",
+					"description": "虚拟手机号",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "处理结果 true 成功 false 失败",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误表述",
+					"required": true
+				}
+			]
+		}
+	]
+}

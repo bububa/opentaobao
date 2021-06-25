@@ -1,0 +1,157 @@
+{
+	"name": "taobao.xhotel.data.service.hotel.serviceindex",
+	"apiChineseName": "酒店服务指数",
+	"description": "酒店服务指数",
+	"requestParams": [
+		{
+			"name": "hid",
+			"type": "Number",
+			"description": "酒店id"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "渠道商名称"
+		},
+		{
+			"name": "start_row",
+			"type": "Number",
+			"description": "1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "10"
+		},
+		{
+			"name": "report_end_date",
+			"type": "String",
+			"description": "查询时间段结束"
+		},
+		{
+			"name": "report_start_date",
+			"type": "String",
+			"description": "查询时间段开始"
+		},
+		{
+			"name": "supplier",
+			"type": "String",
+			"description": "供应商名称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "first_result",
+					"type": "TopAdsHtlDataQueryResult",
+					"description": "firstResult",
+					"required": true,
+					"subParams": [
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "top_ads_htl_service_data_list",
+							"type": "Topadshtlservicedatalist[]",
+							"description": "topAdsHtlServiceDataList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "hid",
+									"type": "Number",
+									"description": "酒店id",
+									"required": true
+								},
+								{
+									"name": "vendor",
+									"type": "String",
+									"description": "渠道名称",
+									"required": true
+								},
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "电话",
+									"required": true
+								},
+								{
+									"name": "sales_count_in_cycle",
+									"type": "Number",
+									"description": "有效订单数",
+									"required": true
+								},
+								{
+									"name": "booking_succ_rate_str",
+									"type": "String",
+									"description": "预定成功率",
+									"required": true
+								},
+								{
+									"name": "closed_count_in_cycle",
+									"type": "Number",
+									"description": "关闭订单数",
+									"required": true
+								},
+								{
+									"name": "no_ord_cnt_in_cycle",
+									"type": "Number",
+									"description": "查无订单数",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "酒店名称",
+									"required": true
+								},
+								{
+									"name": "report_date",
+									"type": "Date",
+									"description": "统计时间",
+									"required": true
+								},
+								{
+									"name": "no_room_cnt_in_cycle",
+									"type": "Number",
+									"description": "到店无房数量",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "酒店外部编码",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,109 @@
+{
+	"name": "taobao.bus.agent.refund.confirm",
+	"apiChineseName": "汽车票退票和退款二合一接口",
+	"description": "1.商家退票成功后，回调飞猪平台汽车票退票接口，平台进行退票和退款操作。",
+	"requestParams": [
+		{
+			"name": "param_agent_confirm_return_and_refund_r_q",
+			"type": "AgentConfirmReturnAndRefundRq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "agent_order_id",
+					"type": "String",
+					"description": "商家订单号",
+					"required": true
+				},
+				{
+					"name": "agent_refund_amount",
+					"type": "String",
+					"description": "退款金额,单位元;退票成功时必填"
+				},
+				{
+					"name": "agent_refund_trans_id",
+					"type": "String",
+					"description": "退款资金号唯一ID"
+				},
+				{
+					"name": "agent_return_ticket_status",
+					"type": "Number",
+					"description": "商家退票状态;1-成功,2-失败",
+					"required": true
+				},
+				{
+					"name": "agent_return_ticket_type",
+					"type": "Number",
+					"description": "商家退票类型;0-按票退,1-按单退",
+					"required": true
+				},
+				{
+					"name": "agent_return_time",
+					"type": "Date",
+					"description": "退票时间点"
+				},
+				{
+					"name": "agent_ticket_id",
+					"type": "String",
+					"description": "按票的维度进行退票时，商家票号"
+				},
+				{
+					"name": "depart_date",
+					"type": "Date",
+					"description": "发车时间"
+				},
+				{
+					"name": "main_biz_order_id",
+					"type": "Number",
+					"description": "平台单号"
+				},
+				{
+					"name": "passenger_id_num",
+					"type": "String",
+					"description": "退票乘客证件号(按票退时必填)"
+				},
+				{
+					"name": "passenger_name",
+					"type": "String",
+					"description": "退票乘客姓名"
+				},
+				{
+					"name": "passenger_phone",
+					"type": "String",
+					"description": "退款乘客手机号"
+				},
+				{
+					"name": "agent_return_ticket_code",
+					"type": "Number",
+					"description": "退票结果编码,(退票失败时必填,参考标准错误码)"
+				},
+				{
+					"name": "agent_ext_attr",
+					"type": "String",
+					"description": "扩展属性json"
+				},
+				{
+					"name": "agent_return_mode",
+					"type": "String",
+					"description": "offline:线下退票;online:线上退票"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "退票回调是否收到"
+		}
+	]
+}

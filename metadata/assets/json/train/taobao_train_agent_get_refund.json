@@ -1,0 +1,26 @@
+{
+	"name": "taobao.train.agent.get.refund",
+	"apiChineseName": "代理商获取订单退票信息",
+	"description": "代理商获取订单信息回调API",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "淘宝的主订单号",
+			"required": true
+		},
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "top_refund_apply_list",
+			"type": "Json",
+			"description": "系统自动生成"
+		}
+	]
+}

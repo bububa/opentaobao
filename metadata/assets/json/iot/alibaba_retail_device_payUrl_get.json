@@ -1,0 +1,83 @@
+{
+	"name": "alibaba.retail.device.payUrl.get",
+	"apiChineseName": "贩卖机支付二维链接获取",
+	"description": "贩卖机支付二维链接获取",
+	"requestParams": [
+		{
+			"name": "isv_order_id",
+			"type": "String",
+			"description": "外部订单id",
+			"required": true
+		},
+		{
+			"name": "biz_name",
+			"type": "String",
+			"description": "业务名称",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备sn",
+			"required": true
+		},
+		{
+			"name": "item_type",
+			"type": "Number",
+			"description": "1表示商品box，0或者为空表示普通商品"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "module",
+					"type": "Json",
+					"description": "module",
+					"required": true
+				},
+				{
+					"name": "error_infos",
+					"type": "ErrorInfo[]",
+					"description": "errorInfos",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "errorCode",
+							"required": true
+						},
+						{
+							"name": "sub_error_code",
+							"type": "String",
+							"description": "subErrorCode",
+							"required": true
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "errorMessage",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

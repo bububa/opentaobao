@@ -1,0 +1,44 @@
+{
+	"name": "taobao.train.agent.handleticket.confirm",
+	"apiChineseName": "代理商出票中",
+	"description": "代理商出票中",
+	"requestParams": [
+		{
+			"name": "extend_params",
+			"type": "String",
+			"description": "扩展参数"
+		},
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "主站id"
+		},
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "代理商id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "train_error_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "train_error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "extend_params",
+			"type": "String",
+			"description": "暂无"
+		}
+	]
+}

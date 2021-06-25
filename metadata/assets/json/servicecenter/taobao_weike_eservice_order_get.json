@@ -1,0 +1,87 @@
+{
+	"name": "taobao.weike.eservice.order.get",
+	"apiChineseName": "客服外包订单查询",
+	"description": "用于客服外包中服务商查询订单列表",
+	"requestParams": [
+		{
+			"name": "start_date",
+			"type": "Date",
+			"description": "订单服务开始日期"
+		},
+		{
+			"name": "scheduling_state",
+			"type": "Boolean",
+			"description": "订单是否可以排班"
+		},
+		{
+			"name": "seller_nick",
+			"type": "String",
+			"description": "商家昵称"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页记录数（默认20，最大不超过20）"
+		},
+		{
+			"name": "end_date",
+			"type": "Date",
+			"description": "订单服务结束日期"
+		},
+		{
+			"name": "order_id_list",
+			"type": "Number[]",
+			"description": "订单ID列表，最大不超过20个（这个参数指定后，其它过滤条件失效）",
+			"maxListSize": 20
+		},
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "页码（默认为1）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_size",
+			"type": "Number",
+			"description": "记录总记录数"
+		},
+		{
+			"name": "order_list",
+			"type": "Order []",
+			"description": "订单列表",
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单ID",
+					"required": true
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "商家昵称",
+					"required": true
+				},
+				{
+					"name": "scheduling_state",
+					"type": "Boolean",
+					"description": "订单是否可以排班",
+					"required": true
+				},
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "起始日期（订单未付款前可能为空）",
+					"required": true
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "结束日期（订单未付款前可能为空）",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"name": "taobao.item.delete",
+	"apiChineseName": "删除单条商品",
+	"description": "删除单条商品",
+	"requestParams": [
+		{
+			"name": "num_iid",
+			"type": "Number",
+			"description": "商品数字ID，该参数必须",
+			"required": true,
+			"minValue": 0
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item",
+			"type": "Item",
+			"description": "被删除商品的相关信息",
+			"subParams": [
+				{
+					"name": "iid",
+					"type": "String",
+					"description": "商品id(注意：iid近期即将废弃，请用num_iid参数)"
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品数字id"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "Item的发布时间，目前仅供taobao.item.add和taobao.item.get可用"
+				}
+			]
+		}
+	]
+}

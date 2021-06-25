@@ -1,0 +1,214 @@
+{
+	"name": "taobao.qimen.storeprocess.create",
+	"apiChineseName": "仓内加工单创建接口",
+	"description": "ERP调用奇门的接口,创建仓内加工单",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "StoreProcessCreateRequest",
+			"subParams": [
+				{
+					"name": "processOrderCode",
+					"type": "String",
+					"description": "加工单编码",
+					"required": true
+				},
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码(统仓统配等无需ERP指定仓储编码的情况填OTHER)",
+					"required": true
+				},
+				{
+					"name": "orderType",
+					"type": "String",
+					"description": "单据类型(CNJG=仓内加工作业单)",
+					"required": true
+				},
+				{
+					"name": "orderCreateTime",
+					"type": "String",
+					"description": "加工单创建时间(YYYY-MM-DD HH:MM:SS)",
+					"required": true
+				},
+				{
+					"name": "planTime",
+					"type": "String",
+					"description": "计划加工时间(YYYY-MM-DD HH:MM:SS)",
+					"required": true
+				},
+				{
+					"name": "serviceType",
+					"type": "String",
+					"description": "加工类型(1:仓内组合加工 2:仓内组合拆分)",
+					"required": true
+				},
+				{
+					"name": "planQty",
+					"type": "Number",
+					"description": "成品计划数量"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "materialitems",
+					"type": "MaterialItem[]",
+					"description": "加工商品列表",
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "erp系统商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品ID"
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;默认为ZP)"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "ratioQty",
+							"type": "Number",
+							"description": "配比数量"
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "商品生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "商品过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						}
+					]
+				},
+				{
+					"name": "productitems",
+					"type": "ProductItem[]",
+					"description": "商品列表",
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "erp系统商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品ID"
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;默认为ZP)"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "ratioQty",
+							"type": "Number",
+							"description": "配比数量"
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "商品生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "商品过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "StoreProcessCreateResponse",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "processOrderId",
+					"type": "String",
+					"description": "仓储系统处理单ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

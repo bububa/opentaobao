@@ -1,0 +1,136 @@
+{
+	"name": "alibaba.tcls.aelophy.refund.csapplyrender",
+	"apiChineseName": "商家代客售后逆向申请渲染获取",
+	"description": "提供商家代客售后逆向申请渲染获取的接口",
+	"requestParams": [
+		{
+			"name": "refund_cs_apply_render_d_t_o",
+			"type": "RefundCsApplyRenderDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "渠道订单ID",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "商家经营店ID",
+					"required": true
+				},
+				{
+					"name": "out_sub_order_ids",
+					"type": "String[]",
+					"description": "申请退款的子订单ID列表"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "响应结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "回调返回编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "回调是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "回调错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "RefundCsApplyRenderResponseDto",
+					"description": "数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "商家经营店ID",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "渠道主订单ID",
+							"required": true
+						},
+						{
+							"name": "request_id",
+							"type": "String",
+							"description": "请求唯一键, 提交请求(alibaba.tcls.aelophy.refund.csapply)时保持一致",
+							"required": true
+						},
+						{
+							"name": "out_sub_orders",
+							"type": "Outsuborders[]",
+							"description": "申请退款的子订单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "out_sub_order_id",
+									"type": "String",
+									"description": "渠道子订单ID",
+									"required": true
+								},
+								{
+									"name": "max_refund_fee",
+									"type": "Number",
+									"description": "渠道子订单最大可退金额",
+									"required": true
+								},
+								{
+									"name": "post_fee",
+									"type": "Number",
+									"description": "当逆向已达到整单退时, 最后一个会有退运费金额",
+									"required": true
+								},
+								{
+									"name": "can_reverse",
+									"type": "Boolean",
+									"description": "是否可退",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "reason_list",
+							"type": "Reasonlist[]",
+							"description": "退款原因枚举列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "reason_id",
+									"type": "Number",
+									"description": "退款原因ID",
+									"required": true
+								},
+								{
+									"name": "reason_text",
+									"type": "String",
+									"description": "退款原因说明",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

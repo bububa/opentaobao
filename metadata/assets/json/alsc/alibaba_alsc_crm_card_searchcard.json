@@ -1,0 +1,555 @@
+{
+	"name": "alibaba.alsc.crm.card.searchcard",
+	"apiChineseName": "搜索卡实例列表(支持号段查询)",
+	"description": "搜索卡实例列表(支持号段查询)",
+	"requestParams": [
+		{
+			"name": "param_search_card_open_req",
+			"type": "SearchCardOpenReq",
+			"description": "请求对象",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌id"
+				},
+				{
+					"name": "card_template_ids",
+					"type": "String[]",
+					"description": "卡模板ID"
+				},
+				{
+					"name": "card_type",
+					"type": "String",
+					"description": "卡类型"
+				},
+				{
+					"name": "need_count",
+					"type": "Boolean",
+					"description": "是否需要总数"
+				},
+				{
+					"name": "no",
+					"type": "String",
+					"description": "号码（手机号/卡实例ID/物理卡号）"
+				},
+				{
+					"name": "open_card_shop_ids",
+					"type": "String[]",
+					"description": "开卡门店ID"
+				},
+				{
+					"name": "open_time_end",
+					"type": "String",
+					"description": "开卡时间终止"
+				},
+				{
+					"name": "open_time_start",
+					"type": "String",
+					"description": "开卡时间开始"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌id,brandId与out_brand_id不可同时为空"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID,shop_id和out_shop_id不可同时为空"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "第几页,从1开始计数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小，默认20"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id"
+				},
+				{
+					"name": "statuses",
+					"type": "String[]",
+					"description": "卡实例状态"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码（原样传出）",
+					"required": true
+				},
+				{
+					"name": "has_next_page",
+					"type": "Boolean",
+					"description": "是否有下一页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页几条",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "CardOpenInfo[]",
+					"description": "结果数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "accounts",
+							"type": "AccountOpenInfo[]",
+							"description": "资产账户列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "account_id",
+									"type": "String",
+									"description": "账户ID",
+									"required": true
+								},
+								{
+									"name": "account_type",
+									"type": "String",
+									"description": "账户类型（暂时不用）",
+									"required": true
+								},
+								{
+									"name": "balance",
+									"type": "Number",
+									"description": "储值余额",
+									"required": true
+								},
+								{
+									"name": "create_by",
+									"type": "String",
+									"description": "创建人",
+									"required": true
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "币种",
+									"required": true
+								},
+								{
+									"name": "deleted",
+									"type": "Boolean",
+									"description": "逻辑删除",
+									"required": true
+								},
+								{
+									"name": "ext_info",
+									"type": "Extinfo",
+									"description": "扩展信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "empty",
+											"type": "Boolean",
+											"description": "Map\u003cString,String\u003e",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "gift",
+									"type": "Number",
+									"description": "增储",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "修改时间",
+									"required": true
+								},
+								{
+									"name": "pre",
+									"type": "Number",
+									"description": "预储",
+									"required": true
+								},
+								{
+									"name": "real",
+									"type": "Number",
+									"description": "实储",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "账户状态（暂时不用）",
+									"required": true
+								},
+								{
+									"name": "total_gift",
+									"type": "Number",
+									"description": "累计增储",
+									"required": true
+								},
+								{
+									"name": "total_pre",
+									"type": "Number",
+									"description": "累计预储",
+									"required": true
+								},
+								{
+									"name": "total_real",
+									"type": "Number",
+									"description": "累计实储",
+									"required": true
+								},
+								{
+									"name": "update_by",
+									"type": "String",
+									"description": "修改人",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "active_operator_id",
+							"type": "String",
+							"description": "激活操作人ID",
+							"required": true
+						},
+						{
+							"name": "active_operator_name",
+							"type": "String",
+							"description": "激活操作人名称",
+							"required": true
+						},
+						{
+							"name": "active_shop_id",
+							"type": "String",
+							"description": "激活门店ID",
+							"required": true
+						},
+						{
+							"name": "active_time",
+							"type": "Date",
+							"description": "激活时间",
+							"required": true
+						},
+						{
+							"name": "buy",
+							"type": "Boolean",
+							"description": "是否主动购买（是则赠送开卡礼包）",
+							"required": true
+						},
+						{
+							"name": "card_id",
+							"type": "String",
+							"description": "卡实例ID",
+							"required": true
+						},
+						{
+							"name": "card_template_id",
+							"type": "String",
+							"description": "卡模板ID",
+							"required": true
+						},
+						{
+							"name": "card_type",
+							"type": "String",
+							"description": "卡类型",
+							"required": true
+						},
+						{
+							"name": "create_by",
+							"type": "String",
+							"description": "创建人",
+							"required": true
+						},
+						{
+							"name": "customer_id",
+							"type": "String",
+							"description": "顾客id",
+							"required": true
+						},
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "逻辑删除",
+							"required": true
+						},
+						{
+							"name": "expire_end",
+							"type": "Date",
+							"description": "有效期结束时间",
+							"required": true
+						},
+						{
+							"name": "expire_start",
+							"type": "Date",
+							"description": "有效期开始时间",
+							"required": true
+						},
+						{
+							"name": "ext_info",
+							"type": "Extinfo",
+							"description": "扩展信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "empty",
+									"type": "Boolean",
+									"description": "Map\u003cString,String\u003e",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "open_operator_id",
+							"type": "String",
+							"description": "开卡操作人id",
+							"required": true
+						},
+						{
+							"name": "open_operator_name",
+							"type": "String",
+							"description": "开卡操作人名称",
+							"required": true
+						},
+						{
+							"name": "open_shop_id",
+							"type": "String",
+							"description": "开卡门店ID",
+							"required": true
+						},
+						{
+							"name": "open_shop_name",
+							"type": "String",
+							"description": "开卡门店名称",
+							"required": true
+						},
+						{
+							"name": "open_time",
+							"type": "Date",
+							"description": "开卡时间",
+							"required": true
+						},
+						{
+							"name": "operator_id",
+							"type": "String",
+							"description": "操作人ID",
+							"required": true
+						},
+						{
+							"name": "opt_plan_id",
+							"type": "String",
+							"description": "运营计划ID",
+							"required": true
+						},
+						{
+							"name": "physical_cards",
+							"type": "PhysicalCardOpenInfo[]",
+							"description": "关联的物理卡列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "bind_operator_id",
+									"type": "String",
+									"description": "绑定操作人ID",
+									"required": true
+								},
+								{
+									"name": "bind_shop_id",
+									"type": "String",
+									"description": "绑定门店ID",
+									"required": true
+								},
+								{
+									"name": "bind_time",
+									"type": "Date",
+									"description": "绑定时间",
+									"required": true
+								},
+								{
+									"name": "card_id",
+									"type": "String",
+									"description": "卡实例ID",
+									"required": true
+								},
+								{
+									"name": "card_template_id",
+									"type": "String",
+									"description": "卡模板ID",
+									"required": true
+								},
+								{
+									"name": "card_type",
+									"type": "String",
+									"description": "卡类型",
+									"required": true
+								},
+								{
+									"name": "create_by",
+									"type": "String",
+									"description": "创建人",
+									"required": true
+								},
+								{
+									"name": "deleted",
+									"type": "Boolean",
+									"description": "逻辑删除",
+									"required": true
+								},
+								{
+									"name": "ext_info",
+									"type": "Extinfo",
+									"description": "扩展信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "empty",
+											"type": "Boolean",
+											"description": "Map\u003cString,String\u003e",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "修改时间",
+									"required": true
+								},
+								{
+									"name": "operator_id",
+									"type": "String",
+									"description": "操作人ID",
+									"required": true
+								},
+								{
+									"name": "physical_card_id",
+									"type": "String",
+									"description": "物理卡号",
+									"required": true
+								},
+								{
+									"name": "plan_id",
+									"type": "String",
+									"description": "会员计划ID",
+									"required": true
+								},
+								{
+									"name": "publish_id",
+									"type": "String",
+									"description": "发行记录ID",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "物理卡状态",
+									"required": true
+								},
+								{
+									"name": "update_by",
+									"type": "String",
+									"description": "修改人",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "plan_id",
+							"type": "String",
+							"description": "会员计划ID",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "物理卡状态",
+							"required": true
+						},
+						{
+							"name": "update_by",
+							"type": "String",
+							"description": "修改人",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "总条数",
+					"required": true
+				}
+			]
+		}
+	]
+}

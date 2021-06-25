@@ -1,0 +1,55 @@
+{
+	"name": "account.aliyuncs.com.GetPubKey.2013-07-01",
+	"apiChineseName": "获取用户公钥",
+	"description": "根据用户的appkey查询用户的pubkey",
+	"requestParams": [
+		{
+			"name": "OwnerAppkey",
+			"type": "String",
+			"description": "appkey",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "PubKey",
+			"type": "String",
+			"description": "用户的公钥"
+		},
+		{
+			"name": "OwnerId",
+			"type": "String",
+			"description": "appkey的OwnerId"
+		},
+		{
+			"name": "KeyType",
+			"type": "String",
+			"description": "用户appkey的类型"
+		},
+		{
+			"name": "CreateTime",
+			"type": "Date",
+			"description": "创建key的时间"
+		},
+		{
+			"name": "RequestId",
+			"type": "String",
+			"description": "RequestId"
+		},
+		{
+			"name": "Message",
+			"type": "String",
+			"description": "Message"
+		},
+		{
+			"name": "Code",
+			"type": "String",
+			"description": "返回code"
+		},
+		{
+			"name": "AppKey",
+			"type": "String",
+			"description": "用户的appkey"
+		}
+	]
+}

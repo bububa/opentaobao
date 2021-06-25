@@ -1,0 +1,78 @@
+{
+	"name": "taobao.crm.exchange.activity.create",
+	"apiChineseName": "创建积分兑换活动",
+	"description": "创建针对积分兑换类型的活动",
+	"requestParams": [
+		{
+			"name": "exchange_activity_create_dto",
+			"type": "ExchangeActivityCreateDto",
+			"description": "创建积分兑换活动",
+			"required": true,
+			"subParams": [
+				{
+					"name": "exclude_area",
+					"type": "String",
+					"description": "不包邮地区"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "活动结束时间",
+					"required": true
+				},
+				{
+					"name": "free_postage",
+					"type": "Boolean",
+					"description": "商品是否包邮"
+				},
+				{
+					"name": "activity_tag",
+					"type": "String",
+					"description": "优惠标签",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "活动开始时间",
+					"required": true
+				},
+				{
+					"name": "itme_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称",
+					"required": true
+				},
+				{
+					"name": "fix_price",
+					"type": "Number",
+					"description": "商品一口价",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动ID"
+		},
+		{
+			"name": "crowdinstance_id",
+			"type": "Number",
+			"description": "人群实例ID"
+		},
+		{
+			"name": "sub_success",
+			"type": "Boolean",
+			"description": "接口调用成功"
+		}
+	]
+}

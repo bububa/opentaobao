@@ -1,0 +1,19 @@
+{
+	"name": "tmall.item.combine.get",
+	"apiChineseName": "组合商品获取接口",
+	"description": "查询组合商品的SKU信息",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "组合商品ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "Json []",
+			"description": "results"
+		}
+	]
+}

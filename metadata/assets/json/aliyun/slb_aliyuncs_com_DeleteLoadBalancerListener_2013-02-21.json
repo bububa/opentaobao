@@ -1,0 +1,28 @@
+{
+	"name": "slb.aliyuncs.com.DeleteLoadBalancerListener.2013-02-21",
+	"apiChineseName": "删除 slb listener",
+	"description": "delete_vip",
+	"requestParams": [
+		{
+			"name": "loadBalancerId",
+			"type": "String",
+			"description": "loadBalancerId",
+			"required": true
+		},
+		{
+			"name": "listenerPort",
+			"type": "Number",
+			"description": "listenerPort",
+			"required": true,
+			"maxValue": 65535,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "requestid",
+			"type": "String",
+			"description": "request id"
+		}
+	]
+}

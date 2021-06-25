@@ -1,0 +1,25 @@
+{
+	"name": "tmall.product.add.schema.get",
+	"apiChineseName": "产品发布规则获取接口",
+	"description": "获取用户发布产品的规则",
+	"requestParams": [
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "商品发布的目标类目，必须是叶子类目",
+			"required": true
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "品牌ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "add_product_rule",
+			"type": "String",
+			"description": "返回发布产品的规则文档"
+		}
+	]
+}

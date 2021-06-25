@@ -1,0 +1,66 @@
+{
+	"name": "taobao.apple.olduser.charge.notify",
+	"apiChineseName": "老用户激活并兑换通知接口",
+	"description": "老用户激活并兑换通知接口",
+	"requestParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "结果code"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果信息说明"
+		},
+		{
+			"name": "main_data",
+			"type": "AppleTopOldSignNotifyDo",
+			"description": "业务参数",
+			"subParams": [
+				{
+					"name": "card_no",
+					"type": "String",
+					"description": "电子卡卡号"
+				},
+				{
+					"name": "goods_id",
+					"type": "String",
+					"description": "商品编号"
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "商户订单号"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "附加信息，后续可以扩展"
+				},
+				{
+					"name": "face_price",
+					"type": "String",
+					"description": "面值，单位分"
+				},
+				{
+					"name": "gateway_order_no",
+					"type": "String",
+					"description": "网关订单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "处理结果说明"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "处理结果码"
+		}
+	]
+}

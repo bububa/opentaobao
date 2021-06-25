@@ -1,0 +1,58 @@
+{
+	"name": "aliexpress.social.currency.get",
+	"apiChineseName": "币种获取接口",
+	"description": "获取目前AE社交支持的币种",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "包类型",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "CurrencyDto[]",
+					"description": "结果封装",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "货币编码",
+							"required": true
+						},
+						{
+							"name": "symbol",
+							"type": "String",
+							"description": "货币显示标示",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "货币名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

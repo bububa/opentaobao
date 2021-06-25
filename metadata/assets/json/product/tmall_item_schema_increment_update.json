@@ -1,0 +1,31 @@
+{
+	"name": "tmall.item.schema.increment.update",
+	"apiChineseName": "天猫根据规则增量更新商品",
+	"description": "增量方式修改天猫商品的API。只要是此接口支持增量修改的字段，可以同时更新。（感谢爱慕旗舰店提供API命名）",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "需要编辑的商品ID",
+			"required": true
+		},
+		{
+			"name": "xml_data",
+			"type": "String",
+			"description": "根据tmall.item.increment.update.schema.get生成的商品增量编辑规则入参数据。需要更新的字段，一定要在入参的XML重点update_fields字段中明确指明",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_item_result",
+			"type": "String",
+			"description": "返回商品发布结果"
+		},
+		{
+			"name": "gmt_modified",
+			"type": "Date",
+			"description": "商品更新操作成功时间"
+		}
+	]
+}

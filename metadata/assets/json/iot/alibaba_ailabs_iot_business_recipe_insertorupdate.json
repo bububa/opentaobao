@@ -1,0 +1,188 @@
+{
+	"name": "alibaba.ailabs.iot.business.recipe.insertorupdate",
+	"apiChineseName": "插入和更新食谱",
+	"description": "插入和更新食谱，将isv的食谱添加到云端进行存储",
+	"requestParams": [
+		{
+			"name": "param_business_recipe_open_param",
+			"type": "BusinessRecipeOpenParam",
+			"description": "行业食谱开放参数",
+			"subParams": [
+				{
+					"name": "description",
+					"type": "String",
+					"description": "菜谱描述"
+				},
+				{
+					"name": "dev_type_id",
+					"type": "Number",
+					"description": "品类Id",
+					"required": true
+				},
+				{
+					"name": "recipe_id",
+					"type": "Number",
+					"description": "食谱id"
+				},
+				{
+					"name": "open_account_id",
+					"type": "String",
+					"description": "开放账号id",
+					"required": true
+				},
+				{
+					"name": "recipe_image",
+					"type": "ImageUrlParam",
+					"description": "食谱图片",
+					"subParams": [
+						{
+							"name": "img",
+							"type": "String",
+							"description": "默认图片"
+						},
+						{
+							"name": "large",
+							"type": "String",
+							"description": "大图"
+						},
+						{
+							"name": "medium",
+							"type": "String",
+							"description": "中图"
+						},
+						{
+							"name": "small",
+							"type": "String",
+							"description": "小图"
+						}
+					]
+				},
+				{
+					"name": "recipe_ingredient_list",
+					"type": "RecipeIngredientParam[]",
+					"description": "重量及单位",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "参数名"
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "重量及单位"
+						}
+					]
+				},
+				{
+					"name": "recipe_name_cn",
+					"type": "String",
+					"description": "食谱中文名",
+					"required": true
+				},
+				{
+					"name": "recipe_type",
+					"type": "Number",
+					"description": "食谱类型 0视频菜谱 1图文菜谱",
+					"required": true
+				},
+				{
+					"name": "recipe_video",
+					"type": "VideoUrlParam",
+					"description": "食谱视频",
+					"subParams": [
+						{
+							"name": "cover",
+							"type": "ImageUrlParam",
+							"description": "视频封面图",
+							"subParams": [
+								{
+									"name": "img",
+									"type": "String",
+									"description": "默认图片"
+								},
+								{
+									"name": "large",
+									"type": "String",
+									"description": "大图"
+								},
+								{
+									"name": "medium",
+									"type": "String",
+									"description": "中图"
+								},
+								{
+									"name": "small",
+									"type": "String",
+									"description": "小图"
+								}
+							]
+						},
+						{
+							"name": "default_url",
+							"type": "String",
+							"description": "默认播放链接"
+						},
+						{
+							"name": "height",
+							"type": "Number",
+							"description": "视频高度"
+						},
+						{
+							"name": "high",
+							"type": "String",
+							"description": "高清"
+						},
+						{
+							"name": "standard",
+							"type": "String",
+							"description": "标清"
+						},
+						{
+							"name": "ultra",
+							"type": "String",
+							"description": "超清"
+						},
+						{
+							"name": "width",
+							"type": "Number",
+							"description": "视频宽度"
+						}
+					]
+				},
+				{
+					"name": "tag_id_list",
+					"type": "Number[]",
+					"description": "标签列表"
+				},
+				{
+					"name": "tips",
+					"type": "String",
+					"description": "菜谱提示信息"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "信息"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "响应code"
+		},
+		{
+			"name": "ret_value",
+			"type": "Number",
+			"description": "返回结果，行业食谱Id"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "追踪id"
+		}
+	]
+}

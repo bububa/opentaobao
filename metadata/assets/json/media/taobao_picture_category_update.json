@@ -1,0 +1,31 @@
+{
+	"name": "taobao.picture.category.update",
+	"apiChineseName": "更新图片分类",
+	"description": "更新图片分类的名字，或者更新图片分类的父分类（即分类移动）。只能移动2级分类到非2级分类，默认分类和1级分类不可移动。",
+	"requestParams": [
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "要更新的图片分类的id",
+			"required": true
+		},
+		{
+			"name": "category_name",
+			"type": "String",
+			"description": "图片分类的新名字，最大长度20字符，不能为空",
+			"maxLength": 20
+		},
+		{
+			"name": "parent_id",
+			"type": "Number",
+			"description": "图片分类的新父分类id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "done",
+			"type": "Boolean",
+			"description": "更新图片分类是否成功"
+		}
+	]
+}

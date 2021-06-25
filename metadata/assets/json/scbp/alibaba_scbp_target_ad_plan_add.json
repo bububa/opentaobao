@@ -1,0 +1,45 @@
+{
+	"name": "alibaba.scbp.target.ad.plan.add",
+	"apiChineseName": "定向推广-新建计划",
+	"description": "定向推广-新建单条计划",
+	"requestParams": [
+		{
+			"name": "top_p4p_basic_quick_campaign",
+			"type": "BasicQuickCampaign",
+			"description": "定向推广基础信息",
+			"subParams": [
+				{
+					"name": "max_price",
+					"type": "String",
+					"description": "出价区间-上限(可以存在1位小数，大于等于3)",
+					"required": true
+				},
+				{
+					"name": "min_price",
+					"type": "String",
+					"description": "出价区间-下限(可以存在1位小数)",
+					"required": true
+				},
+				{
+					"name": "budget",
+					"type": "Number",
+					"description": "每日预算,不低于50元",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "计划名称,不能大于20字符",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划ID"
+		}
+	]
+}

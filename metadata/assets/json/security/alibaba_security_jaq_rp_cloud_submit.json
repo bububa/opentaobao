@@ -1,0 +1,418 @@
+{
+	"name": "alibaba.security.jaq.rp.cloud.submit",
+	"apiChineseName": "实人认证云服务提交接口",
+	"description": "聚安全实人认证提交认证接口",
+	"requestParams": [
+		{
+			"name": "verify_token",
+			"type": "String",
+			"description": "认证token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "RpSubmitResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "extra_info",
+					"type": "String",
+					"description": "extraInfo",
+					"required": true
+				},
+				{
+					"name": "rp_audit_result",
+					"type": "RpAuditResult",
+					"description": "rpAuditResult",
+					"required": true,
+					"subParams": [
+						{
+							"name": "audit_status",
+							"type": "RpAuditStatus",
+							"description": "auditStatus",
+							"required": true,
+							"subParams": [
+								{
+									"name": "code",
+									"type": "Number",
+									"description": "code",
+									"required": true
+								},
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "desc",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "name",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "biz",
+							"type": "String",
+							"description": "biz",
+							"required": true
+						},
+						{
+							"name": "cur_grade",
+							"type": "RpGrade",
+							"description": "curGrade",
+							"required": true,
+							"subParams": [
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "desc",
+									"required": true
+								},
+								{
+									"name": "level",
+									"type": "Number",
+									"description": "level",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "name",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "grade_certified",
+							"type": "Boolean",
+							"description": "gradeCertified",
+							"required": true
+						},
+						{
+							"name": "require_grade",
+							"type": "RpGrade",
+							"description": "requireGrade",
+							"required": true,
+							"subParams": [
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "desc",
+									"required": true
+								},
+								{
+									"name": "level",
+									"type": "Number",
+									"description": "level",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "name",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "review_status",
+							"type": "Boolean",
+							"description": "reviewStatus",
+							"required": true
+						},
+						{
+							"name": "review_type",
+							"type": "String",
+							"description": "reviewType",
+							"required": true
+						},
+						{
+							"name": "rp_audit_details",
+							"type": "RpAuditDetails",
+							"description": "rpAuditDetails",
+							"required": true,
+							"subParams": [
+								{
+									"name": "audit_finish_time",
+									"type": "Date",
+									"description": "auditFinishTime",
+									"required": true
+								},
+								{
+									"name": "comparison_detail_list",
+									"type": "RpAuditComparisonDetail[]",
+									"description": "comparisonDetail",
+									"required": true,
+									"subParams": [
+										{
+											"name": "result_type",
+											"type": "RpAuditType",
+											"description": "resultType",
+											"required": true,
+											"subParams": [
+												{
+													"name": "code",
+													"type": "Number",
+													"description": "code",
+													"required": true
+												},
+												{
+													"name": "desc",
+													"type": "String",
+													"description": "desc",
+													"required": true
+												},
+												{
+													"name": "name",
+													"type": "String",
+													"description": "name",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "score",
+											"type": "String",
+											"description": "score",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "RpAuditValue",
+											"description": "value",
+											"required": true,
+											"subParams": [
+												{
+													"name": "code",
+													"type": "Number",
+													"description": "code",
+													"required": true
+												},
+												{
+													"name": "desc",
+													"type": "String",
+													"description": "desc",
+													"required": true
+												},
+												{
+													"name": "name",
+													"type": "String",
+													"description": "name",
+													"required": true
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "material_detail_list",
+									"type": "RpAuditMaterialDetail[]",
+									"description": "materialDetail",
+									"required": true,
+									"subParams": [
+										{
+											"name": "code",
+											"type": "String",
+											"description": "code",
+											"required": true
+										},
+										{
+											"name": "display",
+											"type": "String",
+											"description": "display",
+											"required": true
+										},
+										{
+											"name": "intercept",
+											"type": "Boolean",
+											"description": "intercept",
+											"required": true
+										},
+										{
+											"name": "material_type",
+											"type": "String",
+											"description": "materialType",
+											"required": true
+										},
+										{
+											"name": "security",
+											"type": "Boolean",
+											"description": "security",
+											"required": true
+										},
+										{
+											"name": "suggestion",
+											"type": "String",
+											"description": "suggestion",
+											"required": true
+										},
+										{
+											"name": "text",
+											"type": "String",
+											"description": "text",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "String",
+											"description": "type",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "review_deadline",
+									"type": "Date",
+									"description": "reviewDeadline",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "rp_user_result",
+							"type": "RpUserResult",
+							"description": "rpUserResult",
+							"required": true,
+							"subParams": [
+								{
+									"name": "users",
+									"type": "Json[]",
+									"description": "users",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "steps",
+					"type": "RpStepItem[]",
+					"description": "steps",
+					"required": true,
+					"subParams": [
+						{
+							"name": "json_assist",
+							"type": "String",
+							"description": "jsonAssist",
+							"required": true
+						},
+						{
+							"name": "properties",
+							"type": "RpStepProperty[]",
+							"description": "properties",
+							"required": true,
+							"subParams": [
+								{
+									"name": "optional",
+									"type": "Boolean",
+									"description": "optional",
+									"required": true
+								},
+								{
+									"name": "property",
+									"type": "RpProperty",
+									"description": "property",
+									"required": true,
+									"subParams": [
+										{
+											"name": "code",
+											"type": "Number",
+											"description": "code",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "step_type",
+							"type": "RpStepType",
+							"description": "stepType",
+							"required": true,
+							"subParams": [
+								{
+									"name": "code",
+									"type": "Number",
+									"description": "code",
+									"required": true
+								},
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "desc",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "name",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "upload_token",
+					"type": "StsUploadToken",
+					"description": "uploadToken",
+					"required": true,
+					"subParams": [
+						{
+							"name": "access_key_id",
+							"type": "String",
+							"description": "accessKeyId",
+							"required": true
+						},
+						{
+							"name": "access_key_secret",
+							"type": "String",
+							"description": "accessKeySecret",
+							"required": true
+						},
+						{
+							"name": "bucket_name",
+							"type": "String",
+							"description": "bucketName",
+							"required": true
+						},
+						{
+							"name": "end_point",
+							"type": "String",
+							"description": "endPoint",
+							"required": true
+						},
+						{
+							"name": "expiration",
+							"type": "String",
+							"description": "expiration",
+							"required": true
+						},
+						{
+							"name": "path",
+							"type": "String",
+							"description": "path",
+							"required": true
+						},
+						{
+							"name": "token",
+							"type": "String",
+							"description": "token",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

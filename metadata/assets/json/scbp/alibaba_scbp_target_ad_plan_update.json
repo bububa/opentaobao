@@ -1,0 +1,48 @@
+{
+	"name": "alibaba.scbp.target.ad.plan.update",
+	"apiChineseName": "定向推广-更新推广计划的基础信息",
+	"description": "定向推广-更新推广计划的基础信息",
+	"requestParams": [
+		{
+			"name": "top_p4p_basic_quick_campaign",
+			"type": "TopP4pBasicQuickCampaign",
+			"description": "TopP4pBasicQuickCampaign",
+			"required": true,
+			"subParams": [
+				{
+					"name": "max_price",
+					"type": "String",
+					"description": "出价区间-上限(一位小数，不低于3.0)"
+				},
+				{
+					"name": "min_price",
+					"type": "String",
+					"description": "出价区间-下限(一位小数)"
+				},
+				{
+					"name": "budget",
+					"type": "Number",
+					"description": "计划每日预算"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "计划标题"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "推广计划id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "true修改成功，false修改失败"
+		}
+	]
+}

@@ -1,0 +1,95 @@
+{
+	"name": "taobao.eticket.merchant.ma.consume",
+	"apiChineseName": "电子凭证核销接口",
+	"description": "电子凭证核销接口",
+	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "Number",
+			"description": "业务类型"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "需要被核销的码",
+			"required": true
+		},
+		{
+			"name": "consume_num",
+			"type": "Number",
+			"description": "核销份数",
+			"required": true
+		},
+		{
+			"name": "isv_ma_list",
+			"type": "IsvMa[]",
+			"description": "核销后换码的码列表",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "串码码值"
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "码的可核销份数"
+				},
+				{
+					"name": "qr_image",
+					"type": "String",
+					"description": "二维码图片文件名。已经申请了上传二维码的码商必填，其它码商无需关心。这个值是taobao.eticket.merchant.img.upload调用后的file_name"
+				}
+			]
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "业务id（订单号）",
+			"required": true
+		},
+		{
+			"name": "pos_id",
+			"type": "String",
+			"description": "机具编号"
+		},
+		{
+			"name": "serial_num",
+			"type": "String",
+			"description": "核销序列号，需要保证唯一",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "需要跟发码通知获取到的参数一致",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_body",
+			"type": "ConsumeMaCallbackResp",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "attribute_map",
+					"type": "Json",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "ret_code",
+			"type": "String",
+			"description": "子结果码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "子结果信息"
+		}
+	]
+}

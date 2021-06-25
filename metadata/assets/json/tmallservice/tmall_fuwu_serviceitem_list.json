@@ -1,0 +1,57 @@
+{
+	"name": "tmall.fuwu.serviceitem.list",
+	"apiChineseName": "获取服务商品扩展信息",
+	"description": "获取服务商品扩展信息",
+	"requestParams": [
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "商品所属卖家账号id"
+		},
+		{
+			"name": "itemids",
+			"type": "Number[]",
+			"description": "商品id列表，有数量限制",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "Json",
+					"description": "服务商品信息列表的json对象",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "error_type",
+					"type": "Number",
+					"description": "errorType",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "isSuccess",
+					"required": true
+				}
+			]
+		}
+	]
+}

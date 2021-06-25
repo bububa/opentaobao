@@ -1,0 +1,58 @@
+{
+	"name": "tmall.item.store.update.schema.get",
+	"apiChineseName": "天猫门店商品修改规则获取",
+	"description": "天猫门店商品修改规则获取",
+	"requestParams": [
+		{
+			"name": "main_item_id",
+			"type": "Number",
+			"description": "主商品ID",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "无",
+			"subParams": [
+				{
+					"name": "er_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "er_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "商品标题，价格，图片等商品数据的schema xml",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				},
+				{
+					"name": "mapped_error_messages",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

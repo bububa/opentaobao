@@ -1,0 +1,295 @@
+{
+	"name": "alibaba.servicecenter.fulfiltask.query",
+	"apiChineseName": "核销单查询",
+	"description": "当系统生成核销单之后，需要派单到服务商，服务商根据核销里的服务信息和用户信息，给消费者提供服务",
+	"requestParams": [
+		{
+			"name": "gmt_create_start",
+			"type": "Date",
+			"description": "时间段查询，核销单创建时间，时间段跨度不超过15分钟"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数，默认50，最大50"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "核销单外部单号"
+		},
+		{
+			"name": "gmt_create_end",
+			"type": "Date",
+			"description": "时间段查询，核销单创建时间，时间段跨度不超过15分钟"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "查询第几页"
+		},
+		{
+			"name": "fulfil_task_id_list",
+			"type": "Number[]",
+			"description": "核销单id列表",
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总条数",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "values",
+					"type": "Value[]",
+					"description": "核销单",
+					"required": true,
+					"subParams": [
+						{
+							"name": "workcard_id_list",
+							"type": "Number[]",
+							"description": "工单id列表",
+							"required": true
+						},
+						{
+							"name": "fulfil_type_code",
+							"type": "String",
+							"description": "履约方式",
+							"required": true
+						},
+						{
+							"name": "gmt_modify",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "biz_code",
+							"type": "String",
+							"description": "业务身份",
+							"required": true
+						},
+						{
+							"name": "gmt_next_contact",
+							"type": "Date",
+							"description": "下次联系时间",
+							"required": true
+						},
+						{
+							"name": "memo",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "reservation",
+							"type": "Reservation",
+							"description": "预约信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "reserve_time_end",
+									"type": "Date",
+									"description": "预约时间",
+									"required": true
+								},
+								{
+									"name": "reserve_time_start",
+									"type": "Date",
+									"description": "预约时间",
+									"required": true
+								},
+								{
+									"name": "reserve_request_source_type",
+									"type": "String",
+									"description": "预约来源",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "reason_code",
+							"type": "Number",
+							"description": "原因编码",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "核销单id",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "buyer",
+							"type": "Buyer",
+							"description": "买家信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "address_province",
+									"type": "String",
+									"description": "省",
+									"required": true
+								},
+								{
+									"name": "buyer_nick",
+									"type": "String",
+									"description": "买家昵称",
+									"required": true
+								},
+								{
+									"name": "mobile",
+									"type": "String",
+									"description": "买家手机号",
+									"required": true
+								},
+								{
+									"name": "buyer_name",
+									"type": "String",
+									"description": "买家姓名",
+									"required": true
+								},
+								{
+									"name": "address_town",
+									"type": "String",
+									"description": "街道",
+									"required": true
+								},
+								{
+									"name": "address_detail",
+									"type": "String",
+									"description": "买家详细地址",
+									"required": true
+								},
+								{
+									"name": "phone",
+									"type": "String",
+									"description": "买家固定电话",
+									"required": true
+								},
+								{
+									"name": "full_address",
+									"type": "String",
+									"description": "买家完整地址",
+									"required": true
+								},
+								{
+									"name": "location",
+									"type": "Number",
+									"description": "地区编码",
+									"required": true
+								},
+								{
+									"name": "address_district",
+									"type": "String",
+									"description": "区",
+									"required": true
+								},
+								{
+									"name": "address_city",
+									"type": "String",
+									"description": "市",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "service_provider",
+							"type": "ServiceProvider",
+							"description": "服务提供者信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "service_store_code",
+									"type": "String",
+									"description": "网点编码",
+									"required": true
+								},
+								{
+									"name": "service_store_name",
+									"type": "String",
+									"description": "网点名称",
+									"required": true
+								},
+								{
+									"name": "worker_mobile",
+									"type": "String",
+									"description": "工人电话",
+									"required": true
+								},
+								{
+									"name": "service_store_id",
+									"type": "Number",
+									"description": "网点id",
+									"required": true
+								},
+								{
+									"name": "worker_name",
+									"type": "String",
+									"description": "工人姓名",
+									"required": true
+								},
+								{
+									"name": "tp_nick",
+									"type": "String",
+									"description": "服务商昵称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "核销单外部单号",
+							"required": true
+						},
+						{
+							"name": "reason_desc",
+							"type": "String",
+							"description": "原因描述",
+							"required": true
+						},
+						{
+							"name": "status_code",
+							"type": "String",
+							"description": "状态编码",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

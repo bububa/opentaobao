@@ -1,0 +1,49 @@
+{
+	"name": "alibaba.mj.oc.offline.maxticketno.get",
+	"apiChineseName": "pos机获取线下最大小票号",
+	"description": "给pos机提供线下最大小票号查询",
+	"requestParams": [
+		{
+			"name": "pos_no",
+			"type": "String",
+			"description": "收银机号"
+		},
+		{
+			"name": "store_no",
+			"type": "String",
+			"description": "外部门店号"
+		},
+		{
+			"name": "datetime",
+			"type": "String",
+			"description": "日期"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "pay_date",
+			"type": "String",
+			"description": "时间"
+		},
+		{
+			"name": "pos_no",
+			"type": "String",
+			"description": "收银机号"
+		},
+		{
+			"name": "union",
+			"type": "Boolean",
+			"description": "联合收银标记"
+		},
+		{
+			"name": "pay_no",
+			"type": "String",
+			"description": "小票号"
+		},
+		{
+			"name": "store_no",
+			"type": "String",
+			"description": "外部门店号"
+		}
+	]
+}

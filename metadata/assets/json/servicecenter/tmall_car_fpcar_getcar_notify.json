@@ -1,0 +1,45 @@
+{
+	"name": "tmall.car.fpcar.getcar.notify",
+	"apiChineseName": "门店通知用户提车",
+	"description": "提供给外部(大搜或其它合作方)的接口-门店通知用户提车",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品宝贝id"
+		},
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "卖家id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "object",
+			"type": "String",
+			"description": "返回的数据结果"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		},
+		{
+			"name": "succes",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

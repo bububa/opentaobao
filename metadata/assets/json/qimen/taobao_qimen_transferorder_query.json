@@ -1,0 +1,169 @@
+{
+	"name": "taobao.qimen.transferorder.query",
+	"apiChineseName": "调拨单查询",
+	"description": "调拨单查询",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Struct",
+			"required": true,
+			"subParams": [
+				{
+					"name": "transferOrderCode",
+					"type": "String",
+					"description": "调拨单号",
+					"required": true
+				},
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "111",
+					"required": true
+				},
+				{
+					"name": "erpOrderCode",
+					"type": "String",
+					"description": "ERP单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Struct",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure,success,string(10),必填,",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码,0,string(50),,",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息,invalid appkey,string(100),,",
+					"required": true
+				},
+				{
+					"name": "transferOrderDetail",
+					"type": "TransferOrderDetail",
+					"description": "调拨单细节",
+					"required": true,
+					"subParams": [
+						{
+							"name": "transferOrderCode",
+							"type": "String",
+							"description": "调拨单号,0,string(50),,",
+							"required": true
+						},
+						{
+							"name": "erpOrderCode",
+							"type": "String",
+							"description": "外部ERP订单号,HZ1234,string(50),,",
+							"required": true
+						},
+						{
+							"name": "orderStatus",
+							"type": "String",
+							"description": "订单状态,0,string(50),,",
+							"required": true
+						},
+						{
+							"name": "transferOutOrderCode",
+							"type": "String",
+							"description": "调拨出库单号",
+							"required": true
+						},
+						{
+							"name": "transferInOrderCode",
+							"type": "String",
+							"description": "调拨入库单号",
+							"required": true
+						},
+						{
+							"name": "createTime",
+							"type": "String",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "confirmOutTime",
+							"type": "String",
+							"description": "确认出库时间",
+							"required": true
+						},
+						{
+							"name": "confirmInTime",
+							"type": "String",
+							"description": "确认入库时间",
+							"required": true
+						},
+						{
+							"name": "fromWarehouseCode",
+							"type": "String",
+							"description": "调拨出库仓编码",
+							"required": true
+						},
+						{
+							"name": "toWarehouseCode",
+							"type": "String",
+							"description": "调拨入库仓编码",
+							"required": true
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "1111",
+							"required": true
+						},
+						{
+							"name": "items",
+							"type": "Item[]",
+							"description": "调拨单货品明细记录集",
+							"required": true,
+							"subParams": [
+								{
+									"name": "scItemCode",
+									"type": "String",
+									"description": "货品编码,HZ1234,string(50),,",
+									"required": true
+								},
+								{
+									"name": "inventoryType",
+									"type": "String",
+									"description": "库存类型(1:可销售库存.101:残次),HZ1234,string(500),,",
+									"required": true
+								},
+								{
+									"name": "planCount",
+									"type": "String",
+									"description": "计划调拨数量,Item1234,string(50),,",
+									"required": true
+								},
+								{
+									"name": "outCount",
+									"type": "String",
+									"description": "实际出库数量,Item1234,string(50),,",
+									"required": true
+								},
+								{
+									"name": "inCount",
+									"type": "String",
+									"description": "实际入库数量,Item1234,string(50),,",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

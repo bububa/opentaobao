@@ -1,0 +1,103 @@
+{
+	"name": "taobao.qianniu.task.create",
+	"apiChineseName": "创建轻任务",
+	"description": "发起一个轻任务，分配给多个执行者，并发送消息提醒，由任务发起者调用",
+	"requestParams": [
+		{
+			"name": "meta",
+			"type": "String",
+			"description": "任务元数据，JSON格式，例如：\u003cbr/\u003emeta = {\u003cbr/\u003e            title : \"可自定义\",\u003cbr/\u003e            content : “任务正文”,\u003cbr/\u003e            sender_uid : user_id,\u003cbr/\u003e            sender_nick : user_nick,\u003cbr/\u003e            reminder_flag : 1,\u003cbr/\u003e            finish_strategy : 0,\u003cbr/\u003e         biz_type : \"memo\",\u003cbr/\u003e         priority : 0\u003cbr/\u003e        };\u003cbr/\u003e说明：reminder_flag:1表示需要发送任务提醒消息,0表示不需要消息提醒。建议写1;\u003cbr/\u003efinish_strategy : 0表示只要一个人完成任务就可以，1表示所有人都需要完成任务。根据场景设置，建议选0;\u003cbr/\u003ebiz_type : 任务类型，请咨询千牛官方获取正确的任务类型;\u003cbr/\u003epriority : 1表示高优先级，0表示普通;\u003cbr/\u003e这里的举例为必填字段，一些选填字段没有列出，如有其它需求请联系千牛官方。",
+			"required": true
+		},
+		{
+			"name": "tasks",
+			"type": "String",
+			"description": "任务列表，JSON格式的数组，即支持多个接收人，例如：\u003cbr/\u003etask = [{\u003cbr/\u003e            receiver_uid : user_id,\u003cbr/\u003e            receiver_nick : user_nick,\u003cbr/\u003e            biz_type : \"memo\",\u003cbr/\u003e            sub_biz_type : \"memo\",\u003cbr/\u003e            biz_id : user_nick,\u003cbr/\u003e            biz_nick : user_nick\u003cbr/\u003e         }];\u003cbr/\u003e上述为必填字段，其它字段请咨询千牛官方。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "QTaskMetadata",
+			"description": "创建的任务元数据",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "任务标题"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "任务摘要内容"
+				},
+				{
+					"name": "biz_sys_id",
+					"type": "Number",
+					"description": "来源系统ID"
+				},
+				{
+					"name": "biz_sys_task_type",
+					"type": "Number",
+					"description": "任务在来源系统的类型, 这个是业务系统的自定义类型"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "任务开始时间，格式：当前时间毫秒数"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "任务结束时间，格式：当前时间毫秒数"
+				},
+				{
+					"name": "sender_uid",
+					"type": "Number",
+					"description": "发起者用户数字ID"
+				},
+				{
+					"name": "sender_nick",
+					"type": "String",
+					"description": "发起者用户昵称"
+				},
+				{
+					"name": "reminder_flag",
+					"type": "Number",
+					"description": "提醒标志位： 0表示不需要提醒，1表示需要状态变更提醒"
+				},
+				{
+					"name": "finish_strategy",
+					"type": "Number",
+					"description": "任务完成标识： 0表示只要有一个人完成任务即可，1表示所有人需要各自都完成任务"
+				},
+				{
+					"name": "task_count",
+					"type": "Number",
+					"description": "与此任务元相关的任务数"
+				},
+				{
+					"name": "priority",
+					"type": "Number",
+					"description": "优先级，0低，1中，2高"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "任务元备注"
+				},
+				{
+					"name": "attachments",
+					"type": "String",
+					"description": "轻任务附件信息，userId_timestamp_随机字符串，例如：23434_1234458623_seresfto"
+				}
+			]
+		}
+	]
+}

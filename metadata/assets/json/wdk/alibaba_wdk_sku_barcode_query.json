@@ -1,0 +1,66 @@
+{
+	"name": "alibaba.wdk.sku.barcode.query",
+	"apiChineseName": "商品条码查询接口",
+	"description": "查询商品编码，支持一品多码",
+	"requestParams": [
+		{
+			"name": "sku_code",
+			"type": "String",
+			"description": "商品编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResults",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "BarcodeBo[]",
+					"description": "条码结果集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "条码",
+							"required": true
+						},
+						{
+							"name": "spu_spec",
+							"type": "Number",
+							"description": "条码商品规格，6：比如一个条码对应6瓶啤酒",
+							"required": true
+						},
+						{
+							"name": "main_flag",
+							"type": "String",
+							"description": "是否主条码:1是主条码，0非主条码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功，根据该字段判断是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

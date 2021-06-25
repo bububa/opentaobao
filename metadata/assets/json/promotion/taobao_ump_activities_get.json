@@ -1,0 +1,40 @@
+{
+	"name": "taobao.ump.activities.get",
+	"apiChineseName": "查询活动列表",
+	"description": "查询活动列表",
+	"requestParams": [
+		{
+			"name": "tool_id",
+			"type": "Number",
+			"description": "工具id",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "分页的页码",
+			"required": true,
+			"minValue": 0
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页的最大条数",
+			"required": true,
+			"maxValue": 50,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "contents",
+			"type": "String []",
+			"description": "营销活动内容，可以通过ump sdk来进行处理"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "记录总数"
+		}
+	]
+}

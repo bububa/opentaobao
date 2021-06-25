@@ -1,0 +1,88 @@
+{
+	"name": "taobao.baichuan.item.subscribe.relation.query",
+	"apiChineseName": "查询单个订阅关系",
+	"description": "查询单个订阅关系",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result_list",
+					"type": "ResultMeta[]",
+					"description": "返回的list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "data",
+							"type": "ResultData",
+							"description": "返回详细内容",
+							"required": true,
+							"subParams": [
+								{
+									"name": "data_list",
+									"type": "IsvItemSubDo[]",
+									"description": "详细列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "item_status",
+											"type": "byte",
+											"description": "商品状态",
+											"required": true
+										},
+										{
+											"name": "item_id",
+											"type": "Number",
+											"description": "商品id",
+											"required": true
+										},
+										{
+											"name": "add_time",
+											"type": "Date",
+											"description": "添加时间",
+											"required": true
+										},
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "数据库索引id",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "数量",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "返回码文案",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "返回码",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

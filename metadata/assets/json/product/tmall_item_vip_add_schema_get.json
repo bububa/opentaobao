@@ -1,0 +1,12 @@
+{
+	"name": "tmall.item.vip.add.schema.get",
+	"apiChineseName": "vip商家发布商品的获取规则接口",
+	"description": "获取vip商家发布商品的规则",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "返回值是发布商品时需要的字段及基本类型"
+		}
+	]
+}

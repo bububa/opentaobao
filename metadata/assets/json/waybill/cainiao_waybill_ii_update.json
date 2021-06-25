@@ -1,0 +1,174 @@
+{
+	"name": "cainiao.waybill.ii.update",
+	"apiChineseName": "电子面单云打印更新接口",
+	"description": "商家更新电子面单号对应的面单信息。",
+	"requestParams": [
+		{
+			"name": "param_waybill_cloud_print_update_request",
+			"type": "WaybillCloudPrintUpdateRequest",
+			"description": "更新请求信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "物流公司CODE",
+					"required": true
+				},
+				{
+					"name": "logistics_services",
+					"type": "String",
+					"description": "物流服务内容\u003ca href=\"http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.eK8aZm\u0026treeId=17\u0026articleId=26765\u0026docType=2\"\u003e链接\u003c/a\u003e"
+				},
+				{
+					"name": "package_info",
+					"type": "PackageInfoDto",
+					"description": "包裹信息",
+					"subParams": [
+						{
+							"name": "items",
+							"type": "Item[]",
+							"description": "商品",
+							"subParams": [
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "数量"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称"
+								}
+							]
+						},
+						{
+							"name": "volume",
+							"type": "Number",
+							"description": "体积"
+						},
+						{
+							"name": "weight",
+							"type": "Number",
+							"description": "重量"
+						}
+					]
+				},
+				{
+					"name": "recipient",
+					"type": "UserInfoDto",
+					"description": "收件信息",
+					"subParams": [
+						{
+							"name": "address",
+							"type": "AddressDto",
+							"description": "地址",
+							"subParams": [
+								{
+									"name": "city",
+									"type": "String",
+									"description": "城市"
+								},
+								{
+									"name": "detail",
+									"type": "String",
+									"description": "详细地址"
+								},
+								{
+									"name": "district",
+									"type": "String",
+									"description": "区地址"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "街道"
+								}
+							]
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "手机号码"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "姓名"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "固定电话"
+						},
+						{
+							"name": "oaid",
+							"type": "String",
+							"description": "开放地址ID"
+						},
+						{
+							"name": "caid",
+							"type": "String",
+							"description": "菜鸟地址ID，针对电商平台加密订单场景使用，淘系订单使用oaid，非淘使用caid。"
+						}
+					]
+				},
+				{
+					"name": "sender",
+					"type": "UserInfoDto",
+					"description": "发件信息",
+					"subParams": [
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "手机号码"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "姓名"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "固定电话"
+						}
+					]
+				},
+				{
+					"name": "template_url",
+					"type": "String",
+					"description": "模板URL"
+				},
+				{
+					"name": "waybill_code",
+					"type": "String",
+					"description": "面单号",
+					"required": true
+				},
+				{
+					"name": "object_id",
+					"type": "String",
+					"description": "请求表示id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "waybill_code",
+			"type": "String",
+			"description": "面单号"
+		},
+		{
+			"name": "print_data",
+			"type": "String",
+			"description": "模板内容"
+		}
+	]
+}

@@ -1,0 +1,309 @@
+{
+	"name": "alibaba.mj.mos.fund.createbill",
+	"apiChineseName": "创建一个付款单",
+	"description": "创建一个付款单",
+	"requestParams": [
+		{
+			"name": "bill_dto",
+			"type": "CreateBillDto",
+			"description": "创建付款单入参",
+			"subParams": [
+				{
+					"name": "settlement_d_t_o_list",
+					"type": "BillSettlementDto[]",
+					"description": "结算单列表",
+					"subParams": [
+						{
+							"name": "line_no",
+							"type": "String",
+							"description": "行号",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "结算单金额",
+							"required": true
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "结算行税率，普票的税率必须是0，专票的税率不能为0",
+							"required": true
+						},
+						{
+							"name": "biz_sub_module_code",
+							"type": "String",
+							"description": "业务细类代码",
+							"required": true
+						},
+						{
+							"name": "invoice_type",
+							"type": "String",
+							"description": "发票类型 SPECIAL(\"专票\")，ORDINARY(\"普票\")"
+						},
+						{
+							"name": "supplier_no",
+							"type": "String",
+							"description": "供应商id（可空）"
+						},
+						{
+							"name": "supplier_name",
+							"type": "String",
+							"description": "供应商名称（可空"
+						},
+						{
+							"name": "bank_province",
+							"type": "String",
+							"description": "收款方开户省"
+						},
+						{
+							"name": "bank_city",
+							"type": "String",
+							"description": "收款方开户市"
+						},
+						{
+							"name": "account_no",
+							"type": "String",
+							"description": "收款方银行账号",
+							"required": true
+						},
+						{
+							"name": "account_name",
+							"type": "String",
+							"description": "收款方账号名称",
+							"required": true
+						},
+						{
+							"name": "bank_code",
+							"type": "String",
+							"description": "银行号"
+						},
+						{
+							"name": "bank_name",
+							"type": "String",
+							"description": "收款方开户行"
+						},
+						{
+							"name": "bank_branch_name",
+							"type": "String",
+							"description": "收款方开户支行"
+						},
+						{
+							"name": "bank_branch_code",
+							"type": "String",
+							"description": "收款方开户支行code"
+						},
+						{
+							"name": "account_types",
+							"type": "String",
+							"description": "账号类型，COMPANY企业/PERSON个人",
+							"required": true
+						},
+						{
+							"name": "cnaps_code",
+							"type": "String",
+							"description": "联行号",
+							"required": true
+						},
+						{
+							"name": "contactor",
+							"type": "String",
+							"description": "联系人"
+						},
+						{
+							"name": "telephone",
+							"type": "String",
+							"description": "联系方式：国际化区号 + 座机/手机"
+						},
+						{
+							"name": "comments",
+							"type": "String",
+							"description": "付款说明。该字段会通过银行传给供应商，过长时会自动截取"
+						},
+						{
+							"name": "extend_params",
+							"type": "String",
+							"description": "扩展"
+						},
+						{
+							"name": "invoice_d_t_o_list",
+							"type": "SettleInvoiceDto[]",
+							"description": "发票列表",
+							"subParams": [
+								{
+									"name": "invoice_type",
+									"type": "String",
+									"description": "发票类型 SPECIAL(\"专票\")，ORDINARY(\"普票\")"
+								},
+								{
+									"name": "invoiceline_no",
+									"type": "String",
+									"description": "发票行号"
+								},
+								{
+									"name": "invoice_no",
+									"type": "String",
+									"description": "发票号码"
+								},
+								{
+									"name": "excluding_tax_amount",
+									"type": "String",
+									"description": "发票不含税金额"
+								},
+								{
+									"name": "tax_rate",
+									"type": "String",
+									"description": "结算行税率，普票的税率必须是0"
+								},
+								{
+									"name": "tax_amount",
+									"type": "String",
+									"description": "税额，普票时填0"
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "发票总金额， 必须=excludingTaxAmount+taxAmount"
+								},
+								{
+									"name": "invoice_date",
+									"type": "Date",
+									"description": "开票日期"
+								},
+								{
+									"name": "extend_params",
+									"type": "String",
+									"description": "扩展"
+								}
+							]
+						},
+						{
+							"name": "department_coa",
+							"type": "String",
+							"description": "受益部门coa"
+						},
+						{
+							"name": "city_coa",
+							"type": "String",
+							"description": "区域科目段"
+						}
+					]
+				},
+				{
+					"name": "payee_country",
+					"type": "String",
+					"description": "收款方国家，国际标准的2位简码",
+					"required": true
+				},
+				{
+					"name": "currency_code",
+					"type": "String",
+					"description": "支付币种，国际标准的3位简码",
+					"required": true
+				},
+				{
+					"name": "pay_channels",
+					"type": "String",
+					"description": "//BANK(\"普通银行账号\") ,     //SPECIAL_CN_BANK(\"专用银行账号\"),     //ALIPAY(\"支付宝\"),     //OTHER(\"第三方支付\")",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "expense_org_code",
+					"type": "String",
+					"description": "费用发生公司(门店名)",
+					"required": true
+				},
+				{
+					"name": "invoice_rule",
+					"type": "String",
+					"description": "PREPAY(先付款后收票), POSTPAY(先收票后付款), NONE(无票)",
+					"required": true
+				},
+				{
+					"name": "pay_term",
+					"type": "Number",
+					"description": "付款期限，即审批通过后几天付款，不填时以业务模块上的配置为准"
+				},
+				{
+					"name": "expense_org_id",
+					"type": "String",
+					"description": "费用发生公司(门店名)"
+				},
+				{
+					"name": "biz_module_code",
+					"type": "String",
+					"description": "业务模块编码",
+					"required": true
+				},
+				{
+					"name": "attachment_ids",
+					"type": "Number[]",
+					"description": "附件id列表"
+				},
+				{
+					"name": "reqment_applicant",
+					"type": "String",
+					"description": "实际需求方，代理申请时填写实际的需求方",
+					"required": true
+				},
+				{
+					"name": "amount",
+					"type": "String",
+					"description": "//付款单总金额",
+					"required": true
+				},
+				{
+					"name": "auto_sumbit",
+					"type": "Boolean",
+					"description": "是否自动提交审批"
+				},
+				{
+					"name": "bill_no",
+					"type": "String",
+					"description": "单据请求唯一编号，必填",
+					"required": true
+				},
+				{
+					"name": "finance_pre_work_no",
+					"type": "String",
+					"description": "财务初审，如果是免审的单据，填财务工号",
+					"required": true
+				},
+				{
+					"name": "applicant",
+					"type": "String",
+					"description": "申请人工号",
+					"required": true
+				},
+				{
+					"name": "approve_date",
+					"type": "Date",
+					"description": "审批通过时间，如果是免审的单据，该字段必填"
+				},
+				{
+					"name": "extend_params",
+					"type": "String",
+					"description": "扩展"
+				},
+				{
+					"name": "comments",
+					"type": "String",
+					"description": "付款说明，该说明会带到智付的订单上，做为订单说明"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "data"
+		}
+	]
+}

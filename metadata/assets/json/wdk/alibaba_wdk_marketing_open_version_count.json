@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.wdk.marketing.open.version.count",
+	"apiChineseName": "版本数量查询",
+	"description": "版本数量查询",
+	"requestParams": [
+		{
+			"name": "version_id",
+			"type": "Number",
+			"description": "查询版本号",
+			"required": true
+		},
+		{
+			"name": "operate_id",
+			"type": "String",
+			"description": "操作Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "WdkMarketOpenResult",
+			"description": "查询结果",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询结果",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "版本同步数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

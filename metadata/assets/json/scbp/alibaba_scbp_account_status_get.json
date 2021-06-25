@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.scbp.account.status.get",
+	"apiChineseName": "查询账户级别关键词推广状态",
+	"description": "查询账户级别关键词推广状态",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "true:推广中,false:暂停"
+		}
+	]
+}

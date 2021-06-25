@@ -1,0 +1,81 @@
+{
+	"name": "taobao.caipiao.marketing.put",
+	"apiChineseName": "创建或修改商家送彩票活动",
+	"description": "卖家通过此接口新增或修改送彩票活动的配置，比如活动时间、活动的条件等。\n\n店铺装修、宝贝详情页的宣导素材示例：\nhttps://gw.alicdn.com/tfs/TB1_nOiSXXXXXbgXXXXXXXXXXXX-750-280.png\nhttps://gw.alicdn.com/tfs/TB1FZX6SXXXXXXzXFXXXXXXXXXX-790-280.png\nhttps://gw.alicdn.com/tfs/TB1z4t8SXXXXXckXpXXXXXXXXXX-750-280.png\nhttps://gw.alicdn.com/tfs/TB1BhqgSXXXXXcDXXXXXXXXXXXX-750-280.png\nhttps://gw.alicdn.com/tfs/TB1TYt9SXXXXXXAXFXXXXXXXXXX-750-280.png\nhttps://gw.alicdn.com/tfs/TB1tzpNSXXXXXacXVXXXXXXXXXX-790-280.png\nhttps://gw.alicdn.com/tfs/TB1UXdxSXXXXXXsapXXXXXXXXXX-790-280.png\nhttps://gw.alicdn.com/tfs/TB1_gV.SXXXXXbZXpXXXXXXXXXX-790-280.png",
+	"requestParams": [
+		{
+			"name": "detail",
+			"type": "WangcaiMarketingDetail",
+			"description": "活动详情设置",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_id",
+					"type": "String",
+					"description": "外部系统主键",
+					"required": true
+				},
+				{
+					"name": "activity_id",
+					"type": "String",
+					"description": "活动ID,一个活动可以关联多个送彩票设置",
+					"required": true
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称",
+					"required": true
+				},
+				{
+					"name": "activity_type",
+					"type": "Number",
+					"description": "活动类型,0全店/1指定商品",
+					"required": true
+				},
+				{
+					"name": "begin_time",
+					"type": "Date",
+					"description": "活动开始时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "活动结束时间",
+					"required": true
+				},
+				{
+					"name": "min_amount",
+					"type": "Number",
+					"description": "活动的最小金额门槛,以分为单位",
+					"required": true
+				},
+				{
+					"name": "lottery_type_id",
+					"type": "Number",
+					"description": "赠送的彩种,1双色球/8大乐透",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "赠送的彩票注数",
+					"required": true
+				},
+				{
+					"name": "items",
+					"type": "Number[]",
+					"description": "参与活动的商品ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "业务操作结果,true成功/false失败"
+		}
+	]
+}

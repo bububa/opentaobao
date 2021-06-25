@@ -1,0 +1,491 @@
+{
+	"name": "alibaba.servicecenter.spserviceorder.query",
+	"apiChineseName": "服务供应链服务单查询",
+	"description": "服务供应链服务单查询，服务商通过此接口拉取用户的购买的服务信息，以此为依据为用户提供安装维修等服务",
+	"requestParams": [
+		{
+			"name": "status_codes",
+			"type": "String",
+			"description": "状态码，可传多个"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "查询第几页，默认1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小，默认50，最大50"
+		},
+		{
+			"name": "gmt_modified_end",
+			"type": "Date",
+			"description": "服务单修改时间(时间段15分钟以内)(包含时分秒)"
+		},
+		{
+			"name": "gmt_modified_start",
+			"type": "Date",
+			"description": "服务单修改时间(包含时分秒)"
+		},
+		{
+			"name": "master_parent_biz_order_id",
+			"type": "Number",
+			"description": "实物主订单id(消费者在淘宝订单里看到的订单号)"
+		},
+		{
+			"name": "sp_service_order_id",
+			"type": "Number",
+			"description": "服务单id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "请求结果",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "Paged",
+					"description": "分页数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "data_list",
+							"type": "SpServiceorderDTO[]",
+							"description": "工单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "refund_service_count",
+									"type": "Number",
+									"description": "取消的份数",
+									"required": true
+								},
+								{
+									"name": "master_trade_order",
+									"type": "MasterTradeOrderDTO",
+									"description": "实物子订单信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "seller_nick",
+											"type": "String",
+											"description": "卖家名称",
+											"required": true
+										},
+										{
+											"name": "order_id",
+											"type": "Number",
+											"description": "实物子订单id",
+											"required": true
+										},
+										{
+											"name": "auction_title",
+											"type": "String",
+											"description": "商品名称",
+											"required": true
+										},
+										{
+											"name": "attribute",
+											"type": "Json",
+											"description": "商品属性(json格式)",
+											"required": true
+										},
+										{
+											"name": "shop_name",
+											"type": "String",
+											"description": "卖家店铺名称",
+											"required": true
+										},
+										{
+											"name": "auction_id",
+											"type": "Number",
+											"description": "商品id",
+											"required": true
+										},
+										{
+											"name": "buy_amount",
+											"type": "Number",
+											"description": "购买数量",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "商家价格",
+											"required": true
+										},
+										{
+											"name": "parent_biz_order_id",
+											"type": "String",
+											"description": "实物主订单id",
+											"required": true
+										},
+										{
+											"name": "brand_id",
+											"type": "String",
+											"description": "品牌id",
+											"required": true
+										},
+										{
+											"name": "sku_desc",
+											"type": "String",
+											"description": "sku描述",
+											"required": true
+										},
+										{
+											"name": "spu_id",
+											"type": "Number",
+											"description": "spu_id",
+											"required": true
+										},
+										{
+											"name": "sku_id",
+											"type": "Number",
+											"description": "sku_id",
+											"required": true
+										},
+										{
+											"name": "category_id",
+											"type": "Number",
+											"description": "类目id",
+											"required": true
+										},
+										{
+											"name": "outer_id_sku",
+											"type": "String",
+											"description": "商家编码",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "service_definition",
+									"type": "ServiceDefinitionDTO",
+									"description": "服务定义",
+									"required": true,
+									"subParams": [
+										{
+											"name": "service_code",
+											"type": "String",
+											"description": "服务编码",
+											"required": true
+										},
+										{
+											"name": "display_name",
+											"type": "String",
+											"description": "服务名称",
+											"required": true
+										},
+										{
+											"name": "biz_code",
+											"type": "String",
+											"description": "业务编码",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "buyer",
+									"type": "BuyerDTO",
+									"description": "买家信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "address_province",
+											"type": "String",
+											"description": "省",
+											"required": true
+										},
+										{
+											"name": "address_detail",
+											"type": "String",
+											"description": "详细地址",
+											"required": true
+										},
+										{
+											"name": "buyer_nick",
+											"type": "String",
+											"description": "买家淘宝账号",
+											"required": true
+										},
+										{
+											"name": "phone",
+											"type": "String",
+											"description": "买家电话",
+											"required": true
+										},
+										{
+											"name": "mobile",
+											"type": "String",
+											"description": "买家手机号",
+											"required": true
+										},
+										{
+											"name": "location",
+											"type": "Number",
+											"description": "地区编码",
+											"required": true
+										},
+										{
+											"name": "address_district",
+											"type": "String",
+											"description": "区",
+											"required": true
+										},
+										{
+											"name": "buyer_name",
+											"type": "String",
+											"description": "买家姓名",
+											"required": true
+										},
+										{
+											"name": "address_town",
+											"type": "String",
+											"description": "街道",
+											"required": true
+										},
+										{
+											"name": "address_city",
+											"type": "String",
+											"description": "市",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "used_service_count",
+									"type": "Number",
+									"description": "已使用份数",
+									"required": true
+								},
+								{
+									"name": "fee_list",
+									"type": "FeeInfo[]",
+									"description": "费用信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "金额单价(分)",
+											"required": true
+										},
+										{
+											"name": "from_role_code",
+											"type": "String",
+											"description": "出资方code",
+											"required": true
+										},
+										{
+											"name": "to_role_id",
+											"type": "Number",
+											"description": "收款方的id",
+											"required": true
+										},
+										{
+											"name": "item_code",
+											"type": "String",
+											"description": "费用项科目code",
+											"required": true
+										},
+										{
+											"name": "from_role_id",
+											"type": "Number",
+											"description": "出资方id",
+											"required": true
+										},
+										{
+											"name": "to_role_code",
+											"type": "String",
+											"description": "收款方的code",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "left_service_count",
+									"type": "Number",
+									"description": "剩余的份数",
+									"required": true
+								},
+								{
+									"name": "service_trade_order",
+									"type": "ServiceTradeOrderDTO",
+									"description": "服务子订单信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "seller_nick",
+											"type": "String",
+											"description": "卖家名称",
+											"required": true
+										},
+										{
+											"name": "auction_id",
+											"type": "Number",
+											"description": "商品id",
+											"required": true
+										},
+										{
+											"name": "order_id",
+											"type": "Number",
+											"description": "服务子订单id",
+											"required": true
+										},
+										{
+											"name": "auction_title",
+											"type": "String",
+											"description": "商品名称",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "商品价格",
+											"required": true
+										},
+										{
+											"name": "parent_biz_order_id",
+											"type": "Number",
+											"description": "服务主订单id",
+											"required": true
+										},
+										{
+											"name": "attribute",
+											"type": "Json",
+											"description": "服务订单属性(json格式)",
+											"required": true
+										},
+										{
+											"name": "shop_name",
+											"type": "String",
+											"description": "卖家店铺名称",
+											"required": true
+										},
+										{
+											"name": "sku_desc",
+											"type": "String",
+											"description": "sku描述",
+											"required": true
+										},
+										{
+											"name": "category_id",
+											"type": "Number",
+											"description": "类目id",
+											"required": true
+										},
+										{
+											"name": "sku_id",
+											"type": "Number",
+											"description": "sku_id",
+											"required": true
+										},
+										{
+											"name": "outer_id_sku",
+											"type": "String",
+											"description": "商家编码",
+											"required": true
+										},
+										{
+											"name": "purchase_price_unit",
+											"type": "Number",
+											"description": "服务采购价",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "service_count",
+									"type": "Number",
+									"description": "服务的总份数",
+									"required": true
+								},
+								{
+									"name": "gmt_expire",
+									"type": "String",
+									"description": "服务过期时间",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "String",
+									"description": "服务单修改时间",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "String",
+									"description": "服务单创建时间",
+									"required": true
+								},
+								{
+									"name": "gmt_effect",
+									"type": "String",
+									"description": "服务单有效期开始时间",
+									"required": true
+								},
+								{
+									"name": "sp_serviceorder_id",
+									"type": "Number",
+									"description": "服务单id",
+									"required": true
+								},
+								{
+									"name": "using_service_count",
+									"type": "Number",
+									"description": "正在使用中的次数",
+									"required": true
+								},
+								{
+									"name": "status_code",
+									"type": "String",
+									"description": "状态编码：create(创建)、effect(生效)、closed(关闭)、finish(完成)",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total_page_count",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页大小",
+							"required": true
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总记录数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

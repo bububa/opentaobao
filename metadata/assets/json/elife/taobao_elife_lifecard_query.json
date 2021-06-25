@@ -1,0 +1,73 @@
+{
+	"name": "taobao.elife.lifecard.query",
+	"apiChineseName": "查询交易结果",
+	"description": "卖家在交易状态不明的情况下, 查询交易结果.",
+	"requestParams": [
+		{
+			"name": "query_request",
+			"type": "ConsumeRequest",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "店铺号"
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "金额"
+				},
+				{
+					"name": "pay_code",
+					"type": "String",
+					"description": "核销码"
+				},
+				{
+					"name": "op_id",
+					"type": "String",
+					"description": "交易流水号",
+					"required": true
+				},
+				{
+					"name": "sale_ticket",
+					"type": "String",
+					"description": "小票信息"
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "收银员号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "resultMsg"
+		},
+		{
+			"name": "amount",
+			"type": "Number",
+			"description": "amount"
+		},
+		{
+			"name": "successed",
+			"type": "Boolean",
+			"description": "successed"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "resultCode"
+		},
+		{
+			"name": "inflate_amount",
+			"type": "Number",
+			"description": "inflateAmount"
+		}
+	]
+}

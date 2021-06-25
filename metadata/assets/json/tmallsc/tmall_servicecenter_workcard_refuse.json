@@ -1,0 +1,44 @@
+{
+	"name": "tmall.servicecenter.workcard.refuse",
+	"apiChineseName": "买家拒收",
+	"description": "买家拒收通知接口",
+	"requestParams": [
+		{
+			"name": "buyer_refuse_accept_request",
+			"type": "BuyerRefuseAcceptRequest",
+			"description": "买家拒收信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "workcard_id",
+					"type": "Number",
+					"description": "工单ID",
+					"required": true
+				},
+				{
+					"name": "refuse_memo",
+					"type": "String",
+					"description": "拒收备注",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回code"
+		},
+		{
+			"name": "msg_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

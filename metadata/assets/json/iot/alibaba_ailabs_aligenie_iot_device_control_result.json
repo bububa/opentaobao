@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.ailabs.aligenie.iot.device.control.result",
+	"apiChineseName": "设备控制结果",
+	"description": "智能IOT解决外部厂商在云云模式在用户通过天猫精灵下发设备指令过程中，厂商指令完成，回调结果通知",
+	"requestParams": [
+		{
+			"name": "request_token",
+			"type": "String",
+			"description": "请求token",
+			"required": true
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备ID",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "操作类型 1：控制操作 0:查询"
+		},
+		{
+			"name": "control",
+			"type": "Boolean",
+			"description": "控制成功"
+		},
+		{
+			"name": "ack_code",
+			"type": "String",
+			"description": "厂商执行返回ackCode"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status_code",
+			"type": "Number",
+			"description": "statusCode"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "result"
+		}
+	]
+}

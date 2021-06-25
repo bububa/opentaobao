@@ -1,0 +1,62 @@
+{
+	"name": "alibaba.scbp.ad.keyword.delete.keyword.batch",
+	"apiChineseName": "删除关键词",
+	"description": "删除关键词",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "keyword_query",
+			"type": "KeywordQuery",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "keyword_list",
+					"type": "KeywordInfo[]",
+					"description": "请求实体集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键id",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "返回结果"
+		}
+	]
+}

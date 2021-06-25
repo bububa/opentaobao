@@ -1,0 +1,139 @@
+{
+	"name": "push.aliyuncs.com.pushNotification.2015-03-18",
+	"apiChineseName": "推送通知",
+	"description": "pushNotification",
+	"requestParams": [
+		{
+			"name": "Account",
+			"type": "String",
+			"description": "用户账号列表,以换行区分,仅sendType为3时有效"
+		},
+		{
+			"name": "AndroidExtraMap",
+			"type": "String",
+			"description": "自定义的kv结构,开发者扩展用"
+		},
+		{
+			"name": "AndroidMusic",
+			"type": "String",
+			"description": "通知声音"
+		},
+		{
+			"name": "AndroidNotifyType",
+			"type": "Number",
+			"description": "通知类型 1:震动 2:响铃"
+		},
+		{
+			"name": "AndroidOpenActivity",
+			"type": "String",
+			"description": "打开app指定位置"
+		},
+		{
+			"name": "AndroidOpenType",
+			"type": "Number",
+			"description": "点击通知后动作"
+		},
+		{
+			"name": "AndroidOpenUrl",
+			"type": "String",
+			"description": "打开应用,网页"
+		},
+		{
+			"name": "AntiHarassDuration",
+			"type": "Number",
+			"description": "防打扰时长,取值范围为1~23"
+		},
+		{
+			"name": "AntiHarassStartTime",
+			"type": "Number",
+			"description": "防打扰开始时间点,取值范围为0~23"
+		},
+		{
+			"name": "AppId",
+			"type": "Number",
+			"description": "应用标识",
+			"required": true
+		},
+		{
+			"name": "BatchNumber",
+			"type": "String",
+			"description": "批次编号,用于活动效果统计"
+		},
+		{
+			"name": "DeviceId",
+			"type": "String",
+			"description": "设备编号列表,以换行区分,仅sendType为4时有效"
+		},
+		{
+			"name": "DeviceType",
+			"type": "Number",
+			"description": "设备类型,取值范围为:0~3云推送支持多种设备,各 种设备类型编号如下:IOS设备:deviceType\u0026amp;1=1; Andriod设备:deviceType\u0026amp;2=2;如果存在此字段,则向 指定的设备类型推送消息。默认为全部(3);",
+			"required": true
+		},
+		{
+			"name": "IosExtraMap",
+			"type": "String",
+			"description": "自定义的kv结构,开发者扩展用"
+		},
+		{
+			"name": "IosFooter",
+			"type": "Number",
+			"description": "角标"
+		},
+		{
+			"name": "IosMusic",
+			"type": "String",
+			"description": "默认音乐"
+		},
+		{
+			"name": "PushTime",
+			"type": "Date",
+			"description": "推送时间,若空表示立即推送,推送时间不能早于当前时间"
+		},
+		{
+			"name": "SendType",
+			"type": "Number",
+			"description": "推送类型,取值范围:1~4; 1:所有人,无需指定tag、 deviceType等2:一群人,必须指定tag3:指定用户,根据 用户账号列表文件发送消息4:指定设备,根据设备编码列 表文件发送消息默认值为1",
+			"required": true
+		},
+		{
+			"name": "Summary",
+			"type": "String",
+			"description": "摘要",
+			"required": true
+		},
+		{
+			"name": "Tag",
+			"type": "String",
+			"description": "标签名称,仅支持1个标签,仅sendType为2时有效"
+		},
+		{
+			"name": "Timeout",
+			"type": "Number",
+			"description": "离线消息保存时长,取值范围为1~72,若不填,则表示不保存离线消息"
+		},
+		{
+			"name": "Title",
+			"type": "String",
+			"description": "标题",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "requestId",
+			"type": "Number",
+			"description": "该字段的值由服务端生成,返回给用户方便问题追查与定位。"
+		},
+		{
+			"name": "responseParams",
+			"type": "Number",
+			"description": "消息ID,用于查询"
+		}
+	]
+}

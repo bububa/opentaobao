@@ -1,0 +1,109 @@
+{
+	"name": "taobao.train.moment.get",
+	"apiChineseName": "火车票时刻表",
+	"description": "查询火车票车次时刻表",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "TrainMomentTopParam",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "arr_station",
+					"type": "String",
+					"description": "到达站",
+					"required": true
+				},
+				{
+					"name": "dep_date",
+					"type": "String",
+					"description": "出发日期",
+					"required": true
+				},
+				{
+					"name": "dep_station",
+					"type": "String",
+					"description": "出发站",
+					"required": true
+				},
+				{
+					"name": "train_no",
+					"type": "String",
+					"description": "车次号",
+					"required": true
+				},
+				{
+					"name": "train_no_long",
+					"type": "String",
+					"description": "长车次号",
+					"required": true
+				},
+				{
+					"name": "ttid",
+					"type": "String",
+					"description": "渠道标识",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "bindex",
+			"type": "String",
+			"description": "出发到达对应时刻表索引"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "stations",
+			"type": "StationPassInfo []",
+			"description": "经停站",
+			"subParams": [
+				{
+					"name": "atime",
+					"type": "String",
+					"description": "到达时间",
+					"required": true
+				},
+				{
+					"name": "ltime",
+					"type": "String",
+					"description": "驶离时间",
+					"required": true
+				},
+				{
+					"name": "sid",
+					"type": "Number",
+					"description": "当前站点索引，从1开始",
+					"required": true
+				},
+				{
+					"name": "snm",
+					"type": "String",
+					"description": "站点名称",
+					"required": true
+				},
+				{
+					"name": "stime",
+					"type": "Number",
+					"description": "停留时间分钟",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

@@ -1,0 +1,298 @@
+{
+	"name": "taobao.qimen.entryorder.confirm",
+	"apiChineseName": "入库单确认接口",
+	"description": "WMS调用接口，回传入库单信息;",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "EntryOrderConfirmRequest",
+			"subParams": [
+				{
+					"name": "entryOrder",
+					"type": "EntryOrder",
+					"description": "入库单信息",
+					"subParams": [
+						{
+							"name": "orderCode",
+							"type": "String",
+							"description": "订单编码"
+						},
+						{
+							"name": "orderId",
+							"type": "String",
+							"description": "后端订单id"
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "订单类型"
+						},
+						{
+							"name": "warehouseName",
+							"type": "String",
+							"description": "仓库名称"
+						},
+						{
+							"name": "totalOrderLines",
+							"type": "Number",
+							"description": "单据总行数(当单据需要分多个请求发送时;发送方需要将totalOrderLines填入;接收方收到后;根据实际接收到的 条数和 totalOrderLines进行比对;如果小于;则继续等待接收请求。如果等于;则表示该单据的所有请求发送完 成)"
+						},
+						{
+							"name": "entryOrderCode",
+							"type": "String",
+							"description": "入库单号",
+							"required": true
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码",
+							"required": true
+						},
+						{
+							"name": "purchaseOrderCode",
+							"type": "String",
+							"description": "采购单号(当orderType=CGRK时使用)"
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码(统仓统配等无需ERP指定仓储编码的情况填OTHER)",
+							"required": true
+						},
+						{
+							"name": "entryOrderId",
+							"type": "String",
+							"description": "仓储系统入库单ID"
+						},
+						{
+							"name": "entryOrderType",
+							"type": "String",
+							"description": "入库单类型(SCRK=生产入库;LYRK=领用入库;CCRK=残次品入库;CGRK=采购入库;DBRK=调拨入库;QTRK=其他入 库;B2BRK=B2B入库)"
+						},
+						{
+							"name": "outBizCode",
+							"type": "String",
+							"description": "外部业务编码(消息ID;用于去重;ISV对于同一请求;分配一个唯一性的编码。用来保证因为网络等原因导致重复传输;请求 不会被重复处理)",
+							"required": true
+						},
+						{
+							"name": "confirmType",
+							"type": "Number",
+							"description": "支持出入库单多次收货(多次收货后确认时:0:表示入库单最终状态确认;1:表示入库单中间状态确认;每次入库传入的数量为增 量;特殊情况;同一入库单;如果先收到0;后又收到1;允许修改收货的数量)"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "入库单状态(NEW-未开始处理;ACCEPT-仓库接单;PARTFULFILLED-部分收货完成;FULFILLED-收货完成;EXCEPTION-异 常;CANCELED-取消;CLOSED-关闭;REJECT-拒单;CANCELEDFAIL-取消失败;只传英文编码)",
+							"required": true
+						},
+						{
+							"name": "operateTime",
+							"type": "String",
+							"description": "操作时间(YYYY-MM-DD HH:MM:SS;当status=FULFILLED;operateTime为入库时间)"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "freight",
+							"type": "String",
+							"description": "邮费"
+						},
+						{
+							"name": "subOrderType",
+							"type": "String",
+							"description": "入库单确认的其他入库子类型，用于entryOrderType设置为其他入库时设置"
+						},
+						{
+							"name": "responsibleDepartment",
+							"type": "String",
+							"description": "该笔入库单的费用承担部门或责任部门"
+						},
+						{
+							"name": "shopNick",
+							"type": "String",
+							"description": "店铺名称",
+							"required": true
+						},
+						{
+							"name": "shopCode",
+							"type": "String",
+							"description": "店铺编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "订单信息",
+					"subParams": [
+						{
+							"name": "outBizCode",
+							"type": "String",
+							"description": "外部业务编码(消息ID;用于去重;当单据需要分批次发送时使用)"
+						},
+						{
+							"name": "orderLineNo",
+							"type": "String",
+							"description": "入库单的行号"
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码",
+							"required": true
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品ID"
+						},
+						{
+							"name": "itemName",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "planQty",
+							"type": "Number",
+							"description": "应收商品数量",
+							"required": true
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;默认为ZP)"
+						},
+						{
+							"name": "actualQty",
+							"type": "Number",
+							"description": "实收数量",
+							"required": true
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "商品生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "商品过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编码"
+						},
+						{
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "批次信息",
+							"subParams": [
+								{
+									"name": "batchCode",
+									"type": "String",
+									"description": "批次编号"
+								},
+								{
+									"name": "productDate",
+									"type": "String",
+									"description": "生产日期(YYYY-MM-DD)"
+								},
+								{
+									"name": "expireDate",
+									"type": "String",
+									"description": "过期日期(YYYY-MM-DD)"
+								},
+								{
+									"name": "produceCode",
+									"type": "String",
+									"description": "生产批号"
+								},
+								{
+									"name": "inventoryType",
+									"type": "String",
+									"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS= 箱损;默认为ZP;)"
+								},
+								{
+									"name": "actualQty",
+									"type": "Number",
+									"description": "实收数量(要求batchs节点下所有的实收数量之和等于orderline中的实收数量)"
+								}
+							]
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "单位"
+						},
+						{
+							"name": "snList",
+							"type": "SnList",
+							"description": "sn列表",
+							"subParams": [
+								{
+									"name": "sn",
+									"type": "String[]",
+									"description": "sn编码"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

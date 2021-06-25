@@ -1,0 +1,169 @@
+{
+	"name": "taobao.tbk.dg.newuser.order.sum",
+	"apiChineseName": "淘宝客-推广者-拉新活动对应数据查询",
+	"description": "拉新活动汇总API",
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小，默认20，1~100",
+			"required": true,
+			"maxValue": 100,
+			"minValue": 1
+		},
+		{
+			"name": "adzone_id",
+			"type": "Number",
+			"description": "mm_xxx_xxx_xxx的第三位"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码，默认1",
+			"required": true
+		},
+		{
+			"name": "site_id",
+			"type": "Number",
+			"description": "mm_xxx_xxx_xxx的第二位"
+		},
+		{
+			"name": "activity_id",
+			"type": "String",
+			"description": "活动id， 活动名称与活动ID列表，请参见https://tbk.bbs.taobao.com/detail.html?appId=45301\u0026postId=8599277",
+			"required": true
+		},
+		{
+			"name": "settle_month",
+			"type": "String",
+			"description": "结算月份"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "Data",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Data",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "页码",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页大小",
+							"required": true
+						},
+						{
+							"name": "has_next",
+							"type": "Boolean",
+							"description": "是否有下一页",
+							"required": true
+						},
+						{
+							"name": "results",
+							"type": "Data[]",
+							"description": "resultList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "activity_id",
+									"type": "String",
+									"description": "活动ID",
+									"required": true
+								},
+								{
+									"name": "biz_date",
+									"type": "String",
+									"description": "日期",
+									"required": true
+								},
+								{
+									"name": "reg_user_cnt",
+									"type": "Number",
+									"description": "新注册用户数",
+									"required": true
+								},
+								{
+									"name": "login_user_cnt",
+									"type": "Number",
+									"description": "新激活用户数",
+									"required": true
+								},
+								{
+									"name": "alipay_user_cnt",
+									"type": "Number",
+									"description": "首购用户数",
+									"required": true
+								},
+								{
+									"name": "rcv_valid_user_cnt",
+									"type": "Number",
+									"description": "结算有效用户数",
+									"required": true
+								},
+								{
+									"name": "rcv_user_cnt",
+									"type": "Number",
+									"description": "确认收货用户数",
+									"required": true
+								},
+								{
+									"name": "alipay_user_cpa_pre_amt",
+									"type": "String",
+									"description": "结算CPA 奖励金额：仅支持member 维度的统计",
+									"required": true
+								},
+								{
+									"name": "bind_buy_user_cpa_pre_amt",
+									"type": "String",
+									"description": "当日激活且首购结算的CPA 金额：仅适用于八天乐，仅支持member维度的统计",
+									"required": true
+								},
+								{
+									"name": "bind_buy_valid_user_cnt",
+									"type": "Number",
+									"description": "当日激活且首购的有效用户数：仅适用于八天乐，支持member，adzone维度的统计",
+									"required": true
+								},
+								{
+									"name": "bind_card_valid_user_cnt",
+									"type": "Number",
+									"description": "bindCardValidUserCnt",
+									"required": true
+								},
+								{
+									"name": "re_buy_valid_user_cnt",
+									"type": "Number",
+									"description": "reBuyValidUserCnt",
+									"required": true
+								},
+								{
+									"name": "valid_num",
+									"type": "Number",
+									"description": "validNum",
+									"required": true
+								},
+								{
+									"name": "relation_id",
+									"type": "String",
+									"description": "渠道关系id",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

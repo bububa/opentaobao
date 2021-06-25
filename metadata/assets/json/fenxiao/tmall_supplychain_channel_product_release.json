@@ -1,0 +1,62 @@
+{
+	"name": "tmall.supplychain.channel.product.release",
+	"apiChineseName": "供应商铺货",
+	"description": "供应商渠道铺货接口",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品数字ID"
+		},
+		{
+			"name": "channel_code",
+			"type": "Number",
+			"description": "渠道ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "链路ID",
+					"required": true
+				},
+				{
+					"name": "exp_name",
+					"type": "String",
+					"description": "异常名",
+					"required": true
+				},
+				{
+					"name": "redirect_url",
+					"type": "String",
+					"description": "重定向url",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

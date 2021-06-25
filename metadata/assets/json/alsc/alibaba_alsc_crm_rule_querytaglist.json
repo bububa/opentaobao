@@ -1,0 +1,147 @@
+{
+	"name": "alibaba.alsc.crm.rule.querytaglist",
+	"apiChineseName": "查询标签列表",
+	"description": "查询标签列表",
+	"requestParams": [
+		{
+			"name": "param_plan_rule_query_open_req",
+			"type": "PlanRuleQueryOpenReq",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID"
+				},
+				{
+					"name": "last_id",
+					"type": "String",
+					"description": "最后更新ID"
+				},
+				{
+					"name": "last_update_time",
+					"type": "Date",
+					"description": "最后更新时间"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小"
+				},
+				{
+					"name": "deleted",
+					"type": "Boolean",
+					"description": "是否包含逻辑删除的数据",
+					"required": true
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "CrmTagOpenInfo[]",
+					"description": "商家标签模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "是否已删除",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "plan_id",
+							"type": "String",
+							"description": "会员计划ID",
+							"required": true
+						},
+						{
+							"name": "tag_id",
+							"type": "String",
+							"description": "标签ID",
+							"required": true
+						},
+						{
+							"name": "tag_name",
+							"type": "String",
+							"description": "标签名称",
+							"required": true
+						},
+						{
+							"name": "tag_type",
+							"type": "String",
+							"description": "标签类型",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				},
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "总数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

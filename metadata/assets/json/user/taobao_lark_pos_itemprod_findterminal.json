@@ -1,0 +1,44 @@
+{
+	"name": "taobao.lark.pos.itemprod.findterminal",
+	"apiChineseName": "终端配置支持",
+	"description": "终端配置支持,读取如果不存在则创建和远程的连接配置并返回",
+	"requestParams": [
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "终端id"
+		},
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "终端类型"
+		},
+		{
+			"name": "create_user",
+			"type": "String",
+			"description": "912874323429834"
+		},
+		{
+			"name": "lease_code",
+			"type": "String",
+			"description": "租户编码"
+		},
+		{
+			"name": "cinema_id",
+			"type": "String",
+			"description": "影城id"
+		},
+		{
+			"name": "cinema_name",
+			"type": "String",
+			"description": "影城名称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Json",
+			"description": "终端配置信息响应"
+		}
+	]
+}

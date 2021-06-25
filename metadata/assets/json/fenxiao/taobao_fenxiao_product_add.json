@@ -1,0 +1,214 @@
+{
+	"name": "taobao.fenxiao.product.add",
+	"apiChineseName": "添加产品",
+	"description": "添加分销平台产品数据。业务逻辑与分销系统前台页面一致。\u003cbr/\u003e\u003cbr/\u003e    * 产品图片默认为空\u003cbr/\u003e    * 产品发布后默认为下架状态",
+	"requestParams": [
+		{
+			"name": "postage_type",
+			"type": "String",
+			"description": "运费类型，可选值：seller（供应商承担运费）、buyer（分销商承担运费）,默认seller。"
+		},
+		{
+			"name": "have_invoice",
+			"type": "String",
+			"description": "是否有发票，可选值：false（否）、true（是），默认false。"
+		},
+		{
+			"name": "have_quarantee",
+			"type": "String",
+			"description": "是否有保修，可选值：false（否）、true（是），默认false。"
+		},
+		{
+			"name": "trade_type",
+			"type": "String",
+			"description": "分销方式：AGENT（只做代销，默认值）、DEALER（只做经销）、ALL（代销和经销都做）"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "产品名称，长度不超过60个字节。",
+			"required": true
+		},
+		{
+			"name": "productcat_id",
+			"type": "Number",
+			"description": "产品线ID",
+			"required": true
+		},
+		{
+			"name": "standard_price",
+			"type": "String",
+			"description": "采购基准价格，单位：元。例：“10.56”。必须在0.01元到10000000元之间。",
+			"required": true
+		},
+		{
+			"name": "cost_price",
+			"type": "String",
+			"description": "代销采购价格，单位：元。例：“10.56”。必须在0.01元到10000000元之间。"
+		},
+		{
+			"name": "retail_price_low",
+			"type": "String",
+			"description": "最低零售价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。",
+			"required": true
+		},
+		{
+			"name": "retail_price_high",
+			"type": "String",
+			"description": "最高零售价，单位：元。例：“10.56”。必须在0.01元到10000000元之间，最高零售价必须大于最低零售价。",
+			"required": true
+		},
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "所属类目id，参考Taobao.itemcats.get，不支持成人等类目，输入成人类目id保存提示类目属性错误。",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "商家编码，长度不能超过60个字节。"
+		},
+		{
+			"name": "quantity",
+			"type": "Number",
+			"description": "产品库存必须是1到999999。",
+			"required": true
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "产品描述，长度为5到25000字符。",
+			"required": true
+		},
+		{
+			"name": "prov",
+			"type": "String",
+			"description": "所在地：省，例：“浙江”",
+			"required": true
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "所在地：市，例：“杭州”",
+			"required": true
+		},
+		{
+			"name": "postage_id",
+			"type": "Number",
+			"description": "运费模板ID，参考taobao.postages.get。"
+		},
+		{
+			"name": "postage_ordinary",
+			"type": "String",
+			"description": "平邮费用，单位：元。例：“10.56”。 大小为0.01元到999999元之间。"
+		},
+		{
+			"name": "postage_fast",
+			"type": "String",
+			"description": "快递费用，单位：元。例：“10.56”。 大小为0.01元到999999元之间。"
+		},
+		{
+			"name": "postage_ems",
+			"type": "String",
+			"description": "ems费用，单位：元。例：“10.56”。 大小为0.00元到999999元之间。"
+		},
+		{
+			"name": "discount_id",
+			"type": "Number",
+			"description": "折扣ID"
+		},
+		{
+			"name": "is_authz",
+			"type": "String",
+			"description": "添加产品时，添加入参isAuthz:yes|no \u003cbr/\u003eyes:需要授权 \u003cbr/\u003eno:不需要授权 \u003cbr/\u003e默认是需要授权"
+		},
+		{
+			"name": "pic_path",
+			"type": "String",
+			"description": "产品主图图片空间相对路径或绝对路径"
+		},
+		{
+			"name": "image",
+			"type": "byte[]",
+			"description": "产品主图，大小不超过500k，格式为gif,jpg,jpeg,png,bmp等图片"
+		},
+		{
+			"name": "properties",
+			"type": "String",
+			"description": "产品属性，格式为pid:vid;pid:vid"
+		},
+		{
+			"name": "property_alias",
+			"type": "String",
+			"description": "属性别名，格式为：pid:vid:alias;pid:vid:alias（alias为别名）"
+		},
+		{
+			"name": "input_properties",
+			"type": "String",
+			"description": "自定义属性。格式为pid:value;pid:value"
+		},
+		{
+			"name": "sku_standard_prices",
+			"type": "String",
+			"description": "sku的采购基准价。如果多个，用逗号分隔，并与其他sku信息保持相同顺序"
+		},
+		{
+			"name": "sku_cost_prices",
+			"type": "String",
+			"description": "sku的采购价。如果多个，用逗号分隔，并与其他sku信息保持相同顺序"
+		},
+		{
+			"name": "sku_outer_ids",
+			"type": "String",
+			"description": "sku的商家编码。如果多个，用逗号分隔，并与其他sku信息保持相同顺序"
+		},
+		{
+			"name": "sku_quantitys",
+			"type": "String",
+			"description": "sku的库存。如果多个，用逗号分隔，并与其他sku信息保持相同顺序"
+		},
+		{
+			"name": "sku_properties",
+			"type": "String",
+			"description": "sku的属性。如果多个，用逗号分隔，并与其他sku信息保持相同顺序"
+		},
+		{
+			"name": "dealer_cost_price",
+			"type": "String",
+			"description": "经销采购价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。"
+		},
+		{
+			"name": "sku_dealer_cost_prices",
+			"type": "String",
+			"description": "sku的经销采购价。如果多个，用逗号分隔，并与其他sku信息保持相同顺序。其中每个值的单位：元。例：“10.56,12.3”。必须在0.01元到10000000元之间。"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "导入的商品ID"
+		},
+		{
+			"name": "standard_retail_price",
+			"type": "String",
+			"description": "零售基准价，单位：元。例：“10.56”。必须在0.01元到10000000元之间。"
+		},
+		{
+			"name": "spu_id",
+			"type": "Number",
+			"description": "产品spuID，达尔文产品必须要传spuID，否则不能发布。其他非达尔文产品，看情况传"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "pid",
+			"type": "Number",
+			"description": "产品ID"
+		},
+		{
+			"name": "created",
+			"type": "Date",
+			"description": "产品创建时间 时间格式：yyyy-MM-dd HH:mm:ss"
+		}
+	]
+}

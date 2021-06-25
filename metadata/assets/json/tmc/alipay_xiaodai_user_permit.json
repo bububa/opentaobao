@@ -1,0 +1,20 @@
+{
+	"name": "alipay.xiaodai.user.permit",
+	"apiChineseName": "阿里金融用户授权",
+	"description": "阿里金融为用户开通消息通道接口",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户数字ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

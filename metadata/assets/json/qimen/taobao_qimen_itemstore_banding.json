@@ -1,0 +1,48 @@
+{
+	"name": "taobao.qimen.itemstore.banding",
+	"apiChineseName": "商品关联绑定接口",
+	"description": "商家在ERP等系统中调用该接口，将线上商品和线下门店“新建/删除”关联。这里的线上。每次只能单个商品关联多个门店，门店上限200",
+	"requestParams": [
+		{
+			"name": "store_ids",
+			"type": "Number[]",
+			"description": "门店列表",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注信息"
+		},
+		{
+			"name": "action_type",
+			"type": "String",
+			"description": "操作类型",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "线上商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "flag",
+			"type": "String",
+			"description": "响应描述"
+		},
+		{
+			"name": "qimen_code",
+			"type": "String",
+			"description": "响应编码"
+		}
+	]
+}

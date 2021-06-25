@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.ele.fengniao.order.query",
+	"apiChineseName": "查询订单基本信息",
+	"description": "查询订单基本信息",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "Param",
+			"description": "参数",
+			"subParams": [
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "appid"
+				},
+				{
+					"name": "partner_order_code",
+					"type": "String",
+					"description": "外部订单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "kvs",
+			"type": "Kvs []",
+			"description": "kvs",
+			"subParams": [
+				{
+					"name": "value",
+					"type": "String",
+					"description": "value",
+					"required": true
+				},
+				{
+					"name": "key",
+					"type": "String",
+					"description": "key",
+					"required": true
+				},
+				{
+					"name": "index_id",
+					"type": "Number",
+					"description": "index",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "receiver_longitude",
+			"type": "String",
+			"description": "收件人经度"
+		},
+		{
+			"name": "transport_latitude",
+			"type": "String",
+			"description": "寄件人纬度"
+		},
+		{
+			"name": "transport_longitude",
+			"type": "String",
+			"description": "寄件人经度"
+		},
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单号"
+		},
+		{
+			"name": "receiver_latitude",
+			"type": "String",
+			"description": "收件人纬度"
+		}
+	]
+}

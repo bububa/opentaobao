@@ -1,0 +1,69 @@
+{
+	"name": "taobao.trade.voucher.upload",
+	"apiChineseName": "淘宝交易凭证上传",
+	"description": "定制化交易流程中，涉及到 买家自定义 图片、声音、视频 等多富媒体文件，且该商品或服务的附属sku，通过此接口上传作为交易凭证。",
+	"requestParams": [
+		{
+			"name": "file_name",
+			"type": "String",
+			"description": "上传文件的名称",
+			"required": true,
+			"maxLength": 50
+		},
+		{
+			"name": "file_data",
+			"type": "byte[]",
+			"description": "文件",
+			"required": true
+		},
+		{
+			"name": "seller_nick",
+			"type": "String",
+			"description": "该笔订单的卖家Nick"
+		},
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "该笔订单的买家Nick（混淆nick）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "file",
+			"type": "File",
+			"description": "上传到多媒体平台的文件",
+			"subParams": [
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "file_path",
+					"type": "String",
+					"description": "返回的是绝对路径如：http://img07.taobaocdn.com/imgextra/i7/22670458/T2dD0kXb4cXXXXXXXX_!!22670458.jpg"
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "文件的大小"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "图片状态,unfroze代表没有被冻结，froze代表被冻结,pass代表排查通过"
+				},
+				{
+					"name": "deleted",
+					"type": "String",
+					"description": "文件是否删除"
+				},
+				{
+					"name": "picture_pix",
+					"type": "String",
+					"description": "图片像素，如果非图片，该值为空"
+				}
+			]
+		}
+	]
+}

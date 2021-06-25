@@ -1,0 +1,20 @@
+{
+	"name": "alibaba.scbp.ad.keyword.batchdelete",
+	"apiChineseName": "外贸直通车批量删除关键词",
+	"description": "外贸直通车批量删除关键词",
+	"requestParams": [
+		{
+			"name": "keyword_id_list",
+			"type": "Number[]",
+			"description": "关键词Id列表",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "删除关键词是否成功"
+		}
+	]
+}

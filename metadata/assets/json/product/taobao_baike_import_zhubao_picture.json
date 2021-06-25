@@ -1,0 +1,46 @@
+{
+	"name": "taobao.baike.import.zhubao.picture",
+	"apiChineseName": "百科图片数据导入",
+	"description": "用于接入外部--图片--录入到商品百科中",
+	"requestParams": [
+		{
+			"name": "picture",
+			"type": "byte[]",
+			"description": "图片二进制数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "message_code",
+					"type": "String",
+					"description": "messageCode",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "String",
+					"description": "module",
+					"required": true
+				}
+			]
+		}
+	]
+}

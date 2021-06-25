@@ -1,0 +1,415 @@
+{
+	"name": "alibaba.wdk.supplier.order.list",
+	"apiChineseName": "五道口供应商维度正向订单拉取",
+	"description": "五道口供应商维度正向订单拉取",
+	"requestParams": [
+		{
+			"name": "supplier_order_query_request",
+			"type": "SupplierOrderQueryRequest",
+			"description": "查询参数",
+			"subParams": [
+				{
+					"name": "order_from",
+					"type": "Number",
+					"description": "订单来源，4：盒马，3：饿了么"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店id"
+				},
+				{
+					"name": "source_merchant_code",
+					"type": "String",
+					"description": "实际售卖商家code"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "开始时间"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页页码，从0开始"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小，默认200"
+				},
+				{
+					"name": "order_client",
+					"type": "String",
+					"description": "下单终端: APP 、POS"
+				},
+				{
+					"name": "order_status",
+					"type": "String[]",
+					"description": "订单状态: PAID / PACAKAGED / SUCCESS"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OrderListSyncPagedResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "returnCode",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "returnMsg",
+					"required": true
+				},
+				{
+					"name": "next_index",
+					"type": "Number",
+					"description": "返回下一查询页的序号。如果返回值是-1，则无下一页。数据拉取完成。",
+					"required": true
+				},
+				{
+					"name": "total_number",
+					"type": "String",
+					"description": "订单总数量",
+					"required": true
+				},
+				{
+					"name": "orders",
+					"type": "OrderSyncDto[]",
+					"description": "订单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "open_uid",
+							"type": "String",
+							"description": "买家id对应的open_uid，加密过",
+							"required": true
+						},
+						{
+							"name": "trade_attributes",
+							"type": "Json",
+							"description": "扩展map",
+							"required": true
+						},
+						{
+							"name": "duty_code",
+							"type": "String",
+							"description": "班次号",
+							"required": true
+						},
+						{
+							"name": "gift_coupon",
+							"type": "String",
+							"description": "赠券，格式为 券ID_券金额， 金额单位为分",
+							"required": true
+						},
+						{
+							"name": "package_time",
+							"type": "Date",
+							"description": "打包时间",
+							"required": true
+						},
+						{
+							"name": "member_point",
+							"type": "String",
+							"description": "会员积分",
+							"required": true
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单状态",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家code",
+							"required": true
+						},
+						{
+							"name": "operator_name",
+							"type": "String",
+							"description": "收银员名称",
+							"required": true
+						},
+						{
+							"name": "tb_biz_order_id",
+							"type": "Number",
+							"description": "淘宝订单号",
+							"required": true
+						},
+						{
+							"name": "operator_id",
+							"type": "String",
+							"description": "收银员id",
+							"required": true
+						},
+						{
+							"name": "member_card_num",
+							"type": "String",
+							"description": "会员卡号",
+							"required": true
+						},
+						{
+							"name": "member_discount_amt",
+							"type": "Number",
+							"description": "会员优惠金额，单位分",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "经营店id",
+							"required": true
+						},
+						{
+							"name": "post_fee",
+							"type": "Number",
+							"description": "邮费",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "支付时间",
+							"required": true
+						},
+						{
+							"name": "original_amt",
+							"type": "Number",
+							"description": "商品总原价",
+							"required": true
+						},
+						{
+							"name": "discount_amt",
+							"type": "Number",
+							"description": "总优惠金额",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "盒马订单号",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部订单号",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "渠道店id",
+							"required": true
+						},
+						{
+							"name": "source_merchant_code",
+							"type": "String",
+							"description": "实际售卖商家code",
+							"required": true
+						},
+						{
+							"name": "order_from",
+							"type": "Number",
+							"description": "订单渠道，4：盒马，3：饿了么",
+							"required": true
+						},
+						{
+							"name": "order_client",
+							"type": "String",
+							"description": "下单终端: APP,POS",
+							"required": true
+						},
+						{
+							"name": "sub_orders",
+							"type": "SubOrderSyncDto[]",
+							"description": "subOrders",
+							"required": true,
+							"subParams": [
+								{
+									"name": "out_sku_code",
+									"type": "String",
+									"description": "外部SkuCode",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "skuCode",
+									"required": true
+								},
+								{
+									"name": "trade_sub_attributes",
+									"type": "Json",
+									"description": "扩展属性map",
+									"required": true
+								},
+								{
+									"name": "stock_unit",
+									"type": "String",
+									"description": "库存单位",
+									"required": true
+								},
+								{
+									"name": "sale_unit",
+									"type": "String",
+									"description": "售卖单位",
+									"required": true
+								},
+								{
+									"name": "biz_order_id",
+									"type": "Number",
+									"description": "盒马订单号",
+									"required": true
+								},
+								{
+									"name": "tb_biz_order_id",
+									"type": "Number",
+									"description": "淘宝订单号",
+									"required": true
+								},
+								{
+									"name": "out_order_id",
+									"type": "String",
+									"description": "外部订单号",
+									"required": true
+								},
+								{
+									"name": "pick_amount_stock",
+									"type": "String",
+									"description": "库存单位拣货数量",
+									"required": true
+								},
+								{
+									"name": "pick_amt",
+									"type": "Number",
+									"description": "拣货金额，单位分",
+									"required": true
+								},
+								{
+									"name": "buy_amount_stock",
+									"type": "String",
+									"description": "库存单位购买数量",
+									"required": true
+								},
+								{
+									"name": "order_type",
+									"type": "String",
+									"description": "订单类型  COMMON，GIFT",
+									"required": true
+								},
+								{
+									"name": "txd_pmt_amt",
+									"type": "Number",
+									"description": "淘鲜达分摊金额",
+									"required": true
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "子订单状态",
+									"required": true
+								},
+								{
+									"name": "status_change_time",
+									"type": "Json",
+									"description": "履约各状态时间",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "单价",
+									"required": true
+								},
+								{
+									"name": "original_amt",
+									"type": "Number",
+									"description": "原价=单价*库存单位购买数量",
+									"required": true
+								},
+								{
+									"name": "promotion_discount_amt",
+									"type": "Number",
+									"description": "优惠金额",
+									"required": true
+								},
+								{
+									"name": "member_discount_amt",
+									"type": "Number",
+									"description": "会员优惠金额",
+									"required": true
+								},
+								{
+									"name": "promotion_info",
+									"type": "String",
+									"description": "优惠来源明细，json格式的字符串，是个数组，可能包含多个优惠来源",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pay_channels",
+							"type": "PayChannel[]",
+							"description": "payChannels",
+							"required": true,
+							"subParams": [
+								{
+									"name": "pay_type",
+									"type": "Number",
+									"description": "payType",
+									"required": true
+								},
+								{
+									"name": "pay_amount",
+									"type": "Number",
+									"description": "payAmount",
+									"required": true
+								},
+								{
+									"name": "actual_pay_amount",
+									"type": "Number",
+									"description": "actualPayAmount",
+									"required": true
+								},
+								{
+									"name": "pay_attributes",
+									"type": "String",
+									"description": "payAttributes",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

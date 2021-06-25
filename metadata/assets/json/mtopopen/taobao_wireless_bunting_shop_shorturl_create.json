@@ -1,0 +1,19 @@
+{
+	"name": "taobao.wireless.bunting.shop.shorturl.create",
+	"apiChineseName": "通过店铺id取得短链",
+	"description": "通过店铺id取得短链",
+	"requestParams": [
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "商店id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "shorturl",
+			"type": "String",
+			"description": "短链"
+		}
+	]
+}

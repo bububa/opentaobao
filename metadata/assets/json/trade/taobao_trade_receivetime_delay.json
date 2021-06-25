@@ -1,0 +1,40 @@
+{
+	"name": "taobao.trade.receivetime.delay",
+	"apiChineseName": "延长交易收货时间",
+	"description": "延长交易收货时间",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "主订单号",
+			"required": true
+		},
+		{
+			"name": "days",
+			"type": "Number",
+			"description": "延长收货的天数，可选值为：3, 5, 7, 10。",
+			"required": true,
+			"maxValue": 10,
+			"minValue": 3
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trade",
+			"type": "Trade",
+			"description": "更新后的交易数据，只包括tid和modified两个字段。",
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "交易编号 (父订单的交易编号)"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss"
+				}
+			]
+		}
+	]
+}

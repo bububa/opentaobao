@@ -1,0 +1,1033 @@
+{
+	"name": "taobao.xhotel.info.list.get.for.hello",
+	"apiChineseName": "哈罗获取酒店详情",
+	"description": "哈罗合作项目，供哈罗合作方批量和增量两种场景下查询已开通城市下的标准酒店及房型信息，不涉及用户登录信息",
+	"requestParams": [
+		{
+			"name": "hotel_info_param",
+			"type": "HotelInfoParam",
+			"description": "参数封装模型",
+			"subParams": [
+				{
+					"name": "city_code",
+					"type": "Number",
+					"description": "城市code"
+				},
+				{
+					"name": "last_shid",
+					"type": "Number",
+					"description": "上次请求的分页数据中最后一个shid"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数据量"
+				},
+				{
+					"name": "pid",
+					"type": "String",
+					"description": "pid"
+				},
+				{
+					"name": "shid",
+					"type": "Number",
+					"description": "单个请求的shid"
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "经过混淆的userId"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "查询结果集",
+			"subParams": [
+				{
+					"name": "channel_id",
+					"type": "String",
+					"description": "渠道id",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "本次请求是否错误",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode，error=true时有值",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息，error=true时有值",
+					"required": true
+				},
+				{
+					"name": "h5_list_url",
+					"type": "String",
+					"description": "list页h5链接",
+					"required": true
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "当前数据集合是否还有下一页",
+					"required": true
+				},
+				{
+					"name": "hotel_list_url",
+					"type": "String",
+					"description": "list页pc链接",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id，用于链路追踪",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "SHotelVo[]",
+					"description": "每个标准酒店及房型信息集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "地址",
+							"required": true
+						},
+						{
+							"name": "bnb_hotel",
+							"type": "Boolean",
+							"description": "是否是民宿",
+							"required": true
+						},
+						{
+							"name": "brand",
+							"type": "String",
+							"description": "品牌code",
+							"required": true
+						},
+						{
+							"name": "check_in_time",
+							"type": "String",
+							"description": "最早入住时间",
+							"required": true
+						},
+						{
+							"name": "check_out_time",
+							"type": "String",
+							"description": "最晚离店时间",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "Number",
+							"description": "当前酒店所在城市",
+							"required": true
+						},
+						{
+							"name": "decorate_time",
+							"type": "String",
+							"description": "装修时间",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "酒店描述",
+							"required": true
+						},
+						{
+							"name": "distance",
+							"type": "Number",
+							"description": "与某个POI的距离",
+							"required": true
+						},
+						{
+							"name": "district",
+							"type": "Number",
+							"description": "区县",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "最后修改时间",
+							"required": true
+						},
+						{
+							"name": "h5_detail_url",
+							"type": "String",
+							"description": "h5详情页url",
+							"required": true
+						},
+						{
+							"name": "hotel_detail_url",
+							"type": "String",
+							"description": "默认PC详情页url",
+							"required": true
+						},
+						{
+							"name": "hotel_facilities",
+							"type": "String",
+							"description": "酒店设施文案",
+							"required": true
+						},
+						{
+							"name": "lat",
+							"type": "String",
+							"description": "维度",
+							"required": true
+						},
+						{
+							"name": "level",
+							"type": "NameValuePair",
+							"description": "档次",
+							"required": true,
+							"subParams": [
+								{
+									"name": "code",
+									"type": "String",
+									"description": "档次code",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "档次名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "lng",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "酒店中文名",
+							"required": true
+						},
+						{
+							"name": "opening_time",
+							"type": "String",
+							"description": "开业时间",
+							"required": true
+						},
+						{
+							"name": "pet_info",
+							"type": "String",
+							"description": "重复信息",
+							"required": true
+						},
+						{
+							"name": "pic_urls",
+							"type": "String",
+							"description": "图片信息",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "价格",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "Number",
+							"description": "省份",
+							"required": true
+						},
+						{
+							"name": "rate_number",
+							"type": "Number",
+							"description": "评论数",
+							"required": true
+						},
+						{
+							"name": "rate_score",
+							"type": "String",
+							"description": "评分",
+							"required": true
+						},
+						{
+							"name": "sell",
+							"type": "Number",
+							"description": "销量",
+							"required": true
+						},
+						{
+							"name": "shid",
+							"type": "Number",
+							"description": "标准酒店id",
+							"required": true
+						},
+						{
+							"name": "shotel_properties_vo",
+							"type": "ShotelPropertiesSetVo",
+							"description": "服务设施集合类",
+							"required": true,
+							"subParams": [
+								{
+									"name": "shotel_booking_notics",
+									"type": "ShotelPropertiesVo[]",
+									"description": "预订须知",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "条目id",
+											"required": true
+										},
+										{
+											"name": "order_num",
+											"type": "Number",
+											"description": "排序",
+											"required": true
+										},
+										{
+											"name": "shid",
+											"type": "Number",
+											"description": "所属shid",
+											"required": true
+										},
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "所属srid，如果是酒店上属性，则该字段无值",
+											"required": true
+										},
+										{
+											"name": "sub_type",
+											"type": "String",
+											"description": "二级分类",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "一级分类，10-预订须知",
+											"required": true
+										},
+										{
+											"name": "type_id",
+											"type": "String",
+											"description": "二级服务设施字典code,10001--入店时间, 10002--离店时间, 10003--酒店政策, 10004--加床收费, 10005--额外收费, 10006--其他说明, 10007--酒店位于山顶, 10008--需坐船前往, 10009--位于景区内",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "实际内容",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "shotel_fun_facilities",
+									"type": "ShotelPropertiesVo[]",
+									"description": "娱乐设施",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "条目id",
+											"required": true
+										},
+										{
+											"name": "order_num",
+											"type": "Number",
+											"description": "排序",
+											"required": true
+										},
+										{
+											"name": "shid",
+											"type": "Number",
+											"description": "所属shid",
+											"required": true
+										},
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "所属srid，如果是酒店上属性，则该字段无值",
+											"required": true
+										},
+										{
+											"name": "sub_type",
+											"type": "String",
+											"description": "二级分类",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "一级分类，50-娱乐设施",
+											"required": true
+										},
+										{
+											"name": "type_id",
+											"type": "String",
+											"description": "二级服务设施字典",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "实际内容",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "shotel_hotel_facilities",
+									"type": "ShotelPropertiesVo[]",
+									"description": "酒店设施",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "条目id",
+											"required": true
+										},
+										{
+											"name": "order_num",
+											"type": "Number",
+											"description": "排序",
+											"required": true
+										},
+										{
+											"name": "shid",
+											"type": "Number",
+											"description": "所属shid",
+											"required": true
+										},
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "所属srid，如果是酒店上属性，则该字段无值",
+											"required": true
+										},
+										{
+											"name": "sub_type",
+											"type": "String",
+											"description": "二级分类",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "一级分类，20-酒店设施",
+											"required": true
+										},
+										{
+											"name": "type_id",
+											"type": "String",
+											"description": "二级服务设施字典",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "实际内容",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "shotel_hotel_services",
+									"type": "ShotelPropertiesVo[]",
+									"description": "酒店服务",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "条目id",
+											"required": true
+										},
+										{
+											"name": "order_num",
+											"type": "Number",
+											"description": "排序",
+											"required": true
+										},
+										{
+											"name": "shid",
+											"type": "Number",
+											"description": "所属shid",
+											"required": true
+										},
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "所属srid，如果是酒店上属性，则该字段无值",
+											"required": true
+										},
+										{
+											"name": "sub_type",
+											"type": "String",
+											"description": "二级分类二级分类",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "一级分类，30-酒店服务",
+											"required": true
+										},
+										{
+											"name": "type_id",
+											"type": "String",
+											"description": "二级服务设施字典",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "实际内容",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "shotel_nomal_pictures",
+									"type": "ShotelPropertiesVo[]",
+									"description": "酒店普通图",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "条目id",
+											"required": true
+										},
+										{
+											"name": "order_num",
+											"type": "Number",
+											"description": "排序",
+											"required": true
+										},
+										{
+											"name": "shid",
+											"type": "Number",
+											"description": "所属shid",
+											"required": true
+										},
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "所属srid，如果是酒店上属性，则该字段无值；这里为空",
+											"required": true
+										},
+										{
+											"name": "sub_type",
+											"type": "String",
+											"description": "二级分类，如外观、公共区域、设施、房间",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "一级分类，1--普通图",
+											"required": true
+										},
+										{
+											"name": "type_id",
+											"type": "String",
+											"description": "二级服务设施字典",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "实际内容",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "shotel_room_facilities",
+									"type": "ShotelPropertiesVo[]",
+									"description": "酒店维度的房间设施",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "条目id",
+											"required": true
+										},
+										{
+											"name": "order_num",
+											"type": "Number",
+											"description": "排序",
+											"required": true
+										},
+										{
+											"name": "shid",
+											"type": "Number",
+											"description": "所属shid",
+											"required": true
+										},
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "所属srid，如果是酒店上属性，则该字段无值",
+											"required": true
+										},
+										{
+											"name": "sub_type",
+											"type": "String",
+											"description": "二级分类",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "Number",
+											"description": "一级分类，40-房间设施",
+											"required": true
+										},
+										{
+											"name": "type_id",
+											"type": "String",
+											"description": "二级服务设施字典",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "实际内容",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "sroom_types",
+							"type": "SRoomTypeVo[]",
+							"description": "标准房型列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "add_bed",
+									"type": "Number",
+									"description": "是否可加床，0--不可，1--可以",
+									"required": true
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "面积",
+									"required": true
+								},
+								{
+									"name": "facility",
+									"type": "String",
+									"description": "设施文本",
+									"required": true
+								},
+								{
+									"name": "floor",
+									"type": "String",
+									"description": "所在楼层",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "最后修改时间",
+									"required": true
+								},
+								{
+									"name": "max_occupancy",
+									"type": "Number",
+									"description": "最大入住人数",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "房型中文名",
+									"required": true
+								},
+								{
+									"name": "name_e",
+									"type": "String",
+									"description": "房型英文名",
+									"required": true
+								},
+								{
+									"name": "room_type_bed_info",
+									"type": "RoomTypeBedInfoVo",
+									"description": "床型结构化信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "bed_info_groups",
+											"type": "BedInfoGroupVo[]",
+											"description": "或关系床型集合",
+											"required": true,
+											"subParams": [
+												{
+													"name": "bed_infos",
+													"type": "BedInfoVo[]",
+													"description": "和关系床型集合",
+													"required": true,
+													"subParams": [
+														{
+															"name": "bed_num",
+															"type": "Number",
+															"description": "床数量",
+															"required": true
+														},
+														{
+															"name": "bed_type",
+															"type": "String",
+															"description": "床型",
+															"required": true
+														},
+														{
+															"name": "desc",
+															"type": "String",
+															"description": "描述",
+															"required": true
+														},
+														{
+															"name": "length",
+															"type": "String",
+															"description": "床长",
+															"required": true
+														},
+														{
+															"name": "width",
+															"type": "String",
+															"description": "长款",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "bed_num",
+													"type": "Number",
+													"description": "床数量",
+													"required": true
+												},
+												{
+													"name": "brief_desc",
+													"type": "String",
+													"description": "简短描述，用于详情页报价前面的床型展示",
+													"required": true
+												},
+												{
+													"name": "classification",
+													"type": "String",
+													"description": "分类，大类，用于搜索的筛选项。1:大床,2:双床,3:单人床,4:多床",
+													"required": true
+												},
+												{
+													"name": "classification_desc",
+													"type": "String",
+													"description": "分类描述",
+													"required": true
+												},
+												{
+													"name": "desc",
+													"type": "String",
+													"description": "描述，长描述，描述为最详细的内容，用于详情页房型详情Dialog，下单页，订单页展示",
+													"required": true
+												},
+												{
+													"name": "fuzzy_desc",
+													"type": "String",
+													"description": "模糊描述，最精简的描述信息，大床/双床/单人床/多床/床位简单描述，较长描述省略床宽",
+													"required": true
+												},
+												{
+													"name": "simple_desc",
+													"type": "String",
+													"description": "简单描述，较长描述省略床宽，但依然会描述具体的床型信息，用于详情页标准房型床型展示",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "brief_desc",
+											"type": "String",
+											"description": "简短描述，用于详情页报价前面的床型展示。",
+											"required": true
+										},
+										{
+											"name": "classifications",
+											"type": "String[]",
+											"description": "分类，大类，用于搜索的筛选项",
+											"required": true
+										},
+										{
+											"name": "classification_desc",
+											"type": "String",
+											"description": "分类描述",
+											"required": true
+										},
+										{
+											"name": "desc",
+											"type": "String",
+											"description": "描述，长描述，描述为最详细的内容，用于详情页房型详情Dialog，下单页，订单页展示",
+											"required": true
+										},
+										{
+											"name": "fuzzy_desc",
+											"type": "String",
+											"description": "模糊描述，最精简的描述信息，大床/双床/单人床/多床/床位简单描述，较长描述省略床宽",
+											"required": true
+										},
+										{
+											"name": "simple_desc",
+											"type": "String",
+											"description": "简单描述，较长描述省略床宽，但依然会描述具体的床型信息，用于详情页标准房型床型展示",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "所属标准酒店id",
+									"required": true
+								},
+								{
+									"name": "srid",
+									"type": "Number",
+									"description": "标准房型id",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "上下架状态，0--下架，其他状态-下架",
+									"required": true
+								},
+								{
+									"name": "window_type",
+									"type": "String",
+									"description": "窗型，0--无窗,1--有窗,2--部分有窗,3--暗窗,4--部分暗窗",
+									"required": true
+								},
+								{
+									"name": "pic_urls",
+									"type": "String",
+									"description": "房型图片，多值使用英文逗号拼接",
+									"required": true
+								},
+								{
+									"name": "sroom_type_properties",
+									"type": "SRoomTypePropertiesSetVo",
+									"description": "房型附加属性集合",
+									"required": true,
+									"subParams": [
+										{
+											"name": "sroom_type_nomal_pictures",
+											"type": "ShotelPropertiesVo[]",
+											"description": "标准房型普通图集合",
+											"required": true,
+											"subParams": [
+												{
+													"name": "id",
+													"type": "Number",
+													"description": "属性条目id，定位数据时使用",
+													"required": true
+												},
+												{
+													"name": "order_num",
+													"type": "Number",
+													"description": "排序，按数字升序",
+													"required": true
+												},
+												{
+													"name": "shid",
+													"type": "Number",
+													"description": "房型所属shid",
+													"required": true
+												},
+												{
+													"name": "srid",
+													"type": "Number",
+													"description": "当前房型srid",
+													"required": true
+												},
+												{
+													"name": "sub_type",
+													"type": "String",
+													"description": "图片二级类型，房型上为“客房”",
+													"required": true
+												},
+												{
+													"name": "type",
+													"type": "Number",
+													"description": "附加属性类型，普通图type=1",
+													"required": true
+												},
+												{
+													"name": "type_id",
+													"type": "String",
+													"description": "当前属性对应的编码id",
+													"required": true
+												},
+												{
+													"name": "value",
+													"type": "String",
+													"description": "属性值，图片类型为url",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "sroom_type_room_facilities",
+											"type": "ShotelPropertiesVo[]",
+											"description": "房间设施集合",
+											"required": true,
+											"subParams": [
+												{
+													"name": "id",
+													"type": "Number",
+													"description": "属性条目id，定位数据时使用",
+													"required": true
+												},
+												{
+													"name": "order_num",
+													"type": "Number",
+													"description": "排序，按数字升序",
+													"required": true
+												},
+												{
+													"name": "shid",
+													"type": "Number",
+													"description": "房型所属shid",
+													"required": true
+												},
+												{
+													"name": "srid",
+													"type": "Number",
+													"description": "当前房型srid",
+													"required": true
+												},
+												{
+													"name": "sub_type",
+													"type": "String",
+													"description": "房间设施二级类型，1--电话，2--上网，3--卫浴，4--景观，5--媒体，6--服务，7--安睡，-1--其他",
+													"required": true
+												},
+												{
+													"name": "type",
+													"type": "Number",
+													"description": "附加属性类型，房间设施为40",
+													"required": true
+												},
+												{
+													"name": "type_id",
+													"type": "String",
+													"description": "当前设施属性对应的编码id",
+													"required": true
+												},
+												{
+													"name": "value",
+													"type": "String",
+													"description": "房间设施名称",
+													"required": true
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "star",
+							"type": "String",
+							"description": "档次，0--无档次，2--二星及经济，3--舒适，4--高档，5--豪华",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "上下架状态，0--下架，其他状态-下架",
+							"required": true
+						},
+						{
+							"name": "tel",
+							"type": "String",
+							"description": "电话",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "酒店业务分类",
+							"required": true
+						},
+						{
+							"name": "rooms",
+							"type": "Number",
+							"description": "客房数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功标记",
+					"required": true
+				},
+				{
+					"name": "success_flag",
+					"type": "Number",
+					"description": "成功标志",
+					"required": true
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "总数据量",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "数据版本",
+					"required": true
+				},
+				{
+					"name": "last_id",
+					"type": "Number",
+					"description": "分页查询结果中最后一个id，配合hasNext进行分页查询的性能优化",
+					"required": true
+				}
+			]
+		}
+	]
+}

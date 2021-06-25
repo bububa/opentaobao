@@ -1,0 +1,113 @@
+{
+	"name": "alibaba.wdkorder.sharestock.fulfill.get",
+	"apiChineseName": "商户订单履约数据获取",
+	"description": "商户订单履约数据获取",
+	"requestParams": [
+		{
+			"name": "fulfill_order_id",
+			"type": "String",
+			"description": "履约单ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MaochaoOrderFulfillQueryResult",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回码说明",
+					"required": true
+				},
+				{
+					"name": "fulfill_order_list",
+					"type": "MaochaoWdkOrderFulfillDto[]",
+					"description": "履约单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tb_sub_order_id",
+							"type": "Number",
+							"description": "主站子订单ID",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "五道口订单ID",
+							"required": true
+						},
+						{
+							"name": "biz_sub_order_id",
+							"type": "Number",
+							"description": "五道口子订单ID",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商户编码",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "经营店ID",
+							"required": true
+						},
+						{
+							"name": "pick_amount_stock",
+							"type": "String",
+							"description": "拣货数量",
+							"required": true
+						},
+						{
+							"name": "attributes",
+							"type": "Json",
+							"description": "扩展属性",
+							"required": true
+						},
+						{
+							"name": "fulfill_status",
+							"type": "String",
+							"description": "履约状态",
+							"required": true
+						},
+						{
+							"name": "tb_order_id",
+							"type": "Number",
+							"description": "主站订单ID",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "渠道店ID",
+							"required": true
+						},
+						{
+							"name": "enter_warehouse_stock_quantity",
+							"type": "String",
+							"description": "返仓数量",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

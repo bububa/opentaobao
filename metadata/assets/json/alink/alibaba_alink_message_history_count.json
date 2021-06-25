@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.alink.message.history.count",
+	"apiChineseName": "查询消息总数",
+	"description": "查询消息总数",
+	"requestParams": [
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备id"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "消息类型 1:通知, 2:报警, 3:运营，5:语音控制机器人响应，6:语音控"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "消息状态，0：未读；1：已读"
+		},
+		{
+			"name": "level",
+			"type": "String",
+			"description": "消息级别 1：普通；2：重要消息"
+		},
+		{
+			"name": "limit",
+			"type": "String",
+			"description": "查询多少条数据",
+			"required": true
+		},
+		{
+			"name": "offset",
+			"type": "String",
+			"description": "偏移量",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopServiceResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "接口返回数据",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "详细描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

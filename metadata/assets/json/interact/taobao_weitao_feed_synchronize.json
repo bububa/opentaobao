@@ -1,0 +1,61 @@
+{
+	"name": "taobao.weitao.feed.synchronize",
+	"apiChineseName": "推广淘小铺isv 活动到微淘feed",
+	"description": "推广淘小铺isv 活动到微淘feed",
+	"requestParams": [
+		{
+			"name": "biz_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		},
+		{
+			"name": "cover_path",
+			"type": "String",
+			"description": "feed封面图片url",
+			"required": true
+		},
+		{
+			"name": "detail_url",
+			"type": "String",
+			"description": "feed点击跳转的活动地址",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Number",
+			"description": "feed展示结束时间",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "Number",
+			"description": "feed展示开始时间",
+			"required": true
+		},
+		{
+			"name": "summary",
+			"type": "String",
+			"description": "feed描述",
+			"required": true
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "feed标题",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "同步到微淘成功与否"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "增加错误信息"
+		}
+	]
+}

@@ -1,0 +1,58 @@
+{
+	"name": "taobao.jst.sms.message.direct.batchsend",
+	"apiChineseName": "聚石塔新短信发送接口",
+	"description": "聚石塔所见即所得的短信发送接口",
+	"requestParams": [
+		{
+			"name": "sign_name",
+			"type": "String",
+			"description": "短信签名",
+			"required": true
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "短信中带的短链，如果不传则没有短信效果数据"
+		},
+		{
+			"name": "sms_template_code",
+			"type": "String",
+			"description": "短信模版CODE，必须为全变量模板",
+			"required": true
+		},
+		{
+			"name": "rec_num",
+			"type": "String",
+			"description": "短信接收号码，json格式，最多200个号码",
+			"required": true
+		},
+		{
+			"name": "sms_content",
+			"type": "String",
+			"description": "短信内容，如果带${url}则会被入参url替换",
+			"required": true
+		},
+		{
+			"name": "extend_num",
+			"type": "String",
+			"description": "短信扩展码（JSON字符串数组格式），拓展码个数需要和电话号码个数一致。"
+		},
+		{
+			"name": "task_code",
+			"type": "String",
+			"description": "短信任务code，没有请先创建。"
+		},
+		{
+			"name": "task_sign",
+			"type": "String",
+			"description": "一个在taskcode下唯一的随机字符串，对于taskSign相同的请求平台认为是商家的同一次短信发送。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "module",
+			"type": "String",
+			"description": "短信回执码"
+		}
+	]
+}

@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.ele.fengniao.service.package.query",
+	"apiChineseName": "预采购服务包查询接口",
+	"description": "查询门店所在经纬度可用服务包的接口",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "Param",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "appid",
+					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商户code",
+					"required": true
+				},
+				{
+					"name": "chainstores",
+					"type": "ChainStore[]",
+					"description": "门店列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "chainstore_code",
+							"type": "String",
+							"description": "门店code",
+							"required": true
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_packages",
+			"type": "Result []",
+			"description": "servicePackages",
+			"subParams": [
+				{
+					"name": "chainstore_code",
+					"type": "String",
+					"description": "门店code",
+					"required": true
+				},
+				{
+					"name": "service_package_codes",
+					"type": "ServicePackage[]",
+					"description": "servicePackageCodes",
+					"required": true,
+					"subParams": [
+						{
+							"name": "service_package_code",
+							"type": "String",
+							"description": "服务包code",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

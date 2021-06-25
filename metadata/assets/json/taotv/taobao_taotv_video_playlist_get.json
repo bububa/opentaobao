@@ -1,0 +1,100 @@
+{
+	"name": "taobao.taotv.video.playlist.get",
+	"apiChineseName": "根据频道ID获取频道下节目单以及当前播放",
+	"description": "根据频道ID获取频道下节目单以及当前播放",
+	"requestParams": [
+		{
+			"name": "play_list_id",
+			"type": "Number",
+			"description": "播单id"
+		},
+		{
+			"name": "system_info",
+			"type": "String",
+			"description": "系统信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model_list",
+					"type": "Model[]",
+					"description": "数据列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "视频图片",
+							"required": true
+						},
+						{
+							"name": "video_id",
+							"type": "String",
+							"description": "视频ID",
+							"required": true
+						},
+						{
+							"name": "from",
+							"type": "Number",
+							"description": "视频来源",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "视频标题",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "seconds",
+							"type": "String",
+							"description": "时长，单位秒",
+							"required": true
+						},
+						{
+							"name": "ott_update_time",
+							"type": "Date",
+							"description": "ott测更新时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

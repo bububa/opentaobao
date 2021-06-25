@@ -1,0 +1,19 @@
+{
+	"name": "taobao.baichuan.openaccount.login",
+	"apiChineseName": "百川用户名密码登录",
+	"description": "百川用户名密码登录",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "name"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "name"
+		}
+	]
+}

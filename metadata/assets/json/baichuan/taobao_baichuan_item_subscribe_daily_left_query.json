@@ -1,0 +1,54 @@
+{
+	"name": "taobao.baichuan.item.subscribe.daily.left.query",
+	"apiChineseName": "查询当天可添加的余量",
+	"description": "查询当天可添加的余量",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result_list",
+					"type": "ResultMeta[]",
+					"description": "返回",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "返回码",
+							"required": true
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "返回码对应的文案",
+							"required": true
+						},
+						{
+							"name": "data",
+							"type": "ResultData",
+							"description": "数据",
+							"required": true,
+							"subParams": [
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "返回值个数",
+									"required": true
+								},
+								{
+									"name": "data_list",
+									"type": "Number[]",
+									"description": "具体内容",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

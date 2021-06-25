@@ -1,0 +1,21 @@
+package wdk
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/wdk"
+)
+
+/* 
+查询拣货单中的药品信息 
+wdk.wms.pick.medicine.query
+
+联营商药机查询拣货单中的药品信息
+*/
+func WdkWmsPickMedicineQuery(clt *core.SDKClient, req *wdk.WdkWmsPickMedicineQueryRequest, session string) (*wdk.WdkWmsPickMedicineQueryResponse, error) {
+    var resp wdk.WdkWmsPickMedicineQueryAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

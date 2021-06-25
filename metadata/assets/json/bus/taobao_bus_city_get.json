@@ -1,0 +1,76 @@
+{
+	"name": "taobao.bus.city.get",
+	"apiChineseName": "城市接口",
+	"description": "汽车票出发城市获取接口，获取所有出发城市",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CitySearchRp",
+			"description": "城市返回结果",
+			"subParams": [
+				{
+					"name": "citys",
+					"type": "CityDto[]",
+					"description": "城市集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市编码",
+							"required": true
+						},
+						{
+							"name": "city_full_py",
+							"type": "String",
+							"description": "拼音",
+							"required": true
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市名字",
+							"required": true
+						},
+						{
+							"name": "city_short_py",
+							"type": "String",
+							"description": "简拼",
+							"required": true
+						},
+						{
+							"name": "pre_day",
+							"type": "Number",
+							"description": "预售期",
+							"required": true
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "省份名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误代码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

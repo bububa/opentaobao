@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.cuntao.interact.requisition.update",
+	"apiChineseName": "更新物料制作状态",
+	"description": "村淘物料下沉，更新物料制作状态",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "物料制作状态"
+		},
+		{
+			"name": "uuid_list",
+			"type": "String[]",
+			"description": "申请单id列表",
+			"maxListSize": 100
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "异常时返回的code",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "异常时返回的描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

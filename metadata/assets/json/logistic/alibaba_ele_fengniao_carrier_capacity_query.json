@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.ele.fengniao.carrier.capacity.query",
+	"apiChineseName": "按照门店查询骑手运力状态查询",
+	"description": "提供给大润发，用于按照站点纬度查询大润发每个配送站的实时上班骑手数、到店骑手数、活跃骑手数量",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "Param",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "store_codes",
+					"type": "String[]",
+					"description": "门店编码，对应大润发deliveryDockCode",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "Capacities []",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "delivery_knight_amount",
+					"type": "Number",
+					"description": "配送中骑手",
+					"required": true
+				},
+				{
+					"name": "rest_knight_amount",
+					"type": "Number",
+					"description": "小休骑手",
+					"required": true
+				},
+				{
+					"name": "active_knight_amount",
+					"type": "Number",
+					"description": "活跃骑手",
+					"required": true
+				},
+				{
+					"name": "off_work_knight_amount",
+					"type": "Number",
+					"description": "下班骑手",
+					"required": true
+				},
+				{
+					"name": "arrival_knight_amount",
+					"type": "Number",
+					"description": "到店骑手",
+					"required": true
+				},
+				{
+					"name": "back_knight_amount",
+					"type": "Number",
+					"description": "归途\t骑手",
+					"required": true
+				},
+				{
+					"name": "work_knight_amount",
+					"type": "Number",
+					"description": "上班骑手数",
+					"required": true
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "门店编码，对应大润发deliveryDockCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

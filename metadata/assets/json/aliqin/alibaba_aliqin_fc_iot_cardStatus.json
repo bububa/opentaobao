@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.aliqin.fc.iot.cardStatus",
+	"apiChineseName": "物联卡状态查询",
+	"description": "物联卡状态查询",
+	"requestParams": [
+		{
+			"name": "iccid",
+			"type": "String",
+			"description": "SIM卡号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "\"MsisdnStatus\":\"卡状态\",\"MSISDN\":\"MSISDN号\",\"ICCID\":\"ICCID号\"",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "1.成功；2.失败",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

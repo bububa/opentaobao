@@ -1,0 +1,35 @@
+{
+	"name": "cainiao.member.courier.cpresign",
+	"apiChineseName": "cp清理离职用户信息",
+	"description": "CP清理内部离职的用户信息",
+	"requestParams": [
+		{
+			"name": "account_id",
+			"type": "Number",
+			"description": "菜鸟用户id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status_message",
+			"type": "String",
+			"description": "具体错误信息"
+		},
+		{
+			"name": "status_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "业务处理是否成功"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		}
+	]
+}

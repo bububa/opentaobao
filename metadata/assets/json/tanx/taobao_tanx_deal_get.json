@@ -1,0 +1,127 @@
+{
+	"name": "taobao.tanx.deal.get",
+	"apiChineseName": "对外部dsp提供交易id查询接口",
+	"description": "对外部dsp提供交易id查询接口",
+	"requestParams": [
+		{
+			"name": "dsp_id",
+			"type": "Number",
+			"description": "dsp用户id",
+			"required": true
+		},
+		{
+			"name": "deal_id",
+			"type": "Number",
+			"description": "交易id",
+			"required": true
+		},
+		{
+			"name": "sign_time",
+			"type": "Number",
+			"description": "1970年到现在的时间，毫秒",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "验证token",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "code",
+			"type": "Number",
+			"description": "结果代码"
+		},
+		{
+			"name": "messag",
+			"type": "String",
+			"description": "结果信息"
+		},
+		{
+			"name": "sucess",
+			"type": "Boolean",
+			"description": "查询结果"
+		},
+		{
+			"name": "result",
+			"type": "DealInfoDTO",
+			"description": "查询结果",
+			"subParams": [
+				{
+					"name": "addresses",
+					"type": "DicDTO[]",
+					"description": "11",
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "数据项ID"
+						},
+						{
+							"name": "value",
+							"type": "String",
+							"description": "数据项值"
+						}
+					]
+				},
+				{
+					"name": "deal_id",
+					"type": "Number",
+					"description": "100"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "100"
+				},
+				{
+					"name": "begin_time",
+					"type": "Date",
+					"description": "100"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "100"
+				},
+				{
+					"name": "deal_type",
+					"type": "Number",
+					"description": "100"
+				},
+				{
+					"name": "seller_site_names",
+					"type": "String[]",
+					"description": "100"
+				},
+				{
+					"name": "dsp_ids",
+					"type": "Number[]",
+					"description": "100"
+				},
+				{
+					"name": "advertiser_ids",
+					"type": "Number[]",
+					"description": "100"
+				},
+				{
+					"name": "interval_ids",
+					"type": "String[]",
+					"description": "100"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "100"
+				},
+				{
+					"name": "pids",
+					"type": "String[]",
+					"description": "100"
+				}
+			]
+		}
+	]
+}

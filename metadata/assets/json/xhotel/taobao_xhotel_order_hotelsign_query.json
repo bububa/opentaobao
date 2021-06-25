@@ -1,0 +1,300 @@
+{
+	"name": "taobao.xhotel.order.hotelsign.query",
+	"apiChineseName": "获取直连酒店（客栈）签约上线进度信息",
+	"description": "获取直连酒店（客栈）签约上线进度信息",
+	"requestParams": [
+		{
+			"name": "out_uuid",
+			"type": "String",
+			"description": "请求流水",
+			"required": true
+		},
+		{
+			"name": "hotel_code",
+			"type": "String",
+			"description": "商家酒店编码"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "商家vendor"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "out_uuid",
+			"type": "String",
+			"description": "outUuid"
+		},
+		{
+			"name": "hotel_sign_info",
+			"type": "DchotelSignDo",
+			"description": "hotelSignInfo，当入参中包含hotelcode和vendor的时候，返回该对象",
+			"subParams": [
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "hid",
+					"required": true
+				},
+				{
+					"name": "pid",
+					"type": "Number",
+					"description": "pid",
+					"required": true
+				},
+				{
+					"name": "sign_status",
+					"type": "Number",
+					"description": "signStatus",
+					"required": true
+				},
+				{
+					"name": "is_kezhan_sign",
+					"type": "Number",
+					"description": "isKezhanSign",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "name",
+					"required": true
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "email",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "phone",
+					"required": true
+				},
+				{
+					"name": "pay_type",
+					"type": "Number",
+					"description": "payType",
+					"required": true
+				},
+				{
+					"name": "qlf_type",
+					"type": "Number",
+					"description": "qlfType",
+					"required": true
+				},
+				{
+					"name": "id_confirm_letter_status",
+					"type": "Number",
+					"description": "idConfirmLetterStatus",
+					"required": true
+				},
+				{
+					"name": "tacc_auth_letter_allow_date",
+					"type": "Date",
+					"description": "taccAuthLetterAllowDate",
+					"required": true
+				},
+				{
+					"name": "stl_status",
+					"type": "Number",
+					"description": "stlStatus",
+					"required": true
+				},
+				{
+					"name": "hotelier_id_status",
+					"type": "Number",
+					"description": "hotelierIdStatus",
+					"required": true
+				},
+				{
+					"name": "comm_letter_status",
+					"type": "Number",
+					"description": "commLetterStatus",
+					"required": true
+				},
+				{
+					"name": "hotel_pictures_status",
+					"type": "Number",
+					"description": "hotelPicturesStatus",
+					"required": true
+				},
+				{
+					"name": "hotel_account",
+					"type": "String",
+					"description": "hotelAccount",
+					"required": true
+				},
+				{
+					"name": "to_dc_hotel_status",
+					"type": "Number",
+					"description": "toDcHotelStatus",
+					"required": true
+				},
+				{
+					"name": "intent_achieve_date",
+					"type": "Date",
+					"description": "intentAchieveDate",
+					"required": true
+				},
+				{
+					"name": "private_receipt_account_status",
+					"type": "Number",
+					"description": "privateReceiptAccountStatus",
+					"required": true
+				},
+				{
+					"name": "bl_status",
+					"type": "Number",
+					"description": "blStatus",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "ds_nhotel_info_d_o_list",
+			"type": "DsNhotelInfoDo []",
+			"description": "dsNhotelInfoDOList，当入参不包含hotelcode的时候，只有vendor的时候返回该对象",
+			"subParams": [
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "onlineStatus",
+					"required": true
+				},
+				{
+					"name": "online_date",
+					"type": "Date",
+					"description": "onlineDate",
+					"required": true
+				},
+				{
+					"name": "qualification_type",
+					"type": "Number",
+					"description": "qualificationType",
+					"required": true
+				},
+				{
+					"name": "account_type",
+					"type": "Number",
+					"description": "accountType",
+					"required": true
+				},
+				{
+					"name": "train_status",
+					"type": "Number",
+					"description": "trainStatus",
+					"required": true
+				},
+				{
+					"name": "comm_letter_status",
+					"type": "Number",
+					"description": "commLetterStatus",
+					"required": true
+				},
+				{
+					"name": "private_receipt_account_status",
+					"type": "Number",
+					"description": "privateReceiptAccountStatus",
+					"required": true
+				},
+				{
+					"name": "hotelier_id_status",
+					"type": "Number",
+					"description": "hotelierIdStatus",
+					"required": true
+				},
+				{
+					"name": "srl_status",
+					"type": "Number",
+					"description": "srlStatus",
+					"required": true
+				},
+				{
+					"name": "business_license_status",
+					"type": "Number",
+					"description": "businessLicenseStatus",
+					"required": true
+				},
+				{
+					"name": "id_confirm_letter_status",
+					"type": "Number",
+					"description": "idConfirmLetterStatus",
+					"required": true
+				},
+				{
+					"name": "sign_date",
+					"type": "Date",
+					"description": "signDate",
+					"required": true
+				},
+				{
+					"name": "is_signed",
+					"type": "Number",
+					"description": "isSigned",
+					"required": true
+				},
+				{
+					"name": "is_account_apply",
+					"type": "Number",
+					"description": "isAccountApply",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "name",
+					"required": true
+				},
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "hid",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "outerId",
+					"required": true
+				},
+				{
+					"name": "is_kezhan",
+					"type": "Number",
+					"description": "isKezhan",
+					"required": true
+				},
+				{
+					"name": "hotel_pictures_status",
+					"type": "Number",
+					"description": "hotelPicturesStatus",
+					"required": true
+				},
+				{
+					"name": "can_sell_status",
+					"type": "Number",
+					"description": "canSellStatus",
+					"required": true
+				},
+				{
+					"name": "can_sell_date",
+					"type": "Date",
+					"description": "canSellDate",
+					"required": true
+				}
+			]
+		}
+	]
+}

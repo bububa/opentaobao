@@ -1,0 +1,55 @@
+{
+	"name": "taobao.promotionmisc.common.item.activity.add",
+	"apiChineseName": "创建通用单品优惠活动",
+	"description": "创建通用单品优惠活动。\n1、该接口只创建活动的基本信息，如需要增加、删除参与该活动的商品及优惠，请调用taobao.promotionmisc.common.item.detail.add和taobao.promotionmisc.common.item.detail.delete接口\n2、同一卖家下的活动数量限制为30个，超过限制需先调用taobao.promotionmisc.common.item.activity.delete接口删除无用的活动后才可再创建新的活动",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "活动名称，不能超过32字符",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "description",
+			"type": "String",
+			"description": "活动描述，不能超过100字符",
+			"required": true,
+			"maxLength": 100
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "活动开始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "活动结束时间",
+			"required": true
+		},
+		{
+			"name": "is_user_tag",
+			"type": "Boolean",
+			"description": "是否指定人群标签"
+		},
+		{
+			"name": "user_tag",
+			"type": "String",
+			"description": "用户标签。当is_user_tag为true时，该值才有意义。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否创建成功"
+		},
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "优惠活动ID"
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"name": "taobao.ump.mbb.getbyid",
+	"apiChineseName": "获取营销积木块",
+	"description": "根据积木块id获取营销积木块。",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "积木块的id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "mbb",
+			"type": "String",
+			"description": "营销积木块定义信息，可以通过ump sdk里面的MBB.fromJson来处理"
+		}
+	]
+}

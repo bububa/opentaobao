@@ -1,0 +1,56 @@
+{
+	"name": "taobao.train.agent.change.refuse.vtwo",
+	"apiChineseName": "代理商拒绝改签v2--增加鉴权校验",
+	"description": "代理商拒绝火车票改签服务",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "AgentRefuseChangeParam",
+			"description": "代理商拒绝改签参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "改签申请单id",
+					"required": true
+				},
+				{
+					"name": "extend_param",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "refuse_type",
+					"type": "Number",
+					"description": "拒绝原因类型，0 其他、1 余票不足、2 已取票、3 已线下退票",
+					"required": true
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "代理商id",
+					"required": true
+				},
+				{
+					"name": "main_biz_order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

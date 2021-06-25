@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.aliqin.ta.number.singlecallbytts",
+	"apiChineseName": "根据号码tts单呼",
+	"description": "将语音验证码和语音通知发布至聚石塔渠道",
+	"requestParams": [
+		{
+			"name": "called_num",
+			"type": "String",
+			"description": "被叫号码",
+			"required": true
+		},
+		{
+			"name": "called_show_num",
+			"type": "String",
+			"description": "显示号码",
+			"required": true
+		},
+		{
+			"name": "tts_code",
+			"type": "String",
+			"description": "tts文本模板code",
+			"required": true
+		},
+		{
+			"name": "params",
+			"type": "Json",
+			"description": "上下文参数,tts模板含有变量的, 此参数需填写。示例:{\"date\":\"2015年 \" ,\"name\":\"测试\",\"extend\":\"回传参数\"} date、name 为模板里的变量名作为key,extend为扩展信息作为回传参数的key"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "返回值",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功，失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

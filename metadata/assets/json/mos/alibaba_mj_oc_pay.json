@@ -1,0 +1,302 @@
+{
+	"name": "alibaba.mj.oc.pay",
+	"apiChineseName": "POS收银成功后订单同步",
+	"description": "此API用于在银泰商场中，消费者在收银台收银/退款时， POS系统在收银或退款成功后，调用此接口进行订单同步",
+	"requestParams": [
+		{
+			"name": "pos_order",
+			"type": "PosOrderDto",
+			"description": "订单数据",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_trade_no",
+					"type": "String",
+					"description": "POS交易流水号",
+					"required": true
+				},
+				{
+					"name": "out_refund_no",
+					"type": "String",
+					"description": "退款流水号（退款时必须有）"
+				},
+				{
+					"name": "trade_no",
+					"type": "String",
+					"description": "OC交易流水号"
+				},
+				{
+					"name": "member_card_no",
+					"type": "String",
+					"description": "会员卡号"
+				},
+				{
+					"name": "member_mobile_phone",
+					"type": "String",
+					"description": "会员手机号"
+				},
+				{
+					"name": "mall_no",
+					"type": "String",
+					"description": "门店号",
+					"required": true
+				},
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "订单金额，单位分"
+				},
+				{
+					"name": "logistics_way",
+					"type": "Number",
+					"description": "配送方式：1 : 门店自提，2 ：物流到家",
+					"required": true
+				},
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "交易类别：0 : 收银  1 ：退款",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作员"
+				},
+				{
+					"name": "pay_time",
+					"type": "String",
+					"description": "付款/退款 时间",
+					"required": true
+				},
+				{
+					"name": "sale_items",
+					"type": "PosSaleItemDto[]",
+					"description": "订单商品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "mall_no",
+							"type": "String",
+							"description": "门店号",
+							"required": true
+						},
+						{
+							"name": "shop_no",
+							"type": "String",
+							"description": "专柜号",
+							"required": true
+						},
+						{
+							"name": "sale_ticket_no",
+							"type": "String",
+							"description": "开票单号（）"
+						},
+						{
+							"name": "item_type",
+							"type": "String",
+							"description": "商品类型：  N：老单品；Y：喵货；C：云单品；M：零售+",
+							"required": true
+						},
+						{
+							"name": "goods_line_no",
+							"type": "Number",
+							"description": "商品行号",
+							"required": true
+						},
+						{
+							"name": "goods_id",
+							"type": "String",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "unique_code",
+							"type": "String",
+							"description": "唯一码"
+						},
+						{
+							"name": "goods_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量，可小数点",
+							"required": true
+						},
+						{
+							"name": "ori_price",
+							"type": "Number",
+							"description": "商品原价，单位：分",
+							"required": true
+						},
+						{
+							"name": "discount_amount",
+							"type": "Number",
+							"description": "折扣金额，单位：分",
+							"required": true
+						},
+						{
+							"name": "pay_amount",
+							"type": "Number",
+							"description": "应付金额，单位：分",
+							"required": true
+						},
+						{
+							"name": "settle_code",
+							"type": "String",
+							"description": "结算码（退款的时候必须有）"
+						},
+						{
+							"name": "extend_params",
+							"type": "String",
+							"description": "扩展参数"
+						}
+					]
+				},
+				{
+					"name": "payments",
+					"type": "PosPaymentDto[]",
+					"description": "支付列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "payment_line_no",
+							"type": "Number",
+							"description": "支付行号",
+							"required": true
+						},
+						{
+							"name": "payment_no",
+							"type": "String",
+							"description": "支付流水号"
+						},
+						{
+							"name": "payment_code",
+							"type": "String",
+							"description": "支付代码",
+							"required": true
+						},
+						{
+							"name": "payment_name",
+							"type": "String",
+							"description": "支付名称"
+						},
+						{
+							"name": "payment_amount",
+							"type": "Number",
+							"description": "支付/优惠 金额,单位：分",
+							"required": true
+						},
+						{
+							"name": "pay_type",
+							"type": "Number",
+							"description": "1:支付，2:优惠"
+						},
+						{
+							"name": "extend_params",
+							"type": "String",
+							"description": "扩展参数。注：POS中的支付大类、小类，通过extendParams传。支付大类属性名： paymentType，支付小类属性名： paymentSubType。"
+						}
+					]
+				},
+				{
+					"name": "sale_channle",
+					"type": "Number",
+					"description": "订单来源"
+				},
+				{
+					"name": "terminal_no",
+					"type": "String",
+					"description": "收银机号"
+				},
+				{
+					"name": "split_promotions",
+					"type": "PosSplitPromotionDto[]",
+					"description": "优惠分摊列表",
+					"subParams": [
+						{
+							"name": "coupon_code",
+							"type": "String",
+							"description": "券码"
+						},
+						{
+							"name": "goods_line_no",
+							"type": "Number",
+							"description": "商品行号，必须"
+						},
+						{
+							"name": "payment_line_no",
+							"type": "Number",
+							"description": "支付行号,必须"
+						},
+						{
+							"name": "split_amount",
+							"type": "Number",
+							"description": "分摊金额，必须"
+						},
+						{
+							"name": "settle_code",
+							"type": "String",
+							"description": "结算码"
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "该支付方式支付时间"
+						},
+						{
+							"name": "payment",
+							"type": "String",
+							"description": "大支付方式"
+						},
+						{
+							"name": "sub_payment",
+							"type": "String",
+							"description": "小支付方式"
+						},
+						{
+							"name": "pay_type",
+							"type": "Number",
+							"description": "1:支付，2:优惠"
+						},
+						{
+							"name": "extend_params",
+							"type": "String",
+							"description": "是否压卡"
+						}
+					]
+				},
+				{
+					"name": "extend_params",
+					"type": "String",
+					"description": "扩展信息。"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ex_code",
+			"type": "Number",
+			"description": "errCode"
+		},
+		{
+			"name": "ex_msg",
+			"type": "String",
+			"description": "errMsg"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "out_trade_no",
+			"type": "String",
+			"description": "POS交易号"
+		}
+	]
+}

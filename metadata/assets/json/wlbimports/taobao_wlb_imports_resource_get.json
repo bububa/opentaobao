@@ -1,0 +1,109 @@
+{
+	"name": "taobao.wlb.imports.resource.get",
+	"apiChineseName": "获取所有服务列表",
+	"description": "一般进口TOP接口，获取所有服务列表。",
+	"requestParams": [
+		{
+			"name": "from_id",
+			"type": "Number",
+			"description": "卖家发货地区域ID",
+			"required": true
+		},
+		{
+			"name": "to_address",
+			"type": "ReciverAddressDo",
+			"description": "买家收货地信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "detail_address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "street",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省级别",
+					"required": true
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区、县级别"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国级别",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市级别"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resources",
+			"type": "ResourceResult []",
+			"description": "一般进口所有服务商列表",
+			"subParams": [
+				{
+					"name": "delivery_price",
+					"type": "DeliveryPrice",
+					"description": "服务报价。首重（1磅) CNY￥3元 续重（1磅) CNY￥6元",
+					"subParams": [
+						{
+							"name": "basic_weight",
+							"type": "Number",
+							"description": "首重"
+						},
+						{
+							"name": "basic_weight_price",
+							"type": "Number",
+							"description": "首重价格"
+						},
+						{
+							"name": "step_weight",
+							"type": "Number",
+							"description": "续重"
+						},
+						{
+							"name": "step_weight_price",
+							"type": "Number",
+							"description": "续重价格"
+						}
+					]
+				},
+				{
+					"name": "delivery_time",
+					"type": "Number",
+					"description": "时效，单位（小时）"
+				},
+				{
+					"name": "res_code",
+					"type": "String",
+					"description": "资源代码"
+				},
+				{
+					"name": "res_id",
+					"type": "Number",
+					"description": "资源ID"
+				},
+				{
+					"name": "resource_name",
+					"type": "String",
+					"description": "魔方天下美国线"
+				}
+			]
+		}
+	]
+}

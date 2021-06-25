@@ -1,0 +1,145 @@
+{
+	"name": "alibaba.aliqin.axb.vendor.push.call.release",
+	"apiChineseName": "供应商推送通话结束事件",
+	"description": "通话结束挂断的时候，供应商推送通话结束事件给阿里侧",
+	"requestParams": [
+		{
+			"name": "end_call_request",
+			"type": "EndCallRequest",
+			"description": "end_call_request",
+			"subParams": [
+				{
+					"name": "release_cause",
+					"type": "Number",
+					"description": "呼叫释放原因,1,未分配的号码（空号） 3,无至目的地的路由 4，停机 6,不可接受的信道 16,正常清除 17,用户忙 18,无用户响应 19,已有用户提醒，但无应答 21,呼叫拒绝 22,号码改变 26,清除未选择的用户 27,终点故障 28,无效号码格式（不完全的号码） 29,设施被拒绝 30,对状态询问的响应 31,正常--未规定 34,无电路/信道可用 38,网络故障 41,临时故障 42,交换设备拥塞 43,接入信息被丢弃 44,请求的电路/信道不可用 47,资源不可用--未规定 49,服务质量不可用 50,未预订所请求的设施 55,IncomingcallsbarredwithintheCUG 57,承载能力未认可(未开通通话功能） 58,承载能力目前不可用 63,无适用的业务或任选项目-未规定 65,承载业务不能实现 68,ACMequaltoorgreaterthanACMmax 69,所请求的设施不能实现 70,仅能获得受限数字信息承载能力 79,业务不能实现-未规定) 81,无效处理识别码 87UsernotmemberofCUG 88,非兼容目的地址 91,无效过渡网选择 95,无效消息-未规定 96,必选消息单元差错 97,消息类型不存在或不能实现 98,消息与控制状态不兼容-消息类型不存在或不能实现 99,信息单元不存在或不能实现 100,无效信息单元内容 101,消息与呼叫状态不兼容 102,定时器超时恢复 111,协议差错-未规定 127,互通-未规定 9999（短信话单时，传此值）",
+					"required": true
+				},
+				{
+					"name": "call_id",
+					"type": "String",
+					"description": "唯一呼叫ID，需要和转呼控制接口的call_id对应起来；最大可支持字符串长度256",
+					"required": true
+				},
+				{
+					"name": "ring_time",
+					"type": "Date",
+					"description": "被叫响铃时间，如果没有响铃时间，ring_time填写call_out_time的时间；短信话单时，此值传短信接收时间",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "被叫接听时间；短信话单时，此值传短信接收时间",
+					"required": true
+				},
+				{
+					"name": "secret_no",
+					"type": "String",
+					"description": "中间号",
+					"required": true
+				},
+				{
+					"name": "call_out_time",
+					"type": "Date",
+					"description": "呼叫被叫侧发起的时间；短信话单时，此值传短信接收时间",
+					"required": true
+				},
+				{
+					"name": "release_dir",
+					"type": "Number",
+					"description": "0-平台释放 1-主叫释放 2-被叫释放；短信话单时，传0",
+					"required": true
+				},
+				{
+					"name": "release_time",
+					"type": "Date",
+					"description": "通话释放时间,如果未接通start_time应该等于release_time；短信话单时，此值传短信接收时间",
+					"required": true
+				},
+				{
+					"name": "subs_id",
+					"type": "String",
+					"description": "阿里侧对应的绑定关系ID，可不传"
+				},
+				{
+					"name": "vendor_key",
+					"type": "String",
+					"description": "分配给供应商Key",
+					"required": true
+				},
+				{
+					"name": "free_ring_time",
+					"type": "Date",
+					"description": "被叫空闲振铃时间；可选参数，无此相关功能，可不传"
+				},
+				{
+					"name": "sms_number",
+					"type": "Number",
+					"description": "短信条数"
+				},
+				{
+					"name": "record_url",
+					"type": "String",
+					"description": "录音下载URL,公网可以访问"
+				},
+				{
+					"name": "call_result",
+					"type": "String",
+					"description": "呼叫结果"
+				},
+				{
+					"name": "ringing_record_url",
+					"type": "String",
+					"description": "放音录音下载URL,公网可以访问"
+				},
+				{
+					"name": "call_type",
+					"type": "String",
+					"description": "话单类型 0-通话 1-短信"
+				},
+				{
+					"name": "call_no",
+					"type": "String",
+					"description": "主叫号码"
+				},
+				{
+					"name": "called_no",
+					"type": "String",
+					"description": "被叫号码"
+				},
+				{
+					"name": "extension_no",
+					"type": "String",
+					"description": "分机号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "module，此接口此字段可以不用判断，以外层CODE是否为OK来判断是否调用成",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "业务响应码code为OK时代表请求成功,其他CODE建议做重试机制",
+					"required": true
+				}
+			]
+		}
+	]
+}

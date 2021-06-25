@@ -1,0 +1,226 @@
+{
+	"name": "taobao.wlb.item.query",
+	"apiChineseName": "分页查询商品",
+	"description": "根据状态、卖家、SKU等信息查询商品列表",
+	"requestParams": [
+		{
+			"name": "is_sku",
+			"type": "String",
+			"description": "是否是最小库存单元，只有最小库存单元的商品才可以有库存,值只能给\"true\",\"false\"来表示;  若值不在范围内，则按true处理"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "只能输入以下值或空：  ITEM_STATUS_VALID -- 1 表示 有效；  ITEM_STATUS_LOCK -- 2 表示锁住。  若值不在范围内，按ITEM_STATUS_VALID处理"
+		},
+		{
+			"name": "item_type",
+			"type": "String",
+			"description": "ITEM类型(只允许输入以下英文或空)  NORMAL 0:普通商品;  COMBINE 1:是否是组合商品  DISTRIBUTION 2:是否是分销商品(货主是别人)  若值不在范围内，则按NORMAL处理"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "商品名称"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "商品前台销售名字",
+			"maxLength": 255
+		},
+		{
+			"name": "item_code",
+			"type": "String",
+			"description": "商家编码",
+			"maxLength": 64
+		},
+		{
+			"name": "parent_id",
+			"type": "Number",
+			"description": "父ID,只有is_sku=1时才能有父ID，商品也可以没有付商品"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "当前页",
+			"minValue": 1
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页记录个数，如果用户输入的记录数大于50，则一页显示50条记录",
+			"maxValue": 50,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "结果总数"
+		},
+		{
+			"name": "item_list",
+			"type": "WlbItem []",
+			"description": "商品信息列表",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "商品所有人淘宝ID"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "商品所有人淘宝nick"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "商品的名称"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "前台商品名称"
+				},
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "商家编码"
+				},
+				{
+					"name": "is_sku",
+					"type": "Boolean",
+					"description": "是不是sku商品\u003cbr/\u003e值为true或false"
+				},
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "标记，用逗号隔开的字符串。\u003cbr/\u003eBIT_HAS_AUTHORIZE 第1位 是否有授权规则;\u003cbr/\u003eBATCH  第2位 是否有批次规则；\u003cbr/\u003eSYNCHRONIZATION 第3位 是否有同步规则。"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "商品类型：\u003cbr/\u003eNORMAL--普通类型;\u003cbr/\u003eCOMBINE--组合商品;\u003cbr/\u003eDISTRIBUTION--分销商品;\u003cbr/\u003e默认为NORMAL"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "商品备注"
+				},
+				{
+					"name": "parent_id",
+					"type": "Number",
+					"description": "父item的id，当item为物流宝子商品时，parent_id必填,否则不必填\u003cbr/\u003e可通过父ID来得知商品的关系。"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态，item_status_valid -- 1 表示 有效 item_status_lock -- 2 表示锁住"
+				},
+				{
+					"name": "publish_version",
+					"type": "Number",
+					"description": "发布版本号，用来同步商"
+				},
+				{
+					"name": "creator",
+					"type": "String",
+					"description": "创建人"
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "品牌ID"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建日期"
+				},
+				{
+					"name": "last_modifier",
+					"type": "String",
+					"description": "最后修改人"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改日期"
+				},
+				{
+					"name": "properties",
+					"type": "String",
+					"description": "属性key:value; key:value"
+				},
+				{
+					"name": "is_friable",
+					"type": "Boolean",
+					"description": "是否易碎"
+				},
+				{
+					"name": "is_dangerous",
+					"type": "Boolean",
+					"description": "是否危险品"
+				},
+				{
+					"name": "color",
+					"type": "String",
+					"description": "颜色"
+				},
+				{
+					"name": "weight",
+					"type": "Number",
+					"description": "重量"
+				},
+				{
+					"name": "length",
+					"type": "Number",
+					"description": "mm"
+				},
+				{
+					"name": "width",
+					"type": "Number",
+					"description": "宽"
+				},
+				{
+					"name": "height",
+					"type": "Number",
+					"description": "高"
+				},
+				{
+					"name": "volume",
+					"type": "Number",
+					"description": "立方mm"
+				},
+				{
+					"name": "goods_cat",
+					"type": "String",
+					"description": "货类"
+				},
+				{
+					"name": "pricing_cat",
+					"type": "String",
+					"description": "计价货类"
+				},
+				{
+					"name": "package_material",
+					"type": "String",
+					"description": "包装材料"
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "价格"
+				}
+			]
+		}
+	]
+}

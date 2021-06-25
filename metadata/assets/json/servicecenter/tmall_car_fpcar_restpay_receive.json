@@ -1,0 +1,45 @@
+{
+	"name": "tmall.car.fpcar.restpay.receive",
+	"apiChineseName": "门店线下已收尾款",
+	"description": "提供给外部(大搜或其它合作方)的接口-门店线下已收尾款(不执行分佣)",
+	"requestParams": [
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "卖家id"
+		},
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品宝贝id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "succes",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "object",
+			"type": "String",
+			"description": "业务结果信息详细描述"
+		}
+	]
+}

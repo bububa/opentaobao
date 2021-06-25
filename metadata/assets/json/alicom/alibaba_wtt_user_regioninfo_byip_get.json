@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.wtt.user.regioninfo.byip.get",
+	"apiChineseName": "根据ip获取省市信息",
+	"description": "通过ip获取省市信息",
+	"requestParams": [
+		{
+			"name": "ip",
+			"type": "String",
+			"description": "ip地址",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "RegionInfo",
+			"description": "地址信息",
+			"subParams": [
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市",
+					"required": true
+				},
+				{
+					"name": "city_id",
+					"type": "String",
+					"description": "城市id",
+					"required": true
+				},
+				{
+					"name": "prov_id",
+					"type": "String",
+					"description": "省份id",
+					"required": true
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省份",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,69 @@
+{
+	"name": "alibaba.scbp.reckeyword.search",
+	"apiChineseName": "推荐词-词推词",
+	"description": "推荐词-词推词",
+	"requestParams": [
+		{
+			"name": "query_dto",
+			"type": "RecKeywordQuery",
+			"description": "RecKeywordQuery",
+			"subParams": [
+				{
+					"name": "per_page_size",
+					"type": "Number",
+					"description": "每页行数"
+				},
+				{
+					"name": "to_page",
+					"type": "Number",
+					"description": "第几页"
+				},
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "搜索词",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "RecKeywordDto []",
+			"description": "词推词结果列表",
+			"subParams": [
+				{
+					"name": "avg_price",
+					"type": "String",
+					"description": "同行平均出价，单位元，一位小数"
+				},
+				{
+					"name": "word",
+					"type": "String",
+					"description": "词"
+				},
+				{
+					"name": "buy_count",
+					"type": "String",
+					"description": "购买竞争度[1-6]"
+				},
+				{
+					"name": "search_count",
+					"type": "String",
+					"description": "搜索热度[1-6]"
+				}
+			]
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "总个数"
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "总页数"
+		}
+	]
+}

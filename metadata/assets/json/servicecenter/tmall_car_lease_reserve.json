@@ -1,0 +1,99 @@
+{
+	"name": "tmall.car.lease.reserve",
+	"apiChineseName": "整车租车回传预约信息",
+	"description": "租赁公司回传预约到店信息",
+	"requestParams": [
+		{
+			"name": "buyer_id",
+			"type": "Number",
+			"description": "买家id"
+		},
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "text",
+			"type": "String",
+			"description": "文案",
+			"required": true
+		},
+		{
+			"name": "vin",
+			"type": "String",
+			"description": "车架号",
+			"required": true
+		},
+		{
+			"name": "flag",
+			"type": "Number",
+			"description": "1 代表 车辆到店，已预约用户到店提车   ; 2 车辆到店，未能联系到用户",
+			"required": true
+		},
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "买家昵称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "耗时",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误提示",
+					"required": true
+				},
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "当前时间",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误提示",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "返回结果，成功或者失败",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回结果，成功或者失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

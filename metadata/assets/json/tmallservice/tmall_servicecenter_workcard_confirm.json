@@ -1,0 +1,40 @@
+{
+	"name": "tmall.servicecenter.workcard.confirm",
+	"apiChineseName": "服务商确认服务完成",
+	"description": "提供给外部合作服务商，用于通知天猫，告知寄修服务厂内操作全部完成",
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "请求结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

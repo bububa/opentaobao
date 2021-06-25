@@ -1,0 +1,111 @@
+{
+	"name": "alibaba.alsc.crm.card.open",
+	"apiChineseName": "标准开卡流程",
+	"description": "标准开卡流程",
+	"requestParams": [
+		{
+			"name": "param_open_card_standard_open_req",
+			"type": "OpenCardStandardOpenReq",
+			"description": "开卡参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID,与outBrandId不能同时为空"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客ID"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人ID",
+					"required": true
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人名称",
+					"required": true
+				},
+				{
+					"name": "physical_card_id",
+					"type": "String",
+					"description": "物理卡号，与卡模板ID不能同时为空"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店ID，与outShopId不能同时为空"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID，与brandId不能同时为空"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID,与shopId不能同时为空"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求UUID ,用于做幂等"
+				},
+				{
+					"name": "card_template_id",
+					"type": "String",
+					"description": "卡模板ID，与物理卡号不能同时为空"
+				},
+				{
+					"name": "active",
+					"type": "Boolean",
+					"description": "是否激活"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "电子卡号",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

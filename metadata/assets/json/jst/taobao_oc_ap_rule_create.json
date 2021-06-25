@@ -1,0 +1,37 @@
+{
+	"name": "taobao.oc.ap.rule.create",
+	"apiChineseName": "创建分账规则",
+	"description": "OC分账业务功能支持，用于创建分账规则",
+	"requestParams": [
+		{
+			"name": "division_rule",
+			"type": "Number[]",
+			"description": "传入比例数组后者金额数组",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "ext_attributes",
+			"type": "Json",
+			"description": "规则描述相关扩展信息，divisonRule的值包含（\"byAmount\" 或者 \"byPercentage\"），excutionPeriod的值包含（ \"month\" 或者 \"day\" 或者 \"now\"）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rule_id",
+			"type": "Number",
+			"description": "规则id"
+		},
+		{
+			"name": "error_description",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "表示方法是否正常执行成功"
+		}
+	]
+}

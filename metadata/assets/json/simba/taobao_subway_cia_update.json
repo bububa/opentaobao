@@ -1,0 +1,60 @@
+{
+	"name": "taobao.subway.cia.update",
+	"apiChineseName": "批量修改单元智能出价",
+	"description": "批量修改直通车推广单元的智能出价配置",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "cia_configs",
+			"type": "CiaUpdateDto[]",
+			"description": "系统自动生成",
+			"required": true,
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划Id",
+					"required": true
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "推广组Id",
+					"required": true
+				},
+				{
+					"name": "is_smart_bidding",
+					"type": "Boolean",
+					"description": "是否开启智能出价"
+				},
+				{
+					"name": "max_premium",
+					"type": "Number",
+					"description": "最高溢价比例（30-300）"
+				},
+				{
+					"name": "bid_target_type",
+					"type": "Number",
+					"description": "出价目标（3:促进收藏加购,4:促进点击,5:促进成交）"
+				},
+				{
+					"name": "is_circulation",
+					"type": "Number",
+					"description": "是否自动流转（0:否，1:是）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "adgroup_list",
+			"type": "Number []",
+			"description": "推广组Id列表"
+		}
+	]
+}

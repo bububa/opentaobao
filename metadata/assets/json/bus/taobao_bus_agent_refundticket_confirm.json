@@ -1,0 +1,83 @@
+{
+	"name": "taobao.bus.agent.refundticket.confirm",
+	"apiChineseName": "商家top回调退款明细",
+	"description": "商家通过top回调告知平台退款明细",
+	"requestParams": [
+		{
+			"name": "param_agent_confirm_refund_r_q",
+			"type": "AgentConfirmRefundRq",
+			"description": "退款入参",
+			"subParams": [
+				{
+					"name": "agent_order_id",
+					"type": "String",
+					"description": "商家单号",
+					"required": true
+				},
+				{
+					"name": "agent_ticket_id",
+					"type": "String",
+					"description": "按票退时商家退款票号"
+				},
+				{
+					"name": "depart_date",
+					"type": "Date",
+					"description": "发车时间"
+				},
+				{
+					"name": "main_biz_order_id",
+					"type": "Number",
+					"description": "平台单号"
+				},
+				{
+					"name": "passenger_id_num",
+					"type": "String",
+					"description": "退款乘客身份证号"
+				},
+				{
+					"name": "passenger_phone",
+					"type": "String",
+					"description": "退款乘客手机号"
+				},
+				{
+					"name": "refund_fee",
+					"type": "String",
+					"description": "退款金额，单位（元）",
+					"required": true
+				},
+				{
+					"name": "refund_time",
+					"type": "Date",
+					"description": "退款时间点"
+				},
+				{
+					"name": "refund_trans_id",
+					"type": "String",
+					"description": "退款资金号唯一ID"
+				},
+				{
+					"name": "refund_type",
+					"type": "Number",
+					"description": "退款类型 0-退票"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "退款回调是否收到"
+		}
+	]
+}

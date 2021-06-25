@@ -1,0 +1,151 @@
+{
+	"name": "alibaba.scbp.ad.target.tag.find.campaign.target.tag",
+	"apiChineseName": "查询标签数据",
+	"description": "查询标签数据",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "target_tag_operation",
+			"type": "TargetTagOperationDto",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "scope",
+					"type": "String[]",
+					"description": "crowd or region"
+				},
+				{
+					"name": "price_mode",
+					"type": "Number",
+					"description": "出价类型：0=出价, 1=溢价，2=过滤, 3=召回"
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "AdsTargetingTagDto []",
+			"description": "返回实体",
+			"subParams": [
+				{
+					"name": "tag_id",
+					"type": "Number",
+					"description": "定向标签id",
+					"required": true
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id",
+					"required": true
+				},
+				{
+					"name": "discount",
+					"type": "Number",
+					"description": "溢价",
+					"required": true
+				},
+				{
+					"name": "option_value",
+					"type": "String",
+					"description": "标签选项",
+					"required": true
+				},
+				{
+					"name": "crowd_name",
+					"type": "String",
+					"description": "人群名称",
+					"required": true
+				},
+				{
+					"name": "effect",
+					"type": "AdsEffectDto",
+					"description": "效果数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "impr",
+							"type": "Number",
+							"description": "曝光",
+							"required": true
+						},
+						{
+							"name": "click",
+							"type": "Number",
+							"description": "点击",
+							"required": true
+						},
+						{
+							"name": "cost",
+							"type": "Number",
+							"description": "消耗",
+							"required": true
+						},
+						{
+							"name": "online_min",
+							"type": "Number",
+							"description": "推广时长",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "price_mode",
+					"type": "Number",
+					"description": "出价类型：0=出价, 1=溢价，2=过滤, 3=召回",
+					"required": true
+				},
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "计划创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "计划修改时间",
+					"required": true
+				},
+				{
+					"name": "tag_ref_type",
+					"type": "Number",
+					"description": "13:地域标签 14：人群标签",
+					"required": true
+				}
+			]
+		}
+	]
+}

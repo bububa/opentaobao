@@ -1,0 +1,58 @@
+{
+	"name": "tmall.servicecenter.servicestore.deleteservicestore",
+	"apiChineseName": "删除网点",
+	"description": "删除网点信息。对于同一个服务商，通过 service_store_code 删除网点。\n错误码\n1, 服务商昵称无效\n2, 缺少省份\n3, 缺少城市\n4, 缺少区域\n5, 缺少详细地址\n6, 传入地址不在标准地址库中，无法解析\n7, 缺少网点编码\n8, 缺少网点名称\n9, 缺少网点电话\n10, 网点已存在\n11, 网点不存在\n12, 系统错误",
+	"requestParams": [
+		{
+			"name": "service_store_code",
+			"type": "String",
+			"description": "网点名称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "gmtModified",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Number",
+					"description": "value",
+					"required": true
+				}
+			]
+		}
+	]
+}

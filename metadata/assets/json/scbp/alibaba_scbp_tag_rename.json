@@ -1,0 +1,26 @@
+{
+	"name": "alibaba.scbp.tag.rename",
+	"apiChineseName": "重命名关键词分组",
+	"description": "重命名关键词分组",
+	"requestParams": [
+		{
+			"name": "tag_name",
+			"type": "String",
+			"description": "需要重命名的关键词分组名",
+			"required": true
+		},
+		{
+			"name": "new_tag_name",
+			"type": "String",
+			"description": "新分组名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "重命名分组成功或者失败"
+		}
+	]
+}

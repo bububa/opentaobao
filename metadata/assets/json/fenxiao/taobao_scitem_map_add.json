@@ -1,0 +1,40 @@
+{
+	"name": "taobao.scitem.map.add",
+	"apiChineseName": "创建IC商品与后端商品的映射关系",
+	"description": "创建IC商品或分销商品与后端商品的映射关系",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "前台ic商品id",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "前台ic商品skuid"
+		},
+		{
+			"name": "sc_item_id",
+			"type": "Number",
+			"description": "sc_item_id和outer_code 其中一个不能为空"
+		},
+		{
+			"name": "outer_code",
+			"type": "String",
+			"description": "sc_item_id和outer_code 其中一个不能为空"
+		},
+		{
+			"name": "need_check",
+			"type": "Boolean",
+			"description": "默认值为false\u003cbr/\u003etrue:进行高级校验,前端商品或SKU的商家编码必须与后端商品的商家编码一致，否则会拒绝关联\u003cbr/\u003efalse:不进行高级校验"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "outer_code",
+			"type": "String",
+			"description": "接口调用返回结果信息：商家编码"
+		}
+	]
+}

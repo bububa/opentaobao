@@ -1,0 +1,50 @@
+{
+	"name": "taobao.jst.sms.message.shorturl.query",
+	"apiChineseName": "聚石塔短链信息查询",
+	"description": "聚石塔短链信息查询",
+	"requestParams": [
+		{
+			"name": "short_name",
+			"type": "String",
+			"description": "短链名，即域名后的字符串",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "r_code",
+			"type": "String",
+			"description": "请求成功"
+		},
+		{
+			"name": "r_success",
+			"type": "Boolean",
+			"description": "成功"
+		},
+		{
+			"name": "request_id",
+			"type": "String",
+			"description": "TOP请求ID"
+		},
+		{
+			"name": "short_name",
+			"type": "String",
+			"description": "短链名"
+		},
+		{
+			"name": "life_end",
+			"type": "String",
+			"description": "短链失效时间"
+		},
+		{
+			"name": "life_start",
+			"type": "String",
+			"description": "短链生成时间"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "查询短链信息失败"
+		}
+	]
+}

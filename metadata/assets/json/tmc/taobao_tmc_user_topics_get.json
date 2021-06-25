@@ -1,0 +1,29 @@
+{
+	"name": "taobao.tmc.user.topics.get",
+	"apiChineseName": "获取用户开通的topic列表",
+	"description": "获取用户开通的topic列表，授权消息使用",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "卖家nick"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "topics",
+			"type": "String []",
+			"description": "topic列表"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

@@ -1,0 +1,62 @@
+{
+	"name": "taobao.picture.category.add",
+	"apiChineseName": "新增图片分类信息",
+	"description": "同一卖家最多添加500个图片分类，图片分类名称长度最大为20个字符",
+	"requestParams": [
+		{
+			"name": "picture_category_name",
+			"type": "String",
+			"description": "图片分类名称，最大长度20字符，中文字符算2个字符，不能为空",
+			"required": true
+		},
+		{
+			"name": "parent_id",
+			"type": "Number",
+			"description": "图片分类的父分类,一级分类的parent_id为0,二级分类的则为其父分类的picture_category_id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "picture_category",
+			"type": "PictureCategory",
+			"description": "图片分类信息",
+			"subParams": [
+				{
+					"name": "picture_category_id",
+					"type": "Number",
+					"description": "图片分类ID"
+				},
+				{
+					"name": "picture_category_name",
+					"type": "String",
+					"description": "图片分类名"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "图片分类型别，sys-fixture代表店铺装修分类(系统分类)，sys-auction代表宝贝图片分类(系统分类)，user-define代表用户自定义分类"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "图片类目的创建时间"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "图片分类的修改时间"
+				},
+				{
+					"name": "position",
+					"type": "Number",
+					"description": "图片分类排序"
+				},
+				{
+					"name": "parent_id",
+					"type": "Number",
+					"description": "一级分类的parent_id为0\u003cbr/\u003e二级分类的则为其父分类的picture_category_id"
+				}
+			]
+		}
+	]
+}

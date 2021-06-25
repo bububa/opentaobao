@@ -1,0 +1,57 @@
+{
+	"name": "taobao.vmarket.eticket.codes.get",
+	"apiChineseName": "电子凭证码列表查询",
+	"description": "查询某个订单的所有码的列表",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单号",
+			"required": true
+		},
+		{
+			"name": "codemerchant_id",
+			"type": "Number",
+			"description": "码商ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "记录总数"
+		},
+		{
+			"name": "eticket_codes",
+			"type": "EticketCode []",
+			"description": "电子凭证码列表",
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单ID"
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "电子凭证码"
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "可用数量"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "码状态"
+				},
+				{
+					"name": "qrcode_url",
+					"type": "String",
+					"description": "二维码的图片地址"
+				}
+			]
+		}
+	]
+}

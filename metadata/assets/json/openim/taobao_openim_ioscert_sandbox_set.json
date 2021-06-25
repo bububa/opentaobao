@@ -1,0 +1,25 @@
+{
+	"name": "taobao.openim.ioscert.sandbox.set",
+	"apiChineseName": "设置开发环境证书",
+	"description": "设置开发环境证书",
+	"requestParams": [
+		{
+			"name": "cert",
+			"type": "String",
+			"description": "证书内容,base64编码",
+			"required": true
+		},
+		{
+			"name": "password",
+			"type": "String",
+			"description": "系统自动生成"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "操作成功"
+		}
+	]
+}

@@ -1,0 +1,102 @@
+{
+	"name": "alibaba.wdk.channel.order.userrefund",
+	"apiChineseName": "用户发起售后退款(整单/部分)",
+	"description": "用户发起售后退款(整单/部分)",
+	"requestParams": [
+		{
+			"name": "order_user_refund_info",
+			"type": "OrderUserRefundInfo",
+			"description": "退款信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "退款原因"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "用户备注"
+				},
+				{
+					"name": "out_refund_batch_id",
+					"type": "String",
+					"description": "外部退款批次Id（确保唯一，可取UUID）",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "盒马主单号",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店Id",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店Id",
+					"required": true
+				},
+				{
+					"name": "sub_refund_orders",
+					"type": "SubRefundOrder[]",
+					"description": "退款子单",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_biz_order_id",
+							"type": "String",
+							"description": "盒马子单号",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "refund_sale_quantity",
+							"type": "Number",
+							"description": "退款销售数量",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

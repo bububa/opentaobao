@@ -1,0 +1,26 @@
+{
+	"name": "taobao.traderate.explain.add",
+	"apiChineseName": "商城评价解释接口",
+	"description": "商城卖家给评价做出解释（买家追加评论后、评价超过30天的，都不能再做评价解释）",
+	"requestParams": [
+		{
+			"name": "oid",
+			"type": "Number",
+			"description": "子订单ID",
+			"required": true
+		},
+		{
+			"name": "reply",
+			"type": "String",
+			"description": "评价解释内容，最大长度：500个汉字",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "商城卖家给评价解释是否成功。"
+		}
+	]
+}

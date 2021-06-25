@@ -1,0 +1,194 @@
+{
+	"name": "alibaba.wdk.coupon.sku.query",
+	"apiChineseName": "优惠券商品查询",
+	"description": "优惠券商品查询",
+	"requestParams": [
+		{
+			"name": "param_coupon_template_item_query_request",
+			"type": "CouponTemplateItemQueryRequest",
+			"description": "请求",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "模板表主键id"
+				},
+				{
+					"name": "page_info",
+					"type": "PageInfo",
+					"description": "分页信息",
+					"subParams": [
+						{
+							"name": "page_num",
+							"type": "Number",
+							"description": "第几页"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页条数"
+						},
+						{
+							"name": "pages",
+							"type": "Number",
+							"description": "总共多少页"
+						},
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总共多少条"
+						}
+					]
+				},
+				{
+					"name": "source_id",
+					"type": "Number",
+					"description": "ump模板ID"
+				},
+				{
+					"name": "user_info",
+					"type": "UserInfo",
+					"description": "用户信息",
+					"subParams": [
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "用户id"
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "用户名称"
+						},
+						{
+							"name": "source",
+							"type": "String",
+							"description": "来源"
+						}
+					]
+				},
+				{
+					"name": "logic_group_number",
+					"type": "Number",
+					"description": "分组序号"
+				},
+				{
+					"name": "wdk_group_id",
+					"type": "Number",
+					"description": "五道口分组id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "CouponTemplateOperateResponse",
+					"description": "返回",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "模板表主键",
+							"required": true
+						},
+						{
+							"name": "source_id",
+							"type": "Number",
+							"description": "ump模板ID",
+							"required": true
+						},
+						{
+							"name": "page_info",
+							"type": "PageInfo",
+							"description": "分页信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "page_num",
+									"type": "Number",
+									"description": "第几页",
+									"required": true
+								},
+								{
+									"name": "page_size",
+									"type": "Number",
+									"description": "每页条数",
+									"required": true
+								},
+								{
+									"name": "pages",
+									"type": "Number",
+									"description": "总共多少页",
+									"required": true
+								},
+								{
+									"name": "total",
+									"type": "Number",
+									"description": "总共多少条",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "prom_act_sku_list",
+							"type": "PromActSku[]",
+							"description": "券圈品设置",
+							"required": true,
+							"subParams": [
+								{
+									"name": "logic_group_number",
+									"type": "Number",
+									"description": "商家逻辑分组序号",
+									"required": true
+								},
+								{
+									"name": "participate_id",
+									"type": "String",
+									"description": "参与者id",
+									"required": true
+								},
+								{
+									"name": "participate_name",
+									"type": "String",
+									"description": "参与者名称",
+									"required": true
+								},
+								{
+									"name": "participate_type",
+									"type": "Number",
+									"description": "参与者类型",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标志",
+					"required": true
+				}
+			]
+		}
+	]
+}

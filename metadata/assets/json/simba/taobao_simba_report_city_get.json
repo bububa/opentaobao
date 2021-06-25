@@ -1,0 +1,143 @@
+{
+	"name": "taobao.simba.report.city.get",
+	"apiChineseName": "获取城市维度报表",
+	"description": "获取城市维度报表",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "昵称"
+		},
+		{
+			"name": "the_date",
+			"type": "String",
+			"description": "时间",
+			"required": true
+		},
+		{
+			"name": "hour",
+			"type": "String",
+			"description": "当前小时",
+			"required": true
+		},
+		{
+			"name": "campaign_id",
+			"type": "String",
+			"description": "计划id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "RtRptResultEntityDTO",
+			"description": "11",
+			"subParams": [
+				{
+					"name": "thedate",
+					"type": "String",
+					"description": "日期"
+				},
+				{
+					"name": "directtransaction",
+					"type": "String",
+					"description": "直接成交金额"
+				},
+				{
+					"name": "indirecttransaction",
+					"type": "String",
+					"description": "间接成交金额"
+				},
+				{
+					"name": "directtransactionshipping",
+					"type": "String",
+					"description": "直接成交笔数"
+				},
+				{
+					"name": "indirecttransactionshipping",
+					"type": "String",
+					"description": "间接成交笔数"
+				},
+				{
+					"name": "favitemtotal",
+					"type": "String",
+					"description": "收藏宝贝数"
+				},
+				{
+					"name": "favshoptotal",
+					"type": "String",
+					"description": "收藏店铺数"
+				},
+				{
+					"name": "roi",
+					"type": "String",
+					"description": "投入产出比"
+				},
+				{
+					"name": "coverage",
+					"type": "String",
+					"description": "点击转化率"
+				},
+				{
+					"name": "directcarttotal",
+					"type": "String",
+					"description": "直接购物车数"
+				},
+				{
+					"name": "indirectcarttotal",
+					"type": "String",
+					"description": "间接购物车数"
+				},
+				{
+					"name": "carttotal",
+					"type": "String",
+					"description": "购物车总数"
+				},
+				{
+					"name": "impression",
+					"type": "String",
+					"description": "impression"
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "cost"
+				},
+				{
+					"name": "click",
+					"type": "String",
+					"description": "click"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "ctr"
+				},
+				{
+					"name": "cpc",
+					"type": "String",
+					"description": "cpc"
+				},
+				{
+					"name": "cpm",
+					"type": "String",
+					"description": "cpm"
+				},
+				{
+					"name": "transactionshippingtotal",
+					"type": "String",
+					"description": "总成交笔数"
+				},
+				{
+					"name": "transactiontotal",
+					"type": "String",
+					"description": "总成交金额"
+				},
+				{
+					"name": "favtotal",
+					"type": "String",
+					"description": "总收藏数"
+				}
+			]
+		}
+	]
+}

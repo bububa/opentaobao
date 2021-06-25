@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.legal.case.entrust.callback",
+	"apiChineseName": "委托回调接口",
+	"description": "委托回调接口",
+	"requestParams": [
+		{
+			"name": "entrust_id",
+			"type": "Number",
+			"description": "委托id"
+		},
+		{
+			"name": "case_id",
+			"type": "Number",
+			"description": "案件id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "content",
+			"type": "Json",
+			"description": "void"
+		},
+		{
+			"name": "e_code",
+			"type": "String",
+			"description": "error_code"
+		},
+		{
+			"name": "e_msg",
+			"type": "String",
+			"description": "error_msg"
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"name": "taobao.oc.trades.bytag.get",
+	"apiChineseName": "标签查询订单",
+	"description": "根据标签查询订单编号",
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小"
+		},
+		{
+			"name": "tag_type",
+			"type": "Number",
+			"description": "标签类型，1官方，2自定义",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "tag_name",
+			"type": "String",
+			"description": "标签名称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tids",
+			"type": "Number []",
+			"description": "打了该标签的订单编号列表"
+		},
+		{
+			"name": "totals",
+			"type": "Number",
+			"description": "总数"
+		}
+	]
+}

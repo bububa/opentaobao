@@ -1,0 +1,94 @@
+{
+	"name": "tmall.servicecenter.workcard.reserve",
+	"apiChineseName": "工单预约",
+	"description": "服务工单更新通用接口",
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id"
+		},
+		{
+			"name": "reserve_time_start",
+			"type": "Date",
+			"description": "服务开始时间"
+		},
+		{
+			"name": "reserve_time_end",
+			"type": "Date",
+			"description": "服务结束时间"
+		},
+		{
+			"name": "worker_mobile",
+			"type": "String",
+			"description": "工人手机号"
+		},
+		{
+			"name": "reserve_remark",
+			"type": "String",
+			"description": "预约备注信息"
+		},
+		{
+			"name": "worker_name",
+			"type": "String",
+			"description": "工人姓名"
+		},
+		{
+			"name": "attributes",
+			"type": "String",
+			"description": "扩展信息"
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "存在多个不同预约节点时需要回传。用于区分具体是哪个预约节点，例如预约上门鉴定和预约上门取件"
+		},
+		{
+			"name": "fulfil_type",
+			"type": "String",
+			"description": "履约类型，上门或者到店"
+		},
+		{
+			"name": "service_store_code",
+			"type": "String",
+			"description": "门店编码"
+		},
+		{
+			"name": "service_store_name",
+			"type": "String",
+			"description": "门店名称"
+		},
+		{
+			"name": "fulfil_task_id",
+			"type": "Number",
+			"description": "核销单id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

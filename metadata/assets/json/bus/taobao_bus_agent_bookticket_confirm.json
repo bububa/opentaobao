@@ -1,0 +1,121 @@
+{
+	"name": "taobao.bus.agent.bookticket.confirm",
+	"apiChineseName": "汽车票代理商接口—确认出票是否成功",
+	"description": "代理商通过该接口通知汽车票系统订单出票结果。",
+	"requestParams": [
+		{
+			"name": "param_agent_confirm_book_r_q",
+			"type": "AgentConfirmBookRq",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "agent_order_id",
+					"type": "String",
+					"description": "代理商订单号",
+					"required": true
+				},
+				{
+					"name": "rider_seat_numbers",
+					"type": "String",
+					"description": "座位号，多个座位号以\",\"分隔"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "短信内容。商家如有特殊定制，则需要严格按照参数返回json格式数据。{\"driverContactPhone\":\"18611330989\",\"identificationCode\",\"988838389\",\"ticketInstructions\":\"套票使用说明\"} driverContactPhone:司机联系电话 identificationCode:乘车验证码 ticketInstructions:门票使用说明（仅供门票+车票 类型商品使用，非必填，默认为“凭身份证入园”）"
+				},
+				{
+					"name": "ticket_count",
+					"type": "Number",
+					"description": "票数"
+				},
+				{
+					"name": "fetch_tickets_pwd",
+					"type": "String",
+					"description": "取票密码"
+				},
+				{
+					"name": "fetch_tickets_address",
+					"type": "String",
+					"description": "取票地点"
+				},
+				{
+					"name": "fetch_tickets_number",
+					"type": "String",
+					"description": "取票号"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否出票成功",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "Number",
+					"description": "总价格"
+				},
+				{
+					"name": "bus_inner_order_id",
+					"type": "String",
+					"description": "1223dsd32323"
+				},
+				{
+					"name": "ticket_wicket",
+					"type": "String",
+					"description": "检票口"
+				},
+				{
+					"name": "passenger_info_list",
+					"type": "AgentConfirmBookPassengerInfo[]",
+					"description": "乘客信息",
+					"subParams": [
+						{
+							"name": "agent_ticket_id",
+							"type": "String",
+							"description": "票ID"
+						},
+						{
+							"name": "passenger_cert_no",
+							"type": "String",
+							"description": "证件号码"
+						},
+						{
+							"name": "passenger_cert_type",
+							"type": "String",
+							"description": "证件类型:01-身份证;02-护照;03-港澳通行证;04-台湾通行证"
+						},
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘客名称"
+						},
+						{
+							"name": "seat_no",
+							"type": "String",
+							"description": "座位号"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否确认成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

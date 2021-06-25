@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.scbp.ad.target.tag.estimate.uv",
+	"apiChineseName": "标签人群预估",
+	"description": "标签人群预估",
+	"requestParams": [
+		{
+			"name": "tag_estimate_operation",
+			"type": "TagEstimateOperationDto",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "option_values",
+					"type": "String[]",
+					"description": "optionValues",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "返回数据：key:optionValue, value: 人群id"
+		}
+	]
+}

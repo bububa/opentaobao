@@ -1,0 +1,55 @@
+{
+	"name": "taobao.simba.rpt.custeffect.get",
+	"apiChineseName": "用户账户报表效果数据查询（只有汇总数据，无分类数据）",
+	"description": "用户账户报表效果数据查询（只有汇总数据，无分类数据）",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始时间，格式yyyy-mm-dd",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间，格式yyyy-mm-dd",
+			"required": true
+		},
+		{
+			"name": "subway_token",
+			"type": "String",
+			"description": "权限校验参数",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"minValue": 1
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小",
+			"minValue": 1
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "数据来源（站内：1，站外：2 ，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rpt_cust_effect_list",
+			"type": "String",
+			"description": "账户效果数据返回结果"
+		}
+	]
+}

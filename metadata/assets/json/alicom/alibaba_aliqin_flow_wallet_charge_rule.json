@@ -1,0 +1,39 @@
+{
+	"name": "alibaba.aliqin.flow.wallet.charge.rule",
+	"apiChineseName": "流量钱包直充（根据号码归属地省份路由）",
+	"description": "流量钱包直充（根据号码归属地省份路由）",
+	"requestParams": [
+		{
+			"name": "phone_num",
+			"type": "String",
+			"description": "号码"
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "原因"
+		},
+		{
+			"name": "grade_id",
+			"type": "String",
+			"description": "档位id"
+		},
+		{
+			"name": "out_recharge_id",
+			"type": "String",
+			"description": "唯一流水号"
+		},
+		{
+			"name": "channel_id",
+			"type": "String",
+			"description": "渠道id（运营分配）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "charge",
+			"type": "String",
+			"description": "{\"error\":\"true\",\"msg\":\"返回信息\"}"
+		}
+	]
+}

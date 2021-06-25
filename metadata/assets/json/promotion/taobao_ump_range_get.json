@@ -1,0 +1,32 @@
+{
+	"name": "taobao.ump.range.get",
+	"apiChineseName": "查询活动范围",
+	"description": "查询某个卖家所有参加或者不参加某项活动的物品",
+	"requestParams": [
+		{
+			"name": "act_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ranges",
+			"type": "Range []",
+			"description": "营销范围类列表！",
+			"subParams": [
+				{
+					"name": "participate_id",
+					"type": "Number",
+					"description": "营销范围参与者id。即MarketingRangeDO中的participateId。"
+				},
+				{
+					"name": "participate_type",
+					"type": "Number",
+					"description": "营销范围参与者类型。MarketingRangeDO中的participateType。(1:商品;2:店铺;3:seller;4:sku;5:category;6:shopCategory)"
+				}
+			]
+		}
+	]
+}

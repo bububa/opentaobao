@@ -1,0 +1,69 @@
+{
+	"name": "taobao.bus.agent.city.change",
+	"apiChineseName": "城市变更",
+	"description": "代理商通知城市变更，比如可售变为不可售等",
+	"requestParams": [
+		{
+			"name": "param_city_change_r_q",
+			"type": "CityChangeRq",
+			"description": "城市变更请求对象",
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商ID",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "BusCityChangeDto[]",
+					"description": "城市列表属性",
+					"required": true,
+					"subParams": [
+						{
+							"name": "type_no",
+							"type": "Number",
+							"description": "是否开通标示，0：已开通 1：未开通",
+							"required": true
+						},
+						{
+							"name": "city_full_pinyin",
+							"type": "String",
+							"description": "城市拼音",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "是否可售标示，0：暂停售票 1：可售",
+							"required": true
+						},
+						{
+							"name": "start_city_name",
+							"type": "String",
+							"description": "城市名",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "err_code",
+			"type": "String",
+			"description": "系统异常错误码"
+		},
+		{
+			"name": "err_msg",
+			"type": "String",
+			"description": "异常描述"
+		}
+	]
+}

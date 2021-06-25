@@ -1,0 +1,82 @@
+{
+	"name": "taobao.logistics.consign.tc.confirm",
+	"apiChineseName": "通知交易确认发货接口",
+	"description": "下述业务场景可以使用此接口通知相关的交易订单发货：\n1、发货过程分为多段操作，在确定发货之前，不需要通知交易，当货确认已发出之后，才通知交易发货。\n2、发货过程涉及到多个订单，其中一个订单是跟实操的发货操作同步的，剩下的订单，需要在实操的订单发货之后，一并通知交易发货。",
+	"requestParams": [
+		{
+			"name": "provider_id",
+			"type": "Number",
+			"description": "货主id",
+			"required": true
+		},
+		{
+			"name": "app_name",
+			"type": "String",
+			"description": "ERP的名称",
+			"required": true
+		},
+		{
+			"name": "extend_fields",
+			"type": "Json",
+			"description": "扩展字段 K:V;"
+		},
+		{
+			"name": "goods_list",
+			"type": "ConfirmConsignGoodsDto[]",
+			"description": "发货的包裹",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "待发货商品的前端宝贝id"
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "待发货商品的数量"
+				},
+				{
+					"name": "tc_sub_trade_id",
+					"type": "Number",
+					"description": "待发货商品的子交易号"
+				}
+			]
+		},
+		{
+			"name": "out_trade_no",
+			"type": "String",
+			"description": "已发货的外部订单号",
+			"required": true
+		},
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "卖家id",
+			"required": true
+		},
+		{
+			"name": "trade_id",
+			"type": "Number",
+			"description": "待发货的淘宝主交易号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order_consign_code",
+			"type": "String",
+			"description": "菜鸟发货单据"
+		},
+		{
+			"name": "retry",
+			"type": "Boolean",
+			"description": "是否重试"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "单次调用流程唯一id"
+		}
+	]
+}

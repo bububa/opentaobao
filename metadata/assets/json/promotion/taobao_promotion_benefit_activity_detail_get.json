@@ -1,0 +1,39 @@
+{
+	"name": "taobao.promotion.benefit.activity.detail.get",
+	"apiChineseName": "活动关联的权益详情获取",
+	"description": "活动关联的权益详情获取",
+	"requestParams": [
+		{
+			"name": "query_request",
+			"type": "ActivityRelationDetailRequest",
+			"description": "查询活动关联权益详情的请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "status",
+					"type": "String",
+					"description": "活动状态(VALID  ， DELETE)",
+					"required": true
+				},
+				{
+					"name": "relation_id",
+					"type": "Number",
+					"description": "ISV活动关联权益后获得的关联ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "查询是否成功"
+		},
+		{
+			"name": "relation_benefit_details",
+			"type": "Json",
+			"description": "活动关联的权益详情列表"
+		}
+	]
+}

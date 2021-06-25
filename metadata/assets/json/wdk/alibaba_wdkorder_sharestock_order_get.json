@@ -1,0 +1,162 @@
+{
+	"name": "alibaba.wdkorder.sharestock.order.get",
+	"apiChineseName": "猫超商户订单拉取",
+	"description": "商户拉取猫超订单数据",
+	"requestParams": [
+		{
+			"name": "tb_order_id",
+			"type": "Number",
+			"description": "淘宝主订单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MaochaoOrderQueryResult",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回码说明",
+					"required": true
+				},
+				{
+					"name": "sub_order_list",
+					"type": "MaochaoWdkOrderDto[]",
+					"description": "子订单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单状态",
+							"required": true
+						},
+						{
+							"name": "buy_amount_stock",
+							"type": "String",
+							"description": "库存单位购买数量",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "经营店ID",
+							"required": true
+						},
+						{
+							"name": "sale_unit",
+							"type": "String",
+							"description": "销售单位",
+							"required": true
+						},
+						{
+							"name": "stock_unit",
+							"type": "String",
+							"description": "库存单位",
+							"required": true
+						},
+						{
+							"name": "sell_unit",
+							"type": "String",
+							"description": "非标品售卖单位",
+							"required": true
+						},
+						{
+							"name": "ns_quantity",
+							"type": "String",
+							"description": "非标品购买数量",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "auction_id",
+							"type": "String",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商户编码",
+							"required": true
+						},
+						{
+							"name": "biz_sub_order_id",
+							"type": "Number",
+							"description": "五道口子订单ID",
+							"required": true
+						},
+						{
+							"name": "tb_sub_order_id",
+							"type": "Number",
+							"description": "主站子订单ID",
+							"required": true
+						},
+						{
+							"name": "tb_order_id",
+							"type": "Number",
+							"description": "主站订单ID",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "五道口订单ID",
+							"required": true
+						},
+						{
+							"name": "auction_price",
+							"type": "Number",
+							"description": "商品价格",
+							"required": true
+						},
+						{
+							"name": "auction_title",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "支付时间",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "渠道店ID",
+							"required": true
+						},
+						{
+							"name": "attributes",
+							"type": "Json",
+							"description": "子订单扩展字段, 订单商品采购价数据purchase_price",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

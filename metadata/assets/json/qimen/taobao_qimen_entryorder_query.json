@@ -1,0 +1,218 @@
+{
+	"name": "taobao.qimen.entryorder.query",
+	"apiChineseName": "入库单查询接口",
+	"description": "ERP调用接口，查询入库单信息;",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "EntryOrderQueryRequest",
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码"
+				},
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "entryOrderCode",
+					"type": "String",
+					"description": "入库单编码",
+					"required": true
+				},
+				{
+					"name": "entryOrderId",
+					"type": "String",
+					"description": "仓储系统入库单ID"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "当前页(从1开始)",
+					"required": true
+				},
+				{
+					"name": "pageSize",
+					"type": "Number",
+					"description": "每页orderLine条数(最多100条)",
+					"required": true
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "EntryOrderQueryResponse",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "totalLines",
+					"type": "Number",
+					"description": "orderLines总条数",
+					"required": true
+				},
+				{
+					"name": "entryOrder",
+					"type": "EntryOrder",
+					"description": "入库单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "entryOrderCode",
+							"type": "String",
+							"description": "入库单号",
+							"required": true
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码",
+							"required": true
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码(统仓统配等无需ERP指定仓储编码的情况填OTHER)",
+							"required": true
+						},
+						{
+							"name": "entryOrderId",
+							"type": "String",
+							"description": "仓储系统入库单ID",
+							"required": true
+						},
+						{
+							"name": "entryOrderType",
+							"type": "String",
+							"description": "入库单类型(SCRK=生产入库;LYRK=领用入库;CCRK=残次品入库;CGRK=采购入库;DBRK=调拨入库;QTRK=其他入 库;B2BRK=B2B入库)",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "入库单状态(NEW-未开始处理;ACCEPT-仓库接单;PARTFULFILLED-部分收货完成;FULFILLED-收货完成;EXCEPTION-异 常;CANCELED-取消;CLOSED-关闭;REJECT-拒单;CANCELEDFAIL-取消失败;只传英文编码)",
+							"required": true
+						},
+						{
+							"name": "operateTime",
+							"type": "String",
+							"description": "操作时间(YYYY-MM-DD HH:MM:SS;当status=FULFILLED;operateTime为入库时间)",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "入库单单据信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "orderLineNo",
+							"type": "String",
+							"description": "入库单的行号",
+							"required": true
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品ID",
+							"required": true
+						},
+						{
+							"name": "itemName",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "planQty",
+							"type": "Number",
+							"description": "应收商品数量",
+							"required": true
+						},
+						{
+							"name": "actualQty",
+							"type": "Number",
+							"description": "实收数量",
+							"required": true
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;默认为ZP)",
+							"required": true
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "商品生产日期(YYYY-MM-DD)",
+							"required": true
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "商品过期日期(YYYY-MM-DD)",
+							"required": true
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号",
+							"required": true
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编码",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

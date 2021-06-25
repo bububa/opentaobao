@@ -1,0 +1,123 @@
+{
+	"name": "alibaba.wdk.bm.stock.publish",
+	"apiChineseName": "品牌营销涉及到的商品的库存同步接口",
+	"description": "用于操作sku的库存",
+	"requestParams": [
+		{
+			"name": "sku_stock_publish_param_list",
+			"type": "SkuStockPublishParamDo[]",
+			"description": "批量入参",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "shop_code",
+					"type": "String",
+					"description": "商家门店编码",
+					"required": true
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "这笔单据发生的原因",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "移动的数量，正数表式增加，负数表式减少",
+					"required": true
+				},
+				{
+					"name": "bill_no",
+					"type": "String",
+					"description": "唯一单据号，用于幂等操作",
+					"required": true
+				},
+				{
+					"name": "barcode",
+					"type": "String",
+					"description": "商品对应的69码",
+					"required": true
+				},
+				{
+					"name": "update_type",
+					"type": "Number",
+					"description": "更新类型，1表式覆盖，0表式增量",
+					"required": true
+				},
+				{
+					"name": "operation_ts",
+					"type": "Number",
+					"description": "当时业务发生的时间戳，单位：ms",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BmResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "publish_results",
+					"type": "SkuStockPublishResult[]",
+					"description": "详细结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "具体的错误码",
+							"required": true
+						},
+						{
+							"name": "result",
+							"type": "Boolean",
+							"description": "bill_no对应的操作结果",
+							"required": true
+						},
+						{
+							"name": "bill_no",
+							"type": "String",
+							"description": "入参中对应的幂等单据号",
+							"required": true
+						},
+						{
+							"name": "err_msg",
+							"type": "String",
+							"description": "具体的更新失败原因",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用的成功与否",
+					"required": true
+				},
+				{
+					"name": "ext_data",
+					"type": "Json",
+					"description": "额外属性",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "系统调用的错误码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "系统调用的错误原因",
+					"required": true
+				}
+			]
+		}
+	]
+}

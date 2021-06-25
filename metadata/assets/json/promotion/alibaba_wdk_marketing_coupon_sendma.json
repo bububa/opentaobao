@@ -1,0 +1,55 @@
+{
+	"name": "alibaba.wdk.marketing.coupon.sendma",
+	"apiChineseName": "发放匿名码",
+	"description": "根据优惠券活动id打印单个匿名码",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "CommonActivityParam",
+			"description": "发放匿名码入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口优惠券活动id",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家优惠券活动id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "发放匿名码返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "CouponActivity",
+					"description": "返回的匿名码对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ma_code",
+							"type": "String",
+							"description": "匿名码code",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

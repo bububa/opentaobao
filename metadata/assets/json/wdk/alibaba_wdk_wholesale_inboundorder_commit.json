@@ -1,0 +1,86 @@
+{
+	"name": "alibaba.wdk.wholesale.inboundorder.commit",
+	"apiChineseName": "盒马帮退货信息回传接口",
+	"description": "盒马帮退货信息回传接口",
+	"requestParams": [
+		{
+			"name": "inbound_info_commit_req",
+			"type": "InboundInfoCommitReq",
+			"description": "退货信息参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "inbound_item_infos",
+					"type": "InboundItemInfo[]",
+					"description": "入库商品明细",
+					"required": true,
+					"subParams": [
+						{
+							"name": "inbound_quantity",
+							"type": "String",
+							"description": "收货数量",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "inbound_order_no",
+					"type": "String",
+					"description": "收货入库单号",
+					"required": true
+				},
+				{
+					"name": "received_time",
+					"type": "Date",
+					"description": "收货时间",
+					"required": true
+				},
+				{
+					"name": "return_order_no",
+					"type": "String",
+					"description": "采购退货单单号",
+					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

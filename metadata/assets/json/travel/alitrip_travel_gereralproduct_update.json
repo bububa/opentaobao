@@ -1,0 +1,283 @@
+{
+	"name": "alitrip.travel.gereralproduct.update",
+	"apiChineseName": "通用类目产品发布编辑",
+	"description": "提供给飞猪供销平台供应商发布编辑通用类目产品的API",
+	"requestParams": [
+		{
+			"name": "base_info",
+			"type": "GeneralProductBaseInfo",
+			"description": "产品基本信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "商品描述"
+				},
+				{
+					"name": "wap_desc",
+					"type": "String",
+					"description": "手机描述 格式:标题 描述图片路径"
+				},
+				{
+					"name": "reserve_deadline_minutes",
+					"type": "Number",
+					"description": "最晚收客时间:分钟。仅个别类目支持"
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "商品类目id，发布商品必填，编辑选填；支持的线上类目ID，船票：50018298"
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "商家编码"
+				},
+				{
+					"name": "to_locations",
+					"type": "String",
+					"description": "目的地，填写中文，以英文逗号分隔，最多可填12个，如果国家底下还有城市，则必须精确到城市。如果接口报错提示目的地不存在，则可登录商家基础信息映射管理后台（https://sell.alitrip.com/sell/basicdata/BasicDataMapping.htm）修正并生效映射关系，映射关系生效后，无法识别的目的地将自动替换为映射值 【重要提示-此字段会作为搜索/筛选条件】"
+				},
+				{
+					"name": "pic_urls",
+					"type": "String[]",
+					"description": "品图片路径。最多支持5张，第一张为主图 必填，其余四张可选填（多张图片间使用英文逗号分隔）。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为png、jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "淘宝平台商品ID 产品更新时使用"
+				},
+				{
+					"name": "confirm_time",
+					"type": "Number",
+					"description": "可选，资源确认时长，当confirm_type=2时必填。1：2个工作小时内确认，2：6个工作小时内确认，3：9个工作小时内确认，4：18个工作小时内确认"
+				},
+				{
+					"name": "sub_titles",
+					"type": "String[]",
+					"description": "商品亮点。1）目前最多支持4个亮点，超过4个的亮点描述不会被保存 2）每个亮点描述35个字符以内 3）每个亮点间用英文逗号分隔"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "必填，商品标题。30个字符以内 【重要-此字段会作为搜索条件】"
+				},
+				{
+					"name": "duration",
+					"type": "Number",
+					"description": "至少提前天数，最晚成团提前天数，最小0天，最大为300天；不传则为0"
+				},
+				{
+					"name": "reserve_deadline_hours",
+					"type": "Number",
+					"description": "最晚收客时间:小时。仅个别类目支持"
+				},
+				{
+					"name": "props",
+					"type": "CatPropInfo[]",
+					"description": "商品属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。",
+					"subParams": [
+						{
+							"name": "vid",
+							"type": "String",
+							"description": "属性PID，调用taobao.itemprops.get取得"
+						},
+						{
+							"name": "pid",
+							"type": "String",
+							"description": "属性VID，调用taobao.itemprops.get取得"
+						}
+					]
+				},
+				{
+					"name": "confirm_type",
+					"type": "Number",
+					"description": "可选，资源确认类型。1-即时确认，2-二次确认。不传默认1"
+				}
+			]
+		},
+		{
+			"name": "refund_info",
+			"type": "ItemRefundInfo",
+			"description": "退款规则结构",
+			"subParams": [
+				{
+					"name": "refund_regulations",
+					"type": "String[]",
+					"description": "退改规则 1）格式：标准规则 或 自定义规则：a_a_num,a_b_num,b-1_c_num,c-1_c-1_num 2）规则：自定义规则里最多可含5组规则"
+				},
+				{
+					"name": "refund_type",
+					"type": "Number",
+					"description": "退改规则类型，0为标准，1为自定义 2为不支持退改规则。不传默认为0"
+				}
+			]
+		},
+		{
+			"name": "booking_rules",
+			"type": "BookingRuleInfo[]",
+			"description": "必填，预定规则结构。示例： [{ \"rule_type\": \"fee_excluded\", \"rule_desc\": \"费用包含描述\"},{ \"rule_type\": \"fee_included\", \"rule_desc\": \"费用不含描述\"},{ \"rule_type\": \"order_info\", \"rule_desc\": \"预定须知描述\"}]",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "rule_type",
+					"type": "String",
+					"description": "fee_included：费用包含，跟团游必填； fee_excluded：费用不含，所有类目必填； order_info：预定须知； extra_cost：其他费用，预留；",
+					"required": true
+				},
+				{
+					"name": "rule_desc",
+					"type": "String",
+					"description": "1500个字",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "product_sale_info",
+			"type": "ProductSaleInfo",
+			"description": "产品销售信息",
+			"subParams": [
+				{
+					"name": "confirm_time",
+					"type": "Number",
+					"description": "可选，资源确认时长，当confirm_type=2时必填。1：2个工作小时内确认，2：6个工作小时内确认，3：9个工作小时内确认，4：18个工作小时内确认"
+				},
+				{
+					"name": "duration",
+					"type": "Number",
+					"description": "至少提前天数，最晚成团提前天数，最小0天，最大为300天；不传则为0"
+				},
+				{
+					"name": "distribute",
+					"type": "Boolean",
+					"description": "是否支持经销"
+				},
+				{
+					"name": "product_line",
+					"type": "Number",
+					"description": "产品线"
+				},
+				{
+					"name": "agent",
+					"type": "Boolean",
+					"description": "是否支持代销"
+				},
+				{
+					"name": "price_upper",
+					"type": "String",
+					"description": "建议零售价上限，单位：元"
+				},
+				{
+					"name": "confirm_type",
+					"type": "Number",
+					"description": "可选，资源确认类型。1-即时确认，2-二次确认。不传默认1"
+				},
+				{
+					"name": "price_lower",
+					"type": "String",
+					"description": "建议零售价下限，单位：元"
+				}
+			]
+		},
+		{
+			"name": "date_sku_info_list",
+			"type": "DateSkuInfo[]",
+			"description": "更新sku信息，仅限日历商品使用",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "alias",
+					"type": "PropertyAliasInfo[]",
+					"description": "sku销售属性别名；如套餐1 需要调整成其他 需要在这里修改",
+					"subParams": [
+						{
+							"name": "value",
+							"type": "String",
+							"description": "属性具体别名值"
+						},
+						{
+							"name": "properties",
+							"type": "String",
+							"description": "销售属性的pid和vid，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid"
+						}
+					]
+				},
+				{
+					"name": "date_list",
+					"type": "DateInventoryAndPrice[]",
+					"description": "SKU的销售价格库存，日历商品使用",
+					"subParams": [
+						{
+							"name": "stock",
+							"type": "Number",
+							"description": "Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数"
+						},
+						{
+							"name": "date",
+							"type": "Date",
+							"description": "销售日期"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "Sku的销售价格。单位:分。如:20007，表示:200元7分。修改后的sku价格要保证商品的价格在所有sku价格所形成的价格区间内（例如：商品价格为6元，sku价格有5元、10元两种，如果要修改5元sku的价格，那么修改的范围只能是0-6元之间；如果要修改10元的sku，那么修改的范围只能是6到无穷大的区间中）"
+						}
+					]
+				},
+				{
+					"name": "properties",
+					"type": "CatPropInfo[]",
+					"description": "SKU销售属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对。",
+					"subParams": [
+						{
+							"name": "vid",
+							"type": "String",
+							"description": "属性VID，调用taobao.itempropvalues.get取得"
+						},
+						{
+							"name": "pid",
+							"type": "String",
+							"description": "属性PID，调用taobao.itemprops.get取得"
+						}
+					]
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "sku商品编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "first_result",
+			"type": "TopTravelItem",
+			"description": "firstResult",
+			"subParams": [
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "商品修改时间",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "产品id",
+					"required": true
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "商品创建时间",
+					"required": true
+				}
+			]
+		}
+	]
+}

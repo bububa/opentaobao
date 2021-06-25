@@ -1,0 +1,137 @@
+{
+	"name": "alitrip.hotel.search.citysuggest.get",
+	"apiChineseName": "城市Suggest接口",
+	"description": "城市Suggest接口",
+	"requestParams": [
+		{
+			"name": "key_words",
+			"type": "String",
+			"description": "用户输入的词",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "biz_ext_map",
+					"type": "Bizextmap",
+					"description": "bizExtMap",
+					"required": true,
+					"subParams": [
+						{
+							"name": "empty",
+							"type": "Boolean",
+							"description": "empty",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "headers",
+					"type": "Headers",
+					"description": "headers",
+					"required": true,
+					"subParams": [
+						{
+							"name": "empty",
+							"type": "Boolean",
+							"description": "empty",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				},
+				{
+					"name": "mapping_code",
+					"type": "String",
+					"description": "mappingCode",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "TopCitySuggestListVo",
+					"description": "具体的返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "suggest_item_v_o_list",
+							"type": "SuggestItemVo[]",
+							"description": "联想词列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "city_code",
+									"type": "Number",
+									"description": "城市code",
+									"required": true
+								},
+								{
+									"name": "city_name",
+									"type": "String",
+									"description": "城市名字",
+									"required": true
+								},
+								{
+									"name": "display_name",
+									"type": "String",
+									"description": "联想词",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "联想词类型",
+									"required": true
+								},
+								{
+									"name": "display_name_english",
+									"type": "String",
+									"description": "英文的联想词",
+									"required": true
+								},
+								{
+									"name": "region",
+									"type": "Number",
+									"description": "区域，国内0，国外1",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

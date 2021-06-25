@@ -1,0 +1,59 @@
+{
+	"name": "tmall.ccf.crowd.activityuser.upload",
+	"apiChineseName": "品牌营销活动用户上传",
+	"description": "搜集ISV的活动用户信息，将其沉淀为活动人群数据",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		},
+		{
+			"name": "crowd_types",
+			"type": "String[]",
+			"description": "人群类型",
+			"required": true,
+			"maxListSize": 100
+		},
+		{
+			"name": "taobao_open_id",
+			"type": "String",
+			"description": "淘宝小程序的openid",
+			"required": true
+		},
+		{
+			"name": "taobao_app_key",
+			"type": "String",
+			"description": "小程序对应的appKey",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "返回结果"
+		},
+		{
+			"name": "e_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "e_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "failed",
+			"type": "Boolean",
+			"description": "是否失败"
+		},
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

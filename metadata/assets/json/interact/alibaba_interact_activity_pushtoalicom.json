@@ -1,0 +1,24 @@
+{
+	"name": "alibaba.interact.activity.pushtoalicom",
+	"apiChineseName": "小铺isv推广流量活动到流量聚乐部",
+	"description": "涉及到流量包的小铺isv，将活动推送到流量聚乐部",
+	"requestParams": [
+		{
+			"name": "banner_url",
+			"type": "String",
+			"description": "推送到流量聚乐部的banner图"
+		},
+		{
+			"name": "biz_id",
+			"type": "String",
+			"description": "推送到流量聚乐部的活动bizid"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "推送成功"
+		}
+	]
+}

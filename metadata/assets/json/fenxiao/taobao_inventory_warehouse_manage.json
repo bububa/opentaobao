@@ -1,0 +1,98 @@
+{
+	"name": "taobao.inventory.warehouse.manage",
+	"apiChineseName": "创建商家仓或者更新商家仓信息",
+	"description": "创建商家仓或者更新商家仓信息",
+	"requestParams": [
+		{
+			"name": "ware_house_dto",
+			"type": "WareHouseDto",
+			"description": "仓库信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址描述"
+				},
+				{
+					"name": "address_area_name",
+					"type": "String",
+					"description": "仓库地址信息,格式 :省~市~区县",
+					"required": true
+				},
+				{
+					"name": "alias_name",
+					"type": "String",
+					"description": "别名",
+					"required": true
+				},
+				{
+					"name": "contact",
+					"type": "String",
+					"description": "联系人"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "电话号码"
+				},
+				{
+					"name": "post_code",
+					"type": "String",
+					"description": "邮编"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码，仅允许使用字母、数字、下划线，并且在6-30个字符内",
+					"required": true
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "仓库名称",
+					"required": true
+				},
+				{
+					"name": "operate_type",
+					"type": "String",
+					"description": "操作类型，新增:ADD;修改:UPDATE",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

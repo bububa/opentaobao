@@ -1,0 +1,24 @@
+{
+	"name": "taobao.jds.hluser.update",
+	"apiChineseName": "订单全链路用户信息修改",
+	"description": "订单全链路用户信息修改，比如是否开放买家端展示",
+	"requestParams": [
+		{
+			"name": "open_for_buyer",
+			"type": "String",
+			"description": "回流信息是否开通买家端展示,可选值open,close"
+		},
+		{
+			"name": "open_nodes",
+			"type": "String",
+			"description": "为空,则默认是X_TO_SYSTEM,X_WAIT_ALLOCATION,X_OUT_WAREHOUSE 可选值是X_DOWNLOADED,X_TO_SYSTEM,X_SERVICE_AUDITED,X_FINANCE_AUDITED,X_ALLOCATION_NOTIFIED,X_WAIT_ALLOCATION,X_SORT_PRINTED,X_SEND_PRINTED,X_LOGISTICS_PRINTED,X_SORTED,X_EXAMINED,X_PACKAGED,X_WEIGHED,X_OUT_WAREHOUS"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.icbu.photobank.upload",
+	"apiChineseName": "图片银行图片上传开放接口",
+	"description": "图片银行图片上传开放接口",
+	"requestParams": [
+		{
+			"name": "file_name",
+			"type": "String",
+			"description": "上传图片名称",
+			"required": true
+		},
+		{
+			"name": "group_id",
+			"type": "String",
+			"description": "上传图片所在分组"
+		},
+		{
+			"name": "image_bytes",
+			"type": "byte[]",
+			"description": "图片字节数组",
+			"required": true
+		},
+		{
+			"name": "extra_context",
+			"type": "Json",
+			"description": "扩展参数信息,如ICVID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "upload_image_response",
+			"type": "UploadImageResponseDo",
+			"description": "图片信息",
+			"subParams": [
+				{
+					"name": "file_name",
+					"type": "String",
+					"description": "生成的图片名称"
+				},
+				{
+					"name": "photobank_url",
+					"type": "String",
+					"description": "生成的图片全路径URL"
+				},
+				{
+					"name": "file_id",
+					"type": "Number",
+					"description": "图片的唯一识别id"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,34 @@
+{
+	"name": "taobao.wdk.equipment.conveyor.info.upload",
+	"apiChineseName": "五道口仓库悬挂链信息上报",
+	"description": "五道口仓库悬挂链信息上传",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "String",
+			"description": "上传信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Json",
+			"description": "model"
+		},
+		{
+			"name": "service_error_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "service_error_msg",
+			"type": "String",
+			"description": "errorMsg"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

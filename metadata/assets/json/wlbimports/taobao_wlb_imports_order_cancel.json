@@ -1,0 +1,30 @@
+{
+	"name": "taobao.wlb.imports.order.cancel",
+	"apiChineseName": "一般进口取消物流订单",
+	"description": "商家在发货后，需要对订单进行取消，如果仓库已经收货则无法取消。",
+	"requestParams": [
+		{
+			"name": "lgorder_code",
+			"type": "String",
+			"description": "物流订单编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_error_msg",
+			"type": "String",
+			"description": "业务错误描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否取消订单成功，true：成功，false：失败"
+		},
+		{
+			"name": "result_error_code",
+			"type": "String",
+			"description": "业务错误编码"
+		}
+	]
+}

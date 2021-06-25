@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.price.promotion.item.delete",
+	"apiChineseName": "批量删除档期",
+	"description": "盒马帮批量删除档期商品",
+	"requestParams": [
+		{
+			"name": "sku_codes",
+			"type": "String[]",
+			"description": "商品code",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "ou_code",
+			"type": "String",
+			"description": "toB渠道店OU",
+			"required": true
+		},
+		{
+			"name": "outer_promotion_code",
+			"type": "String",
+			"description": "外部档期编码",
+			"required": true
+		},
+		{
+			"name": "unique_id",
+			"type": "String",
+			"description": "盒马唯一标识"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "String[]",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "total_record",
+					"type": "Number",
+					"description": "totalRecord",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

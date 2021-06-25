@@ -1,0 +1,161 @@
+{
+	"name": "alibaba.alsc.crm.rule.querympricerule",
+	"apiChineseName": "查询品牌下的会员价规则",
+	"description": "查询品牌下的会员价规则",
+	"requestParams": [
+		{
+			"name": "param_plan_rule_query_open_req",
+			"type": "PlanRuleQueryOpenReq",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "店铺ID"
+				},
+				{
+					"name": "last_update_time",
+					"type": "Date",
+					"description": "最后更新时间"
+				},
+				{
+					"name": "deleted",
+					"type": "Boolean",
+					"description": "是否包括已删除的数据",
+					"required": true
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部店铺ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "MemPriceRuleOpenInfo",
+					"description": "会员价规则模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "是否已删除",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "level_menu_list",
+							"type": "LevelMenuOpenInfo[]",
+							"description": "会员等级和特价菜单的关系",
+							"required": true,
+							"subParams": [
+								{
+									"name": "deleted",
+									"type": "Boolean",
+									"description": "是否已删除",
+									"required": true
+								},
+								{
+									"name": "level_id",
+									"type": "String",
+									"description": "等级ID",
+									"required": true
+								},
+								{
+									"name": "level_name",
+									"type": "String",
+									"description": "等级名称",
+									"required": true
+								},
+								{
+									"name": "menu_id",
+									"type": "String",
+									"description": "菜品ID",
+									"required": true
+								},
+								{
+									"name": "menu_name",
+									"type": "String",
+									"description": "菜品名称",
+									"required": true
+								},
+								{
+									"name": "use_switch",
+									"type": "Boolean",
+									"description": "是否享受会员价",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pay_type",
+							"type": "String",
+							"description": "支付方式限制，UNLIMITED_PAY：无限制，RECHARGE_PAY：储值整单支付",
+							"required": true
+						},
+						{
+							"name": "ext_info",
+							"type": "Json",
+							"description": "扩展信息",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

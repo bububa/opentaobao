@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.scbp.product.list",
+	"apiChineseName": "查询P4P产品",
+	"description": "查询P4P产品",
+	"requestParams": [
+		{
+			"name": "group_id",
+			"type": "String",
+			"description": "产品分组标识",
+			"required": true
+		},
+		{
+			"name": "per_page_size",
+			"type": "Number",
+			"description": "产品分页查询，每页个数，最大值20"
+		},
+		{
+			"name": "to_page",
+			"type": "Number",
+			"description": "第几页"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "product_list",
+			"type": "TopProductDto []",
+			"description": "产品列表",
+			"subParams": [
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "产品标题，最大长度256个字符"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "产品推广状态，取值[disabled,enabled]"
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品ID"
+				}
+			]
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "总数"
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "总页数"
+		}
+	]
+}

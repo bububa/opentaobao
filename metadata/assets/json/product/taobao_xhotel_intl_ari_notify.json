@@ -1,0 +1,74 @@
+{
+	"name": "taobao.xhotel.intl.ari.notify",
+	"apiChineseName": "国际酒店集团价库变更通知",
+	"description": "国际酒店集团价库变更时通知变更内容，平台及时更新价库信息，保证价库新鲜度",
+	"requestParams": [
+		{
+			"name": "cache_change_list",
+			"type": "CacheChangeInfo[]",
+			"description": "缓存变更",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "hotel_code",
+					"type": "String",
+					"description": "外部酒店code"
+				},
+				{
+					"name": "time_span",
+					"type": "TimeSpan",
+					"description": "变更时间段",
+					"subParams": [
+						{
+							"name": "start",
+							"type": "String",
+							"description": "变更开始时间"
+						},
+						{
+							"name": "end",
+							"type": "String",
+							"description": "变更结束时间"
+						},
+						{
+							"name": "change_date_mask",
+							"type": "String",
+							"description": "变更时间段内的具体有变更的日期掩码"
+						}
+					]
+				},
+				{
+					"name": "product_info",
+					"type": "ProductInfo",
+					"description": "具体变更的商品",
+					"subParams": [
+						{
+							"name": "room_type_code",
+							"type": "String",
+							"description": "外部房型code"
+						},
+						{
+							"name": "rate_plan_code",
+							"type": "String",
+							"description": "外部RatePlan code"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "module",
+			"type": "CacheChangeNotifyResult",
+			"description": "通知结果",
+			"subParams": [
+				{
+					"name": "unique_id",
+					"type": "String",
+					"description": "请求唯一ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,110 @@
+{
+	"name": "taobao.refund.messages.get",
+	"apiChineseName": "查询退款留言/凭证列表",
+	"description": "查询退款留言/凭证列表",
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "需返回的字段列表。可选值：RefundMessage结构体中的所有字段，以半角逗号(,)分隔。",
+			"required": true,
+			"maxListSize": 100
+		},
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款单号",
+			"required": true,
+			"minValue": 1
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"minValue": 1
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数",
+			"maxValue": 100,
+			"minValue": 1
+		},
+		{
+			"name": "refund_phase",
+			"type": "String",
+			"description": "退款阶段，可选值：onsale（售中），aftersale（售后），天猫退款为必传。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "查询到的退款留言/凭证总数"
+		},
+		{
+			"name": "refund_messages",
+			"type": "RefundMessage []",
+			"description": "查询到的退款留言/凭证列表",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "留言编号"
+				},
+				{
+					"name": "owner_id",
+					"type": "Number",
+					"description": "留言者编号"
+				},
+				{
+					"name": "owner_nick",
+					"type": "String",
+					"description": "留言者昵称"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "留言内容。最大长度: 400个字节"
+				},
+				{
+					"name": "pic_urls",
+					"type": "PicUrl[]",
+					"description": "凭证附件地址（图片）",
+					"subParams": [
+						{
+							"name": "url",
+							"type": "String",
+							"description": "图片链接地址"
+						}
+					]
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "留言创建时间。格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "message_type",
+					"type": "String",
+					"description": "退款类型：NORMAL（普通留言），RETURN_GOODS_APPROVED（卖家留退货地址时留言）；如果为RETURN_GOODS_APPROVED，则退款留言中有卖家收货地址"
+				},
+				{
+					"name": "refund_phase",
+					"type": "String",
+					"description": "退款阶段，可选值：onsale（售中）, aftersale（售后）"
+				},
+				{
+					"name": "refund_id",
+					"type": "String",
+					"description": "退款编号。"
+				},
+				{
+					"name": "owner_role",
+					"type": "String",
+					"description": "留言者身份1代表买家，2代表卖家，3代表小二"
+				}
+			]
+		}
+	]
+}

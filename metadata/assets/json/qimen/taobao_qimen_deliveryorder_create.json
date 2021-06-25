@@ -1,0 +1,727 @@
+{
+	"name": "taobao.qimen.deliveryorder.create",
+	"apiChineseName": "发货单创建接口",
+	"description": "taobao.qimen.deliveryorder.create",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "DeliveryOrderCreateRequest",
+			"subParams": [
+				{
+					"name": "deliveryOrder",
+					"type": "DeliveryOrder",
+					"description": "发货单信息",
+					"subParams": [
+						{
+							"name": "deliveryOrderCode",
+							"type": "String",
+							"description": "出库单号",
+							"required": true
+						},
+						{
+							"name": "preDeliveryOrderCode",
+							"type": "String",
+							"description": "原出库单号(ERP分配)"
+						},
+						{
+							"name": "preDeliveryOrderId",
+							"type": "String",
+							"description": "原出库单号(WMS分配)"
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "出库单类型(JYCK=一般交易出库单;HHCK=换货出库单;BFCK=补发出库单;QTCK=其他出 库 单)",
+							"required": true
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码(统仓统配等无需ERP指定仓储编码的情况填OTHER)",
+							"required": true
+						},
+						{
+							"name": "orderFlag",
+							"type": "String",
+							"description": "订单标记(用字符串格式来表示订单标记列表:例如COD=货到付款;LIMIT=限时配 送;PRESELL=预 售;COMPLAIN=已投诉;SPLIT=拆单;EXCHANGE=换货;VISIT=上门;MODIFYTRANSPORT=是否 可改配送方式;CONSIGN = 物流宝代理发货;SELLER_AFFORD=是否卖家承担运费;FENXIAO=分销订 单)"
+						},
+						{
+							"name": "sourcePlatformCode",
+							"type": "String",
+							"description": "订单来源平台编码(TB=淘宝、TM=天猫、JD=京东、DD=当当、PP=拍拍、YX= 易讯、 EBAY=ebay、QQ=QQ网购、AMAZON=亚马逊、SN=苏宁、GM=国美、WPH=唯品会、JM=聚美、LF=乐蜂 、MGJ=蘑菇街、 JS=聚尚、PX=拍鞋、YT=银泰、YHD=1号店、VANCL=凡客、YL=邮乐、YG=优购、1688=阿 里巴巴、POS=POS门店、 MIA=蜜芽、OTHER=其他(只传英文编码))"
+						},
+						{
+							"name": "sourcePlatformName",
+							"type": "String",
+							"description": "订单来源平台名称"
+						},
+						{
+							"name": "createTime",
+							"type": "String",
+							"description": "发货单创建时间(YYYY-MM-DD HH:MM:SS)",
+							"required": true
+						},
+						{
+							"name": "placeOrderTime",
+							"type": "String",
+							"description": "前台订单/店铺订单的创建时间/下单时间",
+							"required": true
+						},
+						{
+							"name": "payTime",
+							"type": "String",
+							"description": "订单支付时间(YYYY-MM-DD HH:MM:SS)"
+						},
+						{
+							"name": "payNo",
+							"type": "String",
+							"description": "支付平台交易号"
+						},
+						{
+							"name": "operatorCode",
+							"type": "String",
+							"description": "操作员(审核员)编码"
+						},
+						{
+							"name": "operatorName",
+							"type": "String",
+							"description": "操作员(审核员)名称"
+						},
+						{
+							"name": "operateTime",
+							"type": "String",
+							"description": "操作(审核)时间(YYYY-MM-DD HH:MM:SS)",
+							"required": true
+						},
+						{
+							"name": "shopNick",
+							"type": "String",
+							"description": "店铺名称",
+							"required": true
+						},
+						{
+							"name": "sellerNick",
+							"type": "String",
+							"description": "卖家名称"
+						},
+						{
+							"name": "buyerNick",
+							"type": "String",
+							"description": "买家昵称"
+						},
+						{
+							"name": "totalAmount",
+							"type": "String",
+							"description": "订单总金额(订单总金额=应收金额+已收金额=商品总金额-订单折扣金额+快递费用 ;单位 元)"
+						},
+						{
+							"name": "itemAmount",
+							"type": "String",
+							"description": "商品总金额(元)"
+						},
+						{
+							"name": "discountAmount",
+							"type": "String",
+							"description": "订单折扣金额(元)"
+						},
+						{
+							"name": "freight",
+							"type": "String",
+							"description": "快递费用(元)"
+						},
+						{
+							"name": "arAmount",
+							"type": "String",
+							"description": "应收金额(消费者还需要支付多少--货到付款时消费者还需要支付多少约定使用这个字 段;单位元 )"
+						},
+						{
+							"name": "gotAmount",
+							"type": "String",
+							"description": "已收金额(消费者已经支付多少;单位元)"
+						},
+						{
+							"name": "serviceFee",
+							"type": "String",
+							"description": "COD服务费"
+						},
+						{
+							"name": "logisticsCode",
+							"type": "String",
+							"description": "物流公司编码(SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通 、ZTO=中 通(ZTO)、HTKY=百世汇通、UC=优速、STO=申通、TTKDEX=天天快递、QFKD=全峰、FAST=快捷 、POSTB=邮政小包、 GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、AMAZON=亚马逊物流、 OTHER=其他)",
+							"required": true
+						},
+						{
+							"name": "logisticsName",
+							"type": "String",
+							"description": "物流公司名称"
+						},
+						{
+							"name": "expressCode",
+							"type": "String",
+							"description": "运单号"
+						},
+						{
+							"name": "logisticsAreaCode",
+							"type": "String",
+							"description": "快递区域编码"
+						},
+						{
+							"name": "deliveryRequirements",
+							"type": "DeliveryRequirements",
+							"description": "发货要求列表",
+							"subParams": [
+								{
+									"name": "scheduleType",
+									"type": "Number",
+									"description": "投递时延要求(1=工作日;2=节假日;101=当日达;102=次晨达;103=次日达;104=预约达;105=隔日达)"
+								},
+								{
+									"name": "scheduleDay",
+									"type": "String",
+									"description": "要求送达日期(YYYY-MM-DD)"
+								},
+								{
+									"name": "scheduleStartTime",
+									"type": "String",
+									"description": "投递时间范围要求(开始时间;格式：HH:MM:SS)"
+								},
+								{
+									"name": "scheduleEndTime",
+									"type": "String",
+									"description": "投递时间范围要求(结束时间;格式：HH:MM:SS)"
+								},
+								{
+									"name": "deliveryType",
+									"type": "String",
+									"description": "发货服务类型(PTPS:普通配送;LLPS:冷链配送;HBP:环保配)"
+								}
+							]
+						},
+						{
+							"name": "senderInfo",
+							"type": "SenderInfo",
+							"description": "发件人信息",
+							"subParams": [
+								{
+									"name": "company",
+									"type": "String",
+									"description": "公司名称"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "姓名",
+									"required": true
+								},
+								{
+									"name": "zipCode",
+									"type": "String",
+									"description": "邮编"
+								},
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "固定电话"
+								},
+								{
+									"name": "mobile",
+									"type": "String",
+									"description": "移动电话",
+									"required": true
+								},
+								{
+									"name": "email",
+									"type": "String",
+									"description": "电子邮箱"
+								},
+								{
+									"name": "countryCode",
+									"type": "String",
+									"description": "国家二字码"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省份",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "城市",
+									"required": true
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区域"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "村镇"
+								},
+								{
+									"name": "detailAddress",
+									"type": "String",
+									"description": "详细地址",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "receiverInfo",
+							"type": "ReceiverInfo",
+							"description": "收件人信息",
+							"subParams": [
+								{
+									"name": "company",
+									"type": "String",
+									"description": "公司名称"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "姓名",
+									"required": true
+								},
+								{
+									"name": "zipCode",
+									"type": "String",
+									"description": "邮编"
+								},
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "固定电话"
+								},
+								{
+									"name": "mobile",
+									"type": "String",
+									"description": "移动电话",
+									"required": true
+								},
+								{
+									"name": "idType",
+									"type": "String",
+									"description": "收件人证件类型(1-身份证、2-军官证、3-护照、4-其他)"
+								},
+								{
+									"name": "idNumber",
+									"type": "String",
+									"description": "收件人证件号码"
+								},
+								{
+									"name": "email",
+									"type": "String",
+									"description": "电子邮箱"
+								},
+								{
+									"name": "countryCode",
+									"type": "String",
+									"description": "国家二字码"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省份",
+									"required": true
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "城市",
+									"required": true
+								},
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区域"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "村镇"
+								},
+								{
+									"name": "detailAddress",
+									"type": "String",
+									"description": "详细地址",
+									"required": true
+								},
+								{
+									"name": "oaid",
+									"type": "String",
+									"description": "收件人地址ID"
+								}
+							]
+						},
+						{
+							"name": "isUrgency",
+							"type": "String",
+							"description": "是否紧急(Y/N;默认为N)"
+						},
+						{
+							"name": "invoiceFlag",
+							"type": "String",
+							"description": "是否需要发票(Y/N;默认为N)"
+						},
+						{
+							"name": "invoices",
+							"type": "Invoice[]",
+							"description": "发票信息",
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "发票类型(INVOICE=普通发票;VINVOICE=增值税普通发票;EVINVOICE=电子增票;填写的 条件 是:invoiceFlag为Y)"
+								},
+								{
+									"name": "header",
+									"type": "String",
+									"description": "发票抬头(填写的条件是:invoiceFlag为Y)"
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "发票总金额(填写的条件是:invoiceFlag为Y)"
+								},
+								{
+									"name": "content",
+									"type": "String",
+									"description": "发票内容(不推荐使用)"
+								},
+								{
+									"name": "detail",
+									"type": "Detail",
+									"description": "当content和detail同时存在时，优先处理detail的信息",
+									"subParams": [
+										{
+											"name": "items",
+											"type": "Item[]",
+											"description": "商品列表",
+											"subParams": [
+												{
+													"name": "itemName",
+													"type": "String",
+													"description": "商品名称"
+												},
+												{
+													"name": "unit",
+													"type": "String",
+													"description": "商品单位"
+												},
+												{
+													"name": "price",
+													"type": "String",
+													"description": "商品单价"
+												},
+												{
+													"name": "quantity",
+													"type": "Number",
+													"description": "数量"
+												},
+												{
+													"name": "amount",
+													"type": "String",
+													"description": "金额"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "taxNumber",
+									"type": "String",
+									"description": "税号"
+								}
+							]
+						},
+						{
+							"name": "insuranceFlag",
+							"type": "String",
+							"description": "是否需要保险(Y/N;默认为N)"
+						},
+						{
+							"name": "insurance",
+							"type": "Insurance",
+							"description": "保险信息",
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "保险类型"
+								},
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "保险金额"
+								}
+							]
+						},
+						{
+							"name": "buyerMessage",
+							"type": "String",
+							"description": "买家留言"
+						},
+						{
+							"name": "sellerMessage",
+							"type": "String",
+							"description": "卖家留言"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "serviceCode",
+							"type": "String",
+							"description": "服务编码"
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "旧版本货主编码"
+						},
+						{
+							"name": "latestCollectionTime",
+							"type": "String",
+							"description": "最晚揽收时间, string (19) , YYYY-MM-DD HH:MM:SS"
+						},
+						{
+							"name": "latestDeliveryTime",
+							"type": "String",
+							"description": "最晚发货时间, string (19) , YYYY-MM-DD HH:MM:SS"
+						},
+						{
+							"name": "oaidOrderSourceCode",
+							"type": "String",
+							"description": "交易平台订单"
+						}
+					]
+				},
+				{
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "订单列表",
+					"subParams": [
+						{
+							"name": "orderLineNo",
+							"type": "String",
+							"description": "单据行号"
+						},
+						{
+							"name": "sourceOrderCode",
+							"type": "String",
+							"description": "交易平台订单"
+						},
+						{
+							"name": "subSourceOrderCode",
+							"type": "String",
+							"description": "交易平台子订单编码"
+						},
+						{
+							"name": "payNo",
+							"type": "String",
+							"description": "支付平台交易号(淘系订单传支付宝交易号)"
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码",
+							"required": true
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品编码"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS= 箱损;ZT=在途库存;默认为查所有类型的库存)"
+						},
+						{
+							"name": "itemName",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "extCode",
+							"type": "String",
+							"description": "交易平台商品编码"
+						},
+						{
+							"name": "planQty",
+							"type": "Number",
+							"description": "应发商品数量",
+							"required": true
+						},
+						{
+							"name": "retailPrice",
+							"type": "String",
+							"description": "零售价(零售价=实际成交价+单件商品折扣金额)"
+						},
+						{
+							"name": "actualPrice",
+							"type": "String",
+							"description": "实际成交价",
+							"required": true
+						},
+						{
+							"name": "discountAmount",
+							"type": "String",
+							"description": "单件商品折扣金额"
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编码"
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "DeliveryOrderCreateResponse",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "createTime",
+					"type": "String",
+					"description": "订单创建时间(YYYY-MM-DD HH:MM:SS)",
+					"required": true
+				},
+				{
+					"name": "deliveryOrderId",
+					"type": "String",
+					"description": "出库单仓储系统编码",
+					"required": true
+				},
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码(统仓统配使用)",
+					"required": true
+				},
+				{
+					"name": "logisticsCode",
+					"type": "String",
+					"description": "物流公司编码(统仓统配使用)",
+					"required": true
+				},
+				{
+					"name": "deliveryOrders",
+					"type": "DeliveryOrder[]",
+					"description": "发货单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "deliveryOrderId",
+							"type": "String",
+							"description": "出库单仓储系统编码",
+							"required": true
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码(统仓统配使用)",
+							"required": true
+						},
+						{
+							"name": "logisticsCode",
+							"type": "String",
+							"description": "物流公司编码(统仓统配使用)",
+							"required": true
+						},
+						{
+							"name": "orderLines",
+							"type": "OrderLine[]",
+							"description": "订单信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "orderLineNo",
+									"type": "String",
+									"description": "行号",
+									"required": true
+								},
+								{
+									"name": "itemCode",
+									"type": "String",
+									"description": "ERP商品编码",
+									"required": true
+								},
+								{
+									"name": "itemId",
+									"type": "String",
+									"description": "WMS商品编码",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "数量",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "createTime",
+							"type": "String",
+							"description": "订单创建时间(YYYY-MM-DD HH:MM:SS)",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

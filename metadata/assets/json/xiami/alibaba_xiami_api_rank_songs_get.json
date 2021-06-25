@@ -1,0 +1,144 @@
+{
+	"name": "alibaba.xiami.api.rank.songs.get",
+	"apiChineseName": "排行榜歌曲获取",
+	"description": "获取歌曲排行榜",
+	"requestParams": [
+		{
+			"name": "type",
+			"type": "String",
+			"description": "榜单类型:\u003cbr/\u003e虾米榜 music_all,music_oumei,music_ri,music_han,music_huayu;\u003cbr/\u003e虾米新歌榜 newmusic_all,newmusc_oumei,newmusic_ri,newmusic_han,newmusic_huayu;\u003cbr/\u003e全球媒体榜 hito,jingge,uk,billboard,oricon,mnet;\u003cbr/\u003e原创榜 music_original;\u003cbr/\u003edemo榜 music_demo;\u003cbr/\u003e陌陌榜 momo;",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "RankSongsData",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "songs",
+					"type": "RankSong[]",
+					"description": "歌曲列表",
+					"subParams": [
+						{
+							"name": "song_id",
+							"type": "Number",
+							"description": "歌曲ID"
+						},
+						{
+							"name": "song_name",
+							"type": "String",
+							"description": "歌曲名称"
+						},
+						{
+							"name": "album_id",
+							"type": "Number",
+							"description": "专辑ID"
+						},
+						{
+							"name": "album_name",
+							"type": "String",
+							"description": "专辑名"
+						},
+						{
+							"name": "artist_id",
+							"type": "Number",
+							"description": "艺人ID"
+						},
+						{
+							"name": "artist_name",
+							"type": "String",
+							"description": "艺人名"
+						},
+						{
+							"name": "lyric_text",
+							"type": "String",
+							"description": "文本歌词"
+						},
+						{
+							"name": "recommends",
+							"type": "Number",
+							"description": "推荐值"
+						},
+						{
+							"name": "length",
+							"type": "Number",
+							"description": "歌曲时长（S）"
+						},
+						{
+							"name": "logo",
+							"type": "String",
+							"description": "专辑LOGO"
+						},
+						{
+							"name": "artist_logo",
+							"type": "String",
+							"description": "艺人LOGO"
+						},
+						{
+							"name": "singers",
+							"type": "String",
+							"description": "演唱者"
+						},
+						{
+							"name": "play_counts",
+							"type": "Number",
+							"description": "播放次数"
+						},
+						{
+							"name": "listen_file",
+							"type": "String",
+							"description": "音频地址"
+						},
+						{
+							"name": "play_seconds",
+							"type": "Number",
+							"description": "播放时长 （同length)"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "专辑名称(同album_name)"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "歌曲名称（同song_name）"
+						},
+						{
+							"name": "album_logo",
+							"type": "String",
+							"description": "专辑LOGO(同logo)"
+						},
+						{
+							"name": "lyric_file",
+							"type": "String",
+							"description": "动态歌词（同lyric）"
+						},
+						{
+							"name": "demo",
+							"type": "Number",
+							"description": "是否音乐人demo(0,不是,1,是)"
+						},
+						{
+							"name": "play_authority",
+							"type": "Number",
+							"description": "播放权限(1,可以播放,0,不可播放)"
+						},
+						{
+							"name": "favourite",
+							"type": "Boolean",
+							"description": "是否已收藏"
+						},
+						{
+							"name": "width",
+							"type": "Number",
+							"description": "试听占比, 某些榜单会有"
+						}
+					]
+				}
+			]
+		}
+	]
+}

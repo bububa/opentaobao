@@ -1,0 +1,107 @@
+{
+	"name": "alitrip.agent.flight.sell.refund.list",
+	"apiChineseName": "销售退票单列表",
+	"description": "销售退票单列表",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "RefundListRequestDto",
+			"description": "请求对象",
+			"subParams": [
+				{
+					"name": "end_apply_time",
+					"type": "Date",
+					"description": "退票申请起始时间",
+					"required": true
+				},
+				{
+					"name": "begin_apply_time",
+					"type": "Date",
+					"description": "退票申请结束时间",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "退票单状态"
+				},
+				{
+					"name": "agent_ids",
+					"type": "Number[]",
+					"description": "店铺id集合"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "123",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "T[]",
+					"description": "数据集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "apply_id",
+							"type": "String",
+							"description": "退票申请单号",
+							"required": true
+						},
+						{
+							"name": "domestic_intl",
+							"type": "Number",
+							"description": "国内国际标识",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "飞猪订单号",
+							"required": true
+						},
+						{
+							"name": "apply_time",
+							"type": "Date",
+							"description": "时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功失败标识",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

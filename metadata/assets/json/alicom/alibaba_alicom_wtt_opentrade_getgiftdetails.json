@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.alicom.wtt.opentrade.getgiftdetails",
+	"apiChineseName": "存送业务查询奖品信息",
+	"description": "话费宝充值送查询奖品信息",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "String",
+			"description": "活动ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultDto",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ActivityInfoResponseDto",
+					"description": "数据集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "activity_id",
+							"type": "String",
+							"description": "活动ID",
+							"required": true
+						},
+						{
+							"name": "activity_name",
+							"type": "String",
+							"description": "活动名称",
+							"required": true
+						},
+						{
+							"name": "activity_gift_infos",
+							"type": "ActivityGiftInfoDTOs",
+							"description": "礼包数据集",
+							"required": true,
+							"subParams": [
+								{
+									"name": "gift_id",
+									"type": "String",
+									"description": "礼包ID",
+									"required": true
+								},
+								{
+									"name": "gift_name",
+									"type": "String",
+									"description": "礼包名称",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

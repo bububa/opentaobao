@@ -1,0 +1,112 @@
+{
+	"name": "alibaba.retail.marketing.itemdiscount.activity.create",
+	"apiChineseName": "创建单品特价活动【同城零售】",
+	"description": "同城零售单品特价活动创建",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "ItemDiscountActivityOperateRequest",
+			"description": "创建活动参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称",
+					"required": true
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "活动创建者ID（仅数字）",
+					"required": true
+				},
+				{
+					"name": "creator_name",
+					"type": "String",
+					"description": "活动创建者name",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动描述",
+					"required": true
+				},
+				{
+					"name": "terminals",
+					"type": "Number[]",
+					"description": "活动终端：1-APP，2-POS",
+					"required": true
+				},
+				{
+					"name": "store_ids",
+					"type": "String[]",
+					"description": "活动生效的经营店ID",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "外部活动ID（商家自定义）"
+				},
+				{
+					"name": "discount_type",
+					"type": "Number",
+					"description": "特价类型，1-减钱，2-一口价，3-打折",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "活动结束时间",
+					"required": true
+				},
+				{
+					"name": "member_crowd_code",
+					"type": "String[]",
+					"description": "活动人群编码，NEW_USER：新用户，OLD_USER：老用户，LIGHT_NEW_USER：闪购新客"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "活动ID",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "操作是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

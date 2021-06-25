@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.servicecenter.fulfiltask.buyeraddress.change",
+	"apiChineseName": "修改消费者服务地址",
+	"description": "当消费者反馈自己的服务地址错误时，可以电话联系服务商修改为正确地址，服务商只能修改派给自己的单子",
+	"requestParams": [
+		{
+			"name": "fulfil_task_id",
+			"type": "Number",
+			"description": "核销单id",
+			"required": true
+		},
+		{
+			"name": "address_detail",
+			"type": "String",
+			"description": "详细地址",
+			"required": true
+		},
+		{
+			"name": "location",
+			"type": "Number",
+			"description": "地址编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

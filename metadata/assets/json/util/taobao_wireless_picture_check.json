@@ -1,0 +1,51 @@
+{
+	"name": "taobao.wireless.picture.check",
+	"apiChineseName": "无线开放图片内容安全检查",
+	"description": "无线开放内容检查，提供涉黄暴力政治图片检查。更详情介绍见 \u003ca href=\"https://help.aliyun.com/document_detail/70292.html\" target=\"blank\"\u003e阿里云内容安全\u003c/a\u003e\n此API会进行两个场景审核，平均RT为1s。",
+	"requestParams": [
+		{
+			"name": "url",
+			"type": "String",
+			"description": "图片的URL,URL必须为淘系安全域名地址。图片格式支持png,jpg,webp",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "check_results",
+			"type": "Checkpoints []",
+			"description": "检查结果",
+			"subParams": [
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "检查的场景。porn：涉黄；terrorism：暴恐涉政，",
+					"required": true
+				},
+				{
+					"name": "label",
+					"type": "String",
+					"description": "检查的场景的标签。在porn场景，值为normal：正常图片，无色情内容；sexy：性感图片；porn：色情图片。 在terrorism场景，为normal：正常图片；bloody：血腥；explosion：爆炸烟光；outfit：特殊装束；logo：特殊标识；weapon：武器；politics：涉政；violence ： 打斗；crowd：聚众；parade：游行；carcrash：车祸现场；flag：旗帜；location：地标",
+					"required": true
+				},
+				{
+					"name": "suggestion",
+					"type": "String",
+					"description": "结果建议",
+					"required": true
+				},
+				{
+					"name": "rate",
+					"type": "String",
+					"description": "结果准确度",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "suggestion",
+			"type": "String",
+			"description": "综合结果建议。建议用户执行的操作，取值范围： pass：文本正常； review：需要人工审核； block：文本违规，可以直接删除或者做限制处理"
+		}
+	]
+}

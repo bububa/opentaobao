@@ -1,0 +1,19 @@
+{
+	"name": "taobao.oauth.code.create",
+	"apiChineseName": "淘宝OauthCode颁发",
+	"description": "手淘无线开放的oauthCode颁发接口",
+	"requestParams": [
+		{
+			"name": "test",
+			"type": "Number",
+			"description": "mock param"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "test",
+			"type": "Number",
+			"description": "mock out params"
+		}
+	]
+}

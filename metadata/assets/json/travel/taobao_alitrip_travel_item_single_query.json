@@ -1,0 +1,858 @@
+{
+	"name": "taobao.alitrip.travel.item.single.query",
+	"apiChineseName": "【API3.0】度假单个商品查询接口",
+	"description": "旅行度假新商品查询接口（单个商品查询） 第三版",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id。itemId和outProductId至少填写一个"
+		},
+		{
+			"name": "out_product_id",
+			"type": "String",
+			"description": "商品 外部商家编码。itemId和outProductId至少填写一个"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "travel_item",
+			"type": "PontusTravelFullTravelItem",
+			"description": "商品查询结果",
+			"subParams": [
+				{
+					"name": "item_type",
+					"type": "Number",
+					"description": "商品类型"
+				},
+				{
+					"name": "item_status",
+					"type": "Number",
+					"description": "商品状态"
+				},
+				{
+					"name": "itineraries",
+					"type": "PontusTravelItemItineraryInfo[]",
+					"description": "行程信息",
+					"subParams": [
+						{
+							"name": "content",
+							"type": "String",
+							"description": "必填，1.可选择纯文本 2.使用xml标签（img和txt）进行图文混排，目前仅支持一段文字和多张图片，如果文件有多段，将会被合并 3.每段行程文字总和小于1500字"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "小于等于30字"
+						},
+						{
+							"name": "itinerary_no",
+							"type": "Number",
+							"description": "行程编号，第一天行程为1，第二天行程为2"
+						}
+					]
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "sku_infos",
+					"type": "PontusTravelItemSkuInfo[]",
+					"description": "sku信息",
+					"subParams": [
+						{
+							"name": "package_name",
+							"type": "String",
+							"description": "套餐名称"
+						},
+						{
+							"name": "outer_sku_id",
+							"type": "String",
+							"description": "映射到具体日历价格套餐的外部商家编码"
+						},
+						{
+							"name": "package_desc",
+							"type": "String",
+							"description": "套餐描述"
+						},
+						{
+							"name": "prices",
+							"type": "PontusTravelPrices[]",
+							"description": "套餐的日历价格库存。如果是预约商品，只需要填写一个Price，并且，不需要填写Price中的date字段不填，且预约商品只有成人价格和库存。",
+							"subParams": [
+								{
+									"name": "price_type",
+									"type": "Number",
+									"description": "价格类型。price_type 取：1-成人价，2-儿童价，3-单房差"
+								},
+								{
+									"name": "stock",
+									"type": "Number",
+									"description": "库存"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "价格"
+								},
+								{
+									"name": "date",
+									"type": "Date",
+									"description": "日期。对于普通商品必填，对于预约商品该字段不填"
+								},
+								{
+									"name": "outer_price_id",
+									"type": "String",
+									"description": "外部商家团期ID"
+								}
+							]
+						},
+						{
+							"name": "package_operation",
+							"type": "String",
+							"description": "套餐操作仅限于删除[delete]和修改[modify]\u0026quot;, 该操作修改的是套餐的名称和outer_sku_id"
+						},
+						{
+							"name": "update_outer_sku_id",
+							"type": "String",
+							"description": "package_operation 为midofy时，outer_sku_id将被该值覆盖"
+						},
+						{
+							"name": "products",
+							"type": "PontusTravelProduct[]",
+							"description": "套餐关联的产品元素信息",
+							"subParams": [
+								{
+									"name": "element_id",
+									"type": "String",
+									"description": "元素的外部商家编码"
+								},
+								{
+									"name": "num",
+									"type": "Number",
+									"description": "份数"
+								}
+							]
+						},
+						{
+							"name": "combos",
+							"type": "String",
+							"description": "combos"
+						}
+					]
+				},
+				{
+					"name": "sale_info",
+					"type": "PontusTravelItemSaleInfo",
+					"description": "销售属性信息",
+					"subParams": [
+						{
+							"name": "approve_status",
+							"type": "Number",
+							"description": "上下架状态"
+						},
+						{
+							"name": "auction_point",
+							"type": "Number",
+							"description": "返点比例"
+						},
+						{
+							"name": "sub_stock",
+							"type": "Number",
+							"description": "减库存方式"
+						},
+						{
+							"name": "sale_type",
+							"type": "Number",
+							"description": "商品售卖类型，0为普通商品，1为预约商品；默认为0"
+						},
+						{
+							"name": "bc_start_date",
+							"type": "Date",
+							"description": "预约商品必填，普通商品不填。预约商品开始时间，格式：yyyy-MM-dd HH:mm"
+						},
+						{
+							"name": "start_combo_date",
+							"type": "Date",
+							"description": "预约商品必填，普通商品可不填。可选出发开始日期，格式：yyyy-MM-dd。对于普通商品，根据日历库存的最早时间来自动计算。对于预约商品则为必填字段"
+						},
+						{
+							"name": "end_combo_date",
+							"type": "Date",
+							"description": "预约商品必填，普通商品可不填。可选出发结束日期，格式：年-月-日 日期必须是最近300天内的，最早和最晚日期跨度最大为180天。对于普通商品，根据日历库存的最晚时间来自动计算；对于预约商品则为必填字段"
+						},
+						{
+							"name": "second_kill",
+							"type": "String",
+							"description": "商品秒杀，商品秒杀三个值：可选类型web_only(只能通过web网络秒杀)，wap_only(只能通过wap网络秒杀)，web_and_wap(既能通过web秒杀也能通过wap秒杀)"
+						},
+						{
+							"name": "merchant",
+							"type": "String",
+							"description": "电子凭证码商，格式为：码商id:码商nick。电子凭证的卖家规则详见：http://bangpai.taobao.com/group/thread/14051111-283426841.htm"
+						},
+						{
+							"name": "network_id",
+							"type": "String",
+							"description": "电子凭证网点ID"
+						},
+						{
+							"name": "duration",
+							"type": "Number",
+							"description": "至少提前天数，最晚成团提前天数，最小0天，最大为300天；不传则为0"
+						},
+						{
+							"name": "has_discount",
+							"type": "Boolean",
+							"description": "是否支持会员打折。可选值：true，false；默认值：false(不打折)。不传的话默认为false"
+						},
+						{
+							"name": "has_showcase",
+							"type": "Boolean",
+							"description": "是否橱窗推荐，可选值：true，false；默认值：false(不推荐)"
+						},
+						{
+							"name": "seller_cids",
+							"type": "String[]",
+							"description": "关联商品与店铺类目 结构:\u0026quot;,cid1,cid2,...,\u0026quot;，如果店铺类目存在二级类目，必须传入子类目cids。  支持的最大列表长度为：256； 关于如何获取cid，请参考该接口：http://open.taobao.com/doc2/apiDetail.htm?apiId=65"
+						},
+						{
+							"name": "support_onsale_auto_refund",
+							"type": "Boolean",
+							"description": "电子凭证是否支持系统自动退款，true则表示支持"
+						},
+						{
+							"name": "item_ele_cert_info",
+							"type": "PontusTravelItemEleCertInfo",
+							"description": "新版电子凭证参数结构。与旧版电子凭证（merchant，network_id和support_onsale_auto_refund）二选一。即如果传了新版电子凭证参数，将忽略旧版电子凭证参数",
+							"subParams": [
+								{
+									"name": "expiry_date_type",
+									"type": "Number",
+									"description": "电子凭证有效期 过期类型。1：xxxx-xx-xx 到 xxxx-xx-xx； 2：购买成功日 至 xxxx-xx-xx； 3：购买成功 xx 天内有效"
+								},
+								{
+									"name": "expiry_date_start",
+									"type": "Date",
+									"description": "电子凭证 有效期 开始时间"
+								},
+								{
+									"name": "expiry_date_end",
+									"type": "Date",
+									"description": "电子凭证 有效期 结束时间"
+								},
+								{
+									"name": "expiry_days",
+									"type": "Number",
+									"description": "电子凭证 有效期 天数"
+								},
+								{
+									"name": "package_id",
+									"type": "Number",
+									"description": "核销门店库id"
+								},
+								{
+									"name": "auto_refund_rate",
+									"type": "Number",
+									"description": "售中自动退款比例"
+								},
+								{
+									"name": "expired_refund_rate",
+									"type": "Number",
+									"description": "过期自动退款比例"
+								}
+							]
+						},
+						{
+							"name": "confirm_type",
+							"type": "Number",
+							"description": "资源确认方式。1：即时确认，2：二次确认"
+						},
+						{
+							"name": "confirm_time",
+							"type": "Number",
+							"description": "资源确认时长。1:2个工作小时内确认，2:6个工作小时内确认，3:9个工作小时内确认，4:18个工作小时内确认（只有境外目的地商品支持18小时确认，境内商品最长9小时）"
+						}
+					]
+				},
+				{
+					"name": "group_item_ext",
+					"type": "PontusTravelGroupItemExt",
+					"description": "跟团游相关信息",
+					"subParams": [
+						{
+							"name": "route_type",
+							"type": "Number",
+							"description": "必填，线路类型，0 为目的地参团 \t1为出发地参团"
+						},
+						{
+							"name": "gather_places",
+							"type": "PontusTravelGatherPlaceInfo[]",
+							"description": "集合地信息",
+							"subParams": [
+								{
+									"name": "poi",
+									"type": "String",
+									"description": "集合地经纬度，英文逗号分隔。经度在前，纬度在后，英文逗号分隔最多支持6位小数，如120.111222,30.111222"
+								},
+								{
+									"name": "poi_resource",
+									"type": "String",
+									"description": "POI来源，AMAP/GOOGLE。境内为高德（AMAP） 境外为GOOGLE"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "地点名称"
+								}
+							]
+						},
+						{
+							"name": "back_traffic_info",
+							"type": "PontusTravelItemTrafficInfo",
+							"description": "必填，回程交通信息",
+							"subParams": [
+								{
+									"name": "traffic_type",
+									"type": "Number",
+									"description": "必填，交通类型。1/2/3/4 分别对应 飞机/火车/汽车/船"
+								},
+								{
+									"name": "traffics",
+									"type": "PontusTravelItemTraffic[]",
+									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
+									"subParams": [
+										{
+											"name": "traffic_no",
+											"type": "String",
+											"description": "参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填"
+										},
+										{
+											"name": "vendor",
+											"type": "String",
+											"description": "交通公司名，飞机选填"
+										},
+										{
+											"name": "plane_type",
+											"type": "String",
+											"description": "飞机机型，飞机选填"
+										},
+										{
+											"name": "departure_time",
+											"type": "String",
+											"description": "出发时间，当地时间HH:mm"
+										},
+										{
+											"name": "arrival_time",
+											"type": "String",
+											"description": "到达时间，当地时间HH:mm"
+										},
+										{
+											"name": "departure",
+											"type": "String",
+											"description": "出发城市"
+										},
+										{
+											"name": "destination",
+											"type": "String",
+											"description": "到达城市"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "go_traffic_info",
+							"type": "PontusTravelItemTrafficInfo",
+							"description": "必填，去程交通信息",
+							"subParams": [
+								{
+									"name": "traffic_type",
+									"type": "Number",
+									"description": "必填，交通类型。1/2/3/4 分别对应 飞机/火车/汽车/船"
+								},
+								{
+									"name": "traffics",
+									"type": "PontusTravelItemTraffic[]",
+									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
+									"subParams": [
+										{
+											"name": "traffic_no",
+											"type": "String",
+											"description": "参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填"
+										},
+										{
+											"name": "vendor",
+											"type": "String",
+											"description": "交通公司名，飞机选填"
+										},
+										{
+											"name": "plane_type",
+											"type": "String",
+											"description": "飞机机型，飞机选填"
+										},
+										{
+											"name": "departure_time",
+											"type": "String",
+											"description": "出发时间，当地时间HH:mm"
+										},
+										{
+											"name": "arrival_time",
+											"type": "String",
+											"description": "到达时间，当地时间HH:mm"
+										},
+										{
+											"name": "departure",
+											"type": "String",
+											"description": "出发城市"
+										},
+										{
+											"name": "destination",
+											"type": "String",
+											"description": "到达城市"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "electronic",
+							"type": "Boolean",
+							"description": "是否支持电子合同，默认不支持"
+						}
+					]
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "修改时间"
+				},
+				{
+					"name": "base_info",
+					"type": "PontusTravelItemBaseInfo",
+					"description": "商品基本信息",
+					"subParams": [
+						{
+							"name": "trip_max_days",
+							"type": "Number",
+							"description": "最大行程天数"
+						},
+						{
+							"name": "prov",
+							"type": "String",
+							"description": "宝贝所在地省份"
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "pc端更多商品描述，不超过50000个字符"
+						},
+						{
+							"name": "wap_desc",
+							"type": "String",
+							"description": "手机端描述。格式： 使用xml标签（shortDesc，txt和img）进行图文混排，shortDesc标签表示添加小标题，txt标签表示添加文本描述，img标签表示添加一张图片。  注意： 1）shortDesc，txt和img三个xml标签独立，可以乱序使用，但不能嵌套 2）图片路径只能使用商家图片空间内图片的绝对路径"
+						},
+						{
+							"name": "item_type",
+							"type": "Number",
+							"description": "必填，商品类型。1-国内跟团游 2- 国内自由行 3-出境跟团游 4- 出境自由行 5-境外当地玩乐 6-国际邮轮 9-国内邮轮"
+						},
+						{
+							"name": "to_locations",
+							"type": "String",
+							"description": "所有商品必填，目的地（城市或国家），填写中文。城市名，以英文逗号分隔，最多可填12个， 城市的值可从基础数据API中获取（http://open.taobao.com/doc2/apiDetail?spm=0.0.0.0.hSqBrl\u0026amp;apiId=25760），如果国家下还有城市，则必须精确到城市。【重要提示-此字段会作为搜索/筛选条件】"
+						},
+						{
+							"name": "out_id",
+							"type": "String",
+							"description": "商家定义的编码"
+						},
+						{
+							"name": "pic_urls",
+							"type": "String[]",
+							"description": "商品图片路径。最多支持5张，第一张为主图，必填，其余四张可选填。商品主图需要关联用户图片空间的绝对url。 这个url所对应的图片必须要属于当前用户。"
+						},
+						{
+							"name": "accom_nights",
+							"type": "Number",
+							"description": "行程晚数，必须大于0，且小于等于行程天数 这里注意下，trip_days（行程天数）\u0026gt;=accom_nights（行程晚数）\u0026gt;=hotel_days（住宿晚数）"
+						},
+						{
+							"name": "trip_min_days",
+							"type": "Number",
+							"description": "最小行程天数"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "宝贝所在市"
+						},
+						{
+							"name": "from_locations",
+							"type": "String",
+							"description": "跟团游商品必填。跟团游商品必填。出发地（城市），填写中文，必须对应类目下存在的出发地，否则会报出发地不存在，可用的城市名称可从基础API中获取：http://open.taobao.com/doc2/apiDetail?spm=0.0.0.0.hSqBrl\u0026amp;apiId=25760  【重要提示-此属性会作为搜索/筛选条件】"
+						},
+						{
+							"name": "sub_titles",
+							"type": "String[]",
+							"description": "商品亮点。1）目前最多支持4个亮点，超过4个的亮点描述不会被保存 2）每个亮点描述35个字符以内"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题。30个字符以内"
+						},
+						{
+							"name": "outer_title",
+							"type": "String",
+							"description": "预留，商家备注"
+						},
+						{
+							"name": "item_tag_content",
+							"type": "String",
+							"description": "商品标签"
+						}
+					]
+				},
+				{
+					"name": "booking_rules",
+					"type": "PontusTravelBookingRuleInfo[]",
+					"description": "预定规则",
+					"subParams": [
+						{
+							"name": "rule_list",
+							"type": "String[]",
+							"description": "分点组织的规则说明"
+						},
+						{
+							"name": "rule_type",
+							"type": "String",
+							"description": "Fee_Included：费用包含；  Order_Info：预定须知；"
+						},
+						{
+							"name": "rule_desc",
+							"type": "String",
+							"description": "1500个字符"
+						}
+					]
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家昵称"
+				},
+				{
+					"name": "refund_info",
+					"type": "PontusTravelItemRefundInfo",
+					"description": "退改规则信息",
+					"subParams": [
+						{
+							"name": "refund_regulations",
+							"type": "String[]",
+							"description": "退改规则 1）格式：标准规则 或 自定义规则：a_a_num  2）规则：自定义规则里最多可含5组规则"
+						},
+						{
+							"name": "refund_type",
+							"type": "Number",
+							"description": "退改规则类型，0为标准，1为自定义，2为不支持退改规则。不传默认为0"
+						}
+					]
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "卖家id"
+				},
+				{
+					"name": "freedom_item_ext",
+					"type": "PontusTravelFreedomItemExt",
+					"description": "自由行相关信息",
+					"subParams": [
+						{
+							"name": "scenic_infos",
+							"type": "PontusTravelItemScenicInfo",
+							"description": "景点信息",
+							"subParams": [
+								{
+									"name": "ticket_package_name",
+									"type": "String",
+									"description": "门票套餐名称"
+								},
+								{
+									"name": "scenic_list",
+									"type": "PontusTravelItemScenic[]",
+									"description": "结构化景点信息 景点结构化信息和文本描述二选一",
+									"subParams": [
+										{
+											"name": "poi",
+											"type": "String",
+											"description": "景点的经纬度信息，经度在前，纬度在后，英文逗号分隔 最多支持6位小数，如120.111222,30.111222"
+										},
+										{
+											"name": "poi_resource",
+											"type": "String",
+											"description": "POI来源，AMAP/GOOGLE。境内为高德（AMAP） 境外为GOOGLE"
+										},
+										{
+											"name": "ticket_type",
+											"type": "String",
+											"description": "必填，门票类型"
+										},
+										{
+											"name": "cn_name",
+											"type": "String",
+											"description": "必填，景点名称"
+										},
+										{
+											"name": "city",
+											"type": "String",
+											"description": "必填，景点所在城市"
+										}
+									]
+								},
+								{
+									"name": "scenic_desc",
+									"type": "String",
+									"description": "景点描述文本，\u003c1500字符 景点结构化信息和文本描述二选一"
+								}
+							]
+						},
+						{
+							"name": "other_infos",
+							"type": "PontusTravelItemResourceInfo[]",
+							"description": "其他资源信息",
+							"subParams": [
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "小于1500字符"
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "1-保险2-餐饮3-租车4-签证5-购物点6-赠品7-券99-其他"
+								}
+							]
+						},
+						{
+							"name": "hotel_infos",
+							"type": "PontusTravelItemHotelInfo",
+							"description": "酒店信息",
+							"subParams": [
+								{
+									"name": "hotel_desc",
+									"type": "String",
+									"description": "酒店描述文本，\u0026lt;1500字符 酒店结构化信息和文本描述二选一"
+								},
+								{
+									"name": "hotel_days",
+									"type": "Number",
+									"description": "必填，默认为0 必须大于等于0, 且小于或等于行程晚数"
+								},
+								{
+									"name": "hotel_list",
+									"type": "PontusTravelItemHotel[]",
+									"description": "结构化酒店信息 酒店结构化信息和文本描述二选一",
+									"subParams": [
+										{
+											"name": "cn_name",
+											"type": "String",
+											"description": "必填，酒店名称"
+										},
+										{
+											"name": "house_type",
+											"type": "String",
+											"description": "必填，酒店房型"
+										},
+										{
+											"name": "hotel_level",
+											"type": "String",
+											"description": "必填，酒店等级"
+										},
+										{
+											"name": "city",
+											"type": "String",
+											"description": "必填，所在城市"
+										},
+										{
+											"name": "poi",
+											"type": "String",
+											"description": "酒店的经纬度信息，经度在前，纬度在后，英文逗号分隔 最多支持6位小数，如120.111222,30.111222"
+										},
+										{
+											"name": "poi_resource",
+											"type": "String",
+											"description": "POI来源，AMAP/GOOGLE。境内为高德（AMAP） 境外为GOOGLE"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "back_traffic_info",
+							"type": "PontusTravelItemTrafficInfo",
+							"description": "回程交通信息",
+							"subParams": [
+								{
+									"name": "traffic_type",
+									"type": "Number",
+									"description": "必填，交通类型。1/2/3/4 分别对应 飞机/火车/汽车/船"
+								},
+								{
+									"name": "traffics",
+									"type": "PontusTravelItemTraffic[]",
+									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
+									"subParams": [
+										{
+											"name": "traffic_no",
+											"type": "String",
+											"description": "参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填"
+										},
+										{
+											"name": "vendor",
+											"type": "String",
+											"description": "交通公司名，飞机选填"
+										},
+										{
+											"name": "plane_type",
+											"type": "String",
+											"description": "飞机机型，飞机选填"
+										},
+										{
+											"name": "departure_time",
+											"type": "String",
+											"description": "出发时间，当地时间HH:mm"
+										},
+										{
+											"name": "arrival_time",
+											"type": "String",
+											"description": "到达时间，当地时间HH:mm"
+										},
+										{
+											"name": "departure",
+											"type": "String",
+											"description": "出发城市"
+										},
+										{
+											"name": "destination",
+											"type": "String",
+											"description": "到达城市"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "traffic_desc",
+							"type": "String",
+							"description": "自由行交通信息详细描述"
+						},
+						{
+							"name": "go_traffic_info",
+							"type": "PontusTravelItemTrafficInfo",
+							"description": "去程交通信息",
+							"subParams": [
+								{
+									"name": "traffic_type",
+									"type": "Number",
+									"description": "必填，交通类型。1/2/3/4 分别对应 飞机/火车/汽车/船"
+								},
+								{
+									"name": "traffics",
+									"type": "PontusTravelItemTraffic[]",
+									"description": "详细交通信息结构。【注意】当traffic_type选择飞机或火车时，该字段为必填，汽车或轮船时该字段不用填。",
+									"subParams": [
+										{
+											"name": "traffic_no",
+											"type": "String",
+											"description": "参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填"
+										},
+										{
+											"name": "vendor",
+											"type": "String",
+											"description": "交通公司名，飞机选填"
+										},
+										{
+											"name": "plane_type",
+											"type": "String",
+											"description": "飞机机型，飞机选填"
+										},
+										{
+											"name": "departure_time",
+											"type": "String",
+											"description": "出发时间，当地时间HH:mm"
+										},
+										{
+											"name": "arrival_time",
+											"type": "String",
+											"description": "到达时间，当地时间HH:mm"
+										},
+										{
+											"name": "departure",
+											"type": "String",
+											"description": "出发城市"
+										},
+										{
+											"name": "destination",
+											"type": "String",
+											"description": "到达城市"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "features",
+					"type": "Json",
+					"description": "商品特征数据"
+				},
+				{
+					"name": "high_lights",
+					"type": "HighLights[]",
+					"description": "产品亮点",
+					"subParams": [
+						{
+							"name": "title",
+							"type": "String",
+							"description": "亮点标题"
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "亮点描述"
+						},
+						{
+							"name": "pic_urls",
+							"type": "String[]",
+							"description": "图片列表"
+						}
+					]
+				},
+				{
+					"name": "tcwl_item_ext",
+					"type": "Json",
+					"description": "同城活动商品相关信息"
+				},
+				{
+					"name": "cruise_item_ext",
+					"type": "Json",
+					"description": "航旅度假TOP API3.0 邮轮扩展信息结构"
+				},
+				{
+					"name": "ref_trip",
+					"type": "String",
+					"description": "新版行程信息"
+				}
+			]
+		}
+	]
+}

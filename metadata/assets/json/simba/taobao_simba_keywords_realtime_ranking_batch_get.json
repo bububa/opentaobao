@@ -1,0 +1,91 @@
+{
+	"name": "taobao.simba.keywords.realtime.ranking.batch.get",
+	"apiChineseName": "获取关键词的新版实时排名",
+	"description": "根据关键词ID获取关键词的新版实时排名",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "旺旺名称",
+			"required": true
+		},
+		{
+			"name": "ad_group_id",
+			"type": "Number",
+			"description": "adgroupId",
+			"required": true
+		},
+		{
+			"name": "bidword_ids",
+			"type": "Number[]",
+			"description": "关键词列表集合,id用半角逗号分割，一次最多20个",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "realtime_rank_list",
+					"type": "Result[]",
+					"description": "返回结果，结果是json结构，说明： pc_rank=-2:创意未投放,-1:计划未投放,0:首页左侧位置,1:首页右侧第1,2:首页右侧第2,3:首页右侧第3,4:首页（非前三）,5:第2页,6:第3页,7:第4页,8:第5页,9:5页以后 mobile_rank=-2:创意未投放,-1:计划未投放,0:移动首条,1:移动前三,3:移动4~6条,6:移动7~10条,10:移动11~15条,11=移动16~20条,12=20条以后",
+					"required": true,
+					"subParams": [
+						{
+							"name": "bidwordid",
+							"type": "String",
+							"description": "关键词id",
+							"required": true
+						},
+						{
+							"name": "stat",
+							"type": "String",
+							"description": "状态码stat(0:正常;1:非正常)",
+							"required": true
+						},
+						{
+							"name": "pc_rank",
+							"type": "String",
+							"description": "PC的排名:(0:首页左侧位置;1:首页右侧第1;2:首页右侧第2,3:首页右侧第3,4:首页非前三,5:第2页,6:第3页,7:第4页,8:第5页,9:5页以后)",
+							"required": true
+						},
+						{
+							"name": "mobile_rank",
+							"type": "String",
+							"description": "移动的排名(0:移动首条,1:移动前三,3:移动4~6条,6:移动7~10条,10:移动11~15条,11:移动16~20条,12:20条以后)",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "key",
+					"type": "String",
+					"description": "错误对应的消息Key",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,248 @@
+{
+	"name": "taobao.tanx.qualification.find",
+	"apiChineseName": "资质查询接口",
+	"description": "资质查询接口",
+	"requestParams": [
+		{
+			"name": "member_id",
+			"type": "Number",
+			"description": "dsp客户在tanx的memberId",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "dsp客户在tanx签名的token",
+			"required": true
+		},
+		{
+			"name": "sign_time",
+			"type": "Number",
+			"description": "当前时间,从1970年算的毫秒",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "分页的第几页，从1开始",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小，限制200",
+			"required": true
+		},
+		{
+			"name": "query",
+			"type": "QualificationQuery",
+			"description": "广告主资质查询dto",
+			"subParams": [
+				{
+					"name": "start_time_begin",
+					"type": "Date",
+					"description": "生效时间左区间"
+				},
+				{
+					"name": "order_by",
+					"type": "String",
+					"description": "排序字段"
+				},
+				{
+					"name": "end_time_end",
+					"type": "Date",
+					"description": "失效时间左区间"
+				},
+				{
+					"name": "start_time_end",
+					"type": "Date",
+					"description": "生效时间右区间"
+				},
+				{
+					"name": "create_time_end",
+					"type": "Date",
+					"description": "创建时间右区间"
+				},
+				{
+					"name": "audit_time_begin",
+					"type": "Date",
+					"description": "审核时间左区间"
+				},
+				{
+					"name": "effective_status",
+					"type": "Number",
+					"description": "资质生效状态(该状态值是根据不能在新增资质时设置)-1=已过期，0=待生效，1=生效中，2=即将过期"
+				},
+				{
+					"name": "audit_time_end",
+					"type": "Date",
+					"description": "审核时间右区间"
+				},
+				{
+					"name": "end_time_begin",
+					"type": "Date",
+					"description": "失效时间右区间"
+				},
+				{
+					"name": "user_type",
+					"type": "Number",
+					"description": "客户类型 1-淘系，2-非淘系dsp公司，3-非淘系dsp个人"
+				},
+				{
+					"name": "audit_status",
+					"type": "Number",
+					"description": "审核状态 -1=拒绝，0=待审核，1=通过"
+				},
+				{
+					"name": "asc",
+					"type": "Number",
+					"description": "正序还是倒序 1是正,0是倒"
+				},
+				{
+					"name": "user_ids",
+					"type": "Number[]",
+					"description": "tanx系统广告主表userId，查询时和user_names选其一"
+				},
+				{
+					"name": "user_names",
+					"type": "String[]",
+					"description": "广告主名称，淘系用户为旺旺名称，非淘系客户为营业执照上的名称。查询时和user_ids请只选其一"
+				},
+				{
+					"name": "create_time_begin",
+					"type": "Date",
+					"description": "创建时间左区间"
+				},
+				{
+					"name": "element_ids",
+					"type": "Number[]",
+					"description": "查询时包含的资质元素id列表"
+				},
+				{
+					"name": "ids",
+					"type": "Number[]",
+					"description": "资质元素id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "qualification_list",
+			"type": "QualificationDto []",
+			"description": "返回的资质内容dto",
+			"subParams": [
+				{
+					"name": "urls",
+					"type": "String[]",
+					"description": "通过的url"
+				},
+				{
+					"name": "specialindustrys",
+					"type": "String[]",
+					"description": "通过的行业"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "资质内容id"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "资质名称"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id"
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "旺旺或者dsp广告主名称"
+				},
+				{
+					"name": "user_type",
+					"type": "Number",
+					"description": "广告主类别（0-淘宝，1-天猫，2-dsp公司，3-dsp个人）"
+				},
+				{
+					"name": "element_id",
+					"type": "Number",
+					"description": "资质模板元素id"
+				},
+				{
+					"name": "content_list",
+					"type": "String[]",
+					"description": "资质内容列表"
+				},
+				{
+					"name": "effective_status",
+					"type": "Number",
+					"description": "-1=已过期，0=待生效，1=生效中，2=即将过期"
+				},
+				{
+					"name": "audit_status",
+					"type": "Number",
+					"description": "资质审核状态 -1=拒绝，0=待审核，1=通过"
+				},
+				{
+					"name": "dsp_id",
+					"type": "Number",
+					"description": "dspid,淘系内部产品也统一成dsp"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "资质生效时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "资质失效时间"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "资质创建时间"
+				},
+				{
+					"name": "update_time",
+					"type": "Date",
+					"description": "资质修改时间"
+				},
+				{
+					"name": "audit_time",
+					"type": "Date",
+					"description": "资质审核时间"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "拒绝原因"
+				},
+				{
+					"name": "supplement",
+					"type": "String",
+					"description": "用户附加内容"
+				},
+				{
+					"name": "check_time",
+					"type": "Date",
+					"description": "排查时间"
+				}
+			]
+		},
+		{
+			"name": "count",
+			"type": "String",
+			"description": "查询返回总条数"
+		}
+	]
+}

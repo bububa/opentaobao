@@ -1,0 +1,52 @@
+{
+	"name": "taobao.sellercenter.subusers.get",
+	"apiChineseName": "查询指定账户的子账号列表",
+	"description": "根据主账号nick查询该账号下所有的子账号列表，只能查询属于自己的账号信息 (主账号以及所属子账号)",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "表示卖家昵称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "subusers",
+			"type": "SubUserInfo []",
+			"description": "子账号基本信息列表。具体信息为id、子账号用户名、主账号id、主账号昵称、当前状态值、是否分流",
+			"subParams": [
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "子账号用户名"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "子账号所属的主账号的唯一标识"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "主账号昵称"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "子账号当前状态 1正常 -1删除  2冻结"
+				},
+				{
+					"name": "is_online",
+					"type": "Number",
+					"description": "是否参与分流 1不参与 2参与"
+				},
+				{
+					"name": "sub_id",
+					"type": "Number",
+					"description": "子账号Id"
+				}
+			]
+		}
+	]
+}

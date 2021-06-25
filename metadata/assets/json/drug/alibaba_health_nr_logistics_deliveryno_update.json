@@ -1,0 +1,37 @@
+{
+	"name": "alibaba.health.nr.logistics.deliveryno.update",
+	"apiChineseName": "上传订单同城快递单号",
+	"description": "上传订单同城快递单号",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单ID",
+			"required": true
+		},
+		{
+			"name": "cp_code",
+			"type": "String",
+			"description": "快递公司代码",
+			"required": true
+		},
+		{
+			"name": "courier_no",
+			"type": "String",
+			"description": "快递单号",
+			"required": true
+		},
+		{
+			"name": "force",
+			"type": "Number",
+			"description": "是否强制上传，1代表强制，其他值代表需要进行cp_code合法性校验"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "更新成功"
+		}
+	]
+}

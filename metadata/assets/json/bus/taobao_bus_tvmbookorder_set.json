@@ -1,0 +1,121 @@
+{
+	"name": "taobao.bus.tvmbookorder.set",
+	"apiChineseName": "线下自助机通知出票接口",
+	"description": "出票，当成功的时候告知出票；当失败的时候告知出票失败，飞猪退款给用户。",
+	"requestParams": [
+		{
+			"name": "alitrip_order_id",
+			"type": "String",
+			"description": "飞猪订单号",
+			"required": true
+		},
+		{
+			"name": "book_time",
+			"type": "String",
+			"description": "出票时间 2017-03-03 11:22:33",
+			"required": true
+		},
+		{
+			"name": "success",
+			"type": "Boolean",
+			"description": "true代表出票成功；false代表出票失败",
+			"required": true
+		},
+		{
+			"name": "pay_mode",
+			"type": "String",
+			"description": "取值范围  ALIPAY （飞猪渠道）; WECHAT（微信）; BANKCARD（银行卡）;CASH（现金）; OWN_ALIPAY（自身支付宝渠道，非飞猪渠道）",
+			"required": true
+		},
+		{
+			"name": "fetch_phone",
+			"type": "String",
+			"description": "取票人手机号"
+		},
+		{
+			"name": "passengers",
+			"type": "TvmPassengerVo[]",
+			"description": "乘客票面信息",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "agent_eticket",
+					"type": "String",
+					"description": "电子票内容"
+				},
+				{
+					"name": "agent_ticket_id",
+					"type": "String",
+					"description": "票号ID"
+				},
+				{
+					"name": "full_price",
+					"type": "Number",
+					"description": "标准票价"
+				},
+				{
+					"name": "has_children",
+					"type": "Boolean",
+					"description": "是否带有儿童"
+				},
+				{
+					"name": "rider_cert_number",
+					"type": "String",
+					"description": "身份证号"
+				},
+				{
+					"name": "rider_cert_type",
+					"type": "String",
+					"description": "证件类型"
+				},
+				{
+					"name": "rider_name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "seat_number",
+					"type": "String",
+					"description": "座位号"
+				},
+				{
+					"name": "service_charge",
+					"type": "Number",
+					"description": "服务费"
+				},
+				{
+					"name": "ticket_price",
+					"type": "Number",
+					"description": "实际票价"
+				}
+			]
+		},
+		{
+			"name": "support_eticket",
+			"type": "Boolean",
+			"description": "是否支持电子票"
+		},
+		{
+			"name": "ticket_gate",
+			"type": "String",
+			"description": "检票口"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "errorMsg"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

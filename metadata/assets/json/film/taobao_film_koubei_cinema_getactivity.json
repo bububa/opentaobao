@@ -1,0 +1,221 @@
+{
+	"name": "taobao.film.koubei.cinema.getactivity",
+	"apiChineseName": "口碑-影院营销数据查询",
+	"description": "口碑-影院营销数据查询",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户账号"
+		},
+		{
+			"name": "account_type",
+			"type": "String",
+			"description": "账号类型"
+		},
+		{
+			"name": "city_code",
+			"type": "Number",
+			"description": "城市编码"
+		},
+		{
+			"name": "platform",
+			"type": "Number",
+			"description": "平台"
+		},
+		{
+			"name": "cinema_ids",
+			"type": "Number[]",
+			"description": "影院ID集合",
+			"maxListSize": 20
+		},
+		{
+			"name": "params",
+			"type": "Json",
+			"description": "附加参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultGeneralModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "return_url",
+					"type": "String",
+					"description": "returnUrl",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "returnCode",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "return_value",
+					"type": "CinemaPageResult",
+					"description": "returnValue",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cinemas",
+							"type": "CinemaPageCinemaVo[]",
+							"description": "影院集合",
+							"required": true,
+							"subParams": [
+								{
+									"name": "activity_tags",
+									"type": "ActivityTagVo[]",
+									"description": "活动标",
+									"required": true,
+									"subParams": [
+										{
+											"name": "title",
+											"type": "String",
+											"description": "活动内容",
+											"required": true
+										},
+										{
+											"name": "tag_type",
+											"type": "Number",
+											"description": "tagType",
+											"required": true
+										},
+										{
+											"name": "tag",
+											"type": "String",
+											"description": "活动标：新促卡惠食星节",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "biz_status",
+									"type": "Number",
+									"description": "影院状态",
+									"required": true
+								},
+								{
+									"name": "special_remind",
+									"type": "String",
+									"description": "影院特殊提醒",
+									"required": true
+								},
+								{
+									"name": "schedule_count",
+									"type": "Number",
+									"description": "排期数",
+									"required": true
+								},
+								{
+									"name": "schedule_close_time",
+									"type": "Number",
+									"description": "场次提前几分钟停止场次售卖",
+									"required": true
+								},
+								{
+									"name": "mcard_open",
+									"type": "Boolean",
+									"description": "用户是否已开卡",
+									"required": true
+								},
+								{
+									"name": "support_mcard",
+									"type": "Boolean",
+									"description": "影城卡标",
+									"required": true
+								},
+								{
+									"name": "always_go",
+									"type": "Boolean",
+									"description": "常去影院",
+									"required": true
+								},
+								{
+									"name": "min_price",
+									"type": "Number",
+									"description": "最低票价(分)",
+									"required": true
+								},
+								{
+									"name": "distance",
+									"type": "String",
+									"description": "距离",
+									"required": true
+								},
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "纬度",
+									"required": true
+								},
+								{
+									"name": "longitude",
+									"type": "String",
+									"description": "经度",
+									"required": true
+								},
+								{
+									"name": "display_supports",
+									"type": "String[]",
+									"description": "特色标",
+									"required": true
+								},
+								{
+									"name": "address",
+									"type": "String",
+									"description": "地址",
+									"required": true
+								},
+								{
+									"name": "cinema_name",
+									"type": "String",
+									"description": "影院名称",
+									"required": true
+								},
+								{
+									"name": "cinema_id",
+									"type": "Number",
+									"description": "影院ID",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "return_error_oper",
+					"type": "String",
+					"description": "returnErrorOper",
+					"required": true
+				},
+				{
+					"name": "return_error_solution",
+					"type": "String",
+					"description": "returnErrorSolution",
+					"required": true
+				},
+				{
+					"name": "return_message",
+					"type": "String",
+					"description": "returnMessage",
+					"required": true
+				},
+				{
+					"name": "return_error_stack_trace",
+					"type": "String",
+					"description": "returnErrorStackTrace",
+					"required": true
+				}
+			]
+		}
+	]
+}

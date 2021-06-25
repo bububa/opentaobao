@@ -1,0 +1,29 @@
+{
+	"name": "taobao.aftersale.get",
+	"apiChineseName": "查询用户售后服务模板",
+	"description": "查询用户设置的售后服务模板，仅返回标题和id",
+	"responseParams": [
+		{
+			"name": "after_sales",
+			"type": "AfterSale []",
+			"description": "售后服务返回对象",
+			"subParams": [
+				{
+					"name": "after_sale_id",
+					"type": "Number",
+					"description": "id"
+				},
+				{
+					"name": "after_sale_name",
+					"type": "String",
+					"description": "名称"
+				},
+				{
+					"name": "after_sale_path",
+					"type": "String",
+					"description": "tfs地址"
+				}
+			]
+		}
+	]
+}

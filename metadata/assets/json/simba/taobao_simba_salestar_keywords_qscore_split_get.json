@@ -1,0 +1,122 @@
+{
+	"name": "taobao.simba.salestar.keywords.qscore.split.get",
+	"apiChineseName": "(新)销量明星质量分相关接口",
+	"description": "获取关键词新的质量分",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "账号昵称"
+		},
+		{
+			"name": "ad_group_id",
+			"type": "Number",
+			"description": "推广组id",
+			"required": true
+		},
+		{
+			"name": "bidword_ids",
+			"type": "Number[]",
+			"description": "词id数组（最多批量获取20个）",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "QScoreSplitDto",
+					"description": "返回新质量分实体信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "word_score_list",
+							"type": "Wordscorelist[]",
+							"description": "关键词新质量得分列表，包含PC和移动的质量分",
+							"required": true,
+							"subParams": [
+								{
+									"name": "wireless_creativescore",
+									"type": "String",
+									"description": "移动创意质量(创意效果)",
+									"required": true
+								},
+								{
+									"name": "wireless_custscore",
+									"type": "String",
+									"description": "移动店铺质量(账户表现)",
+									"required": true
+								},
+								{
+									"name": "campaign_id",
+									"type": "Number",
+									"description": "计划id",
+									"required": true
+								},
+								{
+									"name": "adgroup_id",
+									"type": "Number",
+									"description": "推广组id",
+									"required": true
+								},
+								{
+									"name": "wireless_relescore",
+									"type": "String",
+									"description": "移动相关性，同kwscore",
+									"required": true
+								},
+								{
+									"name": "wireless_qscore",
+									"type": "String",
+									"description": "移动质量得分（另外值为-1:所属的campaign没有该投放设备，且所属的adgroup有该投放设备的投放中的创意、-2:所属的campaign有该投放设备，且所属的adgroup没有该投放设备的投放中的创意、-3:所属的campaign没有该投放设备，且所属的adgroup没有该投放设备的投放中的创意）",
+									"required": true
+								},
+								{
+									"name": "customer_id",
+									"type": "Number",
+									"description": "客户id",
+									"required": true
+								},
+								{
+									"name": "word",
+									"type": "String",
+									"description": "关键词",
+									"required": true
+								},
+								{
+									"name": "wireless_cvrscore",
+									"type": "String",
+									"description": "移动点击转化率(买家体验)",
+									"required": true
+								},
+								{
+									"name": "keyword_id",
+									"type": "Number",
+									"description": "词id",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "key",
+					"type": "String",
+					"description": "返回成功/错误码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,94 @@
+{
+	"name": "alibaba.scbp.effect.account.list",
+	"apiChineseName": "账户-报表",
+	"description": "账户-报表,支持最近7天，最近30天，以及180天内时间区间。",
+	"requestParams": [
+		{
+			"name": "p4p_account_report_query",
+			"type": "AccountQuery",
+			"description": "AccountQuery",
+			"required": true,
+			"subParams": [
+				{
+					"name": "inteval",
+					"type": "Number",
+					"description": "区间 1代表指定时间查询 7代表最近7天 30代表最近30天"
+				},
+				{
+					"name": "per_page_size",
+					"type": "Number",
+					"description": "每页行数"
+				},
+				{
+					"name": "to_page",
+					"type": "Number",
+					"description": "第几页"
+				},
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "结束时间 inteval=7或30不用指定"
+				},
+				{
+					"name": "begin_date",
+					"type": "String",
+					"description": "开始时间 inteval=7或30不用指定"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "account_report_list",
+			"type": "AccountEffectDto []",
+			"description": "账户效果数据列表",
+			"subParams": [
+				{
+					"name": "impression_cnt",
+					"type": "String",
+					"description": "曝光"
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "话费 单位元"
+				},
+				{
+					"name": "stat_date",
+					"type": "String",
+					"description": "报告时间"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率"
+				},
+				{
+					"name": "click_cost_avg",
+					"type": "String",
+					"description": "平均点击花费"
+				},
+				{
+					"name": "online_time",
+					"type": "String",
+					"description": "单位小时，保留一位小数，例如13.5表示13.5小时"
+				},
+				{
+					"name": "click_cnt",
+					"type": "String",
+					"description": "点击量"
+				}
+			]
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "总个数"
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "总页数"
+		}
+	]
+}

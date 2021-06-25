@@ -1,0 +1,20 @@
+{
+	"name": "taobao.fenxiao.productcat.delete",
+	"apiChineseName": "删除产品线",
+	"description": "删除产品线",
+	"requestParams": [
+		{
+			"name": "product_line_id",
+			"type": "Number",
+			"description": "产品线ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "操作是否成功"
+		}
+	]
+}

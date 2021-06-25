@@ -1,0 +1,85 @@
+{
+	"name": "alibaba.newretail.purchase.price.save",
+	"apiChineseName": "共享库存 采购价上传接口",
+	"description": "共享库存业务 供应商上传商品采购价",
+	"requestParams": [
+		{
+			"name": "save_purchase_price_request",
+			"type": "SavePurchasePriceRequest",
+			"description": "接口入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "marketing_type",
+					"type": "Number",
+					"description": "2-经销，3-代销，6-寄售，默认为【6-寄售】"
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "门店ID",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "purchase_price_with_tax",
+					"type": "Number",
+					"description": "含税采购价格，单位【分】",
+					"required": true
+				},
+				{
+					"name": "price_type",
+					"type": "Number",
+					"description": "1-基准价格，3-区间价格"
+				},
+				{
+					"name": "effective_start_time",
+					"type": "Number",
+					"description": "区间价格生效时间"
+				},
+				{
+					"name": "effective_end_time",
+					"type": "Number",
+					"description": "区间价格失效时间"
+				},
+				{
+					"name": "out_id",
+					"type": "String",
+					"description": "幂等ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopBaseResult",
+			"description": "调用结果对象",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "表示调用是否成功",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回码说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,197 @@
+{
+	"name": "alibaba.alsc.crm.customer.voucher.list",
+	"apiChineseName": "获取顾客优惠券列表",
+	"description": "获取顾客优惠券列表",
+	"requestParams": [
+		{
+			"name": "customer_voucher_full_open_req",
+			"type": "CustomerVoucherFullOpenReq",
+			"description": "获取顾客优惠券列表",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客ID"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "第几页,从1开始计数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页大小，默认20"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "SaaS门店ID"
+				},
+				{
+					"name": "voucher_status_list",
+					"type": "String[]",
+					"description": "优惠券状态 NORMAL，DELETED，ISUSED"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码",
+					"required": true
+				},
+				{
+					"name": "has_next_page",
+					"type": "Boolean",
+					"description": "是否有下一页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "当前每页显示数量",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果显示",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "总数量",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "CustomerVoucherFullOpenInfo[]",
+					"description": "1",
+					"required": true,
+					"subParams": [
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "优惠券金额",
+							"required": true
+						},
+						{
+							"name": "customer_id",
+							"type": "Number",
+							"description": "顾客ID",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "结束时间",
+							"required": true
+						},
+						{
+							"name": "gmt_created",
+							"type": "String",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "start_fee",
+							"type": "Number",
+							"description": "满足金额阀值",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "开始时间",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "优惠券状态",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "优惠券名称",
+							"required": true
+						},
+						{
+							"name": "voucher_id",
+							"type": "String",
+							"description": "优惠券ID",
+							"required": true
+						},
+						{
+							"name": "discount_rate",
+							"type": "String",
+							"description": "优惠率",
+							"required": true
+						},
+						{
+							"name": "voucher_template_id",
+							"type": "String",
+							"description": "优惠券模版ID",
+							"required": true
+						},
+						{
+							"name": "gift_point",
+							"type": "Number",
+							"description": "券实例有效点数",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

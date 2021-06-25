@@ -1,0 +1,70 @@
+{
+	"name": "taobao.beehive.item.cps.url",
+	"apiChineseName": "分佣链接生成接口",
+	"description": "传入包括itemId,accountId,bizType在内的参数，对应参数返回分佣链接",
+	"requestParams": [
+		{
+			"name": "platform",
+			"type": "String",
+			"description": "平台，一般为手机",
+			"required": true
+		},
+		{
+			"name": "ad_user_id",
+			"type": "Number",
+			"description": "达人ID",
+			"required": true
+		},
+		{
+			"name": "source_type",
+			"type": "Number",
+			"description": "站外是1",
+			"required": true
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务方，新浪为sina",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "商品id和对应的url map",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.aliqin.fc.voice.record.geturl",
+	"apiChineseName": "录音文件下载",
+	"description": "完成录音文件的下载地址获取操作",
+	"requestParams": [
+		{
+			"name": "call_id",
+			"type": "String",
+			"description": "一次通话的唯一标识id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,158 @@
+{
+	"name": "taobao.vas.order.search",
+	"apiChineseName": "订单记录导出",
+	"description": "用于ISV查询自己名下的应用及收费项目的订单记录（已付款订单）。\u003cbr/\u003e建议用于查询前一日的历史记录，不适合用作实时数据查询。\u003cbr/\u003e现在只能查询90天以内的数据\u003cbr/\u003e该接口限制每分钟所有appkey调用总和只能有800次。",
+	"requestParams": [
+		{
+			"name": "article_code",
+			"type": "String",
+			"description": "应用收费代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的收费代码",
+			"required": true
+		},
+		{
+			"name": "item_code",
+			"type": "String",
+			"description": "收费项目代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得收费项目代码"
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "淘宝会员名"
+		},
+		{
+			"name": "start_created",
+			"type": "Date",
+			"description": "订单创建时间（订购时间）起始值（当start_created和end_created都不填写时，默认返回最近90天的数据）"
+		},
+		{
+			"name": "end_created",
+			"type": "Date",
+			"description": "订单创建时间（订购时间）结束值"
+		},
+		{
+			"name": "biz_type",
+			"type": "Number",
+			"description": "订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到） 空=全部"
+		},
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "订单号"
+		},
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "子订单号"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "一页包含的记录数",
+			"maxValue": 200
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "article_biz_orders",
+			"type": "ArticleBizOrder []",
+			"description": "商品订单对象",
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单号"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "子订单号"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "淘宝会员名"
+				},
+				{
+					"name": "article_name",
+					"type": "String",
+					"description": "应用名称"
+				},
+				{
+					"name": "article_code",
+					"type": "String",
+					"description": "应用收费代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的收费代码"
+				},
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "收费项目代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得收费项目代码"
+				},
+				{
+					"name": "create",
+					"type": "Date",
+					"description": "订单创建时间（订购时间）"
+				},
+				{
+					"name": "order_cycle",
+					"type": "String",
+					"description": "订购周期  1表示年 ，2表示月，3表示天。"
+				},
+				{
+					"name": "order_cycle_start",
+					"type": "Date",
+					"description": "订购周期开始时间"
+				},
+				{
+					"name": "order_cycle_end",
+					"type": "Date",
+					"description": "订购周期结束时间"
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "订单类型，1=新订 2=续订 3=升级 4=后台赠送 5=后台自动续订 6=订单审核后生成订购关系（暂时用不到）"
+				},
+				{
+					"name": "fee",
+					"type": "String",
+					"description": "原价（单位为分）"
+				},
+				{
+					"name": "prom_fee",
+					"type": "String",
+					"description": "优惠（单位为分）"
+				},
+				{
+					"name": "refund_fee",
+					"type": "String",
+					"description": "退款（单位为分；升级时，系统会将升级前老版本按照剩余订购天数退还剩余金额）"
+				},
+				{
+					"name": "total_pay_fee",
+					"type": "String",
+					"description": "实付（单位为分）"
+				},
+				{
+					"name": "article_item_name",
+					"type": "String",
+					"description": "商品模型名称"
+				},
+				{
+					"name": "activity_code",
+					"type": "String",
+					"description": "activityCode"
+				}
+			]
+		},
+		{
+			"name": "total_item",
+			"type": "Number",
+			"description": "总记录数"
+		}
+	]
+}

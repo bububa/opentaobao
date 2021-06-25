@@ -1,0 +1,109 @@
+{
+	"name": "taobao.ailab.aicloud.top.like.list",
+	"apiChineseName": "列出收藏列表",
+	"description": "列出收藏列表",
+	"requestParams": [
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id",
+			"required": true
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离",
+			"required": true
+		},
+		{
+			"name": "param1",
+			"type": "String",
+			"description": "收藏类型，目前支持四种：story,children_song,music,program，分别表示故事、儿童、音乐和节目"
+		},
+		{
+			"name": "param2",
+			"type": "Number",
+			"description": "页码 从0起"
+		},
+		{
+			"name": "param3",
+			"type": "Number",
+			"description": "每页条目个数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "Like[]",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "album",
+							"type": "String",
+							"description": "album",
+							"required": true
+						},
+						{
+							"name": "author",
+							"type": "String",
+							"description": "author",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name",
+							"required": true
+						},
+						{
+							"name": "source",
+							"type": "String",
+							"description": "source",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

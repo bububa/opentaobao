@@ -1,0 +1,170 @@
+{
+	"name": "alibaba.wdk.order.finance.bill.query",
+	"apiChineseName": "资金合规商家账单",
+	"description": "拉取资金合规商家账单",
+	"requestParams": [
+		{
+			"name": "bill_query_request",
+			"type": "WdkOpenOrderFinanceBillQueryRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页查询数量"
+				},
+				{
+					"name": "next_id",
+					"type": "Number",
+					"description": "传入上一次查询结果的next_id，第一次查询时传0"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店id"
+				},
+				{
+					"name": "dt",
+					"type": "String",
+					"description": "账单日期"
+				},
+				{
+					"name": "seller_merchant_code",
+					"type": "String",
+					"description": "售卖商家code，联营商模式必填，非联营商模式不填"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "WdkOpenOrderFinanceBillQueryResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "total_number",
+					"type": "Number",
+					"description": "总数量，只在查询第一页时返回",
+					"required": true
+				},
+				{
+					"name": "next_id",
+					"type": "Number",
+					"description": "下一页查询的入参，当为-1时表示没有更多数据",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "结果信息",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功或失败，调用方需要根据该状态判断是否成功",
+					"required": true
+				},
+				{
+					"name": "bills",
+					"type": "WdkOpenOrderFinanceBillDo[]",
+					"description": "账单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pay_channel",
+							"type": "String",
+							"description": "alipay：支付宝",
+							"required": true
+						},
+						{
+							"name": "hm_order_id",
+							"type": "String",
+							"description": "盒马订单号",
+							"required": true
+						},
+						{
+							"name": "order_channel",
+							"type": "String",
+							"description": "app：线上， pos：线下",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "经营店id",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "tp_order_id",
+							"type": "String",
+							"description": "淘系订单号",
+							"required": true
+						},
+						{
+							"name": "dt",
+							"type": "String",
+							"description": "账单日期",
+							"required": true
+						},
+						{
+							"name": "smid",
+							"type": "String",
+							"description": "支付宝二级商户ID",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "金额，正向交易时数值是正数，退款时数值是负数",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "String",
+							"description": "支付时间",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "String",
+							"description": "业务类型。PAY：支付， REFUND：退款",
+							"required": true
+						},
+						{
+							"name": "trade_no",
+							"type": "String",
+							"description": "支付机构支付流水号",
+							"required": true
+						},
+						{
+							"name": "finance_organization_name",
+							"type": "String",
+							"description": "财务组织名称",
+							"required": true
+						},
+						{
+							"name": "finance_organization_code",
+							"type": "String",
+							"description": "财务组织code",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

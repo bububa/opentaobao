@@ -1,0 +1,25 @@
+{
+	"name": "tmall.item.simpleschema.add",
+	"apiChineseName": "天猫简化发布商品",
+	"description": "天猫简化版schema发布商品。",
+	"requestParams": [
+		{
+			"name": "schema_xml_fields",
+			"type": "String",
+			"description": "根据tmall.item.add.simpleschema.get生成的商品发布规则入参数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "发布成功后返回商品ID"
+		},
+		{
+			"name": "gmt_modified",
+			"type": "Date",
+			"description": "商品最后发布时间。"
+		}
+	]
+}

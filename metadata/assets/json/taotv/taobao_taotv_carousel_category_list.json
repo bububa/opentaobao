@@ -1,0 +1,265 @@
+{
+	"name": "taobao.taotv.carousel.category.list",
+	"apiChineseName": "获取轮播分类列表",
+	"description": "获取轮播分类列表",
+	"requestParams": [
+		{
+			"name": "system_info",
+			"type": "String",
+			"description": "设备信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model_list",
+					"type": "Model[]",
+					"description": "数据列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sort",
+							"type": "Number",
+							"description": "分类排序",
+							"required": true
+						},
+						{
+							"name": "pic",
+							"type": "String",
+							"description": "分类图片",
+							"required": true
+						},
+						{
+							"name": "bcp",
+							"type": "Number",
+							"description": "分类牌照方",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "分类名称",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "分类ID",
+							"required": true
+						},
+						{
+							"name": "channel_list",
+							"type": "Channels[]",
+							"description": "分类频道列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "频道ID",
+									"required": true
+								},
+								{
+									"name": "serial_number",
+									"type": "Number",
+									"description": "频道固定的编号",
+									"required": true
+								},
+								{
+									"name": "video_list",
+									"type": "Videolist[]",
+									"description": "频道所有的视频列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "video_id",
+											"type": "String",
+											"description": "视频ID信息",
+											"required": true
+										},
+										{
+											"name": "video_ext_type",
+											"type": "Number",
+											"description": "视频的来源类型，来源这个视频所在节目单的视频来源类型",
+											"required": true
+										},
+										{
+											"name": "play_list_id",
+											"type": "Number",
+											"description": "当前视频的播单ID",
+											"required": true
+										},
+										{
+											"name": "program_id",
+											"type": "Number",
+											"description": "当前视频的节目ID",
+											"required": true
+										},
+										{
+											"name": "sort",
+											"type": "Number",
+											"description": "当前视频的排序",
+											"required": true
+										},
+										{
+											"name": "duration",
+											"type": "Number",
+											"description": "视频时长（单位秒）",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "视频名称",
+											"required": true
+										},
+										{
+											"name": "pic",
+											"type": "String",
+											"description": "视频图片",
+											"required": true
+										},
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "主键ID",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "current_video",
+									"type": "CarouselCurrentPlayRbo",
+									"description": "频道当前播放视频",
+									"required": true,
+									"subParams": [
+										{
+											"name": "video",
+											"type": "CarouselPlaylistVideoRbo",
+											"description": "当前轮播视频信息",
+											"required": true,
+											"subParams": [
+												{
+													"name": "video_id",
+													"type": "String",
+													"description": "视频ID信息",
+													"required": true
+												},
+												{
+													"name": "video_ext_type",
+													"type": "Number",
+													"description": "视频的来源类型，来源这个视频所在节目单的视频来源类型",
+													"required": true
+												},
+												{
+													"name": "play_list_id",
+													"type": "Number",
+													"description": "当前视频的播单ID",
+													"required": true
+												},
+												{
+													"name": "program_id",
+													"type": "Number",
+													"description": "当前视频的节目ID",
+													"required": true
+												},
+												{
+													"name": "sort",
+													"type": "Number",
+													"description": "当前视频的排序",
+													"required": true
+												},
+												{
+													"name": "duration",
+													"type": "Number",
+													"description": "视频时长（单位秒）",
+													"required": true
+												},
+												{
+													"name": "name",
+													"type": "String",
+													"description": "视频名称",
+													"required": true
+												},
+												{
+													"name": "pic",
+													"type": "String",
+													"description": "视频图片",
+													"required": true
+												},
+												{
+													"name": "id",
+													"type": "Number",
+													"description": "主键ID",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "point",
+											"type": "Number",
+											"description": "当前视频正在播放的时间点（单位秒）",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "频道描述",
+									"required": true
+								},
+								{
+									"name": "bcp",
+									"type": "Number",
+									"description": "牌照方",
+									"required": true
+								},
+								{
+									"name": "pic",
+									"type": "String",
+									"description": "频道图标",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "频道名称",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

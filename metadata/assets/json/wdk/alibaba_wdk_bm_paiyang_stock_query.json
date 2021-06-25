@@ -1,0 +1,67 @@
+{
+	"name": "alibaba.wdk.bm.paiyang.stock.query",
+	"apiChineseName": "派样商品门店库存查询接口",
+	"description": "淘鲜达接入第三方进行派样，第三方查询派样商品的门店库存信息。",
+	"requestParams": [
+		{
+			"name": "isv_shop_stock_param",
+			"type": "IsvShopStockParam",
+			"description": "请求入参",
+			"subParams": [
+				{
+					"name": "barcode",
+					"type": "String",
+					"description": "商品条码"
+				},
+				{
+					"name": "shop_code",
+					"type": "String",
+					"description": "门店编码"
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码"
+				},
+				{
+					"name": "sample_activity_id",
+					"type": "Number",
+					"description": "派样活动id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BmResult",
+			"description": "请求出参",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "库存数量",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+	"name": "taobao.jds.trades.statistics.get",
+	"apiChineseName": "获取订单数量统计结果",
+	"description": "获取订单数量统计结果",
+	"requestParams": [
+		{
+			"name": "date",
+			"type": "Number",
+			"description": "查询的日期，格式如YYYYMMDD的日期对应的数字",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status_infos",
+			"type": "TradeStat []",
+			"description": "订单状态计数值",
+			"subParams": [
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态名称"
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "数量"
+				}
+			]
+		}
+	]
+}

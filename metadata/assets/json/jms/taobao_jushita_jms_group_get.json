@@ -1,0 +1,42 @@
+{
+	"name": "taobao.jushita.jms.group.get",
+	"apiChineseName": "查询ONS分组",
+	"description": "查询当前appkey在ONS中已有的分组",
+	"requestParams": [
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页返回多少个分组"
+		},
+		{
+			"name": "group_names",
+			"type": "String[]",
+			"description": "要查询分组的名称，多个分组用半角逗号分隔，不传代表查询所有分组信息，但不会返回组下面的用户信息。如果应用没有设置分组则返回空。组名不能以default开头，default开头是系统默认的组。",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "返回的总数"
+		},
+		{
+			"name": "groups",
+			"type": "MsgGroupDO []",
+			"description": "分组信息",
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "123"
+				}
+			]
+		}
+	]
+}

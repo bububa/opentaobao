@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.wdk.bm.trade.activity.query",
+	"apiChineseName": "品牌营销的订单活动信息查询",
+	"description": "品牌营销的订单活动信息查询",
+	"requestParams": [
+		{
+			"name": "query_param",
+			"type": "IsvOrderQueryParam",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_shop_code",
+					"type": "String",
+					"description": "商家外部门店编码"
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BmResult",
+			"description": "结果数据",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码，当失败返回错误码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "描述信息，当成功返回OK，当失败返回错误描述",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json[]",
+					"description": "数据（当前是券的umpId列表）",
+					"required": true
+				}
+			]
+		}
+	]
+}

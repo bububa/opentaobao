@@ -1,0 +1,182 @@
+{
+	"name": "alibaba.wdk.oldpos.order.create",
+	"apiChineseName": "淘鲜达外部商户老pos机产生的订单同步进淘鲜达",
+	"description": "淘鲜达外部商户老pos机产生的订单同步进淘鲜达",
+	"requestParams": [
+		{
+			"name": "pos_order_create_request",
+			"type": "PosOrderCreateRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "sub_order_d_o_list",
+					"type": "PosSubOrderDo[]",
+					"description": "子订单列表",
+					"subParams": [
+						{
+							"name": "stock_unit",
+							"type": "String",
+							"description": "库存单位，必填"
+						},
+						{
+							"name": "buy_amount_stock",
+							"type": "String",
+							"description": "库存单位购买数量，必填"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "sku编码，必填"
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部子订单号，全局唯一，子单和主单不能重复，可以包含字母"
+						},
+						{
+							"name": "pay_fee",
+							"type": "Number",
+							"description": "子单实付金额，单位分"
+						},
+						{
+							"name": "buy_amount_sale",
+							"type": "Number",
+							"description": "销售单位购买数量。对于标品，和库存单位库存单位购买数量一样"
+						},
+						{
+							"name": "sale_unit",
+							"type": "String",
+							"description": "销售单位"
+						},
+						{
+							"name": "origin_fee",
+							"type": "Number",
+							"description": "子单原价金额，单位分"
+						},
+						{
+							"name": "discount_fee",
+							"type": "Number",
+							"description": "子单优惠金额，单位分"
+						},
+						{
+							"name": "sku_price",
+							"type": "Number",
+							"description": "商品单价，单位分"
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称"
+						}
+					]
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间，必填"
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部主订单号，必填"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店code，必填"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id"
+				},
+				{
+					"name": "member_card_num",
+					"type": "String",
+					"description": "会员卡号"
+				},
+				{
+					"name": "pay_channel_list",
+					"type": "PosPayChannel[]",
+					"description": "支付方式",
+					"subParams": [
+						{
+							"name": "pay_amount",
+							"type": "Number",
+							"description": "该支付方式对应的支付金额"
+						},
+						{
+							"name": "pay_type",
+							"type": "String",
+							"description": "支付方式编码，盒马给出了常见支付方式的编码"
+						}
+					]
+				},
+				{
+					"name": "old_data",
+					"type": "Number",
+					"description": "兼容老接口的数据"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PosOrderCreateResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "结果msg",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "main_order_id",
+					"type": "Number",
+					"description": "mainOrderId",
+					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "outOrderId",
+					"required": true
+				},
+				{
+					"name": "sub_order_d_o_list",
+					"type": "PosSubOrderResult[]",
+					"description": "subOrderDOList",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "subOrderId",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "outOrderId",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

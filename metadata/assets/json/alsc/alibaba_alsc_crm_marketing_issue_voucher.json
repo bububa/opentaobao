@@ -1,0 +1,167 @@
+{
+	"name": "alibaba.alsc.crm.marketing.issue.voucher",
+	"apiChineseName": "发券",
+	"description": "提供发券功能",
+	"requestParams": [
+		{
+			"name": "param_issue_voucher_req",
+			"type": "IssueVoucherReq",
+			"description": "参数",
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "String",
+					"description": "活动id",
+					"required": true
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "会员id",
+					"required": true
+				},
+				{
+					"name": "from_user_id",
+					"type": "String",
+					"description": "分享营销来源userId（需要用加密接口加密）"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "进店领券订单id"
+				},
+				{
+					"name": "order_src",
+					"type": "Number",
+					"description": "进店领券订单来源"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id"
+				},
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌id(brandId和outerBrandId必传其一)"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人id"
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "操作人姓名"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌id"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "门店id"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "幂等请求id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "PrizeInfo",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "prize_item_info_list",
+							"type": "PrizeItemInfo[]",
+							"description": "优惠券列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "denomination",
+									"type": "String",
+									"description": "优惠金额",
+									"required": true
+								},
+								{
+									"name": "prize_level",
+									"type": "Number",
+									"description": "几等奖",
+									"required": true
+								},
+								{
+									"name": "prize_name",
+									"type": "String",
+									"description": "奖品名称",
+									"required": true
+								},
+								{
+									"name": "voucher_ids",
+									"type": "String[]",
+									"description": "券id",
+									"required": true
+								},
+								{
+									"name": "voucher_name",
+									"type": "String",
+									"description": "券名称",
+									"required": true
+								},
+								{
+									"name": "voucher_type",
+									"type": "String",
+									"description": "券类型",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "win_prize",
+							"type": "Boolean",
+							"description": "是否中奖",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "错误说明",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误展示",
+					"required": true
+				}
+			]
+		}
+	]
+}

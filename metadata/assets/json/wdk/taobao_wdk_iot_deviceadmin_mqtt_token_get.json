@@ -1,0 +1,78 @@
+{
+	"name": "taobao.wdk.iot.deviceadmin.mqtt.token.get",
+	"apiChineseName": "获取MQTT访问令牌",
+	"description": "智能硬件设备动态注册和获取mqtt设备信息",
+	"requestParams": [
+		{
+			"name": "access_key",
+			"type": "String",
+			"description": "accessKey",
+			"required": true
+		},
+		{
+			"name": "apply_timestamp",
+			"type": "Number",
+			"description": "申请令牌的客户端时间戳",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HmResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "MqttDeviceInfoDto",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "access_key",
+							"type": "String",
+							"description": "accessKey",
+							"required": true
+						},
+						{
+							"name": "access_token",
+							"type": "String",
+							"description": "accessToken",
+							"required": true
+						},
+						{
+							"name": "expire_time",
+							"type": "Number",
+							"description": "expireTime",
+							"required": true
+						},
+						{
+							"name": "timestamp",
+							"type": "Number",
+							"description": "创建令牌的服务端时间戳",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				}
+			]
+		}
+	]
+}

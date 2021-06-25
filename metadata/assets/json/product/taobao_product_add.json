@@ -1,0 +1,100 @@
+{
+	"name": "taobao.product.add",
+	"apiChineseName": "上传一个产品，不包括产品非主图和属性图片",
+	"description": "获取类目ID，必需是叶子类目ID；调用taobao.itemcats.get.v2获取 \u003cbr/\u003e传入关键属性,结构:pid:vid;pid:vid.调用taobao.itemprops.get.v2获取pid,\u003cbr/\u003e调用taobao.itempropvalues.get获取vid;如果碰到用户自定义属性,请用customer_props.\u003cbr/\u003e新增：套装产品发布，目前支持单件多个即 A*2 形式的套装",
+	"requestParams": [
+		{
+			"name": "native_unkeyprops",
+			"type": "String",
+			"description": "native_unkeyprops"
+		},
+		{
+			"name": "cid",
+			"type": "Number",
+			"description": "商品类目ID.调用taobao.itemcats.get获取;注意:必须是叶子类目 id.",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部产品ID"
+		},
+		{
+			"name": "props",
+			"type": "String",
+			"description": "关键属性 结构:pid:vid;pid:vid.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;如果碰到用户自定义属性,请用customer_props."
+		},
+		{
+			"name": "binds",
+			"type": "String",
+			"description": "非关键属性结构:pid:vid;pid:vid.\u003cbr\u003e\n非关键属性\u003cfont color=red\u003e不包含\u003c/font\u003e关键属性、销售属性、用户自定义属性、商品属性;\n\u003cbr\u003e调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid.\u003cbr\u003e\u003cfont color=red\u003e注:支持最大长度为512字节\u003c/font\u003e",
+			"maxLength": 512
+		},
+		{
+			"name": "sale_props",
+			"type": "String",
+			"description": "销售属性结构:pid:vid;pid:vid.调用taobao.itemprops.get获取is_sale_prop＝true的pid,调用taobao.itempropvalues.get获取vid."
+		},
+		{
+			"name": "customer_props",
+			"type": "String",
+			"description": "用户自定义属性,结构：pid1:value1;pid2:value2，如果有型号，系列等子属性用: 隔开 例如：“20000:优衣库:型号:001;632501:1234”，表示“品牌:优衣库:型号:001;货号:1234”\n\u003cbr\u003e\u003cfont color=red\u003e注：包含所有自定义属性的传入\u003c/font\u003e"
+		},
+		{
+			"name": "price",
+			"type": "String",
+			"description": "产品市场价.精确到2位小数;单位为元.如：200.07"
+		},
+		{
+			"name": "image",
+			"type": "byte[]",
+			"description": "产品主图片.最大1M,目前仅支持GIF,JPG.",
+			"required": true,
+			"maxLength": 1048576
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "产品名称,最大30个字符."
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "产品描述.最大不超过25000个字符"
+		},
+		{
+			"name": "major",
+			"type": "Boolean",
+			"description": "是不是主图"
+		},
+		{
+			"name": "market_time",
+			"type": "Date",
+			"description": "上市时间。目前只支持鞋城类目传入此参数"
+		},
+		{
+			"name": "property_alias",
+			"type": "String",
+			"description": "销售属性值别名。格式为pid1:vid1:alias1;pid1:vid2:alia2。只有少数销售属性值支持传入别名，比如颜色和尺寸"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "product",
+			"type": "Product",
+			"description": "产品结构",
+			"subParams": [
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品ID"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "创建时间.格式:yyyy-mm-dd hh:mm:ss"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,107 @@
+{
+	"name": "taobao.alitrip.car.order.complete",
+	"apiChineseName": "服务完成API",
+	"description": "用来接收服务商订单流程完成信息",
+	"requestParams": [
+		{
+			"name": "param_order_complete",
+			"type": "OrderComplete",
+			"description": "服务完成API",
+			"subParams": [
+				{
+					"name": "third_order_id",
+					"type": "String",
+					"description": "服务商生成的订单ID"
+				},
+				{
+					"name": "provider_id",
+					"type": "String",
+					"description": "服务商标识",
+					"required": true
+				},
+				{
+					"name": "complete_time",
+					"type": "String",
+					"description": "服务完成时间"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "阿里旅行生成的订单ID",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "可选，卖家id"
+				},
+				{
+					"name": "use_type",
+					"type": "Number",
+					"description": "0:接送机 1：实时打车 2：租车(不传值默认为0)"
+				},
+				{
+					"name": "price_info",
+					"type": "PriceInfo",
+					"description": "价格详情",
+					"subParams": [
+						{
+							"name": "total_price",
+							"type": "String",
+							"description": "总费用，折后金额总费用，折后金额  eg:203.00"
+						},
+						{
+							"name": "original_price",
+							"type": "String",
+							"description": "原价，如果订单有折扣这里为折扣前的价格，如果没有折扣和totalPrice字段保持一致"
+						},
+						{
+							"name": "detail",
+							"type": "DetailPriceInfo[]",
+							"description": "费用明细",
+							"subParams": [
+								{
+									"name": "amount",
+									"type": "String",
+									"description": "费用金额"
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "费用类型名称"
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "费用类型"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "distance",
+					"type": "String",
+					"description": "实际行驶公里数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "其它数据"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

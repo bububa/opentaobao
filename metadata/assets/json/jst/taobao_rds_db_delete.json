@@ -1,0 +1,49 @@
+{
+	"name": "taobao.rds.db.delete",
+	"apiChineseName": "RDS数据库删除",
+	"description": "通过api删除用户RDS的数据库",
+	"requestParams": [
+		{
+			"name": "instance_name",
+			"type": "String",
+			"description": "rds的实例名",
+			"required": true,
+			"maxLength": 30
+		},
+		{
+			"name": "db_name",
+			"type": "String",
+			"description": "数据库的name，可以通过 taobao.rds.db.get 获取",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rds_db_info",
+			"type": "RdsDbInfo",
+			"description": "删除数据库，返回结果对象",
+			"subParams": [
+				{
+					"name": "db_status",
+					"type": "String",
+					"description": "数据库状态 0：创建中 ；1：激活；3：正在删除"
+				},
+				{
+					"name": "instance_id",
+					"type": "String",
+					"description": "rds实例id"
+				},
+				{
+					"name": "db_name",
+					"type": "String",
+					"description": "数据库名称"
+				},
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "用户id"
+				}
+			]
+		}
+	]
+}

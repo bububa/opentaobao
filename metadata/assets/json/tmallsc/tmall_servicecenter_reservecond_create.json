@@ -1,0 +1,67 @@
+{
+	"name": "tmall.servicecenter.reservecond.create",
+	"apiChineseName": "创建主动预约开通条件",
+	"description": "1、设置主动预约开通条件",
+	"requestParams": [
+		{
+			"name": "roc_list",
+			"type": "ReserveOpenConditionDTO[]",
+			"description": "主动预约开通条件",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "类目id"
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "品牌id"
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "服务code"
+				},
+				{
+					"name": "exclude_area_ids",
+					"type": "String",
+					"description": "排除的区域id"
+				},
+				{
+					"name": "area_ids",
+					"type": "String",
+					"description": "区域ids集合"
+				},
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市id"
+				},
+				{
+					"name": "province_id",
+					"type": "Number",
+					"description": "身份id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回code"
+		}
+	]
+}

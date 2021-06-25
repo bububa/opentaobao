@@ -1,0 +1,49 @@
+{
+	"name": "taobao.train.agent.direct.compensate",
+	"apiChineseName": "火车票代理商接口——订单关闭实际出票成功审计接口",
+	"description": "代购直连订单平台关单但是代理商出票成功补偿接口",
+	"requestParams": [
+		{
+			"name": "compensate_param",
+			"type": "CompensateParam",
+			"description": "出票成功补偿入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商id",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "改签单id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "resultCode"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "resultMsg"
+		}
+	]
+}

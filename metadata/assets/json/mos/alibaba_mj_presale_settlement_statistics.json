@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.mj.presale.settlement.statistics",
+	"apiChineseName": "预购结算数据统计",
+	"description": "预购结算数据统计",
+	"requestParams": [
+		{
+			"name": "action_no",
+			"type": "Number",
+			"description": "活动期号",
+			"required": true
+		},
+		{
+			"name": "store_no",
+			"type": "String",
+			"description": "外部门店编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "on_line_num",
+					"type": "String",
+					"description": "onLineNum",
+					"required": true
+				},
+				{
+					"name": "ali_pay_num",
+					"type": "String",
+					"description": "aliPayNum",
+					"required": true
+				},
+				{
+					"name": "off_line_num",
+					"type": "String",
+					"description": "offLineNum",
+					"required": true
+				},
+				{
+					"name": "ali_pay_price",
+					"type": "String",
+					"description": "aliPayPrice",
+					"required": true
+				},
+				{
+					"name": "on_line_price",
+					"type": "String",
+					"description": "onLinePrice",
+					"required": true
+				},
+				{
+					"name": "off_line_price",
+					"type": "String",
+					"description": "offLinePrice",
+					"required": true
+				}
+			]
+		}
+	]
+}

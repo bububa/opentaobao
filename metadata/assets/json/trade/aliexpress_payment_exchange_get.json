@@ -1,0 +1,147 @@
+{
+	"name": "aliexpress.payment.exchange.get",
+	"apiChineseName": "getExchange",
+	"description": "提供国际汇率服务",
+	"requestParams": [
+		{
+			"name": "checkout_exchange_request",
+			"type": "CheckoutExchangeRequest",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "base_currency",
+					"type": "String",
+					"description": "基准币种(卖家设置的）",
+					"required": true
+				},
+				{
+					"name": "quote_currency",
+					"type": "String",
+					"description": "报价币种(买家看到的）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "not_success",
+					"type": "Boolean",
+					"description": "是否不成功",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Module",
+					"description": "返汇率相关数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "quote_currency",
+							"type": "String",
+							"description": "报价币种",
+							"required": true
+						},
+						{
+							"name": "inst_exchange_rate_no",
+							"type": "String",
+							"description": "外部机构汇率号",
+							"required": true
+						},
+						{
+							"name": "expire_time",
+							"type": "String",
+							"description": "过期时间",
+							"required": true
+						},
+						{
+							"name": "threshold_time",
+							"type": "String",
+							"description": "缓冲时间",
+							"required": true
+						},
+						{
+							"name": "rate",
+							"type": "String",
+							"description": "汇率",
+							"required": true
+						},
+						{
+							"name": "tradable",
+							"type": "Boolean",
+							"description": "是否可交易",
+							"required": true
+						},
+						{
+							"name": "valid_time",
+							"type": "String",
+							"description": "有效时间",
+							"required": true
+						},
+						{
+							"name": "base_currency",
+							"type": "String",
+							"description": "基准币种",
+							"required": true
+						},
+						{
+							"name": "exchange_rate_no",
+							"type": "String",
+							"description": "汇率号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "ErrorCode",
+					"description": "错误信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "display_message",
+							"type": "String",
+							"description": "错误展示信息",
+							"required": true
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "错误码key",
+							"required": true
+						},
+						{
+							"name": "log_message",
+							"type": "String",
+							"description": "错误详情",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "repeated",
+					"type": "Boolean",
+					"description": "是否重复重复",
+					"required": true
+				},
+				{
+					"name": "retry",
+					"type": "Boolean",
+					"description": "是否重试",
+					"required": true
+				}
+			]
+		}
+	]
+}

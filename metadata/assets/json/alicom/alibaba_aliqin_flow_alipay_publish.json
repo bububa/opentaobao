@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.aliqin.flow.alipay.publish",
+	"apiChineseName": "流量钱包流量发放-面向支付宝用户",
+	"description": "用户淘宝流量钱包商家给支付宝用户发放流量",
+	"requestParams": [
+		{
+			"name": "alipay_id",
+			"type": "String",
+			"description": "用户的支付宝ID",
+			"required": true
+		},
+		{
+			"name": "serial",
+			"type": "String",
+			"description": "外部流水号，用来做幂等校验",
+			"required": true
+		},
+		{
+			"name": "flow",
+			"type": "String",
+			"description": "发放的流量数，单位MB",
+			"required": true
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "发放原因",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error",
+			"type": "Boolean",
+			"description": "error"
+		},
+		{
+			"name": "value",
+			"type": "String",
+			"description": "value"
+		},
+		{
+			"name": "alicom_error_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "alicom_error_msg",
+			"type": "String",
+			"description": "errorMsg"
+		}
+	]
+}

@@ -1,0 +1,175 @@
+{
+	"name": "alibaba.wdk.ums.inventory.publish",
+	"apiChineseName": "初始化覆盖实物库存",
+	"description": "先去库存这边查询当前实物库存有多少的量，然后算出来需要增加的量。接下来调用ums原来的入库语义的接口进行库存的增量补充",
+	"requestParams": [
+		{
+			"name": "wdk_erp_arrival_notice",
+			"type": "WdkErpArrivalNoticeDto",
+			"description": "1",
+			"required": true,
+			"subParams": [
+				{
+					"name": "bypass",
+					"type": "Number",
+					"description": "如部分商品不存在，是否允许其他商品入库(1：允许，其他：不允许)",
+					"required": true
+				},
+				{
+					"name": "arrival_date",
+					"type": "Date",
+					"description": "入库时间，商家系统中记录的本批次商品的实际入库时间",
+					"required": true
+				},
+				{
+					"name": "item_list",
+					"type": "ErpArrivalNoticeDetailDto[]",
+					"description": "1",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cabinet_code",
+							"type": "String",
+							"description": "可指定库位，可空（按照需求附值）"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "采购单位",
+							"required": true
+						},
+						{
+							"name": "inventory_unit",
+							"type": "String",
+							"description": "库存单位",
+							"required": true
+						},
+						{
+							"name": "spec",
+							"type": "String",
+							"description": "规格",
+							"required": true
+						},
+						{
+							"name": "dept_code",
+							"type": "String",
+							"description": "部门code，该商品所属的部门编码",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "商品 价格单位分"
+						},
+						{
+							"name": "plan_package_quantity",
+							"type": "String",
+							"description": "库存单位",
+							"required": true
+						},
+						{
+							"name": "count",
+							"type": "String",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "produce_date",
+							"type": "Date",
+							"description": "生产日期： 1、 基础规则：生产日期不得超过或等于今日； 2、 商品未设置保质期管理的，生产日期为可选项，UMS存储但不校验禁收时限： a) 单据传输中提供了生产日期的，按单据生产日期通过收货； b) 单据传输中未提供生产日期的，不存储生产日期通过收货； 3、 商品已设置保质期管理的，并且已经设置了禁收时限的： a) 单据传输中提供了生产日期的，校验是否符合禁收时限，通过收货，不通过整单不收货； b) 单据传输中未提供生产日期的，按生产日期＝入库时间－禁收时限，通过收货； 4、 商品已设置保质期管理的，但未设置禁收时限的： a) 单据传输中提供了生产日期的，按单据生产日期，通过收货； b) 单据传输中未提供生产日期的，按生产日期＝入库时间－1（天），通过收货。"
+						},
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "商品条码"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "商品code，盒马系统中的商品编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "contact_info",
+					"type": "String",
+					"description": "联系方式，门店联系电话，可以是移动电话"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "店仓code，指的是入库对象，对应一个物理店或仓编码",
+					"required": true
+				},
+				{
+					"name": "supplier_code",
+					"type": "String",
+					"description": "供应商code，可选值：当是供应商供货时，提供供应商编码；当是大仓供货时，提供大仓编码；当是调拨入库时，提供对方门店编码",
+					"required": true
+				},
+				{
+					"name": "invalid_date",
+					"type": "Date",
+					"description": "失效日期，到货通知单中规定的收货入库时限",
+					"required": true
+				},
+				{
+					"name": "sub_order_type",
+					"type": "Number",
+					"description": "选填（单据类型为采配单时为必填）单据子类型，入库单据类型为采配单时，需要进一步区分子类型为采购单（供应商）和送货单（DC）"
+				},
+				{
+					"name": "original_bill_code",
+					"type": "String",
+					"description": "选填(单据子类型为送货单时为必填) 原始单据号，单据类型为采配单，子类型为送货单时，需要提供原始配货申请单据号"
+				},
+				{
+					"name": "biz_order_type",
+					"type": "Number",
+					"description": "单据类型，入库接口的单据类型包括采配单和调拨入单(1 采购单(供应商)； 2 送货单(DC) ； 其他情况默认为0)",
+					"required": true
+				},
+				{
+					"name": "biz_order_code",
+					"type": "String",
+					"description": "单据号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "调用服务返回结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "调用服务返回结果对象",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "调用服务返回错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "调用服务返回错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用服务返回成功失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

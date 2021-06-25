@@ -1,0 +1,57 @@
+{
+	"name": "taobao.item.barcode.update",
+	"apiChineseName": "更新商品条形码信息",
+	"description": "通过该接口，将商品以及SKU上得条形码信息补全",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "被更新商品的ID",
+			"required": true
+		},
+		{
+			"name": "item_barcode",
+			"type": "String",
+			"description": "商品条形码，如果不用更新，可选择不填"
+		},
+		{
+			"name": "sku_ids",
+			"type": "String",
+			"description": "被更新SKU的ID列表，中间以英文逗号进行分隔。如果没有SKU或者不需要更新SKU的条形码，不需要设置"
+		},
+		{
+			"name": "sku_barcodes",
+			"type": "String",
+			"description": "SKU维度的条形码，和sku_ids字段一一对应，中间以英文逗号分隔"
+		},
+		{
+			"name": "isforce",
+			"type": "Boolean",
+			"description": "是否强制保存商品条码。true：强制保存false ：需要执行条码库校验"
+		},
+		{
+			"name": "src",
+			"type": "String",
+			"description": "访问来源，这字段提供给千牛扫码枪用，其他调用方，不需要填写"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item",
+			"type": "Item",
+			"description": "商品结构里的num_iid，modified",
+			"subParams": [
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品数字id"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "商品修改时间（格式：yyyy-MM-dd HH:mm:ss）"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,100 @@
+{
+	"name": "tmall.supplychain.channel.product.price.get",
+	"apiChineseName": "渠道价格查询接口",
+	"description": "渠道价格查询接口",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID",
+			"required": true
+		},
+		{
+			"name": "price_type",
+			"type": "Number",
+			"description": "区域价、指导价"
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "SKU ID"
+		},
+		{
+			"name": "channel_code",
+			"type": "Number",
+			"description": "渠道ID（台湾市场/供销平台/大农业…..）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "TopProductPriceResult",
+					"description": "询价结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "产品ID",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "SKU ID",
+							"required": true
+						},
+						{
+							"name": "channel_code",
+							"type": "Number",
+							"description": "渠道编码",
+							"required": true
+						},
+						{
+							"name": "price_type",
+							"type": "Number",
+							"description": "价格类型，区域价、指导价",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "价格",
+							"required": true
+						},
+						{
+							"name": "currency_type",
+							"type": "String",
+							"description": "币种",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

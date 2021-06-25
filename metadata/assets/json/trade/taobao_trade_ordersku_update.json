@@ -1,0 +1,42 @@
+{
+	"name": "taobao.trade.ordersku.update",
+	"apiChineseName": "更新交易的销售属性",
+	"description": "只能更新发货前子订单的销售属性 \u003cbr/\u003e只能更新价格相同的销售属性。对于拍下减库存的交易会同步更新销售属性的库存量。对于旺店的交易，要使用商品扩展信息中的SKU价格来比较。 \u003cbr/\u003e必须使用sku_id或sku_props中的一个参数来更新，如果两个都传的话，sku_id优先",
+	"requestParams": [
+		{
+			"name": "oid",
+			"type": "Number",
+			"description": "子订单编号（对于单笔订单的交易可以传交易编号）。",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "销售属性编号，可以通过taobao.item.skus.get获取订单对应的商品的所有销售属性。"
+		},
+		{
+			"name": "sku_props",
+			"type": "String",
+			"description": "销售属性组合串，格式：p1:v1;p2:v2，如：1627207:28329;20509:28314。可以通过taobao.item.skus.get获取订单对应的商品的所有销售属性。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order",
+			"type": "Order",
+			"description": "只返回oid和modified",
+			"subParams": [
+				{
+					"name": "oid",
+					"type": "Number",
+					"description": "子订单编号"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "订单修改时间，目前只有taobao.trade.ordersku.update会返回此字段。"
+				}
+			]
+		}
+	]
+}

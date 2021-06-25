@@ -1,0 +1,221 @@
+{
+	"name": "tmall.inventory.query.forstore",
+	"apiChineseName": "查询后端商品仓库库存",
+	"description": "商家查询后端商品仓库库存",
+	"requestParams": [
+		{
+			"name": "param_list",
+			"type": "InventoryQueryForStoreRequest[]",
+			"description": "查询列表",
+			"required": true,
+			"maxListSize": 200,
+			"subParams": [
+				{
+					"name": "sc_item_code",
+					"type": "String",
+					"description": "后端商品code， sc_item_code或 sc_item_id需传入其中之一"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库code",
+					"required": true
+				},
+				{
+					"name": "sc_item_id",
+					"type": "Number",
+					"description": "后端商品id， sc_item_code或 sc_item_id需传入其中之一"
+				},
+				{
+					"name": "inv_store_type",
+					"type": "Number",
+					"description": "实体类型  2：仓库类型， 6：门店类型"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "货品填0即可，前端商品填skuId"
+				},
+				{
+					"name": "item_type",
+					"type": "Number",
+					"description": "1前端商品 2供应链货品"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "InventoryQueryResult",
+			"description": "查询结果",
+			"subParams": [
+				{
+					"name": "item_inventorys",
+					"type": "InventoryInfoDetailDto[]",
+					"description": "查询成功列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "occupy_quantity",
+							"type": "Number",
+							"description": "占用库存数",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "仓库物理库存数",
+							"required": true
+						},
+						{
+							"name": "reserve_quantity",
+							"type": "Number",
+							"description": "预扣库存数",
+							"required": true
+						},
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "后端商品code",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "后端商品id",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓库code",
+							"required": true
+						},
+						{
+							"name": "inv_store_type",
+							"type": "Number",
+							"description": "distType",
+							"required": true
+						},
+						{
+							"name": "sub_list",
+							"type": "InventorySubDetailDto[]",
+							"description": "subList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "reserve_quantity",
+									"type": "Number",
+									"description": "预扣库存数",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "仓库物理库存数",
+									"required": true
+								},
+								{
+									"name": "occupy_quantity",
+									"type": "Number",
+									"description": "占用库存数",
+									"required": true
+								},
+								{
+									"name": "inv_biz_code",
+									"type": "String",
+									"description": "ONLINE_INVENTORY:线上可售卖库存。SHARE_INVENTORY：线下独享库存，门店自提可用",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "skuId",
+							"required": true
+						},
+						{
+							"name": "item_type",
+							"type": "Number",
+							"description": "1前端商品 2供应链货品",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "tip_infos",
+					"type": "TipInfo[]",
+					"description": "tipInfos",
+					"required": true,
+					"subParams": [
+						{
+							"name": "errorcode",
+							"type": "String",
+							"description": "errorCode",
+							"required": true
+						},
+						{
+							"name": "errormessage",
+							"type": "String",
+							"description": "errorMessage",
+							"required": true
+						},
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "scItemCode",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "storeCode",
+							"required": true
+						},
+						{
+							"name": "sc_item_id",
+							"type": "Number",
+							"description": "scItemId",
+							"required": true
+						},
+						{
+							"name": "inv_store_type",
+							"type": "Number",
+							"description": "invStoreType",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "skuId",
+							"required": true
+						},
+						{
+							"name": "item_type",
+							"type": "Number",
+							"description": "1前端商品 2供应链货品",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "errorcode",
+			"type": "String",
+			"description": "错误code"
+		},
+		{
+			"name": "errormessage",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "issuccess",
+			"type": "Boolean",
+			"description": "整体成功或失败"
+		}
+	]
+}

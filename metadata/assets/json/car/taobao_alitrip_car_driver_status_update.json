@@ -1,0 +1,63 @@
+{
+	"name": "taobao.alitrip.car.driver.status.update",
+	"apiChineseName": "司机服务状态更新接口",
+	"description": "飞猪用车业务回调接口，用于服务商实时回传更新司机当前服务状态",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "飞猪订单id",
+			"required": true
+		},
+		{
+			"name": "third_order_id",
+			"type": "String",
+			"description": "服务商订单id"
+		},
+		{
+			"name": "provider_id",
+			"type": "String",
+			"description": "服务商标识，由飞猪提供给到各服务商",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "司机服务状态。1-司机已出发，2-司机已到达，3-司机已开始服务",
+			"required": true
+		},
+		{
+			"name": "time",
+			"type": "String",
+			"description": "状态变更相应时间（如司机出发时间、司机到达时间、服务开始时间），格式：yyyy-mm-dd hh:mm:ss",
+			"required": true
+		},
+		{
+			"name": "seller_id",
+			"type": "String",
+			"description": "可选，卖家id"
+		},
+		{
+			"name": "use_type",
+			"type": "Number",
+			"description": "0:接送机 1：实时打车 2：租车(不传值默认为0)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "data",
+			"type": "Json",
+			"description": "其它数据，预留，暂不使用"
+		}
+	]
+}

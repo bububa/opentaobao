@@ -1,0 +1,181 @@
+{
+	"name": "taobao.simba.rpt.targetingtag.get",
+	"apiChineseName": "搜索人群离线报表",
+	"description": "获取搜搜人群实时报表",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "用户旺旺名称"
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "推广计划id"
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广单元id"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始时间"
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间"
+		},
+		{
+			"name": "traffic_type",
+			"type": "String",
+			"description": "流量类型 1: PC站内, 2: PC站外 , 4: 无线站内, 5: 无线站外,支持多种一起查询,如1,2,4,5"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "RtRptResultEntityDTO []",
+			"description": "111",
+			"subParams": [
+				{
+					"name": "thedate",
+					"type": "String",
+					"description": "日期"
+				},
+				{
+					"name": "campaignid",
+					"type": "String",
+					"description": "计划id"
+				},
+				{
+					"name": "adgroupid",
+					"type": "String",
+					"description": "推广组id"
+				},
+				{
+					"name": "directtransaction",
+					"type": "String",
+					"description": "直接成交金额"
+				},
+				{
+					"name": "indirecttransaction",
+					"type": "String",
+					"description": "间接成交金额"
+				},
+				{
+					"name": "directtransactionshipping",
+					"type": "String",
+					"description": "直接成交笔数"
+				},
+				{
+					"name": "indirecttransactionshipping",
+					"type": "String",
+					"description": "间接成交笔数"
+				},
+				{
+					"name": "favitemtotal",
+					"type": "String",
+					"description": "收藏宝贝数"
+				},
+				{
+					"name": "favshoptotal",
+					"type": "String",
+					"description": "收藏店铺数"
+				},
+				{
+					"name": "roi",
+					"type": "String",
+					"description": "投入产出比"
+				},
+				{
+					"name": "coverage",
+					"type": "String",
+					"description": "点击转化率"
+				},
+				{
+					"name": "directcarttotal",
+					"type": "String",
+					"description": "直接购物车数"
+				},
+				{
+					"name": "indirectcarttotal",
+					"type": "String",
+					"description": "间接购物车数"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "流量来源( PC站内:1， PC站外:2 , 移动站内:4，移动站外:5)"
+				},
+				{
+					"name": "carttotal",
+					"type": "String",
+					"description": "购物车总数"
+				},
+				{
+					"name": "search_type",
+					"type": "String",
+					"description": "报表类型（搜索：0,类目出价：1, 单品定向：2, 店铺定向:3）"
+				},
+				{
+					"name": "impression",
+					"type": "String",
+					"description": "impression"
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "cost"
+				},
+				{
+					"name": "click",
+					"type": "String",
+					"description": "click"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "ctr"
+				},
+				{
+					"name": "cpc",
+					"type": "String",
+					"description": "cpc"
+				},
+				{
+					"name": "cpm",
+					"type": "String",
+					"description": "cpm"
+				},
+				{
+					"name": "transactionshippingtotal",
+					"type": "String",
+					"description": "总成交笔数"
+				},
+				{
+					"name": "transactiontotal",
+					"type": "String",
+					"description": "总成交金额"
+				},
+				{
+					"name": "favtotal",
+					"type": "String",
+					"description": "总收藏数"
+				},
+				{
+					"name": "crowdid",
+					"type": "String",
+					"description": "人群id"
+				},
+				{
+					"name": "crowdtitle",
+					"type": "String",
+					"description": "人群名称"
+				}
+			]
+		}
+	]
+}

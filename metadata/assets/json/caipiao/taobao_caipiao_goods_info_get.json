@@ -1,0 +1,44 @@
+{
+	"name": "taobao.caipiao.goods.info.get",
+	"apiChineseName": "根据卖家id与appkey获取商品信息",
+	"description": "根据卖家id与appkey获取商品信息。",
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "返回列表的大小"
+		},
+		{
+			"name": "results",
+			"type": "LotteryWangcaiSellerGoodsInfo []",
+			"description": "查询的结果列表",
+			"subParams": [
+				{
+					"name": "goods_id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "present_type",
+					"type": "Number",
+					"description": "赠送类型：0：满就送，1：好评送，2：分享送，3：游戏送，4：收藏送"
+				},
+				{
+					"name": "act_begin_time",
+					"type": "Date",
+					"description": "活动开始时间"
+				},
+				{
+					"name": "act_end_time",
+					"type": "Date",
+					"description": "活动结束时间"
+				},
+				{
+					"name": "lottery_type_id",
+					"type": "Number",
+					"description": "彩种id"
+				}
+			]
+		}
+	]
+}

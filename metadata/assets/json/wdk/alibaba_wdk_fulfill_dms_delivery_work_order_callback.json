@@ -1,0 +1,110 @@
+{
+	"name": "alibaba.wdk.fulfill.dms.delivery.work.order.callback",
+	"apiChineseName": "末端配配送作业回传",
+	"description": "末端配配送作业回传。",
+	"requestParams": [
+		{
+			"name": "callback_order",
+			"type": "DeliveryCallbackOrder",
+			"description": "作业单回传对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "work_order_id",
+					"type": "String",
+					"description": "作业单号",
+					"required": true
+				},
+				{
+					"name": "status_change_type",
+					"type": "String",
+					"description": "作业状态变更类型：SHIP(\"揽收\"),SIGN(\"妥投\"),SIGN_ERROR(\"配送异常\"),REFUSE(\"拒收\")",
+					"required": true
+				},
+				{
+					"name": "status_change_time",
+					"type": "Date",
+					"description": "作业状态变更时间",
+					"required": true
+				},
+				{
+					"name": "refused_order_details",
+					"type": "DeliveryCallbackOrderDetail[]",
+					"description": "拒收子单列表",
+					"subParams": [
+						{
+							"name": "work_order_detail_id",
+							"type": "String",
+							"description": "子单ID"
+						},
+						{
+							"name": "refused_reason",
+							"type": "String",
+							"description": "拒收原因"
+						}
+					]
+				},
+				{
+					"name": "deliveryman",
+					"type": "Deliveryman",
+					"description": "配送员",
+					"required": true,
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "姓名",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "编号",
+							"required": true
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "手机号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "delivery_dock_code",
+					"type": "String",
+					"description": "配送站编码",
+					"required": true
+				},
+				{
+					"name": "source_system",
+					"type": "String",
+					"description": "来源系统:：CHINA_POST:邮政",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_message",
+			"type": "String",
+			"description": "响应提示信息"
+		},
+		{
+			"name": "resp_code",
+			"type": "String",
+			"description": "返回码： SUCCESS:作业批次接收成功 SYSTEM_ERROR :系统异常(指令可重发) PARAM_ERROR :参数错误(指令不可重发，监控报警) BUSINESS_ERROR:业务异常(指令不可重发，监控报警)"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功：true 调用成功； false 调用失败"
+		}
+	]
+}

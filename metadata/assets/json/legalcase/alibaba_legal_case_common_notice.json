@@ -1,0 +1,87 @@
+{
+	"name": "alibaba.legal.case.common.notice",
+	"apiChineseName": "消息通知",
+	"description": "同步通知给诉讼系统",
+	"requestParams": [
+		{
+			"name": "case_id",
+			"type": "Number",
+			"description": "案件id",
+			"required": true
+		},
+		{
+			"name": "entrust_id",
+			"type": "Number",
+			"description": "委托id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "adminicular_evidence（补充证据）risk_early_warning（风险预警）",
+			"required": true
+		},
+		{
+			"name": "notice_model",
+			"type": "NoticeModel",
+			"description": "消息模型",
+			"required": true,
+			"subParams": [
+				{
+					"name": "creator",
+					"type": "String",
+					"description": "创建人"
+				},
+				{
+					"name": "attachment",
+					"type": "FileModel[]",
+					"description": "附件",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "key"
+						}
+					]
+				},
+				{
+					"name": "notice_id",
+					"type": "String",
+					"description": "消息唯一id"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "内容"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "error"
+		},
+		{
+			"name": "content",
+			"type": "Json",
+			"description": "content"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "msg"
+		}
+	]
+}

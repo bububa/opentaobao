@@ -1,0 +1,69 @@
+{
+	"name": "alibaba.baichuan.ctg.user.relation",
+	"apiChineseName": "用户",
+	"description": "提供给优酷查询道长和淘宝账户的绑定关系",
+	"requestParams": [
+		{
+			"name": "app",
+			"type": "String",
+			"description": "调用的业务方"
+		},
+		{
+			"name": "uid",
+			"type": "String",
+			"description": "业务方的用户ID"
+		},
+		{
+			"name": "tb_uid",
+			"type": "String",
+			"description": "淘宝的用户ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回的整体结果",
+			"subParams": [
+				{
+					"name": "module",
+					"type": "Number",
+					"description": "返回结果，数值型，1：代表已绑定达人身份，2代表未绑定达人身份",
+					"required": true
+				},
+				{
+					"name": "error_detail",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "ErrorCode",
+					"description": "错误码结构体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "message",
+							"type": "String",
+							"description": "详细错误信息",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "返回成功与否",
+					"required": true
+				}
+			]
+		}
+	]
+}

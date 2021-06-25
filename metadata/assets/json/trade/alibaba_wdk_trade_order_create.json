@@ -1,0 +1,502 @@
+{
+	"name": "alibaba.wdk.trade.order.create",
+	"apiChineseName": "外部交易订单创单接口",
+	"description": "通过该接口可以再盒马创建交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理",
+	"requestParams": [
+		{
+			"name": "trade",
+			"type": "TradeOrder",
+			"description": "待创建的订单",
+			"subParams": [
+				{
+					"name": "discount_fee",
+					"type": "Number",
+					"description": "优惠金额"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户昵称"
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间",
+					"required": true
+				},
+				{
+					"name": "origin_fee",
+					"type": "Number",
+					"description": "订单原金额",
+					"required": true
+				},
+				{
+					"name": "user_mem",
+					"type": "String",
+					"description": "用户备注"
+				},
+				{
+					"name": "pay_fee",
+					"type": "Number",
+					"description": "支付金额(=整单原价-整单优惠金额+运费)",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店标识",
+					"required": true
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "买家标识",
+					"required": true
+				},
+				{
+					"name": "delivery",
+					"type": "OrderDelivery",
+					"description": "收货人信息",
+					"subParams": [
+						{
+							"name": "delivery_start_time",
+							"type": "Date",
+							"description": "配送开始时间"
+						},
+						{
+							"name": "consignee_name",
+							"type": "String",
+							"description": "收货人姓名",
+							"required": true
+						},
+						{
+							"name": "delivery_end_time",
+							"type": "Date",
+							"description": "配送结束时间"
+						},
+						{
+							"name": "delivery_geo",
+							"type": "String",
+							"description": "配送坐标",
+							"required": true
+						},
+						{
+							"name": "delivery_fee",
+							"type": "Number",
+							"description": "配送金额"
+						},
+						{
+							"name": "delivery_address",
+							"type": "String",
+							"description": "配送地址",
+							"required": true
+						},
+						{
+							"name": "consignee_phone",
+							"type": "String",
+							"description": "收货人电话",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sub_orders",
+					"type": "Suborders[]",
+					"description": "子订单",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sale_quantity",
+							"type": "Number",
+							"description": "销售数量",
+							"required": true
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "sku名称",
+							"required": true
+						},
+						{
+							"name": "sale_price",
+							"type": "Number",
+							"description": "销售单价",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "sku编码",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部关联标识",
+							"required": true
+						},
+						{
+							"name": "origin_fee",
+							"type": "Number",
+							"description": "当前商品支付原总价",
+							"required": true
+						},
+						{
+							"name": "sale_unit",
+							"type": "String",
+							"description": "销售单位（非标品使用）"
+						},
+						{
+							"name": "handling",
+							"type": "Boolean",
+							"description": "是否加工"
+						},
+						{
+							"name": "handling_type",
+							"type": "String",
+							"description": "加工方式"
+						},
+						{
+							"name": "sale_stock_quantity",
+							"type": "String",
+							"description": "销售实物库存数量",
+							"required": true
+						},
+						{
+							"name": "stock_unit",
+							"type": "String",
+							"description": "实物库存单位",
+							"required": true
+						},
+						{
+							"name": "discount_fee",
+							"type": "Number",
+							"description": "子商品优惠金额(可以为0)"
+						},
+						{
+							"name": "pay_fee",
+							"type": "Number",
+							"description": "子商品实际支付金额(=商品原总-优惠金额价)"
+						}
+					]
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部关联标识",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "渠道业务, 如大润发优鲜=CHANNEL_HALFDAY"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OrderResult",
+			"description": "执行结果",
+			"subParams": [
+				{
+					"name": "trade",
+					"type": "TradeOrder",
+					"description": "创建的订单",
+					"required": true,
+					"subParams": [
+						{
+							"name": "discount_fee",
+							"type": "Number",
+							"description": "优惠金额",
+							"required": true
+						},
+						{
+							"name": "user_nick",
+							"type": "String",
+							"description": "用户昵称",
+							"required": true
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "订单状态",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "支付时间",
+							"required": true
+						},
+						{
+							"name": "origin_fee",
+							"type": "Number",
+							"description": "订单原金额",
+							"required": true
+						},
+						{
+							"name": "user_mem",
+							"type": "String",
+							"description": "用户备注",
+							"required": true
+						},
+						{
+							"name": "order_fulfill_status",
+							"type": "String",
+							"description": "订单履约状态",
+							"required": true
+						},
+						{
+							"name": "deliverer",
+							"type": "OrderDelivery",
+							"description": "配送员信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "deliverer_code",
+									"type": "String",
+									"description": "配送员编码",
+									"required": true
+								},
+								{
+									"name": "deliverer_phone",
+									"type": "String",
+									"description": "配送员电话",
+									"required": true
+								},
+								{
+									"name": "deliverer_name",
+									"type": "String",
+									"description": "配送员姓名",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pay_fee",
+							"type": "Number",
+							"description": "支付时间",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "门店标识",
+							"required": true
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "买家标识",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "业务订单标识",
+							"required": true
+						},
+						{
+							"name": "delivery",
+							"type": "OrderDeliverer",
+							"description": "收货人信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "delivery_start_time",
+									"type": "Date",
+									"description": "收货开始时间",
+									"required": true
+								},
+								{
+									"name": "consignee_name",
+									"type": "String",
+									"description": "收货人",
+									"required": true
+								},
+								{
+									"name": "delivery_end_time",
+									"type": "Date",
+									"description": "收货结束时间",
+									"required": true
+								},
+								{
+									"name": "delivery_geo",
+									"type": "String",
+									"description": "配送坐标",
+									"required": true
+								},
+								{
+									"name": "delivery_fee",
+									"type": "Number",
+									"description": "运费",
+									"required": true
+								},
+								{
+									"name": "delivery_address",
+									"type": "String",
+									"description": "配送地址",
+									"required": true
+								},
+								{
+									"name": "consignee_phone",
+									"type": "String",
+									"description": "收货人电话",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "sub_orders",
+							"type": "Suborders[]",
+							"description": "子订单",
+							"required": true,
+							"subParams": [
+								{
+									"name": "order_fulfill_status",
+									"type": "String",
+									"description": "订单履约状态",
+									"required": true
+								},
+								{
+									"name": "sale_quantity",
+									"type": "Number",
+									"description": "销售数量",
+									"required": true
+								},
+								{
+									"name": "sku_name",
+									"type": "String",
+									"description": "sku名称",
+									"required": true
+								},
+								{
+									"name": "sale_price",
+									"type": "Number",
+									"description": "销售单价",
+									"required": true
+								},
+								{
+									"name": "biz_order_id",
+									"type": "String",
+									"description": "业务订单标识",
+									"required": true
+								},
+								{
+									"name": "order_status",
+									"type": "String",
+									"description": "订单状态",
+									"required": true
+								},
+								{
+									"name": "merchant_code",
+									"type": "String",
+									"description": "商家编码",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "sku编码",
+									"required": true
+								},
+								{
+									"name": "out_order_id",
+									"type": "String",
+									"description": "外部订单标识",
+									"required": true
+								},
+								{
+									"name": "origin_fee",
+									"type": "Number",
+									"description": "当前商品支付原总价",
+									"required": true
+								},
+								{
+									"name": "sale_unit",
+									"type": "String",
+									"description": "销售单位",
+									"required": true
+								},
+								{
+									"name": "shop_id",
+									"type": "String",
+									"description": "门店编码",
+									"required": true
+								},
+								{
+									"name": "handling",
+									"type": "Boolean",
+									"description": "是否加工",
+									"required": true
+								},
+								{
+									"name": "handling_type",
+									"type": "String",
+									"description": "加工方式",
+									"required": true
+								},
+								{
+									"name": "sale_stock_quantity",
+									"type": "String",
+									"description": "销售实物库存数量",
+									"required": true
+								},
+								{
+									"name": "stock_unit",
+									"type": "String",
+									"description": "实物库存单位",
+									"required": true
+								},
+								{
+									"name": "discount_fee",
+									"type": "Number",
+									"description": "子商品优惠金额",
+									"required": true
+								},
+								{
+									"name": "pay_fee",
+									"type": "Number",
+									"description": "子商品实际支付金额",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部订单标识",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否创建成功",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				}
+			]
+		}
+	]
+}

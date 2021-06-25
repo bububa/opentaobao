@@ -1,0 +1,153 @@
+{
+	"name": "taobao.xhotel.data.service.seller.serviceindex",
+	"apiChineseName": "卖家服务指数查询",
+	"description": "卖家服务指数查询",
+	"requestParams": [
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "渠道商名称"
+		},
+		{
+			"name": "start_row",
+			"type": "Number",
+			"description": "分页参数"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页参数"
+		},
+		{
+			"name": "report_end_date",
+			"type": "String",
+			"description": "查询截止日期"
+		},
+		{
+			"name": "report_start_date",
+			"type": "String",
+			"description": "查询开始日期"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "first_result",
+					"type": "TopAdsSlrQueryResult",
+					"description": "firstResult",
+					"required": true,
+					"subParams": [
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "数据记录条数",
+							"required": true
+						},
+						{
+							"name": "ads_slr_service_data_list",
+							"type": "Adsslrservicedatalist[]",
+							"description": "adsSlrServiceDataList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "no_ord_cnt1d",
+									"type": "Number",
+									"description": "查无订单数",
+									"required": true
+								},
+								{
+									"name": "resp_duration_overseas",
+									"type": "Number",
+									"description": "国际平均响应时长",
+									"required": true
+								},
+								{
+									"name": "sales_count_in90days",
+									"type": "Number",
+									"description": "90天销量",
+									"required": true
+								},
+								{
+									"name": "no_room_cnt1d",
+									"type": "Number",
+									"description": "到店无房订单数",
+									"required": true
+								},
+								{
+									"name": "sales_count_in_day",
+									"type": "Number",
+									"description": "每日订单数",
+									"required": true
+								},
+								{
+									"name": "booking_succ_rate_domestic_double",
+									"type": "String",
+									"description": "国内预订成功率",
+									"required": true
+								},
+								{
+									"name": "no_ord_cnt1d_rate_double",
+									"type": "String",
+									"description": "查无订单率",
+									"required": true
+								},
+								{
+									"name": "pre_refund_cnt1m_rate_double",
+									"type": "String",
+									"description": "退款率",
+									"required": true
+								},
+								{
+									"name": "report_date",
+									"type": "Date",
+									"description": "查询日期",
+									"required": true
+								},
+								{
+									"name": "booking_succ_rate_overseas_double",
+									"type": "String",
+									"description": "预订成功率国际",
+									"required": true
+								},
+								{
+									"name": "no_room_cnt1d_rate_double",
+									"type": "String",
+									"description": "到店无房率",
+									"required": true
+								},
+								{
+									"name": "pre_slr_refund_cnt1m_rate_double",
+									"type": "String",
+									"description": "卖家原因退款率",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,187 @@
+{
+	"name": "taobao.alitrip.bus.tickets.insurance.recommend",
+	"apiChineseName": "汽车票保险推荐",
+	"description": "获取推荐保险内容",
+	"requestParams": [
+		{
+			"name": "recommend_req",
+			"type": "TopStandardInsRecommendRequest",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "station_info",
+					"type": "TopInsStationInfo",
+					"description": "站点信息对象",
+					"subParams": [
+						{
+							"name": "machine_id",
+							"type": "String",
+							"description": "机具ID"
+						},
+						{
+							"name": "isv_name",
+							"type": "String",
+							"description": "isv名称"
+						},
+						{
+							"name": "isv_id",
+							"type": "String",
+							"description": "isv-id"
+						},
+						{
+							"name": "start_station_id",
+							"type": "String",
+							"description": "出发车站站点ID"
+						},
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市代码，数据源来自行业基础数据字典"
+						},
+						{
+							"name": "province_code",
+							"type": "String",
+							"description": "省份代码，数据源来自行业基础数据字典"
+						}
+					]
+				},
+				{
+					"name": "target_channel",
+					"type": "String",
+					"description": "OFF_LINE（线下自助机）、OTA（OTA）、SUBMIT_ORDER_PAGE（下单页）、RECOMMEND_PAGE （推荐弹层）、STORE_WINDOW（商家窗口）。目前仅开放了线下自助机和商家窗口。",
+					"required": true
+				},
+				{
+					"name": "merchant_info",
+					"type": "TopInsMerchantInfo",
+					"description": "商户身份对象",
+					"subParams": [
+						{
+							"name": "merchant_id",
+							"type": "String",
+							"description": "商户ID"
+						},
+						{
+							"name": "merchant_name",
+							"type": "String",
+							"description": "商户名称"
+						}
+					]
+				},
+				{
+					"name": "commodity_info",
+					"type": "TopInsCommodityInfo",
+					"description": "商品信息对象",
+					"subParams": [
+						{
+							"name": "ticket_price",
+							"type": "Number",
+							"description": "票价，单位：分"
+						},
+						{
+							"name": "travel_date",
+							"type": "String",
+							"description": "出行日期，精确到分钟 yyyyMMddHHmm"
+						},
+						{
+							"name": "start_station_id",
+							"type": "String",
+							"description": "起始站点"
+						},
+						{
+							"name": "itinerary_time",
+							"type": "Number",
+							"description": "行程时长，精确到分钟"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回结果数据",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "response",
+					"type": "TopStandardInsRecommendResponse",
+					"description": "接口返回结果对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "result_list",
+							"type": "TopInsProduct[]",
+							"description": "推荐结果",
+							"required": true,
+							"subParams": [
+								{
+									"name": "ins_title",
+									"type": "String",
+									"description": "保险模块标题",
+									"required": true
+								},
+								{
+									"name": "ins_name",
+									"type": "String",
+									"description": "保险名称",
+									"required": true
+								},
+								{
+									"name": "ins_price",
+									"type": "Number",
+									"description": "保险金额",
+									"required": true
+								},
+								{
+									"name": "interest_info",
+									"type": "String",
+									"description": "保险利益点信息",
+									"required": true
+								},
+								{
+									"name": "pro_code",
+									"type": "String",
+									"description": "保险产品码",
+									"required": true
+								},
+								{
+									"name": "resource_map",
+									"type": "Json",
+									"description": "资源项，图文信息等",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "biz_ext_map",
+					"type": "Json",
+					"description": "扩展预留",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,95 @@
+{
+	"name": "taobao.bus.agent.multiple.refund.confirm",
+	"apiChineseName": "综合交通多次退款接口",
+	"description": "此接口支持多次按照单客进行多次退款操作，只进行退款操作。",
+	"requestParams": [
+		{
+			"name": "param_agent_multiple_refund_r_q",
+			"type": "AgentMultipleRefundRq",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "agent_order_id",
+					"type": "String",
+					"description": "商家订单号",
+					"required": true
+				},
+				{
+					"name": "agent_refund_reason",
+					"type": "String",
+					"description": "退款原因必填",
+					"required": true
+				},
+				{
+					"name": "agent_refund_trans_no",
+					"type": "String",
+					"description": "退款流水号唯一标识，防止重复退款",
+					"required": true
+				},
+				{
+					"name": "main_biz_order_id",
+					"type": "Number",
+					"description": "飞猪平台订单号",
+					"required": true
+				},
+				{
+					"name": "refund_ticket_detail_list",
+					"type": "AgentMultipleRefundTicketInfo[]",
+					"description": "退款明细数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "agent_ticket_id",
+							"type": "String",
+							"description": "商家票号(唯一标识关联乘客)"
+						},
+						{
+							"name": "passenger_id_num",
+							"type": "String",
+							"description": "退款人证件号(无票号时此参数必填)"
+						},
+						{
+							"name": "refund_amount",
+							"type": "Number",
+							"description": "退票金额(分)"
+						},
+						{
+							"name": "service_charge_refund_amount",
+							"type": "Number",
+							"description": "退服务费金额(分)"
+						}
+					]
+				},
+				{
+					"name": "total_refund_amount",
+					"type": "Number",
+					"description": "退款总金额(票款+服务费)(分)",
+					"required": true
+				},
+				{
+					"name": "total_service_charge_refund_amount",
+					"type": "Number",
+					"description": "退服务费总金额(分)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "失败错误信息"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "退款成功"
+		}
+	]
+}

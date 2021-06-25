@@ -1,0 +1,131 @@
+{
+	"name": "alibaba.wdk.marketing.expire.promotion.create",
+	"apiChineseName": "短保优惠创建",
+	"description": "过期优惠优惠信息录入",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "ExpirePromotionBo",
+			"description": "创建短保优惠",
+			"required": true,
+			"subParams": [
+				{
+					"name": "period_infos",
+					"type": "ExpirePeriodInfo[]",
+					"description": "短保时间段信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "promotion_value",
+							"type": "Number",
+							"description": "优惠具体折扣，1到1000",
+							"required": true
+						},
+						{
+							"name": "end_hour",
+							"type": "Number",
+							"description": "0到24，小时数值",
+							"required": true
+						},
+						{
+							"name": "start_hour",
+							"type": "Number",
+							"description": "0到24，小时数值",
+							"required": true
+						},
+						{
+							"name": "out_id",
+							"type": "Number",
+							"description": "外部商家id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "门店id",
+					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品skucode",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "datas",
+			"type": "T []",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家code",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品skucode",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品itemId",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "fail_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

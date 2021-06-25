@@ -1,0 +1,90 @@
+{
+	"name": "alitrip.agent.flight.sell.ticketing.issue",
+	"apiChineseName": "销售出票",
+	"description": "销售出票",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "TicketingIssueRequestDto",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "domestic_intl",
+					"type": "Number",
+					"description": "国内国际标识"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "飞猪订单号"
+				},
+				{
+					"name": "issue_list",
+					"type": "TicketingPsgItemDto[]",
+					"description": "出票信息",
+					"subParams": [
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘客姓名"
+						},
+						{
+							"name": "tickets",
+							"type": "String[]",
+							"description": "票号"
+						},
+						{
+							"name": "pnr",
+							"type": "String",
+							"description": "pnr"
+						},
+						{
+							"name": "segments",
+							"type": "Segments[]",
+							"description": "航段",
+							"subParams": [
+								{
+									"name": "arr_city",
+									"type": "String",
+									"description": "到达城市"
+								},
+								{
+									"name": "dep_city",
+									"type": "String",
+									"description": "出发城市"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				}
+			]
+		}
+	]
+}

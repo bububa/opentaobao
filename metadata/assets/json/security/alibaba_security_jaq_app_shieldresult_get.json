@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.security.jaq.app.shieldresult.get",
+	"apiChineseName": "用户查询加固结果",
+	"description": "用户通过alibaba.security.jaq.app.shield接口提交应用加固后,通过该接口查询加固结果,下载加固包",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "任务唯一标识",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ShieldResult",
+			"description": "应用加固结果",
+			"subParams": [
+				{
+					"name": "task_status",
+					"type": "Number",
+					"description": "任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时"
+				},
+				{
+					"name": "app_list",
+					"type": "ChannelAppInfo[]",
+					"description": "加固后的应用列表(任务完成时才返回)  普通加固时只有1个文件，多渠道加固时每个渠道1个文件",
+					"subParams": [
+						{
+							"name": "channel",
+							"type": "String",
+							"description": "渠道名称,多渠道加固才有值"
+						},
+						{
+							"name": "app_url",
+							"type": "String",
+							"description": "加固后的APP下载地址"
+						}
+					]
+				},
+				{
+					"name": "obfuscate_result",
+					"type": "ObfuscateResult",
+					"description": "混淆率计算返回结果",
+					"subParams": [
+						{
+							"name": "total_classes",
+							"type": "Number",
+							"description": "总的类数量"
+						},
+						{
+							"name": "total_fields",
+							"type": "Number",
+							"description": "总的成员变量数量"
+						},
+						{
+							"name": "total_methods",
+							"type": "Number",
+							"description": "总的方法数量"
+						},
+						{
+							"name": "obfuscated_classes",
+							"type": "Number",
+							"description": "混淆类的数量"
+						},
+						{
+							"name": "obfuscated_fields",
+							"type": "Number",
+							"description": "混淆成员变量的数量"
+						},
+						{
+							"name": "obfuscated_methods",
+							"type": "Number",
+							"description": "混淆方法的数量"
+						},
+						{
+							"name": "obfuscated_percent",
+							"type": "String",
+							"description": "总混淆率"
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "加固出错的详细信息"
+				},
+				{
+					"name": "map_url",
+					"type": "String",
+					"description": "混淆后的map文件的地址"
+				}
+			]
+		}
+	]
+}

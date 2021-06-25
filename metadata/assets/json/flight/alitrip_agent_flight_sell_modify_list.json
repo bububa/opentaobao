@@ -1,0 +1,104 @@
+{
+	"name": "alitrip.agent.flight.sell.modify.list",
+	"apiChineseName": "销售改签单列表",
+	"description": "销售改签单列表",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "ModifyListRequestDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "agent_ids",
+					"type": "Number[]",
+					"description": "店铺id"
+				},
+				{
+					"name": "end_apply_time",
+					"type": "Date",
+					"description": "申请结束时间"
+				},
+				{
+					"name": "begin_apply_time",
+					"type": "Date",
+					"description": "申请开始时间"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "改签单状态"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "123",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "T[]",
+					"description": "结果集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "apply_id",
+							"type": "String",
+							"description": "申请单号",
+							"required": true
+						},
+						{
+							"name": "domestic_intl",
+							"type": "Number",
+							"description": "国内国际标识",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "飞猪订单号",
+							"required": true
+						},
+						{
+							"name": "apply_time",
+							"type": "Date",
+							"description": "申请时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标识",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

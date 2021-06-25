@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.alsc.crm.marketing.encrypt",
+	"apiChineseName": "加密",
+	"description": "加密",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "String",
+			"description": "参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "String",
+					"description": "加密结果",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "异常码",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "异常信息",
+					"required": true
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "无",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

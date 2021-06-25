@@ -1,0 +1,50 @@
+{
+	"name": "alibaba.mj.mos.fund.cancelbill",
+	"apiChineseName": "取消付款单",
+	"description": "取消付款单",
+	"requestParams": [
+		{
+			"name": "cancel_bill_d_t_o",
+			"type": "CancelBillDto",
+			"description": "取消入参",
+			"subParams": [
+				{
+					"name": "cancel_comments",
+					"type": "String",
+					"description": "取消备注",
+					"required": true
+				},
+				{
+					"name": "settle_line_nos",
+					"type": "String[]",
+					"description": "结算行集合",
+					"required": true
+				},
+				{
+					"name": "cancel_type",
+					"type": "String",
+					"description": "取消类型",
+					"required": true
+				},
+				{
+					"name": "bill_no",
+					"type": "String",
+					"description": "付款单号",
+					"required": true
+				},
+				{
+					"name": "extend_params",
+					"type": "String",
+					"description": "备注"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "data"
+		}
+	]
+}

@@ -1,0 +1,207 @@
+{
+	"name": "alibaba.alsc.crm.recharge.qryrule",
+	"apiChineseName": "储值规则下行",
+	"description": "储值规则下行",
+	"requestParams": [
+		{
+			"name": "param_pull_recharge_rule_by_shop_req",
+			"type": "PullRechargeRuleByShopReq",
+			"description": "请求对象",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌id"
+				},
+				{
+					"name": "card_template_id",
+					"type": "String",
+					"description": "会员卡，礼品卡模板id，选填，不填则默认查询会员卡"
+				},
+				{
+					"name": "max_update_time",
+					"type": "Date",
+					"description": "上次更新时间戳"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌id,brand_id和out_brand_id不可同时为空"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店id,shop_id和out_shop_id不可同时为空"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "返回模型",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "RechargeRuleOpenInfo",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "card_type",
+							"type": "String",
+							"description": "卡类型：MEMBER-会员卡，GIFT-礼品卡",
+							"required": true
+						},
+						{
+							"name": "create_by",
+							"type": "String",
+							"description": "创建人",
+							"required": true
+						},
+						{
+							"name": "deduction_order",
+							"type": "String",
+							"description": "扣减顺序：PERCENT_DEDUCT-比例、REAL_BEFORE_GIFT_DEDUCT-先实储后赠送、GIFT_BEFORE_REAL_DEDUCT-先增储后实储",
+							"required": true
+						},
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "逻辑删除",
+							"required": true
+						},
+						{
+							"name": "full_gift_switch",
+							"type": "Boolean",
+							"description": "满赠开关：false-关，true-开，默认关闭",
+							"required": true
+						},
+						{
+							"name": "gift_type",
+							"type": "String",
+							"description": "满赠类型：CUSTOMIZED-按金额（默认），PROPERTIONAL-按百分比、",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "list_recharge_rule_detail_info_list",
+							"type": "RechargeRuleDetailOpenInfo[]",
+							"description": "规则明细列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "gift_point",
+									"type": "Number",
+									"description": "赠送积分",
+									"required": true
+								},
+								{
+									"name": "gift_value",
+									"type": "Number",
+									"description": "赠送金额",
+									"required": true
+								},
+								{
+									"name": "real_value",
+									"type": "Number",
+									"description": "储值金额",
+									"required": true
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "pay_no_pwd_credit",
+							"type": "Number",
+							"description": "免密额度:-1表示不限额，单位为分，默认200_00L",
+							"required": true
+						},
+						{
+							"name": "pay_no_pwd_switch",
+							"type": "Boolean",
+							"description": "免密开关:0-关闭（默认），1-开启",
+							"required": true
+						},
+						{
+							"name": "rule_id",
+							"type": "String",
+							"description": "规则id",
+							"required": true
+						},
+						{
+							"name": "rule_name",
+							"type": "String",
+							"description": "储值规则名称",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "门店id",
+							"required": true
+						},
+						{
+							"name": "update_by",
+							"type": "String",
+							"description": "修改人",
+							"required": true
+						},
+						{
+							"name": "out_shop_id",
+							"type": "String",
+							"description": "外部店铺ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

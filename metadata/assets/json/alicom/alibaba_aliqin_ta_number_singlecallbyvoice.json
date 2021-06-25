@@ -1,0 +1,63 @@
+{
+	"name": "alibaba.aliqin.ta.number.singlecallbyvoice",
+	"apiChineseName": "根据号码tts单呼",
+	"description": "根据号码语音单呼",
+	"requestParams": [
+		{
+			"name": "called_num",
+			"type": "String",
+			"description": "单呼号码",
+			"required": true
+		},
+		{
+			"name": "called_show_num",
+			"type": "String",
+			"description": "显示号码",
+			"required": true
+		},
+		{
+			"name": "voice_code",
+			"type": "String",
+			"description": "语音文件code",
+			"required": true
+		},
+		{
+			"name": "params",
+			"type": "Json",
+			"description": "上下文参数 示例:{\"extend\":\"回传参数\"} extend为扩展信息作为回传参数的key"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功，失败",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

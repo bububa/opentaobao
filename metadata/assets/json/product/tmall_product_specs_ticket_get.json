@@ -1,0 +1,62 @@
+{
+	"name": "tmall.product.specs.ticket.get",
+	"apiChineseName": "产品规格审核信息获取接口",
+	"description": "批量根据specId查询产品规格审核信息包括产品规格状态，申请人，拒绝原因等",
+	"requestParams": [
+		{
+			"name": "spec_ids",
+			"type": "String",
+			"description": "产品规格ID，多个用逗号分隔",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tickets",
+			"type": "Ticket []",
+			"description": "产品规格审核单信息",
+			"subParams": [
+				{
+					"name": "spec_id",
+					"type": "Number",
+					"description": "产品规格ID"
+				},
+				{
+					"name": "create_user_id",
+					"type": "Number",
+					"description": "创建人ID"
+				},
+				{
+					"name": "audit_seller_id",
+					"type": "Number",
+					"description": "如果产品规格，需要商家审核，为商家审核用户ID"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "审核原因"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "关于审核原因，更详细的说明"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "1, \"商家确认\"\u003cbr/\u003e2, \"商家拒绝\"\u003cbr/\u003e3, \"小二确认\"\u003cbr/\u003e4, \"小二拒绝\"\u003cbr/\u003e5, \"待商家处理\"\u003cbr/\u003e6, \"商家审核超时\"\u003cbr/\u003e7, \"待小二审核\"\u003cbr/\u003e9, \"品牌商确认\"\u003cbr/\u003e10, \"免审通过\"\u003cbr/\u003e14, \"免审拒绝\""
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "产品规格申请时间"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "产品规格审核单最后修改时间"
+				}
+			]
+		}
+	]
+}

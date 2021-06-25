@@ -1,0 +1,131 @@
+{
+	"name": "alibaba.mj.oc.writesaleslip",
+	"apiChineseName": "开票占库",
+	"description": "开票占库",
+	"requestParams": [
+		{
+			"name": "pos_sale_order",
+			"type": "PosSaleOrderDto",
+			"description": "开票占库入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "extend_params",
+					"type": "String",
+					"description": "扩展信息"
+				},
+				{
+					"name": "member_card_no",
+					"type": "String",
+					"description": "会员卡号"
+				},
+				{
+					"name": "member_mobile",
+					"type": "String",
+					"description": "会员电话"
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作员"
+				},
+				{
+					"name": "sale_items",
+					"type": "PosOrderSaleItemDto[]",
+					"description": "商品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "discount_amount",
+							"type": "Number",
+							"description": "折扣金额",
+							"required": true
+						},
+						{
+							"name": "extend_params",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "goods_id",
+							"type": "String",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "goods_line_no",
+							"type": "Number",
+							"description": "开票行号",
+							"required": true
+						},
+						{
+							"name": "goods_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "item_type",
+							"type": "String",
+							"description": "商品类型：  N：老单品；Y：喵货；C：云单品；M：零售+      *      ?? 非单品是啥？",
+							"required": true
+						},
+						{
+							"name": "mall_no",
+							"type": "String",
+							"description": "门店号",
+							"required": true
+						},
+						{
+							"name": "ori_price",
+							"type": "Number",
+							"description": "原始价格",
+							"required": true
+						},
+						{
+							"name": "pay_amount",
+							"type": "Number",
+							"description": "应付金额",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "商品数量",
+							"required": true
+						},
+						{
+							"name": "sale_ticket_no",
+							"type": "String",
+							"description": "开票单号",
+							"required": true
+						},
+						{
+							"name": "settle_code",
+							"type": "String",
+							"description": "结算码"
+						},
+						{
+							"name": "shop_no",
+							"type": "String",
+							"description": "专柜号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sale_ticket_no",
+					"type": "String",
+					"description": "开票单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

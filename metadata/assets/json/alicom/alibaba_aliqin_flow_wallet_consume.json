@@ -1,0 +1,36 @@
+{
+	"name": "alibaba.aliqin.flow.wallet.consume",
+	"apiChineseName": "流量扣减",
+	"description": "流量钱包流量扣减接口",
+	"requestParams": [
+		{
+			"name": "flow",
+			"type": "Number",
+			"description": "扣减流量值",
+			"required": true
+		},
+		{
+			"name": "serial_no",
+			"type": "String",
+			"description": "扣减流水号",
+			"required": true
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "扣减原因"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "value",
+			"type": "String",
+			"description": "true为成功"
+		}
+	]
+}

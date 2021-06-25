@@ -1,0 +1,80 @@
+{
+	"name": "tmall.servicecenter.workcard.assignworker",
+	"apiChineseName": "服务商分派工人",
+	"description": "服务商调用该接口分派工人给具体的工单",
+	"requestParams": [
+		{
+			"name": "target_worker_id",
+			"type": "Number",
+			"description": "需要指派的工人id"
+		},
+		{
+			"name": "target_worker_mobile",
+			"type": "String",
+			"description": "需要指派的工人手机"
+		},
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "需要派工人的工单id"
+		},
+		{
+			"name": "target_worker_name",
+			"type": "String",
+			"description": "需要指派的工人姓名"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "核销单外部id"
+		},
+		{
+			"name": "stop_order_type_check_reason",
+			"type": "Number",
+			"description": "不检查订单类型的原因ID由运营提供，服务商不可自由传"
+		},
+		{
+			"name": "fulfil_task_id",
+			"type": "Number",
+			"description": "核销单id"
+		},
+		{
+			"name": "ext_json",
+			"type": "String",
+			"description": "扩展信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "-",
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "用于对外展示的信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息代码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "系统级错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

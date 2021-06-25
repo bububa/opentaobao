@@ -1,0 +1,71 @@
+{
+	"name": "taobao.rds.db.get",
+	"apiChineseName": "查询rds下的数据库",
+	"description": "查询rds实例下的数据库",
+	"requestParams": [
+		{
+			"name": "instance_name",
+			"type": "String",
+			"description": "rds的实例名",
+			"required": true,
+			"maxLength": 30
+		},
+		{
+			"name": "db_status",
+			"type": "Number",
+			"description": "数据库状态，默认值1",
+			"maxLength": 1,
+			"maxValue": 3,
+			"minValue": 0
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rds_db_infos",
+			"type": "RdsDbInfo []",
+			"description": "数据库查询返回数据结构",
+			"subParams": [
+				{
+					"name": "max_account",
+					"type": "String",
+					"description": "最大帐号数，1个数据库最多可以创建的账户数目"
+				},
+				{
+					"name": "db_status",
+					"type": "String",
+					"description": "数据库状态 0：创建中 ；1：激活；3：正在删除"
+				},
+				{
+					"name": "charset",
+					"type": "String",
+					"description": "数据库编码"
+				},
+				{
+					"name": "db_name",
+					"type": "String",
+					"description": "数据库名称"
+				},
+				{
+					"name": "instance_name",
+					"type": "String",
+					"description": "rds实例名"
+				},
+				{
+					"name": "instance_type",
+					"type": "String",
+					"description": "rds实例类型,s:共享型，x:专享型"
+				},
+				{
+					"name": "db_type",
+					"type": "String",
+					"description": "数据库类型，mysql或者mssql"
+				},
+				{
+					"name": "comment",
+					"type": "String",
+					"description": "备注"
+				}
+			]
+		}
+	]
+}

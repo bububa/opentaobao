@@ -1,0 +1,226 @@
+{
+	"name": "taobao.alihealth.drug.store.get",
+	"apiChineseName": "根据店铺id获取店铺详情",
+	"description": "根据店铺id获取店铺详情",
+	"requestParams": [
+		{
+			"name": "shop_id",
+			"type": "Number",
+			"description": "店铺ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "StoreDetailDto",
+			"description": "model",
+			"subParams": [
+				{
+					"name": "tags",
+					"type": "Tags[]",
+					"description": "tags",
+					"required": true,
+					"subParams": [
+						{
+							"name": "type",
+							"type": "String",
+							"description": "type",
+							"required": true
+						},
+						{
+							"name": "pic_path",
+							"type": "String",
+							"description": "picPath",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "desc",
+							"required": true
+						},
+						{
+							"name": "short_desc",
+							"type": "String",
+							"description": "shortDesc",
+							"required": true
+						},
+						{
+							"name": "man_fan_type",
+							"type": "String",
+							"description": "manFanType",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "store_detail",
+					"type": "StoreDto",
+					"description": "storeDetail",
+					"required": true,
+					"subParams": [
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "shopId",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "storeId",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "storeName",
+							"required": true
+						},
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "picURL",
+							"required": true
+						},
+						{
+							"name": "business_status",
+							"type": "String",
+							"description": "businessStatus",
+							"required": true
+						},
+						{
+							"name": "order_count",
+							"type": "Number",
+							"description": "orderCount",
+							"required": true
+						},
+						{
+							"name": "order_count_desc",
+							"type": "String",
+							"description": "orderCountDesc",
+							"required": true
+						},
+						{
+							"name": "minimum_account",
+							"type": "Number",
+							"description": "minimumAccount",
+							"required": true
+						},
+						{
+							"name": "delivery_account",
+							"type": "Number",
+							"description": "deliveryAccount",
+							"required": true
+						},
+						{
+							"name": "notice",
+							"type": "String",
+							"description": "notice",
+							"required": true
+						},
+						{
+							"name": "delivery_time",
+							"type": "String",
+							"description": "deliveryTime",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "address",
+							"required": true
+						},
+						{
+							"name": "tele",
+							"type": "String",
+							"description": "tele",
+							"required": true
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "latitude",
+							"required": true
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "longitude",
+							"required": true
+						},
+						{
+							"name": "earliest_time_of_delivery",
+							"type": "String",
+							"description": "earliestTimeOfDelivery",
+							"required": true
+						},
+						{
+							"name": "punctuality_rate",
+							"type": "String",
+							"description": "punctualityRate",
+							"required": true
+						},
+						{
+							"name": "dpavgscore",
+							"type": "String",
+							"description": "dpavgscore",
+							"required": true
+						},
+						{
+							"name": "areas",
+							"type": "String",
+							"description": "areas",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "sellerNick",
+							"required": true
+						},
+						{
+							"name": "delivery_type",
+							"type": "Number",
+							"description": "deliveryType",
+							"required": true
+						},
+						{
+							"name": "delivery_type_desc",
+							"type": "String",
+							"description": "deliveryTypeDesc",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "cats",
+					"type": "Cat[]",
+					"description": "cat",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cat_id",
+							"type": "String",
+							"description": "catId",
+							"required": true
+						},
+						{
+							"name": "cat_name",
+							"type": "String",
+							"description": "catName",
+							"required": true
+						},
+						{
+							"name": "item_count",
+							"type": "Number",
+							"description": "itemCount",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

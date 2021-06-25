@@ -1,0 +1,413 @@
+{
+	"name": "alibaba.tianji.supplier.order.query",
+	"apiChineseName": "查询供应商订单",
+	"description": "查询供应商订单",
+	"requestParams": [
+		{
+			"name": "param_supplier_top_query_model",
+			"type": "SupplierTopQueryModel",
+			"description": "订单查询入参",
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "业务类型:7-合约及号卡分销"
+				},
+				{
+					"name": "distributor_name",
+					"type": "String",
+					"description": "分销商名称"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "订单结束时间"
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "淘宝交易订单号"
+				},
+				{
+					"name": "order_status_list",
+					"type": "Number[]",
+					"description": "订单状态列表:1-未订购,2-订购中,3-订购中,4-订购失败,5-订购成功,6-订购取消"
+				},
+				{
+					"name": "page_num",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页数量"
+				},
+				{
+					"name": "phone_no",
+					"type": "String",
+					"description": "用户账号"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "订单开始时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model_list",
+			"type": "DistributionOrderInfo []",
+			"description": "分销订单信息",
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "业务类型",
+					"required": true
+				},
+				{
+					"name": "buyer_message",
+					"type": "String",
+					"description": "买家留言",
+					"required": true
+				},
+				{
+					"name": "buyer_name",
+					"type": "String",
+					"description": "买家名称",
+					"required": true
+				},
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "城市",
+					"required": true
+				},
+				{
+					"name": "distributor_nick",
+					"type": "String",
+					"description": "分销商用户昵称",
+					"required": true
+				},
+				{
+					"name": "express_code",
+					"type": "String",
+					"description": "快递公司编码",
+					"required": true
+				},
+				{
+					"name": "express_name",
+					"type": "String",
+					"description": "快递公司名称",
+					"required": true
+				},
+				{
+					"name": "express_number",
+					"type": "String",
+					"description": "快递单号",
+					"required": true
+				},
+				{
+					"name": "id_card_info",
+					"type": "IdCardInfo",
+					"description": "身份证件信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "card_number",
+							"type": "String",
+							"description": "证件号码",
+							"required": true
+						},
+						{
+							"name": "card_type",
+							"type": "String",
+							"description": "证件类型",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "证件名称",
+							"required": true
+						},
+						{
+							"name": "back_cert_pic",
+							"type": "String",
+							"description": "身份证反面照",
+							"required": true
+						},
+						{
+							"name": "face_cert_pic",
+							"type": "String",
+							"description": "身份证正面照",
+							"required": true
+						},
+						{
+							"name": "hold_cert_pic",
+							"type": "String",
+							"description": "手持证件照",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "isp_name",
+					"type": "String",
+					"description": "运营商名称",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品编号",
+					"required": true
+				},
+				{
+					"name": "item_serial_no",
+					"type": "String",
+					"description": "商品序列号",
+					"required": true
+				},
+				{
+					"name": "item_title",
+					"type": "String",
+					"description": "商品标题",
+					"required": true
+				},
+				{
+					"name": "logistics_flag",
+					"type": "Number",
+					"description": "1-无需物流，2-供应商发货，3-分销商发货",
+					"required": true
+				},
+				{
+					"name": "logistics_info",
+					"type": "DistributionOrderLogisticsInfo",
+					"description": "物流信息,收货人信息,姓名，电话，地址",
+					"required": true,
+					"subParams": [
+						{
+							"name": "area",
+							"type": "String",
+							"description": "区",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "市",
+							"required": true
+						},
+						{
+							"name": "country",
+							"type": "String",
+							"description": "国家",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省",
+							"required": true
+						},
+						{
+							"name": "raw_address",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "乡/镇/街道",
+							"required": true
+						},
+						{
+							"name": "consignee_name",
+							"type": "String",
+							"description": "收货人名称",
+							"required": true
+						},
+						{
+							"name": "contact_phone",
+							"type": "String",
+							"description": "收货人联系电话",
+							"required": true
+						},
+						{
+							"name": "delivery_address",
+							"type": "String",
+							"description": "收货人地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "logistics_status",
+					"type": "Number",
+					"description": "1-未发货，2-已发货",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "订购状态:NOT_ORDER-未订购，ORDER_AUDIT-订购中(无订购接口，提交给供应商，线下受理中)，ON_ORDER-订购中(有订购接口，线上受理中),SUCCESS-订购成功，FAILURE-订购失败,CANCEL-订购取消",
+					"required": true
+				},
+				{
+					"name": "out_package_id",
+					"type": "String",
+					"description": "运营商合约编号",
+					"required": true
+				},
+				{
+					"name": "phone_no",
+					"type": "String",
+					"description": "手机号码",
+					"required": true
+				},
+				{
+					"name": "plan_group_id",
+					"type": "Number",
+					"description": "合约编号",
+					"required": true
+				},
+				{
+					"name": "plan_group_name",
+					"type": "String",
+					"description": "合约名称",
+					"required": true
+				},
+				{
+					"name": "plan_id",
+					"type": "Number",
+					"description": "套餐编号",
+					"required": true
+				},
+				{
+					"name": "plan_info",
+					"type": "String",
+					"description": "套餐信息",
+					"required": true
+				},
+				{
+					"name": "product_serial_no",
+					"type": "String",
+					"description": "发货的商品编号，如ICCID等",
+					"required": true
+				},
+				{
+					"name": "province_name",
+					"type": "String",
+					"description": "省份",
+					"required": true
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "订购失败原因",
+					"required": true
+				},
+				{
+					"name": "remarks",
+					"type": "String",
+					"description": "备注",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "订单状态",
+					"required": true
+				},
+				{
+					"name": "supplier_name",
+					"type": "String",
+					"description": "供应商用户昵称",
+					"required": true
+				},
+				{
+					"name": "tb_order_create_time",
+					"type": "Date",
+					"description": "淘宝交易订单创建时间",
+					"required": true
+				},
+				{
+					"name": "tb_order_no",
+					"type": "String",
+					"description": "淘宝交易订单号",
+					"required": true
+				},
+				{
+					"name": "tb_order_pay_time",
+					"type": "Date",
+					"description": "淘宝交易订单创建时间",
+					"required": true
+				},
+				{
+					"name": "tb_order_price",
+					"type": "Number",
+					"description": "订单价格",
+					"required": true
+				},
+				{
+					"name": "out_order_no",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "pay_order_no",
+					"type": "String",
+					"description": "支付宝交易流水号",
+					"required": true
+				},
+				{
+					"name": "buy_quantity",
+					"type": "Number",
+					"description": "购买数量",
+					"required": true
+				},
+				{
+					"name": "plan_name",
+					"type": "String",
+					"description": "套餐名称",
+					"required": true
+				},
+				{
+					"name": "phone_no_min_consume",
+					"type": "Number",
+					"description": "号码最低消费",
+					"required": true
+				},
+				{
+					"name": "ledger_amount",
+					"type": "Number",
+					"description": "ledgerAmount",
+					"required": true
+				},
+				{
+					"name": "item_props",
+					"type": "String",
+					"description": "商品属性",
+					"required": true
+				},
+				{
+					"name": "biometric_seq",
+					"type": "String",
+					"description": "认证的活体ID序列",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "查询总数"
+		}
+	]
+}

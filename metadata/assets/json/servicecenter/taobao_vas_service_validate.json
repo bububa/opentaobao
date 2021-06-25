@@ -1,0 +1,26 @@
+{
+	"name": "taobao.vas.service.validate",
+	"apiChineseName": "增值服务订购服务验证",
+	"description": "增值服务订购服务验证",
+	"requestParams": [
+		{
+			"name": "serv_code",
+			"type": "String",
+			"description": "服务编码",
+			"required": true
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "用户昵称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "none 没有订购,open 已经开通服务,freeze 服务已经冻结,close 服务已经关闭,error 系统错误"
+		}
+	]
+}

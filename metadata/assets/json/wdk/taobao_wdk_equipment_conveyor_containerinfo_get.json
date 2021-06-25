@@ -1,0 +1,66 @@
+{
+	"name": "taobao.wdk.equipment.conveyor.containerinfo.get",
+	"apiChineseName": "获取批次或波次中容器的信息",
+	"description": "获取批次或波次中容器的信息",
+	"requestParams": [
+		{
+			"name": "warehouse_id",
+			"type": "Number",
+			"description": "仓库id"
+		},
+		{
+			"name": "container_code",
+			"type": "String",
+			"description": "容器号"
+		},
+		{
+			"name": "batch_code",
+			"type": "String",
+			"description": "批次号，可以为空串"
+		},
+		{
+			"name": "wave_code",
+			"type": "String",
+			"description": "波次号，可以为空串"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "String",
+					"description": "result",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "totel_num",
+					"type": "Number",
+					"description": "totelNum",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

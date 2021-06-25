@@ -1,0 +1,87 @@
+{
+	"name": "alitrip.travel.crsdriver.arrange",
+	"apiChineseName": "CRS接送机商家派司机接口",
+	"description": "提供给CRS接送机商家派司机的API",
+	"requestParams": [
+		{
+			"name": "crs_driver_arrange_param",
+			"type": "CrsDriverArrangeParam",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "city_name",
+					"type": "String",
+					"description": "城市",
+					"required": true
+				},
+				{
+					"name": "is_change_driver",
+					"type": "Boolean",
+					"description": "是否改派司机",
+					"required": true
+				},
+				{
+					"name": "car_type_name",
+					"type": "String",
+					"description": "车型名称",
+					"required": true
+				},
+				{
+					"name": "driver_name",
+					"type": "String",
+					"description": "司机名称",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "飞猪订单id",
+					"required": true
+				},
+				{
+					"name": "driver_phone_num",
+					"type": "String",
+					"description": "司机手机号"
+				},
+				{
+					"name": "driver_id_card",
+					"type": "String",
+					"description": "司机身份证号"
+				},
+				{
+					"name": "phone_area_code",
+					"type": "String",
+					"description": "电话区号"
+				},
+				{
+					"name": "car_type",
+					"type": "String",
+					"description": "车型号"
+				},
+				{
+					"name": "car_number",
+					"type": "String",
+					"description": "车牌号"
+				},
+				{
+					"name": "car_brand",
+					"type": "String",
+					"description": "车辆品牌"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回结果message"
+		},
+		{
+			"name": "message_code",
+			"type": "Number",
+			"description": "返回结果code"
+		}
+	]
+}

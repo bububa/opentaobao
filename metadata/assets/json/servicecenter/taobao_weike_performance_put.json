@@ -1,0 +1,123 @@
+{
+	"name": "taobao.weike.performance.put",
+	"apiChineseName": "提交客服绩效接口",
+	"description": "提交客服绩效接口",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "订单id"
+		},
+		{
+			"name": "per_info_wrapper",
+			"type": "PerformanceInfoWrapper",
+			"description": "绩效数据封装类",
+			"subParams": [
+				{
+					"name": "has_bonus_config",
+					"type": "Boolean",
+					"description": "是否有提成配置"
+				},
+				{
+					"name": "performance_info_list",
+					"type": "PerformanceInfoDTO[]",
+					"description": "绩效数据列表",
+					"subParams": [
+						{
+							"name": "first_response_time",
+							"type": "String",
+							"description": "首次相应时间"
+						},
+						{
+							"name": "avg_last_online_time",
+							"type": "String",
+							"description": "平均最后在线时间"
+						},
+						{
+							"name": "avg_online_time_per_day",
+							"type": "String",
+							"description": "平均日在线时长"
+						},
+						{
+							"name": "conversion_rate_of_ser",
+							"type": "String",
+							"description": "客服转化率"
+						},
+						{
+							"name": "sales_quantity",
+							"type": "String",
+							"description": "销售量"
+						},
+						{
+							"name": "sales_amount",
+							"type": "String",
+							"description": "销售额"
+						},
+						{
+							"name": "total_online_time",
+							"type": "String",
+							"description": "在线总时长"
+						},
+						{
+							"name": "online_days",
+							"type": "String",
+							"description": "上班天数"
+						},
+						{
+							"name": "unit_price_of_ser",
+							"type": "String",
+							"description": "客服客单价"
+						},
+						{
+							"name": "response_rate",
+							"type": "String",
+							"description": "回复率"
+						},
+						{
+							"name": "sub_account_name",
+							"type": "String",
+							"description": "子账号名字"
+						},
+						{
+							"name": "avg_online_time",
+							"type": "String",
+							"description": "平均上线时间"
+						},
+						{
+							"name": "sales_bonus",
+							"type": "String",
+							"description": "销售提成"
+						},
+						{
+							"name": "avg_response_time",
+							"type": "String",
+							"description": "平均响应时间"
+						}
+					]
+				},
+				{
+					"name": "has_authorize",
+					"type": "Boolean",
+					"description": "是否有授权"
+				},
+				{
+					"name": "statistics_end_time",
+					"type": "String",
+					"description": "统计结束时间"
+				},
+				{
+					"name": "statistics_start_time",
+					"type": "String",
+					"description": "统计开始时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "返回结果"
+		}
+	]
+}

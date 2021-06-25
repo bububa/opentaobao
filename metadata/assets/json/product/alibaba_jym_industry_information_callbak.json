@@ -1,0 +1,42 @@
+{
+	"name": "alibaba.jym.industry.information.callbak",
+	"apiChineseName": "VMOS回调行业信息系统",
+	"description": "VMOS回调交易猫行业信息系统",
+	"requestParams": [
+		{
+			"name": "task_id",
+			"type": "String",
+			"description": "任务ID",
+			"required": true
+		},
+		{
+			"name": "biz_id",
+			"type": "String",
+			"description": "幂等ID",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "内容"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "state_code",
+			"type": "String",
+			"description": "状态码"
+		},
+		{
+			"name": "extra_err_msg",
+			"type": "String",
+			"description": "扩展错误信息"
+		}
+	]
+}

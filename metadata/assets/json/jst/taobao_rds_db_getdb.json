@@ -1,0 +1,57 @@
+{
+	"name": "taobao.rds.db.getdb",
+	"apiChineseName": "rds获取RDS的DB",
+	"description": "rds获取RDS的DB",
+	"requestParams": [
+		{
+			"name": "account_name",
+			"type": "String",
+			"description": "账户名"
+		},
+		{
+			"name": "instance_name",
+			"type": "String",
+			"description": "实例名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Json[]",
+					"description": "results",
+					"required": true
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "totalResults",
+					"required": true
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "exception",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,373 @@
+{
+	"name": "taobao.qimen.items.synchronize",
+	"apiChineseName": "商品同步接口 (批量)",
+	"description": "ERP调用奇门的接口,批量同步商品信息给WMS",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "ItemsSynchronizeRequest",
+			"subParams": [
+				{
+					"name": "actionType",
+					"type": "String",
+					"description": "操作类型(两种类型：add|update)",
+					"required": true
+				},
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码(统仓统配等无需ERP指定仓储编码的情况填OTHER)",
+					"required": true
+				},
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码",
+					"required": true
+				},
+				{
+					"name": "items",
+					"type": "Item[]",
+					"description": "同步的商品信息",
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品编码(该字段是WMS分配的商品编号;WMS如果分配了商品编码;则后续的商品操作都需要传该字段;如果WMS不使用 ;WMS可 以返回itemId=itemCode的值)"
+						},
+						{
+							"name": "goodsCode",
+							"type": "String",
+							"description": "货号"
+						},
+						{
+							"name": "itemName",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "shortName",
+							"type": "String",
+							"description": "商品简称"
+						},
+						{
+							"name": "englishName",
+							"type": "String",
+							"description": "英文名"
+						},
+						{
+							"name": "barCode",
+							"type": "String",
+							"description": "条形码(可多个;用分号;隔开)",
+							"required": true
+						},
+						{
+							"name": "skuProperty",
+							"type": "String",
+							"description": "商品属性(如红色;XXL)"
+						},
+						{
+							"name": "stockUnit",
+							"type": "String",
+							"description": "商品计量单位"
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "长(单位：厘米)"
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "宽(单位：厘米)"
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "高(单位：厘米)"
+						},
+						{
+							"name": "volume",
+							"type": "String",
+							"description": "体积(单位：升)"
+						},
+						{
+							"name": "grossWeight",
+							"type": "String",
+							"description": "毛重(单位：千克)"
+						},
+						{
+							"name": "netWeight",
+							"type": "String",
+							"description": "净重(单位：千克)"
+						},
+						{
+							"name": "color",
+							"type": "String",
+							"description": "颜色"
+						},
+						{
+							"name": "size",
+							"type": "String",
+							"description": "尺寸"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "渠道中的商品标题"
+						},
+						{
+							"name": "categoryId",
+							"type": "String",
+							"description": "商品类别ID"
+						},
+						{
+							"name": "categoryName",
+							"type": "String",
+							"description": "商品类别名称"
+						},
+						{
+							"name": "pricingCategory",
+							"type": "String",
+							"description": "计价货类"
+						},
+						{
+							"name": "safetyStock",
+							"type": "Number",
+							"description": "安全库存"
+						},
+						{
+							"name": "itemType",
+							"type": "String",
+							"description": "商品类型(ZC=正常商品;FX=分销商品;ZH=组合商品;ZP=赠品;BC=包材;HC=耗材;FL=辅料;XN=虚拟品;FS=附属品;CC=残次品;OTHER=其它;只传英文编码)",
+							"required": true
+						},
+						{
+							"name": "tagPrice",
+							"type": "String",
+							"description": "吊牌价"
+						},
+						{
+							"name": "retailPrice",
+							"type": "String",
+							"description": "零售价"
+						},
+						{
+							"name": "costPrice",
+							"type": "String",
+							"description": "成本价"
+						},
+						{
+							"name": "purchasePrice",
+							"type": "String",
+							"description": "采购价"
+						},
+						{
+							"name": "seasonCode",
+							"type": "String",
+							"description": "季节编码"
+						},
+						{
+							"name": "seasonName",
+							"type": "String",
+							"description": "季节名称"
+						},
+						{
+							"name": "brandCode",
+							"type": "String",
+							"description": "品牌代码"
+						},
+						{
+							"name": "brandName",
+							"type": "String",
+							"description": "品牌名称"
+						},
+						{
+							"name": "isSNMgmt",
+							"type": "String",
+							"description": "是否需要串号管理(Y/N ;默认为N)"
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "isShelfLifeMgmt",
+							"type": "String",
+							"description": "是否需要保质期管理(Y/N ;默认为N)"
+						},
+						{
+							"name": "shelfLife",
+							"type": "Number",
+							"description": "保质期(单位：小时)"
+						},
+						{
+							"name": "rejectLifecycle",
+							"type": "Number",
+							"description": "保质期禁收天数"
+						},
+						{
+							"name": "lockupLifecycle",
+							"type": "Number",
+							"description": "保质期禁售天数"
+						},
+						{
+							"name": "adventLifecycle",
+							"type": "Number",
+							"description": "保质期临期预警天数"
+						},
+						{
+							"name": "isBatchMgmt",
+							"type": "String",
+							"description": "是否需要批次管理(Y/N ;默认为N)"
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次代码"
+						},
+						{
+							"name": "batchRemark",
+							"type": "String",
+							"description": "批次备注"
+						},
+						{
+							"name": "packCode",
+							"type": "String",
+							"description": "包装代码"
+						},
+						{
+							"name": "pcs",
+							"type": "String",
+							"description": "箱规"
+						},
+						{
+							"name": "originAddress",
+							"type": "String",
+							"description": "商品的原产地"
+						},
+						{
+							"name": "approvalNumber",
+							"type": "String",
+							"description": "批准文号"
+						},
+						{
+							"name": "isFragile",
+							"type": "String",
+							"description": "是否易碎品(Y/N ;默认为N)"
+						},
+						{
+							"name": "isHazardous",
+							"type": "String",
+							"description": "是否危险品(Y/N ;默认为N)"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "createTime",
+							"type": "String",
+							"description": "创建时间(YYYY-MM-DD HH:MM:SS)"
+						},
+						{
+							"name": "updateTime",
+							"type": "String",
+							"description": "更新时间(YYYY-MM-DD HH:MM:SS)"
+						},
+						{
+							"name": "isValid",
+							"type": "String",
+							"description": "是否有效(Y/N ;默认为N)"
+						},
+						{
+							"name": "isSku",
+							"type": "String",
+							"description": "是否sku(Y/N ;默认为N)"
+						},
+						{
+							"name": "packageMaterial",
+							"type": "String",
+							"description": "商品包装材料类型"
+						},
+						{
+							"name": "logisticsType",
+							"type": "String",
+							"description": "销售配送方式（0=自配|1=菜鸟）"
+						},
+						{
+							"name": "isLiquid",
+							"type": "String",
+							"description": "是否液体, Y/N,  (默认为N)"
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "ItemsSynchronizeResponse",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "items",
+					"type": "BatchItemSynItem[]",
+					"description": "商品同步批量接口中单商品信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "没有同步成功的商品的编码",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "出错信息",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+	"name": "taobao.vmarket.eticket.qrcode.upload",
+	"apiChineseName": "码商二维码图片上传",
+	"description": "电子凭证的码商可以通过这个接口，上传他们发送的二维码图片",
+	"requestParams": [
+		{
+			"name": "code_merchant_id",
+			"type": "Number",
+			"description": "码商ID",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "img_bytes",
+			"type": "byte[]",
+			"description": "上传的图片byte[]  小于300K，图片尺寸400*400以内",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "1:成功  其它为失败"
+		},
+		{
+			"name": "img_filename",
+			"type": "String",
+			"description": "图片文件名称"
+		}
+	]
+}

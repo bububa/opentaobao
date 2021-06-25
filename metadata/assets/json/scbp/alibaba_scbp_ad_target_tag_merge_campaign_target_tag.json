@@ -1,0 +1,45 @@
+{
+	"name": "alibaba.scbp.ad.target.tag.merge.campaign.target.tag",
+	"apiChineseName": "标签增删改",
+	"description": "标签增删改",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "标签数据，json格式。 最外层key：人群标签crowd/地域标签region、priceMode，第二层key: 增add、删del、改mod，第三层key：optionValue、bidRate、tagId  eg: 删除：{\"crowd\":{\"del\":[{\"tagId\":3595769030}]}}   修改：{\"crowd\":{\"mod\":[{\"optionValue\":\"high_potential_order_user\",\"bidRate\":\"151\"}]}} 增加：{\"crowd\":{\"add\":[{\"optionValue\":\"user_area_CA\",\"bidRate\":\"133\"}]}}",
+			"required": true
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "返回值"
+		}
+	]
+}

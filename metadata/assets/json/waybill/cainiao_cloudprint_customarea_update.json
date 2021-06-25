@@ -1,0 +1,86 @@
+{
+	"name": "cainiao.cloudprint.customarea.update",
+	"apiChineseName": "自定义区内容更新",
+	"description": "自定义区内容更新",
+	"requestParams": [
+		{
+			"name": "custom_area_id",
+			"type": "Number",
+			"description": "自定义区id（不可修改）",
+			"required": true
+		},
+		{
+			"name": "custom_area_name",
+			"type": "String",
+			"description": "自定义区名称（可修改）",
+			"required": true
+		},
+		{
+			"name": "custom_area_content",
+			"type": "String",
+			"description": "自定义区内容（可修改）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "CustomAreaResult",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "custom_area_id",
+							"type": "Number",
+							"description": "customAreaId",
+							"required": true
+						},
+						{
+							"name": "custom_area_url",
+							"type": "String",
+							"description": "customAreaUrl",
+							"required": true
+						},
+						{
+							"name": "keys",
+							"type": "KeyResult[]",
+							"description": "keys",
+							"required": true,
+							"subParams": [
+								{
+									"name": "key_name",
+									"type": "String",
+									"description": "keyName",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,210 @@
+{
+	"name": "taobao.bus.numbers.update",
+	"apiChineseName": "汽车票车次更新服务",
+	"description": "用于汽车票车次信息的新增、更新和逻辑删除",
+	"requestParams": [
+		{
+			"name": "param_top_bus_number_update_r_q",
+			"type": "TopBusNumberUpdateRq",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "numbers",
+					"type": "BusNumberDto[]",
+					"description": "车次列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "agent_from_city_id",
+							"type": "String",
+							"description": "始发城市ID",
+							"required": true
+						},
+						{
+							"name": "agent_from_station_id",
+							"type": "String",
+							"description": "始发车站ID",
+							"required": true
+						},
+						{
+							"name": "arrive_time",
+							"type": "String",
+							"description": "到达时间（格式：yyyy-MM-dd HH:mm）"
+						},
+						{
+							"name": "attribute",
+							"type": "String",
+							"description": "其他非格式化属性合并成一个json格式字符串，对接时明确约定"
+						},
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "业务类型（0:普通汽车票；1:机场巴士；2:景区巴士，默认为0）",
+							"required": true
+						},
+						{
+							"name": "book_limit_time",
+							"type": "Number",
+							"description": "发车前多少分钟停止售票(单位：分钟)"
+						},
+						{
+							"name": "bus_number",
+							"type": "String",
+							"description": "客车车次",
+							"required": true
+						},
+						{
+							"name": "bus_type",
+							"type": "String",
+							"description": "客车车型"
+						},
+						{
+							"name": "depart_time",
+							"type": "String",
+							"description": "出发时间（格式：yyyy-MM-dd HH:mm）",
+							"required": true
+						},
+						{
+							"name": "destination_name",
+							"type": "String",
+							"description": "目的地名称",
+							"required": true
+						},
+						{
+							"name": "distance",
+							"type": "Number",
+							"description": "里程(单位：km)"
+						},
+						{
+							"name": "extra_schedule",
+							"type": "Number",
+							"description": "是否加班车（1是，0否）",
+							"required": true
+						},
+						{
+							"name": "from_city_name",
+							"type": "String",
+							"description": "始发城市名",
+							"required": true
+						},
+						{
+							"name": "from_station_name",
+							"type": "String",
+							"description": "始发车站名",
+							"required": true
+						},
+						{
+							"name": "full_price",
+							"type": "Number",
+							"description": "全票价,单位分",
+							"required": true
+						},
+						{
+							"name": "half_price",
+							"type": "Number",
+							"description": "半票价，单位分"
+						},
+						{
+							"name": "is_refund",
+							"type": "Number",
+							"description": "是否可退票（1是，0否）",
+							"required": true
+						},
+						{
+							"name": "last_schedule",
+							"type": "String",
+							"description": "最晚发车时间（格式：HH:mm）"
+						},
+						{
+							"name": "remain_seats",
+							"type": "Number",
+							"description": "余票数",
+							"required": true
+						},
+						{
+							"name": "run_time",
+							"type": "Number",
+							"description": "运行时长(单位：分钟)"
+						},
+						{
+							"name": "schedule_id",
+							"type": "String",
+							"description": "车次ID，需保持唯一",
+							"required": true
+						},
+						{
+							"name": "service_price",
+							"type": "Number",
+							"description": "服务费，单位分"
+						},
+						{
+							"name": "shift_type",
+							"type": "Number",
+							"description": "班次类型（0固定班，1流水班）",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "车次状态（1可售；0停售）",
+							"required": true
+						},
+						{
+							"name": "ticket_wicket",
+							"type": "String",
+							"description": "检票口"
+						},
+						{
+							"name": "to_city_name",
+							"type": "String",
+							"description": "目的地城市"
+						},
+						{
+							"name": "to_province_name",
+							"type": "String",
+							"description": "目的地省份"
+						},
+						{
+							"name": "to_station_name",
+							"type": "String",
+							"description": "目的地所属车站"
+						},
+						{
+							"name": "total_seats",
+							"type": "Number",
+							"description": "总座位数"
+						},
+						{
+							"name": "via_station",
+							"type": "String",
+							"description": "途经站"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "succ_count",
+			"type": "Number",
+			"description": "成功数量"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

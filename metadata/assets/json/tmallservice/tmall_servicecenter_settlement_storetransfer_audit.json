@@ -1,0 +1,45 @@
+{
+	"name": "tmall.servicecenter.settlement.storetransfer.audit",
+	"apiChineseName": "新康众审批门店分账",
+	"description": "新康众审批门店分账",
+	"requestParams": [
+		{
+			"name": "audit_pass",
+			"type": "Boolean",
+			"description": "审批通过"
+		},
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "分账审批通知结果",
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "消息",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否处理成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

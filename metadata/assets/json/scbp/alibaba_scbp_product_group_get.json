@@ -1,0 +1,36 @@
+{
+	"name": "alibaba.scbp.product.group.get",
+	"apiChineseName": "查询指定产品分组的下一层子分组",
+	"description": "查询指定产品分组的下一层子分组",
+	"requestParams": [
+		{
+			"name": "group_id",
+			"type": "String",
+			"description": "产品分组标识，null表示查询第一层分组"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "roduct_group_list",
+			"type": "TopProductGroupDto []",
+			"description": "下一层分组列表",
+			"subParams": [
+				{
+					"name": "group_id",
+					"type": "String",
+					"description": "产品分组标识"
+				},
+				{
+					"name": "group_name",
+					"type": "String",
+					"description": "产品分组名称"
+				},
+				{
+					"name": "leaf",
+					"type": "Boolean",
+					"description": "是否是叶子分组，即没有子分组"
+				}
+			]
+		}
+	]
+}

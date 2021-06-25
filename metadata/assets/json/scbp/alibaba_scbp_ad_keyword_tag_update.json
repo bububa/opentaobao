@@ -1,0 +1,27 @@
+{
+	"name": "alibaba.scbp.ad.keyword.tag.update",
+	"apiChineseName": "修改关键词所属分组",
+	"description": "修改关键词所属分组",
+	"requestParams": [
+		{
+			"name": "keyword_id_list",
+			"type": "Number[]",
+			"description": "关键词ID列表",
+			"required": true,
+			"maxListSize": 50
+		},
+		{
+			"name": "tag_id_list",
+			"type": "Number[]",
+			"description": "关键词分组ID,不传表示取消关键词的分组",
+			"maxListSize": 50
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "实际修改的关键词数"
+		}
+	]
+}

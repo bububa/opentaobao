@@ -1,0 +1,106 @@
+{
+	"name": "taobao.wlb.wms.inventory.profitloss.get",
+	"apiChineseName": "通过订单列表批量获取库存损益单信息",
+	"description": "通过订单列表批量获取库存损益单信息",
+	"requestParams": [
+		{
+			"name": "cn_order_code",
+			"type": "String",
+			"description": "菜鸟订单编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "profit_loss_info",
+			"type": "CainiaoInventoryProfitlossProfitlossinfo",
+			"description": "损益信息",
+			"subParams": [
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "cn_order_code",
+					"type": "String",
+					"description": "仓库订单编码"
+				},
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "订单类型： 701 盘点出库 702 盘点入库"
+				},
+				{
+					"name": "order_item_list",
+					"type": "CainiaoInventoryProfitlossOrderitemlist[]",
+					"description": "商品信息列表",
+					"subParams": [
+						{
+							"name": "order_item",
+							"type": "CainiaoInventoryProfitlossOrderitem",
+							"description": "损益详情",
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品ID"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "商家对商品的编码"
+								},
+								{
+									"name": "inventory_type",
+									"type": "String",
+									"description": "库存类型 1 可销售库存（正品）  101 残次"
+								},
+								{
+									"name": "item_qty",
+									"type": "String",
+									"description": "商品数量"
+								},
+								{
+									"name": "due_date",
+									"type": "Date",
+									"description": "商品保质期信息，失效日期"
+								},
+								{
+									"name": "produce_date",
+									"type": "Date",
+									"description": "商品保质期信息，生产日期"
+								},
+								{
+									"name": "produce_code",
+									"type": "String",
+									"description": "生产编码，同一商品可能因商家不同有不同编码"
+								},
+								{
+									"name": "produce_area",
+									"type": "String",
+									"description": "生产地区"
+								},
+								{
+									"name": "batch_code",
+									"type": "String",
+									"description": "批次号"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "created_time",
+					"type": "Date",
+					"description": "单据生成时间"
+				}
+			]
+		}
+	]
+}

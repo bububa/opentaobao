@@ -1,0 +1,77 @@
+{
+	"name": "taobao.simba.keywords.qscore.get",
+	"apiChineseName": "取得一个推广组的所有关键词的质量得分或者根据关键词Id列表取得一组关键词的质量得分",
+	"description": "取得一个推广组的所有关键词的质量得分列表",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "keyword_qscore_list",
+			"type": "KeywordQscore []",
+			"description": "取得的关键词质量得分列表",
+			"subParams": [
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "主人昵称"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "推广计划id"
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "推广组id"
+				},
+				{
+					"name": "keyword_id",
+					"type": "Number",
+					"description": "关键词id"
+				},
+				{
+					"name": "word",
+					"type": "String",
+					"description": "关键词"
+				},
+				{
+					"name": "qscore",
+					"type": "String",
+					"description": "质量总分"
+				},
+				{
+					"name": "rele_score",
+					"type": "String",
+					"description": "相关性"
+				},
+				{
+					"name": "cvr_score",
+					"type": "String",
+					"description": "买家体验分"
+				},
+				{
+					"name": "cust_score",
+					"type": "String",
+					"description": "基础分"
+				},
+				{
+					"name": "creative_score",
+					"type": "String",
+					"description": "创意得分"
+				}
+			]
+		}
+	]
+}

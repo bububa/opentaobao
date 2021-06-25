@@ -1,0 +1,129 @@
+{
+	"name": "alibaba.retail.marketing.buygift.activity.sku.add",
+	"apiChineseName": "添加单品买赠活动商品",
+	"description": "新增或更新单品买赠活动商品信息【同城零售】",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "BuyGiftActivitySkuOperateRequest",
+			"description": "添加活动商品参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sku_elements",
+					"type": "SkuActivityElementDto[]",
+					"description": "商品元素信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "limit",
+							"type": "LimitDto",
+							"description": "限购配置信息",
+							"subParams": [
+								{
+									"name": "total_limit_cnt",
+									"type": "Number",
+									"description": "赠品总限量/店"
+								},
+								{
+									"name": "daily_total_limit_cnt",
+									"type": "Number",
+									"description": "赠品每日总限量/店"
+								},
+								{
+									"name": "user_total_limit_cnt",
+									"type": "Number",
+									"description": "赠品每人限量/店"
+								},
+								{
+									"name": "user_daily_limit_cnt",
+									"type": "Number",
+									"description": "赠品每人每日限量/店"
+								}
+							]
+						},
+						{
+							"name": "gift_sku_code",
+							"type": "String",
+							"description": "赠品编码，不填默认赠品为商品本身"
+						},
+						{
+							"name": "gift_num",
+							"type": "Number",
+							"description": "买N赠M的M参数，赠多少件赠品（目前仅支持买N赠1，giftNum默认为1）"
+						},
+						{
+							"name": "buy_num",
+							"type": "Number",
+							"description": "买N赠M的N参数，买多少件可赠",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "act_id",
+					"type": "Number",
+					"description": "操作活动的ID",
+					"required": true
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "操作人ID（数字类型）",
+					"required": true
+				},
+				{
+					"name": "creator_name",
+					"type": "String",
+					"description": "操作人Name",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "部分商品添加失败时会有错误信息，正常情况下无数据",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "failed_sku_codes",
+					"type": "String[]",
+					"description": "部分失败的商品编码列表",
+					"required": true
+				}
+			]
+		}
+	]
+}

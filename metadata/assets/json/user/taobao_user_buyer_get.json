@@ -1,0 +1,42 @@
+{
+	"name": "taobao.user.buyer.get",
+	"apiChineseName": "查询买家信息API",
+	"description": "查询买家信息API，只能买家类应用调用。",
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "只返回nick, avatar参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "user",
+			"type": "User",
+			"description": "只返回nick,avatar参数",
+			"subParams": [
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "用户昵称"
+				},
+				{
+					"name": "sex",
+					"type": "String",
+					"description": "性别。可选值:m(男),f(女)"
+				},
+				{
+					"name": "avatar",
+					"type": "String",
+					"description": "用户头像地址"
+				},
+				{
+					"name": "open_uid",
+					"type": "String",
+					"description": "对应账号的OpenUID"
+				}
+			]
+		}
+	]
+}

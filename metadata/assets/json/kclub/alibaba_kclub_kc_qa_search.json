@@ -1,0 +1,318 @@
+{
+	"name": "alibaba.kclub.kc.qa.search",
+	"apiChineseName": "知识云-知识检索",
+	"description": "知识云-知识搜索服务",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "KcSearchQuestionQuery",
+			"description": "查询参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户id"
+				},
+				{
+					"name": "tenant_id_list",
+					"type": "Number[]",
+					"description": "租户列表"
+				},
+				{
+					"name": "search_string",
+					"type": "String",
+					"description": "搜索字段",
+					"required": true
+				},
+				{
+					"name": "knowledge_id",
+					"type": "Number",
+					"description": "问题id"
+				},
+				{
+					"name": "highlight",
+					"type": "Boolean",
+					"description": "高亮显示"
+				},
+				{
+					"name": "editor_id",
+					"type": "Number",
+					"description": "编辑人"
+				},
+				{
+					"name": "question_type",
+					"type": "Number",
+					"description": "问题类型"
+				},
+				{
+					"name": "need_content",
+					"type": "Boolean",
+					"description": "是否需要返回内容"
+				},
+				{
+					"name": "context_list",
+					"type": "Number[]",
+					"description": "context列表"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小"
+				},
+				{
+					"name": "creator_id",
+					"type": "Number",
+					"description": "创建者id"
+				},
+				{
+					"name": "include_sub_categorys",
+					"type": "Boolean",
+					"description": "是否包含子类目"
+				},
+				{
+					"name": "views",
+					"type": "Number[]",
+					"description": "视角列表"
+				},
+				{
+					"name": "category_id_list",
+					"type": "Number[]",
+					"description": "类目id列表"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "display_ext_title",
+					"type": "Boolean",
+					"description": "是否默认展示扩展标题"
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"type": "TenancyAuth",
+			"description": "鉴权",
+			"required": true,
+			"subParams": [
+				{
+					"name": "secret_key",
+					"type": "String",
+					"description": "鉴权",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "鉴权",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "搜索结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "KcSearchQuestion[]",
+					"description": "返回数据列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "entity_code",
+							"type": "String",
+							"description": "问题关联的实体code",
+							"required": true
+						},
+						{
+							"name": "question_type",
+							"type": "Number",
+							"description": "问题类型",
+							"required": true
+						},
+						{
+							"name": "modified_user_name",
+							"type": "String",
+							"description": "编辑人名称",
+							"required": true
+						},
+						{
+							"name": "create_user_name",
+							"type": "String",
+							"description": "创建人名称",
+							"required": true
+						},
+						{
+							"name": "tenant_id",
+							"type": "Number",
+							"description": "租户id",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "title_segment",
+							"type": "String",
+							"description": "标题分词",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "标题",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "编辑时间",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "问题id",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "问题类型：0-普通/1-引用",
+							"required": true
+						},
+						{
+							"name": "question_id",
+							"type": "Number",
+							"description": "问题id",
+							"required": true
+						},
+						{
+							"name": "is_similar_title",
+							"type": "Number",
+							"description": "是否相似标题",
+							"required": true
+						},
+						{
+							"name": "source",
+							"type": "Number",
+							"description": "来源：草稿表-0/正式表-1",
+							"required": true
+						},
+						{
+							"name": "version",
+							"type": "Number",
+							"description": "版本号",
+							"required": true
+						},
+						{
+							"name": "end_date",
+							"type": "Date",
+							"description": "qa 失效时间",
+							"required": true
+						},
+						{
+							"name": "start_date",
+							"type": "Date",
+							"description": "qa 生效时间",
+							"required": true
+						},
+						{
+							"name": "cat_id",
+							"type": "Number",
+							"description": "类目id",
+							"required": true
+						},
+						{
+							"name": "ext",
+							"type": "String",
+							"description": "额外字段",
+							"required": true
+						},
+						{
+							"name": "cat_name",
+							"type": "String",
+							"description": "类目名称",
+							"required": true
+						},
+						{
+							"name": "cat_path_name",
+							"type": "String",
+							"description": "类目路径",
+							"required": true
+						},
+						{
+							"name": "similar_id",
+							"type": "Number",
+							"description": "相似问题主键id",
+							"required": true
+						},
+						{
+							"name": "cat_id_path_list",
+							"type": "Number[]",
+							"description": "catId 路径",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "记录唯一编码",
+							"required": true
+						},
+						{
+							"name": "score",
+							"type": "String",
+							"description": "得分",
+							"required": true
+						},
+						{
+							"name": "similar_title",
+							"type": "String",
+							"description": "相似标题",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

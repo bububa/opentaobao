@@ -1,0 +1,21 @@
+package baichuan
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/baichuan"
+)
+
+/* 
+百川发送注册验证码 
+taobao.baichuan.openaccount.registercode.send
+
+百川发送注册验证码
+*/
+func TaobaoBaichuanOpenaccountRegistercodeSend(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountRegistercodeSendRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountRegistercodeSendResponse, error) {
+    var resp baichuan.TaobaoBaichuanOpenaccountRegistercodeSendAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

@@ -1,0 +1,57 @@
+{
+	"name": "taobao.wdk.equipment.conveyor.systemevent.get",
+	"apiChineseName": "获取悬挂链系统事件",
+	"description": "五道口悬挂链系统事件查询",
+	"requestParams": [
+		{
+			"name": "warehouse_id",
+			"type": "Number",
+			"description": "仓库Id"
+		},
+		{
+			"name": "conveyor_id",
+			"type": "Number",
+			"description": "悬挂链Id，即wcsNum"
+		},
+		{
+			"name": "start_id",
+			"type": "Number",
+			"description": "数据库id最小值"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "返回值与返回的信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "message",
+							"type": "String",
+							"description": "message",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "code",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回的数据",
+					"required": true
+				}
+			]
+		}
+	]
+}

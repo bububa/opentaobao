@@ -1,0 +1,225 @@
+{
+	"name": "tmall.servicecenter.workcard.status.update",
+	"apiChineseName": "服务商反馈服务的执行情况",
+	"description": "1 如果服务商受理了此服务，修改合同状态为：已受理=3\u003cbr/\u003e2 如果服务商没有受理此服务，修改合同状态为：已拒绝=10\u003cbr/\u003e3 如果服务商执行了此服务，修改合同状态为：已执行=4\u003cbr/\u003e4 如果服务商执行服务成功，修改合同状态为：已完成=5\u003cbr/\u003e5 如果此工单为合同类型的工单，当服务商受理了此服务后，会进行分账",
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "byte",
+			"description": "工单类型： 2（合同） 或者 1(任务）",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "byte",
+			"description": "目前仅支持5种状态的反馈：3=授理， 10=拒绝 ，4=执行 ，5=成功，11=失败。（所有状态列表： -1： 初始化 0： 生成 1： 生效 2： 申请 3： 受理 4： 执行 5： 成功 9： 结算 10： 拒绝 11： 失败 12 ： 撤销 13： 暂停 19： 终止）",
+			"required": true
+		},
+		{
+			"name": "buyer_id",
+			"type": "Number",
+			"description": "买家id"
+		},
+		{
+			"name": "updater",
+			"type": "String",
+			"description": "api调用者",
+			"required": true
+		},
+		{
+			"name": "update_date",
+			"type": "Number",
+			"description": "更新时间",
+			"required": true
+		},
+		{
+			"name": "effect_date",
+			"type": "Number",
+			"description": "服务生效时间 ：工单类型为合同工单时，必选！"
+		},
+		{
+			"name": "expire_date",
+			"type": "Number",
+			"description": "服务失效时间 ：工单类型为合同工单时，必选！"
+		},
+		{
+			"name": "comments",
+			"type": "String",
+			"description": "备注,256个字符以内",
+			"maxLength": 256
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "任务类工单，预约或者上门地址",
+			"maxLength": 50
+		},
+		{
+			"name": "contact_name",
+			"type": "String",
+			"description": "任务执行，预约联系人",
+			"maxLength": 50
+		},
+		{
+			"name": "contact_phone",
+			"type": "String",
+			"description": "任务执行，预约联系人电话",
+			"maxLength": 20
+		},
+		{
+			"name": "service_date",
+			"type": "Number",
+			"description": "服务预约时间"
+		},
+		{
+			"name": "complete_date",
+			"type": "Number",
+			"description": "服务完成时间"
+		},
+		{
+			"name": "service_voucher_pics",
+			"type": "String",
+			"description": "服务凭证上传的图片URL链接，多个以;隔开",
+			"maxLength": 1024
+		},
+		{
+			"name": "attribute",
+			"type": "String",
+			"description": "属性定义。例如无忧退货服务，K-V对定义，每对KV用“;”分割，“:”号左边是key右边是value，value如果有多个则以“,”分割。 reasons   :  原因，可能有多个 succeedCount     :    取件成功个数 failedCount    :    取件失败个数 cancelCount      :     取件取消个数 totalCount       :      总取件个数，totalCount= succeedCount + failedCount + cancelCount",
+			"maxLength": 1024
+		},
+		{
+			"name": "service_center_code",
+			"type": "String",
+			"description": "服务商网点内部编码",
+			"maxLength": 50
+		},
+		{
+			"name": "service_center_name",
+			"type": "String",
+			"description": "服务商网点名字",
+			"maxLength": 50
+		},
+		{
+			"name": "service_fee",
+			"type": "Number",
+			"description": "单元是分"
+		},
+		{
+			"name": "is_visit",
+			"type": "Boolean",
+			"description": "是否上门"
+		},
+		{
+			"name": "before_service_memo",
+			"type": "String",
+			"description": "说明"
+		},
+		{
+			"name": "after_service_memo",
+			"type": "String",
+			"description": "说明"
+		},
+		{
+			"name": "phone_imei",
+			"type": "String",
+			"description": "手机号码"
+		},
+		{
+			"name": "sub_status",
+			"type": "Number",
+			"description": "服务子状态：30 表示“服务已申请（上门）” 31表示“服务改约（上门）” 400表示“服务结果（待件上门）” 410表示“服务结果（拖机维修）” 411表示“服务结果（换机）” 420表示“服务结果（上门不可维修）”"
+		},
+		{
+			"name": "service_center_manager_phone",
+			"type": "String",
+			"description": "网点负责人联系电话"
+		},
+		{
+			"name": "service_center_manager_name",
+			"type": "String",
+			"description": "网点负责人"
+		},
+		{
+			"name": "service_center_address",
+			"type": "String",
+			"description": "网点地址"
+		},
+		{
+			"name": "work_card_install_detail_list",
+			"type": "WorkCardInstallDetail[]",
+			"description": "一个工单可能包含多件商品，比如空调可能有两台，录入每天机器的安装情况",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "sn",
+					"type": "String",
+					"description": "机器条码，如果有多个机器码，用英文逗号\",\"隔开"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "机器安装状态(1未完成；20暂不安装；5完成；12取消)"
+				},
+				{
+					"name": "img_urls",
+					"type": "String",
+					"description": "安装图片，多个图片链接用英文逗号\",\"隔开"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "accessory_info",
+					"type": "String",
+					"description": "辅材项目"
+				},
+				{
+					"name": "install_fee",
+					"type": "String",
+					"description": "收费金额"
+				}
+			]
+		},
+		{
+			"name": "service_fee_detail",
+			"type": "String",
+			"description": "json string。费用单位为分"
+		},
+		{
+			"name": "express_code",
+			"type": "String",
+			"description": "物流单号"
+		},
+		{
+			"name": "express_company",
+			"type": "String",
+			"description": "物流公司名字"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rs",
+			"type": "Boolean",
+			"description": "返回结果"
+		},
+		{
+			"name": "error_code_value",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "error_msg_info",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

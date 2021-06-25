@@ -1,0 +1,87 @@
+{
+	"name": "taobao.vmarket.eticket.beforeconsume",
+	"apiChineseName": "电子凭证验码前置确认",
+	"description": "商家验码之前的调用接口，用来同步到最新的订单状态并判断是否可以进行验码操作",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "需要验码的电子凭证订单ID",
+			"required": true
+		},
+		{
+			"name": "verify_code",
+			"type": "String",
+			"description": "需要验的码",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "安全验证token，需要和发码通知中的token一致",
+			"required": true
+		},
+		{
+			"name": "codemerchant_id",
+			"type": "Number",
+			"description": "码商ID,是码商的话必须传递,如果是信任卖家不需要传"
+		},
+		{
+			"name": "posid",
+			"type": "String",
+			"description": "操作员身份ID，如果是码商必须传,如果是信任卖家不需要传"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "手机号码后四位,没有特殊说明请不要传"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "1:可以进行核销码操作"
+		},
+		{
+			"name": "item_title",
+			"type": "String",
+			"description": "商品标题"
+		},
+		{
+			"name": "left_num",
+			"type": "Number",
+			"description": "当前订单剩余可核销数量"
+		},
+		{
+			"name": "left_amount",
+			"type": "String",
+			"description": "扩展字段，暂时预留为0，没有任何意义"
+		},
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单ID"
+		},
+		{
+			"name": "valid_start",
+			"type": "Date",
+			"description": "有效期开始时间"
+		},
+		{
+			"name": "valid_ends",
+			"type": "Date",
+			"description": "有效期结束时间"
+		},
+		{
+			"name": "item_type",
+			"type": "Number",
+			"description": "扩展字段，暂时预留为0，没有任何意义"
+		},
+		{
+			"name": "code_left_num",
+			"type": "Number",
+			"description": "当前码剩余可核销数量"
+		}
+	]
+}

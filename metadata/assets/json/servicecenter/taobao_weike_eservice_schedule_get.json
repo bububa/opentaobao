@@ -1,0 +1,125 @@
+{
+	"name": "taobao.weike.eservice.schedule.get",
+	"apiChineseName": "客服排班信息查询接口",
+	"description": "客服排班信息查询接口",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单ID，orderId、sellerNick、spNick三者不能同时为Null"
+		},
+		{
+			"name": "seller_nick",
+			"type": "String",
+			"description": "商家子账号昵称，orderId、sellerNick、spNick三者不能同时为Null"
+		},
+		{
+			"name": "sp_nick",
+			"type": "String",
+			"description": "服务商子账号昵称，orderId、sellerNick、spNick三者不能同时为Null"
+		},
+		{
+			"name": "start_date",
+			"type": "Date",
+			"description": "起始日期，起始日期和结束日期跨度不能超过31天",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "Date",
+			"description": "结束日期，起始日期和结束日期跨度不能超过31天",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CsSchedulingWrapper",
+			"description": "排班信息查询结果",
+			"subParams": [
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "排班记录条数（按天计算）",
+					"required": true
+				},
+				{
+					"name": "cs_schedulings",
+					"type": "CsScheduling[]",
+					"description": "按天排班信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "date",
+							"type": "Date",
+							"description": "排班日期",
+							"required": true
+						},
+						{
+							"name": "string_date",
+							"type": "String",
+							"description": "排班日期字符串",
+							"required": true
+						},
+						{
+							"name": "schedulings",
+							"type": "Scheduling[]",
+							"description": "一天内排班信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "start_time",
+									"type": "Date",
+									"description": "排班起始时间",
+									"required": true
+								},
+								{
+									"name": "end_time",
+									"type": "Date",
+									"description": "排班结束时间",
+									"required": true
+								},
+								{
+									"name": "seller_nick",
+									"type": "String",
+									"description": "商家子账号",
+									"required": true
+								},
+								{
+									"name": "sp_nick",
+									"type": "String",
+									"description": "服务商子账号",
+									"required": true
+								},
+								{
+									"name": "state",
+									"type": "Number",
+									"description": "排班记录状态，1表示生效，-1表示失效",
+									"required": true
+								},
+								{
+									"name": "state_des",
+									"type": "String",
+									"description": "排班记录状态描述",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "订单ID",
+							"required": true
+						},
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "排班记录更新时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

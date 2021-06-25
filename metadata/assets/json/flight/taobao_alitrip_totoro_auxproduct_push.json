@@ -1,0 +1,376 @@
+{
+	"name": "taobao.alitrip.totoro.auxproduct.push",
+	"apiChineseName": "廉航辅营产品投放",
+	"description": "廉航辅营产品投放接口",
+	"requestParams": [
+		{
+			"name": "push_aux_products_rq",
+			"type": "PushAuxProductsRq",
+			"description": "廉航辅营产品推送请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "cid",
+					"type": "String",
+					"description": "接口身份标识用户名（渠道唯一标识）",
+					"required": true
+				},
+				{
+					"name": "channel_id",
+					"type": "Number",
+					"description": "渠道id",
+					"required": true
+				},
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商ID",
+					"required": true
+				},
+				{
+					"name": "product_items",
+					"type": "AuxProductItemApiBean[]",
+					"description": "廉航辅营产品",
+					"required": true,
+					"subParams": [
+						{
+							"name": "baggage",
+							"type": "BaggageApiBean",
+							"description": "行李说明，当productType=4为必传",
+							"subParams": [
+								{
+									"name": "height",
+									"type": "Number",
+									"description": "单件行李高度限制，单位厘米"
+								},
+								{
+									"name": "weight",
+									"type": "Number",
+									"description": "行李重量，当allWeight为是的时候行李重量描述所有件数的总重量"
+								},
+								{
+									"name": "width",
+									"type": "Number",
+									"description": "单件行李宽度限制，单位厘米"
+								},
+								{
+									"name": "pc",
+									"type": "Number",
+									"description": "行李总件数，大于等于1的正整数"
+								},
+								{
+									"name": "length",
+									"type": "Number",
+									"description": "单件行李长度限制，单位厘米"
+								},
+								{
+									"name": "is_all_weight",
+									"type": "Boolean",
+									"description": "是否所有行李重量"
+								}
+							]
+						},
+						{
+							"name": "counter_price",
+							"type": "Number",
+							"description": "柜台价，用于划价显示。 仅允许100的倍数。 币种：人民币。单位：分。"
+						},
+						{
+							"name": "sale_type",
+							"type": "Number",
+							"description": "销售类型 1:一次销售，2:二次销售，3:不限 一次销售是指辅营产品和机票同时购买； 二次销售是指买完机票后，再单独购买辅营",
+							"required": true
+						},
+						{
+							"name": "service",
+							"type": "ServiceApiBean",
+							"description": "辅营产品服务说明,仅当productType=1或productType=2为必传",
+							"subParams": [
+								{
+									"name": "service_time_type",
+									"type": "Number",
+									"description": "服务时间 1:不限制时间 2:按具体服务时间"
+								},
+								{
+									"name": "service_content",
+									"type": "String",
+									"description": "服务内容。 最多允许200个字符。 禁止空格等特殊符号。"
+								},
+								{
+									"name": "room_tip",
+									"type": "String",
+									"description": "服务说明。 最多允许100个字符。 禁止空格等特殊符号。"
+								},
+								{
+									"name": "room",
+									"type": "String",
+									"description": "服务地点。 最多允许100个字符。 禁止空格等特殊符号。"
+								},
+								{
+									"name": "service_time_end",
+									"type": "String",
+									"description": "服务时间结束 HHmm，serviceTimeType为2时必填"
+								},
+								{
+									"name": "service_time_start",
+									"type": "String",
+									"description": "服务时间开始 HHmm，serviceTimeType为2时必填"
+								}
+							]
+						},
+						{
+							"name": "online_price",
+							"type": "Number",
+							"description": "在线价，是对旅客展示的销售价格。 仅允许100的倍数。 币种：人民币。单位：分。",
+							"required": true
+						},
+						{
+							"name": "sales_rule",
+							"type": "SalesRuleApiBean",
+							"description": "辅营产品销售规则",
+							"subParams": [
+								{
+									"name": "cabin",
+									"type": "String",
+									"description": "适用舱位(可以多个，支持子舱，用“/”隔开)；"
+								},
+								{
+									"name": "except_cabin_class",
+									"type": "Number",
+									"description": "例外舱位等级,单选 0:头等,1:商务，2:经济，3:全部 适用和例外二选一填写"
+								},
+								{
+									"name": "latest_buy_time",
+									"type": "Number",
+									"description": "最晚购买时间，航班起飞前n小时 (计划起飞时间-当前时间)\u003e=n小时",
+									"required": true
+								},
+								{
+									"name": "except_ods",
+									"type": "String",
+									"description": "例外航线(可以多个,机场码) PEKPVG/DMKYVR ods和exceptOds二选一填写。 适用和例外二选一填写。 最多允许510个字符。"
+								},
+								{
+									"name": "travel_date_start",
+									"type": "String",
+									"description": "旅行开始日期(yyyyMMdd)",
+									"required": true
+								},
+								{
+									"name": "travel_date_end",
+									"type": "String",
+									"description": "旅行结束日期(yyyyMMdd)，最大值当前+365且不能小于开始",
+									"required": true
+								},
+								{
+									"name": "earlist_buy_time",
+									"type": "Number",
+									"description": "最早购买时间，航班起飞前n小时 (计划起飞时间-当前时间)\u003c=n小时 如无限制，请填写9000",
+									"required": true
+								},
+								{
+									"name": "cabin_class",
+									"type": "Number",
+									"description": "适用舱位等级,单选 0:头等,1:商务，2:经济，3:全部 适用和例外二选一填写"
+								},
+								{
+									"name": "except_airports",
+									"type": "String",
+									"description": "例外机场，如果为多个机场，按照PEK/NAY 格式返回 airports和exceptAirports二选一填写。 最多允许511个字符。"
+								},
+								{
+									"name": "sale_date_end",
+									"type": "String",
+									"description": "销售结束日期(yyyyMMdd)，最大值当前+365且不能小于开始",
+									"required": true
+								},
+								{
+									"name": "receipt_type",
+									"type": "Number",
+									"description": "发票类型 1:电子，2:纸质，3:不提供",
+									"required": true
+								},
+								{
+									"name": "stock_num",
+									"type": "Number",
+									"description": "库存数，当stockType=1或stockType=2时必填"
+								},
+								{
+									"name": "except_flight_nos",
+									"type": "String",
+									"description": "例外航班(可以多个，用“/”隔开)； 适用和例外二选一填写。 最多允许512个字符。"
+								},
+								{
+									"name": "ods",
+									"type": "String",
+									"description": "适用航线(可以多个,机场码) PEKPVG/DMKYVR ods和exceptOds二选一填写。 适用和例外二选一填写。 最多允许510个字符。"
+								},
+								{
+									"name": "airline_codes",
+									"type": "String",
+									"description": "适用航司二字码",
+									"required": true
+								},
+								{
+									"name": "except_cabin",
+									"type": "String",
+									"description": "例外舱位(可以多个，支持子舱，用“/”隔开)；"
+								},
+								{
+									"name": "stock_type",
+									"type": "Number",
+									"description": "库存类型 1:共享总库存数，2:每日库存数（旅行日期下每天），3:不限制(不使用产品库库存)",
+									"required": true
+								},
+								{
+									"name": "airports",
+									"type": "String",
+									"description": "适用机场，如果为多个机场，按照PEK/NAY 格式返回 airports和exceptAirports二选一填写。 最多允许511个字符。"
+								},
+								{
+									"name": "receipt_way",
+									"type": "Number",
+									"description": "发票领取规则 1:行程单，2:机场柜台 默认为1.当receiptType=1或receiptType=2时，receiptWay必须指定",
+									"required": true
+								},
+								{
+									"name": "sale_date_start",
+									"type": "String",
+									"description": "销售开始日期(yyyyMMdd)",
+									"required": true
+								},
+								{
+									"name": "except_airline_codes",
+									"type": "String",
+									"description": "例外航司二字码，如果为多个航司，按照 AK/FD格式返回。 最多允许254个字符。"
+								},
+								{
+									"name": "code_share_forbidden",
+									"type": "Boolean",
+									"description": "共享航班是否可用 1:不能用于共享航班，2:可用",
+									"required": true
+								},
+								{
+									"name": "flight_nos",
+									"type": "String",
+									"description": "适用航班(可以多个，用“/”隔开)； 适用和例外二选一填写。 最多允许512个字符。"
+								},
+								{
+									"name": "outbound_terminal",
+									"type": "String",
+									"description": "适用出发航站楼（可以多个，用“/”隔开)。 最多允许10个字符。"
+								},
+								{
+									"name": "stock_rule",
+									"type": "String",
+									"description": "库存规则，当stockType=1或stockType=2时必填。"
+								}
+							]
+						},
+						{
+							"name": "refund_rule",
+							"type": "AuxRefundApiBean",
+							"description": "辅营产品退改规则",
+							"required": true,
+							"subParams": [
+								{
+									"name": "can_refund_independent",
+									"type": "Boolean",
+									"description": "是否可单独退 true可以，false不可以 当canRefund =true时此节点必传",
+									"required": true
+								},
+								{
+									"name": "modify_rule",
+									"type": "String",
+									"description": "改规则。 最多允许200个字符。 禁止空格等特殊符号。",
+									"required": true
+								},
+								{
+									"name": "can_modify",
+									"type": "Boolean",
+									"description": "是否可改 true可以，false不可以 当refundRule=true时此节点必传",
+									"required": true
+								},
+								{
+									"name": "can_modify_independent",
+									"type": "Boolean",
+									"description": "是否可单独改 true可以，false不可以",
+									"required": true
+								},
+								{
+									"name": "can_refund",
+									"type": "Boolean",
+									"description": "是否可退 true 可以，false不可以",
+									"required": true
+								},
+								{
+									"name": "refund_rule",
+									"type": "String",
+									"description": "退规则。 最多允许200个字符。 禁止空格等特殊符号。",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "产品名称。 最大允许64个字符，不允许*·#|等特殊符号，也不允许带空格换行等符号",
+							"required": true
+						},
+						{
+							"name": "base_price",
+							"type": "Number",
+							"description": "成本价。仅允许100的倍数。 币种：人民币。单位：分。"
+						},
+						{
+							"name": "product_type",
+							"type": "Number",
+							"description": "产品类型 1:贵宾厅，2:CIP，3:在线选座，4:付费行李，6:值机，7:餐食, 8:值机及选座 当前仅允许投放：4，6，7，8",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "外部ID，此辅营报价的唯一标识，后续用于校验生单；只允许数字字母组合，最大允许32个字符。 不允许包含空格、换行、|这类特殊符号",
+							"required": true
+						},
+						{
+							"name": "seat",
+							"type": "SeatApiBean",
+							"description": "选座说明，当productType=3或8 为必传",
+							"subParams": [
+								{
+									"name": "seat_area",
+									"type": "Number",
+									"description": "座位列 1:靠过道，2:靠窗，3:并排"
+								},
+								{
+									"name": "seat_row",
+									"type": "Number",
+									"description": "排次 1:前排，2:中排，3:后排"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tracer_id",
+			"type": "String",
+			"description": "操作日志id，商家可通过该id在后台查看本次操作的具体结果"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否操作成功"
+		}
+	]
+}

@@ -1,0 +1,49 @@
+{
+	"name": "taobao.crm.grade.get",
+	"apiChineseName": "卖家查询等级规则",
+	"description": "卖家查询等级规则，包括店铺客户、普通会员、高级会员、VIP会员、至尊VIP会员四个等级的信息",
+	"responseParams": [
+		{
+			"name": "grade_promotions",
+			"type": "GradePromotion []",
+			"description": "等级信息集合",
+			"subParams": [
+				{
+					"name": "cur_grade",
+					"type": "String",
+					"description": "买家会员级别  0:店铺客户  1：普通会员 2：高级会员 3：VIP会员 4：至尊VIP"
+				},
+				{
+					"name": "cur_grade_name",
+					"type": "String",
+					"description": "店铺客户、普通会员 、高级会员、VIP会员、至尊VIP"
+				},
+				{
+					"name": "discount",
+					"type": "Number",
+					"description": "会员级别折扣率没有小数，990代表9.9折"
+				},
+				{
+					"name": "next_upgrade_amount",
+					"type": "Number",
+					"description": "升级到下一个级别的需要的交易额，单位：分"
+				},
+				{
+					"name": "next_upgrade_count",
+					"type": "Number",
+					"description": "升级到下一个级别的需要的交易量"
+				},
+				{
+					"name": "next_grade_name",
+					"type": "String",
+					"description": "该等级对应的下一等级1:普通会员  2：高级会员 3：VIP会员 4：至尊VIP 0：后续等级都未启用或没有下一等级"
+				},
+				{
+					"name": "next_grade",
+					"type": "String",
+					"description": "普通会员、高级会员、VIP会员、至尊VIP。空的时候代表后续等级未启用或没有下一等级"
+				}
+			]
+		}
+	]
+}

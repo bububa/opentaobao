@@ -1,0 +1,157 @@
+{
+	"name": "taobao.film.lottery.draw",
+	"apiChineseName": "淘票票抽奖发放权益API",
+	"description": "对外第三方合作渠道通过抽奖形式发码",
+	"requestParams": [
+		{
+			"name": "account_no",
+			"type": "String",
+			"description": "账号ID",
+			"required": true
+		},
+		{
+			"name": "account_type",
+			"type": "String",
+			"description": "账号类型（TAOBAO\\ALIPAY\\PHONE\\TAOBAO_NAME\\OPEN_ID）",
+			"required": true
+		},
+		{
+			"name": "lottery_mix_id",
+			"type": "String",
+			"description": "活动ID",
+			"required": true
+		},
+		{
+			"name": "platform",
+			"type": "Number",
+			"description": "平台类型",
+			"required": true
+		},
+		{
+			"name": "biz_data",
+			"type": "Json",
+			"description": "扩展参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultGeneralModel",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "return_url",
+					"type": "String",
+					"description": "忽略",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求ID",
+					"required": true
+				},
+				{
+					"name": "return_value",
+					"type": "Model",
+					"description": "返回值",
+					"required": true,
+					"subParams": [
+						{
+							"name": "rewards",
+							"type": "DrawReward[]",
+							"description": "奖品模型",
+							"required": true,
+							"subParams": [
+								{
+									"name": "gmt_expire",
+									"type": "Json",
+									"description": "有效期时间",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Json",
+									"description": "gmtModified",
+									"required": true
+								},
+								{
+									"name": "reward_desc",
+									"type": "String",
+									"description": "奖品描述",
+									"required": true
+								},
+								{
+									"name": "reward_count",
+									"type": "Number",
+									"description": "奖品数量",
+									"required": true
+								},
+								{
+									"name": "reward_type",
+									"type": "Number",
+									"description": "奖品类型（1：淘票票优惠券）",
+									"required": true
+								},
+								{
+									"name": "code_type",
+									"type": "Number",
+									"description": "券子类型（1：兑换券 2：代金券）",
+									"required": true
+								},
+								{
+									"name": "cost_price",
+									"type": "Number",
+									"description": "奖品金额（单位：分）",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "券码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "use_url",
+							"type": "String",
+							"description": "使用地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "return_error_oper",
+					"type": "String",
+					"description": "returnErrorOper",
+					"required": true
+				},
+				{
+					"name": "return_error_solution",
+					"type": "String",
+					"description": "returnErrorSolution",
+					"required": true
+				},
+				{
+					"name": "return_message",
+					"type": "String",
+					"description": "returnMessage",
+					"required": true
+				},
+				{
+					"name": "return_error_stack_trace",
+					"type": "String",
+					"description": "returnErrorStackTrace",
+					"required": true
+				}
+			]
+		}
+	]
+}

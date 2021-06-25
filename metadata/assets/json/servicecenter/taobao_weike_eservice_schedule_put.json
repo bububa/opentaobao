@@ -1,0 +1,67 @@
+{
+	"name": "taobao.weike.eservice.schedule.put",
+	"apiChineseName": "提交客服排班信息",
+	"description": "添加、更新、删除排班信息",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单ID",
+			"required": true
+		},
+		{
+			"name": "cs_schedulings",
+			"type": "CsSchedulingOneDayDto[]",
+			"description": "按天排班信息",
+			"required": true,
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "date",
+					"type": "Date",
+					"description": "排班日期",
+					"required": true
+				},
+				{
+					"name": "schedulings",
+					"type": "CsSchedulingDto[]",
+					"description": "一天排班信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "排班起始时间",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "排班结束时间",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "商家子账号昵称",
+							"required": true
+						},
+						{
+							"name": "sp_nick",
+							"type": "String",
+							"description": "服务商子账号昵称",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否执行成功"
+		}
+	]
+}

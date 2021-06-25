@@ -1,0 +1,26 @@
+{
+	"name": "taobao.weitao.feed.isrelation",
+	"apiChineseName": "是否关注",
+	"description": "判断用户是否关注对应的公共账号",
+	"requestParams": [
+		{
+			"name": "fans_nick",
+			"type": "String",
+			"description": "要查询的粉丝的淘宝昵称",
+			"required": true
+		},
+		{
+			"name": "seller_nick",
+			"type": "String",
+			"description": "要查询的公共账号的淘宝昵称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "是否关注"
+		}
+	]
+}

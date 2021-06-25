@@ -1,0 +1,104 @@
+{
+	"name": "alibaba.retail.device.trade.ship",
+	"apiChineseName": "贩卖机掉货成功通知",
+	"description": "贩卖机发货",
+	"requestParams": [
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "设备类型",
+			"required": true
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备ID",
+			"required": true
+		},
+		{
+			"name": "trade_no",
+			"type": "String",
+			"description": "内部订单编号",
+			"required": true
+		},
+		{
+			"name": "ship_detail_list",
+			"type": "ShipDetailDTO[]",
+			"description": "详情",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品",
+					"required": true
+				},
+				{
+					"name": "ship_status",
+					"type": "Number",
+					"description": "0发货成功 1发货失败 10 核销成功 20 核销失败",
+					"required": true
+				},
+				{
+					"name": "outer_trade_no",
+					"type": "String",
+					"description": "外部订单ID"
+				}
+			]
+		},
+		{
+			"name": "order_update_option",
+			"type": "OrderUpdateOption",
+			"description": "选项",
+			"subParams": [
+				{
+					"name": "biz_name",
+					"type": "String",
+					"description": "业务识别"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_infos",
+					"type": "ErrorInfo[]",
+					"description": "errorInfos",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "errorCode",
+							"required": true
+						},
+						{
+							"name": "sub_error_code",
+							"type": "String",
+							"description": "subErrorCode",
+							"required": true
+						},
+						{
+							"name": "error_message",
+							"type": "String",
+							"description": "errorMessage",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

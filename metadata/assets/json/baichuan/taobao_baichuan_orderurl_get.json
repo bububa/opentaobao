@@ -1,0 +1,19 @@
+{
+	"name": "taobao.baichuan.orderurl.get",
+	"apiChineseName": "百川订单详情",
+	"description": "百川订单详情",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "name"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "name"
+		}
+	]
+}

@@ -1,0 +1,156 @@
+{
+	"name": "taobao.qimen.orderprocess.query",
+	"apiChineseName": "订单流水查询接口",
+	"description": "ERP调用订单流水查询接口",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "OrderProcessQueryRequest",
+			"subParams": [
+				{
+					"name": "orderType",
+					"type": "String",
+					"description": "单据类型(JYCK=一般交易出库单;HHCK=换货出库;BFCK=补发出库;PTCK=普通出库单;DBCK=调拨出库;QTCK=其他出库;B2BRK=B2B入库;B2BCK=B2B出库;CGRK=采购入库;DBRK=调拨入库;QTRK=其他入库;XTRK=销退入库;HHRK=换货入库;CNJG=仓内加工单)"
+				},
+				{
+					"name": "orderCode",
+					"type": "String",
+					"description": "单据号",
+					"required": true
+				},
+				{
+					"name": "orderId",
+					"type": "String",
+					"description": "仓储系统单据号"
+				},
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "orderSourceCode",
+					"type": "String",
+					"description": "交易单号"
+				},
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "OrderProcessQueryResponse",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "orderProcess",
+					"type": "OrderProcess",
+					"description": "订单处理流程",
+					"required": true,
+					"subParams": [
+						{
+							"name": "orderCode",
+							"type": "String",
+							"description": "单据号",
+							"required": true
+						},
+						{
+							"name": "orderId",
+							"type": "String",
+							"description": "仓储系统单据号",
+							"required": true
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "单据类型(JYCK=一般交易出库单;HHCK=换货出库;BFCK=补发出库;PTCK=普通出库单;DBCK=调拨出库;QTCK=其他出库;B2BRK=B2B入库;B2BCK=B2B出库;CGRK=采购入库;DBRK=调拨入库;QTRK=其他入库;XTRK=销退入库;HHRK=换货入库;CNJG=仓内加工单)",
+							"required": true
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						},
+						{
+							"name": "processes",
+							"type": "Process[]",
+							"description": "处理流程",
+							"required": true,
+							"subParams": [
+								{
+									"name": "processStatus",
+									"type": "String",
+									"description": "单据状态(NEW=新增;ACCEPT=仓库接单;PRINT=打印;PICK=捡货;CHECK=复核;PACKAGE=打包;WEIGH=称重;READY=待提货;DELIVERED=已发货;EXCEPTION=异常;CLOSED=关闭;CANCELED=取消;REJECT=仓库拒单;REFUSE=客户拒签;CANCELEDFAIL=取消失败;SIGN=签收;TMSCANCELED=快递拦截;PARTFULFILLED=部分收货完成;FULFILLED=收货完成;PARTDELIVERED=部分发货完成;OTHER=其他;只传英文编码)",
+									"required": true
+								},
+								{
+									"name": "operatorCode",
+									"type": "String",
+									"description": "该状态操作员编码",
+									"required": true
+								},
+								{
+									"name": "operatorName",
+									"type": "String",
+									"description": "该状态操作员姓名",
+									"required": true
+								},
+								{
+									"name": "operateTime",
+									"type": "String",
+									"description": "该状态操作时间(YYYY-MM-DD HH:MM:SS)",
+									"required": true
+								},
+								{
+									"name": "operateInfo",
+									"type": "String",
+									"description": "操作内容",
+									"required": true
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

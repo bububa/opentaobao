@@ -1,0 +1,135 @@
+{
+	"name": "alibaba.alsc.crm.card.bindcustomer",
+	"apiChineseName": "卡号绑定顾客",
+	"description": "为卡号绑定顾客",
+	"requestParams": [
+		{
+			"name": "param_bind_customer_open_req",
+			"type": "BindCustomerOpenReq",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID"
+				},
+				{
+					"name": "physical_card_id",
+					"type": "String",
+					"description": "物理卡ID"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求ID"
+				},
+				{
+					"name": "card_id",
+					"type": "String",
+					"description": "卡ID"
+				},
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID，和外部品牌ID必传1"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客ID"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店ID"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "返回值",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "返回值",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				}
+			]
+		}
+	]
+}

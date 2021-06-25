@@ -1,0 +1,19 @@
+{
+	"name": "taobao.baichuan.openaccount.newlogindoublecheck",
+	"apiChineseName": "百川新登录二次验证",
+	"description": "百川新登录二次验证",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "name"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "name"
+		}
+	]
+}

@@ -1,0 +1,74 @@
+{
+	"name": "alibaba.wdk.wholesale.order.commit",
+	"apiChineseName": "盒马帮采购确认订单接口",
+	"description": "盒马帮采购确认订单接口",
+	"requestParams": [
+		{
+			"name": "order_commit_req",
+			"type": "OrderCommitReq",
+			"description": "采购单信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "item_confirm_infos",
+					"type": "ItemConfirmInfo[]",
+					"description": "商品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "confirm_quantity",
+							"type": "String",
+							"description": "确认数量(为正数或零)",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "external_order_no",
+					"type": "String",
+					"description": "订单号",
+					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,45 @@
+{
+	"name": "taobao.qimen.itemstore.query",
+	"apiChineseName": "商品关联门店查询接口",
+	"description": "商家在ERP等系统中调用该接口，查询线上商品所关联的门店列表",
+	"requestParams": [
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "当前查询的页面编码"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "线上商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "响应信息"
+		},
+		{
+			"name": "store_ids",
+			"type": "Number []",
+			"description": "门店列表"
+		},
+		{
+			"name": "flag",
+			"type": "String",
+			"description": "响应的标签"
+		},
+		{
+			"name": "total_lines",
+			"type": "Number",
+			"description": "总的门店数"
+		},
+		{
+			"name": "qimen_code",
+			"type": "String",
+			"description": "响应的code"
+		}
+	]
+}

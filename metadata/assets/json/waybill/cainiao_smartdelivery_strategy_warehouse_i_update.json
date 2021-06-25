@@ -1,0 +1,150 @@
+{
+	"name": "cainiao.smartdelivery.strategy.warehouse.i.update",
+	"apiChineseName": "智能发货引擎策略仓设置",
+	"description": "智能发货引擎发货策略设置仓维度",
+	"requestParams": [
+		{
+			"name": "delivery_strategy_set_request",
+			"type": "DeliveryStrategySetRequest",
+			"description": "智能发货设置请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "delivery_strategy_info",
+					"type": "DeliveryStrategyInfo",
+					"description": "策略信息对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "buyer_message_rule",
+							"type": "Number",
+							"description": "识别买家备注: 0-忽略, 1-识别, 2-仅识别合作cp",
+							"required": true
+						},
+						{
+							"name": "cocp_info_list",
+							"type": "CpInfo[]",
+							"description": "合作CP信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "address",
+									"type": "Address",
+									"description": "地址信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "city",
+											"type": "String",
+											"description": "市"
+										},
+										{
+											"name": "detail",
+											"type": "String",
+											"description": "详细地址",
+											"required": true
+										},
+										{
+											"name": "district",
+											"type": "String",
+											"description": "区"
+										},
+										{
+											"name": "province",
+											"type": "String",
+											"description": "省",
+											"required": true
+										},
+										{
+											"name": "town",
+											"type": "String",
+											"description": "街道"
+										}
+									]
+								},
+								{
+									"name": "cloud_template_id",
+									"type": "String",
+									"description": "云打印模板",
+									"required": true
+								},
+								{
+									"name": "cp_code",
+									"type": "String",
+									"description": "快递公司",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "状态: 0-禁用, 1-启用",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "special_route_info_list",
+							"type": "SpecialRouteInfo[]",
+							"description": "特殊线路",
+							"subParams": [
+								{
+									"name": "cp_code",
+									"type": "String",
+									"description": "快递公司code"
+								},
+								{
+									"name": "receive_area",
+									"type": "AddressArea",
+									"description": "到货区域",
+									"subParams": [
+										{
+											"name": "city",
+											"type": "String",
+											"description": "市"
+										},
+										{
+											"name": "province",
+											"type": "String",
+											"description": "省"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "warehouse_id",
+							"type": "Number",
+							"description": "仓id"
+						},
+						{
+							"name": "warehouse_name",
+							"type": "String",
+							"description": "仓名称"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "warehouse_info",
+			"type": "WarehouseDto",
+			"description": "仓信息",
+			"subParams": [
+				{
+					"name": "warehouse_id",
+					"type": "Number",
+					"description": "仓id",
+					"required": true
+				},
+				{
+					"name": "warehouse_name",
+					"type": "String",
+					"description": "仓名称",
+					"required": true
+				}
+			]
+		}
+	]
+}

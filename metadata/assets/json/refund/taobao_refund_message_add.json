@@ -1,0 +1,44 @@
+{
+	"name": "taobao.refund.message.add",
+	"apiChineseName": "创建退款留言/凭证",
+	"description": "创建退款留言/凭证",
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款编号。",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "留言内容。最大长度: 400个字节",
+			"required": true
+		},
+		{
+			"name": "image",
+			"type": "byte[]",
+			"description": "图片（凭证）。类型: JPG,GIF,PNG;最大为: 500K",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "refund_message",
+			"type": "RefundMessage",
+			"description": "退款信息。包含id和created",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "留言编号"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "留言创建时间。格式:yyyy-MM-dd HH:mm:ss"
+				}
+			]
+		}
+	]
+}

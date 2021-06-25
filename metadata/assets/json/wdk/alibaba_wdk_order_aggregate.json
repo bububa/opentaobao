@@ -1,0 +1,121 @@
+{
+	"name": "alibaba.wdk.order.aggregate",
+	"apiChineseName": "淘鲜达订单按门店机台号聚合查询",
+	"description": "淘鲜达订单按门店机台号聚合查询",
+	"requestParams": [
+		{
+			"name": "order_aggregate_query_request",
+			"type": "OrderAggregateQueryRequest",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "起始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "DRF1001"
+				},
+				{
+					"name": "pos_no",
+					"type": "String",
+					"description": "机台号"
+				},
+				{
+					"name": "order_client",
+					"type": "String",
+					"description": "下单终端: APP / POS"
+				},
+				{
+					"name": "duty_code",
+					"type": "String",
+					"description": "班次号"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "收营员id"
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "订单状态: PAID / PACAKAGED / SUCCESS"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页序号"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页size"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OrderAggregateQueryResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "接口返回码. 如果返回 HM05038888888006 需重试(数据查询失败，请重试，注意限定重试次数)",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "接口返回码描述",
+					"required": true
+				},
+				{
+					"name": "biz_id_list",
+					"type": "Number[]",
+					"description": "240000310869037498",
+					"required": true
+				},
+				{
+					"name": "tb_biz_id_list",
+					"type": "Number[]",
+					"description": "171321816752430897",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "totalNum",
+					"required": true
+				},
+				{
+					"name": "original_amt",
+					"type": "Number",
+					"description": "商品总金额（不含优惠）",
+					"required": true
+				},
+				{
+					"name": "discount_amt",
+					"type": "Number",
+					"description": "总优惠金额",
+					"required": true
+				},
+				{
+					"name": "next_index",
+					"type": "Number",
+					"description": "下一页序号",
+					"required": true
+				}
+			]
+		}
+	]
+}

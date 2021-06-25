@@ -1,0 +1,133 @@
+{
+	"name": "alibaba.txcs.brandmarketing.coupon.statistics.get",
+	"apiChineseName": "品牌营销导购员券推广统计数据回流",
+	"description": "请求券统计数据回流",
+	"requestParams": [
+		{
+			"name": "coupon_statistics_param_do",
+			"type": "CouponStatisticsParamDO",
+			"description": "请求信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码，即当前第几页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页记录数，不能超过200",
+					"required": true
+				},
+				{
+					"name": "statistics_date",
+					"type": "String",
+					"description": "日期，格式为yyyymmdd",
+					"required": true
+				},
+				{
+					"name": "brand_names",
+					"type": "String[]",
+					"description": "品牌名称数组"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_page_result",
+			"type": "ApiPageResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "是否还有下一页",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页记录数",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "CouponStatisticsResultDO[]",
+					"description": "返回内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "use_coupon_count",
+							"type": "Number",
+							"description": "核券量",
+							"required": true
+						},
+						{
+							"name": "send_coupon_count",
+							"type": "Number",
+							"description": "发券量",
+							"required": true
+						},
+						{
+							"name": "coupon_id",
+							"type": "String",
+							"description": "券id",
+							"required": true
+						},
+						{
+							"name": "coupon_name",
+							"type": "String",
+							"description": "券名称",
+							"required": true
+						},
+						{
+							"name": "guide_id",
+							"type": "String",
+							"description": "导购员id",
+							"required": true
+						},
+						{
+							"name": "statistics_date",
+							"type": "String",
+							"description": "日期",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "业务标识",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,103 @@
+{
+	"name": "alibaba.wdk.trade.refund.inform",
+	"apiChineseName": "外部渠道通知淘鲜达退款成功接口",
+	"description": "该接口用于外部渠道退款成功后，通知淘鲜达底层履约完成退款流程。",
+	"requestParams": [
+		{
+			"name": "inform_refund_success_request",
+			"type": "InformRefundSuccessRequest",
+			"description": "通知退款成功请求",
+			"subParams": [
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店编码",
+					"required": true
+				},
+				{
+					"name": "refund_fulfill_sub_orders",
+					"type": "RefundSuccessSubOrderRequest[]",
+					"description": "退货成功履约子单",
+					"subParams": [
+						{
+							"name": "sub_biz_order_id",
+							"type": "String",
+							"description": "子订单id",
+							"required": true
+						},
+						{
+							"name": "refund_goods_id",
+							"type": "String",
+							"description": "退货单id",
+							"required": true
+						},
+						{
+							"name": "fulfill_id",
+							"type": "String",
+							"description": "履约单id"
+						},
+						{
+							"name": "refund_id",
+							"type": "String",
+							"description": "退款单id"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码"
+						},
+						{
+							"name": "actual_refund_quantity",
+							"type": "String",
+							"description": "实际退货数量",
+							"required": true
+						},
+						{
+							"name": "refund_amount",
+							"type": "String",
+							"description": "实际退款金额",
+							"required": true
+						},
+						{
+							"name": "refund_type",
+							"type": "Number",
+							"description": "退货状态(1:退货退款；0:仅退款)"
+						},
+						{
+							"name": "expect_fetch_sale_quantity",
+							"type": "String",
+							"description": "期望取货销售数量"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "InformRefundSuccessResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

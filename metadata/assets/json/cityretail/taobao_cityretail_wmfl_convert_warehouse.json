@@ -1,0 +1,78 @@
+{
+	"name": "taobao.cityretail.wmfl.convert.warehouse",
+	"apiChineseName": "同城零售完美履约转仓",
+	"description": "同城零售完美履约转仓",
+	"requestParams": [
+		{
+			"name": "tb_order_id",
+			"type": "String",
+			"description": "淘宝交易单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "WorkResult",
+			"description": "服务出参",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ChangeOrderResponseDto",
+					"description": "请求结果数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tb_order_id",
+							"type": "String",
+							"description": "淘宝订单id",
+							"required": true
+						},
+						{
+							"name": "new_warehouse_code",
+							"type": "String",
+							"description": "转仓后的新仓",
+							"required": true
+						},
+						{
+							"name": "origin_warehouse_code",
+							"type": "String",
+							"description": "转仓前的原仓",
+							"required": true
+						},
+						{
+							"name": "fulfill_order_id",
+							"type": "String",
+							"description": "履约单id",
+							"required": true
+						},
+						{
+							"name": "pickup_code",
+							"type": "String",
+							"description": "取货码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "标示服务成功/失败",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

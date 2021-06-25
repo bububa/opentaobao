@@ -1,0 +1,36 @@
+{
+	"name": "taobao.vmarket.eticket.failsend",
+	"apiChineseName": "无法发码回调",
+	"description": "针对一次发码通知，码商无法完成发码，则可以通过此接口告知电子凭证",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单号",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "发码通知时的token"
+		},
+		{
+			"name": "error_code",
+			"type": "Number",
+			"description": "错误码",
+			"required": true
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "成功"
+		}
+	]
+}

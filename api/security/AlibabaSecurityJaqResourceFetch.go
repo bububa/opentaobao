@@ -1,0 +1,21 @@
+package security
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/security"
+)
+
+/* 
+获取资源文件 
+alibaba.security.jaq.resource.fetch
+
+在前向化验证流程中提供资源文件服务
+*/
+func AlibabaSecurityJaqResourceFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqResourceFetchRequest, session string) (*security.AlibabaSecurityJaqResourceFetchResponse, error) {
+    var resp security.AlibabaSecurityJaqResourceFetchAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

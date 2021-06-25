@@ -1,0 +1,86 @@
+{
+	"name": "taobao.simba.keyword.findbyadgroupid",
+	"apiChineseName": "根据推广单元id获取关键词",
+	"description": "根据一个关键词Id列表取得一组关键词",
+	"requestParams": [
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广单元id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "SiriusBidwordDto []",
+			"description": "整体的返回值",
+			"subParams": [
+				{
+					"name": "mobile_bid_price",
+					"type": "Number",
+					"description": "关键词无线渠道出价分",
+					"required": true
+				},
+				{
+					"name": "garbage_status",
+					"type": "Number",
+					"description": "垃圾词状态1 为垃圾词，0 为正常词",
+					"required": true
+				},
+				{
+					"name": "match_scope",
+					"type": "Number",
+					"description": "匹配方式1 精准匹配，4广泛匹配",
+					"required": true
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "推广单元id",
+					"required": true
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "推广计划id",
+					"required": true
+				},
+				{
+					"name": "word",
+					"type": "String",
+					"description": "关键词原词",
+					"required": true
+				},
+				{
+					"name": "audit_reason",
+					"type": "String",
+					"description": "关键词审核拒绝原因，当且仅当audit_status为审核拒绝时有效",
+					"required": true
+				},
+				{
+					"name": "audit_status",
+					"type": "Number",
+					"description": "审核原因0 -1 待处理，1审核通过，其他审核拒绝",
+					"required": true
+				},
+				{
+					"name": "plan_delete_time",
+					"type": "Date",
+					"description": "关键词计划删除时间，仅当garbage_status=1时有效",
+					"required": true
+				},
+				{
+					"name": "bidword_id",
+					"type": "Number",
+					"description": "关键词id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误原因"
+		}
+	]
+}

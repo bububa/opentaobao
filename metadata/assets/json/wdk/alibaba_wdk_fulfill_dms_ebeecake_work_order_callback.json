@@ -1,0 +1,112 @@
+{
+	"name": "alibaba.wdk.fulfill.dms.ebeecake.work.order.callback",
+	"apiChineseName": "北京小蜜蜂配作业回传",
+	"description": "北京小蜜蜂配作业回传。",
+	"requestParams": [
+		{
+			"name": "callback_order",
+			"type": "EbeecakeO2OCallbackOrder",
+			"description": "作业单回传对象",
+			"subParams": [
+				{
+					"name": "work_order_id",
+					"type": "String",
+					"description": "作业单号"
+				},
+				{
+					"name": "work_order_type",
+					"type": "String",
+					"description": "作业单类型： BATCH(\"批次\"), ORDER(\"物流单\")"
+				},
+				{
+					"name": "status_change_type",
+					"type": "String",
+					"description": "作业状态变更类型：SHIP(\"揽收\"),SIGN(\"妥投\"),SIGN_ERROR(\"配送异常\"),REFUSE(\"拒收\")"
+				},
+				{
+					"name": "status_change_time",
+					"type": "Date",
+					"description": "作业状态变更时间"
+				},
+				{
+					"name": "callback_units",
+					"type": "EbeecakeO2OCallbackUnit[]",
+					"description": "作业单元列表",
+					"subParams": [
+						{
+							"name": "callback_contents",
+							"type": "EbeecakeO2OCallbackContent[]",
+							"description": "作业内容列表",
+							"subParams": [
+								{
+									"name": "status",
+									"type": "String",
+									"description": "状态"
+								},
+								{
+									"name": "work_unit_content_id",
+									"type": "String",
+									"description": "作业内容单号"
+								}
+							]
+						},
+						{
+							"name": "work_order_unit_id",
+							"type": "String",
+							"description": "作业单元号"
+						}
+					]
+				},
+				{
+					"name": "postman",
+					"type": "Postman",
+					"description": "配送员",
+					"subParams": [
+						{
+							"name": "postman_name",
+							"type": "String",
+							"description": "配送员姓名"
+						},
+						{
+							"name": "postman_code",
+							"type": "String",
+							"description": "配送员编码"
+						},
+						{
+							"name": "postman_phone",
+							"type": "String",
+							"description": "配送员手机"
+						},
+						{
+							"name": "provider_name",
+							"type": "String",
+							"description": "服务商名称"
+						},
+						{
+							"name": "provider_code",
+							"type": "String",
+							"description": "服务商编码"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_message",
+			"type": "String",
+			"description": "响应提示信息"
+		},
+		{
+			"name": "resp_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

@@ -1,0 +1,44 @@
+{
+	"name": "tmall.servicecenter.workcard.verifycode.resend",
+	"apiChineseName": "重发核销码",
+	"description": "重发核销码",
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id"
+		},
+		{
+			"name": "service_store_id",
+			"type": "Number",
+			"description": "门店/网点id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

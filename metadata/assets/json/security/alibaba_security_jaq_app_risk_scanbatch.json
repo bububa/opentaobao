@@ -1,0 +1,84 @@
+{
+	"name": "alibaba.security.jaq.app.risk.scanbatch",
+	"apiChineseName": "应用风险扫描批量提交接口",
+	"description": "批量提交应用进行风险扫描(含漏洞扫描、恶意代码检测),扫描完成后可通过对应的查询接口查询扫描结果",
+	"requestParams": [
+		{
+			"name": "app_info",
+			"type": "AppInfoBatch",
+			"description": "APP信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "app_os_type",
+					"type": "Number",
+					"description": "APP应用类型 1-android 2-ios(暂不支持)",
+					"required": true
+				},
+				{
+					"name": "callback_url",
+					"type": "String",
+					"description": "回调地址,dataType=4时必填,用于处理完成后反向通知,通知为GET请求,请求格式:  callbackUrl+\"?itemId=xxx\u0026taskStatus=1\""
+				},
+				{
+					"name": "data_type",
+					"type": "Number",
+					"description": "APP数据类型 3-Batch MD5 4-Batch URL(暂不支持)",
+					"required": true
+				},
+				{
+					"name": "scan_infos",
+					"type": "AppInfoBatchItem[]",
+					"description": "需要扫描的应用的具体信息列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "data",
+							"type": "String",
+							"description": "待扫描的应用信息dataType=3时填应用的md5 dataType=4时填应用的url",
+							"required": true
+						},
+						{
+							"name": "md5",
+							"type": "String",
+							"description": "应用的md5，dataType＝4时必填"
+						},
+						{
+							"name": "size",
+							"type": "Number",
+							"description": "应用的大小(单位byte)，dataType＝4时必填"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "scan_types",
+			"type": "String[]",
+			"description": "扫描类型",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TaskInfo",
+			"description": "扫描任务信息",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "任务唯一标识",
+					"required": true
+				},
+				{
+					"name": "progress",
+					"type": "Number",
+					"description": "任务处理进度: 1-处理完成 (可立即通过对应的查询接口查询处理结果), 2-异步处理中(需等待app_info.callback_url接收到反向通知后再查询结果) ; 对于app_info.data_type为4目前都是异步处理，此字段返回2; 对于app_info.data_type为3目前都是同步处理，此字段返回1",
+					"required": true
+				}
+			]
+		}
+	]
+}

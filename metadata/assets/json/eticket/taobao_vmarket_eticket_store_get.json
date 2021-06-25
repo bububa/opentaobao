@@ -1,0 +1,55 @@
+{
+	"name": "taobao.vmarket.eticket.store.get",
+	"apiChineseName": "获取电子凭证预约门店信息",
+	"description": "用于给外部商家查询电子凭证预约门店信息",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "商户id"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "商户地址"
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "商户名称"
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "所在城市"
+		},
+		{
+			"name": "province",
+			"type": "String",
+			"description": "省份"
+		},
+		{
+			"name": "district",
+			"type": "String",
+			"description": "区"
+		},
+		{
+			"name": "contract",
+			"type": "String",
+			"description": "联系电话"
+		},
+		{
+			"name": "selfcode",
+			"type": "String",
+			"description": "自有卖家导入门店的时候，可以把自己系统门店信息的主键或者唯一key传入，用于快速匹配"
+		}
+	]
+}

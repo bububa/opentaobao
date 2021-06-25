@@ -1,0 +1,301 @@
+{
+	"name": "alibaba.scbp.ad.group.find.ad.group",
+	"apiChineseName": "查询推广组",
+	"description": "查询推广组",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "ad_group_query",
+			"type": "AdGroupQueryDto",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "adgroup_online_status",
+					"type": "Number",
+					"description": "推广组线上状态"
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				},
+				{
+					"name": "group_lv1_id",
+					"type": "Number",
+					"description": "1级分组"
+				},
+				{
+					"name": "group_lv2_id",
+					"type": "Number",
+					"description": "2级分组"
+				},
+				{
+					"name": "group_lv3_id",
+					"type": "Number",
+					"description": "3级分组"
+				},
+				{
+					"name": "cate_lv1_id",
+					"type": "Number",
+					"description": "1级类目"
+				},
+				{
+					"name": "cate_lv2_id",
+					"type": "Number",
+					"description": "2级类目"
+				},
+				{
+					"name": "cate_lv3_id",
+					"type": "Number",
+					"description": "3级类目"
+				},
+				{
+					"name": "campaign_type",
+					"type": "Number",
+					"description": "计划类型"
+				},
+				{
+					"name": "campaign_status",
+					"type": "Number",
+					"description": "计划状态"
+				},
+				{
+					"name": "ad_group_id",
+					"type": "Number",
+					"description": "推广组id"
+				},
+				{
+					"name": "ad_group_status",
+					"type": "Number",
+					"description": "推广组状态"
+				},
+				{
+					"name": "ads_line_id",
+					"type": "Number",
+					"description": "产品线id"
+				},
+				{
+					"name": "ads_id",
+					"type": "Number",
+					"description": "产品id"
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "标题"
+				},
+				{
+					"name": "owner_member_id",
+					"type": "String",
+					"description": "发品用户id"
+				},
+				{
+					"name": "order_by",
+					"type": "String",
+					"description": "排序字段"
+				},
+				{
+					"name": "order",
+					"type": "String",
+					"description": "正序"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "每页数量"
+				},
+				{
+					"name": "paging",
+					"type": "Boolean",
+					"description": "分页"
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "AdProductDto []",
+			"description": "返回数据",
+			"subParams": [
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id",
+					"required": true
+				},
+				{
+					"name": "campaign_type",
+					"type": "Number",
+					"description": "计划类型",
+					"required": true
+				},
+				{
+					"name": "campaign_status",
+					"type": "Number",
+					"description": "计划状态",
+					"required": true
+				},
+				{
+					"name": "ad_group_id",
+					"type": "Number",
+					"description": "组id",
+					"required": true
+				},
+				{
+					"name": "ad_group_status",
+					"type": "Number",
+					"description": "推广组状态",
+					"required": true
+				},
+				{
+					"name": "ads_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "ads_id",
+					"type": "Number",
+					"description": "产品id",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键id",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "商品标题",
+					"required": true
+				},
+				{
+					"name": "group_lv1_id",
+					"type": "Number",
+					"description": "1级分组",
+					"required": true
+				},
+				{
+					"name": "group_lv2_id",
+					"type": "Number",
+					"description": "2级分组",
+					"required": true
+				},
+				{
+					"name": "group_lv3_id",
+					"type": "Number",
+					"description": "3级分组",
+					"required": true
+				},
+				{
+					"name": "cate_lv1_id",
+					"type": "Number",
+					"description": "1级类目",
+					"required": true
+				},
+				{
+					"name": "cate_lv2_id",
+					"type": "Number",
+					"description": "2级类目",
+					"required": true
+				},
+				{
+					"name": "cate_lv3_id",
+					"type": "Number",
+					"description": "3级类目",
+					"required": true
+				},
+				{
+					"name": "gmt_posting_create",
+					"type": "Date",
+					"description": "posting创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_posting_modified",
+					"type": "Date",
+					"description": "posting修改时间",
+					"required": true
+				},
+				{
+					"name": "effect",
+					"type": "AdProductEffectDto",
+					"description": "效果数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "impr_cnt",
+							"type": "Number",
+							"description": "曝光",
+							"required": true
+						},
+						{
+							"name": "click_cnt",
+							"type": "Number",
+							"description": "点击",
+							"required": true
+						},
+						{
+							"name": "cost_amt",
+							"type": "Number",
+							"description": "消耗(分)",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

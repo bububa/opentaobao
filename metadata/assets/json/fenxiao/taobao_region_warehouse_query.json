@@ -1,0 +1,46 @@
+{
+	"name": "taobao.region.warehouse.query",
+	"apiChineseName": "查询仓库覆盖范围",
+	"description": "查询仓库覆盖范围",
+	"requestParams": [
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓库编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "返回覆盖地址信息",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

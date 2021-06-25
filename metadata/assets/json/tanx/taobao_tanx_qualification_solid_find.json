@@ -1,0 +1,108 @@
+{
+	"name": "taobao.tanx.qualification.solid.find",
+	"apiChineseName": "客户固态共享资质",
+	"description": "接口会返回该广告主下的所有审核通过并且可被共享的资质，这些资质在过期之前可以不需要再次上传。",
+	"requestParams": [
+		{
+			"name": "advertiser_id",
+			"type": "Number",
+			"description": "广告主id",
+			"required": true
+		},
+		{
+			"name": "element_ids",
+			"type": "Number[]",
+			"description": "资质元素id列表",
+			"maxListSize": 20
+		},
+		{
+			"name": "member_id",
+			"type": "Number",
+			"description": "dsp用户id",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "dsp客户验证token",
+			"required": true
+		},
+		{
+			"name": "sign_time",
+			"type": "Number",
+			"description": "1970年到现在的秒",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "查询起始页",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "qualification_list",
+			"type": "QualificationDto []",
+			"description": "返回固化资质列表",
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "资质名称"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id"
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "旺旺或者dsp广告主名称"
+				},
+				{
+					"name": "user_type",
+					"type": "Number",
+					"description": "广告主类别（0-淘宝，1-天猫，2-dsp公司，3-dsp个人）"
+				},
+				{
+					"name": "element_id",
+					"type": "Number",
+					"description": "资质模板元素id"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "资质生效时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "资质失效时间"
+				},
+				{
+					"name": "supplement",
+					"type": "String",
+					"description": "用户附加内容"
+				}
+			]
+		},
+		{
+			"name": "count",
+			"type": "String",
+			"description": "返回查询总数"
+		}
+	]
+}

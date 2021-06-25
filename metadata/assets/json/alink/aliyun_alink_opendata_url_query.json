@@ -1,0 +1,51 @@
+{
+	"name": "aliyun.alink.opendata.url.query",
+	"apiChineseName": "开放数据授权访问URL查询",
+	"description": "厂商数据授权访问URL查询",
+	"requestParams": [
+		{
+			"name": "access_key",
+			"type": "String",
+			"description": "授权key，厂家在物联平台申请的云端授权key",
+			"required": true
+		},
+		{
+			"name": "biz_day",
+			"type": "String",
+			"description": "数据日期，格式：yyyyMMdd",
+			"required": true
+		},
+		{
+			"name": "biz_hour",
+			"type": "Number",
+			"description": "数据时点，范围[0,23]"
+		},
+		{
+			"name": "data_type",
+			"type": "Number",
+			"description": "数据类型，1：设备数据，2：用户操作数据"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "接口描述"
+		},
+		{
+			"name": "module",
+			"type": "Json []",
+			"description": "授权url"
+		}
+	]
+}

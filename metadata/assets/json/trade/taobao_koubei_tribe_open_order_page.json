@@ -1,0 +1,190 @@
+{
+	"name": "taobao.koubei.tribe.open.order.page",
+	"apiChineseName": "口碑综合体订单列表信息查询",
+	"description": "查询口碑商圈用户的订单列表信息",
+	"requestParams": [
+		{
+			"name": "order_status",
+			"type": "String",
+			"description": "订单状态；ALL（全部），WAIT_PAY（代付款），WAIT_CONSUME（代消费）",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "起始页",
+			"required": true
+		},
+		{
+			"name": "data_set_id",
+			"type": "String",
+			"description": "数据集Id",
+			"required": true
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "用户openId",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "OrderInfoResultDto",
+					"description": "订单信息结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cur_page_no",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "has_next_page",
+							"type": "Boolean",
+							"description": "是否下一页",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页大小",
+							"required": true
+						},
+						{
+							"name": "order_info_list",
+							"type": "OrderInfoDto[]",
+							"description": "订单信息list",
+							"required": true,
+							"subParams": [
+								{
+									"name": "order_status_desc",
+									"type": "String",
+									"description": "订单状态描述",
+									"required": true
+								},
+								{
+									"name": "shop_name",
+									"type": "String",
+									"description": "店铺名称",
+									"required": true
+								},
+								{
+									"name": "shop_url",
+									"type": "String",
+									"description": "店铺url",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "订单标题",
+									"required": true
+								},
+								{
+									"name": "total_count",
+									"type": "String",
+									"description": "订单总数",
+									"required": true
+								},
+								{
+									"name": "total_count_desc",
+									"type": "String",
+									"description": "订单总数说明",
+									"required": true
+								},
+								{
+									"name": "pay_amount",
+									"type": "String",
+									"description": "支付金额",
+									"required": true
+								},
+								{
+									"name": "item_digests",
+									"type": "ItemDigestDto[]",
+									"description": "商品摘要",
+									"required": true,
+									"subParams": [
+										{
+											"name": "img_url",
+											"type": "String",
+											"description": "图片url",
+											"required": true
+										},
+										{
+											"name": "item_name",
+											"type": "String",
+											"description": "商品名称",
+											"required": true
+										},
+										{
+											"name": "item_quantity",
+											"type": "String",
+											"description": "商品数量",
+											"required": true
+										},
+										{
+											"name": "item_price",
+											"type": "String",
+											"description": "商品金额",
+											"required": true
+										},
+										{
+											"name": "item_order_status_desc",
+											"type": "String",
+											"description": "商品订单状态描述",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "order_detail_url",
+									"type": "String",
+									"description": "订单详情url",
+									"required": true
+								},
+								{
+									"name": "pay_info",
+									"type": "String",
+									"description": "支付金额描述",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "String",
+					"description": "错误提示",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "request唯一ID",
+					"required": true
+				}
+			]
+		}
+	]
+}

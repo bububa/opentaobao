@@ -1,0 +1,92 @@
+{
+	"name": "alibaba.alicom.order.preauthorize.fulfillment",
+	"apiChineseName": "履约结果",
+	"description": "预授权-履约结果",
+	"requestParams": [
+		{
+			"name": "pre_authorize_model",
+			"type": "PreAuthorizeModel",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "ext",
+					"type": "String",
+					"description": "扩展字段(json)"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "fulfillment_date",
+					"type": "String",
+					"description": "履约日期(yyyy-MM-dd)"
+				},
+				{
+					"name": "operation_type",
+					"type": "String",
+					"description": "0:解冻，1:违约 2：罚没"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "淘宝昵称"
+				},
+				{
+					"name": "amount",
+					"type": "String",
+					"description": "金额（单位：分）"
+				},
+				{
+					"name": "out_biz_order_no",
+					"type": "String",
+					"description": "外部流水账号"
+				},
+				{
+					"name": "tb_order_no",
+					"type": "String",
+					"description": "淘宝订单号"
+				},
+				{
+					"name": "fund_auth_no",
+					"type": "String",
+					"description": "授权水号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "数据结果",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口返回成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

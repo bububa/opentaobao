@@ -1,0 +1,526 @@
+{
+	"name": "taobao.xhotel.price.get.for.hello",
+	"apiChineseName": "哈罗合作方获取酒店库存报价",
+	"description": "哈罗合作项目，供哈罗合作方按需查询已开通城市下的标准酒店下指定时间段内的库存报价信息；在用户登录方面，返回结果不涉及用户个人信息，不涉及商家信息；仅根据不同用户，查询对应会员等级后，返回不同报价；",
+	"requestParams": [
+		{
+			"name": "hotel_price_param",
+			"type": "HotelPriceParam",
+			"description": "参数封装",
+			"subParams": [
+				{
+					"name": "data_version",
+					"type": "String",
+					"description": "版本控制(3.0支持信用住)"
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "离店日期"
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "经过混淆的userId"
+				},
+				{
+					"name": "pid",
+					"type": "String",
+					"description": "标志参数pid"
+				},
+				{
+					"name": "shid_city_code",
+					"type": "String",
+					"description": "标准酒店id和城市编码拼接字符串，最多50个"
+				},
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "入住日期"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "请求类型：0批量请求；1实时请求"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HotelPriceResultSet",
+			"description": "库价结果封装",
+			"subParams": [
+				{
+					"name": "channel_id",
+					"type": "String",
+					"description": "渠道id，0--pc,1--无线",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "本次请求是否错误，true--出粗",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode，error=true时有值",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息，error=true时有值",
+					"required": true
+				},
+				{
+					"name": "h5_list_url",
+					"type": "String",
+					"description": "报价list页h5链接",
+					"required": true
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "当前数据集合是否还有下一页",
+					"required": true
+				},
+				{
+					"name": "hotel_list_url",
+					"type": "String",
+					"description": "list页pc链接",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id，用于链路追踪",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "SHotelPrice[]",
+					"description": "每个标准酒店的库价集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "daily_price_list",
+							"type": "SHotelDailyPrice[]",
+							"description": "每个标准酒店某一天的所有库价集合",
+							"required": true,
+							"subParams": [
+								{
+									"name": "end",
+									"type": "Date",
+									"description": "离店日期",
+									"required": true
+								},
+								{
+									"name": "error_code",
+									"type": "String",
+									"description": "错误码",
+									"required": true
+								},
+								{
+									"name": "error_msg",
+									"type": "String",
+									"description": "错误信息",
+									"required": true
+								},
+								{
+									"name": "low_price",
+									"type": "Number",
+									"description": "当日所有库价的最低价",
+									"required": true
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "对应标准酒店id",
+									"required": true
+								},
+								{
+									"name": "sroom_type_daily_price_list",
+									"type": "SRoomTypeDailyPrice[]",
+									"description": "本shid下所有标准房型的当日库价",
+									"required": true,
+									"subParams": [
+										{
+											"name": "end",
+											"type": "Date",
+											"description": "离店日期",
+											"required": true
+										},
+										{
+											"name": "low_price",
+											"type": "Number",
+											"description": "最低价",
+											"required": true
+										},
+										{
+											"name": "room_type_daily_price_list",
+											"type": "RoomTypeDailyPrice[]",
+											"description": "当前标准房型下所有库价集合",
+											"required": true,
+											"subParams": [
+												{
+													"name": "bed_type_string",
+													"type": "String",
+													"description": "床型数据",
+													"required": true
+												},
+												{
+													"name": "h5_buy_url",
+													"type": "String",
+													"description": "h5下单页链接",
+													"required": true
+												},
+												{
+													"name": "name",
+													"type": "String",
+													"description": "房型名称",
+													"required": true
+												},
+												{
+													"name": "pc_buy_url",
+													"type": "String",
+													"description": "pc下单页链接",
+													"required": true
+												},
+												{
+													"name": "rates",
+													"type": "Rate[]",
+													"description": "库价具体信息",
+													"required": true,
+													"subParams": [
+														{
+															"name": "breakfast",
+															"type": "String",
+															"description": "餐食信息",
+															"required": true
+														},
+														{
+															"name": "breakfast_count",
+															"type": "Number",
+															"description": "餐食类型，0--无早, 1--单早, 2--双早, 3--三早, 4--多早",
+															"required": true
+														},
+														{
+															"name": "can_checkin_end",
+															"type": "String",
+															"description": "最晚入住时间",
+															"required": true
+														},
+														{
+															"name": "can_checkin_start",
+															"type": "String",
+															"description": "最早入住时间",
+															"required": true
+														},
+														{
+															"name": "cancel_policy_desc",
+															"type": "String",
+															"description": "退订政策描述，默认是短文案；",
+															"required": true
+														},
+														{
+															"name": "cancel_policy_desc_long",
+															"type": "String",
+															"description": "退订政策长文案",
+															"required": true
+														},
+														{
+															"name": "cancel_policy_desc_middle",
+															"type": "String",
+															"description": "退订政策中文案",
+															"required": true
+														},
+														{
+															"name": "cancel_type",
+															"type": "Number",
+															"description": "退订政策类型枚举，1-不能退, 2-免费退, 3-按规则退",
+															"required": true
+														},
+														{
+															"name": "guarantee_start_time",
+															"type": "String",
+															"description": "担保开始时间",
+															"required": true
+														},
+														{
+															"name": "guarantee_type",
+															"type": "Number",
+															"description": "担保类型",
+															"required": true
+														},
+														{
+															"name": "h5_buy_url",
+															"type": "String",
+															"description": "h5下单页链接",
+															"required": true
+														},
+														{
+															"name": "hourage",
+															"type": "String",
+															"description": "最长可入住时间标识，float类型",
+															"required": true
+														},
+														{
+															"name": "instant_confirm",
+															"type": "Boolean",
+															"description": "是否立即确认",
+															"required": true
+														},
+														{
+															"name": "inventory_price",
+															"type": "String",
+															"description": "库存价格信息",
+															"required": true
+														},
+														{
+															"name": "member_level",
+															"type": "Number",
+															"description": "会员等级",
+															"required": true
+														},
+														{
+															"name": "member_level_name",
+															"type": "String",
+															"description": "会员等级名称",
+															"required": true
+														},
+														{
+															"name": "payment_type_byte",
+															"type": "Number",
+															"description": "报价类型",
+															"required": true
+														},
+														{
+															"name": "pc_buy_url",
+															"type": "String",
+															"description": "pc购买地址",
+															"required": true
+														},
+														{
+															"name": "rate_id",
+															"type": "Number",
+															"description": "报价id",
+															"required": true
+														},
+														{
+															"name": "rate_plan_name",
+															"type": "String",
+															"description": "价格政策名称",
+															"required": true
+														},
+														{
+															"name": "register_status",
+															"type": "Boolean",
+															"description": "注册状态，true-已注册，false-未注册",
+															"required": true
+														},
+														{
+															"name": "rp_id",
+															"type": "Number",
+															"description": "价格政策id",
+															"required": true
+														},
+														{
+															"name": "subtract",
+															"type": "Number",
+															"description": "立减金额； 最新接口数据已包含UMP优惠信息，用于信用住场景的优惠返回；",
+															"required": true
+														},
+														{
+															"name": "hour_rate",
+															"type": "Boolean",
+															"description": "是否消失方，true--是，空或false-不是",
+															"required": true
+														},
+														{
+															"name": "rid",
+															"type": "Number",
+															"description": "当前报价对应的rid",
+															"required": true
+														},
+														{
+															"name": "seller_id",
+															"type": "Number",
+															"description": "当前报价所属卖家id",
+															"required": true
+														},
+														{
+															"name": "srid",
+															"type": "Number",
+															"description": "当前报价对应的srid",
+															"required": true
+														},
+														{
+															"name": "can_check_out_end",
+															"type": "String",
+															"description": "最晚离店时间，HH:MM格式",
+															"required": true
+														},
+														{
+															"name": "later_pay",
+															"type": "Boolean",
+															"description": "是否展示”信用住“标签，true--展示，false",
+															"required": true
+														},
+														{
+															"name": "member_price",
+															"type": "Boolean",
+															"description": "是否展示“会员价”标签；不是原价的价格上也有优惠价与会员价的区分；true--展示",
+															"required": true
+														},
+														{
+															"name": "supplier",
+															"type": "String",
+															"description": "卖家供应商渠道代号，一个卖家可以有多个供应商，使用代号进行区别",
+															"required": true
+														}
+													]
+												},
+												{
+													"name": "rid",
+													"type": "Number",
+													"description": "卖家房型id",
+													"required": true
+												},
+												{
+													"name": "srid",
+													"type": "Number",
+													"description": "标准房型srid",
+													"required": true
+												},
+												{
+													"name": "window_type",
+													"type": "String",
+													"description": "床型信息",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "shid",
+											"type": "Number",
+											"description": "标准酒店id",
+											"required": true
+										},
+										{
+											"name": "srid",
+											"type": "Number",
+											"description": "标准房型id",
+											"required": true
+										},
+										{
+											"name": "start",
+											"type": "Date",
+											"description": "入住时间",
+											"required": true
+										},
+										{
+											"name": "bed_type_string",
+											"type": "String",
+											"description": "床型字符串",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "标准房型名",
+											"required": true
+										},
+										{
+											"name": "window_type",
+											"type": "String",
+											"description": "窗型枚举，0-无窗,1-有窗,2-部分有窗,3-暗窗,4-部分暗窗",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "start",
+									"type": "Date",
+									"description": "入住时间",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "shid",
+							"type": "Number",
+							"description": "标准房型shid",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "服务调用是否成功",
+					"required": true
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "数据总量",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "版本信息",
+					"required": true
+				},
+				{
+					"name": "bind_member_infos",
+					"type": "SellerSupplierPartnerMemberInfoVo[]",
+					"description": "当前用户的会员信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "card_name",
+							"type": "String",
+							"description": "会员卡名称",
+							"required": true
+						},
+						{
+							"name": "detail_memo",
+							"type": "String",
+							"description": "会员详细描述",
+							"required": true
+						},
+						{
+							"name": "has_binded",
+							"type": "Boolean",
+							"description": "用户是否在第三方系统中绑定了会员,true--已绑定",
+							"required": true
+						},
+						{
+							"name": "member_level",
+							"type": "Number",
+							"description": "会员等级",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "会员对应的商家",
+							"required": true
+						},
+						{
+							"name": "supplier",
+							"type": "String",
+							"description": "会员对应的供应商",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

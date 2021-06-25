@@ -1,0 +1,48 @@
+{
+	"name": "taobao.jst.miniapp.crowd.message.send",
+	"apiChineseName": "小程序活动短信发送",
+	"description": "小程序活动短信发送",
+	"requestParams": [
+		{
+			"name": "sign_name",
+			"type": "String",
+			"description": "短信签名",
+			"required": true
+		},
+		{
+			"name": "crowd_code",
+			"type": "String",
+			"description": "活动code",
+			"required": true
+		},
+		{
+			"name": "template_code",
+			"type": "String",
+			"description": "短信模板，必须为全变量模板",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "短信内容",
+			"required": true
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "短信中携带的短链，会替换短信内容中的${url}"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "发送的短信条数"
+		},
+		{
+			"name": "r_code",
+			"type": "Number",
+			"description": "发送成功"
+		}
+	]
+}

@@ -1,0 +1,67 @@
+{
+	"name": "taobao.place.store.tags.update",
+	"apiChineseName": "门店打标去标",
+	"description": "门店打标去标",
+	"requestParams": [
+		{
+			"name": "store_update",
+			"type": "StoreUpdateTopDto",
+			"description": "门店信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "业务身份",
+					"required": true
+				},
+				{
+					"name": "biz_attributes",
+					"type": "AttributeValueTopDto[]",
+					"description": "扩展信息",
+					"subParams": [
+						{
+							"name": "value",
+							"type": "String",
+							"description": "value"
+						},
+						{
+							"name": "key",
+							"type": "String",
+							"description": "key"
+						}
+					]
+				},
+				{
+					"name": "outer_code",
+					"type": "String",
+					"description": "业务外部门店ID"
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "手淘商户门店ID"
+				}
+			]
+		},
+		{
+			"name": "add_tags",
+			"type": "Number[]",
+			"description": "新增标list",
+			"maxListSize": 999
+		},
+		{
+			"name": "remove_tags",
+			"type": "Number[]",
+			"description": "删除标list",
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "返回结果：true成功；false失败"
+		}
+	]
+}

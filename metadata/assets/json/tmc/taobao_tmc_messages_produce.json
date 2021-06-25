@@ -1,0 +1,62 @@
+{
+	"name": "taobao.tmc.messages.produce",
+	"apiChineseName": "批量发送消息",
+	"description": "批量发送消息",
+	"requestParams": [
+		{
+			"name": "messages",
+			"type": "TmcPublishMessage[]",
+			"description": "tmc消息列表, 最多50条，元素结构与taobao.tmc.message.produce一致，用json表示的消息列表。例如：[{\"content\": \"{\\\"tid\\\":1234554321,\\\"status\\\":\\\"X_LOGISTICS_PRINTED\\\",\\\"action_time\\\":\\\"2014-08-08 18:24:00\\\",\\\"seller_nick\\\": \\\"向阳aa\\\",\\\"operator\\\":\\\"小张\\\"}\",\"topic\": \"taobao_jds_TradeTrace\"},{\"content\": \"{\\\"tid\\\":1234554321,\\\"status\\\":\\\"X_LOGISTICS_PRINTED\\\",\\\"action_time\\\":\\\"2014-08-08 18:24:00\\\",\\\"seller_nick\\\": \\\"向阳aa\\\",\\\"operator\\\":\\\"小张\\\"}\",\"topic\": \"taobao_jds_TradeTrace\"}]",
+			"required": true,
+			"maxListSize": 50,
+			"subParams": [
+				{
+					"name": "target_group",
+					"type": "String",
+					"description": "目标分组"
+				},
+				{
+					"name": "topic",
+					"type": "String",
+					"description": "消息类型",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "消息内容的JSON表述，必须按照topic的定义来填充",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_all_success",
+			"type": "Boolean",
+			"description": "是否全部成功"
+		},
+		{
+			"name": "results",
+			"type": "TmcProduceResult []",
+			"description": "发送结果，与发送时的参数顺序一致。如果is_all_success为true时，不用校验result是否成功",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				}
+			]
+		}
+	]
+}

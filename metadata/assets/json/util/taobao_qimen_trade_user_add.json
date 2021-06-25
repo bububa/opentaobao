@@ -1,0 +1,29 @@
+{
+	"name": "taobao.qimen.trade.user.add",
+	"apiChineseName": "添加奇门订单链路用户",
+	"description": "添加奇门订单链路用户",
+	"requestParams": [
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "商家备注"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "gmt_create",
+			"type": "Date",
+			"description": "创建时间"
+		},
+		{
+			"name": "appkey",
+			"type": "String",
+			"description": "appkey"
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "卖家备注"
+		}
+	]
+}

@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.scbp.ad.campaign.create",
+	"apiChineseName": "创建计划",
+	"description": "创建计划",
+	"requestParams": [
+		{
+			"name": "campaign_operation",
+			"type": "CampaignOperationDto",
+			"description": "返回数据",
+			"subParams": [
+				{
+					"name": "title",
+					"type": "String",
+					"description": "标题",
+					"required": true
+				},
+				{
+					"name": "min_price",
+					"type": "String",
+					"description": "最小价格"
+				},
+				{
+					"name": "max_price",
+					"type": "String",
+					"description": "最大价格"
+				},
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "计划状态"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "计划类型",
+					"required": true
+				},
+				{
+					"name": "bid_type",
+					"type": "Number",
+					"description": "出价模式  * value =1 为智能出价      * value =2 为手动出价"
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "计划id"
+		}
+	]
+}

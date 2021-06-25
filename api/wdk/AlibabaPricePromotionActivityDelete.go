@@ -1,0 +1,21 @@
+package wdk
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/wdk"
+)
+
+/* 
+删除档期活动 
+alibaba.price.promotion.activity.delete
+
+删除盒马帮档期活动
+*/
+func AlibabaPricePromotionActivityDelete(clt *core.SDKClient, req *wdk.AlibabaPricePromotionActivityDeleteRequest, session string) (*wdk.AlibabaPricePromotionActivityDeleteResponse, error) {
+    var resp wdk.AlibabaPricePromotionActivityDeleteAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

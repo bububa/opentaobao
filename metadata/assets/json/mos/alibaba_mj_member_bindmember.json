@@ -1,0 +1,63 @@
+{
+	"name": "alibaba.mj.member.bindmember",
+	"apiChineseName": "绑定会员",
+	"description": "用于绑定喵街数字化会员",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "用户号"
+		},
+		{
+			"name": "mall_id",
+			"type": "Number",
+			"description": "商城Id",
+			"required": true
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "open_id",
+			"required": true
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "渠道",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SingleResult",
+			"description": "1",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "成功返回",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "系统错误",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "系统错误",
+					"required": true
+				}
+			]
+		}
+	]
+}

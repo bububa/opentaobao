@@ -1,0 +1,101 @@
+{
+	"name": "alibaba.scbp.target.ad.campaign.tag.effect",
+	"apiChineseName": "定向推广-获取推广计划定向效果数据",
+	"description": "定向推广-获取推广计划定向效果数据",
+	"requestParams": [
+		{
+			"name": "top_p4p_quick_effect_query",
+			"type": "TopP4pQuickEffectQuery",
+			"description": "效果数据",
+			"subParams": [
+				{
+					"name": "campaign_title",
+					"type": "String",
+					"description": "填写推广计划名字，单独返回某个计划的数据"
+				},
+				{
+					"name": "tag_type",
+					"type": "String",
+					"description": "查询类型，crowd(人群)，region(地域)",
+					"required": true
+				},
+				{
+					"name": "tag_label",
+					"type": "Number",
+					"description": "若查询类型为人群，需要填写此字段  1（潜在访问偏好） 2（潜在采购意向） 3（店铺老客） 4（优选人群）"
+				},
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "开始时间 当inteval=7或30的时候 不需要填写，当inteval=1时需要填写（开始结束时间区间不允许大于180天）"
+				},
+				{
+					"name": "begin_date",
+					"type": "String",
+					"description": "结束时间 当inteval=7或30的时候 不需要填写，当inteval=1时需要填写（开始结束时间区间不允许大于180天）"
+				},
+				{
+					"name": "interval",
+					"type": "Number",
+					"description": "区间 只能为1 7 30"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "effect_list",
+			"type": "TopP4pQuickTagEffectView []",
+			"description": "定向标签数据",
+			"subParams": [
+				{
+					"name": "tag_id",
+					"type": "String",
+					"description": "标签id(潜在访问偏好和潜在采购意向返回的是类目id，店铺老客和优选人群返回的是字符串)",
+					"required": true
+				},
+				{
+					"name": "tag_name",
+					"type": "String",
+					"description": "标签名字",
+					"required": true
+				},
+				{
+					"name": "cpc",
+					"type": "String",
+					"description": "平均点击出价",
+					"required": true
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率",
+					"required": true
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "消耗金额，单位元",
+					"required": true
+				},
+				{
+					"name": "click_cnt",
+					"type": "String",
+					"description": "点击数",
+					"required": true
+				},
+				{
+					"name": "impression_cnt",
+					"type": "String",
+					"description": "曝光量",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "总条数"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.wholesale.shippingline.template.list",
+	"apiChineseName": "获取运费模板",
+	"description": "查询运费模板信息",
+	"requestParams": [
+		{
+			"name": "page_num",
+			"type": "Number",
+			"description": "第几页从1开始",
+			"maxValue": 100,
+			"minValue": 1
+		},
+		{
+			"name": "count",
+			"type": "Number",
+			"description": "每页返回的数据个数",
+			"maxValue": 100,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "list_template_response",
+			"type": "ListTemplateAPIResult",
+			"description": "运费模板列表",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "运费模板总数"
+				},
+				{
+					"name": "items",
+					"type": "ShippinglineTemplate[]",
+					"description": "运费模板集合",
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "运费模板id"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "运费模板名称"
+						}
+					]
+				}
+			]
+		}
+	]
+}

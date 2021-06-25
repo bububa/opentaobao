@@ -1,0 +1,42 @@
+{
+	"name": "taobao.shopcats.list.get",
+	"apiChineseName": "获取前台展示的店铺类目",
+	"description": "获取淘宝面向买家的浏览导航类目（跟后台卖家商品管理的类目有差异）",
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "需要返回的字段列表，见ShopCat，默认返回：cid,parent_cid,name,is_parent",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "shop_cats",
+			"type": "ShopCat []",
+			"description": "店铺类目列表信息",
+			"subParams": [
+				{
+					"name": "cid",
+					"type": "Number",
+					"description": "类目编号"
+				},
+				{
+					"name": "parent_cid",
+					"type": "Number",
+					"description": "父类目编号，注：此类目指前台类目，值等于0：表示此类目为一级类目，值不等于0：表示此类目有父类目"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "类目名称"
+				},
+				{
+					"name": "is_parent",
+					"type": "Boolean",
+					"description": "该类目是否为父类目。即：该类目是否还有子类目"
+				}
+			]
+		}
+	]
+}

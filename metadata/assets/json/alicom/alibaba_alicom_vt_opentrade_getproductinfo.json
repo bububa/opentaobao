@@ -1,0 +1,108 @@
+{
+	"name": "alibaba.alicom.vt.opentrade.getproductinfo",
+	"apiChineseName": "查询新虚拟产品配置信息",
+	"description": "话费宝查询产品信息相关配置",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "String",
+			"description": "阿里通信产品ID"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "类型"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ProductActivityInfoResponseDto",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "产品ID",
+							"required": true
+						},
+						{
+							"name": "product_name",
+							"type": "String",
+							"description": "产品名称",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家名称",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "金额",
+							"required": true
+						},
+						{
+							"name": "activity_id",
+							"type": "String",
+							"description": "活动ID",
+							"required": true
+						},
+						{
+							"name": "activity_name",
+							"type": "String",
+							"description": "活动名称",
+							"required": true
+						},
+						{
+							"name": "activity_gift_infos",
+							"type": "ActivityGiftInfos",
+							"description": "activityGiftInfos",
+							"required": true,
+							"subParams": [
+								{
+									"name": "gift_id",
+									"type": "String",
+									"description": "giftId",
+									"required": true
+								},
+								{
+									"name": "gift_name",
+									"type": "String",
+									"description": "giftName",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

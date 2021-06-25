@@ -1,0 +1,200 @@
+{
+	"name": "alibaba.ailabs.iot.business.recipestep.insertorupdate",
+	"apiChineseName": "插入或更新食谱步骤",
+	"description": "插入或更新食谱步骤",
+	"requestParams": [
+		{
+			"name": "param_business_recipe_step_open_param",
+			"type": "BusinessRecipeStepOpenParam",
+			"description": "食谱步骤开放参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "business_recipe_id",
+					"type": "Number",
+					"description": "行业食谱id",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "食谱步骤描述"
+				},
+				{
+					"name": "business_recipe_step_id",
+					"type": "Number",
+					"description": "行业食谱步骤id"
+				},
+				{
+					"name": "image_url",
+					"type": "ImageUrlParam",
+					"description": "食谱步骤图片",
+					"subParams": [
+						{
+							"name": "img",
+							"type": "String",
+							"description": "默认图片"
+						},
+						{
+							"name": "large",
+							"type": "String",
+							"description": "大图"
+						},
+						{
+							"name": "medium",
+							"type": "String",
+							"description": "中图"
+						},
+						{
+							"name": "small",
+							"type": "String",
+							"description": "小图"
+						}
+					]
+				},
+				{
+					"name": "open_account_id",
+					"type": "String",
+					"description": "开放账号Id",
+					"required": true
+				},
+				{
+					"name": "recipe_step_name_cn",
+					"type": "String",
+					"description": "食谱步骤中文名",
+					"required": true
+				},
+				{
+					"name": "recipe_step_time",
+					"type": "Number",
+					"description": "食谱步骤时间"
+				},
+				{
+					"name": "sequence",
+					"type": "Number",
+					"description": "食谱步骤顺序号",
+					"required": true
+				},
+				{
+					"name": "tips",
+					"type": "String",
+					"description": "食谱步骤提示"
+				},
+				{
+					"name": "video_url",
+					"type": "VideoUrlParam",
+					"description": "食谱步骤视频",
+					"subParams": [
+						{
+							"name": "cover",
+							"type": "ImageUrlParam",
+							"description": "视频封面图",
+							"subParams": [
+								{
+									"name": "img",
+									"type": "String",
+									"description": "默认图片"
+								},
+								{
+									"name": "large",
+									"type": "String",
+									"description": "大图"
+								},
+								{
+									"name": "medium",
+									"type": "String",
+									"description": "中图"
+								},
+								{
+									"name": "small",
+									"type": "String",
+									"description": "小图"
+								}
+							]
+						},
+						{
+							"name": "default_url",
+							"type": "String",
+							"description": "默认播放链接"
+						},
+						{
+							"name": "height",
+							"type": "Number",
+							"description": "视频高度"
+						},
+						{
+							"name": "high",
+							"type": "String",
+							"description": "高清"
+						},
+						{
+							"name": "standard",
+							"type": "String",
+							"description": "标清"
+						},
+						{
+							"name": "ultra",
+							"type": "String",
+							"description": "超清"
+						},
+						{
+							"name": "width",
+							"type": "Number",
+							"description": "视频宽度"
+						}
+					]
+				},
+				{
+					"name": "recipe_step_action_list",
+					"type": "BusinessRecipeStepActionOpenParam[]",
+					"description": "步骤指令列表",
+					"subParams": [
+						{
+							"name": "action_name",
+							"type": "String",
+							"description": "指令名称"
+						},
+						{
+							"name": "action_value",
+							"type": "String",
+							"description": "指令值"
+						},
+						{
+							"name": "sequence",
+							"type": "Number",
+							"description": "指令顺序号"
+						}
+					]
+				},
+				{
+					"name": "action_flag",
+					"type": "Number",
+					"description": "指令标识：0不支持指令，1支持指令",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "信息"
+		},
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "响应code"
+		},
+		{
+			"name": "ret_value",
+			"type": "Number",
+			"description": "返回结果"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "追踪id"
+		}
+	]
+}

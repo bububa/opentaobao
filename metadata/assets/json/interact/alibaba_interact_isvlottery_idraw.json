@@ -1,0 +1,108 @@
+{
+	"name": "alibaba.interact.isvlottery.idraw",
+	"apiChineseName": "互动到店抽奖",
+	"description": "互动到店抽奖",
+	"requestParams": [
+		{
+			"name": "interact_id",
+			"type": "String",
+			"description": "互动实例ID",
+			"required": true
+		},
+		{
+			"name": "award_ids",
+			"type": "String",
+			"description": "抽奖ID列表 用逗号隔开"
+		},
+		{
+			"name": "ua",
+			"type": "String",
+			"description": "埋点参数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "LotteryProxyResult",
+			"description": "抽奖中奖信息",
+			"subParams": [
+				{
+					"name": "is_win",
+					"type": "Boolean",
+					"description": "是否中奖"
+				},
+				{
+					"name": "winning_time",
+					"type": "Date",
+					"description": "中奖时间"
+				},
+				{
+					"name": "winning_record_id",
+					"type": "Number",
+					"description": "中奖记录id"
+				},
+				{
+					"name": "lottery_id",
+					"type": "Number",
+					"description": "抽奖id"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "原因"
+				},
+				{
+					"name": "award_type",
+					"type": "String",
+					"description": "奖品类型"
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "奖品组id"
+				},
+				{
+					"name": "award_id",
+					"type": "Number",
+					"description": "奖品id"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "昵称"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户id"
+				},
+				{
+					"name": "award_name",
+					"type": "String",
+					"description": "奖品名称"
+				},
+				{
+					"name": "extra",
+					"type": "Json",
+					"description": "奖品拓展字段"
+				}
+			]
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "是否调用成功"
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息描述"
+		}
+	]
+}

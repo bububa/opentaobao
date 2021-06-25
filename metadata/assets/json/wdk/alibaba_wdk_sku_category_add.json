@@ -1,0 +1,79 @@
+{
+	"name": "alibaba.wdk.sku.category.add",
+	"apiChineseName": "商家类目新增接口",
+	"description": "商家类目新增接口",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "CategoryDo",
+			"description": "类目新增请求模型",
+			"required": true,
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "类目编码",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "类目名称"
+				},
+				{
+					"name": "parent_code",
+					"type": "String",
+					"description": "父类目编码（为空则认为是新增顶级类目）"
+				},
+				{
+					"name": "leaf",
+					"type": "Boolean",
+					"description": "是否是叶子节点（叶子类目则不允许再添加子类目,非叶子类目不允许添加商品，默认false）"
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述"
+				},
+				{
+					"name": "sort_order",
+					"type": "Number",
+					"description": "类目排序值"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口返回成功标志",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码（只有有异常才有值）",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息（只有有异常才有值）",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "调用成功时的返回类目code",
+					"required": true
+				}
+			]
+		}
+	]
+}

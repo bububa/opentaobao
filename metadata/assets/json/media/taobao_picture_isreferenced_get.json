@@ -1,0 +1,20 @@
+{
+	"name": "taobao.picture.isreferenced.get",
+	"apiChineseName": "图片是否被引用",
+	"description": "查询图片是否被引用，被引用返回true，未被引用返回false",
+	"requestParams": [
+		{
+			"name": "picture_id",
+			"type": "Number",
+			"description": "图片id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_referenced",
+			"type": "Boolean",
+			"description": "图片是否被引用"
+		}
+	]
+}

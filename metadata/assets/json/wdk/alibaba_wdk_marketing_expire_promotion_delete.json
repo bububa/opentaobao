@@ -1,0 +1,129 @@
+{
+	"name": "alibaba.wdk.marketing.expire.promotion.delete",
+	"apiChineseName": "短保优惠删除",
+	"description": "短保优惠删除",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "ExpirePromotionBo",
+			"description": "删除短保优惠",
+			"subParams": [
+				{
+					"name": "period_infos",
+					"type": "ExpirePeriodInfo[]",
+					"description": "短保时间段信息",
+					"subParams": [
+						{
+							"name": "promotion_value",
+							"type": "Number",
+							"description": "优惠具体折扣，1到1000",
+							"required": true
+						},
+						{
+							"name": "end_hour",
+							"type": "Number",
+							"description": "0到24，小时数值",
+							"required": true
+						},
+						{
+							"name": "start_hour",
+							"type": "Number",
+							"description": "0到24，小时数值",
+							"required": true
+						},
+						{
+							"name": "out_id",
+							"type": "Number",
+							"description": "外部活动id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "门店id",
+					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品skucode",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "datas",
+			"type": "ExpirePromotionResult []",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "skuCode",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "itemId",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "shopId",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "merchantCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "fail_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

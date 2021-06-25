@@ -1,0 +1,147 @@
+{
+	"name": "alibaba.wdk.wholesale.outboundorder.commit",
+	"apiChineseName": "盒马帮发货信息回传接口",
+	"description": "盒马帮发货信息回传接口",
+	"requestParams": [
+		{
+			"name": "outbound_info_commit_req",
+			"type": "OutboundInfoCommitReq",
+			"description": "发货信息参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "outbound_item_infos",
+					"type": "OutboundItemInfo[]",
+					"description": "商品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "wholesale_order_no",
+							"type": "String",
+							"description": "批发单号"
+						},
+						{
+							"name": "production_date",
+							"type": "Date",
+							"description": "已废弃，请使用containers.production_date"
+						},
+						{
+							"name": "outbound_completed",
+							"type": "Boolean",
+							"description": "是否完结",
+							"required": true
+						},
+						{
+							"name": "outbound_quantity",
+							"type": "String",
+							"description": "出库数量(为正数或零)",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "external_order_no",
+							"type": "String",
+							"description": "外部单号，如采购单号",
+							"required": true
+						},
+						{
+							"name": "containers",
+							"type": "ContainerDo[]",
+							"description": "容器信息",
+							"subParams": [
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "数量"
+								},
+								{
+									"name": "container_code",
+									"type": "String",
+									"description": "容器编码"
+								},
+								{
+									"name": "production_date",
+									"type": "Date",
+									"description": "生产日期"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "estimated_arrival_at",
+					"type": "Date",
+					"description": "预计到货时间",
+					"required": true
+				},
+				{
+					"name": "outbound_at",
+					"type": "Date",
+					"description": "出货时间",
+					"required": true
+				},
+				{
+					"name": "trusted_inbound",
+					"type": "Boolean",
+					"description": "收货类型(信任收货、非信任收货)",
+					"required": true
+				},
+				{
+					"name": "supplier_name",
+					"type": "String",
+					"description": "供应商名称",
+					"required": true
+				},
+				{
+					"name": "supplier_code",
+					"type": "String",
+					"description": "供应商编码",
+					"required": true
+				},
+				{
+					"name": "asn_order_no",
+					"type": "String",
+					"description": "asn单号",
+					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码，已经废弃"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

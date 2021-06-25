@@ -1,0 +1,46 @@
+{
+	"name": "taobao.wlb.stores.baseinfo.get",
+	"apiChineseName": "商家按照仓的类型获取仓库接口",
+	"description": "通过USERID和仓库类型，获取商家自有仓库或菜鸟仓库或全部仓库",
+	"requestParams": [
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "0.商家仓库.1.菜鸟仓库.2全部被划分的仓库"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "store_info_list",
+			"type": "StoreInfo []",
+			"description": "仓库列表",
+			"subParams": [
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "XXX果园"
+				},
+				{
+					"name": "real_name",
+					"type": "String",
+					"description": "仓库真实名字"
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "仓库服务代码"
+				}
+			]
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "返回的总数"
+		}
+	]
+}

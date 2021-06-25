@@ -1,0 +1,63 @@
+{
+	"name": "alibaba.ele.fengniao.chainstore.ranges",
+	"apiChineseName": "蜂鸟查询门店配送范围接口",
+	"description": "蜂鸟查询门店配送范围接口",
+	"requestParams": [
+		{
+			"name": "merchant_code",
+			"type": "String",
+			"description": "商户code"
+		},
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "appId"
+		},
+		{
+			"name": "chainstore_code",
+			"type": "String",
+			"description": "门店code"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "range_list",
+			"type": "Result []",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "range_id",
+					"type": "Number",
+					"description": "到达圈标识",
+					"required": true
+				},
+				{
+					"name": "ranges",
+					"type": "Range[]",
+					"description": "ranges",
+					"required": true,
+					"subParams": [
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "range_type",
+					"type": "Number",
+					"description": "配送圈类型 1-日间 2- 晚上  3-全天",
+					"required": true
+				}
+			]
+		}
+	]
+}

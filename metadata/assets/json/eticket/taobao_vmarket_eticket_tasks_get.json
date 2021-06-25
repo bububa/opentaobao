@@ -1,0 +1,52 @@
+{
+	"name": "taobao.vmarket.eticket.tasks.get",
+	"apiChineseName": "任务列表获取接口",
+	"description": "外部合作卖家获取任务列表的信息：如发码同通知失败或者回调失败的订单号",
+	"requestParams": [
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "卖家家ID(信任卖家不必传，码商可选)"
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "返回结果类型:\u003cbr/\u003e1:返回通知失败的订单\u003cbr/\u003e2.返回通知成功回调失败的订单",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码。取值范围:大于零的整数; 默认值:1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页获取条数。默认值40，最小值1，最大值100。"
+		},
+		{
+			"name": "codemerchant_id",
+			"type": "Number",
+			"description": "码商ID，如果是码商，必须传，如果是信任卖家，不需要传"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "任务列表查询结果的总数"
+		},
+		{
+			"name": "eticket_tasks",
+			"type": "EticketTask []",
+			"description": "任务列表查询结果信息",
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单ID"
+				}
+			]
+		}
+	]
+}

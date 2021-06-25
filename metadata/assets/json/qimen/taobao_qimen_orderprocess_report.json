@@ -1,0 +1,125 @@
+{
+	"name": "taobao.qimen.orderprocess.report",
+	"apiChineseName": "订单流水通知接口",
+	"description": "WMS调用奇门的接口,将订单在仓库的状态回传给ERP；场景说明：仓库仓内操作状态回传给ERP, 比如打包操作完成时, 回传一个打 包完成的状态给到ERP, ERP自行决定如何处理。",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "OrderProcessReportRequest",
+			"subParams": [
+				{
+					"name": "order",
+					"type": "Order",
+					"description": "订单信息",
+					"subParams": [
+						{
+							"name": "orderCode",
+							"type": "String",
+							"description": "单据号",
+							"required": true
+						},
+						{
+							"name": "orderId",
+							"type": "String",
+							"description": "仓储系统单据号"
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "单据类型(JYCK=一般交易出库单;HHCK=换货出库;BFCK=补发出库;PTCK=普通出库单;DBCK=调拨出库;B2BRK=B2B入 库;B2BCK=B2B出库;QTCK=其他出库;SCRK=生产入库;LYRK=领用入库;CCRK=残次品入库;CGRK=采购入库;DBRK= 调拨入库;QTRK= 其他入 库;XTRK= 销退入库;HHRK= 换货入库;CNJG= 仓内加工单)"
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						}
+					]
+				},
+				{
+					"name": "process",
+					"type": "Process",
+					"description": "订单处理信息",
+					"subParams": [
+						{
+							"name": "processStatus",
+							"type": "String",
+							"description": "单据状态(ACCEPT=仓库接单;PARTFULFILLED-部分收货完成;FULFILLED=收货完成;PRINT = 打印;PICK=捡货;CHECK = 复核 ;PACKAGE= 打包;WEIGH= 称重;READY=待提货;DELIVERED=已发货;REFUSE=买家拒签;EXCEPTION =异常;CLOSED= 关闭;CANCELED= 取 消;REJECT=仓库拒单;SIGN=签收;TMSCANCELED=快递拦截;OTHER=其他;PARTDELIVERED=部分发货完成;TMSCANCELFAILED=快递拦截失败;只传英 文编码)",
+							"required": true
+						},
+						{
+							"name": "operatorCode",
+							"type": "String",
+							"description": "当前状态操作员编码"
+						},
+						{
+							"name": "operatorName",
+							"type": "String",
+							"description": "当前状态操作员姓名"
+						},
+						{
+							"name": "operateTime",
+							"type": "String",
+							"description": "当前状态操作时间(YYYY-MM-DD HH:MM:SS)"
+						},
+						{
+							"name": "operateInfo",
+							"type": "String",
+							"description": "操作内容"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "expressCode",
+							"type": "String",
+							"description": "运单号"
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

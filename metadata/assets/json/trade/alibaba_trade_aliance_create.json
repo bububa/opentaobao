@@ -1,0 +1,165 @@
+{
+	"name": "alibaba.trade.aliance.create",
+	"apiChineseName": "推客平台订单回流",
+	"description": "推客平台订单回流",
+	"requestParams": [
+		{
+			"name": "param_isv_create_order_param",
+			"type": "IsvCreateOrderParam",
+			"description": "下单请求",
+			"subParams": [
+				{
+					"name": "buyer_remarks",
+					"type": "String",
+					"description": "买家备注"
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单ID，仅仅做追踪使用"
+				},
+				{
+					"name": "sm_addr_model",
+					"type": "SmAddrModel",
+					"description": "收货地址信息",
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "详细地址，如果地区Code没有填写，API会根据address反向解析地区Code"
+						},
+						{
+							"name": "area_code",
+							"type": "String",
+							"description": "地区Code"
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "地区名"
+						},
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市Code"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市名"
+						},
+						{
+							"name": "full_name",
+							"type": "String",
+							"description": "收货人姓名"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "收货人手机号"
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "收货人电话"
+						},
+						{
+							"name": "post_code",
+							"type": "String",
+							"description": "邮编"
+						},
+						{
+							"name": "privince_name",
+							"type": "String",
+							"description": "省份名"
+						},
+						{
+							"name": "province_code",
+							"type": "String",
+							"description": "省份Code"
+						}
+					]
+				},
+				{
+					"name": "sub_order_info_list",
+					"type": "IsvSimpleSubOrderModel[]",
+					"description": "订单行详情",
+					"subParams": [
+						{
+							"name": "offer_id",
+							"type": "String",
+							"description": "1688的商品ID(offerId)",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "购买数量"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "1688的单品货号ID(skuId)，如果有的话，必须填写"
+						},
+						{
+							"name": "cargo_key",
+							"type": "String",
+							"description": "商品的类目(Key)，可不填写"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "订单创建结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否创建成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "main_order_id",
+					"type": "String",
+					"description": "生成的订单号i",
+					"required": true
+				},
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "totalAmount",
+					"required": true
+				}
+			]
+		}
+	]
+}

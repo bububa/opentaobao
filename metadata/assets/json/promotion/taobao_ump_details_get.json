@@ -1,0 +1,40 @@
+{
+	"name": "taobao.ump.details.get",
+	"apiChineseName": "查询活动详情列表",
+	"description": "分页查询优惠详情列表",
+	"requestParams": [
+		{
+			"name": "act_id",
+			"type": "Number",
+			"description": "营销活动id",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "分页的页码",
+			"required": true,
+			"minValue": 0
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页的最大条数",
+			"required": true,
+			"maxValue": 50,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "contents",
+			"type": "String []",
+			"description": "活动详情的信息"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "记录总数"
+		}
+	]
+}

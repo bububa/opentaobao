@@ -1,0 +1,142 @@
+{
+	"name": "alibaba.wdk.marketing.itemdiscount.createactivity",
+	"apiChineseName": "创建商品特价活动",
+	"description": "创建商品特价活动",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "ItemDiscountActivityRequest",
+			"description": "创建活动请求入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "terminals",
+					"type": "Number[]",
+					"description": "优惠适用场景[APP|POS|POS+APP分别对应的值为1|2|1,2]",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "参加活动的渠道店ids",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "Number",
+					"description": "活动结束时间,时间戳",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "Number",
+					"description": "活动开始时间,时间戳",
+					"required": true
+				},
+				{
+					"name": "discount_type",
+					"type": "String",
+					"description": "商品特价优惠方式[itemDecreaseMoney:商品特价减钱;itemFixPrice:商品特价一口价;itemDiscount:商品特价打折]",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动详情描述,不超过30个英文字符",
+					"required": true
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称,不超过10个英文字符",
+					"required": true
+				},
+				{
+					"name": "member_limit",
+					"type": "Number",
+					"description": "会员维度活动参与人群限制[-1:不限制;1:会员专享;2:非会员专享]"
+				},
+				{
+					"name": "merchant_crowd_code",
+					"type": "String",
+					"description": "商家人群编码"
+				},
+				{
+					"name": "txd_crowd_code",
+					"type": "String",
+					"description": "淘鲜达人群编码"
+				},
+				{
+					"name": "activity_channel",
+					"type": "String",
+					"description": "渠道编码"
+				},
+				{
+					"name": "period_config",
+					"type": "PeriodConfig",
+					"description": "周期优惠信息",
+					"subParams": [
+						{
+							"name": "every_day_periods",
+							"type": "String[]",
+							"description": "每天的那些时间段生效"
+						},
+						{
+							"name": "weekdays",
+							"type": "Number[]",
+							"description": "一周的哪几天生效"
+						}
+					]
+				},
+				{
+					"name": "priority_value",
+					"type": "Number",
+					"description": "活动优先级，值越大表示优先级越高，必须大于0"
+				},
+				{
+					"name": "cover_before",
+					"type": "Boolean",
+					"description": "是否参加后单压前单，默认不参加"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "创建活动返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "创建成功时会返回五道口活动id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "创建活动是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

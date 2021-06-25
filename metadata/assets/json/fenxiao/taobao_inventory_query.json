@@ -1,0 +1,94 @@
+{
+	"name": "taobao.inventory.query",
+	"apiChineseName": "查询商品库存信息",
+	"description": "建议使用新接口：tmall.inventory.query.forstore ，新ISV不推荐使用。\n商家查询商品总体库存信息",
+	"requestParams": [
+		{
+			"name": "sc_item_ids",
+			"type": "String",
+			"description": "后端商品ID 列表，控制到50个",
+			"required": true
+		},
+		{
+			"name": "sc_item_codes",
+			"type": "String",
+			"description": "后端商品的商家编码列表，控制到50个"
+		},
+		{
+			"name": "seller_nick",
+			"type": "String",
+			"description": "卖家昵称"
+		},
+		{
+			"name": "store_codes",
+			"type": "String",
+			"description": "仓库列表:GLY001^GLY002"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item_inventorys",
+			"type": "InventorySum []",
+			"description": "商品总体库存信息",
+			"subParams": [
+				{
+					"name": "sc_item_id",
+					"type": "Number",
+					"description": "商品后端ID，如果有传sc_item_code,参数可以为0"
+				},
+				{
+					"name": "sc_item_code",
+					"type": "String",
+					"description": "商品商家编码"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "商家仓库编码"
+				},
+				{
+					"name": "inventory_type",
+					"type": "Number",
+					"description": "库存类型：\u003cbr/\u003e1：正常 \u003cbr/\u003e2：损坏 \u003cbr/\u003e3：冻结 \u003cbr/\u003e10：质押 \u003cbr/\u003e11-20:商家自定义"
+				},
+				{
+					"name": "inventory_type_name",
+					"type": "String",
+					"description": "库存类型名称"
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "总物理库存数量"
+				},
+				{
+					"name": "reserve_quantity",
+					"type": "Number",
+					"description": "总预扣数量"
+				},
+				{
+					"name": "occupy_quantity",
+					"type": "Number",
+					"description": "总占用数量"
+				}
+			]
+		},
+		{
+			"name": "tip_infos",
+			"type": "TipInfo []",
+			"description": "提示信息，提示不存在的后端商品",
+			"subParams": [
+				{
+					"name": "info",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "sc_item_id",
+					"type": "String",
+					"description": "商品id"
+				}
+			]
+		}
+	]
+}

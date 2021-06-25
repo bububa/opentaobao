@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.wdk.item.category.update",
+	"apiChineseName": "修改类目",
+	"description": "修改类目",
+	"requestParams": [
+		{
+			"name": "bean",
+			"type": "UpdateCategoryRequestBean",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "org_code",
+					"type": "String",
+					"description": "机构编码",
+					"required": true
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "forest_id",
+					"type": "String",
+					"description": "forest类目ID"
+				},
+				{
+					"name": "back_cat_code",
+					"type": "String",
+					"description": "盒马 后台类目"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				}
+			]
+		}
+	]
+}

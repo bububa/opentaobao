@@ -1,0 +1,152 @@
+{
+	"name": "taobao.bus.order.set",
+	"apiChineseName": "汽车票下单接口",
+	"description": "提供给汽车票商家进行下单",
+	"requestParams": [
+		{
+			"name": "param_b2_b_create_order_r_q",
+			"type": "B2BCreateOrderRq",
+			"description": "下单参数",
+			"subParams": [
+				{
+					"name": "b2_b_fetch_holder_info",
+					"type": "B2BFetchHolderInfo",
+					"description": "取票人",
+					"subParams": [
+						{
+							"name": "fetch_cert_number",
+							"type": "String",
+							"description": "取票人证件号码"
+						},
+						{
+							"name": "fetch_cert_type",
+							"type": "String",
+							"description": "取票人证件类型"
+						},
+						{
+							"name": "fetch_phone",
+							"type": "String",
+							"description": "取票人电话"
+						},
+						{
+							"name": "fetch_ticket_name",
+							"type": "String",
+							"description": "取票人姓名"
+						}
+					]
+				},
+				{
+					"name": "b2b_bus_line_info",
+					"type": "B2BBusLineInfo",
+					"description": "车次信息",
+					"subParams": [
+						{
+							"name": "dep_time",
+							"type": "String",
+							"description": "出发时间"
+						},
+						{
+							"name": "last_place_name",
+							"type": "String",
+							"description": "目的地"
+						},
+						{
+							"name": "schedule_id",
+							"type": "String",
+							"description": "车次ID"
+						},
+						{
+							"name": "start_city_name",
+							"type": "String",
+							"description": "出发城市"
+						},
+						{
+							"name": "start_station_name",
+							"type": "String",
+							"description": "出发站名"
+						},
+						{
+							"name": "start_station_name_address",
+							"type": "String",
+							"description": "出发站地址"
+						},
+						{
+							"name": "to_station_name",
+							"type": "String",
+							"description": "到达站名"
+						}
+					]
+				},
+				{
+					"name": "passengers",
+					"type": "PassengerVo[]",
+					"description": "乘客信息",
+					"subParams": [
+						{
+							"name": "rider_cert_number",
+							"type": "String",
+							"description": "乘客证件号码"
+						},
+						{
+							"name": "rider_cert_type",
+							"type": "String",
+							"description": "乘客证件类型"
+						},
+						{
+							"name": "rider_name",
+							"type": "String",
+							"description": "乘客姓名"
+						},
+						{
+							"name": "service_charge",
+							"type": "Number",
+							"description": "服务费"
+						},
+						{
+							"name": "ticket_price",
+							"type": "Number",
+							"description": "票价"
+						}
+					]
+				},
+				{
+					"name": "ticket_count",
+					"type": "Number",
+					"description": "票数"
+				},
+				{
+					"name": "total_price",
+					"type": "Number",
+					"description": "总价"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ali_pay_trade_id",
+			"type": "String",
+			"description": "支付宝交易流水号"
+		},
+		{
+			"name": "alitrip_order_id",
+			"type": "String",
+			"description": "阿里订单号"
+		},
+		{
+			"name": "error_code_1",
+			"type": "String",
+			"description": "错误代码"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "issuccess",
+			"type": "Boolean",
+			"description": "是否下单成功"
+		}
+	]
+}

@@ -1,0 +1,105 @@
+{
+	"name": "alibaba.wdk.coupon.spread.apply",
+	"apiChineseName": "普通发券",
+	"description": "优惠券发放",
+	"requestParams": [
+		{
+			"name": "param_wdk_coupon_apply_param",
+			"type": "WdkCouponApplyParam",
+			"description": "参数对象",
+			"subParams": [
+				{
+					"name": "apply_channel",
+					"type": "String",
+					"description": "申请渠道"
+				},
+				{
+					"name": "apply_source",
+					"type": "String",
+					"description": "券领取来源，非必填，用于区分不同的业务来源，默认传空为领取普通优惠券"
+				},
+				{
+					"name": "coupon_source",
+					"type": "String",
+					"description": "卡券来源  [ump:ump卡券; koubei:口碑券]"
+				},
+				{
+					"name": "features",
+					"description": "拓展属性"
+				},
+				{
+					"name": "out_biz_no",
+					"type": "String",
+					"description": "外部业务id"
+				},
+				{
+					"name": "template_id",
+					"type": "String",
+					"description": "优惠券模版id"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "领取淘系id"
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "优惠券模版uuid"
+				},
+				{
+					"name": "idempotent_key",
+					"type": "String",
+					"description": "幂等键"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "CouponTemplateOperateResponse",
+					"description": "返回",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ma_code",
+							"type": "String",
+							"description": "匿名码code",
+							"required": true
+						},
+						{
+							"name": "voucher_id",
+							"type": "String",
+							"description": "券实例id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功标志",
+					"required": true
+				}
+			]
+		}
+	]
+}

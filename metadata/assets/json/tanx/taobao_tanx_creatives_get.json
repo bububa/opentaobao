@@ -1,0 +1,115 @@
+{
+	"name": "taobao.tanx.creatives.get",
+	"apiChineseName": "批量获取DSP用户的创意审核结果",
+	"description": "批量获取DSP用户的创意审核结果",
+	"requestParams": [
+		{
+			"name": "member_id",
+			"type": "Number",
+			"description": "DSP的memberId",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "dsp用户身份认证的TOKEN",
+			"required": true
+		},
+		{
+			"name": "sign_time",
+			"type": "Number",
+			"description": "当前时间戳，1970-01-01后的秒数",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "创意的状态（全部ALL,通过PASS,拒绝REFUSE,未审核WAITING）",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "分页的页码(第一页为1)",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "所选创意的类型。1--\u003e普通类型, 2--\u003e视频贴片, 0 --\u003e优先查询普通类型,无结果则查询视频贴片类型",
+			"maxValue": 2,
+			"minValue": 0
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "调用的成功信息或失败信息"
+		},
+		{
+			"name": "tanx_error_code",
+			"type": "Number",
+			"description": "调用返回码"
+		},
+		{
+			"name": "is_ok",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		},
+		{
+			"name": "results",
+			"type": "CreativeDto []",
+			"description": "返回的创意列表",
+			"subParams": [
+				{
+					"name": "creative_id",
+					"type": "String",
+					"description": "创意ID"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "创意审核的状态（通过PASS,拒绝REFUSE,未审核WAITING）"
+				},
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "创意通过的等级，1表示一级创意，99表示普通创意"
+				},
+				{
+					"name": "refuse_cause",
+					"type": "String",
+					"description": "创意拒绝的原因"
+				},
+				{
+					"name": "adboard_data",
+					"type": "Json",
+					"description": "广告位属性"
+				},
+				{
+					"name": "creative_publisher_audit_dto_list",
+					"type": "CreativePublisherAuditDto[]",
+					"description": "创意审核信息列表",
+					"subParams": [
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态（PASS.通过；REFUSE.拒绝；WAITING.待审）"
+						},
+						{
+							"name": "publiser_id",
+							"type": "String",
+							"description": "媒体ID"
+						},
+						{
+							"name": "refuse_cause",
+							"type": "String",
+							"description": "拒绝原因"
+						}
+					]
+				}
+			]
+		}
+	]
+}

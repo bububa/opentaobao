@@ -1,0 +1,69 @@
+{
+	"name": "taobao.ailab.aicloud.top.device.control.childlock",
+	"apiChineseName": "设备儿童锁",
+	"description": "设备儿童锁",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "OpenBaseInfo",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "schema",
+					"type": "String",
+					"description": "账户体系隔离"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户ID，此处传入第三方账户体系的用户id"
+				},
+				{
+					"name": "utd_id",
+					"type": "String",
+					"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+				},
+				{
+					"name": "ext",
+					"type": "String",
+					"description": "扩展信息，用于存放APP类型等"
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "String",
+			"description": "设备id",
+			"required": true
+		},
+		{
+			"name": "param2",
+			"type": "Boolean",
+			"description": "是否打开",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Boolean",
+			"description": "业务请求是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "网络请求是否成功"
+		}
+	]
+}

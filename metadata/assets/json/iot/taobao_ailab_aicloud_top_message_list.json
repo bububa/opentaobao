@@ -1,0 +1,114 @@
+{
+	"name": "taobao.ailab.aicloud.top.message.list",
+	"apiChineseName": "获取留言列表",
+	"description": "根据指定参数获取留言列表",
+	"requestParams": [
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id"
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		},
+		{
+			"name": "before_time",
+			"type": "String",
+			"description": "截止时间，yyyy-MM-dd HH:mm:ss.SSS"
+		},
+		{
+			"name": "limit",
+			"type": "Number",
+			"description": "一次性展示多少条信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo错误码信息，成功返回null",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "Model[]",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "source",
+							"type": "String",
+							"description": "source",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "type",
+							"required": true
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "content",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "url",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "gmtCreate",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "String",
+							"description": "gmtModified",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "status",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,119 @@
+{
+	"name": "taobao.alitrip.ie.agent.refund.new.fillconfirmfee",
+	"apiChineseName": "新模型-回填申请单费用",
+	"description": "1. 回填退票费用",
+	"requestParams": [
+		{
+			"name": "param_refund_order_fill_confirm_fee_rq",
+			"type": "RefundOrderFillConfirmFeeRq",
+			"description": "请求",
+			"subParams": [
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商ID",
+					"required": true
+				},
+				{
+					"name": "fee_params",
+					"type": "RefundPassengerFeeParam[]",
+					"description": "回填费用参数列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "already_used_total_pirce",
+							"type": "Number",
+							"description": "机票已使用部分总价(单位:分)",
+							"required": true
+						},
+						{
+							"name": "non_refundable_tax_price",
+							"type": "Number",
+							"description": "机票不可退税费(单位:分)",
+							"required": true
+						},
+						{
+							"name": "non_refundable_ticket_price",
+							"type": "Number",
+							"description": "机票不可退票价(单位:分)",
+							"required": true
+						},
+						{
+							"name": "non_refundable_total_change_service_fee",
+							"type": "Number",
+							"description": "机票不可退改签服务费(单位:分)",
+							"required": true
+						},
+						{
+							"name": "non_refundable_total_change_upgrade_fee",
+							"type": "Number",
+							"description": "机票不可退改签升舱费(单位:分)",
+							"required": true
+						},
+						{
+							"name": "passenger_name",
+							"type": "String",
+							"description": "乘机人姓名"
+						}
+					]
+				},
+				{
+					"name": "refund_order_id",
+					"type": "Number",
+					"description": "申请单ID",
+					"required": true
+				},
+				{
+					"name": "total_seller_refund_money",
+					"type": "Number",
+					"description": "商家退款金额(单位：分)，用于审计金额正确性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RefundOrderFillConfirmFeeRs",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "api_error_code",
+					"type": "Number",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "api_error_msg",
+					"type": "String",
+					"description": "错误秒速",
+					"required": true
+				},
+				{
+					"name": "err_trace",
+					"type": "String",
+					"description": "errTrace",
+					"required": true
+				},
+				{
+					"name": "failure",
+					"type": "Boolean",
+					"description": "是否失败",
+					"required": true
+				},
+				{
+					"name": "host_name",
+					"type": "String",
+					"description": "主机名称",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

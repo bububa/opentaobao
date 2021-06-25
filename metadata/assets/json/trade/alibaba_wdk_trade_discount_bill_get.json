@@ -1,0 +1,219 @@
+{
+	"name": "alibaba.wdk.trade.discount.bill.get",
+	"apiChineseName": "订单优惠账单查询",
+	"description": "商家查询订单优惠账单",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "OrderDiscountBillQueryRequest",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "查询结束时间",
+					"required": true
+				},
+				{
+					"name": "next_id",
+					"type": "Number",
+					"description": "传入上一次查询结果的next_id，第一次查询时传0"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "查询开始时间",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店id，store_id和out_shop_code不能同时为空"
+				},
+				{
+					"name": "order_channel",
+					"type": "Number",
+					"description": "订单渠道 1代表\"轻POS\",2代表\"淘鲜达\",默认为 1"
+				},
+				{
+					"name": "out_shop_code",
+					"type": "String",
+					"description": "外部门店编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OrderDiscountBillQueryResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "next_id",
+					"type": "Number",
+					"description": "下一页查询的入参，当为-1时表示没有更多数据",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "结果文案",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "业务请求成功与否",
+					"required": true
+				},
+				{
+					"name": "total_number",
+					"type": "Number",
+					"description": "总数量，只在查询第一页时返回",
+					"required": true
+				},
+				{
+					"name": "discount_bills",
+					"type": "OrderDiscountBillBo[]",
+					"description": "账单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "activity_id",
+							"type": "Number",
+							"description": "活动ID",
+							"required": true
+						},
+						{
+							"name": "activity_name",
+							"type": "String",
+							"description": "活动名称",
+							"required": true
+						},
+						{
+							"name": "activity_type",
+							"type": "Number",
+							"description": "活动类型 1：活动 2：券",
+							"required": true
+						},
+						{
+							"name": "buy_quantity",
+							"type": "Number",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "discount_fee",
+							"type": "Number",
+							"description": "优惠金额",
+							"required": true
+						},
+						{
+							"name": "discount_quantity",
+							"type": "Number",
+							"description": "优惠件数",
+							"required": true
+						},
+						{
+							"name": "discount_type",
+							"type": "Number",
+							"description": "补差类型",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键id",
+							"required": true
+						},
+						{
+							"name": "main_order_id",
+							"type": "String",
+							"description": "主订单号",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "merchant_discount_fee",
+							"type": "Number",
+							"description": "商家优惠补差金额",
+							"required": true
+						},
+						{
+							"name": "order_status",
+							"type": "Number",
+							"description": "交易状态",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部订单号",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "经营店id",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "String",
+							"description": "子单号",
+							"required": true
+						},
+						{
+							"name": "txd_discount_fee",
+							"type": "Number",
+							"description": "淘鲜达优惠金额",
+							"required": true
+						},
+						{
+							"name": "biz_time",
+							"type": "Date",
+							"description": "业务时间",
+							"required": true
+						},
+						{
+							"name": "order_channel",
+							"type": "Number",
+							"description": "订单渠道",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,25 @@
+{
+	"name": "alibaba.item.operate.upshelf",
+	"apiChineseName": "商品上架",
+	"description": "商品上架",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		},
+		{
+			"name": "quantity",
+			"type": "Number",
+			"description": "商品库存"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "商品上架是否成功"
+		}
+	]
+}

@@ -1,0 +1,126 @@
+{
+	"name": "taobao.auction.gov.get.latestbid",
+	"apiChineseName": "获取司法拍卖最新出价数据",
+	"description": "获取司法拍卖最新出价数据",
+	"requestParams": [
+		{
+			"name": "court_name",
+			"type": "String",
+			"description": "法院名称",
+			"required": true
+		},
+		{
+			"name": "contain_child",
+			"type": "Boolean",
+			"description": "死否包含下属法院",
+			"required": true
+		},
+		{
+			"name": "max_count",
+			"type": "Number",
+			"description": "获取最新出价条数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result4Top",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误说明",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "LatestBids[]",
+					"description": "最新出价列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "alias_name",
+							"type": "String",
+							"description": "竞买号",
+							"required": true
+						},
+						{
+							"name": "bid_price",
+							"type": "Number",
+							"description": "出价金额(分为单位)",
+							"required": true
+						},
+						{
+							"name": "bid_time",
+							"type": "Number",
+							"description": "出价时间",
+							"required": true
+						},
+						{
+							"name": "cat_name",
+							"type": "String",
+							"description": "标的物类目",
+							"required": true
+						},
+						{
+							"name": "consult_price",
+							"type": "Number",
+							"description": "评估价/市场价(分为单位)",
+							"required": true
+						},
+						{
+							"name": "court_name",
+							"type": "String",
+							"description": "法院名称",
+							"required": true
+						},
+						{
+							"name": "init_price",
+							"type": "Number",
+							"description": "起拍价(分为单位)",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "拍品id",
+							"required": true
+						},
+						{
+							"name": "item_title",
+							"type": "String",
+							"description": "拍品标题",
+							"required": true
+						},
+						{
+							"name": "pic_url",
+							"type": "String",
+							"description": "拍品图片",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_item",
+					"type": "Number",
+					"description": "返回的最新出价条数",
+					"required": true
+				}
+			]
+		}
+	]
+}

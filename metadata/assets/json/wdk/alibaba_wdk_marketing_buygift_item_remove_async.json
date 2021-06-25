@@ -1,0 +1,87 @@
+{
+	"name": "alibaba.wdk.marketing.buygift.item.remove.async",
+	"apiChineseName": "批量删除买赠商品",
+	"description": "批量删除买赠商品",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "ItemBuyGiftSku[]",
+			"description": "sku信息",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品的skuCode",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "外部活动编码"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动Id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "version",
+			"type": "Number",
+			"description": "alibaba.wdk.marketing.version.generate接口生成",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "结果信息",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "处理结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "datas",
+					"type": "ItemBuyGiftSku[]",
+					"description": "结果数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "sku编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

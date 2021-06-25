@@ -1,0 +1,30 @@
+{
+	"name": "taobao.bus.tvmcancelorder.set",
+	"apiChineseName": "线下自助机未付款取消订单",
+	"description": "自助机汽车票未付款取消订单",
+	"requestParams": [
+		{
+			"name": "alitrip_order_id",
+			"type": "String",
+			"description": "飞猪订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码  ORDER_NOT_FOUND"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述  订单无法查询"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "true代表成功 false 代表失败"
+		}
+	]
+}

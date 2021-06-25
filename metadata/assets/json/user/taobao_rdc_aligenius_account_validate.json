@@ -1,0 +1,46 @@
+{
+	"name": "taobao.rdc.aligenius.account.validate",
+	"apiChineseName": "AG商家账号校验",
+	"description": "提供应对接AG的erp系统查询其旗下的商家是否为AG商家",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "Resultdata",
+					"description": "resultData",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ag_account",
+							"type": "Number",
+							"description": "1=是AG用户，0=非AG用户",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_info",
+					"type": "String",
+					"description": "errorInfo",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "为true时才有resultData",
+					"required": true
+				}
+			]
+		}
+	]
+}

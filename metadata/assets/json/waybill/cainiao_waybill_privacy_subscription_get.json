@@ -1,0 +1,68 @@
+{
+	"name": "cainiao.waybill.privacy.subscription.get",
+	"apiChineseName": "隐私面单商家订购查询",
+	"description": "ISV查询商家是否订购隐私面单",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "error_code_list",
+					"type": "String[]",
+					"description": "错误code列表",
+					"required": true
+				},
+				{
+					"name": "failure",
+					"type": "Boolean",
+					"description": "是否失败",
+					"required": true
+				},
+				{
+					"name": "one_error_info",
+					"type": "String",
+					"description": "第一个错误",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "subscription",
+					"type": "Boolean",
+					"description": "商家是否订购",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_info_list",
+					"type": "String[]",
+					"description": "错误列表",
+					"required": true
+				},
+				{
+					"name": "object_id",
+					"type": "String",
+					"description": "系统信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.item.publish.submit",
+	"apiChineseName": "商品发布",
+	"description": "新商品发布，提交商品发布信息",
+	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务扩展参数，需与平台约定好"
+		},
+		{
+			"name": "market",
+			"type": "String",
+			"description": "商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版",
+			"required": true
+		},
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "商品类目ID",
+			"required": true
+		},
+		{
+			"name": "spu_id",
+			"type": "Number",
+			"description": "产品ID，天猫市场(market=tmall)时必填"
+		},
+		{
+			"name": "barcode",
+			"type": "String",
+			"description": "商品条码"
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "商品schema信息，通过alibaba.item.publish.props.get获取并补全后提交",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "create_time",
+			"type": "String",
+			"description": "商品创建时间"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID"
+		},
+		{
+			"name": "market",
+			"type": "String",
+			"description": "商品所属市场"
+		}
+	]
+}

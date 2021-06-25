@@ -1,0 +1,82 @@
+{
+	"name": "taobao.ailab.aicloud.top.message.addtext",
+	"apiChineseName": "精灵代说",
+	"description": "精灵代说",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "OpenBaseInfo",
+			"description": "用户信息",
+			"subParams": [
+				{
+					"name": "schema",
+					"type": "String",
+					"description": "账户体系隔离"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "用户ID，此处传入第三方账户体系的用户id"
+				},
+				{
+					"name": "utd_id",
+					"type": "String",
+					"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+				},
+				{
+					"name": "ext",
+					"type": "String",
+					"description": "扩展信息，用于存放APP类型等"
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "String",
+			"description": "设备id"
+		},
+		{
+			"name": "param2",
+			"type": "String",
+			"description": "代说文本"
+		},
+		{
+			"name": "param3",
+			"type": "String",
+			"description": "扩展信息，可以为空"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "业务是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "网络请求是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

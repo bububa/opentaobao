@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.scbp.account.isarrears.get",
+	"apiChineseName": "查询关键词推广账户是否欠款",
+	"description": "查询关键词推广账户是否欠款",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "客户的关键词推广账户是否欠款"
+		}
+	]
+}

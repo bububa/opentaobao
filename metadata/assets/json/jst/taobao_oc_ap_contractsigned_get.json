@@ -1,0 +1,17 @@
+{
+	"name": "taobao.oc.ap.contractsigned.get",
+	"apiChineseName": "用户是否签署支付宝代扣协议",
+	"description": "用户是否签署支付宝代扣协议",
+	"responseParams": [
+		{
+			"name": "contract_sign",
+			"type": "Boolean",
+			"description": "是否开通"
+		},
+		{
+			"name": "error_description",
+			"type": "String",
+			"description": "调用出错描述信息"
+		}
+	]
+}

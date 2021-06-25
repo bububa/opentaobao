@@ -1,0 +1,94 @@
+{
+	"name": "taobao.qianniu.tasks.count",
+	"apiChineseName": "任务查询条数接口",
+	"description": "任务查询条数接口",
+	"requestParams": [
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务类型"
+		},
+		{
+			"name": "sub_biz_type",
+			"type": "String",
+			"description": "子任务类型"
+		},
+		{
+			"name": "biz_ids",
+			"type": "String",
+			"description": "业务ID列表，逗号分隔"
+		},
+		{
+			"name": "task_ids",
+			"type": "String",
+			"description": "任务的ID列表，用逗号分隔"
+		},
+		{
+			"name": "sender_uid",
+			"type": "Number",
+			"description": "任务发起者用户数字ID"
+		},
+		{
+			"name": "receiver_uid",
+			"type": "Number",
+			"description": "任务执行者用户数字ID"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "逗号分隔的任务状态：0-未执行，1-执行中，2-执行完成，3-超时，4-取消，5-忽略"
+		},
+		{
+			"name": "sub_status",
+			"type": "String",
+			"description": "逗号分隔的子任务状态，由业务方自定义"
+		},
+		{
+			"name": "remind_flag",
+			"type": "Number",
+			"description": "0-不需要提醒，未设提醒时间 1-设置过提醒时间，需要提醒"
+		},
+		{
+			"name": "metadata_ids",
+			"type": "String",
+			"description": "任务元id，多个以逗号分隔"
+		},
+		{
+			"name": "biz_nick",
+			"type": "String",
+			"description": "与业务相关的买家nick"
+		},
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "按时间段搜索时的开始日期，格式如2014-01-01，不填则不限"
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "按时间段搜索的结束日期。不填则不限。格式为2014-01-01"
+		},
+		{
+			"name": "priority",
+			"type": "Number",
+			"description": "优先级"
+		},
+		{
+			"name": "exclude_biz_type",
+			"type": "String",
+			"description": "需要排除的任务类型"
+		},
+		{
+			"name": "key_word",
+			"type": "String",
+			"description": "关键词搜索。只对任务内容进行模糊匹配，以及bizid和biznick进行精准匹配"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "符合查询条件的总条数"
+		}
+	]
+}

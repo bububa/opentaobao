@@ -1,0 +1,79 @@
+{
+	"name": "taobao.bus.agent.returnticket.confirm",
+	"apiChineseName": "商家回调退票",
+	"description": "商家通过TOP接口调用来回传退票状态",
+	"requestParams": [
+		{
+			"name": "param_agent_confirm_return_r_q",
+			"type": "AgentConfirmReturnRq",
+			"description": "退票入参",
+			"subParams": [
+				{
+					"name": "agent_order_id",
+					"type": "String",
+					"description": "商家单号",
+					"required": true
+				},
+				{
+					"name": "agent_return_ticket_status",
+					"type": "Number",
+					"description": "退票结果 1-成功 2-失败",
+					"required": true
+				},
+				{
+					"name": "agent_return_ticket_type",
+					"type": "Number",
+					"description": "退票类型 0-按票退 1-按单退",
+					"required": true
+				},
+				{
+					"name": "agent_ticket_id",
+					"type": "String",
+					"description": "按票退 时的票号"
+				},
+				{
+					"name": "come_from",
+					"type": "String",
+					"description": "调用方表示"
+				},
+				{
+					"name": "passenger_name",
+					"type": "String",
+					"description": "按票退 时的乘客姓名"
+				},
+				{
+					"name": "refund_amount",
+					"type": "String",
+					"description": "参考退款金额（以实际为准）"
+				},
+				{
+					"name": "isign",
+					"type": "String",
+					"description": "签名"
+				},
+				{
+					"name": "success_time",
+					"type": "Date",
+					"description": "退票成功时间点"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否确认成功"
+		}
+	]
+}

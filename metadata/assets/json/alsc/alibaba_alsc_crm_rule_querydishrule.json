@@ -1,0 +1,159 @@
+{
+	"name": "alibaba.alsc.crm.rule.querydishrule",
+	"apiChineseName": "查询品牌下的入会菜品规则",
+	"description": "查询品牌下的入会菜品规则",
+	"requestParams": [
+		{
+			"name": "param_plan_rule_query_open_req",
+			"type": "PlanRuleQueryOpenReq",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID"
+				},
+				{
+					"name": "last_id",
+					"type": "String",
+					"description": "最后更新ID"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页查询数量"
+				},
+				{
+					"name": "last_update_time",
+					"type": "Date",
+					"description": "最后更新时间"
+				},
+				{
+					"name": "deleted",
+					"type": "Boolean",
+					"description": "是否包括逻辑删除的数据",
+					"required": true
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "DishGrowOpenRuleInfo[]",
+					"description": "入会菜品模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "是否已删除",
+							"required": true
+						},
+						{
+							"name": "dish_rule_id",
+							"type": "String",
+							"description": "规则ID",
+							"required": true
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展信息",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "plan_id",
+							"type": "String",
+							"description": "会员计划ID",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "菜品ID",
+							"required": true
+						},
+						{
+							"name": "to_level_id",
+							"type": "String",
+							"description": "升级到的等级id",
+							"required": true
+						},
+						{
+							"name": "out_sku_id",
+							"type": "String",
+							"description": "外部菜品ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				},
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "总数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

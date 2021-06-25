@@ -1,0 +1,66 @@
+{
+	"name": "alibaba.health.nr.logistics.waybill.get",
+	"apiChineseName": "电子面单查询接口",
+	"description": "商家登录后根据订单号查询物流单号及电子面单信息",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_result",
+			"type": "ResponseResult",
+			"description": "响应结果对象",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "LogisticsOrderDto",
+					"description": "物流单对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cp_code",
+							"type": "String",
+							"description": "快递公司编码",
+							"required": true
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "快递单号",
+							"required": true
+						},
+						{
+							"name": "waybill",
+							"type": "String",
+							"description": "电子面单",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "响应结果：true-成功，false-失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

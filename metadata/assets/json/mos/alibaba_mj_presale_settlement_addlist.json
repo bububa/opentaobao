@@ -1,0 +1,19 @@
+{
+	"name": "alibaba.mj.presale.settlement.addlist",
+	"apiChineseName": "预售结算数据回传",
+	"description": "用于预售活动结算数据的回传。",
+	"requestParams": [
+		{
+			"name": "pre_sale_refund_json",
+			"type": "String",
+			"description": "订单json格式数据"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

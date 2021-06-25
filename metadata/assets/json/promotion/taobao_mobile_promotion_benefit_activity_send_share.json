@@ -1,0 +1,94 @@
+{
+	"name": "taobao.mobile.promotion.benefit.activity.send.share",
+	"apiChineseName": "手淘专用单用户发放接口",
+	"description": "卖家活动中需要通过该API来发放对应的权益。手淘专用、验证分享链路。",
+	"requestParams": [
+		{
+			"name": "benefit_type",
+			"type": "Number",
+			"description": "权益类型    其中ALIPAY_COUPON 对应的type值是1",
+			"required": true
+		},
+		{
+			"name": "biz_id",
+			"type": "String",
+			"description": "权益关联的活动ID",
+			"required": true
+		},
+		{
+			"name": "detail_id",
+			"type": "Number",
+			"description": "活动详情id",
+			"required": true
+		},
+		{
+			"name": "feed_id",
+			"type": "Number",
+			"description": "广播ID",
+			"required": true
+		},
+		{
+			"name": "relation_id",
+			"type": "Number",
+			"description": "关联活动id",
+			"required": true
+		},
+		{
+			"name": "send_count",
+			"type": "Number",
+			"description": "权益发放数量",
+			"required": true
+		},
+		{
+			"name": "share_key",
+			"type": "String",
+			"description": "和bizId一起使用，标记分享链路的key。"
+		},
+		{
+			"name": "share_users",
+			"type": "String",
+			"description": "分享链路上的用户及用户是否发奖，u1_true,u2_true"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "调试线索",
+			"required": true
+		},
+		{
+			"name": "unique_id",
+			"type": "String",
+			"description": "事务id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "send_result",
+			"type": "ShareBenefitSendResult",
+			"description": "权益发放结果",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "发放结果是否正常"
+				},
+				{
+					"name": "result_map",
+					"type": "Json",
+					"description": "发放结果"
+				}
+			]
+		}
+	]
+}

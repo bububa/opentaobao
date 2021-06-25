@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.ssc.supplyplatform.serviceability.save",
+	"apiChineseName": "保存服务能力",
+	"description": "保存服务能力",
+	"requestParams": [
+		{
+			"name": "provider_type",
+			"type": "String",
+			"description": "服务提供者类型。service_store 网点；worker 工人；supplier 服务商",
+			"required": true
+		},
+		{
+			"name": "provider_id",
+			"type": "Number",
+			"description": "服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id",
+			"required": true
+		},
+		{
+			"name": "fulfil_type_list",
+			"type": "String[]",
+			"description": "目前包含三种。in_store 到店；at_home 上门；transmit_service 寄修。请根据实际支持的履约类型填写",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "service_sku_code_list",
+			"type": "String[]",
+			"description": "服务sku，具体的sku列表可以从服务商工作台的类目树获取",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "area_code_list",
+			"type": "Number[]",
+			"description": "菜鸟地址编码，各级地址均可（全国、省、市、区、街道），根据实际支持的地区填写。当支持的履约类型包含上门时，必填",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对外展示的错误信息",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

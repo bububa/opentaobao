@@ -1,0 +1,20 @@
+{
+	"name": "alibaba.security.jaq.rp.fetchmaterial",
+	"apiChineseName": "聚安全实人认证获取结果接口",
+	"description": "聚安全实人认证获取结果接口",
+	"requestParams": [
+		{
+			"name": "security_key",
+			"type": "String",
+			"description": "消息服务推送的key",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "结果信息"
+		}
+	]
+}

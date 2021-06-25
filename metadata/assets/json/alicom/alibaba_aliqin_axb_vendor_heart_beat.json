@@ -1,0 +1,45 @@
+{
+	"name": "alibaba.aliqin.axb.vendor.heart.beat",
+	"apiChineseName": "供应商心跳上报接口",
+	"description": "供应商上报自己的心跳信息",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "可选的预留字段"
+		},
+		{
+			"name": "vendor_key",
+			"type": "String",
+			"description": "供应商合作KEY",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "module",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

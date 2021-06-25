@@ -1,0 +1,67 @@
+{
+	"name": "taobao.simba.rpt.campaigneffect.get",
+	"apiChineseName": "推广计划效果报表数据对象",
+	"description": "推广计划效果报表数据对象",
+	"requestParams": [
+		{
+			"name": "subway_token",
+			"type": "String",
+			"description": "权限校验参数",
+			"required": true
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "昵称"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始时间，格式yyyy-mm-dd",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间，格式yyyy-mm-dd",
+			"required": true
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "推广计划id",
+			"required": true
+		},
+		{
+			"name": "search_type",
+			"type": "String",
+			"description": "报表类型（搜索：SEARCH,类目出价：CAT,定向投放：NOSEARCH 全部：ALL）",
+			"required": true
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "数据来源（站内：1，站外：2）可多选以逗号分隔，默认值为：1,2",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"minValue": 1
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小",
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rpt_campaign_effect_list",
+			"type": "String",
+			"description": "推广计划效果报表数据对象"
+		}
+	]
+}

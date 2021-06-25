@@ -1,0 +1,143 @@
+{
+	"name": "taobao.openim.tribelogs.get",
+	"apiChineseName": "openim 群聊天记录导出接口",
+	"description": "获取openim账号的群聊天记录",
+	"requestParams": [
+		{
+			"name": "tribe_id",
+			"type": "String",
+			"description": "群号",
+			"required": true
+		},
+		{
+			"name": "begin",
+			"type": "Number",
+			"description": "查询起始时间，UTC秒数。必须在一个月内。",
+			"required": true
+		},
+		{
+			"name": "end",
+			"type": "Number",
+			"description": "查询结束时间，UTC秒数。必须大于起始时间并小于当前时间",
+			"required": true
+		},
+		{
+			"name": "count",
+			"type": "Number",
+			"description": "查询条数",
+			"required": true
+		},
+		{
+			"name": "next",
+			"type": "String",
+			"description": "迭代key"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "retCode",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "data",
+			"type": "TribeMessageResult",
+			"description": "返回结构",
+			"subParams": [
+				{
+					"name": "messages",
+					"type": "TribeMessage[]",
+					"description": "消息列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "content",
+							"type": "MessageItem[]",
+							"description": "消息内容节点序列",
+							"required": true,
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "节点类型",
+									"required": true
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "节点值",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "from_id",
+							"type": "User",
+							"description": "发送方",
+							"required": true,
+							"subParams": [
+								{
+									"name": "app_key",
+									"type": "String",
+									"description": "发送方所属app",
+									"required": true
+								},
+								{
+									"name": "taobao_account",
+									"type": "Boolean",
+									"description": "是否为淘宝账号",
+									"required": true
+								},
+								{
+									"name": "uid",
+									"type": "String",
+									"description": "userid",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "time",
+							"type": "Number",
+							"description": "消息时间。UTC时间",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "消息类型",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "Number",
+							"description": "消息UUID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "next_key",
+					"type": "String",
+					"description": "迭代key",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "错误原因"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

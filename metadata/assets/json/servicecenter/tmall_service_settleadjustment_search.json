@@ -1,0 +1,152 @@
+{
+	"name": "tmall.service.settleadjustment.search",
+	"apiChineseName": "服务商15分钟获取数据",
+	"description": "天猫服务平台，按修改时间，时间间隔在15中内（包含15分钟），获取调整单数据",
+	"requestParams": [
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "settle_adjustment_list",
+					"type": "SettleAdjustmentResponse[]",
+					"description": "dataModule",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "bizOrderId",
+							"required": true
+						},
+						{
+							"name": "comments",
+							"type": "String",
+							"description": "comments",
+							"required": true
+						},
+						{
+							"name": "cost",
+							"type": "Number",
+							"description": "费用，单位分",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "description",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "gmtCreate",
+							"required": true
+						},
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "gmtModified",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "parent_biz_order_id",
+							"type": "Number",
+							"description": "parentBizOrderId",
+							"required": true
+						},
+						{
+							"name": "picture_urls",
+							"type": "String",
+							"description": "pictureUrls",
+							"required": true
+						},
+						{
+							"name": "price_factors",
+							"type": "String",
+							"description": "priceFactors",
+							"required": true
+						},
+						{
+							"name": "service_code",
+							"type": "String",
+							"description": "serviceCode",
+							"required": true
+						},
+						{
+							"name": "service_order_id",
+							"type": "Number",
+							"description": "serviceOrderId",
+							"required": true
+						},
+						{
+							"name": "workcard_id",
+							"type": "Number",
+							"description": "workcardId",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "调整单态。 待商家确认:1, 商家已确认:2,  待小二判定:3,  小二判定有效:4,  小二判定无效:5,  小二无法判定:6, 服务商取消:7, 超时确认:8, 完成:9",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "type",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "ErrorMessage",
+					"description": "errorMessage",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "errorCode",
+							"required": true
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "errorMsg",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

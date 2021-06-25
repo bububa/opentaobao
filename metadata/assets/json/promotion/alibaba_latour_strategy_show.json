@@ -1,0 +1,393 @@
+{
+	"name": "alibaba.latour.strategy.show",
+	"apiChineseName": "阿里巴巴权益投放接口",
+	"description": "阿里巴巴权益平台权益投放接口",
+	"requestParams": [
+		{
+			"name": "with_test_benefit",
+			"type": "Boolean",
+			"description": "带出测试权益"
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "渠道",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页权益数"
+		},
+		{
+			"name": "transformed_user_type",
+			"type": "String",
+			"description": "要转换的账户类型"
+		},
+		{
+			"name": "need_identify_risk",
+			"type": "Boolean",
+			"description": "是否需要调用安全校验服务"
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "用户昵称，除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息"
+		},
+		{
+			"name": "skip_with_had_win",
+			"type": "Boolean",
+			"description": "不带出hadWin状态"
+		},
+		{
+			"name": "filter_empty_inventory",
+			"type": "Boolean",
+			"description": "过滤无库存权益"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户id，除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息"
+		},
+		{
+			"name": "strategy_code",
+			"type": "String",
+			"description": "投放计划code",
+			"required": true
+		},
+		{
+			"name": "user_type",
+			"type": "String",
+			"description": "当面账户类型"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当面分页"
+		},
+		{
+			"name": "filter_crowd",
+			"type": "Boolean",
+			"description": "过滤人群"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "StrategyShowResultDto",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "extra_data",
+							"type": "Json",
+							"description": "扩展参数",
+							"required": true
+						},
+						{
+							"name": "has_next_page",
+							"type": "Boolean",
+							"description": "是否有下一页",
+							"required": true
+						},
+						{
+							"name": "show_strategy",
+							"type": "ShowStrategyDto",
+							"description": "投放计划",
+							"required": true,
+							"subParams": [
+								{
+									"name": "mode",
+									"type": "String",
+									"description": "投放模式",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "投放计划code",
+									"required": true
+								},
+								{
+									"name": "all_rule_passed",
+									"type": "Boolean",
+									"description": "是否投放计划所有规则通过",
+									"required": true
+								},
+								{
+									"name": "asac",
+									"type": "String",
+									"description": "投放计划安全码",
+									"required": true
+								},
+								{
+									"name": "algorithm_failover",
+									"type": "Boolean",
+									"description": "算法容灾结果",
+									"required": true
+								},
+								{
+									"name": "show_rules",
+									"type": "ShowRuleDto[]",
+									"description": "投放计划规则",
+									"required": true,
+									"subParams": [
+										{
+											"name": "feature",
+											"type": "Json",
+											"description": "规则扩展信息",
+											"required": true
+										},
+										{
+											"name": "passed",
+											"type": "Boolean",
+											"description": "规则是否通过",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "String",
+											"description": "规则类型",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "current_page",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "show_benefits",
+							"type": "ShowBenefitDto[]",
+							"description": "权益列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "code",
+									"type": "String",
+									"description": "权益code",
+									"required": true
+								},
+								{
+									"name": "type_desc",
+									"type": "String",
+									"description": "权益类型",
+									"required": true
+								},
+								{
+									"name": "display_amount_unit",
+									"type": "String",
+									"description": "权益展示面额单位",
+									"required": true
+								},
+								{
+									"name": "end_date",
+									"type": "Date",
+									"description": "权益发放结束时间",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "权益标题",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "权益类型",
+									"required": true
+								},
+								{
+									"name": "feature",
+									"type": "Json",
+									"description": "权益扩展信息",
+									"required": true
+								},
+								{
+									"name": "can_win",
+									"type": "Boolean",
+									"description": "权益是否可领",
+									"required": true
+								},
+								{
+									"name": "interval_time_unit",
+									"type": "String",
+									"description": "相对使用时间类型",
+									"required": true
+								},
+								{
+									"name": "display_start_fee",
+									"type": "String",
+									"description": "展示门槛",
+									"required": true
+								},
+								{
+									"name": "send_mode",
+									"type": "String",
+									"description": "权益发放类型",
+									"required": true
+								},
+								{
+									"name": "send_life_cycle_state",
+									"type": "String",
+									"description": "权益生命周期",
+									"required": true
+								},
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "权益面额",
+									"required": true
+								},
+								{
+									"name": "test",
+									"type": "Boolean",
+									"description": "是否测试权益",
+									"required": true
+								},
+								{
+									"name": "had_win",
+									"type": "Boolean",
+									"description": "是否已领",
+									"required": true
+								},
+								{
+									"name": "show_rules",
+									"type": "ShowRuleDto[]",
+									"description": "权益规则列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "passed",
+											"type": "Boolean",
+											"description": "规则是否通过",
+											"required": true
+										},
+										{
+											"name": "type",
+											"type": "String",
+											"description": "规则类型",
+											"required": true
+										},
+										{
+											"name": "feature",
+											"type": "Json",
+											"description": "规则扩展字段",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "amount_unit",
+									"type": "String",
+									"description": "面额单位",
+									"required": true
+								},
+								{
+									"name": "has_inventory",
+									"type": "Boolean",
+									"description": "是否有库存",
+									"required": true
+								},
+								{
+									"name": "display_amount",
+									"type": "String",
+									"description": "展示面额",
+									"required": true
+								},
+								{
+									"name": "effective_time_mode",
+									"type": "String",
+									"description": "使用时间类型",
+									"required": true
+								},
+								{
+									"name": "material",
+									"type": "Json",
+									"description": "素材",
+									"required": true
+								},
+								{
+									"name": "effective_interval",
+									"type": "Number",
+									"description": "相对使用时间长度",
+									"required": true
+								},
+								{
+									"name": "encrypted_dynamic_info",
+									"type": "String",
+									"description": "加密动态面额参数",
+									"required": true
+								},
+								{
+									"name": "start_fee",
+									"type": "Number",
+									"description": "门槛",
+									"required": true
+								},
+								{
+									"name": "asac",
+									"type": "String",
+									"description": "权益安全码",
+									"required": true
+								},
+								{
+									"name": "start_date",
+									"type": "Date",
+									"description": "发放开始时间",
+									"required": true
+								},
+								{
+									"name": "effective_start",
+									"type": "Date",
+									"description": "绝对使用时间开始",
+									"required": true
+								},
+								{
+									"name": "effective_end",
+									"type": "Date",
+									"description": "绝对使用时间结束",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "tracking_data",
+							"type": "Json",
+							"description": "追踪信息",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

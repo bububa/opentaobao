@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.ele.fengniao.shippingorder.event",
+	"apiChineseName": "查询运单事件信息",
+	"description": "查询运单事件信息",
+	"requestParams": [
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "appid"
+		},
+		{
+			"name": "partner_order_code",
+			"type": "String",
+			"description": "外部订单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "shipping_order_events",
+			"type": "ShippingOrderEvent []",
+			"description": "shippingOrderEvents",
+			"subParams": [
+				{
+					"name": "shipping_state",
+					"type": "Number",
+					"description": "运单状态,0:运单创建,10:配送商接单,20:骑手接单,80:骑手到店,30:骑手取餐,40:已完成,90:配送失败",
+					"required": true
+				},
+				{
+					"name": "occurred_at",
+					"type": "Number",
+					"description": "状态变更时间",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "finish_at",
+			"type": "Number",
+			"description": "终态时间"
+		},
+		{
+			"name": "shipping_remark_code",
+			"type": "String",
+			"description": "MERCHANT_CANCEL:商家取消,DELIVERY_TIMEOUT:配送超时，系统标记异常"
+		},
+		{
+			"name": "predict_delivery_at",
+			"type": "Number",
+			"description": "骑手预计送达时间"
+		}
+	]
+}

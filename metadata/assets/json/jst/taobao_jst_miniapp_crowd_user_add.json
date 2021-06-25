@@ -1,0 +1,35 @@
+{
+	"name": "taobao.jst.miniapp.crowd.user.add",
+	"apiChineseName": "小程序添加用户到指定的活动",
+	"description": "小程序添加用户到指定的活动",
+	"requestParams": [
+		{
+			"name": "crowd_code",
+			"type": "String",
+			"description": "活动code",
+			"required": true
+		},
+		{
+			"name": "mc_gw_source_mini_app_id",
+			"type": "String",
+			"description": "小程序id"
+		},
+		{
+			"name": "mc_gw_source_app_key",
+			"type": "String",
+			"description": "小程序appkey"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "添加成功"
+		},
+		{
+			"name": "r_code",
+			"type": "Number",
+			"description": "请求成功"
+		}
+	]
+}

@@ -1,0 +1,57 @@
+{
+	"name": "taobao.jst.sms.message.shorturl.create",
+	"apiChineseName": "聚石塔营销效果短链生成",
+	"description": "聚石塔生成淘短链接口",
+	"requestParams": [
+		{
+			"name": "need_https_prefix",
+			"type": "Boolean",
+			"description": "是否需要https前缀： true-要  false-不要"
+		},
+		{
+			"name": "tag",
+			"type": "String",
+			"description": "人群标签",
+			"required": true
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "商品或者店铺的H5地址，只支持长链",
+			"required": true
+		},
+		{
+			"name": "batch_number",
+			"type": "String",
+			"description": "批次号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "r_code",
+			"type": "String",
+			"description": "成功"
+		},
+		{
+			"name": "r_success",
+			"type": "Boolean",
+			"description": "成功"
+		},
+		{
+			"name": "r_request_id",
+			"type": "String",
+			"description": "请求ID"
+		},
+		{
+			"name": "module",
+			"type": "String",
+			"description": "短链值(短链的有效期为2个月)"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "请求失败时的错误信息"
+		}
+	]
+}

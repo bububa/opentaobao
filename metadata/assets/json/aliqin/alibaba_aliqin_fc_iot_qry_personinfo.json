@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.aliqin.fc.iot.qry.personinfo",
+	"apiChineseName": "查询物联卡个人实人认证信息",
+	"description": "查询物联卡个人实人认证信息",
+	"requestParams": [
+		{
+			"name": "iccid",
+			"type": "String",
+			"description": "需要查询的iccid",
+			"required": true
+		},
+		{
+			"name": "userid",
+			"type": "String",
+			"description": "指定查询某userid"
+		},
+		{
+			"name": "mid_pat_channel",
+			"type": "String",
+			"description": "由系统根据业务分配",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

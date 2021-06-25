@@ -1,0 +1,61 @@
+{
+	"name": "alibaba.aliqin.fc.iot.device.post",
+	"apiChineseName": "商家提交设备信息",
+	"description": "物联网商家设备信息录入",
+	"requestParams": [
+		{
+			"name": "imei",
+			"type": "String",
+			"description": "15位imei号",
+			"required": true
+		},
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "设备类型（将来扩展）"
+		},
+		{
+			"name": "comments",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "mid_pat_channel",
+			"type": "String",
+			"description": "扩展字段"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "响应结果描述",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应code 判断以此判断是否提交成功",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否异常",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

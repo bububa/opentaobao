@@ -1,0 +1,43 @@
+{
+	"name": "tmall.promotag.tag.apply",
+	"apiChineseName": "优惠标签申请",
+	"description": "创建优惠标签",
+	"requestParams": [
+		{
+			"name": "tag_name",
+			"type": "String",
+			"description": "标签名称。\n注意在UMP中使用新人群标签top变成大写的“NEW_” 如：老标签是top1234，新标签是NEW_1234 。",
+			"required": true
+		},
+		{
+			"name": "tag_desc",
+			"type": "String",
+			"description": "标签用途描述",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "标签开始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "标签结束时间",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否设置成功"
+		},
+		{
+			"name": "tag_id",
+			"type": "Number",
+			"description": "优惠标签ID"
+		}
+	]
+}

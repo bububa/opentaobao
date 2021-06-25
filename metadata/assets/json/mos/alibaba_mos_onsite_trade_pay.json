@@ -1,0 +1,204 @@
+{
+	"name": "alibaba.mos.onsite.trade.pay",
+	"apiChineseName": "新商场当面付商户扫码付",
+	"description": "收银员使用扫码设备读取用户“付款码”后，将二维码或条码信息通过本接口上送至喵街发起支付。",
+	"requestParams": [
+		{
+			"name": "onsite_trade_pay_request",
+			"type": "OnsiteTradePayRequest",
+			"description": "创建订单请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_trade_no",
+					"type": "String",
+					"description": "商户支付流水号，64个字符以内、可包含字母、数字、下划线；需保证在商户端不重复",
+					"required": true
+				},
+				{
+					"name": "auth_code",
+					"type": "String",
+					"description": "支付授权码。 消费者喵街中的“付款码”信息",
+					"required": true
+				},
+				{
+					"name": "total_amount",
+					"type": "String",
+					"description": "订单总金额，单位为分，取值范围[0,10000000000]",
+					"required": true
+				},
+				{
+					"name": "undiscountable_amount",
+					"type": "String",
+					"description": "不可打折金额。不参与优惠计算的金额，单位为分，取值范围[0,10000000000]。取值不能超过订单总金额"
+				},
+				{
+					"name": "allowable_pay_channels",
+					"type": "String",
+					"description": "允许使用的资金渠道。如果不指定，则可以使用所有资金渠道；如果存在多个资金渠道，以逗号分隔，取值：mj_vcard 和 alipay。mj_vcard代表喵街储值卡，alipay代表支付宝。此处设定的顺序代表了资金渠道出现的顺序。在实际支付时，还会判断其它条件控制资金渠道（如使用储值权益，即使在创建订单时指定资金渠道为支付宝，也必须使用储值卡支付）"
+				},
+				{
+					"name": "buyer_auto_confirm",
+					"type": "String",
+					"description": "是否自动完成消费者对订单的确认。如果是，则无需消费者确认环节，直接进入待付款。取值：Y、N。缺省值为N",
+					"required": true
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "订单标题",
+					"required": true
+				},
+				{
+					"name": "body",
+					"type": "String",
+					"description": "订单描述。对交易或商品的描述"
+				},
+				{
+					"name": "goods_detail_list",
+					"type": "GoodsDetail[]",
+					"description": "商品明细列表。订单包含的商品列表信息",
+					"subParams": [
+						{
+							"name": "shop_no",
+							"type": "String",
+							"description": "商户自有的专柜号"
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "专柜名"
+						},
+						{
+							"name": "goods_id",
+							"type": "String",
+							"description": "商户自有的商品ID"
+						},
+						{
+							"name": "goods_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "商品总价，单位为分。与商品单价之间是二选一的关系。可以为负值，用于表达折扣"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "商品单价，单位为分。与商品总价之间是二选一的关系。可以为负值，用于表达折扣"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "商品数量，支持小数"
+						}
+					]
+				},
+				{
+					"name": "store_id_type",
+					"type": "String",
+					"description": "商户门店编号的类型。取值：miaojie和out。如果取值为miaojie，则store_id的取值为商户门店在喵街中的编号；如果取值为out，则store_id的取值为商户自己的编号",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "商户门店编号。可以是喵街内的商户门店ID，也可以是商户系统内自己的门店ID，其取值的含义由store_id_type定义",
+					"required": true
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "商户操作员编号"
+				},
+				{
+					"name": "terminal_id",
+					"type": "String",
+					"description": "商户机具终端编号"
+				},
+				{
+					"name": "time_expire",
+					"type": "String",
+					"description": "支付超时时间。该笔订单允许的最晚付款时间，逾期将关闭交易。格式为：yyyy-MM-dd HH:mm:ss。时区为GMT+8。 线下条码支付，建议传入当前时间往后10分钟的时间点"
+				},
+				{
+					"name": "extend_params",
+					"type": "String",
+					"description": "业务扩展参数，json格式。目前需要的扩展参数名有：memberPayerSame：是否需要校验会员与支付者是否同人。"
+				},
+				{
+					"name": "store_alipay_account",
+					"type": "String",
+					"description": "商户收银支付宝账号"
+				},
+				{
+					"name": "scene_no",
+					"type": "String",
+					"description": "场景流水号，会员识别时生成。"
+				},
+				{
+					"name": "member_account_id",
+					"type": "String",
+					"description": "会员账号ID"
+				},
+				{
+					"name": "member_mobile",
+					"type": "String",
+					"description": "会员手机号"
+				},
+				{
+					"name": "scene",
+					"type": "String",
+					"description": "支付场景，条码支付：bar_code，刷脸支付：security_code"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "onsite_trade_pay_response",
+			"type": "OnsiteTradePayResponse",
+			"description": "创建订单响应信息。必然返回",
+			"subParams": [
+				{
+					"name": "trade_no",
+					"type": "String",
+					"description": "喵街交易凭证号。必然返回",
+					"required": true
+				},
+				{
+					"name": "out_trade_no",
+					"type": "String",
+					"description": "原支付请求的商户订单号。必然返回",
+					"required": true
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "消费者在喵街的昵称，将用*号屏蔽部分内容。必然返回",
+					"required": true
+				},
+				{
+					"name": "total_amount",
+					"type": "String",
+					"description": "订单总金额，单位为分。必然返回",
+					"required": true
+				},
+				{
+					"name": "trade_status",
+					"type": "String",
+					"description": "交易状态。必然返回。取值：WAIT_FOR_CONFIRM，待确认，此时不能申请退款，可以撤销；WAIT_BUYER_PAY，等待消费者付款\t，此时不能申请退款，可以撤销；TRADE_SUCCESS，付款成功，此时可以申请退款，可以撤销（自动申请退款）；TRADE_FINISHED，交易成功，此时可以申请退款，可以撤销（自动申请退款）；TRADE_CLOSED，交易关闭，此时不能申请退款，不能撤销",
+					"required": true
+				},
+				{
+					"name": "auth_code_source",
+					"type": "String",
+					"description": "码来源，取值：MJ、M_TAO、ALIPAY",
+					"required": true
+				}
+			]
+		}
+	]
+}

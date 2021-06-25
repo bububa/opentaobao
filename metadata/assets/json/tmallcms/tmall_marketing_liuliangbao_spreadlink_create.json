@@ -1,0 +1,104 @@
+{
+	"name": "tmall.marketing.liuliangbao.spreadlink.create",
+	"apiChineseName": "创建流量宝活动链接",
+	"description": "通过源活动链接和商家ID，创建流量宝活动链接",
+	"requestParams": [
+		{
+			"name": "url",
+			"type": "String",
+			"description": "活动链接，必须为淘系链接",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "llbresult",
+			"type": "LLBApiResult",
+			"description": "流量宝系统执行结果",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "model",
+					"type": "SpreadLinkDo",
+					"description": "结果对象",
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "ID"
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间"
+						},
+						{
+							"name": "adword",
+							"type": "String",
+							"description": "推广文案"
+						},
+						{
+							"name": "adinfo",
+							"type": "String",
+							"description": "推广信息"
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "商家ID"
+						},
+						{
+							"name": "adwxurl",
+							"type": "String",
+							"description": "微信推广链接"
+						},
+						{
+							"name": "qrcode",
+							"type": "String",
+							"description": "二维码地址"
+						},
+						{
+							"name": "adurl",
+							"type": "String",
+							"description": "推广链接"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "类型"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "源链接"
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "错误码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功结果"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,24 @@
+{
+	"name": "alibaba.interact.sensor.clipbroad",
+	"apiChineseName": "Weex页面设置或读取剪切板",
+	"description": "Weex页面设置或读取剪切板",
+	"requestParams": [
+		{
+			"name": "un_named",
+			"type": "String",
+			"description": "客户端鉴权使用，实际不会发送或接收数据"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "unnamed",
+			"type": "String",
+			"description": "客户端鉴权使用，实际不会发送或接收数据"
+		},
+		{
+			"name": "unnamed",
+			"type": "String",
+			"description": "客户端鉴权使用，实际不会发送或接收数据"
+		}
+	]
+}

@@ -1,0 +1,83 @@
+{
+	"name": "alibaba.mj.oc.bigpos.banksale.query",
+	"apiChineseName": "大pos银行卡查账接口",
+	"description": "大pos银行卡查账接口，给收银员查询银行卡销售记录，便于调账",
+	"requestParams": [
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始时间"
+		},
+		{
+			"name": "card_no",
+			"type": "String",
+			"description": "卡号"
+		},
+		{
+			"name": "out_store_no",
+			"type": "String",
+			"description": "外部门店号"
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total",
+			"type": "Number",
+			"description": "明细数量"
+		},
+		{
+			"name": "datas",
+			"type": "Data []",
+			"description": "数据主体",
+			"subParams": [
+				{
+					"name": "row_no",
+					"type": "Number",
+					"description": "行号",
+					"required": true
+				},
+				{
+					"name": "oper_time",
+					"type": "String",
+					"description": "交易时间",
+					"required": true
+				},
+				{
+					"name": "pos_trace_no",
+					"type": "String",
+					"description": "查询流水号",
+					"required": true
+				},
+				{
+					"name": "refnum",
+					"type": "String",
+					"description": "银联系统参考号",
+					"required": true
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "交易金额",
+					"required": true
+				},
+				{
+					"name": "adjusted_amount",
+					"type": "Number",
+					"description": "已调账金额",
+					"required": true
+				},
+				{
+					"name": "fphm",
+					"type": "String",
+					"description": "小票号后7位",
+					"required": true
+				}
+			]
+		}
+	]
+}

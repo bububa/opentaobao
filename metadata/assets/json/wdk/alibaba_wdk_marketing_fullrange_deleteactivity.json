@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.wdk.marketing.fullrange.deleteactivity",
+	"apiChineseName": "全场活动删除活动接口",
+	"description": "全场活动删除活动",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "CommonActivityParam",
+			"description": "需要删除的活动的信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家的活动id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "删除活动返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "删除活动是否成功",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "删除活动是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

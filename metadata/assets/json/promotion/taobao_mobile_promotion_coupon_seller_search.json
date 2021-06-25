@@ -1,0 +1,148 @@
+{
+	"name": "taobao.mobile.promotion.coupon.seller.search",
+	"apiChineseName": "查询绑定卖家优惠券相关信息(手淘专用)",
+	"description": "查询绑定卖家相关优惠券信息 如isv 百川 等外部业务方",
+	"requestParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求id 排查线索 需保证单次调用唯一"
+		},
+		{
+			"name": "spread_ids",
+			"type": "String",
+			"description": "券id集合"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页数据 最大20左右"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前第几页 从第一页开始"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "coupon_search_result",
+			"type": "CouponSearchResult",
+			"description": "优惠券查询结果",
+			"subParams": [
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "符合条件总数量，用于分页等判断"
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "排查调用id"
+				},
+				{
+					"name": "seller_coupon_details",
+					"type": "AllsparkSellerCouponDetail[]",
+					"description": "优惠券详情列表",
+					"subParams": [
+						{
+							"name": "coupon_type",
+							"type": "Number",
+							"description": "券类型"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态信息"
+						},
+						{
+							"name": "status_name",
+							"type": "String",
+							"description": "状态名称"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "券\u0008失效时间"
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "mtop 店铺链接"
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "面额"
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "券生效时间"
+						},
+						{
+							"name": "spread_id",
+							"type": "String",
+							"description": "券对外ID"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "券名称"
+						},
+						{
+							"name": "coupon_type_name",
+							"type": "String",
+							"description": "券类型"
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家昵称"
+						},
+						{
+							"name": "total_count",
+							"type": "String",
+							"description": "设置发券数量总数"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家ID"
+						},
+						{
+							"name": "shop_name",
+							"type": "String",
+							"description": "店铺名称"
+						},
+						{
+							"name": "start_fee",
+							"type": "Number",
+							"description": "满足金额阀值  如订单满多少元才可用"
+						},
+						{
+							"name": "item_ids",
+							"type": "Number[]",
+							"description": "商品优惠券会有商品id集合"
+						},
+						{
+							"name": "person_limit_count",
+							"type": "Number",
+							"description": "模板限领数量"
+						},
+						{
+							"name": "reserve_count",
+							"type": "Number",
+							"description": "保留数量"
+						},
+						{
+							"name": "apply_count",
+							"type": "Number",
+							"description": "已领取数量"
+						}
+					]
+				}
+			]
+		}
+	]
+}

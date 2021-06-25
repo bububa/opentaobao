@@ -1,0 +1,124 @@
+{
+	"name": "alipay.baoxian.claim.update",
+	"apiChineseName": "更新赔案",
+	"description": "更新保险理赔单",
+	"requestParams": [
+		{
+			"name": "biz_data",
+			"type": "Json",
+			"description": "业务数据"
+		},
+		{
+			"name": "progress_list",
+			"type": "Json[]",
+			"description": "进度列表",
+			"maxListSize": 20
+		},
+		{
+			"name": "claim_attachments",
+			"type": "ClaimAttachment[]",
+			"description": "附件列表",
+			"maxListSize": 120,
+			"subParams": [
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "附件类型"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "文件名称"
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "文件大小"
+				},
+				{
+					"name": "path",
+					"type": "String",
+					"description": "文件路径"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "文件描述"
+				},
+				{
+					"name": "file_type",
+					"type": "String",
+					"description": "文件类型"
+				}
+			]
+		},
+		{
+			"name": "policy_biz_no",
+			"type": "String",
+			"description": "保单业务单号"
+		},
+		{
+			"name": "out_biz_no",
+			"type": "String",
+			"description": "外部业务单号"
+		},
+		{
+			"name": "biz_source",
+			"type": "String",
+			"description": "业务来源"
+		},
+		{
+			"name": "claim_fee",
+			"type": "Number",
+			"description": "理赔金额(单位为分)"
+		},
+		{
+			"name": "claim_no",
+			"type": "String",
+			"description": "理赔单号"
+		},
+		{
+			"name": "claim_out_biz_no",
+			"type": "String",
+			"description": "理赔外部业务单号"
+		},
+		{
+			"name": "sp_no",
+			"type": "String",
+			"description": "标准产品ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "isSuccess",
+					"required": true
+				}
+			]
+		}
+	]
+}

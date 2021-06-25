@@ -1,0 +1,282 @@
+{
+	"name": "alibaba.security.jaq.rp.status",
+	"apiChineseName": "聚安全实人认证查询状态接口",
+	"description": "聚安全实人认证查询状态接口",
+	"requestParams": [
+		{
+			"name": "account_id",
+			"type": "String",
+			"description": "账号id"
+		},
+		{
+			"name": "ticket_id",
+			"type": "String",
+			"description": "凭据id"
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "客户端来源",
+			"required": true
+		},
+		{
+			"name": "biz",
+			"type": "String",
+			"description": "业务来源",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "RpStatusResultBo",
+			"description": "状态信息",
+			"subParams": [
+				{
+					"name": "biz",
+					"type": "String",
+					"description": "对应的bizId",
+					"required": true
+				},
+				{
+					"name": "grade_certified",
+					"type": "Boolean",
+					"description": "如果 curGrade 和 requireGrade 相同则 gradeCertified 返回 true，相反则返回false",
+					"required": true
+				},
+				{
+					"name": "review_status",
+					"type": "Boolean",
+					"description": "复核状态被置位",
+					"required": true
+				},
+				{
+					"name": "cur_grade",
+					"type": "RpGradeBo",
+					"description": "实人等级",
+					"required": true,
+					"subParams": [
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "level",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "require_grade",
+					"type": "RpGradeBo",
+					"description": "要求达到的实人等级",
+					"required": true,
+					"subParams": [
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "level",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "rp_audit_details",
+					"type": "RpAuditDetailsBos",
+					"description": "审核详细信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "audit_finish_time",
+							"type": "Date",
+							"description": "预计审核结束时间",
+							"required": true
+						},
+						{
+							"name": "review_deadline",
+							"type": "Date",
+							"description": "复核截止时间",
+							"required": true
+						},
+						{
+							"name": "comparison_details",
+							"type": "RpAuditComparisonDetailBos[]",
+							"description": "比对审核结论",
+							"required": true,
+							"subParams": [
+								{
+									"name": "score",
+									"type": "String",
+									"description": "比对分值",
+									"required": true
+								},
+								{
+									"name": "value",
+									"type": "RpAuditValueBo",
+									"description": "比对结论",
+									"required": true,
+									"subParams": [
+										{
+											"name": "desc",
+											"type": "String",
+											"description": "desc",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "Number",
+											"description": "code",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "result_type",
+									"type": "RpAuditTypeBo",
+									"description": "比对项",
+									"required": true,
+									"subParams": [
+										{
+											"name": "desc",
+											"type": "String",
+											"description": "desc",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name",
+											"required": true
+										},
+										{
+											"name": "code",
+											"type": "Number",
+											"description": "code",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "material_details",
+							"type": "RpAuditMaterialDetailBos[]",
+							"description": "材料审核结论",
+							"required": true,
+							"subParams": [
+								{
+									"name": "suggestion",
+									"type": "String",
+									"description": "给用户的建议",
+									"required": true
+								},
+								{
+									"name": "display",
+									"type": "String",
+									"description": "外化给用户的文案",
+									"required": true
+								},
+								{
+									"name": "security",
+									"type": "Boolean",
+									"description": "是否安全问题",
+									"required": true
+								},
+								{
+									"name": "intercept",
+									"type": "Boolean",
+									"description": "intercept",
+									"required": true
+								},
+								{
+									"name": "text",
+									"type": "String",
+									"description": "材料结论文本描述",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "材料结论编码",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "材料结论分类",
+									"required": true
+								},
+								{
+									"name": "material_type",
+									"type": "String",
+									"description": "材料类别",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "rp_audit_status",
+					"type": "RpAuditStatusBo",
+					"description": "审核状态信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "code",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "review_type",
+					"type": "String",
+					"description": "复核类型",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,59 @@
+{
+	"name": "tmall.servicecenter.workcard.suspend",
+	"apiChineseName": "工单挂起",
+	"description": "工单挂起",
+	"requestParams": [
+		{
+			"name": "reserve_service_date",
+			"type": "Date",
+			"description": "预约时间"
+		},
+		{
+			"name": "gmt_next_contact",
+			"type": "Date",
+			"description": "下次联系时间"
+		},
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id"
+		},
+		{
+			"name": "fail_code",
+			"type": "Number",
+			"description": "挂起原因类型code"
+		},
+		{
+			"name": "fail_desc",
+			"type": "String",
+			"description": "挂起原因描述"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否失败",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误原因描述",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

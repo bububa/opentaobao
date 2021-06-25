@@ -1,0 +1,26 @@
+{
+	"name": "taobao.vmarket.eticket.time.expand",
+	"apiChineseName": "订单延时接口",
+	"description": "提供码商操作订单延期接口",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单ID",
+			"required": true
+		},
+		{
+			"name": "expand_days",
+			"type": "Number",
+			"description": "延长天数，延长时间=当前过期时间+延长天数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "0:失败；1:成功"
+		}
+	]
+}

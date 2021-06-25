@@ -1,0 +1,456 @@
+{
+	"name": "alitrip.freetour.product.upload",
+	"apiChineseName": "自由行商品发布及编辑接口",
+	"description": "自由行 产品维护接口。\n接口同时支持新商品发布 和 现有商品编辑：\n1）只上传out_product_id的情况：如果out_product_id已经关联过某个商品id，则认为是编辑现有商品，否则认为是新发布一个商品。\n2）同时上传out_product_id和item_id，则认为是将out_product_id与item_id进行关联，同时对该商品进行编辑。",
+	"requestParams": [
+		{
+			"name": "go_traffic_type",
+			"type": "Number",
+			"description": "新发布商品时必填。去程交通。1-飞机，2-火车，3-汽，4-船，100-其他"
+		},
+		{
+			"name": "free_tour_package_info",
+			"type": "FreeTourPackageInfo[]",
+			"description": "套餐信息,数组类型，支持上传多个套餐信息",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "out_product_id",
+					"type": "String",
+					"description": "必须传，套餐对应的商家编码"
+				},
+				{
+					"name": "free_tour_scenic_info_list",
+					"type": "FreeTourScenicInfo[]",
+					"description": "包含元素-景区门票，如果该套餐包含景区门票，则需要传这个参数",
+					"subParams": [
+						{
+							"name": "cn_name",
+							"type": "String",
+							"description": "必填，景点名称"
+						},
+						{
+							"name": "ticket_type",
+							"type": "String",
+							"description": "必填，门票类型"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "必填，景点所在城市"
+						}
+					]
+				},
+				{
+					"name": "package_name",
+					"type": "String",
+					"description": "必填，套餐名称"
+				},
+				{
+					"name": "to_locations",
+					"type": "String",
+					"description": "发布商品时必填。套餐对应的目的地，套餐对应的目的地必须是商品的目的地的子集，多个目的地用英文逗号分隔。地址可以使用飞猪标准地址名称，也可以使用商家系统中目的地地址（支持商家目的地id和商家目的地名称 ）。如果需要使用商家目的地地址，必须在目的地关联页（https://sell.alitrip.com/icenter/main.htm#/widgets/api-adaptor?_k=n61ii0）配置映射关系（一次性 批量上传建立映射关系，之后度假所有类目、API接口共用该映射关系）。 商家目的地地址使用示例1：东京,大阪。示例2：123,124。说明：商家目的地id（123,124\u003e）会根据映射关系自动转换成飞猪标准地址"
+				},
+				{
+					"name": "back_traffic_info_list",
+					"type": "FreeTourTrafficInfo[]",
+					"description": "返程交通，交通工具必须与商品上的返程交通一致",
+					"subParams": [
+						{
+							"name": "day",
+							"type": "Number",
+							"description": "第几天"
+						},
+						{
+							"name": "traffic_no",
+							"type": "String",
+							"description": "参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填"
+						},
+						{
+							"name": "vendor",
+							"type": "String",
+							"description": "交通公司名，飞机选填"
+						},
+						{
+							"name": "plane_type",
+							"type": "String",
+							"description": "飞机机型，飞机选填"
+						},
+						{
+							"name": "departure",
+							"type": "String",
+							"description": "出发城市"
+						},
+						{
+							"name": "destination",
+							"type": "String",
+							"description": "到达城市"
+						},
+						{
+							"name": "departure_time",
+							"type": "String",
+							"description": "出发时间，当地时间HH:mm"
+						},
+						{
+							"name": "arrival_time",
+							"type": "String",
+							"description": "到达时间，当地时间HH:mm"
+						},
+						{
+							"name": "traffic_desc",
+							"type": "String",
+							"description": "交通说明，针对交通类型是汽车，轮船和其他"
+						},
+						{
+							"name": "non_stop",
+							"type": "Number",
+							"description": "是否直飞，飞机选填，1-直飞；0-不是直飞"
+						},
+						{
+							"name": "group",
+							"type": "Number",
+							"description": "第几组交通信息，请必传，不传可能导致商品详情页交通信息不展示。每一组交通信息包含一组去程交通和返程交通，当在页\u003e 面上点击【添加交通信息】按钮后，就会出现第二组交通信息，第一组交\u003e通信息group=1，第二组交通信息group取值为2，以此类推"
+						},
+						{
+							"name": "stop_over",
+							"type": "Boolean",
+							"description": "是否经停"
+						},
+						{
+							"name": "stop_city",
+							"type": "String",
+							"description": "经停城市"
+						}
+					]
+				},
+				{
+					"name": "fee_exclude",
+					"type": "String[]",
+					"description": "新发布商品时必填。费用不含。列表中每一个元素 对应一点描述，所有描述合起来必须小于1500个中文字符。注：在SDK中数组多个元素间以英文逗号分隔"
+				},
+				{
+					"name": "scenic_desc",
+					"type": "String",
+					"description": "门票说明"
+				},
+				{
+					"name": "go_traffic_info_list",
+					"type": "FreeTourTrafficInfo[]",
+					"description": "去程交通，交通工具的类型必须与商品上的去程交通一致",
+					"subParams": [
+						{
+							"name": "day",
+							"type": "Number",
+							"description": "第几天"
+						},
+						{
+							"name": "traffic_no",
+							"type": "String",
+							"description": "参考班次号，飞机需要填航班号，火车需要填车次号，汽车和船可不填"
+						},
+						{
+							"name": "vendor",
+							"type": "String",
+							"description": "交通公司名，飞机选填"
+						},
+						{
+							"name": "plane_type",
+							"type": "String",
+							"description": "飞机机型，飞机选填"
+						},
+						{
+							"name": "departure",
+							"type": "String",
+							"description": "出发城市"
+						},
+						{
+							"name": "destination",
+							"type": "String",
+							"description": "到达城市"
+						},
+						{
+							"name": "departure_time",
+							"type": "String",
+							"description": "出发时间，当地时间HH:mm"
+						},
+						{
+							"name": "arrival_time",
+							"type": "String",
+							"description": "到达时间，当地时间HH:mm"
+						},
+						{
+							"name": "traffic_desc",
+							"type": "String",
+							"description": "交通说明，针对交通类型是汽车，轮船和其他"
+						},
+						{
+							"name": "non_stop",
+							"type": "Number",
+							"description": "是否直飞，飞机选填，1-直飞；0-不是直飞"
+						},
+						{
+							"name": "group",
+							"type": "Number",
+							"description": "第几组交通信息，请必传，不传可能导致商品详情页交通信息不展示。每一组交通信息包含一组去程交通和返程交通，当在页\u003e 面上点击【添加交通信息】按钮后，就会出现第二组交通信息，第一组交\u003e通信息group=1，第二组交通信息group取值为2，以此类推"
+						},
+						{
+							"name": "stop_over",
+							"type": "Boolean",
+							"description": "是否经停"
+						},
+						{
+							"name": "stop_city",
+							"type": "String",
+							"description": "经停城市"
+						}
+					]
+				},
+				{
+					"name": "order_info",
+					"type": "String[]",
+					"description": "买家预定须知"
+				},
+				{
+					"name": "item_resource_info_list",
+					"type": "ItemResourceInfo[]",
+					"description": "当包含元素选择了餐饮，自驾租车，保险服务，其他费用时，该项必填",
+					"subParams": [
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "对应的说明"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "1-保险 2-餐饮 3-租车 4-签证 5-购物点，预留  6-赠品，预留 7-券，预留  8-其他费用"
+						}
+					]
+				},
+				{
+					"name": "from_locations",
+					"type": "String",
+					"description": "套餐对应的出发地，是商品出发地的子集"
+				},
+				{
+					"name": "fee_include",
+					"type": "String[]",
+					"description": "新发布商品时必填。费用包含。列表中每一个元素 对应一点描述，所有描述合起来必须小于1500个中文字符。注：在SDK中数组多个元素间以英文逗号分隔"
+				},
+				{
+					"name": "free_tour_hotel_info_list",
+					"type": "FreeTourHotelInfo[]",
+					"description": "当包含元素选择了酒店的时候，该项必填",
+					"subParams": [
+						{
+							"name": "hotel_desc",
+							"type": "String",
+							"description": "酒店描述"
+						},
+						{
+							"name": "pic_urls",
+							"type": "String",
+							"description": "新发布商品必填，最多三张，图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。。注：在SDK中数组多个元素间以英文逗号分隔"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "酒店所在城市"
+						},
+						{
+							"name": "house_type",
+							"type": "String",
+							"description": "必填，酒店房型"
+						},
+						{
+							"name": "hotel_level",
+							"type": "String",
+							"description": "酒店档次（与下面的酒店星级二选一，只能填一个）：经济连锁；舒适；高档；豪华；二星及以下"
+						},
+						{
+							"name": "hotel_star",
+							"type": "String",
+							"description": "酒店星级（与上面的酒店档次二选一，只能填一个）"
+						},
+						{
+							"name": "cn_name",
+							"type": "String",
+							"description": "酒店名称"
+						}
+					]
+				},
+				{
+					"name": "package_operation",
+					"type": "Number",
+					"description": "套餐操作类型，(0:套餐覆盖修改,1:增加套餐,2:删除套餐)===默认为0==="
+				}
+			]
+		},
+		{
+			"name": "trip_day",
+			"type": "Number",
+			"description": "新发布商品时必填。旅游天数"
+		},
+		{
+			"name": "sub_stock",
+			"type": "Number",
+			"description": "可选，减库存方式。0-拍下减库存。1-付款减库存。不传默认为0"
+		},
+		{
+			"name": "wap_desc",
+			"type": "String",
+			"description": "可选，手机端详情描述，xml格式，格式详见示例。"
+		},
+		{
+			"name": "back_traffic_type",
+			"type": "Number",
+			"description": "新发布商品时必填。回程交通。1-飞机，2-火车，3-汽，4-船，100-其他"
+		},
+		{
+			"name": "desc_xml",
+			"type": "String",
+			"description": "PC端详情描述（新发布商品时，desc_xml和desc_html二者至少填写一个），xml格式：DESC根标签必须有，每一个亮点（HIGHLIGHT）支持1个title子标签，1个txt子标签和多个img子标签。"
+		},
+		{
+			"name": "confirm_time",
+			"type": "Number",
+			"description": "可选，资源确认时长，当confirm_type=2时必填。1：2个工作小时内确认，2：6个工作小时内确认，3：9个工作小时内确认，4：18个工作小时内确认"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "新发布商品时必填。商品标题，30个中文字符以内"
+		},
+		{
+			"name": "confirm_type",
+			"type": "Number",
+			"description": "可选，资源确认类型。1-即时确认，2-二次确认。不传默认1"
+		},
+		{
+			"name": "item_custom_tag",
+			"type": "String",
+			"description": "可选，商家自定义标签（最多4个字，超长则自动截断，会进行违禁词校验）"
+		},
+		{
+			"name": "out_product_id",
+			"type": "String",
+			"description": "商家自定义商品编码。注：商品基本信息维护、价格库存维护，商品查询都以该编码为主键。"
+		},
+		{
+			"name": "to_locations",
+			"type": "String",
+			"description": "新发布商品时必填。目的地，多个目的地用英文逗号分隔。地址可以使用飞猪标准地址名称，也可以使用商家系统中目的地地址（支持商家目的地id和商家目的地名称）。如果需要使用商家目的地地址，必须在目的地关联页（https://sell.alitrip.com/icenter/main.htm#/widgets/api-adaptor?_k=n61ii0）配置映射关系（一次性批量上传建立映射关系，之后度假所有类目、API接口共用该映射关系）。 商家目的地地址使用示例1：东京,大阪。示例2：123,124。说明：商家目的地id（123,124）会根据映射关系自动转换成飞猪标准地址"
+		},
+		{
+			"name": "trip_night",
+			"type": "Number",
+			"description": "可选，旅游晚数，不传默认旅游天数-1"
+		},
+		{
+			"name": "pic_urls",
+			"type": "String[]",
+			"description": "新发布商品时必填。商品图片路径。最多支持5张，第一张为主图，必填，其余四张可选填。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。。注：在SDK中数组多个元素间以英文逗号分隔",
+			"maxListSize": 20
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "可选，淘系商品id，用于将out_product_id关联到已经存在的商品，并且修改该商品外部商家编码为out_product_id。"
+		},
+		{
+			"name": "reserve_limit",
+			"type": "String",
+			"description": "可选，该商品提前预定时间限制。格式：1_18_00，含义：该商品必须提前1天预定，且在18:00之前完成预定"
+		},
+		{
+			"name": "refund_type",
+			"type": "Number",
+			"description": "可选，退改规则类型。0-平台标准退改规则，1-自定义退改规则，2-不支持退改（已废弃，勿用），7-新版自定义退改规则。不传默认为0"
+		},
+		{
+			"name": "desc_html",
+			"type": "String",
+			"description": "PC端详情描述（新发布商品时，desc_xml和desc_html二者至少填写一个），Html格式。商家自定义Html格式描述。"
+		},
+		{
+			"name": "from_locations",
+			"type": "String",
+			"description": "新发布商品时必填。出发地，多个出发地用英文逗号分隔。使用说明同“目的地”"
+		},
+		{
+			"name": "sub_titles",
+			"type": "String[]",
+			"description": "可选，商品亮点，最多支持4个亮点。注：在SDK中数组多个元素间以英文逗号分隔",
+			"maxListSize": 20
+		},
+		{
+			"name": "traveller_template_id",
+			"type": "Number",
+			"description": "可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具-\u003e出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。"
+		},
+		{
+			"name": "is_overseas_tour",
+			"type": "Number",
+			"description": "新发布商品时必填。是否出境游，0-不是，1-是。"
+		},
+		{
+			"name": "refund_regulations_json",
+			"type": "String",
+			"description": "特殊可选，退款规则（json数组格式）。自定义退改时需填写（与refund_regulations字段二选一）。示例中一共包含4条规则（3条平日规则，1条节假日规则），按照顺序每条规则含义如下：出行前5日及以上，买家违约收取总费用的50，卖家违约收取总费用的20；出行前4日至1日，买家违约收取总费用的80，卖家违约收取总费用的50；行程开始当天，买家违约收取总费用的100，卖家违约收取总费用的70；如果行程日期包含节假日，则节假日条款为买家违约收取总费用的100，卖家违约收取总费用的90"
+		},
+		{
+			"name": "package_operation",
+			"type": "Number",
+			"description": "0：使用上传的套餐信息（free_tour_package_info）覆盖商品上原有的套餐信息（此时free_tour_package_info中设置的packageOperation无效）；1：根据套餐信息（free_tour_package_info）中的packageOperation和outProductId增加，修改，删除指定套餐，====默认值为0==="
+		},
+		{
+			"name": "seller_cids",
+			"type": "String[]",
+			"description": "关联商品与店铺类目 结构:\"cid1,cid2,...,\"。如何获取卖家店铺类目具体参见：http://open.taobao.com/doc2/apiDetail.htm?apiId=65",
+			"maxListSize": 20
+		},
+		{
+			"name": "second_kill",
+			"type": "String",
+			"description": "商品秒杀，商品秒杀三个值：可选类型web_only(只能通过web网络秒杀)，wap_only(只能通过wap网络秒杀)，web_and_wap(既能通过web秒杀也能通过wap秒杀)"
+		},
+		{
+			"name": "has_discount",
+			"type": "Boolean",
+			"description": "是否支持会员打折。可选值：true，false；默认值：false(不打折)。不传的话默认为false"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "first_result",
+			"type": "TopTravelItem",
+			"description": "firstResult",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "itemId",
+					"required": true
+				},
+				{
+					"name": "out_product_id",
+					"type": "String",
+					"description": "outProductId",
+					"required": true
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "modified",
+					"required": true
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "扩展信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

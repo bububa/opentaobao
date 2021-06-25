@@ -1,0 +1,73 @@
+{
+	"name": "taobao.simba.rpt.adgroupkeywordeffect.get",
+	"apiChineseName": "推广组下的词效果报表数据查询(明细数据不分类型查询)",
+	"description": "推广组下的词效果报表数据查询(明细数据不分类型查询)",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "推广计划ID",
+			"required": true
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组ID",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始时间，格式yyyy-mm-dd",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间，格式yyyy-mm-dd",
+			"required": true
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "数据来源（PC站内：1，PC站外：2，无线站内：4，无线站外 : 5，汇总：SUMMARY）SUMMARY必须单选，其他值可多选例如1,2",
+			"required": true
+		},
+		{
+			"name": "subway_token",
+			"type": "String",
+			"description": "权限校验参数",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"minValue": 1
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小",
+			"minValue": 1
+		},
+		{
+			"name": "search_type",
+			"type": "String",
+			"description": "报表类型（搜索：SEARCH,类目出价：CAT, 定向投放：NOSEARCH）可多选例如：SEARCH,CAT",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rpt_adgroupkeyword_effect_list",
+			"type": "String",
+			"description": "词效果数据返回结果"
+		}
+	]
+}

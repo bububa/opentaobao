@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.wdk.series.sku.remove",
+	"apiChineseName": "系列品商品变更-移除商品",
+	"description": "系列品商品变更-移除商品",
+	"requestParams": [
+		{
+			"name": "series_skus",
+			"type": "SeriesSkuRequest",
+			"description": "系列品移除商品请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "series_id",
+					"type": "Number",
+					"description": "系列编码",
+					"required": true
+				},
+				{
+					"name": "sku_codes",
+					"type": "String[]",
+					"description": "商品编码集合",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "SkuSeriesEditResult",
+					"description": "系列品移除商品成功结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "failed_sku_codes",
+							"type": "String[]",
+							"description": "成功的商品编码集",
+							"required": true
+						},
+						{
+							"name": "successed_sku_codes",
+							"type": "String[]",
+							"description": "失败的商品编码集",
+							"required": true
+						},
+						{
+							"name": "series_id",
+							"type": "Number",
+							"description": "系列编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误详情",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

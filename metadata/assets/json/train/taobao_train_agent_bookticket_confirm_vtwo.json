@@ -1,0 +1,181 @@
+{
+	"name": "taobao.train.agent.bookticket.confirm.vtwo",
+	"apiChineseName": "火车票代理商接口——确认出票是否成功v2--增加鉴权校验",
+	"description": "火车票代理商接口——确认出票是否成功",
+	"requestParams": [
+		{
+			"name": "sub_order_id",
+			"type": "String",
+			"description": "错误的子订单号123434,123432"
+		},
+		{
+			"name": "can_change",
+			"type": "Boolean",
+			"description": "是否支持在线退改签"
+		},
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "主订单id",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "Boolean",
+			"description": "是否成功",
+			"required": true
+		},
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id",
+			"required": true
+		},
+		{
+			"name": "tickets",
+			"type": "String[]",
+			"description": "火车票id;单价;坐席;座次号;车次;乘车人姓名;证件类型;证件号码;保单号;保单价格特别注意:票价、保险价格必须到分,例如10元,输入为1000.",
+			"required": true,
+			"maxListSize": 10
+		},
+		{
+			"name": "ticket_num",
+			"type": "Number",
+			"description": "订单中包含的票数量",
+			"required": true
+		},
+		{
+			"name": "dep_date",
+			"type": "String",
+			"description": "出发时间",
+			"required": true
+		},
+		{
+			"name": "ticket_12306_id",
+			"type": "String",
+			"description": "12306成功出票id",
+			"required": true
+		},
+		{
+			"name": "fail_msg",
+			"type": "String",
+			"description": "记录失败原因，传数字，1、票已售完，出票失败全额退款，2、票价变动，出票失败全额退款，3、乘车人已购买相同车票，出票失败全额退款， 4、出票超时，出票失败全额退款，5、乘车人证件未通过铁路局审核，需到售票窗口办理， 6、发车时间变动，出票失败全额退款，7、车次信息错误，出票失败全额退款，8、12306故障,出票失败全额退款， 0、出票失败全额退款",
+			"required": true
+		},
+		{
+			"name": "alipay_trade_no",
+			"type": "String",
+			"description": "支付宝交易流水号"
+		},
+		{
+			"name": "order_type",
+			"type": "Number",
+			"description": "订单类型0 代购 1直购 3抢票"
+		},
+		{
+			"name": "alipay_account",
+			"type": "String",
+			"description": "支付宝账号"
+		},
+		{
+			"name": "arrive_date",
+			"type": "String",
+			"description": "到达时间"
+		},
+		{
+			"name": "from_station_name",
+			"type": "String",
+			"description": "出发站"
+		},
+		{
+			"name": "to_station_name",
+			"type": "String",
+			"description": "到达站"
+		},
+		{
+			"name": "boarding_gates",
+			"type": "String",
+			"description": "检票口"
+		},
+		{
+			"name": "expect_delivery_time",
+			"type": "String",
+			"description": "送票上门预计派送时间"
+		},
+		{
+			"name": "extend_params",
+			"type": "String",
+			"description": "扩展字段"
+		},
+		{
+			"name": "ticket_info_list",
+			"type": "OrderTicketInfo[]",
+			"description": "票信息列表",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "ttp_sub_order_id",
+					"type": "Number",
+					"description": "ttp子单ID"
+				},
+				{
+					"name": "real_ticket_price",
+					"type": "Number",
+					"description": "真实票价"
+				},
+				{
+					"name": "real_seat",
+					"type": "Number",
+					"description": "真实坐席"
+				},
+				{
+					"name": "seat_num",
+					"type": "String",
+					"description": "座位号"
+				},
+				{
+					"name": "train_no",
+					"type": "String",
+					"description": "车次"
+				},
+				{
+					"name": "passenger_name",
+					"type": "String",
+					"description": "乘客姓名"
+				},
+				{
+					"name": "cert_type",
+					"type": "String",
+					"description": "证件类型"
+				},
+				{
+					"name": "certificate_num",
+					"type": "String",
+					"description": "证件号"
+				},
+				{
+					"name": "insurance_pay_price",
+					"type": "Number",
+					"description": "保险支付金额"
+				},
+				{
+					"name": "vip_custom_result",
+					"type": "Number",
+					"description": "定制票出票结果 1:定制票出票 0:非定制票出票"
+				},
+				{
+					"name": "ticket_no",
+					"type": "String",
+					"description": "12306票号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

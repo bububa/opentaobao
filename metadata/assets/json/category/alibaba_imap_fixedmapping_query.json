@@ -1,0 +1,151 @@
+{
+	"name": "alibaba.imap.fixedmapping.query",
+	"apiChineseName": "查询两个渠道之间的固定映射关系，不通过算法兜底",
+	"description": "查询两个渠道之间的固定映射关系，不通过算法兜底",
+	"requestParams": [
+		{
+			"name": "password",
+			"type": "String",
+			"description": "密码"
+		},
+		{
+			"name": "app_name",
+			"type": "String",
+			"description": "账号"
+		},
+		{
+			"name": "src_channel_id",
+			"type": "Number",
+			"description": "源渠道ID"
+		},
+		{
+			"name": "target_channel_id_list",
+			"type": "Number[]",
+			"description": "目标渠道ID列表",
+			"maxListSize": 20
+		},
+		{
+			"name": "target_category_id",
+			"type": "Number",
+			"description": "目标渠道ID"
+		},
+		{
+			"name": "src_category_id",
+			"type": "Number",
+			"description": "源类目ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "top_imap_union_category_path_do_list",
+					"type": "TopImapUnionCategoryPathDo[]",
+					"description": "list参数",
+					"required": true,
+					"subParams": [
+						{
+							"name": "l5_cat_id",
+							"type": "Number",
+							"description": "五级类目ID",
+							"required": true
+						},
+						{
+							"name": "leaf_cat_name",
+							"type": "String",
+							"description": "叶子类目名称",
+							"required": true
+						},
+						{
+							"name": "l3_cat_id",
+							"type": "Number",
+							"description": "三级类目ID",
+							"required": true
+						},
+						{
+							"name": "leaf",
+							"type": "Boolean",
+							"description": "是否叶子类目",
+							"required": true
+						},
+						{
+							"name": "leaf_cat_id",
+							"type": "Number",
+							"description": "叶子类目ID",
+							"required": true
+						},
+						{
+							"name": "l1_cat_id",
+							"type": "Number",
+							"description": "一级类目ID",
+							"required": true
+						},
+						{
+							"name": "l4_cat_name",
+							"type": "String",
+							"description": "四级类目名称",
+							"required": true
+						},
+						{
+							"name": "l2_cat_name",
+							"type": "String",
+							"description": "二级类目名称",
+							"required": true
+						},
+						{
+							"name": "l3_cat_name",
+							"type": "String",
+							"description": "三级类目名称",
+							"required": true
+						},
+						{
+							"name": "l4_cat_id",
+							"type": "Number",
+							"description": "四级类目ID",
+							"required": true
+						},
+						{
+							"name": "l5_cat_name",
+							"type": "String",
+							"description": "五级类目名称",
+							"required": true
+						},
+						{
+							"name": "l2_cat_id",
+							"type": "Number",
+							"description": "二级类目ID",
+							"required": true
+						},
+						{
+							"name": "l1_cat_name",
+							"type": "String",
+							"description": "一级类目名称",
+							"required": true
+						},
+						{
+							"name": "channel_id",
+							"type": "Number",
+							"description": "渠道ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

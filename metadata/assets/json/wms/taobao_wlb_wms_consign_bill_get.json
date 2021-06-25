@@ -1,0 +1,322 @@
+{
+	"name": "taobao.wlb.wms.consign.bill.get",
+	"apiChineseName": "获取销售订单发货信息",
+	"description": "获取销售订单发货信息",
+	"requestParams": [
+		{
+			"name": "cn_order_code",
+			"type": "String",
+			"description": "菜鸟订单编码,cnOrderCode与orderCode必须有一个值不可为空"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "ERP订单编码,cnOrderCode与orderCode必须有一个值不可为空"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "consign_send_info_list",
+			"type": "Consignsendinfolist []",
+			"description": "商品信息列表",
+			"subParams": [
+				{
+					"name": "consign_send_info",
+					"type": "Consignsendinfo",
+					"description": "物流订单发货信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_item_list",
+							"type": "Orderitemlist[]",
+							"description": "订单信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "order_item",
+									"type": "Orderitem",
+									"description": "订单商品信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "order_item_id",
+											"type": "String",
+											"description": "订单明细行编码",
+											"required": true
+										},
+										{
+											"name": "order_source_code",
+											"type": "String",
+											"description": "交易单号",
+											"required": true
+										},
+										{
+											"name": "item_id",
+											"type": "String",
+											"description": "商品ID",
+											"required": true
+										},
+										{
+											"name": "item_code",
+											"type": "String",
+											"description": "商家编码",
+											"required": true
+										},
+										{
+											"name": "inventory_item_list",
+											"type": "Inventoryitemlist[]",
+											"description": "商品属性列表",
+											"required": true,
+											"subParams": [
+												{
+													"name": "inventory_item",
+													"type": "Inventoryitem",
+													"description": "商品属性列表",
+													"required": true,
+													"subParams": [
+														{
+															"name": "inventory_type",
+															"type": "Number",
+															"description": "库存类型：1 可销售库存 (正品) 101 类型用来定义残次品 201 冻结类型库存 301 在途库存",
+															"required": true
+														},
+														{
+															"name": "item_qty",
+															"type": "Number",
+															"description": "数量",
+															"required": true
+														},
+														{
+															"name": "due_date",
+															"type": "Date",
+															"description": "商品保质期信息，失效日期",
+															"required": true
+														},
+														{
+															"name": "produce_date",
+															"type": "Date",
+															"description": "商品保质期信息，生产日期",
+															"required": true
+														},
+														{
+															"name": "produce_code",
+															"type": "String",
+															"description": "生产编码，同一商品可能因商家不同有不同编码",
+															"required": true
+														},
+														{
+															"name": "produce_area",
+															"type": "String",
+															"description": "生产地区",
+															"required": true
+														},
+														{
+															"name": "batch_code",
+															"type": "String",
+															"description": "批次号",
+															"required": true
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "tms_order_list",
+							"type": "Tmsorderlist[]",
+							"description": "运单信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "tms_order",
+									"type": "Tmsorder",
+									"description": "运单信息列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "package_material_list",
+											"type": "Packagemateriallist[]",
+											"description": "包材信息",
+											"required": true,
+											"subParams": [
+												{
+													"name": "package_material",
+													"type": "Packagematerial",
+													"description": "包裹包材信息",
+													"required": true,
+													"subParams": [
+														{
+															"name": "material_type",
+															"type": "String",
+															"description": "淘宝指定的包材型号",
+															"required": true
+														},
+														{
+															"name": "material_quantity",
+															"type": "String",
+															"description": "包材的数量",
+															"required": true
+														}
+													]
+												}
+											]
+										},
+										{
+											"name": "tms_code",
+											"type": "String",
+											"description": "快递公司服务编码",
+											"required": true
+										},
+										{
+											"name": "tms_order_code",
+											"type": "String",
+											"description": "运单编码",
+											"required": true
+										},
+										{
+											"name": "package_code",
+											"type": "String",
+											"description": "包裹号",
+											"required": true
+										},
+										{
+											"name": "package_weight",
+											"type": "Number",
+											"description": "包裹重量，单位：克",
+											"required": true
+										},
+										{
+											"name": "package_length",
+											"type": "Number",
+											"description": "包裹长度，单位：毫米",
+											"required": true
+										},
+										{
+											"name": "package_width",
+											"type": "Number",
+											"description": "包裹宽度，单位：毫米",
+											"required": true
+										},
+										{
+											"name": "package_height",
+											"type": "Number",
+											"description": "包裹高度，单位：毫米",
+											"required": true
+										},
+										{
+											"name": "tms_item_list",
+											"type": "Tmsitemlist[]",
+											"description": "包裹里面的商品信息列表",
+											"required": true,
+											"subParams": [
+												{
+													"name": "tms_item",
+													"type": "Tmsitem",
+													"description": "包裹里面商品",
+													"required": true,
+													"subParams": [
+														{
+															"name": "item_id",
+															"type": "String",
+															"description": "ERP商品ID",
+															"required": true
+														},
+														{
+															"name": "item_code",
+															"type": "String",
+															"description": "商家编码",
+															"required": true
+														},
+														{
+															"name": "item_qty",
+															"type": "Number",
+															"description": "此运单里该商品的数量",
+															"required": true
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "cn_order_code",
+							"type": "String",
+							"description": "菜鸟订单编码",
+							"required": true
+						},
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "ERP订单编码",
+							"required": true
+						},
+						{
+							"name": "order_type",
+							"type": "Number",
+							"description": "订单类型 201 销售出库 502 换货出库 503 补发出库",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓储编码",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "订单状态 WMS_ACCEPT 接单成功 WMS_REJECT 接单失败 WMS_CONFIRMED 仓库生产完成",
+							"required": true
+						},
+						{
+							"name": "confirm_time",
+							"type": "Date",
+							"description": "仓库订单完成时间",
+							"required": true
+						},
+						{
+							"name": "invoince_confirm_list",
+							"type": "Invoinceconfirmlist[]",
+							"description": "发票确认信息列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "invoince_confirm",
+									"type": "Invoinceconfirm",
+									"description": "发票确认信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "bill_id",
+											"type": "String",
+											"description": "Erp发票ID",
+											"required": true
+										},
+										{
+											"name": "invoice_number",
+											"type": "String",
+											"description": "发票号",
+											"required": true
+										},
+										{
+											"name": "invoice_code",
+											"type": "String",
+											"description": "发票代码",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

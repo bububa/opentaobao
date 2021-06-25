@@ -1,0 +1,65 @@
+{
+	"name": "aliexpress.social.country.get",
+	"apiChineseName": "获取国家列表",
+	"description": "获取目前AE支持的国家列表",
+	"requestParams": [
+		{
+			"name": "language",
+			"type": "String",
+			"description": "语言"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "ItemPickPagingResult",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "CountryDto[]",
+					"description": "返回数据集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "国家ID",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "国家名称",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "国家CODE",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

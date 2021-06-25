@@ -1,0 +1,89 @@
+{
+	"name": "taobao.wdk.equipment.conveyor.wcsbtoc.containerscannedbyconveyor",
+	"apiChineseName": "容器被悬挂链扫描",
+	"description": "容器被悬挂链扫描",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "warehouse_code"
+		},
+		{
+			"name": "wcs_num",
+			"type": "Number",
+			"description": "wcs_num"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_error_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "service_error_msg",
+			"type": "String",
+			"description": "errorMsg"
+		},
+		{
+			"name": "list",
+			"type": "WcsContainerScannedByConveyorDto []",
+			"description": "list",
+			"subParams": [
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "warehouseCode",
+					"required": true
+				},
+				{
+					"name": "warehouse_id",
+					"type": "Json",
+					"description": "warehouseId",
+					"required": true
+				},
+				{
+					"name": "batch_code",
+					"type": "String",
+					"description": "batchCode",
+					"required": true
+				},
+				{
+					"name": "container_code",
+					"type": "String",
+					"description": "containerCode",
+					"required": true
+				},
+				{
+					"name": "wave_code",
+					"type": "String",
+					"description": "waveCode",
+					"required": true
+				},
+				{
+					"name": "conveyor_id",
+					"type": "Json",
+					"description": "conveyorId",
+					"required": true
+				},
+				{
+					"name": "scanned_time",
+					"type": "Date",
+					"description": "scannedTime",
+					"required": true
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "uuid",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

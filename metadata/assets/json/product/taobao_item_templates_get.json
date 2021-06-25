@@ -1,0 +1,29 @@
+{
+	"name": "taobao.item.templates.get",
+	"apiChineseName": "获取用户宝贝详情页模板名称",
+	"description": "查询当前登录用户的店铺的宝贝详情页的模板名称",
+	"responseParams": [
+		{
+			"name": "item_template_list",
+			"type": "ItemTemplate []",
+			"description": "返回宝贝模板对象。包含模板id，模板name，还有模板的类别（0表示外店，1表示内店）",
+			"subParams": [
+				{
+					"name": "template_id",
+					"type": "Number",
+					"description": "宝贝模板的id"
+				},
+				{
+					"name": "template_name",
+					"type": "String",
+					"description": "宝贝详情模板的名称"
+				},
+				{
+					"name": "shop_type",
+					"type": "Number",
+					"description": "用于区分宝贝模板属于内店和外店"
+				}
+			]
+		}
+	]
+}

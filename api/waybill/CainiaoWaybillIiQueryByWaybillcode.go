@@ -1,0 +1,21 @@
+package waybill
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/waybill"
+)
+
+/* 
+通过面单号查询面单信息 
+cainiao.waybill.ii.query.by.waybillcode
+
+通过面单号查看面单号的当前状态，如签收、发货、失效等。
+*/
+func CainiaoWaybillIiQueryByWaybillcode(clt *core.SDKClient, req *waybill.CainiaoWaybillIiQueryByWaybillcodeRequest, session string) (*waybill.CainiaoWaybillIiQueryByWaybillcodeResponse, error) {
+    var resp waybill.CainiaoWaybillIiQueryByWaybillcodeAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

@@ -1,0 +1,112 @@
+{
+	"name": "taobao.qt.report.get",
+	"apiChineseName": "查询质检报告",
+	"description": "质检报告查询",
+	"requestParams": [
+		{
+			"name": "qt_code",
+			"type": "String",
+			"description": "质检编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "qt_report",
+			"type": "QtReport",
+			"description": "质检报告对象",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "质检报告在淘宝的Id"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建日期"
+				},
+				{
+					"name": "is_passed",
+					"type": "Boolean",
+					"description": "是否合格"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "送检人昵称"
+				},
+				{
+					"name": "sp_name",
+					"type": "String",
+					"description": "质检服务商名称"
+				},
+				{
+					"name": "gmt_report",
+					"type": "Date",
+					"description": "出具报告时间。"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "不合格原因"
+				},
+				{
+					"name": "gmt_submit",
+					"type": "Date",
+					"description": "提交检查时间"
+				},
+				{
+					"name": "qt_code",
+					"type": "String",
+					"description": "质检编号"
+				},
+				{
+					"name": "qt_name",
+					"type": "String",
+					"description": "质检项名称"
+				},
+				{
+					"name": "item_url",
+					"type": "String",
+					"description": "样品的链接"
+				},
+				{
+					"name": "qt_type",
+					"type": "Number",
+					"description": "质检类型 0,全部 1,聚划算认证2,消保打标"
+				},
+				{
+					"name": "qt_standard",
+					"type": "String",
+					"description": "质检标准"
+				},
+				{
+					"name": "report_url",
+					"type": "String",
+					"description": "质检报告地址"
+				},
+				{
+					"name": "ext_attr",
+					"type": "String",
+					"description": "扩展属性通过冒号分隔属性与属性值. 分号分隔不同属性"
+				},
+				{
+					"name": "gmt_expiry",
+					"type": "Date",
+					"description": "质检有效期限"
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "样本宝贝id"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "质检报告状态\u003cbr/\u003e 0:已提交申请 1:已收到样品 2:已出检测结果 3.已出具报告"
+				}
+			]
+		}
+	]
+}

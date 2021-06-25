@@ -1,0 +1,80 @@
+{
+	"name": "taobao.promotion.benefit.activity.update",
+	"apiChineseName": "修改关联的活动权益",
+	"description": "修改卖家活动中关联的对应的权益。",
+	"requestParams": [
+		{
+			"name": "update_request",
+			"type": "UpdateBenefitActivityRequest",
+			"description": "修改关联的权益的活动请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "benefit_activity_vo",
+					"type": "UpdateBenefitActivityVo",
+					"description": "同步权益活动的概述信息，方便卖家后台查看",
+					"required": true,
+					"subParams": [
+						{
+							"name": "activity_url",
+							"type": "String",
+							"description": "ISV活动的活动地址"
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "活动描述"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "活动名称"
+						},
+						{
+							"name": "relation_id",
+							"type": "Number",
+							"description": "ISV活动关联权益后获得的关联ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "delete_detail_vos",
+					"type": "DeleteActivityBenefitDetailVo[]",
+					"description": "需要删除的已经关联的权益",
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "活动关联权益后生产的详情ID"
+						}
+					]
+				},
+				{
+					"name": "add_detail_vos",
+					"type": "ActivityBenefitDetailVo[]",
+					"description": "活动关联的权益信息列表，可以从权益选择器API中获取",
+					"subParams": [
+						{
+							"name": "benefit_type",
+							"type": "String",
+							"description": "权益类型"
+						},
+						{
+							"name": "benefit_id",
+							"type": "Number",
+							"description": "权益ID"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "更新是否成功"
+		}
+	]
+}

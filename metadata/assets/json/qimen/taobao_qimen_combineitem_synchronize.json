@@ -1,0 +1,530 @@
+{
+	"name": "taobao.qimen.combineitem.synchronize",
+	"apiChineseName": "组合商品接口",
+	"description": "ERP调用奇门的接口,将商品信息同步给WMS",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "CombineItemSyncRequest",
+			"subParams": [
+				{
+					"name": "itemCode",
+					"type": "String",
+					"description": "组合商品的ERP编码",
+					"required": true
+				},
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码",
+					"required": true
+				},
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "items",
+					"type": "Item[]",
+					"description": "组合商品接口中的单商品信息",
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "后端商品编码",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "组合商品中的该商品个数",
+							"required": true
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "ownerCode"
+						},
+						{
+							"name": "brandName",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "sn",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "isSNMgmt",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "barCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "color",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "size",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "length",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "width",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "height",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "volume",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "grossWeight",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "netWeight",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "tareWeight",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "safetyStock",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "stockUnit",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "stockStatus",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "isShelfLifeMgmt",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "shelfLife",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "rejectLifecycle",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "lockupLifecycle",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "adventLifecycle",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "batchRemark",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "isBatchMgmt",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "packCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "pcs",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "originAddress",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "approvalNumber",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "isFragile",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "isHazardous",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "pricingCategory",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "isSku",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "packageMaterial",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "isAreaSale",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "normalQty",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "defectiveQty",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "receiveQty",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "exCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "discountPrice",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "planQty",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "sourceOrderCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "subSourceOrderCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "orderLineNo",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "actualQty",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "lockQuantity",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "orderCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "outBizCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "productCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "paperQty",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "diffQuantity",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "extCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "lackQty",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "snCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "goodsCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "standardPrice",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "referencePrice",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "discount",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "actualAmount",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "priceAdjustment",
+							"type": "PriceAdjustment",
+							"description": "test",
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "test"
+								},
+								{
+									"name": "standardPrice",
+									"type": "String",
+									"description": "test"
+								},
+								{
+									"name": "discount",
+									"type": "String",
+									"description": "test"
+								},
+								{
+									"name": "startDate",
+									"type": "String",
+									"description": "test"
+								},
+								{
+									"name": "endDate",
+									"type": "String",
+									"description": "test"
+								}
+							]
+						},
+						{
+							"name": "latestUpdateTime",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "changeTime",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "tempRequirement",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "channelCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "originCode",
+							"type": "String",
+							"description": "test"
+						},
+						{
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "test",
+							"subParams": [
+								{
+									"name": "batchCode",
+									"type": "String",
+									"description": "test"
+								},
+								{
+									"name": "productDate",
+									"type": "String",
+									"description": "test"
+								},
+								{
+									"name": "expireDate",
+									"type": "String",
+									"description": "test"
+								},
+								{
+									"name": "produceCode",
+									"type": "String",
+									"description": "test"
+								},
+								{
+									"name": "inventoryType",
+									"type": "String",
+									"description": "test"
+								},
+								{
+									"name": "actualQty",
+									"type": "String",
+									"description": "test"
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "test"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

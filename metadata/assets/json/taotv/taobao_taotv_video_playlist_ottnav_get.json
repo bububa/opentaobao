@@ -1,0 +1,146 @@
+{
+	"name": "taobao.taotv.video.playlist.ottnav.get",
+	"apiChineseName": "ott播单",
+	"description": "根据聚焦播单ID拿到下面播单视频，根据左侧播单ID列表批量拿到播单信息",
+	"requestParams": [
+		{
+			"name": "play_list_id",
+			"type": "Number",
+			"description": "播单id"
+		},
+		{
+			"name": "play_list_nav",
+			"type": "String[]",
+			"description": "播单列表",
+			"maxListSize": 20
+		},
+		{
+			"name": "system_info",
+			"type": "String",
+			"description": "系统信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "PlayListNavRbo",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cur_play_list_id",
+							"type": "String",
+							"description": "当前播单id",
+							"required": true
+						},
+						{
+							"name": "videos",
+							"type": "Videos[]",
+							"description": "当前播单视频列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "id",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "视频标题",
+									"required": true
+								},
+								{
+									"name": "from",
+									"type": "String",
+									"description": "视频来源",
+									"required": true
+								},
+								{
+									"name": "video_id",
+									"type": "String",
+									"description": "视频ID",
+									"required": true
+								},
+								{
+									"name": "pic_url",
+									"type": "String",
+									"description": "视频图片",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "play_list",
+							"type": "Playlist[]",
+							"description": "播单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "play_list_id",
+									"type": "Number",
+									"description": "播单ID",
+									"required": true
+								},
+								{
+									"name": "play_list_name",
+									"type": "String",
+									"description": "播单名称",
+									"required": true
+								},
+								{
+									"name": "bg_pic",
+									"type": "String",
+									"description": "背景图",
+									"required": true
+								},
+								{
+									"name": "icon_pic",
+									"type": "String",
+									"description": "icon图标",
+									"required": true
+								},
+								{
+									"name": "has_recommend",
+									"type": "Number",
+									"description": "是否开启视频推荐功能：1开启0关闭（null或无字段均关闭)",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

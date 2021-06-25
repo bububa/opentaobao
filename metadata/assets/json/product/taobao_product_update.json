@@ -1,0 +1,78 @@
+{
+	"name": "taobao.product.update",
+	"apiChineseName": "修改一个产品，可以修改主图，不能修改子图片",
+	"description": "传入产品ID \u003cbr/\u003e可修改字段：outer_id,binds,sale_props,name,price,desc,image \u003cbr/\u003e注意：1.可以修改主图,不能修改子图片,主图最大500K,目前仅支持GIF,JPG\u003cbr/\u003e      2.商城卖家产品发布24小时后不能作删除或修改操作",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID",
+			"required": true
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "外部产品ID"
+		},
+		{
+			"name": "binds",
+			"type": "String",
+			"description": "非关键属性.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;格式:pid:vid;pid:vid"
+		},
+		{
+			"name": "sale_props",
+			"type": "String",
+			"description": "销售属性.调用taobao.itemprops.get获取pid,调用taobao.itempropvalues.get获取vid;格式:pid:vid;pid:vid"
+		},
+		{
+			"name": "price",
+			"type": "String",
+			"description": "产品市场价.精确到2位小数;单位为元.如:200.07"
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "产品描述.最大不超过25000个字符"
+		},
+		{
+			"name": "image",
+			"type": "byte[]",
+			"description": "产品主图.最大500K,目前仅支持GIF,JPG",
+			"maxLength": 1048576
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "产品名称.最大不超过30个字符"
+		},
+		{
+			"name": "major",
+			"type": "Boolean",
+			"description": "是否是主图"
+		},
+		{
+			"name": "native_unkeyprops",
+			"type": "String",
+			"description": "自定义非关键属性"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "product",
+			"type": "Product",
+			"description": "返回product数据结构中的：product_id,modified",
+			"subParams": [
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品ID"
+				}
+			]
+		}
+	]
+}

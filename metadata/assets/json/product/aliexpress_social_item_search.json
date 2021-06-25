@@ -1,0 +1,264 @@
+{
+	"name": "aliexpress.social.item.search",
+	"apiChineseName": "AE社交选品",
+	"description": "AE社交选品,通过各种筛选条件对社交商品池进行筛选",
+	"requestParams": [
+		{
+			"name": "has_video",
+			"type": "Boolean",
+			"description": "是否有视频"
+		},
+		{
+			"name": "order_by",
+			"type": "String",
+			"description": "order by properties"
+		},
+		{
+			"name": "desc",
+			"type": "Boolean",
+			"description": "是否逆序"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "page size"
+		},
+		{
+			"name": "is_ship_free",
+			"type": "Boolean",
+			"description": "是否免邮"
+		},
+		{
+			"name": "commission_rate_max",
+			"type": "String",
+			"description": "佣金最大值"
+		},
+		{
+			"name": "commission_rate_min",
+			"type": "String",
+			"description": "佣金最小值"
+		},
+		{
+			"name": "logistics_time",
+			"type": "Number",
+			"description": "物流时效"
+		},
+		{
+			"name": "alliance_item",
+			"type": "Boolean",
+			"description": "是否联盟商品"
+		},
+		{
+			"name": "cate_id",
+			"type": "Number",
+			"description": "类目ID"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "min_price",
+			"type": "String",
+			"description": "最低价格"
+		},
+		{
+			"name": "max_price",
+			"type": "String",
+			"description": "最高价格"
+		},
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "搜索关键字"
+		},
+		{
+			"name": "ship_to",
+			"type": "String",
+			"description": "shipTo国家"
+		},
+		{
+			"name": "comment_score",
+			"type": "String",
+			"description": "评价分数"
+		},
+		{
+			"name": "currency",
+			"type": "String",
+			"description": "币种"
+		},
+		{
+			"name": "locale",
+			"type": "String",
+			"description": "locale,格式为language+\"_\"+country"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "报类型",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "ItemSearchResult[]",
+					"description": "搜索结构封装",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "item_title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "item_url",
+							"type": "String",
+							"description": "商品URL",
+							"required": true
+						},
+						{
+							"name": "item_main_pic",
+							"type": "String",
+							"description": "商品主图",
+							"required": true
+						},
+						{
+							"name": "pub_time",
+							"type": "String",
+							"description": "发布时间",
+							"required": true
+						},
+						{
+							"name": "comment_score",
+							"type": "String",
+							"description": "评价分",
+							"required": true
+						},
+						{
+							"name": "shop_url",
+							"type": "String",
+							"description": "店铺URL",
+							"required": true
+						},
+						{
+							"name": "commission_rate",
+							"type": "String",
+							"description": "佣金比例",
+							"required": true
+						},
+						{
+							"name": "item_pics",
+							"type": "String",
+							"description": "图片地址",
+							"required": true
+						},
+						{
+							"name": "item_videos",
+							"type": "String",
+							"description": "视频地址",
+							"required": true
+						},
+						{
+							"name": "item_origin_price_min",
+							"type": "String",
+							"description": "商品原价最低值",
+							"required": true
+						},
+						{
+							"name": "item_origin_price_max",
+							"type": "String",
+							"description": "商品原价最高值",
+							"required": true
+						},
+						{
+							"name": "item_price_discount_min",
+							"type": "String",
+							"description": "商品折扣价最低至",
+							"required": true
+						},
+						{
+							"name": "item_price_discount_max",
+							"type": "String",
+							"description": "商品折扣价最高值",
+							"required": true
+						},
+						{
+							"name": "item_discount_rate",
+							"type": "String",
+							"description": "商品折扣率",
+							"required": true
+						},
+						{
+							"name": "seller_layer",
+							"type": "String",
+							"description": "卖家服务分",
+							"required": true
+						},
+						{
+							"name": "sales30_day_semantic",
+							"type": "Number",
+							"description": "销量语义化",
+							"required": true
+						},
+						{
+							"name": "comment30_day_semantic",
+							"type": "Number",
+							"description": "评论语义化",
+							"required": true
+						},
+						{
+							"name": "favorite_cnt_semantic",
+							"type": "Number",
+							"description": "收藏数语义化",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数据条数",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总条数",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

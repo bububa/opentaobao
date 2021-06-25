@@ -1,0 +1,339 @@
+{
+	"name": "taobao.bus.tvmqueryorder.get",
+	"apiChineseName": "线下自助机查询订单信息",
+	"description": "查询订单详情",
+	"requestParams": [
+		{
+			"name": "alitrip_order_id",
+			"type": "String",
+			"description": "阿里订单标编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "errorMsg"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "tvm_bus_order_line_info",
+			"type": "TvmBusOrderLineInfo",
+			"description": "tvmBusOrderLineInfo",
+			"subParams": [
+				{
+					"name": "agent_order_id",
+					"type": "String",
+					"description": "代理商订单号",
+					"required": true
+				},
+				{
+					"name": "alipay_trade_no",
+					"type": "String",
+					"description": "阿里支付交易号",
+					"required": true
+				},
+				{
+					"name": "alitrip_order_id",
+					"type": "String",
+					"description": "阿里订单编号",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "String",
+					"description": "订单创建时间",
+					"required": true
+				},
+				{
+					"name": "issue_time",
+					"type": "String",
+					"description": "出票时间",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "Number",
+					"description": "订单状态：    CREATED_NO_PAY(10, \"已创建，待支付\"),      PAYED_NO_NOTIFY(20, \"已支付，待通知代理商\"),      PAYED_AND_NOTIFY(30, \"已支付，待代理商出票\"),//bookorder      BOOKED_AND_CONFIRM(50, \"已出票，已确认\"),//booksucess     BOOK_FAILED(-1, \"出票失败\"),     PAY_TIME_OUT(-2, \"支付超时\"),     BOOK_TIME_OUT(-3, \"出票超时\"),     CANCEL(-4, \"订单取消\"),     CLOSE(-5, \"订单关闭\");",
+					"required": true
+				},
+				{
+					"name": "passengers",
+					"type": "TvmPassengerVo[]",
+					"description": "passengers",
+					"required": true,
+					"subParams": [
+						{
+							"name": "full_price",
+							"type": "Number",
+							"description": "全票价",
+							"required": true
+						},
+						{
+							"name": "has_children",
+							"type": "Boolean",
+							"description": "hasChildren",
+							"required": true
+						},
+						{
+							"name": "rider_cert_number",
+							"type": "String",
+							"description": "身份证",
+							"required": true
+						},
+						{
+							"name": "rider_cert_type",
+							"type": "String",
+							"description": "乘客证件类型",
+							"required": true
+						},
+						{
+							"name": "rider_name",
+							"type": "String",
+							"description": "riderName",
+							"required": true
+						},
+						{
+							"name": "seat_number",
+							"type": "String",
+							"description": "座位号",
+							"required": true
+						},
+						{
+							"name": "service_charge",
+							"type": "Number",
+							"description": "服务费",
+							"required": true
+						},
+						{
+							"name": "ticket_price",
+							"type": "Number",
+							"description": "票价",
+							"required": true
+						},
+						{
+							"name": "agent_eticket",
+							"type": "String",
+							"description": "电子票号",
+							"required": true
+						},
+						{
+							"name": "agent_ticket_id",
+							"type": "String",
+							"description": "商家票号",
+							"required": true
+						},
+						{
+							"name": "tvm_insurance_infos",
+							"type": "TvmInsuranceInfo[]",
+							"description": "乘客购买保险信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "insure_status",
+									"type": "Number",
+									"description": "保险状态: -1下单失败 0初始化 1已取消 2已关闭 3已挂起 4已挂起  5未知状态  6未生效 7保障中  8已失效  9退保中 10已退保 11未生效或保障中",
+									"required": true
+								},
+								{
+									"name": "insure_price",
+									"type": "Number",
+									"description": "保险产品单价(分)",
+									"required": true
+								},
+								{
+									"name": "insure_name",
+									"type": "String",
+									"description": "保险名称",
+									"required": true
+								},
+								{
+									"name": "product_no",
+									"type": "String",
+									"description": "保险唯一标识 购买必传",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ticket_count",
+					"type": "Number",
+					"description": "票数",
+					"required": true
+				},
+				{
+					"name": "total_price",
+					"type": "Number",
+					"description": "totalPrice",
+					"required": true
+				},
+				{
+					"name": "tvm_bus_line_info",
+					"type": "TvmBusLineInfo",
+					"description": "tvmBusLineInfo",
+					"required": true,
+					"subParams": [
+						{
+							"name": "dep_time",
+							"type": "String",
+							"description": "发车时间",
+							"required": true
+						},
+						{
+							"name": "distance",
+							"type": "Number",
+							"description": "距离",
+							"required": true
+						},
+						{
+							"name": "last_place_name",
+							"type": "String",
+							"description": "目的地",
+							"required": true
+						},
+						{
+							"name": "start_city_name",
+							"type": "String",
+							"description": "startCityName",
+							"required": true
+						},
+						{
+							"name": "start_station_name",
+							"type": "String",
+							"description": "startStationName",
+							"required": true
+						},
+						{
+							"name": "to_station_city_name",
+							"type": "String",
+							"description": "toStationCityName",
+							"required": true
+						},
+						{
+							"name": "to_station_name",
+							"type": "String",
+							"description": "到达站名称",
+							"required": true
+						},
+						{
+							"name": "start_station_address",
+							"type": "String",
+							"description": "出发站地址",
+							"required": true
+						},
+						{
+							"name": "bus_number",
+							"type": "String",
+							"description": "车次",
+							"required": true
+						},
+						{
+							"name": "bus_type",
+							"type": "String",
+							"description": "busType",
+							"required": true
+						},
+						{
+							"name": "runtime",
+							"type": "Number",
+							"description": "车程时间(小时)",
+							"required": true
+						},
+						{
+							"name": "start_province_name",
+							"type": "String",
+							"description": "startProvinceName",
+							"required": true
+						},
+						{
+							"name": "start_station_id",
+							"type": "String",
+							"description": "startStationId",
+							"required": true
+						},
+						{
+							"name": "terminal",
+							"type": "String",
+							"description": "terminal",
+							"required": true
+						},
+						{
+							"name": "to_station_id",
+							"type": "String",
+							"description": "toStationId",
+							"required": true
+						},
+						{
+							"name": "to_station_province_name",
+							"type": "String",
+							"description": "toStationProvinceName",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "pay_time",
+					"type": "String",
+					"description": "支付时间",
+					"required": true
+				},
+				{
+					"name": "refunds",
+					"type": "TvmRefundApply[]",
+					"description": "退款信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "apply_id",
+							"type": "Number",
+							"description": "申请单id",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_refund_succ_time",
+							"type": "String",
+							"description": "成功时间",
+							"required": true
+						},
+						{
+							"name": "refund_amount",
+							"type": "Number",
+							"description": "退款金额（分）",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "Number",
+							"description": "退款状态 10(处理中) 20(已拒绝) 30(已同意) 40(已退款) 50(已受理)",
+							"required": true
+						},
+						{
+							"name": "out_trade_no",
+							"type": "String",
+							"description": "退款批次号",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

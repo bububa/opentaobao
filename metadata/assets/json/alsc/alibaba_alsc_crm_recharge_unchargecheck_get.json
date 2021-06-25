@@ -1,0 +1,95 @@
+{
+	"name": "alibaba.alsc.crm.recharge.unchargecheck.get",
+	"apiChineseName": "储值账户退充值校验",
+	"description": "储值账户退充值校验接口",
+	"requestParams": [
+		{
+			"name": "param_uncharge_check_open_req",
+			"type": "UnchargeCheckOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌Id(不能和outbrandid同时为空)"
+				},
+				{
+					"name": "card_id",
+					"type": "String",
+					"description": "卡号"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客Id"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id(不能和outshopid同时为空)"
+				},
+				{
+					"name": "src_outer_order_id",
+					"type": "String",
+					"description": "原充值订单Id",
+					"required": true
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID(不能和shopid同时为空)"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID(不能和brandid同时为空)"
+				},
+				{
+					"name": "biz_channel",
+					"type": "String",
+					"description": "CS是辰森，KRY是客如云",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "是否验证成功",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

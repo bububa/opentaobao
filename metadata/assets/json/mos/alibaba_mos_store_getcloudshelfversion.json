@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.mos.store.getcloudshelfversion",
+	"apiChineseName": "获取云货架版本信息",
+	"description": "根据屏编号获取云货架版本信息",
+	"requestParams": [
+		{
+			"name": "screen_no",
+			"type": "String",
+			"description": "屏编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,50 @@
+{
+	"name": "taobao.miniapp.eleuserinfo.get",
+	"apiChineseName": "获取饿了么用户信息",
+	"description": "获取饿了么用户信息",
+	"requestParams": [
+		{
+			"name": "biz_scence",
+			"type": "String",
+			"description": "怪兽业务方"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "traceId"
+		},
+		{
+			"name": "result",
+			"type": "EleUicInfo",
+			"description": "1",
+			"subParams": [
+				{
+					"name": "avatar",
+					"type": "String",
+					"description": "头像",
+					"required": true
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "昵称",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "电话",
+					"required": true
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "openId",
+					"required": true
+				}
+			]
+		}
+	]
+}

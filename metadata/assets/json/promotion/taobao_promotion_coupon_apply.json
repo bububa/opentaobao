@@ -1,0 +1,41 @@
+{
+	"name": "taobao.promotion.coupon.apply",
+	"apiChineseName": "优惠券领取",
+	"description": "优惠券领取",
+	"requestParams": [
+		{
+			"name": "seller_id",
+			"type": "String",
+			"description": "卖家id",
+			"required": true
+		},
+		{
+			"name": "spread_id",
+			"type": "String",
+			"description": "传播id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "失败详细描述"
+		},
+		{
+			"name": "apply_result",
+			"type": "Boolean",
+			"description": "领取结果，领取成功为true，否则为false"
+		},
+		{
+			"name": "invoke_result",
+			"type": "Boolean",
+			"description": "接口调用结果，调用成功为true，否则为false"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "调用错误码，只有调用失败的时候才会有"
+		}
+	]
+}

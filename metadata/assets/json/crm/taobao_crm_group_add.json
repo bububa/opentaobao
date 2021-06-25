@@ -1,0 +1,26 @@
+{
+	"name": "taobao.crm.group.add",
+	"apiChineseName": "卖家创建一个分组",
+	"description": "卖家创建一个新的分组，接口返回一个创建成功的分组的id",
+	"requestParams": [
+		{
+			"name": "group_name",
+			"type": "String",
+			"description": "分组名称，每个卖家最多可以拥有100个分组",
+			"required": true,
+			"maxLength": 15
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "添加分组是否成功"
+		},
+		{
+			"name": "group_id",
+			"type": "Number",
+			"description": "新增分组的id"
+		}
+	]
+}

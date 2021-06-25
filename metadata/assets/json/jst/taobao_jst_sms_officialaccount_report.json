@@ -1,0 +1,72 @@
+{
+	"name": "taobao.jst.sms.officialaccount.report",
+	"apiChineseName": "聚石塔公众号信息上报",
+	"description": "聚石塔公众号信息上报",
+	"requestParams": [
+		{
+			"name": "official_account_info_report_request",
+			"type": "OfficialAccountInfoReportRequest",
+			"description": "公众号信息上报接口入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "suffixes",
+					"type": "String",
+					"description": "ISV给商家分配的通道号码后缀，可传多个，逗号分隔",
+					"required": true
+				},
+				{
+					"name": "shop_logo",
+					"type": "String",
+					"description": "白底logo图片的资源Url地址，正方形，400x400，png格式",
+					"required": true
+				},
+				{
+					"name": "shop_name",
+					"type": "String",
+					"description": "店铺名",
+					"required": true
+				},
+				{
+					"name": "operation",
+					"type": "String",
+					"description": "ADD：新增，MODIFY：修改",
+					"required": true
+				},
+				{
+					"name": "sms_sign",
+					"type": "String",
+					"description": "短信签名",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "系统异常"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "成功"
+		},
+		{
+			"name": "response_id",
+			"type": "String",
+			"description": "请求id"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "上报成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "系统异常"
+		}
+	]
+}

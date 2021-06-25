@@ -1,0 +1,29 @@
+{
+	"name": "tmall.msf.verify",
+	"apiChineseName": "喵师傅核销接口",
+	"description": "msf服务核销的top接口",
+	"requestParams": [
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "111"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "111"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "111"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "result"
+		}
+	]
+}

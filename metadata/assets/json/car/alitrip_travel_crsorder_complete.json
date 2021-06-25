@@ -1,0 +1,33 @@
+{
+	"name": "alitrip.travel.crsorder.complete",
+	"apiChineseName": "CRS接送机商家服务完成接口",
+	"description": "提供给CRS接送机商家的服务完成回调接口",
+	"requestParams": [
+		{
+			"name": "crs_order_complete_param",
+			"type": "CrsOrderCompleteParam",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "飞猪订单id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回结果message"
+		},
+		{
+			"name": "message_code",
+			"type": "Number",
+			"description": "返回结果code"
+		}
+	]
+}

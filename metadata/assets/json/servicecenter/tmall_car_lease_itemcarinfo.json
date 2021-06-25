@@ -1,0 +1,119 @@
+{
+	"name": "tmall.car.lease.itemcarinfo",
+	"apiChineseName": "整车租赁商品四级车型信息",
+	"description": "整车租赁项目发布宝贝需要4级车型库，4级车型库信息需要回传",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "耗时",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误提示",
+					"required": true
+				},
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "当前时间",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误提示",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "CarItemInfoDto",
+					"description": "返回的对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "brand",
+							"type": "String",
+							"description": "品牌",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "商品id",
+							"required": true
+						},
+						{
+							"name": "line",
+							"type": "String",
+							"description": "车系",
+							"required": true
+						},
+						{
+							"name": "model",
+							"type": "String",
+							"description": "型号",
+							"required": true
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "不会返回",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "不会返回",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "skuId不会返回",
+							"required": true
+						},
+						{
+							"name": "year",
+							"type": "String",
+							"description": "年款",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功与否",
+					"required": true
+				}
+			]
+		}
+	]
+}

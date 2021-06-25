@@ -1,0 +1,58 @@
+{
+	"name": "taobao.fenxiao.productcat.add",
+	"apiChineseName": "新增产品线",
+	"description": "新增产品线",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "产品线名称",
+			"required": true,
+			"maxLength": 10
+		},
+		{
+			"name": "retail_low_percent",
+			"type": "Number",
+			"description": "最低零售价比例，注意：100.00%，则输入为10000",
+			"required": true,
+			"maxValue": 99999,
+			"minValue": 100
+		},
+		{
+			"name": "retail_high_percent",
+			"type": "Number",
+			"description": "最高零售价比例，注意：100.00%，则输入为10000",
+			"required": true,
+			"maxValue": 99999,
+			"minValue": 100
+		},
+		{
+			"name": "agent_cost_percent",
+			"type": "Number",
+			"description": "代销默认采购价比例，注意：100.00%，则输入为10000",
+			"required": true,
+			"maxValue": 99999,
+			"minValue": 100
+		},
+		{
+			"name": "dealer_cost_percent",
+			"type": "Number",
+			"description": "经销默认采购价比例，注意：100.00%，则输入为10000",
+			"required": true,
+			"maxValue": 99999,
+			"minValue": 100
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "操作是否成功"
+		},
+		{
+			"name": "product_line_id",
+			"type": "Number",
+			"description": "产品线ID"
+		}
+	]
+}

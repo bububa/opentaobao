@@ -1,0 +1,72 @@
+{
+	"name": "taobao.life.reservation.item.order.confirm",
+	"apiChineseName": "生服购后预约单外部确认",
+	"description": "生服团购下单预约后，用户改期/取消，外调ISV。ISV人工确认后调接口同意或驳回",
+	"requestParams": [
+		{
+			"name": "trade_no",
+			"type": "String",
+			"description": "淘宝主单号",
+			"required": true
+		},
+		{
+			"name": "ticket_id",
+			"type": "String",
+			"description": "凭证ID",
+			"required": true
+		},
+		{
+			"name": "opt_type",
+			"type": "String",
+			"description": "审核类型，PASS-通过；REJECT-驳回",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "内部trace 用于排查问题",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误",
+					"required": true,
+					"subParams": [
+						{
+							"name": "view",
+							"type": "String",
+							"description": "错误可读性描述",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "是否成功",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

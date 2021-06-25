@@ -1,0 +1,104 @@
+{
+	"name": "alibaba.wdk.stock.real.query",
+	"apiChineseName": "仓内实时库存查询",
+	"description": "查询仓内实时库存信息",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "WmsInventoryTopQuery",
+			"description": "系统自动生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓库编号"
+				},
+				{
+					"name": "query_page_num",
+					"type": "Number",
+					"description": "查询页数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "InventoryTopResultBo",
+					"description": "result",
+					"required": true,
+					"subParams": [
+						{
+							"name": "inventory_info_list",
+							"type": "Inventoryinfolist[]",
+							"description": "inventoryInfoList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "real_invent",
+									"type": "String",
+									"description": "realInvent",
+									"required": true
+								},
+								{
+									"name": "storage_unit",
+									"type": "String",
+									"description": "storageUnit",
+									"required": true
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "itemCode",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "query_page_num",
+							"type": "Number",
+							"description": "queryPageNum",
+							"required": true
+						},
+						{
+							"name": "query_page_size",
+							"type": "Number",
+							"description": "queryPageSize",
+							"required": true
+						},
+						{
+							"name": "total_page_num",
+							"type": "Number",
+							"description": "totalPageNum",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

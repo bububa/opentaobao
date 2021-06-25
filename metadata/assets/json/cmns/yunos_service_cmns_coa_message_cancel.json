@@ -1,0 +1,30 @@
+{
+	"name": "yunos.service.cmns.coa.message.cancel",
+	"apiChineseName": "CMNS消息撤回",
+	"description": "此接口用户撤回之前已经发出去的消息，根据消息ID撤回，只能撤回此appKey创建的消息。",
+	"requestParams": [
+		{
+			"name": "mid",
+			"type": "Number",
+			"description": "消息ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "返回状态 200表示调用成功"
+		},
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "true:撤回成功\u003cbr/\u003efalse:撤回失败"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "调用出错时返回信息"
+		}
+	]
+}

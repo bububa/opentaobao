@@ -1,0 +1,315 @@
+{
+	"name": "alibaba.koubeishops.property.get",
+	"apiChineseName": "口碑店铺列表推荐",
+	"description": "推荐用户附近的美食门店",
+	"requestParams": [
+		{
+			"name": "param_open_api_search_request",
+			"type": "OpenApiSearchRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "app",
+					"type": "String",
+					"description": "渠道版本 alipay,koubei,eleme,gaode,taobao"
+				},
+				{
+					"name": "city_id",
+					"type": "String",
+					"description": "所选城市"
+				},
+				{
+					"name": "client_os",
+					"type": "String",
+					"description": "客户端"
+				},
+				{
+					"name": "client_version",
+					"type": "String",
+					"description": "客户端版本"
+				},
+				{
+					"name": "context",
+					"type": "String",
+					"description": "客户端上下文"
+				},
+				{
+					"name": "current_city",
+					"type": "String",
+					"description": "所选城市"
+				},
+				{
+					"name": "current_district",
+					"type": "String",
+					"description": "所选区"
+				},
+				{
+					"name": "current_province",
+					"type": "String",
+					"description": "省"
+				},
+				{
+					"name": "forward",
+					"type": "Boolean",
+					"description": "固定值"
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "lbs_busi_area_id",
+					"type": "String",
+					"description": "所在商圈"
+				},
+				{
+					"name": "lbs_city_id",
+					"type": "String",
+					"description": "所在城市"
+				},
+				{
+					"name": "lbs_district_id",
+					"type": "String",
+					"description": "所在区"
+				},
+				{
+					"name": "location_accuracy",
+					"type": "String",
+					"description": "经纬度精度"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度"
+				},
+				{
+					"name": "original_size",
+					"type": "Number",
+					"description": "个数"
+				},
+				{
+					"name": "os_version",
+					"type": "String",
+					"description": "OS 版本"
+				},
+				{
+					"name": "params_map",
+					"description": "扩展参数"
+				},
+				{
+					"name": "place_id",
+					"type": "String",
+					"description": "埋点ID"
+				},
+				{
+					"name": "query",
+					"type": "String",
+					"description": "关键词"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求ID"
+				},
+				{
+					"name": "scene_id",
+					"type": "String",
+					"description": "场景吗"
+				},
+				{
+					"name": "search_id",
+					"type": "String",
+					"description": "搜索ID"
+				},
+				{
+					"name": "selected_menus",
+					"description": "菜单项"
+				},
+				{
+					"name": "session_id",
+					"type": "String",
+					"description": "sessionid"
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "个数"
+				},
+				{
+					"name": "sort",
+					"type": "String",
+					"description": "排序"
+				},
+				{
+					"name": "src_spm",
+					"type": "String",
+					"description": "来源埋点"
+				},
+				{
+					"name": "start",
+					"type": "Number",
+					"description": "分页"
+				},
+				{
+					"name": "token_id",
+					"type": "String",
+					"description": "搜索TOKEN"
+				},
+				{
+					"name": "trace",
+					"type": "String",
+					"description": "traceID"
+				},
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "用户ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OpenApiSearchResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "bucket_id",
+					"type": "String",
+					"description": "固定值",
+					"required": true
+				},
+				{
+					"name": "context",
+					"type": "String",
+					"description": "固定值",
+					"required": true
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "个数",
+					"required": true
+				},
+				{
+					"name": "ext_attrs",
+					"type": "Json",
+					"description": "扩展值",
+					"required": true
+				},
+				{
+					"name": "items",
+					"type": "OpenApiHit[]",
+					"description": "店铺信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_id",
+							"type": "String",
+							"description": "店铺ID",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						},
+						{
+							"name": "entity_id",
+							"type": "String",
+							"description": "店铺ID",
+							"required": true
+						},
+						{
+							"name": "entity_type",
+							"type": "String",
+							"description": "店铺类型",
+							"required": true
+						},
+						{
+							"name": "priority",
+							"type": "Number",
+							"description": "优先级",
+							"required": true
+						},
+						{
+							"name": "recm_attrs",
+							"type": "Json",
+							"description": "店铺信息字段",
+							"required": true
+						},
+						{
+							"name": "rule_id",
+							"type": "String",
+							"description": "固定值",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "排序权重",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "query",
+					"type": "String",
+					"description": "关键词",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求ID",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "结果ID",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "search_group",
+					"type": "String",
+					"description": "固定值",
+					"required": true
+				},
+				{
+					"name": "search_id",
+					"type": "String",
+					"description": "搜索ID",
+					"required": true
+				},
+				{
+					"name": "search_params",
+					"type": "String",
+					"description": "固定值",
+					"required": true
+				},
+				{
+					"name": "session_id",
+					"type": "String",
+					"description": "sessionID",
+					"required": true
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "店铺个数",
+					"required": true
+				}
+			]
+		}
+	]
+}

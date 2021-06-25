@@ -1,0 +1,46 @@
+{
+	"name": "alitrip.item.schema.add",
+	"apiChineseName": "使用schema模板进行商品发布",
+	"description": "飞猪度假商品使用schema模板进行商品发布。目前支持类目：出境自由行(50278002)、境内自由行(50272002)、出境跟团游(50258005)、境内跟团游(50258004)、境外一日游/多日游(50276003)",
+	"requestParams": [
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "类目id",
+			"required": true
+		},
+		{
+			"name": "schema_xml_fields",
+			"type": "String",
+			"description": "商品数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopTravelItem",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "商品修改时间",
+					"required": true
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "商品创建时间",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,112 @@
+{
+	"name": "taobao.bill.book.bills.get",
+	"apiChineseName": "查询虚拟账户明细数据(自研发商家专用)",
+	"description": "查询虚拟账户明细数据",
+	"requestParams": [
+		{
+			"name": "account_id",
+			"type": "Number",
+			"description": "虚拟账户科目编号",
+			"required": true
+		},
+		{
+			"name": "journal_types",
+			"type": "Number[]",
+			"description": "明细流水类型:流水类型:101、可用金充值；102、可用金扣除；103、冻结；104、解冻；105、冻结金充值；106、冻结金扣除",
+			"maxListSize": 10
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "记账开始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "记账结束时间,end_time与start_time相差不能超过30天",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小,建议40~100,不能超过100"
+		},
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "需要返回的字段:bid,account_id,journal_type,amount,book_time,description,gmt_create,gmt_modified ,如果不是以上字段将自动忽略",
+			"required": true,
+			"maxLength": 300
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码,传入值为1代表第一页,传入值为2代表第二页,依此类推.默认返回的数据是从第一页开始"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "has_next",
+			"type": "Boolean",
+			"description": "是否有下一页"
+		},
+		{
+			"name": "bills",
+			"type": "BookBill []",
+			"description": "虚拟账户账单列表",
+			"subParams": [
+				{
+					"name": "bid",
+					"type": "Number",
+					"description": "虚拟账户流水编号"
+				},
+				{
+					"name": "account_id",
+					"type": "Number",
+					"description": "虚拟账户科目编号"
+				},
+				{
+					"name": "journal_type",
+					"type": "Number",
+					"description": "流水类型:101-可用金充值;102-可用金扣除;103-冻结;104-解冻;105-冻结金充值;106-冻结金扣除"
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "操作金额"
+				},
+				{
+					"name": "book_time",
+					"type": "Date",
+					"description": "记账时间"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "taobao_alipay_id",
+					"type": "String",
+					"description": "流水的淘宝支付宝id"
+				},
+				{
+					"name": "other_alipay_id",
+					"type": "String",
+					"description": "流水的商家支付宝id"
+				}
+			]
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "当前查询的结果数,非总数"
+		}
+	]
+}

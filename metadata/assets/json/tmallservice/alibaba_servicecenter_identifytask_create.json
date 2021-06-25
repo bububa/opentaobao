@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.servicecenter.identifytask.create",
+	"apiChineseName": "创建核销单",
+	"description": "创建核销单",
+	"requestParams": [
+		{
+			"name": "workcard_ids",
+			"type": "Number[]",
+			"description": "工单集合",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "核销单外部标识，服务商保证唯一。如果创建核销单时传入重复的outer_id，系统直接会返回服务商下该outer_id对应的核销单，不会重新创建新核销单。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "请求结果",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "Number",
+					"description": "核销单id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

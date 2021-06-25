@@ -1,0 +1,83 @@
+{
+	"name": "alibaba.alsc.crm.recharge.chargeprecheck.get",
+	"apiChineseName": "储值账户充值前校验",
+	"description": "储值账户充值前校验接口",
+	"requestParams": [
+		{
+			"name": "param_charge_pre_check_open_req",
+			"type": "ChargePreCheckOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID(和outbrandid不能同时为空)"
+				},
+				{
+					"name": "card_id",
+					"type": "String",
+					"description": "卡Id，用于会员卡、礼品卡校验"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "会员ID，用于会员卡校验，会员卡必填"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店ID(和outshopid不能同时为空)"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID(不能和shopid同时为空)"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID(不能和brandid同时为空)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "验证是否通过",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

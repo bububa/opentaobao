@@ -1,0 +1,20 @@
+{
+	"name": "wdk.meal.pos.getfetchmealcode",
+	"apiChineseName": "五道口餐饮取餐号获取接口",
+	"description": "pos机创建订单前获取餐饮取餐号",
+	"requestParams": [
+		{
+			"name": "channel_shop_id",
+			"type": "String",
+			"description": "渠道店id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fetch_meal_code",
+			"type": "String",
+			"description": "取餐号"
+		}
+	]
+}

@@ -1,0 +1,114 @@
+{
+	"name": "taobao.wireless.xcode.create",
+	"apiChineseName": "创建二维码/短连接",
+	"description": "创建码平台的普通二维码或者长连接转短连接服务",
+	"requestParams": [
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "码平台开放的业务code"
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "原始内容/原始地址",
+			"required": true
+		},
+		{
+			"name": "style",
+			"type": "QrCodeStyle",
+			"description": "普通二维码样式参数",
+			"subParams": [
+				{
+					"name": "bg_color",
+					"type": "Number",
+					"description": "可选参数，二维背景色颜色值，接入业务点配置为准，未配置，默认为白"
+				},
+				{
+					"name": "logo",
+					"type": "String",
+					"description": "可选参数，logo的淘宝tfs地址，默认无"
+				},
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "可选参数，二维码纠错级别 0=~7%,1=~15%,2=~25%,3=~30%"
+				},
+				{
+					"name": "color",
+					"type": "Number",
+					"description": "可选参数，二维码深色点颜色值，接入业务点配置为准，未配置，默认为黑"
+				},
+				{
+					"name": "margin",
+					"type": "Number",
+					"description": "可选参数，二维码的边框，默认大小1个单位点，便于扫码"
+				},
+				{
+					"name": "size",
+					"type": "Number",
+					"description": "可选参数，二维码大小，值60～600，默认185pix"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "xcode",
+			"type": "XCodeTo",
+			"description": "创建二维码/短连接 返回信息",
+			"subParams": [
+				{
+					"name": "img_url",
+					"type": "String",
+					"description": "二维码图片地址"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "记录ID"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "最后修改时间"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "码的状态，1-生效，0-未生效，-1-逻辑删除。"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "所属用户ID，如果入参没有用户登录信息，则随机生成"
+				},
+				{
+					"name": "life_start",
+					"type": "Date",
+					"description": "有效期开始时间"
+				},
+				{
+					"name": "short_url",
+					"type": "String",
+					"description": "短连接"
+				},
+				{
+					"name": "short_name",
+					"type": "String",
+					"description": "短连接关键字符"
+				},
+				{
+					"name": "life_end",
+					"type": "Date",
+					"description": "有效期结束时间，使用短链接跳转的，结束后不再可以访问"
+				}
+			]
+		}
+	]
+}

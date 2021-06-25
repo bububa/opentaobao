@@ -1,0 +1,97 @@
+{
+	"name": "alibaba.icbu.photobank.list",
+	"apiChineseName": "国际站图片银行查询接口",
+	"description": "国际站图片银行查询接口",
+	"requestParams": [
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前翻页数"
+		},
+		{
+			"name": "group_id",
+			"type": "String",
+			"description": "图片组id"
+		},
+		{
+			"name": "location_type",
+			"type": "String",
+			"description": "存放位置 必要条件, 包括ALL_GROUP(所有目录), SUB_GROUP(指定图片组下),UNGROUP(未分组), TEMP(disable)四个值"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页显示数"
+		},
+		{
+			"name": "extra_context",
+			"type": "Json",
+			"description": "额外的上下文信息. 例如:icvId"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "pagination_query_list",
+			"type": "PaginationQueryList",
+			"description": "图片查询结果",
+			"subParams": [
+				{
+					"name": "list",
+					"type": "PhotobankImageDo[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "url",
+							"type": "String",
+							"description": "full url",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "gmtModified",
+							"required": true
+						},
+						{
+							"name": "owner_member_display_name",
+							"type": "String",
+							"description": "ownerMemberDisplayName",
+							"required": true
+						},
+						{
+							"name": "file_name",
+							"type": "String",
+							"description": "fileName",
+							"required": true
+						},
+						{
+							"name": "file_size",
+							"type": "Number",
+							"description": "fileSize",
+							"required": true
+						},
+						{
+							"name": "reference_count",
+							"type": "Number",
+							"description": "referenceCount",
+							"required": true
+						},
+						{
+							"name": "group_id",
+							"type": "Number",
+							"description": "groupId",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "111111",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

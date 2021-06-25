@@ -1,0 +1,118 @@
+{
+	"name": "taobao.media.video.list",
+	"apiChineseName": "获取商家视频列表",
+	"description": "用于获取授权商家的视频列表",
+	"requestParams": [
+		{
+			"name": "search_condition",
+			"type": "VideoSearchCondition2",
+			"description": "搜索条件",
+			"required": true,
+			"subParams": [
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页数",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SearchResultDO",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "VideoItemExtDO[]",
+					"description": "视频信息列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "play_url",
+							"type": "String",
+							"description": "视频播放地址",
+							"required": true
+						},
+						{
+							"name": "main_pic_url",
+							"type": "String",
+							"description": "视频封面-主图",
+							"required": true
+						},
+						{
+							"name": "state",
+							"type": "Number",
+							"description": "视频状态",
+							"required": true
+						},
+						{
+							"name": "can_play_in_phone",
+							"type": "Boolean",
+							"description": "是否能在移动端播放",
+							"required": true
+						},
+						{
+							"name": "video_info",
+							"type": "VideoItemDO",
+							"description": "视频基本信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "cover_url",
+									"type": "String",
+									"description": "视频封面",
+									"required": true
+								},
+								{
+									"name": "duration",
+									"type": "Number",
+									"description": "视频时长",
+									"required": true
+								},
+								{
+									"name": "upload_time",
+									"type": "Date",
+									"description": "视频上传视频",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "视频标题",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "total_num",
+					"type": "Number",
+					"description": "总视频数",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"name": "taobao.trade.close",
+	"apiChineseName": "卖家关闭一笔交易",
+	"description": "关闭一笔订单，可以是主订单或子订单。当订单从创建到关闭时间小于10s的时候，会报“CLOSE_TRADE_TOO_FAST”错误。",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "主订单或子订单编号。",
+			"required": true
+		},
+		{
+			"name": "close_reason",
+			"type": "String",
+			"description": "交易关闭原因。可以选择的理由有：1.未及时付款2、买家不想买了3、买家信息填写错误，重新拍4、恶意买家/同行捣乱5、缺货6、买家拍错了7、同城见面交易",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trade",
+			"type": "Trade",
+			"description": "关闭交易时返回的Trade信息，可用字段有tid和modified",
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "交易编号 (父订单的交易编号)"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "交易修改时间(用户对订单的任何修改都会更新此字段)。格式:yyyy-MM-dd HH:mm:ss"
+				}
+			]
+		}
+	]
+}

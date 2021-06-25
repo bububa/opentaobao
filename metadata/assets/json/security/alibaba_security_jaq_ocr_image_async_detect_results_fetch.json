@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.security.jaq.ocr.image.async.detect.results.fetch",
+	"apiChineseName": "聚安全获取异步图文识别结果接口",
+	"description": "获取异步图像字符识别结果接口根据图像检测接口返回taskid来获取对应图像的检测结果",
+	"requestParams": [
+		{
+			"name": "task_ids",
+			"type": "String[]",
+			"description": "值为图像检测接口异步调用时返回的图片task_id",
+			"required": true,
+			"maxListSize": 50
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "JaqImageDetectResultCollection",
+			"description": "出参结构体",
+			"subParams": [
+				{
+					"name": "jaq_image_detect_result_list",
+					"type": "JaqImageDetectResult[]",
+					"description": "响应消息结构体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "jaq_ocr_image_detect_result",
+							"type": "JaqOcrImageDetectResult",
+							"description": "图像字符识别结果结构体",
+							"required": true,
+							"subParams": [
+								{
+									"name": "texts",
+									"type": "String[]",
+									"description": "字符串列表，内容是图像中文字的主要段落内容（按照概率输出最多5组概率最大的组合）",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "异步请求任务状态；TaskProcessSuccess - 图片异步api请求task状态, 处理成功 TaskProcessing - 图片异步api请求task状态, 正在处理中 TaskInvalid - 图片异步api请求task状态, 无效task或者task不存在 TaskProcessFailed - 图片异步api请求task状态, 处理失败",
+							"required": true
+						},
+						{
+							"name": "task_id",
+							"type": "String",
+							"description": "taskId",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

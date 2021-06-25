@@ -1,0 +1,21 @@
+{
+	"name": "taobao.ump.mbbs.list.get",
+	"apiChineseName": "通过ids列表获取营销积木块列表",
+	"description": "通过营销积木id列表来获取营销积木块列表。",
+	"requestParams": [
+		{
+			"name": "ids",
+			"type": "Number[]",
+			"description": "营销积木块id组成的字符串。",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "mbbs",
+			"type": "String []",
+			"description": "营销积木块内容列表，内容为json格式的，可以通过ump sdk里面的MBB.fromJson来处理"
+		}
+	]
+}

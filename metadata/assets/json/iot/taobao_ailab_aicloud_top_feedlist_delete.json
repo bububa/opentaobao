@@ -1,0 +1,52 @@
+{
+	"name": "taobao.ailab.aicloud.top.feedlist.delete",
+	"apiChineseName": "删除单条对话流信息",
+	"description": "删除指定的某一条对话流信息",
+	"requestParams": [
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id",
+			"required": true
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "sentence_id",
+			"type": "String",
+			"description": "消息的唯一标识",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "model"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msgInfo"
+		},
+		{
+			"name": "is_success",
+			"type": "String",
+			"description": "success"
+		}
+	]
+}

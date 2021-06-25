@@ -1,0 +1,74 @@
+{
+	"name": "taobao.bus.refund.set",
+	"apiChineseName": "B2B退票申请接口",
+	"description": "B2B业务支持退票",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "B2BRefundOrderRq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "退票原因"
+				},
+				{
+					"name": "seller_agent_id",
+					"type": "Number",
+					"description": "卖家淘宝ID"
+				},
+				{
+					"name": "ali_trip_order_id",
+					"type": "String",
+					"description": "飞猪订单号",
+					"required": true
+				},
+				{
+					"name": "sub_order_ids",
+					"type": "Number[]",
+					"description": "飞猪子订单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "B2BRefundOrderRp",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Json[]",
+					"description": "results",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "success1",
+					"type": "Boolean",
+					"description": "success1",
+					"required": true
+				}
+			]
+		}
+	]
+}

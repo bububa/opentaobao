@@ -1,0 +1,134 @@
+{
+	"name": "taobao.scitem.update",
+	"apiChineseName": "根据商品ID或商家编码修改后端商品",
+	"description": "根据商品ID或商家编码修改后端商品",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "后端商品ID，跟outer_code必须指定一个"
+		},
+		{
+			"name": "outer_code",
+			"type": "String",
+			"description": "商家编码，跟item_id必须指定一个"
+		},
+		{
+			"name": "item_name",
+			"type": "String",
+			"description": "商品名称"
+		},
+		{
+			"name": "item_type",
+			"type": "Number",
+			"description": "0.普通供应链商品 1.供应链组合主商品"
+		},
+		{
+			"name": "update_properties",
+			"type": "String",
+			"description": "需要更新的商品属性格式是  p1:v1,p2:v2,p3:v3"
+		},
+		{
+			"name": "bar_code",
+			"type": "String",
+			"description": "条形码"
+		},
+		{
+			"name": "wms_code",
+			"type": "String",
+			"description": "仓储商编码"
+		},
+		{
+			"name": "is_friable",
+			"type": "Number",
+			"description": "是否易碎 0：不是  1：是"
+		},
+		{
+			"name": "is_dangerous",
+			"type": "Number",
+			"description": "是否危险 0：不是  0：是"
+		},
+		{
+			"name": "is_costly",
+			"type": "Number",
+			"description": "是否是贵重品 0:不是 1：是"
+		},
+		{
+			"name": "is_warranty",
+			"type": "Number",
+			"description": "是否保质期：0:不是 1：是"
+		},
+		{
+			"name": "weight",
+			"type": "Number",
+			"description": "weight"
+		},
+		{
+			"name": "length",
+			"type": "Number",
+			"description": "长度 单位：mm"
+		},
+		{
+			"name": "width",
+			"type": "Number",
+			"description": "宽 单位：mm"
+		},
+		{
+			"name": "height",
+			"type": "Number",
+			"description": "高 单位：mm"
+		},
+		{
+			"name": "volume",
+			"type": "Number",
+			"description": "体积：立方厘米"
+		},
+		{
+			"name": "price",
+			"type": "Number",
+			"description": "price"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "remark"
+		},
+		{
+			"name": "matter_status",
+			"type": "Number",
+			"description": "0:液体，1：粉体，2：固体"
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "品牌id"
+		},
+		{
+			"name": "brand_name",
+			"type": "String",
+			"description": "brand_Name"
+		},
+		{
+			"name": "spu_id",
+			"type": "Number",
+			"description": "淘宝SKU产品级编码CSPU ID"
+		},
+		{
+			"name": "remove_properties",
+			"type": "String",
+			"description": "移除商品属性P列表,P由系统分配：p1；p2"
+		},
+		{
+			"name": "is_area_sale",
+			"type": "Number",
+			"description": "1表示区域销售，0或是空是非区域销售"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_rows",
+			"type": "Number",
+			"description": "更新商品数量,1表示成功更新了一条数据，0：表示未找到匹配的数据"
+		}
+	]
+}

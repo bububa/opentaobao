@@ -1,0 +1,79 @@
+{
+	"name": "alibaba.scbp.ad.keyword.rank.price.batchget",
+	"apiChineseName": "外贸直通车关键词前五名批量排价",
+	"description": "外贸直通车关键词前五名批量排价",
+	"requestParams": [
+		{
+			"name": "context",
+			"type": "ContextDto",
+			"description": "上下文",
+			"subParams": [
+				{
+					"name": "login_id",
+					"type": "String",
+					"description": "login_id"
+				},
+				{
+					"name": "is_admin",
+					"type": "Boolean",
+					"description": "is_admin"
+				},
+				{
+					"name": "is_top",
+					"type": "Boolean",
+					"description": "is_top"
+				},
+				{
+					"name": "from",
+					"type": "String",
+					"description": "from"
+				},
+				{
+					"name": "service_type",
+					"type": "String",
+					"description": "service_type"
+				},
+				{
+					"name": "ip",
+					"type": "String",
+					"description": "ip"
+				}
+			]
+		},
+		{
+			"name": "keyword_request",
+			"type": "TopKeywordListDTO",
+			"description": "keyword_request",
+			"required": true,
+			"subParams": [
+				{
+					"name": "keyword_list",
+					"type": "String[]",
+					"description": "关键词列表",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "KeywordRankPriceDTO []",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "关键词",
+					"required": true
+				},
+				{
+					"name": "rank_price_list",
+					"type": "String[]",
+					"description": "排价结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

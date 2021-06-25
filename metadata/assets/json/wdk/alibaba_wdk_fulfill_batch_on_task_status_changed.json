@@ -1,0 +1,167 @@
+{
+	"name": "alibaba.wdk.fulfill.batch.on.task.status.changed",
+	"apiChineseName": "物流管控作业状态回传",
+	"description": "物流管控作业状态回传",
+	"requestParams": [
+		{
+			"name": "task_status",
+			"type": "TaskStatus",
+			"description": "作业状态回传对象",
+			"subParams": [
+				{
+					"name": "node_type",
+					"type": "String",
+					"description": "作业节点类型： WAREHOUSE：仓  DELIVERY_DOCK：配送站 SHOP：经营店"
+				},
+				{
+					"name": "node_code",
+					"type": "String",
+					"description": "warehouseCode, 出库仓，由基础店仓维护，盒马全域统一"
+				},
+				{
+					"name": "batch_id",
+					"type": "String",
+					"description": "批次号"
+				},
+				{
+					"name": "status_change_type",
+					"type": "String",
+					"description": "作业状态变更类型： START_PICK(“开始拣货”)， PICK_FINISH(“拣货完成”)， START_PACKAGE(“开始打包”), PACKAGE _FINISH(“打包完成”);"
+				},
+				{
+					"name": "status_change_time",
+					"type": "Date",
+					"description": "作业状态变更时间"
+				},
+				{
+					"name": "operator_code",
+					"type": "String",
+					"description": "操作员"
+				},
+				{
+					"name": "is_final_status",
+					"type": "Boolean",
+					"description": "是否最终状态（打包完成\\整批次所有sku全部缺货：true，其他：false）"
+				},
+				{
+					"name": "container_info_list",
+					"type": "String[]",
+					"description": "容器编号列表"
+				},
+				{
+					"name": "fulfill_order_list",
+					"type": "FulfillOrder[]",
+					"description": "履约单列表",
+					"subParams": [
+						{
+							"name": "fulfill_order_id",
+							"type": "String",
+							"description": "履约单号"
+						},
+						{
+							"name": "sku_info_list",
+							"type": "SkuInfo[]",
+							"description": "子订单信息列表",
+							"subParams": [
+								{
+									"name": "actual_sale_quantity",
+									"type": "String",
+									"description": "销售单位拣货数量(若还未开始拣货可空)"
+								},
+								{
+									"name": "actual_stock_quantity",
+									"type": "String",
+									"description": "库存单位拣货数量(若还未开始拣货可空)"
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "商品编码"
+								},
+								{
+									"name": "fulfill_sub_order_id",
+									"type": "String",
+									"description": "履约子单ID"
+								},
+								{
+									"name": "is_shortage",
+									"type": "Boolean",
+									"description": "是否缺货"
+								},
+								{
+									"name": "attributes",
+									"type": "String",
+									"description": "扩展属性：exchangeGoods代表换货信息；containerType代表箱子标识（正常传0、禁止开箱传1）；containerCodes代表箱码数组（不存在为空）；"
+								},
+								{
+									"name": "containers",
+									"type": "ContainerDto[]",
+									"description": "容器",
+									"subParams": [
+										{
+											"name": "container_code",
+											"type": "String",
+											"description": "容器code"
+										},
+										{
+											"name": "container_type",
+											"type": "String",
+											"description": "容器类型"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "attributes",
+							"type": "String",
+							"description": "扩展属性"
+						}
+					]
+				},
+				{
+					"name": "container_count",
+					"type": "Number",
+					"description": "容器数量"
+				},
+				{
+					"name": "abnormal_pack_count",
+					"type": "String",
+					"description": "异形件数量"
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fulfill_logistic_single_result",
+			"type": "FulfillLogisticDefaultResult",
+			"description": "fulfillLogisticSingleResult",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true 调用成功 false 调用失败",
+					"required": true
+				},
+				{
+					"name": "err_desc",
+					"type": "String",
+					"description": "返回码含义描述",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "返回码(success=false时不能为空)： SYSTEM_ERROR :系统异常(指令可重发) PARAM_ERROR :参数错误(指令不可重发，监控报警) BUSINESS_ERROR:业务异常(指令不可重发，监控报警)",
+					"required": true
+				}
+			]
+		}
+	]
+}

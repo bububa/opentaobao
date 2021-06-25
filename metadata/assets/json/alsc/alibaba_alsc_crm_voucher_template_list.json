@@ -1,0 +1,330 @@
+{
+	"name": "alibaba.alsc.crm.voucher.template.list",
+	"apiChineseName": "获取优惠券模版列表",
+	"description": "获取优惠券模版列表",
+	"requestParams": [
+		{
+			"name": "voucher_template_open_req",
+			"type": "VoucherTemplateOpenReq",
+			"description": "获取优惠模版规则请求参数",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID"
+				},
+				{
+					"name": "deleted",
+					"type": "Boolean",
+					"description": "已删除数据"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "第几页,从1开始计数"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "第几页,从1开始计数"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "SaaS门店ID"
+				},
+				{
+					"name": "status_list",
+					"type": "String[]",
+					"description": "UNUSED,USED,NO_INVENTORY,INVALID,  未使用,使用中,无库存,已失效"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "String",
+					"description": "最后修改时间"
+				},
+				{
+					"name": "last_id",
+					"type": "String",
+					"description": "最后ID"
+				},
+				{
+					"name": "voucher_template_id",
+					"type": "String",
+					"description": "模版ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "分页返回模型",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码",
+					"required": true
+				},
+				{
+					"name": "has_next_page",
+					"type": "Boolean",
+					"description": "是否有下一页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "当前每页显示数量",
+					"required": true
+				},
+				{
+					"name": "result_list",
+					"type": "VoucherTemplateOpenInfo[]",
+					"description": "获取优惠券模版列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "available_time",
+							"type": "String",
+							"description": "{\\\"type\\\":0,\\\"settings\\\":[{\\\"dayStartTime\\\":\\\"00:00\\\",\\\"dayEndTime\\\":\\\"23:59\\\",\\\"week\\\":[]}]} type:0不限制，1限制 dayStartTime:开始时间 dayEndTime:结束时间 week:1,2,3,4,5,6,7",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "使用说明",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "String",
+							"description": "绝对日期中的结束时间",
+							"required": true
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "inventory",
+							"type": "Number",
+							"description": "库存数量",
+							"required": true
+						},
+						{
+							"name": "item_coverage",
+							"type": "String",
+							"description": "适用商品范围 值：ALL，PART_AVAILABLE，PART_UNAVAILABLE * 说明：全部商品可用，部分商品可用，部分商品不可用",
+							"required": true
+						},
+						{
+							"name": "min_charge",
+							"type": "Number",
+							"description": "最低消费",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "券模板名称",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "String",
+							"description": "绝对日期中的开始时间",
+							"required": true
+						},
+						{
+							"name": "today_available",
+							"type": "Boolean",
+							"description": "相对日期中的当天是否有效",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "券模板类型 * 值：GIFT、DISCOUNT、CASH      * 说明：礼品券、礼品券、礼品券",
+							"required": true
+						},
+						{
+							"name": "use_condition",
+							"type": "String",
+							"description": "使用场景DINE_IN 堂食,TAKE_OUT外卖",
+							"required": true
+						},
+						{
+							"name": "user_limit",
+							"type": "Number",
+							"description": "每人限领",
+							"required": true
+						},
+						{
+							"name": "valid_date_type",
+							"type": "String",
+							"description": "券有效期类型 值： FIXED、RELATIVE      * 说明： 绝对时间，相对于用户领券时间",
+							"required": true
+						},
+						{
+							"name": "valid_day_count",
+							"type": "Number",
+							"description": "相对日期中的有效天数",
+							"required": true
+						},
+						{
+							"name": "voucher_template_id",
+							"type": "String",
+							"description": "模版ID",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "// 未使用     UNUSED,     // 使用中     USED,     // 无库存     NO_INVENTORY,     // 已失效     INVALID,     ;",
+							"required": true
+						},
+						{
+							"name": "item_selected_open_info_list",
+							"type": "ItemSelectedOpenInfo[]",
+							"description": "1",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sku_id",
+									"type": "String",
+									"description": "规则ID",
+									"required": true
+								},
+								{
+									"name": "dish_id",
+									"type": "String",
+									"description": "菜品ID",
+									"required": true
+								},
+								{
+									"name": "dish_out_no",
+									"type": "String",
+									"description": "外部菜品ID",
+									"required": true
+								},
+								{
+									"name": "sku_out_no",
+									"type": "String",
+									"description": "外部规则ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "shop_selected_open_info_list",
+							"type": "ShopSelectedOpenInfo[]",
+							"description": "1",
+							"required": true,
+							"subParams": [
+								{
+									"name": "shop_id",
+									"type": "String",
+									"description": "门店ID",
+									"required": true
+								},
+								{
+									"name": "out_shop_id",
+									"type": "String",
+									"description": "外部门店ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "是否删除",
+							"required": true
+						},
+						{
+							"name": "denomination",
+							"type": "String",
+							"description": "面额",
+							"required": true
+						},
+						{
+							"name": "update_by",
+							"type": "String",
+							"description": "更新人",
+							"required": true
+						},
+						{
+							"name": "create_by",
+							"type": "String",
+							"description": "创建人",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果显示",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "总数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

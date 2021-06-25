@@ -1,0 +1,235 @@
+{
+	"name": "taobao.recycle.ofnpreredpacket.get",
+	"apiChineseName": "服务商查询前置补贴红包的最新数据",
+	"description": "服务商查询前置补贴红包的最新数据",
+	"requestParams": [
+		{
+			"name": "old_order_id",
+			"type": "Number",
+			"description": "旧机单id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "OfnPreRedPacketDTO",
+			"description": "前置补贴红包",
+			"subParams": [
+				{
+					"name": "action_list",
+					"type": "OfnPreRedPacketActionDto[]",
+					"description": "操作列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "主键",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "action_type",
+							"type": "Number",
+							"description": "操作类型。1=天猫发预付红包；2=天猫发尾款红包；3=天猫扣回红包；4=回收商扣回红包",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态。初始化=1，重试中=2，失败=3，成功=4",
+							"required": true
+						},
+						{
+							"name": "after_fund_record_list",
+							"type": "OfnPreRedPacketFundRecordDto[]",
+							"description": "资金池的记录",
+							"required": true,
+							"subParams": [
+								{
+									"name": "fund_id",
+									"type": "Number",
+									"description": "资产编号",
+									"required": true
+								},
+								{
+									"name": "change_amount",
+									"type": "Number",
+									"description": "变化金额",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动id",
+					"required": true
+				},
+				{
+					"name": "credit_pay",
+					"type": "Boolean",
+					"description": "是否信用单",
+					"required": true
+				},
+				{
+					"name": "credit_pay_limit",
+					"type": "Number",
+					"description": "信用额度，单位分",
+					"required": true
+				},
+				{
+					"name": "end_already_send_amount",
+					"type": "Number",
+					"description": "尾款部分-已经发放的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "end_plan_send_amount",
+					"type": "Number",
+					"description": "尾款部分-计划发放的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "end_wait_send_amount",
+					"type": "Number",
+					"description": "尾款部分-等待发放的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键",
+					"required": true
+				},
+				{
+					"name": "new_item_id",
+					"type": "Number",
+					"description": "新机id",
+					"required": true
+				},
+				{
+					"name": "new_order_id",
+					"type": "Number",
+					"description": "新机订单id",
+					"required": true
+				},
+				{
+					"name": "old_item_actual_price",
+					"type": "Number",
+					"description": "旧机质检价",
+					"required": true
+				},
+				{
+					"name": "old_item_apprize_price",
+					"type": "Number",
+					"description": "旧机评估价",
+					"required": true
+				},
+				{
+					"name": "old_item_spu_id",
+					"type": "Number",
+					"description": "旧机id",
+					"required": true
+				},
+				{
+					"name": "old_order_id",
+					"type": "Number",
+					"description": "旧机单id",
+					"required": true
+				},
+				{
+					"name": "plan_send_amount",
+					"type": "Number",
+					"description": "计划发放的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "pre_already_send_amount",
+					"type": "Number",
+					"description": "预发部分-已经发放的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "pre_plan_send_amount",
+					"type": "Number",
+					"description": "预发部分-计划发放的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "pre_wait_send_amount",
+					"type": "Number",
+					"description": "预发部分-等待发放的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态。初始化=1，重试中=2，失败=3，成功=4",
+					"required": true
+				},
+				{
+					"name": "tmall_already_deduct_amount",
+					"type": "Number",
+					"description": "由回收商已经扣回的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "tmall_wait_deduct_amount",
+					"type": "Number",
+					"description": "等待回收商扣回的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "tp_already_deduct_amount",
+					"type": "Number",
+					"description": "由天猫已经扣回的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "tp_wait_deduct_amount",
+					"type": "Number",
+					"description": "等待天猫扣回的金额，单位分",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "乐观锁",
+					"required": true
+				},
+				{
+					"name": "new_item_coupon_price",
+					"type": "Number",
+					"description": "新机优惠价",
+					"required": true
+				}
+			]
+		}
+	]
+}

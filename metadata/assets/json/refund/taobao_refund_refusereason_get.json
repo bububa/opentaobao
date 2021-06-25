@@ -1,0 +1,56 @@
+{
+	"name": "taobao.refund.refusereason.get",
+	"apiChineseName": "获取拒绝原因列表",
+	"description": "获取商家拒绝原因列表",
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款编号",
+			"required": true
+		},
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "返回参数",
+			"required": true
+		},
+		{
+			"name": "refund_phase",
+			"type": "String",
+			"description": "售中或售后",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "reasons",
+			"type": "Reason []",
+			"description": "卖家拒绝原因对象",
+			"subParams": [
+				{
+					"name": "reason_id",
+					"type": "Number"
+				},
+				{
+					"name": "reason_text",
+					"type": "String"
+				},
+				{
+					"name": "reason_tips",
+					"type": "String"
+				}
+			]
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "原因个数"
+		},
+		{
+			"name": "has_next",
+			"type": "Boolean",
+			"description": "是否存在下一页"
+		}
+	]
+}

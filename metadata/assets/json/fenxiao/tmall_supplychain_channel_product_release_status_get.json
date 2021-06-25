@@ -1,0 +1,60 @@
+{
+	"name": "tmall.supplychain.channel.product.release.status.get",
+	"apiChineseName": "产品铺货状态查询",
+	"description": "巴拿马战役渠道产品状态查询",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID",
+			"required": true
+		},
+		{
+			"name": "channel_code",
+			"type": "Number",
+			"description": "渠道ID ( 台湾 : 111002 )",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "TopProductStatusResult",
+					"description": "查询结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "release",
+							"type": "Boolean",
+							"description": "产品铺货状态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

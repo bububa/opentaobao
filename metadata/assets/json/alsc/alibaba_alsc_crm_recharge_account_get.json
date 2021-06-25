@@ -1,0 +1,174 @@
+{
+	"name": "alibaba.alsc.crm.recharge.account.get",
+	"apiChineseName": "查询储值账户信息",
+	"description": "查询储值账户信息接口",
+	"requestParams": [
+		{
+			"name": "param_query_recharge_account_open_req",
+			"type": "QueryRechargeAccountOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "account_id",
+					"type": "String",
+					"description": "账户Id，如果有，则查询单个账户"
+				},
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID(不能和outbrandid同时为空)"
+				},
+				{
+					"name": "card_id",
+					"type": "String",
+					"description": "卡Id，POS下查询会员卡/礼品卡在门店下储值账户"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "会员Id,查询会员下所有储值账户"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店ID(不能和outshopid同时为空))"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID(不能和shopid同时为空)"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID(不能和brandid同时为空)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "RechargeAccountOpenInfo",
+					"description": "业务参数",
+					"required": true,
+					"subParams": [
+						{
+							"name": "account_id",
+							"type": "String",
+							"description": "账户id",
+							"required": true
+						},
+						{
+							"name": "card_id",
+							"type": "String",
+							"description": "crm卡实例id",
+							"required": true
+						},
+						{
+							"name": "customer_id",
+							"type": "String",
+							"description": "账户所属顾客id，如果是会员卡，不为空",
+							"required": true
+						},
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "是否删除",
+							"required": true
+						},
+						{
+							"name": "gift_value",
+							"type": "Number",
+							"description": "账户赠储余额",
+							"required": true
+						},
+						{
+							"name": "gift_value_total",
+							"type": "Number",
+							"description": "累计账户赠储余额",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间",
+							"required": true
+						},
+						{
+							"name": "opt_plan_id",
+							"type": "String",
+							"description": "关联的运营方案id",
+							"required": true
+						},
+						{
+							"name": "pre_value",
+							"type": "Number",
+							"description": "账户预储余额",
+							"required": true
+						},
+						{
+							"name": "pre_value_total",
+							"type": "Number",
+							"description": "累计账户预储余额",
+							"required": true
+						},
+						{
+							"name": "real_value",
+							"type": "Number",
+							"description": "账户实储余额",
+							"required": true
+						},
+						{
+							"name": "real_value_total",
+							"type": "Number",
+							"description": "累计账户实储余额",
+							"required": true
+						},
+						{
+							"name": "usable_value",
+							"type": "Number",
+							"description": "可用余额",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

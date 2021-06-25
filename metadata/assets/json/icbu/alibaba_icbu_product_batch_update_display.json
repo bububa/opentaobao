@@ -1,0 +1,41 @@
+{
+	"name": "alibaba.icbu.product.batch.update.display",
+	"apiChineseName": "商品批量上下架接口",
+	"description": "给国际站的三方服务商提供批量上下架接口",
+	"requestParams": [
+		{
+			"name": "new_display",
+			"type": "String",
+			"description": "on表示上架，off表示下架",
+			"required": true
+		},
+		{
+			"name": "product_id_list",
+			"type": "String",
+			"description": "用逗号分隔的混淆id字符串",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "只有出错才会显示，唯一标识这次请求"
+		},
+		{
+			"name": "sub_error_code",
+			"type": "String",
+			"description": "如果出错，这里会显示错误码"
+		},
+		{
+			"name": "sub_error_msg",
+			"type": "String",
+			"description": "具体出错信息"
+		},
+		{
+			"name": "sub_success",
+			"type": "Boolean",
+			"description": "本次操作是否成功，true表示成功，false表示失败"
+		}
+	]
+}

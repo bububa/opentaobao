@@ -1,0 +1,245 @@
+{
+	"name": "taobao.wlb.orderdetail.date.get",
+	"apiChineseName": "按照日期范围查询物流订单详情",
+	"description": "外部ERP可通过该接口查询一段时间内的物流宝订单，以及订单详情",
+	"requestParams": [
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "创建时间起始",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "创建时间结束",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "分页下标"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order_detail_list",
+			"type": "WlbOrderDetail []",
+			"description": "物流宝订单，并且包含订单详情",
+			"subParams": [
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "订单编码"
+				},
+				{
+					"name": "order_source_code",
+					"type": "String",
+					"description": "对应创建物流宝订单top接口中的的out_biz_code字段，主要是用来去重用"
+				},
+				{
+					"name": "order_source",
+					"type": "String",
+					"description": "订单来源:\u003cbr/\u003e产生物流订单的原因，比如:\u003cbr/\u003e\u003cbr/\u003e订单来源:1:TAOBAO;2:EXT;3:ERP;4:WMS"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "1:正常订单: NARMAL\u003cbr/\u003e2:退货订单: RETURN\u003cbr/\u003e3:换货订单: CHANGE"
+				},
+				{
+					"name": "order_sub_type",
+					"type": "String",
+					"description": "(1)其它:    OTHER\u003cbr/\u003e(2)淘宝交易: TAOBAO\u003cbr/\u003e(3)301:调拨: ALLOCATION\u003cbr/\u003e(4)401:盘点:CHECK\u003cbr/\u003e(5)501:销售采购:PRUCHASE"
+				},
+				{
+					"name": "operate_type",
+					"type": "String",
+					"description": "出库或者入库，IN表示入库，OUT表示出库"
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "物流状态，\u003cbr/\u003e订单已创建：0\u003cbr/\u003e订单已取消: -1\u003cbr/\u003e订单关闭:-3\u003cbr/\u003e下发中: 10\u003cbr/\u003e已下发: 11\u003cbr/\u003e接收方拒签 :-100\u003cbr/\u003e已发货:100\u003cbr/\u003e签收成功:200"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "订单备注"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "卖家ID"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "卖家NICK"
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "如果是交易单，则显示交易中买家昵称"
+				},
+				{
+					"name": "order_item_list",
+					"type": "WlbOrderItem[]",
+					"description": "物流宝订单对应的商品详情",
+					"subParams": [
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "物流宝订单编码"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "订单商品名称"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "订单商品编码"
+						},
+						{
+							"name": "plan_quantity",
+							"type": "Number",
+							"description": "计划数量"
+						},
+						{
+							"name": "real_quantity",
+							"type": "Number",
+							"description": "实际数量"
+						},
+						{
+							"name": "confirm_status",
+							"type": "String",
+							"description": "物流宝订单确认状态：\u003cbr/\u003eNO_NEED_CONFIRM--不需要确认\u003cbr/\u003eWAIT_CONFIRM--待确认\u003cbr/\u003eCONFIRMED--已确认"
+						},
+						{
+							"name": "order_id",
+							"type": "Number",
+							"description": "物流宝订单id"
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "订单商品id"
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "订单商品用户id"
+						},
+						{
+							"name": "user_nick",
+							"type": "String",
+							"description": "订单商品用户昵称"
+						},
+						{
+							"name": "order_sub_type",
+							"type": "String",
+							"description": "(1)其它: OTHER (2)淘宝交易: TAOBAO (3)调拨: ALLOCATION (4)盘点:CHECK (5)销售采购:PRUCHASE(6)其它交易：OTHER_TRADE"
+						},
+						{
+							"name": "order_sub_code",
+							"type": "String",
+							"description": "订单号"
+						},
+						{
+							"name": "order_sub_2code",
+							"type": "String",
+							"description": "子交易号"
+						},
+						{
+							"name": "item_id",
+							"type": "Number",
+							"description": "物流宝订单商品的物流宝商品id"
+						},
+						{
+							"name": "provider_tp_id",
+							"type": "Number",
+							"description": "货主id"
+						},
+						{
+							"name": "provider_tp_nick",
+							"type": "String",
+							"description": "货主nick"
+						},
+						{
+							"name": "item_price",
+							"type": "Number",
+							"description": "商品价格"
+						},
+						{
+							"name": "publish_version",
+							"type": "Number",
+							"description": "商品发布版本号"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "订单商品备注"
+						},
+						{
+							"name": "batch_remark",
+							"type": "String",
+							"description": "批次号备注"
+						},
+						{
+							"name": "picture_url",
+							"type": "String",
+							"description": "订单商品图片url"
+						},
+						{
+							"name": "ext_entity_type",
+							"type": "String",
+							"description": "外部实体类型"
+						},
+						{
+							"name": "ext_entity_id",
+							"type": "String",
+							"description": "外部实体id"
+						},
+						{
+							"name": "inventory_type",
+							"type": "String",
+							"description": "INVENTORY_TYPE_SELL 可销库存\u003cbr/\u003eINVENTORY_TYPE_IMPERFECTIONS 残次库存\u003cbr/\u003eINVENTORY_TYPE_FREEZE 冻结库存\u003cbr/\u003eINVENTORY_TYPE_ON_PASSAGE 在途库存\u003cbr/\u003eINVENTORY_TYPE_ENGINE_DAMAGE 机损\u003cbr/\u003eINVENTORY_TYPE_BOX_DAMAGE 箱损"
+						},
+						{
+							"name": "flag",
+							"type": "Number",
+							"description": "第一位标示是否为赠品"
+						}
+					]
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "订单创建时间"
+				},
+				{
+					"name": "modify_time",
+					"type": "Date",
+					"description": "订单最后一次修改时间"
+				}
+			]
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总数"
+		}
+	]
+}

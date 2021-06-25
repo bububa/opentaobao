@@ -1,0 +1,70 @@
+{
+	"name": "tmall.item.quantity.update",
+	"apiChineseName": "天猫商品/SKU库存更新接口",
+	"description": "天猫商品/SKU库存更新接口；支持商品库存更新；支持同一商品下的SKU批量更新。",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		},
+		{
+			"name": "sku_quantities",
+			"type": "UpdateSkuQuantity[]",
+			"description": "更新SKU库存时候的SKU库存对象；如果没有SKU或者不更新SKU库存，可以不填;查找SKU目前支持ID，属性串和商家编码三种模式，建议选用一种最合适的，切勿滥用，一次调用中如果混合使用，更新结果不可预期！",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "Sku的商家外部id，用于指定被修改库存的SKU"
+				},
+				{
+					"name": "properties",
+					"type": "String",
+					"description": "Sku属性串。格式:pid:vid;pid:vid,如: 1627207:3232483;1630696:3284570,表示机身颜色:军绿色;手机套餐:一电一充，用于指定被修改库存的SKU"
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "SKU属于这个sku的商品的库存；增量编辑方式支持正数、负数"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "SkuID，用于指定被修改库存的"
+				}
+			]
+		},
+		{
+			"name": "options",
+			"type": "UpdateItemQuantityOption",
+			"description": "商品库存更新时候的可选参数",
+			"subParams": [
+				{
+					"name": "outer_biz_key",
+					"type": "String",
+					"description": "增量更新时幂等外部编码，只能包含十六进制字符(0-9,a-f,A-F)"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "库存更新方式: 1是全量更新 2是增量更新；默认是1。"
+				}
+			]
+		},
+		{
+			"name": "item_quantity",
+			"type": "Number",
+			"description": "商品库存数；增量编辑方式支持正数、负数。（无SKU商品使用这个字段）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "quantity_update_result",
+			"type": "String",
+			"description": "库存更新结果，商品id"
+		}
+	]
+}

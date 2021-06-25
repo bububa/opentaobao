@@ -1,0 +1,197 @@
+{
+	"name": "taobao.xhotel.distribution.order.detail.search",
+	"apiChineseName": "分销渠道订单详情查询",
+	"description": "该接口用于提供酒店分销渠道的订单详情查询",
+	"requestParams": [
+		{
+			"name": "distribution_oid",
+			"type": "String",
+			"description": "外部分销渠道的订单号（与tid必填其一）"
+		},
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "传入用户对应的openId"
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "飞猪的订单号（与distribution_oid必填其一）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "top_distribution_order_detail",
+			"type": "TopDistributionOrderDetail",
+			"description": "订单详情对象",
+			"subParams": [
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家昵称",
+					"required": true
+				},
+				{
+					"name": "order_status_desc",
+					"type": "String",
+					"description": "订单状态",
+					"required": true
+				},
+				{
+					"name": "rid",
+					"type": "Number",
+					"description": "房型id",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "订单类型id",
+					"required": true
+				},
+				{
+					"name": "payment",
+					"type": "Number",
+					"description": "付款金额",
+					"required": true
+				},
+				{
+					"name": "room_type_name",
+					"type": "String",
+					"description": "房型名称",
+					"required": true
+				},
+				{
+					"name": "checkout_date",
+					"type": "Date",
+					"description": "离店日期",
+					"required": true
+				},
+				{
+					"name": "total_room_price",
+					"type": "Number",
+					"description": "总房费",
+					"required": true
+				},
+				{
+					"name": "rp_name",
+					"type": "String",
+					"description": "rp名称",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "订单更新时间",
+					"required": true
+				},
+				{
+					"name": "type_name",
+					"type": "String",
+					"description": "订单类型名称",
+					"required": true
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家昵称",
+					"required": true
+				},
+				{
+					"name": "hotel_name",
+					"type": "String",
+					"description": "酒店名称",
+					"required": true
+				},
+				{
+					"name": "order_status_code",
+					"type": "Number",
+					"description": "订单状态Code",
+					"required": true
+				},
+				{
+					"name": "hid",
+					"type": "Number",
+					"description": "酒店hid",
+					"required": true
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间",
+					"required": true
+				},
+				{
+					"name": "checkin_date",
+					"type": "Date",
+					"description": "入住时间",
+					"required": true
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "飞猪订单号",
+					"required": true
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "买家姓名",
+					"required": true
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "订单创建时间",
+					"required": true
+				},
+				{
+					"name": "room_number",
+					"type": "Number",
+					"description": "房间数",
+					"required": true
+				},
+				{
+					"name": "rpid",
+					"type": "Number",
+					"description": "价格计划ID",
+					"required": true
+				},
+				{
+					"name": "nights",
+					"type": "Number",
+					"description": "间夜",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "dis_oid",
+					"type": "String",
+					"description": "分销渠道外部订单号",
+					"required": true
+				},
+				{
+					"name": "multi_tids",
+					"type": "String",
+					"description": "飞猪拆单订单（当一次下单定多间房的时候会出现这种情况）",
+					"required": true
+				}
+			]
+		}
+	]
+}

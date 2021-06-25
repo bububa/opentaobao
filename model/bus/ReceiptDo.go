@@ -1,0 +1,27 @@
+package bus
+
+// ReceiptDo 
+type ReceiptDo struct {
+
+    // 代理商ID
+    AgentId   int64 `json:"agent_id,omitempty"`
+
+    // 开票时间
+    ReceiptDateTime   string `json:"receipt_date_time,omitempty"`
+
+    // 发票流水号。成功时必填
+    ReceiptNumber   string `json:"receipt_number,omitempty"`
+
+    // 发票状态1成功0失败-1异常
+    ReceiptStatus   int64 `json:"receipt_status,omitempty"`
+
+    // 发票链接.status为0时必填
+    ReceiptUrl   string `json:"receipt_url,omitempty"`
+
+    // 失败原因.status为0时必填
+    FailReason   string `json:"fail_reason,omitempty"`
+
+    // 失败码
+    FailCode   string `json:"fail_code,omitempty"`
+
+}

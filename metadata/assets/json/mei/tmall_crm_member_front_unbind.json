@@ -1,0 +1,20 @@
+{
+	"name": "tmall.crm.member.front.unbind",
+	"apiChineseName": "品牌会员解绑",
+	"description": "品牌会员解绑功能",
+	"requestParams": [
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "会员昵称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		}
+	]
+}
