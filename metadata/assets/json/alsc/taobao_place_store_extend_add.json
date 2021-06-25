@@ -1,0 +1,47 @@
+{
+	"name": "taobao.place.store.extend.add",
+	"apiChineseName": "新增门店扩展属性",
+	"description": "新增授权用户的门店扩展属性",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID"
+		},
+		{
+			"name": "etv",
+			"type": "ExtendTypeValueTopDto[]",
+			"description": "扩展信息",
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "扩展code"
+				},
+				{
+					"name": "obj",
+					"type": "String",
+					"description": "扩展value"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "failure",
+			"type": "Boolean",
+			"description": "是否失败"
+		},
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "返回结果：true成功；false失败"
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "个数"
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"name": "taobao.banamadpc.item.render",
+	"apiChineseName": "新发商品发布页",
+	"description": "巴拿马供应商通过此接口新发商品发布页",
+	"requestParams": [
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "类目ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品",
+			"subParams": [
+				{
+					"name": "er_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "er_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "返回类目新发下需要填写的商品信息",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "错误",
+					"required": true
+				}
+			]
+		}
+	]
+}

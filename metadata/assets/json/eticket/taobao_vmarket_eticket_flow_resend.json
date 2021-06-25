@@ -1,0 +1,31 @@
+{
+	"name": "taobao.vmarket.eticket.flow.resend",
+	"apiChineseName": "业务重新触发发码短信",
+	"description": "业务重新触发发码短信",
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "业务单号",
+			"required": true
+		},
+		{
+			"name": "biz_type",
+			"type": "Number",
+			"description": "业务类型值，可联系淘宝业务运营取得具体值",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "1成功;0失败"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误提示信息"
+		}
+	]
+}

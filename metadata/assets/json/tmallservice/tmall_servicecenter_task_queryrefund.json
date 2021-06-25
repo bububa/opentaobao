@@ -1,0 +1,85 @@
+{
+	"name": "tmall.servicecenter.task.queryrefund",
+	"apiChineseName": "查询任务类工单是否退款",
+	"description": "查询任务类工单是否退款",
+	"requestParams": [
+		{
+			"name": "workcard_list",
+			"type": "Number[]",
+			"description": "工单id列表",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "gmtModified",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "单次请求是否成功处理",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "RefundWorkCardTo",
+					"description": "value",
+					"required": true,
+					"subParams": [
+						{
+							"name": "existing_failure",
+							"type": "Boolean",
+							"description": "existingFailure",
+							"required": true
+						},
+						{
+							"name": "failure_list",
+							"type": "Number[]",
+							"description": "failureList",
+							"required": true
+						},
+						{
+							"name": "not_existing_list",
+							"type": "Number[]",
+							"description": "notExistingList",
+							"required": true
+						},
+						{
+							"name": "refund_list",
+							"type": "Number[]",
+							"description": "refundList",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

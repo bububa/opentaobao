@@ -1,0 +1,41 @@
+{
+	"name": "tmall.item.schema.update",
+	"apiChineseName": "天猫根据规则编辑商品",
+	"description": "天猫根据规则编辑商品",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "需要编辑的商品ID",
+			"required": true
+		},
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "商品发布的目标类目，必须是叶子类目。如果没有切换类目需求不需要填写"
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "商品发布的目标product_id。如果没有切换类目或者切换产品的需求，参数不用填写"
+		},
+		{
+			"name": "xml_data",
+			"type": "String",
+			"description": "根据tmall.item.update.schema.get生成的商品编辑规则入参数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_item_result",
+			"type": "String",
+			"description": "返回商品发布结果"
+		},
+		{
+			"name": "gmt_modified",
+			"type": "Date",
+			"description": "商品更新操作成功时间"
+		}
+	]
+}

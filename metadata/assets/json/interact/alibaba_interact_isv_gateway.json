@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.isv.gateway",
+	"apiChineseName": "isv调用gateway",
+	"description": "isv能够调用jae本身的server",
+	"responseParams": [
+		{
+			"name": "ret",
+			"type": "String",
+			"description": "ret=0"
+		}
+	]
+}

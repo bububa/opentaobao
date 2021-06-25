@@ -1,0 +1,38 @@
+{
+	"name": "wdk.wms.pick.medicine.checksell",
+	"apiChineseName": "联营商药品柜核销",
+	"description": "联营商药品柜核销",
+	"requestParams": [
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "从二维码扫描出的信息"
+		},
+		{
+			"name": "shop_id",
+			"type": "Number",
+			"description": "shopId"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MedicineResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

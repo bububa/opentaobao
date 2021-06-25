@@ -1,0 +1,42 @@
+{
+	"name": "taobao.simba.adgroup.mobilediscount.update",
+	"apiChineseName": "对推广组进行单独移动溢价",
+	"description": "对推广组进行单独移动溢价",
+	"requestParams": [
+		{
+			"name": "adgroup_ids",
+			"type": "Number[]",
+			"description": "推广组id数组(推广组id集合元素个数在1-200个之间，推广组id需要在同一个推广计划中)",
+			"required": true,
+			"maxListSize": 200
+		},
+		{
+			"name": "mobile_discount",
+			"type": "Number",
+			"description": "折扣（折扣值在1-400之间）",
+			"required": true
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "昵称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "更新成功的个数"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "key",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

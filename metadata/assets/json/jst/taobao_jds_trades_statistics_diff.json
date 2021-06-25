@@ -1,0 +1,42 @@
+{
+	"name": "taobao.jds.trades.statistics.diff",
+	"apiChineseName": "订单全链路状态统计差异比较",
+	"description": "订单全链路状态统计差异比较",
+	"requestParams": [
+		{
+			"name": "date",
+			"type": "Number",
+			"description": "查询的日期，格式如YYYYMMDD的日期对应的数字",
+			"required": true
+		},
+		{
+			"name": "pre_status",
+			"type": "String",
+			"description": "需要比较的状态，将会和post_status做比较",
+			"required": true
+		},
+		{
+			"name": "post_status",
+			"type": "String",
+			"description": "需要比较的状态",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tids",
+			"type": "Number []",
+			"description": "pre_status比post_status多的tid列表"
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "总记录数"
+		}
+	]
+}

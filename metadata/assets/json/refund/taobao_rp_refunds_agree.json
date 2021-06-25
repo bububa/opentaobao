@@ -1,0 +1,57 @@
+{
+	"name": "taobao.rp.refunds.agree",
+	"apiChineseName": "同意退款",
+	"description": "卖家同意退款，支持批量退款，只允许子账号操作。淘宝退款一次最多能退20笔，总金额不超过6000元；天猫退款一次最多能退30笔，总金额不超过10000元。",
+	"requestParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "短信验证码，如果退款金额达到一定的数量，后端会返回调用失败，并同时往卖家的手机发送一条短信验证码。接下来用收到的短信验证码再次发起API调用即可完成退款操作。"
+		},
+		{
+			"name": "refund_infos",
+			"type": "String",
+			"description": "退款信息，格式：refund_id|amount|version|phase，其中refund_id为退款编号，amount为退款金额（以分为单位），version为退款最后更新时间（时间戳格式），phase为退款阶段（可选值为：onsale, aftersale，天猫退款必值，淘宝退款不需要传），多个退款以半角逗号分隔。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "RefundMappingResult []",
+			"description": "退款操作结果列表",
+			"subParams": [
+				{
+					"name": "refund_id",
+					"type": "String",
+					"description": "退款ID"
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "结果信息"
+				},
+				{
+					"name": "succ",
+					"type": "Boolean",
+					"description": "是否成功"
+				}
+			]
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "批量退款操作情况，可选值：OP_SUCC（全部成功），SOME_OP_SUCC（部分成功），OP_FAILURE_UE（全部失败）"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "操作成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "信息"
+		}
+	]
+}

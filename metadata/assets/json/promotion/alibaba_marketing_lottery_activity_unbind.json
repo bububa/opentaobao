@@ -1,0 +1,49 @@
+{
+	"name": "alibaba.marketing.lottery.activity.unbind",
+	"apiChineseName": "抽奖平台奖池解绑接口",
+	"description": "抽奖平台奖池解绑接口",
+	"requestParams": [
+		{
+			"name": "lottery_activity_rel",
+			"type": "LotteryActivityRelDto",
+			"description": "解绑抽奖活动请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "relation_id",
+					"type": "String",
+					"description": "外部业务活动id",
+					"required": true
+				},
+				{
+					"name": "lottery_acitivity_id",
+					"type": "Number",
+					"description": "抽奖活动id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "解绑成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用成功与否"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

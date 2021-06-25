@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.icbu.category.attrvalue.get",
+	"apiChineseName": "属性值获取",
+	"description": "属性值获取",
+	"requestParams": [
+		{
+			"name": "attribute_value_request",
+			"type": "AttributeValueRequest",
+			"description": "属性值request对象",
+			"subParams": [
+				{
+					"name": "attribute_value_id",
+					"type": "Number[]",
+					"description": "选填；需要过滤的属性值id"
+				},
+				{
+					"name": "cat_id",
+					"type": "Number",
+					"description": "必填；要查询的属性值所属发布类目",
+					"required": true
+				},
+				{
+					"name": "attribute_id",
+					"type": "Number[]",
+					"description": "选填；需要过滤的属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "AttributeValue []",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "attr_id",
+					"type": "Number",
+					"description": "属性id"
+				},
+				{
+					"name": "en_name",
+					"type": "String",
+					"description": "英文名字"
+				},
+				{
+					"name": "attr_value_id",
+					"type": "Number",
+					"description": "属性值id"
+				},
+				{
+					"name": "child_attrs",
+					"type": "Number[]",
+					"description": "该属性值的子属性id"
+				},
+				{
+					"name": "cat_id",
+					"type": "Number",
+					"description": "所属类目id"
+				}
+			]
+		}
+	]
+}

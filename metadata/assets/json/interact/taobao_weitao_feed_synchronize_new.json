@@ -1,0 +1,74 @@
+{
+	"name": "taobao.weitao.feed.synchronize.new",
+	"apiChineseName": "推广淘小铺isv 活动到微淘feed",
+	"description": "推广微淘互动应用活动到微淘",
+	"requestParams": [
+		{
+			"name": "feed_type",
+			"type": "Number",
+			"description": "广播类型：粉丝猜价格461、投票有礼462、粉丝抢红包463、盖楼有礼464、加购有礼465",
+			"required": true
+		},
+		{
+			"name": "detail_url",
+			"type": "String",
+			"description": "feed点击跳转的活动地址",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Number",
+			"description": "feed展示结束时间",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "Number",
+			"description": "feed展示开始时间",
+			"required": true
+		},
+		{
+			"name": "summary",
+			"type": "String",
+			"description": "feed描述",
+			"required": true
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "feed标题",
+			"required": true
+		},
+		{
+			"name": "item_ids",
+			"type": "String[]",
+			"description": "宝贝列表，用于card展示，0~2个宝贝ID",
+			"maxListSize": 20
+		},
+		{
+			"name": "sbiz_id",
+			"type": "String",
+			"description": "活动ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "增加错误信息"
+		},
+		{
+			"name": "result",
+			"type": "PushResult",
+			"description": "推送结果",
+			"subParams": [
+				{
+					"name": "feed_id",
+					"type": "String",
+					"description": "新广播ID"
+				}
+			]
+		}
+	]
+}

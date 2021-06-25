@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.wdk.marketing.itempool.addcategory",
+	"apiChineseName": "增加商品池里面的类目",
+	"description": "增加商品池里面的类目",
+	"requestParams": [
+		{
+			"name": "item_pool_activity_category",
+			"type": "ItemPoolActivityCategory",
+			"description": "类目对象",
+			"subParams": [
+				{
+					"name": "logic_group_number",
+					"type": "Number",
+					"description": "分组id"
+				},
+				{
+					"name": "category_id",
+					"type": "String",
+					"description": "类目分组",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "common_activity_param",
+			"type": "CommonActivityParam",
+			"description": "活动对象",
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "商品报名活动的返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "报名活动成功的商品详情",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否报名成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

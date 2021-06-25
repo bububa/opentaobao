@@ -1,0 +1,30 @@
+{
+	"name": "tmall.item.update.schema.get",
+	"apiChineseName": "天猫编辑商品规则获取",
+	"description": "Schema方式编辑天猫商品时，编辑商品规则获取",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "需要编辑的商品ID",
+			"required": true
+		},
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "商品发布的目标类目，必须是叶子类目。如果没有切换类目需求，不需要填写。"
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "商品发布的目标product_id。如果没有切换产品的需求，参数可以不填写。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_item_result",
+			"type": "String",
+			"description": "返回发布商品的规则文档"
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"name": "tmall.mei.crm.callback.point.change",
+	"apiChineseName": "品牌积分变更回调API",
+	"description": "线下品牌积分变更消息回调API，告诉积分扣减或者累加是否成功。",
+	"requestParams": [
+		{
+			"name": "mix_mobile",
+			"type": "String",
+			"description": "混淆会员手机号码"
+		},
+		{
+			"name": "record_id",
+			"type": "Number",
+			"description": "变更记录ID",
+			"required": true
+		},
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "0:成功。1：失败",
+			"required": true
+		},
+		{
+			"name": "error_code",
+			"type": "String",
+			"description": "处理失败的错误码."
+		},
+		{
+			"name": "ext_info",
+			"type": "String",
+			"description": "拓展信息"
+		},
+		{
+			"name": "point",
+			"type": "Number",
+			"description": "积分信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

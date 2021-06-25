@@ -1,0 +1,26 @@
+{
+	"name": "tmall.product.spec.pic.upload",
+	"apiChineseName": "上传产品规格认证图片",
+	"description": "上传指定类型的产品规格认证文件，并返回存有上传成功图片url的产品规格对象",
+	"requestParams": [
+		{
+			"name": "certify_type",
+			"type": "Number",
+			"description": "上传的认证图片的认证类型\u003cbr\u003e\n1：代表产品包装正面图\u003cbr\u003e\n2：代表完整产品资质\u003cbr\u003e\n3：代表产品包装反面图\u003cbr\u003e\n4：代表产品包装侧面图\u003cbr\u003e\n5：代表产品包装条形码特写\u003cbr\u003e\n6：代表特殊用途化妆品批准文号\u003cbr\u003e\n7：代表3C认证图标\u003cbr\u003e",
+			"required": true
+		},
+		{
+			"name": "certify_pic",
+			"type": "byte[]",
+			"description": "上传的认证图片文件",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "spec_pic_url",
+			"type": "String",
+			"description": "上传成功的产品规格认证图片url"
+		}
+	]
+}

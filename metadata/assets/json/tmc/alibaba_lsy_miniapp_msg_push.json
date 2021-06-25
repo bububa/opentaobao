@@ -1,0 +1,49 @@
+{
+	"name": "alibaba.lsy.miniapp.msg.push",
+	"apiChineseName": "零售云小程序消息推送",
+	"description": "零售云小程序消息推送，推送消息至零售云（喵零等）",
+	"requestParams": [
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "小程序ID"
+		},
+		{
+			"name": "msg_id",
+			"type": "Number",
+			"description": "消息ID"
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "摊位ID"
+		},
+		{
+			"name": "template_id",
+			"type": "String",
+			"description": "消息模板，miaoling_msg_isv_clue - 线索通知消息"
+		},
+		{
+			"name": "params",
+			"type": "String",
+			"description": "消息参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fail_msg",
+			"type": "String",
+			"description": "错误提示"
+		},
+		{
+			"name": "fail_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

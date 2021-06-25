@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.tcls.aelophy.merchant.id.mix",
+	"apiChineseName": "商家用户id混淆",
+	"description": "商家用户id混淆",
+	"requestParams": [
+		{
+			"name": "union_uid",
+			"type": "String",
+			"description": "商家用户id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "获取mixId成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "返回混淆id",
+					"required": true
+				}
+			]
+		}
+	]
+}

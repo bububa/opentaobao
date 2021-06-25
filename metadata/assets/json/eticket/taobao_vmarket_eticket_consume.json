@@ -1,0 +1,98 @@
+{
+	"name": "taobao.vmarket.eticket.consume",
+	"apiChineseName": "电子票券消费通知",
+	"description": "外部合作商家电子票券消费回调接口",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "进行验码的电子凭证订单的订单ID",
+			"required": true
+		},
+		{
+			"name": "verify_code",
+			"type": "String",
+			"description": "核销的码，只支持单个码，多个码核销需要多次调用",
+			"required": true
+		},
+		{
+			"name": "consume_num",
+			"type": "Number",
+			"description": "核销份数",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "安全验证token,需要和发码通知中的token一致",
+			"required": true
+		},
+		{
+			"name": "codemerchant_id",
+			"type": "Number",
+			"description": "码商ID,是码商的话必须传递,如果是信任卖家不需要传"
+		},
+		{
+			"name": "posid",
+			"type": "String",
+			"description": "机具ID(此参数信任卖家可不传递，码商必须传递)"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "手机后四位(没有特殊说明请不要传该参数)"
+		},
+		{
+			"name": "new_code",
+			"type": "String",
+			"description": "核销后需要重新生成的码，如果不需要重新生成码，不要传该参数"
+		},
+		{
+			"name": "serial_num",
+			"type": "String",
+			"description": "自定义核销流水号，如果核销调用失败，可以用该核销流水号进行冲正操作，需要小于等于100个字符(a-zA-Z0-9_)；每次核销都是唯一的流水号"
+		},
+		{
+			"name": "qr_images",
+			"type": "String",
+			"description": "不需要上传二维码图片或者核销后不需重新生成码码商请不要传，需要传入二维码的码商请先调用taobao.vmarket.eticket.qrcode.upload接口，将返回的img_filename文件名称作为参数（如果二维码不变的话，也可将将发码时传入二维码文件名作为参数传入），文件名与参数new_code必须相互对应。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "0:失败，1:成功"
+		},
+		{
+			"name": "item_title",
+			"type": "String",
+			"description": "宝贝标题"
+		},
+		{
+			"name": "left_num",
+			"type": "Number",
+			"description": "整个订单剩余的可核销数量"
+		},
+		{
+			"name": "sms_tpl",
+			"type": "String",
+			"description": "返回码消费后，需要发送的短信的模版"
+		},
+		{
+			"name": "print_tpl",
+			"type": "String",
+			"description": "服务内容，用在凭证验证成功后pos机打印小票给消费者"
+		},
+		{
+			"name": "consume_secial_num",
+			"type": "String",
+			"description": "核销流水号,可以通过该流水号来撤销对应的核销操作"
+		},
+		{
+			"name": "code_left_num",
+			"type": "Number",
+			"description": "该核销码在核销后剩余的可核销份数，如果传了new_code来重新生成码，那么这些可核销份数会累积到新的码上"
+		}
+	]
+}

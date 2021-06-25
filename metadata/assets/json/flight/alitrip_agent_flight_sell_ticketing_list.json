@@ -1,0 +1,98 @@
+{
+	"name": "alitrip.agent.flight.sell.ticketing.list",
+	"apiChineseName": "销售出票列表",
+	"description": "销售出票列表",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "TicketingListRequestDto",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "agent_ids",
+					"type": "Number[]",
+					"description": "店铺id"
+				},
+				{
+					"name": "begin_pay_time",
+					"type": "Date",
+					"description": "支付起始时间"
+				},
+				{
+					"name": "end_pay_time",
+					"type": "Date",
+					"description": "支付结束时间"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PageDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "123",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "T[]",
+					"description": "结果对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "domestic_intl",
+							"type": "Number",
+							"description": "国内国际标识",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "飞猪订单号",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "支付时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求成功标识",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

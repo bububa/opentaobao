@@ -1,0 +1,36 @@
+{
+	"name": "taobao.bus.ticket.set",
+	"apiChineseName": "出票接口",
+	"description": "提供给汽车票商家出票使用",
+	"requestParams": [
+		{
+			"name": "ticket_params",
+			"type": "B2BBookOrderRq",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "ali_order_id",
+					"type": "String",
+					"description": "阿里订单号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_code1",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "error_msg1",
+			"type": "String",
+			"description": "errorMsg"
+		},
+		{
+			"name": "success1",
+			"type": "Boolean",
+			"description": "success1"
+		}
+	]
+}

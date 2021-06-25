@@ -1,0 +1,46 @@
+{
+	"name": "taobao.wireless.video.check",
+	"apiChineseName": "无线开放视频内容安全检查",
+	"description": "无线开放内容检查，提供涉黄暴力政治音视频的异步检查。更详情介绍见 \u003ca href=\"https://help.aliyun.com/document_detail/70436.html\" target=\"blank\"\u003e阿里云内容安全\u003c/a\u003e\n\n此API会进行三个场景的审核，检测不通过的视频将被隐藏，用户无法访问被隐藏的视频。\n\n目前，该接口仅支持顽兔空间的视频扫描。",
+	"requestParams": [
+		{
+			"name": "url",
+			"type": "String",
+			"description": "视频的URL，必须为淘系安全域名地址。视频格式支持flv、mp4。",
+			"required": true
+		},
+		{
+			"name": "interval",
+			"type": "Number",
+			"description": "视频截帧间隔，取值范围为[1, 60]，单位为秒。 截帧最多张数为200张，请根据视频时长，合理设置截帧间隔。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RopResultTo",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "系统自动生成",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "系统自动生成",
+					"required": true
+				}
+			]
+		}
+	]
+}

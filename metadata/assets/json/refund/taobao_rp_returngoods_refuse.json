@@ -1,0 +1,43 @@
+{
+	"name": "taobao.rp.returngoods.refuse",
+	"apiChineseName": "卖家拒绝退货",
+	"description": "卖家拒绝退货，目前仅支持天猫退货。",
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款编号",
+			"required": true
+		},
+		{
+			"name": "refund_phase",
+			"type": "String",
+			"description": "退款服务状态，售后或者售中",
+			"required": true
+		},
+		{
+			"name": "refund_version",
+			"type": "Number",
+			"description": "退款版本号",
+			"required": true
+		},
+		{
+			"name": "refuse_proof",
+			"type": "byte[]",
+			"description": "拒绝退货凭证图片，必须图片格式，大小不能超过5M",
+			"required": true
+		},
+		{
+			"name": "refuse_reason_id",
+			"type": "Number",
+			"description": "拒绝原因编号，会提供拒绝原因列表供选择"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "asdf"
+		}
+	]
+}

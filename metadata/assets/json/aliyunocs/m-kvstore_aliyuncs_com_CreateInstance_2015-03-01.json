@@ -1,0 +1,138 @@
+{
+	"name": "m-kvstore.aliyuncs.com.CreateInstance.2015-03-01",
+	"apiChineseName": "创建OCS实例",
+	"description": "创建OCS实例",
+	"requestParams": [
+		{
+			"name": "InstanceName",
+			"type": "String",
+			"description": "实例昵称长度为2-128个字符，以大小写英文字母或中文开头，不支持字符@/:=\"\u003c\u003e{[]}和空格",
+			"maxLength": 256
+		},
+		{
+			"name": "Password",
+			"type": "String",
+			"description": "说明：实例密码规则：需同时且只能包含大写字母、小写字母和数字长度8~30个字符",
+			"required": true
+		},
+		{
+			"name": "Capacity",
+			"type": "Number",
+			"description": "说明：实例容量设置单位：MByte输入范围请见OCS规格参数表",
+			"required": true
+		},
+		{
+			"name": "RegionId",
+			"type": "String",
+			"description": "华东杭州：cn-hangzhou 华北青岛：cn-qingdao",
+			"required": true
+		},
+		{
+			"name": "Token",
+			"type": "String",
+			"description": "用于保证幂等性"
+		},
+		{
+			"name": "ZoneId",
+			"type": "String",
+			"description": "RegionId下级可用区编码"
+		},
+		{
+			"name": "NetworkType",
+			"type": "String",
+			"description": "OCS实例的网络类型：classic或vpc。默认为classic"
+		},
+		{
+			"name": "VpcId",
+			"type": "String",
+			"description": "OCS实例所属vpc实例id。如果NetworkType参数为vpc，则本参数为必须。"
+		},
+		{
+			"name": "VSwitchId",
+			"type": "String",
+			"description": "OCS实例所属vpc实例的虚拟交换机ID。如果NetworkType参数为vpc，则本参数为必须。"
+		},
+		{
+			"name": "PrivateIpAddress",
+			"type": "String",
+			"description": "OCS实例所属vpc内的私网IP地址。当NetworkType参数为vpc时有效。如果不带本参数，则系统通过VpcId和VSwitchId自动分配。如果此参数对应的私网IP地址不在VSwitchId包含的IP地址段内，则创建失败。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "InstanceId",
+			"type": "String",
+			"description": "OCS例ID;\u003cbr/\u003e16位字符串(全局唯一)"
+		},
+		{
+			"name": "InstanceName",
+			"type": "String",
+			"description": "实例名称"
+		},
+		{
+			"name": "ConnectionDomain",
+			"type": "String",
+			"description": "Memcached连接域名\u003cbr/\u003e注：仅支持内网"
+		},
+		{
+			"name": "Port",
+			"type": "Number",
+			"description": "Memcached连接端口"
+		},
+		{
+			"name": "UserName",
+			"type": "String",
+			"description": "Memcached连接用户名\u003cbr/\u003e注：取InstanceId的值"
+		},
+		{
+			"name": "InstanceStatus",
+			"type": "String",
+			"description": "使用中：Available\u003cbr/\u003e已禁用：Unavailable\u003cbr/\u003e创建中：Creating\u003cbr/\u003e修改中：Changing"
+		},
+		{
+			"name": "RegionId",
+			"type": "String",
+			"description": "cn-hangzhou\u003cbr/\u003ecn-qingdao \u003cbr/\u003e地域-城市"
+		},
+		{
+			"name": "Capacity",
+			"type": "Number",
+			"description": "实例容量上限  单位：MByte"
+		},
+		{
+			"name": "QPS",
+			"type": "Number",
+			"description": "实例QPS限制\u003cbr/\u003e单位：次/秒"
+		},
+		{
+			"name": "Bandwidth",
+			"type": "Number",
+			"description": "实例带宽限制\u003cbr/\u003e单位：MKbps"
+		},
+		{
+			"name": "Connections",
+			"type": "Number",
+			"description": "实例连接数限制\u003cbr/\u003e单位：个"
+		},
+		{
+			"name": "RequestId",
+			"type": "String",
+			"description": "请求唯一标识"
+		},
+		{
+			"name": "ZoneId",
+			"type": "String",
+			"description": "RegionId下级可用区编码"
+		},
+		{
+			"name": "NetworkType",
+			"type": "String",
+			"description": "OCS实例的网络类型"
+		},
+		{
+			"name": "PrivateIpAddress",
+			"type": "String",
+			"description": "NetworkType为vpc时OCS实例所属vpc内由用户指定或系统分配的私网IP地址。NetworkType为classic时忽略此返回参数。"
+		}
+	]
+}

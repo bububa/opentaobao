@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.wdk.sku.category.update",
+	"apiChineseName": "商家类目修改接口",
+	"description": "商家类目修改接口",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "CategoryDo",
+			"description": "更新请求模型",
+			"required": true,
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "类目编码",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "类目名称"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态（0:正常;1:禁用，禁用后已有的商品不影响，不能新建新商品）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口返回成功标志",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码（只有有异常才有值）",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息（只有有异常才有值）",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "调用成功时的返回类目code",
+					"required": true
+				}
+			]
+		}
+	]
+}

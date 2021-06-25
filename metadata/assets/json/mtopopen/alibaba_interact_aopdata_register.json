@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.interact.aopdata.register",
+	"apiChineseName": "资源位数据推送接口",
+	"description": "提供给isv，查询以及推送浮层资源位的三方活动数据",
+	"requestParams": [
+		{
+			"name": "param_top_isv_decorate_param",
+			"type": "TopIsvDecorateParam",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_id",
+					"type": "String",
+					"description": "活动id，调用alibaba.interact.activity.register传入的bizid",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "目前必须填0，代表店铺",
+					"required": true
+				},
+				{
+					"name": "business_params",
+					"description": "{\"action\":\"update\",\"image_url\":\"http://xx.cdn\",\"click_url\":\"http://xxx.play.m.jaeapp.com\"}，action为update，代表新增(image_url以及click_url必传)。action=get，代表获得商家设置的活动，image_url以及click_url不用填写。action＝del,代表将活动从资源位撤下",
+					"required": true
+				},
+				{
+					"name": "position",
+					"type": "String",
+					"description": "不用传"
+				},
+				{
+					"name": "sub_biz_type",
+					"type": "String",
+					"description": "目前必须填0，代表店铺中宝箱资源位",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "xx",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "xxx失败",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "xxx失败",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用成功",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "跟踪请求使用",
+					"required": true
+				}
+			]
+		}
+	]
+}

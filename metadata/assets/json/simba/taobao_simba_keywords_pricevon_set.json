@@ -1,0 +1,102 @@
+{
+	"name": "taobao.simba.keywords.pricevon.set",
+	"apiChineseName": "设置一批关键词的信息",
+	"description": "设置一批关键词的信息，包含无线出价、计算机出价和关键词匹配方式",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "keywordid_prices",
+			"type": "String",
+			"description": "关键词ID，出价和匹配方式json字符串，keywordId:词ID，整数。maxPrice：价格，是整数，以“分”为单位，不能小于5，不能大于日限额,也不能大于99.99元,当使用默认出价时必须将这个值设置为0。; isDefaultPrice：是否使用默认出价，只能是0。matchscope只能是1,4（1代表精确匹配，4代表广泛匹配），maxMobilePrice：代表无线出价（如果是0，则代表无线出价=PC*无线溢价），mobileIsDefaultPrice代表无线出价是否采用pc*无线溢价，只能传0",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "keywords",
+			"type": "Keyword []",
+			"description": "成功设置关键词价格的关键词列表",
+			"subParams": [
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "主人昵称"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "推广计划id"
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "推广组id"
+				},
+				{
+					"name": "keyword_id",
+					"type": "Number",
+					"description": "关键词id"
+				},
+				{
+					"name": "word",
+					"type": "String",
+					"description": "关键词"
+				},
+				{
+					"name": "max_price",
+					"type": "Number",
+					"description": "关键词出价，单位为分，不能小于5"
+				},
+				{
+					"name": "is_default_price",
+					"type": "Boolean",
+					"description": "是否使用推广组默认出价，true-是；false-否；"
+				},
+				{
+					"name": "audit_status",
+					"type": "String",
+					"description": "审核状态： audit_wait-待审核；audit_pass-审核通过(上线)；audit_reject-审核拒绝；audit_offline-审核直接下线；默认为 audit_pass。"
+				},
+				{
+					"name": "audit_desc",
+					"type": "String",
+					"description": "审核拒绝原因描述"
+				},
+				{
+					"name": "is_garbage",
+					"type": "Boolean",
+					"description": "是否是垃圾词，false-不是；true-是；垃圾词是近期无点击的词"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "最后修改时间"
+				},
+				{
+					"name": "match_scope",
+					"type": "String",
+					"description": "匹配模式"
+				},
+				{
+					"name": "mobile_is_default_price",
+					"type": "Number",
+					"description": "无线上是否采用PC*无线溢价的出价模式（1：是，0：否）"
+				},
+				{
+					"name": "max_mobile_price",
+					"type": "Number",
+					"description": "无线独立出价（0：代表使用PC*无线溢价，如果不是0则代表无线出价的值）"
+				}
+			]
+		}
+	]
+}

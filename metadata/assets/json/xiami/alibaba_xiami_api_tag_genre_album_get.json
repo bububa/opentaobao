@@ -1,0 +1,95 @@
+{
+	"name": "alibaba.xiami.api.tag.genre.album.get",
+	"apiChineseName": "虾米音乐－风格，流派专辑列表",
+	"description": "虾米音乐－风格，流派专辑列表",
+	"requestParams": [
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "1:风格，2:流派",
+			"required": true
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "风格，流派id",
+			"required": true
+		},
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页数"
+		},
+		{
+			"name": "limit",
+			"type": "Number",
+			"description": "每页数量"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "TagAlbumResult",
+			"description": "风格，流派专辑列表",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数"
+				},
+				{
+					"name": "more",
+					"type": "Boolean",
+					"description": "true：表示还可以继续翻页，false：到最后一页了"
+				},
+				{
+					"name": "albums",
+					"type": "TagAlbums[]",
+					"description": "风格专辑列表",
+					"subParams": [
+						{
+							"name": "album_id",
+							"type": "Number",
+							"description": "专辑id"
+						},
+						{
+							"name": "artist_name",
+							"type": "String",
+							"description": "艺人名"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						},
+						{
+							"name": "grade",
+							"type": "Number",
+							"description": "分数"
+						},
+						{
+							"name": "artist_id",
+							"type": "Number",
+							"description": "艺人id"
+						},
+						{
+							"name": "album_name",
+							"type": "String",
+							"description": "专辑名"
+						},
+						{
+							"name": "is_play",
+							"type": "Number",
+							"description": "是否可试听，0：不可，1：可试听"
+						},
+						{
+							"name": "album_logo",
+							"type": "String",
+							"description": "专辑封面"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,41 @@
+{
+	"name": "taobao.item.permit.check",
+	"apiChineseName": "发品资质校验",
+	"description": "对淘宝商品发品、编辑前的预校验接口",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id"
+		},
+		{
+			"name": "cid",
+			"type": "Number",
+			"description": "类目id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "发布类型。可选值:fixed(一口价),auction(拍卖)",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "error",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "errorcode",
+			"type": "String",
+			"description": "错误码"
+		}
+	]
+}

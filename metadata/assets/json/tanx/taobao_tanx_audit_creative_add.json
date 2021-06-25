@@ -1,0 +1,105 @@
+{
+	"name": "taobao.tanx.audit.creative.add",
+	"apiChineseName": "创意预审新增接口",
+	"description": "创意预审新增接口",
+	"requestParams": [
+		{
+			"name": "member_id",
+			"type": "Number",
+			"description": "DSP的memberId",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "dsp用户身份认证的TOKEN",
+			"required": true
+		},
+		{
+			"name": "sign_time",
+			"type": "Number",
+			"description": "当前时间戳，1970-01-01后的秒数",
+			"required": true
+		},
+		{
+			"name": "creative",
+			"type": "CreativeParamDTO",
+			"description": "预审核创意对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "creative_id",
+					"type": "String",
+					"description": "dsp系统中的创意id",
+					"required": true
+				},
+				{
+					"name": "adboard_size",
+					"type": "String",
+					"description": "创意尺寸，长高中间用小写英文x",
+					"required": true
+				},
+				{
+					"name": "adboard_type",
+					"type": "String",
+					"description": "广告类目",
+					"required": true
+				},
+				{
+					"name": "sensitive_type",
+					"type": "String",
+					"description": "敏感词类目"
+				},
+				{
+					"name": "adboard_data",
+					"type": "String",
+					"description": "创意代码。creative_package_format为5, dis_type=2时，对应的值为标准json，支持的字段为：adwords,clickUrl,imgUrl,landingType,price,promoprice,sell,title如：{\u0026quot;clickUrl\u0026quot;:\u0026quot;http://click.mz.simba.taobao.com/\u0026quot;,\u0026quot;title\u0026quot;:\u0026quot;老板电器旗舰店\u0026mdash;钜惠风暴席卷月！\u0026quot;,\u0026quot;promoprice\u0026quot;:\u0026quot;188.88\u0026quot;,\u0026quot;sell\u0026quot;:\u0026quot;56\u0026quot;, \u0026quot;adwords\u0026quot;:\u0026quot;精选店铺，优惠无止尽！\u0026quot;}",
+					"required": true
+				},
+				{
+					"name": "destination_url",
+					"type": "String",
+					"description": "目标地址",
+					"required": true
+				},
+				{
+					"name": "creative_package_format",
+					"type": "Number",
+					"description": "创意封装类型：1 Htmlsnippet(pc网页),2 vast-nonlinear（视频暂停）,5 无线创意, 8 移动网页"
+				},
+				{
+					"name": "advertiser_ids",
+					"type": "String",
+					"description": "广告主id,多值使用逗号分隔"
+				},
+				{
+					"name": "dis_type",
+					"type": "Number",
+					"description": "创意类型。1. mraid, 2. native, 3.H5，4.富媒体"
+				},
+				{
+					"name": "template_id",
+					"type": "String",
+					"description": "模板Id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "调用的成功信息或失败信息"
+		},
+		{
+			"name": "tanx_error_code",
+			"type": "Number",
+			"description": "调用返回码"
+		},
+		{
+			"name": "is_ok",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

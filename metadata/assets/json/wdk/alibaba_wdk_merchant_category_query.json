@@ -1,0 +1,39 @@
+{
+	"name": "alibaba.wdk.merchant.category.query",
+	"apiChineseName": "三江erp对接类目查询接口",
+	"description": "三江erp对接类目查询接口",
+	"requestParams": [
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "搜索关键词，可不填就查全部"
+		},
+		{
+			"name": "root_category_code",
+			"type": "String",
+			"description": "类目起点，可不填从根目录开始查"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "errorcode",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "errordesc",
+			"type": "String",
+			"description": "errorDesc"
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "result"
+		}
+	]
+}

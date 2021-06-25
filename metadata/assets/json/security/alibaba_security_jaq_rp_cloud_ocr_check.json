@@ -1,0 +1,142 @@
+{
+	"name": "alibaba.security.jaq.rp.cloud.ocr.check",
+	"apiChineseName": "ocr同时实名校验",
+	"description": "聚安全实人认证证件OCR识别功能接口",
+	"requestParams": [
+		{
+			"name": "verify_token",
+			"type": "String",
+			"description": "token",
+			"required": true
+		},
+		{
+			"name": "image_urls",
+			"type": "Json",
+			"description": "要识别的信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "RpidCard",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "rp_idcard_image",
+					"type": "RpidCardImage",
+					"description": "RPIDCardImage",
+					"required": true,
+					"subParams": [
+						{
+							"name": "back_image_url",
+							"type": "String",
+							"description": "backImageUrl",
+							"required": true
+						},
+						{
+							"name": "card_type",
+							"type": "String",
+							"description": "cardType",
+							"required": true
+						},
+						{
+							"name": "front_image_url",
+							"type": "String",
+							"description": "frontImageUrl",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "address",
+					"required": true
+				},
+				{
+					"name": "birth_day",
+					"type": "Date",
+					"description": "birthDay",
+					"required": true
+				},
+				{
+					"name": "card_type",
+					"type": "String",
+					"description": "cardType",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "expiry",
+					"type": "String",
+					"description": "expiry",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "name",
+					"required": true
+				},
+				{
+					"name": "sex",
+					"type": "RpSex",
+					"description": "sex",
+					"required": true,
+					"subParams": [
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "type",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "url_back_image",
+					"type": "String",
+					"description": "urlBackImage",
+					"required": true
+				},
+				{
+					"name": "url_front_image",
+					"type": "String",
+					"description": "urlFrontImage",
+					"required": true
+				},
+				{
+					"name": "biz_error_code",
+					"type": "RpErrorCode",
+					"description": "bizErrorCode",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "Number",
+							"description": "errorCode",
+							"required": true
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "errorMsg",
+							"required": true
+						},
+						{
+							"name": "error_name",
+							"type": "String",
+							"description": "errorName",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

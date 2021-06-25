@@ -1,0 +1,28 @@
+{
+	"name": "alibaba.scbp.ad.keyword.status.update",
+	"apiChineseName": "关键词启动暂停推广",
+	"description": "关键词启动暂停推广",
+	"requestParams": [
+		{
+			"name": "ad_keyword",
+			"type": "String",
+			"description": "只能取ascci字符",
+			"required": true,
+			"maxLength": 64
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "只能去in_promotion或者stopped",
+			"required": true,
+			"maxLength": 16
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "更新关键词推广状态是否成功"
+		}
+	]
+}

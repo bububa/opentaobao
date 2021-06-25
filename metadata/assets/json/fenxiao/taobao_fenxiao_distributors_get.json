@@ -1,0 +1,87 @@
+{
+	"name": "taobao.fenxiao.distributors.get",
+	"apiChineseName": "获取分销商信息",
+	"description": "查询和当前登录供应商有合作关系的分销商的信息",
+	"requestParams": [
+		{
+			"name": "nicks",
+			"type": "String",
+			"description": "分销商用户名列表。多个之间以“,”分隔;最多支持50个分销商用户名。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "distributors",
+			"type": "Distributor []",
+			"description": "分销商详细信息",
+			"subParams": [
+				{
+					"name": "alipay_account",
+					"type": "String",
+					"description": "分销商的支付宝帐户"
+				},
+				{
+					"name": "contact_person",
+					"type": "String",
+					"description": "联系人"
+				},
+				{
+					"name": "distributor_name",
+					"type": "String",
+					"description": "分销商姓名"
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "分销商的email"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "分销商的手机号"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "分销商的电话"
+				},
+				{
+					"name": "shop_web_link",
+					"type": "String",
+					"description": "分销商的网店链接"
+				},
+				{
+					"name": "distributor_id",
+					"type": "Number",
+					"description": "分销商Id"
+				},
+				{
+					"name": "full_name",
+					"type": "String",
+					"description": "分销商的真实姓名，认证姓名"
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "分销商店铺主营类目"
+				},
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "店铺等级"
+				},
+				{
+					"name": "appraise",
+					"type": "Number",
+					"description": "分销商的淘宝卖家评价"
+				},
+				{
+					"name": "starts",
+					"type": "Date",
+					"description": "分销商卖家的开店时间"
+				}
+			]
+		}
+	]
+}

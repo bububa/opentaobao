@@ -1,0 +1,74 @@
+{
+	"name": "taobao.subway.wordpackage.update",
+	"apiChineseName": "批量更新词包",
+	"description": "批量更新词包",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称",
+			"required": true
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组Id",
+			"required": true
+		},
+		{
+			"name": "word_package_d_t_o_s",
+			"type": "ItemWordPackageDto[]",
+			"description": "词包列表",
+			"required": true,
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "word_package_id",
+					"type": "Number",
+					"description": "词包id（1-流量智选，2-捡漏词包）",
+					"required": true
+				},
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "开/关词包（0-关闭，1-开启）"
+				},
+				{
+					"name": "pc_bid_price",
+					"type": "Number",
+					"description": "pc端出价（单位为分）"
+				},
+				{
+					"name": "package_type",
+					"type": "Number",
+					"description": "词包类型（1-流量智选， 19-捡漏词包）"
+				},
+				{
+					"name": "word_package_name",
+					"type": "String",
+					"description": "词包名称（可选：流量智选词包、捡漏词包）"
+				},
+				{
+					"name": "wl_bid_price",
+					"type": "Number",
+					"description": "无线端出价（单位为分）"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Number",
+					"description": "更新数目",
+					"required": true
+				}
+			]
+		}
+	]
+}

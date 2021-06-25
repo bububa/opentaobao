@@ -1,0 +1,38 @@
+{
+	"name": "taobao.inventory.initial.item",
+	"apiChineseName": "商品库存初始化",
+	"description": "建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。\n商家仓商品初始化在各个仓中库存",
+	"requestParams": [
+		{
+			"name": "sc_item_id",
+			"type": "Number",
+			"description": "后端商品id",
+			"required": true
+		},
+		{
+			"name": "store_inventorys",
+			"type": "String",
+			"description": "商品初始库存信息： [{\"storeCode\":\"必选,商家仓库编号\",\"inventoryType\":\"可选，库存类型 1：正常,2：损坏,3：冻结,10：质押,11-20:用户自定义,默认为1\",\"quantity\":\"必选,数量\"}]",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tip_infos",
+			"type": "TipInfo []",
+			"description": "提示信息",
+			"subParams": [
+				{
+					"name": "info",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "sc_item_id",
+					"type": "String",
+					"description": "商品id"
+				}
+			]
+		}
+	]
+}

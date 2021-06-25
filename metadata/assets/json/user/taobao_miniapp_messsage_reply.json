@@ -1,0 +1,79 @@
+{
+	"name": "taobao.miniapp.messsage.reply",
+	"apiChineseName": "轻店铺下行回复接口",
+	"description": "外部 isv 调用该进口来进行轻店铺消息的回复",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "ReplyMessageDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "content",
+					"description": "消息内容结构"
+				},
+				{
+					"name": "create_time",
+					"type": "Number",
+					"description": "毫秒时间戳"
+				},
+				{
+					"name": "receiver_id",
+					"type": "String",
+					"description": "被回复消息发送者",
+					"required": true
+				},
+				{
+					"name": "content_type",
+					"type": "String",
+					"description": "文本类型（参考文档）",
+					"required": true
+				},
+				{
+					"name": "biz_message_tag",
+					"type": "String",
+					"description": "业务消息标记（接受回执消息）"
+				},
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "小程序Id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

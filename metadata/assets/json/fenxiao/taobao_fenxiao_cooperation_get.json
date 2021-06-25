@@ -1,0 +1,126 @@
+{
+	"name": "taobao.fenxiao.cooperation.get",
+	"apiChineseName": "供应商或分销商获取合作关系信息",
+	"description": "获取供应商的合作关系信息",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "合作状态： NORMAL(合作中)、 ENDING(终止中) 、END (终止)"
+		},
+		{
+			"name": "start_date",
+			"type": "Date",
+			"description": "合作开始时间yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "end_date",
+			"type": "Date",
+			"description": "合作结束时间yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "trade_type",
+			"type": "String",
+			"description": "分销方式：AGENT(代销) 、DEALER（经销）"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码（大于0的整数，默认1）"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页记录数（默认20，最大50）"
+		},
+		{
+			"name": "channel_code",
+			"type": "String",
+			"description": "渠道code"
+		},
+		{
+			"name": "role_type",
+			"type": "Number",
+			"description": "1是供应商，2 是分销商"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "结果记录数"
+		},
+		{
+			"name": "cooperations",
+			"type": "Cooperation []",
+			"description": "合作分销关系",
+			"subParams": [
+				{
+					"name": "cooperate_id",
+					"type": "Number",
+					"description": "合作关系ID"
+				},
+				{
+					"name": "distributor_id",
+					"type": "Number",
+					"description": "分销商ID"
+				},
+				{
+					"name": "distributor_nick",
+					"type": "String",
+					"description": "分销商nick"
+				},
+				{
+					"name": "product_line",
+					"type": "String",
+					"description": "授权产品线"
+				},
+				{
+					"name": "grade_id",
+					"type": "Number",
+					"description": "等级ID"
+				},
+				{
+					"name": "trade_type",
+					"type": "String",
+					"description": "分销方式： AGENT(代销) 、DEALER(经销)"
+				},
+				{
+					"name": "auth_payway",
+					"type": "String[]",
+					"description": "供应商授权的支付方式：ALIPAY(支付宝)、OFFPREPAY(预付款)、OFFTRANSFER(转帐)、OFFSETTLEMENT(后期结算)"
+				},
+				{
+					"name": "supplier_id",
+					"type": "Number",
+					"description": "供应商ID"
+				},
+				{
+					"name": "supplier_nick",
+					"type": "String",
+					"description": "供应商NICK"
+				},
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "合作起始时间"
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "合作终止时间"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "合作状态： NORMAL(合作中)、 ENDING(终止中) 、END (终止)"
+				},
+				{
+					"name": "product_line_name",
+					"type": "String[]",
+					"description": "授权产品线名称，和product_line中的值按序对应"
+				}
+			]
+		}
+	]
+}

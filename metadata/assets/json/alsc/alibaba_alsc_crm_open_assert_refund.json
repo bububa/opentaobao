@@ -1,0 +1,148 @@
+{
+	"name": "alibaba.alsc.crm.open.assert.refund",
+	"apiChineseName": "资产核销回退接口",
+	"description": "回退已经核销的储值积分券资产",
+	"requestParams": [
+		{
+			"name": "param_property_refund_open_req",
+			"type": "PropertyRefundOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "saas品牌id",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "new_outer_order_id",
+					"type": "String",
+					"description": "退款的订单号",
+					"required": true
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部id"
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "原订单号，就是核销的订单号",
+					"required": true
+				},
+				{
+					"name": "outer_type",
+					"type": "String",
+					"description": "外部id类型，wechat微信，alipay支付宝"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求幂等id",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "saas门店id",
+					"required": true
+				},
+				{
+					"name": "voucher_id_list",
+					"type": "String[]",
+					"description": "券实例id集合"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "PropertyRefundOpenInfo",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "point_success",
+							"type": "Boolean",
+							"description": "回退积分是否成功",
+							"required": true
+						},
+						{
+							"name": "value_success",
+							"type": "Boolean",
+							"description": "回退储值是否成功",
+							"required": true
+						},
+						{
+							"name": "voucher_status_list",
+							"type": "VoucherStatusInfo[]",
+							"description": "券实例状态",
+							"required": true,
+							"subParams": [
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "是否成功",
+									"required": true
+								},
+								{
+									"name": "voucher_id",
+									"type": "String",
+									"description": "券码",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果展示",
+					"required": true
+				}
+			]
+		}
+	]
+}

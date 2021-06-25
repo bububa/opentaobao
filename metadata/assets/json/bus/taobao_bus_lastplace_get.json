@@ -1,0 +1,59 @@
+{
+	"name": "taobao.bus.lastplace.get",
+	"apiChineseName": "获取目的地数据",
+	"description": "传入城市 获取对应的目的地",
+	"requestParams": [
+		{
+			"name": "param_last_place_search_r_q",
+			"type": "ParamLastPlaceSearchRq",
+			"description": "目的地查询参数",
+			"subParams": [
+				{
+					"name": "dep_city_code",
+					"type": "String",
+					"description": "城市编码",
+					"required": true
+				},
+				{
+					"name": "dep_city_name",
+					"type": "String",
+					"description": "北京市",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "目的地返回结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Json",
+					"description": "目的地数据JSON,具体参考文档说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

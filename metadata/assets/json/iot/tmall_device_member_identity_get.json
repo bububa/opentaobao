@@ -1,0 +1,81 @@
+{
+	"name": "tmall.device.member.identity.get",
+	"apiChineseName": "智能硬件会员判断",
+	"description": "用来识别该用户是否是商家会员·",
+	"requestParams": [
+		{
+			"name": "extra_info",
+			"type": "String",
+			"description": "扩展参数为JSON字符串，用于埋点统计，source为来源字段固定值 paiyangji代表来源派样机类型设备，deviceId 为设备id，itemId 相关商品id"
+		},
+		{
+			"name": "mix_nick",
+			"type": "String",
+			"description": "混淆昵称，"
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "明文nick，可不填，直接填混淆昵称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "total",
+					"required": true
+				},
+				{
+					"name": "member_info",
+					"type": "MemberAccountDto",
+					"description": "result",
+					"required": true,
+					"subParams": [
+						{
+							"name": "grade_name",
+							"type": "String",
+							"description": "等级名称",
+							"required": true
+						},
+						{
+							"name": "grade",
+							"type": "Number",
+							"description": "等级编号",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "String",
+							"description": "gmtCreate",
+							"required": true
+						},
+						{
+							"name": "bind_status",
+							"type": "Number",
+							"description": "bindStatus 1：绑卡（已经是线下会员线上未绑定，或者解绑后再绑定），2：注册",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

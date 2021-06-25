@@ -1,0 +1,41 @@
+{
+	"name": "taobao.bus.tvmpayorder.set",
+	"apiChineseName": "自助机条形码被动支付",
+	"description": "汽车票线下自助机条形码支付",
+	"requestParams": [
+		{
+			"name": "alipay_auth_code",
+			"type": "String",
+			"description": "条形码认证码",
+			"required": true
+		},
+		{
+			"name": "alitrip_order_id",
+			"type": "String",
+			"description": "飞猪订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "errorCode  线下扫码支付  错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "errorMsg 错误信息"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success true 成功 false 失败"
+		},
+		{
+			"name": "pay_time",
+			"type": "String",
+			"description": "payTime"
+		}
+	]
+}

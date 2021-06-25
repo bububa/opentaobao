@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.aliqin.ta.sms.num.send",
+	"apiChineseName": "短信发送",
+	"description": "短信发送",
+	"requestParams": [
+		{
+			"name": "extend",
+			"type": "String",
+			"description": "公共回传参数"
+		},
+		{
+			"name": "sms_type",
+			"type": "String",
+			"description": "类型，normal：短信",
+			"required": true
+		},
+		{
+			"name": "sms_free_sign_name",
+			"type": "String",
+			"description": "短信签名",
+			"required": true
+		},
+		{
+			"name": "sms_param",
+			"type": "Json",
+			"description": "短信模板变量，AckNum是变量参数"
+		},
+		{
+			"name": "rec_num",
+			"type": "String",
+			"description": "接收号码",
+			"required": true
+		},
+		{
+			"name": "sms_template_code",
+			"type": "String",
+			"description": "短信模板CODE",
+			"required": true
+		},
+		{
+			"name": "extend_code",
+			"type": "String",
+			"description": "商家自定义扩展码"
+		},
+		{
+			"name": "extend_name",
+			"type": "String",
+			"description": "商家自定义扩展名,例如店铺nick"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BizResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "返回结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true表示成功，false表示失败"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息描述"
+				}
+			]
+		}
+	]
+}

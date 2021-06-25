@@ -1,0 +1,162 @@
+{
+	"name": "alibaba.wdk.sku.channelsku.add",
+	"apiChineseName": "新增渠道商品",
+	"description": "盒马帮1期新增渠道商品",
+	"requestParams": [
+		{
+			"name": "ch_sku_d_o_list",
+			"type": "ChannelSkuDo[]",
+			"description": "入参模型",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "life_status",
+					"type": "String",
+					"description": "状态（用来判断是否可售；1-正常）"
+				},
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "sale_price",
+					"type": "String",
+					"description": "销售价格，单位元"
+				},
+				{
+					"name": "return_flag",
+					"type": "String",
+					"description": "是否可退：0不可退，1可退，默认不可退"
+				},
+				{
+					"name": "sale_minimum",
+					"type": "Number",
+					"description": "最小销售量"
+				},
+				{
+					"name": "sale_unit",
+					"type": "String",
+					"description": "销售单位"
+				},
+				{
+					"name": "sale_spec",
+					"type": "String",
+					"description": "销售规格（如果不填，默认为sale_minimum字段值）"
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "门店或DC编码",
+					"required": true
+				},
+				{
+					"name": "deliver_warehouse",
+					"type": "String",
+					"description": "出货仓（默认为店仓一体，仓编码为店编码）"
+				},
+				{
+					"name": "sale_before_purchase",
+					"type": "Boolean",
+					"description": "是否支持先销后采，默认false"
+				},
+				{
+					"name": "original_supplier_no",
+					"type": "String",
+					"description": "原始供应商编码"
+				},
+				{
+					"name": "channel_code",
+					"type": "Number",
+					"description": "渠道（默认-1）"
+				},
+				{
+					"name": "to_b_channel",
+					"type": "Boolean",
+					"description": "是否toB渠道（默认true）"
+				},
+				{
+					"name": "time_stamp",
+					"type": "Number",
+					"description": "时间戳，时间的毫秒数"
+				},
+				{
+					"name": "customer_merchant_code",
+					"type": "String",
+					"description": "客户商家编码"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id"
+				},
+				{
+					"name": "online_sale_flag",
+					"type": "Number",
+					"description": "是否在线上露出，0不露出，1露出"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResults",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功失败",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "ApiResult[]",
+					"description": "返会结果集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "成功失败",
+							"required": true
+						},
+						{
+							"name": "err_msg",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						},
+						{
+							"name": "err_code",
+							"type": "String",
+							"description": "错误编码",
+							"required": true
+						},
+						{
+							"name": "model",
+							"type": "String",
+							"description": "返会结果",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

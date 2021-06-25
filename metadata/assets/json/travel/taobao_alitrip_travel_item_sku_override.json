@@ -1,0 +1,141 @@
+{
+	"name": "taobao.alitrip.travel.item.sku.override",
+	"apiChineseName": "【API3.0】商品级别日历价格库存修改，全量覆盖",
+	"description": "旅行度假新商品日历价格库存信息修改接口 第三版。提供商家通过TOP API方式修改商品sku信息。",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id。itemId和outProductId至少填写一个"
+		},
+		{
+			"name": "skus",
+			"type": "PontusTravelItemSkuInfo[]",
+			"description": "商品日历价格库存套餐",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "package_name",
+					"type": "String",
+					"description": "套餐名称，特别说明：出境邮轮请按照发布后台规范传递套餐名称，会自动解析容纳人数与房型"
+				},
+				{
+					"name": "outer_sku_id",
+					"type": "String",
+					"description": "必填，外部商家映射到具体套餐的SKU ID，一般为外部商家具体商品ID。",
+					"required": true
+				},
+				{
+					"name": "prices",
+					"type": "PontusTravelPrices[]",
+					"description": "商品日历价格库存相关信息",
+					"subParams": [
+						{
+							"name": "price_type",
+							"type": "Number",
+							"description": "价格类型。price_type 取：1-成人价，2-儿童价，3-单房差",
+							"required": true
+						},
+						{
+							"name": "stock",
+							"type": "Number",
+							"description": "库存"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "价格，以分为单位"
+						},
+						{
+							"name": "date",
+							"type": "Date",
+							"description": "日期。对于普通商品必填，对于预约商品该字段不填"
+						},
+						{
+							"name": "outer_price_id",
+							"type": "String",
+							"description": "（该参数已废弃）外部商家团期ID"
+						}
+					]
+				},
+				{
+					"name": "package_desc",
+					"type": "String",
+					"description": "套餐描述"
+				},
+				{
+					"name": "products",
+					"type": "Product[]",
+					"description": "套餐关联的产品元素列表。以列表中第一个产品元素作为主元素，其他元素作为该套餐的搭配元素。注：新增一个套餐时该参数必填；如果只是要覆盖修改一个已存在套餐的价格库存，则该参数可不填，系统会根据outer_sku_id自动填充该套餐已绑定的产品元素。",
+					"subParams": [
+						{
+							"name": "element_id",
+							"type": "String",
+							"description": "关联的元素。以元素的外部商家编码作为元素标示。不传该值则该Product将被自动忽略"
+						},
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "绑定销售的元素 份数。不传该值则默认设置1份"
+						}
+					]
+				},
+				{
+					"name": "room_type_id",
+					"type": "Number",
+					"description": "邮轮房型ID，新版本有值"
+				},
+				{
+					"name": "room_type",
+					"type": "Number",
+					"description": "邮轮房型类型"
+				},
+				{
+					"name": "room_type_name",
+					"type": "String",
+					"description": "邮轮房型名称"
+				},
+				{
+					"name": "people_number",
+					"type": "Number",
+					"description": "人数"
+				},
+				{
+					"name": "order_count_match",
+					"type": "Boolean",
+					"description": "下单人数是否与房型人数一致"
+				}
+			]
+		},
+		{
+			"name": "out_product_id",
+			"type": "String",
+			"description": "商品 外部商家编码。itemId和outProductId至少填写一个"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "travel_item",
+			"type": "TopTravelItem",
+			"description": "商品sku修改结果",
+			"subParams": [
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "商品创建时间"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "商品修改时间"
+				}
+			]
+		}
+	]
+}

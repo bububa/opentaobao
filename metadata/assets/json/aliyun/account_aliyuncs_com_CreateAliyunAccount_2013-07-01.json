@@ -1,0 +1,12 @@
+{
+	"name": "account.aliyuncs.com.CreateAliyunAccount.2013-07-01",
+	"apiChineseName": "创建阿里云账号",
+	"description": "根据给定的阿里云账号，密码以及手机号创建阿里云账号",
+	"responseParams": [
+		{
+			"name": "result_data",
+			"type": "String",
+			"description": "返回结果"
+		}
+	]
+}

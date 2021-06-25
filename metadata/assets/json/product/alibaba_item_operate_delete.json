@@ -1,0 +1,20 @@
+{
+	"name": "alibaba.item.operate.delete",
+	"apiChineseName": "商品删除",
+	"description": "商品删除",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "商品删除是否成功"
+		}
+	]
+}

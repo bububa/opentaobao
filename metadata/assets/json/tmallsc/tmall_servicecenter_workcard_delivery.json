@@ -1,0 +1,48 @@
+{
+	"name": "tmall.servicecenter.workcard.delivery",
+	"apiChineseName": "开始配送工单",
+	"description": "服务商调用该接口通知天猫服务平台服务商工人已开始配送工单",
+	"requestParams": [
+		{
+			"name": "identify_task_delivery_request",
+			"type": "IdentifyTaskDeliveryRequest",
+			"description": "工单配送请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "workcard_id",
+					"type": "Number",
+					"description": "工单ID",
+					"required": true
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "配送地纬度"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "配送地经度"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回code"
+		}
+	]
+}

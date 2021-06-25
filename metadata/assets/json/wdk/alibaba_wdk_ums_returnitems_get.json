@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.wdk.ums.returnitems.get",
+	"apiChineseName": "退货库位商品查询（退货出库辅助）-回流单",
+	"description": "退货库位商品查询（退货出库辅助）-回流单",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "店仓code，指的是作业对象，对应一个物理店或仓编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "reslut",
+			"subParams": [
+				{
+					"name": "list",
+					"type": "ErpReturnItemDto[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "count",
+							"type": "String",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "cabinet_code",
+							"type": "String",
+							"description": "库位号，退货库位号",
+							"required": true
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "商品code",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "warehouseCode",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

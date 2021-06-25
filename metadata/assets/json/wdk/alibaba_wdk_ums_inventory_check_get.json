@@ -1,0 +1,134 @@
+{
+	"name": "alibaba.wdk.ums.inventory.check.get",
+	"apiChineseName": "盘点结果单-回流单",
+	"description": "盘点结果单-回流单",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "店仓code，指的是库调对象，对应一个物理店或仓编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "list",
+					"type": "PdStockDto[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "pd_type",
+							"type": "Number",
+							"description": "盘点类型，可选值：1：大盘  2：周盘 ；",
+							"required": true
+						},
+						{
+							"name": "pd_order_code",
+							"type": "String",
+							"description": "单据号",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "店仓code，指的是盘点对象，对应一个物理店或仓编码",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "唯一识别码",
+							"required": true
+						},
+						{
+							"name": "item_list",
+							"type": "PdStockDetailDto[]",
+							"description": "itemList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注",
+									"required": true
+								},
+								{
+									"name": "effective_time",
+									"type": "Date",
+									"description": "盘点时间，盘点结果提交的时间",
+									"required": true
+								},
+								{
+									"name": "operator_name",
+									"type": "String",
+									"description": "盘点人员",
+									"required": true
+								},
+								{
+									"name": "diff_count",
+									"type": "String",
+									"description": "差异数量，盘点结果数量与快照数量的差异值",
+									"required": true
+								},
+								{
+									"name": "real_count",
+									"type": "String",
+									"description": "实盘数量，盘点结果数量",
+									"required": true
+								},
+								{
+									"name": "snapshot_count",
+									"type": "String",
+									"description": "快照数量，盘点任务单下发时的商品数量",
+									"required": true
+								},
+								{
+									"name": "cabinet_code",
+									"type": "String",
+									"description": "库位，盒马系统中的库位号",
+									"required": true
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "商品code",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

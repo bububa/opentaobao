@@ -1,0 +1,61 @@
+{
+	"name": "cainiao.guoguo.cp.backup.assigncourier",
+	"apiChineseName": "CP兜底后指定接单的小件员",
+	"description": "CP兜底后指定接单的小件员；CP改派小件员",
+	"requestParams": [
+		{
+			"name": "cp_code",
+			"type": "String",
+			"description": "小件员所在公司编号",
+			"required": true
+		},
+		{
+			"name": "cp_user_id",
+			"type": "String",
+			"description": "小件员员工编号",
+			"required": true
+		},
+		{
+			"name": "lp_code",
+			"type": "String",
+			"description": "LP订单号"
+		},
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务ID"
+		},
+		{
+			"name": "assign_reason_code",
+			"type": "String",
+			"description": "指派/改派原因编码"
+		},
+		{
+			"name": "assign_reason",
+			"type": "String",
+			"description": "指派/改派原因"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "小件员手机号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "status_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

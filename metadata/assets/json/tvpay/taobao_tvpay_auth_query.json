@@ -1,0 +1,91 @@
+{
+	"name": "taobao.tvpay.auth.query",
+	"apiChineseName": "tv支付授权查询",
+	"description": "查询该用户在指定设备上是否有支付授权",
+	"requestParams": [
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备号",
+			"required": true
+		},
+		{
+			"name": "from",
+			"type": "String",
+			"description": "来源"
+		},
+		{
+			"name": "biz_order_id",
+			"type": "String",
+			"description": "业务订单号"
+		},
+		{
+			"name": "is_tao",
+			"type": "Boolean",
+			"description": "是否淘系"
+		},
+		{
+			"name": "order_no",
+			"type": "String",
+			"description": "支付宝订单号"
+		},
+		{
+			"name": "out_order_no",
+			"type": "String",
+			"description": "外部订单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "QueryAuthResultDo",
+					"description": "出参结构体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "alipay_account",
+							"type": "String",
+							"description": "支付宝账号",
+							"required": true
+						},
+						{
+							"name": "limit_amount",
+							"type": "Number",
+							"description": "授权限额",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "授权状态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

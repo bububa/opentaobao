@@ -1,0 +1,269 @@
+{
+	"name": "taobao.alitrip.travel.product.base.add",
+	"apiChineseName": "供应商新增产品API",
+	"description": "飞猪供销平台供应商可通过该API发布新产品",
+	"requestParams": [
+		{
+			"name": "base_info",
+			"type": "ProductBaseInfo",
+			"description": "产品基本信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "trip_max_days",
+					"type": "Number",
+					"description": "旅游日程-天数",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "pc端商品描述，不超过50000个字符。详情描述支持纯文本描述，也支持html格式的详情描述。html格式的详情描述中 图片链接支持外链图片（必须外网可访问， 且格式为png、jpg或jpeg，大小在500k以内）和淘宝图片空间链接。",
+					"required": true
+				},
+				{
+					"name": "wap_desc",
+					"type": "String",
+					"description": "手机端描述。格式： 使用xml标签（shortDesc，txt和img）进行图文混排，shortDesc标签表示添加小标题，txt标签表示添加文本描述，img标签表示添加一张图片。  注意： 1）shortDesc，txt和img三个xml标签独立，可以乱序使用，但不能嵌套； 2）图片链接支持外链图片（必须外网可访问，  且格式为png、jpg或jpeg，大小在500k以内）和淘宝图片空间链接；3）手机端描述内容以wapDesc标签标示开始和结束"
+				},
+				{
+					"name": "item_type",
+					"type": "Number",
+					"description": "必填，产品类型。目前仅支持 6-国际邮轮  9-境内邮轮",
+					"required": true
+				},
+				{
+					"name": "to_locations",
+					"type": "String",
+					"description": "目的地，所有商品必填，填写中文，以英文逗号分隔，最多可填12个，如果国家底下还有城市，则必须精确到城市。如果接口报错提示目的地不存在，则可登录商家基础信息映射管理后台（https://sell.alitrip.com/sell/basicdata/BasicDataMapping.htm）修正并生效映射关系，映射关系生效后，无法识别的目的地将自动替换为映射值 【重要提示-此字段会作为搜索/筛选条件】",
+					"required": true
+				},
+				{
+					"name": "pic_urls",
+					"type": "String[]",
+					"description": "商品图片路径。最多支持5张，第一张为主图 必填，其余四张可选填（多张图片间使用英文逗号分隔）。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为png、jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。",
+					"required": true
+				},
+				{
+					"name": "accom_nights",
+					"type": "Number",
+					"description": "旅游日程-晚数，必须大于等于0，且小于等于旅游日程-天数。 这里注意下，trip_max_days（旅游日程-天数）\u003e=accom_nights（旅游日程-晚数）\u003e=hotel_days（住宿晚数）"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "必填，商品标题。30个字符以内  【重要-此字段会作为搜索条件】",
+					"required": true
+				},
+				{
+					"name": "sub_titles",
+					"type": "String[]",
+					"description": "商品亮点。1）目前最多支持4个亮点，超过4个的亮点描述不会被保存 2）每个亮点描述35个字符以内 3）每个亮点间用英文逗号分隔"
+				},
+				{
+					"name": "traveller_template_id",
+					"type": "Number",
+					"description": "可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具-\u003e出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。"
+				},
+				{
+					"name": "from_locations",
+					"type": "String",
+					"description": "出发地（城市），填写中文，如果接口报错提示出发地不存在，则可登录商家基础信息映射管理后台（https://sell.alitrip.com/sell/basicdata/BasicDataMapping.htm）修正并生效映射关系，映射关系生效后，无法识别的出发地将自动替换为映射值 【重要提示-此属性会作为搜索/筛选条件】"
+				}
+			]
+		},
+		{
+			"name": "itineraries",
+			"type": "ItemItineraryInfo[]",
+			"description": "选填，详细行程描述结构",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "itinerary_no",
+					"type": "Number",
+					"description": "必填，第一天行程为1，第二天行程为2"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "小于等于30字"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "必填，1.使用xml标签（img和txt）进行图文混排，目前仅支持一段文字和多张图片，如果文件有多段，将会被合并 2.每段行程文字总和小于1500字"
+				}
+			]
+		},
+		{
+			"name": "refund_info",
+			"type": "ItemRefundInfo",
+			"description": "选填，退款规则结构",
+			"subParams": [
+				{
+					"name": "refund_regulations",
+					"type": "String[]",
+					"description": "特殊可选，当refund_type=1或7时，需要上传自定义退改内容。自定义退改规则，最多可含5组规则，每组规则间以英文逗号分隔。 1）当refund_type为1时格式为：a_b_num,b-1_c_num。含义：提前a天至提前b天发起退款，买家需支付num比例违约费。 2）当refund_type为7时格式为：a_b_num1_num2_0,b-1_c_num1_num2_0。含义：提前a天至提前b天发起退款，买家需支付num1比例违约费，卖家需支付num2比例违约费，最后一个数字代表是否节假日规则（0-不是，1-是）。特别注意，当refund_type为7时，自定义退改规则必须设置 n天以上违约规则 以及 行程当日违约规则，即第一组规则需要以-1_a_num1_num2_0或-1_a_num1_num2_1开头，且最后一组规则需要以0_0_num1_num2_0或0_0_num1_num2_1结尾。"
+				},
+				{
+					"name": "refund_regulations_json",
+					"type": "String",
+					"description": "退款规则（json数组格式）。自定义退改时需填写（与refund_regulations字段二选一）。示例中一共包含4条规则（3条平日规则，1条节假日规则），按照顺序每条规则含义如下：出行前5日及以上，买家违约收取总费用的50，卖家违约收取总费用的20；出行前4日至1日，买家违约收取总费用的80，卖家违约收取总费用的50；行程开始当天，买家违约收取总费用的100，卖家违约收取总费用的70；如果行程日期包含节假日，则节假日条款为买家违约收取总费用的100，卖家违约收取总费用的90"
+				},
+				{
+					"name": "refund_type",
+					"type": "Number",
+					"description": "退改规则类型，0-平台标准退改规则，1-自定义退改规则，2-不支持退改（已废弃，勿用），7-新版自定义退改规则。"
+				}
+			]
+		},
+		{
+			"name": "booking_rules",
+			"type": "BookingRuleInfo[]",
+			"description": "必填，预定规则结构。示例： [{  \"rule_type\": \"fee_excluded\",  \"rule_desc\": \"费用包含描述\"},{  \"rule_type\": \"fee_included\",  \"rule_desc\": \"费用不含描述\"},{  \"rule_type\": \"order_info\",  \"rule_desc\": \"预定须知描述\"}]",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "rule_desc",
+					"type": "String",
+					"description": "1500个字",
+					"required": true
+				},
+				{
+					"name": "rule_type",
+					"type": "String",
+					"description": "fee_included：费用包含，跟团游必填； fee_excluded：费用不含，所有类目必填； order_info：预定须知； extra_cost：其他费用，预留；",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "cruise_product_ext",
+			"type": "CruiseProductExt",
+			"description": "特殊选填（当发布邮轮商品时必填，其他情况不填）邮轮商品相关信息，发布邮轮商品时必填",
+			"subParams": [
+				{
+					"name": "ship_fee_include",
+					"type": "String[]",
+					"description": "选填，邮轮相关小费包含选项。境内邮轮： 1-\"船票\" 2-\"岸上观光费\" 3-\"导游\" 4-\"其他费用\" ...... 国际邮轮 1-\"船票\" 2-\"港务费、邮轮税费\" 3-\"岸上观光费\" 4-\"签证费用\" 5-\"小费\" 6-\"领队费\" 7-\"其他费用\""
+				},
+				{
+					"name": "ship_name",
+					"type": "String",
+					"description": "必填，邮轮船名"
+				},
+				{
+					"name": "ship_down",
+					"type": "String",
+					"description": "必填，邮轮下船地点"
+				},
+				{
+					"name": "ship_up",
+					"type": "String",
+					"description": "必填，邮轮上船地点"
+				},
+				{
+					"name": "cruise_line",
+					"type": "String",
+					"description": "必填，邮轮线路"
+				},
+				{
+					"name": "cruise_company",
+					"type": "String",
+					"description": "必填，邮轮公司"
+				}
+			]
+		},
+		{
+			"name": "product_sale_info",
+			"type": "ProductSaleInfo",
+			"description": "选填，商品的销售属性相关信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "confirm_time",
+					"type": "Number",
+					"description": "资源确认时长。1：2个工作小时内确认，2：6个工作小时内确认，3：9个工作小时内确认"
+				},
+				{
+					"name": "duration",
+					"type": "Number",
+					"description": "至少提前天数，最晚成团提前天数，最小0天，最大为300天；不传则为0"
+				},
+				{
+					"name": "distribute",
+					"type": "Boolean",
+					"description": "是否支持经销"
+				},
+				{
+					"name": "product_line",
+					"type": "Number",
+					"description": "产品线ID"
+				},
+				{
+					"name": "sale_type",
+					"type": "Number",
+					"description": "商品售卖类型，0为日历商品，1为预约商品，2为非日历商品；默认为0"
+				},
+				{
+					"name": "end_combo_date",
+					"type": "Date",
+					"description": "可选出发结束日期，格式：yyyy-MM-dd"
+				},
+				{
+					"name": "agent",
+					"type": "Boolean",
+					"description": "是否支持代销"
+				},
+				{
+					"name": "price_upper",
+					"type": "String",
+					"description": "建议零售价上限，单位：元"
+				},
+				{
+					"name": "start_combo_date",
+					"type": "Date",
+					"description": "可选出发开始日期，格式：yyyy-MM-dd"
+				},
+				{
+					"name": "confirm_type",
+					"type": "Number",
+					"description": "资源确认方式。1：即时确认，2：二次确认"
+				},
+				{
+					"name": "price_lower",
+					"type": "String",
+					"description": "建议零售价下限，单位：元"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "travel_item",
+			"type": "TopTravelItem",
+			"description": "商品发布结果",
+			"subParams": [
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "商品修改时间",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "商品创建时间",
+					"required": true
+				}
+			]
+		}
+	]
+}

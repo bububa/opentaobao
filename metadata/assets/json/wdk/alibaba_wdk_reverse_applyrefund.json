@@ -1,0 +1,205 @@
+{
+	"name": "alibaba.wdk.reverse.applyrefund",
+	"apiChineseName": "逆向申请接口",
+	"description": "逆向渲染",
+	"requestParams": [
+		{
+			"name": "param_apply_reverse_req",
+			"type": "ApplyReverseReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "biz_order_ids",
+					"type": "Number[]",
+					"description": "wdk子单list"
+				},
+				{
+					"name": "gift_card_nos",
+					"type": "String[]",
+					"description": "礼品卡号"
+				},
+				{
+					"name": "operator",
+					"type": "OperatorVo",
+					"description": "操作者",
+					"subParams": [
+						{
+							"name": "operator_id",
+							"type": "String",
+							"description": "操作人id"
+						},
+						{
+							"name": "operator_name",
+							"type": "String",
+							"description": "操作人name"
+						},
+						{
+							"name": "operator_type",
+							"type": "Number",
+							"description": "操作人type",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店id",
+					"required": true
+				},
+				{
+					"name": "sub_out_order_ids",
+					"type": "String[]",
+					"description": "外部子单list(biz_order_ids与sub_out_order_ids 二选一)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ReverseResult",
+			"description": "接口返回result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "ApplyReverseResponse",
+					"description": "接口返回model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_ids",
+							"type": "Number[]",
+							"description": "wdk交易单号",
+							"required": true
+						},
+						{
+							"name": "gift_card_nos",
+							"type": "String[]",
+							"description": "礼品卡号",
+							"required": true
+						},
+						{
+							"name": "in_sale_refund",
+							"type": "Number",
+							"description": "1售中 2售后",
+							"required": true
+						},
+						{
+							"name": "max_refund_fee",
+							"type": "Number",
+							"description": "最大可退金额",
+							"required": true
+						},
+						{
+							"name": "post_fee",
+							"type": "Number",
+							"description": "运费",
+							"required": true
+						},
+						{
+							"name": "reason_list",
+							"type": "ReasonVo[]",
+							"description": "原因",
+							"required": true,
+							"subParams": [
+								{
+									"name": "reason_id",
+									"type": "Number",
+									"description": "原因id",
+									"required": true
+								},
+								{
+									"name": "reason_text",
+									"type": "String",
+									"description": "原因描述",
+									"required": true
+								},
+								{
+									"name": "reason_tip",
+									"type": "String",
+									"description": "tip",
+									"required": true
+								},
+								{
+									"name": "tags",
+									"type": "String[]",
+									"description": "标签",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "refund_channel_list",
+							"type": "RefundChannelVo[]",
+							"description": "退款渠道",
+							"required": true,
+							"subParams": [
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "可退金额",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "渠道码",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "渠道名",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "request_id",
+							"type": "String",
+							"description": "请求id（提交申请入参）",
+							"required": true
+						},
+						{
+							"name": "reverse_ids",
+							"type": "Number[]",
+							"description": "逆向单id",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "门店id",
+							"required": true
+						},
+						{
+							"name": "support_modify_amount",
+							"type": "Boolean",
+							"description": "是否支持修改金额",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

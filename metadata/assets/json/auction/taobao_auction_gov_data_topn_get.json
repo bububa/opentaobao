@@ -1,0 +1,70 @@
+{
+	"name": "taobao.auction.gov.data.topn.get",
+	"apiChineseName": "根据不同维度，获取排行榜列表",
+	"description": "根据不同时间维度(周,月,年)，获取(成交额或发拍件数)排行榜列表",
+	"requestParams": [
+		{
+			"name": "circle_type",
+			"type": "Number",
+			"description": "周期类型  （2：周，3：月，4：年）",
+			"required": true
+		},
+		{
+			"name": "circle",
+			"type": "Number",
+			"description": "周期区间 周期（周填0、月份 yyyyMM、年份 yyyy)",
+			"required": true
+		},
+		{
+			"name": "busi_type",
+			"type": "Number",
+			"description": "业务类型 （1：成交额，2：发拍件数）",
+			"required": true
+		},
+		{
+			"name": "zone_type",
+			"type": "Number",
+			"description": "区域类型（1：全国，2：全省）",
+			"required": true
+		},
+		{
+			"name": "court_name",
+			"type": "String",
+			"description": "法院名称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ranks",
+			"type": "CourtsBidStatTopnDto []",
+			"description": "法院维度标的统计排行",
+			"subParams": [
+				{
+					"name": "rank",
+					"type": "Number",
+					"description": "排名",
+					"required": true
+				},
+				{
+					"name": "court_name",
+					"type": "String",
+					"description": "法院名称",
+					"required": true
+				},
+				{
+					"name": "hammer_price",
+					"type": "Number",
+					"description": "成交价（成交标的）",
+					"required": true
+				},
+				{
+					"name": "publish_count_dist",
+					"type": "Number",
+					"description": "发拍件数（去重）",
+					"required": true
+				}
+			]
+		}
+	]
+}

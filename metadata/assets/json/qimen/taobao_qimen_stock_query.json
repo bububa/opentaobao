@@ -1,0 +1,188 @@
+{
+	"name": "taobao.qimen.stock.query",
+	"apiChineseName": "库存查询接口（多条件）",
+	"description": "ERP调用奇门的接口,查询商品的库存量",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "StockQueryRequest",
+			"subParams": [
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码"
+				},
+				{
+					"name": "itemCode",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "itemId",
+					"type": "String",
+					"description": "仓储系统商品ID"
+				},
+				{
+					"name": "inventoryType",
+					"type": "String",
+					"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;ZT=在途库存;默认为查所有类型的库存)"
+				},
+				{
+					"name": "batchCode",
+					"type": "String",
+					"description": "批次编码"
+				},
+				{
+					"name": "productDate",
+					"type": "String",
+					"description": "商品生产日期(YYYY-MM-DD)"
+				},
+				{
+					"name": "expireDate",
+					"type": "String",
+					"description": "商品过期日期(YYYY-MM-DD)"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "当前页(从1开始)",
+					"required": true
+				},
+				{
+					"name": "pageSize",
+					"type": "Number",
+					"description": "每页条数(最多100条)",
+					"required": true
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "StockQueryResponse",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "totalCount",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "items",
+					"type": "Item[]",
+					"description": "商品的库存信息列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品ID",
+							"required": true
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS= 箱损;ZT=在途库存)",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "未冻结库存数量",
+							"required": true
+						},
+						{
+							"name": "lockQuantity",
+							"type": "Number",
+							"description": "冻结库存数量",
+							"required": true
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编码",
+							"required": true
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "商品生产日期(YYYY-MM-DD)",
+							"required": true
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "商品过期日期(YYYY-MM-DD)",
+							"required": true
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号",
+							"required": true
+						},
+						{
+							"name": "itemName",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "barCode",
+							"type": "String",
+							"description": "产品的国际标准条码（69码）",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

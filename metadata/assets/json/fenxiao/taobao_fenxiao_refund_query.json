@@ -1,0 +1,241 @@
+{
+	"name": "taobao.fenxiao.refund.query",
+	"apiChineseName": "批量查询采购退款",
+	"description": "供应商按查询条件批量查询代销采购退款",
+	"requestParams": [
+		{
+			"name": "start_date",
+			"type": "Date",
+			"description": "代销采购退款单最早修改时间",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "Date",
+			"description": "代销采购退款最迟修改时间。与start_date的最大时间间隔不能超过30天",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码（大于0的整数。无值或小于1的值按默认值1计）"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数（大于0但小于等于50的整数。无值或大于50或小于1的值按默认值50计）"
+		},
+		{
+			"name": "query_seller_refund",
+			"type": "Boolean",
+			"description": "是否查询下游买家的退款信息"
+		},
+		{
+			"name": "trade_types",
+			"type": "Number[]",
+			"description": "渠道code，可批量 老供销渠道：999",
+			"maxListSize": 999
+		},
+		{
+			"name": "user_role_type",
+			"type": "Number",
+			"description": "角色，供应商：2，分销商：1"
+		},
+		{
+			"name": "channel_codes",
+			"type": "Number[]",
+			"description": "代销：1 经销：2 寄售（猫超自营寄售）：5 平台寄售：6",
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "按查询条件查到的记录总数"
+		},
+		{
+			"name": "refund_list",
+			"type": "RefundDetail []",
+			"description": "代销采购退款列表",
+			"subParams": [
+				{
+					"name": "sub_order_id",
+					"type": "Number",
+					"description": "子单id",
+					"required": true
+				},
+				{
+					"name": "is_return_goods",
+					"type": "Boolean",
+					"description": "是否退货",
+					"required": true
+				},
+				{
+					"name": "refund_create_time",
+					"type": "Date",
+					"description": "退款创建时间",
+					"required": true
+				},
+				{
+					"name": "refund_status",
+					"type": "Number",
+					"description": "退款状态\u003cbr/\u003e1：买家已经申请退款，等待卖家同意\u003cbr/\u003e2：卖家已经同意退款，等待买家退货\u003cbr/\u003e3：买家已经退货，等待卖家确认收货\u003cbr/\u003e4：退款关闭\u003cbr/\u003e5：退款成功\u003cbr/\u003e6：卖家拒绝退款\u003cbr/\u003e12：同意退款，待打款\u003cbr/\u003e9：没有申请退款\u003cbr/\u003e10：卖家拒绝确认收货",
+					"required": true
+				},
+				{
+					"name": "refund_fee",
+					"type": "String",
+					"description": "退款的金额",
+					"required": true
+				},
+				{
+					"name": "pay_sup_fee",
+					"type": "String",
+					"description": "支付给供应商的金额",
+					"required": true
+				},
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "退款原因",
+					"required": true
+				},
+				{
+					"name": "refund_desc",
+					"type": "String",
+					"description": "退款说明",
+					"required": true
+				},
+				{
+					"name": "buyer_refund",
+					"type": "BuyerRefund",
+					"description": "下游买家的退款信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "refund_create_time",
+							"type": "Date",
+							"description": "退款创建时间",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "Number",
+							"description": "退款状态",
+							"required": true
+						},
+						{
+							"name": "goods_status_desc",
+							"type": "String",
+							"description": "货物的状态：\n买家已收到货\n买家已退货\n买家未收到货",
+							"required": true
+						},
+						{
+							"name": "need_return_goods",
+							"type": "Boolean",
+							"description": "买家是否退货",
+							"required": true
+						},
+						{
+							"name": "return_fee",
+							"type": "Number",
+							"description": "退还买家的金额",
+							"required": true
+						},
+						{
+							"name": "to_seller_fee",
+							"type": "Number",
+							"description": "支付分销商的金额",
+							"required": true
+						},
+						{
+							"name": "refund_reason",
+							"type": "String",
+							"description": "退款原因",
+							"required": true
+						},
+						{
+							"name": "refund_desc",
+							"type": "String",
+							"description": "退款说明",
+							"required": true
+						},
+						{
+							"name": "refund_id",
+							"type": "Number",
+							"description": "交易退款id",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "Number",
+							"description": "采购单子单id",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "Number",
+							"description": "订单id",
+							"required": true
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "下游买家nick",
+							"required": true
+						},
+						{
+							"name": "modified",
+							"type": "Date",
+							"description": "退款修改时间。格式:yyyy-MM-dd HH:mm:ss",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "supplier_nick",
+					"type": "String",
+					"description": "供应商nick",
+					"required": true
+				},
+				{
+					"name": "distributor_nick",
+					"type": "String",
+					"description": "分销商nick",
+					"required": true
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "退款修改时间。格式:yyyy-MM-dd HH:mm:ss",
+					"required": true
+				},
+				{
+					"name": "purchase_order_id",
+					"type": "Number",
+					"description": "主采购单id",
+					"required": true
+				},
+				{
+					"name": "refund_flow_type",
+					"type": "Number",
+					"description": "退款流程类型：\u003cbr/\u003e4：发货前退款；\u003cbr/\u003e1：发货后退款不退货；\u003cbr/\u003e2：发货后退款退货",
+					"required": true
+				},
+				{
+					"name": "timeout",
+					"type": "Date",
+					"description": "超时时间",
+					"required": true
+				},
+				{
+					"name": "to_type",
+					"type": "Number",
+					"description": "超时类型：\u003cbr/\u003e1：供应商同意退款/同意退货超时；\u003cbr/\u003e2：供应商确认收货超时",
+					"required": true
+				}
+			]
+		}
+	]
+}

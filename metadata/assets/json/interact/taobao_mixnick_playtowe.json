@@ -1,0 +1,20 @@
+{
+	"name": "taobao.mixnick.playtowe",
+	"apiChineseName": "互动mixNick转微淘",
+	"description": "微淘应用的混淆nick转为互动类型混淆nick",
+	"requestParams": [
+		{
+			"name": "mix_mix",
+			"type": "String",
+			"description": "用户的混淆nick",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "we_mixnick",
+			"type": "String",
+			"description": "微淘混淆nick"
+		}
+	]
+}

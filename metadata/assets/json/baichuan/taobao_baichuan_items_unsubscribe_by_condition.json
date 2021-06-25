@@ -1,0 +1,89 @@
+{
+	"name": "taobao.baichuan.items.unsubscribe.by.condition",
+	"apiChineseName": "根据条件删除订阅关系",
+	"description": "根据条件删除订阅关系",
+	"requestParams": [
+		{
+			"name": "condition",
+			"type": "Condition",
+			"description": "删除条件",
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "开始时间"
+				},
+				{
+					"name": "limit",
+					"type": "Number",
+					"description": "删除个数，必填，若超过最大值报错",
+					"required": true
+				},
+				{
+					"name": "start_id",
+					"type": "Number",
+					"description": "对于删除，该字段无效"
+				},
+				{
+					"name": "item_status",
+					"type": "Number",
+					"description": "商品状态"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "结束时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result_list",
+					"type": "ResultMeta[]",
+					"description": "分返回码返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "data",
+							"type": "ResultData",
+							"description": "返回的结果",
+							"required": true,
+							"subParams": [
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "删除订阅关系的个数，由于接口有数量限制，故 根据count==0来判断是否全部删除完毕",
+									"required": true
+								},
+								{
+									"name": "data_list",
+									"type": "Number[]",
+									"description": "具体的商品id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "返回码",
+							"required": true
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "返回码对应文案",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

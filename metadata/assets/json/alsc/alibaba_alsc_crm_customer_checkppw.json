@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.alsc.crm.customer.checkppw",
+	"apiChineseName": "校验支付密码",
+	"description": "校验支付密码",
+	"requestParams": [
+		{
+			"name": "check_request",
+			"type": "CheckPayPasswdReq",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID 、 外部品牌id  2选1"
+				},
+				{
+					"name": "pay_passwd",
+					"type": "String",
+					"description": "密码",
+					"required": true
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客id"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌id"
+				},
+				{
+					"name": "encrypted",
+					"type": "Boolean",
+					"description": "传入的密码是否已经加密"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "密码是否正确",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "错误码简介",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误码描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

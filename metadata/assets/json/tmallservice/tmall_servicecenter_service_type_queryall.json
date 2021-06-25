@@ -1,0 +1,66 @@
+{
+	"name": "tmall.servicecenter.service.type.queryall",
+	"apiChineseName": "服务供应链服务类型",
+	"description": "查询天猫服务类型列表",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "gmtModified",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "ServiceTypeDtOs",
+					"description": "value",
+					"required": true,
+					"subParams": [
+						{
+							"name": "service_type_d_t_os",
+							"type": "ServiceTypeDto[]",
+							"description": "serviceTypeDTOs",
+							"required": true,
+							"subParams": [
+								{
+									"name": "service_name",
+									"type": "String",
+									"description": "serviceName",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

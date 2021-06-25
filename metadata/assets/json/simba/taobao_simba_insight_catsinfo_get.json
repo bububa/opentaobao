@@ -1,0 +1,63 @@
+{
+	"name": "taobao.simba.insight.catsinfo.get",
+	"apiChineseName": "类目信息获取",
+	"description": "获取类目信息，此接口既提供所有顶级类目的查询，又提供给定类目id自身信息和子类目信息的查询，所以可以根据此接口逐层获取所有的类目信息",
+	"requestParams": [
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "表示请求的类型：0表示请求所有顶级类目的信息，这时可以忽略第二个参数，1表示获取给定的类目id的详细信息，2表示获取给定类目id的所有子类目的详细信息",
+			"required": true
+		},
+		{
+			"name": "category_id_list",
+			"type": "String[]",
+			"description": "需要查询的类目id",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "category_info_list",
+			"type": "InsightCategoryInfoDTO []",
+			"description": "类目详细信息",
+			"subParams": [
+				{
+					"name": "cat_id",
+					"type": "Number",
+					"description": "类目Id"
+				},
+				{
+					"name": "cat_name",
+					"type": "String",
+					"description": "类目名称"
+				},
+				{
+					"name": "cat_level",
+					"type": "Number",
+					"description": "类目的级别"
+				},
+				{
+					"name": "parent_cat_id",
+					"type": "Number",
+					"description": "父类目Id"
+				},
+				{
+					"name": "cat_path_id",
+					"type": "String",
+					"description": "表示该类目的所有父级类目，按层级顺序排列，层级越高的在前面，不同的层级之间用空格分隔"
+				},
+				{
+					"name": "cat_path_name",
+					"type": "String",
+					"description": "表示类目的所有父级类目的名称，不同层级之间用\u0002\u0002（ascii码为2的字符）分隔开"
+				},
+				{
+					"name": "last_sync_time",
+					"type": "Date",
+					"description": "表示类目信息上次同步的时间"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,73 @@
+{
+	"name": "alibaba.wdk.marketing.itemdiscount.removeitem",
+	"apiChineseName": "移除报名的商品",
+	"description": "将报名特价活动的商品从特价活动中移除",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "ItemDiscountSku",
+			"description": "商品对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品skuCode",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "活动基本信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "移除商品返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "是否移除成功",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否移除成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

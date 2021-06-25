@@ -1,0 +1,174 @@
+{
+	"name": "alibaba.wdk.trade.refund.create",
+	"apiChineseName": "外部渠道逆向订单创建",
+	"description": "该接口是创建退货订单的服务。当外部渠道发起退款后，调用此接口可以完成五道口底层交易、履约、配送等一系列流程进行退货。",
+	"requestParams": [
+		{
+			"name": "refund_goods_create_request",
+			"type": "RefundGoodsCreateRequest",
+			"description": "退货请求",
+			"subParams": [
+				{
+					"name": "refund_goods_sub_orders",
+					"type": "RefundGoodsSubOrder[]",
+					"description": "退货商品列表",
+					"subParams": [
+						{
+							"name": "sub_biz_order_id",
+							"type": "String",
+							"description": "退货商品子订单号",
+							"required": true
+						},
+						{
+							"name": "goods_amount",
+							"type": "String",
+							"description": "退货件数",
+							"required": true
+						},
+						{
+							"name": "fulfill_amount",
+							"type": "String",
+							"description": "取货件数",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品skucode"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额"
+						},
+						{
+							"name": "fulfill_end_time",
+							"type": "Date",
+							"description": "期待取货结束时间"
+						},
+						{
+							"name": "fulfill_start_time",
+							"type": "Date",
+							"description": "期待取货开始时间"
+						},
+						{
+							"name": "weight_item",
+							"type": "Boolean",
+							"description": "是否称重",
+							"required": true
+						},
+						{
+							"name": "gift",
+							"type": "Boolean",
+							"description": "是否赠品",
+							"required": true
+						},
+						{
+							"name": "left_warehouse",
+							"type": "Boolean",
+							"description": "是否离开货架"
+						},
+						{
+							"name": "refund_id",
+							"type": "String",
+							"description": "退款单id"
+						}
+					]
+				},
+				{
+					"name": "sub_biz_order_id",
+					"type": "String",
+					"description": "子订单号，默认传商品列表的第一个子订单号",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店标识",
+					"required": true
+				},
+				{
+					"name": "refund_fetch_type",
+					"type": "String",
+					"description": "取货类型（\"FETCH_HOME\"：上门；\"ON_SHOP\"：到店；\"NONE\"：无需取）",
+					"required": true
+				},
+				{
+					"name": "main_biz_order_id",
+					"type": "String",
+					"description": "主订单号",
+					"required": true
+				},
+				{
+					"name": "buyer_id",
+					"type": "String",
+					"description": "买家标识",
+					"required": true
+				},
+				{
+					"name": "buyer_name",
+					"type": "String",
+					"description": "买家姓名"
+				},
+				{
+					"name": "buyer_phone",
+					"type": "String",
+					"description": "买家联系方式"
+				},
+				{
+					"name": "buyer_address",
+					"type": "String",
+					"description": "买家地址"
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作人"
+				},
+				{
+					"name": "operator_memo",
+					"type": "String",
+					"description": "小二备注"
+				},
+				{
+					"name": "init_from",
+					"type": "Number",
+					"description": "渠道来源，欧尚外卖默认是19"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RefundGoodsCreateResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "refund_goods_id",
+					"type": "String",
+					"description": "退货单id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否创建成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,290 @@
+{
+	"name": "alibaba.wdk.order.sync",
+	"apiChineseName": "五道口外部订单同步",
+	"description": "外部商户使用自助POS下单订单同步到五道口",
+	"requestParams": [
+		{
+			"name": "receipt_order",
+			"type": "ReceiptOrderDO",
+			"description": "订单",
+			"required": true,
+			"subParams": [
+				{
+					"name": "actual_amt",
+					"type": "Number",
+					"description": "实收金额，单位分",
+					"required": true
+				},
+				{
+					"name": "ask_amt",
+					"type": "Number",
+					"description": "应收金额"
+				},
+				{
+					"name": "change_amt",
+					"type": "Number",
+					"description": "找零金额"
+				},
+				{
+					"name": "discount_amt",
+					"type": "Number",
+					"description": "折扣优惠金额"
+				},
+				{
+					"name": "member_card_num",
+					"type": "String",
+					"description": "会员卡号"
+				},
+				{
+					"name": "member_discount",
+					"type": "String",
+					"description": "会员优惠"
+				},
+				{
+					"name": "op_name",
+					"type": "String",
+					"description": "收银员姓名",
+					"required": true
+				},
+				{
+					"name": "op_num",
+					"type": "String",
+					"description": "收银员工号",
+					"required": true
+				},
+				{
+					"name": "original_pos_no",
+					"type": "String",
+					"description": "原款机号"
+				},
+				{
+					"name": "original_serial_num",
+					"type": "String",
+					"description": "原流水号"
+				},
+				{
+					"name": "original_trd_time",
+					"type": "Date",
+					"description": "原交易时间"
+				},
+				{
+					"name": "overflow_amt",
+					"type": "Number",
+					"description": "损溢金额"
+				},
+				{
+					"name": "pay_channels",
+					"type": "ReceiptPayChannelDo[]",
+					"description": "支付渠道",
+					"subParams": [
+						{
+							"name": "index",
+							"type": "Number",
+							"description": "序号"
+						},
+						{
+							"name": "pay_amount",
+							"type": "Number",
+							"description": "付款金额"
+						},
+						{
+							"name": "pay_type",
+							"type": "String",
+							"description": "付款类型， 现金、支票、银行卡、支付宝、微信",
+							"required": true
+						},
+						{
+							"name": "pos_no",
+							"type": "String",
+							"description": "款机号"
+						},
+						{
+							"name": "serial_num",
+							"type": "String",
+							"description": "流水号",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "门店号"
+						},
+						{
+							"name": "channel_order_id",
+							"type": "String",
+							"description": "外部支付单号"
+						},
+						{
+							"name": "pay_code",
+							"type": "String",
+							"description": "付款码"
+						}
+					]
+				},
+				{
+					"name": "pos_no",
+					"type": "String",
+					"description": "款机号",
+					"required": true
+				},
+				{
+					"name": "serial_num",
+					"type": "String",
+					"description": "流水号",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "门店号",
+					"required": true
+				},
+				{
+					"name": "sub_orders",
+					"type": "ReceiptSubOrderDo[]",
+					"description": "子订单信息",
+					"subParams": [
+						{
+							"name": "deal_amt",
+							"type": "Number",
+							"description": "成交金额",
+							"required": true
+						},
+						{
+							"name": "deal_price",
+							"type": "Number",
+							"description": "成交单价"
+						},
+						{
+							"name": "index",
+							"type": "Number",
+							"description": "序号"
+						},
+						{
+							"name": "item_barcode",
+							"type": "String",
+							"description": "商品条码"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "member_discount",
+							"type": "Number",
+							"description": "会员优惠"
+						},
+						{
+							"name": "original_price",
+							"type": "Number",
+							"description": "商品原售价",
+							"required": true
+						},
+						{
+							"name": "pos_no",
+							"type": "String",
+							"description": "款机号"
+						},
+						{
+							"name": "promotion_discount",
+							"type": "Number",
+							"description": "子订单优惠总金额",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "scan_barcode",
+							"type": "String",
+							"description": "扫描条码"
+						},
+						{
+							"name": "selling_price",
+							"type": "Number",
+							"description": "售价金额"
+						},
+						{
+							"name": "serial_num",
+							"type": "String",
+							"description": "流水号",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "门店号"
+						},
+						{
+							"name": "temporary_discount",
+							"type": "Number",
+							"description": "临时折扣"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "单位"
+						}
+					]
+				},
+				{
+					"name": "trd_time",
+					"type": "Date",
+					"description": "成交时间"
+				},
+				{
+					"name": "trd_type",
+					"type": "Number",
+					"description": "交易类型"
+				},
+				{
+					"name": "order_from",
+					"type": "String",
+					"description": "来源，商家级别，当前取值：RENRENLE / SANJIANG"
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商户码"
+				},
+				{
+					"name": "ali_userid",
+					"type": "String",
+					"description": "阿里用户ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "return_code",
+			"type": "Number",
+			"description": "返回码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "描述"
+		},
+		{
+			"name": "target",
+			"type": "String",
+			"description": "订单号"
+		}
+	]
+}

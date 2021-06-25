@@ -1,0 +1,76 @@
+{
+	"name": "taobao.crm.memberinfo.update",
+	"apiChineseName": "编辑会员资料",
+	"description": "编辑会员的基本资料，接口返回会员信息修改是否成功",
+	"requestParams": [
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "买家昵称",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "用于描述会员的状态，normal表示正常，blacklist表示黑名单(不享受会员折扣).",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "grade",
+			"type": "Number",
+			"description": "会员等级，1：普通客户，2：高级会员，3：高级会员 ，4：至尊vip只有正常会员才给予升级，对于status blacklist的会员升级无效",
+			"maxLength": 32,
+			"maxValue": 6,
+			"minValue": 1
+		},
+		{
+			"name": "province",
+			"type": "String",
+			"description": "北京=1,天津=2,河北省=3,山西省=4,内蒙古自治区=5,辽宁省=6,吉林省=7,黑龙江省=8,上海=9,江苏省=10,浙江省=11,安徽省=12,福建省=13,江西省=14,山东省=15,河南省=16,湖北省=17,湖南省=18, 广东省=19,广西壮族自治区=20,海南省=21,重庆=22,四川省=23,贵州省=24,云南省=25,西藏自治区=26,陕西省=27,甘肃省=28,青海省=29,宁夏回族自治区=30,新疆维吾尔自治区=31,台湾省=32,香港特别行政区=33,澳门特别行政区=34,海外=35，约定36为清除Province设置.请注意:从2014.4.15之后,省市将采用地区标准码,请通过物流API taobao.areas.get接口获取,参考:http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.nOOF9g\u0026path=cid:7-apiId:59.API对于老的省市代码兼容会逐步下线."
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "城市.请注意:从2014.4.15之后,省市将采用地区标准码,请通过物流API taobao.areas.get接口获取,参考:http://api.taobao.com/apidoc/api.htm?spm=0.0.0.0.nOOF9g\u0026path=cid:7-apiId:59.API对于老的省市代码兼容会逐步下线"
+		},
+		{
+			"name": "trade_count",
+			"type": "Number",
+			"description": "交易笔数"
+		},
+		{
+			"name": "trade_amount",
+			"type": "Number",
+			"description": "交易金额，单位：分"
+		},
+		{
+			"name": "close_trade_count",
+			"type": "Number",
+			"description": "交易关闭次数"
+		},
+		{
+			"name": "close_trade_amount",
+			"type": "Number",
+			"description": "交易关闭金额，单位：分"
+		},
+		{
+			"name": "group_ids",
+			"type": "String",
+			"description": "分组的id集合字符串"
+		},
+		{
+			"name": "item_num",
+			"type": "Number",
+			"description": "宝贝件数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "会员信息修改是否成功"
+		}
+	]
+}

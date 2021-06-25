@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.wdk.ums.retrieve.batch.confirm",
+	"apiChineseName": "批量消息确认",
+	"description": "批量消息确认",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "warehouse_code"
+		},
+		{
+			"name": "uuids",
+			"type": "String[]",
+			"description": "warehouse_code",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "list",
+					"type": "Json",
+					"description": "list",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

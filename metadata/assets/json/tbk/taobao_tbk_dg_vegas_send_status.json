@@ -1,0 +1,65 @@
+{
+	"name": "taobao.tbk.dg.vegas.send.status",
+	"apiChineseName": "淘宝客-推广者-超级红包领取状态查询",
+	"description": "淘宝客传入用户标识的信息，查询该用户是否有当前阶段待核销的红包（淘客接入前需签署协议 https://pub.alimama.com/fourth/protocol/common.htm?key=hangye_laxin）",
+	"requestParams": [
+		{
+			"name": "relation_id",
+			"type": "String",
+			"description": "渠道管理id"
+		},
+		{
+			"name": "special_id",
+			"type": "String",
+			"description": "会员运营id"
+		},
+		{
+			"name": "device_value",
+			"type": "String",
+			"description": "加密后的值(ALIPAY_ID除外)，需用MD5加密，32位小写"
+		},
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "入参类型(该模式下返回的结果为模糊匹配结果，和实际情况可能存在误差)： 1. IMEI 2. IDFA 3. OAID 4. MOBILE 5. ALIPAY_ID"
+		},
+		{
+			"name": "thor_biz_code",
+			"type": "String",
+			"description": "thor平台业务码， 1：coupon 超红"
+		},
+		{
+			"name": "pid",
+			"type": "String",
+			"description": "媒体pid"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "返回结果描述信息"
+		},
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "返回结果封装对象",
+			"subParams": [
+				{
+					"name": "result_list",
+					"type": "MapData[]",
+					"description": "返回结果封装对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "is_new_user",
+							"type": "String",
+							"description": "若该用户当前无待核销的红包，则返回1，若当前有待核销的红包，则返回0",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

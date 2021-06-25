@@ -1,0 +1,32 @@
+{
+	"name": "alibaba.scbp.product.preferential.update",
+	"apiChineseName": "设置P4P产品优先推广状态",
+	"description": "设置P4P产品优先推广状态",
+	"requestParams": [
+		{
+			"name": "keyword_id",
+			"type": "Number",
+			"description": "关键词ID",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "Y:设置优推,N:取消优推",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "设置成功"
+		}
+	]
+}

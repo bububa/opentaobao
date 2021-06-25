@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.wdk.item.storesku.update",
+	"apiChineseName": "五道口商品中心门店商品修改",
+	"description": "五道口商品中心门店商品修改",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "盒马门店id",
+			"required": true
+		},
+		{
+			"name": "sku_code",
+			"type": "String",
+			"description": "商品编码",
+			"required": true
+		},
+		{
+			"name": "sale_flag",
+			"type": "Number",
+			"description": "1-可售   0-不可售"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				}
+			]
+		}
+	]
+}

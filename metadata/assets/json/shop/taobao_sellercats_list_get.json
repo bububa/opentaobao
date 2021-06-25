@@ -1,0 +1,44 @@
+{
+	"name": "taobao.sellercats.list.get",
+	"apiChineseName": "获取前台展示的店铺内卖家自定义商品类目",
+	"description": "此API获取当前卖家店铺在淘宝前端被展示的浏览导航类目（面向买家）",
+	"responseParams": [
+		{
+			"name": "seller_cats",
+			"type": "SellerCat []",
+			"description": "卖家自定义类目",
+			"subParams": [
+				{
+					"name": "cid",
+					"type": "Number",
+					"description": "卖家自定义类目编号"
+				},
+				{
+					"name": "parent_cid",
+					"type": "Number",
+					"description": "父类目编号，值等于0：表示此类目为店铺下的一级类目，值不等于0：表示此类目有父类目"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "卖家自定义类目名称"
+				},
+				{
+					"name": "pic_url",
+					"type": "String",
+					"description": "链接图片地址"
+				},
+				{
+					"name": "sort_order",
+					"type": "Number",
+					"description": "该类目在页面上的排序位置"
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "店铺类目类型：可选值：manual_type：手动分类，new_type：新品上价， tree_type：二三级类目树 ，property_type：属性叶子类目树， brand_type：品牌推广"
+				}
+			]
+		}
+	]
+}

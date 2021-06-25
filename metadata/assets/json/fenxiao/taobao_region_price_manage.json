@@ -1,0 +1,57 @@
+{
+	"name": "taobao.region.price.manage",
+	"apiChineseName": "编辑区域价格",
+	"description": "编辑区域价格",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "无sku传0"
+		},
+		{
+			"name": "regional_price_dtos",
+			"type": "RegionalPriceDto[]",
+			"description": "列表",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "金额（分）",
+					"required": true
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "is_full",
+			"type": "Boolean",
+			"description": "true:全量, false:增量"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

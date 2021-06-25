@@ -1,0 +1,20 @@
+{
+	"name": "taobao.qianniu.number.put",
+	"apiChineseName": "ISV上传数据接口",
+	"description": "ISV提供给卖家使用的业务数据，需要通过这个接口上传到千牛数据中心。",
+	"requestParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "考虑到稳定性，建议一次卖家最多为200个。\n标准json格式的数组构成的字符串。每个元素为{user_id:****,field:\"****\",value:\"****\"}分别是用户的userid，数据的名称，以及数据的值。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "是否上传成功。返回的是个json串，分别表示每条记录是否成功。"
+		}
+	]
+}

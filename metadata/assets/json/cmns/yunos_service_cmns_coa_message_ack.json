@@ -1,0 +1,45 @@
+{
+	"name": "yunos.service.cmns.coa.message.ack",
+	"apiChineseName": "消息回执查询",
+	"description": "第三方应用开发者调用此接口查询设备是否收到消息，只能查询此appKey床发的消息",
+	"requestParams": [
+		{
+			"name": "device_token",
+			"type": "String",
+			"description": "设备唯一值deviceToken"
+		},
+		{
+			"name": "imei",
+			"type": "String",
+			"description": "设备imei"
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "设备uuid"
+		},
+		{
+			"name": "mid",
+			"type": "Number",
+			"description": "消息ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "接口调用成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "接口出错提示信息"
+		},
+		{
+			"name": "data",
+			"type": "Number",
+			"description": "接口调用成功返回信息\u003cbr/\u003e0:未到达 1：已到达"
+		}
+	]
+}

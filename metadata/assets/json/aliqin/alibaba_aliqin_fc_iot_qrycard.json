@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.aliqin.fc.iot.qrycard",
+	"apiChineseName": "查询终端信息",
+	"description": "查询终端信息",
+	"requestParams": [
+		{
+			"name": "bill_source",
+			"type": "String",
+			"description": "外部计费来源",
+			"required": true
+		},
+		{
+			"name": "bill_real",
+			"type": "String",
+			"description": "外部计费号",
+			"required": true
+		},
+		{
+			"name": "iccid",
+			"type": "String",
+			"description": "ICCID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "models",
+					"type": "Model[]",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "resource_type",
+							"type": "String",
+							"description": "流量类型(6700001:上网流量)",
+							"required": true
+						},
+						{
+							"name": "flow_resource",
+							"type": "Number",
+							"description": "总流量(KB)",
+							"required": true
+						},
+						{
+							"name": "rest_of_flow",
+							"type": "Number",
+							"description": "剩余流量(KB)",
+							"required": true
+						},
+						{
+							"name": "res_name",
+							"type": "String",
+							"description": "资源名称",
+							"required": true
+						},
+						{
+							"name": "valid_date",
+							"type": "String",
+							"description": "生效时间",
+							"required": true
+						},
+						{
+							"name": "expire_date",
+							"type": "String",
+							"description": "失效时间",
+							"required": true
+						},
+						{
+							"name": "flow_used",
+							"type": "Number",
+							"description": "已使用流量(KB)",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true返回成功，false返回失败",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

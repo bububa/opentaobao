@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.tcls.aelophy.bill.verificate.callback",
+	"apiChineseName": "翱象ERP核销回调",
+	"description": "翱象ERP核销回调",
+	"requestParams": [
+		{
+			"name": "module",
+			"type": "VerificateCallbackDto",
+			"description": "回调对象",
+			"subParams": [
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "核销说明, 核销失败则填写核销失败原因"
+				},
+				{
+					"name": "verificate_time",
+					"type": "String",
+					"description": "核销时间 YYYY-MM-DD HH:MI:SS",
+					"required": true
+				},
+				{
+					"name": "verificate_status",
+					"type": "Number",
+					"description": "核销状态 1=核销完成 2=核销失败",
+					"required": true
+				},
+				{
+					"name": "bill_type",
+					"type": "Number",
+					"description": "核销账单类型  1=正向 / 2=逆向"
+				},
+				{
+					"name": "bill_order_id",
+					"type": "String",
+					"description": "核销账单ID",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "业务经营店ID",
+					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "处理结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "回调是否处理成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误说明",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,70 @@
+{
+	"name": "alibaba.ssc.supplyplatform.service.inventory.query",
+	"apiChineseName": "服务库存查询",
+	"description": "查询服务库存。需要保存服务容量成功后，才能进行查询，参数中的provider信息（provider_id和provider_type）与alibaba.ssc.supplyplatform.servicecapacity.save接口中保持一致。",
+	"requestParams": [
+		{
+			"name": "start_day",
+			"type": "String",
+			"description": "查询开始日期。yyyy-MM-dd格式",
+			"required": true
+		},
+		{
+			"name": "end_day",
+			"type": "String",
+			"description": "查询结束日期。与start间隔不能超过31天。yyyy-MM-dd格式",
+			"required": true
+		},
+		{
+			"name": "provider_type",
+			"type": "String",
+			"description": "服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参",
+			"required": true
+		},
+		{
+			"name": "provider_id",
+			"type": "Number",
+			"description": "服务提供者类型。参考alibaba.ssc.supplyplatform.servicecapacity.save入参",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Json",
+					"description": "json字符串。key是时间片，格式为yyyy-MM-dd或yyyy-MM-dd HH:mm-HH:mm，value是当前库存值",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对外展示的错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

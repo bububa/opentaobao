@@ -1,0 +1,31 @@
+{
+	"name": "taobao.fenxiao.product.sku.delete",
+	"apiChineseName": "产品SKU删除接口",
+	"description": "根据sku properties删除sku数据",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品id",
+			"required": true
+		},
+		{
+			"name": "properties",
+			"type": "String",
+			"description": "sku属性",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "操作结果"
+		},
+		{
+			"name": "created",
+			"type": "Date",
+			"description": "操作时间"
+		}
+	]
+}

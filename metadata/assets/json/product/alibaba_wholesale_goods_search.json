@@ -1,0 +1,174 @@
+{
+	"name": "alibaba.wholesale.goods.search",
+	"apiChineseName": "批发市场产品搜索",
+	"description": "批发市场产品搜索",
+	"requestParams": [
+		{
+			"name": "param_search_goods_option",
+			"type": "SearchGoodsOption",
+			"description": "SearchGoodsOption",
+			"subParams": [
+				{
+					"name": "price_to_cent",
+					"type": "Number",
+					"description": "price_to_cent 最大价格"
+				},
+				{
+					"name": "price_from_cent",
+					"type": "Number",
+					"description": "price_from_cent 最小价格"
+				},
+				{
+					"name": "sort_by",
+					"type": "String",
+					"description": "sort_by 排序方式"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "page_no 当前页面"
+				},
+				{
+					"name": "keyword",
+					"type": "String",
+					"description": "keyword 搜索关键词"
+				},
+				{
+					"name": "category_id",
+					"type": "String",
+					"description": "category_id 搜索类目"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "page_size 每页大小"
+				},
+				{
+					"name": "min_order_from",
+					"type": "Number",
+					"description": "min_order_from 最小起订量区间"
+				},
+				{
+					"name": "min_order_to",
+					"type": "Number",
+					"description": "min_order_to 最小起订量区间"
+				},
+				{
+					"name": "product_refine_tags",
+					"type": "Number[]",
+					"description": "产品筛选tags"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "wholesale_goods_search_result",
+			"type": "WholesaleSearchOpenResult",
+			"description": "在线批发商品搜索结果",
+			"subParams": [
+				{
+					"name": "result_memo",
+					"type": "String",
+					"description": "result_memo 返回结果描述，例如success表示成功"
+				},
+				{
+					"name": "result_code",
+					"type": "Number",
+					"description": "result_code 返回结果码，例如200"
+				},
+				{
+					"name": "result",
+					"type": "GoodsSearchResult",
+					"description": "在线批发产品搜索结果",
+					"subParams": [
+						{
+							"name": "category",
+							"type": "WholesaleCategory",
+							"description": "搜素结果所在的类目信息",
+							"subParams": [
+								{
+									"name": "paths",
+									"type": "Json[]",
+									"description": "类目路径"
+								},
+								{
+									"name": "node_map",
+									"type": "Json",
+									"description": "类目节点map"
+								}
+							]
+						},
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "返回结果数"
+						},
+						{
+							"name": "items",
+							"type": "GoodsSummary[]",
+							"description": "搜索产品列表",
+							"subParams": [
+								{
+									"name": "max_price_cent",
+									"type": "Number",
+									"description": "max_price_cent 产品最高价格"
+								},
+								{
+									"name": "id",
+									"type": "String",
+									"description": "id 产品id"
+								},
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "unit 产品单位"
+								},
+								{
+									"name": "detail_url",
+									"type": "String",
+									"description": "detail_url 产品详情url"
+								},
+								{
+									"name": "supplier_id",
+									"type": "String",
+									"description": "supplier_id 产品对应供应商id"
+								},
+								{
+									"name": "subject",
+									"type": "String",
+									"description": "subject 产品标题"
+								},
+								{
+									"name": "min_price_cent",
+									"type": "Number",
+									"description": "min_price_cent 产品最低价"
+								},
+								{
+									"name": "thumb_url",
+									"type": "String",
+									"description": "thumb_url 产品缩略图"
+								},
+								{
+									"name": "moq",
+									"type": "Number",
+									"description": "moq 产品最小起订量"
+								},
+								{
+									"name": "buy_now_url",
+									"type": "String",
+									"description": "buy_now_url  产品下单链接"
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "currency 产品价格货币单位"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

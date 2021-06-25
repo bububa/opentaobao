@@ -1,0 +1,334 @@
+{
+	"name": "alibaba.wdk.trade.order.balance.bill.query",
+	"apiChineseName": "分页拉取订单数据",
+	"description": "提供接口供外部调用，分页拉取订单数据",
+	"requestParams": [
+		{
+			"name": "order_balance_bill_request",
+			"type": "OrderBalanceBillRequest",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "thedate",
+					"type": "String",
+					"description": "业务日期"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数"
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "storeId"
+				},
+				{
+					"name": "max_id",
+					"type": "Number",
+					"description": "最大的id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "ApiResult",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "OrderBalanceBillResponseDo",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_balance_bill_list",
+							"type": "OrderBalanceBillDo[]",
+							"description": "orderBalanceBillDOList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "parent_total_price",
+									"type": "String",
+									"description": "订单原价",
+									"required": true
+								},
+								{
+									"name": "pay_time",
+									"type": "String",
+									"description": "订单付款时间",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "String",
+									"description": "分账单创建时间",
+									"required": true
+								},
+								{
+									"name": "order_channel",
+									"type": "String",
+									"description": "交易渠道 1：其他 2：app 3：pos",
+									"required": true
+								},
+								{
+									"name": "mord_id",
+									"type": "String",
+									"description": "父订单",
+									"required": true
+								},
+								{
+									"name": "store_name",
+									"type": "String",
+									"description": "门店名字",
+									"required": true
+								},
+								{
+									"name": "store_id",
+									"type": "String",
+									"description": "名店id",
+									"required": true
+								},
+								{
+									"name": "subsidiary_name",
+									"type": "String",
+									"description": "子公司",
+									"required": true
+								},
+								{
+									"name": "subsidiary_code",
+									"type": "String",
+									"description": "子公司code",
+									"required": true
+								},
+								{
+									"name": "merchant_name",
+									"type": "String",
+									"description": "集团",
+									"required": true
+								},
+								{
+									"name": "merchant_code",
+									"type": "String",
+									"description": "集团code",
+									"required": true
+								},
+								{
+									"name": "thedate",
+									"type": "String",
+									"description": "业务日期",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "主键id",
+									"required": true
+								},
+								{
+									"name": "pay_tech_fee",
+									"type": "String",
+									"description": "订单技术服务费",
+									"required": true
+								},
+								{
+									"name": "pay_fee",
+									"type": "String",
+									"description": "用户实付金额，减支付宝红包",
+									"required": true
+								},
+								{
+									"name": "parent_original_price",
+									"type": "String",
+									"description": "订单付款金额",
+									"required": true
+								},
+								{
+									"name": "discount_fee",
+									"type": "String",
+									"description": "总优惠金额",
+									"required": true
+								},
+								{
+									"name": "pay_discount_fee",
+									"type": "String",
+									"description": "支付优惠金额",
+									"required": true
+								},
+								{
+									"name": "discount_fz_fee",
+									"type": "String",
+									"description": "分账优惠金额",
+									"required": true
+								},
+								{
+									"name": "pmt_discount_fee",
+									"type": "String",
+									"description": "订单优惠金额平台补贴商家费用",
+									"required": true
+								},
+								{
+									"name": "parent_discount_fee",
+									"type": "String",
+									"description": "订单优惠金额",
+									"required": true
+								},
+								{
+									"name": "order_from",
+									"type": "String",
+									"description": "渠道来源 ：1 淘点点；2 美团；3 饿了么；4 淘宝TC；5 百度外卖；6 微信 ;7 三江；18 大润发飞牛优鲜；",
+									"required": true
+								},
+								{
+									"name": "pay_channel",
+									"type": "String",
+									"description": "支付方式",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "单据类型",
+									"required": true
+								},
+								{
+									"name": "seller_receive_fee",
+									"type": "String",
+									"description": "商家应收金额",
+									"required": true
+								},
+								{
+									"name": "discount_change_fee",
+									"type": "String",
+									"description": "优惠手续费",
+									"required": true
+								},
+								{
+									"name": "discount_tech_fee",
+									"type": "String",
+									"description": "优惠技术服务费",
+									"required": true
+								},
+								{
+									"name": "discount_seller_fee",
+									"type": "String",
+									"description": "商家承担优惠金额",
+									"required": true
+								},
+								{
+									"name": "discount_platform_fee",
+									"type": "String",
+									"description": "平台承担优惠金额",
+									"required": true
+								},
+								{
+									"name": "fz_fee",
+									"type": "String",
+									"description": "分账金额",
+									"required": true
+								},
+								{
+									"name": "delivery_fee",
+									"type": "String",
+									"description": "配送费",
+									"required": true
+								},
+								{
+									"name": "pay_change_fee",
+									"type": "String",
+									"description": "订单手续费",
+									"required": true
+								},
+								{
+									"name": "parent_post_fee",
+									"type": "String",
+									"description": "原订单运费",
+									"required": true
+								},
+								{
+									"name": "user_pay_amount",
+									"type": "String",
+									"description": "用户应付金额（含运费）",
+									"required": true
+								},
+								{
+									"name": "pay_by_ali_pay",
+									"type": "String",
+									"description": "支付宝收款",
+									"required": true
+								},
+								{
+									"name": "pay_by_other",
+									"type": "String",
+									"description": "非支付宝收款",
+									"required": true
+								},
+								{
+									"name": "income_amount",
+									"type": "String",
+									"description": "收入金额小计",
+									"required": true
+								},
+								{
+									"name": "package_time",
+									"type": "String",
+									"description": "打包时间",
+									"required": true
+								},
+								{
+									"name": "packaged_status",
+									"type": "String",
+									"description": "正向打包状态",
+									"required": true
+								},
+								{
+									"name": "income",
+									"type": "Number",
+									"description": "是否退款计算收入(1:是，0:否) 这是逆向的",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "has_next",
+							"type": "String",
+							"description": "是否有下一页0：没有 1：有",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

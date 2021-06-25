@@ -1,0 +1,71 @@
+{
+	"name": "alibaba.servicecenter.spserviceorder.update",
+	"apiChineseName": "服务供应链服务单更新",
+	"description": "服务供应链服务单更新，服务商通过此接口将商品的sn等信息推送到服务单中",
+	"requestParams": [
+		{
+			"name": "sp_service_order_id",
+			"type": "Number",
+			"description": "服务单id",
+			"required": true
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "新设备sn.当action填写addSn、changeSn时必填"
+		},
+		{
+			"name": "new_sn",
+			"type": "String",
+			"description": "新设备sn.当action填写addSn、changeSn时必填"
+		},
+		{
+			"name": "old_sn",
+			"type": "String",
+			"description": "旧设备sn，当action填写changeSn时必填"
+		},
+		{
+			"name": "gmt_effect",
+			"type": "String",
+			"description": "服务有效期开始时间"
+		},
+		{
+			"name": "gmt_expire",
+			"type": "String",
+			"description": "服务过期时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

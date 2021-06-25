@@ -1,0 +1,130 @@
+{
+	"name": "taobao.baodian.deposit.get.with.sdkversion",
+	"apiChineseName": "查询用户宝点信息（带sdk版本，已迁移）",
+	"description": "获取用户宝点信息（带sdk版本，已迁移）",
+	"requestParams": [
+		{
+			"name": "device_model",
+			"type": "String",
+			"description": "设备型号",
+			"required": true
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "uuid",
+			"required": true
+		},
+		{
+			"name": "sdk_version",
+			"type": "String",
+			"description": "sdk版本",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CoinUserDepositV2",
+			"description": "结构体",
+			"subParams": [
+				{
+					"name": "credit",
+					"type": "Number",
+					"description": "欠款",
+					"required": true
+				},
+				{
+					"name": "credit_limit",
+					"type": "Number",
+					"description": "欠款额度",
+					"required": true
+				},
+				{
+					"name": "credit_period",
+					"type": "Date",
+					"description": "账期",
+					"required": true
+				},
+				{
+					"name": "deposit",
+					"type": "Number",
+					"description": "宝点余额",
+					"required": true
+				},
+				{
+					"name": "device_auth",
+					"type": "Boolean",
+					"description": "设备授权",
+					"required": true
+				},
+				{
+					"name": "enable_pay",
+					"type": "Boolean",
+					"description": "可以付款",
+					"required": true
+				},
+				{
+					"name": "game_point",
+					"type": "Number",
+					"description": "积分",
+					"required": true
+				},
+				{
+					"name": "image_url",
+					"type": "String",
+					"description": "图片地址",
+					"required": true
+				},
+				{
+					"name": "is_expired",
+					"type": "Boolean",
+					"description": "用户是否有逾期宝点贷款",
+					"required": true
+				},
+				{
+					"name": "is_pay_after_play",
+					"type": "Boolean",
+					"description": "是否开通先用后付",
+					"required": true
+				},
+				{
+					"name": "new_user",
+					"type": "Boolean",
+					"description": "是否新用户",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "单位数量(10个宝点)宝点价格，即10个宝点的价格",
+					"required": true
+				},
+				{
+					"name": "user_auth_code",
+					"type": "String",
+					"description": "auth code",
+					"required": true
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "昵称",
+					"required": true
+				},
+				{
+					"name": "user_str_id",
+					"type": "String",
+					"description": "用户 str id",
+					"required": true
+				},
+				{
+					"name": "avatar_url",
+					"type": "String",
+					"description": "头像地址",
+					"required": true
+				}
+			]
+		}
+	]
+}

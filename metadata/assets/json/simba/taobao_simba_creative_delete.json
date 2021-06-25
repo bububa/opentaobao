@@ -1,0 +1,77 @@
+{
+	"name": "taobao.simba.creative.delete",
+	"apiChineseName": "删除创意",
+	"description": "删除一个创意",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "creative_id",
+			"type": "Number",
+			"description": "创意Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "creative",
+			"type": "Creative",
+			"description": "被删除的创意对象",
+			"subParams": [
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "主人昵称"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "推广计划Id"
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "推广组id"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "创意标题，最多20个汉字"
+				},
+				{
+					"name": "img_url",
+					"type": "String",
+					"description": "创意图片地址，必须是推广组对应商品的图片之一"
+				},
+				{
+					"name": "audit_status",
+					"type": "String",
+					"description": "审核状态： audit_wait-待审核；audit_pass-审核通过(上线)；audit_reject-审核拒绝；默认为audit_pass。"
+				},
+				{
+					"name": "audit_desc",
+					"type": "String",
+					"description": "审核拒绝原因描述"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "最后修改时间"
+				},
+				{
+					"name": "creative_id",
+					"type": "Number",
+					"description": "创意id"
+				}
+			]
+		}
+	]
+}

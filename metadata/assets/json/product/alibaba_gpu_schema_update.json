@@ -1,0 +1,32 @@
+{
+	"name": "alibaba.gpu.schema.update",
+	"apiChineseName": "产品更新接口",
+	"description": "产品更新接口",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID",
+			"required": true
+		},
+		{
+			"name": "schema_xml_fields",
+			"type": "String",
+			"description": "更新产品提交的schema数据",
+			"required": true
+		},
+		{
+			"name": "provider_id",
+			"type": "Number",
+			"description": "当前用户所在渠道如0代表天猫，8代表淘宝",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_product_result",
+			"type": "String",
+			"description": "更新产品的结果"
+		}
+	]
+}

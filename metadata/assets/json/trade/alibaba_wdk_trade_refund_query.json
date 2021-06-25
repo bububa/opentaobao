@@ -1,0 +1,223 @@
+{
+	"name": "alibaba.wdk.trade.refund.query",
+	"apiChineseName": "外部渠道查询退货订单详情接口",
+	"description": "该接口提供给外部渠道商家，比如欧尚外卖等查询退货订单详情，里面包含退货进度等信息。",
+	"requestParams": [
+		{
+			"name": "refund_goods_query_request",
+			"type": "RefundGoodsQueryRequest",
+			"description": "查询请求",
+			"subParams": [
+				{
+					"name": "refund_goods_id",
+					"type": "String",
+					"description": "退货单id",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "refund_goods_query_result",
+			"type": "RefundGoodsQueryResult",
+			"description": "查询结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "refund_fetch_type",
+					"type": "String",
+					"description": "取货类型（\"FETCH_HOME\"：上门；\"ON_SHOP\"：到店；\"NONE\"：无需取）",
+					"required": true
+				},
+				{
+					"name": "buyer_id",
+					"type": "String",
+					"description": "买家id",
+					"required": true
+				},
+				{
+					"name": "buyer_name",
+					"type": "String",
+					"description": "买家姓名",
+					"required": true
+				},
+				{
+					"name": "buyer_phone",
+					"type": "String",
+					"description": "买家电话",
+					"required": true
+				},
+				{
+					"name": "buyer_address",
+					"type": "String",
+					"description": "买家地址",
+					"required": true
+				},
+				{
+					"name": "init_from",
+					"type": "Number",
+					"description": "发起退货来源",
+					"required": true
+				},
+				{
+					"name": "init_operator",
+					"type": "String",
+					"description": "发起人",
+					"required": true
+				},
+				{
+					"name": "init_memo",
+					"type": "String",
+					"description": "发起退货备注",
+					"required": true
+				},
+				{
+					"name": "refund_goods_sub_order_detail_list",
+					"type": "RefundGoodsSubOrderDetail[]",
+					"description": "退货子订单详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_biz_order_id",
+							"type": "String",
+							"description": "子订单号",
+							"required": true
+						},
+						{
+							"name": "fulfill_id",
+							"type": "String",
+							"description": "履约单号",
+							"required": true
+						},
+						{
+							"name": "refund_goods_id",
+							"type": "String",
+							"description": "退货单号",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间",
+							"required": true
+						},
+						{
+							"name": "expect_fulfil_start_time",
+							"type": "Date",
+							"description": "期望取货开始时间",
+							"required": true
+						},
+						{
+							"name": "expect_fulfil_end_time",
+							"type": "Date",
+							"description": "期望取货结束时间",
+							"required": true
+						},
+						{
+							"name": "expect_refund_amount",
+							"type": "String",
+							"description": "期望退货件数",
+							"required": true
+						},
+						{
+							"name": "actual_refund_amount",
+							"type": "String",
+							"description": "实际退货件数",
+							"required": true
+						},
+						{
+							"name": "fulfil_refund_amount",
+							"type": "String",
+							"description": "履约取货件数",
+							"required": true
+						},
+						{
+							"name": "agree_refund_amount",
+							"type": "String",
+							"description": "同意退货件数",
+							"required": true
+						},
+						{
+							"name": "refund_speed_type",
+							"type": "Number",
+							"description": "退货类型(1:\"闪退\";2: \"标准\")",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "退货商品skuId",
+							"required": true
+						},
+						{
+							"name": "auction_title",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "weight_item",
+							"type": "Number",
+							"description": "是否称重商品 1：是，0:否",
+							"required": true
+						},
+						{
+							"name": "item_iu",
+							"type": "String",
+							"description": "商品主计价单位",
+							"required": true
+						},
+						{
+							"name": "item_bu",
+							"type": "String",
+							"description": "商品销售单位",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "Number",
+							"description": "Create(10, \"已发起退货\"),SellerAgree(20, \"卖家已同意\"),OperatorAccept(30, \"配送员已接单\"),OperatorReceive(40, \"配送员已取货\"),Finish(50, \"退货结束\");",
+							"required": true
+						},
+						{
+							"name": "finish_type",
+							"type": "Number",
+							"description": "Init(0,\"初始状态\"),NoTakeGoods(1, \"无需取货\"),FailTakeGoods(2, \"取货失败\"),Timeout(3, \"超时关闭\"),EnterDock(4, \"已入站\");",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

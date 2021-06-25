@@ -1,0 +1,26 @@
+{
+	"name": "alibaba.aliqin.flow.wallet.query.charge",
+	"apiChineseName": "查询流量充值状态",
+	"description": "查询流量充值状态",
+	"requestParams": [
+		{
+			"name": "out_recharge_id",
+			"type": "String",
+			"description": "唯一流水号",
+			"required": true
+		},
+		{
+			"name": "channel_id",
+			"type": "String",
+			"description": "渠道id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "charge",
+			"type": "String",
+			"description": "充值状态"
+		}
+	]
+}

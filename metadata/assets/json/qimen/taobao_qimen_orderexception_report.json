@@ -1,0 +1,383 @@
+{
+	"name": "taobao.qimen.orderexception.report",
+	"apiChineseName": "订单异常通知接口",
+	"description": "WMS调用奇门的接口,当WMS接收到ERP的发货指令时，由于种种原因（5.1.5说明了各种异常场景）可能无法完成发货。WMS通过调用此接口，通知ERP具体异常情况",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"subParams": [
+				{
+					"name": "messageId",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "deliveryOrderCode",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "deliveryOrderId",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "orderType",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "logisticsCode",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "expressCode",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "messageType",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "messageDesc",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "createTime",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "orderLines",
+					"type": "OrderLine[]",
+					"description": "奇门仓储字段",
+					"subParams": [
+						{
+							"name": "orderLineNo",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "orderSourceCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "subSourceCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "itemName",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "planQty",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "skuProperty",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "purchasePrice",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "retailPrice",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "actualQty",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "sourceOrderCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "subSourceOrderCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "extCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "actualPrice",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "discountAmount",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "outBizCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "productCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "stockInQty",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "stockOutQty",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "deliveryOrderId",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "qrCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "batchs",
+							"type": "Batch[]",
+							"description": "奇门仓储字段",
+							"subParams": [
+								{
+									"name": "batchCode",
+									"type": "String",
+									"description": "奇门仓储字段"
+								},
+								{
+									"name": "productDate",
+									"type": "String",
+									"description": "奇门仓储字段"
+								},
+								{
+									"name": "expireDate",
+									"type": "String",
+									"description": "奇门仓储字段"
+								},
+								{
+									"name": "produceCode",
+									"type": "String",
+									"description": "奇门仓储字段"
+								},
+								{
+									"name": "inventoryType",
+									"type": "String",
+									"description": "奇门仓储字段"
+								},
+								{
+									"name": "actualQty",
+									"type": "String",
+									"description": "奇门仓储字段"
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "奇门仓储字段"
+								}
+							]
+						},
+						{
+							"name": "payNo",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "taobaoItemCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "discountPrice",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "color",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "size",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "standardPrice",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "referencePrice",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "discount",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "standardAmount",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "settlementAmount",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "locationCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "moveOutLocation",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "moveInLocation",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "exceptionQty",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "subDeliveryOrderId",
+							"type": "String",
+							"description": "奇门仓储字段"
+						}
+					]
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

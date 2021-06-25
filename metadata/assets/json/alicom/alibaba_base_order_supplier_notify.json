@@ -1,0 +1,104 @@
+{
+	"name": "alibaba.base.order.supplier.notify",
+	"apiChineseName": "阿里通信运营商信息回传",
+	"description": "接收阿里通信流量运营商信息回传",
+	"requestParams": [
+		{
+			"name": "param_flow_suppllier_notify_model",
+			"type": "FlowSuppllierNotifyModel",
+			"description": "入参对象",
+			"subParams": [
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "阿里通信业务id，具体询问技术接口人",
+					"required": true
+				},
+				{
+					"name": "ext_info",
+					"description": "扩展信息"
+				},
+				{
+					"name": "notify_type",
+					"type": "String",
+					"description": "用于区分商家通知的内容类型，例如：“0”为套餐激活通知",
+					"required": true
+				},
+				{
+					"name": "offer_invalid_date",
+					"type": "String",
+					"description": "套餐生效时间"
+				},
+				{
+					"name": "offer_valid_date",
+					"type": "String",
+					"description": "套餐失效时间"
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "淘宝内部订单号",
+					"required": true
+				},
+				{
+					"name": "out_order_no",
+					"type": "String",
+					"description": "运营商外部订单号"
+				},
+				{
+					"name": "receive_status",
+					"type": "Boolean",
+					"description": "运营商的收货状态，false：未收到"
+				},
+				{
+					"name": "send_good_param",
+					"type": "String",
+					"description": "iccid和卡的过期时间"
+				},
+				{
+					"name": "iccid",
+					"type": "String",
+					"description": "iccid"
+				},
+				{
+					"name": "user_id",
+					"type": "String",
+					"description": "买家ID，用户id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "desc",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "处理回传信息是否成功",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

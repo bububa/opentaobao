@@ -1,0 +1,101 @@
+{
+	"name": "alibaba.alsc.crm.voucher.send",
+	"apiChineseName": "发送券给指定用户",
+	"description": "发送券给指定用户",
+	"requestParams": [
+		{
+			"name": "param_voucher_send_open_req",
+			"type": "VoucherSendOpenReq",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id"
+				},
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌id"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店id"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人id"
+				},
+				{
+					"name": "voucher_id",
+					"type": "String",
+					"description": "券模板id",
+					"required": true
+				},
+				{
+					"name": "voucher_num",
+					"type": "Number",
+					"description": "发券数量",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "业务成功",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				}
+			]
+		}
+	]
+}

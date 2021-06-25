@@ -1,0 +1,88 @@
+{
+	"name": "cainiao.cboss.workplatform.workorder.task.notify",
+	"apiChineseName": "TOP-SPI工单任务下发接口",
+	"description": "TOP-SPI工单任务下发接口（菜鸟---\u003e商家ISV）",
+	"requestParams": [
+		{
+			"name": "content",
+			"type": "Struct",
+			"description": "content",
+			"required": true,
+			"subParams": [
+				{
+					"name": "features",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "timeout",
+					"type": "String",
+					"description": "任务超时时间"
+				},
+				{
+					"name": "count",
+					"type": "Number",
+					"description": "任务下发次数",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "String",
+					"description": "任务创建时间",
+					"required": true
+				},
+				{
+					"name": "task_status",
+					"type": "Number",
+					"description": "工单任务状态",
+					"required": true
+				},
+				{
+					"name": "task_name",
+					"type": "String",
+					"description": "工单任务名称",
+					"required": true
+				},
+				{
+					"name": "task_id",
+					"type": "String",
+					"description": "工单任务id",
+					"required": true
+				},
+				{
+					"name": "work_order_id",
+					"type": "String",
+					"description": "工单id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Struct",
+			"description": "response",
+			"subParams": [
+				{
+					"name": "res_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "res_error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "res_error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

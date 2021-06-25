@@ -1,0 +1,56 @@
+{
+	"name": "alibaba.icbu.product.schema.render",
+	"apiChineseName": "（新）获取商品信息",
+	"description": "获取ICBU商品发布的字段填写规则和单个商品对应填写数据，适用于单个商品编辑场景，不包括草稿。",
+	"requestParams": [
+		{
+			"name": "param_product_top_publish_request",
+			"type": "ProductTopPublishRequest",
+			"description": "商品规则渲染请求",
+			"subParams": [
+				{
+					"name": "cat_id",
+					"type": "Number",
+					"description": "类目id"
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "返回文案的语种，支持en_US,zh,zh_TW"
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "商品明文id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "String",
+			"description": "商品发布规则和对应填写数据"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息，数组形式的字符串，用;分割，支持中英繁，按照传入的语种参数决定"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回的错误码，数组形式的字符串，用;分割"
+		},
+		{
+			"name": "biz_success",
+			"type": "Boolean",
+			"description": "请求是否成功"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "错误追踪码，请务必打印在日志中，后续排查问题请提交此错误追踪码"
+		}
+	]
+}

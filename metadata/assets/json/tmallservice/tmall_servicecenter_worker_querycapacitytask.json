@@ -1,0 +1,52 @@
+{
+	"name": "tmall.servicecenter.worker.querycapacitytask",
+	"apiChineseName": "查询需求容量",
+	"description": "查询需求容量",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "CapacityTaskQueryDto",
+			"description": "查询对象",
+			"subParams": [
+				{
+					"name": "province_name",
+					"type": "String",
+					"description": "省份"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_base",
+			"type": "ResultBase",
+			"description": "ResultBase",
+			"subParams": [
+				{
+					"name": "value",
+					"type": "Json",
+					"description": "value",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

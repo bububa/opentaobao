@@ -1,0 +1,54 @@
+{
+	"name": "taobao.ailab.aicloud.top.device.deviceid.convert",
+	"apiChineseName": "开放设备id转换内部设备id",
+	"description": "将开放设备id转换为内部设备id",
+	"requestParams": [
+		{
+			"name": "device_open_id",
+			"type": "String",
+			"description": "设备openId",
+			"required": true
+		},
+		{
+			"name": "skill_id",
+			"type": "String",
+			"description": "技能id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "返回成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "描述",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "TopDeviceBaseInfoDto",
+					"description": "结果详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

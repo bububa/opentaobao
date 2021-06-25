@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.wdk.marketing.fullrange.removeitem",
+	"apiChineseName": "全场活动删除购品",
+	"description": "删除换购商品",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "ItemStairSku",
+			"description": "商品sku信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品skucode",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "param1",
+			"type": "CommonActivityParam",
+			"description": "活动信息",
+			"subParams": [
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "报名活动Id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,242 @@
+{
+	"name": "taobao.open.trades.sold.get",
+	"apiChineseName": "查询卖家已卖出的交易数据（商家应用使用）",
+	"description": "搜索当前会话用户作为卖家已卖出的交易数据（只能获取到三个月以内的交易信息）\u003cbr/\u003e\n1. 返回的数据结果是以订单的创建时间倒序排列的。\u003cbr/\u003e\n注意：type字段的说明，如果该字段不传，接口默认只查4种类型订单，非默认查询的订单是不返回。遇到订单查不到的情况的，通常都是这个原因造成。解决办法就是type加上订单类型就可正常返回了。\u003cbr/\u003e\n2.入参fields中传入buyer_nick ，才能返回buyer_open_id",
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "需要返回的字段列表，多个字段用半角逗号分隔，可选值为返回示例中能看到的所有字段。rx_audit_status=0,处方药未审核",
+			"required": true
+		},
+		{
+			"name": "start_created",
+			"type": "Date",
+			"description": "查询三个月内交易创建时间开始。格式:yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "end_created",
+			"type": "Date",
+			"description": "查询交易创建时间结束。格式:yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "交易状态（\u003ca href=\"http://open.taobao.com/doc/detail.htm?id=102856\" target=\"_blank\"\u003e查看可选值\u003c/a\u003e），默认查询所有交易状态的数据，除了默认值外每次只能查询一种状态。"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "交易类型列表，同时查询多种交易类型可用逗号分隔。\u003cspan style=\"color:red;font-weight: bold;\"\u003e默认同时查询guarantee_trade,auto_delivery,ec,cod,step 这5 种的交易类型的数据；查询所有交易类型的数据，需要设置下面全部可选值。\u003c/span\u003e可选值：fixed(一口价)auction(拍卖)guarantee_trade(一口价、拍卖)step(分阶段付款，万人团，阶梯团订单）independent_simple_trade(旺店入门版交易)independent_shop_trade(旺店标准版交易)auto_delivery(自动发货)ec(直冲)cod(货到付款)game_equipment(游戏装备)shopex_trade(ShopEX交易)netcn_trade(万网交易)external_trade(统一外部交易)instant_trade (即时到账)b2c_cod(大商家货到付款)hotel_trade(酒店类型交易)super_market_trade(商超交易)super_market_cod_trade(商超货到付款交易)taohua(淘花网交易类型）waimai(外卖交易类型）o2o_offlinetrade（O2O交易）nopaid（即时到帐/趣味猜交易类型）step (万人团) eticket(电子凭证) tmall_i18n（天猫国际）;nopaid （无付款交易）insurance_plus（保险）finance（基金）注：guarantee_trade是一个组合查询条件，并不是一种交易类型，获取批量或单个订单中不会返回此种类型的订单。pre_auth_type(预授权0元购) lazada（获取lazada订单类型）"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码。取值范围:大于零的整数; 默认值:1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数。取值范围:大于零的整数; 默认值:40;最大值:100"
+		},
+		{
+			"name": "use_has_next",
+			"type": "Boolean",
+			"description": "是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取增量交易，接口调用成功率在原有的基础上有所提升。"
+		},
+		{
+			"name": "buyer_open_id",
+			"type": "String",
+			"description": "买家的openId"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "搜索到的交易信息总数"
+		},
+		{
+			"name": "has_next",
+			"type": "Boolean",
+			"description": "是否存在下一页"
+		},
+		{
+			"name": "trades",
+			"type": "Trade []",
+			"description": "搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息",
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "String",
+					"description": "交易编号 (父订单的交易编号)",
+					"required": true
+				},
+				{
+					"name": "num",
+					"type": "Number",
+					"description": "商品购买数量。取值范围：大于零的整数,对于一个trade对应多个order的时候（一笔主订单，对应多笔子订单），num=0，num是一个跟商品关联的属性，一笔订单对应多比子订单的时候，主订单上的num无意义。",
+					"required": true
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品数字编号",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "交易状态。可选值:    * TRADE_NO_CREATE_PAY(没有创建支付宝交易)    * WAIT_BUYER_PAY(等待买家付款)    * SELLER_CONSIGNED_PART(卖家部分发货)    * WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款)    * WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货)    * TRADE_BUYER_SIGNED(买家已签收,货到付款专用)    * TRADE_FINISHED(交易成功)    * TRADE_CLOSED(付款以后用户退款成功，交易自动关闭)    * TRADE_CLOSED_BY_TAOBAO(付款以前，卖家或买家主动关闭交易)    * PAY_PENDING(国际信用卡支付付款确认中)    * WAIT_PRE_AUTH_CONFIRM(0元购合约中)\t* PAID_FORBID_CONSIGN(拼团中订单或者发货强管控的订单，已付款但禁止发货)",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "交易类型列表，同时查询多种交易类型可用逗号分隔。默认同时查询guarantee_trade, auto_delivery, ec, cod的4种交易类型的数据 可选值 fixed(一口价) auction(拍卖) guarantee_trade(一口价、拍卖) auto_delivery(自动发货) independent_simple_trade(旺店入门版交易) independent_shop_trade(旺店标准版交易) ec(直冲) cod(货到付款) fenxiao(分销) game_equipment(游戏装备) shopex_trade(ShopEX交易) netcn_trade(万网交易) external_trade(统一外部交易)o2o_offlinetrade（O2O交易）step (万人团)nopaid(无付款订单)pre_auth_type(预授权0元购机交易)",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "商品价格。精确到2位小数；单位：元。如：200.07，表示：200元7分",
+					"required": true
+				},
+				{
+					"name": "total_fee",
+					"type": "String",
+					"description": "商品金额（商品价格乘以数量的总金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分",
+					"required": true
+				},
+				{
+					"name": "created",
+					"type": "String",
+					"description": "交易创建时间。格式:yyyy-MM-dd HH:mm:ss",
+					"required": true
+				},
+				{
+					"name": "orders",
+					"type": "Order[]",
+					"description": "订单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "outer_iid",
+							"type": "String",
+							"description": "商家外部编码(可与商家外部系统对接)。外部商家自己定义的商品Item的id，可以通过taobao.items.custom.get获取商品的Item的信息",
+							"required": true
+						},
+						{
+							"name": "oid",
+							"type": "String",
+							"description": "子订单编号",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "订单状态",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "商品价格。精确到2位小数;单位:元。如:200.07，表示:200元7分",
+							"required": true
+						},
+						{
+							"name": "num_iid",
+							"type": "Number",
+							"description": "商品数字ID",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "商品的最小库存单位Sku的id.可以通过taobao.item.sku.get获取详细的Sku信息",
+							"required": true
+						},
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "购买数量。取值范围:大于零的整数",
+							"required": true
+						},
+						{
+							"name": "outer_sku_id",
+							"type": "String",
+							"description": "外部网店自己定义的Sku编号",
+							"required": true
+						},
+						{
+							"name": "total_fee",
+							"type": "String",
+							"description": "应付金额（商品价格 * 商品数量 + 手工调整金额 - 子订单级订单优惠金额）。精确到2位小数;单位:元。如:200.07，表示:200元7分",
+							"required": true
+						},
+						{
+							"name": "pic_path",
+							"type": "String",
+							"description": "商品图片的绝对路径",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品标题",
+							"required": true
+						},
+						{
+							"name": "refund_id",
+							"type": "Number",
+							"description": "最近退款的id",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "String",
+							"description": "退款状态。退款状态。可选值 WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) SELLER_REFUSE_BUYER(卖家拒绝退款) CLOSED(退款关闭) SUCCESS(退款成功)",
+							"required": true
+						},
+						{
+							"name": "payment",
+							"type": "String",
+							"description": "实付金额",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "buyer_open_uid",
+					"type": "String",
+					"description": "买家的openuid。入参fields中传入buyer_nick获取",
+					"required": true
+				},
+				{
+					"name": "step_trade_status",
+					"type": "String",
+					"description": "分阶段付款的订单状态（例如万人团订单等），目前有三返回状态FRONT_NOPAID_FINAL_NOPAID(定金未付尾款未付)，FRONT_PAID_FINAL_NOPAID(定金已付尾款未付)，FRONT_PAID_FINAL_PAID(定金和尾款都付)",
+					"required": true
+				},
+				{
+					"name": "step_paid_fee",
+					"type": "String",
+					"description": "分阶段付款的已付金额（万人团订单已付金额）",
+					"required": true
+				},
+				{
+					"name": "pay_time",
+					"type": "String",
+					"description": "付款时间。格式:yyyy-MM-dd HH:mm:ss。订单的付款时间即为物流订单的创建时间。",
+					"required": true
+				},
+				{
+					"name": "payment",
+					"type": "String",
+					"description": "实付金额",
+					"required": true
+				}
+			]
+		}
+	]
+}

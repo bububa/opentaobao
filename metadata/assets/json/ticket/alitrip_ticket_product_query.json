@@ -1,0 +1,304 @@
+{
+	"name": "alitrip.ticket.product.query",
+	"apiChineseName": "【门票API2.0】门票商品查询接口",
+	"description": "门票商品查询接口：返回商家上传的门票商品信息",
+	"requestParams": [
+		{
+			"name": "out_product_id",
+			"type": "String",
+			"description": "商户自定义收费项目编码。与ali_product_id，item_id 三者至少填写一个"
+		},
+		{
+			"name": "ali_product_id",
+			"type": "Number",
+			"description": "阿里标准收费项目id。与out_product_id，item_id 三者至少填写一个"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID。与out_product_id，ali_product_id三者至少填写一个"
+		},
+		{
+			"name": "page_source",
+			"type": "String",
+			"description": "代表业务来源，gongxiao代表供销平台业务"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "first_result",
+			"type": "TopTicketItemFullinfoResult",
+			"description": "门票商品详情",
+			"subParams": [
+				{
+					"name": "ali_scenic_id",
+					"type": "Number",
+					"description": "阿里旅行提供的景点编码",
+					"required": true
+				},
+				{
+					"name": "ali_scenic_ids",
+					"type": "String",
+					"description": "联票的场景，则该收费项目可能关联多个景点，以英文逗号分隔",
+					"required": true
+				},
+				{
+					"name": "out_scenic_id",
+					"type": "String",
+					"description": "商户系统中景点编码",
+					"required": true
+				},
+				{
+					"name": "ali_product_id",
+					"type": "Number",
+					"description": "阿里旅行提供的收费项目编码",
+					"required": true
+				},
+				{
+					"name": "ali_product_name",
+					"type": "String",
+					"description": "阿里旅行收费项目名称",
+					"required": true
+				},
+				{
+					"name": "out_product_id",
+					"type": "String",
+					"description": "商户自定义收费项目编码",
+					"required": true
+				},
+				{
+					"name": "out_product_name",
+					"type": "String",
+					"description": "商户收费项目名称",
+					"required": true
+				},
+				{
+					"name": "inventory_type",
+					"type": "Number",
+					"description": "门票商品 库存类型。1、每日库存， 2、区间总库存",
+					"required": true
+				},
+				{
+					"name": "need_enter_date",
+					"type": "Number",
+					"description": "是否需要买家指定入园日期。1、需要，2-不需要",
+					"required": true
+				},
+				{
+					"name": "expire_date",
+					"type": "String",
+					"description": "门票有效期：指定入园日期后 多少天内有效。当为数字时，表示多少天内有效；当为日期时，表示到某日期有效，日期格式：yyyy-MM-dd",
+					"required": true
+				},
+				{
+					"name": "reserve_limit_type",
+					"type": "Number",
+					"description": "门票 预定时间限制。1、表示无限制 购买后可立即入园，2、有限制，此时预定时间限制规则必填。",
+					"required": true
+				},
+				{
+					"name": "reserve_limit_rule",
+					"type": "String",
+					"description": "门票 预定时间限制规则。格式：1_18_00_3，含义：必须提前1天拍下，且在18点00分前支付成功，订单才生效。当为提前0天时（即当日票），最后一个数字才有用，指当日票需要在预定3小时后入园。",
+					"required": true
+				},
+				{
+					"name": "code_sending_info",
+					"type": "CodeSendingInfo",
+					"description": "门票商品发码方式",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code_mode",
+							"type": "Number",
+							"description": "发码方式。1、电子票自动发码 需设置电子凭证信息，2、电子票手工发码，3、实体票",
+							"required": true
+						},
+						{
+							"name": "elec_info",
+							"type": "ItemEleCertInfo",
+							"description": "电子凭证信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "expiry_date_type",
+									"type": "Number",
+									"description": "有效期 过期类型",
+									"required": true
+								},
+								{
+									"name": "expiry_date_start",
+									"type": "Date",
+									"description": "电子凭证 有效期 开始时间",
+									"required": true
+								},
+								{
+									"name": "expiry_date_end",
+									"type": "Date",
+									"description": "电子凭证 有效期 结束时间",
+									"required": true
+								},
+								{
+									"name": "expiry_days",
+									"type": "Number",
+									"description": "电子凭证 有效期 天数",
+									"required": true
+								},
+								{
+									"name": "package_id",
+									"type": "Number",
+									"description": "核销门店库id",
+									"required": true
+								},
+								{
+									"name": "auto_refund_rate",
+									"type": "Number",
+									"description": "售中自动退款比例，0~100",
+									"required": true
+								},
+								{
+									"name": "expired_refund_rate",
+									"type": "Number",
+									"description": "过期自动退款比例，0~100",
+									"required": true
+								},
+								{
+									"name": "shop_tel",
+									"type": "String",
+									"description": "门票商品电子凭证信息必填，店铺联系方式",
+									"required": true
+								},
+								{
+									"name": "merchant_name",
+									"type": "String",
+									"description": "核销服务提供商",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "has_email",
+							"type": "Boolean",
+							"description": "是否需要买家邮箱",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品标题",
+					"required": true
+				},
+				{
+					"name": "pic_urls",
+					"type": "String[]",
+					"description": "商品主图",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "商品详情描述",
+					"required": true
+				},
+				{
+					"name": "wap_desc",
+					"type": "String",
+					"description": "手机描述",
+					"required": true
+				},
+				{
+					"name": "item_status",
+					"type": "Number",
+					"description": "商品状态 0-下架，1-上架",
+					"required": true
+				},
+				{
+					"name": "ticket_types",
+					"type": "TicketSimpleSkuParam[]",
+					"description": "门票商品下 各个票种的sku信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ticket_type",
+							"type": "String",
+							"description": "门票 票种类型",
+							"required": true
+						},
+						{
+							"name": "price_rules",
+							"type": "PriceRule[]",
+							"description": "该票种下使用的价格规则",
+							"required": true,
+							"subParams": [
+								{
+									"name": "out_rule_id",
+									"type": "String",
+									"description": "商户票种规则id",
+									"required": true
+								},
+								{
+									"name": "out_sku_id",
+									"type": "String",
+									"description": "sku的商家编码（用于区分在 不同票种下使用同一outRuleId的情况）",
+									"required": true
+								},
+								{
+									"name": "date_inventorys",
+									"type": "DateInventory[]",
+									"description": "每日价格库存",
+									"required": true,
+									"subParams": [
+										{
+											"name": "date",
+											"type": "Date",
+											"description": "日期",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "价格，精确到分",
+											"required": true
+										},
+										{
+											"name": "stock",
+											"type": "Number",
+											"description": "库存",
+											"required": true
+										},
+										{
+											"name": "out_sku_date_id",
+											"type": "String",
+											"description": "日期级别自定义商家编码，为该sku下每一天都设置一个自定义商家编码。如果outSkuDateId为空，则该天的商家自定义编码将以outSkuId为准",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "ticket_season",
+							"type": "String",
+							"description": "门票场次（场次门票专用）",
+							"required": true
+						},
+						{
+							"name": "ticket_area",
+							"type": "String",
+							"description": "门票区域（场次门票专用）",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,77 @@
+{
+	"name": "taobao.wlb.import.threepl.offline.consign",
+	"apiChineseName": "3PL直邮线下发货",
+	"description": "菜鸟认证直邮线下发货",
+	"requestParams": [
+		{
+			"name": "trade_id",
+			"type": "Number",
+			"description": "交易单号"
+		},
+		{
+			"name": "res_id",
+			"type": "Number",
+			"description": "资源id"
+		},
+		{
+			"name": "res_code",
+			"type": "String",
+			"description": "资源code"
+		},
+		{
+			"name": "waybill_no",
+			"type": "String",
+			"description": "运单号"
+		},
+		{
+			"name": "from_id",
+			"type": "Number",
+			"description": "发件人地址库id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "lg_order_code",
+					"type": "String",
+					"description": "发货完成后的物流单号",
+					"required": true
+				},
+				{
+					"name": "sub_error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误code",
+					"required": true
+				},
+				{
+					"name": "sub_error_code",
+					"type": "String",
+					"description": "错误code",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

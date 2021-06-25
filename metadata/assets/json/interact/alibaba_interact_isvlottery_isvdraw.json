@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.isvlottery.isvdraw",
+	"apiChineseName": "天猫奖池鉴权接口",
+	"description": "鉴权接口，为tida.isvdraw接口鉴权",
+	"responseParams": [
+		{
+			"name": "stub",
+			"type": "String",
+			"description": "无用参数"
+		}
+	]
+}

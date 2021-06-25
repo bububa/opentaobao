@@ -1,0 +1,39 @@
+{
+	"name": "alibaba.wdk.syncedorder.query",
+	"apiChineseName": "五道口查询同步订单",
+	"description": "外部商户查询同步到五道口的订单",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "门店ID"
+		},
+		{
+			"name": "serial_num",
+			"type": "String",
+			"description": "序列号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "return_code",
+			"type": "Number",
+			"description": "返回码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "描述"
+		},
+		{
+			"name": "biz_order_id",
+			"type": "String",
+			"description": "订单号"
+		}
+	]
+}

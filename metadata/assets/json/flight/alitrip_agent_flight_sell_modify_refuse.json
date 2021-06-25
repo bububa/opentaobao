@@ -1,0 +1,49 @@
+{
+	"name": "alitrip.agent.flight.sell.modify.refuse",
+	"apiChineseName": "销售改签拒绝",
+	"description": "销售改签拒绝",
+	"requestParams": [
+		{
+			"name": "apply_id",
+			"type": "String",
+			"description": "申请单号"
+		},
+		{
+			"name": "domestic_intl",
+			"type": "Number",
+			"description": "国际国内标识"
+		},
+		{
+			"name": "refuse_reason",
+			"type": "String",
+			"description": "拒绝原因"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

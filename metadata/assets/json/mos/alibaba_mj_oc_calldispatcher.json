@@ -1,0 +1,249 @@
+{
+	"name": "alibaba.mj.oc.calldispatcher",
+	"apiChineseName": "呼叫运力",
+	"description": "定时达呼叫运力接口",
+	"requestParams": [
+		{
+			"name": "call_dispatcher_d_t_o",
+			"type": "CallDispatcherDto",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "code_info_list",
+					"type": "CodeInfoDto[]",
+					"description": "包裹信息",
+					"subParams": [
+						{
+							"name": "goods_list",
+							"type": "CodeGoodsDto[]",
+							"description": "商品信息",
+							"subParams": [
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "数量"
+								},
+								{
+									"name": "goods_id",
+									"type": "Number",
+									"description": "id"
+								},
+								{
+									"name": "sub_no",
+									"type": "String",
+									"description": "zi单号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "package_code",
+							"type": "String",
+							"description": "包裹信息",
+							"required": true
+						},
+						{
+							"name": "send_info",
+							"type": "DeliveryCustomDto",
+							"description": "寄件信息",
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名"
+								},
+								{
+									"name": "avatar_url",
+									"type": "String",
+									"description": "头像"
+								},
+								{
+									"name": "mobile_phone",
+									"type": "String",
+									"description": "电话"
+								},
+								{
+									"name": "telphone",
+									"type": "String",
+									"description": "电话"
+								},
+								{
+									"name": "address_info",
+									"type": "DeliveryAddressDto",
+									"description": "详细信息",
+									"subParams": [
+										{
+											"name": "province",
+											"type": "String",
+											"description": "省"
+										},
+										{
+											"name": "city",
+											"type": "String",
+											"description": "市"
+										},
+										{
+											"name": "district",
+											"type": "String",
+											"description": "区"
+										},
+										{
+											"name": "town",
+											"type": "String",
+											"description": "镇"
+										},
+										{
+											"name": "division_id",
+											"type": "Number",
+											"description": "编码"
+										},
+										{
+											"name": "detail_address",
+											"type": "String",
+											"description": "详细信息"
+										},
+										{
+											"name": "zip_code",
+											"type": "String",
+											"description": "邮编"
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "parent_no",
+					"type": "String",
+					"description": "主单号",
+					"required": true
+				},
+				{
+					"name": "receive_info",
+					"type": "DeliveryCustomDto",
+					"description": "收货信息",
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称"
+						},
+						{
+							"name": "avatar_url",
+							"type": "String",
+							"description": "头像"
+						},
+						{
+							"name": "mobile_phone",
+							"type": "String",
+							"description": "电话"
+						},
+						{
+							"name": "telphone",
+							"type": "String",
+							"description": "电话"
+						},
+						{
+							"name": "address_info",
+							"type": "DeliveryAddressDto",
+							"description": "地址",
+							"subParams": [
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "市"
+								},
+								{
+									"name": "district",
+									"type": "String",
+									"description": "区"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "镇"
+								},
+								{
+									"name": "division_id",
+									"type": "Number",
+									"description": "区编码"
+								},
+								{
+									"name": "detail_address",
+									"type": "String",
+									"description": "详细地址"
+								},
+								{
+									"name": "zip_code",
+									"type": "String",
+									"description": "邮编"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDO",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "CallDispatcherResponse",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "parent_no",
+							"type": "String",
+							"description": "parentNo",
+							"required": true
+						},
+						{
+							"name": "resp_list",
+							"type": "CallDispatcherRespDo[]",
+							"description": "respList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "short_id",
+									"type": "String",
+									"description": "shortId",
+									"required": true
+								},
+								{
+									"name": "got_code",
+									"type": "String",
+									"description": "gotCode",
+									"required": true
+								},
+								{
+									"name": "package_code",
+									"type": "String",
+									"description": "packageCode",
+									"required": true
+								},
+								{
+									"name": "fulfill_plan_id",
+									"type": "Number",
+									"description": "fulfillPlanId",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

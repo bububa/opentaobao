@@ -1,0 +1,21 @@
+package xiami
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/xiami"
+)
+
+/* 
+排行榜歌曲获取 
+alibaba.xiami.api.rank.songs.get
+
+获取歌曲排行榜
+*/
+func AlibabaXiamiApiRankSongsGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiRankSongsGetRequest, session string) (*xiami.AlibabaXiamiApiRankSongsGetResponse, error) {
+    var resp xiami.AlibabaXiamiApiRankSongsGetAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

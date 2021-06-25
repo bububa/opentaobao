@@ -1,0 +1,19 @@
+{
+	"name": "taobao.ump.mbbs.get",
+	"apiChineseName": "获取营销积木块列表",
+	"description": "获取营销积木块列表，可以根据类型获取，也可以将该字段设为空，获取所有的",
+	"requestParams": [
+		{
+			"name": "type",
+			"type": "String",
+			"description": "积木块类型。如果该字段为空表示查出所有类型的\u003cbr/\u003e现在有且仅有如下几种：resource,condition,action,target"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "mbbs",
+			"type": "String []",
+			"description": "营销积木块内容列表，内容为json格式的，可以通过ump sdk里面的MBB.fromJson来处理"
+		}
+	]
+}

@@ -1,0 +1,65 @@
+{
+	"name": "tmall.servicecenter.workcard.complete",
+	"apiChineseName": "工单完结",
+	"description": "工单完结",
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		},
+		{
+			"name": "complete_count",
+			"type": "Number",
+			"description": "完结次数"
+		},
+		{
+			"name": "ext_json",
+			"type": "String",
+			"description": "扩展信息"
+		},
+		{
+			"name": "sequence",
+			"type": "Number",
+			"description": "工单完结号"
+		},
+		{
+			"name": "latitude",
+			"type": "String",
+			"description": "核销地纬度"
+		},
+		{
+			"name": "longitude",
+			"type": "String",
+			"description": "核销地经度"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "响应结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

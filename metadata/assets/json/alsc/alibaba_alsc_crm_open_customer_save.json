@@ -1,0 +1,118 @@
+{
+	"name": "alibaba.alsc.crm.open.customer.save",
+	"apiChineseName": "保存和更新顾客",
+	"description": "用来保存顾客，如果已经存在的话，则更新顾客",
+	"requestParams": [
+		{
+			"name": "param_customer_save_open_req",
+			"type": "CustomerSaveOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "birthday",
+					"type": "Date",
+					"description": "生日"
+				},
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "saas品牌id",
+					"required": true
+				},
+				{
+					"name": "channel",
+					"type": "String",
+					"description": "渠道  crm_back(1, \"CRM后台\"),  pos(2, \"POS\"),  mobile_shop(3, \"个人中心\"),  wechat(4, \"微信\"),  alipay(5, \"支付宝\"),所有pos端传2",
+					"required": true
+				},
+				{
+					"name": "gender",
+					"type": "Number",
+					"description": "性别 0女 1男,2其他"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部id"
+				},
+				{
+					"name": "outer_type",
+					"type": "String",
+					"description": "外部类型:  wechat：微信openId  alipay：支付宝"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求幂等id",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "saas门店id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "结果,顾客id",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

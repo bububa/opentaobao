@@ -1,0 +1,21 @@
+package wdk
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/wdk"
+)
+
+/* 
+同城令牌打印接口 
+alibaba.ifp.fulfill.warehouse.token.query
+
+用于仓内作业打印包裹信息
+*/
+func AlibabaIfpFulfillWarehouseTokenQuery(clt *core.SDKClient, req *wdk.AlibabaIfpFulfillWarehouseTokenQueryRequest, session string) (*wdk.AlibabaIfpFulfillWarehouseTokenQueryResponse, error) {
+    var resp wdk.AlibabaIfpFulfillWarehouseTokenQueryAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

@@ -1,0 +1,109 @@
+{
+	"name": "taobao.rdc.aligenius.identification.case.update",
+	"apiChineseName": "鉴定工单信息同步",
+	"description": "同步商家鉴定工单信息",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "SyncIdentifyRefundCaseDto",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "detail_order_id",
+					"type": "Number",
+					"description": "子订单ID",
+					"required": true
+				},
+				{
+					"name": "occur_time",
+					"type": "Number",
+					"description": "数据发生时间绝对秒数，如鉴定工单创建时间、鉴定工单完结时间",
+					"required": true
+				},
+				{
+					"name": "operate_type",
+					"type": "Number",
+					"description": "工单操作类型，1：开启，2：完结",
+					"required": true
+				},
+				{
+					"name": "operate_tips",
+					"type": "String",
+					"description": "鉴定工单操作备注",
+					"required": true
+				},
+				{
+					"name": "outer_case_id",
+					"type": "String",
+					"description": "鉴定工单ID",
+					"required": true
+				},
+				{
+					"name": "refund_id",
+					"type": "Number",
+					"description": "退款ID",
+					"required": true
+				},
+				{
+					"name": "ext_attrs",
+					"type": "String",
+					"description": "扩展属性，json格式"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "Resultdata",
+					"description": "resultData",
+					"required": true,
+					"subParams": [
+						{
+							"name": "result_tips",
+							"type": "String",
+							"description": "数据消费结果提示信息",
+							"required": true
+						},
+						{
+							"name": "result_code",
+							"type": "String",
+							"description": "CONSUME_FINISH_SUCCESS",
+							"required": true
+						},
+						{
+							"name": "consume_status",
+							"type": "String",
+							"description": "数据消费状态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

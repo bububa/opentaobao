@@ -1,0 +1,54 @@
+{
+	"name": "alibaba.wdk.channel.order.usercancel",
+	"apiChineseName": "用户发起售中取消",
+	"description": "用户发起售中取消",
+	"requestParams": [
+		{
+			"name": "user_cancel_info",
+			"type": "OrderUserCancelInfo",
+			"description": "取消信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "盒马主单号",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店Id",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店Id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

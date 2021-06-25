@@ -1,0 +1,130 @@
+{
+	"name": "alibaba.omni.saas.order.create",
+	"apiChineseName": "订单创建接口",
+	"description": "服务商利用现有的saas系统和阿里完成交易系统的对接",
+	"requestParams": [
+		{
+			"name": "goods_details",
+			"type": "GoodsDetail[]",
+			"description": "商品列表",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "goods_id",
+					"type": "String",
+					"description": "商品标识",
+					"required": true
+				},
+				{
+					"name": "price",
+					"type": "String",
+					"description": "商品单价，人民币：分",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "String",
+					"description": "商品数量",
+					"required": true
+				},
+				{
+					"name": "id_type",
+					"type": "String",
+					"description": "商品ID类型。CUSTOM：外部编码；ITEM_SKU：淘系商品itemId_skuId组合形式。无SKU则为itemId_0",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "buyer_id",
+			"type": "String",
+			"description": "买家标识，淘系用户或用户手机号。当支付渠道为支付宝时，此字段为淘宝会员码或支付宝付款码。(当前仅支持淘系用户，手机号下单稍后开放)"
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "门店ID",
+			"required": true
+		},
+		{
+			"name": "device",
+			"type": "String",
+			"description": "收银设备类型"
+		},
+		{
+			"name": "device_no",
+			"type": "String",
+			"description": "收银设备号"
+		},
+		{
+			"name": "operator_id",
+			"type": "String",
+			"description": "收银员标识"
+		},
+		{
+			"name": "buyer_id_type",
+			"type": "String",
+			"description": "ALIPAY：支付宝用户；TAOBAO：淘宝会员码；MOBILE：手机号",
+			"required": true
+		},
+		{
+			"name": "pay_channel",
+			"type": "String",
+			"description": "ALIPAY：支付宝付款；BANK_CARD：刷卡",
+			"required": true
+		},
+		{
+			"name": "coupon_infos",
+			"type": "CouponInfo[]",
+			"description": "商家自有优惠",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "优惠名称"
+				},
+				{
+					"name": "discount",
+					"type": "Number",
+					"description": "优惠金额，单位人民币：分"
+				},
+				{
+					"name": "option_id",
+					"type": "String",
+					"description": "优惠标识，编号"
+				}
+			]
+		},
+		{
+			"name": "store_id_type",
+			"type": "String",
+			"description": "PLACE：淘宝商户中心门店ID；CUSTOM：商户自有门店编码，需要维护到淘宝商户中心",
+			"required": true
+		},
+		{
+			"name": "request_no",
+			"type": "String",
+			"description": "请求号，用于标识一次请求",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trade_no",
+			"type": "Number",
+			"description": "tradeNo"
+		},
+		{
+			"name": "total_amount",
+			"type": "Number",
+			"description": "totalAmount"
+		},
+		{
+			"name": "actual_pay_fee",
+			"type": "Number",
+			"description": "actualPayFee"
+		}
+	]
+}

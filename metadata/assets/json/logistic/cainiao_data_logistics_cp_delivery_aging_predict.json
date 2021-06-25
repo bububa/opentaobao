@@ -1,0 +1,82 @@
+{
+	"name": "cainiao.data.logistics.cp.delivery.aging.predict",
+	"apiChineseName": "CP配送物流时效预测",
+	"description": "时效和服务预期是商家发货时比较关注的信息，也是选择快递公司的一个重要参考（除去长期合作合同因素）。所以，在商家发货时给商家提供线路时效预估能帮助商家选择更好的快递公司，且对消费者来说也能整体提升体验。\n \n日常时效是数值字符串\n大促时效是数值区间字符串\n方式1:\n输入：发货省、市、区、详细地址，收货省、市、区、街道、详细地址，快递公司ID\n输出：预估时效（小时数）",
+	"requestParams": [
+		{
+			"name": "send_city_name",
+			"type": "String",
+			"description": "发货城市",
+			"required": true
+		},
+		{
+			"name": "send_county_name",
+			"type": "String",
+			"description": "发货区",
+			"required": true
+		},
+		{
+			"name": "send_addr",
+			"type": "String",
+			"description": "自己输入的详细发货地址",
+			"required": true
+		},
+		{
+			"name": "send_prov_name",
+			"type": "String",
+			"description": "发货省",
+			"required": true
+		},
+		{
+			"name": "rec_city_name",
+			"type": "String",
+			"description": "收货城市",
+			"required": true
+		},
+		{
+			"name": "rec_addr",
+			"type": "String",
+			"description": "自己输入的详细收货地址",
+			"required": true
+		},
+		{
+			"name": "rec_county_name",
+			"type": "String",
+			"description": "收货区",
+			"required": true
+		},
+		{
+			"name": "rec_prov_name",
+			"type": "String",
+			"description": "收货省",
+			"required": true
+		},
+		{
+			"name": "rec_town_name",
+			"type": "String",
+			"description": "第四级，一般是收货街道",
+			"required": true
+		},
+		{
+			"name": "cp_id",
+			"type": "String",
+			"description": "物流公司id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "DeliveryTimingDto",
+			"description": "返回数据值",
+			"subParams": [
+				{
+					"name": "delivery_period",
+					"type": "String",
+					"description": "预估时效，这部分ISV直接展示，不要做改动，ISP会变文案和时效展示",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,54 @@
+{
+	"name": "alibaba.aliqin.axb.vendor.exception.no.sync",
+	"apiChineseName": "中心化供应商异常号码状态同步接口",
+	"description": "用于中心化供应商同步异常号码",
+	"requestParams": [
+		{
+			"name": "secret_no",
+			"type": "String",
+			"description": "异常的中间号码"
+		},
+		{
+			"name": "exception_msg",
+			"type": "String",
+			"description": "异常的原因"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "0-异常状态 1-可恢复正常使用"
+		},
+		{
+			"name": "vendor_key",
+			"type": "String",
+			"description": "供应商KEY"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Response",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息,OK代表受理成功",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "module",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码,OK代表受理成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

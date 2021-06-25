@@ -1,0 +1,52 @@
+{
+	"name": "alipay.baoxian.claim.returngoodsstatus.update",
+	"apiChineseName": "更新理赔单退货货物状态",
+	"description": "更新理赔单退货货物状态",
+	"requestParams": [
+		{
+			"name": "claim_no",
+			"type": "String",
+			"description": "理赔单号",
+			"required": true
+		},
+		{
+			"name": "goods_status",
+			"type": "String",
+			"description": "退货货物状态",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MtopResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "isSuccess",
+					"required": true
+				}
+			]
+		}
+	]
+}

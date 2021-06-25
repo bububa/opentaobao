@@ -1,0 +1,71 @@
+{
+	"name": "cainiao.guoguo.cp.nborderfrontr.updateuser",
+	"apiChineseName": "小件员信息变更",
+	"description": "小件员信息变更",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "姓名"
+		},
+		{
+			"name": "work_station_name",
+			"type": "String",
+			"description": "网点站点信息"
+		},
+		{
+			"name": "cp_user_id",
+			"type": "String",
+			"description": "小件员员工编号",
+			"required": true
+		},
+		{
+			"name": "alipay_account",
+			"type": "String",
+			"description": "支付宝账号"
+		},
+		{
+			"name": "city_name",
+			"type": "String",
+			"description": "城市"
+		},
+		{
+			"name": "city_code",
+			"type": "String",
+			"description": "城市行政区域编码"
+		},
+		{
+			"name": "work_station_code",
+			"type": "String",
+			"description": "网点站点编码"
+		},
+		{
+			"name": "cp_code",
+			"type": "String",
+			"description": "小件员所在公司编号",
+			"required": true
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "手机号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "status_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

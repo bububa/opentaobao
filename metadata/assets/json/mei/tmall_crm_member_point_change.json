@@ -1,0 +1,40 @@
+{
+	"name": "tmall.crm.member.point.change",
+	"apiChineseName": "会员积分变更",
+	"description": "品牌CRM项目中，会员积分变更接口。",
+	"requestParams": [
+		{
+			"name": "point",
+			"type": "Number",
+			"description": "更改积分数值"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "minus:扣减;add:累加"
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务代码"
+		},
+		{
+			"name": "biz_detail",
+			"type": "String",
+			"description": "业务描述"
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "用户昵称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		}
+	]
+}

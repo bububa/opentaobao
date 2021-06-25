@@ -1,0 +1,35 @@
+{
+	"name": "alibaba.aliqin.flow.alipay.isbindingtbaccount",
+	"apiChineseName": "判断支付宝用户是否绑定淘宝账号",
+	"description": "判断支付宝用户是否绑定淘宝账号",
+	"requestParams": [
+		{
+			"name": "alipay_id",
+			"type": "String",
+			"description": "支付宝ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error",
+			"type": "Boolean",
+			"description": "error"
+		},
+		{
+			"name": "value",
+			"type": "String",
+			"description": "TRUE代表绑定，FALSE代表未绑定"
+		},
+		{
+			"name": "alicom_flow_error_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "errorMsg"
+		}
+	]
+}

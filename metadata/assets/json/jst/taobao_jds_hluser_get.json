@@ -1,0 +1,24 @@
+{
+	"name": "taobao.jds.hluser.get",
+	"apiChineseName": "订单全链路用户信息获取",
+	"description": "订单全链路用户信息获取",
+	"responseParams": [
+		{
+			"name": "hl_user",
+			"type": "HlUserDO",
+			"description": "回流用户信息",
+			"subParams": [
+				{
+					"name": "open_nodes",
+					"type": "String",
+					"description": "如果为空，则默认是X_TO_SYSTEM,X_WAIT_ALLOCATION,X_OUT_WAREHOUSE"
+				},
+				{
+					"name": "open_for_buyer",
+					"type": "String",
+					"description": "回流信息是否开通买家端展示"
+				}
+			]
+		}
+	]
+}

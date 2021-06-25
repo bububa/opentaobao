@@ -1,0 +1,54 @@
+{
+	"name": "alibaba.wdk.sku.category.delete",
+	"apiChineseName": "商家类目删除接口",
+	"description": "商家类目删除接口",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "CategoryDo",
+			"description": "类目删除请求模型",
+			"required": true,
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "类目编码（只能删除叶子类目）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口返回成功标志",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码（只有有异常才有值）",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息（只有有异常才有值）",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "调用成功时的返回类目code",
+					"required": true
+				}
+			]
+		}
+	]
+}

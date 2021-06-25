@@ -1,0 +1,46 @@
+{
+	"name": "taobao.miniapp.messsage.normal.send",
+	"apiChineseName": "轻店铺下行普通消息给用户",
+	"description": "小程序下行单个普通消息",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "DownNormalMessageDto",
+			"description": "普通消息结构",
+			"subParams": [
+				{
+					"name": "content",
+					"description": "消息内容"
+				},
+				{
+					"name": "create_time",
+					"type": "Number",
+					"description": "消息创建时间"
+				},
+				{
+					"name": "receiver_id",
+					"type": "String",
+					"description": "消息接受者openId"
+				},
+				{
+					"name": "content_type",
+					"type": "String",
+					"description": "消息类型"
+				},
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "轻店铺appId",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "返回消息Id"
+		}
+	]
+}

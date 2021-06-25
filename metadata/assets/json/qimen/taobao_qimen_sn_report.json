@@ -1,0 +1,126 @@
+{
+	"name": "taobao.qimen.sn.report",
+	"apiChineseName": "发货单SN通知接口",
+	"description": "WMS调用奇门的接口,在仓库出库单后, 把SN信息回传给ERP",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "SnReportRequest",
+			"subParams": [
+				{
+					"name": "totalPage",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "currentPage",
+					"type": "Number",
+					"description": "当前页(从1开始)",
+					"required": true
+				},
+				{
+					"name": "pageSize",
+					"type": "Number",
+					"description": "每页记录的条数",
+					"required": true
+				},
+				{
+					"name": "deliveryOrder",
+					"type": "DeliveryOrder",
+					"description": "发货单信息",
+					"subParams": [
+						{
+							"name": "deliveryOrderCode",
+							"type": "String",
+							"description": "出库单号",
+							"required": true
+						},
+						{
+							"name": "deliveryOrderId",
+							"type": "String",
+							"description": "仓储系统出库单号"
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码"
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "出库单类型(JYCK=一般交易出库;HHCK=换货出库;BFCK=补发出库;PTCK=普通出库单;DBCK=调拨出库;QTCK=其他出 库;B2BCK=B2B出库)",
+							"required": true
+						},
+						{
+							"name": "outBizCode",
+							"type": "String",
+							"description": "外部业务编码(消息ID;用于去重;ISV对于同一请求;分配一个唯一性的编码。用来保证因为网络等原因导致重复传输;请求不会 被重复处理;条件必填;条件为一单需要多次确认时)"
+						}
+					]
+				},
+				{
+					"name": "items",
+					"type": "Item[]",
+					"description": "商品列表",
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "商品仓储系统编码"
+						},
+						{
+							"name": "sn",
+							"type": "String",
+							"description": "商品序列号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

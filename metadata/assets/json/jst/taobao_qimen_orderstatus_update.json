@@ -1,0 +1,66 @@
+{
+	"name": "taobao.qimen.orderstatus.update",
+	"apiChineseName": "订单状态更新接口",
+	"description": "星盘和ISV，可以通过此接口，来更新订单状态。此接口应用于使用阿里星盘分单，且使用商家系统（非阿里掌柜）接单/拒单的模式下更新订单状态。",
+	"requestParams": [
+		{
+			"name": "allocation_code",
+			"type": "String",
+			"description": "星盘派单号",
+			"required": true
+		},
+		{
+			"name": "order_codes",
+			"type": "Number[]",
+			"description": "淘系子订单号",
+			"required": true,
+			"maxListSize": 100
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "目标门店的商户中心门店编码",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "业务类型，（枚举值：FAHUO、ZITI）",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "订单状态，门店发货包括X_SHOP_ALLOCATION、X_SHOP_DENYX_SHOP_HANDLED、X_SHOP_CANCEL_CONFIRM、X_SHOP_CANCEL_DENIED、X_MATCHED；门店自提包括X_COMMODITY_CONFIRMX_COMMODITY_TRANSER、X_TRANSFER _SUCCESS、X_SHOP_CANCEL_CONFIRM、X_MATCHED、X_SHOP_DENY",
+			"required": true
+		},
+		{
+			"name": "operator",
+			"type": "String",
+			"description": "操作人",
+			"required": true
+		},
+		{
+			"name": "action_time",
+			"type": "String",
+			"description": "事件发生时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "resultCode"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

@@ -1,0 +1,101 @@
+{
+	"name": "taobao.alitrip.car.order.accept",
+	"apiChineseName": "确认接单",
+	"description": "用来接收服务商确认接单信息",
+	"requestParams": [
+		{
+			"name": "param_order_accept",
+			"type": "OrderAccept",
+			"description": "确认订单请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "confirm_type",
+					"type": "Number",
+					"description": "0确认接单 1无法接单",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "拒单原因"
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "阿里旅行用车订单ID",
+					"required": true
+				},
+				{
+					"name": "provider_id",
+					"type": "String",
+					"description": "服务商ID,阿里提供",
+					"required": true
+				},
+				{
+					"name": "third_order_id",
+					"type": "String",
+					"description": "服务商订单ID,没有可不传"
+				},
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "可选，卖家id"
+				},
+				{
+					"name": "use_type",
+					"type": "Number",
+					"description": "0:接送机 1：实时打车 2：租车(不传值默认为0)"
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "接单司机纬度"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "接单司机经度"
+				},
+				{
+					"name": "accept_time",
+					"type": "Number",
+					"description": "接单时间毫秒数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码 0成功 其它见文档",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "其它数据",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "message_code",
+					"type": "Number",
+					"description": "错误码 0成功 其它见文档",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"name": "taobao.httpdns.get",
+	"apiChineseName": "TOPDNS配置",
+	"description": "获取TOP DNS配置",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "HTTP DNS配置信息"
+		}
+	]
+}

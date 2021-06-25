@@ -1,0 +1,219 @@
+{
+	"name": "tmall.ascp.orders.sale.create",
+	"apiChineseName": "ASCP渠道中心销售单创建接口",
+	"description": "ASCP渠道中心销售单创建接口",
+	"requestParams": [
+		{
+			"name": "channel_order_request",
+			"type": "CreateChannelOrderRequest",
+			"description": "请求对象",
+			"subParams": [
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "request_no",
+					"type": "String",
+					"description": "请求单号"
+				},
+				{
+					"name": "out_order_no",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "item_list",
+					"type": "ChannelOrderItem[]",
+					"description": "子订单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "distribution_price",
+							"type": "Number",
+							"description": "分销价格(分)",
+							"required": true
+						},
+						{
+							"name": "barcode",
+							"type": "String",
+							"description": "条形码"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "skuId"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品id（商品id和货号必填一个）"
+						},
+						{
+							"name": "inventory_no",
+							"type": "String",
+							"description": "货号（商品id和货号必填一个）"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量"
+						}
+					]
+				},
+				{
+					"name": "biz_type",
+					"type": "Number",
+					"description": "自营实体标示",
+					"required": true
+				},
+				{
+					"name": "receiver_logistics",
+					"type": "ReceiverLogistics",
+					"description": "物流信息",
+					"subParams": [
+						{
+							"name": "mobile_phone",
+							"type": "String",
+							"description": "手机号码"
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "地区名",
+							"required": true
+						},
+						{
+							"name": "area_code",
+							"type": "Number",
+							"description": "地区码"
+						},
+						{
+							"name": "division_id",
+							"type": "Number",
+							"description": "divisionId"
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市名",
+							"required": true
+						},
+						{
+							"name": "province_code",
+							"type": "Number",
+							"description": "省份码"
+						},
+						{
+							"name": "receiver_full_name",
+							"type": "String",
+							"description": "收货人",
+							"required": true
+						},
+						{
+							"name": "city_code",
+							"type": "Number",
+							"description": "城市码"
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "省份名",
+							"required": true
+						},
+						{
+							"name": "whole_address",
+							"type": "String",
+							"description": "（忽略）"
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "收货地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "source_lbx",
+					"type": "String",
+					"description": "sourceLbx"
+				},
+				{
+					"name": "properties",
+					"description": "属性"
+				},
+				{
+					"name": "channel",
+					"type": "Number",
+					"description": "渠道",
+					"required": true
+				},
+				{
+					"name": "option",
+					"type": "ChannelOrderOption",
+					"description": "选项",
+					"subParams": [
+						{
+							"name": "is_allow_upper_modify",
+							"type": "Boolean",
+							"description": "是否允许供应商修改"
+						}
+					]
+				},
+				{
+					"name": "trade_type",
+					"type": "Number",
+					"description": "交易类型（1——代销；2——经销）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Json",
+					"description": "module",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "totalCount",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

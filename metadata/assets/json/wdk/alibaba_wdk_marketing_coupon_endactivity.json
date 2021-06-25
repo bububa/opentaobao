@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.wdk.marketing.coupon.endactivity",
+	"apiChineseName": "结束优惠券活动",
+	"description": "结束优惠券活动。优惠券变为结束领取状态，已领取的优惠券可以继续使用",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "CommonActivityParam",
+			"description": "需要删除的活动的信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家的活动id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "删除活动返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "删除活动是否成功",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "删除活动是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

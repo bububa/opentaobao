@@ -1,0 +1,69 @@
+{
+	"name": "tmall.servicecenter.servicemonitormessage.update",
+	"apiChineseName": "服务商更新预警消息状态",
+	"description": "服务商收到预警后，需要进行回复已读状态，并可填写备注",
+	"requestParams": [
+		{
+			"name": "service_monitor_message_id",
+			"type": "Number",
+			"description": "预警消息id",
+			"required": true
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "预警处理备注"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "可更新状态：3、已读",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "gmtModified",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Json",
+					"description": "value",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

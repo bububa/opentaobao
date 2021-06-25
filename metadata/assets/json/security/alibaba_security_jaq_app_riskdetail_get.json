@@ -1,0 +1,370 @@
+{
+	"name": "alibaba.security.jaq.app.riskdetail.get",
+	"apiChineseName": "应用风险详细信息查询接口",
+	"description": "用户通过alibaba.security.jaq.app.risk.scan接口提交应用进行风险扫描后，用此接口获取风险详细信息,包含漏洞列表、恶意代码列表、仿冒应用列表等信息",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "任务唯一标识"
+		},
+		{
+			"name": "locale",
+			"type": "Locale",
+			"description": "本地化语言信息",
+			"subParams": [
+				{
+					"name": "language",
+					"type": "String",
+					"description": "语言代码(参考ISO-639)"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国家代码(参考ISO-3166)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RiskDetail",
+			"description": "风险详情",
+			"subParams": [
+				{
+					"name": "task_status",
+					"type": "Number",
+					"description": "任务状态: 1-已完成,2-处理中,3-处理失败,4-处理超时",
+					"required": true
+				},
+				{
+					"name": "vuln_info",
+					"type": "VulnFullInfo",
+					"description": "漏洞信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
+							"required": true
+						},
+						{
+							"name": "vuln_count",
+							"type": "VulnCount",
+							"description": "漏洞数量信息(任务完成时才返回)",
+							"required": true,
+							"subParams": [
+								{
+									"name": "total",
+									"type": "Number",
+									"description": "漏洞总数量",
+									"required": true
+								},
+								{
+									"name": "high_level",
+									"type": "Number",
+									"description": "高风险漏洞数量",
+									"required": true
+								},
+								{
+									"name": "mid_level",
+									"type": "Number",
+									"description": "中风险漏洞数量",
+									"required": true
+								},
+								{
+									"name": "low_level",
+									"type": "Number",
+									"description": "低风险漏洞数量",
+									"required": true
+								},
+								{
+									"name": "red_line",
+									"type": "Number",
+									"description": "安全红线漏洞数量",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "vuln_details",
+							"type": "VulnDetail[]",
+							"description": "漏洞详情列表(任务完成时才返回)",
+							"required": true,
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "漏洞名称",
+									"required": true
+								},
+								{
+									"name": "level",
+									"type": "String",
+									"description": "漏洞风险级别: 高， 中， 低",
+									"required": true
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "漏洞数量",
+									"required": true
+								},
+								{
+									"name": "locations",
+									"type": "String[]",
+									"description": "漏洞位置",
+									"required": true
+								},
+								{
+									"name": "red_line",
+									"type": "Boolean",
+									"description": "是否安全红线漏洞",
+									"required": true
+								},
+								{
+									"name": "referenct_link",
+									"type": "String",
+									"description": "漏洞详细说明参考链接",
+									"required": true
+								},
+								{
+									"name": "recommendation",
+									"type": "String",
+									"description": "漏洞修复建议",
+									"required": true
+								},
+								{
+									"name": "vuln_id",
+									"type": "String",
+									"description": "漏洞类型码",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "漏洞描述",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "task_error_code",
+							"type": "String",
+							"description": "漏洞任务错误码 0-成功 其他-错误",
+							"required": true
+						},
+						{
+							"name": "task_error_msg",
+							"type": "String",
+							"description": "漏洞任务错误信息 success-成功 其他-错误",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "malware_info",
+					"type": "MalwareFullInfo",
+					"description": "恶意代码信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
+							"required": true
+						},
+						{
+							"name": "malware_count",
+							"type": "MalwareCount",
+							"description": "恶意代码数量信息(任务完成时才返回)",
+							"required": true,
+							"subParams": [
+								{
+									"name": "total",
+									"type": "Number",
+									"description": "恶意代码总数量",
+									"required": true
+								},
+								{
+									"name": "high_level",
+									"type": "Number",
+									"description": "高风险恶意代码数量",
+									"required": true
+								},
+								{
+									"name": "low_level",
+									"type": "Number",
+									"description": "低风险恶意代码数量",
+									"required": true
+								},
+								{
+									"name": "weak_level",
+									"type": "Number",
+									"description": "若风险恶意代码数量",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "malware_details",
+							"type": "MalwareDetail[]",
+							"description": "恶意代码列表(任务完成时才返回)",
+							"required": true,
+							"subParams": [
+								{
+									"name": "name",
+									"type": "String",
+									"description": "恶意代码名称",
+									"required": true
+								},
+								{
+									"name": "level",
+									"type": "String",
+									"description": "恶意代码风险级别: High-高 Low-低",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "恶意代码类型",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "恶意代码详细描述",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "fake_info",
+					"type": "FakeAppFullInfo",
+					"description": "仿冒应用信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
+							"required": true
+						},
+						{
+							"name": "fake_app_count",
+							"type": "Number",
+							"description": "仿冒应用总数(任务完成时才返回)",
+							"required": true
+						},
+						{
+							"name": "total_infected_users",
+							"type": "Number",
+							"description": "仿冒应用感染用户总数(任务完成时才返回)",
+							"required": true
+						},
+						{
+							"name": "fake_app_details",
+							"type": "FakeAppDetail[]",
+							"description": "仿冒应用列表(任务完成时才返回)",
+							"required": true,
+							"subParams": [
+								{
+									"name": "app_name",
+									"type": "String",
+									"description": "仿冒应用名称",
+									"required": true
+								},
+								{
+									"name": "package_name",
+									"type": "String",
+									"description": "仿冒应用包名",
+									"required": true
+								},
+								{
+									"name": "infected_users",
+									"type": "Number",
+									"description": "仿冒应用感染用户数",
+									"required": true
+								},
+								{
+									"name": "download_urls",
+									"type": "String[]",
+									"description": "仿冒应用下载地址列表(混淆后的URL)",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "plugin_info",
+					"type": "PluginFullInfo",
+					"description": "插件信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "plugin_count",
+							"type": "Number",
+							"description": "插件个数",
+							"required": true
+						},
+						{
+							"name": "plugin_details",
+							"type": "PluginDetail[]",
+							"description": "插件详细信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "actions",
+									"type": "String[]",
+									"description": "插件行为",
+									"required": true
+								},
+								{
+									"name": "company",
+									"type": "String",
+									"description": "插件开发商",
+									"required": true
+								},
+								{
+									"name": "desc",
+									"type": "String",
+									"description": "插件描述",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "插件名称",
+									"required": true
+								},
+								{
+									"name": "types",
+									"type": "String[]",
+									"description": "插件类型",
+									"required": true
+								},
+								{
+									"name": "path",
+									"type": "String",
+									"description": "插件位置",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "子任务状态: 1-已完成,2-处理中,3-处理出错,4-处理超时",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

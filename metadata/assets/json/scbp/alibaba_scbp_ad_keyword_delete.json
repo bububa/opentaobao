@@ -1,0 +1,20 @@
+{
+	"name": "alibaba.scbp.ad.keyword.delete",
+	"apiChineseName": "外贸直通车删除关键词",
+	"description": "外贸直通车删除关键词",
+	"requestParams": [
+		{
+			"name": "ad_keyword",
+			"type": "String",
+			"description": "要删除的关键词",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "删除关键词是否成功"
+		}
+	]
+}

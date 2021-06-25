@@ -1,0 +1,56 @@
+{
+	"name": "tmall.car.lease.item.activity.get",
+	"apiChineseName": "查询汽车租赁活动信息",
+	"description": "查询汽车租赁活动信息",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "当前时间",
+					"required": true
+				},
+				{
+					"name": "piggyback",
+					"type": "Json",
+					"description": "动态返回扩展参数：\u003cbr/\u003eextInfo:扩展参数字符串",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Json",
+					"description": "活动返回列表对象\u003cbr/\u003e itemId：商品ID \u003cbr/\u003e preEndTime：预热结束时间\u003cbr/\u003e preStartTime：预热开始时间\u003cbr/\u003e \u003cbr/\u003e extendInfo：扩展信息\u003cbr/\u003e refActivityId:外部活动ID\u003cbr/\u003e \u003cbr/\u003e timeRangeList：活动时间范围对象\u003cbr/\u003e startTime：活动开始时间\u003cbr/\u003e endTime：活动结束时间\u003cbr/\u003e amount：名额\u003cbr/\u003e extendInfo：扩展信息\u003cbr/\u003e",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "耗费时间",
+					"required": true
+				}
+			]
+		}
+	]
+}

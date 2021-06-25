@@ -1,0 +1,347 @@
+{
+	"name": "alibaba.wdk.order.refund.get",
+	"apiChineseName": "五道口订单退款按ID查询",
+	"description": "按照退款ID或者五道口中台订单ID查询退款信息详情",
+	"requestParams": [
+		{
+			"name": "biz_order_ids",
+			"type": "Number[]",
+			"description": "五道口订单列表（子订单）",
+			"maxListSize": 20
+		},
+		{
+			"name": "refund_ids",
+			"type": "Number[]",
+			"description": "退款订单列表",
+			"maxListSize": 20
+		},
+		{
+			"name": "order_from",
+			"type": "Number",
+			"description": "渠道来源 3：饿了么 4：盒马"
+		},
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "渠道店id"
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "经营店id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OrderSyncRefundListResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "next_index",
+					"type": "Number",
+					"description": "下一页",
+					"required": true
+				},
+				{
+					"name": "orders",
+					"type": "OrderSyncRefundDto[]",
+					"description": "退款单具体详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "buy_amount_stock",
+							"type": "String",
+							"description": "库存单位购买数量",
+							"required": true
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "商品skucode",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "ns_quantity",
+							"type": "String",
+							"description": "非标品购买数量",
+							"required": true
+						},
+						{
+							"name": "operator_id",
+							"type": "String",
+							"description": "操作人id",
+							"required": true
+						},
+						{
+							"name": "operator_name",
+							"type": "String",
+							"description": "操作人名称",
+							"required": true
+						},
+						{
+							"name": "origin_order_id",
+							"type": "Number",
+							"description": "盒马子订单号",
+							"required": true
+						},
+						{
+							"name": "origin_parent_id",
+							"type": "Number",
+							"description": "盒马主订单号",
+							"required": true
+						},
+						{
+							"name": "pick_amount_stock",
+							"type": "String",
+							"description": "库存单位拣货数量",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "原购买数量",
+							"required": true
+						},
+						{
+							"name": "refund_amount",
+							"type": "Number",
+							"description": "退款金额",
+							"required": true
+						},
+						{
+							"name": "refund_channel_list",
+							"type": "OrderSyncRefundChannel[]",
+							"description": "退款渠道列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "refund_amount",
+									"type": "Number",
+									"description": "退款金额",
+									"required": true
+								},
+								{
+									"name": "refund_channel",
+									"type": "Number",
+									"description": "退款渠道",
+									"required": true
+								},
+								{
+									"name": "refund_order_id",
+									"type": "Number",
+									"description": "退款单id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "refund_order_id",
+							"type": "Number",
+							"description": "退款单id",
+							"required": true
+						},
+						{
+							"name": "refund_quantity",
+							"type": "String",
+							"description": "退货数量",
+							"required": true
+						},
+						{
+							"name": "refund_time",
+							"type": "Date",
+							"description": "退款时间",
+							"required": true
+						},
+						{
+							"name": "refund_type",
+							"type": "Number",
+							"description": "退款类型",
+							"required": true
+						},
+						{
+							"name": "sell_unit",
+							"type": "String",
+							"description": "非标品单位",
+							"required": true
+						},
+						{
+							"name": "store_id",
+							"type": "String",
+							"description": "店铺码",
+							"required": true
+						},
+						{
+							"name": "sync_status",
+							"type": "String",
+							"description": "同步状态",
+							"required": true
+						},
+						{
+							"name": "tb_biz_order_id",
+							"type": "Number",
+							"description": "淘系子订单号",
+							"required": true
+						},
+						{
+							"name": "batch_time",
+							"type": "Date",
+							"description": "跑批时间",
+							"required": true
+						},
+						{
+							"name": "actual_pick_quantity",
+							"type": "String",
+							"description": "实际取货数量",
+							"required": true
+						},
+						{
+							"name": "actual_refund_quantity",
+							"type": "String",
+							"description": "实际退货数量",
+							"required": true
+						},
+						{
+							"name": "promise_status",
+							"type": "String",
+							"description": "履约状态",
+							"required": true
+						},
+						{
+							"name": "refund_post_fee",
+							"type": "Number",
+							"description": "退款运费，单位为分",
+							"required": true
+						},
+						{
+							"name": "stock_unit",
+							"type": "String",
+							"description": "stockUnit",
+							"required": true
+						},
+						{
+							"name": "sale_unit",
+							"type": "String",
+							"description": "saleUnit",
+							"required": true
+						},
+						{
+							"name": "tb_biz_parent_id",
+							"type": "Number",
+							"description": "淘系主订单号",
+							"required": true
+						},
+						{
+							"name": "attributes",
+							"type": "Json",
+							"description": "附加属性",
+							"required": true
+						},
+						{
+							"name": "trade_attributes",
+							"type": "Json",
+							"description": "交易属性",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品skucode",
+							"required": true
+						},
+						{
+							"name": "open_uid",
+							"type": "String",
+							"description": "open_uid",
+							"required": true
+						},
+						{
+							"name": "order_client",
+							"type": "Number",
+							"description": "2:app 3:pos",
+							"required": true
+						},
+						{
+							"name": "order_from",
+							"type": "Number",
+							"description": "渠道来源 3：饿了么 4：盒马",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部子订单号",
+							"required": true
+						},
+						{
+							"name": "out_mian_order_id",
+							"type": "String",
+							"description": "外部主订单号",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "渠道店id",
+							"required": true
+						},
+						{
+							"name": "out_sku_code",
+							"type": "String",
+							"description": "外部skuCode",
+							"required": true
+						},
+						{
+							"name": "dispute_type",
+							"type": "Number",
+							"description": "纠纷类型 1：售中  2：售后",
+							"required": true
+						},
+						{
+							"name": "out_refund_id",
+							"type": "String",
+							"description": "外部退款id",
+							"required": true
+						},
+						{
+							"name": "out_shop_id",
+							"type": "String",
+							"description": "外部门店id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "结果code",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回的信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_number",
+					"type": "Number",
+					"description": "总数量",
+					"required": true
+				}
+			]
+		}
+	]
+}

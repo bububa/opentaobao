@@ -1,0 +1,99 @@
+{
+	"name": "taobao.simba.keywords.recommend.get",
+	"apiChineseName": "取得一个推广组的推荐关键词列表",
+	"description": "取得一个推广组的推荐关键词列表",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组ID",
+			"required": true
+		},
+		{
+			"name": "search",
+			"type": "Number",
+			"description": "搜索量,设置此值后返回的就是大于此搜索量的词列表"
+		},
+		{
+			"name": "pertinence",
+			"type": "String",
+			"description": "相关度"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "返回的每页数据量大小,最大200",
+			"required": true,
+			"maxValue": 200,
+			"minValue": 1
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "返回的第几页数据，默认为1",
+			"required": true,
+			"minValue": 1
+		},
+		{
+			"name": "order_by",
+			"type": "String",
+			"description": "排序方式: 搜索量 search_volume 市场平均价格 average_price 相关度 relevance 不排序 non 默认为 non"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "recommend_words",
+			"type": "RecommendWordPage",
+			"description": "推荐词分页对象，当输入的页码大于最大数值时，将返回最大的page_no值，并且结果中的数据列表为空值",
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数据大小"
+				},
+				{
+					"name": "total_item",
+					"type": "Number",
+					"description": "所查询的数据总数"
+				},
+				{
+					"name": "recommend_word_list",
+					"type": "RecommendWord[]",
+					"description": "推荐词分页对象列表",
+					"subParams": [
+						{
+							"name": "word",
+							"type": "String",
+							"description": "推荐的关键词"
+						},
+						{
+							"name": "pv",
+							"type": "String",
+							"description": "搜索量"
+						},
+						{
+							"name": "average_price",
+							"type": "String",
+							"description": "平均价格"
+						},
+						{
+							"name": "pertinence",
+							"type": "String",
+							"description": "相关度"
+						}
+					]
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "返回第几页的数据从1开始。\u003cbr/\u003e如果输入的值大于可取得的最大页码值时，将返回\u003cbr/\u003e最大的页码值并且recommend_word_list值将\u003cbr/\u003e为空"
+				}
+			]
+		}
+	]
+}

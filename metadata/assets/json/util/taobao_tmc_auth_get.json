@@ -1,0 +1,19 @@
+{
+	"name": "taobao.tmc.auth.get",
+	"apiChineseName": "TMC授权token",
+	"description": "TMC连接授权Token",
+	"requestParams": [
+		{
+			"name": "group",
+			"type": "String",
+			"description": "tmc组名"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "result"
+		}
+	]
+}

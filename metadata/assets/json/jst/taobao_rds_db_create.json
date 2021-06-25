@@ -1,0 +1,71 @@
+{
+	"name": "taobao.rds.db.create",
+	"apiChineseName": "rds创建数据库",
+	"description": "在rds实例里创建数据库",
+	"requestParams": [
+		{
+			"name": "instance_name",
+			"type": "String",
+			"description": "rds的实例名",
+			"required": true,
+			"maxLength": 30
+		},
+		{
+			"name": "db_name",
+			"type": "String",
+			"description": "数据库名",
+			"required": true,
+			"maxLength": 64
+		},
+		{
+			"name": "account_name",
+			"type": "String",
+			"description": "已存在账号名",
+			"maxLength": 13
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rds_db_info",
+			"type": "RdsDbInfo",
+			"description": "rds创建、查询、删除db返回结果的数据结构",
+			"subParams": [
+				{
+					"name": "max_account",
+					"type": "String",
+					"description": "最大帐号数，1个数据库最多可以创建的账户数目"
+				},
+				{
+					"name": "password",
+					"type": "String",
+					"description": "数据库登录密码"
+				},
+				{
+					"name": "db_status",
+					"type": "String",
+					"description": "数据库状态 0：创建中 ；1：激活；3：正在删除"
+				},
+				{
+					"name": "charset",
+					"type": "String",
+					"description": "数据库编码"
+				},
+				{
+					"name": "instance_id",
+					"type": "String",
+					"description": "rds实例id"
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "登录数据库的帐号"
+				},
+				{
+					"name": "db_name",
+					"type": "String",
+					"description": "数据库名称"
+				}
+			]
+		}
+	]
+}

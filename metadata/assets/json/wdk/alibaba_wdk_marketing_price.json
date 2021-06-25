@@ -1,0 +1,196 @@
+{
+	"name": "alibaba.wdk.marketing.price",
+	"apiChineseName": "促销价签服务",
+	"description": "获取营销-促销商品中的实时价格",
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "单页大小",
+			"required": true
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
+			"name": "sku_codes",
+			"type": "String[]",
+			"description": "商品sku",
+			"maxListSize": 20
+		},
+		{
+			"name": "shop_ids",
+			"type": "Number[]",
+			"description": "门店标识数组",
+			"maxListSize": 20
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "查询结束时间(sku_codes非空无效)"
+		},
+		{
+			"name": "begin_time",
+			"type": "Date",
+			"description": "查询开始时间(sku_codes非空无效)"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PromotionPriceResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "单页数据大小",
+					"required": true
+				},
+				{
+					"name": "page_count",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数量",
+					"required": true
+				},
+				{
+					"name": "item_list",
+					"type": "PromotionPriceDO[]",
+					"description": "促销信息记录",
+					"required": true,
+					"subParams": [
+						{
+							"name": "promotion_reason",
+							"type": "String",
+							"description": "促销说明",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "记录标识",
+							"required": true
+						},
+						{
+							"name": "promotion_type",
+							"type": "String",
+							"description": "促销类型",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "Number",
+							"description": "店铺标识",
+							"required": true
+						},
+						{
+							"name": "promotion_start",
+							"type": "Date",
+							"description": "促销开始时间",
+							"required": true
+						},
+						{
+							"name": "promotion_gift_info",
+							"type": "String",
+							"description": "促销赠品信息",
+							"required": true
+						},
+						{
+							"name": "promotion_end",
+							"type": "Date",
+							"description": "促销结束时间",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "promotion_price",
+							"type": "Number",
+							"description": "促销价格",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "shop_code",
+							"type": "String",
+							"description": "店铺编码",
+							"required": true
+						},
+						{
+							"name": "if_promotion",
+							"type": "Number",
+							"description": "是否参加了促销",
+							"required": true
+						},
+						{
+							"name": "member_promotion_end_time",
+							"type": "Date",
+							"description": "会员促销价结束时间",
+							"required": true
+						},
+						{
+							"name": "member_promotion_start_time",
+							"type": "Date",
+							"description": "会员促销价开始时间",
+							"required": true
+						},
+						{
+							"name": "member_promotion_price",
+							"type": "Number",
+							"description": "会员促销价",
+							"required": true
+						},
+						{
+							"name": "member_promotion_type",
+							"type": "String",
+							"description": "会员促销活动类型",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

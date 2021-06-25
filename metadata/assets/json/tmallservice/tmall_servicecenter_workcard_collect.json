@@ -1,0 +1,49 @@
+{
+	"name": "tmall.servicecenter.workcard.collect",
+	"apiChineseName": "工单揽件",
+	"description": "服务工单揽件接口",
+	"requestParams": [
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id"
+		},
+		{
+			"name": "buyer_id",
+			"type": "Number",
+			"description": "买家id"
+		},
+		{
+			"name": "attributes",
+			"type": "String",
+			"description": "扩展信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FulfilplatformResult",
+			"description": "响应结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

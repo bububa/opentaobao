@@ -1,0 +1,40 @@
+{
+	"name": "alibaba.scbp.target.ad.plan.update.products",
+	"apiChineseName": "定向推广 按照id操作推广计划的产品，包括新增，删除和更新",
+	"description": "定向推广 按照id操作推广计划的产品，包括新增，删除和更新",
+	"requestParams": [
+		{
+			"name": "param_top_p4p_modify_quick_campaign_product_d_t_o",
+			"type": "TopP4pModifyQuickCampaignProductDto",
+			"description": "系统生成",
+			"required": true,
+			"subParams": [
+				{
+					"name": "action",
+					"type": "Number",
+					"description": "操作类型，0=商品暂停，1=商品开启，2=新增商品，3=删除商品",
+					"required": true
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划ID",
+					"required": true
+				},
+				{
+					"name": "product_id_list",
+					"type": "Number[]",
+					"description": "商品ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "product_id_list",
+			"type": "Number []",
+			"description": "操作成功的商品ID列表"
+		}
+	]
+}

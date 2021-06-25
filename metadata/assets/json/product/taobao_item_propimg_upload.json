@@ -1,0 +1,60 @@
+{
+	"name": "taobao.item.propimg.upload",
+	"apiChineseName": "添加或修改属性图片",
+	"description": "添加一张商品属性图片到num_iid指定的商品中 \u003cbr/\u003e传入的num_iid所对应的商品必须属于当前会话的用户 \u003cbr/\u003e图片的属性必须要是颜色的属性，这个在前台显示的时候需要和sku进行关联的 \u003cbr/\u003e商品属性图片只有享有服务的卖家（如：淘宝大卖家、订购了淘宝多图服务的卖家）才能上传 \u003cbr/\u003e商品属性图片有数量和大小上的限制，最多不能超过24张（每个颜色属性都有一张）。",
+	"requestParams": [
+		{
+			"name": "num_iid",
+			"type": "Number",
+			"description": "商品数字ID，必选",
+			"required": true,
+			"minValue": 0
+		},
+		{
+			"name": "properties",
+			"type": "String",
+			"description": "属性列表。调用taobao.itemprops.get获取类目属性，属性必须是颜色属性，再用taobao.itempropvalues.get取得vid。格式:pid:vid。",
+			"required": true
+		},
+		{
+			"name": "image",
+			"type": "byte[]",
+			"description": "属性图片内容。类型:JPG,GIF;图片大小不超过:3M",
+			"maxLength": 3145728
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "属性图片ID。如果是新增不需要填写"
+		},
+		{
+			"name": "position",
+			"type": "Number",
+			"description": "图片位置"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "prop_img",
+			"type": "PropImg",
+			"description": "PropImg属性图片结构",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "属性图片的id，和商品相对应"
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "图片链接地址"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "图片创建时间 时间格式：yyyy-MM-dd HH:mm:ss"
+				}
+			]
+		}
+	]
+}

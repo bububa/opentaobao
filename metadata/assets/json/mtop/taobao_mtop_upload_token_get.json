@@ -1,0 +1,86 @@
+{
+	"name": "taobao.mtop.upload.token.get",
+	"apiChineseName": "获取文件上传授权",
+	"description": "获取mtop文件上传授权",
+	"requestParams": [
+		{
+			"name": "param_upload_token_request",
+			"type": "UploadTokenRequestV",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "file_size",
+					"type": "Number",
+					"description": "文件大小，单位byte"
+				},
+				{
+					"name": "private_data",
+					"type": "String",
+					"description": "自定义数据"
+				},
+				{
+					"name": "upload_type",
+					"type": "String",
+					"description": "上传类型：resumable 或 normal"
+				},
+				{
+					"name": "crc",
+					"type": "Number",
+					"description": "文件内容的CRC32校验和"
+				},
+				{
+					"name": "client_net_type",
+					"type": "String",
+					"description": "客户端网络类型 wifi 或 2g 或 3g 或 cdma 或 gprs"
+				},
+				{
+					"name": "file_name",
+					"type": "String",
+					"description": "文件名"
+				},
+				{
+					"name": "biz_code",
+					"type": "String",
+					"description": "多媒体中心分配的业务码, mtopupload或其他"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "msg"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"name": "max_body_length",
+			"type": "Number",
+			"description": "单次上传文件块最大大小，单位 byte"
+		},
+		{
+			"name": "max_retry_times",
+			"type": "Number",
+			"description": "单个文件重试上传次数"
+		},
+		{
+			"name": "server_address",
+			"type": "String",
+			"description": "本次指定的上传文件服务器地址"
+		},
+		{
+			"name": "timeout",
+			"type": "Number",
+			"description": "token失效时间点"
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "颁发的上传令牌"
+		}
+	]
+}

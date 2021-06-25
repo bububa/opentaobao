@@ -1,0 +1,191 @@
+{
+	"name": "alibaba.wdk.sku.combinesku.add",
+	"apiChineseName": "组合商品新增接口",
+	"description": "组合商品新增接口",
+	"requestParams": [
+		{
+			"name": "param_list",
+			"type": "SkuDo[]",
+			"description": "请求参数",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品唯一编码，不可修改"
+				},
+				{
+					"name": "sku_name",
+					"type": "String",
+					"description": "商品名称，对商品直观的描述，通常包含了品牌、规格等信息",
+					"required": true
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "门店或DC编码，如果填写了渠道店id，该字段会被忽略"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id"
+				},
+				{
+					"name": "sale_price",
+					"type": "String",
+					"description": "商品价格（单位元）和字段sale_price_unit_cent两者只能选其一"
+				},
+				{
+					"name": "sale_price_unit_cent",
+					"type": "Number",
+					"description": "商品价格（单位分）和字段sale_price两者只能选其一"
+				},
+				{
+					"name": "barcodes",
+					"type": "String",
+					"description": "条码（支持一品多码，多个条码以英文逗号分隔）",
+					"required": true
+				},
+				{
+					"name": "detail_pic_urls",
+					"type": "String",
+					"description": "详情图片地址（多个图片用英文逗号分割）请先调用图片上传接口（http://hema.open.taobao.com/doc?docId=32686\u0026docType=2）上传图片"
+				},
+				{
+					"name": "allow_app_sale",
+					"type": "Number",
+					"description": "是否app可售（1可售，0不可售，默认0）"
+				},
+				{
+					"name": "app_effect_begin_time",
+					"type": "Date",
+					"description": "线上生效开始时间"
+				},
+				{
+					"name": "app_effect_end_time",
+					"type": "Date",
+					"description": "线上生效过期时间"
+				},
+				{
+					"name": "sub_skus",
+					"type": "SubSkuDo[]",
+					"description": "子商品信息",
+					"subParams": [
+						{
+							"name": "sub_sku_code",
+							"type": "String",
+							"description": "子商品编码（需要先有子商品）",
+							"required": true
+						},
+						{
+							"name": "sub_sku_num",
+							"type": "Number",
+							"description": "子商品数量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "category_code",
+					"type": "String",
+					"description": "商家类目编码"
+				},
+				{
+					"name": "hm_category_code",
+					"type": "String",
+					"description": "盒马类目编码"
+				},
+				{
+					"name": "sale_spec",
+					"type": "String",
+					"description": "销售规格",
+					"required": true
+				},
+				{
+					"name": "main_pic_urls",
+					"type": "String",
+					"description": "主图图片地址，请先调用图片上传接口（http://hema.open.taobao.com/doc?docId=32686\u0026docType=2）上传图片"
+				},
+				{
+					"name": "rich_text",
+					"type": "String",
+					"description": "富文本文描"
+				},
+				{
+					"name": "short_title",
+					"type": "String",
+					"description": "商品短标题"
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "商品卖点；商品副标题，显示在APP商品详情页的标题下方。如可口可乐商品的副标题可以是“夏日必备 解暑神器”。不超过80个字符"
+				},
+				{
+					"name": "online_sale_flag",
+					"type": "Number",
+					"description": "门店来控制本门店是否在app上让该商品可见，1可见 0不可见"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResults",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "接口调用异常编码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "接口调用异常信息",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "ApiResult[]",
+					"description": "商品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "单个商品是否新建成功",
+							"required": true
+						},
+						{
+							"name": "err_code",
+							"type": "String",
+							"description": "单个商品新建异常编码（异常才有值）",
+							"required": true
+						},
+						{
+							"name": "err_msg",
+							"type": "String",
+							"description": "单个商品新建异常信息（异常才有值）",
+							"required": true
+						},
+						{
+							"name": "model",
+							"type": "String",
+							"description": "商品code值",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

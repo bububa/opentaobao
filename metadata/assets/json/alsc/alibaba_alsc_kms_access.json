@@ -1,0 +1,29 @@
+{
+	"name": "alibaba.alsc.kms.access",
+	"apiChineseName": "本地生活风控数据接入",
+	"description": "第三方使用本地生活数据对外提供服务，上报访问日志信息接口",
+	"requestParams": [
+		{
+			"name": "requestdata",
+			"type": "String",
+			"description": "接入参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resultcode",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"name": "resultsuccess",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "resultmessage",
+			"type": "String",
+			"description": "message"
+		}
+	]
+}

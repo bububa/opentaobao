@@ -1,0 +1,122 @@
+{
+	"name": "taobao.taotv.video.playlist.page",
+	"apiChineseName": "分页获取所有播单",
+	"description": "获取所有播单信息（分页）",
+	"requestParams": [
+		{
+			"name": "system_info",
+			"type": "String",
+			"description": "客户端信息",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "当前页（从1开始）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "状态码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Model",
+					"description": "播单信息分页信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "此接口默认每次获取100条",
+							"required": true
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "播单总数",
+							"required": true
+						},
+						{
+							"name": "total_page",
+							"type": "Number",
+							"description": "总共页数",
+							"required": true
+						},
+						{
+							"name": "data_list",
+							"type": "Data[]",
+							"description": "播单对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "create_time",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "modify_time",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "bg_pic",
+									"type": "String",
+									"description": "图片",
+									"required": true
+								},
+								{
+									"name": "play_list_name",
+									"type": "String",
+									"description": "播单名称",
+									"required": true
+								},
+								{
+									"name": "play_list_id",
+									"type": "Number",
+									"description": "播单id",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,134 @@
+{
+	"name": "taobao.simba.salestar.adgroup.findbycampid",
+	"apiChineseName": "(销量明星)批量获取推广计划下的推广组信息",
+	"description": "批量得到推广计划下的推广组",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "推广计划Id"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码",
+			"required": true,
+			"maxValue": 200,
+			"minValue": 1
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码，从1开始",
+			"required": true,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "adgroups",
+			"type": "ADGroupPage",
+			"description": "返回的推广组分页对象",
+			"subParams": [
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数据大小",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "返回第几页的数据从1开始",
+					"required": true
+				},
+				{
+					"name": "total_item",
+					"type": "Number",
+					"description": "所查询的数据总数，只有当返回第一页数据时有值，当要求返回的数据非第一页时，此返回值无效",
+					"required": true
+				},
+				{
+					"name": "adgroup_list",
+					"type": "ADGroup[]",
+					"description": "商品对象列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "campaign_id",
+							"type": "Number",
+							"description": "推广计划Id",
+							"required": true
+						},
+						{
+							"name": "adgroup_id",
+							"type": "Number",
+							"description": "推广组id",
+							"required": true
+						},
+						{
+							"name": "category_ids",
+							"type": "String",
+							"description": "商品类目id，从根类目到子类目，用空格分割",
+							"required": true
+						},
+						{
+							"name": "num_iid",
+							"type": "Number",
+							"description": "商品数字id",
+							"required": true
+						},
+						{
+							"name": "online_status",
+							"type": "String",
+							"description": "用户设置的上下线状态，offline-下线(暂停竞价)；online-上线；默认为online",
+							"required": true
+						},
+						{
+							"name": "offline_type",
+							"type": "String",
+							"description": "online-上线；audit_offline-审核下线；crm_offline-CRM下线；默认为online",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "审核下线原因",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "最后修改时间",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "title",
+							"required": true
+						},
+						{
+							"name": "img_url",
+							"type": "String",
+							"description": "imgUrl",
+							"required": true
+						},
+						{
+							"name": "item_price",
+							"type": "String",
+							"description": "itemPrice",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

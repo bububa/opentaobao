@@ -1,0 +1,612 @@
+{
+	"name": "alitrip.hotel.search.list.get",
+	"apiChineseName": "酒店搜索List接口",
+	"description": "酒店搜索List接口",
+	"requestParams": [
+		{
+			"name": "param_top_hotel_search_list_param",
+			"type": "TopHotelSearchListParam",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "adult_num",
+					"type": "Number",
+					"description": "成人数",
+					"required": true
+				},
+				{
+					"name": "check_in",
+					"type": "String",
+					"description": "入店时间",
+					"required": true
+				},
+				{
+					"name": "check_out",
+					"type": "String",
+					"description": "离店时间",
+					"required": true
+				},
+				{
+					"name": "children_ages",
+					"type": "Number[]",
+					"description": "儿童年龄"
+				},
+				{
+					"name": "city_code",
+					"type": "Number",
+					"description": "城市code",
+					"required": true
+				},
+				{
+					"name": "keywords",
+					"type": "String",
+					"description": "关键字"
+				},
+				{
+					"name": "offset",
+					"type": "Number",
+					"description": "酒店获取开始位置",
+					"required": true
+				},
+				{
+					"name": "order_direction",
+					"type": "Number",
+					"description": "排序方向"
+				},
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "排序类型"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页个数"
+				},
+				{
+					"name": "radius",
+					"type": "Number",
+					"description": "距离搜索时的搜索半径"
+				},
+				{
+					"name": "seller_ids",
+					"type": "Number[]",
+					"description": "卖家ids"
+				},
+				{
+					"name": "user_agent",
+					"type": "String",
+					"description": "用户的Agent"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户Id, 0表示未登录用户"
+				},
+				{
+					"name": "user_latitude",
+					"type": "String",
+					"description": "用户定位的经度"
+				},
+				{
+					"name": "user_longitude",
+					"type": "String",
+					"description": "用户定位的伟度"
+				},
+				{
+					"name": "search_poi",
+					"type": "SearchPoi",
+					"description": "搜索poi",
+					"subParams": [
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "经度"
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "纬度"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名字"
+						}
+					]
+				},
+				{
+					"name": "brand_code_list",
+					"type": "String[]",
+					"description": "品牌code"
+				},
+				{
+					"name": "user_city",
+					"type": "Number",
+					"description": "用户city"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "biz_ext_map",
+					"type": "Bizextmap",
+					"description": "bizExtMap",
+					"required": true,
+					"subParams": [
+						{
+							"name": "empty",
+							"type": "Boolean",
+							"description": "empty",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "headers",
+					"type": "Headers",
+					"description": "headers",
+					"required": true,
+					"subParams": [
+						{
+							"name": "empty",
+							"type": "Boolean",
+							"description": "empty",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				},
+				{
+					"name": "mapping_code",
+					"type": "String",
+					"description": "mappingCode",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "TopHotelSearchListVo",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "hotel_list",
+							"type": "HotelListInfo[]",
+							"description": "酒店List",
+							"required": true,
+							"subParams": [
+								{
+									"name": "address",
+									"type": "String",
+									"description": "地址",
+									"required": true
+								},
+								{
+									"name": "city_code",
+									"type": "Number",
+									"description": "城市code",
+									"required": true
+								},
+								{
+									"name": "comment_count",
+									"type": "Number",
+									"description": "评论条数",
+									"required": true
+								},
+								{
+									"name": "comment_score",
+									"type": "String",
+									"description": "评论分数",
+									"required": true
+								},
+								{
+									"name": "comment_score_desc",
+									"type": "String",
+									"description": "评论分数的描述文案",
+									"required": true
+								},
+								{
+									"name": "comment_source",
+									"type": "Number",
+									"description": "评论分数",
+									"required": true
+								},
+								{
+									"name": "distance_desc",
+									"type": "String",
+									"description": "距离文案",
+									"required": true
+								},
+								{
+									"name": "english_name",
+									"type": "String",
+									"description": "英文名",
+									"required": true
+								},
+								{
+									"name": "fax",
+									"type": "String",
+									"description": "酒店fax",
+									"required": true
+								},
+								{
+									"name": "has_ali_credit_item",
+									"type": "Boolean",
+									"description": "是否有信用住商品",
+									"required": true
+								},
+								{
+									"name": "has_full_scene_picture",
+									"type": "Boolean",
+									"description": "是否有全景图",
+									"required": true
+								},
+								{
+									"name": "header_pic_url",
+									"type": "String",
+									"description": "头图地址",
+									"required": true
+								},
+								{
+									"name": "labels",
+									"type": "HotelLabelVo[]",
+									"description": "酒店标签",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "酒店标签id",
+											"required": true
+										},
+										{
+											"name": "text",
+											"type": "String",
+											"description": "酒店标签\u0008文案",
+											"required": true
+										},
+										{
+											"name": "color",
+											"type": "String",
+											"description": "酒店标签\u0008颜色",
+											"required": true
+										},
+										{
+											"name": "desc",
+											"type": "String",
+											"description": "desc",
+											"required": true
+										},
+										{
+											"name": "icon",
+											"type": "String",
+											"description": "icon",
+											"required": true
+										},
+										{
+											"name": "index",
+											"type": "Number",
+											"description": "index",
+											"required": true
+										},
+										{
+											"name": "pos",
+											"type": "Number",
+											"description": "pos",
+											"required": true
+										},
+										{
+											"name": "ref_field_name",
+											"type": "String",
+											"description": "refFieldName",
+											"required": true
+										},
+										{
+											"name": "req_field_name",
+											"type": "String",
+											"description": "reqFieldName",
+											"required": true
+										},
+										{
+											"name": "show",
+											"type": "Boolean",
+											"description": "show",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "Number",
+											"description": "value",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "latitude",
+									"type": "String",
+									"description": "酒店经度",
+									"required": true
+								},
+								{
+									"name": "longitude",
+									"type": "String",
+									"description": "酒店纬度",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "酒店名字",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "酒店报价",
+									"required": true
+								},
+								{
+									"name": "shid",
+									"type": "Number",
+									"description": "标准酒店id",
+									"required": true
+								},
+								{
+									"name": "sold_out",
+									"type": "Boolean",
+									"description": "是否售完",
+									"required": true
+								},
+								{
+									"name": "star_type",
+									"type": "String",
+									"description": "酒店星级类型",
+									"required": true
+								},
+								{
+									"name": "tel",
+									"type": "String",
+									"description": "酒店电话",
+									"required": true
+								},
+								{
+									"name": "brand_id",
+									"type": "String",
+									"description": "品牌Id",
+									"required": true
+								},
+								{
+									"name": "brand_name",
+									"type": "String",
+									"description": "品牌名字",
+									"required": true
+								},
+								{
+									"name": "brand_name_english",
+									"type": "String",
+									"description": "品牌英文名字",
+									"required": true
+								},
+								{
+									"name": "in_right_map_hotel_title",
+									"type": "String",
+									"description": "inRightMapHotelTitle",
+									"required": true
+								},
+								{
+									"name": "promotion_desc_arrs",
+									"type": "String[]",
+									"description": "活动",
+									"required": true
+								},
+								{
+									"name": "search_p_o_i",
+									"type": "SearchPoi",
+									"description": "searchPOI",
+									"required": true,
+									"subParams": [
+										{
+											"name": "latitude",
+											"type": "String",
+											"description": "latitude",
+											"required": true
+										},
+										{
+											"name": "longitude",
+											"type": "String",
+											"description": "longitude",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "name",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "services",
+									"type": "Option[]",
+									"description": "service",
+									"required": true,
+									"subParams": [
+										{
+											"name": "active",
+											"type": "Boolean",
+											"description": "active",
+											"required": true
+										},
+										{
+											"name": "link",
+											"type": "String",
+											"description": "link",
+											"required": true
+										},
+										{
+											"name": "text",
+											"type": "String",
+											"description": "text",
+											"required": true
+										},
+										{
+											"name": "value",
+											"type": "String",
+											"description": "value",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "later_pay_icon",
+									"type": "String",
+									"description": "laterPayIcon",
+									"required": true
+								},
+								{
+									"name": "inventory_desc",
+									"type": "String",
+									"description": "inventoryDesc",
+									"required": true
+								},
+								{
+									"name": "feature_hotel_type",
+									"type": "String",
+									"description": "酒店特色id",
+									"required": true
+								},
+								{
+									"name": "feature_hotel_type_name",
+									"type": "String",
+									"description": "酒店特色名称",
+									"required": true
+								},
+								{
+									"name": "areas",
+									"type": "Area[]",
+									"description": "商圈",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "String",
+											"description": "商圈id",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "商圈名字",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "offset",
+							"type": "Number",
+							"description": "分页参数。下一页开始位置",
+							"required": true
+						},
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总酒店数",
+							"required": true
+						},
+						{
+							"name": "search_id",
+							"type": "String",
+							"description": "searchId，debug用",
+							"required": true
+						},
+						{
+							"name": "total_pages",
+							"type": "Number",
+							"description": "totalPages",
+							"required": true
+						},
+						{
+							"name": "stat_info",
+							"type": "StatInfo",
+							"description": "统计信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "brand_type_list",
+									"type": "BrandType[]",
+									"description": "品牌类型信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "brand_list",
+											"type": "Brand[]",
+											"description": "品牌列表",
+											"required": true,
+											"subParams": [
+												{
+													"name": "brand_code",
+													"type": "String",
+													"description": "品牌code",
+													"required": true
+												},
+												{
+													"name": "brand_name",
+													"type": "String",
+													"description": "品牌名称",
+													"required": true
+												}
+											]
+										},
+										{
+											"name": "type_id",
+											"type": "String",
+											"description": "品牌类型",
+											"required": true
+										},
+										{
+											"name": "type_name",
+											"type": "String",
+											"description": "品牌类型名称",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

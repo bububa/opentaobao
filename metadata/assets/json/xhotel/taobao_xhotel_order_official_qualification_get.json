@@ -1,0 +1,150 @@
+{
+	"name": "taobao.xhotel.order.official.qualification.get",
+	"apiChineseName": "官网信用住用户资质校验",
+	"description": "官网信用住在下单前对用户进行资质校验，资质校验通过才能进行信用支付",
+	"requestParams": [
+		{
+			"name": "notify_url",
+			"type": "String",
+			"description": "卖家接收阿里旅行订单状态变更的服务地址（需要实现阿里旅行提供的服务通知规范）",
+			"required": true
+		},
+		{
+			"name": "return_url",
+			"type": "String",
+			"description": "阿里旅行支付（下单）结束后跳转卖家的页面地址（必须）",
+			"required": true
+		},
+		{
+			"name": "extend_attrs",
+			"type": "String",
+			"description": "扩展字段，json串，用户后续的营销、统计、定制等需求，目前已有key列表：      is_new_user：是否是卖家新用户，1-是，0或者key为null，表示不是      is_first_stay：是否是卖家首住，1-是，0或者key为null，表示不是     （已有列表必须传递）"
+		},
+		{
+			"name": "mobile_no",
+			"type": "String",
+			"description": "用户手机号(可选)"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "商家在淘宝给分配的渠道名（建议填充较好）"
+		},
+		{
+			"name": "id_type",
+			"type": "Number",
+			"description": "证件类型, 默认0:身份证; 1: 护照; 2:警官证; 3:士兵证; 4: 回乡证。目前只支持身份证"
+		},
+		{
+			"name": "encrypt_type",
+			"type": "Number",
+			"description": "加密方式, 默认0: 不加密, 信息会通过淘宝开放平台传输, 阿里旅行可以获取到具体信息;      * 目前只支持不加密"
+		},
+		{
+			"name": "guest_name",
+			"type": "String",
+			"description": "入住人姓名（必选）",
+			"required": true
+		},
+		{
+			"name": "alipay_account",
+			"type": "String",
+			"description": "用户支付宝唯一识别码(可选)"
+		},
+		{
+			"name": "out_member_account",
+			"type": "String",
+			"description": "外部会员账号（必选）",
+			"required": true
+		},
+		{
+			"name": "id_number",
+			"type": "String",
+			"description": "身份证号，必选",
+			"required": true
+		},
+		{
+			"name": "daily_price_info",
+			"type": "String",
+			"description": "每日房价,json格式 ，如果是多间房，则是每日多间房总房价(可选)      * eg:{\"day\":\"2015-08-12\",\"price\":48800},      {\"day\":\"2015-08-13\",\"price\":48800}"
+		},
+		{
+			"name": "check_out",
+			"type": "Date",
+			"description": "客人离店日期, 最多支持9间夜",
+			"required": true
+		},
+		{
+			"name": "check_in",
+			"type": "Date",
+			"description": "客人入住日期",
+			"required": true
+		},
+		{
+			"name": "out_u_u_i_d",
+			"type": "String",
+			"description": "外部请求序列表号\\流水号，单次请求的唯一标识(必须)",
+			"required": true
+		},
+		{
+			"name": "total_fee",
+			"type": "Number",
+			"description": "总的收费金额，单位为分(必须)",
+			"required": true
+		},
+		{
+			"name": "hotel_code",
+			"type": "String",
+			"description": "酒店外部编码",
+			"required": true
+		},
+		{
+			"name": "out_oid",
+			"type": "String",
+			"description": "外部订单号（必选），阿里旅行会根据此值进行幂等性校验",
+			"required": true
+		},
+		{
+			"name": "room_num",
+			"type": "Number",
+			"description": "房间数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "transfer_url",
+			"type": "String",
+			"description": "阿里旅行中间调用URL"
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "无资格原因提示信息"
+		},
+		{
+			"name": "match_condition",
+			"type": "Boolean",
+			"description": "资质校验是否成功,有资格返回true, 无资格返回false"
+		},
+		{
+			"name": "id_number",
+			"type": "String",
+			"description": "入参信息回传, 用于校验的证件号码"
+		},
+		{
+			"name": "out_memeber_account",
+			"type": "String",
+			"description": "入参信息回传，用于校验的外部会员账号"
+		},
+		{
+			"name": "out_u_u_i_d",
+			"type": "String",
+			"description": "* 外部请求序列表号回传\\流水号（如果外部订单号唯一，建议外部订单号，这样容易核对问题），用于区别一次请求和排查问题，阿里旅行不做任何格式校验(必须)"
+		},
+		{
+			"name": "extend_attrs",
+			"type": "String",
+			"description": "扩展字段，json串，后续留用"
+		}
+	]
+}

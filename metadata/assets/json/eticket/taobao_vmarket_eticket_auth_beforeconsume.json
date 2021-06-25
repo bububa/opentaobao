@@ -1,0 +1,66 @@
+{
+	"name": "taobao.vmarket.eticket.auth.beforeconsume",
+	"apiChineseName": "核销放行的查询接口",
+	"description": "针对O2O电子凭证核销放行业务，为满足码商能够核销淘宝码而开放的核销查询接口",
+	"requestParams": [
+		{
+			"name": "verify_code",
+			"type": "String",
+			"description": "核销的码，只支持单个码，多个码核销需要多次调用",
+			"required": true
+		},
+		{
+			"name": "operatorid",
+			"type": "String",
+			"description": "核销方的ID，如果是普通码商必须传入机具ID,如果是私有码商家（即原有的信任商家）可默认传入私有码商ID",
+			"required": true
+		},
+		{
+			"name": "storeid",
+			"type": "String",
+			"description": "网点ID,网点授权核销时，必须传入；其他核销方式可不传"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "1:可以进行核销码操作"
+		},
+		{
+			"name": "item_title",
+			"type": "String",
+			"description": "商品标题"
+		},
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单ID"
+		},
+		{
+			"name": "taobao_sid",
+			"type": "Number",
+			"description": "淘宝卖家ID"
+		},
+		{
+			"name": "seller_nick",
+			"type": "String",
+			"description": "淘宝卖家旺旺名称"
+		},
+		{
+			"name": "valid_start",
+			"type": "Date",
+			"description": "有效期开始时间"
+		},
+		{
+			"name": "valid_ends",
+			"type": "Date",
+			"description": "有效期结束时间"
+		},
+		{
+			"name": "code_left_num",
+			"type": "Number",
+			"description": "当前码剩余可核销数量"
+		}
+	]
+}

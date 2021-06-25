@@ -1,0 +1,75 @@
+{
+	"name": "alibaba.security.jaq.rp.cloud.upload",
+	"apiChineseName": "实人认证云上传接口",
+	"description": "聚安全实人认证上传认证信息",
+	"requestParams": [
+		{
+			"name": "verify_token",
+			"type": "String",
+			"description": "认证token",
+			"required": true
+		},
+		{
+			"name": "elements",
+			"type": "Elements[]",
+			"description": "[]",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "value_meta",
+					"type": "String",
+					"description": "材料值类型",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "url",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "材料名字",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "RpUploadResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "upload_id",
+					"type": "String",
+					"description": "uploadId",
+					"required": true
+				},
+				{
+					"name": "upload_status",
+					"type": "RpUploadStatus",
+					"description": "uploadStatus",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "code",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

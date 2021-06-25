@@ -1,0 +1,42 @@
+{
+	"name": "taobao.tanx.audit.creative.modify",
+	"apiChineseName": "创意修改接口",
+	"description": "创意修改接口",
+	"requestParams": [
+		{
+			"name": "member_id",
+			"type": "Number",
+			"description": "DSP用户ID",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "dsp用户身份认证的TOKEN",
+			"required": true
+		},
+		{
+			"name": "sign_time",
+			"type": "Number",
+			"description": "当前时间戳，1970-01-01后的秒数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "调用的成功信息或失败信息"
+		},
+		{
+			"name": "tanx_error_code",
+			"type": "Number",
+			"description": "调用返回码"
+		},
+		{
+			"name": "is_ok",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

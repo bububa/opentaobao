@@ -1,0 +1,21 @@
+{
+	"name": "taobao.qt.report.delete",
+	"apiChineseName": "质检报告删除接口",
+	"description": "删除质检报告",
+	"requestParams": [
+		{
+			"name": "qt_code",
+			"type": "String",
+			"description": "一个质检服务唯一标识质量检验单的编号",
+			"required": true,
+			"maxLength": 64
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

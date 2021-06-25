@@ -1,0 +1,179 @@
+{
+	"name": "taobao.qimen.returnpackage.report",
+	"apiChineseName": "退货包裹状态通知接口",
+	"description": "退货包裹状态通知接口",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"subParams": [
+				{
+					"name": "order",
+					"type": "Order",
+					"description": "订单",
+					"subParams": [
+						{
+							"name": "orderCode",
+							"type": "String",
+							"description": "退货包裹交接单编码, string (50) , 必填"
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码, string (50)，必填"
+						},
+						{
+							"name": "outBizCode",
+							"type": "String",
+							"description": "外部业务编码, 消息ID, 用于去重, ISV对于同一请求，分配一个唯一性的编码。用来保证因为网络等原因导致重复传输，请求不会被重复处理。必填"
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "单据类型, string（50）,THPL=退货包裹交接单"
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码, string (50) , 必填"
+						}
+					]
+				},
+				{
+					"name": "packages",
+					"type": "Packages",
+					"description": "包裹列表",
+					"subParams": [
+						{
+							"name": "packageValue",
+							"type": "Package",
+							"description": "包裹详情",
+							"subParams": [
+								{
+									"name": "logisticsCode",
+									"type": "String",
+									"description": "承运商编码string (50) , SF=顺丰、EMS=标准快递、EYB=经济快件、ZJS=宅急送、YTO=圆通 、ZTO=中通 (ZTO) 、HTKY=百世汇通、BSKY=百世快运、UC=优速、STO=申通、TTKDEX=天天快递 、QFKD=全峰、FAST=快捷、POSTB=邮政小包 、GTO=国通、YUNDA=韵达、JD=京东配送、DD=当当宅配、AMAZON=亚马逊物流、DBWL=德邦物流、DBKD=德邦快递、DBKY=德邦快运、RRS=日日顺、OTHER=其他，必填, (只传英文编码)"
+								},
+								{
+									"name": "logisticsName",
+									"type": "String",
+									"description": "物流公司名称, string (200)"
+								},
+								{
+									"name": "expressCode",
+									"type": "String",
+									"description": "运单号, string (50) , 不必填"
+								},
+								{
+									"name": "weight",
+									"type": "String",
+									"description": "包裹重量 (千克) , double (18, 3)"
+								},
+								{
+									"name": "signUserName",
+									"type": "String",
+									"description": "签收人姓名, string (50) ，必填"
+								},
+								{
+									"name": "signTime",
+									"type": "String",
+									"description": "当前状态操作时间, string (19) , YYYY-MM-DD HH:MM:SS"
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "状态, sign-已签收string (50)"
+								},
+								{
+									"name": "remarks",
+									"type": "String",
+									"description": "备注, string (500) ,"
+								},
+								{
+									"name": "items",
+									"type": "Items",
+									"description": "商品列表",
+									"subParams": [
+										{
+											"name": "item",
+											"type": "Item",
+											"description": "商品详情",
+											"subParams": [
+												{
+													"name": "itemCode",
+													"type": "String",
+													"description": "商品编码"
+												},
+												{
+													"name": "itemName",
+													"type": "String",
+													"description": "商品名称"
+												},
+												{
+													"name": "itemId",
+													"type": "String",
+													"description": "商品仓储系统编码"
+												},
+												{
+													"name": "quantity",
+													"type": "String",
+													"description": "包裹内该商品的数量,"
+												},
+												{
+													"name": "unit",
+													"type": "String",
+													"description": "商品单位"
+												},
+												{
+													"name": "price",
+													"type": "String",
+													"description": "商品单价"
+												},
+												{
+													"name": "amount",
+													"type": "String",
+													"description": "金额"
+												},
+												{
+													"name": "status",
+													"type": "String",
+													"description": "签收状态"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,58 @@
+{
+	"name": "taobao.nlp.word",
+	"apiChineseName": "文本语言词法分析",
+	"description": "提供文本语言处理中的词法分析功能,开放中文分词和词权重计算功能。",
+	"requestParams": [
+		{
+			"name": "w_type",
+			"type": "Number",
+			"description": "功能类型选择：1)wType=1时提供分词功能，type=0时为基本粒度，type=1时为混合粒度，type=3时为基本粒度和混合粒度共同输出；",
+			"required": true
+		},
+		{
+			"name": "text",
+			"type": "Text",
+			"description": "文本内容",
+			"required": true,
+			"subParams": [
+				{
+					"name": "id",
+					"type": "String",
+					"description": "业务处理ID",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "文本内容",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "文本类型1-评论 2-订单留言 9-其他",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "wordresult",
+			"type": "WordResult",
+			"description": "返回词法分析的结果",
+			"subParams": [
+				{
+					"name": "top_result",
+					"type": "String",
+					"description": "返回文本处理内容"
+				},
+				{
+					"name": "top_status",
+					"type": "Boolean",
+					"description": "返回结果为true则运行成功，为false则运行失败"
+				}
+			]
+		}
+	]
+}

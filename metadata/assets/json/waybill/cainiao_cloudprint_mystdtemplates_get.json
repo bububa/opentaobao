@@ -1,0 +1,86 @@
+{
+	"name": "cainiao.cloudprint.mystdtemplates.get",
+	"apiChineseName": "获取用户使用的菜鸟电子面单模板信息",
+	"description": "获取用户使用的菜鸟电子面单",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "datas",
+					"type": "UserTemplateResult[]",
+					"description": "所有cp的数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "cp_code",
+							"type": "String",
+							"description": "cp编码",
+							"required": true
+						},
+						{
+							"name": "user_std_templates",
+							"type": "UserTemplateDo[]",
+							"description": "用户使用的模板数据",
+							"required": true,
+							"subParams": [
+								{
+									"name": "keys",
+									"type": "KeyResult[]",
+									"description": "keys",
+									"required": true,
+									"subParams": [
+										{
+											"name": "key_name",
+											"type": "String",
+											"description": "key的名称",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "user_std_template_url",
+									"type": "String",
+									"description": "用户使用模板的url",
+									"required": true
+								},
+								{
+									"name": "user_std_template_id",
+									"type": "Number",
+									"description": "用户使用模板的id",
+									"required": true
+								},
+								{
+									"name": "user_std_template_name",
+									"type": "String",
+									"description": "用户使用模板名称",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,98 @@
+{
+	"name": "alibaba.mj.mos.fund.modifybillbankaccount",
+	"apiChineseName": "修改付款单的银行账户信息",
+	"description": "修改付款单的银行账户信息",
+	"requestParams": [
+		{
+			"name": "modify_dto",
+			"type": "ModifyBillDto",
+			"description": "修改入参",
+			"subParams": [
+				{
+					"name": "bank_branch_code",
+					"type": "String",
+					"description": "收款方开户支行code"
+				},
+				{
+					"name": "supplier_name",
+					"type": "String",
+					"description": "供应商名称（可空）"
+				},
+				{
+					"name": "supplier_no",
+					"type": "String",
+					"description": "供应商id（可空"
+				},
+				{
+					"name": "bank_city",
+					"type": "String",
+					"description": "收款方开户市"
+				},
+				{
+					"name": "account_no",
+					"type": "String",
+					"description": "收款方银行账号"
+				},
+				{
+					"name": "bank_name",
+					"type": "String",
+					"description": "收款方开户行"
+				},
+				{
+					"name": "account_types",
+					"type": "String",
+					"description": "账号类型，COMPANY企业/PERSON个人"
+				},
+				{
+					"name": "bank_province",
+					"type": "String",
+					"description": "收款方开户省"
+				},
+				{
+					"name": "bank_code",
+					"type": "String",
+					"description": "//银行号",
+					"required": true
+				},
+				{
+					"name": "settle_line_nos",
+					"type": "String[]",
+					"description": "结算行号list",
+					"required": true
+				},
+				{
+					"name": "account_name",
+					"type": "String",
+					"description": "收款方账号名称"
+				},
+				{
+					"name": "bank_branch_name",
+					"type": "String",
+					"description": "收款方开户支行"
+				},
+				{
+					"name": "cnaps_code",
+					"type": "String",
+					"description": "联行号"
+				},
+				{
+					"name": "bill_no",
+					"type": "String",
+					"description": "//单据请求唯一编号，必填"
+				},
+				{
+					"name": "extend_params",
+					"type": "String",
+					"description": "扩展参数"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Boolean",
+			"description": "data"
+		}
+	]
+}

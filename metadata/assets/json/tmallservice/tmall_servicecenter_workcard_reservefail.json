@@ -1,0 +1,66 @@
+{
+	"name": "tmall.servicecenter.workcard.reservefail",
+	"apiChineseName": "预约失败",
+	"description": "服务商调用该接口回传工单预约失败",
+	"requestParams": [
+		{
+			"name": "identify_task_id",
+			"type": "Number",
+			"description": "核销单外部id"
+		},
+		{
+			"name": "gmt_next_contact",
+			"type": "Date",
+			"description": "下次联系时间"
+		},
+		{
+			"name": "fail_code",
+			"type": "Number",
+			"description": "预约失败原因码",
+			"required": true
+		},
+		{
+			"name": "fail_desc",
+			"type": "String",
+			"description": "预约失败原因描述"
+		},
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "-",
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "用于对外展示的错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "消息代码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "系统级错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

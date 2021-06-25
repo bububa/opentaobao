@@ -1,0 +1,61 @@
+{
+	"name": "alibaba.scbp.ad.keyword.get.keyword.count.by.query",
+	"apiChineseName": "计划关键词数目",
+	"description": "计划关键词数目",
+	"requestParams": [
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			]
+		},
+		{
+			"name": "campaign_keyword_query",
+			"type": "CampaignKeywordQuery",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "norm_word",
+					"type": "String",
+					"description": "普通词"
+				},
+				{
+					"name": "word_id_list",
+					"type": "Number[]",
+					"description": "词id集合"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划id"
+				},
+				{
+					"name": "online_status",
+					"type": "Number",
+					"description": "状态"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "返回值"
+		}
+	]
+}

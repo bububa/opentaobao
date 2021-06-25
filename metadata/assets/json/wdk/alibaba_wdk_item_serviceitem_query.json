@@ -1,0 +1,40 @@
+{
+	"name": "alibaba.wdk.item.serviceitem.query",
+	"apiChineseName": "查询服务商品",
+	"description": "查询服务商品",
+	"requestParams": [
+		{
+			"name": "hema_category_id",
+			"type": "String",
+			"description": "后台类目",
+			"required": true
+		},
+		{
+			"name": "org_no",
+			"type": "String",
+			"description": "机构编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Json",
+					"description": "result",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

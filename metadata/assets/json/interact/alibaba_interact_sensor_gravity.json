@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.sensor.gravity",
+	"apiChineseName": "重力感应",
+	"description": "native获取重力感应",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "0表示成功呢"
+		}
+	]
+}

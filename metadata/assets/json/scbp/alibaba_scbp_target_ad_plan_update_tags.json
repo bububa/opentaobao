@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.scbp.target.ad.plan.update.tags",
+	"apiChineseName": "定向推广 按照id操作推广计划的定向溢价标签，包括新增，删除和更新",
+	"description": "定向推广 按照id操作推广计划的定向溢价标签，包括新增，删除和更新",
+	"requestParams": [
+		{
+			"name": "param_top_p4p_modify_quick_campaign_tag_d_t_o",
+			"type": "TopP4pModifyQuickCampaignTagDto",
+			"description": "系统生成",
+			"subParams": [
+				{
+					"name": "action",
+					"type": "Number",
+					"description": "操作类型，1=修改定向溢价，2=创建定向标签，3=删除定向标签"
+				},
+				{
+					"name": "bid_rate",
+					"type": "Number",
+					"description": "定向溢价比例，(100,400]，新增/修改有效"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "计划ID"
+				},
+				{
+					"name": "option_value",
+					"type": "String",
+					"description": "定向标签编码，新增/修改有效"
+				},
+				{
+					"name": "tag_id",
+					"type": "Number",
+					"description": "定向ID，删除有效"
+				},
+				{
+					"name": "tag_type",
+					"type": "Number",
+					"description": "定向类型，新增/修改有效，1=类目访客，2=类目询盘，3=固定标签，比如本店、高MOQ等，4=地域定向"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "修改记录数量"
+		}
+	]
+}

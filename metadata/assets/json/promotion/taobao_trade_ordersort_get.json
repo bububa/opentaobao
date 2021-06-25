@@ -1,0 +1,120 @@
+{
+	"name": "taobao.trade.ordersort.get",
+	"apiChineseName": "获取前N有礼活动的开奖订单列表",
+	"description": "获取前N有礼活动的开奖订单列表",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动ID",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "一页记录数, 必须写死500"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "AwardOrderResultDto",
+					"description": "返回素材id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "orders",
+							"type": "AwardOrder[]",
+							"description": "订单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "biz_main_order_id",
+									"type": "Number",
+									"description": "主订单ID",
+									"required": true
+								},
+								{
+									"name": "is_award",
+									"type": "Boolean",
+									"description": "是否中奖",
+									"required": true
+								},
+								{
+									"name": "pay_time",
+									"type": "Date",
+									"description": "支付时间",
+									"required": true
+								},
+								{
+									"name": "sort_code",
+									"type": "String",
+									"description": "排序码",
+									"required": true
+								},
+								{
+									"name": "sort_num",
+									"type": "Number",
+									"description": "排序序号",
+									"required": true
+								},
+								{
+									"name": "biz_order_id",
+									"type": "Number",
+									"description": "子订单ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "页码",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "页数",
+							"required": true
+						},
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总页数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,101 @@
+{
+	"name": "taobao.film.data.third.party.refund.order",
+	"apiChineseName": "退票接口",
+	"description": "淘票票第三方退票接口",
+	"requestParams": [
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "淘宝账号ID，此ID是一串数字。可自行百度查看如何获取或者咨询淘票票技术人员提供",
+			"required": true
+		},
+		{
+			"name": "platform",
+			"type": "Number",
+			"description": "淘票票分配的渠道码",
+			"required": true
+		},
+		{
+			"name": "ext_user_id",
+			"type": "String",
+			"description": "退票身份ID，用于标识一个购票用户的身份，该参数需要跟锁座接口的ext_order_id参数一致，否则下单会失败。外部渠道需保证该参数的唯一性及准确性，下单出票接口会利用该参数做冥等性判断，如果由于外部渠道自身传入的参数有问题而导致的下单出票接口返回的结果有误，需要外部渠道自己承担损失",
+			"required": true
+		},
+		{
+			"name": "ext_order_id",
+			"type": "String",
+			"description": "退款时候需要传入第三方的订单号。外部渠道需保证该参数的唯一性和准确性",
+			"required": true
+		},
+		{
+			"name": "tb_order_id",
+			"type": "Number",
+			"description": "下单时返回的淘宝订单号参数",
+			"required": true
+		},
+		{
+			"name": "refund_amount",
+			"type": "Number",
+			"description": "退款金额，以分为单位，为指定的退款订单的金额",
+			"required": true
+		},
+		{
+			"name": "refund_service_fee",
+			"type": "Number",
+			"description": "退款服务费，目前都为0",
+			"required": true
+		},
+		{
+			"name": "params",
+			"type": "Json",
+			"description": "目前可以暂时不填参数"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultGeneralModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "return_message",
+					"type": "String",
+					"description": "调用失败描述信息",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "0代表接口调用成功，其他值表示调用失败，错误信息可详见接口文档",
+					"required": true
+				},
+				{
+					"name": "return_value",
+					"type": "TopRefundOrderStatus",
+					"description": "returnValue",
+					"required": true,
+					"subParams": [
+						{
+							"name": "status",
+							"type": "String",
+							"description": "退款中，其他状态可详见接口文档",
+							"required": true
+						},
+						{
+							"name": "tb_order_id",
+							"type": "String",
+							"description": "tbOrderId",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "message",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

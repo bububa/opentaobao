@@ -1,0 +1,72 @@
+{
+	"name": "alibaba.alicom.order.preauthorize.create",
+	"apiChineseName": "业务办理结果",
+	"description": "授授权:签约结果通知",
+	"requestParams": [
+		{
+			"name": "pre_authorize_model",
+			"type": "PreAuthorizeModel",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "ext",
+					"type": "String",
+					"description": "扩展字段(json)"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "0:业务办理成功，2:业务办理失败,全额解冻"
+				},
+				{
+					"name": "tb_order_no",
+					"type": "String",
+					"description": "淘宝订单号"
+				},
+				{
+					"name": "out_biz_order_no",
+					"type": "String",
+					"description": "外部流水号"
+				},
+				{
+					"name": "fund_auth_no",
+					"type": "String",
+					"description": "授权水号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口返回成功",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "数据结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,275 @@
+{
+	"name": "alibaba.nazca.auth.authapply.callback",
+	"apiChineseName": "认证的统一回调接口",
+	"description": "认证的统一回调接口",
+	"requestParams": [
+		{
+			"name": "auth_apply_done_callback_do",
+			"type": "AuthApplyDoneCallBackDo",
+			"description": "认证回调参数",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "String",
+					"description": "身份证"
+				},
+				{
+					"name": "alipay_account",
+					"type": "String",
+					"description": "支付宝账号"
+				},
+				{
+					"name": "alipay_user_id",
+					"type": "String",
+					"description": "支付宝用户id"
+				},
+				{
+					"name": "applicant_type",
+					"type": "String",
+					"description": "申请人身份： 1：企业法人/负责人；2：企业代理人"
+				},
+				{
+					"name": "dn",
+					"type": "String",
+					"description": "证书DN"
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "邮箱"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "证书有效期截止时间"
+				},
+				{
+					"name": "enterprise_name",
+					"type": "String",
+					"description": "待认证的企业名称"
+				},
+				{
+					"name": "license",
+					"type": "String",
+					"description": "营业执照号"
+				},
+				{
+					"name": "organization",
+					"type": "String",
+					"description": "组织机构代码"
+				},
+				{
+					"name": "person_name",
+					"type": "String",
+					"description": "对应人员名称"
+				},
+				{
+					"name": "pfx",
+					"type": "String",
+					"description": "证书pfx文件"
+				},
+				{
+					"name": "pfx_key",
+					"type": "String",
+					"description": "证书pfx密钥"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "电话"
+				},
+				{
+					"name": "platform_user_id",
+					"type": "String",
+					"description": "客户在1688的唯一标识"
+				},
+				{
+					"name": "sequence_no",
+					"type": "String",
+					"description": "证书序列号"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "证书有效期起始时间"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "审核状态"
+				},
+				{
+					"name": "three_cert_number",
+					"type": "String",
+					"description": "统一社会信用代码"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "证件类型 1：旧版三证 2：新版三证合一"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ActionResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error",
+					"type": "String",
+					"description": "error",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "ret_value",
+					"type": "AuthApplyDoneCallBackDo",
+					"description": "retValue",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "身份证",
+							"required": true
+						},
+						{
+							"name": "alipay_account",
+							"type": "String",
+							"description": "支付宝账号",
+							"required": true
+						},
+						{
+							"name": "alipay_user_id",
+							"type": "String",
+							"description": "支付宝用户id",
+							"required": true
+						},
+						{
+							"name": "applicant_type",
+							"type": "String",
+							"description": "申请人身份： 1：企业法人/负责人；2：企业代理人",
+							"required": true
+						},
+						{
+							"name": "dn",
+							"type": "String",
+							"description": "证书DN",
+							"required": true
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "证书有效期截止时间",
+							"required": true
+						},
+						{
+							"name": "enterprise_name",
+							"type": "String",
+							"description": "待认证的企业名称",
+							"required": true
+						},
+						{
+							"name": "license",
+							"type": "String",
+							"description": "营业执照号",
+							"required": true
+						},
+						{
+							"name": "organization",
+							"type": "String",
+							"description": "组织机构代码",
+							"required": true
+						},
+						{
+							"name": "person_name",
+							"type": "String",
+							"description": "对应人员名称",
+							"required": true
+						},
+						{
+							"name": "pfx",
+							"type": "String",
+							"description": "证书pfx文件",
+							"required": true
+						},
+						{
+							"name": "pfx_key",
+							"type": "String",
+							"description": "证书pfx密钥",
+							"required": true
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "电话",
+							"required": true
+						},
+						{
+							"name": "platform_user_id",
+							"type": "String",
+							"description": "客户在1688的唯一标识",
+							"required": true
+						},
+						{
+							"name": "sequence_no",
+							"type": "String",
+							"description": "证书序列号",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "证书有效期起始时间",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "审核状态",
+							"required": true
+						},
+						{
+							"name": "three_cert_number",
+							"type": "String",
+							"description": "统一社会信用代码",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "证件类型 1：旧版三证 2：新版三证合一",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sub_error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				}
+			]
+		}
+	]
+}

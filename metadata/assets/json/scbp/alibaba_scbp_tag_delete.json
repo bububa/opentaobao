@@ -1,0 +1,20 @@
+{
+	"name": "alibaba.scbp.tag.delete",
+	"apiChineseName": "删除关键词分组",
+	"description": "删除关键词分组",
+	"requestParams": [
+		{
+			"name": "tag_name",
+			"type": "String",
+			"description": "关键词分组名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "删除关键词分组成功"
+		}
+	]
+}

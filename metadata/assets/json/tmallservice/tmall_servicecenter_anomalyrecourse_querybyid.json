@@ -1,0 +1,45 @@
+{
+	"name": "tmall.servicecenter.anomalyrecourse.querybyid",
+	"apiChineseName": "根据一键求助id查询指定服务商的一键求助单",
+	"description": "根据一键求助id查询指定服务商的一键求助单",
+	"requestParams": [
+		{
+			"name": "anomaly_recourse_id",
+			"type": "Number",
+			"description": "一键求助的id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "value",
+					"type": "Json",
+					"description": "单个一键求助单对象json字符串",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

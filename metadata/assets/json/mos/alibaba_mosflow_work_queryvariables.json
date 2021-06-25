@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.mosflow.work.queryvariables",
+	"apiChineseName": "获取指定流程上下文参数",
+	"description": "业务查询指定流程上下文内容",
+	"requestParams": [
+		{
+			"name": "process_instance_id",
+			"type": "String",
+			"description": "流程实例ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MultiResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_total",
+					"type": "Number",
+					"description": "total",
+					"required": true
+				},
+				{
+					"name": "result_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "result_datas",
+					"type": "Json[]",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "result_success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

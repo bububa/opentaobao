@@ -1,0 +1,98 @@
+{
+	"name": "alibaba.baichuan.ctg.video.upload",
+	"apiChineseName": "提供优酷的短视频入淘API",
+	"description": "提供优酷的短视频入淘API",
+	"requestParams": [
+		{
+			"name": "app",
+			"type": "String",
+			"description": "app",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "type",
+			"required": true
+		},
+		{
+			"name": "tb_uid",
+			"type": "String",
+			"description": "优酷道长绑定的淘宝账号ID",
+			"required": true
+		},
+		{
+			"name": "video_id",
+			"type": "String",
+			"description": "视频VID，若为多个视频，则支持分组上传多个VID",
+			"required": true
+		},
+		{
+			"name": "owner_name",
+			"type": "String",
+			"description": "作者名称"
+		},
+		{
+			"name": "publish_time",
+			"type": "String",
+			"description": "发布时间"
+		},
+		{
+			"name": "upload_time",
+			"type": "String",
+			"description": "上传时间"
+		},
+		{
+			"name": "video_title",
+			"type": "String",
+			"description": "视频标题"
+		},
+		{
+			"name": "video_info",
+			"type": "String",
+			"description": "视频描述"
+		},
+		{
+			"name": "video_category",
+			"type": "String",
+			"description": "视频的分类ID，目前是优酷的分类ID"
+		},
+		{
+			"name": "video_tag",
+			"type": "String",
+			"description": "视频标签"
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "视频的平台来源，如，优酷"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CtgResponse",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

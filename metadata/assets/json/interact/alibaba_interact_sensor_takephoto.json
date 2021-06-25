@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.sensor.takephoto",
+	"apiChineseName": "takePhoto",
+	"description": "客户端takePhoto",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "return=0表示成功"
+		}
+	]
+}

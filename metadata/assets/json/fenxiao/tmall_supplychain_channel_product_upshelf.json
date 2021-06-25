@@ -1,0 +1,45 @@
+{
+	"name": "tmall.supplychain.channel.product.upshelf",
+	"apiChineseName": "产品上架",
+	"description": "上架渠道产品",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Boolean",
+					"description": "上架结果",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

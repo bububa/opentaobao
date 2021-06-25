@@ -1,0 +1,143 @@
+{
+	"name": "taobao.qimen.itemlack.report",
+	"apiChineseName": "发货单缺货通知接口",
+	"description": "WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "ItemLackReportRequest",
+			"subParams": [
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码",
+					"required": true
+				},
+				{
+					"name": "deliveryOrderCode",
+					"type": "String",
+					"description": "ERP的发货单编码",
+					"required": true
+				},
+				{
+					"name": "deliveryOrderId",
+					"type": "String",
+					"description": "仓库系统的发货单编码"
+				},
+				{
+					"name": "createTime",
+					"type": "String",
+					"description": "缺货回告创建时间(YYYY-MM-DD HH:mm:ss)",
+					"required": true
+				},
+				{
+					"name": "outBizCode",
+					"type": "String",
+					"description": "外部业务编码(消息ID;用于去重;ISV对于同一请求;分配一个唯一性的编码。用来保证因为网络等原因导致重复传输;请求不 会被重复处理)",
+					"required": true
+				},
+				{
+					"name": "items",
+					"type": "Item[]",
+					"description": "缺货商品列表",
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品编码"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;ZT=在途库存)"
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编码"
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "商品生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "商品过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "planQty",
+							"type": "Number",
+							"description": "应发商品数量",
+							"required": true
+						},
+						{
+							"name": "lackQty",
+							"type": "Number",
+							"description": "缺货商品数量",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "缺货原因(系统报缺;实物报缺)"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

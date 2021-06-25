@@ -1,0 +1,46 @@
+{
+	"name": "taobao.item.qualification.display.get",
+	"apiChineseName": "资质采集配置异步获取接口",
+	"description": "根据类目，商品，属性等参与动态获得资质采集配置",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "String",
+			"description": "参数列表，为key和value都是string的map的转化的json格式"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id"
+		},
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "类目id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "display_conf",
+			"type": "DisplayQualifications",
+			"description": "返回资质采集配置",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回消息"
+				},
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "填充列表"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,86 @@
+{
+	"name": "taobao.tanx.biddingrefuses.get",
+	"apiChineseName": "tanx竞价失败反馈api",
+	"description": "竞价失败反馈根据创意id查询API提供",
+	"requestParams": [
+		{
+			"name": "creative_ids",
+			"type": "String[]",
+			"description": "dsp的创意id",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "member_id",
+			"type": "Number",
+			"description": "dsp在tanx的memberid",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "dsp对应的tanx的token",
+			"required": true
+		},
+		{
+			"name": "sign_time",
+			"type": "Number",
+			"description": "1970年到现在的毫秒",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "起始时间"
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "截止时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "返回是否成功"
+		},
+		{
+			"name": "bidding_refuse_list",
+			"type": "BiddingRefuseDto []",
+			"description": "返回竞价失败对象信息",
+			"subParams": [
+				{
+					"name": "filter_id",
+					"type": "String",
+					"description": "创意级别对应的错误码"
+				},
+				{
+					"name": "adfil_pv",
+					"type": "Number",
+					"description": "创意过滤次数"
+				},
+				{
+					"name": "filter_id_desc",
+					"type": "String",
+					"description": "Pv粒度错误码对应描述二级原因"
+				},
+				{
+					"name": "filter_class_desc",
+					"type": "String",
+					"description": "Pv粒度错误码对应的一级原因"
+				},
+				{
+					"name": "dsp_id",
+					"type": "Number",
+					"description": "dsp_id"
+				},
+				{
+					"name": "creative_id",
+					"type": "String",
+					"description": "O123545"
+				}
+			]
+		}
+	]
+}

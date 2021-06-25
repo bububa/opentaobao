@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.wdk.pos.afterbuy.benefit.send",
+	"apiChineseName": "生态pos购后发放权益",
+	"description": "生态pos购后发放权益接口开放",
+	"requestParams": [
+		{
+			"name": "send_benefit_param",
+			"type": "IsvSendBenefitParam",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "out_shop_code",
+					"type": "String",
+					"description": "外部erp门店编码",
+					"required": true
+				},
+				{
+					"name": "alipay_trade_id",
+					"type": "String",
+					"description": "支付宝支付单号",
+					"required": true
+				},
+				{
+					"name": "device_type",
+					"type": "Number",
+					"description": "设备类型。1是人工pos，2是自助pos",
+					"required": true
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "设备id，isv这边可能给到的是设备编号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BmResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "返回的权益文案，json格式",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

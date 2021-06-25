@@ -1,0 +1,76 @@
+{
+	"name": "taobao.elife.lifecard.consume",
+	"apiChineseName": "品牌惠卡券核销",
+	"description": "用户线上购买生活汇品牌惠虚拟消费卡，线下购物时，商家码枪核销，涉及用户虚拟卡余额扣减操作",
+	"requestParams": [
+		{
+			"name": "consume_request",
+			"type": "ConsumeRequest",
+			"description": "交易请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "消费金额, 分",
+					"required": true
+				},
+				{
+					"name": "op_id",
+					"type": "String",
+					"description": "商家的操作流水号, 唯一键",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "收银员名称"
+				},
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "门店编号",
+					"required": true
+				},
+				{
+					"name": "pay_code",
+					"type": "String",
+					"description": "码枪读入的手淘条码",
+					"required": true
+				},
+				{
+					"name": "sale_ticket",
+					"type": "String",
+					"description": "小票信息"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "amount",
+			"type": "Number",
+			"description": "本金"
+		},
+		{
+			"name": "inflate_amount",
+			"type": "Number",
+			"description": "膨胀金"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		},
+		{
+			"name": "successed",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

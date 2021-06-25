@@ -1,0 +1,66 @@
+{
+	"name": "alibaba.tcls.aelophy.merchant.channel.refund.cancel",
+	"apiChineseName": "翱象商家自有渠道 逆向单申请取消",
+	"description": "翱象小程序 用户逆向申请取消",
+	"requestParams": [
+		{
+			"name": "refund_cancel_info",
+			"type": "RefundCancelInfo",
+			"description": "逆向申请取消",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_refund_id",
+					"type": "String",
+					"description": "外部逆向单ID",
+					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部主单号",
+					"required": true
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部渠道店ID",
+					"required": true
+				},
+				{
+					"name": "order_from",
+					"type": "Number",
+					"description": "订单来源",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "返回码说明",
+					"required": true
+				}
+			]
+		}
+	]
+}

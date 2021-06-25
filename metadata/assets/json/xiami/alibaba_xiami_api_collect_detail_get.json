@@ -1,0 +1,239 @@
+{
+	"name": "alibaba.xiami.api.collect.detail.get",
+	"apiChineseName": "虾米音乐精选集详情接口",
+	"description": "虾米音乐精选集详情接口",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "精选集ID",
+			"required": true
+		},
+		{
+			"name": "full_des",
+			"type": "Boolean",
+			"description": "是否获取完整描述"
+		},
+		{
+			"name": "tag",
+			"type": "String",
+			"description": "是否需要tag, show为需要, 其他为不需要"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "CollectDetail",
+			"description": "精选集资料和对应歌曲列表",
+			"subParams": [
+				{
+					"name": "logo_default",
+					"type": "Boolean",
+					"description": "是否默认图片"
+				},
+				{
+					"name": "list_id",
+					"type": "Number",
+					"description": "精选集ID"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "创建者用户ID"
+				},
+				{
+					"name": "collect_name",
+					"type": "String",
+					"description": "精选集名称"
+				},
+				{
+					"name": "logo",
+					"type": "String",
+					"description": "精选集LOGO"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "精选集介绍"
+				},
+				{
+					"name": "songs_count",
+					"type": "Number",
+					"description": "歌曲总数"
+				},
+				{
+					"name": "play_count",
+					"type": "Number",
+					"description": "试听数"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Number",
+					"description": "创建精选集时间戳"
+				},
+				{
+					"name": "gmt_modify",
+					"type": "Number",
+					"description": "修改精选集时间戳"
+				},
+				{
+					"name": "views",
+					"type": "Number",
+					"description": "浏览次数"
+				},
+				{
+					"name": "downloads",
+					"type": "Number",
+					"description": "下载次数"
+				},
+				{
+					"name": "favorites",
+					"type": "Number",
+					"description": "喜欢次数"
+				},
+				{
+					"name": "comments",
+					"type": "Number",
+					"description": "评论次数"
+				},
+				{
+					"name": "recommends",
+					"type": "Number",
+					"description": "推荐次数"
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "创建者用户昵称"
+				},
+				{
+					"name": "author_avatar",
+					"type": "String",
+					"description": "创建者用户头像"
+				},
+				{
+					"name": "avatar_default",
+					"type": "Boolean",
+					"description": "创建者头像是否默认"
+				},
+				{
+					"name": "is_vip",
+					"type": "Number",
+					"description": "创建者是否VIP"
+				},
+				{
+					"name": "songs",
+					"type": "CollectSong[]",
+					"description": "精选集歌曲列表",
+					"subParams": [
+						{
+							"name": "song_id",
+							"type": "Number",
+							"description": "歌曲ID"
+						},
+						{
+							"name": "song_name",
+							"type": "String",
+							"description": "歌曲名称"
+						},
+						{
+							"name": "album_id",
+							"type": "Number",
+							"description": "专辑ID"
+						},
+						{
+							"name": "album_name",
+							"type": "String",
+							"description": "专辑名"
+						},
+						{
+							"name": "artist_id",
+							"type": "Number",
+							"description": "艺人ID"
+						},
+						{
+							"name": "artist_name",
+							"type": "String",
+							"description": "艺人名"
+						},
+						{
+							"name": "lyric_text",
+							"type": "String",
+							"description": "文本歌词"
+						},
+						{
+							"name": "recommends",
+							"type": "Number",
+							"description": "推荐值"
+						},
+						{
+							"name": "length",
+							"type": "Number",
+							"description": "歌曲时长（S）"
+						},
+						{
+							"name": "logo",
+							"type": "String",
+							"description": "专辑LOGO"
+						},
+						{
+							"name": "artist_logo",
+							"type": "String",
+							"description": "艺人LOGO"
+						},
+						{
+							"name": "singers",
+							"type": "String",
+							"description": "演唱者"
+						},
+						{
+							"name": "play_counts",
+							"type": "Number",
+							"description": "播放次数"
+						},
+						{
+							"name": "listen_file",
+							"type": "String",
+							"description": "音频地址"
+						},
+						{
+							"name": "play_seconds",
+							"type": "Number",
+							"description": "播放时长 （同length)"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "专辑名称(同album_name)"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "歌曲名称（同song_name）"
+						},
+						{
+							"name": "album_logo",
+							"type": "String",
+							"description": "专辑LOGO(同logo)"
+						},
+						{
+							"name": "lyric_file",
+							"type": "String",
+							"description": "动态歌词（同lyric）"
+						},
+						{
+							"name": "demo",
+							"type": "Number",
+							"description": "是否音乐人demo(0,不是,1,是)"
+						},
+						{
+							"name": "collect_description",
+							"type": "String",
+							"description": "精选集歌曲介绍"
+						}
+					]
+				}
+			]
+		}
+	]
+}

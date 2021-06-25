@@ -1,0 +1,26 @@
+{
+	"name": "alibaba.scbp.ad.keyword.price.update",
+	"apiChineseName": "关键词改价",
+	"description": "关键词改价",
+	"requestParams": [
+		{
+			"name": "ad_keyword",
+			"type": "String",
+			"description": "只能取ascci字符",
+			"required": true
+		},
+		{
+			"name": "price_str",
+			"type": "String",
+			"description": "关键词价格单位元，一位小数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "修改关键词价格是否成功"
+		}
+	]
+}

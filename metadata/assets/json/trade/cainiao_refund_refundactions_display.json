@@ -1,0 +1,59 @@
+{
+	"name": "cainiao.refund.refundactions.display",
+	"apiChineseName": "退货退款操作的展示信息(展现给买家)",
+	"description": "退货退款操作的展示信息(展现给买家)",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "OrderRefundOperationReq",
+			"description": "请求入参",
+			"subParams": [
+				{
+					"name": "refund_order_action_type",
+					"type": "String",
+					"description": "退款退货操作的Code，由系统定义，目前支持的方式有：refundFeeOnly(仅退款)，refundFeeWithGoods(退货退款),swithGoods(换货)",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "订单ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BizResult",
+			"description": "返回结果对象",
+			"subParams": [
+				{
+					"name": "status_code",
+					"type": "String",
+					"description": "调用时错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Json",
+					"description": "买家操作时需要的展示信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true表示成功，false表示失败",
+					"required": true
+				},
+				{
+					"name": "status_message",
+					"type": "String",
+					"description": "调用时错误描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

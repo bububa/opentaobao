@@ -1,0 +1,41 @@
+{
+	"name": "taobao.nextone.logistics.warehouse.update",
+	"apiChineseName": "AG退货入仓状态写接口",
+	"description": "商家上传退货入仓状态给ag",
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款编号",
+			"required": true
+		},
+		{
+			"name": "warehouse_status",
+			"type": "Number",
+			"description": "退货入仓状态 1.已入仓",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_data",
+			"type": "Json",
+			"description": "resultData"
+		},
+		{
+			"name": "err_info",
+			"type": "String",
+			"description": "errorInfo"
+		},
+		{
+			"name": "err_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "succeed",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

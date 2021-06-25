@@ -1,0 +1,105 @@
+{
+	"name": "alibaba.security.jaq.app.official.verify",
+	"apiChineseName": "聚安全验证官方应用接口",
+	"description": "接入用户来查询应用是否为官方应用",
+	"requestParams": [
+		{
+			"name": "official_app_verify_request",
+			"type": "OfficialAppVerifyRequest",
+			"description": "验证参数",
+			"subParams": [
+				{
+					"name": "app_url",
+					"type": "String",
+					"description": "应用下载地址",
+					"required": true
+				},
+				{
+					"name": "app_hash",
+					"type": "String",
+					"description": "应用安装包的MD5或SHA1",
+					"required": true
+				},
+				{
+					"name": "cert_md5",
+					"type": "String",
+					"description": "应用证书指纹的MD5"
+				},
+				{
+					"name": "pgk_name",
+					"type": "String",
+					"description": "应用包名"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OfficialAppVerifyResponse",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "查询任务状态0-处理中 1-处理完成",
+					"required": true
+				},
+				{
+					"name": "query_interval",
+					"type": "Number",
+					"description": "任务轮询间隔,单位毫秒",
+					"required": true
+				},
+				{
+					"name": "official_result",
+					"type": "Number",
+					"description": "0-未知 1-官方正式 2-官方开发 3-非官方应用 4-待定",
+					"required": true
+				},
+				{
+					"name": "pkg_name",
+					"type": "String",
+					"description": "包名",
+					"required": true
+				},
+				{
+					"name": "app_name",
+					"type": "String",
+					"description": "应用名",
+					"required": true
+				},
+				{
+					"name": "cert_md5",
+					"type": "String",
+					"description": "证书md5",
+					"required": true
+				},
+				{
+					"name": "developer",
+					"type": "String",
+					"description": "开发者",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "错误码 400-参数错误  500-服务错误",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

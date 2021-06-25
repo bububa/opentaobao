@@ -1,0 +1,157 @@
+{
+	"name": "youku.tv.desktop.toyou.recommend",
+	"apiChineseName": "TV桌面为你推荐接口",
+	"description": "提供为你推荐数据",
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "用户登陆token"
+		},
+		{
+			"name": "bcp",
+			"type": "String",
+			"description": "播控方，1:华数 7:CIBN",
+			"required": true
+		},
+		{
+			"name": "device_model",
+			"type": "String",
+			"description": "终端设备型号"
+		},
+		{
+			"name": "version_code",
+			"type": "Number",
+			"description": "桌面版本号"
+		},
+		{
+			"name": "mac",
+			"type": "String",
+			"description": "终端设备mac"
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "终端设备uuid",
+			"required": true
+		},
+		{
+			"name": "from",
+			"type": "String",
+			"description": "影视来源，0-淘tv 7-优酷免费 9-优酷付费 多项用“,”隔开"
+		},
+		{
+			"name": "charge_type",
+			"type": "String",
+			"description": "支持收费方式，0-免费 1-限免 2-单点 3-包月 4-红包 5-单包,多项用“,”隔开"
+		},
+		{
+			"name": "max_size",
+			"type": "Number",
+			"description": "获取的最大节目数",
+			"required": true
+		},
+		{
+			"name": "sw",
+			"type": "String",
+			"description": "分辨率，sw720 sw1080"
+		},
+		{
+			"name": "device_media",
+			"type": "String",
+			"description": "支持媒体类型,dts,drm,dolby,h265"
+		},
+		{
+			"name": "ip",
+			"type": "String",
+			"description": "请求IP"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "V5BaseItemRbo []",
+			"description": "响应的结果列表",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "坑位ID",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "坑位标题",
+					"required": true
+				},
+				{
+					"name": "subtitle",
+					"type": "String",
+					"description": "坑位子标题",
+					"required": true
+				},
+				{
+					"name": "center_pic",
+					"type": "String",
+					"description": "中间图片",
+					"required": true
+				},
+				{
+					"name": "bg_pic",
+					"type": "String",
+					"description": "背景图片",
+					"required": true
+				},
+				{
+					"name": "bg_pic_gif",
+					"type": "String",
+					"description": "背景动图（高配）",
+					"required": true
+				},
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "跳转行为",
+					"required": true
+				},
+				{
+					"name": "extra",
+					"type": "Json",
+					"description": "扩展字段",
+					"required": true
+				},
+				{
+					"name": "extra_str",
+					"type": "String",
+					"description": "未解析的扩展字段",
+					"required": true
+				},
+				{
+					"name": "item_type",
+					"type": "String",
+					"description": "坑位类型",
+					"required": true
+				},
+				{
+					"name": "score",
+					"type": "String",
+					"description": "评分",
+					"required": true
+				},
+				{
+					"name": "recommend_rule_id",
+					"type": "Number",
+					"description": "推荐主题ID",
+					"required": true
+				},
+				{
+					"name": "recommend_reason",
+					"type": "String",
+					"description": "推荐理由",
+					"required": true
+				}
+			]
+		}
+	]
+}

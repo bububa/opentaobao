@@ -1,0 +1,37 @@
+{
+	"name": "tmall.item.schema.add",
+	"apiChineseName": "天猫根据规则发布商品",
+	"description": "天猫TopSchema发布商品。",
+	"requestParams": [
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "商品发布的目标类目，必须是叶子类目",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "发布商品的productId，如果tmall.product.match.schema.get获取到得字段为空，这个参数传入0，否则需要通过tmall.product.schema.match查询到得可用productId",
+			"required": true
+		},
+		{
+			"name": "xml_data",
+			"type": "String",
+			"description": "根据tmall.item.add.schema.get生成的商品发布规则入参数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "add_item_result",
+			"type": "String",
+			"description": "返回商品发布结果"
+		},
+		{
+			"name": "gmt_create",
+			"type": "Date",
+			"description": "发布商品操作成功时间"
+		}
+	]
+}

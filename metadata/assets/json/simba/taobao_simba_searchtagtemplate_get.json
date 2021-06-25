@@ -1,0 +1,96 @@
+{
+	"name": "taobao.simba.searchtagtemplate.get",
+	"apiChineseName": "获取搜索人群TOP用户可添加人群信息",
+	"description": "获取搜索人群用户可添加人群信息",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "被操作者的淘宝昵称"
+		},
+		{
+			"name": "sub_nick",
+			"type": "String",
+			"description": "子帐号nick"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "template_list",
+			"type": "Result []",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "dim_list",
+					"type": "DimDtOs[]",
+					"description": "DimDtOs",
+					"required": true,
+					"subParams": [
+						{
+							"name": "tag_list",
+							"type": "TagOptions[]",
+							"description": "tagList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "tag_name",
+									"type": "String",
+									"description": "标签的名称,如男,女,10-20等",
+									"required": true
+								},
+								{
+									"name": "option_group_id",
+									"type": "Number",
+									"description": "标签所属的分组id",
+									"required": true
+								},
+								{
+									"name": "dim_id",
+									"type": "Number",
+									"description": "标签所属的维度id",
+									"required": true
+								},
+								{
+									"name": "tag_id",
+									"type": "String",
+									"description": "标签id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "维度名称,如性别,年龄",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "维度id,如性别年龄的id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "人群模版id",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "人群模版名称",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "人群类型",
+					"required": true
+				}
+			]
+		}
+	]
+}

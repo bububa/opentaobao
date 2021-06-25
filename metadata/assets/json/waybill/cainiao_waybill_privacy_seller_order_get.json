@@ -1,0 +1,69 @@
+{
+	"name": "cainiao.waybill.privacy.seller.order.get",
+	"apiChineseName": "隐私面单商家订单查询",
+	"description": "商家查询最近100天隐私面单记录",
+	"responseParams": [
+		{
+			"name": "error_code_list",
+			"type": "String []",
+			"description": "错误列表"
+		},
+		{
+			"name": "failure",
+			"type": "Boolean",
+			"description": "是否失败"
+		},
+		{
+			"name": "one_error_info",
+			"type": "String",
+			"description": "第一个错误"
+		},
+		{
+			"name": "error_info_list",
+			"type": "String []",
+			"description": "错误信息"
+		},
+		{
+			"name": "object_id",
+			"type": "String",
+			"description": "objectId"
+		},
+		{
+			"name": "response_list",
+			"type": "Module []",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "商家ID",
+					"required": true
+				},
+				{
+					"name": "privacy_count",
+					"type": "Number",
+					"description": "隐私次数",
+					"required": true
+				},
+				{
+					"name": "order_date",
+					"type": "String",
+					"description": "日期",
+					"required": true
+				},
+				{
+					"name": "order_channel",
+					"type": "String",
+					"description": "订单渠道",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "店铺id",
+					"required": true
+				}
+			]
+		}
+	]
+}

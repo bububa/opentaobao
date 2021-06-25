@@ -1,0 +1,67 @@
+{
+	"name": "tmall.servicecenter.workcard.repairprogress.update",
+	"apiChineseName": "更新维修进度",
+	"description": "提供给外部合作服务商的维修进度更改接口",
+	"requestParams": [
+		{
+			"name": "pic_url_list",
+			"type": "String[]",
+			"description": "图片列表",
+			"maxListSize": 20
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "请求节点的动作描述，唯一标识一个节点",
+			"required": true
+		},
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		},
+		{
+			"name": "real_tp_nick",
+			"type": "String",
+			"description": "真实接单服务商账号Nick"
+		},
+		{
+			"name": "target_goods_defects",
+			"type": "String",
+			"description": "服务目标物瑕疵信息"
+		},
+		{
+			"name": "received_goods",
+			"type": "String",
+			"description": "衣服，鞋子"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

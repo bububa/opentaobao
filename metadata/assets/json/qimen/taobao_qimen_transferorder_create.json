@@ -1,0 +1,118 @@
+{
+	"name": "taobao.qimen.transferorder.create",
+	"apiChineseName": "调拨单创建",
+	"description": "调拨单创建",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Struct",
+			"subParams": [
+				{
+					"name": "erpOrderCode",
+					"type": "String",
+					"description": "外部ERP订单号,HZ1234,string(50),必填,"
+				},
+				{
+					"name": "fromStoreCode",
+					"type": "String",
+					"description": "出库仓编码,Item1234,string(50),必填,"
+				},
+				{
+					"name": "toStoreCode",
+					"type": "String",
+					"description": "入库仓编码,HZ1234,string(50),必填,"
+				},
+				{
+					"name": "expectStartTime",
+					"type": "String",
+					"description": "期望调拨开始时间,Item1234,string(50),,"
+				},
+				{
+					"name": "attributes",
+					"type": "String",
+					"description": "扩展属性,HZ1234,string(500),,"
+				},
+				{
+					"name": "transferItems",
+					"type": "TransferItems[]",
+					"description": "项目集",
+					"subParams": [
+						{
+							"name": "scItemCode",
+							"type": "String",
+							"description": "库存类型(1:可销售库存.101:残次),HZ1234,string(500),必填,"
+						},
+						{
+							"name": "count",
+							"type": "String",
+							"description": "数量,Item1234,string(50),必填,"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "货品编码,HZ1234,string(50),必填,"
+						}
+					]
+				},
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "111",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Struct",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure,success,string(10),必填,",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码,0,string(50),,",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息,invalid appkey,string(100),,",
+					"required": true
+				},
+				{
+					"name": "transferExecuteInfo",
+					"type": "Struct",
+					"description": "调拨单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "transferOrderCode",
+							"type": "String",
+							"description": "调拨单号,0,string(50),,",
+							"required": true
+						},
+						{
+							"name": "expectOutStoreTime",
+							"type": "String",
+							"description": "预计出库时间,0,string(50),,",
+							"required": true
+						},
+						{
+							"name": "expectInStoreTime",
+							"type": "String",
+							"description": "预计入库时间,0,string(50),,",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

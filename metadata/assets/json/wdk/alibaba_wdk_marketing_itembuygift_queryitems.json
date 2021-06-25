@@ -1,0 +1,172 @@
+{
+	"name": "alibaba.wdk.marketing.itembuygift.queryitems",
+	"apiChineseName": "查询买赠活动下的商品",
+	"description": "查询买赠活动下的商品",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "ActivitySkuQuery",
+			"description": "查询入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"name": "page",
+					"type": "BasePageQuery",
+					"description": "分页信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页大小",
+							"required": true
+						},
+						{
+							"name": "current",
+							"type": "Number",
+							"description": "当前分页，从1开始",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "sku_codes",
+					"type": "String[]",
+					"description": "需要查询的商品skuCodes"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketPageResult",
+			"description": "查询返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "参加当前活动的商品总数",
+					"required": true
+				},
+				{
+					"name": "sku_list",
+					"type": "Data[]",
+					"description": "参加活动的买赠商品详情列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "limit_info",
+							"type": "LimitInfo",
+							"description": "通用限购信息，-1为不限制，默认为不限制",
+							"required": true,
+							"subParams": [
+								{
+									"name": "total_limit_cnt",
+									"type": "Number",
+									"description": "活动期间总限购",
+									"required": true
+								},
+								{
+									"name": "user_limit_cnt",
+									"type": "Number",
+									"description": "每人活动期间总限购",
+									"required": true
+								},
+								{
+									"name": "user_daily_limit_cnt",
+									"type": "Number",
+									"description": "每人每日限购",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "gift_sku_name",
+							"type": "String",
+							"description": "赠品的名称",
+							"required": true
+						},
+						{
+							"name": "gift_sku_code",
+							"type": "String",
+							"description": "赠品的skuCode，如果和主商品的skuCode相同，则为买A赠A；如果不同，则为买A赠B",
+							"required": true
+						},
+						{
+							"name": "buy_num",
+							"type": "Number",
+							"description": "买N赠1的N",
+							"required": true
+						},
+						{
+							"name": "item_shop_relation",
+							"type": "Json",
+							"description": "淘宝item和shop的对应关系， k-itemId, v-shopId",
+							"required": true
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "主商品名称",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "主商品的skuCode",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "current",
+					"type": "Number",
+					"description": "当前分页",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用api是否成功",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

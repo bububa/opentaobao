@@ -1,0 +1,50 @@
+{
+	"name": "taobao.mobile.promotion.coupon.apply",
+	"apiChineseName": "优惠券领取(手淘专用)",
+	"description": "优惠券领取",
+	"requestParams": [
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "请求唯一id，问题排查",
+			"required": true
+		},
+		{
+			"name": "spread_id",
+			"type": "Number",
+			"description": "传播id",
+			"required": true
+		},
+		{
+			"name": "feed_id",
+			"type": "String",
+			"description": "广播id",
+			"required": true
+		},
+		{
+			"name": "biz_id",
+			"type": "String",
+			"description": "三方活动id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "coupon_apply_result",
+			"type": "CouponApplyResult",
+			"description": "优惠券领取结果",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求唯一id，问题排查"
+				},
+				{
+					"name": "apply_success",
+					"type": "Boolean",
+					"description": "领取结果，领取成功为true，否则为false"
+				}
+			]
+		}
+	]
+}

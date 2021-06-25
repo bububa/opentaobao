@@ -1,0 +1,105 @@
+{
+	"name": "alibaba.alsc.crm.card.batch.sell",
+	"apiChineseName": "批量开卡（售卡）",
+	"description": "批量开卡（售卡）",
+	"requestParams": [
+		{
+			"name": "param_batch_open_card_open_req",
+			"type": "BatchOpenCardOpenReq",
+			"description": "请求对象",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌id"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作员id",
+					"required": true
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌id,brandId与out_brand_id不可同时为空"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID,shop_id和out_shop_id不可同时为空"
+				},
+				{
+					"name": "physical_card_ids",
+					"type": "String[]",
+					"description": "实体卡列表",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求uuid,用来做幂等",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "BatchOpenCardOpenInfo",
+					"description": "处理结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "all_success",
+							"type": "String",
+							"description": "是否全部开通成功",
+							"required": true
+						},
+						{
+							"name": "result_map",
+							"type": "Json",
+							"description": "结果 \u003c KEY：Id  VALUE：描述（SUCCESS-通过） \u003e",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

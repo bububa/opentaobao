@@ -1,0 +1,101 @@
+{
+	"name": "taobao.logistics.address.search",
+	"apiChineseName": "查询卖家地址库",
+	"description": "通过此接口查询卖家地址库，",
+	"requestParams": [
+		{
+			"name": "rdef",
+			"type": "String",
+			"description": "可选，参数列表如下：\u003cbr\u003e\u003cfont color='red'\u003eno_def:查询非默认地址\u003cbr\u003eget_def:查询默认取货地址，也即对应卖家后台地址库中发货地址（send_def暂不起作用）\u003cbr\u003ecancel_def:查询默认退货地址\u003cbr\u003e缺省此参数时，查询所有当前用户的地址库\u003c/font\u003e"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "addresses",
+			"type": "AddressResult []",
+			"description": "一组地址库数据，",
+			"subParams": [
+				{
+					"name": "contact_id",
+					"type": "Number",
+					"description": "地址库ID"
+				},
+				{
+					"name": "contact_name",
+					"type": "String",
+					"description": "联系人姓名"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "区、县"
+				},
+				{
+					"name": "addr",
+					"type": "String",
+					"description": "详细街道地址，不需要重复填写省/市/区"
+				},
+				{
+					"name": "zip_code",
+					"type": "String",
+					"description": "地区邮政编码"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "电话号码,手机与电话必需有一个"
+				},
+				{
+					"name": "mobile_phone",
+					"type": "String",
+					"description": "手机号码，手机与电话必需有一个 \u003cbr/\u003e手机号码不能超过20位"
+				},
+				{
+					"name": "seller_company",
+					"type": "String",
+					"description": "公司名称,"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "area_id",
+					"type": "Number",
+					"description": "区域ID"
+				},
+				{
+					"name": "send_def",
+					"type": "Boolean",
+					"description": "是否默认发货地址"
+				},
+				{
+					"name": "get_def",
+					"type": "Boolean",
+					"description": "是否默认取货地址"
+				},
+				{
+					"name": "cancel_def",
+					"type": "Boolean",
+					"description": "是否默认退货地址"
+				},
+				{
+					"name": "modify_date",
+					"type": "Date",
+					"description": "修改日期时间"
+				}
+			]
+		}
+	]
+}

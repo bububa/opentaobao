@@ -1,0 +1,126 @@
+{
+	"name": "taobao.qimen.transferorder.report",
+	"apiChineseName": "调拨单通知",
+	"description": "调拨单通知",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Struct",
+			"subParams": [
+				{
+					"name": "transferOrderCode",
+					"type": "String",
+					"description": "调拨单号,0,string(50),必填,"
+				},
+				{
+					"name": "transferOutOrderCode",
+					"type": "String",
+					"description": "调拨出库单号"
+				},
+				{
+					"name": "transferInOrderCode",
+					"type": "String",
+					"description": "调拨入库单号"
+				},
+				{
+					"name": "confirmOutTime",
+					"type": "String",
+					"description": "确认出库时间"
+				},
+				{
+					"name": "confirmInTime",
+					"type": "String",
+					"description": "确认入库时间"
+				},
+				{
+					"name": "createTime",
+					"type": "String",
+					"description": "调拨单创建时间"
+				},
+				{
+					"name": "fromWarehouseCode",
+					"type": "String",
+					"description": "调拨出库仓编码"
+				},
+				{
+					"name": "toWarehouseCode",
+					"type": "String",
+					"description": "调拨入库仓编码"
+				},
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "111"
+				},
+				{
+					"name": "erpOrderCode",
+					"type": "String",
+					"description": "erpOrderCode"
+				},
+				{
+					"name": "orderStatus",
+					"type": "String",
+					"description": "orderStatus"
+				},
+				{
+					"name": "items",
+					"type": "Items[]",
+					"description": "项目集",
+					"subParams": [
+						{
+							"name": "scItemCode",
+							"type": "String",
+							"description": "货品编码,HZ1234,string(50),,"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(1:可销售库存.101:残次),HZ1234,string(500),,"
+						},
+						{
+							"name": "outCount",
+							"type": "String",
+							"description": "实际出库数量,Item1234,string(50),,"
+						},
+						{
+							"name": "inCount",
+							"type": "String",
+							"description": "实际出库数量,Item1234,string(50),,"
+						},
+						{
+							"name": "planCount",
+							"type": "String",
+							"description": "计划调拨数量"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Struct",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure,success,string(10),必填,",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码,0,string(50),,",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息,invalid appkey,string(100),,",
+					"required": true
+				}
+			]
+		}
+	]
+}

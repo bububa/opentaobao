@@ -1,0 +1,25 @@
+{
+	"name": "taobao.scitem.map.delete",
+	"apiChineseName": "失效指定用户的商品与后端商品的映射关系",
+	"description": "根据后端商品Id，失效指定用户的商品与后端商品的映射关系",
+	"requestParams": [
+		{
+			"name": "sc_item_id",
+			"type": "Number",
+			"description": "后台商品ID",
+			"required": true
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "店铺用户nick。 如果该参数为空则删除后端商品与当前调用人的商品映射关系;如果不为空则删除指定用户与后端商品的映射关系"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "module",
+			"type": "Number",
+			"description": "失效条数"
+		}
+	]
+}

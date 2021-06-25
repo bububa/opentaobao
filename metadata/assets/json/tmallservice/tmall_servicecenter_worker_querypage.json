@@ -1,0 +1,57 @@
+{
+	"name": "tmall.servicecenter.worker.querypage",
+	"apiChineseName": "查询工人列表",
+	"description": "服务商查询工人列表",
+	"requestParams": [
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "页码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "gmtModified",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Json",
+					"description": "value",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,86 @@
+{
+	"name": "alibaba.retail.marketing.itempool.activity.sku.delete",
+	"apiChineseName": "删除商品池活动商品【同城零售】",
+	"description": "删除商品池活动商品信息【同城零售】",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "ItemPoolActivityElementOperateRequest",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sku_elements",
+					"type": "ItemPoolSkuActivityElementDto[]",
+					"description": "商品元素列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "act_id",
+					"type": "Number",
+					"description": "同城零售活动id",
+					"required": true
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "操作人id",
+					"required": true
+				},
+				{
+					"name": "creator_name",
+					"type": "String",
+					"description": "操作人名称",
+					"required": true
+				},
+				{
+					"name": "group_number",
+					"type": "Number",
+					"description": "商品所属分组序号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "空值",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误提示文案",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

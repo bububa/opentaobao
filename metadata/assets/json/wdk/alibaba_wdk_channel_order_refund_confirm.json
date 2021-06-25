@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.wdk.channel.order.refund.confirm",
+	"apiChineseName": "退款确认",
+	"description": "退款确认",
+	"requestParams": [
+		{
+			"name": "order_refund_confirm_info",
+			"type": "OrderRefundConfirmInfo",
+			"description": "退款确认信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店ID",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店ID",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "String",
+					"description": "盒马主单号",
+					"required": true
+				},
+				{
+					"name": "agree_sub_orders",
+					"type": "SubRefundConfirm[]",
+					"description": "同意退款子单",
+					"required": true,
+					"subParams": [
+						{
+							"name": "refund_id",
+							"type": "String",
+							"description": "退款Id",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "sub_biz_order_id",
+							"type": "String",
+							"description": "盒马子单号",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额",
+							"required": true
+						},
+						{
+							"name": "refund_post_fee",
+							"type": "Number",
+							"description": "退款邮费"
+						}
+					]
+				},
+				{
+					"name": "out_refund_batch_id",
+					"type": "String",
+					"description": "外部退款批次Id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

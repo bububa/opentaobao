@@ -1,0 +1,19 @@
+{
+	"name": "alibaba.interact.sensor.trade",
+	"apiChineseName": "交易组件",
+	"description": "交易流程",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "String",
+			"description": "系统自动生成"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "result=1"
+		}
+	]
+}

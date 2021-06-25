@@ -1,0 +1,126 @@
+{
+	"name": "taobao.vmarket.eticket.package.base.list.get",
+	"apiChineseName": "根据卖家id，获取关联的所有包",
+	"description": "根据卖家id，获取关联的所有包",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PackageResult",
+			"description": "查询结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "操作结果码"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "操作是否成功"
+				},
+				{
+					"name": "info",
+					"type": "String",
+					"description": "操作结果信息"
+				},
+				{
+					"name": "package_base_list",
+					"type": "PackageBase[]",
+					"description": "包基本信息列表",
+					"subParams": [
+						{
+							"name": "bill_type",
+							"type": "Number",
+							"description": "包分账类型    0：不分账，1：门店分账，2：宝贝分账，3：账号分账。"
+						},
+						{
+							"name": "memo",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "package_name",
+							"type": "String",
+							"description": "包名"
+						},
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "卖家ID"
+						},
+						{
+							"name": "send_type",
+							"type": "Number",
+							"description": "发码类型 0 不发码，1 淘宝发码， 2 信任卖家发码， 3 码商发码， 4 码库发码"
+						},
+						{
+							"name": "is_consume_pass",
+							"type": "Number",
+							"description": "是否核销放行   0：不核销放行，1：核销放行"
+						},
+						{
+							"name": "has_pos",
+							"type": "Number",
+							"description": "是否关联门店：0:不关联，1:关联"
+						},
+						{
+							"name": "version",
+							"type": "Number",
+							"description": "系统自动生成，传入无效"
+						},
+						{
+							"name": "bill_version",
+							"type": "Number",
+							"description": "系统自动生成，传入无效"
+						},
+						{
+							"name": "send_id",
+							"type": "Number",
+							"description": "发码方   0：淘宝，码商userId：码商，poolId：码池"
+						},
+						{
+							"name": "account_to_bill_map_str",
+							"type": "String",
+							"description": "如果是宝贝分账，即billType为2，则必须填写宝贝分账模板 (key-value 格式, 以 ; 分隔)"
+						},
+						{
+							"name": "is_subaccount",
+							"type": "Number",
+							"description": "是否支持子账号核销：0不支持，1支持"
+						},
+						{
+							"name": "is_id_card",
+							"type": "Number",
+							"description": "是否支持身份证核销：0:不支持，1:支持"
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "卖家昵称"
+						},
+						{
+							"name": "package_id",
+							"type": "Number",
+							"description": "系统自动生成，传入无效"
+						},
+						{
+							"name": "send_merchant_name",
+							"type": "String",
+							"description": "发码码商名字"
+						},
+						{
+							"name": "consume_merchant_id",
+							"type": "String",
+							"description": "核销码商id"
+						},
+						{
+							"name": "consume_merchant_name",
+							"type": "String",
+							"description": "核销码商名字"
+						}
+					]
+				}
+			]
+		}
+	]
+}

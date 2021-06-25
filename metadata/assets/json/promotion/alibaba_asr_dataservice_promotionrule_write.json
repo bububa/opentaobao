@@ -1,0 +1,111 @@
+{
+	"name": "alibaba.asr.dataservice.promotionrule.write",
+	"apiChineseName": "业务优惠规则写入",
+	"description": "星巴克优惠规则写入",
+	"requestParams": [
+		{
+			"name": "poskey_promotion_rule_dto",
+			"type": "PosKeyPromotionRuleDto",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "detail_list",
+					"type": "PosKeyPromotionRuleDetailDto[]",
+					"description": "优惠规则",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ext_map",
+							"type": "String",
+							"description": "扩展属性"
+						},
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "unit_point",
+							"type": "String",
+							"description": "1,9,12,15四个等级",
+							"required": true
+						},
+						{
+							"name": "unit_price",
+							"type": "Number",
+							"description": "价格",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名称",
+					"required": true
+				},
+				{
+					"name": "pos_key",
+					"type": "Number",
+					"description": "postkey",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataServiceResponse",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "ext_map",
+					"type": "Extmap",
+					"description": "扩展字段",
+					"required": true,
+					"subParams": [
+						{
+							"name": "key",
+							"type": "String",
+							"description": "扩展字段",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "对象",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果code",
+					"required": true
+				},
+				{
+					"name": "result_msg",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "鹰眼id问题跟踪需要",
+					"required": true
+				}
+			]
+		}
+	]
+}

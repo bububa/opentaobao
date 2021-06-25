@@ -1,0 +1,29 @@
+{
+	"name": "taobao.store.followurl.get",
+	"apiChineseName": "获取店铺关注URL",
+	"description": "获取关注店铺的URL",
+	"requestParams": [
+		{
+			"name": "callback_url",
+			"type": "String",
+			"description": "关注完成后的回调地址,需要是EWS地址。如果不设置，会跳转到店铺首页"
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "商家nick"
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "商家ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "url",
+			"type": "String",
+			"description": "店铺关注URL"
+		}
+	]
+}

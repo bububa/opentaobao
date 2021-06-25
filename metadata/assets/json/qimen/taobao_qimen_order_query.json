@@ -1,0 +1,88 @@
+{
+	"name": "taobao.qimen.order.query",
+	"apiChineseName": "根据收件人信息查询交易单号接口",
+	"description": "WMS 调用该接口，根据收件人信息查询平台交易订单号。",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"description": "request",
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名, string (50) , 必填"
+				},
+				{
+					"name": "startTime",
+					"type": "String",
+					"description": "开始时间, string (19) , YYYY-MM-DD HH:MM:SS"
+				},
+				{
+					"name": "endTime",
+					"type": "String",
+					"description": "结束时间, string (19) , YYYY-MM-DD HH:MM:SS"
+				},
+				{
+					"name": "tel",
+					"type": "String",
+					"description": "固定电话, string (50)"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "移动电话, string (50) , 必填"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"description": "响应",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "success|failure，必填",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "orderLines",
+					"type": "OrderLines",
+					"description": "订单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "orderLine",
+							"type": "OrderLine",
+							"description": "订单详情",
+							"required": true,
+							"subParams": [
+								{
+									"name": "deliveryOrderCode",
+									"type": "String",
+									"description": "出库单号, string (50) , 必填",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

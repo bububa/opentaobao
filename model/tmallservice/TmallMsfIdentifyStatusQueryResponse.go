@@ -1,0 +1,23 @@
+package tmallservice
+
+import (
+    "github.com/bububa/opentaobao/model"
+)
+
+/* 
+喵师傅定案核销状态查询 APIResponse
+tmall.msf.identify.status.query
+
+喵师傅定案核销状态查询，供服务商erp系统调用
+*/
+type TmallMsfIdentifyStatusQueryAPIResponse struct {
+    model.CommonResponse
+    Response *TmallMsfIdentifyStatusQueryResponse `json:"tmall_msf_identify_status_query_response,omitempty"`
+}
+
+type TmallMsfIdentifyStatusQueryResponse struct {
+
+    // 返回结果json串，其中identifyDate位核销日期，signTime为签到时间，identifyStatus位核销状态，1代表已经核销，identifyType为核销类型，取值为：0代表未核销,1代表10位核销码核销,2代表订单号核销,3代表手机号核销,4代表4位核销码核销,5代表通过poi核销
+    Result   string `json:"result,omitempty"`
+
+}

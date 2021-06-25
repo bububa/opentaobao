@@ -1,0 +1,122 @@
+{
+	"name": "taobao.wlb.item.add",
+	"apiChineseName": "添加单个物流宝商品",
+	"description": "添加物流宝商品，支持物流宝子商品和属性添加",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "商品名称",
+			"required": true
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "商品标题"
+		},
+		{
+			"name": "item_code",
+			"type": "String",
+			"description": "商品编码",
+			"required": true
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "商品备注"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "NORMAL--普通商品\u003cbr/\u003eCOMBINE--组合商品\u003cbr/\u003eDISTRIBUTION--分销"
+		},
+		{
+			"name": "is_sku",
+			"type": "String",
+			"description": "是否sku",
+			"required": true
+		},
+		{
+			"name": "pro_name_list",
+			"type": "String",
+			"description": "属性名列表,目前支持的属性：\u003cbr/\u003e毛重:GWeight\t\u003cbr/\u003e净重:Nweight\u003cbr/\u003e皮重: Tweight\u003cbr/\u003e自定义属性：\u003cbr/\u003eparamkey1\u003cbr/\u003eparamkey2\u003cbr/\u003eparamkey3\u003cbr/\u003eparamkey4"
+		},
+		{
+			"name": "pro_value_list",
+			"type": "String",
+			"description": "属性值列表：\u003cbr/\u003e10,8"
+		},
+		{
+			"name": "is_friable",
+			"type": "Boolean",
+			"description": "是否易碎品"
+		},
+		{
+			"name": "is_dangerous",
+			"type": "Boolean",
+			"description": "是否危险品"
+		},
+		{
+			"name": "color",
+			"type": "String",
+			"description": "商品颜色"
+		},
+		{
+			"name": "weight",
+			"type": "Number",
+			"description": "商品重量，单位G"
+		},
+		{
+			"name": "length",
+			"type": "Number",
+			"description": "商品长度，单位毫米"
+		},
+		{
+			"name": "width",
+			"type": "Number",
+			"description": "商品宽度，单位毫米"
+		},
+		{
+			"name": "height",
+			"type": "Number",
+			"description": "商品高度，单位毫米"
+		},
+		{
+			"name": "volume",
+			"type": "Number",
+			"description": "商品体积，单位立方厘米"
+		},
+		{
+			"name": "goods_cat",
+			"type": "String",
+			"description": "货类"
+		},
+		{
+			"name": "pricing_cat",
+			"type": "String",
+			"description": "计价货类"
+		},
+		{
+			"name": "package_material",
+			"type": "String",
+			"description": "商品包装材料类型"
+		},
+		{
+			"name": "price",
+			"type": "Number",
+			"description": "商品价格，单位：分"
+		},
+		{
+			"name": "support_batch",
+			"type": "Boolean",
+			"description": "是否支持批次"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item_id",
+			"type": "Json",
+			"description": "新增的商品"
+		}
+	]
+}

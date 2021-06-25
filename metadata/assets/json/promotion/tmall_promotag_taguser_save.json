@@ -1,0 +1,26 @@
+{
+	"name": "tmall.promotag.taguser.save",
+	"apiChineseName": "给用户打上优惠标签",
+	"description": "给用户载体打标",
+	"requestParams": [
+		{
+			"name": "tag_id",
+			"type": "Number",
+			"description": "标签ID",
+			"required": true
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "买家昵称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "打标结果是否成功"
+		}
+	]
+}

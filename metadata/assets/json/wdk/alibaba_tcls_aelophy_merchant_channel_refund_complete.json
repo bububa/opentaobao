@@ -1,0 +1,113 @@
+{
+	"name": "alibaba.tcls.aelophy.merchant.channel.refund.complete",
+	"apiChineseName": "翱象商家自有渠道 逆向单完成",
+	"description": "翱象小程序 退款完成",
+	"requestParams": [
+		{
+			"name": "refund_complete_info",
+			"type": "RefundCompleteInfo",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "out_refund_id",
+					"type": "String",
+					"description": "外部逆向单ID",
+					"required": true
+				},
+				{
+					"name": "refund_fee",
+					"type": "Number",
+					"description": "退的商品费",
+					"required": true
+				},
+				{
+					"name": "refund_post_fee",
+					"type": "Number",
+					"description": "退的运费"
+				},
+				{
+					"name": "refund_package_fee",
+					"type": "Number",
+					"description": "退的包装费"
+				},
+				{
+					"name": "sub_refund_orders",
+					"type": "SubRefundOrder[]",
+					"description": "子单",
+					"subParams": [
+						{
+							"name": "refund_quantity",
+							"type": "Number",
+							"description": "子单退货数量",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "子单退款金额，单位：分",
+							"required": true
+						},
+						{
+							"name": "sub_out_order_id",
+							"type": "String",
+							"description": "外部子单号",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部主单号",
+					"required": true
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部渠道店ID",
+					"required": true
+				},
+				{
+					"name": "order_from",
+					"type": "Number",
+					"description": "订单来源",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "返回码说明",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

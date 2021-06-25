@@ -1,0 +1,32 @@
+{
+	"name": "taobao.tmc.topic.group.delete",
+	"apiChineseName": "删除消息topic分组路由",
+	"description": "删除根据topic名称路由消息到不同的分组关系",
+	"requestParams": [
+		{
+			"name": "group_name",
+			"type": "String",
+			"description": "消息分组名",
+			"required": true
+		},
+		{
+			"name": "topics",
+			"type": "String[]",
+			"description": "消息topic名称，多个以逗号(,)分割",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "group_id",
+			"type": "Number",
+			"description": "消息分组Id，一般不用填写，如果分组已经被删除，则根据问题排查工具返回的ID删除路由关系"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "true"
+		}
+	]
+}

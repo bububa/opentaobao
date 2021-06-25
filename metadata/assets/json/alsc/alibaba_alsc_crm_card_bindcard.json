@@ -1,0 +1,102 @@
+{
+	"name": "alibaba.alsc.crm.card.bindcard",
+	"apiChineseName": "绑定物理卡",
+	"description": "将会员卡和实例物理卡绑定在一起",
+	"requestParams": [
+		{
+			"name": "param_bind_physical_card_open_req",
+			"type": "BindPhysicalCardOpenReq",
+			"description": "请求参数",
+			"subParams": [
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID,brand_id与out_brand_id不可同时为空"
+				},
+				{
+					"name": "physical_card_id",
+					"type": "String",
+					"description": "物理卡号",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求ID，用于幂等处理",
+					"required": true
+				},
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID,,brand_id与out_brand_id不可同时为空"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID，shop_id和out_shop_id不可同时为空"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "店铺ID，shop_id和out_shop_id不可同时为空"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人id",
+					"required": true
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "card_id",
+					"type": "String",
+					"description": "卡号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "result",
+					"type": "Boolean",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "业务成功状态",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				}
+			]
+		}
+	]
+}

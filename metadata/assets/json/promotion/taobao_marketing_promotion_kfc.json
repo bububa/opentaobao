@@ -1,0 +1,26 @@
+{
+	"name": "taobao.marketing.promotion.kfc",
+	"apiChineseName": "定向优惠活动名称与描述违禁词检查",
+	"description": "活动名称与描述违禁词检查",
+	"requestParams": [
+		{
+			"name": "promotion_title",
+			"type": "String",
+			"description": "活动名称",
+			"required": true
+		},
+		{
+			"name": "promotion_desc",
+			"type": "String",
+			"description": "活动描述",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

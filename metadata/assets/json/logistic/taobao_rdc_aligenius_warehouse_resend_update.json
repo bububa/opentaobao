@@ -1,0 +1,71 @@
+{
+	"name": "taobao.rdc.aligenius.warehouse.resend.update",
+	"apiChineseName": "补发单状态回传",
+	"description": "补发单状态回传接口",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "UpdateResendStatusDto",
+			"description": "参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "补发单状态（-1=关闭，1=补发成功，2=部分成功）",
+					"required": true
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "主订单",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "描述",
+					"required": true
+				},
+				{
+					"name": "reissue_id",
+					"type": "String",
+					"description": "erp补发单"
+				},
+				{
+					"name": "source_id",
+					"type": "String",
+					"description": "平台补发单唯一标识",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "fail_info",
+					"type": "String",
+					"description": "errorInfo",
+					"required": true
+				},
+				{
+					"name": "fail_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success_flag",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

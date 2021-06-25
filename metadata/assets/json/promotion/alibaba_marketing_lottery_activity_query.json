@@ -1,0 +1,513 @@
+{
+	"name": "alibaba.marketing.lottery.activity.query",
+	"apiChineseName": "抽奖平台奖池查询接口",
+	"description": "抽奖平台奖池查询接口",
+	"requestParams": [
+		{
+			"name": "lottery_activity_query",
+			"type": "LotteryActivityQueryDto",
+			"description": "查询抽奖活动请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "is_need_award",
+					"type": "Boolean",
+					"description": "是否需要奖品信息"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "第几页",
+					"required": true
+				},
+				{
+					"name": "activity_ids",
+					"type": "Number[]",
+					"description": "抽奖活动id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "paging_dto",
+			"type": "PagingDto",
+			"description": "分页结果",
+			"subParams": [
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "total_pages",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页大小",
+					"required": true
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "第几页",
+					"required": true
+				},
+				{
+					"name": "lottery_activity_list",
+					"type": "LotteryActivityExtendDto[]",
+					"description": "抽奖活动列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "抽奖活动id",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "抽奖活动名称",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态（1有效）",
+							"required": true
+						},
+						{
+							"name": "start_date",
+							"type": "Date",
+							"description": "开始时间",
+							"required": true
+						},
+						{
+							"name": "end_date",
+							"type": "Date",
+							"description": "结束时间",
+							"required": true
+						},
+						{
+							"name": "award_list",
+							"type": "LotteryAwardExtendDto[]",
+							"description": "奖品列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "total_res_count",
+									"type": "Number",
+									"description": "总库存",
+									"required": true
+								},
+								{
+									"name": "award_detail_url",
+									"type": "String",
+									"description": "奖品详情url",
+									"required": true
+								},
+								{
+									"name": "use_end_date",
+									"type": "Date",
+									"description": "奖品使用结束时间",
+									"required": true
+								},
+								{
+									"name": "use_start_date",
+									"type": "Date",
+									"description": "奖品使用开始时间",
+									"required": true
+								},
+								{
+									"name": "end_date",
+									"type": "Date",
+									"description": "奖品发放结束时间",
+									"required": true
+								},
+								{
+									"name": "start_date",
+									"type": "Date",
+									"description": "奖品发放开始时间",
+									"required": true
+								},
+								{
+									"name": "currency",
+									"type": "String",
+									"description": "币种",
+									"required": true
+								},
+								{
+									"name": "award_price",
+									"type": "Number",
+									"description": "奖品价值，分",
+									"required": true
+								},
+								{
+									"name": "start_fee",
+									"type": "Number",
+									"description": "使用门槛，分",
+									"required": true
+								},
+								{
+									"name": "display_name",
+									"type": "String",
+									"description": "展示名称",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "名称",
+									"required": true
+								},
+								{
+									"name": "award_type_name",
+									"type": "String",
+									"description": "奖品类型名称",
+									"required": true
+								},
+								{
+									"name": "can_use_res_count",
+									"type": "Number",
+									"description": "可用数量",
+									"required": true
+								},
+								{
+									"name": "condition",
+									"type": "String",
+									"description": "使用门槛描述",
+									"required": true
+								},
+								{
+									"name": "rule_list",
+									"type": "ExpressionRuleDto[]",
+									"description": "奖品关联的规则",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "规则ID",
+											"required": true
+										},
+										{
+											"name": "gmt_create",
+											"type": "Date",
+											"description": "创建时间",
+											"required": true
+										},
+										{
+											"name": "gmt_modified",
+											"type": "Date",
+											"description": "修改时间",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "规则名称",
+											"required": true
+										},
+										{
+											"name": "master_id",
+											"type": "Number",
+											"description": "规则主体id",
+											"required": true
+										},
+										{
+											"name": "master_type",
+											"type": "Number",
+											"description": "规则主体类型（1活动2奖品3方案）",
+											"required": true
+										},
+										{
+											"name": "rule_code",
+											"type": "String",
+											"description": "规则CODE",
+											"required": true
+										},
+										{
+											"name": "params",
+											"type": "Json",
+											"description": "规则参数",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "奖品id",
+									"required": true
+								},
+								{
+									"name": "award_type",
+									"type": "Number",
+									"description": "奖品类型",
+									"required": true
+								},
+								{
+									"name": "award_inst_id",
+									"type": "String",
+									"description": "奖品实例id",
+									"required": true
+								},
+								{
+									"name": "lottery_activity_id",
+									"type": "Number",
+									"description": "抽奖活动id",
+									"required": true
+								},
+								{
+									"name": "currency_sign",
+									"type": "String",
+									"description": "币种符号",
+									"required": true
+								},
+								{
+									"name": "pict_url",
+									"type": "String",
+									"description": "奖品logo",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "rule_list",
+							"type": "ExpressionRuleDto[]",
+							"description": "活动关联的规则",
+							"required": true,
+							"subParams": [
+								{
+									"name": "params",
+									"type": "Json",
+									"description": "规则参数",
+									"required": true
+								},
+								{
+									"name": "rule_code",
+									"type": "String",
+									"description": "规则CODE",
+									"required": true
+								},
+								{
+									"name": "master_type",
+									"type": "Number",
+									"description": "主体类型",
+									"required": true
+								},
+								{
+									"name": "master_id",
+									"type": "Number",
+									"description": "主体id",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "规则名称",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "修改时间",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "规则id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "schema_list",
+							"type": "LotterySchemaDto[]",
+							"description": "抽奖方案列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "方案id",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Date",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Date",
+									"description": "修改时间",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "方案名称",
+									"required": true
+								},
+								{
+									"name": "probability",
+									"type": "String",
+									"description": "概率",
+									"required": true
+								},
+								{
+									"name": "lottery_activity_id",
+									"type": "Number",
+									"description": "抽奖活动id",
+									"required": true
+								},
+								{
+									"name": "rule_list",
+									"type": "ExpressionRuleDto[]",
+									"description": "方案关联的规则列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "id",
+											"type": "Number",
+											"description": "规则id",
+											"required": true
+										},
+										{
+											"name": "gmt_create",
+											"type": "Date",
+											"description": "创建时间",
+											"required": true
+										},
+										{
+											"name": "gmt_modified",
+											"type": "Date",
+											"description": "修改时间",
+											"required": true
+										},
+										{
+											"name": "name",
+											"type": "String",
+											"description": "规则名称",
+											"required": true
+										},
+										{
+											"name": "master_id",
+											"type": "Number",
+											"description": "主体id",
+											"required": true
+										},
+										{
+											"name": "master_type",
+											"type": "Number",
+											"description": "主体类型",
+											"required": true
+										},
+										{
+											"name": "rule_code",
+											"type": "String",
+											"description": "规则code",
+											"required": true
+										},
+										{
+											"name": "params",
+											"type": "Json",
+											"description": "规则参数",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "award_list",
+									"type": "LotteryAwardRelDto[]",
+									"description": "方案关联的奖品",
+									"required": true,
+									"subParams": [
+										{
+											"name": "award_id",
+											"type": "Number",
+											"description": "奖品id",
+											"required": true
+										},
+										{
+											"name": "probability",
+											"type": "String",
+											"description": "中奖概率",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "flag",
+									"type": "Number",
+									"description": "业务标",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "relation_list",
+							"type": "String[]",
+							"description": "外部关联列表",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "raffle_code",
+							"type": "String",
+							"description": "抽奖code",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "msg_code",
+			"type": "Number",
+			"description": "code"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "msg"
+		}
+	]
+}

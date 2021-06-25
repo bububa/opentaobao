@@ -1,0 +1,38 @@
+{
+	"name": "taobao.promotionmisc.activity.range.list.get",
+	"apiChineseName": "查询活动参与的商品",
+	"description": "查询活动参与的商品",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true,
+			"minValue": 0
+		}
+	],
+	"responseParams": [
+		{
+			"name": "promotion_range_list",
+			"type": "PromotionRange []",
+			"description": "活动参与的商品列表",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "参与活动的商品id。"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动id。"
+				},
+				{
+					"name": "activity_name",
+					"type": "String",
+					"description": "活动名称。"
+				}
+			]
+		}
+	]
+}

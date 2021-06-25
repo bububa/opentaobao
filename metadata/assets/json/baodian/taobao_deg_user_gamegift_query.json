@@ -1,0 +1,42 @@
+{
+	"name": "taobao.deg.user.gamegift.query",
+	"apiChineseName": "用户数娱游戏礼包查询",
+	"description": "查询用户数娱礼包列表",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态，1为待发放，2为已发放，3为过期"
+		},
+		{
+			"name": "cp_item_ids",
+			"type": "String[]",
+			"description": "cp item id列表",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "records",
+			"type": "GameGiftRecordDto []",
+			"description": "礼包信息",
+			"subParams": [
+				{
+					"name": "record_id",
+					"type": "Number",
+					"description": "记录id"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "记录状态"
+				},
+				{
+					"name": "cp_item_id",
+					"type": "String",
+					"description": "cp item id"
+				}
+			]
+		}
+	]
+}

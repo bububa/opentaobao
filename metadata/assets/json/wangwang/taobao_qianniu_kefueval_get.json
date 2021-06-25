@@ -1,0 +1,75 @@
+{
+	"name": "taobao.qianniu.kefueval.get",
+	"apiChineseName": "客服评价详情接口",
+	"description": "获取买家对客服的服务评价",
+	"requestParams": [
+		{
+			"name": "query_ids",
+			"type": "String",
+			"description": "客服的nick，多个用逗号分隔，不要超过10个，带cntaobao的长nick",
+			"required": true
+		},
+		{
+			"name": "btime",
+			"type": "String",
+			"description": "开始时间，格式yyyyMMddHHmmss",
+			"required": true
+		},
+		{
+			"name": "etime",
+			"type": "String",
+			"description": "结束时间，格式yyyyMMddHHmmss",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_count",
+			"type": "Number",
+			"description": "评价结果数"
+		},
+		{
+			"name": "staff_eval_details",
+			"type": "EvalDetail []",
+			"description": "评价明细",
+			"subParams": [
+				{
+					"name": "eval_code",
+					"type": "Number",
+					"description": "评分：0-非常满意；1-满意；2-一般；3-不满意；4-非常不满意",
+					"required": true
+				},
+				{
+					"name": "eval_recer",
+					"type": "String",
+					"description": "接收评价的消费者昵称",
+					"required": true
+				},
+				{
+					"name": "eval_sender",
+					"type": "String",
+					"description": "发送评价邀请的商家客服昵称",
+					"required": true
+				},
+				{
+					"name": "eval_time",
+					"type": "Date",
+					"description": "最后一次评价的时间",
+					"required": true
+				},
+				{
+					"name": "send_time",
+					"type": "Date",
+					"description": "评价的发送时间",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "Number",
+					"description": "评价来源：0-客服邀评；1-消费者自主评价；2-系统邀评",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,55 @@
+{
+	"name": "alibaba.wdk.merchant.brand.query",
+	"apiChineseName": "品牌查询接口",
+	"description": "三江erp对接时，提供品牌查询的接口",
+	"requestParams": [
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "关键词，不填就查全部"
+		},
+		{
+			"name": "offset",
+			"type": "Number",
+			"description": "可不填，默认0"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "可不填，默认2000"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "String",
+					"description": "result",
+					"required": true
+				}
+			]
+		}
+	]
+}

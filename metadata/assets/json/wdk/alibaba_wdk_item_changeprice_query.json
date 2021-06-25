@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.wdk.item.changeprice.query",
+	"apiChineseName": "按照价格变更时间段，查询会变更价格的单据的商品",
+	"description": "/**\n     * 按照价格变更时间段，查询会变更价格的单据的商品\n     * 传入QueryPriceChangeTypeEnum.BASE_PRICE,返回变价时间在startTime-endTime之间的所有单据\n     * 传入QueryPriceChangeTypeEnum.SKU_PROMOTION_START,\n     * 返回活动开始时间在 startTime\u003c=活动开始时间\u003cendTime 之间的所有单品促销单据\n     * 传入QueryPriceChangeTypeEnum.SKU_PROMOTION_END,\n     * 返回活动结束时间在 startTime\u003c=活动结束时间\u003cendTime 之间的所有单品促销单据\n     */",
+	"requestParams": [
+		{
+			"name": "type",
+			"type": "String",
+			"description": "变价的类型  * 查询变价的单据专用",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "结束时间，结束时间-开始时间不能超过48小时",
+			"required": true
+		},
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "渠道店id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "结果文案",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "String[]",
+					"description": "返回的商品改价单",
+					"required": true
+				}
+			]
+		}
+	]
+}

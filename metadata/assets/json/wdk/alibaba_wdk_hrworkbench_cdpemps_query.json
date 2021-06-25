@@ -1,0 +1,104 @@
+{
+	"name": "alibaba.wdk.hrworkbench.cdpemps.query",
+	"apiChineseName": "homs员工信息核对查询服务",
+	"description": "给盒马可靠软件服务商Cdp系统，做非阿里编员工数据一致性核对检查",
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页面大小",
+			"required": true
+		},
+		{
+			"name": "biz_key",
+			"type": "String",
+			"description": "业务授权key",
+			"required": true
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "业务授权code",
+			"required": true
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "起始页",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回信息"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总页数"
+		},
+		{
+			"name": "trace_id",
+			"type": "String",
+			"description": "鹰眼id"
+		},
+		{
+			"name": "datas",
+			"type": "Data []",
+			"description": "数据集合",
+			"subParams": [
+				{
+					"name": "work_no",
+					"type": "String",
+					"description": "工号",
+					"required": true
+				},
+				{
+					"name": "emp_id",
+					"type": "Number",
+					"description": "员工id",
+					"required": true
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商家编号",
+					"required": true
+				},
+				{
+					"name": "md5",
+					"type": "String",
+					"description": "消息摘要",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每一页大小"
+		},
+		{
+			"name": "biz_code",
+			"type": "Number",
+			"description": "业务code"
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "总页数"
+		},
+		{
+			"name": "biz_success",
+			"type": "Boolean",
+			"description": "业务是否成功"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页"
+		}
+	]
+}

@@ -1,0 +1,20 @@
+{
+	"name": "alibaba.aliqin.flow.wallet.check.balance",
+	"apiChineseName": "商家预存余额检查",
+	"description": "检查商家CRM预存余额是否足够进行活动",
+	"requestParams": [
+		{
+			"name": "grade_id",
+			"type": "String",
+			"description": "检查金额档位id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "value",
+			"type": "String",
+			"description": "余额\u0008是否大于校验值，大于\u0008返回true，\u0008小于返回false"
+		}
+	]
+}

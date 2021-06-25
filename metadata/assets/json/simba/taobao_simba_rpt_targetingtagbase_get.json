@@ -1,0 +1,113 @@
+{
+	"name": "taobao.simba.rpt.targetingtagbase.get",
+	"apiChineseName": "定向基础报表",
+	"description": "获取定向基础报表",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "被操作者昵称"
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id"
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组id"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "起始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小"
+		},
+		{
+			"name": "page_number",
+			"type": "Number",
+			"description": "页码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "RptBaseEntityDTO []",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "thedate",
+					"type": "String",
+					"description": "日期"
+				},
+				{
+					"name": "campaignid",
+					"type": "String",
+					"description": "计划id"
+				},
+				{
+					"name": "adgroupid",
+					"type": "String",
+					"description": "推广组id"
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "花费"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率"
+				},
+				{
+					"name": "cpc",
+					"type": "String",
+					"description": "每点击一次花费"
+				},
+				{
+					"name": "cpm",
+					"type": "String",
+					"description": "每千次展现花费"
+				},
+				{
+					"name": "impression",
+					"type": "Number",
+					"description": "展现量"
+				},
+				{
+					"name": "click",
+					"type": "Number",
+					"description": "点击量"
+				},
+				{
+					"name": "crowdname",
+					"type": "String",
+					"description": "人群名称"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "流量来源，设备和网络。值包含PC站内，PC站外,移动站内，移动站外"
+				},
+				{
+					"name": "crowdid",
+					"type": "String",
+					"description": "人群id"
+				}
+			]
+		}
+	]
+}

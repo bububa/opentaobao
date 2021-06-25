@@ -1,0 +1,954 @@
+{
+	"name": "alibaba.alsc.order.order.upload",
+	"apiChineseName": "订单回流",
+	"description": "第三方订单回流",
+	"requestParams": [
+		{
+			"name": "param_backflow_request",
+			"type": "BackflowRequest",
+			"description": "订单回流参数",
+			"subParams": [
+				{
+					"name": "biz_source",
+					"type": "String",
+					"description": "订单来源 KERUYUN  CHENSEN  KPOS",
+					"required": true
+				},
+				{
+					"name": "order_attribute_info_list",
+					"type": "OrderAttributeInfo[]",
+					"description": "订单或子订单属性信息",
+					"subParams": [
+						{
+							"name": "attr_group",
+							"type": "String",
+							"description": "属性所属组:ORDER 订单类，SUBORDER 子订单类"
+						},
+						{
+							"name": "combo_info_list",
+							"type": "ComboInfo[]",
+							"description": "套餐明细",
+							"subParams": [
+								{
+									"name": "cooking_methods_info_list",
+									"type": "AttachInfo[]",
+									"description": "套餐菜品做法明细",
+									"subParams": [
+										{
+											"name": "actual_fee",
+											"type": "Number",
+											"description": "附加商品实收金额"
+										},
+										{
+											"name": "item_count",
+											"type": "Number",
+											"description": "附加商品数量"
+										},
+										{
+											"name": "out_attach_item_id",
+											"type": "String",
+											"description": "附加商品id"
+										},
+										{
+											"name": "out_attach_item_name",
+											"type": "String",
+											"description": "附加商品名称"
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "单价"
+										},
+										{
+											"name": "unit",
+											"type": "String",
+											"description": "单位"
+										},
+										{
+											"name": "weight",
+											"type": "String",
+											"description": "重量"
+										},
+										{
+											"name": "total_fee",
+											"type": "Number",
+											"description": "附加商品总金额"
+										}
+									]
+								},
+								{
+									"name": "ingredients_info_list",
+									"type": "AttachInfo[]",
+									"description": "套餐菜品配料明细",
+									"subParams": [
+										{
+											"name": "actual_fee",
+											"type": "Number",
+											"description": "附加商品实收金额"
+										},
+										{
+											"name": "item_count",
+											"type": "Number",
+											"description": "附加商品数量"
+										},
+										{
+											"name": "out_attach_item_id",
+											"type": "String",
+											"description": "附加商品id"
+										},
+										{
+											"name": "out_attach_item_name",
+											"type": "String",
+											"description": "附加商品名称"
+										},
+										{
+											"name": "price",
+											"type": "Number",
+											"description": "单价"
+										},
+										{
+											"name": "unit",
+											"type": "String",
+											"description": "单位"
+										},
+										{
+											"name": "weight",
+											"type": "String",
+											"description": "重量"
+										},
+										{
+											"name": "total_fee",
+											"type": "Number",
+											"description": "附加商品总金额"
+										}
+									]
+								},
+								{
+									"name": "item_count",
+									"type": "Number",
+									"description": "商品数量"
+								},
+								{
+									"name": "out_item_id",
+									"type": "String",
+									"description": "商品id"
+								},
+								{
+									"name": "out_item_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "out_sku_id",
+									"type": "String",
+									"description": "商品规格id"
+								},
+								{
+									"name": "out_sku_name",
+									"type": "String",
+									"description": "商品规格名称"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "单价"
+								},
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "单位"
+								},
+								{
+									"name": "weight",
+									"type": "String",
+									"description": "重量"
+								}
+							]
+						},
+						{
+							"name": "cooking_methods_info_list",
+							"type": "AttachInfo[]",
+							"description": "单品做法明细",
+							"subParams": [
+								{
+									"name": "actual_fee",
+									"type": "Number",
+									"description": "附加商品实收金额"
+								},
+								{
+									"name": "item_count",
+									"type": "Number",
+									"description": "附加商品数量"
+								},
+								{
+									"name": "out_attach_item_id",
+									"type": "String",
+									"description": "附加商品id"
+								},
+								{
+									"name": "out_attach_item_name",
+									"type": "String",
+									"description": "附加商品名称"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "单价"
+								},
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "单位"
+								},
+								{
+									"name": "weight",
+									"type": "String",
+									"description": "重量"
+								},
+								{
+									"name": "total_fee",
+									"type": "Number",
+									"description": "附加商品总金额"
+								}
+							]
+						},
+						{
+							"name": "ingredients_info_list",
+							"type": "AttachInfo[]",
+							"description": "单品配料明细",
+							"subParams": [
+								{
+									"name": "actual_fee",
+									"type": "Number",
+									"description": "附加商品实收金额"
+								},
+								{
+									"name": "item_count",
+									"type": "Number",
+									"description": "附加商品数量"
+								},
+								{
+									"name": "out_attach_item_id",
+									"type": "String",
+									"description": "附加商品id"
+								},
+								{
+									"name": "out_attach_item_name",
+									"type": "String",
+									"description": "附加商品名称"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "单价"
+								},
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "单位"
+								},
+								{
+									"name": "weight",
+									"type": "String",
+									"description": "重量"
+								},
+								{
+									"name": "total_fee",
+									"type": "Number",
+									"description": "附加商品总金额"
+								}
+							]
+						},
+						{
+							"name": "out_biz_id",
+							"type": "String",
+							"description": "业务ID,取值与属性所属组对应"
+						},
+						{
+							"name": "out_order_no",
+							"type": "String",
+							"description": "业务方订单号"
+						},
+						{
+							"name": "service_fee_info_list",
+							"type": "ServiceFeeInfo[]",
+							"description": "服务费明细",
+							"subParams": [
+								{
+									"name": "service_actual_fee",
+									"type": "Number",
+									"description": "服务费实收金额"
+								},
+								{
+									"name": "service_name",
+									"type": "String",
+									"description": "服务费名称"
+								},
+								{
+									"name": "service_promo_fee",
+									"type": "Number",
+									"description": "服务费优惠金额，减钱为负值"
+								},
+								{
+									"name": "service_total_fee",
+									"type": "Number",
+									"description": "服务费总金额"
+								}
+							]
+						},
+						{
+							"name": "other_info_list",
+							"type": "AttachInfo[]",
+							"description": "其他附加费，如餐盒等等",
+							"subParams": [
+								{
+									"name": "actual_fee",
+									"type": "Number",
+									"description": "附加商品实收金额"
+								},
+								{
+									"name": "item_count",
+									"type": "Number",
+									"description": "附加商品数量"
+								},
+								{
+									"name": "out_attach_item_id",
+									"type": "String",
+									"description": "附加商品id"
+								},
+								{
+									"name": "out_attach_item_name",
+									"type": "String",
+									"description": "附加商品名称"
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "单价"
+								},
+								{
+									"name": "unit",
+									"type": "String",
+									"description": "单位"
+								},
+								{
+									"name": "weight",
+									"type": "String",
+									"description": "重量"
+								},
+								{
+									"name": "total_fee",
+									"type": "Number",
+									"description": "附加商品总金额"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "order_info",
+					"type": "OrderInfo",
+					"description": "订单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "actual_fee",
+							"type": "Number",
+							"description": "订单实收金额，单位分",
+							"required": true
+						},
+						{
+							"name": "business_date",
+							"type": "String",
+							"description": "营业日，格式例如：“yyyy-mm-dd”"
+						},
+						{
+							"name": "business_type",
+							"type": "String",
+							"description": "业态：业务方直接传自己的业态code或id"
+						},
+						{
+							"name": "business_type_desc",
+							"type": "String",
+							"description": "业态：业务方直接传自己的业态文字描述，例如储值卡充值，储值卡售卡，押金单等"
+						},
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id"
+						},
+						{
+							"name": "device_ip",
+							"type": "String",
+							"description": "设备ip"
+						},
+						{
+							"name": "dinner_number",
+							"type": "String",
+							"description": "取餐号"
+						},
+						{
+							"name": "dinner_persons",
+							"type": "Number",
+							"description": "就餐人数"
+						},
+						{
+							"name": "dinner_type",
+							"type": "String",
+							"description": "就餐形式:FOR_HERE堂食  TAKE_OUT外带  SEND外送  TO_GO自提  OTHER其他"
+						},
+						{
+							"name": "order_channel",
+							"type": "String",
+							"description": "订单渠道 HANDHELD_DEVICES手持设备 SAMPLE_ORDER扫码点餐 POS POS端 MSTORE 移动门店 THIRDPARTY第三方 OTHER 其他"
+						},
+						{
+							"name": "order_time",
+							"type": "Number",
+							"description": "下单时间",
+							"required": true
+						},
+						{
+							"name": "out_cashier_id",
+							"type": "String",
+							"description": "收银员id"
+						},
+						{
+							"name": "out_cashier_name",
+							"type": "String",
+							"description": "收银员名称"
+						},
+						{
+							"name": "out_delivery_id",
+							"type": "String",
+							"description": "配送员id"
+						},
+						{
+							"name": "out_delivery_name",
+							"type": "String",
+							"description": "配送员名称"
+						},
+						{
+							"name": "out_order_no",
+							"type": "String",
+							"description": "订单号"
+						},
+						{
+							"name": "out_salesman_id",
+							"type": "String",
+							"description": "销售员id"
+						},
+						{
+							"name": "out_salesman_name",
+							"type": "String",
+							"description": "销售员名称"
+						},
+						{
+							"name": "out_seller_id",
+							"type": "String",
+							"description": "卖家id"
+						},
+						{
+							"name": "out_store_id",
+							"type": "String",
+							"description": "店铺id"
+						},
+						{
+							"name": "out_vip_user_id",
+							"type": "String",
+							"description": "外部会员id，业务方自己的会员id，如果有vipUserId的订单，这个字段可以为空"
+						},
+						{
+							"name": "out_waiter_id",
+							"type": "String",
+							"description": "服务员id"
+						},
+						{
+							"name": "out_waiter_name",
+							"type": "String",
+							"description": "服务员名称"
+						},
+						{
+							"name": "promo_fee",
+							"type": "Number",
+							"description": "订单优惠金额 不包含抹零金额，减钱为‘-’，加钱为‘+’，单位分"
+						},
+						{
+							"name": "related_out_order_no",
+							"type": "String",
+							"description": "关联订单号，如反结账的原始业务订单号"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "scrap_fee",
+							"type": "Number",
+							"description": "整单抹零金额，单位分"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态：SUCCESS已完成 REFUND已退款 REFUSED已拒绝 CANCELLED已取消 ANTI_SEELEMENT已反结账 CHARGED已挂账 CANCELLED_DEBT已销账"
+						},
+						{
+							"name": "table_number",
+							"type": "String",
+							"description": "桌号"
+						},
+						{
+							"name": "total_fee",
+							"type": "Number",
+							"description": "订单总金额，单位分",
+							"required": true
+						},
+						{
+							"name": "vip_user_id",
+							"type": "String",
+							"description": "会员id，口碑crm的会员id，有vipUserId可以不传outVipUserId"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展信息"
+						},
+						{
+							"name": "attach_total_fee",
+							"type": "Number",
+							"description": "附加费总金额，如餐盒，"
+						},
+						{
+							"name": "service_total_fee",
+							"type": "Number",
+							"description": "服务费总金额"
+						},
+						{
+							"name": "tax_total_fee",
+							"type": "Number",
+							"description": "税费总金额"
+						},
+						{
+							"name": "out_org_id",
+							"type": "String",
+							"description": "外部组织id，辰森和客如云直接填out_store_id"
+						}
+					]
+				},
+				{
+					"name": "pay_detail_info_list",
+					"type": "PayDetailInfo[]",
+					"description": "支付流水明细",
+					"subParams": [
+						{
+							"name": "out_operator_id",
+							"type": "String",
+							"description": "业务操作人id"
+						},
+						{
+							"name": "out_operator_name",
+							"type": "String",
+							"description": "业务操作人名称"
+						},
+						{
+							"name": "out_order_no",
+							"type": "String",
+							"description": "外部订单号"
+						},
+						{
+							"name": "out_pay_channel_id",
+							"type": "String",
+							"description": "支付方式id"
+						},
+						{
+							"name": "out_pay_channel_name",
+							"type": "String",
+							"description": "支付方式名称"
+						},
+						{
+							"name": "out_pay_code",
+							"type": "String",
+							"description": "支付方式code"
+						},
+						{
+							"name": "out_pay_detail_id",
+							"type": "String",
+							"description": "外部支付明细ID"
+						},
+						{
+							"name": "out_trade_no",
+							"type": "String",
+							"description": "外部交易单号，支付通道的支付单号"
+						},
+						{
+							"name": "pay_account_id",
+							"type": "String",
+							"description": "支付账号，如微信open_id，支付宝buyer_id"
+						},
+						{
+							"name": "pay_card_id",
+							"type": "String",
+							"description": "支付卡号"
+						},
+						{
+							"name": "pay_fee",
+							"type": "Number",
+							"description": "支付金额，单位“分”"
+						},
+						{
+							"name": "pay_source",
+							"type": "String",
+							"description": "支付来源 HANDHELD_DEVICES手持设备 SAMPLE_ORDER扫码点餐 POS POS端 MSTORE 移动门店 THIRDPARTY第三方 OTHER 其他"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "支付状态 SUCCESS 成功  FAIL 失败"
+						},
+						{
+							"name": "success_time",
+							"type": "Number",
+							"description": "支付完成时间"
+						}
+					]
+				},
+				{
+					"name": "promo_detail_info_list",
+					"type": "PromoDetailInfo[]",
+					"description": "优惠明细",
+					"subParams": [
+						{
+							"name": "out_authorizer_id",
+							"type": "String",
+							"description": "优惠授权人id"
+						},
+						{
+							"name": "out_authorizer_name",
+							"type": "String",
+							"description": "业务授权人名称"
+						},
+						{
+							"name": "out_order_no",
+							"type": "String",
+							"description": "关联订单号"
+						},
+						{
+							"name": "out_promo_detail_id",
+							"type": "String",
+							"description": "优惠明细ID"
+						},
+						{
+							"name": "promo_fee",
+							"type": "Number",
+							"description": "优惠金额，单位“分”，减钱为负值"
+						},
+						{
+							"name": "promo_id",
+							"type": "String",
+							"description": "优惠id，券id or 活动id or other等"
+						},
+						{
+							"name": "promo_name",
+							"type": "String",
+							"description": "优惠名称"
+						},
+						{
+							"name": "promo_reason",
+							"type": "String",
+							"description": "优惠原因：COUPON券优惠  PROMO促销优惠  SALES特价商品优惠 POINTS_DEDUCT积分抵现  SALES_MEMBER会员价商品优惠 MODIFY_PRICE手动改价 OTHER其他"
+						}
+					]
+				},
+				{
+					"name": "refund_fund_detail_info_list",
+					"type": "RefundFundDetailInfo[]",
+					"description": "退款资金流水",
+					"subParams": [
+						{
+							"name": "out_order_no",
+							"type": "String",
+							"description": "外部订单号"
+						},
+						{
+							"name": "out_pay_channel_id",
+							"type": "String",
+							"description": "支付方式id"
+						},
+						{
+							"name": "out_pay_channel_name",
+							"type": "String",
+							"description": "支付方式名称"
+						},
+						{
+							"name": "out_pay_code",
+							"type": "String",
+							"description": "支付方式code"
+						},
+						{
+							"name": "out_refund_fund_detail_no",
+							"type": "String",
+							"description": "外部退款单资金明细id"
+						},
+						{
+							"name": "out_refund_no",
+							"type": "String",
+							"description": "外部退款单号，支付宝，微信等退款单号"
+						},
+						{
+							"name": "out_refund_order_no",
+							"type": "String",
+							"description": "外部退款单id"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "SUCCESS成功  FAIL失败"
+						},
+						{
+							"name": "success_time",
+							"type": "Number",
+							"description": "退款成功时间"
+						},
+						{
+							"name": "ext_info",
+							"type": "String",
+							"description": "扩展信息"
+						}
+					]
+				},
+				{
+					"name": "refund_item_detail_info_list",
+					"type": "RefundItemDetailInfo[]",
+					"description": "退款商品明细",
+					"subParams": [
+						{
+							"name": "out_item_id",
+							"type": "String",
+							"description": "商品id"
+						},
+						{
+							"name": "out_item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "out_refund_item_detail_no",
+							"type": "String",
+							"description": "退款单商品明细id"
+						},
+						{
+							"name": "out_refund_order_no",
+							"type": "String",
+							"description": "外部退款单id"
+						},
+						{
+							"name": "out_sub_order_no",
+							"type": "String",
+							"description": "外部子订单号"
+						},
+						{
+							"name": "refund_count",
+							"type": "Number",
+							"description": "退款商品数"
+						}
+					]
+				},
+				{
+					"name": "refund_order_info_list",
+					"type": "RefundOrderInfo[]",
+					"description": "退款单数据",
+					"subParams": [
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id"
+						},
+						{
+							"name": "device_ip",
+							"type": "String",
+							"description": "设备ip"
+						},
+						{
+							"name": "out_authorizer_id",
+							"type": "String",
+							"description": "授权人id"
+						},
+						{
+							"name": "out_authorizer_name",
+							"type": "String",
+							"description": "授权人名称"
+						},
+						{
+							"name": "out_operator_id",
+							"type": "String",
+							"description": "操作人id"
+						},
+						{
+							"name": "out_operator_name",
+							"type": "String",
+							"description": "操作人名称"
+						},
+						{
+							"name": "out_order_no",
+							"type": "String",
+							"description": "外部订单号"
+						},
+						{
+							"name": "out_refund_order_no",
+							"type": "String",
+							"description": "业务方退款单号"
+						},
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额"
+						},
+						{
+							"name": "refund_reason",
+							"type": "String",
+							"description": "退款原因"
+						},
+						{
+							"name": "refund_type",
+							"type": "String",
+							"description": "退款类型 REFUND_ITEM 退菜退款 ONLY_REFUND仅退款款ANTI_SEELEMENT 反结账"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "退款单状态 SUCCESS 成功；  FAIL失败"
+						},
+						{
+							"name": "success_time",
+							"type": "Number",
+							"description": "退款成功时间"
+						}
+					]
+				},
+				{
+					"name": "sub_order_info_list",
+					"type": "SubOrderInfo[]",
+					"description": "子订单（商品）信息",
+					"subParams": [
+						{
+							"name": "item_attach_fee",
+							"type": "Number",
+							"description": "商品附加费金额 如配料，做法"
+						},
+						{
+							"name": "out_item_id",
+							"type": "String",
+							"description": "商品ID"
+						},
+						{
+							"name": "out_item_name",
+							"type": "String",
+							"description": "商品的名称"
+						},
+						{
+							"name": "out_order_no",
+							"type": "String",
+							"description": "主单号"
+						},
+						{
+							"name": "out_sku_id",
+							"type": "String",
+							"description": "商品规格id"
+						},
+						{
+							"name": "out_sku_name",
+							"type": "String",
+							"description": "商品规格名称"
+						},
+						{
+							"name": "out_sub_order_no",
+							"type": "String",
+							"description": "子订单号"
+						},
+						{
+							"name": "price",
+							"type": "Number",
+							"description": "商品单价，如果是称重菜，等于subTotalFee"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "份数，如果是称重菜，值直接传1"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "sub_total_fee",
+							"type": "Number",
+							"description": "商品总金额,包含配料，做法"
+						},
+						{
+							"name": "unit",
+							"type": "String",
+							"description": "单位"
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "重量"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回包装类",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "fail",
+					"type": "Boolean",
+					"description": "是否失败",
+					"required": true
+				},
+				{
+					"name": "process",
+					"type": "Boolean",
+					"description": "是否处理中",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "1成功，2失败，3处理中",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

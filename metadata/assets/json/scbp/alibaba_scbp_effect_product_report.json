@@ -1,0 +1,99 @@
+{
+	"name": "alibaba.scbp.effect.product.report",
+	"apiChineseName": "所有产品报表",
+	"description": "所有产品报表",
+	"requestParams": [
+		{
+			"name": "p4p_product_report_query",
+			"type": "ProductQuery",
+			"description": "ProductQuery",
+			"subParams": [
+				{
+					"name": "inteval",
+					"type": "Number",
+					"description": "区间 只能为1 7 30",
+					"required": true
+				},
+				{
+					"name": "per_page_size",
+					"type": "Number",
+					"description": "每页行数"
+				},
+				{
+					"name": "to_page",
+					"type": "Number",
+					"description": "第几页"
+				},
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "结束时间 当inteval=7或30的时候 不需要填写"
+				},
+				{
+					"name": "order_str",
+					"type": "String",
+					"description": "排序字段，目前支持传入下面5个值中的其中一个，不传的话默认使用impression_cnt，括号中为字段含义解释 impression_cnt (曝光量)，click_cost_avg (平均点击花费)，click_cnt(点击量)cost(总花费)ctr(点击率)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "总个数"
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "总页数"
+		},
+		{
+			"name": "product_effect_list",
+			"type": "ProductEffectDto []",
+			"description": "产品效果数据列表",
+			"subParams": [
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "title"
+				},
+				{
+					"name": "impression_cnt",
+					"type": "String",
+					"description": "曝光"
+				},
+				{
+					"name": "stat_date",
+					"type": "String",
+					"description": "日期"
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品ID"
+				},
+				{
+					"name": "click_cost_avg",
+					"type": "String",
+					"description": "平均点击花费"
+				},
+				{
+					"name": "click_cnt",
+					"type": "String",
+					"description": "点击量"
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "单位元，保留两位小数, 例如3.75表示3.75元"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "百分比，保留两位小数，例如3.75表示3.75%"
+				}
+			]
+		}
+	]
+}

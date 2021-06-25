@@ -1,0 +1,66 @@
+{
+	"name": "cainiao.guoguo.cp.nborderfrontr.uploadcoordinate",
+	"apiChineseName": "上传小件员GPS位置信息",
+	"description": "上传小件员GPS位置信息",
+	"requestParams": [
+		{
+			"name": "cp_code",
+			"type": "String",
+			"description": "小件员所在公司编号",
+			"required": true
+		},
+		{
+			"name": "cp_user_id",
+			"type": "String",
+			"description": "小件员员工编号",
+			"required": true
+		},
+		{
+			"name": "time_stamp",
+			"type": "String",
+			"description": "上报时间，格式：yyyy-MM-dd HH:mm:ss",
+			"required": true
+		},
+		{
+			"name": "source",
+			"type": "Number",
+			"description": "来源：1.小件员app sdk 2.驿站 3. 裹裹 10001.圆通行者",
+			"required": true
+		},
+		{
+			"name": "lng",
+			"type": "String",
+			"description": "经度",
+			"required": true
+		},
+		{
+			"name": "lat",
+			"type": "String",
+			"description": "纬度",
+			"required": true
+		},
+		{
+			"name": "gps_type",
+			"type": "String",
+			"description": "0 安卓定位，     1 苹果定位，  2 其他系统定位，   10 高德定位，  11 百度定位，  12 google定位     13 其他",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "status_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "status_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

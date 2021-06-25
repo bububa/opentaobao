@@ -1,0 +1,118 @@
+{
+	"name": "alibaba.wdk.fulfill.warehouse.work.order.sealbox",
+	"apiChineseName": "仓封箱回告",
+	"description": "仓封箱回告箱与包裹的关系",
+	"requestParams": [
+		{
+			"name": "same_town_box",
+			"type": "SameTownBox",
+			"description": "同城交付物箱",
+			"required": true,
+			"subParams": [
+				{
+					"name": "same_town_packages",
+					"type": "Sametownpackages[]",
+					"description": "同城包裹列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_details",
+							"type": "Skudetails[]",
+							"description": "货品列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "fulfill_sub_order_id",
+									"type": "String",
+									"description": "履约子单id",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "货品编码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "attribute",
+							"type": "String",
+							"description": "扩展信息  json格式"
+						},
+						{
+							"name": "is_test",
+							"type": "String",
+							"description": "是否测试 1:测试 0:非测试",
+							"required": true
+						},
+						{
+							"name": "token_code",
+							"type": "String",
+							"description": "同城令牌 即包裹码",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "仓编码",
+							"required": true
+						},
+						{
+							"name": "work_order_id",
+							"type": "String",
+							"description": "作业单id",
+							"required": true
+						},
+						{
+							"name": "fulfill_order_id",
+							"type": "String",
+							"description": "履约单id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "is_test",
+					"type": "String",
+					"description": "是否测试 1:测试 0:非测试",
+					"required": true
+				},
+				{
+					"name": "attribute",
+					"type": "String",
+					"description": "扩展信息  json格式"
+				},
+				{
+					"name": "container_code",
+					"type": "String",
+					"description": "箱号",
+					"required": true
+				},
+				{
+					"name": "container_type",
+					"type": "String",
+					"description": "箱类型 NORMAL:周转箱 COLD:冷链箱 NONE:原箱",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_message",
+			"type": "String",
+			"description": "失败返回原因"
+		},
+		{
+			"name": "resp_code",
+			"type": "String",
+			"description": "成功失败码"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

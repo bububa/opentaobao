@@ -1,0 +1,125 @@
+{
+	"name": "taobao.tanx.nativetemplates.get",
+	"apiChineseName": "批量获取本地模板信息",
+	"description": "根据传入的本地模板ID批量返回本地模板",
+	"requestParams": [
+		{
+			"name": "member_id",
+			"type": "Number",
+			"description": "dsp在tanx的memberid",
+			"required": true
+		},
+		{
+			"name": "token",
+			"type": "String",
+			"description": "dsp对应的tanx的token",
+			"required": true
+		},
+		{
+			"name": "sign_time",
+			"type": "Number",
+			"description": "1970年到现在的毫秒",
+			"required": true
+		},
+		{
+			"name": "template_ids",
+			"type": "Number[]",
+			"description": "本地模板ID列表",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_ok",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "native_template_list",
+			"type": "NativeTemplateDto []",
+			"description": "本地模板列表",
+			"subParams": [
+				{
+					"name": "preview",
+					"type": "String",
+					"description": "样式预览图片url"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "说明"
+				},
+				{
+					"name": "tmpl_id",
+					"type": "Number",
+					"description": "模板ID"
+				},
+				{
+					"name": "areas",
+					"type": "NativeTemplateAreaDto[]",
+					"description": "区域列表",
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "广告区域ID"
+						},
+						{
+							"name": "creative_count",
+							"type": "Number",
+							"description": "创意个数"
+						},
+						{
+							"name": "creative",
+							"type": "NativeTemplateCreativeDto",
+							"description": "创意要求",
+							"subParams": [
+								{
+									"name": "mutlichoice_fields",
+									"type": "Number[]",
+									"description": "多选一的属性集合，这些属性至少有一个不为空，1:标题;2:广告语;3:图片;4:价格;5:折扣价;6:销量;7:click_url;8:landing_type;9描述;10打开方式;11下载方式;12deepLink;13下载"
+								},
+								{
+									"name": "required_fields",
+									"type": "Number[]",
+									"description": "必须属性集合，1:标题;2:广告语;3:图片;4:价格;5:折扣价;6:销量;7:click_url;8:landing_type;9描述;10打开方式;11下载方式;12deepLink;13下载"
+								},
+								{
+									"name": "ad_words_max_safe_length",
+									"type": "Number",
+									"description": "副标题或者广告语最大长度，如果超长有可能会被截断"
+								},
+								{
+									"name": "recommended_fields",
+									"type": "Number[]",
+									"description": "推荐属性集合，1:标题;2:广告语;3:图片;4:价格;5:折扣价;6:销量;7:click_url;8:landing_type;9描述;10打开方式;11下载方式;12deepLink;13下载"
+								},
+								{
+									"name": "image_size",
+									"type": "String",
+									"description": "图片尺寸宽x高，比如320x50"
+								},
+								{
+									"name": "title_max_safe_length",
+									"type": "Number",
+									"description": "标题最大长度，如果超长有可能会被截断"
+								},
+								{
+									"name": "action_fields",
+									"type": "Number[]",
+									"description": "已经废弃，事件属性集合 1:下载 2:地图 3:电话"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "size",
+					"type": "String",
+					"description": "模板支持的广告位尺寸"
+				}
+			]
+		}
+	]
+}

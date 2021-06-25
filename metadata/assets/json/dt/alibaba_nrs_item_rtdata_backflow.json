@@ -1,0 +1,163 @@
+{
+	"name": "alibaba.nrs.item.rtdata.backflow",
+	"apiChineseName": "RT竞价数据回流",
+	"description": "回流竞品价格数据，用与后续OCR识别价签数据，做精确化数据纠正",
+	"requestParams": [
+		{
+			"name": "rt_item_price_tag_back_param",
+			"type": "RtItemPriceTagBackParam",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "price_tag_param_list",
+					"type": "RtItemResearchPriceParam[]",
+					"description": "数据列表",
+					"subParams": [
+						{
+							"name": "serial_no",
+							"type": "String",
+							"description": "流水号"
+						},
+						{
+							"name": "source",
+							"type": "String",
+							"description": "业务来源"
+						},
+						{
+							"name": "ext_map",
+							"description": "扩展字段"
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "门店名称"
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "门店Id"
+						},
+						{
+							"name": "area_name",
+							"type": "String",
+							"description": "区域名称"
+						},
+						{
+							"name": "area_id",
+							"type": "Number",
+							"description": "区域id"
+						},
+						{
+							"name": "origin_place",
+							"type": "String",
+							"description": "原产地"
+						},
+						{
+							"name": "promotion_end_time",
+							"type": "Date",
+							"description": "优惠结束时间"
+						},
+						{
+							"name": "promotion_start_time",
+							"type": "Date",
+							"description": "优惠开始时间"
+						},
+						{
+							"name": "spec_desc",
+							"type": "String",
+							"description": "规格描述"
+						},
+						{
+							"name": "promotion_desc",
+							"type": "String",
+							"description": "优惠描述"
+						},
+						{
+							"name": "promotion_type",
+							"type": "Number",
+							"description": "优惠类型"
+						},
+						{
+							"name": "in_promotion",
+							"type": "Number",
+							"description": "是否促销"
+						},
+						{
+							"name": "promotion_price",
+							"type": "Number",
+							"description": "促销价"
+						},
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "条码"
+						},
+						{
+							"name": "sale_price",
+							"type": "Number",
+							"description": "正常价格"
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "品名"
+						},
+						{
+							"name": "rt_item_no",
+							"type": "String",
+							"description": "rt货号"
+						}
+					]
+				},
+				{
+					"name": "busi_code",
+					"type": "String",
+					"description": "业务编码"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "业务来源"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "NrsResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回结果数据",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口成功失败标志",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,53 @@
+{
+	"name": "alibaba.wdk.sopo.push.trigger",
+	"apiChineseName": "猫超共享库存寄售sopo推送触发",
+	"description": "猫超共享库存寄售sopo触发推送给商家",
+	"requestParams": [
+		{
+			"name": "wdk_open_push_so_po_request",
+			"type": "WdkOpenPushSoPoRequest",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "sub_trade_order_no_list",
+					"type": "String[]",
+					"description": "淘系子订单列表，一次最多20个",
+					"required": true
+				},
+				{
+					"name": "sales_type",
+					"type": "Number",
+					"description": "销售=10，销退=20",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "根据站点名称查询产品",
+			"subParams": [
+				{
+					"name": "return_success",
+					"type": "Boolean",
+					"description": "结果",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

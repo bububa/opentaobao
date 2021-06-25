@@ -1,0 +1,92 @@
+{
+	"name": "taobao.koubei.tribe.open.user.query",
+	"apiChineseName": "获取用户openId",
+	"description": "口碑综合体通过手机号码获取加密后的用户openId",
+	"requestParams": [
+		{
+			"name": "verify_code",
+			"type": "String",
+			"description": "验证码",
+			"required": true
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "手机号",
+			"required": true
+		},
+		{
+			"name": "data_set_id",
+			"type": "String",
+			"description": "数据集id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "traceId",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "UserInfoDto",
+					"description": "用户信息DTO",
+					"required": true,
+					"subParams": [
+						{
+							"name": "open_id",
+							"type": "String",
+							"description": "用户openId",
+							"required": true
+						},
+						{
+							"name": "user_result_code",
+							"type": "UserResultCode",
+							"description": "用户结果code",
+							"required": true,
+							"subParams": [
+								{
+									"name": "result_code",
+									"type": "String",
+									"description": "结果code",
+									"required": true
+								},
+								{
+									"name": "result_type",
+									"type": "String",
+									"description": "结果类型",
+									"required": true
+								},
+								{
+									"name": "result_msg",
+									"type": "String",
+									"description": "结果描述",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

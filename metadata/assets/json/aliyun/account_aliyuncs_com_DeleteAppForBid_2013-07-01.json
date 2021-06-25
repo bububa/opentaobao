@@ -1,0 +1,41 @@
+{
+	"name": "account.aliyuncs.com.DeleteAppForBid.2013-07-01",
+	"apiChineseName": "运营商删除用户的appkey",
+	"description": "删除用户的appkey，会校验调用的用户是否为当前运营商所创建的。",
+	"requestParams": [
+		{
+			"name": "OwnerId",
+			"type": "String",
+			"description": "要删除的appkey的所有者用户的pk",
+			"required": true
+		},
+		{
+			"name": "OwnerAppkey",
+			"type": "String",
+			"description": "要删除的appkey",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "AppKey",
+			"type": "String",
+			"description": "用户删除的appkey"
+		},
+		{
+			"name": "Message",
+			"type": "String",
+			"description": "调用描述信息"
+		},
+		{
+			"name": "Code",
+			"type": "String",
+			"description": "结果code"
+		},
+		{
+			"name": "RequestId",
+			"type": "String",
+			"description": "入参的requestId"
+		}
+	]
+}

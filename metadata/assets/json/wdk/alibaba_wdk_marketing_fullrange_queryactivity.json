@@ -1,0 +1,179 @@
+{
+	"name": "alibaba.wdk.marketing.fullrange.queryactivity",
+	"apiChineseName": "全场活动查询活动",
+	"description": "全场活动查询活动",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "CommonActivityParam",
+			"description": "查询活动入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "五道口活动id",
+					"required": true
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "查询返回结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "ItemPoolActivity",
+					"description": "返回活动信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "rule_stairs",
+							"type": "Rulestairs[]",
+							"description": "活动的梯度列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "amount",
+									"type": "Number",
+									"description": "满多少元[单位为分，传入700，代表满7元]，amountAt为true时，必须设置",
+									"required": true
+								},
+								{
+									"name": "amount_at",
+									"type": "Boolean",
+									"description": "是否使用满元条件，不能与满件、N件Y折同时使用。此选项为true时，countAt和countBegin必须为false",
+									"required": true
+								},
+								{
+									"name": "can_extra_item_num",
+									"type": "Number",
+									"description": "如果为换购活动，则代表此阶梯可换购的商品数量",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "limit_info",
+							"type": "LimitInfo",
+							"description": "通用限购信息，-1为不限制，默认为不限制",
+							"required": true,
+							"subParams": [
+								{
+									"name": "user_limit_cnt",
+									"type": "Number",
+									"description": "每人活动期间总限购",
+									"required": true
+								},
+								{
+									"name": "user_daily_limit_cnt",
+									"type": "Number",
+									"description": "每人每日限购",
+									"required": true
+								},
+								{
+									"name": "daily_limit_cnt",
+									"type": "Number",
+									"description": "活动每日总限购",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "out_act_id",
+							"type": "String",
+							"description": "商家活动id",
+							"required": true
+						},
+						{
+							"name": "activity_id",
+							"type": "Number",
+							"description": "报名活动Id",
+							"required": true
+						},
+						{
+							"name": "activity_name",
+							"type": "String",
+							"description": "活动名称",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "活动描述",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "Number",
+							"description": "startTime",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Number",
+							"description": "endTime",
+							"required": true
+						},
+						{
+							"name": "terminals",
+							"type": "Number[]",
+							"description": "优惠适用场景:APP|POS|POS+APP 分别对应的值为1|2|1,2",
+							"required": true
+						},
+						{
+							"name": "member_limit",
+							"type": "Number",
+							"description": "会员维度活动参与人群限制：-1:不限制 1:会员专享 2:非会员专享",
+							"required": true
+						},
+						{
+							"name": "shop_ids",
+							"type": "String[]",
+							"description": "shopIds",
+							"required": true
+						},
+						{
+							"name": "merchant_crowd_code",
+							"type": "String",
+							"description": "merchantCrowdCode",
+							"required": true
+						},
+						{
+							"name": "txd_crowd_code",
+							"type": "String",
+							"description": "txdCrowdCode",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "查询商品是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,140 @@
+{
+	"name": "taobao.logistics.partners.get",
+	"apiChineseName": "查询支持起始地到目的地范围的物流公司",
+	"description": "查询物流公司信息（可以查询目的地可不可达情况）",
+	"requestParams": [
+		{
+			"name": "source_id",
+			"type": "String",
+			"description": "物流公司揽货地地区码（必须是区、县一级的）.参考:http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html或者调用 taobao.areas.get 获取"
+		},
+		{
+			"name": "target_id",
+			"type": "String",
+			"description": "物流公司派送地地区码（必须是区、县一级的）.参考:http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/201401/t20140116_501070.html或者调用 taobao.areas.get 获取"
+		},
+		{
+			"name": "service_type",
+			"type": "String",
+			"description": "服务类型，根据此参数可查出提供相应服务类型的物流公司信息(物流公司状态正常)，可选值：cod(货到付款)、online(在线下单)、 offline(自己联系)、limit(限时物流)。然后再根据source_id,target_id,goods_value这三个条件来过滤物流公司. 目前输入自己联系服务类型将会返回空，因为自己联系并没有具体的服务信息，所以不会有记录。"
+		},
+		{
+			"name": "goods_value",
+			"type": "String",
+			"description": "货物价格.只有当选择货到付款此参数才会有效"
+		},
+		{
+			"name": "is_need_carriage",
+			"type": "Boolean",
+			"description": "是否需要揽收资费信息，默认false。在此值为false时，返回内容中将无carriage。在未设置source_id或target_id的情况下，无法查询揽收资费信息。自己联系无揽收资费记录。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "logistics_partners",
+			"type": "LogisticsPartner []",
+			"description": "查询揽送范围之内的物流公司信息",
+			"subParams": [
+				{
+					"name": "cover_remark",
+					"type": "String",
+					"description": "揽收说明信息"
+				},
+				{
+					"name": "uncover_remark",
+					"type": "String",
+					"description": "不可送达的说明信息"
+				},
+				{
+					"name": "carriage",
+					"type": "CarriageDetail",
+					"description": "物流公司揽收和资费详细信息",
+					"subParams": [
+						{
+							"name": "got_time",
+							"type": "String",
+							"description": "物流公司揽收时间段"
+						},
+						{
+							"name": "way_day",
+							"type": "String",
+							"description": "快件送达所需的时间(单位：天)"
+						},
+						{
+							"name": "initial_weight",
+							"type": "Number",
+							"description": "首重（单位：千克）"
+						},
+						{
+							"name": "initial_fee",
+							"type": "Number",
+							"description": "首费（单位：元）"
+						},
+						{
+							"name": "add_weight",
+							"type": "Number",
+							"description": "续重（单位：千克）"
+						},
+						{
+							"name": "add_fee",
+							"type": "Number",
+							"description": "续费（单位：元）"
+						},
+						{
+							"name": "lost_payment",
+							"type": "String",
+							"description": "丢单赔付"
+						},
+						{
+							"name": "damage_payment",
+							"type": "String",
+							"description": "破损赔付"
+						}
+					]
+				},
+				{
+					"name": "partner",
+					"type": "PartnerDetail",
+					"description": "物流公司详细信息",
+					"subParams": [
+						{
+							"name": "account_no",
+							"type": "String",
+							"description": "物流公司支付宝账号"
+						},
+						{
+							"name": "company_code",
+							"type": "String",
+							"description": "物流公司代码"
+						},
+						{
+							"name": "company_id",
+							"type": "Number",
+							"description": "物流公司id"
+						},
+						{
+							"name": "full_name",
+							"type": "String",
+							"description": "物流公司全名"
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "物流公司简称"
+						},
+						{
+							"name": "wangwang_id",
+							"type": "String",
+							"description": "旺旺id"
+						},
+						{
+							"name": "reg_mail_no",
+							"type": "String",
+							"description": "运单号验证正则表达式"
+						}
+					]
+				}
+			]
+		}
+	]
+}

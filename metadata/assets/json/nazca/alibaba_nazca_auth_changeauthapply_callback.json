@@ -1,0 +1,132 @@
+{
+	"name": "alibaba.nazca.auth.changeauthapply.callback",
+	"apiChineseName": "变更认证回调",
+	"description": "变更认证回调",
+	"requestParams": [
+		{
+			"name": "param_change_auth_call_back_do",
+			"type": "ChangeAuthCallBackDo",
+			"description": "变更认证回调参数",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "String",
+					"description": "身份证号"
+				},
+				{
+					"name": "alipay_account",
+					"type": "String",
+					"description": "支付宝账号"
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "邮箱"
+				},
+				{
+					"name": "person_name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "platform_user_id",
+					"type": "String",
+					"description": "客户在1688的唯一标识"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "认证状态"
+				},
+				{
+					"name": "telphone",
+					"type": "String",
+					"description": "联系手机"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ActionResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error",
+					"type": "String",
+					"description": "error",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "ret_value",
+					"type": "ChangeAuthCallBackDo",
+					"description": "retValue",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "String",
+							"description": "身份证号",
+							"required": true
+						},
+						{
+							"name": "alipay_account",
+							"type": "String",
+							"description": "支付宝账号",
+							"required": true
+						},
+						{
+							"name": "email",
+							"type": "String",
+							"description": "邮箱",
+							"required": true
+						},
+						{
+							"name": "person_name",
+							"type": "String",
+							"description": "姓名",
+							"required": true
+						},
+						{
+							"name": "platform_user_id",
+							"type": "String",
+							"description": "客户在1688的唯一标识",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "认证状态",
+							"required": true
+						},
+						{
+							"name": "telphone",
+							"type": "String",
+							"description": "联系手机",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sub_error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功状态",
+					"required": true
+				}
+			]
+		}
+	]
+}

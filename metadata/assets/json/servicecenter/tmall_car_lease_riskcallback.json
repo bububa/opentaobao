@@ -1,0 +1,114 @@
+{
+	"name": "tmall.car.lease.riskcallback",
+	"apiChineseName": "整车租赁风控模型回调",
+	"description": "租赁公司回调风控结果",
+	"requestParams": [
+		{
+			"name": "credit_info",
+			"type": "CreditInfoTopDto",
+			"description": "授信结果",
+			"subParams": [
+				{
+					"name": "identity_no",
+					"type": "String",
+					"description": "身份证",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "Number",
+					"description": "手机号"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名字"
+				},
+				{
+					"name": "pass",
+					"type": "Boolean",
+					"description": "是否通过",
+					"required": true
+				},
+				{
+					"name": "reject_msg",
+					"type": "String",
+					"description": "被拒原因，只支持传入1,2,3,4.其中1代表综合评分不足；2代表黑名单客群；3代表信用不良；4代表其他"
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "唯一id",
+					"required": true
+				},
+				{
+					"name": "amount",
+					"type": "Number",
+					"description": "额度，单位分，假设离线通过的不用给额度"
+				},
+				{
+					"name": "flag",
+					"type": "Number",
+					"description": "0代表已经完成，1代表还需要进一步评估处理"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果集合",
+			"subParams": [
+				{
+					"name": "cost_time",
+					"type": "Number",
+					"description": "耗时",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "gmt_current_time",
+					"type": "Number",
+					"description": "当前时间",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "object",
+					"type": "Boolean",
+					"description": "true",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功与否",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,147 @@
+{
+	"name": "taobao.simba.rtrpt.campaign.get",
+	"apiChineseName": "获取推广计划实时报表数据",
+	"description": "获取推广计划实时报表数据",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "用户名"
+		},
+		{
+			"name": "the_date",
+			"type": "String",
+			"description": "日期，格式yyyy-mm-dd",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resultss",
+			"type": "RtRptResultEntityDTO []",
+			"description": "111",
+			"subParams": [
+				{
+					"name": "thedate",
+					"type": "String",
+					"description": "日期"
+				},
+				{
+					"name": "campaignid",
+					"type": "String",
+					"description": "计划id"
+				},
+				{
+					"name": "directtransaction",
+					"type": "String",
+					"description": "直接成交金额"
+				},
+				{
+					"name": "indirecttransaction",
+					"type": "String",
+					"description": "间接成交金额"
+				},
+				{
+					"name": "directtransactionshipping",
+					"type": "String",
+					"description": "直接成交笔数"
+				},
+				{
+					"name": "indirecttransactionshipping",
+					"type": "String",
+					"description": "间接成交笔数"
+				},
+				{
+					"name": "favitemtotal",
+					"type": "String",
+					"description": "收藏宝贝数"
+				},
+				{
+					"name": "favshoptotal",
+					"type": "String",
+					"description": "收藏店铺数"
+				},
+				{
+					"name": "roi",
+					"type": "String",
+					"description": "投入产出比"
+				},
+				{
+					"name": "coverage",
+					"type": "String",
+					"description": "点击转化率"
+				},
+				{
+					"name": "directcarttotal",
+					"type": "String",
+					"description": "直接购物车数"
+				},
+				{
+					"name": "indirectcarttotal",
+					"type": "String",
+					"description": "间接购物车数"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "流量来源( PC站内:1， PC站外:2 , 移动站内:4，移动站外:5)"
+				},
+				{
+					"name": "carttotal",
+					"type": "String",
+					"description": "购物车总数"
+				},
+				{
+					"name": "search_type",
+					"type": "String",
+					"description": "报表类型（搜索：0,类目出价：1, 单品定向：2, 店铺定向:3）"
+				},
+				{
+					"name": "impression",
+					"type": "String",
+					"description": "impression"
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "cost"
+				},
+				{
+					"name": "click",
+					"type": "String",
+					"description": "click"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "ctr"
+				},
+				{
+					"name": "cpc",
+					"type": "String",
+					"description": "cpc"
+				},
+				{
+					"name": "cpm",
+					"type": "String",
+					"description": "cpm"
+				},
+				{
+					"name": "transactionshippingtotal",
+					"type": "String",
+					"description": "总成交笔数"
+				},
+				{
+					"name": "transactiontotal",
+					"type": "String",
+					"description": "总成交金额"
+				},
+				{
+					"name": "favtotal",
+					"type": "String",
+					"description": "总收藏数"
+				}
+			]
+		}
+	]
+}

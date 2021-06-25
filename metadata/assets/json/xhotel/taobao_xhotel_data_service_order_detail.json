@@ -1,0 +1,188 @@
+{
+	"name": "taobao.xhotel.data.service.order.detail",
+	"apiChineseName": "服务订单详情",
+	"description": "服务订单详情top接口构建",
+	"requestParams": [
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "查询开始日期"
+		},
+		{
+			"name": "is_call_no_order",
+			"type": "Number",
+			"description": "是否查无订单 1:是 0:否"
+		},
+		{
+			"name": "hid",
+			"type": "Number",
+			"description": "酒店id"
+		},
+		{
+			"name": "is_spec_time_order",
+			"type": "Number",
+			"description": "是否特殊时段订单 1:是 0:否"
+		},
+		{
+			"name": "vendor",
+			"type": "String",
+			"description": "渠道商名称"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小"
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "查询结束时间"
+		},
+		{
+			"name": "is_no_room_compen",
+			"type": "Number",
+			"description": "是否到店无房 1:是"
+		},
+		{
+			"name": "start_row",
+			"type": "Number",
+			"description": "分页参数"
+		},
+		{
+			"name": "is_seller_deny",
+			"type": "Number",
+			"description": "是否拒单 1:是 0:否"
+		},
+		{
+			"name": "is_seller_refund",
+			"type": "Number",
+			"description": "是否卖家原因退款 1:是 0:否"
+		},
+		{
+			"name": "supplier",
+			"type": "String",
+			"description": "供应商名称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "first_result",
+					"type": "TopAdsTripSvcQueryResult",
+					"description": "firstResult",
+					"required": true,
+					"subParams": [
+						{
+							"name": "top_ads_htl_service_data_list",
+							"type": "Topadshtlservicedatalist[]",
+							"description": "topAdsHtlServiceDataList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "is_call_no_order",
+									"type": "String",
+									"description": "是否查无订单 N:否  Y:是",
+									"required": true
+								},
+								{
+									"name": "hid",
+									"type": "Number",
+									"description": "酒店id",
+									"required": true
+								},
+								{
+									"name": "is_spec_time_order",
+									"type": "String",
+									"description": "是否特殊时段订单 N:否  Y:是",
+									"required": true
+								},
+								{
+									"name": "vendor",
+									"type": "String",
+									"description": "渠道商名称",
+									"required": true
+								},
+								{
+									"name": "checkin_date",
+									"type": "Date",
+									"description": "入住时间",
+									"required": true
+								},
+								{
+									"name": "is_no_room_compen",
+									"type": "String",
+									"description": "是否到店无房订单  1:是",
+									"required": true
+								},
+								{
+									"name": "hotel_name",
+									"type": "String",
+									"description": "酒店名称",
+									"required": true
+								},
+								{
+									"name": "confirm_duration",
+									"type": "Number",
+									"description": "确认时长",
+									"required": true
+								},
+								{
+									"name": "is_seller_deny",
+									"type": "String",
+									"description": "是否拒单 N:否  Y:是",
+									"required": true
+								},
+								{
+									"name": "checkout_date",
+									"type": "Date",
+									"description": "离店时间",
+									"required": true
+								},
+								{
+									"name": "is_seller_refund",
+									"type": "String",
+									"description": "是否卖家原因退款 N:否  Y:是",
+									"required": true
+								},
+								{
+									"name": "supplier",
+									"type": "String",
+									"description": "供应商名称",
+									"required": true
+								},
+								{
+									"name": "tid",
+									"type": "Number",
+									"description": "订单id",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "count",
+							"type": "Number",
+							"description": "count",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

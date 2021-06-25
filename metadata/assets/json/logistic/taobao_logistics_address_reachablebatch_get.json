@@ -1,0 +1,105 @@
+{
+	"name": "taobao.logistics.address.reachablebatch.get",
+	"apiChineseName": "批量判定服务是否可达",
+	"description": "批量判定服务是否可达",
+	"requestParams": [
+		{
+			"name": "address_list",
+			"type": "AddressReachable[]",
+			"description": "筛单用户输入地址结构",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "area_code",
+					"type": "String",
+					"description": "标准区域编码(三级行政区编码或是四级行政区)，可以通过taobao.areas.get获取，如北京市朝阳区为110105"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "source_area_code",
+					"type": "String",
+					"description": "发货地，标准区域编码(四级行政)，可以通过taobao.areas.get获取，如浙江省杭州市余杭区闲林街道为 330110011"
+				},
+				{
+					"name": "partner_id",
+					"type": "String",
+					"description": "物流公司编码ID，可以从这个接口获取所有物流公司的标准编码taobao.logistics.companies.get，可以传入多个值，以英文逗号分隔，如“1000000952,1000000953”"
+				},
+				{
+					"name": "service_type",
+					"type": "Number",
+					"description": "服务对应的数字编码，如揽派范围对应88"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "reachable_results",
+			"type": "AddressReachableTopResult []",
+			"description": "物流是否可达结果列表",
+			"subParams": [
+				{
+					"name": "reachable_result_list",
+					"type": "AddressReachableResult[]",
+					"description": "筛单结果l列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "division_id",
+							"type": "Number",
+							"description": "区域编码",
+							"required": true
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码",
+							"required": true
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						},
+						{
+							"name": "partner_code",
+							"type": "String",
+							"description": "物流公司代号",
+							"required": true
+						},
+						{
+							"name": "partner_id",
+							"type": "Number",
+							"description": "物流公司编码ID",
+							"required": true
+						},
+						{
+							"name": "reachable",
+							"type": "String",
+							"description": "服务是否可达， 0 - 不可达 1 - 可达 2 - 不确定 3 - 未配置",
+							"required": true
+						},
+						{
+							"name": "service_type",
+							"type": "String",
+							"description": "服务对应的数字编码，如揽派范围对应88",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "是否成功",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

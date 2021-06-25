@@ -1,0 +1,63 @@
+{
+	"name": "taobao.nlp.preprocess",
+	"apiChineseName": "文本语言预处理",
+	"description": "实现文本语言处理中的预处理功能，如实现文字繁简转换、文字转拼音、文字拆分、谐音同音字替换和形似字替换。",
+	"requestParams": [
+		{
+			"name": "text",
+			"type": "Text",
+			"description": "文本内容",
+			"required": true,
+			"subParams": [
+				{
+					"name": "id",
+					"type": "String",
+					"description": "业务处理ID",
+					"required": true
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "文本内容",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "文本类型1-评论 2-订单留言 9-其他",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "keyword",
+			"type": "String",
+			"description": "谐音字转换、形似字转换需提供关键词进行替换，关键词之间以#分隔。keyword示例：兼职#招聘#微信、天猫#日结#微信#招聘#加微"
+		},
+		{
+			"name": "func_type",
+			"type": "Number",
+			"description": "1)繁简字转换：func_type=1，对应type =1 繁转简 type=2 简转繁；2)拆分字转换：func_type =2，对应type=1 文字拆分 type=2 拆分字合并；3)文字转拼音：func_type =3，对应type=1 文字转拼音 type=2 拼音+声调；4)谐音同音字替换：func_type =4，对应type=1 谐音字替换 type=2 同音字替换；5)形似字替换：func_type =5，对应type=1 形似字替换;",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "processresult",
+			"type": "ProcessResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "top_result",
+					"type": "String",
+					"description": "返回文本处理内容"
+				},
+				{
+					"name": "top_status",
+					"type": "Boolean",
+					"description": "返回结果为true则运行成功，为false则运行失败"
+				}
+			]
+		}
+	]
+}

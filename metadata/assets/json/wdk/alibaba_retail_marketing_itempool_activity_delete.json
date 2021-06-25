@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.retail.marketing.itempool.activity.delete",
+	"apiChineseName": "删除商品池活动【同城零售】",
+	"description": "同城零售商品池活动删除",
+	"requestParams": [
+		{
+			"name": "act_id",
+			"type": "Number",
+			"description": "同城零售活动Id",
+			"required": true
+		},
+		{
+			"name": "creator_id",
+			"type": "String",
+			"description": "操作人id",
+			"required": true
+		},
+		{
+			"name": "creator_name",
+			"type": "String",
+			"description": "操作人名称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "同城零售活动Id",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误提示",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,38 @@
+{
+	"name": "taobao.tmc.group.add",
+	"apiChineseName": "为已开通用户添加用户分组",
+	"description": "为已开通用户添加用户分组，授权消息使用",
+	"requestParams": [
+		{
+			"name": "group_name",
+			"type": "String",
+			"description": "分组名称，同一个应用下需要保证唯一性，最长32个字符。添加分组后，消息通道会为用户的消息分配独立分组，但之前的消息还是存储于默认分组中。不能以default开头，default开头为系统默认组。",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "nicks",
+			"type": "String[]",
+			"description": "用户昵称列表，以半角逗号分隔，支持子账号，支持增量添加用户",
+			"required": true,
+			"maxListSize": 200
+		},
+		{
+			"name": "user_platform",
+			"type": "String",
+			"description": "用户所属于的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "created",
+			"type": "Date",
+			"description": "创建时间"
+		},
+		{
+			"name": "group_name",
+			"type": "String",
+			"description": "分组名称"
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"name": "taobao.baichuan.payresult.query",
+	"apiChineseName": "百川支付完成回调",
+	"description": "百川支付完成回调",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "name"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "name"
+		}
+	]
+}

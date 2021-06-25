@@ -1,0 +1,127 @@
+{
+	"name": "taobao.qimen.warehouseinfo.synchronize",
+	"apiChineseName": "仓库同步接口",
+	"description": "仓库同步接口",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"description": "请求报文",
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码，string（50）"
+				},
+				{
+					"name": "ownerName",
+					"type": "String",
+					"description": "货主名称，string（50）"
+				},
+				{
+					"name": "warehouseInfos",
+					"type": "WarehouseInfos[]",
+					"description": "仓库信息",
+					"subParams": [
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码，string（50）"
+						},
+						{
+							"name": "warehouseName",
+							"type": "String",
+							"description": "仓库名称，string（50）"
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "省份，string（15）"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市，string（15）"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "地区，string（15）"
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "乡镇，string（15）"
+						},
+						{
+							"name": "detailAddress",
+							"type": "String",
+							"description": "详细地址，string（50）"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "仓库名称，string（50）"
+						},
+						{
+							"name": "tel",
+							"type": "String",
+							"description": "仓库电话，string（20）"
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "负责人手机，string（20）"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "仓库状态，string（20）"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"description": "响应报文",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "warehouseInfos",
+					"type": "WarehouseInfo[]",
+					"description": "仓库信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码，string（50）",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

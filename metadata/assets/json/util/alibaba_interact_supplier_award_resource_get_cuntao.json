@@ -1,0 +1,76 @@
+{
+	"name": "alibaba.interact.supplier.award.resource.get.cuntao",
+	"apiChineseName": "权益池信息查询",
+	"description": "农村淘宝营销互动权益池信息查询",
+	"requestParams": [
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "用户昵称",
+			"required": true
+		},
+		{
+			"name": "activity_key",
+			"type": "String",
+			"description": "活动code",
+			"required": true
+		},
+		{
+			"name": "lng",
+			"type": "String",
+			"description": "经度"
+		},
+		{
+			"name": "lat",
+			"type": "String",
+			"description": "纬度"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultModel",
+			"description": "监控宝推送网站监控信息，返回结果",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误的描述信息（如果有）",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "AwardActivityDetailDto",
+					"description": "返回值,里面只返回资源ID",
+					"required": true,
+					"subParams": [
+						{
+							"name": "award_resouce_id",
+							"type": "String",
+							"description": "返回资源id",
+							"required": true
+						},
+						{
+							"name": "user_nick",
+							"type": "String",
+							"description": "扩展字段，目前无值",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码（如果有）",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功，true/false",
+					"required": true
+				}
+			]
+		}
+	]
+}

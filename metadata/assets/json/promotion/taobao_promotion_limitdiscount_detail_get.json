@@ -1,0 +1,52 @@
+{
+	"name": "taobao.promotion.limitdiscount.detail.get",
+	"apiChineseName": "限时打折详情查询",
+	"description": "限时打折详情查询。查询出指定限时打折的对应商品记录信息。",
+	"requestParams": [
+		{
+			"name": "limit_discount_id",
+			"type": "Number",
+			"description": "限时打折ID。这个针对查询唯一限时打折情况。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item_discount_detail_list",
+			"type": "LimitDiscountDetail []",
+			"description": "限时打折对应的商品详情列表。",
+			"subParams": [
+				{
+					"name": "limit_discount_name",
+					"type": "String",
+					"description": "限时打折名称"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "限时打折开始时间。"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "限时打折结束时间。"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品的id(数字类型)"
+				},
+				{
+					"name": "item_discount",
+					"type": "Price",
+					"description": "该商品限时折扣"
+				},
+				{
+					"name": "limit_num",
+					"type": "Number",
+					"description": "每人限购数量，1、2、5、10000(不限)。"
+				}
+			]
+		}
+	]
+}

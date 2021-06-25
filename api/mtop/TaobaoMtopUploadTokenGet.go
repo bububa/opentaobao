@@ -1,0 +1,21 @@
+package mtop
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/mtop"
+)
+
+/* 
+获取文件上传授权 
+taobao.mtop.upload.token.get
+
+获取mtop文件上传授权
+*/
+func TaobaoMtopUploadTokenGet(clt *core.SDKClient, req *mtop.TaobaoMtopUploadTokenGetRequest, session string) (*mtop.TaobaoMtopUploadTokenGetResponse, error) {
+    var resp mtop.TaobaoMtopUploadTokenGetAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

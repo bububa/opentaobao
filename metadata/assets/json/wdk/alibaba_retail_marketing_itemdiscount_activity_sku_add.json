@@ -1,0 +1,133 @@
+{
+	"name": "alibaba.retail.marketing.itemdiscount.activity.sku.add",
+	"apiChineseName": "特价活动新增商品",
+	"description": "新增或更新活动商品信息【同城零售】",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "ItemDiscountActivityElementOperateRequest",
+			"description": "添加活动商品参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sku_elements",
+					"type": "SkuActivityElementDto[]",
+					"description": "商品元素信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "fix_price_money",
+							"type": "Number",
+							"description": "一口价金额【分】"
+						},
+						{
+							"name": "discount_rate",
+							"type": "Number",
+							"description": "打折金额【1000位底数】，900代表9折"
+						},
+						{
+							"name": "decrease_money",
+							"type": "Number",
+							"description": "减钱金额【分】"
+						},
+						{
+							"name": "limit",
+							"type": "LimitDto",
+							"description": "限购配置信息",
+							"subParams": [
+								{
+									"name": "total_limit_cnt",
+									"type": "Number",
+									"description": "活动总限购"
+								},
+								{
+									"name": "daily_total_limit_cnt",
+									"type": "Number",
+									"description": "活动每日限购"
+								},
+								{
+									"name": "user_total_limit_cnt",
+									"type": "Number",
+									"description": "用户总限购"
+								},
+								{
+									"name": "user_daily_limit_cnt",
+									"type": "Number",
+									"description": "用户每日限购"
+								},
+								{
+									"name": "order_limit_cnt",
+									"type": "Number",
+									"description": "用户每单限购"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "act_id",
+					"type": "Number",
+					"description": "操作活动的ID",
+					"required": true
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "操作人ID（仅支持数字类型）",
+					"required": true
+				},
+				{
+					"name": "creator_name",
+					"type": "String",
+					"description": "操作人Name",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "无用字段（废弃）",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "failed_sku_codes",
+					"type": "String[]",
+					"description": "部分失败的商品编码列表",
+					"required": true
+				}
+			]
+		}
+	]
+}

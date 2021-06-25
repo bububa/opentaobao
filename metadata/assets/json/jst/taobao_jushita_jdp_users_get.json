@@ -1,0 +1,61 @@
+{
+	"name": "taobao.jushita.jdp.users.get",
+	"apiChineseName": "获取开通的订单同步服务的用户",
+	"description": "获取开通的订单同步服务的用户，含有rds的路由关系",
+	"requestParams": [
+		{
+			"name": "start_modified",
+			"type": "Date",
+			"description": "此参数一般不用传，用于查询最后更改时间在某个时间段内的用户"
+		},
+		{
+			"name": "end_modified",
+			"type": "Date",
+			"description": "此参数一般不用传，用于查询最后更改时间在某个时间段内的用户"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页记录数，默认200"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "当前页数"
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "如果传了user_id表示单条查询"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "users",
+			"type": "JdpUser []",
+			"description": "用户列表",
+			"subParams": [
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户昵称"
+				},
+				{
+					"name": "rds_name",
+					"type": "String",
+					"description": "rds数据库的实例名"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "0:暂停1：正常2：sessoin失效，停止3：已删除"
+				}
+			]
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "总记录数"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.item.category.predict",
+	"apiChineseName": "商品发布类目预测",
+	"description": "\u003cfont color='red'\u003e商品发布类目预测接口，预测匹配的结果存在一定误差，需要商家二次确认，避免类目配置错误产生其他影响。\u003c/font\u003e",
+	"requestParams": [
+		{
+			"name": "images",
+			"type": "String[]",
+			"description": "商品主图链接，最多5张，传入完整URL",
+			"required": true,
+			"maxListSize": 5
+		},
+		{
+			"name": "market",
+			"type": "String",
+			"description": "商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版",
+			"required": true
+		},
+		{
+			"name": "barcode",
+			"type": "String",
+			"description": "商品条码"
+		},
+		{
+			"name": "barcode_image",
+			"type": "String",
+			"description": "商品条码图片"
+		},
+		{
+			"name": "item_desc",
+			"type": "String",
+			"description": "商品介绍"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "cat_name",
+			"type": "String",
+			"description": "类目路径"
+		},
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "类目ID"
+		},
+		{
+			"name": "cat_path",
+			"type": "String",
+			"description": "类目名称"
+		}
+	]
+}

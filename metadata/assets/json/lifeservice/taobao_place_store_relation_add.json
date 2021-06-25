@@ -1,0 +1,39 @@
+{
+	"name": "taobao.place.store.relation.add",
+	"apiChineseName": "门店关系新增",
+	"description": "新增授权用户的门店关系信息",
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "关系B的门店ID"
+		},
+		{
+			"name": "relation_type",
+			"type": "Number",
+			"description": "关系类型(outer_id是主, store_id是从)"
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "门店ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "failure",
+			"type": "Boolean",
+			"description": "是否失败"
+		},
+		{
+			"name": "result",
+			"type": "Number",
+			"description": "返回结果：true成功；false失败"
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "个数"
+		}
+	]
+}

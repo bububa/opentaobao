@@ -1,0 +1,60 @@
+{
+	"name": "cainiao.guoguo.backup.graborder.submitmailno",
+	"apiChineseName": "兜底派送订单的运单号回传接口",
+	"description": "快递公司回传订单号和运单号给菜鸟裹裹",
+	"requestParams": [
+		{
+			"name": "orderCode",
+			"type": "String",
+			"description": "菜鸟物流订单号",
+			"required": true
+		},
+		{
+			"name": "mailNo",
+			"type": "String",
+			"description": "运单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回result对象",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "BackupOrderDo",
+					"description": "数据对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "返回成功",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "status_code",
+					"type": "String",
+					"description": "1",
+					"required": true
+				},
+				{
+					"name": "status_message",
+					"type": "String",
+					"description": "返回的状态描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

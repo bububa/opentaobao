@@ -1,0 +1,45 @@
+{
+	"name": "taobao.tmc.groups.get",
+	"apiChineseName": "获取自定义用户分组列表",
+	"description": "获取自定义用户分组列表",
+	"requestParams": [
+		{
+			"name": "group_names",
+			"type": "String[]",
+			"description": "要查询分组的名称，多个分组用半角逗号分隔，不传代表查询所有分组信息，但不会返回组下面的用户信息。如果应用没有设置分组则返回空。组名不能以default开头，default开头是系统默认的组。",
+			"maxListSize": 20
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"minValue": 1
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页返回多少个分组",
+			"maxValue": 100,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "groups",
+			"type": "TmcGroup []",
+			"description": "dasdasd",
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "分组名称"
+				}
+			]
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "分组总数"
+		}
+	]
+}

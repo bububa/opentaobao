@@ -1,0 +1,36 @@
+{
+	"name": "taobao.wangwang.abstract.getwordlist",
+	"apiChineseName": "获取关键词列表",
+	"description": "获取关键词列表，只支持json返回",
+	"requestParams": [
+		{
+			"name": "charset",
+			"type": "String",
+			"description": "传入参数的字符集"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "0或-1，表示错误或正确，错误时有错误信息"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "例如单词长度太长等，ret_code=-1才有"
+		},
+		{
+			"name": "word_lists",
+			"type": "WordList []",
+			"description": "关键词列表，ret_code=0才有",
+			"subParams": [
+				{
+					"name": "word",
+					"type": "String",
+					"description": "关键词"
+				}
+			]
+		}
+	]
+}

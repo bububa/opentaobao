@@ -1,0 +1,31 @@
+{
+	"name": "tmall.promotag.taguser.judge",
+	"apiChineseName": "用户标签判断接口",
+	"description": "查询用户是否有标签",
+	"requestParams": [
+		{
+			"name": "tag_id",
+			"type": "Number",
+			"description": "标签ID",
+			"required": true
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "买家昵称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "服务调用是否成功"
+		},
+		{
+			"name": "has_tag",
+			"type": "Boolean",
+			"description": "用户是否有标签"
+		}
+	]
+}

@@ -1,0 +1,602 @@
+{
+	"name": "alibaba.wdk.sku.update",
+	"apiChineseName": "更新商品",
+	"description": "开放商品更新接口",
+	"requestParams": [
+		{
+			"name": "param_list",
+			"type": "SkuDo[]",
+			"description": "参数列表",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "sku_code",
+					"type": "String",
+					"description": "商品编码",
+					"required": true
+				},
+				{
+					"name": "barcodes",
+					"type": "String",
+					"description": "条码列表,多个以英文逗号分隔。默认第一个条码为主条码，请配合条码更新策略字段barcode_update_type使用"
+				},
+				{
+					"name": "sku_name",
+					"type": "String",
+					"description": "商品名称"
+				},
+				{
+					"name": "shelf_life",
+					"type": "Number",
+					"description": "保质期天数"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名称"
+				},
+				{
+					"name": "tax_rate",
+					"type": "String",
+					"description": "销项税率"
+				},
+				{
+					"name": "suggested_price",
+					"type": "String",
+					"description": "建议零售价,单位元"
+				},
+				{
+					"name": "weight_flag",
+					"type": "Number",
+					"description": "是否称重"
+				},
+				{
+					"name": "main_pic_urls",
+					"type": "String",
+					"description": "主图地址"
+				},
+				{
+					"name": "detail_pic_urls",
+					"type": "String",
+					"description": "详细图地址"
+				},
+				{
+					"name": "org_no",
+					"type": "String",
+					"description": "机构编号"
+				},
+				{
+					"name": "weight",
+					"type": "String",
+					"description": "单品重量 单位为克/g，必须为整数"
+				},
+				{
+					"name": "height",
+					"type": "String",
+					"description": "高度"
+				},
+				{
+					"name": "width",
+					"type": "String",
+					"description": "宽度"
+				},
+				{
+					"name": "length",
+					"type": "String",
+					"description": "长度"
+				},
+				{
+					"name": "hm_category_code",
+					"type": "String",
+					"description": "平台类目编码"
+				},
+				{
+					"name": "short_title",
+					"type": "String",
+					"description": "简称短标题"
+				},
+				{
+					"name": "txt_desc",
+					"type": "String",
+					"description": "文描"
+				},
+				{
+					"name": "category_code",
+					"type": "String",
+					"description": "商家类目编码"
+				},
+				{
+					"name": "invoice_content",
+					"type": "String",
+					"description": "开票内容"
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "门店或DC编码"
+				},
+				{
+					"name": "import_flag",
+					"type": "Number",
+					"description": "是否进口"
+				},
+				{
+					"name": "net_content",
+					"type": "String",
+					"description": "净含量"
+				},
+				{
+					"name": "accounting_category",
+					"type": "String",
+					"description": "财务核算分类"
+				},
+				{
+					"name": "sale_unit",
+					"type": "String",
+					"description": "销售单位"
+				},
+				{
+					"name": "sale_price",
+					"type": "String",
+					"description": "该字段已经废弃，请使用sku_price字段"
+				},
+				{
+					"name": "life_status",
+					"type": "String",
+					"description": "商品在机构内的生命周期，商品状态；A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡"
+				},
+				{
+					"name": "sale_spec",
+					"type": "String",
+					"description": "销售规格"
+				},
+				{
+					"name": "avg_weight",
+					"type": "String",
+					"description": "均重（一个售卖单位平均为多少个库存单位，称重商品必填)，计算库存发布时会以库存数量/均重来进行转换；建议与库存单位保持一致。若库存单位是kg，售卖单位可以是g。此时均重、预扣款重量填0.001。APP最小起购量、APP购买步长填正整数。比如香蕉的库存单位是kg，销售单位是g，APP最小起购量、APP购买步长填500，表示在APP最少购买一斤，每加一档是加一斤。均重、预扣款重量填0.001的作用是，当用户购买500g，乘以0.001系数后=0.5kg，所以扣库存0.5kg"
+				},
+				{
+					"name": "pre_minus_weight",
+					"type": "String",
+					"description": "预扣款重量（购买一个售卖单位按照多少个库存单位来扣款），计算金额时，按照购买的售卖单位数量/预扣款重量*售价 来计算；非称重品填1。若库存单位是kg，销售单位是g，填0.001"
+				},
+				{
+					"name": "step_quantity",
+					"type": "Number",
+					"description": "app购买时每增加一次购买数量至少要增加多少个售卖单位。非称重品填1。称重品根据实际货品情况填写。步长除了是加购物车的数量之外还承载了最小售卖数量的意义。"
+				},
+				{
+					"name": "purchase_quantity",
+					"type": "Number",
+					"description": "APP销售时，基于销售单位的起购量"
+				},
+				{
+					"name": "sku_label_type",
+					"type": "String",
+					"description": "标价签类型"
+				},
+				{
+					"name": "allow_app_sale",
+					"type": "Number",
+					"description": "商品是否适合在app销售，机构商品层级为总控，此字段为总开关，控制所有门店的是否APP可见，商品本身不可售，则app可售必须关闭。App可售关闭，则门店商品维度的app可见不允许打开。1：是? 0：否，（默认否）"
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "商品卖点；商品副标题，显示在APP商品详情页的标题下方。如可口可乐商品的副标题可以是“夏日必备 解暑神器”。不超过80个字符。双方业务沟通一下，是否生鲜商品要定为必填"
+				},
+				{
+					"name": "sub_title1",
+					"type": "String",
+					"description": "卖点1内容"
+				},
+				{
+					"name": "sub_title2",
+					"type": "String",
+					"description": "卖点2内容"
+				},
+				{
+					"name": "title1",
+					"type": "String",
+					"description": "卖点1名称"
+				},
+				{
+					"name": "title2",
+					"type": "String",
+					"description": "卖点2名称"
+				},
+				{
+					"name": "online_sale_flag",
+					"type": "Number",
+					"description": "门店来控制本门店是否在app上让该商品可见，? 1可见? 0不可见"
+				},
+				{
+					"name": "delivery_unit",
+					"type": "String",
+					"description": "大仓向门店配货的单位；淘鲜达合作商家默认填与库存单位一致的值"
+				},
+				{
+					"name": "delivery_spec",
+					"type": "String",
+					"description": "一个配货单位等于多少个库存单位；淘鲜达合作商家填默认值1"
+				},
+				{
+					"name": "delivery_way",
+					"type": "String",
+					"description": "商品到本仓的来源；淘鲜达商家填默认值“直配”(1:统配，2:直配，3:越库，4：自产；5：调拨)， 基于采配链路的要求，加工品是不能够做直配的物流模式的，必须维护自产或者统配，目前包了一层逻辑“针对加工成品和加工半成品，如果是直配就转成自产”"
+				},
+				{
+					"name": "logistics",
+					"type": "String",
+					"description": "商品关联的物流中心，DC。配送物流；配送方式是直配，此项不填（输入物流中心编码）"
+				},
+				{
+					"name": "delivery_warehouse",
+					"type": "String",
+					"description": "配出仓,配货仓；配送方式是直配，此项不填(输入仓库编码)"
+				},
+				{
+					"name": "member_price",
+					"type": "String",
+					"description": "会员正常购买该商品的售价，2位小数，单位:元"
+				},
+				{
+					"name": "cost_unit",
+					"type": "String",
+					"description": "商品作为原料时对应的单位；淘鲜达合作商家默认填与库存单位一致的值"
+				},
+				{
+					"name": "cost_no_price",
+					"type": "String",
+					"description": "商品加工所消耗的直接原料成本，去税；加工商品必填，加工品按照原料的消耗估算出的成本。因为淘鲜达暂不涉及成本计算，建议淘鲜达商家填默认值1，单位:元"
+				},
+				{
+					"name": "cost_tax_price",
+					"type": "String",
+					"description": "商品加工所消耗的直接原料成本，含税，加工商品必填，加工品按照原料的消耗估算出的成本。因为淘鲜达暂不涉及成本计算，建议淘鲜达商家填默认值1，单位:元"
+				},
+				{
+					"name": "cost_exchange_rate",
+					"type": "String",
+					"description": "一个库存单位对应多少个成本单位，原料加工的成本单位和存储单位之间的换算。因为淘鲜达暂不涉及成本计算，建议淘鲜达商家填默认值1"
+				},
+				{
+					"name": "mass_output_rate",
+					"type": "String",
+					"description": "商品中对于加工可用的比例占整个商品的百分比；从原料到加工可用的原料之间的转化率。为了简化BOM的使用，建议淘鲜达商家填默认值1。"
+				},
+				{
+					"name": "processing_unit",
+					"type": "String",
+					"description": "每一组加工生产的单位，加工商品必填，仅当商品为加工品的时候，才能填写。从计量单位表中选择；淘鲜达合作商家默认填与库存单位一致的值"
+				},
+				{
+					"name": "procs_exchange_rate",
+					"type": "String",
+					"description": "一组加工单位对应多少个库存单位商品；加工商品必填，每一个加工单位对应的存储单位数量。为了简化BOM的使用，建议淘鲜达商家填默认值1。"
+				},
+				{
+					"name": "storage",
+					"type": "String",
+					"description": "存储条件；填常温、冷藏、冷冻、热链、鲜活"
+				},
+				{
+					"name": "pick_float_rate",
+					"type": "String",
+					"description": "商品拣货时可以超拣的比例，针对非标品。建议淘鲜达商家填默认值0"
+				},
+				{
+					"name": "forbid_receive_days",
+					"type": "Number",
+					"description": "禁收时限；收货日期-商品生产日期\u003c限收时限 才允许收货。建议淘鲜达商家填默认值为保质期天数。或按进口商品保质期天数的2/3、非进口商品的1/2填写"
+				},
+				{
+					"name": "forbid_sales_days",
+					"type": "Number",
+					"description": "商品生产日期+保质期-当前日期\u003c禁售时限，不能出库销售。建议淘鲜达商家填默认值0。"
+				},
+				{
+					"name": "overload_rate",
+					"type": "String",
+					"description": "商品收货时可以超过订货数量多少百分比进行收货；非标品供应商送货入库时，允许超收的比例。淘鲜达合作商家填默认值0"
+				},
+				{
+					"name": "warn_days",
+					"type": "Number",
+					"description": "库存监控报表中，剩余天数少于该天数时需要预警，建议淘鲜达商家填默认值0"
+				},
+				{
+					"name": "front_display_flag",
+					"type": "Number",
+					"description": "商品在门店是否在前场陈列；淘鲜达合作商家用不到， 0：否? 1：是"
+				},
+				{
+					"name": "fixed_flag",
+					"type": "Number",
+					"description": "商品是否是供应商为企业进行定制；淘鲜达合作商家填默认值0， 0 否? 1 是"
+				},
+				{
+					"name": "purchase_spec",
+					"type": "String",
+					"description": "一个采购单位等于多少个库存单位，淘鲜达合作商家默认填1"
+				},
+				{
+					"name": "purchase_unit",
+					"type": "String",
+					"description": "商品针对供应商订货时，对应的单位；淘鲜达合作商家默认填与库存单位一致的值"
+				},
+				{
+					"name": "label_style_type",
+					"type": "String",
+					"description": "标价签类型；商品在门店陈列时，采用的售价标签类型。因不采用电子价签，建议淘鲜达商家填默认值“无价签”"
+				},
+				{
+					"name": "back_cat_code",
+					"type": "String",
+					"description": "平台类目编码（同字段hm_category_code），需要商家把自己的类目对应到平台的类目上，此字段暂时只能支持3、4级类目修改；优先使用本字段"
+				},
+				{
+					"name": "sku_price",
+					"type": "String",
+					"description": "门店商品售价（同字段sale_price），单位:元；优先使用本字段"
+				},
+				{
+					"name": "period",
+					"type": "Number",
+					"description": "商品的保质期天数（同字段shelf_life），必须为整数，0代表不管理保质期；优先使用本字段"
+				},
+				{
+					"name": "item_type_new",
+					"type": "Number",
+					"description": "商品类型（同字段sku_type）1:普通商品、2:加工半成品、3:加工成品、4:原材料、5:耗材；优先使用本字段"
+				},
+				{
+					"name": "merchant_cat_code",
+					"type": "String",
+					"description": "商家后台类目编码（同字段category_code），优先使用本字段"
+				},
+				{
+					"name": "sku_pic_urls",
+					"type": "String",
+					"description": "在app上显示的商品图片cdn地址（同字段main_pic_urls和detail_pic_urls），https开头，多个图片用英文逗号切割。第一张图片会作为主图；优先使用本字段"
+				},
+				{
+					"name": "sku_suppliers",
+					"type": "SkuSupplierDo[]",
+					"description": "供货商信息",
+					"subParams": [
+						{
+							"name": "return_flag",
+							"type": "Number",
+							"description": "商品针对该供应商是否可以退货；因为淘鲜达商家不使用平台的采配功能，建议传默认值， 1：是  0：否（默认为0）"
+						},
+						{
+							"name": "minimum",
+							"type": "String",
+							"description": "最小起订量"
+						},
+						{
+							"name": "purchase_price",
+							"type": "String",
+							"description": "采购单价；淘鲜达合作商家填默认值0；单位:元"
+						},
+						{
+							"name": "supplier_no",
+							"type": "String",
+							"description": "供应商编码"
+						},
+						{
+							"name": "supplier_name",
+							"type": "String",
+							"description": "供应商编码名称"
+						},
+						{
+							"name": "main_flag",
+							"type": "Number",
+							"description": "是否主供应商 1是主供应商 0非主供"
+						}
+					]
+				},
+				{
+					"name": "rich_text",
+					"type": "String",
+					"description": "文描,（同字段txt_desc）；优先使用本字段"
+				},
+				{
+					"name": "inventory_unit",
+					"type": "String",
+					"description": "库存单位"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "渠道编码，默认为4淘鲜达渠道、3对应饿了么渠道、-1对应批发渠道"
+				},
+				{
+					"name": "producer_place",
+					"type": "String",
+					"description": "产地，商品生产地点的描述，用于APP和电子价签展示，如果是可售，则必填"
+				},
+				{
+					"name": "clean_sku_member_price",
+					"type": "Number",
+					"description": "是否清空会员价, 1清空会员价（操作之后没有会员价），0不清空会员价"
+				},
+				{
+					"name": "barcode_update_type",
+					"type": "Number",
+					"description": "修改条码策略，默认为策略3。\u003cbr/\u003e如商品现有主条码barcode1、非主条码barcode2\u003cbr/\u003e1、新增barcodes指定了新的主条码barcode3,会将原主条码barcde1改为非主条码,最终商品有三个条码,即:非主条码barcde1、非主条码barcode2、主条码barcode3\u003cbr/\u003e 2、删除barcodes对应条码，除了主条码\u003cbr/\u003e 3、替换主条码 则会将现有主条码删除,新增指定主条码,只认barcodes中第一个条码，商品最终结果条码个数为两个条码:非主条码barcode2、主条码barcode3\u003cbr/\u003e 4、除主条码外,所有条码替换为指定barcodes,不支持主条码修改。如果barcodes中为barcode3,barcode4,则商品最终条码为:主条码barcode1,非barcode3,barcode4。其中非主条码barcode2被删除"
+				},
+				{
+					"name": "industry_props",
+					"type": "IndustryPropDo",
+					"description": "行业属性",
+					"subParams": [
+						{
+							"name": "props",
+							"type": "PropDo[]",
+							"description": "行业对应的属性",
+							"subParams": [
+								{
+									"name": "remove_opt",
+									"type": "Boolean",
+									"description": "是否移除该属性"
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "行业属性值"
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "行业属性"
+								}
+							]
+						},
+						{
+							"name": "industry_type",
+							"type": "String",
+							"description": "行业类型"
+						}
+					]
+				},
+				{
+					"name": "forest_cate_id",
+					"type": "Number",
+					"description": "forest类目id"
+				},
+				{
+					"name": "tax_code",
+					"type": "String",
+					"description": "税收编码"
+				},
+				{
+					"name": "fragile_flag",
+					"type": "Number",
+					"description": "是否易碎品标记，0否1是"
+				},
+				{
+					"name": "delivery_storage",
+					"type": "String",
+					"description": "配送条件；填常温、冷藏、冷冻"
+				},
+				{
+					"name": "flagship_store_item_info",
+					"type": "String",
+					"description": "淘宝旗舰店同品信息，同城零售使用"
+				},
+				{
+					"name": "temporary_flag",
+					"type": "Number",
+					"description": "是否现制现卖，0否1是；比如蛋糕只有下了单才能开始制作"
+				},
+				{
+					"name": "product_identity",
+					"type": "String",
+					"description": "聚合之后的产品id，商家需要保存该值"
+				},
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "业务类型：txd淘鲜达，elm饿了么，shareStore共享库存，默认txd"
+				},
+				{
+					"name": "channel_props",
+					"type": "ChannelProp[]",
+					"description": "渠道属性",
+					"subParams": [
+						{
+							"name": "props",
+							"type": "PropField[]",
+							"description": "渠道属性，取值为key-value键值对形式",
+							"subParams": [
+								{
+									"name": "value",
+									"type": "String",
+									"description": "渠道属性value，取值见key定义"
+								},
+								{
+									"name": "key",
+									"type": "String",
+									"description": "渠道属性key, 取值为\"ONE_HOUR_STATUS\" \u0008代表小时达，value=0表示不可售, value=1表示可售；\"WAVE_ARRIVE_STATUS\" 代表波次达，value=0表示不可售,value=1表示可售"
+								}
+							]
+						},
+						{
+							"name": "channel_type",
+							"type": "String",
+							"description": "渠道类型：txd淘鲜达，elm饿了么，shareStore共享库存"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResults",
+			"description": "执行结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "ApiResult[]",
+					"description": "各条记录结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "model",
+							"type": "String",
+							"description": "sku编码",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "sku商品操作成功标志",
+							"required": true
+						},
+						{
+							"name": "err_msg",
+							"type": "String",
+							"description": "sku商品操作错误信息",
+							"required": true
+						},
+						{
+							"name": "err_code",
+							"type": "String",
+							"description": "sku商品操作错误码",
+							"required": true
+						},
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "聚合之后的产品id，商家需要保存该值",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用成功标志",
+					"required": true
+				}
+			]
+		}
+	]
+}

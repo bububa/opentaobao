@@ -1,0 +1,61 @@
+{
+	"name": "alibaba.icbu.category.schema.level.get",
+	"apiChineseName": "(新)层级属性获取",
+	"description": "将表单中层级属性的子属性返回",
+	"requestParams": [
+		{
+			"name": "cat_id",
+			"type": "Number",
+			"description": "类目id"
+		},
+		{
+			"name": "language",
+			"type": "String",
+			"description": "返回的文案的语种，可以输入en_US或者zh"
+		},
+		{
+			"name": "xml",
+			"type": "String",
+			"description": "层级属性的当前层级属性"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "层级属性的下一级属性结构",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "用于排查系统错误",
+					"required": true
+				}
+			]
+		}
+	]
+}

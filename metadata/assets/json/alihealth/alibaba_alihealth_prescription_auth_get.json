@@ -1,0 +1,66 @@
+{
+	"name": "alibaba.alihealth.prescription.auth.get",
+	"apiChineseName": "阿里健康处方平台获取授权码",
+	"description": "获取处方用户授权",
+	"requestParams": [
+		{
+			"name": "prescription_request",
+			"type": "PrescriptionDoctorAuthRequest",
+			"description": "请求入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "doctor_id",
+					"type": "String",
+					"description": "医生id(非空)",
+					"required": true
+				},
+				{
+					"name": "alipay_user_id",
+					"type": "String",
+					"description": "支付宝userId(非空)",
+					"required": true
+				},
+				{
+					"name": "hospital_id",
+					"type": "String",
+					"description": "医院id(非空)",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "err_message",
+					"type": "String",
+					"description": "errMessage",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "token",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

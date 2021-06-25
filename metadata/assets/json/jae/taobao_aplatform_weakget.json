@@ -1,0 +1,122 @@
+{
+	"name": "taobao.aplatform.weakget",
+	"apiChineseName": "活动平台弱登录接口",
+	"description": "无线活动平台的开放接口，提供商品信息等的读操作",
+	"requestParams": [
+		{
+			"name": "param_rich_client_info",
+			"type": "RichClientInfo",
+			"description": "客户端自带参数",
+			"subParams": [
+				{
+					"name": "appkey",
+					"type": "String",
+					"description": "appkey"
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "用户昵称"
+				},
+				{
+					"name": "lng",
+					"type": "String",
+					"description": "经度"
+				},
+				{
+					"name": "buyer_id",
+					"type": "Number",
+					"description": "用户id"
+				},
+				{
+					"name": "lat",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "device_id",
+					"type": "String",
+					"description": "设备号"
+				},
+				{
+					"name": "ip",
+					"type": "String",
+					"description": "来源ip"
+				}
+			]
+		},
+		{
+			"name": "param_dto",
+			"type": "ParamDto",
+			"description": "业务自定义参数",
+			"subParams": [
+				{
+					"name": "biz_param",
+					"type": "String",
+					"description": "业务参数，json格式字符串"
+				},
+				{
+					"name": "extra_param",
+					"description": "扩展参数"
+				},
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "区分业务类型及方法",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "headers",
+					"type": "Json",
+					"description": "headers",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "http_status_code",
+					"type": "Number",
+					"description": "httpStatusCode",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "biz_ext_map",
+					"type": "Json",
+					"description": "bizExtMap",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

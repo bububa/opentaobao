@@ -1,0 +1,216 @@
+{
+	"name": "alibaba.ssc.servicecenter.servicestore.query",
+	"apiChineseName": "根据天猫id查询门店信息",
+	"description": "根据天猫id查询门店信息",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "天猫id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result_data_list",
+					"type": "ResultData[]",
+					"description": "明细条目执行结果对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "town_code",
+							"type": "String",
+							"description": "街道地址编码",
+							"required": true
+						},
+						{
+							"name": "service_store_name",
+							"type": "String",
+							"description": "网点名称",
+							"required": true
+						},
+						{
+							"name": "manager_name",
+							"type": "String",
+							"description": "网点负责人姓名",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "String",
+							"description": "门店类型",
+							"required": true
+						},
+						{
+							"name": "brand_certification",
+							"type": "String",
+							"description": "品牌认证资料",
+							"required": true
+						},
+						{
+							"name": "address_detail",
+							"type": "String",
+							"description": "网点详细地址",
+							"required": true
+						},
+						{
+							"name": "service_store_alias",
+							"type": "String",
+							"description": "别名",
+							"required": true
+						},
+						{
+							"name": "address_city",
+							"type": "String",
+							"description": "网点所在市",
+							"required": true
+						},
+						{
+							"name": "longitude",
+							"type": "String",
+							"description": "经度",
+							"required": true
+						},
+						{
+							"name": "license_photo",
+							"type": "String",
+							"description": "营业执照照片",
+							"required": true
+						},
+						{
+							"name": "service_site_code",
+							"type": "String",
+							"description": "服务场所编码",
+							"required": true
+						},
+						{
+							"name": "address_district",
+							"type": "String",
+							"description": "网点所在区",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态",
+							"required": true
+						},
+						{
+							"name": "address_province",
+							"type": "String",
+							"description": "网点所在省",
+							"required": true
+						},
+						{
+							"name": "district_code",
+							"type": "String",
+							"description": "区地址编码",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "String",
+							"description": "业务类型",
+							"required": true
+						},
+						{
+							"name": "gmt_expire",
+							"type": "String",
+							"description": "有效期",
+							"required": true
+						},
+						{
+							"name": "city_code",
+							"type": "String",
+							"description": "城市地址编码",
+							"required": true
+						},
+						{
+							"name": "latitude",
+							"type": "String",
+							"description": "纬度",
+							"required": true
+						},
+						{
+							"name": "address_town",
+							"type": "String",
+							"description": "网点所在街道",
+							"required": true
+						},
+						{
+							"name": "front_photo",
+							"type": "String",
+							"description": "门头照片",
+							"required": true
+						},
+						{
+							"name": "address_code",
+							"type": "Number",
+							"description": "网点地址编码",
+							"required": true
+						},
+						{
+							"name": "certificated_brand_ids",
+							"type": "String",
+							"description": "认证的天猫品牌id列表",
+							"required": true
+						},
+						{
+							"name": "province_code",
+							"type": "String",
+							"description": "省地址编码",
+							"required": true
+						},
+						{
+							"name": "business_hours",
+							"type": "String",
+							"description": "营业时间",
+							"required": true
+						},
+						{
+							"name": "place_store_id",
+							"type": "String",
+							"description": "商户中心门店id",
+							"required": true
+						},
+						{
+							"name": "service_store_code",
+							"type": "String",
+							"description": "网点编码",
+							"required": true
+						},
+						{
+							"name": "service_mobile",
+							"type": "String",
+							"description": "对外服务手机号",
+							"required": true
+						},
+						{
+							"name": "attributes",
+							"type": "String",
+							"description": "额外属性",
+							"required": true
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "公司名称",
+							"required": true
+						},
+						{
+							"name": "social_credit_code",
+							"type": "String",
+							"description": "统一社会信用代码",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

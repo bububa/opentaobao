@@ -1,0 +1,54 @@
+{
+	"name": "taobao.simba.salestar.keywords.recommend.get",
+	"apiChineseName": "销量明星api相关接口",
+	"description": "取得一个推广组的推荐关键词列表",
+	"requestParams": [
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组ID",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品类型101001005代表标准推广，101001014代表销量明星"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "recommend_words",
+			"type": "RecommendWordPage",
+			"description": "推荐词分页对象，当输入的页码大于最大数值时，将返回最大的page_no值，并且结果中的数据列表为空值",
+			"subParams": [
+				{
+					"name": "recommend_word_list",
+					"type": "RecommendWord[]",
+					"description": "推荐词分页对象列表",
+					"subParams": [
+						{
+							"name": "word",
+							"type": "String",
+							"description": "推荐的关键词"
+						},
+						{
+							"name": "pv",
+							"type": "String",
+							"description": "搜索量"
+						},
+						{
+							"name": "average_price",
+							"type": "String",
+							"description": "平均价格"
+						},
+						{
+							"name": "pertinence",
+							"type": "String",
+							"description": "相关度"
+						}
+					]
+				}
+			]
+		}
+	]
+}

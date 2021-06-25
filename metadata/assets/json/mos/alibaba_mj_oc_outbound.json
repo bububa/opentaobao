@@ -1,0 +1,73 @@
+{
+	"name": "alibaba.mj.oc.outbound",
+	"apiChineseName": "零售商品发货",
+	"description": "用于接收发货的数据",
+	"requestParams": [
+		{
+			"name": "goods_outbound",
+			"type": "GoodsOutboundDTO",
+			"description": "发货信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "deliverer_name",
+					"type": "String",
+					"description": "配送员"
+				},
+				{
+					"name": "deliverer_phone",
+					"type": "String",
+					"description": "配送员电话"
+				},
+				{
+					"name": "logistics_company_code",
+					"type": "String",
+					"description": "物流公司代码"
+				},
+				{
+					"name": "logistics_no",
+					"type": "String",
+					"description": "物流单号",
+					"required": true
+				},
+				{
+					"name": "outbound_details",
+					"type": "OutboundDetailDTO[]",
+					"description": "出库明细",
+					"required": true,
+					"subParams": [
+						{
+							"name": "quantity",
+							"type": "String",
+							"description": "数量"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "skuId"
+						}
+					]
+				},
+				{
+					"name": "send_out_time",
+					"type": "String",
+					"description": "发货时间",
+					"required": true
+				},
+				{
+					"name": "trade_no",
+					"type": "String",
+					"description": "OC订单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

@@ -1,0 +1,126 @@
+{
+	"name": "tmall.servicecenter.servicemonitormessage.search",
+	"apiChineseName": "根据时间段查询服务商的服务预警消息列表(15分钟内)",
+	"description": "根据时间段查询服务商的服务预警消息列表(15分钟内)",
+	"requestParams": [
+		{
+			"name": "start",
+			"type": "Number",
+			"description": "开始时间long值",
+			"required": true
+		},
+		{
+			"name": "end",
+			"type": "Number",
+			"description": "结束时间long值，与start相差15分钟",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "gmtModified",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "value_list",
+					"type": "ServiceMonitorMessage[]",
+					"description": "服务预警消息列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "消息id",
+							"required": true
+						},
+						{
+							"name": "content",
+							"type": "String",
+							"description": "提醒文本",
+							"required": true
+						},
+						{
+							"name": "level",
+							"type": "Number",
+							"description": "预警消息级别 1、预警 2、警告 3、严重",
+							"required": true
+						},
+						{
+							"name": "memo",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "消息创建时间",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态 0、已生成 1、已预警 2、已收到 3、已读",
+							"required": true
+						},
+						{
+							"name": "rule_id",
+							"type": "String",
+							"description": "规则类型",
+							"required": true
+						},
+						{
+							"name": "service_code",
+							"type": "String",
+							"description": "服务类型",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "bizId的业务实体类型，如果为1，则bizId为工单id",
+							"required": true
+						},
+						{
+							"name": "biz_id",
+							"type": "Number",
+							"description": "业务实体id",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

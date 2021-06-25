@@ -1,0 +1,79 @@
+{
+	"name": "tmall.promotag.tag.find",
+	"apiChineseName": "查询标签接口",
+	"description": "查询用户创建的所有标签",
+	"requestParams": [
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "当前页码",
+			"required": true,
+			"maxLength": 10
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页显示个数",
+			"required": true,
+			"maxLength": 100,
+			"maxValue": 100,
+			"minValue": 1
+		},
+		{
+			"name": "tag_name",
+			"type": "String",
+			"description": "标签名称，查询时可选项"
+		},
+		{
+			"name": "tag_id",
+			"type": "Number",
+			"description": "标签ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "query_result",
+			"type": "PromotionTagQuery",
+			"description": "查询结果类型",
+			"subParams": [
+				{
+					"name": "tag_list",
+					"type": "PromotionTag[]",
+					"description": "标签结果列表",
+					"subParams": [
+						{
+							"name": "tag_id",
+							"type": "Number",
+							"description": "标签ID"
+						},
+						{
+							"name": "tag_name",
+							"type": "String",
+							"description": "标签名称"
+						},
+						{
+							"name": "tag_desc",
+							"type": "String",
+							"description": "标签描述"
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "标签开始时间"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "标签结束时间"
+						}
+					]
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "总记录数"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,65 @@
+{
+	"name": "taobao.ailab.aicloud.top.device.authresult.get",
+	"apiChineseName": "获取设备授权码验证结果",
+	"description": "获取设备授权码验证结果",
+	"requestParams": [
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id",
+			"required": true
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数",
+			"required": true
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等",
+			"required": true
+		},
+		{
+			"name": "auth_codes",
+			"type": "String[]",
+			"description": "authCodes信息",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "uuids",
+					"type": "String[]",
+					"description": "uuid 32位",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo错误码信息，成功返回null",
+					"required": true
+				}
+			]
+		}
+	]
+}

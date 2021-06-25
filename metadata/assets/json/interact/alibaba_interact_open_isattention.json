@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.interact.open.isattention",
+	"apiChineseName": "判断用户是否收藏某个店铺",
+	"description": "判断用户是否收藏某个店铺",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "Number",
+			"description": "1"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "is_retry",
+					"type": "Boolean",
+					"description": "isRetry",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

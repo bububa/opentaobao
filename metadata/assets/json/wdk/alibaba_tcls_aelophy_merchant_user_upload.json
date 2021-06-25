@@ -1,0 +1,171 @@
+{
+	"name": "alibaba.tcls.aelophy.merchant.user.upload",
+	"apiChineseName": "商家会员数据上传",
+	"description": "商家会员数据上传",
+	"requestParams": [
+		{
+			"name": "user_info_list",
+			"type": "MerchantUserInfo[]",
+			"description": "渠道用户信息",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "real_phone",
+					"type": "String",
+					"description": "真实手机号"
+				},
+				{
+					"name": "birthday",
+					"type": "Date",
+					"description": "生日"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址"
+				},
+				{
+					"name": "gender",
+					"type": "String",
+					"description": "性别"
+				},
+				{
+					"name": "register_time",
+					"type": "Date",
+					"description": "注册时间"
+				},
+				{
+					"name": "member_level",
+					"type": "String",
+					"description": "等级"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "入会来源"
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "用户名"
+				},
+				{
+					"name": "card_no",
+					"type": "String",
+					"description": "卡号"
+				},
+				{
+					"name": "score_balance",
+					"type": "String",
+					"description": "积分余额，可以为小数"
+				},
+				{
+					"name": "customize_channel",
+					"type": "String",
+					"description": "自定义渠道类型"
+				},
+				{
+					"name": "union_uid",
+					"type": "String",
+					"description": "商家侧统一用户标识ID,如统一会员id",
+					"required": true
+				},
+				{
+					"name": "channel_user_id",
+					"type": "String",
+					"description": "渠道用户ID，如erp会员id，淘宝openid、饿了么uid、微信openId"
+				},
+				{
+					"name": "card_balance",
+					"type": "Number",
+					"description": "储值卡余额，需要统一单位为”分“，然后取整上传"
+				},
+				{
+					"name": "extend_property",
+					"type": "String",
+					"description": "扩项属性"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "会员开始时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "会员结束时间"
+				},
+				{
+					"name": "renew",
+					"type": "Boolean",
+					"description": "是否续费"
+				},
+				{
+					"name": "source_tag",
+					"type": "String",
+					"description": "引导来源标识，填写引导来源标识备注，如门店编码"
+				},
+				{
+					"name": "pay_member",
+					"type": "Boolean",
+					"description": "是否付费"
+				},
+				{
+					"name": "channel_code",
+					"type": "String",
+					"description": "storeMember：门店会员，txd：淘鲜达，eleme：饿了么，weixin：微信小程序",
+					"required": true
+				},
+				{
+					"name": "origin_whole_data",
+					"type": "String",
+					"description": "isv系统中的完整的用户信息"
+				},
+				{
+					"name": "wx_user_name",
+					"type": "String",
+					"description": "微信名"
+				},
+				{
+					"name": "wx_union_id",
+					"type": "String",
+					"description": "微信unionId"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息描述",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "model",
+					"required": true
+				}
+			]
+		}
+	]
+}

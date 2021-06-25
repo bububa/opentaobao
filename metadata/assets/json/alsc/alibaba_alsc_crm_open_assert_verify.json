@@ -1,0 +1,157 @@
+{
+	"name": "alibaba.alsc.crm.open.assert.verify",
+	"apiChineseName": "资产核销接口",
+	"description": "核销储值，积分，券资产",
+	"requestParams": [
+		{
+			"name": "param_property_verify_open_req",
+			"type": "PropertyVerifyOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "saas品牌id",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机号"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人id",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部id"
+				},
+				{
+					"name": "outer_order_id",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "outer_type",
+					"type": "String",
+					"description": "外部id类型，wechat微信，alipay支付宝"
+				},
+				{
+					"name": "point",
+					"type": "Number",
+					"description": "需要核销的积分"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求幂等id",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "saas门店id",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Number",
+					"description": "需要核销的储值，单位为分"
+				},
+				{
+					"name": "voucher_id_list",
+					"type": "String[]",
+					"description": "券实例id"
+				},
+				{
+					"name": "card_id",
+					"type": "String",
+					"description": "需要核销的卡号id，不填默认为会员卡id"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "PropertyVerifyOpenInfo",
+					"description": "结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "point_success",
+							"type": "Boolean",
+							"description": "积分核销是否成功",
+							"required": true
+						},
+						{
+							"name": "value_success",
+							"type": "Boolean",
+							"description": "储值核销是否成功",
+							"required": true
+						},
+						{
+							"name": "voucher_status_list",
+							"type": "VoucherStatusInfo[]",
+							"description": "券码核销信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "success",
+									"type": "Boolean",
+									"description": "是否成功",
+									"required": true
+								},
+								{
+									"name": "voucher_id",
+									"type": "String",
+									"description": "券码",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "结果详情",
+					"required": true
+				}
+			]
+		}
+	]
+}

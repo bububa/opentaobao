@@ -1,0 +1,32 @@
+{
+	"name": "taobao.ump.range.delete",
+	"apiChineseName": "删除活动范围",
+	"description": "去指先前指定在某项活动中，某些类型的物品参加或者不参加活动的设置",
+	"requestParams": [
+		{
+			"name": "act_id",
+			"type": "Number",
+			"description": "活动id",
+			"required": true
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "范围的类型，比如是全店，商品，类目见：MarketingConstants.PARTICIPATE_TYPE_*",
+			"required": true
+		},
+		{
+			"name": "ids",
+			"type": "String",
+			"description": "id列表，当范围类型为商品时，该id为商品id；当范围类型为类目时，该id为类目id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		}
+	]
+}

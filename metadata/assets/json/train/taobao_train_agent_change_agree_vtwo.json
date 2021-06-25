@@ -1,0 +1,111 @@
+{
+	"name": "taobao.train.agent.change.agree.vtwo",
+	"apiChineseName": "代理商同意改签v2--增加鉴权校验",
+	"description": "代理商同意改签接口服务",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "AgentAgreeChangeParam",
+			"description": "代理商同意改签参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "apply_id",
+					"type": "Number",
+					"description": "申请单id",
+					"required": true
+				},
+				{
+					"name": "alipay_trade_no",
+					"type": "String",
+					"description": "支付宝交易流水号"
+				},
+				{
+					"name": "extend_param",
+					"type": "String",
+					"description": "扩展参数"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "代理商id",
+					"required": true
+				},
+				{
+					"name": "main_biz_order_id",
+					"type": "Number",
+					"description": "主订单",
+					"required": true
+				},
+				{
+					"name": "tickets",
+					"type": "ChangeTicketInfo[]",
+					"description": "代理商改签票信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "change_fee",
+							"type": "Number",
+							"description": "改签费"
+						},
+						{
+							"name": "extend_param",
+							"type": "String",
+							"description": "扩展参数"
+						},
+						{
+							"name": "choose_seat",
+							"type": "String",
+							"description": "座位信息",
+							"required": true
+						},
+						{
+							"name": "sub_biz_order_id",
+							"type": "Number",
+							"description": "子订单",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "real_seat",
+							"type": "Number",
+							"description": "真实坐席",
+							"required": true
+						},
+						{
+							"name": "handing_fee",
+							"type": "Number",
+							"description": "高改低手续费"
+						},
+						{
+							"name": "can_change",
+							"type": "Boolean",
+							"description": "是否支持在线退改签"
+						}
+					]
+				},
+				{
+					"name": "alipay_account",
+					"type": "String",
+					"description": "支付宝账号"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

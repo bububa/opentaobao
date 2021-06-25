@@ -1,0 +1,75 @@
+{
+	"name": "alibaba.baichuan.aso.activate",
+	"apiChineseName": "设备安装活动激活",
+	"description": "设备安装活动激活",
+	"requestParams": [
+		{
+			"name": "source",
+			"type": "String",
+			"description": "来源",
+			"required": true
+		},
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "1-tmail,2-taobao",
+			"required": true
+		},
+		{
+			"name": "app_os",
+			"type": "Number",
+			"description": "1-android,2-ios",
+			"required": true
+		},
+		{
+			"name": "device_info",
+			"type": "AsoDeviceInfoDo",
+			"description": "设备信息，ios为idfa ，android 为imei + imsi",
+			"required": true,
+			"subParams": [
+				{
+					"name": "imei",
+					"type": "String",
+					"description": "imei"
+				},
+				{
+					"name": "imsi",
+					"type": "String",
+					"description": "imsi"
+				},
+				{
+					"name": "idfa",
+					"type": "String",
+					"description": "idfa"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AsoActivateDeviceResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_detail",
+					"type": "String",
+					"description": "errorDetail",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

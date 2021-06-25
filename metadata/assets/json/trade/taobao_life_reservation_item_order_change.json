@@ -1,0 +1,82 @@
+{
+	"name": "taobao.life.reservation.item.order.change",
+	"apiChineseName": "生服购后预约单外部发起变更",
+	"description": "生服购后预约单外部发起变更，例如改期、取消。目前体检场景，用户会直接联系ISV改期/取消，因此开放给ISV这块的能力",
+	"requestParams": [
+		{
+			"name": "trade_no",
+			"type": "String",
+			"description": "淘宝主单号",
+			"required": true
+		},
+		{
+			"name": "ticket_id",
+			"type": "String",
+			"description": "凭证ID",
+			"required": true
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "改期：MODIFY   取消：CANCEL",
+			"required": true
+		},
+		{
+			"name": "reserve_start_time",
+			"type": "String",
+			"description": "改期必填，格式：yyyy-MM-dd HH:mm。时分固定00:00"
+		},
+		{
+			"name": "reserve_end_time",
+			"type": "String",
+			"description": "改期必填，格式：yyyy-MM-dd HH:mm。时分固定23:59"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "内部trace 用于排查问题",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error",
+					"type": "TribeError",
+					"description": "错误",
+					"required": true,
+					"subParams": [
+						{
+							"name": "view",
+							"type": "String",
+							"description": "错误可读性描述",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "错误码",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

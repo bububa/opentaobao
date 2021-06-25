@@ -1,0 +1,56 @@
+{
+	"name": "alibaba.aliqin.fc.iot.device.isexist",
+	"apiChineseName": "判断设备是否存在",
+	"description": "判断设备是否存在",
+	"requestParams": [
+		{
+			"name": "imei",
+			"type": "String",
+			"description": "设备编号",
+			"required": true
+		},
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "设备类型（预留将来扩展）"
+		},
+		{
+			"name": "mid_pat_channel",
+			"type": "String",
+			"description": "渠道扩展编码（预留）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "是否存在",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否异常",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

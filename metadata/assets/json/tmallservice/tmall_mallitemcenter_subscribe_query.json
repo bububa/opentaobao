@@ -1,0 +1,183 @@
+{
+	"name": "tmall.mallitemcenter.subscribe.query",
+	"apiChineseName": "天猫服务订购信息查询接口",
+	"description": "查询商家服务订购信息",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "Spb2bOderQuery",
+			"description": "入参query",
+			"subParams": [
+				{
+					"name": "start_date",
+					"type": "Date",
+					"description": "开始日期"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "服务状态"
+				},
+				{
+					"name": "need_by_page",
+					"type": "Boolean",
+					"description": "是否分页"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页个数"
+				},
+				{
+					"name": "end_date",
+					"type": "Date",
+					"description": "结束日期"
+				},
+				{
+					"name": "end_row",
+					"type": "Number",
+					"description": "最后条数"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "售卖商昵称"
+				},
+				{
+					"name": "start_row",
+					"type": "Number",
+					"description": "开始条数"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "售卖商id"
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "服务code"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "new_supply_subscriber_data",
+					"type": "Boolean",
+					"description": "是否查询新供给ssc订购数据"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "ResultData",
+					"description": "返回结果model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "总条数",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页个数",
+							"required": true
+						},
+						{
+							"name": "one_paged_data_list",
+							"type": "SubscribeMerchantDto[]",
+							"description": "结果列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "tech_phone",
+									"type": "String",
+									"description": "技术电话",
+									"required": true
+								},
+								{
+									"name": "operator_phone",
+									"type": "String",
+									"description": "操作人电话",
+									"required": true
+								},
+								{
+									"name": "after_sale_phone",
+									"type": "String",
+									"description": "售后电话",
+									"required": true
+								},
+								{
+									"name": "subscribe_order_id",
+									"type": "Number",
+									"description": "订购单主键id",
+									"required": true
+								},
+								{
+									"name": "spu_id",
+									"type": "Number",
+									"description": "spuid",
+									"required": true
+								},
+								{
+									"name": "service_code",
+									"type": "String",
+									"description": "服务cide",
+									"required": true
+								},
+								{
+									"name": "subscriber_nick",
+									"type": "String",
+									"description": "订购者昵称",
+									"required": true
+								},
+								{
+									"name": "seller_type",
+									"type": "String",
+									"description": "卖家类型",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "error_type",
+					"type": "Number",
+					"description": "错误类型",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否正常",
+					"required": true
+				}
+			]
+		}
+	]
+}

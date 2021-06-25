@@ -1,0 +1,20 @@
+{
+	"name": "taobao.wlb.imports.waybill.get",
+	"apiChineseName": "获取运单信息",
+	"description": "一般进口商家，获取订单的电子面单链接地址",
+	"requestParams": [
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "物流订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "waybillurl",
+			"type": "String",
+			"description": "电子面单链接地址"
+		}
+	]
+}

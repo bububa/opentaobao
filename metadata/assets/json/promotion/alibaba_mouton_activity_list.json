@@ -1,0 +1,267 @@
+{
+	"name": "alibaba.mouton.activity.list",
+	"apiChineseName": "商家自运营活动列表",
+	"description": "商家查询自己配置的活动列表",
+	"requestParams": [
+		{
+			"name": "start_time_end",
+			"type": "Date",
+			"description": "开始时间"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页记录数"
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "来源",
+			"required": true
+		},
+		{
+			"name": "start_time_begin",
+			"type": "Date",
+			"description": "开始时间"
+		},
+		{
+			"name": "end_time_begin",
+			"type": "Date",
+			"description": "结束时间"
+		},
+		{
+			"name": "end_time_end",
+			"type": "Date",
+			"description": "结束时间"
+		},
+		{
+			"name": "source_record_id",
+			"type": "Number",
+			"description": "来源记录id"
+		},
+		{
+			"name": "status_list",
+			"type": "String[]",
+			"description": "状态",
+			"maxListSize": 20
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Page",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "activities",
+					"type": "ActivityDto[]",
+					"description": "活动列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "benefits",
+							"type": "BenefitDto[]",
+							"description": "权益列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "code",
+									"type": "String",
+									"description": "权益code",
+									"required": true
+								},
+								{
+									"name": "end_date",
+									"type": "String",
+									"description": "发放结束时间",
+									"required": true
+								},
+								{
+									"name": "description",
+									"type": "String",
+									"description": "权益描述",
+									"required": true
+								},
+								{
+									"name": "bestow",
+									"type": "Number",
+									"description": "发放量",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "String",
+									"description": "权益类型",
+									"required": true
+								},
+								{
+									"name": "start_date",
+									"type": "String",
+									"description": "发放开始时间",
+									"required": true
+								},
+								{
+									"name": "total",
+									"type": "Number",
+									"description": "总库存",
+									"required": true
+								},
+								{
+									"name": "label_codes",
+									"type": "String",
+									"description": "权益标签",
+									"required": true
+								},
+								{
+									"name": "feature",
+									"type": "Feature",
+									"description": "扩展信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "面额",
+											"required": true
+										},
+										{
+											"name": "effective_start",
+											"type": "String",
+											"description": "绝对生效时间开始",
+											"required": true
+										},
+										{
+											"name": "effective_end",
+											"type": "String",
+											"description": "绝对生效时间结束",
+											"required": true
+										},
+										{
+											"name": "effective_time_mode",
+											"type": "String",
+											"description": "生效时间类型",
+											"required": true
+										},
+										{
+											"name": "start_fee",
+											"type": "String",
+											"description": "门槛",
+											"required": true
+										},
+										{
+											"name": "effective_interval",
+											"type": "String",
+											"description": "相对生效时间",
+											"required": true
+										},
+										{
+											"name": "interval_time_unit",
+											"type": "String",
+											"description": "相对生效时间类型",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "权益名称",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "String",
+									"description": "权益状态",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "source",
+							"type": "String",
+							"description": "活动来源",
+							"required": true
+						},
+						{
+							"name": "source_record_id",
+							"type": "String",
+							"description": "活动来源记录id",
+							"required": true
+						},
+						{
+							"name": "feature",
+							"type": "Json",
+							"description": "活动扩展数据",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "活动名称",
+							"required": true
+						},
+						{
+							"name": "strategy_code",
+							"type": "String",
+							"description": "活动投放code",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "活动开始时间",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "活动结束时间",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "活动状态",
+							"required": true
+						},
+						{
+							"name": "channel_code",
+							"type": "String",
+							"description": "活动投放渠道",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页记录数",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总记录数",
+					"required": true
+				}
+			]
+		}
+	]
+}

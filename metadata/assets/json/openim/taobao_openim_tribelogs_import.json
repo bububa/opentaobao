@@ -1,0 +1,57 @@
+{
+	"name": "taobao.openim.tribelogs.import",
+	"apiChineseName": "openim群聊天记录导入",
+	"description": "openim群聊天记录导入",
+	"requestParams": [
+		{
+			"name": "tribe_id",
+			"type": "Number",
+			"description": "群号。必须为已存在的群，且群主属于本app",
+			"required": true
+		},
+		{
+			"name": "messages",
+			"type": "TribeTextMessage[]",
+			"description": "消息列表",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "from_id",
+					"type": "String",
+					"description": "发送方userid。必须为本app已导入的账号",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "消息",
+					"required": true
+				},
+				{
+					"name": "time",
+					"type": "Number",
+					"description": "消息时间。UTC时间，精确到秒。时间范围必须在当前时间30天内",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

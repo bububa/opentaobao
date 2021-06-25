@@ -1,0 +1,63 @@
+{
+	"name": "alibaba.xiami.api.rank.detail.get",
+	"apiChineseName": "排行榜详情",
+	"description": "虾米排行榜详情数据",
+	"requestParams": [
+		{
+			"name": "billboard_id",
+			"type": "Number",
+			"description": "榜单ID"
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "调用来源"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "msgCode"
+		},
+		{
+			"name": "result_obj",
+			"type": "BillboardItemVO",
+			"description": "resultObj",
+			"subParams": [
+				{
+					"name": "billboard_id",
+					"type": "Number",
+					"description": "billboardId",
+					"required": true
+				},
+				{
+					"name": "songs",
+					"type": "Songs[]",
+					"description": "songs",
+					"required": true,
+					"subParams": [
+						{
+							"name": "song_name",
+							"type": "String",
+							"description": "songName",
+							"required": true
+						},
+						{
+							"name": "album_name",
+							"type": "String",
+							"description": "albumName",
+							"required": true
+						},
+						{
+							"name": "artist_name",
+							"type": "String",
+							"description": "artistName",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

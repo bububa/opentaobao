@@ -1,0 +1,30 @@
+{
+	"name": "taobao.train.agent.bookorders.get.vtwo",
+	"apiChineseName": "代理商获取待出票订单列表v2--增加鉴权校验",
+	"description": "代理商获取待出票订单列表，只返回订单号",
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order_count",
+			"type": "Number",
+			"description": "待处理订单总数"
+		},
+		{
+			"name": "order_ids",
+			"type": "String",
+			"description": "订单号集合，用半角逗号(,)连接，只会返回固定数量"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		}
+	]
+}

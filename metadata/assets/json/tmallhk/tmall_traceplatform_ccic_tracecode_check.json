@@ -1,0 +1,66 @@
+{
+	"name": "tmall.traceplatform.ccic.tracecode.check",
+	"apiChineseName": "ccic校验溯源码",
+	"description": "天猫国际溯源业务，需要将溯源码校验的功能输出到ccic官方主页中以增强溯源码的可信度，故需要提供api给ccic使用以校验溯源码的正确性。",
+	"requestParams": [
+		{
+			"name": "short_tracecode",
+			"type": "String",
+			"description": "15为溯源短码，必选",
+			"required": true
+		},
+		{
+			"name": "hide_code",
+			"type": "String",
+			"description": "6位暗码，必选",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "obj",
+					"type": "CCICCheckCodeDO",
+					"description": "obj",
+					"required": true,
+					"subParams": [
+						{
+							"name": "enterable",
+							"type": "Boolean",
+							"description": "enterable",
+							"required": true
+						},
+						{
+							"name": "enter_url",
+							"type": "String",
+							"description": "enterUrl",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

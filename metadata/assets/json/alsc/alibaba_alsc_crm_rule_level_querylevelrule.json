@@ -1,0 +1,171 @@
+{
+	"name": "alibaba.alsc.crm.rule.level.querylevelrule",
+	"apiChineseName": "查询会员等级规则",
+	"description": "查询会员等级规则",
+	"requestParams": [
+		{
+			"name": "plan_rule_query_request",
+			"type": "PlanRuleQueryOpenReq",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "deleted",
+					"type": "Boolean",
+					"description": "是否包含逻辑删除的数据",
+					"required": true
+				},
+				{
+					"name": "last_update_time",
+					"type": "Date",
+					"description": "最后更新时间"
+				},
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌ID"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数量"
+				},
+				{
+					"name": "last_id",
+					"type": "String",
+					"description": "上次最有一个ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonPageResult",
+			"description": "会员等级规则",
+			"subParams": [
+				{
+					"name": "result_list",
+					"type": "LevelRuleOpenInfo[]",
+					"description": "会员等级规则",
+					"required": true,
+					"subParams": [
+						{
+							"name": "level_id",
+							"type": "String",
+							"description": "等级规则Id",
+							"required": true
+						},
+						{
+							"name": "level_no",
+							"type": "Number",
+							"description": "等级规则序号",
+							"required": true
+						},
+						{
+							"name": "level_name",
+							"type": "String",
+							"description": "等级规则名称",
+							"required": true
+						},
+						{
+							"name": "threshold",
+							"type": "Number",
+							"description": "等级对应成长值门槛",
+							"required": true
+						},
+						{
+							"name": "present_point",
+							"type": "Number",
+							"description": "升级赠送积分",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间",
+							"required": true
+						},
+						{
+							"name": "create_by",
+							"type": "String",
+							"description": "创建者",
+							"required": true
+						},
+						{
+							"name": "update_by",
+							"type": "String",
+							"description": "更新者",
+							"required": true
+						},
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "逻辑删除标志",
+							"required": true
+						},
+						{
+							"name": "ext_info",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "当前每页显示数量（原样传出）",
+					"required": true
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页码（原样传出）",
+					"required": true
+				},
+				{
+					"name": "total_size",
+					"type": "Number",
+					"description": "总共记录数",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "业务执行是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,91 @@
+{
+	"name": "taobao.logistics.address.modify",
+	"apiChineseName": "卖家地址库修改",
+	"description": "卖家地址库修改",
+	"requestParams": [
+		{
+			"name": "contact_id",
+			"type": "Number",
+			"description": "地址库ID",
+			"required": true
+		},
+		{
+			"name": "contact_name",
+			"type": "String",
+			"description": "联系人姓名\u003cbr/\u003e\u003cfont color='red'\u003e长度不可超过20个字节\u003c/font\u003e",
+			"required": true
+		},
+		{
+			"name": "province",
+			"type": "String",
+			"description": "所在省",
+			"required": true
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "所在市",
+			"required": true
+		},
+		{
+			"name": "country",
+			"type": "String",
+			"description": "区、县\u003cbr/\u003e\u003cbr\u003e\u003cfont color='red'\u003e如果所在地区是海外的可以为空，否则为必参\u003c/font\u003e"
+		},
+		{
+			"name": "addr",
+			"type": "String",
+			"description": "详细街道地址，不需要重复填写省/市/区",
+			"required": true
+		},
+		{
+			"name": "zip_code",
+			"type": "String",
+			"description": "地区邮政编码\u003cbr/\u003e\u003cbr\u003e\u003cfont color='red'\u003e如果所在地区是海外的可以为空，否则为必参\u003c/font\u003e"
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "电话号码,手机与电话必需有一个"
+		},
+		{
+			"name": "mobile_phone",
+			"type": "String",
+			"description": "手机号码，手机与电话必需有一个 \u003cbr\u003e\u003cfont color='red'\u003e手机号码不能超过20位\u003c/font\u003e"
+		},
+		{
+			"name": "seller_company",
+			"type": "String",
+			"description": "公司名称,\u003cbr/\u003e\u003cbr\u003e\u003cfont color='red'\u003e公司名称长能不能超过20字节\u003c/font\u003e"
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "备注,\u003cbr\u003e\u003cfont color='red'\u003e备注不能超过256字节\u003c/font\u003e"
+		},
+		{
+			"name": "get_def",
+			"type": "Boolean",
+			"description": "默认取货地址。\u003cbr\u003e\u003cbr/\u003e\u003cfont color='red'\u003e选择此项(true)，将当前地址设为默认取货地址，撤消原默认取货地址\u003c/font\u003e"
+		},
+		{
+			"name": "cancel_def",
+			"type": "Boolean",
+			"description": "默认退货地址。\u003cbr\u003e\u003cbr/\u003e\u003cfont color='red'\u003e选择此项(true)，将当前地址设为默认退货地址，撤消原默认退货地址\u003c/font\u003e"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "address_result",
+			"type": "AddressResult",
+			"description": "只返回修改时间modify_date",
+			"subParams": [
+				{
+					"name": "modify_date",
+					"type": "Date",
+					"description": "修改日期时间"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.alicom.order.preauthorize.query.fund",
+	"apiChineseName": "资金流水查询",
+	"description": "预授权-资金流水查询",
+	"requestParams": [
+		{
+			"name": "pre_authorize_model",
+			"type": "PreAuthorizeModel",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "String",
+					"description": "淘宝订单号",
+					"required": true
+				},
+				{
+					"name": "ext",
+					"type": "String",
+					"description": "扩展json"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "描述",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口返回成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

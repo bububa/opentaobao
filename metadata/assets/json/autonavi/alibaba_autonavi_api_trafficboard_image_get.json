@@ -1,0 +1,47 @@
+{
+	"name": "alibaba.autonavi.api.trafficboard.image.get",
+	"apiChineseName": "交通看板-栅格情报获取",
+	"description": "获取指定情报板ID的二进制数据（图片）",
+	"requestParams": [
+		{
+			"name": "deviceid",
+			"type": "String",
+			"description": "设备id,  按照userid 的配置，决定是否需要",
+			"required": true
+		},
+		{
+			"name": "batch",
+			"type": "String",
+			"description": "批次,终端批次，按照userid 的配置，决定是否需要"
+		},
+		{
+			"name": "panelid",
+			"type": "String",
+			"description": "图片 id",
+			"required": true
+		},
+		{
+			"name": "size",
+			"type": "String",
+			"description": "图像尺寸（可选）,默认尺寸为原始大小(960x600) 参数为:width  x   height   (例如:960x600),参数不正确时返回原始大小"
+		},
+		{
+			"name": "whscale",
+			"type": "String",
+			"description": "是否为宽高等比例（可选）,参数值 true（默认）,表示宽高等比例缩放 false:  按请求尺寸缩放"
+		},
+		{
+			"name": "adcodes",
+			"type": "String",
+			"description": "城市编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_result",
+			"type": "byte []",
+			"description": "二进制图片流(png)"
+		}
+	]
+}

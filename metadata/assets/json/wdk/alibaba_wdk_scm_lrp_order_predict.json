@@ -1,0 +1,156 @@
+{
+	"name": "alibaba.wdk.scm.lrp.order.predict",
+	"apiChineseName": "单量预测",
+	"description": "提供基于门店和配送站的订单量预测，可用于提前安排人力资源",
+	"requestParams": [
+		{
+			"name": "param_order_predict_query",
+			"type": "OrderPredictQuery",
+			"description": "单量预测查询参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "data_type",
+					"type": "Number",
+					"description": "数据类型：1）滚动，2）快照",
+					"required": true
+				},
+				{
+					"name": "date_list",
+					"type": "String[]",
+					"description": "查询日期列表，早于当前时间为查询实际单量，晚于当前时间为预测",
+					"required": true
+				},
+				{
+					"name": "delivery_station_code",
+					"type": "String",
+					"description": "配送站code，该参数和warehouse_code二选一"
+				},
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "订单类型：1）020线上订单，2）b2c常温订单，3）b2c冷链订单",
+					"required": true
+				},
+				{
+					"name": "time_dimension",
+					"type": "Number",
+					"description": "时间维度：1）每日一条预测，2）每日48条记录，半小时一条预测",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "门店code，该参数和delivery_station_code二选一"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "predict_list",
+					"type": "OrderPredict[]",
+					"description": "单量预测结果列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "actual_order_quantity",
+							"type": "Number",
+							"description": "实际总单量",
+							"required": true
+						},
+						{
+							"name": "channel_actual_quantity",
+							"type": "Json",
+							"description": "分渠道实际单量，JSON结构",
+							"required": true
+						},
+						{
+							"name": "channel_predict_quantity",
+							"type": "Json",
+							"description": "分渠道预测单量，JSON结构",
+							"required": true
+						},
+						{
+							"name": "delivery_station_code",
+							"type": "String",
+							"description": "配送站编码",
+							"required": true
+						},
+						{
+							"name": "delivery_station_name",
+							"type": "String",
+							"description": "配送站名称",
+							"required": true
+						},
+						{
+							"name": "predict_date",
+							"type": "String",
+							"description": "预测日期",
+							"required": true
+						},
+						{
+							"name": "predict_order_quantity",
+							"type": "Number",
+							"description": "预测总单量",
+							"required": true
+						},
+						{
+							"name": "sub_company_code",
+							"type": "String",
+							"description": "子公司编码",
+							"required": true
+						},
+						{
+							"name": "sub_company_name",
+							"type": "String",
+							"description": "子公司名称",
+							"required": true
+						},
+						{
+							"name": "time_range",
+							"type": "String",
+							"description": "时间段",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "门店编码",
+							"required": true
+						},
+						{
+							"name": "warehouse_name",
+							"type": "String",
+							"description": "门店名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

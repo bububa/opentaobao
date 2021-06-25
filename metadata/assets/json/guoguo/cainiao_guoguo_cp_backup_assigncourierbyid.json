@@ -1,0 +1,52 @@
+{
+	"name": "cainiao.guoguo.cp.backup.assigncourierbyid",
+	"apiChineseName": "根据菜鸟账号ID指派小件员",
+	"description": "根据菜鸟账号ID指派小件员",
+	"requestParams": [
+		{
+			"name": "assign_reason",
+			"type": "String",
+			"description": "指派/改派原因"
+		},
+		{
+			"name": "assign_reason_code",
+			"type": "String",
+			"description": "指派/改派原因编码"
+		},
+		{
+			"name": "task_id",
+			"type": "Number",
+			"description": "任务编号",
+			"required": true
+		},
+		{
+			"name": "account_id",
+			"type": "Number",
+			"description": "小件员菜鸟账号ID",
+			"required": true
+		},
+		{
+			"name": "cp_code",
+			"type": "String",
+			"description": "CP公司编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "指派/改派是否成功"
+		},
+		{
+			"name": "status_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "status_message",
+			"type": "String",
+			"description": "错误信息描述"
+		}
+	]
+}

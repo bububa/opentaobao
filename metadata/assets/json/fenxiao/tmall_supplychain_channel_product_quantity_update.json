@@ -1,0 +1,88 @@
+{
+	"name": "tmall.supplychain.channel.product.quantity.update",
+	"apiChineseName": "渠道无仓库存更新接口",
+	"description": "渠道无仓库存更新接口",
+	"requestParams": [
+		{
+			"name": "quantity",
+			"type": "Number",
+			"description": "库存修改值，必选。当全量更新库存时，quantity必须为大于等于0的正整数；当增量更新库存时，quantity为整数，可小于等于0。若增量更新时传入的库存为负数，则负数与实际库存之和不能小于0。比如当前实际库存为1，传入增量更新quantity=-1，库存改为0",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品数字ID",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "产品SKU ID"
+		},
+		{
+			"name": "update_type",
+			"type": "Number",
+			"description": "库存更新方式，可选。1为全量更新，2为增量更新。如果不填，默认为全量更新"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "TopProductQuantityResult",
+					"description": "更新内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "产品数字ID",
+							"required": true
+						},
+						{
+							"name": "sku_id",
+							"type": "Number",
+							"description": "SKU ID",
+							"required": true
+						},
+						{
+							"name": "result",
+							"type": "String",
+							"description": "更新后库存数量",
+							"required": true
+						},
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "更新时间",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				}
+			]
+		}
+	]
+}

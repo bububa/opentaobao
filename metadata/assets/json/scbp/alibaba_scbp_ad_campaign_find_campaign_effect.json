@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.scbp.ad.campaign.find.campaign.effect",
+	"apiChineseName": "批量查询计划效果数据",
+	"description": "批量查询计划效果数据",
+	"requestParams": [
+		{
+			"name": "campaign_id_list",
+			"type": "Number[]",
+			"description": "计划id集合",
+			"required": true,
+			"maxListSize": 999
+		},
+		{
+			"name": "begin_date",
+			"type": "String",
+			"description": "开始时间",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束时间",
+			"required": true
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "json数据，key是计划id(campaignId), value包含开始时间(statDate),曝光(impr),点击(click),消耗(cost),推广时长(onlineMin)"
+		}
+	]
+}

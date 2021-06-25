@@ -1,0 +1,219 @@
+{
+	"name": "alibaba.wdk.fulfill.warehouse.work.order.callback",
+	"apiChineseName": "标准化仓作业单回传接口",
+	"description": "标准化仓作业单回传接口",
+	"requestParams": [
+		{
+			"name": "callback_order",
+			"type": "DrfHalfDayCcCallbackOrder",
+			"description": "作业单回传对象",
+			"subParams": [
+				{
+					"name": "status_change_time",
+					"type": "String",
+					"description": "作业状态变更时间",
+					"required": true
+				},
+				{
+					"name": "status_change_type",
+					"type": "String",
+					"description": "作业状态变更类型： START_PICK(“开始拣货”)， PICK_FINISH(“拣货完成”)， START_PACKAGE(“开始打包”), PACKAGE _FINISH(“打包完成”);",
+					"required": true
+				},
+				{
+					"name": "node_code",
+					"type": "String",
+					"description": "节点编码",
+					"required": true
+				},
+				{
+					"name": "work_order_type",
+					"type": "String",
+					"description": "作业单类型： BATCH(\"批次\"),  ORDER(\"物流单",
+					"required": true
+				},
+				{
+					"name": "work_order_id",
+					"type": "String",
+					"description": "作业单号",
+					"required": true
+				},
+				{
+					"name": "callback_units",
+					"type": "DrfHalfDayCcCallBackUnit[]",
+					"description": "作业单元",
+					"subParams": [
+						{
+							"name": "callback_contents",
+							"type": "DrfHalfDayCcCallBackContent[]",
+							"description": "作业内容",
+							"subParams": [
+								{
+									"name": "is_shortage",
+									"type": "Boolean",
+									"description": "是否缺货出"
+								},
+								{
+									"name": "sku_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "商品编码"
+								},
+								{
+									"name": "out_of_stock_stock_quantity",
+									"type": "String",
+									"description": "缺货出库存数量"
+								},
+								{
+									"name": "out_of_stock_sale_quantity",
+									"type": "String",
+									"description": "缺货出销售数量"
+								},
+								{
+									"name": "actual_stock_quantity",
+									"type": "String",
+									"description": "实际库存拣货数量"
+								},
+								{
+									"name": "actual_sale_quantity",
+									"type": "String",
+									"description": "实际销售拣货数量"
+								},
+								{
+									"name": "work_unit_content_id",
+									"type": "String",
+									"description": "作业内容单号"
+								},
+								{
+									"name": "attribute",
+									"type": "String",
+									"description": "作业内容扩展属性"
+								},
+								{
+									"name": "same_town_packages",
+									"type": "SameTownPackage[]",
+									"description": "子单出库关联的同城令牌",
+									"subParams": [
+										{
+											"name": "token_code",
+											"type": "String",
+											"description": "令牌号"
+										},
+										{
+											"name": "pickup_code",
+											"type": "String",
+											"description": "6位交接码"
+										},
+										{
+											"name": "actual_sale_quantity",
+											"type": "String",
+											"description": "包裹中商品出库销售数量"
+										},
+										{
+											"name": "actual_stock_quantity",
+											"type": "String",
+											"description": "包裹中商品出库库存数量"
+										},
+										{
+											"name": "container",
+											"type": "Container",
+											"description": "周转箱",
+											"subParams": [
+												{
+													"name": "container_type",
+													"type": "String",
+													"description": "容器类型"
+												},
+												{
+													"name": "container_code",
+													"type": "String",
+													"description": "容器编码"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "work_order_unit_id",
+							"type": "String",
+							"description": "作业单元单号"
+						},
+						{
+							"name": "attribute",
+							"type": "String",
+							"description": "作业单元扩展属性"
+						}
+					]
+				},
+				{
+					"name": "is_final",
+					"type": "Boolean",
+					"description": "是否作业节点终态",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "Operator",
+					"description": "操作员",
+					"subParams": [
+						{
+							"name": "operator_code",
+							"type": "String",
+							"description": "操作员编码"
+						},
+						{
+							"name": "operator_name",
+							"type": "String",
+							"description": "操作员姓名"
+						}
+					]
+				},
+				{
+					"name": "containers",
+					"type": "Container[]",
+					"description": "容器列表",
+					"subParams": [
+						{
+							"name": "container_type",
+							"type": "String",
+							"description": "容器类型"
+						},
+						{
+							"name": "container_code",
+							"type": "String",
+							"description": "容器code"
+						}
+					]
+				},
+				{
+					"name": "attribute",
+					"type": "String",
+					"description": "作业单扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "resp_message",
+			"type": "String",
+			"description": "响应提示信息"
+		},
+		{
+			"name": "resp_code",
+			"type": "String",
+			"description": "响应code"
+		}
+	]
+}

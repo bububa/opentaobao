@@ -1,0 +1,108 @@
+{
+	"name": "alibaba.scbp.target.ad.plan.product.list.get",
+	"apiChineseName": "定向推广-获取推广计划产品列表",
+	"description": "定向推广-获取推广计划产品列表",
+	"requestParams": [
+		{
+			"name": "top_p4p_quick_product_query",
+			"type": "TopP4pQuickProductQuery",
+			"description": "TopP4pQuickProductQuery",
+			"required": true,
+			"subParams": [
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "定向推广计划id",
+					"required": true
+				},
+				{
+					"name": "to_page",
+					"type": "Number",
+					"description": "第几页",
+					"required": true
+				},
+				{
+					"name": "per_page_size",
+					"type": "Number",
+					"description": "每页返回多少行",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "product_list",
+			"type": "TopP4pQuickCampaignProductView []",
+			"description": "TopP4pQuickCampaignProductView",
+			"subParams": [
+				{
+					"name": "effect7d",
+					"type": "Effect7d",
+					"description": "商品最近7天效果数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ctr",
+							"type": "String",
+							"description": "点击率",
+							"required": true
+						},
+						{
+							"name": "cpc",
+							"type": "String",
+							"description": "平均点击花费",
+							"required": true
+						},
+						{
+							"name": "cost",
+							"type": "String",
+							"description": "消耗金额，单位元",
+							"required": true
+						},
+						{
+							"name": "click",
+							"type": "String",
+							"description": "点击量",
+							"required": true
+						},
+						{
+							"name": "impr",
+							"type": "String",
+							"description": "曝光量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "product_name",
+					"type": "String",
+					"description": "商品名",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "商品ID",
+					"required": true
+				},
+				{
+					"name": "display_status",
+					"type": "Number",
+					"description": "产品状态（0暂停，1推广中，-2商品下架）",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "总页数"
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "总个数"
+		}
+	]
+}

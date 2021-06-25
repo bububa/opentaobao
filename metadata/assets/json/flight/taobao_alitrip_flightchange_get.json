@@ -1,0 +1,106 @@
+{
+	"name": "taobao.alitrip.flightchange.get",
+	"apiChineseName": "获取航变信息",
+	"description": "查询航变是为了两个目的，阿里旅行抓取到未确认航变的航变信息源时可以由代理确认航变，同时对于确认航变的航变信息也共享给代理人做本体业务使用。",
+	"requestParams": [
+		{
+			"name": "search_option",
+			"type": "FlightChangeDataQueryOption",
+			"description": "查询信息封装",
+			"subParams": [
+				{
+					"name": "end_flight_change_time_str",
+					"type": "String",
+					"description": "航变信息产生时间截至,格式yyyy-MM-dd",
+					"required": true
+				},
+				{
+					"name": "old_arr_airport",
+					"type": "String",
+					"description": "原到达机场三字代码"
+				},
+				{
+					"name": "is_confirmed",
+					"type": "Number",
+					"description": "是否只查已确认的航变,1:是 2:否",
+					"required": true
+				},
+				{
+					"name": "is_get_self_only",
+					"type": "Number",
+					"description": "是否只查自己订单航变,1:是 2:否",
+					"required": true
+				},
+				{
+					"name": "begin_old_dep_time_str",
+					"type": "String",
+					"description": "原航变旅行日期开始,格式yyyy-MM-dd"
+				},
+				{
+					"name": "end_old_dep_time_str",
+					"type": "String",
+					"description": "原航变旅行日期截至,格式yyyy-MM-dd"
+				},
+				{
+					"name": "old_dep_airport",
+					"type": "String",
+					"description": "原出发机场三字代码"
+				},
+				{
+					"name": "begin_flight_change_time_str",
+					"type": "String",
+					"description": "航变信息产生时间开始,格式yyyy-MM-dd",
+					"required": true
+				},
+				{
+					"name": "old_flt_num",
+					"type": "String",
+					"description": "原航班号"
+				},
+				{
+					"name": "qsort",
+					"type": "Number",
+					"description": "排序,1:航变时间降序（默认） 2:航变时间升序 3:离港时间降序 4:离港时间升序"
+				},
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "第几页"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_d_o",
+			"type": "ResultDo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "Json[]",
+					"description": "results",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

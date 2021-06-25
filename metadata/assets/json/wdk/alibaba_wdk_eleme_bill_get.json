@@ -1,0 +1,172 @@
+{
+	"name": "alibaba.wdk.eleme.bill.get",
+	"apiChineseName": "饿了么日维度对账单查询",
+	"description": "查询饿了么日维度对账单信息",
+	"requestParams": [
+		{
+			"name": "ele_bill_request",
+			"type": "EleBillRequest",
+			"description": "对账单查询参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "page",
+					"type": "String",
+					"description": "查询页码,默认查询第一页,默认每页 20 条",
+					"required": true
+				},
+				{
+					"name": "date",
+					"type": "String",
+					"description": "查询日期，时间戳格式(2019-06-10=1560124800)",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "EleBillBo",
+					"description": "账单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_detail_fee",
+							"type": "OrderDetailFee",
+							"description": "订单费用明细",
+							"required": true,
+							"subParams": [
+								{
+									"name": "zhongbao_call_fee",
+									"type": "String",
+									"description": "众包呼单费",
+									"required": true
+								},
+								{
+									"name": "cold_box_fee",
+									"type": "String",
+									"description": "冷链加工费",
+									"required": true
+								},
+								{
+									"name": "user_fee",
+									"type": "String",
+									"description": "用户实付",
+									"required": true
+								},
+								{
+									"name": "commission",
+									"type": "String",
+									"description": "实收佣金",
+									"required": true
+								},
+								{
+									"name": "agent_rate",
+									"type": "String",
+									"description": "代理商补贴",
+									"required": true
+								},
+								{
+									"name": "platform_rate",
+									"type": "String",
+									"description": "平台补贴",
+									"required": true
+								},
+								{
+									"name": "shop_rate",
+									"type": "String",
+									"description": "商户补贴",
+									"required": true
+								},
+								{
+									"name": "send_fee",
+									"type": "String",
+									"description": "配送费",
+									"required": true
+								},
+								{
+									"name": "package_fee",
+									"type": "String",
+									"description": "餐盒费",
+									"required": true
+								},
+								{
+									"name": "product_fee",
+									"type": "String",
+									"description": "商品金额",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "expend_fee",
+							"type": "String",
+							"description": "应付金额",
+							"required": true
+						},
+						{
+							"name": "order_count",
+							"type": "String",
+							"description": "单量",
+							"required": true
+						},
+						{
+							"name": "pay_fee",
+							"type": "String",
+							"description": "未结算金额，单位:分",
+							"required": true
+						},
+						{
+							"name": "pay_entity",
+							"type": "String",
+							"description": "实际付款主体",
+							"required": true
+						},
+						{
+							"name": "date",
+							"type": "String",
+							"description": "账单日期，时间戳",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "渠道店id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

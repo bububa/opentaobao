@@ -1,0 +1,82 @@
+{
+	"name": "alibaba.mos.onsite.trade.oldrefund",
+	"apiChineseName": "线下新退款接口（专为老退款接口调用）",
+	"description": "线下新退款接口（专为老退款接口调用）。新接口支付支付宝、手淘、天猫，老接口退款时，需要调用该接口退新单，并适配老接口响应参数返回",
+	"requestParams": [
+		{
+			"name": "onsite_refund_request",
+			"type": "OnsiteRefundRequest",
+			"description": "交易退款请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "extend_params",
+					"type": "String",
+					"description": "业务扩展参数，json格式"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "商户操作员编号"
+				},
+				{
+					"name": "out_request_no",
+					"type": "String",
+					"description": "商户退款请求号。标识一次退款请求，同一笔交易多次退款需要保证唯一",
+					"required": true
+				},
+				{
+					"name": "refund_amount",
+					"type": "Number",
+					"description": "退款金额。需要退款的金额，该金额不能大于订单金额（同一笔交易多次退款时累计退款金额不能超过订单金额），单位为分",
+					"required": true
+				},
+				{
+					"name": "refund_reason",
+					"type": "String",
+					"description": "退款的原因说明"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "商户门店编号。可以是喵街内的商户门店ID，也可以是商户系统内自己的门店ID，其取值的含义由store_id_type定义",
+					"required": true
+				},
+				{
+					"name": "store_id_type",
+					"type": "String",
+					"description": "商户门店编号的类型。取值：miaojie和out。如果取值为miaojie，则store_id的取值为商户门店在喵街中的编号；如果取值为out，则store_id的取值为商户自己的编号",
+					"required": true
+				},
+				{
+					"name": "terminal_id",
+					"type": "String",
+					"description": "商户机具终端编号"
+				},
+				{
+					"name": "mj_shop_id",
+					"type": "String",
+					"description": "喵街商户号"
+				},
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "appId。兼容老退款"
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "订单号。可能为外部订单号，也可能为喵街订单号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "交易退款响应"
+		}
+	]
+}

@@ -1,0 +1,127 @@
+{
+	"name": "taobao.promotion.benefit.selector",
+	"apiChineseName": "权益选择器接口",
+	"description": "权益选择器，查询用户已有权益，提供用户进行已拥有权益的选择操作，权益发放的前置操作\n1、目前top的接口只开了1，4，13，14 四种权益, 支付宝红包--1；流量钱包--4；优酷会员--13；彩票-- 14\u003cbr/\u003e\n2、目前只有\"支付宝红包\"有\"benefit_type\": \"ALIPAY_COUPON\",其它三个没有benefit_type   \u003cbr/\u003e\n3、接口文档中写的 优酷会员卡--2 写错了，正确的是13（已接口返回为准）\u003cbr/\u003e\n4、step=2用config_id查，即1，4，13，14  \u003cbr/\u003e\n5、step=3权益id指具体采购的权益id，可以认为是采购的主键（权益id 可以通过step=2 获得 ）  \u003cbr/\u003e",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "BenefitSelectorQuery",
+			"description": "权益选择器请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "benefit_type",
+					"type": "String",
+					"description": "权益类型"
+				},
+				{
+					"name": "benefit_id",
+					"type": "Number",
+					"description": "权益id"
+				},
+				{
+					"name": "step",
+					"type": "Number",
+					"description": "选择器步骤,步骤1：不需要填写其他参数，获取拥有的权益类型列表；步骤2：需填写权益类型benefit_type字段，获取该权益类型下的权益列表；步骤3：必填benefit_id，获取对应权益的信息",
+					"required": true
+				},
+				{
+					"name": "exclude_options",
+					"type": "Number",
+					"description": "需要过滤的option"
+				},
+				{
+					"name": "config_id",
+					"type": "Number",
+					"description": "新权益类型id:1支付宝红包,2优酷会员卡,3不定面额红包,4流量钱包,5淘话费,6淘金币"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		},
+		{
+			"name": "benefit_list",
+			"type": "BenefitSelectorVo []",
+			"description": "权益列表信息",
+			"subParams": [
+				{
+					"name": "benefit_type",
+					"type": "String",
+					"description": "权益类型"
+				},
+				{
+					"name": "pack_detail_list",
+					"type": "BenefitTemplateVo[]",
+					"description": "详情list",
+					"subParams": [
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "开始时间"
+						},
+						{
+							"name": "relate_activity_num",
+							"type": "Number",
+							"description": "关联活动数"
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "状态"
+						},
+						{
+							"name": "benefit_id",
+							"type": "Number",
+							"description": "权益id"
+						},
+						{
+							"name": "out_object_id",
+							"type": "String",
+							"description": "外部关联id（如支付宝红包模板id）"
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "结束时间"
+						},
+						{
+							"name": "valid_total_num",
+							"type": "Number",
+							"description": "可用总数"
+						},
+						{
+							"name": "out_object_name",
+							"type": "String",
+							"description": "外部关联名称"
+						},
+						{
+							"name": "denomination",
+							"type": "Number",
+							"description": "面额"
+						},
+						{
+							"name": "extend_feature",
+							"type": "Json",
+							"description": "扩展信息"
+						}
+					]
+				},
+				{
+					"name": "benefit_name",
+					"type": "String",
+					"description": "权益名称"
+				},
+				{
+					"name": "benefit_type_long",
+					"type": "Number",
+					"description": "权益类型id"
+				}
+			]
+		}
+	]
+}

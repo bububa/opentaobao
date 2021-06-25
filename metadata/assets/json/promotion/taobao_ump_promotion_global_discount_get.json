@@ -1,0 +1,34 @@
+{
+	"name": "taobao.ump.promotion.global.discount.get",
+	"apiChineseName": "获取卖家最低折扣",
+	"description": "提供卖家最低折扣查询功能",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否执行成功",
+					"required": true
+				},
+				{
+					"name": "default_model",
+					"type": "SellerGlobalDiscount",
+					"description": "defaultModel",
+					"required": true,
+					"subParams": [
+						{
+							"name": "discount",
+							"type": "Number",
+							"description": "折扣1折100，9折900",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

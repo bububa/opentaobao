@@ -1,0 +1,304 @@
+{
+	"name": "alibaba.wdk.channel.order.create",
+	"apiChineseName": "创建订单",
+	"description": "外部商家创建订单",
+	"requestParams": [
+		{
+			"name": "order_info",
+			"type": "OrderInfo",
+			"description": "订单信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "buyer",
+					"type": "Buyer",
+					"description": "买家信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "买家标识",
+							"required": true
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "买家用户名",
+							"required": true
+						},
+						{
+							"name": "user_nick",
+							"type": "String",
+							"description": "买家昵称",
+							"required": true
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "买家电话",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "consignee",
+					"type": "Consignee",
+					"description": "收件人信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "收件人名称",
+							"required": true
+						},
+						{
+							"name": "phone",
+							"type": "String",
+							"description": "收件人电话",
+							"required": true
+						},
+						{
+							"name": "address",
+							"type": "String",
+							"description": "配送地址",
+							"required": true
+						},
+						{
+							"name": "geo",
+							"type": "String",
+							"description": "配送坐标",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "配送开始时间",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "配送结束时间",
+							"required": true
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "0:高德坐标系，1:其他坐标系（需要坐标修正）"
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市名称，仅在type不为0的情况下传入"
+						}
+					]
+				},
+				{
+					"name": "sub_orders",
+					"type": "SubOrder[]",
+					"description": "子订单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "sale_quantity",
+							"type": "Number",
+							"description": "销售商品数量",
+							"required": true
+						},
+						{
+							"name": "sale_price",
+							"type": "Number",
+							"description": "销售单价",
+							"required": true
+						},
+						{
+							"name": "pay_fee",
+							"type": "Number",
+							"description": "实际支付金额",
+							"required": true
+						},
+						{
+							"name": "origin_fee",
+							"type": "Number",
+							"description": "原始金额",
+							"required": true
+						},
+						{
+							"name": "discount_fee",
+							"type": "Number",
+							"description": "优惠金额",
+							"required": true
+						},
+						{
+							"name": "discount_infos",
+							"type": "DiscountInfo[]",
+							"description": "营销优惠明细",
+							"subParams": [
+								{
+									"name": "activity_id",
+									"type": "String",
+									"description": "营销活动ID"
+								},
+								{
+									"name": "activity_type",
+									"type": "String",
+									"description": "营销活动类型"
+								},
+								{
+									"name": "dicount_fee",
+									"type": "Number",
+									"description": "优惠金额"
+								}
+							]
+						},
+						{
+							"name": "sub_out_order_id",
+							"type": "String",
+							"description": "外部子单号",
+							"required": true
+						},
+						{
+							"name": "handling_type",
+							"type": "String",
+							"description": "加工方式说明, 非加工品不需要填写"
+						}
+					]
+				},
+				{
+					"name": "pay_fee",
+					"type": "Number",
+					"description": "实际支付金额",
+					"required": true
+				},
+				{
+					"name": "origin_fee",
+					"type": "Number",
+					"description": "原始金额",
+					"required": true
+				},
+				{
+					"name": "discount_fee",
+					"type": "Number",
+					"description": "优惠金额",
+					"required": true
+				},
+				{
+					"name": "post_fee",
+					"type": "Number",
+					"description": "运费",
+					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店Id",
+					"required": true
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店Id",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "订单状态  (创建订单： CREATED  已支付订单：  PAID_DONE)",
+					"required": true
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创单时间",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "OrderOperateResult",
+					"description": "返回内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "盒马主单号",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部主单号",
+							"required": true
+						},
+						{
+							"name": "sub_order_results",
+							"type": "SubOrder[]",
+							"description": "子单列表信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sub_biz_order_id",
+									"type": "String",
+									"description": "盒马子单号",
+									"required": true
+								},
+								{
+									"name": "sub_out_order_id",
+									"type": "String",
+									"description": "外部子单号",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

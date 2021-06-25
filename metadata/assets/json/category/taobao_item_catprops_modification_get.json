@@ -1,0 +1,67 @@
+{
+	"name": "taobao.item.catprops.modification.get",
+	"apiChineseName": "查询商品类目属性变更",
+	"description": "查询商品类目属性变更信息",
+	"requestParams": [
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "类目Id（与商品Id二选一即可）"
+		},
+		{
+			"name": "item_id",
+			"type": "String",
+			"description": "商品Id（与类目Id二选一即可。若同时传入商品Id和类目Id，则优先使用商品Id。若填写商品Id，则起始时间设为该商品最近修改时间）"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "起始请求时间（建议传入，默认为90天内）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "PropsModificationResult []",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "property_id",
+					"type": "Number",
+					"description": "类目属性Id",
+					"required": true
+				},
+				{
+					"name": "required",
+					"type": "Number",
+					"description": "是否必填，0-否，1-是",
+					"required": true
+				},
+				{
+					"name": "multi_select",
+					"type": "Number",
+					"description": "是否多选，0-否，1-是",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "变更类型: 删除(1), 修改(2), 新增(3)",
+					"required": true
+				},
+				{
+					"name": "ds",
+					"type": "String",
+					"description": "变更日期",
+					"required": true
+				},
+				{
+					"name": "property_name",
+					"type": "String",
+					"description": "属性名称",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,89 @@
+{
+	"name": "taobao.wlb.imports.resource.transferstore.get",
+	"apiChineseName": "根据指定的资源获取所有中转仓列表",
+	"description": "根据指定的资源获取所有中转仓列表",
+	"requestParams": [
+		{
+			"name": "resource_id",
+			"type": "Number",
+			"description": "通过taobao.wlb.imports.resource.get接口查询出来的资源ID",
+			"required": true
+		},
+		{
+			"name": "from_id",
+			"type": "Number",
+			"description": "卖家发货地址的区域ID，如果不填则为默认发货地址ID"
+		},
+		{
+			"name": "cids",
+			"type": "Number[]",
+			"description": "商品前台叶子类目ID",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "to_address",
+			"type": "ReciverAddressDo",
+			"description": "买家收货地信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "detail_address",
+					"type": "String",
+					"description": "详细地址"
+				},
+				{
+					"name": "street",
+					"type": "String",
+					"description": "街道"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省级别",
+					"required": true
+				},
+				{
+					"name": "district",
+					"type": "String",
+					"description": "区、县级别"
+				},
+				{
+					"name": "country",
+					"type": "String",
+					"description": "国级别",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "市级别"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "stores",
+			"type": "TranStoreResult []",
+			"description": "符合条件的中转仓列表",
+			"subParams": [
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "中转仓名字"
+				},
+				{
+					"name": "store_address",
+					"type": "String",
+					"description": "中转仓地址"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "中转仓代码"
+				}
+			]
+		}
+	]
+}

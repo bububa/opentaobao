@@ -1,0 +1,38 @@
+{
+	"name": "taobao.promotion.coupon.add",
+	"apiChineseName": "创建店铺优惠券接口",
+	"description": "创建店铺优惠券。有效期内的店铺优惠券总数量不超过50张",
+	"requestParams": [
+		{
+			"name": "denominations",
+			"type": "Number",
+			"description": "优惠券的面额，必须是3，5，10，20，50，100",
+			"required": true,
+			"maxValue": 100,
+			"minValue": 3
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "优惠券的截止日期",
+			"required": true
+		},
+		{
+			"name": "condition",
+			"type": "Number",
+			"description": "订单满多少元才能用这个优惠券，500就是满500元才能使用"
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "优惠券的生效时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "coupon_id",
+			"type": "Number",
+			"description": "优惠券的id"
+		}
+	]
+}

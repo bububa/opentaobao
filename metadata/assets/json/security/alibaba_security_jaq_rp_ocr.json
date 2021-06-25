@@ -1,0 +1,110 @@
+{
+	"name": "alibaba.security.jaq.rp.ocr",
+	"apiChineseName": "聚安全实人认证证件OCR识别功能接口",
+	"description": "聚安全实人认证证件OCR识别功能接口",
+	"requestParams": [
+		{
+			"name": "verify_token",
+			"type": "String",
+			"description": "token",
+			"required": true
+		},
+		{
+			"name": "image_urls",
+			"type": "Json",
+			"description": "要识别的信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "RpidCardBo",
+			"description": "结果信息",
+			"subParams": [
+				{
+					"name": "card_type",
+					"type": "String",
+					"description": "类型",
+					"required": true
+				},
+				{
+					"name": "url_back_image",
+					"type": "String",
+					"description": "身份证背面照的URL地址",
+					"required": true
+				},
+				{
+					"name": "url_front_image",
+					"type": "String",
+					"description": "身份证正面照的URL地址",
+					"required": true
+				},
+				{
+					"name": "birth_day",
+					"type": "Date",
+					"description": "身份证上生日",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "身份证住址",
+					"required": true
+				},
+				{
+					"name": "sex",
+					"type": "RpSex",
+					"description": "性别",
+					"required": true,
+					"subParams": [
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "性别",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "身份证上的名字",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "公民身份证号码",
+					"required": true
+				},
+				{
+					"name": "r_p_i_d_card_image",
+					"type": "RpidCardImage",
+					"description": "RPIDCardImage",
+					"required": true,
+					"subParams": [
+						{
+							"name": "back_image_url",
+							"type": "String",
+							"description": "backImageUrl",
+							"required": true
+						},
+						{
+							"name": "card_type",
+							"type": "String",
+							"description": "cardType",
+							"required": true
+						},
+						{
+							"name": "front_image_url",
+							"type": "String",
+							"description": "frontImageUrl",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

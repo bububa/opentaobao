@@ -1,0 +1,66 @@
+{
+	"name": "alibaba.kclub.kc.getcategorytree",
+	"apiChineseName": "知识云-查询租户下类目树",
+	"description": "知识云-查询租户下类目树。通过租户id、类型(外部类目、帮助中心类目、内部类目)。",
+	"requestParams": [
+		{
+			"name": "tenant_id",
+			"type": "Number",
+			"description": "租户id",
+			"required": true
+		},
+		{
+			"name": "auth",
+			"type": "TenancyAuth",
+			"description": "鉴权参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "secret_key",
+					"type": "String",
+					"description": "鉴权秘钥",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "鉴权应用名称",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "String",
+					"description": "类目数据 JSONArray",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

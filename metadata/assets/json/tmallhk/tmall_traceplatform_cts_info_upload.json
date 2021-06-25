@@ -1,0 +1,214 @@
+{
+	"name": "tmall.traceplatform.cts.info.upload",
+	"apiChineseName": "CTS提交溯源信息",
+	"description": "cts上传溯源信息",
+	"requestParams": [
+		{
+			"name": "trace_info",
+			"type": "CtsInfo",
+			"description": "入参traceInfo",
+			"subParams": [
+				{
+					"name": "carriage",
+					"type": "CtsCarriage",
+					"description": "托运",
+					"subParams": [
+						{
+							"name": "begin",
+							"type": "Date",
+							"description": "托运开始时间"
+						},
+						{
+							"name": "carriage_no",
+							"type": "String",
+							"description": "托运单号"
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "托运公司名称"
+						},
+						{
+							"name": "end",
+							"type": "Date",
+							"description": "托运结束时间"
+						}
+					]
+				},
+				{
+					"name": "completed_ngtc",
+					"type": "CtsNgtc",
+					"description": "成品证书",
+					"subParams": [
+						{
+							"name": "report_no",
+							"type": "String",
+							"description": "ngtc证书编号"
+						},
+						{
+							"name": "report_verify_no",
+							"type": "String",
+							"description": "ngtc证书防伪码"
+						}
+					]
+				},
+				{
+					"name": "delivery",
+					"type": "CtsDelivery",
+					"description": "国内物流",
+					"subParams": [
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "快递公司名称"
+						},
+						{
+							"name": "delivery_no",
+							"type": "String",
+							"description": "快递单号"
+						},
+						{
+							"name": "delivery_time",
+							"type": "Date",
+							"description": "发件时间"
+						}
+					]
+				},
+				{
+					"name": "diamond_ngtc",
+					"type": "CtsNgtc",
+					"description": "裸钻证书",
+					"subParams": [
+						{
+							"name": "report_no",
+							"type": "String",
+							"description": "ngtc证书编号"
+						},
+						{
+							"name": "report_verify_no",
+							"type": "String",
+							"description": "ngtc证书防伪码"
+						}
+					]
+				},
+				{
+					"name": "item_id",
+					"type": "String",
+					"description": "货品ID"
+				},
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "订单号"
+				},
+				{
+					"name": "product_id",
+					"type": "String",
+					"description": "商品ID"
+				},
+				{
+					"name": "ring",
+					"type": "CtsRing",
+					"description": "戒托信息",
+					"subParams": [
+						{
+							"name": "completed_time",
+							"type": "Date",
+							"description": "成品生产完成时间"
+						},
+						{
+							"name": "ext_info",
+							"description": "额外信息"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "戒托货品ID"
+						},
+						{
+							"name": "mount_time",
+							"type": "Date",
+							"description": "戒托镶嵌完成时间"
+						},
+						{
+							"name": "order_no",
+							"type": "String",
+							"description": "戒托订单号"
+						},
+						{
+							"name": "product_id",
+							"type": "String",
+							"description": "戒托商品Id"
+						},
+						{
+							"name": "ring_time",
+							"type": "Date",
+							"description": "戒托生产完成时间"
+						},
+						{
+							"name": "sub_order_no",
+							"type": "String",
+							"description": "戒托子订单号"
+						}
+					]
+				},
+				{
+					"name": "shipment",
+					"type": "CtsShipment",
+					"description": "国内报关",
+					"subParams": [
+						{
+							"name": "begin",
+							"type": "Date",
+							"description": "报关开始时间"
+						},
+						{
+							"name": "end",
+							"type": "Date",
+							"description": "报关结束时间"
+						},
+						{
+							"name": "shipment_no",
+							"type": "String",
+							"description": "报关单号"
+						}
+					]
+				},
+				{
+					"name": "sub_order_no",
+					"type": "String",
+					"description": "子订单号"
+				},
+				{
+					"name": "trace_code",
+					"type": "String",
+					"description": "溯源码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "参数code"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "参数msg"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否正常"
+				}
+			]
+		}
+	]
+}

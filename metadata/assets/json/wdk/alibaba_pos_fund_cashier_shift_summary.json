@@ -1,0 +1,153 @@
+{
+	"name": "alibaba.pos.fund.cashier.shift.summary",
+	"apiChineseName": "收银换班数据同步",
+	"description": "收银换班数据同步，将每天收银换班的数据回流给商家。",
+	"requestParams": [
+		{
+			"name": "cashier_shift_fund_request",
+			"type": "CashierShiftFundRequest",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "shop_code",
+					"type": "String",
+					"description": "门店编号 示例 DRF4012（优先使用）"
+				},
+				{
+					"name": "shop_id",
+					"type": "Number",
+					"description": "门店Id（可选，shopCode为空时使用shopId）"
+				},
+				{
+					"name": "biz_date",
+					"type": "String",
+					"description": "业务日期 yyyy-MM-dd 格式（优先使用）"
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "开始时间 yyyy-MM-dd HH:mm:ss(可选，bizDate为空时使用startTime)"
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "结束时间 yyyy-MM-dd HH:mm:ss(可选，bizDate为空时使用endTime)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "biz_ext_map",
+					"type": "Json",
+					"description": "扩展字段",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "CashierShiftFundSummaryDTO[]",
+					"description": "模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商户编号",
+							"required": true
+						},
+						{
+							"name": "shop_code",
+							"type": "String",
+							"description": "门店编号",
+							"required": true
+						},
+						{
+							"name": "biz_date",
+							"type": "String",
+							"description": "业务日期",
+							"required": true
+						},
+						{
+							"name": "pos_no",
+							"type": "String",
+							"description": "POS机编号",
+							"required": true
+						},
+						{
+							"name": "shift_no",
+							"type": "String",
+							"description": "值班编号",
+							"required": true
+						},
+						{
+							"name": "cashier_name",
+							"type": "String",
+							"description": "收银员姓名",
+							"required": true
+						},
+						{
+							"name": "pay_method",
+							"type": "String",
+							"description": "支付方式",
+							"required": true
+						},
+						{
+							"name": "system_amount",
+							"type": "String",
+							"description": "系统统计金额",
+							"required": true
+						},
+						{
+							"name": "input_amount",
+							"type": "String",
+							"description": "输入金额",
+							"required": true
+						},
+						{
+							"name": "settle_status",
+							"type": "String",
+							"description": "单据状态",
+							"required": true
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展字段",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

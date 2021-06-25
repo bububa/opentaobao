@@ -1,0 +1,118 @@
+{
+	"name": "taobao.vas.subsc.search",
+	"apiChineseName": "订购记录导出",
+	"description": "用于ISV查询自己名下的应用及收费项目的订购记录",
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "一页包含的记录数",
+			"maxValue": 200
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "article_code",
+			"type": "String",
+			"description": "应用收费代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的收费代码",
+			"required": true
+		},
+		{
+			"name": "item_code",
+			"type": "String",
+			"description": "收费项目代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得收费项目代码"
+		},
+		{
+			"name": "start_deadline",
+			"type": "Date",
+			"description": "到期时间起始值（当start_deadline和end_deadline都不填写时，默认返回最近90天的数据）"
+		},
+		{
+			"name": "end_deadline",
+			"type": "Date",
+			"description": "到期时间结束值"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "订购记录状态，1=有效 2=过期 空=全部"
+		},
+		{
+			"name": "autosub",
+			"type": "Boolean",
+			"description": "是否自动续费，true=自动续费 false=非自动续费 空=全部"
+		},
+		{
+			"name": "expire_notice",
+			"type": "Boolean",
+			"description": "是否到期提醒，true=到期提醒 false=非到期提醒 空=全部"
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "淘宝会员名"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "article_subs",
+			"type": "ArticleSub []",
+			"description": "订购关系对象",
+			"subParams": [
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "淘宝会员名"
+				},
+				{
+					"name": "article_name",
+					"type": "String",
+					"description": "应用名称"
+				},
+				{
+					"name": "article_code",
+					"type": "String",
+					"description": "应用收费代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的收费代码"
+				},
+				{
+					"name": "item_name",
+					"type": "String",
+					"description": "收费项目名称"
+				},
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "收费项目代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得收费项目代码"
+				},
+				{
+					"name": "deadline",
+					"type": "Date",
+					"description": "订购关系到期时间"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态，1=有效 2=过期"
+				},
+				{
+					"name": "autosub",
+					"type": "Boolean",
+					"description": "是否自动续费"
+				},
+				{
+					"name": "expire_notice",
+					"type": "Boolean",
+					"description": "是否到期提醒"
+				}
+			]
+		},
+		{
+			"name": "total_item",
+			"type": "Number",
+			"description": "总记录数"
+		}
+	]
+}

@@ -1,0 +1,54 @@
+{
+	"name": "aliexpress.social.item.promotion",
+	"apiChineseName": "获取推广链接",
+	"description": "获取商品社交推广链接",
+	"requestParams": [
+		{
+			"name": "target_url",
+			"type": "String",
+			"description": "推广的商品链接"
+		},
+		{
+			"name": "af",
+			"type": "String",
+			"description": "子渠道号"
+		},
+		{
+			"name": "cn",
+			"type": "String",
+			"description": "campaign Id"
+		},
+		{
+			"name": "cv",
+			"type": "String",
+			"description": "creative id"
+		},
+		{
+			"name": "dp",
+			"type": "String",
+			"description": "click id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "promotion_url",
+			"type": "String",
+			"description": "推广链接"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

@@ -1,0 +1,19 @@
+{
+	"name": "alibaba.taobao.shop.cat.neo.get",
+	"apiChineseName": "店铺mtop接口鉴权虚拟api",
+	"description": "获取优惠券信息，仅作客户端鉴权虚拟api使用",
+	"requestParams": [
+		{
+			"name": "un_named",
+			"type": "String",
+			"description": "客户端鉴权虚拟api"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "unnamed",
+			"type": "String",
+			"description": "客户端鉴权虚拟api"
+		}
+	]
+}

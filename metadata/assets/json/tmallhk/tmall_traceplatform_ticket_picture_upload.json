@@ -1,0 +1,52 @@
+{
+	"name": "tmall.traceplatform.ticket.picture.upload",
+	"apiChineseName": "上传小票图片",
+	"description": "uploadPicture",
+	"requestParams": [
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "子订单号",
+			"required": true
+		},
+		{
+			"name": "file",
+			"type": "byte[]",
+			"description": "图片二进制流，只支持jpg/jpeg/png格式",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "参数code",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "参数msg",
+					"required": true
+				},
+				{
+					"name": "obj",
+					"type": "String",
+					"description": "上传图片的url",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "参数success",
+					"required": true
+				}
+			]
+		}
+	]
+}

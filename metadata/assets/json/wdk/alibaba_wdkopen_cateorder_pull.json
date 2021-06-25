@@ -1,0 +1,64 @@
+{
+	"name": "alibaba.wdkopen.cateorder.pull",
+	"apiChineseName": "商户回传餐饮加工单状态",
+	"description": "商户回传餐饮加工单状态",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "经营店ID",
+			"required": true
+		},
+		{
+			"name": "status",
+			"type": "String",
+			"description": "回传状态,PREPARING,准备中，制作中；PRODUCE_FINISH，制作完成；FETCHED 已取餐；  CANCEL，加工失败/取消",
+			"required": true
+		},
+		{
+			"name": "out_order_id",
+			"type": "String",
+			"description": "主站主订单ID",
+			"required": true
+		},
+		{
+			"name": "sub_out_order_ids",
+			"type": "Json[]",
+			"description": "主站子订单ID列表, 为空则表示回传整单状态",
+			"maxListSize": 999
+		}
+	],
+	"responseParams": [
+		{
+			"name": "top_base_result",
+			"type": "TopBaseResult",
+			"description": "调用返回",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "调用是否成功",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "错误码说明",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "调用处理结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

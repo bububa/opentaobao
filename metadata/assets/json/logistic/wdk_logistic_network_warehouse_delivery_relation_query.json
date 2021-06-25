@@ -1,0 +1,229 @@
+{
+	"name": "wdk.logistic.network.warehouse.delivery.relation.query",
+	"apiChineseName": "仓站（网格仓自提点）关系查询",
+	"description": "盒马集市，仓站（网格仓自提点）关系查询",
+	"requestParams": [
+		{
+			"name": "param_warehouse_delivery_relation_page_query_request",
+			"type": "WarehouseDeliveryRelationPageQueryRequest",
+			"description": "参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "from_org_resource_code",
+					"type": "String",
+					"description": "网格仓外部编码 和fromResourceCode 2选1"
+				},
+				{
+					"name": "from_org_resource_code_list",
+					"type": "String[]",
+					"description": "网格仓外部编码列表"
+				},
+				{
+					"name": "from_resource_code",
+					"type": "String",
+					"description": "网格仓资源编码 和fromOrgResourceCode 2选1"
+				},
+				{
+					"name": "from_resource_code_list",
+					"type": "String[]",
+					"description": "网格仓资源编码列表"
+				},
+				{
+					"name": "from_resource_type",
+					"type": "String",
+					"description": "仓资源类型"
+				},
+				{
+					"name": "network_code",
+					"type": "String",
+					"description": "网络编码"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小，最大300"
+				},
+				{
+					"name": "show_total",
+					"type": "Number",
+					"description": "是否返回汇总数"
+				},
+				{
+					"name": "to_org_resource_code",
+					"type": "String",
+					"description": "自提点编码 和toResourceCode 2选1"
+				},
+				{
+					"name": "to_resource_code",
+					"type": "String",
+					"description": "自提点编码 和toOrgResourceCode 2选1"
+				},
+				{
+					"name": "to_resource_code_list",
+					"type": "String[]",
+					"description": "自提点列表"
+				},
+				{
+					"name": "to_resource_type",
+					"type": "String",
+					"description": "自提点资源类型"
+				},
+				{
+					"name": "start_gmt_modified",
+					"type": "Date",
+					"description": "开始时间"
+				},
+				{
+					"name": "end_gmt_modified",
+					"type": "Date",
+					"description": "结束时间"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "LogisticsResult",
+			"description": "参数",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Pagination",
+					"description": "返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "results",
+							"type": "WarehouseDeliveryRelationDto[]",
+							"description": "数据列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "data_version",
+									"type": "Number",
+									"description": "数据版本号",
+									"required": true
+								},
+								{
+									"name": "from_org_resource_code",
+									"type": "String",
+									"description": "网格仓外部编码",
+									"required": true
+								},
+								{
+									"name": "from_org_source",
+									"type": "String",
+									"description": "from资源来源",
+									"required": true
+								},
+								{
+									"name": "from_resource_code",
+									"type": "String",
+									"description": "网格仓编码",
+									"required": true
+								},
+								{
+									"name": "from_resource_name",
+									"type": "String",
+									"description": "网格仓名称",
+									"required": true
+								},
+								{
+									"name": "from_resource_type",
+									"type": "String",
+									"description": "from资源类型",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "ID",
+									"required": true
+								},
+								{
+									"name": "merchant_code",
+									"type": "String",
+									"description": "商家",
+									"required": true
+								},
+								{
+									"name": "network_code",
+									"type": "String",
+									"description": "网络编码",
+									"required": true
+								},
+								{
+									"name": "relation_type",
+									"type": "String",
+									"description": "关系类型",
+									"required": true
+								},
+								{
+									"name": "to_org_resource_code",
+									"type": "String",
+									"description": "自提点外部编码",
+									"required": true
+								},
+								{
+									"name": "to_org_source",
+									"type": "String",
+									"description": "资源来源",
+									"required": true
+								},
+								{
+									"name": "to_resource_code",
+									"type": "String",
+									"description": "自提点编码",
+									"required": true
+								},
+								{
+									"name": "to_resource_name",
+									"type": "String",
+									"description": "自提点名称",
+									"required": true
+								},
+								{
+									"name": "to_resource_type",
+									"type": "String",
+									"description": "to资源类型",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "异常消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

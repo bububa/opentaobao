@@ -1,0 +1,268 @@
+{
+	"name": "alitrip.agent.flight.sell.ticketing.detail",
+	"apiChineseName": "销售出票详情",
+	"description": "销售出票详情",
+	"requestParams": [
+		{
+			"name": "domestic_intl",
+			"type": "Number",
+			"description": "国内国际标识"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "飞猪订单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "出参对象",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Data",
+					"description": "出参对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "agent_id",
+							"type": "Number",
+							"description": "店铺id",
+							"required": true
+						},
+						{
+							"name": "domestic_intl",
+							"type": "Number",
+							"description": "国内国际标识",
+							"required": true
+						},
+						{
+							"name": "order_id",
+							"type": "String",
+							"description": "飞猪订单号",
+							"required": true
+						},
+						{
+							"name": "pay_time",
+							"type": "Date",
+							"description": "支付时间",
+							"required": true
+						},
+						{
+							"name": "issue_time",
+							"type": "Date",
+							"description": "出票时间",
+							"required": true
+						},
+						{
+							"name": "issue_list",
+							"type": "IssueList[]",
+							"description": "出票对象",
+							"required": true,
+							"subParams": [
+								{
+									"name": "cert_no",
+									"type": "String",
+									"description": "证件信息",
+									"required": true
+								},
+								{
+									"name": "passenger_name",
+									"type": "String",
+									"description": "乘机人姓名",
+									"required": true
+								},
+								{
+									"name": "cert_type",
+									"type": "Number",
+									"description": "证件类型",
+									"required": true
+								},
+								{
+									"name": "tickets",
+									"type": "String[]",
+									"description": "票号",
+									"required": true
+								},
+								{
+									"name": "passenger_type",
+									"type": "Number",
+									"description": "乘客类型",
+									"required": true
+								},
+								{
+									"name": "ticket_price",
+									"type": "Number",
+									"description": "票面价",
+									"required": true
+								},
+								{
+									"name": "pnr",
+									"type": "String",
+									"description": "pnr",
+									"required": true
+								},
+								{
+									"name": "taxes",
+									"type": "Taxes[]",
+									"description": "税项对象",
+									"required": true,
+									"subParams": [
+										{
+											"name": "amount",
+											"type": "Number",
+											"description": "税值",
+											"required": true
+										},
+										{
+											"name": "tax_code",
+											"type": "String",
+											"description": "税项二字码",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "promotion",
+									"type": "Number",
+									"description": "优惠价格",
+									"required": true
+								},
+								{
+									"name": "segments",
+									"type": "Segments[]",
+									"description": "航段",
+									"required": true,
+									"subParams": [
+										{
+											"name": "cabin_class",
+											"type": "String",
+											"description": "舱等",
+											"required": true
+										},
+										{
+											"name": "flight_no",
+											"type": "String",
+											"description": "航班号",
+											"required": true
+										},
+										{
+											"name": "dep_time",
+											"type": "Date",
+											"description": "起飞时间",
+											"required": true
+										},
+										{
+											"name": "arr_city",
+											"type": "String",
+											"description": "到达城市",
+											"required": true
+										},
+										{
+											"name": "dep_city",
+											"type": "String",
+											"description": "出发城市",
+											"required": true
+										},
+										{
+											"name": "cabin",
+											"type": "String",
+											"description": "舱位",
+											"required": true
+										},
+										{
+											"name": "segment_index",
+											"type": "Number",
+											"description": "航段序号",
+											"required": true
+										},
+										{
+											"name": "arr_airport",
+											"type": "String",
+											"description": "到达机场",
+											"required": true
+										},
+										{
+											"name": "dep_airport",
+											"type": "String",
+											"description": "出发机场",
+											"required": true
+										},
+										{
+											"name": "od_index",
+											"type": "Number",
+											"description": "航程序号",
+											"required": true
+										},
+										{
+											"name": "arr_time",
+											"type": "Date",
+											"description": "到达时间",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "mobile",
+									"type": "String",
+									"description": "联系电话",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "sla",
+							"type": "String",
+							"description": "sla",
+							"required": true
+						},
+						{
+							"name": "commission",
+							"type": "Number",
+							"description": "佣金",
+							"required": true
+						},
+						{
+							"name": "currency",
+							"type": "String",
+							"description": "币种",
+							"required": true
+						},
+						{
+							"name": "tags",
+							"type": "String[]",
+							"description": "订单标签",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "订单状态",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,68 @@
+{
+	"name": "taobao.wlb.wms.item.combination.get",
+	"apiChineseName": "查询组合商品的组合关系",
+	"description": "查询组合商品的组合关系",
+	"requestParams": [
+		{
+			"name": "itemid",
+			"type": "Number",
+			"description": "货品Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回结果",
+			"subParams": [
+				{
+					"name": "wl_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "wl_error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "wl_error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "sub_item_list",
+					"type": "SubItemList[]",
+					"description": "子货品列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_item",
+							"type": "SubItem",
+							"description": "子货品",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sc_item_id",
+									"type": "Number",
+									"description": "子货品ID",
+									"required": true
+								},
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "子货品数量",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

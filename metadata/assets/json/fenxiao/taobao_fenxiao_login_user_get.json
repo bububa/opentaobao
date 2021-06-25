@@ -1,0 +1,34 @@
+{
+	"name": "taobao.fenxiao.login.user.get",
+	"apiChineseName": "获取分销用户登录信息",
+	"description": "获取用户登录信息",
+	"responseParams": [
+		{
+			"name": "login_user",
+			"type": "LoginUser",
+			"description": "登录用户信息",
+			"subParams": [
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "分销用户ID"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "会员NICK"
+				},
+				{
+					"name": "user_type",
+					"type": "String",
+					"description": "分销用户类型(1:分销商，2:供应商，3:品牌商；2、3都表示有供货能力，只是身份不同)"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "入驻时间"
+				}
+			]
+		}
+	]
+}

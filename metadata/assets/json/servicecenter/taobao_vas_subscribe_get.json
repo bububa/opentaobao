@@ -1,0 +1,38 @@
+{
+	"name": "taobao.vas.subscribe.get",
+	"apiChineseName": "订购关系查询",
+	"description": "用于ISV根据登录进来的淘宝会员名查询该为该会员开通哪些收费项目，ISV只能查询自己名下的应用及收费项目的订购情况",
+	"requestParams": [
+		{
+			"name": "article_code",
+			"type": "String",
+			"description": "商品编码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得该应用的商品代码",
+			"required": true
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "淘宝会员名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "article_user_subscribes",
+			"type": "ArticleUserSubscribe []",
+			"description": "用户订购信息",
+			"subParams": [
+				{
+					"name": "item_code",
+					"type": "String",
+					"description": "收费项目代码，从合作伙伴后台（my.open.taobao.com）-收费管理-收费项目列表 能够获得收费项目代码"
+				},
+				{
+					"name": "deadline",
+					"type": "Date",
+					"description": "订购关系到期时间"
+				}
+			]
+		}
+	]
+}

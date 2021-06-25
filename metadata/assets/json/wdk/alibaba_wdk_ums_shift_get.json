@@ -1,0 +1,133 @@
+{
+	"name": "alibaba.wdk.ums.shift.get",
+	"apiChineseName": "移库单获取",
+	"description": "移库单获取",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "店仓code，指的是库调对象，对应一个物理店或仓编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "list",
+					"type": "StockShiftDTO[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_list",
+							"type": "StockShiftDetailDTO[]",
+							"description": "itemList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "batch_info",
+									"type": "String",
+									"description": "batchInfo",
+									"required": true
+								},
+								{
+									"name": "out_dept_code",
+									"type": "String",
+									"description": "outDeptCode",
+									"required": true
+								},
+								{
+									"name": "in_dept_code",
+									"type": "String",
+									"description": "inDeptCode",
+									"required": true
+								},
+								{
+									"name": "out_cabinet_code",
+									"type": "String",
+									"description": "outCabinetCode",
+									"required": true
+								},
+								{
+									"name": "in_cabinet_code",
+									"type": "String",
+									"description": "inCabinetCode",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "quantity",
+									"required": true
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "itemCode",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "remark",
+							"required": true
+						},
+						{
+							"name": "occurrence_date",
+							"type": "Date",
+							"description": "occurrenceDate",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "warehouseCode",
+							"required": true
+						},
+						{
+							"name": "document_no",
+							"type": "String",
+							"description": "documentNo",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid",
+							"required": true
+						},
+						{
+							"name": "shift_describe",
+							"type": "String",
+							"description": "shiftDescribe",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

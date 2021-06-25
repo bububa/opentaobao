@@ -1,0 +1,24 @@
+{
+	"name": "taobao.wangwang.abstract.initialize",
+	"apiChineseName": "模糊查询服务初始化",
+	"description": "模糊查询服务初始化，只支持json返回",
+	"requestParams": [
+		{
+			"name": "charset",
+			"type": "String",
+			"description": "传入参数的字符集"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "0或-1表示成功或失败"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "当ret_code=-1时这个变量才有"
+		}
+	]
+}

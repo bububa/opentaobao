@@ -1,0 +1,17 @@
+{
+	"name": "taobao.caipiao.signstatus.check",
+	"apiChineseName": "检查用户是否签署支付宝代购协议",
+	"description": "检查用户是否签署了支付宝代扣协议。如果签署了，返回true; 如果没签署，返回false, 同时返回签署代扣协议的Url。",
+	"responseParams": [
+		{
+			"name": "sign",
+			"type": "Boolean",
+			"description": "是否签署了支付宝代扣协议"
+		},
+		{
+			"name": "sign_url",
+			"type": "String",
+			"description": "签署支付宝代扣协议的Url"
+		}
+	]
+}

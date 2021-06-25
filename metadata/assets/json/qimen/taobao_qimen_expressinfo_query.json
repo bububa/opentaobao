@@ -1,0 +1,92 @@
+{
+	"name": "taobao.qimen.expressinfo.query",
+	"apiChineseName": "配送公司信息查询接口",
+	"description": "配送公司信息查询",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "expressCode",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "expressInfos",
+					"type": "ExpressInfo[]",
+					"description": "奇门仓储字段",
+					"required": true,
+					"subParams": [
+						{
+							"name": "expressCode",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "expressName",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "brandCode",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "brandName",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

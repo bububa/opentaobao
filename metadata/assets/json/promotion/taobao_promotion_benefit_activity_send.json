@@ -1,0 +1,105 @@
+{
+	"name": "taobao.promotion.benefit.activity.send",
+	"apiChineseName": "活动权益发放接口",
+	"description": "活动权益发放接口，用于卖家针对活动进行权益发放",
+	"requestParams": [
+		{
+			"name": "send_request",
+			"type": "BenefitSingleSendRequest",
+			"description": "单个权益发放请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "benefit_type",
+					"type": "String",
+					"description": "权益类型"
+				},
+				{
+					"name": "send_count",
+					"type": "Number",
+					"description": "权益发放数量",
+					"required": true
+				},
+				{
+					"name": "unique_id",
+					"type": "String",
+					"description": "幂等ID，代表一次发放。如，超时重试，需要保证幂等ID不变。不同的幂等ID代表两次不同得发放，因业务方更换幂等ID导致的超发问题由业务方负责"
+				},
+				{
+					"name": "relation_id",
+					"type": "Number",
+					"description": "活动id"
+				},
+				{
+					"name": "detail_id",
+					"type": "Number",
+					"description": "活动详情id"
+				}
+			]
+		},
+		{
+			"name": "receiver_id",
+			"type": "Number",
+			"description": "非混淆的接收者id"
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "混淆的接收者nick"
+		},
+		{
+			"name": "plat_nick",
+			"type": "String",
+			"description": "非混淆的接收者nick"
+		},
+		{
+			"name": "mix_receiver_id",
+			"type": "String",
+			"description": "混淆的接收者id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		},
+		{
+			"name": "session_id",
+			"type": "String",
+			"description": "事务id;发放时，不传入事务id,发放返回结果中会包含事务id；若发放失败，使用返回的事务id进行调用，则可以重试失败的操作"
+		},
+		{
+			"name": "result_list",
+			"type": "BenefitSendResultExt []",
+			"description": "返回活动详情级别的权益发放情况",
+			"subParams": [
+				{
+					"name": "index_id",
+					"type": "Number",
+					"description": "活动详情id"
+				},
+				{
+					"name": "error_code_list",
+					"type": "String[]",
+					"description": "异常码列表"
+				},
+				{
+					"name": "failure_count",
+					"type": "Number",
+					"description": "失败数"
+				},
+				{
+					"name": "success_count",
+					"type": "Number",
+					"description": "成功数"
+				}
+			]
+		},
+		{
+			"name": "unique_id",
+			"type": "String",
+			"description": "uniqueId"
+		}
+	]
+}

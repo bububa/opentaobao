@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.aliqin.fc.voice.num.singlecall",
+	"apiChineseName": "语音通知",
+	"description": "向指定手机号码发起单向呼叫，播放指定的语音文件内容。使用前需要在阿里大于管理中心添加去电显示号码与语音文件。",
+	"requestParams": [
+		{
+			"name": "extend",
+			"type": "String",
+			"description": "公共回传参数，在“消息返回”中会透传回该参数；举例：用户可以传入自己下级的会员ID，在消息返回时，该会员ID会包含在内，用户可以根据该会员ID识别是哪位会员使用了你的应用"
+		},
+		{
+			"name": "called_num",
+			"type": "String",
+			"description": "被叫号码，支持国内手机号与固话号码,格式如下057188773344,13911112222,4001112222,95500",
+			"required": true
+		},
+		{
+			"name": "called_show_num",
+			"type": "String",
+			"description": "被叫号显，传入的显示号码必须是阿里大于“管理中心-号码管理”中申请通过的号码",
+			"required": true
+		},
+		{
+			"name": "voice_code",
+			"type": "String",
+			"description": "语音文件ID，传入的语音文件必须是在阿里大于“管理中心-语音文件管理”中的可用语音文件",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BizResult",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "返回结果"
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true表示成功，false表示失败"
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回信息描述"
+				}
+			]
+		}
+	]
+}

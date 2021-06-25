@@ -1,0 +1,53 @@
+{
+	"name": "taobao.koubei.saas.base.operation.config.sync",
+	"apiChineseName": "商家基础经营设置信息同步",
+	"description": "ISV接入口碑SAAS后, 经营设置数据同步到口碑SAAS",
+	"requestParams": [
+		{
+			"name": "merchant_id",
+			"type": "String",
+			"description": "商户ID",
+			"required": true
+		},
+		{
+			"name": "request_id",
+			"type": "String",
+			"description": "请求ID",
+			"required": true
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务类型。支付方式：payment_method",
+			"required": true
+		},
+		{
+			"name": "operation_config",
+			"type": "String",
+			"description": "经营设置json串",
+			"required": true
+		},
+		{
+			"name": "outer_operator_id",
+			"type": "String",
+			"description": "操作员ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "异常信息"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "异常码"
+		},
+		{
+			"name": "biz_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

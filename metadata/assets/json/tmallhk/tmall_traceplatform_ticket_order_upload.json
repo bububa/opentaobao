@@ -1,0 +1,101 @@
+{
+	"name": "tmall.traceplatform.ticket.order.upload",
+	"apiChineseName": "上传小票数据",
+	"description": "upsertOrderBySeller",
+	"requestParams": [
+		{
+			"name": "ticket_order",
+			"type": "TicketOrderUpdator",
+			"description": "上传小票参数",
+			"subParams": [
+				{
+					"name": "agent_name",
+					"type": "String",
+					"description": "买手姓名"
+				},
+				{
+					"name": "agent_passport_exp_date",
+					"type": "Date",
+					"description": "买手护照过期时间"
+				},
+				{
+					"name": "agent_passports_arr_list",
+					"type": "String[]",
+					"description": "买手护照截图"
+				},
+				{
+					"name": "agent_pay_time",
+					"type": "Date",
+					"description": "买手付款时间"
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "子订单号"
+				},
+				{
+					"name": "brand_name",
+					"type": "String",
+					"description": "品牌名"
+				},
+				{
+					"name": "locker",
+					"type": "Number",
+					"description": "是否锁扣，1是0否"
+				},
+				{
+					"name": "locker_pictures_arr_list",
+					"type": "String[]",
+					"description": "锁扣照片"
+				},
+				{
+					"name": "payment_records_arr_list",
+					"type": "String[]",
+					"description": "银行付款记录"
+				},
+				{
+					"name": "purchased_place",
+					"type": "String",
+					"description": "购买地"
+				},
+				{
+					"name": "purchased_place_pictures_arr_list",
+					"type": "String[]",
+					"description": "购买地照片"
+				},
+				{
+					"name": "tickets_arr_list",
+					"type": "String[]",
+					"description": "小票截图"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DataResult",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "参数code",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "参数msg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "参数success",
+					"required": true
+				}
+			]
+		}
+	]
+}

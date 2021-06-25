@@ -1,0 +1,54 @@
+{
+	"name": "taobao.weike.eservice.subusers.get",
+	"apiChineseName": "客服外包订单分配的商家子账号列表",
+	"description": "获取客服外包订单分配的商家子账号列表，以及授权状态",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AuthorizedAccountWrapper",
+			"description": "商家子账号查询结果",
+			"subParams": [
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "商家子账号记录数",
+					"required": true
+				},
+				{
+					"name": "sub_users",
+					"type": "SubUser[]",
+					"description": "商家子账号列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "state_des",
+							"type": "String",
+							"description": "授权状态描述",
+							"required": true
+						},
+						{
+							"name": "state",
+							"type": "Number",
+							"description": "授权状态: 1表示授权，0表示取消授权，-1表示失效",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "商家子账号昵称",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

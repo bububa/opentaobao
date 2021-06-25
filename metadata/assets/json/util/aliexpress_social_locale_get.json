@@ -1,0 +1,70 @@
+{
+	"name": "aliexpress.social.locale.get",
+	"apiChineseName": "Locale获取接口",
+	"description": "新增Locale获取接口",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ItemPickPagingResult",
+			"description": "包类型",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "LocaleDto[]",
+					"description": "结果封装",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "String",
+							"description": "Locale编码",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "Locale名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "page_no",
+					"type": "Number",
+					"description": "页码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页数据条数",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总记录条数",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

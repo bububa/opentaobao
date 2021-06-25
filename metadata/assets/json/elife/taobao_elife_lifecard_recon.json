@@ -1,0 +1,40 @@
+{
+	"name": "taobao.elife.lifecard.recon",
+	"apiChineseName": "查询对账文件地址接口",
+	"description": "查询对账文件地址接口",
+	"requestParams": [
+		{
+			"name": "op_date",
+			"type": "String",
+			"description": "对账日期(YYYYMMDD)",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "结果描述"
+		},
+		{
+			"name": "op_date",
+			"type": "String",
+			"description": "对账日期"
+		},
+		{
+			"name": "successed",
+			"type": "Boolean",
+			"description": "成功标志"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "recon_file_url",
+			"type": "String",
+			"description": "下载下载文件"
+		}
+	]
+}

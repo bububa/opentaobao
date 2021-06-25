@@ -1,0 +1,55 @@
+{
+	"name": "taobao.wireless.share.tpwd.query",
+	"apiChineseName": "查询解析淘口令",
+	"description": "查询解析淘口令",
+	"requestParams": [
+		{
+			"name": "password_content",
+			"type": "String",
+			"description": "淘口令",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "content",
+			"type": "String",
+			"description": "淘口令-文案"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "淘口令-宝贝"
+		},
+		{
+			"name": "price",
+			"type": "String",
+			"description": "如果是宝贝，则为宝贝价格"
+		},
+		{
+			"name": "pic_url",
+			"type": "String",
+			"description": "图片url"
+		},
+		{
+			"name": "suc",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "跳转url(长链)"
+		},
+		{
+			"name": "native_url",
+			"type": "String",
+			"description": "nativeUrl"
+		},
+		{
+			"name": "thumb_pic_url",
+			"type": "String",
+			"description": "thumbPicUrl"
+		}
+	]
+}

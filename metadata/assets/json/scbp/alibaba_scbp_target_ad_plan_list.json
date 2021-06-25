@@ -1,0 +1,94 @@
+{
+	"name": "alibaba.scbp.target.ad.plan.list",
+	"apiChineseName": "定向推广-查询定向推广计划列表并返回计划基础信息",
+	"description": "定向推广-查询定向推广计划列表并返回计划基础信息",
+	"requestParams": [
+		{
+			"name": "top_p4p_quick_campaign_query",
+			"type": "TopP4pQuickCampaignQueryDto",
+			"description": "TopP4pQuickCampaignQuery",
+			"required": true,
+			"subParams": [
+				{
+					"name": "to_page",
+					"type": "Number",
+					"description": "第几页",
+					"required": true
+				},
+				{
+					"name": "per_page_size",
+					"type": "Number",
+					"description": "每页返回数量",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "quick_campaign_list",
+			"type": "TopP4pBasicQuickCampaignView []",
+			"description": "定向推广计划列表",
+			"subParams": [
+				{
+					"name": "forbidden_words",
+					"type": "String[]",
+					"description": "屏蔽词列表",
+					"required": true
+				},
+				{
+					"name": "budget",
+					"type": "Number",
+					"description": "计划每日预算",
+					"required": true
+				},
+				{
+					"name": "max_price",
+					"type": "String",
+					"description": "出价区间-上限",
+					"required": true
+				},
+				{
+					"name": "min_price",
+					"type": "String",
+					"description": "出价区间-下限",
+					"required": true
+				},
+				{
+					"name": "product_count",
+					"type": "Number",
+					"description": "推广商品数量",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "计划状态(0暂停、1推广中、-1点爆)",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "计划标题",
+					"required": true
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "定向推广计划ID",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "总页数"
+		},
+		{
+			"name": "total_num",
+			"type": "Number",
+			"description": "总个数"
+		}
+	]
+}

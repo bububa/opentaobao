@@ -1,0 +1,157 @@
+{
+	"name": "taobao.traderates.get",
+	"apiChineseName": "搜索评价信息",
+	"description": "搜索评价信息，只能获取距今180天内的评价记录(只支持查询卖家给出或得到的评价)。",
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "需返回的字段列表。可选值：TradeRate 结构中的所有字段，多个字段之间用“,”分隔",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "rate_type",
+			"type": "String",
+			"description": "评价类型。可选值:get(得到),give(给出)",
+			"required": true
+		},
+		{
+			"name": "role",
+			"type": "String",
+			"description": "评价者角色即评价的发起方。可选值:seller(卖家),buyer(买家)。 当 give buyer 以买家身份给卖家的评价； 当 get seller 以买家身份得到卖家给的评价； 当 give seller 以卖家身份给买家的评价； 当 get buyer 以卖家身份得到买家给的评价。",
+			"required": true
+		},
+		{
+			"name": "result",
+			"type": "String",
+			"description": "评价结果。可选值:good(好评),neutral(中评),bad(差评)"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码。取值范围:大于零的整数最大限制为200; 默认值:1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页获取条数。默认值40，最小值1，最大值150。",
+			"maxValue": 150,
+			"minValue": 1
+		},
+		{
+			"name": "start_date",
+			"type": "Date",
+			"description": "评价开始时。如果只输入开始时间，那么能返回开始时间之后的评价数据。"
+		},
+		{
+			"name": "end_date",
+			"type": "Date",
+			"description": "评价结束时间。如果只输入结束时间，那么全部返回所有评价数据。"
+		},
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "交易订单id，可以是父订单id号，也可以是子订单id号"
+		},
+		{
+			"name": "use_has_next",
+			"type": "Boolean",
+			"description": "是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取评价信息，效率在原有的基础上有80%的提升。"
+		},
+		{
+			"name": "num_iid",
+			"type": "Number",
+			"description": "商品的数字ID"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "trade_rates",
+			"type": "TradeRate []",
+			"description": "评价列表。返回的TradeRate包含的具体信息为入参fields请求的字段信息",
+			"subParams": [
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "交易ID"
+				},
+				{
+					"name": "oid",
+					"type": "Number",
+					"description": "子订单ID"
+				},
+				{
+					"name": "role",
+					"type": "String",
+					"description": "评价者角色.可选值:seller(卖家),buyer(买家)"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "评价者昵称"
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "评价结果,可选值:good(好评),neutral(中评),bad(差评)"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "评价创建时间,格式:yyyy-MM-dd HH:mm:ss"
+				},
+				{
+					"name": "rated_nick",
+					"type": "String",
+					"description": "被评价者昵称"
+				},
+				{
+					"name": "item_title",
+					"type": "String",
+					"description": "商品标题"
+				},
+				{
+					"name": "item_price",
+					"type": "Price",
+					"description": "商品价格,精确到2位小数;单位:元.如:200.07，表示:200元7分"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "评价内容,最大长度:500个汉字"
+				},
+				{
+					"name": "reply",
+					"type": "String",
+					"description": "评价解释,最大长度:500个汉字"
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品的数字ID"
+				},
+				{
+					"name": "logistics_service_score",
+					"type": "Number",
+					"description": "物流服务评分"
+				},
+				{
+					"name": "valid_score",
+					"type": "Boolean",
+					"description": "评价信息是否用于记分，\u003cbr/\u003e可取值：true(参与记分)和false(不参与记分)"
+				}
+			]
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "搜索到的评价总数。相同的查询时间段条件下，最大只能获取总共1500条评价记录。所以当评价大于等于1500时 ISV可以通过start_date及end_date来进行拆分，以保证可以查询到全部数据"
+		},
+		{
+			"name": "has_next",
+			"type": "Boolean",
+			"description": "当使用use_has_next时返回信息，如果还有下一页则返回true"
+		}
+	]
+}

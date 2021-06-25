@@ -1,0 +1,90 @@
+{
+	"name": "taobao.wdk.iot.deviceadmin.mqtt.device.getwithtoken",
+	"apiChineseName": "获取mqtt设备信息",
+	"description": "智能硬件设备动态注册和获取mqtt设备信息",
+	"requestParams": [
+		{
+			"name": "business_code",
+			"type": "Number",
+			"description": "业务编码，具体编码请联系杜尘",
+			"required": true
+		},
+		{
+			"name": "device_type",
+			"type": "Number",
+			"description": "设备类型编码，具体编码请联系杜尘",
+			"required": true
+		},
+		{
+			"name": "enviro_code",
+			"type": "Number",
+			"description": "环境编码，0日常，1预发，2线上",
+			"required": true
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备的唯一标识码，比如网卡的MAC地址",
+			"required": true
+		},
+		{
+			"name": "apply_access_token",
+			"type": "String",
+			"description": "访问令牌",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "HmResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "MqttDeviceInfoDto",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "device_name",
+							"type": "String",
+							"description": "mqtt设备名",
+							"required": true
+						},
+						{
+							"name": "device_secret",
+							"type": "String",
+							"description": "mqtt设备秘钥",
+							"required": true
+						},
+						{
+							"name": "product_key",
+							"type": "String",
+							"description": "mqtt设备所属产品",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				}
+			]
+		}
+	]
+}

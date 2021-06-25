@@ -1,0 +1,27 @@
+{
+	"name": "slb.aliyuncs.com.SetLoadBalancerName.2013-02-21",
+	"apiChineseName": "配置LoadBalancer的别名。",
+	"description": "配置LoadBalancer的别名。",
+	"requestParams": [
+		{
+			"name": "loadBalancerId",
+			"type": "String",
+			"description": "loadBalancerId",
+			"required": true
+		},
+		{
+			"name": "loadBalancerName",
+			"type": "String",
+			"description": "loadBalancerName",
+			"required": true,
+			"maxLength": 64
+		}
+	],
+	"responseParams": [
+		{
+			"name": "requestid",
+			"type": "String",
+			"description": "request id"
+		}
+	]
+}

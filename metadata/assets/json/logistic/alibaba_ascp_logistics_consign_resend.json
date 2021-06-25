@@ -1,0 +1,54 @@
+{
+	"name": "alibaba.ascp.logistics.consign.resend",
+	"apiChineseName": "修改物流公司和运单号",
+	"description": "支持卖家发货后修改运单号;支持在线下单和自己联系两种发货方式;使用条件：\n1、必须是已发货订单，自己联系发货的必须24小时内才可修改；在线下单的，必须下单后物流公司未揽收成功前才可修改；\n2、自己联系只能切换为自己联系的公司，在线下单也只能切换为在线下单的物流公司",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "String",
+			"description": "订单id",
+			"required": true
+		},
+		{
+			"name": "sub_tids",
+			"type": "String",
+			"description": "拆单子订单列表，对应的数据是：子订单号列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集"
+		},
+		{
+			"name": "consign_pkgs",
+			"type": "TopConsignPkgRequest[]",
+			"description": "包裹包含的运单号及快递公司编号,多包裹时，需要包含所有包裹的运单号等信息",
+			"required": true,
+			"maxListSize": 999,
+			"subParams": [
+				{
+					"name": "company_code",
+					"type": "String",
+					"description": "物流公司代码.如\"POST\"代表中国邮政,\"ZJS\"代表宅急送。调用 taobao.logistics.companies.get 获取",
+					"required": true
+				},
+				{
+					"name": "out_sid",
+					"type": "String",
+					"description": "运单号.具体一个物流公司的真实运单号码。淘宝官方物流会校验，请谨慎传入",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDto",
+			"description": "异步获取历史数据接口返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "执行结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

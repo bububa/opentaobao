@@ -1,0 +1,20 @@
+{
+	"name": "alibaba.item.operate.downshelf",
+	"apiChineseName": "商品下架",
+	"description": "商品下架",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "商品下架是否成功"
+		}
+	]
+}

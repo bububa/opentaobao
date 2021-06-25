@@ -1,0 +1,277 @@
+{
+	"name": "cainiao.cntec.supplier.order.service",
+	"apiChineseName": "供货商查询订单数据接口",
+	"description": "提供给供货商查询订单信息的接口，返回给供货商的订单数据已经是脱敏精简后的，比如订单ID用户ID已经用md5加密，用户昵称已经脱敏，商品信息本身是供货商提供的。\n数据查询的范围只和供货商的身份有关系，比如大润发的用户只能查询大润发的订单，而且会校验身份和颁发的appkey之间的关系，并且目前对接的只有一个供货商",
+	"requestParams": [
+		{
+			"name": "query_conditioin",
+			"type": "SupplierOrderQueryDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "outer_store_id",
+					"type": "String",
+					"description": "外部门店ID",
+					"required": true
+				},
+				{
+					"name": "trade_create_date",
+					"type": "String",
+					"description": "查询交易创建时间在2020-06-03的订单，只接受yyyy-MM-dd格式的字符串",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页游标",
+					"required": true
+				},
+				{
+					"name": "supplier",
+					"type": "String",
+					"description": "供货商身份标识，比如大润发就传DRF",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页参数，页大小",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "has_next_page",
+					"type": "Boolean",
+					"description": "是否有下一页",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "总条数",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "分页游标",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "order_list",
+					"type": "SupplierOrder[]",
+					"description": "订单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "refund_fee",
+							"type": "Number",
+							"description": "退款金额",
+							"required": true
+						},
+						{
+							"name": "outer_store_id",
+							"type": "String",
+							"description": "外部门店ID",
+							"required": true
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "买家账号",
+							"required": true
+						},
+						{
+							"name": "item_title",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "城市",
+							"required": true
+						},
+						{
+							"name": "item_total_price",
+							"type": "Number",
+							"description": "商品总价，单位为分",
+							"required": true
+						},
+						{
+							"name": "refund_status",
+							"type": "String",
+							"description": "退款状态，有两种状态，已退款和未退款",
+							"required": true
+						},
+						{
+							"name": "trade_end_time",
+							"type": "Date",
+							"description": "交易完成时间",
+							"required": true
+						},
+						{
+							"name": "buyer_id",
+							"type": "String",
+							"description": "买家ID",
+							"required": true
+						},
+						{
+							"name": "trade_create_time",
+							"type": "Date",
+							"description": "交易创建时间",
+							"required": true
+						},
+						{
+							"name": "buy_amount",
+							"type": "Number",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "sub_order_id",
+							"type": "String",
+							"description": "子订单ID",
+							"required": true
+						},
+						{
+							"name": "outer_item_id",
+							"type": "String",
+							"description": "外部商品ID,对RT来说就是货号",
+							"required": true
+						},
+						{
+							"name": "trade_status",
+							"type": "String",
+							"description": "交易状态",
+							"required": true
+						},
+						{
+							"name": "supplier",
+							"type": "String",
+							"description": "供货商身份标识",
+							"required": true
+						},
+						{
+							"name": "refund_end_time",
+							"type": "Date",
+							"description": "退款完成时间",
+							"required": true
+						},
+						{
+							"name": "item_price",
+							"type": "Number",
+							"description": "商品价格，单位为分",
+							"required": true
+						},
+						{
+							"name": "station_name",
+							"type": "String",
+							"description": "驿站名称",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "门店名称",
+							"required": true
+						},
+						{
+							"name": "station_id",
+							"type": "Number",
+							"description": "驿站ID",
+							"required": true
+						},
+						{
+							"name": "main_order_id",
+							"type": "String",
+							"description": "主订单ID",
+							"required": true
+						},
+						{
+							"name": "activity_start_time",
+							"type": "Date",
+							"description": "营销活动开始时间",
+							"required": true
+						},
+						{
+							"name": "activity_attributes",
+							"type": "Json",
+							"description": "营销活动扩展属性，可能包含到货时间",
+							"required": true
+						},
+						{
+							"name": "activity_type",
+							"type": "String",
+							"description": "营销活动类型",
+							"required": true
+						},
+						{
+							"name": "activity_name",
+							"type": "String",
+							"description": "营销活动名称",
+							"required": true
+						},
+						{
+							"name": "activity_id",
+							"type": "Number",
+							"description": "营销活动id",
+							"required": true
+						},
+						{
+							"name": "activity_end_time",
+							"type": "Date",
+							"description": "营销活动结束时间",
+							"required": true
+						},
+						{
+							"name": "actual_total_fee",
+							"type": "Number",
+							"description": "实付金额，单位为分",
+							"required": true
+						},
+						{
+							"name": "modified_time",
+							"type": "Date",
+							"description": "更新时间",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

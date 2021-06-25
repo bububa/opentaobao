@@ -1,0 +1,109 @@
+{
+	"name": "taobao.qimen.supplier.synchronize",
+	"apiChineseName": "供应商同步接口",
+	"description": "这个接口用来同步供应商信息",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"subParams": [
+				{
+					"name": "actionType",
+					"type": "String",
+					"description": "add|update, 必填"
+				},
+				{
+					"name": "supplierCode",
+					"type": "String",
+					"description": "供应商编码 string (50), 必填"
+				},
+				{
+					"name": "supplierName",
+					"type": "String",
+					"description": "供应商名称 string (200) , 必填"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "联系人姓名, string (50)"
+				},
+				{
+					"name": "tel",
+					"type": "String",
+					"description": "联系电话, string (50)"
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "电子邮箱, string (50)"
+				},
+				{
+					"name": "countryCode",
+					"type": "String",
+					"description": "国家二字码，string（50）"
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省份, string (50)"
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市, string (50)"
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "区域, string (50)"
+				},
+				{
+					"name": "town",
+					"type": "String",
+					"description": "村镇, string (50)"
+				},
+				{
+					"name": "detailAddress",
+					"type": "String",
+					"description": "详细地址, string (200)"
+				},
+				{
+					"name": "isValid",
+					"type": "String",
+					"description": "是否有效, Y/N (默认为Y)"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注, string (500)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

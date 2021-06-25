@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.price.promotion.activity.query",
+	"apiChineseName": "查询盒马帮档期活动详情",
+	"description": "查询盒马帮档期活动详情",
+	"requestParams": [
+		{
+			"name": "page",
+			"type": "Number",
+			"description": "页码",
+			"required": true
+		},
+		{
+			"name": "outer_promotion_code",
+			"type": "String",
+			"description": "外部档期code",
+			"required": true
+		},
+		{
+			"name": "ou_code",
+			"type": "String",
+			"description": "TOB店仓编码"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页码大小",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "接口调用是否成功"
+		},
+		{
+			"name": "data",
+			"type": "Json",
+			"description": "大润发促销档期数据"
+		},
+		{
+			"name": "result_code",
+			"type": "Number",
+			"description": "错误编码"
+		},
+		{
+			"name": "total_record",
+			"type": "Number",
+			"description": "大润发档期数据"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误参数"
+		}
+	]
+}

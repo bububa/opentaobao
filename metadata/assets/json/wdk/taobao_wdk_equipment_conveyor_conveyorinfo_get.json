@@ -1,0 +1,94 @@
+{
+	"name": "taobao.wdk.equipment.conveyor.conveyorinfo.get",
+	"apiChineseName": "获取五道口悬挂链信息",
+	"description": "获取五道口悬挂链信息",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "仓库code"
+		},
+		{
+			"name": "conveyor_id",
+			"type": "Number",
+			"description": "wcsNum"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "WcsConveyorInfoDto",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "warehouseCode",
+							"required": true
+						},
+						{
+							"name": "warehouse_id",
+							"type": "Number",
+							"description": "warehouseId",
+							"required": true
+						},
+						{
+							"name": "conveyor_id",
+							"type": "Number",
+							"description": "conveyorId",
+							"required": true
+						},
+						{
+							"name": "is_running",
+							"type": "Number",
+							"description": "isRunning",
+							"required": true
+						},
+						{
+							"name": "slideways_unused",
+							"type": "Number",
+							"description": "slidewaysUnused",
+							"required": true
+						},
+						{
+							"name": "last_heartbeat_time",
+							"type": "String",
+							"description": "lastHeartbeatTime",
+							"required": true
+						},
+						{
+							"name": "circling_containers",
+							"type": "Number",
+							"description": "circlingContainers",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

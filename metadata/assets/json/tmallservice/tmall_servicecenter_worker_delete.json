@@ -1,0 +1,67 @@
+{
+	"name": "tmall.servicecenter.worker.delete",
+	"apiChineseName": "删除工人",
+	"description": "删除工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以删除。\n错误码如下\n100000, 系统错误\n100001, 工人信息校验失败\n100002, 用户校验失败\n100003, 操作失败\n10004,工人信息为空\n10005,服务商id为空或者服务商名称为空\n10006, 工人不存在\n10007, 工人已存在\n10008, 缺少工人姓名\n10009, 缺少工人电话\n10010, 网点不存在\n11000, category_id 无效\n11001, biz_type 无效\n20001,已查询到最后一页",
+	"requestParams": [
+		{
+			"name": "name",
+			"type": "String",
+			"description": "工人姓名"
+		},
+		{
+			"name": "phone",
+			"type": "Number",
+			"description": "工人手机号"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务类型,电器预约安装业务填appliance_install"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "gmtModified",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "Boolean",
+					"description": "value",
+					"required": true
+				}
+			]
+		}
+	]
+}

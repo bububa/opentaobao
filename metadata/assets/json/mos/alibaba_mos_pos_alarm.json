@@ -1,0 +1,167 @@
+{
+	"name": "alibaba.mos.pos.alarm",
+	"apiChineseName": "pos故障报警",
+	"description": "故障报警",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "PosLogDto",
+			"description": "参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "ip_addr",
+					"type": "String",
+					"description": "IP地址"
+				},
+				{
+					"name": "oper_step",
+					"type": "String",
+					"description": "当前操作步骤"
+				},
+				{
+					"name": "out_trade_no",
+					"type": "String",
+					"description": "外部订单号"
+				},
+				{
+					"name": "pos_type",
+					"type": "String",
+					"description": "pos机类型:POS(\"大POS\"), SHOPPE(\" 单品开票\"), COUNTER(\"专柜自收银\"), CLOUDPOS(\"云POS\");"
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "pos机版本号"
+				},
+				{
+					"name": "store_no",
+					"type": "String",
+					"description": "门店号"
+				},
+				{
+					"name": "counter_id",
+					"type": "String",
+					"description": "专柜号"
+				},
+				{
+					"name": "net_stat",
+					"type": "String",
+					"description": "联网:ON/OFF"
+				},
+				{
+					"name": "log_level",
+					"type": "String",
+					"description": "日志级别:INFO/DEBUG/ERROR"
+				},
+				{
+					"name": "oper_result",
+					"type": "String",
+					"description": "操作步骤结果描述"
+				},
+				{
+					"name": "upload_time",
+					"type": "String",
+					"description": "pos日志上传时间(本地时间)"
+				},
+				{
+					"name": "happen_time",
+					"type": "String",
+					"description": "pos日志发生时间(本地时间)"
+				},
+				{
+					"name": "sn",
+					"type": "String",
+					"description": "云pos序列号"
+				},
+				{
+					"name": "http_status",
+					"type": "Number",
+					"description": "请求状态码"
+				},
+				{
+					"name": "receipt_no",
+					"type": "String",
+					"description": "小票号码"
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "err_source",
+					"type": "String",
+					"description": "错误源"
+				},
+				{
+					"name": "extension",
+					"type": "String",
+					"description": "扩展数据"
+				},
+				{
+					"name": "data_type",
+					"type": "String",
+					"description": "日志数据类型:SYSTEM系统/BUSINESS 业务"
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误描述"
+				},
+				{
+					"name": "mac_addr",
+					"type": "String",
+					"description": "MAC地址"
+				},
+				{
+					"name": "api_url",
+					"type": "String",
+					"description": "请求地址"
+				},
+				{
+					"name": "pos_no",
+					"type": "String",
+					"description": "收银机号"
+				},
+				{
+					"name": "log_type",
+					"type": "String",
+					"description": "OPER(\"步骤\"), REMOTESERVICE(\" 远程服务调用\"), TRANS(\"传输日志\"), DEFAULT(\"默认\");"
+				},
+				{
+					"name": "cashier",
+					"type": "String",
+					"description": "收银员"
+				},
+				{
+					"name": "request_content",
+					"type": "String",
+					"description": "请求内容"
+				},
+				{
+					"name": "biz_alarm_level",
+					"type": "String",
+					"description": "告警级别"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "errMsg"
+		},
+		{
+			"name": "sub_err_code",
+			"type": "Number",
+			"description": "errCode"
+		},
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "success/false"
+		}
+	]
+}

@@ -1,0 +1,42 @@
+{
+	"name": "taobao.cloudpush.message.android",
+	"apiChineseName": "百川云推送发送消息给android",
+	"description": "百川用户使用云推送发送消息给android",
+	"requestParams": [
+		{
+			"name": "body",
+			"type": "String",
+			"description": "发送的消息内容.",
+			"required": true
+		},
+		{
+			"name": "target",
+			"type": "String",
+			"description": "推送目标: device:推送给设备; account:推送给指定帐号,all: 推送给全部",
+			"required": true
+		},
+		{
+			"name": "target_value",
+			"type": "String",
+			"description": "根据Target来设定，如Target=device, 则对应的值为 设备id1,设备id2. 多个值使用逗号分隔",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "请求是否成功."
+		},
+		{
+			"name": "request_error_code",
+			"type": "Number",
+			"description": "若请求失败，则返回对应的error code."
+		},
+		{
+			"name": "request_error_msg",
+			"type": "String",
+			"description": "请求失败后返回的错误信息."
+		}
+	]
+}

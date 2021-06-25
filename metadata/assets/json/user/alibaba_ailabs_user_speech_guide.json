@@ -1,0 +1,61 @@
+{
+	"name": "alibaba.ailabs.user.speech.guide",
+	"apiChineseName": "引导语推荐接口",
+	"description": "根据用户的语音query，返回相应的引导语推荐",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "String",
+			"description": "用户query"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "ret_value",
+					"type": "RecommendInfo",
+					"description": "推荐信息model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "recommend_guides",
+							"type": "RecommendGuide[]",
+							"description": "推荐具体数据list",
+							"required": true,
+							"subParams": [
+								{
+									"name": "guide_type",
+									"type": "String",
+									"description": "推荐类型",
+									"required": true
+								},
+								{
+									"name": "guide_utterance",
+									"type": "String",
+									"description": "推荐引导语",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "ret_code",
+					"type": "Number",
+					"description": "0表示成功",
+					"required": true
+				},
+				{
+					"name": "ret_msg",
+					"type": "String",
+					"description": "出错信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

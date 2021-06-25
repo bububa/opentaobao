@@ -1,0 +1,56 @@
+{
+	"name": "taobao.ailab.aicloud.top.device.openid.authcode.get",
+	"apiChineseName": "获取openid设备通用授权码",
+	"description": "获取openid设备通用授权码",
+	"requestParams": [
+		{
+			"name": "open_id",
+			"type": "String",
+			"description": "淘宝openid",
+			"required": true
+		},
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离，即硬件接入平台中取得的schema key。",
+			"required": true
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "(废弃) 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo错误码信息，成功返回null",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "设备授权码，后续流程中所述的auth code",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,48 @@
+{
+	"name": "taobao.jst.sms.extendcode.query",
+	"apiChineseName": "聚石塔扩展码查询",
+	"description": "聚石塔扩展码查询",
+	"requestParams": [
+		{
+			"name": "extend_code_query_request",
+			"type": "ExtendCodeQueryRequest",
+			"description": "扩展码查询请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sign_name",
+					"type": "String",
+					"description": "要查询的签名",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response_code",
+			"type": "String",
+			"description": "系统异常"
+		},
+		{
+			"name": "response_success",
+			"type": "Boolean",
+			"description": "成功"
+		},
+		{
+			"name": "response_id",
+			"type": "String",
+			"description": "请求id"
+		},
+		{
+			"name": "module",
+			"type": "String",
+			"description": "成功"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "系统异常"
+		}
+	]
+}

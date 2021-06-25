@@ -1,0 +1,57 @@
+{
+	"name": "alibaba.wdk.marketing.version.generate",
+	"apiChineseName": "生成发布使用的版本号",
+	"description": "生成发布使用的版本号",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "SeasonVersionParam",
+			"description": "档期版本号参数信息",
+			"subParams": [
+				{
+					"name": "out_season_id",
+					"type": "String",
+					"description": "商家档期号"
+				},
+				{
+					"name": "shop_ids",
+					"type": "String[]",
+					"description": "参与换挡的门店列表"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Number",
+					"description": "data",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,118 @@
+{
+	"name": "taobao.subway.automatch.rpt.get",
+	"apiChineseName": "查询流量智选天级报告",
+	"description": "查询流量智选天级报告",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称",
+			"required": true
+		},
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "起始日期",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "终止日期",
+			"required": true
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id",
+			"required": true
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "ResultMap []",
+			"description": "流量智选天级别报表数据",
+			"subParams": [
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "ctr",
+					"required": true
+				},
+				{
+					"name": "cpm",
+					"type": "String",
+					"description": "cpm",
+					"required": true
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "消耗（分）",
+					"required": true
+				},
+				{
+					"name": "campaignid",
+					"type": "String",
+					"description": "计划id",
+					"required": true
+				},
+				{
+					"name": "sub_package_name",
+					"type": "String",
+					"description": "词包名称（汇总-流量包、汇总-自主买词）",
+					"required": true
+				},
+				{
+					"name": "click",
+					"type": "String",
+					"description": "点击量",
+					"required": true
+				},
+				{
+					"name": "sub_package",
+					"type": "String",
+					"description": "词包类型（0：汇总-流量包，-1：汇总-自主买词）",
+					"required": true
+				},
+				{
+					"name": "thedate",
+					"type": "String",
+					"description": "报表数据日期",
+					"required": true
+				},
+				{
+					"name": "adgroupid",
+					"type": "String",
+					"description": "推广组id",
+					"required": true
+				},
+				{
+					"name": "impression",
+					"type": "String",
+					"description": "展现量",
+					"required": true
+				},
+				{
+					"name": "coverage",
+					"type": "String",
+					"description": "点击转化率",
+					"required": true
+				},
+				{
+					"name": "roi",
+					"type": "String",
+					"description": "roi",
+					"required": true
+				}
+			]
+		}
+	]
+}

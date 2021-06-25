@@ -1,0 +1,58 @@
+{
+	"name": "alibaba.security.jaq.resource.fetch",
+	"apiChineseName": "获取资源文件",
+	"description": "在前向化验证流程中提供资源文件服务",
+	"requestParams": [
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "设备类型可能值有：android ios wp",
+			"required": true
+		},
+		{
+			"name": "dpi",
+			"type": "String",
+			"description": "分辨率",
+			"required": true
+		},
+		{
+			"name": "lang",
+			"type": "String",
+			"description": "语言类型 zh_CN en_US",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "JaqResourceResult",
+			"description": "获取资源结果",
+			"subParams": [
+				{
+					"name": "event_id",
+					"type": "String",
+					"description": "请求事件唯一标识",
+					"required": true
+				},
+				{
+					"name": "md5",
+					"type": "String",
+					"description": "资源包的md5",
+					"required": true
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "资源的cdn下载链接",
+					"required": true
+				},
+				{
+					"name": "version",
+					"type": "String",
+					"description": "资源版本号",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,21 @@
+{
+	"name": "taobao.promotionmisc.common.item.activity.delete",
+	"apiChineseName": "删除通用单品优惠活动",
+	"description": "删除通用单品优惠活动。",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "优惠活动ID",
+			"required": true,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否删除成功"
+		}
+	]
+}

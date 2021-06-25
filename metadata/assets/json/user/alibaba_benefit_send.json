@@ -1,0 +1,69 @@
+{
+	"name": "alibaba.benefit.send",
+	"apiChineseName": "发奖接口",
+	"description": "发奖接口",
+	"requestParams": [
+		{
+			"name": "right_ename",
+			"type": "String",
+			"description": "发放的权益(奖品)唯一标识",
+			"required": true
+		},
+		{
+			"name": "receiver_id",
+			"type": "String",
+			"description": "接收奖品的用户openId",
+			"required": true
+		},
+		{
+			"name": "user_type",
+			"type": "String",
+			"description": "规定填taobao即可",
+			"required": true
+		},
+		{
+			"name": "unique_id",
+			"type": "String",
+			"description": "幂等校验id，业务重试需要，自定义唯一字段即可",
+			"required": true
+		},
+		{
+			"name": "app_name",
+			"type": "String",
+			"description": "mtop",
+			"required": true
+		},
+		{
+			"name": "ip",
+			"type": "String",
+			"description": "调用应用ip，非必填"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "接口返回消息"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "接口返回代码"
+		},
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否处理成功"
+		},
+		{
+			"name": "right_id",
+			"type": "Number",
+			"description": "权益id"
+		},
+		{
+			"name": "prize_name",
+			"type": "String",
+			"description": "奖品名称"
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"name": "taobao.region.price.cancle",
+	"apiChineseName": "取消区域价格",
+	"description": "取消区域价格",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品",
+			"required": true
+		},
+		{
+			"name": "sku_id",
+			"type": "Number",
+			"description": "无sku传0",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

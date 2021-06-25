@@ -1,0 +1,136 @@
+{
+	"name": "taobao.wlb.inventorylog.query",
+	"apiChineseName": "根据商品ID查询所有库存变更记录",
+	"description": "通过商品ID等几个条件来分页查询库存变更记录",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID"
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓库编码"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "单号"
+		},
+		{
+			"name": "gmt_start",
+			"type": "Date",
+			"description": "起始修改时间,大于等于该时间"
+		},
+		{
+			"name": "gmt_end",
+			"type": "Date",
+			"description": "结束修改时间,小于等于该时间"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页记录个数"
+		},
+		{
+			"name": "op_user_id",
+			"type": "Number",
+			"description": "可指定授权的用户来查询"
+		},
+		{
+			"name": "op_type",
+			"type": "String",
+			"description": "库存操作作类型(可以为空) CHU_KU 1-出库 RU_KU 2-入库 FREEZE 3-冻结 THAW 4-解冻 CHECK_FREEZE 5-冻结确认 CHANGE_KU 6-库存类型变更 若值不在范围内，则按CHU_KU处理"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "记录数"
+		},
+		{
+			"name": "inventory_log_list",
+			"type": "WlbItemInventoryLog []",
+			"description": "库存变更记录",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "库存变更ID"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户ID"
+				},
+				{
+					"name": "op_type",
+					"type": "String",
+					"description": "库存操作作类型CHU_KU 1-出库RU_KU 2-入库FREEZE 3-冻结THAW 4-解冻CHECK_FREEZE 5-冻结确认CHANGE_KU 6-库存类型变更"
+				},
+				{
+					"name": "op_user_id",
+					"type": "Number",
+					"description": "库存操作者ID"
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品ID"
+				},
+				{
+					"name": "batch_code",
+					"type": "String",
+					"description": "批次号"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "订单号"
+				},
+				{
+					"name": "order_item_id",
+					"type": "Number",
+					"description": "订单商品ID"
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "处理数量变化值"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建日期"
+				},
+				{
+					"name": "result_quantity",
+					"type": "Number",
+					"description": "结果值"
+				},
+				{
+					"name": "invent_type",
+					"type": "String",
+					"description": "VENDIBLE  1-可销售;FREEZE  201-冻结库存;ONWAY  301-在途库存;DEFECT  101-残存品;ENGINE_DAMAGE 102-机损;BOX_DAMAGE 103-箱损"
+				}
+			]
+		}
+	]
+}

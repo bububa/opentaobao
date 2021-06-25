@@ -1,0 +1,34 @@
+{
+	"name": "cainiao.cboss.workplatform.logistics.iscainiaoorder",
+	"apiChineseName": "根据交易单号判断是否为菜鸟发货订单",
+	"description": "根据交易单号判断是否为菜鸟发货订单",
+	"requestParams": [
+		{
+			"name": "trade_id",
+			"type": "String",
+			"description": "交易单号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_cainiao_order",
+			"type": "Boolean",
+			"description": "isCainiaoOrder"
+		},
+		{
+			"name": "res_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "res_error_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "res_error_msg",
+			"type": "String",
+			"description": "errorMsg"
+		}
+	]
+}

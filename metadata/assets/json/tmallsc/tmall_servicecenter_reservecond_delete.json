@@ -1,0 +1,61 @@
+{
+	"name": "tmall.servicecenter.reservecond.delete",
+	"apiChineseName": "删除主动预约开通条件",
+	"description": "删除主动预约开通条件",
+	"requestParams": [
+		{
+			"name": "reserve_open_condition_del_dto",
+			"type": "ReserveOpenConditionDelDto",
+			"description": "主动预约条件删除",
+			"subParams": [
+				{
+					"name": "city_id",
+					"type": "Number",
+					"description": "城市id"
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "类目id"
+				},
+				{
+					"name": "brand_id",
+					"type": "Number",
+					"description": "品牌id"
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "服务code"
+				},
+				{
+					"name": "province_id",
+					"type": "Number",
+					"description": "省份id"
+				},
+				{
+					"name": "area_ids",
+					"type": "String",
+					"description": "区域集合ids"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "msg_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_code",
+			"type": "String",
+			"description": "返回编码"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "返回信息"
+		}
+	]
+}

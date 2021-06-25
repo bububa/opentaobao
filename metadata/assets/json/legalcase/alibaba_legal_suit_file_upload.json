@@ -1,0 +1,59 @@
+{
+	"name": "alibaba.legal.suit.file.upload",
+	"apiChineseName": "诉讼文件上传接口",
+	"description": "上传文件接口",
+	"requestParams": [
+		{
+			"name": "file",
+			"type": "byte[]",
+			"description": "文件",
+			"required": true
+		},
+		{
+			"name": "time_stamp",
+			"type": "Number",
+			"description": "时间搓",
+			"required": true
+		},
+		{
+			"name": "file_name",
+			"type": "String",
+			"description": "文件名称",
+			"required": true
+		},
+		{
+			"name": "file_size",
+			"type": "Number",
+			"description": "文件大小",
+			"required": true
+		},
+		{
+			"name": "signature",
+			"type": "String",
+			"description": "签名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "失败原因"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否调用成功"
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "文件上传后的生成的id"
+		},
+		{
+			"name": "code_error",
+			"type": "String",
+			"description": "失败的code枚举"
+		}
+	]
+}

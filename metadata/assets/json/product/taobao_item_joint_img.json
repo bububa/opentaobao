@@ -1,0 +1,54 @@
+{
+	"name": "taobao.item.joint.img",
+	"apiChineseName": "商品关联子图",
+	"description": "* 关联一张商品图片到num_iid指定的商品中\u003cbr/\u003e    * 传入的num_iid所对应的商品必须属于当前会话的用户\u003cbr/\u003e    * 商品图片关联在卖家身份和图片来源上的限制，卖家要是B卖家或订购了多图服务才能关联图片，并且图片要来自于卖家自己的图片空间才行\u003cbr/\u003e    * 商品图片数量有限制。不管是上传的图片还是关联的图片，他们的总数不能超过一定限额",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "商品图片id(如果是更新图片，则需要传该参数)"
+		},
+		{
+			"name": "num_iid",
+			"type": "Number",
+			"description": "商品数字ID，必选",
+			"required": true,
+			"minValue": 0
+		},
+		{
+			"name": "pic_path",
+			"type": "String",
+			"description": "图片URL,图片空间图片的相对地址，支持的文件类型：jpg,jpeg,png",
+			"required": true
+		},
+		{
+			"name": "is_major",
+			"type": "Boolean",
+			"description": "上传的图片是否关联为商品主图"
+		},
+		{
+			"name": "position",
+			"type": "Number",
+			"description": "图片序号"
+		},
+		{
+			"name": "is_rectangle",
+			"type": "Boolean",
+			"description": "是否3:4长方形图片，绑定3:4主图视频时用于上传3:4商品主图"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item_img",
+			"type": "ItemImg",
+			"description": "商品图片信息",
+			"subParams": [
+				{
+					"name": "url",
+					"type": "String",
+					"description": "图片链接地址"
+				}
+			]
+		}
+	]
+}

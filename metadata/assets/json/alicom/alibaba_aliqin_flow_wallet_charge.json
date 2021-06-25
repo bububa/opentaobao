@@ -1,0 +1,44 @@
+{
+	"name": "alibaba.aliqin.flow.wallet.charge",
+	"apiChineseName": "流量直充",
+	"description": "流量直充",
+	"requestParams": [
+		{
+			"name": "phone_num",
+			"type": "String",
+			"description": "充值号码",
+			"required": true
+		},
+		{
+			"name": "reason",
+			"type": "String",
+			"description": "原因",
+			"required": true
+		},
+		{
+			"name": "grade_id",
+			"type": "String",
+			"description": "档位id",
+			"required": true
+		},
+		{
+			"name": "out_recharge_id",
+			"type": "String",
+			"description": "唯一流水号",
+			"required": true
+		},
+		{
+			"name": "channel_id",
+			"type": "String",
+			"description": "渠道id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "charge",
+			"type": "String",
+			"description": "充值请求"
+		}
+	]
+}

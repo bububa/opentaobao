@@ -1,0 +1,115 @@
+{
+	"name": "taobao.openim.tribe.create",
+	"apiChineseName": "创建群",
+	"description": "创建一个openim的群",
+	"requestParams": [
+		{
+			"name": "user",
+			"type": "OpenImUser",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "用户id"
+				},
+				{
+					"name": "taobao_account",
+					"type": "Boolean",
+					"description": "是否为淘宝账号"
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "账户appkey"
+				}
+			]
+		},
+		{
+			"name": "tribe_name",
+			"type": "String",
+			"description": "群名称",
+			"required": true
+		},
+		{
+			"name": "notice",
+			"type": "String",
+			"description": "群公告",
+			"required": true
+		},
+		{
+			"name": "tribe_type",
+			"type": "Number",
+			"description": "群类型有两种tribe_type = 0  普通群  普通群有管理员角色，对成员加入有权限控制tribe_type = 1  讨论组  讨论组没有管理员，不能解散",
+			"required": true
+		},
+		{
+			"name": "members",
+			"type": "OpenImUser[]",
+			"description": "创建群时候拉入群的成员tribe_type = 1（即为讨论组类型)时  该参数为必选tribe_type = 0 (即为普通群类型)时，改参数无效，可不填",
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "用户id"
+				},
+				{
+					"name": "taobao_account",
+					"type": "Boolean",
+					"description": "是否为淘宝账号"
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "账户appkey"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tribe_info",
+			"type": "TribeInfo",
+			"description": "创建群的信息",
+			"subParams": [
+				{
+					"name": "tribe_id",
+					"type": "Number",
+					"description": "群ID"
+				},
+				{
+					"name": "icon",
+					"type": "String",
+					"description": "群头像URL地址"
+				},
+				{
+					"name": "check_mode",
+					"type": "Number",
+					"description": "群验证模式"
+				},
+				{
+					"name": "tribe_type",
+					"type": "Number",
+					"description": "群类型"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "群名称"
+				},
+				{
+					"name": "recv_flag",
+					"type": "Number",
+					"description": "群接收标记"
+				},
+				{
+					"name": "notice",
+					"type": "String",
+					"description": "群公告"
+				}
+			]
+		}
+	]
+}

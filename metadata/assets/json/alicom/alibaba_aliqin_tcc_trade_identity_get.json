@@ -1,0 +1,106 @@
+{
+	"name": "alibaba.aliqin.tcc.trade.identity.get",
+	"apiChineseName": "运营商获得用户身份信息",
+	"description": "天猫网厅运营商官方旗舰店获取用户身份信息",
+	"requestParams": [
+		{
+			"name": "biz_order_id",
+			"type": "Number",
+			"description": "订单编号",
+			"required": true
+		},
+		{
+			"name": "seller_nick",
+			"type": "String",
+			"description": "店铺名称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "IdentityInfo",
+			"description": "返回身份信息",
+			"subParams": [
+				{
+					"name": "back_image_url",
+					"type": "String",
+					"description": "身份证背面图片",
+					"required": true
+				},
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				},
+				{
+					"name": "card_num",
+					"type": "String",
+					"description": "身份证号码",
+					"required": true
+				},
+				{
+					"name": "front_image_url",
+					"type": "String",
+					"description": "身份证正面图片",
+					"required": true
+				},
+				{
+					"name": "hold_image_url",
+					"type": "String",
+					"description": "手持照",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名",
+					"required": true
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "地址",
+					"required": true
+				},
+				{
+					"name": "long_term",
+					"type": "Boolean",
+					"description": "是否长期有效",
+					"required": true
+				},
+				{
+					"name": "card_type",
+					"type": "String",
+					"description": "卡类型",
+					"required": true
+				},
+				{
+					"name": "card_expire_date",
+					"type": "Date",
+					"description": "失效时间",
+					"required": true
+				},
+				{
+					"name": "start_date",
+					"type": "String",
+					"description": "身份证生效时间",
+					"required": true
+				},
+				{
+					"name": "end_date",
+					"type": "String",
+					"description": "身份证失效时间",
+					"required": true
+				},
+				{
+					"name": "biometric_seq",
+					"type": "String",
+					"description": "biometricSeq",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,40 @@
+{
+	"name": "alibaba.wdk.merchant.item.createdraft",
+	"apiChineseName": "新建商品草稿",
+	"description": "新建商品草稿erp接口",
+	"requestParams": [
+		{
+			"name": "params",
+			"type": "String",
+			"description": "商品信息json",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "suc",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "err_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				}
+			]
+		}
+	]
+}

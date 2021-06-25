@@ -1,0 +1,120 @@
+{
+	"name": "taobao.tbk.dg.vegas.tlj.instance.report",
+	"apiChineseName": "淘宝客-推广者-淘礼金发放及使用报表",
+	"description": "淘礼金实例维度相关报表数据查询",
+	"requestParams": [
+		{
+			"name": "rights_id",
+			"type": "String",
+			"description": "实例ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "TljInstanceReportDto",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "unfreeze_amount",
+							"type": "String",
+							"description": "解冻金额",
+							"required": true
+						},
+						{
+							"name": "unfreeze_num",
+							"type": "Number",
+							"description": "解冻红包个数",
+							"required": true
+						},
+						{
+							"name": "refund_amount",
+							"type": "String",
+							"description": "失效回退金额",
+							"required": true
+						},
+						{
+							"name": "refund_num",
+							"type": "Number",
+							"description": "失效回退红包个数",
+							"required": true
+						},
+						{
+							"name": "alipay_amount",
+							"type": "String",
+							"description": "引导成交金额",
+							"required": true
+						},
+						{
+							"name": "use_amount",
+							"type": "String",
+							"description": "红包核销金额",
+							"required": true
+						},
+						{
+							"name": "use_num",
+							"type": "Number",
+							"description": "红包核销个数",
+							"required": true
+						},
+						{
+							"name": "win_amount",
+							"type": "String",
+							"description": "红包领取金额",
+							"required": true
+						},
+						{
+							"name": "win_num",
+							"type": "Number",
+							"description": "红包领取个数",
+							"required": true
+						},
+						{
+							"name": "pre_commission_amount",
+							"type": "String",
+							"description": "引导预估佣金金额",
+							"required": true
+						},
+						{
+							"name": "fp_refund_amount",
+							"type": "String",
+							"description": "退款红包金额",
+							"required": true
+						},
+						{
+							"name": "fp_refund_num",
+							"type": "Number",
+							"description": "退款红包个数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

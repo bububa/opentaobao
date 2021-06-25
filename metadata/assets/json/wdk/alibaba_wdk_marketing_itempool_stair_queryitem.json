@@ -1,0 +1,132 @@
+{
+	"name": "alibaba.wdk.marketing.itempool.stair.queryitem",
+	"apiChineseName": "换购商品查询",
+	"description": "换购商品查询",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "ActivitySkuQuery",
+			"description": "换购商品查询参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "page",
+					"type": "BasePageQuery",
+					"description": "分页参数",
+					"required": true,
+					"subParams": [
+						{
+							"name": "current",
+							"type": "Number",
+							"description": "当前页数"
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "分页大小"
+						}
+					]
+				},
+				{
+					"name": "out_act_id",
+					"type": "String",
+					"description": "商家活动id"
+				},
+				{
+					"name": "sku_codes",
+					"type": "String[]",
+					"description": "查询指定的skucode"
+				},
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "报名活动Id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "MarketPageResult",
+			"description": "查询结果",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "总数",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "查询结果信息",
+					"required": true
+				},
+				{
+					"name": "current",
+					"type": "Number",
+					"description": "当前页数",
+					"required": true
+				},
+				{
+					"name": "sku_list",
+					"type": "ItemPoolSku[]",
+					"description": "查询结果数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品skucode",
+							"required": true
+						},
+						{
+							"name": "exchange_price",
+							"type": "Number",
+							"description": "换购价格",
+							"required": true
+						},
+						{
+							"name": "exchange_total_limit",
+							"type": "Number",
+							"description": "换购限量",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页数size",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,266 @@
+{
+	"name": "alibaba.wdk.sku.scroll.query",
+	"apiChineseName": "门店商品批量游标方式查询接口",
+	"description": "通过游标方式批量获取门店商品信息，包括商品条码，商品名称，价格，会员价等信息。",
+	"requestParams": [
+		{
+			"name": "merchant_cat_code",
+			"type": "String",
+			"description": "商家类目编码"
+		},
+		{
+			"name": "ou_code",
+			"type": "String",
+			"description": "门店编码"
+		},
+		{
+			"name": "scroll_id",
+			"type": "String",
+			"description": "游标：第一次请求不用填写，否则请填写上一次请求返回的值，直到获取到足够的数据"
+		},
+		{
+			"name": "sku_codes",
+			"type": "String",
+			"description": "英文逗号分隔的商品编码，最多20个。如果配合门店字段使用，直接非游标方式返回商品数据"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiScrollPageResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "page_count",
+					"type": "Number",
+					"description": "商品商量总页数：分页大小20",
+					"required": true
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "商品总数",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "异常信息编码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "异常信息",
+					"required": true
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "分页大小",
+					"required": true
+				},
+				{
+					"name": "model_list",
+					"type": "ModelList[]",
+					"description": "返回的结果集",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "sku_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "life_status",
+							"type": "String",
+							"description": "商品在机构内的生命周期，商品状态；A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡",
+							"required": true
+						},
+						{
+							"name": "barcodes",
+							"type": "String",
+							"description": "条码：多个条码用英文逗号分割",
+							"required": true
+						},
+						{
+							"name": "sale_price",
+							"type": "String",
+							"description": "价格：单位元",
+							"required": true
+						},
+						{
+							"name": "member_price",
+							"type": "String",
+							"description": "会员价：单位元",
+							"required": true
+						},
+						{
+							"name": "sale_unit",
+							"type": "String",
+							"description": "售卖单位",
+							"required": true
+						},
+						{
+							"name": "weight_flag",
+							"type": "String",
+							"description": "是否称重品：1称重品0非称重品",
+							"required": true
+						},
+						{
+							"name": "merchant_cat_code",
+							"type": "String",
+							"description": "商家类目编码",
+							"required": true
+						},
+						{
+							"name": "org_no",
+							"type": "String",
+							"description": "子公司编码",
+							"required": true
+						},
+						{
+							"name": "ou_code",
+							"type": "String",
+							"description": "门店编码",
+							"required": true
+						},
+						{
+							"name": "shop_id",
+							"type": "String",
+							"description": "渠道店编码",
+							"required": true
+						},
+						{
+							"name": "channel_codes",
+							"type": "String",
+							"description": "渠道店类型：4淘宝",
+							"required": true
+						},
+						{
+							"name": "tax_class_no",
+							"type": "String",
+							"description": "税收编码(查询返回使用)",
+							"required": true
+						},
+						{
+							"name": "business_type",
+							"type": "Number",
+							"description": "业务类型 1：盒饭  2：生鲜",
+							"required": true
+						},
+						{
+							"name": "test_flag",
+							"type": "Number",
+							"description": "是否测试商品",
+							"required": true
+						},
+						{
+							"name": "service_flag",
+							"type": "Number",
+							"description": "是否服务商品",
+							"required": true
+						},
+						{
+							"name": "modified_time",
+							"type": "String",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "merchant_code",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "supplier_no",
+							"type": "String",
+							"description": "默认供应商",
+							"required": true
+						},
+						{
+							"name": "short_title",
+							"type": "String",
+							"description": "短标题",
+							"required": true
+						},
+						{
+							"name": "online_sale_flag",
+							"type": "Number",
+							"description": "是否线上可售 是 0：否 1：是",
+							"required": true
+						},
+						{
+							"name": "sale_spec",
+							"type": "String",
+							"description": "销售规格描述",
+							"required": true
+						},
+						{
+							"name": "processing_time",
+							"type": "Number",
+							"description": "加工时间 单位：分钟",
+							"required": true
+						},
+						{
+							"name": "back_cat_code",
+							"type": "String",
+							"description": "后台平台类目编码",
+							"required": true
+						},
+						{
+							"name": "input_tax_rate",
+							"type": "String",
+							"description": "进项税率",
+							"required": true
+						},
+						{
+							"name": "tax_rate",
+							"type": "String",
+							"description": "销项税率",
+							"required": true
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌名称",
+							"required": true
+						},
+						{
+							"name": "brand_code",
+							"type": "String",
+							"description": "品牌编码",
+							"required": true
+						},
+						{
+							"name": "shelf_life",
+							"type": "String",
+							"description": "保质期天数，商品的保质期（单位：天）,0表示没有保质期",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "scroll_id",
+					"type": "String",
+					"description": "游标：作为下一次请求数据的参数",
+					"required": true
+				}
+			]
+		}
+	]
+}

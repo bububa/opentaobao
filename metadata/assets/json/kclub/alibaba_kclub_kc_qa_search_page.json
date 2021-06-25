@@ -1,0 +1,402 @@
+{
+	"name": "alibaba.kclub.kc.qa.search.page",
+	"apiChineseName": "知识云-知识检索(分页)",
+	"description": "知识云-知识搜索服务",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "KcSearchQuestionQuery",
+			"description": "查询参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "current_page",
+					"type": "Number",
+					"description": "当前页"
+				},
+				{
+					"name": "category_id_list",
+					"type": "Number[]",
+					"description": "类目列表"
+				},
+				{
+					"name": "views",
+					"type": "Number[]",
+					"description": "视角列表"
+				},
+				{
+					"name": "include_sub_categorys",
+					"type": "Boolean",
+					"description": "是否包含子类目查询"
+				},
+				{
+					"name": "creator_id",
+					"type": "Number",
+					"description": "创建人id"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "每页条数"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "状态"
+				},
+				{
+					"name": "context_list",
+					"type": "Number[]",
+					"description": "问题类型列表（已废弃）"
+				},
+				{
+					"name": "need_content",
+					"type": "Boolean",
+					"description": "是否需要包含内容"
+				},
+				{
+					"name": "question_type",
+					"type": "Number",
+					"description": "问题类型（新）"
+				},
+				{
+					"name": "editor_id",
+					"type": "Number",
+					"description": "编辑人id"
+				},
+				{
+					"name": "search_rule",
+					"type": "String",
+					"description": "排序规则"
+				},
+				{
+					"name": "highlight",
+					"type": "Boolean",
+					"description": "是否高亮"
+				},
+				{
+					"name": "knowledge_id",
+					"type": "Number",
+					"description": "问题id"
+				},
+				{
+					"name": "search_string",
+					"type": "String",
+					"description": "搜索字段"
+				},
+				{
+					"name": "tenant_id_list",
+					"type": "Number[]",
+					"description": "租户列表"
+				},
+				{
+					"name": "tenant_id",
+					"type": "Number",
+					"description": "租户"
+				},
+				{
+					"name": "sorter_config",
+					"type": "SorterConfig",
+					"description": "排序配置",
+					"subParams": [
+						{
+							"name": "order",
+							"type": "String",
+							"description": "排序顺序"
+						},
+						{
+							"name": "field",
+							"type": "String",
+							"description": "排序字段"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"type": "TenancyAuth",
+			"description": "鉴权",
+			"required": true,
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "名称",
+					"required": true
+				},
+				{
+					"name": "secret_key",
+					"type": "String",
+					"description": "秘钥",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Paging",
+					"description": "分页数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "row_count",
+							"type": "Number",
+							"description": "行数",
+							"required": true
+						},
+						{
+							"name": "page_size",
+							"type": "Number",
+							"description": "每页大小",
+							"required": true
+						},
+						{
+							"name": "page_no",
+							"type": "Number",
+							"description": "当前页",
+							"required": true
+						},
+						{
+							"name": "data_list",
+							"type": "KcSearchQuestionDto[]",
+							"description": "数据",
+							"required": true,
+							"subParams": [
+								{
+									"name": "start_date",
+									"type": "Json",
+									"description": "生效时间",
+									"required": true
+								},
+								{
+									"name": "cat_id",
+									"type": "Number",
+									"description": "类目id",
+									"required": true
+								},
+								{
+									"name": "ext",
+									"type": "String",
+									"description": "额外字段",
+									"required": true
+								},
+								{
+									"name": "cat_name",
+									"type": "String",
+									"description": "类目名称",
+									"required": true
+								},
+								{
+									"name": "cat_path_name",
+									"type": "String",
+									"description": "类目路径名称",
+									"required": true
+								},
+								{
+									"name": "similar_id",
+									"type": "Number",
+									"description": "相似问题id",
+									"required": true
+								},
+								{
+									"name": "question_type",
+									"type": "Number",
+									"description": "问题类型",
+									"required": true
+								},
+								{
+									"name": "modified_user_name",
+									"type": "String",
+									"description": "编辑人",
+									"required": true
+								},
+								{
+									"name": "create_user_name",
+									"type": "String",
+									"description": "创建人",
+									"required": true
+								},
+								{
+									"name": "modified_user_id",
+									"type": "Number",
+									"description": "编辑人id",
+									"required": true
+								},
+								{
+									"name": "create_user_id",
+									"type": "Number",
+									"description": "创建人id",
+									"required": true
+								},
+								{
+									"name": "tenant_id",
+									"type": "Number",
+									"description": "租户id",
+									"required": true
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "状态",
+									"required": true
+								},
+								{
+									"name": "title_segment",
+									"type": "String",
+									"description": "分词",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "标题",
+									"required": true
+								},
+								{
+									"name": "gmt_modified",
+									"type": "Json",
+									"description": "编辑时间",
+									"required": true
+								},
+								{
+									"name": "gmt_create",
+									"type": "Json",
+									"description": "创建时间",
+									"required": true
+								},
+								{
+									"name": "entity_code",
+									"type": "String",
+									"description": "关联实体code",
+									"required": true
+								},
+								{
+									"name": "cat_id_path_list",
+									"type": "Number[]",
+									"description": "父类目列表",
+									"required": true
+								},
+								{
+									"name": "uuid",
+									"type": "String",
+									"description": "唯一编码",
+									"required": true
+								},
+								{
+									"name": "score",
+									"type": "String",
+									"description": "得分",
+									"required": true
+								},
+								{
+									"name": "similar_title",
+									"type": "String",
+									"description": "相似问题标题",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "索引id",
+									"required": true
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "索引类型",
+									"required": true
+								},
+								{
+									"name": "question_id",
+									"type": "Number",
+									"description": "问题id",
+									"required": true
+								},
+								{
+									"name": "is_similar_title",
+									"type": "Number",
+									"description": "是否相似标题",
+									"required": true
+								},
+								{
+									"name": "source",
+									"type": "Number",
+									"description": "是否草稿版本",
+									"required": true
+								},
+								{
+									"name": "version",
+									"type": "Number",
+									"description": "版本",
+									"required": true
+								},
+								{
+									"name": "end_date",
+									"type": "Json",
+									"description": "失效时间",
+									"required": true
+								},
+								{
+									"name": "ten_day_pv",
+									"type": "Number",
+									"description": "十天访问pv",
+									"required": true
+								},
+								{
+									"name": "seven_day_pv",
+									"type": "Number",
+									"description": "7天访问pv",
+									"required": true
+								},
+								{
+									"name": "five_day_pv",
+									"type": "Number",
+									"description": "5天访问pv",
+									"required": true
+								},
+								{
+									"name": "three_day_pv",
+									"type": "Number",
+									"description": "3天访问pv",
+									"required": true
+								},
+								{
+									"name": "one_day_pv",
+									"type": "Number",
+									"description": "1天访问pv",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

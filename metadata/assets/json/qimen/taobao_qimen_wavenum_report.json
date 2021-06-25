@@ -1,0 +1,73 @@
+{
+	"name": "taobao.qimen.wavenum.report",
+	"apiChineseName": "发货单波次通知接口",
+	"description": "WMS调用奇门的接口,该接口用来给ERP或者OMS回传波次号及对应的发货单号，以支持商家货票同行、波次内包裹的处理等需求",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "WaveNumReportRequest",
+			"subParams": [
+				{
+					"name": "waveNum",
+					"type": "String",
+					"description": "波次号",
+					"required": true
+				},
+				{
+					"name": "orders",
+					"type": "Order[]",
+					"description": "发货单号",
+					"subParams": [
+						{
+							"name": "deliveryOrderCode",
+							"type": "String",
+							"description": "出库单号",
+							"required": true
+						},
+						{
+							"name": "deliveryOrderId",
+							"type": "String",
+							"description": "出库单仓储系统编码"
+						},
+						{
+							"name": "num",
+							"type": "String",
+							"description": "波次中的次序号"
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

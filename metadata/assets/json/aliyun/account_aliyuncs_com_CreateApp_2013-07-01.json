@@ -1,0 +1,22 @@
+{
+	"name": "account.aliyuncs.com.CreateApp.2013-07-01",
+	"apiChineseName": "给指定用户创建appkey",
+	"description": "为某个用户创建appkey",
+	"responseParams": [
+		{
+			"name": "code",
+			"type": "String",
+			"description": "返回错误码"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "返回调用信息"
+		},
+		{
+			"name": "result_data",
+			"type": "String",
+			"description": "返回结果"
+		}
+	]
+}

@@ -1,0 +1,34 @@
+{
+	"name": "alibaba.icbu.product.score.get",
+	"apiChineseName": "产品质量分查询",
+	"description": "产品质量分查询",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "String",
+			"description": "混淆后的商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ProductScoreInfoResult",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "boutique_tag",
+					"type": "Number",
+					"description": "精品标，，返回字段中 boutique_tag 含义： 1 精品 2 普通品 3 低质品 4 实力优品",
+					"required": true
+				},
+				{
+					"name": "final_score",
+					"type": "String",
+					"description": "质量分",
+					"required": true
+				}
+			]
+		}
+	]
+}

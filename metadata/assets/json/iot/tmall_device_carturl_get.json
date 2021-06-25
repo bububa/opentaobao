@@ -1,0 +1,37 @@
+{
+	"name": "tmall.device.carturl.get",
+	"apiChineseName": "添加商品到购物车",
+	"description": "获取二维码，支持添加商品到购物车",
+	"requestParams": [
+		{
+			"name": "item_ids",
+			"type": "String[]",
+			"description": "商品信息，格式为 商品ID_SKU ID_数量，多条记录以逗号(,)分割",
+			"required": true,
+			"maxListSize": 20
+		},
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备业务编码",
+			"required": true
+		},
+		{
+			"name": "longterm",
+			"type": "Boolean",
+			"description": "是否申请长期链接"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "short_url",
+			"type": "String",
+			"description": "二维码短链接地址"
+		},
+		{
+			"name": "short_img_url",
+			"type": "String",
+			"description": "二维码图片URL"
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"name": "taobao.time.get",
+	"apiChineseName": "获取淘宝系统当前时间",
+	"description": "获取淘宝系统当前时间",
+	"responseParams": [
+		{
+			"name": "time",
+			"type": "Date",
+			"description": "淘宝系统当前时间。格式:yyyy-MM-dd HH:mm:ss"
+		}
+	]
+}

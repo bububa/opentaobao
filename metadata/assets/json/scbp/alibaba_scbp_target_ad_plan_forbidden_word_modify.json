@@ -1,0 +1,40 @@
+{
+	"name": "alibaba.scbp.target.ad.plan.forbidden.word.modify",
+	"apiChineseName": "定向推广-新增或删除屏蔽词",
+	"description": "定向推广-新增或删除屏蔽词",
+	"requestParams": [
+		{
+			"name": "top_p4p_quick_forbidden_word",
+			"type": "TopP4pQuickForbiddenWordDto",
+			"description": "TopP4pQuickForbiddenWord",
+			"required": true,
+			"subParams": [
+				{
+					"name": "forbidden_word",
+					"type": "String[]",
+					"description": "屏蔽词",
+					"required": true
+				},
+				{
+					"name": "action",
+					"type": "Number",
+					"description": "1代表新增屏蔽词，2代表删除屏蔽词",
+					"required": true
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "定向推广计划ID",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "true修改成功，fasle修改失败"
+		}
+	]
+}

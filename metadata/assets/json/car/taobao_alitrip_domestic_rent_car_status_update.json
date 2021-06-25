@@ -1,0 +1,47 @@
+{
+	"name": "taobao.alitrip.domestic.rent.car.status.update",
+	"apiChineseName": "航旅国内租车订单状态更新",
+	"description": "航旅国内租车订单状态更新",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "121-用车中（用户取车成功） 122-待结算（用户还车成功）",
+			"required": true
+		},
+		{
+			"name": "third_order_id",
+			"type": "String",
+			"description": "服务商平台订单号"
+		},
+		{
+			"name": "order_id",
+			"type": "String",
+			"description": "飞猪平台订单号",
+			"required": true
+		},
+		{
+			"name": "provider_id",
+			"type": "String",
+			"description": "服务商标识，由飞猪提供给到各服务商",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Json",
+			"description": "其它数据，预留，暂不使用"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "message_code",
+			"type": "Number",
+			"description": "错误码.code为0时表示成功"
+		}
+	]
+}

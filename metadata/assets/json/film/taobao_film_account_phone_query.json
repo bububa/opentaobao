@@ -1,0 +1,66 @@
+{
+	"name": "taobao.film.account.phone.query",
+	"apiChineseName": "根据手机查询匹配账号列表",
+	"description": "根据手机号查询匹配的账号列表",
+	"requestParams": [
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "11位手机号码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultListModel",
+			"description": "返回对象",
+			"subParams": [
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "account_list",
+					"type": "Model[]",
+					"description": "返回值",
+					"required": true,
+					"subParams": [
+						{
+							"name": "mix_user_id",
+							"type": "String",
+							"description": "对外开放ID",
+							"required": true
+						},
+						{
+							"name": "user_nick",
+							"type": "String",
+							"description": "脱敏昵称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求ID",
+					"required": true
+				},
+				{
+					"name": "return_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "return_url",
+					"type": "String",
+					"description": "忽略",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,56 @@
+{
+	"name": "alibaba.wdk.item.price.update",
+	"apiChineseName": "五道口商品中心价格修改",
+	"description": "修改门店商品售价和会员价",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "盒马门店id",
+			"required": true
+		},
+		{
+			"name": "sku_code",
+			"type": "String",
+			"description": "商品编码",
+			"required": true
+		},
+		{
+			"name": "sku_price",
+			"type": "Number",
+			"description": "价格，单位是分"
+		},
+		{
+			"name": "sku_member_price",
+			"type": "Number",
+			"description": "会员价格，单位是分，且不能大于价格"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "hsf_result",
+			"type": "Result",
+			"description": "hsfResult",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				}
+			]
+		}
+	]
+}

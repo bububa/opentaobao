@@ -1,0 +1,19 @@
+{
+	"name": "cainiao.smartdelivery.strategy.warehouse.i.delete",
+	"apiChineseName": "删除智能发货引擎仓策略",
+	"description": "删除智能发货引擎仓策略",
+	"requestParams": [
+		{
+			"name": "warehouse_id",
+			"type": "Number",
+			"description": "仓id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_delete_success",
+			"type": "Boolean",
+			"description": "data"
+		}
+	]
+}

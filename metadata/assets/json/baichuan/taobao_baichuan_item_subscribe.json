@@ -1,0 +1,62 @@
+{
+	"name": "taobao.baichuan.item.subscribe",
+	"apiChineseName": "单个商品订阅",
+	"description": "百川单个商品订阅",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result_list",
+					"type": "ResultMeta[]",
+					"description": "返回的列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "返回码",
+							"required": true
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "返回码对应的文案",
+							"required": true
+						},
+						{
+							"name": "data",
+							"type": "ResultData",
+							"description": "返回的详细内容",
+							"required": true,
+							"subParams": [
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "商品数量",
+									"required": true
+								},
+								{
+									"name": "item_list",
+									"type": "Number[]",
+									"description": "商品id列表",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

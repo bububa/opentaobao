@@ -1,0 +1,50 @@
+{
+	"name": "taobao.daogoubao.order.statistics.total",
+	"apiChineseName": "销售订单总额统计",
+	"description": "对接千牛端数字中心",
+	"requestParams": [
+		{
+			"name": "debug_id",
+			"type": "String",
+			"description": "调试时用的传入id"
+		},
+		{
+			"name": "field",
+			"type": "String",
+			"description": "需要的字段名"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OrderStatisticsResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "tqdj_order_num",
+					"type": "Number",
+					"description": "tqdj_order_num",
+					"required": true
+				},
+				{
+					"name": "take_order_num",
+					"type": "Number",
+					"description": "take_order_num",
+					"required": true
+				},
+				{
+					"name": "home_order_num",
+					"type": "Number",
+					"description": "home_order_num",
+					"required": true
+				},
+				{
+					"name": "step_order_num",
+					"type": "Number",
+					"description": "step_order_num",
+					"required": true
+				}
+			]
+		}
+	]
+}

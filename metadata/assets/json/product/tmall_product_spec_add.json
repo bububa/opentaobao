@@ -1,0 +1,86 @@
+{
+	"name": "tmall.product.spec.add",
+	"apiChineseName": "添加产品规格",
+	"description": "增加产品规格",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID",
+			"required": true
+		},
+		{
+			"name": "certified_pic_str",
+			"type": "String",
+			"description": "存放产品规格认证类型-认证图片url映射信息，格式为k:v;k:v;，其中key为认证类型数字id，value为调用tmall.product.spec.pic.upload返回的认证图片url文本"
+		},
+		{
+			"name": "label_price",
+			"type": "Number",
+			"description": "产品规格吊牌价，以分为单位，无默认值，上限999999999",
+			"maxValue": 999999999,
+			"minValue": 0
+		},
+		{
+			"name": "certified_txt_str",
+			"type": "String",
+			"description": "存放产品规格认证类型-认证文本映射信息，格式为k:v;k:v;，其中key为认证类型数字id，value为认证文本值"
+		},
+		{
+			"name": "spec_props",
+			"type": "String",
+			"description": "产品的规格属性"
+		},
+		{
+			"name": "spec_props_alias",
+			"type": "String",
+			"description": "规格属性别名,只允许传颜色别名",
+			"maxLength": 60
+		},
+		{
+			"name": "customer_spec_props",
+			"type": "String",
+			"description": "用户自定义销售属性，结构：pid1:value1;pid2:value2。在"
+		},
+		{
+			"name": "change_prop",
+			"type": "String",
+			"description": "产品基础色，数据格式为：pid:vid:rvid1,rvid2,rvid3;pid:vid:rvid1"
+		},
+		{
+			"name": "image",
+			"type": "byte[]",
+			"description": "产品图片",
+			"required": true
+		},
+		{
+			"name": "barcode",
+			"type": "String",
+			"description": "产品二维码"
+		},
+		{
+			"name": "product_code",
+			"type": "String",
+			"description": "产品货号"
+		},
+		{
+			"name": "market_time",
+			"type": "Date",
+			"description": "产品上市时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "product_spec",
+			"type": "ProductSpec",
+			"description": "产品规格对象",
+			"subParams": [
+				{
+					"name": "spec_id",
+					"type": "Number",
+					"description": "产品规格ID。"
+				}
+			]
+		}
+	]
+}

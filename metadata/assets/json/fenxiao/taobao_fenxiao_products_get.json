@@ -1,0 +1,434 @@
+{
+	"name": "taobao.fenxiao.products.get",
+	"apiChineseName": "查询产品列表",
+	"description": "查询供应商的产品数据。\u003cbr/\u003e\u003cbr/\u003e    * 入参传入pids将优先查询，即只按这个条件查询。\u003cbr/\u003e    *入参传入sku_number将优先查询(没有传入pids)，即只按这个条件查询(最多显示50条)\u003cbr/\u003e    * 入参fields传skus将查询sku的数据，不传该参数默认不查询，返回产品的其它信息。\u003cbr/\u003e    * 入参fields传入images将查询多图数据，不传只返回主图数据。\u003cbr/\u003e    * 入参fields仅对传入pids生效（只有按ID查询时，才能查询额外的数据）\u003cbr/\u003e    * 查询结果按照产品发布时间倒序，即时间近的数据在前。",
+	"requestParams": [
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "商家编码"
+		},
+		{
+			"name": "productcat_id",
+			"type": "Number",
+			"description": "产品线ID"
+		},
+		{
+			"name": "pids",
+			"type": "String",
+			"description": "产品ID列表（最大限制30），用逗号分割，例如：“1001,1002,1003,1004,1005”"
+		},
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "指定查询额外的信息，可选值：skus（sku数据）、images（多图），多个可选值用逗号分割。"
+		},
+		{
+			"name": "start_modified",
+			"type": "Date",
+			"description": "开始修改时间"
+		},
+		{
+			"name": "end_modified",
+			"type": "Date",
+			"description": "结束修改时间"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码（大于0的整数，默认1）"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页记录数（默认20，最大50）"
+		},
+		{
+			"name": "sku_number",
+			"type": "String",
+			"description": "sku商家编码"
+		},
+		{
+			"name": "is_authz",
+			"type": "String",
+			"description": "查询产品列表时，查询入参“是否需要授权”\u003cbr/\u003eyes:需要授权 \u003cbr/\u003eno:不需要授权"
+		},
+		{
+			"name": "item_ids",
+			"type": "String",
+			"description": "可根据导入的商品ID列表查询，优先级次于产品ID、sku_numbers，高于其他分页查询条件。最大限制20，用逗号分割，例如：“1001,1002,1003,1004,1005”"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "查询结果记录数"
+		},
+		{
+			"name": "products",
+			"type": "FenxiaoProduct []",
+			"description": "产品对象记录集。返回 FenxiaoProduct 包含的字段信息。",
+			"subParams": [
+				{
+					"name": "pid",
+					"type": "Number",
+					"description": "产品ID",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "产品名称",
+					"required": true
+				},
+				{
+					"name": "productcat_id",
+					"type": "Number",
+					"description": "产品线ID",
+					"required": true
+				},
+				{
+					"name": "cost_price",
+					"type": "String",
+					"description": "采购价格，单位：元。",
+					"required": true
+				},
+				{
+					"name": "retail_price_low",
+					"type": "String",
+					"description": "最低零售价，单位：分。",
+					"required": true
+				},
+				{
+					"name": "retail_price_high",
+					"type": "String",
+					"description": "最高零售价，单位：分。",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家编码",
+					"required": true
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "产品库存",
+					"required": true
+				},
+				{
+					"name": "pictures",
+					"type": "String",
+					"description": "产品图片路径",
+					"required": true
+				},
+				{
+					"name": "desc_path",
+					"type": "String",
+					"description": "产品描述路径，通过http请求获取",
+					"required": true
+				},
+				{
+					"name": "prov",
+					"type": "String",
+					"description": "所在地：省",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "所在地：市",
+					"required": true
+				},
+				{
+					"name": "postage_type",
+					"type": "String",
+					"description": "运费类型，可选值：seller（供应商承担运费）、buyer（分销商承担运费）",
+					"required": true
+				},
+				{
+					"name": "postage_id",
+					"type": "Number",
+					"description": "运费模板ID",
+					"required": true
+				},
+				{
+					"name": "postage_ordinary",
+					"type": "String",
+					"description": "平邮费用，单位：元",
+					"required": true
+				},
+				{
+					"name": "postage_fast",
+					"type": "String",
+					"description": "快递费用，单位：元",
+					"required": true
+				},
+				{
+					"name": "postage_ems",
+					"type": "String",
+					"description": "ems费用，单位：元",
+					"required": true
+				},
+				{
+					"name": "have_invoice",
+					"type": "Boolean",
+					"description": "是否有发票，可选值：false（否）、true（是）",
+					"required": true
+				},
+				{
+					"name": "have_quarantee",
+					"type": "Boolean",
+					"description": "是否有保修，可选值：false（否）、true（是）",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "发布状态，可选值：up（上架）、down（下架）",
+					"required": true
+				},
+				{
+					"name": "items_count",
+					"type": "Number",
+					"description": "下载人数",
+					"required": true
+				},
+				{
+					"name": "orders_count",
+					"type": "Number",
+					"description": "累计采购次数",
+					"required": true
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "更新时间",
+					"required": true
+				},
+				{
+					"name": "skus",
+					"type": "SkuList[]",
+					"description": "sku列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "name",
+							"type": "String",
+							"description": "名称",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "商家编码",
+							"required": true
+						},
+						{
+							"name": "standard_price",
+							"type": "String",
+							"description": "市场价",
+							"required": true
+						},
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "SkuID",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "库存",
+							"required": true
+						},
+						{
+							"name": "properties",
+							"type": "String",
+							"description": "sku的销售属性组合字符串。格式:pid:vid;pid:vid,如:1627207:3232483;1630696:3284570,表示:机身颜色:军绿色;手机套餐:一电一充。",
+							"required": true
+						},
+						{
+							"name": "cost_price",
+							"type": "String",
+							"description": "代销采购价，单位：元",
+							"required": true
+						},
+						{
+							"name": "dealer_cost_price",
+							"type": "String",
+							"description": "经销采购价",
+							"required": true
+						},
+						{
+							"name": "scitem_id",
+							"type": "Number",
+							"description": "关联的后端商品id",
+							"required": true
+						},
+						{
+							"name": "reserved_quantity",
+							"type": "Number",
+							"description": "预扣库存",
+							"required": true
+						},
+						{
+							"name": "quota_quantity",
+							"type": "Number",
+							"description": "配额可用库存",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "discount_id",
+					"type": "Number",
+					"description": "折扣ID（新增参数）",
+					"required": true
+				},
+				{
+					"name": "trade_type",
+					"type": "String",
+					"description": "分销方式：AGENT（只做代销，默认值）、DEALER（只做经销）、ALL（代销和经销都做）",
+					"required": true
+				},
+				{
+					"name": "standard_price",
+					"type": "String",
+					"description": "采购基准价，单位：元。",
+					"required": true
+				},
+				{
+					"name": "upshelf_time",
+					"type": "Date",
+					"description": "铺货时间",
+					"required": true
+				},
+				{
+					"name": "is_authz",
+					"type": "String",
+					"description": "查询产品列表时，查询入参增加is_authz:yes|no \u003cbr/\u003eyes:需要授权 \u003cbr/\u003eno:不需要授权",
+					"required": true
+				},
+				{
+					"name": "category_id",
+					"type": "String",
+					"description": "类目id",
+					"required": true
+				},
+				{
+					"name": "properties",
+					"type": "String",
+					"description": "产品属性，格式为pid:vid;pid:vid",
+					"required": true
+				},
+				{
+					"name": "property_alias",
+					"type": "String",
+					"description": "属性别名，格式为pid:vid:alias;pid:vid:alias",
+					"required": true
+				},
+				{
+					"name": "input_properties",
+					"type": "String",
+					"description": "自定义属性，格式为pid:value;pid:value",
+					"required": true
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "产品描述的内容",
+					"required": true
+				},
+				{
+					"name": "dealer_cost_price",
+					"type": "String",
+					"description": "经销采购价",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "导入的商品ID",
+					"required": true
+				},
+				{
+					"name": "pdus",
+					"type": "PduList[]",
+					"description": "产品分销商信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "product_id",
+							"type": "Number",
+							"description": "产品ID",
+							"required": true
+						},
+						{
+							"name": "distributor_id",
+							"type": "Number",
+							"description": "分销商ID",
+							"required": true
+						},
+						{
+							"name": "sku_properties",
+							"type": "String",
+							"description": "产品销售属性值",
+							"required": true
+						},
+						{
+							"name": "quantity_agent",
+							"type": "Number",
+							"description": "产品代销配额库存",
+							"required": true
+						},
+						{
+							"name": "distributor_name",
+							"type": "String",
+							"description": "分销商用户名",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "scitem_id",
+					"type": "Number",
+					"description": "关联的后端商品id",
+					"required": true
+				},
+				{
+					"name": "standard_retail_price",
+					"type": "String",
+					"description": "零售基准价，单位：元",
+					"required": true
+				},
+				{
+					"name": "reserved_quantity",
+					"type": "Number",
+					"description": "预扣库存",
+					"required": true
+				},
+				{
+					"name": "quota_quantity",
+					"type": "Number",
+					"description": "配额可用库存",
+					"required": true
+				},
+				{
+					"name": "spu_id",
+					"type": "Number",
+					"description": "产品spu id",
+					"required": true
+				}
+			]
+		}
+	]
+}

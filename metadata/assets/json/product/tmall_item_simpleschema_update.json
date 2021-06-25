@@ -1,0 +1,36 @@
+{
+	"name": "tmall.item.simpleschema.update",
+	"apiChineseName": "天猫简化编辑商品",
+	"description": "国外大商家天猫简化编辑商品",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品id",
+			"required": true
+		},
+		{
+			"name": "schema_xml_fields",
+			"type": "String",
+			"description": "编辑商品时提交的xml信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "sku_map_json",
+			"type": "String",
+			"description": "sku与outerId映射信息"
+		},
+		{
+			"name": "update_item_result",
+			"type": "String",
+			"description": "编辑商品的itemid"
+		},
+		{
+			"name": "gmt_modified",
+			"type": "Date",
+			"description": "编辑商品操作成功时间"
+		}
+	]
+}

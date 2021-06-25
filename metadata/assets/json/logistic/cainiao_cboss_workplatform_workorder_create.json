@@ -1,0 +1,116 @@
+{
+	"name": "cainiao.cboss.workplatform.workorder.create",
+	"apiChineseName": "菜鸟工单创建接口",
+	"description": "菜鸟工单创建接口，目前调用者ISV",
+	"requestParams": [
+		{
+			"name": "work_order_type",
+			"type": "String",
+			"description": "工单类型"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务类型"
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "工单创建备注"
+		},
+		{
+			"name": "member_id",
+			"type": "String",
+			"description": "货主商家用户id"
+		},
+		{
+			"name": "member_role",
+			"type": "String",
+			"description": "货主用户角色"
+		},
+		{
+			"name": "creator_id",
+			"type": "String",
+			"description": "创建者淘宝id（区分子账号）"
+		},
+		{
+			"name": "creator_role",
+			"type": "String",
+			"description": "创建者角色"
+		},
+		{
+			"name": "biz_entity_value",
+			"type": "String",
+			"description": "外部业务系统主键"
+		},
+		{
+			"name": "shop_user_id",
+			"type": "String",
+			"description": "店铺用户id"
+		},
+		{
+			"name": "trade_id",
+			"type": "String",
+			"description": "交易订单id"
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "工单来源"
+		},
+		{
+			"name": "source_sign",
+			"type": "String",
+			"description": "来源签名，用于唯一区分不同的来源方"
+		},
+		{
+			"name": "mail_no",
+			"type": "String",
+			"description": "运单号"
+		},
+		{
+			"name": "features",
+			"type": "String",
+			"description": "扩展字段"
+		},
+		{
+			"name": "attach_path_list",
+			"type": "String[]",
+			"description": "凭证地址列表",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "res_error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "res_error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "res_success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "work_order_id",
+					"type": "String",
+					"description": "workOrderId",
+					"required": true
+				}
+			]
+		}
+	]
+}

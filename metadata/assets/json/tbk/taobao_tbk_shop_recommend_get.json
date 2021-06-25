@@ -1,0 +1,68 @@
+{
+	"name": "taobao.tbk.shop.recommend.get",
+	"apiChineseName": "淘宝客-公用-店铺关联推荐",
+	"description": "入参卖家id，可推荐与此店铺相关联的相关店铺。",
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "需返回的字段列表",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "Number",
+			"description": "卖家Id",
+			"required": true
+		},
+		{
+			"name": "count",
+			"type": "Number",
+			"description": "返回数量，默认20，最大值40"
+		},
+		{
+			"name": "platform",
+			"type": "Number",
+			"description": "链接形式：1：PC，2：无线，默认：１"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "NTbkShop []",
+			"description": "淘宝客店铺",
+			"subParams": [
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "卖家ID"
+				},
+				{
+					"name": "shop_title",
+					"type": "String",
+					"description": "店铺名称"
+				},
+				{
+					"name": "shop_type",
+					"type": "String",
+					"description": "店铺类型，B：天猫，C：淘宝"
+				},
+				{
+					"name": "seller_nick",
+					"type": "String",
+					"description": "卖家昵称"
+				},
+				{
+					"name": "pict_url",
+					"type": "String",
+					"description": "店标图片"
+				},
+				{
+					"name": "shop_url",
+					"type": "String",
+					"description": "店铺地址"
+				}
+			]
+		}
+	]
+}

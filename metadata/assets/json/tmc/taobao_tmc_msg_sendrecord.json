@@ -1,0 +1,47 @@
+{
+	"name": "taobao.tmc.msg.sendrecord",
+	"apiChineseName": "消息发送记录查询",
+	"description": "查询单条消息发送记录，只返回返回条数和时间。",
+	"requestParams": [
+		{
+			"name": "group_name",
+			"type": "String",
+			"description": "消息分组名",
+			"required": true
+		},
+		{
+			"name": "topic_name",
+			"type": "String",
+			"description": "TOPIC名称",
+			"required": true
+		},
+		{
+			"name": "data_id",
+			"type": "String",
+			"description": "消息主键ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "tmc_send_times",
+			"type": "Number",
+			"description": "tmc发送次数"
+		},
+		{
+			"name": "tb_send_times",
+			"type": "Number",
+			"description": "淘宝发送测试"
+		},
+		{
+			"name": "tb_send_list",
+			"type": "String",
+			"description": "淘宝发送时间"
+		},
+		{
+			"name": "tmc_send_list",
+			"type": "String",
+			"description": "TMC发送时间"
+		}
+	]
+}

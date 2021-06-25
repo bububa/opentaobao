@@ -1,0 +1,122 @@
+{
+	"name": "taobao.ts.subscribe.get",
+	"apiChineseName": "淘宝服务订购关系查询",
+	"description": "ts订购关系状态查询. 暂只支持1口价服务.",
+	"requestParams": [
+		{
+			"name": "servcie_item_code",
+			"type": "String",
+			"description": "服务收费项code",
+			"required": true,
+			"maxLength": 64
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "订购用户昵称",
+			"required": true,
+			"maxLength": 32
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_subscribe",
+			"type": "ServiceSubscribe",
+			"description": "订购关系对象",
+			"subParams": [
+				{
+					"name": "service_item_code",
+					"type": "String",
+					"description": "服务收费项code"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "订购者昵称"
+				},
+				{
+					"name": "all_num",
+					"type": "Number",
+					"description": "订购总数"
+				},
+				{
+					"name": "used_num",
+					"type": "Number",
+					"description": "已经使用的数量"
+				},
+				{
+					"name": "gmt_expiry",
+					"type": "Date",
+					"description": "过期时间"
+				},
+				{
+					"name": "future_price",
+					"type": "Price",
+					"description": "将要被使用的那条质检订单的价格"
+				},
+				{
+					"name": "usage_detail_list",
+					"type": "QualityUsageDetail[]",
+					"description": "该用户该收费项目下面的所有的订购记录详情",
+					"subParams": [
+						{
+							"name": "sub_id",
+							"type": "Number",
+							"description": "订购ID"
+						},
+						{
+							"name": "user_id",
+							"type": "Number",
+							"description": "用户ID"
+						},
+						{
+							"name": "purchas_amount",
+							"type": "Number",
+							"description": "该订单订购的数量"
+						},
+						{
+							"name": "application_amount",
+							"type": "Number",
+							"description": "该订单已经使用的数量"
+						},
+						{
+							"name": "available_amount",
+							"type": "Number",
+							"description": "该订单中尚未使用的数量"
+						},
+						{
+							"name": "article_item_code",
+							"type": "String",
+							"description": "质检服务的收费项目码"
+						},
+						{
+							"name": "start_date",
+							"type": "Date",
+							"description": "该订单的开通时间"
+						},
+						{
+							"name": "end_date",
+							"type": "Date",
+							"description": "该订单的到期时间"
+						},
+						{
+							"name": "price",
+							"type": "Price",
+							"description": "该订单中每个质检服务的价格"
+						}
+					]
+				},
+				{
+					"name": "future_sub_id",
+					"type": "Number",
+					"description": "将要被消耗的质检订单ID"
+				},
+				{
+					"name": "avaliable_num",
+					"type": "Number",
+					"description": "可用数量"
+				}
+			]
+		}
+	]
+}

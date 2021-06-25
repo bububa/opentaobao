@@ -1,0 +1,34 @@
+{
+	"name": "taobao.baodian.server.sdk.config.get",
+	"apiChineseName": "获取宝点SDK的配置项（已迁移）",
+	"description": "获取SDK各种配置项（已迁移）",
+	"requestParams": [
+		{
+			"name": "appkey",
+			"type": "String",
+			"description": "appKey"
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "渠道"
+		},
+		{
+			"name": "sdk_ver",
+			"type": "String",
+			"description": "sdk版本号"
+		},
+		{
+			"name": "type",
+			"type": "Number",
+			"description": "与后端约定"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "返回sdk配置的字符串"
+		}
+	]
+}

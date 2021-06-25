@@ -1,0 +1,78 @@
+{
+	"name": "tmall.servicecenter.picture.upload",
+	"apiChineseName": "上传图片",
+	"description": "给服务商ERP系统使用，用于上传图片保存在天猫，一般用于工单信息回传时候保存服务商的服务证明信息相关的图片。",
+	"requestParams": [
+		{
+			"name": "img",
+			"type": "byte[]",
+			"description": "图片文件二进制流",
+			"required": true
+		},
+		{
+			"name": "picture_name",
+			"type": "String",
+			"description": "图片全称包括扩展名。目前支持 jpg jpeg png",
+			"required": true,
+			"maxLength": 32
+		},
+		{
+			"name": "is_https",
+			"type": "Boolean",
+			"description": "true返回Https地址"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "PictureInfoTo",
+					"description": "图片链接等信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "pixel",
+							"type": "String",
+							"description": "pixel",
+							"required": true
+						},
+						{
+							"name": "sizes",
+							"type": "Number",
+							"description": "sizes",
+							"required": true
+						},
+						{
+							"name": "picture_url",
+							"type": "String",
+							"description": "pictureUrl",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				}
+			]
+		}
+	]
+}

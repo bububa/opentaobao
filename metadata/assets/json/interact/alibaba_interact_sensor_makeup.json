@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.sensor.makeup",
+	"apiChineseName": "美妆虚拟试装",
+	"description": "手机淘宝美妆类目虚拟试妆权限，客户端能力（JS－API）",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "非restAPI，为jsapi  result=0"
+		}
+	]
+}

@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.mj.oc.confpickupgoods",
+	"apiChineseName": "提货核销",
+	"description": "此API用于在银泰商场中，消费者在提货中心提货时， 商户后台调用此接口进行提货核销操作",
+	"requestParams": [
+		{
+			"name": "conf_pickup_goods_request",
+			"type": "ConfPickupGoodsReqDto",
+			"description": "提货核销请求参数",
+			"subParams": [
+				{
+					"name": "trade_no",
+					"type": "String",
+					"description": "OC交易号",
+					"required": true
+				},
+				{
+					"name": "short_code",
+					"type": "String",
+					"description": "核销码",
+					"required": true
+				},
+				{
+					"name": "operator",
+					"type": "String",
+					"description": "操作员",
+					"required": true
+				},
+				{
+					"name": "out_belong_id",
+					"type": "String",
+					"description": "门店号",
+					"required": true
+				},
+				{
+					"name": "out_store_id",
+					"type": "String",
+					"description": "专柜号",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

@@ -1,0 +1,26 @@
+{
+	"name": "alibaba.scbp.ad.account.level.get",
+	"apiChineseName": "查询推广账户等级",
+	"description": "查询推广账户等级",
+	"responseParams": [
+		{
+			"name": "cust_level_dto",
+			"type": "TopCustLevelDto",
+			"description": "推广账户等级",
+			"subParams": [
+				{
+					"name": "level_score",
+					"type": "Number",
+					"description": "levelScore",
+					"required": true
+				},
+				{
+					"name": "growth_level",
+					"type": "String",
+					"description": "growthLevel",
+					"required": true
+				}
+			]
+		}
+	]
+}

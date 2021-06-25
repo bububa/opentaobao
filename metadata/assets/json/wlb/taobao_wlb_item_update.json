@@ -1,0 +1,105 @@
+{
+	"name": "taobao.wlb.item.update",
+	"apiChineseName": "物流宝商品修改",
+	"description": "修改物流宝商品信息",
+	"requestParams": [
+		{
+			"name": "update_property_key_list",
+			"type": "String",
+			"description": "需要修改的商品属性值的列表，如果属性不存在，则新增属性"
+		},
+		{
+			"name": "delete_property_key_list",
+			"type": "String",
+			"description": "需要删除的商品属性key列表"
+		},
+		{
+			"name": "update_property_value_list",
+			"type": "String",
+			"description": "需要修改的属性值的列表"
+		},
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "要修改的商品id",
+			"required": true
+		},
+		{
+			"name": "name",
+			"type": "String",
+			"description": "要修改的商品名称"
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "要修改的商品标题"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "要修改的商品备注"
+		},
+		{
+			"name": "is_friable",
+			"type": "Boolean",
+			"description": "是否易碎品"
+		},
+		{
+			"name": "is_dangerous",
+			"type": "Boolean",
+			"description": "是否危险品"
+		},
+		{
+			"name": "color",
+			"type": "String",
+			"description": "商品颜色"
+		},
+		{
+			"name": "weight",
+			"type": "Number",
+			"description": "商品重量，单位G"
+		},
+		{
+			"name": "length",
+			"type": "Number",
+			"description": "商品长度，单位厘米"
+		},
+		{
+			"name": "width",
+			"type": "Number",
+			"description": "商品宽度，单位厘米"
+		},
+		{
+			"name": "height",
+			"type": "Number",
+			"description": "商品高度，单位厘米"
+		},
+		{
+			"name": "volume",
+			"type": "Number",
+			"description": "商品体积，单位立方厘米"
+		},
+		{
+			"name": "goods_cat",
+			"type": "String",
+			"description": "商品货类"
+		},
+		{
+			"name": "pricing_cat",
+			"type": "String",
+			"description": "商品计价货类"
+		},
+		{
+			"name": "package_material",
+			"type": "String",
+			"description": "商品包装材料类型"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "gmt_modified",
+			"type": "Boolean",
+			"description": "修改时间"
+		}
+	]
+}

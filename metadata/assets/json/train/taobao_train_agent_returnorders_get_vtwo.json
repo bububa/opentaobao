@@ -1,0 +1,45 @@
+{
+	"name": "taobao.train.agent.returnorders.get.vtwo",
+	"apiChineseName": "获取待退票的订单v2--增加鉴权校验",
+	"description": "代理商用来获取待退票的订单列表及数量，防止代理商掉单。",
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "卖家ID",
+			"required": true
+		},
+		{
+			"name": "offline",
+			"type": "Number",
+			"description": "0 线上退票 1线下退票"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order_count",
+			"type": "Number",
+			"description": "待退票的订单数"
+		},
+		{
+			"name": "order_ids",
+			"type": "String",
+			"description": "子订单号字符串，每个订单以逗号分隔"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "main_order_ids",
+			"type": "String",
+			"description": "主订单id列表"
+		},
+		{
+			"name": "refund_apply_times",
+			"type": "String",
+			"description": "申请时间，每个时间以逗号分隔"
+		}
+	]
+}

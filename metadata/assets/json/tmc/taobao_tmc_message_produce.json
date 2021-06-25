@@ -1,0 +1,73 @@
+{
+	"name": "taobao.tmc.message.produce",
+	"apiChineseName": "发布单条消息",
+	"description": "发布单条消息",
+	"requestParams": [
+		{
+			"name": "content",
+			"type": "String",
+			"description": "消息内容的JSON表述，必须按照topic的定义来填充",
+			"required": true,
+			"maxLength": 122880
+		},
+		{
+			"name": "topic",
+			"type": "String",
+			"description": "消息类型",
+			"required": true,
+			"maxLength": 256
+		},
+		{
+			"name": "media_content",
+			"type": "byte[]",
+			"description": "回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。",
+			"maxLength": 1048576
+		},
+		{
+			"name": "media_content2",
+			"type": "byte[]",
+			"description": "回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。",
+			"maxLength": 1048576
+		},
+		{
+			"name": "media_content3",
+			"type": "byte[]",
+			"description": "回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。",
+			"maxLength": 1048576
+		},
+		{
+			"name": "media_content4",
+			"type": "byte[]",
+			"description": "回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。",
+			"maxLength": 1048576
+		},
+		{
+			"name": "media_content5",
+			"type": "byte[]",
+			"description": "回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。",
+			"maxLength": 1048576
+		},
+		{
+			"name": "target_group",
+			"type": "String",
+			"description": "目标分组，一般为default"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "total",
+			"type": "Number",
+			"description": "投递目标数"
+		},
+		{
+			"name": "msg_ids",
+			"type": "String []",
+			"description": "消息ID"
+		}
+	]
+}

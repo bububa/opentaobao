@@ -1,0 +1,27 @@
+{
+	"name": "taobao.trade.invoice.amount.get",
+	"apiChineseName": "获取订单应开票金额",
+	"description": "订单应开票金额计算",
+	"requestParams": [
+		{
+			"name": "tid",
+			"type": "Number",
+			"description": "业务订单ID",
+			"required": true,
+			"maxValue": 9223372036854775807,
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "consumer_invoice_amount",
+			"type": "String",
+			"description": "应开票给消费者的金额，单位分"
+		},
+		{
+			"name": "platform_invoice_amount",
+			"type": "String",
+			"description": "应开票给平台的金额，单位分"
+		}
+	]
+}

@@ -1,0 +1,32 @@
+{
+	"name": "taobao.simba.campaign.timetemplate.find",
+	"apiChineseName": "获取分时折扣模板",
+	"description": "批量得到智能推广推广计划下的推广组",
+	"responseParams": [
+		{
+			"name": "templates",
+			"type": "ADGroupPage []",
+			"description": "返回的推广组分页对象",
+			"subParams": [
+				{
+					"name": "schedule",
+					"type": "String",
+					"description": "模板规则",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "模板名称",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "模板id",
+					"required": true
+				}
+			]
+		}
+	]
+}

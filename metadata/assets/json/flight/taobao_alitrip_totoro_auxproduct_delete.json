@@ -1,0 +1,66 @@
+{
+	"name": "taobao.alitrip.totoro.auxproduct.delete",
+	"apiChineseName": "廉航辅营产品删除",
+	"description": "廉航辅营产品删除接口",
+	"requestParams": [
+		{
+			"name": "del_aux_product_rq",
+			"type": "DelAuxProductRq",
+			"description": "廉航辅营产品删除请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "channel_id",
+					"type": "Number",
+					"description": "渠道id.校验请求商家身份，channelId非空，则cid必须与之匹配。 当channelId与外部id都为空，表明删除此店铺全部渠道全部辅营产品",
+					"required": true
+				},
+				{
+					"name": "outer_ids",
+					"type": "String[]",
+					"description": "外部ID列表，外部ID是辅营报价的唯一标识，后续用于校验生单；只允许数字字母组合，最大允许32个字符。 不允许包含空格、换行、|这类特殊符号",
+					"required": true
+				},
+				{
+					"name": "agent_id",
+					"type": "Number",
+					"description": "代理商ID",
+					"required": true
+				},
+				{
+					"name": "cid",
+					"type": "String",
+					"description": "接口身份标识用户名（渠道唯一标识）。校验请求商家身份，channelId非空，则cid必须与之匹配。 当channelId与外部id都为空，表明删除此店铺全部渠道全部辅营产品",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "DelAuxProductsRs",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "tracer_id",
+					"type": "String",
+					"description": "操作日志id，商家可通过该id在后台查看本次操作的具体结果",
+					"required": true
+				},
+				{
+					"name": "api_error_msg",
+					"type": "String",
+					"description": "备注",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否操作成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

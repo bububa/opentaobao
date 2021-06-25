@@ -1,0 +1,54 @@
+{
+	"name": "alibaba.wdk.merchant.storeitem.update",
+	"apiChineseName": "修改门店商品",
+	"description": "修改门店商品",
+	"requestParams": [
+		{
+			"name": "sku_code",
+			"type": "String",
+			"description": "商品编码"
+		},
+		{
+			"name": "merchant_code",
+			"type": "String",
+			"description": "商家编码"
+		},
+		{
+			"name": "store_id",
+			"type": "String",
+			"description": "门店编码"
+		},
+		{
+			"name": "params",
+			"type": "String",
+			"description": "修改参数的json"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "errorDesc",
+					"required": true
+				}
+			]
+		}
+	]
+}

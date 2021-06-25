@@ -1,0 +1,39 @@
+{
+	"name": "alibaba.security.jaq.rp.cloud.event",
+	"apiChineseName": "事件上报",
+	"description": "事件上报接口",
+	"requestParams": [
+		{
+			"name": "verify_token",
+			"type": "String",
+			"description": "认证token",
+			"required": true
+		},
+		{
+			"name": "event_code",
+			"type": "String",
+			"description": "事件编码",
+			"required": true
+		},
+		{
+			"name": "event_data",
+			"type": "String",
+			"description": "事件信息"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RpEventResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "verify_limited_flag",
+					"type": "Boolean",
+					"description": "verifyLimitedFlag",
+					"required": true
+				}
+			]
+		}
+	]
+}

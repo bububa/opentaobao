@@ -1,0 +1,134 @@
+{
+	"name": "taobao.simba.insight.wordsareadata.get",
+	"apiChineseName": "获取关键词按地域进行细分的数据",
+	"description": "获取关键词按地域细分的详细数据，目前地域只能细化到省级别，返回的结果中包括市，是为了方便以后扩展，目前结果中市的值等于省。",
+	"requestParams": [
+		{
+			"name": "bidword",
+			"type": "String",
+			"description": "关键词",
+			"required": true
+		},
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "开始时间，格式：yyyy-MM-dd",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束时间，格式：yyyy-MM-dd",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "word_areadata_list",
+			"type": "InsightWordsAreaDistributeDataDTO []",
+			"description": "地域细分数据",
+			"subParams": [
+				{
+					"name": "impression",
+					"type": "Number",
+					"description": "展现量"
+				},
+				{
+					"name": "click",
+					"type": "Number",
+					"description": "点击量"
+				},
+				{
+					"name": "cost",
+					"type": "Number",
+					"description": "花费，单位（分）"
+				},
+				{
+					"name": "directtransaction",
+					"type": "Number",
+					"description": "直接成交金额"
+				},
+				{
+					"name": "indirecttransaction",
+					"type": "Number",
+					"description": "间接成交金额"
+				},
+				{
+					"name": "directtransactionshipping",
+					"type": "Number",
+					"description": "直接成交笔数"
+				},
+				{
+					"name": "indirecttransactionshipping",
+					"type": "Number",
+					"description": "间接成交笔数"
+				},
+				{
+					"name": "favitemtotal",
+					"type": "Number",
+					"description": "宝贝搜藏数"
+				},
+				{
+					"name": "favshoptotal",
+					"type": "Number",
+					"description": "店铺搜藏数"
+				},
+				{
+					"name": "transactionshippingtotal",
+					"type": "Number",
+					"description": "总的成交笔数"
+				},
+				{
+					"name": "transactiontotal",
+					"type": "Number",
+					"description": "成交总金额"
+				},
+				{
+					"name": "favtotal",
+					"type": "Number",
+					"description": "总的收藏数，包括宝贝收藏和店铺收藏"
+				},
+				{
+					"name": "competition",
+					"type": "Number",
+					"description": "竞争度"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率"
+				},
+				{
+					"name": "cpc",
+					"type": "String",
+					"description": "平均点击花费"
+				},
+				{
+					"name": "roi",
+					"type": "String",
+					"description": "投入产出比"
+				},
+				{
+					"name": "coverage",
+					"type": "String",
+					"description": "点击转化率"
+				},
+				{
+					"name": "bidword",
+					"type": "String",
+					"description": "关键词"
+				},
+				{
+					"name": "provincename",
+					"type": "String",
+					"description": "省名称"
+				},
+				{
+					"name": "cityname",
+					"type": "String",
+					"description": "市名称"
+				}
+			]
+		}
+	]
+}

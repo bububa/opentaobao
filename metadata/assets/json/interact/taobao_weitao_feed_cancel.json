@@ -1,0 +1,38 @@
+{
+	"name": "taobao.weitao.feed.cancel",
+	"apiChineseName": "取消广播在timeline、广场中展示",
+	"description": "取消广播在timeline和广场中的展示。",
+	"requestParams": [
+		{
+			"name": "feed_id",
+			"type": "Number",
+			"description": "广播id",
+			"required": true
+		},
+		{
+			"name": "biz_id",
+			"type": "String",
+			"description": "三方活动ID",
+			"required": true
+		},
+		{
+			"name": "delete",
+			"type": "Boolean",
+			"description": "是否彻底删除（店铺动态不可见，等同卖家广播后台删除），默认false"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "PushResult",
+			"description": "推送结果",
+			"subParams": [
+				{
+					"name": "feed_id",
+					"type": "String",
+					"description": "新广播ID"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,89 @@
+{
+	"name": "alibaba.nazca.token.issuecertapply.get",
+	"apiChineseName": "根据token获取出证申请信息",
+	"description": "根据token获取出证申请信息",
+	"requestParams": [
+		{
+			"name": "token",
+			"type": "String",
+			"description": "token"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ActionResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error",
+					"type": "String",
+					"description": "error",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "ret_value",
+					"type": "IssueCertApplyDo",
+					"description": "retValue",
+					"required": true,
+					"subParams": [
+						{
+							"name": "contract_num",
+							"type": "String",
+							"description": "合同编号",
+							"required": true
+						},
+						{
+							"name": "page_num",
+							"type": "Number",
+							"description": "pageNum",
+							"required": true
+						},
+						{
+							"name": "platform_user_id",
+							"type": "String",
+							"description": "客户在1688的唯一标识",
+							"required": true
+						},
+						{
+							"name": "return_url",
+							"type": "String",
+							"description": "页面跳转同步通知URL",
+							"required": true
+						},
+						{
+							"name": "send_receive",
+							"type": "Number",
+							"description": "角色 0：接收者 1：发送者",
+							"required": true
+						},
+						{
+							"name": "topic",
+							"type": "String",
+							"description": "合同名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sub_error_message",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

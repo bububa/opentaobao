@@ -1,0 +1,27 @@
+{
+	"name": "odps.aliyuncs.com.DescribeOdpsService.2014-12-15",
+	"apiChineseName": "查询ODPS服务",
+	"description": "查询ODPS服务",
+	"responseParams": [
+		{
+			"name": "RequestId",
+			"type": "String",
+			"description": "请求ID"
+		},
+		{
+			"name": "ServiceId",
+			"type": "String",
+			"description": "服务Id"
+		},
+		{
+			"name": "OpeningTime",
+			"type": "String",
+			"description": "开通服务时间，ISO 8601时间格式"
+		},
+		{
+			"name": "OperationLocks",
+			"type": "String",
+			"description": "业务锁定状态，例如：欠费，安全等。"
+		}
+	]
+}

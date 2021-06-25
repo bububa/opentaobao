@@ -1,0 +1,79 @@
+{
+	"name": "alibaba.wdk.marketing.open.data.relation.query",
+	"apiChineseName": "数据关联关系查询",
+	"description": "数据关联关系查询",
+	"requestParams": [
+		{
+			"name": "out_data_ids",
+			"type": "String[]",
+			"description": "外部数据Id",
+			"required": true,
+			"maxListSize": 200
+		},
+		{
+			"name": "biz_code",
+			"type": "String",
+			"description": "数据类型：WDK_MARKET:五道口营销",
+			"required": true
+		},
+		{
+			"name": "sub_biz_code",
+			"type": "String",
+			"description": "数据子类型：ACTIVITY:营销活动数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "WdkMarketOpenResult",
+			"description": "结果信息",
+			"subParams": [
+				{
+					"name": "datas",
+					"type": "OutTxdDataRelation[]",
+					"description": "结果数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sub_biz_code",
+							"type": "String",
+							"description": "子数据类型",
+							"required": true
+						},
+						{
+							"name": "biz_code",
+							"type": "String",
+							"description": "数据类型",
+							"required": true
+						},
+						{
+							"name": "out_data_id",
+							"type": "String",
+							"description": "外部数据Id",
+							"required": true
+						},
+						{
+							"name": "txd_data_id",
+							"type": "String",
+							"description": "淘鲜达数据Id",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

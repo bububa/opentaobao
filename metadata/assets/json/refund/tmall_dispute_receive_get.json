@@ -1,0 +1,294 @@
+{
+	"name": "tmall.dispute.receive.get",
+	"apiChineseName": "天猫逆向纠纷查询",
+	"description": "展示商家所有退款信息",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意);WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货);WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货);CLOSED(退款关闭); SUCCESS(退款成功);SELLER_REFUSE_BUYER(卖家拒绝退款);WAIT_BUYER_CONFIRM_REDO_SEND_GOODS(等待买家确认重新邮寄的货物);WAIT_SELLER_CONFIRM_RETURN_ADDRESS(等待卖家确认退货地址);WAIT_SELLER_CONSIGN_GOOGDS(卖家确认收货,等待卖家发货);EXCHANGE_TRANSFORM_TO_REFUND(换货关闭,转退货退款);EXCHANGE_WAIT_BUYER_CONFIRM_GOODS(卖家已发货,等待买家确认收货);POST_FEE_DISPUTE_WAIT_ACTIVATE(邮费单已创建,待激活)"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数。取值范围:大于零的整数; 默认值:20;最大值:100",
+			"maxValue": 100,
+			"minValue": 1
+		},
+		{
+			"name": "use_has_next",
+			"type": "Boolean",
+			"description": "是否启用has_next的分页方式，如果指定true,则返回的结果中不包含总记录数，但是会新增一个是否存在下一页的的字段，通过此种方式获取增量退款，接口调用成功率在原有的基础上有所提升。"
+		},
+		{
+			"name": "type",
+			"type": "String",
+			"description": "交易类型列表，一次查询多种类型可用半角逗号分隔，默认同时查询guarantee_trade, auto_delivery这两种类型的数据，查看可选值"
+		},
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "逆向纠纷单号id"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码。取值范围:大于零的整数; 默认值:1"
+		},
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "买家昵称"
+		},
+		{
+			"name": "start_modified",
+			"type": "Date",
+			"description": "查询修改时间开始。格式: yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "end_modified",
+			"type": "Date",
+			"description": "查询修改时间结束。格式: yyyy-MM-dd HH:mm:ss"
+		},
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "需要返回的字段。目前支持有：refund_id, alipay_no, tid, buyer_nick, seller_nick, status, created, modified, order_status, refund_fee, good_status, show_return_logistic(展现买家退货的物流信息), show_exchange_logistic(展现换货的物流信息), time_out, oid, refund_version, title, num, dispute_request, reason, desc",
+			"required": true,
+			"maxListSize": 100
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "page_results",
+					"type": "Number",
+					"description": "当前页面的纠纷单数量",
+					"required": true
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "所有符合查询条件的纠纷单数量",
+					"required": true
+				},
+				{
+					"name": "has_next",
+					"type": "Boolean",
+					"description": "是否还有下一页",
+					"required": true
+				},
+				{
+					"name": "exception",
+					"type": "Json",
+					"description": "所抛出异常",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "results",
+					"type": "Dispute[]",
+					"description": "results",
+					"required": true,
+					"subParams": [
+						{
+							"name": "address",
+							"type": "String",
+							"description": "卖家收货地址",
+							"required": true
+						},
+						{
+							"name": "alipay_no",
+							"type": "String",
+							"description": "支付宝单号",
+							"required": true
+						},
+						{
+							"name": "attribute",
+							"type": "String",
+							"description": "纠纷单上的各项属性",
+							"required": true
+						},
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "正向交易单号",
+							"required": true
+						},
+						{
+							"name": "buyer_address",
+							"type": "String",
+							"description": "买家收货地址（换货）",
+							"required": true
+						},
+						{
+							"name": "buyer_logistic_name",
+							"type": "String",
+							"description": "买家发货物流公司（换货）",
+							"required": true
+						},
+						{
+							"name": "buyer_logistic_no",
+							"type": "String",
+							"description": "买家发货物流单号（换货）",
+							"required": true
+						},
+						{
+							"name": "buyer_name",
+							"type": "String",
+							"description": "买家收货人姓名（换货）",
+							"required": true
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "买家昵称",
+							"required": true
+						},
+						{
+							"name": "buyer_phone",
+							"type": "String",
+							"description": "买家联系方式（换货）",
+							"required": true
+						},
+						{
+							"name": "company_name",
+							"type": "String",
+							"description": "卖家发货物流单号",
+							"required": true
+						},
+						{
+							"name": "created",
+							"type": "Date",
+							"description": "纠纷单创建时间",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "纠纷说明",
+							"required": true
+						},
+						{
+							"name": "dispute_request",
+							"type": "String",
+							"description": "纠纷类型，常见的有：仅退款、退货退款、换货",
+							"required": true
+						},
+						{
+							"name": "good_return_time",
+							"type": "Date",
+							"description": "买家退货时间",
+							"required": true
+						},
+						{
+							"name": "good_status",
+							"type": "String",
+							"description": "货物状态",
+							"required": true
+						},
+						{
+							"name": "has_good_return",
+							"type": "Boolean",
+							"description": "买家是否需要退货。可选值:true(是),false(否)",
+							"required": true
+						},
+						{
+							"name": "modified",
+							"type": "Date",
+							"description": "纠纷单修改时间",
+							"required": true
+						},
+						{
+							"name": "num",
+							"type": "Number",
+							"description": "买家购买数量",
+							"required": true
+						},
+						{
+							"name": "oid",
+							"type": "Number",
+							"description": "子订单号。如果是单笔交易oid会等于tid",
+							"required": true
+						},
+						{
+							"name": "order_status",
+							"type": "String",
+							"description": "退款对应的订单交易状态。可选值TRADE_NO_CREATE_PAY(没有创建支付宝交易) WAIT_BUYER_PAY(等待买家付款) WAIT_SELLER_SEND_GOODS(等待卖家发货,即:买家已付款) WAIT_BUYER_CONFIRM_GOODS(等待买家确认收货,即:卖家已发货) TRADE_BUYER_SIGNED(买家已签收,货到付款专用) TRADE_FINISHED(交易成功) TRADE_CLOSED(交易关闭) TRADE_CLOSED_BY_TAOBAO(交易被淘宝关闭) ALL_WAIT_PAY(包含：WAIT_BUYER_PAY、TRADE_NO_CREATE_PAY) ALL_CLOSED(包含：TRADE_CLOSED、TRADE_CLOSED_BY_TAOBAO) 取自\u0026quot;http://open.taobao.com/dev/index.php/%E4%BA%A4%E6%98%93%E7%8A%B6%E6%80%81\u0026quot;",
+							"required": true
+						},
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "退款原因",
+							"required": true
+						},
+						{
+							"name": "refund_fee",
+							"type": "String",
+							"description": "退还金额(退还给买家的金额)。精确到2位小数;单位:元。如:200.07，表示:200元7分",
+							"required": true
+						},
+						{
+							"name": "refund_id",
+							"type": "String",
+							"description": "纠纷单号id",
+							"required": true
+						},
+						{
+							"name": "refund_phase",
+							"type": "String",
+							"description": "退款阶段，可选值：onsale/aftersale",
+							"required": true
+						},
+						{
+							"name": "seller_logistic_name",
+							"type": "String",
+							"description": "卖家发货物流公司（换货）",
+							"required": true
+						},
+						{
+							"name": "seller_logistic_no",
+							"type": "String",
+							"description": "卖家发货物流单号（换货）",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "逆向纠纷状态。其中，仅退款/退货退款的状态为：(1, \"买家已经申请退款，等待卖家同意\"),(2, \"卖家已经同意退款，等待买家退货\"),(3, \"买家已经退货，等待卖家确认收货\"),(4, \"退款关闭\"),(5, \"退款成功\"),(6, \"卖家拒绝退款”),(7, \"等待买家确认重新邮寄的货物\"),(8, \"等待卖家确认退货地址\")；换货的状态为：(1, \"换货待处理\"),(2, \"待买家退货\"),(3, \"买家已退货，待收货\"),(4, \"换货关闭\"),(5, \"换货成功\"),(6, \"待买家修改\"),(12, \"待发出换货商品\"),(13, \"待买家收货\"),(14, \"请退款\")",
+							"required": true
+						},
+						{
+							"name": "time_out",
+							"type": "String",
+							"description": "超时时间",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

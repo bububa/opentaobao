@@ -1,0 +1,711 @@
+{
+	"name": "taobao.tbk.dg.optimus.material",
+	"apiChineseName": "淘宝客-推广者-物料精选",
+	"description": "支持入参对应的“推广位”和官方提供的“物料id”，获取指定物料信息和推广链接，还可入参用户信息提供智能推荐（需智能推荐请先前协议https://pub.alimama.com/fourth/protocol/common.htm?key=hangye_laxin）",
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页大小，默认20，1~100",
+			"maxValue": 100,
+			"minValue": 1
+		},
+		{
+			"name": "adzone_id",
+			"type": "Number",
+			"description": "mm_xxx_xxx_xxx的第三位",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "第几页，默认：1"
+		},
+		{
+			"name": "material_id",
+			"type": "Number",
+			"description": "官方的物料Id(详细物料id见：https://market.m.taobao.com/app/qn/toutiao-new/index-pc.html#/detail/10628875?_k=gpov9a)",
+			"required": true
+		},
+		{
+			"name": "device_value",
+			"type": "String",
+			"description": "智能匹配-设备号加密后的值（MD5加密需32位小写），类型为OAID时传原始OAID值"
+		},
+		{
+			"name": "device_encrypt",
+			"type": "String",
+			"description": "智能匹配-设备号加密类型：MD5，类型为OAID时不传"
+		},
+		{
+			"name": "device_type",
+			"type": "String",
+			"description": "智能匹配-设备号类型：IMEI，或者IDFA，或者UTDID（UTDID不支持MD5加密），或者OAID"
+		},
+		{
+			"name": "content_id",
+			"type": "Number",
+			"description": "内容专用-内容详情ID"
+		},
+		{
+			"name": "content_source",
+			"type": "String",
+			"description": "内容专用-内容渠道信息"
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID，用于相似商品推荐"
+		},
+		{
+			"name": "favorites_id",
+			"type": "String",
+			"description": "选品库投放id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "MapData []",
+			"description": "resultList",
+			"subParams": [
+				{
+					"name": "coupon_amount",
+					"type": "Number",
+					"description": "优惠券（元） 若属于预售商品，该优惠券付尾款可用，付定金不可用",
+					"required": true
+				},
+				{
+					"name": "small_images",
+					"type": "String[]",
+					"description": "商品信息-商品小图列表",
+					"required": true
+				},
+				{
+					"name": "shop_title",
+					"type": "String",
+					"description": "店铺信息-店铺名称",
+					"required": true
+				},
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "商品信息-叶子类目id",
+					"required": true
+				},
+				{
+					"name": "coupon_start_fee",
+					"type": "String",
+					"description": "优惠券信息-优惠券起用门槛，满X元可用。如：满299元减20元",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品信息-宝贝id",
+					"required": true
+				},
+				{
+					"name": "coupon_total_count",
+					"type": "Number",
+					"description": "优惠券信息-优惠券总量",
+					"required": true
+				},
+				{
+					"name": "user_type",
+					"type": "Number",
+					"description": "店铺信息-卖家类型，0表示淘宝，1表示天猫，3表示特价版",
+					"required": true
+				},
+				{
+					"name": "zk_final_price",
+					"type": "String",
+					"description": "折扣价（元） 若属于预售商品，付定金时间内，折扣价=预售价",
+					"required": true
+				},
+				{
+					"name": "coupon_remain_count",
+					"type": "Number",
+					"description": "优惠券信息-优惠券剩余量",
+					"required": true
+				},
+				{
+					"name": "commission_rate",
+					"type": "String",
+					"description": "商品信息-佣金比率(%)",
+					"required": true
+				},
+				{
+					"name": "coupon_start_time",
+					"type": "String",
+					"description": "优惠券信息-优惠券开始时间",
+					"required": true
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "商品信息-商品标题",
+					"required": true
+				},
+				{
+					"name": "item_description",
+					"type": "String",
+					"description": "商品信息-宝贝描述（推荐理由,不一定有）",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "店铺信息-卖家id",
+					"required": true
+				},
+				{
+					"name": "volume",
+					"type": "Number",
+					"description": "商品信息-30天销量",
+					"required": true
+				},
+				{
+					"name": "coupon_end_time",
+					"type": "String",
+					"description": "优惠券信息-优惠券结束时间",
+					"required": true
+				},
+				{
+					"name": "coupon_click_url",
+					"type": "String",
+					"description": "链接-宝贝+券二合一页面链接(该字段废弃，请勿再用)",
+					"required": true
+				},
+				{
+					"name": "pict_url",
+					"type": "String",
+					"description": "商品信息-商品主图",
+					"required": true
+				},
+				{
+					"name": "click_url",
+					"type": "String",
+					"description": "链接-宝贝推广链接",
+					"required": true
+				},
+				{
+					"name": "stock",
+					"type": "Number",
+					"description": "拼团专用-拼团剩余库存",
+					"required": true
+				},
+				{
+					"name": "sell_num",
+					"type": "Number",
+					"description": "拼团专用-拼团已售数量",
+					"required": true
+				},
+				{
+					"name": "total_stock",
+					"type": "Number",
+					"description": "拼团专用-拼团库存数量",
+					"required": true
+				},
+				{
+					"name": "oetime",
+					"type": "String",
+					"description": "拼团专用-拼团结束时间",
+					"required": true
+				},
+				{
+					"name": "ostime",
+					"type": "String",
+					"description": "拼团专用-拼团开始时间",
+					"required": true
+				},
+				{
+					"name": "jdd_num",
+					"type": "Number",
+					"description": "拼团专用-拼团几人团",
+					"required": true
+				},
+				{
+					"name": "jdd_price",
+					"type": "String",
+					"description": "拼团专用-拼团拼成价，单位元",
+					"required": true
+				},
+				{
+					"name": "orig_price",
+					"type": "String",
+					"description": "拼团专用-拼团一人价（原价)，单位元",
+					"required": true
+				},
+				{
+					"name": "level_one_category_name",
+					"type": "String",
+					"description": "商品信息-一级类目名称",
+					"required": true
+				},
+				{
+					"name": "level_one_category_id",
+					"type": "Number",
+					"description": "商品信息-一级类目ID",
+					"required": true
+				},
+				{
+					"name": "category_name",
+					"type": "String",
+					"description": "商品信息-叶子类目名称",
+					"required": true
+				},
+				{
+					"name": "white_image",
+					"type": "String",
+					"description": "商品信息-商品白底图",
+					"required": true
+				},
+				{
+					"name": "short_title",
+					"type": "String",
+					"description": "商品信息-商品短标题",
+					"required": true
+				},
+				{
+					"name": "word_list",
+					"type": "WordMapData[]",
+					"description": "商品信息-商品关联词",
+					"required": true,
+					"subParams": [
+						{
+							"name": "url",
+							"type": "String",
+							"description": "链接-商品相关关联词落地页地址",
+							"required": true
+						},
+						{
+							"name": "word",
+							"type": "String",
+							"description": "商品相关的关联词",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "tmall_play_activity_info",
+					"type": "String",
+					"description": "营销-天猫营销玩法",
+					"required": true
+				},
+				{
+					"name": "uv_sum_pre_sale",
+					"type": "Number",
+					"description": "商品信息-预售数量",
+					"required": true
+				},
+				{
+					"name": "x_id",
+					"type": "String",
+					"description": "物料块id(测试中请勿使用)",
+					"required": true
+				},
+				{
+					"name": "new_user_price",
+					"type": "String",
+					"description": "商品信息-新人价",
+					"required": true
+				},
+				{
+					"name": "coupon_info",
+					"type": "String",
+					"description": "优惠券信息-优惠券满减信息",
+					"required": true
+				},
+				{
+					"name": "coupon_share_url",
+					"type": "String",
+					"description": "链接-宝贝+券二合一页面链接",
+					"required": true
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "店铺信息-卖家昵称",
+					"required": true
+				},
+				{
+					"name": "reserve_price",
+					"type": "String",
+					"description": "商品信息-一口价",
+					"required": true
+				},
+				{
+					"name": "ju_online_end_time",
+					"type": "String",
+					"description": "聚划算信息-聚淘结束时间",
+					"required": true
+				},
+				{
+					"name": "ju_online_start_time",
+					"type": "String",
+					"description": "聚划算信息-聚淘开始时间",
+					"required": true
+				},
+				{
+					"name": "maochao_play_end_time",
+					"type": "String",
+					"description": "猫超玩法信息-活动结束时间，精确到毫秒",
+					"required": true
+				},
+				{
+					"name": "maochao_play_start_time",
+					"type": "String",
+					"description": "猫超玩法信息-活动开始时间，精确到毫秒",
+					"required": true
+				},
+				{
+					"name": "maochao_play_conditions",
+					"type": "String",
+					"description": "猫超玩法信息-折扣条件，价格百分数存储，件数按数量存储。可以有多个折扣条件，与折扣字段对应，','分割",
+					"required": true
+				},
+				{
+					"name": "maochao_play_discounts",
+					"type": "String",
+					"description": "猫超玩法信息-折扣，折扣按照百分数存储，其余按照单位分存储。可以有多个折扣，','分割",
+					"required": true
+				},
+				{
+					"name": "maochao_play_discount_type",
+					"type": "String",
+					"description": "猫超玩法信息-玩法类型，2:折扣(满n件折扣),5:减钱(满n元减m元)",
+					"required": true
+				},
+				{
+					"name": "maochao_play_free_post_fee",
+					"type": "String",
+					"description": "猫超玩法信息-当前是否包邮，1:是，0:否",
+					"required": true
+				},
+				{
+					"name": "multi_coupon_zk_rate",
+					"type": "String",
+					"description": "多件券优惠比例",
+					"required": true
+				},
+				{
+					"name": "price_after_multi_coupon",
+					"type": "String",
+					"description": "多件券件单价",
+					"required": true
+				},
+				{
+					"name": "multi_coupon_item_count",
+					"type": "String",
+					"description": "多件券单品件数",
+					"required": true
+				},
+				{
+					"name": "lock_rate",
+					"type": "String",
+					"description": "锁住的佣金率",
+					"required": true
+				},
+				{
+					"name": "lock_rate_end_time",
+					"type": "Number",
+					"description": "锁佣结束时间",
+					"required": true
+				},
+				{
+					"name": "lock_rate_start_time",
+					"type": "Number",
+					"description": "锁佣开始时间",
+					"required": true
+				},
+				{
+					"name": "promotion_type",
+					"type": "String",
+					"description": "满减满折的类型（1. 满减 2. 满折）",
+					"required": true
+				},
+				{
+					"name": "promotion_info",
+					"type": "String",
+					"description": "满减满折信息",
+					"required": true
+				},
+				{
+					"name": "promotion_discount",
+					"type": "String",
+					"description": "满减满折门槛（满2件打5折中值为2；满300减20中值为300）",
+					"required": true
+				},
+				{
+					"name": "promotion_condition",
+					"type": "String",
+					"description": "满减满折优惠（满2件打5折中值为5；满300减20中值为20）",
+					"required": true
+				},
+				{
+					"name": "presale_discount_fee_text",
+					"type": "String",
+					"description": "预售商品-优惠信息",
+					"required": true
+				},
+				{
+					"name": "presale_tail_end_time",
+					"type": "Number",
+					"description": "预售商品-付尾款结束时间（毫秒）",
+					"required": true
+				},
+				{
+					"name": "presale_tail_start_time",
+					"type": "Number",
+					"description": "预售商品-付尾款开始时间（毫秒）",
+					"required": true
+				},
+				{
+					"name": "presale_end_time",
+					"type": "Number",
+					"description": "预售商品-付定金结束时间（毫秒）",
+					"required": true
+				},
+				{
+					"name": "presale_start_time",
+					"type": "Number",
+					"description": "预售商品-付定金开始时间（毫秒）",
+					"required": true
+				},
+				{
+					"name": "presale_deposit",
+					"type": "String",
+					"description": "预售商品-定金（元）",
+					"required": true
+				},
+				{
+					"name": "ysyl_tlj_use_start_time",
+					"type": "String",
+					"description": "预售有礼-淘礼金使用开始时间",
+					"required": true
+				},
+				{
+					"name": "ysyl_commission_rate",
+					"type": "String",
+					"description": "预售有礼-佣金比例（ 预售有礼活动享受的推广佣金比例，注：推广该活动有特殊分成规则，请详见：https://tbk.bbs.taobao.com/detail.html?appId=45301\u0026postId=9334376 ）",
+					"required": true
+				},
+				{
+					"name": "ysyl_tlj_send_time",
+					"type": "String",
+					"description": "预售有礼-淘礼金发放时间",
+					"required": true
+				},
+				{
+					"name": "ysyl_tlj_face",
+					"type": "String",
+					"description": "预售有礼-预估淘礼金（元）",
+					"required": true
+				},
+				{
+					"name": "ysyl_click_url",
+					"type": "String",
+					"description": "预售有礼-推广链接",
+					"required": true
+				},
+				{
+					"name": "ysyl_tlj_use_end_time",
+					"type": "String",
+					"description": "预售有礼-淘礼金使用结束时间",
+					"required": true
+				},
+				{
+					"name": "ju_play_end_time",
+					"type": "Number",
+					"description": "聚划算满减  -结束时间（毫秒）",
+					"required": true
+				},
+				{
+					"name": "ju_play_start_time",
+					"type": "Number",
+					"description": "聚划算满减  -开始时间（毫秒）",
+					"required": true
+				},
+				{
+					"name": "play_info",
+					"type": "String",
+					"description": "1聚划算满减：满N件减X元，满N件X折，满N件X元）  2天猫限时抢：前N分钟每件X元，前N分钟满N件每件X元，前N件每件X元）",
+					"required": true
+				},
+				{
+					"name": "tmall_play_activity_end_time",
+					"type": "Number",
+					"description": "天猫限时抢可售  -结束时间（毫秒）",
+					"required": true
+				},
+				{
+					"name": "tmall_play_activity_start_time",
+					"type": "Number",
+					"description": "天猫限时抢可售  -开始时间（毫秒）",
+					"required": true
+				},
+				{
+					"name": "ju_pre_show_end_time",
+					"type": "String",
+					"description": "聚划算信息-商品预热开始时间（毫秒）",
+					"required": true
+				},
+				{
+					"name": "ju_pre_show_start_time",
+					"type": "String",
+					"description": "聚划算信息-商品预热结束时间（毫秒）",
+					"required": true
+				},
+				{
+					"name": "favorites_info",
+					"type": "FavoritesInfo",
+					"description": "选品库信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total_count",
+							"type": "Number",
+							"description": "选品库总数量",
+							"required": true
+						},
+						{
+							"name": "favorites_list",
+							"type": "FavoritesDetail[]",
+							"description": "选品库详细信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "favorites_id",
+									"type": "Number",
+									"description": "选品库id",
+									"required": true
+								},
+								{
+									"name": "favorites_title",
+									"type": "String",
+									"description": "选品库标题",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "sale_price",
+					"type": "String",
+					"description": "活动价",
+					"required": true
+				},
+				{
+					"name": "kuadian_promotion_info",
+					"type": "String",
+					"description": "跨店满减信息",
+					"required": true
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "商品子标题",
+					"required": true
+				},
+				{
+					"name": "jhs_price_usp_list",
+					"type": "String",
+					"description": "聚划算商品价格卖点描述",
+					"required": true
+				},
+				{
+					"name": "tqg_online_end_time",
+					"type": "String",
+					"description": "淘抢购商品专用-结束时间",
+					"required": true
+				},
+				{
+					"name": "tqg_online_start_time",
+					"type": "String",
+					"description": "淘抢购商品专用-开团时间",
+					"required": true
+				},
+				{
+					"name": "tqg_sold_count",
+					"type": "Number",
+					"description": "淘抢购商品专用-已抢购数量",
+					"required": true
+				},
+				{
+					"name": "tqg_total_count",
+					"type": "Number",
+					"description": "淘抢购商品专用-总库存",
+					"required": true
+				},
+				{
+					"name": "superior_brand",
+					"type": "String",
+					"description": "是否品牌精选，0不是，1是",
+					"required": true
+				},
+				{
+					"name": "is_brand_flash_sale",
+					"type": "String",
+					"description": "是否品牌快抢，0不是，1是",
+					"required": true
+				},
+				{
+					"name": "hot_flag",
+					"type": "String",
+					"description": "是否是热门商品，0不是，1是",
+					"required": true
+				},
+				{
+					"name": "topn_info",
+					"type": "TopNInfoDTO",
+					"description": "前N件佣金信息-前N件佣金生效或预热时透出以下字段",
+					"required": true,
+					"subParams": [
+						{
+							"name": "topn_quantity",
+							"type": "Number",
+							"description": "前N件剩余库存",
+							"required": true
+						},
+						{
+							"name": "topn_total_count",
+							"type": "Number",
+							"description": "前N件初始总库存",
+							"required": true
+						},
+						{
+							"name": "topn_end_time",
+							"type": "String",
+							"description": "前N件佣金结束时间",
+							"required": true
+						},
+						{
+							"name": "topn_start_time",
+							"type": "String",
+							"description": "前N件佣金开始时间",
+							"required": true
+						},
+						{
+							"name": "topn_rate",
+							"type": "String",
+							"description": "前N件佣金率",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "is_default",
+			"type": "String",
+			"description": "推荐信息-是否抄底"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "商品总数-目前只有全品库商品查询有该字段"
+		}
+	]
+}

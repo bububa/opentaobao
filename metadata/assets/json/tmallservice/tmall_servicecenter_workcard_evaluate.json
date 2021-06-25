@@ -1,0 +1,57 @@
+{
+	"name": "tmall.servicecenter.workcard.evaluate",
+	"apiChineseName": "服务商反馈鉴定结果",
+	"description": "服务商反馈鉴定结果",
+	"requestParams": [
+		{
+			"name": "pass_evaluation",
+			"type": "Boolean",
+			"description": "是否鉴定通过",
+			"required": true
+		},
+		{
+			"name": "fail_code",
+			"type": "Number",
+			"description": "鉴定不通过时的原因编码"
+		},
+		{
+			"name": "pic_url_list",
+			"type": "String[]",
+			"description": "鉴定结果图片列表",
+			"maxListSize": 20
+		},
+		{
+			"name": "workcard_id",
+			"type": "Number",
+			"description": "工单id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回值Result",
+			"subParams": [
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

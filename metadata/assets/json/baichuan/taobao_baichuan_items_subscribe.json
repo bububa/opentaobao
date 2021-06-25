@@ -1,0 +1,63 @@
+{
+	"name": "taobao.baichuan.items.subscribe",
+	"apiChineseName": "百川批量商品订阅",
+	"description": "百川批量添加订阅的商品",
+	"requestParams": [
+		{
+			"name": "item_ids",
+			"type": "Number[]",
+			"description": "订阅的商品id列表",
+			"required": true,
+			"maxListSize": 100
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result_list",
+					"type": "ResultMeta[]",
+					"description": "按不同的返回码将结果分部分返回",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code",
+							"type": "Number",
+							"description": "返回码",
+							"required": true
+						},
+						{
+							"name": "data",
+							"type": "ResultData",
+							"description": "对应code的itemId列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "count",
+									"type": "Number",
+									"description": "个数",
+									"required": true
+								},
+								{
+									"name": "item_list",
+									"type": "Number[]",
+									"description": "itemId列表",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "msg",
+							"type": "String",
+							"description": "返回码对应文案",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,118 @@
+{
+	"name": "taobao.wlb.waybill.i.search",
+	"apiChineseName": "查询面单服务订购及面单使用情况v1.0",
+	"description": "获取发货地\u0026CP开通状态\u0026账户的使用情况",
+	"requestParams": [
+		{
+			"name": "waybill_apply_request",
+			"type": "WaybillApplyRequest",
+			"description": "查询网点信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "物流服务商ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "subscribtions",
+			"type": "WaybillApplySubscriptionInfo []",
+			"description": "订购关系",
+			"subParams": [
+				{
+					"name": "branch_account_cols",
+					"type": "WaybillBranchAccount[]",
+					"description": "CP网点信息及对应的商家的发货信息",
+					"subParams": [
+						{
+							"name": "seller_id",
+							"type": "Number",
+							"description": "商家ID"
+						},
+						{
+							"name": "shipp_address_cols",
+							"type": "WaybillAddress[]",
+							"description": "当前网点下的发货地址",
+							"subParams": [
+								{
+									"name": "area",
+									"type": "String",
+									"description": "区名称（三级地址）"
+								},
+								{
+									"name": "province",
+									"type": "String",
+									"description": "省名称（一级地址）"
+								},
+								{
+									"name": "town",
+									"type": "String",
+									"description": "街道\\镇名称（四级地址）"
+								},
+								{
+									"name": "address_detail",
+									"type": "String",
+									"description": "详细地址"
+								},
+								{
+									"name": "city",
+									"type": "String",
+									"description": "市名称（二级地址）"
+								},
+								{
+									"name": "waybill_address_id",
+									"type": "Number",
+									"description": "waybill 地址记录ID(非地址库ID)"
+								}
+							]
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "可用单数"
+						},
+						{
+							"name": "allocated_quantity",
+							"type": "Number",
+							"description": "已用单数"
+						},
+						{
+							"name": "branch_code",
+							"type": "String",
+							"description": "网点ID"
+						},
+						{
+							"name": "print_quantity",
+							"type": "Number",
+							"description": "已经打印的面单总数"
+						},
+						{
+							"name": "cancel_quantity",
+							"type": "Number",
+							"description": "取消的面对总数"
+						},
+						{
+							"name": "branch_name",
+							"type": "String",
+							"description": "网点名称"
+						}
+					]
+				},
+				{
+					"name": "cp_type",
+					"type": "Number",
+					"description": "1是直营，2是加盟"
+				},
+				{
+					"name": "cp_code",
+					"type": "String",
+					"description": "物流服务商ID"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,108 @@
+{
+	"name": "taobao.jst.sms.message.send",
+	"apiChineseName": "聚石塔数据paas短信发送接口",
+	"description": "聚石塔短信PAAS场景中，ISV通过该API帮商家发送短信给用户。",
+	"requestParams": [
+		{
+			"name": "send_message_request",
+			"type": "SendMessageRequest",
+			"description": "短信发送请求",
+			"subParams": [
+				{
+					"name": "extend_name",
+					"type": "String",
+					"description": "拓展Name"
+				},
+				{
+					"name": "extend_code",
+					"type": "String",
+					"description": "拓展Code"
+				},
+				{
+					"name": "sms_free_sign_name",
+					"type": "String",
+					"description": "短信签名",
+					"required": true
+				},
+				{
+					"name": "channel_type",
+					"type": "String",
+					"description": "渠道类型"
+				},
+				{
+					"name": "template_code",
+					"type": "String",
+					"description": "短信模版Code",
+					"required": true
+				},
+				{
+					"name": "params",
+					"description": "短信内容参数, ${url}会被入参url的值替换掉"
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "商品H5详情页，如果不传则没有短信效果数据"
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "拓展信息"
+				},
+				{
+					"name": "phone_number",
+					"type": "String",
+					"description": "手机号码",
+					"required": true
+				},
+				{
+					"name": "tag",
+					"type": "String",
+					"description": "短信人群tag"
+				},
+				{
+					"name": "batch_number",
+					"type": "String",
+					"description": "短信批次号"
+				},
+				{
+					"name": "sms_type",
+					"type": "String",
+					"description": "短信类型"
+				},
+				{
+					"name": "tool_flag",
+					"type": "String",
+					"description": "标记字段"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "request_code",
+			"type": "String",
+			"description": "参数错误"
+		},
+		{
+			"name": "request_success",
+			"type": "Boolean",
+			"description": "请求成功"
+		},
+		{
+			"name": "request_id",
+			"type": "String",
+			"description": "1234"
+		},
+		{
+			"name": "module",
+			"type": "String",
+			"description": "空"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "参数错误"
+		}
+	]
+}

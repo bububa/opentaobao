@@ -1,0 +1,21 @@
+package trade
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/trade"
+)
+
+/* 
+ASCP渠道中心销售单创建接口 
+tmall.ascp.orders.sale.create
+
+ASCP渠道中心销售单创建接口
+*/
+func TmallAscpOrdersSaleCreate(clt *core.SDKClient, req *trade.TmallAscpOrdersSaleCreateRequest, session string) (*trade.TmallAscpOrdersSaleCreateResponse, error) {
+    var resp trade.TmallAscpOrdersSaleCreateAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

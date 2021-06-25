@@ -1,0 +1,29 @@
+{
+	"name": "tmall.msf.receive",
+	"apiChineseName": "签收接口",
+	"description": "签收接口",
+	"requestParams": [
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "1"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "1"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Json",
+			"description": "result"
+		}
+	]
+}

@@ -1,0 +1,45 @@
+{
+	"name": "tmall.device.brand.memberurl.get",
+	"apiChineseName": "获取智能硬件旗舰店入会码",
+	"description": "获取旗舰店在智能硬件上的入会码",
+	"requestParams": [
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备DeviceCode",
+			"required": true
+		},
+		{
+			"name": "callback_url",
+			"type": "String",
+			"description": "入会后的回调地址"
+		},
+		{
+			"name": "longterm",
+			"type": "Boolean",
+			"description": "是否使用长期链接"
+		},
+		{
+			"name": "banner_img",
+			"type": "String",
+			"description": "页面banner的图片，如果没有传入，会使用系统默认图"
+		},
+		{
+			"name": "follow_retail_account",
+			"type": "Boolean",
+			"description": "是否同时关注天猫理想站"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "short_img_url",
+			"type": "String",
+			"description": "二维码图片URL"
+		},
+		{
+			"name": "short_url",
+			"type": "String",
+			"description": "二维码短链接地址"
+		}
+	]
+}

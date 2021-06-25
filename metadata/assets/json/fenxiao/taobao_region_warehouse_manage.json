@@ -1,0 +1,53 @@
+{
+	"name": "taobao.region.warehouse.manage",
+	"apiChineseName": "编辑仓库覆盖范围",
+	"description": "编辑仓库覆盖范围",
+	"requestParams": [
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓库编码",
+			"required": true
+		},
+		{
+			"name": "regions",
+			"type": "String[]",
+			"description": "可映射三级地址,例: 广东省",
+			"required": true,
+			"maxListSize": 100
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "true/false",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

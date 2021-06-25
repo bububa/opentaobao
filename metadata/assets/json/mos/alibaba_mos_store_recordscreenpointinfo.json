@@ -1,0 +1,40 @@
+{
+	"name": "alibaba.mos.store.recordscreenpointinfo",
+	"apiChineseName": "云屏埋点数据记录接口",
+	"description": "记录云屏埋点数据",
+	"requestParams": [
+		{
+			"name": "screen_point_info",
+			"type": "String",
+			"description": "云屏埋点信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

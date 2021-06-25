@@ -1,0 +1,320 @@
+{
+	"name": "alibaba.alsc.crm.point.rule.get",
+	"apiChineseName": "查询积分规则",
+	"description": "新增积分规则查询接口,传入includeLogicalDelete和maxUpdateTime时走同步下行逻辑不然则走普通积分规则查询接口",
+	"requestParams": [
+		{
+			"name": "param_query_point_rule_open_req",
+			"type": "QueryPointRuleOpenReq",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌id(不能和outbrandid同时为空)"
+				},
+				{
+					"name": "include_logical_delete",
+					"type": "Boolean",
+					"description": "是否包含逻辑删除"
+				},
+				{
+					"name": "level_id",
+					"type": "String",
+					"description": "会员等级ID"
+				},
+				{
+					"name": "max_update_time",
+					"type": "Date",
+					"description": "maxUpdateTime"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌ID(不能和brandid同时为空)"
+				},
+				{
+					"name": "out_shop_id",
+					"type": "String",
+					"description": "外部门店ID(不能和shopid同时为空)"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "门店ID(不能和outshopid同时为空)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "业务执行是否成功",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "PointRuleOpenInfo",
+					"description": "业务结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "create_by",
+							"type": "String",
+							"description": "创建者",
+							"required": true
+						},
+						{
+							"name": "deleted",
+							"type": "Boolean",
+							"description": "逻辑删除标志",
+							"required": true
+						},
+						{
+							"name": "ext_info",
+							"type": "Extinfo",
+							"description": "扩展信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "empty",
+									"type": "Boolean",
+									"description": "null",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "更新时间",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "规则名称",
+							"required": true
+						},
+						{
+							"name": "point_addition_rule",
+							"type": "PointAdditionRuleOpenInfo",
+							"description": "积分获取规则",
+							"required": true,
+							"subParams": [
+								{
+									"name": "allow_pay_methods",
+									"type": "PayMethodPointAdditionRuleOpenInfo[]",
+									"description": "可以获取积分的支付方式",
+									"required": true,
+									"subParams": [
+										{
+											"name": "enable",
+											"type": "Boolean",
+											"description": "是否开启",
+											"required": true
+										},
+										{
+											"name": "method_id",
+											"type": "String",
+											"description": "方法ID",
+											"required": true
+										},
+										{
+											"name": "method_name",
+											"type": "String",
+											"description": "方法名称",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "member_point_addition_rules",
+									"type": "MemberPointAdditionRuleOpenInfo[]",
+									"description": "不同会员等级的积分获取规则",
+									"required": true,
+									"subParams": [
+										{
+											"name": "allow_product_type",
+											"type": "String",
+											"description": "允许积分商品的范围",
+											"required": true
+										},
+										{
+											"name": "allow_recharge",
+											"type": "Boolean",
+											"description": "是否允许储值积分",
+											"required": true
+										},
+										{
+											"name": "consume_money",
+											"type": "Number",
+											"description": "消费的现金，单位为元",
+											"required": true
+										},
+										{
+											"name": "enable",
+											"type": "Boolean",
+											"description": "是否允许获取积分",
+											"required": true
+										},
+										{
+											"name": "level_id",
+											"type": "String",
+											"description": "会员等级ID",
+											"required": true
+										},
+										{
+											"name": "reward_point",
+											"type": "Number",
+											"description": "奖励的积分",
+											"required": true
+										},
+										{
+											"name": "sku_ids",
+											"type": "String[]",
+											"description": "商品SKU_ID列表",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "point_clear_rule",
+							"type": "PointClearRuleOpenInfo",
+							"description": "积分清零规则",
+							"required": true,
+							"subParams": [
+								{
+									"name": "days",
+									"type": "Number",
+									"description": "多少天之后清零",
+									"required": true
+								},
+								{
+									"name": "point_clear_rule_type",
+									"type": "String",
+									"description": "积分清零规则类型",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "point_deduction_rule",
+							"type": "PointDeductionRuleOpenInfo",
+							"description": "积分扣减规则",
+							"required": true,
+							"subParams": [
+								{
+									"name": "member_point_deduction_rules",
+									"type": "MemberPointDeductionRuleOpenInfo[]",
+									"description": "会员等级维度的积分抵扣规则",
+									"required": true,
+									"subParams": [
+										{
+											"name": "consume_money",
+											"type": "Number",
+											"description": "消费的金额",
+											"required": true
+										},
+										{
+											"name": "deducted_point",
+											"type": "Number",
+											"description": "抵扣的积分",
+											"required": true
+										},
+										{
+											"name": "enable",
+											"type": "Boolean",
+											"description": "是否允许该等级进行积分抵现",
+											"required": true
+										},
+										{
+											"name": "has_upper_limit",
+											"type": "Boolean",
+											"description": "单次使用是否有抵扣上限",
+											"required": true
+										},
+										{
+											"name": "level_id",
+											"type": "String",
+											"description": "会员等级ID",
+											"required": true
+										},
+										{
+											"name": "max_point",
+											"type": "Number",
+											"description": "单次使用的抵扣上限",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "with_coupon",
+									"type": "Boolean",
+									"description": "是否与优惠券同享",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "rule_id",
+							"type": "String",
+							"description": "规则的业务ID",
+							"required": true
+						},
+						{
+							"name": "update_by",
+							"type": "String",
+							"description": "更新者",
+							"required": true
+						},
+						{
+							"name": "update_by_name",
+							"type": "String",
+							"description": "更新者姓名",
+							"required": true
+						},
+						{
+							"name": "create_by_name",
+							"type": "String",
+							"description": "创建者姓名",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "结果码",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "结果描述",
+					"required": true
+				},
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "错误结果显示",
+					"required": true
+				}
+			]
+		}
+	]
+}

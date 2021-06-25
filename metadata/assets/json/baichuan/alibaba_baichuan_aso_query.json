@@ -1,0 +1,108 @@
+{
+	"name": "alibaba.baichuan.aso.query",
+	"apiChineseName": "查询app在设备上的安装信息",
+	"description": "查询app在设备上的安装信息",
+	"requestParams": [
+		{
+			"name": "app_id",
+			"type": "String",
+			"description": "1-tmail,2-taobao",
+			"required": true
+		},
+		{
+			"name": "app_os",
+			"type": "Number",
+			"description": "1-android,2-ios",
+			"required": true
+		},
+		{
+			"name": "device_info_list",
+			"type": "ASODeviceInfoDO[]",
+			"description": "设备信息，ios为idfa ，android 为imei + imsi",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "idfa",
+					"type": "String",
+					"description": "idfa"
+				},
+				{
+					"name": "imei",
+					"type": "String",
+					"description": "imei"
+				},
+				{
+					"name": "imsi",
+					"type": "String",
+					"description": "imsi"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AsoQueryDeviceResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "AsoDeviceCheckResult[]",
+					"description": "result",
+					"required": true,
+					"subParams": [
+						{
+							"name": "is_new_device",
+							"type": "Boolean",
+							"description": "isNewDevice",
+							"required": true
+						},
+						{
+							"name": "imei",
+							"type": "String",
+							"description": "imei",
+							"required": true
+						},
+						{
+							"name": "imsi",
+							"type": "String",
+							"description": "imsi",
+							"required": true
+						},
+						{
+							"name": "idfa",
+							"type": "String",
+							"description": "idfa",
+							"required": true
+						},
+						{
+							"name": "is_my_channal",
+							"type": "Boolean",
+							"description": "isMyChannal",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_detail",
+					"type": "String",
+					"description": "errorDetail",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

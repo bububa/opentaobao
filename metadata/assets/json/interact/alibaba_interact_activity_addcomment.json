@@ -1,0 +1,37 @@
+{
+	"name": "alibaba.interact.activity.addcomment",
+	"apiChineseName": "微淘评论接口",
+	"description": "发表评论，并返回楼层",
+	"requestParams": [
+		{
+			"name": "content",
+			"type": "String",
+			"description": "该字段为评论内容",
+			"required": true
+		},
+		{
+			"name": "feed_id",
+			"type": "Number",
+			"description": "评论feedid",
+			"required": true
+		},
+		{
+			"name": "biz_id",
+			"type": "String",
+			"description": "发评论的业务id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "返回成功"
+		},
+		{
+			"name": "floor",
+			"type": "Number",
+			"description": "评论的楼层数"
+		}
+	]
+}

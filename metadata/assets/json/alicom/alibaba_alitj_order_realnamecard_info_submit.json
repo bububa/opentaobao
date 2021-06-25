@@ -1,0 +1,55 @@
+{
+	"name": "alibaba.alitj.order.realnamecard.info.submit",
+	"apiChineseName": "阿里实人认证卡片信息回传",
+	"description": "阿里实人认证卡片信息回传。ISP相关商家在线对接阿里通信的实人认证功能，在线提交订单对应运营商的合约订购相关信息，以便完成在线使用实人认证功能。",
+	"requestParams": [
+		{
+			"name": "order_no",
+			"type": "Number",
+			"description": "淘宝订单号",
+			"required": true,
+			"maxLength": 64,
+			"minValue": 1000
+		},
+		{
+			"name": "iccid",
+			"type": "String",
+			"description": "sim卡iccid（一般为18位到20位）",
+			"required": true,
+			"maxLength": 32
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "操作成功或失败，只有当这个参数为True时，才表示数据已真正提交成功。",
+					"required": true
+				},
+				{
+					"name": "desc",
+					"type": "String",
+					"description": "保存操作失败原因",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "目前暂无特殊作用",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "操作是否被正常处理",
+					"required": true
+				}
+			]
+		}
+	]
+}

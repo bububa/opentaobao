@@ -1,0 +1,51 @@
+{
+	"name": "alibaba.beneift.draw",
+	"apiChineseName": "抽奖接口",
+	"description": "抽奖接口",
+	"requestParams": [
+		{
+			"name": "ename",
+			"type": "String",
+			"description": "奖池唯一标识，奖池创建时即生成",
+			"required": true
+		},
+		{
+			"name": "app_name",
+			"type": "String",
+			"description": "调用方AppName：规定为promotioncenter-${appId}",
+			"required": true
+		},
+		{
+			"name": "ip",
+			"type": "String",
+			"description": "调用方应用ip，非必填"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "code"
+		},
+		{
+			"name": "right_id",
+			"type": "String",
+			"description": "权益id"
+		},
+		{
+			"name": "prize_id",
+			"type": "String",
+			"description": "奖品id"
+		}
+	]
+}

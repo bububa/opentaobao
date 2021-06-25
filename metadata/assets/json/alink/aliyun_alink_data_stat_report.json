@@ -1,0 +1,73 @@
+{
+	"name": "aliyun.alink.data.stat.report",
+	"apiChineseName": "外部离线统计数据上报",
+	"description": "外部合作厂商上报设备的明细数据，或者离线统计数据。",
+	"requestParams": [
+		{
+			"name": "param_bean",
+			"type": "OuterDataBean",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "content",
+					"type": "String",
+					"description": "上报内容，可以是数字，或者json格式文本",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "String",
+					"description": "产品型号，在入驻时生成的",
+					"required": true
+				},
+				{
+					"name": "data_type",
+					"type": "String",
+					"description": "数据类型，detail：明细数据，stat：统计数据",
+					"required": true
+				},
+				{
+					"name": "model_key",
+					"type": "String",
+					"description": "产品型号key，和model对应，在注册产品型号时分配",
+					"required": true
+				},
+				{
+					"name": "stat_time",
+					"type": "Date",
+					"description": "数据产生的时间",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "外部数据的唯一id，比如：设备mac、sn等表示设备唯一性的数据，或者表示该统计数据的自定义id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误消息"
+		},
+		{
+			"name": "module",
+			"type": "Boolean",
+			"description": "数据入库状态"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "状态"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "调用是否成功"
+		}
+	]
+}

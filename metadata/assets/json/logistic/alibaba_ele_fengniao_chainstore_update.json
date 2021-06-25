@@ -1,0 +1,66 @@
+{
+	"name": "alibaba.ele.fengniao.chainstore.update",
+	"apiChineseName": "修改门店信息接口",
+	"description": "修改门店的经纬度，文本地址，电话，门店名",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "Param",
+			"description": "入参",
+			"subParams": [
+				{
+					"name": "position_source",
+					"type": "Number",
+					"description": "经纬度来源。1-腾讯，2-百度，3-高德"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "文本地址"
+				},
+				{
+					"name": "chain_store_name",
+					"type": "String",
+					"description": "门店名字"
+				},
+				{
+					"name": "chain_store_code",
+					"type": "String",
+					"description": "门店code"
+				},
+				{
+					"name": "contact_phone",
+					"type": "String",
+					"description": "联系手机"
+				},
+				{
+					"name": "longitude",
+					"type": "String",
+					"description": "经度"
+				},
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "appid"
+				},
+				{
+					"name": "latitude",
+					"type": "String",
+					"description": "纬度"
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商户code"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "出参"
+		}
+	]
+}

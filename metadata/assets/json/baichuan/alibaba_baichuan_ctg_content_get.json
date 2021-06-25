@@ -1,0 +1,115 @@
+{
+	"name": "alibaba.baichuan.ctg.content.get",
+	"apiChineseName": "百川内容平台内容获取",
+	"description": "百川内容平台内容获取",
+	"requestParams": [
+		{
+			"name": "delivery_id",
+			"type": "String",
+			"description": "投放位置"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "res_id",
+			"type": "String",
+			"description": "资源位"
+		},
+		{
+			"name": "date",
+			"type": "String",
+			"description": "日期"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "err_message",
+			"type": "String",
+			"description": "errorMessage"
+		},
+		{
+			"name": "has_next",
+			"type": "Boolean",
+			"description": "hasNext"
+		},
+		{
+			"name": "err_code",
+			"type": "String",
+			"description": "errorCode"
+		},
+		{
+			"name": "data_list",
+			"type": "Data []",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "title",
+					"type": "String",
+					"description": "title",
+					"required": true
+				},
+				{
+					"name": "publish_time",
+					"type": "Date",
+					"description": "publishTime",
+					"required": true
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "source",
+					"required": true
+				},
+				{
+					"name": "summary",
+					"type": "String",
+					"description": "summary",
+					"required": true
+				},
+				{
+					"name": "cover_url",
+					"type": "String",
+					"description": "coverUrl",
+					"required": true
+				},
+				{
+					"name": "content_url",
+					"type": "String",
+					"description": "contentUrl",
+					"required": true
+				},
+				{
+					"name": "thumbnails",
+					"type": "String",
+					"description": "paths",
+					"required": true
+				},
+				{
+					"name": "org_source",
+					"type": "String",
+					"description": "org_source",
+					"required": true
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "nick",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

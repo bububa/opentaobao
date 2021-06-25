@@ -1,0 +1,65 @@
+{
+	"name": "taobao.bus.busnumber.get",
+	"apiChineseName": "汽车票车次查询",
+	"description": "提供汽车票车次查询服务",
+	"requestParams": [
+		{
+			"name": "param_bus_number_search_r_q",
+			"type": "BusNumberSearchRq",
+			"description": "车次查询入参",
+			"subParams": [
+				{
+					"name": "dep_city_name",
+					"type": "String",
+					"description": "出发城市",
+					"required": true
+				},
+				{
+					"name": "dep_date",
+					"type": "String",
+					"description": "出入日期",
+					"required": true
+				},
+				{
+					"name": "last_place_name",
+					"type": "String",
+					"description": "目的地",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "errCode BUSNUMBER_SEARCH_NOBUS 找不到班次\t\tPOWER_D权限问题",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "Json",
+					"description": "module",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

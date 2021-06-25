@@ -1,0 +1,45 @@
+{
+	"name": "alibaba.scbp.ad.campaign.find.real.cost",
+	"apiChineseName": "批量查询计划消耗数据",
+	"description": "批量查询计划消耗数据",
+	"requestParams": [
+		{
+			"name": "campaign_query",
+			"type": "CampaignQueryDto",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "campaign_id_list",
+					"type": "Number[]",
+					"description": "计划id集合"
+				}
+			]
+		},
+		{
+			"name": "top_context",
+			"type": "TopContextDto",
+			"description": "用户信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "product_line_id",
+					"type": "Number",
+					"description": "产品线id",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "Number",
+					"description": "产品id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "返回数据结果，json数据，key是campaignId,value是消耗数据信息"
+		}
+	]
+}

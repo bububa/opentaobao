@@ -1,0 +1,174 @@
+{
+	"name": "yunos.service.cmns.coa.device.get",
+	"apiChineseName": "设备详情查询",
+	"description": "第三方应用开发者调用此接口查询设备详情",
+	"requestParams": [
+		{
+			"name": "type",
+			"type": "String",
+			"description": "设备id类型,可以是uuid,imei,deviceToken,kp"
+		},
+		{
+			"name": "value",
+			"type": "String",
+			"description": "设备id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "device_list",
+			"type": "DeviceResult []",
+			"description": "设备详情",
+			"subParams": [
+				{
+					"name": "accept_message",
+					"type": "Number",
+					"description": "是否接收消息",
+					"required": true
+				},
+				{
+					"name": "active_time",
+					"type": "Date",
+					"description": "激活时间",
+					"required": true
+				},
+				{
+					"name": "base_type",
+					"type": "String",
+					"description": "基带",
+					"required": true
+				},
+				{
+					"name": "bsp_type",
+					"type": "String",
+					"description": "BSP",
+					"required": true
+				},
+				{
+					"name": "device_type",
+					"type": "Number",
+					"description": "设备类型：1手机 2TV",
+					"required": true
+				},
+				{
+					"name": "eth_mac",
+					"type": "String",
+					"description": "有线网卡mac",
+					"required": true
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "did",
+					"required": true
+				},
+				{
+					"name": "imei",
+					"type": "String",
+					"description": "imei",
+					"required": true
+				},
+				{
+					"name": "imsi1",
+					"type": "String",
+					"description": "imsi1",
+					"required": true
+				},
+				{
+					"name": "imsi2",
+					"type": "String",
+					"description": "imsi2",
+					"required": true
+				},
+				{
+					"name": "is_vendor_rom",
+					"type": "String",
+					"description": "isVendorRom",
+					"required": true
+				},
+				{
+					"name": "kp",
+					"type": "String",
+					"description": "kp",
+					"required": true
+				},
+				{
+					"name": "login_time",
+					"type": "Number",
+					"description": "最近登录时间",
+					"required": true
+				},
+				{
+					"name": "networking",
+					"type": "String",
+					"description": "网络类型",
+					"required": true
+				},
+				{
+					"name": "online",
+					"type": "Number",
+					"description": "是否在线,1为在线，0为离线",
+					"required": true
+				},
+				{
+					"name": "phone_type",
+					"type": "String",
+					"description": "phoneType",
+					"required": true
+				},
+				{
+					"name": "rom",
+					"type": "String",
+					"description": "系统版本",
+					"required": true
+				},
+				{
+					"name": "rom_tuiguang",
+					"type": "String",
+					"description": "romTuiguang",
+					"required": true
+				},
+				{
+					"name": "rom_vendor",
+					"type": "String",
+					"description": "romVendor",
+					"required": true
+				},
+				{
+					"name": "terminal",
+					"type": "String",
+					"description": "设备机型",
+					"required": true
+				},
+				{
+					"name": "update_version",
+					"type": "String",
+					"description": "轻量升级版本",
+					"required": true
+				},
+				{
+					"name": "uuid",
+					"type": "String",
+					"description": "uuid",
+					"required": true
+				},
+				{
+					"name": "wlan_mac",
+					"type": "String",
+					"description": "无线mac",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "接口查询出错提示信息"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "200表示查询成功"
+		}
+	]
+}

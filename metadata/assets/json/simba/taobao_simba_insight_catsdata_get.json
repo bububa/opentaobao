@@ -1,0 +1,60 @@
+{
+	"name": "taobao.simba.insight.catsdata.get",
+	"apiChineseName": "获取类目的大盘数据",
+	"description": "根据类目id获取类目的大盘数据，包括展现指数，点击指数，点击率，本次提供的insight相关的其它接口的都是这种情况。",
+	"requestParams": [
+		{
+			"name": "category_id_list",
+			"type": "String[]",
+			"description": "表示要查询的类目id",
+			"required": true,
+			"maxListSize": 5
+		},
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "开始时间，格式：yyyy-MM-dd",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "查询截止时间，格式：yyyy-MM-dd",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "cat_data_list",
+			"type": "InsightCategoryDataDTO []",
+			"description": "类目详细数据列表",
+			"subParams": [
+				{
+					"name": "impression",
+					"type": "Number",
+					"description": "展现量"
+				},
+				{
+					"name": "click",
+					"type": "Number",
+					"description": "点击量"
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率"
+				},
+				{
+					"name": "cat_id",
+					"type": "Number",
+					"description": "类目id"
+				},
+				{
+					"name": "cat_name",
+					"type": "String",
+					"description": "类目名称"
+				}
+			]
+		}
+	]
+}

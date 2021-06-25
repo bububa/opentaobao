@@ -1,0 +1,25 @@
+{
+	"name": "taobao.qianniu.task.cancel",
+	"apiChineseName": "取消轻任务",
+	"description": "由任务发起者调用",
+	"requestParams": [
+		{
+			"name": "meta_id",
+			"type": "Number",
+			"description": "任务元数据ID",
+			"required": true
+		},
+		{
+			"name": "memo",
+			"type": "String",
+			"description": "任务备注"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

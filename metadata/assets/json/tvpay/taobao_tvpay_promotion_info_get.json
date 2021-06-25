@@ -1,0 +1,86 @@
+{
+	"name": "taobao.tvpay.promotion.info.get",
+	"apiChineseName": "tv支付查询消费抽奖配置",
+	"description": "查询消费抽奖配置",
+	"requestParams": [
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备id",
+			"required": true
+		},
+		{
+			"name": "from",
+			"type": "String",
+			"description": "来源"
+		},
+		{
+			"name": "subject_id",
+			"type": "String",
+			"description": "商品id"
+		},
+		{
+			"name": "ext_order_id",
+			"type": "String",
+			"description": "淘系订单号"
+		},
+		{
+			"name": "is_tao",
+			"type": "Boolean",
+			"description": "是否淘系",
+			"required": true
+		},
+		{
+			"name": "subject",
+			"type": "String",
+			"description": "标题"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "TopResultDo",
+			"description": "Top返回对象",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "状态码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "GetPromotionInfoResultDo",
+					"description": "结构体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "has_promotion_event",
+							"type": "Boolean",
+							"description": "是否有抽奖活动",
+							"required": true
+						},
+						{
+							"name": "hint",
+							"type": "String",
+							"description": "描述",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "消息",
+					"required": true
+				}
+			]
+		}
+	]
+}

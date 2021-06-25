@@ -1,0 +1,36 @@
+{
+	"name": "taobao.lbs.message.upload",
+	"apiChineseName": "lbs数据采集",
+	"description": "lbs数据采集",
+	"requestParams": [
+		{
+			"name": "topic",
+			"type": "String",
+			"description": "消息TOPIC",
+			"required": true
+		},
+		{
+			"name": "body",
+			"type": "String",
+			"description": "消息体 json结构",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "result"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "subCode"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "subMsg"
+		}
+	]
+}

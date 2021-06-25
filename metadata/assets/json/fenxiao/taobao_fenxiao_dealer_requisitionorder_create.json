@@ -1,0 +1,74 @@
+{
+	"name": "taobao.fenxiao.dealer.requisitionorder.create",
+	"apiChineseName": "创建经销采购申请",
+	"description": "创建经销采购申请",
+	"requestParams": [
+		{
+			"name": "logistics_type",
+			"type": "String",
+			"description": "配送方式。SELF_PICKUP：自提；LOGISTICS：仓库发货"
+		},
+		{
+			"name": "order_detail",
+			"type": "String[]",
+			"description": "采购清单，存放多个采购明细，每个采购明细内部以‘:’隔开，多个采购明细之间以‘,’隔开. 例(分销产品id:skuid:购买数量:申请单价,分销产品id:skuid:购买数量:申请单价)，申请单价的单位为分。不存在sku请留空skuid，如（分销产品id::购买数量:申请单价）",
+			"required": true,
+			"maxListSize": 50
+		},
+		{
+			"name": "province",
+			"type": "String",
+			"description": "收货人所在省份",
+			"required": true
+		},
+		{
+			"name": "city",
+			"type": "String",
+			"description": "收货人所在市"
+		},
+		{
+			"name": "district",
+			"type": "String",
+			"description": "收货人所在区"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "收货人所在街道地址",
+			"required": true
+		},
+		{
+			"name": "post_code",
+			"type": "String",
+			"description": "收货人所在地区邮政编码"
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "买家联系电话（此字段和mobile字段至少填写一个）"
+		},
+		{
+			"name": "mobile",
+			"type": "String",
+			"description": "买家的手机号码（1、此字段与phone字段至少填写一个。2、自提方式下此字段必填，保存提货人联系电话）"
+		},
+		{
+			"name": "buyer_name",
+			"type": "String",
+			"description": "买家姓名（自提方式填写提货人姓名）",
+			"required": true
+		},
+		{
+			"name": "id_card_number",
+			"type": "String",
+			"description": "身份证号（自提方式必填，填写提货人身份证号码，提货时用于确认提货人身份）"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "dealer_order_id",
+			"type": "Number",
+			"description": "经销采购申请编号"
+		}
+	]
+}

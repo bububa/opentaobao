@@ -1,0 +1,52 @@
+{
+	"name": "taobao.simba.campaign.area.get",
+	"apiChineseName": "取得一个推广计划的投放地域设置",
+	"description": "取得一个推广计划的投放地域设置",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "推广计划Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "campaign_area",
+			"type": "CampaignArea",
+			"description": "推广计划的投放地域配置",
+			"subParams": [
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "主人昵称"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "推广计划ID"
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "值为：“all”；或者用“,”分割的数字，数字必须是直通车全国省市列表的AreaID，如果已经包含省、自治区id，请不要再包括省内市的id；"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "最后修改时间"
+				}
+			]
+		}
+	]
+}

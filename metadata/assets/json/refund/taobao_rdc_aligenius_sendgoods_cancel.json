@@ -1,0 +1,109 @@
+{
+	"name": "taobao.rdc.aligenius.sendgoods.cancel",
+	"apiChineseName": "取消发货",
+	"description": "提供商家在仅退款中发送取消发货状态",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "CancelGoodsDto",
+			"description": "请求参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "oid",
+					"type": "Number",
+					"description": "子订单ID"
+				},
+				{
+					"name": "refund_id",
+					"type": "Number",
+					"description": "退款单ID",
+					"required": true
+				},
+				{
+					"name": "operate_time",
+					"type": "Date",
+					"description": "操作时间"
+				},
+				{
+					"name": "refund_fee",
+					"type": "Number",
+					"description": "退款金额 单位 分"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "状态SUCCESS、FAIL",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "商家商品ID"
+				},
+				{
+					"name": "auction_id",
+					"type": "Number",
+					"description": "商品ID"
+				},
+				{
+					"name": "auction_num",
+					"type": "Number",
+					"description": "商品数量"
+				},
+				{
+					"name": "tid",
+					"type": "Number",
+					"description": "主订单ID",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "描述"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_data",
+					"type": "Resultdata",
+					"description": "resultData",
+					"required": true,
+					"subParams": [
+						{
+							"name": "refund_id",
+							"type": "Number",
+							"description": "退款单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_info",
+					"type": "String",
+					"description": "异常信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "异常编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

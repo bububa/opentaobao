@@ -1,0 +1,128 @@
+{
+	"name": "taobao.eticket.merchant.tbma.get",
+	"apiChineseName": "码商查询淘宝码接口",
+	"description": "码商查询淘宝码接口",
+	"requestParams": [
+		{
+			"name": "query_tb_ma_callback_req",
+			"type": "QueryTbMaCallbackReq",
+			"description": "查询淘宝码请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "淘宝码值",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_body",
+			"type": "QueryTbMaCallbackResp",
+			"description": "respBody",
+			"subParams": [
+				{
+					"name": "certificate",
+					"type": "CertificateDto",
+					"description": "certificateDTO",
+					"required": true,
+					"subParams": [
+						{
+							"name": "attributes",
+							"type": "Attributes",
+							"description": "attributes",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "itemId",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "available_num",
+							"type": "Number",
+							"description": "availableNum",
+							"required": true
+						},
+						{
+							"name": "biz_type",
+							"type": "Number",
+							"description": "bizType",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "code",
+							"required": true
+						},
+						{
+							"name": "code_status",
+							"type": "Number",
+							"description": "codeStatus",
+							"required": true
+						},
+						{
+							"name": "end_time",
+							"type": "Date",
+							"description": "endTime",
+							"required": true
+						},
+						{
+							"name": "initial_num",
+							"type": "Number",
+							"description": "initialNum",
+							"required": true
+						},
+						{
+							"name": "locked_num",
+							"type": "Number",
+							"description": "lockedNum",
+							"required": true
+						},
+						{
+							"name": "outer_id",
+							"type": "String",
+							"description": "outerId",
+							"required": true
+						},
+						{
+							"name": "qr_code_url",
+							"type": "String",
+							"description": "qrCodeUrl",
+							"required": true
+						},
+						{
+							"name": "start_time",
+							"type": "Date",
+							"description": "startTime",
+							"required": true
+						},
+						{
+							"name": "used_num",
+							"type": "Number",
+							"description": "usedNum",
+							"required": true
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ret_code",
+			"type": "String",
+			"description": "subCode"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "subMsg"
+		}
+	]
+}

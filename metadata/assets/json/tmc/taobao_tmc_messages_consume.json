@@ -1,0 +1,63 @@
+{
+	"name": "taobao.tmc.messages.consume",
+	"apiChineseName": "消费多条消息",
+	"description": "消费多条消息。消费时如果没有返回消息，建议做控制，不要一直调api，浪费应用的流量。如对程序做好优化，若没有消息则，sleep 100ms 等。",
+	"requestParams": [
+		{
+			"name": "group_name",
+			"type": "String",
+			"description": "用户分组名称，不传表示消费默认分组，如果应用没有设置用户分组，传入分组名称将会返回错误"
+		},
+		{
+			"name": "quantity",
+			"type": "Number",
+			"description": "每次批量消费消息的条数，最小值：10；最大值：200",
+			"maxValue": 200,
+			"minValue": 10
+		}
+	],
+	"responseParams": [
+		{
+			"name": "messages",
+			"type": "TmcMessage []",
+			"description": "消息列表",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "消息ID"
+				},
+				{
+					"name": "topic",
+					"type": "String",
+					"description": "消息所属主题"
+				},
+				{
+					"name": "pub_app_key",
+					"type": "String",
+					"description": "消息发布者的AppKey"
+				},
+				{
+					"name": "pub_time",
+					"type": "Date",
+					"description": "消息发布时间"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户的昵称"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "消息详细内容，格式为JSON/XML"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "消息所属的用户编号"
+				}
+			]
+		}
+	]
+}

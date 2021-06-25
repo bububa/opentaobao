@@ -1,0 +1,196 @@
+{
+	"name": "taobao.qimen.storeprocess.confirm",
+	"apiChineseName": "仓内加工单确认接口",
+	"description": "WMS调用奇门的接口,回传仓内加工单创建情况",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "StoreProcessConfirmRequest",
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码"
+				},
+				{
+					"name": "processOrderCode",
+					"type": "String",
+					"description": "加工单编码",
+					"required": true
+				},
+				{
+					"name": "processOrderId",
+					"type": "String",
+					"description": "仓储系统加工单ID"
+				},
+				{
+					"name": "outBizCode",
+					"type": "String",
+					"description": "外部业务编码(一个合作伙伴中要求唯一多次确认时;每次传入要求唯一(一般传入WMS损益单据编码))",
+					"required": true
+				},
+				{
+					"name": "orderType",
+					"type": "String",
+					"description": "单据类型(CNJG=仓内加工作业单)",
+					"required": true
+				},
+				{
+					"name": "orderCompleteTime",
+					"type": "String",
+					"description": "加工单完成时间(YYYY-MM-DD HH:MM:SS)",
+					"required": true
+				},
+				{
+					"name": "actualQty",
+					"type": "Number",
+					"description": "实际作业总数量"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "materialitems",
+					"type": "MaterialItem[]",
+					"description": "加工商品列表",
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "erp系统商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品ID"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;默认为ZP)"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "商品生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "商品过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编码"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						}
+					]
+				},
+				{
+					"name": "productitems",
+					"type": "ProductItem[]",
+					"description": "加工商品列表",
+					"subParams": [
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "erp系统商品编码",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "仓储系统商品ID"
+						},
+						{
+							"name": "inventoryType",
+							"type": "String",
+							"description": "库存类型(ZP=正品;CC=残次;JS=机损;XS=箱损;默认为ZP)"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量",
+							"required": true
+						},
+						{
+							"name": "productDate",
+							"type": "String",
+							"description": "商品生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expireDate",
+							"type": "String",
+							"description": "商品过期日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produceCode",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "batchCode",
+							"type": "String",
+							"description": "批次编码"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

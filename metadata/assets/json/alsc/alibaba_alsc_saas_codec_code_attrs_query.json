@@ -1,0 +1,77 @@
+{
+	"name": "alibaba.alsc.saas.codec.code.attrs.query",
+	"apiChineseName": "码业务属性查询",
+	"description": "码业务属性查询",
+	"requestParams": [
+		{
+			"name": "query_code_request",
+			"type": "QueryCodeBizAttrRequest",
+			"description": "请求入参",
+			"subParams": [
+				{
+					"name": "biz_scene_prefix",
+					"type": "String",
+					"description": "码使用的业务场景"
+				},
+				{
+					"name": "code_value",
+					"type": "String",
+					"description": "码值"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "CodeBizAttributeDto",
+					"description": "返回素材id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "code_value",
+							"type": "String",
+							"description": "码值",
+							"required": true
+						},
+						{
+							"name": "subject_type",
+							"type": "String",
+							"description": "码值绑定业务主体类型",
+							"required": true
+						},
+						{
+							"name": "subject_id",
+							"type": "String",
+							"description": "码值绑定的业务主体ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "msgInfo",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "msgCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.ssc.supplyplatform.servicecapacity.delete",
+	"apiChineseName": "服务容量删除",
+	"description": "服务容量删除",
+	"requestParams": [
+		{
+			"name": "provider_type",
+			"type": "String",
+			"description": "服务提供者类型。service_store 网点；worker 工人；supplier 服务商",
+			"required": true
+		},
+		{
+			"name": "provider_id",
+			"type": "Number",
+			"description": "服务提供者id。根据服务提供者类型填写相应的id，例如类型是网点，则填我们系统的网点id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "display_msg",
+					"type": "String",
+					"description": "对外展示的错误信息",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

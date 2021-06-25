@@ -1,0 +1,96 @@
+{
+	"name": "alibaba.argus.updateredrisk",
+	"apiChineseName": "更新红线价格",
+	"description": "商品健康中心新增红线价格规则",
+	"requestParams": [
+		{
+			"name": "red_risk_update_factor",
+			"type": "RedRiskUpdateFactor",
+			"description": "红线价格参数",
+			"subParams": [
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "remove_sku_ids",
+					"type": "Number[]",
+					"description": "需要删除的sku红线价格"
+				},
+				{
+					"name": "amount_at",
+					"type": "Number",
+					"description": "商品红线价格",
+					"required": true
+				},
+				{
+					"name": "sku_risk_factors",
+					"type": "SkuRedRiskFactor[]",
+					"description": "新增sku级别红线价格",
+					"subParams": [
+						{
+							"name": "amount_at",
+							"type": "Number",
+							"description": "sku红线价格"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "skuId"
+						}
+					]
+				},
+				{
+					"name": "risk_levels",
+					"type": "RiskLevelParam[]",
+					"description": "风险等级设置",
+					"required": true,
+					"subParams": [
+						{
+							"name": "key",
+							"type": "String",
+							"description": "风险等级(可选值:higher-risk,middle-risk,low-risk)",
+							"required": true
+						},
+						{
+							"name": "left_range",
+							"type": "Number",
+							"description": "风险等级比例左边值",
+							"required": true
+						},
+						{
+							"name": "right_range",
+							"type": "Number",
+							"description": "风险等级比例右边值",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "结果是否成功"
+		},
+		{
+			"name": "error_message",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "return_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总数"
+		}
+	]
+}

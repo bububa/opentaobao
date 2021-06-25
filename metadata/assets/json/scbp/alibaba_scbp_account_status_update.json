@@ -1,0 +1,20 @@
+{
+	"name": "alibaba.scbp.account.status.update",
+	"apiChineseName": "修改账户级别关键词推广状态",
+	"description": "修改账户级别关键词推广状态",
+	"requestParams": [
+		{
+			"name": "status",
+			"type": "String",
+			"description": "on:开启,off:暂停",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "修改成功"
+		}
+	]
+}

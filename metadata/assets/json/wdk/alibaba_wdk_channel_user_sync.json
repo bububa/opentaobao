@@ -1,0 +1,78 @@
+{
+	"name": "alibaba.wdk.channel.user.sync",
+	"apiChineseName": "会员同步",
+	"description": "会员同步",
+	"requestParams": [
+		{
+			"name": "user_sync_info",
+			"type": "UserSyncInfo",
+			"description": "会员信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户Id",
+					"required": true
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "手机号",
+					"required": true
+				},
+				{
+					"name": "user_name",
+					"type": "String",
+					"description": "会员名",
+					"required": true
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户昵称",
+					"required": true
+				},
+				{
+					"name": "real_name",
+					"type": "String",
+					"description": "真实姓名",
+					"required": true
+				},
+				{
+					"name": "gender",
+					"type": "String",
+					"description": "性别",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "操作类型 （create/update/delete）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回内容",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "String",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

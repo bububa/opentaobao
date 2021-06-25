@@ -1,0 +1,200 @@
+{
+	"name": "wdk.logistic.network.resource.group.query",
+	"apiChineseName": "查询网格仓-区块-自提点关系",
+	"description": "查询网格仓-区块-自提点关系",
+	"requestParams": [
+		{
+			"name": "param_resource_group_page_query_request",
+			"type": "ResourceGroupPageQueryRequest",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "area_code",
+					"type": "String",
+					"description": "区块编码"
+				},
+				{
+					"name": "from_org_resource_code",
+					"type": "String",
+					"description": "网格仓外部编码"
+				},
+				{
+					"name": "from_resource_code",
+					"type": "String",
+					"description": "网格仓编码"
+				},
+				{
+					"name": "from_resource_type",
+					"type": "String",
+					"description": "from资源类型"
+				},
+				{
+					"name": "group_resource_code_list",
+					"type": "String[]",
+					"description": "自提点编码"
+				},
+				{
+					"name": "network_code",
+					"type": "String",
+					"description": "网络名称"
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "页码，1开始"
+				},
+				{
+					"name": "page_size",
+					"type": "Number",
+					"description": "页面大小，上限50"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "LogisticsResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Pagination",
+					"description": "数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "results",
+							"type": "ResourceGroupDTO[]",
+							"description": "数据列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "area_code",
+									"type": "String",
+									"description": "区块编码",
+									"required": true
+								},
+								{
+									"name": "area_name",
+									"type": "String",
+									"description": "区块名称",
+									"required": true
+								},
+								{
+									"name": "from_org_resource_code",
+									"type": "String",
+									"description": "网格仓外部编码",
+									"required": true
+								},
+								{
+									"name": "from_org_source",
+									"type": "String",
+									"description": "from资源来源",
+									"required": true
+								},
+								{
+									"name": "from_resource_code",
+									"type": "String",
+									"description": "网格仓编码",
+									"required": true
+								},
+								{
+									"name": "from_resource_name",
+									"type": "String",
+									"description": "from资源名称",
+									"required": true
+								},
+								{
+									"name": "from_resource_type",
+									"type": "String",
+									"description": "from资源类型",
+									"required": true
+								},
+								{
+									"name": "is_test",
+									"type": "Number",
+									"description": "是否测试",
+									"required": true
+								},
+								{
+									"name": "merchant_code",
+									"type": "String",
+									"description": "商家",
+									"required": true
+								},
+								{
+									"name": "network_code",
+									"type": "String",
+									"description": "网络编码",
+									"required": true
+								},
+								{
+									"name": "pickup_point_address",
+									"type": "String",
+									"description": "自提点地址",
+									"required": true
+								},
+								{
+									"name": "to_org_resource_code",
+									"type": "String",
+									"description": "自提点外部编码",
+									"required": true
+								},
+								{
+									"name": "to_org_source",
+									"type": "String",
+									"description": "自提点来源",
+									"required": true
+								},
+								{
+									"name": "to_resource_code",
+									"type": "String",
+									"description": "自提点编码",
+									"required": true
+								},
+								{
+									"name": "to_resource_name",
+									"type": "String",
+									"description": "to资源编码（自提点）",
+									"required": true
+								},
+								{
+									"name": "to_resource_type",
+									"type": "String",
+									"description": "to资源类型",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "失败消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,33 @@
+{
+	"name": "alibaba.wtt.order.contract.subscribe",
+	"apiChineseName": "分销商合约生产",
+	"description": "分销商合约生产",
+	"requestParams": [
+		{
+			"name": "distribution_order_model",
+			"type": "DistributionOrderModel",
+			"description": "分销商合约生产",
+			"subParams": [
+				{
+					"name": "order_no",
+					"type": "String",
+					"description": "订单号码",
+					"required": true
+				},
+				{
+					"name": "item_serial_no",
+					"type": "String",
+					"description": "手机串码",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "issuccess",
+			"type": "Boolean",
+			"description": "合约产生陈宫"
+		}
+	]
+}

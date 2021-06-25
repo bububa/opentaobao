@@ -1,0 +1,73 @@
+{
+	"name": "taobao.simba.rpt.adgroupbase.get",
+	"apiChineseName": "推广组基础报表数据对象",
+	"description": "推广组基础报表数据对象",
+	"requestParams": [
+		{
+			"name": "subway_token",
+			"type": "String",
+			"description": "权限校验参数",
+			"required": true
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "昵称"
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "推广计划id",
+			"required": true
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组id",
+			"required": true
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始时间，格式yyyy-mm-dd",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "结束时间，格式yyyy-mm-dd",
+			"required": true
+		},
+		{
+			"name": "search_type",
+			"type": "String",
+			"description": "报表类型（搜索：SEARCH,类目出价：CAT,\u003cbr/\u003e定向投放：NOSEARCH）可以一次取多个例如：SEARCH,CAT",
+			"required": true
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码",
+			"minValue": 1
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小",
+			"minValue": 1
+		},
+		{
+			"name": "source",
+			"type": "String",
+			"description": "数据来源（PC站内：1，PC站外：2，无线站内：4，无线站外 : 5）可多选，以逗号分隔",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rpt_adgroup_base_list",
+			"type": "String",
+			"description": "广告组基础数据对象"
+		}
+	]
+}

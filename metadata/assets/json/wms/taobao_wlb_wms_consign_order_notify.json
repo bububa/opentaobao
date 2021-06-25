@@ -1,0 +1,542 @@
+{
+	"name": "taobao.wlb.wms.consign.order.notify",
+	"apiChineseName": "发货订单通知",
+	"description": "发货订单通知",
+	"requestParams": [
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "ERP订单号",
+			"required": true
+		},
+		{
+			"name": "order_type",
+			"type": "Number",
+			"description": "单据类型 201 一般交易出库单 202 B2B交易出库单 502 换货出库单 503 补发出库单",
+			"required": true
+		},
+		{
+			"name": "order_flag",
+			"type": "String",
+			"description": "订单标识 (1: cod –货到付款，4:invoiceinfo-需要发票)"
+		},
+		{
+			"name": "order_source",
+			"type": "Number",
+			"description": "订单来源（213 天猫，201 淘宝，214 京东，202 1688 阿里中文站 ，203 苏宁在线，204 亚马逊中国，205 当当，208 1号店，207 唯品会，209 国美在线，210 拍拍，206 易贝ebay，211 聚美优品，212 乐蜂网，215 邮乐，216 凡客，217 优购，218 银泰，219 易讯，221 聚尚网，222 蘑菇街，223 POS门店，301 其他）"
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "仓库编码，此字段为空时，由菜鸟路由仓库发货"
+		},
+		{
+			"name": "tms_service_code",
+			"type": "String",
+			"description": "快递公司编码，此字段为空时，由菜鸟选择快递配送"
+		},
+		{
+			"name": "tms_service_name",
+			"type": "String",
+			"description": "快递公司名称"
+		},
+		{
+			"name": "prev_order_code",
+			"type": "String",
+			"description": "前物流订单号，订单类型为502 换货出库单 503 补发出库单时，需求传入此内容"
+		},
+		{
+			"name": "order_shop_create_time",
+			"type": "Date",
+			"description": "下单时间，订单在交易平台创建时间"
+		},
+		{
+			"name": "order_pay_time",
+			"type": "Date",
+			"description": "订单支付时间"
+		},
+		{
+			"name": "order_create_time",
+			"type": "Date",
+			"description": "订单创建时间,ERP创建订单时间"
+		},
+		{
+			"name": "order_examination_time",
+			"type": "Date",
+			"description": "订单审核时间,ERP创建支付时间"
+		},
+		{
+			"name": "order_amount",
+			"type": "Number",
+			"description": "订单总金额,=总商品金额-订单优惠金额+快递费用，单位分",
+			"minValue": 0
+		},
+		{
+			"name": "discount_amount",
+			"type": "Number",
+			"description": "订单优惠金额，整单优惠金额，单位分"
+		},
+		{
+			"name": "ar_amount",
+			"type": "Number",
+			"description": "订单应收金额，消费者还需要付的金额，单位分",
+			"minValue": 0
+		},
+		{
+			"name": "got_amount",
+			"type": "Number",
+			"description": "订单已付金额，消费者已经支付的金额，单位分",
+			"minValue": 0
+		},
+		{
+			"name": "postfee",
+			"type": "Number",
+			"description": "快递费用，单位分"
+		},
+		{
+			"name": "service_fee",
+			"type": "Number",
+			"description": "COD服务费，单位分",
+			"minValue": 0
+		},
+		{
+			"name": "deliver_requirements",
+			"type": "Deliverrequirementswlbwmsconsignordernotify",
+			"description": "配送要求",
+			"subParams": [
+				{
+					"name": "schedule_type",
+					"type": "Number",
+					"description": "投递时延要求:  1-工作日 2-节假日 101,当日达102次晨达103次日达 111 活动标  104 预约达"
+				},
+				{
+					"name": "schedule_day",
+					"type": "String",
+					"description": "送达日期"
+				},
+				{
+					"name": "schedule_start",
+					"type": "String",
+					"description": "送达开始时间"
+				},
+				{
+					"name": "schedule_end",
+					"type": "String",
+					"description": "送达结束时间"
+				},
+				{
+					"name": "delivery_type",
+					"type": "String",
+					"description": "配送类型： PTPS-常温配送 LLPS-冷链配送"
+				}
+			]
+		},
+		{
+			"name": "receiver_info",
+			"type": "Receiverwlbwmsconsignordernotify",
+			"description": "收件人信息",
+			"subParams": [
+				{
+					"name": "receiver_province",
+					"type": "String",
+					"description": "收件方省份"
+				},
+				{
+					"name": "receiver_city",
+					"type": "String",
+					"description": "收件方城市"
+				},
+				{
+					"name": "receiver_area",
+					"type": "String",
+					"description": "收件方区县"
+				},
+				{
+					"name": "receiver_town",
+					"type": "String",
+					"description": "收件方街道"
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "收件方地址"
+				},
+				{
+					"name": "receiver_zip_code",
+					"type": "String",
+					"description": "收件方邮编"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收件人名称"
+				},
+				{
+					"name": "receiver_nick",
+					"type": "String",
+					"description": "收件人Nick"
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "收件人手机"
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "收件人电话"
+				}
+			]
+		},
+		{
+			"name": "sender_info",
+			"type": "Senderwlbwmsconsignordernotify",
+			"description": "发货方信息",
+			"subParams": [
+				{
+					"name": "sender_province",
+					"type": "String",
+					"description": "发件方省份"
+				},
+				{
+					"name": "sender_city",
+					"type": "String",
+					"description": "发件方城市"
+				},
+				{
+					"name": "sender_area",
+					"type": "String",
+					"description": "发件方区县"
+				},
+				{
+					"name": "sender_town",
+					"type": "String",
+					"description": "发件方镇"
+				},
+				{
+					"name": "sender_address",
+					"type": "String",
+					"description": "发件方地址"
+				},
+				{
+					"name": "sender_zip_code",
+					"type": "String",
+					"description": "发件方邮编"
+				},
+				{
+					"name": "sender_name",
+					"type": "String",
+					"description": "发件方名称"
+				},
+				{
+					"name": "sender_mobile",
+					"type": "String",
+					"description": "发件方手机"
+				},
+				{
+					"name": "sender_phone",
+					"type": "String",
+					"description": "发件方电话"
+				}
+			]
+		},
+		{
+			"name": "order_item_list",
+			"type": "Orderitemlistwlbwmsconsignordernotify[]",
+			"description": "订单商品信息列表",
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "order_item",
+					"type": "Orderitemwlbwmsconsignordernotify",
+					"description": "订单商品信息",
+					"subParams": [
+						{
+							"name": "order_item_id",
+							"type": "String",
+							"description": "ERP订单明细行号ID，数字类型"
+						},
+						{
+							"name": "owner_user_id",
+							"type": "String",
+							"description": "货主ID"
+						},
+						{
+							"name": "owner_user_name",
+							"type": "String",
+							"description": "货主名称"
+						},
+						{
+							"name": "user_id",
+							"type": "String",
+							"description": "店铺ID"
+						},
+						{
+							"name": "user_name",
+							"type": "String",
+							"description": "店铺名称"
+						},
+						{
+							"name": "sub_source_code",
+							"type": "String",
+							"description": "平台子交易编码"
+						},
+						{
+							"name": "order_source_code",
+							"type": "String",
+							"description": "平台交易订单编码，如果不传入淘系交易订单，子订单系统自动标示此商品为赠品；"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "ERP商品ID"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "item_quantity",
+							"type": "Number",
+							"description": "商品数量"
+						},
+						{
+							"name": "inventory_type",
+							"type": "Number",
+							"description": "库存类型"
+						},
+						{
+							"name": "item_price",
+							"type": "Number",
+							"description": "销售价格"
+						},
+						{
+							"name": "discount_amount",
+							"type": "Number",
+							"description": "商品优惠金额"
+						},
+						{
+							"name": "actual_price",
+							"type": "Number",
+							"description": "商品成交价格=销售价格-优惠金额",
+							"required": true
+						},
+						{
+							"name": "extend_fields",
+							"type": "String",
+							"description": "订单商品拓展属性数据"
+						},
+						{
+							"name": "shop_code",
+							"type": "String",
+							"description": "ERP店铺编码"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "invoice_info_list",
+			"type": "Invoicelistwlbwmsconsignordernotify[]",
+			"description": "发票信息列表",
+			"maxListSize": 1000,
+			"subParams": [
+				{
+					"name": "invoice_info",
+					"type": "Invoicewlbwmsconsignordernotify",
+					"description": "发票信息",
+					"subParams": [
+						{
+							"name": "bill_id",
+							"type": "Number",
+							"description": "Erp发票ID"
+						},
+						{
+							"name": "bill_type",
+							"type": "String",
+							"description": "发票类型(VINVOICE - 增值税普通发票， EVINVOICE - 电子增票，电子发票仓库不打印)"
+						},
+						{
+							"name": "bill_title",
+							"type": "String",
+							"description": "发票抬头"
+						},
+						{
+							"name": "bill_account",
+							"type": "String",
+							"description": "发票金额"
+						},
+						{
+							"name": "bill_content",
+							"type": "String",
+							"description": "发票内容"
+						},
+						{
+							"name": "detail_list",
+							"type": "Detaillistwlbwmsconsignordernotify[]",
+							"description": "发票明细列表",
+							"subParams": [
+								{
+									"name": "item_detail",
+									"type": "Itemdetailwlbwmsconsignordernotify",
+									"description": "发票信息",
+									"subParams": [
+										{
+											"name": "amount",
+											"type": "String",
+											"description": "金额"
+										},
+										{
+											"name": "unit",
+											"type": "String",
+											"description": "单位"
+										},
+										{
+											"name": "item_name",
+											"type": "String",
+											"description": "商品名称"
+										},
+										{
+											"name": "price",
+											"type": "String",
+											"description": "商品价格"
+										},
+										{
+											"name": "quantity",
+											"type": "Number",
+											"description": "商品数量"
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "extend_fields",
+			"type": "String",
+			"description": "拓展属性"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "wl_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "wl_error_code",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "wl_error_msg",
+			"type": "String",
+			"description": "错误详细"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "订单编码"
+		},
+		{
+			"name": "consign_order_list",
+			"type": "Consignorderlist []",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "consign_order",
+					"type": "Consignorder",
+					"description": "发货订单信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "consign_order_item_list",
+							"type": "Consignorderitemlist[]",
+							"description": "仓库物流订单信息列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "consign_order_item",
+									"type": "Consignorderitem",
+									"description": "仓库物流订单信息列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "item_quantity",
+											"type": "Number",
+											"description": "商品数量",
+											"required": true
+										},
+										{
+											"name": "order_item_id",
+											"type": "String",
+											"description": "ERP订单明细行号ID",
+											"required": true
+										},
+										{
+											"name": "item_id",
+											"type": "String",
+											"description": "商品ID",
+											"required": true
+										},
+										{
+											"name": "item_code",
+											"type": "String",
+											"description": "商品编码",
+											"required": true
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "store_order_code",
+							"type": "String",
+							"description": "仓库订单编码",
+							"required": true
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误编码",
+							"required": true
+						},
+						{
+							"name": "tms_code",
+							"type": "String",
+							"description": "配送编码",
+							"required": true
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "错误信息",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "是否成功",
+							"required": true
+						},
+						{
+							"name": "store_code",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

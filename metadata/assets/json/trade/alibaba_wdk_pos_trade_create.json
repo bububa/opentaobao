@@ -1,0 +1,154 @@
+{
+	"name": "alibaba.wdk.pos.trade.create",
+	"apiChineseName": "轻pos品牌营销下单接口",
+	"description": "提供给石基进行轻pos品牌营销下单",
+	"requestParams": [
+		{
+			"name": "create_request",
+			"type": "FastBuyPosCreateRequest",
+			"description": "下单请求",
+			"subParams": [
+				{
+					"name": "cashier_num",
+					"type": "String",
+					"description": "收银员工号"
+				},
+				{
+					"name": "items",
+					"type": "FastBuyPosItemBo[]",
+					"description": "购买商品信息",
+					"subParams": [
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "商品条码"
+						},
+						{
+							"name": "inv_quantity",
+							"type": "String",
+							"description": "购买库存数量"
+						},
+						{
+							"name": "line_id",
+							"type": "Number",
+							"description": "商品行号,单次下单自增"
+						},
+						{
+							"name": "promotion_fee",
+							"type": "Number",
+							"description": "一阶段优惠金额（商品实际优惠金额）：单价*数量-商家优惠"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商家商品编码"
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "unit_price",
+							"type": "Number",
+							"description": "商品单价"
+						},
+						{
+							"name": "extend_info",
+							"description": "扩展属性"
+						}
+					]
+				},
+				{
+					"name": "machine_id",
+					"type": "String",
+					"description": "pos机id"
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部唯一订单号"
+				},
+				{
+					"name": "pay_code",
+					"type": "String",
+					"description": "付款码"
+				},
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店id"
+				},
+				{
+					"name": "pay_fee",
+					"type": "Number",
+					"description": "支付宝支付金额"
+				},
+				{
+					"name": "out_shop_code",
+					"type": "String",
+					"description": "外部门店编码"
+				},
+				{
+					"name": "out_coupon_pay_fee",
+					"type": "Number",
+					"description": "外部优惠券支付金额"
+				},
+				{
+					"name": "extend_info",
+					"description": "扩展属性"
+				},
+				{
+					"name": "out_promotion_fee",
+					"type": "Number",
+					"description": "外部优惠金额"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FastBuyPosCreateResult",
+			"description": "创单结果",
+			"subParams": [
+				{
+					"name": "biz_order_id",
+					"type": "Number",
+					"description": "盒马订单号",
+					"required": true
+				},
+				{
+					"name": "coupon_fee",
+					"type": "Number",
+					"description": "优惠券优惠金额",
+					"required": true
+				},
+				{
+					"name": "promotion_fee",
+					"type": "Number",
+					"description": "优惠活动优惠金额",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "返回错误码",
+					"required": true
+				},
+				{
+					"name": "return_msg",
+					"type": "String",
+					"description": "返回错误信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

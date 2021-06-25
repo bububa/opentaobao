@@ -1,0 +1,166 @@
+{
+	"name": "taobao.qimen.inventoryreserve.cancel",
+	"apiChineseName": "库存预占取消接口",
+	"description": "库存预占取消",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "orderCode",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "orderSource",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "itemInventories",
+					"type": "ItemInventory[]",
+					"description": "奇门仓储字段",
+					"subParams": [
+						{
+							"name": "orderSourceCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "subSourceCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "奇门仓储字段"
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "奇门仓储字段"
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "orderCode",
+					"type": "String",
+					"description": "奇门仓储字段",
+					"required": true
+				},
+				{
+					"name": "isRetry",
+					"type": "String",
+					"description": "奇门仓储字段",
+					"required": true
+				},
+				{
+					"name": "itemInventories",
+					"type": "ItemInventory[]",
+					"description": "奇门仓储字段",
+					"required": true,
+					"subParams": [
+						{
+							"name": "flag",
+							"type": "String",
+							"description": "响应结果:success|failure",
+							"required": true
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "响应码",
+							"required": true
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "响应信息",
+							"required": true
+						},
+						{
+							"name": "orderSourceCode",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "subSourceCode",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "combItemId",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "itemQuantity",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,211 @@
+{
+	"name": "taobao.rdc.aligenius.warehouse.reverse.uploading",
+	"apiChineseName": "销退单上传",
+	"description": "主要用于商家上传仓库销退单信息",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "WarehouseReverseUploadingDto",
+			"description": "参数",
+			"subParams": [
+				{
+					"name": "uploading_reverse_d_t_o_list",
+					"type": "UploadingReverseDto[]",
+					"description": "销退单列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "extra",
+							"type": "String",
+							"description": "扩展字段，JSONObject格式"
+						},
+						{
+							"name": "goods_item_d_t_o_list",
+							"type": "WarehouseReverseGoodsItemDto[]",
+							"description": "商品行列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "extra",
+									"type": "String",
+									"description": "扩展字段，JSONObject格式"
+								},
+								{
+									"name": "auction_name",
+									"type": "String",
+									"description": "商品名称"
+								},
+								{
+									"name": "type",
+									"type": "Number",
+									"description": "1=淘系子订单，2=赠品,3=未知"
+								},
+								{
+									"name": "plan_qty",
+									"type": "Number",
+									"description": "计划数量"
+								},
+								{
+									"name": "actual_qty",
+									"type": "Number",
+									"description": "实发数量",
+									"required": true
+								},
+								{
+									"name": "price",
+									"type": "Number",
+									"description": "单价（单位：分）"
+								},
+								{
+									"name": "actual_fee",
+									"type": "Number",
+									"description": "实付金额（单位：分）"
+								},
+								{
+									"name": "owner_nick",
+									"type": "String",
+									"description": "货主"
+								},
+								{
+									"name": "qr_code",
+									"type": "String",
+									"description": "商品条码",
+									"required": true
+								},
+								{
+									"name": "oid",
+									"type": "Number",
+									"description": "子订单ID"
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "货品仓储系统编码"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "货品编码"
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "货品名称"
+								},
+								{
+									"name": "plan_status",
+									"type": "Number",
+									"description": "计划状态（1=正品；2=残品；3=部分正品）"
+								},
+								{
+									"name": "status",
+									"type": "Number",
+									"description": "状态（1=正品；2=残品；3=部分正品；4=未确认）",
+									"required": true
+								},
+								{
+									"name": "id",
+									"type": "String",
+									"description": "货品行ID"
+								}
+							]
+						},
+						{
+							"name": "warehouse_name",
+							"type": "String",
+							"description": "仓库名称",
+							"required": true
+						},
+						{
+							"name": "adr",
+							"type": "String",
+							"description": "详细地址",
+							"required": true
+						},
+						{
+							"name": "district_name",
+							"type": "String",
+							"description": "县区",
+							"required": true
+						},
+						{
+							"name": "city_name",
+							"type": "String",
+							"description": "城市",
+							"required": true
+						},
+						{
+							"name": "province_name",
+							"type": "String",
+							"description": "省份",
+							"required": true
+						},
+						{
+							"name": "country_name",
+							"type": "String",
+							"description": "国家",
+							"required": true
+						},
+						{
+							"name": "create_time",
+							"type": "String",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "Number",
+							"description": "销退单状态(1=已创建；2=待入库；3=已入库，5=已取消)",
+							"required": true
+						},
+						{
+							"name": "cp_code",
+							"type": "String",
+							"description": "物流公司code",
+							"required": true
+						},
+						{
+							"name": "cp_name",
+							"type": "String",
+							"description": "物流公司名称",
+							"required": true
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "运单编号",
+							"required": true
+						},
+						{
+							"name": "tid",
+							"type": "Number",
+							"description": "主订单编号"
+						},
+						{
+							"name": "id",
+							"type": "String",
+							"description": "销退单ID"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "fail_info",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "fail_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "success_flag",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

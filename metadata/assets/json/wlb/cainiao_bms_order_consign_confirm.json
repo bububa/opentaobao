@@ -1,0 +1,244 @@
+{
+	"name": "cainiao.bms.order.consign.confirm",
+	"apiChineseName": "BMS出库通知",
+	"description": "BMS出库后，通知ISV",
+	"requestParams": [
+		{
+			"name": "content",
+			"type": "BmsConsignOrderConfirm",
+			"description": "通知消息主体",
+			"subParams": [
+				{
+					"name": "tms_orders",
+					"type": "TmsOrders[]",
+					"description": "运单信息列表",
+					"subParams": [
+						{
+							"name": "package_height",
+							"type": "Number",
+							"description": "包裹高度，单位：毫米"
+						},
+						{
+							"name": "tms_items",
+							"type": "TmsItem[]",
+							"description": "运单信息",
+							"subParams": [
+								{
+									"name": "item_quantity",
+									"type": "Number",
+									"description": "数量"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "前端商家编码"
+								},
+								{
+									"name": "sc_item_id",
+									"type": "String",
+									"description": "货品ID"
+								}
+							]
+						},
+						{
+							"name": "package_material_list",
+							"type": "PackageMaterialList[]",
+							"description": "包裹的包材信息列表",
+							"subParams": [
+								{
+									"name": "material_quantity",
+									"type": "Number",
+									"description": "数量"
+								},
+								{
+									"name": "material_type",
+									"type": "String",
+									"description": "包材"
+								}
+							]
+						},
+						{
+							"name": "package_width",
+							"type": "Number",
+							"description": "包裹宽度，单位：毫米"
+						},
+						{
+							"name": "package_length",
+							"type": "Number",
+							"description": "包裹长度，单位：毫米"
+						},
+						{
+							"name": "package_weight",
+							"type": "Number",
+							"description": "包裹重量，单位：克"
+						},
+						{
+							"name": "tms_order_code",
+							"type": "String",
+							"description": "运单编码，运单号"
+						},
+						{
+							"name": "tms_code",
+							"type": "String",
+							"description": "快递公司服务编码"
+						},
+						{
+							"name": "package_code",
+							"type": "String",
+							"description": "包裹号"
+						}
+					]
+				},
+				{
+					"name": "order_items",
+					"type": "OrderItems[]",
+					"description": "订单商品信息列表",
+					"subParams": [
+						{
+							"name": "order_item_id",
+							"type": "Number",
+							"description": "明细ID"
+						},
+						{
+							"name": "trade_id",
+							"type": "String",
+							"description": "明细对应主单的交易单号"
+						},
+						{
+							"name": "trade_item_id",
+							"type": "String",
+							"description": "明细对应的子交易单号"
+						},
+						{
+							"name": "item_tag",
+							"type": "String",
+							"description": "默认：0；促销赠品1001"
+						},
+						{
+							"name": "sc_item_id",
+							"type": "String",
+							"description": "货品id"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "前端商家编码"
+						},
+						{
+							"name": "item_quantity",
+							"type": "Number",
+							"description": "数量"
+						},
+						{
+							"name": "item_amount",
+							"type": "Number",
+							"description": "商品金额 123.33元，单位：分"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "前端宝贝itemId"
+						},
+						{
+							"name": "sku_id",
+							"type": "String",
+							"description": "前端skuId"
+						},
+						{
+							"name": "sc_item_code",
+							"type": "String",
+							"description": "后端商家编码"
+						}
+					]
+				},
+				{
+					"name": "order_post_fee",
+					"type": "Number",
+					"description": "邮费，以分为单位"
+				},
+				{
+					"name": "order_amount",
+					"type": "Number",
+					"description": "交易订单金额，以分为单位"
+				},
+				{
+					"name": "consign_time",
+					"type": "String",
+					"description": "仓库出库时间"
+				},
+				{
+					"name": "store_order_code",
+					"type": "String",
+					"description": "仓库作业单号，LBX号"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "发货仓的仓库编码"
+				},
+				{
+					"name": "order_soruce",
+					"type": "Number",
+					"description": "0销售平台、1手工录入、2导入发货、3ERP推送"
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "店铺id，主店铺时跟货主id相同"
+				},
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "操作子类型(201 一般交易出库单,502 换货出库单,503 补发出库单)"
+				},
+				{
+					"name": "erp_order_code",
+					"type": "String",
+					"description": "out_biz_id，（非导入时为订单创建时的交易号）"
+				},
+				{
+					"name": "consign_code",
+					"type": "String",
+					"description": "每次发货均重新生成"
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "BMS订单编码"
+				},
+				{
+					"name": "owner_user_id",
+					"type": "String",
+					"description": "货主id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDO",
+			"description": "返回值",
+			"subParams": [
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "网络延时",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "01",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "成功、失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

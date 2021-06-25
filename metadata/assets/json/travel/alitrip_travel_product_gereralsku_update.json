@@ -1,0 +1,126 @@
+{
+	"name": "alitrip.travel.product.gereralsku.update",
+	"apiChineseName": "(供销)船票通用类目sku新增\u0026编辑API",
+	"description": "发布SKU信息（如果properties重复 则更新）",
+	"requestParams": [
+		{
+			"name": "alias",
+			"type": "PropertyAliasInfo[]",
+			"description": "sku销售属性别名；如套餐1 需要调整成其他 需要在这里修改",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "properties",
+					"type": "String",
+					"description": "销售属性的pid和vid，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid"
+				},
+				{
+					"name": "value",
+					"type": "String",
+					"description": "属性别名"
+				}
+			]
+		},
+		{
+			"name": "properties",
+			"type": "CatPropInfo[]",
+			"description": "商品属性列表；由类目的属性PID和VID组成，属性的pid调用taobao.itemprops.get取得，属性值的vid用taobao.itempropvalues.get取得vid。如果该类目下面没有属性，可以不用填写。如果有属性，必选属性必填，其他非必选属性可以选择不填写.属性不能超过35对",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "vid",
+					"type": "String",
+					"description": "属性PID，调用taobao.itemprops.get取得"
+				},
+				{
+					"name": "pid",
+					"type": "String",
+					"description": "属性VID，调用taobao.itempropvalues.get取得"
+				}
+			]
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "淘宝商品ID",
+			"required": true
+		},
+		{
+			"name": "price",
+			"type": "Number",
+			"description": "Sku的销售价格。精确到2位小数;单位:分。如:20007，表示:200元7分。修改后的sku价格要保证商品的价格在所有sku价格所形成的价格区间内（例如：商品价格为6元，sku价格有5元、10元两种，如果要修改5元sku的价格，那么修改的范围只能是0-6元之间；如果要修改10元的sku，那么修改的范围只能是6到无穷大的区间中）"
+		},
+		{
+			"name": "quantity",
+			"type": "Number",
+			"description": "Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数"
+		},
+		{
+			"name": "outer_id",
+			"type": "String",
+			"description": "商家编码"
+		},
+		{
+			"name": "date_list",
+			"type": "DateInventoryAndPrice[]",
+			"description": "SKU的销售价格库存，日历商品使用",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "Sku的销售价格。精确到2位小数;单位:分。如:20007，表示:200元7分。修改后的sku价格要保证商品的价格在所有sku价格所形成的价格区间内（例如：商品价格为6元，sku价格有5元、10元两种，如果要修改5元sku的价格，那么修改的范围只能是0-6元之间；如果要修改10元的sku，那么修改的范围只能是6到无穷大的区间中）"
+				},
+				{
+					"name": "stock",
+					"type": "Number",
+					"description": "Sku的库存数量。sku的总数量应该小于等于商品总数量(Item的NUM)，sku数量变化后item的总数量也会随着变化。取值范围:大于等于零的整数"
+				},
+				{
+					"name": "date",
+					"type": "Date",
+					"description": "销售日期"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "first_result",
+			"type": "TopTravelItem",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "sku创建日期",
+					"required": true
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "sku修改日期",
+					"required": true
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "skuId",
+					"required": true
+				},
+				{
+					"name": "outer_id",
+					"type": "Number",
+					"description": "outId",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "itemId",
+					"required": true
+				}
+			]
+		}
+	]
+}

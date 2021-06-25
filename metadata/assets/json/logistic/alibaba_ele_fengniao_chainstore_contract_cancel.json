@@ -1,0 +1,36 @@
+{
+	"name": "alibaba.ele.fengniao.chainstore.contract.cancel",
+	"apiChineseName": "门店解约接口",
+	"description": "调用成功后，门店和蜂鸟解除物流合同，不能再使用此门店推单",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "Data",
+			"description": "系统自动生成",
+			"subParams": [
+				{
+					"name": "app_id",
+					"type": "String",
+					"description": "appid"
+				},
+				{
+					"name": "merchant_code",
+					"type": "String",
+					"description": "商户code"
+				},
+				{
+					"name": "chainstore_codes",
+					"type": "String[]",
+					"description": "门店code"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "msg"
+		}
+	]
+}

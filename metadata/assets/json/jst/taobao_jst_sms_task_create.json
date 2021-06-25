@@ -1,0 +1,156 @@
+{
+	"name": "taobao.jst.sms.task.create",
+	"apiChineseName": "聚石塔短信任务创建接口",
+	"description": "聚石塔短信的任务创建接口，用于创建数字短信、公众号短信、权益短信的AB测试任务。",
+	"requestParams": [
+		{
+			"name": "param_create_sms_task_request",
+			"type": "CreateSmsTaskRequest",
+			"description": "创建任务的入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "task_code",
+					"type": "String",
+					"description": "任务Code，系统分配的，创建任务不需要传，更新任务需要传对应的Code（只能更新短信文案、短信签名、短信模板）"
+				},
+				{
+					"name": "sms_type",
+					"type": "Number",
+					"description": "任务对应的短信类型 ：1--数字短信  2--权益短信  3--公众号短信"
+				},
+				{
+					"name": "contents",
+					"type": "String[]",
+					"description": "权益短信必须是两个文案，其他类型短信为一个文案，文案中必须带${url}占位符，普通短信文案在第一个，权益短信文案在第二个，请严格按照顺序提交",
+					"required": true
+				},
+				{
+					"name": "template_codes",
+					"type": "String[]",
+					"description": "数字短信必须是两个模板，其他类型短信为一个模板，普通短信模板在第一个，数字短信的模板在第二个，请严格按照顺序提交",
+					"required": true
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "商品详情页或店铺页H5长链地址，不能是短链",
+					"required": true
+				},
+				{
+					"name": "sign_names",
+					"type": "String[]",
+					"description": "公众号短信必须是两个签名，其他类型短信为一个签名，普通短信的签名在第一个，公众号短信的签名在第二个，请严格按照顺序提交",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SmsResponse",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "请求成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "请求成功",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "SmsTaskModel",
+					"description": "出参",
+					"required": true,
+					"subParams": [
+						{
+							"name": "app_key",
+							"type": "String",
+							"description": "appkey",
+							"required": true
+						},
+						{
+							"name": "contents",
+							"type": "String[]",
+							"description": "短信文案",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "gmt_modified",
+							"type": "Date",
+							"description": "修改时间",
+							"required": true
+						},
+						{
+							"name": "isv_nick",
+							"type": "String",
+							"description": "isv淘宝nick",
+							"required": true
+						},
+						{
+							"name": "seller_nick",
+							"type": "String",
+							"description": "商家淘宝nick",
+							"required": true
+						},
+						{
+							"name": "sign_names",
+							"type": "String[]",
+							"description": "短信签名",
+							"required": true
+						},
+						{
+							"name": "sms_type",
+							"type": "String",
+							"description": "任务对应的短信类型 ：1--数字短信  2--权益短信  3--公众号短信",
+							"required": true
+						},
+						{
+							"name": "task_code",
+							"type": "String",
+							"description": "系统分配的任务code",
+							"required": true
+						},
+						{
+							"name": "template_codes",
+							"type": "String[]",
+							"description": "短信模板code",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "商品或店铺详情页H5长链地址",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求ID",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

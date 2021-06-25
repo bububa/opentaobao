@@ -1,0 +1,128 @@
+{
+	"name": "taobao.qimen.order.sn.report",
+	"apiChineseName": "订单SN通知接口",
+	"description": "WMS调用奇门的接口,在出库、发货、入库等场景下，ERP和WMS之间同步操作的SN列表",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"subParams": [
+				{
+					"name": "totalPage",
+					"type": "Number",
+					"description": "总页数",
+					"required": true
+				},
+				{
+					"name": "currentPage",
+					"type": "Number",
+					"description": "当前页(从1开始)",
+					"required": true
+				},
+				{
+					"name": "pageSize",
+					"type": "Number",
+					"description": "每页记录的条数",
+					"required": true
+				},
+				{
+					"name": "order",
+					"type": "Order",
+					"description": "单据列表",
+					"subParams": [
+						{
+							"name": "orderCode",
+							"type": "String",
+							"description": "单据编号",
+							"required": true
+						},
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "仓库编码",
+							"required": true
+						},
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "货主编码"
+						},
+						{
+							"name": "orderType",
+							"type": "String",
+							"description": "单据类型(JYCK=一般交易出库单;HHCK=换货出库;BFCK=补发出库;PTCK=普通出库单;DBCK=调拨出库;B2BCK=B2B出库;QTCK=其他出库;SCRK=生产入库;LYRK=领用入库;CCRK=残次品入库;CGRK=采购入库;B2BRK=B2B入库;DBRK=调拨入库;QTRK=其他入库;XTRK=销退入库;THRK=退货入库;HHRK=换货入库;CNJG=仓内加工单;CGTH=采购退货出库单;)",
+							"required": true
+						},
+						{
+							"name": "outBizCode",
+							"type": "String",
+							"description": "外部业务编码(消息ID;用于去重;ISV对于同一请求;分配一个唯一性的编码。用来保证因为网络等原因导致重复传输;请求不会被重复处理;条件必填;条件为一单需要多次确认时)"
+						}
+					]
+				},
+				{
+					"name": "items",
+					"type": "Items",
+					"description": "商品列表",
+					"subParams": [
+						{
+							"name": "item",
+							"type": "Item",
+							"description": "商品信息",
+							"subParams": [
+								{
+									"name": "itemCode",
+									"type": "String",
+									"description": "商品编码",
+									"required": true
+								},
+								{
+									"name": "itemId",
+									"type": "String",
+									"description": "商品仓储系统编码"
+								},
+								{
+									"name": "sn",
+									"type": "String",
+									"description": "商品序列号",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

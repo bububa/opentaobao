@@ -1,0 +1,188 @@
+{
+	"name": "alitrip.ticket.product.upload",
+	"apiChineseName": "【门票API2.0】门票收费项目管理接口",
+	"description": "航旅度假新版门票商品（门票收费项目）管理接口：支持门票商品的发布、编辑。如果在ali_product_id下没有发布过门票商品，则系统将判断为新发布商品，否则是编辑已有商品。可以通过辅助查询接口判断是否已在某个ali_product_id下发布过门票商品。\n对应新发布商品的情况，有些参数是必填的，请仔细查看各字段说明。对于编辑商品的情况，ali_product_id和out_product_id至少需要填一个，其他参数都是可选，编辑情况支持增量更新（某个参数不传则使用该商品上原有值）。",
+	"requestParams": [
+		{
+			"name": "ali_product_id",
+			"type": "Number",
+			"description": "新发布门票商品时必填。阿里旅行提供的收费项目编码，与商户收费项目编码进行绑定。注：一个收费项目编码对应了一个淘宝商品"
+		},
+		{
+			"name": "out_product_id",
+			"type": "String",
+			"description": "可选，商户自定义收费项目编码。注：如果商户上传了自定义收费项目编码，则在价格库存同步接口可以使用该自定义编码更新价格库存。"
+		},
+		{
+			"name": "update_out_product_id",
+			"type": "String",
+			"description": "可选，商家想要更新映射关系的时候，用于更新商户自定义收费项目编码。"
+		},
+		{
+			"name": "out_product_name",
+			"type": "String",
+			"description": "商户收费项目名称"
+		},
+		{
+			"name": "inventory_type",
+			"type": "Number",
+			"description": "新发布门票商品时必填。门票商品 库存类型。1、日历库存， 2、非日历库存"
+		},
+		{
+			"name": "need_enter_date",
+			"type": "Number",
+			"description": "inventory_type=2时必填，指定该收费项目在购买时是否需要买家指定入园日期。1、需要，2-不需要"
+		},
+		{
+			"name": "expire_date",
+			"type": "String",
+			"description": "新发布门票商品时必填。门票有效期：指定入园日期后 多少天内有效。当为数字时，表示多少天内有效；当为日期时，表示到某日期有效，日期格式：yyyy-MM-dd。发布时不填则默认设置30天内有效"
+		},
+		{
+			"name": "reserve_limit_type",
+			"type": "Number",
+			"description": "新发布门票商品时必填。门票 预定时间限制。1、表示无限制 购买后可立即入园，2、有限制，此时预定时间限制规则必填。"
+		},
+		{
+			"name": "reserve_limit_rule",
+			"type": "String",
+			"description": "特殊选填，门票 预定时间限制规则。格式：1_18_00_3 或者 1_18_00_3_30，含义：必须提前1天拍下，且在18点00分前支付成功，订单才生效。当为提前0天时（即当日票），最后两个数字才生效，指当日票需要在出票后3小时30分钟后方可入园。"
+		},
+		{
+			"name": "code_sending_info",
+			"type": "CodeSendingInfo",
+			"description": "新发布门票商品时必填。门票商品发码方式",
+			"subParams": [
+				{
+					"name": "code_mode",
+					"type": "Number",
+					"description": "发码方式。1、电子票自动发码 需设置电子凭证信息，2、电子票手工发码，3、实体票"
+				},
+				{
+					"name": "elec_info",
+					"type": "ItemEleCertInfo",
+					"description": "电子凭证信息，code_mode=1时必填。",
+					"subParams": [
+						{
+							"name": "expiry_date_type",
+							"type": "Number",
+							"description": "必填，电子凭证有效期 过期类型。1：xxxx-xx-xx 到 xxxx-xx-xx； 2：购买成功日 至 xxxx-xx-xx； 3：购买成功 xx 天内有效"
+						},
+						{
+							"name": "expiry_date_start",
+							"type": "Date",
+							"description": "特殊必填（expiryDateType为1时必填），电子凭证 有效期 开始时间"
+						},
+						{
+							"name": "expiry_date_end",
+							"type": "Date",
+							"description": "特殊必填（expiryDateType为1或2时必填），电子凭证 有效期 结束时间"
+						},
+						{
+							"name": "expiry_days",
+							"type": "Number",
+							"description": "特殊必填（expiryDateType为3时必填），电子凭证 有效期 天数"
+						},
+						{
+							"name": "package_id",
+							"type": "Number",
+							"description": "必填，核销门店库id"
+						},
+						{
+							"name": "auto_refund_rate",
+							"type": "Number",
+							"description": "可选，售中自动退款比例，0~100。默认为0，即不支持售中自动退款；当值为1~100时表示售中自动退款的比例"
+						},
+						{
+							"name": "expired_refund_rate",
+							"type": "Number",
+							"description": "可选，过期自动退款比例，0~100。默认为0，即不支持过期自动退款比例；当值为1~100时表示过期自动退款的比例"
+						},
+						{
+							"name": "shop_tel",
+							"type": "String",
+							"description": "必填，店铺联系方式"
+						},
+						{
+							"name": "merchant_name",
+							"type": "String",
+							"description": "必填，核销服务提供商"
+						}
+					]
+				},
+				{
+					"name": "has_email",
+					"type": "Boolean",
+					"description": "手工发码 是否需要买家邮箱，code_mode=2时选填，不填则默认不需要邮箱信息。"
+				}
+			]
+		},
+		{
+			"name": "title",
+			"type": "String",
+			"description": "可选，商品标题"
+		},
+		{
+			"name": "pic_urls",
+			"type": "String[]",
+			"description": "可选，商品主图，最多支持5张。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为png、jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。",
+			"maxListSize": 5
+		},
+		{
+			"name": "desc",
+			"type": "String",
+			"description": "可选，商品详情描述，不超过50000个字符。详情描述支持纯文本描述，也支持html格式的详情描述。html格式的详情描述中 图片链接支持外链图片（必须外网可访问， 且格式为png、jpg或jpeg，大小在500k以内）和淘宝图片空间链接。"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "first_result",
+			"type": "TicketItemResult",
+			"description": "门票商品发布、编辑结果",
+			"subParams": [
+				{
+					"name": "modifyed_time",
+					"type": "Date",
+					"description": "修改时间",
+					"required": true
+				},
+				{
+					"name": "item_id",
+					"type": "Number",
+					"description": "商品id",
+					"required": true
+				},
+				{
+					"name": "ali_scenic_id",
+					"type": "Number",
+					"description": "标准景点id",
+					"required": true
+				},
+				{
+					"name": "out_scenic_id",
+					"type": "String",
+					"description": "商户景点id",
+					"required": true
+				},
+				{
+					"name": "ali_product_id",
+					"type": "Number",
+					"description": "标准收费项目id",
+					"required": true
+				},
+				{
+					"name": "out_product_id",
+					"type": "String",
+					"description": "商户收费项目id",
+					"required": true
+				},
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "预留，扩展字段",
+					"required": true
+				}
+			]
+		}
+	]
+}

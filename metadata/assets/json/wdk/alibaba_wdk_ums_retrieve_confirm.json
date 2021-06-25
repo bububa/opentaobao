@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.wdk.ums.retrieve.confirm",
+	"apiChineseName": "回流单－外部对已拉取到的UMS单据进行确认",
+	"description": "回流单－外部对已拉取到的UMS单据进行确认",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "店仓code，指的是作业对象，对应一个物理店或仓编码",
+			"required": true
+		},
+		{
+			"name": "uuid",
+			"type": "String",
+			"description": "唯一识别码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "model",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,152 @@
+{
+	"name": "taobao.qimen.deliveryorder.batchcreate.answer",
+	"apiChineseName": "发货单创建结果通知接口(批量)",
+	"description": "WMS调用接口，用于异步化的批量发货单创建结果通知。（如菜鸟发货单批量创建结果的返回）",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "DeliveryOrderBatchCreateAnswerRequest",
+			"subParams": [
+				{
+					"name": "orders",
+					"type": "Order[]",
+					"description": "发货单列表",
+					"subParams": [
+						{
+							"name": "deliveryOrderCode",
+							"type": "String",
+							"description": "发货单号"
+						},
+						{
+							"name": "orderInfo",
+							"type": "OrderInfo",
+							"description": "单据详情",
+							"subParams": [
+								{
+									"name": "createTime",
+									"type": "String",
+									"description": "订单创建时间(YYYY-MM-DD HH:MM:SS)"
+								},
+								{
+									"name": "deliveryOrderId",
+									"type": "String",
+									"description": "出库单仓储系统编码"
+								},
+								{
+									"name": "warehouseCode",
+									"type": "String",
+									"description": "仓库编码(统仓统配使用)"
+								},
+								{
+									"name": "logisticsCode",
+									"type": "String",
+									"description": "物流公司编码(统仓统配使用)"
+								}
+							]
+						},
+						{
+							"name": "deliveryOrders",
+							"type": "DeliveryOrder[]",
+							"description": "拆单情况",
+							"subParams": [
+								{
+									"name": "deliveryOrderId",
+									"type": "String",
+									"description": "出库单仓储系统编码"
+								},
+								{
+									"name": "warehouseCode",
+									"type": "String",
+									"description": "仓库编码(统仓统配使用)"
+								},
+								{
+									"name": "logisticsCode",
+									"type": "String",
+									"description": "物流公司编码(统仓统配使用)"
+								},
+								{
+									"name": "orderLines",
+									"type": "OrderLine[]",
+									"description": "单据列表",
+									"subParams": [
+										{
+											"name": "orderLineNo",
+											"type": "String",
+											"description": "行号"
+										},
+										{
+											"name": "itemCode",
+											"type": "String",
+											"description": "ERP商品编码"
+										},
+										{
+											"name": "itemId",
+											"type": "String",
+											"description": "WMS商品编码"
+										},
+										{
+											"name": "quantity",
+											"type": "String",
+											"description": "数量"
+										}
+									]
+								},
+								{
+									"name": "createTime",
+									"type": "String",
+									"description": "订单创建时间(YYYY-MM-DD HH:MM:SS)"
+								}
+							]
+						},
+						{
+							"name": "flag",
+							"type": "String",
+							"description": "响应结果:success|failure"
+						},
+						{
+							"name": "code",
+							"type": "String",
+							"description": "响应码"
+						},
+						{
+							"name": "message",
+							"type": "String",
+							"description": "响应信息"
+						}
+					]
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

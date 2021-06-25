@@ -1,0 +1,31 @@
+{
+	"name": "taobao.mixnick.change",
+	"apiChineseName": "新旧mixnick互转",
+	"description": "如果采用老的Appkey获取MixNick A’， 发现DB里 new MixNick为null，则使用新的Appkey调API来换取A’’；如果采用新的Appkey获取A’’，发现DB里不存在当前A’’ 的记录时，先用老Appkey调API得到A’ 查询是否存在A用户的记录，如果已经存在，则关联，否则新增一条MixNick为null的新用户记录。",
+	"requestParams": [
+		{
+			"name": "src_mix_nick",
+			"type": "String",
+			"description": "输入的混淆nick",
+			"required": true
+		},
+		{
+			"name": "src_appkey",
+			"type": "String",
+			"description": "输入的appkey",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "mixnick",
+			"type": "String",
+			"description": "根据dstAppkey算出的mixnick"
+		}
+	]
+}

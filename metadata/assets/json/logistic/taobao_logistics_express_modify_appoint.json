@@ -1,0 +1,133 @@
+{
+	"name": "taobao.logistics.express.modify.appoint",
+	"apiChineseName": "快递改约api",
+	"description": "商家通过此api操作修改物流单，交易单的收货人地址、收货人联系方式、预约配送日期",
+	"requestParams": [
+		{
+			"name": "express_modify_appoint_top_request",
+			"type": "ExpressModifyAppointTopRequestDto",
+			"description": "改约请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sc_date",
+					"type": "Date",
+					"description": "应到达日期"
+				},
+				{
+					"name": "sub_trade_ids",
+					"type": "String[]",
+					"description": "子交易单号",
+					"required": true
+				},
+				{
+					"name": "trade_id",
+					"type": "String",
+					"description": "交易号",
+					"required": true
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "卖家Id",
+					"required": true
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "收货人电话"
+				},
+				{
+					"name": "os_date",
+					"type": "Date",
+					"description": "改约日期"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "收货人姓名"
+				},
+				{
+					"name": "feature",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "out_order_code",
+					"type": "String",
+					"description": "外部订单号"
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "收货人地址"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SingleResultDto",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "is_retry",
+					"type": "Boolean",
+					"description": "是否需要重试",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "ExpressModifyAppointTopResponseDto",
+					"description": "业务返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "是否执行成功",
+							"required": true
+						},
+						{
+							"name": "order_code",
+							"type": "String",
+							"description": "订单号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "调用码",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "is_idempotent",
+					"type": "Boolean",
+					"description": "是否幂等",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

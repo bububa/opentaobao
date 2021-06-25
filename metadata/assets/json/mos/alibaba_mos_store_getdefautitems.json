@@ -1,0 +1,158 @@
+{
+	"name": "alibaba.mos.store.getdefautitems",
+	"apiChineseName": "获取默认状态下商品列表",
+	"description": "获取默认状态下商品列表",
+	"requestParams": [
+		{
+			"name": "screen_no",
+			"type": "String",
+			"description": "屏编号",
+			"required": true
+		},
+		{
+			"name": "start",
+			"type": "Number",
+			"description": "分页查询开始index",
+			"required": true
+		},
+		{
+			"name": "limit_count",
+			"type": "Number",
+			"description": "分页查询每页记录数",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDo",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "MjStoreItemsTopVo",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item_list",
+							"type": "MjItemTopVo[]",
+							"description": "商品列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "商品id",
+									"required": true
+								},
+								{
+									"name": "item_tag365",
+									"type": "Boolean",
+									"description": "是否独享365会员",
+									"required": true
+								},
+								{
+									"name": "marketing_activity_tag",
+									"type": "String",
+									"description": "活动标签",
+									"required": true
+								},
+								{
+									"name": "min_promotion_price",
+									"type": "Number",
+									"description": "最小促销价",
+									"required": true
+								},
+								{
+									"name": "pics",
+									"type": "String[]",
+									"description": "商品图片，数组中只有一个值",
+									"required": true
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "商品名称",
+									"required": true
+								},
+								{
+									"name": "brand_name",
+									"type": "String",
+									"description": "品牌名称",
+									"required": true
+								},
+								{
+									"name": "min_price",
+									"type": "Number",
+									"description": "minPrice",
+									"required": true
+								},
+								{
+									"name": "max_price",
+									"type": "Number",
+									"description": "maxPrice",
+									"required": true
+								},
+								{
+									"name": "required_user_type",
+									"type": "Number",
+									"description": "活动限定人群，1：普通人群，2：365会员",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "store_id",
+							"type": "Number",
+							"description": "专柜id",
+							"required": true
+						},
+						{
+							"name": "store_name",
+							"type": "String",
+							"description": "专柜名称",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "uuid",
+							"required": true
+						},
+						{
+							"name": "bucket_id",
+							"type": "String",
+							"description": "bucketId",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "Number",
+					"description": "errCode",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "errMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "total",
+					"required": true
+				}
+			]
+		}
+	]
+}

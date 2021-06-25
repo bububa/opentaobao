@@ -1,0 +1,20 @@
+{
+	"name": "taobao.ump.tool.get",
+	"apiChineseName": "查询工具",
+	"description": "根据工具id获取一个工具对象",
+	"requestParams": [
+		{
+			"name": "tool_id",
+			"type": "Number",
+			"description": "工具的id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "content",
+			"type": "String",
+			"description": "工具信息内容，格式为json，可以通过提供给的sdk里面的MarketingBuilder来处理这个内容"
+		}
+	]
+}

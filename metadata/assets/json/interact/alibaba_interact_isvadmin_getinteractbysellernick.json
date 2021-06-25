@@ -1,0 +1,49 @@
+{
+	"name": "alibaba.interact.isvadmin.getinteractbysellernick",
+	"apiChineseName": "根据sellerNick获取互动实例列表",
+	"description": "根据sellerNick获取互动实例列表",
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "返回结果是否成功"
+		},
+		{
+			"name": "code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "msginfo",
+			"type": "String",
+			"description": "错误信息"
+		},
+		{
+			"name": "interactdtos",
+			"type": "InteractDTO []",
+			"description": "返回业务数据",
+			"subParams": [
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "互动开始时间"
+				},
+				{
+					"name": "interact_id",
+					"type": "String",
+					"description": "互动实例ID"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "互动结束时间"
+				},
+				{
+					"name": "instance_name",
+					"type": "String",
+					"description": "互动实例名称"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,21 @@
+package simba
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/simba"
+)
+
+/* 
+修改创意与 
+taobao.simba.creative.update
+
+更新一个创意的信息，可以设置创意标题、创意图片
+*/
+func TaobaoSimbaCreativeUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeUpdateRequest, session string) (*simba.TaobaoSimbaCreativeUpdateResponse, error) {
+    var resp simba.TaobaoSimbaCreativeUpdateAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

@@ -1,0 +1,72 @@
+{
+	"name": "tmall.item.shiptime.update",
+	"apiChineseName": "更新商品发货时间",
+	"description": "增加更新删除商品/SKU发货时间(支持同一商品下的SKU同时批量更新)\n1.\n    {\n        \"shipTimeType\": 2,  ----相对发货时间（值为1则为绝对发货时间）\n        \"updateType\": 0 ---更新SKU\n    },\n\n    按照指定SKU更新指定SKU的发货时间，如果原本是商品级发货时间，商品级发货时间也清空\n\n2.\n    {\n        \"shipTimeType\": 0, -- 删除发货时间\n        \"updateType\": 0 --更新SKU\n    },\n    按照指定SKU删除指定SKU的发货时间\n\n3.\n\n    {\n        \"shipTimeType\": 2,  ----相对发货时间（值为1则为绝对发货时间）\n        \"updateType\": 1 ---更新商品\n    },\n\n    更新商品级发货时间，如果原本是SKU级发货时间，清空所有SKU上的发货时间\n\n4.\n    {\n        \"shipTimeType\": 0, -- 删除发货时间\n        \"updateType\": 1 --更新商品\n    },\n    删除商品级的发货时间",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		},
+		{
+			"name": "ship_time",
+			"type": "String",
+			"description": "被更新发货时间（商品级）；格式和具体设置的发货时间格式相关。绝对发货时间填写yyyy-MM-dd;相对发货时间填写数字。发货时间必须在当前时间后三天。如果设置的绝对时间小于当前时间的三天后，会清除该商品的发货时间设置。如果是相对时间小于3，则会提示出错。如果shiptimeType为0，要清除商品上的发货时间，该字段可以填任意字符,也可以不填。"
+		},
+		{
+			"name": "sku_ship_times",
+			"type": "UpdateSkuShipTime[]",
+			"description": "被更新SKU的发货时间，后台会根据三个子属性去查找匹配的sku，如果找到就默认对sku进行更新，当无匹配sku且更新类型针对sku，会报错。",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "ship_time",
+					"type": "String",
+					"description": "被更新发货时间；格式和具体设置的发货时间格式相关。绝对发货时间填写yyyy-MM-dd;相对发货时间填写数字。"
+				},
+				{
+					"name": "sku_id",
+					"type": "Number",
+					"description": "SKU的ID"
+				},
+				{
+					"name": "properties",
+					"type": "String",
+					"description": "Sku属性串。格式:pid:vid;pid:vid,如: 1627207:3232483;1630696:3284570,表示机身颜色:军绿色;手机套餐:一电一充"
+				},
+				{
+					"name": "outer_id",
+					"type": "String",
+					"description": "Sku的商家外部id；如：2015_07_23_D_123"
+				}
+			]
+		},
+		{
+			"name": "option",
+			"type": "UpdateItemShipTimeOption",
+			"description": "批量更新商品/SKU发货时间的备选项",
+			"required": true,
+			"subParams": [
+				{
+					"name": "ship_time_type",
+					"type": "Number",
+					"description": "0代表清空匹配的SKU发货时间数据或者商品发货时间数据；1代表：固定发货时间；2代表：相对发货时间",
+					"required": true
+				},
+				{
+					"name": "update_type",
+					"type": "Number",
+					"description": "更新类型，默认不填时更新sku，0表示更新sku，1表示更新商品维度，其他值均非法"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "被修改的商品ID"
+		}
+	]
+}

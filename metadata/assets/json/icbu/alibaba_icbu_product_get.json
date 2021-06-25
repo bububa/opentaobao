@@ -1,0 +1,554 @@
+{
+	"name": "alibaba.icbu.product.get",
+	"apiChineseName": "获得单个商品详情",
+	"description": "获取商品详情",
+	"requestParams": [
+		{
+			"name": "language",
+			"type": "String",
+			"description": "商品语种，目前只支持ENGLISH",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "String",
+			"description": "混淆后的商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "product",
+			"type": "AlibabaProductResponse",
+			"description": "单个商品详情",
+			"subParams": [
+				{
+					"name": "category_id",
+					"type": "Number",
+					"description": "类目ID",
+					"required": true
+				},
+				{
+					"name": "group_id",
+					"type": "Number",
+					"description": "商品分组ID",
+					"required": true
+				},
+				{
+					"name": "subject",
+					"type": "String",
+					"description": "商品名称",
+					"required": true
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "status 的值：sketch：草稿，approved：审核通过，tbd：审核不通过，new 、modified ：审核中",
+					"required": true
+				},
+				{
+					"name": "keywords",
+					"type": "String[]",
+					"description": "关键词",
+					"required": true
+				},
+				{
+					"name": "attributes",
+					"type": "ProductAttribute[]",
+					"description": "商品属性",
+					"required": true,
+					"subParams": [
+						{
+							"name": "attribute_id",
+							"type": "Number",
+							"description": "属性ID",
+							"required": true
+						},
+						{
+							"name": "attribute_name",
+							"type": "String",
+							"description": "属性名称",
+							"required": true
+						},
+						{
+							"name": "value_id",
+							"type": "Number",
+							"description": "属性值ID",
+							"required": true
+						},
+						{
+							"name": "value_name",
+							"type": "String",
+							"description": "属性值名称",
+							"required": true
+						},
+						{
+							"name": "sku_custom_image_url",
+							"type": "String",
+							"description": "作为sku属性值时，用图形来显示；必须是alibaba图片中心的图片URL，请使用alibaba.icbu.photobank.upload上传图片",
+							"required": true
+						},
+						{
+							"name": "sku_custom_value_name",
+							"type": "String",
+							"description": "作为sku属性值时，自定义属性值名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "main_image",
+					"type": "MainImage",
+					"description": "商品的主图",
+					"required": true,
+					"subParams": [
+						{
+							"name": "images",
+							"type": "String[]",
+							"description": "alibaba图片中心的图片URL列表，请使用alibaba.icbu.photobank.upload接口上传图片",
+							"required": true
+						},
+						{
+							"name": "watermark",
+							"type": "Boolean",
+							"description": "是否打水印，是(true)或否(false)",
+							"required": true
+						},
+						{
+							"name": "watermark_frame",
+							"type": "String",
+							"description": "水印是否有边框，有边框(Y)或者无边框(N)",
+							"required": true
+						},
+						{
+							"name": "watermark_position",
+							"type": "String",
+							"description": "水印位置，在中间(center)或者在底部(bottom)",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sourcing_trade",
+					"type": "SourcingTrade",
+					"description": "询盘商品交易信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "fob_currency",
+							"type": "String",
+							"description": "FOB价格货币，参见FAQ 货币枚举值",
+							"required": true
+						},
+						{
+							"name": "fob_min_price",
+							"type": "String",
+							"description": "FOB最小价格",
+							"required": true
+						},
+						{
+							"name": "fob_max_price",
+							"type": "String",
+							"description": "FOB最大价格",
+							"required": true
+						},
+						{
+							"name": "fob_unit_type",
+							"type": "String",
+							"description": "FOB计量单位，参见FAQ 计量单位枚举值",
+							"required": true
+						},
+						{
+							"name": "payment_methods",
+							"type": "String[]",
+							"description": "付款方式，参见FAQ 付款方式枚举值",
+							"required": true
+						},
+						{
+							"name": "min_order_quantity",
+							"type": "String",
+							"description": "最小起订量",
+							"required": true
+						},
+						{
+							"name": "min_order_unit_type",
+							"type": "String",
+							"description": "最小起订量计量单位，参见FAQ 计量单位枚举值",
+							"required": true
+						},
+						{
+							"name": "supply_quantity",
+							"type": "String",
+							"description": "供货能力",
+							"required": true
+						},
+						{
+							"name": "supply_unit_type",
+							"type": "String",
+							"description": "供货能力计量单位，参见FAQ 计量单位枚举值",
+							"required": true
+						},
+						{
+							"name": "supply_period_type",
+							"type": "String",
+							"description": "供货能力周期，参见FAQ 时间周期枚举值",
+							"required": true
+						},
+						{
+							"name": "delivery_port",
+							"type": "String",
+							"description": "发货港口",
+							"required": true
+						},
+						{
+							"name": "delivery_time",
+							"type": "String",
+							"description": "发货期限",
+							"required": true
+						},
+						{
+							"name": "packaging_desc",
+							"type": "String",
+							"description": "常规包装",
+							"required": true
+						},
+						{
+							"name": "deliver_periods",
+							"type": "DeliverPeriod[]",
+							"description": "阶梯交期",
+							"required": true,
+							"subParams": [
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "《=最大订购量",
+									"required": true
+								},
+								{
+									"name": "process_period",
+									"type": "Number",
+									"description": "发货时间",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "wholesale_trade",
+					"type": "WholesaleTrade",
+					"description": "在线批发商品交易信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "unit_type",
+							"type": "String",
+							"description": "最小计量单位，参见FAQ 计量单位枚举值",
+							"required": true
+						},
+						{
+							"name": "sale_type",
+							"type": "String",
+							"description": "销售方式，按件卖(normal)或者按批卖(batch)",
+							"required": true
+						},
+						{
+							"name": "batch_number",
+							"type": "Number",
+							"description": "每批数量，当sale_type=batch时生效，范围是1-99999",
+							"required": true
+						},
+						{
+							"name": "price",
+							"type": "String",
+							"description": "价格，单位是美元，精确到小数点后两位，范围是0.01-9999999.00",
+							"required": true
+						},
+						{
+							"name": "package_size",
+							"type": "String",
+							"description": "尺寸，单位是厘米，长宽高范围是1-9999999",
+							"required": true
+						},
+						{
+							"name": "volume",
+							"type": "Number",
+							"description": "体积，单位是立方厘米，范围是1-9999999",
+							"required": true
+						},
+						{
+							"name": "weight",
+							"type": "String",
+							"description": "重量，单位是kg，精确到小数点后三位，范围是0.01-9999999.000",
+							"required": true
+						},
+						{
+							"name": "min_order_quantity",
+							"type": "Number",
+							"description": "最小起订量，必须是batch_number的整数倍，范围是1-99999",
+							"required": true
+						},
+						{
+							"name": "shipping_line_template_id",
+							"type": "Number",
+							"description": "运费模板ID",
+							"required": true
+						},
+						{
+							"name": "handling_time",
+							"type": "Number",
+							"description": "备货期，单位是天，范围是1-60",
+							"required": true
+						},
+						{
+							"name": "deliver_periods",
+							"type": "DeliverPeriod[]",
+							"description": "阶梯交期",
+							"required": true,
+							"subParams": [
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "最大订购量",
+									"required": true
+								},
+								{
+									"name": "process_period",
+									"type": "Number",
+									"description": "发货时间",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "product_sku",
+					"type": "ProductSkuResponse",
+					"description": "商品SKU",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_attributes",
+							"type": "SkuAttribute[]",
+							"description": "SKU使用的属性",
+							"required": true,
+							"subParams": [
+								{
+									"name": "attribute_name",
+									"type": "String",
+									"description": "属性名称",
+									"required": true
+								},
+								{
+									"name": "values",
+									"type": "SkuAttributeValue[]",
+									"description": "属性下的值",
+									"required": true,
+									"subParams": [
+										{
+											"name": "system_value_name",
+											"type": "String",
+											"description": "默认的属性值名称",
+											"required": true
+										},
+										{
+											"name": "image_url",
+											"type": "String",
+											"description": "自定义的图片URL",
+											"required": true
+										},
+										{
+											"name": "mark_info",
+											"type": "String",
+											"description": "默认的展示样式",
+											"required": true
+										},
+										{
+											"name": "value_id",
+											"type": "Number",
+											"description": "属性值ID",
+											"required": true
+										},
+										{
+											"name": "custom_value_name",
+											"type": "String",
+											"description": "自定义的属性值名称",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "attribute_id",
+									"type": "Number",
+									"description": "属性ID",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "skus",
+							"type": "SkuDefinition[]",
+							"description": "SKU定义",
+							"required": true,
+							"subParams": [
+								{
+									"name": "bulk_discount_prices",
+									"type": "BulkDiscountPrice[]",
+									"description": "根据订单数量设置折扣价",
+									"required": true,
+									"subParams": [
+										{
+											"name": "start_quantity",
+											"type": "Number",
+											"description": "起始数量，范围是1-99999",
+											"required": true
+										},
+										{
+											"name": "price",
+											"type": "String",
+											"description": "价格，范围是0.01-9999999.00",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "attr2_value",
+									"type": "Json",
+									"description": "attr2Value",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "商品的SKU编码",
+									"required": true
+								},
+								{
+									"name": "sku_id",
+									"type": "Number",
+									"description": "商品的SKUid，唯一标识SKU",
+									"required": true
+								},
+								{
+									"name": "inventory_dto_list",
+									"type": "ProductInventoryDto[]",
+									"description": "商品的库存列表",
+									"required": true,
+									"subParams": [
+										{
+											"name": "store_code",
+											"type": "String",
+											"description": "库存编码，为空时表示默认国内仓",
+											"required": true
+										},
+										{
+											"name": "inventory",
+											"type": "Number",
+											"description": "库存值",
+											"required": true
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "商品详情描述",
+					"required": true
+				},
+				{
+					"name": "product_type",
+					"type": "String",
+					"description": "商品类型",
+					"required": true
+				},
+				{
+					"name": "language",
+					"type": "String",
+					"description": "语种",
+					"required": true
+				},
+				{
+					"name": "product_id",
+					"type": "String",
+					"description": "产品ID",
+					"required": true
+				},
+				{
+					"name": "owner_member",
+					"type": "Number",
+					"description": "产品负责人",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "产品更新时间",
+					"required": true
+				},
+				{
+					"name": "display",
+					"type": "String",
+					"description": "Y为上架状态",
+					"required": true
+				},
+				{
+					"name": "owner_member_display_name",
+					"type": "String",
+					"description": "产品负责人显示名，由firstname和lastname拼接组成",
+					"required": true
+				},
+				{
+					"name": "custom_info",
+					"type": "CustomInfo",
+					"description": "定制信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "custom_contents",
+							"type": "CustomContent[]",
+							"description": "定制项",
+							"required": true,
+							"subParams": [
+								{
+									"name": "custom_type",
+									"type": "String",
+									"description": "定制类型",
+									"required": true
+								},
+								{
+									"name": "min_order_quantity",
+									"type": "Number",
+									"description": "定制最小起订量",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "is_smart_edit",
+					"type": "Boolean",
+					"description": "是否是智能编辑",
+					"required": true
+				},
+				{
+					"name": "price_type",
+					"type": "String",
+					"description": "/**      * SKU价      */     SKU_PRICE(\"sku_price\"),     /**      * 阶梯价      */     LADDER_PRICE(\"ladder_price\"),     /**      * fob价: 单一区间fob价      */     FOB_PRICE(\"fob_price\");",
+					"required": true
+				},
+				{
+					"name": "pc_detail_url",
+					"type": "String",
+					"description": "https://www.alibaba.com/product-detail/Short-Umbrella-Girls-Black-Lace-Polka_1600107214049.html?spm=a2700.galleryofferlist.normalList.12.6c612db4ueHAW2",
+					"required": true
+				}
+			]
+		}
+	]
+}

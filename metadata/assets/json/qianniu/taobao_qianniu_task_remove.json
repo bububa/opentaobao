@@ -1,0 +1,20 @@
+{
+	"name": "taobao.qianniu.task.remove",
+	"apiChineseName": "轻任务删除接口",
+	"description": "轻任务删除接口。",
+	"requestParams": [
+		{
+			"name": "metadata_id",
+			"type": "Number",
+			"description": "对于发起人删除一个任务，请使用这个字段，同时清除所有处理人。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

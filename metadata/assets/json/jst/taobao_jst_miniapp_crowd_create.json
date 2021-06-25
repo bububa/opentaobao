@@ -1,0 +1,43 @@
+{
+	"name": "taobao.jst.miniapp.crowd.create",
+	"apiChineseName": "小程序活动创建",
+	"description": "小程序活动创建",
+	"requestParams": [
+		{
+			"name": "end_date",
+			"type": "Date",
+			"description": "活动开始时间，开始时间和结束时间不能超过1个月",
+			"required": true
+		},
+		{
+			"name": "description",
+			"type": "String",
+			"description": "活动描述",
+			"required": true
+		},
+		{
+			"name": "start_date",
+			"type": "Date",
+			"description": "活动开始时间",
+			"required": true
+		},
+		{
+			"name": "crowd_name",
+			"type": "String",
+			"description": "活动名称",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "活动Code，活动的唯一标识"
+		},
+		{
+			"name": "r_code",
+			"type": "Number",
+			"description": "状态码"
+		}
+	]
+}

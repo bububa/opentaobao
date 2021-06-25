@@ -1,0 +1,21 @@
+package iot
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/iot"
+)
+
+/* 
+列出收藏列表 
+taobao.ailab.aicloud.top.like.list
+
+列出收藏列表
+*/
+func TaobaoAilabAicloudTopLikeList(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopLikeListRequest, session string) (*iot.TaobaoAilabAicloudTopLikeListResponse, error) {
+    var resp iot.TaobaoAilabAicloudTopLikeListAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

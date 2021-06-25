@@ -1,0 +1,32 @@
+{
+	"name": "taobao.tmc.messages.confirm",
+	"apiChineseName": "确认消费消息的状态",
+	"description": "确认消费消息的状态",
+	"requestParams": [
+		{
+			"name": "group_name",
+			"type": "String",
+			"description": "分组名称，不传代表默认分组"
+		},
+		{
+			"name": "s_message_ids",
+			"type": "Number[]",
+			"description": "处理成功的消息ID列表 最大 200个ID",
+			"required": true,
+			"maxListSize": 200
+		},
+		{
+			"name": "f_message_ids",
+			"type": "Number[]",
+			"description": "处理失败的消息ID列表--已废弃，无需传此字段",
+			"maxListSize": 200
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

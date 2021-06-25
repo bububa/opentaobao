@@ -1,0 +1,63 @@
+{
+	"name": "taobao.subway.cia.get",
+	"apiChineseName": "查询单元智能出价信息",
+	"description": "查询单元智能出价信息",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CiaConfig",
+			"description": "单元智能出价信息",
+			"subParams": [
+				{
+					"name": "target_click",
+					"type": "Number",
+					"description": "目标点击量",
+					"required": true
+				},
+				{
+					"name": "bid_target_type",
+					"type": "Number",
+					"description": "出价偏好（3:促进收藏加购，4:促进点击，5:促进成交）",
+					"required": true
+				},
+				{
+					"name": "max_premium",
+					"type": "Number",
+					"description": "最高溢价比例",
+					"required": true
+				},
+				{
+					"name": "is_circulation",
+					"type": "Boolean",
+					"description": "是否自动流转",
+					"required": true
+				},
+				{
+					"name": "is_smart_bidding",
+					"type": "Boolean",
+					"description": "是否开启智能出价",
+					"required": true
+				},
+				{
+					"name": "ad_group_id",
+					"type": "Number",
+					"description": "推广组id",
+					"required": true
+				}
+			]
+		}
+	]
+}

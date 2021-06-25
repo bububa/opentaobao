@@ -1,0 +1,112 @@
+{
+	"name": "tmall.mallitemcenter.supplier.price.upload",
+	"apiChineseName": "天猫服务商服务报价上传",
+	"description": "天猫服务商上传服务价格",
+	"requestParams": [
+		{
+			"name": "service_code",
+			"type": "String",
+			"description": "服务code"
+		},
+		{
+			"name": "provider_price_list",
+			"type": "StoreOfferPriceDto[]",
+			"description": "服务商门店价格列表",
+			"required": true,
+			"maxListSize": 100,
+			"subParams": [
+				{
+					"name": "price",
+					"type": "Number",
+					"description": "price"
+				},
+				{
+					"name": "service_code",
+					"type": "String",
+					"description": "服务code"
+				},
+				{
+					"name": "service_sku",
+					"type": "String",
+					"description": "服务skuCode"
+				},
+				{
+					"name": "store_id",
+					"type": "Number",
+					"description": "门店ID"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "result_data",
+					"type": "ResultData",
+					"description": "是否成功",
+					"required": true,
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "上传结果是否成功",
+							"required": true
+						},
+						{
+							"name": "failure_code",
+							"type": "String",
+							"description": "错误码",
+							"required": true
+						},
+						{
+							"name": "failure_price_factors",
+							"type": "String",
+							"description": "出错因子列表",
+							"required": true
+						},
+						{
+							"name": "failure_detail",
+							"type": "String",
+							"description": "错误详情",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口是否成功",
+					"required": true
+				},
+				{
+					"name": "system_error",
+					"type": "Boolean",
+					"description": "是否系统调用错误",
+					"required": true
+				},
+				{
+					"name": "business_check_fail",
+					"type": "Boolean",
+					"description": "是否校验出错",
+					"required": true
+				}
+			]
+		}
+	]
+}

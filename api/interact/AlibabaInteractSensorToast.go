@@ -1,0 +1,21 @@
+package interact
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/interact"
+)
+
+/* 
+toast 
+alibaba.interact.sensor.toast
+
+toast提示
+*/
+func AlibabaInteractSensorToast(clt *core.SDKClient, req *interact.AlibabaInteractSensorToastRequest, session string) (*interact.AlibabaInteractSensorToastResponse, error) {
+    var resp interact.AlibabaInteractSensorToastAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

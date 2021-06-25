@@ -1,0 +1,64 @@
+{
+	"name": "taobao.alitrip.car.rent.order.cancel",
+	"apiChineseName": "租车-取消订单",
+	"description": "服务商主动取消用户订单或者拒绝取消订单.",
+	"requestParams": [
+		{
+			"name": "param0",
+			"type": "RentProviderCancelRequest",
+			"description": "取消请求对象",
+			"subParams": [
+				{
+					"name": "cancel_confirm",
+					"type": "Boolean",
+					"description": "是否确认可以取消",
+					"required": true
+				},
+				{
+					"name": "provider_id",
+					"type": "Number",
+					"description": "服务商ID",
+					"required": true
+				},
+				{
+					"name": "cancel_reject_reason",
+					"type": "String",
+					"description": "取消拒绝原因"
+				},
+				{
+					"name": "cancel_reject_code",
+					"type": "Number",
+					"description": "取消拒绝类型"
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "订单id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误消息"
+		},
+		{
+			"name": "models",
+			"type": "Json",
+			"description": "扩展对象"
+		},
+		{
+			"name": "model",
+			"type": "Json",
+			"description": "结果对象"
+		},
+		{
+			"name": "c",
+			"type": "Number",
+			"description": "结果码"
+		}
+	]
+}

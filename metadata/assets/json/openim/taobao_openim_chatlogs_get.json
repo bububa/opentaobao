@@ -1,0 +1,136 @@
+{
+	"name": "taobao.openim.chatlogs.get",
+	"apiChineseName": "openim聊天记录查询接口",
+	"description": "查询openim账号聊天记录",
+	"requestParams": [
+		{
+			"name": "user1",
+			"type": "OpenImUser",
+			"description": "用户1信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "taobao_account",
+					"type": "Boolean",
+					"description": "是否为淘宝账号"
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "账户appkey"
+				}
+			]
+		},
+		{
+			"name": "user2",
+			"type": "OpenImUser",
+			"description": "用户2信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "uid",
+					"type": "String",
+					"description": "用户id",
+					"required": true
+				},
+				{
+					"name": "taobao_account",
+					"type": "Boolean",
+					"description": "是否为淘宝账号"
+				},
+				{
+					"name": "app_key",
+					"type": "String",
+					"description": "账户appkey"
+				}
+			]
+		},
+		{
+			"name": "begin",
+			"type": "Number",
+			"description": "查询开始时间（UTC时间）",
+			"required": true
+		},
+		{
+			"name": "end",
+			"type": "Number",
+			"description": "查询结束时间（UTC时间）",
+			"required": true
+		},
+		{
+			"name": "count",
+			"type": "Number",
+			"description": "查询条数",
+			"required": true
+		},
+		{
+			"name": "next_key",
+			"type": "String",
+			"description": "迭代key"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RoamingMessageResult",
+			"description": "聊天记录查询结果",
+			"subParams": [
+				{
+					"name": "next_key",
+					"type": "String",
+					"description": "下次迭代key"
+				},
+				{
+					"name": "messages",
+					"type": "RoamingMessage[]",
+					"description": "消息列表",
+					"subParams": [
+						{
+							"name": "content_list",
+							"type": "RoamingMessageItem[]",
+							"description": "消息内容",
+							"subParams": [
+								{
+									"name": "type",
+									"type": "String",
+									"description": "节点类型"
+								},
+								{
+									"name": "value",
+									"type": "String",
+									"description": "值"
+								}
+							]
+						},
+						{
+							"name": "time",
+							"type": "Number",
+							"description": "消息时间（UTC时间）"
+						},
+						{
+							"name": "direction",
+							"type": "Number",
+							"description": "消息方向。user1 -\u003e user2 = 0 , user2-\u003euser1 = 1"
+						},
+						{
+							"name": "uuid",
+							"type": "Number",
+							"description": "消息唯一ID"
+						},
+						{
+							"name": "type",
+							"type": "Number",
+							"description": "消息类型"
+						}
+					]
+				}
+			]
+		}
+	]
+}

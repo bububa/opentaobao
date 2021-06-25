@@ -1,0 +1,135 @@
+{
+	"name": "alibaba.wdk.bm.coupon.query",
+	"apiChineseName": "淘鲜达券信息查询接口",
+	"description": "淘鲜达品牌营销的券信息查询接口，基于券id查询券相关信息：券id、券名称、分摊信息、面额、创建时间、开始时间、结束时间",
+	"requestParams": [
+		{
+			"name": "isv_query_coupon_param",
+			"type": "IsvQueryCouponParam",
+			"description": "查询券参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "ump_id_list",
+					"type": "Number[]",
+					"description": "umpId列表，最多支持一次批量查询20个"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BmResult",
+			"description": "结果",
+			"subParams": [
+				{
+					"name": "data_list",
+					"type": "Data[]",
+					"description": "结果数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "coupon_id",
+							"type": "Number",
+							"description": "券id",
+							"required": true
+						},
+						{
+							"name": "coupon_name",
+							"type": "String",
+							"description": "券名称",
+							"required": true
+						},
+						{
+							"name": "start_fee",
+							"type": "Number",
+							"description": "满减门槛，单位为分",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "优惠金额，单位为分",
+							"required": true
+						},
+						{
+							"name": "apply_start_time",
+							"type": "Date",
+							"description": "发放开始时间",
+							"required": true
+						},
+						{
+							"name": "apply_end_time",
+							"type": "Date",
+							"description": "发放结束时间",
+							"required": true
+						},
+						{
+							"name": "gmt_create",
+							"type": "Date",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "payment_type",
+							"type": "Number",
+							"description": "补差类型，值为1表示全补至门店售价、值为2表示部分补固定金额、值为3表示补主档价、值为4表示自行约定、值为5表示按比例补差",
+							"required": true
+						},
+						{
+							"name": "payment_channel",
+							"type": "Number",
+							"description": "补差渠道，值为1表示与淘鲜达结算、值为2表示与零售商结算",
+							"required": true
+						},
+						{
+							"name": "payment_rate",
+							"type": "String",
+							"description": "补差比例",
+							"required": true
+						},
+						{
+							"name": "payment_item_d_o_list",
+							"type": "PaymentItemDo[]",
+							"description": "补差商品列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "商品sku码",
+									"required": true
+								},
+								{
+									"name": "payment_fee",
+									"type": "Number",
+									"description": "商品补差金额，单位为分",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码，当失败返回错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "描述信息，当成功返回OK，当失败返回错误描述",
+					"required": true
+				}
+			]
+		}
+	]
+}

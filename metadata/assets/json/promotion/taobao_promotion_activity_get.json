@@ -1,0 +1,61 @@
+{
+	"name": "taobao.promotion.activity.get",
+	"apiChineseName": "查询某个卖家的店铺优惠券领取活动",
+	"description": "查询某个卖家的店铺优惠券领取活动\u003cbr/\u003e返回，优惠券领取活动ID，优惠券ID，总领用量，每人限领量，已领取数量\u003cbr/\u003e领取活动状态，优惠券领取链接\u003cbr/\u003e最多50个优惠券",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动的id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "activitys",
+			"type": "Activity []",
+			"description": "活动列表",
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动id"
+				},
+				{
+					"name": "coupon_id",
+					"type": "Number",
+					"description": "活动对应的优惠券ID"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "卖家设置优惠券领取的总领用量"
+				},
+				{
+					"name": "applied_count",
+					"type": "Number",
+					"description": "已经领取的优惠券的数量"
+				},
+				{
+					"name": "person_limit_count",
+					"type": "Number",
+					"description": "每个买家限领取优惠券的数量，1～5张"
+				},
+				{
+					"name": "status",
+					"type": "String",
+					"description": "enabled代表有效，invalid代表失效。other代表空值"
+				},
+				{
+					"name": "activity_url",
+					"type": "String",
+					"description": "领用优惠券的链接"
+				},
+				{
+					"name": "create_user",
+					"type": "String",
+					"description": "self代表自己创建，other他人创建"
+				}
+			]
+		}
+	]
+}

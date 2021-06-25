@@ -1,0 +1,27 @@
+{
+	"name": "taobao.promotionmisc.activity.range.add",
+	"apiChineseName": "增加活动参与的商品",
+	"description": "增加活动参与的商品，部分商品参与的活动，最大支持指定150个商品。",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动id。",
+			"required": true,
+			"minValue": 0
+		},
+		{
+			"name": "ids",
+			"type": "String",
+			"description": "商品id,多个id用逗号隔开，一次不超过50个。",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "增加商品范围是否成功。"
+		}
+	]
+}

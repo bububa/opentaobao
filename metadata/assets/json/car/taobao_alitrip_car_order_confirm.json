@@ -1,0 +1,142 @@
+{
+	"name": "taobao.alitrip.car.order.confirm",
+	"apiChineseName": "司机应答API",
+	"description": "航旅事业群-度假事业部-旅行用车项目组对外部服务商提供的司机应答回调接口",
+	"requestParams": [
+		{
+			"name": "param_order_confirm",
+			"type": "OrderConfirm",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "confirm_time",
+					"type": "String",
+					"description": "确认时间"
+				},
+				{
+					"name": "confirm_type",
+					"type": "Number",
+					"description": "0应答1改派",
+					"required": true
+				},
+				{
+					"name": "driver_car_desc",
+					"type": "String",
+					"description": "车辆描述,车辆颜色,候车地点等"
+				},
+				{
+					"name": "driver_car_name",
+					"type": "String",
+					"description": "司机车型名称"
+				},
+				{
+					"name": "driver_car_no",
+					"type": "String",
+					"description": "司机车牌号"
+				},
+				{
+					"name": "driver_name",
+					"type": "String",
+					"description": "司机名称",
+					"required": true
+				},
+				{
+					"name": "driver_tel",
+					"type": "String",
+					"description": "司机联系方式。格式：加号+国家区号+空格+当地电话号码",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "String",
+					"description": "阿里旅行订单ID",
+					"required": true
+				},
+				{
+					"name": "provider_id",
+					"type": "String",
+					"description": "服务商标识",
+					"required": true
+				},
+				{
+					"name": "third_order_id",
+					"type": "String",
+					"description": "服务商订单号"
+				},
+				{
+					"name": "seller_id",
+					"type": "String",
+					"description": "可选，卖家id"
+				},
+				{
+					"name": "driver_pic",
+					"type": "String",
+					"description": "司机图片，公网可访问链接"
+				},
+				{
+					"name": "car_pic",
+					"type": "String",
+					"description": "车型图片，公网可访问链接"
+				},
+				{
+					"name": "support_real_time_poi",
+					"type": "Boolean",
+					"description": "本次用车是否支持 司机实时位置回传。若为true，则飞猪平台在用车实际开始时将从服务商处实时查询司机位置"
+				},
+				{
+					"name": "driver_trumpet_phone",
+					"type": "String",
+					"description": "司机虚拟号"
+				},
+				{
+					"name": "driver_id_number",
+					"type": "String",
+					"description": "司机身份证号"
+				},
+				{
+					"name": "use_type",
+					"type": "Number",
+					"description": "0:接送机 1：实时打车 2：租车(不传值默认为0)"
+				},
+				{
+					"name": "sub_pic",
+					"type": "String",
+					"description": "下游供应商logo图片(高德专用)"
+				},
+				{
+					"name": "sub_title",
+					"type": "String",
+					"description": "下游供应商名称(高德专用)"
+				},
+				{
+					"name": "car_type_id",
+					"type": "Number",
+					"description": "飞猪车型id(30:出租车 31:经济型 32:舒适型 33:商务型 34:豪华型)"
+				},
+				{
+					"name": "sub_key",
+					"type": "String",
+					"description": "下游供应商唯一标识(高德专用)"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "message_code",
+			"type": "Number",
+			"description": "错误码"
+		},
+		{
+			"name": "data",
+			"type": "String",
+			"description": "其它数据"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "错误信息"
+		}
+	]
+}

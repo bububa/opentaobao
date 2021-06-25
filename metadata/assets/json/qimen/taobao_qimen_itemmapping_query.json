@@ -1,0 +1,108 @@
+{
+	"name": "taobao.qimen.itemmapping.query",
+	"apiChineseName": "前后端商品映射查询接口",
+	"description": "前后端商品映射查询接口",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"subParams": [
+				{
+					"name": "queryType",
+					"type": "String",
+					"description": "奇门仓储字段,C123,string(50),,"
+				},
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "奇门仓储字段,C123,string(50),,"
+				},
+				{
+					"name": "itemId",
+					"type": "String",
+					"description": "奇门仓储字段,C123,string(50),,"
+				},
+				{
+					"name": "shopItemId",
+					"type": "String",
+					"description": "奇门仓储字段,C123,string(50),,"
+				},
+				{
+					"name": "skuId",
+					"type": "String",
+					"description": "奇门仓储字段,C123,string(50),,"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure,success,string(10),必填",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码,0,string(50),",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息,invalid appkey,string(100),",
+					"required": true
+				},
+				{
+					"name": "itemMappings",
+					"type": "ItemMapping[]",
+					"description": "商品映射关系",
+					"required": true,
+					"subParams": [
+						{
+							"name": "ownerCode",
+							"type": "String",
+							"description": "奇门仓储字段,C123,string(50),",
+							"required": true
+						},
+						{
+							"name": "shopNick",
+							"type": "String",
+							"description": "奇门仓储字段,C123,string(50),",
+							"required": true
+						},
+						{
+							"name": "itemSource",
+							"type": "String",
+							"description": "奇门仓储字段,C123,string(50),",
+							"required": true
+						},
+						{
+							"name": "itemId",
+							"type": "String",
+							"description": "奇门仓储字段,C123,string(50),",
+							"required": true
+						},
+						{
+							"name": "shopItemId",
+							"type": "String",
+							"description": "奇门仓储字段,C123,string(50),",
+							"required": true
+						},
+						{
+							"name": "skuId",
+							"type": "String",
+							"description": "奇门仓储字段,C123,string(50),",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.sensor.calendar",
+	"apiChineseName": "天猫互动游戏开放平台需要授权的传感器类接口(日历提醒)",
+	"description": "天猫互动游戏开放平台需要授权的传感器类接口(日历提醒)",
+	"responseParams": [
+		{
+			"name": "succ",
+			"type": "Boolean",
+			"description": "返回结果"
+		}
+	]
+}

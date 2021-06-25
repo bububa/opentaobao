@@ -1,0 +1,25 @@
+{
+	"name": "taobao.wlb.order.cancel",
+	"apiChineseName": "取消物流宝订单",
+	"description": "取消物流宝订单",
+	"requestParams": [
+		{
+			"name": "wlb_order_code",
+			"type": "String",
+			"description": "物流宝订单编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "modify_time",
+			"type": "Date",
+			"description": "修改时间，只有在取消成功的情况下，才可以做"
+		},
+		{
+			"name": "error_code_list",
+			"type": "String",
+			"description": "错误编码列表"
+		}
+	]
+}

@@ -1,0 +1,72 @@
+{
+	"name": "taobao.simba.salestar.adgroup.update",
+	"apiChineseName": "销量明星更新一个推广组的信息",
+	"description": "更新一个推广组的信息，可以设置 是否上线",
+	"requestParams": [
+		{
+			"name": "online_status",
+			"type": "String",
+			"description": "用户设置的上下线状态 offline-下线(暂停竞价)； online-上线；默认为online"
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组Id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "adgroup",
+			"type": "ADGroup",
+			"description": "被修改的推广组",
+			"subParams": [
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "推广计划Id"
+				},
+				{
+					"name": "adgroup_id",
+					"type": "Number",
+					"description": "推广组id"
+				},
+				{
+					"name": "category_ids",
+					"type": "String",
+					"description": "商品类目id，从根类目到子类目，用空格分割"
+				},
+				{
+					"name": "num_iid",
+					"type": "Number",
+					"description": "商品数字id"
+				},
+				{
+					"name": "online_status",
+					"type": "String",
+					"description": "用户设置的上下线状态，offline-下线(暂停竞价)；online-上线；默认为online"
+				},
+				{
+					"name": "offline_type",
+					"type": "String",
+					"description": "online-上线；audit_offline-审核下线；crm_offline-CRM下线；默认为online"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "审核下线原因"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "最后修改时间"
+				}
+			]
+		}
+	]
+}

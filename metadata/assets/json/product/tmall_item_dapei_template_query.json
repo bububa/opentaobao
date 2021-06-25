@@ -1,0 +1,119 @@
+{
+	"name": "tmall.item.dapei.template.query",
+	"apiChineseName": "搭配查询接口",
+	"description": "根据条件获取搭配内容",
+	"requestParams": [
+		{
+			"name": "title",
+			"type": "String",
+			"description": "搭配标题"
+		},
+		{
+			"name": "page_index",
+			"type": "Number",
+			"description": "页码"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页大小"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultSet",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "results",
+					"type": "DapeiDO[]",
+					"description": "firstResult",
+					"required": true,
+					"subParams": [
+						{
+							"name": "id",
+							"type": "Number",
+							"description": "id",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "title",
+							"required": true
+						},
+						{
+							"name": "desc",
+							"type": "String",
+							"description": "desc",
+							"required": true
+						},
+						{
+							"name": "url",
+							"type": "String",
+							"description": "url",
+							"required": true
+						},
+						{
+							"name": "items",
+							"type": "DapeiTemplateItem[]",
+							"description": "items",
+							"required": true,
+							"subParams": [
+								{
+									"name": "item_id",
+									"type": "Number",
+									"description": "itemId",
+									"required": true
+								},
+								{
+									"name": "img",
+									"type": "String",
+									"description": "img",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error",
+					"type": "Boolean",
+					"description": "error",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "total_results",
+					"type": "Number",
+					"description": "totalResults",
+					"required": true
+				},
+				{
+					"name": "total_page",
+					"type": "Number",
+					"description": "totalPage",
+					"required": true
+				},
+				{
+					"name": "page_index",
+					"type": "Number",
+					"description": "pageIndex",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				}
+			]
+		}
+	]
+}

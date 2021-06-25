@@ -1,0 +1,110 @@
+{
+	"name": "taobao.interactive.list.getbyuser",
+	"apiChineseName": "用户获取视频互动列表",
+	"description": "根据用户来获取用户编辑的互动列表",
+	"requestParams": [
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页多少"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "result_code",
+					"type": "ResultCode",
+					"description": "错误",
+					"required": true,
+					"subParams": [
+						{
+							"name": "error_code",
+							"type": "Number",
+							"description": "错误代码",
+							"required": true
+						},
+						{
+							"name": "info",
+							"type": "String",
+							"description": "错误描述",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "PageQueryResult",
+					"description": "model",
+					"required": true,
+					"subParams": [
+						{
+							"name": "total",
+							"type": "Number",
+							"description": "总数",
+							"required": true
+						},
+						{
+							"name": "result_list",
+							"type": "Resultlist[]",
+							"description": "resultList",
+							"required": true,
+							"subParams": [
+								{
+									"name": "id",
+									"type": "Number",
+									"description": "互动id",
+									"required": true
+								},
+								{
+									"name": "video_url",
+									"type": "String",
+									"description": "视频链接，需要unicode转换",
+									"required": true
+								},
+								{
+									"name": "cover_url",
+									"type": "String",
+									"description": "封面图url",
+									"required": true
+								},
+								{
+									"name": "duration",
+									"type": "Number",
+									"description": "视频时长 单位秒",
+									"required": true
+								},
+								{
+									"name": "title",
+									"type": "String",
+									"description": "视频标题",
+									"required": true
+								},
+								{
+									"name": "video_status",
+									"type": "Number",
+									"description": "视频状态，1有效；0删除",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

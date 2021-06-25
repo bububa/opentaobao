@@ -1,0 +1,43 @@
+{
+	"name": "alibaba.gpu.schema.catsearch",
+	"apiChineseName": "按类目查询spu接口",
+	"description": "按类目查询spu的schema接口",
+	"requestParams": [
+		{
+			"name": "leaf_cat_id",
+			"type": "Number",
+			"description": "叶子类目ID",
+			"required": true
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小",
+			"required": true
+		},
+		{
+			"name": "provider_id",
+			"type": "Number",
+			"description": "渠道Id，如0代表天猫，8代表淘宝",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "cat_search_result",
+			"type": "String",
+			"description": "返回按类目查询spu的schema"
+		},
+		{
+			"name": "total",
+			"type": "Number",
+			"description": "总记录数"
+		}
+	]
+}

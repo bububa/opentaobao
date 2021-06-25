@@ -1,0 +1,41 @@
+{
+	"name": "taobao.train.agent.tostation.receive",
+	"apiChineseName": "线下票送票至车站代理商确认用户已取票服务",
+	"description": "送票至车站的订单，代理商确认用户已取票",
+	"requestParams": [
+		{
+			"name": "main_order_id",
+			"type": "Number",
+			"description": "淘宝的主订单号",
+			"required": true
+		},
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "error_msg_code",
+			"type": "String",
+			"description": "错误码"
+		},
+		{
+			"name": "extend_params",
+			"type": "String",
+			"description": "扩展参数"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "错误描述"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

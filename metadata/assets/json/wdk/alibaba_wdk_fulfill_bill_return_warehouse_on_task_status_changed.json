@@ -1,0 +1,117 @@
+{
+	"name": "alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed",
+	"apiChineseName": "退仓结果回传",
+	"description": "退货入仓结果回传",
+	"requestParams": [
+		{
+			"name": "return_warehouse_result",
+			"type": "ReturnWarehouseResult",
+			"description": "退仓结果",
+			"subParams": [
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓编码，由基础店仓维护，盒马全域统一"
+				},
+				{
+					"name": "return_warehouse_bill_id",
+					"type": "String",
+					"description": "入库单号"
+				},
+				{
+					"name": "sku_info_list",
+					"type": "ReverseSkuInfo[]",
+					"description": "子订单信息列表",
+					"subParams": [
+						{
+							"name": "warehouse_loss_stock_quantity",
+							"type": "String",
+							"description": "仓内报损数量（退仓数量-实际入库数量）"
+						},
+						{
+							"name": "actual_in_bound_stock_quantity",
+							"type": "String",
+							"description": "实际入库数量(库存单位)"
+						},
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "商品编码"
+						},
+						{
+							"name": "reverse_fulfill_order_id",
+							"type": "String",
+							"description": "逆向履约单号"
+						},
+						{
+							"name": "reverse_fulfill_sub_order_id",
+							"type": "String",
+							"description": "逆向履约子单号"
+						},
+						{
+							"name": "warehouse_loss_reason_list",
+							"type": "WarehouseLossReason[]",
+							"description": "仓内报损原因列表",
+							"subParams": [
+								{
+									"name": "warehouse_loss_reason",
+									"type": "String",
+									"description": "报损原因描述"
+								},
+								{
+									"name": "warehouse_loss_reason_code",
+									"type": "String",
+									"description": "报损原因编码"
+								},
+								{
+									"name": "warehouse_loss_stock_quantity",
+									"type": "String",
+									"description": "仓内报损数量"
+								}
+							]
+						},
+						{
+							"name": "related_fulfill_order_id",
+							"type": "String",
+							"description": "关联的正向履约主单号",
+							"required": true
+						},
+						{
+							"name": "related_fulfill_sub_order_id",
+							"type": "String",
+							"description": "关联的正向履约子单号",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "FulfillVoidResult",
+			"description": "fulfillVoidResult",
+			"subParams": [
+				{
+					"name": "error_desc",
+					"type": "String",
+					"description": "返回码含义描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "返回码(success=false时不能为空)： SYSTEM_ERROR :系统异常(指令可重发) PARAM_ERROR :参数错误(指令不可重发，监控报警) BUSINESS_ERROR:业务异常(指令不可重发，监控报警)",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "true 调用成功 false 调用失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,89 @@
+{
+	"name": "taobao.subway.marsh.land.rpt.get",
+	"apiChineseName": "获取捡漏词包分时报表数据",
+	"description": "获取捡漏词包分时报表数据",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "2021-05-11"
+		},
+		{
+			"name": "adgroup_id_equal",
+			"type": "String",
+			"description": "推广组id"
+		},
+		{
+			"name": "is_auto_match_equal",
+			"type": "String",
+			"description": "词包类型（捡漏词包填19）"
+		},
+		{
+			"name": "campaign_id_equal",
+			"type": "String",
+			"description": "计划id"
+		},
+		{
+			"name": "start_date",
+			"type": "String",
+			"description": "2021-05-05"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result_list",
+			"type": "RptResult []",
+			"description": "捡漏词包分时报表数据列表",
+			"subParams": [
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "ctr",
+					"required": true
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "消耗",
+					"required": true
+				},
+				{
+					"name": "is_automatch",
+					"type": "String",
+					"description": "词包类型",
+					"required": true
+				},
+				{
+					"name": "cpc",
+					"type": "String",
+					"description": "cpc",
+					"required": true
+				},
+				{
+					"name": "time_period",
+					"type": "String",
+					"description": "时段编号",
+					"required": true
+				},
+				{
+					"name": "impression",
+					"type": "String",
+					"description": "展现量",
+					"required": true
+				},
+				{
+					"name": "click",
+					"type": "String",
+					"description": "点击量",
+					"required": true
+				}
+			]
+		}
+	]
+}

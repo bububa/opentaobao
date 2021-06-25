@@ -1,0 +1,170 @@
+{
+	"name": "taobao.film.lottery.sendcode",
+	"apiChineseName": "淘票票外部直发券",
+	"description": "淘票票外部直发券",
+	"requestParams": [
+		{
+			"name": "param_f_code_merchant_send_code_request",
+			"type": "FCodeMerchantSendCodeRq",
+			"description": "外部商户发码请求",
+			"subParams": [
+				{
+					"name": "out_uid",
+					"type": "String",
+					"description": "外部业务用户id"
+				},
+				{
+					"name": "each_num",
+					"type": "Number",
+					"description": "每个用户发码的数量",
+					"required": true
+				},
+				{
+					"name": "ext_order_id",
+					"type": "String",
+					"description": "外部商户发码的外部业务号",
+					"required": true
+				},
+				{
+					"name": "number",
+					"type": "Number",
+					"description": "发码总数",
+					"required": true
+				},
+				{
+					"name": "order_time",
+					"type": "String",
+					"description": "外部下单时间"
+				},
+				{
+					"name": "user_id_type",
+					"type": "String",
+					"description": "用户ID类型 TAOBAO 或者 TAOBAO_NAME"
+				},
+				{
+					"name": "partner_code",
+					"type": "String",
+					"description": "外部商户标示"
+				},
+				{
+					"name": "out_user_name",
+					"type": "String",
+					"description": "外面用户昵称"
+				},
+				{
+					"name": "feature",
+					"type": "String",
+					"description": "请求属性字段"
+				},
+				{
+					"name": "user_id_list",
+					"type": "String",
+					"description": "淘宝用户ID列表，用|分割"
+				},
+				{
+					"name": "mix_id",
+					"type": "String",
+					"description": "发券码商品mixId",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultGeneralModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "return_url",
+					"type": "String",
+					"description": "returnUrl",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "服务返回出参",
+					"required": true
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "return_value",
+					"type": "FCodeMerchantSendCodeRp",
+					"description": "返回具体结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "f_code_merchant_info_list",
+							"type": "FCodeMerchantVo[]",
+							"description": "码对外信息描述列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "gmt_expire",
+									"type": "Date",
+									"description": "码过期时间",
+									"required": true
+								},
+								{
+									"name": "gen_task_id",
+									"type": "Number",
+									"description": "码生成任务ID",
+									"required": true
+								},
+								{
+									"name": "cost_price",
+									"type": "Number",
+									"description": "码可抵用金额",
+									"required": true
+								},
+								{
+									"name": "code",
+									"type": "String",
+									"description": "code",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "return_error_oper",
+					"type": "String",
+					"description": "returnErrorOper",
+					"required": true
+				},
+				{
+					"name": "return_error_solution",
+					"type": "String",
+					"description": "returnErrorSolution",
+					"required": true
+				},
+				{
+					"name": "return_message",
+					"type": "String",
+					"description": "调用信息",
+					"required": true
+				},
+				{
+					"name": "return_error_stack_trace",
+					"type": "String",
+					"description": "returnErrorStackTrace",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

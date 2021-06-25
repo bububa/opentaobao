@@ -1,0 +1,62 @@
+{
+	"name": "taobao.subusers.get",
+	"apiChineseName": "获取指定账户的子账号简易信息列表",
+	"description": "获取主账号下的子账号简易账号信息集合。（只能通过主账号登陆并且查询该属于主账号的子账号信息）",
+	"requestParams": [
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "主账号用户名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "subaccounts",
+			"type": "SubAccountInfo []",
+			"description": "子账号基本信息",
+			"subParams": [
+				{
+					"name": "sub_id",
+					"type": "Number",
+					"description": "123456"
+				},
+				{
+					"name": "sub_nick",
+					"type": "String",
+					"description": "zhangsan:no1"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "654321"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "zhangsan"
+				},
+				{
+					"name": "sub_status",
+					"type": "Number",
+					"description": "1"
+				},
+				{
+					"name": "sub_owed_status",
+					"type": "Boolean",
+					"description": "true"
+				},
+				{
+					"name": "sub_dispatch_status",
+					"type": "Boolean",
+					"description": "true"
+				},
+				{
+					"name": "sub_name",
+					"type": "String",
+					"description": "小红"
+				}
+			]
+		}
+	]
+}

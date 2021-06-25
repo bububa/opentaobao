@@ -1,0 +1,75 @@
+{
+	"name": "taobao.ts.property.get",
+	"apiChineseName": "淘宝服务属性查询",
+	"description": "淘宝服务属性查询",
+	"requestParams": [
+		{
+			"name": "service_item_code",
+			"type": "String",
+			"description": "服务收费项code",
+			"required": true,
+			"maxLength": 64
+		}
+	],
+	"responseParams": [
+		{
+			"name": "service_item_property",
+			"type": "ServiceItemProperty",
+			"description": "服务收费项相关属性对象",
+			"subParams": [
+				{
+					"name": "item_property_values",
+					"type": "ItemPropertyValues[]",
+					"description": "属性列表",
+					"subParams": [
+						{
+							"name": "property_id",
+							"type": "Number",
+							"description": "服务属性id"
+						},
+						{
+							"name": "property_name",
+							"type": "String",
+							"description": "属性名称"
+						},
+						{
+							"name": "property_values",
+							"type": "String[]",
+							"description": "属性值列表."
+						}
+					]
+				},
+				{
+					"name": "service_name",
+					"type": "String",
+					"description": "服务名称"
+				},
+				{
+					"name": "service_item_name",
+					"type": "String",
+					"description": "服务收费项名称"
+				},
+				{
+					"name": "service_item_code",
+					"type": "String",
+					"description": "服务收费项代码"
+				},
+				{
+					"name": "basic_price",
+					"type": "Price",
+					"description": "基础价格"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "服务商的nick"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "质检服务简介"
+				}
+			]
+		}
+	]
+}

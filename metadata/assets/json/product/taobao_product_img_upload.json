@@ -1,0 +1,64 @@
+{
+	"name": "taobao.product.img.upload",
+	"apiChineseName": "上传单张产品非主图，如果需要传多张，可调多次",
+	"description": "1.传入产品ID \u003cbr/\u003e2.传入图片内容 \u003cbr/\u003e注意：图片最大为500K,只支持JPG,GIF格式,如果需要传多张，可调多次",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "产品图片ID.修改图片时需要传入"
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID.Product的id",
+			"required": true
+		},
+		{
+			"name": "image",
+			"type": "byte[]",
+			"description": "图片内容.图片最大为500K,只支持JPG,GIF格式.",
+			"required": true,
+			"maxLength": 1048576
+		},
+		{
+			"name": "position",
+			"type": "Number",
+			"description": "图片序号"
+		},
+		{
+			"name": "is_major",
+			"type": "Boolean",
+			"description": "是否将该图片设为主图.可选值:true,false;默认值:false."
+		}
+	],
+	"responseParams": [
+		{
+			"name": "product_img",
+			"type": "ProductImg",
+			"description": "返回产品图片结构中的：url,id,created,modified",
+			"subParams": [
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "产品图片ID"
+				},
+				{
+					"name": "url",
+					"type": "String",
+					"description": "图片地址.(绝对地址,格式:http://host/image_path)"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "添加时间.格式:yyyy-mm-dd hh:mm:ss"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "修改时间.格式:yyyy-mm-dd hh:mm:ss"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"name": "taobao.baike.import.zhubao.data",
+	"apiChineseName": "导入数据到商品百科服务",
+	"description": "用于接入外部数据录入到商品百科中",
+	"requestParams": [
+		{
+			"name": "data_json_str",
+			"type": "String",
+			"description": "约定的Json数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "message_code",
+					"type": "String",
+					"description": "messageCode",
+					"required": true
+				},
+				{
+					"name": "module",
+					"type": "String",
+					"description": "module",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,117 @@
+{
+	"name": "taobao.inventory.store.manage",
+	"apiChineseName": "创建或更新仓库",
+	"description": "创建商家仓或者更新商家仓信息",
+	"requestParams": [
+		{
+			"name": "operate_type",
+			"type": "String",
+			"description": "参数定义，ADD：新建; UPDATE：更新",
+			"required": true
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "商家的仓库编码，不允许重复，不允许更新",
+			"required": true
+		},
+		{
+			"name": "store_name",
+			"type": "String",
+			"description": "商家的仓库名称，可更新",
+			"required": true
+		},
+		{
+			"name": "store_type",
+			"type": "String",
+			"description": "仓库类型，可更新。目前只支持自有仓，TYPE_OWN：自有物理仓",
+			"required": true
+		},
+		{
+			"name": "alias_name",
+			"type": "String",
+			"description": "仓库简称，可更新"
+		},
+		{
+			"name": "address",
+			"type": "String",
+			"description": "仓库的物理地址，可更新",
+			"required": true
+		},
+		{
+			"name": "address_area_name",
+			"type": "String",
+			"description": "仓库区域名，可更新",
+			"required": true
+		},
+		{
+			"name": "contact",
+			"type": "String",
+			"description": "联系人，可更新"
+		},
+		{
+			"name": "phone",
+			"type": "String",
+			"description": "联系电话，可更新"
+		},
+		{
+			"name": "postcode",
+			"type": "Number",
+			"description": "邮编，可更新"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "store_list",
+			"type": "Store []",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "商家的仓库编码，不允许重复"
+				},
+				{
+					"name": "store_name",
+					"type": "String",
+					"description": "商家的仓库名称"
+				},
+				{
+					"name": "store_type",
+					"type": "String",
+					"description": "仓库类型"
+				},
+				{
+					"name": "alias_name",
+					"type": "String",
+					"description": "仓库简称"
+				},
+				{
+					"name": "address",
+					"type": "String",
+					"description": "仓库的物理地址"
+				},
+				{
+					"name": "address_area_name",
+					"type": "String",
+					"description": "仓库对应的淘宝区域"
+				},
+				{
+					"name": "contact",
+					"type": "String",
+					"description": "联系人"
+				},
+				{
+					"name": "phone",
+					"type": "String",
+					"description": "联系电话"
+				},
+				{
+					"name": "post_code",
+					"type": "String",
+					"description": "邮编"
+				}
+			]
+		}
+	]
+}

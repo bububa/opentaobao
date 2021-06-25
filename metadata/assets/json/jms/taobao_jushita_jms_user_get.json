@@ -1,0 +1,47 @@
+{
+	"name": "taobao.jushita.jms.user.get",
+	"apiChineseName": "查询某个用户是否同步消息",
+	"description": "查询某个用户是否同步消息，只支持单个查询",
+	"requestParams": [
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "需要查询的用户名",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ons_user",
+			"type": "TmcUser",
+			"description": "同步的用户信息",
+			"subParams": [
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "用户昵称"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "用户ID"
+				},
+				{
+					"name": "is_valid",
+					"type": "Boolean",
+					"description": "用户授权是否有效，true表示授权有效，false表示授权过期"
+				},
+				{
+					"name": "created",
+					"type": "Date",
+					"description": "用户首次开通时间"
+				},
+				{
+					"name": "modified",
+					"type": "Date",
+					"description": "用户最后开通时间"
+				}
+			]
+		}
+	]
+}

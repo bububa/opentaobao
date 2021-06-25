@@ -1,0 +1,38 @@
+{
+	"name": "taobao.simba.keywordids.changed.get",
+	"apiChineseName": "获取修改的词ID",
+	"description": "获取修改的词ID",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "得到此时间点之后的数据，不能大于一个月",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "返回的每页数据量大小,默认200最大1000",
+			"maxValue": 1000,
+			"minValue": 1
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "返回的第几页数据，默认为1",
+			"minValue": 1
+		}
+	],
+	"responseParams": [
+		{
+			"name": "changed_keyword_ids",
+			"type": "Number []",
+			"description": "词的ID列表"
+		}
+	]
+}

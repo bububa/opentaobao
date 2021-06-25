@@ -1,0 +1,90 @@
+{
+	"name": "alibaba.ailabs.aligenie.albums.get",
+	"apiChineseName": "专辑详情",
+	"description": "给予厂商查询专辑下的音频详情",
+	"requestParams": [
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离"
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id"
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数"
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		},
+		{
+			"name": "param1",
+			"type": "Number",
+			"description": "专辑 id",
+			"required": true
+		},
+		{
+			"name": "param2",
+			"type": "Number",
+			"description": "当前页（从1开始, 目前由于底层引擎限制，实际最多能查5000个，超过5000返回为空，请确保页码*分页大小不超过5000）",
+			"required": true
+		},
+		{
+			"name": "param3",
+			"type": "Number",
+			"description": "每页数量（不超过50）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "AiCloudResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "record_count",
+					"type": "Number",
+					"description": "总共符合数据的个数（目前由于底层引擎限制，实际最多能查5000个，超过5000返回为空）",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "List数据结构，List中的每一个条目是一个Map对象，key为属性名称，value为对应的值",
+					"required": true
+				},
+				{
+					"name": "msg_code",
+					"type": "String",
+					"description": "返回码",
+					"required": true
+				},
+				{
+					"name": "msg_info",
+					"type": "String",
+					"description": "返回信息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "请求是否成功",
+					"required": true
+				},
+				{
+					"name": "extend_info",
+					"type": "String",
+					"description": "额外扩展信息，JSON串，不一定有",
+					"required": true
+				}
+			]
+		}
+	]
+}

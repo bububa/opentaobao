@@ -1,0 +1,135 @@
+{
+	"name": "taobao.qimen.warehouseinfo.query",
+	"apiChineseName": "货主仓库资源查询接口",
+	"description": "货主仓库资源查询",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "奇门仓储字段"
+				},
+				{
+					"name": "extendProps",
+					"type": "Map",
+					"description": "扩展属性"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "奇门仓储字段",
+					"required": true
+				},
+				{
+					"name": "ownerName",
+					"type": "String",
+					"description": "奇门仓储字段",
+					"required": true
+				},
+				{
+					"name": "warehouseInfos",
+					"type": "WarehouseInfo[]",
+					"description": "奇门仓储字段",
+					"required": true,
+					"subParams": [
+						{
+							"name": "warehouseCode",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "warehouseName",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "detailAddress",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "tel",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "奇门仓储字段",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

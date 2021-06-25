@@ -1,0 +1,237 @@
+{
+	"name": "taobao.qianniu.taskmetas.get",
+	"apiChineseName": "任务元查询接口",
+	"description": "任务元查询接口",
+	"requestParams": [
+		{
+			"name": "sender_uid",
+			"type": "Number",
+			"description": "发起任务人的uid"
+		},
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "逗号分隔的字段列表.如id,title,content,sender_uid,sender_nick,finish_strategy,biz_sys_Id,biz_sys_task_type,start_time,end_time,reminder_flag,priority",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页数，最大100"
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页码"
+		},
+		{
+			"name": "order_by",
+			"type": "String",
+			"description": "排序字段。gmt_create,priority等"
+		},
+		{
+			"name": "order_type",
+			"type": "String",
+			"description": "升降序。asc为升，desc为降"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "0为未完成。2为完成。4为取消。不填为所有"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "任务类型"
+		},
+		{
+			"name": "key_word",
+			"type": "String",
+			"description": "按关键字搜索"
+		},
+		{
+			"name": "client_info",
+			"type": "String",
+			"description": "客户端的版本信息"
+		},
+		{
+			"name": "receiver_uid",
+			"type": "Number",
+			"description": "接收人uid"
+		},
+		{
+			"name": "meta_ids",
+			"type": "String",
+			"description": "任务元ID，多个以逗号分离"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "taskmetas",
+			"type": "QTaskMetadata []",
+			"description": "taskmetas",
+			"subParams": [
+				{
+					"name": "voice_file",
+					"type": "String",
+					"description": "语音备注的文件名"
+				},
+				{
+					"name": "receiver",
+					"type": "String",
+					"description": "任务的接收人"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "主键"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "任务标题"
+				},
+				{
+					"name": "content",
+					"type": "String",
+					"description": "任务摘要内容"
+				},
+				{
+					"name": "biz_sys_id",
+					"type": "Number",
+					"description": "来源系统ID"
+				},
+				{
+					"name": "biz_sys_task_type",
+					"type": "Number",
+					"description": "任务在来源系统的类型, 这个是业务系统的自定义类型"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "任务开始时间，格式：当前时间毫秒数"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "任务结束时间，格式：当前时间毫秒数"
+				},
+				{
+					"name": "sender_uid",
+					"type": "Number",
+					"description": "发起者用户数字ID"
+				},
+				{
+					"name": "sender_nick",
+					"type": "String",
+					"description": "发起者用户昵称"
+				},
+				{
+					"name": "reminder_flag",
+					"type": "Number",
+					"description": "提醒标志位： 0表示不需要提醒，1表示需要状态变更提醒"
+				},
+				{
+					"name": "finish_strategy",
+					"type": "Number",
+					"description": "任务完成标识： 0表示只要有一个人完成任务即可，1表示所有人需要各自都完成任务"
+				},
+				{
+					"name": "task_count",
+					"type": "Number",
+					"description": "与此任务元相关的任务数"
+				},
+				{
+					"name": "priority",
+					"type": "Number",
+					"description": "优先级，0低，1中，2高"
+				},
+				{
+					"name": "memo",
+					"type": "String",
+					"description": "任务元备注"
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "finish_count",
+					"type": "Number",
+					"description": "完成的任务数。如果完成策略是只需要1个人完成的，则只要一个人完成就会返回总任务条数。如果是所有人都要完成的，则会返回实际完成条数。"
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "任务更新时间"
+				},
+				{
+					"name": "start_time_long",
+					"type": "Number",
+					"description": "start_time的数字格式"
+				},
+				{
+					"name": "end_time_long",
+					"type": "Number",
+					"description": "end_time的数字格式"
+				},
+				{
+					"name": "gmt_create_long",
+					"type": "Number",
+					"description": "gmt_create的数字格式"
+				},
+				{
+					"name": "gmt_modified_long",
+					"type": "Number",
+					"description": "gmt_modified的数字格式"
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "同次操作的任务元数"
+				},
+				{
+					"name": "biz_type",
+					"type": "String",
+					"description": "接收的任务类型，所有相关的任务的类型一致时有效。当任务类型不一致时为diff"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "0为未完成，2为完成，4为取消"
+				},
+				{
+					"name": "biz_type_str",
+					"type": "String",
+					"description": "biztype的中文名"
+				},
+				{
+					"name": "comment_count",
+					"type": "Number",
+					"description": "当前任务的评论数"
+				},
+				{
+					"name": "action",
+					"type": "String",
+					"description": "点击动作的协议"
+				},
+				{
+					"name": "attachments",
+					"type": "String",
+					"description": "轻任务附件信息，userId_timestamp_随机字符串，例如：23434_1234458623_seresfto"
+				},
+				{
+					"name": "biz_remind_time",
+					"type": "Date",
+					"description": "我的安排的任务上的提醒时间"
+				},
+				{
+					"name": "biz_remind_time_long",
+					"type": "Number",
+					"description": "是biz_remind_time的数字格式"
+				}
+			]
+		}
+	]
+}

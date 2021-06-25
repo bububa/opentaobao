@@ -1,0 +1,21 @@
+package interact
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/interact"
+)
+
+/* 
+声音 
+alibaba.interact.sensor.audio
+
+客户端声音
+*/
+func AlibabaInteractSensorAudio(clt *core.SDKClient, req *interact.AlibabaInteractSensorAudioRequest, session string) (*interact.AlibabaInteractSensorAudioResponse, error) {
+    var resp interact.AlibabaInteractSensorAudioAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

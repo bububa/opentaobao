@@ -1,0 +1,83 @@
+{
+	"name": "taobao.promotionmisc.item.activity.get",
+	"apiChineseName": "查询无条件单品优惠活动",
+	"description": "查询无条件单品优惠活动",
+	"requestParams": [
+		{
+			"name": "activity_id",
+			"type": "Number",
+			"description": "活动id。",
+			"required": true,
+			"minValue": 0
+		}
+	],
+	"responseParams": [
+		{
+			"name": "item_promotion",
+			"type": "ItemPromotion",
+			"description": "单品优惠活动信息。",
+			"subParams": [
+				{
+					"name": "activity_id",
+					"type": "Number",
+					"description": "活动id"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "活动名称。"
+				},
+				{
+					"name": "description",
+					"type": "String",
+					"description": "活动的有效条件、人群和行为描述。"
+				},
+				{
+					"name": "participate_range",
+					"type": "Number",
+					"description": "活动范围：0表示全部参与； 1表示部分商品参与。"
+				},
+				{
+					"name": "start_time",
+					"type": "Date",
+					"description": "活动开始时间。"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "活动结束时间。"
+				},
+				{
+					"name": "is_user_tag",
+					"type": "Boolean",
+					"description": "是否指定用户标签。"
+				},
+				{
+					"name": "user_tag",
+					"type": "String",
+					"description": "用户标签。当is_user_tag为true时，该值才有意义。"
+				},
+				{
+					"name": "is_decrease_money",
+					"type": "Boolean",
+					"description": "是否有减钱行为。"
+				},
+				{
+					"name": "decrease_amount",
+					"type": "Number",
+					"description": "减多少钱。当is_decrease_money为true时，该值才有意义。注意：该值单位为分，即100表示1元。"
+				},
+				{
+					"name": "is_discount",
+					"type": "Boolean",
+					"description": "是否有打折行为。"
+				},
+				{
+					"name": "discount_rate",
+					"type": "Number",
+					"description": "折扣值。当is_discount为true时，该值才有意义。注意：800表示8折。"
+				}
+			]
+		}
+	]
+}

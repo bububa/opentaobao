@@ -1,0 +1,106 @@
+{
+	"name": "alibaba.wdk.channel.order.status.update",
+	"apiChineseName": "订单状态变更",
+	"description": "订单状态变更",
+	"requestParams": [
+		{
+			"name": "order_status_info",
+			"type": "OrderStatusInfo",
+			"description": "修改信息",
+			"required": true,
+			"subParams": [
+				{
+					"name": "store_id",
+					"type": "String",
+					"description": "经营店Id",
+					"required": true
+				},
+				{
+					"name": "shop_id",
+					"type": "String",
+					"description": "渠道店Id",
+					"required": true
+				},
+				{
+					"name": "out_order_id",
+					"type": "String",
+					"description": "外部订单号",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "订单状态   已支付： PAID；  TRADE_CLOSE（仅未支付订单）",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "OrderOperateResult",
+					"description": "返回内容",
+					"required": true,
+					"subParams": [
+						{
+							"name": "biz_order_id",
+							"type": "String",
+							"description": "盒马主单号",
+							"required": true
+						},
+						{
+							"name": "out_order_id",
+							"type": "String",
+							"description": "外部主单号",
+							"required": true
+						},
+						{
+							"name": "sub_order_results",
+							"type": "SubOrder[]",
+							"description": "返回子单列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sub_biz_order_id",
+									"type": "String",
+									"description": "盒马子单号",
+									"required": true
+								},
+								{
+									"name": "sub_out_order_id",
+									"type": "String",
+									"description": "外部子单号",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,79 @@
+{
+	"name": "alibaba.scbp.target.ad.campaign.effect",
+	"apiChineseName": "定向推广-获取计划维度推广效果",
+	"description": "定向推广-获取计划维度推广效果",
+	"requestParams": [
+		{
+			"name": "interval",
+			"type": "Number",
+			"description": "统计区间 只能为1 7 30",
+			"required": true
+		},
+		{
+			"name": "end_date",
+			"type": "String",
+			"description": "结束时间 当inteval=7或30的时候 不需要填写，当inteval=1时需要填写（开始结束时间区间不允许大于180天）"
+		},
+		{
+			"name": "begin_date",
+			"type": "String",
+			"description": "开始时间 当inteval=7或30的时候 不需要填写，当inteval=1时需要填写（开始结束时间区间不允许大于180天）"
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "当填写时，展示指定id的数据，不填写，则展示全部计划总数据"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "effect_list",
+			"type": "TopP4pQuickCampaignEffectView []",
+			"description": "数据列表",
+			"subParams": [
+				{
+					"name": "online_time",
+					"type": "String",
+					"description": "推广时长",
+					"required": true
+				},
+				{
+					"name": "cpc",
+					"type": "String",
+					"description": "平均点击花费",
+					"required": true
+				},
+				{
+					"name": "ctr",
+					"type": "String",
+					"description": "点击率",
+					"required": true
+				},
+				{
+					"name": "cost",
+					"type": "String",
+					"description": "消耗金额，单位元",
+					"required": true
+				},
+				{
+					"name": "click_cnt",
+					"type": "String",
+					"description": "点击量",
+					"required": true
+				},
+				{
+					"name": "impression_cnt",
+					"type": "String",
+					"description": "曝光量",
+					"required": true
+				},
+				{
+					"name": "date",
+					"type": "String",
+					"description": "日期",
+					"required": true
+				}
+			]
+		}
+	]
+}

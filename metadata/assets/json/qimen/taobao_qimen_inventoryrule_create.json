@@ -1,0 +1,78 @@
+{
+	"name": "taobao.qimen.inventoryrule.create",
+	"apiChineseName": "渠道间库存规则设置接口",
+	"description": "渠道间库存规则设置",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "RequestDO",
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "奇门仓储字段,C1223,string(50),,"
+				},
+				{
+					"name": "inventoryRules",
+					"type": "InventoryRule[]",
+					"description": "inventoryRules",
+					"subParams": [
+						{
+							"name": "actionType",
+							"type": "String",
+							"description": "奇门仓储字段,C1223,string(50),,"
+						},
+						{
+							"name": "itemCode",
+							"type": "String",
+							"description": "奇门仓储字段,C1223,string(50),,"
+						},
+						{
+							"name": "channelRatioRules",
+							"type": "ChannelRatioRule[]",
+							"description": "channelRatioRules",
+							"subParams": [
+								{
+									"name": "channelCode",
+									"type": "String",
+									"description": "奇门仓储字段,C1223,string(50),,"
+								},
+								{
+									"name": "ratio",
+									"type": "String",
+									"description": "奇门仓储字段,C1223,string(50),,"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "ResponseDO",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "响应结果:success|failure,success,string(10),必填,",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码,0,string(50),,",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息,invalid appkey,string(100),,",
+					"required": true
+				}
+			]
+		}
+	]
+}

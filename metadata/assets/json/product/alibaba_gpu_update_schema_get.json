@@ -1,0 +1,26 @@
+{
+	"name": "alibaba.gpu.update.schema.get",
+	"apiChineseName": "获取产品编辑schema规则的接口",
+	"description": "获取产品编辑schema规则的接口",
+	"requestParams": [
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品ID",
+			"required": true
+		},
+		{
+			"name": "provider_id",
+			"type": "Number",
+			"description": "当前用户所在渠道如0代表天猫，8代表淘宝",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_product_rule",
+			"type": "String",
+			"description": "参数产品ID对应的产品更新规则"
+		}
+	]
+}

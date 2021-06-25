@@ -1,0 +1,44 @@
+{
+	"name": "taobao.eticket.merchant.img.upload",
+	"apiChineseName": "码商上传二维码图片",
+	"description": "电子凭证的码商可以通过这个接口，上传二维码图片",
+	"requestParams": [
+		{
+			"name": "img_bytes",
+			"type": "byte[]",
+			"description": "二维码图片",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "resp_body",
+			"type": "UploadImgCallbackResp",
+			"description": "回复对象",
+			"subParams": [
+				{
+					"name": "attribute_map",
+					"type": "Json",
+					"description": "扩展属性",
+					"required": true
+				},
+				{
+					"name": "file_name",
+					"type": "String",
+					"description": "图片在淘宝的文件名",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "ret_code",
+			"type": "String",
+			"description": "子结果码"
+		},
+		{
+			"name": "ret_msg",
+			"type": "String",
+			"description": "子结果信息"
+		}
+	]
+}

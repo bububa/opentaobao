@@ -1,0 +1,21 @@
+package qianniu
+
+import (
+    "github.com/bububa/opentaobao/core"
+    "github.com/bububa/opentaobao/model/qianniu"
+)
+
+/* 
+增加任务接收人接口 
+taobao.qianniu.task.increase
+
+根据任务元id增加任务接收人
+*/
+func TaobaoQianniuTaskIncrease(clt *core.SDKClient, req *qianniu.TaobaoQianniuTaskIncreaseRequest, session string) (*qianniu.TaobaoQianniuTaskIncreaseResponse, error) {
+    var resp qianniu.TaobaoQianniuTaskIncreaseAPIResponse
+    err := clt.Post(req, &resp, session)
+    if err != nil {
+        return nil, err
+    }
+    return resp.Response, nil
+}

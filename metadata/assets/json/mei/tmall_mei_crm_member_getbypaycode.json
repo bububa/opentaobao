@@ -1,0 +1,66 @@
+{
+	"name": "tmall.mei.crm.member.getbypaycode",
+	"apiChineseName": "支付码获取会员信息",
+	"description": "通过支付码获取会员信息",
+	"requestParams": [
+		{
+			"name": "pay_code",
+			"type": "String",
+			"description": "会员码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultDTO",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "total",
+					"type": "Number",
+					"description": "total",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "MemberAccountDTO",
+					"description": "result",
+					"required": true,
+					"subParams": [
+						{
+							"name": "mix_mobile",
+							"type": "String",
+							"description": "mixMobile，只有有权限的才有值",
+							"required": true
+						},
+						{
+							"name": "buyer_nick",
+							"type": "String",
+							"description": "buyerNick，只有有权限的才有值",
+							"required": true
+						},
+						{
+							"name": "clear_mobile",
+							"type": "String",
+							"description": "明文手机号，只有有权限的才有值",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

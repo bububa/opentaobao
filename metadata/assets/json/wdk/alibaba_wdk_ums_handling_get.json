@@ -1,0 +1,135 @@
+{
+	"name": "alibaba.wdk.ums.handling.get",
+	"apiChineseName": "加工单-回流单（新接口）",
+	"description": "加工单-回流单（新接口）",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "仓库编码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "list",
+					"type": "BomProcessDTO[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "occurrence_date",
+							"type": "Date",
+							"description": "加工日期",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "店仓code，指的是库调对象，对应一个物理店或仓编码",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "唯一识别码",
+							"required": true
+						},
+						{
+							"name": "dept_code",
+							"type": "String",
+							"description": "部门编码",
+							"required": true
+						},
+						{
+							"name": "occurrence_type",
+							"type": "String",
+							"description": "加工类型",
+							"required": true
+						},
+						{
+							"name": "bom_process_code",
+							"type": "String",
+							"description": "单据编码",
+							"required": true
+						},
+						{
+							"name": "product_item_infos",
+							"type": "BomItemInfos[]",
+							"description": "productItemInfos",
+							"required": true,
+							"subParams": [
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "quantity",
+									"required": true
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "itemCode",
+									"required": true
+								},
+								{
+									"name": "cabinet_code",
+									"type": "String",
+									"description": "cabinetCode",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "material_item_infos",
+							"type": "BomItemInfos[]",
+							"description": "materialItemInfos",
+							"required": true,
+							"subParams": [
+								{
+									"name": "quantity",
+									"type": "String",
+									"description": "quantity",
+									"required": true
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "itemCode",
+									"required": true
+								},
+								{
+									"name": "cabinet_code",
+									"type": "String",
+									"description": "cabinetCode",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				}
+			]
+		}
+	]
+}

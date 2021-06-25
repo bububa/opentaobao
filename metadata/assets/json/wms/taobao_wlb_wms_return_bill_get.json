@@ -1,0 +1,129 @@
+{
+	"name": "taobao.wlb.wms.return.bill.get",
+	"apiChineseName": "获取销退收货信息",
+	"description": "通过订单号获取单个销退单收货信息。",
+	"requestParams": [
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "ERP订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据"
+		},
+		{
+			"name": "cn_order_code",
+			"type": "String",
+			"description": "菜鸟订单编码，查询单个订单时orderCode与cnOrderCode必须有一个参数值不为空，两个参数都赋值时，以cnOrderCode值检索数据"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "return_order_info",
+			"type": "CainiaoReturnBillReturnorderinfo",
+			"description": "回退订单信息",
+			"subParams": [
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "ERP订单号"
+				},
+				{
+					"name": "cn_order_code",
+					"type": "String",
+					"description": "仓库订单编码，LBX号"
+				},
+				{
+					"name": "order_type",
+					"type": "Number",
+					"description": "单据类型： 501 退货入库"
+				},
+				{
+					"name": "confirm_time",
+					"type": "Date",
+					"description": "仓库订单完成时间"
+				},
+				{
+					"name": "order_item_list",
+					"type": "CainiaoReturnBillOrderitemlist[]",
+					"description": "订单商品信息列表",
+					"subParams": [
+						{
+							"name": "order_item",
+							"type": "CainiaoReturnBillOrderitem",
+							"description": "订单商品信息",
+							"subParams": [
+								{
+									"name": "order_item_id",
+									"type": "String",
+									"description": "商品ID"
+								},
+								{
+									"name": "item_id",
+									"type": "String",
+									"description": "商品ID"
+								},
+								{
+									"name": "item_code",
+									"type": "String",
+									"description": "商家编码"
+								},
+								{
+									"name": "inventory_item_list",
+									"type": "CainiaoReturnBillInventoryitemlist[]",
+									"description": "商品信息",
+									"subParams": [
+										{
+											"name": "inventory_item",
+											"type": "CainiaoReturnBillInventoryitem",
+											"description": "订单详情",
+											"subParams": [
+												{
+													"name": "inventory_type",
+													"type": "Number",
+													"description": "库存类型1 可销售库存 101残次品"
+												},
+												{
+													"name": "item_qty",
+													"type": "Number",
+													"description": "数量"
+												},
+												{
+													"name": "due_date",
+													"type": "Date",
+													"description": "失效日期，保质期商品使用"
+												},
+												{
+													"name": "produce_date",
+													"type": "Date",
+													"description": "生产日期，保质期商品使用"
+												},
+												{
+													"name": "produce_code",
+													"type": "String",
+													"description": "生产编码，同一商品可能因商家不同有不同编码，仓库采集的商品信息，可供保质期商品使用"
+												},
+												{
+													"name": "produce_area",
+													"type": "String",
+													"description": "生产地区，仓库采集的商品"
+												},
+												{
+													"name": "batch_code",
+													"type": "String",
+													"description": "批次号"
+												}
+											]
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "pre_cn_order_code",
+					"type": "String",
+					"description": "此销退订单对应原销售订单的菜鸟订单号"
+				}
+			]
+		}
+	]
+}

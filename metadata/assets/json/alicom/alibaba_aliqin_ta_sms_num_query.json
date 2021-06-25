@@ -1,0 +1,113 @@
+{
+	"name": "alibaba.aliqin.ta.sms.num.query",
+	"apiChineseName": "短信查询",
+	"description": "查询短信发送揭露",
+	"requestParams": [
+		{
+			"name": "biz_id",
+			"type": "String",
+			"description": "短信发送流水"
+		},
+		{
+			"name": "rec_num",
+			"type": "String",
+			"description": "短信接收号码",
+			"required": true
+		},
+		{
+			"name": "query_date",
+			"type": "String",
+			"description": "短信发送日期，支持近30天记录查询，格式yyyyMMdd",
+			"required": true
+		},
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "分页参数,页码",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "分页参数，每页数量。最大值50",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "current_page",
+			"type": "Number",
+			"description": "当前页码"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页数量"
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总量"
+		},
+		{
+			"name": "total_page",
+			"type": "Number",
+			"description": "总页数"
+		},
+		{
+			"name": "values",
+			"type": "FcPartnerSmsDetailDto []",
+			"description": "1",
+			"subParams": [
+				{
+					"name": "extend",
+					"type": "String",
+					"description": "公共回传参数",
+					"required": true
+				},
+				{
+					"name": "rec_num",
+					"type": "String",
+					"description": "短信接收号码",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "sms_code",
+					"type": "String",
+					"description": "模板编码",
+					"required": true
+				},
+				{
+					"name": "sms_content",
+					"type": "String",
+					"description": "短信内容",
+					"required": true
+				},
+				{
+					"name": "sms_receiver_time",
+					"type": "Date",
+					"description": "短信接收时间",
+					"required": true
+				},
+				{
+					"name": "sms_send_time",
+					"type": "Date",
+					"description": "短信发送时间",
+					"required": true
+				},
+				{
+					"name": "sms_status",
+					"type": "Number",
+					"description": "发送状态 1：等待回执，2：发送失败，3：发送成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

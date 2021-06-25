@@ -1,0 +1,84 @@
+{
+	"name": "alibaba.wdk.ums.outbound.process.get",
+	"apiChineseName": "出库业务UMS异步处理结果返回",
+	"description": "出库业务UMS异步处理结果返回",
+	"requestParams": [
+		{
+			"name": "warehouse_code",
+			"type": "String",
+			"description": "店仓code，指的是作业对象，对应一个物理店或仓编码",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "UtmsResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "list",
+					"type": "ErpBillCallbackDto[]",
+					"description": "list",
+					"required": true,
+					"subParams": [
+						{
+							"name": "reason",
+							"type": "String",
+							"description": "s失败原因",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "String",
+							"description": "0：失败，1：成功",
+							"required": true
+						},
+						{
+							"name": "bill_type",
+							"type": "String",
+							"description": "7：退货单   3：调拨出库单, 10 质量反馈",
+							"required": true
+						},
+						{
+							"name": "biz_order_code",
+							"type": "String",
+							"description": "单据号",
+							"required": true
+						},
+						{
+							"name": "uuid",
+							"type": "String",
+							"description": "唯一识别码",
+							"required": true
+						},
+						{
+							"name": "warehouse_code",
+							"type": "String",
+							"description": "warehouseCode",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "msg",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

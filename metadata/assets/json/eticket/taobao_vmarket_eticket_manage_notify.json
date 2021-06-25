@@ -1,0 +1,31 @@
+{
+	"name": "taobao.vmarket.eticket.manage.notify",
+	"apiChineseName": "主动发起通知接口",
+	"description": "外部合作商家主动发起通知接口",
+	"requestParams": [
+		{
+			"name": "order_id",
+			"type": "Number",
+			"description": "订单编号",
+			"required": true
+		},
+		{
+			"name": "codemerchant_id",
+			"type": "Number",
+			"description": "码商ID，如果是码商，必须传，如果是信任卖家，不需要传"
+		},
+		{
+			"name": "notify_method",
+			"type": "String",
+			"description": "需要调用的通知方法，目前仅支持是send（发码）或resend（重新发码）",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "ret_code",
+			"type": "Number",
+			"description": "1:成功"
+		}
+	]
+}

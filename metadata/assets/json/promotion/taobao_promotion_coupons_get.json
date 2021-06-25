@@ -1,0 +1,80 @@
+{
+	"name": "taobao.promotion.coupons.get",
+	"apiChineseName": "查询卖家优惠券",
+	"description": "查询卖家已经创建的优惠券，接口返回信息：优惠券ID，面值，创建时间，有效期，使用条件，使用渠道，创建渠道，优惠券总数量",
+	"requestParams": [
+		{
+			"name": "coupon_id",
+			"type": "Number",
+			"description": "优惠券的id，唯一标识这个优惠券"
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "优惠券的截止日期"
+		},
+		{
+			"name": "denominations",
+			"type": "Number",
+			"description": "优惠券的面额，必须是3，5，10，20，50,100",
+			"maxValue": 100,
+			"minValue": 3
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "查询的页号，结果集是分页返回的，每页20条",
+			"minValue": 1
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数",
+			"maxLength": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "查询的总数量"
+		},
+		{
+			"name": "coupons",
+			"type": "Coupon []",
+			"description": "优惠券列表",
+			"subParams": [
+				{
+					"name": "coupon_id",
+					"type": "Number",
+					"description": "优惠券ID"
+				},
+				{
+					"name": "denominations",
+					"type": "Number",
+					"description": "优惠券的面值，返回的是“分”，不是“元”，500代表500分相当于5元"
+				},
+				{
+					"name": "creat_time",
+					"type": "Date",
+					"description": "优惠券创建时间"
+				},
+				{
+					"name": "end_time",
+					"type": "Date",
+					"description": "优惠券的截止日期"
+				},
+				{
+					"name": "condition",
+					"type": "Number",
+					"description": "订单满多少分才能用这个优惠券，501就是满501分能使用。注意：返回的是“分”，不是“元”"
+				},
+				{
+					"name": "create_channel",
+					"type": "String",
+					"description": "优惠券的创建渠道，自己创建/他人创建"
+				}
+			]
+		}
+	]
+}

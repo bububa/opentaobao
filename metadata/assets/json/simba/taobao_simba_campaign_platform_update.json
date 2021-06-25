@@ -1,0 +1,96 @@
+{
+	"name": "taobao.simba.campaign.platform.update",
+	"apiChineseName": "更新一个推广计划的平台设置",
+	"description": "更新一个推广计划的平台设置",
+	"requestParams": [
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "推广计划Id",
+			"required": true
+		},
+		{
+			"name": "search_channels",
+			"type": "Number[]",
+			"description": "搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，8、无线站内搜索；16:无线站外搜索",
+			"required": true,
+			"maxListSize": 10,
+			"maxValue": 128,
+			"minValue": 0
+		},
+		{
+			"name": "nonsearch_channels",
+			"type": "Number[]",
+			"description": "非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。1、淘宝站内定向；2、站外定向；8、无线站内定向；16、无线站外定向",
+			"maxListSize": 10,
+			"maxValue": 128,
+			"minValue": 0
+		},
+		{
+			"name": "outside_discount",
+			"type": "Number",
+			"description": "已经废弃",
+			"maxValue": 200,
+			"minValue": 1
+		},
+		{
+			"name": "mobile_discount",
+			"type": "Number",
+			"description": "已经废弃"
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "campaign_platform",
+			"type": "CampaignPlatform",
+			"description": "修改后的推广计划投放平台设置",
+			"subParams": [
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "主人昵称"
+				},
+				{
+					"name": "campaign_id",
+					"type": "Number",
+					"description": "推广计划ID"
+				},
+				{
+					"name": "outside_discount",
+					"type": "Number",
+					"description": "已经废弃了"
+				},
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "创建时间"
+				},
+				{
+					"name": "modified_time",
+					"type": "Date",
+					"description": "最后修改时间"
+				},
+				{
+					"name": "search_channels",
+					"type": "Number[]",
+					"description": "搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，7、无线站内搜索；9:无线站外搜索"
+				},
+				{
+					"name": "nonsearch_channels",
+					"type": "Number[]",
+					"description": "非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。2、站内定向；4、站外定向；8、无线站内定向；10、无线站外定向"
+				},
+				{
+					"name": "mobile_discount",
+					"type": "Number",
+					"description": "已经废弃了"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,80 @@
+{
+	"name": "alibaba.retail.marketing.buygift.activity.sku.delete",
+	"apiChineseName": "删除单品买赠活动商品",
+	"description": "删除单品买赠活动商品信息【同城零售】",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "BuyGiftActivitySkuOperateRequest",
+			"description": "删除买赠活动商品参数",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sku_elements",
+					"type": "SkuActivityElementDto[]",
+					"description": "商品元素信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "sku_code",
+							"type": "String",
+							"description": "活动商品编码",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "act_id",
+					"type": "Number",
+					"description": "操作活动的ID",
+					"required": true
+				},
+				{
+					"name": "creator_id",
+					"type": "String",
+					"description": "操作人ID（数字类型）",
+					"required": true
+				},
+				{
+					"name": "creator_name",
+					"type": "String",
+					"description": "操作人Name",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "OctopusOpenResult",
+			"description": "操作结果",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "String",
+					"description": "正常情况下data返回null",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				}
+			]
+		}
+	]
+}

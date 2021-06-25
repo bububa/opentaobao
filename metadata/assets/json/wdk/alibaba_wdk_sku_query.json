@@ -1,0 +1,809 @@
+{
+	"name": "alibaba.wdk.sku.query",
+	"apiChineseName": "查询商品",
+	"description": "查询商品",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "SkuQueryDo",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sku_codes",
+					"type": "String[]",
+					"description": "商品编码列表",
+					"required": true
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "门店或DC编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResults",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "ApiResult[]",
+					"description": "结果集合",
+					"required": true,
+					"subParams": [
+						{
+							"name": "model",
+							"type": "SkuDo",
+							"description": "单条查询结果",
+							"required": true,
+							"subParams": [
+								{
+									"name": "barcodes",
+									"type": "String",
+									"description": "编码",
+									"required": true
+								},
+								{
+									"name": "weight",
+									"type": "String",
+									"description": "一个库存单位的审批重量",
+									"required": true
+								},
+								{
+									"name": "width",
+									"type": "String",
+									"description": "宽度（宽）",
+									"required": true
+								},
+								{
+									"name": "height",
+									"type": "String",
+									"description": "高度",
+									"required": true
+								},
+								{
+									"name": "length",
+									"type": "String",
+									"description": "长度",
+									"required": true
+								},
+								{
+									"name": "shelf_life",
+									"type": "Number",
+									"description": "保质期天数，商品的保质期（单位：天）,0表示没有保质期",
+									"required": true
+								},
+								{
+									"name": "inventory_unit",
+									"type": "String",
+									"description": "inventoryUnit",
+									"required": true
+								},
+								{
+									"name": "sku_type",
+									"type": "Number",
+									"description": "skuType",
+									"required": true
+								},
+								{
+									"name": "suggested_price",
+									"type": "String",
+									"description": "suggestedPrice",
+									"required": true
+								},
+								{
+									"name": "ou_code",
+									"type": "String",
+									"description": "ouCode",
+									"required": true
+								},
+								{
+									"name": "standard_no",
+									"type": "String",
+									"description": "standardNo",
+									"required": true
+								},
+								{
+									"name": "manufacturer_name",
+									"type": "String",
+									"description": "manufacturerName",
+									"required": true
+								},
+								{
+									"name": "brand_name",
+									"type": "String",
+									"description": "brandName",
+									"required": true
+								},
+								{
+									"name": "detail_pic_urls",
+									"type": "String",
+									"description": "detailPicUrls",
+									"required": true
+								},
+								{
+									"name": "weight_flag",
+									"type": "Number",
+									"description": "weightFlag",
+									"required": true
+								},
+								{
+									"name": "sku_name",
+									"type": "String",
+									"description": "skuName",
+									"required": true
+								},
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "skuCode",
+									"required": true
+								},
+								{
+									"name": "category_code",
+									"type": "String",
+									"description": "categoryCode",
+									"required": true
+								},
+								{
+									"name": "producer_place",
+									"type": "String",
+									"description": "producerPlace",
+									"required": true
+								},
+								{
+									"name": "main_pic_urls",
+									"type": "String",
+									"description": "mainPicUrls",
+									"required": true
+								},
+								{
+									"name": "storage_type",
+									"type": "Number",
+									"description": "storageType",
+									"required": true
+								},
+								{
+									"name": "tax_rate",
+									"type": "String",
+									"description": "taxRate",
+									"required": true
+								},
+								{
+									"name": "manufacturer_address",
+									"type": "String",
+									"description": "manufacturerAddress",
+									"required": true
+								},
+								{
+									"name": "import_flag",
+									"type": "Number",
+									"description": "是否进口",
+									"required": true
+								},
+								{
+									"name": "net_content",
+									"type": "String",
+									"description": "净含量",
+									"required": true
+								},
+								{
+									"name": "accounting_category",
+									"type": "String",
+									"description": "财务核算分类",
+									"required": true
+								},
+								{
+									"name": "sale_price",
+									"type": "String",
+									"description": "商品销售价格，单位元",
+									"required": true
+								},
+								{
+									"name": "sale_unit",
+									"type": "String",
+									"description": "销售单位",
+									"required": true
+								},
+								{
+									"name": "input_invoice_content",
+									"type": "String",
+									"description": "进项税率",
+									"required": true
+								},
+								{
+									"name": "short_title",
+									"type": "String",
+									"description": "小标题",
+									"required": true
+								},
+								{
+									"name": "invoice_content",
+									"type": "String",
+									"description": "invoiceContent",
+									"required": true
+								},
+								{
+									"name": "txt_desc",
+									"type": "String",
+									"description": "文描",
+									"required": true
+								},
+								{
+									"name": "life_status",
+									"type": "String",
+									"description": "商品在机构内的生命周期，商品状态；A-正常、T-暂时停购、C-淘汰出清、R-清退、D-删除封挡，传ATCRD",
+									"required": true
+								},
+								{
+									"name": "sale_spec",
+									"type": "String",
+									"description": "销售规格",
+									"required": true
+								},
+								{
+									"name": "org_no",
+									"type": "String",
+									"description": "机构编号",
+									"required": true
+								},
+								{
+									"name": "hm_category_code",
+									"type": "String",
+									"description": "平台类目",
+									"required": true
+								},
+								{
+									"name": "rich_text",
+									"type": "String",
+									"description": "文描",
+									"required": true
+								},
+								{
+									"name": "alias_name",
+									"type": "String",
+									"description": "商品别名",
+									"required": true
+								},
+								{
+									"name": "producer_name",
+									"type": "String",
+									"description": "生产商名称",
+									"required": true
+								},
+								{
+									"name": "factory_no",
+									"type": "String",
+									"description": "厂方货号",
+									"required": true
+								},
+								{
+									"name": "component",
+									"type": "String",
+									"description": "成份",
+									"required": true
+								},
+								{
+									"name": "storage",
+									"type": "String",
+									"description": "存储条件",
+									"required": true
+								},
+								{
+									"name": "grade",
+									"type": "String",
+									"description": "产品等级",
+									"required": true
+								},
+								{
+									"name": "eat_way",
+									"type": "String",
+									"description": "食用方式",
+									"required": true
+								},
+								{
+									"name": "origin_code",
+									"type": "String",
+									"description": "溯源国标码",
+									"required": true
+								},
+								{
+									"name": "input_tax_rate",
+									"type": "String",
+									"description": "商品进项税率",
+									"required": true
+								},
+								{
+									"name": "input_tax_rate_code",
+									"type": "String",
+									"description": "开票内容",
+									"required": true
+								},
+								{
+									"name": "finance_type_code",
+									"type": "String",
+									"description": "财务核算分类编码",
+									"required": true
+								},
+								{
+									"name": "tax_rate_code",
+									"type": "String",
+									"description": "开票内容",
+									"required": true
+								},
+								{
+									"name": "forest_cate_id",
+									"type": "Number",
+									"description": "forest类目id",
+									"required": true
+								},
+								{
+									"name": "purchase_spec",
+									"type": "String",
+									"description": "采购规格",
+									"required": true
+								},
+								{
+									"name": "purchase_unit",
+									"type": "String",
+									"description": "采配单位",
+									"required": true
+								},
+								{
+									"name": "purchase_unit_code",
+									"type": "String",
+									"description": "采配编码",
+									"required": true
+								},
+								{
+									"name": "inventory_unit_code",
+									"type": "String",
+									"description": "存储单位编码",
+									"required": true
+								},
+								{
+									"name": "acceptance_criteria",
+									"type": "String",
+									"description": "货物验收标准",
+									"required": true
+								},
+								{
+									"name": "overload_rate",
+									"type": "String",
+									"description": "超收比率",
+									"required": true
+								},
+								{
+									"name": "forbid_receive_days",
+									"type": "Number",
+									"description": "禁收时限",
+									"required": true
+								},
+								{
+									"name": "forbid_sales_days",
+									"type": "Number",
+									"description": "禁售时限",
+									"required": true
+								},
+								{
+									"name": "delivery_unit",
+									"type": "String",
+									"description": "配货单位名称",
+									"required": true
+								},
+								{
+									"name": "delivery_unit_code",
+									"type": "String",
+									"description": "配货单位编码",
+									"required": true
+								},
+								{
+									"name": "delivery_spec",
+									"type": "String",
+									"description": "配货规格",
+									"required": true
+								},
+								{
+									"name": "processing_unit",
+									"type": "String",
+									"description": "加工单位 取值选项和采购单位的可选项一致",
+									"required": true
+								},
+								{
+									"name": "processing_unit_code",
+									"type": "String",
+									"description": "加工单位编码",
+									"required": true
+								},
+								{
+									"name": "cost_unit",
+									"type": "String",
+									"description": "成本单位名称",
+									"required": true
+								},
+								{
+									"name": "cost_unit_code",
+									"type": "String",
+									"description": "成本单位编码",
+									"required": true
+								},
+								{
+									"name": "procs_exchange_rate",
+									"type": "String",
+									"description": "加工换算率",
+									"required": true
+								},
+								{
+									"name": "cost_exchange_rate",
+									"type": "String",
+									"description": "成本换算率",
+									"required": true
+								},
+								{
+									"name": "mass_output_rate",
+									"type": "String",
+									"description": "出料率",
+									"required": true
+								},
+								{
+									"name": "cost_tax_price",
+									"type": "String",
+									"description": "考核成本价(含税)",
+									"required": true
+								},
+								{
+									"name": "cost_no_price",
+									"type": "String",
+									"description": "考核成本价(不含税)",
+									"required": true
+								},
+								{
+									"name": "sku_label_type",
+									"type": "String",
+									"description": "商品标类型",
+									"required": true
+								},
+								{
+									"name": "sku_label_type_code",
+									"type": "String",
+									"description": "商品标编码",
+									"required": true
+								},
+								{
+									"name": "warn_days",
+									"type": "Number",
+									"description": "保质期预警天数",
+									"required": true
+								},
+								{
+									"name": "allow_app_sale",
+									"type": "Number",
+									"description": "是否允许在app上售卖  1：是  0：否（默认为0）",
+									"required": true
+								},
+								{
+									"name": "item_sale_type",
+									"type": "Number",
+									"description": "1、普通商品 2、预售商品",
+									"required": true
+								},
+								{
+									"name": "sub_title",
+									"type": "String",
+									"description": "商品副标题卖点",
+									"required": true
+								},
+								{
+									"name": "title1",
+									"type": "String",
+									"description": "卖点1名称",
+									"required": true
+								},
+								{
+									"name": "sub_title1",
+									"type": "String",
+									"description": "卖点1内容",
+									"required": true
+								},
+								{
+									"name": "title2",
+									"type": "String",
+									"description": "卖点2名称",
+									"required": true
+								},
+								{
+									"name": "sub_title2",
+									"type": "String",
+									"description": "卖点2内容",
+									"required": true
+								},
+								{
+									"name": "sale_unit_code",
+									"type": "String",
+									"description": "销售单位（取值选项和采购单位的可选项一致）",
+									"required": true
+								},
+								{
+									"name": "label_price_type_code",
+									"type": "String",
+									"description": "标价签类型编码",
+									"required": true
+								},
+								{
+									"name": "fixed_flag",
+									"type": "Number",
+									"description": "是否定制品 0 否  1 是",
+									"required": true
+								},
+								{
+									"name": "avg_weight",
+									"type": "String",
+									"description": "均重（销售时库存单位与销售单位的转换)",
+									"required": true
+								},
+								{
+									"name": "pre_minus_weight",
+									"type": "String",
+									"description": "预扣款重量（扣款时销售单位与库存单位的转换）",
+									"required": true
+								},
+								{
+									"name": "step_quantity",
+									"type": "Number",
+									"description": "APP销售时，基于销售单位的步长",
+									"required": true
+								},
+								{
+									"name": "purchase_quantity",
+									"type": "Number",
+									"description": "APP销售时，基于销售单位的起购量",
+									"required": true
+								},
+								{
+									"name": "store_id",
+									"type": "String",
+									"description": "门店id",
+									"required": true
+								},
+								{
+									"name": "store_name",
+									"type": "String",
+									"description": "门店名称",
+									"required": true
+								},
+								{
+									"name": "channel_codes",
+									"type": "String",
+									"description": "发布渠道",
+									"required": true
+								},
+								{
+									"name": "supplier_no",
+									"type": "String",
+									"description": "默认供应商",
+									"required": true
+								},
+								{
+									"name": "supplier_name",
+									"type": "String",
+									"description": "默认供应商名称",
+									"required": true
+								},
+								{
+									"name": "logistics",
+									"type": "String",
+									"description": "默认物流中心",
+									"required": true
+								},
+								{
+									"name": "logistics_name",
+									"type": "String",
+									"description": "默认物流中心名称",
+									"required": true
+								},
+								{
+									"name": "delivery_warehouse",
+									"type": "String",
+									"description": "配货逻辑仓",
+									"required": true
+								},
+								{
+									"name": "delivery_warehouse_name",
+									"type": "String",
+									"description": "配货逻辑仓名称",
+									"required": true
+								},
+								{
+									"name": "return_warehouse",
+									"type": "String",
+									"description": "退货逻辑仓",
+									"required": true
+								},
+								{
+									"name": "return_warehouse_name",
+									"type": "String",
+									"description": "退货逻辑仓名称",
+									"required": true
+								},
+								{
+									"name": "delivery_way",
+									"type": "String",
+									"description": "配送方式",
+									"required": true
+								},
+								{
+									"name": "delivery_way_name",
+									"type": "String",
+									"description": "配送方式名称",
+									"required": true
+								},
+								{
+									"name": "processing_time",
+									"type": "Number",
+									"description": "加工时间",
+									"required": true
+								},
+								{
+									"name": "service_items",
+									"type": "String",
+									"description": "服务商品,skucode",
+									"required": true
+								},
+								{
+									"name": "default_sku_price",
+									"type": "String",
+									"description": "默认商品价格（同SKU在当前渠道的价格）",
+									"required": true
+								},
+								{
+									"name": "member_price",
+									"type": "String",
+									"description": "商品会员价格（主要用于对接线下的）",
+									"required": true
+								},
+								{
+									"name": "online_sale_flag",
+									"type": "Number",
+									"description": "是否线上可售 是  0：否  1：是",
+									"required": true
+								},
+								{
+									"name": "sale_flag_for_query",
+									"type": "Number",
+									"description": "是否可售，用于查询商品的时候标识商品的可售状态,1可售 0不可售",
+									"required": true
+								},
+								{
+									"name": "sku_suppliers",
+									"type": "SkuSupplierDo[]",
+									"description": "skuSuppliers",
+									"required": true,
+									"subParams": [
+										{
+											"name": "supplier_no",
+											"type": "String",
+											"description": "供应商编码",
+											"required": true
+										},
+										{
+											"name": "supplier_name",
+											"type": "String",
+											"description": "供应商编码名称",
+											"required": true
+										},
+										{
+											"name": "return_flag",
+											"type": "Number",
+											"description": "是否可退 1可退 0不可退",
+											"required": true
+										},
+										{
+											"name": "minimum",
+											"type": "String",
+											"description": "最小起订量",
+											"required": true
+										},
+										{
+											"name": "main_flag",
+											"type": "Number",
+											"description": "是否主供应商 1是主供应商 0非主供",
+											"required": true
+										},
+										{
+											"name": "purchase_price",
+											"type": "String",
+											"description": "采购单价；淘鲜达合作商家填默认值0；单位:元",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "storage_code",
+									"type": "String",
+									"description": "存储条件编码",
+									"required": true
+								},
+								{
+									"name": "label_style_type",
+									"type": "String",
+									"description": "标价签类型；商品在门店陈列时，采用的售价标签类型。因不采用电子价签，建议淘鲜达商家填默认值“无价签”",
+									"required": true
+								},
+								{
+									"name": "item_type_new",
+									"type": "Number",
+									"description": "商品类型1:普通商品、2:加工半成品、3:加工成品、4:原材料、5:耗材；",
+									"required": true
+								},
+								{
+									"name": "merchant_cat_code",
+									"type": "String",
+									"description": "商家后台类目编码（同字段category_code）",
+									"required": true
+								},
+								{
+									"name": "sku_pic_urls",
+									"type": "String",
+									"description": "在app上显示的商品图片cdn地址（同字段main_pic_urls和detail_pic_urls），https开头，多个图片用英文逗号切割。第一张图片会作为主图；优先使用本字段",
+									"required": true
+								},
+								{
+									"name": "back_cat_code",
+									"type": "String",
+									"description": "平台类目编码（同字段hm_category_code），需要商家把自己的类目对应到平台的类目上，此字段暂时只能支持3、4级类目修改；优先使用本字段",
+									"required": true
+								},
+								{
+									"name": "period",
+									"type": "Number",
+									"description": "商品的保质期天数（同字段shelf_life），必须为整数，0代表不管理保质期；优先使用本字段",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "err_code",
+							"type": "String",
+							"description": "请求参数不能为空",
+							"required": true
+						},
+						{
+							"name": "err_msg",
+							"type": "String",
+							"description": "单条错误信息",
+							"required": true
+						},
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "单条是否成功",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

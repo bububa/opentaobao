@@ -1,0 +1,42 @@
+{
+	"name": "taobao.train.agent.handrefund.refundfee",
+	"apiChineseName": "代理商手动退款接口",
+	"description": "火车票代理商手动退款接口",
+	"requestParams": [
+		{
+			"name": "main_biz_order_id",
+			"type": "Number",
+			"description": "主订单id",
+			"required": true
+		},
+		{
+			"name": "out_trade_no",
+			"type": "String",
+			"description": "外部订单号",
+			"required": true
+		},
+		{
+			"name": "refund_fee",
+			"type": "Number",
+			"description": "退款金额,单位为分",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功标记"
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "失败code"
+		},
+		{
+			"name": "result_msg",
+			"type": "String",
+			"description": "失败文案"
+		}
+	]
+}

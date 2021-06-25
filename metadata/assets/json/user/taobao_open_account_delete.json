@@ -1,0 +1,43 @@
+{
+	"name": "taobao.open.account.delete",
+	"apiChineseName": "OpenAccount删除数据",
+	"description": "OpenAccount删除数据",
+	"requestParams": [
+		{
+			"name": "open_account_ids",
+			"type": "Number[]",
+			"description": "Open Account的id列表",
+			"maxListSize": 20
+		},
+		{
+			"name": "isv_account_ids",
+			"type": "String[]",
+			"description": "ISV自己账号的id列表",
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "datas",
+			"type": "OpenaccountVoid []",
+			"description": "删除结果",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "successful",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码"
+				}
+			]
+		}
+	]
+}

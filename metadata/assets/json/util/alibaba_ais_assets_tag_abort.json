@@ -1,0 +1,40 @@
+{
+	"name": "alibaba.ais.assets.tag.abort",
+	"apiChineseName": "基础设施资产标签废弃",
+	"description": "提供浪潮，英业达等厂商供应阿里巴巴基础设施资产的标签QR code未使用的废弃",
+	"requestParams": [
+		{
+			"name": "request_param",
+			"type": "String",
+			"description": "请求资产信息",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "BaseRep",
+			"description": "最外层结果",
+			"subParams": [
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "返回错误消息",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "返回错误code",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "Boolean",
+					"description": "返回结果",
+					"required": true
+				}
+			]
+		}
+	]
+}

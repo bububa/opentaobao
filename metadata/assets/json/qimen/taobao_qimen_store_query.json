@@ -1,0 +1,171 @@
+{
+	"name": "taobao.qimen.store.query",
+	"apiChineseName": "门店信息查询接口",
+	"description": "商家在ERP等系统中调用该接口，查询门店相关信息",
+	"requestParams": [
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "已分配的线上门店ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "store_name",
+			"type": "String",
+			"description": "门店名称"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "备注"
+		},
+		{
+			"name": "main_category",
+			"type": "Number",
+			"description": "门店主营类目"
+		},
+		{
+			"name": "qimen_code",
+			"type": "String",
+			"description": "响应code"
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "关闭营业时间"
+		},
+		{
+			"name": "company_name",
+			"type": "String",
+			"description": "商户名称"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "开始营业时间"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "响应消息"
+		},
+		{
+			"name": "store_status",
+			"type": "String",
+			"description": "门店状态"
+		},
+		{
+			"name": "flag",
+			"type": "String",
+			"description": "响应标示"
+		},
+		{
+			"name": "store_description",
+			"type": "String",
+			"description": "商户介绍"
+		},
+		{
+			"name": "address",
+			"type": "Address",
+			"description": "地址信息",
+			"subParams": [
+				{
+					"name": "region",
+					"type": "String",
+					"description": "区域",
+					"required": true
+				},
+				{
+					"name": "area",
+					"type": "String",
+					"description": "区域",
+					"required": true
+				},
+				{
+					"name": "country_code",
+					"type": "String",
+					"description": "国家二字码",
+					"required": true
+				},
+				{
+					"name": "province",
+					"type": "String",
+					"description": "省份",
+					"required": true
+				},
+				{
+					"name": "town",
+					"type": "String",
+					"description": "村镇",
+					"required": true
+				},
+				{
+					"name": "detail_address",
+					"type": "String",
+					"description": "详细地址",
+					"required": true
+				},
+				{
+					"name": "city",
+					"type": "String",
+					"description": "城市",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "shop_id",
+			"type": "String",
+			"description": "需要关联的线上店铺ID"
+		},
+		{
+			"name": "store_keeper",
+			"type": "StoreKeeper",
+			"description": "所有者信息",
+			"subParams": [
+				{
+					"name": "fax",
+					"type": "String",
+					"description": "传真",
+					"required": true
+				},
+				{
+					"name": "tel",
+					"type": "String",
+					"description": "固定电话",
+					"required": true
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名",
+					"required": true
+				},
+				{
+					"name": "zip_code",
+					"type": "String",
+					"description": "邮编",
+					"required": true
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "移动电话",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "store_type",
+			"type": "String",
+			"description": "类型"
+		},
+		{
+			"name": "store_code",
+			"type": "String",
+			"description": "ERP系统中 门店编码"
+		}
+	]
+}

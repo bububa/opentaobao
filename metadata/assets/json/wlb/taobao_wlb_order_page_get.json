@@ -1,0 +1,286 @@
+{
+	"name": "taobao.wlb.order.page.get",
+	"apiChineseName": "分页查询物流宝订单",
+	"description": "分页查询物流宝订单",
+	"requestParams": [
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页多少条"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "分页的第几页"
+		},
+		{
+			"name": "order_status",
+			"type": "Number",
+			"description": "TMS拒签：-100 接收方拒签：-200"
+		},
+		{
+			"name": "order_code",
+			"type": "String",
+			"description": "物流订单编号"
+		},
+		{
+			"name": "order_type",
+			"type": "String",
+			"description": "订单类型: （1）NORMAL_OUT ：正常出库 （2）NORMAL_IN：正常入库 （3）RETURN_IN：退货入库 （4）EXCHANGE_OUT：换货出库"
+		},
+		{
+			"name": "order_sub_type",
+			"type": "String",
+			"description": "订单子类型： （1）OTHER： 其他 （2）TAOBAO_TRADE： 淘宝交易 （3）OTHER_TRADE：其他交易 （4）ALLCOATE： 调拨 （5）CHECK: 盘点单 （6）PURCHASE: 采购单"
+		},
+		{
+			"name": "end_time",
+			"type": "Date",
+			"description": "查询截止时间"
+		},
+		{
+			"name": "start_time",
+			"type": "Date",
+			"description": "查询开始时间"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order_list",
+			"type": "WlbOrder []",
+			"description": "物流宝订单对象",
+			"subParams": [
+				{
+					"name": "prev_order_code",
+					"type": "String",
+					"description": "原订单编码"
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码"
+				},
+				{
+					"name": "order_source",
+					"type": "String",
+					"description": "订单来源:\u003cbr/\u003e产生物流订单的原因，比如:\u003cbr/\u003e\u003cbr/\u003e订单来源:1:TAOBAO;2:EXT;3:ERP;4:WMS"
+				},
+				{
+					"name": "order_source_code",
+					"type": "String",
+					"description": "对应创建物流宝订单top接口中的的out_biz_code字段，主要是用来去重用"
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "1:正常订单: NORMAL\n2:退货订单: RETURN\n3:换货订单: CHANGE"
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "订单编码"
+				},
+				{
+					"name": "buyer_nick",
+					"type": "String",
+					"description": "买家nick"
+				},
+				{
+					"name": "receiver_name",
+					"type": "String",
+					"description": "接收人姓名"
+				},
+				{
+					"name": "receiver_wangwang",
+					"type": "String",
+					"description": "接收人旺旺"
+				},
+				{
+					"name": "receiver_mail",
+					"type": "String",
+					"description": "接收人电子邮箱"
+				},
+				{
+					"name": "receiver_zip_code",
+					"type": "String",
+					"description": "收件人邮编"
+				},
+				{
+					"name": "receiver_mobile",
+					"type": "String",
+					"description": "接收人手机号码"
+				},
+				{
+					"name": "receiver_phone",
+					"type": "String",
+					"description": "接收人固定电话"
+				},
+				{
+					"name": "tms_tp_code",
+					"type": "String",
+					"description": "发货物流公司编码，STO,YTO,EMS等"
+				},
+				{
+					"name": "total_amount",
+					"type": "Number",
+					"description": "订单总价"
+				},
+				{
+					"name": "order_status",
+					"type": "String",
+					"description": "物流状态，\n订单已创建：0\n订单已取消: -1\n订单关闭:-3\n下发中: 10\n已下发: 11\nTMS拒签 :-100\n接收方拒签：-200\n已发货:100\n签收成功:200"
+				},
+				{
+					"name": "invoice_info",
+					"type": "String",
+					"description": "发票信息"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "订单备注"
+				},
+				{
+					"name": "user_id",
+					"type": "Number",
+					"description": "卖家ID"
+				},
+				{
+					"name": "user_nick",
+					"type": "String",
+					"description": "卖家NICK"
+				},
+				{
+					"name": "order_status_reason",
+					"type": "String",
+					"description": "卖家取消,仓库取消标识"
+				},
+				{
+					"name": "order_flag",
+					"type": "Number",
+					"description": "第1位:COD,2:限时配送,3:预售,4:需要发票,5:已投诉,第6位:合单,第7位:拆单 第8位：EXCHANGE-换货， 第9位:VISIT-上门 ， 第10位: MODIFYTRANSPORT-是否可改配送方式，第11位：是否物流代理确认发货"
+				},
+				{
+					"name": "schedule_day",
+					"type": "String",
+					"description": "发货日期:\u003cbr/\u003e(1)1 为工作日\u003cbr/\u003e(2)2 为节假日"
+				},
+				{
+					"name": "schedule_speed",
+					"type": "Number",
+					"description": "发货速度  ，\u003cbr/\u003e101-当日达，\u003cbr/\u003e102-次晨达，\u003cbr/\u003e103-次日达"
+				},
+				{
+					"name": "expect_start_time",
+					"type": "Date",
+					"description": "计划送达开始时间"
+				},
+				{
+					"name": "expect_end_time",
+					"type": "Date",
+					"description": "计划送达结束时间"
+				},
+				{
+					"name": "operate_type",
+					"type": "String",
+					"description": "出库或者入库，IN表示入库，OUT表示出库"
+				},
+				{
+					"name": "order_sub_type",
+					"type": "String",
+					"description": "(1)其它:    OTHER\u003cbr/\u003e(2)淘宝交易: TAOBAO\u003cbr/\u003e(3)301:调拨: ALLOCATION\u003cbr/\u003e(4)401:盘点:CHECK\u003cbr/\u003e(5)501:销售采购:PRUCHASE"
+				},
+				{
+					"name": "receivable_amount",
+					"type": "Number",
+					"description": "应收金额"
+				},
+				{
+					"name": "receiver_province",
+					"type": "String",
+					"description": "收件人省份"
+				},
+				{
+					"name": "receiver_city",
+					"type": "String",
+					"description": "收件人城市"
+				},
+				{
+					"name": "receiver_area",
+					"type": "String",
+					"description": "区或者县"
+				},
+				{
+					"name": "receiver_address",
+					"type": "String",
+					"description": "收件人具体地址"
+				},
+				{
+					"name": "schedule_end",
+					"type": "String",
+					"description": "配送结束时间通常是HH:MM格式"
+				},
+				{
+					"name": "service_fee",
+					"type": "Number",
+					"description": "cod服务费"
+				},
+				{
+					"name": "cancel_order_status",
+					"type": "Number",
+					"description": "订单取消状态：\u003cbr/\u003e1-取消中； \u003cbr/\u003e2-取消失败；\u003cbr/\u003e3-取消完成"
+				},
+				{
+					"name": "sender_province",
+					"type": "String",
+					"description": "发件人所在省份"
+				},
+				{
+					"name": "sender_city",
+					"type": "String",
+					"description": "发件人城市"
+				},
+				{
+					"name": "sender_area",
+					"type": "String",
+					"description": "发件人所在区"
+				},
+				{
+					"name": "sender_address",
+					"type": "String",
+					"description": "发件人地址"
+				},
+				{
+					"name": "sender_name",
+					"type": "String",
+					"description": "发件人姓名"
+				},
+				{
+					"name": "sender_mobile",
+					"type": "String",
+					"description": "发件人移动电话"
+				},
+				{
+					"name": "sender_email",
+					"type": "String",
+					"description": "发件人电子邮箱"
+				},
+				{
+					"name": "sender_phone",
+					"type": "String",
+					"description": "发件人联系电话"
+				},
+				{
+					"name": "sender_zip_code",
+					"type": "String",
+					"description": "发件人邮编"
+				}
+			]
+		},
+		{
+			"name": "total_count",
+			"type": "Number",
+			"description": "总条数"
+		}
+	]
+}

@@ -1,0 +1,46 @@
+{
+	"name": "alibaba.aliqin.fc.iot.cardInfo",
+	"apiChineseName": "物联卡信息查询",
+	"description": "物联卡信息查询",
+	"requestParams": [
+		{
+			"name": "iccid",
+			"type": "String",
+			"description": "SIM卡号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Json",
+					"description": "\"OpenTime\":\"开户时间\",\"IMSI\":\"IMSI号\",\"FirstActiveTime\":\"第一次激活时间\",\"MSISDN\":\"MSISDN号\",\"ICCID\":\"ICCID号\"",
+					"required": true
+				}
+			]
+		}
+	]
+}

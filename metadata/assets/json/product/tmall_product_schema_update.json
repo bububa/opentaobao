@@ -1,0 +1,26 @@
+{
+	"name": "tmall.product.schema.update",
+	"apiChineseName": "产品更新接口",
+	"description": "产品更新接口",
+	"requestParams": [
+		{
+			"name": "xml_data",
+			"type": "String",
+			"description": "根据tmall.product.update.schema.get生成的产品更新规则入参数据",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "update_product_result",
+			"type": "String",
+			"description": "产品数据，格式和入参xml_data一致，仅包含产品ID和更新时间"
+		}
+	]
+}

@@ -1,0 +1,47 @@
+{
+	"name": "taobao.ailab.aicloud.top.message.get.unread.count",
+	"apiChineseName": "获取未读的消息数量",
+	"description": "开放获取未读留言数量的接口",
+	"requestParams": [
+		{
+			"name": "schema",
+			"type": "String",
+			"description": "账户体系隔离",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "用户ID，此处传入第三方账户体系的用户id",
+			"required": true
+		},
+		{
+			"name": "utd_id",
+			"type": "String",
+			"description": "用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数",
+			"required": true
+		},
+		{
+			"name": "ext",
+			"type": "String",
+			"description": "扩展信息，用于存放APP类型等"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "Number",
+			"description": "未读留言的数量"
+		},
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		},
+		{
+			"name": "msg_info",
+			"type": "String",
+			"description": "异常描述"
+		}
+	]
+}

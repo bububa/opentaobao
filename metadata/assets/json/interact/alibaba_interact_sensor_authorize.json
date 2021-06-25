@@ -1,0 +1,12 @@
+{
+	"name": "alibaba.interact.sensor.authorize",
+	"apiChineseName": "客户端授权页",
+	"description": "客户端授权页",
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "String",
+			"description": "return=0 表示成功"
+		}
+	]
+}

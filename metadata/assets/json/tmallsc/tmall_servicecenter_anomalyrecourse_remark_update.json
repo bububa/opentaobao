@@ -1,0 +1,24 @@
+{
+	"name": "tmall.servicecenter.anomalyrecourse.remark.update",
+	"apiChineseName": "天猫服务平台一键求助单服务商备注更新接口",
+	"description": "一键求助服务商可以回传备注",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "需要更新的一键求助单id"
+		},
+		{
+			"name": "remark",
+			"type": "String",
+			"description": "需要更新的服务商备注"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		}
+	]
+}

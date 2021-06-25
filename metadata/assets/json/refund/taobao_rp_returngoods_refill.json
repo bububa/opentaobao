@@ -1,0 +1,38 @@
+{
+	"name": "taobao.rp.returngoods.refill",
+	"apiChineseName": "卖家回填物流信息",
+	"description": "卖家收到货物回填物流信息，如果买家已经回填物流信息，则接口报错，目前仅支持天猫订单。",
+	"requestParams": [
+		{
+			"name": "refund_id",
+			"type": "Number",
+			"description": "退款单编号",
+			"required": true
+		},
+		{
+			"name": "refund_phase",
+			"type": "String",
+			"description": "退款阶段，可选值：售中：onsale，售后：aftersale",
+			"required": true
+		},
+		{
+			"name": "logistics_waybill_no",
+			"type": "String",
+			"description": "物流公司运单号",
+			"required": true
+		},
+		{
+			"name": "logistics_company_code",
+			"type": "String",
+			"description": "物流公司编号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "验货操作是否成功"
+		}
+	]
+}

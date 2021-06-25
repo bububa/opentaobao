@@ -1,0 +1,19 @@
+{
+	"name": "taobao.fenxiao.product.to.channel.import",
+	"apiChineseName": "产品导入到渠道",
+	"description": "支持供应商将已有产品导入到某个渠道销售",
+	"requestParams": [
+		{
+			"name": "channel",
+			"type": "Number",
+			"description": "要导入的渠道[21 零售PLUS]目前仅支持此渠道",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "要导入的产品id",
+			"required": true
+		}
+	]
+}

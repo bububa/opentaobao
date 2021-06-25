@@ -1,0 +1,218 @@
+{
+	"name": "taobao.tbk.sc.publisher.info.get",
+	"apiChineseName": "淘宝客-公用-私域用户备案信息查询",
+	"description": "查询已生成的渠道id或会员运营id的相关信息。",
+	"requestParams": [
+		{
+			"name": "info_type",
+			"type": "Number",
+			"description": "类型，必选 1:渠道信息；2:会员信息",
+			"required": true
+		},
+		{
+			"name": "relation_id",
+			"type": "Number",
+			"description": "渠道独占 - 渠道关系ID"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "第几页"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页大小"
+		},
+		{
+			"name": "relation_app",
+			"type": "String",
+			"description": "备案的场景：common（通用备案），etao（一淘备案），minietao（一淘小程序备案），offlineShop（线下门店备案），offlinePerson（线下个人备案）。如不填默认common。查询会员信息只需填写common即可",
+			"required": true
+		},
+		{
+			"name": "special_id",
+			"type": "String",
+			"description": "会员独占 - 会员运营ID"
+		},
+		{
+			"name": "external_id",
+			"type": "String",
+			"description": "淘宝客外部用户标记，如自身系统账户ID；微信ID等"
+		},
+		{
+			"name": "external_type",
+			"type": "Number",
+			"description": "1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他；默认为0"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Data",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "root_pid_channel_list",
+					"type": "String[]",
+					"description": "渠道专属pidList",
+					"required": true
+				},
+				{
+					"name": "total_count",
+					"type": "Number",
+					"description": "共享字段 - 总记录数",
+					"required": true
+				},
+				{
+					"name": "inviter_list",
+					"type": "MapData[]",
+					"description": "共享字段 - 渠道或会员列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "relation_app",
+							"type": "String",
+							"description": "共享字段 - 备案场景：common（通用备案），etao（一淘备案），minietao（一淘小程序备案），offlineShop（线下门店备案），offlinePerson（线下个人备案）",
+							"required": true
+						},
+						{
+							"name": "create_date",
+							"type": "Date",
+							"description": "共享字段 - 备案日期",
+							"required": true
+						},
+						{
+							"name": "account_name",
+							"type": "String",
+							"description": "渠道独有 - 渠道昵称",
+							"required": true
+						},
+						{
+							"name": "real_name",
+							"type": "String",
+							"description": "渠道独有 - 渠道姓名",
+							"required": true
+						},
+						{
+							"name": "relation_id",
+							"type": "Number",
+							"description": "渠道独有 - 渠道关系ID",
+							"required": true
+						},
+						{
+							"name": "offline_scene",
+							"type": "String",
+							"description": "渠道独有 - 线下场景信息，1 - 门店，2- 学校，3 - 工厂，4 - 其他",
+							"required": true
+						},
+						{
+							"name": "online_scene",
+							"type": "String",
+							"description": "渠道独有 - 线上场景信息，1 - 微信群，2- QQ群，3 - 其他",
+							"required": true
+						},
+						{
+							"name": "note",
+							"type": "String",
+							"description": "渠道独有 - 媒体侧渠道备注信息",
+							"required": true
+						},
+						{
+							"name": "root_pid",
+							"type": "String",
+							"description": "共享字段 - 渠道/会员专属pid",
+							"required": true
+						},
+						{
+							"name": "rtag",
+							"type": "String",
+							"description": "共享字段 - 渠道/会员原始身份信息",
+							"required": true
+						},
+						{
+							"name": "offline_info",
+							"type": "RegisterInfoDto",
+							"description": "线下备案专属信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "shop_name",
+									"type": "String",
+									"description": "渠道独有 -店铺名称",
+									"required": true
+								},
+								{
+									"name": "shop_type",
+									"type": "String",
+									"description": "渠道独有 -店铺类型",
+									"required": true
+								},
+								{
+									"name": "phone_number",
+									"type": "String",
+									"description": "渠道独有 -手机号码",
+									"required": true
+								},
+								{
+									"name": "detail_address",
+									"type": "String",
+									"description": "渠道独有 -详细地址",
+									"required": true
+								},
+								{
+									"name": "location",
+									"type": "String",
+									"description": "渠道独有 -地区",
+									"required": true
+								},
+								{
+									"name": "shop_certify_type",
+									"type": "String",
+									"description": "渠道独有 -证件类型",
+									"required": true
+								},
+								{
+									"name": "certify_number",
+									"type": "String",
+									"description": "渠道独有 -对应的证件证件类型编号",
+									"required": true
+								},
+								{
+									"name": "career",
+									"type": "String",
+									"description": "渠道独有 -经营类型",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "special_id",
+							"type": "Number",
+							"description": "会员独有 - 会员运营ID",
+							"required": true
+						},
+						{
+							"name": "punish_status",
+							"type": "String",
+							"description": "渠道独有 - 处罚状态",
+							"required": true
+						},
+						{
+							"name": "external_id",
+							"type": "String",
+							"description": "淘宝客外部用户标记，如自身系统账户ID；微信ID等",
+							"required": true
+						},
+						{
+							"name": "external_type",
+							"type": "String",
+							"description": "1-微信、2-微博、3-抖音、4-快手、5-QQ，0-其他",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

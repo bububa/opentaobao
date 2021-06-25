@@ -1,0 +1,51 @@
+{
+	"name": "taobao.caipiao.present.stat.get",
+	"apiChineseName": "获取卖家按天统计的彩票赠送数据",
+	"description": "查询卖家一段时间内按天统计的彩票赠送数据，只支持查询90天以内的数据.",
+	"requestParams": [
+		{
+			"name": "days",
+			"type": "Number",
+			"description": "指定查询的天数，从当前日期（不包括当前日期）向前推算的天数，可为空。如果为空、0、负数或者大于90天，则设置为默认的90天。举例：当天是20120703， days=2， 则统计数据的日期为：20120702，20120701."
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "查询的结果集大小"
+		},
+		{
+			"name": "results",
+			"type": "LotteryWangcaiPresentStat []",
+			"description": "查询的结果集",
+			"subParams": [
+				{
+					"name": "date_id",
+					"type": "Number",
+					"description": "日期"
+				},
+				{
+					"name": "seller_id",
+					"type": "Number",
+					"description": "送彩方的淘宝数字ID"
+				},
+				{
+					"name": "present_user",
+					"type": "Number",
+					"description": "当日赠送用户数"
+				},
+				{
+					"name": "present_stake",
+					"type": "Number",
+					"description": "当日赠送彩票的注数"
+				},
+				{
+					"name": "present_fee",
+					"type": "Number",
+					"description": "当日赠送彩票的金额"
+				}
+			]
+		}
+	]
+}

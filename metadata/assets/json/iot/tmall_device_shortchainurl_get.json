@@ -1,0 +1,48 @@
+{
+	"name": "tmall.device.shortchainurl.get",
+	"apiChineseName": "获取二维码短链接",
+	"description": "获取二维码短链接",
+	"requestParams": [
+		{
+			"name": "longterm",
+			"type": "Boolean",
+			"description": "是否需要长期二维码，默认否"
+		},
+		{
+			"name": "url",
+			"type": "String",
+			"description": "需要生成短链接的url",
+			"required": true
+		},
+		{
+			"name": "device_code",
+			"type": "String",
+			"description": "设备DeviceCode",
+			"required": true
+		},
+		{
+			"name": "store_id",
+			"type": "Number",
+			"description": "商户中心门店ID",
+			"required": true
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "动作类型，支持自定义",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "short_img_url",
+			"type": "String",
+			"description": "二维码图片地址"
+		},
+		{
+			"name": "short_url",
+			"type": "String",
+			"description": "短链接url"
+		}
+	]
+}

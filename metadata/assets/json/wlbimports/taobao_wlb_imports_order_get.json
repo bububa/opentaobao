@@ -1,0 +1,106 @@
+{
+	"name": "taobao.wlb.imports.order.get",
+	"apiChineseName": "物流订单获取",
+	"description": "一般进口物流订单获取",
+	"requestParams": [
+		{
+			"name": "trade_id",
+			"type": "Number",
+			"description": "交易订单号"
+		},
+		{
+			"name": "gmt_create_start",
+			"type": "Date",
+			"description": "交易订单开始创建时间"
+		},
+		{
+			"name": "gmt_create_end",
+			"type": "Date",
+			"description": "交易订单结束创建时间"
+		},
+		{
+			"name": "status_code",
+			"type": "String",
+			"description": "物流订单状态编码。以下依（物流订单状态编码，描述）的形式列举出来：(TIN_CONSING,发货中),(SENT_WAIT_COMPANY_MAKE_SURE,待仓库收货),(ORDER_CANCELED,订单关闭),(COMPANY_MAKE_SURE,海外仓已揽收),(REJECTED_RECEIVED_BY_COMPANY,海外仓拒收),(ORDER_REFUNDING,退货中),(ORDER_REFUND_BY_COMPANY,订单已退货),(EXCEPTION_IN_COMPANY,海外仓内异常),(FAILED_PAID_SHIPPING_FEE,支付失败),(PAID_SHIPPING_FEE,待仓库发货),(COMPANY_CONSIGN_CONFIRM,海外仓已发货),(WAIT_CUSTOMS_MAKE_SURE,清关已收货),(EXCEPTION_IN_CUSTOMS,清关异常),(CUSTOMSING,清关中),(COMPANY_DELIVERY,国内配送)。"
+		},
+		{
+			"name": "page_no",
+			"type": "Number",
+			"description": "页码。取值范围:大于零的整数; 默认值:1"
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "每页条数。取值范围:大于0小于等于100的整数; 默认值:40; 最小值：1；最大值:20"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "orders",
+			"type": "LocOrder []",
+			"description": "物流订单信息",
+			"subParams": [
+				{
+					"name": "shipping_fee",
+					"type": "Number",
+					"description": "运费"
+				},
+				{
+					"name": "tracking_no",
+					"type": "String",
+					"description": "物流运单号"
+				},
+				{
+					"name": "trade_id",
+					"type": "Number",
+					"description": "交易订单号"
+				},
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "物流订单号"
+				},
+				{
+					"name": "carrier",
+					"type": "String",
+					"description": "物流承运商"
+				},
+				{
+					"name": "status_code",
+					"type": "String",
+					"description": "物流订单状态编码"
+				},
+				{
+					"name": "customs_fee",
+					"type": "Number",
+					"description": "关税"
+				},
+				{
+					"name": "weight",
+					"type": "Number",
+					"description": "重量"
+				},
+				{
+					"name": "weight_unit",
+					"type": "String",
+					"description": "重量单位"
+				},
+				{
+					"name": "currency",
+					"type": "String",
+					"description": "费用币种"
+				},
+				{
+					"name": "status_code_desc",
+					"type": "String",
+					"description": "订单状态中文描述"
+				}
+			]
+		},
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "搜索到的总数量"
+		}
+	]
+}

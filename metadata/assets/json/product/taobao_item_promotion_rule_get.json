@@ -1,0 +1,57 @@
+{
+	"name": "taobao.item.promotion.rule.get",
+	"apiChineseName": "获取商品已生效营销活动更新规则",
+	"description": "获取商品已生效的更新规则信息，主要包含库存禁止修改，商品一口价禁止修改，库存减少锁定等规则生效信息",
+	"requestParams": [
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "rules",
+			"type": "ItemPromotionRule []",
+			"description": "商品规则信息",
+			"subParams": [
+				{
+					"name": "name",
+					"type": "String",
+					"description": "规则名称",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "规则描叙信息",
+					"required": true
+				},
+				{
+					"name": "start_time",
+					"type": "String",
+					"description": "规则生效开始时间",
+					"required": true
+				},
+				{
+					"name": "end_time",
+					"type": "String",
+					"description": "规则生效结束时间",
+					"required": true
+				},
+				{
+					"name": "type",
+					"type": "String",
+					"description": "规则类型，常见有SKU锁定规则,下架锁定规则,库存减少锁定规则,库存禁止修改规则,一口价禁止修改规则",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "effec",
+			"type": "Boolean",
+			"description": "商品是否命中更新规则"
+		}
+	]
+}

@@ -1,0 +1,52 @@
+{
+	"name": "alibaba.aliqin.fc.iot.useroscontrol",
+	"apiChineseName": "物联卡用户管理停开机功能",
+	"description": "物联网针对用户级管理停开支持",
+	"requestParams": [
+		{
+			"name": "iccid",
+			"type": "String",
+			"description": "物联卡的iccid",
+			"required": true
+		},
+		{
+			"name": "action",
+			"type": "String",
+			"description": "用户停开的操作类型：MANAGE_RESUME、MANAGE_STOP",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "model",
+					"type": "String",
+					"description": "停开结果描述",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "停开结果编码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "描述信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

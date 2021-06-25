@@ -1,0 +1,105 @@
+{
+	"name": "alibaba.security.jaq.captcha.send",
+	"apiChineseName": "聚安全安全验证发起接口",
+	"description": "聚安全安全验证发起",
+	"requestParams": [
+		{
+			"name": "captcha_type",
+			"type": "Number",
+			"description": "验证码发送渠道类型 1-短信 3-邮件",
+			"required": true
+		},
+		{
+			"name": "extend_data",
+			"type": "String",
+			"description": "扩展字段，格式为JSON字符串，用于传递“滚小球”等验证方式所需的额外入参，例如屏幕尺寸等，请参考示例"
+		},
+		{
+			"name": "protocol_version",
+			"type": "String",
+			"description": "协议版本号",
+			"required": true
+		},
+		{
+			"name": "rsign",
+			"type": "String",
+			"description": "软token签名"
+		},
+		{
+			"name": "rtken_index",
+			"type": "String",
+			"description": "软token索引"
+		},
+		{
+			"name": "utoken",
+			"type": "String",
+			"description": "UMID token",
+			"required": true
+		},
+		{
+			"name": "info_token",
+			"type": "String",
+			"description": "风险识别接口返回的信息口令",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "JaqSendCaptchaResult",
+			"description": "出参结构体",
+			"subParams": [
+				{
+					"name": "session_id",
+					"type": "String",
+					"description": "验证码会话ID",
+					"required": true
+				},
+				{
+					"name": "jaq_dispatch_param",
+					"type": "JaqDispatchParam",
+					"description": "安全验证前向化下发参数结构体",
+					"required": true,
+					"subParams": [
+						{
+							"name": "event_id",
+							"type": "String",
+							"description": "事件ID",
+							"required": true
+						},
+						{
+							"name": "protocol_version",
+							"type": "String",
+							"description": "协议版本号",
+							"required": true
+						},
+						{
+							"name": "rtken",
+							"type": "String",
+							"description": "下发的软token密文",
+							"required": true
+						},
+						{
+							"name": "rtken_index",
+							"type": "String",
+							"description": "下发的软token索引",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "extend_data",
+					"type": "String",
+					"description": "扩展字段，格式为JSON字符串，由于出参“滚小球”等验证方式所需的额外出参，例如小球位置坐标等，请参考示例",
+					"required": true
+				},
+				{
+					"name": "send_status",
+					"type": "Number",
+					"description": "验证发起请求是否调用成功（及状态），约定正值为成功，负值为失败",
+					"required": true
+				}
+			]
+		}
+	]
+}

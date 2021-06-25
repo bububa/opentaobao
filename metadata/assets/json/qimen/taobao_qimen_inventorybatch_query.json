@@ -1,0 +1,139 @@
+{
+	"name": "taobao.qimen.inventorybatch.query",
+	"apiChineseName": "商品单仓批次库存查询接口",
+	"description": "ERP 通过该接口查询指定商品的单仓批次库存",
+	"requestParams": [
+		{
+			"name": "request",
+			"type": "Request",
+			"description": "request",
+			"subParams": [
+				{
+					"name": "ownerCode",
+					"type": "String",
+					"description": "货主编码，string(50)，必填",
+					"required": true
+				},
+				{
+					"name": "warehouseCode",
+					"type": "String",
+					"description": "仓库编码，string(50)，必填",
+					"required": true
+				},
+				{
+					"name": "itemCode",
+					"type": "String",
+					"description": "ERP 系统商品编码, string(50)，条件必填"
+				},
+				{
+					"name": "itemId",
+					"type": "String",
+					"description": "仓储系统商品编码, string(50)，条件必填"
+				},
+				{
+					"name": "page",
+					"type": "Number",
+					"description": "当前页，从 1 开始，必填",
+					"required": true
+				},
+				{
+					"name": "pageSize",
+					"type": "Number",
+					"description": "每页条数(最多 100 条)，必填",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "response",
+			"type": "Response",
+			"description": "响应",
+			"subParams": [
+				{
+					"name": "flag",
+					"type": "String",
+					"description": "success|failure",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "响应码",
+					"required": true
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "响应信息",
+					"required": true
+				},
+				{
+					"name": "totalCount",
+					"type": "Number",
+					"description": "总行数，必填",
+					"required": true
+				},
+				{
+					"name": "items",
+					"type": "Items",
+					"description": "明细列表",
+					"required": true,
+					"subParams": [
+						{
+							"name": "item",
+							"type": "Item",
+							"description": "明细",
+							"required": true,
+							"subParams": [
+								{
+									"name": "itemCode",
+									"type": "String",
+									"description": "ERP系统商品编码,string（50），条件必填",
+									"required": true
+								},
+								{
+									"name": "itemId",
+									"type": "String",
+									"description": "仓储系统商品编码",
+									"required": true
+								},
+								{
+									"name": "inventoryType",
+									"type": "Number",
+									"description": "库存类型",
+									"required": true
+								},
+								{
+									"name": "batchCode",
+									"type": "String",
+									"description": "批次号",
+									"required": true
+								},
+								{
+									"name": "productDate",
+									"type": "String",
+									"description": "生产日期",
+									"required": true
+								},
+								{
+									"name": "expireDate",
+									"type": "String",
+									"description": "失效日期",
+									"required": true
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "库存数量",
+									"required": true
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}

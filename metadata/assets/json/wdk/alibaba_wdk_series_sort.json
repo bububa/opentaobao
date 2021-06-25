@@ -1,0 +1,61 @@
+{
+	"name": "alibaba.wdk.series.sort",
+	"apiChineseName": "系列品-商品排序",
+	"description": "系列品商品变更-商品排序",
+	"requestParams": [
+		{
+			"name": "sort",
+			"type": "SeriesSortRequest",
+			"description": "自定义排序请求",
+			"subParams": [
+				{
+					"name": "series_id",
+					"type": "Number",
+					"description": "系列编码"
+				},
+				{
+					"name": "industry_attr_list",
+					"description": "有序行业属性对：行业属性key，属性值"
+				},
+				{
+					"name": "industry_type",
+					"type": "String",
+					"description": "行业类型"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "系列品重置默认商品成功结果",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误详情",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,129 @@
+{
+	"name": "taobao.mobile.promotion.benefit.activity.send",
+	"apiChineseName": "手淘专用单用户发放接口",
+	"description": "卖家活动中需要通过该API来发放对应的权益。手淘专用单用户发放接口。",
+	"requestParams": [
+		{
+			"name": "single_benefit_request",
+			"type": "SingleBenefitRequest",
+			"description": "单用户权益发放请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "benefit_type",
+					"type": "Number",
+					"description": "权益类型    其中ALIPAY_COUPON 对应的type值是1",
+					"required": true
+				},
+				{
+					"name": "send_count",
+					"type": "Number",
+					"description": "权益发放数量",
+					"required": true
+				},
+				{
+					"name": "unique_id",
+					"type": "String",
+					"description": "事务id",
+					"required": true
+				},
+				{
+					"name": "relation_id",
+					"type": "Number",
+					"description": "关联活动id",
+					"required": true
+				},
+				{
+					"name": "purchaser_id",
+					"type": "Number",
+					"description": "卖家用户id,　可通过接口taobao.user.seller.get获取",
+					"required": true
+				},
+				{
+					"name": "detail_id",
+					"type": "Number",
+					"description": "活动详情id",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "调试线索",
+					"required": true
+				},
+				{
+					"name": "biz_id",
+					"type": "String",
+					"description": "权益关联的活动ID",
+					"required": true
+				},
+				{
+					"name": "card_type",
+					"type": "String",
+					"description": "支持每日赢宝箱多个卡片类型，默认“游戏惊喜”卡片，可选“美妆”卡片beauty"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "send_result",
+			"type": "SingleBenefitSendResult",
+			"description": "权益发放结果",
+			"subParams": [
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误信息"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "is_success",
+					"type": "Boolean",
+					"description": "是否发放成功"
+				},
+				{
+					"name": "results",
+					"type": "MobileBenefitSendResultExt[]",
+					"description": "单次发放结果",
+					"subParams": [
+						{
+							"name": "error_code_list",
+							"type": "String[]",
+							"description": "错误码列表"
+						},
+						{
+							"name": "failure_count",
+							"type": "Number",
+							"description": "失败份数"
+						},
+						{
+							"name": "success_count",
+							"type": "Number",
+							"description": "成功份数"
+						},
+						{
+							"name": "index_id",
+							"type": "Number",
+							"description": "活动详情id"
+						}
+					]
+				},
+				{
+					"name": "unique_id",
+					"type": "String",
+					"description": "事务id"
+				},
+				{
+					"name": "is_baoxiang_task_done",
+					"type": "Boolean",
+					"description": "用于宝箱应用，为true表示宝箱任务已完成，需要提示用户"
+				}
+			]
+		}
+	]
+}

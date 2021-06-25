@@ -1,0 +1,84 @@
+{
+	"name": "alibaba.aliqin.fc.iot.cardoffer",
+	"apiChineseName": "查询物联网卡上订购的offer",
+	"description": "查询物联网卡上订购的offer",
+	"requestParams": [
+		{
+			"name": "billreal",
+			"type": "String",
+			"description": "具体ICCID的值",
+			"required": true
+		},
+		{
+			"name": "billsource",
+			"type": "String",
+			"description": "ICCID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "结果对象",
+			"subParams": [
+				{
+					"name": "models",
+					"type": "Model[]",
+					"description": "结果对象",
+					"required": true,
+					"subParams": [
+						{
+							"name": "expire_time",
+							"type": "Date",
+							"description": "失效时间",
+							"required": true
+						},
+						{
+							"name": "effective_time",
+							"type": "Date",
+							"description": "生效时间",
+							"required": true
+						},
+						{
+							"name": "order_time",
+							"type": "String",
+							"description": "订购时间",
+							"required": true
+						},
+						{
+							"name": "offer_name",
+							"type": "String",
+							"description": "商品名称",
+							"required": true
+						},
+						{
+							"name": "offer_id",
+							"type": "String",
+							"description": "商品ID",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "String",
+					"description": "1.成功；2.失败",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "状态",
+					"required": true
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

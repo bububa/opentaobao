@@ -1,0 +1,20 @@
+{
+	"name": "taobao.qianniu.taskmeta.update",
+	"apiChineseName": "更新任务元数据",
+	"description": "由任务发起者调用",
+	"requestParams": [
+		{
+			"name": "meta",
+			"type": "String",
+			"description": "要更新的任务元数据，JSON格式，例如：\u003cbr/\u003emeta= {\u003cbr/\u003e\t\t\"id\" : 1,\u003cbr/\u003e\t\t\"title\" : \"xxx\",\u003cbr/\u003e\t\t\"content\" : \"yyyy\",\u003cbr/\u003e\t\t\"biz_sys_Id\" : 12232,\u003cbr/\u003e\t\t\"biz_sys_task_type\" : 1212,\u003cbr/\u003e\t\t\"start_time\" : 1380173565480,\u003cbr/\u003e\t\t\"end_time\" : 1380173565480,\u003cbr/\u003e \"sender_uid\" : 213123213,\u003cbr/\u003e\t\t\"sender_nick\" : \"tbtest1063\",\u003cbr/\u003e\t\t\"reminder_flag\" : 1,\u003cbr/\u003e\t\t\"finish_strategy\" : 1\u003cbr/\u003e\t}",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"name": "taobao.shop.seller.get",
+	"apiChineseName": "卖家店铺基础信息查询",
+	"description": "获取卖家店铺的基本信息",
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String",
+			"description": "需返回的字段列表。可选值：Shop 结构中的所有字段；多个字段之间用逗号(,)分隔",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "shop",
+			"type": "Shop",
+			"description": "店铺信息",
+			"subParams": [
+				{
+					"name": "sid",
+					"type": "Number",
+					"description": "店铺编号"
+				},
+				{
+					"name": "title",
+					"type": "String",
+					"description": "店铺标题"
+				},
+				{
+					"name": "pic_path",
+					"type": "String",
+					"description": "店标地址。返回相对路径，可以用\"http://logo.taobao.com/shop-logo\"来拼接成绝对路径"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,36 @@
+{
+	"name": "taobao.simba.adgroups.item.exist",
+	"apiChineseName": "商品是否推广",
+	"description": "判断在一个推广计划中是否已经推广了一个商品",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "主人昵称"
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "推广计划Id",
+			"required": true
+		},
+		{
+			"name": "item_id",
+			"type": "Number",
+			"description": "商品Id",
+			"required": true
+		},
+		{
+			"name": "product_id",
+			"type": "Number",
+			"description": "产品类型 101001005 代表普通推广，101001014代表销量明星"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "exist",
+			"type": "Boolean",
+			"description": "true表示已经被推广，false表示没有被推广"
+		}
+	]
+}

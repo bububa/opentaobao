@@ -1,0 +1,40 @@
+{
+	"name": "taobao.messageaccount.messsage.normal.send",
+	"apiChineseName": "下行普通消息",
+	"description": "消息号下行单个普通消息",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "NormalMessageDto",
+			"description": "下行普通消息",
+			"subParams": [
+				{
+					"name": "content",
+					"description": "内容"
+				},
+				{
+					"name": "create_time",
+					"type": "Number",
+					"description": "时间戳"
+				},
+				{
+					"name": "receiver_id",
+					"type": "String",
+					"description": "接收者ID"
+				},
+				{
+					"name": "content_type",
+					"type": "String",
+					"description": "类型"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "model",
+			"type": "String",
+			"description": "model"
+		}
+	]
+}

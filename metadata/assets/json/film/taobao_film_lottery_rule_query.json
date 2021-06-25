@@ -1,0 +1,120 @@
+{
+	"name": "taobao.film.lottery.rule.query",
+	"apiChineseName": "淘票票抽奖活动查询API(渠道)",
+	"description": "淘票票抽奖活动查询API，渠道维度查询",
+	"requestParams": [
+		{
+			"name": "account_type",
+			"type": "String",
+			"description": "账号类型（TAOBAO\\ALIPAY\\PHONE）",
+			"required": true
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "渠道来源",
+			"required": true
+		},
+		{
+			"name": "account_no",
+			"type": "String",
+			"description": "账号ID",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultListModel",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "return_values",
+					"type": "LotteryDraws[]",
+					"description": "returnValue",
+					"required": true,
+					"subParams": [
+						{
+							"name": "use_desc",
+							"type": "String",
+							"description": "useDesc",
+							"required": true
+						},
+						{
+							"name": "coupon_subtitle",
+							"type": "String",
+							"description": "couponSubtitle",
+							"required": true
+						},
+						{
+							"name": "valid_day",
+							"type": "Number",
+							"description": "validDay",
+							"required": true
+						},
+						{
+							"name": "lottery_title",
+							"type": "String",
+							"description": "lotteryTitle",
+							"required": true
+						},
+						{
+							"name": "cost_price",
+							"type": "Number",
+							"description": "costPrice",
+							"required": true
+						},
+						{
+							"name": "lottery_mix_id",
+							"type": "String",
+							"description": "lotteryMixId",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "requestId",
+					"required": true
+				},
+				{
+					"name": "return_url",
+					"type": "String",
+					"description": "returnUrl",
+					"required": true
+				},
+				{
+					"name": "return_code",
+					"type": "String",
+					"description": "returnCode",
+					"required": true
+				},
+				{
+					"name": "return_error_oper",
+					"type": "String",
+					"description": "returnErrorOper",
+					"required": true
+				},
+				{
+					"name": "return_message",
+					"type": "String",
+					"description": "returnMessage",
+					"required": true
+				},
+				{
+					"name": "return_error_solution",
+					"type": "String",
+					"description": "returnErrorSolution",
+					"required": true
+				},
+				{
+					"name": "return_error_stack_trace",
+					"type": "String",
+					"description": "returnErrorStackTrace",
+					"required": true
+				}
+			]
+		}
+	]
+}

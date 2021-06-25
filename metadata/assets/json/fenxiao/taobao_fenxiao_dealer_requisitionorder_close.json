@@ -1,0 +1,32 @@
+{
+	"name": "taobao.fenxiao.dealer.requisitionorder.close",
+	"apiChineseName": "供应商/分销商关闭采购申请/经销采购单",
+	"description": "供应商或分销商关闭采购申请/经销采购单",
+	"requestParams": [
+		{
+			"name": "dealer_order_id",
+			"type": "Number",
+			"description": "经销采购单编号",
+			"required": true
+		},
+		{
+			"name": "reason",
+			"type": "Number",
+			"description": "关闭原因：\u003cbr/\u003e1：长时间无法联系到分销商，取消交易。\u003cbr/\u003e2：分销商错误提交申请，取消交易。\u003cbr/\u003e3：缺货，近段时间都无法发货。\u003cbr/\u003e4：分销商恶意提交申请单。\u003cbr/\u003e5：其他原因。",
+			"required": true
+		},
+		{
+			"name": "reason_detail",
+			"type": "String",
+			"description": "关闭详细原因，字数5-200字",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "操作是否成功。true：成功；false：失败。"
+		}
+	]
+}

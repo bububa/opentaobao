@@ -1,0 +1,77 @@
+{
+	"name": "alibaba.legal.case.standpoint.feedback",
+	"apiChineseName": "新增或更新 反馈口径(采纳口径/不采纳口径)",
+	"description": "新增或更新 反馈口径(采纳口径/不采纳口径)",
+	"requestParams": [
+		{
+			"name": "feedback_request_model",
+			"type": "FeedbackRequestModel",
+			"description": "反馈对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "defense_caliber",
+					"type": "String",
+					"description": "实际答辩口径"
+				},
+				{
+					"name": "reason",
+					"type": "String",
+					"description": "不采纳理由"
+				},
+				{
+					"name": "accept_flag",
+					"type": "Boolean",
+					"description": "是否采纳标志 true 为采纳 , false 为不采纳"
+				},
+				{
+					"name": "suit_id",
+					"type": "Number",
+					"description": "案件id"
+				},
+				{
+					"name": "entrust_id",
+					"type": "Number",
+					"description": "委托id"
+				},
+				{
+					"name": "standpoint_id",
+					"type": "Number",
+					"description": "观点id"
+				},
+				{
+					"name": "version",
+					"type": "Number",
+					"description": "观点版本"
+				},
+				{
+					"name": "submit_people",
+					"type": "String",
+					"description": "提交人"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "success"
+		},
+		{
+			"name": "errcode",
+			"type": "String",
+			"description": "错误编码"
+		},
+		{
+			"name": "content",
+			"type": "Boolean",
+			"description": "成功失败 true/false"
+		},
+		{
+			"name": "errmsg",
+			"type": "String",
+			"description": "错误信息描述"
+		}
+	]
+}

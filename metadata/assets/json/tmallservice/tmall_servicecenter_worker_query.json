@@ -1,0 +1,165 @@
+{
+	"name": "tmall.servicecenter.worker.query",
+	"apiChineseName": "工人信息查询",
+	"description": "查询服务商对应的工人信息",
+	"requestParams": [
+		{
+			"name": "identity_id",
+			"type": "String",
+			"description": "身份证号"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "gmt_create",
+					"type": "Date",
+					"description": "gmtCreate",
+					"required": true
+				},
+				{
+					"name": "gmt_modified",
+					"type": "Date",
+					"description": "gmtModified",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				},
+				{
+					"name": "value",
+					"type": "WorkerDto",
+					"description": "value",
+					"required": true,
+					"subParams": [
+						{
+							"name": "address",
+							"type": "AddressDto",
+							"description": "address",
+							"required": true,
+							"subParams": [
+								{
+									"name": "address_detail",
+									"type": "String",
+									"description": "addressDetail",
+									"required": true
+								},
+								{
+									"name": "address_names",
+									"type": "String[]",
+									"description": "addressNames",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "identity_id",
+							"type": "String",
+							"description": "identityId",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "name",
+							"required": true
+						},
+						{
+							"name": "phone",
+							"type": "Number",
+							"description": "phone",
+							"required": true
+						},
+						{
+							"name": "provider_id",
+							"type": "Number",
+							"description": "providerId",
+							"required": true
+						},
+						{
+							"name": "provider_name",
+							"type": "String",
+							"description": "providerName",
+							"required": true
+						},
+						{
+							"name": "register_time",
+							"type": "Date",
+							"description": "registerTime",
+							"required": true
+						},
+						{
+							"name": "service_areas",
+							"type": "DivisionDto[]",
+							"description": "serviceAreas",
+							"required": true,
+							"subParams": [
+								{
+									"name": "division_names",
+									"type": "String[]",
+									"description": "divisionNames",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "service_types",
+							"type": "String[]",
+							"description": "serviceTypes",
+							"required": true
+						},
+						{
+							"name": "work_type",
+							"type": "String",
+							"description": "workType",
+							"required": true
+						},
+						{
+							"name": "handheld_card_pic",
+							"type": "String",
+							"description": "handheldCardPic",
+							"required": true
+						},
+						{
+							"name": "photo",
+							"type": "String",
+							"description": "photo",
+							"required": true
+						},
+						{
+							"name": "id_card_pic_back",
+							"type": "String",
+							"description": "idCardPicBack",
+							"required": true
+						},
+						{
+							"name": "id_card_pic",
+							"type": "String",
+							"description": "idCardPic",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

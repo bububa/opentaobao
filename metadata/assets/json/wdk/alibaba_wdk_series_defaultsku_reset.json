@@ -1,0 +1,65 @@
+{
+	"name": "alibaba.wdk.series.defaultsku.reset",
+	"apiChineseName": "系列品商品变更-重置默认商品",
+	"description": "系列品商品变更-重置默认商品",
+	"requestParams": [
+		{
+			"name": "series_sku",
+			"type": "SeriesSkuRequest",
+			"description": "系列品重置默认商品请求",
+			"required": true,
+			"subParams": [
+				{
+					"name": "series_id",
+					"type": "Number",
+					"description": "系列编码",
+					"required": true
+				},
+				{
+					"name": "default_sku_code",
+					"type": "String",
+					"description": "默认商品编码",
+					"required": true
+				},
+				{
+					"name": "remove_default_sku",
+					"type": "Boolean",
+					"description": "需要移除默认商品"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "api_result",
+			"type": "ApiResult",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "model",
+					"type": "Boolean",
+					"description": "系列品重置默认商品成功结果",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误详情",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

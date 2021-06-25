@@ -1,0 +1,133 @@
+{
+	"name": "taobao.simba.rpt.targetingtageffect.get",
+	"apiChineseName": "获取定向效果报表数据",
+	"description": "获取定向效果报表数据",
+	"requestParams": [
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "被操作者昵称"
+		},
+		{
+			"name": "campaign_id",
+			"type": "Number",
+			"description": "计划id"
+		},
+		{
+			"name": "adgroup_id",
+			"type": "Number",
+			"description": "推广组id"
+		},
+		{
+			"name": "start_time",
+			"type": "String",
+			"description": "起始时间",
+			"required": true
+		},
+		{
+			"name": "end_time",
+			"type": "String",
+			"description": "终止时间 ,必须小于今天",
+			"required": true
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "页面大小"
+		},
+		{
+			"name": "page_number",
+			"type": "Number",
+			"description": "页码"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "results",
+			"type": "RptEffectEntityDTO []",
+			"description": "效果数据",
+			"subParams": [
+				{
+					"name": "thedate",
+					"type": "String",
+					"description": "日期"
+				},
+				{
+					"name": "campaignid",
+					"type": "String",
+					"description": "计划id"
+				},
+				{
+					"name": "adgroupid",
+					"type": "String",
+					"description": "推广组id"
+				},
+				{
+					"name": "directtransaction",
+					"type": "String",
+					"description": "直接成交金额"
+				},
+				{
+					"name": "indirecttransaction",
+					"type": "String",
+					"description": "间接成交金额"
+				},
+				{
+					"name": "directtransactionshipping",
+					"type": "String",
+					"description": "直接成交笔数"
+				},
+				{
+					"name": "indirecttransactionshipping",
+					"type": "String",
+					"description": "间接成交笔数"
+				},
+				{
+					"name": "favitemtotal",
+					"type": "String",
+					"description": "收藏宝贝数"
+				},
+				{
+					"name": "favshoptotal",
+					"type": "String",
+					"description": "收藏店铺数"
+				},
+				{
+					"name": "roi",
+					"type": "String",
+					"description": "投入产出比"
+				},
+				{
+					"name": "coverage",
+					"type": "String",
+					"description": "点击转化率"
+				},
+				{
+					"name": "directcarttotal",
+					"type": "String",
+					"description": "直接购物车数"
+				},
+				{
+					"name": "indirectcarttotal",
+					"type": "String",
+					"description": "间接购物车数"
+				},
+				{
+					"name": "crowdname",
+					"type": "String",
+					"description": "人群名称"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "流量来源，设备和网络，包含值：PC站内，PC站外,移动站内，移动站外"
+				},
+				{
+					"name": "crowdid",
+					"type": "String",
+					"description": "人群id"
+				}
+			]
+		}
+	]
+}

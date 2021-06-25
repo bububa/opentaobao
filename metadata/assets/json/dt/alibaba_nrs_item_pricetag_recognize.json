@@ -1,0 +1,168 @@
+{
+	"name": "alibaba.nrs.item.pricetag.recognize",
+	"apiChineseName": "价签识别",
+	"description": "商品价签识别，用于识别RT上传的竞品分析照片，返回价签内容",
+	"requestParams": [
+		{
+			"name": "img_byte_arr",
+			"type": "byte[]",
+			"description": "图片数据"
+		},
+		{
+			"name": "price_tag_param",
+			"type": "PriceTagReqParam",
+			"description": "价签识别参数",
+			"subParams": [
+				{
+					"name": "obj_key_name",
+					"type": "String",
+					"description": "图片名称，不能重复"
+				},
+				{
+					"name": "busi_code",
+					"type": "String",
+					"description": "业务编码"
+				},
+				{
+					"name": "source",
+					"type": "String",
+					"description": "业务来源"
+				},
+				{
+					"name": "bar_code",
+					"type": "String",
+					"description": "条码"
+				},
+				{
+					"name": "extend_info_map",
+					"description": "扩展信息"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "nrs_result",
+			"type": "NrsResult",
+			"description": "出参",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "RecongnizeItemInfo",
+					"description": "返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "origin_place",
+							"type": "String",
+							"description": "原产地",
+							"required": true
+						},
+						{
+							"name": "ext_map",
+							"type": "Json",
+							"description": "扩展信息",
+							"required": true
+						},
+						{
+							"name": "promotion_end_time",
+							"type": "String",
+							"description": "优惠结束时间",
+							"required": true
+						},
+						{
+							"name": "promotion_start_time",
+							"type": "String",
+							"description": "优惠开始时间",
+							"required": true
+						},
+						{
+							"name": "spec_desc",
+							"type": "String",
+							"description": "规格描述",
+							"required": true
+						},
+						{
+							"name": "rt_item_no",
+							"type": "String",
+							"description": "rt货号",
+							"required": true
+						},
+						{
+							"name": "promotion_desc",
+							"type": "String",
+							"description": "优惠描述",
+							"required": true
+						},
+						{
+							"name": "promotion_type",
+							"type": "Number",
+							"description": "促销类型",
+							"required": true
+						},
+						{
+							"name": "in_promotion",
+							"type": "Boolean",
+							"description": "是否促销中",
+							"required": true
+						},
+						{
+							"name": "promotion_price",
+							"type": "Number",
+							"description": "促销价",
+							"required": true
+						},
+						{
+							"name": "sale_price",
+							"type": "Number",
+							"description": "销售价",
+							"required": true
+						},
+						{
+							"name": "brand_name",
+							"type": "String",
+							"description": "品牌",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "品名",
+							"required": true
+						},
+						{
+							"name": "bar_code",
+							"type": "String",
+							"description": "条码",
+							"required": true
+						},
+						{
+							"name": "serial_no",
+							"type": "String",
+							"description": "流水号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用标志",
+					"required": true
+				},
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "错误信息",
+					"required": true
+				}
+			]
+		}
+	]
+}

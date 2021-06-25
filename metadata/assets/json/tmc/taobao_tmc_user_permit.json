@@ -1,0 +1,20 @@
+{
+	"name": "taobao.tmc.user.permit",
+	"apiChineseName": "为已授权的用户开通消息服务",
+	"description": "为已授权的用户开通消息服务，授权消息使用。\u003cbr/\u003e\u003cspan style=\"color:red\"\u003e注意：topic覆盖更新,务必传入全量topic，或者不传topics，使用appkey订阅的所有topic\u003c/span\u003e",
+	"requestParams": [
+		{
+			"name": "topics",
+			"type": "String[]",
+			"description": "消息主题列表，用半角逗号分隔。当用户订阅的topic是应用订阅的子集时才需要设置，不设置表示继承应用所订阅的所有topic，一般情况建议不要设置。",
+			"maxListSize": 100
+		}
+	],
+	"responseParams": [
+		{
+			"name": "is_success",
+			"type": "Boolean",
+			"description": "是否成功"
+		}
+	]
+}

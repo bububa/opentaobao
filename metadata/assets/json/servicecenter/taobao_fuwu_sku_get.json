@@ -1,0 +1,125 @@
+{
+	"name": "taobao.fuwu.sku.get",
+	"apiChineseName": "获取内购服务及SKU详情",
+	"description": "通过服务code和用户nick，获取该服务对应的收费项目的sku信息，包括价格、可购买周期、用户能否购买等信息",
+	"requestParams": [
+		{
+			"name": "article_code",
+			"type": "String",
+			"description": "服务code",
+			"required": true
+		},
+		{
+			"name": "nick",
+			"type": "String",
+			"description": "用户的淘宝nick",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ArticleViewResult",
+			"description": "内购服务及SKU详情",
+			"subParams": [
+				{
+					"name": "article_code",
+					"type": "String",
+					"description": "服务code"
+				},
+				{
+					"name": "article_name",
+					"type": "String",
+					"description": "服务名称"
+				},
+				{
+					"name": "pict_url",
+					"type": "String",
+					"description": "服务图片地址"
+				},
+				{
+					"name": "article_commment",
+					"type": "String",
+					"description": "服务简介"
+				},
+				{
+					"name": "nick",
+					"type": "String",
+					"description": "用户淘宝nick"
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码"
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "错误消息"
+				},
+				{
+					"name": "article_item_view_units",
+					"type": "ArticleItemViewUnit[]",
+					"description": "sku详情列表",
+					"subParams": [
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "收费项目code"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "收费项目名称"
+						},
+						{
+							"name": "cyc_num",
+							"type": "Number",
+							"description": "周期数，如1，3，6，12。对于周期型和周期计量型返回。"
+						},
+						{
+							"name": "cyc_unit",
+							"type": "Number",
+							"description": "1-年，2-月，3-日。对于周期型和周期计量型返回。"
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "数量。对于周期计量型返回计量数。"
+						},
+						{
+							"name": "origin_price",
+							"type": "String",
+							"description": "原价，单位：元"
+						},
+						{
+							"name": "prom_price",
+							"type": "String",
+							"description": "优惠，单位：元"
+						},
+						{
+							"name": "actual_price",
+							"type": "String",
+							"description": "需要支付的价格，单位：元"
+						},
+						{
+							"name": "can_sub",
+							"type": "Boolean",
+							"description": "用户是否可以购买"
+						},
+						{
+							"name": "error_code",
+							"type": "String",
+							"description": "错误码"
+						},
+						{
+							"name": "error_msg",
+							"type": "String",
+							"description": "错误文案"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,73 @@
+{
+	"name": "cainiao.cloudprint.single.customarea.get",
+	"apiChineseName": "获取商家单一自定义区",
+	"description": "商家所有快递公司模板只有一个自定义区",
+	"requestParams": [
+		{
+			"name": "seller_id",
+			"type": "Number",
+			"description": "这是商家用户id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CloudPrintBaseResult",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "data",
+					"type": "CustomAreaSingleResult",
+					"description": "data",
+					"required": true,
+					"subParams": [
+						{
+							"name": "custom_area_id",
+							"type": "Number",
+							"description": "自定义区id",
+							"required": true
+						},
+						{
+							"name": "custom_area_url",
+							"type": "String",
+							"description": "自定义区内容的URL",
+							"required": true
+						},
+						{
+							"name": "keys",
+							"type": "KeyResult[]",
+							"description": "keys",
+							"required": true,
+							"subParams": [
+								{
+									"name": "key_name",
+									"type": "String",
+									"description": "动态key的名称",
+									"required": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "错误消息",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

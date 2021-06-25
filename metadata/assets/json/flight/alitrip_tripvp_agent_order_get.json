@@ -1,0 +1,235 @@
+{
+	"name": "alitrip.tripvp.agent.order.get",
+	"apiChineseName": "廉航辅营正向订单查询详情接口",
+	"description": "【国际机票】查询辅营订单详情",
+	"requestParams": [
+		{
+			"name": "agent_id",
+			"type": "Number",
+			"description": "代理商ID",
+			"required": true
+		},
+		{
+			"name": "trade_order_id",
+			"type": "Number",
+			"description": "辅营的订单号",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "order_vo",
+			"type": "VirProOrderVo",
+			"description": "orderVO",
+			"subParams": [
+				{
+					"name": "book_time",
+					"type": "Date",
+					"description": "预订时间，辅营订单创建时间",
+					"required": true
+				},
+				{
+					"name": "flight_order_id",
+					"type": "Number",
+					"description": "机票订单号",
+					"required": true
+				},
+				{
+					"name": "passenger_aux_vos",
+					"type": "PassengerAuxVo[]",
+					"description": "乘机人购买辅营产品详情",
+					"required": true,
+					"subParams": [
+						{
+							"name": "aux_product_vo",
+							"type": "AuxProductVo",
+							"description": "辅营产品规格信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "baggage_vo",
+									"type": "BaggageVo",
+									"description": "结构化的行李说明",
+									"required": true,
+									"subParams": [
+										{
+											"name": "is_all_weight",
+											"type": "Boolean",
+											"description": "是否为全部重量",
+											"required": true
+										},
+										{
+											"name": "pc",
+											"type": "Number",
+											"description": "行李数量",
+											"required": true
+										},
+										{
+											"name": "weight",
+											"type": "Number",
+											"description": "行李重量，单位KG",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "base_price",
+									"type": "Number",
+									"description": "基准价",
+									"required": true
+								},
+								{
+									"name": "counter_price",
+									"type": "Number",
+									"description": "柜台价",
+									"required": true
+								},
+								{
+									"name": "online_price",
+									"type": "Number",
+									"description": "销售价格",
+									"required": true
+								},
+								{
+									"name": "outer_id",
+									"type": "String",
+									"description": "外部outerId",
+									"required": true
+								},
+								{
+									"name": "product_name",
+									"type": "String",
+									"description": "辅营产品名称",
+									"required": true
+								},
+								{
+									"name": "product_type",
+									"type": "Number",
+									"description": "deprecated, 不建议使用",
+									"required": true
+								},
+								{
+									"name": "sale_type",
+									"type": "Number",
+									"description": "销售类型 1:一次销售，2:二次销售，3:不限",
+									"required": true
+								},
+								{
+									"name": "seat_vo",
+									"type": "SeatVo",
+									"description": "选座规格信息",
+									"required": true,
+									"subParams": [
+										{
+											"name": "seat_area",
+											"type": "Number",
+											"description": "座位列 1:靠过道，2:靠窗，3:并排",
+											"required": true
+										},
+										{
+											"name": "seat_row",
+											"type": "Number",
+											"description": "排次 1:前排，2:中排，3:后排",
+											"required": true
+										}
+									]
+								},
+								{
+									"name": "unity_product_type",
+									"type": "Number",
+									"description": "产品类型 4:付费行李，6:值机，7:餐食, 8:值机及选座",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "book_num",
+							"type": "Number",
+							"description": "购买数量",
+							"required": true
+						},
+						{
+							"name": "flight_vo",
+							"type": "BookFlightVo",
+							"description": "航段信息",
+							"required": true,
+							"subParams": [
+								{
+									"name": "arr_airport",
+									"type": "String",
+									"description": "到达机场三字码",
+									"required": true
+								},
+								{
+									"name": "dep_airport",
+									"type": "String",
+									"description": "出发机场三字码",
+									"required": true
+								},
+								{
+									"name": "dep_time",
+									"type": "Date",
+									"description": "出发时间",
+									"required": true
+								},
+								{
+									"name": "flight_cabin",
+									"type": "String",
+									"description": "仓位",
+									"required": true
+								},
+								{
+									"name": "flight_number",
+									"type": "String",
+									"description": "航班号",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "乘机人姓名",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "pay_no",
+					"type": "String",
+					"description": "支付宝流水号，存在多个辅营订单对应一个支付宝流水号的情况",
+					"required": true
+				},
+				{
+					"name": "pay_price",
+					"type": "Number",
+					"description": "辅营订单金额",
+					"required": true
+				},
+				{
+					"name": "pay_time",
+					"type": "Date",
+					"description": "支付时间，订单为支付成功或出货成功时返回",
+					"required": true
+				},
+				{
+					"name": "order_id",
+					"type": "Number",
+					"description": "辅营订单号",
+					"required": true
+				},
+				{
+					"name": "order_status",
+					"type": "Number",
+					"description": "辅营订单状态，1-\t待支付 2-\t支付成功 3-\t辅营出货成功 4-\t订单取消",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "page_size",
+			"type": "Number",
+			"description": "pageSize"
+		}
+	]
+}

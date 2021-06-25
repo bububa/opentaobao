@@ -1,0 +1,25 @@
+{
+	"name": "taobao.top.sdk.feedback.upload",
+	"apiChineseName": "sdk信息回调",
+	"description": "sdk回调客户端基本信息到开放平台，用于做监控之类，有助于帮助isv监控系统稳定性",
+	"requestParams": [
+		{
+			"name": "type",
+			"type": "String",
+			"description": "1、回传加密信息",
+			"required": true
+		},
+		{
+			"name": "content",
+			"type": "String",
+			"description": "具体内容，json形式"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "upload_interval",
+			"type": "Number",
+			"description": "控制回传间隔（单位：秒）"
+		}
+	]
+}

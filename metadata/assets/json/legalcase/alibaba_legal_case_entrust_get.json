@@ -1,0 +1,140 @@
+{
+	"name": "alibaba.legal.case.entrust.get",
+	"apiChineseName": "委托",
+	"description": "获取委托案件的基本信息",
+	"requestParams": [
+		{
+			"name": "entrust_id",
+			"type": "Number",
+			"description": "委托id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ServiceResult",
+			"description": "alinkappserver系统返回的通用结果类",
+			"subParams": [
+				{
+					"name": "content",
+					"type": "EntrustModel",
+					"description": "content",
+					"required": true,
+					"subParams": [
+						{
+							"name": "attachment_list",
+							"type": "FileModel[]",
+							"description": "附件",
+							"required": true,
+							"subParams": [
+								{
+									"name": "key",
+									"type": "String",
+									"description": "文件key",
+									"required": true
+								},
+								{
+									"name": "name",
+									"type": "String",
+									"description": "文件名",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "case_ids",
+							"type": "Number[]",
+							"description": "案件ids",
+							"required": true
+						},
+						{
+							"name": "deadline",
+							"type": "Date",
+							"description": "调解截止时间",
+							"required": true
+						},
+						{
+							"name": "description",
+							"type": "String",
+							"description": "备注",
+							"required": true
+						},
+						{
+							"name": "entrust_code",
+							"type": "String",
+							"description": "委托编号",
+							"required": true
+						},
+						{
+							"name": "entrust_party",
+							"type": "String",
+							"description": "委托方名称",
+							"required": true
+						},
+						{
+							"name": "entrust_people",
+							"type": "String",
+							"description": "委托人",
+							"required": true
+						},
+						{
+							"name": "entrust_time",
+							"type": "Date",
+							"description": "委托时间",
+							"required": true
+						},
+						{
+							"name": "entrust_types",
+							"type": "String[]",
+							"description": "委托项",
+							"required": true
+						},
+						{
+							"name": "lvms_entrust_code",
+							"type": "String",
+							"description": "lvms委托编号",
+							"required": true
+						},
+						{
+							"name": "main_lawyer",
+							"type": "String",
+							"description": "主要负责律师",
+							"required": true
+						},
+						{
+							"name": "suggest",
+							"type": "String",
+							"description": "策略和建议",
+							"required": true
+						},
+						{
+							"name": "supplier_code",
+							"type": "String",
+							"description": "供应商编号",
+							"required": true
+						},
+						{
+							"name": "supplier_name",
+							"type": "String",
+							"description": "供应商名称",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "error",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "error",
+					"required": true
+				}
+			]
+		}
+	]
+}

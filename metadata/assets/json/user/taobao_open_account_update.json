@@ -1,0 +1,174 @@
+{
+	"name": "taobao.open.account.update",
+	"apiChineseName": "Open Account数据更新",
+	"description": "Open Account数据更新",
+	"requestParams": [
+		{
+			"name": "param_list",
+			"type": "OpenAccount[]",
+			"description": "Open Account",
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "login_id",
+					"type": "String",
+					"description": "登录名"
+				},
+				{
+					"name": "create_device_id",
+					"type": "String",
+					"description": "帐号创建的设备的ID"
+				},
+				{
+					"name": "alipay_id",
+					"type": "String",
+					"description": "支付宝的帐号标识"
+				},
+				{
+					"name": "locale",
+					"type": "String",
+					"description": "地区"
+				},
+				{
+					"name": "bank_card_no",
+					"type": "String",
+					"description": "银行卡号"
+				},
+				{
+					"name": "isv_account_id",
+					"type": "String",
+					"description": "开发者自定义账号id"
+				},
+				{
+					"name": "email",
+					"type": "String",
+					"description": "邮箱"
+				},
+				{
+					"name": "avatar_url",
+					"type": "String",
+					"description": "头像url"
+				},
+				{
+					"name": "bank_card_owner_name",
+					"type": "String",
+					"description": "银行卡的拥有者姓名"
+				},
+				{
+					"name": "display_name",
+					"type": "String",
+					"description": "展示名"
+				},
+				{
+					"name": "login_pwd_salt",
+					"type": "String",
+					"description": "密码salt"
+				},
+				{
+					"name": "login_pwd",
+					"type": "String",
+					"description": "密码"
+				},
+				{
+					"name": "open_id",
+					"type": "String",
+					"description": "第三方oauth openid"
+				},
+				{
+					"name": "mobile",
+					"type": "String",
+					"description": "手机"
+				},
+				{
+					"name": "create_location",
+					"type": "String",
+					"description": "账号创建时的位置"
+				},
+				{
+					"name": "ext_infos",
+					"type": "String",
+					"description": "自定义扩展信息Map的Json格式"
+				},
+				{
+					"name": "login_pwd_intensity",
+					"type": "Number",
+					"description": "密码加密强度"
+				},
+				{
+					"name": "id",
+					"type": "Number",
+					"description": "Open Account Id"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "账号创建类型：1、通过短信创建，2、ISV批量导入，3、ISV OAuth创建"
+				},
+				{
+					"name": "status",
+					"type": "Number",
+					"description": "账号状态：1、启用，2、删除，3、禁用"
+				},
+				{
+					"name": "login_pwd_encryption",
+					"type": "Number",
+					"description": "加密算法类型：1、代表单纯MD5，2：代表单一Salt的MD5，3、代表根据记录不同后的MD5"
+				},
+				{
+					"name": "gender",
+					"type": "Number",
+					"description": "1男 2女"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "姓名"
+				},
+				{
+					"name": "birthday",
+					"type": "String",
+					"description": "出生日期"
+				},
+				{
+					"name": "wangwang",
+					"type": "String",
+					"description": "旺旺"
+				},
+				{
+					"name": "weixin",
+					"type": "String",
+					"description": "微信"
+				},
+				{
+					"name": "oauth_plateform",
+					"type": "Number",
+					"description": "TAOBAO = 1;WEIXIN = 2;WEIBO = 3;QQ = 4;"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "datas",
+			"type": "OpenaccountVoid []",
+			"description": "update是否成功",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "返回信息"
+				},
+				{
+					"name": "successful",
+					"type": "Boolean",
+					"description": "是否成功"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "错误码"
+				}
+			]
+		}
+	]
+}

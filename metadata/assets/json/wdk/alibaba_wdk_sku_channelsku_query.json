@@ -1,0 +1,180 @@
+{
+	"name": "alibaba.wdk.sku.channelsku.query",
+	"apiChineseName": "查询渠道商品",
+	"description": "查询渠道商品",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "ChannelSkuQueryDo",
+			"description": "查询渠道商品的入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "sku_codes",
+					"type": "String[]",
+					"description": "skucode集合",
+					"required": true
+				},
+				{
+					"name": "ou_code",
+					"type": "String",
+					"description": "门店或DC编码"
+				},
+				{
+					"name": "channel_code",
+					"type": "Number",
+					"description": "渠道编码（默认-1）"
+				},
+				{
+					"name": "deliver_warehouse",
+					"type": "String",
+					"description": "出货仓（默认为店仓一体，仓编码为店编码）"
+				},
+				{
+					"name": "customer_merchant_code",
+					"type": "String",
+					"description": "客户商家编码"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ApiResults",
+			"description": "调用结果",
+			"subParams": [
+				{
+					"name": "err_code",
+					"type": "String",
+					"description": "错误编码",
+					"required": true
+				},
+				{
+					"name": "err_msg",
+					"type": "String",
+					"description": "skuCode不能为空",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "接口调用是否成功",
+					"required": true
+				},
+				{
+					"name": "models",
+					"type": "ApiResult[]",
+					"description": "业务数据模型",
+					"required": true,
+					"subParams": [
+						{
+							"name": "success",
+							"type": "Boolean",
+							"description": "业务调用是否成功",
+							"required": true
+						},
+						{
+							"name": "err_code",
+							"type": "String",
+							"description": "异常状态码",
+							"required": true
+						},
+						{
+							"name": "model",
+							"type": "ChannelSkuDo",
+							"description": "业务数据模型",
+							"required": true,
+							"subParams": [
+								{
+									"name": "sku_code",
+									"type": "String",
+									"description": "商品编码",
+									"required": true
+								},
+								{
+									"name": "life_status",
+									"type": "String",
+									"description": "可售状态",
+									"required": true
+								},
+								{
+									"name": "sale_spec",
+									"type": "String",
+									"description": "销售规格",
+									"required": true
+								},
+								{
+									"name": "sale_unit",
+									"type": "String",
+									"description": "销售单位",
+									"required": true
+								},
+								{
+									"name": "sale_minimum",
+									"type": "Number",
+									"description": "最小起售量",
+									"required": true
+								},
+								{
+									"name": "return_flag",
+									"type": "String",
+									"description": "是否可退供",
+									"required": true
+								},
+								{
+									"name": "sale_price",
+									"type": "String",
+									"description": "销售价格",
+									"required": true
+								},
+								{
+									"name": "ou_code",
+									"type": "String",
+									"description": "门店或DC编码",
+									"required": true
+								},
+								{
+									"name": "deliver_warehouse",
+									"type": "String",
+									"description": "出货仓",
+									"required": true
+								},
+								{
+									"name": "sale_before_purchase",
+									"type": "Boolean",
+									"description": "是否支持先销后采（默认false）",
+									"required": true
+								},
+								{
+									"name": "original_supplier_no",
+									"type": "String",
+									"description": "原始供应商编码",
+									"required": true
+								},
+								{
+									"name": "customer_merchant_code",
+									"type": "String",
+									"description": "客户商家编码",
+									"required": true
+								},
+								{
+									"name": "channel_code",
+									"type": "Number",
+									"description": "渠道编码",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "err_msg",
+							"type": "String",
+							"description": "异常信息",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

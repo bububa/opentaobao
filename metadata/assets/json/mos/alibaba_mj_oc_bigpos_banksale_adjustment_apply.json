@@ -1,0 +1,37 @@
+{
+	"name": "alibaba.mj.oc.bigpos.banksale.adjustment.apply",
+	"apiChineseName": "大pos银行卡调账申请",
+	"description": "大pos银行卡调账申请",
+	"requestParams": [
+		{
+			"name": "store_no",
+			"type": "String",
+			"description": "门店号"
+		},
+		{
+			"name": "amount",
+			"type": "Number",
+			"description": "调账金额"
+		},
+		{
+			"name": "card_no",
+			"type": "String",
+			"description": "卡号"
+		},
+		{
+			"name": "oper_time",
+			"type": "String",
+			"description": "交易时间"
+		},
+		{
+			"name": "operator",
+			"type": "String",
+			"description": "收银员号"
+		},
+		{
+			"name": "pos_no",
+			"type": "String",
+			"description": "调账收银机号"
+		}
+	]
+}

@@ -1,0 +1,168 @@
+{
+	"name": "taobao.itemcats.authorize.get",
+	"apiChineseName": "查询商家被授权品牌列表和类目列表",
+	"description": "查询B商家被授权品牌列表、类目列表和 c 商家新品类目列表",
+	"requestParams": [
+		{
+			"name": "fields",
+			"type": "String[]",
+			"description": "需要返回的字段。目前支持有：\u003cbr/\u003ebrand.vid, brand.name, \u003cbr/\u003eitem_cat.cid, item_cat.name, item_cat.status,item_cat.sort_order,item_cat.parent_cid,item_cat.is_parent,\u003cbr/\u003exinpin_item_cat.cid, \u003cbr/\u003exinpin_item_cat.name, \u003cbr/\u003exinpin_item_cat.status,\u003cbr/\u003exinpin_item_cat.sort_order,\u003cbr/\u003exinpin_item_cat.parent_cid,\u003cbr/\u003exinpin_item_cat.is_parent",
+			"required": true,
+			"maxListSize": 20
+		}
+	],
+	"responseParams": [
+		{
+			"name": "seller_authorize",
+			"type": "SellerAuthorize",
+			"description": "里面有3个数组：\u003cbr/\u003eBrand[]品牌列表,\u003cbr/\u003eItemCat[] 类目列表\u003cbr/\u003eXinpinItemCat[] 针对于C卖家新品类目列表",
+			"subParams": [
+				{
+					"name": "item_cats",
+					"type": "ItemCat[]",
+					"description": "类目列表",
+					"subParams": [
+						{
+							"name": "cid",
+							"type": "Number",
+							"description": "商品所属类目ID"
+						},
+						{
+							"name": "parent_cid",
+							"type": "Number",
+							"description": "父类目ID=0时，代表的是一级的类目"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "类目名称"
+						},
+						{
+							"name": "is_parent",
+							"type": "Boolean",
+							"description": "该类目是否为父类目(即：该类目是否还有子类目)"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态。可选值:normal(正常),deleted(删除)"
+						},
+						{
+							"name": "sort_order",
+							"type": "Number",
+							"description": "排列序号，表示同级类目的展现次序，如数值相等则按名称次序排列。取值范围:大于零的整数"
+						},
+						{
+							"name": "features",
+							"type": "Feature[]",
+							"description": "Feature对象列表\u003cbr/\u003e目前已有的属性：\u003cbr/\u003e若Attr_key为 udsaleprop，attr_value为1 则允许卖家在改类目新增自定义销售属性,不然为不允许",
+							"subParams": [
+								{
+									"name": "attr_key",
+									"type": "String",
+									"description": "属性键"
+								},
+								{
+									"name": "attr_value",
+									"type": "String",
+									"description": "属性值"
+								}
+							]
+						},
+						{
+							"name": "taosir_cat",
+							"type": "Boolean",
+							"description": "是否度量衡类目"
+						}
+					]
+				},
+				{
+					"name": "brands",
+					"type": "Brand[]",
+					"description": "品牌列表",
+					"subParams": [
+						{
+							"name": "vid",
+							"type": "Number",
+							"description": "对应属性的 pid:vid 串中的vid"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "vid的值"
+						},
+						{
+							"name": "pid",
+							"type": "Number",
+							"description": "品牌的属性id"
+						},
+						{
+							"name": "prop_name",
+							"type": "String",
+							"description": "品牌的属性名"
+						}
+					]
+				},
+				{
+					"name": "xinpin_item_cats",
+					"type": "ItemCat[]",
+					"description": "被授权的新品类目列表",
+					"subParams": [
+						{
+							"name": "cid",
+							"type": "Number",
+							"description": "商品所属类目ID"
+						},
+						{
+							"name": "parent_cid",
+							"type": "Number",
+							"description": "父类目ID=0时，代表的是一级的类目"
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "类目名称"
+						},
+						{
+							"name": "is_parent",
+							"type": "Boolean",
+							"description": "该类目是否为父类目(即：该类目是否还有子类目)"
+						},
+						{
+							"name": "status",
+							"type": "String",
+							"description": "状态。可选值:normal(正常),deleted(删除)"
+						},
+						{
+							"name": "sort_order",
+							"type": "Number",
+							"description": "排列序号，表示同级类目的展现次序，如数值相等则按名称次序排列。取值范围:大于零的整数"
+						},
+						{
+							"name": "features",
+							"type": "Feature[]",
+							"description": "Feature对象列表\u003cbr/\u003e目前已有的属性：\u003cbr/\u003e若Attr_key为 udsaleprop，attr_value为1 则允许卖家在改类目新增自定义销售属性,不然为不允许",
+							"subParams": [
+								{
+									"name": "attr_key",
+									"type": "String",
+									"description": "属性键"
+								},
+								{
+									"name": "attr_value",
+									"type": "String",
+									"description": "属性值"
+								}
+							]
+						},
+						{
+							"name": "taosir_cat",
+							"type": "Boolean",
+							"description": "是否度量衡类目"
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,93 @@
+{
+	"name": "alibaba.alsc.crm.customer.updateppw",
+	"apiChineseName": "修改支付密码",
+	"description": "修改支付密码",
+	"requestParams": [
+		{
+			"name": "update_pay_passwd_req",
+			"type": "UpdatePayPasswdReq",
+			"description": "修改密码",
+			"subParams": [
+				{
+					"name": "brand_id",
+					"type": "String",
+					"description": "品牌id  、 外部品牌id    2选1"
+				},
+				{
+					"name": "operator_name",
+					"type": "String",
+					"description": "修改人名称"
+				},
+				{
+					"name": "operator_id",
+					"type": "String",
+					"description": "操作人id"
+				},
+				{
+					"name": "passwd_type",
+					"type": "String",
+					"description": "md5代表密码已经MD5加密，raw代表密码是原生没有加密"
+				},
+				{
+					"name": "pay_passwd",
+					"type": "String",
+					"description": "密码"
+				},
+				{
+					"name": "customer_id",
+					"type": "String",
+					"description": "顾客id"
+				},
+				{
+					"name": "out_brand_id",
+					"type": "String",
+					"description": "外部品牌id"
+				},
+				{
+					"name": "request_id",
+					"type": "String",
+					"description": "请求id"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "CommonResult",
+			"description": "接口结果",
+			"subParams": [
+				{
+					"name": "result_view",
+					"type": "String",
+					"description": "返回描述",
+					"required": true
+				},
+				{
+					"name": "result_desc",
+					"type": "String",
+					"description": "返回描述",
+					"required": true
+				},
+				{
+					"name": "result_code",
+					"type": "String",
+					"description": "返回code",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "String",
+					"description": "返回结果",
+					"required": true
+				},
+				{
+					"name": "biz_success",
+					"type": "Boolean",
+					"description": "调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

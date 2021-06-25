@@ -1,0 +1,243 @@
+{
+	"name": "alibaba.latour.strategy.issue",
+	"apiChineseName": "阿里巴巴权益发放接口",
+	"description": "阿里巴巴权益平台权益发放接口",
+	"requestParams": [
+		{
+			"name": "extra_data",
+			"type": "Json",
+			"description": "扩展参数"
+		},
+		{
+			"name": "failover_algorithm_result",
+			"type": "Boolean",
+			"description": "算法容灾"
+		},
+		{
+			"name": "idempotent_id",
+			"type": "String",
+			"description": "幂等id"
+		},
+		{
+			"name": "channel",
+			"type": "String",
+			"description": "发放渠道",
+			"required": true
+		},
+		{
+			"name": "user_id",
+			"type": "String",
+			"description": "除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息"
+		},
+		{
+			"name": "transformed_user_type",
+			"type": "String",
+			"description": "转换用户类型"
+		},
+		{
+			"name": "need_identify_risk",
+			"type": "Boolean",
+			"description": "是否需要过安全"
+		},
+		{
+			"name": "user_nick",
+			"type": "String",
+			"description": "除非有特殊申请，默认不允许使用该参数，请通过用户授权token传递用户信息"
+		},
+		{
+			"name": "strategy_code",
+			"type": "String",
+			"description": "投放计划code",
+			"required": true
+		},
+		{
+			"name": "user_type",
+			"type": "String",
+			"description": "用户类型"
+		},
+		{
+			"name": "selected_benefit_code",
+			"type": "String",
+			"description": "指定发放权益code"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "返回结果",
+			"subParams": [
+				{
+					"name": "code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "StrategyIssueResultDto",
+					"description": "返回结果",
+					"required": true,
+					"subParams": [
+						{
+							"name": "display_amount_unit",
+							"type": "String",
+							"description": "展示面额单位",
+							"required": true
+						},
+						{
+							"name": "extra_data",
+							"type": "Json",
+							"description": "扩展字段",
+							"required": true
+						},
+						{
+							"name": "issue_time",
+							"type": "Date",
+							"description": "发放时间",
+							"required": true
+						},
+						{
+							"name": "benefit_type",
+							"type": "String",
+							"description": "权益类型",
+							"required": true
+						},
+						{
+							"name": "effective_start",
+							"type": "Date",
+							"description": "生效开始时间",
+							"required": true
+						},
+						{
+							"name": "effective_end_timestamp",
+							"type": "Number",
+							"description": "生效结束时间戳",
+							"required": true
+						},
+						{
+							"name": "outer_instance_id",
+							"type": "String",
+							"description": "外部发放实例id",
+							"required": true
+						},
+						{
+							"name": "benefit_code",
+							"type": "String",
+							"description": "权益code",
+							"required": true
+						},
+						{
+							"name": "effective_end",
+							"type": "Date",
+							"description": "生效结束时间",
+							"required": true
+						},
+						{
+							"name": "record_id",
+							"type": "Number",
+							"description": "中奖记录id",
+							"required": true
+						},
+						{
+							"name": "user_nick",
+							"type": "String",
+							"description": "用户昵称",
+							"required": true
+						},
+						{
+							"name": "effective_start_timestamp",
+							"type": "Number",
+							"description": "生效开始时间戳",
+							"required": true
+						},
+						{
+							"name": "display_start_fee",
+							"type": "String",
+							"description": "展示门槛",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "Number",
+							"description": "面额",
+							"required": true
+						},
+						{
+							"name": "amount_unit",
+							"type": "String",
+							"description": "面额单位",
+							"required": true
+						},
+						{
+							"name": "tracking_data",
+							"type": "Json",
+							"description": "追踪数据",
+							"required": true
+						},
+						{
+							"name": "display_amount",
+							"type": "String",
+							"description": "展示面额",
+							"required": true
+						},
+						{
+							"name": "effective_time_mode",
+							"type": "String",
+							"description": "生效时间类型",
+							"required": true
+						},
+						{
+							"name": "benefit_title",
+							"type": "String",
+							"description": "权益标题",
+							"required": true
+						},
+						{
+							"name": "benefit_type_name",
+							"type": "String",
+							"description": "权益类型名称",
+							"required": true
+						},
+						{
+							"name": "start_fee",
+							"type": "Number",
+							"description": "门槛",
+							"required": true
+						},
+						{
+							"name": "user_type",
+							"type": "String",
+							"description": "用户类型",
+							"required": true
+						},
+						{
+							"name": "effective_interval",
+							"type": "Number",
+							"description": "相对生效时间长度",
+							"required": true
+						},
+						{
+							"name": "interval_time_unit",
+							"type": "String",
+							"description": "相对生效时间单位",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "msg",
+					"type": "String",
+					"description": "错误描述",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

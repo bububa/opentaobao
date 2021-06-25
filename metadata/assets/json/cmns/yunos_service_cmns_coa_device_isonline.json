@@ -1,0 +1,34 @@
+{
+	"name": "yunos.service.cmns.coa.device.isonline",
+	"apiChineseName": "根据设备id查询设备是否在线",
+	"description": "根据设备id查询设备是否在线",
+	"requestParams": [
+		{
+			"name": "type",
+			"type": "String",
+			"description": "设备id类型，取值\"uuid\"或者\"imei\"或者\"deviceToken\""
+		},
+		{
+			"name": "value",
+			"type": "String",
+			"description": "对应的设备id值"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "Number",
+			"description": "data"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "msg"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "status"
+		}
+	]
+}

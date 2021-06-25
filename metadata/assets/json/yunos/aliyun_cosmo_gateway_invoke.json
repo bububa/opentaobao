@@ -1,0 +1,65 @@
+{
+	"name": "aliyun.cosmo.gateway.invoke",
+	"apiChineseName": "alios cosmo服务调用",
+	"description": "AliOS cosmo服务分发平台对外调用接口",
+	"requestParams": [
+		{
+			"name": "context",
+			"type": "RdamContext",
+			"description": "请求上下文参数",
+			"required": true
+		},
+		{
+			"name": "rdam_request",
+			"type": "RdamGenericRequest",
+			"description": "请求对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "请求标示"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "RdamResponse",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "more",
+					"type": "Json",
+					"description": "more",
+					"required": true
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code",
+					"required": true
+				},
+				{
+					"name": "data_list",
+					"type": "Json[]",
+					"description": "dataList",
+					"required": true
+				},
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "traceId",
+					"required": true
+				}
+			]
+		}
+	]
+}

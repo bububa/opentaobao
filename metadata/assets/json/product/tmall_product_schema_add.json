@@ -1,0 +1,31 @@
+{
+	"name": "tmall.product.schema.add",
+	"apiChineseName": "使用Schema文件发布一个产品",
+	"description": "Schema体系发布一个产品",
+	"requestParams": [
+		{
+			"name": "category_id",
+			"type": "Number",
+			"description": "商品发布的目标类目，必须是叶子类目",
+			"required": true
+		},
+		{
+			"name": "brand_id",
+			"type": "Number",
+			"description": "品牌ID"
+		},
+		{
+			"name": "xml_data",
+			"type": "String",
+			"description": "根据tmall.product.add.schema.get生成的产品发布规则入参数据",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "add_product_result",
+			"type": "String",
+			"description": "新发产品结果"
+		}
+	]
+}

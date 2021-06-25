@@ -1,0 +1,62 @@
+{
+	"name": "tmall.promotion.coupon.use",
+	"apiChineseName": "券核销接口",
+	"description": "核销用户的一张优惠券，返回核销结果",
+	"requestParams": [
+		{
+			"name": "extra",
+			"type": "Json",
+			"description": "扩展字段"
+		},
+		{
+			"name": "biz_type",
+			"type": "String",
+			"description": "业务类型"
+		},
+		{
+			"name": "buyer_id",
+			"type": "String",
+			"description": "buyer_id、buyer_nick至少填一个， 都填写以id为准"
+		},
+		{
+			"name": "buyer_nick",
+			"type": "String",
+			"description": "buyer_id、buyer_nick至少填一个， 都填写以id为准"
+		},
+		{
+			"name": "seller_id",
+			"type": "String",
+			"description": "商家id"
+		},
+		{
+			"name": "coupon_id",
+			"type": "String",
+			"description": "优惠券id"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "data",
+			"type": "UseResultDo",
+			"description": "data",
+			"subParams": [
+				{
+					"name": "is_used",
+					"type": "Boolean",
+					"description": "isUsed",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "result_code",
+			"type": "String",
+			"description": "resultCode"
+		},
+		{
+			"name": "error_msg",
+			"type": "String",
+			"description": "errorMsg"
+		}
+	]
+}

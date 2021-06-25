@@ -1,0 +1,400 @@
+{
+	"name": "cainiao.cntms.logistics.order.consign",
+	"apiChineseName": "菜鸟配商家仓库发货",
+	"description": "商家包装打印面单结束后，通知菜鸟包裹要发货",
+	"requestParams": [
+		{
+			"name": "content",
+			"type": "CnTmsLogisticsOrderConsignContent",
+			"description": "配送发货信息",
+			"subParams": [
+				{
+					"name": "order_code",
+					"type": "String",
+					"description": "ERP订单号",
+					"required": true
+				},
+				{
+					"name": "trade_id",
+					"type": "String",
+					"description": "交易订单id或者商家订单号； 若阿里系订单，必须与阿里对应",
+					"required": true
+				},
+				{
+					"name": "order_source",
+					"type": "String",
+					"description": "来源渠道（TB 淘宝，JD 京东，TM 天猫，1688 1688（阿里中文站），YHD 1号店，DD 当当，VANCL 凡客，PP 拍拍，YX 易讯，EBAY 易贝ebay，AMAZON 亚马逊，SN 苏宁在线，GM 国美在线，WPH 唯品会，JM 聚美优品，LF 乐蜂网，MGJ 蘑菇街，JS 聚尚网，YG 优购，YT 银泰，YL 邮乐，PX 拍鞋网，POS POS门店，OTHERS 其他）",
+					"required": true
+				},
+				{
+					"name": "shop_code",
+					"type": "String",
+					"description": "店铺编码"
+				},
+				{
+					"name": "mail_no",
+					"type": "String",
+					"description": "运单号",
+					"required": true
+				},
+				{
+					"name": "tms_code",
+					"type": "String",
+					"description": "物流公司编码",
+					"required": true
+				},
+				{
+					"name": "receiver_info",
+					"type": "CnTmsLogisticsOrderReceiverInfo",
+					"description": "配送发货单收件人信息",
+					"subParams": [
+						{
+							"name": "receiver_province",
+							"type": "String",
+							"description": "收件人省份",
+							"required": true
+						},
+						{
+							"name": "receiver_city",
+							"type": "String",
+							"description": "收件人城市",
+							"required": true
+						},
+						{
+							"name": "receiver_area",
+							"type": "String",
+							"description": "收件人区县"
+						},
+						{
+							"name": "receiver_address",
+							"type": "String",
+							"description": "收件人区县",
+							"required": true
+						},
+						{
+							"name": "receiver_zip_code",
+							"type": "String",
+							"description": "收件方邮编"
+						},
+						{
+							"name": "receiver_name",
+							"type": "String",
+							"description": "收件人姓名",
+							"required": true
+						},
+						{
+							"name": "receiver_nick",
+							"type": "String",
+							"description": "收件人昵称"
+						},
+						{
+							"name": "receiver_mobile",
+							"type": "String",
+							"description": "收件人手机，手机与电话必须有一值不为空"
+						},
+						{
+							"name": "receiver_phone",
+							"type": "String",
+							"description": "收件人电话，手机与电话必须有一值不为空"
+						}
+					]
+				},
+				{
+					"name": "sender_info",
+					"type": "CnTmsLogisticsOrderSenderinfo",
+					"description": "配送发货单发件人信息",
+					"subParams": [
+						{
+							"name": "sender_province",
+							"type": "String",
+							"description": "发件人省份",
+							"required": true
+						},
+						{
+							"name": "sender_city",
+							"type": "String",
+							"description": "发件人城市",
+							"required": true
+						},
+						{
+							"name": "sender_area",
+							"type": "String",
+							"description": "发件人区县"
+						},
+						{
+							"name": "sender_address",
+							"type": "String",
+							"description": "发件人地址",
+							"required": true
+						},
+						{
+							"name": "sender_zip_code",
+							"type": "String",
+							"description": "发件人邮编"
+						},
+						{
+							"name": "sender_name",
+							"type": "String",
+							"description": "发件人姓名",
+							"required": true
+						},
+						{
+							"name": "sender_mobile",
+							"type": "String",
+							"description": "发件人手机，手机与电话必须有一值不为空"
+						},
+						{
+							"name": "sender_phone",
+							"type": "String",
+							"description": "发件人电话，手机与电话必须有一值不为空"
+						}
+					]
+				},
+				{
+					"name": "items",
+					"type": "CnTmsLogisticsOrderItem[]",
+					"description": "发货商品信息，最大50条记录",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_item_id",
+							"type": "String",
+							"description": "ERP订单明细编码"
+						},
+						{
+							"name": "sub_trade_id",
+							"type": "String",
+							"description": "子交易号",
+							"required": true
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "发货商品名称",
+							"required": true
+						},
+						{
+							"name": "quantity",
+							"type": "Number",
+							"description": "发货商品商品数量",
+							"required": true
+						},
+						{
+							"name": "extend_fields",
+							"type": "String",
+							"description": "扩展字段 K:V;"
+						},
+						{
+							"name": "remark",
+							"type": "String",
+							"description": "备注"
+						},
+						{
+							"name": "item_price",
+							"type": "Number",
+							"description": "商品单价，单位分",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "deliver_requirements",
+					"type": "CnTmsLogisticsOrderDeliverRequirements",
+					"description": "配送要求信息（当前业务暂不支持）",
+					"subParams": [
+						{
+							"name": "delivery_type",
+							"type": "String",
+							"description": "配送类型： PTPS-普通配送 LLPS-冷链配送"
+						},
+						{
+							"name": "schedule_type",
+							"type": "String",
+							"description": "投递时延要求(1 工作日 2 节假日 104 预约达 )"
+						},
+						{
+							"name": "schedule_day",
+							"type": "String",
+							"description": "送达日期（格式为 yyyy-MM-dd)"
+						},
+						{
+							"name": "schedule_start",
+							"type": "String",
+							"description": "送达开始时间（格式为 hh:mm）"
+						},
+						{
+							"name": "schedule_end",
+							"type": "String",
+							"description": "送达结束时间（格式为 hh:mm）"
+						}
+					]
+				},
+				{
+					"name": "pick_up_type",
+					"type": "Number",
+					"description": "商家送货方式，1商家送货，2菜鸟揽货",
+					"required": true
+				},
+				{
+					"name": "tms_got_service",
+					"type": "CnTmsLogisticsOrderGotService",
+					"description": "要求菜鸟上门揽货服务，当pick_up_Type=2且需求指定时做揽收时，此字段需要传值（当前业务暂不支持）",
+					"subParams": [
+						{
+							"name": "got_date",
+							"type": "String",
+							"description": "揽收日期yyyyMMdd"
+						},
+						{
+							"name": "got_range",
+							"type": "String",
+							"description": "揽收时间段 09:00-10:00"
+						}
+					]
+				},
+				{
+					"name": "solutions_code",
+					"type": "String",
+					"description": "物流服务解决方案Code，此字段由菜鸟提供",
+					"required": true
+				},
+				{
+					"name": "package_no",
+					"type": "Number",
+					"description": "此订单的第几个包裹，如订单拆包裹时，传入此参数，配送时会将同一订单的包裹一配送"
+				},
+				{
+					"name": "package_weight",
+					"type": "Number",
+					"description": "包裹重量（克）"
+				},
+				{
+					"name": "package_count",
+					"type": "Number",
+					"description": "此订单总的包裹数，如订单拆包裹时，传入此参数，配送时会将同一订单的包裹一配送"
+				},
+				{
+					"name": "package_length",
+					"type": "Number",
+					"description": "包裹长度（厘米）"
+				},
+				{
+					"name": "extend_fields",
+					"type": "String",
+					"description": "扩展字段 K:V;"
+				},
+				{
+					"name": "package_height",
+					"type": "Number",
+					"description": "包裹高度（厘米）"
+				},
+				{
+					"name": "remark",
+					"type": "String",
+					"description": "备注"
+				},
+				{
+					"name": "package_volume",
+					"type": "Number",
+					"description": "包裹体积（立方厘米）"
+				},
+				{
+					"name": "package_width",
+					"type": "Number",
+					"description": "包裹宽度（厘米）"
+				},
+				{
+					"name": "is_last_batch",
+					"type": "Boolean",
+					"description": "关单标示，true表示发货完结"
+				},
+				{
+					"name": "package_list",
+					"type": "CnTmsLogisticsOrderItemPackageInfo[]",
+					"description": "包裹列表，支持一单多包裹",
+					"subParams": [
+						{
+							"name": "items",
+							"type": "CnTmsLogisticsOrderItem[]",
+							"description": "发货商品信息，最大50条记录",
+							"subParams": [
+								{
+									"name": "order_item_id",
+									"type": "String",
+									"description": "ERP订单明细编码"
+								},
+								{
+									"name": "extend_fields",
+									"type": "String",
+									"description": "扩展字段 K:V;"
+								},
+								{
+									"name": "remark",
+									"type": "String",
+									"description": "备注"
+								},
+								{
+									"name": "item_price",
+									"type": "Number",
+									"description": "商品单价，单位分"
+								},
+								{
+									"name": "quantity",
+									"type": "Number",
+									"description": "发货商品商品数量"
+								},
+								{
+									"name": "item_name",
+									"type": "String",
+									"description": "发货商品名称"
+								},
+								{
+									"name": "sub_trade_id",
+									"type": "String",
+									"description": "子交易号"
+								}
+							]
+						},
+						{
+							"name": "mail_no",
+							"type": "String",
+							"description": "运单号"
+						},
+						{
+							"name": "package_weight",
+							"type": "String",
+							"description": "包裹重量（克）"
+						},
+						{
+							"name": "package_length",
+							"type": "String",
+							"description": "包裹长度（厘米）"
+						},
+						{
+							"name": "package_width",
+							"type": "String",
+							"description": "包裹宽度（厘米）"
+						},
+						{
+							"name": "package_height",
+							"type": "String",
+							"description": "包裹高度（厘米）"
+						},
+						{
+							"name": "package_volume",
+							"type": "String",
+							"description": "包裹体积（立方厘米）"
+						}
+					]
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "logistics_order_code",
+			"type": "String",
+			"description": "物流单号"
+		}
+	]
+}

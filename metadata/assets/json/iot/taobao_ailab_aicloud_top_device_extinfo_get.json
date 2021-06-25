@@ -1,0 +1,84 @@
+{
+	"name": "taobao.ailab.aicloud.top.device.extinfo.get",
+	"apiChineseName": "获取设备扩展信息",
+	"description": "获取设备扩展信息",
+	"requestParams": [
+		{
+			"name": "origin_user_id",
+			"type": "String",
+			"description": "三方id、淘宝openId",
+			"required": true
+		},
+		{
+			"name": "schema_key",
+			"type": "String",
+			"description": "账号秘钥",
+			"required": true
+		},
+		{
+			"name": "user_type",
+			"type": "String",
+			"description": "类型：openTaoBao, extUser",
+			"required": true
+		},
+		{
+			"name": "device_id",
+			"type": "String",
+			"description": "设备id",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "result",
+					"type": "TopDeviceExtInfoDto",
+					"description": "三方设备信息",
+					"required": true,
+					"subParams": [
+						{
+							"name": "device_id",
+							"type": "String",
+							"description": "设备id",
+							"required": true
+						},
+						{
+							"name": "ext_device_id",
+							"type": "String",
+							"description": "三方设备id",
+							"required": true
+						},
+						{
+							"name": "ext_device_type",
+							"type": "String",
+							"description": "三方设备类型",
+							"required": true
+						},
+						{
+							"name": "device_mac",
+							"type": "String",
+							"description": "设备mac",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "code",
+					"required": true
+				}
+			]
+		}
+	]
+}

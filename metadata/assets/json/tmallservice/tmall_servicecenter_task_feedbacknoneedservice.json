@@ -1,0 +1,83 @@
+{
+	"name": "tmall.servicecenter.task.feedbacknoneedservice",
+	"apiChineseName": "服务商反馈无需安装工单接口",
+	"description": "服务商反馈无需安装工单接口",
+	"requestParams": [
+		{
+			"name": "param",
+			"type": "SuspendServiceDo",
+			"description": "入参对象",
+			"required": true,
+			"subParams": [
+				{
+					"name": "updater",
+					"type": "String",
+					"description": "api调用者",
+					"required": true
+				},
+				{
+					"name": "extension",
+					"type": "String",
+					"description": "扩展字段"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "工单类型，固定值1",
+					"required": true
+				},
+				{
+					"name": "buyer_id",
+					"type": "Number",
+					"description": "买家user_id",
+					"required": true
+				},
+				{
+					"name": "comments",
+					"type": "String",
+					"description": "无需安装的原因",
+					"required": true
+				},
+				{
+					"name": "update_date",
+					"type": "Number",
+					"description": "更新时间得long值",
+					"required": true
+				},
+				{
+					"name": "workcard_id",
+					"type": "Number",
+					"description": "工单id",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "ResultBase",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "Number",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_msg",
+					"type": "String",
+					"description": "errorMsg",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

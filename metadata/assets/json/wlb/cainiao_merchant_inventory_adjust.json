@@ -1,0 +1,88 @@
+{
+	"name": "cainiao.merchant.inventory.adjust",
+	"apiChineseName": "商家库存调整",
+	"description": "商家仓库存调整接口，目前仅支持全量更新",
+	"requestParams": [
+		{
+			"name": "adjust_request",
+			"type": "MerStoreInvAdjustDto[]",
+			"description": "商家仓编辑库存",
+			"required": true,
+			"maxListSize": 20,
+			"subParams": [
+				{
+					"name": "inventory_type",
+					"type": "Number",
+					"description": "库存类型",
+					"required": true
+				},
+				{
+					"name": "attribute",
+					"description": "扩展属性"
+				},
+				{
+					"name": "quantity",
+					"type": "Number",
+					"description": "数量",
+					"required": true
+				},
+				{
+					"name": "out_biz_code",
+					"type": "String",
+					"description": "外部操作唯一编码",
+					"required": true
+				},
+				{
+					"name": "store_code",
+					"type": "String",
+					"description": "仓库编码",
+					"required": true
+				},
+				{
+					"name": "sc_item_id",
+					"type": "Number",
+					"description": "货品id",
+					"required": true
+				}
+			]
+		},
+		{
+			"name": "app_name",
+			"type": "String",
+			"description": "调用方应用名",
+			"required": true
+		},
+		{
+			"name": "operation",
+			"type": "String",
+			"description": "操作"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "SingleResultDto",
+			"description": "result",
+			"subParams": [
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "errorCode",
+					"required": true
+				},
+				{
+					"name": "error_message",
+					"type": "String",
+					"description": "errorMessage",
+					"required": true
+				},
+				{
+					"name": "flag",
+					"type": "Boolean",
+					"description": "success",
+					"required": true
+				}
+			]
+		}
+	]
+}

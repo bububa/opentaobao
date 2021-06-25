@@ -1,0 +1,73 @@
+{
+	"name": "taobao.xhotel.city.get",
+	"apiChineseName": "酒店城市数据获取接口",
+	"description": "引流API，对外提供酒店城市数据",
+	"requestParams": [
+		{
+			"name": "start",
+			"type": "Number",
+			"description": "分页读取的开始下标,从0开始",
+			"required": true
+		},
+		{
+			"name": "count",
+			"type": "Number",
+			"description": "分页读取的城市个数，最小值为1，最大值为200",
+			"required": true
+		}
+	],
+	"responseParams": [
+		{
+			"name": "total_results",
+			"type": "Number",
+			"description": "总数"
+		},
+		{
+			"name": "version",
+			"type": "Number",
+			"description": "城市数据的版本。所有城市数据有一个统一的版本，与入参start和count无关。 ISV可通过版本判断城市数据是否有更新。判断方法如下：ISV在第一次拉取数据时请将version保存在本地；以后再调用接口时请比较本地version与接口返回的version。如果本地version小于于接口返回version，则说明城市数据有更新；如果本地version等于接口返回version，则说明城市数据无更新，不需要再继续拉取城市数据。"
+		},
+		{
+			"name": "divisions",
+			"type": "HotelDivision []",
+			"description": "酒店区域的数据列表",
+			"subParams": [
+				{
+					"name": "region",
+					"type": "Number",
+					"description": "0：国内；1：国外"
+				},
+				{
+					"name": "code",
+					"type": "Number",
+					"description": "城市编码"
+				},
+				{
+					"name": "name",
+					"type": "String",
+					"description": "城市名称"
+				},
+				{
+					"name": "level",
+					"type": "Number",
+					"description": "层级，1：国家，2：州省，3：城市，4：区县"
+				},
+				{
+					"name": "type",
+					"type": "Number",
+					"description": "类型，0：普通，1：景点,cityTag，如千岛湖"
+				},
+				{
+					"name": "parent_code",
+					"type": "Number",
+					"description": "父行政区编码，例如杭州市(330100)的父行政区为浙江省(330000)。注意：如果parent_code的值为0，表示该行政区为最高级别的行政区，没有父行政区。"
+				},
+				{
+					"name": "searchable",
+					"type": "Boolean",
+					"description": "code是否可用来搜索酒店，true：code可直接用于搜索酒店，false: code不可直接用于搜索酒店。"
+				}
+			]
+		}
+	]
+}
