@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.product.propimg.upload
 */
 type TaobaoProductPropimgUploadAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoProductPropimgUploadResponse `json:"product_propimg_upload_response,omitempty"` 
     TaobaoProductPropimgUploadResponse
 }
 
-/* model for simplify = false
 type TaobaoProductPropimgUploadResponse struct {
+    XMLName xml.Name `xml:"product_propimg_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 支持返回产品属性图片中的：url,id,created,modified
     
-    ProductPropImg  *struct {
-        ProductPropImg  *ProductPropImg `json:"product_prop_img,omitempty"`
-    } `json:"product_prop_img,omitempty"`
+    ProductPropImg   *ProductPropImg `json:"product_prop_img,omitempty" xml:"product_prop_img,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoProductPropimgUploadResponse struct {
-
-    // 支持返回产品属性图片中的：url,id,created,modified
-    ProductPropImg   *ProductPropImg `json:"product_prop_img,omitempty"`
-
 }

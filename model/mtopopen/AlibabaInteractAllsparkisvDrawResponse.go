@@ -1,6 +1,8 @@
 package mtopopen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.allsparkisv.draw
 */
 type AlibabaInteractAllsparkisvDrawAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractAllsparkisvDrawResponse `json:"alibaba_interact_allsparkisv_draw_response,omitempty"` 
     AlibabaInteractAllsparkisvDrawResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractAllsparkisvDrawResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_allsparkisv_draw_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // ddd
     
-    Ddd   string `json:"ddd,omitempty"`
+    Ddd   string `json:"ddd,omitempty" xml:"ddd,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractAllsparkisvDrawResponse struct {
-
-    // ddd
-    Ddd   string `json:"ddd,omitempty"`
-
 }

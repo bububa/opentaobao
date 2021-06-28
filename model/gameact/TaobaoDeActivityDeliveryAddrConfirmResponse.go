@@ -1,6 +1,8 @@
 package gameact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.de.activity.delivery.addr.confirm
 */
 type TaobaoDeActivityDeliveryAddrConfirmAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoDeActivityDeliveryAddrConfirmResponse `json:"de_activity_delivery_addr_confirm_response,omitempty"` 
     TaobaoDeActivityDeliveryAddrConfirmResponse
 }
 
-/* model for simplify = false
 type TaobaoDeActivityDeliveryAddrConfirmResponse struct {
+    XMLName xml.Name `xml:"de_activity_delivery_addr_confirm_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 更新或确认收件地址
     
-    UpdateDeliveryAddressVo  *struct {
-        UpdateDeliveryAddressVO  *UpdateDeliveryAddressVO `json:"update_delivery_address_vo,omitempty"`
-    } `json:"update_delivery_address_vo,omitempty"`
+    UpdateDeliveryAddressVo   *UpdateDeliveryAddressVO `json:"update_delivery_address_vo,omitempty" xml:"update_delivery_address_vo,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoDeActivityDeliveryAddrConfirmResponse struct {
-
-    // 更新或确认收件地址
-    UpdateDeliveryAddressVo   *UpdateDeliveryAddressVO `json:"update_delivery_address_vo,omitempty"`
-
 }

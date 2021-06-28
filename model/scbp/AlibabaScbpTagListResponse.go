@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.tag.list
 */
 type AlibabaScbpTagListAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpTagListResponse `json:"alibaba_scbp_tag_list_response,omitempty"` 
     AlibabaScbpTagListResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpTagListResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_tag_list_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 所有分组
     
-    TagList  struct {
-        TagGroup  []TagGroup `json:"tag_group,omitempty"`
-    } `json:"tag_list,omitempty"`
+    TagList   []TagGroup `json:"tag_list,omitempty" xml:"tag_list>tag_group,omitempty"`
     
-
-}
-*/
-
-type AlibabaScbpTagListResponse struct {
-
-    // 所有分组
-    TagList   []TagGroup `json:"tag_list,omitempty"`
-
+    
 }

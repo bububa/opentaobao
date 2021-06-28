@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.mixnick.change
 */
 type TaobaoMixnickChangeAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoMixnickChangeResponse `json:"mixnick_change_response,omitempty"` 
     TaobaoMixnickChangeResponse
 }
 
-/* model for simplify = false
 type TaobaoMixnickChangeResponse struct {
+    XMLName xml.Name `xml:"mixnick_change_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    RetSuccess   bool `json:"ret_success,omitempty"`
-    
+    RetSuccess   bool `json:"ret_success,omitempty" xml:"ret_success,omitempty"`
 
+    
     // 根据dstAppkey算出的mixnick
     
-    Mixnick   string `json:"mixnick,omitempty"`
+    Mixnick   string `json:"mixnick,omitempty" xml:"mixnick,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoMixnickChangeResponse struct {
-
-    // 是否成功
-    RetSuccess   bool `json:"ret_success,omitempty"`
-
-    // 根据dstAppkey算出的mixnick
-    Mixnick   string `json:"mixnick,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.keywordids.deleted.get
 */
 type TaobaoSimbaKeywordidsDeletedGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaKeywordidsDeletedGetResponse `json:"simba_keywordids_deleted_get_response,omitempty"` 
     TaobaoSimbaKeywordidsDeletedGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaKeywordidsDeletedGetResponse struct {
+    XMLName xml.Name `xml:"simba_keywordids_deleted_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 词ID列表
     
-    DeletedKeywordIds  struct {
-        Number  []int64 `json:"int64,omitempty"`
-    } `json:"deleted_keyword_ids,omitempty"`
+    DeletedKeywordIds   []int64 `json:"deleted_keyword_ids,omitempty" xml:"deleted_keyword_ids>int64,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaKeywordidsDeletedGetResponse struct {
-
-    // 词ID列表
-    DeletedKeywordIds   []int64 `json:"deleted_keyword_ids,omitempty"`
-
+    
 }

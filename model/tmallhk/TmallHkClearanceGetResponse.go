@@ -1,6 +1,8 @@
 package tmallhk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.hk.clearance.get
 */
 type TmallHkClearanceGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallHkClearanceGetResponse `json:"tmall_hk_clearance_get_response,omitempty"` 
     TmallHkClearanceGetResponse
 }
 
-/* model for simplify = false
 type TmallHkClearanceGetResponse struct {
+    XMLName xml.Name `xml:"tmall_hk_clearance_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 查询结果对象
     
-    Result  *struct {
-        CertifyQueryResult  *CertifyQueryResult `json:"certify_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CertifyQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallHkClearanceGetResponse struct {
-
-    // 查询结果对象
-    Result   *CertifyQueryResult `json:"result,omitempty"`
-
 }

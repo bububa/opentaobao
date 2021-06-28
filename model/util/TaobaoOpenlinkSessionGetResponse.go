@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.openlink.session.get
 */
 type TaobaoOpenlinkSessionGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenlinkSessionGetResponse `json:"openlink_session_get_response,omitempty"` 
     TaobaoOpenlinkSessionGetResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenlinkSessionGetResponse struct {
+    XMLName xml.Name `xml:"openlink_session_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoOpenlinkSessionGetResult  *TaobaoOpenlinkSessionGetResult `json:"taobao_openlink_session_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoOpenlinkSessionGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenlinkSessionGetResponse struct {
-
-    // result
-    Result   *TaobaoOpenlinkSessionGetResult `json:"result,omitempty"`
-
 }

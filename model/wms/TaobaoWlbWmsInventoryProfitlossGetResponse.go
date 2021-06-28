@@ -1,6 +1,8 @@
 package wms
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wlb.wms.inventory.profitloss.get
 */
 type TaobaoWlbWmsInventoryProfitlossGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbWmsInventoryProfitlossGetResponse `json:"wlb_wms_inventory_profitloss_get_response,omitempty"` 
     TaobaoWlbWmsInventoryProfitlossGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbWmsInventoryProfitlossGetResponse struct {
+    XMLName xml.Name `xml:"wlb_wms_inventory_profitloss_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 损益信息
     
-    ProfitLossInfo  *struct {
-        CainiaoInventoryProfitlossProfitlossinfo  *CainiaoInventoryProfitlossProfitlossinfo `json:"cainiao_inventory_profitloss_profitlossinfo,omitempty"`
-    } `json:"profit_loss_info,omitempty"`
+    ProfitLossInfo   *CainiaoInventoryProfitlossProfitlossinfo `json:"profit_loss_info,omitempty" xml:"profit_loss_info,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbWmsInventoryProfitlossGetResponse struct {
-
-    // 损益信息
-    ProfitLossInfo   *CainiaoInventoryProfitlossProfitlossinfo `json:"profit_loss_info,omitempty"`
-
 }

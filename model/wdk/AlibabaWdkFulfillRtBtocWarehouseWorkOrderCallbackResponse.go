@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ alibaba.wdk.fulfill.rt.btoc.warehouse.work.order.callback
 */
 type AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackResponse `json:"alibaba_wdk_fulfill_rt_btoc_warehouse_work_order_callback_response,omitempty"` 
     AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_fulfill_rt_btoc_warehouse_work_order_callback_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 响应提示信息
     
-    RespMessage   string `json:"resp_message,omitempty"`
-    
+    RespMessage   string `json:"resp_message,omitempty" xml:"resp_message,omitempty"`
 
+    
     // 响应code
     
-    RespCode   string `json:"resp_code,omitempty"`
+    RespCode   string `json:"resp_code,omitempty" xml:"resp_code,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkFulfillRtBtocWarehouseWorkOrderCallbackResponse struct {
-
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 响应提示信息
-    RespMessage   string `json:"resp_message,omitempty"`
-
-    // 响应code
-    RespCode   string `json:"resp_code,omitempty"`
-
 }

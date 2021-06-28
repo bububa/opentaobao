@@ -1,6 +1,8 @@
 package qianniu
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -13,66 +15,41 @@ taobao.qianniu.cloudkefu.onlinestatuslog.get
 */
 type TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQianniuCloudkefuOnlinestatuslogGetResponse `json:"qianniu_cloudkefu_onlinestatuslog_get_response,omitempty"` 
     TaobaoQianniuCloudkefuOnlinestatuslogGetResponse
 }
 
-/* model for simplify = false
 type TaobaoQianniuCloudkefuOnlinestatuslogGetResponse struct {
+    XMLName xml.Name `xml:"qianniu_cloudkefu_onlinestatuslog_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // module
     
-    RecordList  struct {
-        RecordList  []RecordList `json:"record_list,omitempty"`
-    } `json:"record_list,omitempty"`
+    RecordList   []RecordList `json:"record_list,omitempty" xml:"record_list>record_list,omitempty"`
     
-
+    
     // cause
     
-    Cause   string `json:"cause,omitempty"`
-    
+    Cause   string `json:"cause,omitempty" xml:"cause,omitempty"`
 
+    
     // errorMap
     
-    ErrorMap   string `json:"error_map,omitempty"`
-    
+    ErrorMap   string `json:"error_map,omitempty" xml:"error_map,omitempty"`
 
+    
     // attachment
     
-    Attachment   string `json:"attachment,omitempty"`
-    
+    Attachment   string `json:"attachment,omitempty" xml:"attachment,omitempty"`
 
+    
     // solution
     
-    Solution   string `json:"solution,omitempty"`
-    
+    Solution   string `json:"solution,omitempty" xml:"solution,omitempty"`
 
+    
     // version
     
-    Version   int64 `json:"version,omitempty"`
+    Version   int64 `json:"version,omitempty" xml:"version,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQianniuCloudkefuOnlinestatuslogGetResponse struct {
-
-    // module
-    RecordList   []RecordList `json:"record_list,omitempty"`
-
-    // cause
-    Cause   string `json:"cause,omitempty"`
-
-    // errorMap
-    ErrorMap   string `json:"error_map,omitempty"`
-
-    // attachment
-    Attachment   string `json:"attachment,omitempty"`
-
-    // solution
-    Solution   string `json:"solution,omitempty"`
-
-    // version
-    Version   int64 `json:"version,omitempty"`
-
 }

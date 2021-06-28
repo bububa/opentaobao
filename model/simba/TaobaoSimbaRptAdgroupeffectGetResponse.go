@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.simba.rpt.adgroupeffect.get
 */
 type TaobaoSimbaRptAdgroupeffectGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaRptAdgroupeffectGetResponse `json:"simba_rpt_adgroupeffect_get_response,omitempty"` 
     TaobaoSimbaRptAdgroupeffectGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaRptAdgroupeffectGetResponse struct {
+    XMLName xml.Name `xml:"simba_rpt_adgroupeffect_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推广组效果报表数据对象
     
-    RptAdgroupEffectList   string `json:"rpt_adgroup_effect_list,omitempty"`
+    RptAdgroupEffectList   string `json:"rpt_adgroup_effect_list,omitempty" xml:"rpt_adgroup_effect_list,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaRptAdgroupeffectGetResponse struct {
-
-    // 推广组效果报表数据对象
-    RptAdgroupEffectList   string `json:"rpt_adgroup_effect_list,omitempty"`
-
 }

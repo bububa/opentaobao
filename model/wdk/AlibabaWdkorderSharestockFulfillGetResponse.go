@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdkorder.sharestock.fulfill.get
 */
 type AlibabaWdkorderSharestockFulfillGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkorderSharestockFulfillGetResponse `json:"alibaba_wdkorder_sharestock_fulfill_get_response,omitempty"` 
     AlibabaWdkorderSharestockFulfillGetResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkorderSharestockFulfillGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdkorder_sharestock_fulfill_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用结果
     
-    Result  *struct {
-        MaochaoOrderFulfillQueryResult  *MaochaoOrderFulfillQueryResult `json:"maochao_order_fulfill_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *MaochaoOrderFulfillQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkorderSharestockFulfillGetResponse struct {
-
-    // 调用结果
-    Result   *MaochaoOrderFulfillQueryResult `json:"result,omitempty"`
-
 }

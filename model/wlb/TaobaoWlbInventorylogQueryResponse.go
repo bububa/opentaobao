@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.wlb.inventorylog.query
 */
 type TaobaoWlbInventorylogQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbInventorylogQueryResponse `json:"wlb_inventorylog_query_response,omitempty"` 
     TaobaoWlbInventorylogQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbInventorylogQueryResponse struct {
+    XMLName xml.Name `xml:"wlb_inventorylog_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 记录数
     
-    TotalCount   int64 `json:"total_count,omitempty"`
-    
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 
+    
     // 库存变更记录
     
-    InventoryLogList  struct {
-        WlbItemInventoryLog  []WlbItemInventoryLog `json:"wlb_item_inventory_log,omitempty"`
-    } `json:"inventory_log_list,omitempty"`
+    InventoryLogList   []WlbItemInventoryLog `json:"inventory_log_list,omitempty" xml:"inventory_log_list>wlb_item_inventory_log,omitempty"`
     
-
-}
-*/
-
-type TaobaoWlbInventorylogQueryResponse struct {
-
-    // 记录数
-    TotalCount   int64 `json:"total_count,omitempty"`
-
-    // 库存变更记录
-    InventoryLogList   []WlbItemInventoryLog `json:"inventory_log_list,omitempty"`
-
+    
 }

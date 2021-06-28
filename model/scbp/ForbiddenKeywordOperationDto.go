@@ -1,21 +1,11 @@
 package scbp
 
 // ForbiddenKeywordOperationDto 
-/* model for simplify = false
 type ForbiddenKeywordOperationDto struct {
 
     // 关键词
     
-    Keyword   string `json:"keyword,omitempty"`
+    Keyword   string `json:"keyword,omitempty" xml:"keyword,omitempty"`
     
-
-}
-*/
-
-// ForbiddenKeywordOperationDto 
-type ForbiddenKeywordOperationDto struct {
-
-    // 关键词
-    Keyword   string `json:"keyword,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package security
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.security.jaq.rp.cloud.ocr.check
 */
 type AlibabaSecurityJaqRpCloudOcrCheckAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSecurityJaqRpCloudOcrCheckResponse `json:"alibaba_security_jaq_rp_cloud_ocr_check_response,omitempty"` 
     AlibabaSecurityJaqRpCloudOcrCheckResponse
 }
 
-/* model for simplify = false
 type AlibabaSecurityJaqRpCloudOcrCheckResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_rp_cloud_ocr_check_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Data  *struct {
-        RpidCard  *RpidCard `json:"rpid_card,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *RpidCard `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSecurityJaqRpCloudOcrCheckResponse struct {
-
-    // result
-    Data   *RpidCard `json:"data,omitempty"`
-
 }

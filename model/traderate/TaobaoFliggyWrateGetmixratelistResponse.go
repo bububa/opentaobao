@@ -1,6 +1,8 @@
 package traderate
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.fliggy.wrate.getmixratelist
 */
 type TaobaoFliggyWrateGetmixratelistAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFliggyWrateGetmixratelistResponse `json:"fliggy_wrate_getmixratelist_response,omitempty"` 
     TaobaoFliggyWrateGetmixratelistResponse
 }
 
-/* model for simplify = false
 type TaobaoFliggyWrateGetmixratelistResponse struct {
+    XMLName xml.Name `xml:"fliggy_wrate_getmixratelist_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        TaobaoFliggyWrateGetmixratelistResult  *TaobaoFliggyWrateGetmixratelistResult `json:"taobao_fliggy_wrate_getmixratelist_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoFliggyWrateGetmixratelistResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFliggyWrateGetmixratelistResponse struct {
-
-    // 接口返回model
-    Result   *TaobaoFliggyWrateGetmixratelistResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package tmallsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,56 +14,36 @@ alibaba.dchain.miaoshifu.customer.complaints.put
 */
 type AlibabaDchainMiaoshifuCustomerComplaintsPutAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaDchainMiaoshifuCustomerComplaintsPutResponse `json:"alibaba_dchain_miaoshifu_customer_complaints_put_response,omitempty"` 
     AlibabaDchainMiaoshifuCustomerComplaintsPutResponse
 }
 
-/* model for simplify = false
 type AlibabaDchainMiaoshifuCustomerComplaintsPutResponse struct {
+    XMLName xml.Name `xml:"alibaba_dchain_miaoshifu_customer_complaints_put_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 对外展示的错误信息
     
-    DisplayMsg   string `json:"display_msg,omitempty"`
-    
+    DisplayMsg   string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
 
+    
     // 是否成功，true：成功，false失败，当未false时，result_value为null
     
-    ResultSuccess   bool `json:"result_success,omitempty"`
-    
+    ResultSuccess   bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 
+    
     // 错误码，异常返回码
     
-    ResultErrorCode   string `json:"result_error_code,omitempty"`
-    
+    ResultErrorCode   string `json:"result_error_code,omitempty" xml:"result_error_code,omitempty"`
 
+    
     // 客诉记录唯一标识ID
     
-    ResultValue   int64 `json:"result_value,omitempty"`
-    
+    ResultValue   int64 `json:"result_value,omitempty" xml:"result_value,omitempty"`
 
+    
     // 错误信息
     
-    ResultErrorMsg   string `json:"result_error_msg,omitempty"`
+    ResultErrorMsg   string `json:"result_error_msg,omitempty" xml:"result_error_msg,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaDchainMiaoshifuCustomerComplaintsPutResponse struct {
-
-    // 对外展示的错误信息
-    DisplayMsg   string `json:"display_msg,omitempty"`
-
-    // 是否成功，true：成功，false失败，当未false时，result_value为null
-    ResultSuccess   bool `json:"result_success,omitempty"`
-
-    // 错误码，异常返回码
-    ResultErrorCode   string `json:"result_error_code,omitempty"`
-
-    // 客诉记录唯一标识ID
-    ResultValue   int64 `json:"result_value,omitempty"`
-
-    // 错误信息
-    ResultErrorMsg   string `json:"result_error_msg,omitempty"`
-
 }

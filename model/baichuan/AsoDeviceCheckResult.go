@@ -1,53 +1,31 @@
 package baichuan
 
 // AsoDeviceCheckResult 
-/* model for simplify = false
 type AsoDeviceCheckResult struct {
 
     // isNewDevice
     
-    IsNewDevice   bool `json:"is_new_device,omitempty"`
+    IsNewDevice   bool `json:"is_new_device,omitempty" xml:"is_new_device,omitempty"`
     
 
     // imei
     
-    Imei   string `json:"imei,omitempty"`
+    Imei   string `json:"imei,omitempty" xml:"imei,omitempty"`
     
 
     // imsi
     
-    Imsi   string `json:"imsi,omitempty"`
+    Imsi   string `json:"imsi,omitempty" xml:"imsi,omitempty"`
     
 
     // idfa
     
-    Idfa   string `json:"idfa,omitempty"`
+    Idfa   string `json:"idfa,omitempty" xml:"idfa,omitempty"`
     
 
     // isMyChannal
     
-    IsMyChannal   bool `json:"is_my_channal,omitempty"`
+    IsMyChannal   bool `json:"is_my_channal,omitempty" xml:"is_my_channal,omitempty"`
     
-
-}
-*/
-
-// AsoDeviceCheckResult 
-type AsoDeviceCheckResult struct {
-
-    // isNewDevice
-    IsNewDevice   bool `json:"is_new_device,omitempty"`
-
-    // imei
-    Imei   string `json:"imei,omitempty"`
-
-    // imsi
-    Imsi   string `json:"imsi,omitempty"`
-
-    // idfa
-    Idfa   string `json:"idfa,omitempty"`
-
-    // isMyChannal
-    IsMyChannal   bool `json:"is_my_channal,omitempty"`
 
 }

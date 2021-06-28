@@ -1,6 +1,8 @@
 package blackvip
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.blackvip.userinfo.get
 */
 type TaobaoBlackvipUserinfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBlackvipUserinfoGetResponse `json:"blackvip_userinfo_get_response,omitempty"` 
     TaobaoBlackvipUserinfoGetResponse
 }
 
-/* model for simplify = false
 type TaobaoBlackvipUserinfoGetResponse struct {
+    XMLName xml.Name `xml:"blackvip_userinfo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果支持对象
     
-    Result  *struct {
-        ResultSupport  *ResultSupport `json:"result_support,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ResultSupport `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBlackvipUserinfoGetResponse struct {
-
-    // 结果支持对象
-    Result   *ResultSupport `json:"result,omitempty"`
-
 }

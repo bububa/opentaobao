@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -14,40 +16,26 @@ taobao.logistics.consign.tc.confirm
 */
 type TaobaoLogisticsConsignTcConfirmAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLogisticsConsignTcConfirmResponse `json:"logistics_consign_tc_confirm_response,omitempty"` 
     TaobaoLogisticsConsignTcConfirmResponse
 }
 
-/* model for simplify = false
 type TaobaoLogisticsConsignTcConfirmResponse struct {
+    XMLName xml.Name `xml:"logistics_consign_tc_confirm_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 菜鸟发货单据
     
-    OrderConsignCode   string `json:"order_consign_code,omitempty"`
-    
+    OrderConsignCode   string `json:"order_consign_code,omitempty" xml:"order_consign_code,omitempty"`
 
+    
     // 是否重试
     
-    Retry   bool `json:"retry,omitempty"`
-    
+    Retry   bool `json:"retry,omitempty" xml:"retry,omitempty"`
 
+    
     // 单次调用流程唯一id
     
-    TraceId   string `json:"trace_id,omitempty"`
+    TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoLogisticsConsignTcConfirmResponse struct {
-
-    // 菜鸟发货单据
-    OrderConsignCode   string `json:"order_consign_code,omitempty"`
-
-    // 是否重试
-    Retry   bool `json:"retry,omitempty"`
-
-    // 单次调用流程唯一id
-    TraceId   string `json:"trace_id,omitempty"`
-
 }

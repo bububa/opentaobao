@@ -1,29 +1,16 @@
 package promotion
 
 // LotteryActivityRelDto 
-/* model for simplify = false
 type LotteryActivityRelDto struct {
 
     // 外部业务活动id
     
-    RelationId   string `json:"relation_id,omitempty"`
+    RelationId   string `json:"relation_id,omitempty" xml:"relation_id,omitempty"`
     
 
     // 抽奖活动id
     
-    LotteryAcitivityId   int64 `json:"lottery_acitivity_id,omitempty"`
+    LotteryAcitivityId   int64 `json:"lottery_acitivity_id,omitempty" xml:"lottery_acitivity_id,omitempty"`
     
-
-}
-*/
-
-// LotteryActivityRelDto 
-type LotteryActivityRelDto struct {
-
-    // 外部业务活动id
-    RelationId   string `json:"relation_id,omitempty"`
-
-    // 抽奖活动id
-    LotteryAcitivityId   int64 `json:"lottery_acitivity_id,omitempty"`
 
 }

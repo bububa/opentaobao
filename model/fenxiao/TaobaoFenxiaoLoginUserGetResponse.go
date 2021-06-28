@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.fenxiao.login.user.get
 */
 type TaobaoFenxiaoLoginUserGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoLoginUserGetResponse `json:"fenxiao_login_user_get_response,omitempty"` 
     TaobaoFenxiaoLoginUserGetResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoLoginUserGetResponse struct {
+    XMLName xml.Name `xml:"fenxiao_login_user_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 登录用户信息
     
-    LoginUser  *struct {
-        LoginUser  *LoginUser `json:"login_user,omitempty"`
-    } `json:"login_user,omitempty"`
+    LoginUser   *LoginUser `json:"login_user,omitempty" xml:"login_user,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFenxiaoLoginUserGetResponse struct {
-
-    // 登录用户信息
-    LoginUser   *LoginUser `json:"login_user,omitempty"`
-
 }

@@ -1,47 +1,26 @@
 package wdk
 
 // AlibabaWdkSkuWarehouseskuQueryApiResult 
-/* model for simplify = false
 type AlibabaWdkSkuWarehouseskuQueryApiResult struct {
 
     // 错误编码
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // 错误内容
     
-    ErrMsg   string `json:"err_msg,omitempty"`
+    ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     
 
     // 数据集合
     
-    Models  struct {
-        WarehouseSkuDo  []WarehouseSkuDo `json:"warehouse_sku_do,omitempty"`
-    } `json:"models,omitempty"`
+    Models   []WarehouseSkuDo `json:"models,omitempty" xml:"models,omitempty"`
     
 
     // 调用是否成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// AlibabaWdkSkuWarehouseskuQueryApiResult 
-type AlibabaWdkSkuWarehouseskuQueryApiResult struct {
-
-    // 错误编码
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // 错误内容
-    ErrMsg   string `json:"err_msg,omitempty"`
-
-    // 数据集合
-    Models   []WarehouseSkuDo `json:"models,omitempty"`
-
-    // 调用是否成功
-    Success   bool `json:"success,omitempty"`
 
 }

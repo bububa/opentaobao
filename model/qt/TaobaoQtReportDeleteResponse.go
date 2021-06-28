@@ -1,6 +1,8 @@
 package qt
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.qt.report.delete
 */
 type TaobaoQtReportDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQtReportDeleteResponse `json:"qt_report_delete_response,omitempty"` 
     TaobaoQtReportDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoQtReportDeleteResponse struct {
+    XMLName xml.Name `xml:"qt_report_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQtReportDeleteResponse struct {
-
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

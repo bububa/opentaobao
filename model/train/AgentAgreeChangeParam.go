@@ -1,79 +1,46 @@
 package train
 
 // AgentAgreeChangeParam 
-/* model for simplify = false
 type AgentAgreeChangeParam struct {
 
     // 申请单id
     
-    ApplyId   int64 `json:"apply_id,omitempty"`
+    ApplyId   int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     
 
     // 支付宝交易流水号
     
-    AlipayTradeNo   string `json:"alipay_trade_no,omitempty"`
+    AlipayTradeNo   string `json:"alipay_trade_no,omitempty" xml:"alipay_trade_no,omitempty"`
     
 
     // 扩展参数
     
-    ExtendParam   string `json:"extend_param,omitempty"`
+    ExtendParam   string `json:"extend_param,omitempty" xml:"extend_param,omitempty"`
     
 
     // 备注
     
-    Remark   string `json:"remark,omitempty"`
+    Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     
 
     // 代理商id
     
-    SellerId   int64 `json:"seller_id,omitempty"`
+    SellerId   int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
     
 
     // 主订单
     
-    MainBizOrderId   int64 `json:"main_biz_order_id,omitempty"`
+    MainBizOrderId   int64 `json:"main_biz_order_id,omitempty" xml:"main_biz_order_id,omitempty"`
     
 
     // 代理商改签票信息
     
-    Tickets  struct {
-        ChangeTicketInfo  []ChangeTicketInfo `json:"change_ticket_info,omitempty"`
-    } `json:"tickets,omitempty"`
+    Tickets   []ChangeTicketInfo `json:"tickets,omitempty" xml:"tickets,omitempty"`
     
 
     // 支付宝账号
     
-    AlipayAccount   string `json:"alipay_account,omitempty"`
+    AlipayAccount   string `json:"alipay_account,omitempty" xml:"alipay_account,omitempty"`
     
-
-}
-*/
-
-// AgentAgreeChangeParam 
-type AgentAgreeChangeParam struct {
-
-    // 申请单id
-    ApplyId   int64 `json:"apply_id,omitempty"`
-
-    // 支付宝交易流水号
-    AlipayTradeNo   string `json:"alipay_trade_no,omitempty"`
-
-    // 扩展参数
-    ExtendParam   string `json:"extend_param,omitempty"`
-
-    // 备注
-    Remark   string `json:"remark,omitempty"`
-
-    // 代理商id
-    SellerId   int64 `json:"seller_id,omitempty"`
-
-    // 主订单
-    MainBizOrderId   int64 `json:"main_biz_order_id,omitempty"`
-
-    // 代理商改签票信息
-    Tickets   []ChangeTicketInfo `json:"tickets,omitempty"`
-
-    // 支付宝账号
-    AlipayAccount   string `json:"alipay_account,omitempty"`
 
 }

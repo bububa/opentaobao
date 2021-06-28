@@ -1,6 +1,8 @@
 package taotv
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.taotv.video.playlist.all
 */
 type TaobaoTaotvVideoPlaylistAllAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTaotvVideoPlaylistAllResponse `json:"taotv_video_playlist_all_response,omitempty"` 
     TaobaoTaotvVideoPlaylistAllResponse
 }
 
-/* model for simplify = false
 type TaobaoTaotvVideoPlaylistAllResponse struct {
+    XMLName xml.Name `xml:"taotv_video_playlist_all_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoTaotvVideoPlaylistAllResult  *TaobaoTaotvVideoPlaylistAllResult `json:"taobao_taotv_video_playlist_all_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoTaotvVideoPlaylistAllResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTaotvVideoPlaylistAllResponse struct {
-
-    // result
-    Result   *TaobaoTaotvVideoPlaylistAllResult `json:"result,omitempty"`
-
 }

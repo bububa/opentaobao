@@ -1,29 +1,16 @@
 package simba
 
 // YesterdayInfo 
-/* model for simplify = false
 type YesterdayInfo struct {
 
     // 昨日点击量
     
-    Click   string `json:"click,omitempty"`
+    Click   string `json:"click,omitempty" xml:"click,omitempty"`
     
 
     // 昨日展现量
     
-    Impression   string `json:"impression,omitempty"`
+    Impression   string `json:"impression,omitempty" xml:"impression,omitempty"`
     
-
-}
-*/
-
-// YesterdayInfo 
-type YesterdayInfo struct {
-
-    // 昨日点击量
-    Click   string `json:"click,omitempty"`
-
-    // 昨日展现量
-    Impression   string `json:"impression,omitempty"`
 
 }

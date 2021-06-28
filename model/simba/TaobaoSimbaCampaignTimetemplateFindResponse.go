@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.campaign.timetemplate.find
 */
 type TaobaoSimbaCampaignTimetemplateFindAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaCampaignTimetemplateFindResponse `json:"simba_campaign_timetemplate_find_response,omitempty"` 
     TaobaoSimbaCampaignTimetemplateFindResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaCampaignTimetemplateFindResponse struct {
+    XMLName xml.Name `xml:"simba_campaign_timetemplate_find_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的推广组分页对象
     
-    Templates  struct {
-        ADGroupPage  []ADGroupPage `json:"ad_group_page,omitempty"`
-    } `json:"templates,omitempty"`
+    Templates   []ADGroupPage `json:"templates,omitempty" xml:"templates>ad_group_page,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaCampaignTimetemplateFindResponse struct {
-
-    // 返回的推广组分页对象
-    Templates   []ADGroupPage `json:"templates,omitempty"`
-
+    
 }

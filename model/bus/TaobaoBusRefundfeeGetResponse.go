@@ -1,6 +1,8 @@
 package bus
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.bus.refundfee.get
 */
 type TaobaoBusRefundfeeGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBusRefundfeeGetResponse `json:"bus_refundfee_get_response,omitempty"` 
     TaobaoBusRefundfeeGetResponse
 }
 
-/* model for simplify = false
 type TaobaoBusRefundfeeGetResponse struct {
+    XMLName xml.Name `xml:"bus_refundfee_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        B2BQueryRefundFeeRp  *B2BQueryRefundFeeRp `json:"b2b_query_refund_fee_rp,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *B2BQueryRefundFeeRp `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBusRefundfeeGetResponse struct {
-
-    // result
-    Result   *B2BQueryRefundFeeRp `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package flight
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.alitrip.ie.agent.refund.new.fillconfirmfee
 */
 type TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAlitripIeAgentRefundNewFillconfirmfeeResponse `json:"alitrip_ie_agent_refund_new_fillconfirmfee_response,omitempty"` 
     TaobaoAlitripIeAgentRefundNewFillconfirmfeeResponse
 }
 
-/* model for simplify = false
 type TaobaoAlitripIeAgentRefundNewFillconfirmfeeResponse struct {
+    XMLName xml.Name `xml:"alitrip_ie_agent_refund_new_fillconfirmfee_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        RefundOrderFillConfirmFeeRs  *RefundOrderFillConfirmFeeRs `json:"refund_order_fill_confirm_fee_rs,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *RefundOrderFillConfirmFeeRs `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAlitripIeAgentRefundNewFillconfirmfeeResponse struct {
-
-    // result
-    Result   *RefundOrderFillConfirmFeeRs `json:"result,omitempty"`
-
 }

@@ -1,53 +1,31 @@
 package trade
 
 // TmallAscpOrdersSaleCreateResultDo 
-/* model for simplify = false
 type TmallAscpOrdersSaleCreateResultDo struct {
 
     // errorMessage
     
-    ErrorMessage   string `json:"error_message,omitempty"`
+    ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     
 
     // module
     
-    Module   string `json:"module,omitempty"`
+    Module   string `json:"module,omitempty" xml:"module,omitempty"`
     
 
     // totalCount
     
-    TotalCount   int64 `json:"total_count,omitempty"`
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
     
 
     // errorCode
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// TmallAscpOrdersSaleCreateResultDo 
-type TmallAscpOrdersSaleCreateResultDo struct {
-
-    // errorMessage
-    ErrorMessage   string `json:"error_message,omitempty"`
-
-    // module
-    Module   string `json:"module,omitempty"`
-
-    // totalCount
-    TotalCount   int64 `json:"total_count,omitempty"`
-
-    // errorCode
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

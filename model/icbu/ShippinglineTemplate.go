@@ -1,29 +1,16 @@
 package icbu
 
 // ShippinglineTemplate 
-/* model for simplify = false
 type ShippinglineTemplate struct {
 
     // 运费模板id
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     
 
     // 运费模板名称
     
-    Title   string `json:"title,omitempty"`
+    Title   string `json:"title,omitempty" xml:"title,omitempty"`
     
-
-}
-*/
-
-// ShippinglineTemplate 
-type ShippinglineTemplate struct {
-
-    // 运费模板id
-    Id   int64 `json:"id,omitempty"`
-
-    // 运费模板名称
-    Title   string `json:"title,omitempty"`
 
 }

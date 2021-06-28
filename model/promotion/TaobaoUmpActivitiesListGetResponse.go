@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.ump.activities.list.get
 */
 type TaobaoUmpActivitiesListGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoUmpActivitiesListGetResponse `json:"ump_activities_list_get_response,omitempty"` 
     TaobaoUmpActivitiesListGetResponse
 }
 
-/* model for simplify = false
 type TaobaoUmpActivitiesListGetResponse struct {
+    XMLName xml.Name `xml:"ump_activities_list_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 营销活动列表！
     
-    Activities  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"activities,omitempty"`
+    Activities   []string `json:"activities,omitempty" xml:"activities>string,omitempty"`
     
-
-}
-*/
-
-type TaobaoUmpActivitiesListGetResponse struct {
-
-    // 营销活动列表！
-    Activities   []string `json:"activities,omitempty"`
-
+    
 }

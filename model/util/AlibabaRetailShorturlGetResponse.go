@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.retail.shorturl.get
 */
 type AlibabaRetailShorturlGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaRetailShorturlGetResponse `json:"alibaba_retail_shorturl_get_response,omitempty"` 
     AlibabaRetailShorturlGetResponse
 }
 
-/* model for simplify = false
 type AlibabaRetailShorturlGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_retail_shorturl_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaRetailShorturlGetResult  *AlibabaRetailShorturlGetResult `json:"alibaba_retail_shorturl_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaRetailShorturlGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaRetailShorturlGetResponse struct {
-
-    // result
-    Result   *AlibabaRetailShorturlGetResult `json:"result,omitempty"`
-
 }

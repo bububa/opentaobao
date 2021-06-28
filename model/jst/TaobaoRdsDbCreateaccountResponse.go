@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ rds创建数据库账户
 */
 type TaobaoRdsDbCreateaccountAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRdsDbCreateaccountResponse `json:"rds_db_createaccount_response,omitempty"` 
     TaobaoRdsDbCreateaccountResponse
 }
 
-/* model for simplify = false
 type TaobaoRdsDbCreateaccountResponse struct {
+    XMLName xml.Name `xml:"rds_db_createaccount_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoRdsDbCreateaccountResultSet  *TaobaoRdsDbCreateaccountResultSet `json:"taobao_rds_db_createaccount_result_set,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoRdsDbCreateaccountResultSet `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRdsDbCreateaccountResponse struct {
-
-    // result
-    Result   *TaobaoRdsDbCreateaccountResultSet `json:"result,omitempty"`
-
 }

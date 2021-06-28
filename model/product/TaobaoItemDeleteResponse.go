@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.item.delete
 */
 type TaobaoItemDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoItemDeleteResponse `json:"item_delete_response,omitempty"` 
     TaobaoItemDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoItemDeleteResponse struct {
+    XMLName xml.Name `xml:"item_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 被删除商品的相关信息
     
-    Item  *struct {
-        Item  *Item `json:"item,omitempty"`
-    } `json:"item,omitempty"`
+    Item   *Item `json:"item,omitempty" xml:"item,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoItemDeleteResponse struct {
-
-    // 被删除商品的相关信息
-    Item   *Item `json:"item,omitempty"`
-
 }

@@ -1,29 +1,16 @@
 package iot
 
 // RecipeIngredientDto 
-/* model for simplify = false
 type RecipeIngredientDto struct {
 
     // 参数名
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
 
     // 重量及单位
     
-    Weight   string `json:"weight,omitempty"`
+    Weight   string `json:"weight,omitempty" xml:"weight,omitempty"`
     
-
-}
-*/
-
-// RecipeIngredientDto 
-type RecipeIngredientDto struct {
-
-    // 参数名
-    Name   string `json:"name,omitempty"`
-
-    // 重量及单位
-    Weight   string `json:"weight,omitempty"`
 
 }

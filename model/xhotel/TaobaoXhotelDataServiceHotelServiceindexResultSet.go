@@ -1,47 +1,26 @@
 package xhotel
 
 // TaobaoXhotelDataServiceHotelServiceindexResultSet 
-/* model for simplify = false
 type TaobaoXhotelDataServiceHotelServiceindexResultSet struct {
 
     // firstResult
     
-    FirstResult  *struct {
-        TopAdsHtlDataQueryResult  *TopAdsHtlDataQueryResult `json:"top_ads_htl_data_query_result,omitempty"`
-    } `json:"first_result,omitempty"`
+    FirstResult   *TopAdsHtlDataQueryResult `json:"first_result,omitempty" xml:"first_result,omitempty"`
     
 
     // errorMsg
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     
 
     // errorCode
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// TaobaoXhotelDataServiceHotelServiceindexResultSet 
-type TaobaoXhotelDataServiceHotelServiceindexResultSet struct {
-
-    // firstResult
-    FirstResult   *TopAdsHtlDataQueryResult `json:"first_result,omitempty"`
-
-    // errorMsg
-    ErrorMsg   string `json:"error_msg,omitempty"`
-
-    // errorCode
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

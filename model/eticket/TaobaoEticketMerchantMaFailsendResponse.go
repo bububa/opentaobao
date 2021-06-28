@@ -1,6 +1,8 @@
 package eticket
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ taobao.eticket.merchant.ma.failsend
 */
 type TaobaoEticketMerchantMaFailsendAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoEticketMerchantMaFailsendResponse `json:"eticket_merchant_ma_failsend_response,omitempty"` 
     TaobaoEticketMerchantMaFailsendResponse
 }
 
-/* model for simplify = false
 type TaobaoEticketMerchantMaFailsendResponse struct {
+    XMLName xml.Name `xml:"eticket_merchant_ma_failsend_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 回复参数
     
-    RespBody  *struct {
-        SendFailCallbackResp  *SendFailCallbackResp `json:"send_fail_callback_resp,omitempty"`
-    } `json:"resp_body,omitempty"`
-    
+    RespBody   *SendFailCallbackResp `json:"resp_body,omitempty" xml:"resp_body,omitempty"`
 
+    
     // 子结果码
     
-    RetCode   string `json:"ret_code,omitempty"`
-    
+    RetCode   string `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 
+    
     // 子结果信息
     
-    RetMsg   string `json:"ret_msg,omitempty"`
+    RetMsg   string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoEticketMerchantMaFailsendResponse struct {
-
-    // 回复参数
-    RespBody   *SendFailCallbackResp `json:"resp_body,omitempty"`
-
-    // 子结果码
-    RetCode   string `json:"ret_code,omitempty"`
-
-    // 子结果信息
-    RetMsg   string `json:"ret_msg,omitempty"`
-
 }

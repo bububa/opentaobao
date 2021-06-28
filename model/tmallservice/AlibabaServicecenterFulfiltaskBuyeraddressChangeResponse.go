@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.servicecenter.fulfiltask.buyeraddress.change
 */
 type AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse `json:"alibaba_servicecenter_fulfiltask_buyeraddress_change_response,omitempty"` 
     AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse
 }
 
-/* model for simplify = false
 type AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse struct {
+    XMLName xml.Name `xml:"alibaba_servicecenter_fulfiltask_buyeraddress_change_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaServicecenterFulfiltaskBuyeraddressChangeResult  *AlibabaServicecenterFulfiltaskBuyeraddressChangeResult `json:"alibaba_servicecenter_fulfiltask_buyeraddress_change_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaServicecenterFulfiltaskBuyeraddressChangeResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaServicecenterFulfiltaskBuyeraddressChangeResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.target.ad.plan.crowd.id.get
 */
 type AlibabaScbpTargetAdPlanCrowdIdGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpTargetAdPlanCrowdIdGetResponse `json:"alibaba_scbp_target_ad_plan_crowd_id_get_response,omitempty"` 
     AlibabaScbpTargetAdPlanCrowdIdGetResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpTargetAdPlanCrowdIdGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_target_ad_plan_crowd_id_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果list
     
-    ResultList  struct {
-        CrowdView  []CrowdView `json:"crowd_view,omitempty"`
-    } `json:"result_list,omitempty"`
+    ResultList   []CrowdView `json:"result_list,omitempty" xml:"result_list>crowd_view,omitempty"`
     
-
-}
-*/
-
-type AlibabaScbpTargetAdPlanCrowdIdGetResponse struct {
-
-    // 结果list
-    ResultList   []CrowdView `json:"result_list,omitempty"`
-
+    
 }

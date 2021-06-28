@@ -1,6 +1,8 @@
 package tanx
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ dsp客户提交客户资质和行业资质
 */
 type TaobaoTanxQualificationAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTanxQualificationAddResponse `json:"tanx_qualification_add_response,omitempty"` 
     TaobaoTanxQualificationAddResponse
 }
 
-/* model for simplify = false
 type TaobaoTanxQualificationAddResponse struct {
+    XMLName xml.Name `xml:"tanx_qualification_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 返回id对应列表
     
-    IdList  struct {
-        Number  []int64 `json:"int64,omitempty"`
-    } `json:"id_list,omitempty"`
+    IdList   []int64 `json:"id_list,omitempty" xml:"id_list>int64,omitempty"`
     
-
-}
-*/
-
-type TaobaoTanxQualificationAddResponse struct {
-
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 返回id对应列表
-    IdList   []int64 `json:"id_list,omitempty"`
-
+    
 }

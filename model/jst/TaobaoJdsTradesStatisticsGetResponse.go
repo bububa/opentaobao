@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.jds.trades.statistics.get
 */
 type TaobaoJdsTradesStatisticsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJdsTradesStatisticsGetResponse `json:"jds_trades_statistics_get_response,omitempty"` 
     TaobaoJdsTradesStatisticsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoJdsTradesStatisticsGetResponse struct {
+    XMLName xml.Name `xml:"jds_trades_statistics_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订单状态计数值
     
-    StatusInfos  struct {
-        TradeStat  []TradeStat `json:"trade_stat,omitempty"`
-    } `json:"status_infos,omitempty"`
+    StatusInfos   []TradeStat `json:"status_infos,omitempty" xml:"status_infos>trade_stat,omitempty"`
     
-
-}
-*/
-
-type TaobaoJdsTradesStatisticsGetResponse struct {
-
-    // 订单状态计数值
-    StatusInfos   []TradeStat `json:"status_infos,omitempty"`
-
+    
 }

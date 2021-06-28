@@ -1,6 +1,8 @@
 package qianniu
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qianniu.buyer.tag.get
 */
 type TaobaoQianniuBuyerTagGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQianniuBuyerTagGetResponse `json:"qianniu_buyer_tag_get_response,omitempty"` 
     TaobaoQianniuBuyerTagGetResponse
 }
 
-/* model for simplify = false
 type TaobaoQianniuBuyerTagGetResponse struct {
+    XMLName xml.Name `xml:"qianniu_buyer_tag_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户tag信息
     
-    UserTagInfo  *struct {
-        UserTagQueryResult  *UserTagQueryResult `json:"user_tag_query_result,omitempty"`
-    } `json:"user_tag_info,omitempty"`
+    UserTagInfo   *UserTagQueryResult `json:"user_tag_info,omitempty" xml:"user_tag_info,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQianniuBuyerTagGetResponse struct {
-
-    // 用户tag信息
-    UserTagInfo   *UserTagQueryResult `json:"user_tag_info,omitempty"`
-
 }

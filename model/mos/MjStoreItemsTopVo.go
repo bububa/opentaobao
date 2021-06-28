@@ -1,55 +1,31 @@
 package mos
 
 // MjStoreItemsTopVo 
-/* model for simplify = false
 type MjStoreItemsTopVo struct {
 
     // 商品列表
     
-    ItemList  struct {
-        MjItemTopVo  []MjItemTopVo `json:"mj_item_top_vo,omitempty"`
-    } `json:"item_list,omitempty"`
+    ItemList   []MjItemTopVo `json:"item_list,omitempty" xml:"item_list,omitempty"`
     
 
     // 专柜id
     
-    StoreId   int64 `json:"store_id,omitempty"`
+    StoreId   int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
     
 
     // 专柜名称
     
-    StoreName   string `json:"store_name,omitempty"`
+    StoreName   string `json:"store_name,omitempty" xml:"store_name,omitempty"`
     
 
     // uuid
     
-    Uuid   string `json:"uuid,omitempty"`
+    Uuid   string `json:"uuid,omitempty" xml:"uuid,omitempty"`
     
 
     // bucketId
     
-    BucketId   string `json:"bucket_id,omitempty"`
+    BucketId   string `json:"bucket_id,omitempty" xml:"bucket_id,omitempty"`
     
-
-}
-*/
-
-// MjStoreItemsTopVo 
-type MjStoreItemsTopVo struct {
-
-    // 商品列表
-    ItemList   []MjItemTopVo `json:"item_list,omitempty"`
-
-    // 专柜id
-    StoreId   int64 `json:"store_id,omitempty"`
-
-    // 专柜名称
-    StoreName   string `json:"store_name,omitempty"`
-
-    // uuid
-    Uuid   string `json:"uuid,omitempty"`
-
-    // bucketId
-    BucketId   string `json:"bucket_id,omitempty"`
 
 }

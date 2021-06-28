@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qimen.returnpackage.report
 */
 type TaobaoQimenReturnpackageReportAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenReturnpackageReportResponse `json:"qimen_returnpackage_report_response,omitempty"` 
     TaobaoQimenReturnpackageReportResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenReturnpackageReportResponse struct {
+    XMLName xml.Name `xml:"qimen_returnpackage_report_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenReturnpackageReportResponse struct {
-
-    // 
-    Response   *Response `json:"response,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.product.specs.ticket.get
 */
 type TmallProductSpecsTicketGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallProductSpecsTicketGetResponse `json:"tmall_product_specs_ticket_get_response,omitempty"` 
     TmallProductSpecsTicketGetResponse
 }
 
-/* model for simplify = false
 type TmallProductSpecsTicketGetResponse struct {
+    XMLName xml.Name `xml:"tmall_product_specs_ticket_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 产品规格审核单信息
     
-    Tickets  struct {
-        Ticket  []Ticket `json:"ticket,omitempty"`
-    } `json:"tickets,omitempty"`
+    Tickets   []Ticket `json:"tickets,omitempty" xml:"tickets>ticket,omitempty"`
     
-
-}
-*/
-
-type TmallProductSpecsTicketGetResponse struct {
-
-    // 产品规格审核单信息
-    Tickets   []Ticket `json:"tickets,omitempty"`
-
+    
 }

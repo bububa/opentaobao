@@ -1,45 +1,26 @@
 package baoxian
 
 // MtopResult 
-/* model for simplify = false
 type MtopResult struct {
 
     // model
     
-    Model   string `json:"model,omitempty"`
+    Model   string `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // errorCode
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // errorMsg
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     
 
     // isSuccess
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
     
-
-}
-*/
-
-// MtopResult 
-type MtopResult struct {
-
-    // model
-    Model   string `json:"model,omitempty"`
-
-    // errorCode
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // errorMsg
-    ErrorMsg   string `json:"error_msg,omitempty"`
-
-    // isSuccess
-    IsSuccess   bool `json:"is_success,omitempty"`
 
 }

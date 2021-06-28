@@ -1,29 +1,16 @@
 package baichuan
 
 // ResultCode 
-/* model for simplify = false
 type ResultCode struct {
 
     // message
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
     
 
     // code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
-
-}
-*/
-
-// ResultCode 
-type ResultCode struct {
-
-    // message
-    Message   string `json:"message,omitempty"`
-
-    // code
-    Code   string `json:"code,omitempty"`
 
 }

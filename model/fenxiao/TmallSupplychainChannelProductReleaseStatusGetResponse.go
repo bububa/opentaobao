@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.supplychain.channel.product.release.status.get
 */
 type TmallSupplychainChannelProductReleaseStatusGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallSupplychainChannelProductReleaseStatusGetResponse `json:"tmall_supplychain_channel_product_release_status_get_response,omitempty"` 
     TmallSupplychainChannelProductReleaseStatusGetResponse
 }
 
-/* model for simplify = false
 type TmallSupplychainChannelProductReleaseStatusGetResponse struct {
+    XMLName xml.Name `xml:"tmall_supplychain_channel_product_release_status_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异步获取历史数据接口返回结果
     
-    Result  *struct {
-        TmallSupplychainChannelProductReleaseStatusGetResultDto  *TmallSupplychainChannelProductReleaseStatusGetResultDto `json:"tmall_supplychain_channel_product_release_status_get_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallSupplychainChannelProductReleaseStatusGetResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallSupplychainChannelProductReleaseStatusGetResponse struct {
-
-    // 异步获取历史数据接口返回结果
-    Result   *TmallSupplychainChannelProductReleaseStatusGetResultDto `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.coupon.template.update
 */
 type AlibabaWdkCouponTemplateUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkCouponTemplateUpdateResponse `json:"alibaba_wdk_coupon_template_update_response,omitempty"` 
     AlibabaWdkCouponTemplateUpdateResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkCouponTemplateUpdateResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_coupon_template_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        AlibabaWdkCouponTemplateUpdateApiResult  *AlibabaWdkCouponTemplateUpdateApiResult `json:"alibaba_wdk_coupon_template_update_api_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaWdkCouponTemplateUpdateApiResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkCouponTemplateUpdateResponse struct {
-
-    // 结果
-    Result   *AlibabaWdkCouponTemplateUpdateApiResult `json:"result,omitempty"`
-
 }

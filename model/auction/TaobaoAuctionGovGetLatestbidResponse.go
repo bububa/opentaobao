@@ -1,6 +1,8 @@
 package auction
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.auction.gov.get.latestbid
 */
 type TaobaoAuctionGovGetLatestbidAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAuctionGovGetLatestbidResponse `json:"auction_gov_get_latestbid_response,omitempty"` 
     TaobaoAuctionGovGetLatestbidResponse
 }
 
-/* model for simplify = false
 type TaobaoAuctionGovGetLatestbidResponse struct {
+    XMLName xml.Name `xml:"auction_gov_get_latestbid_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        Result4Top  *Result4Top `json:"result4top,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *Result4Top `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAuctionGovGetLatestbidResponse struct {
-
-    // result
-    Result   *Result4Top `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.ta.voice.num.doublecall
 */
 type AlibabaAliqinTaVoiceNumDoublecallAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinTaVoiceNumDoublecallResponse `json:"alibaba_aliqin_ta_voice_num_doublecall_response,omitempty"` 
     AlibabaAliqinTaVoiceNumDoublecallResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinTaVoiceNumDoublecallResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_ta_voice_num_doublecall_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回参数
     
-    Result  *struct {
-        AlibabaAliqinTaVoiceNumDoublecallBizResult  *AlibabaAliqinTaVoiceNumDoublecallBizResult `json:"alibaba_aliqin_ta_voice_num_doublecall_biz_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaAliqinTaVoiceNumDoublecallBizResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinTaVoiceNumDoublecallResponse struct {
-
-    // 接口返回参数
-    Result   *AlibabaAliqinTaVoiceNumDoublecallBizResult `json:"result,omitempty"`
-
 }

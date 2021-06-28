@@ -1,6 +1,8 @@
 package alsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alsc.crm.recharge.accountflows.get
 */
 type AlibabaAlscCrmRechargeAccountflowsGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlscCrmRechargeAccountflowsGetResponse `json:"alibaba_alsc_crm_recharge_accountflows_get_response,omitempty"` 
     AlibabaAlscCrmRechargeAccountflowsGetResponse
 }
 
-/* model for simplify = false
 type AlibabaAlscCrmRechargeAccountflowsGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_alsc_crm_recharge_accountflows_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 分页返回模型
     
-    Result  *struct {
-        CommonPageResult  *CommonPageResult `json:"common_page_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CommonPageResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlscCrmRechargeAccountflowsGetResponse struct {
-
-    // 分页返回模型
-    Result   *CommonPageResult `json:"result,omitempty"`
-
 }

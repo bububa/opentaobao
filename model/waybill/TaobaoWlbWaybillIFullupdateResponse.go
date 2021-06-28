@@ -1,6 +1,8 @@
 package waybill
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wlb.waybill.i.fullupdate
 */
 type TaobaoWlbWaybillIFullupdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbWaybillIFullupdateResponse `json:"wlb_waybill_i_fullupdate_response,omitempty"` 
     TaobaoWlbWaybillIFullupdateResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbWaybillIFullupdateResponse struct {
+    XMLName xml.Name `xml:"wlb_waybill_i_fullupdate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 更新接口出参
     
-    WaybillApplyUpdateInfo  *struct {
-        WaybillApplyUpdateInfo  *WaybillApplyUpdateInfo `json:"waybill_apply_update_info,omitempty"`
-    } `json:"waybill_apply_update_info,omitempty"`
+    WaybillApplyUpdateInfo   *WaybillApplyUpdateInfo `json:"waybill_apply_update_info,omitempty" xml:"waybill_apply_update_info,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbWaybillIFullupdateResponse struct {
-
-    // 更新接口出参
-    WaybillApplyUpdateInfo   *WaybillApplyUpdateInfo `json:"waybill_apply_update_info,omitempty"`
-
 }

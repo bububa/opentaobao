@@ -1,47 +1,26 @@
 package simba
 
 // TaobaoSimbaSearchtagtemplateGetResult 
-/* model for simplify = false
 type TaobaoSimbaSearchtagtemplateGetResult struct {
 
     // DimDtOs
     
-    DimList  struct {
-        DimDtOs  []DimDtOs `json:"dim_dt_os,omitempty"`
-    } `json:"dim_list,omitempty"`
+    DimList   []DimDtOs `json:"dim_list,omitempty" xml:"dim_list,omitempty"`
     
 
     // 人群模版id
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     
 
     // 人群模版名称
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
 
     // 人群类型
     
-    Type   int64 `json:"type,omitempty"`
+    Type   int64 `json:"type,omitempty" xml:"type,omitempty"`
     
-
-}
-*/
-
-// TaobaoSimbaSearchtagtemplateGetResult 
-type TaobaoSimbaSearchtagtemplateGetResult struct {
-
-    // DimDtOs
-    DimList   []DimDtOs `json:"dim_list,omitempty"`
-
-    // 人群模版id
-    Id   int64 `json:"id,omitempty"`
-
-    // 人群模版名称
-    Name   string `json:"name,omitempty"`
-
-    // 人群类型
-    Type   int64 `json:"type,omitempty"`
 
 }

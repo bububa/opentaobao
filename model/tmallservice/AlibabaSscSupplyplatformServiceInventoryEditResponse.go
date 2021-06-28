@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -15,26 +17,16 @@ alibaba.ssc.supplyplatform.service.inventory.edit
 */
 type AlibabaSscSupplyplatformServiceInventoryEditAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSscSupplyplatformServiceInventoryEditResponse `json:"alibaba_ssc_supplyplatform_service_inventory_edit_response,omitempty"` 
     AlibabaSscSupplyplatformServiceInventoryEditResponse
 }
 
-/* model for simplify = false
 type AlibabaSscSupplyplatformServiceInventoryEditResponse struct {
+    XMLName xml.Name `xml:"alibaba_ssc_supplyplatform_service_inventory_edit_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaSscSupplyplatformServiceInventoryEditResult  *AlibabaSscSupplyplatformServiceInventoryEditResult `json:"alibaba_ssc_supplyplatform_service_inventory_edit_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaSscSupplyplatformServiceInventoryEditResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSscSupplyplatformServiceInventoryEditResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaSscSupplyplatformServiceInventoryEditResult `json:"result,omitempty"`
-
 }

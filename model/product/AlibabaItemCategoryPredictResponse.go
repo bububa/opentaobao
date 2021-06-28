@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ alibaba.item.category.predict
 */
 type AlibabaItemCategoryPredictAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaItemCategoryPredictResponse `json:"alibaba_item_category_predict_response,omitempty"` 
     AlibabaItemCategoryPredictResponse
 }
 
-/* model for simplify = false
 type AlibabaItemCategoryPredictResponse struct {
+    XMLName xml.Name `xml:"alibaba_item_category_predict_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 类目路径
     
-    CatName   string `json:"cat_name,omitempty"`
-    
+    CatName   string `json:"cat_name,omitempty" xml:"cat_name,omitempty"`
 
+    
     // 类目ID
     
-    CatId   int64 `json:"cat_id,omitempty"`
-    
+    CatId   int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
 
+    
     // 类目名称
     
-    CatPath   string `json:"cat_path,omitempty"`
+    CatPath   string `json:"cat_path,omitempty" xml:"cat_path,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaItemCategoryPredictResponse struct {
-
-    // 类目路径
-    CatName   string `json:"cat_name,omitempty"`
-
-    // 类目ID
-    CatId   int64 `json:"cat_id,omitempty"`
-
-    // 类目名称
-    CatPath   string `json:"cat_path,omitempty"`
-
 }

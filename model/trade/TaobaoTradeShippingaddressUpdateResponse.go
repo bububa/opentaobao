@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.trade.shippingaddress.update
 */
 type TaobaoTradeShippingaddressUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTradeShippingaddressUpdateResponse `json:"trade_shippingaddress_update_response,omitempty"` 
     TaobaoTradeShippingaddressUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoTradeShippingaddressUpdateResponse struct {
+    XMLName xml.Name `xml:"trade_shippingaddress_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 交易结构
     
-    Trade  *struct {
-        Trade  *Trade `json:"trade,omitempty"`
-    } `json:"trade,omitempty"`
+    Trade   *Trade `json:"trade,omitempty" xml:"trade,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTradeShippingaddressUpdateResponse struct {
-
-    // 交易结构
-    Trade   *Trade `json:"trade,omitempty"`
-
 }

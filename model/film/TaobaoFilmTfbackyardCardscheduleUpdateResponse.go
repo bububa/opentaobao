@@ -1,6 +1,8 @@
 package film
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ cgv影城卡排期价格数据传输API
 */
 type TaobaoFilmTfbackyardCardscheduleUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFilmTfbackyardCardscheduleUpdateResponse `json:"film_tfbackyard_cardschedule_update_response,omitempty"` 
     TaobaoFilmTfbackyardCardscheduleUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoFilmTfbackyardCardscheduleUpdateResponse struct {
+    XMLName xml.Name `xml:"film_tfbackyard_cardschedule_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFilmTfbackyardCardscheduleUpdateResponse struct {
-
-    // result
-    Result   string `json:"result,omitempty"`
-
 }

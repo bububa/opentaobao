@@ -1,6 +1,8 @@
 package category
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wholesale.category.get
 */
 type AlibabaWholesaleCategoryGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWholesaleCategoryGetResponse `json:"alibaba_wholesale_category_get_response,omitempty"` 
     AlibabaWholesaleCategoryGetResponse
 }
 
-/* model for simplify = false
 type AlibabaWholesaleCategoryGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_wholesale_category_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 类目结果
     
-    WholesaleCategoryResult  *struct {
-        WholesaleCategoryOpenResult  *WholesaleCategoryOpenResult `json:"wholesale_category_open_result,omitempty"`
-    } `json:"wholesale_category_result,omitempty"`
+    WholesaleCategoryResult   *WholesaleCategoryOpenResult `json:"wholesale_category_result,omitempty" xml:"wholesale_category_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWholesaleCategoryGetResponse struct {
-
-    // 类目结果
-    WholesaleCategoryResult   *WholesaleCategoryOpenResult `json:"wholesale_category_result,omitempty"`
-
 }

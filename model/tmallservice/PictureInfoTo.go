@@ -1,37 +1,21 @@
 package tmallservice
 
 // PictureInfoTo 
-/* model for simplify = false
 type PictureInfoTo struct {
 
     // pixel
     
-    Pixel   string `json:"pixel,omitempty"`
+    Pixel   string `json:"pixel,omitempty" xml:"pixel,omitempty"`
     
 
     // sizes
     
-    Sizes   int64 `json:"sizes,omitempty"`
+    Sizes   int64 `json:"sizes,omitempty" xml:"sizes,omitempty"`
     
 
     // pictureUrl
     
-    PictureUrl   string `json:"picture_url,omitempty"`
+    PictureUrl   string `json:"picture_url,omitempty" xml:"picture_url,omitempty"`
     
-
-}
-*/
-
-// PictureInfoTo 
-type PictureInfoTo struct {
-
-    // pixel
-    Pixel   string `json:"pixel,omitempty"`
-
-    // sizes
-    Sizes   int64 `json:"sizes,omitempty"`
-
-    // pictureUrl
-    PictureUrl   string `json:"picture_url,omitempty"`
 
 }

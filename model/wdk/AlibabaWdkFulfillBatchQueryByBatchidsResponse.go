@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.fulfill.batch.query.by.batchids
 */
 type AlibabaWdkFulfillBatchQueryByBatchidsAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkFulfillBatchQueryByBatchidsResponse `json:"alibaba_wdk_fulfill_batch_query_by_batchids_response,omitempty"` 
     AlibabaWdkFulfillBatchQueryByBatchidsResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkFulfillBatchQueryByBatchidsResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_fulfill_batch_query_by_batchids_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 查询结果对象
     
-    FulfillLogisticListResult  *struct {
-        FulfillLogisticListResult  *FulfillLogisticListResult `json:"fulfill_logistic_list_result,omitempty"`
-    } `json:"fulfill_logistic_list_result,omitempty"`
+    FulfillLogisticListResult   *FulfillLogisticListResult `json:"fulfill_logistic_list_result,omitempty" xml:"fulfill_logistic_list_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkFulfillBatchQueryByBatchidsResponse struct {
-
-    // 查询结果对象
-    FulfillLogisticListResult   *FulfillLogisticListResult `json:"fulfill_logistic_list_result,omitempty"`
-
 }

@@ -1,21 +1,11 @@
 package hotel
 
 // Headers 
-/* model for simplify = false
 type Headers struct {
 
     // empty
     
-    Empty   bool `json:"empty,omitempty"`
+    Empty   bool `json:"empty,omitempty" xml:"empty,omitempty"`
     
-
-}
-*/
-
-// Headers 
-type Headers struct {
-
-    // empty
-    Empty   bool `json:"empty,omitempty"`
 
 }

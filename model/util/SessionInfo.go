@@ -1,45 +1,26 @@
 package util
 
 // SessionInfo 
-/* model for simplify = false
 type SessionInfo struct {
 
     // openId
     
-    OpenId   string `json:"open_id,omitempty"`
+    OpenId   string `json:"open_id,omitempty" xml:"open_id,omitempty"`
     
 
     // skey
     
-    Skey   string `json:"skey,omitempty"`
+    Skey   string `json:"skey,omitempty" xml:"skey,omitempty"`
     
 
     // accessToken
     
-    AccessToken   string `json:"access_token,omitempty"`
+    AccessToken   string `json:"access_token,omitempty" xml:"access_token,omitempty"`
     
 
     // unionId
     
-    UnionId   string `json:"union_id,omitempty"`
+    UnionId   string `json:"union_id,omitempty" xml:"union_id,omitempty"`
     
-
-}
-*/
-
-// SessionInfo 
-type SessionInfo struct {
-
-    // openId
-    OpenId   string `json:"open_id,omitempty"`
-
-    // skey
-    Skey   string `json:"skey,omitempty"`
-
-    // accessToken
-    AccessToken   string `json:"access_token,omitempty"`
-
-    // unionId
-    UnionId   string `json:"union_id,omitempty"`
 
 }

@@ -1,37 +1,21 @@
 package hotel
 
 // LikeTargetCount 
-/* model for simplify = false
 type LikeTargetCount struct {
 
     // count
     
-    Count   int64 `json:"count,omitempty"`
+    Count   int64 `json:"count,omitempty" xml:"count,omitempty"`
     
 
     // targetId
     
-    TargetId   int64 `json:"target_id,omitempty"`
+    TargetId   int64 `json:"target_id,omitempty" xml:"target_id,omitempty"`
     
 
     // voted
     
-    Voted   bool `json:"voted,omitempty"`
+    Voted   bool `json:"voted,omitempty" xml:"voted,omitempty"`
     
-
-}
-*/
-
-// LikeTargetCount 
-type LikeTargetCount struct {
-
-    // count
-    Count   int64 `json:"count,omitempty"`
-
-    // targetId
-    TargetId   int64 `json:"target_id,omitempty"`
-
-    // voted
-    Voted   bool `json:"voted,omitempty"`
 
 }

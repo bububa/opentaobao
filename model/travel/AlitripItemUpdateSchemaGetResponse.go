@@ -1,6 +1,8 @@
 package travel
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alitrip.item.update.schema.get
 */
 type AlitripItemUpdateSchemaGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripItemUpdateSchemaGetResponse `json:"alitrip_item_update_schema_get_response,omitempty"` 
     AlitripItemUpdateSchemaGetResponse
 }
 
-/* model for simplify = false
 type AlitripItemUpdateSchemaGetResponse struct {
+    XMLName xml.Name `xml:"alitrip_item_update_schema_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // schema数据
     
-    SchemaXmlFields   string `json:"schema_xml_fields,omitempty"`
+    SchemaXmlFields   string `json:"schema_xml_fields,omitempty" xml:"schema_xml_fields,omitempty"`
+
     
-
-}
-*/
-
-type AlitripItemUpdateSchemaGetResponse struct {
-
-    // schema数据
-    SchemaXmlFields   string `json:"schema_xml_fields,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package refund
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.rp.refund.review
 */
 type TaobaoRpRefundReviewAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRpRefundReviewResponse `json:"rp_refund_review_response,omitempty"` 
     TaobaoRpRefundReviewResponse
 }
 
-/* model for simplify = false
 type TaobaoRpRefundReviewResponse struct {
+    XMLName xml.Name `xml:"rp_refund_review_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRpRefundReviewResponse struct {
-
-    // success
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

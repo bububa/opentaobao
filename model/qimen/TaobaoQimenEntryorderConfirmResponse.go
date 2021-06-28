@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ WMS调用接口，回传入库单信息;
 */
 type TaobaoQimenEntryorderConfirmAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenEntryorderConfirmResponse `json:"qimen_entryorder_confirm_response,omitempty"` 
     TaobaoQimenEntryorderConfirmResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenEntryorderConfirmResponse struct {
+    XMLName xml.Name `xml:"qimen_entryorder_confirm_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenEntryorderConfirmResponse struct {
-
-    // 
-    Response   *Response `json:"response,omitempty"`
-
 }

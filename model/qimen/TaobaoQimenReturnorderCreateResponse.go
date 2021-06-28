@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ ERP调用奇门的接口,创建退货单信息;该接口和入库单的区别就
 */
 type TaobaoQimenReturnorderCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenReturnorderCreateResponse `json:"qimen_returnorder_create_response,omitempty"` 
     TaobaoQimenReturnorderCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenReturnorderCreateResponse struct {
+    XMLName xml.Name `xml:"qimen_returnorder_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenReturnorderCreateResponse struct {
-
-    // 
-    Response   *Response `json:"response,omitempty"`
-
 }

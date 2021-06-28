@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.mobile.promotion.benefit.activity.send.share
 */
 type TaobaoMobilePromotionBenefitActivitySendShareAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoMobilePromotionBenefitActivitySendShareResponse `json:"mobile_promotion_benefit_activity_send_share_response,omitempty"` 
     TaobaoMobilePromotionBenefitActivitySendShareResponse
 }
 
-/* model for simplify = false
 type TaobaoMobilePromotionBenefitActivitySendShareResponse struct {
+    XMLName xml.Name `xml:"mobile_promotion_benefit_activity_send_share_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 权益发放结果
     
-    SendResult  *struct {
-        ShareBenefitSendResult  *ShareBenefitSendResult `json:"share_benefit_send_result,omitempty"`
-    } `json:"send_result,omitempty"`
+    SendResult   *ShareBenefitSendResult `json:"send_result,omitempty" xml:"send_result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoMobilePromotionBenefitActivitySendShareResponse struct {
-
-    // 权益发放结果
-    SendResult   *ShareBenefitSendResult `json:"send_result,omitempty"`
-
 }

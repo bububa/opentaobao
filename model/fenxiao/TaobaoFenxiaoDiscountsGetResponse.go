@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.fenxiao.discounts.get
 */
 type TaobaoFenxiaoDiscountsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoDiscountsGetResponse `json:"fenxiao_discounts_get_response,omitempty"` 
     TaobaoFenxiaoDiscountsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoDiscountsGetResponse struct {
+    XMLName xml.Name `xml:"fenxiao_discounts_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 折扣数据结构
     
-    Discounts  struct {
-        Discount  []Discount `json:"discount,omitempty"`
-    } `json:"discounts,omitempty"`
+    Discounts   []Discount `json:"discounts,omitempty" xml:"discounts>discount,omitempty"`
     
-
+    
     // 记录数
     
-    TotalResults   int64 `json:"total_results,omitempty"`
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFenxiaoDiscountsGetResponse struct {
-
-    // 折扣数据结构
-    Discounts   []Discount `json:"discounts,omitempty"`
-
-    // 记录数
-    TotalResults   int64 `json:"total_results,omitempty"`
-
 }

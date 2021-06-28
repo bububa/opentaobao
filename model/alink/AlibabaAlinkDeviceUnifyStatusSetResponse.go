@@ -1,6 +1,8 @@
 package alink
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alink.device.unify.status.set
 */
 type AlibabaAlinkDeviceUnifyStatusSetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlinkDeviceUnifyStatusSetResponse `json:"alibaba_alink_device_unify_status_set_response,omitempty"` 
     AlibabaAlinkDeviceUnifyStatusSetResponse
 }
 
-/* model for simplify = false
 type AlibabaAlinkDeviceUnifyStatusSetResponse struct {
+    XMLName xml.Name `xml:"alibaba_alink_device_unify_status_set_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        TopServiceResult  *TopServiceResult `json:"top_service_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TopServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlinkDeviceUnifyStatusSetResponse struct {
-
-    // 结果
-    Result   *TopServiceResult `json:"result,omitempty"`
-
 }

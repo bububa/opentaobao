@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.simba.login.authsign.get
 */
 type TaobaoSimbaLoginAuthsignGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaLoginAuthsignGetResponse `json:"simba_login_authsign_get_response,omitempty"` 
     TaobaoSimbaLoginAuthsignGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaLoginAuthsignGetResponse struct {
+    XMLName xml.Name `xml:"simba_login_authsign_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 登陆签名
     
-    SubwayToken   string `json:"subway_token,omitempty"`
+    SubwayToken   string `json:"subway_token,omitempty" xml:"subway_token,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaLoginAuthsignGetResponse struct {
-
-    // 登陆签名
-    SubwayToken   string `json:"subway_token,omitempty"`
-
 }

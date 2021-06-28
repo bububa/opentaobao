@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.scitem.get
 */
 type TaobaoScitemGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoScitemGetResponse `json:"scitem_get_response,omitempty"` 
     TaobaoScitemGetResponse
 }
 
-/* model for simplify = false
 type TaobaoScitemGetResponse struct {
+    XMLName xml.Name `xml:"scitem_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 后端商品
     
-    ScItem  *struct {
-        ScItem  *ScItem `json:"sc_item,omitempty"`
-    } `json:"sc_item,omitempty"`
+    ScItem   *ScItem `json:"sc_item,omitempty" xml:"sc_item,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoScitemGetResponse struct {
-
-    // 后端商品
-    ScItem   *ScItem `json:"sc_item,omitempty"`
-
 }

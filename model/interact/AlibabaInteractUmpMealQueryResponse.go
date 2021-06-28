@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.interact.ump.meal.query
 */
 type AlibabaInteractUmpMealQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractUmpMealQueryResponse `json:"alibaba_interact_ump_meal_query_response,omitempty"` 
     AlibabaInteractUmpMealQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractUmpMealQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_ump_meal_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 优惠平台搭配套餐对象
     
-    Meals  struct {
-        OpenMealDo  []OpenMealDo `json:"open_meal_do,omitempty"`
-    } `json:"meals,omitempty"`
+    Meals   []OpenMealDo `json:"meals,omitempty" xml:"meals>open_meal_do,omitempty"`
     
-
-}
-*/
-
-type AlibabaInteractUmpMealQueryResponse struct {
-
-    // 优惠平台搭配套餐对象
-    Meals   []OpenMealDo `json:"meals,omitempty"`
-
+    
 }

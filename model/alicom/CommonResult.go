@@ -1,45 +1,26 @@
 package alicom
 
 // CommonResult 
-/* model for simplify = false
 type CommonResult struct {
 
     // 接口返回成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // desc
     
-    Desc   string `json:"desc,omitempty"`
+    Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     
 
     // 阿里订单号
     
-    Model   string `json:"model,omitempty"`
+    Model   string `json:"model,omitempty" xml:"model,omitempty"`
     
-
-}
-*/
-
-// CommonResult 
-type CommonResult struct {
-
-    // 接口返回成功
-    Success   bool `json:"success,omitempty"`
-
-    // code
-    Code   string `json:"code,omitempty"`
-
-    // desc
-    Desc   string `json:"desc,omitempty"`
-
-    // 阿里订单号
-    Model   string `json:"model,omitempty"`
 
 }

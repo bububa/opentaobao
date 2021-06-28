@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.scbp.tag.rename
 */
 type AlibabaScbpTagRenameAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpTagRenameResponse `json:"alibaba_scbp_tag_rename_response,omitempty"` 
     AlibabaScbpTagRenameResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpTagRenameResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_tag_rename_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 重命名分组成功或者失败
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpTagRenameResponse struct {
-
-    // 重命名分组成功或者失败
-    Result   bool `json:"result,omitempty"`
-
 }

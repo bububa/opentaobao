@@ -1,6 +1,8 @@
 package xiami
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.xiami.api.artist.albums.get
 */
 type AlibabaXiamiApiArtistAlbumsGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaXiamiApiArtistAlbumsGetResponse `json:"alibaba_xiami_api_artist_albums_get_response,omitempty"` 
     AlibabaXiamiApiArtistAlbumsGetResponse
 }
 
-/* model for simplify = false
 type AlibabaXiamiApiArtistAlbumsGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_xiami_api_artist_albums_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 艺人专辑结果
     
-    Data  *struct {
-        ArtistAlbumsResult  *ArtistAlbumsResult `json:"artist_albums_result,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *ArtistAlbumsResult `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaXiamiApiArtistAlbumsGetResponse struct {
-
-    // 艺人专辑结果
-    Data   *ArtistAlbumsResult `json:"data,omitempty"`
-
 }

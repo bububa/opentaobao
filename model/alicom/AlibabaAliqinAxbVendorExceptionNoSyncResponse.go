@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.axb.vendor.exception.no.sync
 */
 type AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinAxbVendorExceptionNoSyncResponse `json:"alibaba_aliqin_axb_vendor_exception_no_sync_response,omitempty"` 
     AlibabaAliqinAxbVendorExceptionNoSyncResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinAxbVendorExceptionNoSyncResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_axb_vendor_exception_no_sync_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinAxbVendorExceptionNoSyncResponse struct {
-
-    // result
-    Result   *Response `json:"result,omitempty"`
-
 }

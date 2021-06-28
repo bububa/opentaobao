@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.mos.onsite.trade.oldrefund
 */
 type AlibabaMosOnsiteTradeOldrefundAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMosOnsiteTradeOldrefundResponse `json:"alibaba_mos_onsite_trade_oldrefund_response,omitempty"` 
     AlibabaMosOnsiteTradeOldrefundResponse
 }
 
-/* model for simplify = false
 type AlibabaMosOnsiteTradeOldrefundResponse struct {
+    XMLName xml.Name `xml:"alibaba_mos_onsite_trade_oldrefund_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 交易退款响应
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMosOnsiteTradeOldrefundResponse struct {
-
-    // 交易退款响应
-    Result   string `json:"result,omitempty"`
-
 }

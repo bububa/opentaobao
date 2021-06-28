@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP
 */
 type TaobaoQimenItemlackReportAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenItemlackReportResponse `json:"qimen_itemlack_report_response,omitempty"` 
     TaobaoQimenItemlackReportResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenItemlackReportResponse struct {
+    XMLName xml.Name `xml:"qimen_itemlack_report_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenItemlackReportResponse struct {
-
-    // 
-    Response   *Response `json:"response,omitempty"`
-
 }

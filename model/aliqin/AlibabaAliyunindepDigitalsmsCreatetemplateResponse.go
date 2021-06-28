@@ -1,6 +1,8 @@
 package aliqin
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliyunindep.digitalsms.createtemplate
 */
 type AlibabaAliyunindepDigitalsmsCreatetemplateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliyunindepDigitalsmsCreatetemplateResponse `json:"alibaba_aliyunindep_digitalsms_createtemplate_response,omitempty"` 
     AlibabaAliyunindepDigitalsmsCreatetemplateResponse
 }
 
-/* model for simplify = false
 type AlibabaAliyunindepDigitalsmsCreatetemplateResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliyunindep_digitalsms_createtemplate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        AlibabaAliyunindepDigitalsmsCreatetemplateResult  *AlibabaAliyunindepDigitalsmsCreatetemplateResult `json:"alibaba_aliyunindep_digitalsms_createtemplate_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaAliyunindepDigitalsmsCreatetemplateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliyunindepDigitalsmsCreatetemplateResponse struct {
-
-    // 返回值
-    Result   *AlibabaAliyunindepDigitalsmsCreatetemplateResult `json:"result,omitempty"`
-
 }

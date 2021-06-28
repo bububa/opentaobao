@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,56 +14,36 @@ alibaba.benefit.send
 */
 type AlibabaBenefitSendAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaBenefitSendResponse `json:"alibaba_benefit_send_response,omitempty"` 
     AlibabaBenefitSendResponse
 }
 
-/* model for simplify = false
 type AlibabaBenefitSendResponse struct {
+    XMLName xml.Name `xml:"alibaba_benefit_send_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回消息
     
-    ResultMsg   string `json:"result_msg,omitempty"`
-    
+    ResultMsg   string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 
+    
     // 接口返回代码
     
-    ResultCode   string `json:"result_code,omitempty"`
-    
+    ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 
+    
     // 是否处理成功
     
-    ResultSuccess   bool `json:"result_success,omitempty"`
-    
+    ResultSuccess   bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
 
+    
     // 权益id
     
-    RightId   int64 `json:"right_id,omitempty"`
-    
+    RightId   int64 `json:"right_id,omitempty" xml:"right_id,omitempty"`
 
+    
     // 奖品名称
     
-    PrizeName   string `json:"prize_name,omitempty"`
+    PrizeName   string `json:"prize_name,omitempty" xml:"prize_name,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaBenefitSendResponse struct {
-
-    // 接口返回消息
-    ResultMsg   string `json:"result_msg,omitempty"`
-
-    // 接口返回代码
-    ResultCode   string `json:"result_code,omitempty"`
-
-    // 是否处理成功
-    ResultSuccess   bool `json:"result_success,omitempty"`
-
-    // 权益id
-    RightId   int64 `json:"right_id,omitempty"`
-
-    // 奖品名称
-    PrizeName   string `json:"prize_name,omitempty"`
-
 }

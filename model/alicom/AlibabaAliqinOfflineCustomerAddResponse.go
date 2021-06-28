@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.offline.customer.add
 */
 type AlibabaAliqinOfflineCustomerAddAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinOfflineCustomerAddResponse `json:"alibaba_aliqin_offline_customer_add_response,omitempty"` 
     AlibabaAliqinOfflineCustomerAddResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinOfflineCustomerAddResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_offline_customer_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        CommonResult  *CommonResult `json:"common_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinOfflineCustomerAddResponse struct {
-
-    // result
-    Result   *CommonResult `json:"result,omitempty"`
-
 }

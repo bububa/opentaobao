@@ -1,6 +1,8 @@
 package category
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.item.catprops.modification.get
 */
 type TaobaoItemCatpropsModificationGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoItemCatpropsModificationGetResponse `json:"item_catprops_modification_get_response,omitempty"` 
     TaobaoItemCatpropsModificationGetResponse
 }
 
-/* model for simplify = false
 type TaobaoItemCatpropsModificationGetResponse struct {
+    XMLName xml.Name `xml:"item_catprops_modification_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Results  struct {
-        PropsModificationResult  []PropsModificationResult `json:"props_modification_result,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []PropsModificationResult `json:"results,omitempty" xml:"results>props_modification_result,omitempty"`
     
-
-}
-*/
-
-type TaobaoItemCatpropsModificationGetResponse struct {
-
-    // 返回结果
-    Results   []PropsModificationResult `json:"results,omitempty"`
-
+    
 }

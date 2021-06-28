@@ -1,6 +1,8 @@
 package refund
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.refund.refuse
 */
 type TaobaoRefundRefuseAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRefundRefuseResponse `json:"refund_refuse_response,omitempty"` 
     TaobaoRefundRefuseResponse
 }
 
-/* model for simplify = false
 type TaobaoRefundRefuseResponse struct {
+    XMLName xml.Name `xml:"refund_refuse_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 拒绝退款成功后，会返回Refund数据结构中的refund_id, status, modified字段
     
-    Refund  *struct {
-        Refund  *Refund `json:"refund,omitempty"`
-    } `json:"refund,omitempty"`
-    
+    Refund   *Refund `json:"refund,omitempty" xml:"refund,omitempty"`
 
+    
     // 拒绝退款操作是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRefundRefuseResponse struct {
-
-    // 拒绝退款成功后，会返回Refund数据结构中的refund_id, status, modified字段
-    Refund   *Refund `json:"refund,omitempty"`
-
-    // 拒绝退款操作是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

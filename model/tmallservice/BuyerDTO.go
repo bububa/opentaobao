@@ -1,93 +1,56 @@
 package tmallservice
 
 // BuyerDTO 
-/* model for simplify = false
 type BuyerDTO struct {
 
     // 省
     
-    AddressProvince   string `json:"address_province,omitempty"`
+    AddressProvince   string `json:"address_province,omitempty" xml:"address_province,omitempty"`
     
 
     // 详细地址
     
-    AddressDetail   string `json:"address_detail,omitempty"`
+    AddressDetail   string `json:"address_detail,omitempty" xml:"address_detail,omitempty"`
     
 
     // 买家淘宝账号
     
-    BuyerNick   string `json:"buyer_nick,omitempty"`
+    BuyerNick   string `json:"buyer_nick,omitempty" xml:"buyer_nick,omitempty"`
     
 
     // 买家电话
     
-    Phone   string `json:"phone,omitempty"`
+    Phone   string `json:"phone,omitempty" xml:"phone,omitempty"`
     
 
     // 买家手机号
     
-    Mobile   string `json:"mobile,omitempty"`
+    Mobile   string `json:"mobile,omitempty" xml:"mobile,omitempty"`
     
 
     // 地区编码
     
-    Location   int64 `json:"location,omitempty"`
+    Location   int64 `json:"location,omitempty" xml:"location,omitempty"`
     
 
     // 区
     
-    AddressDistrict   string `json:"address_district,omitempty"`
+    AddressDistrict   string `json:"address_district,omitempty" xml:"address_district,omitempty"`
     
 
     // 买家姓名
     
-    BuyerName   string `json:"buyer_name,omitempty"`
+    BuyerName   string `json:"buyer_name,omitempty" xml:"buyer_name,omitempty"`
     
 
     // 街道
     
-    AddressTown   string `json:"address_town,omitempty"`
+    AddressTown   string `json:"address_town,omitempty" xml:"address_town,omitempty"`
     
 
     // 市
     
-    AddressCity   string `json:"address_city,omitempty"`
+    AddressCity   string `json:"address_city,omitempty" xml:"address_city,omitempty"`
     
-
-}
-*/
-
-// BuyerDTO 
-type BuyerDTO struct {
-
-    // 省
-    AddressProvince   string `json:"address_province,omitempty"`
-
-    // 详细地址
-    AddressDetail   string `json:"address_detail,omitempty"`
-
-    // 买家淘宝账号
-    BuyerNick   string `json:"buyer_nick,omitempty"`
-
-    // 买家电话
-    Phone   string `json:"phone,omitempty"`
-
-    // 买家手机号
-    Mobile   string `json:"mobile,omitempty"`
-
-    // 地区编码
-    Location   int64 `json:"location,omitempty"`
-
-    // 区
-    AddressDistrict   string `json:"address_district,omitempty"`
-
-    // 买家姓名
-    BuyerName   string `json:"buyer_name,omitempty"`
-
-    // 街道
-    AddressTown   string `json:"address_town,omitempty"`
-
-    // 市
-    AddressCity   string `json:"address_city,omitempty"`
 
 }

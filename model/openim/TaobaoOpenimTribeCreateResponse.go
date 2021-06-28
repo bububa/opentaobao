@@ -1,6 +1,8 @@
 package openim
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.openim.tribe.create
 */
 type TaobaoOpenimTribeCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenimTribeCreateResponse `json:"openim_tribe_create_response,omitempty"` 
     TaobaoOpenimTribeCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenimTribeCreateResponse struct {
+    XMLName xml.Name `xml:"openim_tribe_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 创建群的信息
     
-    TribeInfo  *struct {
-        TribeInfo  *TribeInfo `json:"tribe_info,omitempty"`
-    } `json:"tribe_info,omitempty"`
+    TribeInfo   *TribeInfo `json:"tribe_info,omitempty" xml:"tribe_info,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenimTribeCreateResponse struct {
-
-    // 创建群的信息
-    TribeInfo   *TribeInfo `json:"tribe_info,omitempty"`
-
 }

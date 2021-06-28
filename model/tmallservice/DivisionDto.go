@@ -1,23 +1,11 @@
 package tmallservice
 
 // DivisionDto 
-/* model for simplify = false
 type DivisionDto struct {
 
     // 1
     
-    DivisionNames  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"division_names,omitempty"`
+    DivisionNames   []string `json:"division_names,omitempty" xml:"division_names>string,omitempty"`
     
-
-}
-*/
-
-// DivisionDto 
-type DivisionDto struct {
-
-    // 1
-    DivisionNames   []string `json:"division_names,omitempty"`
 
 }

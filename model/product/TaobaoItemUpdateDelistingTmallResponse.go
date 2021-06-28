@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.item.update.delisting.tmall
 */
 type TaobaoItemUpdateDelistingTmallAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoItemUpdateDelistingTmallResponse `json:"item_update_delisting_tmall_response,omitempty"` 
     TaobaoItemUpdateDelistingTmallResponse
 }
 
-/* model for simplify = false
 type TaobaoItemUpdateDelistingTmallResponse struct {
+    XMLName xml.Name `xml:"item_update_delisting_tmall_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回商品更新信息：返回的结果是:num_iid和modified
     
-    Item  *struct {
-        Item  *Item `json:"item,omitempty"`
-    } `json:"item,omitempty"`
+    Item   *Item `json:"item,omitempty" xml:"item,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoItemUpdateDelistingTmallResponse struct {
-
-    // 返回商品更新信息：返回的结果是:num_iid和modified
-    Item   *Item `json:"item,omitempty"`
-
 }

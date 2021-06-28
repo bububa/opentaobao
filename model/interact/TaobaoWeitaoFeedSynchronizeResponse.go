@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.weitao.feed.synchronize
 */
 type TaobaoWeitaoFeedSynchronizeAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWeitaoFeedSynchronizeResponse `json:"weitao_feed_synchronize_response,omitempty"` 
     TaobaoWeitaoFeedSynchronizeResponse
 }
 
-/* model for simplify = false
 type TaobaoWeitaoFeedSynchronizeResponse struct {
+    XMLName xml.Name `xml:"weitao_feed_synchronize_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 同步到微淘成功与否
     
-    Result   bool `json:"result,omitempty"`
-    
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
 
+    
     // 增加错误信息
     
-    Errmsg   string `json:"errmsg,omitempty"`
+    Errmsg   string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWeitaoFeedSynchronizeResponse struct {
-
-    // 同步到微淘成功与否
-    Result   bool `json:"result,omitempty"`
-
-    // 增加错误信息
-    Errmsg   string `json:"errmsg,omitempty"`
-
 }

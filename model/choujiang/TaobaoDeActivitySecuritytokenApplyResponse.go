@@ -1,6 +1,8 @@
 package choujiang
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.de.activity.securitytoken.apply
 */
 type TaobaoDeActivitySecuritytokenApplyAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoDeActivitySecuritytokenApplyResponse `json:"de_activity_securitytoken_apply_response,omitempty"` 
     TaobaoDeActivitySecuritytokenApplyResponse
 }
 
-/* model for simplify = false
 type TaobaoDeActivitySecuritytokenApplyResponse struct {
+    XMLName xml.Name `xml:"de_activity_securitytoken_apply_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 成功标志位
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoDeActivitySecuritytokenApplyResponse struct {
-
-    // 成功标志位
-    Result   bool `json:"result,omitempty"`
-
 }

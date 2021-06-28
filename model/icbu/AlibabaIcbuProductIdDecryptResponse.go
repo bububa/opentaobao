@@ -1,6 +1,8 @@
 package icbu
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.icbu.product.id.decrypt
 */
 type AlibabaIcbuProductIdDecryptAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaIcbuProductIdDecryptResponse `json:"alibaba_icbu_product_id_decrypt_response,omitempty"` 
     AlibabaIcbuProductIdDecryptResponse
 }
 
-/* model for simplify = false
 type AlibabaIcbuProductIdDecryptResponse struct {
+    XMLName xml.Name `xml:"alibaba_icbu_product_id_decrypt_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品ID
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaIcbuProductIdDecryptResponse struct {
-
-    // 商品ID
-    Id   int64 `json:"id,omitempty"`
-
 }

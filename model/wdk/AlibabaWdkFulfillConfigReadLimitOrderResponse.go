@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.fulfill.config.read.limit.order
 */
 type AlibabaWdkFulfillConfigReadLimitOrderAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkFulfillConfigReadLimitOrderResponse `json:"alibaba_wdk_fulfill_config_read_limit_order_response,omitempty"` 
     AlibabaWdkFulfillConfigReadLimitOrderResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkFulfillConfigReadLimitOrderResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_fulfill_config_read_limit_order_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Results  struct {
-        Json  []string `json:"string,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []string `json:"results,omitempty" xml:"results>string,omitempty"`
     
-
-}
-*/
-
-type AlibabaWdkFulfillConfigReadLimitOrderResponse struct {
-
-    // result
-    Results   []string `json:"results,omitempty"`
-
+    
 }

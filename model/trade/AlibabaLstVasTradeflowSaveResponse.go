@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.lst.vas.tradeflow.save
 */
 type AlibabaLstVasTradeflowSaveAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaLstVasTradeflowSaveResponse `json:"alibaba_lst_vas_tradeflow_save_response,omitempty"` 
     AlibabaLstVasTradeflowSaveResponse
 }
 
-/* model for simplify = false
 type AlibabaLstVasTradeflowSaveResponse struct {
+    XMLName xml.Name `xml:"alibaba_lst_vas_tradeflow_save_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaLstVasTradeflowSaveResult  *AlibabaLstVasTradeflowSaveResult `json:"alibaba_lst_vas_tradeflow_save_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaLstVasTradeflowSaveResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaLstVasTradeflowSaveResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaLstVasTradeflowSaveResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,50 +14,31 @@ alibaba.wdk.marketing.expire.promotion.create
 */
 type AlibabaWdkMarketingExpirePromotionCreateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkMarketingExpirePromotionCreateResponse `json:"alibaba_wdk_marketing_expire_promotion_create_response,omitempty"` 
     AlibabaWdkMarketingExpirePromotionCreateResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkMarketingExpirePromotionCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_marketing_expire_promotion_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // message
     
-    Message   string `json:"message,omitempty"`
-    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 
+    
     // data
     
-    Datas  struct {
-        T  []T `json:"t,omitempty"`
-    } `json:"datas,omitempty"`
+    Datas   []T `json:"datas,omitempty" xml:"datas>t,omitempty"`
     
-
+    
     // errorCode
     
-    FailCode   string `json:"fail_code,omitempty"`
-    
+    FailCode   string `json:"fail_code,omitempty" xml:"fail_code,omitempty"`
 
+    
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkMarketingExpirePromotionCreateResponse struct {
-
-    // message
-    Message   string `json:"message,omitempty"`
-
-    // data
-    Datas   []T `json:"datas,omitempty"`
-
-    // errorCode
-    FailCode   string `json:"fail_code,omitempty"`
-
-    // success
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

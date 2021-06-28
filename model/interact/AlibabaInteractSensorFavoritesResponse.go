@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.sensor.favorites
 */
 type AlibabaInteractSensorFavoritesAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractSensorFavoritesResponse `json:"alibaba_interact_sensor_favorites_response,omitempty"` 
     AlibabaInteractSensorFavoritesResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractSensorFavoritesResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_sensor_favorites_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // r=0
     
-    R   string `json:"r,omitempty"`
+    R   string `json:"r,omitempty" xml:"r,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractSensorFavoritesResponse struct {
-
-    // r=0
-    R   string `json:"r,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.trade.discount.bill.get
 */
 type AlibabaWdkTradeDiscountBillGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkTradeDiscountBillGetResponse `json:"alibaba_wdk_trade_discount_bill_get_response,omitempty"` 
     AlibabaWdkTradeDiscountBillGetResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkTradeDiscountBillGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_trade_discount_bill_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        OrderDiscountBillQueryResult  *OrderDiscountBillQueryResult `json:"order_discount_bill_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *OrderDiscountBillQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkTradeDiscountBillGetResponse struct {
-
-    // 结果
-    Result   *OrderDiscountBillQueryResult `json:"result,omitempty"`
-
 }

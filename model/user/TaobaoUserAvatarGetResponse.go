@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.user.avatar.get
 */
 type TaobaoUserAvatarGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoUserAvatarGetResponse `json:"user_avatar_get_response,omitempty"` 
     TaobaoUserAvatarGetResponse
 }
 
-/* model for simplify = false
 type TaobaoUserAvatarGetResponse struct {
+    XMLName xml.Name `xml:"user_avatar_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户头像地址
     
-    Avatar   string `json:"avatar,omitempty"`
+    Avatar   string `json:"avatar,omitempty" xml:"avatar,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoUserAvatarGetResponse struct {
-
-    // 用户头像地址
-    Avatar   string `json:"avatar,omitempty"`
-
 }

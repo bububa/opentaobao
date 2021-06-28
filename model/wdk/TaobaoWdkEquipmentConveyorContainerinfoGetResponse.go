@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wdk.equipment.conveyor.containerinfo.get
 */
 type TaobaoWdkEquipmentConveyorContainerinfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWdkEquipmentConveyorContainerinfoGetResponse `json:"wdk_equipment_conveyor_containerinfo_get_response,omitempty"` 
     TaobaoWdkEquipmentConveyorContainerinfoGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWdkEquipmentConveyorContainerinfoGetResponse struct {
+    XMLName xml.Name `xml:"wdk_equipment_conveyor_containerinfo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        TaobaoWdkEquipmentConveyorContainerinfoGetResult  *TaobaoWdkEquipmentConveyorContainerinfoGetResult `json:"taobao_wdk_equipment_conveyor_containerinfo_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoWdkEquipmentConveyorContainerinfoGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWdkEquipmentConveyorContainerinfoGetResponse struct {
-
-    // 返回值
-    Result   *TaobaoWdkEquipmentConveyorContainerinfoGetResult `json:"result,omitempty"`
-
 }

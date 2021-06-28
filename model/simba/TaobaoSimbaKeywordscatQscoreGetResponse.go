@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.keywordscat.qscore.get
 */
 type TaobaoSimbaKeywordscatQscoreGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaKeywordscatQscoreGetResponse `json:"simba_keywordscat_qscore_get_response,omitempty"` 
     TaobaoSimbaKeywordscatQscoreGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaKeywordscatQscoreGetResponse struct {
+    XMLName xml.Name `xml:"simba_keywordscat_qscore_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 类目出价和词的质量得分对象
     
-    Qscore  *struct {
-        Qscore  *Qscore `json:"qscore,omitempty"`
-    } `json:"qscore,omitempty"`
+    Qscore   *Qscore `json:"qscore,omitempty" xml:"qscore,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaKeywordscatQscoreGetResponse struct {
-
-    // 类目出价和词的质量得分对象
-    Qscore   *Qscore `json:"qscore,omitempty"`
-
 }

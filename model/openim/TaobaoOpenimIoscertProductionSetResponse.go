@@ -1,6 +1,8 @@
 package openim
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.openim.ioscert.production.set
 */
 type TaobaoOpenimIoscertProductionSetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenimIoscertProductionSetResponse `json:"openim_ioscert_production_set_response,omitempty"` 
     TaobaoOpenimIoscertProductionSetResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenimIoscertProductionSetResponse struct {
+    XMLName xml.Name `xml:"openim_ioscert_production_set_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作成功
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenimIoscertProductionSetResponse struct {
-
-    // 操作成功
-    Code   string `json:"code,omitempty"`
-
 }

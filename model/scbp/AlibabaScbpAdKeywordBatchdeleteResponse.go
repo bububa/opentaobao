@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.scbp.ad.keyword.batchdelete
 */
 type AlibabaScbpAdKeywordBatchdeleteAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpAdKeywordBatchdeleteResponse `json:"alibaba_scbp_ad_keyword_batchdelete_response,omitempty"` 
     AlibabaScbpAdKeywordBatchdeleteResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpAdKeywordBatchdeleteResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_keyword_batchdelete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 删除关键词是否成功
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpAdKeywordBatchdeleteResponse struct {
-
-    // 删除关键词是否成功
-    Result   bool `json:"result,omitempty"`
-
 }

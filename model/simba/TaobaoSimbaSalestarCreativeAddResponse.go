@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.salestar.creative.add
 */
 type TaobaoSimbaSalestarCreativeAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaSalestarCreativeAddResponse `json:"simba_salestar_creative_add_response,omitempty"` 
     TaobaoSimbaSalestarCreativeAddResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaSalestarCreativeAddResponse struct {
+    XMLName xml.Name `xml:"simba_salestar_creative_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 新增加的创意对象
     
-    Creative  *struct {
-        Creative  *Creative `json:"creative,omitempty"`
-    } `json:"creative,omitempty"`
+    Creative   *Creative `json:"creative,omitempty" xml:"creative,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaSalestarCreativeAddResponse struct {
-
-    // 新增加的创意对象
-    Creative   *Creative `json:"creative,omitempty"`
-
 }

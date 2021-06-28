@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.campaign.budget.update
 */
 type TaobaoSimbaCampaignBudgetUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaCampaignBudgetUpdateResponse `json:"simba_campaign_budget_update_response,omitempty"` 
     TaobaoSimbaCampaignBudgetUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaCampaignBudgetUpdateResponse struct {
+    XMLName xml.Name `xml:"simba_campaign_budget_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改后的推广计划日限额
     
-    CampaignBudget  *struct {
-        CampaignBudget  *CampaignBudget `json:"campaign_budget,omitempty"`
-    } `json:"campaign_budget,omitempty"`
+    CampaignBudget   *CampaignBudget `json:"campaign_budget,omitempty" xml:"campaign_budget,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaCampaignBudgetUpdateResponse struct {
-
-    // 修改后的推广计划日限额
-    CampaignBudget   *CampaignBudget `json:"campaign_budget,omitempty"`
-
 }

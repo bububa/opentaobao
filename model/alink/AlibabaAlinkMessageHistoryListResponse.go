@@ -1,6 +1,8 @@
 package alink
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alink.message.history.list
 */
 type AlibabaAlinkMessageHistoryListAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlinkMessageHistoryListResponse `json:"alibaba_alink_message_history_list_response,omitempty"` 
     AlibabaAlinkMessageHistoryListResponse
 }
 
-/* model for simplify = false
 type AlibabaAlinkMessageHistoryListResponse struct {
+    XMLName xml.Name `xml:"alibaba_alink_message_history_list_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        TopServiceResult  *TopServiceResult `json:"top_service_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TopServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlinkMessageHistoryListResponse struct {
-
-    // 结果
-    Result   *TopServiceResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package shop
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.store.followurl.get
 */
 type TaobaoStoreFollowurlGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoStoreFollowurlGetResponse `json:"store_followurl_get_response,omitempty"` 
     TaobaoStoreFollowurlGetResponse
 }
 
-/* model for simplify = false
 type TaobaoStoreFollowurlGetResponse struct {
+    XMLName xml.Name `xml:"store_followurl_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 店铺关注URL
     
-    Url   string `json:"url,omitempty"`
+    Url   string `json:"url,omitempty" xml:"url,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoStoreFollowurlGetResponse struct {
-
-    // 店铺关注URL
-    Url   string `json:"url,omitempty"`
-
 }

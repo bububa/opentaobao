@@ -1,45 +1,26 @@
 package yunos
 
 // OperBatchMsg 
-/* model for simplify = false
 type OperBatchMsg struct {
 
     // 服务号唯一编号
     
-    AppId   string `json:"app_id,omitempty"`
+    AppId   string `json:"app_id,omitempty" xml:"app_id,omitempty"`
     
 
     // YUNOS开放平台模板ID
     
-    TplId   string `json:"tpl_id,omitempty"`
+    TplId   string `json:"tpl_id,omitempty" xml:"tpl_id,omitempty"`
     
 
     // 消息体的JSON串，以小说为例
     
-    Content   string `json:"content,omitempty"`
+    Content   string `json:"content,omitempty" xml:"content,omitempty"`
     
 
     // 是否推荐消息标识，默认：false
     
-    TjFlag   bool `json:"tj_flag,omitempty"`
+    TjFlag   bool `json:"tj_flag,omitempty" xml:"tj_flag,omitempty"`
     
-
-}
-*/
-
-// OperBatchMsg 
-type OperBatchMsg struct {
-
-    // 服务号唯一编号
-    AppId   string `json:"app_id,omitempty"`
-
-    // YUNOS开放平台模板ID
-    TplId   string `json:"tpl_id,omitempty"`
-
-    // 消息体的JSON串，以小说为例
-    Content   string `json:"content,omitempty"`
-
-    // 是否推荐消息标识，默认：false
-    TjFlag   bool `json:"tj_flag,omitempty"`
 
 }

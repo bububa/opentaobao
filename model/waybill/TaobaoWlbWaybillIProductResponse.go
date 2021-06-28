@@ -1,6 +1,8 @@
 package waybill
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wlb.waybill.i.product
 */
 type TaobaoWlbWaybillIProductAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbWaybillIProductResponse `json:"wlb_waybill_i_product_response,omitempty"` 
     TaobaoWlbWaybillIProductResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbWaybillIProductResponse struct {
+    XMLName xml.Name `xml:"wlb_waybill_i_product_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 产品类型返回
     
-    ProductTypes  struct {
-        WaybillProductType  []WaybillProductType `json:"waybill_product_type,omitempty"`
-    } `json:"product_types,omitempty"`
+    ProductTypes   []WaybillProductType `json:"product_types,omitempty" xml:"product_types>waybill_product_type,omitempty"`
     
-
-}
-*/
-
-type TaobaoWlbWaybillIProductResponse struct {
-
-    // 产品类型返回
-    ProductTypes   []WaybillProductType `json:"product_types,omitempty"`
-
+    
 }

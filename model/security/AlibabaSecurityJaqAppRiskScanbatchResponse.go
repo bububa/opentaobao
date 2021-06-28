@@ -1,6 +1,8 @@
 package security
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.security.jaq.app.risk.scanbatch
 */
 type AlibabaSecurityJaqAppRiskScanbatchAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSecurityJaqAppRiskScanbatchResponse `json:"alibaba_security_jaq_app_risk_scanbatch_response,omitempty"` 
     AlibabaSecurityJaqAppRiskScanbatchResponse
 }
 
-/* model for simplify = false
 type AlibabaSecurityJaqAppRiskScanbatchResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_app_risk_scanbatch_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 扫描任务信息
     
-    Result  *struct {
-        TaskInfo  *TaskInfo `json:"task_info,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaskInfo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSecurityJaqAppRiskScanbatchResponse struct {
-
-    // 扫描任务信息
-    Result   *TaskInfo `json:"result,omitempty"`
-
 }

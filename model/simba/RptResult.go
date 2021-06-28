@@ -1,69 +1,41 @@
 package simba
 
 // RptResult 
-/* model for simplify = false
 type RptResult struct {
 
     // ctr
     
-    Ctr   string `json:"ctr,omitempty"`
+    Ctr   string `json:"ctr,omitempty" xml:"ctr,omitempty"`
     
 
     // 消耗
     
-    Cost   string `json:"cost,omitempty"`
+    Cost   string `json:"cost,omitempty" xml:"cost,omitempty"`
     
 
     // 词包类型
     
-    IsAutomatch   string `json:"is_automatch,omitempty"`
+    IsAutomatch   string `json:"is_automatch,omitempty" xml:"is_automatch,omitempty"`
     
 
     // cpc
     
-    Cpc   string `json:"cpc,omitempty"`
+    Cpc   string `json:"cpc,omitempty" xml:"cpc,omitempty"`
     
 
     // 时段编号
     
-    TimePeriod   string `json:"time_period,omitempty"`
+    TimePeriod   string `json:"time_period,omitempty" xml:"time_period,omitempty"`
     
 
     // 展现量
     
-    Impression   string `json:"impression,omitempty"`
+    Impression   string `json:"impression,omitempty" xml:"impression,omitempty"`
     
 
     // 点击量
     
-    Click   string `json:"click,omitempty"`
+    Click   string `json:"click,omitempty" xml:"click,omitempty"`
     
-
-}
-*/
-
-// RptResult 
-type RptResult struct {
-
-    // ctr
-    Ctr   string `json:"ctr,omitempty"`
-
-    // 消耗
-    Cost   string `json:"cost,omitempty"`
-
-    // 词包类型
-    IsAutomatch   string `json:"is_automatch,omitempty"`
-
-    // cpc
-    Cpc   string `json:"cpc,omitempty"`
-
-    // 时段编号
-    TimePeriod   string `json:"time_period,omitempty"`
-
-    // 展现量
-    Impression   string `json:"impression,omitempty"`
-
-    // 点击量
-    Click   string `json:"click,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mj.oc.syncpayinfo
 */
 type AlibabaMjOcSyncpayinfoAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMjOcSyncpayinfoResponse `json:"alibaba_mj_oc_syncpayinfo_response,omitempty"` 
     AlibabaMjOcSyncpayinfoResponse
 }
 
-/* model for simplify = false
 type AlibabaMjOcSyncpayinfoResponse struct {
+    XMLName xml.Name `xml:"alibaba_mj_oc_syncpayinfo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaMjOcSyncpayinfoResultDo  *AlibabaMjOcSyncpayinfoResultDo `json:"alibaba_mj_oc_syncpayinfo_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaMjOcSyncpayinfoResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMjOcSyncpayinfoResponse struct {
-
-    // result
-    Result   *AlibabaMjOcSyncpayinfoResultDo `json:"result,omitempty"`
-
 }

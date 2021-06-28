@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,48 +14,31 @@ taobao.nextone.logistics.warehouse.update
 */
 type TaobaoNextoneLogisticsWarehouseUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoNextoneLogisticsWarehouseUpdateResponse `json:"nextone_logistics_warehouse_update_response,omitempty"` 
     TaobaoNextoneLogisticsWarehouseUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoNextoneLogisticsWarehouseUpdateResponse struct {
+    XMLName xml.Name `xml:"nextone_logistics_warehouse_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // resultData
     
-    ResultData   string `json:"result_data,omitempty"`
-    
+    ResultData   string `json:"result_data,omitempty" xml:"result_data,omitempty"`
 
+    
     // errorInfo
     
-    ErrInfo   string `json:"err_info,omitempty"`
-    
+    ErrInfo   string `json:"err_info,omitempty" xml:"err_info,omitempty"`
 
+    
     // errorCode
     
-    ErrCode   string `json:"err_code,omitempty"`
-    
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 
+    
     // success
     
-    Succeed   bool `json:"succeed,omitempty"`
+    Succeed   bool `json:"succeed,omitempty" xml:"succeed,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoNextoneLogisticsWarehouseUpdateResponse struct {
-
-    // resultData
-    ResultData   string `json:"result_data,omitempty"`
-
-    // errorInfo
-    ErrInfo   string `json:"err_info,omitempty"`
-
-    // errorCode
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // success
-    Succeed   bool `json:"succeed,omitempty"`
-
 }

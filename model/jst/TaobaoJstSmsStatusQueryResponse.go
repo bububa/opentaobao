@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.jst.sms.status.query
 */
 type TaobaoJstSmsStatusQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJstSmsStatusQueryResponse `json:"jst_sms_status_query_response,omitempty"` 
     TaobaoJstSmsStatusQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoJstSmsStatusQueryResponse struct {
+    XMLName xml.Name `xml:"jst_sms_status_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        SmsResponse  *SmsResponse `json:"sms_response,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *SmsResponse `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoJstSmsStatusQueryResponse struct {
-
-    // 返回值
-    Result   *SmsResponse `json:"result,omitempty"`
-
 }

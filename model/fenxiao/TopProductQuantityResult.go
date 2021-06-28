@@ -1,45 +1,26 @@
 package fenxiao
 
 // TopProductQuantityResult 
-/* model for simplify = false
 type TopProductQuantityResult struct {
 
     // 产品数字ID
     
-    ProductId   int64 `json:"product_id,omitempty"`
+    ProductId   int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
     
 
     // SKU ID
     
-    SkuId   int64 `json:"sku_id,omitempty"`
+    SkuId   int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
     
 
     // 更新后库存数量
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
     
 
     // 更新时间
     
-    ModifiedTime   string `json:"modified_time,omitempty"`
+    ModifiedTime   string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
     
-
-}
-*/
-
-// TopProductQuantityResult 
-type TopProductQuantityResult struct {
-
-    // 产品数字ID
-    ProductId   int64 `json:"product_id,omitempty"`
-
-    // SKU ID
-    SkuId   int64 `json:"sku_id,omitempty"`
-
-    // 更新后库存数量
-    Result   string `json:"result,omitempty"`
-
-    // 更新时间
-    ModifiedTime   string `json:"modified_time,omitempty"`
 
 }

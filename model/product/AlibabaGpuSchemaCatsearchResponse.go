@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ alibaba.gpu.schema.catsearch
 */
 type AlibabaGpuSchemaCatsearchAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaGpuSchemaCatsearchResponse `json:"alibaba_gpu_schema_catsearch_response,omitempty"` 
     AlibabaGpuSchemaCatsearchResponse
 }
 
-/* model for simplify = false
 type AlibabaGpuSchemaCatsearchResponse struct {
+    XMLName xml.Name `xml:"alibaba_gpu_schema_catsearch_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回按类目查询spu的schema
     
-    CatSearchResult   string `json:"cat_search_result,omitempty"`
-    
+    CatSearchResult   string `json:"cat_search_result,omitempty" xml:"cat_search_result,omitempty"`
 
+    
     // 总记录数
     
-    Total   int64 `json:"total,omitempty"`
+    Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaGpuSchemaCatsearchResponse struct {
-
-    // 返回按类目查询spu的schema
-    CatSearchResult   string `json:"cat_search_result,omitempty"`
-
-    // 总记录数
-    Total   int64 `json:"total,omitempty"`
-
 }

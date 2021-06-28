@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.logistics.companies.get
 */
 type TaobaoLogisticsCompaniesGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLogisticsCompaniesGetResponse `json:"logistics_companies_get_response,omitempty"` 
     TaobaoLogisticsCompaniesGetResponse
 }
 
-/* model for simplify = false
 type TaobaoLogisticsCompaniesGetResponse struct {
+    XMLName xml.Name `xml:"logistics_companies_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 物流公司信息。返回的LogisticCompany包含的具体信息为入参fields请求的字段信息。
     
-    LogisticsCompanies  struct {
-        LogisticsCompany  []LogisticsCompany `json:"logistics_company,omitempty"`
-    } `json:"logistics_companies,omitempty"`
+    LogisticsCompanies   []LogisticsCompany `json:"logistics_companies,omitempty" xml:"logistics_companies>logistics_company,omitempty"`
     
-
-}
-*/
-
-type TaobaoLogisticsCompaniesGetResponse struct {
-
-    // 物流公司信息。返回的LogisticCompany包含的具体信息为入参fields请求的字段信息。
-    LogisticsCompanies   []LogisticsCompany `json:"logistics_companies,omitempty"`
-
+    
 }

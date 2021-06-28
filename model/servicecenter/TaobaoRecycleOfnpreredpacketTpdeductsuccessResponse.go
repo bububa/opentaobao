@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.recycle.ofnpreredpacket.tpdeductsuccess
 */
 type TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRecycleOfnpreredpacketTpdeductsuccessResponse `json:"recycle_ofnpreredpacket_tpdeductsuccess_response,omitempty"` 
     TaobaoRecycleOfnpreredpacketTpdeductsuccessResponse
 }
 
-/* model for simplify = false
 type TaobaoRecycleOfnpreredpacketTpdeductsuccessResponse struct {
+    XMLName xml.Name `xml:"recycle_ofnpreredpacket_tpdeductsuccess_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作
     
-    Data  *struct {
-        OfnPreRedPacketActionDTO  *OfnPreRedPacketActionDTO `json:"ofn_pre_red_packet_action_dto,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *OfnPreRedPacketActionDTO `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRecycleOfnpreredpacketTpdeductsuccessResponse struct {
-
-    // 操作
-    Data   *OfnPreRedPacketActionDTO `json:"data,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.openuid.get.bymixnick
 */
 type TaobaoOpenuidGetBymixnickAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenuidGetBymixnickResponse `json:"openuid_get_bymixnick_response,omitempty"` 
     TaobaoOpenuidGetBymixnickResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenuidGetBymixnickResponse struct {
+    XMLName xml.Name `xml:"openuid_get_bymixnick_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // OpenUID
     
-    OpenUid   string `json:"open_uid,omitempty"`
+    OpenUid   string `json:"open_uid,omitempty" xml:"open_uid,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenuidGetBymixnickResponse struct {
-
-    // OpenUID
-    OpenUid   string `json:"open_uid,omitempty"`
-
 }

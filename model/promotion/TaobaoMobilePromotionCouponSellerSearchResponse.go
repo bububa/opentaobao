@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.mobile.promotion.coupon.seller.search
 */
 type TaobaoMobilePromotionCouponSellerSearchAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoMobilePromotionCouponSellerSearchResponse `json:"mobile_promotion_coupon_seller_search_response,omitempty"` 
     TaobaoMobilePromotionCouponSellerSearchResponse
 }
 
-/* model for simplify = false
 type TaobaoMobilePromotionCouponSellerSearchResponse struct {
+    XMLName xml.Name `xml:"mobile_promotion_coupon_seller_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 优惠券查询结果
     
-    CouponSearchResult  *struct {
-        CouponSearchResult  *CouponSearchResult `json:"coupon_search_result,omitempty"`
-    } `json:"coupon_search_result,omitempty"`
+    CouponSearchResult   *CouponSearchResult `json:"coupon_search_result,omitempty" xml:"coupon_search_result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoMobilePromotionCouponSellerSearchResponse struct {
-
-    // 优惠券查询结果
-    CouponSearchResult   *CouponSearchResult `json:"coupon_search_result,omitempty"`
-
 }

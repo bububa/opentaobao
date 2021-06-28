@@ -1,53 +1,31 @@
 package iot
 
 // Like 
-/* model for simplify = false
 type Like struct {
 
     // 收藏音频源
     
-    Source   string `json:"source,omitempty"`
+    Source   string `json:"source,omitempty" xml:"source,omitempty"`
     
 
     // 收藏音频id
     
-    Id   string `json:"id,omitempty"`
+    Id   string `json:"id,omitempty" xml:"id,omitempty"`
     
 
     // 收藏音频专辑名
     
-    Album   string `json:"album,omitempty"`
+    Album   string `json:"album,omitempty" xml:"album,omitempty"`
     
 
     // 收藏音频演唱者
     
-    Author   string `json:"author,omitempty"`
+    Author   string `json:"author,omitempty" xml:"author,omitempty"`
     
 
     // 收藏音频名
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
-
-}
-*/
-
-// Like 
-type Like struct {
-
-    // 收藏音频源
-    Source   string `json:"source,omitempty"`
-
-    // 收藏音频id
-    Id   string `json:"id,omitempty"`
-
-    // 收藏音频专辑名
-    Album   string `json:"album,omitempty"`
-
-    // 收藏音频演唱者
-    Author   string `json:"author,omitempty"`
-
-    // 收藏音频名
-    Name   string `json:"name,omitempty"`
 
 }

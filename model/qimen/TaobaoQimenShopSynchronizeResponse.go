@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qimen.shop.synchronize
 */
 type TaobaoQimenShopSynchronizeAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenShopSynchronizeResponse `json:"qimen_shop_synchronize_response,omitempty"` 
     TaobaoQimenShopSynchronizeResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenShopSynchronizeResponse struct {
+    XMLName xml.Name `xml:"qimen_shop_synchronize_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // Response
     
-    Response  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenShopSynchronizeResponse struct {
-
-    // Response
-    Response   *Response `json:"response,omitempty"`
-
 }

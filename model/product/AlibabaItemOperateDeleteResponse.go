@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.item.operate.delete
 */
 type AlibabaItemOperateDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaItemOperateDeleteResponse `json:"alibaba_item_operate_delete_response,omitempty"` 
     AlibabaItemOperateDeleteResponse
 }
 
-/* model for simplify = false
 type AlibabaItemOperateDeleteResponse struct {
+    XMLName xml.Name `xml:"alibaba_item_operate_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品删除是否成功
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaItemOperateDeleteResponse struct {
-
-    // 商品删除是否成功
-    Result   string `json:"result,omitempty"`
-
 }

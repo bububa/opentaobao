@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.fuwu.sku.get
 */
 type TaobaoFuwuSkuGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFuwuSkuGetResponse `json:"fuwu_sku_get_response,omitempty"` 
     TaobaoFuwuSkuGetResponse
 }
 
-/* model for simplify = false
 type TaobaoFuwuSkuGetResponse struct {
+    XMLName xml.Name `xml:"fuwu_sku_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 内购服务及SKU详情
     
-    Result  *struct {
-        ArticleViewResult  *ArticleViewResult `json:"article_view_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ArticleViewResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFuwuSkuGetResponse struct {
-
-    // 内购服务及SKU详情
-    Result   *ArticleViewResult `json:"result,omitempty"`
-
 }

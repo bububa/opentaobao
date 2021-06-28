@@ -1,39 +1,21 @@
 package waybill
 
 // WaybillProductType 
-/* model for simplify = false
 type WaybillProductType struct {
 
     // 产品code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // 产品名称
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
 
     // 物流服务
     
-    ServiceTypes  struct {
-        WaybillServiceType  []WaybillServiceType `json:"waybill_service_type,omitempty"`
-    } `json:"service_types,omitempty"`
+    ServiceTypes   []WaybillServiceType `json:"service_types,omitempty" xml:"service_types,omitempty"`
     
-
-}
-*/
-
-// WaybillProductType 
-type WaybillProductType struct {
-
-    // 产品code
-    Code   string `json:"code,omitempty"`
-
-    // 产品名称
-    Name   string `json:"name,omitempty"`
-
-    // 物流服务
-    ServiceTypes   []WaybillServiceType `json:"service_types,omitempty"`
 
 }

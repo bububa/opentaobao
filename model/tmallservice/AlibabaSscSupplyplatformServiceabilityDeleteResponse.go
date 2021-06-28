@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.ssc.supplyplatform.serviceability.delete
 */
 type AlibabaSscSupplyplatformServiceabilityDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSscSupplyplatformServiceabilityDeleteResponse `json:"alibaba_ssc_supplyplatform_serviceability_delete_response,omitempty"` 
     AlibabaSscSupplyplatformServiceabilityDeleteResponse
 }
 
-/* model for simplify = false
 type AlibabaSscSupplyplatformServiceabilityDeleteResponse struct {
+    XMLName xml.Name `xml:"alibaba_ssc_supplyplatform_serviceability_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaSscSupplyplatformServiceabilityDeleteResult  *AlibabaSscSupplyplatformServiceabilityDeleteResult `json:"alibaba_ssc_supplyplatform_serviceability_delete_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaSscSupplyplatformServiceabilityDeleteResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSscSupplyplatformServiceabilityDeleteResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaSscSupplyplatformServiceabilityDeleteResult `json:"result,omitempty"`
-
 }

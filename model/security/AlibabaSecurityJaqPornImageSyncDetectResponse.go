@@ -1,6 +1,8 @@
 package security
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.security.jaq.porn.image.sync.detect
 */
 type AlibabaSecurityJaqPornImageSyncDetectAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSecurityJaqPornImageSyncDetectResponse `json:"alibaba_security_jaq_porn_image_sync_detect_response,omitempty"` 
     AlibabaSecurityJaqPornImageSyncDetectResponse
 }
 
-/* model for simplify = false
 type AlibabaSecurityJaqPornImageSyncDetectResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_porn_image_sync_detect_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参结构体
     
-    Data  *struct {
-        JaqPornImageDetectResult  *JaqPornImageDetectResult `json:"jaq_porn_image_detect_result,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *JaqPornImageDetectResult `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSecurityJaqPornImageSyncDetectResponse struct {
-
-    // 出参结构体
-    Data   *JaqPornImageDetectResult `json:"data,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.logistics.dummy.send
 */
 type TaobaoLogisticsDummySendAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLogisticsDummySendResponse `json:"logistics_dummy_send_response,omitempty"` 
     TaobaoLogisticsDummySendResponse
 }
 
-/* model for simplify = false
 type TaobaoLogisticsDummySendResponse struct {
+    XMLName xml.Name `xml:"logistics_dummy_send_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回发货是否成功is_success
     
-    Shipping  *struct {
-        Shipping  *Shipping `json:"shipping,omitempty"`
-    } `json:"shipping,omitempty"`
+    Shipping   *Shipping `json:"shipping,omitempty" xml:"shipping,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoLogisticsDummySendResponse struct {
-
-    // 返回发货是否成功is_success
-    Shipping   *Shipping `json:"shipping,omitempty"`
-
 }

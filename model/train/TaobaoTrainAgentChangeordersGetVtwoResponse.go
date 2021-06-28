@@ -1,6 +1,8 @@
 package train
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.train.agent.changeorders.get.vtwo
 */
 type TaobaoTrainAgentChangeordersGetVtwoAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTrainAgentChangeordersGetVtwoResponse `json:"train_agent_changeorders_get_vtwo_response,omitempty"` 
     TaobaoTrainAgentChangeordersGetVtwoResponse
 }
 
-/* model for simplify = false
 type TaobaoTrainAgentChangeordersGetVtwoResponse struct {
+    XMLName xml.Name `xml:"train_agent_changeorders_get_vtwo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 待处理订单总数量
     
-    ApplyCount   int64 `json:"apply_count,omitempty"`
-    
+    ApplyCount   int64 `json:"apply_count,omitempty" xml:"apply_count,omitempty"`
 
+    
     // 逗号连接的多个改签单id
     
-    ApplyIds   string `json:"apply_ids,omitempty"`
+    ApplyIds   string `json:"apply_ids,omitempty" xml:"apply_ids,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTrainAgentChangeordersGetVtwoResponse struct {
-
-    // 待处理订单总数量
-    ApplyCount   int64 `json:"apply_count,omitempty"`
-
-    // 逗号连接的多个改签单id
-    ApplyIds   string `json:"apply_ids,omitempty"`
-
 }

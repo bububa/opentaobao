@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ cainiao.cntec.item.change.message
 */
 type CainiaoCntecItemChangeMessageAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoCntecItemChangeMessageResponse `json:"cainiao_cntec_item_change_message_response,omitempty"` 
     CainiaoCntecItemChangeMessageResponse
 }
 
-/* model for simplify = false
 type CainiaoCntecItemChangeMessageResponse struct {
+    XMLName xml.Name `xml:"cainiao_cntec_item_change_message_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用返回的result结构体
     
-    Result  *struct {
-        CainiaoCntecItemChangeMessageResult  *CainiaoCntecItemChangeMessageResult `json:"cainiao_cntec_item_change_message_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CainiaoCntecItemChangeMessageResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoCntecItemChangeMessageResponse struct {
-
-    // 调用返回的result结构体
-    Result   *CainiaoCntecItemChangeMessageResult `json:"result,omitempty"`
-
 }

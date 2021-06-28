@@ -1,47 +1,26 @@
 package refund
 
 // TaobaoRdcAligeniusSendgoodsCancelResult 
-/* model for simplify = false
 type TaobaoRdcAligeniusSendgoodsCancelResult struct {
 
     // resultData
     
-    ResultData  *struct {
-        Resultdata  *Resultdata `json:"resultdata,omitempty"`
-    } `json:"result_data,omitempty"`
+    ResultData   *Resultdata `json:"result_data,omitempty" xml:"result_data,omitempty"`
     
 
     // 异常信息
     
-    ErrorInfo   string `json:"error_info,omitempty"`
+    ErrorInfo   string `json:"error_info,omitempty" xml:"error_info,omitempty"`
     
 
     // 异常编码
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// TaobaoRdcAligeniusSendgoodsCancelResult 
-type TaobaoRdcAligeniusSendgoodsCancelResult struct {
-
-    // resultData
-    ResultData   *Resultdata `json:"result_data,omitempty"`
-
-    // 异常信息
-    ErrorInfo   string `json:"error_info,omitempty"`
-
-    // 异常编码
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

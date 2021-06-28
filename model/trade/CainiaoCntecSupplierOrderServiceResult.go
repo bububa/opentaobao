@@ -1,79 +1,46 @@
 package trade
 
 // CainiaoCntecSupplierOrderServiceResult 
-/* model for simplify = false
 type CainiaoCntecSupplierOrderServiceResult struct {
 
     // 是否有下一页
     
-    HasNextPage   bool `json:"has_next_page,omitempty"`
+    HasNextPage   bool `json:"has_next_page,omitempty" xml:"has_next_page,omitempty"`
     
 
     // 分页大小
     
-    PageSize   int64 `json:"page_size,omitempty"`
+    PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
     
 
     // 总条数
     
-    TotalCount   int64 `json:"total_count,omitempty"`
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
     
 
     // 错误信息
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     
 
     // 分页游标
     
-    PageIndex   int64 `json:"page_index,omitempty"`
+    PageIndex   int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
     
 
     // 错误码
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // 是否成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // 订单列表
     
-    OrderList  struct {
-        SupplierOrder  []SupplierOrder `json:"supplier_order,omitempty"`
-    } `json:"order_list,omitempty"`
+    OrderList   []SupplierOrder `json:"order_list,omitempty" xml:"order_list,omitempty"`
     
-
-}
-*/
-
-// CainiaoCntecSupplierOrderServiceResult 
-type CainiaoCntecSupplierOrderServiceResult struct {
-
-    // 是否有下一页
-    HasNextPage   bool `json:"has_next_page,omitempty"`
-
-    // 分页大小
-    PageSize   int64 `json:"page_size,omitempty"`
-
-    // 总条数
-    TotalCount   int64 `json:"total_count,omitempty"`
-
-    // 错误信息
-    ErrorMsg   string `json:"error_msg,omitempty"`
-
-    // 分页游标
-    PageIndex   int64 `json:"page_index,omitempty"`
-
-    // 错误码
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // 是否成功
-    Success   bool `json:"success,omitempty"`
-
-    // 订单列表
-    OrderList   []SupplierOrder `json:"order_list,omitempty"`
 
 }

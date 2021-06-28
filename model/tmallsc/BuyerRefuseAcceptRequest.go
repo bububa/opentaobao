@@ -1,29 +1,16 @@
 package tmallsc
 
 // BuyerRefuseAcceptRequest 
-/* model for simplify = false
 type BuyerRefuseAcceptRequest struct {
 
     // 工单ID
     
-    WorkcardId   int64 `json:"workcard_id,omitempty"`
+    WorkcardId   int64 `json:"workcard_id,omitempty" xml:"workcard_id,omitempty"`
     
 
     // 拒收备注
     
-    RefuseMemo   string `json:"refuse_memo,omitempty"`
+    RefuseMemo   string `json:"refuse_memo,omitempty" xml:"refuse_memo,omitempty"`
     
-
-}
-*/
-
-// BuyerRefuseAcceptRequest 
-type BuyerRefuseAcceptRequest struct {
-
-    // 工单ID
-    WorkcardId   int64 `json:"workcard_id,omitempty"`
-
-    // 拒收备注
-    RefuseMemo   string `json:"refuse_memo,omitempty"`
 
 }

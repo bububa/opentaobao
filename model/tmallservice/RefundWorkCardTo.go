@@ -1,51 +1,26 @@
 package tmallservice
 
 // RefundWorkCardTo 
-/* model for simplify = false
 type RefundWorkCardTo struct {
 
     // existingFailure
     
-    ExistingFailure   bool `json:"existing_failure,omitempty"`
+    ExistingFailure   bool `json:"existing_failure,omitempty" xml:"existing_failure,omitempty"`
     
 
     // failureList
     
-    FailureList  struct {
-        Number  []int64 `json:"int64,omitempty"`
-    } `json:"failure_list,omitempty"`
+    FailureList   []int64 `json:"failure_list,omitempty" xml:"failure_list>int64,omitempty"`
     
 
     // notExistingList
     
-    NotExistingList  struct {
-        Number  []int64 `json:"int64,omitempty"`
-    } `json:"not_existing_list,omitempty"`
+    NotExistingList   []int64 `json:"not_existing_list,omitempty" xml:"not_existing_list>int64,omitempty"`
     
 
     // refundList
     
-    RefundList  struct {
-        Number  []int64 `json:"int64,omitempty"`
-    } `json:"refund_list,omitempty"`
+    RefundList   []int64 `json:"refund_list,omitempty" xml:"refund_list>int64,omitempty"`
     
-
-}
-*/
-
-// RefundWorkCardTo 
-type RefundWorkCardTo struct {
-
-    // existingFailure
-    ExistingFailure   bool `json:"existing_failure,omitempty"`
-
-    // failureList
-    FailureList   []int64 `json:"failure_list,omitempty"`
-
-    // notExistingList
-    NotExistingList   []int64 `json:"not_existing_list,omitempty"`
-
-    // refundList
-    RefundList   []int64 `json:"refund_list,omitempty"`
 
 }

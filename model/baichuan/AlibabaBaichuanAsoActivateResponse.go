@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.baichuan.aso.activate
 */
 type AlibabaBaichuanAsoActivateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaBaichuanAsoActivateResponse `json:"alibaba_baichuan_aso_activate_response,omitempty"` 
     AlibabaBaichuanAsoActivateResponse
 }
 
-/* model for simplify = false
 type AlibabaBaichuanAsoActivateResponse struct {
+    XMLName xml.Name `xml:"alibaba_baichuan_aso_activate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AsoActivateDeviceResult  *AsoActivateDeviceResult `json:"aso_activate_device_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AsoActivateDeviceResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaBaichuanAsoActivateResponse struct {
-
-    // result
-    Result   *AsoActivateDeviceResult `json:"result,omitempty"`
-
 }

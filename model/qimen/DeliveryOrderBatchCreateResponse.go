@@ -1,47 +1,26 @@
 package qimen
 
 // DeliveryOrderBatchCreateResponse 
-/* model for simplify = false
 type DeliveryOrderBatchCreateResponse struct {
 
     // 响应结果:success|failure
     
-    Flag   string `json:"flag,omitempty"`
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
     
 
     // 响应码
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // 响应信息
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
     
 
     // 订单详情
     
-    Orders  struct {
-        Order  []Order `json:"order,omitempty"`
-    } `json:"orders,omitempty"`
+    Orders   []Order `json:"orders,omitempty" xml:"orders,omitempty"`
     
-
-}
-*/
-
-// DeliveryOrderBatchCreateResponse 
-type DeliveryOrderBatchCreateResponse struct {
-
-    // 响应结果:success|failure
-    Flag   string `json:"flag,omitempty"`
-
-    // 响应码
-    Code   string `json:"code,omitempty"`
-
-    // 响应信息
-    Message   string `json:"message,omitempty"`
-
-    // 订单详情
-    Orders   []Order `json:"orders,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.product.template.get
 */
 type TmallProductTemplateGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallProductTemplateGetResponse `json:"tmall_product_template_get_response,omitempty"` 
     TmallProductTemplateGetResponse
 }
 
-/* model for simplify = false
 type TmallProductTemplateGetResponse struct {
+    XMLName xml.Name `xml:"tmall_product_template_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 见SpuTemplateDO说明
     
-    Template  *struct {
-        SpuTemplateDO  *SpuTemplateDO `json:"spu_template_do,omitempty"`
-    } `json:"template,omitempty"`
+    Template   *SpuTemplateDO `json:"template,omitempty" xml:"template,omitempty"`
+
     
-
-}
-*/
-
-type TmallProductTemplateGetResponse struct {
-
-    // 见SpuTemplateDO说明
-    Template   *SpuTemplateDO `json:"template,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package security
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.security.jaq.ocr.image.async.detect.results.fetch
 */
 type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse `json:"alibaba_security_jaq_ocr_image_async_detect_results_fetch_response,omitempty"` 
     AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse
 }
 
-/* model for simplify = false
 type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_ocr_image_async_detect_results_fetch_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参结构体
     
-    Data  *struct {
-        JaqImageDetectResultCollection  *JaqImageDetectResultCollection `json:"jaq_image_detect_result_collection,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *JaqImageDetectResultCollection `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse struct {
-
-    // 出参结构体
-    Data   *JaqImageDetectResultCollection `json:"data,omitempty"`
-
 }

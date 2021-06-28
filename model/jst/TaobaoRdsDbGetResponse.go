@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.rds.db.get
 */
 type TaobaoRdsDbGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRdsDbGetResponse `json:"rds_db_get_response,omitempty"` 
     TaobaoRdsDbGetResponse
 }
 
-/* model for simplify = false
 type TaobaoRdsDbGetResponse struct {
+    XMLName xml.Name `xml:"rds_db_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 数据库查询返回数据结构
     
-    RdsDbInfos  struct {
-        RdsDbInfo  []RdsDbInfo `json:"rds_db_info,omitempty"`
-    } `json:"rds_db_infos,omitempty"`
+    RdsDbInfos   []RdsDbInfo `json:"rds_db_infos,omitempty" xml:"rds_db_infos>rds_db_info,omitempty"`
     
-
-}
-*/
-
-type TaobaoRdsDbGetResponse struct {
-
-    // 数据库查询返回数据结构
-    RdsDbInfos   []RdsDbInfo `json:"rds_db_infos,omitempty"`
-
+    
 }

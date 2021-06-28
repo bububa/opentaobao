@@ -1,47 +1,26 @@
 package alicom
 
 // ExchangeModel 
-/* model for simplify = false
 type ExchangeModel struct {
 
     // 从tae获取的混淆nick
     
-    Nick   string `json:"nick,omitempty"`
+    Nick   string `json:"nick,omitempty" xml:"nick,omitempty"`
     
 
     // 商家订单编号
     
-    OrderNo   string `json:"order_no,omitempty"`
+    OrderNo   string `json:"order_no,omitempty" xml:"order_no,omitempty"`
     
 
     // 兑换优惠券的金额，单位：分
     
-    Amount   string `json:"amount,omitempty"`
+    Amount   string `json:"amount,omitempty" xml:"amount,omitempty"`
     
 
     // 扩展信息
     
-    Ext  *struct {
-        Ext  *Ext `json:"ext,omitempty"`
-    } `json:"ext,omitempty"`
+    Ext   *Ext `json:"ext,omitempty" xml:"ext,omitempty"`
     
-
-}
-*/
-
-// ExchangeModel 
-type ExchangeModel struct {
-
-    // 从tae获取的混淆nick
-    Nick   string `json:"nick,omitempty"`
-
-    // 商家订单编号
-    OrderNo   string `json:"order_no,omitempty"`
-
-    // 兑换优惠券的金额，单位：分
-    Amount   string `json:"amount,omitempty"`
-
-    // 扩展信息
-    Ext   *Ext `json:"ext,omitempty"`
 
 }

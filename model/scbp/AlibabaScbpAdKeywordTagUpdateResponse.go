@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.scbp.ad.keyword.tag.update
 */
 type AlibabaScbpAdKeywordTagUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpAdKeywordTagUpdateResponse `json:"alibaba_scbp_ad_keyword_tag_update_response,omitempty"` 
     AlibabaScbpAdKeywordTagUpdateResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpAdKeywordTagUpdateResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_keyword_tag_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 实际修改的关键词数
     
-    Result   int64 `json:"result,omitempty"`
+    Result   int64 `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpAdKeywordTagUpdateResponse struct {
-
-    // 实际修改的关键词数
-    Result   int64 `json:"result,omitempty"`
-
 }

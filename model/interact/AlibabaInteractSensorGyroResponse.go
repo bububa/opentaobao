@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.sensor.gyro
 */
 type AlibabaInteractSensorGyroAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractSensorGyroResponse `json:"alibaba_interact_sensor_gyro_response,omitempty"` 
     AlibabaInteractSensorGyroResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractSensorGyroResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_sensor_gyro_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // return=0 表示正确
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractSensorGyroResponse struct {
-
-    // return=0 表示正确
-    Result   string `json:"result,omitempty"`
-
 }

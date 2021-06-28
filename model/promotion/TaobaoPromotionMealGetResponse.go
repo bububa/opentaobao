@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.promotion.meal.get
 */
 type TaobaoPromotionMealGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPromotionMealGetResponse `json:"promotion_meal_get_response,omitempty"` 
     TaobaoPromotionMealGetResponse
 }
 
-/* model for simplify = false
 type TaobaoPromotionMealGetResponse struct {
+    XMLName xml.Name `xml:"promotion_meal_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 搭配套餐列表。
     
-    MealList  struct {
-        Meal  []Meal `json:"meal,omitempty"`
-    } `json:"meal_list,omitempty"`
+    MealList   []Meal `json:"meal_list,omitempty" xml:"meal_list>meal,omitempty"`
     
-
-}
-*/
-
-type TaobaoPromotionMealGetResponse struct {
-
-    // 搭配套餐列表。
-    MealList   []Meal `json:"meal_list,omitempty"`
-
+    
 }

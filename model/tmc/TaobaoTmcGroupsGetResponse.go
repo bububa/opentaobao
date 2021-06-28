@@ -1,6 +1,8 @@
 package tmc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.tmc.groups.get
 */
 type TaobaoTmcGroupsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTmcGroupsGetResponse `json:"tmc_groups_get_response,omitempty"` 
     TaobaoTmcGroupsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTmcGroupsGetResponse struct {
+    XMLName xml.Name `xml:"tmc_groups_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // dasdasd
     
-    Groups  struct {
-        TmcGroup  []TmcGroup `json:"tmc_group,omitempty"`
-    } `json:"groups,omitempty"`
+    Groups   []TmcGroup `json:"groups,omitempty" xml:"groups>tmc_group,omitempty"`
     
-
+    
     // 分组总数
     
-    TotalResults   int64 `json:"total_results,omitempty"`
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTmcGroupsGetResponse struct {
-
-    // dasdasd
-    Groups   []TmcGroup `json:"groups,omitempty"`
-
-    // 分组总数
-    TotalResults   int64 `json:"total_results,omitempty"`
-
 }

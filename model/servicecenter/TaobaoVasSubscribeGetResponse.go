@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.vas.subscribe.get
 */
 type TaobaoVasSubscribeGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoVasSubscribeGetResponse `json:"vas_subscribe_get_response,omitempty"` 
     TaobaoVasSubscribeGetResponse
 }
 
-/* model for simplify = false
 type TaobaoVasSubscribeGetResponse struct {
+    XMLName xml.Name `xml:"vas_subscribe_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户订购信息
     
-    ArticleUserSubscribes  struct {
-        ArticleUserSubscribe  []ArticleUserSubscribe `json:"article_user_subscribe,omitempty"`
-    } `json:"article_user_subscribes,omitempty"`
+    ArticleUserSubscribes   []ArticleUserSubscribe `json:"article_user_subscribes,omitempty" xml:"article_user_subscribes>article_user_subscribe,omitempty"`
     
-
-}
-*/
-
-type TaobaoVasSubscribeGetResponse struct {
-
-    // 用户订购信息
-    ArticleUserSubscribes   []ArticleUserSubscribe `json:"article_user_subscribes,omitempty"`
-
+    
 }

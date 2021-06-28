@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.vas.order.search
 */
 type TaobaoVasOrderSearchAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoVasOrderSearchResponse `json:"vas_order_search_response,omitempty"` 
     TaobaoVasOrderSearchResponse
 }
 
-/* model for simplify = false
 type TaobaoVasOrderSearchResponse struct {
+    XMLName xml.Name `xml:"vas_order_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品订单对象
     
-    ArticleBizOrders  struct {
-        ArticleBizOrder  []ArticleBizOrder `json:"article_biz_order,omitempty"`
-    } `json:"article_biz_orders,omitempty"`
+    ArticleBizOrders   []ArticleBizOrder `json:"article_biz_orders,omitempty" xml:"article_biz_orders>article_biz_order,omitempty"`
     
-
+    
     // 总记录数
     
-    TotalItem   int64 `json:"total_item,omitempty"`
+    TotalItem   int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoVasOrderSearchResponse struct {
-
-    // 商品订单对象
-    ArticleBizOrders   []ArticleBizOrder `json:"article_biz_orders,omitempty"`
-
-    // 总记录数
-    TotalItem   int64 `json:"total_item,omitempty"`
-
 }

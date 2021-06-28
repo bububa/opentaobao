@@ -1,37 +1,21 @@
 package logistic
 
 // ConfirmConsignGoodsDto 
-/* model for simplify = false
 type ConfirmConsignGoodsDto struct {
 
     // 待发货商品的前端宝贝id
     
-    ItemId   string `json:"item_id,omitempty"`
+    ItemId   string `json:"item_id,omitempty" xml:"item_id,omitempty"`
     
 
     // 待发货商品的数量
     
-    Quantity   int64 `json:"quantity,omitempty"`
+    Quantity   int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
     
 
     // 待发货商品的子交易号
     
-    TcSubTradeId   int64 `json:"tc_sub_trade_id,omitempty"`
+    TcSubTradeId   int64 `json:"tc_sub_trade_id,omitempty" xml:"tc_sub_trade_id,omitempty"`
     
-
-}
-*/
-
-// ConfirmConsignGoodsDto 
-type ConfirmConsignGoodsDto struct {
-
-    // 待发货商品的前端宝贝id
-    ItemId   string `json:"item_id,omitempty"`
-
-    // 待发货商品的数量
-    Quantity   int64 `json:"quantity,omitempty"`
-
-    // 待发货商品的子交易号
-    TcSubTradeId   int64 `json:"tc_sub_trade_id,omitempty"`
 
 }

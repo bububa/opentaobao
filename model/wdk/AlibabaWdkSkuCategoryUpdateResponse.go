@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.sku.category.update
 */
 type AlibabaWdkSkuCategoryUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkSkuCategoryUpdateResponse `json:"alibaba_wdk_sku_category_update_response,omitempty"` 
     AlibabaWdkSkuCategoryUpdateResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkSkuCategoryUpdateResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_sku_category_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用结果
     
-    Result  *struct {
-        AlibabaWdkSkuCategoryUpdateApiResult  *AlibabaWdkSkuCategoryUpdateApiResult `json:"alibaba_wdk_sku_category_update_api_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaWdkSkuCategoryUpdateApiResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkSkuCategoryUpdateResponse struct {
-
-    // 调用结果
-    Result   *AlibabaWdkSkuCategoryUpdateApiResult `json:"result,omitempty"`
-
 }

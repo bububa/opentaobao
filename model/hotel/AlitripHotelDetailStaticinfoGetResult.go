@@ -1,83 +1,46 @@
 package hotel
 
 // AlitripHotelDetailStaticinfoGetResult 
-/* model for simplify = false
 type AlitripHotelDetailStaticinfoGetResult struct {
 
     // bizExtMap
     
-    BizExtMap  *struct {
-        Bizextmap  *Bizextmap `json:"bizextmap,omitempty"`
-    } `json:"biz_ext_map,omitempty"`
+    BizExtMap   *Bizextmap `json:"biz_ext_map,omitempty" xml:"biz_ext_map,omitempty"`
     
 
     // headers
     
-    Headers  *struct {
-        Headers  *Headers `json:"headers,omitempty"`
-    } `json:"headers,omitempty"`
+    Headers   *Headers `json:"headers,omitempty" xml:"headers,omitempty"`
     
 
     // httpStatusCode
     
-    HttpStatusCode   int64 `json:"http_status_code,omitempty"`
+    HttpStatusCode   int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
     
 
     // mappingCode
     
-    MappingCode   string `json:"mapping_code,omitempty"`
+    MappingCode   string `json:"mapping_code,omitempty" xml:"mapping_code,omitempty"`
     
 
     // 详情页静态信息
     
-    Model  *struct {
-        HotelTopStaticDetailsVo  *HotelTopStaticDetailsVo `json:"hotel_top_static_details_vo,omitempty"`
-    } `json:"model,omitempty"`
+    Model   *HotelTopStaticDetailsVo `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // msgCode
     
-    MsgCode   string `json:"msg_code,omitempty"`
+    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     
 
     // msgInfo
     
-    MsgInfo   string `json:"msg_info,omitempty"`
+    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// AlitripHotelDetailStaticinfoGetResult 
-type AlitripHotelDetailStaticinfoGetResult struct {
-
-    // bizExtMap
-    BizExtMap   *Bizextmap `json:"biz_ext_map,omitempty"`
-
-    // headers
-    Headers   *Headers `json:"headers,omitempty"`
-
-    // httpStatusCode
-    HttpStatusCode   int64 `json:"http_status_code,omitempty"`
-
-    // mappingCode
-    MappingCode   string `json:"mapping_code,omitempty"`
-
-    // 详情页静态信息
-    Model   *HotelTopStaticDetailsVo `json:"model,omitempty"`
-
-    // msgCode
-    MsgCode   string `json:"msg_code,omitempty"`
-
-    // msgInfo
-    MsgInfo   string `json:"msg_info,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

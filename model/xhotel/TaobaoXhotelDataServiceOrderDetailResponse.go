@@ -1,6 +1,8 @@
 package xhotel
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.xhotel.data.service.order.detail
 */
 type TaobaoXhotelDataServiceOrderDetailAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoXhotelDataServiceOrderDetailResponse `json:"xhotel_data_service_order_detail_response,omitempty"` 
     TaobaoXhotelDataServiceOrderDetailResponse
 }
 
-/* model for simplify = false
 type TaobaoXhotelDataServiceOrderDetailResponse struct {
+    XMLName xml.Name `xml:"xhotel_data_service_order_detail_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoXhotelDataServiceOrderDetailResultSet  *TaobaoXhotelDataServiceOrderDetailResultSet `json:"taobao_xhotel_data_service_order_detail_result_set,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoXhotelDataServiceOrderDetailResultSet `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoXhotelDataServiceOrderDetailResponse struct {
-
-    // result
-    Result   *TaobaoXhotelDataServiceOrderDetailResultSet `json:"result,omitempty"`
-
 }

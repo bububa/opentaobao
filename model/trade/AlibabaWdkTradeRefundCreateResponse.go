@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.trade.refund.create
 */
 type AlibabaWdkTradeRefundCreateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkTradeRefundCreateResponse `json:"alibaba_wdk_trade_refund_create_response,omitempty"` 
     AlibabaWdkTradeRefundCreateResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkTradeRefundCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_trade_refund_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Result  *struct {
-        RefundGoodsCreateResult  *RefundGoodsCreateResult `json:"refund_goods_create_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *RefundGoodsCreateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkTradeRefundCreateResponse struct {
-
-    // 返回结果
-    Result   *RefundGoodsCreateResult `json:"result,omitempty"`
-
 }

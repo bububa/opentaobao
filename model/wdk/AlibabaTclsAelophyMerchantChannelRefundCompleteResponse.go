@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.tcls.aelophy.merchant.channel.refund.complete
 */
 type AlibabaTclsAelophyMerchantChannelRefundCompleteAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTclsAelophyMerchantChannelRefundCompleteResponse `json:"alibaba_tcls_aelophy_merchant_channel_refund_complete_response,omitempty"` 
     AlibabaTclsAelophyMerchantChannelRefundCompleteResponse
 }
 
-/* model for simplify = false
 type AlibabaTclsAelophyMerchantChannelRefundCompleteResponse struct {
+    XMLName xml.Name `xml:"alibaba_tcls_aelophy_merchant_channel_refund_complete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    ApiResult  *struct {
-        AlibabaTclsAelophyMerchantChannelRefundCompleteApiResult  *AlibabaTclsAelophyMerchantChannelRefundCompleteApiResult `json:"alibaba_tcls_aelophy_merchant_channel_refund_complete_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *AlibabaTclsAelophyMerchantChannelRefundCompleteApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTclsAelophyMerchantChannelRefundCompleteResponse struct {
-
-    // 结果
-    ApiResult   *AlibabaTclsAelophyMerchantChannelRefundCompleteApiResult `json:"api_result,omitempty"`
-
 }

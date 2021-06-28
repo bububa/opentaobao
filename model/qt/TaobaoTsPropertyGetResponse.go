@@ -1,6 +1,8 @@
 package qt
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.ts.property.get
 */
 type TaobaoTsPropertyGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTsPropertyGetResponse `json:"ts_property_get_response,omitempty"` 
     TaobaoTsPropertyGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTsPropertyGetResponse struct {
+    XMLName xml.Name `xml:"ts_property_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 服务收费项相关属性对象
     
-    ServiceItemProperty  *struct {
-        ServiceItemProperty  *ServiceItemProperty `json:"service_item_property,omitempty"`
-    } `json:"service_item_property,omitempty"`
+    ServiceItemProperty   *ServiceItemProperty `json:"service_item_property,omitempty" xml:"service_item_property,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTsPropertyGetResponse struct {
-
-    // 服务收费项相关属性对象
-    ServiceItemProperty   *ServiceItemProperty `json:"service_item_property,omitempty"`
-
 }

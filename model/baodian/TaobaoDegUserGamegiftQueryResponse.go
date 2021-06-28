@@ -1,6 +1,8 @@
 package baodian
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.deg.user.gamegift.query
 */
 type TaobaoDegUserGamegiftQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoDegUserGamegiftQueryResponse `json:"deg_user_gamegift_query_response,omitempty"` 
     TaobaoDegUserGamegiftQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoDegUserGamegiftQueryResponse struct {
+    XMLName xml.Name `xml:"deg_user_gamegift_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 礼包信息
     
-    Records  struct {
-        GameGiftRecordDto  []GameGiftRecordDto `json:"game_gift_record_dto,omitempty"`
-    } `json:"records,omitempty"`
+    Records   []GameGiftRecordDto `json:"records,omitempty" xml:"records>game_gift_record_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoDegUserGamegiftQueryResponse struct {
-
-    // 礼包信息
-    Records   []GameGiftRecordDto `json:"records,omitempty"`
-
+    
 }

@@ -1,37 +1,21 @@
 package tmallsc
 
 // IdentifyTaskDeliveryRequest 
-/* model for simplify = false
 type IdentifyTaskDeliveryRequest struct {
 
     // 工单ID
     
-    WorkcardId   int64 `json:"workcard_id,omitempty"`
+    WorkcardId   int64 `json:"workcard_id,omitempty" xml:"workcard_id,omitempty"`
     
 
     // 配送地纬度
     
-    Latitude   string `json:"latitude,omitempty"`
+    Latitude   string `json:"latitude,omitempty" xml:"latitude,omitempty"`
     
 
     // 配送地经度
     
-    Longitude   string `json:"longitude,omitempty"`
+    Longitude   string `json:"longitude,omitempty" xml:"longitude,omitempty"`
     
-
-}
-*/
-
-// IdentifyTaskDeliveryRequest 
-type IdentifyTaskDeliveryRequest struct {
-
-    // 工单ID
-    WorkcardId   int64 `json:"workcard_id,omitempty"`
-
-    // 配送地纬度
-    Latitude   string `json:"latitude,omitempty"`
-
-    // 配送地经度
-    Longitude   string `json:"longitude,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.delivery.template.update
 */
 type TaobaoDeliveryTemplateUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoDeliveryTemplateUpdateResponse `json:"delivery_template_update_response,omitempty"` 
     TaobaoDeliveryTemplateUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoDeliveryTemplateUpdateResponse struct {
+    XMLName xml.Name `xml:"delivery_template_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 表示修改是否成功
     
-    Complete   bool `json:"complete,omitempty"`
+    Complete   bool `json:"complete,omitempty" xml:"complete,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoDeliveryTemplateUpdateResponse struct {
-
-    // 表示修改是否成功
-    Complete   bool `json:"complete,omitempty"`
-
 }

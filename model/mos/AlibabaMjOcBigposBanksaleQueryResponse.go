@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ alibaba.mj.oc.bigpos.banksale.query
 */
 type AlibabaMjOcBigposBanksaleQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMjOcBigposBanksaleQueryResponse `json:"alibaba_mj_oc_bigpos_banksale_query_response,omitempty"` 
     AlibabaMjOcBigposBanksaleQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaMjOcBigposBanksaleQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_mj_oc_bigpos_banksale_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 明细数量
     
-    Total   int64 `json:"total,omitempty"`
-    
+    Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
 
+    
     // 数据主体
     
-    Datas  struct {
-        AlibabaMjOcBigposBanksaleQueryData  []AlibabaMjOcBigposBanksaleQueryData `json:"alibaba_mj_oc_bigpos_banksale_query_data,omitempty"`
-    } `json:"datas,omitempty"`
+    Datas   []AlibabaMjOcBigposBanksaleQueryData `json:"datas,omitempty" xml:"datas>alibaba_mj_oc_bigpos_banksale_query_data,omitempty"`
     
-
-}
-*/
-
-type AlibabaMjOcBigposBanksaleQueryResponse struct {
-
-    // 明细数量
-    Total   int64 `json:"total,omitempty"`
-
-    // 数据主体
-    Datas   []AlibabaMjOcBigposBanksaleQueryData `json:"datas,omitempty"`
-
+    
 }

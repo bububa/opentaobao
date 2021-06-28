@@ -1,109 +1,66 @@
 package simba
 
 // RptBaseEntityDTO 
-/* model for simplify = false
 type RptBaseEntityDTO struct {
 
     // 日期
     
-    Thedate   string `json:"thedate,omitempty"`
+    Thedate   string `json:"thedate,omitempty" xml:"thedate,omitempty"`
     
 
     // 计划id
     
-    Campaignid   string `json:"campaignid,omitempty"`
+    Campaignid   string `json:"campaignid,omitempty" xml:"campaignid,omitempty"`
     
 
     // 推广组id
     
-    Adgroupid   string `json:"adgroupid,omitempty"`
+    Adgroupid   string `json:"adgroupid,omitempty" xml:"adgroupid,omitempty"`
     
 
     // 花费
     
-    Cost   string `json:"cost,omitempty"`
+    Cost   string `json:"cost,omitempty" xml:"cost,omitempty"`
     
 
     // 点击率
     
-    Ctr   string `json:"ctr,omitempty"`
+    Ctr   string `json:"ctr,omitempty" xml:"ctr,omitempty"`
     
 
     // 每点击一次花费
     
-    Cpc   string `json:"cpc,omitempty"`
+    Cpc   string `json:"cpc,omitempty" xml:"cpc,omitempty"`
     
 
     // 每千次展现花费
     
-    Cpm   string `json:"cpm,omitempty"`
+    Cpm   string `json:"cpm,omitempty" xml:"cpm,omitempty"`
     
 
     // 展现量
     
-    Impression   int64 `json:"impression,omitempty"`
+    Impression   int64 `json:"impression,omitempty" xml:"impression,omitempty"`
     
 
     // 点击量
     
-    Click   int64 `json:"click,omitempty"`
+    Click   int64 `json:"click,omitempty" xml:"click,omitempty"`
     
 
     // 人群名称
     
-    Crowdname   string `json:"crowdname,omitempty"`
+    Crowdname   string `json:"crowdname,omitempty" xml:"crowdname,omitempty"`
     
 
     // 流量来源，设备和网络。值包含PC站内，PC站外,移动站内，移动站外
     
-    Source   string `json:"source,omitempty"`
+    Source   string `json:"source,omitempty" xml:"source,omitempty"`
     
 
     // 人群id
     
-    Crowdid   string `json:"crowdid,omitempty"`
+    Crowdid   string `json:"crowdid,omitempty" xml:"crowdid,omitempty"`
     
-
-}
-*/
-
-// RptBaseEntityDTO 
-type RptBaseEntityDTO struct {
-
-    // 日期
-    Thedate   string `json:"thedate,omitempty"`
-
-    // 计划id
-    Campaignid   string `json:"campaignid,omitempty"`
-
-    // 推广组id
-    Adgroupid   string `json:"adgroupid,omitempty"`
-
-    // 花费
-    Cost   string `json:"cost,omitempty"`
-
-    // 点击率
-    Ctr   string `json:"ctr,omitempty"`
-
-    // 每点击一次花费
-    Cpc   string `json:"cpc,omitempty"`
-
-    // 每千次展现花费
-    Cpm   string `json:"cpm,omitempty"`
-
-    // 展现量
-    Impression   int64 `json:"impression,omitempty"`
-
-    // 点击量
-    Click   int64 `json:"click,omitempty"`
-
-    // 人群名称
-    Crowdname   string `json:"crowdname,omitempty"`
-
-    // 流量来源，设备和网络。值包含PC站内，PC站外,移动站内，移动站外
-    Source   string `json:"source,omitempty"`
-
-    // 人群id
-    Crowdid   string `json:"crowdid,omitempty"`
 
 }

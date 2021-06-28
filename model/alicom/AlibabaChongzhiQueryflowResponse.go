@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,60 +14,36 @@ alibaba.chongzhi.queryflow
 */
 type AlibabaChongzhiQueryflowAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaChongzhiQueryflowResponse `json:"alibaba_chongzhi_queryflow_response,omitempty"` 
     AlibabaChongzhiQueryflowResponse
 }
 
-/* model for simplify = false
 type AlibabaChongzhiQueryflowResponse struct {
+    XMLName xml.Name `xml:"alibaba_chongzhi_queryflow_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result   int64 `json:"result,omitempty"`
-    
+    Result   int64 `json:"result,omitempty" xml:"result,omitempty"`
 
+    
     // desc
     
-    Desc   string `json:"desc,omitempty"`
-    
+    Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
 
+    
     // MtsInfoDo
     
-    CatInfo  *struct {
-        MtsInfoDo  *MtsInfoDo `json:"mts_info_do,omitempty"`
-    } `json:"cat_info,omitempty"`
-    
+    CatInfo   *MtsInfoDo `json:"cat_info,omitempty" xml:"cat_info,omitempty"`
 
+    
     // flow_card_list
     
-    FlowCardList  struct {
-        Flowcardlist  []Flowcardlist `json:"flowcardlist,omitempty"`
-    } `json:"flow_card_list,omitempty"`
+    FlowCardList   []Flowcardlist `json:"flow_card_list,omitempty" xml:"flow_card_list>flowcardlist,omitempty"`
     
-
+    
     // cn_desc
     
-    CnDesc   string `json:"cn_desc,omitempty"`
+    CnDesc   string `json:"cn_desc,omitempty" xml:"cn_desc,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaChongzhiQueryflowResponse struct {
-
-    // 结果
-    Result   int64 `json:"result,omitempty"`
-
-    // desc
-    Desc   string `json:"desc,omitempty"`
-
-    // MtsInfoDo
-    CatInfo   *MtsInfoDo `json:"cat_info,omitempty"`
-
-    // flow_card_list
-    FlowCardList   []Flowcardlist `json:"flow_card_list,omitempty"`
-
-    // cn_desc
-    CnDesc   string `json:"cn_desc,omitempty"`
-
 }

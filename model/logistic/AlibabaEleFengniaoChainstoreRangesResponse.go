@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.ele.fengniao.chainstore.ranges
 */
 type AlibabaEleFengniaoChainstoreRangesAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaEleFengniaoChainstoreRangesResponse `json:"alibaba_ele_fengniao_chainstore_ranges_response,omitempty"` 
     AlibabaEleFengniaoChainstoreRangesResponse
 }
 
-/* model for simplify = false
 type AlibabaEleFengniaoChainstoreRangesResponse struct {
+    XMLName xml.Name `xml:"alibaba_ele_fengniao_chainstore_ranges_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    RangeList  struct {
-        AlibabaEleFengniaoChainstoreRangesResult  []AlibabaEleFengniaoChainstoreRangesResult `json:"alibaba_ele_fengniao_chainstore_ranges_result,omitempty"`
-    } `json:"range_list,omitempty"`
+    RangeList   []AlibabaEleFengniaoChainstoreRangesResult `json:"range_list,omitempty" xml:"range_list>alibaba_ele_fengniao_chainstore_ranges_result,omitempty"`
     
-
-}
-*/
-
-type AlibabaEleFengniaoChainstoreRangesResponse struct {
-
-    // 返回值
-    RangeList   []AlibabaEleFengniaoChainstoreRangesResult `json:"range_list,omitempty"`
-
+    
 }

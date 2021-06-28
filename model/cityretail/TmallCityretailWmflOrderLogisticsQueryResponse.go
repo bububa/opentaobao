@@ -1,6 +1,8 @@
 package cityretail
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.cityretail.wmfl.order.logistics.query
 */
 type TmallCityretailWmflOrderLogisticsQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TmallCityretailWmflOrderLogisticsQueryResponse `json:"tmall_cityretail_wmfl_order_logistics_query_response,omitempty"` 
     TmallCityretailWmflOrderLogisticsQueryResponse
 }
 
-/* model for simplify = false
 type TmallCityretailWmflOrderLogisticsQueryResponse struct {
+    XMLName xml.Name `xml:"tmall_cityretail_wmfl_order_logistics_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回对象
     
-    Result  *struct {
-        WorkResult  *WorkResult `json:"work_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *WorkResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallCityretailWmflOrderLogisticsQueryResponse struct {
-
-    // 返回对象
-    Result   *WorkResult `json:"result,omitempty"`
-
 }

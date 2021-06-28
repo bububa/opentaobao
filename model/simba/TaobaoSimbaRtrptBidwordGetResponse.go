@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.rtrpt.bidword.get
 */
 type TaobaoSimbaRtrptBidwordGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaRtrptBidwordGetResponse `json:"simba_rtrpt_bidword_get_response,omitempty"` 
     TaobaoSimbaRtrptBidwordGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaRtrptBidwordGetResponse struct {
+    XMLName xml.Name `xml:"simba_rtrpt_bidword_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // bidword result
     
-    Results  struct {
-        RtRptResultEntityDTO  []RtRptResultEntityDTO `json:"rt_rpt_result_entity_dto,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []RtRptResultEntityDTO `json:"results,omitempty" xml:"results>rt_rpt_result_entity_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaRtrptBidwordGetResponse struct {
-
-    // bidword result
-    Results   []RtRptResultEntityDTO `json:"results,omitempty"`
-
+    
 }

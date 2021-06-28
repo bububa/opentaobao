@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.scbp.account.budget.get
 */
 type AlibabaScbpAccountBudgetGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpAccountBudgetGetResponse `json:"alibaba_scbp_account_budget_get_response,omitempty"` 
     AlibabaScbpAccountBudgetGetResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpAccountBudgetGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_account_budget_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回今日预算
     
-    Budget   string `json:"budget,omitempty"`
+    Budget   string `json:"budget,omitempty" xml:"budget,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpAccountBudgetGetResponse struct {
-
-    // 返回今日预算
-    Budget   string `json:"budget,omitempty"`
-
 }

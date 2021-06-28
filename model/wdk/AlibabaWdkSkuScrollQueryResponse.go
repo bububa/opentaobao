@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.sku.scroll.query
 */
 type AlibabaWdkSkuScrollQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkSkuScrollQueryResponse `json:"alibaba_wdk_sku_scroll_query_response,omitempty"` 
     AlibabaWdkSkuScrollQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkSkuScrollQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_sku_scroll_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Result  *struct {
-        ApiScrollPageResult  *ApiScrollPageResult `json:"api_scroll_page_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ApiScrollPageResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkSkuScrollQueryResponse struct {
-
-    // 返回结果
-    Result   *ApiScrollPageResult `json:"result,omitempty"`
-
 }

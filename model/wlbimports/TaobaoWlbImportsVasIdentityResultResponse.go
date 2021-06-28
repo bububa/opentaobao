@@ -1,6 +1,8 @@
 package wlbimports
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wlb.imports.vas.identity.result
 */
 type TaobaoWlbImportsVasIdentityResultAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbImportsVasIdentityResultResponse `json:"wlb_imports_vas_identity_result_response,omitempty"` 
     TaobaoWlbImportsVasIdentityResultResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbImportsVasIdentityResultResponse struct {
+    XMLName xml.Name `xml:"wlb_imports_vas_identity_result_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回出参数结果
     
-    Result  *struct {
-        TopResult  *TopResult `json:"top_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TopResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbImportsVasIdentityResultResponse struct {
-
-    // 返回出参数结果
-    Result   *TopResult `json:"result,omitempty"`
-
 }

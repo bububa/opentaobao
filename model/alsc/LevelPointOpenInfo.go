@@ -1,53 +1,31 @@
 package alsc
 
 // LevelPointOpenInfo 
-/* model for simplify = false
 type LevelPointOpenInfo struct {
 
     // 是否已删除
     
-    Deleted   bool `json:"deleted,omitempty"`
+    Deleted   bool `json:"deleted,omitempty" xml:"deleted,omitempty"`
     
 
     // 等级ID
     
-    LevelId   string `json:"level_id,omitempty"`
+    LevelId   string `json:"level_id,omitempty" xml:"level_id,omitempty"`
     
 
     // 等级名称
     
-    LevelName   string `json:"level_name,omitempty"`
+    LevelName   string `json:"level_name,omitempty" xml:"level_name,omitempty"`
     
 
     // 积分奖励倍数
     
-    Times   string `json:"times,omitempty"`
+    Times   string `json:"times,omitempty" xml:"times,omitempty"`
     
 
     // 是否参与积分奖励
     
-    UseSwitch   bool `json:"use_switch,omitempty"`
+    UseSwitch   bool `json:"use_switch,omitempty" xml:"use_switch,omitempty"`
     
-
-}
-*/
-
-// LevelPointOpenInfo 
-type LevelPointOpenInfo struct {
-
-    // 是否已删除
-    Deleted   bool `json:"deleted,omitempty"`
-
-    // 等级ID
-    LevelId   string `json:"level_id,omitempty"`
-
-    // 等级名称
-    LevelName   string `json:"level_name,omitempty"`
-
-    // 积分奖励倍数
-    Times   string `json:"times,omitempty"`
-
-    // 是否参与积分奖励
-    UseSwitch   bool `json:"use_switch,omitempty"`
 
 }

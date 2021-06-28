@@ -1,6 +1,8 @@
 package kclub
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.kclub.kc.qa.search
 */
 type AlibabaKclubKcQaSearchAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaKclubKcQaSearchResponse `json:"alibaba_kclub_kc_qa_search_response,omitempty"` 
     AlibabaKclubKcQaSearchResponse
 }
 
-/* model for simplify = false
 type AlibabaKclubKcQaSearchResponse struct {
+    XMLName xml.Name `xml:"alibaba_kclub_kc_qa_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 搜索结果
     
-    Result  *struct {
-        AlibabaKclubKcQaSearchResult  *AlibabaKclubKcQaSearchResult `json:"alibaba_kclub_kc_qa_search_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaKclubKcQaSearchResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaKclubKcQaSearchResponse struct {
-
-    // 搜索结果
-    Result   *AlibabaKclubKcQaSearchResult `json:"result,omitempty"`
-
 }

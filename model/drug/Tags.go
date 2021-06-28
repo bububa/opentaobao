@@ -1,53 +1,31 @@
 package drug
 
 // Tags 
-/* model for simplify = false
 type Tags struct {
 
     // type
     
-    Type   string `json:"type,omitempty"`
+    Type   string `json:"type,omitempty" xml:"type,omitempty"`
     
 
     // picPath
     
-    PicPath   string `json:"pic_path,omitempty"`
+    PicPath   string `json:"pic_path,omitempty" xml:"pic_path,omitempty"`
     
 
     // desc
     
-    Desc   string `json:"desc,omitempty"`
+    Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     
 
     // shortDesc
     
-    ShortDesc   string `json:"short_desc,omitempty"`
+    ShortDesc   string `json:"short_desc,omitempty" xml:"short_desc,omitempty"`
     
 
     // manFanType
     
-    ManFanType   string `json:"man_fan_type,omitempty"`
+    ManFanType   string `json:"man_fan_type,omitempty" xml:"man_fan_type,omitempty"`
     
-
-}
-*/
-
-// Tags 
-type Tags struct {
-
-    // type
-    Type   string `json:"type,omitempty"`
-
-    // picPath
-    PicPath   string `json:"pic_path,omitempty"`
-
-    // desc
-    Desc   string `json:"desc,omitempty"`
-
-    // shortDesc
-    ShortDesc   string `json:"short_desc,omitempty"`
-
-    // manFanType
-    ManFanType   string `json:"man_fan_type,omitempty"`
 
 }

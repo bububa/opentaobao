@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.retail.device.trade.ship
 */
 type AlibabaRetailDeviceTradeShipAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaRetailDeviceTradeShipResponse `json:"alibaba_retail_device_trade_ship_response,omitempty"` 
     AlibabaRetailDeviceTradeShipResponse
 }
 
-/* model for simplify = false
 type AlibabaRetailDeviceTradeShipResponse struct {
+    XMLName xml.Name `xml:"alibaba_retail_device_trade_ship_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaRetailDeviceTradeShipResult  *AlibabaRetailDeviceTradeShipResult `json:"alibaba_retail_device_trade_ship_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaRetailDeviceTradeShipResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaRetailDeviceTradeShipResponse struct {
-
-    // result
-    Result   *AlibabaRetailDeviceTradeShipResult `json:"result,omitempty"`
-
 }

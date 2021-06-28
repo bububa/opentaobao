@@ -1,6 +1,8 @@
 package openim
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.openim.users.get
 */
 type TaobaoOpenimUsersGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenimUsersGetResponse `json:"openim_users_get_response,omitempty"` 
     TaobaoOpenimUsersGetResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenimUsersGetResponse struct {
+    XMLName xml.Name `xml:"openim_users_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 获取的用户信息列表
     
-    Userinfos  struct {
-        Userinfos  []Userinfos `json:"userinfos,omitempty"`
-    } `json:"userinfos,omitempty"`
+    Userinfos   []Userinfos `json:"userinfos,omitempty" xml:"userinfos>userinfos,omitempty"`
     
-
-}
-*/
-
-type TaobaoOpenimUsersGetResponse struct {
-
-    // 获取的用户信息列表
-    Userinfos   []Userinfos `json:"userinfos,omitempty"`
-
+    
 }

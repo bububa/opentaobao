@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.sku.barcode.query
 */
 type AlibabaWdkSkuBarcodeQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkSkuBarcodeQueryResponse `json:"alibaba_wdk_sku_barcode_query_response,omitempty"` 
     AlibabaWdkSkuBarcodeQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkSkuBarcodeQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_sku_barcode_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用结果
     
-    Result  *struct {
-        AlibabaWdkSkuBarcodeQueryApiResults  *AlibabaWdkSkuBarcodeQueryApiResults `json:"alibaba_wdk_sku_barcode_query_api_results,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaWdkSkuBarcodeQueryApiResults `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkSkuBarcodeQueryResponse struct {
-
-    // 调用结果
-    Result   *AlibabaWdkSkuBarcodeQueryApiResults `json:"result,omitempty"`
-
 }

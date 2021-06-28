@@ -1,21 +1,11 @@
 package util
 
 // ShortUrlDto 
-/* model for simplify = false
 type ShortUrlDto struct {
 
     // shortUrl
     
-    ShortUrl   string `json:"short_url,omitempty"`
+    ShortUrl   string `json:"short_url,omitempty" xml:"short_url,omitempty"`
     
-
-}
-*/
-
-// ShortUrlDto 
-type ShortUrlDto struct {
-
-    // shortUrl
-    ShortUrl   string `json:"short_url,omitempty"`
 
 }

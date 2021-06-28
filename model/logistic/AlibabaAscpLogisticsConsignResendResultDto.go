@@ -1,21 +1,11 @@
 package logistic
 
 // AlibabaAscpLogisticsConsignResendResultDto 
-/* model for simplify = false
 type AlibabaAscpLogisticsConsignResendResultDto struct {
 
     // 执行结果
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// AlibabaAscpLogisticsConsignResendResultDto 
-type AlibabaAscpLogisticsConsignResendResultDto struct {
-
-    // 执行结果
-    Success   bool `json:"success,omitempty"`
 
 }

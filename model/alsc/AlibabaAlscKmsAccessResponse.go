@@ -1,6 +1,8 @@
 package alsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ alibaba.alsc.kms.access
 */
 type AlibabaAlscKmsAccessAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlscKmsAccessResponse `json:"alibaba_alsc_kms_access_response,omitempty"` 
     AlibabaAlscKmsAccessResponse
 }
 
-/* model for simplify = false
 type AlibabaAlscKmsAccessResponse struct {
+    XMLName xml.Name `xml:"alibaba_alsc_kms_access_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // code
     
-    Resultcode   string `json:"resultcode,omitempty"`
-    
+    Resultcode   string `json:"resultcode,omitempty" xml:"resultcode,omitempty"`
 
+    
     // 是否成功
     
-    Resultsuccess   bool `json:"resultsuccess,omitempty"`
-    
+    Resultsuccess   bool `json:"resultsuccess,omitempty" xml:"resultsuccess,omitempty"`
 
+    
     // message
     
-    Resultmessage   string `json:"resultmessage,omitempty"`
+    Resultmessage   string `json:"resultmessage,omitempty" xml:"resultmessage,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlscKmsAccessResponse struct {
-
-    // code
-    Resultcode   string `json:"resultcode,omitempty"`
-
-    // 是否成功
-    Resultsuccess   bool `json:"resultsuccess,omitempty"`
-
-    // message
-    Resultmessage   string `json:"resultmessage,omitempty"`
-
 }

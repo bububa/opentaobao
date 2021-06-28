@@ -1,6 +1,8 @@
 package cmns
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ yunos.service.cmns.coa.message.cancel
 */
 type YunosServiceCmnsCoaMessageCancelAPIResponse struct {
     model.CommonResponse
-    // Response *YunosServiceCmnsCoaMessageCancelResponse `json:"yunos_service_cmns_coa_message_cancel_response,omitempty"` 
     YunosServiceCmnsCoaMessageCancelResponse
 }
 
-/* model for simplify = false
 type YunosServiceCmnsCoaMessageCancelResponse struct {
+    XMLName xml.Name `xml:"yunos_service_cmns_coa_message_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回状态 200表示调用成功
     
-    Status   int64 `json:"status,omitempty"`
-    
+    Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
 
+    
     // true:撤回成功<br/>false:撤回失败
     
-    Data   bool `json:"data,omitempty"`
-    
+    Data   bool `json:"data,omitempty" xml:"data,omitempty"`
 
+    
     // 调用出错时返回信息
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+
     
-
-}
-*/
-
-type YunosServiceCmnsCoaMessageCancelResponse struct {
-
-    // 返回状态 200表示调用成功
-    Status   int64 `json:"status,omitempty"`
-
-    // true:撤回成功<br/>false:撤回失败
-    Data   bool `json:"data,omitempty"`
-
-    // 调用出错时返回信息
-    Message   string `json:"message,omitempty"`
-
 }

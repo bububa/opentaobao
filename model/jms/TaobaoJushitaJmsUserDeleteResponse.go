@@ -1,6 +1,8 @@
 package jms
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.jushita.jms.user.delete
 */
 type TaobaoJushitaJmsUserDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJushitaJmsUserDeleteResponse `json:"jushita_jms_user_delete_response,omitempty"` 
     TaobaoJushitaJmsUserDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoJushitaJmsUserDeleteResponse struct {
+    XMLName xml.Name `xml:"jushita_jms_user_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否删除成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoJushitaJmsUserDeleteResponse struct {
-
-    // 是否删除成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

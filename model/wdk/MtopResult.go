@@ -1,47 +1,26 @@
 package wdk
 
 // MtopResult 
-/* model for simplify = false
 type MtopResult struct {
 
     // model
     
-    Model  *struct {
-        MemberInfoDto  *MemberInfoDto `json:"member_info_dto,omitempty"`
-    } `json:"model,omitempty"`
+    Model   *MemberInfoDto `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // msgCode
     
-    MsgCode   string `json:"msg_code,omitempty"`
+    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     
 
     // msgInfo
     
-    MsgInfo   string `json:"msg_info,omitempty"`
+    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// MtopResult 
-type MtopResult struct {
-
-    // model
-    Model   *MemberInfoDto `json:"model,omitempty"`
-
-    // msgCode
-    MsgCode   string `json:"msg_code,omitempty"`
-
-    // msgInfo
-    MsgInfo   string `json:"msg_info,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

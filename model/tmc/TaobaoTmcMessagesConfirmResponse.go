@@ -1,6 +1,8 @@
 package tmc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.tmc.messages.confirm
 */
 type TaobaoTmcMessagesConfirmAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTmcMessagesConfirmResponse `json:"tmc_messages_confirm_response,omitempty"` 
     TaobaoTmcMessagesConfirmResponse
 }
 
-/* model for simplify = false
 type TaobaoTmcMessagesConfirmResponse struct {
+    XMLName xml.Name `xml:"tmc_messages_confirm_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTmcMessagesConfirmResponse struct {
-
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

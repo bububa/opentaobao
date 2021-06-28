@@ -1,6 +1,8 @@
 package car
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alitrip.travel.crsorder.search
 */
 type AlitripTravelCrsorderSearchAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripTravelCrsorderSearchResponse `json:"alitrip_travel_crsorder_search_response,omitempty"` 
     AlitripTravelCrsorderSearchResponse
 }
 
-/* model for simplify = false
 type AlitripTravelCrsorderSearchResponse struct {
+    XMLName xml.Name `xml:"alitrip_travel_crsorder_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订单id列表（string类型）
     
-    OrderStringList  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"order_string_list,omitempty"`
+    OrderStringList   []string `json:"order_string_list,omitempty" xml:"order_string_list>string,omitempty"`
     
-
-}
-*/
-
-type AlitripTravelCrsorderSearchResponse struct {
-
-    // 订单id列表（string类型）
-    OrderStringList   []string `json:"order_string_list,omitempty"`
-
+    
 }

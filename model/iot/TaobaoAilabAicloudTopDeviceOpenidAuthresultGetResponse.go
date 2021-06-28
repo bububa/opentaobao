@@ -1,6 +1,8 @@
 package iot
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.ailab.aicloud.top.device.openid.authresult.get
 */
 type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetResponse `json:"ailab_aicloud_top_device_openid_authresult_get_response,omitempty"` 
     TaobaoAilabAicloudTopDeviceOpenidAuthresultGetResponse
 }
 
-/* model for simplify = false
 type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetResponse struct {
+    XMLName xml.Name `xml:"ailab_aicloud_top_device_openid_authresult_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 系统自动生成
     
-    Result  *struct {
-        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetResponse struct {
-
-    // 系统自动生成
-    Result   *AiCloudResult `json:"result,omitempty"`
-
 }

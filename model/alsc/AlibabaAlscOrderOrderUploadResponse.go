@@ -1,6 +1,8 @@
 package alsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alsc.order.order.upload
 */
 type AlibabaAlscOrderOrderUploadAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlscOrderOrderUploadResponse `json:"alibaba_alsc_order_order_upload_response,omitempty"` 
     AlibabaAlscOrderOrderUploadResponse
 }
 
-/* model for simplify = false
 type AlibabaAlscOrderOrderUploadResponse struct {
+    XMLName xml.Name `xml:"alibaba_alsc_order_order_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回包装类
     
-    Result  *struct {
-        BaseResult  *BaseResult `json:"base_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlscOrderOrderUploadResponse struct {
-
-    // 返回包装类
-    Result   *BaseResult `json:"result,omitempty"`
-
 }

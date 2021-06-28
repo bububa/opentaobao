@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,36 +14,21 @@ taobao.promotion.coupon.sns.send
 */
 type TaobaoPromotionCouponSnsSendAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPromotionCouponSnsSendResponse `json:"promotion_coupon_sns_send_response,omitempty"` 
     TaobaoPromotionCouponSnsSendResponse
 }
 
-/* model for simplify = false
 type TaobaoPromotionCouponSnsSendResponse struct {
+    XMLName xml.Name `xml:"promotion_coupon_sns_send_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 没有发送成功的买家
     
-    FailureBuyers  struct {
-        ErrorMessage  []ErrorMessage `json:"error_message,omitempty"`
-    } `json:"failure_buyers,omitempty"`
+    FailureBuyers   []ErrorMessage `json:"failure_buyers,omitempty" xml:"failure_buyers>error_message,omitempty"`
     
-
+    
     // 发送成功的买家的昵称和优惠券的number
     
-    CouponResults  struct {
-        CouponResult  []CouponResult `json:"coupon_result,omitempty"`
-    } `json:"coupon_results,omitempty"`
+    CouponResults   []CouponResult `json:"coupon_results,omitempty" xml:"coupon_results>coupon_result,omitempty"`
     
-
-}
-*/
-
-type TaobaoPromotionCouponSnsSendResponse struct {
-
-    // 没有发送成功的买家
-    FailureBuyers   []ErrorMessage `json:"failure_buyers,omitempty"`
-
-    // 发送成功的买家的昵称和优惠券的number
-    CouponResults   []CouponResult `json:"coupon_results,omitempty"`
-
+    
 }

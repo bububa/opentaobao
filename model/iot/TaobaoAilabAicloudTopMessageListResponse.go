@@ -1,6 +1,8 @@
 package iot
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.ailab.aicloud.top.message.list
 */
 type TaobaoAilabAicloudTopMessageListAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAilabAicloudTopMessageListResponse `json:"ailab_aicloud_top_message_list_response,omitempty"` 
     TaobaoAilabAicloudTopMessageListResponse
 }
 
-/* model for simplify = false
 type TaobaoAilabAicloudTopMessageListResponse struct {
+    XMLName xml.Name `xml:"ailab_aicloud_top_message_list_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAilabAicloudTopMessageListResponse struct {
-
-    // result
-    Result   *AiCloudResult `json:"result,omitempty"`
-
 }

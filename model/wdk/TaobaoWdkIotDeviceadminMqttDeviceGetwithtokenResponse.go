@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wdk.iot.deviceadmin.mqtt.device.getwithtoken
 */
 type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenResponse `json:"wdk_iot_deviceadmin_mqtt_device_getwithtoken_response,omitempty"` 
     TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenResponse
 }
 
-/* model for simplify = false
 type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenResponse struct {
+    XMLName xml.Name `xml:"wdk_iot_deviceadmin_mqtt_device_getwithtoken_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        HmResult  *HmResult `json:"hm_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *HmResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenResponse struct {
-
-    // result
-    Result   *HmResult `json:"result,omitempty"`
-
 }

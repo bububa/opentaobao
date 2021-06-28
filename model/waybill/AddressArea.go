@@ -1,29 +1,16 @@
 package waybill
 
 // AddressArea 
-/* model for simplify = false
 type AddressArea struct {
 
     // 市
     
-    City   string `json:"city,omitempty"`
+    City   string `json:"city,omitempty" xml:"city,omitempty"`
     
 
     // 省
     
-    Province   string `json:"province,omitempty"`
+    Province   string `json:"province,omitempty" xml:"province,omitempty"`
     
-
-}
-*/
-
-// AddressArea 
-type AddressArea struct {
-
-    // 市
-    City   string `json:"city,omitempty"`
-
-    // 省
-    Province   string `json:"province,omitempty"`
 
 }

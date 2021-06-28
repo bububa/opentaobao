@@ -1,6 +1,8 @@
 package openim
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,46 +14,26 @@ taobao.openim.users.add
 */
 type TaobaoOpenimUsersAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenimUsersAddResponse `json:"openim_users_add_response,omitempty"` 
     TaobaoOpenimUsersAddResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenimUsersAddResponse struct {
+    XMLName xml.Name `xml:"openim_users_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 成功用户列表
     
-    UidSucc  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"uid_succ,omitempty"`
+    UidSucc   []string `json:"uid_succ,omitempty" xml:"uid_succ>string,omitempty"`
     
-
+    
     // 添加失败的用户id
     
-    UidFail  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"uid_fail,omitempty"`
+    UidFail   []string `json:"uid_fail,omitempty" xml:"uid_fail>string,omitempty"`
     
-
+    
     // 添加帐号失败的具体信息
     
-    FailMsg  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"fail_msg,omitempty"`
+    FailMsg   []string `json:"fail_msg,omitempty" xml:"fail_msg>string,omitempty"`
     
-
-}
-*/
-
-type TaobaoOpenimUsersAddResponse struct {
-
-    // 成功用户列表
-    UidSucc   []string `json:"uid_succ,omitempty"`
-
-    // 添加失败的用户id
-    UidFail   []string `json:"uid_fail,omitempty"`
-
-    // 添加帐号失败的具体信息
-    FailMsg   []string `json:"fail_msg,omitempty"`
-
+    
 }

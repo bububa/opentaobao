@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.region.price.manage
 */
 type TaobaoRegionPriceManageAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRegionPriceManageResponse `json:"region_price_manage_response,omitempty"` 
     TaobaoRegionPriceManageResponse
 }
 
-/* model for simplify = false
 type TaobaoRegionPriceManageResponse struct {
+    XMLName xml.Name `xml:"region_price_manage_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRegionPriceManageResponse struct {
-
-    // success
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

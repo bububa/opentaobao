@@ -1,6 +1,8 @@
 package tanx
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ taobao.tanx.qualification.solid.find
 */
 type TaobaoTanxQualificationSolidFindAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTanxQualificationSolidFindResponse `json:"tanx_qualification_solid_find_response,omitempty"` 
     TaobaoTanxQualificationSolidFindResponse
 }
 
-/* model for simplify = false
 type TaobaoTanxQualificationSolidFindResponse struct {
+    XMLName xml.Name `xml:"tanx_qualification_solid_find_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 返回固化资质列表
     
-    QualificationList  struct {
-        QualificationDto  []QualificationDto `json:"qualification_dto,omitempty"`
-    } `json:"qualification_list,omitempty"`
+    QualificationList   []QualificationDto `json:"qualification_list,omitempty" xml:"qualification_list>qualification_dto,omitempty"`
     
-
+    
     // 返回查询总数
     
-    Count   string `json:"count,omitempty"`
+    Count   string `json:"count,omitempty" xml:"count,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTanxQualificationSolidFindResponse struct {
-
-    // 调用是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 返回固化资质列表
-    QualificationList   []QualificationDto `json:"qualification_list,omitempty"`
-
-    // 返回查询总数
-    Count   string `json:"count,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.tcls.aelophy.bill.verificate.callback
 */
 type AlibabaTclsAelophyBillVerificateCallbackAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTclsAelophyBillVerificateCallbackResponse `json:"alibaba_tcls_aelophy_bill_verificate_callback_response,omitempty"` 
     AlibabaTclsAelophyBillVerificateCallbackResponse
 }
 
-/* model for simplify = false
 type AlibabaTclsAelophyBillVerificateCallbackResponse struct {
+    XMLName xml.Name `xml:"alibaba_tcls_aelophy_bill_verificate_callback_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 处理结果
     
-    ApiResult  *struct {
-        AlibabaTclsAelophyBillVerificateCallbackApiResult  *AlibabaTclsAelophyBillVerificateCallbackApiResult `json:"alibaba_tcls_aelophy_bill_verificate_callback_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *AlibabaTclsAelophyBillVerificateCallbackApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTclsAelophyBillVerificateCallbackResponse struct {
-
-    // 处理结果
-    ApiResult   *AlibabaTclsAelophyBillVerificateCallbackApiResult `json:"api_result,omitempty"`
-
 }

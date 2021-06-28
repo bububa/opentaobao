@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.servicecenter.workcard.create
 */
 type AlibabaServicecenterWorkcardCreateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaServicecenterWorkcardCreateResponse `json:"alibaba_servicecenter_workcard_create_response,omitempty"` 
     AlibabaServicecenterWorkcardCreateResponse
 }
 
-/* model for simplify = false
 type AlibabaServicecenterWorkcardCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_servicecenter_workcard_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回参数
     
-    Result  *struct {
-        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *FulfilplatformResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaServicecenterWorkcardCreateResponse struct {
-
-    // 返回参数
-    Result   *FulfilplatformResult `json:"result,omitempty"`
-
 }

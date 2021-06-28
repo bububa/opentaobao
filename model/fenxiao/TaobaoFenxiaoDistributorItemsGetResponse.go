@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.fenxiao.distributor.items.get
 */
 type TaobaoFenxiaoDistributorItemsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoDistributorItemsGetResponse `json:"fenxiao_distributor_items_get_response,omitempty"` 
     TaobaoFenxiaoDistributorItemsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoDistributorItemsGetResponse struct {
+    XMLName xml.Name `xml:"fenxiao_distributor_items_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 查询结果记录数
     
-    TotalResults   int64 `json:"total_results,omitempty"`
-    
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 
+    
     // 下载记录对象
     
-    Records  struct {
-        FenxiaoItemRecord  []FenxiaoItemRecord `json:"fenxiao_item_record,omitempty"`
-    } `json:"records,omitempty"`
+    Records   []FenxiaoItemRecord `json:"records,omitempty" xml:"records>fenxiao_item_record,omitempty"`
     
-
-}
-*/
-
-type TaobaoFenxiaoDistributorItemsGetResponse struct {
-
-    // 查询结果记录数
-    TotalResults   int64 `json:"total_results,omitempty"`
-
-    // 下载记录对象
-    Records   []FenxiaoItemRecord `json:"records,omitempty"`
-
+    
 }

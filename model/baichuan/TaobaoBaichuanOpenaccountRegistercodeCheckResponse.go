@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.baichuan.openaccount.registercode.check
 */
 type TaobaoBaichuanOpenaccountRegistercodeCheckAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaichuanOpenaccountRegistercodeCheckResponse `json:"baichuan_openaccount_registercode_check_response,omitempty"` 
     TaobaoBaichuanOpenaccountRegistercodeCheckResponse
 }
 
-/* model for simplify = false
 type TaobaoBaichuanOpenaccountRegistercodeCheckResponse struct {
+    XMLName xml.Name `xml:"baichuan_openaccount_registercode_check_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaichuanOpenaccountRegistercodeCheckResponse struct {
-
-    // name
-    Name   string `json:"name,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package openim
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ isv通过该接口给openim用户推送自定义消息
 */
 type TaobaoOpenimCustmsgPushAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenimCustmsgPushResponse `json:"openim_custmsg_push_response,omitempty"` 
     TaobaoOpenimCustmsgPushResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenimCustmsgPushResponse struct {
+    XMLName xml.Name `xml:"openim_custmsg_push_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 消息id，用于定位问题
     
-    Msgid   int64 `json:"msgid,omitempty"`
+    Msgid   int64 `json:"msgid,omitempty" xml:"msgid,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenimCustmsgPushResponse struct {
-
-    // 消息id，用于定位问题
-    Msgid   int64 `json:"msgid,omitempty"`
-
 }

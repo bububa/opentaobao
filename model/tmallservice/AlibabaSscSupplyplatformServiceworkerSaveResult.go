@@ -1,45 +1,26 @@
 package tmallservice
 
 // AlibabaSscSupplyplatformServiceworkerSaveResult 
-/* model for simplify = false
 type AlibabaSscSupplyplatformServiceworkerSaveResult struct {
 
     // 是否成功
     
-    Success   string `json:"success,omitempty"`
+    Success   string `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // 错误代码
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // 展示信息
     
-    DisplayMsg   string `json:"display_msg,omitempty"`
+    DisplayMsg   string `json:"display_msg,omitempty" xml:"display_msg,omitempty"`
     
 
     // 错误信息
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     
-
-}
-*/
-
-// AlibabaSscSupplyplatformServiceworkerSaveResult 
-type AlibabaSscSupplyplatformServiceworkerSaveResult struct {
-
-    // 是否成功
-    Success   string `json:"success,omitempty"`
-
-    // 错误代码
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // 展示信息
-    DisplayMsg   string `json:"display_msg,omitempty"`
-
-    // 错误信息
-    ErrorMsg   string `json:"error_msg,omitempty"`
 
 }

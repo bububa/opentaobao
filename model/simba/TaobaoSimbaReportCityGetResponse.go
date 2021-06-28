@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.report.city.get
 */
 type TaobaoSimbaReportCityGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaReportCityGetResponse `json:"simba_report_city_get_response,omitempty"` 
     TaobaoSimbaReportCityGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaReportCityGetResponse struct {
+    XMLName xml.Name `xml:"simba_report_city_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 11
     
-    Results  *struct {
-        RtRptResultEntityDTO  *RtRptResultEntityDTO `json:"rt_rpt_result_entity_dto,omitempty"`
-    } `json:"results,omitempty"`
+    Results   *RtRptResultEntityDTO `json:"results,omitempty" xml:"results,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaReportCityGetResponse struct {
-
-    // 11
-    Results   *RtRptResultEntityDTO `json:"results,omitempty"`
-
 }

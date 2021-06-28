@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ alibaba.scbp.product.list
 */
 type AlibabaScbpProductListAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpProductListResponse `json:"alibaba_scbp_product_list_response,omitempty"` 
     AlibabaScbpProductListResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpProductListResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_product_list_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 产品列表
     
-    ProductList  struct {
-        TopProductDto  []TopProductDto `json:"top_product_dto,omitempty"`
-    } `json:"product_list,omitempty"`
+    ProductList   []TopProductDto `json:"product_list,omitempty" xml:"product_list>top_product_dto,omitempty"`
     
-
+    
     // 总数
     
-    TotalNum   int64 `json:"total_num,omitempty"`
-    
+    TotalNum   int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 
+    
     // 总页数
     
-    TotalPage   int64 `json:"total_page,omitempty"`
+    TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpProductListResponse struct {
-
-    // 产品列表
-    ProductList   []TopProductDto `json:"product_list,omitempty"`
-
-    // 总数
-    TotalNum   int64 `json:"total_num,omitempty"`
-
-    // 总页数
-    TotalPage   int64 `json:"total_page,omitempty"`
-
 }

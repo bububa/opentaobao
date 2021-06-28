@@ -1,45 +1,26 @@
 package trade
 
 // AlibabaLstVasTradeflowSaveResult 
-/* model for simplify = false
 type AlibabaLstVasTradeflowSaveResult struct {
 
     // 是否成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // 错误码
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // model
     
-    Model   bool `json:"model,omitempty"`
+    Model   bool `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // 错误信息
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     
-
-}
-*/
-
-// AlibabaLstVasTradeflowSaveResult 
-type AlibabaLstVasTradeflowSaveResult struct {
-
-    // 是否成功
-    Success   bool `json:"success,omitempty"`
-
-    // 错误码
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // model
-    Model   bool `json:"model,omitempty"`
-
-    // 错误信息
-    ErrorMsg   string `json:"error_msg,omitempty"`
 
 }

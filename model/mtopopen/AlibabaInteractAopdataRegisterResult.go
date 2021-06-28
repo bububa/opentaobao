@@ -1,53 +1,31 @@
 package mtopopen
 
 // AlibabaInteractAopdataRegisterResult 
-/* model for simplify = false
 type AlibabaInteractAopdataRegisterResult struct {
 
     // xx
     
-    Data   string `json:"data,omitempty"`
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
     
 
     // xxx失败
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // xxx失败
     
-    ErrMsg   string `json:"err_msg,omitempty"`
+    ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     
 
     // 接口调用成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // 跟踪请求使用
     
-    TraceId   string `json:"trace_id,omitempty"`
+    TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
     
-
-}
-*/
-
-// AlibabaInteractAopdataRegisterResult 
-type AlibabaInteractAopdataRegisterResult struct {
-
-    // xx
-    Data   string `json:"data,omitempty"`
-
-    // xxx失败
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // xxx失败
-    ErrMsg   string `json:"err_msg,omitempty"`
-
-    // 接口调用成功
-    Success   bool `json:"success,omitempty"`
-
-    // 跟踪请求使用
-    TraceId   string `json:"trace_id,omitempty"`
 
 }

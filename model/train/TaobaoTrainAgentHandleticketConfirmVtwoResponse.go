@@ -1,6 +1,8 @@
 package train
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,48 +14,31 @@ taobao.train.agent.handleticket.confirm.vtwo
 */
 type TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTrainAgentHandleticketConfirmVtwoResponse `json:"train_agent_handleticket_confirm_vtwo_response,omitempty"` 
     TaobaoTrainAgentHandleticketConfirmVtwoResponse
 }
 
-/* model for simplify = false
 type TaobaoTrainAgentHandleticketConfirmVtwoResponse struct {
+    XMLName xml.Name `xml:"train_agent_handleticket_confirm_vtwo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 错误码
     
-    TrainErrorCode   string `json:"train_error_code,omitempty"`
-    
+    TrainErrorCode   string `json:"train_error_code,omitempty" xml:"train_error_code,omitempty"`
 
+    
     // 错误信息
     
-    TrainErrorMsg   string `json:"train_error_msg,omitempty"`
-    
+    TrainErrorMsg   string `json:"train_error_msg,omitempty" xml:"train_error_msg,omitempty"`
 
+    
     // 暂无
     
-    ExtendParams   string `json:"extend_params,omitempty"`
+    ExtendParams   string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTrainAgentHandleticketConfirmVtwoResponse struct {
-
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 错误码
-    TrainErrorCode   string `json:"train_error_code,omitempty"`
-
-    // 错误信息
-    TrainErrorMsg   string `json:"train_error_msg,omitempty"`
-
-    // 暂无
-    ExtendParams   string `json:"extend_params,omitempty"`
-
 }

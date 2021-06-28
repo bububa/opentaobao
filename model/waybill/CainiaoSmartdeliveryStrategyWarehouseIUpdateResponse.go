@@ -1,6 +1,8 @@
 package waybill
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ cainiao.smartdelivery.strategy.warehouse.i.update
 */
 type CainiaoSmartdeliveryStrategyWarehouseIUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoSmartdeliveryStrategyWarehouseIUpdateResponse `json:"cainiao_smartdelivery_strategy_warehouse_i_update_response,omitempty"` 
     CainiaoSmartdeliveryStrategyWarehouseIUpdateResponse
 }
 
-/* model for simplify = false
 type CainiaoSmartdeliveryStrategyWarehouseIUpdateResponse struct {
+    XMLName xml.Name `xml:"cainiao_smartdelivery_strategy_warehouse_i_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 仓信息
     
-    WarehouseInfo  *struct {
-        WarehouseDto  *WarehouseDto `json:"warehouse_dto,omitempty"`
-    } `json:"warehouse_info,omitempty"`
+    WarehouseInfo   *WarehouseDto `json:"warehouse_info,omitempty" xml:"warehouse_info,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoSmartdeliveryStrategyWarehouseIUpdateResponse struct {
-
-    // 仓信息
-    WarehouseInfo   *WarehouseDto `json:"warehouse_info,omitempty"`
-
 }

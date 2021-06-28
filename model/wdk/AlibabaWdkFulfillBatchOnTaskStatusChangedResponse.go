@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.fulfill.batch.on.task.status.changed
 */
 type AlibabaWdkFulfillBatchOnTaskStatusChangedAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkFulfillBatchOnTaskStatusChangedResponse `json:"alibaba_wdk_fulfill_batch_on_task_status_changed_response,omitempty"` 
     AlibabaWdkFulfillBatchOnTaskStatusChangedResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkFulfillBatchOnTaskStatusChangedResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_fulfill_batch_on_task_status_changed_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // fulfillLogisticSingleResult
     
-    FulfillLogisticSingleResult  *struct {
-        FulfillLogisticDefaultResult  *FulfillLogisticDefaultResult `json:"fulfill_logistic_default_result,omitempty"`
-    } `json:"fulfill_logistic_single_result,omitempty"`
+    FulfillLogisticSingleResult   *FulfillLogisticDefaultResult `json:"fulfill_logistic_single_result,omitempty" xml:"fulfill_logistic_single_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkFulfillBatchOnTaskStatusChangedResponse struct {
-
-    // fulfillLogisticSingleResult
-    FulfillLogisticSingleResult   *FulfillLogisticDefaultResult `json:"fulfill_logistic_single_result,omitempty"`
-
 }

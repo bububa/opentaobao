@@ -1,21 +1,11 @@
 package mtopopen
 
 // Modulemap 
-/* model for simplify = false
 type Modulemap struct {
 
     // false
     
-    Empty   bool `json:"empty,omitempty"`
+    Empty   bool `json:"empty,omitempty" xml:"empty,omitempty"`
     
-
-}
-*/
-
-// Modulemap 
-type Modulemap struct {
-
-    // false
-    Empty   bool `json:"empty,omitempty"`
 
 }

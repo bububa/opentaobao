@@ -1,6 +1,8 @@
 package eticket
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.vmarket.eticket.failsend
 */
 type TaobaoVmarketEticketFailsendAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoVmarketEticketFailsendResponse `json:"vmarket_eticket_failsend_response,omitempty"` 
     TaobaoVmarketEticketFailsendResponse
 }
 
-/* model for simplify = false
 type TaobaoVmarketEticketFailsendResponse struct {
+    XMLName xml.Name `xml:"vmarket_eticket_failsend_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 成功
     
-    RetCode   int64 `json:"ret_code,omitempty"`
+    RetCode   int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoVmarketEticketFailsendResponse struct {
-
-    // 成功
-    RetCode   int64 `json:"ret_code,omitempty"`
-
 }

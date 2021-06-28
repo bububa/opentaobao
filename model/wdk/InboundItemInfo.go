@@ -1,29 +1,16 @@
 package wdk
 
 // InboundItemInfo 
-/* model for simplify = false
 type InboundItemInfo struct {
 
     // 收货数量
     
-    InboundQuantity   string `json:"inbound_quantity,omitempty"`
+    InboundQuantity   string `json:"inbound_quantity,omitempty" xml:"inbound_quantity,omitempty"`
     
 
     // 商品编码
     
-    SkuCode   string `json:"sku_code,omitempty"`
+    SkuCode   string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
     
-
-}
-*/
-
-// InboundItemInfo 
-type InboundItemInfo struct {
-
-    // 收货数量
-    InboundQuantity   string `json:"inbound_quantity,omitempty"`
-
-    // 商品编码
-    SkuCode   string `json:"sku_code,omitempty"`
 
 }

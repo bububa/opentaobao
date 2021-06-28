@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,16 +14,11 @@ taobao.fenxiao.product.to.channel.import
 */
 type TaobaoFenxiaoProductToChannelImportAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoProductToChannelImportResponse `json:"fenxiao_product_to_channel_import_response,omitempty"` 
     TaobaoFenxiaoProductToChannelImportResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoProductToChannelImportResponse struct {
-
-}
-*/
-
-type TaobaoFenxiaoProductToChannelImportResponse struct {
+    XMLName xml.Name `xml:"fenxiao_product_to_channel_import_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
 }

@@ -1,6 +1,8 @@
 package drug
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.alihealth.drug.store.search
 */
 type TaobaoAlihealthDrugStoreSearchAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAlihealthDrugStoreSearchResponse `json:"alihealth_drug_store_search_response,omitempty"` 
     TaobaoAlihealthDrugStoreSearchResponse
 }
 
-/* model for simplify = false
 type TaobaoAlihealthDrugStoreSearchResponse struct {
+    XMLName xml.Name `xml:"alihealth_drug_store_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // model
     
-    Model  *struct {
-        O2OInShopSearchResponse  *O2OInShopSearchResponse `json:"o2o_in_shop_search_response,omitempty"`
-    } `json:"model,omitempty"`
+    Model   *O2OInShopSearchResponse `json:"model,omitempty" xml:"model,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAlihealthDrugStoreSearchResponse struct {
-
-    // model
-    Model   *O2OInShopSearchResponse `json:"model,omitempty"`
-
 }

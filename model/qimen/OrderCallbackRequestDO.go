@@ -1,53 +1,31 @@
 package qimen
 
 // OrderCallbackRequestDO 
-/* model for simplify = false
 type OrderCallbackRequestDO struct {
 
     // 奇门仓储字段,C123,string(50),,
     
-    WarehouseCode   string `json:"warehouseCode,omitempty"`
+    WarehouseCode   string `json:"warehouseCode,omitempty" xml:"warehouseCode,omitempty"`
     
 
     // 奇门仓储字段,C123,string(50),,
     
-    OwnerCode   string `json:"ownerCode,omitempty"`
+    OwnerCode   string `json:"ownerCode,omitempty" xml:"ownerCode,omitempty"`
     
 
     // 奇门仓储字段,C123,string(50),,
     
-    DeliveryOrderCode   string `json:"deliveryOrderCode,omitempty"`
+    DeliveryOrderCode   string `json:"deliveryOrderCode,omitempty" xml:"deliveryOrderCode,omitempty"`
     
 
     // 奇门仓储字段,C123,string(50),,
     
-    OrderId   string `json:"orderId,omitempty"`
+    OrderId   string `json:"orderId,omitempty" xml:"orderId,omitempty"`
     
 
     // 运单号
     
-    ExpressCode   string `json:"expressCode,omitempty"`
+    ExpressCode   string `json:"expressCode,omitempty" xml:"expressCode,omitempty"`
     
-
-}
-*/
-
-// OrderCallbackRequestDO 
-type OrderCallbackRequestDO struct {
-
-    // 奇门仓储字段,C123,string(50),,
-    WarehouseCode   string `json:"warehouseCode,omitempty"`
-
-    // 奇门仓储字段,C123,string(50),,
-    OwnerCode   string `json:"ownerCode,omitempty"`
-
-    // 奇门仓储字段,C123,string(50),,
-    DeliveryOrderCode   string `json:"deliveryOrderCode,omitempty"`
-
-    // 奇门仓储字段,C123,string(50),,
-    OrderId   string `json:"orderId,omitempty"`
-
-    // 运单号
-    ExpressCode   string `json:"expressCode,omitempty"`
 
 }

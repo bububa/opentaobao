@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.sensor.shake
 */
 type AlibabaInteractSensorShakeAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractSensorShakeResponse `json:"alibaba_interact_sensor_shake_response,omitempty"` 
     AlibabaInteractSensorShakeResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractSensorShakeResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_sensor_shake_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 0
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractSensorShakeResponse struct {
-
-    // 0
-    Result   string `json:"result,omitempty"`
-
 }

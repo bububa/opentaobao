@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.insight.wordspricedata.get
 */
 type TaobaoSimbaInsightWordspricedataGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaInsightWordspricedataGetResponse `json:"simba_insight_wordspricedata_get_response,omitempty"` 
     TaobaoSimbaInsightWordspricedataGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaInsightWordspricedataGetResponse struct {
+    XMLName xml.Name `xml:"simba_insight_wordspricedata_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 竞价区间分布数据
     
-    WordPricedataList  struct {
-        InsightWordPriceDistributeDataDTO  []InsightWordPriceDistributeDataDTO `json:"insight_word_price_distribute_data_dto,omitempty"`
-    } `json:"word_pricedata_list,omitempty"`
+    WordPricedataList   []InsightWordPriceDistributeDataDTO `json:"word_pricedata_list,omitempty" xml:"word_pricedata_list>insight_word_price_distribute_data_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaInsightWordspricedataGetResponse struct {
-
-    // 竞价区间分布数据
-    WordPricedataList   []InsightWordPriceDistributeDataDTO `json:"word_pricedata_list,omitempty"`
-
+    
 }

@@ -1,21 +1,11 @@
 package ju
 
 // Extend 
-/* model for simplify = false
 type Extend struct {
 
     // empty
     
-    Empty   bool `json:"empty,omitempty"`
+    Empty   bool `json:"empty,omitempty" xml:"empty,omitempty"`
     
-
-}
-*/
-
-// Extend 
-type Extend struct {
-
-    // empty
-    Empty   bool `json:"empty,omitempty"`
 
 }

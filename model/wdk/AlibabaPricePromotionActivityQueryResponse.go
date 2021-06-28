@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,56 +14,36 @@ alibaba.price.promotion.activity.query
 */
 type AlibabaPricePromotionActivityQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaPricePromotionActivityQueryResponse `json:"alibaba_price_promotion_activity_query_response,omitempty"` 
     AlibabaPricePromotionActivityQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaPricePromotionActivityQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_price_promotion_activity_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口调用是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 大润发促销档期数据
     
-    Data   string `json:"data,omitempty"`
-    
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
 
+    
     // 错误编码
     
-    ResultCode   int64 `json:"result_code,omitempty"`
-    
+    ResultCode   int64 `json:"result_code,omitempty" xml:"result_code,omitempty"`
 
+    
     // 大润发档期数据
     
-    TotalRecord   int64 `json:"total_record,omitempty"`
-    
+    TotalRecord   int64 `json:"total_record,omitempty" xml:"total_record,omitempty"`
 
+    
     // 错误参数
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaPricePromotionActivityQueryResponse struct {
-
-    // 接口调用是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 大润发促销档期数据
-    Data   string `json:"data,omitempty"`
-
-    // 错误编码
-    ResultCode   int64 `json:"result_code,omitempty"`
-
-    // 大润发档期数据
-    TotalRecord   int64 `json:"total_record,omitempty"`
-
-    // 错误参数
-    Message   string `json:"message,omitempty"`
-
 }

@@ -1,21 +1,11 @@
 package scbp
 
 // ForbiddenProductOperationDto 
-/* model for simplify = false
 type ForbiddenProductOperationDto struct {
 
     // 产品id
     
-    ProductId   int64 `json:"product_id,omitempty"`
+    ProductId   int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
     
-
-}
-*/
-
-// ForbiddenProductOperationDto 
-type ForbiddenProductOperationDto struct {
-
-    // 产品id
-    ProductId   int64 `json:"product_id,omitempty"`
 
 }

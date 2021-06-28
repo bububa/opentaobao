@@ -1,37 +1,21 @@
 package security
 
 // RealNameResult 
-/* model for simplify = false
 type RealNameResult struct {
 
     // checkCode
     
-    CheckCode   string `json:"check_code,omitempty"`
+    CheckCode   string `json:"check_code,omitempty" xml:"check_code,omitempty"`
     
 
     // checkMessage
     
-    CheckMessage   string `json:"check_message,omitempty"`
+    CheckMessage   string `json:"check_message,omitempty" xml:"check_message,omitempty"`
     
 
     // match
     
-    Match   bool `json:"match,omitempty"`
+    Match   bool `json:"match,omitempty" xml:"match,omitempty"`
     
-
-}
-*/
-
-// RealNameResult 
-type RealNameResult struct {
-
-    // checkCode
-    CheckCode   string `json:"check_code,omitempty"`
-
-    // checkMessage
-    CheckMessage   string `json:"check_message,omitempty"`
-
-    // match
-    Match   bool `json:"match,omitempty"`
 
 }

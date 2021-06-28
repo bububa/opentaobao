@@ -1,6 +1,8 @@
 package openim
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.openim.immsg.push
 */
 type TaobaoOpenimImmsgPushAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenimImmsgPushResponse `json:"openim_immsg_push_response,omitempty"` 
     TaobaoOpenimImmsgPushResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenimImmsgPushResponse struct {
+    XMLName xml.Name `xml:"openim_immsg_push_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 消息id，方便定位问题
     
-    Msgid   int64 `json:"msgid,omitempty"`
+    Msgid   int64 `json:"msgid,omitempty" xml:"msgid,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenimImmsgPushResponse struct {
-
-    // 消息id，方便定位问题
-    Msgid   int64 `json:"msgid,omitempty"`
-
 }

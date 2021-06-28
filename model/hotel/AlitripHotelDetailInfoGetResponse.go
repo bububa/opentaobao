@@ -1,6 +1,8 @@
 package hotel
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alitrip.hotel.detail.info.get
 */
 type AlitripHotelDetailInfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripHotelDetailInfoGetResponse `json:"alitrip_hotel_detail_info_get_response,omitempty"` 
     AlitripHotelDetailInfoGetResponse
 }
 
-/* model for simplify = false
 type AlitripHotelDetailInfoGetResponse struct {
+    XMLName xml.Name `xml:"alitrip_hotel_detail_info_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlitripHotelDetailInfoGetResult  *AlitripHotelDetailInfoGetResult `json:"alitrip_hotel_detail_info_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlitripHotelDetailInfoGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlitripHotelDetailInfoGetResponse struct {
-
-    // result
-    Result   *AlitripHotelDetailInfoGetResult `json:"result,omitempty"`
-
 }

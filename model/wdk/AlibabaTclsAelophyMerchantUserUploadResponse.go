@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.tcls.aelophy.merchant.user.upload
 */
 type AlibabaTclsAelophyMerchantUserUploadAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTclsAelophyMerchantUserUploadResponse `json:"alibaba_tcls_aelophy_merchant_user_upload_response,omitempty"` 
     AlibabaTclsAelophyMerchantUserUploadResponse
 }
 
-/* model for simplify = false
 type AlibabaTclsAelophyMerchantUserUploadResponse struct {
+    XMLName xml.Name `xml:"alibaba_tcls_aelophy_merchant_user_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    ApiResult  *struct {
-        AlibabaTclsAelophyMerchantUserUploadApiResult  *AlibabaTclsAelophyMerchantUserUploadApiResult `json:"alibaba_tcls_aelophy_merchant_user_upload_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *AlibabaTclsAelophyMerchantUserUploadApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTclsAelophyMerchantUserUploadResponse struct {
-
-    // 接口返回model
-    ApiResult   *AlibabaTclsAelophyMerchantUserUploadApiResult `json:"api_result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wtt.offline.record.queryagentinfo
 */
 type AlibabaWttOfflineRecordQueryagentinfoAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWttOfflineRecordQueryagentinfoResponse `json:"alibaba_wtt_offline_record_queryagentinfo_response,omitempty"` 
     AlibabaWttOfflineRecordQueryagentinfoResponse
 }
 
-/* model for simplify = false
 type AlibabaWttOfflineRecordQueryagentinfoResponse struct {
+    XMLName xml.Name `xml:"alibaba_wtt_offline_record_queryagentinfo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口结果
     
-    Result  *struct {
-        CommonResult  *CommonResult `json:"common_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWttOfflineRecordQueryagentinfoResponse struct {
-
-    // 接口结果
-    Result   *CommonResult `json:"result,omitempty"`
-
 }

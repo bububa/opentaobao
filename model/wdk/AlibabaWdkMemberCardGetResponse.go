@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.member.card.get
 */
 type AlibabaWdkMemberCardGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkMemberCardGetResponse `json:"alibaba_wdk_member_card_get_response,omitempty"` 
     AlibabaWdkMemberCardGetResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkMemberCardGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_member_card_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    ApiResult  *struct {
-        AlibabaWdkMemberCardGetApiResult  *AlibabaWdkMemberCardGetApiResult `json:"alibaba_wdk_member_card_get_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *AlibabaWdkMemberCardGetApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkMemberCardGetResponse struct {
-
-    // 结果
-    ApiResult   *AlibabaWdkMemberCardGetApiResult `json:"api_result,omitempty"`
-
 }

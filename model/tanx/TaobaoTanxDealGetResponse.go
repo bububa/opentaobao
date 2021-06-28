@@ -1,6 +1,8 @@
 package tanx
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,50 +14,31 @@ taobao.tanx.deal.get
 */
 type TaobaoTanxDealGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTanxDealGetResponse `json:"tanx_deal_get_response,omitempty"` 
     TaobaoTanxDealGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTanxDealGetResponse struct {
+    XMLName xml.Name `xml:"tanx_deal_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果代码
     
-    Code   int64 `json:"code,omitempty"`
-    
+    Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
 
+    
     // 结果信息
     
-    Messag   string `json:"messag,omitempty"`
-    
+    Messag   string `json:"messag,omitempty" xml:"messag,omitempty"`
 
+    
     // 查询结果
     
-    Sucess   bool `json:"sucess,omitempty"`
-    
+    Sucess   bool `json:"sucess,omitempty" xml:"sucess,omitempty"`
 
+    
     // 查询结果
     
-    Result  *struct {
-        DealInfoDTO  *DealInfoDTO `json:"deal_info_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *DealInfoDTO `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTanxDealGetResponse struct {
-
-    // 结果代码
-    Code   int64 `json:"code,omitempty"`
-
-    // 结果信息
-    Messag   string `json:"messag,omitempty"`
-
-    // 查询结果
-    Sucess   bool `json:"sucess,omitempty"`
-
-    // 查询结果
-    Result   *DealInfoDTO `json:"result,omitempty"`
-
 }

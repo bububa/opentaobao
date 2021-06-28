@@ -1,29 +1,16 @@
 package logistic
 
 // LocationParam 
-/* model for simplify = false
 type LocationParam struct {
 
     // 经度
     
-    Longitude   string `json:"longitude,omitempty"`
+    Longitude   string `json:"longitude,omitempty" xml:"longitude,omitempty"`
     
 
     // 纬度
     
-    Latitude   string `json:"latitude,omitempty"`
+    Latitude   string `json:"latitude,omitempty" xml:"latitude,omitempty"`
     
-
-}
-*/
-
-// LocationParam 
-type LocationParam struct {
-
-    // 经度
-    Longitude   string `json:"longitude,omitempty"`
-
-    // 纬度
-    Latitude   string `json:"latitude,omitempty"`
 
 }

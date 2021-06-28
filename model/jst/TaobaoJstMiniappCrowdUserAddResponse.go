@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.jst.miniapp.crowd.user.add
 */
 type TaobaoJstMiniappCrowdUserAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJstMiniappCrowdUserAddResponse `json:"jst_miniapp_crowd_user_add_response,omitempty"` 
     TaobaoJstMiniappCrowdUserAddResponse
 }
 
-/* model for simplify = false
 type TaobaoJstMiniappCrowdUserAddResponse struct {
+    XMLName xml.Name `xml:"jst_miniapp_crowd_user_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 添加成功
     
-    Result   bool `json:"result,omitempty"`
-    
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
 
+    
     // 请求成功
     
-    RCode   int64 `json:"r_code,omitempty"`
+    RCode   int64 `json:"r_code,omitempty" xml:"r_code,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoJstMiniappCrowdUserAddResponse struct {
-
-    // 添加成功
-    Result   bool `json:"result,omitempty"`
-
-    // 请求成功
-    RCode   int64 `json:"r_code,omitempty"`
-
 }

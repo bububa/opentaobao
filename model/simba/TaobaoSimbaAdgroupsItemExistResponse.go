@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.simba.adgroups.item.exist
 */
 type TaobaoSimbaAdgroupsItemExistAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaAdgroupsItemExistResponse `json:"simba_adgroups_item_exist_response,omitempty"` 
     TaobaoSimbaAdgroupsItemExistResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaAdgroupsItemExistResponse struct {
+    XMLName xml.Name `xml:"simba_adgroups_item_exist_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // true表示已经被推广，false表示没有被推广
     
-    Exist   bool `json:"exist,omitempty"`
+    Exist   bool `json:"exist,omitempty" xml:"exist,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaAdgroupsItemExistResponse struct {
-
-    // true表示已经被推广，false表示没有被推广
-    Exist   bool `json:"exist,omitempty"`
-
 }

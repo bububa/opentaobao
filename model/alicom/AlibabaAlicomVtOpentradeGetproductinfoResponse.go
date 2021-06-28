@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alicom.vt.opentrade.getproductinfo
 */
 type AlibabaAlicomVtOpentradeGetproductinfoAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlicomVtOpentradeGetproductinfoResponse `json:"alibaba_alicom_vt_opentrade_getproductinfo_response,omitempty"` 
     AlibabaAlicomVtOpentradeGetproductinfoResponse
 }
 
-/* model for simplify = false
 type AlibabaAlicomVtOpentradeGetproductinfoResponse struct {
+    XMLName xml.Name `xml:"alibaba_alicom_vt_opentrade_getproductinfo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TopResultDto  *TopResultDto `json:"top_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TopResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlicomVtOpentradeGetproductinfoResponse struct {
-
-    // result
-    Result   *TopResultDto `json:"result,omitempty"`
-
 }

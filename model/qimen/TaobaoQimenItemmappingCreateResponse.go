@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qimen.itemmapping.create
 */
 type TaobaoQimenItemmappingCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenItemmappingCreateResponse `json:"qimen_itemmapping_create_response,omitempty"` 
     TaobaoQimenItemmappingCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenItemmappingCreateResponse struct {
+    XMLName xml.Name `xml:"qimen_itemmapping_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        ResponseDO  *ResponseDO `json:"response_do,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *ResponseDO `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenItemmappingCreateResponse struct {
-
-    // 
-    Response   *ResponseDO `json:"response,omitempty"`
-
 }

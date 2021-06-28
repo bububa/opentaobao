@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.baichuan.items.subscribe
 */
 type TaobaoBaichuanItemsSubscribeAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaichuanItemsSubscribeResponse `json:"baichuan_items_subscribe_response,omitempty"` 
     TaobaoBaichuanItemsSubscribeResponse
 }
 
-/* model for simplify = false
 type TaobaoBaichuanItemsSubscribeResponse struct {
+    XMLName xml.Name `xml:"baichuan_items_subscribe_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        TaobaoBaichuanItemsSubscribeResult  *TaobaoBaichuanItemsSubscribeResult `json:"taobao_baichuan_items_subscribe_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoBaichuanItemsSubscribeResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaichuanItemsSubscribeResponse struct {
-
-    // 接口返回model
-    Result   *TaobaoBaichuanItemsSubscribeResult `json:"result,omitempty"`
-
 }

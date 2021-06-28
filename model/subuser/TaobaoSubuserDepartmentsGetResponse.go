@@ -1,6 +1,8 @@
 package subuser
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.subuser.departments.get
 */
 type TaobaoSubuserDepartmentsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSubuserDepartmentsGetResponse `json:"subuser_departments_get_response,omitempty"` 
     TaobaoSubuserDepartmentsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSubuserDepartmentsGetResponse struct {
+    XMLName xml.Name `xml:"subuser_departments_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 部门信息
     
-    Departments  struct {
-        Department  []Department `json:"department,omitempty"`
-    } `json:"departments,omitempty"`
+    Departments   []Department `json:"departments,omitempty" xml:"departments>department,omitempty"`
     
-
-}
-*/
-
-type TaobaoSubuserDepartmentsGetResponse struct {
-
-    // 部门信息
-    Departments   []Department `json:"departments,omitempty"`
-
+    
 }

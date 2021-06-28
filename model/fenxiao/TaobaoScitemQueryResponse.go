@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,44 +14,26 @@ taobao.scitem.query
 */
 type TaobaoScitemQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoScitemQueryResponse `json:"scitem_query_response,omitempty"` 
     TaobaoScitemQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoScitemQueryResponse struct {
+    XMLName xml.Name `xml:"scitem_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // List<ScItemDO>
     
-    ScItemList  struct {
-        ScItem  []ScItem `json:"sc_item,omitempty"`
-    } `json:"sc_item_list,omitempty"`
+    ScItemList   []ScItem `json:"sc_item_list,omitempty" xml:"sc_item_list>sc_item,omitempty"`
     
-
+    
     // 商品条数
     
-    TotalPage   int64 `json:"total_page,omitempty"`
-    
+    TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
 
+    
     // 分页
     
-    QueryPagination  *struct {
-        QueryPagination  *QueryPagination `json:"query_pagination,omitempty"`
-    } `json:"query_pagination,omitempty"`
+    QueryPagination   *QueryPagination `json:"query_pagination,omitempty" xml:"query_pagination,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoScitemQueryResponse struct {
-
-    // List<ScItemDO>
-    ScItemList   []ScItem `json:"sc_item_list,omitempty"`
-
-    // 商品条数
-    TotalPage   int64 `json:"total_page,omitempty"`
-
-    // 分页
-    QueryPagination   *QueryPagination `json:"query_pagination,omitempty"`
-
 }

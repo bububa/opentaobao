@@ -1,6 +1,8 @@
 package xiami
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.xiami.api.radio.songs.get
 */
 type AlibabaXiamiApiRadioSongsGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaXiamiApiRadioSongsGetResponse `json:"alibaba_xiami_api_radio_songs_get_response,omitempty"` 
     AlibabaXiamiApiRadioSongsGetResponse
 }
 
-/* model for simplify = false
 type AlibabaXiamiApiRadioSongsGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_xiami_api_radio_songs_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 歌曲列表
     
-    Data  struct {
-        StandardSong  []StandardSong `json:"standard_song,omitempty"`
-    } `json:"data,omitempty"`
+    Data   []StandardSong `json:"data,omitempty" xml:"data>standard_song,omitempty"`
     
-
-}
-*/
-
-type AlibabaXiamiApiRadioSongsGetResponse struct {
-
-    // 歌曲列表
-    Data   []StandardSong `json:"data,omitempty"`
-
+    
 }

@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.opensecurity.isv.uid.get
 */
 type TaobaoOpensecurityIsvUidGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpensecurityIsvUidGetResponse `json:"opensecurity_isv_uid_get_response,omitempty"` 
     TaobaoOpensecurityIsvUidGetResponse
 }
 
-/* model for simplify = false
 type TaobaoOpensecurityIsvUidGetResponse struct {
+    XMLName xml.Name `xml:"opensecurity_isv_uid_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // open security tbUserId for ISV，淘宝账号对ISV级别的唯一open security ID，用于同一个ISV多个Appkey间数据共享。
     
-    OpenUidIsv   string `json:"open_uid_isv,omitempty"`
+    OpenUidIsv   string `json:"open_uid_isv,omitempty" xml:"open_uid_isv,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpensecurityIsvUidGetResponse struct {
-
-    // open security tbUserId for ISV，淘宝账号对ISV级别的唯一open security ID，用于同一个ISV多个Appkey间数据共享。
-    OpenUidIsv   string `json:"open_uid_isv,omitempty"`
-
 }

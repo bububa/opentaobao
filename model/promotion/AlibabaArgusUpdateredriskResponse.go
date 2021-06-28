@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,48 +14,31 @@ alibaba.argus.updateredrisk
 */
 type AlibabaArgusUpdateredriskAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaArgusUpdateredriskResponse `json:"alibaba_argus_updateredrisk_response,omitempty"` 
     AlibabaArgusUpdateredriskResponse
 }
 
-/* model for simplify = false
 type AlibabaArgusUpdateredriskResponse struct {
+    XMLName xml.Name `xml:"alibaba_argus_updateredrisk_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 错误信息
     
-    ErrorMessage   string `json:"error_message,omitempty"`
-    
+    ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
 
+    
     // 错误码
     
-    ReturnCode   string `json:"return_code,omitempty"`
-    
+    ReturnCode   string `json:"return_code,omitempty" xml:"return_code,omitempty"`
 
+    
     // 总数
     
-    TotalCount   int64 `json:"total_count,omitempty"`
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaArgusUpdateredriskResponse struct {
-
-    // 结果是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 错误信息
-    ErrorMessage   string `json:"error_message,omitempty"`
-
-    // 错误码
-    ReturnCode   string `json:"return_code,omitempty"`
-
-    // 总数
-    TotalCount   int64 `json:"total_count,omitempty"`
-
 }

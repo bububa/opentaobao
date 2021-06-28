@@ -1,6 +1,8 @@
 package shop
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.shop.update
 */
 type TaobaoShopUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoShopUpdateResponse `json:"shop_update_response,omitempty"` 
     TaobaoShopUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoShopUpdateResponse struct {
+    XMLName xml.Name `xml:"shop_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 店铺信息
     
-    Shop  *struct {
-        Shop  *Shop `json:"shop,omitempty"`
-    } `json:"shop,omitempty"`
+    Shop   *Shop `json:"shop,omitempty" xml:"shop,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoShopUpdateResponse struct {
-
-    // 店铺信息
-    Shop   *Shop `json:"shop,omitempty"`
-
 }

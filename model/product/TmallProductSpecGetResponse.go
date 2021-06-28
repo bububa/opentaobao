@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.product.spec.get
 */
 type TmallProductSpecGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallProductSpecGetResponse `json:"tmall_product_spec_get_response,omitempty"` 
     TmallProductSpecGetResponse
 }
 
-/* model for simplify = false
 type TmallProductSpecGetResponse struct {
+    XMLName xml.Name `xml:"tmall_product_spec_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的产品规格信息，注意，这个产品规格信息可能是等待审核的，不一定可用。根据状态判断1：表示审核通过<br/>3：表示等待审核。
     
-    ProductSpec  *struct {
-        ProductSpec  *ProductSpec `json:"product_spec,omitempty"`
-    } `json:"product_spec,omitempty"`
+    ProductSpec   *ProductSpec `json:"product_spec,omitempty" xml:"product_spec,omitempty"`
+
     
-
-}
-*/
-
-type TmallProductSpecGetResponse struct {
-
-    // 返回的产品规格信息，注意，这个产品规格信息可能是等待审核的，不一定可用。根据状态判断1：表示审核通过<br/>3：表示等待审核。
-    ProductSpec   *ProductSpec `json:"product_spec,omitempty"`
-
 }

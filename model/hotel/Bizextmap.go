@@ -1,21 +1,11 @@
 package hotel
 
 // Bizextmap 
-/* model for simplify = false
 type Bizextmap struct {
 
     // empty
     
-    Empty   bool `json:"empty,omitempty"`
+    Empty   bool `json:"empty,omitempty" xml:"empty,omitempty"`
     
-
-}
-*/
-
-// Bizextmap 
-type Bizextmap struct {
-
-    // empty
-    Empty   bool `json:"empty,omitempty"`
 
 }

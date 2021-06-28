@@ -1,6 +1,8 @@
 package aliyun
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ delete_vip
 */
 type SlbAliyuncsComDeleteLoadBalancerListener2013-02-21APIResponse struct {
     model.CommonResponse
-    // Response *SlbAliyuncsComDeleteLoadBalancerListener2013-02-21Response `json:"slb_aliyuncs_com_DeleteLoadBalancerListener_2013-02-21_response,omitempty"` 
     SlbAliyuncsComDeleteLoadBalancerListener2013-02-21Response
 }
 
-/* model for simplify = false
 type SlbAliyuncsComDeleteLoadBalancerListener2013-02-21Response struct {
+    XMLName xml.Name `xml:"slb_aliyuncs_com_DeleteLoadBalancerListener_2013-02-21_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // request id
     
-    Requestid   string `json:"requestid,omitempty"`
+    Requestid   string `json:"requestid,omitempty" xml:"requestid,omitempty"`
+
     
-
-}
-*/
-
-type SlbAliyuncsComDeleteLoadBalancerListener2013-02-21Response struct {
-
-    // request id
-    Requestid   string `json:"requestid,omitempty"`
-
 }

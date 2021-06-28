@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.rdc.aligenius.ordermsg.update
 */
 type TaobaoRdcAligeniusOrdermsgUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRdcAligeniusOrdermsgUpdateResponse `json:"rdc_aligenius_ordermsg_update_response,omitempty"` 
     TaobaoRdcAligeniusOrdermsgUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoRdcAligeniusOrdermsgUpdateResponse struct {
+    XMLName xml.Name `xml:"rdc_aligenius_ordermsg_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoRdcAligeniusOrdermsgUpdateResult  *TaobaoRdcAligeniusOrdermsgUpdateResult `json:"taobao_rdc_aligenius_ordermsg_update_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoRdcAligeniusOrdermsgUpdateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRdcAligeniusOrdermsgUpdateResponse struct {
-
-    // result
-    Result   *TaobaoRdcAligeniusOrdermsgUpdateResult `json:"result,omitempty"`
-
 }

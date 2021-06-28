@@ -1,6 +1,8 @@
 package iot
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ tmall.device.brand.memberurl.get
 */
 type TmallDeviceBrandMemberurlGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallDeviceBrandMemberurlGetResponse `json:"tmall_device_brand_memberurl_get_response,omitempty"` 
     TmallDeviceBrandMemberurlGetResponse
 }
 
-/* model for simplify = false
 type TmallDeviceBrandMemberurlGetResponse struct {
+    XMLName xml.Name `xml:"tmall_device_brand_memberurl_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 二维码图片URL
     
-    ShortImgUrl   string `json:"short_img_url,omitempty"`
-    
+    ShortImgUrl   string `json:"short_img_url,omitempty" xml:"short_img_url,omitempty"`
 
+    
     // 二维码短链接地址
     
-    ShortUrl   string `json:"short_url,omitempty"`
+    ShortUrl   string `json:"short_url,omitempty" xml:"short_url,omitempty"`
+
     
-
-}
-*/
-
-type TmallDeviceBrandMemberurlGetResponse struct {
-
-    // 二维码图片URL
-    ShortImgUrl   string `json:"short_img_url,omitempty"`
-
-    // 二维码短链接地址
-    ShortUrl   string `json:"short_url,omitempty"`
-
 }

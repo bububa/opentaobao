@@ -1,39 +1,21 @@
 package hotel
 
 // Gallery 
-/* model for simplify = false
 type Gallery struct {
 
     // id
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
 
     // pictures
     
-    Pictures  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"pictures,omitempty"`
+    Pictures   []string `json:"pictures,omitempty" xml:"pictures>string,omitempty"`
     
-
-}
-*/
-
-// Gallery 
-type Gallery struct {
-
-    // id
-    Id   int64 `json:"id,omitempty"`
-
-    // name
-    Name   string `json:"name,omitempty"`
-
-    // pictures
-    Pictures   []string `json:"pictures,omitempty"`
 
 }

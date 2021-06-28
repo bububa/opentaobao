@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ ERP调用奇门的接口,取消创建单据操作。场景介绍：ERP主动发�
 */
 type TaobaoQimenOrderCancelAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenOrderCancelResponse `json:"qimen_order_cancel_response,omitempty"` 
     TaobaoQimenOrderCancelResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenOrderCancelResponse struct {
+    XMLName xml.Name `xml:"qimen_order_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        OrderCancelResponse  *OrderCancelResponse `json:"order_cancel_response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *OrderCancelResponse `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenOrderCancelResponse struct {
-
-    // 
-    Response   *OrderCancelResponse `json:"response,omitempty"`
-
 }

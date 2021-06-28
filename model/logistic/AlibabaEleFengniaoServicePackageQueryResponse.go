@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.ele.fengniao.service.package.query
 */
 type AlibabaEleFengniaoServicePackageQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaEleFengniaoServicePackageQueryResponse `json:"alibaba_ele_fengniao_service_package_query_response,omitempty"` 
     AlibabaEleFengniaoServicePackageQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaEleFengniaoServicePackageQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_ele_fengniao_service_package_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // servicePackages
     
-    ServicePackages  struct {
-        AlibabaEleFengniaoServicePackageQueryResult  []AlibabaEleFengniaoServicePackageQueryResult `json:"alibaba_ele_fengniao_service_package_query_result,omitempty"`
-    } `json:"service_packages,omitempty"`
+    ServicePackages   []AlibabaEleFengniaoServicePackageQueryResult `json:"service_packages,omitempty" xml:"service_packages>alibaba_ele_fengniao_service_package_query_result,omitempty"`
     
-
-}
-*/
-
-type AlibabaEleFengniaoServicePackageQueryResponse struct {
-
-    // servicePackages
-    ServicePackages   []AlibabaEleFengniaoServicePackageQueryResult `json:"service_packages,omitempty"`
-
+    
 }

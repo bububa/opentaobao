@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.wholesale.inboundorder.commit
 */
 type AlibabaWdkWholesaleInboundorderCommitAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkWholesaleInboundorderCommitResponse `json:"alibaba_wdk_wholesale_inboundorder_commit_response,omitempty"` 
     AlibabaWdkWholesaleInboundorderCommitResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkWholesaleInboundorderCommitResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_wholesale_inboundorder_commit_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaWdkWholesaleInboundorderCommitApiResult  *AlibabaWdkWholesaleInboundorderCommitApiResult `json:"alibaba_wdk_wholesale_inboundorder_commit_api_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaWdkWholesaleInboundorderCommitApiResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkWholesaleInboundorderCommitResponse struct {
-
-    // result
-    Result   *AlibabaWdkWholesaleInboundorderCommitApiResult `json:"result,omitempty"`
-
 }

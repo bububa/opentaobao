@@ -1,6 +1,8 @@
 package guoguo
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ cainiao.guoguo.backup.graborder.submitmailno
 */
 type CainiaoGuoguoBackupGraborderSubmitmailnoAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoGuoguoBackupGraborderSubmitmailnoResponse `json:"cainiao_guoguo_backup_graborder_submitmailno_response,omitempty"` 
     CainiaoGuoguoBackupGraborderSubmitmailnoResponse
 }
 
-/* model for simplify = false
 type CainiaoGuoguoBackupGraborderSubmitmailnoResponse struct {
+    XMLName xml.Name `xml:"cainiao_guoguo_backup_graborder_submitmailno_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回result对象
     
-    Result  *struct {
-        CainiaoGuoguoBackupGraborderSubmitmailnoResult  *CainiaoGuoguoBackupGraborderSubmitmailnoResult `json:"cainiao_guoguo_backup_graborder_submitmailno_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CainiaoGuoguoBackupGraborderSubmitmailnoResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoGuoguoBackupGraborderSubmitmailnoResponse struct {
-
-    // 返回result对象
-    Result   *CainiaoGuoguoBackupGraborderSubmitmailnoResult `json:"result,omitempty"`
-
 }

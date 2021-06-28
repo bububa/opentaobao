@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mos.oc.trade.syncbanksale
 */
 type AlibabaMosOcTradeSyncbanksaleAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMosOcTradeSyncbanksaleResponse `json:"alibaba_mos_oc_trade_syncbanksale_response,omitempty"` 
     AlibabaMosOcTradeSyncbanksaleResponse
 }
 
-/* model for simplify = false
 type AlibabaMosOcTradeSyncbanksaleResponse struct {
+    XMLName xml.Name `xml:"alibaba_mos_oc_trade_syncbanksale_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // resultDTO
     
-    Result  *struct {
-        AlibabaMosOcTradeSyncbanksaleResultDo  *AlibabaMosOcTradeSyncbanksaleResultDo `json:"alibaba_mos_oc_trade_syncbanksale_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaMosOcTradeSyncbanksaleResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMosOcTradeSyncbanksaleResponse struct {
-
-    // resultDTO
-    Result   *AlibabaMosOcTradeSyncbanksaleResultDo `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.tools.items.top.get
 */
 type TaobaoSimbaToolsItemsTopGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaToolsItemsTopGetResponse `json:"simba_tools_items_top_get_response,omitempty"` 
     TaobaoSimbaToolsItemsTopGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaToolsItemsTopGetResponse struct {
+    XMLName xml.Name `xml:"simba_tools_items_top_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推广组信息列表
     
-    Rankeditems  struct {
-        RankedItem  []RankedItem `json:"ranked_item,omitempty"`
-    } `json:"rankeditems,omitempty"`
+    Rankeditems   []RankedItem `json:"rankeditems,omitempty" xml:"rankeditems>ranked_item,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaToolsItemsTopGetResponse struct {
-
-    // 推广组信息列表
-    Rankeditems   []RankedItem `json:"rankeditems,omitempty"`
-
+    
 }

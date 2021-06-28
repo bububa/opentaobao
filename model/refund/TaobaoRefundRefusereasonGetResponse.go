@@ -1,6 +1,8 @@
 package refund
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ taobao.refund.refusereason.get
 */
 type TaobaoRefundRefusereasonGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRefundRefusereasonGetResponse `json:"refund_refusereason_get_response,omitempty"` 
     TaobaoRefundRefusereasonGetResponse
 }
 
-/* model for simplify = false
 type TaobaoRefundRefusereasonGetResponse struct {
+    XMLName xml.Name `xml:"refund_refusereason_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 卖家拒绝原因对象
     
-    Reasons  struct {
-        Reason  []Reason `json:"reason,omitempty"`
-    } `json:"reasons,omitempty"`
+    Reasons   []Reason `json:"reasons,omitempty" xml:"reasons>reason,omitempty"`
     
-
+    
     // 原因个数
     
-    TotalResults   int64 `json:"total_results,omitempty"`
-    
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 
+    
     // 是否存在下一页
     
-    HasNext   bool `json:"has_next,omitempty"`
+    HasNext   bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRefundRefusereasonGetResponse struct {
-
-    // 卖家拒绝原因对象
-    Reasons   []Reason `json:"reasons,omitempty"`
-
-    // 原因个数
-    TotalResults   int64 `json:"total_results,omitempty"`
-
-    // 是否存在下一页
-    HasNext   bool `json:"has_next,omitempty"`
-
 }

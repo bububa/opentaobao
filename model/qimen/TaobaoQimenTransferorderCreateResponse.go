@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qimen.transferorder.create
 */
 type TaobaoQimenTransferorderCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenTransferorderCreateResponse `json:"qimen_transferorder_create_response,omitempty"` 
     TaobaoQimenTransferorderCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenTransferorderCreateResponse struct {
+    XMLName xml.Name `xml:"qimen_transferorder_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        TaobaoQimenTransferorderCreateStruct  *TaobaoQimenTransferorderCreateStruct `json:"taobao_qimen_transferorder_create_struct,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *TaobaoQimenTransferorderCreateStruct `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenTransferorderCreateResponse struct {
-
-    // 
-    Response   *TaobaoQimenTransferorderCreateStruct `json:"response,omitempty"`
-
 }

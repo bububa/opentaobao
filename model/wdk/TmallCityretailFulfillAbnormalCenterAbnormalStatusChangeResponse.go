@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.cityretail.fulfill.abnormal.center.abnormal.status.change
 */
 type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponse struct {
     model.CommonResponse
-    // Response *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse `json:"tmall_cityretail_fulfill_abnormal_center_abnormal_status_change_response,omitempty"` 
     TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse
 }
 
-/* model for simplify = false
 type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse struct {
+    XMLName xml.Name `xml:"tmall_cityretail_fulfill_abnormal_center_abnormal_status_change_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应参数
     
-    FulfillSingleResult  *struct {
-        FulfillSingleResult  *FulfillSingleResult `json:"fulfill_single_result,omitempty"`
-    } `json:"fulfill_single_result,omitempty"`
+    FulfillSingleResult   *FulfillSingleResult `json:"fulfill_single_result,omitempty" xml:"fulfill_single_result,omitempty"`
+
     
-
-}
-*/
-
-type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse struct {
-
-    // 响应参数
-    FulfillSingleResult   *FulfillSingleResult `json:"fulfill_single_result,omitempty"`
-
 }

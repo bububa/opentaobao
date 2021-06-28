@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,50 +14,31 @@ alibaba.marketing.lottery.activity.query
 */
 type AlibabaMarketingLotteryActivityQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMarketingLotteryActivityQueryResponse `json:"alibaba_marketing_lottery_activity_query_response,omitempty"` 
     AlibabaMarketingLotteryActivityQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaMarketingLotteryActivityQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_marketing_lottery_activity_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 分页结果
     
-    PagingDto  *struct {
-        PagingDto  *PagingDto `json:"paging_dto,omitempty"`
-    } `json:"paging_dto,omitempty"`
-    
+    PagingDto   *PagingDto `json:"paging_dto,omitempty" xml:"paging_dto,omitempty"`
 
+    
     // code
     
-    MsgCode   int64 `json:"msg_code,omitempty"`
-    
+    MsgCode   int64 `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 
+    
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // msg
     
-    MsgInfo   string `json:"msg_info,omitempty"`
+    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMarketingLotteryActivityQueryResponse struct {
-
-    // 分页结果
-    PagingDto   *PagingDto `json:"paging_dto,omitempty"`
-
-    // code
-    MsgCode   int64 `json:"msg_code,omitempty"`
-
-    // success
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // msg
-    MsgInfo   string `json:"msg_info,omitempty"`
-
 }

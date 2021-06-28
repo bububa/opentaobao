@@ -1,6 +1,8 @@
 package mtopopen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.sensor.trade
 */
 type AlibabaInteractSensorTradeAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractSensorTradeResponse `json:"alibaba_interact_sensor_trade_response,omitempty"` 
     AlibabaInteractSensorTradeResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractSensorTradeResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_sensor_trade_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result=1
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractSensorTradeResponse struct {
-
-    // result=1
-    Result   string `json:"result,omitempty"`
-
 }

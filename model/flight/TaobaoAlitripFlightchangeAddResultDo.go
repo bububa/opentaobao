@@ -1,37 +1,21 @@
 package flight
 
 // TaobaoAlitripFlightchangeAddResultDo 
-/* model for simplify = false
 type TaobaoAlitripFlightchangeAddResultDo struct {
 
     // 错误信息
     
-    ErrMsg   string `json:"err_msg,omitempty"`
+    ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     
 
     // 错误码
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // 是否成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// TaobaoAlitripFlightchangeAddResultDo 
-type TaobaoAlitripFlightchangeAddResultDo struct {
-
-    // 错误信息
-    ErrMsg   string `json:"err_msg,omitempty"`
-
-    // 错误码
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // 是否成功
-    Success   bool `json:"success,omitempty"`
 
 }

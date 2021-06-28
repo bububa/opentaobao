@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,36 +14,21 @@ taobao.simba.serchcrowd.state.batch.update
 */
 type TaobaoSimbaSerchcrowdStateBatchUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaSerchcrowdStateBatchUpdateResponse `json:"simba_serchcrowd_state_batch_update_response,omitempty"` 
     TaobaoSimbaSerchcrowdStateBatchUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaSerchcrowdStateBatchUpdateResponse struct {
+    XMLName xml.Name `xml:"simba_serchcrowd_state_batch_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 部分失败时返回错误List
     
-    ErrorList  struct {
-        Json  []string `json:"string,omitempty"`
-    } `json:"error_list,omitempty"`
+    ErrorList   []string `json:"error_list,omitempty" xml:"error_list>string,omitempty"`
     
-
+    
     // result
     
-    Adgrouptargetingtags  struct {
-        AdgroupTargetingTagDto  []AdgroupTargetingTagDto `json:"adgroup_targeting_tag_dto,omitempty"`
-    } `json:"adgrouptargetingtags,omitempty"`
+    Adgrouptargetingtags   []AdgroupTargetingTagDto `json:"adgrouptargetingtags,omitempty" xml:"adgrouptargetingtags>adgroup_targeting_tag_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaSerchcrowdStateBatchUpdateResponse struct {
-
-    // 部分失败时返回错误List
-    ErrorList   []string `json:"error_list,omitempty"`
-
-    // result
-    Adgrouptargetingtags   []AdgroupTargetingTagDto `json:"adgrouptargetingtags,omitempty"`
-
+    
 }

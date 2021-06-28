@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ saas 售后逆向 商户同意用户逆向申请
 */
 type AlibabaTclsAelophyRefundAgreeAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTclsAelophyRefundAgreeResponse `json:"alibaba_tcls_aelophy_refund_agree_response,omitempty"` 
     AlibabaTclsAelophyRefundAgreeResponse
 }
 
-/* model for simplify = false
 type AlibabaTclsAelophyRefundAgreeResponse struct {
+    XMLName xml.Name `xml:"alibaba_tcls_aelophy_refund_agree_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参
     
-    Result  *struct {
-        AlibabaTclsAelophyRefundAgreeApiResult  *AlibabaTclsAelophyRefundAgreeApiResult `json:"alibaba_tcls_aelophy_refund_agree_api_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaTclsAelophyRefundAgreeApiResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTclsAelophyRefundAgreeResponse struct {
-
-    // 出参
-    Result   *AlibabaTclsAelophyRefundAgreeApiResult `json:"result,omitempty"`
-
 }

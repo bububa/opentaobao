@@ -1,6 +1,8 @@
 package flight
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alitrip.agent.flight.sell.modify.detail
 */
 type AlitripAgentFlightSellModifyDetailAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripAgentFlightSellModifyDetailResponse `json:"alitrip_agent_flight_sell_modify_detail_response,omitempty"` 
     AlitripAgentFlightSellModifyDetailResponse
 }
 
-/* model for simplify = false
 type AlitripAgentFlightSellModifyDetailResponse struct {
+    XMLName xml.Name `xml:"alitrip_agent_flight_sell_modify_detail_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异步获取历史数据接口返回结果
     
-    Result  *struct {
-        AlitripAgentFlightSellModifyDetailResultDto  *AlitripAgentFlightSellModifyDetailResultDto `json:"alitrip_agent_flight_sell_modify_detail_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlitripAgentFlightSellModifyDetailResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlitripAgentFlightSellModifyDetailResponse struct {
-
-    // 异步获取历史数据接口返回结果
-    Result   *AlitripAgentFlightSellModifyDetailResultDto `json:"result,omitempty"`
-
 }

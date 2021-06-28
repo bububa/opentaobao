@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.item.currentprice.query
 */
 type AlibabaWdkItemCurrentpriceQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkItemCurrentpriceQueryResponse `json:"alibaba_wdk_item_currentprice_query_response,omitempty"` 
     AlibabaWdkItemCurrentpriceQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkItemCurrentpriceQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_item_currentprice_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaWdkItemCurrentpriceQueryResult  *AlibabaWdkItemCurrentpriceQueryResult `json:"alibaba_wdk_item_currentprice_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaWdkItemCurrentpriceQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkItemCurrentpriceQueryResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaWdkItemCurrentpriceQueryResult `json:"result,omitempty"`
-
 }

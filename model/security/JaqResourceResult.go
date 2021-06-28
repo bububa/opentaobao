@@ -1,45 +1,26 @@
 package security
 
 // JaqResourceResult 
-/* model for simplify = false
 type JaqResourceResult struct {
 
     // 请求事件唯一标识
     
-    EventId   string `json:"event_id,omitempty"`
+    EventId   string `json:"event_id,omitempty" xml:"event_id,omitempty"`
     
 
     // 资源包的md5
     
-    Md5   string `json:"md5,omitempty"`
+    Md5   string `json:"md5,omitempty" xml:"md5,omitempty"`
     
 
     // 资源的cdn下载链接
     
-    Url   string `json:"url,omitempty"`
+    Url   string `json:"url,omitempty" xml:"url,omitempty"`
     
 
     // 资源版本号
     
-    Version   string `json:"version,omitempty"`
+    Version   string `json:"version,omitempty" xml:"version,omitempty"`
     
-
-}
-*/
-
-// JaqResourceResult 
-type JaqResourceResult struct {
-
-    // 请求事件唯一标识
-    EventId   string `json:"event_id,omitempty"`
-
-    // 资源包的md5
-    Md5   string `json:"md5,omitempty"`
-
-    // 资源的cdn下载链接
-    Url   string `json:"url,omitempty"`
-
-    // 资源版本号
-    Version   string `json:"version,omitempty"`
 
 }

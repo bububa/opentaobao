@@ -1,6 +1,8 @@
 package iot
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.ailabs.aligenie.albums.get
 */
 type AlibabaAilabsAligenieAlbumsGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAilabsAligenieAlbumsGetResponse `json:"alibaba_ailabs_aligenie_albums_get_response,omitempty"` 
     AlibabaAilabsAligenieAlbumsGetResponse
 }
 
-/* model for simplify = false
 type AlibabaAilabsAligenieAlbumsGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_ailabs_aligenie_albums_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAilabsAligenieAlbumsGetResponse struct {
-
-    // result
-    Result   *AiCloudResult `json:"result,omitempty"`
-
 }

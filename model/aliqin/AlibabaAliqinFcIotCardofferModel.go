@@ -1,53 +1,31 @@
 package aliqin
 
 // AlibabaAliqinFcIotCardofferModel 
-/* model for simplify = false
 type AlibabaAliqinFcIotCardofferModel struct {
 
     // 失效时间
     
-    ExpireTime   string `json:"expire_time,omitempty"`
+    ExpireTime   string `json:"expire_time,omitempty" xml:"expire_time,omitempty"`
     
 
     // 生效时间
     
-    EffectiveTime   string `json:"effective_time,omitempty"`
+    EffectiveTime   string `json:"effective_time,omitempty" xml:"effective_time,omitempty"`
     
 
     // 订购时间
     
-    OrderTime   string `json:"order_time,omitempty"`
+    OrderTime   string `json:"order_time,omitempty" xml:"order_time,omitempty"`
     
 
     // 商品名称
     
-    OfferName   string `json:"offer_name,omitempty"`
+    OfferName   string `json:"offer_name,omitempty" xml:"offer_name,omitempty"`
     
 
     // 商品ID
     
-    OfferId   string `json:"offer_id,omitempty"`
+    OfferId   string `json:"offer_id,omitempty" xml:"offer_id,omitempty"`
     
-
-}
-*/
-
-// AlibabaAliqinFcIotCardofferModel 
-type AlibabaAliqinFcIotCardofferModel struct {
-
-    // 失效时间
-    ExpireTime   string `json:"expire_time,omitempty"`
-
-    // 生效时间
-    EffectiveTime   string `json:"effective_time,omitempty"`
-
-    // 订购时间
-    OrderTime   string `json:"order_time,omitempty"`
-
-    // 商品名称
-    OfferName   string `json:"offer_name,omitempty"`
-
-    // 商品ID
-    OfferId   string `json:"offer_id,omitempty"`
 
 }

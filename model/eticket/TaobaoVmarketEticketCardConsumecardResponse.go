@@ -1,6 +1,8 @@
 package eticket
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.vmarket.eticket.card.consumecard
 */
 type TaobaoVmarketEticketCardConsumecardAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoVmarketEticketCardConsumecardResponse `json:"vmarket_eticket_card_consumecard_response,omitempty"` 
     TaobaoVmarketEticketCardConsumecardResponse
 }
 
-/* model for simplify = false
 type TaobaoVmarketEticketCardConsumecardResponse struct {
+    XMLName xml.Name `xml:"vmarket_eticket_card_consumecard_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 正确返回值
     
-    Resultcode   int64 `json:"resultcode,omitempty"`
+    Resultcode   int64 `json:"resultcode,omitempty" xml:"resultcode,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoVmarketEticketCardConsumecardResponse struct {
-
-    // 正确返回值
-    Resultcode   int64 `json:"resultcode,omitempty"`
-
 }

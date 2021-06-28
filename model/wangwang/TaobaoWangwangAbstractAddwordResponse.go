@@ -1,6 +1,8 @@
 package wangwang
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.wangwang.abstract.addword
 */
 type TaobaoWangwangAbstractAddwordAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWangwangAbstractAddwordResponse `json:"wangwang_abstract_addword_response,omitempty"` 
     TaobaoWangwangAbstractAddwordResponse
 }
 
-/* model for simplify = false
 type TaobaoWangwangAbstractAddwordResponse struct {
+    XMLName xml.Name `xml:"wangwang_abstract_addword_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 0或-1，表示错误或正确，错误时有错误信息
     
-    RetCode   int64 `json:"ret_code,omitempty"`
-    
+    RetCode   int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 
+    
     // 例如单词长度太长等，当ret_code=-1时才有这项
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWangwangAbstractAddwordResponse struct {
-
-    // 0或-1，表示错误或正确，错误时有错误信息
-    RetCode   int64 `json:"ret_code,omitempty"`
-
-    // 例如单词长度太长等，当ret_code=-1时才有这项
-    ErrorMsg   string `json:"error_msg,omitempty"`
-
 }

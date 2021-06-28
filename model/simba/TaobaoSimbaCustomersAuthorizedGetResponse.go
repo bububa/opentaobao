@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.customers.authorized.get
 */
 type TaobaoSimbaCustomersAuthorizedGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaCustomersAuthorizedGetResponse `json:"simba_customers_authorized_get_response,omitempty"` 
     TaobaoSimbaCustomersAuthorizedGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaCustomersAuthorizedGetResponse struct {
+    XMLName xml.Name `xml:"simba_customers_authorized_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 授权当前登录账户为代理账户的昵称列表
     
-    Nicks  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"nicks,omitempty"`
+    Nicks   []string `json:"nicks,omitempty" xml:"nicks>string,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaCustomersAuthorizedGetResponse struct {
-
-    // 授权当前登录账户为代理账户的昵称列表
-    Nicks   []string `json:"nicks,omitempty"`
-
+    
 }

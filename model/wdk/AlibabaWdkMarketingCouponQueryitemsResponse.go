@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.marketing.coupon.queryitems
 */
 type AlibabaWdkMarketingCouponQueryitemsAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkMarketingCouponQueryitemsResponse `json:"alibaba_wdk_marketing_coupon_queryitems_response,omitempty"` 
     AlibabaWdkMarketingCouponQueryitemsResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkMarketingCouponQueryitemsResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_marketing_coupon_queryitems_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 查询返回结果
     
-    Result  *struct {
-        MarketPageResult  *MarketPageResult `json:"market_page_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *MarketPageResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkMarketingCouponQueryitemsResponse struct {
-
-    // 查询返回结果
-    Result   *MarketPageResult `json:"result,omitempty"`
-
 }

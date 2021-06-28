@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.item.carturl.get
 */
 type TaobaoItemCarturlGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoItemCarturlGetResponse `json:"item_carturl_get_response,omitempty"` 
     TaobaoItemCarturlGetResponse
 }
 
-/* model for simplify = false
 type TaobaoItemCarturlGetResponse struct {
+    XMLName xml.Name `xml:"item_carturl_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 加购的URL地址
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoItemCarturlGetResponse struct {
-
-    // 加购的URL地址
-    Result   string `json:"result,omitempty"`
-
 }

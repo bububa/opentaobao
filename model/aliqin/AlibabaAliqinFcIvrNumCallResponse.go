@@ -1,6 +1,8 @@
 package aliqin
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ ivr呼叫
 */
 type AlibabaAliqinFcIvrNumCallAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinFcIvrNumCallResponse `json:"alibaba_aliqin_fc_ivr_num_call_response,omitempty"` 
     AlibabaAliqinFcIvrNumCallResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinFcIvrNumCallResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_fc_ivr_num_call_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaAliqinFcIvrNumCallResult  *AlibabaAliqinFcIvrNumCallResult `json:"alibaba_aliqin_fc_ivr_num_call_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaAliqinFcIvrNumCallResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinFcIvrNumCallResponse struct {
-
-    // result
-    Result   *AlibabaAliqinFcIvrNumCallResult `json:"result,omitempty"`
-
 }

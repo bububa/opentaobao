@@ -1,6 +1,8 @@
 package alsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alsc.saas.codec.code.attrs.query
 */
 type AlibabaAlscSaasCodecCodeAttrsQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlscSaasCodecCodeAttrsQueryResponse `json:"alibaba_alsc_saas_codec_code_attrs_query_response,omitempty"` 
     AlibabaAlscSaasCodecCodeAttrsQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaAlscSaasCodecCodeAttrsQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_alsc_saas_codec_code_attrs_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaAlscSaasCodecCodeAttrsQueryResult  *AlibabaAlscSaasCodecCodeAttrsQueryResult `json:"alibaba_alsc_saas_codec_code_attrs_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaAlscSaasCodecCodeAttrsQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlscSaasCodecCodeAttrsQueryResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaAlscSaasCodecCodeAttrsQueryResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.servicecenter.tasks.search
 */
 type TmallServicecenterTasksSearchAPIResponse struct {
     model.CommonResponse
-    // Response *TmallServicecenterTasksSearchResponse `json:"tmall_servicecenter_tasks_search_response,omitempty"` 
     TmallServicecenterTasksSearchResponse
 }
 
-/* model for simplify = false
 type TmallServicecenterTasksSearchResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_tasks_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // ServicePacket<ServiceTaskDO>
     
-    ServiceTaskPacket  *struct {
-        ServiceTaskPacket  *ServiceTaskPacket `json:"service_task_packet,omitempty"`
-    } `json:"service_task_packet,omitempty"`
+    ServiceTaskPacket   *ServiceTaskPacket `json:"service_task_packet,omitempty" xml:"service_task_packet,omitempty"`
+
     
-
-}
-*/
-
-type TmallServicecenterTasksSearchResponse struct {
-
-    // ServicePacket<ServiceTaskDO>
-    ServiceTaskPacket   *ServiceTaskPacket `json:"service_task_packet,omitempty"`
-
 }

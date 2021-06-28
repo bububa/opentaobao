@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.inventory.store.query
 */
 type TaobaoInventoryStoreQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoInventoryStoreQueryResponse `json:"inventory_store_query_response,omitempty"` 
     TaobaoInventoryStoreQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoInventoryStoreQueryResponse struct {
+    XMLName xml.Name `xml:"inventory_store_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 仓库列表
     
-    StoreList  struct {
-        Store  []Store `json:"store,omitempty"`
-    } `json:"store_list,omitempty"`
+    StoreList   []Store `json:"store_list,omitempty" xml:"store_list>store,omitempty"`
     
-
-}
-*/
-
-type TaobaoInventoryStoreQueryResponse struct {
-
-    // 仓库列表
-    StoreList   []Store `json:"store_list,omitempty"`
-
+    
 }

@@ -1,117 +1,71 @@
 package auction
 
 // CourtsBidStatSum 
-/* model for simplify = false
 type CourtsBidStatSum struct {
 
     // 发拍次数
     
-    PublishCount   int64 `json:"publish_count,omitempty"`
+    PublishCount   int64 `json:"publish_count,omitempty" xml:"publish_count,omitempty"`
     
 
     // 成交金额
     
-    HammerPrice   int64 `json:"hammer_price,omitempty"`
+    HammerPrice   int64 `json:"hammer_price,omitempty" xml:"hammer_price,omitempty"`
     
 
     // 成交件数
     
-    HammerCount   int64 `json:"hammer_count,omitempty"`
+    HammerCount   int64 `json:"hammer_count,omitempty" xml:"hammer_count,omitempty"`
     
 
     // 结束网拍次数
     
-    EndCount   int64 `json:"end_count,omitempty"`
+    EndCount   int64 `json:"end_count,omitempty" xml:"end_count,omitempty"`
     
 
     // 结束标的件数（去重）
     
-    EndCountDist   int64 `json:"end_count_dist,omitempty"`
+    EndCountDist   int64 `json:"end_count_dist,omitempty" xml:"end_count_dist,omitempty"`
     
 
     // 平均成交溢价率(万分位)
     
-    AvgAddvPercent   int64 `json:"avg_addv_percent,omitempty"`
+    AvgAddvPercent   int64 `json:"avg_addv_percent,omitempty" xml:"avg_addv_percent,omitempty"`
     
 
     // 发拍件数（去重）
     
-    PublishCountDist   int64 `json:"publish_count_dist,omitempty"`
+    PublishCountDist   int64 `json:"publish_count_dist,omitempty" xml:"publish_count_dist,omitempty"`
     
 
     // 开拍件数（去重）
     
-    StartCountDist   int64 `json:"start_count_dist,omitempty"`
+    StartCountDist   int64 `json:"start_count_dist,omitempty" xml:"start_count_dist,omitempty"`
     
 
     // 出价次数
     
-    BidCount   int64 `json:"bid_count,omitempty"`
+    BidCount   int64 `json:"bid_count,omitempty" xml:"bid_count,omitempty"`
     
 
     // 起拍价（成交标的）
     
-    StartPrice   int64 `json:"start_price,omitempty"`
+    StartPrice   int64 `json:"start_price,omitempty" xml:"start_price,omitempty"`
     
 
     // 意向用户数（交保数+订阅数）
     
-    InterestCount   int64 `json:"interest_count,omitempty"`
+    InterestCount   int64 `json:"interest_count,omitempty" xml:"interest_count,omitempty"`
     
 
     // 开拍数
     
-    StartCount   int64 `json:"start_count,omitempty"`
+    StartCount   int64 `json:"start_count,omitempty" xml:"start_count,omitempty"`
     
 
     // 报名人数（含交保失败）
     
-    ApplyCount   int64 `json:"apply_count,omitempty"`
+    ApplyCount   int64 `json:"apply_count,omitempty" xml:"apply_count,omitempty"`
     
-
-}
-*/
-
-// CourtsBidStatSum 
-type CourtsBidStatSum struct {
-
-    // 发拍次数
-    PublishCount   int64 `json:"publish_count,omitempty"`
-
-    // 成交金额
-    HammerPrice   int64 `json:"hammer_price,omitempty"`
-
-    // 成交件数
-    HammerCount   int64 `json:"hammer_count,omitempty"`
-
-    // 结束网拍次数
-    EndCount   int64 `json:"end_count,omitempty"`
-
-    // 结束标的件数（去重）
-    EndCountDist   int64 `json:"end_count_dist,omitempty"`
-
-    // 平均成交溢价率(万分位)
-    AvgAddvPercent   int64 `json:"avg_addv_percent,omitempty"`
-
-    // 发拍件数（去重）
-    PublishCountDist   int64 `json:"publish_count_dist,omitempty"`
-
-    // 开拍件数（去重）
-    StartCountDist   int64 `json:"start_count_dist,omitempty"`
-
-    // 出价次数
-    BidCount   int64 `json:"bid_count,omitempty"`
-
-    // 起拍价（成交标的）
-    StartPrice   int64 `json:"start_price,omitempty"`
-
-    // 意向用户数（交保数+订阅数）
-    InterestCount   int64 `json:"interest_count,omitempty"`
-
-    // 开拍数
-    StartCount   int64 `json:"start_count,omitempty"`
-
-    // 报名人数（含交保失败）
-    ApplyCount   int64 `json:"apply_count,omitempty"`
 
 }

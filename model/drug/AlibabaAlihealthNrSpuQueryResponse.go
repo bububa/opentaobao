@@ -1,6 +1,8 @@
 package drug
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alihealth.nr.spu.query
 */
 type AlibabaAlihealthNrSpuQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlihealthNrSpuQueryResponse `json:"alibaba_alihealth_nr_spu_query_response,omitempty"` 
     AlibabaAlihealthNrSpuQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaAlihealthNrSpuQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_alihealth_nr_spu_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        ResponseResult  *ResponseResult `json:"response_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ResponseResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlihealthNrSpuQueryResponse struct {
-
-    // 结果
-    Result   *ResponseResult `json:"result,omitempty"`
-
 }

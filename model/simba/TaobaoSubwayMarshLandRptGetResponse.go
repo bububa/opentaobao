@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.subway.marsh.land.rpt.get
 */
 type TaobaoSubwayMarshLandRptGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSubwayMarshLandRptGetResponse `json:"subway_marsh_land_rpt_get_response,omitempty"` 
     TaobaoSubwayMarshLandRptGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSubwayMarshLandRptGetResponse struct {
+    XMLName xml.Name `xml:"subway_marsh_land_rpt_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 捡漏词包分时报表数据列表
     
-    ResultList  struct {
-        RptResult  []RptResult `json:"rpt_result,omitempty"`
-    } `json:"result_list,omitempty"`
+    ResultList   []RptResult `json:"result_list,omitempty" xml:"result_list>rpt_result,omitempty"`
     
-
-}
-*/
-
-type TaobaoSubwayMarshLandRptGetResponse struct {
-
-    // 捡漏词包分时报表数据列表
-    ResultList   []RptResult `json:"result_list,omitempty"`
-
+    
 }

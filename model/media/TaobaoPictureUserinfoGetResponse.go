@@ -1,6 +1,8 @@
 package media
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.picture.userinfo.get
 */
 type TaobaoPictureUserinfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPictureUserinfoGetResponse `json:"picture_userinfo_get_response,omitempty"` 
     TaobaoPictureUserinfoGetResponse
 }
 
-/* model for simplify = false
 type TaobaoPictureUserinfoGetResponse struct {
+    XMLName xml.Name `xml:"picture_userinfo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户使用图片空间的信息
     
-    UserInfo  *struct {
-        UserInfo  *UserInfo `json:"user_info,omitempty"`
-    } `json:"user_info,omitempty"`
+    UserInfo   *UserInfo `json:"user_info,omitempty" xml:"user_info,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoPictureUserinfoGetResponse struct {
-
-    // 用户使用图片空间的信息
-    UserInfo   *UserInfo `json:"user_info,omitempty"`
-
 }

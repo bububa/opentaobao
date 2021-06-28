@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -13,24 +15,16 @@ taobao.ump.shoutaotag.add
 */
 type TaobaoUmpShoutaotagAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoUmpShoutaotagAddResponse `json:"ump_shoutaotag_add_response,omitempty"` 
     TaobaoUmpShoutaotagAddResponse
 }
 
-/* model for simplify = false
 type TaobaoUmpShoutaotagAddResponse struct {
+    XMLName xml.Name `xml:"ump_shoutaotag_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否打标成功
     
-    AddResult   bool `json:"add_result,omitempty"`
+    AddResult   bool `json:"add_result,omitempty" xml:"add_result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoUmpShoutaotagAddResponse struct {
-
-    // 是否打标成功
-    AddResult   bool `json:"add_result,omitempty"`
-
 }

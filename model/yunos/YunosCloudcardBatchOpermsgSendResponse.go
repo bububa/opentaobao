@@ -1,6 +1,8 @@
 package yunos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ yunos.cloudcard.batch.opermsg.send
 */
 type YunosCloudcardBatchOpermsgSendAPIResponse struct {
     model.CommonResponse
-    // Response *YunosCloudcardBatchOpermsgSendResponse `json:"yunos_cloudcard_batch_opermsg_send_response,omitempty"` 
     YunosCloudcardBatchOpermsgSendResponse
 }
 
-/* model for simplify = false
 type YunosCloudcardBatchOpermsgSendResponse struct {
+    XMLName xml.Name `xml:"yunos_cloudcard_batch_opermsg_send_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 群发消息是否成功
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type YunosCloudcardBatchOpermsgSendResponse struct {
-
-    // 群发消息是否成功
-    Result   bool `json:"result,omitempty"`
-
 }

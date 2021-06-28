@@ -1,6 +1,8 @@
 package eticket
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ taobao.eticket.merchant.img.upload
 */
 type TaobaoEticketMerchantImgUploadAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoEticketMerchantImgUploadResponse `json:"eticket_merchant_img_upload_response,omitempty"` 
     TaobaoEticketMerchantImgUploadResponse
 }
 
-/* model for simplify = false
 type TaobaoEticketMerchantImgUploadResponse struct {
+    XMLName xml.Name `xml:"eticket_merchant_img_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 回复对象
     
-    RespBody  *struct {
-        UploadImgCallbackResp  *UploadImgCallbackResp `json:"upload_img_callback_resp,omitempty"`
-    } `json:"resp_body,omitempty"`
-    
+    RespBody   *UploadImgCallbackResp `json:"resp_body,omitempty" xml:"resp_body,omitempty"`
 
+    
     // 子结果码
     
-    RetCode   string `json:"ret_code,omitempty"`
-    
+    RetCode   string `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 
+    
     // 子结果信息
     
-    RetMsg   string `json:"ret_msg,omitempty"`
+    RetMsg   string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoEticketMerchantImgUploadResponse struct {
-
-    // 回复对象
-    RespBody   *UploadImgCallbackResp `json:"resp_body,omitempty"`
-
-    // 子结果码
-    RetCode   string `json:"ret_code,omitempty"`
-
-    // 子结果信息
-    RetMsg   string `json:"ret_msg,omitempty"`
-
 }

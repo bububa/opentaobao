@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.car.lease.riskcallback
 */
 type TmallCarLeaseRiskcallbackAPIResponse struct {
     model.CommonResponse
-    // Response *TmallCarLeaseRiskcallbackResponse `json:"tmall_car_lease_riskcallback_response,omitempty"` 
     TmallCarLeaseRiskcallbackResponse
 }
 
-/* model for simplify = false
 type TmallCarLeaseRiskcallbackResponse struct {
+    XMLName xml.Name `xml:"tmall_car_lease_riskcallback_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果集合
     
-    Result  *struct {
-        TmallCarLeaseRiskcallbackResult  *TmallCarLeaseRiskcallbackResult `json:"tmall_car_lease_riskcallback_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallCarLeaseRiskcallbackResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallCarLeaseRiskcallbackResponse struct {
-
-    // 结果集合
-    Result   *TmallCarLeaseRiskcallbackResult `json:"result,omitempty"`
-
 }

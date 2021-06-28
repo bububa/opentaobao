@@ -1,45 +1,26 @@
 package user
 
 // TaobaoMessageaccountMesssageReplyResult 
-/* model for simplify = false
 type TaobaoMessageaccountMesssageReplyResult struct {
 
     // model
     
-    Model   string `json:"model,omitempty"`
+    Model   string `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // errMessage
     
-    ErrMessage   string `json:"err_message,omitempty"`
+    ErrMessage   string `json:"err_message,omitempty" xml:"err_message,omitempty"`
     
 
     // errCode
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // success
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
     
-
-}
-*/
-
-// TaobaoMessageaccountMesssageReplyResult 
-type TaobaoMessageaccountMesssageReplyResult struct {
-
-    // model
-    Model   string `json:"model,omitempty"`
-
-    // errMessage
-    ErrMessage   string `json:"err_message,omitempty"`
-
-    // errCode
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // success
-    Result   bool `json:"result,omitempty"`
 
 }

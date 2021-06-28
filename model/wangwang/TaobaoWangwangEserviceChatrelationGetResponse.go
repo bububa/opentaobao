@@ -1,6 +1,8 @@
 package wangwang
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -15,26 +17,16 @@ A 和 B 在2016-09-01 和 2016-09-02 都说过话。以A为查询账号，则该
 */
 type TaobaoWangwangEserviceChatrelationGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWangwangEserviceChatrelationGetResponse `json:"wangwang_eservice_chatrelation_get_response,omitempty"` 
     TaobaoWangwangEserviceChatrelationGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWangwangEserviceChatrelationGetResponse struct {
+    XMLName xml.Name `xml:"wangwang_eservice_chatrelation_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        ChatRelationResult  *ChatRelationResult `json:"chat_relation_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ChatRelationResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWangwangEserviceChatrelationGetResponse struct {
-
-    // result
-    Result   *ChatRelationResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.servicecenter.workcard.collect
 */
 type TmallServicecenterWorkcardCollectAPIResponse struct {
     model.CommonResponse
-    // Response *TmallServicecenterWorkcardCollectResponse `json:"tmall_servicecenter_workcard_collect_response,omitempty"` 
     TmallServicecenterWorkcardCollectResponse
 }
 
-/* model for simplify = false
 type TmallServicecenterWorkcardCollectResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_workcard_collect_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应结果
     
-    Result  *struct {
-        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *FulfilplatformResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallServicecenterWorkcardCollectResponse struct {
-
-    // 响应结果
-    Result   *FulfilplatformResult `json:"result,omitempty"`
-
 }

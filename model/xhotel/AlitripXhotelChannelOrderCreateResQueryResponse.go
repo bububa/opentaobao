@@ -1,6 +1,8 @@
 package xhotel
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alitrip.xhotel.channel.order.create.res.query
 */
 type AlitripXhotelChannelOrderCreateResQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripXhotelChannelOrderCreateResQueryResponse `json:"alitrip_xhotel_channel_order_create_res_query_response,omitempty"` 
     AlitripXhotelChannelOrderCreateResQueryResponse
 }
 
-/* model for simplify = false
 type AlitripXhotelChannelOrderCreateResQueryResponse struct {
+    XMLName xml.Name `xml:"alitrip_xhotel_channel_order_create_res_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        HbsResult  *HbsResult `json:"hbs_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *HbsResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlitripXhotelChannelOrderCreateResQueryResponse struct {
-
-    // 结果
-    Result   *HbsResult `json:"result,omitempty"`
-
 }

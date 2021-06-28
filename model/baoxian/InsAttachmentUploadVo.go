@@ -1,37 +1,21 @@
 package baoxian
 
 // InsAttachmentUploadVo 
-/* model for simplify = false
 type InsAttachmentUploadVo struct {
 
     // ossPath
     
-    OssPath   string `json:"oss_path,omitempty"`
+    OssPath   string `json:"oss_path,omitempty" xml:"oss_path,omitempty"`
     
 
     // eTag
     
-    ETag   string `json:"e_tag,omitempty"`
+    ETag   string `json:"e_tag,omitempty" xml:"e_tag,omitempty"`
     
 
     // size
     
-    Size   int64 `json:"size,omitempty"`
+    Size   int64 `json:"size,omitempty" xml:"size,omitempty"`
     
-
-}
-*/
-
-// InsAttachmentUploadVo 
-type InsAttachmentUploadVo struct {
-
-    // ossPath
-    OssPath   string `json:"oss_path,omitempty"`
-
-    // eTag
-    ETag   string `json:"e_tag,omitempty"`
-
-    // size
-    Size   int64 `json:"size,omitempty"`
 
 }

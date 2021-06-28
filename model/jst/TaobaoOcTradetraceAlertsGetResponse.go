@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.oc.tradetrace.alerts.get
 */
 type TaobaoOcTradetraceAlertsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOcTradetraceAlertsGetResponse `json:"oc_tradetrace_alerts_get_response,omitempty"` 
     TaobaoOcTradetraceAlertsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoOcTradetraceAlertsGetResponse struct {
+    XMLName xml.Name `xml:"oc_tradetrace_alerts_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异常订单数据
     
-    ResultList  struct {
-        SimpleAbnormalOrderDetail  []SimpleAbnormalOrderDetail `json:"simple_abnormal_order_detail,omitempty"`
-    } `json:"result_list,omitempty"`
+    ResultList   []SimpleAbnormalOrderDetail `json:"result_list,omitempty" xml:"result_list>simple_abnormal_order_detail,omitempty"`
     
-
-}
-*/
-
-type TaobaoOcTradetraceAlertsGetResponse struct {
-
-    // 异常订单数据
-    ResultList   []SimpleAbnormalOrderDetail `json:"result_list,omitempty"`
-
+    
 }

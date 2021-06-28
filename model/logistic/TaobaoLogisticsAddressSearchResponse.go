@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.logistics.address.search
 */
 type TaobaoLogisticsAddressSearchAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLogisticsAddressSearchResponse `json:"logistics_address_search_response,omitempty"` 
     TaobaoLogisticsAddressSearchResponse
 }
 
-/* model for simplify = false
 type TaobaoLogisticsAddressSearchResponse struct {
+    XMLName xml.Name `xml:"logistics_address_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 一组地址库数据，
     
-    Addresses  struct {
-        AddressResult  []AddressResult `json:"address_result,omitempty"`
-    } `json:"addresses,omitempty"`
+    Addresses   []AddressResult `json:"addresses,omitempty" xml:"addresses>address_result,omitempty"`
     
-
-}
-*/
-
-type TaobaoLogisticsAddressSearchResponse struct {
-
-    // 一组地址库数据，
-    Addresses   []AddressResult `json:"addresses,omitempty"`
-
+    
 }

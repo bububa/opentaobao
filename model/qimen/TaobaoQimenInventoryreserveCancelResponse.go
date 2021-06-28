@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qimen.inventoryreserve.cancel
 */
 type TaobaoQimenInventoryreserveCancelAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenInventoryreserveCancelResponse `json:"qimen_inventoryreserve_cancel_response,omitempty"` 
     TaobaoQimenInventoryreserveCancelResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenInventoryreserveCancelResponse struct {
+    XMLName xml.Name `xml:"qimen_inventoryreserve_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenInventoryreserveCancelResponse struct {
-
-    // 
-    Response   *Response `json:"response,omitempty"`
-
 }

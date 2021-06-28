@@ -1,53 +1,31 @@
 package icbu
 
 // PhotoAlbumGroup 
-/* model for simplify = false
 type PhotoAlbumGroup struct {
 
     // id
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     
 
     // level1
     
-    Level1   int64 `json:"level1,omitempty"`
+    Level1   int64 `json:"level1,omitempty" xml:"level1,omitempty"`
     
 
     // level2
     
-    Level2   int64 `json:"level2,omitempty"`
+    Level2   int64 `json:"level2,omitempty" xml:"level2,omitempty"`
     
 
     // level3
     
-    Level3   int64 `json:"level3,omitempty"`
+    Level3   int64 `json:"level3,omitempty" xml:"level3,omitempty"`
     
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
-
-}
-*/
-
-// PhotoAlbumGroup 
-type PhotoAlbumGroup struct {
-
-    // id
-    Id   int64 `json:"id,omitempty"`
-
-    // level1
-    Level1   int64 `json:"level1,omitempty"`
-
-    // level2
-    Level2   int64 `json:"level2,omitempty"`
-
-    // level3
-    Level3   int64 `json:"level3,omitempty"`
-
-    // name
-    Name   string `json:"name,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.trade.aliance.create
 */
 type AlibabaTradeAlianceCreateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTradeAlianceCreateResponse `json:"alibaba_trade_aliance_create_response,omitempty"` 
     AlibabaTradeAlianceCreateResponse
 }
 
-/* model for simplify = false
 type AlibabaTradeAlianceCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_trade_aliance_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订单创建结果
     
-    Result  *struct {
-        AlibabaTradeAlianceCreateResultModel  *AlibabaTradeAlianceCreateResultModel `json:"alibaba_trade_aliance_create_result_model,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaTradeAlianceCreateResultModel `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTradeAlianceCreateResponse struct {
-
-    // 订单创建结果
-    Result   *AlibabaTradeAlianceCreateResultModel `json:"result,omitempty"`
-
 }

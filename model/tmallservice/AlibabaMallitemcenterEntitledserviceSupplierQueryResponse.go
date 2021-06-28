@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mallitemcenter.entitledservice.supplier.query
 */
 type AlibabaMallitemcenterEntitledserviceSupplierQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMallitemcenterEntitledserviceSupplierQueryResponse `json:"alibaba_mallitemcenter_entitledservice_supplier_query_response,omitempty"` 
     AlibabaMallitemcenterEntitledserviceSupplierQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaMallitemcenterEntitledserviceSupplierQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_mallitemcenter_entitledservice_supplier_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 统一返回结果
     
-    Result  *struct {
-        AlibabaMallitemcenterEntitledserviceSupplierQueryResult  *AlibabaMallitemcenterEntitledserviceSupplierQueryResult `json:"alibaba_mallitemcenter_entitledservice_supplier_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaMallitemcenterEntitledserviceSupplierQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMallitemcenterEntitledserviceSupplierQueryResponse struct {
-
-    // 统一返回结果
-    Result   *AlibabaMallitemcenterEntitledserviceSupplierQueryResult `json:"result,omitempty"`
-
 }

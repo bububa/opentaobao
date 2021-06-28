@@ -1,6 +1,8 @@
 package tmallhk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.traceplatform.cts.order.stop
 */
 type TmallTraceplatformCtsOrderStopAPIResponse struct {
     model.CommonResponse
-    // Response *TmallTraceplatformCtsOrderStopResponse `json:"tmall_traceplatform_cts_order_stop_response,omitempty"` 
     TmallTraceplatformCtsOrderStopResponse
 }
 
-/* model for simplify = false
 type TmallTraceplatformCtsOrderStopResponse struct {
+    XMLName xml.Name `xml:"tmall_traceplatform_cts_order_stop_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        DataResult  *DataResult `json:"data_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *DataResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallTraceplatformCtsOrderStopResponse struct {
-
-    // result
-    Result   *DataResult `json:"result,omitempty"`
-
 }

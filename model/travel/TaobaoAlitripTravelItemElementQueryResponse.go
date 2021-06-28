@@ -1,6 +1,8 @@
 package travel
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.alitrip.travel.item.element.query
 */
 type TaobaoAlitripTravelItemElementQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAlitripTravelItemElementQueryResponse `json:"alitrip_travel_item_element_query_response,omitempty"` 
     TaobaoAlitripTravelItemElementQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoAlitripTravelItemElementQueryResponse struct {
+    XMLName xml.Name `xml:"alitrip_travel_item_element_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 资源元素列表
     
-    Results  struct {
-        TopElementParam  []TopElementParam `json:"top_element_param,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []TopElementParam `json:"results,omitempty" xml:"results>top_element_param,omitempty"`
     
-
-}
-*/
-
-type TaobaoAlitripTravelItemElementQueryResponse struct {
-
-    // 资源元素列表
-    Results   []TopElementParam `json:"results,omitempty"`
-
+    
 }

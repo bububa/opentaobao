@@ -1,53 +1,31 @@
 package fenxiao
 
 // RegionalPriceDto 
-/* model for simplify = false
 type RegionalPriceDto struct {
 
     // 市
     
-    City   string `json:"city,omitempty"`
+    City   string `json:"city,omitempty" xml:"city,omitempty"`
     
 
     // 金额（分）
     
-    Price   int64 `json:"price,omitempty"`
+    Price   int64 `json:"price,omitempty" xml:"price,omitempty"`
     
 
     // 省
     
-    Province   string `json:"province,omitempty"`
+    Province   string `json:"province,omitempty" xml:"province,omitempty"`
     
 
     // 区县，特殊可选
     
-    District   string `json:"district,omitempty"`
+    District   string `json:"district,omitempty" xml:"district,omitempty"`
     
 
     // 街道，特殊可选
     
-    Street   string `json:"street,omitempty"`
+    Street   string `json:"street,omitempty" xml:"street,omitempty"`
     
-
-}
-*/
-
-// RegionalPriceDto 
-type RegionalPriceDto struct {
-
-    // 市
-    City   string `json:"city,omitempty"`
-
-    // 金额（分）
-    Price   int64 `json:"price,omitempty"`
-
-    // 省
-    Province   string `json:"province,omitempty"`
-
-    // 区县，特殊可选
-    District   string `json:"district,omitempty"`
-
-    // 街道，特殊可选
-    Street   string `json:"street,omitempty"`
 
 }

@@ -1,37 +1,21 @@
 package security
 
 // RpGradeBo 
-/* model for simplify = false
 type RpGradeBo struct {
 
     // desc
     
-    Desc   string `json:"desc,omitempty"`
+    Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     
 
     // 名称
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
 
     // level
     
-    Level   int64 `json:"level,omitempty"`
+    Level   int64 `json:"level,omitempty" xml:"level,omitempty"`
     
-
-}
-*/
-
-// RpGradeBo 
-type RpGradeBo struct {
-
-    // desc
-    Desc   string `json:"desc,omitempty"`
-
-    // 名称
-    Name   string `json:"name,omitempty"`
-
-    // level
-    Level   int64 `json:"level,omitempty"`
 
 }

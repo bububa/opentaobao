@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.baichuan.taopassword.query
 */
 type AlibabaBaichuanTaopasswordQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaBaichuanTaopasswordQueryResponse `json:"alibaba_baichuan_taopassword_query_response,omitempty"` 
     AlibabaBaichuanTaopasswordQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaBaichuanTaopasswordQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_baichuan_taopassword_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        BcTaoPasswordResult  *BcTaoPasswordResult `json:"bc_tao_password_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *BcTaoPasswordResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaBaichuanTaopasswordQueryResponse struct {
-
-    // result
-    Result   *BcTaoPasswordResult `json:"result,omitempty"`
-
 }

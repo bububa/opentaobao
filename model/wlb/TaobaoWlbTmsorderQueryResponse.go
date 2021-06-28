@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.wlb.tmsorder.query
 */
 type TaobaoWlbTmsorderQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbTmsorderQueryResponse `json:"wlb_tmsorder_query_response,omitempty"` 
     TaobaoWlbTmsorderQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbTmsorderQueryResponse struct {
+    XMLName xml.Name `xml:"wlb_tmsorder_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 物流订单运单信息列表
     
-    TmsOrderList  struct {
-        WlbTmsOrder  []WlbTmsOrder `json:"wlb_tms_order,omitempty"`
-    } `json:"tms_order_list,omitempty"`
+    TmsOrderList   []WlbTmsOrder `json:"tms_order_list,omitempty" xml:"tms_order_list>wlb_tms_order,omitempty"`
     
-
+    
     // 结果总数
     
-    TotalCount   int64 `json:"total_count,omitempty"`
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbTmsorderQueryResponse struct {
-
-    // 物流订单运单信息列表
-    TmsOrderList   []WlbTmsOrder `json:"tms_order_list,omitempty"`
-
-    // 结果总数
-    TotalCount   int64 `json:"total_count,omitempty"`
-
 }

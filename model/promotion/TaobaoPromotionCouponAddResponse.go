@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.promotion.coupon.add
 */
 type TaobaoPromotionCouponAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPromotionCouponAddResponse `json:"promotion_coupon_add_response,omitempty"` 
     TaobaoPromotionCouponAddResponse
 }
 
-/* model for simplify = false
 type TaobaoPromotionCouponAddResponse struct {
+    XMLName xml.Name `xml:"promotion_coupon_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 优惠券的id
     
-    CouponId   int64 `json:"coupon_id,omitempty"`
+    CouponId   int64 `json:"coupon_id,omitempty" xml:"coupon_id,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoPromotionCouponAddResponse struct {
-
-    // 优惠券的id
-    CouponId   int64 `json:"coupon_id,omitempty"`
-
 }

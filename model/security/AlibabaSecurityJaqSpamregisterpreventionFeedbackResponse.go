@@ -1,6 +1,8 @@
 package security
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.security.jaq.spamregisterprevention.feedback
 */
 type AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSecurityJaqSpamregisterpreventionFeedbackResponse `json:"alibaba_security_jaq_spamregisterprevention_feedback_response,omitempty"` 
     AlibabaSecurityJaqSpamregisterpreventionFeedbackResponse
 }
 
-/* model for simplify = false
 type AlibabaSecurityJaqSpamregisterpreventionFeedbackResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_spamregisterprevention_feedback_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // feedBack返回结果
     
-    FeedBackResult  *struct {
-        JaqFeedBackResult  *JaqFeedBackResult `json:"jaq_feed_back_result,omitempty"`
-    } `json:"feed_back_result,omitempty"`
+    FeedBackResult   *JaqFeedBackResult `json:"feed_back_result,omitempty" xml:"feed_back_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSecurityJaqSpamregisterpreventionFeedbackResponse struct {
-
-    // feedBack返回结果
-    FeedBackResult   *JaqFeedBackResult `json:"feed_back_result,omitempty"`
-
 }

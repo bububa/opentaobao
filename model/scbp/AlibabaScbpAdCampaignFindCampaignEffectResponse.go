@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.scbp.ad.campaign.find.campaign.effect
 */
 type AlibabaScbpAdCampaignFindCampaignEffectAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpAdCampaignFindCampaignEffectResponse `json:"alibaba_scbp_ad_campaign_find_campaign_effect_response,omitempty"` 
     AlibabaScbpAdCampaignFindCampaignEffectResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpAdCampaignFindCampaignEffectResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_campaign_find_campaign_effect_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // json数据，key是计划id(campaignId), value包含开始时间(statDate),曝光(impr),点击(click),消耗(cost),推广时长(onlineMin)
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpAdCampaignFindCampaignEffectResponse struct {
-
-    // json数据，key是计划id(campaignId), value包含开始时间(statDate),曝光(impr),点击(click),消耗(cost),推广时长(onlineMin)
-    Result   string `json:"result,omitempty"`
-
 }

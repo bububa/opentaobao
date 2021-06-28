@@ -1,6 +1,8 @@
 package auction
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -17,26 +19,16 @@ taobao.auction.gov.data.annually.get
 */
 type TaobaoAuctionGovDataAnnuallyGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAuctionGovDataAnnuallyGetResponse `json:"auction_gov_data_annually_get_response,omitempty"` 
     TaobaoAuctionGovDataAnnuallyGetResponse
 }
 
-/* model for simplify = false
 type TaobaoAuctionGovDataAnnuallyGetResponse struct {
+    XMLName xml.Name `xml:"auction_gov_data_annually_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 按年统计结果列表
     
-    Results  struct {
-        CourtsBidStatAnnuallyList  []CourtsBidStatAnnuallyList `json:"courts_bid_stat_annually_list,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []CourtsBidStatAnnuallyList `json:"results,omitempty" xml:"results>courts_bid_stat_annually_list,omitempty"`
     
-
-}
-*/
-
-type TaobaoAuctionGovDataAnnuallyGetResponse struct {
-
-    // 按年统计结果列表
-    Results   []CourtsBidStatAnnuallyList `json:"results,omitempty"`
-
+    
 }

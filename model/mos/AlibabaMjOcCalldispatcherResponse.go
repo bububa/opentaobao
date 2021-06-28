@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mj.oc.calldispatcher
 */
 type AlibabaMjOcCalldispatcherAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMjOcCalldispatcherResponse `json:"alibaba_mj_oc_calldispatcher_response,omitempty"` 
     AlibabaMjOcCalldispatcherResponse
 }
 
-/* model for simplify = false
 type AlibabaMjOcCalldispatcherResponse struct {
+    XMLName xml.Name `xml:"alibaba_mj_oc_calldispatcher_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        ResultDO  *ResultDO `json:"result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ResultDO `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMjOcCalldispatcherResponse struct {
-
-    // result
-    Result   *ResultDO `json:"result,omitempty"`
-
 }

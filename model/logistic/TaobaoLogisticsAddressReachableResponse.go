@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -13,26 +15,16 @@ taobao.logistics.address.reachable
 */
 type TaobaoLogisticsAddressReachableAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLogisticsAddressReachableResponse `json:"logistics_address_reachable_response,omitempty"` 
     TaobaoLogisticsAddressReachableResponse
 }
 
-/* model for simplify = false
 type TaobaoLogisticsAddressReachableResponse struct {
+    XMLName xml.Name `xml:"logistics_address_reachable_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 地址可达返回结果，每个TP对应一个
     
-    ReachableResultList  struct {
-        AddressReachableResult  []AddressReachableResult `json:"address_reachable_result,omitempty"`
-    } `json:"reachable_result_list,omitempty"`
+    ReachableResultList   []AddressReachableResult `json:"reachable_result_list,omitempty" xml:"reachable_result_list>address_reachable_result,omitempty"`
     
-
-}
-*/
-
-type TaobaoLogisticsAddressReachableResponse struct {
-
-    // 地址可达返回结果，每个TP对应一个
-    ReachableResultList   []AddressReachableResult `json:"reachable_result_list,omitempty"`
-
+    
 }

@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.fenxiao.refund.get
 */
 type TaobaoFenxiaoRefundGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoRefundGetResponse `json:"fenxiao_refund_get_response,omitempty"` 
     TaobaoFenxiaoRefundGetResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoRefundGetResponse struct {
+    XMLName xml.Name `xml:"fenxiao_refund_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 退款详情
     
-    RefundDetail  *struct {
-        RefundDetail  *RefundDetail `json:"refund_detail,omitempty"`
-    } `json:"refund_detail,omitempty"`
+    RefundDetail   *RefundDetail `json:"refund_detail,omitempty" xml:"refund_detail,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFenxiaoRefundGetResponse struct {
-
-    // 退款详情
-    RefundDetail   *RefundDetail `json:"refund_detail,omitempty"`
-
 }

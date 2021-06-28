@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ cainiao.refund.refundactions.display
 */
 type CainiaoRefundRefundactionsDisplayAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoRefundRefundactionsDisplayResponse `json:"cainiao_refund_refundactions_display_response,omitempty"` 
     CainiaoRefundRefundactionsDisplayResponse
 }
 
-/* model for simplify = false
 type CainiaoRefundRefundactionsDisplayResponse struct {
+    XMLName xml.Name `xml:"cainiao_refund_refundactions_display_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果对象
     
-    Result  *struct {
-        CainiaoRefundRefundactionsDisplayBizResult  *CainiaoRefundRefundactionsDisplayBizResult `json:"cainiao_refund_refundactions_display_biz_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CainiaoRefundRefundactionsDisplayBizResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoRefundRefundactionsDisplayResponse struct {
-
-    // 返回结果对象
-    Result   *CainiaoRefundRefundactionsDisplayBizResult `json:"result,omitempty"`
-
 }

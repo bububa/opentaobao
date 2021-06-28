@@ -1,6 +1,8 @@
 package tmallsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.service.billing.query
 */
 type AlibabaServiceBillingQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaServiceBillingQueryResponse `json:"alibaba_service_billing_query_response,omitempty"` 
     AlibabaServiceBillingQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaServiceBillingQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_service_billing_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结算明细查询结果
     
-    SettlementDetailQueryResult  *struct {
-        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
-    } `json:"settlement_detail_query_result,omitempty"`
+    SettlementDetailQueryResult   *FulfilplatformResult `json:"settlement_detail_query_result,omitempty" xml:"settlement_detail_query_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaServiceBillingQueryResponse struct {
-
-    // 结算明细查询结果
-    SettlementDetailQueryResult   *FulfilplatformResult `json:"settlement_detail_query_result,omitempty"`
-
 }

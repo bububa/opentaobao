@@ -1,6 +1,8 @@
 package crm
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.crm.grademkt.member.query
 */
 type TaobaoCrmGrademktMemberQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoCrmGrademktMemberQueryResponse `json:"crm_grademkt_member_query_response,omitempty"` 
     TaobaoCrmGrademktMemberQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoCrmGrademktMemberQueryResponse struct {
+    XMLName xml.Name `xml:"crm_grademkt_member_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // json格式
     
-    Module   string `json:"module,omitempty"`
+    Module   string `json:"module,omitempty" xml:"module,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoCrmGrademktMemberQueryResponse struct {
-
-    // json格式
-    Module   string `json:"module,omitempty"`
-
 }

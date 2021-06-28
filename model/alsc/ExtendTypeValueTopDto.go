@@ -1,29 +1,16 @@
 package alsc
 
 // ExtendTypeValueTopDto 
-/* model for simplify = false
 type ExtendTypeValueTopDto struct {
 
     // 扩展code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // 扩展value
     
-    Obj   string `json:"obj,omitempty"`
+    Obj   string `json:"obj,omitempty" xml:"obj,omitempty"`
     
-
-}
-*/
-
-// ExtendTypeValueTopDto 
-type ExtendTypeValueTopDto struct {
-
-    // 扩展code
-    Code   string `json:"code,omitempty"`
-
-    // 扩展value
-    Obj   string `json:"obj,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package shop
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.taobao.shop.cat.neo.get
 */
 type AlibabaTaobaoShopCatNeoGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTaobaoShopCatNeoGetResponse `json:"alibaba_taobao_shop_cat_neo_get_response,omitempty"` 
     AlibabaTaobaoShopCatNeoGetResponse
 }
 
-/* model for simplify = false
 type AlibabaTaobaoShopCatNeoGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_taobao_shop_cat_neo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 客户端鉴权虚拟api
     
-    Unnamed   string `json:"unnamed,omitempty"`
+    Unnamed   string `json:"unnamed,omitempty" xml:"unnamed,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTaobaoShopCatNeoGetResponse struct {
-
-    // 客户端鉴权虚拟api
-    Unnamed   string `json:"unnamed,omitempty"`
-
 }

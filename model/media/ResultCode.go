@@ -1,29 +1,16 @@
 package media
 
 // ResultCode 
-/* model for simplify = false
 type ResultCode struct {
 
     // 错误代码
     
-    ErrorCode   int64 `json:"error_code,omitempty"`
+    ErrorCode   int64 `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // 错误描述
     
-    Info   string `json:"info,omitempty"`
+    Info   string `json:"info,omitempty" xml:"info,omitempty"`
     
-
-}
-*/
-
-// ResultCode 
-type ResultCode struct {
-
-    // 错误代码
-    ErrorCode   int64 `json:"error_code,omitempty"`
-
-    // 错误描述
-    Info   string `json:"info,omitempty"`
 
 }

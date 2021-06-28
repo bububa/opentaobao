@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alicom.wtt.opentrade.getgiftdetails
 */
 type AlibabaAlicomWttOpentradeGetgiftdetailsAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlicomWttOpentradeGetgiftdetailsResponse `json:"alibaba_alicom_wtt_opentrade_getgiftdetails_response,omitempty"` 
     AlibabaAlicomWttOpentradeGetgiftdetailsResponse
 }
 
-/* model for simplify = false
 type AlibabaAlicomWttOpentradeGetgiftdetailsResponse struct {
+    XMLName xml.Name `xml:"alibaba_alicom_wtt_opentrade_getgiftdetails_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        TopResultDto  *TopResultDto `json:"top_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TopResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlicomWttOpentradeGetgiftdetailsResponse struct {
-
-    // 结果
-    Result   *TopResultDto `json:"result,omitempty"`
-
 }

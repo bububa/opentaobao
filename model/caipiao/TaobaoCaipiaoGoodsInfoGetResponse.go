@@ -1,6 +1,8 @@
 package caipiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.caipiao.goods.info.get
 */
 type TaobaoCaipiaoGoodsInfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoCaipiaoGoodsInfoGetResponse `json:"caipiao_goods_info_get_response,omitempty"` 
     TaobaoCaipiaoGoodsInfoGetResponse
 }
 
-/* model for simplify = false
 type TaobaoCaipiaoGoodsInfoGetResponse struct {
+    XMLName xml.Name `xml:"caipiao_goods_info_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回列表的大小
     
-    TotalResults   int64 `json:"total_results,omitempty"`
-    
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 
+    
     // 查询的结果列表
     
-    Results  struct {
-        LotteryWangcaiSellerGoodsInfo  []LotteryWangcaiSellerGoodsInfo `json:"lottery_wangcai_seller_goods_info,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []LotteryWangcaiSellerGoodsInfo `json:"results,omitempty" xml:"results>lottery_wangcai_seller_goods_info,omitempty"`
     
-
-}
-*/
-
-type TaobaoCaipiaoGoodsInfoGetResponse struct {
-
-    // 返回列表的大小
-    TotalResults   int64 `json:"total_results,omitempty"`
-
-    // 查询的结果列表
-    Results   []LotteryWangcaiSellerGoodsInfo `json:"results,omitempty"`
-
+    
 }

@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.insight.catsforecastnew.get
 */
 type TaobaoSimbaInsightCatsforecastnewGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaInsightCatsforecastnewGetResponse `json:"simba_insight_catsforecastnew_get_response,omitempty"` 
     TaobaoSimbaInsightCatsforecastnewGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaInsightCatsforecastnewGetResponse struct {
+    XMLName xml.Name `xml:"simba_insight_catsforecastnew_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 词的相关类目列表
     
-    CategoryForecastList  struct {
-        InsightCategoryForcastDTO  []InsightCategoryForcastDTO `json:"insight_category_forcast_dto,omitempty"`
-    } `json:"category_forecast_list,omitempty"`
+    CategoryForecastList   []InsightCategoryForcastDTO `json:"category_forecast_list,omitempty" xml:"category_forecast_list>insight_category_forcast_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaInsightCatsforecastnewGetResponse struct {
-
-    // 词的相关类目列表
-    CategoryForecastList   []InsightCategoryForcastDTO `json:"category_forecast_list,omitempty"`
-
+    
 }

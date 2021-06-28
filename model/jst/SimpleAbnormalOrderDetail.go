@@ -1,21 +1,11 @@
 package jst
 
 // SimpleAbnormalOrderDetail 
-/* model for simplify = false
 type SimpleAbnormalOrderDetail struct {
 
     // 订单ID
     
-    Tid   int64 `json:"tid,omitempty"`
+    Tid   int64 `json:"tid,omitempty" xml:"tid,omitempty"`
     
-
-}
-*/
-
-// SimpleAbnormalOrderDetail 
-type SimpleAbnormalOrderDetail struct {
-
-    // 订单ID
-    Tid   int64 `json:"tid,omitempty"`
 
 }

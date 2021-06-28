@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.weike.performance.put
 */
 type TaobaoWeikePerformancePutAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWeikePerformancePutResponse `json:"weike_performance_put_response,omitempty"` 
     TaobaoWeikePerformancePutResponse
 }
 
-/* model for simplify = false
 type TaobaoWeikePerformancePutResponse struct {
+    XMLName xml.Name `xml:"weike_performance_put_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWeikePerformancePutResponse struct {
-
-    // 返回结果
-    Result   bool `json:"result,omitempty"`
-
 }

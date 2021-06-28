@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ TMC连接授权Token
 */
 type TaobaoTmcAuthGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTmcAuthGetResponse `json:"tmc_auth_get_response,omitempty"` 
     TaobaoTmcAuthGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTmcAuthGetResponse struct {
+    XMLName xml.Name `xml:"tmc_auth_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTmcAuthGetResponse struct {
-
-    // result
-    Result   string `json:"result,omitempty"`
-
 }

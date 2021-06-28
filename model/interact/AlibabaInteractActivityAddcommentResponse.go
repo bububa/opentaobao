@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ alibaba.interact.activity.addcomment
 */
 type AlibabaInteractActivityAddcommentAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractActivityAddcommentResponse `json:"alibaba_interact_activity_addcomment_response,omitempty"` 
     AlibabaInteractActivityAddcommentResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractActivityAddcommentResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_activity_addcomment_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 评论的楼层数
     
-    Floor   int64 `json:"floor,omitempty"`
+    Floor   int64 `json:"floor,omitempty" xml:"floor,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractActivityAddcommentResponse struct {
-
-    // 返回成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 评论的楼层数
-    Floor   int64 `json:"floor,omitempty"`
-
 }

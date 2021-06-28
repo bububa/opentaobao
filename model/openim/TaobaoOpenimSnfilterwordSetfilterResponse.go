@@ -1,6 +1,8 @@
 package openim
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.openim.snfilterword.setfilter
 */
 type TaobaoOpenimSnfilterwordSetfilterAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenimSnfilterwordSetfilterResponse `json:"openim_snfilterword_setfilter_response,omitempty"` 
     TaobaoOpenimSnfilterwordSetfilterResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenimSnfilterwordSetfilterResponse struct {
+    XMLName xml.Name `xml:"openim_snfilterword_setfilter_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 成功
     
-    Errid   int64 `json:"errid,omitempty"`
-    
+    Errid   int64 `json:"errid,omitempty" xml:"errid,omitempty"`
 
+    
     // 错误原因
     
-    Errmsg   string `json:"errmsg,omitempty"`
+    Errmsg   string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenimSnfilterwordSetfilterResponse struct {
-
-    // 成功
-    Errid   int64 `json:"errid,omitempty"`
-
-    // 错误原因
-    Errmsg   string `json:"errmsg,omitempty"`
-
 }

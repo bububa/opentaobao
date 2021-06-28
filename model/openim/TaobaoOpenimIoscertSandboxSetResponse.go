@@ -1,6 +1,8 @@
 package openim
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.openim.ioscert.sandbox.set
 */
 type TaobaoOpenimIoscertSandboxSetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenimIoscertSandboxSetResponse `json:"openim_ioscert_sandbox_set_response,omitempty"` 
     TaobaoOpenimIoscertSandboxSetResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenimIoscertSandboxSetResponse struct {
+    XMLName xml.Name `xml:"openim_ioscert_sandbox_set_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作成功
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenimIoscertSandboxSetResponse struct {
-
-    // 操作成功
-    Code   string `json:"code,omitempty"`
-
 }

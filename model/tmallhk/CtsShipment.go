@@ -1,37 +1,21 @@
 package tmallhk
 
 // CtsShipment 
-/* model for simplify = false
 type CtsShipment struct {
 
     // 报关开始时间
     
-    Begin   string `json:"begin,omitempty"`
+    Begin   string `json:"begin,omitempty" xml:"begin,omitempty"`
     
 
     // 报关结束时间
     
-    End   string `json:"end,omitempty"`
+    End   string `json:"end,omitempty" xml:"end,omitempty"`
     
 
     // 报关单号
     
-    ShipmentNo   string `json:"shipment_no,omitempty"`
+    ShipmentNo   string `json:"shipment_no,omitempty" xml:"shipment_no,omitempty"`
     
-
-}
-*/
-
-// CtsShipment 
-type CtsShipment struct {
-
-    // 报关开始时间
-    Begin   string `json:"begin,omitempty"`
-
-    // 报关结束时间
-    End   string `json:"end,omitempty"`
-
-    // 报关单号
-    ShipmentNo   string `json:"shipment_no,omitempty"`
 
 }

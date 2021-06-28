@@ -1,6 +1,8 @@
 package alsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alsc.crm.card.query.template
 */
 type AlibabaAlscCrmCardQueryTemplateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlscCrmCardQueryTemplateResponse `json:"alibaba_alsc_crm_card_query_template_response,omitempty"` 
     AlibabaAlscCrmCardQueryTemplateResponse
 }
 
-/* model for simplify = false
 type AlibabaAlscCrmCardQueryTemplateResponse struct {
+    XMLName xml.Name `xml:"alibaba_alsc_crm_card_query_template_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口结果
     
-    Result  *struct {
-        CommonResult  *CommonResult `json:"common_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlscCrmCardQueryTemplateResponse struct {
-
-    // 接口结果
-    Result   *CommonResult `json:"result,omitempty"`
-
 }

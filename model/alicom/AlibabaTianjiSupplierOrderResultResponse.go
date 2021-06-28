@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.tianji.supplier.order.result
 */
 type AlibabaTianjiSupplierOrderResultAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTianjiSupplierOrderResultResponse `json:"alibaba_tianji_supplier_order_result_response,omitempty"` 
     AlibabaTianjiSupplierOrderResultResponse
 }
 
-/* model for simplify = false
 type AlibabaTianjiSupplierOrderResultResponse struct {
+    XMLName xml.Name `xml:"alibaba_tianji_supplier_order_result_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Model   bool `json:"model,omitempty"`
+    Model   bool `json:"model,omitempty" xml:"model,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTianjiSupplierOrderResultResponse struct {
-
-    // 结果
-    Model   bool `json:"model,omitempty"`
-
 }

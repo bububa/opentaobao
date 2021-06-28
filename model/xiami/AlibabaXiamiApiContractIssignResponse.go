@@ -1,6 +1,8 @@
 package xiami
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.xiami.api.contract.issign
 */
 type AlibabaXiamiApiContractIssignAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaXiamiApiContractIssignResponse `json:"alibaba_xiami_api_contract_issign_response,omitempty"` 
     AlibabaXiamiApiContractIssignResponse
 }
 
-/* model for simplify = false
 type AlibabaXiamiApiContractIssignResponse struct {
+    XMLName xml.Name `xml:"alibaba_xiami_api_contract_issign_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否已经签约
     
-    Data   string `json:"data,omitempty"`
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaXiamiApiContractIssignResponse struct {
-
-    // 是否已经签约
-    Data   string `json:"data,omitempty"`
-
 }

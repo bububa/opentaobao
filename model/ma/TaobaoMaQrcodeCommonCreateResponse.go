@@ -1,6 +1,8 @@
 package ma
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.ma.qrcode.common.create
 */
 type TaobaoMaQrcodeCommonCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoMaQrcodeCommonCreateResponse `json:"ma_qrcode_common_create_response,omitempty"` 
     TaobaoMaQrcodeCommonCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoMaQrcodeCommonCreateResponse struct {
+    XMLName xml.Name `xml:"ma_qrcode_common_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 二维码对像
     
-    Modules  struct {
-        QrcodeDO  []QrcodeDO `json:"qrcode_do,omitempty"`
-    } `json:"modules,omitempty"`
+    Modules   []QrcodeDO `json:"modules,omitempty" xml:"modules>qrcode_do,omitempty"`
     
-
+    
     // 执行是否成功
     
-    Suc   bool `json:"suc,omitempty"`
+    Suc   bool `json:"suc,omitempty" xml:"suc,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoMaQrcodeCommonCreateResponse struct {
-
-    // 二维码对像
-    Modules   []QrcodeDO `json:"modules,omitempty"`
-
-    // 执行是否成功
-    Suc   bool `json:"suc,omitempty"`
-
 }

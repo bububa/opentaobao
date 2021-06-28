@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.stock.real.query
 */
 type AlibabaWdkStockRealQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkStockRealQueryResponse `json:"alibaba_wdk_stock_real_query_response,omitempty"` 
     AlibabaWdkStockRealQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkStockRealQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_stock_real_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        AlibabaWdkStockRealQueryResultDo  *AlibabaWdkStockRealQueryResultDo `json:"alibaba_wdk_stock_real_query_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaWdkStockRealQueryResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkStockRealQueryResponse struct {
-
-    // 结果
-    Result   *AlibabaWdkStockRealQueryResultDo `json:"result,omitempty"`
-
 }

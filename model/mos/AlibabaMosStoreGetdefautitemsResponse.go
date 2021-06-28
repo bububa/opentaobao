@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mos.store.getdefautitems
 */
 type AlibabaMosStoreGetdefautitemsAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMosStoreGetdefautitemsResponse `json:"alibaba_mos_store_getdefautitems_response,omitempty"` 
     AlibabaMosStoreGetdefautitemsResponse
 }
 
-/* model for simplify = false
 type AlibabaMosStoreGetdefautitemsResponse struct {
+    XMLName xml.Name `xml:"alibaba_mos_store_getdefautitems_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaMosStoreGetdefautitemsResultDo  *AlibabaMosStoreGetdefautitemsResultDo `json:"alibaba_mos_store_getdefautitems_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaMosStoreGetdefautitemsResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMosStoreGetdefautitemsResponse struct {
-
-    // result
-    Result   *AlibabaMosStoreGetdefautitemsResultDo `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ ERP调用接口，创建入库单;
 */
 type TaobaoQimenEntryorderCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenEntryorderCreateResponse `json:"qimen_entryorder_create_response,omitempty"` 
     TaobaoQimenEntryorderCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenEntryorderCreateResponse struct {
+    XMLName xml.Name `xml:"qimen_entryorder_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenEntryorderCreateResponse struct {
-
-    // 
-    Response   *Response `json:"response,omitempty"`
-
 }

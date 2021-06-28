@@ -1,37 +1,21 @@
 package aliyunocs
 
 // AliyunOcsRegion 
-/* model for simplify = false
 type AliyunOcsRegion struct {
 
     // cn-hangzhou
     
-    RegionId   string `json:"RegionId,omitempty"`
+    RegionId   string `json:"RegionId,omitempty" xml:"RegionId,omitempty"`
     
 
     // "B,D"
     
-    ZoneIds   string `json:"ZoneIds,omitempty"`
+    ZoneIds   string `json:"ZoneIds,omitempty" xml:"ZoneIds,omitempty"`
     
 
     // 杭州
     
-    LocalName   string `json:"LocalName,omitempty"`
+    LocalName   string `json:"LocalName,omitempty" xml:"LocalName,omitempty"`
     
-
-}
-*/
-
-// AliyunOcsRegion 
-type AliyunOcsRegion struct {
-
-    // cn-hangzhou
-    RegionId   string `json:"RegionId,omitempty"`
-
-    // "B,D"
-    ZoneIds   string `json:"ZoneIds,omitempty"`
-
-    // 杭州
-    LocalName   string `json:"LocalName,omitempty"`
 
 }

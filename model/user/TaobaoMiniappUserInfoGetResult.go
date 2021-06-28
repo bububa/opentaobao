@@ -1,47 +1,26 @@
 package user
 
 // TaobaoMiniappUserInfoGetResult 
-/* model for simplify = false
 type TaobaoMiniappUserInfoGetResult struct {
 
     // model
     
-    Model  *struct {
-        OpenUserInfoDto  *OpenUserInfoDto `json:"open_user_info_dto,omitempty"`
-    } `json:"model,omitempty"`
+    Model   *OpenUserInfoDto `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // 错误信息
     
-    ErrMessage   string `json:"err_message,omitempty"`
+    ErrMessage   string `json:"err_message,omitempty" xml:"err_message,omitempty"`
     
 
     // 错误码
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // 是否成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// TaobaoMiniappUserInfoGetResult 
-type TaobaoMiniappUserInfoGetResult struct {
-
-    // model
-    Model   *OpenUserInfoDto `json:"model,omitempty"`
-
-    // 错误信息
-    ErrMessage   string `json:"err_message,omitempty"`
-
-    // 错误码
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // 是否成功
-    Success   bool `json:"success,omitempty"`
 
 }

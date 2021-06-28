@@ -1,6 +1,8 @@
 package waybill
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ cainiao.cloudprint.customares.get
 */
 type CainiaoCloudprintCustomaresGetAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoCloudprintCustomaresGetResponse `json:"cainiao_cloudprint_customares_get_response,omitempty"` 
     CainiaoCloudprintCustomaresGetResponse
 }
 
-/* model for simplify = false
 type CainiaoCloudprintCustomaresGetResponse struct {
+    XMLName xml.Name `xml:"cainiao_cloudprint_customares_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        CloudPrintBaseResult  *CloudPrintBaseResult `json:"cloud_print_base_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CloudPrintBaseResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoCloudprintCustomaresGetResponse struct {
-
-    // 结果
-    Result   *CloudPrintBaseResult `json:"result,omitempty"`
-
 }

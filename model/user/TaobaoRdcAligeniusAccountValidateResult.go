@@ -1,47 +1,26 @@
 package user
 
 // TaobaoRdcAligeniusAccountValidateResult 
-/* model for simplify = false
 type TaobaoRdcAligeniusAccountValidateResult struct {
 
     // resultData
     
-    ResultData  *struct {
-        Resultdata  *Resultdata `json:"resultdata,omitempty"`
-    } `json:"result_data,omitempty"`
+    ResultData   *Resultdata `json:"result_data,omitempty" xml:"result_data,omitempty"`
     
 
     // errorInfo
     
-    ErrorInfo   string `json:"error_info,omitempty"`
+    ErrorInfo   string `json:"error_info,omitempty" xml:"error_info,omitempty"`
     
 
     // errorCode
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // 为true时才有resultData
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// TaobaoRdcAligeniusAccountValidateResult 
-type TaobaoRdcAligeniusAccountValidateResult struct {
-
-    // resultData
-    ResultData   *Resultdata `json:"result_data,omitempty"`
-
-    // errorInfo
-    ErrorInfo   string `json:"error_info,omitempty"`
-
-    // errorCode
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // 为true时才有resultData
-    Success   bool `json:"success,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.logistics.address.modify
 */
 type TaobaoLogisticsAddressModifyAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLogisticsAddressModifyResponse `json:"logistics_address_modify_response,omitempty"` 
     TaobaoLogisticsAddressModifyResponse
 }
 
-/* model for simplify = false
 type TaobaoLogisticsAddressModifyResponse struct {
+    XMLName xml.Name `xml:"logistics_address_modify_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 只返回修改时间modify_date
     
-    AddressResult  *struct {
-        AddressResult  *AddressResult `json:"address_result,omitempty"`
-    } `json:"address_result,omitempty"`
+    AddressResult   *AddressResult `json:"address_result,omitempty" xml:"address_result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoLogisticsAddressModifyResponse struct {
-
-    // 只返回修改时间modify_date
-    AddressResult   *AddressResult `json:"address_result,omitempty"`
-
 }

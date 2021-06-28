@@ -1,69 +1,41 @@
 package taotv
 
 // TaobaoTaotvVideoPlaylistGetModel 
-/* model for simplify = false
 type TaobaoTaotvVideoPlaylistGetModel struct {
 
     // 视频图片
     
-    PicUrl   string `json:"pic_url,omitempty"`
+    PicUrl   string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
     
 
     // 视频ID
     
-    VideoId   string `json:"video_id,omitempty"`
+    VideoId   string `json:"video_id,omitempty" xml:"video_id,omitempty"`
     
 
     // 视频来源
     
-    From   int64 `json:"from,omitempty"`
+    From   int64 `json:"from,omitempty" xml:"from,omitempty"`
     
 
     // 视频标题
     
-    Title   string `json:"title,omitempty"`
+    Title   string `json:"title,omitempty" xml:"title,omitempty"`
     
 
     // id
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     
 
     // 时长，单位秒
     
-    Seconds   string `json:"seconds,omitempty"`
+    Seconds   string `json:"seconds,omitempty" xml:"seconds,omitempty"`
     
 
     // ott测更新时间
     
-    OttUpdateTime   string `json:"ott_update_time,omitempty"`
+    OttUpdateTime   string `json:"ott_update_time,omitempty" xml:"ott_update_time,omitempty"`
     
-
-}
-*/
-
-// TaobaoTaotvVideoPlaylistGetModel 
-type TaobaoTaotvVideoPlaylistGetModel struct {
-
-    // 视频图片
-    PicUrl   string `json:"pic_url,omitempty"`
-
-    // 视频ID
-    VideoId   string `json:"video_id,omitempty"`
-
-    // 视频来源
-    From   int64 `json:"from,omitempty"`
-
-    // 视频标题
-    Title   string `json:"title,omitempty"`
-
-    // id
-    Id   int64 `json:"id,omitempty"`
-
-    // 时长，单位秒
-    Seconds   string `json:"seconds,omitempty"`
-
-    // ott测更新时间
-    OttUpdateTime   string `json:"ott_update_time,omitempty"`
 
 }

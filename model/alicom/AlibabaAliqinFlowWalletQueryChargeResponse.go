@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.aliqin.flow.wallet.query.charge
 */
 type AlibabaAliqinFlowWalletQueryChargeAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinFlowWalletQueryChargeResponse `json:"alibaba_aliqin_flow_wallet_query_charge_response,omitempty"` 
     AlibabaAliqinFlowWalletQueryChargeResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinFlowWalletQueryChargeResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_flow_wallet_query_charge_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 充值状态
     
-    Charge   string `json:"charge,omitempty"`
+    Charge   string `json:"charge,omitempty" xml:"charge,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinFlowWalletQueryChargeResponse struct {
-
-    // 充值状态
-    Charge   string `json:"charge,omitempty"`
-
 }

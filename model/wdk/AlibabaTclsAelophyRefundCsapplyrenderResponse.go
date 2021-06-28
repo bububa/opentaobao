@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.tcls.aelophy.refund.csapplyrender
 */
 type AlibabaTclsAelophyRefundCsapplyrenderAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTclsAelophyRefundCsapplyrenderResponse `json:"alibaba_tcls_aelophy_refund_csapplyrender_response,omitempty"` 
     AlibabaTclsAelophyRefundCsapplyrenderResponse
 }
 
-/* model for simplify = false
 type AlibabaTclsAelophyRefundCsapplyrenderResponse struct {
+    XMLName xml.Name `xml:"alibaba_tcls_aelophy_refund_csapplyrender_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应结果
     
-    ApiResult  *struct {
-        AlibabaTclsAelophyRefundCsapplyrenderApiResult  *AlibabaTclsAelophyRefundCsapplyrenderApiResult `json:"alibaba_tcls_aelophy_refund_csapplyrender_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *AlibabaTclsAelophyRefundCsapplyrenderApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTclsAelophyRefundCsapplyrenderResponse struct {
-
-    // 响应结果
-    ApiResult   *AlibabaTclsAelophyRefundCsapplyrenderApiResult `json:"api_result,omitempty"`
-
 }

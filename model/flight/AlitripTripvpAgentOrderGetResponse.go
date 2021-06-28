@@ -1,6 +1,8 @@
 package flight
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ alitrip.tripvp.agent.order.get
 */
 type AlitripTripvpAgentOrderGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripTripvpAgentOrderGetResponse `json:"alitrip_tripvp_agent_order_get_response,omitempty"` 
     AlitripTripvpAgentOrderGetResponse
 }
 
-/* model for simplify = false
 type AlitripTripvpAgentOrderGetResponse struct {
+    XMLName xml.Name `xml:"alitrip_tripvp_agent_order_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // orderVO
     
-    OrderVo  *struct {
-        VirProOrderVo  *VirProOrderVo `json:"vir_pro_order_vo,omitempty"`
-    } `json:"order_vo,omitempty"`
-    
+    OrderVo   *VirProOrderVo `json:"order_vo,omitempty" xml:"order_vo,omitempty"`
 
+    
     // pageSize
     
-    PageSize   int64 `json:"page_size,omitempty"`
+    PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
+
     
-
-}
-*/
-
-type AlitripTripvpAgentOrderGetResponse struct {
-
-    // orderVO
-    OrderVo   *VirProOrderVo `json:"order_vo,omitempty"`
-
-    // pageSize
-    PageSize   int64 `json:"page_size,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.retail.marketing.itempool.activity.delete
 */
 type AlibabaRetailMarketingItempoolActivityDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaRetailMarketingItempoolActivityDeleteResponse `json:"alibaba_retail_marketing_itempool_activity_delete_response,omitempty"` 
     AlibabaRetailMarketingItempoolActivityDeleteResponse
 }
 
-/* model for simplify = false
 type AlibabaRetailMarketingItempoolActivityDeleteResponse struct {
+    XMLName xml.Name `xml:"alibaba_retail_marketing_itempool_activity_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参
     
-    Result  *struct {
-        OctopusOpenResult  *OctopusOpenResult `json:"octopus_open_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *OctopusOpenResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaRetailMarketingItempoolActivityDeleteResponse struct {
-
-    // 出参
-    Result   *OctopusOpenResult `json:"result,omitempty"`
-
 }

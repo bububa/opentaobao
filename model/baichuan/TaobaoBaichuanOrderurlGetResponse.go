@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.baichuan.orderurl.get
 */
 type TaobaoBaichuanOrderurlGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaichuanOrderurlGetResponse `json:"baichuan_orderurl_get_response,omitempty"` 
     TaobaoBaichuanOrderurlGetResponse
 }
 
-/* model for simplify = false
 type TaobaoBaichuanOrderurlGetResponse struct {
+    XMLName xml.Name `xml:"baichuan_orderurl_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaichuanOrderurlGetResponse struct {
-
-    // name
-    Name   string `json:"name,omitempty"`
-
 }

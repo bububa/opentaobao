@@ -1,57 +1,31 @@
 package eticket
 
 // PackageResult 
-/* model for simplify = false
 type PackageResult struct {
 
     // 操作结果码
     
-    Code   int64 `json:"code,omitempty"`
+    Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // 操作是否成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // 操作结果信息
     
-    Info   string `json:"info,omitempty"`
+    Info   string `json:"info,omitempty" xml:"info,omitempty"`
     
 
     // 包基本信息
     
-    PackageBase  *struct {
-        PackageBase  *PackageBase `json:"package_base,omitempty"`
-    } `json:"package_base,omitempty"`
+    PackageBase   *PackageBase `json:"package_base,omitempty" xml:"package_base,omitempty"`
     
 
     // 包基本信息列表
     
-    PackageBaseList  struct {
-        PackageBase  []PackageBase `json:"package_base,omitempty"`
-    } `json:"package_base_list,omitempty"`
+    PackageBaseList   []PackageBase `json:"package_base_list,omitempty" xml:"package_base_list,omitempty"`
     
-
-}
-*/
-
-// PackageResult 
-type PackageResult struct {
-
-    // 操作结果码
-    Code   int64 `json:"code,omitempty"`
-
-    // 操作是否成功
-    Success   bool `json:"success,omitempty"`
-
-    // 操作结果信息
-    Info   string `json:"info,omitempty"`
-
-    // 包基本信息
-    PackageBase   *PackageBase `json:"package_base,omitempty"`
-
-    // 包基本信息列表
-    PackageBaseList   []PackageBase `json:"package_base_list,omitempty"`
 
 }

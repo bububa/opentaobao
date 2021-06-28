@@ -1,29 +1,16 @@
 package waybill
 
 // PackageItem 
-/* model for simplify = false
 type PackageItem struct {
 
     // 商品名称
     
-    ItemName   string `json:"item_name,omitempty"`
+    ItemName   string `json:"item_name,omitempty" xml:"item_name,omitempty"`
     
 
     // 商品数量
     
-    Count   int64 `json:"count,omitempty"`
+    Count   int64 `json:"count,omitempty" xml:"count,omitempty"`
     
-
-}
-*/
-
-// PackageItem 
-type PackageItem struct {
-
-    // 商品名称
-    ItemName   string `json:"item_name,omitempty"`
-
-    // 商品数量
-    Count   int64 `json:"count,omitempty"`
 
 }

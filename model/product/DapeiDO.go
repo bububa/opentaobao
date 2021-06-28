@@ -1,55 +1,31 @@
 package product
 
 // DapeiDO 
-/* model for simplify = false
 type DapeiDO struct {
 
     // id
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     
 
     // title
     
-    Title   string `json:"title,omitempty"`
+    Title   string `json:"title,omitempty" xml:"title,omitempty"`
     
 
     // desc
     
-    Desc   string `json:"desc,omitempty"`
+    Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     
 
     // url
     
-    Url   string `json:"url,omitempty"`
+    Url   string `json:"url,omitempty" xml:"url,omitempty"`
     
 
     // items
     
-    Items  struct {
-        DapeiTemplateItem  []DapeiTemplateItem `json:"dapei_template_item,omitempty"`
-    } `json:"items,omitempty"`
+    Items   []DapeiTemplateItem `json:"items,omitempty" xml:"items,omitempty"`
     
-
-}
-*/
-
-// DapeiDO 
-type DapeiDO struct {
-
-    // id
-    Id   int64 `json:"id,omitempty"`
-
-    // title
-    Title   string `json:"title,omitempty"`
-
-    // desc
-    Desc   string `json:"desc,omitempty"`
-
-    // url
-    Url   string `json:"url,omitempty"`
-
-    // items
-    Items   []DapeiTemplateItem `json:"items,omitempty"`
 
 }

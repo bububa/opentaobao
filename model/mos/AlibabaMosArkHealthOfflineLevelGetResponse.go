@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,48 +14,31 @@ alibaba.mos.ark.health.offline.level.get
 */
 type AlibabaMosArkHealthOfflineLevelGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMosArkHealthOfflineLevelGetResponse `json:"alibaba_mos_ark_health_offline_level_get_response,omitempty"` 
     AlibabaMosArkHealthOfflineLevelGetResponse
 }
 
-/* model for simplify = false
 type AlibabaMosArkHealthOfflineLevelGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_mos_ark_health_offline_level_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // model
     
-    Data   string `json:"data,omitempty"`
-    
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
 
+    
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // msgInfo
     
-    MsgInfo   string `json:"msg_info,omitempty"`
-    
+    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 
+    
     // msgCode
     
-    MsgCode   string `json:"msg_code,omitempty"`
+    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMosArkHealthOfflineLevelGetResponse struct {
-
-    // model
-    Data   string `json:"data,omitempty"`
-
-    // success
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // msgInfo
-    MsgInfo   string `json:"msg_info,omitempty"`
-
-    // msgCode
-    MsgCode   string `json:"msg_code,omitempty"`
-
 }

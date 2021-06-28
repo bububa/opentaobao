@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,48 +14,31 @@ tmall.car.fpcar.restpay.receive
 */
 type TmallCarFpcarRestpayReceiveAPIResponse struct {
     model.CommonResponse
-    // Response *TmallCarFpcarRestpayReceiveResponse `json:"tmall_car_fpcar_restpay_receive_response,omitempty"` 
     TmallCarFpcarRestpayReceiveResponse
 }
 
-/* model for simplify = false
 type TmallCarFpcarRestpayReceiveResponse struct {
+    XMLName xml.Name `xml:"tmall_car_fpcar_restpay_receive_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    Succes   bool `json:"succes,omitempty"`
-    
+    Succes   bool `json:"succes,omitempty" xml:"succes,omitempty"`
 
+    
     // msgCode
     
-    MsgCode   string `json:"msg_code,omitempty"`
-    
+    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
 
+    
     // msgInfo
     
-    MsgInfo   string `json:"msg_info,omitempty"`
-    
+    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
 
+    
     // 业务结果信息详细描述
     
-    Object   string `json:"object,omitempty"`
+    Object   string `json:"object,omitempty" xml:"object,omitempty"`
+
     
-
-}
-*/
-
-type TmallCarFpcarRestpayReceiveResponse struct {
-
-    // 是否成功
-    Succes   bool `json:"succes,omitempty"`
-
-    // msgCode
-    MsgCode   string `json:"msg_code,omitempty"`
-
-    // msgInfo
-    MsgInfo   string `json:"msg_info,omitempty"`
-
-    // 业务结果信息详细描述
-    Object   string `json:"object,omitempty"`
-
 }

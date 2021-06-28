@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.campaign.schedule.update
 */
 type TaobaoSimbaCampaignScheduleUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaCampaignScheduleUpdateResponse `json:"simba_campaign_schedule_update_response,omitempty"` 
     TaobaoSimbaCampaignScheduleUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaCampaignScheduleUpdateResponse struct {
+    XMLName xml.Name `xml:"simba_campaign_schedule_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改后的推广计划分时折扣
     
-    CampaignSchedule  *struct {
-        CampaignSchedule  *CampaignSchedule `json:"campaign_schedule,omitempty"`
-    } `json:"campaign_schedule,omitempty"`
+    CampaignSchedule   *CampaignSchedule `json:"campaign_schedule,omitempty" xml:"campaign_schedule,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaCampaignScheduleUpdateResponse struct {
-
-    // 修改后的推广计划分时折扣
-    CampaignSchedule   *CampaignSchedule `json:"campaign_schedule,omitempty"`
-
 }

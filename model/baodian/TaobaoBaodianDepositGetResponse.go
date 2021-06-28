@@ -1,6 +1,8 @@
 package baodian
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.baodian.deposit.get
 */
 type TaobaoBaodianDepositGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaodianDepositGetResponse `json:"baodian_deposit_get_response,omitempty"` 
     TaobaoBaodianDepositGetResponse
 }
 
-/* model for simplify = false
 type TaobaoBaodianDepositGetResponse struct {
+    XMLName xml.Name `xml:"baodian_deposit_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户宝点帐户信息
     
-    UserCoinDeposit  *struct {
-        UserCoinDeposit  *UserCoinDeposit `json:"user_coin_deposit,omitempty"`
-    } `json:"user_coin_deposit,omitempty"`
+    UserCoinDeposit   *UserCoinDeposit `json:"user_coin_deposit,omitempty" xml:"user_coin_deposit,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaodianDepositGetResponse struct {
-
-    // 用户宝点帐户信息
-    UserCoinDeposit   *UserCoinDeposit `json:"user_coin_deposit,omitempty"`
-
 }

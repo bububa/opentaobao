@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.fenxiao.product.sku.delete
 */
 type TaobaoFenxiaoProductSkuDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoProductSkuDeleteResponse `json:"fenxiao_product_sku_delete_response,omitempty"` 
     TaobaoFenxiaoProductSkuDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoProductSkuDeleteResponse struct {
+    XMLName xml.Name `xml:"fenxiao_product_sku_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作结果
     
-    Result   bool `json:"result,omitempty"`
-    
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
 
+    
     // 操作时间
     
-    Created   string `json:"created,omitempty"`
+    Created   string `json:"created,omitempty" xml:"created,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFenxiaoProductSkuDeleteResponse struct {
-
-    // 操作结果
-    Result   bool `json:"result,omitempty"`
-
-    // 操作时间
-    Created   string `json:"created,omitempty"`
-
 }

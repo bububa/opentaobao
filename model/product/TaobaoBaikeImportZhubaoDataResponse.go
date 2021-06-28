@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.baike.import.zhubao.data
 */
 type TaobaoBaikeImportZhubaoDataAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaikeImportZhubaoDataResponse `json:"baike_import_zhubao_data_response,omitempty"` 
     TaobaoBaikeImportZhubaoDataResponse
 }
 
-/* model for simplify = false
 type TaobaoBaikeImportZhubaoDataResponse struct {
+    XMLName xml.Name `xml:"baike_import_zhubao_data_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoBaikeImportZhubaoDataResult  *TaobaoBaikeImportZhubaoDataResult `json:"taobao_baike_import_zhubao_data_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoBaikeImportZhubaoDataResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaikeImportZhubaoDataResponse struct {
-
-    // result
-    Result   *TaobaoBaikeImportZhubaoDataResult `json:"result,omitempty"`
-
 }

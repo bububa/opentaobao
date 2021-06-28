@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.channel.order.status.update
 */
 type AlibabaWdkChannelOrderStatusUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkChannelOrderStatusUpdateResponse `json:"alibaba_wdk_channel_order_status_update_response,omitempty"` 
     AlibabaWdkChannelOrderStatusUpdateResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkChannelOrderStatusUpdateResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_channel_order_status_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    ApiResult  *struct {
-        AlibabaWdkChannelOrderStatusUpdateApiResult  *AlibabaWdkChannelOrderStatusUpdateApiResult `json:"alibaba_wdk_channel_order_status_update_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *AlibabaWdkChannelOrderStatusUpdateApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkChannelOrderStatusUpdateResponse struct {
-
-    // 返回结果
-    ApiResult   *AlibabaWdkChannelOrderStatusUpdateApiResult `json:"api_result,omitempty"`
-
 }

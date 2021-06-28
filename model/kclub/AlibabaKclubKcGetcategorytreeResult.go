@@ -1,45 +1,26 @@
 package kclub
 
 // AlibabaKclubKcGetcategorytreeResult 
-/* model for simplify = false
 type AlibabaKclubKcGetcategorytreeResult struct {
 
     // message
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
     
 
     // 类目数据 JSONArray
     
-    Data   string `json:"data,omitempty"`
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
     
 
     // code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// AlibabaKclubKcGetcategorytreeResult 
-type AlibabaKclubKcGetcategorytreeResult struct {
-
-    // message
-    Message   string `json:"message,omitempty"`
-
-    // 类目数据 JSONArray
-    Data   string `json:"data,omitempty"`
-
-    // code
-    Code   string `json:"code,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

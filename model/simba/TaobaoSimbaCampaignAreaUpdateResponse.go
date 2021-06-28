@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.campaign.area.update
 */
 type TaobaoSimbaCampaignAreaUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaCampaignAreaUpdateResponse `json:"simba_campaign_area_update_response,omitempty"` 
     TaobaoSimbaCampaignAreaUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaCampaignAreaUpdateResponse struct {
+    XMLName xml.Name `xml:"simba_campaign_area_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改后的推广计划投放地域
     
-    CampaignArea  *struct {
-        CampaignArea  *CampaignArea `json:"campaign_area,omitempty"`
-    } `json:"campaign_area,omitempty"`
+    CampaignArea   *CampaignArea `json:"campaign_area,omitempty" xml:"campaign_area,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaCampaignAreaUpdateResponse struct {
-
-    // 修改后的推广计划投放地域
-    CampaignArea   *CampaignArea `json:"campaign_area,omitempty"`
-
 }

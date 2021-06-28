@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ alibaba.ele.fengniao.trade.update
 */
 type AlibabaEleFengniaoTradeUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaEleFengniaoTradeUpdateResponse `json:"alibaba_ele_fengniao_trade_update_response,omitempty"` 
     AlibabaEleFengniaoTradeUpdateResponse
 }
 
-/* model for simplify = false
 type AlibabaEleFengniaoTradeUpdateResponse struct {
+    XMLName xml.Name `xml:"alibaba_ele_fengniao_trade_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 1:成功 0：失败
     
-    Status   int64 `json:"status,omitempty"`
-    
+    Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
 
+    
     // 无此交易记录
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaEleFengniaoTradeUpdateResponse struct {
-
-    // 1:成功 0：失败
-    Status   int64 `json:"status,omitempty"`
-
-    // 无此交易记录
-    ErrorMsg   string `json:"error_msg,omitempty"`
-
 }

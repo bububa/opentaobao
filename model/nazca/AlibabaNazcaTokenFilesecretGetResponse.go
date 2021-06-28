@@ -1,6 +1,8 @@
 package nazca
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,56 +14,36 @@ alibaba.nazca.token.filesecret.get
 */
 type AlibabaNazcaTokenFilesecretGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaNazcaTokenFilesecretGetResponse `json:"alibaba_nazca_token_filesecret_get_response,omitempty"` 
     AlibabaNazcaTokenFilesecretGetResponse
 }
 
-/* model for simplify = false
 type AlibabaNazcaTokenFilesecretGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_nazca_token_filesecret_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // error
     
-    Error   string `json:"error,omitempty"`
-    
+    Error   string `json:"error,omitempty" xml:"error,omitempty"`
 
+    
     // message
     
-    Message   string `json:"message,omitempty"`
-    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 
+    
     // 文件秘钥
     
-    RetValue   string `json:"ret_value,omitempty"`
-    
+    RetValue   string `json:"ret_value,omitempty" xml:"ret_value,omitempty"`
 
+    
     // 错误信息
     
-    SubErrorMessage   string `json:"sub_error_message,omitempty"`
-    
+    SubErrorMessage   string `json:"sub_error_message,omitempty" xml:"sub_error_message,omitempty"`
 
+    
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaNazcaTokenFilesecretGetResponse struct {
-
-    // error
-    Error   string `json:"error,omitempty"`
-
-    // message
-    Message   string `json:"message,omitempty"`
-
-    // 文件秘钥
-    RetValue   string `json:"ret_value,omitempty"`
-
-    // 错误信息
-    SubErrorMessage   string `json:"sub_error_message,omitempty"`
-
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

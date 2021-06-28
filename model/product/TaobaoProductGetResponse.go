@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -15,26 +17,16 @@ taobao.product.get
 */
 type TaobaoProductGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoProductGetResponse `json:"product_get_response,omitempty"` 
     TaobaoProductGetResponse
 }
 
-/* model for simplify = false
 type TaobaoProductGetResponse struct {
+    XMLName xml.Name `xml:"product_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回具体信息为入参fields请求的字段信息
     
-    Product  *struct {
-        Product  *Product `json:"product,omitempty"`
-    } `json:"product,omitempty"`
+    Product   *Product `json:"product,omitempty" xml:"product,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoProductGetResponse struct {
-
-    // 返回具体信息为入参fields请求的字段信息
-    Product   *Product `json:"product,omitempty"`
-
 }

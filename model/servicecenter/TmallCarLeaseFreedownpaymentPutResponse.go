@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.car.lease.freedownpayment.put
 */
 type TmallCarLeaseFreedownpaymentPutAPIResponse struct {
     model.CommonResponse
-    // Response *TmallCarLeaseFreedownpaymentPutResponse `json:"tmall_car_lease_freedownpayment_put_response,omitempty"` 
     TmallCarLeaseFreedownpaymentPutResponse
 }
 
-/* model for simplify = false
 type TmallCarLeaseFreedownpaymentPutResponse struct {
+    XMLName xml.Name `xml:"tmall_car_lease_freedownpayment_put_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        TmallCarLeaseFreedownpaymentPutResult  *TmallCarLeaseFreedownpaymentPutResult `json:"tmall_car_lease_freedownpayment_put_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallCarLeaseFreedownpaymentPutResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallCarLeaseFreedownpaymentPutResponse struct {
-
-    // 接口返回model
-    Result   *TmallCarLeaseFreedownpaymentPutResult `json:"result,omitempty"`
-
 }

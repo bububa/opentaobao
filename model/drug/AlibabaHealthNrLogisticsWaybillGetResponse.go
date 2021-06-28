@@ -1,6 +1,8 @@
 package drug
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.health.nr.logistics.waybill.get
 */
 type AlibabaHealthNrLogisticsWaybillGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaHealthNrLogisticsWaybillGetResponse `json:"alibaba_health_nr_logistics_waybill_get_response,omitempty"` 
     AlibabaHealthNrLogisticsWaybillGetResponse
 }
 
-/* model for simplify = false
 type AlibabaHealthNrLogisticsWaybillGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_health_nr_logistics_waybill_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应结果对象
     
-    ResponseResult  *struct {
-        ResponseResult  *ResponseResult `json:"response_result,omitempty"`
-    } `json:"response_result,omitempty"`
+    ResponseResult   *ResponseResult `json:"response_result,omitempty" xml:"response_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaHealthNrLogisticsWaybillGetResponse struct {
-
-    // 响应结果对象
-    ResponseResult   *ResponseResult `json:"response_result,omitempty"`
-
 }

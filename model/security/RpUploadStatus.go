@@ -1,29 +1,16 @@
 package security
 
 // RpUploadStatus 
-/* model for simplify = false
 type RpUploadStatus struct {
 
     // code
     
-    Code   int64 `json:"code,omitempty"`
+    Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
-
-}
-*/
-
-// RpUploadStatus 
-type RpUploadStatus struct {
-
-    // code
-    Code   int64 `json:"code,omitempty"`
-
-    // name
-    Name   string `json:"name,omitempty"`
 
 }

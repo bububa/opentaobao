@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.axb.vendor.sms.intercept
 */
 type AlibabaAliqinAxbVendorSmsInterceptAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinAxbVendorSmsInterceptResponse `json:"alibaba_aliqin_axb_vendor_sms_intercept_response,omitempty"` 
     AlibabaAliqinAxbVendorSmsInterceptResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinAxbVendorSmsInterceptResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_axb_vendor_sms_intercept_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应结构体
     
-    Result  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinAxbVendorSmsInterceptResponse struct {
-
-    // 响应结构体
-    Result   *Response `json:"result,omitempty"`
-
 }

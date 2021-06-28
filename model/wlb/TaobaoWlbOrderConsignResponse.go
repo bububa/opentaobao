@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.wlb.order.consign
 */
 type TaobaoWlbOrderConsignAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbOrderConsignResponse `json:"wlb_order_consign_response,omitempty"` 
     TaobaoWlbOrderConsignResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbOrderConsignResponse struct {
+    XMLName xml.Name `xml:"wlb_order_consign_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改时间
     
-    ModifyTime   string `json:"modify_time,omitempty"`
+    ModifyTime   string `json:"modify_time,omitempty" xml:"modify_time,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbOrderConsignResponse struct {
-
-    // 修改时间
-    ModifyTime   string `json:"modify_time,omitempty"`
-
 }

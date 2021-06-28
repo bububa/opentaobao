@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.ele.fengniao.order.push
 */
 type AlibabaEleFengniaoOrderPushAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaEleFengniaoOrderPushResponse `json:"alibaba_ele_fengniao_order_push_response,omitempty"` 
     AlibabaEleFengniaoOrderPushResponse
 }
 
-/* model for simplify = false
 type AlibabaEleFengniaoOrderPushResponse struct {
+    XMLName xml.Name `xml:"alibaba_ele_fengniao_order_push_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // msg
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaEleFengniaoOrderPushResponse struct {
-
-    // msg
-    Message   string `json:"message,omitempty"`
-
 }

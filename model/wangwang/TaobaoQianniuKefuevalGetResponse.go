@@ -1,6 +1,8 @@
 package wangwang
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.qianniu.kefueval.get
 */
 type TaobaoQianniuKefuevalGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQianniuKefuevalGetResponse `json:"qianniu_kefueval_get_response,omitempty"` 
     TaobaoQianniuKefuevalGetResponse
 }
 
-/* model for simplify = false
 type TaobaoQianniuKefuevalGetResponse struct {
+    XMLName xml.Name `xml:"qianniu_kefueval_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 评价结果数
     
-    ResultCount   int64 `json:"result_count,omitempty"`
-    
+    ResultCount   int64 `json:"result_count,omitempty" xml:"result_count,omitempty"`
 
+    
     // 评价明细
     
-    StaffEvalDetails  struct {
-        EvalDetail  []EvalDetail `json:"eval_detail,omitempty"`
-    } `json:"staff_eval_details,omitempty"`
+    StaffEvalDetails   []EvalDetail `json:"staff_eval_details,omitempty" xml:"staff_eval_details>eval_detail,omitempty"`
     
-
-}
-*/
-
-type TaobaoQianniuKefuevalGetResponse struct {
-
-    // 评价结果数
-    ResultCount   int64 `json:"result_count,omitempty"`
-
-    // 评价明细
-    StaffEvalDetails   []EvalDetail `json:"staff_eval_details,omitempty"`
-
+    
 }

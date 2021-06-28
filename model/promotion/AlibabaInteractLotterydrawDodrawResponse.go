@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.interact.lotterydraw.dodraw
 */
 type AlibabaInteractLotterydrawDodrawAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractLotterydrawDodrawResponse `json:"alibaba_interact_lotterydraw_dodraw_response,omitempty"` 
     AlibabaInteractLotterydrawDodrawResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractLotterydrawDodrawResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_lotterydraw_dodraw_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaInteractLotterydrawDodrawResultDto  *AlibabaInteractLotterydrawDodrawResultDto `json:"alibaba_interact_lotterydraw_dodraw_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaInteractLotterydrawDodrawResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractLotterydrawDodrawResponse struct {
-
-    // result
-    Result   *AlibabaInteractLotterydrawDodrawResultDto `json:"result,omitempty"`
-
 }

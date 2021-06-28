@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.searchcrowd.batch.add
 */
 type TaobaoSimbaSearchcrowdBatchAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaSearchcrowdBatchAddResponse `json:"simba_searchcrowd_batch_add_response,omitempty"` 
     TaobaoSimbaSearchcrowdBatchAddResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaSearchcrowdBatchAddResponse struct {
+    XMLName xml.Name `xml:"simba_searchcrowd_batch_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 定向信息
     
-    Adgrouptargetingtags  struct {
-        AdgroupTargetingTagDto  []AdgroupTargetingTagDto `json:"adgroup_targeting_tag_dto,omitempty"`
-    } `json:"adgrouptargetingtags,omitempty"`
+    Adgrouptargetingtags   []AdgroupTargetingTagDto `json:"adgrouptargetingtags,omitempty" xml:"adgrouptargetingtags>adgroup_targeting_tag_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaSearchcrowdBatchAddResponse struct {
-
-    // 定向信息
-    Adgrouptargetingtags   []AdgroupTargetingTagDto `json:"adgrouptargetingtags,omitempty"`
-
+    
 }

@@ -1,55 +1,31 @@
 package traderate
 
 // ItemStatisticVo 
-/* model for simplify = false
 type ItemStatisticVo struct {
 
     // 评论数量
     
-    RateCnt   int64 `json:"rate_cnt,omitempty"`
+    RateCnt   int64 `json:"rate_cnt,omitempty" xml:"rate_cnt,omitempty"`
     
 
     // tab筛选信息
     
-    TabInfos  struct {
-        TabInfo  []TabInfo `json:"tab_info,omitempty"`
-    } `json:"tab_infos,omitempty"`
+    TabInfos   []TabInfo `json:"tab_infos,omitempty" xml:"tab_infos,omitempty"`
     
 
     // 总评分
     
-    TotalScore   string `json:"total_score,omitempty"`
+    TotalScore   string `json:"total_score,omitempty" xml:"total_score,omitempty"`
     
 
     // 评分描述信息
     
-    RankDesc   string `json:"rank_desc,omitempty"`
+    RankDesc   string `json:"rank_desc,omitempty" xml:"rank_desc,omitempty"`
     
 
     // 子评分项信息
     
-    ScoreDetail   string `json:"score_detail,omitempty"`
+    ScoreDetail   string `json:"score_detail,omitempty" xml:"score_detail,omitempty"`
     
-
-}
-*/
-
-// ItemStatisticVo 
-type ItemStatisticVo struct {
-
-    // 评论数量
-    RateCnt   int64 `json:"rate_cnt,omitempty"`
-
-    // tab筛选信息
-    TabInfos   []TabInfo `json:"tab_infos,omitempty"`
-
-    // 总评分
-    TotalScore   string `json:"total_score,omitempty"`
-
-    // 评分描述信息
-    RankDesc   string `json:"rank_desc,omitempty"`
-
-    // 子评分项信息
-    ScoreDetail   string `json:"score_detail,omitempty"`
 
 }

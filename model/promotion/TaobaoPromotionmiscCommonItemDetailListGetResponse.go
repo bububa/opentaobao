@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ taobao.promotionmisc.common.item.detail.list.get
 */
 type TaobaoPromotionmiscCommonItemDetailListGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPromotionmiscCommonItemDetailListGetResponse `json:"promotionmisc_common_item_detail_list_get_response,omitempty"` 
     TaobaoPromotionmiscCommonItemDetailListGetResponse
 }
 
-/* model for simplify = false
 type TaobaoPromotionmiscCommonItemDetailListGetResponse struct {
+    XMLName xml.Name `xml:"promotionmisc_common_item_detail_list_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否查询成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 数据总数量
     
-    TotalCount   int64 `json:"total_count,omitempty"`
-    
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 
+    
     // 活动详情列表
     
-    DetailList  struct {
-        CommonItemDetail  []CommonItemDetail `json:"common_item_detail,omitempty"`
-    } `json:"detail_list,omitempty"`
+    DetailList   []CommonItemDetail `json:"detail_list,omitempty" xml:"detail_list>common_item_detail,omitempty"`
     
-
-}
-*/
-
-type TaobaoPromotionmiscCommonItemDetailListGetResponse struct {
-
-    // 是否查询成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 数据总数量
-    TotalCount   int64 `json:"total_count,omitempty"`
-
-    // 活动详情列表
-    DetailList   []CommonItemDetail `json:"detail_list,omitempty"`
-
+    
 }

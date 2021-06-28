@@ -1,6 +1,8 @@
 package travel
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -15,26 +17,16 @@ alitrip.freetour.product.upload
 */
 type AlitripFreetourProductUploadAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripFreetourProductUploadResponse `json:"alitrip_freetour_product_upload_response,omitempty"` 
     AlitripFreetourProductUploadResponse
 }
 
-/* model for simplify = false
 type AlitripFreetourProductUploadResponse struct {
+    XMLName xml.Name `xml:"alitrip_freetour_product_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // firstResult
     
-    FirstResult  *struct {
-        TopTravelItem  *TopTravelItem `json:"top_travel_item,omitempty"`
-    } `json:"first_result,omitempty"`
+    FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"first_result,omitempty"`
+
     
-
-}
-*/
-
-type AlitripFreetourProductUploadResponse struct {
-
-    // firstResult
-    FirstResult   *TopTravelItem `json:"first_result,omitempty"`
-
 }

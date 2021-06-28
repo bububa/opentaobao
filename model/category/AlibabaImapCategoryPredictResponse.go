@@ -1,6 +1,8 @@
 package category
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -14,26 +16,16 @@ alibaba.imap.category.predict
 */
 type AlibabaImapCategoryPredictAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaImapCategoryPredictResponse `json:"alibaba_imap_category_predict_response,omitempty"` 
     AlibabaImapCategoryPredictResponse
 }
 
-/* model for simplify = false
 type AlibabaImapCategoryPredictResponse struct {
+    XMLName xml.Name `xml:"alibaba_imap_category_predict_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaImapCategoryPredictResult  *AlibabaImapCategoryPredictResult `json:"alibaba_imap_category_predict_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaImapCategoryPredictResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaImapCategoryPredictResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaImapCategoryPredictResult `json:"result,omitempty"`
-
 }

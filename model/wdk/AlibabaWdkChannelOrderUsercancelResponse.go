@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.channel.order.usercancel
 */
 type AlibabaWdkChannelOrderUsercancelAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkChannelOrderUsercancelResponse `json:"alibaba_wdk_channel_order_usercancel_response,omitempty"` 
     AlibabaWdkChannelOrderUsercancelResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkChannelOrderUsercancelResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_channel_order_usercancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    ApiResult  *struct {
-        AlibabaWdkChannelOrderUsercancelApiResult  *AlibabaWdkChannelOrderUsercancelApiResult `json:"alibaba_wdk_channel_order_usercancel_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *AlibabaWdkChannelOrderUsercancelApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkChannelOrderUsercancelResponse struct {
-
-    // 返回结果
-    ApiResult   *AlibabaWdkChannelOrderUsercancelApiResult `json:"api_result,omitempty"`
-
 }

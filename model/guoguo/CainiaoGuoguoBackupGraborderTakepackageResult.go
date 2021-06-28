@@ -1,47 +1,26 @@
 package guoguo
 
 // CainiaoGuoguoBackupGraborderTakepackageResult 
-/* model for simplify = false
 type CainiaoGuoguoBackupGraborderTakepackageResult struct {
 
     // 封装返回的数据
     
-    Data  *struct {
-        BackupOrderDo  *BackupOrderDo `json:"backup_order_do,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *BackupOrderDo `json:"data,omitempty" xml:"data,omitempty"`
     
 
     // 调用状态
     
-    StatusCode   string `json:"status_code,omitempty"`
+    StatusCode   string `json:"status_code,omitempty" xml:"status_code,omitempty"`
     
 
     // 调用状态码
     
-    StatusMessage   string `json:"status_message,omitempty"`
+    StatusMessage   string `json:"status_message,omitempty" xml:"status_message,omitempty"`
     
 
     // 接口调用正常
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// CainiaoGuoguoBackupGraborderTakepackageResult 
-type CainiaoGuoguoBackupGraborderTakepackageResult struct {
-
-    // 封装返回的数据
-    Data   *BackupOrderDo `json:"data,omitempty"`
-
-    // 调用状态
-    StatusCode   string `json:"status_code,omitempty"`
-
-    // 调用状态码
-    StatusMessage   string `json:"status_message,omitempty"`
-
-    // 接口调用正常
-    Success   bool `json:"success,omitempty"`
 
 }

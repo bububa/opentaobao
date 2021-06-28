@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.retail.marketing.itemdiscount.activity.sku.add
 */
 type AlibabaRetailMarketingItemdiscountActivitySkuAddAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaRetailMarketingItemdiscountActivitySkuAddResponse `json:"alibaba_retail_marketing_itemdiscount_activity_sku_add_response,omitempty"` 
     AlibabaRetailMarketingItemdiscountActivitySkuAddResponse
 }
 
-/* model for simplify = false
 type AlibabaRetailMarketingItemdiscountActivitySkuAddResponse struct {
+    XMLName xml.Name `xml:"alibaba_retail_marketing_itemdiscount_activity_sku_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作结果
     
-    Result  *struct {
-        OctopusOpenResult  *OctopusOpenResult `json:"octopus_open_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *OctopusOpenResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaRetailMarketingItemdiscountActivitySkuAddResponse struct {
-
-    // 操作结果
-    Result   *OctopusOpenResult `json:"result,omitempty"`
-
 }

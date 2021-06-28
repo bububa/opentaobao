@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.messageaccount.messsage.mass.send
 */
 type TaobaoMessageaccountMesssageMassSendAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoMessageaccountMesssageMassSendResponse `json:"messageaccount_messsage_mass_send_response,omitempty"` 
     TaobaoMessageaccountMesssageMassSendResponse
 }
 
-/* model for simplify = false
 type TaobaoMessageaccountMesssageMassSendResponse struct {
+    XMLName xml.Name `xml:"messageaccount_messsage_mass_send_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoMessageaccountMesssageMassSendResult  *TaobaoMessageaccountMesssageMassSendResult `json:"taobao_messageaccount_messsage_mass_send_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoMessageaccountMesssageMassSendResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoMessageaccountMesssageMassSendResponse struct {
-
-    // result
-    Result   *TaobaoMessageaccountMesssageMassSendResult `json:"result,omitempty"`
-
 }

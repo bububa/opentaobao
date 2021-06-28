@@ -1,6 +1,8 @@
 package bus
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.bus.refundticketprice.set
 */
 type TaobaoBusRefundticketpriceSetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBusRefundticketpriceSetResponse `json:"bus_refundticketprice_set_response,omitempty"` 
     TaobaoBusRefundticketpriceSetResponse
 }
 
-/* model for simplify = false
 type TaobaoBusRefundticketpriceSetResponse struct {
+    XMLName xml.Name `xml:"bus_refundticketprice_set_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 退票成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBusRefundticketpriceSetResponse struct {
-
-    // 退票成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

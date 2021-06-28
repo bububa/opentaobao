@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.baichuan.items.unsubscribe.by.condition
 */
 type TaobaoBaichuanItemsUnsubscribeByConditionAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaichuanItemsUnsubscribeByConditionResponse `json:"baichuan_items_unsubscribe_by_condition_response,omitempty"` 
     TaobaoBaichuanItemsUnsubscribeByConditionResponse
 }
 
-/* model for simplify = false
 type TaobaoBaichuanItemsUnsubscribeByConditionResponse struct {
+    XMLName xml.Name `xml:"baichuan_items_unsubscribe_by_condition_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        TaobaoBaichuanItemsUnsubscribeByConditionResult  *TaobaoBaichuanItemsUnsubscribeByConditionResult `json:"taobao_baichuan_items_unsubscribe_by_condition_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoBaichuanItemsUnsubscribeByConditionResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaichuanItemsUnsubscribeByConditionResponse struct {
-
-    // 接口返回model
-    Result   *TaobaoBaichuanItemsUnsubscribeByConditionResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mj.oc.getproductbyscancode
 */
 type AlibabaMjOcGetproductbyscancodeAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMjOcGetproductbyscancodeResponse `json:"alibaba_mj_oc_getproductbyscancode_response,omitempty"` 
     AlibabaMjOcGetproductbyscancodeResponse
 }
 
-/* model for simplify = false
 type AlibabaMjOcGetproductbyscancodeResponse struct {
+    XMLName xml.Name `xml:"alibaba_mj_oc_getproductbyscancode_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // data
     
-    ProductList  struct {
-        ScanProduct  []ScanProduct `json:"scan_product,omitempty"`
-    } `json:"product_list,omitempty"`
+    ProductList   []ScanProduct `json:"product_list,omitempty" xml:"product_list>scan_product,omitempty"`
     
-
-}
-*/
-
-type AlibabaMjOcGetproductbyscancodeResponse struct {
-
-    // data
-    ProductList   []ScanProduct `json:"product_list,omitempty"`
-
+    
 }

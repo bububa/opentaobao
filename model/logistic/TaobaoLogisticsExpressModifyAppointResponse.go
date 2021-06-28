@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.logistics.express.modify.appoint
 */
 type TaobaoLogisticsExpressModifyAppointAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLogisticsExpressModifyAppointResponse `json:"logistics_express_modify_appoint_response,omitempty"` 
     TaobaoLogisticsExpressModifyAppointResponse
 }
 
-/* model for simplify = false
 type TaobaoLogisticsExpressModifyAppointResponse struct {
+    XMLName xml.Name `xml:"logistics_express_modify_appoint_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用结果
     
-    Result  *struct {
-        SingleResultDto  *SingleResultDto `json:"single_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *SingleResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoLogisticsExpressModifyAppointResponse struct {
-
-    // 调用结果
-    Result   *SingleResultDto `json:"result,omitempty"`
-
 }

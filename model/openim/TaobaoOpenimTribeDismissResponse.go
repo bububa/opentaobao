@@ -1,6 +1,8 @@
 package openim
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ OPENIM群解散
 */
 type TaobaoOpenimTribeDismissAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenimTribeDismissResponse `json:"openim_tribe_dismiss_response,omitempty"` 
     TaobaoOpenimTribeDismissResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenimTribeDismissResponse struct {
+    XMLName xml.Name `xml:"openim_tribe_dismiss_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 群服务code
     
-    TribeCode   int64 `json:"tribe_code,omitempty"`
+    TribeCode   int64 `json:"tribe_code,omitempty" xml:"tribe_code,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenimTribeDismissResponse struct {
-
-    // 群服务code
-    TribeCode   int64 `json:"tribe_code,omitempty"`
-
 }

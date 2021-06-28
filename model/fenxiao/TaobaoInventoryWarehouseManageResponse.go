@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.inventory.warehouse.manage
 */
 type TaobaoInventoryWarehouseManageAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoInventoryWarehouseManageResponse `json:"inventory_warehouse_manage_response,omitempty"` 
     TaobaoInventoryWarehouseManageResponse
 }
 
-/* model for simplify = false
 type TaobaoInventoryWarehouseManageResponse struct {
+    XMLName xml.Name `xml:"inventory_warehouse_manage_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoInventoryWarehouseManageResult  *TaobaoInventoryWarehouseManageResult `json:"taobao_inventory_warehouse_manage_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoInventoryWarehouseManageResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoInventoryWarehouseManageResponse struct {
-
-    // result
-    Result   *TaobaoInventoryWarehouseManageResult `json:"result,omitempty"`
-
 }

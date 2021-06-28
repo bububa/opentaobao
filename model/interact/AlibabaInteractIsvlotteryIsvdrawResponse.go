@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.isvlottery.isvdraw
 */
 type AlibabaInteractIsvlotteryIsvdrawAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractIsvlotteryIsvdrawResponse `json:"alibaba_interact_isvlottery_isvdraw_response,omitempty"` 
     AlibabaInteractIsvlotteryIsvdrawResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractIsvlotteryIsvdrawResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_isvlottery_isvdraw_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 无用参数
     
-    Stub   string `json:"stub,omitempty"`
+    Stub   string `json:"stub,omitempty" xml:"stub,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractIsvlotteryIsvdrawResponse struct {
-
-    // 无用参数
-    Stub   string `json:"stub,omitempty"`
-
 }

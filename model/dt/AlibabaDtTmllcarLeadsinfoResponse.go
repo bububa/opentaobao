@@ -1,6 +1,8 @@
 package dt
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.dt.tmllcar.leadsinfo
 */
 type AlibabaDtTmllcarLeadsinfoAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaDtTmllcarLeadsinfoResponse `json:"alibaba_dt_tmllcar_leadsinfo_response,omitempty"` 
     AlibabaDtTmllcarLeadsinfoResponse
 }
 
-/* model for simplify = false
 type AlibabaDtTmllcarLeadsinfoResponse struct {
+    XMLName xml.Name `xml:"alibaba_dt_tmllcar_leadsinfo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaDtTmllcarLeadsinfoResults  *AlibabaDtTmllcarLeadsinfoResults `json:"alibaba_dt_tmllcar_leadsinfo_results,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaDtTmllcarLeadsinfoResults `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaDtTmllcarLeadsinfoResponse struct {
-
-    // result
-    Result   *AlibabaDtTmllcarLeadsinfoResults `json:"result,omitempty"`
-
 }

@@ -1,71 +1,41 @@
 package wdk
 
 // StockShiftDTO 
-/* model for simplify = false
 type StockShiftDTO struct {
 
     // itemList
     
-    ItemList  struct {
-        StockShiftDetailDTO  []StockShiftDetailDTO `json:"stock_shift_detail_dto,omitempty"`
-    } `json:"item_list,omitempty"`
+    ItemList   []StockShiftDetailDTO `json:"item_list,omitempty" xml:"item_list,omitempty"`
     
 
     // remark
     
-    Remark   string `json:"remark,omitempty"`
+    Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     
 
     // occurrenceDate
     
-    OccurrenceDate   string `json:"occurrence_date,omitempty"`
+    OccurrenceDate   string `json:"occurrence_date,omitempty" xml:"occurrence_date,omitempty"`
     
 
     // warehouseCode
     
-    WarehouseCode   string `json:"warehouse_code,omitempty"`
+    WarehouseCode   string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
     
 
     // documentNo
     
-    DocumentNo   string `json:"document_no,omitempty"`
+    DocumentNo   string `json:"document_no,omitempty" xml:"document_no,omitempty"`
     
 
     // uuid
     
-    Uuid   string `json:"uuid,omitempty"`
+    Uuid   string `json:"uuid,omitempty" xml:"uuid,omitempty"`
     
 
     // shiftDescribe
     
-    ShiftDescribe   string `json:"shift_describe,omitempty"`
+    ShiftDescribe   string `json:"shift_describe,omitempty" xml:"shift_describe,omitempty"`
     
-
-}
-*/
-
-// StockShiftDTO 
-type StockShiftDTO struct {
-
-    // itemList
-    ItemList   []StockShiftDetailDTO `json:"item_list,omitempty"`
-
-    // remark
-    Remark   string `json:"remark,omitempty"`
-
-    // occurrenceDate
-    OccurrenceDate   string `json:"occurrence_date,omitempty"`
-
-    // warehouseCode
-    WarehouseCode   string `json:"warehouse_code,omitempty"`
-
-    // documentNo
-    DocumentNo   string `json:"document_no,omitempty"`
-
-    // uuid
-    Uuid   string `json:"uuid,omitempty"`
-
-    // shiftDescribe
-    ShiftDescribe   string `json:"shift_describe,omitempty"`
 
 }

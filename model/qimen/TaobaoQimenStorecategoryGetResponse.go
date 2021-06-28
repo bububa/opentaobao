@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,80 +14,51 @@ taobao.qimen.storecategory.get
 */
 type TaobaoQimenStorecategoryGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenStorecategoryGetResponse `json:"qimen_storecategory_get_response,omitempty"` 
     TaobaoQimenStorecategoryGetResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenStorecategoryGetResponse struct {
+    XMLName xml.Name `xml:"qimen_storecategory_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应信息
     
-    Message   string `json:"message,omitempty"`
-    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 
+    
     // 响应标示
     
-    Flag   string `json:"flag,omitempty"`
-    
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
 
+    
     // 响应code
     
-    QimenCode   string `json:"qimen_code,omitempty"`
-    
+    QimenCode   string `json:"qimen_code,omitempty" xml:"qimen_code,omitempty"`
 
+    
     // 类目json字符串
     
-    StoreCategory   string `json:"store_category,omitempty"`
-    
+    StoreCategory   string `json:"store_category,omitempty" xml:"store_category,omitempty"`
 
+    
     // 响应信息
     
-    Message   string `json:"message,omitempty"`
-    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 
+    
     // 响应标示
     
-    Flag   string `json:"flag,omitempty"`
-    
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
 
+    
     // 响应code
     
-    QimenCode   string `json:"qimen_code,omitempty"`
-    
+    QimenCode   string `json:"qimen_code,omitempty" xml:"qimen_code,omitempty"`
 
+    
     // 类目json字符串
     
-    StoreCategory   string `json:"store_category,omitempty"`
+    StoreCategory   string `json:"store_category,omitempty" xml:"store_category,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenStorecategoryGetResponse struct {
-
-    // 响应信息
-    Message   string `json:"message,omitempty"`
-
-    // 响应标示
-    Flag   string `json:"flag,omitempty"`
-
-    // 响应code
-    QimenCode   string `json:"qimen_code,omitempty"`
-
-    // 类目json字符串
-    StoreCategory   string `json:"store_category,omitempty"`
-
-    // 响应信息
-    Message   string `json:"message,omitempty"`
-
-    // 响应标示
-    Flag   string `json:"flag,omitempty"`
-
-    // 响应code
-    QimenCode   string `json:"qimen_code,omitempty"`
-
-    // 类目json字符串
-    StoreCategory   string `json:"store_category,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wdk.equipment.conveyor.systemevent.get
 */
 type TaobaoWdkEquipmentConveyorSystemeventGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWdkEquipmentConveyorSystemeventGetResponse `json:"wdk_equipment_conveyor_systemevent_get_response,omitempty"` 
     TaobaoWdkEquipmentConveyorSystemeventGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWdkEquipmentConveyorSystemeventGetResponse struct {
+    XMLName xml.Name `xml:"wdk_equipment_conveyor_systemevent_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        TaobaoWdkEquipmentConveyorSystemeventGetResult  *TaobaoWdkEquipmentConveyorSystemeventGetResult `json:"taobao_wdk_equipment_conveyor_systemevent_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoWdkEquipmentConveyorSystemeventGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWdkEquipmentConveyorSystemeventGetResponse struct {
-
-    // 返回值
-    Result   *TaobaoWdkEquipmentConveyorSystemeventGetResult `json:"result,omitempty"`
-
 }

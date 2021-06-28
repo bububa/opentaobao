@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.wlb.stores.baseinfo.get
 */
 type TaobaoWlbStoresBaseinfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbStoresBaseinfoGetResponse `json:"wlb_stores_baseinfo_get_response,omitempty"` 
     TaobaoWlbStoresBaseinfoGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbStoresBaseinfoGetResponse struct {
+    XMLName xml.Name `xml:"wlb_stores_baseinfo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 仓库列表
     
-    StoreInfoList  struct {
-        StoreInfo  []StoreInfo `json:"store_info,omitempty"`
-    } `json:"store_info_list,omitempty"`
+    StoreInfoList   []StoreInfo `json:"store_info_list,omitempty" xml:"store_info_list>store_info,omitempty"`
     
-
+    
     // 返回的总数
     
-    TotalCount   int64 `json:"total_count,omitempty"`
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbStoresBaseinfoGetResponse struct {
-
-    // 仓库列表
-    StoreInfoList   []StoreInfo `json:"store_info_list,omitempty"`
-
-    // 返回的总数
-    TotalCount   int64 `json:"total_count,omitempty"`
-
 }

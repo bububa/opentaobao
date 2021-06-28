@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.bidword.pricetools
 */
 type TaobaoSimbaBidwordPricetoolsAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaBidwordPricetoolsResponse `json:"simba_bidword_pricetools_response,omitempty"` 
     TaobaoSimbaBidwordPricetoolsResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaBidwordPricetoolsResponse struct {
+    XMLName xml.Name `xml:"simba_bidword_pricetools_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // true 表示符合准入，false不符合
     
-    ResultList  *struct {
-        PriceSuggestionDto  *PriceSuggestionDto `json:"price_suggestion_dto,omitempty"`
-    } `json:"result_list,omitempty"`
+    ResultList   *PriceSuggestionDto `json:"result_list,omitempty" xml:"result_list,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaBidwordPricetoolsResponse struct {
-
-    // true 表示符合准入，false不符合
-    ResultList   *PriceSuggestionDto `json:"result_list,omitempty"`
-
 }

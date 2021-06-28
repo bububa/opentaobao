@@ -1,71 +1,41 @@
 package subuser
 
 // Role 
-/* model for simplify = false
 type Role struct {
 
     // 角色id
     
-    RoleId   int64 `json:"role_id,omitempty"`
+    RoleId   int64 `json:"role_id,omitempty" xml:"role_id,omitempty"`
     
 
     // 角色名
     
-    RoleName   string `json:"role_name,omitempty"`
+    RoleName   string `json:"role_name,omitempty" xml:"role_name,omitempty"`
     
 
     // 角色描述
     
-    Description   string `json:"description,omitempty"`
+    Description   string `json:"description,omitempty" xml:"description,omitempty"`
     
 
     // 卖家Id
     
-    SellerId   int64 `json:"seller_id,omitempty"`
+    SellerId   int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
     
 
     // 创建时间
     
-    CreateTime   string `json:"create_time,omitempty"`
+    CreateTime   string `json:"create_time,omitempty" xml:"create_time,omitempty"`
     
 
     // 修改时间
     
-    ModifiedTime   string `json:"modified_time,omitempty"`
+    ModifiedTime   string `json:"modified_time,omitempty" xml:"modified_time,omitempty"`
     
 
     // 所拥有权限
     
-    Permissions  struct {
-        Permission  []Permission `json:"permission,omitempty"`
-    } `json:"permissions,omitempty"`
+    Permissions   []Permission `json:"permissions,omitempty" xml:"permissions,omitempty"`
     
-
-}
-*/
-
-// Role 
-type Role struct {
-
-    // 角色id
-    RoleId   int64 `json:"role_id,omitempty"`
-
-    // 角色名
-    RoleName   string `json:"role_name,omitempty"`
-
-    // 角色描述
-    Description   string `json:"description,omitempty"`
-
-    // 卖家Id
-    SellerId   int64 `json:"seller_id,omitempty"`
-
-    // 创建时间
-    CreateTime   string `json:"create_time,omitempty"`
-
-    // 修改时间
-    ModifiedTime   string `json:"modified_time,omitempty"`
-
-    // 所拥有权限
-    Permissions   []Permission `json:"permissions,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.item.desc.modules.get
 */
 type TmallItemDescModulesGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallItemDescModulesGetResponse `json:"tmall_item_desc_modules_get_response,omitempty"` 
     TmallItemDescModulesGetResponse
 }
 
-/* model for simplify = false
 type TmallItemDescModulesGetResponse struct {
+    XMLName xml.Name `xml:"tmall_item_desc_modules_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回描述模块信息
     
-    ModularDescInfo  *struct {
-        ModularDescInfo  *ModularDescInfo `json:"modular_desc_info,omitempty"`
-    } `json:"modular_desc_info,omitempty"`
+    ModularDescInfo   *ModularDescInfo `json:"modular_desc_info,omitempty" xml:"modular_desc_info,omitempty"`
+
     
-
-}
-*/
-
-type TmallItemDescModulesGetResponse struct {
-
-    // 返回描述模块信息
-    ModularDescInfo   *ModularDescInfo `json:"modular_desc_info,omitempty"`
-
 }

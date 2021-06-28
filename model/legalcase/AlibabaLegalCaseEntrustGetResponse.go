@@ -1,6 +1,8 @@
 package legalcase
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.legal.case.entrust.get
 */
 type AlibabaLegalCaseEntrustGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaLegalCaseEntrustGetResponse `json:"alibaba_legal_case_entrust_get_response,omitempty"` 
     AlibabaLegalCaseEntrustGetResponse
 }
 
-/* model for simplify = false
 type AlibabaLegalCaseEntrustGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_legal_case_entrust_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // alinkappserver系统返回的通用结果类
     
-    Result  *struct {
-        ServiceResult  *ServiceResult `json:"service_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaLegalCaseEntrustGetResponse struct {
-
-    // alinkappserver系统返回的通用结果类
-    Result   *ServiceResult `json:"result,omitempty"`
-
 }

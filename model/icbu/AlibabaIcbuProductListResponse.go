@@ -1,6 +1,8 @@
 package icbu
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,50 +14,31 @@ alibaba.icbu.product.list
 */
 type AlibabaIcbuProductListAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaIcbuProductListResponse `json:"alibaba_icbu_product_list_response,omitempty"` 
     AlibabaIcbuProductListResponse
 }
 
-/* model for simplify = false
 type AlibabaIcbuProductListResponse struct {
+    XMLName xml.Name `xml:"alibaba_icbu_product_list_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 总数
     
-    TotalItem   int64 `json:"total_item,omitempty"`
-    
+    TotalItem   int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
 
+    
     // 当前页
     
-    CurrentPage   int64 `json:"current_page,omitempty"`
-    
+    CurrentPage   int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
 
+    
     // 每页大小
     
-    PageSize   int64 `json:"page_size,omitempty"`
-    
+    PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
 
+    
     // 商品概要信息列表
     
-    Products  struct {
-        AlibabaProductBriefResponse  []AlibabaProductBriefResponse `json:"alibaba_product_brief_response,omitempty"`
-    } `json:"products,omitempty"`
+    Products   []AlibabaProductBriefResponse `json:"products,omitempty" xml:"products>alibaba_product_brief_response,omitempty"`
     
-
-}
-*/
-
-type AlibabaIcbuProductListResponse struct {
-
-    // 总数
-    TotalItem   int64 `json:"total_item,omitempty"`
-
-    // 当前页
-    CurrentPage   int64 `json:"current_page,omitempty"`
-
-    // 每页大小
-    PageSize   int64 `json:"page_size,omitempty"`
-
-    // 商品概要信息列表
-    Products   []AlibabaProductBriefResponse `json:"products,omitempty"`
-
+    
 }

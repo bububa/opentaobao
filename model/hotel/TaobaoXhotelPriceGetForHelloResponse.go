@@ -1,6 +1,8 @@
 package hotel
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.xhotel.price.get.for.hello
 */
 type TaobaoXhotelPriceGetForHelloAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoXhotelPriceGetForHelloResponse `json:"xhotel_price_get_for_hello_response,omitempty"` 
     TaobaoXhotelPriceGetForHelloResponse
 }
 
-/* model for simplify = false
 type TaobaoXhotelPriceGetForHelloResponse struct {
+    XMLName xml.Name `xml:"xhotel_price_get_for_hello_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 库价结果封装
     
-    Result  *struct {
-        HotelPriceResultSet  *HotelPriceResultSet `json:"hotel_price_result_set,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *HotelPriceResultSet `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoXhotelPriceGetForHelloResponse struct {
-
-    // 库价结果封装
-    Result   *HotelPriceResultSet `json:"result,omitempty"`
-
 }

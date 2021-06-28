@@ -1,37 +1,21 @@
 package security
 
 // RpAuditValueBo 
-/* model for simplify = false
 type RpAuditValueBo struct {
 
     // desc
     
-    Desc   string `json:"desc,omitempty"`
+    Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
 
     // code
     
-    Code   int64 `json:"code,omitempty"`
+    Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     
-
-}
-*/
-
-// RpAuditValueBo 
-type RpAuditValueBo struct {
-
-    // desc
-    Desc   string `json:"desc,omitempty"`
-
-    // name
-    Name   string `json:"name,omitempty"`
-
-    // code
-    Code   int64 `json:"code,omitempty"`
 
 }

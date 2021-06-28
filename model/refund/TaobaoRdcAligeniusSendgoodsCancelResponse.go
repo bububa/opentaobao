@@ -1,6 +1,8 @@
 package refund
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.rdc.aligenius.sendgoods.cancel
 */
 type TaobaoRdcAligeniusSendgoodsCancelAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRdcAligeniusSendgoodsCancelResponse `json:"rdc_aligenius_sendgoods_cancel_response,omitempty"` 
     TaobaoRdcAligeniusSendgoodsCancelResponse
 }
 
-/* model for simplify = false
 type TaobaoRdcAligeniusSendgoodsCancelResponse struct {
+    XMLName xml.Name `xml:"rdc_aligenius_sendgoods_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoRdcAligeniusSendgoodsCancelResult  *TaobaoRdcAligeniusSendgoodsCancelResult `json:"taobao_rdc_aligenius_sendgoods_cancel_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoRdcAligeniusSendgoodsCancelResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRdcAligeniusSendgoodsCancelResponse struct {
-
-    // result
-    Result   *TaobaoRdcAligeniusSendgoodsCancelResult `json:"result,omitempty"`
-
 }

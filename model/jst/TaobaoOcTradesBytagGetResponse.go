@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.oc.trades.bytag.get
 */
 type TaobaoOcTradesBytagGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOcTradesBytagGetResponse `json:"oc_trades_bytag_get_response,omitempty"` 
     TaobaoOcTradesBytagGetResponse
 }
 
-/* model for simplify = false
 type TaobaoOcTradesBytagGetResponse struct {
+    XMLName xml.Name `xml:"oc_trades_bytag_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 打了该标签的订单编号列表
     
-    Tids  struct {
-        Number  []int64 `json:"int64,omitempty"`
-    } `json:"tids,omitempty"`
+    Tids   []int64 `json:"tids,omitempty" xml:"tids>int64,omitempty"`
     
-
+    
     // 总数
     
-    Totals   int64 `json:"totals,omitempty"`
+    Totals   int64 `json:"totals,omitempty" xml:"totals,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOcTradesBytagGetResponse struct {
-
-    // 打了该标签的订单编号列表
-    Tids   []int64 `json:"tids,omitempty"`
-
-    // 总数
-    Totals   int64 `json:"totals,omitempty"`
-
 }

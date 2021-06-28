@@ -1,45 +1,26 @@
 package alihealth
 
 // ServiceResult 
-/* model for simplify = false
 type ServiceResult struct {
 
     // errMessage
     
-    ErrMessage   string `json:"err_message,omitempty"`
+    ErrMessage   string `json:"err_message,omitempty" xml:"err_message,omitempty"`
     
 
     // token
     
-    Data   string `json:"data,omitempty"`
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
     
 
     // errCode
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// ServiceResult 
-type ServiceResult struct {
-
-    // errMessage
-    ErrMessage   string `json:"err_message,omitempty"`
-
-    // token
-    Data   string `json:"data,omitempty"`
-
-    // errCode
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package security
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.security.jaq.rp.getverifytoken
 */
 type AlibabaSecurityJaqRpGetverifytokenAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSecurityJaqRpGetverifytokenResponse `json:"alibaba_security_jaq_rp_getverifytoken_response,omitempty"` 
     AlibabaSecurityJaqRpGetverifytokenResponse
 }
 
-/* model for simplify = false
 type AlibabaSecurityJaqRpGetverifytokenResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_rp_getverifytoken_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // token信息
     
-    Data  *struct {
-        RpInitResultBo  *RpInitResultBo `json:"rp_init_result_bo,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *RpInitResultBo `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSecurityJaqRpGetverifytokenResponse struct {
-
-    // token信息
-    Data   *RpInitResultBo `json:"data,omitempty"`
-
 }

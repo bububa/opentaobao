@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mos.store.recordscreenpointinfo
 */
 type AlibabaMosStoreRecordscreenpointinfoAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMosStoreRecordscreenpointinfoResponse `json:"alibaba_mos_store_recordscreenpointinfo_response,omitempty"` 
     AlibabaMosStoreRecordscreenpointinfoResponse
 }
 
-/* model for simplify = false
 type AlibabaMosStoreRecordscreenpointinfoResponse struct {
+    XMLName xml.Name `xml:"alibaba_mos_store_recordscreenpointinfo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaMosStoreRecordscreenpointinfoResultDo  *AlibabaMosStoreRecordscreenpointinfoResultDo `json:"alibaba_mos_store_recordscreenpointinfo_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaMosStoreRecordscreenpointinfoResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMosStoreRecordscreenpointinfoResponse struct {
-
-    // result
-    Result   *AlibabaMosStoreRecordscreenpointinfoResultDo `json:"result,omitempty"`
-
 }

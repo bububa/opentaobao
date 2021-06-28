@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.ump.detail.delete
 */
 type TaobaoUmpDetailDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoUmpDetailDeleteResponse `json:"ump_detail_delete_response,omitempty"` 
     TaobaoUmpDetailDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoUmpDetailDeleteResponse struct {
+    XMLName xml.Name `xml:"ump_detail_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoUmpDetailDeleteResponse struct {
-
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

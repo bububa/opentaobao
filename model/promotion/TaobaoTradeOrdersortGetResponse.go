@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.trade.ordersort.get
 */
 type TaobaoTradeOrdersortGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTradeOrdersortGetResponse `json:"trade_ordersort_get_response,omitempty"` 
     TaobaoTradeOrdersortGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTradeOrdersortGetResponse struct {
+    XMLName xml.Name `xml:"trade_ordersort_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        TaobaoTradeOrdersortGetResult  *TaobaoTradeOrdersortGetResult `json:"taobao_trade_ordersort_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoTradeOrdersortGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTradeOrdersortGetResponse struct {
-
-    // 接口返回model
-    Result   *TaobaoTradeOrdersortGetResult `json:"result,omitempty"`
-
 }

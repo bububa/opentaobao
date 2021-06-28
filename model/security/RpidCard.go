@@ -1,107 +1,61 @@
 package security
 
 // RpidCard 
-/* model for simplify = false
 type RpidCard struct {
 
     // RPIDCardImage
     
-    RpIdcardImage  *struct {
-        RpidCardImage  *RpidCardImage `json:"rpid_card_image,omitempty"`
-    } `json:"rp_idcard_image,omitempty"`
+    RpIdcardImage   *RpidCardImage `json:"rp_idcard_image,omitempty" xml:"rp_idcard_image,omitempty"`
     
 
     // address
     
-    Address   string `json:"address,omitempty"`
+    Address   string `json:"address,omitempty" xml:"address,omitempty"`
     
 
     // birthDay
     
-    BirthDay   string `json:"birth_day,omitempty"`
+    BirthDay   string `json:"birth_day,omitempty" xml:"birth_day,omitempty"`
     
 
     // cardType
     
-    CardType   string `json:"card_type,omitempty"`
+    CardType   string `json:"card_type,omitempty" xml:"card_type,omitempty"`
     
 
     // code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // expiry
     
-    Expiry   string `json:"expiry,omitempty"`
+    Expiry   string `json:"expiry,omitempty" xml:"expiry,omitempty"`
     
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
 
     // sex
     
-    Sex  *struct {
-        RpSex  *RpSex `json:"rp_sex,omitempty"`
-    } `json:"sex,omitempty"`
+    Sex   *RpSex `json:"sex,omitempty" xml:"sex,omitempty"`
     
 
     // urlBackImage
     
-    UrlBackImage   string `json:"url_back_image,omitempty"`
+    UrlBackImage   string `json:"url_back_image,omitempty" xml:"url_back_image,omitempty"`
     
 
     // urlFrontImage
     
-    UrlFrontImage   string `json:"url_front_image,omitempty"`
+    UrlFrontImage   string `json:"url_front_image,omitempty" xml:"url_front_image,omitempty"`
     
 
     // bizErrorCode
     
-    BizErrorCode  *struct {
-        RpErrorCode  *RpErrorCode `json:"rp_error_code,omitempty"`
-    } `json:"biz_error_code,omitempty"`
+    BizErrorCode   *RpErrorCode `json:"biz_error_code,omitempty" xml:"biz_error_code,omitempty"`
     
-
-}
-*/
-
-// RpidCard 
-type RpidCard struct {
-
-    // RPIDCardImage
-    RpIdcardImage   *RpidCardImage `json:"rp_idcard_image,omitempty"`
-
-    // address
-    Address   string `json:"address,omitempty"`
-
-    // birthDay
-    BirthDay   string `json:"birth_day,omitempty"`
-
-    // cardType
-    CardType   string `json:"card_type,omitempty"`
-
-    // code
-    Code   string `json:"code,omitempty"`
-
-    // expiry
-    Expiry   string `json:"expiry,omitempty"`
-
-    // name
-    Name   string `json:"name,omitempty"`
-
-    // sex
-    Sex   *RpSex `json:"sex,omitempty"`
-
-    // urlBackImage
-    UrlBackImage   string `json:"url_back_image,omitempty"`
-
-    // urlFrontImage
-    UrlFrontImage   string `json:"url_front_image,omitempty"`
-
-    // bizErrorCode
-    BizErrorCode   *RpErrorCode `json:"biz_error_code,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.tcls.aelophy.merchant.channel.order.create
 */
 type AlibabaTclsAelophyMerchantChannelOrderCreateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTclsAelophyMerchantChannelOrderCreateResponse `json:"alibaba_tcls_aelophy_merchant_channel_order_create_response,omitempty"` 
     AlibabaTclsAelophyMerchantChannelOrderCreateResponse
 }
 
-/* model for simplify = false
 type AlibabaTclsAelophyMerchantChannelOrderCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_tcls_aelophy_merchant_channel_order_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    ApiResult  *struct {
-        AlibabaTclsAelophyMerchantChannelOrderCreateApiResult  *AlibabaTclsAelophyMerchantChannelOrderCreateApiResult `json:"alibaba_tcls_aelophy_merchant_channel_order_create_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *AlibabaTclsAelophyMerchantChannelOrderCreateApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTclsAelophyMerchantChannelOrderCreateResponse struct {
-
-    // 返回结果
-    ApiResult   *AlibabaTclsAelophyMerchantChannelOrderCreateApiResult `json:"api_result,omitempty"`
-
 }

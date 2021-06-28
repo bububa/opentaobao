@@ -1,29 +1,16 @@
 package security
 
 // RpInitResultBo 
-/* model for simplify = false
 type RpInitResultBo struct {
 
     // 过期时间
     
-    Expire   int64 `json:"expire,omitempty"`
+    Expire   int64 `json:"expire,omitempty" xml:"expire,omitempty"`
     
 
     // token
     
-    VerifyToken   string `json:"verify_token,omitempty"`
+    VerifyToken   string `json:"verify_token,omitempty" xml:"verify_token,omitempty"`
     
-
-}
-*/
-
-// RpInitResultBo 
-type RpInitResultBo struct {
-
-    // 过期时间
-    Expire   int64 `json:"expire,omitempty"`
-
-    // token
-    VerifyToken   string `json:"verify_token,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package film
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.film.lottery.rule.query
 */
 type TaobaoFilmLotteryRuleQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFilmLotteryRuleQueryResponse `json:"film_lottery_rule_query_response,omitempty"` 
     TaobaoFilmLotteryRuleQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoFilmLotteryRuleQueryResponse struct {
+    XMLName xml.Name `xml:"film_lottery_rule_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        ResultListModel  *ResultListModel `json:"result_list_model,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ResultListModel `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFilmLotteryRuleQueryResponse struct {
-
-    // result
-    Result   *ResultListModel `json:"result,omitempty"`
-
 }

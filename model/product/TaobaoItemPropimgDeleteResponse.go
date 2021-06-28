@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.item.propimg.delete
 */
 type TaobaoItemPropimgDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoItemPropimgDeleteResponse `json:"item_propimg_delete_response,omitempty"` 
     TaobaoItemPropimgDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoItemPropimgDeleteResponse struct {
+    XMLName xml.Name `xml:"item_propimg_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 属性图片结构
     
-    PropImg  *struct {
-        PropImg  *PropImg `json:"prop_img,omitempty"`
-    } `json:"prop_img,omitempty"`
+    PropImg   *PropImg `json:"prop_img,omitempty" xml:"prop_img,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoItemPropimgDeleteResponse struct {
-
-    // 属性图片结构
-    PropImg   *PropImg `json:"prop_img,omitempty"`
-
 }

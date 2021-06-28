@@ -1,6 +1,8 @@
 package category
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.imap.fixedmapping.query
 */
 type AlibabaImapFixedmappingQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaImapFixedmappingQueryResponse `json:"alibaba_imap_fixedmapping_query_response,omitempty"` 
     AlibabaImapFixedmappingQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaImapFixedmappingQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_imap_fixedmapping_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaImapFixedmappingQueryResult  *AlibabaImapFixedmappingQueryResult `json:"alibaba_imap_fixedmapping_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaImapFixedmappingQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaImapFixedmappingQueryResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaImapFixedmappingQueryResult `json:"result,omitempty"`
-
 }

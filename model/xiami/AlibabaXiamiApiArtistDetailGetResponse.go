@@ -1,6 +1,8 @@
 package xiami
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.xiami.api.artist.detail.get
 */
 type AlibabaXiamiApiArtistDetailGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaXiamiApiArtistDetailGetResponse `json:"alibaba_xiami_api_artist_detail_get_response,omitempty"` 
     AlibabaXiamiApiArtistDetailGetResponse
 }
 
-/* model for simplify = false
 type AlibabaXiamiApiArtistDetailGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_xiami_api_artist_detail_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回数据
     
-    Data  *struct {
-        StandardArtist  *StandardArtist `json:"standard_artist,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *StandardArtist `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaXiamiApiArtistDetailGetResponse struct {
-
-    // 返回数据
-    Data   *StandardArtist `json:"data,omitempty"`
-
 }

@@ -1,73 +1,41 @@
 package wdk
 
 // MarketResult 
-/* model for simplify = false
 type MarketResult struct {
 
     // 处理结果
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
     
 
     // 错误编码
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // 结果数据
     
-    Datas  struct {
-        ItemBuyGiftSku  []ItemBuyGiftSku `json:"item_buy_gift_sku,omitempty"`
-    } `json:"datas,omitempty"`
+    Datas   []ItemBuyGiftSku `json:"datas,omitempty" xml:"datas,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // 报名活动成功的商品详情
     
-    Data  *struct {
-        ItemCouponSku  *ItemCouponSku `json:"item_coupon_sku,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *ItemCouponSku `json:"data,omitempty" xml:"data,omitempty"`
     
 
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
     
 
     // 错误编码
     
-    ResultCode   string `json:"result_code,omitempty"`
+    ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
     
-
-}
-*/
-
-// MarketResult 
-type MarketResult struct {
-
-    // 处理结果
-    Message   string `json:"message,omitempty"`
-
-    // 错误编码
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // 结果数据
-    Datas   []ItemBuyGiftSku `json:"datas,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
-
-    // 报名活动成功的商品详情
-    Data   *ItemCouponSku `json:"data,omitempty"`
-
-    // success
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 错误编码
-    ResultCode   string `json:"result_code,omitempty"`
 
 }

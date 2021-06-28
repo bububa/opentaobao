@@ -1,6 +1,8 @@
 package qianniu
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.qianniu.task.remove
 */
 type TaobaoQianniuTaskRemoveAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQianniuTaskRemoveResponse `json:"qianniu_task_remove_response,omitempty"` 
     TaobaoQianniuTaskRemoveResponse
 }
 
-/* model for simplify = false
 type TaobaoQianniuTaskRemoveResponse struct {
+    XMLName xml.Name `xml:"qianniu_task_remove_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQianniuTaskRemoveResponse struct {
-
-    // 是否成功
-    Result   bool `json:"result,omitempty"`
-
 }

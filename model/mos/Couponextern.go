@@ -1,55 +1,31 @@
 package mos
 
 // Couponextern 
-/* model for simplify = false
 type Couponextern struct {
 
     // 券号
     
-    CouponCode   string `json:"coupon_code,omitempty"`
+    CouponCode   string `json:"coupon_code,omitempty" xml:"coupon_code,omitempty"`
     
 
     // 券名
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
 
     // 券金额
     
-    Amount   string `json:"amount,omitempty"`
+    Amount   string `json:"amount,omitempty" xml:"amount,omitempty"`
     
 
     // 券状态
     
-    Status   string `json:"status,omitempty"`
+    Status   string `json:"status,omitempty" xml:"status,omitempty"`
     
 
     // 券商品分摊
     
-    CouponGoodApportions  struct {
-        CouponGoodApportion  []CouponGoodApportion `json:"coupon_good_apportion,omitempty"`
-    } `json:"coupon_good_apportions,omitempty"`
+    CouponGoodApportions   []CouponGoodApportion `json:"coupon_good_apportions,omitempty" xml:"coupon_good_apportions,omitempty"`
     
-
-}
-*/
-
-// Couponextern 
-type Couponextern struct {
-
-    // 券号
-    CouponCode   string `json:"coupon_code,omitempty"`
-
-    // 券名
-    Name   string `json:"name,omitempty"`
-
-    // 券金额
-    Amount   string `json:"amount,omitempty"`
-
-    // 券状态
-    Status   string `json:"status,omitempty"`
-
-    // 券商品分摊
-    CouponGoodApportions   []CouponGoodApportion `json:"coupon_good_apportions,omitempty"`
 
 }

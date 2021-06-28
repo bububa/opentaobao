@@ -1,6 +1,8 @@
 package media
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -19,24 +21,16 @@ taobao.miniapp.cloud.picture.token
 */
 type TaobaoMiniappCloudPictureTokenAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoMiniappCloudPictureTokenResponse `json:"miniapp_cloud_picture_token_response,omitempty"` 
     TaobaoMiniappCloudPictureTokenResponse
 }
 
-/* model for simplify = false
 type TaobaoMiniappCloudPictureTokenResponse struct {
+    XMLName xml.Name `xml:"miniapp_cloud_picture_token_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的token
     
-    Token   string `json:"token,omitempty"`
+    Token   string `json:"token,omitempty" xml:"token,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoMiniappCloudPictureTokenResponse struct {
-
-    // 返回的token
-    Token   string `json:"token,omitempty"`
-
 }

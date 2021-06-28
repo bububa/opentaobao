@@ -1,61 +1,36 @@
 package media
 
 // Resultlist 
-/* model for simplify = false
 type Resultlist struct {
 
     // 互动id
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     
 
     // 视频链接，需要unicode转换
     
-    VideoUrl   string `json:"video_url,omitempty"`
+    VideoUrl   string `json:"video_url,omitempty" xml:"video_url,omitempty"`
     
 
     // 封面图url
     
-    CoverUrl   string `json:"cover_url,omitempty"`
+    CoverUrl   string `json:"cover_url,omitempty" xml:"cover_url,omitempty"`
     
 
     // 视频时长 单位秒
     
-    Duration   int64 `json:"duration,omitempty"`
+    Duration   int64 `json:"duration,omitempty" xml:"duration,omitempty"`
     
 
     // 视频标题
     
-    Title   string `json:"title,omitempty"`
+    Title   string `json:"title,omitempty" xml:"title,omitempty"`
     
 
     // 视频状态，1有效；0删除
     
-    VideoStatus   int64 `json:"video_status,omitempty"`
+    VideoStatus   int64 `json:"video_status,omitempty" xml:"video_status,omitempty"`
     
-
-}
-*/
-
-// Resultlist 
-type Resultlist struct {
-
-    // 互动id
-    Id   int64 `json:"id,omitempty"`
-
-    // 视频链接，需要unicode转换
-    VideoUrl   string `json:"video_url,omitempty"`
-
-    // 封面图url
-    CoverUrl   string `json:"cover_url,omitempty"`
-
-    // 视频时长 单位秒
-    Duration   int64 `json:"duration,omitempty"`
-
-    // 视频标题
-    Title   string `json:"title,omitempty"`
-
-    // 视频状态，1有效；0删除
-    VideoStatus   int64 `json:"video_status,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package baoxian
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alipay.baoxian.claim.update
 */
 type AlipayBaoxianClaimUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *AlipayBaoxianClaimUpdateResponse `json:"alipay_baoxian_claim_update_response,omitempty"` 
     AlipayBaoxianClaimUpdateResponse
 }
 
-/* model for simplify = false
 type AlipayBaoxianClaimUpdateResponse struct {
+    XMLName xml.Name `xml:"alipay_baoxian_claim_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        MtopResult  *MtopResult `json:"mtop_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *MtopResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlipayBaoxianClaimUpdateResponse struct {
-
-    // result
-    Result   *MtopResult `json:"result,omitempty"`
-
 }

@@ -1,77 +1,46 @@
 package iot
 
 // TaobaoAilabAicloudTopMessageListModel 
-/* model for simplify = false
 type TaobaoAilabAicloudTopMessageListModel struct {
 
     // source
     
-    Source   string `json:"source,omitempty"`
+    Source   string `json:"source,omitempty" xml:"source,omitempty"`
     
 
     // type
     
-    Type   string `json:"type,omitempty"`
+    Type   string `json:"type,omitempty" xml:"type,omitempty"`
     
 
     // content
     
-    Content   string `json:"content,omitempty"`
+    Content   string `json:"content,omitempty" xml:"content,omitempty"`
     
 
     // url
     
-    Url   string `json:"url,omitempty"`
+    Url   string `json:"url,omitempty" xml:"url,omitempty"`
     
 
     // gmtCreate
     
-    GmtCreate   string `json:"gmt_create,omitempty"`
+    GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
     
 
     // gmtModified
     
-    GmtModified   string `json:"gmt_modified,omitempty"`
+    GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     
 
     // status
     
-    Status   int64 `json:"status,omitempty"`
+    Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     
 
     // id
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     
-
-}
-*/
-
-// TaobaoAilabAicloudTopMessageListModel 
-type TaobaoAilabAicloudTopMessageListModel struct {
-
-    // source
-    Source   string `json:"source,omitempty"`
-
-    // type
-    Type   string `json:"type,omitempty"`
-
-    // content
-    Content   string `json:"content,omitempty"`
-
-    // url
-    Url   string `json:"url,omitempty"`
-
-    // gmtCreate
-    GmtCreate   string `json:"gmt_create,omitempty"`
-
-    // gmtModified
-    GmtModified   string `json:"gmt_modified,omitempty"`
-
-    // status
-    Status   int64 `json:"status,omitempty"`
-
-    // id
-    Id   int64 `json:"id,omitempty"`
 
 }

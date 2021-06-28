@@ -1,6 +1,8 @@
 package tmc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.tmc.group.delete
 */
 type TaobaoTmcGroupDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTmcGroupDeleteResponse `json:"tmc_group_delete_response,omitempty"` 
     TaobaoTmcGroupDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoTmcGroupDeleteResponse struct {
+    XMLName xml.Name `xml:"tmc_group_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTmcGroupDeleteResponse struct {
-
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

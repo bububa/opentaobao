@@ -1,6 +1,8 @@
 package nlp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.nlp.similarity
 */
 type TaobaoNlpSimilarityAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoNlpSimilarityResponse `json:"nlp_similarity_response,omitempty"` 
     TaobaoNlpSimilarityResponse
 }
 
-/* model for simplify = false
 type TaobaoNlpSimilarityResponse struct {
+    XMLName xml.Name `xml:"nlp_similarity_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Simresult  *struct {
-        SimResult  *SimResult `json:"sim_result,omitempty"`
-    } `json:"simresult,omitempty"`
+    Simresult   *SimResult `json:"simresult,omitempty" xml:"simresult,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoNlpSimilarityResponse struct {
-
-    // 返回结果
-    Simresult   *SimResult `json:"simresult,omitempty"`
-
 }

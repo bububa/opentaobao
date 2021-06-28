@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wtt.user.regioninfo.byip.get
 */
 type AlibabaWttUserRegioninfoByipGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWttUserRegioninfoByipGetResponse `json:"alibaba_wtt_user_regioninfo_byip_get_response,omitempty"` 
     AlibabaWttUserRegioninfoByipGetResponse
 }
 
-/* model for simplify = false
 type AlibabaWttUserRegioninfoByipGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_wtt_user_regioninfo_byip_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 地址信息
     
-    Model  *struct {
-        RegionInfo  *RegionInfo `json:"region_info,omitempty"`
-    } `json:"model,omitempty"`
+    Model   *RegionInfo `json:"model,omitempty" xml:"model,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWttUserRegioninfoByipGetResponse struct {
-
-    // 地址信息
-    Model   *RegionInfo `json:"model,omitempty"`
-
 }

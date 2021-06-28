@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ alibaba.omni.saas.order.create
 */
 type AlibabaOmniSaasOrderCreateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaOmniSaasOrderCreateResponse `json:"alibaba_omni_saas_order_create_response,omitempty"` 
     AlibabaOmniSaasOrderCreateResponse
 }
 
-/* model for simplify = false
 type AlibabaOmniSaasOrderCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_omni_saas_order_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // tradeNo
     
-    TradeNo   int64 `json:"trade_no,omitempty"`
-    
+    TradeNo   int64 `json:"trade_no,omitempty" xml:"trade_no,omitempty"`
 
+    
     // totalAmount
     
-    TotalAmount   int64 `json:"total_amount,omitempty"`
-    
+    TotalAmount   int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
 
+    
     // actualPayFee
     
-    ActualPayFee   int64 `json:"actual_pay_fee,omitempty"`
+    ActualPayFee   int64 `json:"actual_pay_fee,omitempty" xml:"actual_pay_fee,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaOmniSaasOrderCreateResponse struct {
-
-    // tradeNo
-    TradeNo   int64 `json:"trade_no,omitempty"`
-
-    // totalAmount
-    TotalAmount   int64 `json:"total_amount,omitempty"`
-
-    // actualPayFee
-    ActualPayFee   int64 `json:"actual_pay_fee,omitempty"`
-
 }

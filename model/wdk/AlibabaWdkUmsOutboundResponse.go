@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.ums.outbound
 */
 type AlibabaWdkUmsOutboundAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkUmsOutboundResponse `json:"alibaba_wdk_ums_outbound_response,omitempty"` 
     AlibabaWdkUmsOutboundResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkUmsOutboundResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_ums_outbound_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        UtmsResult  *UtmsResult `json:"utms_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *UtmsResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkUmsOutboundResponse struct {
-
-    // result
-    Result   *UtmsResult `json:"result,omitempty"`
-
 }

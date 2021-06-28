@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.servicecenter.servicestore.create
 */
 type TmallServicecenterServicestoreCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TmallServicecenterServicestoreCreateResponse `json:"tmall_servicecenter_servicestore_create_response,omitempty"` 
     TmallServicecenterServicestoreCreateResponse
 }
 
-/* model for simplify = false
 type TmallServicecenterServicestoreCreateResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_servicestore_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 方法调用结果
     
-    Result  *struct {
-        TmallServicecenterServicestoreCreateResult  *TmallServicecenterServicestoreCreateResult `json:"tmall_servicecenter_servicestore_create_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallServicecenterServicestoreCreateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallServicecenterServicestoreCreateResponse struct {
-
-    // 方法调用结果
-    Result   *TmallServicecenterServicestoreCreateResult `json:"result,omitempty"`
-
 }

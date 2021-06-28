@@ -1,29 +1,16 @@
 package wdk
 
 // BasePageQuery 
-/* model for simplify = false
 type BasePageQuery struct {
 
     // 页面大小
     
-    PageSize   int64 `json:"page_size,omitempty"`
+    PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
     
 
     // 当前分页，从1开始
     
-    Current   int64 `json:"current,omitempty"`
+    Current   int64 `json:"current,omitempty" xml:"current,omitempty"`
     
-
-}
-*/
-
-// BasePageQuery 
-type BasePageQuery struct {
-
-    // 页面大小
-    PageSize   int64 `json:"page_size,omitempty"`
-
-    // 当前分页，从1开始
-    Current   int64 `json:"current,omitempty"`
 
 }

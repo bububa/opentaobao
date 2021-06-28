@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.keywords.realtime.ranking.batch.get
 */
 type TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaKeywordsRealtimeRankingBatchGetResponse `json:"simba_keywords_realtime_ranking_batch_get_response,omitempty"` 
     TaobaoSimbaKeywordsRealtimeRankingBatchGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaKeywordsRealtimeRankingBatchGetResponse struct {
+    XMLName xml.Name `xml:"simba_keywords_realtime_ranking_batch_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        TaobaoSimbaKeywordsRealtimeRankingBatchGetResultDto  *TaobaoSimbaKeywordsRealtimeRankingBatchGetResultDto `json:"taobao_simba_keywords_realtime_ranking_batch_get_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoSimbaKeywordsRealtimeRankingBatchGetResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaKeywordsRealtimeRankingBatchGetResponse struct {
-
-    // 返回值
-    Result   *TaobaoSimbaKeywordsRealtimeRankingBatchGetResultDto `json:"result,omitempty"`
-
 }

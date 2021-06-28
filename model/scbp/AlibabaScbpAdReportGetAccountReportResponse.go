@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.ad.report.get.account.report
 */
 type AlibabaScbpAdReportGetAccountReportAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpAdReportGetAccountReportResponse `json:"alibaba_scbp_ad_report_get_account_report_response,omitempty"` 
     AlibabaScbpAdReportGetAccountReportResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpAdReportGetAccountReportResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_report_get_account_report_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回参数
     
-    Result  *struct {
-        AccountReportDto  *AccountReportDto `json:"account_report_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AccountReportDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpAdReportGetAccountReportResponse struct {
-
-    // 返回参数
-    Result   *AccountReportDto `json:"result,omitempty"`
-
 }

@@ -1,55 +1,31 @@
 package travel
 
 // ItineraryActivity 
-/* model for simplify = false
 type ItineraryActivity struct {
 
     // 活动标题
     
-    Title   string `json:"title,omitempty"`
+    Title   string `json:"title,omitempty" xml:"title,omitempty"`
     
 
     // 活动内容文本描述
     
-    Txt   string `json:"txt,omitempty"`
+    Txt   string `json:"txt,omitempty" xml:"txt,omitempty"`
     
 
     // 活动图片列表，多个图片以英文逗号分隔
     
-    Images  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"images,omitempty"`
+    Images   []string `json:"images,omitempty" xml:"images>string,omitempty"`
     
 
     // 活动预计时长，小时数
     
-    Hour   int64 `json:"hour,omitempty"`
+    Hour   int64 `json:"hour,omitempty" xml:"hour,omitempty"`
     
 
     // 活动预计时长，分钟数
     
-    Minute   int64 `json:"minute,omitempty"`
+    Minute   int64 `json:"minute,omitempty" xml:"minute,omitempty"`
     
-
-}
-*/
-
-// ItineraryActivity 
-type ItineraryActivity struct {
-
-    // 活动标题
-    Title   string `json:"title,omitempty"`
-
-    // 活动内容文本描述
-    Txt   string `json:"txt,omitempty"`
-
-    // 活动图片列表，多个图片以英文逗号分隔
-    Images   []string `json:"images,omitempty"`
-
-    // 活动预计时长，小时数
-    Hour   int64 `json:"hour,omitempty"`
-
-    // 活动预计时长，分钟数
-    Minute   int64 `json:"minute,omitempty"`
 
 }

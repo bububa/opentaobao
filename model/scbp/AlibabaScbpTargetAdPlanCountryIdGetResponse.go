@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.target.ad.plan.country.id.get
 */
 type AlibabaScbpTargetAdPlanCountryIdGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpTargetAdPlanCountryIdGetResponse `json:"alibaba_scbp_target_ad_plan_country_id_get_response,omitempty"` 
     AlibabaScbpTargetAdPlanCountryIdGetResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpTargetAdPlanCountryIdGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_target_ad_plan_country_id_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 地区列表
     
-    RegionList  struct {
-        RegionView  []RegionView `json:"region_view,omitempty"`
-    } `json:"region_list,omitempty"`
+    RegionList   []RegionView `json:"region_list,omitempty" xml:"region_list>region_view,omitempty"`
     
-
-}
-*/
-
-type AlibabaScbpTargetAdPlanCountryIdGetResponse struct {
-
-    // 地区列表
-    RegionList   []RegionView `json:"region_list,omitempty"`
-
+    
 }

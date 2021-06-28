@@ -1,47 +1,26 @@
 package wdk
 
 // AlibabaWdkCouponTemplateQueryumpactidApiResult 
-/* model for simplify = false
 type AlibabaWdkCouponTemplateQueryumpactidApiResult struct {
 
     // 数据
     
-    Models  struct {
-        CouponRelatedResponse  []CouponRelatedResponse `json:"coupon_related_response,omitempty"`
-    } `json:"models,omitempty"`
+    Models   []CouponRelatedResponse `json:"models,omitempty" xml:"models,omitempty"`
     
 
     // 错误码
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // 错误信息
     
-    ErrMsg   string `json:"err_msg,omitempty"`
+    ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     
 
     // true为成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// AlibabaWdkCouponTemplateQueryumpactidApiResult 
-type AlibabaWdkCouponTemplateQueryumpactidApiResult struct {
-
-    // 数据
-    Models   []CouponRelatedResponse `json:"models,omitempty"`
-
-    // 错误码
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // 错误信息
-    ErrMsg   string `json:"err_msg,omitempty"`
-
-    // true为成功
-    Success   bool `json:"success,omitempty"`
 
 }

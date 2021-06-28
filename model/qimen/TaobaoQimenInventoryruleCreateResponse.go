@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qimen.inventoryrule.create
 */
 type TaobaoQimenInventoryruleCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenInventoryruleCreateResponse `json:"qimen_inventoryrule_create_response,omitempty"` 
     TaobaoQimenInventoryruleCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenInventoryruleCreateResponse struct {
+    XMLName xml.Name `xml:"qimen_inventoryrule_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        ResponseDO  *ResponseDO `json:"response_do,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *ResponseDO `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenInventoryruleCreateResponse struct {
-
-    // 
-    Response   *ResponseDO `json:"response,omitempty"`
-
 }

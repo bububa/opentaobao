@@ -1,55 +1,31 @@
 package nazca
 
 // ActionResult 
-/* model for simplify = false
 type ActionResult struct {
 
     // error
     
-    Error   string `json:"error,omitempty"`
+    Error   string `json:"error,omitempty" xml:"error,omitempty"`
     
 
     // message
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
     
 
     // retValue
     
-    RetValue  *struct {
-        AuthApplyDoneCallBackDo  *AuthApplyDoneCallBackDo `json:"auth_apply_done_call_back_do,omitempty"`
-    } `json:"ret_value,omitempty"`
+    RetValue   *AuthApplyDoneCallBackDo `json:"ret_value,omitempty" xml:"ret_value,omitempty"`
     
 
     // 错误信息
     
-    SubErrorMessage   string `json:"sub_error_message,omitempty"`
+    SubErrorMessage   string `json:"sub_error_message,omitempty" xml:"sub_error_message,omitempty"`
     
 
     // 成功状态
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// ActionResult 
-type ActionResult struct {
-
-    // error
-    Error   string `json:"error,omitempty"`
-
-    // message
-    Message   string `json:"message,omitempty"`
-
-    // retValue
-    RetValue   *AuthApplyDoneCallBackDo `json:"ret_value,omitempty"`
-
-    // 错误信息
-    SubErrorMessage   string `json:"sub_error_message,omitempty"`
-
-    // 成功状态
-    Success   bool `json:"success,omitempty"`
 
 }

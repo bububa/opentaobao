@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.rpt.targetingtagbase.get
 */
 type TaobaoSimbaRptTargetingtagbaseGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaRptTargetingtagbaseGetResponse `json:"simba_rpt_targetingtagbase_get_response,omitempty"` 
     TaobaoSimbaRptTargetingtagbaseGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaRptTargetingtagbaseGetResponse struct {
+    XMLName xml.Name `xml:"simba_rpt_targetingtagbase_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Results  struct {
-        RptBaseEntityDTO  []RptBaseEntityDTO `json:"rpt_base_entity_dto,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []RptBaseEntityDTO `json:"results,omitempty" xml:"results>rpt_base_entity_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaRptTargetingtagbaseGetResponse struct {
-
-    // result
-    Results   []RptBaseEntityDTO `json:"results,omitempty"`
-
+    
 }

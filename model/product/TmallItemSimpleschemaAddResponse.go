@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ tmall.item.simpleschema.add
 */
 type TmallItemSimpleschemaAddAPIResponse struct {
     model.CommonResponse
-    // Response *TmallItemSimpleschemaAddResponse `json:"tmall_item_simpleschema_add_response,omitempty"` 
     TmallItemSimpleschemaAddResponse
 }
 
-/* model for simplify = false
 type TmallItemSimpleschemaAddResponse struct {
+    XMLName xml.Name `xml:"tmall_item_simpleschema_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 发布成功后返回商品ID
     
-    Result   string `json:"result,omitempty"`
-    
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
 
+    
     // 商品最后发布时间。
     
-    GmtModified   string `json:"gmt_modified,omitempty"`
+    GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+
     
-
-}
-*/
-
-type TmallItemSimpleschemaAddResponse struct {
-
-    // 发布成功后返回商品ID
-    Result   string `json:"result,omitempty"`
-
-    // 商品最后发布时间。
-    GmtModified   string `json:"gmt_modified,omitempty"`
-
 }

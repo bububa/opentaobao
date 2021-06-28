@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.user.seller.get
 */
 type TaobaoUserSellerGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoUserSellerGetResponse `json:"user_seller_get_response,omitempty"` 
     TaobaoUserSellerGetResponse
 }
 
-/* model for simplify = false
 type TaobaoUserSellerGetResponse struct {
+    XMLName xml.Name `xml:"user_seller_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户信息
     
-    User  *struct {
-        User  *User `json:"user,omitempty"`
-    } `json:"user,omitempty"`
+    User   *User `json:"user,omitempty" xml:"user,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoUserSellerGetResponse struct {
-
-    // 用户信息
-    User   *User `json:"user,omitempty"`
-
 }

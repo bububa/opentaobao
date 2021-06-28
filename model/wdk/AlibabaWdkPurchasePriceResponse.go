@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ alibaba.wdk.purchase.price
 */
 type AlibabaWdkPurchasePriceAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkPurchasePriceResponse `json:"alibaba_wdk_purchase_price_response,omitempty"` 
     AlibabaWdkPurchasePriceResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkPurchasePriceResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_purchase_price_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // SYSTEM ERROR
     
-    ReturnMsg   string `json:"return_msg,omitempty"`
-    
+    ReturnMsg   string `json:"return_msg,omitempty" xml:"return_msg,omitempty"`
 
+    
     // ERROR
     
-    ReturnCode   string `json:"return_code,omitempty"`
-    
+    ReturnCode   string `json:"return_code,omitempty" xml:"return_code,omitempty"`
 
+    
     // true
     
-    ReturnSuccess   bool `json:"return_success,omitempty"`
+    ReturnSuccess   bool `json:"return_success,omitempty" xml:"return_success,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkPurchasePriceResponse struct {
-
-    // SYSTEM ERROR
-    ReturnMsg   string `json:"return_msg,omitempty"`
-
-    // ERROR
-    ReturnCode   string `json:"return_code,omitempty"`
-
-    // true
-    ReturnSuccess   bool `json:"return_success,omitempty"`
-
 }

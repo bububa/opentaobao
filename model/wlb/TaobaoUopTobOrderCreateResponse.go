@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ ToB仓储发货
 */
 type TaobaoUopTobOrderCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoUopTobOrderCreateResponse `json:"uop_tob_order_create_response,omitempty"` 
     TaobaoUopTobOrderCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoUopTobOrderCreateResponse struct {
+    XMLName xml.Name `xml:"uop_tob_order_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // flag
     
-    Flag   string `json:"flag,omitempty"`
-    
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
 
+    
     // message
     
-    Message   string `json:"message,omitempty"`
-    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 
+    
     // 订单
     
-    DeliveryOrders  struct {
-        Deliveryorder  []Deliveryorder `json:"deliveryorder,omitempty"`
-    } `json:"delivery_orders,omitempty"`
+    DeliveryOrders   []Deliveryorder `json:"delivery_orders,omitempty" xml:"delivery_orders>deliveryorder,omitempty"`
     
-
-}
-*/
-
-type TaobaoUopTobOrderCreateResponse struct {
-
-    // flag
-    Flag   string `json:"flag,omitempty"`
-
-    // message
-    Message   string `json:"message,omitempty"`
-
-    // 订单
-    DeliveryOrders   []Deliveryorder `json:"delivery_orders,omitempty"`
-
+    
 }

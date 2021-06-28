@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wdk.equipment.deviceadmin.deviceinfo.get
 */
 type TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse `json:"wdk_equipment_deviceadmin_deviceinfo_get_response,omitempty"` 
     TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse struct {
+    XMLName xml.Name `xml:"wdk_equipment_deviceadmin_deviceinfo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        HmResult  *HmResult `json:"hm_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *HmResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse struct {
-
-    // 返回值
-    Result   *HmResult `json:"result,omitempty"`
-
 }

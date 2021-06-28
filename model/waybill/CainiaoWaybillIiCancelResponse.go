@@ -1,6 +1,8 @@
 package waybill
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ cainiao.waybill.ii.cancel
 */
 type CainiaoWaybillIiCancelAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoWaybillIiCancelResponse `json:"cainiao_waybill_ii_cancel_response,omitempty"` 
     CainiaoWaybillIiCancelResponse
 }
 
-/* model for simplify = false
 type CainiaoWaybillIiCancelResponse struct {
+    XMLName xml.Name `xml:"cainiao_waybill_ii_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用取消是否成功
     
-    CancelResult   bool `json:"cancel_result,omitempty"`
+    CancelResult   bool `json:"cancel_result,omitempty" xml:"cancel_result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoWaybillIiCancelResponse struct {
-
-    // 调用取消是否成功
-    CancelResult   bool `json:"cancel_result,omitempty"`
-
 }

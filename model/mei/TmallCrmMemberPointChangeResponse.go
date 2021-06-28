@@ -1,6 +1,8 @@
 package mei
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ tmall.crm.member.point.change
 */
 type TmallCrmMemberPointChangeAPIResponse struct {
     model.CommonResponse
-    // Response *TmallCrmMemberPointChangeResponse `json:"tmall_crm_member_point_change_response,omitempty"` 
     TmallCrmMemberPointChangeResponse
 }
 
-/* model for simplify = false
 type TmallCrmMemberPointChangeResponse struct {
+    XMLName xml.Name `xml:"tmall_crm_member_point_change_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用是否成功
     
-    ResultSuccess   bool `json:"result_success,omitempty"`
+    ResultSuccess   bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
+
     
-
-}
-*/
-
-type TmallCrmMemberPointChangeResponse struct {
-
-    // 调用是否成功
-    ResultSuccess   bool `json:"result_success,omitempty"`
-
 }

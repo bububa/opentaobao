@@ -1,6 +1,8 @@
 package tmallitem
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,62 +14,36 @@ tmall.items.extend.search
 */
 type TmallItemsExtendSearchAPIResponse struct {
     model.CommonResponse
-    // Response *TmallItemsExtendSearchResponse `json:"tmall_items_extend_search_response,omitempty"` 
     TmallItemsExtendSearchResponse
 }
 
-/* model for simplify = false
 type TmallItemsExtendSearchResponse struct {
+    XMLName xml.Name `xml:"tmall_items_extend_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品列表
     
-    ItemList  struct {
-        TmallExtendSearchItem  []TmallExtendSearchItem `json:"tmall_extend_search_item,omitempty"`
-    } `json:"item_list,omitempty"`
+    ItemList   []TmallExtendSearchItem `json:"item_list,omitempty" xml:"item_list>tmall_extend_search_item,omitempty"`
     
-
+    
     // 总商品数量
     
-    TotalResults   int64 `json:"total_results,omitempty"`
-    
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 
+    
     // 查询条件
     
-    Q   string `json:"q,omitempty"`
-    
+    Q   string `json:"q,omitempty" xml:"q,omitempty"`
 
+    
     // 类目列表
     
-    CatList  struct {
-        TmallCat  []TmallCat `json:"tmall_cat,omitempty"`
-    } `json:"cat_list,omitempty"`
+    CatList   []TmallCat `json:"cat_list,omitempty" xml:"cat_list>tmall_cat,omitempty"`
     
-
+    
     // 品牌列表
     
-    BrandList  struct {
-        TmallBrand  []TmallBrand `json:"tmall_brand,omitempty"`
-    } `json:"brand_list,omitempty"`
+    BrandList   []TmallBrand `json:"brand_list,omitempty" xml:"brand_list>tmall_brand,omitempty"`
     
-
-}
-*/
-
-type TmallItemsExtendSearchResponse struct {
-
-    // 商品列表
-    ItemList   []TmallExtendSearchItem `json:"item_list,omitempty"`
-
-    // 总商品数量
-    TotalResults   int64 `json:"total_results,omitempty"`
-
-    // 查询条件
-    Q   string `json:"q,omitempty"`
-
-    // 类目列表
-    CatList   []TmallCat `json:"cat_list,omitempty"`
-
-    // 品牌列表
-    BrandList   []TmallBrand `json:"brand_list,omitempty"`
-
+    
 }

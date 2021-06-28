@@ -1,6 +1,8 @@
 package mei
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.mei.crm.member.getbypaycode
 */
 type TmallMeiCrmMemberGetbypaycodeAPIResponse struct {
     model.CommonResponse
-    // Response *TmallMeiCrmMemberGetbypaycodeResponse `json:"tmall_mei_crm_member_getbypaycode_response,omitempty"` 
     TmallMeiCrmMemberGetbypaycodeResponse
 }
 
-/* model for simplify = false
 type TmallMeiCrmMemberGetbypaycodeResponse struct {
+    XMLName xml.Name `xml:"tmall_mei_crm_member_getbypaycode_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        ResultDTO  *ResultDTO `json:"result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ResultDTO `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallMeiCrmMemberGetbypaycodeResponse struct {
-
-    // result
-    Result   *ResultDTO `json:"result,omitempty"`
-
 }

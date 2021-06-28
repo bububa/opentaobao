@@ -1,6 +1,8 @@
 package refund
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.special.refund.get
 */
 type TaobaoSpecialRefundGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSpecialRefundGetResponse `json:"special_refund_get_response,omitempty"` 
     TaobaoSpecialRefundGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSpecialRefundGetResponse struct {
+    XMLName xml.Name `xml:"special_refund_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 退款详情
     
-    Refund  *struct {
-        Refund  *Refund `json:"refund,omitempty"`
-    } `json:"refund,omitempty"`
+    Refund   *Refund `json:"refund,omitempty" xml:"refund,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSpecialRefundGetResponse struct {
-
-    // 退款详情
-    Refund   *Refund `json:"refund,omitempty"`
-
 }

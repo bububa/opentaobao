@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.axb.vendor.push.call.release
 */
 type AlibabaAliqinAxbVendorPushCallReleaseAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinAxbVendorPushCallReleaseResponse `json:"alibaba_aliqin_axb_vendor_push_call_release_response,omitempty"` 
     AlibabaAliqinAxbVendorPushCallReleaseResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinAxbVendorPushCallReleaseResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_axb_vendor_push_call_release_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinAxbVendorPushCallReleaseResponse struct {
-
-    // result
-    Result   *Response `json:"result,omitempty"`
-
 }

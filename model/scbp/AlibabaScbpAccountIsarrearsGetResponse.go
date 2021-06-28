@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.scbp.account.isarrears.get
 */
 type AlibabaScbpAccountIsarrearsGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpAccountIsarrearsGetResponse `json:"alibaba_scbp_account_isarrears_get_response,omitempty"` 
     AlibabaScbpAccountIsarrearsGetResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpAccountIsarrearsGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_account_isarrears_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 客户的关键词推广账户是否欠款
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpAccountIsarrearsGetResponse struct {
-
-    // 客户的关键词推广账户是否欠款
-    Result   bool `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package tanx
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.tanx.nativetemplates.get
 */
 type TaobaoTanxNativetemplatesGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTanxNativetemplatesGetResponse `json:"tanx_nativetemplates_get_response,omitempty"` 
     TaobaoTanxNativetemplatesGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTanxNativetemplatesGetResponse struct {
+    XMLName xml.Name `xml:"tanx_nativetemplates_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsOk   bool `json:"is_ok,omitempty"`
-    
+    IsOk   bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
 
+    
     // 本地模板列表
     
-    NativeTemplateList  struct {
-        NativeTemplateDto  []NativeTemplateDto `json:"native_template_dto,omitempty"`
-    } `json:"native_template_list,omitempty"`
+    NativeTemplateList   []NativeTemplateDto `json:"native_template_list,omitempty" xml:"native_template_list>native_template_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoTanxNativetemplatesGetResponse struct {
-
-    // 是否成功
-    IsOk   bool `json:"is_ok,omitempty"`
-
-    // 本地模板列表
-    NativeTemplateList   []NativeTemplateDto `json:"native_template_list,omitempty"`
-
+    
 }

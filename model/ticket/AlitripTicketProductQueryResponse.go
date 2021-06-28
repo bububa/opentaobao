@@ -1,6 +1,8 @@
 package ticket
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alitrip.ticket.product.query
 */
 type AlitripTicketProductQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripTicketProductQueryResponse `json:"alitrip_ticket_product_query_response,omitempty"` 
     AlitripTicketProductQueryResponse
 }
 
-/* model for simplify = false
 type AlitripTicketProductQueryResponse struct {
+    XMLName xml.Name `xml:"alitrip_ticket_product_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 门票商品详情
     
-    FirstResult  *struct {
-        TopTicketItemFullinfoResult  *TopTicketItemFullinfoResult `json:"top_ticket_item_fullinfo_result,omitempty"`
-    } `json:"first_result,omitempty"`
+    FirstResult   *TopTicketItemFullinfoResult `json:"first_result,omitempty" xml:"first_result,omitempty"`
+
     
-
-}
-*/
-
-type AlitripTicketProductQueryResponse struct {
-
-    // 门票商品详情
-    FirstResult   *TopTicketItemFullinfoResult `json:"first_result,omitempty"`
-
 }

@@ -1,37 +1,21 @@
 package promotion
 
 // Extmap 
-/* model for simplify = false
 type Extmap struct {
 
     // 扩展字段
     
-    Keyvalue   bool `json:"keyvalue,omitempty"`
+    Keyvalue   bool `json:"keyvalue,omitempty" xml:"keyvalue,omitempty"`
     
 
     // empty
     
-    Empty   bool `json:"empty,omitempty"`
+    Empty   bool `json:"empty,omitempty" xml:"empty,omitempty"`
     
 
     // 扩展字段
     
-    Key   string `json:"key,omitempty"`
+    Key   string `json:"key,omitempty" xml:"key,omitempty"`
     
-
-}
-*/
-
-// Extmap 
-type Extmap struct {
-
-    // 扩展字段
-    Keyvalue   bool `json:"keyvalue,omitempty"`
-
-    // empty
-    Empty   bool `json:"empty,omitempty"`
-
-    // 扩展字段
-    Key   string `json:"key,omitempty"`
 
 }

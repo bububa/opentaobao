@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.jds.hluser.update
 */
 type TaobaoJdsHluserUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJdsHluserUpdateResponse `json:"jds_hluser_update_response,omitempty"` 
     TaobaoJdsHluserUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoJdsHluserUpdateResponse struct {
+    XMLName xml.Name `xml:"jds_hluser_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoJdsHluserUpdateResponse struct {
-
-    // 是否成功
-    Result   bool `json:"result,omitempty"`
-
 }

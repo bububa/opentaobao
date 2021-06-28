@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.bm.paiyang.stock.query
 */
 type AlibabaWdkBmPaiyangStockQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkBmPaiyangStockQueryResponse `json:"alibaba_wdk_bm_paiyang_stock_query_response,omitempty"` 
     AlibabaWdkBmPaiyangStockQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkBmPaiyangStockQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_bm_paiyang_stock_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 请求出参
     
-    Result  *struct {
-        BmResult  *BmResult `json:"bm_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *BmResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkBmPaiyangStockQueryResponse struct {
-
-    // 请求出参
-    Result   *BmResult `json:"result,omitempty"`
-
 }

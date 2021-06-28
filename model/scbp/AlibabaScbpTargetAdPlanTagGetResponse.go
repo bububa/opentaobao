@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.target.ad.plan.tag.get
 */
 type AlibabaScbpTargetAdPlanTagGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpTargetAdPlanTagGetResponse `json:"alibaba_scbp_target_ad_plan_tag_get_response,omitempty"` 
     AlibabaScbpTargetAdPlanTagGetResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpTargetAdPlanTagGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_target_ad_plan_tag_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // TopP4pCampaignTargetingTagView
     
-    Result  *struct {
-        TopP4pCampaignTargetingTagView  *TopP4pCampaignTargetingTagView `json:"top_p4p_campaign_targeting_tag_view,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TopP4pCampaignTargetingTagView `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpTargetAdPlanTagGetResponse struct {
-
-    // TopP4pCampaignTargetingTagView
-    Result   *TopP4pCampaignTargetingTagView `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ aliexpress.payment.exchange.get
 */
 type AliexpressPaymentExchangeGetAPIResponse struct {
     model.CommonResponse
-    // Response *AliexpressPaymentExchangeGetResponse `json:"aliexpress_payment_exchange_get_response,omitempty"` 
     AliexpressPaymentExchangeGetResponse
 }
 
-/* model for simplify = false
 type AliexpressPaymentExchangeGetResponse struct {
+    XMLName xml.Name `xml:"aliexpress_payment_exchange_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AliexpressPaymentExchangeGetResult  *AliexpressPaymentExchangeGetResult `json:"aliexpress_payment_exchange_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AliexpressPaymentExchangeGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AliexpressPaymentExchangeGetResponse struct {
-
-    // 接口返回model
-    Result   *AliexpressPaymentExchangeGetResult `json:"result,omitempty"`
-
 }

@@ -1,37 +1,21 @@
 package baichuan
 
 // CtgResponse 
-/* model for simplify = false
 type CtgResponse struct {
 
     // errorMessage
     
-    ErrorMessage   string `json:"error_message,omitempty"`
+    ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     
 
     // errorCode
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// CtgResponse 
-type CtgResponse struct {
-
-    // errorMessage
-    ErrorMessage   string `json:"error_message,omitempty"`
-
-    // errorCode
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

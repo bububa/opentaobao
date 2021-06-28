@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.wlb.order.jzwithins.consign
 */
 type TaobaoWlbOrderJzwithinsConsignAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbOrderJzwithinsConsignResponse `json:"wlb_order_jzwithins_consign_response,omitempty"` 
     TaobaoWlbOrderJzwithinsConsignResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbOrderJzwithinsConsignResponse struct {
+    XMLName xml.Name `xml:"wlb_order_jzwithins_consign_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 发货成功或者失败
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 发货返回信息，如果发货错误则报出对应错误
     
-    ResultInfo   string `json:"result_info,omitempty"`
+    ResultInfo   string `json:"result_info,omitempty" xml:"result_info,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbOrderJzwithinsConsignResponse struct {
-
-    // 发货成功或者失败
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 发货返回信息，如果发货错误则报出对应错误
-    ResultInfo   string `json:"result_info,omitempty"`
-
 }

@@ -1,37 +1,21 @@
 package alsc
 
 // FeeDetail 
-/* model for simplify = false
 type FeeDetail struct {
 
     // 金额
     
-    Amount   int64 `json:"amount,omitempty"`
+    Amount   int64 `json:"amount,omitempty" xml:"amount,omitempty"`
     
 
     // 计算方式 ：  加-PLUS   加-MINUS
     
-    Operator   string `json:"operator,omitempty"`
+    Operator   string `json:"operator,omitempty" xml:"operator,omitempty"`
     
 
     // MERCHANT_ADJUST  商家调整  PLATFORM_PROM  平台优惠  MERCHANT_PROM  商家优惠  CHARGE  储值  POINT  积分  OTHER  其他
     
-    Type   string `json:"type,omitempty"`
+    Type   string `json:"type,omitempty" xml:"type,omitempty"`
     
-
-}
-*/
-
-// FeeDetail 
-type FeeDetail struct {
-
-    // 金额
-    Amount   int64 `json:"amount,omitempty"`
-
-    // 计算方式 ：  加-PLUS   加-MINUS
-    Operator   string `json:"operator,omitempty"`
-
-    // MERCHANT_ADJUST  商家调整  PLATFORM_PROM  平台优惠  MERCHANT_PROM  商家优惠  CHARGE  储值  POINT  积分  OTHER  其他
-    Type   string `json:"type,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.miniapp.items.get
 */
 type TaobaoMiniappItemsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoMiniappItemsGetResponse `json:"miniapp_items_get_response,omitempty"` 
     TaobaoMiniappItemsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoMiniappItemsGetResponse struct {
+    XMLName xml.Name `xml:"miniapp_items_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // Item(商品)结构
     
-    Items  struct {
-        Item  []Item `json:"item,omitempty"`
-    } `json:"items,omitempty"`
+    Items   []Item `json:"items,omitempty" xml:"items>item,omitempty"`
     
-
-}
-*/
-
-type TaobaoMiniappItemsGetResponse struct {
-
-    // Item(商品)结构
-    Items   []Item `json:"items,omitempty"`
-
+    
 }

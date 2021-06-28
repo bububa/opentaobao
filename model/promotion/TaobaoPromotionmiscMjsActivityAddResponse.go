@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.promotionmisc.mjs.activity.add
 */
 type TaobaoPromotionmiscMjsActivityAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPromotionmiscMjsActivityAddResponse `json:"promotionmisc_mjs_activity_add_response,omitempty"` 
     TaobaoPromotionmiscMjsActivityAddResponse
 }
 
-/* model for simplify = false
 type TaobaoPromotionmiscMjsActivityAddResponse struct {
+    XMLName xml.Name `xml:"promotionmisc_mjs_activity_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否保存成功。
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 活动id。
     
-    ActivityId   int64 `json:"activity_id,omitempty"`
+    ActivityId   int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoPromotionmiscMjsActivityAddResponse struct {
-
-    // 是否保存成功。
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 活动id。
-    ActivityId   int64 `json:"activity_id,omitempty"`
-
 }

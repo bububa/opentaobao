@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.logistics.partners.get
 */
 type TaobaoLogisticsPartnersGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLogisticsPartnersGetResponse `json:"logistics_partners_get_response,omitempty"` 
     TaobaoLogisticsPartnersGetResponse
 }
 
-/* model for simplify = false
 type TaobaoLogisticsPartnersGetResponse struct {
+    XMLName xml.Name `xml:"logistics_partners_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 查询揽送范围之内的物流公司信息
     
-    LogisticsPartners  struct {
-        LogisticsPartner  []LogisticsPartner `json:"logistics_partner,omitempty"`
-    } `json:"logistics_partners,omitempty"`
+    LogisticsPartners   []LogisticsPartner `json:"logistics_partners,omitempty" xml:"logistics_partners>logistics_partner,omitempty"`
     
-
-}
-*/
-
-type TaobaoLogisticsPartnersGetResponse struct {
-
-    // 查询揽送范围之内的物流公司信息
-    LogisticsPartners   []LogisticsPartner `json:"logistics_partners,omitempty"`
-
+    
 }

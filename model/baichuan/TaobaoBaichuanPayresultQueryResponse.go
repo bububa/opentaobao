@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.baichuan.payresult.query
 */
 type TaobaoBaichuanPayresultQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaichuanPayresultQueryResponse `json:"baichuan_payresult_query_response,omitempty"` 
     TaobaoBaichuanPayresultQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoBaichuanPayresultQueryResponse struct {
+    XMLName xml.Name `xml:"baichuan_payresult_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaichuanPayresultQueryResponse struct {
-
-    // name
-    Name   string `json:"name,omitempty"`
-
 }

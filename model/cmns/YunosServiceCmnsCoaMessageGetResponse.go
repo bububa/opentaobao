@@ -1,6 +1,8 @@
 package cmns
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ yunos.service.cmns.coa.message.get
 */
 type YunosServiceCmnsCoaMessageGetAPIResponse struct {
     model.CommonResponse
-    // Response *YunosServiceCmnsCoaMessageGetResponse `json:"yunos_service_cmns_coa_message_get_response,omitempty"` 
     YunosServiceCmnsCoaMessageGetResponse
 }
 
-/* model for simplify = false
 type YunosServiceCmnsCoaMessageGetResponse struct {
+    XMLName xml.Name `xml:"yunos_service_cmns_coa_message_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 消息内容
     
-    Data  *struct {
-        MessageDetailResult  *MessageDetailResult `json:"message_detail_result,omitempty"`
-    } `json:"data,omitempty"`
-    
+    Data   *MessageDetailResult `json:"data,omitempty" xml:"data,omitempty"`
 
+    
     // 接口查询出错提示信息
     
-    Message   string `json:"message,omitempty"`
-    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 
+    
     // 200表示查询成功
     
-    Status   int64 `json:"status,omitempty"`
+    Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
+
     
-
-}
-*/
-
-type YunosServiceCmnsCoaMessageGetResponse struct {
-
-    // 消息内容
-    Data   *MessageDetailResult `json:"data,omitempty"`
-
-    // 接口查询出错提示信息
-    Message   string `json:"message,omitempty"`
-
-    // 200表示查询成功
-    Status   int64 `json:"status,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.fenxiao.product.update
 */
 type TaobaoFenxiaoProductUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoProductUpdateResponse `json:"fenxiao_product_update_response,omitempty"` 
     TaobaoFenxiaoProductUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoProductUpdateResponse struct {
+    XMLName xml.Name `xml:"fenxiao_product_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 产品ID
     
-    Pid   int64 `json:"pid,omitempty"`
-    
+    Pid   int64 `json:"pid,omitempty" xml:"pid,omitempty"`
 
+    
     // 更新时间，时间格式：yyyy-MM-dd HH:mm:ss
     
-    Modified   string `json:"modified,omitempty"`
+    Modified   string `json:"modified,omitempty" xml:"modified,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFenxiaoProductUpdateResponse struct {
-
-    // 产品ID
-    Pid   int64 `json:"pid,omitempty"`
-
-    // 更新时间，时间格式：yyyy-MM-dd HH:mm:ss
-    Modified   string `json:"modified,omitempty"`
-
 }

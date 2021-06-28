@@ -1,6 +1,8 @@
 package tmc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.tmc.user.cancel
 */
 type TaobaoTmcUserCancelAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTmcUserCancelResponse `json:"tmc_user_cancel_response,omitempty"` 
     TaobaoTmcUserCancelResponse
 }
 
-/* model for simplify = false
 type TaobaoTmcUserCancelResponse struct {
+    XMLName xml.Name `xml:"tmc_user_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功,如果为false并且没有错误码，表示删除的用户不存在。
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTmcUserCancelResponse struct {
-
-    // 是否成功,如果为false并且没有错误码，表示删除的用户不存在。
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.baichuan.user.loginbytoken
 */
 type TaobaoBaichuanUserLoginbytokenAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaichuanUserLoginbytokenResponse `json:"baichuan_user_loginbytoken_response,omitempty"` 
     TaobaoBaichuanUserLoginbytokenResponse
 }
 
-/* model for simplify = false
 type TaobaoBaichuanUserLoginbytokenResponse struct {
+    XMLName xml.Name `xml:"baichuan_user_loginbytoken_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaichuanUserLoginbytokenResponse struct {
-
-    // name
-    Name   string `json:"name,omitempty"`
-
 }

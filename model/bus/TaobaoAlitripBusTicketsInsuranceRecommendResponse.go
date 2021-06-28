@@ -1,6 +1,8 @@
 package bus
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.alitrip.bus.tickets.insurance.recommend
 */
 type TaobaoAlitripBusTicketsInsuranceRecommendAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAlitripBusTicketsInsuranceRecommendResponse `json:"alitrip_bus_tickets_insurance_recommend_response,omitempty"` 
     TaobaoAlitripBusTicketsInsuranceRecommendResponse
 }
 
-/* model for simplify = false
 type TaobaoAlitripBusTicketsInsuranceRecommendResponse struct {
+    XMLName xml.Name `xml:"alitrip_bus_tickets_insurance_recommend_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回结果数据
     
-    Result  *struct {
-        TaobaoAlitripBusTicketsInsuranceRecommendResult  *TaobaoAlitripBusTicketsInsuranceRecommendResult `json:"taobao_alitrip_bus_tickets_insurance_recommend_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoAlitripBusTicketsInsuranceRecommendResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAlitripBusTicketsInsuranceRecommendResponse struct {
-
-    // 接口返回结果数据
-    Result   *TaobaoAlitripBusTicketsInsuranceRecommendResult `json:"result,omitempty"`
-
 }

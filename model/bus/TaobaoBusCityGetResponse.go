@@ -1,6 +1,8 @@
 package bus
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.bus.city.get
 */
 type TaobaoBusCityGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBusCityGetResponse `json:"bus_city_get_response,omitempty"` 
     TaobaoBusCityGetResponse
 }
 
-/* model for simplify = false
 type TaobaoBusCityGetResponse struct {
+    XMLName xml.Name `xml:"bus_city_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 城市返回结果
     
-    Result  *struct {
-        CitySearchRp  *CitySearchRp `json:"city_search_rp,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CitySearchRp `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBusCityGetResponse struct {
-
-    // 城市返回结果
-    Result   *CitySearchRp `json:"result,omitempty"`
-
 }

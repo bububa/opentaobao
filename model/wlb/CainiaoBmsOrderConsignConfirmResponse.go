@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ BMS出库后，通知ISV
 */
 type CainiaoBmsOrderConsignConfirmAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoBmsOrderConsignConfirmResponse `json:"cainiao_bms_order_consign_confirm_response,omitempty"` 
     CainiaoBmsOrderConsignConfirmResponse
 }
 
-/* model for simplify = false
 type CainiaoBmsOrderConsignConfirmResponse struct {
+    XMLName xml.Name `xml:"cainiao_bms_order_consign_confirm_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        ResultDO  *ResultDO `json:"result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ResultDO `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoBmsOrderConsignConfirmResponse struct {
-
-    // 返回值
-    Result   *ResultDO `json:"result,omitempty"`
-
 }

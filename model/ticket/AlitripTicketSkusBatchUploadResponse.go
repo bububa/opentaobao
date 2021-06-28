@@ -1,6 +1,8 @@
 package ticket
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -15,26 +17,16 @@ alitrip.ticket.skus.batch.upload
 */
 type AlitripTicketSkusBatchUploadAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripTicketSkusBatchUploadResponse `json:"alitrip_ticket_skus_batch_upload_response,omitempty"` 
     AlitripTicketSkusBatchUploadResponse
 }
 
-/* model for simplify = false
 type AlitripTicketSkusBatchUploadResponse struct {
+    XMLName xml.Name `xml:"alitrip_ticket_skus_batch_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 价格库存同步结果
     
-    UpdateResult  *struct {
-        TicketItemResult  *TicketItemResult `json:"ticket_item_result,omitempty"`
-    } `json:"update_result,omitempty"`
+    UpdateResult   *TicketItemResult `json:"update_result,omitempty" xml:"update_result,omitempty"`
+
     
-
-}
-*/
-
-type AlitripTicketSkusBatchUploadResponse struct {
-
-    // 价格库存同步结果
-    UpdateResult   *TicketItemResult `json:"update_result,omitempty"`
-
 }

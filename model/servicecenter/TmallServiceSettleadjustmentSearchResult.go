@@ -1,41 +1,21 @@
 package servicecenter
 
 // TmallServiceSettleadjustmentSearchResult 
-/* model for simplify = false
 type TmallServiceSettleadjustmentSearchResult struct {
 
     // dataModule
     
-    SettleAdjustmentList  struct {
-        SettleAdjustmentResponse  []SettleAdjustmentResponse `json:"settle_adjustment_response,omitempty"`
-    } `json:"settle_adjustment_list,omitempty"`
+    SettleAdjustmentList   []SettleAdjustmentResponse `json:"settle_adjustment_list,omitempty" xml:"settle_adjustment_list,omitempty"`
     
 
     // errorMessage
     
-    ErrorMessage  *struct {
-        ErrorMessage  *ErrorMessage `json:"error_message,omitempty"`
-    } `json:"error_message,omitempty"`
+    ErrorMessage   *ErrorMessage `json:"error_message,omitempty" xml:"error_message,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// TmallServiceSettleadjustmentSearchResult 
-type TmallServiceSettleadjustmentSearchResult struct {
-
-    // dataModule
-    SettleAdjustmentList   []SettleAdjustmentResponse `json:"settle_adjustment_list,omitempty"`
-
-    // errorMessage
-    ErrorMessage   *ErrorMessage `json:"error_message,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

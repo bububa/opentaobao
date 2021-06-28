@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ alibaba.scbp.effect.product.single.get
 */
 type AlibabaScbpEffectProductSingleGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpEffectProductSingleGetResponse `json:"alibaba_scbp_effect_product_single_get_response,omitempty"` 
     AlibabaScbpEffectProductSingleGetResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpEffectProductSingleGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_effect_product_single_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 单个产品的效果数据列表
     
-    SProductEffectList  struct {
-        SingleProductEffectDto  []SingleProductEffectDto `json:"single_product_effect_dto,omitempty"`
-    } `json:"s_product_effect_list,omitempty"`
+    SProductEffectList   []SingleProductEffectDto `json:"s_product_effect_list,omitempty" xml:"s_product_effect_list>single_product_effect_dto,omitempty"`
     
-
+    
     // 总个数
     
-    TotalNum   int64 `json:"total_num,omitempty"`
-    
+    TotalNum   int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
 
+    
     // 总页数
     
-    TotalPage   int64 `json:"total_page,omitempty"`
+    TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpEffectProductSingleGetResponse struct {
-
-    // 单个产品的效果数据列表
-    SProductEffectList   []SingleProductEffectDto `json:"s_product_effect_list,omitempty"`
-
-    // 总个数
-    TotalNum   int64 `json:"total_num,omitempty"`
-
-    // 总页数
-    TotalPage   int64 `json:"total_page,omitempty"`
-
 }

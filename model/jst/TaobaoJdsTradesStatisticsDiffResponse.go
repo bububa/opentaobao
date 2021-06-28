@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.jds.trades.statistics.diff
 */
 type TaobaoJdsTradesStatisticsDiffAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJdsTradesStatisticsDiffResponse `json:"jds_trades_statistics_diff_response,omitempty"` 
     TaobaoJdsTradesStatisticsDiffResponse
 }
 
-/* model for simplify = false
 type TaobaoJdsTradesStatisticsDiffResponse struct {
+    XMLName xml.Name `xml:"jds_trades_statistics_diff_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // pre_status比post_status多的tid列表
     
-    Tids  struct {
-        Number  []int64 `json:"int64,omitempty"`
-    } `json:"tids,omitempty"`
+    Tids   []int64 `json:"tids,omitempty" xml:"tids>int64,omitempty"`
     
-
+    
     // 总记录数
     
-    TotalResults   int64 `json:"total_results,omitempty"`
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoJdsTradesStatisticsDiffResponse struct {
-
-    // pre_status比post_status多的tid列表
-    Tids   []int64 `json:"tids,omitempty"`
-
-    // 总记录数
-    TotalResults   int64 `json:"total_results,omitempty"`
-
 }

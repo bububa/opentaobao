@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.promotion.coupon.user
 */
 type TmallPromotionCouponUserAPIResponse struct {
     model.CommonResponse
-    // Response *TmallPromotionCouponUserResponse `json:"tmall_promotion_coupon_user_response,omitempty"` 
     TmallPromotionCouponUserResponse
 }
 
-/* model for simplify = false
 type TmallPromotionCouponUserResponse struct {
+    XMLName xml.Name `xml:"tmall_promotion_coupon_user_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TmallPromotionCouponUserResult  *TmallPromotionCouponUserResult `json:"tmall_promotion_coupon_user_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallPromotionCouponUserResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallPromotionCouponUserResponse struct {
-
-    // result
-    Result   *TmallPromotionCouponUserResult `json:"result,omitempty"`
-
 }

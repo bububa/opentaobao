@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.wlb.notify.message.page.get
 */
 type TaobaoWlbNotifyMessagePageGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbNotifyMessagePageGetResponse `json:"wlb_notify_message_page_get_response,omitempty"` 
     TaobaoWlbNotifyMessagePageGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbNotifyMessagePageGetResponse struct {
+    XMLName xml.Name `xml:"wlb_notify_message_page_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 2000-01-01 00:00:00
     
-    TotalCount   int64 `json:"total_count,omitempty"`
-    
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 
+    
     // 通道消息
     
-    WlbMessages  struct {
-        WlbMessage  []WlbMessage `json:"wlb_message,omitempty"`
-    } `json:"wlb_messages,omitempty"`
+    WlbMessages   []WlbMessage `json:"wlb_messages,omitempty" xml:"wlb_messages>wlb_message,omitempty"`
     
-
-}
-*/
-
-type TaobaoWlbNotifyMessagePageGetResponse struct {
-
-    // 2000-01-01 00:00:00
-    TotalCount   int64 `json:"total_count,omitempty"`
-
-    // 通道消息
-    WlbMessages   []WlbMessage `json:"wlb_messages,omitempty"`
-
+    
 }

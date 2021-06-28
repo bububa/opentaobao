@@ -1,6 +1,8 @@
 package security
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.security.jaq.rp.cloud.event
 */
 type AlibabaSecurityJaqRpCloudEventAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSecurityJaqRpCloudEventResponse `json:"alibaba_security_jaq_rp_cloud_event_response,omitempty"` 
     AlibabaSecurityJaqRpCloudEventResponse
 }
 
-/* model for simplify = false
 type AlibabaSecurityJaqRpCloudEventResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_rp_cloud_event_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        RpEventResult  *RpEventResult `json:"rp_event_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *RpEventResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSecurityJaqRpCloudEventResponse struct {
-
-    // result
-    Result   *RpEventResult `json:"result,omitempty"`
-
 }

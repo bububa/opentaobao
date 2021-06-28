@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.ump.details.get
 */
 type TaobaoUmpDetailsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoUmpDetailsGetResponse `json:"ump_details_get_response,omitempty"` 
     TaobaoUmpDetailsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoUmpDetailsGetResponse struct {
+    XMLName xml.Name `xml:"ump_details_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 活动详情的信息
     
-    Contents  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"contents,omitempty"`
+    Contents   []string `json:"contents,omitempty" xml:"contents>string,omitempty"`
     
-
+    
     // 记录总数
     
-    TotalCount   int64 `json:"total_count,omitempty"`
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoUmpDetailsGetResponse struct {
-
-    // 活动详情的信息
-    Contents   []string `json:"contents,omitempty"`
-
-    // 记录总数
-    TotalCount   int64 `json:"total_count,omitempty"`
-
 }

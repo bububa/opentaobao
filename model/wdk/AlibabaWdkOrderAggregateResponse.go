@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.order.aggregate
 */
 type AlibabaWdkOrderAggregateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkOrderAggregateResponse `json:"alibaba_wdk_order_aggregate_response,omitempty"` 
     AlibabaWdkOrderAggregateResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkOrderAggregateResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_order_aggregate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        OrderAggregateQueryResult  *OrderAggregateQueryResult `json:"order_aggregate_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *OrderAggregateQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkOrderAggregateResponse struct {
-
-    // result
-    Result   *OrderAggregateQueryResult `json:"result,omitempty"`
-
 }

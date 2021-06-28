@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.keywordsvon.add
 */
 type TaobaoSimbaKeywordsvonAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaKeywordsvonAddResponse `json:"simba_keywordsvon_add_response,omitempty"` 
     TaobaoSimbaKeywordsvonAddResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaKeywordsvonAddResponse struct {
+    XMLName xml.Name `xml:"simba_keywordsvon_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 关键词列表
     
-    Keywords  struct {
-        Keyword  []Keyword `json:"keyword,omitempty"`
-    } `json:"keywords,omitempty"`
+    Keywords   []Keyword `json:"keywords,omitempty" xml:"keywords>keyword,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaKeywordsvonAddResponse struct {
-
-    // 关键词列表
-    Keywords   []Keyword `json:"keywords,omitempty"`
-
+    
 }

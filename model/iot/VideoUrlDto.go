@@ -1,71 +1,41 @@
 package iot
 
 // VideoUrlDto 
-/* model for simplify = false
 type VideoUrlDto struct {
 
     // 视频封面图
     
-    Cover  *struct {
-        ImageUrlDto  *ImageUrlDto `json:"image_url_dto,omitempty"`
-    } `json:"cover,omitempty"`
+    Cover   *ImageUrlDto `json:"cover,omitempty" xml:"cover,omitempty"`
     
 
     // 默认播放链接
     
-    DefaultUrl   string `json:"default_url,omitempty"`
+    DefaultUrl   string `json:"default_url,omitempty" xml:"default_url,omitempty"`
     
 
     // 视频高度
     
-    Height   int64 `json:"height,omitempty"`
+    Height   int64 `json:"height,omitempty" xml:"height,omitempty"`
     
 
     // 高清
     
-    High   string `json:"high,omitempty"`
+    High   string `json:"high,omitempty" xml:"high,omitempty"`
     
 
     // 标清
     
-    Standard   string `json:"standard,omitempty"`
+    Standard   string `json:"standard,omitempty" xml:"standard,omitempty"`
     
 
     // 超清
     
-    Ultra   string `json:"ultra,omitempty"`
+    Ultra   string `json:"ultra,omitempty" xml:"ultra,omitempty"`
     
 
     // 视频宽度
     
-    Width   int64 `json:"width,omitempty"`
+    Width   int64 `json:"width,omitempty" xml:"width,omitempty"`
     
-
-}
-*/
-
-// VideoUrlDto 
-type VideoUrlDto struct {
-
-    // 视频封面图
-    Cover   *ImageUrlDto `json:"cover,omitempty"`
-
-    // 默认播放链接
-    DefaultUrl   string `json:"default_url,omitempty"`
-
-    // 视频高度
-    Height   int64 `json:"height,omitempty"`
-
-    // 高清
-    High   string `json:"high,omitempty"`
-
-    // 标清
-    Standard   string `json:"standard,omitempty"`
-
-    // 超清
-    Ultra   string `json:"ultra,omitempty"`
-
-    // 视频宽度
-    Width   int64 `json:"width,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.jds.trade.traces.get
 */
 type TaobaoJdsTradeTracesGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJdsTradeTracesGetResponse `json:"jds_trade_traces_get_response,omitempty"` 
     TaobaoJdsTradeTracesGetResponse
 }
 
-/* model for simplify = false
 type TaobaoJdsTradeTracesGetResponse struct {
+    XMLName xml.Name `xml:"jds_trade_traces_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 跟踪信息列表
     
-    Traces  struct {
-        TradeTrace  []TradeTrace `json:"trade_trace,omitempty"`
-    } `json:"traces,omitempty"`
+    Traces   []TradeTrace `json:"traces,omitempty" xml:"traces>trade_trace,omitempty"`
     
-
+    
     // 在订单全链路系统中的状态(比如是否存在)
     
-    UserStatus   string `json:"user_status,omitempty"`
+    UserStatus   string `json:"user_status,omitempty" xml:"user_status,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoJdsTradeTracesGetResponse struct {
-
-    // 跟踪信息列表
-    Traces   []TradeTrace `json:"traces,omitempty"`
-
-    // 在订单全链路系统中的状态(比如是否存在)
-    UserStatus   string `json:"user_status,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.marketing.itempool.queryactivity
 */
 type AlibabaWdkMarketingItempoolQueryactivityAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkMarketingItempoolQueryactivityResponse `json:"alibaba_wdk_marketing_itempool_queryactivity_response,omitempty"` 
     AlibabaWdkMarketingItempoolQueryactivityResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkMarketingItempoolQueryactivityResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_marketing_itempool_queryactivity_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 查询返回结果
     
-    Result  *struct {
-        MarketResult  *MarketResult `json:"market_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *MarketResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkMarketingItempoolQueryactivityResponse struct {
-
-    // 查询返回结果
-    Result   *MarketResult `json:"result,omitempty"`
-
 }

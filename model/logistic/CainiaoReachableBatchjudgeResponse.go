@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ cainiao.reachable.batchjudge
 */
 type CainiaoReachableBatchjudgeAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoReachableBatchjudgeResponse `json:"cainiao_reachable_batchjudge_response,omitempty"` 
     CainiaoReachableBatchjudgeResponse
 }
 
-/* model for simplify = false
 type CainiaoReachableBatchjudgeResponse struct {
+    XMLName xml.Name `xml:"cainiao_reachable_batchjudge_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        BaseResultDto  *BaseResultDto `json:"base_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *BaseResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoReachableBatchjudgeResponse struct {
-
-    // 结果
-    Result   *BaseResultDto `json:"result,omitempty"`
-
 }

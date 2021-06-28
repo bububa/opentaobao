@@ -1,51 +1,26 @@
 package security
 
 // RpSubmitResult 
-/* model for simplify = false
 type RpSubmitResult struct {
 
     // extraInfo
     
-    ExtraInfo   string `json:"extra_info,omitempty"`
+    ExtraInfo   string `json:"extra_info,omitempty" xml:"extra_info,omitempty"`
     
 
     // rpAuditResult
     
-    RpAuditResult  *struct {
-        RpAuditResult  *RpAuditResult `json:"rp_audit_result,omitempty"`
-    } `json:"rp_audit_result,omitempty"`
+    RpAuditResult   *RpAuditResult `json:"rp_audit_result,omitempty" xml:"rp_audit_result,omitempty"`
     
 
     // steps
     
-    Steps  struct {
-        RpStepItem  []RpStepItem `json:"rp_step_item,omitempty"`
-    } `json:"steps,omitempty"`
+    Steps   []RpStepItem `json:"steps,omitempty" xml:"steps,omitempty"`
     
 
     // uploadToken
     
-    UploadToken  *struct {
-        StsUploadToken  *StsUploadToken `json:"sts_upload_token,omitempty"`
-    } `json:"upload_token,omitempty"`
+    UploadToken   *StsUploadToken `json:"upload_token,omitempty" xml:"upload_token,omitempty"`
     
-
-}
-*/
-
-// RpSubmitResult 
-type RpSubmitResult struct {
-
-    // extraInfo
-    ExtraInfo   string `json:"extra_info,omitempty"`
-
-    // rpAuditResult
-    RpAuditResult   *RpAuditResult `json:"rp_audit_result,omitempty"`
-
-    // steps
-    Steps   []RpStepItem `json:"steps,omitempty"`
-
-    // uploadToken
-    UploadToken   *StsUploadToken `json:"upload_token,omitempty"`
 
 }

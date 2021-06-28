@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.product.group.get
 */
 type AlibabaScbpProductGroupGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpProductGroupGetResponse `json:"alibaba_scbp_product_group_get_response,omitempty"` 
     AlibabaScbpProductGroupGetResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpProductGroupGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_product_group_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 下一层分组列表
     
-    RoductGroupList  struct {
-        TopProductGroupDto  []TopProductGroupDto `json:"top_product_group_dto,omitempty"`
-    } `json:"roduct_group_list,omitempty"`
+    RoductGroupList   []TopProductGroupDto `json:"roduct_group_list,omitempty" xml:"roduct_group_list>top_product_group_dto,omitempty"`
     
-
-}
-*/
-
-type AlibabaScbpProductGroupGetResponse struct {
-
-    // 下一层分组列表
-    RoductGroupList   []TopProductGroupDto `json:"roduct_group_list,omitempty"`
-
+    
 }

@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.car.lease.tailpaymentback
 */
 type TmallCarLeaseTailpaymentbackAPIResponse struct {
     model.CommonResponse
-    // Response *TmallCarLeaseTailpaymentbackResponse `json:"tmall_car_lease_tailpaymentback_response,omitempty"` 
     TmallCarLeaseTailpaymentbackResponse
 }
 
-/* model for simplify = false
 type TmallCarLeaseTailpaymentbackResponse struct {
+    XMLName xml.Name `xml:"tmall_car_lease_tailpaymentback_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TmallCarLeaseTailpaymentbackResult  *TmallCarLeaseTailpaymentbackResult `json:"tmall_car_lease_tailpaymentback_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallCarLeaseTailpaymentbackResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallCarLeaseTailpaymentbackResponse struct {
-
-    // result
-    Result   *TmallCarLeaseTailpaymentbackResult `json:"result,omitempty"`
-
 }

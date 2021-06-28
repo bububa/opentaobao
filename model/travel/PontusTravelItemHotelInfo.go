@@ -1,39 +1,21 @@
 package travel
 
 // PontusTravelItemHotelInfo 
-/* model for simplify = false
 type PontusTravelItemHotelInfo struct {
 
     // 酒店描述文本，<1500字符 酒店结构化信息和文本描述二选一
     
-    HotelDesc   string `json:"hotel_desc,omitempty"`
+    HotelDesc   string `json:"hotel_desc,omitempty" xml:"hotel_desc,omitempty"`
     
 
     // 必填，默认为0 必须大于等于0, 且小于或等于行程晚数
     
-    HotelDays   int64 `json:"hotel_days,omitempty"`
+    HotelDays   int64 `json:"hotel_days,omitempty" xml:"hotel_days,omitempty"`
     
 
     // 结构化酒店信息 酒店结构化信息和文本描述二选一
     
-    HotelList  struct {
-        PontusTravelItemHotel  []PontusTravelItemHotel `json:"pontus_travel_item_hotel,omitempty"`
-    } `json:"hotel_list,omitempty"`
+    HotelList   []PontusTravelItemHotel `json:"hotel_list,omitempty" xml:"hotel_list,omitempty"`
     
-
-}
-*/
-
-// PontusTravelItemHotelInfo 
-type PontusTravelItemHotelInfo struct {
-
-    // 酒店描述文本，<1500字符 酒店结构化信息和文本描述二选一
-    HotelDesc   string `json:"hotel_desc,omitempty"`
-
-    // 必填，默认为0 必须大于等于0, 且小于或等于行程晚数
-    HotelDays   int64 `json:"hotel_days,omitempty"`
-
-    // 结构化酒店信息 酒店结构化信息和文本描述二选一
-    HotelList   []PontusTravelItemHotel `json:"hotel_list,omitempty"`
 
 }

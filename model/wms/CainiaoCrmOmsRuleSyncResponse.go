@@ -1,6 +1,8 @@
 package wms
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ cainiao.crm.oms.rule.sync
 */
 type CainiaoCrmOmsRuleSyncAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoCrmOmsRuleSyncResponse `json:"cainiao_crm_oms_rule_sync_response,omitempty"` 
     CainiaoCrmOmsRuleSyncResponse
 }
 
-/* model for simplify = false
 type CainiaoCrmOmsRuleSyncResponse struct {
+    XMLName xml.Name `xml:"cainiao_crm_oms_rule_sync_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // success
     
-    WlSuccess   bool `json:"wl_success,omitempty"`
-    
+    WlSuccess   bool `json:"wl_success,omitempty" xml:"wl_success,omitempty"`
 
+    
     // errorCode
     
-    WlErrorCode   string `json:"wl_error_code,omitempty"`
-    
+    WlErrorCode   string `json:"wl_error_code,omitempty" xml:"wl_error_code,omitempty"`
 
+    
     // errorMsg
     
-    WlErrorMsg   string `json:"wl_error_msg,omitempty"`
+    WlErrorMsg   string `json:"wl_error_msg,omitempty" xml:"wl_error_msg,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoCrmOmsRuleSyncResponse struct {
-
-    // success
-    WlSuccess   bool `json:"wl_success,omitempty"`
-
-    // errorCode
-    WlErrorCode   string `json:"wl_error_code,omitempty"`
-
-    // errorMsg
-    WlErrorMsg   string `json:"wl_error_msg,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.subway.wordpackage.get
 */
 type TaobaoSubwayWordpackageGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSubwayWordpackageGetResponse `json:"subway_wordpackage_get_response,omitempty"` 
     TaobaoSubwayWordpackageGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSubwayWordpackageGetResponse struct {
+    XMLName xml.Name `xml:"subway_wordpackage_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 词包结果列表
     
-    ResultList  struct {
-        SiriusItemWordPackageDto  []SiriusItemWordPackageDto `json:"sirius_item_word_package_dto,omitempty"`
-    } `json:"result_list,omitempty"`
+    ResultList   []SiriusItemWordPackageDto `json:"result_list,omitempty" xml:"result_list>sirius_item_word_package_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSubwayWordpackageGetResponse struct {
-
-    // 词包结果列表
-    ResultList   []SiriusItemWordPackageDto `json:"result_list,omitempty"`
-
+    
 }

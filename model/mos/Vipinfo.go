@@ -1,61 +1,36 @@
 package mos
 
 // Vipinfo 
-/* model for simplify = false
 type Vipinfo struct {
 
     // 会员账号
     
-    Integral   string `json:"integral,omitempty"`
+    Integral   string `json:"integral,omitempty" xml:"integral,omitempty"`
     
 
     // 会员卡号
     
-    Cardid   string `json:"cardid,omitempty"`
+    Cardid   string `json:"cardid,omitempty" xml:"cardid,omitempty"`
     
 
     // 会员卡类别
     
-    Hyklb   string `json:"hyklb,omitempty"`
+    Hyklb   string `json:"hyklb,omitempty" xml:"hyklb,omitempty"`
     
 
     // 折扣卡类别
     
-    Zkklb   string `json:"zkklb,omitempty"`
+    Zkklb   string `json:"zkklb,omitempty" xml:"zkklb,omitempty"`
     
 
     // 会员手机号
     
-    Memo   string `json:"memo,omitempty"`
+    Memo   string `json:"memo,omitempty" xml:"memo,omitempty"`
     
 
     // 喵街会员类别
     
-    Alicardtype   string `json:"alicardtype,omitempty"`
+    Alicardtype   string `json:"alicardtype,omitempty" xml:"alicardtype,omitempty"`
     
-
-}
-*/
-
-// Vipinfo 
-type Vipinfo struct {
-
-    // 会员账号
-    Integral   string `json:"integral,omitempty"`
-
-    // 会员卡号
-    Cardid   string `json:"cardid,omitempty"`
-
-    // 会员卡类别
-    Hyklb   string `json:"hyklb,omitempty"`
-
-    // 折扣卡类别
-    Zkklb   string `json:"zkklb,omitempty"`
-
-    // 会员手机号
-    Memo   string `json:"memo,omitempty"`
-
-    // 喵街会员类别
-    Alicardtype   string `json:"alicardtype,omitempty"`
 
 }

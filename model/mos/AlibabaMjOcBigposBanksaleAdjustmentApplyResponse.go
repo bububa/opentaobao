@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,16 +14,11 @@ alibaba.mj.oc.bigpos.banksale.adjustment.apply
 */
 type AlibabaMjOcBigposBanksaleAdjustmentApplyAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMjOcBigposBanksaleAdjustmentApplyResponse `json:"alibaba_mj_oc_bigpos_banksale_adjustment_apply_response,omitempty"` 
     AlibabaMjOcBigposBanksaleAdjustmentApplyResponse
 }
 
-/* model for simplify = false
 type AlibabaMjOcBigposBanksaleAdjustmentApplyResponse struct {
-
-}
-*/
-
-type AlibabaMjOcBigposBanksaleAdjustmentApplyResponse struct {
+    XMLName xml.Name `xml:"alibaba_mj_oc_bigpos_banksale_adjustment_apply_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
 }

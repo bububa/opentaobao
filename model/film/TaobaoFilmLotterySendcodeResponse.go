@@ -1,6 +1,8 @@
 package film
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.film.lottery.sendcode
 */
 type TaobaoFilmLotterySendcodeAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFilmLotterySendcodeResponse `json:"film_lottery_sendcode_response,omitempty"` 
     TaobaoFilmLotterySendcodeResponse
 }
 
-/* model for simplify = false
 type TaobaoFilmLotterySendcodeResponse struct {
+    XMLName xml.Name `xml:"film_lottery_sendcode_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        ResultGeneralModel  *ResultGeneralModel `json:"result_general_model,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ResultGeneralModel `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFilmLotterySendcodeResponse struct {
-
-    // result
-    Result   *ResultGeneralModel `json:"result,omitempty"`
-
 }

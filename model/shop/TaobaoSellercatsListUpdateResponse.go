@@ -1,6 +1,8 @@
 package shop
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.sellercats.list.update
 */
 type TaobaoSellercatsListUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSellercatsListUpdateResponse `json:"sellercats_list_update_response,omitempty"` 
     TaobaoSellercatsListUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoSellercatsListUpdateResponse struct {
+    XMLName xml.Name `xml:"sellercats_list_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回sellercat数据结构中的：cid,modified
     
-    SellerCat  *struct {
-        SellerCat  *SellerCat `json:"seller_cat,omitempty"`
-    } `json:"seller_cat,omitempty"`
+    SellerCat   *SellerCat `json:"seller_cat,omitempty" xml:"seller_cat,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSellercatsListUpdateResponse struct {
-
-    // 返回sellercat数据结构中的：cid,modified
-    SellerCat   *SellerCat `json:"seller_cat,omitempty"`
-
 }

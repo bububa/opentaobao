@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.wlb.subscription.query
 */
 type TaobaoWlbSubscriptionQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbSubscriptionQueryResponse `json:"wlb_subscription_query_response,omitempty"` 
     TaobaoWlbSubscriptionQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbSubscriptionQueryResponse struct {
+    XMLName xml.Name `xml:"wlb_subscription_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果总数
     
-    TotalCount   int64 `json:"total_count,omitempty"`
-    
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
 
+    
     // 卖家定购的服务列表
     
-    SellerSubscriptionList  struct {
-        WlbSellerSubscription  []WlbSellerSubscription `json:"wlb_seller_subscription,omitempty"`
-    } `json:"seller_subscription_list,omitempty"`
+    SellerSubscriptionList   []WlbSellerSubscription `json:"seller_subscription_list,omitempty" xml:"seller_subscription_list>wlb_seller_subscription,omitempty"`
     
-
-}
-*/
-
-type TaobaoWlbSubscriptionQueryResponse struct {
-
-    // 结果总数
-    TotalCount   int64 `json:"total_count,omitempty"`
-
-    // 卖家定购的服务列表
-    SellerSubscriptionList   []WlbSellerSubscription `json:"seller_subscription_list,omitempty"`
-
+    
 }

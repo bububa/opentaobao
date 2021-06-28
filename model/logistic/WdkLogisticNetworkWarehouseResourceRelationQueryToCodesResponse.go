@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ wdk.logistic.network.warehouse.resource.relation.query.to.codes
 */
 type WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIResponse struct {
     model.CommonResponse
-    // Response *WdkLogisticNetworkWarehouseResourceRelationQueryToCodesResponse `json:"wdk_logistic_network_warehouse_resource_relation_query_to_codes_response,omitempty"` 
     WdkLogisticNetworkWarehouseResourceRelationQueryToCodesResponse
 }
 
-/* model for simplify = false
 type WdkLogisticNetworkWarehouseResourceRelationQueryToCodesResponse struct {
+    XMLName xml.Name `xml:"wdk_logistic_network_warehouse_resource_relation_query_to_codes_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        LogisticsResult  *LogisticsResult `json:"logistics_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *LogisticsResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type WdkLogisticNetworkWarehouseResourceRelationQueryToCodesResponse struct {
-
-    // 返回值
-    Result   *LogisticsResult `json:"result,omitempty"`
-
 }

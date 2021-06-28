@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ ASCP渠道中心销售单创建接口
 */
 type TmallAscpOrdersSaleCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TmallAscpOrdersSaleCreateResponse `json:"tmall_ascp_orders_sale_create_response,omitempty"` 
     TmallAscpOrdersSaleCreateResponse
 }
 
-/* model for simplify = false
 type TmallAscpOrdersSaleCreateResponse struct {
+    XMLName xml.Name `xml:"tmall_ascp_orders_sale_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TmallAscpOrdersSaleCreateResultDo  *TmallAscpOrdersSaleCreateResultDo `json:"tmall_ascp_orders_sale_create_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallAscpOrdersSaleCreateResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallAscpOrdersSaleCreateResponse struct {
-
-    // result
-    Result   *TmallAscpOrdersSaleCreateResultDo `json:"result,omitempty"`
-
 }

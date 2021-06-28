@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.trade.voucher.upload
 */
 type TaobaoTradeVoucherUploadAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTradeVoucherUploadResponse `json:"trade_voucher_upload_response,omitempty"` 
     TaobaoTradeVoucherUploadResponse
 }
 
-/* model for simplify = false
 type TaobaoTradeVoucherUploadResponse struct {
+    XMLName xml.Name `xml:"trade_voucher_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 上传到多媒体平台的文件
     
-    File  *struct {
-        File  *File `json:"file,omitempty"`
-    } `json:"file,omitempty"`
+    File   *File `json:"file,omitempty" xml:"file,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTradeVoucherUploadResponse struct {
-
-    // 上传到多媒体平台的文件
-    File   *File `json:"file,omitempty"`
-
 }

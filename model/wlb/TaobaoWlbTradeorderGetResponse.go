@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wlb.tradeorder.get
 */
 type TaobaoWlbTradeorderGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbTradeorderGetResponse `json:"wlb_tradeorder_get_response,omitempty"` 
     TaobaoWlbTradeorderGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbTradeorderGetResponse struct {
+    XMLName xml.Name `xml:"wlb_tradeorder_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 物流宝订单对象
     
-    WlbOrderList  struct {
-        WlbOrder  []WlbOrder `json:"wlb_order,omitempty"`
-    } `json:"wlb_order_list,omitempty"`
+    WlbOrderList   []WlbOrder `json:"wlb_order_list,omitempty" xml:"wlb_order_list>wlb_order,omitempty"`
     
-
-}
-*/
-
-type TaobaoWlbTradeorderGetResponse struct {
-
-    // 物流宝订单对象
-    WlbOrderList   []WlbOrder `json:"wlb_order_list,omitempty"`
-
+    
 }

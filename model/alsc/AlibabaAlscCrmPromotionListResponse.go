@@ -1,6 +1,8 @@
 package alsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alsc.crm.promotion.list
 */
 type AlibabaAlscCrmPromotionListAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlscCrmPromotionListResponse `json:"alibaba_alsc_crm_promotion_list_response,omitempty"` 
     AlibabaAlscCrmPromotionListResponse
 }
 
-/* model for simplify = false
 type AlibabaAlscCrmPromotionListResponse struct {
+    XMLName xml.Name `xml:"alibaba_alsc_crm_promotion_list_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 分页返回模型
     
-    Result  *struct {
-        CommonPageResult  *CommonPageResult `json:"common_page_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CommonPageResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlscCrmPromotionListResponse struct {
-
-    // 分页返回模型
-    Result   *CommonPageResult `json:"result,omitempty"`
-
 }

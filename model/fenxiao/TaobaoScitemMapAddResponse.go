@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.scitem.map.add
 */
 type TaobaoScitemMapAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoScitemMapAddResponse `json:"scitem_map_add_response,omitempty"` 
     TaobaoScitemMapAddResponse
 }
 
-/* model for simplify = false
 type TaobaoScitemMapAddResponse struct {
+    XMLName xml.Name `xml:"scitem_map_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口调用返回结果信息：商家编码
     
-    OuterCode   string `json:"outer_code,omitempty"`
+    OuterCode   string `json:"outer_code,omitempty" xml:"outer_code,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoScitemMapAddResponse struct {
-
-    // 接口调用返回结果信息：商家编码
-    OuterCode   string `json:"outer_code,omitempty"`
-
 }

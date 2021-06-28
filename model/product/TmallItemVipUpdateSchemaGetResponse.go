@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ tmall.item.vip.update.schema.get
 */
 type TmallItemVipUpdateSchemaGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallItemVipUpdateSchemaGetResponse `json:"tmall_item_vip_update_schema_get_response,omitempty"` 
     TmallItemVipUpdateSchemaGetResponse
 }
 
-/* model for simplify = false
 type TmallItemVipUpdateSchemaGetResponse struct {
+    XMLName xml.Name `xml:"tmall_item_vip_update_schema_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 获取的编辑商品的规则
     
-    UpdateGetResult   string `json:"update_get_result,omitempty"`
+    UpdateGetResult   string `json:"update_get_result,omitempty" xml:"update_get_result,omitempty"`
+
     
-
-}
-*/
-
-type TmallItemVipUpdateSchemaGetResponse struct {
-
-    // 获取的编辑商品的规则
-    UpdateGetResult   string `json:"update_get_result,omitempty"`
-
 }

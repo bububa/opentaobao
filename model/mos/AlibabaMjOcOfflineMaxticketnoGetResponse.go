@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,56 +14,36 @@ alibaba.mj.oc.offline.maxticketno.get
 */
 type AlibabaMjOcOfflineMaxticketnoGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMjOcOfflineMaxticketnoGetResponse `json:"alibaba_mj_oc_offline_maxticketno_get_response,omitempty"` 
     AlibabaMjOcOfflineMaxticketnoGetResponse
 }
 
-/* model for simplify = false
 type AlibabaMjOcOfflineMaxticketnoGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_mj_oc_offline_maxticketno_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 时间
     
-    PayDate   string `json:"pay_date,omitempty"`
-    
+    PayDate   string `json:"pay_date,omitempty" xml:"pay_date,omitempty"`
 
+    
     // 收银机号
     
-    PosNo   string `json:"pos_no,omitempty"`
-    
+    PosNo   string `json:"pos_no,omitempty" xml:"pos_no,omitempty"`
 
+    
     // 联合收银标记
     
-    Union   bool `json:"union,omitempty"`
-    
+    Union   bool `json:"union,omitempty" xml:"union,omitempty"`
 
+    
     // 小票号
     
-    PayNo   string `json:"pay_no,omitempty"`
-    
+    PayNo   string `json:"pay_no,omitempty" xml:"pay_no,omitempty"`
 
+    
     // 外部门店号
     
-    StoreNo   string `json:"store_no,omitempty"`
+    StoreNo   string `json:"store_no,omitempty" xml:"store_no,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMjOcOfflineMaxticketnoGetResponse struct {
-
-    // 时间
-    PayDate   string `json:"pay_date,omitempty"`
-
-    // 收银机号
-    PosNo   string `json:"pos_no,omitempty"`
-
-    // 联合收银标记
-    Union   bool `json:"union,omitempty"`
-
-    // 小票号
-    PayNo   string `json:"pay_no,omitempty"`
-
-    // 外部门店号
-    StoreNo   string `json:"store_no,omitempty"`
-
 }

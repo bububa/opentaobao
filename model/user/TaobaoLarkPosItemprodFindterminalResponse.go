@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.lark.pos.itemprod.findterminal
 */
 type TaobaoLarkPosItemprodFindterminalAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLarkPosItemprodFindterminalResponse `json:"lark_pos_itemprod_findterminal_response,omitempty"` 
     TaobaoLarkPosItemprodFindterminalResponse
 }
 
-/* model for simplify = false
 type TaobaoLarkPosItemprodFindterminalResponse struct {
+    XMLName xml.Name `xml:"lark_pos_itemprod_findterminal_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 终端配置信息响应
     
-    Data   string `json:"data,omitempty"`
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoLarkPosItemprodFindterminalResponse struct {
-
-    // 终端配置信息响应
-    Data   string `json:"data,omitempty"`
-
 }

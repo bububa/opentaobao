@@ -1,6 +1,8 @@
 package crm
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.crm.exchange.crowdinstance.add
 */
 type TaobaoCrmExchangeCrowdinstanceAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoCrmExchangeCrowdinstanceAddResponse `json:"crm_exchange_crowdinstance_add_response,omitempty"` 
     TaobaoCrmExchangeCrowdinstanceAddResponse
 }
 
-/* model for simplify = false
 type TaobaoCrmExchangeCrowdinstanceAddResponse struct {
+    XMLName xml.Name `xml:"crm_exchange_crowdinstance_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用是否成功
     
-    SubSuccess   bool `json:"sub_success,omitempty"`
+    SubSuccess   bool `json:"sub_success,omitempty" xml:"sub_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoCrmExchangeCrowdinstanceAddResponse struct {
-
-    // 调用是否成功
-    SubSuccess   bool `json:"sub_success,omitempty"`
-
 }

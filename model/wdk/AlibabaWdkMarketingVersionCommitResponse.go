@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.marketing.version.commit
 */
 type AlibabaWdkMarketingVersionCommitAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkMarketingVersionCommitResponse `json:"alibaba_wdk_marketing_version_commit_response,omitempty"` 
     AlibabaWdkMarketingVersionCommitResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkMarketingVersionCommitResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_marketing_version_commit_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        MarketResult  *MarketResult `json:"market_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *MarketResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkMarketingVersionCommitResponse struct {
-
-    // result
-    Result   *MarketResult `json:"result,omitempty"`
-
 }

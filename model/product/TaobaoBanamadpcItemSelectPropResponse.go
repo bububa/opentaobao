@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.banamadpc.item.select.prop
 */
 type TaobaoBanamadpcItemSelectPropAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBanamadpcItemSelectPropResponse `json:"banamadpc_item_select_prop_response,omitempty"` 
     TaobaoBanamadpcItemSelectPropResponse
 }
 
-/* model for simplify = false
 type TaobaoBanamadpcItemSelectPropResponse struct {
+    XMLName xml.Name `xml:"banamadpc_item_select_prop_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 无
     
-    ApiResult  *struct {
-        TaobaoBanamadpcItemSelectPropApiResult  *TaobaoBanamadpcItemSelectPropApiResult `json:"taobao_banamadpc_item_select_prop_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *TaobaoBanamadpcItemSelectPropApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBanamadpcItemSelectPropResponse struct {
-
-    // 无
-    ApiResult   *TaobaoBanamadpcItemSelectPropApiResult `json:"api_result,omitempty"`
-
 }

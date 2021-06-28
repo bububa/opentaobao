@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.car.leaseorder.get
 */
 type TmallCarLeaseorderGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallCarLeaseorderGetResponse `json:"tmall_car_leaseorder_get_response,omitempty"` 
     TmallCarLeaseorderGetResponse
 }
 
-/* model for simplify = false
 type TmallCarLeaseorderGetResponse struct {
+    XMLName xml.Name `xml:"tmall_car_leaseorder_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        ResultVo  *ResultVo `json:"result_vo,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ResultVo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallCarLeaseorderGetResponse struct {
-
-    // 结果
-    Result   *ResultVo `json:"result,omitempty"`
-
 }

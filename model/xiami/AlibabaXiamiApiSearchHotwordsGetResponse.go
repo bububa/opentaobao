@@ -1,6 +1,8 @@
 package xiami
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.xiami.api.search.hotwords.get
 */
 type AlibabaXiamiApiSearchHotwordsGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaXiamiApiSearchHotwordsGetResponse `json:"alibaba_xiami_api_search_hotwords_get_response,omitempty"` 
     AlibabaXiamiApiSearchHotwordsGetResponse
 }
 
-/* model for simplify = false
 type AlibabaXiamiApiSearchHotwordsGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_xiami_api_search_hotwords_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    SearchHotWordsResult  *struct {
-        AlibabaXiamiApiSearchHotwordsGetStruct  *AlibabaXiamiApiSearchHotwordsGetStruct `json:"alibaba_xiami_api_search_hotwords_get_struct,omitempty"`
-    } `json:"search_hot_words_result,omitempty"`
+    SearchHotWordsResult   *AlibabaXiamiApiSearchHotwordsGetStruct `json:"search_hot_words_result,omitempty" xml:"search_hot_words_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaXiamiApiSearchHotwordsGetResponse struct {
-
-    // 返回结果
-    SearchHotWordsResult   *AlibabaXiamiApiSearchHotwordsGetStruct `json:"search_hot_words_result,omitempty"`
-
 }

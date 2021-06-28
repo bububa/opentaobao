@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,58 +14,36 @@ alibaba.baichuan.ctg.content.get
 */
 type AlibabaBaichuanCtgContentGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaBaichuanCtgContentGetResponse `json:"alibaba_baichuan_ctg_content_get_response,omitempty"` 
     AlibabaBaichuanCtgContentGetResponse
 }
 
-/* model for simplify = false
 type AlibabaBaichuanCtgContentGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_baichuan_ctg_content_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // errorMessage
     
-    ErrMessage   string `json:"err_message,omitempty"`
-    
+    ErrMessage   string `json:"err_message,omitempty" xml:"err_message,omitempty"`
 
+    
     // hasNext
     
-    HasNext   bool `json:"has_next,omitempty"`
-    
+    HasNext   bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
 
+    
     // errorCode
     
-    ErrCode   string `json:"err_code,omitempty"`
-    
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
 
+    
     // data
     
-    DataList  struct {
-        AlibabaBaichuanCtgContentGetData  []AlibabaBaichuanCtgContentGetData `json:"alibaba_baichuan_ctg_content_get_data,omitempty"`
-    } `json:"data_list,omitempty"`
+    DataList   []AlibabaBaichuanCtgContentGetData `json:"data_list,omitempty" xml:"data_list>alibaba_baichuan_ctg_content_get_data,omitempty"`
     
-
+    
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaBaichuanCtgContentGetResponse struct {
-
-    // errorMessage
-    ErrMessage   string `json:"err_message,omitempty"`
-
-    // hasNext
-    HasNext   bool `json:"has_next,omitempty"`
-
-    // errorCode
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // data
-    DataList   []AlibabaBaichuanCtgContentGetData `json:"data_list,omitempty"`
-
-    // success
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

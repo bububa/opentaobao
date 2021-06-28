@@ -1,45 +1,26 @@
 package product
 
 // TaobaoBaikeImportZhubaoPictureResult 
-/* model for simplify = false
 type TaobaoBaikeImportZhubaoPictureResult struct {
 
     // message
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // messageCode
     
-    MessageCode   string `json:"message_code,omitempty"`
+    MessageCode   string `json:"message_code,omitempty" xml:"message_code,omitempty"`
     
 
     // module
     
-    Module   string `json:"module,omitempty"`
+    Module   string `json:"module,omitempty" xml:"module,omitempty"`
     
-
-}
-*/
-
-// TaobaoBaikeImportZhubaoPictureResult 
-type TaobaoBaikeImportZhubaoPictureResult struct {
-
-    // message
-    Message   string `json:"message,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
-
-    // messageCode
-    MessageCode   string `json:"message_code,omitempty"`
-
-    // module
-    Module   string `json:"module,omitempty"`
 
 }

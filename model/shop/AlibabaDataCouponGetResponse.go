@@ -1,6 +1,8 @@
 package shop
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.data.coupon.get
 */
 type AlibabaDataCouponGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaDataCouponGetResponse `json:"alibaba_data_coupon_get_response,omitempty"` 
     AlibabaDataCouponGetResponse
 }
 
-/* model for simplify = false
 type AlibabaDataCouponGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_data_coupon_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // unnamed
     
-    Unnamed   string `json:"unnamed,omitempty"`
+    Unnamed   string `json:"unnamed,omitempty" xml:"unnamed,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaDataCouponGetResponse struct {
-
-    // unnamed
-    Unnamed   string `json:"unnamed,omitempty"`
-
 }

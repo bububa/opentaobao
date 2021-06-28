@@ -1,6 +1,8 @@
 package eticket
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ taobao.eticket.merchant.tbma.get
 */
 type TaobaoEticketMerchantTbmaGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoEticketMerchantTbmaGetResponse `json:"eticket_merchant_tbma_get_response,omitempty"` 
     TaobaoEticketMerchantTbmaGetResponse
 }
 
-/* model for simplify = false
 type TaobaoEticketMerchantTbmaGetResponse struct {
+    XMLName xml.Name `xml:"eticket_merchant_tbma_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // respBody
     
-    RespBody  *struct {
-        QueryTbMaCallbackResp  *QueryTbMaCallbackResp `json:"query_tb_ma_callback_resp,omitempty"`
-    } `json:"resp_body,omitempty"`
-    
+    RespBody   *QueryTbMaCallbackResp `json:"resp_body,omitempty" xml:"resp_body,omitempty"`
 
+    
     // subCode
     
-    RetCode   string `json:"ret_code,omitempty"`
-    
+    RetCode   string `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 
+    
     // subMsg
     
-    RetMsg   string `json:"ret_msg,omitempty"`
+    RetMsg   string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoEticketMerchantTbmaGetResponse struct {
-
-    // respBody
-    RespBody   *QueryTbMaCallbackResp `json:"resp_body,omitempty"`
-
-    // subCode
-    RetCode   string `json:"ret_code,omitempty"`
-
-    // subMsg
-    RetMsg   string `json:"ret_msg,omitempty"`
-
 }

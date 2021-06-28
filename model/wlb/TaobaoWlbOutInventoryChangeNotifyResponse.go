@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.wlb.out.inventory.change.notify
 */
 type TaobaoWlbOutInventoryChangeNotifyAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbOutInventoryChangeNotifyResponse `json:"wlb_out_inventory_change_notify_response,omitempty"` 
     TaobaoWlbOutInventoryChangeNotifyResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbOutInventoryChangeNotifyResponse struct {
+    XMLName xml.Name `xml:"wlb_out_inventory_change_notify_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 库存变化通知成功时间
     
-    GmtModified   string `json:"gmt_modified,omitempty"`
+    GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbOutInventoryChangeNotifyResponse struct {
-
-    // 库存变化通知成功时间
-    GmtModified   string `json:"gmt_modified,omitempty"`
-
 }

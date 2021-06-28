@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.appip.get
 */
 type TaobaoAppipGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAppipGetResponse `json:"appip_get_response,omitempty"` 
     TaobaoAppipGetResponse
 }
 
-/* model for simplify = false
 type TaobaoAppipGetResponse struct {
+    XMLName xml.Name `xml:"appip_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // ISV发起请求服务器IP
     
-    Ip   string `json:"ip,omitempty"`
+    Ip   string `json:"ip,omitempty" xml:"ip,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAppipGetResponse struct {
-
-    // ISV发起请求服务器IP
-    Ip   string `json:"ip,omitempty"`
-
 }

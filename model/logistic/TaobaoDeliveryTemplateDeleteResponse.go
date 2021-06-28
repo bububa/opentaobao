@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.delivery.template.delete
 */
 type TaobaoDeliveryTemplateDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoDeliveryTemplateDeleteResponse `json:"delivery_template_delete_response,omitempty"` 
     TaobaoDeliveryTemplateDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoDeliveryTemplateDeleteResponse struct {
+    XMLName xml.Name `xml:"delivery_template_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 表示删除成功还是失败
     
-    Complete   bool `json:"complete,omitempty"`
+    Complete   bool `json:"complete,omitempty" xml:"complete,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoDeliveryTemplateDeleteResponse struct {
-
-    // 表示删除成功还是失败
-    Complete   bool `json:"complete,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -13,36 +15,21 @@ taobao.inventory.query
 */
 type TaobaoInventoryQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoInventoryQueryResponse `json:"inventory_query_response,omitempty"` 
     TaobaoInventoryQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoInventoryQueryResponse struct {
+    XMLName xml.Name `xml:"inventory_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品总体库存信息
     
-    ItemInventorys  struct {
-        InventorySum  []InventorySum `json:"inventory_sum,omitempty"`
-    } `json:"item_inventorys,omitempty"`
+    ItemInventorys   []InventorySum `json:"item_inventorys,omitempty" xml:"item_inventorys>inventory_sum,omitempty"`
     
-
+    
     // 提示信息，提示不存在的后端商品
     
-    TipInfos  struct {
-        TipInfo  []TipInfo `json:"tip_info,omitempty"`
-    } `json:"tip_infos,omitempty"`
+    TipInfos   []TipInfo `json:"tip_infos,omitempty" xml:"tip_infos>tip_info,omitempty"`
     
-
-}
-*/
-
-type TaobaoInventoryQueryResponse struct {
-
-    // 商品总体库存信息
-    ItemInventorys   []InventorySum `json:"item_inventorys,omitempty"`
-
-    // 提示信息，提示不存在的后端商品
-    TipInfos   []TipInfo `json:"tip_infos,omitempty"`
-
+    
 }

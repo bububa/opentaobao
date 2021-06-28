@@ -1,6 +1,8 @@
 package security
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.security.jaq.resource.fetch
 */
 type AlibabaSecurityJaqResourceFetchAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSecurityJaqResourceFetchResponse `json:"alibaba_security_jaq_resource_fetch_response,omitempty"` 
     AlibabaSecurityJaqResourceFetchResponse
 }
 
-/* model for simplify = false
 type AlibabaSecurityJaqResourceFetchResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_resource_fetch_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 获取资源结果
     
-    Data  *struct {
-        JaqResourceResult  *JaqResourceResult `json:"jaq_resource_result,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *JaqResourceResult `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSecurityJaqResourceFetchResponse struct {
-
-    // 获取资源结果
-    Data   *JaqResourceResult `json:"data,omitempty"`
-
 }

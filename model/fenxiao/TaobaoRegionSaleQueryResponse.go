@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.region.sale.query
 */
 type TaobaoRegionSaleQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRegionSaleQueryResponse `json:"region_sale_query_response,omitempty"` 
     TaobaoRegionSaleQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoRegionSaleQueryResponse struct {
+    XMLName xml.Name `xml:"region_sale_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        BaseResult  *BaseResult `json:"base_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRegionSaleQueryResponse struct {
-
-    // result
-    Result   *BaseResult `json:"result,omitempty"`
-
 }

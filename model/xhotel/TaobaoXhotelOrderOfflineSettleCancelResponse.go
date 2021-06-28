@@ -1,6 +1,8 @@
 package xhotel
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.xhotel.order.offline.settle.cancel
 */
 type TaobaoXhotelOrderOfflineSettleCancelAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoXhotelOrderOfflineSettleCancelResponse `json:"xhotel_order_offline_settle_cancel_response,omitempty"` 
     TaobaoXhotelOrderOfflineSettleCancelResponse
 }
 
-/* model for simplify = false
 type TaobaoXhotelOrderOfflineSettleCancelResponse struct {
+    XMLName xml.Name `xml:"xhotel_order_offline_settle_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回信息
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoXhotelOrderOfflineSettleCancelResponse struct {
-
-    // 返回信息
-    Result   string `json:"result,omitempty"`
-
 }

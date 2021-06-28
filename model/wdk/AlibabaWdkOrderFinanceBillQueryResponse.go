@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.order.finance.bill.query
 */
 type AlibabaWdkOrderFinanceBillQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkOrderFinanceBillQueryResponse `json:"alibaba_wdk_order_finance_bill_query_response,omitempty"` 
     AlibabaWdkOrderFinanceBillQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkOrderFinanceBillQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_order_finance_bill_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参
     
-    Result  *struct {
-        WdkOpenOrderFinanceBillQueryResult  *WdkOpenOrderFinanceBillQueryResult `json:"wdk_open_order_finance_bill_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *WdkOpenOrderFinanceBillQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkOrderFinanceBillQueryResponse struct {
-
-    // 出参
-    Result   *WdkOpenOrderFinanceBillQueryResult `json:"result,omitempty"`
-
 }

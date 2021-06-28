@@ -1,29 +1,16 @@
 package wdk
 
 // Reasonlist 
-/* model for simplify = false
 type Reasonlist struct {
 
     // 退款原因ID
     
-    ReasonId   int64 `json:"reason_id,omitempty"`
+    ReasonId   int64 `json:"reason_id,omitempty" xml:"reason_id,omitempty"`
     
 
     // 退款原因说明
     
-    ReasonText   string `json:"reason_text,omitempty"`
+    ReasonText   string `json:"reason_text,omitempty" xml:"reason_text,omitempty"`
     
-
-}
-*/
-
-// Reasonlist 
-type Reasonlist struct {
-
-    // 退款原因ID
-    ReasonId   int64 `json:"reason_id,omitempty"`
-
-    // 退款原因说明
-    ReasonText   string `json:"reason_text,omitempty"`
 
 }

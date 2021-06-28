@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.adgroupids.deleted.get
 */
 type TaobaoSimbaAdgroupidsDeletedGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaAdgroupidsDeletedGetResponse `json:"simba_adgroupids_deleted_get_response,omitempty"` 
     TaobaoSimbaAdgroupidsDeletedGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaAdgroupidsDeletedGetResponse struct {
+    XMLName xml.Name `xml:"simba_adgroupids_deleted_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推广组ID列表
     
-    DeletedAdgroupIds  struct {
-        Number  []int64 `json:"int64,omitempty"`
-    } `json:"deleted_adgroup_ids,omitempty"`
+    DeletedAdgroupIds   []int64 `json:"deleted_adgroup_ids,omitempty" xml:"deleted_adgroup_ids>int64,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaAdgroupidsDeletedGetResponse struct {
-
-    // 推广组ID列表
-    DeletedAdgroupIds   []int64 `json:"deleted_adgroup_ids,omitempty"`
-
+    
 }

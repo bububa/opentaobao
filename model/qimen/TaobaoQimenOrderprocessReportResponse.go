@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ WMS调用奇门的接口,将订单在仓库的状态回传给ERP；场景说明�
 */
 type TaobaoQimenOrderprocessReportAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenOrderprocessReportResponse `json:"qimen_orderprocess_report_response,omitempty"` 
     TaobaoQimenOrderprocessReportResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenOrderprocessReportResponse struct {
+    XMLName xml.Name `xml:"qimen_orderprocess_report_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenOrderprocessReportResponse struct {
-
-    // 
-    Response   *Response `json:"response,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package iot
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.device.item.promotion.get
 */
 type TmallDeviceItemPromotionGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallDeviceItemPromotionGetResponse `json:"tmall_device_item_promotion_get_response,omitempty"` 
     TmallDeviceItemPromotionGetResponse
 }
 
-/* model for simplify = false
 type TmallDeviceItemPromotionGetResponse struct {
+    XMLName xml.Name `xml:"tmall_device_item_promotion_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 优惠详细信息
     
-    Promotions  *struct {
-        PromotionDisplayTop  *PromotionDisplayTop `json:"promotion_display_top,omitempty"`
-    } `json:"promotions,omitempty"`
+    Promotions   *PromotionDisplayTop `json:"promotions,omitempty" xml:"promotions,omitempty"`
+
     
-
-}
-*/
-
-type TmallDeviceItemPromotionGetResponse struct {
-
-    // 优惠详细信息
-    Promotions   *PromotionDisplayTop `json:"promotions,omitempty"`
-
 }

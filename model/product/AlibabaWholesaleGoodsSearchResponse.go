@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wholesale.goods.search
 */
 type AlibabaWholesaleGoodsSearchAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWholesaleGoodsSearchResponse `json:"alibaba_wholesale_goods_search_response,omitempty"` 
     AlibabaWholesaleGoodsSearchResponse
 }
 
-/* model for simplify = false
 type AlibabaWholesaleGoodsSearchResponse struct {
+    XMLName xml.Name `xml:"alibaba_wholesale_goods_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 在线批发商品搜索结果
     
-    WholesaleGoodsSearchResult  *struct {
-        WholesaleSearchOpenResult  *WholesaleSearchOpenResult `json:"wholesale_search_open_result,omitempty"`
-    } `json:"wholesale_goods_search_result,omitempty"`
+    WholesaleGoodsSearchResult   *WholesaleSearchOpenResult `json:"wholesale_goods_search_result,omitempty" xml:"wholesale_goods_search_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWholesaleGoodsSearchResponse struct {
-
-    // 在线批发商品搜索结果
-    WholesaleGoodsSearchResult   *WholesaleSearchOpenResult `json:"wholesale_goods_search_result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.trade.order.create
 */
 type AlibabaWdkTradeOrderCreateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkTradeOrderCreateResponse `json:"alibaba_wdk_trade_order_create_response,omitempty"` 
     AlibabaWdkTradeOrderCreateResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkTradeOrderCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_trade_order_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 执行结果
     
-    Result  *struct {
-        OrderResult  *OrderResult `json:"order_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *OrderResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkTradeOrderCreateResponse struct {
-
-    // 执行结果
-    Result   *OrderResult `json:"result,omitempty"`
-
 }

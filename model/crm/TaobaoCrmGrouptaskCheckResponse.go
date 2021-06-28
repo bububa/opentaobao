@@ -1,6 +1,8 @@
 package crm
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.crm.grouptask.check
 */
 type TaobaoCrmGrouptaskCheckAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoCrmGrouptaskCheckResponse `json:"crm_grouptask_check_response,omitempty"` 
     TaobaoCrmGrouptaskCheckResponse
 }
 
-/* model for simplify = false
 type TaobaoCrmGrouptaskCheckResponse struct {
+    XMLName xml.Name `xml:"crm_grouptask_check_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异步任务是否完成，true表示完成
     
-    IsFinished   bool `json:"is_finished,omitempty"`
+    IsFinished   bool `json:"is_finished,omitempty" xml:"is_finished,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoCrmGrouptaskCheckResponse struct {
-
-    // 异步任务是否完成，true表示完成
-    IsFinished   bool `json:"is_finished,omitempty"`
-
 }

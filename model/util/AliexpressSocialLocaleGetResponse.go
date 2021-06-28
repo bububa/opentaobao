@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ aliexpress.social.locale.get
 */
 type AliexpressSocialLocaleGetAPIResponse struct {
     model.CommonResponse
-    // Response *AliexpressSocialLocaleGetResponse `json:"aliexpress_social_locale_get_response,omitempty"` 
     AliexpressSocialLocaleGetResponse
 }
 
-/* model for simplify = false
 type AliexpressSocialLocaleGetResponse struct {
+    XMLName xml.Name `xml:"aliexpress_social_locale_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 包类型
     
-    Result  *struct {
-        ItemPickPagingResult  *ItemPickPagingResult `json:"item_pick_paging_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ItemPickPagingResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AliexpressSocialLocaleGetResponse struct {
-
-    // 包类型
-    Result   *ItemPickPagingResult `json:"result,omitempty"`
-
 }

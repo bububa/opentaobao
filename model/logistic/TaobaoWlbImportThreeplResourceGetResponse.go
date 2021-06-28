@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wlb.import.threepl.resource.get
 */
 type TaobaoWlbImportThreeplResourceGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbImportThreeplResourceGetResponse `json:"wlb_import_threepl_resource_get_response,omitempty"` 
     TaobaoWlbImportThreeplResourceGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbImportThreeplResourceGetResponse struct {
+    XMLName xml.Name `xml:"wlb_import_threepl_resource_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TopResult  *TopResult `json:"top_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TopResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbImportThreeplResourceGetResponse struct {
-
-    // result
-    Result   *TopResult `json:"result,omitempty"`
-
 }

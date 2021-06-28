@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.reverse.reversedetail
 */
 type AlibabaWdkReverseReversedetailAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkReverseReversedetailResponse `json:"alibaba_wdk_reverse_reversedetail_response,omitempty"` 
     AlibabaWdkReverseReversedetailResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkReverseReversedetailResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_reverse_reversedetail_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        ReverseResult  *ReverseResult `json:"reverse_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ReverseResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkReverseReversedetailResponse struct {
-
-    // result
-    Result   *ReverseResult `json:"result,omitempty"`
-
 }

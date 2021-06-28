@@ -1,6 +1,8 @@
 package baodian
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.baodian.server.date.get
 */
 type TaobaoBaodianServerDateGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaodianServerDateGetResponse `json:"baodian_server_date_get_response,omitempty"` 
     TaobaoBaodianServerDateGetResponse
 }
 
-/* model for simplify = false
 type TaobaoBaodianServerDateGetResponse struct {
+    XMLName xml.Name `xml:"baodian_server_date_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回时间为毫秒
     
-    ServerDate   int64 `json:"server_date,omitempty"`
+    ServerDate   int64 `json:"server_date,omitempty" xml:"server_date,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaodianServerDateGetResponse struct {
-
-    // 返回时间为毫秒
-    ServerDate   int64 `json:"server_date,omitempty"`
-
 }

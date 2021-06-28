@@ -1,55 +1,31 @@
 package yunos
 
 // RdamResponse 
-/* model for simplify = false
 type RdamResponse struct {
 
     // message
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
     
 
     // more
     
-    More   string `json:"more,omitempty"`
+    More   string `json:"more,omitempty" xml:"more,omitempty"`
     
 
     // code
     
-    Code   int64 `json:"code,omitempty"`
+    Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // dataList
     
-    DataList  struct {
-        Json  []string `json:"string,omitempty"`
-    } `json:"data_list,omitempty"`
+    DataList   []string `json:"data_list,omitempty" xml:"data_list>string,omitempty"`
     
 
     // traceId
     
-    TraceId   string `json:"trace_id,omitempty"`
+    TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
     
-
-}
-*/
-
-// RdamResponse 
-type RdamResponse struct {
-
-    // message
-    Message   string `json:"message,omitempty"`
-
-    // more
-    More   string `json:"more,omitempty"`
-
-    // code
-    Code   int64 `json:"code,omitempty"`
-
-    // dataList
-    DataList   []string `json:"data_list,omitempty"`
-
-    // traceId
-    TraceId   string `json:"trace_id,omitempty"`
 
 }

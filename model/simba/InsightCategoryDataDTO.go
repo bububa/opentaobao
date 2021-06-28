@@ -1,53 +1,31 @@
 package simba
 
 // InsightCategoryDataDTO 
-/* model for simplify = false
 type InsightCategoryDataDTO struct {
 
     // 展现量
     
-    Impression   int64 `json:"impression,omitempty"`
+    Impression   int64 `json:"impression,omitempty" xml:"impression,omitempty"`
     
 
     // 点击量
     
-    Click   int64 `json:"click,omitempty"`
+    Click   int64 `json:"click,omitempty" xml:"click,omitempty"`
     
 
     // 点击率
     
-    Ctr   string `json:"ctr,omitempty"`
+    Ctr   string `json:"ctr,omitempty" xml:"ctr,omitempty"`
     
 
     // 类目id
     
-    CatId   int64 `json:"cat_id,omitempty"`
+    CatId   int64 `json:"cat_id,omitempty" xml:"cat_id,omitempty"`
     
 
     // 类目名称
     
-    CatName   string `json:"cat_name,omitempty"`
+    CatName   string `json:"cat_name,omitempty" xml:"cat_name,omitempty"`
     
-
-}
-*/
-
-// InsightCategoryDataDTO 
-type InsightCategoryDataDTO struct {
-
-    // 展现量
-    Impression   int64 `json:"impression,omitempty"`
-
-    // 点击量
-    Click   int64 `json:"click,omitempty"`
-
-    // 点击率
-    Ctr   string `json:"ctr,omitempty"`
-
-    // 类目id
-    CatId   int64 `json:"cat_id,omitempty"`
-
-    // 类目名称
-    CatName   string `json:"cat_name,omitempty"`
 
 }

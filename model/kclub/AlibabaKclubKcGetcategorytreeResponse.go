@@ -1,6 +1,8 @@
 package kclub
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.kclub.kc.getcategorytree
 */
 type AlibabaKclubKcGetcategorytreeAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaKclubKcGetcategorytreeResponse `json:"alibaba_kclub_kc_getcategorytree_response,omitempty"` 
     AlibabaKclubKcGetcategorytreeResponse
 }
 
-/* model for simplify = false
 type AlibabaKclubKcGetcategorytreeResponse struct {
+    XMLName xml.Name `xml:"alibaba_kclub_kc_getcategorytree_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaKclubKcGetcategorytreeResult  *AlibabaKclubKcGetcategorytreeResult `json:"alibaba_kclub_kc_getcategorytree_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaKclubKcGetcategorytreeResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaKclubKcGetcategorytreeResponse struct {
-
-    // result
-    Result   *AlibabaKclubKcGetcategorytreeResult `json:"result,omitempty"`
-
 }

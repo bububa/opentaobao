@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.wireless.draw
 */
 type AlibabaInteractWirelessDrawAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractWirelessDrawResponse `json:"alibaba_interact_wireless_draw_response,omitempty"` 
     AlibabaInteractWirelessDrawResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractWirelessDrawResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_wireless_draw_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractWirelessDrawResponse struct {
-
-    // result
-    Result   string `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.koubei.tribe.open.verify.code.apply
 */
 type TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoKoubeiTribeOpenVerifyCodeApplyResponse `json:"koubei_tribe_open_verify_code_apply_response,omitempty"` 
     TaobaoKoubeiTribeOpenVerifyCodeApplyResponse
 }
 
-/* model for simplify = false
 type TaobaoKoubeiTribeOpenVerifyCodeApplyResponse struct {
+    XMLName xml.Name `xml:"koubei_tribe_open_verify_code_apply_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        TaobaoKoubeiTribeOpenVerifyCodeApplyResult  *TaobaoKoubeiTribeOpenVerifyCodeApplyResult `json:"taobao_koubei_tribe_open_verify_code_apply_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoKoubeiTribeOpenVerifyCodeApplyResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoKoubeiTribeOpenVerifyCodeApplyResponse struct {
-
-    // 接口返回model
-    Result   *TaobaoKoubeiTribeOpenVerifyCodeApplyResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package iot
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.ailab.aicloud.top.freelisten.childrenalbum
 */
 type TaobaoAilabAicloudTopFreelistenChildrenalbumAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAilabAicloudTopFreelistenChildrenalbumResponse `json:"ailab_aicloud_top_freelisten_childrenalbum_response,omitempty"` 
     TaobaoAilabAicloudTopFreelistenChildrenalbumResponse
 }
 
-/* model for simplify = false
 type TaobaoAilabAicloudTopFreelistenChildrenalbumResponse struct {
+    XMLName xml.Name `xml:"ailab_aicloud_top_freelisten_childrenalbum_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAilabAicloudTopFreelistenChildrenalbumResponse struct {
-
-    // result
-    Result   *AiCloudResult `json:"result,omitempty"`
-
 }

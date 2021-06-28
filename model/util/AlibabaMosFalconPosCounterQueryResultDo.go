@@ -1,81 +1,46 @@
 package util
 
 // AlibabaMosFalconPosCounterQueryResultDo 
-/* model for simplify = false
 type AlibabaMosFalconPosCounterQueryResultDo struct {
 
     // traceId
     
-    TraceId   string `json:"trace_id,omitempty"`
+    TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
     
 
     // total
     
-    Total   int64 `json:"total,omitempty"`
+    Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     
 
     // 是否成功
     
-    Data  *struct {
-        PosInfoDto  *PosInfoDto `json:"pos_info_dto,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *PosInfoDto `json:"data,omitempty" xml:"data,omitempty"`
     
 
     // 调用是否成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // 错误码
     
-    ErrCode   int64 `json:"err_code,omitempty"`
+    ErrCode   int64 `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // 额外
     
-    Extra   string `json:"extra,omitempty"`
+    Extra   string `json:"extra,omitempty" xml:"extra,omitempty"`
     
 
     // 错误信息
     
-    ErrMsg   string `json:"err_msg,omitempty"`
+    ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     
 
     // 标题
     
-    Titles  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"titles,omitempty"`
+    Titles   []string `json:"titles,omitempty" xml:"titles>string,omitempty"`
     
-
-}
-*/
-
-// AlibabaMosFalconPosCounterQueryResultDo 
-type AlibabaMosFalconPosCounterQueryResultDo struct {
-
-    // traceId
-    TraceId   string `json:"trace_id,omitempty"`
-
-    // total
-    Total   int64 `json:"total,omitempty"`
-
-    // 是否成功
-    Data   *PosInfoDto `json:"data,omitempty"`
-
-    // 调用是否成功
-    Success   bool `json:"success,omitempty"`
-
-    // 错误码
-    ErrCode   int64 `json:"err_code,omitempty"`
-
-    // 额外
-    Extra   string `json:"extra,omitempty"`
-
-    // 错误信息
-    ErrMsg   string `json:"err_msg,omitempty"`
-
-    // 标题
-    Titles   []string `json:"titles,omitempty"`
 
 }

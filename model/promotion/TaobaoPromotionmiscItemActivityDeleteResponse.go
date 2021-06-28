@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.promotionmisc.item.activity.delete
 */
 type TaobaoPromotionmiscItemActivityDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPromotionmiscItemActivityDeleteResponse `json:"promotionmisc_item_activity_delete_response,omitempty"` 
     TaobaoPromotionmiscItemActivityDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoPromotionmiscItemActivityDeleteResponse struct {
+    XMLName xml.Name `xml:"promotionmisc_item_activity_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功删除活动。
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoPromotionmiscItemActivityDeleteResponse struct {
-
-    // 是否成功删除活动。
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

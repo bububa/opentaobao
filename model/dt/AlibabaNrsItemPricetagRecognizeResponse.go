@@ -1,6 +1,8 @@
 package dt
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.nrs.item.pricetag.recognize
 */
 type AlibabaNrsItemPricetagRecognizeAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaNrsItemPricetagRecognizeResponse `json:"alibaba_nrs_item_pricetag_recognize_response,omitempty"` 
     AlibabaNrsItemPricetagRecognizeResponse
 }
 
-/* model for simplify = false
 type AlibabaNrsItemPricetagRecognizeResponse struct {
+    XMLName xml.Name `xml:"alibaba_nrs_item_pricetag_recognize_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参
     
-    NrsResult  *struct {
-        NrsResult  *NrsResult `json:"nrs_result,omitempty"`
-    } `json:"nrs_result,omitempty"`
+    NrsResult   *NrsResult `json:"nrs_result,omitempty" xml:"nrs_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaNrsItemPricetagRecognizeResponse struct {
-
-    // 出参
-    NrsResult   *NrsResult `json:"nrs_result,omitempty"`
-
 }

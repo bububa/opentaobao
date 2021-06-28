@@ -1,83 +1,46 @@
 package hotel
 
 // AlitripHotelSearchListGetResult 
-/* model for simplify = false
 type AlitripHotelSearchListGetResult struct {
 
     // bizExtMap
     
-    BizExtMap  *struct {
-        Bizextmap  *Bizextmap `json:"bizextmap,omitempty"`
-    } `json:"biz_ext_map,omitempty"`
+    BizExtMap   *Bizextmap `json:"biz_ext_map,omitempty" xml:"biz_ext_map,omitempty"`
     
 
     // headers
     
-    Headers  *struct {
-        Headers  *Headers `json:"headers,omitempty"`
-    } `json:"headers,omitempty"`
+    Headers   *Headers `json:"headers,omitempty" xml:"headers,omitempty"`
     
 
     // httpStatusCode
     
-    HttpStatusCode   int64 `json:"http_status_code,omitempty"`
+    HttpStatusCode   int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
     
 
     // mappingCode
     
-    MappingCode   string `json:"mapping_code,omitempty"`
+    MappingCode   string `json:"mapping_code,omitempty" xml:"mapping_code,omitempty"`
     
 
     // model
     
-    Model  *struct {
-        TopHotelSearchListVo  *TopHotelSearchListVo `json:"top_hotel_search_list_vo,omitempty"`
-    } `json:"model,omitempty"`
+    Model   *TopHotelSearchListVo `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // 错误码
     
-    MsgCode   string `json:"msg_code,omitempty"`
+    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     
 
     // 错误消息
     
-    MsgInfo   string `json:"msg_info,omitempty"`
+    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     
 
     // 是否成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// AlitripHotelSearchListGetResult 
-type AlitripHotelSearchListGetResult struct {
-
-    // bizExtMap
-    BizExtMap   *Bizextmap `json:"biz_ext_map,omitempty"`
-
-    // headers
-    Headers   *Headers `json:"headers,omitempty"`
-
-    // httpStatusCode
-    HttpStatusCode   int64 `json:"http_status_code,omitempty"`
-
-    // mappingCode
-    MappingCode   string `json:"mapping_code,omitempty"`
-
-    // model
-    Model   *TopHotelSearchListVo `json:"model,omitempty"`
-
-    // 错误码
-    MsgCode   string `json:"msg_code,omitempty"`
-
-    // 错误消息
-    MsgInfo   string `json:"msg_info,omitempty"`
-
-    // 是否成功
-    Success   bool `json:"success,omitempty"`
 
 }

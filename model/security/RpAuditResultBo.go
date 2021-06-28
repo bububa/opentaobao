@@ -1,85 +1,46 @@
 package security
 
 // RpAuditResultBo 
-/* model for simplify = false
 type RpAuditResultBo struct {
 
     // 复核状态被置位
     
-    ReviewStatus   bool `json:"review_status,omitempty"`
+    ReviewStatus   bool `json:"review_status,omitempty" xml:"review_status,omitempty"`
     
 
     // 如果 curGrade 和 requireGrade 相同则 gradeCertified 返回 true, 相反则返回false
     
-    GradeCertified   bool `json:"grade_certified,omitempty"`
+    GradeCertified   bool `json:"grade_certified,omitempty" xml:"grade_certified,omitempty"`
     
 
     // 要求的实人级别
     
-    RequireGrade  *struct {
-        RpGradeBo  *RpGradeBo `json:"rp_grade_bo,omitempty"`
-    } `json:"require_grade,omitempty"`
+    RequireGrade   *RpGradeBo `json:"require_grade,omitempty" xml:"require_grade,omitempty"`
     
 
     // 当前的实人级别
     
-    CurGrade  *struct {
-        RpGradeBo  *RpGradeBo `json:"rp_grade_bo,omitempty"`
-    } `json:"cur_grade,omitempty"`
+    CurGrade   *RpGradeBo `json:"cur_grade,omitempty" xml:"cur_grade,omitempty"`
     
 
     // 当前的biz
     
-    Biz   string `json:"biz,omitempty"`
+    Biz   string `json:"biz,omitempty" xml:"biz,omitempty"`
     
 
     // 当前的审核状态
     
-    AuditStatus  *struct {
-        RpAuditStatusBo  *RpAuditStatusBo `json:"rp_audit_status_bo,omitempty"`
-    } `json:"audit_status,omitempty"`
+    AuditStatus   *RpAuditStatusBo `json:"audit_status,omitempty" xml:"audit_status,omitempty"`
     
 
     // 结果信息
     
-    RpAuditDetails  *struct {
-        RpAuditDetails  *RpAuditDetails `json:"rp_audit_details,omitempty"`
-    } `json:"rp_audit_details,omitempty"`
+    RpAuditDetails   *RpAuditDetails `json:"rp_audit_details,omitempty" xml:"rp_audit_details,omitempty"`
     
 
     // 复核类型
     
-    ReviewType   string `json:"review_type,omitempty"`
+    ReviewType   string `json:"review_type,omitempty" xml:"review_type,omitempty"`
     
-
-}
-*/
-
-// RpAuditResultBo 
-type RpAuditResultBo struct {
-
-    // 复核状态被置位
-    ReviewStatus   bool `json:"review_status,omitempty"`
-
-    // 如果 curGrade 和 requireGrade 相同则 gradeCertified 返回 true, 相反则返回false
-    GradeCertified   bool `json:"grade_certified,omitempty"`
-
-    // 要求的实人级别
-    RequireGrade   *RpGradeBo `json:"require_grade,omitempty"`
-
-    // 当前的实人级别
-    CurGrade   *RpGradeBo `json:"cur_grade,omitempty"`
-
-    // 当前的biz
-    Biz   string `json:"biz,omitempty"`
-
-    // 当前的审核状态
-    AuditStatus   *RpAuditStatusBo `json:"audit_status,omitempty"`
-
-    // 结果信息
-    RpAuditDetails   *RpAuditDetails `json:"rp_audit_details,omitempty"`
-
-    // 复核类型
-    ReviewType   string `json:"review_type,omitempty"`
 
 }

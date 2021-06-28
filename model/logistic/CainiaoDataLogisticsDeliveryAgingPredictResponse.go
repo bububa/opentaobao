@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -16,26 +18,16 @@ cainiao.data.logistics.delivery.aging.predict
 */
 type CainiaoDataLogisticsDeliveryAgingPredictAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoDataLogisticsDeliveryAgingPredictResponse `json:"cainiao_data_logistics_delivery_aging_predict_response,omitempty"` 
     CainiaoDataLogisticsDeliveryAgingPredictResponse
 }
 
-/* model for simplify = false
 type CainiaoDataLogisticsDeliveryAgingPredictResponse struct {
+    XMLName xml.Name `xml:"cainiao_data_logistics_delivery_aging_predict_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 列表类型返回
     
-    Datas  struct {
-        CainiaoDataLogisticsDeliveryAgingPredictData  []CainiaoDataLogisticsDeliveryAgingPredictData `json:"cainiao_data_logistics_delivery_aging_predict_data,omitempty"`
-    } `json:"datas,omitempty"`
+    Datas   []CainiaoDataLogisticsDeliveryAgingPredictData `json:"datas,omitempty" xml:"datas>cainiao_data_logistics_delivery_aging_predict_data,omitempty"`
     
-
-}
-*/
-
-type CainiaoDataLogisticsDeliveryAgingPredictResponse struct {
-
-    // 列表类型返回
-    Datas   []CainiaoDataLogisticsDeliveryAgingPredictData `json:"datas,omitempty"`
-
+    
 }

@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.cuntao.interact.requisition.update
 */
 type AlibabaCuntaoInteractRequisitionUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaCuntaoInteractRequisitionUpdateResponse `json:"alibaba_cuntao_interact_requisition_update_response,omitempty"` 
     AlibabaCuntaoInteractRequisitionUpdateResponse
 }
 
-/* model for simplify = false
 type AlibabaCuntaoInteractRequisitionUpdateResponse struct {
+    XMLName xml.Name `xml:"alibaba_cuntao_interact_requisition_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaCuntaoInteractRequisitionUpdateResult  *AlibabaCuntaoInteractRequisitionUpdateResult `json:"alibaba_cuntao_interact_requisition_update_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaCuntaoInteractRequisitionUpdateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaCuntaoInteractRequisitionUpdateResponse struct {
-
-    // result
-    Result   *AlibabaCuntaoInteractRequisitionUpdateResult `json:"result,omitempty"`
-
 }

@@ -1,61 +1,36 @@
 package simba
 
 // CiaConfig 
-/* model for simplify = false
 type CiaConfig struct {
 
     // 目标点击量
     
-    TargetClick   int64 `json:"target_click,omitempty"`
+    TargetClick   int64 `json:"target_click,omitempty" xml:"target_click,omitempty"`
     
 
     // 出价偏好（3:促进收藏加购，4:促进点击，5:促进成交）
     
-    BidTargetType   int64 `json:"bid_target_type,omitempty"`
+    BidTargetType   int64 `json:"bid_target_type,omitempty" xml:"bid_target_type,omitempty"`
     
 
     // 最高溢价比例
     
-    MaxPremium   int64 `json:"max_premium,omitempty"`
+    MaxPremium   int64 `json:"max_premium,omitempty" xml:"max_premium,omitempty"`
     
 
     // 是否自动流转
     
-    IsCirculation   bool `json:"is_circulation,omitempty"`
+    IsCirculation   bool `json:"is_circulation,omitempty" xml:"is_circulation,omitempty"`
     
 
     // 是否开启智能出价
     
-    IsSmartBidding   bool `json:"is_smart_bidding,omitempty"`
+    IsSmartBidding   bool `json:"is_smart_bidding,omitempty" xml:"is_smart_bidding,omitempty"`
     
 
     // 推广组id
     
-    AdGroupId   int64 `json:"ad_group_id,omitempty"`
+    AdGroupId   int64 `json:"ad_group_id,omitempty" xml:"ad_group_id,omitempty"`
     
-
-}
-*/
-
-// CiaConfig 
-type CiaConfig struct {
-
-    // 目标点击量
-    TargetClick   int64 `json:"target_click,omitempty"`
-
-    // 出价偏好（3:促进收藏加购，4:促进点击，5:促进成交）
-    BidTargetType   int64 `json:"bid_target_type,omitempty"`
-
-    // 最高溢价比例
-    MaxPremium   int64 `json:"max_premium,omitempty"`
-
-    // 是否自动流转
-    IsCirculation   bool `json:"is_circulation,omitempty"`
-
-    // 是否开启智能出价
-    IsSmartBidding   bool `json:"is_smart_bidding,omitempty"`
-
-    // 推广组id
-    AdGroupId   int64 `json:"ad_group_id,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package mtopopen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.sensor.social
 */
 type AlibabaInteractSensorSocialAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractSensorSocialResponse `json:"alibaba_interact_sensor_social_response,omitempty"` 
     AlibabaInteractSensorSocialResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractSensorSocialResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_sensor_social_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result=1
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractSensorSocialResponse struct {
-
-    // result=1
-    Result   string `json:"result,omitempty"`
-
 }

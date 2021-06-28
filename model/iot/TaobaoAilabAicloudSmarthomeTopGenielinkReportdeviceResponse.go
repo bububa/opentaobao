@@ -1,6 +1,8 @@
 package iot
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.ailab.aicloud.smarthome.top.genielink.reportdevice
 */
 type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResponse `json:"ailab_aicloud_smarthome_top_genielink_reportdevice_response,omitempty"` 
     TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResponse
 }
 
-/* model for simplify = false
 type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResponse struct {
+    XMLName xml.Name `xml:"ailab_aicloud_smarthome_top_genielink_reportdevice_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResult  *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResult `json:"taobao_ailab_aicloud_smarthome_top_genielink_reportdevice_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResponse struct {
-
-    // result
-    Result   *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResult `json:"result,omitempty"`
-
 }

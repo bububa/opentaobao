@@ -1,45 +1,26 @@
 package scbp
 
 // ForbiddenProductDto 
-/* model for simplify = false
 type ForbiddenProductDto struct {
 
     // 产品id
     
-    ProductId   int64 `json:"product_id,omitempty"`
+    ProductId   int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
     
 
     // 状态
     
-    Status   int64 `json:"status,omitempty"`
+    Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     
 
     // 标题
     
-    Subject   string `json:"subject,omitempty"`
+    Subject   string `json:"subject,omitempty" xml:"subject,omitempty"`
     
 
     // 图片地址
     
-    ImgUrl   string `json:"img_url,omitempty"`
+    ImgUrl   string `json:"img_url,omitempty" xml:"img_url,omitempty"`
     
-
-}
-*/
-
-// ForbiddenProductDto 
-type ForbiddenProductDto struct {
-
-    // 产品id
-    ProductId   int64 `json:"product_id,omitempty"`
-
-    // 状态
-    Status   int64 `json:"status,omitempty"`
-
-    // 标题
-    Subject   string `json:"subject,omitempty"`
-
-    // 图片地址
-    ImgUrl   string `json:"img_url,omitempty"`
 
 }

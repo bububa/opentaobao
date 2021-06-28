@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ alibaba.wdk.fulfill.warehouse.work.order.sealbox
 */
 type AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkFulfillWarehouseWorkOrderSealboxResponse `json:"alibaba_wdk_fulfill_warehouse_work_order_sealbox_response,omitempty"` 
     AlibabaWdkFulfillWarehouseWorkOrderSealboxResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkFulfillWarehouseWorkOrderSealboxResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_fulfill_warehouse_work_order_sealbox_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 失败返回原因
     
-    RespMessage   string `json:"resp_message,omitempty"`
-    
+    RespMessage   string `json:"resp_message,omitempty" xml:"resp_message,omitempty"`
 
+    
     // 成功失败码
     
-    RespCode   string `json:"resp_code,omitempty"`
-    
+    RespCode   string `json:"resp_code,omitempty" xml:"resp_code,omitempty"`
 
+    
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkFulfillWarehouseWorkOrderSealboxResponse struct {
-
-    // 失败返回原因
-    RespMessage   string `json:"resp_message,omitempty"`
-
-    // 成功失败码
-    RespCode   string `json:"resp_code,omitempty"`
-
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

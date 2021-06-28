@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.marketing.buygift.item.remove.async
 */
 type AlibabaWdkMarketingBuygiftItemRemoveAsyncAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkMarketingBuygiftItemRemoveAsyncResponse `json:"alibaba_wdk_marketing_buygift_item_remove_async_response,omitempty"` 
     AlibabaWdkMarketingBuygiftItemRemoveAsyncResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkMarketingBuygiftItemRemoveAsyncResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_marketing_buygift_item_remove_async_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果信息
     
-    Result  *struct {
-        MarketResult  *MarketResult `json:"market_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *MarketResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkMarketingBuygiftItemRemoveAsyncResponse struct {
-
-    // 结果信息
-    Result   *MarketResult `json:"result,omitempty"`
-
 }

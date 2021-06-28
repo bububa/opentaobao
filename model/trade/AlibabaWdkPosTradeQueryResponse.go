@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.pos.trade.query
 */
 type AlibabaWdkPosTradeQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkPosTradeQueryResponse `json:"alibaba_wdk_pos_trade_query_response,omitempty"` 
     AlibabaWdkPosTradeQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkPosTradeQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_pos_trade_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 查询返回结果
     
-    Result  *struct {
-        FastBuyPosQueryResult  *FastBuyPosQueryResult `json:"fast_buy_pos_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *FastBuyPosQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkPosTradeQueryResponse struct {
-
-    // 查询返回结果
-    Result   *FastBuyPosQueryResult `json:"result,omitempty"`
-
 }

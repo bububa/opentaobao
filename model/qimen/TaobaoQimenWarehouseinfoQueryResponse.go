@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qimen.warehouseinfo.query
 */
 type TaobaoQimenWarehouseinfoQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenWarehouseinfoQueryResponse `json:"qimen_warehouseinfo_query_response,omitempty"` 
     TaobaoQimenWarehouseinfoQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenWarehouseinfoQueryResponse struct {
+    XMLName xml.Name `xml:"qimen_warehouseinfo_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        Response  *Response `json:"response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenWarehouseinfoQueryResponse struct {
-
-    // 
-    Response   *Response `json:"response,omitempty"`
-
 }

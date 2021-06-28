@@ -1,6 +1,8 @@
 package train
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ taobao.train.agent.direct.compensate
 */
 type TaobaoTrainAgentDirectCompensateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTrainAgentDirectCompensateResponse `json:"train_agent_direct_compensate_response,omitempty"` 
     TaobaoTrainAgentDirectCompensateResponse
 }
 
-/* model for simplify = false
 type TaobaoTrainAgentDirectCompensateResponse struct {
+    XMLName xml.Name `xml:"train_agent_direct_compensate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // resultCode
     
-    ResultCode   string `json:"result_code,omitempty"`
-    
+    ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 
+    
     // resultMsg
     
-    ResultMsg   string `json:"result_msg,omitempty"`
+    ResultMsg   string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTrainAgentDirectCompensateResponse struct {
-
-    // 是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // resultCode
-    ResultCode   string `json:"result_code,omitempty"`
-
-    // resultMsg
-    ResultMsg   string `json:"result_msg,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package wangwang
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ taobao.wangwang.abstract.getwordlist
 */
 type TaobaoWangwangAbstractGetwordlistAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWangwangAbstractGetwordlistResponse `json:"wangwang_abstract_getwordlist_response,omitempty"` 
     TaobaoWangwangAbstractGetwordlistResponse
 }
 
-/* model for simplify = false
 type TaobaoWangwangAbstractGetwordlistResponse struct {
+    XMLName xml.Name `xml:"wangwang_abstract_getwordlist_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 0或-1，表示错误或正确，错误时有错误信息
     
-    RetCode   int64 `json:"ret_code,omitempty"`
-    
+    RetCode   int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 
+    
     // 例如单词长度太长等，ret_code=-1才有
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
-    
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 
+    
     // 关键词列表，ret_code=0才有
     
-    WordLists  struct {
-        WordList  []WordList `json:"word_list,omitempty"`
-    } `json:"word_lists,omitempty"`
+    WordLists   []WordList `json:"word_lists,omitempty" xml:"word_lists>word_list,omitempty"`
     
-
-}
-*/
-
-type TaobaoWangwangAbstractGetwordlistResponse struct {
-
-    // 0或-1，表示错误或正确，错误时有错误信息
-    RetCode   int64 `json:"ret_code,omitempty"`
-
-    // 例如单词长度太长等，ret_code=-1才有
-    ErrorMsg   string `json:"error_msg,omitempty"`
-
-    // 关键词列表，ret_code=0才有
-    WordLists   []WordList `json:"word_lists,omitempty"`
-
+    
 }

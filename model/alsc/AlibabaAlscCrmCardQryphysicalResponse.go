@@ -1,6 +1,8 @@
 package alsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alsc.crm.card.qryphysical
 */
 type AlibabaAlscCrmCardQryphysicalAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlscCrmCardQryphysicalResponse `json:"alibaba_alsc_crm_card_qryphysical_response,omitempty"` 
     AlibabaAlscCrmCardQryphysicalResponse
 }
 
-/* model for simplify = false
 type AlibabaAlscCrmCardQryphysicalResponse struct {
+    XMLName xml.Name `xml:"alibaba_alsc_crm_card_qryphysical_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口结果
     
-    Result  *struct {
-        CommonResult  *CommonResult `json:"common_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlscCrmCardQryphysicalResponse struct {
-
-    // 接口结果
-    Result   *CommonResult `json:"result,omitempty"`
-
 }

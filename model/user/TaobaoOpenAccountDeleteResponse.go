@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ OpenAccount删除数据
 */
 type TaobaoOpenAccountDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenAccountDeleteResponse `json:"open_account_delete_response,omitempty"` 
     TaobaoOpenAccountDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenAccountDeleteResponse struct {
+    XMLName xml.Name `xml:"open_account_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 删除结果
     
-    Datas  struct {
-        OpenaccountVoid  []OpenaccountVoid `json:"openaccount_void,omitempty"`
-    } `json:"datas,omitempty"`
+    Datas   []OpenaccountVoid `json:"datas,omitempty" xml:"datas>openaccount_void,omitempty"`
     
-
-}
-*/
-
-type TaobaoOpenAccountDeleteResponse struct {
-
-    // 删除结果
-    Datas   []OpenaccountVoid `json:"datas,omitempty"`
-
+    
 }

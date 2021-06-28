@@ -1,6 +1,8 @@
 package mtopopen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.oauth.code.create
 */
 type TaobaoOauthCodeCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOauthCodeCreateResponse `json:"oauth_code_create_response,omitempty"` 
     TaobaoOauthCodeCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoOauthCodeCreateResponse struct {
+    XMLName xml.Name `xml:"oauth_code_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // mock out params
     
-    Test   int64 `json:"test,omitempty"`
+    Test   int64 `json:"test,omitempty" xml:"test,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOauthCodeCreateResponse struct {
-
-    // mock out params
-    Test   int64 `json:"test,omitempty"`
-
 }

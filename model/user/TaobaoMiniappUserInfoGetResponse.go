@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.miniapp.userInfo.get
 */
 type TaobaoMiniappUserInfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoMiniappUserInfoGetResponse `json:"miniapp_userInfo_get_response,omitempty"` 
     TaobaoMiniappUserInfoGetResponse
 }
 
-/* model for simplify = false
 type TaobaoMiniappUserInfoGetResponse struct {
+    XMLName xml.Name `xml:"miniapp_userInfo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        TaobaoMiniappUserInfoGetResult  *TaobaoMiniappUserInfoGetResult `json:"taobao_miniapp_user_info_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoMiniappUserInfoGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoMiniappUserInfoGetResponse struct {
-
-    // 接口返回model
-    Result   *TaobaoMiniappUserInfoGetResult `json:"result,omitempty"`
-
 }

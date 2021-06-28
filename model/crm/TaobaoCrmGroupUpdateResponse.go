@@ -1,6 +1,8 @@
 package crm
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.crm.group.update
 */
 type TaobaoCrmGroupUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoCrmGroupUpdateResponse `json:"crm_group_update_response,omitempty"` 
     TaobaoCrmGroupUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoCrmGroupUpdateResponse struct {
+    XMLName xml.Name `xml:"crm_group_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 分组修改是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoCrmGroupUpdateResponse struct {
-
-    // 分组修改是否成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

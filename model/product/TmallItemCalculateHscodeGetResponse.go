@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.item.calculate.hscode.get
 */
 type TmallItemCalculateHscodeGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallItemCalculateHscodeGetResponse `json:"tmall_item_calculate_hscode_get_response,omitempty"` 
     TmallItemCalculateHscodeGetResponse
 }
 
-/* model for simplify = false
 type TmallItemCalculateHscodeGetResponse struct {
+    XMLName xml.Name `xml:"tmall_item_calculate_hscode_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 算法返回预测的hscode数据
     
-    Results  struct {
-        Json  []string `json:"string,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []string `json:"results,omitempty" xml:"results>string,omitempty"`
     
-
-}
-*/
-
-type TmallItemCalculateHscodeGetResponse struct {
-
-    // 算法返回预测的hscode数据
-    Results   []string `json:"results,omitempty"`
-
+    
 }

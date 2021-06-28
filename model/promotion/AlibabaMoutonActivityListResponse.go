@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mouton.activity.list
 */
 type AlibabaMoutonActivityListAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMoutonActivityListResponse `json:"alibaba_mouton_activity_list_response,omitempty"` 
     AlibabaMoutonActivityListResponse
 }
 
-/* model for simplify = false
 type AlibabaMoutonActivityListResponse struct {
+    XMLName xml.Name `xml:"alibaba_mouton_activity_list_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Result  *struct {
-        Page  *Page `json:"page,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *Page `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMoutonActivityListResponse struct {
-
-    // 返回结果
-    Result   *Page `json:"result,omitempty"`
-
 }

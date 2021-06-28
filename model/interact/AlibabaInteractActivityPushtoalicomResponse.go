@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.activity.pushtoalicom
 */
 type AlibabaInteractActivityPushtoalicomAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractActivityPushtoalicomResponse `json:"alibaba_interact_activity_pushtoalicom_response,omitempty"` 
     AlibabaInteractActivityPushtoalicomResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractActivityPushtoalicomResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_activity_pushtoalicom_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推送成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractActivityPushtoalicomResponse struct {
-
-    // 推送成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

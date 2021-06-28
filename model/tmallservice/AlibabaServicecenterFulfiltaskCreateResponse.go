@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.servicecenter.fulfiltask.create
 */
 type AlibabaServicecenterFulfiltaskCreateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaServicecenterFulfiltaskCreateResponse `json:"alibaba_servicecenter_fulfiltask_create_response,omitempty"` 
     AlibabaServicecenterFulfiltaskCreateResponse
 }
 
-/* model for simplify = false
 type AlibabaServicecenterFulfiltaskCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_servicecenter_fulfiltask_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaServicecenterFulfiltaskCreateResult  *AlibabaServicecenterFulfiltaskCreateResult `json:"alibaba_servicecenter_fulfiltask_create_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaServicecenterFulfiltaskCreateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaServicecenterFulfiltaskCreateResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaServicecenterFulfiltaskCreateResult `json:"result,omitempty"`
-
 }

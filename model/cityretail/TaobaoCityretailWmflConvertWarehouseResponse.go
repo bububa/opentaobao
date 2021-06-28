@@ -1,6 +1,8 @@
 package cityretail
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.cityretail.wmfl.convert.warehouse
 */
 type TaobaoCityretailWmflConvertWarehouseAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoCityretailWmflConvertWarehouseResponse `json:"cityretail_wmfl_convert_warehouse_response,omitempty"` 
     TaobaoCityretailWmflConvertWarehouseResponse
 }
 
-/* model for simplify = false
 type TaobaoCityretailWmflConvertWarehouseResponse struct {
+    XMLName xml.Name `xml:"cityretail_wmfl_convert_warehouse_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 服务出参
     
-    Result  *struct {
-        WorkResult  *WorkResult `json:"work_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *WorkResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoCityretailWmflConvertWarehouseResponse struct {
-
-    // 服务出参
-    Result   *WorkResult `json:"result,omitempty"`
-
 }

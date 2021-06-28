@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -13,26 +15,16 @@ taobao.inventory.initial
 */
 type TaobaoInventoryInitialAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoInventoryInitialResponse `json:"inventory_initial_response,omitempty"` 
     TaobaoInventoryInitialResponse
 }
 
-/* model for simplify = false
 type TaobaoInventoryInitialResponse struct {
+    XMLName xml.Name `xml:"inventory_initial_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 提示信息
     
-    TipInfos  struct {
-        TipInfo  []TipInfo `json:"tip_info,omitempty"`
-    } `json:"tip_infos,omitempty"`
+    TipInfos   []TipInfo `json:"tip_infos,omitempty" xml:"tip_infos>tip_info,omitempty"`
     
-
-}
-*/
-
-type TaobaoInventoryInitialResponse struct {
-
-    // 提示信息
-    TipInfos   []TipInfo `json:"tip_infos,omitempty"`
-
+    
 }

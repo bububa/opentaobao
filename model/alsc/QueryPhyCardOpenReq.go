@@ -1,37 +1,21 @@
 package alsc
 
 // QueryPhyCardOpenReq 
-/* model for simplify = false
 type QueryPhyCardOpenReq struct {
 
     // 外部品牌ID
     
-    OutBrandId   string `json:"out_brand_id,omitempty"`
+    OutBrandId   string `json:"out_brand_id,omitempty" xml:"out_brand_id,omitempty"`
     
 
     // 物理卡号
     
-    PhysicalCardId   string `json:"physical_card_id,omitempty"`
+    PhysicalCardId   string `json:"physical_card_id,omitempty" xml:"physical_card_id,omitempty"`
     
 
     // 品牌ID
     
-    BrandId   string `json:"brand_id,omitempty"`
+    BrandId   string `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
     
-
-}
-*/
-
-// QueryPhyCardOpenReq 
-type QueryPhyCardOpenReq struct {
-
-    // 外部品牌ID
-    OutBrandId   string `json:"out_brand_id,omitempty"`
-
-    // 物理卡号
-    PhysicalCardId   string `json:"physical_card_id,omitempty"`
-
-    // 品牌ID
-    BrandId   string `json:"brand_id,omitempty"`
 
 }

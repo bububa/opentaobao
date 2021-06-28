@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mj.presale.settlement.statistics
 */
 type AlibabaMjPresaleSettlementStatisticsAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMjPresaleSettlementStatisticsResponse `json:"alibaba_mj_presale_settlement_statistics_response,omitempty"` 
     AlibabaMjPresaleSettlementStatisticsResponse
 }
 
-/* model for simplify = false
 type AlibabaMjPresaleSettlementStatisticsResponse struct {
+    XMLName xml.Name `xml:"alibaba_mj_presale_settlement_statistics_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // data
     
-    Data  *struct {
-        AlibabaMjPresaleSettlementStatisticsData  *AlibabaMjPresaleSettlementStatisticsData `json:"alibaba_mj_presale_settlement_statistics_data,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *AlibabaMjPresaleSettlementStatisticsData `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMjPresaleSettlementStatisticsResponse struct {
-
-    // data
-    Data   *AlibabaMjPresaleSettlementStatisticsData `json:"data,omitempty"`
-
 }

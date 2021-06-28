@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.fuwu.sale.link.gen
 */
 type TaobaoFuwuSaleLinkGenAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFuwuSaleLinkGenResponse `json:"fuwu_sale_link_gen_response,omitempty"` 
     TaobaoFuwuSaleLinkGenResponse
 }
 
-/* model for simplify = false
 type TaobaoFuwuSaleLinkGenResponse struct {
+    XMLName xml.Name `xml:"fuwu_sale_link_gen_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 通过营销链接接口生成的营销链接短地址
     
-    Url   string `json:"url,omitempty"`
+    Url   string `json:"url,omitempty" xml:"url,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFuwuSaleLinkGenResponse struct {
-
-    // 通过营销链接接口生成的营销链接短地址
-    Url   string `json:"url,omitempty"`
-
 }

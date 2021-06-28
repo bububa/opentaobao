@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdkorder.sharestock.insurance.callback
 */
 type AlibabaWdkorderSharestockInsuranceCallbackAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkorderSharestockInsuranceCallbackResponse `json:"alibaba_wdkorder_sharestock_insurance_callback_response,omitempty"` 
     AlibabaWdkorderSharestockInsuranceCallbackResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkorderSharestockInsuranceCallbackResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdkorder_sharestock_insurance_callback_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 系统自动生成
     
-    Result  *struct {
-        MaochaoOrderInsuranceCallbackResult  *MaochaoOrderInsuranceCallbackResult `json:"maochao_order_insurance_callback_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *MaochaoOrderInsuranceCallbackResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkorderSharestockInsuranceCallbackResponse struct {
-
-    // 系统自动生成
-    Result   *MaochaoOrderInsuranceCallbackResult `json:"result,omitempty"`
-
 }

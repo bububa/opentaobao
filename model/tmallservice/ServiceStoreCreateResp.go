@@ -1,29 +1,16 @@
 package tmallservice
 
 // ServiceStoreCreateResp 
-/* model for simplify = false
 type ServiceStoreCreateResp struct {
 
     // 门店id
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     
 
     // 门店密钥
     
-    Secret   string `json:"secret,omitempty"`
+    Secret   string `json:"secret,omitempty" xml:"secret,omitempty"`
     
-
-}
-*/
-
-// ServiceStoreCreateResp 
-type ServiceStoreCreateResp struct {
-
-    // 门店id
-    Id   int64 `json:"id,omitempty"`
-
-    // 门店密钥
-    Secret   string `json:"secret,omitempty"`
 
 }

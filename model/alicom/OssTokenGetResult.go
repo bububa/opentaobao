@@ -1,63 +1,36 @@
 package alicom
 
 // OssTokenGetResult 
-/* model for simplify = false
 type OssTokenGetResult struct {
 
     // model
     
-    Model  *struct {
-        OssTokenResponse  *OssTokenResponse `json:"oss_token_response,omitempty"`
-    } `json:"model,omitempty"`
+    Model   *OssTokenResponse `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // desc
     
-    Desc   string `json:"desc,omitempty"`
+    Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     
 
     // msgCode
     
-    MsgCode   string `json:"msg_code,omitempty"`
+    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     
 
     // msgInfo
     
-    MsgInfo   string `json:"msg_info,omitempty"`
+    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     
 
     // code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // 成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// OssTokenGetResult 
-type OssTokenGetResult struct {
-
-    // model
-    Model   *OssTokenResponse `json:"model,omitempty"`
-
-    // desc
-    Desc   string `json:"desc,omitempty"`
-
-    // msgCode
-    MsgCode   string `json:"msg_code,omitempty"`
-
-    // msgInfo
-    MsgInfo   string `json:"msg_info,omitempty"`
-
-    // code
-    Code   string `json:"code,omitempty"`
-
-    // 成功
-    Success   bool `json:"success,omitempty"`
 
 }

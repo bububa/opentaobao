@@ -1,45 +1,26 @@
 package car
 
 // TaobaoAlitripCarOrderAcceptApiResult 
-/* model for simplify = false
 type TaobaoAlitripCarOrderAcceptApiResult struct {
 
     // 错误码 0成功 其它见文档
     
-    Code   int64 `json:"code,omitempty"`
+    Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // 其它数据
     
-    Data   string `json:"data,omitempty"`
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
     
 
     // 错误信息
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
     
 
     // 错误码 0成功 其它见文档
     
-    MessageCode   int64 `json:"message_code,omitempty"`
+    MessageCode   int64 `json:"message_code,omitempty" xml:"message_code,omitempty"`
     
-
-}
-*/
-
-// TaobaoAlitripCarOrderAcceptApiResult 
-type TaobaoAlitripCarOrderAcceptApiResult struct {
-
-    // 错误码 0成功 其它见文档
-    Code   int64 `json:"code,omitempty"`
-
-    // 其它数据
-    Data   string `json:"data,omitempty"`
-
-    // 错误信息
-    Message   string `json:"message,omitempty"`
-
-    // 错误码 0成功 其它见文档
-    MessageCode   int64 `json:"message_code,omitempty"`
 
 }

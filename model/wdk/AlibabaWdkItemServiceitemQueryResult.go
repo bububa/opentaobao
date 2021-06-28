@@ -1,29 +1,16 @@
 package wdk
 
 // AlibabaWdkItemServiceitemQueryResult 
-/* model for simplify = false
 type AlibabaWdkItemServiceitemQueryResult struct {
 
     // result
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// AlibabaWdkItemServiceitemQueryResult 
-type AlibabaWdkItemServiceitemQueryResult struct {
-
-    // result
-    Result   string `json:"result,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.ais.assets.tag.abort
 */
 type AlibabaAisAssetsTagAbortAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAisAssetsTagAbortResponse `json:"alibaba_ais_assets_tag_abort_response,omitempty"` 
     AlibabaAisAssetsTagAbortResponse
 }
 
-/* model for simplify = false
 type AlibabaAisAssetsTagAbortResponse struct {
+    XMLName xml.Name `xml:"alibaba_ais_assets_tag_abort_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 最外层结果
     
-    Result  *struct {
-        BaseRep  *BaseRep `json:"base_rep,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *BaseRep `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAisAssetsTagAbortResponse struct {
-
-    // 最外层结果
-    Result   *BaseRep `json:"result,omitempty"`
-
 }

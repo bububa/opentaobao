@@ -1,37 +1,21 @@
 package yunos
 
 // DpResult 
-/* model for simplify = false
 type DpResult struct {
 
     // code
     
-    Code   int64 `json:"code,omitempty"`
+    Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // message
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// DpResult 
-type DpResult struct {
-
-    // code
-    Code   int64 `json:"code,omitempty"`
-
-    // message
-    Message   string `json:"message,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

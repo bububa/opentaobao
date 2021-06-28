@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.insight.catsworddata.get
 */
 type TaobaoSimbaInsightCatsworddataGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaInsightCatsworddataGetResponse `json:"simba_insight_catsworddata_get_response,omitempty"` 
     TaobaoSimbaInsightCatsworddataGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaInsightCatsworddataGetResponse struct {
+    XMLName xml.Name `xml:"simba_insight_catsworddata_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 关键词在类目下的数据
     
-    CatwordDataList  struct {
-        InsightWordDataUnderCatDTO  []InsightWordDataUnderCatDTO `json:"insight_word_data_under_cat_dto,omitempty"`
-    } `json:"catword_data_list,omitempty"`
+    CatwordDataList   []InsightWordDataUnderCatDTO `json:"catword_data_list,omitempty" xml:"catword_data_list>insight_word_data_under_cat_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaInsightCatsworddataGetResponse struct {
-
-    // 关键词在类目下的数据
-    CatwordDataList   []InsightWordDataUnderCatDTO `json:"catword_data_list,omitempty"`
-
+    
 }

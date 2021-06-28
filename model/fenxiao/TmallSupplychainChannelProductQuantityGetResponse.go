@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.supplychain.channel.product.quantity.get
 */
 type TmallSupplychainChannelProductQuantityGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallSupplychainChannelProductQuantityGetResponse `json:"tmall_supplychain_channel_product_quantity_get_response,omitempty"` 
     TmallSupplychainChannelProductQuantityGetResponse
 }
 
-/* model for simplify = false
 type TmallSupplychainChannelProductQuantityGetResponse struct {
+    XMLName xml.Name `xml:"tmall_supplychain_channel_product_quantity_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异步获取历史数据接口返回结果
     
-    Result  *struct {
-        TmallSupplychainChannelProductQuantityGetResultDto  *TmallSupplychainChannelProductQuantityGetResultDto `json:"tmall_supplychain_channel_product_quantity_get_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallSupplychainChannelProductQuantityGetResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallSupplychainChannelProductQuantityGetResponse struct {
-
-    // 异步获取历史数据接口返回结果
-    Result   *TmallSupplychainChannelProductQuantityGetResultDto `json:"result,omitempty"`
-
 }

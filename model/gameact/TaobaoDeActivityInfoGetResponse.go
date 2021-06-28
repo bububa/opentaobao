@@ -1,6 +1,8 @@
 package gameact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.de.activity.info.get
 */
 type TaobaoDeActivityInfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoDeActivityInfoGetResponse `json:"de_activity_info_get_response,omitempty"` 
     TaobaoDeActivityInfoGetResponse
 }
 
-/* model for simplify = false
 type TaobaoDeActivityInfoGetResponse struct {
+    XMLName xml.Name `xml:"de_activity_info_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结构
     
-    Activities  struct {
-        ActivityVO  []ActivityVO `json:"activity_vo,omitempty"`
-    } `json:"activities,omitempty"`
+    Activities   []ActivityVO `json:"activities,omitempty" xml:"activities>activity_vo,omitempty"`
     
-
-}
-*/
-
-type TaobaoDeActivityInfoGetResponse struct {
-
-    // 返回结构
-    Activities   []ActivityVO `json:"activities,omitempty"`
-
+    
 }

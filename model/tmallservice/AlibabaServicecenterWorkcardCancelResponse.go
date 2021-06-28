@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.servicecenter.workcard.cancel
 */
 type AlibabaServicecenterWorkcardCancelAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaServicecenterWorkcardCancelResponse `json:"alibaba_servicecenter_workcard_cancel_response,omitempty"` 
     AlibabaServicecenterWorkcardCancelResponse
 }
 
-/* model for simplify = false
 type AlibabaServicecenterWorkcardCancelResponse struct {
+    XMLName xml.Name `xml:"alibaba_servicecenter_workcard_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回参数
     
-    Result  *struct {
-        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *FulfilplatformResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaServicecenterWorkcardCancelResponse struct {
-
-    // 返回参数
-    Result   *FulfilplatformResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package jms
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.jushita.jms.user.get
 */
 type TaobaoJushitaJmsUserGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJushitaJmsUserGetResponse `json:"jushita_jms_user_get_response,omitempty"` 
     TaobaoJushitaJmsUserGetResponse
 }
 
-/* model for simplify = false
 type TaobaoJushitaJmsUserGetResponse struct {
+    XMLName xml.Name `xml:"jushita_jms_user_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 同步的用户信息
     
-    OnsUser  *struct {
-        TmcUser  *TmcUser `json:"tmc_user,omitempty"`
-    } `json:"ons_user,omitempty"`
+    OnsUser   *TmcUser `json:"ons_user,omitempty" xml:"ons_user,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoJushitaJmsUserGetResponse struct {
-
-    // 同步的用户信息
-    OnsUser   *TmcUser `json:"ons_user,omitempty"`
-
 }

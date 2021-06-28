@@ -1,6 +1,8 @@
 package tvpay
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.tvpay.partner.order.query
 */
 type TaobaoTvpayPartnerOrderQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTvpayPartnerOrderQueryResponse `json:"tvpay_partner_order_query_response,omitempty"` 
     TaobaoTvpayPartnerOrderQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoTvpayPartnerOrderQueryResponse struct {
+    XMLName xml.Name `xml:"tvpay_partner_order_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // Top返回对象
     
-    Result  *struct {
-        TopResultDo  *TopResultDo `json:"top_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TopResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTvpayPartnerOrderQueryResponse struct {
-
-    // Top返回对象
-    Result   *TopResultDo `json:"result,omitempty"`
-
 }

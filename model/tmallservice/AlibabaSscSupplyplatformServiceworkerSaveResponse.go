@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.ssc.supplyplatform.serviceworker.save
 */
 type AlibabaSscSupplyplatformServiceworkerSaveAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSscSupplyplatformServiceworkerSaveResponse `json:"alibaba_ssc_supplyplatform_serviceworker_save_response,omitempty"` 
     AlibabaSscSupplyplatformServiceworkerSaveResponse
 }
 
-/* model for simplify = false
 type AlibabaSscSupplyplatformServiceworkerSaveResponse struct {
+    XMLName xml.Name `xml:"alibaba_ssc_supplyplatform_serviceworker_save_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaSscSupplyplatformServiceworkerSaveResult  *AlibabaSscSupplyplatformServiceworkerSaveResult `json:"alibaba_ssc_supplyplatform_serviceworker_save_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaSscSupplyplatformServiceworkerSaveResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSscSupplyplatformServiceworkerSaveResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaSscSupplyplatformServiceworkerSaveResult `json:"result,omitempty"`
-
 }

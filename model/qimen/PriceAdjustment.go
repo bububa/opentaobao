@@ -1,53 +1,31 @@
 package qimen
 
 // PriceAdjustment 
-/* model for simplify = false
 type PriceAdjustment struct {
 
     // test
     
-    Type   string `json:"type,omitempty"`
+    Type   string `json:"type,omitempty" xml:"type,omitempty"`
     
 
     // test
     
-    StandardPrice   string `json:"standardPrice,omitempty"`
+    StandardPrice   string `json:"standardPrice,omitempty" xml:"standardPrice,omitempty"`
     
 
     // test
     
-    Discount   string `json:"discount,omitempty"`
+    Discount   string `json:"discount,omitempty" xml:"discount,omitempty"`
     
 
     // test
     
-    StartDate   string `json:"startDate,omitempty"`
+    StartDate   string `json:"startDate,omitempty" xml:"startDate,omitempty"`
     
 
     // test
     
-    EndDate   string `json:"endDate,omitempty"`
+    EndDate   string `json:"endDate,omitempty" xml:"endDate,omitempty"`
     
-
-}
-*/
-
-// PriceAdjustment 
-type PriceAdjustment struct {
-
-    // test
-    Type   string `json:"type,omitempty"`
-
-    // test
-    StandardPrice   string `json:"standardPrice,omitempty"`
-
-    // test
-    Discount   string `json:"discount,omitempty"`
-
-    // test
-    StartDate   string `json:"startDate,omitempty"`
-
-    // test
-    EndDate   string `json:"endDate,omitempty"`
 
 }

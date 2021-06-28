@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.rdc.aligenius.account.validate
 */
 type TaobaoRdcAligeniusAccountValidateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRdcAligeniusAccountValidateResponse `json:"rdc_aligenius_account_validate_response,omitempty"` 
     TaobaoRdcAligeniusAccountValidateResponse
 }
 
-/* model for simplify = false
 type TaobaoRdcAligeniusAccountValidateResponse struct {
+    XMLName xml.Name `xml:"rdc_aligenius_account_validate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoRdcAligeniusAccountValidateResult  *TaobaoRdcAligeniusAccountValidateResult `json:"taobao_rdc_aligenius_account_validate_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoRdcAligeniusAccountValidateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRdcAligeniusAccountValidateResponse struct {
-
-    // result
-    Result   *TaobaoRdcAligeniusAccountValidateResult `json:"result,omitempty"`
-
 }

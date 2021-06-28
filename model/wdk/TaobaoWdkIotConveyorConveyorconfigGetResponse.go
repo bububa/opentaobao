@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wdk.iot.conveyor.conveyorconfig.get
 */
 type TaobaoWdkIotConveyorConveyorconfigGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWdkIotConveyorConveyorconfigGetResponse `json:"wdk_iot_conveyor_conveyorconfig_get_response,omitempty"` 
     TaobaoWdkIotConveyorConveyorconfigGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWdkIotConveyorConveyorconfigGetResponse struct {
+    XMLName xml.Name `xml:"wdk_iot_conveyor_conveyorconfig_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        HMResult  *HMResult `json:"hm_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *HMResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWdkIotConveyorConveyorconfigGetResponse struct {
-
-    // 返回值
-    Result   *HMResult `json:"result,omitempty"`
-
 }

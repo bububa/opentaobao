@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.fenxiao.grades.get
 */
 type TaobaoFenxiaoGradesGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoGradesGetResponse `json:"fenxiao_grades_get_response,omitempty"` 
     TaobaoFenxiaoGradesGetResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoGradesGetResponse struct {
+    XMLName xml.Name `xml:"fenxiao_grades_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 分销商等级信息
     
-    FenxiaoGrades  struct {
-        FenxiaoGrade  []FenxiaoGrade `json:"fenxiao_grade,omitempty"`
-    } `json:"fenxiao_grades,omitempty"`
+    FenxiaoGrades   []FenxiaoGrade `json:"fenxiao_grades,omitempty" xml:"fenxiao_grades>fenxiao_grade,omitempty"`
     
-
-}
-*/
-
-type TaobaoFenxiaoGradesGetResponse struct {
-
-    // 分销商等级信息
-    FenxiaoGrades   []FenxiaoGrade `json:"fenxiao_grades,omitempty"`
-
+    
 }

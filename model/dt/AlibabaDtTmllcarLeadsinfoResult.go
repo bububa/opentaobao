@@ -1,21 +1,11 @@
 package dt
 
 // AlibabaDtTmllcarLeadsinfoResult 
-/* model for simplify = false
 type AlibabaDtTmllcarLeadsinfoResult struct {
 
     // CONTENT
     
-    Content   string `json:"content,omitempty"`
+    Content   string `json:"content,omitempty" xml:"content,omitempty"`
     
-
-}
-*/
-
-// AlibabaDtTmllcarLeadsinfoResult 
-type AlibabaDtTmllcarLeadsinfoResult struct {
-
-    // CONTENT
-    Content   string `json:"content,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.fenxiao.product.skus.get
 */
 type TaobaoFenxiaoProductSkusGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoProductSkusGetResponse `json:"fenxiao_product_skus_get_response,omitempty"` 
     TaobaoFenxiaoProductSkusGetResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoProductSkusGetResponse struct {
+    XMLName xml.Name `xml:"fenxiao_product_skus_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // sku信息
     
-    Skus  struct {
-        FenxiaoSku  []FenxiaoSku `json:"fenxiao_sku,omitempty"`
-    } `json:"skus,omitempty"`
+    Skus   []FenxiaoSku `json:"skus,omitempty" xml:"skus>fenxiao_sku,omitempty"`
     
-
+    
     // 记录数量
     
-    TotalResults   int64 `json:"total_results,omitempty"`
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFenxiaoProductSkusGetResponse struct {
-
-    // sku信息
-    Skus   []FenxiaoSku `json:"skus,omitempty"`
-
-    // 记录数量
-    TotalResults   int64 `json:"total_results,omitempty"`
-
 }

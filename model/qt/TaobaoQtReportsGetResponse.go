@@ -1,6 +1,8 @@
 package qt
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qt.reports.get
 */
 type TaobaoQtReportsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQtReportsGetResponse `json:"qt_reports_get_response,omitempty"` 
     TaobaoQtReportsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoQtReportsGetResponse struct {
+    XMLName xml.Name `xml:"qt_reports_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 质检报告列表
     
-    Reports  struct {
-        QtReport  []QtReport `json:"qt_report,omitempty"`
-    } `json:"reports,omitempty"`
+    Reports   []QtReport `json:"reports,omitempty" xml:"reports>qt_report,omitempty"`
     
-
-}
-*/
-
-type TaobaoQtReportsGetResponse struct {
-
-    // 质检报告列表
-    Reports   []QtReport `json:"reports,omitempty"`
-
+    
 }

@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -13,26 +15,16 @@ cainiao.cntec.supplier.order.service
 */
 type CainiaoCntecSupplierOrderServiceAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoCntecSupplierOrderServiceResponse `json:"cainiao_cntec_supplier_order_service_response,omitempty"` 
     CainiaoCntecSupplierOrderServiceResponse
 }
 
-/* model for simplify = false
 type CainiaoCntecSupplierOrderServiceResponse struct {
+    XMLName xml.Name `xml:"cainiao_cntec_supplier_order_service_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        CainiaoCntecSupplierOrderServiceResult  *CainiaoCntecSupplierOrderServiceResult `json:"cainiao_cntec_supplier_order_service_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CainiaoCntecSupplierOrderServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoCntecSupplierOrderServiceResponse struct {
-
-    // 接口返回model
-    Result   *CainiaoCntecSupplierOrderServiceResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package alsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alsc.crm.point.consumepoint
 */
 type AlibabaAlscCrmPointConsumepointAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlscCrmPointConsumepointResponse `json:"alibaba_alsc_crm_point_consumepoint_response,omitempty"` 
     AlibabaAlscCrmPointConsumepointResponse
 }
 
-/* model for simplify = false
 type AlibabaAlscCrmPointConsumepointResponse struct {
+    XMLName xml.Name `xml:"alibaba_alsc_crm_point_consumepoint_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口结果
     
-    Result  *struct {
-        CommonResult  *CommonResult `json:"common_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlscCrmPointConsumepointResponse struct {
-
-    // 接口结果
-    Result   *CommonResult `json:"result,omitempty"`
-
 }

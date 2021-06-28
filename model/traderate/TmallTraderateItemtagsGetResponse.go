@@ -1,6 +1,8 @@
 package traderate
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.traderate.itemtags.get
 */
 type TmallTraderateItemtagsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallTraderateItemtagsGetResponse `json:"tmall_traderate_itemtags_get_response,omitempty"` 
     TmallTraderateItemtagsGetResponse
 }
 
-/* model for simplify = false
 type TmallTraderateItemtagsGetResponse struct {
+    XMLName xml.Name `xml:"tmall_traderate_itemtags_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 标签列表
     
-    Tags  struct {
-        TmallRateTagDetail  []TmallRateTagDetail `json:"tmall_rate_tag_detail,omitempty"`
-    } `json:"tags,omitempty"`
+    Tags   []TmallRateTagDetail `json:"tags,omitempty" xml:"tags>tmall_rate_tag_detail,omitempty"`
     
-
-}
-*/
-
-type TmallTraderateItemtagsGetResponse struct {
-
-    // 标签列表
-    Tags   []TmallRateTagDetail `json:"tags,omitempty"`
-
+    
 }

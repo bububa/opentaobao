@@ -1,29 +1,16 @@
 package alicom
 
 // ActivityGiftInfoDTOs 
-/* model for simplify = false
 type ActivityGiftInfoDTOs struct {
 
     // 礼包ID
     
-    GiftId   string `json:"gift_id,omitempty"`
+    GiftId   string `json:"gift_id,omitempty" xml:"gift_id,omitempty"`
     
 
     // 礼包名称
     
-    GiftName   string `json:"gift_name,omitempty"`
+    GiftName   string `json:"gift_name,omitempty" xml:"gift_name,omitempty"`
     
-
-}
-*/
-
-// ActivityGiftInfoDTOs 
-type ActivityGiftInfoDTOs struct {
-
-    // 礼包ID
-    GiftId   string `json:"gift_id,omitempty"`
-
-    // 礼包名称
-    GiftName   string `json:"gift_name,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package nlp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.nlp.preprocess
 */
 type TaobaoNlpPreprocessAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoNlpPreprocessResponse `json:"nlp_preprocess_response,omitempty"` 
     TaobaoNlpPreprocessResponse
 }
 
-/* model for simplify = false
 type TaobaoNlpPreprocessResponse struct {
+    XMLName xml.Name `xml:"nlp_preprocess_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Processresult  *struct {
-        ProcessResult  *ProcessResult `json:"process_result,omitempty"`
-    } `json:"processresult,omitempty"`
+    Processresult   *ProcessResult `json:"processresult,omitempty" xml:"processresult,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoNlpPreprocessResponse struct {
-
-    // 返回结果
-    Processresult   *ProcessResult `json:"processresult,omitempty"`
-
 }

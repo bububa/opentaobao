@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.ump.promotion.global.discount.get
 */
 type TaobaoUmpPromotionGlobalDiscountGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoUmpPromotionGlobalDiscountGetResponse `json:"ump_promotion_global_discount_get_response,omitempty"` 
     TaobaoUmpPromotionGlobalDiscountGetResponse
 }
 
-/* model for simplify = false
 type TaobaoUmpPromotionGlobalDiscountGetResponse struct {
+    XMLName xml.Name `xml:"ump_promotion_global_discount_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果对象
     
-    Result  *struct {
-        TaobaoUmpPromotionGlobalDiscountGetResult  *TaobaoUmpPromotionGlobalDiscountGetResult `json:"taobao_ump_promotion_global_discount_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoUmpPromotionGlobalDiscountGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoUmpPromotionGlobalDiscountGetResponse struct {
-
-    // 结果对象
-    Result   *TaobaoUmpPromotionGlobalDiscountGetResult `json:"result,omitempty"`
-
 }

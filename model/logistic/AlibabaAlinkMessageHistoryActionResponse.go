@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alink.message.history.action
 */
 type AlibabaAlinkMessageHistoryActionAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlinkMessageHistoryActionResponse `json:"alibaba_alink_message_history_action_response,omitempty"` 
     AlibabaAlinkMessageHistoryActionResponse
 }
 
-/* model for simplify = false
 type AlibabaAlinkMessageHistoryActionResponse struct {
+    XMLName xml.Name `xml:"alibaba_alink_message_history_action_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        TopServiceResult  *TopServiceResult `json:"top_service_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TopServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlinkMessageHistoryActionResponse struct {
-
-    // 结果
-    Result   *TopServiceResult `json:"result,omitempty"`
-
 }

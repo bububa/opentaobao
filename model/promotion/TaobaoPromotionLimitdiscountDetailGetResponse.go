@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.promotion.limitdiscount.detail.get
 */
 type TaobaoPromotionLimitdiscountDetailGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPromotionLimitdiscountDetailGetResponse `json:"promotion_limitdiscount_detail_get_response,omitempty"` 
     TaobaoPromotionLimitdiscountDetailGetResponse
 }
 
-/* model for simplify = false
 type TaobaoPromotionLimitdiscountDetailGetResponse struct {
+    XMLName xml.Name `xml:"promotion_limitdiscount_detail_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 限时打折对应的商品详情列表。
     
-    ItemDiscountDetailList  struct {
-        LimitDiscountDetail  []LimitDiscountDetail `json:"limit_discount_detail,omitempty"`
-    } `json:"item_discount_detail_list,omitempty"`
+    ItemDiscountDetailList   []LimitDiscountDetail `json:"item_discount_detail_list,omitempty" xml:"item_discount_detail_list>limit_discount_detail,omitempty"`
     
-
-}
-*/
-
-type TaobaoPromotionLimitdiscountDetailGetResponse struct {
-
-    // 限时打折对应的商品详情列表。
-    ItemDiscountDetailList   []LimitDiscountDetail `json:"item_discount_detail_list,omitempty"`
-
+    
 }

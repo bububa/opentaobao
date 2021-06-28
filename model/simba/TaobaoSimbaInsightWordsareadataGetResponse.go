@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.insight.wordsareadata.get
 */
 type TaobaoSimbaInsightWordsareadataGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaInsightWordsareadataGetResponse `json:"simba_insight_wordsareadata_get_response,omitempty"` 
     TaobaoSimbaInsightWordsareadataGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaInsightWordsareadataGetResponse struct {
+    XMLName xml.Name `xml:"simba_insight_wordsareadata_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 地域细分数据
     
-    WordAreadataList  struct {
-        InsightWordsAreaDistributeDataDTO  []InsightWordsAreaDistributeDataDTO `json:"insight_words_area_distribute_data_dto,omitempty"`
-    } `json:"word_areadata_list,omitempty"`
+    WordAreadataList   []InsightWordsAreaDistributeDataDTO `json:"word_areadata_list,omitempty" xml:"word_areadata_list>insight_words_area_distribute_data_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaInsightWordsareadataGetResponse struct {
-
-    // 地域细分数据
-    WordAreadataList   []InsightWordsAreaDistributeDataDTO `json:"word_areadata_list,omitempty"`
-
+    
 }

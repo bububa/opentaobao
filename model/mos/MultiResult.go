@@ -1,55 +1,31 @@
 package mos
 
 // MultiResult 
-/* model for simplify = false
 type MultiResult struct {
 
     // total
     
-    ResultTotal   int64 `json:"result_total,omitempty"`
+    ResultTotal   int64 `json:"result_total,omitempty" xml:"result_total,omitempty"`
     
 
     // errMessage
     
-    ResultMessage   string `json:"result_message,omitempty"`
+    ResultMessage   string `json:"result_message,omitempty" xml:"result_message,omitempty"`
     
 
     // data
     
-    ResultDatas  struct {
-        Json  []string `json:"string,omitempty"`
-    } `json:"result_datas,omitempty"`
+    ResultDatas   []string `json:"result_datas,omitempty" xml:"result_datas>string,omitempty"`
     
 
     // errCode
     
-    ResultCode   string `json:"result_code,omitempty"`
+    ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
     
 
     // success
     
-    ResultSuccess   bool `json:"result_success,omitempty"`
+    ResultSuccess   bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
     
-
-}
-*/
-
-// MultiResult 
-type MultiResult struct {
-
-    // total
-    ResultTotal   int64 `json:"result_total,omitempty"`
-
-    // errMessage
-    ResultMessage   string `json:"result_message,omitempty"`
-
-    // data
-    ResultDatas   []string `json:"result_datas,omitempty"`
-
-    // errCode
-    ResultCode   string `json:"result_code,omitempty"`
-
-    // success
-    ResultSuccess   bool `json:"result_success,omitempty"`
 
 }

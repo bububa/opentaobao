@@ -1,6 +1,8 @@
 package cmns
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ yunos.service.cmns.coa.message.push
 */
 type YunosServiceCmnsCoaMessagePushAPIResponse struct {
     model.CommonResponse
-    // Response *YunosServiceCmnsCoaMessagePushResponse `json:"yunos_service_cmns_coa_message_push_response,omitempty"` 
     YunosServiceCmnsCoaMessagePushResponse
 }
 
-/* model for simplify = false
 type YunosServiceCmnsCoaMessagePushResponse struct {
+    XMLName xml.Name `xml:"yunos_service_cmns_coa_message_push_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 消息ID，失败则为null
     
-    Mid   int64 `json:"mid,omitempty"`
-    
+    Mid   int64 `json:"mid,omitempty" xml:"mid,omitempty"`
 
+    
     // 消息发送提示
     
-    Message   string `json:"message,omitempty"`
-    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 
+    
     // 200:消息发送成功
     
-    Status   int64 `json:"status,omitempty"`
+    Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
+
     
-
-}
-*/
-
-type YunosServiceCmnsCoaMessagePushResponse struct {
-
-    // 消息ID，失败则为null
-    Mid   int64 `json:"mid,omitempty"`
-
-    // 消息发送提示
-    Message   string `json:"message,omitempty"`
-
-    // 200:消息发送成功
-    Status   int64 `json:"status,omitempty"`
-
 }

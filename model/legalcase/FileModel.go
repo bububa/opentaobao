@@ -1,29 +1,16 @@
 package legalcase
 
 // FileModel 
-/* model for simplify = false
 type FileModel struct {
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
 
     // key
     
-    Key   string `json:"key,omitempty"`
+    Key   string `json:"key,omitempty" xml:"key,omitempty"`
     
-
-}
-*/
-
-// FileModel 
-type FileModel struct {
-
-    // name
-    Name   string `json:"name,omitempty"`
-
-    // key
-    Key   string `json:"key,omitempty"`
 
 }

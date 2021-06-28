@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.item.sizemapping.template.create
 */
 type TmallItemSizemappingTemplateCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TmallItemSizemappingTemplateCreateResponse `json:"tmall_item_sizemapping_template_create_response,omitempty"` 
     TmallItemSizemappingTemplateCreateResponse
 }
 
-/* model for simplify = false
 type TmallItemSizemappingTemplateCreateResponse struct {
+    XMLName xml.Name `xml:"tmall_item_sizemapping_template_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 尺码表模板
     
-    SizeMappingTemplate  *struct {
-        SizeMappingTemplateDo  *SizeMappingTemplateDo `json:"size_mapping_template_do,omitempty"`
-    } `json:"size_mapping_template,omitempty"`
+    SizeMappingTemplate   *SizeMappingTemplateDo `json:"size_mapping_template,omitempty" xml:"size_mapping_template,omitempty"`
+
     
-
-}
-*/
-
-type TmallItemSizemappingTemplateCreateResponse struct {
-
-    // 尺码表模板
-    SizeMappingTemplate   *SizeMappingTemplateDo `json:"size_mapping_template,omitempty"`
-
 }

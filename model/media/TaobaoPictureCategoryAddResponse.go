@@ -1,6 +1,8 @@
 package media
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.picture.category.add
 */
 type TaobaoPictureCategoryAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPictureCategoryAddResponse `json:"picture_category_add_response,omitempty"` 
     TaobaoPictureCategoryAddResponse
 }
 
-/* model for simplify = false
 type TaobaoPictureCategoryAddResponse struct {
+    XMLName xml.Name `xml:"picture_category_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 图片分类信息
     
-    PictureCategory  *struct {
-        PictureCategory  *PictureCategory `json:"picture_category,omitempty"`
-    } `json:"picture_category,omitempty"`
+    PictureCategory   *PictureCategory `json:"picture_category,omitempty" xml:"picture_category,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoPictureCategoryAddResponse struct {
-
-    // 图片分类信息
-    PictureCategory   *PictureCategory `json:"picture_category,omitempty"`
-
 }

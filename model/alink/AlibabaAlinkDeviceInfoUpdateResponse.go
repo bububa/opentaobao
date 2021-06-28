@@ -1,6 +1,8 @@
 package alink
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.alink.device.info.update
 */
 type AlibabaAlinkDeviceInfoUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAlinkDeviceInfoUpdateResponse `json:"alibaba_alink_device_info_update_response,omitempty"` 
     AlibabaAlinkDeviceInfoUpdateResponse
 }
 
-/* model for simplify = false
 type AlibabaAlinkDeviceInfoUpdateResponse struct {
+    XMLName xml.Name `xml:"alibaba_alink_device_info_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        TopServiceResult  *TopServiceResult `json:"top_service_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TopServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAlinkDeviceInfoUpdateResponse struct {
-
-    // 结果
-    Result   *TopServiceResult `json:"result,omitempty"`
-
 }

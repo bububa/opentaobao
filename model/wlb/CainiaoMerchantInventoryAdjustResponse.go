@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ cainiao.merchant.inventory.adjust
 */
 type CainiaoMerchantInventoryAdjustAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoMerchantInventoryAdjustResponse `json:"cainiao_merchant_inventory_adjust_response,omitempty"` 
     CainiaoMerchantInventoryAdjustResponse
 }
 
-/* model for simplify = false
 type CainiaoMerchantInventoryAdjustResponse struct {
+    XMLName xml.Name `xml:"cainiao_merchant_inventory_adjust_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        SingleResultDto  *SingleResultDto `json:"single_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *SingleResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoMerchantInventoryAdjustResponse struct {
-
-    // result
-    Result   *SingleResultDto `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package nlp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.nlp.word
 */
 type TaobaoNlpWordAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoNlpWordResponse `json:"nlp_word_response,omitempty"` 
     TaobaoNlpWordResponse
 }
 
-/* model for simplify = false
 type TaobaoNlpWordResponse struct {
+    XMLName xml.Name `xml:"nlp_word_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回词法分析的结果
     
-    Wordresult  *struct {
-        WordResult  *WordResult `json:"word_result,omitempty"`
-    } `json:"wordresult,omitempty"`
+    Wordresult   *WordResult `json:"wordresult,omitempty" xml:"wordresult,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoNlpWordResponse struct {
-
-    // 返回词法分析的结果
-    Wordresult   *WordResult `json:"wordresult,omitempty"`
-
 }

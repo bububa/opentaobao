@@ -1,45 +1,26 @@
 package promotion
 
 // PageInfo 
-/* model for simplify = false
 type PageInfo struct {
 
     // 第几页
     
-    PageNum   int64 `json:"page_num,omitempty"`
+    PageNum   int64 `json:"page_num,omitempty" xml:"page_num,omitempty"`
     
 
     // 每页条数
     
-    PageSize   int64 `json:"page_size,omitempty"`
+    PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
     
 
     // 总共多少页
     
-    Pages   int64 `json:"pages,omitempty"`
+    Pages   int64 `json:"pages,omitempty" xml:"pages,omitempty"`
     
 
     // 总共多少条
     
-    Total   int64 `json:"total,omitempty"`
+    Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     
-
-}
-*/
-
-// PageInfo 
-type PageInfo struct {
-
-    // 第几页
-    PageNum   int64 `json:"page_num,omitempty"`
-
-    // 每页条数
-    PageSize   int64 `json:"page_size,omitempty"`
-
-    // 总共多少页
-    Pages   int64 `json:"pages,omitempty"`
-
-    // 总共多少条
-    Total   int64 `json:"total,omitempty"`
 
 }

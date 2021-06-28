@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.interact.open.isattention
 */
 type AlibabaInteractOpenIsattentionAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractOpenIsattentionResponse `json:"alibaba_interact_open_isattention_response,omitempty"` 
     AlibabaInteractOpenIsattentionResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractOpenIsattentionResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_open_isattention_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaInteractOpenIsattentionResultDo  *AlibabaInteractOpenIsattentionResultDo `json:"alibaba_interact_open_isattention_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaInteractOpenIsattentionResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractOpenIsattentionResponse struct {
-
-    // result
-    Result   *AlibabaInteractOpenIsattentionResultDo `json:"result,omitempty"`
-
 }

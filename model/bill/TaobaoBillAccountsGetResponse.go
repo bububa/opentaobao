@@ -1,6 +1,8 @@
 package bill
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.bill.accounts.get
 */
 type TaobaoBillAccountsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBillAccountsGetResponse `json:"bill_accounts_get_response,omitempty"` 
     TaobaoBillAccountsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoBillAccountsGetResponse struct {
+    XMLName xml.Name `xml:"bill_accounts_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的科目信息
     
-    Accounts  struct {
-        Account  []Account `json:"account,omitempty"`
-    } `json:"accounts,omitempty"`
+    Accounts   []Account `json:"accounts,omitempty" xml:"accounts>account,omitempty"`
     
-
+    
     // 返回记录行数
     
-    TotalResults   int64 `json:"total_results,omitempty"`
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBillAccountsGetResponse struct {
-
-    // 返回的科目信息
-    Accounts   []Account `json:"accounts,omitempty"`
-
-    // 返回记录行数
-    TotalResults   int64 `json:"total_results,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.tcls.aelophy.merchant.channel.order.updatestatus
 */
 type AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusResponse `json:"alibaba_tcls_aelophy_merchant_channel_order_updatestatus_response,omitempty"` 
     AlibabaTclsAelophyMerchantChannelOrderUpdatestatusResponse
 }
 
-/* model for simplify = false
 type AlibabaTclsAelophyMerchantChannelOrderUpdatestatusResponse struct {
+    XMLName xml.Name `xml:"alibaba_tcls_aelophy_merchant_channel_order_updatestatus_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    ApiResult  *struct {
-        AlibabaTclsAelophyMerchantChannelOrderUpdatestatusApiResult  *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusApiResult `json:"alibaba_tcls_aelophy_merchant_channel_order_updatestatus_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTclsAelophyMerchantChannelOrderUpdatestatusResponse struct {
-
-    // 返回结果
-    ApiResult   *AlibabaTclsAelophyMerchantChannelOrderUpdatestatusApiResult `json:"api_result,omitempty"`
-
 }

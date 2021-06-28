@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.ad.keyword.list.campaign.keywords
 */
 type AlibabaScbpAdKeywordListCampaignKeywordsAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpAdKeywordListCampaignKeywordsResponse `json:"alibaba_scbp_ad_keyword_list_campaign_keywords_response,omitempty"` 
     AlibabaScbpAdKeywordListCampaignKeywordsResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpAdKeywordListCampaignKeywordsResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_keyword_list_campaign_keywords_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回数据集合
     
-    ResultList  struct {
-        KeywordDto  []KeywordDto `json:"keyword_dto,omitempty"`
-    } `json:"result_list,omitempty"`
+    ResultList   []KeywordDto `json:"result_list,omitempty" xml:"result_list>keyword_dto,omitempty"`
     
-
-}
-*/
-
-type AlibabaScbpAdKeywordListCampaignKeywordsResponse struct {
-
-    // 返回数据集合
-    ResultList   []KeywordDto `json:"result_list,omitempty"`
-
+    
 }

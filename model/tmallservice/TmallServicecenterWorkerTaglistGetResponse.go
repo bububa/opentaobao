@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.servicecenter.worker.taglist.get
 */
 type TmallServicecenterWorkerTaglistGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallServicecenterWorkerTaglistGetResponse `json:"tmall_servicecenter_worker_taglist_get_response,omitempty"` 
     TmallServicecenterWorkerTaglistGetResponse
 }
 
-/* model for simplify = false
 type TmallServicecenterWorkerTaglistGetResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_worker_taglist_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 工人的能力标签
     
-    Result  *struct {
-        WorkerTag  *WorkerTag `json:"worker_tag,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *WorkerTag `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallServicecenterWorkerTaglistGetResponse struct {
-
-    // 工人的能力标签
-    Result   *WorkerTag `json:"result,omitempty"`
-
 }

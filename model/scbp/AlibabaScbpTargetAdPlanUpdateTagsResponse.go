@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.scbp.target.ad.plan.update.tags
 */
 type AlibabaScbpTargetAdPlanUpdateTagsAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpTargetAdPlanUpdateTagsResponse `json:"alibaba_scbp_target_ad_plan_update_tags_response,omitempty"` 
     AlibabaScbpTargetAdPlanUpdateTagsResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpTargetAdPlanUpdateTagsResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_target_ad_plan_update_tags_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改记录数量
     
-    Result   int64 `json:"result,omitempty"`
+    Result   int64 `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpTargetAdPlanUpdateTagsResponse struct {
-
-    // 修改记录数量
-    Result   int64 `json:"result,omitempty"`
-
 }

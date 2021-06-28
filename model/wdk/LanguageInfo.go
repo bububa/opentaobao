@@ -1,29 +1,16 @@
 package wdk
 
 // LanguageInfo 
-/* model for simplify = false
 type LanguageInfo struct {
 
     // 语言
     
-    Language   string `json:"language,omitempty"`
+    Language   string `json:"language,omitempty" xml:"language,omitempty"`
     
 
     // 程度
     
-    Degree   string `json:"degree,omitempty"`
+    Degree   string `json:"degree,omitempty" xml:"degree,omitempty"`
     
-
-}
-*/
-
-// LanguageInfo 
-type LanguageInfo struct {
-
-    // 语言
-    Language   string `json:"language,omitempty"`
-
-    // 程度
-    Degree   string `json:"degree,omitempty"`
 
 }

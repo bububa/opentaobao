@@ -1,6 +1,8 @@
 package ju
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.ju.items.search
 */
 type TaobaoJuItemsSearchAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJuItemsSearchResponse `json:"ju_items_search_response,omitempty"` 
     TaobaoJuItemsSearchResponse
 }
 
-/* model for simplify = false
 type TaobaoJuItemsSearchResponse struct {
+    XMLName xml.Name `xml:"ju_items_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Result  *struct {
-        PaginationResult  *PaginationResult `json:"pagination_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *PaginationResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoJuItemsSearchResponse struct {
-
-    // 返回结果
-    Result   *PaginationResult `json:"result,omitempty"`
-
 }

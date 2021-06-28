@@ -1,39 +1,21 @@
 package logistic
 
 // AlibabaEleFengniaoChainstoreContractCancelData 
-/* model for simplify = false
 type AlibabaEleFengniaoChainstoreContractCancelData struct {
 
     // appid
     
-    AppId   string `json:"app_id,omitempty"`
+    AppId   string `json:"app_id,omitempty" xml:"app_id,omitempty"`
     
 
     // 商户code
     
-    MerchantCode   string `json:"merchant_code,omitempty"`
+    MerchantCode   string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
     
 
     // 门店code
     
-    ChainstoreCodes  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"chainstore_codes,omitempty"`
+    ChainstoreCodes   []string `json:"chainstore_codes,omitempty" xml:"chainstore_codes>string,omitempty"`
     
-
-}
-*/
-
-// AlibabaEleFengniaoChainstoreContractCancelData 
-type AlibabaEleFengniaoChainstoreContractCancelData struct {
-
-    // appid
-    AppId   string `json:"app_id,omitempty"`
-
-    // 商户code
-    MerchantCode   string `json:"merchant_code,omitempty"`
-
-    // 门店code
-    ChainstoreCodes   []string `json:"chainstore_codes,omitempty"`
 
 }

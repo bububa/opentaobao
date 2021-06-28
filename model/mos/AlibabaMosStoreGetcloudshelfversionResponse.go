@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mos.store.getcloudshelfversion
 */
 type AlibabaMosStoreGetcloudshelfversionAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMosStoreGetcloudshelfversionResponse `json:"alibaba_mos_store_getcloudshelfversion_response,omitempty"` 
     AlibabaMosStoreGetcloudshelfversionResponse
 }
 
-/* model for simplify = false
 type AlibabaMosStoreGetcloudshelfversionResponse struct {
+    XMLName xml.Name `xml:"alibaba_mos_store_getcloudshelfversion_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaMosStoreGetcloudshelfversionResultDo  *AlibabaMosStoreGetcloudshelfversionResultDo `json:"alibaba_mos_store_getcloudshelfversion_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaMosStoreGetcloudshelfversionResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMosStoreGetcloudshelfversionResponse struct {
-
-    // result
-    Result   *AlibabaMosStoreGetcloudshelfversionResultDo `json:"result,omitempty"`
-
 }

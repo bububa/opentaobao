@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -13,34 +15,21 @@ taobao.inventory.adjust.external
 */
 type TaobaoInventoryAdjustExternalAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoInventoryAdjustExternalResponse `json:"inventory_adjust_external_response,omitempty"` 
     TaobaoInventoryAdjustExternalResponse
 }
 
-/* model for simplify = false
 type TaobaoInventoryAdjustExternalResponse struct {
+    XMLName xml.Name `xml:"inventory_adjust_external_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作返回码
     
-    OperateCode   string `json:"operate_code,omitempty"`
-    
+    OperateCode   string `json:"operate_code,omitempty" xml:"operate_code,omitempty"`
 
+    
     // 提示信息
     
-    TipInfos  struct {
-        TipInfo  []TipInfo `json:"tip_info,omitempty"`
-    } `json:"tip_infos,omitempty"`
+    TipInfos   []TipInfo `json:"tip_infos,omitempty" xml:"tip_infos>tip_info,omitempty"`
     
-
-}
-*/
-
-type TaobaoInventoryAdjustExternalResponse struct {
-
-    // 操作返回码
-    OperateCode   string `json:"operate_code,omitempty"`
-
-    // 提示信息
-    TipInfos   []TipInfo `json:"tip_infos,omitempty"`
-
+    
 }

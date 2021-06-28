@@ -1,6 +1,8 @@
 package crm
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.crm.members.search
 */
 type TaobaoCrmMembersSearchAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoCrmMembersSearchResponse `json:"crm_members_search_response,omitempty"` 
     TaobaoCrmMembersSearchResponse
 }
 
-/* model for simplify = false
 type TaobaoCrmMembersSearchResponse struct {
+    XMLName xml.Name `xml:"crm_members_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 根据一定条件查询的卖家会员
     
-    Members  struct {
-        CrmMember  []CrmMember `json:"crm_member,omitempty"`
-    } `json:"members,omitempty"`
+    Members   []CrmMember `json:"members,omitempty" xml:"members>crm_member,omitempty"`
     
-
+    
     // 记录的总条数
     
-    TotalResult   int64 `json:"total_result,omitempty"`
+    TotalResult   int64 `json:"total_result,omitempty" xml:"total_result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoCrmMembersSearchResponse struct {
-
-    // 根据一定条件查询的卖家会员
-    Members   []CrmMember `json:"members,omitempty"`
-
-    // 记录的总条数
-    TotalResult   int64 `json:"total_result,omitempty"`
-
 }

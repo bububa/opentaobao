@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ alibaba.wdk.merchant.storeitem.create
 */
 type AlibabaWdkMerchantStoreitemCreateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkMerchantStoreitemCreateResponse `json:"alibaba_wdk_merchant_storeitem_create_response,omitempty"` 
     AlibabaWdkMerchantStoreitemCreateResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkMerchantStoreitemCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_merchant_storeitem_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // success
     
-    Suc   bool `json:"suc,omitempty"`
-    
+    Suc   bool `json:"suc,omitempty" xml:"suc,omitempty"`
 
+    
     // errorCode
     
-    Errorcode   string `json:"errorcode,omitempty"`
-    
+    Errorcode   string `json:"errorcode,omitempty" xml:"errorcode,omitempty"`
 
+    
     // errorDesc
     
-    Errordesc   string `json:"errordesc,omitempty"`
+    Errordesc   string `json:"errordesc,omitempty" xml:"errordesc,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkMerchantStoreitemCreateResponse struct {
-
-    // success
-    Suc   bool `json:"suc,omitempty"`
-
-    // errorCode
-    Errorcode   string `json:"errorcode,omitempty"`
-
-    // errorDesc
-    Errordesc   string `json:"errordesc,omitempty"`
-
 }

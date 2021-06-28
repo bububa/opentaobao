@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.top.secret.register
 */
 type TaobaoTopSecretRegisterAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTopSecretRegisterResponse `json:"top_secret_register_response,omitempty"` 
     TaobaoTopSecretRegisterResponse
 }
 
-/* model for simplify = false
 type TaobaoTopSecretRegisterResponse struct {
+    XMLName xml.Name `xml:"top_secret_register_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回操作是否成功
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTopSecretRegisterResponse struct {
-
-    // 返回操作是否成功
-    Result   bool `json:"result,omitempty"`
-
 }

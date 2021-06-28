@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.servicecenter.spserviceorder.query
 */
 type AlibabaServicecenterSpserviceorderQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaServicecenterSpserviceorderQueryResponse `json:"alibaba_servicecenter_spserviceorder_query_response,omitempty"` 
     AlibabaServicecenterSpserviceorderQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaServicecenterSpserviceorderQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_servicecenter_spserviceorder_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 请求结果
     
-    Result  *struct {
-        AlibabaServicecenterSpserviceorderQueryResult  *AlibabaServicecenterSpserviceorderQueryResult `json:"alibaba_servicecenter_spserviceorder_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaServicecenterSpserviceorderQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaServicecenterSpserviceorderQueryResponse struct {
-
-    // 请求结果
-    Result   *AlibabaServicecenterSpserviceorderQueryResult `json:"result,omitempty"`
-
 }

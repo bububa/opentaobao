@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -13,34 +15,21 @@ taobao.wireless.picture.check
 */
 type TaobaoWirelessPictureCheckAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWirelessPictureCheckResponse `json:"wireless_picture_check_response,omitempty"` 
     TaobaoWirelessPictureCheckResponse
 }
 
-/* model for simplify = false
 type TaobaoWirelessPictureCheckResponse struct {
+    XMLName xml.Name `xml:"wireless_picture_check_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 检查结果
     
-    CheckResults  struct {
-        Checkpoints  []Checkpoints `json:"checkpoints,omitempty"`
-    } `json:"check_results,omitempty"`
+    CheckResults   []Checkpoints `json:"check_results,omitempty" xml:"check_results>checkpoints,omitempty"`
     
-
+    
     // 综合结果建议。建议用户执行的操作，取值范围： pass：文本正常； review：需要人工审核； block：文本违规，可以直接删除或者做限制处理
     
-    Suggestion   string `json:"suggestion,omitempty"`
+    Suggestion   string `json:"suggestion,omitempty" xml:"suggestion,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWirelessPictureCheckResponse struct {
-
-    // 检查结果
-    CheckResults   []Checkpoints `json:"check_results,omitempty"`
-
-    // 综合结果建议。建议用户执行的操作，取值范围： pass：文本正常； review：需要人工审核； block：文本违规，可以直接删除或者做限制处理
-    Suggestion   string `json:"suggestion,omitempty"`
-
 }

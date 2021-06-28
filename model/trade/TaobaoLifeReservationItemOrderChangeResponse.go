@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.life.reservation.item.order.change
 */
 type TaobaoLifeReservationItemOrderChangeAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLifeReservationItemOrderChangeResponse `json:"life_reservation_item_order_change_response,omitempty"` 
     TaobaoLifeReservationItemOrderChangeResponse
 }
 
-/* model for simplify = false
 type TaobaoLifeReservationItemOrderChangeResponse struct {
+    XMLName xml.Name `xml:"life_reservation_item_order_change_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        TaobaoLifeReservationItemOrderChangeResult  *TaobaoLifeReservationItemOrderChangeResult `json:"taobao_life_reservation_item_order_change_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoLifeReservationItemOrderChangeResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoLifeReservationItemOrderChangeResponse struct {
-
-    // 接口返回model
-    Result   *TaobaoLifeReservationItemOrderChangeResult `json:"result,omitempty"`
-
 }

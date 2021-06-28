@@ -1,6 +1,8 @@
 package qianniu
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.qianniu.task.finish
 */
 type TaobaoQianniuTaskFinishAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQianniuTaskFinishResponse `json:"qianniu_task_finish_response,omitempty"` 
     TaobaoQianniuTaskFinishResponse
 }
 
-/* model for simplify = false
 type TaobaoQianniuTaskFinishResponse struct {
+    XMLName xml.Name `xml:"qianniu_task_finish_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQianniuTaskFinishResponse struct {
-
-    // 是否成功
-    Result   bool `json:"result,omitempty"`
-
 }

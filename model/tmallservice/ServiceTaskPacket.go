@@ -1,39 +1,21 @@
 package tmallservice
 
 // ServiceTaskPacket 
-/* model for simplify = false
 type ServiceTaskPacket struct {
 
     // 服务名字
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
 
     // 描述
     
-    Desc   string `json:"desc,omitempty"`
+    Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     
 
     // 服务工单DO
     
-    ServiceList  struct {
-        ServiceTaskDO  []ServiceTaskDO `json:"service_task_do,omitempty"`
-    } `json:"service_list,omitempty"`
+    ServiceList   []ServiceTaskDO `json:"service_list,omitempty" xml:"service_list,omitempty"`
     
-
-}
-*/
-
-// ServiceTaskPacket 
-type ServiceTaskPacket struct {
-
-    // 服务名字
-    Name   string `json:"name,omitempty"`
-
-    // 描述
-    Desc   string `json:"desc,omitempty"`
-
-    // 服务工单DO
-    ServiceList   []ServiceTaskDO `json:"service_list,omitempty"`
 
 }

@@ -1,53 +1,31 @@
 package interact
 
 // AlibabaInteractOpenIsattentionResultDo 
-/* model for simplify = false
 type AlibabaInteractOpenIsattentionResultDo struct {
 
     // isRetry
     
-    IsRetry   bool `json:"is_retry,omitempty"`
+    IsRetry   bool `json:"is_retry,omitempty" xml:"is_retry,omitempty"`
     
 
     // data
     
-    Data   int64 `json:"data,omitempty"`
+    Data   int64 `json:"data,omitempty" xml:"data,omitempty"`
     
 
     // code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // msg
     
-    Msg   string `json:"msg,omitempty"`
+    Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     
-
-}
-*/
-
-// AlibabaInteractOpenIsattentionResultDo 
-type AlibabaInteractOpenIsattentionResultDo struct {
-
-    // isRetry
-    IsRetry   bool `json:"is_retry,omitempty"`
-
-    // data
-    Data   int64 `json:"data,omitempty"`
-
-    // code
-    Code   string `json:"code,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
-
-    // msg
-    Msg   string `json:"msg,omitempty"`
 
 }

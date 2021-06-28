@@ -1,6 +1,8 @@
 package media
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.picture.upload
 */
 type TaobaoPictureUploadAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPictureUploadResponse `json:"picture_upload_response,omitempty"` 
     TaobaoPictureUploadResponse
 }
 
-/* model for simplify = false
 type TaobaoPictureUploadResponse struct {
+    XMLName xml.Name `xml:"picture_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 当前上传的一张图片信息
     
-    Picture  *struct {
-        Picture  *Picture `json:"picture,omitempty"`
-    } `json:"picture,omitempty"`
+    Picture   *Picture `json:"picture,omitempty" xml:"picture,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoPictureUploadResponse struct {
-
-    // 当前上传的一张图片信息
-    Picture   *Picture `json:"picture,omitempty"`
-
 }

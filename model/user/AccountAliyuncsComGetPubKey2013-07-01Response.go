@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,80 +14,51 @@ account.aliyuncs.com.GetPubKey.2013-07-01
 */
 type AccountAliyuncsComGetPubKey2013-07-01APIResponse struct {
     model.CommonResponse
-    // Response *AccountAliyuncsComGetPubKey2013-07-01Response `json:"account_aliyuncs_com_GetPubKey_2013-07-01_response,omitempty"` 
     AccountAliyuncsComGetPubKey2013-07-01Response
 }
 
-/* model for simplify = false
 type AccountAliyuncsComGetPubKey2013-07-01Response struct {
+    XMLName xml.Name `xml:"account_aliyuncs_com_GetPubKey_2013-07-01_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户的公钥
     
-    PubKey   string `json:"PubKey,omitempty"`
-    
+    PubKey   string `json:"PubKey,omitempty" xml:"PubKey,omitempty"`
 
+    
     // appkey的OwnerId
     
-    OwnerId   string `json:"OwnerId,omitempty"`
-    
+    OwnerId   string `json:"OwnerId,omitempty" xml:"OwnerId,omitempty"`
 
+    
     // 用户appkey的类型
     
-    KeyType   string `json:"KeyType,omitempty"`
-    
+    KeyType   string `json:"KeyType,omitempty" xml:"KeyType,omitempty"`
 
+    
     // 创建key的时间
     
-    CreateTime   string `json:"CreateTime,omitempty"`
-    
+    CreateTime   string `json:"CreateTime,omitempty" xml:"CreateTime,omitempty"`
 
+    
     // RequestId
     
-    RequestId   string `json:"RequestId,omitempty"`
-    
+    RequestId   string `json:"RequestId,omitempty" xml:"RequestId,omitempty"`
 
+    
     // Message
     
-    Message   string `json:"Message,omitempty"`
-    
+    Message   string `json:"Message,omitempty" xml:"Message,omitempty"`
 
+    
     // 返回code
     
-    Code   string `json:"Code,omitempty"`
-    
+    Code   string `json:"Code,omitempty" xml:"Code,omitempty"`
 
+    
     // 用户的appkey
     
-    AppKey   string `json:"AppKey,omitempty"`
+    AppKey   string `json:"AppKey,omitempty" xml:"AppKey,omitempty"`
+
     
-
-}
-*/
-
-type AccountAliyuncsComGetPubKey2013-07-01Response struct {
-
-    // 用户的公钥
-    PubKey   string `json:"PubKey,omitempty"`
-
-    // appkey的OwnerId
-    OwnerId   string `json:"OwnerId,omitempty"`
-
-    // 用户appkey的类型
-    KeyType   string `json:"KeyType,omitempty"`
-
-    // 创建key的时间
-    CreateTime   string `json:"CreateTime,omitempty"`
-
-    // RequestId
-    RequestId   string `json:"RequestId,omitempty"`
-
-    // Message
-    Message   string `json:"Message,omitempty"`
-
-    // 返回code
-    Code   string `json:"Code,omitempty"`
-
-    // 用户的appkey
-    AppKey   string `json:"AppKey,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wlb.item.get
 */
 type TaobaoWlbItemGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbItemGetResponse `json:"wlb_item_get_response,omitempty"` 
     TaobaoWlbItemGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbItemGetResponse struct {
+    XMLName xml.Name `xml:"wlb_item_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品信息
     
-    Item  *struct {
-        WlbItem  *WlbItem `json:"wlb_item,omitempty"`
-    } `json:"item,omitempty"`
+    Item   *WlbItem `json:"item,omitempty" xml:"item,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbItemGetResponse struct {
-
-    // 商品信息
-    Item   *WlbItem `json:"item,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.fc.voice.record.geturl
 */
 type AlibabaAliqinFcVoiceRecordGeturlAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinFcVoiceRecordGeturlResponse `json:"alibaba_aliqin_fc_voice_record_geturl_response,omitempty"` 
     AlibabaAliqinFcVoiceRecordGeturlResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinFcVoiceRecordGeturlResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_fc_voice_record_geturl_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaAliqinFcVoiceRecordGeturlResult  *AlibabaAliqinFcVoiceRecordGeturlResult `json:"alibaba_aliqin_fc_voice_record_geturl_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaAliqinFcVoiceRecordGeturlResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinFcVoiceRecordGeturlResponse struct {
-
-    // result
-    Result   *AlibabaAliqinFcVoiceRecordGeturlResult `json:"result,omitempty"`
-
 }

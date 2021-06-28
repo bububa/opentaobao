@@ -1,6 +1,8 @@
 package flight
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.alitrip.ie.agent.shopping.push
 */
 type TaobaoAlitripIeAgentShoppingPushAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAlitripIeAgentShoppingPushResponse `json:"alitrip_ie_agent_shopping_push_response,omitempty"` 
     TaobaoAlitripIeAgentShoppingPushResponse
 }
 
-/* model for simplify = false
 type TaobaoAlitripIeAgentShoppingPushResponse struct {
+    XMLName xml.Name `xml:"alitrip_ie_agent_shopping_push_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        ShoppingPushRs  *ShoppingPushRs `json:"shopping_push_rs,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ShoppingPushRs `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAlitripIeAgentShoppingPushResponse struct {
-
-    // result
-    Result   *ShoppingPushRs `json:"result,omitempty"`
-
 }

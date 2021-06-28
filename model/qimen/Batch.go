@@ -1,85 +1,51 @@
 package qimen
 
 // Batch 
-/* model for simplify = false
 type Batch struct {
 
     // test
     
-    BatchCode   string `json:"batchCode,omitempty"`
+    BatchCode   string `json:"batchCode,omitempty" xml:"batchCode,omitempty"`
     
 
     // test
     
-    ProductDate   string `json:"productDate,omitempty"`
+    ProductDate   string `json:"productDate,omitempty" xml:"productDate,omitempty"`
     
 
     // test
     
-    ExpireDate   string `json:"expireDate,omitempty"`
+    ExpireDate   string `json:"expireDate,omitempty" xml:"expireDate,omitempty"`
     
 
     // test
     
-    ProduceCode   string `json:"produceCode,omitempty"`
+    ProduceCode   string `json:"produceCode,omitempty" xml:"produceCode,omitempty"`
     
 
     // test
     
-    InventoryType   string `json:"inventoryType,omitempty"`
+    InventoryType   string `json:"inventoryType,omitempty" xml:"inventoryType,omitempty"`
     
 
     // test
     
-    ActualQty   string `json:"actualQty,omitempty"`
+    ActualQty   string `json:"actualQty,omitempty" xml:"actualQty,omitempty"`
     
 
     // test
     
-    Quantity   string `json:"quantity,omitempty"`
+    Quantity   string `json:"quantity,omitempty" xml:"quantity,omitempty"`
     
 
     // 货品sn编码
     
-    SnCode   string `json:"snCode,omitempty"`
+    SnCode   string `json:"snCode,omitempty" xml:"snCode,omitempty"`
     
 
     // 备注
     
-    Remark   string `json:"remark,omitempty"`
+    Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     
-
-}
-*/
-
-// Batch 
-type Batch struct {
-
-    // test
-    BatchCode   string `json:"batchCode,omitempty"`
-
-    // test
-    ProductDate   string `json:"productDate,omitempty"`
-
-    // test
-    ExpireDate   string `json:"expireDate,omitempty"`
-
-    // test
-    ProduceCode   string `json:"produceCode,omitempty"`
-
-    // test
-    InventoryType   string `json:"inventoryType,omitempty"`
-
-    // test
-    ActualQty   string `json:"actualQty,omitempty"`
-
-    // test
-    Quantity   string `json:"quantity,omitempty"`
-
-    // 货品sn编码
-    SnCode   string `json:"snCode,omitempty"`
-
-    // 备注
-    Remark   string `json:"remark,omitempty"`
 
 }

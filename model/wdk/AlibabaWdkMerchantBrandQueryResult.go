@@ -1,45 +1,26 @@
 package wdk
 
 // AlibabaWdkMerchantBrandQueryResult 
-/* model for simplify = false
 type AlibabaWdkMerchantBrandQueryResult struct {
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // errorCode
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // errorDesc
     
-    ErrorDesc   string `json:"error_desc,omitempty"`
+    ErrorDesc   string `json:"error_desc,omitempty" xml:"error_desc,omitempty"`
     
 
     // result
     
-    Results   string `json:"results,omitempty"`
+    Results   string `json:"results,omitempty" xml:"results,omitempty"`
     
-
-}
-*/
-
-// AlibabaWdkMerchantBrandQueryResult 
-type AlibabaWdkMerchantBrandQueryResult struct {
-
-    // success
-    Success   bool `json:"success,omitempty"`
-
-    // errorCode
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // errorDesc
-    ErrorDesc   string `json:"error_desc,omitempty"`
-
-    // result
-    Results   string `json:"results,omitempty"`
 
 }

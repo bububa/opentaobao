@@ -1,6 +1,8 @@
 package tmallsc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -14,26 +16,16 @@ tmall.workcard.identify
 */
 type TmallWorkcardIdentifyAPIResponse struct {
     model.CommonResponse
-    // Response *TmallWorkcardIdentifyResponse `json:"tmall_workcard_identify_response,omitempty"` 
     TmallWorkcardIdentifyResponse
 }
 
-/* model for simplify = false
 type TmallWorkcardIdentifyResponse struct {
+    XMLName xml.Name `xml:"tmall_workcard_identify_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TmallWorkcardIdentifyResult  *TmallWorkcardIdentifyResult `json:"tmall_workcard_identify_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallWorkcardIdentifyResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallWorkcardIdentifyResponse struct {
-
-    // result
-    Result   *TmallWorkcardIdentifyResult `json:"result,omitempty"`
-
 }

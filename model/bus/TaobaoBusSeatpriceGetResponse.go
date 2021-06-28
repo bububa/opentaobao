@@ -1,6 +1,8 @@
 package bus
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.bus.seatprice.get
 */
 type TaobaoBusSeatpriceGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBusSeatpriceGetResponse `json:"bus_seatprice_get_response,omitempty"` 
     TaobaoBusSeatpriceGetResponse
 }
 
-/* model for simplify = false
 type TaobaoBusSeatpriceGetResponse struct {
+    XMLName xml.Name `xml:"bus_seatprice_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Result  *struct {
-        TaobaoBusSeatpriceGetResultSet  *TaobaoBusSeatpriceGetResultSet `json:"taobao_bus_seatprice_get_result_set,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoBusSeatpriceGetResultSet `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBusSeatpriceGetResponse struct {
-
-    // 返回结果
-    Result   *TaobaoBusSeatpriceGetResultSet `json:"result,omitempty"`
-
 }

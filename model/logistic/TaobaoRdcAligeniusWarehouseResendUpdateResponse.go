@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.rdc.aligenius.warehouse.resend.update
 */
 type TaobaoRdcAligeniusWarehouseResendUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRdcAligeniusWarehouseResendUpdateResponse `json:"rdc_aligenius_warehouse_resend_update_response,omitempty"` 
     TaobaoRdcAligeniusWarehouseResendUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoRdcAligeniusWarehouseResendUpdateResponse struct {
+    XMLName xml.Name `xml:"rdc_aligenius_warehouse_resend_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TaobaoRdcAligeniusWarehouseResendUpdateResult  *TaobaoRdcAligeniusWarehouseResendUpdateResult `json:"taobao_rdc_aligenius_warehouse_resend_update_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoRdcAligeniusWarehouseResendUpdateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRdcAligeniusWarehouseResendUpdateResponse struct {
-
-    // result
-    Result   *TaobaoRdcAligeniusWarehouseResendUpdateResult `json:"result,omitempty"`
-
 }

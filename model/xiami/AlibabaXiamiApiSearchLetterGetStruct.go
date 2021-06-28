@@ -1,113 +1,66 @@
 package xiami
 
 // AlibabaXiamiApiSearchLetterGetStruct 
-/* model for simplify = false
 type AlibabaXiamiApiSearchLetterGetStruct struct {
 
     // 艺人结果集
     
-    Artists  struct {
-        AlibabaXiamiApiSearchLetterGetStruct  []AlibabaXiamiApiSearchLetterGetStruct `json:"alibaba_xiami_api_search_letter_get_struct,omitempty"`
-    } `json:"artists,omitempty"`
+    Artists   []AlibabaXiamiApiSearchLetterGetStruct `json:"artists,omitempty" xml:"artists,omitempty"`
     
 
     // 歌曲列表
     
-    Songs  struct {
-        AlibabaXiamiApiSearchLetterGetStruct  []AlibabaXiamiApiSearchLetterGetStruct `json:"alibaba_xiami_api_search_letter_get_struct,omitempty"`
-    } `json:"songs,omitempty"`
+    Songs   []AlibabaXiamiApiSearchLetterGetStruct `json:"songs,omitempty" xml:"songs,omitempty"`
     
 
     // 艺人姓名
     
-    ArtistName   string `json:"artist_name,omitempty"`
+    ArtistName   string `json:"artist_name,omitempty" xml:"artist_name,omitempty"`
     
 
     // 艺人ID
     
-    ArtistId   int64 `json:"artist_id,omitempty"`
+    ArtistId   int64 `json:"artist_id,omitempty" xml:"artist_id,omitempty"`
     
 
     // 艺人LOGO
     
-    ArtistLogo   string `json:"artist_logo,omitempty"`
+    ArtistLogo   string `json:"artist_logo,omitempty" xml:"artist_logo,omitempty"`
     
 
     // 别名
     
-    EnglishName   string `json:"english_name,omitempty"`
+    EnglishName   string `json:"english_name,omitempty" xml:"english_name,omitempty"`
     
 
     // 专辑ID
     
-    AlbumId   int64 `json:"album_id,omitempty"`
+    AlbumId   int64 `json:"album_id,omitempty" xml:"album_id,omitempty"`
     
 
     // 歌曲ID
     
-    SongId   int64 `json:"song_id,omitempty"`
+    SongId   int64 `json:"song_id,omitempty" xml:"song_id,omitempty"`
     
 
     // 歌曲名称
     
-    SongName   string `json:"song_name,omitempty"`
+    SongName   string `json:"song_name,omitempty" xml:"song_name,omitempty"`
     
 
     // 歌手名称
     
-    Singer   string `json:"singer,omitempty"`
+    Singer   string `json:"singer,omitempty" xml:"singer,omitempty"`
     
 
     // 专辑名称
     
-    AlbumName   string `json:"album_name,omitempty"`
+    AlbumName   string `json:"album_name,omitempty" xml:"album_name,omitempty"`
     
 
     // 专辑LOGO
     
-    AlbumLogo   string `json:"album_logo,omitempty"`
+    AlbumLogo   string `json:"album_logo,omitempty" xml:"album_logo,omitempty"`
     
-
-}
-*/
-
-// AlibabaXiamiApiSearchLetterGetStruct 
-type AlibabaXiamiApiSearchLetterGetStruct struct {
-
-    // 艺人结果集
-    Artists   []AlibabaXiamiApiSearchLetterGetStruct `json:"artists,omitempty"`
-
-    // 歌曲列表
-    Songs   []AlibabaXiamiApiSearchLetterGetStruct `json:"songs,omitempty"`
-
-    // 艺人姓名
-    ArtistName   string `json:"artist_name,omitempty"`
-
-    // 艺人ID
-    ArtistId   int64 `json:"artist_id,omitempty"`
-
-    // 艺人LOGO
-    ArtistLogo   string `json:"artist_logo,omitempty"`
-
-    // 别名
-    EnglishName   string `json:"english_name,omitempty"`
-
-    // 专辑ID
-    AlbumId   int64 `json:"album_id,omitempty"`
-
-    // 歌曲ID
-    SongId   int64 `json:"song_id,omitempty"`
-
-    // 歌曲名称
-    SongName   string `json:"song_name,omitempty"`
-
-    // 歌手名称
-    Singer   string `json:"singer,omitempty"`
-
-    // 专辑名称
-    AlbumName   string `json:"album_name,omitempty"`
-
-    // 专辑LOGO
-    AlbumLogo   string `json:"album_logo,omitempty"`
 
 }

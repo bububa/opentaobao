@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.login.alipayauth
 */
 type AlibabaInteractLoginAlipayauthAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractLoginAlipayauthResponse `json:"alibaba_interact_login_alipayauth_response,omitempty"` 
     AlibabaInteractLoginAlipayauthResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractLoginAlipayauthResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_login_alipayauth_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractLoginAlipayauthResponse struct {
-
-    // 返回值
-    Result   string `json:"result,omitempty"`
-
 }

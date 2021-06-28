@@ -83,6 +83,6 @@ AlibabaWdkFinanceOrderBackflow API中的ApiResult会被重命名为AlibabaWdkFin
 
 ## API 列表
 {{ range $v := .Pkgs }}
-- [x] {{ $v.Name }}({{ $v.Link }}), github.com/bububa/opentaobao/api/{{ $v.Pkg }}(https://pkg.go.dev/github.com/bububa/opentaobao/api/{{ $v.Pkg }})
+- [x] [{{ $v.Name }}]({{ $v.Link }}), [github.com/bububa/opentaobao/api/{{ $v.Pkg }}](https://pkg.go.dev/github.com/bububa/opentaobao/api/{{ $v.Pkg }})
 {{ end  }}
 

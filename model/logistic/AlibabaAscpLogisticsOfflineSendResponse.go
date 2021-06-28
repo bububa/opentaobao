@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.ascp.logistics.offline.send
 */
 type AlibabaAscpLogisticsOfflineSendAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAscpLogisticsOfflineSendResponse `json:"alibaba_ascp_logistics_offline_send_response,omitempty"` 
     AlibabaAscpLogisticsOfflineSendResponse
 }
 
-/* model for simplify = false
 type AlibabaAscpLogisticsOfflineSendResponse struct {
+    XMLName xml.Name `xml:"alibaba_ascp_logistics_offline_send_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异步获取历史数据接口返回结果
     
-    Result  *struct {
-        AlibabaAscpLogisticsOfflineSendResultDto  *AlibabaAscpLogisticsOfflineSendResultDto `json:"alibaba_ascp_logistics_offline_send_result_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaAscpLogisticsOfflineSendResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAscpLogisticsOfflineSendResponse struct {
-
-    // 异步获取历史数据接口返回结果
-    Result   *AlibabaAscpLogisticsOfflineSendResultDto `json:"result,omitempty"`
-
 }

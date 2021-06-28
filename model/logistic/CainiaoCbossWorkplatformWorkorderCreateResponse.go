@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ cainiao.cboss.workplatform.workorder.create
 */
 type CainiaoCbossWorkplatformWorkorderCreateAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoCbossWorkplatformWorkorderCreateResponse `json:"cainiao_cboss_workplatform_workorder_create_response,omitempty"` 
     CainiaoCbossWorkplatformWorkorderCreateResponse
 }
 
-/* model for simplify = false
 type CainiaoCbossWorkplatformWorkorderCreateResponse struct {
+    XMLName xml.Name `xml:"cainiao_cboss_workplatform_workorder_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        CainiaoCbossWorkplatformWorkorderCreateResult  *CainiaoCbossWorkplatformWorkorderCreateResult `json:"cainiao_cboss_workplatform_workorder_create_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CainiaoCbossWorkplatformWorkorderCreateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoCbossWorkplatformWorkorderCreateResponse struct {
-
-    // 接口返回model
-    Result   *CainiaoCbossWorkplatformWorkorderCreateResult `json:"result,omitempty"`
-
 }

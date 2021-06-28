@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ cainiao.cboss.workplatform.biztype.querybyid
 */
 type CainiaoCbossWorkplatformBiztypeQuerybyidAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoCbossWorkplatformBiztypeQuerybyidResponse `json:"cainiao_cboss_workplatform_biztype_querybyid_response,omitempty"` 
     CainiaoCbossWorkplatformBiztypeQuerybyidResponse
 }
 
-/* model for simplify = false
 type CainiaoCbossWorkplatformBiztypeQuerybyidResponse struct {
+    XMLName xml.Name `xml:"cainiao_cboss_workplatform_biztype_querybyid_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        CainiaoCbossWorkplatformBiztypeQuerybyidResult  *CainiaoCbossWorkplatformBiztypeQuerybyidResult `json:"cainiao_cboss_workplatform_biztype_querybyid_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CainiaoCbossWorkplatformBiztypeQuerybyidResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoCbossWorkplatformBiztypeQuerybyidResponse struct {
-
-    // result
-    Result   *CainiaoCbossWorkplatformBiztypeQuerybyidResult `json:"result,omitempty"`
-
 }

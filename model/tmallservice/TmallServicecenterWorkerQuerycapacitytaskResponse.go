@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.servicecenter.worker.querycapacitytask
 */
 type TmallServicecenterWorkerQuerycapacitytaskAPIResponse struct {
     model.CommonResponse
-    // Response *TmallServicecenterWorkerQuerycapacitytaskResponse `json:"tmall_servicecenter_worker_querycapacitytask_response,omitempty"` 
     TmallServicecenterWorkerQuerycapacitytaskResponse
 }
 
-/* model for simplify = false
 type TmallServicecenterWorkerQuerycapacitytaskResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_worker_querycapacitytask_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // ResultBase
     
-    ResultBase  *struct {
-        ResultBase  *ResultBase `json:"result_base,omitempty"`
-    } `json:"result_base,omitempty"`
+    ResultBase   *ResultBase `json:"result_base,omitempty" xml:"result_base,omitempty"`
+
     
-
-}
-*/
-
-type TmallServicecenterWorkerQuerycapacitytaskResponse struct {
-
-    // ResultBase
-    ResultBase   *ResultBase `json:"result_base,omitempty"`
-
 }

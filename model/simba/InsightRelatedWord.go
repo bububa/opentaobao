@@ -1,29 +1,16 @@
 package simba
 
 // InsightRelatedWord 
-/* model for simplify = false
 type InsightRelatedWord struct {
 
     // 相关词
     
-    RelatedWord   string `json:"related_word,omitempty"`
+    RelatedWord   string `json:"related_word,omitempty" xml:"related_word,omitempty"`
     
 
     // 相关度
     
-    Weight   string `json:"weight,omitempty"`
+    Weight   string `json:"weight,omitempty" xml:"weight,omitempty"`
     
-
-}
-*/
-
-// InsightRelatedWord 
-type InsightRelatedWord struct {
-
-    // 相关词
-    RelatedWord   string `json:"related_word,omitempty"`
-
-    // 相关度
-    Weight   string `json:"weight,omitempty"`
 
 }

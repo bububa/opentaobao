@@ -1,6 +1,8 @@
 package aliyun
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ slb.aliyuncs.com.SetLoadBalancerName.2013-02-21
 */
 type SlbAliyuncsComSetLoadBalancerName2013-02-21APIResponse struct {
     model.CommonResponse
-    // Response *SlbAliyuncsComSetLoadBalancerName2013-02-21Response `json:"slb_aliyuncs_com_SetLoadBalancerName_2013-02-21_response,omitempty"` 
     SlbAliyuncsComSetLoadBalancerName2013-02-21Response
 }
 
-/* model for simplify = false
 type SlbAliyuncsComSetLoadBalancerName2013-02-21Response struct {
+    XMLName xml.Name `xml:"slb_aliyuncs_com_SetLoadBalancerName_2013-02-21_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // request id
     
-    Requestid   string `json:"requestid,omitempty"`
+    Requestid   string `json:"requestid,omitempty" xml:"requestid,omitempty"`
+
     
-
-}
-*/
-
-type SlbAliyuncsComSetLoadBalancerName2013-02-21Response struct {
-
-    // request id
-    Requestid   string `json:"requestid,omitempty"`
-
 }

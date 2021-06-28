@@ -1,71 +1,41 @@
 package product
 
 // TmallItemDapeiTemplateQueryResultSet 
-/* model for simplify = false
 type TmallItemDapeiTemplateQueryResultSet struct {
 
     // firstResult
     
-    Results  struct {
-        DapeiDO  []DapeiDO `json:"dapei_do,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []DapeiDO `json:"results,omitempty" xml:"results,omitempty"`
     
 
     // error
     
-    Error   bool `json:"error,omitempty"`
+    Error   bool `json:"error,omitempty" xml:"error,omitempty"`
     
 
     // errorMsg
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     
 
     // totalResults
     
-    TotalResults   int64 `json:"total_results,omitempty"`
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
     
 
     // totalPage
     
-    TotalPage   int64 `json:"total_page,omitempty"`
+    TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
     
 
     // pageIndex
     
-    PageIndex   int64 `json:"page_index,omitempty"`
+    PageIndex   int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
     
 
     // errorCode
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
-
-}
-*/
-
-// TmallItemDapeiTemplateQueryResultSet 
-type TmallItemDapeiTemplateQueryResultSet struct {
-
-    // firstResult
-    Results   []DapeiDO `json:"results,omitempty"`
-
-    // error
-    Error   bool `json:"error,omitempty"`
-
-    // errorMsg
-    ErrorMsg   string `json:"error_msg,omitempty"`
-
-    // totalResults
-    TotalResults   int64 `json:"total_results,omitempty"`
-
-    // totalPage
-    TotalPage   int64 `json:"total_page,omitempty"`
-
-    // pageIndex
-    PageIndex   int64 `json:"page_index,omitempty"`
-
-    // errorCode
-    ErrorCode   string `json:"error_code,omitempty"`
 
 }

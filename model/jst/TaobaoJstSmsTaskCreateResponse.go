@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.jst.sms.task.create
 */
 type TaobaoJstSmsTaskCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJstSmsTaskCreateResponse `json:"jst_sms_task_create_response,omitempty"` 
     TaobaoJstSmsTaskCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoJstSmsTaskCreateResponse struct {
+    XMLName xml.Name `xml:"jst_sms_task_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参
     
-    Result  *struct {
-        SmsResponse  *SmsResponse `json:"sms_response,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *SmsResponse `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoJstSmsTaskCreateResponse struct {
-
-    // 出参
-    Result   *SmsResponse `json:"result,omitempty"`
-
 }

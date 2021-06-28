@@ -1,6 +1,8 @@
 package aliqin
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.fc.iot.qry.personinfo
 */
 type AlibabaAliqinFcIotQryPersoninfoAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinFcIotQryPersoninfoResponse `json:"alibaba_aliqin_fc_iot_qry_personinfo_response,omitempty"` 
     AlibabaAliqinFcIotQryPersoninfoResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinFcIotQryPersoninfoResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_fc_iot_qry_personinfo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        AlibabaAliqinFcIotQryPersoninfoResult  *AlibabaAliqinFcIotQryPersoninfoResult `json:"alibaba_aliqin_fc_iot_qry_personinfo_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaAliqinFcIotQryPersoninfoResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinFcIotQryPersoninfoResponse struct {
-
-    // result
-    Result   *AlibabaAliqinFcIotQryPersoninfoResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package baodian
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.baodian.server.sdk.config.get
 */
 type TaobaoBaodianServerSdkConfigGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaodianServerSdkConfigGetResponse `json:"baodian_server_sdk_config_get_response,omitempty"` 
     TaobaoBaodianServerSdkConfigGetResponse
 }
 
-/* model for simplify = false
 type TaobaoBaodianServerSdkConfigGetResponse struct {
+    XMLName xml.Name `xml:"baodian_server_sdk_config_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回sdk配置的字符串
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaodianServerSdkConfigGetResponse struct {
-
-    // 返回sdk配置的字符串
-    Result   string `json:"result,omitempty"`
-
 }

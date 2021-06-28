@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -14,26 +16,16 @@ taobao.trade.amount.get
 */
 type TaobaoTradeAmountGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTradeAmountGetResponse `json:"trade_amount_get_response,omitempty"` 
     TaobaoTradeAmountGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTradeAmountGetResponse struct {
+    XMLName xml.Name `xml:"trade_amount_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 主订单的财务信息详情
     
-    TradeAmount  *struct {
-        TradeAmount  *TradeAmount `json:"trade_amount,omitempty"`
-    } `json:"trade_amount,omitempty"`
+    TradeAmount   *TradeAmount `json:"trade_amount,omitempty" xml:"trade_amount,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTradeAmountGetResponse struct {
-
-    // 主订单的财务信息详情
-    TradeAmount   *TradeAmount `json:"trade_amount,omitempty"`
-
 }

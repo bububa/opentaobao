@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.interact.sensor.networkstatus
 */
 type AlibabaInteractSensorNetworkstatusAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractSensorNetworkstatusResponse `json:"alibaba_interact_sensor_networkstatus_response,omitempty"` 
     AlibabaInteractSensorNetworkstatusResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractSensorNetworkstatusResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_sensor_networkstatus_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // return=0表示成功
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractSensorNetworkstatusResponse struct {
-
-    // return=0表示成功
-    Result   string `json:"result,omitempty"`
-
 }

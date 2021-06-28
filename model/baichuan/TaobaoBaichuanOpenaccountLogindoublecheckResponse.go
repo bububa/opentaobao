@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.baichuan.openaccount.logindoublecheck
 */
 type TaobaoBaichuanOpenaccountLogindoublecheckAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBaichuanOpenaccountLogindoublecheckResponse `json:"baichuan_openaccount_logindoublecheck_response,omitempty"` 
     TaobaoBaichuanOpenaccountLogindoublecheckResponse
 }
 
-/* model for simplify = false
 type TaobaoBaichuanOpenaccountLogindoublecheckResponse struct {
+    XMLName xml.Name `xml:"baichuan_openaccount_logindoublecheck_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBaichuanOpenaccountLogindoublecheckResponse struct {
-
-    // name
-    Name   string `json:"name,omitempty"`
-
 }

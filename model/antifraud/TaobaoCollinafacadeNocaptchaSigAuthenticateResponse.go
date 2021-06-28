@@ -1,6 +1,8 @@
 package antifraud
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.collinafacade.nocaptcha.sig.authenticate
 */
 type TaobaoCollinafacadeNocaptchaSigAuthenticateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoCollinafacadeNocaptchaSigAuthenticateResponse `json:"collinafacade_nocaptcha_sig_authenticate_response,omitempty"` 
     TaobaoCollinafacadeNocaptchaSigAuthenticateResponse
 }
 
-/* model for simplify = false
 type TaobaoCollinafacadeNocaptchaSigAuthenticateResponse struct {
+    XMLName xml.Name `xml:"collinafacade_nocaptcha_sig_authenticate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 服务出参
     
-    Ret   int64 `json:"ret,omitempty"`
-    
+    Ret   int64 `json:"ret,omitempty" xml:"ret,omitempty"`
 
+    
     // 返回authenticateResult
     
-    RetDetail  *struct {
-        SigAuthenticateResult  *SigAuthenticateResult `json:"sig_authenticate_result,omitempty"`
-    } `json:"ret_detail,omitempty"`
+    RetDetail   *SigAuthenticateResult `json:"ret_detail,omitempty" xml:"ret_detail,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoCollinafacadeNocaptchaSigAuthenticateResponse struct {
-
-    // 服务出参
-    Ret   int64 `json:"ret,omitempty"`
-
-    // 返回authenticateResult
-    RetDetail   *SigAuthenticateResult `json:"ret_detail,omitempty"`
-
 }

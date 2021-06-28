@@ -1,6 +1,8 @@
 package aliqin
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.fc.iot.cardInfo
 */
 type AlibabaAliqinFcIotCardInfoAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinFcIotCardInfoResponse `json:"alibaba_aliqin_fc_iot_cardInfo_response,omitempty"` 
     AlibabaAliqinFcIotCardInfoResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinFcIotCardInfoResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_fc_iot_cardInfo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果对象
     
-    Result  *struct {
-        AlibabaAliqinFcIotCardInfoResult  *AlibabaAliqinFcIotCardInfoResult `json:"alibaba_aliqin_fc_iot_card_info_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaAliqinFcIotCardInfoResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinFcIotCardInfoResponse struct {
-
-    // 结果对象
-    Result   *AlibabaAliqinFcIotCardInfoResult `json:"result,omitempty"`
-
 }

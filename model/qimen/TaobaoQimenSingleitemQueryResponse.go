@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qimen.singleitem.query
 */
 type TaobaoQimenSingleitemQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenSingleitemQueryResponse `json:"qimen_singleitem_query_response,omitempty"` 
     TaobaoQimenSingleitemQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenSingleitemQueryResponse struct {
+    XMLName xml.Name `xml:"qimen_singleitem_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        ResponseDO  *ResponseDO `json:"response_do,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *ResponseDO `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenSingleitemQueryResponse struct {
-
-    // 
-    Response   *ResponseDO `json:"response,omitempty"`
-
 }

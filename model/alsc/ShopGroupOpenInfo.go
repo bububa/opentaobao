@@ -1,57 +1,31 @@
 package alsc
 
 // ShopGroupOpenInfo 
-/* model for simplify = false
 type ShopGroupOpenInfo struct {
 
     // 门店id
     
-    ShopIds  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"shop_ids,omitempty"`
+    ShopIds   []string `json:"shop_ids,omitempty" xml:"shop_ids>string,omitempty"`
     
 
     // 门店组id
     
-    ShopGroupId   string `json:"shop_group_id,omitempty"`
+    ShopGroupId   string `json:"shop_group_id,omitempty" xml:"shop_group_id,omitempty"`
     
 
     // 门店组类型
     
-    ShopGroupType   int64 `json:"shop_group_type,omitempty"`
+    ShopGroupType   int64 `json:"shop_group_type,omitempty" xml:"shop_group_type,omitempty"`
     
 
     // 运营计划id
     
-    OptPlanId   string `json:"opt_plan_id,omitempty"`
+    OptPlanId   string `json:"opt_plan_id,omitempty" xml:"opt_plan_id,omitempty"`
     
 
     // 外部门店ID
     
-    OutShopIds  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"out_shop_ids,omitempty"`
+    OutShopIds   []string `json:"out_shop_ids,omitempty" xml:"out_shop_ids>string,omitempty"`
     
-
-}
-*/
-
-// ShopGroupOpenInfo 
-type ShopGroupOpenInfo struct {
-
-    // 门店id
-    ShopIds   []string `json:"shop_ids,omitempty"`
-
-    // 门店组id
-    ShopGroupId   string `json:"shop_group_id,omitempty"`
-
-    // 门店组类型
-    ShopGroupType   int64 `json:"shop_group_type,omitempty"`
-
-    // 运营计划id
-    OptPlanId   string `json:"opt_plan_id,omitempty"`
-
-    // 外部门店ID
-    OutShopIds   []string `json:"out_shop_ids,omitempty"`
 
 }

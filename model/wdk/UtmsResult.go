@@ -1,55 +1,31 @@
 package wdk
 
 // UtmsResult 
-/* model for simplify = false
 type UtmsResult struct {
 
     // code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // model
     
-    Model   bool `json:"model,omitempty"`
+    Model   bool `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // msg
     
-    Msg   string `json:"msg,omitempty"`
+    Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // list
     
-    List  struct {
-        BomProcessDTO  []BomProcessDTO `json:"bom_process_dto,omitempty"`
-    } `json:"list,omitempty"`
+    List   []BomProcessDTO `json:"list,omitempty" xml:"list,omitempty"`
     
-
-}
-*/
-
-// UtmsResult 
-type UtmsResult struct {
-
-    // code
-    Code   string `json:"code,omitempty"`
-
-    // model
-    Model   bool `json:"model,omitempty"`
-
-    // msg
-    Msg   string `json:"msg,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
-
-    // list
-    List   []BomProcessDTO `json:"list,omitempty"`
 
 }

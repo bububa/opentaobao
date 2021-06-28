@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.serchcrowd.price.batch.update
 */
 type TaobaoSimbaSerchcrowdPriceBatchUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaSerchcrowdPriceBatchUpdateResponse `json:"simba_serchcrowd_price_batch_update_response,omitempty"` 
     TaobaoSimbaSerchcrowdPriceBatchUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaSerchcrowdPriceBatchUpdateResponse struct {
+    XMLName xml.Name `xml:"simba_serchcrowd_price_batch_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Adgrouptargetingtags  struct {
-        AdgroupTargetingTagDto  []AdgroupTargetingTagDto `json:"adgroup_targeting_tag_dto,omitempty"`
-    } `json:"adgrouptargetingtags,omitempty"`
+    Adgrouptargetingtags   []AdgroupTargetingTagDto `json:"adgrouptargetingtags,omitempty" xml:"adgrouptargetingtags>adgroup_targeting_tag_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaSerchcrowdPriceBatchUpdateResponse struct {
-
-    // result
-    Adgrouptargetingtags   []AdgroupTargetingTagDto `json:"adgrouptargetingtags,omitempty"`
-
+    
 }

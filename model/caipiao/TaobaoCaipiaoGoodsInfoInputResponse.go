@@ -1,6 +1,8 @@
 package caipiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.caipiao.goods.info.input
 */
 type TaobaoCaipiaoGoodsInfoInputAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoCaipiaoGoodsInfoInputResponse `json:"caipiao_goods_info_input_response,omitempty"` 
     TaobaoCaipiaoGoodsInfoInputResponse
 }
 
-/* model for simplify = false
 type TaobaoCaipiaoGoodsInfoInputResponse struct {
+    XMLName xml.Name `xml:"caipiao_goods_info_input_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 录入操作是否成功
     
-    InputResult   bool `json:"input_result,omitempty"`
+    InputResult   bool `json:"input_result,omitempty" xml:"input_result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoCaipiaoGoodsInfoInputResponse struct {
-
-    // 录入操作是否成功
-    InputResult   bool `json:"input_result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package waybill
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ cainiao.waybill.ii.get
 */
 type CainiaoWaybillIiGetAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoWaybillIiGetResponse `json:"cainiao_waybill_ii_get_response,omitempty"` 
     CainiaoWaybillIiGetResponse
 }
 
-/* model for simplify = false
 type CainiaoWaybillIiGetResponse struct {
+    XMLName xml.Name `xml:"cainiao_waybill_ii_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 系统自动生成
     
-    Modules  struct {
-        WaybillCloudPrintResponse  []WaybillCloudPrintResponse `json:"waybill_cloud_print_response,omitempty"`
-    } `json:"modules,omitempty"`
+    Modules   []WaybillCloudPrintResponse `json:"modules,omitempty" xml:"modules>waybill_cloud_print_response,omitempty"`
     
-
-}
-*/
-
-type CainiaoWaybillIiGetResponse struct {
-
-    // 系统自动生成
-    Modules   []WaybillCloudPrintResponse `json:"modules,omitempty"`
-
+    
 }

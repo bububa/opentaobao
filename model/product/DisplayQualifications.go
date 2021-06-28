@@ -1,37 +1,21 @@
 package product
 
 // DisplayQualifications 
-/* model for simplify = false
 type DisplayQualifications struct {
 
     // 返回消息
     
-    Message   string `json:"message,omitempty"`
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
     
 
     // 是否成功
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
     
 
     // 填充列表
     
-    Model   string `json:"model,omitempty"`
+    Model   string `json:"model,omitempty" xml:"model,omitempty"`
     
-
-}
-*/
-
-// DisplayQualifications 
-type DisplayQualifications struct {
-
-    // 返回消息
-    Message   string `json:"message,omitempty"`
-
-    // 是否成功
-    Result   bool `json:"result,omitempty"`
-
-    // 填充列表
-    Model   string `json:"model,omitempty"`
 
 }

@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.service.settleadjustment.get
 */
 type TmallServiceSettleadjustmentGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallServiceSettleadjustmentGetResponse `json:"tmall_service_settleadjustment_get_response,omitempty"` 
     TmallServiceSettleadjustmentGetResponse
 }
 
-/* model for simplify = false
 type TmallServiceSettleadjustmentGetResponse struct {
+    XMLName xml.Name `xml:"tmall_service_settleadjustment_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TmallServiceSettleadjustmentGetResult  *TmallServiceSettleadjustmentGetResult `json:"tmall_service_settleadjustment_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallServiceSettleadjustmentGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallServiceSettleadjustmentGetResponse struct {
-
-    // result
-    Result   *TmallServiceSettleadjustmentGetResult `json:"result,omitempty"`
-
 }

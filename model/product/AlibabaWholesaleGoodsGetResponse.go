@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wholesale.goods.get
 */
 type AlibabaWholesaleGoodsGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWholesaleGoodsGetResponse `json:"alibaba_wholesale_goods_get_response,omitempty"` 
     AlibabaWholesaleGoodsGetResponse
 }
 
-/* model for simplify = false
 type AlibabaWholesaleGoodsGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_wholesale_goods_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // wholesale goods detail result
     
-    WholesaleGoodsResult  *struct {
-        WholesaleGoodsOpenResult  *WholesaleGoodsOpenResult `json:"wholesale_goods_open_result,omitempty"`
-    } `json:"wholesale_goods_result,omitempty"`
+    WholesaleGoodsResult   *WholesaleGoodsOpenResult `json:"wholesale_goods_result,omitempty" xml:"wholesale_goods_result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWholesaleGoodsGetResponse struct {
-
-    // wholesale goods detail result
-    WholesaleGoodsResult   *WholesaleGoodsOpenResult `json:"wholesale_goods_result,omitempty"`
-
 }

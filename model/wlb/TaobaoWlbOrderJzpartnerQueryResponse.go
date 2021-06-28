@@ -1,6 +1,8 @@
 package wlb
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,52 +14,31 @@ taobao.wlb.order.jzpartner.query
 */
 type TaobaoWlbOrderJzpartnerQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbOrderJzpartnerQueryResponse `json:"wlb_order_jzpartner_query_response,omitempty"` 
     TaobaoWlbOrderJzpartnerQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbOrderJzpartnerQueryResponse struct {
+    XMLName xml.Name `xml:"wlb_order_jzpartner_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口查询成功或者失败
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 查询返回信息，如果失败，存储错误信息
     
-    ResultInfo   string `json:"result_info,omitempty"`
-    
+    ResultInfo   string `json:"result_info,omitempty" xml:"result_info,omitempty"`
 
+    
     // 物流配送服务商对象列表
     
-    ServerList  struct {
-        PartnerNew  []PartnerNew `json:"partner_new,omitempty"`
-    } `json:"server_list,omitempty"`
+    ServerList   []PartnerNew `json:"server_list,omitempty" xml:"server_list>partner_new,omitempty"`
     
-
+    
     // 安装服务商列表
     
-    InstallList  struct {
-        PartnerNew  []PartnerNew `json:"partner_new,omitempty"`
-    } `json:"install_list,omitempty"`
+    InstallList   []PartnerNew `json:"install_list,omitempty" xml:"install_list>partner_new,omitempty"`
     
-
-}
-*/
-
-type TaobaoWlbOrderJzpartnerQueryResponse struct {
-
-    // 接口查询成功或者失败
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 查询返回信息，如果失败，存储错误信息
-    ResultInfo   string `json:"result_info,omitempty"`
-
-    // 物流配送服务商对象列表
-    ServerList   []PartnerNew `json:"server_list,omitempty"`
-
-    // 安装服务商列表
-    InstallList   []PartnerNew `json:"install_list,omitempty"`
-
+    
 }

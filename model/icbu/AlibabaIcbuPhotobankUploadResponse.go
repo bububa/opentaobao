@@ -1,6 +1,8 @@
 package icbu
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.icbu.photobank.upload
 */
 type AlibabaIcbuPhotobankUploadAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaIcbuPhotobankUploadResponse `json:"alibaba_icbu_photobank_upload_response,omitempty"` 
     AlibabaIcbuPhotobankUploadResponse
 }
 
-/* model for simplify = false
 type AlibabaIcbuPhotobankUploadResponse struct {
+    XMLName xml.Name `xml:"alibaba_icbu_photobank_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 图片信息
     
-    UploadImageResponse  *struct {
-        UploadImageResponseDo  *UploadImageResponseDo `json:"upload_image_response_do,omitempty"`
-    } `json:"upload_image_response,omitempty"`
+    UploadImageResponse   *UploadImageResponseDo `json:"upload_image_response,omitempty" xml:"upload_image_response,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaIcbuPhotobankUploadResponse struct {
-
-    // 图片信息
-    UploadImageResponse   *UploadImageResponseDo `json:"upload_image_response,omitempty"`
-
 }

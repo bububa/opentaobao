@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.item.qualification.display.get
 */
 type TaobaoItemQualificationDisplayGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoItemQualificationDisplayGetResponse `json:"item_qualification_display_get_response,omitempty"` 
     TaobaoItemQualificationDisplayGetResponse
 }
 
-/* model for simplify = false
 type TaobaoItemQualificationDisplayGetResponse struct {
+    XMLName xml.Name `xml:"item_qualification_display_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回资质采集配置
     
-    DisplayConf  *struct {
-        DisplayQualifications  *DisplayQualifications `json:"display_qualifications,omitempty"`
-    } `json:"display_conf,omitempty"`
+    DisplayConf   *DisplayQualifications `json:"display_conf,omitempty" xml:"display_conf,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoItemQualificationDisplayGetResponse struct {
-
-    // 返回资质采集配置
-    DisplayConf   *DisplayQualifications `json:"display_conf,omitempty"`
-
 }

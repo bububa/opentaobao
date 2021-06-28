@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.marketing.itempool.removeitem
 */
 type AlibabaWdkMarketingItempoolRemoveitemAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkMarketingItempoolRemoveitemResponse `json:"alibaba_wdk_marketing_itempool_removeitem_response,omitempty"` 
     AlibabaWdkMarketingItempoolRemoveitemResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkMarketingItempoolRemoveitemResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_marketing_itempool_removeitem_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 移除商品返回结果
     
-    Result  *struct {
-        MarketResult  *MarketResult `json:"market_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *MarketResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkMarketingItempoolRemoveitemResponse struct {
-
-    // 移除商品返回结果
-    Result   *MarketResult `json:"result,omitempty"`
-
 }

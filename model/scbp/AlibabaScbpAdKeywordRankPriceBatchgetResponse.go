@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.ad.keyword.rank.price.batchget
 */
 type AlibabaScbpAdKeywordRankPriceBatchgetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpAdKeywordRankPriceBatchgetResponse `json:"alibaba_scbp_ad_keyword_rank_price_batchget_response,omitempty"` 
     AlibabaScbpAdKeywordRankPriceBatchgetResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpAdKeywordRankPriceBatchgetResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_keyword_rank_price_batchget_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    ResultList  struct {
-        KeywordRankPriceDTO  []KeywordRankPriceDTO `json:"keyword_rank_price_dto,omitempty"`
-    } `json:"result_list,omitempty"`
+    ResultList   []KeywordRankPriceDTO `json:"result_list,omitempty" xml:"result_list>keyword_rank_price_dto,omitempty"`
     
-
-}
-*/
-
-type AlibabaScbpAdKeywordRankPriceBatchgetResponse struct {
-
-    // 返回结果
-    ResultList   []KeywordRankPriceDTO `json:"result_list,omitempty"`
-
+    
 }

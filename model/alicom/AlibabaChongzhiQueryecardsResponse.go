@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,52 +14,31 @@ alibaba.chongzhi.queryecards
 */
 type AlibabaChongzhiQueryecardsAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaChongzhiQueryecardsResponse `json:"alibaba_chongzhi_queryecards_response,omitempty"` 
     AlibabaChongzhiQueryecardsResponse
 }
 
-/* model for simplify = false
 type AlibabaChongzhiQueryecardsResponse struct {
+    XMLName xml.Name `xml:"alibaba_chongzhi_queryecards_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result   int64 `json:"result,omitempty"`
-    
+    Result   int64 `json:"result,omitempty" xml:"result,omitempty"`
 
+    
     // desc
     
-    Desc   string `json:"desc,omitempty"`
-    
+    Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
 
+    
     // 订单列表
     
-    EcardList  struct {
-        EcardItemDo  []EcardItemDo `json:"ecard_item_do,omitempty"`
-    } `json:"ecard_list,omitempty"`
+    EcardList   []EcardItemDo `json:"ecard_list,omitempty" xml:"ecard_list>ecard_item_do,omitempty"`
     
-
+    
     // MtsInfoDo
     
-    CatInfo  *struct {
-        MtsInfoDo  *MtsInfoDo `json:"mts_info_do,omitempty"`
-    } `json:"cat_info,omitempty"`
+    CatInfo   *MtsInfoDo `json:"cat_info,omitempty" xml:"cat_info,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaChongzhiQueryecardsResponse struct {
-
-    // 结果
-    Result   int64 `json:"result,omitempty"`
-
-    // desc
-    Desc   string `json:"desc,omitempty"`
-
-    // 订单列表
-    EcardList   []EcardItemDo `json:"ecard_list,omitempty"`
-
-    // MtsInfoDo
-    CatInfo   *MtsInfoDo `json:"cat_info,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package wms
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wlb.wms.stock.out.bill.get
 */
 type TaobaoWlbWmsStockOutBillGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbWmsStockOutBillGetResponse `json:"wlb_wms_stock_out_bill_get_response,omitempty"` 
     TaobaoWlbWmsStockOutBillGetResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbWmsStockOutBillGetResponse struct {
+    XMLName xml.Name `xml:"wlb_wms_stock_out_bill_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出库信息
     
-    StockOutInfo  *struct {
-        CainiaoStockOutBillStockoutinfo  *CainiaoStockOutBillStockoutinfo `json:"cainiao_stock_out_bill_stockoutinfo,omitempty"`
-    } `json:"stock_out_info,omitempty"`
+    StockOutInfo   *CainiaoStockOutBillStockoutinfo `json:"stock_out_info,omitempty" xml:"stock_out_info,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbWmsStockOutBillGetResponse struct {
-
-    // 出库信息
-    StockOutInfo   *CainiaoStockOutBillStockoutinfo `json:"stock_out_info,omitempty"`
-
 }

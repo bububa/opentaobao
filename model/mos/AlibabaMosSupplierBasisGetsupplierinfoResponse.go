@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mos.supplier.basis.getsupplierinfo
 */
 type AlibabaMosSupplierBasisGetsupplierinfoAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMosSupplierBasisGetsupplierinfoResponse `json:"alibaba_mos_supplier_basis_getsupplierinfo_response,omitempty"` 
     AlibabaMosSupplierBasisGetsupplierinfoResponse
 }
 
-/* model for simplify = false
 type AlibabaMosSupplierBasisGetsupplierinfoResponse struct {
+    XMLName xml.Name `xml:"alibaba_mos_supplier_basis_getsupplierinfo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回数据
     
-    Result  *struct {
-        JsonResponse  *JsonResponse `json:"json_response,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *JsonResponse `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMosSupplierBasisGetsupplierinfoResponse struct {
-
-    // 返回数据
-    Result   *JsonResponse `json:"result,omitempty"`
-
 }

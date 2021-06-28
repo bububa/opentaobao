@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.mos.falcon.pos.counter.query
 */
 type AlibabaMosFalconPosCounterQueryAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMosFalconPosCounterQueryResponse `json:"alibaba_mos_falcon_pos_counter_query_response,omitempty"` 
     AlibabaMosFalconPosCounterQueryResponse
 }
 
-/* model for simplify = false
 type AlibabaMosFalconPosCounterQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_mos_falcon_pos_counter_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Result  *struct {
-        AlibabaMosFalconPosCounterQueryResultDo  *AlibabaMosFalconPosCounterQueryResultDo `json:"alibaba_mos_falcon_pos_counter_query_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaMosFalconPosCounterQueryResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMosFalconPosCounterQueryResponse struct {
-
-    // 返回结果
-    Result   *AlibabaMosFalconPosCounterQueryResultDo `json:"result,omitempty"`
-
 }

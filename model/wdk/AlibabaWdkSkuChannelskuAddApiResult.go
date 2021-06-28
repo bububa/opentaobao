@@ -1,45 +1,26 @@
 package wdk
 
 // AlibabaWdkSkuChannelskuAddApiResult 
-/* model for simplify = false
 type AlibabaWdkSkuChannelskuAddApiResult struct {
 
     // 成功失败
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // 错误信息
     
-    ErrMsg   string `json:"err_msg,omitempty"`
+    ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     
 
     // 错误编码
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // 返会结果
     
-    Model   string `json:"model,omitempty"`
+    Model   string `json:"model,omitempty" xml:"model,omitempty"`
     
-
-}
-*/
-
-// AlibabaWdkSkuChannelskuAddApiResult 
-type AlibabaWdkSkuChannelskuAddApiResult struct {
-
-    // 成功失败
-    Success   bool `json:"success,omitempty"`
-
-    // 错误信息
-    ErrMsg   string `json:"err_msg,omitempty"`
-
-    // 错误编码
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // 返会结果
-    Model   string `json:"model,omitempty"`
 
 }

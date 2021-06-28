@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ tmall.item.price.update
 */
 type TmallItemPriceUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TmallItemPriceUpdateResponse `json:"tmall_item_price_update_response,omitempty"` 
     TmallItemPriceUpdateResponse
 }
 
-/* model for simplify = false
 type TmallItemPriceUpdateResponse struct {
+    XMLName xml.Name `xml:"tmall_item_price_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 价格更新结果
     
-    PriceUpdateResult   string `json:"price_update_result,omitempty"`
+    PriceUpdateResult   string `json:"price_update_result,omitempty" xml:"price_update_result,omitempty"`
+
     
-
-}
-*/
-
-type TmallItemPriceUpdateResponse struct {
-
-    // 价格更新结果
-    PriceUpdateResult   string `json:"price_update_result,omitempty"`
-
 }

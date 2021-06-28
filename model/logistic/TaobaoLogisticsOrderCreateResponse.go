@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.logistics.order.create
 */
 type TaobaoLogisticsOrderCreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLogisticsOrderCreateResponse `json:"logistics_order_create_response,omitempty"` 
     TaobaoLogisticsOrderCreateResponse
 }
 
-/* model for simplify = false
 type TaobaoLogisticsOrderCreateResponse struct {
+    XMLName xml.Name `xml:"logistics_order_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 淘宝物流订单交易号，如返回-1则表示错误。如果在新建订单时传入trade_id,此处会返回此id，如果未传入trade_id，此处会返回淘宝物流分配的交易号码。
     
-    TradeId   int64 `json:"trade_id,omitempty"`
+    TradeId   int64 `json:"trade_id,omitempty" xml:"trade_id,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoLogisticsOrderCreateResponse struct {
-
-    // 淘宝物流订单交易号，如返回-1则表示错误。如果在新建订单时传入trade_id,此处会返回此id，如果未传入trade_id，此处会返回淘宝物流分配的交易号码。
-    TradeId   int64 `json:"trade_id,omitempty"`
-
 }

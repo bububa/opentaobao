@@ -1,6 +1,8 @@
 package tmc
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.tmc.messages.consume
 */
 type TaobaoTmcMessagesConsumeAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTmcMessagesConsumeResponse `json:"tmc_messages_consume_response,omitempty"` 
     TaobaoTmcMessagesConsumeResponse
 }
 
-/* model for simplify = false
 type TaobaoTmcMessagesConsumeResponse struct {
+    XMLName xml.Name `xml:"tmc_messages_consume_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 消息列表
     
-    Messages  struct {
-        TmcMessage  []TmcMessage `json:"tmc_message,omitempty"`
-    } `json:"messages,omitempty"`
+    Messages   []TmcMessage `json:"messages,omitempty" xml:"messages>tmc_message,omitempty"`
     
-
-}
-*/
-
-type TaobaoTmcMessagesConsumeResponse struct {
-
-    // 消息列表
-    Messages   []TmcMessage `json:"messages,omitempty"`
-
+    
 }

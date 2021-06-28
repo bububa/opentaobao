@@ -1,47 +1,26 @@
 package fenxiao
 
 // TmallSupplychainChannelProductQuantityUpdateResultDto 
-/* model for simplify = false
 type TmallSupplychainChannelProductQuantityUpdateResultDto struct {
 
     // 执行结果
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // 更新内容
     
-    Module  *struct {
-        TopProductQuantityResult  *TopProductQuantityResult `json:"top_product_quantity_result,omitempty"`
-    } `json:"module,omitempty"`
+    Module   *TopProductQuantityResult `json:"module,omitempty" xml:"module,omitempty"`
     
 
     // 错误码
     
-    ErrorMessage   string `json:"error_message,omitempty"`
+    ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     
 
     // 错误码
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
-
-}
-*/
-
-// TmallSupplychainChannelProductQuantityUpdateResultDto 
-type TmallSupplychainChannelProductQuantityUpdateResultDto struct {
-
-    // 执行结果
-    Success   bool `json:"success,omitempty"`
-
-    // 更新内容
-    Module   *TopProductQuantityResult `json:"module,omitempty"`
-
-    // 错误码
-    ErrorMessage   string `json:"error_message,omitempty"`
-
-    // 错误码
-    ErrorCode   string `json:"error_code,omitempty"`
 
 }

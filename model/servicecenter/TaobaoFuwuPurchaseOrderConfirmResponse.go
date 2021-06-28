@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.fuwu.purchase.order.confirm
 */
 type TaobaoFuwuPurchaseOrderConfirmAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFuwuPurchaseOrderConfirmResponse `json:"fuwu_purchase_order_confirm_response,omitempty"` 
     TaobaoFuwuPurchaseOrderConfirmResponse
 }
 
-/* model for simplify = false
 type TaobaoFuwuPurchaseOrderConfirmResponse struct {
+    XMLName xml.Name `xml:"fuwu_purchase_order_confirm_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 下单页面url
     
-    Url   string `json:"url,omitempty"`
+    Url   string `json:"url,omitempty" xml:"url,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFuwuPurchaseOrderConfirmResponse struct {
-
-    // 下单页面url
-    Url   string `json:"url,omitempty"`
-
 }

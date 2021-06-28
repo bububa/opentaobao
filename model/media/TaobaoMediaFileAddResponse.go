@@ -1,6 +1,8 @@
 package media
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.media.file.add
 */
 type TaobaoMediaFileAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoMediaFileAddResponse `json:"media_file_add_response,omitempty"` 
     TaobaoMediaFileAddResponse
 }
 
-/* model for simplify = false
 type TaobaoMediaFileAddResponse struct {
+    XMLName xml.Name `xml:"media_file_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 上传到多媒体平台的文件
     
-    File  *struct {
-        File  *File `json:"file,omitempty"`
-    } `json:"file,omitempty"`
+    File   *File `json:"file,omitempty" xml:"file,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoMediaFileAddResponse struct {
-
-    // 上传到多媒体平台的文件
-    File   *File `json:"file,omitempty"`
-
 }

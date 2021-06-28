@@ -1,6 +1,8 @@
 package travel
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.alitrip.travel.item.single.query
 */
 type TaobaoAlitripTravelItemSingleQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAlitripTravelItemSingleQueryResponse `json:"alitrip_travel_item_single_query_response,omitempty"` 
     TaobaoAlitripTravelItemSingleQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoAlitripTravelItemSingleQueryResponse struct {
+    XMLName xml.Name `xml:"alitrip_travel_item_single_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品查询结果
     
-    TravelItem  *struct {
-        PontusTravelFullTravelItem  *PontusTravelFullTravelItem `json:"pontus_travel_full_travel_item,omitempty"`
-    } `json:"travel_item,omitempty"`
+    TravelItem   *PontusTravelFullTravelItem `json:"travel_item,omitempty" xml:"travel_item,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAlitripTravelItemSingleQueryResponse struct {
-
-    // 商品查询结果
-    TravelItem   *PontusTravelFullTravelItem `json:"travel_item,omitempty"`
-
 }

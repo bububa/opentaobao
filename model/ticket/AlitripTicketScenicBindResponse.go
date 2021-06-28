@@ -1,6 +1,8 @@
 package ticket
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alitrip.ticket.scenic.bind
 */
 type AlitripTicketScenicBindAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripTicketScenicBindResponse `json:"alitrip_ticket_scenic_bind_response,omitempty"` 
     AlitripTicketScenicBindResponse
 }
 
-/* model for simplify = false
 type AlitripTicketScenicBindResponse struct {
+    XMLName xml.Name `xml:"alitrip_ticket_scenic_bind_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 景点绑定结果
     
-    FirstResult  *struct {
-        TicketScenicResult  *TicketScenicResult `json:"ticket_scenic_result,omitempty"`
-    } `json:"first_result,omitempty"`
+    FirstResult   *TicketScenicResult `json:"first_result,omitempty" xml:"first_result,omitempty"`
+
     
-
-}
-*/
-
-type AlitripTicketScenicBindResponse struct {
-
-    // 景点绑定结果
-    FirstResult   *TicketScenicResult `json:"first_result,omitempty"`
-
 }

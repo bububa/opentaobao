@@ -1,6 +1,8 @@
 package autonavi
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.autonavi.api.trafficboard.image.get
 */
 type AlibabaAutonaviApiTrafficboardImageGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAutonaviApiTrafficboardImageGetResponse `json:"alibaba_autonavi_api_trafficboard_image_get_response,omitempty"` 
     AlibabaAutonaviApiTrafficboardImageGetResponse
 }
 
-/* model for simplify = false
 type AlibabaAutonaviApiTrafficboardImageGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_autonavi_api_trafficboard_image_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 二进制图片流(png)
     
-    RespResult  struct {
-        byte  []*model.File `json:"*model.File,omitempty"`
-    } `json:"resp_result,omitempty"`
+    RespResult   []*model.File `json:"resp_result,omitempty" xml:"resp_result>*model.File,omitempty"`
     
-
-}
-*/
-
-type AlibabaAutonaviApiTrafficboardImageGetResponse struct {
-
-    // 二进制图片流(png)
-    RespResult   []*model.File `json:"resp_result,omitempty"`
-
+    
 }

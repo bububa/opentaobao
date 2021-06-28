@@ -1,47 +1,26 @@
 package mos
 
 // AlibabaMosStoreGetstorelistResultDo 
-/* model for simplify = false
 type AlibabaMosStoreGetstorelistResultDo struct {
 
     // data
     
-    Data  *struct {
-        MjStoresTopVo  *MjStoresTopVo `json:"mj_stores_top_vo,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *MjStoresTopVo `json:"data,omitempty" xml:"data,omitempty"`
     
 
     // 错误码
     
-    ErrCode   int64 `json:"err_code,omitempty"`
+    ErrCode   int64 `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // 错误信息
     
-    ErrMsg   string `json:"err_msg,omitempty"`
+    ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// AlibabaMosStoreGetstorelistResultDo 
-type AlibabaMosStoreGetstorelistResultDo struct {
-
-    // data
-    Data   *MjStoresTopVo `json:"data,omitempty"`
-
-    // 错误码
-    ErrCode   int64 `json:"err_code,omitempty"`
-
-    // 错误信息
-    ErrMsg   string `json:"err_msg,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

@@ -1,21 +1,11 @@
 package jms
 
 // MsgGroupDO 
-/* model for simplify = false
 type MsgGroupDO struct {
 
     // 123
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
-
-}
-*/
-
-// MsgGroupDO 
-type MsgGroupDO struct {
-
-    // 123
-    Name   string `json:"name,omitempty"`
 
 }

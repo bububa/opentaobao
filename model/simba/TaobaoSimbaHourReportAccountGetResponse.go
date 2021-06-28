@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.hour.report.account.get
 */
 type TaobaoSimbaHourReportAccountGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaHourReportAccountGetResponse `json:"simba_hour_report_account_get_response,omitempty"` 
     TaobaoSimbaHourReportAccountGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaHourReportAccountGetResponse struct {
+    XMLName xml.Name `xml:"simba_hour_report_account_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 11
     
-    Results  struct {
-        RtRptResultEntityDTO  []RtRptResultEntityDTO `json:"rt_rpt_result_entity_dto,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []RtRptResultEntityDTO `json:"results,omitempty" xml:"results>rt_rpt_result_entity_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaHourReportAccountGetResponse struct {
-
-    // 11
-    Results   []RtRptResultEntityDTO `json:"results,omitempty"`
-
+    
 }

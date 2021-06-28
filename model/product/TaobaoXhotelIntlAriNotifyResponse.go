@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.xhotel.intl.ari.notify
 */
 type TaobaoXhotelIntlAriNotifyAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoXhotelIntlAriNotifyResponse `json:"xhotel_intl_ari_notify_response,omitempty"` 
     TaobaoXhotelIntlAriNotifyResponse
 }
 
-/* model for simplify = false
 type TaobaoXhotelIntlAriNotifyResponse struct {
+    XMLName xml.Name `xml:"xhotel_intl_ari_notify_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 通知结果
     
-    Module  *struct {
-        CacheChangeNotifyResult  *CacheChangeNotifyResult `json:"cache_change_notify_result,omitempty"`
-    } `json:"module,omitempty"`
+    Module   *CacheChangeNotifyResult `json:"module,omitempty" xml:"module,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoXhotelIntlAriNotifyResponse struct {
-
-    // 通知结果
-    Module   *CacheChangeNotifyResult `json:"module,omitempty"`
-
 }

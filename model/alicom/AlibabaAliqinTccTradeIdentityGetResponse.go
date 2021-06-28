@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.tcc.trade.identity.get
 */
 type AlibabaAliqinTccTradeIdentityGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinTccTradeIdentityGetResponse `json:"alibaba_aliqin_tcc_trade_identity_get_response,omitempty"` 
     AlibabaAliqinTccTradeIdentityGetResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinTccTradeIdentityGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_tcc_trade_identity_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回身份信息
     
-    Result  *struct {
-        IdentityInfo  *IdentityInfo `json:"identity_info,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *IdentityInfo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinTccTradeIdentityGetResponse struct {
-
-    // 返回身份信息
-    Result   *IdentityInfo `json:"result,omitempty"`
-
 }

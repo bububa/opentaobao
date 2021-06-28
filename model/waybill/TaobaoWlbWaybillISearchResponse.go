@@ -1,6 +1,8 @@
 package waybill
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.wlb.waybill.i.search
 */
 type TaobaoWlbWaybillISearchAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbWaybillISearchResponse `json:"wlb_waybill_i_search_response,omitempty"` 
     TaobaoWlbWaybillISearchResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbWaybillISearchResponse struct {
+    XMLName xml.Name `xml:"wlb_waybill_i_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订购关系
     
-    Subscribtions  struct {
-        WaybillApplySubscriptionInfo  []WaybillApplySubscriptionInfo `json:"waybill_apply_subscription_info,omitempty"`
-    } `json:"subscribtions,omitempty"`
+    Subscribtions   []WaybillApplySubscriptionInfo `json:"subscribtions,omitempty" xml:"subscribtions>waybill_apply_subscription_info,omitempty"`
     
-
-}
-*/
-
-type TaobaoWlbWaybillISearchResponse struct {
-
-    // 订购关系
-    Subscribtions   []WaybillApplySubscriptionInfo `json:"subscribtions,omitempty"`
-
+    
 }

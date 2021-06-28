@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ open account token验证
 */
 type TaobaoOpenAccountTokenValidateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenAccountTokenValidateResponse `json:"open_account_token_validate_response,omitempty"` 
     TaobaoOpenAccountTokenValidateResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenAccountTokenValidateResponse struct {
+    XMLName xml.Name `xml:"open_account_token_validate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 验证成功返回token中的信息
     
-    Data  *struct {
-        OpenAccountTokenValidateResult  *OpenAccountTokenValidateResult `json:"open_account_token_validate_result,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *OpenAccountTokenValidateResult `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenAccountTokenValidateResponse struct {
-
-    // 验证成功返回token中的信息
-    Data   *OpenAccountTokenValidateResult `json:"data,omitempty"`
-
 }

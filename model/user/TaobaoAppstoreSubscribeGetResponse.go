@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.appstore.subscribe.get
 */
 type TaobaoAppstoreSubscribeGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAppstoreSubscribeGetResponse `json:"appstore_subscribe_get_response,omitempty"` 
     TaobaoAppstoreSubscribeGetResponse
 }
 
-/* model for simplify = false
 type TaobaoAppstoreSubscribeGetResponse struct {
+    XMLName xml.Name `xml:"appstore_subscribe_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户订购信息
     
-    UserSubscribe  *struct {
-        UserSubscribe  *UserSubscribe `json:"user_subscribe,omitempty"`
-    } `json:"user_subscribe,omitempty"`
+    UserSubscribe   *UserSubscribe `json:"user_subscribe,omitempty" xml:"user_subscribe,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAppstoreSubscribeGetResponse struct {
-
-    // 用户订购信息
-    UserSubscribe   *UserSubscribe `json:"user_subscribe,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.item.operate.upshelf
 */
 type AlibabaItemOperateUpshelfAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaItemOperateUpshelfResponse `json:"alibaba_item_operate_upshelf_response,omitempty"` 
     AlibabaItemOperateUpshelfResponse
 }
 
-/* model for simplify = false
 type AlibabaItemOperateUpshelfResponse struct {
+    XMLName xml.Name `xml:"alibaba_item_operate_upshelf_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品上架是否成功
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaItemOperateUpshelfResponse struct {
-
-    // 商品上架是否成功
-    Result   string `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package bus
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ B2B业务支持退票
 */
 type TaobaoBusRefundSetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBusRefundSetResponse `json:"bus_refund_set_response,omitempty"` 
     TaobaoBusRefundSetResponse
 }
 
-/* model for simplify = false
 type TaobaoBusRefundSetResponse struct {
+    XMLName xml.Name `xml:"bus_refund_set_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        B2BRefundOrderRp  *B2BRefundOrderRp `json:"b2b_refund_order_rp,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *B2BRefundOrderRp `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBusRefundSetResponse struct {
-
-    // result
-    Result   *B2BRefundOrderRp `json:"result,omitempty"`
-
 }

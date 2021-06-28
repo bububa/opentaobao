@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -15,32 +17,21 @@ taobao.promotionmisc.common.item.detail.add
 */
 type TaobaoPromotionmiscCommonItemDetailAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPromotionmiscCommonItemDetailAddResponse `json:"promotionmisc_common_item_detail_add_response,omitempty"` 
     TaobaoPromotionmiscCommonItemDetailAddResponse
 }
 
-/* model for simplify = false
 type TaobaoPromotionmiscCommonItemDetailAddResponse struct {
+    XMLName xml.Name `xml:"promotionmisc_common_item_detail_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否创建成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 优惠详情ID
     
-    DetailId   int64 `json:"detail_id,omitempty"`
+    DetailId   int64 `json:"detail_id,omitempty" xml:"detail_id,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoPromotionmiscCommonItemDetailAddResponse struct {
-
-    // 是否创建成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 优惠详情ID
-    DetailId   int64 `json:"detail_id,omitempty"`
-
 }

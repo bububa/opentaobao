@@ -1,45 +1,26 @@
 package aliqin
 
 // AlibabaAliqinFcIvrNumCallResult 
-/* model for simplify = false
 type AlibabaAliqinFcIvrNumCallResult struct {
 
     // model
     
-    Model   string `json:"model,omitempty"`
+    Model   string `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // code
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // msg
     
-    Msg   string `json:"msg,omitempty"`
+    Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     
-
-}
-*/
-
-// AlibabaAliqinFcIvrNumCallResult 
-type AlibabaAliqinFcIvrNumCallResult struct {
-
-    // model
-    Model   string `json:"model,omitempty"`
-
-    // code
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
-
-    // msg
-    Msg   string `json:"msg,omitempty"`
 
 }

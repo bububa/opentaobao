@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.ad.keyword.update.keyword.status.batch
 */
 type AlibabaScbpAdKeywordUpdateKeywordStatusBatchAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpAdKeywordUpdateKeywordStatusBatchResponse `json:"alibaba_scbp_ad_keyword_update_keyword_status_batch_response,omitempty"` 
     AlibabaScbpAdKeywordUpdateKeywordStatusBatchResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpAdKeywordUpdateKeywordStatusBatchResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_keyword_update_keyword_status_batch_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回错误集合
     
-    ResultList  struct {
-        ErrorKeyword  []ErrorKeyword `json:"error_keyword,omitempty"`
-    } `json:"result_list,omitempty"`
+    ResultList   []ErrorKeyword `json:"result_list,omitempty" xml:"result_list>error_keyword,omitempty"`
     
-
-}
-*/
-
-type AlibabaScbpAdKeywordUpdateKeywordStatusBatchResponse struct {
-
-    // 返回错误集合
-    ResultList   []ErrorKeyword `json:"result_list,omitempty"`
-
+    
 }

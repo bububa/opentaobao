@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.subway.cia.update
 */
 type TaobaoSubwayCiaUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSubwayCiaUpdateResponse `json:"subway_cia_update_response,omitempty"` 
     TaobaoSubwayCiaUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoSubwayCiaUpdateResponse struct {
+    XMLName xml.Name `xml:"subway_cia_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推广组Id列表
     
-    AdgroupList  struct {
-        Number  []int64 `json:"int64,omitempty"`
-    } `json:"adgroup_list,omitempty"`
+    AdgroupList   []int64 `json:"adgroup_list,omitempty" xml:"adgroup_list>int64,omitempty"`
     
-
-}
-*/
-
-type TaobaoSubwayCiaUpdateResponse struct {
-
-    // 推广组Id列表
-    AdgroupList   []int64 `json:"adgroup_list,omitempty"`
-
+    
 }

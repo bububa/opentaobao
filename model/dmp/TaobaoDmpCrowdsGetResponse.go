@@ -1,6 +1,8 @@
 package dmp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.dmp.crowds.get
 */
 type TaobaoDmpCrowdsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoDmpCrowdsGetResponse `json:"dmp_crowds_get_response,omitempty"` 
     TaobaoDmpCrowdsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoDmpCrowdsGetResponse struct {
+    XMLName xml.Name `xml:"dmp_crowds_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 1
     
-    Results  struct {
-        DmpCrowdDTO  []DmpCrowdDTO `json:"dmp_crowd_dto,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []DmpCrowdDTO `json:"results,omitempty" xml:"results>dmp_crowd_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoDmpCrowdsGetResponse struct {
-
-    // 1
-    Results   []DmpCrowdDTO `json:"results,omitempty"`
-
+    
 }

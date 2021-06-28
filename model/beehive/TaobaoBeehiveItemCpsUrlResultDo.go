@@ -1,45 +1,26 @@
 package beehive
 
 // TaobaoBeehiveItemCpsUrlResultDo 
-/* model for simplify = false
 type TaobaoBeehiveItemCpsUrlResultDo struct {
 
     // 商品id和对应的url map
     
-    Model   string `json:"model,omitempty"`
+    Model   string `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // 错误码
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // 是否调用成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // 错误信息
     
-    Msg   string `json:"msg,omitempty"`
+    Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     
-
-}
-*/
-
-// TaobaoBeehiveItemCpsUrlResultDo 
-type TaobaoBeehiveItemCpsUrlResultDo struct {
-
-    // 商品id和对应的url map
-    Model   string `json:"model,omitempty"`
-
-    // 错误码
-    Code   string `json:"code,omitempty"`
-
-    // 是否调用成功
-    Success   bool `json:"success,omitempty"`
-
-    // 错误信息
-    Msg   string `json:"msg,omitempty"`
 
 }

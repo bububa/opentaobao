@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.item.quantity.update
 */
 type TaobaoItemQuantityUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoItemQuantityUpdateResponse `json:"item_quantity_update_response,omitempty"` 
     TaobaoItemQuantityUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoItemQuantityUpdateResponse struct {
+    XMLName xml.Name `xml:"item_quantity_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // iid、numIid、num和modified，skus中每个sku的skuId、quantity和modified
     
-    Item  *struct {
-        Item  *Item `json:"item,omitempty"`
-    } `json:"item,omitempty"`
+    Item   *Item `json:"item,omitempty" xml:"item,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoItemQuantityUpdateResponse struct {
-
-    // iid、numIid、num和modified，skus中每个sku的skuId、quantity和modified
-    Item   *Item `json:"item,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.keyword.matched.products.get
 */
 type AlibabaScbpKeywordMatchedProductsGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpKeywordMatchedProductsGetResponse `json:"alibaba_scbp_keyword_matched_products_get_response,omitempty"` 
     AlibabaScbpKeywordMatchedProductsGetResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpKeywordMatchedProductsGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_keyword_matched_products_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 匹配的产品列表
     
-    MachedProductList  struct {
-        TopMatchedProductDto  []TopMatchedProductDto `json:"top_matched_product_dto,omitempty"`
-    } `json:"mached_product_list,omitempty"`
+    MachedProductList   []TopMatchedProductDto `json:"mached_product_list,omitempty" xml:"mached_product_list>top_matched_product_dto,omitempty"`
     
-
-}
-*/
-
-type AlibabaScbpKeywordMatchedProductsGetResponse struct {
-
-    // 匹配的产品列表
-    MachedProductList   []TopMatchedProductDto `json:"mached_product_list,omitempty"`
-
+    
 }

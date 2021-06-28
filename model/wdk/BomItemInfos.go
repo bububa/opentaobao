@@ -1,37 +1,21 @@
 package wdk
 
 // BomItemInfos 
-/* model for simplify = false
 type BomItemInfos struct {
 
     // quantity
     
-    Quantity   string `json:"quantity,omitempty"`
+    Quantity   string `json:"quantity,omitempty" xml:"quantity,omitempty"`
     
 
     // itemCode
     
-    ItemCode   string `json:"item_code,omitempty"`
+    ItemCode   string `json:"item_code,omitempty" xml:"item_code,omitempty"`
     
 
     // cabinetCode
     
-    CabinetCode   string `json:"cabinet_code,omitempty"`
+    CabinetCode   string `json:"cabinet_code,omitempty" xml:"cabinet_code,omitempty"`
     
-
-}
-*/
-
-// BomItemInfos 
-type BomItemInfos struct {
-
-    // quantity
-    Quantity   string `json:"quantity,omitempty"`
-
-    // itemCode
-    ItemCode   string `json:"item_code,omitempty"`
-
-    // cabinetCode
-    CabinetCode   string `json:"cabinet_code,omitempty"`
 
 }

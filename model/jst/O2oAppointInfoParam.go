@@ -1,29 +1,16 @@
 package jst
 
 // O2oAppointInfoParam 
-/* model for simplify = false
 type O2oAppointInfoParam struct {
 
     // 预约属性名信息
     
-    ParamName   string `json:"param_name,omitempty"`
+    ParamName   string `json:"param_name,omitempty" xml:"param_name,omitempty"`
     
 
     // 预约属性值信息
     
-    ParamValue   string `json:"param_value,omitempty"`
+    ParamValue   string `json:"param_value,omitempty" xml:"param_value,omitempty"`
     
-
-}
-*/
-
-// O2oAppointInfoParam 
-type O2oAppointInfoParam struct {
-
-    // 预约属性名信息
-    ParamName   string `json:"param_name,omitempty"`
-
-    // 预约属性值信息
-    ParamValue   string `json:"param_value,omitempty"`
 
 }

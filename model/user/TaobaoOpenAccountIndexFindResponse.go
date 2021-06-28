@@ -1,6 +1,8 @@
 package user
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ Open Account索引查询
 */
 type TaobaoOpenAccountIndexFindAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoOpenAccountIndexFindResponse `json:"open_account_index_find_response,omitempty"` 
     TaobaoOpenAccountIndexFindResponse
 }
 
-/* model for simplify = false
 type TaobaoOpenAccountIndexFindResponse struct {
+    XMLName xml.Name `xml:"open_account_index_find_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Result  *struct {
-        OpenAccountResult  *OpenAccountResult `json:"open_account_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *OpenAccountResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoOpenAccountIndexFindResponse struct {
-
-    // 返回结果
-    Result   *OpenAccountResult `json:"result,omitempty"`
-
 }

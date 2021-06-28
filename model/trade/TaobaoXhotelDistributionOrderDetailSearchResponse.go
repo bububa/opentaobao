@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ taobao.xhotel.distribution.order.detail.search
 */
 type TaobaoXhotelDistributionOrderDetailSearchAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoXhotelDistributionOrderDetailSearchResponse `json:"xhotel_distribution_order_detail_search_response,omitempty"` 
     TaobaoXhotelDistributionOrderDetailSearchResponse
 }
 
-/* model for simplify = false
 type TaobaoXhotelDistributionOrderDetailSearchResponse struct {
+    XMLName xml.Name `xml:"xhotel_distribution_order_detail_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 错误码
     
-    Error   string `json:"error,omitempty"`
-    
+    Error   string `json:"error,omitempty" xml:"error,omitempty"`
 
+    
     // 错误描述
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
-    
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 
+    
     // 订单详情对象
     
-    TopDistributionOrderDetail  *struct {
-        TopDistributionOrderDetail  *TopDistributionOrderDetail `json:"top_distribution_order_detail,omitempty"`
-    } `json:"top_distribution_order_detail,omitempty"`
+    TopDistributionOrderDetail   *TopDistributionOrderDetail `json:"top_distribution_order_detail,omitempty" xml:"top_distribution_order_detail,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoXhotelDistributionOrderDetailSearchResponse struct {
-
-    // 错误码
-    Error   string `json:"error,omitempty"`
-
-    // 错误描述
-    ErrorMsg   string `json:"error_msg,omitempty"`
-
-    // 订单详情对象
-    TopDistributionOrderDetail   *TopDistributionOrderDetail `json:"top_distribution_order_detail,omitempty"`
-
 }

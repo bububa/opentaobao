@@ -1,6 +1,8 @@
 package xiami
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.xiami.api.tag.genre.song.get
 */
 type AlibabaXiamiApiTagGenreSongGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaXiamiApiTagGenreSongGetResponse `json:"alibaba_xiami_api_tag_genre_song_get_response,omitempty"` 
     AlibabaXiamiApiTagGenreSongGetResponse
 }
 
-/* model for simplify = false
 type AlibabaXiamiApiTagGenreSongGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_xiami_api_tag_genre_song_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 风格歌曲
     
-    Data  *struct {
-        TagGenreSongresult  *TagGenreSongresult `json:"tag_genre_songresult,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *TagGenreSongresult `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaXiamiApiTagGenreSongGetResponse struct {
-
-    // 风格歌曲
-    Data   *TagGenreSongresult `json:"data,omitempty"`
-
 }

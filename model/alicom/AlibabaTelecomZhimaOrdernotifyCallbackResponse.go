@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.telecom.zhima.ordernotify.callback
 */
 type AlibabaTelecomZhimaOrdernotifyCallbackAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaTelecomZhimaOrdernotifyCallbackResponse `json:"alibaba_telecom_zhima_ordernotify_callback_response,omitempty"` 
     AlibabaTelecomZhimaOrdernotifyCallbackResponse
 }
 
-/* model for simplify = false
 type AlibabaTelecomZhimaOrdernotifyCallbackResponse struct {
+    XMLName xml.Name `xml:"alibaba_telecom_zhima_ordernotify_callback_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参对象
     
-    Result  *struct {
-        CommonResult  *CommonResult `json:"common_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaTelecomZhimaOrdernotifyCallbackResponse struct {
-
-    // 出参对象
-    Result   *CommonResult `json:"result,omitempty"`
-
 }

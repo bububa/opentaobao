@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.fenxiao.product.image.upload
 */
 type TaobaoFenxiaoProductImageUploadAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoProductImageUploadResponse `json:"fenxiao_product_image_upload_response,omitempty"` 
     TaobaoFenxiaoProductImageUploadResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoProductImageUploadResponse struct {
+    XMLName xml.Name `xml:"fenxiao_product_image_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作是否成功
     
-    Result   bool `json:"result,omitempty"`
-    
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
 
+    
     // 操作时间
     
-    Created   string `json:"created,omitempty"`
+    Created   string `json:"created,omitempty" xml:"created,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFenxiaoProductImageUploadResponse struct {
-
-    // 操作是否成功
-    Result   bool `json:"result,omitempty"`
-
-    // 操作时间
-    Created   string `json:"created,omitempty"`
-
 }

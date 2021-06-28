@@ -1,6 +1,8 @@
 package wdk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wdk.refund.aggregate
 */
 type AlibabaWdkRefundAggregateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWdkRefundAggregateResponse `json:"alibaba_wdk_refund_aggregate_response,omitempty"` 
     AlibabaWdkRefundAggregateResponse
 }
 
-/* model for simplify = false
 type AlibabaWdkRefundAggregateResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_refund_aggregate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        RefundAggregateQueryResult  *RefundAggregateQueryResult `json:"refund_aggregate_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *RefundAggregateQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWdkRefundAggregateResponse struct {
-
-    // result
-    Result   *RefundAggregateQueryResult `json:"result,omitempty"`
-
 }

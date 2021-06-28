@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.mixnick.playtowe
 */
 type TaobaoMixnickPlaytoweAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoMixnickPlaytoweResponse `json:"mixnick_playtowe_response,omitempty"` 
     TaobaoMixnickPlaytoweResponse
 }
 
-/* model for simplify = false
 type TaobaoMixnickPlaytoweResponse struct {
+    XMLName xml.Name `xml:"mixnick_playtowe_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 微淘混淆nick
     
-    WeMixnick   string `json:"we_mixnick,omitempty"`
+    WeMixnick   string `json:"we_mixnick,omitempty" xml:"we_mixnick,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoMixnickPlaytoweResponse struct {
-
-    // 微淘混淆nick
-    WeMixnick   string `json:"we_mixnick,omitempty"`
-
 }

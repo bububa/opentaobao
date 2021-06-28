@@ -1,6 +1,8 @@
 package mtopopen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.interact.aopdata.register
 */
 type AlibabaInteractAopdataRegisterAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractAopdataRegisterResponse `json:"alibaba_interact_aopdata_register_response,omitempty"` 
     AlibabaInteractAopdataRegisterResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractAopdataRegisterResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_aopdata_register_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        AlibabaInteractAopdataRegisterResult  *AlibabaInteractAopdataRegisterResult `json:"alibaba_interact_aopdata_register_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaInteractAopdataRegisterResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractAopdataRegisterResponse struct {
-
-    // 接口返回model
-    Result   *AlibabaInteractAopdataRegisterResult `json:"result,omitempty"`
-
 }

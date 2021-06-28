@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,48 +14,31 @@ alibaba.mj.oc.pay
 */
 type AlibabaMjOcPayAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMjOcPayResponse `json:"alibaba_mj_oc_pay_response,omitempty"` 
     AlibabaMjOcPayResponse
 }
 
-/* model for simplify = false
 type AlibabaMjOcPayResponse struct {
+    XMLName xml.Name `xml:"alibaba_mj_oc_pay_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // errCode
     
-    ExCode   int64 `json:"ex_code,omitempty"`
-    
+    ExCode   int64 `json:"ex_code,omitempty" xml:"ex_code,omitempty"`
 
+    
     // errMsg
     
-    ExMsg   string `json:"ex_msg,omitempty"`
-    
+    ExMsg   string `json:"ex_msg,omitempty" xml:"ex_msg,omitempty"`
 
+    
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // POS交易号
     
-    OutTradeNo   string `json:"out_trade_no,omitempty"`
+    OutTradeNo   string `json:"out_trade_no,omitempty" xml:"out_trade_no,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMjOcPayResponse struct {
-
-    // errCode
-    ExCode   int64 `json:"ex_code,omitempty"`
-
-    // errMsg
-    ExMsg   string `json:"ex_msg,omitempty"`
-
-    // success
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // POS交易号
-    OutTradeNo   string `json:"out_trade_no,omitempty"`
-
 }

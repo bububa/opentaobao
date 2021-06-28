@@ -1,6 +1,8 @@
 package aliyun
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ pushNotification
 */
 type PushAliyuncsComPushNotification2015-03-18APIResponse struct {
     model.CommonResponse
-    // Response *PushAliyuncsComPushNotification2015-03-18Response `json:"push_aliyuncs_com_pushNotification_2015-03-18_response,omitempty"` 
     PushAliyuncsComPushNotification2015-03-18Response
 }
 
-/* model for simplify = false
 type PushAliyuncsComPushNotification2015-03-18Response struct {
+    XMLName xml.Name `xml:"push_aliyuncs_com_pushNotification_2015-03-18_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    Success   bool `json:"success,omitempty"`
-    
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
 
+    
     // 该字段的值由服务端生成,返回给用户方便问题追查与定位。
     
-    RequestId   int64 `json:"requestId,omitempty"`
-    
+    RequestId   int64 `json:"requestId,omitempty" xml:"requestId,omitempty"`
 
+    
     // 消息ID,用于查询
     
-    ResponseParams   int64 `json:"responseParams,omitempty"`
+    ResponseParams   int64 `json:"responseParams,omitempty" xml:"responseParams,omitempty"`
+
     
-
-}
-*/
-
-type PushAliyuncsComPushNotification2015-03-18Response struct {
-
-    // 是否成功
-    Success   bool `json:"success,omitempty"`
-
-    // 该字段的值由服务端生成,返回给用户方便问题追查与定位。
-    RequestId   int64 `json:"requestId,omitempty"`
-
-    // 消息ID,用于查询
-    ResponseParams   int64 `json:"responseParams,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package alicom
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.wt.cif.coop.osstoken.get
 */
 type AlibabaWtCifCoopOsstokenGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaWtCifCoopOsstokenGetResponse `json:"alibaba_wt_cif_coop_osstoken_get_response,omitempty"` 
     AlibabaWtCifCoopOsstokenGetResponse
 }
 
-/* model for simplify = false
 type AlibabaWtCifCoopOsstokenGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_wt_cif_coop_osstoken_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        OssTokenGetResult  *OssTokenGetResult `json:"oss_token_get_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *OssTokenGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaWtCifCoopOsstokenGetResponse struct {
-
-    // result
-    Result   *OssTokenGetResult `json:"result,omitempty"`
-
 }

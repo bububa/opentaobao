@@ -1,6 +1,8 @@
 package eticket
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ taobao.vmarket.eticket.qrcode.upload
 */
 type TaobaoVmarketEticketQrcodeUploadAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoVmarketEticketQrcodeUploadResponse `json:"vmarket_eticket_qrcode_upload_response,omitempty"` 
     TaobaoVmarketEticketQrcodeUploadResponse
 }
 
-/* model for simplify = false
 type TaobaoVmarketEticketQrcodeUploadResponse struct {
+    XMLName xml.Name `xml:"vmarket_eticket_qrcode_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 1:成功  其它为失败
     
-    RetCode   int64 `json:"ret_code,omitempty"`
-    
+    RetCode   int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
 
+    
     // 图片文件名称
     
-    ImgFilename   string `json:"img_filename,omitempty"`
+    ImgFilename   string `json:"img_filename,omitempty" xml:"img_filename,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoVmarketEticketQrcodeUploadResponse struct {
-
-    // 1:成功  其它为失败
-    RetCode   int64 `json:"ret_code,omitempty"`
-
-    // 图片文件名称
-    ImgFilename   string `json:"img_filename,omitempty"`
-
 }

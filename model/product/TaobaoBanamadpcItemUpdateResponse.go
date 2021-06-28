@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.banamadpc.item.update
 */
 type TaobaoBanamadpcItemUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBanamadpcItemUpdateResponse `json:"banamadpc_item_update_response,omitempty"` 
     TaobaoBanamadpcItemUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoBanamadpcItemUpdateResponse struct {
+    XMLName xml.Name `xml:"banamadpc_item_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 无
     
-    ApiResult  *struct {
-        TaobaoBanamadpcItemUpdateApiResult  *TaobaoBanamadpcItemUpdateApiResult `json:"taobao_banamadpc_item_update_api_result,omitempty"`
-    } `json:"api_result,omitempty"`
+    ApiResult   *TaobaoBanamadpcItemUpdateApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBanamadpcItemUpdateResponse struct {
-
-    // 无
-    ApiResult   *TaobaoBanamadpcItemUpdateApiResult `json:"api_result,omitempty"`
-
 }

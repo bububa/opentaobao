@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -13,26 +15,16 @@ taobao.areas.get
 */
 type TaobaoAreasGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAreasGetResponse `json:"areas_get_response,omitempty"` 
     TaobaoAreasGetResponse
 }
 
-/* model for simplify = false
 type TaobaoAreasGetResponse struct {
+    XMLName xml.Name `xml:"areas_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 地址区域信息列表.返回的Area包含的具体信息为入参fields请求的字段信息 。
     
-    Areas  struct {
-        Area  []Area `json:"area,omitempty"`
-    } `json:"areas,omitempty"`
+    Areas   []Area `json:"areas,omitempty" xml:"areas>area,omitempty"`
     
-
-}
-*/
-
-type TaobaoAreasGetResponse struct {
-
-    // 地址区域信息列表.返回的Area包含的具体信息为入参fields请求的字段信息 。
-    Areas   []Area `json:"areas,omitempty"`
-
+    
 }

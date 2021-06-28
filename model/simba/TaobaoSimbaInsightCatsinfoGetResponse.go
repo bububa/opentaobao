@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.insight.catsinfo.get
 */
 type TaobaoSimbaInsightCatsinfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaInsightCatsinfoGetResponse `json:"simba_insight_catsinfo_get_response,omitempty"` 
     TaobaoSimbaInsightCatsinfoGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaInsightCatsinfoGetResponse struct {
+    XMLName xml.Name `xml:"simba_insight_catsinfo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 类目详细信息
     
-    CategoryInfoList  struct {
-        InsightCategoryInfoDTO  []InsightCategoryInfoDTO `json:"insight_category_info_dto,omitempty"`
-    } `json:"category_info_list,omitempty"`
+    CategoryInfoList   []InsightCategoryInfoDTO `json:"category_info_list,omitempty" xml:"category_info_list>insight_category_info_dto,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaInsightCatsinfoGetResponse struct {
-
-    // 类目详细信息
-    CategoryInfoList   []InsightCategoryInfoDTO `json:"category_info_list,omitempty"`
-
+    
 }

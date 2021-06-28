@@ -1,6 +1,8 @@
 package refund
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.dispute.receive.get
 */
 type TmallDisputeReceiveGetAPIResponse struct {
     model.CommonResponse
-    // Response *TmallDisputeReceiveGetResponse `json:"tmall_dispute_receive_get_response,omitempty"` 
     TmallDisputeReceiveGetResponse
 }
 
-/* model for simplify = false
 type TmallDisputeReceiveGetResponse struct {
+    XMLName xml.Name `xml:"tmall_dispute_receive_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        TmallDisputeReceiveGetResultSet  *TmallDisputeReceiveGetResultSet `json:"tmall_dispute_receive_get_result_set,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallDisputeReceiveGetResultSet `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallDisputeReceiveGetResponse struct {
-
-    // result
-    Result   *TmallDisputeReceiveGetResultSet `json:"result,omitempty"`
-
 }

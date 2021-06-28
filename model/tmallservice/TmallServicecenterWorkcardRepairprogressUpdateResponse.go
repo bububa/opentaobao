@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.servicecenter.workcard.repairprogress.update
 */
 type TmallServicecenterWorkcardRepairprogressUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TmallServicecenterWorkcardRepairprogressUpdateResponse `json:"tmall_servicecenter_workcard_repairprogress_update_response,omitempty"` 
     TmallServicecenterWorkcardRepairprogressUpdateResponse
 }
 
-/* model for simplify = false
 type TmallServicecenterWorkcardRepairprogressUpdateResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_workcard_repairprogress_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Result  *struct {
-        TmallServicecenterWorkcardRepairprogressUpdateResult  *TmallServicecenterWorkcardRepairprogressUpdateResult `json:"tmall_servicecenter_workcard_repairprogress_update_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallServicecenterWorkcardRepairprogressUpdateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallServicecenterWorkcardRepairprogressUpdateResponse struct {
-
-    // 返回结果
-    Result   *TmallServicecenterWorkcardRepairprogressUpdateResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package qianniu
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qianniu.taskmetas.get
 */
 type TaobaoQianniuTaskmetasGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQianniuTaskmetasGetResponse `json:"qianniu_taskmetas_get_response,omitempty"` 
     TaobaoQianniuTaskmetasGetResponse
 }
 
-/* model for simplify = false
 type TaobaoQianniuTaskmetasGetResponse struct {
+    XMLName xml.Name `xml:"qianniu_taskmetas_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // taskmetas
     
-    Taskmetas  struct {
-        QTaskMetadata  []QTaskMetadata `json:"q_task_metadata,omitempty"`
-    } `json:"taskmetas,omitempty"`
+    Taskmetas   []QTaskMetadata `json:"taskmetas,omitempty" xml:"taskmetas>q_task_metadata,omitempty"`
     
-
-}
-*/
-
-type TaobaoQianniuTaskmetasGetResponse struct {
-
-    // taskmetas
-    Taskmetas   []QTaskMetadata `json:"taskmetas,omitempty"`
-
+    
 }

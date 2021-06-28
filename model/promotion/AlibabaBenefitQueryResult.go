@@ -1,47 +1,26 @@
 package promotion
 
 // AlibabaBenefitQueryResult 
-/* model for simplify = false
 type AlibabaBenefitQueryResult struct {
 
     // msg
     
-    Msg   string `json:"msg,omitempty"`
+    Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     
 
     // code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // 是否成功
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
 
     // datas
     
-    Datas  struct {
-        OrightDto  []OrightDto `json:"oright_dto,omitempty"`
-    } `json:"datas,omitempty"`
+    Datas   []OrightDto `json:"datas,omitempty" xml:"datas,omitempty"`
     
-
-}
-*/
-
-// AlibabaBenefitQueryResult 
-type AlibabaBenefitQueryResult struct {
-
-    // msg
-    Msg   string `json:"msg,omitempty"`
-
-    // code
-    Code   string `json:"code,omitempty"`
-
-    // 是否成功
-    Success   bool `json:"success,omitempty"`
-
-    // datas
-    Datas   []OrightDto `json:"datas,omitempty"`
 
 }

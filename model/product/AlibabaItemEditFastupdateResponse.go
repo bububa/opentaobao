@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -14,40 +16,26 @@ alibaba.item.edit.fastupdate
 */
 type AlibabaItemEditFastupdateAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaItemEditFastupdateResponse `json:"alibaba_item_edit_fastupdate_response,omitempty"` 
     AlibabaItemEditFastupdateResponse
 }
 
-/* model for simplify = false
 type AlibabaItemEditFastupdateResponse struct {
+    XMLName xml.Name `xml:"alibaba_item_edit_fastupdate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品更新时间
     
-    UpdateTime   string `json:"update_time,omitempty"`
-    
+    UpdateTime   string `json:"update_time,omitempty" xml:"update_time,omitempty"`
 
+    
     // 商品ID
     
-    ItemId   int64 `json:"item_id,omitempty"`
-    
+    ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
 
+    
     // 商品所属市场
     
-    Market   string `json:"market,omitempty"`
+    Market   string `json:"market,omitempty" xml:"market,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaItemEditFastupdateResponse struct {
-
-    // 商品更新时间
-    UpdateTime   string `json:"update_time,omitempty"`
-
-    // 商品ID
-    ItemId   int64 `json:"item_id,omitempty"`
-
-    // 商品所属市场
-    Market   string `json:"market,omitempty"`
-
 }

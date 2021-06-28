@@ -1,6 +1,8 @@
 package car
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.alitrip.car.order.query
 */
 type TaobaoAlitripCarOrderQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAlitripCarOrderQueryResponse `json:"alitrip_car_order_query_response,omitempty"` 
     TaobaoAlitripCarOrderQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoAlitripCarOrderQueryResponse struct {
+    XMLName xml.Name `xml:"alitrip_car_order_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订单结果
     
-    FirstResult  *struct {
-        OrderQueryRsp  *OrderQueryRsp `json:"order_query_rsp,omitempty"`
-    } `json:"first_result,omitempty"`
+    FirstResult   *OrderQueryRsp `json:"first_result,omitempty" xml:"first_result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAlitripCarOrderQueryResponse struct {
-
-    // 订单结果
-    FirstResult   *OrderQueryRsp `json:"first_result,omitempty"`
-
 }

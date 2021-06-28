@@ -1,6 +1,8 @@
 package film
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.film.account.phone.query
 */
 type TaobaoFilmAccountPhoneQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFilmAccountPhoneQueryResponse `json:"film_account_phone_query_response,omitempty"` 
     TaobaoFilmAccountPhoneQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoFilmAccountPhoneQueryResponse struct {
+    XMLName xml.Name `xml:"film_account_phone_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回对象
     
-    Result  *struct {
-        ResultListModel  *ResultListModel `json:"result_list_model,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ResultListModel `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoFilmAccountPhoneQueryResponse struct {
-
-    // 返回对象
-    Result   *ResultListModel `json:"result,omitempty"`
-
 }

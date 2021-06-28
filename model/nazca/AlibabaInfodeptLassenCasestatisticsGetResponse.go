@@ -1,6 +1,8 @@
 package nazca
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,21 @@ alibaba.infodept.lassen.casestatistics.get
 */
 type AlibabaInfodeptLassenCasestatisticsGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInfodeptLassenCasestatisticsGetResponse `json:"alibaba_infodept_lassen_casestatistics_get_response,omitempty"` 
     AlibabaInfodeptLassenCasestatisticsGetResponse
 }
 
-/* model for simplify = false
 type AlibabaInfodeptLassenCasestatisticsGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_infodept_lassen_casestatistics_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   string `json:"result,omitempty"`
-    
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
 
+    
     // result
     
-    Result   string `json:"result,omitempty"`
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInfodeptLassenCasestatisticsGetResponse struct {
-
-    // result
-    Result   string `json:"result,omitempty"`
-
-    // result
-    Result   string `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package security
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.security.jaq.afs.check
 */
 type AlibabaSecurityJaqAfsCheckAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSecurityJaqAfsCheckResponse `json:"alibaba_security_jaq_afs_check_response,omitempty"` 
     AlibabaSecurityJaqAfsCheckResponse
 }
 
-/* model for simplify = false
 type AlibabaSecurityJaqAfsCheckResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_afs_check_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 验证结果
     
-    Data   bool `json:"data,omitempty"`
+    Data   bool `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSecurityJaqAfsCheckResponse struct {
-
-    // 验证结果
-    Data   bool `json:"data,omitempty"`
-
 }

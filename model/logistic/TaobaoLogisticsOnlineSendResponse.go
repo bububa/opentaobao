@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.logistics.online.send
 */
 type TaobaoLogisticsOnlineSendAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLogisticsOnlineSendResponse `json:"logistics_online_send_response,omitempty"` 
     TaobaoLogisticsOnlineSendResponse
 }
 
-/* model for simplify = false
 type TaobaoLogisticsOnlineSendResponse struct {
+    XMLName xml.Name `xml:"logistics_online_send_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // de
     
-    Shipping  *struct {
-        Shipping  *Shipping `json:"shipping,omitempty"`
-    } `json:"shipping,omitempty"`
+    Shipping   *Shipping `json:"shipping,omitempty" xml:"shipping,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoLogisticsOnlineSendResponse struct {
-
-    // de
-    Shipping   *Shipping `json:"shipping,omitempty"`
-
 }

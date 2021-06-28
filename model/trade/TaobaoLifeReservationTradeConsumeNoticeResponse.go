@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.life.reservation.trade.consume.notice
 */
 type TaobaoLifeReservationTradeConsumeNoticeAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoLifeReservationTradeConsumeNoticeResponse `json:"life_reservation_trade_consume_notice_response,omitempty"` 
     TaobaoLifeReservationTradeConsumeNoticeResponse
 }
 
-/* model for simplify = false
 type TaobaoLifeReservationTradeConsumeNoticeResponse struct {
+    XMLName xml.Name `xml:"life_reservation_trade_consume_notice_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        LifeReservationTradeConsumeNoticeResult  *LifeReservationTradeConsumeNoticeResult `json:"life_reservation_trade_consume_notice_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *LifeReservationTradeConsumeNoticeResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoLifeReservationTradeConsumeNoticeResponse struct {
-
-    // 接口返回model
-    Result   *LifeReservationTradeConsumeNoticeResult `json:"result,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package scbp
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.scbp.ad.account.level.get
 */
 type AlibabaScbpAdAccountLevelGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaScbpAdAccountLevelGetResponse `json:"alibaba_scbp_ad_account_level_get_response,omitempty"` 
     AlibabaScbpAdAccountLevelGetResponse
 }
 
-/* model for simplify = false
 type AlibabaScbpAdAccountLevelGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_account_level_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推广账户等级
     
-    CustLevelDto  *struct {
-        TopCustLevelDto  *TopCustLevelDto `json:"top_cust_level_dto,omitempty"`
-    } `json:"cust_level_dto,omitempty"`
+    CustLevelDto   *TopCustLevelDto `json:"cust_level_dto,omitempty" xml:"cust_level_dto,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaScbpAdAccountLevelGetResponse struct {
-
-    // 推广账户等级
-    CustLevelDto   *TopCustLevelDto `json:"cust_level_dto,omitempty"`
-
 }

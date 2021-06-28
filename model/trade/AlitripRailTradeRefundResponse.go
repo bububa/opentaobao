@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alitrip.rail.trade.refund
 */
 type AlitripRailTradeRefundAPIResponse struct {
     model.CommonResponse
-    // Response *AlitripRailTradeRefundResponse `json:"alitrip_rail_trade_refund_response,omitempty"` 
     AlitripRailTradeRefundResponse
 }
 
-/* model for simplify = false
 type AlitripRailTradeRefundResponse struct {
+    XMLName xml.Name `xml:"alitrip_rail_trade_refund_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回对象
     
-    Result  *struct {
-        AlitripRailTradeRefundResultSet  *AlitripRailTradeRefundResultSet `json:"alitrip_rail_trade_refund_result_set,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlitripRailTradeRefundResultSet `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlitripRailTradeRefundResponse struct {
-
-    // 接口返回对象
-    Result   *AlitripRailTradeRefundResultSet `json:"result,omitempty"`
-
 }

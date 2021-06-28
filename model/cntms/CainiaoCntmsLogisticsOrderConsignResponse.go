@@ -1,6 +1,8 @@
 package cntms
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ cainiao.cntms.logistics.order.consign
 */
 type CainiaoCntmsLogisticsOrderConsignAPIResponse struct {
     model.CommonResponse
-    // Response *CainiaoCntmsLogisticsOrderConsignResponse `json:"cainiao_cntms_logistics_order_consign_response,omitempty"` 
     CainiaoCntmsLogisticsOrderConsignResponse
 }
 
-/* model for simplify = false
 type CainiaoCntmsLogisticsOrderConsignResponse struct {
+    XMLName xml.Name `xml:"cainiao_cntms_logistics_order_consign_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 物流单号
     
-    LogisticsOrderCode   string `json:"logistics_order_code,omitempty"`
+    LogisticsOrderCode   string `json:"logistics_order_code,omitempty" xml:"logistics_order_code,omitempty"`
+
     
-
-}
-*/
-
-type CainiaoCntmsLogisticsOrderConsignResponse struct {
-
-    // 物流单号
-    LogisticsOrderCode   string `json:"logistics_order_code,omitempty"`
-
 }

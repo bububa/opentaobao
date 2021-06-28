@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.servicecenter.picture.upload
 */
 type TmallServicecenterPictureUploadAPIResponse struct {
     model.CommonResponse
-    // Response *TmallServicecenterPictureUploadResponse `json:"tmall_servicecenter_picture_upload_response,omitempty"` 
     TmallServicecenterPictureUploadResponse
 }
 
-/* model for simplify = false
 type TmallServicecenterPictureUploadResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_picture_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        ResultBase  *ResultBase `json:"result_base,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallServicecenterPictureUploadResponse struct {
-
-    // result
-    Result   *ResultBase `json:"result,omitempty"`
-
 }

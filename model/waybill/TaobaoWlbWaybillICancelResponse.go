@@ -1,6 +1,8 @@
 package waybill
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.wlb.waybill.i.cancel
 */
 type TaobaoWlbWaybillICancelAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoWlbWaybillICancelResponse `json:"wlb_waybill_i_cancel_response,omitempty"` 
     TaobaoWlbWaybillICancelResponse
 }
 
-/* model for simplify = false
 type TaobaoWlbWaybillICancelResponse struct {
+    XMLName xml.Name `xml:"wlb_waybill_i_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用取消是否成功
     
-    CancelResult   bool `json:"cancel_result,omitempty"`
+    CancelResult   bool `json:"cancel_result,omitempty" xml:"cancel_result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoWlbWaybillICancelResponse struct {
-
-    // 调用取消是否成功
-    CancelResult   bool `json:"cancel_result,omitempty"`
-
 }

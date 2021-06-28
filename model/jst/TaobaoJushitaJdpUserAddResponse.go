@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.jushita.jdp.user.add
 */
 type TaobaoJushitaJdpUserAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoJushitaJdpUserAddResponse `json:"jushita_jdp_user_add_response,omitempty"` 
     TaobaoJushitaJdpUserAddResponse
 }
 
-/* model for simplify = false
 type TaobaoJushitaJdpUserAddResponse struct {
+    XMLName xml.Name `xml:"jushita_jdp_user_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否添加成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoJushitaJdpUserAddResponse struct {
-
-    // 是否添加成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

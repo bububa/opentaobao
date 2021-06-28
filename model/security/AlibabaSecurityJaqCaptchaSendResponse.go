@@ -1,6 +1,8 @@
 package security
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.security.jaq.captcha.send
 */
 type AlibabaSecurityJaqCaptchaSendAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaSecurityJaqCaptchaSendResponse `json:"alibaba_security_jaq_captcha_send_response,omitempty"` 
     AlibabaSecurityJaqCaptchaSendResponse
 }
 
-/* model for simplify = false
 type AlibabaSecurityJaqCaptchaSendResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_captcha_send_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参结构体
     
-    Data  *struct {
-        JaqSendCaptchaResult  *JaqSendCaptchaResult `json:"jaq_send_captcha_result,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *JaqSendCaptchaResult `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaSecurityJaqCaptchaSendResponse struct {
-
-    // 出参结构体
-    Data   *JaqSendCaptchaResult `json:"data,omitempty"`
-
 }

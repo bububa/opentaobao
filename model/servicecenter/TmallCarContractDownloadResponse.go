@@ -1,6 +1,8 @@
 package servicecenter
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -13,26 +15,16 @@ tmall.car.contract.download
 */
 type TmallCarContractDownloadAPIResponse struct {
     model.CommonResponse
-    // Response *TmallCarContractDownloadResponse `json:"tmall_car_contract_download_response,omitempty"` 
     TmallCarContractDownloadResponse
 }
 
-/* model for simplify = false
 type TmallCarContractDownloadResponse struct {
+    XMLName xml.Name `xml:"tmall_car_contract_download_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        TmallCarContractDownloadResult  *TmallCarContractDownloadResult `json:"tmall_car_contract_download_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallCarContractDownloadResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallCarContractDownloadResponse struct {
-
-    // 结果
-    Result   *TmallCarContractDownloadResult `json:"result,omitempty"`
-
 }

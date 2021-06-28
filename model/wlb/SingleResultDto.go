@@ -1,37 +1,21 @@
 package wlb
 
 // SingleResultDto 
-/* model for simplify = false
 type SingleResultDto struct {
 
     // errorCode
     
-    ErrorCode   string `json:"error_code,omitempty"`
+    ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     
 
     // errorMessage
     
-    ErrorMessage   string `json:"error_message,omitempty"`
+    ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     
 
     // success
     
-    Flag   bool `json:"flag,omitempty"`
+    Flag   bool `json:"flag,omitempty" xml:"flag,omitempty"`
     
-
-}
-*/
-
-// SingleResultDto 
-type SingleResultDto struct {
-
-    // errorCode
-    ErrorCode   string `json:"error_code,omitempty"`
-
-    // errorMessage
-    ErrorMessage   string `json:"error_message,omitempty"`
-
-    // success
-    Flag   bool `json:"flag,omitempty"`
 
 }

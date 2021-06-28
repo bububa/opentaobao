@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.adgroup.update
 */
 type TaobaoSimbaAdgroupUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaAdgroupUpdateResponse `json:"simba_adgroup_update_response,omitempty"` 
     TaobaoSimbaAdgroupUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaAdgroupUpdateResponse struct {
+    XMLName xml.Name `xml:"simba_adgroup_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 被修改的推广组
     
-    Adgroup  *struct {
-        ADGroup  *ADGroup `json:"ad_group,omitempty"`
-    } `json:"adgroup,omitempty"`
+    Adgroup   *ADGroup `json:"adgroup,omitempty" xml:"adgroup,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaAdgroupUpdateResponse struct {
-
-    // 被修改的推广组
-    Adgroup   *ADGroup `json:"adgroup,omitempty"`
-
 }

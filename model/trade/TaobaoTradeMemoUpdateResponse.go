@@ -1,6 +1,8 @@
 package trade
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.trade.memo.update
 */
 type TaobaoTradeMemoUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTradeMemoUpdateResponse `json:"trade_memo_update_response,omitempty"` 
     TaobaoTradeMemoUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoTradeMemoUpdateResponse struct {
+    XMLName xml.Name `xml:"trade_memo_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 更新交易的备注信息后返回的Trade，其中可用字段为tid和modified
     
-    Trade  *struct {
-        Trade  *Trade `json:"trade,omitempty"`
-    } `json:"trade,omitempty"`
+    Trade   *Trade `json:"trade,omitempty" xml:"trade,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTradeMemoUpdateResponse struct {
-
-    // 更新交易的备注信息后返回的Trade，其中可用字段为tid和modified
-    Trade   *Trade `json:"trade,omitempty"`
-
 }

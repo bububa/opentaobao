@@ -1,6 +1,8 @@
 package legalcase
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,48 +14,31 @@ alibaba.legal.suit.file.upload
 */
 type AlibabaLegalSuitFileUploadAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaLegalSuitFileUploadResponse `json:"alibaba_legal_suit_file_upload_response,omitempty"` 
     AlibabaLegalSuitFileUploadResponse
 }
 
-/* model for simplify = false
 type AlibabaLegalSuitFileUploadResponse struct {
+    XMLName xml.Name `xml:"alibaba_legal_suit_file_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 失败原因
     
-    ErrorMsg   string `json:"error_msg,omitempty"`
-    
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 
+    
     // 是否调用成功
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 文件上传后的生成的id
     
-    Content   string `json:"content,omitempty"`
-    
+    Content   string `json:"content,omitempty" xml:"content,omitempty"`
 
+    
     // 失败的code枚举
     
-    CodeError   string `json:"code_error,omitempty"`
+    CodeError   string `json:"code_error,omitempty" xml:"code_error,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaLegalSuitFileUploadResponse struct {
-
-    // 失败原因
-    ErrorMsg   string `json:"error_msg,omitempty"`
-
-    // 是否调用成功
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 文件上传后的生成的id
-    Content   string `json:"content,omitempty"`
-
-    // 失败的code枚举
-    CodeError   string `json:"code_error,omitempty"`
-
 }

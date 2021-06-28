@@ -1,47 +1,26 @@
 package flight
 
 // ModifyBackFillRequestDto 
-/* model for simplify = false
 type ModifyBackFillRequestDto struct {
 
     // 申请单号
     
-    ApplyId   string `json:"apply_id,omitempty"`
+    ApplyId   string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     
 
     // 国际国内标识
     
-    DomesticIntl   int64 `json:"domestic_intl,omitempty"`
+    DomesticIntl   int64 `json:"domestic_intl,omitempty" xml:"domestic_intl,omitempty"`
     
 
     // 改签数据
     
-    ChangeList  struct {
-        ModifyItemDTO  []ModifyItemDTO `json:"modify_item_dto,omitempty"`
-    } `json:"change_list,omitempty"`
+    ChangeList   []ModifyItemDTO `json:"change_list,omitempty" xml:"change_list,omitempty"`
     
 
     // 币种
     
-    Currency   string `json:"currency,omitempty"`
+    Currency   string `json:"currency,omitempty" xml:"currency,omitempty"`
     
-
-}
-*/
-
-// ModifyBackFillRequestDto 
-type ModifyBackFillRequestDto struct {
-
-    // 申请单号
-    ApplyId   string `json:"apply_id,omitempty"`
-
-    // 国际国内标识
-    DomesticIntl   int64 `json:"domestic_intl,omitempty"`
-
-    // 改签数据
-    ChangeList   []ModifyItemDTO `json:"change_list,omitempty"`
-
-    // 币种
-    Currency   string `json:"currency,omitempty"`
 
 }

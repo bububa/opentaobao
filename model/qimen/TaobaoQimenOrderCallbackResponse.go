@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.qimen.order.callback
 */
 type TaobaoQimenOrderCallbackAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenOrderCallbackResponse `json:"qimen_order_callback_response,omitempty"` 
     TaobaoQimenOrderCallbackResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenOrderCallbackResponse struct {
+    XMLName xml.Name `xml:"qimen_order_callback_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        OrderCallbackResponseDO  *OrderCallbackResponseDO `json:"order_callback_response_do,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *OrderCallbackResponseDO `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenOrderCallbackResponse struct {
-
-    // 
-    Response   *OrderCallbackResponseDO `json:"response,omitempty"`
-
 }

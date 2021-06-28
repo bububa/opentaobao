@@ -1,6 +1,8 @@
 package mei
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -14,24 +16,16 @@ tmall.mei.crm.member.sync
 */
 type TmallMeiCrmMemberSyncAPIResponse struct {
     model.CommonResponse
-    // Response *TmallMeiCrmMemberSyncResponse `json:"tmall_mei_crm_member_sync_response,omitempty"` 
     TmallMeiCrmMemberSyncResponse
 }
 
-/* model for simplify = false
 type TmallMeiCrmMemberSyncResponse struct {
+    XMLName xml.Name `xml:"tmall_mei_crm_member_sync_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 处理的其他信息
     
-    MeiExtraInfo   string `json:"mei_extra_info,omitempty"`
+    MeiExtraInfo   string `json:"mei_extra_info,omitempty" xml:"mei_extra_info,omitempty"`
+
     
-
-}
-*/
-
-type TmallMeiCrmMemberSyncResponse struct {
-
-    // 处理的其他信息
-    MeiExtraInfo   string `json:"mei_extra_info,omitempty"`
-
 }

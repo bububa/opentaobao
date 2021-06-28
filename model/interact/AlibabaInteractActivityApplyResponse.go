@@ -1,6 +1,8 @@
 package interact
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ alibaba.interact.activity.apply
 */
 type AlibabaInteractActivityApplyAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaInteractActivityApplyResponse `json:"alibaba_interact_activity_apply_response,omitempty"` 
     AlibabaInteractActivityApplyResponse
 }
 
-/* model for simplify = false
 type AlibabaInteractActivityApplyResponse struct {
+    XMLName xml.Name `xml:"alibaba_interact_activity_apply_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 服务结果对象
     
-    Data  *struct {
-        ActivityWriteResult  *ActivityWriteResult `json:"activity_write_result,omitempty"`
-    } `json:"data,omitempty"`
-    
+    Data   *ActivityWriteResult `json:"data,omitempty" xml:"data,omitempty"`
 
+    
     // top接口执行成功与否
     
-    IsSuccess   bool `json:"is_success,omitempty"`
-    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
 
+    
     // 出错提示信息
     
-    ErrMsg   string `json:"err_msg,omitempty"`
+    ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaInteractActivityApplyResponse struct {
-
-    // 服务结果对象
-    Data   *ActivityWriteResult `json:"data,omitempty"`
-
-    // top接口执行成功与否
-    IsSuccess   bool `json:"is_success,omitempty"`
-
-    // 出错提示信息
-    ErrMsg   string `json:"err_msg,omitempty"`
-
 }

@@ -1,29 +1,16 @@
 package waybill
 
 // WaybillServiceType 
-/* model for simplify = false
 type WaybillServiceType struct {
 
     // code
     
-    Code   string `json:"code,omitempty"`
+    Code   string `json:"code,omitempty" xml:"code,omitempty"`
     
 
     // name
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
-
-}
-*/
-
-// WaybillServiceType 
-type WaybillServiceType struct {
-
-    // code
-    Code   string `json:"code,omitempty"`
-
-    // name
-    Name   string `json:"name,omitempty"`
 
 }

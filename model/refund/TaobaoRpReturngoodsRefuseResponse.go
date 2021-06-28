@@ -1,6 +1,8 @@
 package refund
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.rp.returngoods.refuse
 */
 type TaobaoRpReturngoodsRefuseAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRpReturngoodsRefuseResponse `json:"rp_returngoods_refuse_response,omitempty"` 
     TaobaoRpReturngoodsRefuseResponse
 }
 
-/* model for simplify = false
 type TaobaoRpReturngoodsRefuseResponse struct {
+    XMLName xml.Name `xml:"rp_returngoods_refuse_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // asdf
     
-    Result   bool `json:"result,omitempty"`
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRpReturngoodsRefuseResponse struct {
-
-    // asdf
-    Result   bool `json:"result,omitempty"`
-
 }

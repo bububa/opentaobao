@@ -1,29 +1,16 @@
 package travel
 
 // Poi 
-/* model for simplify = false
 type Poi struct {
 
     // POI对应ID
     
-    Id   int64 `json:"id,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     
 
     // POI对应的名称
     
-    Name   string `json:"name,omitempty"`
+    Name   string `json:"name,omitempty" xml:"name,omitempty"`
     
-
-}
-*/
-
-// Poi 
-type Poi struct {
-
-    // POI对应ID
-    Id   int64 `json:"id,omitempty"`
-
-    // POI对应的名称
-    Name   string `json:"name,omitempty"`
 
 }

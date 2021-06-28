@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.fenxiao.distributors.get
 */
 type TaobaoFenxiaoDistributorsGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoDistributorsGetResponse `json:"fenxiao_distributors_get_response,omitempty"` 
     TaobaoFenxiaoDistributorsGetResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoDistributorsGetResponse struct {
+    XMLName xml.Name `xml:"fenxiao_distributors_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 分销商详细信息
     
-    Distributors  struct {
-        Distributor  []Distributor `json:"distributor,omitempty"`
-    } `json:"distributors,omitempty"`
+    Distributors   []Distributor `json:"distributors,omitempty" xml:"distributors>distributor,omitempty"`
     
-
-}
-*/
-
-type TaobaoFenxiaoDistributorsGetResponse struct {
-
-    // 分销商详细信息
-    Distributors   []Distributor `json:"distributors,omitempty"`
-
+    
 }

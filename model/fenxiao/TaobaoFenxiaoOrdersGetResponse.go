@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.fenxiao.orders.get
 */
 type TaobaoFenxiaoOrdersGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoFenxiaoOrdersGetResponse `json:"fenxiao_orders_get_response,omitempty"` 
     TaobaoFenxiaoOrdersGetResponse
 }
 
-/* model for simplify = false
 type TaobaoFenxiaoOrdersGetResponse struct {
+    XMLName xml.Name `xml:"fenxiao_orders_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 搜索到的采购单记录总数
     
-    TotalResults   int64 `json:"total_results,omitempty"`
-    
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 
+    
     // 采购单及子采购单信息。返回 PurchaseOrder 包含的字段信息。
     
-    PurchaseOrders  struct {
-        TopDpOrderDo  []TopDpOrderDo `json:"top_dp_order_do,omitempty"`
-    } `json:"purchase_orders,omitempty"`
+    PurchaseOrders   []TopDpOrderDo `json:"purchase_orders,omitempty" xml:"purchase_orders>top_dp_order_do,omitempty"`
     
-
-}
-*/
-
-type TaobaoFenxiaoOrdersGetResponse struct {
-
-    // 搜索到的采购单记录总数
-    TotalResults   int64 `json:"total_results,omitempty"`
-
-    // 采购单及子采购单信息。返回 PurchaseOrder 包含的字段信息。
-    PurchaseOrders   []TopDpOrderDo `json:"purchase_orders,omitempty"`
-
+    
 }

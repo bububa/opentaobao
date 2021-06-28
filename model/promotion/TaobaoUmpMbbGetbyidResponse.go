@@ -1,6 +1,8 @@
 package promotion
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.ump.mbb.getbyid
 */
 type TaobaoUmpMbbGetbyidAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoUmpMbbGetbyidResponse `json:"ump_mbb_getbyid_response,omitempty"` 
     TaobaoUmpMbbGetbyidResponse
 }
 
-/* model for simplify = false
 type TaobaoUmpMbbGetbyidResponse struct {
+    XMLName xml.Name `xml:"ump_mbb_getbyid_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 营销积木块定义信息，可以通过ump sdk里面的MBB.fromJson来处理
     
-    Mbb   string `json:"mbb,omitempty"`
+    Mbb   string `json:"mbb,omitempty" xml:"mbb,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoUmpMbbGetbyidResponse struct {
-
-    // 营销积木块定义信息，可以通过ump sdk里面的MBB.fromJson来处理
-    Mbb   string `json:"mbb,omitempty"`
-
 }

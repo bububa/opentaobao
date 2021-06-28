@@ -1,6 +1,8 @@
 package aliyun
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ slb.aliyuncs.com.DescribeBackendServers.2013-02-21
 */
 type SlbAliyuncsComDescribeBackendServers2013-02-21APIResponse struct {
     model.CommonResponse
-    // Response *SlbAliyuncsComDescribeBackendServers2013-02-21Response `json:"slb_aliyuncs_com_DescribeBackendServers_2013-02-21_response,omitempty"` 
     SlbAliyuncsComDescribeBackendServers2013-02-21Response
 }
 
-/* model for simplify = false
 type SlbAliyuncsComDescribeBackendServers2013-02-21Response struct {
+    XMLName xml.Name `xml:"slb_aliyuncs_com_DescribeBackendServers_2013-02-21_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // request id
     
-    Requestid   string `json:"requestid,omitempty"`
-    
+    Requestid   string `json:"requestid,omitempty" xml:"requestid,omitempty"`
 
+    
     // LoadBalancerId
     
-    Loadbalancerid   string `json:"loadbalancerid,omitempty"`
-    
+    Loadbalancerid   string `json:"loadbalancerid,omitempty" xml:"loadbalancerid,omitempty"`
 
+    
     // Listeners
     
-    Listeners  struct {
-        Listener  []Listener `json:"listener,omitempty"`
-    } `json:"listeners,omitempty"`
+    Listeners   []Listener `json:"listeners,omitempty" xml:"listeners>listener,omitempty"`
     
-
-}
-*/
-
-type SlbAliyuncsComDescribeBackendServers2013-02-21Response struct {
-
-    // request id
-    Requestid   string `json:"requestid,omitempty"`
-
-    // LoadBalancerId
-    Loadbalancerid   string `json:"loadbalancerid,omitempty"`
-
-    // Listeners
-    Listeners   []Listener `json:"listeners,omitempty"`
-
+    
 }

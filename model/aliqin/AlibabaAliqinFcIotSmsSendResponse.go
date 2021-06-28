@@ -1,6 +1,8 @@
 package aliqin
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.fc.iot.sms.send
 */
 type AlibabaAliqinFcIotSmsSendAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinFcIotSmsSendResponse `json:"alibaba_aliqin_fc_iot_sms_send_response,omitempty"` 
     AlibabaAliqinFcIotSmsSendResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinFcIotSmsSendResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_fc_iot_sms_send_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        AlibabaAliqinFcIotSmsSendBizResult  *AlibabaAliqinFcIotSmsSendBizResult `json:"alibaba_aliqin_fc_iot_sms_send_biz_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaAliqinFcIotSmsSendBizResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinFcIotSmsSendResponse struct {
-
-    // 返回值
-    Result   *AlibabaAliqinFcIotSmsSendBizResult `json:"result,omitempty"`
-
 }

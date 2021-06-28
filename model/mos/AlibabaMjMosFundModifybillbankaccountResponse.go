@@ -1,6 +1,8 @@
 package mos
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ alibaba.mj.mos.fund.modifybillbankaccount
 */
 type AlibabaMjMosFundModifybillbankaccountAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaMjMosFundModifybillbankaccountResponse `json:"alibaba_mj_mos_fund_modifybillbankaccount_response,omitempty"` 
     AlibabaMjMosFundModifybillbankaccountResponse
 }
 
-/* model for simplify = false
 type AlibabaMjMosFundModifybillbankaccountResponse struct {
+    XMLName xml.Name `xml:"alibaba_mj_mos_fund_modifybillbankaccount_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // data
     
-    Data   bool `json:"data,omitempty"`
+    Data   bool `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaMjMosFundModifybillbankaccountResponse struct {
-
-    // data
-    Data   bool `json:"data,omitempty"`
-
 }

@@ -1,47 +1,26 @@
 package tmallhk
 
 // CertifyQueryResult 
-/* model for simplify = false
 type CertifyQueryResult struct {
 
     // 清关对象
     
-    Module  *struct {
-        ConsigneeCertifyInfo  *ConsigneeCertifyInfo `json:"consignee_certify_info,omitempty"`
-    } `json:"module,omitempty"`
+    Module   *ConsigneeCertifyInfo `json:"module,omitempty" xml:"module,omitempty"`
     
 
     // 错误原因
     
-    ErrMsg   string `json:"err_msg,omitempty"`
+    ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     
 
     // 错误代码
     
-    ErrCode   string `json:"err_code,omitempty"`
+    ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// CertifyQueryResult 
-type CertifyQueryResult struct {
-
-    // 清关对象
-    Module   *ConsigneeCertifyInfo `json:"module,omitempty"`
-
-    // 错误原因
-    ErrMsg   string `json:"err_msg,omitempty"`
-
-    // 错误代码
-    ErrCode   string `json:"err_code,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

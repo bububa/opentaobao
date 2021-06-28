@@ -1,6 +1,8 @@
 package aliqin
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.aliqin.fc.voice.num.singlecall
 */
 type AlibabaAliqinFcVoiceNumSinglecallAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaAliqinFcVoiceNumSinglecallResponse `json:"alibaba_aliqin_fc_voice_num_singlecall_response,omitempty"` 
     AlibabaAliqinFcVoiceNumSinglecallResponse
 }
 
-/* model for simplify = false
 type AlibabaAliqinFcVoiceNumSinglecallResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_fc_voice_num_singlecall_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result  *struct {
-        AlibabaAliqinFcVoiceNumSinglecallBizResult  *AlibabaAliqinFcVoiceNumSinglecallBizResult `json:"alibaba_aliqin_fc_voice_num_singlecall_biz_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *AlibabaAliqinFcVoiceNumSinglecallBizResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaAliqinFcVoiceNumSinglecallResponse struct {
-
-    // 返回值
-    Result   *AlibabaAliqinFcVoiceNumSinglecallBizResult `json:"result,omitempty"`
-
 }

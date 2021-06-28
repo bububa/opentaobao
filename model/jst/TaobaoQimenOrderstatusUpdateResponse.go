@@ -1,6 +1,8 @@
 package jst
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ taobao.qimen.orderstatus.update
 */
 type TaobaoQimenOrderstatusUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenOrderstatusUpdateResponse `json:"qimen_orderstatus_update_response,omitempty"` 
     TaobaoQimenOrderstatusUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenOrderstatusUpdateResponse struct {
+    XMLName xml.Name `xml:"qimen_orderstatus_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // message
     
-    Message   string `json:"message,omitempty"`
-    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 
+    
     // resultCode
     
-    ResultCode   string `json:"result_code,omitempty"`
-    
+    ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 
+    
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty"`
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenOrderstatusUpdateResponse struct {
-
-    // message
-    Message   string `json:"message,omitempty"`
-
-    // resultCode
-    ResultCode   string `json:"result_code,omitempty"`
-
-    // success
-    IsSuccess   bool `json:"is_success,omitempty"`
-
 }

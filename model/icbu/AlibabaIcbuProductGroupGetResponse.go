@@ -1,6 +1,8 @@
 package icbu
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.icbu.product.group.get
 */
 type AlibabaIcbuProductGroupGetAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaIcbuProductGroupGetResponse `json:"alibaba_icbu_product_group_get_response,omitempty"` 
     AlibabaIcbuProductGroupGetResponse
 }
 
-/* model for simplify = false
 type AlibabaIcbuProductGroupGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_icbu_product_group_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 分组信息
     
-    ProductGroup  *struct {
-        ProductGroup  *ProductGroup `json:"product_group,omitempty"`
-    } `json:"product_group,omitempty"`
+    ProductGroup   *ProductGroup `json:"product_group,omitempty" xml:"product_group,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaIcbuProductGroupGetResponse struct {
-
-    // 分组信息
-    ProductGroup   *ProductGroup `json:"product_group,omitempty"`
-
 }

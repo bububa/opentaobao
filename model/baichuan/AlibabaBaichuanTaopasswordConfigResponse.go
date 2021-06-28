@@ -1,6 +1,8 @@
 package baichuan
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ alibaba.baichuan.taopassword.config
 */
 type AlibabaBaichuanTaopasswordConfigAPIResponse struct {
     model.CommonResponse
-    // Response *AlibabaBaichuanTaopasswordConfigResponse `json:"alibaba_baichuan_taopassword_config_response,omitempty"` 
     AlibabaBaichuanTaopasswordConfigResponse
 }
 
-/* model for simplify = false
 type AlibabaBaichuanTaopasswordConfigResponse struct {
+    XMLName xml.Name `xml:"alibaba_baichuan_taopassword_config_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        ShareResult  *ShareResult `json:"share_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *ShareResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type AlibabaBaichuanTaopasswordConfigResponse struct {
-
-    // result
-    Result   *ShareResult `json:"result,omitempty"`
-
 }

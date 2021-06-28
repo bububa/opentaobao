@@ -1,6 +1,8 @@
 package flight
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.alitrip.flightchange.get
 */
 type TaobaoAlitripFlightchangeGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoAlitripFlightchangeGetResponse `json:"alitrip_flightchange_get_response,omitempty"` 
     TaobaoAlitripFlightchangeGetResponse
 }
 
-/* model for simplify = false
 type TaobaoAlitripFlightchangeGetResponse struct {
+    XMLName xml.Name `xml:"alitrip_flightchange_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    ResultDO  *struct {
-        TaobaoAlitripFlightchangeGetResultDo  *TaobaoAlitripFlightchangeGetResultDo `json:"taobao_alitrip_flightchange_get_result_do,omitempty"`
-    } `json:"result_d_o,omitempty"`
+    ResultDO   *TaobaoAlitripFlightchangeGetResultDo `json:"result_d_o,omitempty" xml:"result_d_o,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoAlitripFlightchangeGetResponse struct {
-
-    // result
-    ResultDO   *TaobaoAlitripFlightchangeGetResultDo `json:"result_d_o,omitempty"`
-
 }

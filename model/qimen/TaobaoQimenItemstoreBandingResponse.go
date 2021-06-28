@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,40 +14,26 @@ taobao.qimen.itemstore.banding
 */
 type TaobaoQimenItemstoreBandingAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenItemstoreBandingResponse `json:"qimen_itemstore_banding_response,omitempty"` 
     TaobaoQimenItemstoreBandingResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenItemstoreBandingResponse struct {
+    XMLName xml.Name `xml:"qimen_itemstore_banding_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应信息
     
-    Message   string `json:"message,omitempty"`
-    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 
+    
     // 响应描述
     
-    Flag   string `json:"flag,omitempty"`
-    
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
 
+    
     // 响应编码
     
-    QimenCode   string `json:"qimen_code,omitempty"`
+    QimenCode   string `json:"qimen_code,omitempty" xml:"qimen_code,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenItemstoreBandingResponse struct {
-
-    // 响应信息
-    Message   string `json:"message,omitempty"`
-
-    // 响应描述
-    Flag   string `json:"flag,omitempty"`
-
-    // 响应编码
-    QimenCode   string `json:"qimen_code,omitempty"`
-
 }

@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.simba.searchtagtemplate.get
 */
 type TaobaoSimbaSearchtagtemplateGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaSearchtagtemplateGetResponse `json:"simba_searchtagtemplate_get_response,omitempty"` 
     TaobaoSimbaSearchtagtemplateGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaSearchtagtemplateGetResponse struct {
+    XMLName xml.Name `xml:"simba_searchtagtemplate_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    TemplateList  struct {
-        TaobaoSimbaSearchtagtemplateGetResult  []TaobaoSimbaSearchtagtemplateGetResult `json:"taobao_simba_searchtagtemplate_get_result,omitempty"`
-    } `json:"template_list,omitempty"`
+    TemplateList   []TaobaoSimbaSearchtagtemplateGetResult `json:"template_list,omitempty" xml:"template_list>taobao_simba_searchtagtemplate_get_result,omitempty"`
     
-
-}
-*/
-
-type TaobaoSimbaSearchtagtemplateGetResponse struct {
-
-    // result
-    TemplateList   []TaobaoSimbaSearchtagtemplateGetResult `json:"template_list,omitempty"`
-
+    
 }

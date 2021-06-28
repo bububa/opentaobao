@@ -1,41 +1,21 @@
 package cmns
 
 // Receiver 
-/* model for simplify = false
 type Receiver struct {
 
     // deviceToken值，最多1000个
     
-    Data  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"data,omitempty"`
+    Data   []string `json:"data,omitempty" xml:"data>string,omitempty"`
     
 
     // 只能填写deviceToken
     
-    Type   string `json:"type,omitempty"`
+    Type   string `json:"type,omitempty" xml:"type,omitempty"`
     
 
     // deviceToken值，最多1000个
     
-    DataList  struct {
-        String  []string `json:"string,omitempty"`
-    } `json:"data_list,omitempty"`
+    DataList   []string `json:"data_list,omitempty" xml:"data_list>string,omitempty"`
     
-
-}
-*/
-
-// Receiver 
-type Receiver struct {
-
-    // deviceToken值，最多1000个
-    Data   []string `json:"data,omitempty"`
-
-    // 只能填写deviceToken
-    Type   string `json:"type,omitempty"`
-
-    // deviceToken值，最多1000个
-    DataList   []string `json:"data_list,omitempty"`
 
 }

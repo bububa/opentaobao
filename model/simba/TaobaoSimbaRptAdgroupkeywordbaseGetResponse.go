@@ -1,6 +1,8 @@
 package simba
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.simba.rpt.adgroupkeywordbase.get
 */
 type TaobaoSimbaRptAdgroupkeywordbaseGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoSimbaRptAdgroupkeywordbaseGetResponse `json:"simba_rpt_adgroupkeywordbase_get_response,omitempty"` 
     TaobaoSimbaRptAdgroupkeywordbaseGetResponse
 }
 
-/* model for simplify = false
 type TaobaoSimbaRptAdgroupkeywordbaseGetResponse struct {
+    XMLName xml.Name `xml:"simba_rpt_adgroupkeywordbase_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 词基础数据返回结果
     
-    RptAdgroupkeywordBaseList   string `json:"rpt_adgroupkeyword_base_list,omitempty"`
+    RptAdgroupkeywordBaseList   string `json:"rpt_adgroupkeyword_base_list,omitempty" xml:"rpt_adgroupkeyword_base_list,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoSimbaRptAdgroupkeywordbaseGetResponse struct {
-
-    // 词基础数据返回结果
-    RptAdgroupkeywordBaseList   string `json:"rpt_adgroupkeyword_base_list,omitempty"`
-
 }

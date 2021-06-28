@@ -1,6 +1,8 @@
 package eticket
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.vmarket.eticket.tasks.get
 */
 type TaobaoVmarketEticketTasksGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoVmarketEticketTasksGetResponse `json:"vmarket_eticket_tasks_get_response,omitempty"` 
     TaobaoVmarketEticketTasksGetResponse
 }
 
-/* model for simplify = false
 type TaobaoVmarketEticketTasksGetResponse struct {
+    XMLName xml.Name `xml:"vmarket_eticket_tasks_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 任务列表查询结果的总数
     
-    TotalResults   int64 `json:"total_results,omitempty"`
-    
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
 
+    
     // 任务列表查询结果信息
     
-    EticketTasks  struct {
-        EticketTask  []EticketTask `json:"eticket_task,omitempty"`
-    } `json:"eticket_tasks,omitempty"`
+    EticketTasks   []EticketTask `json:"eticket_tasks,omitempty" xml:"eticket_tasks>eticket_task,omitempty"`
     
-
-}
-*/
-
-type TaobaoVmarketEticketTasksGetResponse struct {
-
-    // 任务列表查询结果的总数
-    TotalResults   int64 `json:"total_results,omitempty"`
-
-    // 任务列表查询结果信息
-    EticketTasks   []EticketTask `json:"eticket_tasks,omitempty"`
-
+    
 }

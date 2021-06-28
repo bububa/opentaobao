@@ -1,6 +1,8 @@
 package qimen
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ ERP调用接口，将发货信息批量推送给WMS
 */
 type TaobaoQimenDeliveryorderBatchcreateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenDeliveryorderBatchcreateResponse `json:"qimen_deliveryorder_batchcreate_response,omitempty"` 
     TaobaoQimenDeliveryorderBatchcreateResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenDeliveryorderBatchcreateResponse struct {
+    XMLName xml.Name `xml:"qimen_deliveryorder_batchcreate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response  *struct {
-        DeliveryOrderBatchCreateResponse  *DeliveryOrderBatchCreateResponse `json:"delivery_order_batch_create_response,omitempty"`
-    } `json:"response,omitempty"`
+    Response   *DeliveryOrderBatchCreateResponse `json:"response,omitempty" xml:"response,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenDeliveryorderBatchcreateResponse struct {
-
-    // 
-    Response   *DeliveryOrderBatchCreateResponse `json:"response,omitempty"`
-
 }

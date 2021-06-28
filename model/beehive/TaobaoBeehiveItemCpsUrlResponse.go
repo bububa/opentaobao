@@ -1,6 +1,8 @@
 package beehive
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.beehive.item.cps.url
 */
 type TaobaoBeehiveItemCpsUrlAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoBeehiveItemCpsUrlResponse `json:"beehive_item_cps_url_response,omitempty"` 
     TaobaoBeehiveItemCpsUrlResponse
 }
 
-/* model for simplify = false
 type TaobaoBeehiveItemCpsUrlResponse struct {
+    XMLName xml.Name `xml:"beehive_item_cps_url_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果对象
     
-    Result  *struct {
-        TaobaoBeehiveItemCpsUrlResultDo  *TaobaoBeehiveItemCpsUrlResultDo `json:"taobao_beehive_item_cps_url_result_do,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoBeehiveItemCpsUrlResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoBeehiveItemCpsUrlResponse struct {
-
-    // 结果对象
-    Result   *TaobaoBeehiveItemCpsUrlResultDo `json:"result,omitempty"`
-
 }

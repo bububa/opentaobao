@@ -1,6 +1,8 @@
 package elife
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,56 +14,36 @@ taobao.elife.lifecard.consume
 */
 type TaobaoElifeLifecardConsumeAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoElifeLifecardConsumeResponse `json:"elife_lifecard_consume_response,omitempty"` 
     TaobaoElifeLifecardConsumeResponse
 }
 
-/* model for simplify = false
 type TaobaoElifeLifecardConsumeResponse struct {
+    XMLName xml.Name `xml:"elife_lifecard_consume_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 本金
     
-    Amount   int64 `json:"amount,omitempty"`
-    
+    Amount   int64 `json:"amount,omitempty" xml:"amount,omitempty"`
 
+    
     // 膨胀金
     
-    InflateAmount   int64 `json:"inflate_amount,omitempty"`
-    
+    InflateAmount   int64 `json:"inflate_amount,omitempty" xml:"inflate_amount,omitempty"`
 
+    
     // 错误码
     
-    ResultCode   string `json:"result_code,omitempty"`
-    
+    ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
 
+    
     // 结果描述
     
-    ResultMsg   string `json:"result_msg,omitempty"`
-    
+    ResultMsg   string `json:"result_msg,omitempty" xml:"result_msg,omitempty"`
 
+    
     // 是否成功
     
-    Successed   bool `json:"successed,omitempty"`
+    Successed   bool `json:"successed,omitempty" xml:"successed,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoElifeLifecardConsumeResponse struct {
-
-    // 本金
-    Amount   int64 `json:"amount,omitempty"`
-
-    // 膨胀金
-    InflateAmount   int64 `json:"inflate_amount,omitempty"`
-
-    // 错误码
-    ResultCode   string `json:"result_code,omitempty"`
-
-    // 结果描述
-    ResultMsg   string `json:"result_msg,omitempty"`
-
-    // 是否成功
-    Successed   bool `json:"successed,omitempty"`
-
 }

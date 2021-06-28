@@ -1,6 +1,8 @@
 package fenxiao
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.region.price.query
 */
 type TaobaoRegionPriceQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoRegionPriceQueryResponse `json:"region_price_query_response,omitempty"` 
     TaobaoRegionPriceQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoRegionPriceQueryResponse struct {
+    XMLName xml.Name `xml:"region_price_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result  *struct {
-        BaseResult  *BaseResult `json:"base_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoRegionPriceQueryResponse struct {
-
-    // result
-    Result   *BaseResult `json:"result,omitempty"`
-
 }

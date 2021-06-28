@@ -1,6 +1,8 @@
 package traderate
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.traderate.list.add
 */
 type TaobaoTraderateListAddAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTraderateListAddResponse `json:"traderate_list_add_response,omitempty"` 
     TaobaoTraderateListAddResponse
 }
 
-/* model for simplify = false
 type TaobaoTraderateListAddResponse struct {
+    XMLName xml.Name `xml:"traderate_list_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的评论的信息，仅返回tid和created字段
     
-    TradeRate  *struct {
-        TradeRateRequest  *TradeRateRequest `json:"trade_rate_request,omitempty"`
-    } `json:"trade_rate,omitempty"`
+    TradeRate   *TradeRateRequest `json:"trade_rate,omitempty" xml:"trade_rate,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTraderateListAddResponse struct {
-
-    // 返回的评论的信息，仅返回tid和created字段
-    TradeRate   *TradeRateRequest `json:"trade_rate,omitempty"`
-
 }

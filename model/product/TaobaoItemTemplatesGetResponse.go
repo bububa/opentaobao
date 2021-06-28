@@ -1,6 +1,8 @@
 package product
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.item.templates.get
 */
 type TaobaoItemTemplatesGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoItemTemplatesGetResponse `json:"item_templates_get_response,omitempty"` 
     TaobaoItemTemplatesGetResponse
 }
 
-/* model for simplify = false
 type TaobaoItemTemplatesGetResponse struct {
+    XMLName xml.Name `xml:"item_templates_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回宝贝模板对象。包含模板id，模板name，还有模板的类别（0表示外店，1表示内店）
     
-    ItemTemplateList  struct {
-        ItemTemplate  []ItemTemplate `json:"item_template,omitempty"`
-    } `json:"item_template_list,omitempty"`
+    ItemTemplateList   []ItemTemplate `json:"item_template_list,omitempty" xml:"item_template_list>item_template,omitempty"`
     
-
-}
-*/
-
-type TaobaoItemTemplatesGetResponse struct {
-
-    // 返回宝贝模板对象。包含模板id，模板name，还有模板的类别（0表示外店，1表示内店）
-    ItemTemplateList   []ItemTemplate `json:"item_template_list,omitempty"`
-
+    
 }

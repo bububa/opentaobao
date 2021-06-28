@@ -1,6 +1,8 @@
 package media
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.picture.delete
 */
 type TaobaoPictureDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoPictureDeleteResponse `json:"picture_delete_response,omitempty"` 
     TaobaoPictureDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoPictureDeleteResponse struct {
+    XMLName xml.Name `xml:"picture_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否删除
     
-    Success   string `json:"success,omitempty"`
+    Success   string `json:"success,omitempty" xml:"success,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoPictureDeleteResponse struct {
-
-    // 是否删除
-    Success   string `json:"success,omitempty"`
-
 }

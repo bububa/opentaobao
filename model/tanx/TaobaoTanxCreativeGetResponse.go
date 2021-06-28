@@ -1,6 +1,8 @@
 package tanx
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,50 +14,31 @@ taobao.tanx.creative.get
 */
 type TaobaoTanxCreativeGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTanxCreativeGetResponse `json:"tanx_creative_get_response,omitempty"` 
     TaobaoTanxCreativeGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTanxCreativeGetResponse struct {
+    XMLName xml.Name `xml:"tanx_creative_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用的成功信息或失败信息
     
-    Message   string `json:"message,omitempty"`
-    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
 
+    
     // 调用返回码
     
-    TanxErrorCode   int64 `json:"tanx_error_code,omitempty"`
-    
+    TanxErrorCode   int64 `json:"tanx_error_code,omitempty" xml:"tanx_error_code,omitempty"`
 
+    
     // 是否成功
     
-    IsOk   bool `json:"is_ok,omitempty"`
-    
+    IsOk   bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
 
+    
     // 创意查询返回结果列表
     
-    Result  *struct {
-        CreativeAuditDto  *CreativeAuditDto `json:"creative_audit_dto,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *CreativeAuditDto `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTanxCreativeGetResponse struct {
-
-    // 调用的成功信息或失败信息
-    Message   string `json:"message,omitempty"`
-
-    // 调用返回码
-    TanxErrorCode   int64 `json:"tanx_error_code,omitempty"`
-
-    // 是否成功
-    IsOk   bool `json:"is_ok,omitempty"`
-
-    // 创意查询返回结果列表
-    Result   *CreativeAuditDto `json:"result,omitempty"`
-
 }

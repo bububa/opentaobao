@@ -1,6 +1,8 @@
 package util
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,24 +14,16 @@ taobao.qimen.trade.user.delete
 */
 type TaobaoQimenTradeUserDeleteAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoQimenTradeUserDeleteResponse `json:"qimen_trade_user_delete_response,omitempty"` 
     TaobaoQimenTradeUserDeleteResponse
 }
 
-/* model for simplify = false
 type TaobaoQimenTradeUserDeleteResponse struct {
+    XMLName xml.Name `xml:"qimen_trade_user_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // modal
     
-    Modal   bool `json:"modal,omitempty"`
+    Modal   bool `json:"modal,omitempty" xml:"modal,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoQimenTradeUserDeleteResponse struct {
-
-    // modal
-    Modal   bool `json:"modal,omitempty"`
-
 }

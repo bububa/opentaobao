@@ -1,6 +1,8 @@
 package tmallservice
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ tmall.mallitemcenter.subscribe.query
 */
 type TmallMallitemcenterSubscribeQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TmallMallitemcenterSubscribeQueryResponse `json:"tmall_mallitemcenter_subscribe_query_response,omitempty"` 
     TmallMallitemcenterSubscribeQueryResponse
 }
 
-/* model for simplify = false
 type TmallMallitemcenterSubscribeQueryResponse struct {
+    XMLName xml.Name `xml:"tmall_mallitemcenter_subscribe_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        TmallMallitemcenterSubscribeQueryResult  *TmallMallitemcenterSubscribeQueryResult `json:"tmall_mallitemcenter_subscribe_query_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TmallMallitemcenterSubscribeQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TmallMallitemcenterSubscribeQueryResponse struct {
-
-    // 接口返回model
-    Result   *TmallMallitemcenterSubscribeQueryResult `json:"result,omitempty"`
-
 }

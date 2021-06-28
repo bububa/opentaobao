@@ -1,6 +1,8 @@
 package logistic
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.nextone.logistics.sign.update
 */
 type TaobaoNextoneLogisticsSignUpdateAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoNextoneLogisticsSignUpdateResponse `json:"nextone_logistics_sign_update_response,omitempty"` 
     TaobaoNextoneLogisticsSignUpdateResponse
 }
 
-/* model for simplify = false
 type TaobaoNextoneLogisticsSignUpdateResponse struct {
+    XMLName xml.Name `xml:"nextone_logistics_sign_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result  *struct {
-        TaobaoNextoneLogisticsSignUpdateResult  *TaobaoNextoneLogisticsSignUpdateResult `json:"taobao_nextone_logistics_sign_update_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoNextoneLogisticsSignUpdateResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoNextoneLogisticsSignUpdateResponse struct {
-
-    // 结果
-    Result   *TaobaoNextoneLogisticsSignUpdateResult `json:"result,omitempty"`
-
 }
