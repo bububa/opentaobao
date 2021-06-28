@@ -1,6 +1,8 @@
 package tbk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,42 +14,26 @@ taobao.tbk.dg.optimus.material
 */
 type TaobaoTbkDgOptimusMaterialAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTbkDgOptimusMaterialResponse `json:"tbk_dg_optimus_material_response,omitempty"` 
     TaobaoTbkDgOptimusMaterialResponse
 }
 
-/* model for simplify = false
 type TaobaoTbkDgOptimusMaterialResponse struct {
+    XMLName xml.Name `xml:"tbk_dg_optimus_material_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // resultList
     
-    ResultList  struct {
-        TaobaoTbkDgOptimusMaterialMapData  []TaobaoTbkDgOptimusMaterialMapData `json:"taobao_tbk_dg_optimus_material_map_data,omitempty"`
-    } `json:"result_list,omitempty"`
+    ResultList   []TaobaoTbkDgOptimusMaterialMapData `json:"result_list,omitempty" xml:"result_list>taobao_tbk_dg_optimus_material_map_data,omitempty"`
     
-
+    
     // 推荐信息-是否抄底
     
-    IsDefault   string `json:"is_default,omitempty"`
-    
+    IsDefault   string `json:"is_default,omitempty" xml:"is_default,omitempty"`
 
+    
     // 商品总数-目前只有全品库商品查询有该字段
     
-    TotalCount   int64 `json:"total_count,omitempty"`
+    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTbkDgOptimusMaterialResponse struct {
-
-    // resultList
-    ResultList   []TaobaoTbkDgOptimusMaterialMapData `json:"result_list,omitempty"`
-
-    // 推荐信息-是否抄底
-    IsDefault   string `json:"is_default,omitempty"`
-
-    // 商品总数-目前只有全品库商品查询有该字段
-    TotalCount   int64 `json:"total_count,omitempty"`
-
 }

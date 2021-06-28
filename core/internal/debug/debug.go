@@ -3,6 +3,7 @@ package debug
 import (
 	"bytes"
 	"encoding/json"
+	"encoding/xml"
 	"io"
 	"io/ioutil"
 	"log"
@@ -68,4 +69,37 @@ func DecodeJSONHttpResponse(r io.Reader, v interface{}, debug bool) error {
 	log.Printf("[DEBUG] [API] http response body:\n%s\n", body2)
 
 	return json.Unmarshal(body, v)
+}
+
+func DecodeXMLHttpResponse(r io.Reader, v interface{}, debug bool) error {
+	if !debug {
+		return xml.NewDecoder(r).Decode(v)
+	}
+	body, err := ioutil.ReadAll(r)
+	if err != nil {
+		return err
+	}
+
+	body2 := body
+	buf := bytes.NewBuffer(make([]byte, 0, len(body2)+1024))
+	decoder := xml.NewDecoder(bytes.NewReader(body2))
+	encoder := xml.NewEncoder(buf)
+	encoder.Indent("", "  ")
+	for {
+		token, err := decoder.Token()
+		if err == io.EOF {
+			encoder.Flush()
+			break
+		}
+		if err != nil {
+			break
+		}
+		err = encoder.EncodeToken(token)
+		if err != nil {
+			break
+		}
+	}
+	log.Printf("[DEBUG] [API] http response body:\n%s\n", buf.String())
+
+	return xml.Unmarshal(body, v)
 }

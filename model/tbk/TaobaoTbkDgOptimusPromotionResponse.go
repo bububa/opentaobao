@@ -1,6 +1,8 @@
 package tbk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.tbk.dg.optimus.promotion
 */
 type TaobaoTbkDgOptimusPromotionAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTbkDgOptimusPromotionResponse `json:"tbk_dg_optimus_promotion_response,omitempty"` 
     TaobaoTbkDgOptimusPromotionResponse
 }
 
-/* model for simplify = false
 type TaobaoTbkDgOptimusPromotionResponse struct {
+    XMLName xml.Name `xml:"tbk_dg_optimus_promotion_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // resultList
     
-    ResultList  struct {
-        TaobaoTbkDgOptimusPromotionMapData  []TaobaoTbkDgOptimusPromotionMapData `json:"taobao_tbk_dg_optimus_promotion_map_data,omitempty"`
-    } `json:"result_list,omitempty"`
+    ResultList   []TaobaoTbkDgOptimusPromotionMapData `json:"result_list,omitempty" xml:"result_list>taobao_tbk_dg_optimus_promotion_map_data,omitempty"`
     
-
-}
-*/
-
-type TaobaoTbkDgOptimusPromotionResponse struct {
-
-    // resultList
-    ResultList   []TaobaoTbkDgOptimusPromotionMapData `json:"result_list,omitempty"`
-
+    
 }

@@ -1,6 +1,8 @@
 package tbk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.tbk.cart.coupon.expire.user.query
 */
 type TaobaoTbkCartCouponExpireUserQueryAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTbkCartCouponExpireUserQueryResponse `json:"tbk_cart_coupon_expire_user_query_response,omitempty"` 
     TaobaoTbkCartCouponExpireUserQueryResponse
 }
 
-/* model for simplify = false
 type TaobaoTbkCartCouponExpireUserQueryResponse struct {
+    XMLName xml.Name `xml:"tbk_cart_coupon_expire_user_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户规则信息集合
     
-    UserRuleInfoList  struct {
-        UserRuleInfo  []UserRuleInfo `json:"user_rule_info,omitempty"`
-    } `json:"user_rule_info_list,omitempty"`
+    UserRuleInfoList   []UserRuleInfo `json:"user_rule_info_list,omitempty" xml:"user_rule_info_list>user_rule_info,omitempty"`
     
-
-}
-*/
-
-type TaobaoTbkCartCouponExpireUserQueryResponse struct {
-
-    // 用户规则信息集合
-    UserRuleInfoList   []UserRuleInfo `json:"user_rule_info_list,omitempty"`
-
+    
 }

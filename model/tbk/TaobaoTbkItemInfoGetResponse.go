@@ -1,6 +1,8 @@
 package tbk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.tbk.item.info.get
 */
 type TaobaoTbkItemInfoGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTbkItemInfoGetResponse `json:"tbk_item_info_get_response,omitempty"` 
     TaobaoTbkItemInfoGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTbkItemInfoGetResponse struct {
+    XMLName xml.Name `xml:"tbk_item_info_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 淘宝客商品
     
-    Results  struct {
-        NTbkItem  []NTbkItem `json:"n_tbk_item,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []NTbkItem `json:"results,omitempty" xml:"results>n_tbk_item,omitempty"`
     
-
-}
-*/
-
-type TaobaoTbkItemInfoGetResponse struct {
-
-    // 淘宝客商品
-    Results   []NTbkItem `json:"results,omitempty"`
-
+    
 }

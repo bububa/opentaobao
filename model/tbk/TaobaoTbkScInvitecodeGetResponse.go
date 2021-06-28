@@ -1,6 +1,8 @@
 package tbk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.tbk.sc.invitecode.get
 */
 type TaobaoTbkScInvitecodeGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTbkScInvitecodeGetResponse `json:"tbk_sc_invitecode_get_response,omitempty"` 
     TaobaoTbkScInvitecodeGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTbkScInvitecodeGetResponse struct {
+    XMLName xml.Name `xml:"tbk_sc_invitecode_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // data
     
-    Data  *struct {
-        TaobaoTbkScInvitecodeGetData  *TaobaoTbkScInvitecodeGetData `json:"taobao_tbk_sc_invitecode_get_data,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *TaobaoTbkScInvitecodeGetData `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTbkScInvitecodeGetResponse struct {
-
-    // data
-    Data   *TaobaoTbkScInvitecodeGetData `json:"data,omitempty"`
-
 }

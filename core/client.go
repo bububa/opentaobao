@@ -2,9 +2,11 @@ package core
 
 import (
 	"bytes"
+	"crypto/hmac"
 	"crypto/md5"
 	"encoding/hex"
 	"fmt"
+	"hash"
 	"io"
 	"mime/multipart"
 	"net/http"
@@ -17,16 +19,20 @@ import (
 )
 
 type SDKClient struct {
-	appKey  string
-	secret  string
-	debug   bool
-	sandbox bool
+	appKey     string
+	secret     string
+	apiFormat  model.APIFormat
+	signMethod model.SignMethod
+	debug      bool
+	sandbox    bool
 }
 
 func NewSDKClient(appKey string, secret string) *SDKClient {
 	return &SDKClient{
-		appKey: appKey,
-		secret: secret,
+		appKey:     appKey,
+		secret:     secret,
+		apiFormat:  model.DEFAULT_API_FORMAT,
+		signMethod: model.DEFAULT_SIGN_METHOD,
 	}
 }
 
@@ -42,9 +48,19 @@ func (c *SDKClient) DisableSandbox() {
 	c.sandbox = false
 }
 
+func (c *SDKClient) SetAPIFormat(format model.APIFormat) {
+	c.apiFormat = format
+}
+
+func (c *SDKClient) SetSignMethod(method model.SignMethod) {
+	c.signMethod = method
+}
+
 func (c *SDKClient) Post(req model.IRequest, resp model.IResponse, session string) error {
 	commonReq := model.NewCommonRequest(req.GetApiMethodName(), c.appKey)
 	commonReq.SetSession(session)
+	commonReq.SetAPIFormat(c.apiFormat)
+	commonReq.SetSignMethod(c.signMethod)
 	params := c.sign(commonReq, req)
 
 	var err error
@@ -73,7 +89,14 @@ func (c *SDKClient) post(req url.Values, resp model.IResponse) error {
 		return err
 	}
 	defer httpResp.Body.Close()
-	err = debug.DecodeJSONHttpResponse(httpResp.Body, resp, c.debug)
+	switch c.apiFormat {
+	case model.JSON:
+		err = debug.DecodeJSONHttpResponse(httpResp.Body, resp, c.debug)
+	case model.XML:
+		err = debug.DecodeXMLHttpResponse(httpResp.Body, resp, c.debug)
+	default:
+		panic("unknown api format")
+	}
 	if err != nil {
 		debug.PrintError(err, c.debug)
 		return err
@@ -123,7 +146,14 @@ func (c *SDKClient) postMultipart(req url.Values, params model.Params, resp mode
 		return err
 	}
 	defer httpResp.Body.Close()
-	err = debug.DecodeJSONHttpResponse(httpResp.Body, resp, c.debug)
+	switch c.apiFormat {
+	case model.JSON:
+		err = debug.DecodeJSONHttpResponse(httpResp.Body, resp, c.debug)
+	case model.XML:
+		err = debug.DecodeXMLHttpResponse(httpResp.Body, resp, c.debug)
+	default:
+		panic("unknown api format")
+	}
 	if err != nil {
 		debug.PrintError(err, c.debug)
 		return err
@@ -148,7 +178,14 @@ func (c *SDKClient) get(req url.Values, resp model.IResponse) error {
 		return err
 	}
 	defer httpResp.Body.Close()
-	err = debug.DecodeJSONHttpResponse(httpResp.Body, resp, c.debug)
+	switch c.apiFormat {
+	case model.JSON:
+		err = debug.DecodeJSONHttpResponse(httpResp.Body, resp, c.debug)
+	case model.XML:
+		err = debug.DecodeXMLHttpResponse(httpResp.Body, resp, c.debug)
+	default:
+		panic("unknown api format")
+	}
 	if err != nil {
 		debug.PrintError(err, c.debug)
 		return err
@@ -170,13 +207,27 @@ func (c *SDKClient) sign(commonReq *model.CommonRequest, req model.IRequest) url
 		ret.Set(k, reqParams.Get(k))
 	}
 	sort.Strings(keys)
-	query := bytes.NewBufferString(c.secret)
+	query := new(bytes.Buffer)
+	if commonReq.SignMethod == model.MD5 {
+		query.WriteString(c.secret)
+	}
 	for _, k := range keys {
 		query.WriteString(k)
 		query.WriteString(ret.Get(k))
 	}
-	query.WriteString(c.secret)
-	h := md5.New()
+	if commonReq.SignMethod == model.MD5 {
+		query.WriteString(c.secret)
+	}
+	fmt.Println(query.String())
+	var h hash.Hash
+	switch commonReq.SignMethod {
+	case model.MD5:
+		h = md5.New()
+	case model.HMAC:
+		h = hmac.New(md5.New, []byte(c.secret))
+	default:
+		panic("missing sign_method")
+	}
 	io.Copy(h, query)
 	sign := strings.ToUpper(hex.EncodeToString(h.Sum(nil)))
 	ret.Set("sign", sign)

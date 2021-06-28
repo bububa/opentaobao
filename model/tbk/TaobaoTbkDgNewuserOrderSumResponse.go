@@ -1,6 +1,8 @@
 package tbk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.tbk.dg.newuser.order.sum
 */
 type TaobaoTbkDgNewuserOrderSumAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTbkDgNewuserOrderSumResponse `json:"tbk_dg_newuser_order_sum_response,omitempty"` 
     TaobaoTbkDgNewuserOrderSumResponse
 }
 
-/* model for simplify = false
 type TaobaoTbkDgNewuserOrderSumResponse struct {
+    XMLName xml.Name `xml:"tbk_dg_newuser_order_sum_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // data
     
-    Results  *struct {
-        TaobaoTbkDgNewuserOrderSumData  *TaobaoTbkDgNewuserOrderSumData `json:"taobao_tbk_dg_newuser_order_sum_data,omitempty"`
-    } `json:"results,omitempty"`
+    Results   *TaobaoTbkDgNewuserOrderSumData `json:"results,omitempty" xml:"results,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTbkDgNewuserOrderSumResponse struct {
-
-    // data
-    Results   *TaobaoTbkDgNewuserOrderSumData `json:"results,omitempty"`
-
 }

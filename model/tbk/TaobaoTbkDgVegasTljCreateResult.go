@@ -1,47 +1,26 @@
 package tbk
 
 // TaobaoTbkDgVegasTljCreateResult 
-/* model for simplify = false
 type TaobaoTbkDgVegasTljCreateResult struct {
 
     // model
     
-    Model  *struct {
-        RightsInstanceCreateResult  *RightsInstanceCreateResult `json:"rights_instance_create_result,omitempty"`
-    } `json:"model,omitempty"`
+    Model   *RightsInstanceCreateResult `json:"model,omitempty" xml:"model,omitempty"`
     
 
     // msgCode
     
-    MsgCode   string `json:"msg_code,omitempty"`
+    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     
 
     // msgInfo
     
-    MsgInfo   string `json:"msg_info,omitempty"`
+    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     
 
     // success
     
-    Success   bool `json:"success,omitempty"`
+    Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     
-
-}
-*/
-
-// TaobaoTbkDgVegasTljCreateResult 
-type TaobaoTbkDgVegasTljCreateResult struct {
-
-    // model
-    Model   *RightsInstanceCreateResult `json:"model,omitempty"`
-
-    // msgCode
-    MsgCode   string `json:"msg_code,omitempty"`
-
-    // msgInfo
-    MsgInfo   string `json:"msg_info,omitempty"`
-
-    // success
-    Success   bool `json:"success,omitempty"`
 
 }

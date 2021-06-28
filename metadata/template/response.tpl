@@ -1,6 +1,8 @@
 package {{ .Pkg }}
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,32 +14,18 @@ import (
 */
 type {{ .Name }}APIResponse struct {
     model.CommonResponse
-    // Response *{{ .Name }}Response `json:"{{ .ResponseKey }},omitempty"` 
     {{ .Name }}Response
 }
 
-/* model for simplify = false
 type {{ .Name }}Response struct {
+    XMLName xml.Name `xml:"{{ .ResponseKey }}"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 {{ range $v := .ResponseParams }}
     // {{ $v.Desc }}
-    {{ if eq $v.IsList true }}
-    {{ $v.Name }}  struct {
-        {{ $v.ObjType }}  {{ $v.Type }} `json:"{{ $v.SnakeType }},omitempty"`
-    } `json:"{{ $v.ParamKey }},omitempty"`
-    {{ else if eq $v.IsObject true }}
-    {{ $v.Name }}  *struct {
-        {{ $v.ObjType }}  {{ $v.Type }} `json:"{{ $v.SnakeType }},omitempty"`
-    } `json:"{{ $v.ParamKey }},omitempty"`
+    {{ if and (eq $v.IsList true) }}
+    {{ $v.Name }}   {{ $v.Type }} `json:"{{ $v.ParamKey }},omitempty" xml:"{{ $v.ParamKey }}>{{ $v.SnakeType }},omitempty"`
     {{ else }}
-    {{ $v.Name }}   {{ $v.Type }} `json:"{{ $v.ParamKey }},omitempty"`
+    {{ $v.Name }}   {{ $v.Type }} `json:"{{ $v.ParamKey }},omitempty" xml:"{{ $v.ParamKey }},omitempty"`
+{{ end }}
     {{ end }}
-{{ end }}
-}
-*/
-
-type {{ .Name }}Response struct {
-{{ range $v := .ResponseParams }}
-    // {{ $v.Desc }}
-    {{ $v.Name }}   {{ $v.Type }} `json:"{{ $v.ParamKey }},omitempty"`
-{{ end }}
 }

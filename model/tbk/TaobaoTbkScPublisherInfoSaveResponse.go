@@ -1,6 +1,8 @@
 package tbk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.tbk.sc.publisher.info.save
 */
 type TaobaoTbkScPublisherInfoSaveAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTbkScPublisherInfoSaveResponse `json:"tbk_sc_publisher_info_save_response,omitempty"` 
     TaobaoTbkScPublisherInfoSaveResponse
 }
 
-/* model for simplify = false
 type TaobaoTbkScPublisherInfoSaveResponse struct {
+    XMLName xml.Name `xml:"tbk_sc_publisher_info_save_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // data
     
-    Data  *struct {
-        TaobaoTbkScPublisherInfoSaveData  *TaobaoTbkScPublisherInfoSaveData `json:"taobao_tbk_sc_publisher_info_save_data,omitempty"`
-    } `json:"data,omitempty"`
+    Data   *TaobaoTbkScPublisherInfoSaveData `json:"data,omitempty" xml:"data,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTbkScPublisherInfoSaveResponse struct {
-
-    // data
-    Data   *TaobaoTbkScPublisherInfoSaveData `json:"data,omitempty"`
-
 }

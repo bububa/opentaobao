@@ -1,6 +1,8 @@
 package tbk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,26 +14,16 @@ taobao.tbk.dg.vegas.tlj.instance.report
 */
 type TaobaoTbkDgVegasTljInstanceReportAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTbkDgVegasTljInstanceReportResponse `json:"tbk_dg_vegas_tlj_instance_report_response,omitempty"` 
     TaobaoTbkDgVegasTljInstanceReportResponse
 }
 
-/* model for simplify = false
 type TaobaoTbkDgVegasTljInstanceReportResponse struct {
+    XMLName xml.Name `xml:"tbk_dg_vegas_tlj_instance_report_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result  *struct {
-        TaobaoTbkDgVegasTljInstanceReportResult  *TaobaoTbkDgVegasTljInstanceReportResult `json:"taobao_tbk_dg_vegas_tlj_instance_report_result,omitempty"`
-    } `json:"result,omitempty"`
+    Result   *TaobaoTbkDgVegasTljInstanceReportResult `json:"result,omitempty" xml:"result,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTbkDgVegasTljInstanceReportResponse struct {
-
-    // 接口返回model
-    Result   *TaobaoTbkDgVegasTljInstanceReportResult `json:"result,omitempty"`
-
 }

@@ -15,9 +15,8 @@ const (
 type SignMethod = string
 
 const (
-	MD5         SignMethod = "md5"
-	HMAC        SignMethod = "hmac"
-	HMAC_SHA256 SignMethod = "hmac_sha256"
+	MD5  SignMethod = "md5"
+	HMAC SignMethod = "hmac"
 )
 
 const (
@@ -52,6 +51,14 @@ func NewCommonRequest(method string, appKey string) *CommonRequest {
 
 func (c *CommonRequest) SetSession(session string) {
 	c.Session = session
+}
+
+func (c *CommonRequest) SetAPIFormat(format APIFormat) {
+	c.Format = format
+}
+
+func (c *CommonRequest) SetSignMethod(method SignMethod) {
+	c.SignMethod = method
 }
 
 func (c CommonRequest) GetParams() map[string]string {

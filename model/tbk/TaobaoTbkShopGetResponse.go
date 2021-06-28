@@ -1,6 +1,8 @@
 package tbk
 
 import (
+    "encoding/xml"
+
     "github.com/bububa/opentaobao/model"
 )
 
@@ -12,34 +14,21 @@ taobao.tbk.shop.get
 */
 type TaobaoTbkShopGetAPIResponse struct {
     model.CommonResponse
-    // Response *TaobaoTbkShopGetResponse `json:"tbk_shop_get_response,omitempty"` 
     TaobaoTbkShopGetResponse
 }
 
-/* model for simplify = false
 type TaobaoTbkShopGetResponse struct {
+    XMLName xml.Name `xml:"tbk_shop_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 淘宝客店铺
     
-    Results  struct {
-        NTbkShop  []NTbkShop `json:"n_tbk_shop,omitempty"`
-    } `json:"results,omitempty"`
+    Results   []NTbkShop `json:"results,omitempty" xml:"results>n_tbk_shop,omitempty"`
     
-
+    
     // 搜索到符合条件的结果总数
     
-    TotalResults   int64 `json:"total_results,omitempty"`
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+
     
-
-}
-*/
-
-type TaobaoTbkShopGetResponse struct {
-
-    // 淘宝客店铺
-    Results   []NTbkShop `json:"results,omitempty"`
-
-    // 搜索到符合条件的结果总数
-    TotalResults   int64 `json:"total_results,omitempty"`
-
 }
