@@ -12,8 +12,22 @@ alibaba.security.jaq.ocr.image.async.detect.results.fetch
 */
 type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse `json:"alibaba_security_jaq_ocr_image_async_detect_results_fetch_response,omitempty"`
+    // Response *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse `json:"alibaba_security_jaq_ocr_image_async_detect_results_fetch_response,omitempty"` 
+    AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse struct {
+
+    // 出参结构体
+    
+    Data  *struct {
+        JaqImageDetectResultCollection  *JaqImageDetectResultCollection `json:"jaq_image_detect_result_collection,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.scbp.target.ad.plan.country.id.get
 */
 type AlibabaScbpTargetAdPlanCountryIdGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpTargetAdPlanCountryIdGetResponse `json:"alibaba_scbp_target_ad_plan_country_id_get_response,omitempty"`
+    // Response *AlibabaScbpTargetAdPlanCountryIdGetResponse `json:"alibaba_scbp_target_ad_plan_country_id_get_response,omitempty"` 
+    AlibabaScbpTargetAdPlanCountryIdGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpTargetAdPlanCountryIdGetResponse struct {
+
+    // 地区列表
+    
+    RegionList  struct {
+        RegionView  []RegionView `json:"region_view,omitempty"`
+    } `json:"region_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpTargetAdPlanCountryIdGetResponse struct {
 

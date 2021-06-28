@@ -12,8 +12,22 @@ taobao.wt.trade.order.resultcallback
 */
 type TaobaoWtTradeOrderResultcallbackAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWtTradeOrderResultcallbackResponse `json:"taobao_wt_trade_order_resultcallback_response,omitempty"`
+    // Response *TaobaoWtTradeOrderResultcallbackResponse `json:"wt_trade_order_resultcallback_response,omitempty"` 
+    TaobaoWtTradeOrderResultcallbackResponse
 }
+
+/* model for simplify = false
+type TaobaoWtTradeOrderResultcallbackResponse struct {
+
+    // result
+    
+    Result  *struct {
+        CommonRtnDo  *CommonRtnDo `json:"common_rtn_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWtTradeOrderResultcallbackResponse struct {
 

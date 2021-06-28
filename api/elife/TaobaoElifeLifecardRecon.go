@@ -11,11 +11,11 @@ taobao.elife.lifecard.recon
 
 查询对账文件地址接口
 */
-func TaobaoElifeLifecardRecon(clt *core.SDKClient, req *elife.TaobaoElifeLifecardReconRequest, session string) (*elife.TaobaoElifeLifecardReconResponse, error) {
+func TaobaoElifeLifecardRecon(clt *core.SDKClient, req *elife.TaobaoElifeLifecardReconRequest, session string) (*elife.TaobaoElifeLifecardReconAPIResponse, error) {
     var resp elife.TaobaoElifeLifecardReconAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

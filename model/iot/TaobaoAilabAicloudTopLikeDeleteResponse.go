@@ -12,8 +12,30 @@ taobao.ailab.aicloud.top.like.delete
 */
 type TaobaoAilabAicloudTopLikeDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopLikeDeleteResponse `json:"taobao_ailab_aicloud_top_like_delete_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopLikeDeleteResponse `json:"ailab_aicloud_top_like_delete_response,omitempty"` 
+    TaobaoAilabAicloudTopLikeDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopLikeDeleteResponse struct {
+
+    // 错误信息
+    
+    MsgInfo   string `json:"msg_info,omitempty"`
+    
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 具体结果值
+    
+    Model   bool `json:"model,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopLikeDeleteResponse struct {
 

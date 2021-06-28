@@ -12,8 +12,22 @@ taobao.wlb.waybill.i.print
 */
 type TaobaoWlbWaybillIPrintAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWaybillIPrintResponse `json:"taobao_wlb_waybill_i_print_response,omitempty"`
+    // Response *TaobaoWlbWaybillIPrintResponse `json:"wlb_waybill_i_print_response,omitempty"` 
+    TaobaoWlbWaybillIPrintResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWaybillIPrintResponse struct {
+
+    // 面单打印信息
+    
+    WaybillApplyPrintCheckInfos  struct {
+        WaybillApplyPrintCheckInfo  []WaybillApplyPrintCheckInfo `json:"waybill_apply_print_check_info,omitempty"`
+    } `json:"waybill_apply_print_check_infos,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWaybillIPrintResponse struct {
 

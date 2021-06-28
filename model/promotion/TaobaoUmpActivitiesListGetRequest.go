@@ -16,7 +16,7 @@ type TaobaoUmpActivitiesListGetRequest struct {
     model.Params
 
     // 营销活动id列表。
-    ids   []Number 
+    ids   []int64 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoUmpActivitiesListGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoUmpActivitiesListGetRequest) SetIds(ids []Number) error {
+func (r *TaobaoUmpActivitiesListGetRequest) SetIds(ids []int64) error {
     r.ids = ids
     r.Set("ids", ids)
     return nil
 }
 
-func (r TaobaoUmpActivitiesListGetRequest) GetIds() []Number {
+func (r TaobaoUmpActivitiesListGetRequest) GetIds() []int64 {
     return r.ids
 }
 

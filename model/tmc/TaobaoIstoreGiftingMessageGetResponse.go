@@ -12,8 +12,22 @@ taobao.istore.gifting.message.get
 */
 type TaobaoIstoreGiftingMessageGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoIstoreGiftingMessageGetResponse `json:"taobao_istore_gifting_message_get_response,omitempty"`
+    // Response *TaobaoIstoreGiftingMessageGetResponse `json:"istore_gifting_message_get_response,omitempty"` 
+    TaobaoIstoreGiftingMessageGetResponse
 }
+
+/* model for simplify = false
+type TaobaoIstoreGiftingMessageGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoIstoreGiftingMessageGetResultDto  *TaobaoIstoreGiftingMessageGetResultDto `json:"taobao_istore_gifting_message_get_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoIstoreGiftingMessageGetResponse struct {
 

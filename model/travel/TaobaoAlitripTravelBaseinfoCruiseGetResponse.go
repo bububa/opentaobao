@@ -12,8 +12,20 @@ taobao.alitrip.travel.baseinfo.cruise.get
 */
 type TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripTravelBaseinfoCruiseGetResponse `json:"taobao_alitrip_travel_baseinfo_cruise_get_response,omitempty"`
+    // Response *TaobaoAlitripTravelBaseinfoCruiseGetResponse `json:"alitrip_travel_baseinfo_cruise_get_response,omitempty"` 
+    TaobaoAlitripTravelBaseinfoCruiseGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripTravelBaseinfoCruiseGetResponse struct {
+
+    // 邮轮类目扩展信息的json格式字符串
+    
+    CruiseExtInfos   string `json:"cruise_ext_infos,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripTravelBaseinfoCruiseGetResponse struct {
 

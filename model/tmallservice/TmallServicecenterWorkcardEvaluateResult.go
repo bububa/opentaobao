@@ -1,6 +1,28 @@
 package tmallservice
 
 // TmallServicecenterWorkcardEvaluateResult 
+/* model for simplify = false
+type TmallServicecenterWorkcardEvaluateResult struct {
+
+    // 错误信息
+    
+    MsgInfo   string `json:"msg_info,omitempty"`
+    
+
+    // 错误码
+    
+    MsgCode   string `json:"msg_code,omitempty"`
+    
+
+    // 是否调用成功
+    
+    Success   bool `json:"success,omitempty"`
+    
+
+}
+*/
+
+// TmallServicecenterWorkcardEvaluateResult 
 type TmallServicecenterWorkcardEvaluateResult struct {
 
     // 错误信息

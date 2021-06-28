@@ -19,7 +19,7 @@ type TaobaoSimbaSalestarCreativesGetRequest struct {
     nick   string 
 
     // 创意Id数组，最多200个
-    creativeIds   []Number 
+    creativeIds   []int64 
 
     // 推广组Id
     adgroupId   int64 
@@ -55,13 +55,13 @@ func (r TaobaoSimbaSalestarCreativesGetRequest) GetNick() string {
     return r.nick
 }
 
-func (r *TaobaoSimbaSalestarCreativesGetRequest) SetCreativeIds(creativeIds []Number) error {
+func (r *TaobaoSimbaSalestarCreativesGetRequest) SetCreativeIds(creativeIds []int64) error {
     r.creativeIds = creativeIds
     r.Set("creative_ids", creativeIds)
     return nil
 }
 
-func (r TaobaoSimbaSalestarCreativesGetRequest) GetCreativeIds() []Number {
+func (r TaobaoSimbaSalestarCreativesGetRequest) GetCreativeIds() []int64 {
     return r.creativeIds
 }
 

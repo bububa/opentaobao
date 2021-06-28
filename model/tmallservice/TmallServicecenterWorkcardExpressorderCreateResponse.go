@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.expressorder.create
 */
 type TmallServicecenterWorkcardExpressorderCreateAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardExpressorderCreateResponse `json:"tmall_servicecenter_workcard_expressorder_create_response,omitempty"`
+    // Response *TmallServicecenterWorkcardExpressorderCreateResponse `json:"tmall_servicecenter_workcard_expressorder_create_response,omitempty"` 
+    TmallServicecenterWorkcardExpressorderCreateResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardExpressorderCreateResponse struct {
+
+    // 创建结果
+    
+    Result  *struct {
+        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardExpressorderCreateResponse struct {
 

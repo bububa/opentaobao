@@ -28,10 +28,10 @@ type AlitripLocalplayProductUploadRequest struct {
     title   string 
 
     // 可选，商品亮点，最多支持4个亮点。注：在SDK中数组多个元素间以英文逗号分隔
-    subTitles   []String 
+    subTitles   []string 
 
     // 新发布商品时必填。商品图片路径。最多支持5张，第一张为主图，必填，其余四张可选填。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。。注：在SDK中数组多个元素间以英文逗号分隔
-    picUrls   []String 
+    picUrls   []string 
 
     // 新发布商品时必填。出发地，多个出发地用英文逗号分隔。使用说明同“目的地”
     fromLocations   string 
@@ -58,10 +58,10 @@ type AlitripLocalplayProductUploadRequest struct {
     wapDesc   string 
 
     // 新发布商品时必填。费用不含。列表中每一个元素 对应一点描述，所有描述合起来必须小于1500个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
-    feeExclude   []String 
+    feeExclude   []string 
 
     // 新发布商品时必填。预定须知。列表中每一个元素 对应一点描述，所有描述合起来必须小于1500个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
-    orderInfo   []String 
+    orderInfo   []string 
 
     // 可选，退改规则类型。0-平台标准退改规则，1-自定义退改规则，2-不支持退改（已废弃，勿用），7-线路商品（跟团、自由行等）新版自定义退改规则。不传默认为0
     refundType   int64 
@@ -91,7 +91,7 @@ type AlitripLocalplayProductUploadRequest struct {
     touristServiceProvider   string 
 
     // 关联商品与店铺类目 结构:"cid1,cid2,...,"。如何获取卖家店铺类目具体参见：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
-    sellerCids   []String 
+    sellerCids   []string 
 
     // 商品秒杀，商品秒杀三个值：可选类型web_only(只能通过web网络秒杀)，wap_only(只能通过wap网络秒杀)，web_and_wap(既能通过web秒杀也能通过wap秒杀)
     secondKill   string 
@@ -150,23 +150,23 @@ func (r AlitripLocalplayProductUploadRequest) GetTitle() string {
     return r.title
 }
 
-func (r *AlitripLocalplayProductUploadRequest) SetSubTitles(subTitles []String) error {
+func (r *AlitripLocalplayProductUploadRequest) SetSubTitles(subTitles []string) error {
     r.subTitles = subTitles
     r.Set("sub_titles", subTitles)
     return nil
 }
 
-func (r AlitripLocalplayProductUploadRequest) GetSubTitles() []String {
+func (r AlitripLocalplayProductUploadRequest) GetSubTitles() []string {
     return r.subTitles
 }
 
-func (r *AlitripLocalplayProductUploadRequest) SetPicUrls(picUrls []String) error {
+func (r *AlitripLocalplayProductUploadRequest) SetPicUrls(picUrls []string) error {
     r.picUrls = picUrls
     r.Set("pic_urls", picUrls)
     return nil
 }
 
-func (r AlitripLocalplayProductUploadRequest) GetPicUrls() []String {
+func (r AlitripLocalplayProductUploadRequest) GetPicUrls() []string {
     return r.picUrls
 }
 
@@ -250,23 +250,23 @@ func (r AlitripLocalplayProductUploadRequest) GetWapDesc() string {
     return r.wapDesc
 }
 
-func (r *AlitripLocalplayProductUploadRequest) SetFeeExclude(feeExclude []String) error {
+func (r *AlitripLocalplayProductUploadRequest) SetFeeExclude(feeExclude []string) error {
     r.feeExclude = feeExclude
     r.Set("fee_exclude", feeExclude)
     return nil
 }
 
-func (r AlitripLocalplayProductUploadRequest) GetFeeExclude() []String {
+func (r AlitripLocalplayProductUploadRequest) GetFeeExclude() []string {
     return r.feeExclude
 }
 
-func (r *AlitripLocalplayProductUploadRequest) SetOrderInfo(orderInfo []String) error {
+func (r *AlitripLocalplayProductUploadRequest) SetOrderInfo(orderInfo []string) error {
     r.orderInfo = orderInfo
     r.Set("order_info", orderInfo)
     return nil
 }
 
-func (r AlitripLocalplayProductUploadRequest) GetOrderInfo() []String {
+func (r AlitripLocalplayProductUploadRequest) GetOrderInfo() []string {
     return r.orderInfo
 }
 
@@ -360,13 +360,13 @@ func (r AlitripLocalplayProductUploadRequest) GetTouristServiceProvider() string
     return r.touristServiceProvider
 }
 
-func (r *AlitripLocalplayProductUploadRequest) SetSellerCids(sellerCids []String) error {
+func (r *AlitripLocalplayProductUploadRequest) SetSellerCids(sellerCids []string) error {
     r.sellerCids = sellerCids
     r.Set("seller_cids", sellerCids)
     return nil
 }
 
-func (r AlitripLocalplayProductUploadRequest) GetSellerCids() []String {
+func (r AlitripLocalplayProductUploadRequest) GetSellerCids() []string {
     return r.sellerCids
 }
 

@@ -12,8 +12,30 @@ taobao.vmarket.eticket.reverse
 */
 type TaobaoVmarketEticketReverseAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVmarketEticketReverseResponse `json:"taobao_vmarket_eticket_reverse_response,omitempty"`
+    // Response *TaobaoVmarketEticketReverseResponse `json:"vmarket_eticket_reverse_response,omitempty"` 
+    TaobaoVmarketEticketReverseResponse
 }
+
+/* model for simplify = false
+type TaobaoVmarketEticketReverseResponse struct {
+
+    // 0:失败，1:成功
+    
+    RetCode   int64 `json:"ret_code,omitempty"`
+    
+
+    // 宝贝标题
+    
+    ItemTitle   string `json:"item_title,omitempty"`
+    
+
+    // 整个订单的剩余可核销数量
+    
+    LeftNum   int64 `json:"left_num,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVmarketEticketReverseResponse struct {
 

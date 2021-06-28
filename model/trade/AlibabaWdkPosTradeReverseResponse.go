@@ -12,8 +12,22 @@ alibaba.wdk.pos.trade.reverse
 */
 type AlibabaWdkPosTradeReverseAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkPosTradeReverseResponse `json:"alibaba_wdk_pos_trade_reverse_response,omitempty"`
+    // Response *AlibabaWdkPosTradeReverseResponse `json:"alibaba_wdk_pos_trade_reverse_response,omitempty"` 
+    AlibabaWdkPosTradeReverseResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkPosTradeReverseResponse struct {
+
+    // 退款结果
+    
+    Result  *struct {
+        FastBuyPosReverseResult  *FastBuyPosReverseResult `json:"fast_buy_pos_reverse_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkPosTradeReverseResponse struct {
 

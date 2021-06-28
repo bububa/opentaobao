@@ -12,8 +12,22 @@ alibaba.alsc.crm.card.qryphysical
 */
 type AlibabaAlscCrmCardQryphysicalAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmCardQryphysicalResponse `json:"alibaba_alsc_crm_card_qryphysical_response,omitempty"`
+    // Response *AlibabaAlscCrmCardQryphysicalResponse `json:"alibaba_alsc_crm_card_qryphysical_response,omitempty"` 
+    AlibabaAlscCrmCardQryphysicalResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmCardQryphysicalResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmCardQryphysicalResponse struct {
 

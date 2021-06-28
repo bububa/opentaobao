@@ -12,8 +12,20 @@ alibaba.scbp.tag.delete
 */
 type AlibabaScbpTagDeleteAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpTagDeleteResponse `json:"alibaba_scbp_tag_delete_response,omitempty"`
+    // Response *AlibabaScbpTagDeleteResponse `json:"alibaba_scbp_tag_delete_response,omitempty"` 
+    AlibabaScbpTagDeleteResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpTagDeleteResponse struct {
+
+    // 删除关键词分组成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpTagDeleteResponse struct {
 

@@ -12,8 +12,22 @@ alitrip.item.schema.update
 */
 type AlitripItemSchemaUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlitripItemSchemaUpdateResponse `json:"alitrip_item_schema_update_response,omitempty"`
+    // Response *AlitripItemSchemaUpdateResponse `json:"alitrip_item_schema_update_response,omitempty"` 
+    AlitripItemSchemaUpdateResponse
 }
+
+/* model for simplify = false
+type AlitripItemSchemaUpdateResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        TopTravelItem  *TopTravelItem `json:"top_travel_item,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlitripItemSchemaUpdateResponse struct {
 

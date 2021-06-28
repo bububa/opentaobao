@@ -12,8 +12,34 @@ taobao.scitem.query
 */
 type TaobaoScitemQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoScitemQueryResponse `json:"taobao_scitem_query_response,omitempty"`
+    // Response *TaobaoScitemQueryResponse `json:"scitem_query_response,omitempty"` 
+    TaobaoScitemQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoScitemQueryResponse struct {
+
+    // List<ScItemDO>
+    
+    ScItemList  struct {
+        ScItem  []ScItem `json:"sc_item,omitempty"`
+    } `json:"sc_item_list,omitempty"`
+    
+
+    // 商品条数
+    
+    TotalPage   int64 `json:"total_page,omitempty"`
+    
+
+    // 分页
+    
+    QueryPagination  *struct {
+        QueryPagination  *QueryPagination `json:"query_pagination,omitempty"`
+    } `json:"query_pagination,omitempty"`
+    
+
+}
+*/
 
 type TaobaoScitemQueryResponse struct {
 

@@ -12,8 +12,22 @@ cainiao.reachable.batchjudge
 */
 type CainiaoReachableBatchjudgeAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoReachableBatchjudgeResponse `json:"cainiao_reachable_batchjudge_response,omitempty"`
+    // Response *CainiaoReachableBatchjudgeResponse `json:"cainiao_reachable_batchjudge_response,omitempty"` 
+    CainiaoReachableBatchjudgeResponse
 }
+
+/* model for simplify = false
+type CainiaoReachableBatchjudgeResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        BaseResultDto  *BaseResultDto `json:"base_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoReachableBatchjudgeResponse struct {
 

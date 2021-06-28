@@ -12,11 +12,11 @@ taobao.open.trade.get
 获取单笔交易的部分信息</br>
 1.入参fields中传入buyer_nick ，才能返回buyer_open_id
 */
-func TaobaoOpenTradeGet(clt *core.SDKClient, req *trade.TaobaoOpenTradeGetRequest, session string) (*trade.TaobaoOpenTradeGetResponse, error) {
+func TaobaoOpenTradeGet(clt *core.SDKClient, req *trade.TaobaoOpenTradeGetRequest, session string) (*trade.TaobaoOpenTradeGetAPIResponse, error) {
     var resp trade.TaobaoOpenTradeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

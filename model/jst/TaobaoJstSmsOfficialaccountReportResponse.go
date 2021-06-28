@@ -12,8 +12,40 @@ taobao.jst.sms.officialaccount.report
 */
 type TaobaoJstSmsOfficialaccountReportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJstSmsOfficialaccountReportResponse `json:"taobao_jst_sms_officialaccount_report_response,omitempty"`
+    // Response *TaobaoJstSmsOfficialaccountReportResponse `json:"jst_sms_officialaccount_report_response,omitempty"` 
+    TaobaoJstSmsOfficialaccountReportResponse
 }
+
+/* model for simplify = false
+type TaobaoJstSmsOfficialaccountReportResponse struct {
+
+    // 系统异常
+    
+    ResponseCode   string `json:"response_code,omitempty"`
+    
+
+    // 成功
+    
+    ResponseSuccess   bool `json:"response_success,omitempty"`
+    
+
+    // 请求id
+    
+    ResponseId   string `json:"response_id,omitempty"`
+    
+
+    // 上报成功
+    
+    Module   bool `json:"module,omitempty"`
+    
+
+    // 系统异常
+    
+    Message   string `json:"message,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJstSmsOfficialaccountReportResponse struct {
 

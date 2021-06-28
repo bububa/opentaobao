@@ -12,8 +12,22 @@ ASCP渠道中心销售单创建接口
 */
 type TmallAscpOrdersSaleCreateAPIResponse struct {
     model.CommonResponse
-    Response *TmallAscpOrdersSaleCreateResponse `json:"tmall_ascp_orders_sale_create_response,omitempty"`
+    // Response *TmallAscpOrdersSaleCreateResponse `json:"tmall_ascp_orders_sale_create_response,omitempty"` 
+    TmallAscpOrdersSaleCreateResponse
 }
+
+/* model for simplify = false
+type TmallAscpOrdersSaleCreateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TmallAscpOrdersSaleCreateResultDo  *TmallAscpOrdersSaleCreateResultDo `json:"tmall_ascp_orders_sale_create_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallAscpOrdersSaleCreateResponse struct {
 

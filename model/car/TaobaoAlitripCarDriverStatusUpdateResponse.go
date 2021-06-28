@@ -12,8 +12,30 @@ taobao.alitrip.car.driver.status.update
 */
 type TaobaoAlitripCarDriverStatusUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripCarDriverStatusUpdateResponse `json:"taobao_alitrip_car_driver_status_update_response,omitempty"`
+    // Response *TaobaoAlitripCarDriverStatusUpdateResponse `json:"alitrip_car_driver_status_update_response,omitempty"` 
+    TaobaoAlitripCarDriverStatusUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripCarDriverStatusUpdateResponse struct {
+
+    // 错误码
+    
+    MessageCode   int64 `json:"message_code,omitempty"`
+    
+
+    // 错误信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 其它数据，预留，暂不使用
+    
+    Data   string `json:"data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripCarDriverStatusUpdateResponse struct {
 

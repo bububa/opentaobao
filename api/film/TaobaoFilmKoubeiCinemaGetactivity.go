@@ -11,11 +11,11 @@ taobao.film.koubei.cinema.getactivity
 
 口碑-影院营销数据查询
 */
-func TaobaoFilmKoubeiCinemaGetactivity(clt *core.SDKClient, req *film.TaobaoFilmKoubeiCinemaGetactivityRequest, session string) (*film.TaobaoFilmKoubeiCinemaGetactivityResponse, error) {
+func TaobaoFilmKoubeiCinemaGetactivity(clt *core.SDKClient, req *film.TaobaoFilmKoubeiCinemaGetactivityRequest, session string) (*film.TaobaoFilmKoubeiCinemaGetactivityAPIResponse, error) {
     var resp film.TaobaoFilmKoubeiCinemaGetactivityAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

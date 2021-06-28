@@ -12,8 +12,20 @@ alibaba.scbp.account.status.update
 */
 type AlibabaScbpAccountStatusUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAccountStatusUpdateResponse `json:"alibaba_scbp_account_status_update_response,omitempty"`
+    // Response *AlibabaScbpAccountStatusUpdateResponse `json:"alibaba_scbp_account_status_update_response,omitempty"` 
+    AlibabaScbpAccountStatusUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAccountStatusUpdateResponse struct {
+
+    // 修改成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAccountStatusUpdateResponse struct {
 

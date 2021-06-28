@@ -11,11 +11,11 @@ alitrip.agent.flight.sell.refund.refuse
 
 销售退票拒绝
 */
-func AlitripAgentFlightSellRefundRefuse(clt *core.SDKClient, req *flight.AlitripAgentFlightSellRefundRefuseRequest, session string) (*flight.AlitripAgentFlightSellRefundRefuseResponse, error) {
+func AlitripAgentFlightSellRefundRefuse(clt *core.SDKClient, req *flight.AlitripAgentFlightSellRefundRefuseRequest, session string) (*flight.AlitripAgentFlightSellRefundRefuseAPIResponse, error) {
     var resp flight.AlitripAgentFlightSellRefundRefuseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

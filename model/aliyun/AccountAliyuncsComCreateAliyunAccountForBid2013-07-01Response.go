@@ -12,8 +12,20 @@ account.aliyuncs.com.CreateAliyunAccountForBid.2013-07-01
 */
 type AccountAliyuncsComCreateAliyunAccountForBid2013-07-01APIResponse struct {
     model.CommonResponse
-    Response *AccountAliyuncsComCreateAliyunAccountForBid2013-07-01Response `json:"account_aliyuncs_com_CreateAliyunAccountForBid_2013-07-01_response,omitempty"`
+    // Response *AccountAliyuncsComCreateAliyunAccountForBid2013-07-01Response `json:"account_aliyuncs_com_CreateAliyunAccountForBid_2013-07-01_response,omitempty"` 
+    AccountAliyuncsComCreateAliyunAccountForBid2013-07-01Response
 }
+
+/* model for simplify = false
+type AccountAliyuncsComCreateAliyunAccountForBid2013-07-01Response struct {
+
+    // 返回结果
+    
+    ResultData   string `json:"result_data,omitempty"`
+    
+
+}
+*/
 
 type AccountAliyuncsComCreateAliyunAccountForBid2013-07-01Response struct {
 

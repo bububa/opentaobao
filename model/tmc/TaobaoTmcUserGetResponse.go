@@ -12,8 +12,22 @@ taobao.tmc.user.get
 */
 type TaobaoTmcUserGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcUserGetResponse `json:"taobao_tmc_user_get_response,omitempty"`
+    // Response *TaobaoTmcUserGetResponse `json:"tmc_user_get_response,omitempty"` 
+    TaobaoTmcUserGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcUserGetResponse struct {
+
+    // 开通的用户数据
+    
+    TmcUser  *struct {
+        TmcUser  *TmcUser `json:"tmc_user,omitempty"`
+    } `json:"tmc_user,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcUserGetResponse struct {
 

@@ -12,8 +12,22 @@ taobao.ailab.aicloud.top.message.list
 */
 type TaobaoAilabAicloudTopMessageListAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopMessageListResponse `json:"taobao_ailab_aicloud_top_message_list_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopMessageListResponse `json:"ailab_aicloud_top_message_list_response,omitempty"` 
+    TaobaoAilabAicloudTopMessageListResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopMessageListResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopMessageListResponse struct {
 

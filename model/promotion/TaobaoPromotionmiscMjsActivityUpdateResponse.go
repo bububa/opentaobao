@@ -12,8 +12,20 @@ taobao.promotionmisc.mjs.activity.update
 */
 type TaobaoPromotionmiscMjsActivityUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionmiscMjsActivityUpdateResponse `json:"taobao_promotionmisc_mjs_activity_update_response,omitempty"`
+    // Response *TaobaoPromotionmiscMjsActivityUpdateResponse `json:"promotionmisc_mjs_activity_update_response,omitempty"` 
+    TaobaoPromotionmiscMjsActivityUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionmiscMjsActivityUpdateResponse struct {
+
+    // 修改是否成功。
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionmiscMjsActivityUpdateResponse struct {
 

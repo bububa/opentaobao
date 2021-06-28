@@ -12,8 +12,20 @@ alibaba.interact.sensor.favorites
 */
 type AlibabaInteractSensorFavoritesAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorFavoritesResponse `json:"alibaba_interact_sensor_favorites_response,omitempty"`
+    // Response *AlibabaInteractSensorFavoritesResponse `json:"alibaba_interact_sensor_favorites_response,omitempty"` 
+    AlibabaInteractSensorFavoritesResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorFavoritesResponse struct {
+
+    // r=0
+    
+    R   string `json:"r,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorFavoritesResponse struct {
 

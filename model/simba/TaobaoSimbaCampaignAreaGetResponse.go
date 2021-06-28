@@ -12,8 +12,22 @@ taobao.simba.campaign.area.get
 */
 type TaobaoSimbaCampaignAreaGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCampaignAreaGetResponse `json:"taobao_simba_campaign_area_get_response,omitempty"`
+    // Response *TaobaoSimbaCampaignAreaGetResponse `json:"simba_campaign_area_get_response,omitempty"` 
+    TaobaoSimbaCampaignAreaGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCampaignAreaGetResponse struct {
+
+    // 推广计划的投放地域配置
+    
+    CampaignArea  *struct {
+        CampaignArea  *CampaignArea `json:"campaign_area,omitempty"`
+    } `json:"campaign_area,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCampaignAreaGetResponse struct {
 

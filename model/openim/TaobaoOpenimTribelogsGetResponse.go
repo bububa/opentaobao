@@ -12,8 +12,42 @@ taobao.openim.tribelogs.get
 */
 type TaobaoOpenimTribelogsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribelogsGetResponse `json:"taobao_openim_tribelogs_get_response,omitempty"`
+    // Response *TaobaoOpenimTribelogsGetResponse `json:"openim_tribelogs_get_response,omitempty"` 
+    TaobaoOpenimTribelogsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribelogsGetResponse struct {
+
+    // 错误码
+    
+    RetCode   int64 `json:"retCode,omitempty"`
+    
+
+    // 返回结构
+    
+    Data  *struct {
+        TribeMessageResult  *TribeMessageResult `json:"tribe_message_result,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+    // 错误信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 错误原因
+    
+    Reason   string `json:"reason,omitempty"`
+    
+
+    // 是否成功
+    
+    Succ   bool `json:"succ,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribelogsGetResponse struct {
 

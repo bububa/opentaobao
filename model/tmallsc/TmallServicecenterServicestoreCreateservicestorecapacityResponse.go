@@ -15,8 +15,22 @@ tmall.servicecenter.servicestore.createservicestorecapacity
 */
 type TmallServicecenterServicestoreCreateservicestorecapacityAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterServicestoreCreateservicestorecapacityResponse `json:"tmall_servicecenter_servicestore_createservicestorecapacity_response,omitempty"`
+    // Response *TmallServicecenterServicestoreCreateservicestorecapacityResponse `json:"tmall_servicecenter_servicestore_createservicestorecapacity_response,omitempty"` 
+    TmallServicecenterServicestoreCreateservicestorecapacityResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterServicestoreCreateservicestorecapacityResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterServicestoreCreateservicestorecapacityResponse struct {
 

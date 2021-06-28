@@ -12,8 +12,20 @@ taobao.train.agent.change.refuse.vtwo
 */
 type TaobaoTrainAgentChangeRefuseVtwoAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentChangeRefuseVtwoResponse `json:"taobao_train_agent_change_refuse_vtwo_response,omitempty"`
+    // Response *TaobaoTrainAgentChangeRefuseVtwoResponse `json:"train_agent_change_refuse_vtwo_response,omitempty"` 
+    TaobaoTrainAgentChangeRefuseVtwoResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentChangeRefuseVtwoResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentChangeRefuseVtwoResponse struct {
 

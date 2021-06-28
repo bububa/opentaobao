@@ -12,8 +12,27 @@ taobao.wlb.item.batch.query
 */
 type TaobaoWlbItemBatchQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbItemBatchQueryResponse `json:"taobao_wlb_item_batch_query_response,omitempty"`
+    // Response *TaobaoWlbItemBatchQueryResponse `json:"wlb_item_batch_query_response,omitempty"` 
+    TaobaoWlbItemBatchQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbItemBatchQueryResponse struct {
+
+    // 返回结果记录的数量
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+    // 商品库存及批次信息查询结果
+    
+    ItemInventoryBatchList  struct {
+        WlbItemBatchInventory  []WlbItemBatchInventory `json:"wlb_item_batch_inventory,omitempty"`
+    } `json:"item_inventory_batch_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbItemBatchQueryResponse struct {
 

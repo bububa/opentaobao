@@ -11,11 +11,11 @@ taobao.ailab.aicloud.top.feedlist.get
 
 获取指定应用的对话流信息
 */
-func TaobaoAilabAicloudTopFeedlistGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopFeedlistGetRequest, session string) (*iot.TaobaoAilabAicloudTopFeedlistGetResponse, error) {
+func TaobaoAilabAicloudTopFeedlistGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopFeedlistGetRequest, session string) (*iot.TaobaoAilabAicloudTopFeedlistGetAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopFeedlistGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ tmall.product.specs.get
 */
 type TmallProductSpecsGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallProductSpecsGetResponse `json:"tmall_product_specs_get_response,omitempty"`
+    // Response *TmallProductSpecsGetResponse `json:"tmall_product_specs_get_response,omitempty"` 
+    TmallProductSpecsGetResponse
 }
+
+/* model for simplify = false
+type TmallProductSpecsGetResponse struct {
+
+    // 返回一组产品规格信息。
+    
+    ProductSpecs  struct {
+        ProductSpec  []ProductSpec `json:"product_spec,omitempty"`
+    } `json:"product_specs,omitempty"`
+    
+
+}
+*/
 
 type TmallProductSpecsGetResponse struct {
 

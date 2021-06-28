@@ -12,8 +12,22 @@ taobao.fenxiao.login.user.get
 */
 type TaobaoFenxiaoLoginUserGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoLoginUserGetResponse `json:"taobao_fenxiao_login_user_get_response,omitempty"`
+    // Response *TaobaoFenxiaoLoginUserGetResponse `json:"fenxiao_login_user_get_response,omitempty"` 
+    TaobaoFenxiaoLoginUserGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoLoginUserGetResponse struct {
+
+    // 登录用户信息
+    
+    LoginUser  *struct {
+        LoginUser  *LoginUser `json:"login_user,omitempty"`
+    } `json:"login_user,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoLoginUserGetResponse struct {
 

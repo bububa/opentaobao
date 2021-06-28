@@ -12,8 +12,22 @@ YunOS提供外部数据源接入，并输出到多端设备上，该接口提供
 */
 type YunosCosmoDataPushAPIResponse struct {
     model.CommonResponse
-    Response *YunosCosmoDataPushResponse `json:"yunos_cosmo_data_push_response,omitempty"`
+    // Response *YunosCosmoDataPushResponse `json:"yunos_cosmo_data_push_response,omitempty"` 
+    YunosCosmoDataPushResponse
 }
+
+/* model for simplify = false
+type YunosCosmoDataPushResponse struct {
+
+    // result
+    
+    Result  *struct {
+        DpResult  *DpResult `json:"dp_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type YunosCosmoDataPushResponse struct {
 

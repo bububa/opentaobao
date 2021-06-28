@@ -11,11 +11,11 @@ taobao.itemprops.get
 
 通过设置必要的参数，来获取商品后台标准类目属性，以及这些属性里面详细的属性值prop_values。
 */
-func TaobaoItempropsGet(clt *core.SDKClient, req *category.TaobaoItempropsGetRequest, session string) (*category.TaobaoItempropsGetResponse, error) {
+func TaobaoItempropsGet(clt *core.SDKClient, req *category.TaobaoItempropsGetRequest, session string) (*category.TaobaoItempropsGetAPIResponse, error) {
     var resp category.TaobaoItempropsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

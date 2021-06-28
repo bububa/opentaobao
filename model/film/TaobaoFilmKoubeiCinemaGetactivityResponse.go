@@ -12,8 +12,22 @@ taobao.film.koubei.cinema.getactivity
 */
 type TaobaoFilmKoubeiCinemaGetactivityAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFilmKoubeiCinemaGetactivityResponse `json:"taobao_film_koubei_cinema_getactivity_response,omitempty"`
+    // Response *TaobaoFilmKoubeiCinemaGetactivityResponse `json:"film_koubei_cinema_getactivity_response,omitempty"` 
+    TaobaoFilmKoubeiCinemaGetactivityResponse
 }
+
+/* model for simplify = false
+type TaobaoFilmKoubeiCinemaGetactivityResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultGeneralModel  *ResultGeneralModel `json:"result_general_model,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFilmKoubeiCinemaGetactivityResponse struct {
 

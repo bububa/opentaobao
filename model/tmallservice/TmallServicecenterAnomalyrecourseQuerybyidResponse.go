@@ -12,8 +12,22 @@ tmall.servicecenter.anomalyrecourse.querybyid
 */
 type TmallServicecenterAnomalyrecourseQuerybyidAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterAnomalyrecourseQuerybyidResponse `json:"tmall_servicecenter_anomalyrecourse_querybyid_response,omitempty"`
+    // Response *TmallServicecenterAnomalyrecourseQuerybyidResponse `json:"tmall_servicecenter_anomalyrecourse_querybyid_response,omitempty"` 
+    TmallServicecenterAnomalyrecourseQuerybyidResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterAnomalyrecourseQuerybyidResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterAnomalyrecourseQuerybyidResponse struct {
 

@@ -16,7 +16,7 @@ type AlibabaNrsItemPricetagRecognizeRequest struct {
     model.Params
 
     // 图片数据
-    imgByteArr   []byte 
+    imgByteArr   []*model.File 
 
     // 价签识别参数
     priceTagParam   *PriceTagReqParam 
@@ -42,13 +42,13 @@ func (r AlibabaNrsItemPricetagRecognizeRequest) GetApiParams() url.Values {
 }
 
 
-func (r *AlibabaNrsItemPricetagRecognizeRequest) SetImgByteArr(imgByteArr []byte) error {
+func (r *AlibabaNrsItemPricetagRecognizeRequest) SetImgByteArr(imgByteArr []*model.File) error {
     r.imgByteArr = imgByteArr
     r.Set("img_byte_arr", imgByteArr)
     return nil
 }
 
-func (r AlibabaNrsItemPricetagRecognizeRequest) GetImgByteArr() []byte {
+func (r AlibabaNrsItemPricetagRecognizeRequest) GetImgByteArr() []*model.File {
     return r.imgByteArr
 }
 

@@ -12,8 +12,22 @@ alibaba.security.jaq.rp.cloud.realname.check
 */
 type AlibabaSecurityJaqRpCloudRealnameCheckAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqRpCloudRealnameCheckResponse `json:"alibaba_security_jaq_rp_cloud_realname_check_response,omitempty"`
+    // Response *AlibabaSecurityJaqRpCloudRealnameCheckResponse `json:"alibaba_security_jaq_rp_cloud_realname_check_response,omitempty"` 
+    AlibabaSecurityJaqRpCloudRealnameCheckResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqRpCloudRealnameCheckResponse struct {
+
+    // result
+    
+    Data  *struct {
+        RealNameResult  *RealNameResult `json:"real_name_result,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqRpCloudRealnameCheckResponse struct {
 

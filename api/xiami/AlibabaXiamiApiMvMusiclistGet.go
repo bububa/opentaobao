@@ -11,11 +11,11 @@ alibaba.xiami.api.mv.musiclist.get
 
 乐馆mv列表
 */
-func AlibabaXiamiApiMvMusiclistGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiMvMusiclistGetRequest, session string) (*xiami.AlibabaXiamiApiMvMusiclistGetResponse, error) {
+func AlibabaXiamiApiMvMusiclistGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiMvMusiclistGetRequest, session string) (*xiami.AlibabaXiamiApiMvMusiclistGetAPIResponse, error) {
     var resp xiami.AlibabaXiamiApiMvMusiclistGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

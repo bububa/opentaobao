@@ -12,8 +12,22 @@ alibaba.aliqin.ta.voice.num.doublecall
 */
 type AlibabaAliqinTaVoiceNumDoublecallAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinTaVoiceNumDoublecallResponse `json:"alibaba_aliqin_ta_voice_num_doublecall_response,omitempty"`
+    // Response *AlibabaAliqinTaVoiceNumDoublecallResponse `json:"alibaba_aliqin_ta_voice_num_doublecall_response,omitempty"` 
+    AlibabaAliqinTaVoiceNumDoublecallResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinTaVoiceNumDoublecallResponse struct {
+
+    // 接口返回参数
+    
+    Result  *struct {
+        AlibabaAliqinTaVoiceNumDoublecallBizResult  *AlibabaAliqinTaVoiceNumDoublecallBizResult `json:"alibaba_aliqin_ta_voice_num_doublecall_biz_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinTaVoiceNumDoublecallResponse struct {
 

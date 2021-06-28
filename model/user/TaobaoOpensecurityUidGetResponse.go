@@ -12,8 +12,20 @@ taobao.opensecurity.uid.get
 */
 type TaobaoOpensecurityUidGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpensecurityUidGetResponse `json:"taobao_opensecurity_uid_get_response,omitempty"`
+    // Response *TaobaoOpensecurityUidGetResponse `json:"opensecurity_uid_get_response,omitempty"` 
+    TaobaoOpensecurityUidGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOpensecurityUidGetResponse struct {
+
+    // open security tbUserId，淘宝用户对每个Appkey会有唯一的一个open_uid
+    
+    OpenUid   string `json:"open_uid,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpensecurityUidGetResponse struct {
 

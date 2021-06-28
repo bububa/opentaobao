@@ -12,8 +12,22 @@ taobao.tbk.dg.newuser.order.sum
 */
 type TaobaoTbkDgNewuserOrderSumAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkDgNewuserOrderSumResponse `json:"taobao_tbk_dg_newuser_order_sum_response,omitempty"`
+    // Response *TaobaoTbkDgNewuserOrderSumResponse `json:"tbk_dg_newuser_order_sum_response,omitempty"` 
+    TaobaoTbkDgNewuserOrderSumResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkDgNewuserOrderSumResponse struct {
+
+    // data
+    
+    Results  *struct {
+        TaobaoTbkDgNewuserOrderSumData  *TaobaoTbkDgNewuserOrderSumData `json:"taobao_tbk_dg_newuser_order_sum_data,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkDgNewuserOrderSumResponse struct {
 

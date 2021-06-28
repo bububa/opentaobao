@@ -12,8 +12,22 @@ alibaba.wdk.trade.order.cancel
 */
 type AlibabaWdkTradeOrderCancelAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkTradeOrderCancelResponse `json:"alibaba_wdk_trade_order_cancel_response,omitempty"`
+    // Response *AlibabaWdkTradeOrderCancelResponse `json:"alibaba_wdk_trade_order_cancel_response,omitempty"` 
+    AlibabaWdkTradeOrderCancelResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkTradeOrderCancelResponse struct {
+
+    // 执行结果
+    
+    Result  *struct {
+        OrderResult  *OrderResult `json:"order_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkTradeOrderCancelResponse struct {
 

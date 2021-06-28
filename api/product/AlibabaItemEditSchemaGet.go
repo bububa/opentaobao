@@ -11,11 +11,11 @@ alibaba.item.edit.schema.get
 
 商品编辑时，获取商品规则信息
 */
-func AlibabaItemEditSchemaGet(clt *core.SDKClient, req *product.AlibabaItemEditSchemaGetRequest, session string) (*product.AlibabaItemEditSchemaGetResponse, error) {
+func AlibabaItemEditSchemaGet(clt *core.SDKClient, req *product.AlibabaItemEditSchemaGetRequest, session string) (*product.AlibabaItemEditSchemaGetAPIResponse, error) {
     var resp product.AlibabaItemEditSchemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

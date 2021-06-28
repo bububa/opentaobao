@@ -12,8 +12,22 @@ taobao.sellercenter.subuser.permissions.roles.get
 */
 type TaobaoSellercenterSubuserPermissionsRolesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSellercenterSubuserPermissionsRolesGetResponse `json:"taobao_sellercenter_subuser_permissions_roles_get_response,omitempty"`
+    // Response *TaobaoSellercenterSubuserPermissionsRolesGetResponse `json:"sellercenter_subuser_permissions_roles_get_response,omitempty"` 
+    TaobaoSellercenterSubuserPermissionsRolesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSellercenterSubuserPermissionsRolesGetResponse struct {
+
+    // 子账号被所拥有的权限
+    
+    SubuserPermission  *struct {
+        SubUserPermission  *SubUserPermission `json:"sub_user_permission,omitempty"`
+    } `json:"subuser_permission,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSellercenterSubuserPermissionsRolesGetResponse struct {
 

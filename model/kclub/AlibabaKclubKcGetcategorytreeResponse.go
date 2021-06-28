@@ -12,8 +12,22 @@ alibaba.kclub.kc.getcategorytree
 */
 type AlibabaKclubKcGetcategorytreeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaKclubKcGetcategorytreeResponse `json:"alibaba_kclub_kc_getcategorytree_response,omitempty"`
+    // Response *AlibabaKclubKcGetcategorytreeResponse `json:"alibaba_kclub_kc_getcategorytree_response,omitempty"` 
+    AlibabaKclubKcGetcategorytreeResponse
 }
+
+/* model for simplify = false
+type AlibabaKclubKcGetcategorytreeResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaKclubKcGetcategorytreeResult  *AlibabaKclubKcGetcategorytreeResult `json:"alibaba_kclub_kc_getcategorytree_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaKclubKcGetcategorytreeResponse struct {
 

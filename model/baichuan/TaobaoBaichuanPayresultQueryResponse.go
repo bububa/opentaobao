@@ -12,8 +12,20 @@ taobao.baichuan.payresult.query
 */
 type TaobaoBaichuanPayresultQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanPayresultQueryResponse `json:"taobao_baichuan_payresult_query_response,omitempty"`
+    // Response *TaobaoBaichuanPayresultQueryResponse `json:"baichuan_payresult_query_response,omitempty"` 
+    TaobaoBaichuanPayresultQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanPayresultQueryResponse struct {
+
+    // name
+    
+    Name   string `json:"name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanPayresultQueryResponse struct {
 

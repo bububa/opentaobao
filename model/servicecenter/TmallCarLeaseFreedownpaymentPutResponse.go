@@ -12,8 +12,22 @@ tmall.car.lease.freedownpayment.put
 */
 type TmallCarLeaseFreedownpaymentPutAPIResponse struct {
     model.CommonResponse
-    Response *TmallCarLeaseFreedownpaymentPutResponse `json:"tmall_car_lease_freedownpayment_put_response,omitempty"`
+    // Response *TmallCarLeaseFreedownpaymentPutResponse `json:"tmall_car_lease_freedownpayment_put_response,omitempty"` 
+    TmallCarLeaseFreedownpaymentPutResponse
 }
+
+/* model for simplify = false
+type TmallCarLeaseFreedownpaymentPutResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TmallCarLeaseFreedownpaymentPutResult  *TmallCarLeaseFreedownpaymentPutResult `json:"tmall_car_lease_freedownpayment_put_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallCarLeaseFreedownpaymentPutResponse struct {
 

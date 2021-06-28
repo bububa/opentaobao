@@ -12,8 +12,22 @@ taobao.taotv.carousel.category.list
 */
 type TaobaoTaotvCarouselCategoryListAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTaotvCarouselCategoryListResponse `json:"taobao_taotv_carousel_category_list_response,omitempty"`
+    // Response *TaobaoTaotvCarouselCategoryListResponse `json:"taotv_carousel_category_list_response,omitempty"` 
+    TaobaoTaotvCarouselCategoryListResponse
 }
+
+/* model for simplify = false
+type TaobaoTaotvCarouselCategoryListResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoTaotvCarouselCategoryListResult  *TaobaoTaotvCarouselCategoryListResult `json:"taobao_taotv_carousel_category_list_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTaotvCarouselCategoryListResponse struct {
 

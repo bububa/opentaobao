@@ -12,8 +12,22 @@ alibaba.alsc.crm.recharge.account.flowdetail.get
 */
 type AlibabaAlscCrmRechargeAccountFlowdetailGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmRechargeAccountFlowdetailGetResponse `json:"alibaba_alsc_crm_recharge_account_flowdetail_get_response,omitempty"`
+    // Response *AlibabaAlscCrmRechargeAccountFlowdetailGetResponse `json:"alibaba_alsc_crm_recharge_account_flowdetail_get_response,omitempty"` 
+    AlibabaAlscCrmRechargeAccountFlowdetailGetResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmRechargeAccountFlowdetailGetResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmRechargeAccountFlowdetailGetResponse struct {
 

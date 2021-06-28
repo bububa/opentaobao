@@ -12,8 +12,22 @@ ERP调用奇门的接口,取消创建单据操作。场景介绍：ERP主动发�
 */
 type TaobaoQimenOrderCancelAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenOrderCancelResponse `json:"taobao_qimen_order_cancel_response,omitempty"`
+    // Response *TaobaoQimenOrderCancelResponse `json:"qimen_order_cancel_response,omitempty"` 
+    TaobaoQimenOrderCancelResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenOrderCancelResponse struct {
+
+    // 
+    
+    Response  *struct {
+        OrderCancelResponse  *OrderCancelResponse `json:"order_cancel_response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenOrderCancelResponse struct {
 

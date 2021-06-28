@@ -19,7 +19,7 @@ type AliexpressSocialItemRankingRequest struct {
     currency   string 
 
     // 国家列表
-    countryList   []String 
+    countryList   []string 
 
     // locale，格式为language+"_"+country
     locale   string 
@@ -64,13 +64,13 @@ func (r AliexpressSocialItemRankingRequest) GetCurrency() string {
     return r.currency
 }
 
-func (r *AliexpressSocialItemRankingRequest) SetCountryList(countryList []String) error {
+func (r *AliexpressSocialItemRankingRequest) SetCountryList(countryList []string) error {
     r.countryList = countryList
     r.Set("country_list", countryList)
     return nil
 }
 
-func (r AliexpressSocialItemRankingRequest) GetCountryList() []String {
+func (r AliexpressSocialItemRankingRequest) GetCountryList() []string {
     return r.countryList
 }
 

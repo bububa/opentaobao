@@ -11,11 +11,11 @@ taobao.tbk.dg.material.optional
 
 通用物料搜索API（导购）
 */
-func TaobaoTbkDgMaterialOptional(clt *core.SDKClient, req *tbk.TaobaoTbkDgMaterialOptionalRequest, session string) (*tbk.TaobaoTbkDgMaterialOptionalResponse, error) {
+func TaobaoTbkDgMaterialOptional(clt *core.SDKClient, req *tbk.TaobaoTbkDgMaterialOptionalRequest, session string) (*tbk.TaobaoTbkDgMaterialOptionalAPIResponse, error) {
     var resp tbk.TaobaoTbkDgMaterialOptionalAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

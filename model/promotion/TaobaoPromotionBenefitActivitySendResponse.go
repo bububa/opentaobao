@@ -12,8 +12,37 @@ taobao.promotion.benefit.activity.send
 */
 type TaobaoPromotionBenefitActivitySendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionBenefitActivitySendResponse `json:"taobao_promotion_benefit_activity_send_response,omitempty"`
+    // Response *TaobaoPromotionBenefitActivitySendResponse `json:"promotion_benefit_activity_send_response,omitempty"` 
+    TaobaoPromotionBenefitActivitySendResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionBenefitActivitySendResponse struct {
+
+    // 接口调用是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 事务id;发放时，不传入事务id,发放返回结果中会包含事务id；若发放失败，使用返回的事务id进行调用，则可以重试失败的操作
+    
+    SessionId   string `json:"session_id,omitempty"`
+    
+
+    // 返回活动详情级别的权益发放情况
+    
+    ResultList  struct {
+        BenefitSendResultExt  []BenefitSendResultExt `json:"benefit_send_result_ext,omitempty"`
+    } `json:"result_list,omitempty"`
+    
+
+    // uniqueId
+    
+    UniqueId   string `json:"unique_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionBenefitActivitySendResponse struct {
 

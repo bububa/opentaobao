@@ -11,11 +11,11 @@ tmall.product.spec.add
 
 增加产品规格
 */
-func TmallProductSpecAdd(clt *core.SDKClient, req *product.TmallProductSpecAddRequest, session string) (*product.TmallProductSpecAddResponse, error) {
+func TmallProductSpecAdd(clt *core.SDKClient, req *product.TmallProductSpecAddRequest, session string) (*product.TmallProductSpecAddAPIResponse, error) {
     var resp product.TmallProductSpecAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

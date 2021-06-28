@@ -12,8 +12,20 @@ taobao.simba.rpt.campadgroupbase.get
 */
 type TaobaoSimbaRptCampadgroupbaseGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaRptCampadgroupbaseGetResponse `json:"taobao_simba_rpt_campadgroupbase_get_response,omitempty"`
+    // Response *TaobaoSimbaRptCampadgroupbaseGetResponse `json:"simba_rpt_campadgroupbase_get_response,omitempty"` 
+    TaobaoSimbaRptCampadgroupbaseGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaRptCampadgroupbaseGetResponse struct {
+
+    // 推广计划下推广组的基础数据列表
+    
+    RptCampadgroupBaseList   string `json:"rpt_campadgroup_base_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaRptCampadgroupbaseGetResponse struct {
 

@@ -11,11 +11,11 @@ cainiao.waybill.ii.cancel
 
 面单号有误需要取消的时候，调用该接口取消获取的电子面单。
 */
-func CainiaoWaybillIiCancel(clt *core.SDKClient, req *waybill.CainiaoWaybillIiCancelRequest, session string) (*waybill.CainiaoWaybillIiCancelResponse, error) {
+func CainiaoWaybillIiCancel(clt *core.SDKClient, req *waybill.CainiaoWaybillIiCancelRequest, session string) (*waybill.CainiaoWaybillIiCancelAPIResponse, error) {
     var resp waybill.CainiaoWaybillIiCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

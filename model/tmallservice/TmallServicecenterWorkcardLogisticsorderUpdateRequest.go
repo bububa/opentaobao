@@ -52,7 +52,7 @@ type TmallServicecenterWorkcardLogisticsorderUpdateRequest struct {
     statusCode   string 
 
     // 物流子单号
-    subExpressCodes   []String 
+    subExpressCodes   []string 
 
     // 预计送达时间  dispatching节点时必填
     deliveryTime   string 
@@ -207,13 +207,13 @@ func (r TmallServicecenterWorkcardLogisticsorderUpdateRequest) GetStatusCode() s
     return r.statusCode
 }
 
-func (r *TmallServicecenterWorkcardLogisticsorderUpdateRequest) SetSubExpressCodes(subExpressCodes []String) error {
+func (r *TmallServicecenterWorkcardLogisticsorderUpdateRequest) SetSubExpressCodes(subExpressCodes []string) error {
     r.subExpressCodes = subExpressCodes
     r.Set("sub_express_codes", subExpressCodes)
     return nil
 }
 
-func (r TmallServicecenterWorkcardLogisticsorderUpdateRequest) GetSubExpressCodes() []String {
+func (r TmallServicecenterWorkcardLogisticsorderUpdateRequest) GetSubExpressCodes() []string {
     return r.subExpressCodes
 }
 

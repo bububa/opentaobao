@@ -12,8 +12,22 @@ alibaba.alsc.crm.point.rule.get
 */
 type AlibabaAlscCrmPointRuleGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmPointRuleGetResponse `json:"alibaba_alsc_crm_point_rule_get_response,omitempty"`
+    // Response *AlibabaAlscCrmPointRuleGetResponse `json:"alibaba_alsc_crm_point_rule_get_response,omitempty"` 
+    AlibabaAlscCrmPointRuleGetResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmPointRuleGetResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmPointRuleGetResponse struct {
 

@@ -12,8 +12,20 @@ Weex 基本UI操作
 */
 type AlibabaInteractSensorUiAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorUiResponse `json:"alibaba_interact_sensor_ui_response,omitempty"`
+    // Response *AlibabaInteractSensorUiResponse `json:"alibaba_interact_sensor_ui_response,omitempty"` 
+    AlibabaInteractSensorUiResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorUiResponse struct {
+
+    // 仅作客户端鉴权使用，不会发送接收请求
+    
+    Unnamed   string `json:"unnamed,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorUiResponse struct {
 

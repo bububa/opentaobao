@@ -11,11 +11,11 @@ alibaba.xiami.api.rank.detail.get
 
 虾米排行榜详情数据
 */
-func AlibabaXiamiApiRankDetailGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiRankDetailGetRequest, session string) (*xiami.AlibabaXiamiApiRankDetailGetResponse, error) {
+func AlibabaXiamiApiRankDetailGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiRankDetailGetRequest, session string) (*xiami.AlibabaXiamiApiRankDetailGetAPIResponse, error) {
     var resp xiami.AlibabaXiamiApiRankDetailGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

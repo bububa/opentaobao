@@ -14,8 +14,30 @@ alibaba.item.edit.fastupdate
 */
 type AlibabaItemEditFastupdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaItemEditFastupdateResponse `json:"alibaba_item_edit_fastupdate_response,omitempty"`
+    // Response *AlibabaItemEditFastupdateResponse `json:"alibaba_item_edit_fastupdate_response,omitempty"` 
+    AlibabaItemEditFastupdateResponse
 }
+
+/* model for simplify = false
+type AlibabaItemEditFastupdateResponse struct {
+
+    // 商品更新时间
+    
+    UpdateTime   string `json:"update_time,omitempty"`
+    
+
+    // 商品ID
+    
+    ItemId   int64 `json:"item_id,omitempty"`
+    
+
+    // 商品所属市场
+    
+    Market   string `json:"market,omitempty"`
+    
+
+}
+*/
 
 type AlibabaItemEditFastupdateResponse struct {
 

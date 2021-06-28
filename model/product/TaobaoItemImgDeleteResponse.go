@@ -12,8 +12,22 @@ taobao.item.img.delete
 */
 type TaobaoItemImgDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemImgDeleteResponse `json:"taobao_item_img_delete_response,omitempty"`
+    // Response *TaobaoItemImgDeleteResponse `json:"item_img_delete_response,omitempty"` 
+    TaobaoItemImgDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoItemImgDeleteResponse struct {
+
+    // 商品图片结构
+    
+    ItemImg  *struct {
+        ItemImg  *ItemImg `json:"item_img,omitempty"`
+    } `json:"item_img,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemImgDeleteResponse struct {
 

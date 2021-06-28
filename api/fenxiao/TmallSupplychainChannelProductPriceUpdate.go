@@ -11,11 +11,11 @@ tmall.supplychain.channel.product.price.update
 
 更新渠道产品价格
 */
-func TmallSupplychainChannelProductPriceUpdate(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductPriceUpdateRequest, session string) (*fenxiao.TmallSupplychainChannelProductPriceUpdateResponse, error) {
+func TmallSupplychainChannelProductPriceUpdate(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductPriceUpdateRequest, session string) (*fenxiao.TmallSupplychainChannelProductPriceUpdateAPIResponse, error) {
     var resp fenxiao.TmallSupplychainChannelProductPriceUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

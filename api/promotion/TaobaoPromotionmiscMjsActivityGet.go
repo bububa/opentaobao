@@ -11,11 +11,11 @@ taobao.promotionmisc.mjs.activity.get
 
 查询满就送活动
 */
-func TaobaoPromotionmiscMjsActivityGet(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscMjsActivityGetRequest, session string) (*promotion.TaobaoPromotionmiscMjsActivityGetResponse, error) {
+func TaobaoPromotionmiscMjsActivityGet(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscMjsActivityGetRequest, session string) (*promotion.TaobaoPromotionmiscMjsActivityGetAPIResponse, error) {
     var resp promotion.TaobaoPromotionmiscMjsActivityGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

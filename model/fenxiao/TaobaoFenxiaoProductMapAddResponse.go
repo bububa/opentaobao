@@ -12,8 +12,20 @@ taobao.fenxiao.product.map.add
 */
 type TaobaoFenxiaoProductMapAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductMapAddResponse `json:"taobao_fenxiao_product_map_add_response,omitempty"`
+    // Response *TaobaoFenxiaoProductMapAddResponse `json:"fenxiao_product_map_add_response,omitempty"` 
+    TaobaoFenxiaoProductMapAddResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductMapAddResponse struct {
+
+    // 操作结果
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoProductMapAddResponse struct {
 

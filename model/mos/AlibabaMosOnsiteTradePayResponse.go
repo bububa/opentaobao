@@ -12,8 +12,22 @@ alibaba.mos.onsite.trade.pay
 */
 type AlibabaMosOnsiteTradePayAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosOnsiteTradePayResponse `json:"alibaba_mos_onsite_trade_pay_response,omitempty"`
+    // Response *AlibabaMosOnsiteTradePayResponse `json:"alibaba_mos_onsite_trade_pay_response,omitempty"` 
+    AlibabaMosOnsiteTradePayResponse
 }
+
+/* model for simplify = false
+type AlibabaMosOnsiteTradePayResponse struct {
+
+    // 创建订单响应信息。必然返回
+    
+    OnsiteTradePayResponse  *struct {
+        OnsiteTradePayResponse  *OnsiteTradePayResponse `json:"onsite_trade_pay_response,omitempty"`
+    } `json:"onsite_trade_pay_response,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosOnsiteTradePayResponse struct {
 

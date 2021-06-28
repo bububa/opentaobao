@@ -12,8 +12,22 @@ taobao.tbk.cart.coupon.expire.user.query
 */
 type TaobaoTbkCartCouponExpireUserQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkCartCouponExpireUserQueryResponse `json:"taobao_tbk_cart_coupon_expire_user_query_response,omitempty"`
+    // Response *TaobaoTbkCartCouponExpireUserQueryResponse `json:"tbk_cart_coupon_expire_user_query_response,omitempty"` 
+    TaobaoTbkCartCouponExpireUserQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkCartCouponExpireUserQueryResponse struct {
+
+    // 用户规则信息集合
+    
+    UserRuleInfoList  struct {
+        UserRuleInfo  []UserRuleInfo `json:"user_rule_info,omitempty"`
+    } `json:"user_rule_info_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkCartCouponExpireUserQueryResponse struct {
 

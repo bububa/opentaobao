@@ -11,11 +11,11 @@ alibaba.scbp.ad.group.update.ad.group.batch
 
 修改推广单元
 */
-func AlibabaScbpAdGroupUpdateAdGroupBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupUpdateAdGroupBatchRequest, session string) (*scbp.AlibabaScbpAdGroupUpdateAdGroupBatchResponse, error) {
+func AlibabaScbpAdGroupUpdateAdGroupBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupUpdateAdGroupBatchRequest, session string) (*scbp.AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponse, error) {
     var resp scbp.AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

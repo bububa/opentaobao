@@ -12,8 +12,22 @@ taobao.simba.insight.wordspricedata.get
 */
 type TaobaoSimbaInsightWordspricedataGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaInsightWordspricedataGetResponse `json:"taobao_simba_insight_wordspricedata_get_response,omitempty"`
+    // Response *TaobaoSimbaInsightWordspricedataGetResponse `json:"simba_insight_wordspricedata_get_response,omitempty"` 
+    TaobaoSimbaInsightWordspricedataGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaInsightWordspricedataGetResponse struct {
+
+    // 竞价区间分布数据
+    
+    WordPricedataList  struct {
+        InsightWordPriceDistributeDataDTO  []InsightWordPriceDistributeDataDTO `json:"insight_word_price_distribute_data_dto,omitempty"`
+    } `json:"word_pricedata_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaInsightWordspricedataGetResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.wdk.fulfill.bill.return.warehouse.on.task.status.changed
 */
 type AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedResponse `json:"alibaba_wdk_fulfill_bill_return_warehouse_on_task_status_changed_response,omitempty"`
+    // Response *AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedResponse `json:"alibaba_wdk_fulfill_bill_return_warehouse_on_task_status_changed_response,omitempty"` 
+    AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedResponse struct {
+
+    // fulfillVoidResult
+    
+    Result  *struct {
+        FulfillVoidResult  *FulfillVoidResult `json:"fulfill_void_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkFulfillBillReturnWarehouseOnTaskStatusChangedResponse struct {
 

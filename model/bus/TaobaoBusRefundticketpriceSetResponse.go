@@ -12,8 +12,20 @@ taobao.bus.refundticketprice.set
 */
 type TaobaoBusRefundticketpriceSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusRefundticketpriceSetResponse `json:"taobao_bus_refundticketprice_set_response,omitempty"`
+    // Response *TaobaoBusRefundticketpriceSetResponse `json:"bus_refundticketprice_set_response,omitempty"` 
+    TaobaoBusRefundticketpriceSetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusRefundticketpriceSetResponse struct {
+
+    // 退票成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusRefundticketpriceSetResponse struct {
 

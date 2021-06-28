@@ -12,8 +12,35 @@ alibaba.aliqin.flow.alipay.publish
 */
 type AlibabaAliqinFlowAlipayPublishAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFlowAlipayPublishResponse `json:"alibaba_aliqin_flow_alipay_publish_response,omitempty"`
+    // Response *AlibabaAliqinFlowAlipayPublishResponse `json:"alibaba_aliqin_flow_alipay_publish_response,omitempty"` 
+    AlibabaAliqinFlowAlipayPublishResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFlowAlipayPublishResponse struct {
+
+    // error
+    
+    Error   bool `json:"error,omitempty"`
+    
+
+    // value
+    
+    Value   string `json:"value,omitempty"`
+    
+
+    // errorCode
+    
+    AlicomErrorCode   string `json:"alicom_error_code,omitempty"`
+    
+
+    // errorMsg
+    
+    AlicomErrorMsg   string `json:"alicom_error_msg,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFlowAlipayPublishResponse struct {
 

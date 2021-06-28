@@ -12,8 +12,22 @@ taobao.alitrip.bus.tickets.insurance.recommend
 */
 type TaobaoAlitripBusTicketsInsuranceRecommendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripBusTicketsInsuranceRecommendResponse `json:"taobao_alitrip_bus_tickets_insurance_recommend_response,omitempty"`
+    // Response *TaobaoAlitripBusTicketsInsuranceRecommendResponse `json:"alitrip_bus_tickets_insurance_recommend_response,omitempty"` 
+    TaobaoAlitripBusTicketsInsuranceRecommendResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripBusTicketsInsuranceRecommendResponse struct {
+
+    // 接口返回结果数据
+    
+    Result  *struct {
+        TaobaoAlitripBusTicketsInsuranceRecommendResult  *TaobaoAlitripBusTicketsInsuranceRecommendResult `json:"taobao_alitrip_bus_tickets_insurance_recommend_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripBusTicketsInsuranceRecommendResponse struct {
 

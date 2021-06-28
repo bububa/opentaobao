@@ -1,6 +1,50 @@
 package subuser
 
 // Role 
+/* model for simplify = false
+type Role struct {
+
+    // 角色id
+    
+    RoleId   int64 `json:"role_id,omitempty"`
+    
+
+    // 角色名
+    
+    RoleName   string `json:"role_name,omitempty"`
+    
+
+    // 角色描述
+    
+    Description   string `json:"description,omitempty"`
+    
+
+    // 卖家Id
+    
+    SellerId   int64 `json:"seller_id,omitempty"`
+    
+
+    // 创建时间
+    
+    CreateTime   string `json:"create_time,omitempty"`
+    
+
+    // 修改时间
+    
+    ModifiedTime   string `json:"modified_time,omitempty"`
+    
+
+    // 所拥有权限
+    
+    Permissions  struct {
+        Permission  []Permission `json:"permission,omitempty"`
+    } `json:"permissions,omitempty"`
+    
+
+}
+*/
+
+// Role 
 type Role struct {
 
     // 角色id

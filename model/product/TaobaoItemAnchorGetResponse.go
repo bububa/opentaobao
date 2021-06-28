@@ -12,8 +12,27 @@ taobao.item.anchor.get
 */
 type TaobaoItemAnchorGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemAnchorGetResponse `json:"taobao_item_anchor_get_response,omitempty"`
+    // Response *TaobaoItemAnchorGetResponse `json:"item_anchor_get_response,omitempty"` 
+    TaobaoItemAnchorGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemAnchorGetResponse struct {
+
+    // 返回的宝贝描述模板结果数目
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 宝贝描述规范化可使用打标模块的锚点信息
+    
+    AnchorModules  struct {
+        IdsModule  []IdsModule `json:"ids_module,omitempty"`
+    } `json:"anchor_modules,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemAnchorGetResponse struct {
 

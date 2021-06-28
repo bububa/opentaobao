@@ -12,8 +12,27 @@ alibaba.xiami.api.rank.detail.get
 */
 type AlibabaXiamiApiRankDetailGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaXiamiApiRankDetailGetResponse `json:"alibaba_xiami_api_rank_detail_get_response,omitempty"`
+    // Response *AlibabaXiamiApiRankDetailGetResponse `json:"alibaba_xiami_api_rank_detail_get_response,omitempty"` 
+    AlibabaXiamiApiRankDetailGetResponse
 }
+
+/* model for simplify = false
+type AlibabaXiamiApiRankDetailGetResponse struct {
+
+    // msgCode
+    
+    MsgCode   string `json:"msg_code,omitempty"`
+    
+
+    // resultObj
+    
+    ResultObj  *struct {
+        BillboardItemVO  *BillboardItemVO `json:"billboard_item_vo,omitempty"`
+    } `json:"result_obj,omitempty"`
+    
+
+}
+*/
 
 type AlibabaXiamiApiRankDetailGetResponse struct {
 

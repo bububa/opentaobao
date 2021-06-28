@@ -12,8 +12,20 @@ alibaba.scbp.account.budget.get
 */
 type AlibabaScbpAccountBudgetGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAccountBudgetGetResponse `json:"alibaba_scbp_account_budget_get_response,omitempty"`
+    // Response *AlibabaScbpAccountBudgetGetResponse `json:"alibaba_scbp_account_budget_get_response,omitempty"` 
+    AlibabaScbpAccountBudgetGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAccountBudgetGetResponse struct {
+
+    // 返回今日预算
+    
+    Budget   string `json:"budget,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAccountBudgetGetResponse struct {
 

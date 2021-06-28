@@ -12,8 +12,22 @@ alibaba.alsc.crm.card.query.template
 */
 type AlibabaAlscCrmCardQueryTemplateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmCardQueryTemplateResponse `json:"alibaba_alsc_crm_card_query_template_response,omitempty"`
+    // Response *AlibabaAlscCrmCardQueryTemplateResponse `json:"alibaba_alsc_crm_card_query_template_response,omitempty"` 
+    AlibabaAlscCrmCardQueryTemplateResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmCardQueryTemplateResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmCardQueryTemplateResponse struct {
 

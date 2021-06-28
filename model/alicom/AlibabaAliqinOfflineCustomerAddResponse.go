@@ -12,8 +12,22 @@ alibaba.aliqin.offline.customer.add
 */
 type AlibabaAliqinOfflineCustomerAddAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinOfflineCustomerAddResponse `json:"alibaba_aliqin_offline_customer_add_response,omitempty"`
+    // Response *AlibabaAliqinOfflineCustomerAddResponse `json:"alibaba_aliqin_offline_customer_add_response,omitempty"` 
+    AlibabaAliqinOfflineCustomerAddResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinOfflineCustomerAddResponse struct {
+
+    // result
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinOfflineCustomerAddResponse struct {
 

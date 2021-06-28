@@ -12,8 +12,15 @@ alibaba.interact.media.artwork
 */
 type AlibabaInteractMediaArtworkAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractMediaArtworkResponse `json:"alibaba_interact_media_artwork_response,omitempty"`
+    // Response *AlibabaInteractMediaArtworkResponse `json:"alibaba_interact_media_artwork_response,omitempty"` 
+    AlibabaInteractMediaArtworkResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractMediaArtworkResponse struct {
+
+}
+*/
 
 type AlibabaInteractMediaArtworkResponse struct {
 

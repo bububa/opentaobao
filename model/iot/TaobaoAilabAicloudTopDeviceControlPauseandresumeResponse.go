@@ -12,8 +12,22 @@ taobao.ailab.aicloud.top.device.control.pauseandresume
 */
 type TaobaoAilabAicloudTopDeviceControlPauseandresumeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopDeviceControlPauseandresumeResponse `json:"taobao_ailab_aicloud_top_device_control_pauseandresume_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopDeviceControlPauseandresumeResponse `json:"ailab_aicloud_top_device_control_pauseandresume_response,omitempty"` 
+    TaobaoAilabAicloudTopDeviceControlPauseandresumeResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopDeviceControlPauseandresumeResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopDeviceControlPauseandresumeResponse struct {
 

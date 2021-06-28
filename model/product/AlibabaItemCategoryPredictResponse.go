@@ -12,8 +12,30 @@ alibaba.item.category.predict
 */
 type AlibabaItemCategoryPredictAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaItemCategoryPredictResponse `json:"alibaba_item_category_predict_response,omitempty"`
+    // Response *AlibabaItemCategoryPredictResponse `json:"alibaba_item_category_predict_response,omitempty"` 
+    AlibabaItemCategoryPredictResponse
 }
+
+/* model for simplify = false
+type AlibabaItemCategoryPredictResponse struct {
+
+    // 类目路径
+    
+    CatName   string `json:"cat_name,omitempty"`
+    
+
+    // 类目ID
+    
+    CatId   int64 `json:"cat_id,omitempty"`
+    
+
+    // 类目名称
+    
+    CatPath   string `json:"cat_path,omitempty"`
+    
+
+}
+*/
 
 type AlibabaItemCategoryPredictResponse struct {
 

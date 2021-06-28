@@ -12,8 +12,22 @@ tmall.mallitemcenter.supplier.ability.update
 */
 type TmallMallitemcenterSupplierAbilityUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallMallitemcenterSupplierAbilityUpdateResponse `json:"tmall_mallitemcenter_supplier_ability_update_response,omitempty"`
+    // Response *TmallMallitemcenterSupplierAbilityUpdateResponse `json:"tmall_mallitemcenter_supplier_ability_update_response,omitempty"` 
+    TmallMallitemcenterSupplierAbilityUpdateResponse
 }
+
+/* model for simplify = false
+type TmallMallitemcenterSupplierAbilityUpdateResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TmallMallitemcenterSupplierAbilityUpdateResult  *TmallMallitemcenterSupplierAbilityUpdateResult `json:"tmall_mallitemcenter_supplier_ability_update_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallMallitemcenterSupplierAbilityUpdateResponse struct {
 

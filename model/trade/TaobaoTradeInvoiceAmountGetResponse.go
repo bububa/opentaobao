@@ -12,8 +12,25 @@ taobao.trade.invoice.amount.get
 */
 type TaobaoTradeInvoiceAmountGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeInvoiceAmountGetResponse `json:"taobao_trade_invoice_amount_get_response,omitempty"`
+    // Response *TaobaoTradeInvoiceAmountGetResponse `json:"trade_invoice_amount_get_response,omitempty"` 
+    TaobaoTradeInvoiceAmountGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeInvoiceAmountGetResponse struct {
+
+    // 应开票给消费者的金额，单位分
+    
+    ConsumerInvoiceAmount   string `json:"consumer_invoice_amount,omitempty"`
+    
+
+    // 应开票给平台的金额，单位分
+    
+    PlatformInvoiceAmount   string `json:"platform_invoice_amount,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeInvoiceAmountGetResponse struct {
 

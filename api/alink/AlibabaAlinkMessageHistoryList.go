@@ -11,11 +11,11 @@ alibaba.alink.message.history.list
 
 查询消息列表
 */
-func AlibabaAlinkMessageHistoryList(clt *core.SDKClient, req *alink.AlibabaAlinkMessageHistoryListRequest, session string) (*alink.AlibabaAlinkMessageHistoryListResponse, error) {
+func AlibabaAlinkMessageHistoryList(clt *core.SDKClient, req *alink.AlibabaAlinkMessageHistoryListRequest, session string) (*alink.AlibabaAlinkMessageHistoryListAPIResponse, error) {
     var resp alink.AlibabaAlinkMessageHistoryListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

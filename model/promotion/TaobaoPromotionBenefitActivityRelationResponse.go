@@ -12,8 +12,25 @@ taobao.promotion.benefit.activity.relation
 */
 type TaobaoPromotionBenefitActivityRelationAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionBenefitActivityRelationResponse `json:"taobao_promotion_benefit_activity_relation_response,omitempty"`
+    // Response *TaobaoPromotionBenefitActivityRelationResponse `json:"promotion_benefit_activity_relation_response,omitempty"` 
+    TaobaoPromotionBenefitActivityRelationResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionBenefitActivityRelationResponse struct {
+
+    // 活动关联ID
+    
+    RelationId   int64 `json:"relation_id,omitempty"`
+    
+
+    // 请求是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionBenefitActivityRelationResponse struct {
 

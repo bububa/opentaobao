@@ -11,11 +11,11 @@ alibaba.mj.presale.settlement.addlist
 
 用于预售活动结算数据的回传。
 */
-func AlibabaMjPresaleSettlementAddlist(clt *core.SDKClient, req *mos.AlibabaMjPresaleSettlementAddlistRequest, session string) (*mos.AlibabaMjPresaleSettlementAddlistResponse, error) {
+func AlibabaMjPresaleSettlementAddlist(clt *core.SDKClient, req *mos.AlibabaMjPresaleSettlementAddlistRequest, session string) (*mos.AlibabaMjPresaleSettlementAddlistAPIResponse, error) {
     var resp mos.AlibabaMjPresaleSettlementAddlistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

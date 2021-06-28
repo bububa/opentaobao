@@ -12,8 +12,27 @@ taobao.inventory.adjust.trade
 */
 type TaobaoInventoryAdjustTradeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoInventoryAdjustTradeResponse `json:"taobao_inventory_adjust_trade_response,omitempty"`
+    // Response *TaobaoInventoryAdjustTradeResponse `json:"inventory_adjust_trade_response,omitempty"` 
+    TaobaoInventoryAdjustTradeResponse
 }
+
+/* model for simplify = false
+type TaobaoInventoryAdjustTradeResponse struct {
+
+    // 操作返回码
+    
+    OperateCode   string `json:"operate_code,omitempty"`
+    
+
+    // 提示信息
+    
+    TipInfos  struct {
+        TipInfo  []TipInfo `json:"tip_info,omitempty"`
+    } `json:"tip_infos,omitempty"`
+    
+
+}
+*/
 
 type TaobaoInventoryAdjustTradeResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.mos.falcon.pos.counter.query
 
 银泰商业获取专柜是否支持小数等属性查看
 */
-func AlibabaMosFalconPosCounterQuery(clt *core.SDKClient, req *util.AlibabaMosFalconPosCounterQueryRequest, session string) (*util.AlibabaMosFalconPosCounterQueryResponse, error) {
+func AlibabaMosFalconPosCounterQuery(clt *core.SDKClient, req *util.AlibabaMosFalconPosCounterQueryRequest, session string) (*util.AlibabaMosFalconPosCounterQueryAPIResponse, error) {
     var resp util.AlibabaMosFalconPosCounterQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

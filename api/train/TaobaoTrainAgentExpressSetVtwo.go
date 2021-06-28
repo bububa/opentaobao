@@ -11,11 +11,11 @@ taobao.train.agent.express.set.vtwo
 
 线下票回填物流信息服务
 */
-func TaobaoTrainAgentExpressSetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentExpressSetVtwoRequest, session string) (*train.TaobaoTrainAgentExpressSetVtwoResponse, error) {
+func TaobaoTrainAgentExpressSetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentExpressSetVtwoRequest, session string) (*train.TaobaoTrainAgentExpressSetVtwoAPIResponse, error) {
     var resp train.TaobaoTrainAgentExpressSetVtwoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,20 @@ alibaba.security.jaq.afs.check
 */
 type AlibabaSecurityJaqAfsCheckAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqAfsCheckResponse `json:"alibaba_security_jaq_afs_check_response,omitempty"`
+    // Response *AlibabaSecurityJaqAfsCheckResponse `json:"alibaba_security_jaq_afs_check_response,omitempty"` 
+    AlibabaSecurityJaqAfsCheckResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqAfsCheckResponse struct {
+
+    // 验证结果
+    
+    Data   bool `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqAfsCheckResponse struct {
 

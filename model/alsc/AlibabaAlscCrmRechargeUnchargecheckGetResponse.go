@@ -12,8 +12,22 @@ alibaba.alsc.crm.recharge.unchargecheck.get
 */
 type AlibabaAlscCrmRechargeUnchargecheckGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmRechargeUnchargecheckGetResponse `json:"alibaba_alsc_crm_recharge_unchargecheck_get_response,omitempty"`
+    // Response *AlibabaAlscCrmRechargeUnchargecheckGetResponse `json:"alibaba_alsc_crm_recharge_unchargecheck_get_response,omitempty"` 
+    AlibabaAlscCrmRechargeUnchargecheckGetResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmRechargeUnchargecheckGetResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmRechargeUnchargecheckGetResponse struct {
 

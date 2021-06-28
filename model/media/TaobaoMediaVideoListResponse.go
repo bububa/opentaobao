@@ -12,8 +12,22 @@ taobao.media.video.list
 */
 type TaobaoMediaVideoListAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMediaVideoListResponse `json:"taobao_media_video_list_response,omitempty"`
+    // Response *TaobaoMediaVideoListResponse `json:"media_video_list_response,omitempty"` 
+    TaobaoMediaVideoListResponse
 }
+
+/* model for simplify = false
+type TaobaoMediaVideoListResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        SearchResultDO  *SearchResultDO `json:"search_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMediaVideoListResponse struct {
 

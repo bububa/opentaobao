@@ -31,16 +31,16 @@ type TaobaoFenxiaoDistributorProductsGetRequest struct {
     endTime   string 
 
     // 指定查询额外的信息，可选值：skus（sku数据）、images（多图），多个可选值用逗号分割。
-    fields   []String 
+    fields   []string 
 
     // 根据商品ID列表查询，优先级次于产品ID列表，高于其他分页查询条件。如果商品不是分销商品，自动过滤。最大限制20，用逗号分割，例如：“1001,1002,1003,1004,1005”
-    itemIds   []Number 
+    itemIds   []int64 
 
     // 产品线ID
     productcatId   int64 
 
     // 产品ID列表（最大限制30），用逗号分割，例如：“1001,1002,1003,1004,1005”
-    pids   []Number 
+    pids   []int64 
 
     // 开始修改时间
     startTime   string 
@@ -125,23 +125,23 @@ func (r TaobaoFenxiaoDistributorProductsGetRequest) GetEndTime() string {
     return r.endTime
 }
 
-func (r *TaobaoFenxiaoDistributorProductsGetRequest) SetFields(fields []String) error {
+func (r *TaobaoFenxiaoDistributorProductsGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoFenxiaoDistributorProductsGetRequest) GetFields() []String {
+func (r TaobaoFenxiaoDistributorProductsGetRequest) GetFields() []string {
     return r.fields
 }
 
-func (r *TaobaoFenxiaoDistributorProductsGetRequest) SetItemIds(itemIds []Number) error {
+func (r *TaobaoFenxiaoDistributorProductsGetRequest) SetItemIds(itemIds []int64) error {
     r.itemIds = itemIds
     r.Set("item_ids", itemIds)
     return nil
 }
 
-func (r TaobaoFenxiaoDistributorProductsGetRequest) GetItemIds() []Number {
+func (r TaobaoFenxiaoDistributorProductsGetRequest) GetItemIds() []int64 {
     return r.itemIds
 }
 
@@ -155,13 +155,13 @@ func (r TaobaoFenxiaoDistributorProductsGetRequest) GetProductcatId() int64 {
     return r.productcatId
 }
 
-func (r *TaobaoFenxiaoDistributorProductsGetRequest) SetPids(pids []Number) error {
+func (r *TaobaoFenxiaoDistributorProductsGetRequest) SetPids(pids []int64) error {
     r.pids = pids
     r.Set("pids", pids)
     return nil
 }
 
-func (r TaobaoFenxiaoDistributorProductsGetRequest) GetPids() []Number {
+func (r TaobaoFenxiaoDistributorProductsGetRequest) GetPids() []int64 {
     return r.pids
 }
 

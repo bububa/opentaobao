@@ -12,8 +12,20 @@ taobao.openuid.get.bytrade
 */
 type TaobaoOpenuidGetBytradeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenuidGetBytradeResponse `json:"taobao_openuid_get_bytrade_response,omitempty"`
+    // Response *TaobaoOpenuidGetBytradeResponse `json:"openuid_get_bytrade_response,omitempty"` 
+    TaobaoOpenuidGetBytradeResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenuidGetBytradeResponse struct {
+
+    // 当前交易tid对应买家的openuid
+    
+    OpenUid   string `json:"open_uid,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenuidGetBytradeResponse struct {
 

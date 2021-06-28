@@ -12,8 +12,20 @@ taobao.weitao.feed.isrelation
 */
 type TaobaoWeitaoFeedIsrelationAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWeitaoFeedIsrelationResponse `json:"taobao_weitao_feed_isrelation_response,omitempty"`
+    // Response *TaobaoWeitaoFeedIsrelationResponse `json:"weitao_feed_isrelation_response,omitempty"` 
+    TaobaoWeitaoFeedIsrelationResponse
 }
+
+/* model for simplify = false
+type TaobaoWeitaoFeedIsrelationResponse struct {
+
+    // 是否关注
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWeitaoFeedIsrelationResponse struct {
 

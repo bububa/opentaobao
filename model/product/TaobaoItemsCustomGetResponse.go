@@ -13,8 +13,22 @@ taobao.items.custom.get
 */
 type TaobaoItemsCustomGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemsCustomGetResponse `json:"taobao_items_custom_get_response,omitempty"`
+    // Response *TaobaoItemsCustomGetResponse `json:"items_custom_get_response,omitempty"` 
+    TaobaoItemsCustomGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemsCustomGetResponse struct {
+
+    // 商品列表，具体返回字段以fields决定
+    
+    Items  struct {
+        Item  []Item `json:"item,omitempty"`
+    } `json:"items,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemsCustomGetResponse struct {
 

@@ -11,11 +11,11 @@ tmall.servicecenter.worker.create
 
 服务商工人信息创建
 */
-func TmallServicecenterWorkerCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerCreateRequest, session string) (*tmallservice.TmallServicecenterWorkerCreateResponse, error) {
+func TmallServicecenterWorkerCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerCreateRequest, session string) (*tmallservice.TmallServicecenterWorkerCreateAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkerCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

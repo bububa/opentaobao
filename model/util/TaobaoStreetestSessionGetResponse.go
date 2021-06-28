@@ -12,8 +12,20 @@ taobao.streetest.session.get
 */
 type TaobaoStreetestSessionGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoStreetestSessionGetResponse `json:"taobao_streetest_session_get_response,omitempty"`
+    // Response *TaobaoStreetestSessionGetResponse `json:"streetest_session_get_response,omitempty"` 
+    TaobaoStreetestSessionGetResponse
 }
+
+/* model for simplify = false
+type TaobaoStreetestSessionGetResponse struct {
+
+    // 压测账号对应的sessionKey
+    
+    StreeTestSessionKey   string `json:"stree_test_session_key,omitempty"`
+    
+
+}
+*/
 
 type TaobaoStreetestSessionGetResponse struct {
 

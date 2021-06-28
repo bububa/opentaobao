@@ -12,8 +12,22 @@ alibaba.health.nr.logistics.waybill.get
 */
 type AlibabaHealthNrLogisticsWaybillGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaHealthNrLogisticsWaybillGetResponse `json:"alibaba_health_nr_logistics_waybill_get_response,omitempty"`
+    // Response *AlibabaHealthNrLogisticsWaybillGetResponse `json:"alibaba_health_nr_logistics_waybill_get_response,omitempty"` 
+    AlibabaHealthNrLogisticsWaybillGetResponse
 }
+
+/* model for simplify = false
+type AlibabaHealthNrLogisticsWaybillGetResponse struct {
+
+    // 响应结果对象
+    
+    ResponseResult  *struct {
+        ResponseResult  *ResponseResult `json:"response_result,omitempty"`
+    } `json:"response_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaHealthNrLogisticsWaybillGetResponse struct {
 

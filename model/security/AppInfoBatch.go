@@ -1,6 +1,35 @@
 package security
 
 // AppInfoBatch 
+/* model for simplify = false
+type AppInfoBatch struct {
+
+    // APP应用类型 1-android 2-ios(暂不支持)
+    
+    AppOsType   int64 `json:"app_os_type,omitempty"`
+    
+
+    // 回调地址,dataType=4时必填,用于处理完成后反向通知,通知为GET请求,请求格式:  callbackUrl+"?itemId=xxx&taskStatus=1"
+    
+    CallbackUrl   string `json:"callback_url,omitempty"`
+    
+
+    // APP数据类型 3-Batch MD5 4-Batch URL(暂不支持)
+    
+    DataType   int64 `json:"data_type,omitempty"`
+    
+
+    // 需要扫描的应用的具体信息列表
+    
+    ScanInfos  struct {
+        AppInfoBatchItem  []AppInfoBatchItem `json:"app_info_batch_item,omitempty"`
+    } `json:"scan_infos,omitempty"`
+    
+
+}
+*/
+
+// AppInfoBatch 
 type AppInfoBatch struct {
 
     // APP应用类型 1-android 2-ios(暂不支持)

@@ -11,11 +11,11 @@ taobao.openim.ioscert.sandbox.set
 
 设置开发环境证书
 */
-func TaobaoOpenimIoscertSandboxSet(clt *core.SDKClient, req *openim.TaobaoOpenimIoscertSandboxSetRequest, session string) (*openim.TaobaoOpenimIoscertSandboxSetResponse, error) {
+func TaobaoOpenimIoscertSandboxSet(clt *core.SDKClient, req *openim.TaobaoOpenimIoscertSandboxSetRequest, session string) (*openim.TaobaoOpenimIoscertSandboxSetAPIResponse, error) {
     var resp openim.TaobaoOpenimIoscertSandboxSetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

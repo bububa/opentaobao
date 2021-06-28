@@ -11,11 +11,11 @@ taobao.eticket.merchant.tbma.get
 
 码商查询淘宝码接口
 */
-func TaobaoEticketMerchantTbmaGet(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantTbmaGetRequest, session string) (*eticket.TaobaoEticketMerchantTbmaGetResponse, error) {
+func TaobaoEticketMerchantTbmaGet(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantTbmaGetRequest, session string) (*eticket.TaobaoEticketMerchantTbmaGetAPIResponse, error) {
     var resp eticket.TaobaoEticketMerchantTbmaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

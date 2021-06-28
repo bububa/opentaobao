@@ -11,11 +11,11 @@ alibaba.security.jaq.rp.cloud.start
 
 聚安全实人认证开始
 */
-func AlibabaSecurityJaqRpCloudStart(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudStartRequest, session string) (*security.AlibabaSecurityJaqRpCloudStartResponse, error) {
+func AlibabaSecurityJaqRpCloudStart(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpCloudStartRequest, session string) (*security.AlibabaSecurityJaqRpCloudStartAPIResponse, error) {
     var resp security.AlibabaSecurityJaqRpCloudStartAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

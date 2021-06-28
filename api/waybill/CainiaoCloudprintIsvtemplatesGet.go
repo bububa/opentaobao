@@ -11,11 +11,11 @@ cainiao.cloudprint.isvtemplates.get
 
 获取商家使用的标准模板
 */
-func CainiaoCloudprintIsvtemplatesGet(clt *core.SDKClient, req *waybill.CainiaoCloudprintIsvtemplatesGetRequest, session string) (*waybill.CainiaoCloudprintIsvtemplatesGetResponse, error) {
+func CainiaoCloudprintIsvtemplatesGet(clt *core.SDKClient, req *waybill.CainiaoCloudprintIsvtemplatesGetRequest, session string) (*waybill.CainiaoCloudprintIsvtemplatesGetAPIResponse, error) {
     var resp waybill.CainiaoCloudprintIsvtemplatesGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

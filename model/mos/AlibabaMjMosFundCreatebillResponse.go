@@ -12,8 +12,20 @@ alibaba.mj.mos.fund.createbill
 */
 type AlibabaMjMosFundCreatebillAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjMosFundCreatebillResponse `json:"alibaba_mj_mos_fund_createbill_response,omitempty"`
+    // Response *AlibabaMjMosFundCreatebillResponse `json:"alibaba_mj_mos_fund_createbill_response,omitempty"` 
+    AlibabaMjMosFundCreatebillResponse
 }
+
+/* model for simplify = false
+type AlibabaMjMosFundCreatebillResponse struct {
+
+    // data
+    
+    Data   string `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjMosFundCreatebillResponse struct {
 

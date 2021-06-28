@@ -12,8 +12,22 @@ alitrip.agent.flight.sell.ticketing.list
 */
 type AlitripAgentFlightSellTicketingListAPIResponse struct {
     model.CommonResponse
-    Response *AlitripAgentFlightSellTicketingListResponse `json:"alitrip_agent_flight_sell_ticketing_list_response,omitempty"`
+    // Response *AlitripAgentFlightSellTicketingListResponse `json:"alitrip_agent_flight_sell_ticketing_list_response,omitempty"` 
+    AlitripAgentFlightSellTicketingListResponse
 }
+
+/* model for simplify = false
+type AlitripAgentFlightSellTicketingListResponse struct {
+
+    // 系统自动生成
+    
+    Result  *struct {
+        PageDto  *PageDto `json:"page_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlitripAgentFlightSellTicketingListResponse struct {
 

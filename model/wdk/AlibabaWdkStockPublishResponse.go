@@ -12,8 +12,30 @@ alibaba.wdk.stock.publish
 */
 type AlibabaWdkStockPublishAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkStockPublishResponse `json:"alibaba_wdk_stock_publish_response,omitempty"`
+    // Response *AlibabaWdkStockPublishResponse `json:"alibaba_wdk_stock_publish_response,omitempty"` 
+    AlibabaWdkStockPublishResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkStockPublishResponse struct {
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // errorCode
+    
+    MsgCode   string `json:"msg_code,omitempty"`
+    
+
+    // errorMsg
+    
+    Message   string `json:"message,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkStockPublishResponse struct {
 

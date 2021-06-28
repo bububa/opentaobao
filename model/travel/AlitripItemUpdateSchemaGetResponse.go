@@ -12,8 +12,20 @@ alitrip.item.update.schema.get
 */
 type AlitripItemUpdateSchemaGetAPIResponse struct {
     model.CommonResponse
-    Response *AlitripItemUpdateSchemaGetResponse `json:"alitrip_item_update_schema_get_response,omitempty"`
+    // Response *AlitripItemUpdateSchemaGetResponse `json:"alitrip_item_update_schema_get_response,omitempty"` 
+    AlitripItemUpdateSchemaGetResponse
 }
+
+/* model for simplify = false
+type AlitripItemUpdateSchemaGetResponse struct {
+
+    // schema数据
+    
+    SchemaXmlFields   string `json:"schema_xml_fields,omitempty"`
+    
+
+}
+*/
 
 type AlitripItemUpdateSchemaGetResponse struct {
 

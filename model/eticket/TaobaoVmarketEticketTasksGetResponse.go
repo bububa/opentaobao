@@ -12,8 +12,27 @@ taobao.vmarket.eticket.tasks.get
 */
 type TaobaoVmarketEticketTasksGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVmarketEticketTasksGetResponse `json:"taobao_vmarket_eticket_tasks_get_response,omitempty"`
+    // Response *TaobaoVmarketEticketTasksGetResponse `json:"vmarket_eticket_tasks_get_response,omitempty"` 
+    TaobaoVmarketEticketTasksGetResponse
 }
+
+/* model for simplify = false
+type TaobaoVmarketEticketTasksGetResponse struct {
+
+    // 任务列表查询结果的总数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 任务列表查询结果信息
+    
+    EticketTasks  struct {
+        EticketTask  []EticketTask `json:"eticket_task,omitempty"`
+    } `json:"eticket_tasks,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVmarketEticketTasksGetResponse struct {
 

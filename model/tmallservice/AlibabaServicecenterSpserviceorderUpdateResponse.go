@@ -12,8 +12,22 @@ alibaba.servicecenter.spserviceorder.update
 */
 type AlibabaServicecenterSpserviceorderUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaServicecenterSpserviceorderUpdateResponse `json:"alibaba_servicecenter_spserviceorder_update_response,omitempty"`
+    // Response *AlibabaServicecenterSpserviceorderUpdateResponse `json:"alibaba_servicecenter_spserviceorder_update_response,omitempty"` 
+    AlibabaServicecenterSpserviceorderUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaServicecenterSpserviceorderUpdateResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaServicecenterSpserviceorderUpdateResult  *AlibabaServicecenterSpserviceorderUpdateResult `json:"alibaba_servicecenter_spserviceorder_update_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaServicecenterSpserviceorderUpdateResponse struct {
 

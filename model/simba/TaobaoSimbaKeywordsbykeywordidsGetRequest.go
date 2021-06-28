@@ -19,7 +19,7 @@ type TaobaoSimbaKeywordsbykeywordidsGetRequest struct {
     nick   string 
 
     // 关键词Id数组，最多200个；
-    keywordIds   []Number 
+    keywordIds   []int64 
 
 }
 
@@ -52,13 +52,13 @@ func (r TaobaoSimbaKeywordsbykeywordidsGetRequest) GetNick() string {
     return r.nick
 }
 
-func (r *TaobaoSimbaKeywordsbykeywordidsGetRequest) SetKeywordIds(keywordIds []Number) error {
+func (r *TaobaoSimbaKeywordsbykeywordidsGetRequest) SetKeywordIds(keywordIds []int64) error {
     r.keywordIds = keywordIds
     r.Set("keyword_ids", keywordIds)
     return nil
 }
 
-func (r TaobaoSimbaKeywordsbykeywordidsGetRequest) GetKeywordIds() []Number {
+func (r TaobaoSimbaKeywordsbykeywordidsGetRequest) GetKeywordIds() []int64 {
     return r.keywordIds
 }
 

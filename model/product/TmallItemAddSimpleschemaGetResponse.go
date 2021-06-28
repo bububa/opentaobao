@@ -12,8 +12,20 @@ tmall.item.add.simpleschema.get
 */
 type TmallItemAddSimpleschemaGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemAddSimpleschemaGetResponse `json:"tmall_item_add_simpleschema_get_response,omitempty"`
+    // Response *TmallItemAddSimpleschemaGetResponse `json:"tmall_item_add_simpleschema_get_response,omitempty"` 
+    TmallItemAddSimpleschemaGetResponse
 }
+
+/* model for simplify = false
+type TmallItemAddSimpleschemaGetResponse struct {
+
+    // 返回发布商品的规则文档
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallItemAddSimpleschemaGetResponse struct {
 

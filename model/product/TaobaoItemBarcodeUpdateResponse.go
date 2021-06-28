@@ -12,8 +12,22 @@ taobao.item.barcode.update
 */
 type TaobaoItemBarcodeUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemBarcodeUpdateResponse `json:"taobao_item_barcode_update_response,omitempty"`
+    // Response *TaobaoItemBarcodeUpdateResponse `json:"item_barcode_update_response,omitempty"` 
+    TaobaoItemBarcodeUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoItemBarcodeUpdateResponse struct {
+
+    // 商品结构里的num_iid，modified
+    
+    Item  *struct {
+        Item  *Item `json:"item,omitempty"`
+    } `json:"item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemBarcodeUpdateResponse struct {
 

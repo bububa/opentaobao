@@ -12,8 +12,22 @@ alibaba.alicom.order.exchange.create
 */
 type AlibabaAlicomOrderExchangeCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlicomOrderExchangeCreateResponse `json:"alibaba_alicom_order_exchange_create_response,omitempty"`
+    // Response *AlibabaAlicomOrderExchangeCreateResponse `json:"alibaba_alicom_order_exchange_create_response,omitempty"` 
+    AlibabaAlicomOrderExchangeCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaAlicomOrderExchangeCreateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlicomOrderExchangeCreateResponse struct {
 

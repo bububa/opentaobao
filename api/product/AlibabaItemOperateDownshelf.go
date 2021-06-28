@@ -11,11 +11,11 @@ alibaba.item.operate.downshelf
 
 商品下架
 */
-func AlibabaItemOperateDownshelf(clt *core.SDKClient, req *product.AlibabaItemOperateDownshelfRequest, session string) (*product.AlibabaItemOperateDownshelfResponse, error) {
+func AlibabaItemOperateDownshelf(clt *core.SDKClient, req *product.AlibabaItemOperateDownshelfRequest, session string) (*product.AlibabaItemOperateDownshelfAPIResponse, error) {
     var resp product.AlibabaItemOperateDownshelfAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

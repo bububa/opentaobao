@@ -12,8 +12,20 @@ taobao.top.auth.token.refresh
 */
 type TaobaoTopAuthTokenRefreshAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTopAuthTokenRefreshResponse `json:"taobao_top_auth_token_refresh_response,omitempty"`
+    // Response *TaobaoTopAuthTokenRefreshResponse `json:"top_auth_token_refresh_response,omitempty"` 
+    TaobaoTopAuthTokenRefreshResponse
 }
+
+/* model for simplify = false
+type TaobaoTopAuthTokenRefreshResponse struct {
+
+    // 返回的是json信息
+    
+    TokenResult   string `json:"token_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTopAuthTokenRefreshResponse struct {
 

@@ -12,8 +12,32 @@ slb.aliyuncs.com.DescribeBackendServers.2013-02-21
 */
 type SlbAliyuncsComDescribeBackendServers2013-02-21APIResponse struct {
     model.CommonResponse
-    Response *SlbAliyuncsComDescribeBackendServers2013-02-21Response `json:"slb_aliyuncs_com_DescribeBackendServers_2013-02-21_response,omitempty"`
+    // Response *SlbAliyuncsComDescribeBackendServers2013-02-21Response `json:"slb_aliyuncs_com_DescribeBackendServers_2013-02-21_response,omitempty"` 
+    SlbAliyuncsComDescribeBackendServers2013-02-21Response
 }
+
+/* model for simplify = false
+type SlbAliyuncsComDescribeBackendServers2013-02-21Response struct {
+
+    // request id
+    
+    Requestid   string `json:"requestid,omitempty"`
+    
+
+    // LoadBalancerId
+    
+    Loadbalancerid   string `json:"loadbalancerid,omitempty"`
+    
+
+    // Listeners
+    
+    Listeners  struct {
+        Listener  []Listener `json:"listener,omitempty"`
+    } `json:"listeners,omitempty"`
+    
+
+}
+*/
 
 type SlbAliyuncsComDescribeBackendServers2013-02-21Response struct {
 

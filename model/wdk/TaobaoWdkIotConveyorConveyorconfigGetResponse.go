@@ -12,8 +12,22 @@ taobao.wdk.iot.conveyor.conveyorconfig.get
 */
 type TaobaoWdkIotConveyorConveyorconfigGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWdkIotConveyorConveyorconfigGetResponse `json:"taobao_wdk_iot_conveyor_conveyorconfig_get_response,omitempty"`
+    // Response *TaobaoWdkIotConveyorConveyorconfigGetResponse `json:"wdk_iot_conveyor_conveyorconfig_get_response,omitempty"` 
+    TaobaoWdkIotConveyorConveyorconfigGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWdkIotConveyorConveyorconfigGetResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        HMResult  *HMResult `json:"hm_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWdkIotConveyorConveyorconfigGetResponse struct {
 

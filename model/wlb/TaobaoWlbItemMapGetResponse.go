@@ -12,8 +12,27 @@ taobao.wlb.item.map.get
 */
 type TaobaoWlbItemMapGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbItemMapGetResponse `json:"taobao_wlb_item_map_get_response,omitempty"`
+    // Response *TaobaoWlbItemMapGetResponse `json:"wlb_item_map_get_response,omitempty"` 
+    TaobaoWlbItemMapGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbItemMapGetResponse struct {
+
+    // 外部商品实体
+    
+    OutEntityItemList  struct {
+        OutEntityItem  []OutEntityItem `json:"out_entity_item,omitempty"`
+    } `json:"out_entity_item_list,omitempty"`
+    
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbItemMapGetResponse struct {
 

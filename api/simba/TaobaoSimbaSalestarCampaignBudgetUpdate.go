@@ -11,11 +11,11 @@ taobao.simba.salestar.campaign.budget.update
 
 更新一个推广计划的日限额
 */
-func TaobaoSimbaSalestarCampaignBudgetUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarCampaignBudgetUpdateRequest, session string) (*simba.TaobaoSimbaSalestarCampaignBudgetUpdateResponse, error) {
+func TaobaoSimbaSalestarCampaignBudgetUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarCampaignBudgetUpdateRequest, session string) (*simba.TaobaoSimbaSalestarCampaignBudgetUpdateAPIResponse, error) {
     var resp simba.TaobaoSimbaSalestarCampaignBudgetUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

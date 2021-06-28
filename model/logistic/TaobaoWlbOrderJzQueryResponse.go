@@ -12,8 +12,37 @@ taobao.wlb.order.jz.query
 */
 type TaobaoWlbOrderJzQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbOrderJzQueryResponse `json:"taobao_wlb_order_jz_query_response,omitempty"`
+    // Response *TaobaoWlbOrderJzQueryResponse `json:"wlb_order_jz_query_response,omitempty"` 
+    TaobaoWlbOrderJzQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbOrderJzQueryResponse struct {
+
+    // 错误编码
+    
+    ResultErrorCode   string `json:"result_error_code,omitempty"`
+    
+
+    // 错误信息
+    
+    ResultErrorMsg   string `json:"result_error_msg,omitempty"`
+    
+
+    // 结果信息
+    
+    Result  *struct {
+        JzTopDto  *JzTopDto `json:"jz_top_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+    // 是否成功
+    
+    ResultSuccess   bool `json:"result_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbOrderJzQueryResponse struct {
 

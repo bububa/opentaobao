@@ -12,8 +12,22 @@ alibaba.newretail.purchase.price.save
 */
 type AlibabaNewretailPurchasePriceSaveAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaNewretailPurchasePriceSaveResponse `json:"alibaba_newretail_purchase_price_save_response,omitempty"`
+    // Response *AlibabaNewretailPurchasePriceSaveResponse `json:"alibaba_newretail_purchase_price_save_response,omitempty"` 
+    AlibabaNewretailPurchasePriceSaveResponse
 }
+
+/* model for simplify = false
+type AlibabaNewretailPurchasePriceSaveResponse struct {
+
+    // 调用结果对象
+    
+    Result  *struct {
+        TopBaseResult  *TopBaseResult `json:"top_base_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaNewretailPurchasePriceSaveResponse struct {
 

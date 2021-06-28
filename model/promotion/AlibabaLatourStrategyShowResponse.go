@@ -12,8 +12,22 @@ alibaba.latour.strategy.show
 */
 type AlibabaLatourStrategyShowAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaLatourStrategyShowResponse `json:"alibaba_latour_strategy_show_response,omitempty"`
+    // Response *AlibabaLatourStrategyShowResponse `json:"alibaba_latour_strategy_show_response,omitempty"` 
+    AlibabaLatourStrategyShowResponse
 }
+
+/* model for simplify = false
+type AlibabaLatourStrategyShowResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        AlibabaLatourStrategyShowResult  *AlibabaLatourStrategyShowResult `json:"alibaba_latour_strategy_show_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaLatourStrategyShowResponse struct {
 

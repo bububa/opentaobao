@@ -11,11 +11,11 @@ taobao.tae.book.bill.get
 
 tae查询单笔虚拟账户明细
 */
-func TaobaoTaeBookBillGet(clt *core.SDKClient, req *bill.TaobaoTaeBookBillGetRequest, session string) (*bill.TaobaoTaeBookBillGetResponse, error) {
+func TaobaoTaeBookBillGet(clt *core.SDKClient, req *bill.TaobaoTaeBookBillGetRequest, session string) (*bill.TaobaoTaeBookBillGetAPIResponse, error) {
     var resp bill.TaobaoTaeBookBillGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

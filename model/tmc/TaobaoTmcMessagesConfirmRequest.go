@@ -19,10 +19,10 @@ type TaobaoTmcMessagesConfirmRequest struct {
     groupName   string 
 
     // 处理成功的消息ID列表 最大 200个ID
-    sMessageIds   []Number 
+    sMessageIds   []int64 
 
     // 处理失败的消息ID列表--已废弃，无需传此字段
-    fMessageIds   []Number 
+    fMessageIds   []int64 
 
 }
 
@@ -55,23 +55,23 @@ func (r TaobaoTmcMessagesConfirmRequest) GetGroupName() string {
     return r.groupName
 }
 
-func (r *TaobaoTmcMessagesConfirmRequest) SetSMessageIds(sMessageIds []Number) error {
+func (r *TaobaoTmcMessagesConfirmRequest) SetSMessageIds(sMessageIds []int64) error {
     r.sMessageIds = sMessageIds
     r.Set("s_message_ids", sMessageIds)
     return nil
 }
 
-func (r TaobaoTmcMessagesConfirmRequest) GetSMessageIds() []Number {
+func (r TaobaoTmcMessagesConfirmRequest) GetSMessageIds() []int64 {
     return r.sMessageIds
 }
 
-func (r *TaobaoTmcMessagesConfirmRequest) SetFMessageIds(fMessageIds []Number) error {
+func (r *TaobaoTmcMessagesConfirmRequest) SetFMessageIds(fMessageIds []int64) error {
     r.fMessageIds = fMessageIds
     r.Set("f_message_ids", fMessageIds)
     return nil
 }
 
-func (r TaobaoTmcMessagesConfirmRequest) GetFMessageIds() []Number {
+func (r TaobaoTmcMessagesConfirmRequest) GetFMessageIds() []int64 {
     return r.fMessageIds
 }
 

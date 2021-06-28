@@ -11,11 +11,11 @@ alibaba.aliqin.ta.number.singlecallbytts
 
 将语音验证码和语音通知发布至聚石塔渠道
 */
-func AlibabaAliqinTaNumberSinglecallbytts(clt *core.SDKClient, req *alicom.AlibabaAliqinTaNumberSinglecallbyttsRequest, session string) (*alicom.AlibabaAliqinTaNumberSinglecallbyttsResponse, error) {
+func AlibabaAliqinTaNumberSinglecallbytts(clt *core.SDKClient, req *alicom.AlibabaAliqinTaNumberSinglecallbyttsRequest, session string) (*alicom.AlibabaAliqinTaNumberSinglecallbyttsAPIResponse, error) {
     var resp alicom.AlibabaAliqinTaNumberSinglecallbyttsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

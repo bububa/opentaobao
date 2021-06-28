@@ -11,11 +11,11 @@ alibaba.xiami.api.radio.songs.get
 
 获取电台songs
 */
-func AlibabaXiamiApiRadioSongsGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiRadioSongsGetRequest, session string) (*xiami.AlibabaXiamiApiRadioSongsGetResponse, error) {
+func AlibabaXiamiApiRadioSongsGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiRadioSongsGetRequest, session string) (*xiami.AlibabaXiamiApiRadioSongsGetAPIResponse, error) {
     var resp xiami.AlibabaXiamiApiRadioSongsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

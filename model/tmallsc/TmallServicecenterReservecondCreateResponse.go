@@ -12,8 +12,30 @@ tmall.servicecenter.reservecond.create
 */
 type TmallServicecenterReservecondCreateAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterReservecondCreateResponse `json:"tmall_servicecenter_reservecond_create_response,omitempty"`
+    // Response *TmallServicecenterReservecondCreateResponse `json:"tmall_servicecenter_reservecond_create_response,omitempty"` 
+    TmallServicecenterReservecondCreateResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterReservecondCreateResponse struct {
+
+    // 是否成功
+    
+    MsgSuccess   bool `json:"msg_success,omitempty"`
+    
+
+    // 返回信息
+    
+    MsgInfo   string `json:"msg_info,omitempty"`
+    
+
+    // 返回code
+    
+    MsgCode   string `json:"msg_code,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterReservecondCreateResponse struct {
 

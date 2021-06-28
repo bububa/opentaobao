@@ -12,8 +12,22 @@ alibaba.xiami.api.radio.songs.get
 */
 type AlibabaXiamiApiRadioSongsGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaXiamiApiRadioSongsGetResponse `json:"alibaba_xiami_api_radio_songs_get_response,omitempty"`
+    // Response *AlibabaXiamiApiRadioSongsGetResponse `json:"alibaba_xiami_api_radio_songs_get_response,omitempty"` 
+    AlibabaXiamiApiRadioSongsGetResponse
 }
+
+/* model for simplify = false
+type AlibabaXiamiApiRadioSongsGetResponse struct {
+
+    // 歌曲列表
+    
+    Data  struct {
+        StandardSong  []StandardSong `json:"standard_song,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaXiamiApiRadioSongsGetResponse struct {
 

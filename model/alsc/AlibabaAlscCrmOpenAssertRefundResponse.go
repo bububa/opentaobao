@@ -12,8 +12,22 @@ alibaba.alsc.crm.open.assert.refund
 */
 type AlibabaAlscCrmOpenAssertRefundAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmOpenAssertRefundResponse `json:"alibaba_alsc_crm_open_assert_refund_response,omitempty"`
+    // Response *AlibabaAlscCrmOpenAssertRefundResponse `json:"alibaba_alsc_crm_open_assert_refund_response,omitempty"` 
+    AlibabaAlscCrmOpenAssertRefundResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmOpenAssertRefundResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmOpenAssertRefundResponse struct {
 

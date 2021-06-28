@@ -11,11 +11,11 @@ aliexpress.payment.exchange.get
 
 提供国际汇率服务
 */
-func AliexpressPaymentExchangeGet(clt *core.SDKClient, req *trade.AliexpressPaymentExchangeGetRequest, session string) (*trade.AliexpressPaymentExchangeGetResponse, error) {
+func AliexpressPaymentExchangeGet(clt *core.SDKClient, req *trade.AliexpressPaymentExchangeGetRequest, session string) (*trade.AliexpressPaymentExchangeGetAPIResponse, error) {
     var resp trade.AliexpressPaymentExchangeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

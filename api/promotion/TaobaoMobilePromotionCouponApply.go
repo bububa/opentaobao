@@ -11,11 +11,11 @@ taobao.mobile.promotion.coupon.apply
 
 优惠券领取
 */
-func TaobaoMobilePromotionCouponApply(clt *core.SDKClient, req *promotion.TaobaoMobilePromotionCouponApplyRequest, session string) (*promotion.TaobaoMobilePromotionCouponApplyResponse, error) {
+func TaobaoMobilePromotionCouponApply(clt *core.SDKClient, req *promotion.TaobaoMobilePromotionCouponApplyRequest, session string) (*promotion.TaobaoMobilePromotionCouponApplyAPIResponse, error) {
     var resp promotion.TaobaoMobilePromotionCouponApplyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

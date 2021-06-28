@@ -50,7 +50,7 @@ type AlitripTicketProductUploadRequest struct {
     title   string 
 
     // 可选，商品主图，最多支持5张。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为png、jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。
-    picUrls   []String 
+    picUrls   []string 
 
     // 可选，商品详情描述，不超过50000个字符。详情描述支持纯文本描述，也支持html格式的详情描述。html格式的详情描述中 图片链接支持外链图片（必须外网可访问， 且格式为png、jpg或jpeg，大小在500k以内）和淘宝图片空间链接。
     desc   string 
@@ -186,13 +186,13 @@ func (r AlitripTicketProductUploadRequest) GetTitle() string {
     return r.title
 }
 
-func (r *AlitripTicketProductUploadRequest) SetPicUrls(picUrls []String) error {
+func (r *AlitripTicketProductUploadRequest) SetPicUrls(picUrls []string) error {
     r.picUrls = picUrls
     r.Set("pic_urls", picUrls)
     return nil
 }
 
-func (r AlitripTicketProductUploadRequest) GetPicUrls() []String {
+func (r AlitripTicketProductUploadRequest) GetPicUrls() []string {
     return r.picUrls
 }
 

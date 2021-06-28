@@ -12,8 +12,22 @@ alibaba.wdk.ums.retrieve.confirm
 */
 type AlibabaWdkUmsRetrieveConfirmAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkUmsRetrieveConfirmResponse `json:"alibaba_wdk_ums_retrieve_confirm_response,omitempty"`
+    // Response *AlibabaWdkUmsRetrieveConfirmResponse `json:"alibaba_wdk_ums_retrieve_confirm_response,omitempty"` 
+    AlibabaWdkUmsRetrieveConfirmResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkUmsRetrieveConfirmResponse struct {
+
+    // result
+    
+    Result  *struct {
+        UtmsResult  *UtmsResult `json:"utms_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkUmsRetrieveConfirmResponse struct {
 

@@ -12,8 +12,22 @@ taobao.inventory.warehouse.manage
 */
 type TaobaoInventoryWarehouseManageAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoInventoryWarehouseManageResponse `json:"taobao_inventory_warehouse_manage_response,omitempty"`
+    // Response *TaobaoInventoryWarehouseManageResponse `json:"inventory_warehouse_manage_response,omitempty"` 
+    TaobaoInventoryWarehouseManageResponse
 }
+
+/* model for simplify = false
+type TaobaoInventoryWarehouseManageResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoInventoryWarehouseManageResult  *TaobaoInventoryWarehouseManageResult `json:"taobao_inventory_warehouse_manage_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoInventoryWarehouseManageResponse struct {
 

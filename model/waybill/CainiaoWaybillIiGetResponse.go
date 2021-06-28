@@ -12,8 +12,22 @@ cainiao.waybill.ii.get
 */
 type CainiaoWaybillIiGetAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoWaybillIiGetResponse `json:"cainiao_waybill_ii_get_response,omitempty"`
+    // Response *CainiaoWaybillIiGetResponse `json:"cainiao_waybill_ii_get_response,omitempty"` 
+    CainiaoWaybillIiGetResponse
 }
+
+/* model for simplify = false
+type CainiaoWaybillIiGetResponse struct {
+
+    // 系统自动生成
+    
+    Modules  struct {
+        WaybillCloudPrintResponse  []WaybillCloudPrintResponse `json:"waybill_cloud_print_response,omitempty"`
+    } `json:"modules,omitempty"`
+    
+
+}
+*/
 
 type CainiaoWaybillIiGetResponse struct {
 

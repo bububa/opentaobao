@@ -12,8 +12,22 @@ taobao.baike.import.zhubao.data
 */
 type TaobaoBaikeImportZhubaoDataAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaikeImportZhubaoDataResponse `json:"taobao_baike_import_zhubao_data_response,omitempty"`
+    // Response *TaobaoBaikeImportZhubaoDataResponse `json:"baike_import_zhubao_data_response,omitempty"` 
+    TaobaoBaikeImportZhubaoDataResponse
 }
+
+/* model for simplify = false
+type TaobaoBaikeImportZhubaoDataResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoBaikeImportZhubaoDataResult  *TaobaoBaikeImportZhubaoDataResult `json:"taobao_baike_import_zhubao_data_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaikeImportZhubaoDataResponse struct {
 

@@ -12,8 +12,22 @@ taobao.openim.tribe.create
 */
 type TaobaoOpenimTribeCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribeCreateResponse `json:"taobao_openim_tribe_create_response,omitempty"`
+    // Response *TaobaoOpenimTribeCreateResponse `json:"openim_tribe_create_response,omitempty"` 
+    TaobaoOpenimTribeCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribeCreateResponse struct {
+
+    // 创建群的信息
+    
+    TribeInfo  *struct {
+        TribeInfo  *TribeInfo `json:"tribe_info,omitempty"`
+    } `json:"tribe_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribeCreateResponse struct {
 

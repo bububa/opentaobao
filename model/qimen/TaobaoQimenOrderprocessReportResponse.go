@@ -12,8 +12,22 @@ WMS调用奇门的接口,将订单在仓库的状态回传给ERP；场景说明�
 */
 type TaobaoQimenOrderprocessReportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenOrderprocessReportResponse `json:"taobao_qimen_orderprocess_report_response,omitempty"`
+    // Response *TaobaoQimenOrderprocessReportResponse `json:"qimen_orderprocess_report_response,omitempty"` 
+    TaobaoQimenOrderprocessReportResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenOrderprocessReportResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenOrderprocessReportResponse struct {
 

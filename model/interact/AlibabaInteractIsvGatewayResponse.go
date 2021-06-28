@@ -12,8 +12,20 @@ isv能够调用jae本身的server
 */
 type AlibabaInteractIsvGatewayAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractIsvGatewayResponse `json:"alibaba_interact_isv_gateway_response,omitempty"`
+    // Response *AlibabaInteractIsvGatewayResponse `json:"alibaba_interact_isv_gateway_response,omitempty"` 
+    AlibabaInteractIsvGatewayResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractIsvGatewayResponse struct {
+
+    // ret=0
+    
+    Ret   string `json:"ret,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractIsvGatewayResponse struct {
 

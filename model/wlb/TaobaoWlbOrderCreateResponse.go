@@ -12,8 +12,25 @@ taobao.wlb.order.create
 */
 type TaobaoWlbOrderCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbOrderCreateResponse `json:"taobao_wlb_order_create_response,omitempty"`
+    // Response *TaobaoWlbOrderCreateResponse `json:"wlb_order_create_response,omitempty"` 
+    TaobaoWlbOrderCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbOrderCreateResponse struct {
+
+    // 物流宝订单创建成功后，返回物流宝的订单编号；如果订单创建失败，该字段为空。
+    
+    OrderCode   string `json:"order_code,omitempty"`
+    
+
+    // 订单创建时间
+    
+    CreateTime   string `json:"create_time,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbOrderCreateResponse struct {
 

@@ -12,8 +12,20 @@ taobao.scitem.map.delete
 */
 type TaobaoScitemMapDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoScitemMapDeleteResponse `json:"taobao_scitem_map_delete_response,omitempty"`
+    // Response *TaobaoScitemMapDeleteResponse `json:"scitem_map_delete_response,omitempty"` 
+    TaobaoScitemMapDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoScitemMapDeleteResponse struct {
+
+    // 失效条数
+    
+    Module   int64 `json:"module,omitempty"`
+    
+
+}
+*/
 
 type TaobaoScitemMapDeleteResponse struct {
 

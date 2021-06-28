@@ -11,11 +11,11 @@ taobao.wdk.equipment.conveyor.hardwarestatuslog.get
 
 硬件状态变化日志查询
 */
-func TaobaoWdkEquipmentConveyorHardwarestatuslogGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetResponse, error) {
+func TaobaoWdkEquipmentConveyorHardwarestatuslogGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIResponse, error) {
     var resp wdk.TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

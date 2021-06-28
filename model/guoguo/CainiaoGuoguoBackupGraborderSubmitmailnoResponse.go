@@ -12,8 +12,22 @@ cainiao.guoguo.backup.graborder.submitmailno
 */
 type CainiaoGuoguoBackupGraborderSubmitmailnoAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoGuoguoBackupGraborderSubmitmailnoResponse `json:"cainiao_guoguo_backup_graborder_submitmailno_response,omitempty"`
+    // Response *CainiaoGuoguoBackupGraborderSubmitmailnoResponse `json:"cainiao_guoguo_backup_graborder_submitmailno_response,omitempty"` 
+    CainiaoGuoguoBackupGraborderSubmitmailnoResponse
 }
+
+/* model for simplify = false
+type CainiaoGuoguoBackupGraborderSubmitmailnoResponse struct {
+
+    // 返回result对象
+    
+    Result  *struct {
+        CainiaoGuoguoBackupGraborderSubmitmailnoResult  *CainiaoGuoguoBackupGraborderSubmitmailnoResult `json:"cainiao_guoguo_backup_graborder_submitmailno_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoGuoguoBackupGraborderSubmitmailnoResponse struct {
 

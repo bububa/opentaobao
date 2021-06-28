@@ -11,11 +11,11 @@ alibaba.wdk.fulfill.box.post.back.box
 
 RT收箱后，信息同步履约，履约同通知UMS 容器管理
 */
-func AlibabaWdkFulfillBoxPostBackBox(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillBoxPostBackBoxRequest, session string) (*wdk.AlibabaWdkFulfillBoxPostBackBoxResponse, error) {
+func AlibabaWdkFulfillBoxPostBackBox(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillBoxPostBackBoxRequest, session string) (*wdk.AlibabaWdkFulfillBoxPostBackBoxAPIResponse, error) {
     var resp wdk.AlibabaWdkFulfillBoxPostBackBoxAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

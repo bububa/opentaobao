@@ -12,8 +12,22 @@ alibaba.wdk.marketing.open.heartbeat
 */
 type AlibabaWdkMarketingOpenHeartbeatAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingOpenHeartbeatResponse `json:"alibaba_wdk_marketing_open_heartbeat_response,omitempty"`
+    // Response *AlibabaWdkMarketingOpenHeartbeatResponse `json:"alibaba_wdk_marketing_open_heartbeat_response,omitempty"` 
+    AlibabaWdkMarketingOpenHeartbeatResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingOpenHeartbeatResponse struct {
+
+    // 结果信息
+    
+    Result  *struct {
+        WdkMarketOpenResult  *WdkMarketOpenResult `json:"wdk_market_open_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingOpenHeartbeatResponse struct {
 

@@ -11,11 +11,11 @@ taobao.qimen.combineitem.delete
 
 组合货品删除
 */
-func TaobaoQimenCombineitemDelete(clt *core.SDKClient, req *qimen.TaobaoQimenCombineitemDeleteRequest, session string) (*qimen.TaobaoQimenCombineitemDeleteResponse, error) {
+func TaobaoQimenCombineitemDelete(clt *core.SDKClient, req *qimen.TaobaoQimenCombineitemDeleteRequest, session string) (*qimen.TaobaoQimenCombineitemDeleteAPIResponse, error) {
     var resp qimen.TaobaoQimenCombineitemDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

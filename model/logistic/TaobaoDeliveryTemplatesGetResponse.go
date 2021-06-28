@@ -12,8 +12,27 @@ taobao.delivery.templates.get
 */
 type TaobaoDeliveryTemplatesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoDeliveryTemplatesGetResponse `json:"taobao_delivery_templates_get_response,omitempty"`
+    // Response *TaobaoDeliveryTemplatesGetResponse `json:"delivery_templates_get_response,omitempty"` 
+    TaobaoDeliveryTemplatesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoDeliveryTemplatesGetResponse struct {
+
+    // 运费模板列表
+    
+    DeliveryTemplates  struct {
+        DeliveryTemplate  []DeliveryTemplate `json:"delivery_template,omitempty"`
+    } `json:"delivery_templates,omitempty"`
+    
+
+    // 获得到符合条件的结果总数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoDeliveryTemplatesGetResponse struct {
 

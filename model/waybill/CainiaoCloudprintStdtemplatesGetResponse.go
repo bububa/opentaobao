@@ -12,8 +12,22 @@ cainiao.cloudprint.stdtemplates.get
 */
 type CainiaoCloudprintStdtemplatesGetAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCloudprintStdtemplatesGetResponse `json:"cainiao_cloudprint_stdtemplates_get_response,omitempty"`
+    // Response *CainiaoCloudprintStdtemplatesGetResponse `json:"cainiao_cloudprint_stdtemplates_get_response,omitempty"` 
+    CainiaoCloudprintStdtemplatesGetResponse
 }
+
+/* model for simplify = false
+type CainiaoCloudprintStdtemplatesGetResponse struct {
+
+    // 结果集
+    
+    Result  *struct {
+        CloudPrintBaseResult  *CloudPrintBaseResult `json:"cloud_print_base_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCloudprintStdtemplatesGetResponse struct {
 

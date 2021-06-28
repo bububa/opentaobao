@@ -12,8 +12,20 @@ pos机创建订单前获取餐饮取餐号
 */
 type WdkMealPosGetfetchmealcodeAPIResponse struct {
     model.CommonResponse
-    Response *WdkMealPosGetfetchmealcodeResponse `json:"wdk_meal_pos_getfetchmealcode_response,omitempty"`
+    // Response *WdkMealPosGetfetchmealcodeResponse `json:"wdk_meal_pos_getfetchmealcode_response,omitempty"` 
+    WdkMealPosGetfetchmealcodeResponse
 }
+
+/* model for simplify = false
+type WdkMealPosGetfetchmealcodeResponse struct {
+
+    // 取餐号
+    
+    FetchMealCode   string `json:"fetch_meal_code,omitempty"`
+    
+
+}
+*/
 
 type WdkMealPosGetfetchmealcodeResponse struct {
 

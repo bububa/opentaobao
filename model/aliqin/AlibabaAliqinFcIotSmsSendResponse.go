@@ -12,8 +12,22 @@ alibaba.aliqin.fc.iot.sms.send
 */
 type AlibabaAliqinFcIotSmsSendAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcIotSmsSendResponse `json:"alibaba_aliqin_fc_iot_sms_send_response,omitempty"`
+    // Response *AlibabaAliqinFcIotSmsSendResponse `json:"alibaba_aliqin_fc_iot_sms_send_response,omitempty"` 
+    AlibabaAliqinFcIotSmsSendResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcIotSmsSendResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        AlibabaAliqinFcIotSmsSendBizResult  *AlibabaAliqinFcIotSmsSendBizResult `json:"alibaba_aliqin_fc_iot_sms_send_biz_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcIotSmsSendResponse struct {
 

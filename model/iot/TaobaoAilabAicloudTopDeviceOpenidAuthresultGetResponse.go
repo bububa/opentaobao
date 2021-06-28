@@ -12,8 +12,22 @@ taobao.ailab.aicloud.top.device.openid.authresult.get
 */
 type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetResponse `json:"taobao_ailab_aicloud_top_device_openid_authresult_get_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetResponse `json:"ailab_aicloud_top_device_openid_authresult_get_response,omitempty"` 
+    TaobaoAilabAicloudTopDeviceOpenidAuthresultGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetResponse struct {
+
+    // 系统自动生成
+    
+    Result  *struct {
+        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetResponse struct {
 

@@ -12,8 +12,20 @@ OPENIM群成员退出
 */
 type TaobaoOpenimTribeQuitAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribeQuitResponse `json:"taobao_openim_tribe_quit_response,omitempty"`
+    // Response *TaobaoOpenimTribeQuitResponse `json:"openim_tribe_quit_response,omitempty"` 
+    TaobaoOpenimTribeQuitResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribeQuitResponse struct {
+
+    // 群服务code
+    
+    TribeCode   int64 `json:"tribe_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribeQuitResponse struct {
 

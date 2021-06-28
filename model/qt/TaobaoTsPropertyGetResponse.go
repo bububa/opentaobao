@@ -12,8 +12,22 @@ taobao.ts.property.get
 */
 type TaobaoTsPropertyGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTsPropertyGetResponse `json:"taobao_ts_property_get_response,omitempty"`
+    // Response *TaobaoTsPropertyGetResponse `json:"ts_property_get_response,omitempty"` 
+    TaobaoTsPropertyGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTsPropertyGetResponse struct {
+
+    // 服务收费项相关属性对象
+    
+    ServiceItemProperty  *struct {
+        ServiceItemProperty  *ServiceItemProperty `json:"service_item_property,omitempty"`
+    } `json:"service_item_property,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTsPropertyGetResponse struct {
 

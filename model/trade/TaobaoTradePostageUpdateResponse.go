@@ -13,8 +13,22 @@ taobao.trade.postage.update
 */
 type TaobaoTradePostageUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradePostageUpdateResponse `json:"taobao_trade_postage_update_response,omitempty"`
+    // Response *TaobaoTradePostageUpdateResponse `json:"trade_postage_update_response,omitempty"` 
+    TaobaoTradePostageUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoTradePostageUpdateResponse struct {
+
+    // 返回trade类型，其中包含修改时间modified，修改邮费post_fee，修改后的总费用total_fee和买家实付款payment
+    
+    Trade  *struct {
+        Trade  *Trade `json:"trade,omitempty"`
+    } `json:"trade,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradePostageUpdateResponse struct {
 

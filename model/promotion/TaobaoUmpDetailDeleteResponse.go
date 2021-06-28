@@ -12,8 +12,20 @@ taobao.ump.detail.delete
 */
 type TaobaoUmpDetailDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpDetailDeleteResponse `json:"taobao_ump_detail_delete_response,omitempty"`
+    // Response *TaobaoUmpDetailDeleteResponse `json:"ump_detail_delete_response,omitempty"` 
+    TaobaoUmpDetailDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpDetailDeleteResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpDetailDeleteResponse struct {
 

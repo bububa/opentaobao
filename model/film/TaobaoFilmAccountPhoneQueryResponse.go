@@ -12,8 +12,22 @@ taobao.film.account.phone.query
 */
 type TaobaoFilmAccountPhoneQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFilmAccountPhoneQueryResponse `json:"taobao_film_account_phone_query_response,omitempty"`
+    // Response *TaobaoFilmAccountPhoneQueryResponse `json:"film_account_phone_query_response,omitempty"` 
+    TaobaoFilmAccountPhoneQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoFilmAccountPhoneQueryResponse struct {
+
+    // 返回对象
+    
+    Result  *struct {
+        ResultListModel  *ResultListModel `json:"result_list_model,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFilmAccountPhoneQueryResponse struct {
 

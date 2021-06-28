@@ -12,8 +12,30 @@ alibaba.mos.pos.alarm
 */
 type AlibabaMosPosAlarmAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosPosAlarmResponse `json:"alibaba_mos_pos_alarm_response,omitempty"`
+    // Response *AlibabaMosPosAlarmResponse `json:"alibaba_mos_pos_alarm_response,omitempty"` 
+    AlibabaMosPosAlarmResponse
 }
+
+/* model for simplify = false
+type AlibabaMosPosAlarmResponse struct {
+
+    // errMsg
+    
+    ErrorMessage   string `json:"error_message,omitempty"`
+    
+
+    // errCode
+    
+    SubErrCode   int64 `json:"sub_err_code,omitempty"`
+    
+
+    // success/false
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosPosAlarmResponse struct {
 

@@ -12,8 +12,22 @@ taobao.logistics.address.reachablebatch.get
 */
 type TaobaoLogisticsAddressReachablebatchGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsAddressReachablebatchGetResponse `json:"taobao_logistics_address_reachablebatch_get_response,omitempty"`
+    // Response *TaobaoLogisticsAddressReachablebatchGetResponse `json:"logistics_address_reachablebatch_get_response,omitempty"` 
+    TaobaoLogisticsAddressReachablebatchGetResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsAddressReachablebatchGetResponse struct {
+
+    // 物流是否可达结果列表
+    
+    ReachableResults  struct {
+        AddressReachableTopResult  []AddressReachableTopResult `json:"address_reachable_top_result,omitempty"`
+    } `json:"reachable_results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsAddressReachablebatchGetResponse struct {
 

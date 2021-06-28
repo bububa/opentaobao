@@ -12,8 +12,27 @@ taobao.wlb.stores.baseinfo.get
 */
 type TaobaoWlbStoresBaseinfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbStoresBaseinfoGetResponse `json:"taobao_wlb_stores_baseinfo_get_response,omitempty"`
+    // Response *TaobaoWlbStoresBaseinfoGetResponse `json:"wlb_stores_baseinfo_get_response,omitempty"` 
+    TaobaoWlbStoresBaseinfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbStoresBaseinfoGetResponse struct {
+
+    // 仓库列表
+    
+    StoreInfoList  struct {
+        StoreInfo  []StoreInfo `json:"store_info,omitempty"`
+    } `json:"store_info_list,omitempty"`
+    
+
+    // 返回的总数
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbStoresBaseinfoGetResponse struct {
 

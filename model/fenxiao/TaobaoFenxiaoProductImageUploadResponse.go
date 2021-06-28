@@ -12,8 +12,25 @@ taobao.fenxiao.product.image.upload
 */
 type TaobaoFenxiaoProductImageUploadAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductImageUploadResponse `json:"taobao_fenxiao_product_image_upload_response,omitempty"`
+    // Response *TaobaoFenxiaoProductImageUploadResponse `json:"fenxiao_product_image_upload_response,omitempty"` 
+    TaobaoFenxiaoProductImageUploadResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductImageUploadResponse struct {
+
+    // 操作是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+    // 操作时间
+    
+    Created   string `json:"created,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoProductImageUploadResponse struct {
 

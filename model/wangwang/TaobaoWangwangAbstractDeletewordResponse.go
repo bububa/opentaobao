@@ -12,8 +12,25 @@ taobao.wangwang.abstract.deleteword
 */
 type TaobaoWangwangAbstractDeletewordAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWangwangAbstractDeletewordResponse `json:"taobao_wangwang_abstract_deleteword_response,omitempty"`
+    // Response *TaobaoWangwangAbstractDeletewordResponse `json:"wangwang_abstract_deleteword_response,omitempty"` 
+    TaobaoWangwangAbstractDeletewordResponse
 }
+
+/* model for simplify = false
+type TaobaoWangwangAbstractDeletewordResponse struct {
+
+    // 0或-1，表示错误或正确，错误时有错误信息
+    
+    RetCode   int64 `json:"ret_code,omitempty"`
+    
+
+    // 例如单词长度太长等
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWangwangAbstractDeletewordResponse struct {
 

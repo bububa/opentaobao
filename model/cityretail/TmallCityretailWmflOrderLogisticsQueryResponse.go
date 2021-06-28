@@ -12,8 +12,22 @@ tmall.cityretail.wmfl.order.logistics.query
 */
 type TmallCityretailWmflOrderLogisticsQueryAPIResponse struct {
     model.CommonResponse
-    Response *TmallCityretailWmflOrderLogisticsQueryResponse `json:"tmall_cityretail_wmfl_order_logistics_query_response,omitempty"`
+    // Response *TmallCityretailWmflOrderLogisticsQueryResponse `json:"tmall_cityretail_wmfl_order_logistics_query_response,omitempty"` 
+    TmallCityretailWmflOrderLogisticsQueryResponse
 }
+
+/* model for simplify = false
+type TmallCityretailWmflOrderLogisticsQueryResponse struct {
+
+    // 返回对象
+    
+    Result  *struct {
+        WorkResult  *WorkResult `json:"work_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallCityretailWmflOrderLogisticsQueryResponse struct {
 

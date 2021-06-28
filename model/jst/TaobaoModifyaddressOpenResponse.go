@@ -12,8 +12,30 @@ taobao.modifyaddress.open
 */
 type TaobaoModifyaddressOpenAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoModifyaddressOpenResponse `json:"taobao_modifyaddress_open_response,omitempty"`
+    // Response *TaobaoModifyaddressOpenResponse `json:"modifyaddress_open_response,omitempty"` 
+    TaobaoModifyaddressOpenResponse
 }
+
+/* model for simplify = false
+type TaobaoModifyaddressOpenResponse struct {
+
+    // 是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+    // 错误信息
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // 错误码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoModifyaddressOpenResponse struct {
 

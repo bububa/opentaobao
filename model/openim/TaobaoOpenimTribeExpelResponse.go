@@ -12,8 +12,20 @@ OPENIM群踢出成员
 */
 type TaobaoOpenimTribeExpelAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribeExpelResponse `json:"taobao_openim_tribe_expel_response,omitempty"`
+    // Response *TaobaoOpenimTribeExpelResponse `json:"openim_tribe_expel_response,omitempty"` 
+    TaobaoOpenimTribeExpelResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribeExpelResponse struct {
+
+    // 群服务code
+    
+    TribeCode   int64 `json:"tribe_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribeExpelResponse struct {
 

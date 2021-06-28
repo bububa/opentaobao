@@ -1,6 +1,68 @@
 package trade
 
 // ReceiverLogistics 
+/* model for simplify = false
+type ReceiverLogistics struct {
+
+    // 手机号码
+    
+    MobilePhone   string `json:"mobile_phone,omitempty"`
+    
+
+    // 地区名
+    
+    AreaName   string `json:"area_name,omitempty"`
+    
+
+    // 地区码
+    
+    AreaCode   int64 `json:"area_code,omitempty"`
+    
+
+    // divisionId
+    
+    DivisionId   int64 `json:"division_id,omitempty"`
+    
+
+    // 城市名
+    
+    CityName   string `json:"city_name,omitempty"`
+    
+
+    // 省份码
+    
+    ProvinceCode   int64 `json:"province_code,omitempty"`
+    
+
+    // 收货人
+    
+    ReceiverFullName   string `json:"receiver_full_name,omitempty"`
+    
+
+    // 城市码
+    
+    CityCode   int64 `json:"city_code,omitempty"`
+    
+
+    // 省份名
+    
+    ProvinceName   string `json:"province_name,omitempty"`
+    
+
+    // （忽略）
+    
+    WholeAddress   string `json:"whole_address,omitempty"`
+    
+
+    // 收货地址
+    
+    DetailAddress   string `json:"detail_address,omitempty"`
+    
+
+}
+*/
+
+// ReceiverLogistics 
 type ReceiverLogistics struct {
 
     // 手机号码

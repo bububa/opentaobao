@@ -12,8 +12,20 @@ taobao.simba.account.balance.get
 */
 type TaobaoSimbaAccountBalanceGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaAccountBalanceGetResponse `json:"taobao_simba_account_balance_get_response,omitempty"`
+    // Response *TaobaoSimbaAccountBalanceGetResponse `json:"simba_account_balance_get_response,omitempty"` 
+    TaobaoSimbaAccountBalanceGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaAccountBalanceGetResponse struct {
+
+    // 实时余额，”元”为单位
+    
+    Balance   string `json:"balance,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaAccountBalanceGetResponse struct {
 

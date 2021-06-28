@@ -15,8 +15,20 @@ taobao.promotionmisc.common.item.detail.update
 */
 type TaobaoPromotionmiscCommonItemDetailUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionmiscCommonItemDetailUpdateResponse `json:"taobao_promotionmisc_common_item_detail_update_response,omitempty"`
+    // Response *TaobaoPromotionmiscCommonItemDetailUpdateResponse `json:"promotionmisc_common_item_detail_update_response,omitempty"` 
+    TaobaoPromotionmiscCommonItemDetailUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionmiscCommonItemDetailUpdateResponse struct {
+
+    // 是否修改成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionmiscCommonItemDetailUpdateResponse struct {
 

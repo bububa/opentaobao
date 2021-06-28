@@ -12,8 +12,20 @@ taobao.wlb.item.add
 */
 type TaobaoWlbItemAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbItemAddResponse `json:"taobao_wlb_item_add_response,omitempty"`
+    // Response *TaobaoWlbItemAddResponse `json:"wlb_item_add_response,omitempty"` 
+    TaobaoWlbItemAddResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbItemAddResponse struct {
+
+    // 新增的商品
+    
+    ItemId   string `json:"item_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbItemAddResponse struct {
 

@@ -11,11 +11,11 @@ tmall.servicecenter.service.type.queryall
 
 查询天猫服务类型列表
 */
-func TmallServicecenterServiceTypeQueryall(clt *core.SDKClient, req *tmallservice.TmallServicecenterServiceTypeQueryallRequest, session string) (*tmallservice.TmallServicecenterServiceTypeQueryallResponse, error) {
+func TmallServicecenterServiceTypeQueryall(clt *core.SDKClient, req *tmallservice.TmallServicecenterServiceTypeQueryallRequest, session string) (*tmallservice.TmallServicecenterServiceTypeQueryallAPIResponse, error) {
     var resp tmallservice.TmallServicecenterServiceTypeQueryallAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

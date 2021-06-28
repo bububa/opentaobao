@@ -11,11 +11,11 @@ tmall.servicecenter.workcard.reassign
 
 工单改派门店
 */
-func TmallServicecenterWorkcardReassign(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardReassignRequest, session string) (*tmallservice.TmallServicecenterWorkcardReassignResponse, error) {
+func TmallServicecenterWorkcardReassign(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardReassignRequest, session string) (*tmallservice.TmallServicecenterWorkcardReassignAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardReassignAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -28,10 +28,10 @@ type TaobaoFenxiaoProductGradepriceUpdateRequest struct {
     targetType   string 
 
     // 会员等级的id或者分销商id，例如：”1001,2001,1002”
-    ids   []Number 
+    ids   []int64 
 
     // 优惠价格,大小为0到100000000之间的整数或两位小数，例：优惠价格为：100元2角5分，传入的参数应写成：100.25
-    prices   []String 
+    prices   []string 
 
 }
 
@@ -94,23 +94,23 @@ func (r TaobaoFenxiaoProductGradepriceUpdateRequest) GetTargetType() string {
     return r.targetType
 }
 
-func (r *TaobaoFenxiaoProductGradepriceUpdateRequest) SetIds(ids []Number) error {
+func (r *TaobaoFenxiaoProductGradepriceUpdateRequest) SetIds(ids []int64) error {
     r.ids = ids
     r.Set("ids", ids)
     return nil
 }
 
-func (r TaobaoFenxiaoProductGradepriceUpdateRequest) GetIds() []Number {
+func (r TaobaoFenxiaoProductGradepriceUpdateRequest) GetIds() []int64 {
     return r.ids
 }
 
-func (r *TaobaoFenxiaoProductGradepriceUpdateRequest) SetPrices(prices []String) error {
+func (r *TaobaoFenxiaoProductGradepriceUpdateRequest) SetPrices(prices []string) error {
     r.prices = prices
     r.Set("prices", prices)
     return nil
 }
 
-func (r TaobaoFenxiaoProductGradepriceUpdateRequest) GetPrices() []String {
+func (r TaobaoFenxiaoProductGradepriceUpdateRequest) GetPrices() []string {
     return r.prices
 }
 

@@ -16,7 +16,7 @@ type AlibabaLegalSuitFileUploadRequest struct {
     model.Params
 
     // 文件
-    file   []byte 
+    file   []*model.File 
 
     // 时间搓
     timeStamp   int64 
@@ -51,13 +51,13 @@ func (r AlibabaLegalSuitFileUploadRequest) GetApiParams() url.Values {
 }
 
 
-func (r *AlibabaLegalSuitFileUploadRequest) SetFile(file []byte) error {
+func (r *AlibabaLegalSuitFileUploadRequest) SetFile(file []*model.File) error {
     r.file = file
     r.Set("file", file)
     return nil
 }
 
-func (r AlibabaLegalSuitFileUploadRequest) GetFile() []byte {
+func (r AlibabaLegalSuitFileUploadRequest) GetFile() []*model.File {
     return r.file
 }
 

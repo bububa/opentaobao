@@ -16,10 +16,10 @@ type TaobaoBillAccountsGetRequest struct {
     model.Params
 
     // 需要返回的字段
-    fields   []String 
+    fields   []string 
 
     // 需要获取的科目ID
-    aids   []Number 
+    aids   []int64 
 
 }
 
@@ -42,23 +42,23 @@ func (r TaobaoBillAccountsGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoBillAccountsGetRequest) SetFields(fields []String) error {
+func (r *TaobaoBillAccountsGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoBillAccountsGetRequest) GetFields() []String {
+func (r TaobaoBillAccountsGetRequest) GetFields() []string {
     return r.fields
 }
 
-func (r *TaobaoBillAccountsGetRequest) SetAids(aids []Number) error {
+func (r *TaobaoBillAccountsGetRequest) SetAids(aids []int64) error {
     r.aids = aids
     r.Set("aids", aids)
     return nil
 }
 
-func (r TaobaoBillAccountsGetRequest) GetAids() []Number {
+func (r TaobaoBillAccountsGetRequest) GetAids() []int64 {
     return r.aids
 }
 

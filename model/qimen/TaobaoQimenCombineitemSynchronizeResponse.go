@@ -12,8 +12,22 @@ ERP调用奇门的接口,将商品信息同步给WMS
 */
 type TaobaoQimenCombineitemSynchronizeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenCombineitemSynchronizeResponse `json:"taobao_qimen_combineitem_synchronize_response,omitempty"`
+    // Response *TaobaoQimenCombineitemSynchronizeResponse `json:"qimen_combineitem_synchronize_response,omitempty"` 
+    TaobaoQimenCombineitemSynchronizeResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenCombineitemSynchronizeResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenCombineitemSynchronizeResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.wdk.marketing.itempool.queryactivity
 
 查找商品池活动
 */
-func AlibabaWdkMarketingItempoolQueryactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolQueryactivityRequest, session string) (*wdk.AlibabaWdkMarketingItempoolQueryactivityResponse, error) {
+func AlibabaWdkMarketingItempoolQueryactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolQueryactivityRequest, session string) (*wdk.AlibabaWdkMarketingItempoolQueryactivityAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItempoolQueryactivityAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

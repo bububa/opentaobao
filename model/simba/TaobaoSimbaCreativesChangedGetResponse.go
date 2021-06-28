@@ -12,8 +12,22 @@ taobao.simba.creatives.changed.get
 */
 type TaobaoSimbaCreativesChangedGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCreativesChangedGetResponse `json:"taobao_simba_creatives_changed_get_response,omitempty"`
+    // Response *TaobaoSimbaCreativesChangedGetResponse `json:"simba_creatives_changed_get_response,omitempty"` 
+    TaobaoSimbaCreativesChangedGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCreativesChangedGetResponse struct {
+
+    // 广告创意分页对象
+    
+    Creatives  *struct {
+        CreativePage  *CreativePage `json:"creative_page,omitempty"`
+    } `json:"creatives,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCreativesChangedGetResponse struct {
 

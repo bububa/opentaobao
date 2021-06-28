@@ -12,8 +12,22 @@ TOP-SPI工单任务下发接口（菜鸟--->商家ISV）
 */
 type CainiaoCbossWorkplatformWorkorderTaskNotifyAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCbossWorkplatformWorkorderTaskNotifyResponse `json:"cainiao_cboss_workplatform_workorder_task_notify_response,omitempty"`
+    // Response *CainiaoCbossWorkplatformWorkorderTaskNotifyResponse `json:"cainiao_cboss_workplatform_workorder_task_notify_response,omitempty"` 
+    CainiaoCbossWorkplatformWorkorderTaskNotifyResponse
 }
+
+/* model for simplify = false
+type CainiaoCbossWorkplatformWorkorderTaskNotifyResponse struct {
+
+    // response
+    
+    Response  *struct {
+        CainiaoCbossWorkplatformWorkorderTaskNotifyStruct  *CainiaoCbossWorkplatformWorkorderTaskNotifyStruct `json:"cainiao_cboss_workplatform_workorder_task_notify_struct,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCbossWorkplatformWorkorderTaskNotifyResponse struct {
 

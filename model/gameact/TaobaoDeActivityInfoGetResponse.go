@@ -12,8 +12,22 @@ taobao.de.activity.info.get
 */
 type TaobaoDeActivityInfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoDeActivityInfoGetResponse `json:"taobao_de_activity_info_get_response,omitempty"`
+    // Response *TaobaoDeActivityInfoGetResponse `json:"de_activity_info_get_response,omitempty"` 
+    TaobaoDeActivityInfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoDeActivityInfoGetResponse struct {
+
+    // 返回结构
+    
+    Activities  struct {
+        ActivityVO  []ActivityVO `json:"activity_vo,omitempty"`
+    } `json:"activities,omitempty"`
+    
+
+}
+*/
 
 type TaobaoDeActivityInfoGetResponse struct {
 

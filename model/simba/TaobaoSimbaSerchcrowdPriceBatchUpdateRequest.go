@@ -22,7 +22,7 @@ type TaobaoSimbaSerchcrowdPriceBatchUpdateRequest struct {
     subNick   string 
 
     // 需要修改出价的人群包id,批量传入的时候用,分割
-    adgroupCrowdIds   []Number 
+    adgroupCrowdIds   []int64 
 
     // 推广单元id
     adgroupId   int64 
@@ -71,13 +71,13 @@ func (r TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) GetSubNick() string {
     return r.subNick
 }
 
-func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetAdgroupCrowdIds(adgroupCrowdIds []Number) error {
+func (r *TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) SetAdgroupCrowdIds(adgroupCrowdIds []int64) error {
     r.adgroupCrowdIds = adgroupCrowdIds
     r.Set("adgroup_crowd_ids", adgroupCrowdIds)
     return nil
 }
 
-func (r TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) GetAdgroupCrowdIds() []Number {
+func (r TaobaoSimbaSerchcrowdPriceBatchUpdateRequest) GetAdgroupCrowdIds() []int64 {
     return r.adgroupCrowdIds
 }
 

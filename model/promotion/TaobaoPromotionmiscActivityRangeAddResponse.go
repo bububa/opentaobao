@@ -12,8 +12,20 @@ taobao.promotionmisc.activity.range.add
 */
 type TaobaoPromotionmiscActivityRangeAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionmiscActivityRangeAddResponse `json:"taobao_promotionmisc_activity_range_add_response,omitempty"`
+    // Response *TaobaoPromotionmiscActivityRangeAddResponse `json:"promotionmisc_activity_range_add_response,omitempty"` 
+    TaobaoPromotionmiscActivityRangeAddResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionmiscActivityRangeAddResponse struct {
+
+    // 增加商品范围是否成功。
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionmiscActivityRangeAddResponse struct {
 

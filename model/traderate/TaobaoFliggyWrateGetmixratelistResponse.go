@@ -12,8 +12,22 @@ taobao.fliggy.wrate.getmixratelist
 */
 type TaobaoFliggyWrateGetmixratelistAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFliggyWrateGetmixratelistResponse `json:"taobao_fliggy_wrate_getmixratelist_response,omitempty"`
+    // Response *TaobaoFliggyWrateGetmixratelistResponse `json:"fliggy_wrate_getmixratelist_response,omitempty"` 
+    TaobaoFliggyWrateGetmixratelistResponse
 }
+
+/* model for simplify = false
+type TaobaoFliggyWrateGetmixratelistResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoFliggyWrateGetmixratelistResult  *TaobaoFliggyWrateGetmixratelistResult `json:"taobao_fliggy_wrate_getmixratelist_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFliggyWrateGetmixratelistResponse struct {
 

@@ -13,8 +13,22 @@ taobao.logistics.online.confirm
 */
 type TaobaoLogisticsOnlineConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsOnlineConfirmResponse `json:"taobao_logistics_online_confirm_response,omitempty"`
+    // Response *TaobaoLogisticsOnlineConfirmResponse `json:"logistics_online_confirm_response,omitempty"` 
+    TaobaoLogisticsOnlineConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsOnlineConfirmResponse struct {
+
+    // 只返回is_success：是否成功。
+    
+    Shipping  *struct {
+        Shipping  *Shipping `json:"shipping,omitempty"`
+    } `json:"shipping,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsOnlineConfirmResponse struct {
 

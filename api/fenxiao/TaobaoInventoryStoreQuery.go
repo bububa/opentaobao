@@ -11,11 +11,11 @@ taobao.inventory.store.query
 
 查询商家仓信息
 */
-func TaobaoInventoryStoreQuery(clt *core.SDKClient, req *fenxiao.TaobaoInventoryStoreQueryRequest, session string) (*fenxiao.TaobaoInventoryStoreQueryResponse, error) {
+func TaobaoInventoryStoreQuery(clt *core.SDKClient, req *fenxiao.TaobaoInventoryStoreQueryRequest, session string) (*fenxiao.TaobaoInventoryStoreQueryAPIResponse, error) {
     var resp fenxiao.TaobaoInventoryStoreQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ tmall.servicecenter.reservecond.delete
 
 删除主动预约开通条件
 */
-func TmallServicecenterReservecondDelete(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondDeleteRequest, session string) (*tmallsc.TmallServicecenterReservecondDeleteResponse, error) {
+func TmallServicecenterReservecondDelete(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondDeleteRequest, session string) (*tmallsc.TmallServicecenterReservecondDeleteAPIResponse, error) {
     var resp tmallsc.TmallServicecenterReservecondDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

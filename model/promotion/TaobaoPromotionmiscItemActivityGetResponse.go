@@ -12,8 +12,22 @@ taobao.promotionmisc.item.activity.get
 */
 type TaobaoPromotionmiscItemActivityGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionmiscItemActivityGetResponse `json:"taobao_promotionmisc_item_activity_get_response,omitempty"`
+    // Response *TaobaoPromotionmiscItemActivityGetResponse `json:"promotionmisc_item_activity_get_response,omitempty"` 
+    TaobaoPromotionmiscItemActivityGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionmiscItemActivityGetResponse struct {
+
+    // 单品优惠活动信息。
+    
+    ItemPromotion  *struct {
+        ItemPromotion  *ItemPromotion `json:"item_promotion,omitempty"`
+    } `json:"item_promotion,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionmiscItemActivityGetResponse struct {
 

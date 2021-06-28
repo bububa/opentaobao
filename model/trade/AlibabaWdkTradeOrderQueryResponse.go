@@ -12,8 +12,22 @@ alibaba.wdk.trade.order.query
 */
 type AlibabaWdkTradeOrderQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkTradeOrderQueryResponse `json:"alibaba_wdk_trade_order_query_response,omitempty"`
+    // Response *AlibabaWdkTradeOrderQueryResponse `json:"alibaba_wdk_trade_order_query_response,omitempty"` 
+    AlibabaWdkTradeOrderQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkTradeOrderQueryResponse struct {
+
+    // 查询结果
+    
+    Result  *struct {
+        TradeOrderQueryResult  *TradeOrderQueryResult `json:"trade_order_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkTradeOrderQueryResponse struct {
 

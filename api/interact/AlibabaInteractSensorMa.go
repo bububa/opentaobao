@@ -11,11 +11,11 @@ alibaba.interact.sensor.ma
 
 码相关API
 */
-func AlibabaInteractSensorMa(clt *core.SDKClient, req *interact.AlibabaInteractSensorMaRequest, session string) (*interact.AlibabaInteractSensorMaResponse, error) {
+func AlibabaInteractSensorMa(clt *core.SDKClient, req *interact.AlibabaInteractSensorMaRequest, session string) (*interact.AlibabaInteractSensorMaAPIResponse, error) {
     var resp interact.AlibabaInteractSensorMaAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

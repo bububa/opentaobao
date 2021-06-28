@@ -12,8 +12,22 @@ tmall.car.lease.item.activity.get
 */
 type TmallCarLeaseItemActivityGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallCarLeaseItemActivityGetResponse `json:"tmall_car_lease_item_activity_get_response,omitempty"`
+    // Response *TmallCarLeaseItemActivityGetResponse `json:"tmall_car_lease_item_activity_get_response,omitempty"` 
+    TmallCarLeaseItemActivityGetResponse
 }
+
+/* model for simplify = false
+type TmallCarLeaseItemActivityGetResponse struct {
+
+    // 结果对象
+    
+    Result  *struct {
+        TmallCarLeaseItemActivityGetResult  *TmallCarLeaseItemActivityGetResult `json:"tmall_car_lease_item_activity_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallCarLeaseItemActivityGetResponse struct {
 

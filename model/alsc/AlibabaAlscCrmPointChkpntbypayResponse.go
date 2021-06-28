@@ -12,8 +12,22 @@ alibaba.alsc.crm.point.chkpntbypay
 */
 type AlibabaAlscCrmPointChkpntbypayAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmPointChkpntbypayResponse `json:"alibaba_alsc_crm_point_chkpntbypay_response,omitempty"`
+    // Response *AlibabaAlscCrmPointChkpntbypayResponse `json:"alibaba_alsc_crm_point_chkpntbypay_response,omitempty"` 
+    AlibabaAlscCrmPointChkpntbypayResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmPointChkpntbypayResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmPointChkpntbypayResponse struct {
 

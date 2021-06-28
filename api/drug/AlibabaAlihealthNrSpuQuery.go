@@ -11,11 +11,11 @@ alibaba.alihealth.nr.spu.query
 
 提供给ERP使用的，获取健康标品库信息
 */
-func AlibabaAlihealthNrSpuQuery(clt *core.SDKClient, req *drug.AlibabaAlihealthNrSpuQueryRequest, session string) (*drug.AlibabaAlihealthNrSpuQueryResponse, error) {
+func AlibabaAlihealthNrSpuQuery(clt *core.SDKClient, req *drug.AlibabaAlihealthNrSpuQueryRequest, session string) (*drug.AlibabaAlihealthNrSpuQueryAPIResponse, error) {
     var resp drug.AlibabaAlihealthNrSpuQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ alibaba.interact.coupon.apply
 
 鉴权接口，为coupon.apply接口鉴权
 */
-func AlibabaInteractCouponApply(clt *core.SDKClient, req *interact.AlibabaInteractCouponApplyRequest, session string) (*interact.AlibabaInteractCouponApplyResponse, error) {
+func AlibabaInteractCouponApply(clt *core.SDKClient, req *interact.AlibabaInteractCouponApplyRequest, session string) (*interact.AlibabaInteractCouponApplyAPIResponse, error) {
     var resp interact.AlibabaInteractCouponApplyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

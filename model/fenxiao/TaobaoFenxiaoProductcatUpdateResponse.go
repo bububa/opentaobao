@@ -12,8 +12,20 @@ taobao.fenxiao.productcat.update
 */
 type TaobaoFenxiaoProductcatUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductcatUpdateResponse `json:"taobao_fenxiao_productcat_update_response,omitempty"`
+    // Response *TaobaoFenxiaoProductcatUpdateResponse `json:"fenxiao_productcat_update_response,omitempty"` 
+    TaobaoFenxiaoProductcatUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductcatUpdateResponse struct {
+
+    // 操作是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoProductcatUpdateResponse struct {
 

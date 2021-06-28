@@ -12,8 +12,20 @@ taobao.picture.changecategory
 */
 type TaobaoPictureChangecategoryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPictureChangecategoryResponse `json:"taobao_picture_changecategory_response,omitempty"`
+    // Response *TaobaoPictureChangecategoryResponse `json:"picture_changecategory_response,omitempty"` 
+    TaobaoPictureChangecategoryResponse
 }
+
+/* model for simplify = false
+type TaobaoPictureChangecategoryResponse struct {
+
+    // 移动图片是否成功：部分移动成功为true，全部移动失败为false。
+    
+    Done   bool `json:"done,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPictureChangecategoryResponse struct {
 

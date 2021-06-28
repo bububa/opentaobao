@@ -12,8 +12,25 @@ taobao.promotionmisc.mjs.activity.add
 */
 type TaobaoPromotionmiscMjsActivityAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionmiscMjsActivityAddResponse `json:"taobao_promotionmisc_mjs_activity_add_response,omitempty"`
+    // Response *TaobaoPromotionmiscMjsActivityAddResponse `json:"promotionmisc_mjs_activity_add_response,omitempty"` 
+    TaobaoPromotionmiscMjsActivityAddResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionmiscMjsActivityAddResponse struct {
+
+    // 是否保存成功。
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 活动id。
+    
+    ActivityId   int64 `json:"activity_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionmiscMjsActivityAddResponse struct {
 

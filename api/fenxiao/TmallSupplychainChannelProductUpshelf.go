@@ -11,11 +11,11 @@ tmall.supplychain.channel.product.upshelf
 
 上架渠道产品
 */
-func TmallSupplychainChannelProductUpshelf(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductUpshelfRequest, session string) (*fenxiao.TmallSupplychainChannelProductUpshelfResponse, error) {
+func TmallSupplychainChannelProductUpshelf(clt *core.SDKClient, req *fenxiao.TmallSupplychainChannelProductUpshelfRequest, session string) (*fenxiao.TmallSupplychainChannelProductUpshelfAPIResponse, error) {
     var resp fenxiao.TmallSupplychainChannelProductUpshelfAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

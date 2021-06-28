@@ -12,8 +12,22 @@ ERP调用接口，查询入库单信息;
 */
 type TaobaoQimenEntryorderQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenEntryorderQueryResponse `json:"taobao_qimen_entryorder_query_response,omitempty"`
+    // Response *TaobaoQimenEntryorderQueryResponse `json:"qimen_entryorder_query_response,omitempty"` 
+    TaobaoQimenEntryorderQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenEntryorderQueryResponse struct {
+
+    // 
+    
+    Response  *struct {
+        EntryOrderQueryResponse  *EntryOrderQueryResponse `json:"entry_order_query_response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenEntryorderQueryResponse struct {
 

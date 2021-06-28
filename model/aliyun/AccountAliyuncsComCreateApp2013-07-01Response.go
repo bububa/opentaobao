@@ -12,8 +12,30 @@ account.aliyuncs.com.CreateApp.2013-07-01
 */
 type AccountAliyuncsComCreateApp2013-07-01APIResponse struct {
     model.CommonResponse
-    Response *AccountAliyuncsComCreateApp2013-07-01Response `json:"account_aliyuncs_com_CreateApp_2013-07-01_response,omitempty"`
+    // Response *AccountAliyuncsComCreateApp2013-07-01Response `json:"account_aliyuncs_com_CreateApp_2013-07-01_response,omitempty"` 
+    AccountAliyuncsComCreateApp2013-07-01Response
 }
+
+/* model for simplify = false
+type AccountAliyuncsComCreateApp2013-07-01Response struct {
+
+    // 返回错误码
+    
+    Code   string `json:"code,omitempty"`
+    
+
+    // 返回调用信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 返回结果
+    
+    ResultData   string `json:"result_data,omitempty"`
+    
+
+}
+*/
 
 type AccountAliyuncsComCreateApp2013-07-01Response struct {
 

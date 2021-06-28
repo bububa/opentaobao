@@ -11,11 +11,11 @@ taobao.top.once.token.get
 
 网关一次性token获取
 */
-func TaobaoTopOnceTokenGet(clt *core.SDKClient, req *util.TaobaoTopOnceTokenGetRequest, session string) (*util.TaobaoTopOnceTokenGetResponse, error) {
+func TaobaoTopOnceTokenGet(clt *core.SDKClient, req *util.TaobaoTopOnceTokenGetRequest, session string) (*util.TaobaoTopOnceTokenGetAPIResponse, error) {
     var resp util.TaobaoTopOnceTokenGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

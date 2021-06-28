@@ -12,8 +12,35 @@ alibaba.legal.case.standpoint.savestandpoint
 */
 type AlibabaLegalCaseStandpointSavestandpointAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaLegalCaseStandpointSavestandpointResponse `json:"alibaba_legal_case_standpoint_savestandpoint_response,omitempty"`
+    // Response *AlibabaLegalCaseStandpointSavestandpointResponse `json:"alibaba_legal_case_standpoint_savestandpoint_response,omitempty"` 
+    AlibabaLegalCaseStandpointSavestandpointResponse
 }
+
+/* model for simplify = false
+type AlibabaLegalCaseStandpointSavestandpointResponse struct {
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 错误编码
+    
+    Errcode   string `json:"errcode,omitempty"`
+    
+
+    // 反馈的新增口径id
+    
+    Content   int64 `json:"content,omitempty"`
+    
+
+    // 错误描述
+    
+    Errmsg   string `json:"errmsg,omitempty"`
+    
+
+}
+*/
 
 type AlibabaLegalCaseStandpointSavestandpointResponse struct {
 

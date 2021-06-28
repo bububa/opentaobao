@@ -12,8 +12,32 @@ taobao.xhotel.distribution.order.detail.search
 */
 type TaobaoXhotelDistributionOrderDetailSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoXhotelDistributionOrderDetailSearchResponse `json:"taobao_xhotel_distribution_order_detail_search_response,omitempty"`
+    // Response *TaobaoXhotelDistributionOrderDetailSearchResponse `json:"xhotel_distribution_order_detail_search_response,omitempty"` 
+    TaobaoXhotelDistributionOrderDetailSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoXhotelDistributionOrderDetailSearchResponse struct {
+
+    // 错误码
+    
+    Error   string `json:"error,omitempty"`
+    
+
+    // 错误描述
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+    // 订单详情对象
+    
+    TopDistributionOrderDetail  *struct {
+        TopDistributionOrderDetail  *TopDistributionOrderDetail `json:"top_distribution_order_detail,omitempty"`
+    } `json:"top_distribution_order_detail,omitempty"`
+    
+
+}
+*/
 
 type TaobaoXhotelDistributionOrderDetailSearchResponse struct {
 

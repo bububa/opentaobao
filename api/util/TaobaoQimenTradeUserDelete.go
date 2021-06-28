@@ -11,11 +11,11 @@ taobao.qimen.trade.user.delete
 
 删除奇门订单链路用户
 */
-func TaobaoQimenTradeUserDelete(clt *core.SDKClient, req *util.TaobaoQimenTradeUserDeleteRequest, session string) (*util.TaobaoQimenTradeUserDeleteResponse, error) {
+func TaobaoQimenTradeUserDelete(clt *core.SDKClient, req *util.TaobaoQimenTradeUserDeleteRequest, session string) (*util.TaobaoQimenTradeUserDeleteAPIResponse, error) {
     var resp util.TaobaoQimenTradeUserDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

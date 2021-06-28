@@ -12,8 +12,30 @@ taobao.cloudpush.message.ios
 */
 type TaobaoCloudpushMessageIosAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCloudpushMessageIosResponse `json:"taobao_cloudpush_message_ios_response,omitempty"`
+    // Response *TaobaoCloudpushMessageIosResponse `json:"cloudpush_message_ios_response,omitempty"` 
+    TaobaoCloudpushMessageIosResponse
 }
+
+/* model for simplify = false
+type TaobaoCloudpushMessageIosResponse struct {
+
+    // 请求出现错误的错误代码.
+    
+    RequestErrorCode   int64 `json:"request_error_code,omitempty"`
+    
+
+    // 请求失败时候的错误信息.
+    
+    RequestErrorMsg   string `json:"request_error_msg,omitempty"`
+    
+
+    // 请求是否成功.
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCloudpushMessageIosResponse struct {
 

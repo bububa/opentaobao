@@ -12,8 +12,30 @@ taobao.train.agent.bookorders.get
 */
 type TaobaoTrainAgentBookordersGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentBookordersGetResponse `json:"taobao_train_agent_bookorders_get_response,omitempty"`
+    // Response *TaobaoTrainAgentBookordersGetResponse `json:"train_agent_bookorders_get_response,omitempty"` 
+    TaobaoTrainAgentBookordersGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentBookordersGetResponse struct {
+
+    // 待处理订单总数
+    
+    OrderCount   int64 `json:"order_count,omitempty"`
+    
+
+    // 订单号集合，用半角逗号(,)连接，只会返回固定数量
+    
+    OrderIds   string `json:"order_ids,omitempty"`
+    
+
+    // 错误描述
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentBookordersGetResponse struct {
 

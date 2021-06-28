@@ -12,8 +12,20 @@ alibaba.interact.sensor.titlebarhide
 */
 type AlibabaInteractSensorTitlebarhideAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorTitlebarhideResponse `json:"alibaba_interact_sensor_titlebarhide_response,omitempty"`
+    // Response *AlibabaInteractSensorTitlebarhideResponse `json:"alibaba_interact_sensor_titlebarhide_response,omitempty"` 
+    AlibabaInteractSensorTitlebarhideResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorTitlebarhideResponse struct {
+
+    // return=0表示成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorTitlebarhideResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.alitj.order.realnamecard.info.submit
 */
 type AlibabaAlitjOrderRealnamecardInfoSubmitAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlitjOrderRealnamecardInfoSubmitResponse `json:"alibaba_alitj_order_realnamecard_info_submit_response,omitempty"`
+    // Response *AlibabaAlitjOrderRealnamecardInfoSubmitResponse `json:"alibaba_alitj_order_realnamecard_info_submit_response,omitempty"` 
+    AlibabaAlitjOrderRealnamecardInfoSubmitResponse
 }
+
+/* model for simplify = false
+type AlibabaAlitjOrderRealnamecardInfoSubmitResponse struct {
+
+    // result
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlitjOrderRealnamecardInfoSubmitResponse struct {
 

@@ -27,8 +27,22 @@ tmall.servicecenter.worker.delete
 */
 type TmallServicecenterWorkerDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkerDeleteResponse `json:"tmall_servicecenter_worker_delete_response,omitempty"`
+    // Response *TmallServicecenterWorkerDeleteResponse `json:"tmall_servicecenter_worker_delete_response,omitempty"` 
+    TmallServicecenterWorkerDeleteResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkerDeleteResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkerDeleteResponse struct {
 

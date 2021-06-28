@@ -12,8 +12,22 @@ taobao.jds.hluser.get
 */
 type TaobaoJdsHluserGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJdsHluserGetResponse `json:"taobao_jds_hluser_get_response,omitempty"`
+    // Response *TaobaoJdsHluserGetResponse `json:"jds_hluser_get_response,omitempty"` 
+    TaobaoJdsHluserGetResponse
 }
+
+/* model for simplify = false
+type TaobaoJdsHluserGetResponse struct {
+
+    // 回流用户信息
+    
+    HlUser  *struct {
+        HlUserDO  *HlUserDO `json:"hl_user_do,omitempty"`
+    } `json:"hl_user,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJdsHluserGetResponse struct {
 

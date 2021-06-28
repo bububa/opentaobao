@@ -19,7 +19,7 @@ type AlipayBaoxianClaimUpdateRequest struct {
     bizData   string 
 
     // 进度列表
-    progressList   []Json 
+    progressList   []string 
 
     // 附件列表
     claimAttachments   []ClaimAttachment 
@@ -76,13 +76,13 @@ func (r AlipayBaoxianClaimUpdateRequest) GetBizData() string {
     return r.bizData
 }
 
-func (r *AlipayBaoxianClaimUpdateRequest) SetProgressList(progressList []Json) error {
+func (r *AlipayBaoxianClaimUpdateRequest) SetProgressList(progressList []string) error {
     r.progressList = progressList
     r.Set("progress_list", progressList)
     return nil
 }
 
-func (r AlipayBaoxianClaimUpdateRequest) GetProgressList() []Json {
+func (r AlipayBaoxianClaimUpdateRequest) GetProgressList() []string {
     return r.progressList
 }
 

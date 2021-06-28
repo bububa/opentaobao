@@ -12,8 +12,20 @@ alibaba.ele.fengniao.merchant.contract.cancel
 */
 type AlibabaEleFengniaoMerchantContractCancelAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaEleFengniaoMerchantContractCancelResponse `json:"alibaba_ele_fengniao_merchant_contract_cancel_response,omitempty"`
+    // Response *AlibabaEleFengniaoMerchantContractCancelResponse `json:"alibaba_ele_fengniao_merchant_contract_cancel_response,omitempty"` 
+    AlibabaEleFengniaoMerchantContractCancelResponse
 }
+
+/* model for simplify = false
+type AlibabaEleFengniaoMerchantContractCancelResponse struct {
+
+    // 出参
+    
+    Message   string `json:"message,omitempty"`
+    
+
+}
+*/
 
 type AlibabaEleFengniaoMerchantContractCancelResponse struct {
 

@@ -11,11 +11,11 @@ taobao.oauth.code.create
 
 手淘无线开放的oauthCode颁发接口
 */
-func TaobaoOauthCodeCreate(clt *core.SDKClient, req *mtopopen.TaobaoOauthCodeCreateRequest, session string) (*mtopopen.TaobaoOauthCodeCreateResponse, error) {
+func TaobaoOauthCodeCreate(clt *core.SDKClient, req *mtopopen.TaobaoOauthCodeCreateRequest, session string) (*mtopopen.TaobaoOauthCodeCreateAPIResponse, error) {
     var resp mtopopen.TaobaoOauthCodeCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

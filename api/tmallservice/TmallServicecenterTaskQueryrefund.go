@@ -11,11 +11,11 @@ tmall.servicecenter.task.queryrefund
 
 查询任务类工单是否退款
 */
-func TmallServicecenterTaskQueryrefund(clt *core.SDKClient, req *tmallservice.TmallServicecenterTaskQueryrefundRequest, session string) (*tmallservice.TmallServicecenterTaskQueryrefundResponse, error) {
+func TmallServicecenterTaskQueryrefund(clt *core.SDKClient, req *tmallservice.TmallServicecenterTaskQueryrefundRequest, session string) (*tmallservice.TmallServicecenterTaskQueryrefundAPIResponse, error) {
     var resp tmallservice.TmallServicecenterTaskQueryrefundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ alibaba.kclub.kc.qa.search
 
 知识云-知识搜索服务
 */
-func AlibabaKclubKcQaSearch(clt *core.SDKClient, req *kclub.AlibabaKclubKcQaSearchRequest, session string) (*kclub.AlibabaKclubKcQaSearchResponse, error) {
+func AlibabaKclubKcQaSearch(clt *core.SDKClient, req *kclub.AlibabaKclubKcQaSearchRequest, session string) (*kclub.AlibabaKclubKcQaSearchAPIResponse, error) {
     var resp kclub.AlibabaKclubKcQaSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

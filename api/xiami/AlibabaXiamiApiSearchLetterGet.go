@@ -11,11 +11,11 @@ alibaba.xiami.api.search.letter.get
 
 搜索接口（首字母）
 */
-func AlibabaXiamiApiSearchLetterGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiSearchLetterGetRequest, session string) (*xiami.AlibabaXiamiApiSearchLetterGetResponse, error) {
+func AlibabaXiamiApiSearchLetterGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiSearchLetterGetRequest, session string) (*xiami.AlibabaXiamiApiSearchLetterGetAPIResponse, error) {
     var resp xiami.AlibabaXiamiApiSearchLetterGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

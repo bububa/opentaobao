@@ -12,8 +12,20 @@ alibaba.aliqin.flow.wallet.consume
 */
 type AlibabaAliqinFlowWalletConsumeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFlowWalletConsumeResponse `json:"alibaba_aliqin_flow_wallet_consume_response,omitempty"`
+    // Response *AlibabaAliqinFlowWalletConsumeResponse `json:"alibaba_aliqin_flow_wallet_consume_response,omitempty"` 
+    AlibabaAliqinFlowWalletConsumeResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFlowWalletConsumeResponse struct {
+
+    // true为成功
+    
+    Value   string `json:"value,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFlowWalletConsumeResponse struct {
 

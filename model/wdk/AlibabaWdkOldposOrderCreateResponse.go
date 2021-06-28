@@ -12,8 +12,22 @@ alibaba.wdk.oldpos.order.create
 */
 type AlibabaWdkOldposOrderCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkOldposOrderCreateResponse `json:"alibaba_wdk_oldpos_order_create_response,omitempty"`
+    // Response *AlibabaWdkOldposOrderCreateResponse `json:"alibaba_wdk_oldpos_order_create_response,omitempty"` 
+    AlibabaWdkOldposOrderCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkOldposOrderCreateResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        PosOrderCreateResult  *PosOrderCreateResult `json:"pos_order_create_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkOldposOrderCreateResponse struct {
 

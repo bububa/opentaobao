@@ -12,8 +12,22 @@ taobao.card.expandcard.query
 */
 type TaobaoCardExpandcardQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCardExpandcardQueryResponse `json:"taobao_card_expandcard_query_response,omitempty"`
+    // Response *TaobaoCardExpandcardQueryResponse `json:"card_expandcard_query_response,omitempty"` 
+    TaobaoCardExpandcardQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoCardExpandcardQueryResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoCardExpandcardQueryResult  *TaobaoCardExpandcardQueryResult `json:"taobao_card_expandcard_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCardExpandcardQueryResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.ais.assets.tag.abort
 */
 type AlibabaAisAssetsTagAbortAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAisAssetsTagAbortResponse `json:"alibaba_ais_assets_tag_abort_response,omitempty"`
+    // Response *AlibabaAisAssetsTagAbortResponse `json:"alibaba_ais_assets_tag_abort_response,omitempty"` 
+    AlibabaAisAssetsTagAbortResponse
 }
+
+/* model for simplify = false
+type AlibabaAisAssetsTagAbortResponse struct {
+
+    // 最外层结果
+    
+    Result  *struct {
+        BaseRep  *BaseRep `json:"base_rep,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAisAssetsTagAbortResponse struct {
 

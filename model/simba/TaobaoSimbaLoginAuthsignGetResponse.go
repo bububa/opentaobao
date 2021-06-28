@@ -12,8 +12,20 @@ taobao.simba.login.authsign.get
 */
 type TaobaoSimbaLoginAuthsignGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaLoginAuthsignGetResponse `json:"taobao_simba_login_authsign_get_response,omitempty"`
+    // Response *TaobaoSimbaLoginAuthsignGetResponse `json:"simba_login_authsign_get_response,omitempty"` 
+    TaobaoSimbaLoginAuthsignGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaLoginAuthsignGetResponse struct {
+
+    // 登陆签名
+    
+    SubwayToken   string `json:"subway_token,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaLoginAuthsignGetResponse struct {
 

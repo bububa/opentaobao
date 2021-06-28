@@ -12,8 +12,27 @@ taobao.wlb.inventorylog.query
 */
 type TaobaoWlbInventorylogQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbInventorylogQueryResponse `json:"taobao_wlb_inventorylog_query_response,omitempty"`
+    // Response *TaobaoWlbInventorylogQueryResponse `json:"wlb_inventorylog_query_response,omitempty"` 
+    TaobaoWlbInventorylogQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbInventorylogQueryResponse struct {
+
+    // 记录数
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+    // 库存变更记录
+    
+    InventoryLogList  struct {
+        WlbItemInventoryLog  []WlbItemInventoryLog `json:"wlb_item_inventory_log,omitempty"`
+    } `json:"inventory_log_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbInventorylogQueryResponse struct {
 

@@ -12,8 +12,22 @@ taobao.trade.close
 */
 type TaobaoTradeCloseAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeCloseResponse `json:"taobao_trade_close_response,omitempty"`
+    // Response *TaobaoTradeCloseResponse `json:"trade_close_response,omitempty"` 
+    TaobaoTradeCloseResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeCloseResponse struct {
+
+    // 关闭交易时返回的Trade信息，可用字段有tid和modified
+    
+    Trade  *struct {
+        Trade  *Trade `json:"trade,omitempty"`
+    } `json:"trade,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeCloseResponse struct {
 

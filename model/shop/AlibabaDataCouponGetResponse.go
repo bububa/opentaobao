@@ -12,8 +12,20 @@ alibaba.data.coupon.get
 */
 type AlibabaDataCouponGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaDataCouponGetResponse `json:"alibaba_data_coupon_get_response,omitempty"`
+    // Response *AlibabaDataCouponGetResponse `json:"alibaba_data_coupon_get_response,omitempty"` 
+    AlibabaDataCouponGetResponse
 }
+
+/* model for simplify = false
+type AlibabaDataCouponGetResponse struct {
+
+    // unnamed
+    
+    Unnamed   string `json:"unnamed,omitempty"`
+    
+
+}
+*/
 
 type AlibabaDataCouponGetResponse struct {
 

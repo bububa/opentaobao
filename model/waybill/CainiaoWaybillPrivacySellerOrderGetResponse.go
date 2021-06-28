@@ -12,13 +12,56 @@ cainiao.waybill.privacy.seller.order.get
 */
 type CainiaoWaybillPrivacySellerOrderGetAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoWaybillPrivacySellerOrderGetResponse `json:"cainiao_waybill_privacy_seller_order_get_response,omitempty"`
+    // Response *CainiaoWaybillPrivacySellerOrderGetResponse `json:"cainiao_waybill_privacy_seller_order_get_response,omitempty"` 
+    CainiaoWaybillPrivacySellerOrderGetResponse
 }
+
+/* model for simplify = false
+type CainiaoWaybillPrivacySellerOrderGetResponse struct {
+
+    // 错误列表
+    
+    ErrorCodeList  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"error_code_list,omitempty"`
+    
+
+    // 是否失败
+    
+    Failure   bool `json:"failure,omitempty"`
+    
+
+    // 第一个错误
+    
+    OneErrorInfo   string `json:"one_error_info,omitempty"`
+    
+
+    // 错误信息
+    
+    ErrorInfoList  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"error_info_list,omitempty"`
+    
+
+    // objectId
+    
+    ObjectId   string `json:"object_id,omitempty"`
+    
+
+    // 返回值
+    
+    ResponseList  struct {
+        CainiaoWaybillPrivacySellerOrderGetModule  []CainiaoWaybillPrivacySellerOrderGetModule `json:"cainiao_waybill_privacy_seller_order_get_module,omitempty"`
+    } `json:"response_list,omitempty"`
+    
+
+}
+*/
 
 type CainiaoWaybillPrivacySellerOrderGetResponse struct {
 
     // 错误列表
-    ErrorCodeList   []String `json:"error_code_list,omitempty"`
+    ErrorCodeList   []string `json:"error_code_list,omitempty"`
 
     // 是否失败
     Failure   bool `json:"failure,omitempty"`
@@ -27,7 +70,7 @@ type CainiaoWaybillPrivacySellerOrderGetResponse struct {
     OneErrorInfo   string `json:"one_error_info,omitempty"`
 
     // 错误信息
-    ErrorInfoList   []String `json:"error_info_list,omitempty"`
+    ErrorInfoList   []string `json:"error_info_list,omitempty"`
 
     // objectId
     ObjectId   string `json:"object_id,omitempty"`

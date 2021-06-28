@@ -11,11 +11,11 @@ taobao.crm.shopvip.cancel
 
 此接口用于取消VIP优惠
 */
-func TaobaoCrmShopvipCancel(clt *core.SDKClient, req *crm.TaobaoCrmShopvipCancelRequest, session string) (*crm.TaobaoCrmShopvipCancelResponse, error) {
+func TaobaoCrmShopvipCancel(clt *core.SDKClient, req *crm.TaobaoCrmShopvipCancelRequest, session string) (*crm.TaobaoCrmShopvipCancelAPIResponse, error) {
     var resp crm.TaobaoCrmShopvipCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

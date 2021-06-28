@@ -12,8 +12,22 @@ tmall.hk.clearance.distribution.get
 */
 type TmallHkClearanceDistributionGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallHkClearanceDistributionGetResponse `json:"tmall_hk_clearance_distribution_get_response,omitempty"`
+    // Response *TmallHkClearanceDistributionGetResponse `json:"tmall_hk_clearance_distribution_get_response,omitempty"` 
+    TmallHkClearanceDistributionGetResponse
 }
+
+/* model for simplify = false
+type TmallHkClearanceDistributionGetResponse struct {
+
+    // 查询结果对象
+    
+    Result  *struct {
+        CertifyQueryResult  *CertifyQueryResult `json:"certify_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallHkClearanceDistributionGetResponse struct {
 

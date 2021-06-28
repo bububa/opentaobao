@@ -12,8 +12,22 @@ taobao.jushita.jms.user.get
 */
 type TaobaoJushitaJmsUserGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJushitaJmsUserGetResponse `json:"taobao_jushita_jms_user_get_response,omitempty"`
+    // Response *TaobaoJushitaJmsUserGetResponse `json:"jushita_jms_user_get_response,omitempty"` 
+    TaobaoJushitaJmsUserGetResponse
 }
+
+/* model for simplify = false
+type TaobaoJushitaJmsUserGetResponse struct {
+
+    // 同步的用户信息
+    
+    OnsUser  *struct {
+        TmcUser  *TmcUser `json:"tmc_user,omitempty"`
+    } `json:"ons_user,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJushitaJmsUserGetResponse struct {
 

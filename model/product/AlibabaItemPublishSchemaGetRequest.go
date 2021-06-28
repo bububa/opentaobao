@@ -19,7 +19,7 @@ type AlibabaItemPublishSchemaGetRequest struct {
     bizType   string 
 
     // 商品主图链接，最多5张，传入完整URL
-    images   []String 
+    images   []string 
 
     // 商品类型。b:一口价  a:拍卖  默认值b一口价
     itemType   string 
@@ -67,13 +67,13 @@ func (r AlibabaItemPublishSchemaGetRequest) GetBizType() string {
     return r.bizType
 }
 
-func (r *AlibabaItemPublishSchemaGetRequest) SetImages(images []String) error {
+func (r *AlibabaItemPublishSchemaGetRequest) SetImages(images []string) error {
     r.images = images
     r.Set("images", images)
     return nil
 }
 
-func (r AlibabaItemPublishSchemaGetRequest) GetImages() []String {
+func (r AlibabaItemPublishSchemaGetRequest) GetImages() []string {
     return r.images
 }
 

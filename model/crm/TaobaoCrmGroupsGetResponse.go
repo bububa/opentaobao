@@ -12,8 +12,27 @@ taobao.crm.groups.get
 */
 type TaobaoCrmGroupsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGroupsGetResponse `json:"taobao_crm_groups_get_response,omitempty"`
+    // Response *TaobaoCrmGroupsGetResponse `json:"crm_groups_get_response,omitempty"` 
+    TaobaoCrmGroupsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGroupsGetResponse struct {
+
+    // 查询到的当前卖家的当前页的会员
+    
+    Groups  struct {
+        Group  []Group `json:"group,omitempty"`
+    } `json:"groups,omitempty"`
+    
+
+    // 记录总数
+    
+    TotalResult   int64 `json:"total_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGroupsGetResponse struct {
 

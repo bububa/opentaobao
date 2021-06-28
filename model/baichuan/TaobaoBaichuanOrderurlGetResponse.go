@@ -12,8 +12,20 @@ taobao.baichuan.orderurl.get
 */
 type TaobaoBaichuanOrderurlGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanOrderurlGetResponse `json:"taobao_baichuan_orderurl_get_response,omitempty"`
+    // Response *TaobaoBaichuanOrderurlGetResponse `json:"baichuan_orderurl_get_response,omitempty"` 
+    TaobaoBaichuanOrderurlGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanOrderurlGetResponse struct {
+
+    // name
+    
+    Name   string `json:"name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanOrderurlGetResponse struct {
 

@@ -11,11 +11,11 @@ taobao.caipiao.goods.info.get
 
 根据卖家id与appkey获取商品信息。
 */
-func TaobaoCaipiaoGoodsInfoGet(clt *core.SDKClient, req *caipiao.TaobaoCaipiaoGoodsInfoGetRequest, session string) (*caipiao.TaobaoCaipiaoGoodsInfoGetResponse, error) {
+func TaobaoCaipiaoGoodsInfoGet(clt *core.SDKClient, req *caipiao.TaobaoCaipiaoGoodsInfoGetRequest, session string) (*caipiao.TaobaoCaipiaoGoodsInfoGetAPIResponse, error) {
     var resp caipiao.TaobaoCaipiaoGoodsInfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

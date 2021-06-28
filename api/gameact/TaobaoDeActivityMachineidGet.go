@@ -11,11 +11,11 @@ taobao.de.activity.machineid.get
 
 获取机器设备id
 */
-func TaobaoDeActivityMachineidGet(clt *core.SDKClient, req *gameact.TaobaoDeActivityMachineidGetRequest, session string) (*gameact.TaobaoDeActivityMachineidGetResponse, error) {
+func TaobaoDeActivityMachineidGet(clt *core.SDKClient, req *gameact.TaobaoDeActivityMachineidGetRequest, session string) (*gameact.TaobaoDeActivityMachineidGetAPIResponse, error) {
     var resp gameact.TaobaoDeActivityMachineidGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

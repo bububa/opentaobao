@@ -12,8 +12,32 @@ taobao.eticket.merchant.img.upload
 */
 type TaobaoEticketMerchantImgUploadAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoEticketMerchantImgUploadResponse `json:"taobao_eticket_merchant_img_upload_response,omitempty"`
+    // Response *TaobaoEticketMerchantImgUploadResponse `json:"eticket_merchant_img_upload_response,omitempty"` 
+    TaobaoEticketMerchantImgUploadResponse
 }
+
+/* model for simplify = false
+type TaobaoEticketMerchantImgUploadResponse struct {
+
+    // 回复对象
+    
+    RespBody  *struct {
+        UploadImgCallbackResp  *UploadImgCallbackResp `json:"upload_img_callback_resp,omitempty"`
+    } `json:"resp_body,omitempty"`
+    
+
+    // 子结果码
+    
+    RetCode   string `json:"ret_code,omitempty"`
+    
+
+    // 子结果信息
+    
+    RetMsg   string `json:"ret_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoEticketMerchantImgUploadResponse struct {
 

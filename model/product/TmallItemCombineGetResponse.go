@@ -12,12 +12,26 @@ tmall.item.combine.get
 */
 type TmallItemCombineGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemCombineGetResponse `json:"tmall_item_combine_get_response,omitempty"`
+    // Response *TmallItemCombineGetResponse `json:"tmall_item_combine_get_response,omitempty"` 
+    TmallItemCombineGetResponse
 }
+
+/* model for simplify = false
+type TmallItemCombineGetResponse struct {
+
+    // results
+    
+    Results  struct {
+        Json  []string `json:"string,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TmallItemCombineGetResponse struct {
 
     // results
-    Results   []Json `json:"results,omitempty"`
+    Results   []string `json:"results,omitempty"`
 
 }

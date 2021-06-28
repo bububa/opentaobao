@@ -12,8 +12,27 @@ taobao.promotion.coupons.get
 */
 type TaobaoPromotionCouponsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionCouponsGetResponse `json:"taobao_promotion_coupons_get_response,omitempty"`
+    // Response *TaobaoPromotionCouponsGetResponse `json:"promotion_coupons_get_response,omitempty"` 
+    TaobaoPromotionCouponsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionCouponsGetResponse struct {
+
+    // 查询的总数量
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 优惠券列表
+    
+    Coupons  struct {
+        Coupon  []Coupon `json:"coupon,omitempty"`
+    } `json:"coupons,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionCouponsGetResponse struct {
 

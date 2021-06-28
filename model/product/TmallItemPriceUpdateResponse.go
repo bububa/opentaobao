@@ -12,8 +12,20 @@ tmall.item.price.update
 */
 type TmallItemPriceUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemPriceUpdateResponse `json:"tmall_item_price_update_response,omitempty"`
+    // Response *TmallItemPriceUpdateResponse `json:"tmall_item_price_update_response,omitempty"` 
+    TmallItemPriceUpdateResponse
 }
+
+/* model for simplify = false
+type TmallItemPriceUpdateResponse struct {
+
+    // 价格更新结果
+    
+    PriceUpdateResult   string `json:"price_update_result,omitempty"`
+    
+
+}
+*/
 
 type TmallItemPriceUpdateResponse struct {
 

@@ -34,7 +34,7 @@ type TaobaoPaimaiItempropsGetRequest struct {
     cid   int64 
 
     // 属性的Key，支持多条，以“,”分隔
-    attrKeys   []String 
+    attrKeys   []string 
 
     // 类目子属性路径,由该子属性上层的类目属性和类目属性值组成,格式pid:vid;pid:vid.取类目子属性需要传child_path,cid
     childPath   string 
@@ -55,7 +55,7 @@ type TaobaoPaimaiItempropsGetRequest struct {
     isKeyProp   bool 
 
     // 需要返回的字段列表，见：ItemProp，默认返回：pid, name, must, multi, prop_values
-    fields   []String 
+    fields   []string 
 
 }
 
@@ -138,13 +138,13 @@ func (r TaobaoPaimaiItempropsGetRequest) GetCid() int64 {
     return r.cid
 }
 
-func (r *TaobaoPaimaiItempropsGetRequest) SetAttrKeys(attrKeys []String) error {
+func (r *TaobaoPaimaiItempropsGetRequest) SetAttrKeys(attrKeys []string) error {
     r.attrKeys = attrKeys
     r.Set("attr_keys", attrKeys)
     return nil
 }
 
-func (r TaobaoPaimaiItempropsGetRequest) GetAttrKeys() []String {
+func (r TaobaoPaimaiItempropsGetRequest) GetAttrKeys() []string {
     return r.attrKeys
 }
 
@@ -208,13 +208,13 @@ func (r TaobaoPaimaiItempropsGetRequest) GetIsKeyProp() bool {
     return r.isKeyProp
 }
 
-func (r *TaobaoPaimaiItempropsGetRequest) SetFields(fields []String) error {
+func (r *TaobaoPaimaiItempropsGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoPaimaiItempropsGetRequest) GetFields() []String {
+func (r TaobaoPaimaiItempropsGetRequest) GetFields() []string {
     return r.fields
 }
 

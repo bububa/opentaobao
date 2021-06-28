@@ -11,11 +11,11 @@ taobao.apple.newuser.sign.notify.newversion
 
 资和信主动通知签约结果
 */
-func TaobaoAppleNewuserSignNotifyNewversion(clt *core.SDKClient, req *game.TaobaoAppleNewuserSignNotifyNewversionRequest, session string) (*game.TaobaoAppleNewuserSignNotifyNewversionResponse, error) {
+func TaobaoAppleNewuserSignNotifyNewversion(clt *core.SDKClient, req *game.TaobaoAppleNewuserSignNotifyNewversionRequest, session string) (*game.TaobaoAppleNewuserSignNotifyNewversionAPIResponse, error) {
     var resp game.TaobaoAppleNewuserSignNotifyNewversionAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

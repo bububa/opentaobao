@@ -12,8 +12,22 @@ alibaba.tcls.aelophy.merchant.user.upload
 */
 type AlibabaTclsAelophyMerchantUserUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTclsAelophyMerchantUserUploadResponse `json:"alibaba_tcls_aelophy_merchant_user_upload_response,omitempty"`
+    // Response *AlibabaTclsAelophyMerchantUserUploadResponse `json:"alibaba_tcls_aelophy_merchant_user_upload_response,omitempty"` 
+    AlibabaTclsAelophyMerchantUserUploadResponse
 }
+
+/* model for simplify = false
+type AlibabaTclsAelophyMerchantUserUploadResponse struct {
+
+    // 接口返回model
+    
+    ApiResult  *struct {
+        AlibabaTclsAelophyMerchantUserUploadApiResult  *AlibabaTclsAelophyMerchantUserUploadApiResult `json:"alibaba_tcls_aelophy_merchant_user_upload_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTclsAelophyMerchantUserUploadResponse struct {
 

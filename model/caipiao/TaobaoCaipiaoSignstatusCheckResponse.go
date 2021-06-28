@@ -12,8 +12,25 @@ taobao.caipiao.signstatus.check
 */
 type TaobaoCaipiaoSignstatusCheckAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCaipiaoSignstatusCheckResponse `json:"taobao_caipiao_signstatus_check_response,omitempty"`
+    // Response *TaobaoCaipiaoSignstatusCheckResponse `json:"caipiao_signstatus_check_response,omitempty"` 
+    TaobaoCaipiaoSignstatusCheckResponse
 }
+
+/* model for simplify = false
+type TaobaoCaipiaoSignstatusCheckResponse struct {
+
+    // 是否签署了支付宝代扣协议
+    
+    Sign   bool `json:"sign,omitempty"`
+    
+
+    // 签署支付宝代扣协议的Url
+    
+    SignUrl   string `json:"sign_url,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCaipiaoSignstatusCheckResponse struct {
 

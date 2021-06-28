@@ -12,8 +12,22 @@ alibaba.icbu.photobank.upload
 */
 type AlibabaIcbuPhotobankUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuPhotobankUploadResponse `json:"alibaba_icbu_photobank_upload_response,omitempty"`
+    // Response *AlibabaIcbuPhotobankUploadResponse `json:"alibaba_icbu_photobank_upload_response,omitempty"` 
+    AlibabaIcbuPhotobankUploadResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuPhotobankUploadResponse struct {
+
+    // 图片信息
+    
+    UploadImageResponse  *struct {
+        UploadImageResponseDo  *UploadImageResponseDo `json:"upload_image_response_do,omitempty"`
+    } `json:"upload_image_response,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuPhotobankUploadResponse struct {
 

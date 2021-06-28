@@ -12,8 +12,22 @@ alibaba.wdk.marketing.fullrange.removeitem
 */
 type AlibabaWdkMarketingFullrangeRemoveitemAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingFullrangeRemoveitemResponse `json:"alibaba_wdk_marketing_fullrange_removeitem_response,omitempty"`
+    // Response *AlibabaWdkMarketingFullrangeRemoveitemResponse `json:"alibaba_wdk_marketing_fullrange_removeitem_response,omitempty"` 
+    AlibabaWdkMarketingFullrangeRemoveitemResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingFullrangeRemoveitemResponse struct {
+
+    // result
+    
+    Result  *struct {
+        MarketResult  *MarketResult `json:"market_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingFullrangeRemoveitemResponse struct {
 

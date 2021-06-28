@@ -12,8 +12,20 @@ alibaba.interact.sensor.wangwang
 */
 type AlibabaInteractSensorWangwangAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorWangwangResponse `json:"alibaba_interact_sensor_wangwang_response,omitempty"`
+    // Response *AlibabaInteractSensorWangwangResponse `json:"alibaba_interact_sensor_wangwang_response,omitempty"` 
+    AlibabaInteractSensorWangwangResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorWangwangResponse struct {
+
+    // result=0
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorWangwangResponse struct {
 

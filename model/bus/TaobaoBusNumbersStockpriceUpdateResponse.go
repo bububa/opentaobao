@@ -12,8 +12,35 @@ taobao.bus.numbers.stockprice.update
 */
 type TaobaoBusNumbersStockpriceUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusNumbersStockpriceUpdateResponse `json:"taobao_bus_numbers_stockprice_update_response,omitempty"`
+    // Response *TaobaoBusNumbersStockpriceUpdateResponse `json:"bus_numbers_stockprice_update_response,omitempty"` 
+    TaobaoBusNumbersStockpriceUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoBusNumbersStockpriceUpdateResponse struct {
+
+    // 错误码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // 错误描述
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // 成功数量
+    
+    SuccCount   int64 `json:"succ_count,omitempty"`
+    
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusNumbersStockpriceUpdateResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.nazca.auth.authapply.callback
 */
 type AlibabaNazcaAuthAuthapplyCallbackAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaNazcaAuthAuthapplyCallbackResponse `json:"alibaba_nazca_auth_authapply_callback_response,omitempty"`
+    // Response *AlibabaNazcaAuthAuthapplyCallbackResponse `json:"alibaba_nazca_auth_authapply_callback_response,omitempty"` 
+    AlibabaNazcaAuthAuthapplyCallbackResponse
 }
+
+/* model for simplify = false
+type AlibabaNazcaAuthAuthapplyCallbackResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ActionResult  *ActionResult `json:"action_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaNazcaAuthAuthapplyCallbackResponse struct {
 

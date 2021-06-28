@@ -11,11 +11,11 @@ alibaba.wdk.marketing.itempool.createactivity
 
 添加商品池活动
 */
-func AlibabaWdkMarketingItempoolCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolCreateactivityRequest, session string) (*wdk.AlibabaWdkMarketingItempoolCreateactivityResponse, error) {
+func AlibabaWdkMarketingItempoolCreateactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolCreateactivityRequest, session string) (*wdk.AlibabaWdkMarketingItempoolCreateactivityAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItempoolCreateactivityAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

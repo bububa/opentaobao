@@ -12,8 +12,20 @@ yunos.cloudcard.batch.opermsg.send
 */
 type YunosCloudcardBatchOpermsgSendAPIResponse struct {
     model.CommonResponse
-    Response *YunosCloudcardBatchOpermsgSendResponse `json:"yunos_cloudcard_batch_opermsg_send_response,omitempty"`
+    // Response *YunosCloudcardBatchOpermsgSendResponse `json:"yunos_cloudcard_batch_opermsg_send_response,omitempty"` 
+    YunosCloudcardBatchOpermsgSendResponse
 }
+
+/* model for simplify = false
+type YunosCloudcardBatchOpermsgSendResponse struct {
+
+    // 群发消息是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type YunosCloudcardBatchOpermsgSendResponse struct {
 

@@ -31,7 +31,7 @@ type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest struct {
     ext   string 
 
     // authcode list
-    authCodes   []String 
+    authCodes   []string 
 
 }
 
@@ -104,13 +104,13 @@ func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetExt() string {
     return r.ext
 }
 
-func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) SetAuthCodes(authCodes []String) error {
+func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) SetAuthCodes(authCodes []string) error {
     r.authCodes = authCodes
     r.Set("auth_codes", authCodes)
     return nil
 }
 
-func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetAuthCodes() []String {
+func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetAuthCodes() []string {
     return r.authCodes
 }
 

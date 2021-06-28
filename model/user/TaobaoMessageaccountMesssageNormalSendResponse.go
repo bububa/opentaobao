@@ -12,8 +12,20 @@ taobao.messageaccount.messsage.normal.send
 */
 type TaobaoMessageaccountMesssageNormalSendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMessageaccountMesssageNormalSendResponse `json:"taobao_messageaccount_messsage_normal_send_response,omitempty"`
+    // Response *TaobaoMessageaccountMesssageNormalSendResponse `json:"messageaccount_messsage_normal_send_response,omitempty"` 
+    TaobaoMessageaccountMesssageNormalSendResponse
 }
+
+/* model for simplify = false
+type TaobaoMessageaccountMesssageNormalSendResponse struct {
+
+    // model
+    
+    Model   string `json:"model,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMessageaccountMesssageNormalSendResponse struct {
 

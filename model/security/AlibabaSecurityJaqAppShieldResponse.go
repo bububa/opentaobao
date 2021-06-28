@@ -12,8 +12,22 @@ alibaba.security.jaq.app.shield
 */
 type AlibabaSecurityJaqAppShieldAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqAppShieldResponse `json:"alibaba_security_jaq_app_shield_response,omitempty"`
+    // Response *AlibabaSecurityJaqAppShieldResponse `json:"alibaba_security_jaq_app_shield_response,omitempty"` 
+    AlibabaSecurityJaqAppShieldResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqAppShieldResponse struct {
+
+    // 加固任务信息
+    
+    Result  *struct {
+        ScanTaskInfo  *ScanTaskInfo `json:"scan_task_info,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqAppShieldResponse struct {
 

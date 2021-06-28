@@ -11,11 +11,11 @@ alibaba.wdk.marketing.itempool.addcategory
 
 增加商品池里面的类目
 */
-func AlibabaWdkMarketingItempoolAddcategory(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolAddcategoryRequest, session string) (*wdk.AlibabaWdkMarketingItempoolAddcategoryResponse, error) {
+func AlibabaWdkMarketingItempoolAddcategory(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolAddcategoryRequest, session string) (*wdk.AlibabaWdkMarketingItempoolAddcategoryAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItempoolAddcategoryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

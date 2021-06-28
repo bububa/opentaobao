@@ -12,8 +12,22 @@ tmall.servicecenter.anomalyrecourse.search
 */
 type TmallServicecenterAnomalyrecourseSearchAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterAnomalyrecourseSearchResponse `json:"tmall_servicecenter_anomalyrecourse_search_response,omitempty"`
+    // Response *TmallServicecenterAnomalyrecourseSearchResponse `json:"tmall_servicecenter_anomalyrecourse_search_response,omitempty"` 
+    TmallServicecenterAnomalyrecourseSearchResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterAnomalyrecourseSearchResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterAnomalyrecourseSearchResponse struct {
 

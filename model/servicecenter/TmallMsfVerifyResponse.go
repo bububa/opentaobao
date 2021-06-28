@@ -12,8 +12,20 @@ msf服务核销的top接口
 */
 type TmallMsfVerifyAPIResponse struct {
     model.CommonResponse
-    Response *TmallMsfVerifyResponse `json:"tmall_msf_verify_response,omitempty"`
+    // Response *TmallMsfVerifyResponse `json:"tmall_msf_verify_response,omitempty"` 
+    TmallMsfVerifyResponse
 }
+
+/* model for simplify = false
+type TmallMsfVerifyResponse struct {
+
+    // result
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallMsfVerifyResponse struct {
 

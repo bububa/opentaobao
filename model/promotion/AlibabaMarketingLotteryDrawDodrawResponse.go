@@ -12,8 +12,37 @@ alibaba.marketing.lottery.draw.dodraw
 */
 type AlibabaMarketingLotteryDrawDodrawAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMarketingLotteryDrawDodrawResponse `json:"alibaba_marketing_lottery_draw_dodraw_response,omitempty"`
+    // Response *AlibabaMarketingLotteryDrawDodrawResponse `json:"alibaba_marketing_lottery_draw_dodraw_response,omitempty"` 
+    AlibabaMarketingLotteryDrawDodrawResponse
 }
+
+/* model for simplify = false
+type AlibabaMarketingLotteryDrawDodrawResponse struct {
+
+    // 抽奖结果
+    
+    LotteryDrawResult  *struct {
+        LotteryDrawResultDto  *LotteryDrawResultDto `json:"lottery_draw_result_dto,omitempty"`
+    } `json:"lottery_draw_result,omitempty"`
+    
+
+    // code
+    
+    MsgCode   int64 `json:"msg_code,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // msg
+    
+    MsgInfo   string `json:"msg_info,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMarketingLotteryDrawDodrawResponse struct {
 

@@ -12,8 +12,32 @@ taobao.jushita.jms.topics.get
 */
 type TaobaoJushitaJmsTopicsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJushitaJmsTopicsGetResponse `json:"taobao_jushita_jms_topics_get_response,omitempty"`
+    // Response *TaobaoJushitaJmsTopicsGetResponse `json:"jushita_jms_topics_get_response,omitempty"` 
+    TaobaoJushitaJmsTopicsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoJushitaJmsTopicsGetResponse struct {
+
+    // 错误信息
+    
+    ResultMessage   string `json:"result_message,omitempty"`
+    
+
+    // topic列表
+    
+    Results  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+    // 错误码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJushitaJmsTopicsGetResponse struct {
 
@@ -21,7 +45,7 @@ type TaobaoJushitaJmsTopicsGetResponse struct {
     ResultMessage   string `json:"result_message,omitempty"`
 
     // topic列表
-    Results   []String `json:"results,omitempty"`
+    Results   []string `json:"results,omitempty"`
 
     // 错误码
     ResultCode   string `json:"result_code,omitempty"`

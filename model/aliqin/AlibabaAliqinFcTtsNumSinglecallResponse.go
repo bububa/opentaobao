@@ -12,8 +12,22 @@ alibaba.aliqin.fc.tts.num.singlecall
 */
 type AlibabaAliqinFcTtsNumSinglecallAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcTtsNumSinglecallResponse `json:"alibaba_aliqin_fc_tts_num_singlecall_response,omitempty"`
+    // Response *AlibabaAliqinFcTtsNumSinglecallResponse `json:"alibaba_aliqin_fc_tts_num_singlecall_response,omitempty"` 
+    AlibabaAliqinFcTtsNumSinglecallResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcTtsNumSinglecallResponse struct {
+
+    // 接口返回参数
+    
+    Result  *struct {
+        AlibabaAliqinFcTtsNumSinglecallBizResult  *AlibabaAliqinFcTtsNumSinglecallBizResult `json:"alibaba_aliqin_fc_tts_num_singlecall_biz_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcTtsNumSinglecallResponse struct {
 

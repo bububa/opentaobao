@@ -12,8 +12,22 @@ taobao.qimen.channelinventory.query
 */
 type TaobaoQimenChannelinventoryQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenChannelinventoryQueryResponse `json:"taobao_qimen_channelinventory_query_response,omitempty"`
+    // Response *TaobaoQimenChannelinventoryQueryResponse `json:"qimen_channelinventory_query_response,omitempty"` 
+    TaobaoQimenChannelinventoryQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenChannelinventoryQueryResponse struct {
+
+    // 
+    
+    Response  *struct {
+        ResponseDO  *ResponseDO `json:"response_do,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenChannelinventoryQueryResponse struct {
 

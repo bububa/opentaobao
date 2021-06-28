@@ -12,8 +12,20 @@ taobao.vmarket.eticket.failsend
 */
 type TaobaoVmarketEticketFailsendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVmarketEticketFailsendResponse `json:"taobao_vmarket_eticket_failsend_response,omitempty"`
+    // Response *TaobaoVmarketEticketFailsendResponse `json:"vmarket_eticket_failsend_response,omitempty"` 
+    TaobaoVmarketEticketFailsendResponse
 }
+
+/* model for simplify = false
+type TaobaoVmarketEticketFailsendResponse struct {
+
+    // 成功
+    
+    RetCode   int64 `json:"ret_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVmarketEticketFailsendResponse struct {
 

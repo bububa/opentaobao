@@ -12,8 +12,22 @@ alibaba.mj.oc.getproductbyscancode
 */
 type AlibabaMjOcGetproductbyscancodeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjOcGetproductbyscancodeResponse `json:"alibaba_mj_oc_getproductbyscancode_response,omitempty"`
+    // Response *AlibabaMjOcGetproductbyscancodeResponse `json:"alibaba_mj_oc_getproductbyscancode_response,omitempty"` 
+    AlibabaMjOcGetproductbyscancodeResponse
 }
+
+/* model for simplify = false
+type AlibabaMjOcGetproductbyscancodeResponse struct {
+
+    // data
+    
+    ProductList  struct {
+        ScanProduct  []ScanProduct `json:"scan_product,omitempty"`
+    } `json:"product_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjOcGetproductbyscancodeResponse struct {
 

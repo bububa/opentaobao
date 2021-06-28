@@ -12,8 +12,20 @@ taobao.baichuan.openaccount.register
 */
 type TaobaoBaichuanOpenaccountRegisterAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanOpenaccountRegisterResponse `json:"taobao_baichuan_openaccount_register_response,omitempty"`
+    // Response *TaobaoBaichuanOpenaccountRegisterResponse `json:"baichuan_openaccount_register_response,omitempty"` 
+    TaobaoBaichuanOpenaccountRegisterResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanOpenaccountRegisterResponse struct {
+
+    // name
+    
+    Name   string `json:"name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanOpenaccountRegisterResponse struct {
 

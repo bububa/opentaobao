@@ -13,8 +13,22 @@ tmall.service.settleadjustment.cancel
 */
 type TmallServiceSettleadjustmentCancelAPIResponse struct {
     model.CommonResponse
-    Response *TmallServiceSettleadjustmentCancelResponse `json:"tmall_service_settleadjustment_cancel_response,omitempty"`
+    // Response *TmallServiceSettleadjustmentCancelResponse `json:"tmall_service_settleadjustment_cancel_response,omitempty"` 
+    TmallServiceSettleadjustmentCancelResponse
 }
+
+/* model for simplify = false
+type TmallServiceSettleadjustmentCancelResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TmallServiceSettleadjustmentCancelResult  *TmallServiceSettleadjustmentCancelResult `json:"tmall_service_settleadjustment_cancel_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServiceSettleadjustmentCancelResponse struct {
 

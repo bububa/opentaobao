@@ -11,11 +11,11 @@ alibaba.alsc.crm.customer.create
 
 开放本地生活创建顾客功能
 */
-func AlibabaAlscCrmCustomerCreate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerCreateRequest, session string) (*alsc.AlibabaAlscCrmCustomerCreateResponse, error) {
+func AlibabaAlscCrmCustomerCreate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerCreateRequest, session string) (*alsc.AlibabaAlscCrmCustomerCreateAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmCustomerCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

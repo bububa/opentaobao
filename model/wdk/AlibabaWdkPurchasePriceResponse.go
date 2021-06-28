@@ -12,8 +12,30 @@ alibaba.wdk.purchase.price
 */
 type AlibabaWdkPurchasePriceAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkPurchasePriceResponse `json:"alibaba_wdk_purchase_price_response,omitempty"`
+    // Response *AlibabaWdkPurchasePriceResponse `json:"alibaba_wdk_purchase_price_response,omitempty"` 
+    AlibabaWdkPurchasePriceResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkPurchasePriceResponse struct {
+
+    // SYSTEM ERROR
+    
+    ReturnMsg   string `json:"return_msg,omitempty"`
+    
+
+    // ERROR
+    
+    ReturnCode   string `json:"return_code,omitempty"`
+    
+
+    // true
+    
+    ReturnSuccess   bool `json:"return_success,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkPurchasePriceResponse struct {
 

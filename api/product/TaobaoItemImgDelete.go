@@ -11,11 +11,11 @@ taobao.item.img.delete
 
 删除商品图片
 */
-func TaobaoItemImgDelete(clt *core.SDKClient, req *product.TaobaoItemImgDeleteRequest, session string) (*product.TaobaoItemImgDeleteResponse, error) {
+func TaobaoItemImgDelete(clt *core.SDKClient, req *product.TaobaoItemImgDeleteRequest, session string) (*product.TaobaoItemImgDeleteAPIResponse, error) {
     var resp product.TaobaoItemImgDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

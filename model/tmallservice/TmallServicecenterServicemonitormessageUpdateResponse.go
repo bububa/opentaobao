@@ -12,8 +12,22 @@ tmall.servicecenter.servicemonitormessage.update
 */
 type TmallServicecenterServicemonitormessageUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterServicemonitormessageUpdateResponse `json:"tmall_servicecenter_servicemonitormessage_update_response,omitempty"`
+    // Response *TmallServicecenterServicemonitormessageUpdateResponse `json:"tmall_servicecenter_servicemonitormessage_update_response,omitempty"` 
+    TmallServicecenterServicemonitormessageUpdateResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterServicemonitormessageUpdateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterServicemonitormessageUpdateResponse struct {
 

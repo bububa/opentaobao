@@ -12,8 +12,22 @@ alibaba.wdk.ums.shift.get
 */
 type AlibabaWdkUmsShiftGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkUmsShiftGetResponse `json:"alibaba_wdk_ums_shift_get_response,omitempty"`
+    // Response *AlibabaWdkUmsShiftGetResponse `json:"alibaba_wdk_ums_shift_get_response,omitempty"` 
+    AlibabaWdkUmsShiftGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkUmsShiftGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        UtmsResult  *UtmsResult `json:"utms_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkUmsShiftGetResponse struct {
 

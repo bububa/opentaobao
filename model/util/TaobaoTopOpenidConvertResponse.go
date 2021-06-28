@@ -12,8 +12,20 @@ taobao.top.openid.convert
 */
 type TaobaoTopOpenidConvertAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTopOpenidConvertResponse `json:"taobao_top_openid_convert_response,omitempty"`
+    // Response *TaobaoTopOpenidConvertResponse `json:"top_openid_convert_response,omitempty"` 
+    TaobaoTopOpenidConvertResponse
 }
+
+/* model for simplify = false
+type TaobaoTopOpenidConvertResponse struct {
+
+    // open_id
+    
+    OpenId   string `json:"open_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTopOpenidConvertResponse struct {
 

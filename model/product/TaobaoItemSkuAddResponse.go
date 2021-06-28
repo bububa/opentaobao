@@ -12,8 +12,22 @@ taobao.item.sku.add
 */
 type TaobaoItemSkuAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemSkuAddResponse `json:"taobao_item_sku_add_response,omitempty"`
+    // Response *TaobaoItemSkuAddResponse `json:"item_sku_add_response,omitempty"` 
+    TaobaoItemSkuAddResponse
 }
+
+/* model for simplify = false
+type TaobaoItemSkuAddResponse struct {
+
+    // sku
+    
+    Sku  *struct {
+        Sku  *Sku `json:"sku,omitempty"`
+    } `json:"sku,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemSkuAddResponse struct {
 

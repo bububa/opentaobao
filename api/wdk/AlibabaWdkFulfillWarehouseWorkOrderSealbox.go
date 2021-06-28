@@ -11,11 +11,11 @@ alibaba.wdk.fulfill.warehouse.work.order.sealbox
 
 仓封箱回告箱与包裹的关系
 */
-func AlibabaWdkFulfillWarehouseWorkOrderSealbox(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest, session string) (*wdk.AlibabaWdkFulfillWarehouseWorkOrderSealboxResponse, error) {
+func AlibabaWdkFulfillWarehouseWorkOrderSealbox(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillWarehouseWorkOrderSealboxRequest, session string) (*wdk.AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIResponse, error) {
     var resp wdk.AlibabaWdkFulfillWarehouseWorkOrderSealboxAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

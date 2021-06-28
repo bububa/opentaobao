@@ -12,8 +12,32 @@ alibaba.scbp.effect.account.list
 */
 type AlibabaScbpEffectAccountListAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpEffectAccountListResponse `json:"alibaba_scbp_effect_account_list_response,omitempty"`
+    // Response *AlibabaScbpEffectAccountListResponse `json:"alibaba_scbp_effect_account_list_response,omitempty"` 
+    AlibabaScbpEffectAccountListResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpEffectAccountListResponse struct {
+
+    // 账户效果数据列表
+    
+    AccountReportList  struct {
+        AccountEffectDto  []AccountEffectDto `json:"account_effect_dto,omitempty"`
+    } `json:"account_report_list,omitempty"`
+    
+
+    // 总个数
+    
+    TotalNum   int64 `json:"total_num,omitempty"`
+    
+
+    // 总页数
+    
+    TotalPage   int64 `json:"total_page,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpEffectAccountListResponse struct {
 

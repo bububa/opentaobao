@@ -11,11 +11,11 @@ taobao.tanx.qualification.find
 
 资质查询接口
 */
-func TaobaoTanxQualificationFind(clt *core.SDKClient, req *tanx.TaobaoTanxQualificationFindRequest, session string) (*tanx.TaobaoTanxQualificationFindResponse, error) {
+func TaobaoTanxQualificationFind(clt *core.SDKClient, req *tanx.TaobaoTanxQualificationFindRequest, session string) (*tanx.TaobaoTanxQualificationFindAPIResponse, error) {
     var resp tanx.TaobaoTanxQualificationFindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

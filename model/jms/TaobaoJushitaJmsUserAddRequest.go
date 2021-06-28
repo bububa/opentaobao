@@ -16,7 +16,7 @@ type TaobaoJushitaJmsUserAddRequest struct {
     model.Params
 
     // topic列表,不填则继承appkey所订阅的topic
-    topicNames   []String 
+    topicNames   []string 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoJushitaJmsUserAddRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoJushitaJmsUserAddRequest) SetTopicNames(topicNames []String) error {
+func (r *TaobaoJushitaJmsUserAddRequest) SetTopicNames(topicNames []string) error {
     r.topicNames = topicNames
     r.Set("topic_names", topicNames)
     return nil
 }
 
-func (r TaobaoJushitaJmsUserAddRequest) GetTopicNames() []String {
+func (r TaobaoJushitaJmsUserAddRequest) GetTopicNames() []string {
     return r.topicNames
 }
 

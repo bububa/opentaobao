@@ -11,11 +11,11 @@ alibaba.price.promotion.item.add
 
 批量新增档期活动商品
 */
-func AlibabaPricePromotionItemAdd(clt *core.SDKClient, req *wdk.AlibabaPricePromotionItemAddRequest, session string) (*wdk.AlibabaPricePromotionItemAddResponse, error) {
+func AlibabaPricePromotionItemAdd(clt *core.SDKClient, req *wdk.AlibabaPricePromotionItemAddRequest, session string) (*wdk.AlibabaPricePromotionItemAddAPIResponse, error) {
     var resp wdk.AlibabaPricePromotionItemAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

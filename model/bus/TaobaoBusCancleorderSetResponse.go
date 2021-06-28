@@ -12,8 +12,30 @@ taobao.bus.cancleorder.set
 */
 type TaobaoBusCancleorderSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusCancleorderSetResponse `json:"taobao_bus_cancleorder_set_response,omitempty"`
+    // Response *TaobaoBusCancleorderSetResponse `json:"bus_cancleorder_set_response,omitempty"` 
+    TaobaoBusCancleorderSetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusCancleorderSetResponse struct {
+
+    // 错误代码
+    
+    ErrorCode1   string `json:"error_code1,omitempty"`
+    
+
+    // 错误描述
+    
+    ErrorMsg1   string `json:"error_msg1,omitempty"`
+    
+
+    // success
+    
+    Success1   bool `json:"success1,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusCancleorderSetResponse struct {
 

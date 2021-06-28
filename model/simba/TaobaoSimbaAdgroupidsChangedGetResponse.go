@@ -12,12 +12,26 @@ taobao.simba.adgroupids.changed.get
 */
 type TaobaoSimbaAdgroupidsChangedGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaAdgroupidsChangedGetResponse `json:"taobao_simba_adgroupids_changed_get_response,omitempty"`
+    // Response *TaobaoSimbaAdgroupidsChangedGetResponse `json:"simba_adgroupids_changed_get_response,omitempty"` 
+    TaobaoSimbaAdgroupidsChangedGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaAdgroupidsChangedGetResponse struct {
+
+    // 推广组ID列表
+    
+    ChangedAdgroupids  struct {
+        Number  []int64 `json:"int64,omitempty"`
+    } `json:"changed_adgroupids,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaAdgroupidsChangedGetResponse struct {
 
     // 推广组ID列表
-    ChangedAdgroupids   []Number `json:"changed_adgroupids,omitempty"`
+    ChangedAdgroupids   []int64 `json:"changed_adgroupids,omitempty"`
 
 }

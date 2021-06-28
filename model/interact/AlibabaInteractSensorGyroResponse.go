@@ -12,8 +12,20 @@ alibaba.interact.sensor.gyro
 */
 type AlibabaInteractSensorGyroAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorGyroResponse `json:"alibaba_interact_sensor_gyro_response,omitempty"`
+    // Response *AlibabaInteractSensorGyroResponse `json:"alibaba_interact_sensor_gyro_response,omitempty"` 
+    AlibabaInteractSensorGyroResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorGyroResponse struct {
+
+    // return=0 表示正确
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorGyroResponse struct {
 

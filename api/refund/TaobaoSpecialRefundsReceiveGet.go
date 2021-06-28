@@ -11,11 +11,11 @@ taobao.special.refunds.receive.get
 
 特殊退款类型的纠纷单列表查询
 */
-func TaobaoSpecialRefundsReceiveGet(clt *core.SDKClient, req *refund.TaobaoSpecialRefundsReceiveGetRequest, session string) (*refund.TaobaoSpecialRefundsReceiveGetResponse, error) {
+func TaobaoSpecialRefundsReceiveGet(clt *core.SDKClient, req *refund.TaobaoSpecialRefundsReceiveGetRequest, session string) (*refund.TaobaoSpecialRefundsReceiveGetAPIResponse, error) {
     var resp refund.TaobaoSpecialRefundsReceiveGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ taobao.bus.city.get
 
 汽车票出发城市获取接口，获取所有出发城市
 */
-func TaobaoBusCityGet(clt *core.SDKClient, req *bus.TaobaoBusCityGetRequest, session string) (*bus.TaobaoBusCityGetResponse, error) {
+func TaobaoBusCityGet(clt *core.SDKClient, req *bus.TaobaoBusCityGetRequest, session string) (*bus.TaobaoBusCityGetAPIResponse, error) {
     var resp bus.TaobaoBusCityGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

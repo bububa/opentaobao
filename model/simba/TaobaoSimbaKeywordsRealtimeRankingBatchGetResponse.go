@@ -12,8 +12,22 @@ taobao.simba.keywords.realtime.ranking.batch.get
 */
 type TaobaoSimbaKeywordsRealtimeRankingBatchGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaKeywordsRealtimeRankingBatchGetResponse `json:"taobao_simba_keywords_realtime_ranking_batch_get_response,omitempty"`
+    // Response *TaobaoSimbaKeywordsRealtimeRankingBatchGetResponse `json:"simba_keywords_realtime_ranking_batch_get_response,omitempty"` 
+    TaobaoSimbaKeywordsRealtimeRankingBatchGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaKeywordsRealtimeRankingBatchGetResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        TaobaoSimbaKeywordsRealtimeRankingBatchGetResultDto  *TaobaoSimbaKeywordsRealtimeRankingBatchGetResultDto `json:"taobao_simba_keywords_realtime_ranking_batch_get_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaKeywordsRealtimeRankingBatchGetResponse struct {
 

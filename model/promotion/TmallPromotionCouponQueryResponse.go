@@ -12,8 +12,22 @@ tmall.promotion.coupon.query
 */
 type TmallPromotionCouponQueryAPIResponse struct {
     model.CommonResponse
-    Response *TmallPromotionCouponQueryResponse `json:"tmall_promotion_coupon_query_response,omitempty"`
+    // Response *TmallPromotionCouponQueryResponse `json:"tmall_promotion_coupon_query_response,omitempty"` 
+    TmallPromotionCouponQueryResponse
 }
+
+/* model for simplify = false
+type TmallPromotionCouponQueryResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TmallPromotionCouponQueryResult  *TmallPromotionCouponQueryResult `json:"tmall_promotion_coupon_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallPromotionCouponQueryResponse struct {
 

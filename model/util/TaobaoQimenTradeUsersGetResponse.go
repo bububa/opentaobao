@@ -12,8 +12,27 @@ taobao.qimen.trade.users.get
 */
 type TaobaoQimenTradeUsersGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenTradeUsersGetResponse `json:"taobao_qimen_trade_users_get_response,omitempty"`
+    // Response *TaobaoQimenTradeUsersGetResponse `json:"qimen_trade_users_get_response,omitempty"` 
+    TaobaoQimenTradeUsersGetResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenTradeUsersGetResponse struct {
+
+    // totalCount
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+    // modal
+    
+    Users  struct {
+        QimenUser  []QimenUser `json:"qimen_user,omitempty"`
+    } `json:"users,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenTradeUsersGetResponse struct {
 

@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.call.record
 */
 type TmallServicecenterWorkcardCallRecordAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardCallRecordResponse `json:"tmall_servicecenter_workcard_call_record_response,omitempty"`
+    // Response *TmallServicecenterWorkcardCallRecordResponse `json:"tmall_servicecenter_workcard_call_record_response,omitempty"` 
+    TmallServicecenterWorkcardCallRecordResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardCallRecordResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardCallRecordResponse struct {
 

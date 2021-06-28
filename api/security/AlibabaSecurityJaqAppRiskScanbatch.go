@@ -11,11 +11,11 @@ alibaba.security.jaq.app.risk.scanbatch
 
 批量提交应用进行风险扫描(含漏洞扫描、恶意代码检测),扫描完成后可通过对应的查询接口查询扫描结果
 */
-func AlibabaSecurityJaqAppRiskScanbatch(clt *core.SDKClient, req *security.AlibabaSecurityJaqAppRiskScanbatchRequest, session string) (*security.AlibabaSecurityJaqAppRiskScanbatchResponse, error) {
+func AlibabaSecurityJaqAppRiskScanbatch(clt *core.SDKClient, req *security.AlibabaSecurityJaqAppRiskScanbatchRequest, session string) (*security.AlibabaSecurityJaqAppRiskScanbatchAPIResponse, error) {
     var resp security.AlibabaSecurityJaqAppRiskScanbatchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

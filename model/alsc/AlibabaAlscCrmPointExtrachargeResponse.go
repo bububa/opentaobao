@@ -12,8 +12,22 @@ alibaba.alsc.crm.point.extracharge
 */
 type AlibabaAlscCrmPointExtrachargeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmPointExtrachargeResponse `json:"alibaba_alsc_crm_point_extracharge_response,omitempty"`
+    // Response *AlibabaAlscCrmPointExtrachargeResponse `json:"alibaba_alsc_crm_point_extracharge_response,omitempty"` 
+    AlibabaAlscCrmPointExtrachargeResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmPointExtrachargeResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmPointExtrachargeResponse struct {
 

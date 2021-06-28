@@ -11,11 +11,11 @@ tmall.servicecenter.worker.taglist.get
 
 服务商获取对应工人的标签
 */
-func TmallServicecenterWorkerTaglistGet(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerTaglistGetRequest, session string) (*tmallservice.TmallServicecenterWorkerTaglistGetResponse, error) {
+func TmallServicecenterWorkerTaglistGet(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerTaglistGetRequest, session string) (*tmallservice.TmallServicecenterWorkerTaglistGetAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkerTaglistGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

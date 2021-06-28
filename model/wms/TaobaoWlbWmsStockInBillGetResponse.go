@@ -12,8 +12,22 @@ taobao.wlb.wms.stock.in.bill.get
 */
 type TaobaoWlbWmsStockInBillGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWmsStockInBillGetResponse `json:"taobao_wlb_wms_stock_in_bill_get_response,omitempty"`
+    // Response *TaobaoWlbWmsStockInBillGetResponse `json:"wlb_wms_stock_in_bill_get_response,omitempty"` 
+    TaobaoWlbWmsStockInBillGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWmsStockInBillGetResponse struct {
+
+    // 入库单信息
+    
+    StockInInfo  *struct {
+        CainiaoStockInBillStockininfo  *CainiaoStockInBillStockininfo `json:"cainiao_stock_in_bill_stockininfo,omitempty"`
+    } `json:"stock_in_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWmsStockInBillGetResponse struct {
 

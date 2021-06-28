@@ -12,8 +12,20 @@ taobao.crm.memberinfo.update
 */
 type TaobaoCrmMemberinfoUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmMemberinfoUpdateResponse `json:"taobao_crm_memberinfo_update_response,omitempty"`
+    // Response *TaobaoCrmMemberinfoUpdateResponse `json:"crm_memberinfo_update_response,omitempty"` 
+    TaobaoCrmMemberinfoUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmMemberinfoUpdateResponse struct {
+
+    // 会员信息修改是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmMemberinfoUpdateResponse struct {
 

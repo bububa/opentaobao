@@ -12,8 +12,22 @@ taobao.antifraud.riskassessment.get
 */
 type TaobaoAntifraudRiskassessmentGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAntifraudRiskassessmentGetResponse `json:"taobao_antifraud_riskassessment_get_response,omitempty"`
+    // Response *TaobaoAntifraudRiskassessmentGetResponse `json:"antifraud_riskassessment_get_response,omitempty"` 
+    TaobaoAntifraudRiskassessmentGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAntifraudRiskassessmentGetResponse struct {
+
+    // result
+    
+    RiskResult  *struct {
+        ResultWrapper  *ResultWrapper `json:"result_wrapper,omitempty"`
+    } `json:"risk_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAntifraudRiskassessmentGetResponse struct {
 

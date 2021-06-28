@@ -12,8 +12,22 @@ alibaba.wdk.item.price.update
 */
 type AlibabaWdkItemPriceUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkItemPriceUpdateResponse `json:"alibaba_wdk_item_price_update_response,omitempty"`
+    // Response *AlibabaWdkItemPriceUpdateResponse `json:"alibaba_wdk_item_price_update_response,omitempty"` 
+    AlibabaWdkItemPriceUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkItemPriceUpdateResponse struct {
+
+    // hsfResult
+    
+    HsfResult  *struct {
+        AlibabaWdkItemPriceUpdateResult  *AlibabaWdkItemPriceUpdateResult `json:"alibaba_wdk_item_price_update_result,omitempty"`
+    } `json:"hsf_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkItemPriceUpdateResponse struct {
 

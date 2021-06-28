@@ -16,10 +16,10 @@ type TaobaoCrmMembersGroupBatchaddRequest struct {
     model.Params
 
     // 分组id
-    groupIds   []Number 
+    groupIds   []int64 
 
     // 买家昵称列表
-    buyerNicks   []String 
+    buyerNicks   []string 
 
 }
 
@@ -42,23 +42,23 @@ func (r TaobaoCrmMembersGroupBatchaddRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoCrmMembersGroupBatchaddRequest) SetGroupIds(groupIds []Number) error {
+func (r *TaobaoCrmMembersGroupBatchaddRequest) SetGroupIds(groupIds []int64) error {
     r.groupIds = groupIds
     r.Set("group_ids", groupIds)
     return nil
 }
 
-func (r TaobaoCrmMembersGroupBatchaddRequest) GetGroupIds() []Number {
+func (r TaobaoCrmMembersGroupBatchaddRequest) GetGroupIds() []int64 {
     return r.groupIds
 }
 
-func (r *TaobaoCrmMembersGroupBatchaddRequest) SetBuyerNicks(buyerNicks []String) error {
+func (r *TaobaoCrmMembersGroupBatchaddRequest) SetBuyerNicks(buyerNicks []string) error {
     r.buyerNicks = buyerNicks
     r.Set("buyer_nicks", buyerNicks)
     return nil
 }
 
-func (r TaobaoCrmMembersGroupBatchaddRequest) GetBuyerNicks() []String {
+func (r TaobaoCrmMembersGroupBatchaddRequest) GetBuyerNicks() []string {
     return r.buyerNicks
 }
 

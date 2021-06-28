@@ -1,6 +1,39 @@
 package bus
 
 // TopStandardInsRecommendRequest 
+/* model for simplify = false
+type TopStandardInsRecommendRequest struct {
+
+    // 站点信息对象
+    
+    StationInfo  *struct {
+        TopInsStationInfo  *TopInsStationInfo `json:"top_ins_station_info,omitempty"`
+    } `json:"station_info,omitempty"`
+    
+
+    // OFF_LINE（线下自助机）、OTA（OTA）、SUBMIT_ORDER_PAGE（下单页）、RECOMMEND_PAGE （推荐弹层）、STORE_WINDOW（商家窗口）。目前仅开放了线下自助机和商家窗口。
+    
+    TargetChannel   string `json:"target_channel,omitempty"`
+    
+
+    // 商户身份对象
+    
+    MerchantInfo  *struct {
+        TopInsMerchantInfo  *TopInsMerchantInfo `json:"top_ins_merchant_info,omitempty"`
+    } `json:"merchant_info,omitempty"`
+    
+
+    // 商品信息对象
+    
+    CommodityInfo  *struct {
+        TopInsCommodityInfo  *TopInsCommodityInfo `json:"top_ins_commodity_info,omitempty"`
+    } `json:"commodity_info,omitempty"`
+    
+
+}
+*/
+
+// TopStandardInsRecommendRequest 
 type TopStandardInsRecommendRequest struct {
 
     // 站点信息对象

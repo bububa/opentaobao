@@ -12,8 +12,22 @@ taobao.simba.tools.items.top.get
 */
 type TaobaoSimbaToolsItemsTopGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaToolsItemsTopGetResponse `json:"taobao_simba_tools_items_top_get_response,omitempty"`
+    // Response *TaobaoSimbaToolsItemsTopGetResponse `json:"simba_tools_items_top_get_response,omitempty"` 
+    TaobaoSimbaToolsItemsTopGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaToolsItemsTopGetResponse struct {
+
+    // 推广组信息列表
+    
+    Rankeditems  struct {
+        RankedItem  []RankedItem `json:"ranked_item,omitempty"`
+    } `json:"rankeditems,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaToolsItemsTopGetResponse struct {
 

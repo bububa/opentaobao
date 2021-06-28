@@ -11,11 +11,11 @@ alibaba.ssc.supplyplatform.servicecapacity.save
 
 保存服务容量
 */
-func AlibabaSscSupplyplatformServicecapacitySave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicecapacitySaveRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicecapacitySaveResponse, error) {
+func AlibabaSscSupplyplatformServicecapacitySave(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicecapacitySaveRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicecapacitySaveAPIResponse, error) {
     var resp tmallservice.AlibabaSscSupplyplatformServicecapacitySaveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

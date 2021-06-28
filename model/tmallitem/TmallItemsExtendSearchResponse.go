@@ -12,8 +12,46 @@ tmall.items.extend.search
 */
 type TmallItemsExtendSearchAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemsExtendSearchResponse `json:"tmall_items_extend_search_response,omitempty"`
+    // Response *TmallItemsExtendSearchResponse `json:"tmall_items_extend_search_response,omitempty"` 
+    TmallItemsExtendSearchResponse
 }
+
+/* model for simplify = false
+type TmallItemsExtendSearchResponse struct {
+
+    // 商品列表
+    
+    ItemList  struct {
+        TmallExtendSearchItem  []TmallExtendSearchItem `json:"tmall_extend_search_item,omitempty"`
+    } `json:"item_list,omitempty"`
+    
+
+    // 总商品数量
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 查询条件
+    
+    Q   string `json:"q,omitempty"`
+    
+
+    // 类目列表
+    
+    CatList  struct {
+        TmallCat  []TmallCat `json:"tmall_cat,omitempty"`
+    } `json:"cat_list,omitempty"`
+    
+
+    // 品牌列表
+    
+    BrandList  struct {
+        TmallBrand  []TmallBrand `json:"tmall_brand,omitempty"`
+    } `json:"brand_list,omitempty"`
+    
+
+}
+*/
 
 type TmallItemsExtendSearchResponse struct {
 

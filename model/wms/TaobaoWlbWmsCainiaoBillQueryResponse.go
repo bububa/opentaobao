@@ -12,8 +12,27 @@ taobao.wlb.wms.cainiao.bill.query
 */
 type TaobaoWlbWmsCainiaoBillQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWmsCainiaoBillQueryResponse `json:"taobao_wlb_wms_cainiao_bill_query_response,omitempty"`
+    // Response *TaobaoWlbWmsCainiaoBillQueryResponse `json:"wlb_wms_cainiao_bill_query_response,omitempty"` 
+    TaobaoWlbWmsCainiaoBillQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWmsCainiaoBillQueryResponse struct {
+
+    // 总条数
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+    // 订单列表信息
+    
+    OrderInfoList  struct {
+        CainiaoBillQueryOrderinfolist  []CainiaoBillQueryOrderinfolist `json:"cainiao_bill_query_orderinfolist,omitempty"`
+    } `json:"order_info_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWmsCainiaoBillQueryResponse struct {
 

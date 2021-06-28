@@ -12,8 +12,25 @@ taobao.train.agent.changeorders.get
 */
 type TaobaoTrainAgentChangeordersGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentChangeordersGetResponse `json:"taobao_train_agent_changeorders_get_response,omitempty"`
+    // Response *TaobaoTrainAgentChangeordersGetResponse `json:"train_agent_changeorders_get_response,omitempty"` 
+    TaobaoTrainAgentChangeordersGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentChangeordersGetResponse struct {
+
+    // 待处理订单总数量
+    
+    ApplyCount   int64 `json:"apply_count,omitempty"`
+    
+
+    // 逗号连接的多个改签单id
+    
+    ApplyIds   string `json:"apply_ids,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentChangeordersGetResponse struct {
 

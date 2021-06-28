@@ -12,8 +12,22 @@ alibaba.wdk.merchant.item.createdraft
 */
 type AlibabaWdkMerchantItemCreatedraftAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMerchantItemCreatedraftResponse `json:"alibaba_wdk_merchant_item_createdraft_response,omitempty"`
+    // Response *AlibabaWdkMerchantItemCreatedraftResponse `json:"alibaba_wdk_merchant_item_createdraft_response,omitempty"` 
+    AlibabaWdkMerchantItemCreatedraftResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMerchantItemCreatedraftResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaWdkMerchantItemCreatedraftResult  *AlibabaWdkMerchantItemCreatedraftResult `json:"alibaba_wdk_merchant_item_createdraft_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMerchantItemCreatedraftResponse struct {
 

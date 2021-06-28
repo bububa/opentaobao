@@ -11,11 +11,11 @@ alibaba.alsc.crm.open.recharge.operate
 
 储值操作接口
 */
-func AlibabaAlscCrmOpenRechargeOperate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenRechargeOperateRequest, session string) (*alsc.AlibabaAlscCrmOpenRechargeOperateResponse, error) {
+func AlibabaAlscCrmOpenRechargeOperate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenRechargeOperateRequest, session string) (*alsc.AlibabaAlscCrmOpenRechargeOperateAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmOpenRechargeOperateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

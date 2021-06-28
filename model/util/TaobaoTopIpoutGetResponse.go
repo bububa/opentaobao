@@ -12,8 +12,20 @@ taobao.top.ipout.get
 */
 type TaobaoTopIpoutGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTopIpoutGetResponse `json:"taobao_top_ipout_get_response,omitempty"`
+    // Response *TaobaoTopIpoutGetResponse `json:"top_ipout_get_response,omitempty"` 
+    TaobaoTopIpoutGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTopIpoutGetResponse struct {
+
+    // TOP网关出口IP列表
+    
+    IpList   string `json:"ip_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTopIpoutGetResponse struct {
 

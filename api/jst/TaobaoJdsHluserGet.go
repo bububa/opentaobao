@@ -11,11 +11,11 @@ taobao.jds.hluser.get
 
 订单全链路用户信息获取
 */
-func TaobaoJdsHluserGet(clt *core.SDKClient, req *jst.TaobaoJdsHluserGetRequest, session string) (*jst.TaobaoJdsHluserGetResponse, error) {
+func TaobaoJdsHluserGet(clt *core.SDKClient, req *jst.TaobaoJdsHluserGetRequest, session string) (*jst.TaobaoJdsHluserGetAPIResponse, error) {
     var resp jst.TaobaoJdsHluserGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

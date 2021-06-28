@@ -11,11 +11,11 @@ alibaba.servicecenter.identifytask.create
 
 创建核销单
 */
-func AlibabaServicecenterIdentifytaskCreate(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterIdentifytaskCreateRequest, session string) (*tmallservice.AlibabaServicecenterIdentifytaskCreateResponse, error) {
+func AlibabaServicecenterIdentifytaskCreate(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterIdentifytaskCreateRequest, session string) (*tmallservice.AlibabaServicecenterIdentifytaskCreateAPIResponse, error) {
     var resp tmallservice.AlibabaServicecenterIdentifytaskCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

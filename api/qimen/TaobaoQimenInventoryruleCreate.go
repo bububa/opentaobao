@@ -11,11 +11,11 @@ taobao.qimen.inventoryrule.create
 
 渠道间库存规则设置
 */
-func TaobaoQimenInventoryruleCreate(clt *core.SDKClient, req *qimen.TaobaoQimenInventoryruleCreateRequest, session string) (*qimen.TaobaoQimenInventoryruleCreateResponse, error) {
+func TaobaoQimenInventoryruleCreate(clt *core.SDKClient, req *qimen.TaobaoQimenInventoryruleCreateRequest, session string) (*qimen.TaobaoQimenInventoryruleCreateAPIResponse, error) {
     var resp qimen.TaobaoQimenInventoryruleCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -22,7 +22,7 @@ type TaobaoSimbaKeywordsDeleteRequest struct {
     campaignId   int64 
 
     // 关键词Id数组，最多100个
-    keywordIds   []Number 
+    keywordIds   []int64 
 
 }
 
@@ -65,13 +65,13 @@ func (r TaobaoSimbaKeywordsDeleteRequest) GetCampaignId() int64 {
     return r.campaignId
 }
 
-func (r *TaobaoSimbaKeywordsDeleteRequest) SetKeywordIds(keywordIds []Number) error {
+func (r *TaobaoSimbaKeywordsDeleteRequest) SetKeywordIds(keywordIds []int64) error {
     r.keywordIds = keywordIds
     r.Set("keyword_ids", keywordIds)
     return nil
 }
 
-func (r TaobaoSimbaKeywordsDeleteRequest) GetKeywordIds() []Number {
+func (r TaobaoSimbaKeywordsDeleteRequest) GetKeywordIds() []int64 {
     return r.keywordIds
 }
 

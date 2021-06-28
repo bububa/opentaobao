@@ -12,8 +12,22 @@ taobao.sellercenter.role.add
 */
 type TaobaoSellercenterRoleAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSellercenterRoleAddResponse `json:"taobao_sellercenter_role_add_response,omitempty"`
+    // Response *TaobaoSellercenterRoleAddResponse `json:"sellercenter_role_add_response,omitempty"` 
+    TaobaoSellercenterRoleAddResponse
 }
+
+/* model for simplify = false
+type TaobaoSellercenterRoleAddResponse struct {
+
+    // 子账号角色
+    
+    Role  *struct {
+        Role  *Role `json:"role,omitempty"`
+    } `json:"role,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSellercenterRoleAddResponse struct {
 

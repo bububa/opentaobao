@@ -12,8 +12,40 @@ taobao.jst.sms.message.send
 */
 type TaobaoJstSmsMessageSendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJstSmsMessageSendResponse `json:"taobao_jst_sms_message_send_response,omitempty"`
+    // Response *TaobaoJstSmsMessageSendResponse `json:"jst_sms_message_send_response,omitempty"` 
+    TaobaoJstSmsMessageSendResponse
 }
+
+/* model for simplify = false
+type TaobaoJstSmsMessageSendResponse struct {
+
+    // 参数错误
+    
+    RequestCode   string `json:"request_code,omitempty"`
+    
+
+    // 请求成功
+    
+    RequestSuccess   bool `json:"request_success,omitempty"`
+    
+
+    // 1234
+    
+    RequestId   string `json:"request_id,omitempty"`
+    
+
+    // 空
+    
+    Module   string `json:"module,omitempty"`
+    
+
+    // 参数错误
+    
+    Message   string `json:"message,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJstSmsMessageSendResponse struct {
 

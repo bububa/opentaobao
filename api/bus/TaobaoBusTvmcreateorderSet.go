@@ -11,11 +11,11 @@ taobao.bus.tvmcreateorder.set
 
 提供给汽车票线下自助机的创建订单使用
 */
-func TaobaoBusTvmcreateorderSet(clt *core.SDKClient, req *bus.TaobaoBusTvmcreateorderSetRequest, session string) (*bus.TaobaoBusTvmcreateorderSetResponse, error) {
+func TaobaoBusTvmcreateorderSet(clt *core.SDKClient, req *bus.TaobaoBusTvmcreateorderSetRequest, session string) (*bus.TaobaoBusTvmcreateorderSetAPIResponse, error) {
     var resp bus.TaobaoBusTvmcreateorderSetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

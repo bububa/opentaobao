@@ -12,8 +12,20 @@ OPENIM群解散
 */
 type TaobaoOpenimTribeDismissAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribeDismissResponse `json:"taobao_openim_tribe_dismiss_response,omitempty"`
+    // Response *TaobaoOpenimTribeDismissResponse `json:"openim_tribe_dismiss_response,omitempty"` 
+    TaobaoOpenimTribeDismissResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribeDismissResponse struct {
+
+    // 群服务code
+    
+    TribeCode   int64 `json:"tribe_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribeDismissResponse struct {
 

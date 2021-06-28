@@ -12,8 +12,25 @@ tmall.device.shortchainurl.get
 */
 type TmallDeviceShortchainurlGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallDeviceShortchainurlGetResponse `json:"tmall_device_shortchainurl_get_response,omitempty"`
+    // Response *TmallDeviceShortchainurlGetResponse `json:"tmall_device_shortchainurl_get_response,omitempty"` 
+    TmallDeviceShortchainurlGetResponse
 }
+
+/* model for simplify = false
+type TmallDeviceShortchainurlGetResponse struct {
+
+    // 二维码图片地址
+    
+    ShortImgUrl   string `json:"short_img_url,omitempty"`
+    
+
+    // 短链接url
+    
+    ShortUrl   string `json:"short_url,omitempty"`
+    
+
+}
+*/
 
 type TmallDeviceShortchainurlGetResponse struct {
 

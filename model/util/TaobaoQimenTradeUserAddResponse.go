@@ -12,8 +12,30 @@ taobao.qimen.trade.user.add
 */
 type TaobaoQimenTradeUserAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenTradeUserAddResponse `json:"taobao_qimen_trade_user_add_response,omitempty"`
+    // Response *TaobaoQimenTradeUserAddResponse `json:"qimen_trade_user_add_response,omitempty"` 
+    TaobaoQimenTradeUserAddResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenTradeUserAddResponse struct {
+
+    // 创建时间
+    
+    GmtCreate   string `json:"gmt_create,omitempty"`
+    
+
+    // appkey
+    
+    Appkey   string `json:"appkey,omitempty"`
+    
+
+    // 卖家备注
+    
+    Memo   string `json:"memo,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenTradeUserAddResponse struct {
 

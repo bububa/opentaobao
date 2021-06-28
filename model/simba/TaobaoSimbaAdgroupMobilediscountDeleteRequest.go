@@ -19,7 +19,7 @@ type TaobaoSimbaAdgroupMobilediscountDeleteRequest struct {
     nick   string 
 
     // adgroup主键数组（批量最多支持200个）
-    adgroupIds   []Number 
+    adgroupIds   []int64 
 
 }
 
@@ -52,13 +52,13 @@ func (r TaobaoSimbaAdgroupMobilediscountDeleteRequest) GetNick() string {
     return r.nick
 }
 
-func (r *TaobaoSimbaAdgroupMobilediscountDeleteRequest) SetAdgroupIds(adgroupIds []Number) error {
+func (r *TaobaoSimbaAdgroupMobilediscountDeleteRequest) SetAdgroupIds(adgroupIds []int64) error {
     r.adgroupIds = adgroupIds
     r.Set("adgroup_ids", adgroupIds)
     return nil
 }
 
-func (r TaobaoSimbaAdgroupMobilediscountDeleteRequest) GetAdgroupIds() []Number {
+func (r TaobaoSimbaAdgroupMobilediscountDeleteRequest) GetAdgroupIds() []int64 {
     return r.adgroupIds
 }
 

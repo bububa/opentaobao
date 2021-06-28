@@ -12,8 +12,35 @@ alibaba.wdk.order.sync
 */
 type AlibabaWdkOrderSyncAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkOrderSyncResponse `json:"alibaba_wdk_order_sync_response,omitempty"`
+    // Response *AlibabaWdkOrderSyncResponse `json:"alibaba_wdk_order_sync_response,omitempty"` 
+    AlibabaWdkOrderSyncResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkOrderSyncResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 返回码
+    
+    ReturnCode   int64 `json:"return_code,omitempty"`
+    
+
+    // 描述
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 订单号
+    
+    Target   string `json:"target,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkOrderSyncResponse struct {
 

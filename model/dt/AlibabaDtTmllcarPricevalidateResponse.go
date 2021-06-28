@@ -14,12 +14,26 @@ alibaba.dt.tmllcar.pricevalidate
 */
 type AlibabaDtTmllcarPricevalidateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaDtTmllcarPricevalidateResponse `json:"alibaba_dt_tmllcar_pricevalidate_response,omitempty"`
+    // Response *AlibabaDtTmllcarPricevalidateResponse `json:"alibaba_dt_tmllcar_pricevalidate_response,omitempty"` 
+    AlibabaDtTmllcarPricevalidateResponse
 }
+
+/* model for simplify = false
+type AlibabaDtTmllcarPricevalidateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaDtTmllcarPricevalidateResults  *AlibabaDtTmllcarPricevalidateResults `json:"alibaba_dt_tmllcar_pricevalidate_results,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaDtTmllcarPricevalidateResponse struct {
 
     // result
-    Result   *Results `json:"result,omitempty"`
+    Result   *AlibabaDtTmllcarPricevalidateResults `json:"result,omitempty"`
 
 }

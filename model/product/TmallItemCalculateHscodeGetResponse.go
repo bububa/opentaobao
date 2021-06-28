@@ -12,12 +12,26 @@ tmall.item.calculate.hscode.get
 */
 type TmallItemCalculateHscodeGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemCalculateHscodeGetResponse `json:"tmall_item_calculate_hscode_get_response,omitempty"`
+    // Response *TmallItemCalculateHscodeGetResponse `json:"tmall_item_calculate_hscode_get_response,omitempty"` 
+    TmallItemCalculateHscodeGetResponse
 }
+
+/* model for simplify = false
+type TmallItemCalculateHscodeGetResponse struct {
+
+    // 算法返回预测的hscode数据
+    
+    Results  struct {
+        Json  []string `json:"string,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TmallItemCalculateHscodeGetResponse struct {
 
     // 算法返回预测的hscode数据
-    Results   []Json `json:"results,omitempty"`
+    Results   []string `json:"results,omitempty"`
 
 }

@@ -12,8 +12,25 @@ taobao.jst.miniapp.crowd.user.add
 */
 type TaobaoJstMiniappCrowdUserAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJstMiniappCrowdUserAddResponse `json:"taobao_jst_miniapp_crowd_user_add_response,omitempty"`
+    // Response *TaobaoJstMiniappCrowdUserAddResponse `json:"jst_miniapp_crowd_user_add_response,omitempty"` 
+    TaobaoJstMiniappCrowdUserAddResponse
 }
+
+/* model for simplify = false
+type TaobaoJstMiniappCrowdUserAddResponse struct {
+
+    // 添加成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+    // 请求成功
+    
+    RCode   int64 `json:"r_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJstMiniappCrowdUserAddResponse struct {
 

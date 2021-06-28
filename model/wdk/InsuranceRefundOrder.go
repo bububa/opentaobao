@@ -1,6 +1,78 @@
 package wdk
 
 // InsuranceRefundOrder 
+/* model for simplify = false
+type InsuranceRefundOrder struct {
+
+    // 退货原因
+    
+    RefundReason   string `json:"refund_reason,omitempty"`
+    
+
+    // 退款完成时间
+    
+    RefundSuccessTime   string `json:"refund_success_time,omitempty"`
+    
+
+    // 收货地址
+    
+    DeliveryAddress   string `json:"delivery_address,omitempty"`
+    
+
+    // 发货地址
+    
+    SendAddress   string `json:"send_address,omitempty"`
+    
+
+    // 退货金额
+    
+    RefundAmount   string `json:"refund_amount,omitempty"`
+    
+
+    // 商品类目名称(从root到叶子节点)
+    
+    ItemCategory   string `json:"item_category,omitempty"`
+    
+
+    // 货物单价
+    
+    ItemPrice   string `json:"item_price,omitempty"`
+    
+
+    // 货物数量(下单销售数量)
+    
+    ItemQuantity   string `json:"item_quantity,omitempty"`
+    
+
+    // 货物名称
+    
+    ItemName   string `json:"item_name,omitempty"`
+    
+
+    // 退货单ID
+    
+    RefundId   string `json:"refund_id,omitempty"`
+    
+
+    // 交易子订单ID
+    
+    TbSubOrderId   int64 `json:"tb_sub_order_id,omitempty"`
+    
+
+    // 退款发起时间
+    
+    RefundCreateTime   string `json:"refund_create_time,omitempty"`
+    
+
+    // 签收时间
+    
+    SignTime   string `json:"sign_time,omitempty"`
+    
+
+}
+*/
+
+// InsuranceRefundOrder 
 type InsuranceRefundOrder struct {
 
     // 退货原因

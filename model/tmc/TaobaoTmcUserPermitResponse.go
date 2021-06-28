@@ -12,8 +12,20 @@ taobao.tmc.user.permit
 */
 type TaobaoTmcUserPermitAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcUserPermitResponse `json:"taobao_tmc_user_permit_response,omitempty"`
+    // Response *TaobaoTmcUserPermitResponse `json:"tmc_user_permit_response,omitempty"` 
+    TaobaoTmcUserPermitResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcUserPermitResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcUserPermitResponse struct {
 

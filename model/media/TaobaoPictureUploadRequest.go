@@ -19,7 +19,7 @@ type TaobaoPictureUploadRequest struct {
     pictureCategoryId   int64 
 
     // 图片二进制文件流,不能为空,允许png、jpg、gif图片格式,3M以内。
-    img   []byte 
+    img   []*model.File 
 
     // 包括后缀名的图片标题,不能为空，如Bule.jpg,有些卖家希望图片上传后取图片文件的默认名
     imageInputTitle   string 
@@ -64,13 +64,13 @@ func (r TaobaoPictureUploadRequest) GetPictureCategoryId() int64 {
     return r.pictureCategoryId
 }
 
-func (r *TaobaoPictureUploadRequest) SetImg(img []byte) error {
+func (r *TaobaoPictureUploadRequest) SetImg(img []*model.File) error {
     r.img = img
     r.Set("img", img)
     return nil
 }
 
-func (r TaobaoPictureUploadRequest) GetImg() []byte {
+func (r TaobaoPictureUploadRequest) GetImg() []*model.File {
     return r.img
 }
 

@@ -12,8 +12,22 @@ alibaba.wdk.marketing.itembuygift.additem
 */
 type AlibabaWdkMarketingItembuygiftAdditemAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingItembuygiftAdditemResponse `json:"alibaba_wdk_marketing_itembuygift_additem_response,omitempty"`
+    // Response *AlibabaWdkMarketingItembuygiftAdditemResponse `json:"alibaba_wdk_marketing_itembuygift_additem_response,omitempty"` 
+    AlibabaWdkMarketingItembuygiftAdditemResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingItembuygiftAdditemResponse struct {
+
+    // 商品报名活动的返回结果
+    
+    Result  *struct {
+        MarketResult  *MarketResult `json:"market_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingItembuygiftAdditemResponse struct {
 

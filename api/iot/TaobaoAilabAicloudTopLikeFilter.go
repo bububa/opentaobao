@@ -11,11 +11,11 @@ taobao.ailab.aicloud.top.like.filter
 
 过滤出传入列表歌曲存在于收藏列表的
 */
-func TaobaoAilabAicloudTopLikeFilter(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopLikeFilterRequest, session string) (*iot.TaobaoAilabAicloudTopLikeFilterResponse, error) {
+func TaobaoAilabAicloudTopLikeFilter(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopLikeFilterRequest, session string) (*iot.TaobaoAilabAicloudTopLikeFilterAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopLikeFilterAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

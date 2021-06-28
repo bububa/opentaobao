@@ -13,8 +13,22 @@ taobao.trade.get
 */
 type TaobaoTradeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeGetResponse `json:"taobao_trade_get_response,omitempty"`
+    // Response *TaobaoTradeGetResponse `json:"trade_get_response,omitempty"` 
+    TaobaoTradeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeGetResponse struct {
+
+    // 搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息
+    
+    Trade  *struct {
+        Trade  *Trade `json:"trade,omitempty"`
+    } `json:"trade,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeGetResponse struct {
 

@@ -12,8 +12,20 @@ tmall.service.code.consume
 */
 type TmallServiceCodeConsumeAPIResponse struct {
     model.CommonResponse
-    Response *TmallServiceCodeConsumeResponse `json:"tmall_service_code_consume_response,omitempty"`
+    // Response *TmallServiceCodeConsumeResponse `json:"tmall_service_code_consume_response,omitempty"` 
+    TmallServiceCodeConsumeResponse
 }
+
+/* model for simplify = false
+type TmallServiceCodeConsumeResponse struct {
+
+    // 服务工单ID
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServiceCodeConsumeResponse struct {
 

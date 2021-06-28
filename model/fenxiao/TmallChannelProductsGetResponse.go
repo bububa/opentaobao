@@ -20,8 +20,27 @@ tmall.channel.products.get
 */
 type TmallChannelProductsGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallChannelProductsGetResponse `json:"tmall_channel_products_get_response,omitempty"`
+    // Response *TmallChannelProductsGetResponse `json:"tmall_channel_products_get_response,omitempty"` 
+    TmallChannelProductsGetResponse
 }
+
+/* model for simplify = false
+type TmallChannelProductsGetResponse struct {
+
+    // 产品对象记录集
+    
+    Products  struct {
+        TopProductDO  []TopProductDO `json:"top_product_do,omitempty"`
+    } `json:"products,omitempty"`
+    
+
+    // 查询结果记录数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+}
+*/
 
 type TmallChannelProductsGetResponse struct {
 

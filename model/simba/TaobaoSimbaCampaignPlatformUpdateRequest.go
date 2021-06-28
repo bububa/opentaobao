@@ -19,10 +19,10 @@ type TaobaoSimbaCampaignPlatformUpdateRequest struct {
     campaignId   int64 
 
     // 搜索投放频道代码数组，频道代码必须是直通车搜索类频道列表中的值。1：淘宝站内搜索，8、无线站内搜索；16:无线站外搜索
-    searchChannels   []Number 
+    searchChannels   []int64 
 
     // 非搜索投放频道代码数组，频道代码必须是直通车非搜索类频道列表中的值。1、淘宝站内定向；2、站外定向；8、无线站内定向；16、无线站外定向
-    nonsearchChannels   []Number 
+    nonsearchChannels   []int64 
 
     // 已经废弃
     outsideDiscount   int64 
@@ -64,23 +64,23 @@ func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetCampaignId() int64 {
     return r.campaignId
 }
 
-func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetSearchChannels(searchChannels []Number) error {
+func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetSearchChannels(searchChannels []int64) error {
     r.searchChannels = searchChannels
     r.Set("search_channels", searchChannels)
     return nil
 }
 
-func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetSearchChannels() []Number {
+func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetSearchChannels() []int64 {
     return r.searchChannels
 }
 
-func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetNonsearchChannels(nonsearchChannels []Number) error {
+func (r *TaobaoSimbaCampaignPlatformUpdateRequest) SetNonsearchChannels(nonsearchChannels []int64) error {
     r.nonsearchChannels = nonsearchChannels
     r.Set("nonsearch_channels", nonsearchChannels)
     return nil
 }
 
-func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetNonsearchChannels() []Number {
+func (r TaobaoSimbaCampaignPlatformUpdateRequest) GetNonsearchChannels() []int64 {
     return r.nonsearchChannels
 }
 

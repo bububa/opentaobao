@@ -12,8 +12,22 @@ alitrip.ticket.scenic.query
 */
 type AlitripTicketScenicQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTicketScenicQueryResponse `json:"alitrip_ticket_scenic_query_response,omitempty"`
+    // Response *AlitripTicketScenicQueryResponse `json:"alitrip_ticket_scenic_query_response,omitempty"` 
+    AlitripTicketScenicQueryResponse
 }
+
+/* model for simplify = false
+type AlitripTicketScenicQueryResponse struct {
+
+    // 返回结果
+    
+    FirstResult  *struct {
+        ScenicAndProductResult  *ScenicAndProductResult `json:"scenic_and_product_result,omitempty"`
+    } `json:"first_result,omitempty"`
+    
+
+}
+*/
 
 type AlitripTicketScenicQueryResponse struct {
 

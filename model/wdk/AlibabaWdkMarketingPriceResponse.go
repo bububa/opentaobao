@@ -12,8 +12,22 @@ alibaba.wdk.marketing.price
 */
 type AlibabaWdkMarketingPriceAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingPriceResponse `json:"alibaba_wdk_marketing_price_response,omitempty"`
+    // Response *AlibabaWdkMarketingPriceResponse `json:"alibaba_wdk_marketing_price_response,omitempty"` 
+    AlibabaWdkMarketingPriceResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingPriceResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        PromotionPriceResult  *PromotionPriceResult `json:"promotion_price_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingPriceResponse struct {
 

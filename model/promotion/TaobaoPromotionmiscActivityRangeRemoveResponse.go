@@ -12,8 +12,20 @@ taobao.promotionmisc.activity.range.remove
 */
 type TaobaoPromotionmiscActivityRangeRemoveAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionmiscActivityRangeRemoveResponse `json:"taobao_promotionmisc_activity_range_remove_response,omitempty"`
+    // Response *TaobaoPromotionmiscActivityRangeRemoveResponse `json:"promotionmisc_activity_range_remove_response,omitempty"` 
+    TaobaoPromotionmiscActivityRangeRemoveResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionmiscActivityRangeRemoveResponse struct {
+
+    // 去除活动参与的商品是否成功。
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionmiscActivityRangeRemoveResponse struct {
 

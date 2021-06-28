@@ -11,11 +11,11 @@ taobao.train.agent.order.get.vtwo
 
 代理商获取订单信息回调API
 */
-func TaobaoTrainAgentOrderGetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderGetVtwoRequest, session string) (*train.TaobaoTrainAgentOrderGetVtwoResponse, error) {
+func TaobaoTrainAgentOrderGetVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentOrderGetVtwoRequest, session string) (*train.TaobaoTrainAgentOrderGetVtwoAPIResponse, error) {
     var resp train.TaobaoTrainAgentOrderGetVtwoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

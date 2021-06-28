@@ -12,8 +12,22 @@ alibaba.service.settlement.query
 */
 type AlibabaServiceSettlementQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaServiceSettlementQueryResponse `json:"alibaba_service_settlement_query_response,omitempty"`
+    // Response *AlibabaServiceSettlementQueryResponse `json:"alibaba_service_settlement_query_response,omitempty"` 
+    AlibabaServiceSettlementQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaServiceSettlementQueryResponse struct {
+
+    // 结算明细查询结果
+    
+    SettlementDetailQueryResult  *struct {
+        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
+    } `json:"settlement_detail_query_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaServiceSettlementQueryResponse struct {
 

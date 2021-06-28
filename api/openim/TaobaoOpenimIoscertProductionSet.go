@@ -11,11 +11,11 @@ taobao.openim.ioscert.production.set
 
 设置ios证书
 */
-func TaobaoOpenimIoscertProductionSet(clt *core.SDKClient, req *openim.TaobaoOpenimIoscertProductionSetRequest, session string) (*openim.TaobaoOpenimIoscertProductionSetResponse, error) {
+func TaobaoOpenimIoscertProductionSet(clt *core.SDKClient, req *openim.TaobaoOpenimIoscertProductionSetRequest, session string) (*openim.TaobaoOpenimIoscertProductionSetAPIResponse, error) {
     var resp openim.TaobaoOpenimIoscertProductionSetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

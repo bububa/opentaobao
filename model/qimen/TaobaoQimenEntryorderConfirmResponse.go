@@ -12,8 +12,22 @@ WMS调用接口，回传入库单信息;
 */
 type TaobaoQimenEntryorderConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenEntryorderConfirmResponse `json:"taobao_qimen_entryorder_confirm_response,omitempty"`
+    // Response *TaobaoQimenEntryorderConfirmResponse `json:"qimen_entryorder_confirm_response,omitempty"` 
+    TaobaoQimenEntryorderConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenEntryorderConfirmResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenEntryorderConfirmResponse struct {
 

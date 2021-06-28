@@ -12,8 +12,22 @@ taobao.bus.busnumber.get
 */
 type TaobaoBusBusnumberGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusBusnumberGetResponse `json:"taobao_bus_busnumber_get_response,omitempty"`
+    // Response *TaobaoBusBusnumberGetResponse `json:"bus_busnumber_get_response,omitempty"` 
+    TaobaoBusBusnumberGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusBusnumberGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoBusBusnumberGetResultSet  *TaobaoBusBusnumberGetResultSet `json:"taobao_bus_busnumber_get_result_set,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusBusnumberGetResponse struct {
 

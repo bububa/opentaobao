@@ -12,8 +12,20 @@ taobao.qianniu.task.remove
 */
 type TaobaoQianniuTaskRemoveAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQianniuTaskRemoveResponse `json:"taobao_qianniu_task_remove_response,omitempty"`
+    // Response *TaobaoQianniuTaskRemoveResponse `json:"qianniu_task_remove_response,omitempty"` 
+    TaobaoQianniuTaskRemoveResponse
 }
+
+/* model for simplify = false
+type TaobaoQianniuTaskRemoveResponse struct {
+
+    // 是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQianniuTaskRemoveResponse struct {
 

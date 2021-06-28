@@ -12,8 +12,22 @@ taobao.tvpay.promotion.info.get
 */
 type TaobaoTvpayPromotionInfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTvpayPromotionInfoGetResponse `json:"taobao_tvpay_promotion_info_get_response,omitempty"`
+    // Response *TaobaoTvpayPromotionInfoGetResponse `json:"tvpay_promotion_info_get_response,omitempty"` 
+    TaobaoTvpayPromotionInfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTvpayPromotionInfoGetResponse struct {
+
+    // Top返回对象
+    
+    Result  *struct {
+        TopResultDo  *TopResultDo `json:"top_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTvpayPromotionInfoGetResponse struct {
 

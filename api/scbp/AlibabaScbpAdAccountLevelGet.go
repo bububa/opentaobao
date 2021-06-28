@@ -11,11 +11,11 @@ alibaba.scbp.ad.account.level.get
 
 查询推广账户等级
 */
-func AlibabaScbpAdAccountLevelGet(clt *core.SDKClient, req *scbp.AlibabaScbpAdAccountLevelGetRequest, session string) (*scbp.AlibabaScbpAdAccountLevelGetResponse, error) {
+func AlibabaScbpAdAccountLevelGet(clt *core.SDKClient, req *scbp.AlibabaScbpAdAccountLevelGetRequest, session string) (*scbp.AlibabaScbpAdAccountLevelGetAPIResponse, error) {
     var resp scbp.AlibabaScbpAdAccountLevelGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

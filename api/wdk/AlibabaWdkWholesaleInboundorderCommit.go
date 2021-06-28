@@ -11,11 +11,11 @@ alibaba.wdk.wholesale.inboundorder.commit
 
 盒马帮退货信息回传接口
 */
-func AlibabaWdkWholesaleInboundorderCommit(clt *core.SDKClient, req *wdk.AlibabaWdkWholesaleInboundorderCommitRequest, session string) (*wdk.AlibabaWdkWholesaleInboundorderCommitResponse, error) {
+func AlibabaWdkWholesaleInboundorderCommit(clt *core.SDKClient, req *wdk.AlibabaWdkWholesaleInboundorderCommitRequest, session string) (*wdk.AlibabaWdkWholesaleInboundorderCommitAPIResponse, error) {
     var resp wdk.AlibabaWdkWholesaleInboundorderCommitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

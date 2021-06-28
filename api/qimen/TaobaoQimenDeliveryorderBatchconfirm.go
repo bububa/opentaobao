@@ -11,11 +11,11 @@ taobao.qimen.deliveryorder.batchconfirm
 
 taobao.qimen.deliveryorder.batchconfirm
 */
-func TaobaoQimenDeliveryorderBatchconfirm(clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderBatchconfirmRequest, session string) (*qimen.TaobaoQimenDeliveryorderBatchconfirmResponse, error) {
+func TaobaoQimenDeliveryorderBatchconfirm(clt *core.SDKClient, req *qimen.TaobaoQimenDeliveryorderBatchconfirmRequest, session string) (*qimen.TaobaoQimenDeliveryorderBatchconfirmAPIResponse, error) {
     var resp qimen.TaobaoQimenDeliveryorderBatchconfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

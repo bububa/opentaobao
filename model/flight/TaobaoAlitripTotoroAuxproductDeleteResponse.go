@@ -12,8 +12,22 @@ taobao.alitrip.totoro.auxproduct.delete
 */
 type TaobaoAlitripTotoroAuxproductDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripTotoroAuxproductDeleteResponse `json:"taobao_alitrip_totoro_auxproduct_delete_response,omitempty"`
+    // Response *TaobaoAlitripTotoroAuxproductDeleteResponse `json:"alitrip_totoro_auxproduct_delete_response,omitempty"` 
+    TaobaoAlitripTotoroAuxproductDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripTotoroAuxproductDeleteResponse struct {
+
+    // result
+    
+    Result  *struct {
+        DelAuxProductsRs  *DelAuxProductsRs `json:"del_aux_products_rs,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripTotoroAuxproductDeleteResponse struct {
 

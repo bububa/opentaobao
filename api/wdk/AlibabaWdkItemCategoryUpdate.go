@@ -11,11 +11,11 @@ alibaba.wdk.item.category.update
 
 修改类目
 */
-func AlibabaWdkItemCategoryUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkItemCategoryUpdateRequest, session string) (*wdk.AlibabaWdkItemCategoryUpdateResponse, error) {
+func AlibabaWdkItemCategoryUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkItemCategoryUpdateRequest, session string) (*wdk.AlibabaWdkItemCategoryUpdateAPIResponse, error) {
     var resp wdk.AlibabaWdkItemCategoryUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

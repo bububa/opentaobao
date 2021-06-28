@@ -16,7 +16,7 @@ type AlibabaItemCategoryPredictRequest struct {
     model.Params
 
     // 商品主图链接，最多5张，传入完整URL
-    images   []String 
+    images   []string 
 
     // 商品发布的市场。taobao:淘宝,tmall:天猫,litetao:淘宝特价版
     market   string 
@@ -51,13 +51,13 @@ func (r AlibabaItemCategoryPredictRequest) GetApiParams() url.Values {
 }
 
 
-func (r *AlibabaItemCategoryPredictRequest) SetImages(images []String) error {
+func (r *AlibabaItemCategoryPredictRequest) SetImages(images []string) error {
     r.images = images
     r.Set("images", images)
     return nil
 }
 
-func (r AlibabaItemCategoryPredictRequest) GetImages() []String {
+func (r AlibabaItemCategoryPredictRequest) GetImages() []string {
     return r.images
 }
 

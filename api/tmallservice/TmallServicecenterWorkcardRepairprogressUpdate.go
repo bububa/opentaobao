@@ -11,11 +11,11 @@ tmall.servicecenter.workcard.repairprogress.update
 
 提供给外部合作服务商的维修进度更改接口
 */
-func TmallServicecenterWorkcardRepairprogressUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardRepairprogressUpdateRequest, session string) (*tmallservice.TmallServicecenterWorkcardRepairprogressUpdateResponse, error) {
+func TmallServicecenterWorkcardRepairprogressUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardRepairprogressUpdateRequest, session string) (*tmallservice.TmallServicecenterWorkcardRepairprogressUpdateAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardRepairprogressUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

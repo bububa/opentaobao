@@ -12,8 +12,20 @@ alibaba.interact.onecode.issue
 */
 type AlibabaInteractOnecodeIssueAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractOnecodeIssueResponse `json:"alibaba_interact_onecode_issue_response,omitempty"`
+    // Response *AlibabaInteractOnecodeIssueResponse `json:"alibaba_interact_onecode_issue_response,omitempty"` 
+    AlibabaInteractOnecodeIssueResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractOnecodeIssueResponse struct {
+
+    // result=0
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractOnecodeIssueResponse struct {
 

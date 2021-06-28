@@ -12,8 +12,20 @@ taobao.simba.rpt.campaignbase.get
 */
 type TaobaoSimbaRptCampaignbaseGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaRptCampaignbaseGetResponse `json:"taobao_simba_rpt_campaignbase_get_response,omitempty"`
+    // Response *TaobaoSimbaRptCampaignbaseGetResponse `json:"simba_rpt_campaignbase_get_response,omitempty"` 
+    TaobaoSimbaRptCampaignbaseGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaRptCampaignbaseGetResponse struct {
+
+    // 推广计划查询结果
+    
+    RptCampaignBaseList   string `json:"rpt_campaign_base_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaRptCampaignbaseGetResponse struct {
 

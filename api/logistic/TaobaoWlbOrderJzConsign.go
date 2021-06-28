@@ -11,11 +11,11 @@ taobao.wlb.order.jz.consign
 
 家装类订单使用该接口发货
 */
-func TaobaoWlbOrderJzConsign(clt *core.SDKClient, req *logistic.TaobaoWlbOrderJzConsignRequest, session string) (*logistic.TaobaoWlbOrderJzConsignResponse, error) {
+func TaobaoWlbOrderJzConsign(clt *core.SDKClient, req *logistic.TaobaoWlbOrderJzConsignRequest, session string) (*logistic.TaobaoWlbOrderJzConsignAPIResponse, error) {
     var resp logistic.TaobaoWlbOrderJzConsignAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

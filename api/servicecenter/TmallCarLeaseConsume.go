@@ -11,11 +11,11 @@ tmall.car.lease.consume
 
 租赁公司回传信息，核销
 */
-func TmallCarLeaseConsume(clt *core.SDKClient, req *servicecenter.TmallCarLeaseConsumeRequest, session string) (*servicecenter.TmallCarLeaseConsumeResponse, error) {
+func TmallCarLeaseConsume(clt *core.SDKClient, req *servicecenter.TmallCarLeaseConsumeRequest, session string) (*servicecenter.TmallCarLeaseConsumeAPIResponse, error) {
     var resp servicecenter.TmallCarLeaseConsumeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

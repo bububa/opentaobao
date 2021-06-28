@@ -12,8 +12,22 @@ taobao.nlp.word
 */
 type TaobaoNlpWordAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoNlpWordResponse `json:"taobao_nlp_word_response,omitempty"`
+    // Response *TaobaoNlpWordResponse `json:"nlp_word_response,omitempty"` 
+    TaobaoNlpWordResponse
 }
+
+/* model for simplify = false
+type TaobaoNlpWordResponse struct {
+
+    // 返回词法分析的结果
+    
+    Wordresult  *struct {
+        WordResult  *WordResult `json:"word_result,omitempty"`
+    } `json:"wordresult,omitempty"`
+    
+
+}
+*/
 
 type TaobaoNlpWordResponse struct {
 

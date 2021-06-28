@@ -16,7 +16,7 @@ type AlibabaScbpProductStatusUpdateRequest struct {
     model.Params
 
     // 产品ID列表
-    productIdList   []Number 
+    productIdList   []int64 
 
     // enabled:开启,disabled:暂停
     status   string 
@@ -42,13 +42,13 @@ func (r AlibabaScbpProductStatusUpdateRequest) GetApiParams() url.Values {
 }
 
 
-func (r *AlibabaScbpProductStatusUpdateRequest) SetProductIdList(productIdList []Number) error {
+func (r *AlibabaScbpProductStatusUpdateRequest) SetProductIdList(productIdList []int64) error {
     r.productIdList = productIdList
     r.Set("product_id_list", productIdList)
     return nil
 }
 
-func (r AlibabaScbpProductStatusUpdateRequest) GetProductIdList() []Number {
+func (r AlibabaScbpProductStatusUpdateRequest) GetProductIdList() []int64 {
     return r.productIdList
 }
 

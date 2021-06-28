@@ -11,11 +11,11 @@ taobao.promotion.benefit.activity.delete
 
 删除关联的活动权益
 */
-func TaobaoPromotionBenefitActivityDelete(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityDeleteRequest, session string) (*promotion.TaobaoPromotionBenefitActivityDeleteResponse, error) {
+func TaobaoPromotionBenefitActivityDelete(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityDeleteRequest, session string) (*promotion.TaobaoPromotionBenefitActivityDeleteAPIResponse, error) {
     var resp promotion.TaobaoPromotionBenefitActivityDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

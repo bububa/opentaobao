@@ -11,11 +11,11 @@ alibaba.aliqin.fc.voice.record.geturl
 
 完成录音文件的下载地址获取操作
 */
-func AlibabaAliqinFcVoiceRecordGeturl(clt *core.SDKClient, req *alicom.AlibabaAliqinFcVoiceRecordGeturlRequest, session string) (*alicom.AlibabaAliqinFcVoiceRecordGeturlResponse, error) {
+func AlibabaAliqinFcVoiceRecordGeturl(clt *core.SDKClient, req *alicom.AlibabaAliqinFcVoiceRecordGeturlRequest, session string) (*alicom.AlibabaAliqinFcVoiceRecordGeturlAPIResponse, error) {
     var resp alicom.AlibabaAliqinFcVoiceRecordGeturlAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

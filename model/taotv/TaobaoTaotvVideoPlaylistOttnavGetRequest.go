@@ -19,7 +19,7 @@ type TaobaoTaotvVideoPlaylistOttnavGetRequest struct {
     playListId   int64 
 
     // 播单列表
-    playListNav   []String 
+    playListNav   []string 
 
     // 系统信息
     systemInfo   string 
@@ -55,13 +55,13 @@ func (r TaobaoTaotvVideoPlaylistOttnavGetRequest) GetPlayListId() int64 {
     return r.playListId
 }
 
-func (r *TaobaoTaotvVideoPlaylistOttnavGetRequest) SetPlayListNav(playListNav []String) error {
+func (r *TaobaoTaotvVideoPlaylistOttnavGetRequest) SetPlayListNav(playListNav []string) error {
     r.playListNav = playListNav
     r.Set("play_list_nav", playListNav)
     return nil
 }
 
-func (r TaobaoTaotvVideoPlaylistOttnavGetRequest) GetPlayListNav() []String {
+func (r TaobaoTaotvVideoPlaylistOttnavGetRequest) GetPlayListNav() []string {
     return r.playListNav
 }
 

@@ -12,8 +12,22 @@ alibaba.wholesale.goods.search
 */
 type AlibabaWholesaleGoodsSearchAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWholesaleGoodsSearchResponse `json:"alibaba_wholesale_goods_search_response,omitempty"`
+    // Response *AlibabaWholesaleGoodsSearchResponse `json:"alibaba_wholesale_goods_search_response,omitempty"` 
+    AlibabaWholesaleGoodsSearchResponse
 }
+
+/* model for simplify = false
+type AlibabaWholesaleGoodsSearchResponse struct {
+
+    // 在线批发商品搜索结果
+    
+    WholesaleGoodsSearchResult  *struct {
+        WholesaleSearchOpenResult  *WholesaleSearchOpenResult `json:"wholesale_search_open_result,omitempty"`
+    } `json:"wholesale_goods_search_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWholesaleGoodsSearchResponse struct {
 

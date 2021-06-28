@@ -11,11 +11,11 @@ alibaba.alsc.crm.recharge.charge.update
 
 顾客储值账户充值
 */
-func AlibabaAlscCrmRechargeChargeUpdate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeChargeUpdateRequest, session string) (*alsc.AlibabaAlscCrmRechargeChargeUpdateResponse, error) {
+func AlibabaAlscCrmRechargeChargeUpdate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeChargeUpdateRequest, session string) (*alsc.AlibabaAlscCrmRechargeChargeUpdateAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmRechargeChargeUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

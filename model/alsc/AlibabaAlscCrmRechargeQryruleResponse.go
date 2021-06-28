@@ -12,8 +12,22 @@ alibaba.alsc.crm.recharge.qryrule
 */
 type AlibabaAlscCrmRechargeQryruleAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmRechargeQryruleResponse `json:"alibaba_alsc_crm_recharge_qryrule_response,omitempty"`
+    // Response *AlibabaAlscCrmRechargeQryruleResponse `json:"alibaba_alsc_crm_recharge_qryrule_response,omitempty"` 
+    AlibabaAlscCrmRechargeQryruleResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmRechargeQryruleResponse struct {
+
+    // 返回模型
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmRechargeQryruleResponse struct {
 

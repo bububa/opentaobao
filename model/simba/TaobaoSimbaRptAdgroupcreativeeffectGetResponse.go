@@ -12,8 +12,20 @@ taobao.simba.rpt.adgroupcreativeeffect.get
 */
 type TaobaoSimbaRptAdgroupcreativeeffectGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaRptAdgroupcreativeeffectGetResponse `json:"taobao_simba_rpt_adgroupcreativeeffect_get_response,omitempty"`
+    // Response *TaobaoSimbaRptAdgroupcreativeeffectGetResponse `json:"simba_rpt_adgroupcreativeeffect_get_response,omitempty"` 
+    TaobaoSimbaRptAdgroupcreativeeffectGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaRptAdgroupcreativeeffectGetResponse struct {
+
+    // 推广组下的创意效果数据列表
+    
+    RptAdgroupcreativeEffectList   string `json:"rpt_adgroupcreative_effect_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaRptAdgroupcreativeeffectGetResponse struct {
 

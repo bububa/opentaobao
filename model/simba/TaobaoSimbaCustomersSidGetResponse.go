@@ -12,8 +12,22 @@ taobao.simba.customers.sid.get
 */
 type TaobaoSimbaCustomersSidGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCustomersSidGetResponse `json:"taobao_simba_customers_sid_get_response,omitempty"`
+    // Response *TaobaoSimbaCustomersSidGetResponse `json:"simba_customers_sid_get_response,omitempty"` 
+    TaobaoSimbaCustomersSidGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCustomersSidGetResponse struct {
+
+    // 权限列表及是否有权限
+    
+    Result  *struct {
+        SidVo  *SidVo `json:"sid_vo,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCustomersSidGetResponse struct {
 

@@ -12,8 +12,20 @@ taobao.qt.report.delete
 */
 type TaobaoQtReportDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQtReportDeleteResponse `json:"taobao_qt_report_delete_response,omitempty"`
+    // Response *TaobaoQtReportDeleteResponse `json:"qt_report_delete_response,omitempty"` 
+    TaobaoQtReportDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoQtReportDeleteResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQtReportDeleteResponse struct {
 

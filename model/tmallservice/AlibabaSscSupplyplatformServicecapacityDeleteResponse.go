@@ -12,8 +12,22 @@ alibaba.ssc.supplyplatform.servicecapacity.delete
 */
 type AlibabaSscSupplyplatformServicecapacityDeleteAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSscSupplyplatformServicecapacityDeleteResponse `json:"alibaba_ssc_supplyplatform_servicecapacity_delete_response,omitempty"`
+    // Response *AlibabaSscSupplyplatformServicecapacityDeleteResponse `json:"alibaba_ssc_supplyplatform_servicecapacity_delete_response,omitempty"` 
+    AlibabaSscSupplyplatformServicecapacityDeleteResponse
 }
+
+/* model for simplify = false
+type AlibabaSscSupplyplatformServicecapacityDeleteResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaSscSupplyplatformServicecapacityDeleteResult  *AlibabaSscSupplyplatformServicecapacityDeleteResult `json:"alibaba_ssc_supplyplatform_servicecapacity_delete_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSscSupplyplatformServicecapacityDeleteResponse struct {
 

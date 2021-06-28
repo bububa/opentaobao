@@ -16,7 +16,7 @@ type TaobaoQimenItemstoreBandingRequest struct {
     model.Params
 
     // 门店列表
-    storeIds   []Number 
+    storeIds   []int64 
 
     // 备注信息
     remark   string 
@@ -48,13 +48,13 @@ func (r TaobaoQimenItemstoreBandingRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoQimenItemstoreBandingRequest) SetStoreIds(storeIds []Number) error {
+func (r *TaobaoQimenItemstoreBandingRequest) SetStoreIds(storeIds []int64) error {
     r.storeIds = storeIds
     r.Set("store_ids", storeIds)
     return nil
 }
 
-func (r TaobaoQimenItemstoreBandingRequest) GetStoreIds() []Number {
+func (r TaobaoQimenItemstoreBandingRequest) GetStoreIds() []int64 {
     return r.storeIds
 }
 

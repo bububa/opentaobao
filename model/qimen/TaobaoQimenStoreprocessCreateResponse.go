@@ -12,8 +12,22 @@ ERP调用奇门的接口,创建仓内加工单
 */
 type TaobaoQimenStoreprocessCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenStoreprocessCreateResponse `json:"taobao_qimen_storeprocess_create_response,omitempty"`
+    // Response *TaobaoQimenStoreprocessCreateResponse `json:"qimen_storeprocess_create_response,omitempty"` 
+    TaobaoQimenStoreprocessCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenStoreprocessCreateResponse struct {
+
+    // 
+    
+    Response  *struct {
+        StoreProcessCreateResponse  *StoreProcessCreateResponse `json:"store_process_create_response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenStoreprocessCreateResponse struct {
 

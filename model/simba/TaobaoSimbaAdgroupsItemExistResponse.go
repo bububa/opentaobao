@@ -12,8 +12,20 @@ taobao.simba.adgroups.item.exist
 */
 type TaobaoSimbaAdgroupsItemExistAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaAdgroupsItemExistResponse `json:"taobao_simba_adgroups_item_exist_response,omitempty"`
+    // Response *TaobaoSimbaAdgroupsItemExistResponse `json:"simba_adgroups_item_exist_response,omitempty"` 
+    TaobaoSimbaAdgroupsItemExistResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaAdgroupsItemExistResponse struct {
+
+    // true表示已经被推广，false表示没有被推广
+    
+    Exist   bool `json:"exist,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaAdgroupsItemExistResponse struct {
 

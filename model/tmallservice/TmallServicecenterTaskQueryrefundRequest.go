@@ -16,7 +16,7 @@ type TmallServicecenterTaskQueryrefundRequest struct {
     model.Params
 
     // 工单id列表
-    workcardList   []Number 
+    workcardList   []int64 
 
 }
 
@@ -39,13 +39,13 @@ func (r TmallServicecenterTaskQueryrefundRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TmallServicecenterTaskQueryrefundRequest) SetWorkcardList(workcardList []Number) error {
+func (r *TmallServicecenterTaskQueryrefundRequest) SetWorkcardList(workcardList []int64) error {
     r.workcardList = workcardList
     r.Set("workcard_list", workcardList)
     return nil
 }
 
-func (r TmallServicecenterTaskQueryrefundRequest) GetWorkcardList() []Number {
+func (r TmallServicecenterTaskQueryrefundRequest) GetWorkcardList() []int64 {
     return r.workcardList
 }
 

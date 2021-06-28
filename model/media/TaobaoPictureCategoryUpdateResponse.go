@@ -12,8 +12,20 @@ taobao.picture.category.update
 */
 type TaobaoPictureCategoryUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPictureCategoryUpdateResponse `json:"taobao_picture_category_update_response,omitempty"`
+    // Response *TaobaoPictureCategoryUpdateResponse `json:"picture_category_update_response,omitempty"` 
+    TaobaoPictureCategoryUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoPictureCategoryUpdateResponse struct {
+
+    // 更新图片分类是否成功
+    
+    Done   bool `json:"done,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPictureCategoryUpdateResponse struct {
 

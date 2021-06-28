@@ -12,8 +12,20 @@ taobao.jst.sms.message.direct.batchsend
 */
 type TaobaoJstSmsMessageDirectBatchsendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJstSmsMessageDirectBatchsendResponse `json:"taobao_jst_sms_message_direct_batchsend_response,omitempty"`
+    // Response *TaobaoJstSmsMessageDirectBatchsendResponse `json:"jst_sms_message_direct_batchsend_response,omitempty"` 
+    TaobaoJstSmsMessageDirectBatchsendResponse
 }
+
+/* model for simplify = false
+type TaobaoJstSmsMessageDirectBatchsendResponse struct {
+
+    // 短信回执码
+    
+    Module   string `json:"module,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJstSmsMessageDirectBatchsendResponse struct {
 

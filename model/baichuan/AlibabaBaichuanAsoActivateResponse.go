@@ -12,8 +12,22 @@ alibaba.baichuan.aso.activate
 */
 type AlibabaBaichuanAsoActivateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaBaichuanAsoActivateResponse `json:"alibaba_baichuan_aso_activate_response,omitempty"`
+    // Response *AlibabaBaichuanAsoActivateResponse `json:"alibaba_baichuan_aso_activate_response,omitempty"` 
+    AlibabaBaichuanAsoActivateResponse
 }
+
+/* model for simplify = false
+type AlibabaBaichuanAsoActivateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AsoActivateDeviceResult  *AsoActivateDeviceResult `json:"aso_activate_device_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaBaichuanAsoActivateResponse struct {
 

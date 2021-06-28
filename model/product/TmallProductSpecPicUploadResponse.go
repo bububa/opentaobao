@@ -12,8 +12,20 @@ tmall.product.spec.pic.upload
 */
 type TmallProductSpecPicUploadAPIResponse struct {
     model.CommonResponse
-    Response *TmallProductSpecPicUploadResponse `json:"tmall_product_spec_pic_upload_response,omitempty"`
+    // Response *TmallProductSpecPicUploadResponse `json:"tmall_product_spec_pic_upload_response,omitempty"` 
+    TmallProductSpecPicUploadResponse
 }
+
+/* model for simplify = false
+type TmallProductSpecPicUploadResponse struct {
+
+    // 上传成功的产品规格认证图片url
+    
+    SpecPicUrl   string `json:"spec_pic_url,omitempty"`
+    
+
+}
+*/
 
 type TmallProductSpecPicUploadResponse struct {
 

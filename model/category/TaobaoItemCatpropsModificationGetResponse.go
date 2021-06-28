@@ -12,8 +12,22 @@ taobao.item.catprops.modification.get
 */
 type TaobaoItemCatpropsModificationGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemCatpropsModificationGetResponse `json:"taobao_item_catprops_modification_get_response,omitempty"`
+    // Response *TaobaoItemCatpropsModificationGetResponse `json:"item_catprops_modification_get_response,omitempty"` 
+    TaobaoItemCatpropsModificationGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemCatpropsModificationGetResponse struct {
+
+    // 返回结果
+    
+    Results  struct {
+        PropsModificationResult  []PropsModificationResult `json:"props_modification_result,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemCatpropsModificationGetResponse struct {
 

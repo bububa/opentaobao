@@ -1,6 +1,45 @@
 package wms
 
 // CainiaoStockInBillStockininfo 
+/* model for simplify = false
+type CainiaoStockInBillStockininfo struct {
+
+    // ERP订单号
+    
+    OrderCode   string `json:"order_code,omitempty"`
+    
+
+    // 菜鸟订单编码
+    
+    CnOrderCode   string `json:"cn_order_code,omitempty"`
+    
+
+    // 单据类型：  904 普通入库 306 B2B入库单 601 采购入库
+    
+    OrderType   int64 `json:"order_type,omitempty"`
+    
+
+    // 仓库订单完成时间
+    
+    ConfirmTime   string `json:"confirm_time,omitempty"`
+    
+
+    // 入库单状态 WMS_ACCEPT 接单成功 WMS_REJECT 接单失败WMS_CONFIRMED 仓库生产完成
+    
+    Status   string `json:"status,omitempty"`
+    
+
+    // 入库单信息
+    
+    OrderItemList  struct {
+        CainiaoStockInBillOrderitemlist  []CainiaoStockInBillOrderitemlist `json:"cainiao_stock_in_bill_orderitemlist,omitempty"`
+    } `json:"order_item_list,omitempty"`
+    
+
+}
+*/
+
+// CainiaoStockInBillStockininfo 
 type CainiaoStockInBillStockininfo struct {
 
     // ERP订单号

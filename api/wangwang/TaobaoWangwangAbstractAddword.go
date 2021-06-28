@@ -11,11 +11,11 @@ taobao.wangwang.abstract.addword
 
 增加关键词，只支持json返回
 */
-func TaobaoWangwangAbstractAddword(clt *core.SDKClient, req *wangwang.TaobaoWangwangAbstractAddwordRequest, session string) (*wangwang.TaobaoWangwangAbstractAddwordResponse, error) {
+func TaobaoWangwangAbstractAddword(clt *core.SDKClient, req *wangwang.TaobaoWangwangAbstractAddwordRequest, session string) (*wangwang.TaobaoWangwangAbstractAddwordAPIResponse, error) {
     var resp wangwang.TaobaoWangwangAbstractAddwordAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

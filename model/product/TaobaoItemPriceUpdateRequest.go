@@ -58,10 +58,10 @@ type TaobaoItemPriceUpdateRequest struct {
     increment   float64 
 
     // 商品图片。类型:JPG,GIF;最大长度:500k
-    image   []byte 
+    image   []*model.File 
 
     // 商品图片。类型:JPG,GIF;最大长度:500k
-    image   []byte 
+    image   []*model.File 
 
     // 商品新旧程度。可选值:new（全新）,unused（闲置）,second（二手）。
     stuffStatus   string 
@@ -326,23 +326,23 @@ func (r TaobaoItemPriceUpdateRequest) GetIncrement() float64 {
     return r.increment
 }
 
-func (r *TaobaoItemPriceUpdateRequest) SetImage(image []byte) error {
+func (r *TaobaoItemPriceUpdateRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoItemPriceUpdateRequest) GetImage() []byte {
+func (r TaobaoItemPriceUpdateRequest) GetImage() []*model.File {
     return r.image
 }
 
-func (r *TaobaoItemPriceUpdateRequest) SetImage(image []byte) error {
+func (r *TaobaoItemPriceUpdateRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoItemPriceUpdateRequest) GetImage() []byte {
+func (r TaobaoItemPriceUpdateRequest) GetImage() []*model.File {
     return r.image
 }
 

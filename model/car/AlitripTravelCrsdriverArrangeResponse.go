@@ -12,8 +12,25 @@ alitrip.travel.crsdriver.arrange
 */
 type AlitripTravelCrsdriverArrangeAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTravelCrsdriverArrangeResponse `json:"alitrip_travel_crsdriver_arrange_response,omitempty"`
+    // Response *AlitripTravelCrsdriverArrangeResponse `json:"alitrip_travel_crsdriver_arrange_response,omitempty"` 
+    AlitripTravelCrsdriverArrangeResponse
 }
+
+/* model for simplify = false
+type AlitripTravelCrsdriverArrangeResponse struct {
+
+    // 返回结果message
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 返回结果code
+    
+    MessageCode   int64 `json:"message_code,omitempty"`
+    
+
+}
+*/
 
 type AlitripTravelCrsdriverArrangeResponse struct {
 

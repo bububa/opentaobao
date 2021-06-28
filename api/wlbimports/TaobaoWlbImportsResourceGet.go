@@ -11,11 +11,11 @@ taobao.wlb.imports.resource.get
 
 一般进口TOP接口，获取所有服务列表。
 */
-func TaobaoWlbImportsResourceGet(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsResourceGetRequest, session string) (*wlbimports.TaobaoWlbImportsResourceGetResponse, error) {
+func TaobaoWlbImportsResourceGet(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsResourceGetRequest, session string) (*wlbimports.TaobaoWlbImportsResourceGetAPIResponse, error) {
     var resp wlbimports.TaobaoWlbImportsResourceGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

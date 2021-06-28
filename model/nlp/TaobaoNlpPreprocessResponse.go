@@ -12,8 +12,22 @@ taobao.nlp.preprocess
 */
 type TaobaoNlpPreprocessAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoNlpPreprocessResponse `json:"taobao_nlp_preprocess_response,omitempty"`
+    // Response *TaobaoNlpPreprocessResponse `json:"nlp_preprocess_response,omitempty"` 
+    TaobaoNlpPreprocessResponse
 }
+
+/* model for simplify = false
+type TaobaoNlpPreprocessResponse struct {
+
+    // 返回结果
+    
+    Processresult  *struct {
+        ProcessResult  *ProcessResult `json:"process_result,omitempty"`
+    } `json:"processresult,omitempty"`
+    
+
+}
+*/
 
 type TaobaoNlpPreprocessResponse struct {
 

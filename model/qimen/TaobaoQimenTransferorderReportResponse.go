@@ -12,8 +12,22 @@ taobao.qimen.transferorder.report
 */
 type TaobaoQimenTransferorderReportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenTransferorderReportResponse `json:"taobao_qimen_transferorder_report_response,omitempty"`
+    // Response *TaobaoQimenTransferorderReportResponse `json:"qimen_transferorder_report_response,omitempty"` 
+    TaobaoQimenTransferorderReportResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenTransferorderReportResponse struct {
+
+    // 
+    
+    Response  *struct {
+        TaobaoQimenTransferorderReportStruct  *TaobaoQimenTransferorderReportStruct `json:"taobao_qimen_transferorder_report_struct,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenTransferorderReportResponse struct {
 

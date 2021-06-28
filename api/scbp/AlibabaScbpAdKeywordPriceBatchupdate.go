@@ -11,11 +11,11 @@ alibaba.scbp.ad.keyword.price.batchupdate
 
 关键词批量改价
 */
-func AlibabaScbpAdKeywordPriceBatchupdate(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordPriceBatchupdateRequest, session string) (*scbp.AlibabaScbpAdKeywordPriceBatchupdateResponse, error) {
+func AlibabaScbpAdKeywordPriceBatchupdate(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordPriceBatchupdateRequest, session string) (*scbp.AlibabaScbpAdKeywordPriceBatchupdateAPIResponse, error) {
     var resp scbp.AlibabaScbpAdKeywordPriceBatchupdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ taobao.wlb.wms.sn.info.query
 */
 type TaobaoWlbWmsSnInfoQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWmsSnInfoQueryResponse `json:"taobao_wlb_wms_sn_info_query_response,omitempty"`
+    // Response *TaobaoWlbWmsSnInfoQueryResponse `json:"wlb_wms_sn_info_query_response,omitempty"` 
+    TaobaoWlbWmsSnInfoQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWmsSnInfoQueryResponse struct {
+
+    // 接口返回
+    
+    Result  *struct {
+        TaobaoWlbWmsSnInfoQueryResult  *TaobaoWlbWmsSnInfoQueryResult `json:"taobao_wlb_wms_sn_info_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWmsSnInfoQueryResponse struct {
 

@@ -12,8 +12,22 @@ taobao.bus.seatprice.get
 */
 type TaobaoBusSeatpriceGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusSeatpriceGetResponse `json:"taobao_bus_seatprice_get_response,omitempty"`
+    // Response *TaobaoBusSeatpriceGetResponse `json:"bus_seatprice_get_response,omitempty"` 
+    TaobaoBusSeatpriceGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusSeatpriceGetResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        TaobaoBusSeatpriceGetResultSet  *TaobaoBusSeatpriceGetResultSet `json:"taobao_bus_seatprice_get_result_set,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusSeatpriceGetResponse struct {
 

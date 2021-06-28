@@ -12,8 +12,22 @@ taobao.wlb.wms.inventory.lack.upload
 */
 type TaobaoWlbWmsInventoryLackUploadAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWmsInventoryLackUploadResponse `json:"taobao_wlb_wms_inventory_lack_upload_response,omitempty"`
+    // Response *TaobaoWlbWmsInventoryLackUploadResponse `json:"wlb_wms_inventory_lack_upload_response,omitempty"` 
+    TaobaoWlbWmsInventoryLackUploadResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWmsInventoryLackUploadResponse struct {
+
+    // 缺货回告
+    
+    Result  *struct {
+        WlbWmsInventoryLackUploadResp  *WlbWmsInventoryLackUploadResp `json:"wlb_wms_inventory_lack_upload_resp,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWmsInventoryLackUploadResponse struct {
 

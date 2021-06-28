@@ -11,11 +11,11 @@ alibaba.interact.open.isattention
 
 判断用户是否收藏某个店铺
 */
-func AlibabaInteractOpenIsattention(clt *core.SDKClient, req *interact.AlibabaInteractOpenIsattentionRequest, session string) (*interact.AlibabaInteractOpenIsattentionResponse, error) {
+func AlibabaInteractOpenIsattention(clt *core.SDKClient, req *interact.AlibabaInteractOpenIsattentionRequest, session string) (*interact.AlibabaInteractOpenIsattentionAPIResponse, error) {
     var resp interact.AlibabaInteractOpenIsattentionAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

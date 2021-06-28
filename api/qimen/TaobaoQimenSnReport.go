@@ -11,11 +11,11 @@ taobao.qimen.sn.report
 
 WMS调用奇门的接口,在仓库出库单后, 把SN信息回传给ERP
 */
-func TaobaoQimenSnReport(clt *core.SDKClient, req *qimen.TaobaoQimenSnReportRequest, session string) (*qimen.TaobaoQimenSnReportResponse, error) {
+func TaobaoQimenSnReport(clt *core.SDKClient, req *qimen.TaobaoQimenSnReportRequest, session string) (*qimen.TaobaoQimenSnReportAPIResponse, error) {
     var resp qimen.TaobaoQimenSnReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ alibaba.scbp.target.ad.plan.add
 
 定向推广-新建单条计划
 */
-func AlibabaScbpTargetAdPlanAdd(clt *core.SDKClient, req *scbp.AlibabaScbpTargetAdPlanAddRequest, session string) (*scbp.AlibabaScbpTargetAdPlanAddResponse, error) {
+func AlibabaScbpTargetAdPlanAdd(clt *core.SDKClient, req *scbp.AlibabaScbpTargetAdPlanAddRequest, session string) (*scbp.AlibabaScbpTargetAdPlanAddAPIResponse, error) {
     var resp scbp.AlibabaScbpTargetAdPlanAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

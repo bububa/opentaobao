@@ -11,11 +11,11 @@ alibaba.interact.windvane.call
 
 客户端鉴权使用，实际不会发送或接收数据
 */
-func AlibabaInteractWindvaneCall(clt *core.SDKClient, req *shop.AlibabaInteractWindvaneCallRequest, session string) (*shop.AlibabaInteractWindvaneCallResponse, error) {
+func AlibabaInteractWindvaneCall(clt *core.SDKClient, req *shop.AlibabaInteractWindvaneCallRequest, session string) (*shop.AlibabaInteractWindvaneCallAPIResponse, error) {
     var resp shop.AlibabaInteractWindvaneCallAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -16,7 +16,7 @@ type AlibabaServicecenterIdentifytaskCreateRequest struct {
     model.Params
 
     // 工单集合
-    workcardIds   []Number 
+    workcardIds   []int64 
 
     // 核销单外部标识，服务商保证唯一。如果创建核销单时传入重复的outer_id，系统直接会返回服务商下该outer_id对应的核销单，不会重新创建新核销单。
     outerId   string 
@@ -42,13 +42,13 @@ func (r AlibabaServicecenterIdentifytaskCreateRequest) GetApiParams() url.Values
 }
 
 
-func (r *AlibabaServicecenterIdentifytaskCreateRequest) SetWorkcardIds(workcardIds []Number) error {
+func (r *AlibabaServicecenterIdentifytaskCreateRequest) SetWorkcardIds(workcardIds []int64) error {
     r.workcardIds = workcardIds
     r.Set("workcard_ids", workcardIds)
     return nil
 }
 
-func (r AlibabaServicecenterIdentifytaskCreateRequest) GetWorkcardIds() []Number {
+func (r AlibabaServicecenterIdentifytaskCreateRequest) GetWorkcardIds() []int64 {
     return r.workcardIds
 }
 

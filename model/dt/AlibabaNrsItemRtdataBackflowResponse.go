@@ -12,8 +12,22 @@ alibaba.nrs.item.rtdata.backflow
 */
 type AlibabaNrsItemRtdataBackflowAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaNrsItemRtdataBackflowResponse `json:"alibaba_nrs_item_rtdata_backflow_response,omitempty"`
+    // Response *AlibabaNrsItemRtdataBackflowResponse `json:"alibaba_nrs_item_rtdata_backflow_response,omitempty"` 
+    AlibabaNrsItemRtdataBackflowResponse
 }
+
+/* model for simplify = false
+type AlibabaNrsItemRtdataBackflowResponse struct {
+
+    // 出参
+    
+    Result  *struct {
+        NrsResult  *NrsResult `json:"nrs_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaNrsItemRtdataBackflowResponse struct {
 

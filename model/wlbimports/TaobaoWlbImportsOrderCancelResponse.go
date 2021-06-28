@@ -12,8 +12,30 @@ taobao.wlb.imports.order.cancel
 */
 type TaobaoWlbImportsOrderCancelAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbImportsOrderCancelResponse `json:"taobao_wlb_imports_order_cancel_response,omitempty"`
+    // Response *TaobaoWlbImportsOrderCancelResponse `json:"wlb_imports_order_cancel_response,omitempty"` 
+    TaobaoWlbImportsOrderCancelResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbImportsOrderCancelResponse struct {
+
+    // 业务错误描述
+    
+    ResultErrorMsg   string `json:"result_error_msg,omitempty"`
+    
+
+    // 是否取消订单成功，true：成功，false：失败
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 业务错误编码
+    
+    ResultErrorCode   string `json:"result_error_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbImportsOrderCancelResponse struct {
 

@@ -11,11 +11,11 @@ taobao.baichuan.openaccount.loginbytoken
 
 百川TOKEN 登录
 */
-func TaobaoBaichuanOpenaccountLoginbytoken(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLoginbytokenRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountLoginbytokenResponse, error) {
+func TaobaoBaichuanOpenaccountLoginbytoken(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLoginbytokenRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountLoginbytokenAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanOpenaccountLoginbytokenAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

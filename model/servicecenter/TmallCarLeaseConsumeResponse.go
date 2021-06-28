@@ -12,8 +12,22 @@ tmall.car.lease.consume
 */
 type TmallCarLeaseConsumeAPIResponse struct {
     model.CommonResponse
-    Response *TmallCarLeaseConsumeResponse `json:"tmall_car_lease_consume_response,omitempty"`
+    // Response *TmallCarLeaseConsumeResponse `json:"tmall_car_lease_consume_response,omitempty"` 
+    TmallCarLeaseConsumeResponse
 }
+
+/* model for simplify = false
+type TmallCarLeaseConsumeResponse struct {
+
+    // 结果集合
+    
+    Result  *struct {
+        TmallCarLeaseConsumeResult  *TmallCarLeaseConsumeResult `json:"tmall_car_lease_consume_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallCarLeaseConsumeResponse struct {
 

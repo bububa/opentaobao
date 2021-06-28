@@ -12,8 +12,22 @@ tmall.servicecenter.worker.query
 */
 type TmallServicecenterWorkerQueryAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkerQueryResponse `json:"tmall_servicecenter_worker_query_response,omitempty"`
+    // Response *TmallServicecenterWorkerQueryResponse `json:"tmall_servicecenter_worker_query_response,omitempty"` 
+    TmallServicecenterWorkerQueryResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkerQueryResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkerQueryResponse struct {
 

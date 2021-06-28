@@ -12,8 +12,22 @@ alibaba.ifp.fulfill.warehouse.token.query
 */
 type AlibabaIfpFulfillWarehouseTokenQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIfpFulfillWarehouseTokenQueryResponse `json:"alibaba_ifp_fulfill_warehouse_token_query_response,omitempty"`
+    // Response *AlibabaIfpFulfillWarehouseTokenQueryResponse `json:"alibaba_ifp_fulfill_warehouse_token_query_response,omitempty"` 
+    AlibabaIfpFulfillWarehouseTokenQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaIfpFulfillWarehouseTokenQueryResponse struct {
+
+    // 返回结果
+    
+    WorkResult  *struct {
+        WorkResult  *WorkResult `json:"work_result,omitempty"`
+    } `json:"work_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIfpFulfillWarehouseTokenQueryResponse struct {
 

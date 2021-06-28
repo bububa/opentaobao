@@ -11,11 +11,11 @@ alibaba.aliqin.fc.iot.device.isexist
 
 判断设备是否存在
 */
-func AlibabaAliqinFcIotDeviceIsexist(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotDeviceIsexistRequest, session string) (*aliqin.AlibabaAliqinFcIotDeviceIsexistResponse, error) {
+func AlibabaAliqinFcIotDeviceIsexist(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotDeviceIsexistRequest, session string) (*aliqin.AlibabaAliqinFcIotDeviceIsexistAPIResponse, error) {
     var resp aliqin.AlibabaAliqinFcIotDeviceIsexistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

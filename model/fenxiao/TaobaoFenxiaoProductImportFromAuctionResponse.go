@@ -12,8 +12,25 @@ taobao.fenxiao.product.import.from.auction
 */
 type TaobaoFenxiaoProductImportFromAuctionAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductImportFromAuctionResponse `json:"taobao_fenxiao_product_import_from_auction_response,omitempty"`
+    // Response *TaobaoFenxiaoProductImportFromAuctionResponse `json:"fenxiao_product_import_from_auction_response,omitempty"` 
+    TaobaoFenxiaoProductImportFromAuctionResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductImportFromAuctionResponse struct {
+
+    // 生成的产品id
+    
+    Pid   int64 `json:"pid,omitempty"`
+    
+
+    // 操作时间
+    
+    OptTime   string `json:"opt_time,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoProductImportFromAuctionResponse struct {
 

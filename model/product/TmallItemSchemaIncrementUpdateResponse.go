@@ -12,8 +12,25 @@ tmall.item.schema.increment.update
 */
 type TmallItemSchemaIncrementUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemSchemaIncrementUpdateResponse `json:"tmall_item_schema_increment_update_response,omitempty"`
+    // Response *TmallItemSchemaIncrementUpdateResponse `json:"tmall_item_schema_increment_update_response,omitempty"` 
+    TmallItemSchemaIncrementUpdateResponse
 }
+
+/* model for simplify = false
+type TmallItemSchemaIncrementUpdateResponse struct {
+
+    // 返回商品发布结果
+    
+    UpdateItemResult   string `json:"update_item_result,omitempty"`
+    
+
+    // 商品更新操作成功时间
+    
+    GmtModified   string `json:"gmt_modified,omitempty"`
+    
+
+}
+*/
 
 type TmallItemSchemaIncrementUpdateResponse struct {
 

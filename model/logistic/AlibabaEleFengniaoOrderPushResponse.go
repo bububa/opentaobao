@@ -12,8 +12,20 @@ alibaba.ele.fengniao.order.push
 */
 type AlibabaEleFengniaoOrderPushAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaEleFengniaoOrderPushResponse `json:"alibaba_ele_fengniao_order_push_response,omitempty"`
+    // Response *AlibabaEleFengniaoOrderPushResponse `json:"alibaba_ele_fengniao_order_push_response,omitempty"` 
+    AlibabaEleFengniaoOrderPushResponse
 }
+
+/* model for simplify = false
+type AlibabaEleFengniaoOrderPushResponse struct {
+
+    // msg
+    
+    Message   string `json:"message,omitempty"`
+    
+
+}
+*/
 
 type AlibabaEleFengniaoOrderPushResponse struct {
 

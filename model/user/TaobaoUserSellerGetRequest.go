@@ -16,7 +16,7 @@ type TaobaoUserSellerGetRequest struct {
     model.Params
 
     // 需要返回的字段列表，可选值为返回示例值中的可以看到的字段
-    fields   []String 
+    fields   []string 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoUserSellerGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoUserSellerGetRequest) SetFields(fields []String) error {
+func (r *TaobaoUserSellerGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoUserSellerGetRequest) GetFields() []String {
+func (r TaobaoUserSellerGetRequest) GetFields() []string {
     return r.fields
 }
 

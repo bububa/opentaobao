@@ -12,8 +12,22 @@ taobao.tae.bill.get
 */
 type TaobaoTaeBillGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTaeBillGetResponse `json:"taobao_tae_bill_get_response,omitempty"`
+    // Response *TaobaoTaeBillGetResponse `json:"tae_bill_get_response,omitempty"` 
+    TaobaoTaeBillGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTaeBillGetResponse struct {
+
+    // 账单明细
+    
+    Bill  *struct {
+        BillDto  *BillDto `json:"bill_dto,omitempty"`
+    } `json:"bill,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTaeBillGetResponse struct {
 

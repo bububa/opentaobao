@@ -19,7 +19,7 @@ type TmallFuwuServiceitemListRequest struct {
     sellerId   int64 
 
     // 商品id列表，有数量限制
-    itemids   []Number 
+    itemids   []int64 
 
 }
 
@@ -52,13 +52,13 @@ func (r TmallFuwuServiceitemListRequest) GetSellerId() int64 {
     return r.sellerId
 }
 
-func (r *TmallFuwuServiceitemListRequest) SetItemids(itemids []Number) error {
+func (r *TmallFuwuServiceitemListRequest) SetItemids(itemids []int64) error {
     r.itemids = itemids
     r.Set("itemids", itemids)
     return nil
 }
 
-func (r TmallFuwuServiceitemListRequest) GetItemids() []Number {
+func (r TmallFuwuServiceitemListRequest) GetItemids() []int64 {
     return r.itemids
 }
 

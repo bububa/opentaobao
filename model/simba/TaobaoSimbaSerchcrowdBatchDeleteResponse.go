@@ -12,16 +12,42 @@ taobao.simba.serchcrowd.batch.delete
 */
 type TaobaoSimbaSerchcrowdBatchDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaSerchcrowdBatchDeleteResponse `json:"taobao_simba_serchcrowd_batch_delete_response,omitempty"`
+    // Response *TaobaoSimbaSerchcrowdBatchDeleteResponse `json:"simba_serchcrowd_batch_delete_response,omitempty"` 
+    TaobaoSimbaSerchcrowdBatchDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaSerchcrowdBatchDeleteResponse struct {
+
+    // result
+    
+    DeleteList  struct {
+        Json  []string `json:"string,omitempty"`
+    } `json:"delete_list,omitempty"`
+    
+
+    // errorDTOList
+    
+    ErrorDTOList  struct {
+        Json  []string `json:"string,omitempty"`
+    } `json:"error_d_t_o_list,omitempty"`
+    
+
+    // key
+    
+    Key   string `json:"key,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaSerchcrowdBatchDeleteResponse struct {
 
     // result
-    DeleteList   []Json `json:"delete_list,omitempty"`
+    DeleteList   []string `json:"delete_list,omitempty"`
 
     // errorDTOList
-    ErrorDTOList   []Json `json:"error_d_t_o_list,omitempty"`
+    ErrorDTOList   []string `json:"error_d_t_o_list,omitempty"`
 
     // key
     Key   string `json:"key,omitempty"`

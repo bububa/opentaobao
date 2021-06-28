@@ -12,8 +12,20 @@ taobao.crm.grademkt.member.add
 */
 type TaobaoCrmGrademktMemberAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGrademktMemberAddResponse `json:"taobao_crm_grademkt_member_add_response,omitempty"`
+    // Response *TaobaoCrmGrademktMemberAddResponse `json:"crm_grademkt_member_add_response,omitempty"` 
+    TaobaoCrmGrademktMemberAddResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGrademktMemberAddResponse struct {
+
+    // 返回操作是否成功
+    
+    Model   bool `json:"model,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGrademktMemberAddResponse struct {
 

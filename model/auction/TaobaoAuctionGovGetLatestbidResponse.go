@@ -12,8 +12,22 @@ taobao.auction.gov.get.latestbid
 */
 type TaobaoAuctionGovGetLatestbidAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAuctionGovGetLatestbidResponse `json:"taobao_auction_gov_get_latestbid_response,omitempty"`
+    // Response *TaobaoAuctionGovGetLatestbidResponse `json:"auction_gov_get_latestbid_response,omitempty"` 
+    TaobaoAuctionGovGetLatestbidResponse
 }
+
+/* model for simplify = false
+type TaobaoAuctionGovGetLatestbidResponse struct {
+
+    // result
+    
+    Result  *struct {
+        Result4Top  *Result4Top `json:"result4top,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAuctionGovGetLatestbidResponse struct {
 

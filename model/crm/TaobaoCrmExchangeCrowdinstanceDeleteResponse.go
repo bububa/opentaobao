@@ -12,8 +12,20 @@ taobao.crm.exchange.crowdinstance.delete
 */
 type TaobaoCrmExchangeCrowdinstanceDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmExchangeCrowdinstanceDeleteResponse `json:"taobao_crm_exchange_crowdinstance_delete_response,omitempty"`
+    // Response *TaobaoCrmExchangeCrowdinstanceDeleteResponse `json:"crm_exchange_crowdinstance_delete_response,omitempty"` 
+    TaobaoCrmExchangeCrowdinstanceDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmExchangeCrowdinstanceDeleteResponse struct {
+
+    // 操作成功
+    
+    SubSuccess   bool `json:"sub_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmExchangeCrowdinstanceDeleteResponse struct {
 

@@ -13,8 +13,22 @@ cainiao.cntec.supplier.order.service
 */
 type CainiaoCntecSupplierOrderServiceAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCntecSupplierOrderServiceResponse `json:"cainiao_cntec_supplier_order_service_response,omitempty"`
+    // Response *CainiaoCntecSupplierOrderServiceResponse `json:"cainiao_cntec_supplier_order_service_response,omitempty"` 
+    CainiaoCntecSupplierOrderServiceResponse
 }
+
+/* model for simplify = false
+type CainiaoCntecSupplierOrderServiceResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        CainiaoCntecSupplierOrderServiceResult  *CainiaoCntecSupplierOrderServiceResult `json:"cainiao_cntec_supplier_order_service_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCntecSupplierOrderServiceResponse struct {
 

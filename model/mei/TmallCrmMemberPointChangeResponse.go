@@ -12,8 +12,20 @@ tmall.crm.member.point.change
 */
 type TmallCrmMemberPointChangeAPIResponse struct {
     model.CommonResponse
-    Response *TmallCrmMemberPointChangeResponse `json:"tmall_crm_member_point_change_response,omitempty"`
+    // Response *TmallCrmMemberPointChangeResponse `json:"tmall_crm_member_point_change_response,omitempty"` 
+    TmallCrmMemberPointChangeResponse
 }
+
+/* model for simplify = false
+type TmallCrmMemberPointChangeResponse struct {
+
+    // 调用是否成功
+    
+    ResultSuccess   bool `json:"result_success,omitempty"`
+    
+
+}
+*/
 
 type TmallCrmMemberPointChangeResponse struct {
 

@@ -12,8 +12,22 @@ taobao.subuser.dutys.get
 */
 type TaobaoSubuserDutysGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSubuserDutysGetResponse `json:"taobao_subuser_dutys_get_response,omitempty"`
+    // Response *TaobaoSubuserDutysGetResponse `json:"subuser_dutys_get_response,omitempty"` 
+    TaobaoSubuserDutysGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSubuserDutysGetResponse struct {
+
+    // 职务信息
+    
+    Dutys  struct {
+        Duty  []Duty `json:"duty,omitempty"`
+    } `json:"dutys,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSubuserDutysGetResponse struct {
 

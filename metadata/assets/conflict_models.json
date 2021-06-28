@@ -10,5 +10,8 @@
     "ResultSet",
     "Module",
     "ResultDto",
-    "Struct"
+    "Struct",
+    "MapData",
+    "Results",
+    "RpcResult"
 ]

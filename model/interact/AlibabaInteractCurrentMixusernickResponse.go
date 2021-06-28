@@ -12,8 +12,20 @@ alibaba.interact.current.mixusernick
 */
 type AlibabaInteractCurrentMixusernickAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractCurrentMixusernickResponse `json:"alibaba_interact_current_mixusernick_response,omitempty"`
+    // Response *AlibabaInteractCurrentMixusernickResponse `json:"alibaba_interact_current_mixusernick_response,omitempty"` 
+    AlibabaInteractCurrentMixusernickResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractCurrentMixusernickResponse struct {
+
+    // result=0
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractCurrentMixusernickResponse struct {
 

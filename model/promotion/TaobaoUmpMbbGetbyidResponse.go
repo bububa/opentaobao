@@ -12,8 +12,20 @@ taobao.ump.mbb.getbyid
 */
 type TaobaoUmpMbbGetbyidAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpMbbGetbyidResponse `json:"taobao_ump_mbb_getbyid_response,omitempty"`
+    // Response *TaobaoUmpMbbGetbyidResponse `json:"ump_mbb_getbyid_response,omitempty"` 
+    TaobaoUmpMbbGetbyidResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpMbbGetbyidResponse struct {
+
+    // 营销积木块定义信息，可以通过ump sdk里面的MBB.fromJson来处理
+    
+    Mbb   string `json:"mbb,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpMbbGetbyidResponse struct {
 

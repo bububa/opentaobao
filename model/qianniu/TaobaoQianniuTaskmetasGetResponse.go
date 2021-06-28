@@ -12,8 +12,22 @@ taobao.qianniu.taskmetas.get
 */
 type TaobaoQianniuTaskmetasGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQianniuTaskmetasGetResponse `json:"taobao_qianniu_taskmetas_get_response,omitempty"`
+    // Response *TaobaoQianniuTaskmetasGetResponse `json:"qianniu_taskmetas_get_response,omitempty"` 
+    TaobaoQianniuTaskmetasGetResponse
 }
+
+/* model for simplify = false
+type TaobaoQianniuTaskmetasGetResponse struct {
+
+    // taskmetas
+    
+    Taskmetas  struct {
+        QTaskMetadata  []QTaskMetadata `json:"q_task_metadata,omitempty"`
+    } `json:"taskmetas,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQianniuTaskmetasGetResponse struct {
 

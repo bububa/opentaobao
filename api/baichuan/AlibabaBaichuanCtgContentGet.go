@@ -11,11 +11,11 @@ alibaba.baichuan.ctg.content.get
 
 百川内容平台内容获取
 */
-func AlibabaBaichuanCtgContentGet(clt *core.SDKClient, req *baichuan.AlibabaBaichuanCtgContentGetRequest, session string) (*baichuan.AlibabaBaichuanCtgContentGetResponse, error) {
+func AlibabaBaichuanCtgContentGet(clt *core.SDKClient, req *baichuan.AlibabaBaichuanCtgContentGetRequest, session string) (*baichuan.AlibabaBaichuanCtgContentGetAPIResponse, error) {
     var resp baichuan.AlibabaBaichuanCtgContentGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

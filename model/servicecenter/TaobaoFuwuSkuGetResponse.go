@@ -12,8 +12,22 @@ taobao.fuwu.sku.get
 */
 type TaobaoFuwuSkuGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFuwuSkuGetResponse `json:"taobao_fuwu_sku_get_response,omitempty"`
+    // Response *TaobaoFuwuSkuGetResponse `json:"fuwu_sku_get_response,omitempty"` 
+    TaobaoFuwuSkuGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFuwuSkuGetResponse struct {
+
+    // 内购服务及SKU详情
+    
+    Result  *struct {
+        ArticleViewResult  *ArticleViewResult `json:"article_view_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFuwuSkuGetResponse struct {
 

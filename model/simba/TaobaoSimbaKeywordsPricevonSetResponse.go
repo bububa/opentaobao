@@ -12,8 +12,22 @@ taobao.simba.keywords.pricevon.set
 */
 type TaobaoSimbaKeywordsPricevonSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaKeywordsPricevonSetResponse `json:"taobao_simba_keywords_pricevon_set_response,omitempty"`
+    // Response *TaobaoSimbaKeywordsPricevonSetResponse `json:"simba_keywords_pricevon_set_response,omitempty"` 
+    TaobaoSimbaKeywordsPricevonSetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaKeywordsPricevonSetResponse struct {
+
+    // 成功设置关键词价格的关键词列表
+    
+    Keywords  struct {
+        Keyword  []Keyword `json:"keyword,omitempty"`
+    } `json:"keywords,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaKeywordsPricevonSetResponse struct {
 

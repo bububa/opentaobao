@@ -19,7 +19,7 @@ type TaobaoTanxQualificationSolidFindRequest struct {
     advertiserId   int64 
 
     // 资质元素id列表
-    elementIds   []Number 
+    elementIds   []int64 
 
     // dsp用户id
     memberId   int64 
@@ -67,13 +67,13 @@ func (r TaobaoTanxQualificationSolidFindRequest) GetAdvertiserId() int64 {
     return r.advertiserId
 }
 
-func (r *TaobaoTanxQualificationSolidFindRequest) SetElementIds(elementIds []Number) error {
+func (r *TaobaoTanxQualificationSolidFindRequest) SetElementIds(elementIds []int64) error {
     r.elementIds = elementIds
     r.Set("element_ids", elementIds)
     return nil
 }
 
-func (r TaobaoTanxQualificationSolidFindRequest) GetElementIds() []Number {
+func (r TaobaoTanxQualificationSolidFindRequest) GetElementIds() []int64 {
     return r.elementIds
 }
 

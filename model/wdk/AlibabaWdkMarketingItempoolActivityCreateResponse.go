@@ -12,8 +12,35 @@ alibaba.wdk.marketing.itempool.activity.create
 */
 type AlibabaWdkMarketingItempoolActivityCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingItempoolActivityCreateResponse `json:"alibaba_wdk_marketing_itempool_activity_create_response,omitempty"`
+    // Response *AlibabaWdkMarketingItempoolActivityCreateResponse `json:"alibaba_wdk_marketing_itempool_activity_create_response,omitempty"` 
+    AlibabaWdkMarketingItempoolActivityCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingItempoolActivityCreateResponse struct {
+
+    // message
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // errorCode
+    
+    FailCode   string `json:"fail_code,omitempty"`
+    
+
+    // data
+    
+    Data   int64 `json:"data,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingItempoolActivityCreateResponse struct {
 

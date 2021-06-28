@@ -12,8 +12,22 @@ alibaba.mos.oc.trade.syncbanksale
 */
 type AlibabaMosOcTradeSyncbanksaleAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosOcTradeSyncbanksaleResponse `json:"alibaba_mos_oc_trade_syncbanksale_response,omitempty"`
+    // Response *AlibabaMosOcTradeSyncbanksaleResponse `json:"alibaba_mos_oc_trade_syncbanksale_response,omitempty"` 
+    AlibabaMosOcTradeSyncbanksaleResponse
 }
+
+/* model for simplify = false
+type AlibabaMosOcTradeSyncbanksaleResponse struct {
+
+    // resultDTO
+    
+    Result  *struct {
+        AlibabaMosOcTradeSyncbanksaleResultDo  *AlibabaMosOcTradeSyncbanksaleResultDo `json:"alibaba_mos_oc_trade_syncbanksale_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosOcTradeSyncbanksaleResponse struct {
 

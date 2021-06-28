@@ -12,8 +12,27 @@ taobao.item.promotion.rule.get
 */
 type TaobaoItemPromotionRuleGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemPromotionRuleGetResponse `json:"taobao_item_promotion_rule_get_response,omitempty"`
+    // Response *TaobaoItemPromotionRuleGetResponse `json:"item_promotion_rule_get_response,omitempty"` 
+    TaobaoItemPromotionRuleGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemPromotionRuleGetResponse struct {
+
+    // 商品规则信息
+    
+    Rules  struct {
+        ItemPromotionRule  []ItemPromotionRule `json:"item_promotion_rule,omitempty"`
+    } `json:"rules,omitempty"`
+    
+
+    // 商品是否命中更新规则
+    
+    Effec   bool `json:"effec,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemPromotionRuleGetResponse struct {
 

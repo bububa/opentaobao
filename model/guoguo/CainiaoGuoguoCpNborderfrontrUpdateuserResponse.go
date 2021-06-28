@@ -12,8 +12,30 @@ cainiao.guoguo.cp.nborderfrontr.updateuser
 */
 type CainiaoGuoguoCpNborderfrontrUpdateuserAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoGuoguoCpNborderfrontrUpdateuserResponse `json:"cainiao_guoguo_cp_nborderfrontr_updateuser_response,omitempty"`
+    // Response *CainiaoGuoguoCpNborderfrontrUpdateuserResponse `json:"cainiao_guoguo_cp_nborderfrontr_updateuser_response,omitempty"` 
+    CainiaoGuoguoCpNborderfrontrUpdateuserResponse
 }
+
+/* model for simplify = false
+type CainiaoGuoguoCpNborderfrontrUpdateuserResponse struct {
+
+    // 错误信息
+    
+    StatusMessage   string `json:"status_message,omitempty"`
+    
+
+    // errorCode
+    
+    StatusCode   string `json:"status_code,omitempty"`
+    
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type CainiaoGuoguoCpNborderfrontrUpdateuserResponse struct {
 

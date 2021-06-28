@@ -12,8 +12,15 @@ alibaba.interact.media.audio
 */
 type AlibabaInteractMediaAudioAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractMediaAudioResponse `json:"alibaba_interact_media_audio_response,omitempty"`
+    // Response *AlibabaInteractMediaAudioResponse `json:"alibaba_interact_media_audio_response,omitempty"` 
+    AlibabaInteractMediaAudioResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractMediaAudioResponse struct {
+
+}
+*/
 
 type AlibabaInteractMediaAudioResponse struct {
 

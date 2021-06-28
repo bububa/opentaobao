@@ -12,8 +12,20 @@ alibaba.aliqin.flow.wallet.grade
 */
 type AlibabaAliqinFlowWalletGradeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFlowWalletGradeResponse `json:"alibaba_aliqin_flow_wallet_grade_response,omitempty"`
+    // Response *AlibabaAliqinFlowWalletGradeResponse `json:"alibaba_aliqin_flow_wallet_grade_response,omitempty"` 
+    AlibabaAliqinFlowWalletGradeResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFlowWalletGradeResponse struct {
+
+    // 档位
+    
+    Grade   string `json:"grade,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFlowWalletGradeResponse struct {
 

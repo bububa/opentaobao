@@ -12,8 +12,22 @@ taobao.wireless.xcode.create
 */
 type TaobaoWirelessXcodeCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWirelessXcodeCreateResponse `json:"taobao_wireless_xcode_create_response,omitempty"`
+    // Response *TaobaoWirelessXcodeCreateResponse `json:"wireless_xcode_create_response,omitempty"` 
+    TaobaoWirelessXcodeCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoWirelessXcodeCreateResponse struct {
+
+    // 创建二维码/短连接 返回信息
+    
+    Xcode  *struct {
+        XCodeTo  *XCodeTo `json:"x_code_to,omitempty"`
+    } `json:"xcode,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWirelessXcodeCreateResponse struct {
 

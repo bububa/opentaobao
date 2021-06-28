@@ -12,8 +12,22 @@ taobao.item.qualification.display.get
 */
 type TaobaoItemQualificationDisplayGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemQualificationDisplayGetResponse `json:"taobao_item_qualification_display_get_response,omitempty"`
+    // Response *TaobaoItemQualificationDisplayGetResponse `json:"item_qualification_display_get_response,omitempty"` 
+    TaobaoItemQualificationDisplayGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemQualificationDisplayGetResponse struct {
+
+    // 返回资质采集配置
+    
+    DisplayConf  *struct {
+        DisplayQualifications  *DisplayQualifications `json:"display_qualifications,omitempty"`
+    } `json:"display_conf,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemQualificationDisplayGetResponse struct {
 

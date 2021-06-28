@@ -12,8 +12,22 @@ taobao.rdc.aligenius.ordermsg.update
 */
 type TaobaoRdcAligeniusOrdermsgUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRdcAligeniusOrdermsgUpdateResponse `json:"taobao_rdc_aligenius_ordermsg_update_response,omitempty"`
+    // Response *TaobaoRdcAligeniusOrdermsgUpdateResponse `json:"rdc_aligenius_ordermsg_update_response,omitempty"` 
+    TaobaoRdcAligeniusOrdermsgUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoRdcAligeniusOrdermsgUpdateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoRdcAligeniusOrdermsgUpdateResult  *TaobaoRdcAligeniusOrdermsgUpdateResult `json:"taobao_rdc_aligenius_ordermsg_update_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRdcAligeniusOrdermsgUpdateResponse struct {
 

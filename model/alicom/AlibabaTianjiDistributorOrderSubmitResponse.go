@@ -12,8 +12,22 @@ alibaba.tianji.distributor.order.submit
 */
 type AlibabaTianjiDistributorOrderSubmitAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTianjiDistributorOrderSubmitResponse `json:"alibaba_tianji_distributor_order_submit_response,omitempty"`
+    // Response *AlibabaTianjiDistributorOrderSubmitResponse `json:"alibaba_tianji_distributor_order_submit_response,omitempty"` 
+    AlibabaTianjiDistributorOrderSubmitResponse
 }
+
+/* model for simplify = false
+type AlibabaTianjiDistributorOrderSubmitResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTianjiDistributorOrderSubmitResponse struct {
 

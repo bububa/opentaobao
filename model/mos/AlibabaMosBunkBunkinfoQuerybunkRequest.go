@@ -19,10 +19,10 @@ type AlibabaMosBunkBunkinfoQuerybunkRequest struct {
     storeNo   string 
 
     // 合同状态集合
-    statusList   []String 
+    statusList   []string 
 
     // 合同号集合
-    contractCodes   []String 
+    contractCodes   []string 
 
 }
 
@@ -55,23 +55,23 @@ func (r AlibabaMosBunkBunkinfoQuerybunkRequest) GetStoreNo() string {
     return r.storeNo
 }
 
-func (r *AlibabaMosBunkBunkinfoQuerybunkRequest) SetStatusList(statusList []String) error {
+func (r *AlibabaMosBunkBunkinfoQuerybunkRequest) SetStatusList(statusList []string) error {
     r.statusList = statusList
     r.Set("status_list", statusList)
     return nil
 }
 
-func (r AlibabaMosBunkBunkinfoQuerybunkRequest) GetStatusList() []String {
+func (r AlibabaMosBunkBunkinfoQuerybunkRequest) GetStatusList() []string {
     return r.statusList
 }
 
-func (r *AlibabaMosBunkBunkinfoQuerybunkRequest) SetContractCodes(contractCodes []String) error {
+func (r *AlibabaMosBunkBunkinfoQuerybunkRequest) SetContractCodes(contractCodes []string) error {
     r.contractCodes = contractCodes
     r.Set("contract_codes", contractCodes)
     return nil
 }
 
-func (r AlibabaMosBunkBunkinfoQuerybunkRequest) GetContractCodes() []String {
+func (r AlibabaMosBunkBunkinfoQuerybunkRequest) GetContractCodes() []string {
     return r.contractCodes
 }
 

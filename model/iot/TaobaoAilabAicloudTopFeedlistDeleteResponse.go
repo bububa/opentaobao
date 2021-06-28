@@ -12,8 +12,30 @@ taobao.ailab.aicloud.top.feedlist.delete
 */
 type TaobaoAilabAicloudTopFeedlistDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopFeedlistDeleteResponse `json:"taobao_ailab_aicloud_top_feedlist_delete_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopFeedlistDeleteResponse `json:"ailab_aicloud_top_feedlist_delete_response,omitempty"` 
+    TaobaoAilabAicloudTopFeedlistDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopFeedlistDeleteResponse struct {
+
+    // model
+    
+    Model   string `json:"model,omitempty"`
+    
+
+    // msgInfo
+    
+    MsgInfo   string `json:"msg_info,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   string `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopFeedlistDeleteResponse struct {
 

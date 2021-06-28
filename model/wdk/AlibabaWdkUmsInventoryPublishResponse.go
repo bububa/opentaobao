@@ -12,8 +12,22 @@ alibaba.wdk.ums.inventory.publish
 */
 type AlibabaWdkUmsInventoryPublishAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkUmsInventoryPublishResponse `json:"alibaba_wdk_ums_inventory_publish_response,omitempty"`
+    // Response *AlibabaWdkUmsInventoryPublishResponse `json:"alibaba_wdk_ums_inventory_publish_response,omitempty"` 
+    AlibabaWdkUmsInventoryPublishResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkUmsInventoryPublishResponse struct {
+
+    // 调用服务返回结果
+    
+    ApiResult  *struct {
+        AlibabaWdkUmsInventoryPublishApiResult  *AlibabaWdkUmsInventoryPublishApiResult `json:"alibaba_wdk_ums_inventory_publish_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkUmsInventoryPublishResponse struct {
 

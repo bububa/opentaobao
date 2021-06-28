@@ -12,8 +12,22 @@ alibaba.security.jaq.wsgriskdata.report
 */
 type AlibabaSecurityJaqWsgriskdataReportAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqWsgriskdataReportResponse `json:"alibaba_security_jaq_wsgriskdata_report_response,omitempty"`
+    // Response *AlibabaSecurityJaqWsgriskdataReportResponse `json:"alibaba_security_jaq_wsgriskdata_report_response,omitempty"` 
+    AlibabaSecurityJaqWsgriskdataReportResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqWsgriskdataReportResponse struct {
+
+    // 无线保镖sdk上报数据的返回结果
+    
+    JaqWsgRiskReportResult  *struct {
+        JaqWsgReportResult  *JaqWsgReportResult `json:"jaq_wsg_report_result,omitempty"`
+    } `json:"jaq_wsg_risk_report_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqWsgriskdataReportResponse struct {
 

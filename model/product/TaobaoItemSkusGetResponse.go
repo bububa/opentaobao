@@ -13,8 +13,22 @@ taobao.item.skus.get
 */
 type TaobaoItemSkusGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemSkusGetResponse `json:"taobao_item_skus_get_response,omitempty"`
+    // Response *TaobaoItemSkusGetResponse `json:"item_skus_get_response,omitempty"` 
+    TaobaoItemSkusGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemSkusGetResponse struct {
+
+    // Sku列表
+    
+    Skus  struct {
+        Sku  []Sku `json:"sku,omitempty"`
+    } `json:"skus,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemSkusGetResponse struct {
 

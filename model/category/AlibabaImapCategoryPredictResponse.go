@@ -14,8 +14,22 @@ alibaba.imap.category.predict
 */
 type AlibabaImapCategoryPredictAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaImapCategoryPredictResponse `json:"alibaba_imap_category_predict_response,omitempty"`
+    // Response *AlibabaImapCategoryPredictResponse `json:"alibaba_imap_category_predict_response,omitempty"` 
+    AlibabaImapCategoryPredictResponse
 }
+
+/* model for simplify = false
+type AlibabaImapCategoryPredictResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaImapCategoryPredictResult  *AlibabaImapCategoryPredictResult `json:"alibaba_imap_category_predict_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaImapCategoryPredictResponse struct {
 

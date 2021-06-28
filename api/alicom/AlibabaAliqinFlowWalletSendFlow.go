@@ -11,11 +11,11 @@ alibaba.aliqin.flow.wallet.send.flow
 
 阿里通信流量下发功能，允许用户补发
 */
-func AlibabaAliqinFlowWalletSendFlow(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletSendFlowRequest, session string) (*alicom.AlibabaAliqinFlowWalletSendFlowResponse, error) {
+func AlibabaAliqinFlowWalletSendFlow(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletSendFlowRequest, session string) (*alicom.AlibabaAliqinFlowWalletSendFlowAPIResponse, error) {
     var resp alicom.AlibabaAliqinFlowWalletSendFlowAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

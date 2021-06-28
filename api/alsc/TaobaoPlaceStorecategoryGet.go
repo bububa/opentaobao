@@ -11,11 +11,11 @@ taobao.place.storecategory.get
 
 获取门店类目信息
 */
-func TaobaoPlaceStorecategoryGet(clt *core.SDKClient, req *alsc.TaobaoPlaceStorecategoryGetRequest, session string) (*alsc.TaobaoPlaceStorecategoryGetResponse, error) {
+func TaobaoPlaceStorecategoryGet(clt *core.SDKClient, req *alsc.TaobaoPlaceStorecategoryGetRequest, session string) (*alsc.TaobaoPlaceStorecategoryGetAPIResponse, error) {
     var resp alsc.TaobaoPlaceStorecategoryGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

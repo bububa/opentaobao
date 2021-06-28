@@ -12,8 +12,20 @@ taobao.vmarket.eticket.manage.notify
 */
 type TaobaoVmarketEticketManageNotifyAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVmarketEticketManageNotifyResponse `json:"taobao_vmarket_eticket_manage_notify_response,omitempty"`
+    // Response *TaobaoVmarketEticketManageNotifyResponse `json:"vmarket_eticket_manage_notify_response,omitempty"` 
+    TaobaoVmarketEticketManageNotifyResponse
 }
+
+/* model for simplify = false
+type TaobaoVmarketEticketManageNotifyResponse struct {
+
+    // 1:成功
+    
+    RetCode   int64 `json:"ret_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVmarketEticketManageNotifyResponse struct {
 

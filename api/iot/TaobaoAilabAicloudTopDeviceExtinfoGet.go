@@ -11,11 +11,11 @@ taobao.ailab.aicloud.top.device.extinfo.get
 
 获取设备扩展信息
 */
-func TaobaoAilabAicloudTopDeviceExtinfoGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceExtinfoGetRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceExtinfoGetResponse, error) {
+func TaobaoAilabAicloudTopDeviceExtinfoGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceExtinfoGetRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceExtinfoGetAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopDeviceExtinfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

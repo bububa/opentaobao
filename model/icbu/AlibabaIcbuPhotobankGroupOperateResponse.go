@@ -12,8 +12,22 @@ alibaba.icbu.photobank.group.operate
 */
 type AlibabaIcbuPhotobankGroupOperateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuPhotobankGroupOperateResponse `json:"alibaba_icbu_photobank_group_operate_response,omitempty"`
+    // Response *AlibabaIcbuPhotobankGroupOperateResponse `json:"alibaba_icbu_photobank_group_operate_response,omitempty"` 
+    AlibabaIcbuPhotobankGroupOperateResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuPhotobankGroupOperateResponse struct {
+
+    // 接口返回的数据结果
+    
+    PhotoGroupResult  *struct {
+        PhotoGroupResult  *PhotoGroupResult `json:"photo_group_result,omitempty"`
+    } `json:"photo_group_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuPhotobankGroupOperateResponse struct {
 

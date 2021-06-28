@@ -12,8 +12,35 @@ taobao.nextone.logistics.warehouse.update
 */
 type TaobaoNextoneLogisticsWarehouseUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoNextoneLogisticsWarehouseUpdateResponse `json:"taobao_nextone_logistics_warehouse_update_response,omitempty"`
+    // Response *TaobaoNextoneLogisticsWarehouseUpdateResponse `json:"nextone_logistics_warehouse_update_response,omitempty"` 
+    TaobaoNextoneLogisticsWarehouseUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoNextoneLogisticsWarehouseUpdateResponse struct {
+
+    // resultData
+    
+    ResultData   string `json:"result_data,omitempty"`
+    
+
+    // errorInfo
+    
+    ErrInfo   string `json:"err_info,omitempty"`
+    
+
+    // errorCode
+    
+    ErrCode   string `json:"err_code,omitempty"`
+    
+
+    // success
+    
+    Succeed   bool `json:"succeed,omitempty"`
+    
+
+}
+*/
 
 type TaobaoNextoneLogisticsWarehouseUpdateResponse struct {
 

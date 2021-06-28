@@ -11,11 +11,11 @@ alibaba.scbp.ad.report.get.account.report
 
 账户报告
 */
-func AlibabaScbpAdReportGetAccountReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetAccountReportRequest, session string) (*scbp.AlibabaScbpAdReportGetAccountReportResponse, error) {
+func AlibabaScbpAdReportGetAccountReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetAccountReportRequest, session string) (*scbp.AlibabaScbpAdReportGetAccountReportAPIResponse, error) {
     var resp scbp.AlibabaScbpAdReportGetAccountReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

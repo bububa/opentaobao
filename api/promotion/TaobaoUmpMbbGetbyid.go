@@ -11,11 +11,11 @@ taobao.ump.mbb.getbyid
 
 根据积木块id获取营销积木块。
 */
-func TaobaoUmpMbbGetbyid(clt *core.SDKClient, req *promotion.TaobaoUmpMbbGetbyidRequest, session string) (*promotion.TaobaoUmpMbbGetbyidResponse, error) {
+func TaobaoUmpMbbGetbyid(clt *core.SDKClient, req *promotion.TaobaoUmpMbbGetbyidRequest, session string) (*promotion.TaobaoUmpMbbGetbyidAPIResponse, error) {
     var resp promotion.TaobaoUmpMbbGetbyidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

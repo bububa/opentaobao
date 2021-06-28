@@ -12,8 +12,22 @@ taobao.wdk.equipment.deviceadmin.deviceinfo.get
 */
 type TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse `json:"taobao_wdk_equipment_deviceadmin_deviceinfo_get_response,omitempty"`
+    // Response *TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse `json:"wdk_equipment_deviceadmin_deviceinfo_get_response,omitempty"` 
+    TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        HmResult  *HmResult `json:"hm_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse struct {
 

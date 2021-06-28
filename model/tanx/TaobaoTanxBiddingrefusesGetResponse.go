@@ -12,8 +12,27 @@ taobao.tanx.biddingrefuses.get
 */
 type TaobaoTanxBiddingrefusesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTanxBiddingrefusesGetResponse `json:"taobao_tanx_biddingrefuses_get_response,omitempty"`
+    // Response *TaobaoTanxBiddingrefusesGetResponse `json:"tanx_biddingrefuses_get_response,omitempty"` 
+    TaobaoTanxBiddingrefusesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTanxBiddingrefusesGetResponse struct {
+
+    // 返回是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 返回竞价失败对象信息
+    
+    BiddingRefuseList  struct {
+        BiddingRefuseDto  []BiddingRefuseDto `json:"bidding_refuse_dto,omitempty"`
+    } `json:"bidding_refuse_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTanxBiddingrefusesGetResponse struct {
 

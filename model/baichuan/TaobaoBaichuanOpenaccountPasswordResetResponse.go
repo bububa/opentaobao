@@ -12,8 +12,20 @@ taobao.baichuan.openaccount.password.reset
 */
 type TaobaoBaichuanOpenaccountPasswordResetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanOpenaccountPasswordResetResponse `json:"taobao_baichuan_openaccount_password_reset_response,omitempty"`
+    // Response *TaobaoBaichuanOpenaccountPasswordResetResponse `json:"baichuan_openaccount_password_reset_response,omitempty"` 
+    TaobaoBaichuanOpenaccountPasswordResetResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanOpenaccountPasswordResetResponse struct {
+
+    // name
+    
+    Name   string `json:"name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanOpenaccountPasswordResetResponse struct {
 

@@ -31,7 +31,7 @@ type AlibabaServicecenterFulfiltaskQueryRequest struct {
     currentPage   int64 
 
     // 核销单id列表
-    fulfilTaskIdList   []Number 
+    fulfilTaskIdList   []int64 
 
 }
 
@@ -104,13 +104,13 @@ func (r AlibabaServicecenterFulfiltaskQueryRequest) GetCurrentPage() int64 {
     return r.currentPage
 }
 
-func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetFulfilTaskIdList(fulfilTaskIdList []Number) error {
+func (r *AlibabaServicecenterFulfiltaskQueryRequest) SetFulfilTaskIdList(fulfilTaskIdList []int64) error {
     r.fulfilTaskIdList = fulfilTaskIdList
     r.Set("fulfil_task_id_list", fulfilTaskIdList)
     return nil
 }
 
-func (r AlibabaServicecenterFulfiltaskQueryRequest) GetFulfilTaskIdList() []Number {
+func (r AlibabaServicecenterFulfiltaskQueryRequest) GetFulfilTaskIdList() []int64 {
     return r.fulfilTaskIdList
 }
 

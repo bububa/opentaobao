@@ -11,11 +11,11 @@ taobao.simba.salestar.adgroup.findbycampid
 
 批量得到推广计划下的推广组
 */
-func TaobaoSimbaSalestarAdgroupFindbycampid(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupFindbycampidRequest, session string) (*simba.TaobaoSimbaSalestarAdgroupFindbycampidResponse, error) {
+func TaobaoSimbaSalestarAdgroupFindbycampid(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupFindbycampidRequest, session string) (*simba.TaobaoSimbaSalestarAdgroupFindbycampidAPIResponse, error) {
     var resp simba.TaobaoSimbaSalestarAdgroupFindbycampidAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

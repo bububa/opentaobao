@@ -12,8 +12,22 @@ alibaba.baichuan.ctg.user.relation
 */
 type AlibabaBaichuanCtgUserRelationAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaBaichuanCtgUserRelationResponse `json:"alibaba_baichuan_ctg_user_relation_response,omitempty"`
+    // Response *AlibabaBaichuanCtgUserRelationResponse `json:"alibaba_baichuan_ctg_user_relation_response,omitempty"` 
+    AlibabaBaichuanCtgUserRelationResponse
 }
+
+/* model for simplify = false
+type AlibabaBaichuanCtgUserRelationResponse struct {
+
+    // 返回的整体结果
+    
+    Result  *struct {
+        AlibabaBaichuanCtgUserRelationResult  *AlibabaBaichuanCtgUserRelationResult `json:"alibaba_baichuan_ctg_user_relation_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaBaichuanCtgUserRelationResponse struct {
 

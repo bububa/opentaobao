@@ -12,8 +12,22 @@ taobao.simba.insight.wordsareadata.get
 */
 type TaobaoSimbaInsightWordsareadataGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaInsightWordsareadataGetResponse `json:"taobao_simba_insight_wordsareadata_get_response,omitempty"`
+    // Response *TaobaoSimbaInsightWordsareadataGetResponse `json:"simba_insight_wordsareadata_get_response,omitempty"` 
+    TaobaoSimbaInsightWordsareadataGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaInsightWordsareadataGetResponse struct {
+
+    // 地域细分数据
+    
+    WordAreadataList  struct {
+        InsightWordsAreaDistributeDataDTO  []InsightWordsAreaDistributeDataDTO `json:"insight_words_area_distribute_data_dto,omitempty"`
+    } `json:"word_areadata_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaInsightWordsareadataGetResponse struct {
 

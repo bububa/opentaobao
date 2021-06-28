@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.reserve
 */
 type TmallServicecenterWorkcardReserveAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardReserveResponse `json:"tmall_servicecenter_workcard_reserve_response,omitempty"`
+    // Response *TmallServicecenterWorkcardReserveResponse `json:"tmall_servicecenter_workcard_reserve_response,omitempty"` 
+    TmallServicecenterWorkcardReserveResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardReserveResponse struct {
+
+    // 调用结果
+    
+    Result  *struct {
+        TmallServicecenterWorkcardReserveResult  *TmallServicecenterWorkcardReserveResult `json:"tmall_servicecenter_workcard_reserve_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardReserveResponse struct {
 

@@ -12,8 +12,22 @@ taobao.tvpay.access.data.get
 */
 type TaobaoTvpayAccessDataGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTvpayAccessDataGetResponse `json:"taobao_tvpay_access_data_get_response,omitempty"`
+    // Response *TaobaoTvpayAccessDataGetResponse `json:"tvpay_access_data_get_response,omitempty"` 
+    TaobaoTvpayAccessDataGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTvpayAccessDataGetResponse struct {
+
+    // Top返回对象
+    
+    Result  *struct {
+        TopResultDo  *TopResultDo `json:"top_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTvpayAccessDataGetResponse struct {
 

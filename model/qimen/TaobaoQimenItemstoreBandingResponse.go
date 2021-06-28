@@ -12,8 +12,30 @@ taobao.qimen.itemstore.banding
 */
 type TaobaoQimenItemstoreBandingAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenItemstoreBandingResponse `json:"taobao_qimen_itemstore_banding_response,omitempty"`
+    // Response *TaobaoQimenItemstoreBandingResponse `json:"qimen_itemstore_banding_response,omitempty"` 
+    TaobaoQimenItemstoreBandingResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenItemstoreBandingResponse struct {
+
+    // 响应信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 响应描述
+    
+    Flag   string `json:"flag,omitempty"`
+    
+
+    // 响应编码
+    
+    QimenCode   string `json:"qimen_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenItemstoreBandingResponse struct {
 

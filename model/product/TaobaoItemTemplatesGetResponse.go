@@ -12,8 +12,22 @@ taobao.item.templates.get
 */
 type TaobaoItemTemplatesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemTemplatesGetResponse `json:"taobao_item_templates_get_response,omitempty"`
+    // Response *TaobaoItemTemplatesGetResponse `json:"item_templates_get_response,omitempty"` 
+    TaobaoItemTemplatesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemTemplatesGetResponse struct {
+
+    // 返回宝贝模板对象。包含模板id，模板name，还有模板的类别（0表示外店，1表示内店）
+    
+    ItemTemplateList  struct {
+        ItemTemplate  []ItemTemplate `json:"item_template,omitempty"`
+    } `json:"item_template_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemTemplatesGetResponse struct {
 

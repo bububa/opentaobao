@@ -12,8 +12,22 @@ alibaba.scbp.ad.report.get.target.report
 */
 type AlibabaScbpAdReportGetTargetReportAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdReportGetTargetReportResponse `json:"alibaba_scbp_ad_report_get_target_report_response,omitempty"`
+    // Response *AlibabaScbpAdReportGetTargetReportResponse `json:"alibaba_scbp_ad_report_get_target_report_response,omitempty"` 
+    AlibabaScbpAdReportGetTargetReportResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdReportGetTargetReportResponse struct {
+
+    // 返回数据
+    
+    Result  *struct {
+        TargetReportDto  *TargetReportDto `json:"target_report_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdReportGetTargetReportResponse struct {
 

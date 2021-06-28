@@ -12,8 +12,35 @@ alibaba.argus.updateredrisk
 */
 type AlibabaArgusUpdateredriskAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaArgusUpdateredriskResponse `json:"alibaba_argus_updateredrisk_response,omitempty"`
+    // Response *AlibabaArgusUpdateredriskResponse `json:"alibaba_argus_updateredrisk_response,omitempty"` 
+    AlibabaArgusUpdateredriskResponse
 }
+
+/* model for simplify = false
+type AlibabaArgusUpdateredriskResponse struct {
+
+    // 结果是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 错误信息
+    
+    ErrorMessage   string `json:"error_message,omitempty"`
+    
+
+    // 错误码
+    
+    ReturnCode   string `json:"return_code,omitempty"`
+    
+
+    // 总数
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+}
+*/
 
 type AlibabaArgusUpdateredriskResponse struct {
 

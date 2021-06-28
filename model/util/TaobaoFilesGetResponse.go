@@ -12,8 +12,22 @@ taobao.files.get
 */
 type TaobaoFilesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFilesGetResponse `json:"taobao_files_get_response,omitempty"`
+    // Response *TaobaoFilesGetResponse `json:"files_get_response,omitempty"` 
+    TaobaoFilesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFilesGetResponse struct {
+
+    // results
+    
+    Results  struct {
+        TopDownloadRecordDo  []TopDownloadRecordDo `json:"top_download_record_do,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFilesGetResponse struct {
 

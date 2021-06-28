@@ -12,8 +12,20 @@ alibaba.interact.coupon.apply
 */
 type AlibabaInteractCouponApplyAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractCouponApplyResponse `json:"alibaba_interact_coupon_apply_response,omitempty"`
+    // Response *AlibabaInteractCouponApplyResponse `json:"alibaba_interact_coupon_apply_response,omitempty"` 
+    AlibabaInteractCouponApplyResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractCouponApplyResponse struct {
+
+    // 无用参数，top限制一定要有出参，增加此参数
+    
+    Stub   string `json:"stub,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractCouponApplyResponse struct {
 

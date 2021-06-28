@@ -11,11 +11,11 @@ alibaba.alsc.crm.open.point.operate
 
 同步积分接口
 */
-func AlibabaAlscCrmOpenPointOperate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenPointOperateRequest, session string) (*alsc.AlibabaAlscCrmOpenPointOperateResponse, error) {
+func AlibabaAlscCrmOpenPointOperate(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenPointOperateRequest, session string) (*alsc.AlibabaAlscCrmOpenPointOperateAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmOpenPointOperateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

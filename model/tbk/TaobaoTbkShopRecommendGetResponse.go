@@ -12,8 +12,22 @@ taobao.tbk.shop.recommend.get
 */
 type TaobaoTbkShopRecommendGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkShopRecommendGetResponse `json:"taobao_tbk_shop_recommend_get_response,omitempty"`
+    // Response *TaobaoTbkShopRecommendGetResponse `json:"tbk_shop_recommend_get_response,omitempty"` 
+    TaobaoTbkShopRecommendGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkShopRecommendGetResponse struct {
+
+    // 淘宝客店铺
+    
+    Results  struct {
+        NTbkShop  []NTbkShop `json:"n_tbk_shop,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkShopRecommendGetResponse struct {
 

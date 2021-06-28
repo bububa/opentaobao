@@ -12,8 +12,20 @@ TMC连接授权Token
 */
 type TaobaoTmcAuthGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcAuthGetResponse `json:"taobao_tmc_auth_get_response,omitempty"`
+    // Response *TaobaoTmcAuthGetResponse `json:"tmc_auth_get_response,omitempty"` 
+    TaobaoTmcAuthGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcAuthGetResponse struct {
+
+    // result
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcAuthGetResponse struct {
 

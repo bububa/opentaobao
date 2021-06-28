@@ -12,8 +12,15 @@ taobao.fenxiao.product.to.channel.import
 */
 type TaobaoFenxiaoProductToChannelImportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductToChannelImportResponse `json:"taobao_fenxiao_product_to_channel_import_response,omitempty"`
+    // Response *TaobaoFenxiaoProductToChannelImportResponse `json:"fenxiao_product_to_channel_import_response,omitempty"` 
+    TaobaoFenxiaoProductToChannelImportResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductToChannelImportResponse struct {
+
+}
+*/
 
 type TaobaoFenxiaoProductToChannelImportResponse struct {
 

@@ -12,8 +12,30 @@ taobao.qimen.orderstatus.update
 */
 type TaobaoQimenOrderstatusUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenOrderstatusUpdateResponse `json:"taobao_qimen_orderstatus_update_response,omitempty"`
+    // Response *TaobaoQimenOrderstatusUpdateResponse `json:"qimen_orderstatus_update_response,omitempty"` 
+    TaobaoQimenOrderstatusUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenOrderstatusUpdateResponse struct {
+
+    // message
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // resultCode
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenOrderstatusUpdateResponse struct {
 

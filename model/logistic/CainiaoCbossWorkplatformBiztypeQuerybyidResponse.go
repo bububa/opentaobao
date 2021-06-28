@@ -12,8 +12,22 @@ cainiao.cboss.workplatform.biztype.querybyid
 */
 type CainiaoCbossWorkplatformBiztypeQuerybyidAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCbossWorkplatformBiztypeQuerybyidResponse `json:"cainiao_cboss_workplatform_biztype_querybyid_response,omitempty"`
+    // Response *CainiaoCbossWorkplatformBiztypeQuerybyidResponse `json:"cainiao_cboss_workplatform_biztype_querybyid_response,omitempty"` 
+    CainiaoCbossWorkplatformBiztypeQuerybyidResponse
 }
+
+/* model for simplify = false
+type CainiaoCbossWorkplatformBiztypeQuerybyidResponse struct {
+
+    // result
+    
+    Result  *struct {
+        CainiaoCbossWorkplatformBiztypeQuerybyidResult  *CainiaoCbossWorkplatformBiztypeQuerybyidResult `json:"cainiao_cboss_workplatform_biztype_querybyid_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCbossWorkplatformBiztypeQuerybyidResponse struct {
 

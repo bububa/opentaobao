@@ -11,11 +11,11 @@ taobao.qt.report.update
 
 更新质检报告
 */
-func TaobaoQtReportUpdate(clt *core.SDKClient, req *qt.TaobaoQtReportUpdateRequest, session string) (*qt.TaobaoQtReportUpdateResponse, error) {
+func TaobaoQtReportUpdate(clt *core.SDKClient, req *qt.TaobaoQtReportUpdateRequest, session string) (*qt.TaobaoQtReportUpdateAPIResponse, error) {
     var resp qt.TaobaoQtReportUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -19,7 +19,7 @@ type TaobaoBusRefundfeeGetRequest struct {
     aliTripOrderId   string 
 
     // 飞猪子订单号
-    subOrderIds   []Number 
+    subOrderIds   []int64 
 
 }
 
@@ -52,13 +52,13 @@ func (r TaobaoBusRefundfeeGetRequest) GetAliTripOrderId() string {
     return r.aliTripOrderId
 }
 
-func (r *TaobaoBusRefundfeeGetRequest) SetSubOrderIds(subOrderIds []Number) error {
+func (r *TaobaoBusRefundfeeGetRequest) SetSubOrderIds(subOrderIds []int64) error {
     r.subOrderIds = subOrderIds
     r.Set("sub_order_ids", subOrderIds)
     return nil
 }
 
-func (r TaobaoBusRefundfeeGetRequest) GetSubOrderIds() []Number {
+func (r TaobaoBusRefundfeeGetRequest) GetSubOrderIds() []int64 {
     return r.subOrderIds
 }
 

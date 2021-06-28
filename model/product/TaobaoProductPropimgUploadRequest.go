@@ -25,7 +25,7 @@ type TaobaoProductPropimgUploadRequest struct {
     props   string 
 
     // 图片内容.图片最大为2M,只支持JPG,GIF.
-    image   []byte 
+    image   []*model.File 
 
     // 图片序号
     position   int64 
@@ -81,13 +81,13 @@ func (r TaobaoProductPropimgUploadRequest) GetProps() string {
     return r.props
 }
 
-func (r *TaobaoProductPropimgUploadRequest) SetImage(image []byte) error {
+func (r *TaobaoProductPropimgUploadRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoProductPropimgUploadRequest) GetImage() []byte {
+func (r TaobaoProductPropimgUploadRequest) GetImage() []*model.File {
     return r.image
 }
 

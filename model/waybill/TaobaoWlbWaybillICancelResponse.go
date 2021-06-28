@@ -12,8 +12,20 @@ taobao.wlb.waybill.i.cancel
 */
 type TaobaoWlbWaybillICancelAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWaybillICancelResponse `json:"taobao_wlb_waybill_i_cancel_response,omitempty"`
+    // Response *TaobaoWlbWaybillICancelResponse `json:"wlb_waybill_i_cancel_response,omitempty"` 
+    TaobaoWlbWaybillICancelResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWaybillICancelResponse struct {
+
+    // 调用取消是否成功
+    
+    CancelResult   bool `json:"cancel_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWaybillICancelResponse struct {
 

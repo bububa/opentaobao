@@ -12,8 +12,22 @@ alibaba.wdk.item.currentprice.query
 */
 type AlibabaWdkItemCurrentpriceQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkItemCurrentpriceQueryResponse `json:"alibaba_wdk_item_currentprice_query_response,omitempty"`
+    // Response *AlibabaWdkItemCurrentpriceQueryResponse `json:"alibaba_wdk_item_currentprice_query_response,omitempty"` 
+    AlibabaWdkItemCurrentpriceQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkItemCurrentpriceQueryResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaWdkItemCurrentpriceQueryResult  *AlibabaWdkItemCurrentpriceQueryResult `json:"alibaba_wdk_item_currentprice_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkItemCurrentpriceQueryResponse struct {
 

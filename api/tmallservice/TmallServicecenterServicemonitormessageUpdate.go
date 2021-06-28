@@ -11,11 +11,11 @@ tmall.servicecenter.servicemonitormessage.update
 
 服务商收到预警后，需要进行回复已读状态，并可填写备注
 */
-func TmallServicecenterServicemonitormessageUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicemonitormessageUpdateRequest, session string) (*tmallservice.TmallServicecenterServicemonitormessageUpdateResponse, error) {
+func TmallServicecenterServicemonitormessageUpdate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicemonitormessageUpdateRequest, session string) (*tmallservice.TmallServicecenterServicemonitormessageUpdateAPIResponse, error) {
     var resp tmallservice.TmallServicecenterServicemonitormessageUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

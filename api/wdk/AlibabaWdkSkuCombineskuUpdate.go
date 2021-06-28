@@ -11,11 +11,11 @@ alibaba.wdk.sku.combinesku.update
 
 组合商品修改接口
 */
-func AlibabaWdkSkuCombineskuUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkSkuCombineskuUpdateRequest, session string) (*wdk.AlibabaWdkSkuCombineskuUpdateResponse, error) {
+func AlibabaWdkSkuCombineskuUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkSkuCombineskuUpdateRequest, session string) (*wdk.AlibabaWdkSkuCombineskuUpdateAPIResponse, error) {
     var resp wdk.AlibabaWdkSkuCombineskuUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

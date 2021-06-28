@@ -12,8 +12,35 @@ taobao.train.agent.tostation.receive
 */
 type TaobaoTrainAgentTostationReceiveAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentTostationReceiveResponse `json:"taobao_train_agent_tostation_receive_response,omitempty"`
+    // Response *TaobaoTrainAgentTostationReceiveResponse `json:"train_agent_tostation_receive_response,omitempty"` 
+    TaobaoTrainAgentTostationReceiveResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentTostationReceiveResponse struct {
+
+    // 错误码
+    
+    ErrorMsgCode   string `json:"error_msg_code,omitempty"`
+    
+
+    // 扩展参数
+    
+    ExtendParams   string `json:"extend_params,omitempty"`
+    
+
+    // 错误描述
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentTostationReceiveResponse struct {
 

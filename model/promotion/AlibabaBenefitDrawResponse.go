@@ -18,8 +18,37 @@ appkey验证通过的，才会进入抽奖流程，否则直接失败。
 */
 type AlibabaBenefitDrawAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaBenefitDrawResponse `json:"alibaba_benefit_draw_response,omitempty"`
+    // Response *AlibabaBenefitDrawResponse `json:"alibaba_benefit_draw_response,omitempty"` 
+    AlibabaBenefitDrawResponse
 }
+
+/* model for simplify = false
+type AlibabaBenefitDrawResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaBenefitDrawResult  *AlibabaBenefitDrawResult `json:"alibaba_benefit_draw_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+    // 权益id
+    
+    PrizeId   string `json:"prize_id,omitempty"`
+    
+
+    // 奖品id
+    
+    RightId   string `json:"right_id,omitempty"`
+    
+
+    // 扩展信息
+    
+    ExtAttribute   string `json:"ext_attribute,omitempty"`
+    
+
+}
+*/
 
 type AlibabaBenefitDrawResponse struct {
 

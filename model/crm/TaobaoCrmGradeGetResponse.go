@@ -12,8 +12,22 @@ taobao.crm.grade.get
 */
 type TaobaoCrmGradeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGradeGetResponse `json:"taobao_crm_grade_get_response,omitempty"`
+    // Response *TaobaoCrmGradeGetResponse `json:"crm_grade_get_response,omitempty"` 
+    TaobaoCrmGradeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGradeGetResponse struct {
+
+    // 等级信息集合
+    
+    GradePromotions  struct {
+        GradePromotion  []GradePromotion `json:"grade_promotion,omitempty"`
+    } `json:"grade_promotions,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGradeGetResponse struct {
 

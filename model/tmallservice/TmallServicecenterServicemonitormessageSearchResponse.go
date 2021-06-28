@@ -12,8 +12,22 @@ tmall.servicecenter.servicemonitormessage.search
 */
 type TmallServicecenterServicemonitormessageSearchAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterServicemonitormessageSearchResponse `json:"tmall_servicecenter_servicemonitormessage_search_response,omitempty"`
+    // Response *TmallServicecenterServicemonitormessageSearchResponse `json:"tmall_servicecenter_servicemonitormessage_search_response,omitempty"` 
+    TmallServicecenterServicemonitormessageSearchResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterServicemonitormessageSearchResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterServicemonitormessageSearchResponse struct {
 

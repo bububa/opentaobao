@@ -19,7 +19,7 @@ type TaobaoOpenimTribeGetalltribesRequest struct {
     user   *OpenImUser 
 
     // 群类型
-    tribeTypes   []Number 
+    tribeTypes   []int64 
 
 }
 
@@ -52,13 +52,13 @@ func (r TaobaoOpenimTribeGetalltribesRequest) GetUser() *OpenImUser {
     return r.user
 }
 
-func (r *TaobaoOpenimTribeGetalltribesRequest) SetTribeTypes(tribeTypes []Number) error {
+func (r *TaobaoOpenimTribeGetalltribesRequest) SetTribeTypes(tribeTypes []int64) error {
     r.tribeTypes = tribeTypes
     r.Set("tribe_types", tribeTypes)
     return nil
 }
 
-func (r TaobaoOpenimTribeGetalltribesRequest) GetTribeTypes() []Number {
+func (r TaobaoOpenimTribeGetalltribesRequest) GetTribeTypes() []int64 {
     return r.tribeTypes
 }
 

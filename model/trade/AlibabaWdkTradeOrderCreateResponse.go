@@ -12,8 +12,22 @@ alibaba.wdk.trade.order.create
 */
 type AlibabaWdkTradeOrderCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkTradeOrderCreateResponse `json:"alibaba_wdk_trade_order_create_response,omitempty"`
+    // Response *AlibabaWdkTradeOrderCreateResponse `json:"alibaba_wdk_trade_order_create_response,omitempty"` 
+    AlibabaWdkTradeOrderCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkTradeOrderCreateResponse struct {
+
+    // 执行结果
+    
+    Result  *struct {
+        OrderResult  *OrderResult `json:"order_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkTradeOrderCreateResponse struct {
 

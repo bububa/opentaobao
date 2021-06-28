@@ -12,8 +12,20 @@ taobao.ump.tool.get
 */
 type TaobaoUmpToolGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpToolGetResponse `json:"taobao_ump_tool_get_response,omitempty"`
+    // Response *TaobaoUmpToolGetResponse `json:"ump_tool_get_response,omitempty"` 
+    TaobaoUmpToolGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpToolGetResponse struct {
+
+    // 工具信息内容，格式为json，可以通过提供给的sdk里面的MarketingBuilder来处理这个内容
+    
+    Content   string `json:"content,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpToolGetResponse struct {
 

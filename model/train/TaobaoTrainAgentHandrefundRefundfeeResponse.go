@@ -12,8 +12,30 @@ taobao.train.agent.handrefund.refundfee
 */
 type TaobaoTrainAgentHandrefundRefundfeeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentHandrefundRefundfeeResponse `json:"taobao_train_agent_handrefund_refundfee_response,omitempty"`
+    // Response *TaobaoTrainAgentHandrefundRefundfeeResponse `json:"train_agent_handrefund_refundfee_response,omitempty"` 
+    TaobaoTrainAgentHandrefundRefundfeeResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentHandrefundRefundfeeResponse struct {
+
+    // 是否成功标记
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 失败code
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // 失败文案
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentHandrefundRefundfeeResponse struct {
 

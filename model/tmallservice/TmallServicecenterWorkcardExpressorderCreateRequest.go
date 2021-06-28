@@ -16,7 +16,7 @@ type TmallServicecenterWorkcardExpressorderCreateRequest struct {
     model.Params
 
     // 物流单关联的工单List
-    workcardIdList   []Number 
+    workcardIdList   []int64 
 
     // 真实履约服务商Nick（非ERP系统不要填写）
     realTpNick   string 
@@ -45,13 +45,13 @@ func (r TmallServicecenterWorkcardExpressorderCreateRequest) GetApiParams() url.
 }
 
 
-func (r *TmallServicecenterWorkcardExpressorderCreateRequest) SetWorkcardIdList(workcardIdList []Number) error {
+func (r *TmallServicecenterWorkcardExpressorderCreateRequest) SetWorkcardIdList(workcardIdList []int64) error {
     r.workcardIdList = workcardIdList
     r.Set("workcard_id_list", workcardIdList)
     return nil
 }
 
-func (r TmallServicecenterWorkcardExpressorderCreateRequest) GetWorkcardIdList() []Number {
+func (r TmallServicecenterWorkcardExpressorderCreateRequest) GetWorkcardIdList() []int64 {
     return r.workcardIdList
 }
 

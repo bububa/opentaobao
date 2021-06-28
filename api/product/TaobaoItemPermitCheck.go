@@ -11,11 +11,11 @@ taobao.item.permit.check
 
 对淘宝商品发品、编辑前的预校验接口
 */
-func TaobaoItemPermitCheck(clt *core.SDKClient, req *product.TaobaoItemPermitCheckRequest, session string) (*product.TaobaoItemPermitCheckResponse, error) {
+func TaobaoItemPermitCheck(clt *core.SDKClient, req *product.TaobaoItemPermitCheckRequest, session string) (*product.TaobaoItemPermitCheckAPIResponse, error) {
     var resp product.TaobaoItemPermitCheckAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

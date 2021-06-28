@@ -12,8 +12,22 @@ taobao.simba.keywordsbyadgroupid.get
 */
 type TaobaoSimbaKeywordsbyadgroupidGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaKeywordsbyadgroupidGetResponse `json:"taobao_simba_keywordsbyadgroupid_get_response,omitempty"`
+    // Response *TaobaoSimbaKeywordsbyadgroupidGetResponse `json:"simba_keywordsbyadgroupid_get_response,omitempty"` 
+    TaobaoSimbaKeywordsbyadgroupidGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaKeywordsbyadgroupidGetResponse struct {
+
+    // 取得的关键词列表
+    
+    Keywords  struct {
+        Keyword  []Keyword `json:"keyword,omitempty"`
+    } `json:"keywords,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaKeywordsbyadgroupidGetResponse struct {
 

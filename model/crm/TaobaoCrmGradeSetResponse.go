@@ -12,8 +12,20 @@ taobao.crm.grade.set
 */
 type TaobaoCrmGradeSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGradeSetResponse `json:"taobao_crm_grade_set_response,omitempty"`
+    // Response *TaobaoCrmGradeSetResponse `json:"crm_grade_set_response,omitempty"` 
+    TaobaoCrmGradeSetResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGradeSetResponse struct {
+
+    // true：成功 false：失败
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGradeSetResponse struct {
 

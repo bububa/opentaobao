@@ -12,8 +12,20 @@ taobao.jds.hluser.update
 */
 type TaobaoJdsHluserUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJdsHluserUpdateResponse `json:"taobao_jds_hluser_update_response,omitempty"`
+    // Response *TaobaoJdsHluserUpdateResponse `json:"jds_hluser_update_response,omitempty"` 
+    TaobaoJdsHluserUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoJdsHluserUpdateResponse struct {
+
+    // 是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJdsHluserUpdateResponse struct {
 

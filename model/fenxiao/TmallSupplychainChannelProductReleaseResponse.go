@@ -12,8 +12,22 @@ tmall.supplychain.channel.product.release
 */
 type TmallSupplychainChannelProductReleaseAPIResponse struct {
     model.CommonResponse
-    Response *TmallSupplychainChannelProductReleaseResponse `json:"tmall_supplychain_channel_product_release_response,omitempty"`
+    // Response *TmallSupplychainChannelProductReleaseResponse `json:"tmall_supplychain_channel_product_release_response,omitempty"` 
+    TmallSupplychainChannelProductReleaseResponse
 }
+
+/* model for simplify = false
+type TmallSupplychainChannelProductReleaseResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        TmallSupplychainChannelProductReleaseResultDto  *TmallSupplychainChannelProductReleaseResultDto `json:"tmall_supplychain_channel_product_release_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallSupplychainChannelProductReleaseResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.alsc.crm.open.point.operate
 */
 type AlibabaAlscCrmOpenPointOperateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmOpenPointOperateResponse `json:"alibaba_alsc_crm_open_point_operate_response,omitempty"`
+    // Response *AlibabaAlscCrmOpenPointOperateResponse `json:"alibaba_alsc_crm_open_point_operate_response,omitempty"` 
+    AlibabaAlscCrmOpenPointOperateResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmOpenPointOperateResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmOpenPointOperateResponse struct {
 

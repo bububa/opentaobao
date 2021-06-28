@@ -12,8 +12,22 @@ tmall.fuwu.serviceitem.list
 */
 type TmallFuwuServiceitemListAPIResponse struct {
     model.CommonResponse
-    Response *TmallFuwuServiceitemListResponse `json:"tmall_fuwu_serviceitem_list_response,omitempty"`
+    // Response *TmallFuwuServiceitemListResponse `json:"tmall_fuwu_serviceitem_list_response,omitempty"` 
+    TmallFuwuServiceitemListResponse
 }
+
+/* model for simplify = false
+type TmallFuwuServiceitemListResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TmallFuwuServiceitemListResult  *TmallFuwuServiceitemListResult `json:"tmall_fuwu_serviceitem_list_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallFuwuServiceitemListResponse struct {
 

@@ -12,8 +12,20 @@ taobao.openim.ioscert.production.set
 */
 type TaobaoOpenimIoscertProductionSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimIoscertProductionSetResponse `json:"taobao_openim_ioscert_production_set_response,omitempty"`
+    // Response *TaobaoOpenimIoscertProductionSetResponse `json:"openim_ioscert_production_set_response,omitempty"` 
+    TaobaoOpenimIoscertProductionSetResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimIoscertProductionSetResponse struct {
+
+    // 操作成功
+    
+    Code   string `json:"code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimIoscertProductionSetResponse struct {
 

@@ -11,11 +11,11 @@ taobao.tbk.shop.recommend.get
 
 入参卖家id，可推荐与此店铺相关联的相关店铺。
 */
-func TaobaoTbkShopRecommendGet(clt *core.SDKClient, req *tbk.TaobaoTbkShopRecommendGetRequest, session string) (*tbk.TaobaoTbkShopRecommendGetResponse, error) {
+func TaobaoTbkShopRecommendGet(clt *core.SDKClient, req *tbk.TaobaoTbkShopRecommendGetRequest, session string) (*tbk.TaobaoTbkShopRecommendGetAPIResponse, error) {
     var resp tbk.TaobaoTbkShopRecommendGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

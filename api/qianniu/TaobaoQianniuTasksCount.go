@@ -11,11 +11,11 @@ taobao.qianniu.tasks.count
 
 任务查询条数接口
 */
-func TaobaoQianniuTasksCount(clt *core.SDKClient, req *qianniu.TaobaoQianniuTasksCountRequest, session string) (*qianniu.TaobaoQianniuTasksCountResponse, error) {
+func TaobaoQianniuTasksCount(clt *core.SDKClient, req *qianniu.TaobaoQianniuTasksCountRequest, session string) (*qianniu.TaobaoQianniuTasksCountAPIResponse, error) {
     var resp qianniu.TaobaoQianniuTasksCountAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

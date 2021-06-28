@@ -11,11 +11,11 @@ taobao.wlb.wlborder.get
 
 根据物流宝订单编号查询物流宝订单概要信息
 */
-func TaobaoWlbWlborderGet(clt *core.SDKClient, req *wlb.TaobaoWlbWlborderGetRequest, session string) (*wlb.TaobaoWlbWlborderGetResponse, error) {
+func TaobaoWlbWlborderGet(clt *core.SDKClient, req *wlb.TaobaoWlbWlborderGetRequest, session string) (*wlb.TaobaoWlbWlborderGetAPIResponse, error) {
     var resp wlb.TaobaoWlbWlborderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

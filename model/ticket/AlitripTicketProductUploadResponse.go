@@ -13,8 +13,22 @@ alitrip.ticket.product.upload
 */
 type AlitripTicketProductUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTicketProductUploadResponse `json:"alitrip_ticket_product_upload_response,omitempty"`
+    // Response *AlitripTicketProductUploadResponse `json:"alitrip_ticket_product_upload_response,omitempty"` 
+    AlitripTicketProductUploadResponse
 }
+
+/* model for simplify = false
+type AlitripTicketProductUploadResponse struct {
+
+    // 门票商品发布、编辑结果
+    
+    FirstResult  *struct {
+        TicketItemResult  *TicketItemResult `json:"ticket_item_result,omitempty"`
+    } `json:"first_result,omitempty"`
+    
+
+}
+*/
 
 type AlitripTicketProductUploadResponse struct {
 

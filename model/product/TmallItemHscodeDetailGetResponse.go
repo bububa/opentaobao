@@ -12,12 +12,26 @@ tmall.item.hscode.detail.get
 */
 type TmallItemHscodeDetailGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemHscodeDetailGetResponse `json:"tmall_item_hscode_detail_get_response,omitempty"`
+    // Response *TmallItemHscodeDetailGetResponse `json:"tmall_item_hscode_detail_get_response,omitempty"` 
+    TmallItemHscodeDetailGetResponse
 }
+
+/* model for simplify = false
+type TmallItemHscodeDetailGetResponse struct {
+
+    // 返回的计量单位和销售单位
+    
+    Results  struct {
+        Json  []string `json:"string,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TmallItemHscodeDetailGetResponse struct {
 
     // 返回的计量单位和销售单位
-    Results   []Json `json:"results,omitempty"`
+    Results   []string `json:"results,omitempty"`
 
 }

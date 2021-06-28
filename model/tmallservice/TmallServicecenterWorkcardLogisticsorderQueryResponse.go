@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.logisticsorder.query
 */
 type TmallServicecenterWorkcardLogisticsorderQueryAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardLogisticsorderQueryResponse `json:"tmall_servicecenter_workcard_logisticsorder_query_response,omitempty"`
+    // Response *TmallServicecenterWorkcardLogisticsorderQueryResponse `json:"tmall_servicecenter_workcard_logisticsorder_query_response,omitempty"` 
+    TmallServicecenterWorkcardLogisticsorderQueryResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardLogisticsorderQueryResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardLogisticsorderQueryResponse struct {
 

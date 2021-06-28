@@ -12,8 +12,22 @@ alibaba.icbu.category.get.new
 */
 type AlibabaIcbuCategoryGetNewAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuCategoryGetNewResponse `json:"alibaba_icbu_category_get_new_response,omitempty"`
+    // Response *AlibabaIcbuCategoryGetNewResponse `json:"alibaba_icbu_category_get_new_response,omitempty"` 
+    AlibabaIcbuCategoryGetNewResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuCategoryGetNewResponse struct {
+
+    // 类目信息
+    
+    Category  *struct {
+        PostCategory  *PostCategory `json:"post_category,omitempty"`
+    } `json:"category,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuCategoryGetNewResponse struct {
 

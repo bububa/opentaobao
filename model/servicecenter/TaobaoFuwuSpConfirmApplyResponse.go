@@ -12,8 +12,20 @@ isv能通过该接口发起确认申请单
 */
 type TaobaoFuwuSpConfirmApplyAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFuwuSpConfirmApplyResponse `json:"taobao_fuwu_sp_confirm_apply_response,omitempty"`
+    // Response *TaobaoFuwuSpConfirmApplyResponse `json:"fuwu_sp_confirm_apply_response,omitempty"` 
+    TaobaoFuwuSpConfirmApplyResponse
 }
+
+/* model for simplify = false
+type TaobaoFuwuSpConfirmApplyResponse struct {
+
+    // 返回的是服务市场的确认单ID
+    
+    ApplyResult   int64 `json:"apply_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFuwuSpConfirmApplyResponse struct {
 

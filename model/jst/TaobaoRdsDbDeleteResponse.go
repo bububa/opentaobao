@@ -12,8 +12,22 @@ taobao.rds.db.delete
 */
 type TaobaoRdsDbDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRdsDbDeleteResponse `json:"taobao_rds_db_delete_response,omitempty"`
+    // Response *TaobaoRdsDbDeleteResponse `json:"rds_db_delete_response,omitempty"` 
+    TaobaoRdsDbDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoRdsDbDeleteResponse struct {
+
+    // 删除数据库，返回结果对象
+    
+    RdsDbInfo  *struct {
+        RdsDbInfo  *RdsDbInfo `json:"rds_db_info,omitempty"`
+    } `json:"rds_db_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRdsDbDeleteResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.mj.oc.writesaleslip
 
 开票占库
 */
-func AlibabaMjOcWritesaleslip(clt *core.SDKClient, req *mos.AlibabaMjOcWritesaleslipRequest, session string) (*mos.AlibabaMjOcWritesaleslipResponse, error) {
+func AlibabaMjOcWritesaleslip(clt *core.SDKClient, req *mos.AlibabaMjOcWritesaleslipRequest, session string) (*mos.AlibabaMjOcWritesaleslipAPIResponse, error) {
     var resp mos.AlibabaMjOcWritesaleslipAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

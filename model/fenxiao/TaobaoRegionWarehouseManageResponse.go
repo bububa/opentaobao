@@ -12,8 +12,22 @@ taobao.region.warehouse.manage
 */
 type TaobaoRegionWarehouseManageAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRegionWarehouseManageResponse `json:"taobao_region_warehouse_manage_response,omitempty"`
+    // Response *TaobaoRegionWarehouseManageResponse `json:"region_warehouse_manage_response,omitempty"` 
+    TaobaoRegionWarehouseManageResponse
 }
+
+/* model for simplify = false
+type TaobaoRegionWarehouseManageResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        BaseResult  *BaseResult `json:"base_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRegionWarehouseManageResponse struct {
 

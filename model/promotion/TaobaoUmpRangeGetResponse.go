@@ -12,8 +12,22 @@ taobao.ump.range.get
 */
 type TaobaoUmpRangeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpRangeGetResponse `json:"taobao_ump_range_get_response,omitempty"`
+    // Response *TaobaoUmpRangeGetResponse `json:"ump_range_get_response,omitempty"` 
+    TaobaoUmpRangeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpRangeGetResponse struct {
+
+    // 营销范围类列表！
+    
+    Ranges  struct {
+        Range  []Range `json:"range,omitempty"`
+    } `json:"ranges,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpRangeGetResponse struct {
 

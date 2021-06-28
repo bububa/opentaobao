@@ -12,8 +12,22 @@ taobao.rdc.aligenius.sendgoods.cancel
 */
 type TaobaoRdcAligeniusSendgoodsCancelAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRdcAligeniusSendgoodsCancelResponse `json:"taobao_rdc_aligenius_sendgoods_cancel_response,omitempty"`
+    // Response *TaobaoRdcAligeniusSendgoodsCancelResponse `json:"rdc_aligenius_sendgoods_cancel_response,omitempty"` 
+    TaobaoRdcAligeniusSendgoodsCancelResponse
 }
+
+/* model for simplify = false
+type TaobaoRdcAligeniusSendgoodsCancelResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoRdcAligeniusSendgoodsCancelResult  *TaobaoRdcAligeniusSendgoodsCancelResult `json:"taobao_rdc_aligenius_sendgoods_cancel_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRdcAligeniusSendgoodsCancelResponse struct {
 

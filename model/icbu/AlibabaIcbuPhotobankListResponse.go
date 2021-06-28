@@ -12,8 +12,22 @@ alibaba.icbu.photobank.list
 */
 type AlibabaIcbuPhotobankListAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuPhotobankListResponse `json:"alibaba_icbu_photobank_list_response,omitempty"`
+    // Response *AlibabaIcbuPhotobankListResponse `json:"alibaba_icbu_photobank_list_response,omitempty"` 
+    AlibabaIcbuPhotobankListResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuPhotobankListResponse struct {
+
+    // 图片查询结果
+    
+    PaginationQueryList  *struct {
+        PaginationQueryList  *PaginationQueryList `json:"pagination_query_list,omitempty"`
+    } `json:"pagination_query_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuPhotobankListResponse struct {
 

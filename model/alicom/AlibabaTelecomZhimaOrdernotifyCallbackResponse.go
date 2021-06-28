@@ -12,8 +12,22 @@ alibaba.telecom.zhima.ordernotify.callback
 */
 type AlibabaTelecomZhimaOrdernotifyCallbackAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTelecomZhimaOrdernotifyCallbackResponse `json:"alibaba_telecom_zhima_ordernotify_callback_response,omitempty"`
+    // Response *AlibabaTelecomZhimaOrdernotifyCallbackResponse `json:"alibaba_telecom_zhima_ordernotify_callback_response,omitempty"` 
+    AlibabaTelecomZhimaOrdernotifyCallbackResponse
 }
+
+/* model for simplify = false
+type AlibabaTelecomZhimaOrdernotifyCallbackResponse struct {
+
+    // 出参对象
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTelecomZhimaOrdernotifyCallbackResponse struct {
 

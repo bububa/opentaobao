@@ -12,8 +12,37 @@ taobao.tanx.creative.get
 */
 type TaobaoTanxCreativeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTanxCreativeGetResponse `json:"taobao_tanx_creative_get_response,omitempty"`
+    // Response *TaobaoTanxCreativeGetResponse `json:"tanx_creative_get_response,omitempty"` 
+    TaobaoTanxCreativeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTanxCreativeGetResponse struct {
+
+    // 调用的成功信息或失败信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 调用返回码
+    
+    TanxErrorCode   int64 `json:"tanx_error_code,omitempty"`
+    
+
+    // 是否成功
+    
+    IsOk   bool `json:"is_ok,omitempty"`
+    
+
+    // 创意查询返回结果列表
+    
+    Result  *struct {
+        CreativeAuditDto  *CreativeAuditDto `json:"creative_audit_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTanxCreativeGetResponse struct {
 

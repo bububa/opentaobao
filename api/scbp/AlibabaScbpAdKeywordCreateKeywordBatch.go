@@ -11,11 +11,11 @@ alibaba.scbp.ad.keyword.create.keyword.batch
 
 关键词添加
 */
-func AlibabaScbpAdKeywordCreateKeywordBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordCreateKeywordBatchRequest, session string) (*scbp.AlibabaScbpAdKeywordCreateKeywordBatchResponse, error) {
+func AlibabaScbpAdKeywordCreateKeywordBatch(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordCreateKeywordBatchRequest, session string) (*scbp.AlibabaScbpAdKeywordCreateKeywordBatchAPIResponse, error) {
     var resp scbp.AlibabaScbpAdKeywordCreateKeywordBatchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

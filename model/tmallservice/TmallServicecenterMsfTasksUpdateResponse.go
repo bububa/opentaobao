@@ -12,8 +12,22 @@ tmall.servicecenter.msf.tasks.update
 */
 type TmallServicecenterMsfTasksUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterMsfTasksUpdateResponse `json:"tmall_servicecenter_msf_tasks_update_response,omitempty"`
+    // Response *TmallServicecenterMsfTasksUpdateResponse `json:"tmall_servicecenter_msf_tasks_update_response,omitempty"` 
+    TmallServicecenterMsfTasksUpdateResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterMsfTasksUpdateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterMsfTasksUpdateResponse struct {
 

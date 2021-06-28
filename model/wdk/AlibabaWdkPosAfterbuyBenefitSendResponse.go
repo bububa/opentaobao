@@ -12,8 +12,22 @@ alibaba.wdk.pos.afterbuy.benefit.send
 */
 type AlibabaWdkPosAfterbuyBenefitSendAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkPosAfterbuyBenefitSendResponse `json:"alibaba_wdk_pos_afterbuy_benefit_send_response,omitempty"`
+    // Response *AlibabaWdkPosAfterbuyBenefitSendResponse `json:"alibaba_wdk_pos_afterbuy_benefit_send_response,omitempty"` 
+    AlibabaWdkPosAfterbuyBenefitSendResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkPosAfterbuyBenefitSendResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        BmResult  *BmResult `json:"bm_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkPosAfterbuyBenefitSendResponse struct {
 

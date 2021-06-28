@@ -12,8 +12,22 @@ taobao.refund.get
 */
 type TaobaoRefundGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRefundGetResponse `json:"taobao_refund_get_response,omitempty"`
+    // Response *TaobaoRefundGetResponse `json:"refund_get_response,omitempty"` 
+    TaobaoRefundGetResponse
 }
+
+/* model for simplify = false
+type TaobaoRefundGetResponse struct {
+
+    // 退款详情
+    
+    Refund  *struct {
+        Refund  *Refund `json:"refund,omitempty"`
+    } `json:"refund,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRefundGetResponse struct {
 

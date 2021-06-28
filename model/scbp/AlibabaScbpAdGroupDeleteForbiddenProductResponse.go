@@ -12,8 +12,20 @@ alibaba.scbp.ad.group.delete.forbidden.product
 */
 type AlibabaScbpAdGroupDeleteForbiddenProductAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdGroupDeleteForbiddenProductResponse `json:"alibaba_scbp_ad_group_delete_forbidden_product_response,omitempty"`
+    // Response *AlibabaScbpAdGroupDeleteForbiddenProductResponse `json:"alibaba_scbp_ad_group_delete_forbidden_product_response,omitempty"` 
+    AlibabaScbpAdGroupDeleteForbiddenProductResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdGroupDeleteForbiddenProductResponse struct {
+
+    // 返回值
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdGroupDeleteForbiddenProductResponse struct {
 

@@ -12,8 +12,27 @@ taobao.fenxiao.distributor.items.get
 */
 type TaobaoFenxiaoDistributorItemsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoDistributorItemsGetResponse `json:"taobao_fenxiao_distributor_items_get_response,omitempty"`
+    // Response *TaobaoFenxiaoDistributorItemsGetResponse `json:"fenxiao_distributor_items_get_response,omitempty"` 
+    TaobaoFenxiaoDistributorItemsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoDistributorItemsGetResponse struct {
+
+    // 查询结果记录数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 下载记录对象
+    
+    Records  struct {
+        FenxiaoItemRecord  []FenxiaoItemRecord `json:"fenxiao_item_record,omitempty"`
+    } `json:"records,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoDistributorItemsGetResponse struct {
 

@@ -11,11 +11,11 @@ taobao.region.price.query
 
 区域价格查询
 */
-func TaobaoRegionPriceQuery(clt *core.SDKClient, req *fenxiao.TaobaoRegionPriceQueryRequest, session string) (*fenxiao.TaobaoRegionPriceQueryResponse, error) {
+func TaobaoRegionPriceQuery(clt *core.SDKClient, req *fenxiao.TaobaoRegionPriceQueryRequest, session string) (*fenxiao.TaobaoRegionPriceQueryAPIResponse, error) {
     var resp fenxiao.TaobaoRegionPriceQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

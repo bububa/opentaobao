@@ -17,7 +17,7 @@ type TaobaoItemSkusGetRequest struct {
     model.Params
 
     // 需返回的字段列表。可选值：Sku结构体中的所有字段；字段之间用“,”分隔。
-    fields   []String 
+    fields   []string 
 
     // sku所属商品数字id，必选。num_iid个数不能超过40个
     numIids   string 
@@ -43,13 +43,13 @@ func (r TaobaoItemSkusGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoItemSkusGetRequest) SetFields(fields []String) error {
+func (r *TaobaoItemSkusGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoItemSkusGetRequest) GetFields() []String {
+func (r TaobaoItemSkusGetRequest) GetFields() []string {
     return r.fields
 }
 

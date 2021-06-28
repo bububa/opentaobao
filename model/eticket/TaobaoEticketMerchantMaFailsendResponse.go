@@ -12,8 +12,32 @@ taobao.eticket.merchant.ma.failsend
 */
 type TaobaoEticketMerchantMaFailsendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoEticketMerchantMaFailsendResponse `json:"taobao_eticket_merchant_ma_failsend_response,omitempty"`
+    // Response *TaobaoEticketMerchantMaFailsendResponse `json:"eticket_merchant_ma_failsend_response,omitempty"` 
+    TaobaoEticketMerchantMaFailsendResponse
 }
+
+/* model for simplify = false
+type TaobaoEticketMerchantMaFailsendResponse struct {
+
+    // 回复参数
+    
+    RespBody  *struct {
+        SendFailCallbackResp  *SendFailCallbackResp `json:"send_fail_callback_resp,omitempty"`
+    } `json:"resp_body,omitempty"`
+    
+
+    // 子结果码
+    
+    RetCode   string `json:"ret_code,omitempty"`
+    
+
+    // 子结果信息
+    
+    RetMsg   string `json:"ret_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoEticketMerchantMaFailsendResponse struct {
 

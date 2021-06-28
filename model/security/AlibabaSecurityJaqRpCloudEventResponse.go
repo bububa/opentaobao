@@ -12,8 +12,22 @@ alibaba.security.jaq.rp.cloud.event
 */
 type AlibabaSecurityJaqRpCloudEventAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqRpCloudEventResponse `json:"alibaba_security_jaq_rp_cloud_event_response,omitempty"`
+    // Response *AlibabaSecurityJaqRpCloudEventResponse `json:"alibaba_security_jaq_rp_cloud_event_response,omitempty"` 
+    AlibabaSecurityJaqRpCloudEventResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqRpCloudEventResponse struct {
+
+    // result
+    
+    Result  *struct {
+        RpEventResult  *RpEventResult `json:"rp_event_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqRpCloudEventResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.aliqin.axb.vendor.push.call.release
 */
 type AlibabaAliqinAxbVendorPushCallReleaseAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinAxbVendorPushCallReleaseResponse `json:"alibaba_aliqin_axb_vendor_push_call_release_response,omitempty"`
+    // Response *AlibabaAliqinAxbVendorPushCallReleaseResponse `json:"alibaba_aliqin_axb_vendor_push_call_release_response,omitempty"` 
+    AlibabaAliqinAxbVendorPushCallReleaseResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinAxbVendorPushCallReleaseResponse struct {
+
+    // result
+    
+    Result  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinAxbVendorPushCallReleaseResponse struct {
 

@@ -12,8 +12,25 @@ tmall.promotag.tag.apply
 */
 type TmallPromotagTagApplyAPIResponse struct {
     model.CommonResponse
-    Response *TmallPromotagTagApplyResponse `json:"tmall_promotag_tag_apply_response,omitempty"`
+    // Response *TmallPromotagTagApplyResponse `json:"tmall_promotag_tag_apply_response,omitempty"` 
+    TmallPromotagTagApplyResponse
 }
+
+/* model for simplify = false
+type TmallPromotagTagApplyResponse struct {
+
+    // 是否设置成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 优惠标签ID
+    
+    TagId   int64 `json:"tag_id,omitempty"`
+    
+
+}
+*/
 
 type TmallPromotagTagApplyResponse struct {
 

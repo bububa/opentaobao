@@ -12,8 +12,22 @@ tmall.item.desc.modules.get
 */
 type TmallItemDescModulesGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemDescModulesGetResponse `json:"tmall_item_desc_modules_get_response,omitempty"`
+    // Response *TmallItemDescModulesGetResponse `json:"tmall_item_desc_modules_get_response,omitempty"` 
+    TmallItemDescModulesGetResponse
 }
+
+/* model for simplify = false
+type TmallItemDescModulesGetResponse struct {
+
+    // 返回描述模块信息
+    
+    ModularDescInfo  *struct {
+        ModularDescInfo  *ModularDescInfo `json:"modular_desc_info,omitempty"`
+    } `json:"modular_desc_info,omitempty"`
+    
+
+}
+*/
 
 type TmallItemDescModulesGetResponse struct {
 

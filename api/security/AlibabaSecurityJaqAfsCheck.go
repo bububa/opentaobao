@@ -11,11 +11,11 @@ alibaba.security.jaq.afs.check
 
 反欺诈二次验证接口
 */
-func AlibabaSecurityJaqAfsCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqAfsCheckRequest, session string) (*security.AlibabaSecurityJaqAfsCheckResponse, error) {
+func AlibabaSecurityJaqAfsCheck(clt *core.SDKClient, req *security.AlibabaSecurityJaqAfsCheckRequest, session string) (*security.AlibabaSecurityJaqAfsCheckAPIResponse, error) {
     var resp security.AlibabaSecurityJaqAfsCheckAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

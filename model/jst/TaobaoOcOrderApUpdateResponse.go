@@ -12,8 +12,30 @@ taobao.oc.order.ap.update
 */
 type TaobaoOcOrderApUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOcOrderApUpdateResponse `json:"taobao_oc_order_ap_update_response,omitempty"`
+    // Response *TaobaoOcOrderApUpdateResponse `json:"oc_order_ap_update_response,omitempty"` 
+    TaobaoOcOrderApUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoOcOrderApUpdateResponse struct {
+
+    // 描述操作执行是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // OC订单id
+    
+    OcOrderId   int64 `json:"oc_order_id,omitempty"`
+    
+
+    // 执行失败时候的错误描述信息
+    
+    ErrorDescription   string `json:"error_description,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOcOrderApUpdateResponse struct {
 

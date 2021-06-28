@@ -12,8 +12,22 @@ taobao.koubei.tribe.open.order.page
 */
 type TaobaoKoubeiTribeOpenOrderPageAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoKoubeiTribeOpenOrderPageResponse `json:"taobao_koubei_tribe_open_order_page_response,omitempty"`
+    // Response *TaobaoKoubeiTribeOpenOrderPageResponse `json:"koubei_tribe_open_order_page_response,omitempty"` 
+    TaobaoKoubeiTribeOpenOrderPageResponse
 }
+
+/* model for simplify = false
+type TaobaoKoubeiTribeOpenOrderPageResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoKoubeiTribeOpenOrderPageResult  *TaobaoKoubeiTribeOpenOrderPageResult `json:"taobao_koubei_tribe_open_order_page_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoKoubeiTribeOpenOrderPageResponse struct {
 

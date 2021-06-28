@@ -12,8 +12,22 @@ taobao.nlp.similarity
 */
 type TaobaoNlpSimilarityAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoNlpSimilarityResponse `json:"taobao_nlp_similarity_response,omitempty"`
+    // Response *TaobaoNlpSimilarityResponse `json:"nlp_similarity_response,omitempty"` 
+    TaobaoNlpSimilarityResponse
 }
+
+/* model for simplify = false
+type TaobaoNlpSimilarityResponse struct {
+
+    // 返回结果
+    
+    Simresult  *struct {
+        SimResult  *SimResult `json:"sim_result,omitempty"`
+    } `json:"simresult,omitempty"`
+    
+
+}
+*/
 
 type TaobaoNlpSimilarityResponse struct {
 

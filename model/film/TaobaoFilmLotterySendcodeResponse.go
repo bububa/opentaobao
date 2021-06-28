@@ -12,8 +12,22 @@ taobao.film.lottery.sendcode
 */
 type TaobaoFilmLotterySendcodeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFilmLotterySendcodeResponse `json:"taobao_film_lottery_sendcode_response,omitempty"`
+    // Response *TaobaoFilmLotterySendcodeResponse `json:"film_lottery_sendcode_response,omitempty"` 
+    TaobaoFilmLotterySendcodeResponse
 }
+
+/* model for simplify = false
+type TaobaoFilmLotterySendcodeResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultGeneralModel  *ResultGeneralModel `json:"result_general_model,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFilmLotterySendcodeResponse struct {
 

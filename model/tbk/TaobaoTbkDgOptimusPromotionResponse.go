@@ -12,12 +12,26 @@ taobao.tbk.dg.optimus.promotion
 */
 type TaobaoTbkDgOptimusPromotionAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkDgOptimusPromotionResponse `json:"taobao_tbk_dg_optimus_promotion_response,omitempty"`
+    // Response *TaobaoTbkDgOptimusPromotionResponse `json:"tbk_dg_optimus_promotion_response,omitempty"` 
+    TaobaoTbkDgOptimusPromotionResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkDgOptimusPromotionResponse struct {
+
+    // resultList
+    
+    ResultList  struct {
+        TaobaoTbkDgOptimusPromotionMapData  []TaobaoTbkDgOptimusPromotionMapData `json:"taobao_tbk_dg_optimus_promotion_map_data,omitempty"`
+    } `json:"result_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkDgOptimusPromotionResponse struct {
 
     // resultList
-    ResultList   []MapData `json:"result_list,omitempty"`
+    ResultList   []TaobaoTbkDgOptimusPromotionMapData `json:"result_list,omitempty"`
 
 }

@@ -12,8 +12,22 @@ taobao.trade.ordersort.get
 */
 type TaobaoTradeOrdersortGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeOrdersortGetResponse `json:"taobao_trade_ordersort_get_response,omitempty"`
+    // Response *TaobaoTradeOrdersortGetResponse `json:"trade_ordersort_get_response,omitempty"` 
+    TaobaoTradeOrdersortGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeOrdersortGetResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoTradeOrdersortGetResult  *TaobaoTradeOrdersortGetResult `json:"taobao_trade_ordersort_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeOrdersortGetResponse struct {
 

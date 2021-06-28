@@ -12,8 +12,22 @@ aliexpress.social.country.get
 */
 type AliexpressSocialCountryGetAPIResponse struct {
     model.CommonResponse
-    Response *AliexpressSocialCountryGetResponse `json:"aliexpress_social_country_get_response,omitempty"`
+    // Response *AliexpressSocialCountryGetResponse `json:"aliexpress_social_country_get_response,omitempty"` 
+    AliexpressSocialCountryGetResponse
 }
+
+/* model for simplify = false
+type AliexpressSocialCountryGetResponse struct {
+
+    // ItemPickPagingResult
+    
+    Result  *struct {
+        ItemPickPagingResult  *ItemPickPagingResult `json:"item_pick_paging_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AliexpressSocialCountryGetResponse struct {
 

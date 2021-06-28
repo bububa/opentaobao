@@ -12,8 +12,30 @@ yunos.service.cmns.coa.message.ack
 */
 type YunosServiceCmnsCoaMessageAckAPIResponse struct {
     model.CommonResponse
-    Response *YunosServiceCmnsCoaMessageAckResponse `json:"yunos_service_cmns_coa_message_ack_response,omitempty"`
+    // Response *YunosServiceCmnsCoaMessageAckResponse `json:"yunos_service_cmns_coa_message_ack_response,omitempty"` 
+    YunosServiceCmnsCoaMessageAckResponse
 }
+
+/* model for simplify = false
+type YunosServiceCmnsCoaMessageAckResponse struct {
+
+    // 接口调用成功
+    
+    Status   int64 `json:"status,omitempty"`
+    
+
+    // 接口出错提示信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 接口调用成功返回信息<br/>0:未到达 1：已到达
+    
+    Data   int64 `json:"data,omitempty"`
+    
+
+}
+*/
 
 type YunosServiceCmnsCoaMessageAckResponse struct {
 

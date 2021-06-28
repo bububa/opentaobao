@@ -52,7 +52,7 @@ type TaobaoItempropsGetRequest struct {
     type   int64 
 
     // 属性的Key，支持多条，以“,”分隔
-    attrKeys   []String 
+    attrKeys   []string 
 
 }
 
@@ -195,13 +195,13 @@ func (r TaobaoItempropsGetRequest) GetType() int64 {
     return r.type
 }
 
-func (r *TaobaoItempropsGetRequest) SetAttrKeys(attrKeys []String) error {
+func (r *TaobaoItempropsGetRequest) SetAttrKeys(attrKeys []string) error {
     r.attrKeys = attrKeys
     r.Set("attr_keys", attrKeys)
     return nil
 }
 
-func (r TaobaoItempropsGetRequest) GetAttrKeys() []String {
+func (r TaobaoItempropsGetRequest) GetAttrKeys() []string {
     return r.attrKeys
 }
 

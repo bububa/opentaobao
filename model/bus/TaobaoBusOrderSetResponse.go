@@ -12,8 +12,40 @@ taobao.bus.order.set
 */
 type TaobaoBusOrderSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusOrderSetResponse `json:"taobao_bus_order_set_response,omitempty"`
+    // Response *TaobaoBusOrderSetResponse `json:"bus_order_set_response,omitempty"` 
+    TaobaoBusOrderSetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusOrderSetResponse struct {
+
+    // 支付宝交易流水号
+    
+    AliPayTradeId   string `json:"ali_pay_trade_id,omitempty"`
+    
+
+    // 阿里订单号
+    
+    AlitripOrderId   string `json:"alitrip_order_id,omitempty"`
+    
+
+    // 错误代码
+    
+    ErrorCode1   string `json:"error_code_1,omitempty"`
+    
+
+    // 错误描述
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+    // 是否下单成功
+    
+    Issuccess   bool `json:"issuccess,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusOrderSetResponse struct {
 

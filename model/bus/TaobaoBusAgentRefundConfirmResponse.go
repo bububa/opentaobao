@@ -12,8 +12,30 @@ taobao.bus.agent.refund.confirm
 */
 type TaobaoBusAgentRefundConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusAgentRefundConfirmResponse `json:"taobao_bus_agent_refund_confirm_response,omitempty"`
+    // Response *TaobaoBusAgentRefundConfirmResponse `json:"bus_agent_refund_confirm_response,omitempty"` 
+    TaobaoBusAgentRefundConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoBusAgentRefundConfirmResponse struct {
+
+    // 错误码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // 错误描述
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // 退票回调是否收到
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusAgentRefundConfirmResponse struct {
 

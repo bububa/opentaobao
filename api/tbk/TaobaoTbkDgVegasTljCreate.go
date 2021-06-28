@@ -11,11 +11,11 @@ taobao.tbk.dg.vegas.tlj.create
 
 创建淘礼金
 */
-func TaobaoTbkDgVegasTljCreate(clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasTljCreateRequest, session string) (*tbk.TaobaoTbkDgVegasTljCreateResponse, error) {
+func TaobaoTbkDgVegasTljCreate(clt *core.SDKClient, req *tbk.TaobaoTbkDgVegasTljCreateRequest, session string) (*tbk.TaobaoTbkDgVegasTljCreateAPIResponse, error) {
     var resp tbk.TaobaoTbkDgVegasTljCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

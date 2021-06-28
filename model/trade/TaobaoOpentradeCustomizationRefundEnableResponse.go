@@ -12,8 +12,20 @@ taobao.opentrade.customization.refund.enable
 */
 type TaobaoOpentradeCustomizationRefundEnableAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpentradeCustomizationRefundEnableResponse `json:"taobao_opentrade_customization_refund_enable_response,omitempty"`
+    // Response *TaobaoOpentradeCustomizationRefundEnableResponse `json:"opentrade_customization_refund_enable_response,omitempty"` 
+    TaobaoOpentradeCustomizationRefundEnableResponse
 }
+
+/* model for simplify = false
+type TaobaoOpentradeCustomizationRefundEnableResponse struct {
+
+    // 是否设置成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpentradeCustomizationRefundEnableResponse struct {
 

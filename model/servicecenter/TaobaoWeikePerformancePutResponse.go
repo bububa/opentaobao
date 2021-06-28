@@ -12,8 +12,20 @@ taobao.weike.performance.put
 */
 type TaobaoWeikePerformancePutAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWeikePerformancePutResponse `json:"taobao_weike_performance_put_response,omitempty"`
+    // Response *TaobaoWeikePerformancePutResponse `json:"weike_performance_put_response,omitempty"` 
+    TaobaoWeikePerformancePutResponse
 }
+
+/* model for simplify = false
+type TaobaoWeikePerformancePutResponse struct {
+
+    // 返回结果
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWeikePerformancePutResponse struct {
 

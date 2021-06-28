@@ -12,8 +12,20 @@ taobao.picture.replace
 */
 type TaobaoPictureReplaceAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPictureReplaceResponse `json:"taobao_picture_replace_response,omitempty"`
+    // Response *TaobaoPictureReplaceResponse `json:"picture_replace_response,omitempty"` 
+    TaobaoPictureReplaceResponse
 }
+
+/* model for simplify = false
+type TaobaoPictureReplaceResponse struct {
+
+    // 图片替换是否成功
+    
+    Done   bool `json:"done,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPictureReplaceResponse struct {
 

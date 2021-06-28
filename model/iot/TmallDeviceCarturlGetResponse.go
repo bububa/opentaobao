@@ -12,8 +12,25 @@ tmall.device.carturl.get
 */
 type TmallDeviceCarturlGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallDeviceCarturlGetResponse `json:"tmall_device_carturl_get_response,omitempty"`
+    // Response *TmallDeviceCarturlGetResponse `json:"tmall_device_carturl_get_response,omitempty"` 
+    TmallDeviceCarturlGetResponse
 }
+
+/* model for simplify = false
+type TmallDeviceCarturlGetResponse struct {
+
+    // 二维码短链接地址
+    
+    ShortUrl   string `json:"short_url,omitempty"`
+    
+
+    // 二维码图片URL
+    
+    ShortImgUrl   string `json:"short_img_url,omitempty"`
+    
+
+}
+*/
 
 type TmallDeviceCarturlGetResponse struct {
 

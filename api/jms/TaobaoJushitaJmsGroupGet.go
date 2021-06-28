@@ -11,11 +11,11 @@ taobao.jushita.jms.group.get
 
 查询当前appkey在ONS中已有的分组
 */
-func TaobaoJushitaJmsGroupGet(clt *core.SDKClient, req *jms.TaobaoJushitaJmsGroupGetRequest, session string) (*jms.TaobaoJushitaJmsGroupGetResponse, error) {
+func TaobaoJushitaJmsGroupGet(clt *core.SDKClient, req *jms.TaobaoJushitaJmsGroupGetRequest, session string) (*jms.TaobaoJushitaJmsGroupGetAPIResponse, error) {
     var resp jms.TaobaoJushitaJmsGroupGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -13,8 +13,22 @@ tmall.car.contract.download
 */
 type TmallCarContractDownloadAPIResponse struct {
     model.CommonResponse
-    Response *TmallCarContractDownloadResponse `json:"tmall_car_contract_download_response,omitempty"`
+    // Response *TmallCarContractDownloadResponse `json:"tmall_car_contract_download_response,omitempty"` 
+    TmallCarContractDownloadResponse
 }
+
+/* model for simplify = false
+type TmallCarContractDownloadResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        TmallCarContractDownloadResult  *TmallCarContractDownloadResult `json:"tmall_car_contract_download_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallCarContractDownloadResponse struct {
 

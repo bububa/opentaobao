@@ -12,8 +12,20 @@ alibaba.interact.sensor.blow
 */
 type AlibabaInteractSensorBlowAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorBlowResponse `json:"alibaba_interact_sensor_blow_response,omitempty"`
+    // Response *AlibabaInteractSensorBlowResponse `json:"alibaba_interact_sensor_blow_response,omitempty"` 
+    AlibabaInteractSensorBlowResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorBlowResponse struct {
+
+    // return=0 表示成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorBlowResponse struct {
 

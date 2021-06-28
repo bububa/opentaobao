@@ -12,8 +12,20 @@ taobao.ump.range.add
 */
 type TaobaoUmpRangeAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpRangeAddResponse `json:"taobao_ump_range_add_response,omitempty"`
+    // Response *TaobaoUmpRangeAddResponse `json:"ump_range_add_response,omitempty"` 
+    TaobaoUmpRangeAddResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpRangeAddResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpRangeAddResponse struct {
 

@@ -12,8 +12,20 @@ taobao.vmarket.eticket.time.expand
 */
 type TaobaoVmarketEticketTimeExpandAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVmarketEticketTimeExpandResponse `json:"taobao_vmarket_eticket_time_expand_response,omitempty"`
+    // Response *TaobaoVmarketEticketTimeExpandResponse `json:"vmarket_eticket_time_expand_response,omitempty"` 
+    TaobaoVmarketEticketTimeExpandResponse
 }
+
+/* model for simplify = false
+type TaobaoVmarketEticketTimeExpandResponse struct {
+
+    // 0:失败；1:成功
+    
+    RetCode   int64 `json:"ret_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVmarketEticketTimeExpandResponse struct {
 

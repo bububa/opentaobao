@@ -20,7 +20,7 @@ type TaobaoItemsSellerListGetRequest struct {
     fields   string 
 
     // 商品ID列表，多个ID用半角逗号隔开，一次最多不超过20个。注：获取不存在的商品ID或获取别人的商品都不会报错，但没有商品数据返回。
-    numIids   []String 
+    numIids   []string 
 
 }
 
@@ -53,13 +53,13 @@ func (r TaobaoItemsSellerListGetRequest) GetFields() string {
     return r.fields
 }
 
-func (r *TaobaoItemsSellerListGetRequest) SetNumIids(numIids []String) error {
+func (r *TaobaoItemsSellerListGetRequest) SetNumIids(numIids []string) error {
     r.numIids = numIids
     r.Set("num_iids", numIids)
     return nil
 }
 
-func (r TaobaoItemsSellerListGetRequest) GetNumIids() []String {
+func (r TaobaoItemsSellerListGetRequest) GetNumIids() []string {
     return r.numIids
 }
 

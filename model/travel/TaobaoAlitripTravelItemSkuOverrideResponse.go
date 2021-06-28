@@ -12,8 +12,22 @@ taobao.alitrip.travel.item.sku.override
 */
 type TaobaoAlitripTravelItemSkuOverrideAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripTravelItemSkuOverrideResponse `json:"taobao_alitrip_travel_item_sku_override_response,omitempty"`
+    // Response *TaobaoAlitripTravelItemSkuOverrideResponse `json:"alitrip_travel_item_sku_override_response,omitempty"` 
+    TaobaoAlitripTravelItemSkuOverrideResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripTravelItemSkuOverrideResponse struct {
+
+    // 商品sku修改结果
+    
+    TravelItem  *struct {
+        TopTravelItem  *TopTravelItem `json:"top_travel_item,omitempty"`
+    } `json:"travel_item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripTravelItemSkuOverrideResponse struct {
 

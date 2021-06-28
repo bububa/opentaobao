@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.updatelogistics
 */
 type TmallServicecenterWorkcardUpdatelogisticsAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardUpdatelogisticsResponse `json:"tmall_servicecenter_workcard_updatelogistics_response,omitempty"`
+    // Response *TmallServicecenterWorkcardUpdatelogisticsResponse `json:"tmall_servicecenter_workcard_updatelogistics_response,omitempty"` 
+    TmallServicecenterWorkcardUpdatelogisticsResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardUpdatelogisticsResponse struct {
+
+    // 返回信息
+    
+    Result  *struct {
+        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardUpdatelogisticsResponse struct {
 

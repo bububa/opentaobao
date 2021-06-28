@@ -16,7 +16,7 @@ type TaobaoItempropvaluesGetRequest struct {
     model.Params
 
     // 需要返回的字段。目前支持有：cid,pid,prop_name,vid,name,name_alias,status,sort_order
-    fields   []String 
+    fields   []string 
 
     // 叶子类目ID ,通过taobao.itemcats.get获得叶子类目ID
     cid   int64 
@@ -28,7 +28,7 @@ type TaobaoItempropvaluesGetRequest struct {
     type   int64 
 
     // 属性的Key，支持多条，以“,”分隔
-    attrKeys   []String 
+    attrKeys   []string 
 
 }
 
@@ -51,13 +51,13 @@ func (r TaobaoItempropvaluesGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoItempropvaluesGetRequest) SetFields(fields []String) error {
+func (r *TaobaoItempropvaluesGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoItempropvaluesGetRequest) GetFields() []String {
+func (r TaobaoItempropvaluesGetRequest) GetFields() []string {
     return r.fields
 }
 
@@ -91,13 +91,13 @@ func (r TaobaoItempropvaluesGetRequest) GetType() int64 {
     return r.type
 }
 
-func (r *TaobaoItempropvaluesGetRequest) SetAttrKeys(attrKeys []String) error {
+func (r *TaobaoItempropvaluesGetRequest) SetAttrKeys(attrKeys []string) error {
     r.attrKeys = attrKeys
     r.Set("attr_keys", attrKeys)
     return nil
 }
 
-func (r TaobaoItempropvaluesGetRequest) GetAttrKeys() []String {
+func (r TaobaoItempropvaluesGetRequest) GetAttrKeys() []string {
     return r.attrKeys
 }
 

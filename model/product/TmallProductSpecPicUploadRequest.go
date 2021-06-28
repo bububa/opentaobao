@@ -26,7 +26,7 @@ type TmallProductSpecPicUploadRequest struct {
     certifyType   int64 
 
     // 上传的认证图片文件
-    certifyPic   []byte 
+    certifyPic   []*model.File 
 
 }
 
@@ -59,13 +59,13 @@ func (r TmallProductSpecPicUploadRequest) GetCertifyType() int64 {
     return r.certifyType
 }
 
-func (r *TmallProductSpecPicUploadRequest) SetCertifyPic(certifyPic []byte) error {
+func (r *TmallProductSpecPicUploadRequest) SetCertifyPic(certifyPic []*model.File) error {
     r.certifyPic = certifyPic
     r.Set("certify_pic", certifyPic)
     return nil
 }
 
-func (r TmallProductSpecPicUploadRequest) GetCertifyPic() []byte {
+func (r TmallProductSpecPicUploadRequest) GetCertifyPic() []*model.File {
     return r.certifyPic
 }
 

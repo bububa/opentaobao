@@ -8,6 +8,7 @@ type ApiTpl struct {
 	Pkg            string
 	ApiName        string
 	Name           string
+	ResponseKey    string
 	SnakeName      string
 	ChineseName    string
 	Desc           string
@@ -23,14 +24,17 @@ type TplModel struct {
 }
 
 type TplParam struct {
-	Name     string
-	Label    string
-	ParamKey string
-	Type     string
-	Desc     string
-	IsObject bool
-	Required bool
-	Obj      []TplParam
+	Name      string
+	Label     string
+	ParamKey  string
+	Type      string
+	ObjType   string
+	SnakeType string
+	Desc      string
+	IsObject  bool
+	IsList    bool
+	Required  bool
+	Obj       []TplParam
 }
 
 func (p TplParam) IsMultipart() bool {

@@ -12,8 +12,27 @@ taobao.xhotel.info.list.get
 */
 type TaobaoXhotelInfoListGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoXhotelInfoListGetResponse `json:"taobao_xhotel_info_list_get_response,omitempty"`
+    // Response *TaobaoXhotelInfoListGetResponse `json:"xhotel_info_list_get_response,omitempty"` 
+    TaobaoXhotelInfoListGetResponse
 }
+
+/* model for simplify = false
+type TaobaoXhotelInfoListGetResponse struct {
+
+    // 酒店总数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 标准酒店信息
+    
+    Hotels  struct {
+        SHotelInfoObject  []SHotelInfoObject `json:"s_hotel_info_object,omitempty"`
+    } `json:"hotels,omitempty"`
+    
+
+}
+*/
 
 type TaobaoXhotelInfoListGetResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.tcls.aelophy.bill.verificate.callback
 
 翱象ERP核销回调
 */
-func AlibabaTclsAelophyBillVerificateCallback(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyBillVerificateCallbackRequest, session string) (*wdk.AlibabaTclsAelophyBillVerificateCallbackResponse, error) {
+func AlibabaTclsAelophyBillVerificateCallback(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyBillVerificateCallbackRequest, session string) (*wdk.AlibabaTclsAelophyBillVerificateCallbackAPIResponse, error) {
     var resp wdk.AlibabaTclsAelophyBillVerificateCallbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ taobao.mobile.promotion.benefit.activity.send.share
 
 卖家活动中需要通过该API来发放对应的权益。手淘专用、验证分享链路。
 */
-func TaobaoMobilePromotionBenefitActivitySendShare(clt *core.SDKClient, req *promotion.TaobaoMobilePromotionBenefitActivitySendShareRequest, session string) (*promotion.TaobaoMobilePromotionBenefitActivitySendShareResponse, error) {
+func TaobaoMobilePromotionBenefitActivitySendShare(clt *core.SDKClient, req *promotion.TaobaoMobilePromotionBenefitActivitySendShareRequest, session string) (*promotion.TaobaoMobilePromotionBenefitActivitySendShareAPIResponse, error) {
     var resp promotion.TaobaoMobilePromotionBenefitActivitySendShareAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

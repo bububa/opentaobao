@@ -12,12 +12,26 @@ alitrip.travel.crsorder.search
 */
 type AlitripTravelCrsorderSearchAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTravelCrsorderSearchResponse `json:"alitrip_travel_crsorder_search_response,omitempty"`
+    // Response *AlitripTravelCrsorderSearchResponse `json:"alitrip_travel_crsorder_search_response,omitempty"` 
+    AlitripTravelCrsorderSearchResponse
 }
+
+/* model for simplify = false
+type AlitripTravelCrsorderSearchResponse struct {
+
+    // 订单id列表（string类型）
+    
+    OrderStringList  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"order_string_list,omitempty"`
+    
+
+}
+*/
 
 type AlitripTravelCrsorderSearchResponse struct {
 
     // 订单id列表（string类型）
-    OrderStringList   []String `json:"order_string_list,omitempty"`
+    OrderStringList   []string `json:"order_string_list,omitempty"`
 
 }

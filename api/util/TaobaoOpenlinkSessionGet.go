@@ -11,11 +11,11 @@ taobao.openlink.session.get
 
 帮助第三方isv生成三方session
 */
-func TaobaoOpenlinkSessionGet(clt *core.SDKClient, req *util.TaobaoOpenlinkSessionGetRequest, session string) (*util.TaobaoOpenlinkSessionGetResponse, error) {
+func TaobaoOpenlinkSessionGet(clt *core.SDKClient, req *util.TaobaoOpenlinkSessionGetRequest, session string) (*util.TaobaoOpenlinkSessionGetAPIResponse, error) {
     var resp util.TaobaoOpenlinkSessionGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

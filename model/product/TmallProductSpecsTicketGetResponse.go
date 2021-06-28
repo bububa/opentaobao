@@ -12,8 +12,22 @@ tmall.product.specs.ticket.get
 */
 type TmallProductSpecsTicketGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallProductSpecsTicketGetResponse `json:"tmall_product_specs_ticket_get_response,omitempty"`
+    // Response *TmallProductSpecsTicketGetResponse `json:"tmall_product_specs_ticket_get_response,omitempty"` 
+    TmallProductSpecsTicketGetResponse
 }
+
+/* model for simplify = false
+type TmallProductSpecsTicketGetResponse struct {
+
+    // 产品规格审核单信息
+    
+    Tickets  struct {
+        Ticket  []Ticket `json:"ticket,omitempty"`
+    } `json:"tickets,omitempty"`
+    
+
+}
+*/
 
 type TmallProductSpecsTicketGetResponse struct {
 

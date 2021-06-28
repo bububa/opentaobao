@@ -12,8 +12,20 @@ taobao.vmarket.eticket.resend
 */
 type TaobaoVmarketEticketResendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVmarketEticketResendResponse `json:"taobao_vmarket_eticket_resend_response,omitempty"`
+    // Response *TaobaoVmarketEticketResendResponse `json:"vmarket_eticket_resend_response,omitempty"` 
+    TaobaoVmarketEticketResendResponse
 }
+
+/* model for simplify = false
+type TaobaoVmarketEticketResendResponse struct {
+
+    // 0:失败，1:成功
+    
+    RetCode   int64 `json:"ret_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVmarketEticketResendResponse struct {
 

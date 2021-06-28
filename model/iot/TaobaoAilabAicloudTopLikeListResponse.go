@@ -12,8 +12,22 @@ taobao.ailab.aicloud.top.like.list
 */
 type TaobaoAilabAicloudTopLikeListAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopLikeListResponse `json:"taobao_ailab_aicloud_top_like_list_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopLikeListResponse `json:"ailab_aicloud_top_like_list_response,omitempty"` 
+    TaobaoAilabAicloudTopLikeListResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopLikeListResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopLikeListResponse struct {
 

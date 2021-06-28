@@ -12,8 +12,22 @@ alibaba.ssc.supplyplatform.serviceworker.save
 */
 type AlibabaSscSupplyplatformServiceworkerSaveAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSscSupplyplatformServiceworkerSaveResponse `json:"alibaba_ssc_supplyplatform_serviceworker_save_response,omitempty"`
+    // Response *AlibabaSscSupplyplatformServiceworkerSaveResponse `json:"alibaba_ssc_supplyplatform_serviceworker_save_response,omitempty"` 
+    AlibabaSscSupplyplatformServiceworkerSaveResponse
 }
+
+/* model for simplify = false
+type AlibabaSscSupplyplatformServiceworkerSaveResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaSscSupplyplatformServiceworkerSaveResult  *AlibabaSscSupplyplatformServiceworkerSaveResult `json:"alibaba_ssc_supplyplatform_serviceworker_save_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSscSupplyplatformServiceworkerSaveResponse struct {
 

@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.query
 */
 type TmallServicecenterWorkcardQueryAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardQueryResponse `json:"tmall_servicecenter_workcard_query_response,omitempty"`
+    // Response *TmallServicecenterWorkcardQueryResponse `json:"tmall_servicecenter_workcard_query_response,omitempty"` 
+    TmallServicecenterWorkcardQueryResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardQueryResponse struct {
+
+    // 请求结果
+    
+    Result  *struct {
+        TmallServicecenterWorkcardQueryResult  *TmallServicecenterWorkcardQueryResult `json:"tmall_servicecenter_workcard_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardQueryResponse struct {
 

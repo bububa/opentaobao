@@ -16,7 +16,7 @@ type TmallServicecenterPictureUploadRequest struct {
     model.Params
 
     // 图片文件二进制流
-    img   []byte 
+    img   []*model.File 
 
     // 图片全称包括扩展名。目前支持 jpg jpeg png
     pictureName   string 
@@ -45,13 +45,13 @@ func (r TmallServicecenterPictureUploadRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TmallServicecenterPictureUploadRequest) SetImg(img []byte) error {
+func (r *TmallServicecenterPictureUploadRequest) SetImg(img []*model.File) error {
     r.img = img
     r.Set("img", img)
     return nil
 }
 
-func (r TmallServicecenterPictureUploadRequest) GetImg() []byte {
+func (r TmallServicecenterPictureUploadRequest) GetImg() []*model.File {
     return r.img
 }
 

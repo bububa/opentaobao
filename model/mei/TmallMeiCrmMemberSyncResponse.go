@@ -14,8 +14,20 @@ tmall.mei.crm.member.sync
 */
 type TmallMeiCrmMemberSyncAPIResponse struct {
     model.CommonResponse
-    Response *TmallMeiCrmMemberSyncResponse `json:"tmall_mei_crm_member_sync_response,omitempty"`
+    // Response *TmallMeiCrmMemberSyncResponse `json:"tmall_mei_crm_member_sync_response,omitempty"` 
+    TmallMeiCrmMemberSyncResponse
 }
+
+/* model for simplify = false
+type TmallMeiCrmMemberSyncResponse struct {
+
+    // 处理的其他信息
+    
+    MeiExtraInfo   string `json:"mei_extra_info,omitempty"`
+    
+
+}
+*/
 
 type TmallMeiCrmMemberSyncResponse struct {
 

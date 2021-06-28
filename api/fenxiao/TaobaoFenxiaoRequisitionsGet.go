@@ -11,11 +11,11 @@ taobao.fenxiao.requisitions.get
 
 合作申请查询
 */
-func TaobaoFenxiaoRequisitionsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoRequisitionsGetRequest, session string) (*fenxiao.TaobaoFenxiaoRequisitionsGetResponse, error) {
+func TaobaoFenxiaoRequisitionsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoRequisitionsGetRequest, session string) (*fenxiao.TaobaoFenxiaoRequisitionsGetAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoRequisitionsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

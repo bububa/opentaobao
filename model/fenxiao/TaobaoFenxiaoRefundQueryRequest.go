@@ -31,13 +31,13 @@ type TaobaoFenxiaoRefundQueryRequest struct {
     querySellerRefund   bool 
 
     // 渠道code，可批量 老供销渠道：999
-    tradeTypes   []Number 
+    tradeTypes   []int64 
 
     // 角色，供应商：2，分销商：1
     userRoleType   int64 
 
     // 代销：1 经销：2 寄售（猫超自营寄售）：5 平台寄售：6
-    channelCodes   []Number 
+    channelCodes   []int64 
 
 }
 
@@ -110,13 +110,13 @@ func (r TaobaoFenxiaoRefundQueryRequest) GetQuerySellerRefund() bool {
     return r.querySellerRefund
 }
 
-func (r *TaobaoFenxiaoRefundQueryRequest) SetTradeTypes(tradeTypes []Number) error {
+func (r *TaobaoFenxiaoRefundQueryRequest) SetTradeTypes(tradeTypes []int64) error {
     r.tradeTypes = tradeTypes
     r.Set("trade_types", tradeTypes)
     return nil
 }
 
-func (r TaobaoFenxiaoRefundQueryRequest) GetTradeTypes() []Number {
+func (r TaobaoFenxiaoRefundQueryRequest) GetTradeTypes() []int64 {
     return r.tradeTypes
 }
 
@@ -130,13 +130,13 @@ func (r TaobaoFenxiaoRefundQueryRequest) GetUserRoleType() int64 {
     return r.userRoleType
 }
 
-func (r *TaobaoFenxiaoRefundQueryRequest) SetChannelCodes(channelCodes []Number) error {
+func (r *TaobaoFenxiaoRefundQueryRequest) SetChannelCodes(channelCodes []int64) error {
     r.channelCodes = channelCodes
     r.Set("channel_codes", channelCodes)
     return nil
 }
 
-func (r TaobaoFenxiaoRefundQueryRequest) GetChannelCodes() []Number {
+func (r TaobaoFenxiaoRefundQueryRequest) GetChannelCodes() []int64 {
     return r.channelCodes
 }
 

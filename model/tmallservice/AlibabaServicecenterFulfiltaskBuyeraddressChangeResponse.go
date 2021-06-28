@@ -12,8 +12,22 @@ alibaba.servicecenter.fulfiltask.buyeraddress.change
 */
 type AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse `json:"alibaba_servicecenter_fulfiltask_buyeraddress_change_response,omitempty"`
+    // Response *AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse `json:"alibaba_servicecenter_fulfiltask_buyeraddress_change_response,omitempty"` 
+    AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse
 }
+
+/* model for simplify = false
+type AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaServicecenterFulfiltaskBuyeraddressChangeResult  *AlibabaServicecenterFulfiltaskBuyeraddressChangeResult `json:"alibaba_servicecenter_fulfiltask_buyeraddress_change_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse struct {
 

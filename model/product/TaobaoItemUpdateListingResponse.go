@@ -12,8 +12,22 @@ taobao.item.update.listing
 */
 type TaobaoItemUpdateListingAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemUpdateListingResponse `json:"taobao_item_update_listing_response,omitempty"`
+    // Response *TaobaoItemUpdateListingResponse `json:"item_update_listing_response,omitempty"` 
+    TaobaoItemUpdateListingResponse
 }
+
+/* model for simplify = false
+type TaobaoItemUpdateListingResponse struct {
+
+    // 上架后返回的商品信息：返回的结果就是:num_iid和modified
+    
+    Item  *struct {
+        Item  *Item `json:"item,omitempty"`
+    } `json:"item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemUpdateListingResponse struct {
 

@@ -12,8 +12,20 @@ taobao.picture.update
 */
 type TaobaoPictureUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPictureUpdateResponse `json:"taobao_picture_update_response,omitempty"`
+    // Response *TaobaoPictureUpdateResponse `json:"picture_update_response,omitempty"` 
+    TaobaoPictureUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoPictureUpdateResponse struct {
+
+    // 更新是否成功
+    
+    Done   bool `json:"done,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPictureUpdateResponse struct {
 

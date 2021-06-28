@@ -22,7 +22,7 @@ type TaobaoRefundMessageAddRequest struct {
     content   string 
 
     // 图片（凭证）。类型: JPG,GIF,PNG;最大为: 500K
-    image   []byte 
+    image   []*model.File 
 
 }
 
@@ -65,13 +65,13 @@ func (r TaobaoRefundMessageAddRequest) GetContent() string {
     return r.content
 }
 
-func (r *TaobaoRefundMessageAddRequest) SetImage(image []byte) error {
+func (r *TaobaoRefundMessageAddRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoRefundMessageAddRequest) GetImage() []byte {
+func (r TaobaoRefundMessageAddRequest) GetImage() []*model.File {
     return r.image
 }
 

@@ -12,8 +12,52 @@ taobao.logistics.trace.search
 */
 type TaobaoLogisticsTraceSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsTraceSearchResponse `json:"taobao_logistics_trace_search_response,omitempty"`
+    // Response *TaobaoLogisticsTraceSearchResponse `json:"logistics_trace_search_response,omitempty"` 
+    TaobaoLogisticsTraceSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsTraceSearchResponse struct {
+
+    // 运单号
+    
+    OutSid   string `json:"out_sid,omitempty"`
+    
+
+    // 物流公司名称
+    
+    CompanyName   string `json:"company_name,omitempty"`
+    
+
+    // 交易号
+    
+    Tid   int64 `json:"tid,omitempty"`
+    
+
+    // 订单的物流状态（仅支持线上发货online订单，线下发货offline发出后直接变为已签收）
+* 等候发送给物流公司
+*已提交给物流公司,等待物流公司接单
+*已经确认消息接收，等待物流公司接单
+*物流公司已接单
+*物流公司不接单
+*物流公司揽收失败
+*物流公司揽收成功
+*签收失败
+*对方已签收
+*对方拒绝签收
+    
+    Status   string `json:"status,omitempty"`
+    
+
+    // 流转信息列表
+    
+    TraceList  struct {
+        TransitStepInfo  []TransitStepInfo `json:"transit_step_info,omitempty"`
+    } `json:"trace_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsTraceSearchResponse struct {
 

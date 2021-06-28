@@ -12,8 +12,22 @@ WMS调用奇门的接口,该接口用来给ERP或者OMS回传波次号及对应�
 */
 type TaobaoQimenWavenumReportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenWavenumReportResponse `json:"taobao_qimen_wavenum_report_response,omitempty"`
+    // Response *TaobaoQimenWavenumReportResponse `json:"qimen_wavenum_report_response,omitempty"` 
+    TaobaoQimenWavenumReportResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenWavenumReportResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenWavenumReportResponse struct {
 

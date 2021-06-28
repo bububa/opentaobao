@@ -12,8 +12,22 @@ taobao.simba.keywordsvon.add
 */
 type TaobaoSimbaKeywordsvonAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaKeywordsvonAddResponse `json:"taobao_simba_keywordsvon_add_response,omitempty"`
+    // Response *TaobaoSimbaKeywordsvonAddResponse `json:"simba_keywordsvon_add_response,omitempty"` 
+    TaobaoSimbaKeywordsvonAddResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaKeywordsvonAddResponse struct {
+
+    // 关键词列表
+    
+    Keywords  struct {
+        Keyword  []Keyword `json:"keyword,omitempty"`
+    } `json:"keywords,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaKeywordsvonAddResponse struct {
 

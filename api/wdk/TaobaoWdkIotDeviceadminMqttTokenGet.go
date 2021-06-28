@@ -11,11 +11,11 @@ taobao.wdk.iot.deviceadmin.mqtt.token.get
 
 智能硬件设备动态注册和获取mqtt设备信息
 */
-func TaobaoWdkIotDeviceadminMqttTokenGet(clt *core.SDKClient, req *wdk.TaobaoWdkIotDeviceadminMqttTokenGetRequest, session string) (*wdk.TaobaoWdkIotDeviceadminMqttTokenGetResponse, error) {
+func TaobaoWdkIotDeviceadminMqttTokenGet(clt *core.SDKClient, req *wdk.TaobaoWdkIotDeviceadminMqttTokenGetRequest, session string) (*wdk.TaobaoWdkIotDeviceadminMqttTokenGetAPIResponse, error) {
     var resp wdk.TaobaoWdkIotDeviceadminMqttTokenGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

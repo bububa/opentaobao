@@ -12,8 +12,22 @@ alibaba.aliqin.axb.vendor.heart.beat
 */
 type AlibabaAliqinAxbVendorHeartBeatAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinAxbVendorHeartBeatResponse `json:"alibaba_aliqin_axb_vendor_heart_beat_response,omitempty"`
+    // Response *AlibabaAliqinAxbVendorHeartBeatResponse `json:"alibaba_aliqin_axb_vendor_heart_beat_response,omitempty"` 
+    AlibabaAliqinAxbVendorHeartBeatResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinAxbVendorHeartBeatResponse struct {
+
+    // result
+    
+    Result  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinAxbVendorHeartBeatResponse struct {
 

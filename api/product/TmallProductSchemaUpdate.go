@@ -11,11 +11,11 @@ tmall.product.schema.update
 
 产品更新接口
 */
-func TmallProductSchemaUpdate(clt *core.SDKClient, req *product.TmallProductSchemaUpdateRequest, session string) (*product.TmallProductSchemaUpdateResponse, error) {
+func TmallProductSchemaUpdate(clt *core.SDKClient, req *product.TmallProductSchemaUpdateRequest, session string) (*product.TmallProductSchemaUpdateAPIResponse, error) {
     var resp product.TmallProductSchemaUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

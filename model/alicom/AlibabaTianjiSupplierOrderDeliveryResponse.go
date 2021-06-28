@@ -12,8 +12,20 @@ alibaba.tianji.supplier.order.delivery
 */
 type AlibabaTianjiSupplierOrderDeliveryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTianjiSupplierOrderDeliveryResponse `json:"alibaba_tianji_supplier_order_delivery_response,omitempty"`
+    // Response *AlibabaTianjiSupplierOrderDeliveryResponse `json:"alibaba_tianji_supplier_order_delivery_response,omitempty"` 
+    AlibabaTianjiSupplierOrderDeliveryResponse
 }
+
+/* model for simplify = false
+type AlibabaTianjiSupplierOrderDeliveryResponse struct {
+
+    // 发货是否成功
+    
+    Model   bool `json:"model,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTianjiSupplierOrderDeliveryResponse struct {
 

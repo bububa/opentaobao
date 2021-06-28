@@ -12,8 +12,22 @@ alibaba.mj.member.bindmember
 */
 type AlibabaMjMemberBindmemberAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjMemberBindmemberResponse `json:"alibaba_mj_member_bindmember_response,omitempty"`
+    // Response *AlibabaMjMemberBindmemberResponse `json:"alibaba_mj_member_bindmember_response,omitempty"` 
+    AlibabaMjMemberBindmemberResponse
 }
+
+/* model for simplify = false
+type AlibabaMjMemberBindmemberResponse struct {
+
+    // 1
+    
+    Result  *struct {
+        SingleResult  *SingleResult `json:"single_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjMemberBindmemberResponse struct {
 

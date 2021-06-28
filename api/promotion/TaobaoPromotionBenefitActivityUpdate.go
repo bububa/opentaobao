@@ -11,11 +11,11 @@ taobao.promotion.benefit.activity.update
 
 修改卖家活动中关联的对应的权益。
 */
-func TaobaoPromotionBenefitActivityUpdate(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityUpdateRequest, session string) (*promotion.TaobaoPromotionBenefitActivityUpdateResponse, error) {
+func TaobaoPromotionBenefitActivityUpdate(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitActivityUpdateRequest, session string) (*promotion.TaobaoPromotionBenefitActivityUpdateAPIResponse, error) {
     var resp promotion.TaobaoPromotionBenefitActivityUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

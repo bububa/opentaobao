@@ -12,8 +12,22 @@ alibaba.mj.presale.settlement.statistics
 */
 type AlibabaMjPresaleSettlementStatisticsAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjPresaleSettlementStatisticsResponse `json:"alibaba_mj_presale_settlement_statistics_response,omitempty"`
+    // Response *AlibabaMjPresaleSettlementStatisticsResponse `json:"alibaba_mj_presale_settlement_statistics_response,omitempty"` 
+    AlibabaMjPresaleSettlementStatisticsResponse
 }
+
+/* model for simplify = false
+type AlibabaMjPresaleSettlementStatisticsResponse struct {
+
+    // data
+    
+    Data  *struct {
+        AlibabaMjPresaleSettlementStatisticsData  *AlibabaMjPresaleSettlementStatisticsData `json:"alibaba_mj_presale_settlement_statistics_data,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjPresaleSettlementStatisticsResponse struct {
 

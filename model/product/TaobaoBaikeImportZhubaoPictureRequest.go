@@ -16,7 +16,7 @@ type TaobaoBaikeImportZhubaoPictureRequest struct {
     model.Params
 
     // 图片二进制数据
-    picture   []byte 
+    picture   []*model.File 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoBaikeImportZhubaoPictureRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoBaikeImportZhubaoPictureRequest) SetPicture(picture []byte) error {
+func (r *TaobaoBaikeImportZhubaoPictureRequest) SetPicture(picture []*model.File) error {
     r.picture = picture
     r.Set("picture", picture)
     return nil
 }
 
-func (r TaobaoBaikeImportZhubaoPictureRequest) GetPicture() []byte {
+func (r TaobaoBaikeImportZhubaoPictureRequest) GetPicture() []*model.File {
     return r.picture
 }
 

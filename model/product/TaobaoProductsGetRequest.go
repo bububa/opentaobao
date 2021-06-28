@@ -17,7 +17,7 @@ type TaobaoProductsGetRequest struct {
     model.Params
 
     // 需返回的字段列表.可选值:Product数据结构中的所有字段;多个字段之间用","分隔
-    fields   []String 
+    fields   []string 
 
     // 用户昵称
     nick   string 
@@ -49,13 +49,13 @@ func (r TaobaoProductsGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoProductsGetRequest) SetFields(fields []String) error {
+func (r *TaobaoProductsGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoProductsGetRequest) GetFields() []String {
+func (r TaobaoProductsGetRequest) GetFields() []string {
     return r.fields
 }
 

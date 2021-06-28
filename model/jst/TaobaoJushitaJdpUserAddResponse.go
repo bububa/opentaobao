@@ -12,8 +12,20 @@ taobao.jushita.jdp.user.add
 */
 type TaobaoJushitaJdpUserAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJushitaJdpUserAddResponse `json:"taobao_jushita_jdp_user_add_response,omitempty"`
+    // Response *TaobaoJushitaJdpUserAddResponse `json:"jushita_jdp_user_add_response,omitempty"` 
+    TaobaoJushitaJdpUserAddResponse
 }
+
+/* model for simplify = false
+type TaobaoJushitaJdpUserAddResponse struct {
+
+    // 是否添加成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJushitaJdpUserAddResponse struct {
 

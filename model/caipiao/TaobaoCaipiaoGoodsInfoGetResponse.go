@@ -12,8 +12,27 @@ taobao.caipiao.goods.info.get
 */
 type TaobaoCaipiaoGoodsInfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCaipiaoGoodsInfoGetResponse `json:"taobao_caipiao_goods_info_get_response,omitempty"`
+    // Response *TaobaoCaipiaoGoodsInfoGetResponse `json:"caipiao_goods_info_get_response,omitempty"` 
+    TaobaoCaipiaoGoodsInfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoCaipiaoGoodsInfoGetResponse struct {
+
+    // 返回列表的大小
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 查询的结果列表
+    
+    Results  struct {
+        LotteryWangcaiSellerGoodsInfo  []LotteryWangcaiSellerGoodsInfo `json:"lottery_wangcai_seller_goods_info,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCaipiaoGoodsInfoGetResponse struct {
 

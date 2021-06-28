@@ -12,8 +12,22 @@ alibaba.mouton.activity.list
 */
 type AlibabaMoutonActivityListAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMoutonActivityListResponse `json:"alibaba_mouton_activity_list_response,omitempty"`
+    // Response *AlibabaMoutonActivityListResponse `json:"alibaba_mouton_activity_list_response,omitempty"` 
+    AlibabaMoutonActivityListResponse
 }
+
+/* model for simplify = false
+type AlibabaMoutonActivityListResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        Page  *Page `json:"page,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMoutonActivityListResponse struct {
 

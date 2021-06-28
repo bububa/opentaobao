@@ -11,11 +11,11 @@ alibaba.baichuan.aso.query
 
 查询app在设备上的安装信息
 */
-func AlibabaBaichuanAsoQuery(clt *core.SDKClient, req *baichuan.AlibabaBaichuanAsoQueryRequest, session string) (*baichuan.AlibabaBaichuanAsoQueryResponse, error) {
+func AlibabaBaichuanAsoQuery(clt *core.SDKClient, req *baichuan.AlibabaBaichuanAsoQueryRequest, session string) (*baichuan.AlibabaBaichuanAsoQueryAPIResponse, error) {
     var resp baichuan.AlibabaBaichuanAsoQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

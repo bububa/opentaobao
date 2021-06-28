@@ -12,8 +12,22 @@ alibaba.alicom.wtt.opentrade.createorder
 */
 type AlibabaAlicomWttOpentradeCreateorderAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlicomWttOpentradeCreateorderResponse `json:"alibaba_alicom_wtt_opentrade_createorder_response,omitempty"`
+    // Response *AlibabaAlicomWttOpentradeCreateorderResponse `json:"alibaba_alicom_wtt_opentrade_createorder_response,omitempty"` 
+    AlibabaAlicomWttOpentradeCreateorderResponse
 }
+
+/* model for simplify = false
+type AlibabaAlicomWttOpentradeCreateorderResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TopResultDto  *TopResultDto `json:"top_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlicomWttOpentradeCreateorderResponse struct {
 

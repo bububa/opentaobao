@@ -13,8 +13,22 @@ tmall.service.settleadjustment.request
 */
 type TmallServiceSettleadjustmentRequestAPIResponse struct {
     model.CommonResponse
-    Response *TmallServiceSettleadjustmentRequestResponse `json:"tmall_service_settleadjustment_request_response,omitempty"`
+    // Response *TmallServiceSettleadjustmentRequestResponse `json:"tmall_service_settleadjustment_request_response,omitempty"` 
+    TmallServiceSettleadjustmentRequestResponse
 }
+
+/* model for simplify = false
+type TmallServiceSettleadjustmentRequestResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TmallServiceSettleadjustmentRequestResult  *TmallServiceSettleadjustmentRequestResult `json:"tmall_service_settleadjustment_request_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServiceSettleadjustmentRequestResponse struct {
 

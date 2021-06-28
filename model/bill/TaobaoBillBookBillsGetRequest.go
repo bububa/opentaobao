@@ -19,7 +19,7 @@ type TaobaoBillBookBillsGetRequest struct {
     accountId   int64 
 
     // 明细流水类型:流水类型:101、可用金充值；102、可用金扣除；103、冻结；104、解冻；105、冻结金充值；106、冻结金扣除
-    journalTypes   []Number 
+    journalTypes   []int64 
 
     // 记账开始时间
     startTime   string 
@@ -67,13 +67,13 @@ func (r TaobaoBillBookBillsGetRequest) GetAccountId() int64 {
     return r.accountId
 }
 
-func (r *TaobaoBillBookBillsGetRequest) SetJournalTypes(journalTypes []Number) error {
+func (r *TaobaoBillBookBillsGetRequest) SetJournalTypes(journalTypes []int64) error {
     r.journalTypes = journalTypes
     r.Set("journal_types", journalTypes)
     return nil
 }
 
-func (r TaobaoBillBookBillsGetRequest) GetJournalTypes() []Number {
+func (r TaobaoBillBookBillsGetRequest) GetJournalTypes() []int64 {
     return r.journalTypes
 }
 

@@ -12,8 +12,22 @@ alibaba.wdkorder.sharestock.order.get
 */
 type AlibabaWdkorderSharestockOrderGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkorderSharestockOrderGetResponse `json:"alibaba_wdkorder_sharestock_order_get_response,omitempty"`
+    // Response *AlibabaWdkorderSharestockOrderGetResponse `json:"alibaba_wdkorder_sharestock_order_get_response,omitempty"` 
+    AlibabaWdkorderSharestockOrderGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkorderSharestockOrderGetResponse struct {
+
+    // 调用结果
+    
+    Result  *struct {
+        MaochaoOrderQueryResult  *MaochaoOrderQueryResult `json:"maochao_order_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkorderSharestockOrderGetResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.alsc.crm.customer.create
 */
 type AlibabaAlscCrmCustomerCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmCustomerCreateResponse `json:"alibaba_alsc_crm_customer_create_response,omitempty"`
+    // Response *AlibabaAlscCrmCustomerCreateResponse `json:"alibaba_alsc_crm_customer_create_response,omitempty"` 
+    AlibabaAlscCrmCustomerCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmCustomerCreateResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmCustomerCreateResponse struct {
 

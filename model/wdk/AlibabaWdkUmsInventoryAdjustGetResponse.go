@@ -12,8 +12,22 @@ alibaba.wdk.ums.inventory.adjust.get
 */
 type AlibabaWdkUmsInventoryAdjustGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkUmsInventoryAdjustGetResponse `json:"alibaba_wdk_ums_inventory_adjust_get_response,omitempty"`
+    // Response *AlibabaWdkUmsInventoryAdjustGetResponse `json:"alibaba_wdk_ums_inventory_adjust_get_response,omitempty"` 
+    AlibabaWdkUmsInventoryAdjustGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkUmsInventoryAdjustGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        UtmsResult  *UtmsResult `json:"utms_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkUmsInventoryAdjustGetResponse struct {
 

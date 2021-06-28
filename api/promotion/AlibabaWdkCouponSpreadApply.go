@@ -11,11 +11,11 @@ alibaba.wdk.coupon.spread.apply
 
 优惠券发放
 */
-func AlibabaWdkCouponSpreadApply(clt *core.SDKClient, req *promotion.AlibabaWdkCouponSpreadApplyRequest, session string) (*promotion.AlibabaWdkCouponSpreadApplyResponse, error) {
+func AlibabaWdkCouponSpreadApply(clt *core.SDKClient, req *promotion.AlibabaWdkCouponSpreadApplyRequest, session string) (*promotion.AlibabaWdkCouponSpreadApplyAPIResponse, error) {
     var resp promotion.AlibabaWdkCouponSpreadApplyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

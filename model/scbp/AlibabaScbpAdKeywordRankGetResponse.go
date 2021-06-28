@@ -12,8 +12,20 @@ alibaba.scbp.ad.keyword.rank.get
 */
 type AlibabaScbpAdKeywordRankGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdKeywordRankGetResponse `json:"alibaba_scbp_ad_keyword_rank_get_response,omitempty"`
+    // Response *AlibabaScbpAdKeywordRankGetResponse `json:"alibaba_scbp_ad_keyword_rank_get_response,omitempty"` 
+    AlibabaScbpAdKeywordRankGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdKeywordRankGetResponse struct {
+
+    // 关键词的预估排名
+    
+    RankLocation   int64 `json:"rank_location,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdKeywordRankGetResponse struct {
 

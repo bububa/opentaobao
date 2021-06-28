@@ -11,11 +11,11 @@ tmall.mei.crm.member.getbypaycode
 
 通过支付码获取会员信息
 */
-func TmallMeiCrmMemberGetbypaycode(clt *core.SDKClient, req *mei.TmallMeiCrmMemberGetbypaycodeRequest, session string) (*mei.TmallMeiCrmMemberGetbypaycodeResponse, error) {
+func TmallMeiCrmMemberGetbypaycode(clt *core.SDKClient, req *mei.TmallMeiCrmMemberGetbypaycodeRequest, session string) (*mei.TmallMeiCrmMemberGetbypaycodeAPIResponse, error) {
     var resp mei.TmallMeiCrmMemberGetbypaycodeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

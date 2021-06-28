@@ -12,8 +12,22 @@ alibaba.interact.lotteryactivity.register
 */
 type AlibabaInteractLotteryactivityRegisterAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractLotteryactivityRegisterResponse `json:"alibaba_interact_lotteryactivity_register_response,omitempty"`
+    // Response *AlibabaInteractLotteryactivityRegisterResponse `json:"alibaba_interact_lotteryactivity_register_response,omitempty"` 
+    AlibabaInteractLotteryactivityRegisterResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractLotteryactivityRegisterResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaInteractLotteryactivityRegisterResult  *AlibabaInteractLotteryactivityRegisterResult `json:"alibaba_interact_lotteryactivity_register_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractLotteryactivityRegisterResponse struct {
 

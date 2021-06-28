@@ -22,7 +22,7 @@ type TaobaoAilabAicloudTopDeviceControlCustomRequest struct {
     param1   string 
 
     // 参数key-value列表
-    param2   []String 
+    param2   []string 
 
 }
 
@@ -65,13 +65,13 @@ func (r TaobaoAilabAicloudTopDeviceControlCustomRequest) GetParam1() string {
     return r.param1
 }
 
-func (r *TaobaoAilabAicloudTopDeviceControlCustomRequest) SetParam2(param2 []String) error {
+func (r *TaobaoAilabAicloudTopDeviceControlCustomRequest) SetParam2(param2 []string) error {
     r.param2 = param2
     r.Set("param2", param2)
     return nil
 }
 
-func (r TaobaoAilabAicloudTopDeviceControlCustomRequest) GetParam2() []String {
+func (r TaobaoAilabAicloudTopDeviceControlCustomRequest) GetParam2() []string {
     return r.param2
 }
 

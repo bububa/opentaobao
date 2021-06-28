@@ -11,11 +11,11 @@ alibaba.wdk.channel.order.usercancel
 
 用户发起售中取消
 */
-func AlibabaWdkChannelOrderUsercancel(clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderUsercancelRequest, session string) (*wdk.AlibabaWdkChannelOrderUsercancelResponse, error) {
+func AlibabaWdkChannelOrderUsercancel(clt *core.SDKClient, req *wdk.AlibabaWdkChannelOrderUsercancelRequest, session string) (*wdk.AlibabaWdkChannelOrderUsercancelAPIResponse, error) {
     var resp wdk.AlibabaWdkChannelOrderUsercancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

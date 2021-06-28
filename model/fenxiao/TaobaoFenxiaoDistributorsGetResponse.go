@@ -12,8 +12,22 @@ taobao.fenxiao.distributors.get
 */
 type TaobaoFenxiaoDistributorsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoDistributorsGetResponse `json:"taobao_fenxiao_distributors_get_response,omitempty"`
+    // Response *TaobaoFenxiaoDistributorsGetResponse `json:"fenxiao_distributors_get_response,omitempty"` 
+    TaobaoFenxiaoDistributorsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoDistributorsGetResponse struct {
+
+    // 分销商详细信息
+    
+    Distributors  struct {
+        Distributor  []Distributor `json:"distributor,omitempty"`
+    } `json:"distributors,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoDistributorsGetResponse struct {
 

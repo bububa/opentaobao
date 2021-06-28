@@ -12,8 +12,22 @@ taobao.miniapp.items.get
 */
 type TaobaoMiniappItemsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMiniappItemsGetResponse `json:"taobao_miniapp_items_get_response,omitempty"`
+    // Response *TaobaoMiniappItemsGetResponse `json:"miniapp_items_get_response,omitempty"` 
+    TaobaoMiniappItemsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoMiniappItemsGetResponse struct {
+
+    // Item(商品)结构
+    
+    Items  struct {
+        Item  []Item `json:"item,omitempty"`
+    } `json:"items,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMiniappItemsGetResponse struct {
 

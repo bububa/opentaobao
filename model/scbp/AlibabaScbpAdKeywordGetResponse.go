@@ -12,8 +12,32 @@ alibaba.scbp.ad.keyword.get
 */
 type AlibabaScbpAdKeywordGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdKeywordGetResponse `json:"alibaba_scbp_ad_keyword_get_response,omitempty"`
+    // Response *AlibabaScbpAdKeywordGetResponse `json:"alibaba_scbp_ad_keyword_get_response,omitempty"` 
+    AlibabaScbpAdKeywordGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdKeywordGetResponse struct {
+
+    // 总个数
+    
+    TotalNum   int64 `json:"total_num,omitempty"`
+    
+
+    // 总页数
+    
+    TotalPage   int64 `json:"total_page,omitempty"`
+    
+
+    // 查询关键词列表
+    
+    KeywordList  struct {
+        KeywordResultDto  []KeywordResultDto `json:"keyword_result_dto,omitempty"`
+    } `json:"keyword_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdKeywordGetResponse struct {
 

@@ -12,8 +12,20 @@ alibaba.interact.sensor.makeup
 */
 type AlibabaInteractSensorMakeupAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorMakeupResponse `json:"alibaba_interact_sensor_makeup_response,omitempty"`
+    // Response *AlibabaInteractSensorMakeupResponse `json:"alibaba_interact_sensor_makeup_response,omitempty"` 
+    AlibabaInteractSensorMakeupResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorMakeupResponse struct {
+
+    // 非restAPI，为jsapi  result=0
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorMakeupResponse struct {
 

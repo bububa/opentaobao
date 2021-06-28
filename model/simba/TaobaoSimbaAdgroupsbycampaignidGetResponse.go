@@ -12,8 +12,22 @@ taobao.simba.adgroupsbycampaignid.get
 */
 type TaobaoSimbaAdgroupsbycampaignidGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaAdgroupsbycampaignidGetResponse `json:"taobao_simba_adgroupsbycampaignid_get_response,omitempty"`
+    // Response *TaobaoSimbaAdgroupsbycampaignidGetResponse `json:"simba_adgroupsbycampaignid_get_response,omitempty"` 
+    TaobaoSimbaAdgroupsbycampaignidGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaAdgroupsbycampaignidGetResponse struct {
+
+    // 返回的推广组分页对象
+    
+    Adgroups  *struct {
+        ADGroupPage  *ADGroupPage `json:"ad_group_page,omitempty"`
+    } `json:"adgroups,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaAdgroupsbycampaignidGetResponse struct {
 

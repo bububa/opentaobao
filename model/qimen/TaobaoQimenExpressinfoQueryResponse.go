@@ -12,8 +12,22 @@ taobao.qimen.expressinfo.query
 */
 type TaobaoQimenExpressinfoQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenExpressinfoQueryResponse `json:"taobao_qimen_expressinfo_query_response,omitempty"`
+    // Response *TaobaoQimenExpressinfoQueryResponse `json:"qimen_expressinfo_query_response,omitempty"` 
+    TaobaoQimenExpressinfoQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenExpressinfoQueryResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenExpressinfoQueryResponse struct {
 

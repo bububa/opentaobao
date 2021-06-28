@@ -11,11 +11,11 @@ taobao.baichuan.openaccount.logindoublecheck
 
 百川登录二次验证
 */
-func TaobaoBaichuanOpenaccountLogindoublecheck(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLogindoublecheckRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountLogindoublecheckResponse, error) {
+func TaobaoBaichuanOpenaccountLogindoublecheck(clt *core.SDKClient, req *baichuan.TaobaoBaichuanOpenaccountLogindoublecheckRequest, session string) (*baichuan.TaobaoBaichuanOpenaccountLogindoublecheckAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanOpenaccountLogindoublecheckAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

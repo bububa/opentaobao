@@ -11,11 +11,11 @@ taobao.train.agent.direct.compensate
 
 代购直连订单平台关单但是代理商出票成功补偿接口
 */
-func TaobaoTrainAgentDirectCompensate(clt *core.SDKClient, req *train.TaobaoTrainAgentDirectCompensateRequest, session string) (*train.TaobaoTrainAgentDirectCompensateResponse, error) {
+func TaobaoTrainAgentDirectCompensate(clt *core.SDKClient, req *train.TaobaoTrainAgentDirectCompensateRequest, session string) (*train.TaobaoTrainAgentDirectCompensateAPIResponse, error) {
     var resp train.TaobaoTrainAgentDirectCompensateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

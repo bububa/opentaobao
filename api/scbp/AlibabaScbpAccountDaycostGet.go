@@ -11,11 +11,11 @@ alibaba.scbp.account.daycost.get
 
 查询今日消耗
 */
-func AlibabaScbpAccountDaycostGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountDaycostGetRequest, session string) (*scbp.AlibabaScbpAccountDaycostGetResponse, error) {
+func AlibabaScbpAccountDaycostGet(clt *core.SDKClient, req *scbp.AlibabaScbpAccountDaycostGetRequest, session string) (*scbp.AlibabaScbpAccountDaycostGetAPIResponse, error) {
     var resp scbp.AlibabaScbpAccountDaycostGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

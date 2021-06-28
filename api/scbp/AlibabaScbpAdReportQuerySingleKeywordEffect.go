@@ -11,11 +11,11 @@ alibaba.scbp.ad.report.query.single.keyword.effect
 
 单个关键词报告
 */
-func AlibabaScbpAdReportQuerySingleKeywordEffect(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportQuerySingleKeywordEffectRequest, session string) (*scbp.AlibabaScbpAdReportQuerySingleKeywordEffectResponse, error) {
+func AlibabaScbpAdReportQuerySingleKeywordEffect(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportQuerySingleKeywordEffectRequest, session string) (*scbp.AlibabaScbpAdReportQuerySingleKeywordEffectAPIResponse, error) {
     var resp scbp.AlibabaScbpAdReportQuerySingleKeywordEffectAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

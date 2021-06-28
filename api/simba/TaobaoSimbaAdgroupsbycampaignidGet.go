@@ -11,11 +11,11 @@ taobao.simba.adgroupsbycampaignid.get
 
 根据推广计划ID分页获取推广计划下的推广单元信息
 */
-func TaobaoSimbaAdgroupsbycampaignidGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsbycampaignidGetRequest, session string) (*simba.TaobaoSimbaAdgroupsbycampaignidGetResponse, error) {
+func TaobaoSimbaAdgroupsbycampaignidGet(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsbycampaignidGetRequest, session string) (*simba.TaobaoSimbaAdgroupsbycampaignidGetAPIResponse, error) {
     var resp simba.TaobaoSimbaAdgroupsbycampaignidGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

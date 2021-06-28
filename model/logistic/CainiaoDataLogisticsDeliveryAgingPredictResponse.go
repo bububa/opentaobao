@@ -16,8 +16,22 @@ cainiao.data.logistics.delivery.aging.predict
 */
 type CainiaoDataLogisticsDeliveryAgingPredictAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoDataLogisticsDeliveryAgingPredictResponse `json:"cainiao_data_logistics_delivery_aging_predict_response,omitempty"`
+    // Response *CainiaoDataLogisticsDeliveryAgingPredictResponse `json:"cainiao_data_logistics_delivery_aging_predict_response,omitempty"` 
+    CainiaoDataLogisticsDeliveryAgingPredictResponse
 }
+
+/* model for simplify = false
+type CainiaoDataLogisticsDeliveryAgingPredictResponse struct {
+
+    // 列表类型返回
+    
+    Datas  struct {
+        CainiaoDataLogisticsDeliveryAgingPredictData  []CainiaoDataLogisticsDeliveryAgingPredictData `json:"cainiao_data_logistics_delivery_aging_predict_data,omitempty"`
+    } `json:"datas,omitempty"`
+    
+
+}
+*/
 
 type CainiaoDataLogisticsDeliveryAgingPredictResponse struct {
 

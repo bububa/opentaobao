@@ -12,8 +12,20 @@ alibaba.gpu.schema.update
 */
 type AlibabaGpuSchemaUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaGpuSchemaUpdateResponse `json:"alibaba_gpu_schema_update_response,omitempty"`
+    // Response *AlibabaGpuSchemaUpdateResponse `json:"alibaba_gpu_schema_update_response,omitempty"` 
+    AlibabaGpuSchemaUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaGpuSchemaUpdateResponse struct {
+
+    // 更新产品的结果
+    
+    UpdateProductResult   string `json:"update_product_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaGpuSchemaUpdateResponse struct {
 

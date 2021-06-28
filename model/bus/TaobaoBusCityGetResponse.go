@@ -12,8 +12,22 @@ taobao.bus.city.get
 */
 type TaobaoBusCityGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusCityGetResponse `json:"taobao_bus_city_get_response,omitempty"`
+    // Response *TaobaoBusCityGetResponse `json:"bus_city_get_response,omitempty"` 
+    TaobaoBusCityGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusCityGetResponse struct {
+
+    // 城市返回结果
+    
+    Result  *struct {
+        CitySearchRp  *CitySearchRp `json:"city_search_rp,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusCityGetResponse struct {
 

@@ -12,8 +12,22 @@ taobao.logistics.dummy.send
 */
 type TaobaoLogisticsDummySendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsDummySendResponse `json:"taobao_logistics_dummy_send_response,omitempty"`
+    // Response *TaobaoLogisticsDummySendResponse `json:"logistics_dummy_send_response,omitempty"` 
+    TaobaoLogisticsDummySendResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsDummySendResponse struct {
+
+    // 返回发货是否成功is_success
+    
+    Shipping  *struct {
+        Shipping  *Shipping `json:"shipping,omitempty"`
+    } `json:"shipping,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsDummySendResponse struct {
 

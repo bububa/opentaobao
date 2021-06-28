@@ -12,8 +12,30 @@ taobao.bus.tvmcancelorder.set
 */
 type TaobaoBusTvmcancelorderSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusTvmcancelorderSetResponse `json:"taobao_bus_tvmcancelorder_set_response,omitempty"`
+    // Response *TaobaoBusTvmcancelorderSetResponse `json:"bus_tvmcancelorder_set_response,omitempty"` 
+    TaobaoBusTvmcancelorderSetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusTvmcancelorderSetResponse struct {
+
+    // 错误码  ORDER_NOT_FOUND
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // 错误描述  订单无法查询
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // true代表成功 false 代表失败
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusTvmcancelorderSetResponse struct {
 

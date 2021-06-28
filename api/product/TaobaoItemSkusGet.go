@@ -12,11 +12,11 @@ taobao.item.skus.get
 * 获取多个商品下的所有sku
 <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=itemapi" target="_blank">点击查看更多商品API说明</a></strong>
 */
-func TaobaoItemSkusGet(clt *core.SDKClient, req *product.TaobaoItemSkusGetRequest, session string) (*product.TaobaoItemSkusGetResponse, error) {
+func TaobaoItemSkusGet(clt *core.SDKClient, req *product.TaobaoItemSkusGetRequest, session string) (*product.TaobaoItemSkusGetAPIResponse, error) {
     var resp product.TaobaoItemSkusGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,20 @@ taobao.crm.group.delete
 */
 type TaobaoCrmGroupDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGroupDeleteResponse `json:"taobao_crm_group_delete_response,omitempty"`
+    // Response *TaobaoCrmGroupDeleteResponse `json:"crm_group_delete_response,omitempty"` 
+    TaobaoCrmGroupDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGroupDeleteResponse struct {
+
+    // 异步任务请求成功，是否执行完毕需要通过taobao.crm.grouptask.check检测
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGroupDeleteResponse struct {
 

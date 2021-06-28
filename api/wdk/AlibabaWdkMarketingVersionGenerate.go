@@ -11,11 +11,11 @@ alibaba.wdk.marketing.version.generate
 
 生成发布使用的版本号
 */
-func AlibabaWdkMarketingVersionGenerate(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingVersionGenerateRequest, session string) (*wdk.AlibabaWdkMarketingVersionGenerateResponse, error) {
+func AlibabaWdkMarketingVersionGenerate(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingVersionGenerateRequest, session string) (*wdk.AlibabaWdkMarketingVersionGenerateAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingVersionGenerateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ alibaba.wdk.marketing.itembuygift.additem
 
 增加买赠活动商品。【注意，此接口暂不支持并发！】
 */
-func AlibabaWdkMarketingItembuygiftAdditem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftAdditemRequest, session string) (*wdk.AlibabaWdkMarketingItembuygiftAdditemResponse, error) {
+func AlibabaWdkMarketingItembuygiftAdditem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftAdditemRequest, session string) (*wdk.AlibabaWdkMarketingItembuygiftAdditemAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItembuygiftAdditemAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

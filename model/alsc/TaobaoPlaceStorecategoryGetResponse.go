@@ -12,8 +12,20 @@ taobao.place.storecategory.get
 */
 type TaobaoPlaceStorecategoryGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPlaceStorecategoryGetResponse `json:"taobao_place_storecategory_get_response,omitempty"`
+    // Response *TaobaoPlaceStorecategoryGetResponse `json:"place_storecategory_get_response,omitempty"` 
+    TaobaoPlaceStorecategoryGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPlaceStorecategoryGetResponse struct {
+
+    // 门店类目格式
+    
+    CategoryList   string `json:"category_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPlaceStorecategoryGetResponse struct {
 

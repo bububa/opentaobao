@@ -12,8 +12,35 @@ taobao.bus.tvmcreateorder.set
 */
 type TaobaoBusTvmcreateorderSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusTvmcreateorderSetResponse `json:"taobao_bus_tvmcreateorder_set_response,omitempty"`
+    // Response *TaobaoBusTvmcreateorderSetResponse `json:"bus_tvmcreateorder_set_response,omitempty"` 
+    TaobaoBusTvmcreateorderSetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusTvmcreateorderSetResponse struct {
+
+    // alitripOrderId
+    
+    AlitripOrderId   string `json:"alitrip_order_id,omitempty"`
+    
+
+    // errorCode
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // errorMsg
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusTvmcreateorderSetResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.aliqin.fc.iot.cardStatus
 */
 type AlibabaAliqinFcIotCardStatusAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcIotCardStatusResponse `json:"alibaba_aliqin_fc_iot_cardStatus_response,omitempty"`
+    // Response *AlibabaAliqinFcIotCardStatusResponse `json:"alibaba_aliqin_fc_iot_cardStatus_response,omitempty"` 
+    AlibabaAliqinFcIotCardStatusResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcIotCardStatusResponse struct {
+
+    // 结果对象
+    
+    Result  *struct {
+        AlibabaAliqinFcIotCardStatusResult  *AlibabaAliqinFcIotCardStatusResult `json:"alibaba_aliqin_fc_iot_card_status_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcIotCardStatusResponse struct {
 

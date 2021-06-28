@@ -11,11 +11,11 @@ tmall.item.vip.schema.update
 
 大商家编辑商品
 */
-func TmallItemVipSchemaUpdate(clt *core.SDKClient, req *product.TmallItemVipSchemaUpdateRequest, session string) (*product.TmallItemVipSchemaUpdateResponse, error) {
+func TmallItemVipSchemaUpdate(clt *core.SDKClient, req *product.TmallItemVipSchemaUpdateRequest, session string) (*product.TmallItemVipSchemaUpdateAPIResponse, error) {
     var resp product.TmallItemVipSchemaUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

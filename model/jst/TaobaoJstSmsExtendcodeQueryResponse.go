@@ -12,8 +12,40 @@ taobao.jst.sms.extendcode.query
 */
 type TaobaoJstSmsExtendcodeQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJstSmsExtendcodeQueryResponse `json:"taobao_jst_sms_extendcode_query_response,omitempty"`
+    // Response *TaobaoJstSmsExtendcodeQueryResponse `json:"jst_sms_extendcode_query_response,omitempty"` 
+    TaobaoJstSmsExtendcodeQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoJstSmsExtendcodeQueryResponse struct {
+
+    // 系统异常
+    
+    ResponseCode   string `json:"response_code,omitempty"`
+    
+
+    // 成功
+    
+    ResponseSuccess   bool `json:"response_success,omitempty"`
+    
+
+    // 请求id
+    
+    ResponseId   string `json:"response_id,omitempty"`
+    
+
+    // 成功
+    
+    Module   string `json:"module,omitempty"`
+    
+
+    // 系统异常
+    
+    Message   string `json:"message,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJstSmsExtendcodeQueryResponse struct {
 

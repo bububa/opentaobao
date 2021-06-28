@@ -12,8 +12,20 @@ OPENIM群邀请加入接口
 */
 type TaobaoOpenimTribeInviteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribeInviteResponse `json:"taobao_openim_tribe_invite_response,omitempty"`
+    // Response *TaobaoOpenimTribeInviteResponse `json:"openim_tribe_invite_response,omitempty"` 
+    TaobaoOpenimTribeInviteResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribeInviteResponse struct {
+
+    // 群服务code
+    
+    TribeCode   int64 `json:"tribe_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribeInviteResponse struct {
 

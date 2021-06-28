@@ -12,8 +12,22 @@ taobao.picture.category.add
 */
 type TaobaoPictureCategoryAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPictureCategoryAddResponse `json:"taobao_picture_category_add_response,omitempty"`
+    // Response *TaobaoPictureCategoryAddResponse `json:"picture_category_add_response,omitempty"` 
+    TaobaoPictureCategoryAddResponse
 }
+
+/* model for simplify = false
+type TaobaoPictureCategoryAddResponse struct {
+
+    // 图片分类信息
+    
+    PictureCategory  *struct {
+        PictureCategory  *PictureCategory `json:"picture_category,omitempty"`
+    } `json:"picture_category,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPictureCategoryAddResponse struct {
 

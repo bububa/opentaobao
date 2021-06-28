@@ -12,8 +12,22 @@ taobao.openlink.session.get
 */
 type TaobaoOpenlinkSessionGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenlinkSessionGetResponse `json:"taobao_openlink_session_get_response,omitempty"`
+    // Response *TaobaoOpenlinkSessionGetResponse `json:"openlink_session_get_response,omitempty"` 
+    TaobaoOpenlinkSessionGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenlinkSessionGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoOpenlinkSessionGetResult  *TaobaoOpenlinkSessionGetResult `json:"taobao_openlink_session_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenlinkSessionGetResponse struct {
 

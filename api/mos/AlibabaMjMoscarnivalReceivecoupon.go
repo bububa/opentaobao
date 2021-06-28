@@ -11,11 +11,11 @@ alibaba.mj.moscarnival.receivecoupon
 
 根据手机号码领券
 */
-func AlibabaMjMoscarnivalReceivecoupon(clt *core.SDKClient, req *mos.AlibabaMjMoscarnivalReceivecouponRequest, session string) (*mos.AlibabaMjMoscarnivalReceivecouponResponse, error) {
+func AlibabaMjMoscarnivalReceivecoupon(clt *core.SDKClient, req *mos.AlibabaMjMoscarnivalReceivecouponRequest, session string) (*mos.AlibabaMjMoscarnivalReceivecouponAPIResponse, error) {
     var resp mos.AlibabaMjMoscarnivalReceivecouponAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

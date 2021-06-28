@@ -12,8 +12,22 @@ taobao.qimen.shop.synchronize
 */
 type TaobaoQimenShopSynchronizeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenShopSynchronizeResponse `json:"taobao_qimen_shop_synchronize_response,omitempty"`
+    // Response *TaobaoQimenShopSynchronizeResponse `json:"qimen_shop_synchronize_response,omitempty"` 
+    TaobaoQimenShopSynchronizeResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenShopSynchronizeResponse struct {
+
+    // Response
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenShopSynchronizeResponse struct {
 

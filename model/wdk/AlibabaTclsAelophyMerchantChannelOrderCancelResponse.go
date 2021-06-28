@@ -12,8 +12,22 @@ alibaba.tcls.aelophy.merchant.channel.order.cancel
 */
 type AlibabaTclsAelophyMerchantChannelOrderCancelAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTclsAelophyMerchantChannelOrderCancelResponse `json:"alibaba_tcls_aelophy_merchant_channel_order_cancel_response,omitempty"`
+    // Response *AlibabaTclsAelophyMerchantChannelOrderCancelResponse `json:"alibaba_tcls_aelophy_merchant_channel_order_cancel_response,omitempty"` 
+    AlibabaTclsAelophyMerchantChannelOrderCancelResponse
 }
+
+/* model for simplify = false
+type AlibabaTclsAelophyMerchantChannelOrderCancelResponse struct {
+
+    // 返回结果
+    
+    ApiResult  *struct {
+        AlibabaTclsAelophyMerchantChannelOrderCancelApiResult  *AlibabaTclsAelophyMerchantChannelOrderCancelApiResult `json:"alibaba_tcls_aelophy_merchant_channel_order_cancel_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTclsAelophyMerchantChannelOrderCancelResponse struct {
 

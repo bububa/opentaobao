@@ -12,8 +12,22 @@ taobao.trade.memo.update
 */
 type TaobaoTradeMemoUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeMemoUpdateResponse `json:"taobao_trade_memo_update_response,omitempty"`
+    // Response *TaobaoTradeMemoUpdateResponse `json:"trade_memo_update_response,omitempty"` 
+    TaobaoTradeMemoUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeMemoUpdateResponse struct {
+
+    // 更新交易的备注信息后返回的Trade，其中可用字段为tid和modified
+    
+    Trade  *struct {
+        Trade  *Trade `json:"trade,omitempty"`
+    } `json:"trade,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeMemoUpdateResponse struct {
 

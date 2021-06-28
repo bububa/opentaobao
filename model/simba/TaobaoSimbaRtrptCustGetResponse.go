@@ -12,8 +12,22 @@ taobao.simba.rtrpt.cust.get
 */
 type TaobaoSimbaRtrptCustGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaRtrptCustGetResponse `json:"taobao_simba_rtrpt_cust_get_response,omitempty"`
+    // Response *TaobaoSimbaRtrptCustGetResponse `json:"simba_rtrpt_cust_get_response,omitempty"` 
+    TaobaoSimbaRtrptCustGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaRtrptCustGetResponse struct {
+
+    // 11
+    
+    Results  struct {
+        RtRptResultEntityDTO  []RtRptResultEntityDTO `json:"rt_rpt_result_entity_dto,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaRtrptCustGetResponse struct {
 

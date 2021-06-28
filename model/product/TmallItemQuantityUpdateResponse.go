@@ -12,8 +12,20 @@ tmall.item.quantity.update
 */
 type TmallItemQuantityUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemQuantityUpdateResponse `json:"tmall_item_quantity_update_response,omitempty"`
+    // Response *TmallItemQuantityUpdateResponse `json:"tmall_item_quantity_update_response,omitempty"` 
+    TmallItemQuantityUpdateResponse
 }
+
+/* model for simplify = false
+type TmallItemQuantityUpdateResponse struct {
+
+    // 库存更新结果，商品id
+    
+    QuantityUpdateResult   string `json:"quantity_update_result,omitempty"`
+    
+
+}
+*/
 
 type TmallItemQuantityUpdateResponse struct {
 

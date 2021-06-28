@@ -12,8 +12,22 @@ taobao.promotion.meal.get
 */
 type TaobaoPromotionMealGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionMealGetResponse `json:"taobao_promotion_meal_get_response,omitempty"`
+    // Response *TaobaoPromotionMealGetResponse `json:"promotion_meal_get_response,omitempty"` 
+    TaobaoPromotionMealGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionMealGetResponse struct {
+
+    // 搭配套餐列表。
+    
+    MealList  struct {
+        Meal  []Meal `json:"meal,omitempty"`
+    } `json:"meal_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionMealGetResponse struct {
 

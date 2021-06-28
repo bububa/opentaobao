@@ -12,8 +12,22 @@ taobao.promotion.limitdiscount.detail.get
 */
 type TaobaoPromotionLimitdiscountDetailGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionLimitdiscountDetailGetResponse `json:"taobao_promotion_limitdiscount_detail_get_response,omitempty"`
+    // Response *TaobaoPromotionLimitdiscountDetailGetResponse `json:"promotion_limitdiscount_detail_get_response,omitempty"` 
+    TaobaoPromotionLimitdiscountDetailGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionLimitdiscountDetailGetResponse struct {
+
+    // 限时打折对应的商品详情列表。
+    
+    ItemDiscountDetailList  struct {
+        LimitDiscountDetail  []LimitDiscountDetail `json:"limit_discount_detail,omitempty"`
+    } `json:"item_discount_detail_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionLimitdiscountDetailGetResponse struct {
 

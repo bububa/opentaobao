@@ -12,8 +12,29 @@ taobao.promotion.coupon.sns.send
 */
 type TaobaoPromotionCouponSnsSendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionCouponSnsSendResponse `json:"taobao_promotion_coupon_sns_send_response,omitempty"`
+    // Response *TaobaoPromotionCouponSnsSendResponse `json:"promotion_coupon_sns_send_response,omitempty"` 
+    TaobaoPromotionCouponSnsSendResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionCouponSnsSendResponse struct {
+
+    // 没有发送成功的买家
+    
+    FailureBuyers  struct {
+        ErrorMessage  []ErrorMessage `json:"error_message,omitempty"`
+    } `json:"failure_buyers,omitempty"`
+    
+
+    // 发送成功的买家的昵称和优惠券的number
+    
+    CouponResults  struct {
+        CouponResult  []CouponResult `json:"coupon_result,omitempty"`
+    } `json:"coupon_results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionCouponSnsSendResponse struct {
 

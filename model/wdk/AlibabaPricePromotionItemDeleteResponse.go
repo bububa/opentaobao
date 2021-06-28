@@ -12,8 +12,22 @@ alibaba.price.promotion.item.delete
 */
 type AlibabaPricePromotionItemDeleteAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaPricePromotionItemDeleteResponse `json:"alibaba_price_promotion_item_delete_response,omitempty"`
+    // Response *AlibabaPricePromotionItemDeleteResponse `json:"alibaba_price_promotion_item_delete_response,omitempty"` 
+    AlibabaPricePromotionItemDeleteResponse
 }
+
+/* model for simplify = false
+type AlibabaPricePromotionItemDeleteResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaPricePromotionItemDeleteResult  *AlibabaPricePromotionItemDeleteResult `json:"alibaba_price_promotion_item_delete_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaPricePromotionItemDeleteResponse struct {
 

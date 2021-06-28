@@ -19,7 +19,7 @@ type TaobaoRegionWarehouseManageRequest struct {
     storeCode   string 
 
     // 可映射三级地址,例: 广东省
-    regions   []String 
+    regions   []string 
 
 }
 
@@ -52,13 +52,13 @@ func (r TaobaoRegionWarehouseManageRequest) GetStoreCode() string {
     return r.storeCode
 }
 
-func (r *TaobaoRegionWarehouseManageRequest) SetRegions(regions []String) error {
+func (r *TaobaoRegionWarehouseManageRequest) SetRegions(regions []string) error {
     r.regions = regions
     r.Set("regions", regions)
     return nil
 }
 
-func (r TaobaoRegionWarehouseManageRequest) GetRegions() []String {
+func (r TaobaoRegionWarehouseManageRequest) GetRegions() []string {
     return r.regions
 }
 

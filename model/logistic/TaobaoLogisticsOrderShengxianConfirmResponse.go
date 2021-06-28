@@ -12,8 +12,27 @@ taobao.logistics.order.shengxian.confirm
 */
 type TaobaoLogisticsOrderShengxianConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsOrderShengxianConfirmResponse `json:"taobao_logistics_order_shengxian_confirm_response,omitempty"`
+    // Response *TaobaoLogisticsOrderShengxianConfirmResponse `json:"logistics_order_shengxian_confirm_response,omitempty"` 
+    TaobaoLogisticsOrderShengxianConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsOrderShengxianConfirmResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 发货成功后，返回承运商的信息
+    
+    ShipFresh  *struct {
+        ShipFresh  *ShipFresh `json:"ship_fresh,omitempty"`
+    } `json:"ship_fresh,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsOrderShengxianConfirmResponse struct {
 

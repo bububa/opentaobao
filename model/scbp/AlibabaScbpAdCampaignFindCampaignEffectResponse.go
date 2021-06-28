@@ -12,8 +12,20 @@ alibaba.scbp.ad.campaign.find.campaign.effect
 */
 type AlibabaScbpAdCampaignFindCampaignEffectAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdCampaignFindCampaignEffectResponse `json:"alibaba_scbp_ad_campaign_find_campaign_effect_response,omitempty"`
+    // Response *AlibabaScbpAdCampaignFindCampaignEffectResponse `json:"alibaba_scbp_ad_campaign_find_campaign_effect_response,omitempty"` 
+    AlibabaScbpAdCampaignFindCampaignEffectResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdCampaignFindCampaignEffectResponse struct {
+
+    // json数据，key是计划id(campaignId), value包含开始时间(statDate),曝光(impr),点击(click),消耗(cost),推广时长(onlineMin)
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdCampaignFindCampaignEffectResponse struct {
 

@@ -11,11 +11,11 @@ alipay.baoxian.claim.returngoodsstatus.update
 
 更新理赔单退货货物状态
 */
-func AlipayBaoxianClaimReturngoodsstatusUpdate(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimReturngoodsstatusUpdateRequest, session string) (*baoxian.AlipayBaoxianClaimReturngoodsstatusUpdateResponse, error) {
+func AlipayBaoxianClaimReturngoodsstatusUpdate(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimReturngoodsstatusUpdateRequest, session string) (*baoxian.AlipayBaoxianClaimReturngoodsstatusUpdateAPIResponse, error) {
     var resp baoxian.AlipayBaoxianClaimReturngoodsstatusUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

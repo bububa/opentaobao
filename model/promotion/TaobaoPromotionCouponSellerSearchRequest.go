@@ -25,7 +25,7 @@ type TaobaoPromotionCouponSellerSearchRequest struct {
     pageSize   int64 
 
     // 券id集合
-    spreadIds   []String 
+    spreadIds   []string 
 
 }
 
@@ -78,13 +78,13 @@ func (r TaobaoPromotionCouponSellerSearchRequest) GetPageSize() int64 {
     return r.pageSize
 }
 
-func (r *TaobaoPromotionCouponSellerSearchRequest) SetSpreadIds(spreadIds []String) error {
+func (r *TaobaoPromotionCouponSellerSearchRequest) SetSpreadIds(spreadIds []string) error {
     r.spreadIds = spreadIds
     r.Set("spread_ids", spreadIds)
     return nil
 }
 
-func (r TaobaoPromotionCouponSellerSearchRequest) GetSpreadIds() []String {
+func (r TaobaoPromotionCouponSellerSearchRequest) GetSpreadIds() []string {
     return r.spreadIds
 }
 

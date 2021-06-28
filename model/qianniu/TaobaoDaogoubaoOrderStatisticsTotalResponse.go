@@ -12,8 +12,22 @@ taobao.daogoubao.order.statistics.total
 */
 type TaobaoDaogoubaoOrderStatisticsTotalAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoDaogoubaoOrderStatisticsTotalResponse `json:"taobao_daogoubao_order_statistics_total_response,omitempty"`
+    // Response *TaobaoDaogoubaoOrderStatisticsTotalResponse `json:"daogoubao_order_statistics_total_response,omitempty"` 
+    TaobaoDaogoubaoOrderStatisticsTotalResponse
 }
+
+/* model for simplify = false
+type TaobaoDaogoubaoOrderStatisticsTotalResponse struct {
+
+    // result
+    
+    Result  *struct {
+        OrderStatisticsResult  *OrderStatisticsResult `json:"order_statistics_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoDaogoubaoOrderStatisticsTotalResponse struct {
 

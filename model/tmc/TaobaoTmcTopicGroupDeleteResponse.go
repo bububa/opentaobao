@@ -12,8 +12,20 @@ taobao.tmc.topic.group.delete
 */
 type TaobaoTmcTopicGroupDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcTopicGroupDeleteResponse `json:"taobao_tmc_topic_group_delete_response,omitempty"`
+    // Response *TaobaoTmcTopicGroupDeleteResponse `json:"tmc_topic_group_delete_response,omitempty"` 
+    TaobaoTmcTopicGroupDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcTopicGroupDeleteResponse struct {
+
+    // true
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcTopicGroupDeleteResponse struct {
 

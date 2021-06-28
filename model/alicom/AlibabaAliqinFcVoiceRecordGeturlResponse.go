@@ -12,8 +12,22 @@ alibaba.aliqin.fc.voice.record.geturl
 */
 type AlibabaAliqinFcVoiceRecordGeturlAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcVoiceRecordGeturlResponse `json:"alibaba_aliqin_fc_voice_record_geturl_response,omitempty"`
+    // Response *AlibabaAliqinFcVoiceRecordGeturlResponse `json:"alibaba_aliqin_fc_voice_record_geturl_response,omitempty"` 
+    AlibabaAliqinFcVoiceRecordGeturlResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcVoiceRecordGeturlResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaAliqinFcVoiceRecordGeturlResult  *AlibabaAliqinFcVoiceRecordGeturlResult `json:"alibaba_aliqin_fc_voice_record_geturl_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcVoiceRecordGeturlResponse struct {
 

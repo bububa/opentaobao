@@ -11,11 +11,11 @@ taobao.bus.disableqrcode.set
 
 使创建的二维码失效
 */
-func TaobaoBusDisableqrcodeSet(clt *core.SDKClient, req *bus.TaobaoBusDisableqrcodeSetRequest, session string) (*bus.TaobaoBusDisableqrcodeSetResponse, error) {
+func TaobaoBusDisableqrcodeSet(clt *core.SDKClient, req *bus.TaobaoBusDisableqrcodeSetRequest, session string) (*bus.TaobaoBusDisableqrcodeSetAPIResponse, error) {
     var resp bus.TaobaoBusDisableqrcodeSetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

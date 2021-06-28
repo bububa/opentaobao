@@ -12,8 +12,22 @@ taobao.wlb.imports.resource.transferstore.get
 */
 type TaobaoWlbImportsResourceTransferstoreGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbImportsResourceTransferstoreGetResponse `json:"taobao_wlb_imports_resource_transferstore_get_response,omitempty"`
+    // Response *TaobaoWlbImportsResourceTransferstoreGetResponse `json:"wlb_imports_resource_transferstore_get_response,omitempty"` 
+    TaobaoWlbImportsResourceTransferstoreGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbImportsResourceTransferstoreGetResponse struct {
+
+    // 符合条件的中转仓列表
+    
+    Stores  struct {
+        TranStoreResult  []TranStoreResult `json:"tran_store_result,omitempty"`
+    } `json:"stores,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbImportsResourceTransferstoreGetResponse struct {
 

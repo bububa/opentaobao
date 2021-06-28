@@ -12,8 +12,20 @@ taobao.lark.pos.itemprod.findterminal
 */
 type TaobaoLarkPosItemprodFindterminalAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLarkPosItemprodFindterminalResponse `json:"taobao_lark_pos_itemprod_findterminal_response,omitempty"`
+    // Response *TaobaoLarkPosItemprodFindterminalResponse `json:"lark_pos_itemprod_findterminal_response,omitempty"` 
+    TaobaoLarkPosItemprodFindterminalResponse
 }
+
+/* model for simplify = false
+type TaobaoLarkPosItemprodFindterminalResponse struct {
+
+    // 终端配置信息响应
+    
+    Data   string `json:"data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLarkPosItemprodFindterminalResponse struct {
 

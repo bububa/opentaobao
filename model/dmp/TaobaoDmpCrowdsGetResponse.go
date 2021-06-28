@@ -12,8 +12,22 @@ taobao.dmp.crowds.get
 */
 type TaobaoDmpCrowdsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoDmpCrowdsGetResponse `json:"taobao_dmp_crowds_get_response,omitempty"`
+    // Response *TaobaoDmpCrowdsGetResponse `json:"dmp_crowds_get_response,omitempty"` 
+    TaobaoDmpCrowdsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoDmpCrowdsGetResponse struct {
+
+    // 1
+    
+    Results  struct {
+        DmpCrowdDTO  []DmpCrowdDTO `json:"dmp_crowd_dto,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoDmpCrowdsGetResponse struct {
 

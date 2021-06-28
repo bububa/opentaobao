@@ -19,7 +19,7 @@ type TaobaoPictureReplaceRequest struct {
     pictureId   int64 
 
     // 图片二进制文件流,不能为空,允许png、jpg、gif图片格式
-    imageData   []byte 
+    imageData   []*model.File 
 
 }
 
@@ -52,13 +52,13 @@ func (r TaobaoPictureReplaceRequest) GetPictureId() int64 {
     return r.pictureId
 }
 
-func (r *TaobaoPictureReplaceRequest) SetImageData(imageData []byte) error {
+func (r *TaobaoPictureReplaceRequest) SetImageData(imageData []*model.File) error {
     r.imageData = imageData
     r.Set("image_data", imageData)
     return nil
 }
 
-func (r TaobaoPictureReplaceRequest) GetImageData() []byte {
+func (r TaobaoPictureReplaceRequest) GetImageData() []*model.File {
     return r.imageData
 }
 

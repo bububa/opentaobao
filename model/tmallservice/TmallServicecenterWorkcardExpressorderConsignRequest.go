@@ -19,7 +19,7 @@ type TmallServicecenterWorkcardExpressorderConsignRequest struct {
     expressOrderId   int64 
 
     // 工单List
-    workcardIdList   []Number 
+    workcardIdList   []int64 
 
     // 真实接单服务商
     realTpNick   string 
@@ -58,13 +58,13 @@ func (r TmallServicecenterWorkcardExpressorderConsignRequest) GetExpressOrderId(
     return r.expressOrderId
 }
 
-func (r *TmallServicecenterWorkcardExpressorderConsignRequest) SetWorkcardIdList(workcardIdList []Number) error {
+func (r *TmallServicecenterWorkcardExpressorderConsignRequest) SetWorkcardIdList(workcardIdList []int64) error {
     r.workcardIdList = workcardIdList
     r.Set("workcard_id_list", workcardIdList)
     return nil
 }
 
-func (r TmallServicecenterWorkcardExpressorderConsignRequest) GetWorkcardIdList() []Number {
+func (r TmallServicecenterWorkcardExpressorderConsignRequest) GetWorkcardIdList() []int64 {
     return r.workcardIdList
 }
 

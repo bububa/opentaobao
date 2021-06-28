@@ -12,8 +12,37 @@ alibaba.lsy.crm.create
 */
 type AlibabaLsyCrmCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaLsyCrmCreateResponse `json:"alibaba_lsy_crm_create_response,omitempty"`
+    // Response *AlibabaLsyCrmCreateResponse `json:"alibaba_lsy_crm_create_response,omitempty"` 
+    AlibabaLsyCrmCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaLsyCrmCreateResponse struct {
+
+    // 错误提示
+    
+    FailMsg   string `json:"fail_msg,omitempty"`
+    
+
+    // 错误码
+    
+    FailCode   string `json:"fail_code,omitempty"`
+    
+
+    // 是否成功
+    
+    Succ   bool `json:"succ,omitempty"`
+    
+
+    // 返回的数据
+    
+    Data  *struct {
+        NrtCreateRecordReturnDTO  *NrtCreateRecordReturnDTO `json:"nrt_create_record_return_dto,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaLsyCrmCreateResponse struct {
 

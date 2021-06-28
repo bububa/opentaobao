@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.push
 */
 type TmallServicecenterWorkcardPushAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardPushResponse `json:"tmall_servicecenter_workcard_push_response,omitempty"`
+    // Response *TmallServicecenterWorkcardPushResponse `json:"tmall_servicecenter_workcard_push_response,omitempty"` 
+    TmallServicecenterWorkcardPushResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardPushResponse struct {
+
+    // 返回结果
+    
+    WorkcardResult  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"workcard_result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardPushResponse struct {
 

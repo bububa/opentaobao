@@ -12,8 +12,20 @@ taobao.crm.members.groups.batchdelete
 */
 type TaobaoCrmMembersGroupsBatchdeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmMembersGroupsBatchdeleteResponse `json:"taobao_crm_members_groups_batchdelete_response,omitempty"`
+    // Response *TaobaoCrmMembersGroupsBatchdeleteResponse `json:"crm_members_groups_batchdelete_response,omitempty"` 
+    TaobaoCrmMembersGroupsBatchdeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmMembersGroupsBatchdeleteResponse struct {
+
+    // 删除是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmMembersGroupsBatchdeleteResponse struct {
 

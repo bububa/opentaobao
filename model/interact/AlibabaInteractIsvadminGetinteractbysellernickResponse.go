@@ -12,8 +12,37 @@ alibaba.interact.isvadmin.getinteractbysellernick
 */
 type AlibabaInteractIsvadminGetinteractbysellernickAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractIsvadminGetinteractbysellernickResponse `json:"alibaba_interact_isvadmin_getinteractbysellernick_response,omitempty"`
+    // Response *AlibabaInteractIsvadminGetinteractbysellernickResponse `json:"alibaba_interact_isvadmin_getinteractbysellernick_response,omitempty"` 
+    AlibabaInteractIsvadminGetinteractbysellernickResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractIsvadminGetinteractbysellernickResponse struct {
+
+    // 返回结果是否成功
+    
+    Succ   bool `json:"succ,omitempty"`
+    
+
+    // 错误码
+    
+    Code   string `json:"code,omitempty"`
+    
+
+    // 错误信息
+    
+    Msginfo   string `json:"msginfo,omitempty"`
+    
+
+    // 返回业务数据
+    
+    Interactdtos  struct {
+        InteractDTO  []InteractDTO `json:"interact_dto,omitempty"`
+    } `json:"interactdtos,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractIsvadminGetinteractbysellernickResponse struct {
 

@@ -12,8 +12,20 @@ alibaba.scbp.ad.keyword.price.update
 */
 type AlibabaScbpAdKeywordPriceUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdKeywordPriceUpdateResponse `json:"alibaba_scbp_ad_keyword_price_update_response,omitempty"`
+    // Response *AlibabaScbpAdKeywordPriceUpdateResponse `json:"alibaba_scbp_ad_keyword_price_update_response,omitempty"` 
+    AlibabaScbpAdKeywordPriceUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdKeywordPriceUpdateResponse struct {
+
+    // 修改关键词价格是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdKeywordPriceUpdateResponse struct {
 

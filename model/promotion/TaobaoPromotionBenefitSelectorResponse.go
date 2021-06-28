@@ -17,8 +17,27 @@ taobao.promotion.benefit.selector
 */
 type TaobaoPromotionBenefitSelectorAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionBenefitSelectorResponse `json:"taobao_promotion_benefit_selector_response,omitempty"`
+    // Response *TaobaoPromotionBenefitSelectorResponse `json:"promotion_benefit_selector_response,omitempty"` 
+    TaobaoPromotionBenefitSelectorResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionBenefitSelectorResponse struct {
+
+    // 接口调用是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 权益列表信息
+    
+    BenefitList  struct {
+        BenefitSelectorVo  []BenefitSelectorVo `json:"benefit_selector_vo,omitempty"`
+    } `json:"benefit_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionBenefitSelectorResponse struct {
 

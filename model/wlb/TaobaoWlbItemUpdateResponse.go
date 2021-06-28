@@ -12,8 +12,20 @@ taobao.wlb.item.update
 */
 type TaobaoWlbItemUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbItemUpdateResponse `json:"taobao_wlb_item_update_response,omitempty"`
+    // Response *TaobaoWlbItemUpdateResponse `json:"wlb_item_update_response,omitempty"` 
+    TaobaoWlbItemUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbItemUpdateResponse struct {
+
+    // 修改时间
+    
+    GmtModified   bool `json:"gmt_modified,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbItemUpdateResponse struct {
 

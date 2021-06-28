@@ -11,11 +11,11 @@ taobao.ump.activity.update
 
 修改营销活动
 */
-func TaobaoUmpActivityUpdate(clt *core.SDKClient, req *promotion.TaobaoUmpActivityUpdateRequest, session string) (*promotion.TaobaoUmpActivityUpdateResponse, error) {
+func TaobaoUmpActivityUpdate(clt *core.SDKClient, req *promotion.TaobaoUmpActivityUpdateRequest, session string) (*promotion.TaobaoUmpActivityUpdateAPIResponse, error) {
     var resp promotion.TaobaoUmpActivityUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

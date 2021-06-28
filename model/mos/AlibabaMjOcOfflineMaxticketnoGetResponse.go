@@ -12,8 +12,40 @@ alibaba.mj.oc.offline.maxticketno.get
 */
 type AlibabaMjOcOfflineMaxticketnoGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjOcOfflineMaxticketnoGetResponse `json:"alibaba_mj_oc_offline_maxticketno_get_response,omitempty"`
+    // Response *AlibabaMjOcOfflineMaxticketnoGetResponse `json:"alibaba_mj_oc_offline_maxticketno_get_response,omitempty"` 
+    AlibabaMjOcOfflineMaxticketnoGetResponse
 }
+
+/* model for simplify = false
+type AlibabaMjOcOfflineMaxticketnoGetResponse struct {
+
+    // 时间
+    
+    PayDate   string `json:"pay_date,omitempty"`
+    
+
+    // 收银机号
+    
+    PosNo   string `json:"pos_no,omitempty"`
+    
+
+    // 联合收银标记
+    
+    Union   bool `json:"union,omitempty"`
+    
+
+    // 小票号
+    
+    PayNo   string `json:"pay_no,omitempty"`
+    
+
+    // 外部门店号
+    
+    StoreNo   string `json:"store_no,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjOcOfflineMaxticketnoGetResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.wdk.series.sku.remove
 */
 type AlibabaWdkSeriesSkuRemoveAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkSeriesSkuRemoveResponse `json:"alibaba_wdk_series_sku_remove_response,omitempty"`
+    // Response *AlibabaWdkSeriesSkuRemoveResponse `json:"alibaba_wdk_series_sku_remove_response,omitempty"` 
+    AlibabaWdkSeriesSkuRemoveResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkSeriesSkuRemoveResponse struct {
+
+    // 调用结果
+    
+    ApiResult  *struct {
+        AlibabaWdkSeriesSkuRemoveApiResult  *AlibabaWdkSeriesSkuRemoveApiResult `json:"alibaba_wdk_series_sku_remove_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkSeriesSkuRemoveResponse struct {
 

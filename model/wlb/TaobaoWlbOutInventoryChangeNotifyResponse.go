@@ -12,8 +12,20 @@ taobao.wlb.out.inventory.change.notify
 */
 type TaobaoWlbOutInventoryChangeNotifyAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbOutInventoryChangeNotifyResponse `json:"taobao_wlb_out_inventory_change_notify_response,omitempty"`
+    // Response *TaobaoWlbOutInventoryChangeNotifyResponse `json:"wlb_out_inventory_change_notify_response,omitempty"` 
+    TaobaoWlbOutInventoryChangeNotifyResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbOutInventoryChangeNotifyResponse struct {
+
+    // 库存变化通知成功时间
+    
+    GmtModified   string `json:"gmt_modified,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbOutInventoryChangeNotifyResponse struct {
 

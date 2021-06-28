@@ -12,8 +12,22 @@ taobao.alitrip.travel.item.element.manage
 */
 type TaobaoAlitripTravelItemElementManageAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripTravelItemElementManageResponse `json:"taobao_alitrip_travel_item_element_manage_response,omitempty"`
+    // Response *TaobaoAlitripTravelItemElementManageResponse `json:"alitrip_travel_item_element_manage_response,omitempty"` 
+    TaobaoAlitripTravelItemElementManageResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripTravelItemElementManageResponse struct {
+
+    // firstResult
+    
+    FirstResult  *struct {
+        TopElementResult  *TopElementResult `json:"top_element_result,omitempty"`
+    } `json:"first_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripTravelItemElementManageResponse struct {
 

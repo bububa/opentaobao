@@ -12,8 +12,20 @@ taobao.de.activity.machineid.get
 */
 type TaobaoDeActivityMachineidGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoDeActivityMachineidGetResponse `json:"taobao_de_activity_machineid_get_response,omitempty"`
+    // Response *TaobaoDeActivityMachineidGetResponse `json:"de_activity_machineid_get_response,omitempty"` 
+    TaobaoDeActivityMachineidGetResponse
 }
+
+/* model for simplify = false
+type TaobaoDeActivityMachineidGetResponse struct {
+
+    // 机器号
+    
+    MachineId   string `json:"machine_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoDeActivityMachineidGetResponse struct {
 

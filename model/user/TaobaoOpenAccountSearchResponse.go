@@ -12,8 +12,22 @@ open account数据搜索
 */
 type TaobaoOpenAccountSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenAccountSearchResponse `json:"taobao_open_account_search_response,omitempty"`
+    // Response *TaobaoOpenAccountSearchResponse `json:"open_account_search_response,omitempty"` 
+    TaobaoOpenAccountSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenAccountSearchResponse struct {
+
+    // 返回结果
+    
+    Data  *struct {
+        OpenAccountSearchResult  *OpenAccountSearchResult `json:"open_account_search_result,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenAccountSearchResponse struct {
 

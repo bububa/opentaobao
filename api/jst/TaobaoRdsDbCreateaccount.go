@@ -11,11 +11,11 @@ taobao.rds.db.createaccount
 
 rds创建数据库账户
 */
-func TaobaoRdsDbCreateaccount(clt *core.SDKClient, req *jst.TaobaoRdsDbCreateaccountRequest, session string) (*jst.TaobaoRdsDbCreateaccountResponse, error) {
+func TaobaoRdsDbCreateaccount(clt *core.SDKClient, req *jst.TaobaoRdsDbCreateaccountRequest, session string) (*jst.TaobaoRdsDbCreateaccountAPIResponse, error) {
     var resp jst.TaobaoRdsDbCreateaccountAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

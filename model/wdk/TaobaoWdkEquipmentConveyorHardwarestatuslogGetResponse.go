@@ -12,8 +12,22 @@ taobao.wdk.equipment.conveyor.hardwarestatuslog.get
 */
 type TaobaoWdkEquipmentConveyorHardwarestatuslogGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWdkEquipmentConveyorHardwarestatuslogGetResponse `json:"taobao_wdk_equipment_conveyor_hardwarestatuslog_get_response,omitempty"`
+    // Response *TaobaoWdkEquipmentConveyorHardwarestatuslogGetResponse `json:"wdk_equipment_conveyor_hardwarestatuslog_get_response,omitempty"` 
+    TaobaoWdkEquipmentConveyorHardwarestatuslogGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWdkEquipmentConveyorHardwarestatuslogGetResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        TaobaoWdkEquipmentConveyorHardwarestatuslogGetResult  *TaobaoWdkEquipmentConveyorHardwarestatuslogGetResult `json:"taobao_wdk_equipment_conveyor_hardwarestatuslog_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWdkEquipmentConveyorHardwarestatuslogGetResponse struct {
 

@@ -16,11 +16,11 @@ taobao.trade.fullinfo.get
 <br/>4. 请按需获取字段，减少TOP系统的压力
 <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=tradeapi" target="_blank">点击查看更多交易API说明</a></strong>
 */
-func TaobaoTradeFullinfoGet(clt *core.SDKClient, req *trade.TaobaoTradeFullinfoGetRequest, session string) (*trade.TaobaoTradeFullinfoGetResponse, error) {
+func TaobaoTradeFullinfoGet(clt *core.SDKClient, req *trade.TaobaoTradeFullinfoGetRequest, session string) (*trade.TaobaoTradeFullinfoGetAPIResponse, error) {
     var resp trade.TaobaoTradeFullinfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

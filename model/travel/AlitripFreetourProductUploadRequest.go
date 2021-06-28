@@ -61,7 +61,7 @@ type AlitripFreetourProductUploadRequest struct {
     tripNight   int64 
 
     // 新发布商品时必填。商品图片路径。最多支持5张，第一张为主图，必填，其余四张可选填。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。。注：在SDK中数组多个元素间以英文逗号分隔
-    picUrls   []String 
+    picUrls   []string 
 
     // 可选，淘系商品id，用于将out_product_id关联到已经存在的商品，并且修改该商品外部商家编码为out_product_id。
     itemId   int64 
@@ -79,7 +79,7 @@ type AlitripFreetourProductUploadRequest struct {
     fromLocations   string 
 
     // 可选，商品亮点，最多支持4个亮点。注：在SDK中数组多个元素间以英文逗号分隔
-    subTitles   []String 
+    subTitles   []string 
 
     // 可选，出行人模板id。模板id需要商家以店铺账号身份登录飞猪商家工作台，从卖家工具->出行人管理中获取。注意：如果传0则代表设置为不需要出行人模板或使用飞猪平台默认的类目模板。
     travellerTemplateId   int64 
@@ -94,7 +94,7 @@ type AlitripFreetourProductUploadRequest struct {
     packageOperation   int64 
 
     // 关联商品与店铺类目 结构:"cid1,cid2,...,"。如何获取卖家店铺类目具体参见：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
-    sellerCids   []String 
+    sellerCids   []string 
 
     // 商品秒杀，商品秒杀三个值：可选类型web_only(只能通过web网络秒杀)，wap_only(只能通过wap网络秒杀)，web_and_wap(既能通过web秒杀也能通过wap秒杀)
     secondKill   string 
@@ -263,13 +263,13 @@ func (r AlitripFreetourProductUploadRequest) GetTripNight() int64 {
     return r.tripNight
 }
 
-func (r *AlitripFreetourProductUploadRequest) SetPicUrls(picUrls []String) error {
+func (r *AlitripFreetourProductUploadRequest) SetPicUrls(picUrls []string) error {
     r.picUrls = picUrls
     r.Set("pic_urls", picUrls)
     return nil
 }
 
-func (r AlitripFreetourProductUploadRequest) GetPicUrls() []String {
+func (r AlitripFreetourProductUploadRequest) GetPicUrls() []string {
     return r.picUrls
 }
 
@@ -323,13 +323,13 @@ func (r AlitripFreetourProductUploadRequest) GetFromLocations() string {
     return r.fromLocations
 }
 
-func (r *AlitripFreetourProductUploadRequest) SetSubTitles(subTitles []String) error {
+func (r *AlitripFreetourProductUploadRequest) SetSubTitles(subTitles []string) error {
     r.subTitles = subTitles
     r.Set("sub_titles", subTitles)
     return nil
 }
 
-func (r AlitripFreetourProductUploadRequest) GetSubTitles() []String {
+func (r AlitripFreetourProductUploadRequest) GetSubTitles() []string {
     return r.subTitles
 }
 
@@ -373,13 +373,13 @@ func (r AlitripFreetourProductUploadRequest) GetPackageOperation() int64 {
     return r.packageOperation
 }
 
-func (r *AlitripFreetourProductUploadRequest) SetSellerCids(sellerCids []String) error {
+func (r *AlitripFreetourProductUploadRequest) SetSellerCids(sellerCids []string) error {
     r.sellerCids = sellerCids
     r.Set("seller_cids", sellerCids)
     return nil
 }
 
-func (r AlitripFreetourProductUploadRequest) GetSellerCids() []String {
+func (r AlitripFreetourProductUploadRequest) GetSellerCids() []string {
     return r.sellerCids
 }
 

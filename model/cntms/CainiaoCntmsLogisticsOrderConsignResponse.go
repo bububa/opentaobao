@@ -12,8 +12,20 @@ cainiao.cntms.logistics.order.consign
 */
 type CainiaoCntmsLogisticsOrderConsignAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCntmsLogisticsOrderConsignResponse `json:"cainiao_cntms_logistics_order_consign_response,omitempty"`
+    // Response *CainiaoCntmsLogisticsOrderConsignResponse `json:"cainiao_cntms_logistics_order_consign_response,omitempty"` 
+    CainiaoCntmsLogisticsOrderConsignResponse
 }
+
+/* model for simplify = false
+type CainiaoCntmsLogisticsOrderConsignResponse struct {
+
+    // 物流单号
+    
+    LogisticsOrderCode   string `json:"logistics_order_code,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCntmsLogisticsOrderConsignResponse struct {
 

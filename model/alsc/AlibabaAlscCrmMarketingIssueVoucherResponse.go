@@ -12,8 +12,22 @@ alibaba.alsc.crm.marketing.issue.voucher
 */
 type AlibabaAlscCrmMarketingIssueVoucherAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmMarketingIssueVoucherResponse `json:"alibaba_alsc_crm_marketing_issue_voucher_response,omitempty"`
+    // Response *AlibabaAlscCrmMarketingIssueVoucherResponse `json:"alibaba_alsc_crm_marketing_issue_voucher_response,omitempty"` 
+    AlibabaAlscCrmMarketingIssueVoucherResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmMarketingIssueVoucherResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmMarketingIssueVoucherResponse struct {
 

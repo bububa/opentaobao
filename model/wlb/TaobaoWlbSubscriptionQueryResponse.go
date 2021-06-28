@@ -12,8 +12,27 @@ taobao.wlb.subscription.query
 */
 type TaobaoWlbSubscriptionQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbSubscriptionQueryResponse `json:"taobao_wlb_subscription_query_response,omitempty"`
+    // Response *TaobaoWlbSubscriptionQueryResponse `json:"wlb_subscription_query_response,omitempty"` 
+    TaobaoWlbSubscriptionQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbSubscriptionQueryResponse struct {
+
+    // 结果总数
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+    // 卖家定购的服务列表
+    
+    SellerSubscriptionList  struct {
+        WlbSellerSubscription  []WlbSellerSubscription `json:"wlb_seller_subscription,omitempty"`
+    } `json:"seller_subscription_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbSubscriptionQueryResponse struct {
 

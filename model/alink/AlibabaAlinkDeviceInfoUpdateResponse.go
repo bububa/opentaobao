@@ -12,8 +12,22 @@ alibaba.alink.device.info.update
 */
 type AlibabaAlinkDeviceInfoUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlinkDeviceInfoUpdateResponse `json:"alibaba_alink_device_info_update_response,omitempty"`
+    // Response *AlibabaAlinkDeviceInfoUpdateResponse `json:"alibaba_alink_device_info_update_response,omitempty"` 
+    AlibabaAlinkDeviceInfoUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaAlinkDeviceInfoUpdateResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        TopServiceResult  *TopServiceResult `json:"top_service_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlinkDeviceInfoUpdateResponse struct {
 

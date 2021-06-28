@@ -1,6 +1,53 @@
 package xiami
 
 // TagAlbums 
+/* model for simplify = false
+type TagAlbums struct {
+
+    // 专辑id
+    
+    AlbumId   int64 `json:"album_id,omitempty"`
+    
+
+    // 艺人名
+    
+    ArtistName   string `json:"artist_name,omitempty"`
+    
+
+    // 状态
+    
+    Status   int64 `json:"status,omitempty"`
+    
+
+    // 分数
+    
+    Grade   int64 `json:"grade,omitempty"`
+    
+
+    // 艺人id
+    
+    ArtistId   int64 `json:"artist_id,omitempty"`
+    
+
+    // 专辑名
+    
+    AlbumName   string `json:"album_name,omitempty"`
+    
+
+    // 是否可试听，0：不可，1：可试听
+    
+    IsPlay   int64 `json:"is_play,omitempty"`
+    
+
+    // 专辑封面
+    
+    AlbumLogo   string `json:"album_logo,omitempty"`
+    
+
+}
+*/
+
+// TagAlbums 
 type TagAlbums struct {
 
     // 专辑id

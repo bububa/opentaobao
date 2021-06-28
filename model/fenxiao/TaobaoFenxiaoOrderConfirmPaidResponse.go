@@ -12,8 +12,20 @@ taobao.fenxiao.order.confirm.paid
 */
 type TaobaoFenxiaoOrderConfirmPaidAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoOrderConfirmPaidResponse `json:"taobao_fenxiao_order_confirm_paid_response,omitempty"`
+    // Response *TaobaoFenxiaoOrderConfirmPaidResponse `json:"fenxiao_order_confirm_paid_response,omitempty"` 
+    TaobaoFenxiaoOrderConfirmPaidResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoOrderConfirmPaidResponse struct {
+
+    // 确认结果成功与否
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoOrderConfirmPaidResponse struct {
 

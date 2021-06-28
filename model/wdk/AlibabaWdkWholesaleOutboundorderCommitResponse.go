@@ -12,8 +12,22 @@ alibaba.wdk.wholesale.outboundorder.commit
 */
 type AlibabaWdkWholesaleOutboundorderCommitAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkWholesaleOutboundorderCommitResponse `json:"alibaba_wdk_wholesale_outboundorder_commit_response,omitempty"`
+    // Response *AlibabaWdkWholesaleOutboundorderCommitResponse `json:"alibaba_wdk_wholesale_outboundorder_commit_response,omitempty"` 
+    AlibabaWdkWholesaleOutboundorderCommitResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkWholesaleOutboundorderCommitResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaWdkWholesaleOutboundorderCommitApiResult  *AlibabaWdkWholesaleOutboundorderCommitApiResult `json:"alibaba_wdk_wholesale_outboundorder_commit_api_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkWholesaleOutboundorderCommitResponse struct {
 

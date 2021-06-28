@@ -25,10 +25,10 @@ type TmallServicecenterMsfTasksUpdateRequest struct {
     source   string 
 
     // 子订单号列表。最多100个
-    bizOrderIds   []Number 
+    bizOrderIds   []int64 
 
     // 周期序号。必须与子订单列表对应
-    seqs   []Number 
+    seqs   []int64 
 
 }
 
@@ -81,23 +81,23 @@ func (r TmallServicecenterMsfTasksUpdateRequest) GetSource() string {
     return r.source
 }
 
-func (r *TmallServicecenterMsfTasksUpdateRequest) SetBizOrderIds(bizOrderIds []Number) error {
+func (r *TmallServicecenterMsfTasksUpdateRequest) SetBizOrderIds(bizOrderIds []int64) error {
     r.bizOrderIds = bizOrderIds
     r.Set("biz_order_ids", bizOrderIds)
     return nil
 }
 
-func (r TmallServicecenterMsfTasksUpdateRequest) GetBizOrderIds() []Number {
+func (r TmallServicecenterMsfTasksUpdateRequest) GetBizOrderIds() []int64 {
     return r.bizOrderIds
 }
 
-func (r *TmallServicecenterMsfTasksUpdateRequest) SetSeqs(seqs []Number) error {
+func (r *TmallServicecenterMsfTasksUpdateRequest) SetSeqs(seqs []int64) error {
     r.seqs = seqs
     r.Set("seqs", seqs)
     return nil
 }
 
-func (r TmallServicecenterMsfTasksUpdateRequest) GetSeqs() []Number {
+func (r TmallServicecenterMsfTasksUpdateRequest) GetSeqs() []int64 {
     return r.seqs
 }
 

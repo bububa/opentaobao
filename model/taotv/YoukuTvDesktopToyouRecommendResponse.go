@@ -12,8 +12,22 @@ youku.tv.desktop.toyou.recommend
 */
 type YoukuTvDesktopToyouRecommendAPIResponse struct {
     model.CommonResponse
-    Response *YoukuTvDesktopToyouRecommendResponse `json:"youku_tv_desktop_toyou_recommend_response,omitempty"`
+    // Response *YoukuTvDesktopToyouRecommendResponse `json:"youku_tv_desktop_toyou_recommend_response,omitempty"` 
+    YoukuTvDesktopToyouRecommendResponse
 }
+
+/* model for simplify = false
+type YoukuTvDesktopToyouRecommendResponse struct {
+
+    // 响应的结果列表
+    
+    Results  struct {
+        V5BaseItemRbo  []V5BaseItemRbo `json:"v5base_item_rbo,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type YoukuTvDesktopToyouRecommendResponse struct {
 

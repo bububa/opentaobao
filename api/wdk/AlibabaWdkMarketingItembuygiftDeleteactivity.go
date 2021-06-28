@@ -11,11 +11,11 @@ alibaba.wdk.marketing.itembuygift.deleteactivity
 
 删除买赠活动
 */
-func AlibabaWdkMarketingItembuygiftDeleteactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftDeleteactivityRequest, session string) (*wdk.AlibabaWdkMarketingItembuygiftDeleteactivityResponse, error) {
+func AlibabaWdkMarketingItembuygiftDeleteactivity(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItembuygiftDeleteactivityRequest, session string) (*wdk.AlibabaWdkMarketingItembuygiftDeleteactivityAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItembuygiftDeleteactivityAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

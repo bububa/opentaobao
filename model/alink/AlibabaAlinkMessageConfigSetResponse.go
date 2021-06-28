@@ -12,8 +12,22 @@ alibaba.alink.message.config.set
 */
 type AlibabaAlinkMessageConfigSetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlinkMessageConfigSetResponse `json:"alibaba_alink_message_config_set_response,omitempty"`
+    // Response *AlibabaAlinkMessageConfigSetResponse `json:"alibaba_alink_message_config_set_response,omitempty"` 
+    AlibabaAlinkMessageConfigSetResponse
 }
+
+/* model for simplify = false
+type AlibabaAlinkMessageConfigSetResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        TopServiceResult  *TopServiceResult `json:"top_service_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlinkMessageConfigSetResponse struct {
 

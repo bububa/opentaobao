@@ -12,8 +12,20 @@ taobao.oc.tradetag.attach
 */
 type TaobaoOcTradetagAttachAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOcTradetagAttachResponse `json:"taobao_oc_tradetag_attach_response,omitempty"`
+    // Response *TaobaoOcTradetagAttachResponse `json:"oc_tradetag_attach_response,omitempty"` 
+    TaobaoOcTradetagAttachResponse
 }
+
+/* model for simplify = false
+type TaobaoOcTradetagAttachResponse struct {
+
+    // 操作成功或者操作失败
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOcTradetagAttachResponse struct {
 

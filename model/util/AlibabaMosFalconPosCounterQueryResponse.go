@@ -12,8 +12,22 @@ alibaba.mos.falcon.pos.counter.query
 */
 type AlibabaMosFalconPosCounterQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosFalconPosCounterQueryResponse `json:"alibaba_mos_falcon_pos_counter_query_response,omitempty"`
+    // Response *AlibabaMosFalconPosCounterQueryResponse `json:"alibaba_mos_falcon_pos_counter_query_response,omitempty"` 
+    AlibabaMosFalconPosCounterQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaMosFalconPosCounterQueryResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        AlibabaMosFalconPosCounterQueryResultDo  *AlibabaMosFalconPosCounterQueryResultDo `json:"alibaba_mos_falcon_pos_counter_query_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosFalconPosCounterQueryResponse struct {
 

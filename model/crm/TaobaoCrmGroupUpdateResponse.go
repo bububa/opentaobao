@@ -12,8 +12,20 @@ taobao.crm.group.update
 */
 type TaobaoCrmGroupUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGroupUpdateResponse `json:"taobao_crm_group_update_response,omitempty"`
+    // Response *TaobaoCrmGroupUpdateResponse `json:"crm_group_update_response,omitempty"` 
+    TaobaoCrmGroupUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGroupUpdateResponse struct {
+
+    // 分组修改是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGroupUpdateResponse struct {
 

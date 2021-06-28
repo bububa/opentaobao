@@ -19,7 +19,7 @@ type TmallCcfCrowdActivityuserUploadRequest struct {
     activityId   int64 
 
     // 人群类型
-    crowdTypes   []String 
+    crowdTypes   []string 
 
     // 淘宝小程序的openid
     taobaoOpenId   string 
@@ -58,13 +58,13 @@ func (r TmallCcfCrowdActivityuserUploadRequest) GetActivityId() int64 {
     return r.activityId
 }
 
-func (r *TmallCcfCrowdActivityuserUploadRequest) SetCrowdTypes(crowdTypes []String) error {
+func (r *TmallCcfCrowdActivityuserUploadRequest) SetCrowdTypes(crowdTypes []string) error {
     r.crowdTypes = crowdTypes
     r.Set("crowd_types", crowdTypes)
     return nil
 }
 
-func (r TmallCcfCrowdActivityuserUploadRequest) GetCrowdTypes() []String {
+func (r TmallCcfCrowdActivityuserUploadRequest) GetCrowdTypes() []string {
     return r.crowdTypes
 }
 

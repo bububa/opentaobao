@@ -11,11 +11,11 @@ taobao.wlb.imports.vas.identity.result
 
 集货鉴定结果查询
 */
-func TaobaoWlbImportsVasIdentityResult(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsVasIdentityResultRequest, session string) (*wlbimports.TaobaoWlbImportsVasIdentityResultResponse, error) {
+func TaobaoWlbImportsVasIdentityResult(clt *core.SDKClient, req *wlbimports.TaobaoWlbImportsVasIdentityResultRequest, session string) (*wlbimports.TaobaoWlbImportsVasIdentityResultAPIResponse, error) {
     var resp wlbimports.TaobaoWlbImportsVasIdentityResultAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

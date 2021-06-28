@@ -12,8 +12,22 @@ taobao.bus.order.get
 */
 type TaobaoBusOrderGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusOrderGetResponse `json:"taobao_bus_order_get_response,omitempty"`
+    // Response *TaobaoBusOrderGetResponse `json:"bus_order_get_response,omitempty"` 
+    TaobaoBusOrderGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusOrderGetResponse struct {
+
+    // 订单查询返回对象
+    
+    Result  *struct {
+        B2BOrderQueryRp  *B2BOrderQueryRp `json:"b2b_order_query_rp,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusOrderGetResponse struct {
 

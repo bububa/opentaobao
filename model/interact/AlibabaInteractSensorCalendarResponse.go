@@ -12,8 +12,20 @@ alibaba.interact.sensor.calendar
 */
 type AlibabaInteractSensorCalendarAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorCalendarResponse `json:"alibaba_interact_sensor_calendar_response,omitempty"`
+    // Response *AlibabaInteractSensorCalendarResponse `json:"alibaba_interact_sensor_calendar_response,omitempty"` 
+    AlibabaInteractSensorCalendarResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorCalendarResponse struct {
+
+    // 返回结果
+    
+    Succ   bool `json:"succ,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorCalendarResponse struct {
 

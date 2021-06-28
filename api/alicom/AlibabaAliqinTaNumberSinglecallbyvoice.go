@@ -11,11 +11,11 @@ alibaba.aliqin.ta.number.singlecallbyvoice
 
 根据号码语音单呼
 */
-func AlibabaAliqinTaNumberSinglecallbyvoice(clt *core.SDKClient, req *alicom.AlibabaAliqinTaNumberSinglecallbyvoiceRequest, session string) (*alicom.AlibabaAliqinTaNumberSinglecallbyvoiceResponse, error) {
+func AlibabaAliqinTaNumberSinglecallbyvoice(clt *core.SDKClient, req *alicom.AlibabaAliqinTaNumberSinglecallbyvoiceRequest, session string) (*alicom.AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse, error) {
     var resp alicom.AlibabaAliqinTaNumberSinglecallbyvoiceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,35 @@ alibaba.wdk.item.trace.url.get
 */
 type AlibabaWdkItemTraceUrlGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkItemTraceUrlGetResponse `json:"alibaba_wdk_item_trace_url_get_response,omitempty"`
+    // Response *AlibabaWdkItemTraceUrlGetResponse `json:"alibaba_wdk_item_trace_url_get_response,omitempty"` 
+    AlibabaWdkItemTraceUrlGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkItemTraceUrlGetResponse struct {
+
+    // message
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // data
+    
+    Data   string `json:"data,omitempty"`
+    
+
+    // code
+    
+    ReturnCode   string `json:"return_code,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkItemTraceUrlGetResponse struct {
 

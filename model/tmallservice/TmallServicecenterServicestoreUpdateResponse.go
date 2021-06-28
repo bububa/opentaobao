@@ -12,8 +12,22 @@ tmall.servicecenter.servicestore.update
 */
 type TmallServicecenterServicestoreUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterServicestoreUpdateResponse `json:"tmall_servicecenter_servicestore_update_response,omitempty"`
+    // Response *TmallServicecenterServicestoreUpdateResponse `json:"tmall_servicecenter_servicestore_update_response,omitempty"` 
+    TmallServicecenterServicestoreUpdateResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterServicestoreUpdateResponse struct {
+
+    // 方法调用结果
+    
+    Result  *struct {
+        TmallServicecenterServicestoreUpdateResult  *TmallServicecenterServicestoreUpdateResult `json:"tmall_servicecenter_servicestore_update_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterServicestoreUpdateResponse struct {
 

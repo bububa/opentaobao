@@ -19,7 +19,7 @@ type AlibabaSecurityJaqAppRiskScanbatchRequest struct {
     appInfo   *AppInfoBatch 
 
     // 扫描类型
-    scanTypes   []String 
+    scanTypes   []string 
 
 }
 
@@ -52,13 +52,13 @@ func (r AlibabaSecurityJaqAppRiskScanbatchRequest) GetAppInfo() *AppInfoBatch {
     return r.appInfo
 }
 
-func (r *AlibabaSecurityJaqAppRiskScanbatchRequest) SetScanTypes(scanTypes []String) error {
+func (r *AlibabaSecurityJaqAppRiskScanbatchRequest) SetScanTypes(scanTypes []string) error {
     r.scanTypes = scanTypes
     r.Set("scan_types", scanTypes)
     return nil
 }
 
-func (r AlibabaSecurityJaqAppRiskScanbatchRequest) GetScanTypes() []String {
+func (r AlibabaSecurityJaqAppRiskScanbatchRequest) GetScanTypes() []string {
     return r.scanTypes
 }
 

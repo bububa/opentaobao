@@ -12,8 +12,22 @@ taobao.simba.salestar.adgroup.findbycampid
 */
 type TaobaoSimbaSalestarAdgroupFindbycampidAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaSalestarAdgroupFindbycampidResponse `json:"taobao_simba_salestar_adgroup_findbycampid_response,omitempty"`
+    // Response *TaobaoSimbaSalestarAdgroupFindbycampidResponse `json:"simba_salestar_adgroup_findbycampid_response,omitempty"` 
+    TaobaoSimbaSalestarAdgroupFindbycampidResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaSalestarAdgroupFindbycampidResponse struct {
+
+    // 返回的推广组分页对象
+    
+    Adgroups  *struct {
+        ADGroupPage  *ADGroupPage `json:"ad_group_page,omitempty"`
+    } `json:"adgroups,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaSalestarAdgroupFindbycampidResponse struct {
 

@@ -12,8 +12,22 @@ taobao.shop.update
 */
 type TaobaoShopUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoShopUpdateResponse `json:"taobao_shop_update_response,omitempty"`
+    // Response *TaobaoShopUpdateResponse `json:"shop_update_response,omitempty"` 
+    TaobaoShopUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoShopUpdateResponse struct {
+
+    // 店铺信息
+    
+    Shop  *struct {
+        Shop  *Shop `json:"shop,omitempty"`
+    } `json:"shop,omitempty"`
+    
+
+}
+*/
 
 type TaobaoShopUpdateResponse struct {
 

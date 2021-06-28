@@ -11,11 +11,11 @@ alibaba.security.jaq.rp.getverifytoken
 
 聚安全实人认证获取认证会话token
 */
-func AlibabaSecurityJaqRpGetverifytoken(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpGetverifytokenRequest, session string) (*security.AlibabaSecurityJaqRpGetverifytokenResponse, error) {
+func AlibabaSecurityJaqRpGetverifytoken(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpGetverifytokenRequest, session string) (*security.AlibabaSecurityJaqRpGetverifytokenAPIResponse, error) {
     var resp security.AlibabaSecurityJaqRpGetverifytokenAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

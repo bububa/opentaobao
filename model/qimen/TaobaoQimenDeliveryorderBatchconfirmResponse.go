@@ -12,8 +12,22 @@ taobao.qimen.deliveryorder.batchconfirm
 */
 type TaobaoQimenDeliveryorderBatchconfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenDeliveryorderBatchconfirmResponse `json:"taobao_qimen_deliveryorder_batchconfirm_response,omitempty"`
+    // Response *TaobaoQimenDeliveryorderBatchconfirmResponse `json:"qimen_deliveryorder_batchconfirm_response,omitempty"` 
+    TaobaoQimenDeliveryorderBatchconfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenDeliveryorderBatchconfirmResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenDeliveryorderBatchconfirmResponse struct {
 

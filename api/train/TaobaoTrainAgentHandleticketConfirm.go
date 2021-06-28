@@ -11,11 +11,11 @@ taobao.train.agent.handleticket.confirm
 
 代理商出票中
 */
-func TaobaoTrainAgentHandleticketConfirm(clt *core.SDKClient, req *train.TaobaoTrainAgentHandleticketConfirmRequest, session string) (*train.TaobaoTrainAgentHandleticketConfirmResponse, error) {
+func TaobaoTrainAgentHandleticketConfirm(clt *core.SDKClient, req *train.TaobaoTrainAgentHandleticketConfirmRequest, session string) (*train.TaobaoTrainAgentHandleticketConfirmAPIResponse, error) {
     var resp train.TaobaoTrainAgentHandleticketConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

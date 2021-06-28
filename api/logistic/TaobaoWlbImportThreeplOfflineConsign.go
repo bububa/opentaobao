@@ -11,11 +11,11 @@ taobao.wlb.import.threepl.offline.consign
 
 菜鸟认证直邮线下发货
 */
-func TaobaoWlbImportThreeplOfflineConsign(clt *core.SDKClient, req *logistic.TaobaoWlbImportThreeplOfflineConsignRequest, session string) (*logistic.TaobaoWlbImportThreeplOfflineConsignResponse, error) {
+func TaobaoWlbImportThreeplOfflineConsign(clt *core.SDKClient, req *logistic.TaobaoWlbImportThreeplOfflineConsignRequest, session string) (*logistic.TaobaoWlbImportThreeplOfflineConsignAPIResponse, error) {
     var resp logistic.TaobaoWlbImportThreeplOfflineConsignAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ tmall.item.calculate.hscode.get
 
 算法获取hscode
 */
-func TmallItemCalculateHscodeGet(clt *core.SDKClient, req *product.TmallItemCalculateHscodeGetRequest, session string) (*product.TmallItemCalculateHscodeGetResponse, error) {
+func TmallItemCalculateHscodeGet(clt *core.SDKClient, req *product.TmallItemCalculateHscodeGetRequest, session string) (*product.TmallItemCalculateHscodeGetAPIResponse, error) {
     var resp product.TmallItemCalculateHscodeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

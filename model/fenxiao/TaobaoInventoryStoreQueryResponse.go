@@ -12,8 +12,22 @@ taobao.inventory.store.query
 */
 type TaobaoInventoryStoreQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoInventoryStoreQueryResponse `json:"taobao_inventory_store_query_response,omitempty"`
+    // Response *TaobaoInventoryStoreQueryResponse `json:"inventory_store_query_response,omitempty"` 
+    TaobaoInventoryStoreQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoInventoryStoreQueryResponse struct {
+
+    // 仓库列表
+    
+    StoreList  struct {
+        Store  []Store `json:"store,omitempty"`
+    } `json:"store_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoInventoryStoreQueryResponse struct {
 

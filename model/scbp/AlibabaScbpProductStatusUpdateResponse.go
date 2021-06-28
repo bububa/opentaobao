@@ -12,8 +12,20 @@ alibaba.scbp.product.status.update
 */
 type AlibabaScbpProductStatusUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpProductStatusUpdateResponse `json:"alibaba_scbp_product_status_update_response,omitempty"`
+    // Response *AlibabaScbpProductStatusUpdateResponse `json:"alibaba_scbp_product_status_update_response,omitempty"` 
+    AlibabaScbpProductStatusUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpProductStatusUpdateResponse struct {
+
+    // 实际修改的产品数
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpProductStatusUpdateResponse struct {
 

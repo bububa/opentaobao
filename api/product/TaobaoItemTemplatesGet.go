@@ -11,11 +11,11 @@ taobao.item.templates.get
 
 查询当前登录用户的店铺的宝贝详情页的模板名称
 */
-func TaobaoItemTemplatesGet(clt *core.SDKClient, req *product.TaobaoItemTemplatesGetRequest, session string) (*product.TaobaoItemTemplatesGetResponse, error) {
+func TaobaoItemTemplatesGet(clt *core.SDKClient, req *product.TaobaoItemTemplatesGetRequest, session string) (*product.TaobaoItemTemplatesGetAPIResponse, error) {
     var resp product.TaobaoItemTemplatesGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

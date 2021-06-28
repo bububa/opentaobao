@@ -11,11 +11,11 @@ alibaba.alsc.crm.open.customer.get
 
 查询会员身份，资产等
 */
-func AlibabaAlscCrmOpenCustomerGet(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenCustomerGetRequest, session string) (*alsc.AlibabaAlscCrmOpenCustomerGetResponse, error) {
+func AlibabaAlscCrmOpenCustomerGet(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenCustomerGetRequest, session string) (*alsc.AlibabaAlscCrmOpenCustomerGetAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmOpenCustomerGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

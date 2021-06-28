@@ -12,8 +12,22 @@ taobao.qimen.deliveryorder.confirm
 */
 type TaobaoQimenDeliveryorderConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenDeliveryorderConfirmResponse `json:"taobao_qimen_deliveryorder_confirm_response,omitempty"`
+    // Response *TaobaoQimenDeliveryorderConfirmResponse `json:"qimen_deliveryorder_confirm_response,omitempty"` 
+    TaobaoQimenDeliveryorderConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenDeliveryorderConfirmResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenDeliveryorderConfirmResponse struct {
 

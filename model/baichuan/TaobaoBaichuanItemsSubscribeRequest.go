@@ -16,7 +16,7 @@ type TaobaoBaichuanItemsSubscribeRequest struct {
     model.Params
 
     // 订阅的商品id列表
-    itemIds   []Number 
+    itemIds   []int64 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoBaichuanItemsSubscribeRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoBaichuanItemsSubscribeRequest) SetItemIds(itemIds []Number) error {
+func (r *TaobaoBaichuanItemsSubscribeRequest) SetItemIds(itemIds []int64) error {
     r.itemIds = itemIds
     r.Set("item_ids", itemIds)
     return nil
 }
 
-func (r TaobaoBaichuanItemsSubscribeRequest) GetItemIds() []Number {
+func (r TaobaoBaichuanItemsSubscribeRequest) GetItemIds() []int64 {
     return r.itemIds
 }
 

@@ -16,7 +16,7 @@ type AlibabaWdkMarketingOpenDataRelationQueryRequest struct {
     model.Params
 
     // 外部数据Id
-    outDataIds   []String 
+    outDataIds   []string 
 
     // 数据类型：WDK_MARKET:五道口营销
     bizCode   string 
@@ -45,13 +45,13 @@ func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetApiParams() url.Valu
 }
 
 
-func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetOutDataIds(outDataIds []String) error {
+func (r *AlibabaWdkMarketingOpenDataRelationQueryRequest) SetOutDataIds(outDataIds []string) error {
     r.outDataIds = outDataIds
     r.Set("out_data_ids", outDataIds)
     return nil
 }
 
-func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetOutDataIds() []String {
+func (r AlibabaWdkMarketingOpenDataRelationQueryRequest) GetOutDataIds() []string {
     return r.outDataIds
 }
 

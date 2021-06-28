@@ -11,11 +11,11 @@ taobao.baichuan.taoke.trace
 
 百川淘客打点
 */
-func TaobaoBaichuanTaokeTrace(clt *core.SDKClient, req *baichuan.TaobaoBaichuanTaokeTraceRequest, session string) (*baichuan.TaobaoBaichuanTaokeTraceResponse, error) {
+func TaobaoBaichuanTaokeTrace(clt *core.SDKClient, req *baichuan.TaobaoBaichuanTaokeTraceRequest, session string) (*baichuan.TaobaoBaichuanTaokeTraceAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanTaokeTraceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -43,7 +43,7 @@ type TaobaoProductAddRequest struct {
     price   string 
 
     // 产品主图片.最大1M,目前仅支持GIF,JPG.
-    image   []byte 
+    image   []*model.File 
 
     // 产品名称,最大30个字符.
     name   string 
@@ -161,13 +161,13 @@ func (r TaobaoProductAddRequest) GetPrice() string {
     return r.price
 }
 
-func (r *TaobaoProductAddRequest) SetImage(image []byte) error {
+func (r *TaobaoProductAddRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoProductAddRequest) GetImage() []byte {
+func (r TaobaoProductAddRequest) GetImage() []*model.File {
     return r.image
 }
 

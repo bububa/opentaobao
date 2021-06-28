@@ -11,11 +11,11 @@ taobao.rds.db.get
 
 查询rds实例下的数据库
 */
-func TaobaoRdsDbGet(clt *core.SDKClient, req *jst.TaobaoRdsDbGetRequest, session string) (*jst.TaobaoRdsDbGetResponse, error) {
+func TaobaoRdsDbGet(clt *core.SDKClient, req *jst.TaobaoRdsDbGetRequest, session string) (*jst.TaobaoRdsDbGetAPIResponse, error) {
     var resp jst.TaobaoRdsDbGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

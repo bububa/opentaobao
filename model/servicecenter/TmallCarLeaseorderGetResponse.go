@@ -12,8 +12,22 @@ tmall.car.leaseorder.get
 */
 type TmallCarLeaseorderGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallCarLeaseorderGetResponse `json:"tmall_car_leaseorder_get_response,omitempty"`
+    // Response *TmallCarLeaseorderGetResponse `json:"tmall_car_leaseorder_get_response,omitempty"` 
+    TmallCarLeaseorderGetResponse
 }
+
+/* model for simplify = false
+type TmallCarLeaseorderGetResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        ResultVo  *ResultVo `json:"result_vo,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallCarLeaseorderGetResponse struct {
 

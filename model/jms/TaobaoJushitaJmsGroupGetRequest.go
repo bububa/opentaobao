@@ -22,7 +22,7 @@ type TaobaoJushitaJmsGroupGetRequest struct {
     pageSize   int64 
 
     // 要查询分组的名称，多个分组用半角逗号分隔，不传代表查询所有分组信息，但不会返回组下面的用户信息。如果应用没有设置分组则返回空。组名不能以default开头，default开头是系统默认的组。
-    groupNames   []String 
+    groupNames   []string 
 
 }
 
@@ -65,13 +65,13 @@ func (r TaobaoJushitaJmsGroupGetRequest) GetPageSize() int64 {
     return r.pageSize
 }
 
-func (r *TaobaoJushitaJmsGroupGetRequest) SetGroupNames(groupNames []String) error {
+func (r *TaobaoJushitaJmsGroupGetRequest) SetGroupNames(groupNames []string) error {
     r.groupNames = groupNames
     r.Set("group_names", groupNames)
     return nil
 }
 
-func (r TaobaoJushitaJmsGroupGetRequest) GetGroupNames() []String {
+func (r TaobaoJushitaJmsGroupGetRequest) GetGroupNames() []string {
     return r.groupNames
 }
 

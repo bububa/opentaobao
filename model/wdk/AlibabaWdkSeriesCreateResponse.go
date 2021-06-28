@@ -12,8 +12,22 @@ alibaba.wdk.series.create
 */
 type AlibabaWdkSeriesCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkSeriesCreateResponse `json:"alibaba_wdk_series_create_response,omitempty"`
+    // Response *AlibabaWdkSeriesCreateResponse `json:"alibaba_wdk_series_create_response,omitempty"` 
+    AlibabaWdkSeriesCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkSeriesCreateResponse struct {
+
+    // 调用结果
+    
+    ApiResult  *struct {
+        AlibabaWdkSeriesCreateApiResult  *AlibabaWdkSeriesCreateApiResult `json:"alibaba_wdk_series_create_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkSeriesCreateResponse struct {
 

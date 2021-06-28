@@ -16,7 +16,7 @@ type TaobaoOpenimUsersGetRequest struct {
     model.Params
 
     // 用户id序列
-    userids   []String 
+    userids   []string 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoOpenimUsersGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoOpenimUsersGetRequest) SetUserids(userids []String) error {
+func (r *TaobaoOpenimUsersGetRequest) SetUserids(userids []string) error {
     r.userids = userids
     r.Set("userids", userids)
     return nil
 }
 
-func (r TaobaoOpenimUsersGetRequest) GetUserids() []String {
+func (r TaobaoOpenimUsersGetRequest) GetUserids() []string {
     return r.userids
 }
 

@@ -12,8 +12,20 @@ taobao.rp.returngoods.agree
 */
 type TaobaoRpReturngoodsAgreeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRpReturngoodsAgreeResponse `json:"taobao_rp_returngoods_agree_response,omitempty"`
+    // Response *TaobaoRpReturngoodsAgreeResponse `json:"rp_returngoods_agree_response,omitempty"` 
+    TaobaoRpReturngoodsAgreeResponse
 }
+
+/* model for simplify = false
+type TaobaoRpReturngoodsAgreeResponse struct {
+
+    // 操作成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRpReturngoodsAgreeResponse struct {
 

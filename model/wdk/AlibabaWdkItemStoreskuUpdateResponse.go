@@ -12,8 +12,22 @@ alibaba.wdk.item.storesku.update
 */
 type AlibabaWdkItemStoreskuUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkItemStoreskuUpdateResponse `json:"alibaba_wdk_item_storesku_update_response,omitempty"`
+    // Response *AlibabaWdkItemStoreskuUpdateResponse `json:"alibaba_wdk_item_storesku_update_response,omitempty"` 
+    AlibabaWdkItemStoreskuUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkItemStoreskuUpdateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaWdkItemStoreskuUpdateResult  *AlibabaWdkItemStoreskuUpdateResult `json:"alibaba_wdk_item_storesku_update_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkItemStoreskuUpdateResponse struct {
 

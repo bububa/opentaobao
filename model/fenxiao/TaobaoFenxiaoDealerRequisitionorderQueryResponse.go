@@ -12,8 +12,22 @@ taobao.fenxiao.dealer.requisitionorder.query
 */
 type TaobaoFenxiaoDealerRequisitionorderQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoDealerRequisitionorderQueryResponse `json:"taobao_fenxiao_dealer_requisitionorder_query_response,omitempty"`
+    // Response *TaobaoFenxiaoDealerRequisitionorderQueryResponse `json:"fenxiao_dealer_requisitionorder_query_response,omitempty"` 
+    TaobaoFenxiaoDealerRequisitionorderQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoDealerRequisitionorderQueryResponse struct {
+
+    // 经销采购单结果列表
+    
+    DealerOrders  struct {
+        DealerOrder  []DealerOrder `json:"dealer_order,omitempty"`
+    } `json:"dealer_orders,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoDealerRequisitionorderQueryResponse struct {
 

@@ -12,8 +12,20 @@ taobao.openuid.get.bymixnick
 */
 type TaobaoOpenuidGetBymixnickAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenuidGetBymixnickResponse `json:"taobao_openuid_get_bymixnick_response,omitempty"`
+    // Response *TaobaoOpenuidGetBymixnickResponse `json:"openuid_get_bymixnick_response,omitempty"` 
+    TaobaoOpenuidGetBymixnickResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenuidGetBymixnickResponse struct {
+
+    // OpenUID
+    
+    OpenUid   string `json:"open_uid,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenuidGetBymixnickResponse struct {
 

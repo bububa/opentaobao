@@ -12,8 +12,20 @@ taobao.rp.returngoods.refill
 */
 type TaobaoRpReturngoodsRefillAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRpReturngoodsRefillResponse `json:"taobao_rp_returngoods_refill_response,omitempty"`
+    // Response *TaobaoRpReturngoodsRefillResponse `json:"rp_returngoods_refill_response,omitempty"` 
+    TaobaoRpReturngoodsRefillResponse
 }
+
+/* model for simplify = false
+type TaobaoRpReturngoodsRefillResponse struct {
+
+    // 验货操作是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRpReturngoodsRefillResponse struct {
 

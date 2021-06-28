@@ -12,8 +12,20 @@ taobao.marketing.promotion.kfc
 */
 type TaobaoMarketingPromotionKfcAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMarketingPromotionKfcResponse `json:"taobao_marketing_promotion_kfc_response,omitempty"`
+    // Response *TaobaoMarketingPromotionKfcResponse `json:"marketing_promotion_kfc_response,omitempty"` 
+    TaobaoMarketingPromotionKfcResponse
 }
+
+/* model for simplify = false
+type TaobaoMarketingPromotionKfcResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMarketingPromotionKfcResponse struct {
 

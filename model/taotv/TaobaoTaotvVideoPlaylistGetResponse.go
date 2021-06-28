@@ -12,8 +12,22 @@ taobao.taotv.video.playlist.get
 */
 type TaobaoTaotvVideoPlaylistGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTaotvVideoPlaylistGetResponse `json:"taobao_taotv_video_playlist_get_response,omitempty"`
+    // Response *TaobaoTaotvVideoPlaylistGetResponse `json:"taotv_video_playlist_get_response,omitempty"` 
+    TaobaoTaotvVideoPlaylistGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTaotvVideoPlaylistGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoTaotvVideoPlaylistGetResult  *TaobaoTaotvVideoPlaylistGetResult `json:"taobao_taotv_video_playlist_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTaotvVideoPlaylistGetResponse struct {
 

@@ -12,8 +12,25 @@ taobao.simba.salestar.adgroup.delete
 */
 type TaobaoSimbaSalestarAdgroupDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaSalestarAdgroupDeleteResponse `json:"taobao_simba_salestar_adgroup_delete_response,omitempty"`
+    // Response *TaobaoSimbaSalestarAdgroupDeleteResponse `json:"simba_salestar_adgroup_delete_response,omitempty"` 
+    TaobaoSimbaSalestarAdgroupDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaSalestarAdgroupDeleteResponse struct {
+
+    // 删除失败时透出的原因，仅当success为false是有效
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+    // 表示接口调用成功，当推广单元不存在等情况下也会返回true
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaSalestarAdgroupDeleteResponse struct {
 

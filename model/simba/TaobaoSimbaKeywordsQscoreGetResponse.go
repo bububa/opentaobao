@@ -12,8 +12,22 @@ taobao.simba.keywords.qscore.get
 */
 type TaobaoSimbaKeywordsQscoreGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaKeywordsQscoreGetResponse `json:"taobao_simba_keywords_qscore_get_response,omitempty"`
+    // Response *TaobaoSimbaKeywordsQscoreGetResponse `json:"simba_keywords_qscore_get_response,omitempty"` 
+    TaobaoSimbaKeywordsQscoreGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaKeywordsQscoreGetResponse struct {
+
+    // 取得的关键词质量得分列表
+    
+    KeywordQscoreList  struct {
+        KeywordQscore  []KeywordQscore `json:"keyword_qscore,omitempty"`
+    } `json:"keyword_qscore_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaKeywordsQscoreGetResponse struct {
 

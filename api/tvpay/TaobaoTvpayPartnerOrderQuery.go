@@ -11,11 +11,11 @@ taobao.tvpay.partner.order.query
 
 给商户提供的查询订单状态的API
 */
-func TaobaoTvpayPartnerOrderQuery(clt *core.SDKClient, req *tvpay.TaobaoTvpayPartnerOrderQueryRequest, session string) (*tvpay.TaobaoTvpayPartnerOrderQueryResponse, error) {
+func TaobaoTvpayPartnerOrderQuery(clt *core.SDKClient, req *tvpay.TaobaoTvpayPartnerOrderQueryRequest, session string) (*tvpay.TaobaoTvpayPartnerOrderQueryAPIResponse, error) {
     var resp tvpay.TaobaoTvpayPartnerOrderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

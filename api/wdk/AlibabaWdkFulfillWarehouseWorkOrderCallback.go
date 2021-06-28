@@ -11,11 +11,11 @@ alibaba.wdk.fulfill.warehouse.work.order.callback
 
 标准化仓作业单回传接口
 */
-func AlibabaWdkFulfillWarehouseWorkOrderCallback(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillWarehouseWorkOrderCallbackRequest, session string) (*wdk.AlibabaWdkFulfillWarehouseWorkOrderCallbackResponse, error) {
+func AlibabaWdkFulfillWarehouseWorkOrderCallback(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillWarehouseWorkOrderCallbackRequest, session string) (*wdk.AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse, error) {
     var resp wdk.AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ taobao.simba.campaign.budget.get
 */
 type TaobaoSimbaCampaignBudgetGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCampaignBudgetGetResponse `json:"taobao_simba_campaign_budget_get_response,omitempty"`
+    // Response *TaobaoSimbaCampaignBudgetGetResponse `json:"simba_campaign_budget_get_response,omitempty"` 
+    TaobaoSimbaCampaignBudgetGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCampaignBudgetGetResponse struct {
+
+    // 推广计划日限额
+    
+    CampaignBudget  *struct {
+        CampaignBudget  *CampaignBudget `json:"campaign_budget,omitempty"`
+    } `json:"campaign_budget,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCampaignBudgetGetResponse struct {
 

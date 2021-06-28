@@ -12,8 +12,22 @@ alibaba.security.jaq.app.official.verify
 */
 type AlibabaSecurityJaqAppOfficialVerifyAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqAppOfficialVerifyResponse `json:"alibaba_security_jaq_app_official_verify_response,omitempty"`
+    // Response *AlibabaSecurityJaqAppOfficialVerifyResponse `json:"alibaba_security_jaq_app_official_verify_response,omitempty"` 
+    AlibabaSecurityJaqAppOfficialVerifyResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqAppOfficialVerifyResponse struct {
+
+    // result
+    
+    Result  *struct {
+        OfficialAppVerifyResponse  *OfficialAppVerifyResponse `json:"official_app_verify_response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqAppOfficialVerifyResponse struct {
 

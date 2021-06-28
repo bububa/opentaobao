@@ -11,11 +11,11 @@ taobao.qt.report.delete
 
 删除质检报告
 */
-func TaobaoQtReportDelete(clt *core.SDKClient, req *qt.TaobaoQtReportDeleteRequest, session string) (*qt.TaobaoQtReportDeleteResponse, error) {
+func TaobaoQtReportDelete(clt *core.SDKClient, req *qt.TaobaoQtReportDeleteRequest, session string) (*qt.TaobaoQtReportDeleteAPIResponse, error) {
     var resp qt.TaobaoQtReportDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

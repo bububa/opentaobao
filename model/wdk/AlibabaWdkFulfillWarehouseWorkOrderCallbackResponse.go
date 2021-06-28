@@ -12,8 +12,30 @@ alibaba.wdk.fulfill.warehouse.work.order.callback
 */
 type AlibabaWdkFulfillWarehouseWorkOrderCallbackAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkFulfillWarehouseWorkOrderCallbackResponse `json:"alibaba_wdk_fulfill_warehouse_work_order_callback_response,omitempty"`
+    // Response *AlibabaWdkFulfillWarehouseWorkOrderCallbackResponse `json:"alibaba_wdk_fulfill_warehouse_work_order_callback_response,omitempty"` 
+    AlibabaWdkFulfillWarehouseWorkOrderCallbackResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkFulfillWarehouseWorkOrderCallbackResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 响应提示信息
+    
+    RespMessage   string `json:"resp_message,omitempty"`
+    
+
+    // 响应code
+    
+    RespCode   string `json:"resp_code,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkFulfillWarehouseWorkOrderCallbackResponse struct {
 

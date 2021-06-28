@@ -12,8 +12,32 @@ taobao.eticket.merchant.tbma.get
 */
 type TaobaoEticketMerchantTbmaGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoEticketMerchantTbmaGetResponse `json:"taobao_eticket_merchant_tbma_get_response,omitempty"`
+    // Response *TaobaoEticketMerchantTbmaGetResponse `json:"eticket_merchant_tbma_get_response,omitempty"` 
+    TaobaoEticketMerchantTbmaGetResponse
 }
+
+/* model for simplify = false
+type TaobaoEticketMerchantTbmaGetResponse struct {
+
+    // respBody
+    
+    RespBody  *struct {
+        QueryTbMaCallbackResp  *QueryTbMaCallbackResp `json:"query_tb_ma_callback_resp,omitempty"`
+    } `json:"resp_body,omitempty"`
+    
+
+    // subCode
+    
+    RetCode   string `json:"ret_code,omitempty"`
+    
+
+    // subMsg
+    
+    RetMsg   string `json:"ret_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoEticketMerchantTbmaGetResponse struct {
 

@@ -11,11 +11,11 @@ taobao.simba.insight.catsworddata.get
 
 获取给定词在给定类目下的详细数据
 */
-func TaobaoSimbaInsightCatsworddataGet(clt *core.SDKClient, req *simba.TaobaoSimbaInsightCatsworddataGetRequest, session string) (*simba.TaobaoSimbaInsightCatsworddataGetResponse, error) {
+func TaobaoSimbaInsightCatsworddataGet(clt *core.SDKClient, req *simba.TaobaoSimbaInsightCatsworddataGetRequest, session string) (*simba.TaobaoSimbaInsightCatsworddataGetAPIResponse, error) {
     var resp simba.TaobaoSimbaInsightCatsworddataGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

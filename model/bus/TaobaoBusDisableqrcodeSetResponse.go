@@ -12,8 +12,30 @@ taobao.bus.disableqrcode.set
 */
 type TaobaoBusDisableqrcodeSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusDisableqrcodeSetResponse `json:"taobao_bus_disableqrcode_set_response,omitempty"`
+    // Response *TaobaoBusDisableqrcodeSetResponse `json:"bus_disableqrcode_set_response,omitempty"` 
+    TaobaoBusDisableqrcodeSetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusDisableqrcodeSetResponse struct {
+
+    // errorCode
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // errorMsg
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusDisableqrcodeSetResponse struct {
 

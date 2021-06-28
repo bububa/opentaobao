@@ -11,11 +11,11 @@ alibaba.kclub.kc.queryknowledge
 
 知识云-通用知识查询服务。通过租户id、类目id、知识类型、知识状态等条件查询类目。
 */
-func AlibabaKclubKcQueryknowledge(clt *core.SDKClient, req *kclub.AlibabaKclubKcQueryknowledgeRequest, session string) (*kclub.AlibabaKclubKcQueryknowledgeResponse, error) {
+func AlibabaKclubKcQueryknowledge(clt *core.SDKClient, req *kclub.AlibabaKclubKcQueryknowledgeRequest, session string) (*kclub.AlibabaKclubKcQueryknowledgeAPIResponse, error) {
     var resp kclub.AlibabaKclubKcQueryknowledgeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -28,7 +28,7 @@ type TaobaoFilmKoubeiCinemaGetactivityRequest struct {
     platform   int64 
 
     // 影院ID集合
-    cinemaIds   []Number 
+    cinemaIds   []int64 
 
     // 附加参数
     params   string 
@@ -94,13 +94,13 @@ func (r TaobaoFilmKoubeiCinemaGetactivityRequest) GetPlatform() int64 {
     return r.platform
 }
 
-func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetCinemaIds(cinemaIds []Number) error {
+func (r *TaobaoFilmKoubeiCinemaGetactivityRequest) SetCinemaIds(cinemaIds []int64) error {
     r.cinemaIds = cinemaIds
     r.Set("cinema_ids", cinemaIds)
     return nil
 }
 
-func (r TaobaoFilmKoubeiCinemaGetactivityRequest) GetCinemaIds() []Number {
+func (r TaobaoFilmKoubeiCinemaGetactivityRequest) GetCinemaIds() []int64 {
     return r.cinemaIds
 }
 

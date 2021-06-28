@@ -11,11 +11,11 @@ taobao.simba.salestar.adgroup.add
 
 创建一个推广组
 */
-func TaobaoSimbaSalestarAdgroupAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupAddRequest, session string) (*simba.TaobaoSimbaSalestarAdgroupAddResponse, error) {
+func TaobaoSimbaSalestarAdgroupAdd(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupAddRequest, session string) (*simba.TaobaoSimbaSalestarAdgroupAddAPIResponse, error) {
     var resp simba.TaobaoSimbaSalestarAdgroupAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

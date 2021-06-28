@@ -12,8 +12,35 @@ taobao.ailab.aicloud.top.device.control.custom
 */
 type TaobaoAilabAicloudTopDeviceControlCustomAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopDeviceControlCustomResponse `json:"taobao_ailab_aicloud_top_device_control_custom_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopDeviceControlCustomResponse `json:"ailab_aicloud_top_device_control_custom_response,omitempty"` 
+    TaobaoAilabAicloudTopDeviceControlCustomResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopDeviceControlCustomResponse struct {
+
+    // 业务请求是否成功
+    
+    Model   bool `json:"model,omitempty"`
+    
+
+    // msgCode
+    
+    MsgCode   string `json:"msg_code,omitempty"`
+    
+
+    // msgInfo
+    
+    MsgInfo   string `json:"msg_info,omitempty"`
+    
+
+    // 网络请求是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopDeviceControlCustomResponse struct {
 

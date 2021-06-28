@@ -11,11 +11,11 @@ tmall.promotion.coupon.use
 
 核销用户的一张优惠券，返回核销结果
 */
-func TmallPromotionCouponUse(clt *core.SDKClient, req *promotion.TmallPromotionCouponUseRequest, session string) (*promotion.TmallPromotionCouponUseResponse, error) {
+func TmallPromotionCouponUse(clt *core.SDKClient, req *promotion.TmallPromotionCouponUseRequest, session string) (*promotion.TmallPromotionCouponUseAPIResponse, error) {
     var resp promotion.TmallPromotionCouponUseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

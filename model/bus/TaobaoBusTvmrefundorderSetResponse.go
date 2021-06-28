@@ -12,8 +12,30 @@ taobao.bus.tvmrefundorder.set
 */
 type TaobaoBusTvmrefundorderSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusTvmrefundorderSetResponse `json:"taobao_bus_tvmrefundorder_set_response,omitempty"`
+    // Response *TaobaoBusTvmrefundorderSetResponse `json:"bus_tvmrefundorder_set_response,omitempty"` 
+    TaobaoBusTvmrefundorderSetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusTvmrefundorderSetResponse struct {
+
+    // errorCode 错误码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // errorMsg 错误信息
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // success true 成功 false 失败
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusTvmrefundorderSetResponse struct {
 

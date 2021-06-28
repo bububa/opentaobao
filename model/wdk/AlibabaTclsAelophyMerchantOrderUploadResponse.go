@@ -12,8 +12,22 @@ alibaba.tcls.aelophy.merchant.order.upload
 */
 type AlibabaTclsAelophyMerchantOrderUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTclsAelophyMerchantOrderUploadResponse `json:"alibaba_tcls_aelophy_merchant_order_upload_response,omitempty"`
+    // Response *AlibabaTclsAelophyMerchantOrderUploadResponse `json:"alibaba_tcls_aelophy_merchant_order_upload_response,omitempty"` 
+    AlibabaTclsAelophyMerchantOrderUploadResponse
 }
+
+/* model for simplify = false
+type AlibabaTclsAelophyMerchantOrderUploadResponse struct {
+
+    // 根据站点名称查询产品
+    
+    ApiResult  *struct {
+        AlibabaTclsAelophyMerchantOrderUploadApiResult  *AlibabaTclsAelophyMerchantOrderUploadApiResult `json:"alibaba_tcls_aelophy_merchant_order_upload_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTclsAelophyMerchantOrderUploadResponse struct {
 

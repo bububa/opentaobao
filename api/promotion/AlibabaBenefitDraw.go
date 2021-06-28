@@ -17,11 +17,11 @@ appkey验证通过的，才会进入抽奖流程，否则直接失败。
 因为appkey是系统参数，并且程序内部可以验证appkey和业务身份appName的关系
 是否一致，所以可以保证参数appName的合法性，没有越权。
 */
-func AlibabaBenefitDraw(clt *core.SDKClient, req *promotion.AlibabaBenefitDrawRequest, session string) (*promotion.AlibabaBenefitDrawResponse, error) {
+func AlibabaBenefitDraw(clt *core.SDKClient, req *promotion.AlibabaBenefitDrawRequest, session string) (*promotion.AlibabaBenefitDrawAPIResponse, error) {
     var resp promotion.AlibabaBenefitDrawAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

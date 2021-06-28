@@ -11,11 +11,11 @@ taobao.bus.cancleorder.set
 
 取消订单
 */
-func TaobaoBusCancleorderSet(clt *core.SDKClient, req *bus.TaobaoBusCancleorderSetRequest, session string) (*bus.TaobaoBusCancleorderSetResponse, error) {
+func TaobaoBusCancleorderSet(clt *core.SDKClient, req *bus.TaobaoBusCancleorderSetRequest, session string) (*bus.TaobaoBusCancleorderSetAPIResponse, error) {
     var resp bus.TaobaoBusCancleorderSetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

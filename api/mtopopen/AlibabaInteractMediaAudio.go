@@ -11,11 +11,11 @@ alibaba.interact.media.audio
 
 新音频包的鉴权接口
 */
-func AlibabaInteractMediaAudio(clt *core.SDKClient, req *mtopopen.AlibabaInteractMediaAudioRequest, session string) (*mtopopen.AlibabaInteractMediaAudioResponse, error) {
+func AlibabaInteractMediaAudio(clt *core.SDKClient, req *mtopopen.AlibabaInteractMediaAudioRequest, session string) (*mtopopen.AlibabaInteractMediaAudioAPIResponse, error) {
     var resp mtopopen.AlibabaInteractMediaAudioAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

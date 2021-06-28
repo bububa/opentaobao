@@ -16,10 +16,10 @@ type TaobaoCrmMembersGroupsBatchdeleteRequest struct {
     model.Params
 
     // 买家昵称列表
-    buyerNicks   []String 
+    buyerNicks   []string 
 
     // 会员需要删除的分组
-    groupIds   []Number 
+    groupIds   []int64 
 
 }
 
@@ -42,23 +42,23 @@ func (r TaobaoCrmMembersGroupsBatchdeleteRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoCrmMembersGroupsBatchdeleteRequest) SetBuyerNicks(buyerNicks []String) error {
+func (r *TaobaoCrmMembersGroupsBatchdeleteRequest) SetBuyerNicks(buyerNicks []string) error {
     r.buyerNicks = buyerNicks
     r.Set("buyer_nicks", buyerNicks)
     return nil
 }
 
-func (r TaobaoCrmMembersGroupsBatchdeleteRequest) GetBuyerNicks() []String {
+func (r TaobaoCrmMembersGroupsBatchdeleteRequest) GetBuyerNicks() []string {
     return r.buyerNicks
 }
 
-func (r *TaobaoCrmMembersGroupsBatchdeleteRequest) SetGroupIds(groupIds []Number) error {
+func (r *TaobaoCrmMembersGroupsBatchdeleteRequest) SetGroupIds(groupIds []int64) error {
     r.groupIds = groupIds
     r.Set("group_ids", groupIds)
     return nil
 }
 
-func (r TaobaoCrmMembersGroupsBatchdeleteRequest) GetGroupIds() []Number {
+func (r TaobaoCrmMembersGroupsBatchdeleteRequest) GetGroupIds() []int64 {
     return r.groupIds
 }
 

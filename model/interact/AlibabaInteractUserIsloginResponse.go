@@ -12,8 +12,22 @@ API的功能是校验用户是否登录，ISV调用接口的时候，通过此�
 */
 type AlibabaInteractUserIsloginAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractUserIsloginResponse `json:"alibaba_interact_user_islogin_response,omitempty"`
+    // Response *AlibabaInteractUserIsloginResponse `json:"alibaba_interact_user_islogin_response,omitempty"` 
+    AlibabaInteractUserIsloginResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractUserIsloginResponse struct {
+
+    // result
+    
+    Result  *struct {
+        MtopResult  *MtopResult `json:"mtop_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractUserIsloginResponse struct {
 

@@ -12,8 +12,22 @@ AE展示类目获取接口
 */
 type AliexpressSocialDiscategoryGetAPIResponse struct {
     model.CommonResponse
-    Response *AliexpressSocialDiscategoryGetResponse `json:"aliexpress_social_discategory_get_response,omitempty"`
+    // Response *AliexpressSocialDiscategoryGetResponse `json:"aliexpress_social_discategory_get_response,omitempty"` 
+    AliexpressSocialDiscategoryGetResponse
 }
+
+/* model for simplify = false
+type AliexpressSocialDiscategoryGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ItemPickPagingResult  *ItemPickPagingResult `json:"item_pick_paging_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AliexpressSocialDiscategoryGetResponse struct {
 

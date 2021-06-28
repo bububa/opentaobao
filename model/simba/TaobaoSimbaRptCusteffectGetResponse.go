@@ -12,8 +12,20 @@ taobao.simba.rpt.custeffect.get
 */
 type TaobaoSimbaRptCusteffectGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaRptCusteffectGetResponse `json:"taobao_simba_rpt_custeffect_get_response,omitempty"`
+    // Response *TaobaoSimbaRptCusteffectGetResponse `json:"simba_rpt_custeffect_get_response,omitempty"` 
+    TaobaoSimbaRptCusteffectGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaRptCusteffectGetResponse struct {
+
+    // 账户效果数据返回结果
+    
+    RptCustEffectList   string `json:"rpt_cust_effect_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaRptCusteffectGetResponse struct {
 

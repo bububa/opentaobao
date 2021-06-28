@@ -12,8 +12,20 @@ Weex页面播放视频
 */
 type AlibabaInteractUiVideoAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractUiVideoResponse `json:"alibaba_interact_ui_video_response,omitempty"`
+    // Response *AlibabaInteractUiVideoResponse `json:"alibaba_interact_ui_video_response,omitempty"` 
+    AlibabaInteractUiVideoResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractUiVideoResponse struct {
+
+    // 仅作鉴权使用，没有实际数据传输
+    
+    Unnamed   string `json:"unnamed,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractUiVideoResponse struct {
 

@@ -12,8 +12,25 @@ taobao.vas.service.getServTimes
 */
 type TaobaoVasServiceGetServTimesAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVasServiceGetServTimesResponse `json:"taobao_vas_service_getServTimes_response,omitempty"`
+    // Response *TaobaoVasServiceGetServTimesResponse `json:"vas_service_getServTimes_response,omitempty"` 
+    TaobaoVasServiceGetServTimesResponse
 }
+
+/* model for simplify = false
+type TaobaoVasServiceGetServTimesResponse struct {
+
+    // 总次数（容量）
+    
+    TotalNum   int64 `json:"total_num,omitempty"`
+    
+
+    // 剩余次数（容量）
+    
+    LeftNum   int64 `json:"left_num,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVasServiceGetServTimesResponse struct {
 

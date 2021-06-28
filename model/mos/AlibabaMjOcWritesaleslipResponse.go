@@ -12,8 +12,20 @@ alibaba.mj.oc.writesaleslip
 */
 type AlibabaMjOcWritesaleslipAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjOcWritesaleslipResponse `json:"alibaba_mj_oc_writesaleslip_response,omitempty"`
+    // Response *AlibabaMjOcWritesaleslipResponse `json:"alibaba_mj_oc_writesaleslip_response,omitempty"` 
+    AlibabaMjOcWritesaleslipResponse
 }
+
+/* model for simplify = false
+type AlibabaMjOcWritesaleslipResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjOcWritesaleslipResponse struct {
 

@@ -12,8 +12,20 @@ taobao.crm.members.group.batchadd
 */
 type TaobaoCrmMembersGroupBatchaddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmMembersGroupBatchaddResponse `json:"taobao_crm_members_group_batchadd_response,omitempty"`
+    // Response *TaobaoCrmMembersGroupBatchaddResponse `json:"crm_members_group_batchadd_response,omitempty"` 
+    TaobaoCrmMembersGroupBatchaddResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmMembersGroupBatchaddResponse struct {
+
+    // 添加操作是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmMembersGroupBatchaddResponse struct {
 

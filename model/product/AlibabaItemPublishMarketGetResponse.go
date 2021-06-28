@@ -12,8 +12,20 @@ alibaba.item.publish.market.get
 */
 type AlibabaItemPublishMarketGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaItemPublishMarketGetResponse `json:"alibaba_item_publish_market_get_response,omitempty"`
+    // Response *AlibabaItemPublishMarketGetResponse `json:"alibaba_item_publish_market_get_response,omitempty"` 
+    AlibabaItemPublishMarketGetResponse
 }
+
+/* model for simplify = false
+type AlibabaItemPublishMarketGetResponse struct {
+
+    // 商家可发布的市场列表,多个以逗号(,)分隔
+    
+    Markets   string `json:"markets,omitempty"`
+    
+
+}
+*/
 
 type AlibabaItemPublishMarketGetResponse struct {
 

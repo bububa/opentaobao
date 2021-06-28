@@ -12,8 +12,20 @@ taobao.baichuan.openaccount.logindoublecheck
 */
 type TaobaoBaichuanOpenaccountLogindoublecheckAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanOpenaccountLogindoublecheckResponse `json:"taobao_baichuan_openaccount_logindoublecheck_response,omitempty"`
+    // Response *TaobaoBaichuanOpenaccountLogindoublecheckResponse `json:"baichuan_openaccount_logindoublecheck_response,omitempty"` 
+    TaobaoBaichuanOpenaccountLogindoublecheckResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanOpenaccountLogindoublecheckResponse struct {
+
+    // name
+    
+    Name   string `json:"name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanOpenaccountLogindoublecheckResponse struct {
 

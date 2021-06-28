@@ -16,7 +16,7 @@ type TaobaoRefundMessagesGetRequest struct {
     model.Params
 
     // 需返回的字段列表。可选值：RefundMessage结构体中的所有字段，以半角逗号(,)分隔。
-    fields   []String 
+    fields   []string 
 
     // 退款单号
     refundId   int64 
@@ -51,13 +51,13 @@ func (r TaobaoRefundMessagesGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoRefundMessagesGetRequest) SetFields(fields []String) error {
+func (r *TaobaoRefundMessagesGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoRefundMessagesGetRequest) GetFields() []String {
+func (r TaobaoRefundMessagesGetRequest) GetFields() []string {
     return r.fields
 }
 

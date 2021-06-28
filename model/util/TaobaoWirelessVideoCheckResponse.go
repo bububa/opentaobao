@@ -16,8 +16,22 @@ taobao.wireless.video.check
 */
 type TaobaoWirelessVideoCheckAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWirelessVideoCheckResponse `json:"taobao_wireless_video_check_response,omitempty"`
+    // Response *TaobaoWirelessVideoCheckResponse `json:"wireless_video_check_response,omitempty"` 
+    TaobaoWirelessVideoCheckResponse
 }
+
+/* model for simplify = false
+type TaobaoWirelessVideoCheckResponse struct {
+
+    // 系统自动生成
+    
+    Result  *struct {
+        RopResultTo  *RopResultTo `json:"rop_result_to,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWirelessVideoCheckResponse struct {
 

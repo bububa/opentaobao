@@ -11,11 +11,11 @@ alibaba.tcls.aelophy.merchant.channel.order.updatestatus
 
 订单状态变更
 */
-func AlibabaTclsAelophyMerchantChannelOrderUpdatestatus(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest, session string) (*wdk.AlibabaTclsAelophyMerchantChannelOrderUpdatestatusResponse, error) {
+func AlibabaTclsAelophyMerchantChannelOrderUpdatestatus(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelOrderUpdatestatusRequest, session string) (*wdk.AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIResponse, error) {
     var resp wdk.AlibabaTclsAelophyMerchantChannelOrderUpdatestatusAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

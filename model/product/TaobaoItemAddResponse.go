@@ -17,8 +17,22 @@ taobao.item.add
 */
 type TaobaoItemAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemAddResponse `json:"taobao_item_add_response,omitempty"`
+    // Response *TaobaoItemAddResponse `json:"item_add_response,omitempty"` 
+    TaobaoItemAddResponse
 }
+
+/* model for simplify = false
+type TaobaoItemAddResponse struct {
+
+    // 商品结构,仅有numIid和created返回
+    
+    Item  *struct {
+        Item  *Item `json:"item,omitempty"`
+    } `json:"item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemAddResponse struct {
 

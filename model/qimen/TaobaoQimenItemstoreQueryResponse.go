@@ -12,8 +12,42 @@ taobao.qimen.itemstore.query
 */
 type TaobaoQimenItemstoreQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenItemstoreQueryResponse `json:"taobao_qimen_itemstore_query_response,omitempty"`
+    // Response *TaobaoQimenItemstoreQueryResponse `json:"qimen_itemstore_query_response,omitempty"` 
+    TaobaoQimenItemstoreQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenItemstoreQueryResponse struct {
+
+    // 响应信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 门店列表
+    
+    StoreIds  struct {
+        Number  []int64 `json:"int64,omitempty"`
+    } `json:"store_ids,omitempty"`
+    
+
+    // 响应的标签
+    
+    Flag   string `json:"flag,omitempty"`
+    
+
+    // 总的门店数
+    
+    TotalLines   int64 `json:"total_lines,omitempty"`
+    
+
+    // 响应的code
+    
+    QimenCode   string `json:"qimen_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenItemstoreQueryResponse struct {
 
@@ -21,7 +55,7 @@ type TaobaoQimenItemstoreQueryResponse struct {
     Message   string `json:"message,omitempty"`
 
     // 门店列表
-    StoreIds   []Number `json:"store_ids,omitempty"`
+    StoreIds   []int64 `json:"store_ids,omitempty"`
 
     // 响应的标签
     Flag   string `json:"flag,omitempty"`

@@ -12,8 +12,22 @@ taobao.promotion.activity.get
 */
 type TaobaoPromotionActivityGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionActivityGetResponse `json:"taobao_promotion_activity_get_response,omitempty"`
+    // Response *TaobaoPromotionActivityGetResponse `json:"promotion_activity_get_response,omitempty"` 
+    TaobaoPromotionActivityGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionActivityGetResponse struct {
+
+    // 活动列表
+    
+    Activitys  struct {
+        Activity  []Activity `json:"activity,omitempty"`
+    } `json:"activitys,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionActivityGetResponse struct {
 

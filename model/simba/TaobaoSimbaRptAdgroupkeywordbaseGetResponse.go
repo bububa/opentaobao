@@ -12,8 +12,20 @@ taobao.simba.rpt.adgroupkeywordbase.get
 */
 type TaobaoSimbaRptAdgroupkeywordbaseGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaRptAdgroupkeywordbaseGetResponse `json:"taobao_simba_rpt_adgroupkeywordbase_get_response,omitempty"`
+    // Response *TaobaoSimbaRptAdgroupkeywordbaseGetResponse `json:"simba_rpt_adgroupkeywordbase_get_response,omitempty"` 
+    TaobaoSimbaRptAdgroupkeywordbaseGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaRptAdgroupkeywordbaseGetResponse struct {
+
+    // 词基础数据返回结果
+    
+    RptAdgroupkeywordBaseList   string `json:"rpt_adgroupkeyword_base_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaRptAdgroupkeywordbaseGetResponse struct {
 

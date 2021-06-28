@@ -12,8 +12,20 @@ taobao.baichuan.taoke.trace
 */
 type TaobaoBaichuanTaokeTraceAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanTaokeTraceResponse `json:"taobao_baichuan_taoke_trace_response,omitempty"`
+    // Response *TaobaoBaichuanTaokeTraceResponse `json:"baichuan_taoke_trace_response,omitempty"` 
+    TaobaoBaichuanTaokeTraceResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanTaokeTraceResponse struct {
+
+    // name
+    
+    Name   string `json:"name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanTaokeTraceResponse struct {
 

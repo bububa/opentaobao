@@ -11,11 +11,11 @@ alibaba.scbp.keyword.matched.products.get
 
 查询和词匹配的推广产品
 */
-func AlibabaScbpKeywordMatchedProductsGet(clt *core.SDKClient, req *scbp.AlibabaScbpKeywordMatchedProductsGetRequest, session string) (*scbp.AlibabaScbpKeywordMatchedProductsGetResponse, error) {
+func AlibabaScbpKeywordMatchedProductsGet(clt *core.SDKClient, req *scbp.AlibabaScbpKeywordMatchedProductsGetRequest, session string) (*scbp.AlibabaScbpKeywordMatchedProductsGetAPIResponse, error) {
     var resp scbp.AlibabaScbpKeywordMatchedProductsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

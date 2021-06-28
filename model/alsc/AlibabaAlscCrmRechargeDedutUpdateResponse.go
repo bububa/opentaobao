@@ -12,8 +12,22 @@ alibaba.alsc.crm.recharge.dedut.update
 */
 type AlibabaAlscCrmRechargeDedutUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmRechargeDedutUpdateResponse `json:"alibaba_alsc_crm_recharge_dedut_update_response,omitempty"`
+    // Response *AlibabaAlscCrmRechargeDedutUpdateResponse `json:"alibaba_alsc_crm_recharge_dedut_update_response,omitempty"` 
+    AlibabaAlscCrmRechargeDedutUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmRechargeDedutUpdateResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmRechargeDedutUpdateResponse struct {
 

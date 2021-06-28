@@ -12,8 +12,27 @@ alitrip.tripvp.agent.order.get
 */
 type AlitripTripvpAgentOrderGetAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTripvpAgentOrderGetResponse `json:"alitrip_tripvp_agent_order_get_response,omitempty"`
+    // Response *AlitripTripvpAgentOrderGetResponse `json:"alitrip_tripvp_agent_order_get_response,omitempty"` 
+    AlitripTripvpAgentOrderGetResponse
 }
+
+/* model for simplify = false
+type AlitripTripvpAgentOrderGetResponse struct {
+
+    // orderVO
+    
+    OrderVo  *struct {
+        VirProOrderVo  *VirProOrderVo `json:"vir_pro_order_vo,omitempty"`
+    } `json:"order_vo,omitempty"`
+    
+
+    // pageSize
+    
+    PageSize   int64 `json:"page_size,omitempty"`
+    
+
+}
+*/
 
 type AlitripTripvpAgentOrderGetResponse struct {
 

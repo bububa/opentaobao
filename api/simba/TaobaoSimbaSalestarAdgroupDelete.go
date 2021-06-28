@@ -11,11 +11,11 @@ taobao.simba.salestar.adgroup.delete
 
 删除一个推广组
 */
-func TaobaoSimbaSalestarAdgroupDelete(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupDeleteRequest, session string) (*simba.TaobaoSimbaSalestarAdgroupDeleteResponse, error) {
+func TaobaoSimbaSalestarAdgroupDelete(clt *core.SDKClient, req *simba.TaobaoSimbaSalestarAdgroupDeleteRequest, session string) (*simba.TaobaoSimbaSalestarAdgroupDeleteAPIResponse, error) {
     var resp simba.TaobaoSimbaSalestarAdgroupDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

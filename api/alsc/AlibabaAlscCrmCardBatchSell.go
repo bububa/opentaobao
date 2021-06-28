@@ -11,11 +11,11 @@ alibaba.alsc.crm.card.batch.sell
 
 批量开卡（售卡）
 */
-func AlibabaAlscCrmCardBatchSell(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardBatchSellRequest, session string) (*alsc.AlibabaAlscCrmCardBatchSellResponse, error) {
+func AlibabaAlscCrmCardBatchSell(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardBatchSellRequest, session string) (*alsc.AlibabaAlscCrmCardBatchSellAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmCardBatchSellAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

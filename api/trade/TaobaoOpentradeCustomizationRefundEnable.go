@@ -11,11 +11,11 @@ taobao.opentrade.customization.refund.enable
 
 定制订单设置允许仅退款
 */
-func TaobaoOpentradeCustomizationRefundEnable(clt *core.SDKClient, req *trade.TaobaoOpentradeCustomizationRefundEnableRequest, session string) (*trade.TaobaoOpentradeCustomizationRefundEnableResponse, error) {
+func TaobaoOpentradeCustomizationRefundEnable(clt *core.SDKClient, req *trade.TaobaoOpentradeCustomizationRefundEnableRequest, session string) (*trade.TaobaoOpentradeCustomizationRefundEnableAPIResponse, error) {
     var resp trade.TaobaoOpentradeCustomizationRefundEnableAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -34,7 +34,7 @@ type TaobaoProductUpdateRequest struct {
     desc   string 
 
     // 产品主图.最大500K,目前仅支持GIF,JPG
-    image   []byte 
+    image   []*model.File 
 
     // 产品名称.最大不超过30个字符
     name   string 
@@ -126,13 +126,13 @@ func (r TaobaoProductUpdateRequest) GetDesc() string {
     return r.desc
 }
 
-func (r *TaobaoProductUpdateRequest) SetImage(image []byte) error {
+func (r *TaobaoProductUpdateRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoProductUpdateRequest) GetImage() []byte {
+func (r TaobaoProductUpdateRequest) GetImage() []*model.File {
     return r.image
 }
 

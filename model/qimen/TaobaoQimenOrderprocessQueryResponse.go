@@ -12,8 +12,22 @@ ERP调用订单流水查询接口
 */
 type TaobaoQimenOrderprocessQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenOrderprocessQueryResponse `json:"taobao_qimen_orderprocess_query_response,omitempty"`
+    // Response *TaobaoQimenOrderprocessQueryResponse `json:"qimen_orderprocess_query_response,omitempty"` 
+    TaobaoQimenOrderprocessQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenOrderprocessQueryResponse struct {
+
+    // 
+    
+    Response  *struct {
+        OrderProcessQueryResponse  *OrderProcessQueryResponse `json:"order_process_query_response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenOrderprocessQueryResponse struct {
 

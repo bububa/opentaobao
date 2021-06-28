@@ -12,12 +12,26 @@ alibaba.wdk.fulfill.config.read.limit.order
 */
 type AlibabaWdkFulfillConfigReadLimitOrderAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkFulfillConfigReadLimitOrderResponse `json:"alibaba_wdk_fulfill_config_read_limit_order_response,omitempty"`
+    // Response *AlibabaWdkFulfillConfigReadLimitOrderResponse `json:"alibaba_wdk_fulfill_config_read_limit_order_response,omitempty"` 
+    AlibabaWdkFulfillConfigReadLimitOrderResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkFulfillConfigReadLimitOrderResponse struct {
+
+    // result
+    
+    Results  struct {
+        Json  []string `json:"string,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkFulfillConfigReadLimitOrderResponse struct {
 
     // result
-    Results   []Json `json:"results,omitempty"`
+    Results   []string `json:"results,omitempty"`
 
 }

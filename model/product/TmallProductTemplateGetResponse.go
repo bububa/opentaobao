@@ -12,8 +12,22 @@ tmall.product.template.get
 */
 type TmallProductTemplateGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallProductTemplateGetResponse `json:"tmall_product_template_get_response,omitempty"`
+    // Response *TmallProductTemplateGetResponse `json:"tmall_product_template_get_response,omitempty"` 
+    TmallProductTemplateGetResponse
 }
+
+/* model for simplify = false
+type TmallProductTemplateGetResponse struct {
+
+    // 见SpuTemplateDO说明
+    
+    Template  *struct {
+        SpuTemplateDO  *SpuTemplateDO `json:"spu_template_do,omitempty"`
+    } `json:"template,omitempty"`
+    
+
+}
+*/
 
 type TmallProductTemplateGetResponse struct {
 

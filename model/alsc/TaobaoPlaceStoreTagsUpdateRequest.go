@@ -19,10 +19,10 @@ type TaobaoPlaceStoreTagsUpdateRequest struct {
     storeUpdate   *StoreUpdateTopDto 
 
     // 新增标list
-    addTags   []Number 
+    addTags   []int64 
 
     // 删除标list
-    removeTags   []Number 
+    removeTags   []int64 
 
 }
 
@@ -55,23 +55,23 @@ func (r TaobaoPlaceStoreTagsUpdateRequest) GetStoreUpdate() *StoreUpdateTopDto {
     return r.storeUpdate
 }
 
-func (r *TaobaoPlaceStoreTagsUpdateRequest) SetAddTags(addTags []Number) error {
+func (r *TaobaoPlaceStoreTagsUpdateRequest) SetAddTags(addTags []int64) error {
     r.addTags = addTags
     r.Set("add_tags", addTags)
     return nil
 }
 
-func (r TaobaoPlaceStoreTagsUpdateRequest) GetAddTags() []Number {
+func (r TaobaoPlaceStoreTagsUpdateRequest) GetAddTags() []int64 {
     return r.addTags
 }
 
-func (r *TaobaoPlaceStoreTagsUpdateRequest) SetRemoveTags(removeTags []Number) error {
+func (r *TaobaoPlaceStoreTagsUpdateRequest) SetRemoveTags(removeTags []int64) error {
     r.removeTags = removeTags
     r.Set("remove_tags", removeTags)
     return nil
 }
 
-func (r TaobaoPlaceStoreTagsUpdateRequest) GetRemoveTags() []Number {
+func (r TaobaoPlaceStoreTagsUpdateRequest) GetRemoveTags() []int64 {
     return r.removeTags
 }
 

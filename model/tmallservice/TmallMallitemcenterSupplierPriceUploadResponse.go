@@ -12,8 +12,22 @@ tmall.mallitemcenter.supplier.price.upload
 */
 type TmallMallitemcenterSupplierPriceUploadAPIResponse struct {
     model.CommonResponse
-    Response *TmallMallitemcenterSupplierPriceUploadResponse `json:"tmall_mallitemcenter_supplier_price_upload_response,omitempty"`
+    // Response *TmallMallitemcenterSupplierPriceUploadResponse `json:"tmall_mallitemcenter_supplier_price_upload_response,omitempty"` 
+    TmallMallitemcenterSupplierPriceUploadResponse
 }
+
+/* model for simplify = false
+type TmallMallitemcenterSupplierPriceUploadResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TmallMallitemcenterSupplierPriceUploadResult  *TmallMallitemcenterSupplierPriceUploadResult `json:"tmall_mallitemcenter_supplier_price_upload_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallMallitemcenterSupplierPriceUploadResponse struct {
 

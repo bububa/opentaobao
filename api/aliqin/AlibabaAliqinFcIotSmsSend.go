@@ -11,11 +11,11 @@ alibaba.aliqin.fc.iot.sms.send
 
 发送物联网短信，只允许使用物联网短信模板
 */
-func AlibabaAliqinFcIotSmsSend(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotSmsSendRequest, session string) (*aliqin.AlibabaAliqinFcIotSmsSendResponse, error) {
+func AlibabaAliqinFcIotSmsSend(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotSmsSendRequest, session string) (*aliqin.AlibabaAliqinFcIotSmsSendAPIResponse, error) {
     var resp aliqin.AlibabaAliqinFcIotSmsSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ alibaba.marketing.lottery.activity.bind
 
 抽奖平台奖池关联接口
 */
-func AlibabaMarketingLotteryActivityBind(clt *core.SDKClient, req *promotion.AlibabaMarketingLotteryActivityBindRequest, session string) (*promotion.AlibabaMarketingLotteryActivityBindResponse, error) {
+func AlibabaMarketingLotteryActivityBind(clt *core.SDKClient, req *promotion.AlibabaMarketingLotteryActivityBindRequest, session string) (*promotion.AlibabaMarketingLotteryActivityBindAPIResponse, error) {
     var resp promotion.AlibabaMarketingLotteryActivityBindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

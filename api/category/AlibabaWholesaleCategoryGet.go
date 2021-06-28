@@ -11,11 +11,11 @@ alibaba.wholesale.category.get
 
 获取类目信息
 */
-func AlibabaWholesaleCategoryGet(clt *core.SDKClient, req *category.AlibabaWholesaleCategoryGetRequest, session string) (*category.AlibabaWholesaleCategoryGetResponse, error) {
+func AlibabaWholesaleCategoryGet(clt *core.SDKClient, req *category.AlibabaWholesaleCategoryGetRequest, session string) (*category.AlibabaWholesaleCategoryGetAPIResponse, error) {
     var resp category.AlibabaWholesaleCategoryGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

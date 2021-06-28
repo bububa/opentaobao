@@ -12,8 +12,20 @@ taobao.qimen.trade.user.delete
 */
 type TaobaoQimenTradeUserDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenTradeUserDeleteResponse `json:"taobao_qimen_trade_user_delete_response,omitempty"`
+    // Response *TaobaoQimenTradeUserDeleteResponse `json:"qimen_trade_user_delete_response,omitempty"` 
+    TaobaoQimenTradeUserDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenTradeUserDeleteResponse struct {
+
+    // modal
+    
+    Modal   bool `json:"modal,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenTradeUserDeleteResponse struct {
 

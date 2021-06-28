@@ -12,8 +12,20 @@ alibaba.scbp.account.isarrears.get
 */
 type AlibabaScbpAccountIsarrearsGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAccountIsarrearsGetResponse `json:"alibaba_scbp_account_isarrears_get_response,omitempty"`
+    // Response *AlibabaScbpAccountIsarrearsGetResponse `json:"alibaba_scbp_account_isarrears_get_response,omitempty"` 
+    AlibabaScbpAccountIsarrearsGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAccountIsarrearsGetResponse struct {
+
+    // 客户的关键词推广账户是否欠款
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAccountIsarrearsGetResponse struct {
 

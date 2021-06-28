@@ -16,7 +16,7 @@ type TaobaoTraderatesGetRequest struct {
     model.Params
 
     // 需返回的字段列表。可选值：TradeRate 结构中的所有字段，多个字段之间用“,”分隔
-    fields   []String 
+    fields   []string 
 
     // 评价类型。可选值:get(得到),give(给出)
     rateType   string 
@@ -69,13 +69,13 @@ func (r TaobaoTraderatesGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoTraderatesGetRequest) SetFields(fields []String) error {
+func (r *TaobaoTraderatesGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoTraderatesGetRequest) GetFields() []String {
+func (r TaobaoTraderatesGetRequest) GetFields() []string {
     return r.fields
 }
 

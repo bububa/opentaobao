@@ -12,8 +12,20 @@ taobao.openim.immsg.push
 */
 type TaobaoOpenimImmsgPushAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimImmsgPushResponse `json:"taobao_openim_immsg_push_response,omitempty"`
+    // Response *TaobaoOpenimImmsgPushResponse `json:"openim_immsg_push_response,omitempty"` 
+    TaobaoOpenimImmsgPushResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimImmsgPushResponse struct {
+
+    // 消息id，方便定位问题
+    
+    Msgid   int64 `json:"msgid,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimImmsgPushResponse struct {
 

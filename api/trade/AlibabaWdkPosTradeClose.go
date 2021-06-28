@@ -11,11 +11,11 @@ alibaba.wdk.pos.trade.close
 
 轻pos品牌营销场景，提供关单接口给外部商家
 */
-func AlibabaWdkPosTradeClose(clt *core.SDKClient, req *trade.AlibabaWdkPosTradeCloseRequest, session string) (*trade.AlibabaWdkPosTradeCloseResponse, error) {
+func AlibabaWdkPosTradeClose(clt *core.SDKClient, req *trade.AlibabaWdkPosTradeCloseRequest, session string) (*trade.AlibabaWdkPosTradeCloseAPIResponse, error) {
     var resp trade.AlibabaWdkPosTradeCloseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

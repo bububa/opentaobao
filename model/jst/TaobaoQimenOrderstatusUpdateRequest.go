@@ -19,7 +19,7 @@ type TaobaoQimenOrderstatusUpdateRequest struct {
     allocationCode   string 
 
     // 淘系子订单号
-    orderCodes   []Number 
+    orderCodes   []int64 
 
     // 目标门店的商户中心门店编码
     storeId   int64 
@@ -67,13 +67,13 @@ func (r TaobaoQimenOrderstatusUpdateRequest) GetAllocationCode() string {
     return r.allocationCode
 }
 
-func (r *TaobaoQimenOrderstatusUpdateRequest) SetOrderCodes(orderCodes []Number) error {
+func (r *TaobaoQimenOrderstatusUpdateRequest) SetOrderCodes(orderCodes []int64) error {
     r.orderCodes = orderCodes
     r.Set("order_codes", orderCodes)
     return nil
 }
 
-func (r TaobaoQimenOrderstatusUpdateRequest) GetOrderCodes() []Number {
+func (r TaobaoQimenOrderstatusUpdateRequest) GetOrderCodes() []int64 {
     return r.orderCodes
 }
 

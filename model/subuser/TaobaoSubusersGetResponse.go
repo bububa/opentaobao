@@ -12,8 +12,22 @@ taobao.subusers.get
 */
 type TaobaoSubusersGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSubusersGetResponse `json:"taobao_subusers_get_response,omitempty"`
+    // Response *TaobaoSubusersGetResponse `json:"subusers_get_response,omitempty"` 
+    TaobaoSubusersGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSubusersGetResponse struct {
+
+    // 子账号基本信息
+    
+    Subaccounts  struct {
+        SubAccountInfo  []SubAccountInfo `json:"sub_account_info,omitempty"`
+    } `json:"subaccounts,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSubusersGetResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.icbu.product.update
 
 修改国际站商品，支持询盘商品和在线批发商品，支持英文商品和多语言商品
 */
-func AlibabaIcbuProductUpdate(clt *core.SDKClient, req *icbu.AlibabaIcbuProductUpdateRequest, session string) (*icbu.AlibabaIcbuProductUpdateResponse, error) {
+func AlibabaIcbuProductUpdate(clt *core.SDKClient, req *icbu.AlibabaIcbuProductUpdateRequest, session string) (*icbu.AlibabaIcbuProductUpdateAPIResponse, error) {
     var resp icbu.AlibabaIcbuProductUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,20 @@ taobao.place.store.create
 */
 type TaobaoPlaceStoreCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPlaceStoreCreateResponse `json:"taobao_place_store_create_response,omitempty"`
+    // Response *TaobaoPlaceStoreCreateResponse `json:"place_store_create_response,omitempty"` 
+    TaobaoPlaceStoreCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoPlaceStoreCreateResponse struct {
+
+    // result
+    
+    StoreId   int64 `json:"store_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPlaceStoreCreateResponse struct {
 

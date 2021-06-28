@@ -11,11 +11,11 @@ taobao.fenxiao.order.remark.update
 
 供应商修改采购单备注
 */
-func TaobaoFenxiaoOrderRemarkUpdate(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoOrderRemarkUpdateRequest, session string) (*fenxiao.TaobaoFenxiaoOrderRemarkUpdateResponse, error) {
+func TaobaoFenxiaoOrderRemarkUpdate(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoOrderRemarkUpdateRequest, session string) (*fenxiao.TaobaoFenxiaoOrderRemarkUpdateAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoOrderRemarkUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

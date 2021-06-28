@@ -12,8 +12,20 @@ taobao.picture.isreferenced.get
 */
 type TaobaoPictureIsreferencedGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPictureIsreferencedGetResponse `json:"taobao_picture_isreferenced_get_response,omitempty"`
+    // Response *TaobaoPictureIsreferencedGetResponse `json:"picture_isreferenced_get_response,omitempty"` 
+    TaobaoPictureIsreferencedGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPictureIsreferencedGetResponse struct {
+
+    // 图片是否被引用
+    
+    IsReferenced   bool `json:"is_referenced,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPictureIsreferencedGetResponse struct {
 

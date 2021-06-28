@@ -12,8 +12,22 @@ taobao.wlb.orderstatus.get
 */
 type TaobaoWlbOrderstatusGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbOrderstatusGetResponse `json:"taobao_wlb_orderstatus_get_response,omitempty"`
+    // Response *TaobaoWlbOrderstatusGetResponse `json:"wlb_orderstatus_get_response,omitempty"` 
+    TaobaoWlbOrderstatusGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbOrderstatusGetResponse struct {
+
+    // 订单流转信息状态列表
+    
+    WlbOrderStatus  struct {
+        WlbProcessStatus  []WlbProcessStatus `json:"wlb_process_status,omitempty"`
+    } `json:"wlb_order_status,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbOrderstatusGetResponse struct {
 

@@ -1,6 +1,33 @@
 package trade
 
 // RefundGoodsCreateResult 
+/* model for simplify = false
+type RefundGoodsCreateResult struct {
+
+    // 退货单id
+    
+    RefundGoodsId   string `json:"refund_goods_id,omitempty"`
+    
+
+    // 是否创建成功
+    
+    Success   bool `json:"success,omitempty"`
+    
+
+    // 错误码
+    
+    ErrorCode   string `json:"error_code,omitempty"`
+    
+
+    // 错误信息
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+}
+*/
+
+// RefundGoodsCreateResult 
 type RefundGoodsCreateResult struct {
 
     // 退货单id

@@ -19,7 +19,7 @@ type TmallTraceplatformTicketPictureUploadRequest struct {
     bizOrderId   int64 
 
     // 图片二进制流，只支持jpg/jpeg/png格式
-    file   []byte 
+    file   []*model.File 
 
 }
 
@@ -52,13 +52,13 @@ func (r TmallTraceplatformTicketPictureUploadRequest) GetBizOrderId() int64 {
     return r.bizOrderId
 }
 
-func (r *TmallTraceplatformTicketPictureUploadRequest) SetFile(file []byte) error {
+func (r *TmallTraceplatformTicketPictureUploadRequest) SetFile(file []*model.File) error {
     r.file = file
     r.Set("file", file)
     return nil
 }
 
-func (r TmallTraceplatformTicketPictureUploadRequest) GetFile() []byte {
+func (r TmallTraceplatformTicketPictureUploadRequest) GetFile() []*model.File {
     return r.file
 }
 

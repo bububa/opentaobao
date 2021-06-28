@@ -12,8 +12,22 @@ taobao.fenxiao.refund.get
 */
 type TaobaoFenxiaoRefundGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoRefundGetResponse `json:"taobao_fenxiao_refund_get_response,omitempty"`
+    // Response *TaobaoFenxiaoRefundGetResponse `json:"fenxiao_refund_get_response,omitempty"` 
+    TaobaoFenxiaoRefundGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoRefundGetResponse struct {
+
+    // 退款详情
+    
+    RefundDetail  *struct {
+        RefundDetail  *RefundDetail `json:"refund_detail,omitempty"`
+    } `json:"refund_detail,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoRefundGetResponse struct {
 

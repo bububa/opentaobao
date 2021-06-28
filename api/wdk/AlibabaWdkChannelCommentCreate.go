@@ -11,11 +11,11 @@ alibaba.wdk.channel.comment.create
 
 差评导入
 */
-func AlibabaWdkChannelCommentCreate(clt *core.SDKClient, req *wdk.AlibabaWdkChannelCommentCreateRequest, session string) (*wdk.AlibabaWdkChannelCommentCreateResponse, error) {
+func AlibabaWdkChannelCommentCreate(clt *core.SDKClient, req *wdk.AlibabaWdkChannelCommentCreateRequest, session string) (*wdk.AlibabaWdkChannelCommentCreateAPIResponse, error) {
     var resp wdk.AlibabaWdkChannelCommentCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

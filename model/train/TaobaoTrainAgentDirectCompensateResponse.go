@@ -12,8 +12,30 @@ taobao.train.agent.direct.compensate
 */
 type TaobaoTrainAgentDirectCompensateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentDirectCompensateResponse `json:"taobao_train_agent_direct_compensate_response,omitempty"`
+    // Response *TaobaoTrainAgentDirectCompensateResponse `json:"train_agent_direct_compensate_response,omitempty"` 
+    TaobaoTrainAgentDirectCompensateResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentDirectCompensateResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // resultCode
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // resultMsg
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentDirectCompensateResponse struct {
 

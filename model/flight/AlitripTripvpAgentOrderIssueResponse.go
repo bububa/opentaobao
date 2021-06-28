@@ -12,8 +12,20 @@ alitrip.tripvp.agent.order.issue
 */
 type AlitripTripvpAgentOrderIssueAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTripvpAgentOrderIssueResponse `json:"alitrip_tripvp_agent_order_issue_response,omitempty"`
+    // Response *AlitripTripvpAgentOrderIssueResponse `json:"alitrip_tripvp_agent_order_issue_response,omitempty"` 
+    AlitripTripvpAgentOrderIssueResponse
 }
+
+/* model for simplify = false
+type AlitripTripvpAgentOrderIssueResponse struct {
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlitripTripvpAgentOrderIssueResponse struct {
 

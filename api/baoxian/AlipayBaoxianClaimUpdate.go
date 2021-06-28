@@ -11,11 +11,11 @@ alipay.baoxian.claim.update
 
 更新保险理赔单
 */
-func AlipayBaoxianClaimUpdate(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimUpdateRequest, session string) (*baoxian.AlipayBaoxianClaimUpdateResponse, error) {
+func AlipayBaoxianClaimUpdate(clt *core.SDKClient, req *baoxian.AlipayBaoxianClaimUpdateRequest, session string) (*baoxian.AlipayBaoxianClaimUpdateAPIResponse, error) {
     var resp baoxian.AlipayBaoxianClaimUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

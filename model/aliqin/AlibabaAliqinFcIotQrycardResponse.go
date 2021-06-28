@@ -12,8 +12,22 @@ alibaba.aliqin.fc.iot.qrycard
 */
 type AlibabaAliqinFcIotQrycardAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcIotQrycardResponse `json:"alibaba_aliqin_fc_iot_qrycard_response,omitempty"`
+    // Response *AlibabaAliqinFcIotQrycardResponse `json:"alibaba_aliqin_fc_iot_qrycard_response,omitempty"` 
+    AlibabaAliqinFcIotQrycardResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcIotQrycardResponse struct {
+
+    // 系统自动生成
+    
+    Result  *struct {
+        AlibabaAliqinFcIotQrycardResult  *AlibabaAliqinFcIotQrycardResult `json:"alibaba_aliqin_fc_iot_qrycard_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcIotQrycardResponse struct {
 

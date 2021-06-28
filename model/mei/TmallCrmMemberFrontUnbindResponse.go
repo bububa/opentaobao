@@ -12,8 +12,20 @@ tmall.crm.member.front.unbind
 */
 type TmallCrmMemberFrontUnbindAPIResponse struct {
     model.CommonResponse
-    Response *TmallCrmMemberFrontUnbindResponse `json:"tmall_crm_member_front_unbind_response,omitempty"`
+    // Response *TmallCrmMemberFrontUnbindResponse `json:"tmall_crm_member_front_unbind_response,omitempty"` 
+    TmallCrmMemberFrontUnbindResponse
 }
+
+/* model for simplify = false
+type TmallCrmMemberFrontUnbindResponse struct {
+
+    // 接口调用是否成功
+    
+    ResultSuccess   bool `json:"result_success,omitempty"`
+    
+
+}
+*/
 
 type TmallCrmMemberFrontUnbindResponse struct {
 

@@ -12,8 +12,20 @@ alitrip.item.add.schema.get
 */
 type AlitripItemAddSchemaGetAPIResponse struct {
     model.CommonResponse
-    Response *AlitripItemAddSchemaGetResponse `json:"alitrip_item_add_schema_get_response,omitempty"`
+    // Response *AlitripItemAddSchemaGetResponse `json:"alitrip_item_add_schema_get_response,omitempty"` 
+    AlitripItemAddSchemaGetResponse
 }
+
+/* model for simplify = false
+type AlitripItemAddSchemaGetResponse struct {
+
+    // schema模板数据
+    
+    SchemaXmlFields   string `json:"schema_xml_fields,omitempty"`
+    
+
+}
+*/
 
 type AlitripItemAddSchemaGetResponse struct {
 

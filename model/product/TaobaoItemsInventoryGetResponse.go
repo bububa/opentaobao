@@ -14,8 +14,27 @@ taobao.items.inventory.get
 */
 type TaobaoItemsInventoryGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemsInventoryGetResponse `json:"taobao_items_inventory_get_response,omitempty"`
+    // Response *TaobaoItemsInventoryGetResponse `json:"items_inventory_get_response,omitempty"` 
+    TaobaoItemsInventoryGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemsInventoryGetResponse struct {
+
+    // 搜索到底商品列表，具体字段根据设定的fields决定，不包括desc,stuff_status字段
+    
+    Items  struct {
+        Item  []Item `json:"item,omitempty"`
+    } `json:"items,omitempty"`
+    
+
+    // 搜索到符合条件的结果总数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemsInventoryGetResponse struct {
 

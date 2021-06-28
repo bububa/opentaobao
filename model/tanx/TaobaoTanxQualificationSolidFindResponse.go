@@ -12,8 +12,32 @@ taobao.tanx.qualification.solid.find
 */
 type TaobaoTanxQualificationSolidFindAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTanxQualificationSolidFindResponse `json:"taobao_tanx_qualification_solid_find_response,omitempty"`
+    // Response *TaobaoTanxQualificationSolidFindResponse `json:"tanx_qualification_solid_find_response,omitempty"` 
+    TaobaoTanxQualificationSolidFindResponse
 }
+
+/* model for simplify = false
+type TaobaoTanxQualificationSolidFindResponse struct {
+
+    // 调用是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 返回固化资质列表
+    
+    QualificationList  struct {
+        QualificationDto  []QualificationDto `json:"qualification_dto,omitempty"`
+    } `json:"qualification_list,omitempty"`
+    
+
+    // 返回查询总数
+    
+    Count   string `json:"count,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTanxQualificationSolidFindResponse struct {
 

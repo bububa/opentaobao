@@ -12,8 +12,22 @@ taobao.tbk.dg.vegas.tlj.instance.report
 */
 type TaobaoTbkDgVegasTljInstanceReportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkDgVegasTljInstanceReportResponse `json:"taobao_tbk_dg_vegas_tlj_instance_report_response,omitempty"`
+    // Response *TaobaoTbkDgVegasTljInstanceReportResponse `json:"tbk_dg_vegas_tlj_instance_report_response,omitempty"` 
+    TaobaoTbkDgVegasTljInstanceReportResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkDgVegasTljInstanceReportResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoTbkDgVegasTljInstanceReportResult  *TaobaoTbkDgVegasTljInstanceReportResult `json:"taobao_tbk_dg_vegas_tlj_instance_report_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkDgVegasTljInstanceReportResponse struct {
 

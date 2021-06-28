@@ -13,8 +13,20 @@ taobao.ump.shoutaotag.add
 */
 type TaobaoUmpShoutaotagAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpShoutaotagAddResponse `json:"taobao_ump_shoutaotag_add_response,omitempty"`
+    // Response *TaobaoUmpShoutaotagAddResponse `json:"ump_shoutaotag_add_response,omitempty"` 
+    TaobaoUmpShoutaotagAddResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpShoutaotagAddResponse struct {
+
+    // 是否打标成功
+    
+    AddResult   bool `json:"add_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpShoutaotagAddResponse struct {
 

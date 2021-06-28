@@ -12,8 +12,20 @@ taobao.baichuan.user.loginbytoken
 */
 type TaobaoBaichuanUserLoginbytokenAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanUserLoginbytokenResponse `json:"taobao_baichuan_user_loginbytoken_response,omitempty"`
+    // Response *TaobaoBaichuanUserLoginbytokenResponse `json:"baichuan_user_loginbytoken_response,omitempty"` 
+    TaobaoBaichuanUserLoginbytokenResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanUserLoginbytokenResponse struct {
+
+    // name
+    
+    Name   string `json:"name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanUserLoginbytokenResponse struct {
 

@@ -11,11 +11,11 @@ taobao.ailab.aicloud.top.device.control.hibernation
 
 定时休眠
 */
-func TaobaoAilabAicloudTopDeviceControlHibernation(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlHibernationRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlHibernationResponse, error) {
+func TaobaoAilabAicloudTopDeviceControlHibernation(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlHibernationRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlHibernationAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopDeviceControlHibernationAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

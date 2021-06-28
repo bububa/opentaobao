@@ -11,11 +11,11 @@ alitrip.hotel.search.citysuggest.get
 
 城市Suggest接口
 */
-func AlitripHotelSearchCitysuggestGet(clt *core.SDKClient, req *hotel.AlitripHotelSearchCitysuggestGetRequest, session string) (*hotel.AlitripHotelSearchCitysuggestGetResponse, error) {
+func AlitripHotelSearchCitysuggestGet(clt *core.SDKClient, req *hotel.AlitripHotelSearchCitysuggestGetRequest, session string) (*hotel.AlitripHotelSearchCitysuggestGetAPIResponse, error) {
     var resp hotel.AlitripHotelSearchCitysuggestGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

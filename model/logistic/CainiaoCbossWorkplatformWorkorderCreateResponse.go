@@ -12,8 +12,22 @@ cainiao.cboss.workplatform.workorder.create
 */
 type CainiaoCbossWorkplatformWorkorderCreateAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCbossWorkplatformWorkorderCreateResponse `json:"cainiao_cboss_workplatform_workorder_create_response,omitempty"`
+    // Response *CainiaoCbossWorkplatformWorkorderCreateResponse `json:"cainiao_cboss_workplatform_workorder_create_response,omitempty"` 
+    CainiaoCbossWorkplatformWorkorderCreateResponse
 }
+
+/* model for simplify = false
+type CainiaoCbossWorkplatformWorkorderCreateResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        CainiaoCbossWorkplatformWorkorderCreateResult  *CainiaoCbossWorkplatformWorkorderCreateResult `json:"cainiao_cboss_workplatform_workorder_create_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCbossWorkplatformWorkorderCreateResponse struct {
 

@@ -12,8 +12,22 @@ taobao.taotv.carousel.playlist.get
 */
 type TaobaoTaotvCarouselPlaylistGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTaotvCarouselPlaylistGetResponse `json:"taobao_taotv_carousel_playlist_get_response,omitempty"`
+    // Response *TaobaoTaotvCarouselPlaylistGetResponse `json:"taotv_carousel_playlist_get_response,omitempty"` 
+    TaobaoTaotvCarouselPlaylistGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTaotvCarouselPlaylistGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoTaotvCarouselPlaylistGetResult  *TaobaoTaotvCarouselPlaylistGetResult `json:"taobao_taotv_carousel_playlist_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTaotvCarouselPlaylistGetResponse struct {
 

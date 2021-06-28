@@ -12,8 +12,22 @@ alibaba.scbp.keyword.matched.products.get
 */
 type AlibabaScbpKeywordMatchedProductsGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpKeywordMatchedProductsGetResponse `json:"alibaba_scbp_keyword_matched_products_get_response,omitempty"`
+    // Response *AlibabaScbpKeywordMatchedProductsGetResponse `json:"alibaba_scbp_keyword_matched_products_get_response,omitempty"` 
+    AlibabaScbpKeywordMatchedProductsGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpKeywordMatchedProductsGetResponse struct {
+
+    // 匹配的产品列表
+    
+    MachedProductList  struct {
+        TopMatchedProductDto  []TopMatchedProductDto `json:"top_matched_product_dto,omitempty"`
+    } `json:"mached_product_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpKeywordMatchedProductsGetResponse struct {
 

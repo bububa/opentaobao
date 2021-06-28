@@ -198,7 +198,7 @@ type TaobaoItemAddRequest struct {
     increment   float64 
 
     // 商品主图片。类型:JPG,GIF;最大长度:3M。（推荐使用pic_path字段，先把图片上传到卖家图片空间）
-    image   []byte 
+    image   []*model.File 
 
     // 宝贝所属的运费模板ID。取值范围：整数且必须是该卖家的运费模板的ID（可通过taobao.delivery.template.get获得当前会话用户的所有邮费模板）
     postageId   int64 
@@ -318,7 +318,7 @@ type TaobaoItemAddRequest struct {
     bizCode   string 
 
     // 此字段已经废弃，不再使用
-    imageUrls   []String 
+    imageUrls   []string 
 
     // 发布电子凭证宝贝时候表示是否使用邮寄 0: 代表不使用邮寄； 1：代表使用邮寄；如果不设置这个值，代表不使用邮寄
     localityLifeChooseLogis   string 
@@ -1000,13 +1000,13 @@ func (r TaobaoItemAddRequest) GetIncrement() float64 {
     return r.increment
 }
 
-func (r *TaobaoItemAddRequest) SetImage(image []byte) error {
+func (r *TaobaoItemAddRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoItemAddRequest) GetImage() []byte {
+func (r TaobaoItemAddRequest) GetImage() []*model.File {
     return r.image
 }
 
@@ -1400,13 +1400,13 @@ func (r TaobaoItemAddRequest) GetBizCode() string {
     return r.bizCode
 }
 
-func (r *TaobaoItemAddRequest) SetImageUrls(imageUrls []String) error {
+func (r *TaobaoItemAddRequest) SetImageUrls(imageUrls []string) error {
     r.imageUrls = imageUrls
     r.Set("image_urls", imageUrls)
     return nil
 }
 
-func (r TaobaoItemAddRequest) GetImageUrls() []String {
+func (r TaobaoItemAddRequest) GetImageUrls() []string {
     return r.imageUrls
 }
 

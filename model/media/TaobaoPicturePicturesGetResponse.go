@@ -12,8 +12,22 @@ taobao.picture.pictures.get
 */
 type TaobaoPicturePicturesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPicturePicturesGetResponse `json:"taobao_picture_pictures_get_response,omitempty"`
+    // Response *TaobaoPicturePicturesGetResponse `json:"picture_pictures_get_response,omitempty"` 
+    TaobaoPicturePicturesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPicturePicturesGetResponse struct {
+
+    // 图片空间图片数据对象
+    
+    Pictures  struct {
+        Picture  []Picture `json:"picture,omitempty"`
+    } `json:"pictures,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPicturePicturesGetResponse struct {
 

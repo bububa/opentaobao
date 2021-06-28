@@ -15,11 +15,11 @@ cainiao.data.logistics.delivery.aging.predict
 
 大促期间，展示预测的时效区间
 */
-func CainiaoDataLogisticsDeliveryAgingPredict(clt *core.SDKClient, req *logistic.CainiaoDataLogisticsDeliveryAgingPredictRequest, session string) (*logistic.CainiaoDataLogisticsDeliveryAgingPredictResponse, error) {
+func CainiaoDataLogisticsDeliveryAgingPredict(clt *core.SDKClient, req *logistic.CainiaoDataLogisticsDeliveryAgingPredictRequest, session string) (*logistic.CainiaoDataLogisticsDeliveryAgingPredictAPIResponse, error) {
     var resp logistic.CainiaoDataLogisticsDeliveryAgingPredictAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ taobao.baichuan.payresult.query
 
 百川支付完成回调
 */
-func TaobaoBaichuanPayresultQuery(clt *core.SDKClient, req *baichuan.TaobaoBaichuanPayresultQueryRequest, session string) (*baichuan.TaobaoBaichuanPayresultQueryResponse, error) {
+func TaobaoBaichuanPayresultQuery(clt *core.SDKClient, req *baichuan.TaobaoBaichuanPayresultQueryRequest, session string) (*baichuan.TaobaoBaichuanPayresultQueryAPIResponse, error) {
     var resp baichuan.TaobaoBaichuanPayresultQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

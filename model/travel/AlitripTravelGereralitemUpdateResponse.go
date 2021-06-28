@@ -13,8 +13,22 @@ alitrip.travel.gereralitem.update
 */
 type AlitripTravelGereralitemUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTravelGereralitemUpdateResponse `json:"alitrip_travel_gereralitem_update_response,omitempty"`
+    // Response *AlitripTravelGereralitemUpdateResponse `json:"alitrip_travel_gereralitem_update_response,omitempty"` 
+    AlitripTravelGereralitemUpdateResponse
 }
+
+/* model for simplify = false
+type AlitripTravelGereralitemUpdateResponse struct {
+
+    // 商品发布结果
+    
+    TravelItem  *struct {
+        TopTravelItem  *TopTravelItem `json:"top_travel_item,omitempty"`
+    } `json:"travel_item,omitempty"`
+    
+
+}
+*/
 
 type AlitripTravelGereralitemUpdateResponse struct {
 

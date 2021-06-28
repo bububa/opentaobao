@@ -14,8 +14,22 @@ sku_id对应的sku要属于传入的nick对应的卖家
 */
 type TaobaoItemSkuGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemSkuGetResponse `json:"taobao_item_sku_get_response,omitempty"`
+    // Response *TaobaoItemSkuGetResponse `json:"item_sku_get_response,omitempty"` 
+    TaobaoItemSkuGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemSkuGetResponse struct {
+
+    // Sku
+    
+    Sku  *struct {
+        Sku  *Sku `json:"sku,omitempty"`
+    } `json:"sku,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemSkuGetResponse struct {
 

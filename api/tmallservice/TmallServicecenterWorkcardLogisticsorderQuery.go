@@ -11,11 +11,11 @@ tmall.servicecenter.workcard.logisticsorder.query
 
 物流订单信息查询API
 */
-func TmallServicecenterWorkcardLogisticsorderQuery(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardLogisticsorderQueryRequest, session string) (*tmallservice.TmallServicecenterWorkcardLogisticsorderQueryResponse, error) {
+func TmallServicecenterWorkcardLogisticsorderQuery(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardLogisticsorderQueryRequest, session string) (*tmallservice.TmallServicecenterWorkcardLogisticsorderQueryAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardLogisticsorderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

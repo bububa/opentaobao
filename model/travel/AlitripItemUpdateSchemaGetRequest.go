@@ -19,7 +19,7 @@ type AlitripItemUpdateSchemaGetRequest struct {
     itemId   int64 
 
     // 需要获取的编辑schema，不填默认返回全部
-    updateFieldIds   []String 
+    updateFieldIds   []string 
 
 }
 
@@ -52,13 +52,13 @@ func (r AlitripItemUpdateSchemaGetRequest) GetItemId() int64 {
     return r.itemId
 }
 
-func (r *AlitripItemUpdateSchemaGetRequest) SetUpdateFieldIds(updateFieldIds []String) error {
+func (r *AlitripItemUpdateSchemaGetRequest) SetUpdateFieldIds(updateFieldIds []string) error {
     r.updateFieldIds = updateFieldIds
     r.Set("update_field_ids", updateFieldIds)
     return nil
 }
 
-func (r AlitripItemUpdateSchemaGetRequest) GetUpdateFieldIds() []String {
+func (r AlitripItemUpdateSchemaGetRequest) GetUpdateFieldIds() []string {
     return r.updateFieldIds
 }
 

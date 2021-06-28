@@ -13,8 +13,22 @@ alibaba.aliqin.fc.sms.num.send
 */
 type AlibabaAliqinFcSmsNumSendAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcSmsNumSendResponse `json:"alibaba_aliqin_fc_sms_num_send_response,omitempty"`
+    // Response *AlibabaAliqinFcSmsNumSendResponse `json:"alibaba_aliqin_fc_sms_num_send_response,omitempty"` 
+    AlibabaAliqinFcSmsNumSendResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcSmsNumSendResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        AlibabaAliqinFcSmsNumSendBizResult  *AlibabaAliqinFcSmsNumSendBizResult `json:"alibaba_aliqin_fc_sms_num_send_biz_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcSmsNumSendResponse struct {
 

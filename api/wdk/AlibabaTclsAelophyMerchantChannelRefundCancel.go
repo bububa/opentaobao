@@ -11,11 +11,11 @@ alibaba.tcls.aelophy.merchant.channel.refund.cancel
 
 翱象小程序 用户逆向申请取消
 */
-func AlibabaTclsAelophyMerchantChannelRefundCancel(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelRefundCancelRequest, session string) (*wdk.AlibabaTclsAelophyMerchantChannelRefundCancelResponse, error) {
+func AlibabaTclsAelophyMerchantChannelRefundCancel(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyMerchantChannelRefundCancelRequest, session string) (*wdk.AlibabaTclsAelophyMerchantChannelRefundCancelAPIResponse, error) {
     var resp wdk.AlibabaTclsAelophyMerchantChannelRefundCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

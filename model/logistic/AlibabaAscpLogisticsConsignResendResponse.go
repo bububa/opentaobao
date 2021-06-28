@@ -14,8 +14,22 @@ alibaba.ascp.logistics.consign.resend
 */
 type AlibabaAscpLogisticsConsignResendAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAscpLogisticsConsignResendResponse `json:"alibaba_ascp_logistics_consign_resend_response,omitempty"`
+    // Response *AlibabaAscpLogisticsConsignResendResponse `json:"alibaba_ascp_logistics_consign_resend_response,omitempty"` 
+    AlibabaAscpLogisticsConsignResendResponse
 }
+
+/* model for simplify = false
+type AlibabaAscpLogisticsConsignResendResponse struct {
+
+    // 异步获取历史数据接口返回结果
+    
+    Result  *struct {
+        AlibabaAscpLogisticsConsignResendResultDto  *AlibabaAscpLogisticsConsignResendResultDto `json:"alibaba_ascp_logistics_consign_resend_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAscpLogisticsConsignResendResponse struct {
 

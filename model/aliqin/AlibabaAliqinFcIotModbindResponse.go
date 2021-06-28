@@ -12,8 +12,22 @@ alibaba.aliqin.fc.iot.modbind
 */
 type AlibabaAliqinFcIotModbindAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcIotModbindResponse `json:"alibaba_aliqin_fc_iot_modbind_response,omitempty"`
+    // Response *AlibabaAliqinFcIotModbindResponse `json:"alibaba_aliqin_fc_iot_modbind_response,omitempty"` 
+    AlibabaAliqinFcIotModbindResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcIotModbindResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaAliqinFcIotModbindResult  *AlibabaAliqinFcIotModbindResult `json:"alibaba_aliqin_fc_iot_modbind_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcIotModbindResponse struct {
 

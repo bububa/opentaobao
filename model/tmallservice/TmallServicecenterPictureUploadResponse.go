@@ -12,8 +12,22 @@ tmall.servicecenter.picture.upload
 */
 type TmallServicecenterPictureUploadAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterPictureUploadResponse `json:"tmall_servicecenter_picture_upload_response,omitempty"`
+    // Response *TmallServicecenterPictureUploadResponse `json:"tmall_servicecenter_picture_upload_response,omitempty"` 
+    TmallServicecenterPictureUploadResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterPictureUploadResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterPictureUploadResponse struct {
 

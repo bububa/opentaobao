@@ -12,8 +12,22 @@ alitrip.grouptour.product.upload
 */
 type AlitripGrouptourProductUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlitripGrouptourProductUploadResponse `json:"alitrip_grouptour_product_upload_response,omitempty"`
+    // Response *AlitripGrouptourProductUploadResponse `json:"alitrip_grouptour_product_upload_response,omitempty"` 
+    AlitripGrouptourProductUploadResponse
 }
+
+/* model for simplify = false
+type AlitripGrouptourProductUploadResponse struct {
+
+    // firstResult
+    
+    FirstResult  *struct {
+        TopTravelItem  *TopTravelItem `json:"top_travel_item,omitempty"`
+    } `json:"first_result,omitempty"`
+    
+
+}
+*/
 
 type AlitripGrouptourProductUploadResponse struct {
 

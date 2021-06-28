@@ -12,8 +12,22 @@ taobao.logistics.companies.get
 */
 type TaobaoLogisticsCompaniesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsCompaniesGetResponse `json:"taobao_logistics_companies_get_response,omitempty"`
+    // Response *TaobaoLogisticsCompaniesGetResponse `json:"logistics_companies_get_response,omitempty"` 
+    TaobaoLogisticsCompaniesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsCompaniesGetResponse struct {
+
+    // 物流公司信息。返回的LogisticCompany包含的具体信息为入参fields请求的字段信息。
+    
+    LogisticsCompanies  struct {
+        LogisticsCompany  []LogisticsCompany `json:"logistics_company,omitempty"`
+    } `json:"logistics_companies,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsCompaniesGetResponse struct {
 

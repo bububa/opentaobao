@@ -103,7 +103,7 @@ type TaobaoFenxiaoProductUpdateRequest struct {
     picPath   string 
 
     // 主图图片，如果pic_path参数不空，则优先使用pic_path，忽略该参数
-    image   []byte 
+    image   []*model.File 
 
     // 产品属性
     properties   string 
@@ -437,13 +437,13 @@ func (r TaobaoFenxiaoProductUpdateRequest) GetPicPath() string {
     return r.picPath
 }
 
-func (r *TaobaoFenxiaoProductUpdateRequest) SetImage(image []byte) error {
+func (r *TaobaoFenxiaoProductUpdateRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoFenxiaoProductUpdateRequest) GetImage() []byte {
+func (r TaobaoFenxiaoProductUpdateRequest) GetImage() []*model.File {
     return r.image
 }
 

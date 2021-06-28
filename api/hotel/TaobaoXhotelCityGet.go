@@ -11,11 +11,11 @@ taobao.xhotel.city.get
 
 引流API，对外提供酒店城市数据
 */
-func TaobaoXhotelCityGet(clt *core.SDKClient, req *hotel.TaobaoXhotelCityGetRequest, session string) (*hotel.TaobaoXhotelCityGetResponse, error) {
+func TaobaoXhotelCityGet(clt *core.SDKClient, req *hotel.TaobaoXhotelCityGetRequest, session string) (*hotel.TaobaoXhotelCityGetAPIResponse, error) {
     var resp hotel.TaobaoXhotelCityGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

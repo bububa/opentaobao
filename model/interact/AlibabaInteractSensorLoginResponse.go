@@ -12,8 +12,20 @@ alibaba.interact.sensor.login
 */
 type AlibabaInteractSensorLoginAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorLoginResponse `json:"alibaba_interact_sensor_login_response,omitempty"`
+    // Response *AlibabaInteractSensorLoginResponse `json:"alibaba_interact_sensor_login_response,omitempty"` 
+    AlibabaInteractSensorLoginResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorLoginResponse struct {
+
+    // return=0表示成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorLoginResponse struct {
 

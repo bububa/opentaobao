@@ -12,8 +12,22 @@ taobao.wlb.imports.vas.identity.result
 */
 type TaobaoWlbImportsVasIdentityResultAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbImportsVasIdentityResultResponse `json:"taobao_wlb_imports_vas_identity_result_response,omitempty"`
+    // Response *TaobaoWlbImportsVasIdentityResultResponse `json:"wlb_imports_vas_identity_result_response,omitempty"` 
+    TaobaoWlbImportsVasIdentityResultResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbImportsVasIdentityResultResponse struct {
+
+    // 返回出参数结果
+    
+    Result  *struct {
+        TopResult  *TopResult `json:"top_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbImportsVasIdentityResultResponse struct {
 

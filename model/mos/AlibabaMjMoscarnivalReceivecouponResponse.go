@@ -12,8 +12,22 @@ alibaba.mj.moscarnival.receivecoupon
 */
 type AlibabaMjMoscarnivalReceivecouponAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjMoscarnivalReceivecouponResponse `json:"alibaba_mj_moscarnival_receivecoupon_response,omitempty"`
+    // Response *AlibabaMjMoscarnivalReceivecouponResponse `json:"alibaba_mj_moscarnival_receivecoupon_response,omitempty"` 
+    AlibabaMjMoscarnivalReceivecouponResponse
 }
+
+/* model for simplify = false
+type AlibabaMjMoscarnivalReceivecouponResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        AlibabaMjMoscarnivalReceivecouponResultDo  *AlibabaMjMoscarnivalReceivecouponResultDo `json:"alibaba_mj_moscarnival_receivecoupon_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjMoscarnivalReceivecouponResponse struct {
 

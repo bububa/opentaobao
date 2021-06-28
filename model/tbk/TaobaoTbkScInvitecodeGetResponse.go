@@ -12,8 +12,22 @@ taobao.tbk.sc.invitecode.get
 */
 type TaobaoTbkScInvitecodeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkScInvitecodeGetResponse `json:"taobao_tbk_sc_invitecode_get_response,omitempty"`
+    // Response *TaobaoTbkScInvitecodeGetResponse `json:"tbk_sc_invitecode_get_response,omitempty"` 
+    TaobaoTbkScInvitecodeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkScInvitecodeGetResponse struct {
+
+    // data
+    
+    Data  *struct {
+        TaobaoTbkScInvitecodeGetData  *TaobaoTbkScInvitecodeGetData `json:"taobao_tbk_sc_invitecode_get_data,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkScInvitecodeGetResponse struct {
 

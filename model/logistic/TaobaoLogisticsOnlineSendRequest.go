@@ -16,7 +16,7 @@ type TaobaoLogisticsOnlineSendRequest struct {
     model.Params
 
     // 需要拆单发货的子订单集合，针对的是一笔交易下有多个子订单需要分开发货的场景；1次可传人多个子订单号，子订单间用逗号隔开；为空表示不做拆单发货。
-    subTid   []Number 
+    subTid   []int64 
 
     // 淘宝交易ID
     tid   int64 
@@ -63,13 +63,13 @@ func (r TaobaoLogisticsOnlineSendRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoLogisticsOnlineSendRequest) SetSubTid(subTid []Number) error {
+func (r *TaobaoLogisticsOnlineSendRequest) SetSubTid(subTid []int64) error {
     r.subTid = subTid
     r.Set("sub_tid", subTid)
     return nil
 }
 
-func (r TaobaoLogisticsOnlineSendRequest) GetSubTid() []Number {
+func (r TaobaoLogisticsOnlineSendRequest) GetSubTid() []int64 {
     return r.subTid
 }
 

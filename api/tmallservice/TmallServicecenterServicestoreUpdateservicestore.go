@@ -24,11 +24,11 @@ tmall.servicecenter.servicestore.updateservicestore
 11, 网点不存在
 12, 系统错误
 */
-func TmallServicecenterServicestoreUpdateservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdateservicestoreRequest, session string) (*tmallservice.TmallServicecenterServicestoreUpdateservicestoreResponse, error) {
+func TmallServicecenterServicestoreUpdateservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreUpdateservicestoreRequest, session string) (*tmallservice.TmallServicecenterServicestoreUpdateservicestoreAPIResponse, error) {
     var resp tmallservice.TmallServicecenterServicestoreUpdateservicestoreAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

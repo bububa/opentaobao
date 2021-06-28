@@ -12,8 +12,22 @@ alibaba.scbp.product.group.get
 */
 type AlibabaScbpProductGroupGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpProductGroupGetResponse `json:"alibaba_scbp_product_group_get_response,omitempty"`
+    // Response *AlibabaScbpProductGroupGetResponse `json:"alibaba_scbp_product_group_get_response,omitempty"` 
+    AlibabaScbpProductGroupGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpProductGroupGetResponse struct {
+
+    // 下一层分组列表
+    
+    RoductGroupList  struct {
+        TopProductGroupDto  []TopProductGroupDto `json:"top_product_group_dto,omitempty"`
+    } `json:"roduct_group_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpProductGroupGetResponse struct {
 

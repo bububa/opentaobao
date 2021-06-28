@@ -11,11 +11,11 @@ tmall.servicecenter.workcard.expressorder.create
 
 天猫服务寄送类业务，服务商履约完成后寄回操作时，提供的物流寄件单创建API
 */
-func TmallServicecenterWorkcardExpressorderCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardExpressorderCreateRequest, session string) (*tmallservice.TmallServicecenterWorkcardExpressorderCreateResponse, error) {
+func TmallServicecenterWorkcardExpressorderCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardExpressorderCreateRequest, session string) (*tmallservice.TmallServicecenterWorkcardExpressorderCreateAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardExpressorderCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

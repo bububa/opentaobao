@@ -11,11 +11,11 @@ alibaba.alihealth.nr.trade.medical.insurance.get
 
 阿里健康医保支付信息获取
 */
-func AlibabaAlihealthNrTradeMedicalInsuranceGet(clt *core.SDKClient, req *drug.AlibabaAlihealthNrTradeMedicalInsuranceGetRequest, session string) (*drug.AlibabaAlihealthNrTradeMedicalInsuranceGetResponse, error) {
+func AlibabaAlihealthNrTradeMedicalInsuranceGet(clt *core.SDKClient, req *drug.AlibabaAlihealthNrTradeMedicalInsuranceGetRequest, session string) (*drug.AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse, error) {
     var resp drug.AlibabaAlihealthNrTradeMedicalInsuranceGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

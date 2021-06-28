@@ -11,11 +11,11 @@ alibaba.security.jaq.captcha.verify.result.fetch
 
 获取二次验证的结果
 */
-func AlibabaSecurityJaqCaptchaVerifyResultFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqCaptchaVerifyResultFetchRequest, session string) (*security.AlibabaSecurityJaqCaptchaVerifyResultFetchResponse, error) {
+func AlibabaSecurityJaqCaptchaVerifyResultFetch(clt *core.SDKClient, req *security.AlibabaSecurityJaqCaptchaVerifyResultFetchRequest, session string) (*security.AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponse, error) {
     var resp security.AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

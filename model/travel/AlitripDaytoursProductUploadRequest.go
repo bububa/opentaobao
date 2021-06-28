@@ -28,10 +28,10 @@ type AlitripDaytoursProductUploadRequest struct {
     title   string 
 
     // 可选，商品亮点，最多支持4个亮点。注：在SDK中数组多个元素间以英文逗号分隔
-    subTitles   []String 
+    subTitles   []string 
 
     // 新发布商品时必填。商品图片路径。最多支持5张，第一张为主图，必填，其余四张可选填。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。。注：在SDK中数组多个元素间以英文逗号分隔
-    picUrls   []String 
+    picUrls   []string 
 
     // 新发布商品时必填。出发地，多个出发地用英文逗号分隔。使用说明同“目的地”
     fromLocations   string 
@@ -55,19 +55,19 @@ type AlitripDaytoursProductUploadRequest struct {
     wapDesc   string 
 
     // 特殊必填，（struct_itineraries与itineraries二者选填一个即可，如果两个都上传则以struct_itineraries为准）。itineraries数组的元素个数必须与旅游天数trip_day一致。行程描述，每一天行程都是xml格式（数组的每个元素对应每一天的行程）： ITINERARY根标签必须有，每个活动（ACTIVITY）支持1个title子标签，1个txt子标签和多个img子标签。注：在SDK中多个元素间以英文逗号分隔
-    itineraries   []String 
+    itineraries   []string 
 
     // 特殊必填，行程描述（struct_itineraries与itineraries二者选填一个即可，如果两个都上传则以struct_itineraries为准）。列表中每一个元素对应一天的行程，每天行程由多个活动组成。行程描述是可选项，如果上传了行程内容 则行程序号和行程活动信息必填。
     structItineraries   []StructItinerary 
 
     // 新发布商品时必填。费用包含。列表中每一个元素 对应一点描述，每点描述小于100个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
-    feeInclude   []String 
+    feeInclude   []string 
 
     // 新发布商品时必填。费用不含。列表中每一个元素 对应一点描述，每点描述小于100个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
-    feeExclude   []String 
+    feeExclude   []string 
 
     // 新发布商品时必填。预定须知。列表中每一个元素 对应一点描述，每点描述小于100个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
-    orderInfo   []String 
+    orderInfo   []string 
 
     // 真实的旅游服务提供商
     touristServiceProvider   string 
@@ -103,7 +103,7 @@ type AlitripDaytoursProductUploadRequest struct {
     businessLicense   string 
 
     // 关联商品与店铺类目 结构:"cid1,cid2,...,"。如何获取卖家店铺类目具体参见：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
-    sellerCids   []String 
+    sellerCids   []string 
 
     // 商品秒杀，商品秒杀三个值：可选类型web_only(只能通过web网络秒杀)，wap_only(只能通过wap网络秒杀)，web_and_wap(既能通过web秒杀也能通过wap秒杀)
     secondKill   string 
@@ -162,23 +162,23 @@ func (r AlitripDaytoursProductUploadRequest) GetTitle() string {
     return r.title
 }
 
-func (r *AlitripDaytoursProductUploadRequest) SetSubTitles(subTitles []String) error {
+func (r *AlitripDaytoursProductUploadRequest) SetSubTitles(subTitles []string) error {
     r.subTitles = subTitles
     r.Set("sub_titles", subTitles)
     return nil
 }
 
-func (r AlitripDaytoursProductUploadRequest) GetSubTitles() []String {
+func (r AlitripDaytoursProductUploadRequest) GetSubTitles() []string {
     return r.subTitles
 }
 
-func (r *AlitripDaytoursProductUploadRequest) SetPicUrls(picUrls []String) error {
+func (r *AlitripDaytoursProductUploadRequest) SetPicUrls(picUrls []string) error {
     r.picUrls = picUrls
     r.Set("pic_urls", picUrls)
     return nil
 }
 
-func (r AlitripDaytoursProductUploadRequest) GetPicUrls() []String {
+func (r AlitripDaytoursProductUploadRequest) GetPicUrls() []string {
     return r.picUrls
 }
 
@@ -252,13 +252,13 @@ func (r AlitripDaytoursProductUploadRequest) GetWapDesc() string {
     return r.wapDesc
 }
 
-func (r *AlitripDaytoursProductUploadRequest) SetItineraries(itineraries []String) error {
+func (r *AlitripDaytoursProductUploadRequest) SetItineraries(itineraries []string) error {
     r.itineraries = itineraries
     r.Set("itineraries", itineraries)
     return nil
 }
 
-func (r AlitripDaytoursProductUploadRequest) GetItineraries() []String {
+func (r AlitripDaytoursProductUploadRequest) GetItineraries() []string {
     return r.itineraries
 }
 
@@ -272,33 +272,33 @@ func (r AlitripDaytoursProductUploadRequest) GetStructItineraries() []StructItin
     return r.structItineraries
 }
 
-func (r *AlitripDaytoursProductUploadRequest) SetFeeInclude(feeInclude []String) error {
+func (r *AlitripDaytoursProductUploadRequest) SetFeeInclude(feeInclude []string) error {
     r.feeInclude = feeInclude
     r.Set("fee_include", feeInclude)
     return nil
 }
 
-func (r AlitripDaytoursProductUploadRequest) GetFeeInclude() []String {
+func (r AlitripDaytoursProductUploadRequest) GetFeeInclude() []string {
     return r.feeInclude
 }
 
-func (r *AlitripDaytoursProductUploadRequest) SetFeeExclude(feeExclude []String) error {
+func (r *AlitripDaytoursProductUploadRequest) SetFeeExclude(feeExclude []string) error {
     r.feeExclude = feeExclude
     r.Set("fee_exclude", feeExclude)
     return nil
 }
 
-func (r AlitripDaytoursProductUploadRequest) GetFeeExclude() []String {
+func (r AlitripDaytoursProductUploadRequest) GetFeeExclude() []string {
     return r.feeExclude
 }
 
-func (r *AlitripDaytoursProductUploadRequest) SetOrderInfo(orderInfo []String) error {
+func (r *AlitripDaytoursProductUploadRequest) SetOrderInfo(orderInfo []string) error {
     r.orderInfo = orderInfo
     r.Set("order_info", orderInfo)
     return nil
 }
 
-func (r AlitripDaytoursProductUploadRequest) GetOrderInfo() []String {
+func (r AlitripDaytoursProductUploadRequest) GetOrderInfo() []string {
     return r.orderInfo
 }
 
@@ -412,13 +412,13 @@ func (r AlitripDaytoursProductUploadRequest) GetBusinessLicense() string {
     return r.businessLicense
 }
 
-func (r *AlitripDaytoursProductUploadRequest) SetSellerCids(sellerCids []String) error {
+func (r *AlitripDaytoursProductUploadRequest) SetSellerCids(sellerCids []string) error {
     r.sellerCids = sellerCids
     r.Set("seller_cids", sellerCids)
     return nil
 }
 
-func (r AlitripDaytoursProductUploadRequest) GetSellerCids() []String {
+func (r AlitripDaytoursProductUploadRequest) GetSellerCids() []string {
     return r.sellerCids
 }
 

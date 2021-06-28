@@ -16,7 +16,7 @@ type AlibabaWdkFulfillConfigReadLimitOrderRequest struct {
     model.Params
 
     // 仓code集合
-    warehouseCodeList   []String 
+    warehouseCodeList   []string 
 
 }
 
@@ -39,13 +39,13 @@ func (r AlibabaWdkFulfillConfigReadLimitOrderRequest) GetApiParams() url.Values 
 }
 
 
-func (r *AlibabaWdkFulfillConfigReadLimitOrderRequest) SetWarehouseCodeList(warehouseCodeList []String) error {
+func (r *AlibabaWdkFulfillConfigReadLimitOrderRequest) SetWarehouseCodeList(warehouseCodeList []string) error {
     r.warehouseCodeList = warehouseCodeList
     r.Set("warehouse_code_list", warehouseCodeList)
     return nil
 }
 
-func (r AlibabaWdkFulfillConfigReadLimitOrderRequest) GetWarehouseCodeList() []String {
+func (r AlibabaWdkFulfillConfigReadLimitOrderRequest) GetWarehouseCodeList() []string {
     return r.warehouseCodeList
 }
 

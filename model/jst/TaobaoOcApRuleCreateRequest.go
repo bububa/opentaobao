@@ -16,7 +16,7 @@ type TaobaoOcApRuleCreateRequest struct {
     model.Params
 
     // 传入比例数组后者金额数组
-    divisionRule   []Number 
+    divisionRule   []int64 
 
     // 规则描述相关扩展信息，divisonRule的值包含（"byAmount" 或者 "byPercentage"），excutionPeriod的值包含（ "month" 或者 "day" 或者 "now"）
     extAttributes   string 
@@ -42,13 +42,13 @@ func (r TaobaoOcApRuleCreateRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoOcApRuleCreateRequest) SetDivisionRule(divisionRule []Number) error {
+func (r *TaobaoOcApRuleCreateRequest) SetDivisionRule(divisionRule []int64) error {
     r.divisionRule = divisionRule
     r.Set("division_rule", divisionRule)
     return nil
 }
 
-func (r TaobaoOcApRuleCreateRequest) GetDivisionRule() []Number {
+func (r TaobaoOcApRuleCreateRequest) GetDivisionRule() []int64 {
     return r.divisionRule
 }
 

@@ -11,11 +11,11 @@ alibaba.wdk.eleme.bill.detail.get
 
 查询饿了么对账单信息，带订单明细
 */
-func AlibabaWdkElemeBillDetailGet(clt *core.SDKClient, req *wdk.AlibabaWdkElemeBillDetailGetRequest, session string) (*wdk.AlibabaWdkElemeBillDetailGetResponse, error) {
+func AlibabaWdkElemeBillDetailGet(clt *core.SDKClient, req *wdk.AlibabaWdkElemeBillDetailGetRequest, session string) (*wdk.AlibabaWdkElemeBillDetailGetAPIResponse, error) {
     var resp wdk.AlibabaWdkElemeBillDetailGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

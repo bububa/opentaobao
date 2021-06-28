@@ -11,11 +11,11 @@ alibaba.retail.device.trade.ship
 
 贩卖机发货
 */
-func AlibabaRetailDeviceTradeShip(clt *core.SDKClient, req *util.AlibabaRetailDeviceTradeShipRequest, session string) (*util.AlibabaRetailDeviceTradeShipResponse, error) {
+func AlibabaRetailDeviceTradeShip(clt *core.SDKClient, req *util.AlibabaRetailDeviceTradeShipRequest, session string) (*util.AlibabaRetailDeviceTradeShipAPIResponse, error) {
     var resp util.AlibabaRetailDeviceTradeShipAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

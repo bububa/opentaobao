@@ -12,8 +12,20 @@ alibaba.interact.shop.favor
 */
 type AlibabaInteractShopFavorAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractShopFavorResponse `json:"alibaba_interact_shop_favor_response,omitempty"`
+    // Response *AlibabaInteractShopFavorResponse `json:"alibaba_interact_shop_favor_response,omitempty"` 
+    AlibabaInteractShopFavorResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractShopFavorResponse struct {
+
+    // result=0
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractShopFavorResponse struct {
 

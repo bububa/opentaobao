@@ -12,12 +12,26 @@ taobao.simba.keywordids.deleted.get
 */
 type TaobaoSimbaKeywordidsDeletedGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaKeywordidsDeletedGetResponse `json:"taobao_simba_keywordids_deleted_get_response,omitempty"`
+    // Response *TaobaoSimbaKeywordidsDeletedGetResponse `json:"simba_keywordids_deleted_get_response,omitempty"` 
+    TaobaoSimbaKeywordidsDeletedGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaKeywordidsDeletedGetResponse struct {
+
+    // 词ID列表
+    
+    DeletedKeywordIds  struct {
+        Number  []int64 `json:"int64,omitempty"`
+    } `json:"deleted_keyword_ids,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaKeywordidsDeletedGetResponse struct {
 
     // 词ID列表
-    DeletedKeywordIds   []Number `json:"deleted_keyword_ids,omitempty"`
+    DeletedKeywordIds   []int64 `json:"deleted_keyword_ids,omitempty"`
 
 }

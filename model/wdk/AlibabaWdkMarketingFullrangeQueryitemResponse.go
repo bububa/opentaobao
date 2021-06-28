@@ -12,8 +12,22 @@ alibaba.wdk.marketing.fullrange.queryitem
 */
 type AlibabaWdkMarketingFullrangeQueryitemAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingFullrangeQueryitemResponse `json:"alibaba_wdk_marketing_fullrange_queryitem_response,omitempty"`
+    // Response *AlibabaWdkMarketingFullrangeQueryitemResponse `json:"alibaba_wdk_marketing_fullrange_queryitem_response,omitempty"` 
+    AlibabaWdkMarketingFullrangeQueryitemResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingFullrangeQueryitemResponse struct {
+
+    // 查询结果
+    
+    Result  *struct {
+        MarketPageResult  *MarketPageResult `json:"market_page_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingFullrangeQueryitemResponse struct {
 

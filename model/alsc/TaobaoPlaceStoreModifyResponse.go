@@ -12,8 +12,20 @@ taobao.place.store.modify
 */
 type TaobaoPlaceStoreModifyAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPlaceStoreModifyResponse `json:"taobao_place_store_modify_response,omitempty"`
+    // Response *TaobaoPlaceStoreModifyResponse `json:"place_store_modify_response,omitempty"` 
+    TaobaoPlaceStoreModifyResponse
 }
+
+/* model for simplify = false
+type TaobaoPlaceStoreModifyResponse struct {
+
+    // 是否修改成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPlaceStoreModifyResponse struct {
 

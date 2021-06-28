@@ -16,8 +16,22 @@ taobao.item.update
 */
 type TaobaoItemUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemUpdateResponse `json:"taobao_item_update_response,omitempty"`
+    // Response *TaobaoItemUpdateResponse `json:"item_update_response,omitempty"` 
+    TaobaoItemUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoItemUpdateResponse struct {
+
+    // 商品结构
+    
+    Item  *struct {
+        Item  *Item `json:"item,omitempty"`
+    } `json:"item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemUpdateResponse struct {
 

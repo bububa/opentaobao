@@ -12,8 +12,22 @@ alibaba.wdk.marketing.itempool.deleteactivity
 */
 type AlibabaWdkMarketingItempoolDeleteactivityAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingItempoolDeleteactivityResponse `json:"alibaba_wdk_marketing_itempool_deleteactivity_response,omitempty"`
+    // Response *AlibabaWdkMarketingItempoolDeleteactivityResponse `json:"alibaba_wdk_marketing_itempool_deleteactivity_response,omitempty"` 
+    AlibabaWdkMarketingItempoolDeleteactivityResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingItempoolDeleteactivityResponse struct {
+
+    // 删除活动返回结果
+    
+    Result  *struct {
+        MarketResult  *MarketResult `json:"market_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingItempoolDeleteactivityResponse struct {
 

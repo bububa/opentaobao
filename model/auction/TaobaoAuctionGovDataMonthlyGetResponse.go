@@ -18,8 +18,22 @@ taobao.auction.gov.data.monthly.get
 */
 type TaobaoAuctionGovDataMonthlyGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAuctionGovDataMonthlyGetResponse `json:"taobao_auction_gov_data_monthly_get_response,omitempty"`
+    // Response *TaobaoAuctionGovDataMonthlyGetResponse `json:"auction_gov_data_monthly_get_response,omitempty"` 
+    TaobaoAuctionGovDataMonthlyGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAuctionGovDataMonthlyGetResponse struct {
+
+    // 按月统计结果列表
+    
+    Results  struct {
+        CourtsBidStatMonthlyList  []CourtsBidStatMonthlyList `json:"courts_bid_stat_monthly_list,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAuctionGovDataMonthlyGetResponse struct {
 

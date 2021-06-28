@@ -12,8 +12,22 @@ taobao.tmc.messages.consume
 */
 type TaobaoTmcMessagesConsumeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcMessagesConsumeResponse `json:"taobao_tmc_messages_consume_response,omitempty"`
+    // Response *TaobaoTmcMessagesConsumeResponse `json:"tmc_messages_consume_response,omitempty"` 
+    TaobaoTmcMessagesConsumeResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcMessagesConsumeResponse struct {
+
+    // 消息列表
+    
+    Messages  struct {
+        TmcMessage  []TmcMessage `json:"tmc_message,omitempty"`
+    } `json:"messages,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcMessagesConsumeResponse struct {
 

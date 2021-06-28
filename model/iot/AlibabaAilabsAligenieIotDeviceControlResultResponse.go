@@ -12,8 +12,30 @@ alibaba.ailabs.aligenie.iot.device.control.result
 */
 type AlibabaAilabsAligenieIotDeviceControlResultAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAilabsAligenieIotDeviceControlResultResponse `json:"alibaba_ailabs_aligenie_iot_device_control_result_response,omitempty"`
+    // Response *AlibabaAilabsAligenieIotDeviceControlResultResponse `json:"alibaba_ailabs_aligenie_iot_device_control_result_response,omitempty"` 
+    AlibabaAilabsAligenieIotDeviceControlResultResponse
 }
+
+/* model for simplify = false
+type AlibabaAilabsAligenieIotDeviceControlResultResponse struct {
+
+    // statusCode
+    
+    StatusCode   int64 `json:"status_code,omitempty"`
+    
+
+    // message
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // result
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAilabsAligenieIotDeviceControlResultResponse struct {
 

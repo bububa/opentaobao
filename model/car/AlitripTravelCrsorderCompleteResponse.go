@@ -12,8 +12,25 @@ alitrip.travel.crsorder.complete
 */
 type AlitripTravelCrsorderCompleteAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTravelCrsorderCompleteResponse `json:"alitrip_travel_crsorder_complete_response,omitempty"`
+    // Response *AlitripTravelCrsorderCompleteResponse `json:"alitrip_travel_crsorder_complete_response,omitempty"` 
+    AlitripTravelCrsorderCompleteResponse
 }
+
+/* model for simplify = false
+type AlitripTravelCrsorderCompleteResponse struct {
+
+    // 返回结果message
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 返回结果code
+    
+    MessageCode   int64 `json:"message_code,omitempty"`
+    
+
+}
+*/
 
 type AlitripTravelCrsorderCompleteResponse struct {
 

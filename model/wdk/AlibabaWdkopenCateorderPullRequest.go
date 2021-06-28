@@ -25,7 +25,7 @@ type AlibabaWdkopenCateorderPullRequest struct {
     outOrderId   string 
 
     // 主站子订单ID列表, 为空则表示回传整单状态
-    subOutOrderIds   []Json 
+    subOutOrderIds   []string 
 
 }
 
@@ -78,13 +78,13 @@ func (r AlibabaWdkopenCateorderPullRequest) GetOutOrderId() string {
     return r.outOrderId
 }
 
-func (r *AlibabaWdkopenCateorderPullRequest) SetSubOutOrderIds(subOutOrderIds []Json) error {
+func (r *AlibabaWdkopenCateorderPullRequest) SetSubOutOrderIds(subOutOrderIds []string) error {
     r.subOutOrderIds = subOutOrderIds
     r.Set("sub_out_order_ids", subOutOrderIds)
     return nil
 }
 
-func (r AlibabaWdkopenCateorderPullRequest) GetSubOutOrderIds() []Json {
+func (r AlibabaWdkopenCateorderPullRequest) GetSubOutOrderIds() []string {
     return r.subOutOrderIds
 }
 

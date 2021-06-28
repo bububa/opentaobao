@@ -11,11 +11,11 @@ alibaba.alihealth.prescription.auth.get
 
 获取处方用户授权
 */
-func AlibabaAlihealthPrescriptionAuthGet(clt *core.SDKClient, req *alihealth.AlibabaAlihealthPrescriptionAuthGetRequest, session string) (*alihealth.AlibabaAlihealthPrescriptionAuthGetResponse, error) {
+func AlibabaAlihealthPrescriptionAuthGet(clt *core.SDKClient, req *alihealth.AlibabaAlihealthPrescriptionAuthGetRequest, session string) (*alihealth.AlibabaAlihealthPrescriptionAuthGetAPIResponse, error) {
     var resp alihealth.AlibabaAlihealthPrescriptionAuthGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

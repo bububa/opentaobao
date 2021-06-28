@@ -11,11 +11,11 @@ alibaba.wdk.ums.inbound
 
 入库-ERP下发单
 */
-func AlibabaWdkUmsInbound(clt *core.SDKClient, req *wdk.AlibabaWdkUmsInboundRequest, session string) (*wdk.AlibabaWdkUmsInboundResponse, error) {
+func AlibabaWdkUmsInbound(clt *core.SDKClient, req *wdk.AlibabaWdkUmsInboundRequest, session string) (*wdk.AlibabaWdkUmsInboundAPIResponse, error) {
     var resp wdk.AlibabaWdkUmsInboundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

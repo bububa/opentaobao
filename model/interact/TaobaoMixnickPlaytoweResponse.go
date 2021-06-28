@@ -12,8 +12,20 @@ taobao.mixnick.playtowe
 */
 type TaobaoMixnickPlaytoweAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMixnickPlaytoweResponse `json:"taobao_mixnick_playtowe_response,omitempty"`
+    // Response *TaobaoMixnickPlaytoweResponse `json:"mixnick_playtowe_response,omitempty"` 
+    TaobaoMixnickPlaytoweResponse
 }
+
+/* model for simplify = false
+type TaobaoMixnickPlaytoweResponse struct {
+
+    // 微淘混淆nick
+    
+    WeMixnick   string `json:"we_mixnick,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMixnickPlaytoweResponse struct {
 

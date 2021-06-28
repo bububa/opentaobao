@@ -12,8 +12,22 @@ taobao.miniapp.messsage.reply
 */
 type TaobaoMiniappMesssageReplyAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMiniappMesssageReplyResponse `json:"taobao_miniapp_messsage_reply_response,omitempty"`
+    // Response *TaobaoMiniappMesssageReplyResponse `json:"miniapp_messsage_reply_response,omitempty"` 
+    TaobaoMiniappMesssageReplyResponse
 }
+
+/* model for simplify = false
+type TaobaoMiniappMesssageReplyResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoMiniappMesssageReplyResult  *TaobaoMiniappMesssageReplyResult `json:"taobao_miniapp_messsage_reply_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMiniappMesssageReplyResponse struct {
 

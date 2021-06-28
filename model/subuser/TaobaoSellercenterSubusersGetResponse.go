@@ -12,8 +12,22 @@ taobao.sellercenter.subusers.get
 */
 type TaobaoSellercenterSubusersGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSellercenterSubusersGetResponse `json:"taobao_sellercenter_subusers_get_response,omitempty"`
+    // Response *TaobaoSellercenterSubusersGetResponse `json:"sellercenter_subusers_get_response,omitempty"` 
+    TaobaoSellercenterSubusersGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSellercenterSubusersGetResponse struct {
+
+    // 子账号基本信息列表。具体信息为id、子账号用户名、主账号id、主账号昵称、当前状态值、是否分流
+    
+    Subusers  struct {
+        SubUserInfo  []SubUserInfo `json:"sub_user_info,omitempty"`
+    } `json:"subusers,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSellercenterSubusersGetResponse struct {
 

@@ -15,8 +15,22 @@ alitrip.localplay.product.upload
 */
 type AlitripLocalplayProductUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlitripLocalplayProductUploadResponse `json:"alitrip_localplay_product_upload_response,omitempty"`
+    // Response *AlitripLocalplayProductUploadResponse `json:"alitrip_localplay_product_upload_response,omitempty"` 
+    AlitripLocalplayProductUploadResponse
 }
+
+/* model for simplify = false
+type AlitripLocalplayProductUploadResponse struct {
+
+    // 商品发布/更新结果
+    
+    FirstResult  *struct {
+        TopTravelItem  *TopTravelItem `json:"top_travel_item,omitempty"`
+    } `json:"first_result,omitempty"`
+    
+
+}
+*/
 
 type AlitripLocalplayProductUploadResponse struct {
 

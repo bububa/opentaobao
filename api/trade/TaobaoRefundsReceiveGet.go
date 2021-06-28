@@ -11,11 +11,11 @@ taobao.refunds.receive.get
 
 查询卖家收到的退款列表
 */
-func TaobaoRefundsReceiveGet(clt *core.SDKClient, req *trade.TaobaoRefundsReceiveGetRequest, session string) (*trade.TaobaoRefundsReceiveGetResponse, error) {
+func TaobaoRefundsReceiveGet(clt *core.SDKClient, req *trade.TaobaoRefundsReceiveGetRequest, session string) (*trade.TaobaoRefundsReceiveGetAPIResponse, error) {
     var resp trade.TaobaoRefundsReceiveGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

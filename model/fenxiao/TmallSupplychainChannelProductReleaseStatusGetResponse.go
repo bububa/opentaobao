@@ -12,8 +12,22 @@ tmall.supplychain.channel.product.release.status.get
 */
 type TmallSupplychainChannelProductReleaseStatusGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallSupplychainChannelProductReleaseStatusGetResponse `json:"tmall_supplychain_channel_product_release_status_get_response,omitempty"`
+    // Response *TmallSupplychainChannelProductReleaseStatusGetResponse `json:"tmall_supplychain_channel_product_release_status_get_response,omitempty"` 
+    TmallSupplychainChannelProductReleaseStatusGetResponse
 }
+
+/* model for simplify = false
+type TmallSupplychainChannelProductReleaseStatusGetResponse struct {
+
+    // 异步获取历史数据接口返回结果
+    
+    Result  *struct {
+        TmallSupplychainChannelProductReleaseStatusGetResultDto  *TmallSupplychainChannelProductReleaseStatusGetResultDto `json:"tmall_supplychain_channel_product_release_status_get_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallSupplychainChannelProductReleaseStatusGetResponse struct {
 

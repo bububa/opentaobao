@@ -12,8 +12,30 @@ taobao.simba.adgroup.mobilediscount.delete
 */
 type TaobaoSimbaAdgroupMobilediscountDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaAdgroupMobilediscountDeleteResponse `json:"taobao_simba_adgroup_mobilediscount_delete_response,omitempty"`
+    // Response *TaobaoSimbaAdgroupMobilediscountDeleteResponse `json:"simba_adgroup_mobilediscount_delete_response,omitempty"` 
+    TaobaoSimbaAdgroupMobilediscountDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaAdgroupMobilediscountDeleteResponse struct {
+
+    // 返回成功个数
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+    // 返回信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 返回码
+    
+    Key   string `json:"key,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaAdgroupMobilediscountDeleteResponse struct {
 

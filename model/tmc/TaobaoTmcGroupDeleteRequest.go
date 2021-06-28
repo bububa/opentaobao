@@ -19,7 +19,7 @@ type TaobaoTmcGroupDeleteRequest struct {
     groupName   string 
 
     // 用户列表，不传表示删除整个分组，如果用户全部删除后，也会自动删除整个分组
-    nicks   []String 
+    nicks   []string 
 
     // 用户所属于的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
     userPlatform   string 
@@ -55,13 +55,13 @@ func (r TaobaoTmcGroupDeleteRequest) GetGroupName() string {
     return r.groupName
 }
 
-func (r *TaobaoTmcGroupDeleteRequest) SetNicks(nicks []String) error {
+func (r *TaobaoTmcGroupDeleteRequest) SetNicks(nicks []string) error {
     r.nicks = nicks
     r.Set("nicks", nicks)
     return nil
 }
 
-func (r TaobaoTmcGroupDeleteRequest) GetNicks() []String {
+func (r TaobaoTmcGroupDeleteRequest) GetNicks() []string {
     return r.nicks
 }
 

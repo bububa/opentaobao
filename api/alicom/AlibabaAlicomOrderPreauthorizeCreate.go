@@ -11,11 +11,11 @@ alibaba.alicom.order.preauthorize.create
 
 授授权:签约结果通知
 */
-func AlibabaAlicomOrderPreauthorizeCreate(clt *core.SDKClient, req *alicom.AlibabaAlicomOrderPreauthorizeCreateRequest, session string) (*alicom.AlibabaAlicomOrderPreauthorizeCreateResponse, error) {
+func AlibabaAlicomOrderPreauthorizeCreate(clt *core.SDKClient, req *alicom.AlibabaAlicomOrderPreauthorizeCreateRequest, session string) (*alicom.AlibabaAlicomOrderPreauthorizeCreateAPIResponse, error) {
     var resp alicom.AlibabaAlicomOrderPreauthorizeCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

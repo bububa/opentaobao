@@ -12,8 +12,22 @@ alibaba.servicecenter.spserviceorder.query
 */
 type AlibabaServicecenterSpserviceorderQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaServicecenterSpserviceorderQueryResponse `json:"alibaba_servicecenter_spserviceorder_query_response,omitempty"`
+    // Response *AlibabaServicecenterSpserviceorderQueryResponse `json:"alibaba_servicecenter_spserviceorder_query_response,omitempty"` 
+    AlibabaServicecenterSpserviceorderQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaServicecenterSpserviceorderQueryResponse struct {
+
+    // 请求结果
+    
+    Result  *struct {
+        AlibabaServicecenterSpserviceorderQueryResult  *AlibabaServicecenterSpserviceorderQueryResult `json:"alibaba_servicecenter_spserviceorder_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaServicecenterSpserviceorderQueryResponse struct {
 

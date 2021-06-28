@@ -13,8 +13,29 @@ taobao.inventory.query
 */
 type TaobaoInventoryQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoInventoryQueryResponse `json:"taobao_inventory_query_response,omitempty"`
+    // Response *TaobaoInventoryQueryResponse `json:"inventory_query_response,omitempty"` 
+    TaobaoInventoryQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoInventoryQueryResponse struct {
+
+    // 商品总体库存信息
+    
+    ItemInventorys  struct {
+        InventorySum  []InventorySum `json:"inventory_sum,omitempty"`
+    } `json:"item_inventorys,omitempty"`
+    
+
+    // 提示信息，提示不存在的后端商品
+    
+    TipInfos  struct {
+        TipInfo  []TipInfo `json:"tip_info,omitempty"`
+    } `json:"tip_infos,omitempty"`
+    
+
+}
+*/
 
 type TaobaoInventoryQueryResponse struct {
 

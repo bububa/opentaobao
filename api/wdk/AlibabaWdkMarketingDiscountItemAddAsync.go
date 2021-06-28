@@ -11,11 +11,11 @@ alibaba.wdk.marketing.discount.item.add.async
 
 新分组模型下新增商品
 */
-func AlibabaWdkMarketingDiscountItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingDiscountItemAddAsyncRequest, session string) (*wdk.AlibabaWdkMarketingDiscountItemAddAsyncResponse, error) {
+func AlibabaWdkMarketingDiscountItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingDiscountItemAddAsyncRequest, session string) (*wdk.AlibabaWdkMarketingDiscountItemAddAsyncAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingDiscountItemAddAsyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

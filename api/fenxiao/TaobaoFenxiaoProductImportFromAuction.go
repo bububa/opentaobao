@@ -11,11 +11,11 @@ taobao.fenxiao.product.import.from.auction
 
 供应商选择关联店铺的前台宝贝，导入生成产品
 */
-func TaobaoFenxiaoProductImportFromAuction(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductImportFromAuctionRequest, session string) (*fenxiao.TaobaoFenxiaoProductImportFromAuctionResponse, error) {
+func TaobaoFenxiaoProductImportFromAuction(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductImportFromAuctionRequest, session string) (*fenxiao.TaobaoFenxiaoProductImportFromAuctionAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoProductImportFromAuctionAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

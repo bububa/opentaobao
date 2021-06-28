@@ -12,8 +12,22 @@ taobao.alitrip.car.order.query
 */
 type TaobaoAlitripCarOrderQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripCarOrderQueryResponse `json:"taobao_alitrip_car_order_query_response,omitempty"`
+    // Response *TaobaoAlitripCarOrderQueryResponse `json:"alitrip_car_order_query_response,omitempty"` 
+    TaobaoAlitripCarOrderQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripCarOrderQueryResponse struct {
+
+    // 订单结果
+    
+    FirstResult  *struct {
+        OrderQueryRsp  *OrderQueryRsp `json:"order_query_rsp,omitempty"`
+    } `json:"first_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripCarOrderQueryResponse struct {
 

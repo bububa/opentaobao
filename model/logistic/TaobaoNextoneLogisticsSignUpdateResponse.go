@@ -12,8 +12,22 @@ taobao.nextone.logistics.sign.update
 */
 type TaobaoNextoneLogisticsSignUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoNextoneLogisticsSignUpdateResponse `json:"taobao_nextone_logistics_sign_update_response,omitempty"`
+    // Response *TaobaoNextoneLogisticsSignUpdateResponse `json:"nextone_logistics_sign_update_response,omitempty"` 
+    TaobaoNextoneLogisticsSignUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoNextoneLogisticsSignUpdateResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        TaobaoNextoneLogisticsSignUpdateResult  *TaobaoNextoneLogisticsSignUpdateResult `json:"taobao_nextone_logistics_sign_update_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoNextoneLogisticsSignUpdateResponse struct {
 

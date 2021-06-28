@@ -19,7 +19,7 @@ type TaobaoTaeBookBillsGetRequest struct {
     startTime   string 
 
     // 明细流水类型:流水类型:101、可用金充值；102、可用金扣除；103、冻结；104、解冻；105、冻结金充值；106、冻结金扣除
-    journalTypes   []Number 
+    journalTypes   []int64 
 
     // 每页大小,建议40~100,不能超过100
     pageSize   int64 
@@ -34,7 +34,7 @@ type TaobaoTaeBookBillsGetRequest struct {
     endTime   string 
 
     // 需要返回的字段:bid,account_id,journal_type,amount,book_time,description,gmt_create,gmt_modified ,如果不是以上字段将自动忽略
-    fields   []String 
+    fields   []string 
 
 }
 
@@ -67,13 +67,13 @@ func (r TaobaoTaeBookBillsGetRequest) GetStartTime() string {
     return r.startTime
 }
 
-func (r *TaobaoTaeBookBillsGetRequest) SetJournalTypes(journalTypes []Number) error {
+func (r *TaobaoTaeBookBillsGetRequest) SetJournalTypes(journalTypes []int64) error {
     r.journalTypes = journalTypes
     r.Set("journal_types", journalTypes)
     return nil
 }
 
-func (r TaobaoTaeBookBillsGetRequest) GetJournalTypes() []Number {
+func (r TaobaoTaeBookBillsGetRequest) GetJournalTypes() []int64 {
     return r.journalTypes
 }
 
@@ -117,13 +117,13 @@ func (r TaobaoTaeBookBillsGetRequest) GetEndTime() string {
     return r.endTime
 }
 
-func (r *TaobaoTaeBookBillsGetRequest) SetFields(fields []String) error {
+func (r *TaobaoTaeBookBillsGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoTaeBookBillsGetRequest) GetFields() []String {
+func (r TaobaoTaeBookBillsGetRequest) GetFields() []string {
     return r.fields
 }
 

@@ -12,8 +12,22 @@ cainiao.waybill.ii.search
 */
 type CainiaoWaybillIiSearchAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoWaybillIiSearchResponse `json:"cainiao_waybill_ii_search_response,omitempty"`
+    // Response *CainiaoWaybillIiSearchResponse `json:"cainiao_waybill_ii_search_response,omitempty"` 
+    CainiaoWaybillIiSearchResponse
 }
+
+/* model for simplify = false
+type CainiaoWaybillIiSearchResponse struct {
+
+    // CP网点信息及对应的商家的发货信息
+    
+    WaybillApplySubscriptionCols  struct {
+        WaybillApplySubscriptionInfo  []WaybillApplySubscriptionInfo `json:"waybill_apply_subscription_info,omitempty"`
+    } `json:"waybill_apply_subscription_cols,omitempty"`
+    
+
+}
+*/
 
 type CainiaoWaybillIiSearchResponse struct {
 

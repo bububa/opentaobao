@@ -12,8 +12,22 @@ taobao.wlb.waybill.i.get
 */
 type TaobaoWlbWaybillIGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWaybillIGetResponse `json:"taobao_wlb_waybill_i_get_response,omitempty"`
+    // Response *TaobaoWlbWaybillIGetResponse `json:"wlb_waybill_i_get_response,omitempty"` 
+    TaobaoWlbWaybillIGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWaybillIGetResponse struct {
+
+    // 面单申请接口返回信息
+    
+    WaybillApplyNewCols  struct {
+        WaybillApplyNewInfo  []WaybillApplyNewInfo `json:"waybill_apply_new_info,omitempty"`
+    } `json:"waybill_apply_new_cols,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWaybillIGetResponse struct {
 

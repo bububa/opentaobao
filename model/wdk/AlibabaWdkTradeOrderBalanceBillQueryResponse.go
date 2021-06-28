@@ -12,8 +12,22 @@ alibaba.wdk.trade.order.balance.bill.query
 */
 type AlibabaWdkTradeOrderBalanceBillQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkTradeOrderBalanceBillQueryResponse `json:"alibaba_wdk_trade_order_balance_bill_query_response,omitempty"`
+    // Response *AlibabaWdkTradeOrderBalanceBillQueryResponse `json:"alibaba_wdk_trade_order_balance_bill_query_response,omitempty"` 
+    AlibabaWdkTradeOrderBalanceBillQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkTradeOrderBalanceBillQueryResponse struct {
+
+    // ApiResult
+    
+    ApiResult  *struct {
+        AlibabaWdkTradeOrderBalanceBillQueryApiResult  *AlibabaWdkTradeOrderBalanceBillQueryApiResult `json:"alibaba_wdk_trade_order_balance_bill_query_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkTradeOrderBalanceBillQueryResponse struct {
 

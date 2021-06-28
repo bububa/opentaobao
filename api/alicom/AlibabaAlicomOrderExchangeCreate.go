@@ -11,11 +11,11 @@ alibaba.alicom.order.exchange.create
 
 代理商调用该接口来进行积分兑换
 */
-func AlibabaAlicomOrderExchangeCreate(clt *core.SDKClient, req *alicom.AlibabaAlicomOrderExchangeCreateRequest, session string) (*alicom.AlibabaAlicomOrderExchangeCreateResponse, error) {
+func AlibabaAlicomOrderExchangeCreate(clt *core.SDKClient, req *alicom.AlibabaAlicomOrderExchangeCreateRequest, session string) (*alicom.AlibabaAlicomOrderExchangeCreateAPIResponse, error) {
     var resp alicom.AlibabaAlicomOrderExchangeCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

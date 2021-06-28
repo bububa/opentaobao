@@ -1,6 +1,35 @@
 package iot
 
 // BaseResult 
+/* model for simplify = false
+type BaseResult struct {
+
+    // 信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 响应code
+    
+    RetCode   int64 `json:"ret_code,omitempty"`
+    
+
+    // 返回结果
+    
+    RetValue  *struct {
+        BusinessRecipeOpenDto  *BusinessRecipeOpenDto `json:"business_recipe_open_dto,omitempty"`
+    } `json:"ret_value,omitempty"`
+    
+
+    // 追踪id
+    
+    TraceId   string `json:"trace_id,omitempty"`
+    
+
+}
+*/
+
+// BaseResult 
 type BaseResult struct {
 
     // 信息

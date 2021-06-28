@@ -12,8 +12,22 @@ alibaba.cuntao.interact.requisition.update
 */
 type AlibabaCuntaoInteractRequisitionUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaCuntaoInteractRequisitionUpdateResponse `json:"alibaba_cuntao_interact_requisition_update_response,omitempty"`
+    // Response *AlibabaCuntaoInteractRequisitionUpdateResponse `json:"alibaba_cuntao_interact_requisition_update_response,omitempty"` 
+    AlibabaCuntaoInteractRequisitionUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaCuntaoInteractRequisitionUpdateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaCuntaoInteractRequisitionUpdateResult  *AlibabaCuntaoInteractRequisitionUpdateResult `json:"alibaba_cuntao_interact_requisition_update_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaCuntaoInteractRequisitionUpdateResponse struct {
 

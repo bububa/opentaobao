@@ -16,7 +16,7 @@ type TmallDeviceCarturlGetRequest struct {
     model.Params
 
     // 商品信息，格式为 商品ID_SKU ID_数量，多条记录以逗号(,)分割
-    itemIds   []String 
+    itemIds   []string 
 
     // 设备业务编码
     deviceCode   string 
@@ -45,13 +45,13 @@ func (r TmallDeviceCarturlGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TmallDeviceCarturlGetRequest) SetItemIds(itemIds []String) error {
+func (r *TmallDeviceCarturlGetRequest) SetItemIds(itemIds []string) error {
     r.itemIds = itemIds
     r.Set("item_ids", itemIds)
     return nil
 }
 
-func (r TmallDeviceCarturlGetRequest) GetItemIds() []String {
+func (r TmallDeviceCarturlGetRequest) GetItemIds() []string {
     return r.itemIds
 }
 

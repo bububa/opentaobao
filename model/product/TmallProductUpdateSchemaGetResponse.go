@@ -12,8 +12,20 @@ tmall.product.update.schema.get
 */
 type TmallProductUpdateSchemaGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallProductUpdateSchemaGetResponse `json:"tmall_product_update_schema_get_response,omitempty"`
+    // Response *TmallProductUpdateSchemaGetResponse `json:"tmall_product_update_schema_get_response,omitempty"` 
+    TmallProductUpdateSchemaGetResponse
 }
+
+/* model for simplify = false
+type TmallProductUpdateSchemaGetResponse struct {
+
+    // 参数产品ID对产品的更新规则
+    
+    UpdateProductSchema   string `json:"update_product_schema,omitempty"`
+    
+
+}
+*/
 
 type TmallProductUpdateSchemaGetResponse struct {
 

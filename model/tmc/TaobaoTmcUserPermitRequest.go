@@ -16,7 +16,7 @@ type TaobaoTmcUserPermitRequest struct {
     model.Params
 
     // 消息主题列表，用半角逗号分隔。当用户订阅的topic是应用订阅的子集时才需要设置，不设置表示继承应用所订阅的所有topic，一般情况建议不要设置。
-    topics   []String 
+    topics   []string 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoTmcUserPermitRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoTmcUserPermitRequest) SetTopics(topics []String) error {
+func (r *TaobaoTmcUserPermitRequest) SetTopics(topics []string) error {
     r.topics = topics
     r.Set("topics", topics)
     return nil
 }
 
-func (r TaobaoTmcUserPermitRequest) GetTopics() []String {
+func (r TaobaoTmcUserPermitRequest) GetTopics() []string {
     return r.topics
 }
 

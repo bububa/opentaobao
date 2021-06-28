@@ -11,11 +11,11 @@ alibaba.lsy.crm.update
 
 同步客资状态接口
 */
-func AlibabaLsyCrmUpdate(clt *core.SDKClient, req *user.AlibabaLsyCrmUpdateRequest, session string) (*user.AlibabaLsyCrmUpdateResponse, error) {
+func AlibabaLsyCrmUpdate(clt *core.SDKClient, req *user.AlibabaLsyCrmUpdateRequest, session string) (*user.AlibabaLsyCrmUpdateAPIResponse, error) {
     var resp user.AlibabaLsyCrmUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

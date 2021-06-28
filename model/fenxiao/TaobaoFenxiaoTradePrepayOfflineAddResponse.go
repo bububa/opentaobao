@@ -12,8 +12,22 @@ taobao.fenxiao.trade.prepay.offline.add
 */
 type TaobaoFenxiaoTradePrepayOfflineAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoTradePrepayOfflineAddResponse `json:"taobao_fenxiao_trade_prepay_offline_add_response,omitempty"`
+    // Response *TaobaoFenxiaoTradePrepayOfflineAddResponse `json:"fenxiao_trade_prepay_offline_add_response,omitempty"` 
+    TaobaoFenxiaoTradePrepayOfflineAddResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoTradePrepayOfflineAddResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultTopDo  *ResultTopDo `json:"result_top_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoTradePrepayOfflineAddResponse struct {
 

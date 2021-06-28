@@ -12,8 +12,20 @@ tmall.promotag.taguser.save
 */
 type TmallPromotagTaguserSaveAPIResponse struct {
     model.CommonResponse
-    Response *TmallPromotagTaguserSaveResponse `json:"tmall_promotag_taguser_save_response,omitempty"`
+    // Response *TmallPromotagTaguserSaveResponse `json:"tmall_promotag_taguser_save_response,omitempty"` 
+    TmallPromotagTaguserSaveResponse
 }
+
+/* model for simplify = false
+type TmallPromotagTaguserSaveResponse struct {
+
+    // 打标结果是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TmallPromotagTaguserSaveResponse struct {
 

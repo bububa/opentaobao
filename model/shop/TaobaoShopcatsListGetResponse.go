@@ -12,8 +12,22 @@ taobao.shopcats.list.get
 */
 type TaobaoShopcatsListGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoShopcatsListGetResponse `json:"taobao_shopcats_list_get_response,omitempty"`
+    // Response *TaobaoShopcatsListGetResponse `json:"shopcats_list_get_response,omitempty"` 
+    TaobaoShopcatsListGetResponse
 }
+
+/* model for simplify = false
+type TaobaoShopcatsListGetResponse struct {
+
+    // 店铺类目列表信息
+    
+    ShopCats  struct {
+        ShopCat  []ShopCat `json:"shop_cat,omitempty"`
+    } `json:"shop_cats,omitempty"`
+    
+
+}
+*/
 
 type TaobaoShopcatsListGetResponse struct {
 

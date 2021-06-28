@@ -12,11 +12,11 @@ taobao.tbk.spread.get
 输入一个原始的链接，转换得到指定的传播方式，如二维码，淘口令，短连接；
 现阶段只支持短连接。
 */
-func TaobaoTbkSpreadGet(clt *core.SDKClient, req *tbk.TaobaoTbkSpreadGetRequest, session string) (*tbk.TaobaoTbkSpreadGetResponse, error) {
+func TaobaoTbkSpreadGet(clt *core.SDKClient, req *tbk.TaobaoTbkSpreadGetRequest, session string) (*tbk.TaobaoTbkSpreadGetAPIResponse, error) {
     var resp tbk.TaobaoTbkSpreadGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

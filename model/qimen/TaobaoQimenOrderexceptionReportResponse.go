@@ -12,8 +12,22 @@ WMS调用奇门的接口,当WMS接收到ERP的发货指令时，由于种种原�
 */
 type TaobaoQimenOrderexceptionReportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenOrderexceptionReportResponse `json:"taobao_qimen_orderexception_report_response,omitempty"`
+    // Response *TaobaoQimenOrderexceptionReportResponse `json:"qimen_orderexception_report_response,omitempty"` 
+    TaobaoQimenOrderexceptionReportResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenOrderexceptionReportResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenOrderexceptionReportResponse struct {
 

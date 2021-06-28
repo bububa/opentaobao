@@ -11,11 +11,11 @@ taobao.daogoubao.order.statistics.total
 
 对接千牛端数字中心
 */
-func TaobaoDaogoubaoOrderStatisticsTotal(clt *core.SDKClient, req *qianniu.TaobaoDaogoubaoOrderStatisticsTotalRequest, session string) (*qianniu.TaobaoDaogoubaoOrderStatisticsTotalResponse, error) {
+func TaobaoDaogoubaoOrderStatisticsTotal(clt *core.SDKClient, req *qianniu.TaobaoDaogoubaoOrderStatisticsTotalRequest, session string) (*qianniu.TaobaoDaogoubaoOrderStatisticsTotalAPIResponse, error) {
     var resp qianniu.TaobaoDaogoubaoOrderStatisticsTotalAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

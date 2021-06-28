@@ -12,8 +12,20 @@ taobao.fuwu.sale.link.gen
 */
 type TaobaoFuwuSaleLinkGenAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFuwuSaleLinkGenResponse `json:"taobao_fuwu_sale_link_gen_response,omitempty"`
+    // Response *TaobaoFuwuSaleLinkGenResponse `json:"fuwu_sale_link_gen_response,omitempty"` 
+    TaobaoFuwuSaleLinkGenResponse
 }
+
+/* model for simplify = false
+type TaobaoFuwuSaleLinkGenResponse struct {
+
+    // 通过营销链接接口生成的营销链接短地址
+    
+    Url   string `json:"url,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFuwuSaleLinkGenResponse struct {
 

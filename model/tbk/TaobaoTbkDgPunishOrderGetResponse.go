@@ -12,12 +12,26 @@ taobao.tbk.dg.punish.order.get
 */
 type TaobaoTbkDgPunishOrderGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkDgPunishOrderGetResponse `json:"taobao_tbk_dg_punish_order_get_response,omitempty"`
+    // Response *TaobaoTbkDgPunishOrderGetResponse `json:"tbk_dg_punish_order_get_response,omitempty"` 
+    TaobaoTbkDgPunishOrderGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkDgPunishOrderGetResponse struct {
+
+    // 查询的对象
+    
+    Result  *struct {
+        TaobaoTbkDgPunishOrderGetRpcResult  *TaobaoTbkDgPunishOrderGetRpcResult `json:"taobao_tbk_dg_punish_order_get_rpc_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkDgPunishOrderGetResponse struct {
 
     // 查询的对象
-    Result   *RpcResult `json:"result,omitempty"`
+    Result   *TaobaoTbkDgPunishOrderGetRpcResult `json:"result,omitempty"`
 
 }

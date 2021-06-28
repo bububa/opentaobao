@@ -22,7 +22,7 @@ type TaobaoFenxiaoProductImageUploadRequest struct {
     picPath   string 
 
     // 产品图片
-    image   []byte 
+    image   []*model.File 
 
     // 图片位置，0-14之间。0：操作sku属性图片，1：主图，2-5：细节图，6-14：额外主图
     position   int64 
@@ -71,13 +71,13 @@ func (r TaobaoFenxiaoProductImageUploadRequest) GetPicPath() string {
     return r.picPath
 }
 
-func (r *TaobaoFenxiaoProductImageUploadRequest) SetImage(image []byte) error {
+func (r *TaobaoFenxiaoProductImageUploadRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoFenxiaoProductImageUploadRequest) GetImage() []byte {
+func (r TaobaoFenxiaoProductImageUploadRequest) GetImage() []*model.File {
     return r.image
 }
 

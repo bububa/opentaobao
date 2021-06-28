@@ -12,8 +12,27 @@ taobao.simba.keyword.findbyids
 */
 type TaobaoSimbaKeywordFindbyidsAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaKeywordFindbyidsResponse `json:"taobao_simba_keyword_findbyids_response,omitempty"`
+    // Response *TaobaoSimbaKeywordFindbyidsResponse `json:"simba_keyword_findbyids_response,omitempty"` 
+    TaobaoSimbaKeywordFindbyidsResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaKeywordFindbyidsResponse struct {
+
+    // 整体的返回值
+    
+    Results  struct {
+        SiriusBidwordDto  []SiriusBidwordDto `json:"sirius_bidword_dto,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+    // 错误原因
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaKeywordFindbyidsResponse struct {
 

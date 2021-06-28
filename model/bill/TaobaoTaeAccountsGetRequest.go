@@ -16,10 +16,10 @@ type TaobaoTaeAccountsGetRequest struct {
     model.Params
 
     // 需要返回的字段
-    fields   []String 
+    fields   []string 
 
     // 需要获取的科目ID
-    aids   []Number 
+    aids   []int64 
 
 }
 
@@ -42,23 +42,23 @@ func (r TaobaoTaeAccountsGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoTaeAccountsGetRequest) SetFields(fields []String) error {
+func (r *TaobaoTaeAccountsGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoTaeAccountsGetRequest) GetFields() []String {
+func (r TaobaoTaeAccountsGetRequest) GetFields() []string {
     return r.fields
 }
 
-func (r *TaobaoTaeAccountsGetRequest) SetAids(aids []Number) error {
+func (r *TaobaoTaeAccountsGetRequest) SetAids(aids []int64) error {
     r.aids = aids
     r.Set("aids", aids)
     return nil
 }
 
-func (r TaobaoTaeAccountsGetRequest) GetAids() []Number {
+func (r TaobaoTaeAccountsGetRequest) GetAids() []int64 {
     return r.aids
 }
 

@@ -12,8 +12,22 @@ tmall.car.lease.riskcallback
 */
 type TmallCarLeaseRiskcallbackAPIResponse struct {
     model.CommonResponse
-    Response *TmallCarLeaseRiskcallbackResponse `json:"tmall_car_lease_riskcallback_response,omitempty"`
+    // Response *TmallCarLeaseRiskcallbackResponse `json:"tmall_car_lease_riskcallback_response,omitempty"` 
+    TmallCarLeaseRiskcallbackResponse
 }
+
+/* model for simplify = false
+type TmallCarLeaseRiskcallbackResponse struct {
+
+    // 结果集合
+    
+    Result  *struct {
+        TmallCarLeaseRiskcallbackResult  *TmallCarLeaseRiskcallbackResult `json:"tmall_car_lease_riskcallback_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallCarLeaseRiskcallbackResponse struct {
 

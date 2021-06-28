@@ -12,8 +12,22 @@ tmall.servicecenter.worker.create
 */
 type TmallServicecenterWorkerCreateAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkerCreateResponse `json:"tmall_servicecenter_worker_create_response,omitempty"`
+    // Response *TmallServicecenterWorkerCreateResponse `json:"tmall_servicecenter_worker_create_response,omitempty"` 
+    TmallServicecenterWorkerCreateResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkerCreateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkerCreateResponse struct {
 

@@ -16,7 +16,7 @@ type TaobaoTanxBiddingrefusesGetRequest struct {
     model.Params
 
     // dsp的创意id
-    creativeIds   []String 
+    creativeIds   []string 
 
     // dsp在tanx的memberid
     memberId   int64 
@@ -54,13 +54,13 @@ func (r TaobaoTanxBiddingrefusesGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoTanxBiddingrefusesGetRequest) SetCreativeIds(creativeIds []String) error {
+func (r *TaobaoTanxBiddingrefusesGetRequest) SetCreativeIds(creativeIds []string) error {
     r.creativeIds = creativeIds
     r.Set("creative_ids", creativeIds)
     return nil
 }
 
-func (r TaobaoTanxBiddingrefusesGetRequest) GetCreativeIds() []String {
+func (r TaobaoTanxBiddingrefusesGetRequest) GetCreativeIds() []string {
     return r.creativeIds
 }
 

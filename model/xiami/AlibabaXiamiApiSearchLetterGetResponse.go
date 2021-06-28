@@ -12,8 +12,22 @@ alibaba.xiami.api.search.letter.get
 */
 type AlibabaXiamiApiSearchLetterGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaXiamiApiSearchLetterGetResponse `json:"alibaba_xiami_api_search_letter_get_response,omitempty"`
+    // Response *AlibabaXiamiApiSearchLetterGetResponse `json:"alibaba_xiami_api_search_letter_get_response,omitempty"` 
+    AlibabaXiamiApiSearchLetterGetResponse
 }
+
+/* model for simplify = false
+type AlibabaXiamiApiSearchLetterGetResponse struct {
+
+    // search_letter_result
+    
+    SearchLetterResult  *struct {
+        AlibabaXiamiApiSearchLetterGetStruct  *AlibabaXiamiApiSearchLetterGetStruct `json:"alibaba_xiami_api_search_letter_get_struct,omitempty"`
+    } `json:"search_letter_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaXiamiApiSearchLetterGetResponse struct {
 

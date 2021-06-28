@@ -12,8 +12,22 @@ alibaba.base.order.supplier.notify
 */
 type AlibabaBaseOrderSupplierNotifyAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaBaseOrderSupplierNotifyResponse `json:"alibaba_base_order_supplier_notify_response,omitempty"`
+    // Response *AlibabaBaseOrderSupplierNotifyResponse `json:"alibaba_base_order_supplier_notify_response,omitempty"` 
+    AlibabaBaseOrderSupplierNotifyResponse
 }
+
+/* model for simplify = false
+type AlibabaBaseOrderSupplierNotifyResponse struct {
+
+    // result
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaBaseOrderSupplierNotifyResponse struct {
 

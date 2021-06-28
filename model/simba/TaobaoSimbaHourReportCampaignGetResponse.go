@@ -12,8 +12,22 @@ taobao.simba.hour.report.campaign.get
 */
 type TaobaoSimbaHourReportCampaignGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaHourReportCampaignGetResponse `json:"taobao_simba_hour_report_campaign_get_response,omitempty"`
+    // Response *TaobaoSimbaHourReportCampaignGetResponse `json:"simba_hour_report_campaign_get_response,omitempty"` 
+    TaobaoSimbaHourReportCampaignGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaHourReportCampaignGetResponse struct {
+
+    // 11
+    
+    Results  *struct {
+        RtRptResultEntityDTO  *RtRptResultEntityDTO `json:"rt_rpt_result_entity_dto,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaHourReportCampaignGetResponse struct {
 

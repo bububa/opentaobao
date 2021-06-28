@@ -12,8 +12,37 @@ alibaba.interact.isvlottery.idraw
 */
 type AlibabaInteractIsvlotteryIdrawAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractIsvlotteryIdrawResponse `json:"alibaba_interact_isvlottery_idraw_response,omitempty"`
+    // Response *AlibabaInteractIsvlotteryIdrawResponse `json:"alibaba_interact_isvlottery_idraw_response,omitempty"` 
+    AlibabaInteractIsvlotteryIdrawResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractIsvlotteryIdrawResponse struct {
+
+    // 抽奖中奖信息
+    
+    Data  *struct {
+        LotteryProxyResult  *LotteryProxyResult `json:"lottery_proxy_result,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+    // 是否调用成功
+    
+    Succ   bool `json:"succ,omitempty"`
+    
+
+    // 错误信息
+    
+    BizCode   string `json:"biz_code,omitempty"`
+    
+
+    // 错误信息描述
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractIsvlotteryIdrawResponse struct {
 

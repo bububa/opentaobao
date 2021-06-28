@@ -12,8 +12,22 @@ alibaba.wdk.member.card.get
 */
 type AlibabaWdkMemberCardGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMemberCardGetResponse `json:"alibaba_wdk_member_card_get_response,omitempty"`
+    // Response *AlibabaWdkMemberCardGetResponse `json:"alibaba_wdk_member_card_get_response,omitempty"` 
+    AlibabaWdkMemberCardGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMemberCardGetResponse struct {
+
+    // 结果
+    
+    ApiResult  *struct {
+        AlibabaWdkMemberCardGetApiResult  *AlibabaWdkMemberCardGetApiResult `json:"alibaba_wdk_member_card_get_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMemberCardGetResponse struct {
 

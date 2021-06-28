@@ -1,15 +1,41 @@
 package hotel
 
 // PicStringArrayDo 
+/* model for simplify = false
+type PicStringArrayDo struct {
+
+    // prefix
+    
+    Prefix   string `json:"prefix,omitempty"`
+    
+
+    // sources
+    
+    Sources  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"sources,omitempty"`
+    
+
+    // suffixs
+    
+    Suffixs  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"suffixs,omitempty"`
+    
+
+}
+*/
+
+// PicStringArrayDo 
 type PicStringArrayDo struct {
 
     // prefix
     Prefix   string `json:"prefix,omitempty"`
 
     // sources
-    Sources   []String `json:"sources,omitempty"`
+    Sources   []string `json:"sources,omitempty"`
 
     // suffixs
-    Suffixs   []String `json:"suffixs,omitempty"`
+    Suffixs   []string `json:"suffixs,omitempty"`
 
 }

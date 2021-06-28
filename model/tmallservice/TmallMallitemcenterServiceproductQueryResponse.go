@@ -12,8 +12,22 @@ tmall.mallitemcenter.serviceproduct.query
 */
 type TmallMallitemcenterServiceproductQueryAPIResponse struct {
     model.CommonResponse
-    Response *TmallMallitemcenterServiceproductQueryResponse `json:"tmall_mallitemcenter_serviceproduct_query_response,omitempty"`
+    // Response *TmallMallitemcenterServiceproductQueryResponse `json:"tmall_mallitemcenter_serviceproduct_query_response,omitempty"` 
+    TmallMallitemcenterServiceproductQueryResponse
 }
+
+/* model for simplify = false
+type TmallMallitemcenterServiceproductQueryResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TmallMallitemcenterServiceproductQueryResult  *TmallMallitemcenterServiceproductQueryResult `json:"tmall_mallitemcenter_serviceproduct_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallMallitemcenterServiceproductQueryResponse struct {
 

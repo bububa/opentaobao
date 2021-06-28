@@ -12,8 +12,20 @@ taobao.picture.pictures.count
 */
 type TaobaoPicturePicturesCountAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPicturePicturesCountResponse `json:"taobao_picture_pictures_count_response,omitempty"`
+    // Response *TaobaoPicturePicturesCountResponse `json:"picture_pictures_count_response,omitempty"` 
+    TaobaoPicturePicturesCountResponse
 }
+
+/* model for simplify = false
+type TaobaoPicturePicturesCountResponse struct {
+
+    // 查询的文件总数
+    
+    Totals   int64 `json:"totals,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPicturePicturesCountResponse struct {
 

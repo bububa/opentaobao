@@ -12,8 +12,20 @@ taobao.baichuan.openaccount.resetcode.check
 */
 type TaobaoBaichuanOpenaccountResetcodeCheckAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanOpenaccountResetcodeCheckResponse `json:"taobao_baichuan_openaccount_resetcode_check_response,omitempty"`
+    // Response *TaobaoBaichuanOpenaccountResetcodeCheckResponse `json:"baichuan_openaccount_resetcode_check_response,omitempty"` 
+    TaobaoBaichuanOpenaccountResetcodeCheckResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanOpenaccountResetcodeCheckResponse struct {
+
+    // name
+    
+    Name   string `json:"name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanOpenaccountResetcodeCheckResponse struct {
 

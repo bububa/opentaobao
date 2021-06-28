@@ -12,8 +12,22 @@ ERP调用奇门的接口,挂起某些创建的单据;场景介绍：ERP主动发
 */
 type TaobaoQimenOrderPendingAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenOrderPendingResponse `json:"taobao_qimen_order_pending_response,omitempty"`
+    // Response *TaobaoQimenOrderPendingResponse `json:"qimen_order_pending_response,omitempty"` 
+    TaobaoQimenOrderPendingResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenOrderPendingResponse struct {
+
+    // 
+    
+    Response  *struct {
+        OrderPendingResponse  *OrderPendingResponse `json:"order_pending_response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenOrderPendingResponse struct {
 

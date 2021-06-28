@@ -12,8 +12,22 @@ alibaba.scbp.target.ad.plan.crowd.id.get
 */
 type AlibabaScbpTargetAdPlanCrowdIdGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpTargetAdPlanCrowdIdGetResponse `json:"alibaba_scbp_target_ad_plan_crowd_id_get_response,omitempty"`
+    // Response *AlibabaScbpTargetAdPlanCrowdIdGetResponse `json:"alibaba_scbp_target_ad_plan_crowd_id_get_response,omitempty"` 
+    AlibabaScbpTargetAdPlanCrowdIdGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpTargetAdPlanCrowdIdGetResponse struct {
+
+    // 结果list
+    
+    ResultList  struct {
+        CrowdView  []CrowdView `json:"crowd_view,omitempty"`
+    } `json:"result_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpTargetAdPlanCrowdIdGetResponse struct {
 

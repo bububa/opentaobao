@@ -13,8 +13,22 @@ taobao.logistics.address.reachable
 */
 type TaobaoLogisticsAddressReachableAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsAddressReachableResponse `json:"taobao_logistics_address_reachable_response,omitempty"`
+    // Response *TaobaoLogisticsAddressReachableResponse `json:"logistics_address_reachable_response,omitempty"` 
+    TaobaoLogisticsAddressReachableResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsAddressReachableResponse struct {
+
+    // 地址可达返回结果，每个TP对应一个
+    
+    ReachableResultList  struct {
+        AddressReachableResult  []AddressReachableResult `json:"address_reachable_result,omitempty"`
+    } `json:"reachable_result_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsAddressReachableResponse struct {
 

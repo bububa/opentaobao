@@ -12,8 +12,22 @@ tmall.item.store.update.schema.get
 */
 type TmallItemStoreUpdateSchemaGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemStoreUpdateSchemaGetResponse `json:"tmall_item_store_update_schema_get_response,omitempty"`
+    // Response *TmallItemStoreUpdateSchemaGetResponse `json:"tmall_item_store_update_schema_get_response,omitempty"` 
+    TmallItemStoreUpdateSchemaGetResponse
 }
+
+/* model for simplify = false
+type TmallItemStoreUpdateSchemaGetResponse struct {
+
+    // 无
+    
+    ApiResult  *struct {
+        TmallItemStoreUpdateSchemaGetApiResult  *TmallItemStoreUpdateSchemaGetApiResult `json:"tmall_item_store_update_schema_get_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type TmallItemStoreUpdateSchemaGetResponse struct {
 

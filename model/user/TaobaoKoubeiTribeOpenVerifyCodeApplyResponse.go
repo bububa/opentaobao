@@ -12,8 +12,22 @@ taobao.koubei.tribe.open.verify.code.apply
 */
 type TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoKoubeiTribeOpenVerifyCodeApplyResponse `json:"taobao_koubei_tribe_open_verify_code_apply_response,omitempty"`
+    // Response *TaobaoKoubeiTribeOpenVerifyCodeApplyResponse `json:"koubei_tribe_open_verify_code_apply_response,omitempty"` 
+    TaobaoKoubeiTribeOpenVerifyCodeApplyResponse
 }
+
+/* model for simplify = false
+type TaobaoKoubeiTribeOpenVerifyCodeApplyResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoKoubeiTribeOpenVerifyCodeApplyResult  *TaobaoKoubeiTribeOpenVerifyCodeApplyResult `json:"taobao_koubei_tribe_open_verify_code_apply_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoKoubeiTribeOpenVerifyCodeApplyResponse struct {
 

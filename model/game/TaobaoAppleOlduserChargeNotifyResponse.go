@@ -12,8 +12,25 @@ taobao.apple.olduser.charge.notify
 */
 type TaobaoAppleOlduserChargeNotifyAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAppleOlduserChargeNotifyResponse `json:"taobao_apple_olduser_charge_notify_response,omitempty"`
+    // Response *TaobaoAppleOlduserChargeNotifyResponse `json:"apple_olduser_charge_notify_response,omitempty"` 
+    TaobaoAppleOlduserChargeNotifyResponse
 }
+
+/* model for simplify = false
+type TaobaoAppleOlduserChargeNotifyResponse struct {
+
+    // 处理结果说明
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // 处理结果码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAppleOlduserChargeNotifyResponse struct {
 

@@ -12,8 +12,20 @@ tmall.msf.reservation
 */
 type TmallMsfReservationAPIResponse struct {
     model.CommonResponse
-    Response *TmallMsfReservationResponse `json:"tmall_msf_reservation_response,omitempty"`
+    // Response *TmallMsfReservationResponse `json:"tmall_msf_reservation_response,omitempty"` 
+    TmallMsfReservationResponse
 }
+
+/* model for simplify = false
+type TmallMsfReservationResponse struct {
+
+    // 预约成功,json
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallMsfReservationResponse struct {
 

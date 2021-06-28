@@ -12,8 +12,25 @@ taobao.oc.ap.contractsigned.get
 */
 type TaobaoOcApContractsignedGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOcApContractsignedGetResponse `json:"taobao_oc_ap_contractsigned_get_response,omitempty"`
+    // Response *TaobaoOcApContractsignedGetResponse `json:"oc_ap_contractsigned_get_response,omitempty"` 
+    TaobaoOcApContractsignedGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOcApContractsignedGetResponse struct {
+
+    // 是否开通
+    
+    ContractSign   bool `json:"contract_sign,omitempty"`
+    
+
+    // 调用出错描述信息
+    
+    ErrorDescription   string `json:"error_description,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOcApContractsignedGetResponse struct {
 

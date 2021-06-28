@@ -12,8 +12,22 @@ taobao.simba.rpt.targetingtagbase.get
 */
 type TaobaoSimbaRptTargetingtagbaseGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaRptTargetingtagbaseGetResponse `json:"taobao_simba_rpt_targetingtagbase_get_response,omitempty"`
+    // Response *TaobaoSimbaRptTargetingtagbaseGetResponse `json:"simba_rpt_targetingtagbase_get_response,omitempty"` 
+    TaobaoSimbaRptTargetingtagbaseGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaRptTargetingtagbaseGetResponse struct {
+
+    // result
+    
+    Results  struct {
+        RptBaseEntityDTO  []RptBaseEntityDTO `json:"rpt_base_entity_dto,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaRptTargetingtagbaseGetResponse struct {
 

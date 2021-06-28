@@ -12,8 +12,27 @@ taobao.fenxiao.cooperation.get
 */
 type TaobaoFenxiaoCooperationGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoCooperationGetResponse `json:"taobao_fenxiao_cooperation_get_response,omitempty"`
+    // Response *TaobaoFenxiaoCooperationGetResponse `json:"fenxiao_cooperation_get_response,omitempty"` 
+    TaobaoFenxiaoCooperationGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoCooperationGetResponse struct {
+
+    // 结果记录数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 合作分销关系
+    
+    Cooperations  struct {
+        Cooperation  []Cooperation `json:"cooperation,omitempty"`
+    } `json:"cooperations,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoCooperationGetResponse struct {
 

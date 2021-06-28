@@ -12,8 +12,22 @@ taobao.sellercenter.user.permissions.get
 */
 type TaobaoSellercenterUserPermissionsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSellercenterUserPermissionsGetResponse `json:"taobao_sellercenter_user_permissions_get_response,omitempty"`
+    // Response *TaobaoSellercenterUserPermissionsGetResponse `json:"sellercenter_user_permissions_get_response,omitempty"` 
+    TaobaoSellercenterUserPermissionsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSellercenterUserPermissionsGetResponse struct {
+
+    // 权限列表
+    
+    Permissions  struct {
+        Permission  []Permission `json:"permission,omitempty"`
+    } `json:"permissions,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSellercenterUserPermissionsGetResponse struct {
 

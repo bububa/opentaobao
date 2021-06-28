@@ -11,11 +11,11 @@ taobao.refund.get
 
 获取单笔退款详情
 */
-func TaobaoRefundGet(clt *core.SDKClient, req *refund.TaobaoRefundGetRequest, session string) (*refund.TaobaoRefundGetResponse, error) {
+func TaobaoRefundGet(clt *core.SDKClient, req *refund.TaobaoRefundGetRequest, session string) (*refund.TaobaoRefundGetAPIResponse, error) {
     var resp refund.TaobaoRefundGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

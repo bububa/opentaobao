@@ -12,8 +12,22 @@ alibaba.servicecenter.workcard.create
 */
 type AlibabaServicecenterWorkcardCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaServicecenterWorkcardCreateResponse `json:"alibaba_servicecenter_workcard_create_response,omitempty"`
+    // Response *AlibabaServicecenterWorkcardCreateResponse `json:"alibaba_servicecenter_workcard_create_response,omitempty"` 
+    AlibabaServicecenterWorkcardCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaServicecenterWorkcardCreateResponse struct {
+
+    // 返回参数
+    
+    Result  *struct {
+        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaServicecenterWorkcardCreateResponse struct {
 

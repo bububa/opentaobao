@@ -12,8 +12,22 @@ alibaba.txcs.brandmarketing.coupon.qrcode.get
 */
 type AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTxcsBrandmarketingCouponQrcodeGetResponse `json:"alibaba_txcs_brandmarketing_coupon_qrcode_get_response,omitempty"`
+    // Response *AlibabaTxcsBrandmarketingCouponQrcodeGetResponse `json:"alibaba_txcs_brandmarketing_coupon_qrcode_get_response,omitempty"` 
+    AlibabaTxcsBrandmarketingCouponQrcodeGetResponse
 }
+
+/* model for simplify = false
+type AlibabaTxcsBrandmarketingCouponQrcodeGetResponse struct {
+
+    // 返回结果
+    
+    ApiResult  *struct {
+        AlibabaTxcsBrandmarketingCouponQrcodeGetApiResult  *AlibabaTxcsBrandmarketingCouponQrcodeGetApiResult `json:"alibaba_txcs_brandmarketing_coupon_qrcode_get_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTxcsBrandmarketingCouponQrcodeGetResponse struct {
 

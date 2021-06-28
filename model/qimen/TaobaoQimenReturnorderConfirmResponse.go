@@ -12,8 +12,22 @@ taobao.qimen.returnorder.confirm
 */
 type TaobaoQimenReturnorderConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenReturnorderConfirmResponse `json:"taobao_qimen_returnorder_confirm_response,omitempty"`
+    // Response *TaobaoQimenReturnorderConfirmResponse `json:"qimen_returnorder_confirm_response,omitempty"` 
+    TaobaoQimenReturnorderConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenReturnorderConfirmResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenReturnorderConfirmResponse struct {
 

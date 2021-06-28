@@ -12,8 +12,22 @@ taobao.openim.chatlogs.get
 */
 type TaobaoOpenimChatlogsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimChatlogsGetResponse `json:"taobao_openim_chatlogs_get_response,omitempty"`
+    // Response *TaobaoOpenimChatlogsGetResponse `json:"openim_chatlogs_get_response,omitempty"` 
+    TaobaoOpenimChatlogsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimChatlogsGetResponse struct {
+
+    // 聊天记录查询结果
+    
+    Result  *struct {
+        RoamingMessageResult  *RoamingMessageResult `json:"roaming_message_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimChatlogsGetResponse struct {
 

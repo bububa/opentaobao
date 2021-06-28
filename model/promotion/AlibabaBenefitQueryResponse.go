@@ -18,8 +18,22 @@ appkey验证通过的，才会查数据 并透出，否则直接失败。
 */
 type AlibabaBenefitQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaBenefitQueryResponse `json:"alibaba_benefit_query_response,omitempty"`
+    // Response *AlibabaBenefitQueryResponse `json:"alibaba_benefit_query_response,omitempty"` 
+    AlibabaBenefitQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaBenefitQueryResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaBenefitQueryResult  *AlibabaBenefitQueryResult `json:"alibaba_benefit_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaBenefitQueryResponse struct {
 

@@ -11,11 +11,11 @@ cainiao.cloudprint.customares.get
 
 供isv使用，获取商家的自定义区的模板信息
 */
-func CainiaoCloudprintCustomaresGet(clt *core.SDKClient, req *waybill.CainiaoCloudprintCustomaresGetRequest, session string) (*waybill.CainiaoCloudprintCustomaresGetResponse, error) {
+func CainiaoCloudprintCustomaresGet(clt *core.SDKClient, req *waybill.CainiaoCloudprintCustomaresGetRequest, session string) (*waybill.CainiaoCloudprintCustomaresGetAPIResponse, error) {
     var resp waybill.CainiaoCloudprintCustomaresGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ alibaba.wholesale.goods.get
 */
 type AlibabaWholesaleGoodsGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWholesaleGoodsGetResponse `json:"alibaba_wholesale_goods_get_response,omitempty"`
+    // Response *AlibabaWholesaleGoodsGetResponse `json:"alibaba_wholesale_goods_get_response,omitempty"` 
+    AlibabaWholesaleGoodsGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWholesaleGoodsGetResponse struct {
+
+    // wholesale goods detail result
+    
+    WholesaleGoodsResult  *struct {
+        WholesaleGoodsOpenResult  *WholesaleGoodsOpenResult `json:"wholesale_goods_open_result,omitempty"`
+    } `json:"wholesale_goods_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWholesaleGoodsGetResponse struct {
 

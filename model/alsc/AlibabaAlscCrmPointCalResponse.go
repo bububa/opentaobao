@@ -15,8 +15,22 @@ alibaba.alsc.crm.point.cal
 */
 type AlibabaAlscCrmPointCalAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmPointCalResponse `json:"alibaba_alsc_crm_point_cal_response,omitempty"`
+    // Response *AlibabaAlscCrmPointCalResponse `json:"alibaba_alsc_crm_point_cal_response,omitempty"` 
+    AlibabaAlscCrmPointCalResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmPointCalResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmPointCalResponse struct {
 

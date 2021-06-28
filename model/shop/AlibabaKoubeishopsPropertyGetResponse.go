@@ -12,8 +12,22 @@ alibaba.koubeishops.property.get
 */
 type AlibabaKoubeishopsPropertyGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaKoubeishopsPropertyGetResponse `json:"alibaba_koubeishops_property_get_response,omitempty"`
+    // Response *AlibabaKoubeishopsPropertyGetResponse `json:"alibaba_koubeishops_property_get_response,omitempty"` 
+    AlibabaKoubeishopsPropertyGetResponse
 }
+
+/* model for simplify = false
+type AlibabaKoubeishopsPropertyGetResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        OpenApiSearchResult  *OpenApiSearchResult `json:"open_api_search_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaKoubeishopsPropertyGetResponse struct {
 

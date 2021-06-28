@@ -12,8 +12,20 @@ alibaba.scbp.target.ad.plan.update.tags
 */
 type AlibabaScbpTargetAdPlanUpdateTagsAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpTargetAdPlanUpdateTagsResponse `json:"alibaba_scbp_target_ad_plan_update_tags_response,omitempty"`
+    // Response *AlibabaScbpTargetAdPlanUpdateTagsResponse `json:"alibaba_scbp_target_ad_plan_update_tags_response,omitempty"` 
+    AlibabaScbpTargetAdPlanUpdateTagsResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpTargetAdPlanUpdateTagsResponse struct {
+
+    // 修改记录数量
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpTargetAdPlanUpdateTagsResponse struct {
 

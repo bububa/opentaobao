@@ -12,8 +12,22 @@ taobao.aplatform.weakget
 */
 type TaobaoAplatformWeakgetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAplatformWeakgetResponse `json:"taobao_aplatform_weakget_response,omitempty"`
+    // Response *TaobaoAplatformWeakgetResponse `json:"aplatform_weakget_response,omitempty"` 
+    TaobaoAplatformWeakgetResponse
 }
+
+/* model for simplify = false
+type TaobaoAplatformWeakgetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoAplatformWeakgetResult  *TaobaoAplatformWeakgetResult `json:"taobao_aplatform_weakget_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAplatformWeakgetResponse struct {
 

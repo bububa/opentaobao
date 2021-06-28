@@ -12,8 +12,25 @@ taobao.weitao.feed.synchronize
 */
 type TaobaoWeitaoFeedSynchronizeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWeitaoFeedSynchronizeResponse `json:"taobao_weitao_feed_synchronize_response,omitempty"`
+    // Response *TaobaoWeitaoFeedSynchronizeResponse `json:"weitao_feed_synchronize_response,omitempty"` 
+    TaobaoWeitaoFeedSynchronizeResponse
 }
+
+/* model for simplify = false
+type TaobaoWeitaoFeedSynchronizeResponse struct {
+
+    // 同步到微淘成功与否
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+    // 增加错误信息
+    
+    Errmsg   string `json:"errmsg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWeitaoFeedSynchronizeResponse struct {
 

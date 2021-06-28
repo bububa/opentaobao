@@ -12,8 +12,22 @@ taobao.logistics.express.modify.appoint
 */
 type TaobaoLogisticsExpressModifyAppointAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsExpressModifyAppointResponse `json:"taobao_logistics_express_modify_appoint_response,omitempty"`
+    // Response *TaobaoLogisticsExpressModifyAppointResponse `json:"logistics_express_modify_appoint_response,omitempty"` 
+    TaobaoLogisticsExpressModifyAppointResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsExpressModifyAppointResponse struct {
+
+    // 调用结果
+    
+    Result  *struct {
+        SingleResultDto  *SingleResultDto `json:"single_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsExpressModifyAppointResponse struct {
 

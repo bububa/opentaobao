@@ -12,8 +12,20 @@ taobao.wlb.imports.waybill.get
 */
 type TaobaoWlbImportsWaybillGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbImportsWaybillGetResponse `json:"taobao_wlb_imports_waybill_get_response,omitempty"`
+    // Response *TaobaoWlbImportsWaybillGetResponse `json:"wlb_imports_waybill_get_response,omitempty"` 
+    TaobaoWlbImportsWaybillGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbImportsWaybillGetResponse struct {
+
+    // 电子面单链接地址
+    
+    Waybillurl   string `json:"waybillurl,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbImportsWaybillGetResponse struct {
 

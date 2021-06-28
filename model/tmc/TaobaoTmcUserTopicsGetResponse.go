@@ -12,8 +12,32 @@ taobao.tmc.user.topics.get
 */
 type TaobaoTmcUserTopicsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcUserTopicsGetResponse `json:"taobao_tmc_user_topics_get_response,omitempty"`
+    // Response *TaobaoTmcUserTopicsGetResponse `json:"tmc_user_topics_get_response,omitempty"` 
+    TaobaoTmcUserTopicsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcUserTopicsGetResponse struct {
+
+    // 错误信息
+    
+    ResultMessage   string `json:"result_message,omitempty"`
+    
+
+    // topic列表
+    
+    Topics  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"topics,omitempty"`
+    
+
+    // 错误码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcUserTopicsGetResponse struct {
 
@@ -21,7 +45,7 @@ type TaobaoTmcUserTopicsGetResponse struct {
     ResultMessage   string `json:"result_message,omitempty"`
 
     // topic列表
-    Topics   []String `json:"topics,omitempty"`
+    Topics   []string `json:"topics,omitempty"`
 
     // 错误码
     ResultCode   string `json:"result_code,omitempty"`

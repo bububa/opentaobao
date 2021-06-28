@@ -16,7 +16,7 @@ type AlibabaWdkCouponTemplateQueryumpactidRequest struct {
     model.Params
 
     // 券模版id列表
-    sourceIds   []Number 
+    sourceIds   []int64 
 
     // 优惠券类型
     wdkCouponType   int64 
@@ -42,13 +42,13 @@ func (r AlibabaWdkCouponTemplateQueryumpactidRequest) GetApiParams() url.Values 
 }
 
 
-func (r *AlibabaWdkCouponTemplateQueryumpactidRequest) SetSourceIds(sourceIds []Number) error {
+func (r *AlibabaWdkCouponTemplateQueryumpactidRequest) SetSourceIds(sourceIds []int64) error {
     r.sourceIds = sourceIds
     r.Set("source_ids", sourceIds)
     return nil
 }
 
-func (r AlibabaWdkCouponTemplateQueryumpactidRequest) GetSourceIds() []Number {
+func (r AlibabaWdkCouponTemplateQueryumpactidRequest) GetSourceIds() []int64 {
     return r.sourceIds
 }
 

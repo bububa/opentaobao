@@ -11,11 +11,11 @@ taobao.openim.tribelogs.get
 
 获取openim账号的群聊天记录
 */
-func TaobaoOpenimTribelogsGet(clt *core.SDKClient, req *openim.TaobaoOpenimTribelogsGetRequest, session string) (*openim.TaobaoOpenimTribelogsGetResponse, error) {
+func TaobaoOpenimTribelogsGet(clt *core.SDKClient, req *openim.TaobaoOpenimTribelogsGetRequest, session string) (*openim.TaobaoOpenimTribelogsGetAPIResponse, error) {
     var resp openim.TaobaoOpenimTribelogsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

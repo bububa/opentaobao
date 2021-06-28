@@ -15,8 +15,22 @@ alibaba.alsc.crm.card.pagetmp
 */
 type AlibabaAlscCrmCardPagetmpAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmCardPagetmpResponse `json:"alibaba_alsc_crm_card_pagetmp_response,omitempty"`
+    // Response *AlibabaAlscCrmCardPagetmpResponse `json:"alibaba_alsc_crm_card_pagetmp_response,omitempty"` 
+    AlibabaAlscCrmCardPagetmpResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmCardPagetmpResponse struct {
+
+    // 分页返回模型
+    
+    Result  *struct {
+        CommonPageResult  *CommonPageResult `json:"common_page_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmCardPagetmpResponse struct {
 

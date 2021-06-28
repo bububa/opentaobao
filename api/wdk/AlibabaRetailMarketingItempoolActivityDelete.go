@@ -11,11 +11,11 @@ alibaba.retail.marketing.itempool.activity.delete
 
 同城零售商品池活动删除
 */
-func AlibabaRetailMarketingItempoolActivityDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItempoolActivityDeleteRequest, session string) (*wdk.AlibabaRetailMarketingItempoolActivityDeleteResponse, error) {
+func AlibabaRetailMarketingItempoolActivityDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItempoolActivityDeleteRequest, session string) (*wdk.AlibabaRetailMarketingItempoolActivityDeleteAPIResponse, error) {
     var resp wdk.AlibabaRetailMarketingItempoolActivityDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

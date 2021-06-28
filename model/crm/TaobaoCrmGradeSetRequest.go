@@ -16,19 +16,19 @@ type TaobaoCrmGradeSetRequest struct {
     model.Params
 
     // 只对设置的层级等级有效，必须要在amount和count参数中选择一个<br><br/>amount参数的填写规范：升级到下一个级别的需要的交易额，单位为分,必须全部填写.例如10000,20000,30000，其中10000表示非会员升级到普通的所需的交易额，20000表示普通升级到高级所需的交易额，层级等级中最高等级的下一个等级默认为0。会员等级越高，所需交易额必须越高。
-    amount   []Number 
+    amount   []int64 
 
     // 只对设置的层级等级有效，必须要在amount和count参数中选择一个<br><br/>count参数的填写规范：<br/>升级到下一个级别的需要的交易量,必须全部填写. 以逗号分隔,例如100,200,300，其中100表示非会员升级到普通会员交易量。层级等级中最高等级的下一个等级的交易量默认为0。会员等级越高，交易量必须越高。
-    count   []Number 
+    count   []int64 
 
     // 会员等级，用逗号分隔。买家会员级别0：店铺客户 1：普通会员 2 ：高级会员 3：VIP会员 4：至尊VIP
-    grade   []Number 
+    grade   []int64 
 
     // 会员级别折扣率。会员等级越高，折扣必须越低。<br/>950即9.5折，888折即8.88折。出于安全原因，折扣现最低只能设置到700即7折。
-    discount   []Number 
+    discount   []int64 
 
     // 是否设置达到某一会员等级的交易量和交易额，必填。4个级别都需要设置，如入参为true,true,true,false时，表示设置达到高级会员、VIP会员的交易量或者交易额，不设置达到至尊会员的交易量和交易额
-    hierarchy   []Boolean 
+    hierarchy   []bool 
 
 }
 
@@ -51,53 +51,53 @@ func (r TaobaoCrmGradeSetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoCrmGradeSetRequest) SetAmount(amount []Number) error {
+func (r *TaobaoCrmGradeSetRequest) SetAmount(amount []int64) error {
     r.amount = amount
     r.Set("amount", amount)
     return nil
 }
 
-func (r TaobaoCrmGradeSetRequest) GetAmount() []Number {
+func (r TaobaoCrmGradeSetRequest) GetAmount() []int64 {
     return r.amount
 }
 
-func (r *TaobaoCrmGradeSetRequest) SetCount(count []Number) error {
+func (r *TaobaoCrmGradeSetRequest) SetCount(count []int64) error {
     r.count = count
     r.Set("count", count)
     return nil
 }
 
-func (r TaobaoCrmGradeSetRequest) GetCount() []Number {
+func (r TaobaoCrmGradeSetRequest) GetCount() []int64 {
     return r.count
 }
 
-func (r *TaobaoCrmGradeSetRequest) SetGrade(grade []Number) error {
+func (r *TaobaoCrmGradeSetRequest) SetGrade(grade []int64) error {
     r.grade = grade
     r.Set("grade", grade)
     return nil
 }
 
-func (r TaobaoCrmGradeSetRequest) GetGrade() []Number {
+func (r TaobaoCrmGradeSetRequest) GetGrade() []int64 {
     return r.grade
 }
 
-func (r *TaobaoCrmGradeSetRequest) SetDiscount(discount []Number) error {
+func (r *TaobaoCrmGradeSetRequest) SetDiscount(discount []int64) error {
     r.discount = discount
     r.Set("discount", discount)
     return nil
 }
 
-func (r TaobaoCrmGradeSetRequest) GetDiscount() []Number {
+func (r TaobaoCrmGradeSetRequest) GetDiscount() []int64 {
     return r.discount
 }
 
-func (r *TaobaoCrmGradeSetRequest) SetHierarchy(hierarchy []Boolean) error {
+func (r *TaobaoCrmGradeSetRequest) SetHierarchy(hierarchy []bool) error {
     r.hierarchy = hierarchy
     r.Set("hierarchy", hierarchy)
     return nil
 }
 
-func (r TaobaoCrmGradeSetRequest) GetHierarchy() []Boolean {
+func (r TaobaoCrmGradeSetRequest) GetHierarchy() []bool {
     return r.hierarchy
 }
 

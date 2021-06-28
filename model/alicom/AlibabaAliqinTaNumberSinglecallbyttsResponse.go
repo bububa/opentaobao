@@ -12,8 +12,22 @@ alibaba.aliqin.ta.number.singlecallbytts
 */
 type AlibabaAliqinTaNumberSinglecallbyttsAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinTaNumberSinglecallbyttsResponse `json:"alibaba_aliqin_ta_number_singlecallbytts_response,omitempty"`
+    // Response *AlibabaAliqinTaNumberSinglecallbyttsResponse `json:"alibaba_aliqin_ta_number_singlecallbytts_response,omitempty"` 
+    AlibabaAliqinTaNumberSinglecallbyttsResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinTaNumberSinglecallbyttsResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaAliqinTaNumberSinglecallbyttsResult  *AlibabaAliqinTaNumberSinglecallbyttsResult `json:"alibaba_aliqin_ta_number_singlecallbytts_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinTaNumberSinglecallbyttsResponse struct {
 

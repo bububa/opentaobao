@@ -12,8 +12,25 @@ taobao.fenxiao.product.image.delete
 */
 type TaobaoFenxiaoProductImageDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductImageDeleteResponse `json:"taobao_fenxiao_product_image_delete_response,omitempty"`
+    // Response *TaobaoFenxiaoProductImageDeleteResponse `json:"fenxiao_product_image_delete_response,omitempty"` 
+    TaobaoFenxiaoProductImageDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductImageDeleteResponse struct {
+
+    // 操作结果
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+    // 操作时间
+    
+    Created   string `json:"created,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoProductImageDeleteResponse struct {
 

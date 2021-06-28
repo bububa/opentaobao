@@ -23,7 +23,7 @@ type TaobaoProductsSearchRequest struct {
     model.Params
 
     // 需返回的字段列表.可选值:Product数据结构中的以下字段:product_id,name,pic_url,cid,props,price,tsc;多个字段之间用","分隔.新增字段status(product的当前状态)
-    fields   []String 
+    fields   []string 
 
     // 搜索的关键词是用来搜索产品的title.　注:q,cid和props至少传入一个
     q   string 
@@ -79,13 +79,13 @@ func (r TaobaoProductsSearchRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoProductsSearchRequest) SetFields(fields []String) error {
+func (r *TaobaoProductsSearchRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoProductsSearchRequest) GetFields() []String {
+func (r TaobaoProductsSearchRequest) GetFields() []string {
     return r.fields
 }
 

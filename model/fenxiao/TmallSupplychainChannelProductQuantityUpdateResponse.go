@@ -12,8 +12,22 @@ tmall.supplychain.channel.product.quantity.update
 */
 type TmallSupplychainChannelProductQuantityUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallSupplychainChannelProductQuantityUpdateResponse `json:"tmall_supplychain_channel_product_quantity_update_response,omitempty"`
+    // Response *TmallSupplychainChannelProductQuantityUpdateResponse `json:"tmall_supplychain_channel_product_quantity_update_response,omitempty"` 
+    TmallSupplychainChannelProductQuantityUpdateResponse
 }
+
+/* model for simplify = false
+type TmallSupplychainChannelProductQuantityUpdateResponse struct {
+
+    // 异步获取历史数据接口返回结果
+    
+    Result  *struct {
+        TmallSupplychainChannelProductQuantityUpdateResultDto  *TmallSupplychainChannelProductQuantityUpdateResultDto `json:"tmall_supplychain_channel_product_quantity_update_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallSupplychainChannelProductQuantityUpdateResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.asr.dataservice.promotionrule.write
 */
 type AlibabaAsrDataservicePromotionruleWriteAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAsrDataservicePromotionruleWriteResponse `json:"alibaba_asr_dataservice_promotionrule_write_response,omitempty"`
+    // Response *AlibabaAsrDataservicePromotionruleWriteResponse `json:"alibaba_asr_dataservice_promotionrule_write_response,omitempty"` 
+    AlibabaAsrDataservicePromotionruleWriteResponse
 }
+
+/* model for simplify = false
+type AlibabaAsrDataservicePromotionruleWriteResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        DataServiceResponse  *DataServiceResponse `json:"data_service_response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAsrDataservicePromotionruleWriteResponse struct {
 

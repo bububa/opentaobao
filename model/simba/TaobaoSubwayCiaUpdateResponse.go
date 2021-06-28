@@ -12,12 +12,26 @@ taobao.subway.cia.update
 */
 type TaobaoSubwayCiaUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSubwayCiaUpdateResponse `json:"taobao_subway_cia_update_response,omitempty"`
+    // Response *TaobaoSubwayCiaUpdateResponse `json:"subway_cia_update_response,omitempty"` 
+    TaobaoSubwayCiaUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoSubwayCiaUpdateResponse struct {
+
+    // 推广组Id列表
+    
+    AdgroupList  struct {
+        Number  []int64 `json:"int64,omitempty"`
+    } `json:"adgroup_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSubwayCiaUpdateResponse struct {
 
     // 推广组Id列表
-    AdgroupList   []Number `json:"adgroup_list,omitempty"`
+    AdgroupList   []int64 `json:"adgroup_list,omitempty"`
 
 }

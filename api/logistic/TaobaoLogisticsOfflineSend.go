@@ -11,11 +11,11 @@ taobao.logistics.offline.send
 
 用户调用该接口可实现自己联系发货（线下物流），使用该接口发货，交易订单状态会直接变成卖家已发货。不支持货到付款、在线下单类型的订单。
 */
-func TaobaoLogisticsOfflineSend(clt *core.SDKClient, req *logistic.TaobaoLogisticsOfflineSendRequest, session string) (*logistic.TaobaoLogisticsOfflineSendResponse, error) {
+func TaobaoLogisticsOfflineSend(clt *core.SDKClient, req *logistic.TaobaoLogisticsOfflineSendRequest, session string) (*logistic.TaobaoLogisticsOfflineSendAPIResponse, error) {
     var resp logistic.TaobaoLogisticsOfflineSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

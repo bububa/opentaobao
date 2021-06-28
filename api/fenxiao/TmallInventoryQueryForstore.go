@@ -11,11 +11,11 @@ tmall.inventory.query.forstore
 
 商家查询后端商品仓库库存
 */
-func TmallInventoryQueryForstore(clt *core.SDKClient, req *fenxiao.TmallInventoryQueryForstoreRequest, session string) (*fenxiao.TmallInventoryQueryForstoreResponse, error) {
+func TmallInventoryQueryForstore(clt *core.SDKClient, req *fenxiao.TmallInventoryQueryForstoreRequest, session string) (*fenxiao.TmallInventoryQueryForstoreAPIResponse, error) {
     var resp fenxiao.TmallInventoryQueryForstoreAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

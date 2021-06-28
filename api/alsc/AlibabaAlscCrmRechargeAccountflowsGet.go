@@ -11,11 +11,11 @@ alibaba.alsc.crm.recharge.accountflows.get
 
 增加分页查询储值流水接口
 */
-func AlibabaAlscCrmRechargeAccountflowsGet(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeAccountflowsGetRequest, session string) (*alsc.AlibabaAlscCrmRechargeAccountflowsGetResponse, error) {
+func AlibabaAlscCrmRechargeAccountflowsGet(clt *core.SDKClient, req *alsc.AlibabaAlscCrmRechargeAccountflowsGetRequest, session string) (*alsc.AlibabaAlscCrmRechargeAccountflowsGetAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmRechargeAccountflowsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

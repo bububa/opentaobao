@@ -12,8 +12,22 @@ taobao.product.add
 */
 type TaobaoProductAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoProductAddResponse `json:"taobao_product_add_response,omitempty"`
+    // Response *TaobaoProductAddResponse `json:"product_add_response,omitempty"` 
+    TaobaoProductAddResponse
 }
+
+/* model for simplify = false
+type TaobaoProductAddResponse struct {
+
+    // 产品结构
+    
+    Product  *struct {
+        Product  *Product `json:"product,omitempty"`
+    } `json:"product,omitempty"`
+    
+
+}
+*/
 
 type TaobaoProductAddResponse struct {
 

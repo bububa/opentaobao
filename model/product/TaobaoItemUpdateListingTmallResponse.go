@@ -12,8 +12,22 @@ taobao.item.update.listing.tmall
 */
 type TaobaoItemUpdateListingTmallAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemUpdateListingTmallResponse `json:"taobao_item_update_listing_tmall_response,omitempty"`
+    // Response *TaobaoItemUpdateListingTmallResponse `json:"item_update_listing_tmall_response,omitempty"` 
+    TaobaoItemUpdateListingTmallResponse
 }
+
+/* model for simplify = false
+type TaobaoItemUpdateListingTmallResponse struct {
+
+    // 上架后返回的商品信息：返回的结果就是:num_iid和modified
+    
+    Item  *struct {
+        Item  *Item `json:"item,omitempty"`
+    } `json:"item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemUpdateListingTmallResponse struct {
 

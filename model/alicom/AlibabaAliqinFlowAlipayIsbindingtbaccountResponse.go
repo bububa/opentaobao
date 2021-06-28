@@ -12,8 +12,35 @@ alibaba.aliqin.flow.alipay.isbindingtbaccount
 */
 type AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFlowAlipayIsbindingtbaccountResponse `json:"alibaba_aliqin_flow_alipay_isbindingtbaccount_response,omitempty"`
+    // Response *AlibabaAliqinFlowAlipayIsbindingtbaccountResponse `json:"alibaba_aliqin_flow_alipay_isbindingtbaccount_response,omitempty"` 
+    AlibabaAliqinFlowAlipayIsbindingtbaccountResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFlowAlipayIsbindingtbaccountResponse struct {
+
+    // error
+    
+    Error   bool `json:"error,omitempty"`
+    
+
+    // TRUE代表绑定，FALSE代表未绑定
+    
+    Value   string `json:"value,omitempty"`
+    
+
+    // errorCode
+    
+    AlicomFlowErrorCode   string `json:"alicom_flow_error_code,omitempty"`
+    
+
+    // errorMsg
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFlowAlipayIsbindingtbaccountResponse struct {
 

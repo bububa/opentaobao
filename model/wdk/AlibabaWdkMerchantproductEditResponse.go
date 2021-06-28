@@ -12,8 +12,22 @@ alibaba.wdk.merchantproduct.edit
 */
 type AlibabaWdkMerchantproductEditAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMerchantproductEditResponse `json:"alibaba_wdk_merchantproduct_edit_response,omitempty"`
+    // Response *AlibabaWdkMerchantproductEditResponse `json:"alibaba_wdk_merchantproduct_edit_response,omitempty"` 
+    AlibabaWdkMerchantproductEditResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMerchantproductEditResponse struct {
+
+    // 产品编辑返回结果
+    
+    Result  *struct {
+        AlibabaWdkMerchantproductEditApiResult  *AlibabaWdkMerchantproductEditApiResult `json:"alibaba_wdk_merchantproduct_edit_api_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMerchantproductEditResponse struct {
 

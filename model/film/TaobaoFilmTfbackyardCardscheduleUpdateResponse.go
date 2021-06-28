@@ -12,8 +12,20 @@ cgv影城卡排期价格数据传输API
 */
 type TaobaoFilmTfbackyardCardscheduleUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFilmTfbackyardCardscheduleUpdateResponse `json:"taobao_film_tfbackyard_cardschedule_update_response,omitempty"`
+    // Response *TaobaoFilmTfbackyardCardscheduleUpdateResponse `json:"film_tfbackyard_cardschedule_update_response,omitempty"` 
+    TaobaoFilmTfbackyardCardscheduleUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoFilmTfbackyardCardscheduleUpdateResponse struct {
+
+    // result
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFilmTfbackyardCardscheduleUpdateResponse struct {
 

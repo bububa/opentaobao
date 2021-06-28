@@ -15,8 +15,35 @@ tmall.device.trade.precreate
 */
 type TmallDeviceTradePrecreateAPIResponse struct {
     model.CommonResponse
-    Response *TmallDeviceTradePrecreateResponse `json:"tmall_device_trade_precreate_response,omitempty"`
+    // Response *TmallDeviceTradePrecreateResponse `json:"tmall_device_trade_precreate_response,omitempty"` 
+    TmallDeviceTradePrecreateResponse
 }
+
+/* model for simplify = false
+type TmallDeviceTradePrecreateResponse struct {
+
+    // 链接有效结束时间
+    
+    LifeEnd   string `json:"life_end,omitempty"`
+    
+
+    // 链接有效起始时间
+    
+    LifeStart   string `json:"life_start,omitempty"`
+    
+
+    // 链接二维码图片
+    
+    QrCode   string `json:"qr_code,omitempty"`
+    
+
+    // 短链接
+    
+    ShortUrl   string `json:"short_url,omitempty"`
+    
+
+}
+*/
 
 type TmallDeviceTradePrecreateResponse struct {
 

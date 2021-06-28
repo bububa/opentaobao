@@ -12,8 +12,20 @@ alibaba.scbp.ad.target.tag.estimate.uv
 */
 type AlibabaScbpAdTargetTagEstimateUvAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdTargetTagEstimateUvResponse `json:"alibaba_scbp_ad_target_tag_estimate_uv_response,omitempty"`
+    // Response *AlibabaScbpAdTargetTagEstimateUvResponse `json:"alibaba_scbp_ad_target_tag_estimate_uv_response,omitempty"` 
+    AlibabaScbpAdTargetTagEstimateUvResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdTargetTagEstimateUvResponse struct {
+
+    // 返回数据：key:optionValue, value: 人群id
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdTargetTagEstimateUvResponse struct {
 

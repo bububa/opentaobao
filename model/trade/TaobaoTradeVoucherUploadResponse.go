@@ -12,8 +12,22 @@ taobao.trade.voucher.upload
 */
 type TaobaoTradeVoucherUploadAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeVoucherUploadResponse `json:"taobao_trade_voucher_upload_response,omitempty"`
+    // Response *TaobaoTradeVoucherUploadResponse `json:"trade_voucher_upload_response,omitempty"` 
+    TaobaoTradeVoucherUploadResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeVoucherUploadResponse struct {
+
+    // 上传到多媒体平台的文件
+    
+    File  *struct {
+        File  *File `json:"file,omitempty"`
+    } `json:"file,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeVoucherUploadResponse struct {
 

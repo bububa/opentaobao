@@ -12,8 +12,40 @@ tmall.ccf.crowd.activityuser.upload
 */
 type TmallCcfCrowdActivityuserUploadAPIResponse struct {
     model.CommonResponse
-    Response *TmallCcfCrowdActivityuserUploadResponse `json:"tmall_ccf_crowd_activityuser_upload_response,omitempty"`
+    // Response *TmallCcfCrowdActivityuserUploadResponse `json:"tmall_ccf_crowd_activityuser_upload_response,omitempty"` 
+    TmallCcfCrowdActivityuserUploadResponse
 }
+
+/* model for simplify = false
+type TmallCcfCrowdActivityuserUploadResponse struct {
+
+    // 返回结果
+    
+    Data   bool `json:"data,omitempty"`
+    
+
+    // 错误码
+    
+    ECode   string `json:"e_code,omitempty"`
+    
+
+    // 错误信息
+    
+    EMsg   string `json:"e_msg,omitempty"`
+    
+
+    // 是否失败
+    
+    Failed   bool `json:"failed,omitempty"`
+    
+
+    // 是否成功
+    
+    Suc   bool `json:"suc,omitempty"`
+    
+
+}
+*/
 
 type TmallCcfCrowdActivityuserUploadResponse struct {
 

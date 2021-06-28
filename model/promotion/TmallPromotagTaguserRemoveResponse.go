@@ -12,8 +12,20 @@ tmall.promotag.taguser.remove
 */
 type TmallPromotagTaguserRemoveAPIResponse struct {
     model.CommonResponse
-    Response *TmallPromotagTaguserRemoveResponse `json:"tmall_promotag_taguser_remove_response,omitempty"`
+    // Response *TmallPromotagTaguserRemoveResponse `json:"tmall_promotag_taguser_remove_response,omitempty"` 
+    TmallPromotagTaguserRemoveResponse
 }
+
+/* model for simplify = false
+type TmallPromotagTaguserRemoveResponse struct {
+
+    // 打标结果是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TmallPromotagTaguserRemoveResponse struct {
 

@@ -12,8 +12,20 @@ alibaba.aliqin.flow.wallet.charge.rule
 */
 type AlibabaAliqinFlowWalletChargeRuleAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFlowWalletChargeRuleResponse `json:"alibaba_aliqin_flow_wallet_charge_rule_response,omitempty"`
+    // Response *AlibabaAliqinFlowWalletChargeRuleResponse `json:"alibaba_aliqin_flow_wallet_charge_rule_response,omitempty"` 
+    AlibabaAliqinFlowWalletChargeRuleResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFlowWalletChargeRuleResponse struct {
+
+    // {"error":"true","msg":"返回信息"}
+    
+    Charge   string `json:"charge,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFlowWalletChargeRuleResponse struct {
 

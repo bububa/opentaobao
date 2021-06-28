@@ -12,8 +12,22 @@ alibaba.retail.shorturl.get
 */
 type AlibabaRetailShorturlGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaRetailShorturlGetResponse `json:"alibaba_retail_shorturl_get_response,omitempty"`
+    // Response *AlibabaRetailShorturlGetResponse `json:"alibaba_retail_shorturl_get_response,omitempty"` 
+    AlibabaRetailShorturlGetResponse
 }
+
+/* model for simplify = false
+type AlibabaRetailShorturlGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaRetailShorturlGetResult  *AlibabaRetailShorturlGetResult `json:"alibaba_retail_shorturl_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaRetailShorturlGetResponse struct {
 

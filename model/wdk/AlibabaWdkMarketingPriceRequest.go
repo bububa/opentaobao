@@ -22,10 +22,10 @@ type AlibabaWdkMarketingPriceRequest struct {
     pageIndex   int64 
 
     // 商品sku
-    skuCodes   []String 
+    skuCodes   []string 
 
     // 门店标识数组
-    shopIds   []Number 
+    shopIds   []int64 
 
     // 查询结束时间(sku_codes非空无效)
     endTime   string 
@@ -74,23 +74,23 @@ func (r AlibabaWdkMarketingPriceRequest) GetPageIndex() int64 {
     return r.pageIndex
 }
 
-func (r *AlibabaWdkMarketingPriceRequest) SetSkuCodes(skuCodes []String) error {
+func (r *AlibabaWdkMarketingPriceRequest) SetSkuCodes(skuCodes []string) error {
     r.skuCodes = skuCodes
     r.Set("sku_codes", skuCodes)
     return nil
 }
 
-func (r AlibabaWdkMarketingPriceRequest) GetSkuCodes() []String {
+func (r AlibabaWdkMarketingPriceRequest) GetSkuCodes() []string {
     return r.skuCodes
 }
 
-func (r *AlibabaWdkMarketingPriceRequest) SetShopIds(shopIds []Number) error {
+func (r *AlibabaWdkMarketingPriceRequest) SetShopIds(shopIds []int64) error {
     r.shopIds = shopIds
     r.Set("shop_ids", shopIds)
     return nil
 }
 
-func (r AlibabaWdkMarketingPriceRequest) GetShopIds() []Number {
+func (r AlibabaWdkMarketingPriceRequest) GetShopIds() []int64 {
     return r.shopIds
 }
 

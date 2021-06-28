@@ -12,8 +12,22 @@ taobao.ju.items.search
 */
 type TaobaoJuItemsSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJuItemsSearchResponse `json:"taobao_ju_items_search_response,omitempty"`
+    // Response *TaobaoJuItemsSearchResponse `json:"ju_items_search_response,omitempty"` 
+    TaobaoJuItemsSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoJuItemsSearchResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        PaginationResult  *PaginationResult `json:"pagination_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJuItemsSearchResponse struct {
 

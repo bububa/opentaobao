@@ -12,8 +12,22 @@ taobao.qimen.stockout.confirm
 */
 type TaobaoQimenStockoutConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenStockoutConfirmResponse `json:"taobao_qimen_stockout_confirm_response,omitempty"`
+    // Response *TaobaoQimenStockoutConfirmResponse `json:"qimen_stockout_confirm_response,omitempty"` 
+    TaobaoQimenStockoutConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenStockoutConfirmResponse struct {
+
+    // 
+    
+    Response  *struct {
+        TaobaoQimenStockoutConfirmStruct  *TaobaoQimenStockoutConfirmStruct `json:"taobao_qimen_stockout_confirm_struct,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenStockoutConfirmResponse struct {
 

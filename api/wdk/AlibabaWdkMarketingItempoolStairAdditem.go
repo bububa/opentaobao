@@ -11,11 +11,11 @@ alibaba.wdk.marketing.itempool.stair.additem
 
 添加商品池阶梯商品
 */
-func AlibabaWdkMarketingItempoolStairAdditem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolStairAdditemRequest, session string) (*wdk.AlibabaWdkMarketingItempoolStairAdditemResponse, error) {
+func AlibabaWdkMarketingItempoolStairAdditem(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolStairAdditemRequest, session string) (*wdk.AlibabaWdkMarketingItempoolStairAdditemAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItempoolStairAdditemAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

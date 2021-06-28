@@ -12,8 +12,22 @@ taobao.logistics.online.send
 */
 type TaobaoLogisticsOnlineSendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsOnlineSendResponse `json:"taobao_logistics_online_send_response,omitempty"`
+    // Response *TaobaoLogisticsOnlineSendResponse `json:"logistics_online_send_response,omitempty"` 
+    TaobaoLogisticsOnlineSendResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsOnlineSendResponse struct {
+
+    // de
+    
+    Shipping  *struct {
+        Shipping  *Shipping `json:"shipping,omitempty"`
+    } `json:"shipping,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsOnlineSendResponse struct {
 

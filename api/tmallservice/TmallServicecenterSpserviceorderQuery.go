@@ -11,11 +11,11 @@ tmall.servicecenter.spserviceorder.query
 
 查询服务单列表
 */
-func TmallServicecenterSpserviceorderQuery(clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderQueryRequest, session string) (*tmallservice.TmallServicecenterSpserviceorderQueryResponse, error) {
+func TmallServicecenterSpserviceorderQuery(clt *core.SDKClient, req *tmallservice.TmallServicecenterSpserviceorderQueryRequest, session string) (*tmallservice.TmallServicecenterSpserviceorderQueryAPIResponse, error) {
     var resp tmallservice.TmallServicecenterSpserviceorderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

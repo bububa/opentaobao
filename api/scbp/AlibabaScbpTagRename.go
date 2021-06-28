@@ -11,11 +11,11 @@ alibaba.scbp.tag.rename
 
 重命名关键词分组
 */
-func AlibabaScbpTagRename(clt *core.SDKClient, req *scbp.AlibabaScbpTagRenameRequest, session string) (*scbp.AlibabaScbpTagRenameResponse, error) {
+func AlibabaScbpTagRename(clt *core.SDKClient, req *scbp.AlibabaScbpTagRenameRequest, session string) (*scbp.AlibabaScbpTagRenameAPIResponse, error) {
     var resp scbp.AlibabaScbpTagRenameAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

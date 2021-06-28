@@ -12,8 +12,22 @@ taobao.wlb.wms.return.bill.get
 */
 type TaobaoWlbWmsReturnBillGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWmsReturnBillGetResponse `json:"taobao_wlb_wms_return_bill_get_response,omitempty"`
+    // Response *TaobaoWlbWmsReturnBillGetResponse `json:"wlb_wms_return_bill_get_response,omitempty"` 
+    TaobaoWlbWmsReturnBillGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWmsReturnBillGetResponse struct {
+
+    // 回退订单信息
+    
+    ReturnOrderInfo  *struct {
+        CainiaoReturnBillReturnorderinfo  *CainiaoReturnBillReturnorderinfo `json:"cainiao_return_bill_returnorderinfo,omitempty"`
+    } `json:"return_order_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWmsReturnBillGetResponse struct {
 

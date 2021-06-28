@@ -11,11 +11,11 @@ taobao.fenxiao.discounts.get
 
 查询折扣信息
 */
-func TaobaoFenxiaoDiscountsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDiscountsGetRequest, session string) (*fenxiao.TaobaoFenxiaoDiscountsGetResponse, error) {
+func TaobaoFenxiaoDiscountsGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoDiscountsGetRequest, session string) (*fenxiao.TaobaoFenxiaoDiscountsGetAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoDiscountsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

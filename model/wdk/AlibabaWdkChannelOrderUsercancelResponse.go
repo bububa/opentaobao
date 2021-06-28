@@ -12,8 +12,22 @@ alibaba.wdk.channel.order.usercancel
 */
 type AlibabaWdkChannelOrderUsercancelAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkChannelOrderUsercancelResponse `json:"alibaba_wdk_channel_order_usercancel_response,omitempty"`
+    // Response *AlibabaWdkChannelOrderUsercancelResponse `json:"alibaba_wdk_channel_order_usercancel_response,omitempty"` 
+    AlibabaWdkChannelOrderUsercancelResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkChannelOrderUsercancelResponse struct {
+
+    // 返回结果
+    
+    ApiResult  *struct {
+        AlibabaWdkChannelOrderUsercancelApiResult  *AlibabaWdkChannelOrderUsercancelApiResult `json:"alibaba_wdk_channel_order_usercancel_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkChannelOrderUsercancelResponse struct {
 

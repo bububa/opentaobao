@@ -11,11 +11,11 @@ wdk.logistic.network.warehouse.resource.relation.query.to.codes
 
 盒马集市，网格仓查询中心仓
 */
-func WdkLogisticNetworkWarehouseResourceRelationQueryToCodes(clt *core.SDKClient, req *logistic.WdkLogisticNetworkWarehouseResourceRelationQueryToCodesRequest, session string) (*logistic.WdkLogisticNetworkWarehouseResourceRelationQueryToCodesResponse, error) {
+func WdkLogisticNetworkWarehouseResourceRelationQueryToCodes(clt *core.SDKClient, req *logistic.WdkLogisticNetworkWarehouseResourceRelationQueryToCodesRequest, session string) (*logistic.WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIResponse, error) {
     var resp logistic.WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

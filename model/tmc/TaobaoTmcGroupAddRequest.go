@@ -19,7 +19,7 @@ type TaobaoTmcGroupAddRequest struct {
     groupName   string 
 
     // 用户昵称列表，以半角逗号分隔，支持子账号，支持增量添加用户
-    nicks   []String 
+    nicks   []string 
 
     // 用户所属于的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
     userPlatform   string 
@@ -55,13 +55,13 @@ func (r TaobaoTmcGroupAddRequest) GetGroupName() string {
     return r.groupName
 }
 
-func (r *TaobaoTmcGroupAddRequest) SetNicks(nicks []String) error {
+func (r *TaobaoTmcGroupAddRequest) SetNicks(nicks []string) error {
     r.nicks = nicks
     r.Set("nicks", nicks)
     return nil
 }
 
-func (r TaobaoTmcGroupAddRequest) GetNicks() []String {
+func (r TaobaoTmcGroupAddRequest) GetNicks() []string {
     return r.nicks
 }
 

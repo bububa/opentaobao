@@ -11,11 +11,11 @@ taobao.bus.order.set
 
 提供给汽车票商家进行下单
 */
-func TaobaoBusOrderSet(clt *core.SDKClient, req *bus.TaobaoBusOrderSetRequest, session string) (*bus.TaobaoBusOrderSetResponse, error) {
+func TaobaoBusOrderSet(clt *core.SDKClient, req *bus.TaobaoBusOrderSetRequest, session string) (*bus.TaobaoBusOrderSetAPIResponse, error) {
     var resp bus.TaobaoBusOrderSetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -15,11 +15,11 @@ taobao.trades.sold.get
 <br/>注意：type字段的说明，如果该字段不传，接口默认只查4种类型订单，非默认查询的订单是不返回。遇到订单查不到的情况的，解决办法就是type加上订单类型就可正常返回了。
 <br/><strong><a href="https://console.open.taobao.com/dingWeb.htm?from=tradeapi" target="_blank">点击查看更多交易API说明</a></strong>
 */
-func TaobaoTradesSoldGet(clt *core.SDKClient, req *trade.TaobaoTradesSoldGetRequest, session string) (*trade.TaobaoTradesSoldGetResponse, error) {
+func TaobaoTradesSoldGet(clt *core.SDKClient, req *trade.TaobaoTradesSoldGetRequest, session string) (*trade.TaobaoTradesSoldGetAPIResponse, error) {
     var resp trade.TaobaoTradesSoldGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

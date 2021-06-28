@@ -12,8 +12,22 @@ alibaba.interact.activity.unregister
 */
 type AlibabaInteractActivityUnregisterAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractActivityUnregisterResponse `json:"alibaba_interact_activity_unregister_response,omitempty"`
+    // Response *AlibabaInteractActivityUnregisterResponse `json:"alibaba_interact_activity_unregister_response,omitempty"` 
+    AlibabaInteractActivityUnregisterResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractActivityUnregisterResponse struct {
+
+    // 关闭活动结果
+    
+    UnregisterResult  *struct {
+        AllsparkResult  *AllsparkResult `json:"allspark_result,omitempty"`
+    } `json:"unregister_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractActivityUnregisterResponse struct {
 

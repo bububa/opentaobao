@@ -12,8 +12,30 @@ yunos.service.cmns.coa.message.push
 */
 type YunosServiceCmnsCoaMessagePushAPIResponse struct {
     model.CommonResponse
-    Response *YunosServiceCmnsCoaMessagePushResponse `json:"yunos_service_cmns_coa_message_push_response,omitempty"`
+    // Response *YunosServiceCmnsCoaMessagePushResponse `json:"yunos_service_cmns_coa_message_push_response,omitempty"` 
+    YunosServiceCmnsCoaMessagePushResponse
 }
+
+/* model for simplify = false
+type YunosServiceCmnsCoaMessagePushResponse struct {
+
+    // 消息ID，失败则为null
+    
+    Mid   int64 `json:"mid,omitempty"`
+    
+
+    // 消息发送提示
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 200:消息发送成功
+    
+    Status   int64 `json:"status,omitempty"`
+    
+
+}
+*/
 
 type YunosServiceCmnsCoaMessagePushResponse struct {
 

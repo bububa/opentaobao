@@ -12,8 +12,22 @@ taobao.subway.cia.get
 */
 type TaobaoSubwayCiaGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSubwayCiaGetResponse `json:"taobao_subway_cia_get_response,omitempty"`
+    // Response *TaobaoSubwayCiaGetResponse `json:"subway_cia_get_response,omitempty"` 
+    TaobaoSubwayCiaGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSubwayCiaGetResponse struct {
+
+    // 单元智能出价信息
+    
+    Result  *struct {
+        CiaConfig  *CiaConfig `json:"cia_config,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSubwayCiaGetResponse struct {
 

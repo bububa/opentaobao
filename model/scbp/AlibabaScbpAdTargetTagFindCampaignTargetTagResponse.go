@@ -12,8 +12,22 @@ alibaba.scbp.ad.target.tag.find.campaign.target.tag
 */
 type AlibabaScbpAdTargetTagFindCampaignTargetTagAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdTargetTagFindCampaignTargetTagResponse `json:"alibaba_scbp_ad_target_tag_find_campaign_target_tag_response,omitempty"`
+    // Response *AlibabaScbpAdTargetTagFindCampaignTargetTagResponse `json:"alibaba_scbp_ad_target_tag_find_campaign_target_tag_response,omitempty"` 
+    AlibabaScbpAdTargetTagFindCampaignTargetTagResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdTargetTagFindCampaignTargetTagResponse struct {
+
+    // 返回实体
+    
+    ResultList  struct {
+        AdsTargetingTagDto  []AdsTargetingTagDto `json:"ads_targeting_tag_dto,omitempty"`
+    } `json:"result_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdTargetTagFindCampaignTargetTagResponse struct {
 

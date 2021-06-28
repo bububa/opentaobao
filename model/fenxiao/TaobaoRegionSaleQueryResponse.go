@@ -12,8 +12,22 @@ taobao.region.sale.query
 */
 type TaobaoRegionSaleQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRegionSaleQueryResponse `json:"taobao_region_sale_query_response,omitempty"`
+    // Response *TaobaoRegionSaleQueryResponse `json:"region_sale_query_response,omitempty"` 
+    TaobaoRegionSaleQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoRegionSaleQueryResponse struct {
+
+    // result
+    
+    Result  *struct {
+        BaseResult  *BaseResult `json:"base_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRegionSaleQueryResponse struct {
 

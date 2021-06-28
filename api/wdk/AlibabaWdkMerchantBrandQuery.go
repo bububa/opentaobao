@@ -11,11 +11,11 @@ alibaba.wdk.merchant.brand.query
 
 三江erp对接时，提供品牌查询的接口
 */
-func AlibabaWdkMerchantBrandQuery(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantBrandQueryRequest, session string) (*wdk.AlibabaWdkMerchantBrandQueryResponse, error) {
+func AlibabaWdkMerchantBrandQuery(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantBrandQueryRequest, session string) (*wdk.AlibabaWdkMerchantBrandQueryAPIResponse, error) {
     var resp wdk.AlibabaWdkMerchantBrandQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ alibaba.imap.pv.autofill
 */
 type AlibabaImapPvAutofillAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaImapPvAutofillResponse `json:"alibaba_imap_pv_autofill_response,omitempty"`
+    // Response *AlibabaImapPvAutofillResponse `json:"alibaba_imap_pv_autofill_response,omitempty"` 
+    AlibabaImapPvAutofillResponse
 }
+
+/* model for simplify = false
+type AlibabaImapPvAutofillResponse struct {
+
+    // imap通用返回DO
+    
+    Result  *struct {
+        TopImapResultDo  *TopImapResultDo `json:"top_imap_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaImapPvAutofillResponse struct {
 

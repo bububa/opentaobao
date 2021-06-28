@@ -11,11 +11,11 @@ account.aliyuncs.com.DeleteAppForBid.2013-07-01
 
 删除用户的appkey，会校验调用的用户是否为当前运营商所创建的。
 */
-func AccountAliyuncsComDeleteAppForBid2013-07-01(clt *core.SDKClient, req *aliyun.AccountAliyuncsComDeleteAppForBid2013-07-01Request, session string) (*aliyun.AccountAliyuncsComDeleteAppForBid2013-07-01Response, error) {
+func AccountAliyuncsComDeleteAppForBid2013-07-01(clt *core.SDKClient, req *aliyun.AccountAliyuncsComDeleteAppForBid2013-07-01Request, session string) (*aliyun.AccountAliyuncsComDeleteAppForBid2013-07-01APIResponse, error) {
     var resp aliyun.AccountAliyuncsComDeleteAppForBid2013-07-01APIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

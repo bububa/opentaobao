@@ -12,8 +12,35 @@ alibaba.mj.oc.online.ticketno.get
 */
 type AlibabaMjOcOnlineTicketnoGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjOcOnlineTicketnoGetResponse `json:"alibaba_mj_oc_online_ticketno_get_response,omitempty"`
+    // Response *AlibabaMjOcOnlineTicketnoGetResponse `json:"alibaba_mj_oc_online_ticketno_get_response,omitempty"` 
+    AlibabaMjOcOnlineTicketnoGetResponse
 }
+
+/* model for simplify = false
+type AlibabaMjOcOnlineTicketnoGetResponse struct {
+
+    // 是否成功
+    
+    Data   string `json:"data,omitempty"`
+    
+
+    // 错误信息
+    
+    ErrorsMsg   string `json:"errors_msg,omitempty"`
+    
+
+    // 错误码
+    
+    ErrorsCode   int64 `json:"errors_code,omitempty"`
+    
+
+    // 调用是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjOcOnlineTicketnoGetResponse struct {
 

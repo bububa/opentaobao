@@ -13,8 +13,27 @@ taobao.inventory.adjust.external
 */
 type TaobaoInventoryAdjustExternalAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoInventoryAdjustExternalResponse `json:"taobao_inventory_adjust_external_response,omitempty"`
+    // Response *TaobaoInventoryAdjustExternalResponse `json:"inventory_adjust_external_response,omitempty"` 
+    TaobaoInventoryAdjustExternalResponse
 }
+
+/* model for simplify = false
+type TaobaoInventoryAdjustExternalResponse struct {
+
+    // 操作返回码
+    
+    OperateCode   string `json:"operate_code,omitempty"`
+    
+
+    // 提示信息
+    
+    TipInfos  struct {
+        TipInfo  []TipInfo `json:"tip_info,omitempty"`
+    } `json:"tip_infos,omitempty"`
+    
+
+}
+*/
 
 type TaobaoInventoryAdjustExternalResponse struct {
 

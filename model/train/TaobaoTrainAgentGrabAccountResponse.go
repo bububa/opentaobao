@@ -12,8 +12,30 @@ taobao.train.agent.grab.account
 */
 type TaobaoTrainAgentGrabAccountAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentGrabAccountResponse `json:"taobao_train_agent_grab_account_response,omitempty"`
+    // Response *TaobaoTrainAgentGrabAccountResponse `json:"train_agent_grab_account_response,omitempty"` 
+    TaobaoTrainAgentGrabAccountResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentGrabAccountResponse struct {
+
+    // resultMsg
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // resultCode
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentGrabAccountResponse struct {
 

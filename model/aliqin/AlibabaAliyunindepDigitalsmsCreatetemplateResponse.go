@@ -12,8 +12,22 @@ alibaba.aliyunindep.digitalsms.createtemplate
 */
 type AlibabaAliyunindepDigitalsmsCreatetemplateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliyunindepDigitalsmsCreatetemplateResponse `json:"alibaba_aliyunindep_digitalsms_createtemplate_response,omitempty"`
+    // Response *AlibabaAliyunindepDigitalsmsCreatetemplateResponse `json:"alibaba_aliyunindep_digitalsms_createtemplate_response,omitempty"` 
+    AlibabaAliyunindepDigitalsmsCreatetemplateResponse
 }
+
+/* model for simplify = false
+type AlibabaAliyunindepDigitalsmsCreatetemplateResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        AlibabaAliyunindepDigitalsmsCreatetemplateResult  *AlibabaAliyunindepDigitalsmsCreatetemplateResult `json:"alibaba_aliyunindep_digitalsms_createtemplate_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliyunindepDigitalsmsCreatetemplateResponse struct {
 

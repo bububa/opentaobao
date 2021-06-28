@@ -11,11 +11,11 @@ alibaba.mj.oc.syncpayinfo
 
 支付参考号同步到oc
 */
-func AlibabaMjOcSyncpayinfo(clt *core.SDKClient, req *mos.AlibabaMjOcSyncpayinfoRequest, session string) (*mos.AlibabaMjOcSyncpayinfoResponse, error) {
+func AlibabaMjOcSyncpayinfo(clt *core.SDKClient, req *mos.AlibabaMjOcSyncpayinfoRequest, session string) (*mos.AlibabaMjOcSyncpayinfoAPIResponse, error) {
     var resp mos.AlibabaMjOcSyncpayinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

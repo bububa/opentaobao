@@ -11,11 +11,11 @@ alibaba.wtt.offline.record.queryagentinfo
 
 线下推广充送等业务订单来源的查询接口
 */
-func AlibabaWttOfflineRecordQueryagentinfo(clt *core.SDKClient, req *alicom.AlibabaWttOfflineRecordQueryagentinfoRequest, session string) (*alicom.AlibabaWttOfflineRecordQueryagentinfoResponse, error) {
+func AlibabaWttOfflineRecordQueryagentinfo(clt *core.SDKClient, req *alicom.AlibabaWttOfflineRecordQueryagentinfoRequest, session string) (*alicom.AlibabaWttOfflineRecordQueryagentinfoAPIResponse, error) {
     var resp alicom.AlibabaWttOfflineRecordQueryagentinfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

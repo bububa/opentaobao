@@ -12,18 +12,46 @@ taobao.openim.users.add
 */
 type TaobaoOpenimUsersAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimUsersAddResponse `json:"taobao_openim_users_add_response,omitempty"`
+    // Response *TaobaoOpenimUsersAddResponse `json:"openim_users_add_response,omitempty"` 
+    TaobaoOpenimUsersAddResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimUsersAddResponse struct {
+
+    // 成功用户列表
+    
+    UidSucc  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"uid_succ,omitempty"`
+    
+
+    // 添加失败的用户id
+    
+    UidFail  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"uid_fail,omitempty"`
+    
+
+    // 添加帐号失败的具体信息
+    
+    FailMsg  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"fail_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimUsersAddResponse struct {
 
     // 成功用户列表
-    UidSucc   []String `json:"uid_succ,omitempty"`
+    UidSucc   []string `json:"uid_succ,omitempty"`
 
     // 添加失败的用户id
-    UidFail   []String `json:"uid_fail,omitempty"`
+    UidFail   []string `json:"uid_fail,omitempty"`
 
     // 添加帐号失败的具体信息
-    FailMsg   []String `json:"fail_msg,omitempty"`
+    FailMsg   []string `json:"fail_msg,omitempty"`
 
 }

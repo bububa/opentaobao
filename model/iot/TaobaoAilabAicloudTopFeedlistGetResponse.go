@@ -12,8 +12,22 @@ taobao.ailab.aicloud.top.feedlist.get
 */
 type TaobaoAilabAicloudTopFeedlistGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopFeedlistGetResponse `json:"taobao_ailab_aicloud_top_feedlist_get_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopFeedlistGetResponse `json:"ailab_aicloud_top_feedlist_get_response,omitempty"` 
+    TaobaoAilabAicloudTopFeedlistGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopFeedlistGetResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopFeedlistGetResponse struct {
 

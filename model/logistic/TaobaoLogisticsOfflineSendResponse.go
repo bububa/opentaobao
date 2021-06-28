@@ -12,8 +12,22 @@ taobao.logistics.offline.send
 */
 type TaobaoLogisticsOfflineSendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsOfflineSendResponse `json:"taobao_logistics_offline_send_response,omitempty"`
+    // Response *TaobaoLogisticsOfflineSendResponse `json:"logistics_offline_send_response,omitempty"` 
+    TaobaoLogisticsOfflineSendResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsOfflineSendResponse struct {
+
+    // 自己联系的调用结果
+    
+    Shipping  *struct {
+        Shipping  *Shipping `json:"shipping,omitempty"`
+    } `json:"shipping,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsOfflineSendResponse struct {
 

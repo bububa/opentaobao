@@ -11,11 +11,11 @@ tmall.fuwu.serviceitem.list
 
 获取服务商品扩展信息
 */
-func TmallFuwuServiceitemList(clt *core.SDKClient, req *tmallservice.TmallFuwuServiceitemListRequest, session string) (*tmallservice.TmallFuwuServiceitemListResponse, error) {
+func TmallFuwuServiceitemList(clt *core.SDKClient, req *tmallservice.TmallFuwuServiceitemListRequest, session string) (*tmallservice.TmallFuwuServiceitemListAPIResponse, error) {
     var resp tmallservice.TmallFuwuServiceitemListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

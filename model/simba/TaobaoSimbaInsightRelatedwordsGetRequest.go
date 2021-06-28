@@ -16,7 +16,7 @@ type TaobaoSimbaInsightRelatedwordsGetRequest struct {
     model.Params
 
     // 要查询的词列表
-    bidwordList   []String 
+    bidwordList   []string 
 
     // 表示返回数据的条数
     number   int64 
@@ -42,13 +42,13 @@ func (r TaobaoSimbaInsightRelatedwordsGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoSimbaInsightRelatedwordsGetRequest) SetBidwordList(bidwordList []String) error {
+func (r *TaobaoSimbaInsightRelatedwordsGetRequest) SetBidwordList(bidwordList []string) error {
     r.bidwordList = bidwordList
     r.Set("bidword_list", bidwordList)
     return nil
 }
 
-func (r TaobaoSimbaInsightRelatedwordsGetRequest) GetBidwordList() []String {
+func (r TaobaoSimbaInsightRelatedwordsGetRequest) GetBidwordList() []string {
     return r.bidwordList
 }
 

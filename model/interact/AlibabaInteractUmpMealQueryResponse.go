@@ -12,8 +12,22 @@ alibaba.interact.ump.meal.query
 */
 type AlibabaInteractUmpMealQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractUmpMealQueryResponse `json:"alibaba_interact_ump_meal_query_response,omitempty"`
+    // Response *AlibabaInteractUmpMealQueryResponse `json:"alibaba_interact_ump_meal_query_response,omitempty"` 
+    AlibabaInteractUmpMealQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractUmpMealQueryResponse struct {
+
+    // 优惠平台搭配套餐对象
+    
+    Meals  struct {
+        OpenMealDo  []OpenMealDo `json:"open_meal_do,omitempty"`
+    } `json:"meals,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractUmpMealQueryResponse struct {
 

@@ -12,8 +12,22 @@ taobao.subway.automatch.rpt.get
 */
 type TaobaoSubwayAutomatchRptGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSubwayAutomatchRptGetResponse `json:"taobao_subway_automatch_rpt_get_response,omitempty"`
+    // Response *TaobaoSubwayAutomatchRptGetResponse `json:"subway_automatch_rpt_get_response,omitempty"` 
+    TaobaoSubwayAutomatchRptGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSubwayAutomatchRptGetResponse struct {
+
+    // 流量智选天级别报表数据
+    
+    ResultList  struct {
+        ResultMap  []ResultMap `json:"result_map,omitempty"`
+    } `json:"result_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSubwayAutomatchRptGetResponse struct {
 

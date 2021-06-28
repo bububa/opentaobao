@@ -16,11 +16,11 @@ taobao.auction.gov.data.annually.get
 
 最长6年，年起始时间2017年
 */
-func TaobaoAuctionGovDataAnnuallyGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataAnnuallyGetRequest, session string) (*auction.TaobaoAuctionGovDataAnnuallyGetResponse, error) {
+func TaobaoAuctionGovDataAnnuallyGet(clt *core.SDKClient, req *auction.TaobaoAuctionGovDataAnnuallyGetRequest, session string) (*auction.TaobaoAuctionGovDataAnnuallyGetAPIResponse, error) {
     var resp auction.TaobaoAuctionGovDataAnnuallyGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,13 +12,32 @@ taobao.ump.details.get
 */
 type TaobaoUmpDetailsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpDetailsGetResponse `json:"taobao_ump_details_get_response,omitempty"`
+    // Response *TaobaoUmpDetailsGetResponse `json:"ump_details_get_response,omitempty"` 
+    TaobaoUmpDetailsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpDetailsGetResponse struct {
+
+    // 活动详情的信息
+    
+    Contents  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"contents,omitempty"`
+    
+
+    // 记录总数
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpDetailsGetResponse struct {
 
     // 活动详情的信息
-    Contents   []String `json:"contents,omitempty"`
+    Contents   []string `json:"contents,omitempty"`
 
     // 记录总数
     TotalCount   int64 `json:"total_count,omitempty"`

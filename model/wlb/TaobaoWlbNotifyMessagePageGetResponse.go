@@ -12,8 +12,27 @@ taobao.wlb.notify.message.page.get
 */
 type TaobaoWlbNotifyMessagePageGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbNotifyMessagePageGetResponse `json:"taobao_wlb_notify_message_page_get_response,omitempty"`
+    // Response *TaobaoWlbNotifyMessagePageGetResponse `json:"wlb_notify_message_page_get_response,omitempty"` 
+    TaobaoWlbNotifyMessagePageGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbNotifyMessagePageGetResponse struct {
+
+    // 2000-01-01 00:00:00
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+    // 通道消息
+    
+    WlbMessages  struct {
+        WlbMessage  []WlbMessage `json:"wlb_message,omitempty"`
+    } `json:"wlb_messages,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbNotifyMessagePageGetResponse struct {
 

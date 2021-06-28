@@ -16,7 +16,7 @@ type TaobaoItemCarturlGetRequest struct {
     model.Params
 
     // 商品信息，格式为 商品ID_SKU ID_数量，多条记录以逗号(,)分割
-    itemIds   []String 
+    itemIds   []string 
 
     // 回调地址，需要是EWS域名地址。可不填，默认到购物车页面
     callbackUrl   string 
@@ -54,13 +54,13 @@ func (r TaobaoItemCarturlGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoItemCarturlGetRequest) SetItemIds(itemIds []String) error {
+func (r *TaobaoItemCarturlGetRequest) SetItemIds(itemIds []string) error {
     r.itemIds = itemIds
     r.Set("item_ids", itemIds)
     return nil
 }
 
-func (r TaobaoItemCarturlGetRequest) GetItemIds() []String {
+func (r TaobaoItemCarturlGetRequest) GetItemIds() []string {
     return r.itemIds
 }
 

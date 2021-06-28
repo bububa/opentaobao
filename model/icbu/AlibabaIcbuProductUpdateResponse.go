@@ -12,8 +12,20 @@ alibaba.icbu.product.update
 */
 type AlibabaIcbuProductUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuProductUpdateResponse `json:"alibaba_icbu_product_update_response,omitempty"`
+    // Response *AlibabaIcbuProductUpdateResponse `json:"alibaba_icbu_product_update_response,omitempty"` 
+    AlibabaIcbuProductUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuProductUpdateResponse struct {
+
+    // 加密后的产品ID
+    
+    ProductId   string `json:"product_id,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuProductUpdateResponse struct {
 

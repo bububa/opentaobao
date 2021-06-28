@@ -12,8 +12,22 @@ alibaba.interact.lotterydraw.dodraw
 */
 type AlibabaInteractLotterydrawDodrawAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractLotterydrawDodrawResponse `json:"alibaba_interact_lotterydraw_dodraw_response,omitempty"`
+    // Response *AlibabaInteractLotterydrawDodrawResponse `json:"alibaba_interact_lotterydraw_dodraw_response,omitempty"` 
+    AlibabaInteractLotterydrawDodrawResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractLotterydrawDodrawResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaInteractLotterydrawDodrawResultDto  *AlibabaInteractLotterydrawDodrawResultDto `json:"alibaba_interact_lotterydraw_dodraw_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractLotterydrawDodrawResponse struct {
 

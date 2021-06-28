@@ -12,8 +12,22 @@ taobao.blackvip.userinfo.get
 */
 type TaobaoBlackvipUserinfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBlackvipUserinfoGetResponse `json:"taobao_blackvip_userinfo_get_response,omitempty"`
+    // Response *TaobaoBlackvipUserinfoGetResponse `json:"blackvip_userinfo_get_response,omitempty"` 
+    TaobaoBlackvipUserinfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBlackvipUserinfoGetResponse struct {
+
+    // 结果支持对象
+    
+    Result  *struct {
+        ResultSupport  *ResultSupport `json:"result_support,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBlackvipUserinfoGetResponse struct {
 

@@ -12,8 +12,30 @@ taobao.item.permit.check
 */
 type TaobaoItemPermitCheckAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemPermitCheckResponse `json:"taobao_item_permit_check_response,omitempty"`
+    // Response *TaobaoItemPermitCheckResponse `json:"item_permit_check_response,omitempty"` 
+    TaobaoItemPermitCheckResponse
 }
+
+/* model for simplify = false
+type TaobaoItemPermitCheckResponse struct {
+
+    // 错误信息
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+    // 是否成功
+    
+    Error   bool `json:"error,omitempty"`
+    
+
+    // 错误码
+    
+    Errorcode   string `json:"errorcode,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemPermitCheckResponse struct {
 

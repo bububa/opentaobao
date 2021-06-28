@@ -15,8 +15,22 @@ alibaba.mos.onsite.trade.refund
 */
 type AlibabaMosOnsiteTradeRefundAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosOnsiteTradeRefundResponse `json:"alibaba_mos_onsite_trade_refund_response,omitempty"`
+    // Response *AlibabaMosOnsiteTradeRefundResponse `json:"alibaba_mos_onsite_trade_refund_response,omitempty"` 
+    AlibabaMosOnsiteTradeRefundResponse
 }
+
+/* model for simplify = false
+type AlibabaMosOnsiteTradeRefundResponse struct {
+
+    // 交易退款响应
+    
+    Result  *struct {
+        AlibabaMosOnsiteTradeRefundResultDo  *AlibabaMosOnsiteTradeRefundResultDo `json:"alibaba_mos_onsite_trade_refund_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosOnsiteTradeRefundResponse struct {
 

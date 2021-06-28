@@ -12,8 +12,22 @@ aliexpress.social.item.ranking
 */
 type AliexpressSocialItemRankingAPIResponse struct {
     model.CommonResponse
-    Response *AliexpressSocialItemRankingResponse `json:"aliexpress_social_item_ranking_response,omitempty"`
+    // Response *AliexpressSocialItemRankingResponse `json:"aliexpress_social_item_ranking_response,omitempty"` 
+    AliexpressSocialItemRankingResponse
 }
+
+/* model for simplify = false
+type AliexpressSocialItemRankingResponse struct {
+
+    // 返回包装类型
+    
+    Result  *struct {
+        ItemPickPagingResult  *ItemPickPagingResult `json:"item_pick_paging_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AliexpressSocialItemRankingResponse struct {
 

@@ -12,8 +12,22 @@ cainiao.merchant.inventory.adjust
 */
 type CainiaoMerchantInventoryAdjustAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoMerchantInventoryAdjustResponse `json:"cainiao_merchant_inventory_adjust_response,omitempty"`
+    // Response *CainiaoMerchantInventoryAdjustResponse `json:"cainiao_merchant_inventory_adjust_response,omitempty"` 
+    CainiaoMerchantInventoryAdjustResponse
 }
+
+/* model for simplify = false
+type CainiaoMerchantInventoryAdjustResponse struct {
+
+    // result
+    
+    Result  *struct {
+        SingleResultDto  *SingleResultDto `json:"single_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoMerchantInventoryAdjustResponse struct {
 

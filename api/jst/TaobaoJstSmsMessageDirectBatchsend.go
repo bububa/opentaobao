@@ -11,11 +11,11 @@ taobao.jst.sms.message.direct.batchsend
 
 聚石塔所见即所得的短信发送接口
 */
-func TaobaoJstSmsMessageDirectBatchsend(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageDirectBatchsendRequest, session string) (*jst.TaobaoJstSmsMessageDirectBatchsendResponse, error) {
+func TaobaoJstSmsMessageDirectBatchsend(clt *core.SDKClient, req *jst.TaobaoJstSmsMessageDirectBatchsendRequest, session string) (*jst.TaobaoJstSmsMessageDirectBatchsendAPIResponse, error) {
     var resp jst.TaobaoJstSmsMessageDirectBatchsendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

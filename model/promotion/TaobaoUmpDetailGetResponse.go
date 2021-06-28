@@ -12,8 +12,20 @@ taobao.ump.detail.get
 */
 type TaobaoUmpDetailGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpDetailGetResponse `json:"taobao_ump_detail_get_response,omitempty"`
+    // Response *TaobaoUmpDetailGetResponse `json:"ump_detail_get_response,omitempty"` 
+    TaobaoUmpDetailGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpDetailGetResponse struct {
+
+    // 活动详情信息，可以通过ump sdk中的MarketingTool来进行处理
+    
+    Content   string `json:"content,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpDetailGetResponse struct {
 

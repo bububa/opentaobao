@@ -12,8 +12,22 @@ alibaba.security.jaq.captcha.verify.result.fetch
 */
 type AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqCaptchaVerifyResultFetchResponse `json:"alibaba_security_jaq_captcha_verify_result_fetch_response,omitempty"`
+    // Response *AlibabaSecurityJaqCaptchaVerifyResultFetchResponse `json:"alibaba_security_jaq_captcha_verify_result_fetch_response,omitempty"` 
+    AlibabaSecurityJaqCaptchaVerifyResultFetchResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqCaptchaVerifyResultFetchResponse struct {
+
+    // 验证检查结果结构体
+    
+    Data  *struct {
+        JaqSecondCheckResult  *JaqSecondCheckResult `json:"jaq_second_check_result,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqCaptchaVerifyResultFetchResponse struct {
 

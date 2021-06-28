@@ -11,11 +11,11 @@ alibaba.wdk.marketing.version.commit
 
 提交版本号，标识结束此版本操作
 */
-func AlibabaWdkMarketingVersionCommit(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingVersionCommitRequest, session string) (*wdk.AlibabaWdkMarketingVersionCommitResponse, error) {
+func AlibabaWdkMarketingVersionCommit(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingVersionCommitRequest, session string) (*wdk.AlibabaWdkMarketingVersionCommitAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingVersionCommitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ alibaba.alihealth.prescription.auth.get
 */
 type AlibabaAlihealthPrescriptionAuthGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlihealthPrescriptionAuthGetResponse `json:"alibaba_alihealth_prescription_auth_get_response,omitempty"`
+    // Response *AlibabaAlihealthPrescriptionAuthGetResponse `json:"alibaba_alihealth_prescription_auth_get_response,omitempty"` 
+    AlibabaAlihealthPrescriptionAuthGetResponse
 }
+
+/* model for simplify = false
+type AlibabaAlihealthPrescriptionAuthGetResponse struct {
+
+    // alinkappserver系统返回的通用结果类
+    
+    ServiceResult  *struct {
+        ServiceResult  *ServiceResult `json:"service_result,omitempty"`
+    } `json:"service_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlihealthPrescriptionAuthGetResponse struct {
 

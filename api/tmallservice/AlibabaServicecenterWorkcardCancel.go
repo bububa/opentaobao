@@ -11,11 +11,11 @@ alibaba.servicecenter.workcard.cancel
 
 取消服务工单
 */
-func AlibabaServicecenterWorkcardCancel(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCancelRequest, session string) (*tmallservice.AlibabaServicecenterWorkcardCancelResponse, error) {
+func AlibabaServicecenterWorkcardCancel(clt *core.SDKClient, req *tmallservice.AlibabaServicecenterWorkcardCancelRequest, session string) (*tmallservice.AlibabaServicecenterWorkcardCancelAPIResponse, error) {
     var resp tmallservice.AlibabaServicecenterWorkcardCancelAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

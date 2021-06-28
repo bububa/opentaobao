@@ -12,8 +12,27 @@ taobao.crm.members.increment.get
 */
 type TaobaoCrmMembersIncrementGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmMembersIncrementGetResponse `json:"taobao_crm_members_increment_get_response,omitempty"`
+    // Response *TaobaoCrmMembersIncrementGetResponse `json:"crm_members_increment_get_response,omitempty"` 
+    TaobaoCrmMembersIncrementGetResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmMembersIncrementGetResponse struct {
+
+    // 返回当前页的会员列表
+    
+    Members  struct {
+        BasicMember  []BasicMember `json:"basic_member,omitempty"`
+    } `json:"members,omitempty"`
+    
+
+    // 记录的总条数
+    
+    TotalResult   int64 `json:"total_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmMembersIncrementGetResponse struct {
 

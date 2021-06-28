@@ -11,11 +11,11 @@ alibaba.wdk.marketing.open.version.count
 
 版本数量查询
 */
-func AlibabaWdkMarketingOpenVersionCount(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenVersionCountRequest, session string) (*wdk.AlibabaWdkMarketingOpenVersionCountResponse, error) {
+func AlibabaWdkMarketingOpenVersionCount(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenVersionCountRequest, session string) (*wdk.AlibabaWdkMarketingOpenVersionCountAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingOpenVersionCountAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

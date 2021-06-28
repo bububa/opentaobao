@@ -78,16 +78,13 @@ func (c *SDKClient) post(req url.Values, resp model.IResponse) error {
 		debug.PrintError(err, c.debug)
 		return err
 	}
-	if resp.IsError() {
-		return resp
-	}
-	return nil
+	return resp.Error()
 }
 
 func (c *SDKClient) postMultipart(req url.Values, params model.Params, resp model.IResponse) error {
 	var buf bytes.Buffer
 	mw := multipart.NewWriter(&buf)
-	for k, _ := range req {
+	for k := range req {
 		var (
 			fw  io.Writer
 			r   io.Reader
@@ -131,10 +128,7 @@ func (c *SDKClient) postMultipart(req url.Values, params model.Params, resp mode
 		debug.PrintError(err, c.debug)
 		return err
 	}
-	if resp.IsError() {
-		return resp
-	}
-	return nil
+	return resp.Error()
 }
 
 func (c *SDKClient) get(req url.Values, resp model.IResponse) error {
@@ -159,14 +153,11 @@ func (c *SDKClient) get(req url.Values, resp model.IResponse) error {
 		debug.PrintError(err, c.debug)
 		return err
 	}
-	if resp.IsError() {
-		return resp
-	}
-	return nil
+	return resp.Error()
 }
 
 func (c *SDKClient) sign(commonReq *model.CommonRequest, req model.IRequest) url.Values {
-	var ret url.Values
+	ret := url.Values{}
 	commonParams := commonReq.GetParams()
 	reqParams := req.GetApiParams()
 	keys := make([]string, 0, len(commonParams)+len(reqParams))

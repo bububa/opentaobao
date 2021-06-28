@@ -11,11 +11,11 @@ taobao.ump.range.get
 
 查询某个卖家所有参加或者不参加某项活动的物品
 */
-func TaobaoUmpRangeGet(clt *core.SDKClient, req *promotion.TaobaoUmpRangeGetRequest, session string) (*promotion.TaobaoUmpRangeGetResponse, error) {
+func TaobaoUmpRangeGet(clt *core.SDKClient, req *promotion.TaobaoUmpRangeGetRequest, session string) (*promotion.TaobaoUmpRangeGetAPIResponse, error) {
     var resp promotion.TaobaoUmpRangeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

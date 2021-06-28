@@ -12,8 +12,30 @@ alibaba.alsc.kms.access
 */
 type AlibabaAlscKmsAccessAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscKmsAccessResponse `json:"alibaba_alsc_kms_access_response,omitempty"`
+    // Response *AlibabaAlscKmsAccessResponse `json:"alibaba_alsc_kms_access_response,omitempty"` 
+    AlibabaAlscKmsAccessResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscKmsAccessResponse struct {
+
+    // code
+    
+    Resultcode   string `json:"resultcode,omitempty"`
+    
+
+    // 是否成功
+    
+    Resultsuccess   bool `json:"resultsuccess,omitempty"`
+    
+
+    // message
+    
+    Resultmessage   string `json:"resultmessage,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscKmsAccessResponse struct {
 

@@ -11,11 +11,11 @@ taobao.top.secret.register
 
 提供给isv注册非淘系账号秘钥，isv依赖sdk自主加、解密
 */
-func TaobaoTopSecretRegister(clt *core.SDKClient, req *util.TaobaoTopSecretRegisterRequest, session string) (*util.TaobaoTopSecretRegisterResponse, error) {
+func TaobaoTopSecretRegister(clt *core.SDKClient, req *util.TaobaoTopSecretRegisterRequest, session string) (*util.TaobaoTopSecretRegisterAPIResponse, error) {
     var resp util.TaobaoTopSecretRegisterAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

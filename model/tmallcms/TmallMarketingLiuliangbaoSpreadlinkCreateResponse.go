@@ -12,8 +12,22 @@ tmall.marketing.liuliangbao.spreadlink.create
 */
 type TmallMarketingLiuliangbaoSpreadlinkCreateAPIResponse struct {
     model.CommonResponse
-    Response *TmallMarketingLiuliangbaoSpreadlinkCreateResponse `json:"tmall_marketing_liuliangbao_spreadlink_create_response,omitempty"`
+    // Response *TmallMarketingLiuliangbaoSpreadlinkCreateResponse `json:"tmall_marketing_liuliangbao_spreadlink_create_response,omitempty"` 
+    TmallMarketingLiuliangbaoSpreadlinkCreateResponse
 }
+
+/* model for simplify = false
+type TmallMarketingLiuliangbaoSpreadlinkCreateResponse struct {
+
+    // 流量宝系统执行结果
+    
+    Llbresult  *struct {
+        LLBApiResult  *LLBApiResult `json:"llb_api_result,omitempty"`
+    } `json:"llbresult,omitempty"`
+    
+
+}
+*/
 
 type TmallMarketingLiuliangbaoSpreadlinkCreateResponse struct {
 

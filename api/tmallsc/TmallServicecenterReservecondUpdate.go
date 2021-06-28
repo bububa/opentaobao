@@ -11,11 +11,11 @@ tmall.servicecenter.reservecond.update
 
 1、设置主动预约开通条件
 */
-func TmallServicecenterReservecondUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondUpdateRequest, session string) (*tmallsc.TmallServicecenterReservecondUpdateResponse, error) {
+func TmallServicecenterReservecondUpdate(clt *core.SDKClient, req *tmallsc.TmallServicecenterReservecondUpdateRequest, session string) (*tmallsc.TmallServicecenterReservecondUpdateAPIResponse, error) {
     var resp tmallsc.TmallServicecenterReservecondUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

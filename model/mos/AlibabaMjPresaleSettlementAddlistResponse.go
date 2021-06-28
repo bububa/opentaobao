@@ -12,8 +12,20 @@ alibaba.mj.presale.settlement.addlist
 */
 type AlibabaMjPresaleSettlementAddlistAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjPresaleSettlementAddlistResponse `json:"alibaba_mj_presale_settlement_addlist_response,omitempty"`
+    // Response *AlibabaMjPresaleSettlementAddlistResponse `json:"alibaba_mj_presale_settlement_addlist_response,omitempty"` 
+    AlibabaMjPresaleSettlementAddlistResponse
 }
+
+/* model for simplify = false
+type AlibabaMjPresaleSettlementAddlistResponse struct {
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjPresaleSettlementAddlistResponse struct {
 

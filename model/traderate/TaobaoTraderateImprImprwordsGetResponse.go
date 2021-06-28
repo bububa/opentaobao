@@ -12,12 +12,26 @@ taobao.traderate.impr.imprwords.get
 */
 type TaobaoTraderateImprImprwordsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTraderateImprImprwordsGetResponse `json:"taobao_traderate_impr_imprwords_get_response,omitempty"`
+    // Response *TaobaoTraderateImprImprwordsGetResponse `json:"traderate_impr_imprwords_get_response,omitempty"` 
+    TaobaoTraderateImprImprwordsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTraderateImprImprwordsGetResponse struct {
+
+    // 返回类目下所有大家印象的标签
+    
+    ImprWords  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"impr_words,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTraderateImprImprwordsGetResponse struct {
 
     // 返回类目下所有大家印象的标签
-    ImprWords   []String `json:"impr_words,omitempty"`
+    ImprWords   []string `json:"impr_words,omitempty"`
 
 }

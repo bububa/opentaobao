@@ -11,11 +11,11 @@ alibaba.icbu.product.get
 
 获取商品详情
 */
-func AlibabaIcbuProductGet(clt *core.SDKClient, req *icbu.AlibabaIcbuProductGetRequest, session string) (*icbu.AlibabaIcbuProductGetResponse, error) {
+func AlibabaIcbuProductGet(clt *core.SDKClient, req *icbu.AlibabaIcbuProductGetRequest, session string) (*icbu.AlibabaIcbuProductGetAPIResponse, error) {
     var resp icbu.AlibabaIcbuProductGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

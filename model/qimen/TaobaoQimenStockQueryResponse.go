@@ -12,8 +12,22 @@ ERP调用奇门的接口,查询商品的库存量
 */
 type TaobaoQimenStockQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenStockQueryResponse `json:"taobao_qimen_stock_query_response,omitempty"`
+    // Response *TaobaoQimenStockQueryResponse `json:"qimen_stock_query_response,omitempty"` 
+    TaobaoQimenStockQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenStockQueryResponse struct {
+
+    // 
+    
+    Response  *struct {
+        StockQueryResponse  *StockQueryResponse `json:"stock_query_response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenStockQueryResponse struct {
 

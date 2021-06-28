@@ -12,8 +12,22 @@ alibaba.icbu.product.score.get
 */
 type AlibabaIcbuProductScoreGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuProductScoreGetResponse `json:"alibaba_icbu_product_score_get_response,omitempty"`
+    // Response *AlibabaIcbuProductScoreGetResponse `json:"alibaba_icbu_product_score_get_response,omitempty"` 
+    AlibabaIcbuProductScoreGetResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuProductScoreGetResponse struct {
+
+    // 系统自动生成
+    
+    Result  *struct {
+        ProductScoreInfoResult  *ProductScoreInfoResult `json:"product_score_info_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuProductScoreGetResponse struct {
 

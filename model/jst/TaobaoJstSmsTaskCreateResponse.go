@@ -12,8 +12,22 @@ taobao.jst.sms.task.create
 */
 type TaobaoJstSmsTaskCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJstSmsTaskCreateResponse `json:"taobao_jst_sms_task_create_response,omitempty"`
+    // Response *TaobaoJstSmsTaskCreateResponse `json:"jst_sms_task_create_response,omitempty"` 
+    TaobaoJstSmsTaskCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoJstSmsTaskCreateResponse struct {
+
+    // 出参
+    
+    Result  *struct {
+        SmsResponse  *SmsResponse `json:"sms_response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJstSmsTaskCreateResponse struct {
 

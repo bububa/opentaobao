@@ -11,11 +11,11 @@ alibaba.txcs.brandmarketing.coupon.qrcode.get
 
 构建券页码二维码url
 */
-func AlibabaTxcsBrandmarketingCouponQrcodeGet(clt *core.SDKClient, req *wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetRequest, session string) (*wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetResponse, error) {
+func AlibabaTxcsBrandmarketingCouponQrcodeGet(clt *core.SDKClient, req *wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetRequest, session string) (*wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse, error) {
     var resp wdk.AlibabaTxcsBrandmarketingCouponQrcodeGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ alibaba.wdk.sku.category.query
 */
 type AlibabaWdkSkuCategoryQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkSkuCategoryQueryResponse `json:"alibaba_wdk_sku_category_query_response,omitempty"`
+    // Response *AlibabaWdkSkuCategoryQueryResponse `json:"alibaba_wdk_sku_category_query_response,omitempty"` 
+    AlibabaWdkSkuCategoryQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkSkuCategoryQueryResponse struct {
+
+    // 调用结果
+    
+    Result  *struct {
+        AlibabaWdkSkuCategoryQueryApiResult  *AlibabaWdkSkuCategoryQueryApiResult `json:"alibaba_wdk_sku_category_query_api_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkSkuCategoryQueryResponse struct {
 

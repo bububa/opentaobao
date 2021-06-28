@@ -12,8 +12,22 @@ taobao.qimen.combineitem.delete
 */
 type TaobaoQimenCombineitemDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenCombineitemDeleteResponse `json:"taobao_qimen_combineitem_delete_response,omitempty"`
+    // Response *TaobaoQimenCombineitemDeleteResponse `json:"qimen_combineitem_delete_response,omitempty"` 
+    TaobaoQimenCombineitemDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenCombineitemDeleteResponse struct {
+
+    // 
+    
+    Response  *struct {
+        ResponseDO  *ResponseDO `json:"response_do,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenCombineitemDeleteResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.wdk.scm.lrp.order.predict
 */
 type AlibabaWdkScmLrpOrderPredictAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkScmLrpOrderPredictResponse `json:"alibaba_wdk_scm_lrp_order_predict_response,omitempty"`
+    // Response *AlibabaWdkScmLrpOrderPredictResponse `json:"alibaba_wdk_scm_lrp_order_predict_response,omitempty"` 
+    AlibabaWdkScmLrpOrderPredictResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkScmLrpOrderPredictResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaWdkScmLrpOrderPredictApiResult  *AlibabaWdkScmLrpOrderPredictApiResult `json:"alibaba_wdk_scm_lrp_order_predict_api_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkScmLrpOrderPredictResponse struct {
 

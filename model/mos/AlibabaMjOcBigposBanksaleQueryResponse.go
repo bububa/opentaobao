@@ -12,8 +12,27 @@ alibaba.mj.oc.bigpos.banksale.query
 */
 type AlibabaMjOcBigposBanksaleQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjOcBigposBanksaleQueryResponse `json:"alibaba_mj_oc_bigpos_banksale_query_response,omitempty"`
+    // Response *AlibabaMjOcBigposBanksaleQueryResponse `json:"alibaba_mj_oc_bigpos_banksale_query_response,omitempty"` 
+    AlibabaMjOcBigposBanksaleQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaMjOcBigposBanksaleQueryResponse struct {
+
+    // 明细数量
+    
+    Total   int64 `json:"total,omitempty"`
+    
+
+    // 数据主体
+    
+    Datas  struct {
+        AlibabaMjOcBigposBanksaleQueryData  []AlibabaMjOcBigposBanksaleQueryData `json:"alibaba_mj_oc_bigpos_banksale_query_data,omitempty"`
+    } `json:"datas,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjOcBigposBanksaleQueryResponse struct {
 

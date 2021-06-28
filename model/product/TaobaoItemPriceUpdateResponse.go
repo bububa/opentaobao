@@ -12,8 +12,22 @@ taobao.item.price.update
 */
 type TaobaoItemPriceUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemPriceUpdateResponse `json:"taobao_item_price_update_response,omitempty"`
+    // Response *TaobaoItemPriceUpdateResponse `json:"item_price_update_response,omitempty"` 
+    TaobaoItemPriceUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoItemPriceUpdateResponse struct {
+
+    // 商品结构里的num_iid，modified
+    
+    Item  *struct {
+        Item  *Item `json:"item,omitempty"`
+    } `json:"item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemPriceUpdateResponse struct {
 

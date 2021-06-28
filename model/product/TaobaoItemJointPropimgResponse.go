@@ -12,8 +12,22 @@ taobao.item.joint.propimg
 */
 type TaobaoItemJointPropimgAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemJointPropimgResponse `json:"taobao_item_joint_propimg_response,omitempty"`
+    // Response *TaobaoItemJointPropimgResponse `json:"item_joint_propimg_response,omitempty"` 
+    TaobaoItemJointPropimgResponse
 }
+
+/* model for simplify = false
+type TaobaoItemJointPropimgResponse struct {
+
+    // 属性图片对象信息
+    
+    PropImg  *struct {
+        PropImg  *PropImg `json:"prop_img,omitempty"`
+    } `json:"prop_img,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemJointPropimgResponse struct {
 

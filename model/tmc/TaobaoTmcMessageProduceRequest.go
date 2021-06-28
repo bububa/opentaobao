@@ -22,19 +22,19 @@ type TaobaoTmcMessageProduceRequest struct {
     topic   string 
 
     // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。
-    mediaContent   []byte 
+    mediaContent   []*model.File 
 
     // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-    mediaContent2   []byte 
+    mediaContent2   []*model.File 
 
     // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-    mediaContent3   []byte 
+    mediaContent3   []*model.File 
 
     // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-    mediaContent4   []byte 
+    mediaContent4   []*model.File 
 
     // 回传的文件内容，目前仅支持jpg,png,bmp,gif,pdf类型的文件，文件最大1M。只有消息中有byte[]类型的数据时，才需要传此字段; 否则不需要传此字段。具体对应到沙体中的什么值，请参考消息字段说明。
-    mediaContent5   []byte 
+    mediaContent5   []*model.File 
 
     // 目标分组，一般为default
     targetGroup   string 
@@ -80,53 +80,53 @@ func (r TaobaoTmcMessageProduceRequest) GetTopic() string {
     return r.topic
 }
 
-func (r *TaobaoTmcMessageProduceRequest) SetMediaContent(mediaContent []byte) error {
+func (r *TaobaoTmcMessageProduceRequest) SetMediaContent(mediaContent []*model.File) error {
     r.mediaContent = mediaContent
     r.Set("media_content", mediaContent)
     return nil
 }
 
-func (r TaobaoTmcMessageProduceRequest) GetMediaContent() []byte {
+func (r TaobaoTmcMessageProduceRequest) GetMediaContent() []*model.File {
     return r.mediaContent
 }
 
-func (r *TaobaoTmcMessageProduceRequest) SetMediaContent2(mediaContent2 []byte) error {
+func (r *TaobaoTmcMessageProduceRequest) SetMediaContent2(mediaContent2 []*model.File) error {
     r.mediaContent2 = mediaContent2
     r.Set("media_content2", mediaContent2)
     return nil
 }
 
-func (r TaobaoTmcMessageProduceRequest) GetMediaContent2() []byte {
+func (r TaobaoTmcMessageProduceRequest) GetMediaContent2() []*model.File {
     return r.mediaContent2
 }
 
-func (r *TaobaoTmcMessageProduceRequest) SetMediaContent3(mediaContent3 []byte) error {
+func (r *TaobaoTmcMessageProduceRequest) SetMediaContent3(mediaContent3 []*model.File) error {
     r.mediaContent3 = mediaContent3
     r.Set("media_content3", mediaContent3)
     return nil
 }
 
-func (r TaobaoTmcMessageProduceRequest) GetMediaContent3() []byte {
+func (r TaobaoTmcMessageProduceRequest) GetMediaContent3() []*model.File {
     return r.mediaContent3
 }
 
-func (r *TaobaoTmcMessageProduceRequest) SetMediaContent4(mediaContent4 []byte) error {
+func (r *TaobaoTmcMessageProduceRequest) SetMediaContent4(mediaContent4 []*model.File) error {
     r.mediaContent4 = mediaContent4
     r.Set("media_content4", mediaContent4)
     return nil
 }
 
-func (r TaobaoTmcMessageProduceRequest) GetMediaContent4() []byte {
+func (r TaobaoTmcMessageProduceRequest) GetMediaContent4() []*model.File {
     return r.mediaContent4
 }
 
-func (r *TaobaoTmcMessageProduceRequest) SetMediaContent5(mediaContent5 []byte) error {
+func (r *TaobaoTmcMessageProduceRequest) SetMediaContent5(mediaContent5 []*model.File) error {
     r.mediaContent5 = mediaContent5
     r.Set("media_content5", mediaContent5)
     return nil
 }
 
-func (r TaobaoTmcMessageProduceRequest) GetMediaContent5() []byte {
+func (r TaobaoTmcMessageProduceRequest) GetMediaContent5() []*model.File {
     return r.mediaContent5
 }
 

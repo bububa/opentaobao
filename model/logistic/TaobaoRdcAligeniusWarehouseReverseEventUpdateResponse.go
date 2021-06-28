@@ -12,8 +12,22 @@ taobao.rdc.aligenius.warehouse.reverse.event.update
 */
 type TaobaoRdcAligeniusWarehouseReverseEventUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRdcAligeniusWarehouseReverseEventUpdateResponse `json:"taobao_rdc_aligenius_warehouse_reverse_event_update_response,omitempty"`
+    // Response *TaobaoRdcAligeniusWarehouseReverseEventUpdateResponse `json:"rdc_aligenius_warehouse_reverse_event_update_response,omitempty"` 
+    TaobaoRdcAligeniusWarehouseReverseEventUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoRdcAligeniusWarehouseReverseEventUpdateResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoRdcAligeniusWarehouseReverseEventUpdateResult  *TaobaoRdcAligeniusWarehouseReverseEventUpdateResult `json:"taobao_rdc_aligenius_warehouse_reverse_event_update_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRdcAligeniusWarehouseReverseEventUpdateResponse struct {
 

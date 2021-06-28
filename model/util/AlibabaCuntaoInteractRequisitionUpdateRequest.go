@@ -19,7 +19,7 @@ type AlibabaCuntaoInteractRequisitionUpdateRequest struct {
     status   string 
 
     // 申请单id列表
-    uuidList   []String 
+    uuidList   []string 
 
 }
 
@@ -52,13 +52,13 @@ func (r AlibabaCuntaoInteractRequisitionUpdateRequest) GetStatus() string {
     return r.status
 }
 
-func (r *AlibabaCuntaoInteractRequisitionUpdateRequest) SetUuidList(uuidList []String) error {
+func (r *AlibabaCuntaoInteractRequisitionUpdateRequest) SetUuidList(uuidList []string) error {
     r.uuidList = uuidList
     r.Set("uuid_list", uuidList)
     return nil
 }
 
-func (r AlibabaCuntaoInteractRequisitionUpdateRequest) GetUuidList() []String {
+func (r AlibabaCuntaoInteractRequisitionUpdateRequest) GetUuidList() []string {
     return r.uuidList
 }
 

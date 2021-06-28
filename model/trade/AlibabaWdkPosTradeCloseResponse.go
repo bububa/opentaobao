@@ -12,8 +12,22 @@ alibaba.wdk.pos.trade.close
 */
 type AlibabaWdkPosTradeCloseAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkPosTradeCloseResponse `json:"alibaba_wdk_pos_trade_close_response,omitempty"`
+    // Response *AlibabaWdkPosTradeCloseResponse `json:"alibaba_wdk_pos_trade_close_response,omitempty"` 
+    AlibabaWdkPosTradeCloseResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkPosTradeCloseResponse struct {
+
+    // 关单结果
+    
+    Result  *struct {
+        FastBuyPosCloseResult  *FastBuyPosCloseResult `json:"fast_buy_pos_close_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkPosTradeCloseResponse struct {
 

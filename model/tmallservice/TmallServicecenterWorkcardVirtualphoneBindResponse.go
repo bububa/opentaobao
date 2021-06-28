@@ -13,8 +13,22 @@ tmall.servicecenter.workcard.virtualphone.bind
 */
 type TmallServicecenterWorkcardVirtualphoneBindAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardVirtualphoneBindResponse `json:"tmall_servicecenter_workcard_virtualphone_bind_response,omitempty"`
+    // Response *TmallServicecenterWorkcardVirtualphoneBindResponse `json:"tmall_servicecenter_workcard_virtualphone_bind_response,omitempty"` 
+    TmallServicecenterWorkcardVirtualphoneBindResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardVirtualphoneBindResponse struct {
+
+    // 系统自动生成
+    
+    Result  *struct {
+        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardVirtualphoneBindResponse struct {
 

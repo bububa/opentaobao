@@ -12,8 +12,20 @@ alibaba.interact.allsparkisv.draw
 */
 type AlibabaInteractAllsparkisvDrawAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractAllsparkisvDrawResponse `json:"alibaba_interact_allsparkisv_draw_response,omitempty"`
+    // Response *AlibabaInteractAllsparkisvDrawResponse `json:"alibaba_interact_allsparkisv_draw_response,omitempty"` 
+    AlibabaInteractAllsparkisvDrawResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractAllsparkisvDrawResponse struct {
+
+    // ddd
+    
+    Ddd   string `json:"ddd,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractAllsparkisvDrawResponse struct {
 

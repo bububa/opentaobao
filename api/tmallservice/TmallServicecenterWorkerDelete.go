@@ -26,11 +26,11 @@ tmall.servicecenter.worker.delete
 11001, biz_type 无效
 20001,已查询到最后一页
 */
-func TmallServicecenterWorkerDelete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerDeleteRequest, session string) (*tmallservice.TmallServicecenterWorkerDeleteResponse, error) {
+func TmallServicecenterWorkerDelete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkerDeleteRequest, session string) (*tmallservice.TmallServicecenterWorkerDeleteAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkerDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

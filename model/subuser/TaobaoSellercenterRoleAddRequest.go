@@ -22,7 +22,7 @@ type TaobaoSellercenterRoleAddRequest struct {
     description   string 
 
     // 需要授权的权限点permission_code列表,以","分割.其code值可以通过调用taobao.sellercenter.user.permissions.get返回，其中permission.is_authorize=1的权限点可以通过本接口授权给对应角色。
-    permissionCodes   []String 
+    permissionCodes   []string 
 
     // 表示卖家昵称
     nick   string 
@@ -68,13 +68,13 @@ func (r TaobaoSellercenterRoleAddRequest) GetDescription() string {
     return r.description
 }
 
-func (r *TaobaoSellercenterRoleAddRequest) SetPermissionCodes(permissionCodes []String) error {
+func (r *TaobaoSellercenterRoleAddRequest) SetPermissionCodes(permissionCodes []string) error {
     r.permissionCodes = permissionCodes
     r.Set("permission_codes", permissionCodes)
     return nil
 }
 
-func (r TaobaoSellercenterRoleAddRequest) GetPermissionCodes() []String {
+func (r TaobaoSellercenterRoleAddRequest) GetPermissionCodes() []string {
     return r.permissionCodes
 }
 

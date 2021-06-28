@@ -12,8 +12,22 @@ alibaba.mos.onsite.trade.queryrefund
 */
 type AlibabaMosOnsiteTradeQueryrefundAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosOnsiteTradeQueryrefundResponse `json:"alibaba_mos_onsite_trade_queryrefund_response,omitempty"`
+    // Response *AlibabaMosOnsiteTradeQueryrefundResponse `json:"alibaba_mos_onsite_trade_queryrefund_response,omitempty"` 
+    AlibabaMosOnsiteTradeQueryrefundResponse
 }
+
+/* model for simplify = false
+type AlibabaMosOnsiteTradeQueryrefundResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaMosOnsiteTradeQueryrefundResultDo  *AlibabaMosOnsiteTradeQueryrefundResultDo `json:"alibaba_mos_onsite_trade_queryrefund_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosOnsiteTradeQueryrefundResponse struct {
 

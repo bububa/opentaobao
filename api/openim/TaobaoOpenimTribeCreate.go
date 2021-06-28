@@ -11,11 +11,11 @@ taobao.openim.tribe.create
 
 创建一个openim的群
 */
-func TaobaoOpenimTribeCreate(clt *core.SDKClient, req *openim.TaobaoOpenimTribeCreateRequest, session string) (*openim.TaobaoOpenimTribeCreateResponse, error) {
+func TaobaoOpenimTribeCreate(clt *core.SDKClient, req *openim.TaobaoOpenimTribeCreateRequest, session string) (*openim.TaobaoOpenimTribeCreateAPIResponse, error) {
     var resp openim.TaobaoOpenimTribeCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

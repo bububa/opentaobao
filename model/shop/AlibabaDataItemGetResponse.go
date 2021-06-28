@@ -12,8 +12,20 @@ alibaba.data.item.get
 */
 type AlibabaDataItemGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaDataItemGetResponse `json:"alibaba_data_item_get_response,omitempty"`
+    // Response *AlibabaDataItemGetResponse `json:"alibaba_data_item_get_response,omitempty"` 
+    AlibabaDataItemGetResponse
 }
+
+/* model for simplify = false
+type AlibabaDataItemGetResponse struct {
+
+    // 获取商品信息，作为客户端Weex鉴权的虚拟api
+    
+    Unnamed   string `json:"unnamed,omitempty"`
+    
+
+}
+*/
 
 type AlibabaDataItemGetResponse struct {
 

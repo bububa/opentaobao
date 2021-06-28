@@ -12,8 +12,22 @@ alibaba.xiami.api.album.detail.get
 */
 type AlibabaXiamiApiAlbumDetailGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaXiamiApiAlbumDetailGetResponse `json:"alibaba_xiami_api_album_detail_get_response,omitempty"`
+    // Response *AlibabaXiamiApiAlbumDetailGetResponse `json:"alibaba_xiami_api_album_detail_get_response,omitempty"` 
+    AlibabaXiamiApiAlbumDetailGetResponse
 }
+
+/* model for simplify = false
+type AlibabaXiamiApiAlbumDetailGetResponse struct {
+
+    // 专辑资料
+    
+    Data  *struct {
+        AlbumDetail  *AlbumDetail `json:"album_detail,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaXiamiApiAlbumDetailGetResponse struct {
 

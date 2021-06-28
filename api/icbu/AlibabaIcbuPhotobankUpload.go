@@ -11,11 +11,11 @@ alibaba.icbu.photobank.upload
 
 图片银行图片上传开放接口
 */
-func AlibabaIcbuPhotobankUpload(clt *core.SDKClient, req *icbu.AlibabaIcbuPhotobankUploadRequest, session string) (*icbu.AlibabaIcbuPhotobankUploadResponse, error) {
+func AlibabaIcbuPhotobankUpload(clt *core.SDKClient, req *icbu.AlibabaIcbuPhotobankUploadRequest, session string) (*icbu.AlibabaIcbuPhotobankUploadAPIResponse, error) {
     var resp icbu.AlibabaIcbuPhotobankUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

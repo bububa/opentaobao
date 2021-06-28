@@ -16,7 +16,7 @@ type TaobaoShopcatsListGetRequest struct {
     model.Params
 
     // 需要返回的字段列表，见ShopCat，默认返回：cid,parent_cid,name,is_parent
-    fields   []String 
+    fields   []string 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoShopcatsListGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoShopcatsListGetRequest) SetFields(fields []String) error {
+func (r *TaobaoShopcatsListGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoShopcatsListGetRequest) GetFields() []String {
+func (r TaobaoShopcatsListGetRequest) GetFields() []string {
     return r.fields
 }
 

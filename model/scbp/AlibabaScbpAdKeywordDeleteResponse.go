@@ -12,8 +12,20 @@ alibaba.scbp.ad.keyword.delete
 */
 type AlibabaScbpAdKeywordDeleteAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdKeywordDeleteResponse `json:"alibaba_scbp_ad_keyword_delete_response,omitempty"`
+    // Response *AlibabaScbpAdKeywordDeleteResponse `json:"alibaba_scbp_ad_keyword_delete_response,omitempty"` 
+    AlibabaScbpAdKeywordDeleteResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdKeywordDeleteResponse struct {
+
+    // 删除关键词是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdKeywordDeleteResponse struct {
 

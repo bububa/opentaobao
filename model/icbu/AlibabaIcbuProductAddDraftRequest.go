@@ -34,7 +34,7 @@ type AlibabaIcbuProductAddDraftRequest struct {
     groupId   int64 
 
     // 关键词，不要包含特殊符号（如,;），最多三个
-    keywords   []String 
+    keywords   []string 
 
     // 语种，参见FAQ 语种枚举值
     language   string 
@@ -147,13 +147,13 @@ func (r AlibabaIcbuProductAddDraftRequest) GetGroupId() int64 {
     return r.groupId
 }
 
-func (r *AlibabaIcbuProductAddDraftRequest) SetKeywords(keywords []String) error {
+func (r *AlibabaIcbuProductAddDraftRequest) SetKeywords(keywords []string) error {
     r.keywords = keywords
     r.Set("keywords", keywords)
     return nil
 }
 
-func (r AlibabaIcbuProductAddDraftRequest) GetKeywords() []String {
+func (r AlibabaIcbuProductAddDraftRequest) GetKeywords() []string {
     return r.keywords
 }
 

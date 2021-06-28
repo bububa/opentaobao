@@ -11,11 +11,11 @@ alibaba.aliqin.flow.wallet.charge
 
 流量直充
 */
-func AlibabaAliqinFlowWalletCharge(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletChargeRequest, session string) (*alicom.AlibabaAliqinFlowWalletChargeResponse, error) {
+func AlibabaAliqinFlowWalletCharge(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowWalletChargeRequest, session string) (*alicom.AlibabaAliqinFlowWalletChargeAPIResponse, error) {
     var resp alicom.AlibabaAliqinFlowWalletChargeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

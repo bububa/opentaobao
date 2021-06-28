@@ -1,6 +1,40 @@
 package servicecenter
 
 // CsScheduling 
+/* model for simplify = false
+type CsScheduling struct {
+
+    // 排班日期
+    
+    Date   string `json:"date,omitempty"`
+    
+
+    // 排班日期字符串
+    
+    StringDate   string `json:"string_date,omitempty"`
+    
+
+    // 一天内排班信息
+    
+    Schedulings  struct {
+        Scheduling  []Scheduling `json:"scheduling,omitempty"`
+    } `json:"schedulings,omitempty"`
+    
+
+    // 订单ID
+    
+    OrderId   int64 `json:"order_id,omitempty"`
+    
+
+    // 排班记录更新时间
+    
+    ModifiedTime   string `json:"modified_time,omitempty"`
+    
+
+}
+*/
+
+// CsScheduling 
 type CsScheduling struct {
 
     // 排班日期

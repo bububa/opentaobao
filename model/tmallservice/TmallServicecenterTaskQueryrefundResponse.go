@@ -12,8 +12,22 @@ tmall.servicecenter.task.queryrefund
 */
 type TmallServicecenterTaskQueryrefundAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterTaskQueryrefundResponse `json:"tmall_servicecenter_task_queryrefund_response,omitempty"`
+    // Response *TmallServicecenterTaskQueryrefundResponse `json:"tmall_servicecenter_task_queryrefund_response,omitempty"` 
+    TmallServicecenterTaskQueryrefundResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterTaskQueryrefundResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterTaskQueryrefundResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.alsc.crm.voucher.send
 */
 type AlibabaAlscCrmVoucherSendAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmVoucherSendResponse `json:"alibaba_alsc_crm_voucher_send_response,omitempty"`
+    // Response *AlibabaAlscCrmVoucherSendResponse `json:"alibaba_alsc_crm_voucher_send_response,omitempty"` 
+    AlibabaAlscCrmVoucherSendResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmVoucherSendResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmVoucherSendResponse struct {
 

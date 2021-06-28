@@ -16,7 +16,7 @@ type TaobaoWlbInventoryDetailGetRequest struct {
     model.Params
 
     // 库存类型列表，值包括：<br/>VENDIBLE--可销售库存<br/>FREEZE--冻结库存<br/>ONWAY--在途库存<br/>DEFECT--残次品库存<br/>ENGINE_DAMAGE--机损<br/>BOX_DAMAGE--箱损<br/>EXPIRATION--过保
-    inventoryTypeList   []String 
+    inventoryTypeList   []string 
 
     // 仓库编码
     storeCode   string 
@@ -45,13 +45,13 @@ func (r TaobaoWlbInventoryDetailGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoWlbInventoryDetailGetRequest) SetInventoryTypeList(inventoryTypeList []String) error {
+func (r *TaobaoWlbInventoryDetailGetRequest) SetInventoryTypeList(inventoryTypeList []string) error {
     r.inventoryTypeList = inventoryTypeList
     r.Set("inventory_type_list", inventoryTypeList)
     return nil
 }
 
-func (r TaobaoWlbInventoryDetailGetRequest) GetInventoryTypeList() []String {
+func (r TaobaoWlbInventoryDetailGetRequest) GetInventoryTypeList() []string {
     return r.inventoryTypeList
 }
 

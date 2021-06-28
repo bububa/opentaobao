@@ -12,8 +12,25 @@ alibaba.ele.fengniao.trade.update
 */
 type AlibabaEleFengniaoTradeUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaEleFengniaoTradeUpdateResponse `json:"alibaba_ele_fengniao_trade_update_response,omitempty"`
+    // Response *AlibabaEleFengniaoTradeUpdateResponse `json:"alibaba_ele_fengniao_trade_update_response,omitempty"` 
+    AlibabaEleFengniaoTradeUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaEleFengniaoTradeUpdateResponse struct {
+
+    // 1:成功 0：失败
+    
+    Status   int64 `json:"status,omitempty"`
+    
+
+    // 无此交易记录
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+}
+*/
 
 type AlibabaEleFengniaoTradeUpdateResponse struct {
 

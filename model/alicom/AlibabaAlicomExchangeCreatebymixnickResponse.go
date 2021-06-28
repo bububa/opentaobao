@@ -12,8 +12,22 @@ alibaba.alicom.exchange.createbymixnick
 */
 type AlibabaAlicomExchangeCreatebymixnickAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlicomExchangeCreatebymixnickResponse `json:"alibaba_alicom_exchange_createbymixnick_response,omitempty"`
+    // Response *AlibabaAlicomExchangeCreatebymixnickResponse `json:"alibaba_alicom_exchange_createbymixnick_response,omitempty"` 
+    AlibabaAlicomExchangeCreatebymixnickResponse
 }
+
+/* model for simplify = false
+type AlibabaAlicomExchangeCreatebymixnickResponse struct {
+
+    // result
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlicomExchangeCreatebymixnickResponse struct {
 

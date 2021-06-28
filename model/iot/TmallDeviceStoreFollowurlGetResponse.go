@@ -12,8 +12,25 @@ tmall.device.store.followurl.get
 */
 type TmallDeviceStoreFollowurlGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallDeviceStoreFollowurlGetResponse `json:"tmall_device_store_followurl_get_response,omitempty"`
+    // Response *TmallDeviceStoreFollowurlGetResponse `json:"tmall_device_store_followurl_get_response,omitempty"` 
+    TmallDeviceStoreFollowurlGetResponse
 }
+
+/* model for simplify = false
+type TmallDeviceStoreFollowurlGetResponse struct {
+
+    // 二维码短链接地址
+    
+    ShortUrl   string `json:"short_url,omitempty"`
+    
+
+    // 二维码图片URL
+    
+    ShortImgUrl   string `json:"short_img_url,omitempty"`
+    
+
+}
+*/
 
 type TmallDeviceStoreFollowurlGetResponse struct {
 

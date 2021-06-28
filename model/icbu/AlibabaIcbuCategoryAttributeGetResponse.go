@@ -12,8 +12,22 @@ alibaba.icbu.category.attribute.get
 */
 type AlibabaIcbuCategoryAttributeGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuCategoryAttributeGetResponse `json:"alibaba_icbu_category_attribute_get_response,omitempty"`
+    // Response *AlibabaIcbuCategoryAttributeGetResponse `json:"alibaba_icbu_category_attribute_get_response,omitempty"` 
+    AlibabaIcbuCategoryAttributeGetResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuCategoryAttributeGetResponse struct {
+
+    // 类目下的属性和属性值信息
+    
+    Attributes  struct {
+        Attribute  []Attribute `json:"attribute,omitempty"`
+    } `json:"attributes,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuCategoryAttributeGetResponse struct {
 

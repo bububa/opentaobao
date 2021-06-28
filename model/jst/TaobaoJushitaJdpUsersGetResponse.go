@@ -12,8 +12,27 @@ taobao.jushita.jdp.users.get
 */
 type TaobaoJushitaJdpUsersGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJushitaJdpUsersGetResponse `json:"taobao_jushita_jdp_users_get_response,omitempty"`
+    // Response *TaobaoJushitaJdpUsersGetResponse `json:"jushita_jdp_users_get_response,omitempty"` 
+    TaobaoJushitaJdpUsersGetResponse
 }
+
+/* model for simplify = false
+type TaobaoJushitaJdpUsersGetResponse struct {
+
+    // 用户列表
+    
+    Users  struct {
+        JdpUser  []JdpUser `json:"jdp_user,omitempty"`
+    } `json:"users,omitempty"`
+    
+
+    // 总记录数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJushitaJdpUsersGetResponse struct {
 

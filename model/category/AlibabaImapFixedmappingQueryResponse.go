@@ -12,8 +12,22 @@ alibaba.imap.fixedmapping.query
 */
 type AlibabaImapFixedmappingQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaImapFixedmappingQueryResponse `json:"alibaba_imap_fixedmapping_query_response,omitempty"`
+    // Response *AlibabaImapFixedmappingQueryResponse `json:"alibaba_imap_fixedmapping_query_response,omitempty"` 
+    AlibabaImapFixedmappingQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaImapFixedmappingQueryResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaImapFixedmappingQueryResult  *AlibabaImapFixedmappingQueryResult `json:"alibaba_imap_fixedmapping_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaImapFixedmappingQueryResponse struct {
 

@@ -12,8 +12,22 @@ taobao.simba.searchcrowd.batch.add
 */
 type TaobaoSimbaSearchcrowdBatchAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaSearchcrowdBatchAddResponse `json:"taobao_simba_searchcrowd_batch_add_response,omitempty"`
+    // Response *TaobaoSimbaSearchcrowdBatchAddResponse `json:"simba_searchcrowd_batch_add_response,omitempty"` 
+    TaobaoSimbaSearchcrowdBatchAddResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaSearchcrowdBatchAddResponse struct {
+
+    // 定向信息
+    
+    Adgrouptargetingtags  struct {
+        AdgroupTargetingTagDto  []AdgroupTargetingTagDto `json:"adgroup_targeting_tag_dto,omitempty"`
+    } `json:"adgrouptargetingtags,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaSearchcrowdBatchAddResponse struct {
 

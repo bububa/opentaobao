@@ -16,7 +16,7 @@ type TaobaoBaichuanItemsUnsubscribeRequest struct {
     model.Params
 
     // 删除的商品id
-    itemIds   []Number 
+    itemIds   []int64 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoBaichuanItemsUnsubscribeRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoBaichuanItemsUnsubscribeRequest) SetItemIds(itemIds []Number) error {
+func (r *TaobaoBaichuanItemsUnsubscribeRequest) SetItemIds(itemIds []int64) error {
     r.itemIds = itemIds
     r.Set("item_ids", itemIds)
     return nil
 }
 
-func (r TaobaoBaichuanItemsUnsubscribeRequest) GetItemIds() []Number {
+func (r TaobaoBaichuanItemsUnsubscribeRequest) GetItemIds() []int64 {
     return r.itemIds
 }
 

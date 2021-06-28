@@ -11,11 +11,11 @@ alibaba.wdk.series.edit
 
 系列品变更-更新系列
 */
-func AlibabaWdkSeriesEdit(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesEditRequest, session string) (*wdk.AlibabaWdkSeriesEditResponse, error) {
+func AlibabaWdkSeriesEdit(clt *core.SDKClient, req *wdk.AlibabaWdkSeriesEditRequest, session string) (*wdk.AlibabaWdkSeriesEditAPIResponse, error) {
     var resp wdk.AlibabaWdkSeriesEditAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

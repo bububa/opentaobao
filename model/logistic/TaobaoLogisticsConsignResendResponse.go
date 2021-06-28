@@ -12,8 +12,22 @@ taobao.logistics.consign.resend
 */
 type TaobaoLogisticsConsignResendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsConsignResendResponse `json:"taobao_logistics_consign_resend_response,omitempty"`
+    // Response *TaobaoLogisticsConsignResendResponse `json:"logistics_consign_resend_response,omitempty"` 
+    TaobaoLogisticsConsignResendResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsConsignResendResponse struct {
+
+    // 返回发货是否成功is_success
+    
+    Shipping  *struct {
+        Shipping  *Shipping `json:"shipping,omitempty"`
+    } `json:"shipping,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsConsignResendResponse struct {
 

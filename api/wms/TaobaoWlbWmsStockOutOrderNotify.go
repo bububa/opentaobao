@@ -11,11 +11,11 @@ taobao.wlb.wms.stock.out.order.notify
 
 出库单通知
 */
-func TaobaoWlbWmsStockOutOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsStockOutOrderNotifyRequest, session string) (*wms.TaobaoWlbWmsStockOutOrderNotifyResponse, error) {
+func TaobaoWlbWmsStockOutOrderNotify(clt *core.SDKClient, req *wms.TaobaoWlbWmsStockOutOrderNotifyRequest, session string) (*wms.TaobaoWlbWmsStockOutOrderNotifyAPIResponse, error) {
     var resp wms.TaobaoWlbWmsStockOutOrderNotifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

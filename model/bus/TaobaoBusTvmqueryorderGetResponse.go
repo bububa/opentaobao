@@ -12,8 +12,37 @@ taobao.bus.tvmqueryorder.get
 */
 type TaobaoBusTvmqueryorderGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusTvmqueryorderGetResponse `json:"taobao_bus_tvmqueryorder_get_response,omitempty"`
+    // Response *TaobaoBusTvmqueryorderGetResponse `json:"bus_tvmqueryorder_get_response,omitempty"` 
+    TaobaoBusTvmqueryorderGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusTvmqueryorderGetResponse struct {
+
+    // errorCode
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // errorMsg
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // tvmBusOrderLineInfo
+    
+    TvmBusOrderLineInfo  *struct {
+        TvmBusOrderLineInfo  *TvmBusOrderLineInfo `json:"tvm_bus_order_line_info,omitempty"`
+    } `json:"tvm_bus_order_line_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusTvmqueryorderGetResponse struct {
 

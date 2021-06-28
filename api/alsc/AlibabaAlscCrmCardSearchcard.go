@@ -11,11 +11,11 @@ alibaba.alsc.crm.card.searchcard
 
 搜索卡实例列表(支持号段查询)
 */
-func AlibabaAlscCrmCardSearchcard(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardSearchcardRequest, session string) (*alsc.AlibabaAlscCrmCardSearchcardResponse, error) {
+func AlibabaAlscCrmCardSearchcard(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCardSearchcardRequest, session string) (*alsc.AlibabaAlscCrmCardSearchcardAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmCardSearchcardAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

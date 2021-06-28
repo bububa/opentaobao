@@ -12,8 +12,22 @@ alibaba.alink.device.bind
 */
 type AlibabaAlinkDeviceBindAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlinkDeviceBindResponse `json:"alibaba_alink_device_bind_response,omitempty"`
+    // Response *AlibabaAlinkDeviceBindResponse `json:"alibaba_alink_device_bind_response,omitempty"` 
+    AlibabaAlinkDeviceBindResponse
 }
+
+/* model for simplify = false
+type AlibabaAlinkDeviceBindResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        TopServiceResult  *TopServiceResult `json:"top_service_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlinkDeviceBindResponse struct {
 

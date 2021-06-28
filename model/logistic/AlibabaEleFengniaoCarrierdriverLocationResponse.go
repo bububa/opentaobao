@@ -12,8 +12,42 @@ alibaba.ele.fengniao.carrierdriver.location
 */
 type AlibabaEleFengniaoCarrierdriverLocationAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaEleFengniaoCarrierdriverLocationResponse `json:"alibaba_ele_fengniao_carrierdriver_location_response,omitempty"`
+    // Response *AlibabaEleFengniaoCarrierdriverLocationResponse `json:"alibaba_ele_fengniao_carrierdriver_location_response,omitempty"` 
+    AlibabaEleFengniaoCarrierdriverLocationResponse
 }
+
+/* model for simplify = false
+type AlibabaEleFengniaoCarrierdriverLocationResponse struct {
+
+    // location
+    
+    Location  *struct {
+        Location  *Location `json:"location,omitempty"`
+    } `json:"location,omitempty"`
+    
+
+    // 运单状态
+    
+    State   int64 `json:"state,omitempty"`
+    
+
+    // 骑手电话
+    
+    CarrierDriverPhone   string `json:"carrier_driver_phone,omitempty"`
+    
+
+    // 骑手姓名
+    
+    CarrierDriverName   string `json:"carrier_driver_name,omitempty"`
+    
+
+    // 运单状态变化时间点
+    
+    OccurredAt   int64 `json:"occurred_at,omitempty"`
+    
+
+}
+*/
 
 type AlibabaEleFengniaoCarrierdriverLocationResponse struct {
 

@@ -12,8 +12,20 @@ alibaba.security.jaq.rp.fetchmaterial
 */
 type AlibabaSecurityJaqRpFetchmaterialAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqRpFetchmaterialResponse `json:"alibaba_security_jaq_rp_fetchmaterial_response,omitempty"`
+    // Response *AlibabaSecurityJaqRpFetchmaterialResponse `json:"alibaba_security_jaq_rp_fetchmaterial_response,omitempty"` 
+    AlibabaSecurityJaqRpFetchmaterialResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqRpFetchmaterialResponse struct {
+
+    // 结果信息
+    
+    Data   string `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqRpFetchmaterialResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.security.jaq.rp.fetchmaterial
 
 聚安全实人认证获取结果接口
 */
-func AlibabaSecurityJaqRpFetchmaterial(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpFetchmaterialRequest, session string) (*security.AlibabaSecurityJaqRpFetchmaterialResponse, error) {
+func AlibabaSecurityJaqRpFetchmaterial(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpFetchmaterialRequest, session string) (*security.AlibabaSecurityJaqRpFetchmaterialAPIResponse, error) {
     var resp security.AlibabaSecurityJaqRpFetchmaterialAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

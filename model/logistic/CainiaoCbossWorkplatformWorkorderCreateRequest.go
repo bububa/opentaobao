@@ -58,7 +58,7 @@ type CainiaoCbossWorkplatformWorkorderCreateRequest struct {
     features   string 
 
     // 凭证地址列表
-    attachPathList   []String 
+    attachPathList   []string 
 
 }
 
@@ -221,13 +221,13 @@ func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetFeatures() string {
     return r.features
 }
 
-func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetAttachPathList(attachPathList []String) error {
+func (r *CainiaoCbossWorkplatformWorkorderCreateRequest) SetAttachPathList(attachPathList []string) error {
     r.attachPathList = attachPathList
     r.Set("attach_path_list", attachPathList)
     return nil
 }
 
-func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetAttachPathList() []String {
+func (r CainiaoCbossWorkplatformWorkorderCreateRequest) GetAttachPathList() []string {
     return r.attachPathList
 }
 

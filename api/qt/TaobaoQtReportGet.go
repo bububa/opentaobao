@@ -11,11 +11,11 @@ taobao.qt.report.get
 
 质检报告查询
 */
-func TaobaoQtReportGet(clt *core.SDKClient, req *qt.TaobaoQtReportGetRequest, session string) (*qt.TaobaoQtReportGetResponse, error) {
+func TaobaoQtReportGet(clt *core.SDKClient, req *qt.TaobaoQtReportGetRequest, session string) (*qt.TaobaoQtReportGetAPIResponse, error) {
     var resp qt.TaobaoQtReportGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

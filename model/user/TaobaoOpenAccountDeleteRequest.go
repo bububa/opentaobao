@@ -16,10 +16,10 @@ type TaobaoOpenAccountDeleteRequest struct {
     model.Params
 
     // Open Account的id列表
-    openAccountIds   []Number 
+    openAccountIds   []int64 
 
     // ISV自己账号的id列表
-    isvAccountIds   []String 
+    isvAccountIds   []string 
 
 }
 
@@ -42,23 +42,23 @@ func (r TaobaoOpenAccountDeleteRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoOpenAccountDeleteRequest) SetOpenAccountIds(openAccountIds []Number) error {
+func (r *TaobaoOpenAccountDeleteRequest) SetOpenAccountIds(openAccountIds []int64) error {
     r.openAccountIds = openAccountIds
     r.Set("open_account_ids", openAccountIds)
     return nil
 }
 
-func (r TaobaoOpenAccountDeleteRequest) GetOpenAccountIds() []Number {
+func (r TaobaoOpenAccountDeleteRequest) GetOpenAccountIds() []int64 {
     return r.openAccountIds
 }
 
-func (r *TaobaoOpenAccountDeleteRequest) SetIsvAccountIds(isvAccountIds []String) error {
+func (r *TaobaoOpenAccountDeleteRequest) SetIsvAccountIds(isvAccountIds []string) error {
     r.isvAccountIds = isvAccountIds
     r.Set("isv_account_ids", isvAccountIds)
     return nil
 }
 
-func (r TaobaoOpenAccountDeleteRequest) GetIsvAccountIds() []String {
+func (r TaobaoOpenAccountDeleteRequest) GetIsvAccountIds() []string {
     return r.isvAccountIds
 }
 

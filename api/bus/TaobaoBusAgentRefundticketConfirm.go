@@ -11,11 +11,11 @@ taobao.bus.agent.refundticket.confirm
 
 商家通过top回调告知平台退款明细
 */
-func TaobaoBusAgentRefundticketConfirm(clt *core.SDKClient, req *bus.TaobaoBusAgentRefundticketConfirmRequest, session string) (*bus.TaobaoBusAgentRefundticketConfirmResponse, error) {
+func TaobaoBusAgentRefundticketConfirm(clt *core.SDKClient, req *bus.TaobaoBusAgentRefundticketConfirmRequest, session string) (*bus.TaobaoBusAgentRefundticketConfirmAPIResponse, error) {
     var resp bus.TaobaoBusAgentRefundticketConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,30 @@ yunos.service.cmns.coa.device.isonline
 */
 type YunosServiceCmnsCoaDeviceIsonlineAPIResponse struct {
     model.CommonResponse
-    Response *YunosServiceCmnsCoaDeviceIsonlineResponse `json:"yunos_service_cmns_coa_device_isonline_response,omitempty"`
+    // Response *YunosServiceCmnsCoaDeviceIsonlineResponse `json:"yunos_service_cmns_coa_device_isonline_response,omitempty"` 
+    YunosServiceCmnsCoaDeviceIsonlineResponse
 }
+
+/* model for simplify = false
+type YunosServiceCmnsCoaDeviceIsonlineResponse struct {
+
+    // data
+    
+    Data   int64 `json:"data,omitempty"`
+    
+
+    // msg
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // status
+    
+    Status   int64 `json:"status,omitempty"`
+    
+
+}
+*/
 
 type YunosServiceCmnsCoaDeviceIsonlineResponse struct {
 

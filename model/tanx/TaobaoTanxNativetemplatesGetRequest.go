@@ -25,7 +25,7 @@ type TaobaoTanxNativetemplatesGetRequest struct {
     signTime   int64 
 
     // 本地模板ID列表
-    templateIds   []Number 
+    templateIds   []int64 
 
 }
 
@@ -78,13 +78,13 @@ func (r TaobaoTanxNativetemplatesGetRequest) GetSignTime() int64 {
     return r.signTime
 }
 
-func (r *TaobaoTanxNativetemplatesGetRequest) SetTemplateIds(templateIds []Number) error {
+func (r *TaobaoTanxNativetemplatesGetRequest) SetTemplateIds(templateIds []int64) error {
     r.templateIds = templateIds
     r.Set("template_ids", templateIds)
     return nil
 }
 
-func (r TaobaoTanxNativetemplatesGetRequest) GetTemplateIds() []Number {
+func (r TaobaoTanxNativetemplatesGetRequest) GetTemplateIds() []int64 {
     return r.templateIds
 }
 

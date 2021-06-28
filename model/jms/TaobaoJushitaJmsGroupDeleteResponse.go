@@ -12,8 +12,20 @@ taobao.jushita.jms.group.delete
 */
 type TaobaoJushitaJmsGroupDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJushitaJmsGroupDeleteResponse `json:"taobao_jushita_jms_group_delete_response,omitempty"`
+    // Response *TaobaoJushitaJmsGroupDeleteResponse `json:"jushita_jms_group_delete_response,omitempty"` 
+    TaobaoJushitaJmsGroupDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoJushitaJmsGroupDeleteResponse struct {
+
+    // 操作结果
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJushitaJmsGroupDeleteResponse struct {
 

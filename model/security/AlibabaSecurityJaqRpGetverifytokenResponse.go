@@ -12,8 +12,22 @@ alibaba.security.jaq.rp.getverifytoken
 */
 type AlibabaSecurityJaqRpGetverifytokenAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqRpGetverifytokenResponse `json:"alibaba_security_jaq_rp_getverifytoken_response,omitempty"`
+    // Response *AlibabaSecurityJaqRpGetverifytokenResponse `json:"alibaba_security_jaq_rp_getverifytoken_response,omitempty"` 
+    AlibabaSecurityJaqRpGetverifytokenResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqRpGetverifytokenResponse struct {
+
+    // token信息
+    
+    Data  *struct {
+        RpInitResultBo  *RpInitResultBo `json:"rp_init_result_bo,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqRpGetverifytokenResponse struct {
 

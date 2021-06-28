@@ -12,8 +12,22 @@ taobao.wlb.import.threepl.resource.get
 */
 type TaobaoWlbImportThreeplResourceGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbImportThreeplResourceGetResponse `json:"taobao_wlb_import_threepl_resource_get_response,omitempty"`
+    // Response *TaobaoWlbImportThreeplResourceGetResponse `json:"wlb_import_threepl_resource_get_response,omitempty"` 
+    TaobaoWlbImportThreeplResourceGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbImportThreeplResourceGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TopResult  *TopResult `json:"top_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbImportThreeplResourceGetResponse struct {
 

@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.reassign
 */
 type TmallServicecenterWorkcardReassignAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardReassignResponse `json:"tmall_servicecenter_workcard_reassign_response,omitempty"`
+    // Response *TmallServicecenterWorkcardReassignResponse `json:"tmall_servicecenter_workcard_reassign_response,omitempty"` 
+    TmallServicecenterWorkcardReassignResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardReassignResponse struct {
+
+    // 调用结果
+    
+    Result  *struct {
+        TmallServicecenterWorkcardReassignResult  *TmallServicecenterWorkcardReassignResult `json:"tmall_servicecenter_workcard_reassign_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardReassignResponse struct {
 

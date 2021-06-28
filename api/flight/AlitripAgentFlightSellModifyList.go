@@ -11,11 +11,11 @@ alitrip.agent.flight.sell.modify.list
 
 销售改签单列表
 */
-func AlitripAgentFlightSellModifyList(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyListRequest, session string) (*flight.AlitripAgentFlightSellModifyListResponse, error) {
+func AlitripAgentFlightSellModifyList(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyListRequest, session string) (*flight.AlitripAgentFlightSellModifyListAPIResponse, error) {
     var resp flight.AlitripAgentFlightSellModifyListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

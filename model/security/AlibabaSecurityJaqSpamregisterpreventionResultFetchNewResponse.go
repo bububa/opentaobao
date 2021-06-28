@@ -12,8 +12,22 @@ alibaba.security.jaq.spamregisterprevention.result.fetch.new
 */
 type AlibabaSecurityJaqSpamregisterpreventionResultFetchNewAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewResponse `json:"alibaba_security_jaq_spamregisterprevention_result_fetch_new_response,omitempty"`
+    // Response *AlibabaSecurityJaqSpamregisterpreventionResultFetchNewResponse `json:"alibaba_security_jaq_spamregisterprevention_result_fetch_new_response,omitempty"` 
+    AlibabaSecurityJaqSpamregisterpreventionResultFetchNewResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqSpamregisterpreventionResultFetchNewResponse struct {
+
+    // 账号风控返回结果
+    
+    JaqAccountRiskResult  *struct {
+        JaqAccountRiskResult  *JaqAccountRiskResult `json:"jaq_account_risk_result,omitempty"`
+    } `json:"jaq_account_risk_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqSpamregisterpreventionResultFetchNewResponse struct {
 

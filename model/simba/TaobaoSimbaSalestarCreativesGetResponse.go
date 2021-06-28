@@ -12,8 +12,22 @@ taobao.simba.salestar.creatives.get
 */
 type TaobaoSimbaSalestarCreativesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaSalestarCreativesGetResponse `json:"taobao_simba_salestar_creatives_get_response,omitempty"`
+    // Response *TaobaoSimbaSalestarCreativesGetResponse `json:"simba_salestar_creatives_get_response,omitempty"` 
+    TaobaoSimbaSalestarCreativesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaSalestarCreativesGetResponse struct {
+
+    // 创意对象列表
+    
+    Creatives  struct {
+        Creative  []Creative `json:"creative,omitempty"`
+    } `json:"creatives,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaSalestarCreativesGetResponse struct {
 

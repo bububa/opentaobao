@@ -12,8 +12,25 @@ taobao.apple.card.active.apply.notify
 */
 type TaobaoAppleCardActiveApplyNotifyAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAppleCardActiveApplyNotifyResponse `json:"taobao_apple_card_active_apply_notify_response,omitempty"`
+    // Response *TaobaoAppleCardActiveApplyNotifyResponse `json:"apple_card_active_apply_notify_response,omitempty"` 
+    TaobaoAppleCardActiveApplyNotifyResponse
 }
+
+/* model for simplify = false
+type TaobaoAppleCardActiveApplyNotifyResponse struct {
+
+    // 错误码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // 描述
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAppleCardActiveApplyNotifyResponse struct {
 

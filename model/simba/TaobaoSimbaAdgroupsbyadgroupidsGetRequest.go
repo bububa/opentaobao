@@ -19,7 +19,7 @@ type TaobaoSimbaAdgroupsbyadgroupidsGetRequest struct {
     nick   string 
 
     // 推广组Id列表
-    adgroupIds   []Number 
+    adgroupIds   []int64 
 
     // 页尺寸，最大200，如果入参adgroup_ids有传入值，则page_size和page_no值不起作用。如果adgrpup_ids为空而campaign_id有值，此时page_size和page_no值才是返回的页数据大小和页码
     pageSize   int64 
@@ -58,13 +58,13 @@ func (r TaobaoSimbaAdgroupsbyadgroupidsGetRequest) GetNick() string {
     return r.nick
 }
 
-func (r *TaobaoSimbaAdgroupsbyadgroupidsGetRequest) SetAdgroupIds(adgroupIds []Number) error {
+func (r *TaobaoSimbaAdgroupsbyadgroupidsGetRequest) SetAdgroupIds(adgroupIds []int64) error {
     r.adgroupIds = adgroupIds
     r.Set("adgroup_ids", adgroupIds)
     return nil
 }
 
-func (r TaobaoSimbaAdgroupsbyadgroupidsGetRequest) GetAdgroupIds() []Number {
+func (r TaobaoSimbaAdgroupsbyadgroupidsGetRequest) GetAdgroupIds() []int64 {
     return r.adgroupIds
 }
 

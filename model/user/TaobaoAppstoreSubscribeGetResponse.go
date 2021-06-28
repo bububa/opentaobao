@@ -12,8 +12,22 @@ taobao.appstore.subscribe.get
 */
 type TaobaoAppstoreSubscribeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAppstoreSubscribeGetResponse `json:"taobao_appstore_subscribe_get_response,omitempty"`
+    // Response *TaobaoAppstoreSubscribeGetResponse `json:"appstore_subscribe_get_response,omitempty"` 
+    TaobaoAppstoreSubscribeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAppstoreSubscribeGetResponse struct {
+
+    // 用户订购信息
+    
+    UserSubscribe  *struct {
+        UserSubscribe  *UserSubscribe `json:"user_subscribe,omitempty"`
+    } `json:"user_subscribe,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAppstoreSubscribeGetResponse struct {
 

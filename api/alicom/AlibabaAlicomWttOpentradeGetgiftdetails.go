@@ -11,11 +11,11 @@ alibaba.alicom.wtt.opentrade.getgiftdetails
 
 话费宝充值送查询奖品信息
 */
-func AlibabaAlicomWttOpentradeGetgiftdetails(clt *core.SDKClient, req *alicom.AlibabaAlicomWttOpentradeGetgiftdetailsRequest, session string) (*alicom.AlibabaAlicomWttOpentradeGetgiftdetailsResponse, error) {
+func AlibabaAlicomWttOpentradeGetgiftdetails(clt *core.SDKClient, req *alicom.AlibabaAlicomWttOpentradeGetgiftdetailsRequest, session string) (*alicom.AlibabaAlicomWttOpentradeGetgiftdetailsAPIResponse, error) {
     var resp alicom.AlibabaAlicomWttOpentradeGetgiftdetailsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

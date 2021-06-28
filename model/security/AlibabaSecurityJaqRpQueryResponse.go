@@ -12,8 +12,22 @@ alibaba.security.jaq.rp.query
 */
 type AlibabaSecurityJaqRpQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqRpQueryResponse `json:"alibaba_security_jaq_rp_query_response,omitempty"`
+    // Response *AlibabaSecurityJaqRpQueryResponse `json:"alibaba_security_jaq_rp_query_response,omitempty"` 
+    AlibabaSecurityJaqRpQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqRpQueryResponse struct {
+
+    // 返回结果信息
+    
+    Data  *struct {
+        RpAuditResultBo  *RpAuditResultBo `json:"rp_audit_result_bo,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqRpQueryResponse struct {
 

@@ -12,8 +12,20 @@ OPENIM群设置管理员
 */
 type TaobaoOpenimTribeSetmanagerAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribeSetmanagerResponse `json:"taobao_openim_tribe_setmanager_response,omitempty"`
+    // Response *TaobaoOpenimTribeSetmanagerResponse `json:"openim_tribe_setmanager_response,omitempty"` 
+    TaobaoOpenimTribeSetmanagerResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribeSetmanagerResponse struct {
+
+    // 群服务code
+    
+    TribeCode   int64 `json:"tribe_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribeSetmanagerResponse struct {
 

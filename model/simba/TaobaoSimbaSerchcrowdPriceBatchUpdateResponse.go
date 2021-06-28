@@ -12,8 +12,22 @@ taobao.simba.serchcrowd.price.batch.update
 */
 type TaobaoSimbaSerchcrowdPriceBatchUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaSerchcrowdPriceBatchUpdateResponse `json:"taobao_simba_serchcrowd_price_batch_update_response,omitempty"`
+    // Response *TaobaoSimbaSerchcrowdPriceBatchUpdateResponse `json:"simba_serchcrowd_price_batch_update_response,omitempty"` 
+    TaobaoSimbaSerchcrowdPriceBatchUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaSerchcrowdPriceBatchUpdateResponse struct {
+
+    // result
+    
+    Adgrouptargetingtags  struct {
+        AdgroupTargetingTagDto  []AdgroupTargetingTagDto `json:"adgroup_targeting_tag_dto,omitempty"`
+    } `json:"adgrouptargetingtags,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaSerchcrowdPriceBatchUpdateResponse struct {
 

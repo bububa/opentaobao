@@ -11,11 +11,11 @@ alibaba.item.publish.props.get
 
 新商品发布，商品级联属性信息获取
 */
-func AlibabaItemPublishPropsGet(clt *core.SDKClient, req *product.AlibabaItemPublishPropsGetRequest, session string) (*product.AlibabaItemPublishPropsGetResponse, error) {
+func AlibabaItemPublishPropsGet(clt *core.SDKClient, req *product.AlibabaItemPublishPropsGetRequest, session string) (*product.AlibabaItemPublishPropsGetAPIResponse, error) {
     var resp product.AlibabaItemPublishPropsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

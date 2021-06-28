@@ -12,8 +12,22 @@ taobao.sellercats.list.get
 */
 type TaobaoSellercatsListGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSellercatsListGetResponse `json:"taobao_sellercats_list_get_response,omitempty"`
+    // Response *TaobaoSellercatsListGetResponse `json:"sellercats_list_get_response,omitempty"` 
+    TaobaoSellercatsListGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSellercatsListGetResponse struct {
+
+    // 卖家自定义类目
+    
+    SellerCats  struct {
+        SellerCat  []SellerCat `json:"seller_cat,omitempty"`
+    } `json:"seller_cats,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSellercatsListGetResponse struct {
 

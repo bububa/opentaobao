@@ -12,8 +12,22 @@ alibaba.wdk.pos.trade.pay
 */
 type AlibabaWdkPosTradePayAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkPosTradePayResponse `json:"alibaba_wdk_pos_trade_pay_response,omitempty"`
+    // Response *AlibabaWdkPosTradePayResponse `json:"alibaba_wdk_pos_trade_pay_response,omitempty"` 
+    AlibabaWdkPosTradePayResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkPosTradePayResponse struct {
+
+    // 支付结果
+    
+    Result  *struct {
+        FastBuyPosPayResult  *FastBuyPosPayResult `json:"fast_buy_pos_pay_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkPosTradePayResponse struct {
 

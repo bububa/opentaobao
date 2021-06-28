@@ -12,8 +12,22 @@ taobao.trade.confirmfee.get
 */
 type TaobaoTradeConfirmfeeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeConfirmfeeGetResponse `json:"taobao_trade_confirmfee_get_response,omitempty"`
+    // Response *TaobaoTradeConfirmfeeGetResponse `json:"trade_confirmfee_get_response,omitempty"` 
+    TaobaoTradeConfirmfeeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeConfirmfeeGetResponse struct {
+
+    // 获取到的交易确认收货费用
+    
+    TradeConfirmFee  *struct {
+        TradeConfirmFee  *TradeConfirmFee `json:"trade_confirm_fee,omitempty"`
+    } `json:"trade_confirm_fee,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeConfirmfeeGetResponse struct {
 

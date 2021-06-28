@@ -12,8 +12,22 @@ taobao.kfc.keyword.search
 */
 type TaobaoKfcKeywordSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoKfcKeywordSearchResponse `json:"taobao_kfc_keyword_search_response,omitempty"`
+    // Response *TaobaoKfcKeywordSearchResponse `json:"kfc_keyword_search_response,omitempty"` 
+    TaobaoKfcKeywordSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoKfcKeywordSearchResponse struct {
+
+    // KFC 关键词过滤匹配结果
+    
+    KfcSearchResult  *struct {
+        KfcSearchResult  *KfcSearchResult `json:"kfc_search_result,omitempty"`
+    } `json:"kfc_search_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoKfcKeywordSearchResponse struct {
 

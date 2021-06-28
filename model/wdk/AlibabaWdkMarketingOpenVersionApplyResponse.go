@@ -12,8 +12,22 @@ alibaba.wdk.marketing.open.version.apply
 */
 type AlibabaWdkMarketingOpenVersionApplyAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingOpenVersionApplyResponse `json:"alibaba_wdk_marketing_open_version_apply_response,omitempty"`
+    // Response *AlibabaWdkMarketingOpenVersionApplyResponse `json:"alibaba_wdk_marketing_open_version_apply_response,omitempty"` 
+    AlibabaWdkMarketingOpenVersionApplyResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingOpenVersionApplyResponse struct {
+
+    // 版本号申请结果
+    
+    Result  *struct {
+        WdkMarketOpenResult  *WdkMarketOpenResult `json:"wdk_market_open_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingOpenVersionApplyResponse struct {
 

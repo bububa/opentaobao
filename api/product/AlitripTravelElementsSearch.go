@@ -11,11 +11,11 @@ alitrip.travel.elements.search
 
 提供商家维护的景点、酒店、餐饮等元素搜索
 */
-func AlitripTravelElementsSearch(clt *core.SDKClient, req *product.AlitripTravelElementsSearchRequest, session string) (*product.AlitripTravelElementsSearchResponse, error) {
+func AlitripTravelElementsSearch(clt *core.SDKClient, req *product.AlitripTravelElementsSearchRequest, session string) (*product.AlitripTravelElementsSearchAPIResponse, error) {
     var resp product.AlitripTravelElementsSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

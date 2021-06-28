@@ -11,11 +11,11 @@ alibaba.wdk.marketing.itempool.item.remove.async
 
 新模型下删除商品
 */
-func AlibabaWdkMarketingItempoolItemRemoveAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolItemRemoveAsyncRequest, session string) (*wdk.AlibabaWdkMarketingItempoolItemRemoveAsyncResponse, error) {
+func AlibabaWdkMarketingItempoolItemRemoveAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolItemRemoveAsyncRequest, session string) (*wdk.AlibabaWdkMarketingItempoolItemRemoveAsyncAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItempoolItemRemoveAsyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

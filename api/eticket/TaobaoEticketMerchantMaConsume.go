@@ -11,11 +11,11 @@ taobao.eticket.merchant.ma.consume
 
 电子凭证核销接口
 */
-func TaobaoEticketMerchantMaConsume(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaConsumeRequest, session string) (*eticket.TaobaoEticketMerchantMaConsumeResponse, error) {
+func TaobaoEticketMerchantMaConsume(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaConsumeRequest, session string) (*eticket.TaobaoEticketMerchantMaConsumeAPIResponse, error) {
     var resp eticket.TaobaoEticketMerchantMaConsumeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

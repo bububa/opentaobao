@@ -12,8 +12,22 @@ taobao.vas.subscribe.get
 */
 type TaobaoVasSubscribeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVasSubscribeGetResponse `json:"taobao_vas_subscribe_get_response,omitempty"`
+    // Response *TaobaoVasSubscribeGetResponse `json:"vas_subscribe_get_response,omitempty"` 
+    TaobaoVasSubscribeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoVasSubscribeGetResponse struct {
+
+    // 用户订购信息
+    
+    ArticleUserSubscribes  struct {
+        ArticleUserSubscribe  []ArticleUserSubscribe `json:"article_user_subscribe,omitempty"`
+    } `json:"article_user_subscribes,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVasSubscribeGetResponse struct {
 

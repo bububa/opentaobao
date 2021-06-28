@@ -12,8 +12,32 @@ alibaba.scbp.effect.product.report
 */
 type AlibabaScbpEffectProductReportAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpEffectProductReportResponse `json:"alibaba_scbp_effect_product_report_response,omitempty"`
+    // Response *AlibabaScbpEffectProductReportResponse `json:"alibaba_scbp_effect_product_report_response,omitempty"` 
+    AlibabaScbpEffectProductReportResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpEffectProductReportResponse struct {
+
+    // 总个数
+    
+    TotalNum   int64 `json:"total_num,omitempty"`
+    
+
+    // 总页数
+    
+    TotalPage   int64 `json:"total_page,omitempty"`
+    
+
+    // 产品效果数据列表
+    
+    ProductEffectList  struct {
+        ProductEffectDto  []ProductEffectDto `json:"product_effect_dto,omitempty"`
+    } `json:"product_effect_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpEffectProductReportResponse struct {
 

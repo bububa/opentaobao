@@ -12,8 +12,20 @@ taobao.caipiao.lottery.sendbynick
 */
 type TaobaoCaipiaoLotterySendbynickAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCaipiaoLotterySendbynickResponse `json:"taobao_caipiao_lottery_sendbynick_response,omitempty"`
+    // Response *TaobaoCaipiaoLotterySendbynickResponse `json:"caipiao_lottery_sendbynick_response,omitempty"` 
+    TaobaoCaipiaoLotterySendbynickResponse
 }
+
+/* model for simplify = false
+type TaobaoCaipiaoLotterySendbynickResponse struct {
+
+    // 赠送是否成功，成功为true, 否则为false
+    
+    SendResult   bool `json:"send_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCaipiaoLotterySendbynickResponse struct {
 

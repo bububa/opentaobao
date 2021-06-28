@@ -12,8 +12,40 @@ alibaba.tcls.fulfill.qa.order.create
 */
 type AlibabaTclsFulfillQaOrderCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTclsFulfillQaOrderCreateResponse `json:"alibaba_tcls_fulfill_qa_order_create_response,omitempty"`
+    // Response *AlibabaTclsFulfillQaOrderCreateResponse `json:"alibaba_tcls_fulfill_qa_order_create_response,omitempty"` 
+    AlibabaTclsFulfillQaOrderCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaTclsFulfillQaOrderCreateResponse struct {
+
+    // 鹰眼id
+    
+    TraceId   string `json:"trace_id,omitempty"`
+    
+
+    // 返回素材id
+    
+    Data   string `json:"data,omitempty"`
+    
+
+    // 是否成功
+    
+    RtSuccess   bool `json:"rt_success,omitempty"`
+    
+
+    // 错误码
+    
+    RtErrorCode   int64 `json:"rt_error_code,omitempty"`
+    
+
+    // 错误信息
+    
+    RtErrorMsg   string `json:"rt_error_msg,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTclsFulfillQaOrderCreateResponse struct {
 

@@ -11,11 +11,11 @@ taobao.ailab.aicloud.top.message.addtext
 
 精灵代说
 */
-func TaobaoAilabAicloudTopMessageAddtext(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopMessageAddtextRequest, session string) (*iot.TaobaoAilabAicloudTopMessageAddtextResponse, error) {
+func TaobaoAilabAicloudTopMessageAddtext(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopMessageAddtextRequest, session string) (*iot.TaobaoAilabAicloudTopMessageAddtextAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopMessageAddtextAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

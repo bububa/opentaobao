@@ -11,11 +11,11 @@ alibaba.alsc.crm.marketing.issue.voucher
 
 提供发券功能
 */
-func AlibabaAlscCrmMarketingIssueVoucher(clt *core.SDKClient, req *alsc.AlibabaAlscCrmMarketingIssueVoucherRequest, session string) (*alsc.AlibabaAlscCrmMarketingIssueVoucherResponse, error) {
+func AlibabaAlscCrmMarketingIssueVoucher(clt *core.SDKClient, req *alsc.AlibabaAlscCrmMarketingIssueVoucherRequest, session string) (*alsc.AlibabaAlscCrmMarketingIssueVoucherAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmMarketingIssueVoucherAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ taobao.train.agent.grab.account
 
 火车票业务代购抢功能，代理商回传12306账号，用于自营抢票链路出票
 */
-func TaobaoTrainAgentGrabAccount(clt *core.SDKClient, req *train.TaobaoTrainAgentGrabAccountRequest, session string) (*train.TaobaoTrainAgentGrabAccountResponse, error) {
+func TaobaoTrainAgentGrabAccount(clt *core.SDKClient, req *train.TaobaoTrainAgentGrabAccountRequest, session string) (*train.TaobaoTrainAgentGrabAccountAPIResponse, error) {
     var resp train.TaobaoTrainAgentGrabAccountAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ alibaba.wdk.member.qrcode.identify
 */
 type AlibabaWdkMemberQrcodeIdentifyAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMemberQrcodeIdentifyResponse `json:"alibaba_wdk_member_qrcode_identify_response,omitempty"`
+    // Response *AlibabaWdkMemberQrcodeIdentifyResponse `json:"alibaba_wdk_member_qrcode_identify_response,omitempty"` 
+    AlibabaWdkMemberQrcodeIdentifyResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMemberQrcodeIdentifyResponse struct {
+
+    // result
+    
+    Result  *struct {
+        MtopResult  *MtopResult `json:"mtop_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMemberQrcodeIdentifyResponse struct {
 

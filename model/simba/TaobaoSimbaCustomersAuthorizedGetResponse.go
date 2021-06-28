@@ -12,12 +12,26 @@ taobao.simba.customers.authorized.get
 */
 type TaobaoSimbaCustomersAuthorizedGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCustomersAuthorizedGetResponse `json:"taobao_simba_customers_authorized_get_response,omitempty"`
+    // Response *TaobaoSimbaCustomersAuthorizedGetResponse `json:"simba_customers_authorized_get_response,omitempty"` 
+    TaobaoSimbaCustomersAuthorizedGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCustomersAuthorizedGetResponse struct {
+
+    // 授权当前登录账户为代理账户的昵称列表
+    
+    Nicks  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"nicks,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCustomersAuthorizedGetResponse struct {
 
     // 授权当前登录账户为代理账户的昵称列表
-    Nicks   []String `json:"nicks,omitempty"`
+    Nicks   []string `json:"nicks,omitempty"`
 
 }

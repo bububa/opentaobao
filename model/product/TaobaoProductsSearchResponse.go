@@ -19,8 +19,27 @@ taobao.products.search
 */
 type TaobaoProductsSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoProductsSearchResponse `json:"taobao_products_search_response,omitempty"`
+    // Response *TaobaoProductsSearchResponse `json:"products_search_response,omitempty"` 
+    TaobaoProductsSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoProductsSearchResponse struct {
+
+    // 返回具体信息为入参fields请求的字段信息
+    
+    Products  struct {
+        Product  []Product `json:"product,omitempty"`
+    } `json:"products,omitempty"`
+    
+
+    // 结果总数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoProductsSearchResponse struct {
 

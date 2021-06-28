@@ -11,11 +11,11 @@ alibaba.retail.marketing.itempool.activity.sku.add
 
 新增或更新商品池活动商品信息【同城零售】
 */
-func AlibabaRetailMarketingItempoolActivitySkuAdd(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItempoolActivitySkuAddRequest, session string) (*wdk.AlibabaRetailMarketingItempoolActivitySkuAddResponse, error) {
+func AlibabaRetailMarketingItempoolActivitySkuAdd(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingItempoolActivitySkuAddRequest, session string) (*wdk.AlibabaRetailMarketingItempoolActivitySkuAddAPIResponse, error) {
     var resp wdk.AlibabaRetailMarketingItempoolActivitySkuAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

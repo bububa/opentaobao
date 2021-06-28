@@ -12,12 +12,26 @@ taobao.trades.sold.query
 */
 type TaobaoTradesSoldQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradesSoldQueryResponse `json:"taobao_trades_sold_query_response,omitempty"`
+    // Response *TaobaoTradesSoldQueryResponse `json:"trades_sold_query_response,omitempty"` 
+    TaobaoTradesSoldQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoTradesSoldQueryResponse struct {
+
+    // 订单ID列表。按照订单创建时间倒序，最多返回最近的100笔订单。
+    
+    TidList  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"tid_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradesSoldQueryResponse struct {
 
     // 订单ID列表。按照订单创建时间倒序，最多返回最近的100笔订单。
-    TidList   []String `json:"tid_list,omitempty"`
+    TidList   []string `json:"tid_list,omitempty"`
 
 }

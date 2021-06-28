@@ -13,8 +13,27 @@ taobao.tbk.spread.get
 */
 type TaobaoTbkSpreadGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkSpreadGetResponse `json:"taobao_tbk_spread_get_response,omitempty"`
+    // Response *TaobaoTbkSpreadGetResponse `json:"tbk_spread_get_response,omitempty"` 
+    TaobaoTbkSpreadGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkSpreadGetResponse struct {
+
+    // 传播形式对象列表
+    
+    Results  struct {
+        TbkSpread  []TbkSpread `json:"tbk_spread,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+    // totalResults
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkSpreadGetResponse struct {
 

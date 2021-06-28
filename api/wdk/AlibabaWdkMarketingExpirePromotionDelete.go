@@ -11,11 +11,11 @@ alibaba.wdk.marketing.expire.promotion.delete
 
 短保优惠删除
 */
-func AlibabaWdkMarketingExpirePromotionDelete(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingExpirePromotionDeleteRequest, session string) (*wdk.AlibabaWdkMarketingExpirePromotionDeleteResponse, error) {
+func AlibabaWdkMarketingExpirePromotionDelete(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingExpirePromotionDeleteRequest, session string) (*wdk.AlibabaWdkMarketingExpirePromotionDeleteAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingExpirePromotionDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

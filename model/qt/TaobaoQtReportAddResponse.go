@@ -12,8 +12,20 @@ taobao.qt.report.add
 */
 type TaobaoQtReportAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQtReportAddResponse `json:"taobao_qt_report_add_response,omitempty"`
+    // Response *TaobaoQtReportAddResponse `json:"qt_report_add_response,omitempty"` 
+    TaobaoQtReportAddResponse
 }
+
+/* model for simplify = false
+type TaobaoQtReportAddResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQtReportAddResponse struct {
 

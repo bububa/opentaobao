@@ -12,8 +12,22 @@ alibaba.wdk.trade.discount.bill.get
 */
 type AlibabaWdkTradeDiscountBillGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkTradeDiscountBillGetResponse `json:"alibaba_wdk_trade_discount_bill_get_response,omitempty"`
+    // Response *AlibabaWdkTradeDiscountBillGetResponse `json:"alibaba_wdk_trade_discount_bill_get_response,omitempty"` 
+    AlibabaWdkTradeDiscountBillGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkTradeDiscountBillGetResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        OrderDiscountBillQueryResult  *OrderDiscountBillQueryResult `json:"order_discount_bill_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkTradeDiscountBillGetResponse struct {
 

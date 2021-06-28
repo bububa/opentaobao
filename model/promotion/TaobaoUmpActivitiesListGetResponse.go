@@ -12,12 +12,26 @@ taobao.ump.activities.list.get
 */
 type TaobaoUmpActivitiesListGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpActivitiesListGetResponse `json:"taobao_ump_activities_list_get_response,omitempty"`
+    // Response *TaobaoUmpActivitiesListGetResponse `json:"ump_activities_list_get_response,omitempty"` 
+    TaobaoUmpActivitiesListGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpActivitiesListGetResponse struct {
+
+    // 营销活动列表！
+    
+    Activities  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"activities,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpActivitiesListGetResponse struct {
 
     // 营销活动列表！
-    Activities   []String `json:"activities,omitempty"`
+    Activities   []string `json:"activities,omitempty"`
 
 }

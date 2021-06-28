@@ -12,8 +12,22 @@ alitrip.ticket.product.query
 */
 type AlitripTicketProductQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTicketProductQueryResponse `json:"alitrip_ticket_product_query_response,omitempty"`
+    // Response *AlitripTicketProductQueryResponse `json:"alitrip_ticket_product_query_response,omitempty"` 
+    AlitripTicketProductQueryResponse
 }
+
+/* model for simplify = false
+type AlitripTicketProductQueryResponse struct {
+
+    // 门票商品详情
+    
+    FirstResult  *struct {
+        TopTicketItemFullinfoResult  *TopTicketItemFullinfoResult `json:"top_ticket_item_fullinfo_result,omitempty"`
+    } `json:"first_result,omitempty"`
+    
+
+}
+*/
 
 type AlitripTicketProductQueryResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.servicecenter.workcard.cancel
 */
 type AlibabaServicecenterWorkcardCancelAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaServicecenterWorkcardCancelResponse `json:"alibaba_servicecenter_workcard_cancel_response,omitempty"`
+    // Response *AlibabaServicecenterWorkcardCancelResponse `json:"alibaba_servicecenter_workcard_cancel_response,omitempty"` 
+    AlibabaServicecenterWorkcardCancelResponse
 }
+
+/* model for simplify = false
+type AlibabaServicecenterWorkcardCancelResponse struct {
+
+    // 返回参数
+    
+    Result  *struct {
+        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaServicecenterWorkcardCancelResponse struct {
 

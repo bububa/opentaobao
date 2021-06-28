@@ -28,10 +28,10 @@ type AlitripGrouptoursProductUploadRequest struct {
     title   string 
 
     // 可选，商品亮点，最多支持4个亮点。注：在SDK中数组多个元素间以英文逗号分隔
-    subTitles   []String 
+    subTitles   []string 
 
     // 新发布商品时必填。商品图片路径。最多支持5张，第一张为主图，必填，其余四张可选填。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。。注：在SDK中数组多个元素间以英文逗号分隔
-    picUrls   []String 
+    picUrls   []string 
 
     // 新发布商品时必填。出发地，多个出发地用英文逗号分隔。使用说明同“目的地”
     fromLocations   string 
@@ -61,25 +61,25 @@ type AlitripGrouptoursProductUploadRequest struct {
     wapDesc   string 
 
     // 可选，（struct_itineraries与itineraries二者选填一个即可，如果两个都上传则以struct_itineraries为准）。itineraries数组的元素个数必须与旅游天数trip_day一致。行程描述，每一天行程都是xml格式（数组的每个元素对应每一天的行程）： ITINERARY根标签必须有，每个活动（ACTIVITY）支持1个title子标签，1个txt子标签和多个img子标签。注：在SDK中多个元素间以英文逗号分隔
-    itineraries   []String 
+    itineraries   []string 
 
     // 行程描述（struct_itineraries与itineraries二者选填一个即可，如果两个都上传则以struct_itineraries为准）。列表中每一个元素对应一天的行程，每天行程由多个活动组成。行程描述是可选项，如果上传了行程内容 则行程序号和行程活动信息必填。
     structItineraries   []StructItinerary 
 
     // 新发布商品时必填。费用包含。列表中每一个元素 对应一点描述，所有描述合起来必须小于1500个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
-    feeInclude   []String 
+    feeInclude   []string 
 
     // 新发布商品时必填。费用不含。列表中每一个元素 对应一点描述，所有描述合起来必须小于1500个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
-    feeExclude   []String 
+    feeExclude   []string 
 
     // 新发布商品时必填。预定须知。列表中每一个元素 对应一点描述，所有描述合起来必须小于1500个中文字符。注：在SDK中数组多个元素间以英文逗号分隔
-    orderInfo   []String 
+    orderInfo   []string 
 
     // 可选，退改规则类型。0-平台标准退改规则，1-自定义退改规则，2-不支持退改（已废弃，勿用），7-新版自定义退改规则。不传默认为0
     refundType   int64 
 
     // 特殊可选，当refund_type=1或7时，需要上传自定义退改内容。自定义退改规则，最多可含5组规则，每组规则间以英文逗号分隔。 1）当refund_type为1时格式为：a_b_num,b-1_c_num。含义：提前a天至提前b天发起退款，买家需支付num比例违约费。 2）当refund_type为7时格式为：a_b_num1_num2_0,b-1_c_num1_num2_0。含义：提前a天至提前b天发起退款，买家需支付num1比例违约费，卖家需支付num2比例违约费，最后一个数字代表是否节假日规则（0-不是，1-是）。特别注意，当refund_type为7时，自定义退改规则必须设置 n天以上违约规则 以及 行程当日违约规则，即第一组规则需要以-1_a_num1_num2_0或-1_a_num1_num2_1开头，且最后一组规则需要以0_0_num1_num2_0或0_0_num1_num2_1结尾。
-    refundRegulations   []String 
+    refundRegulations   []string 
 
     // 新发布商品时必填。去程交通。1-飞机，2-火车，3-汽，4-船
     goTrafficType   int64 
@@ -165,23 +165,23 @@ func (r AlitripGrouptoursProductUploadRequest) GetTitle() string {
     return r.title
 }
 
-func (r *AlitripGrouptoursProductUploadRequest) SetSubTitles(subTitles []String) error {
+func (r *AlitripGrouptoursProductUploadRequest) SetSubTitles(subTitles []string) error {
     r.subTitles = subTitles
     r.Set("sub_titles", subTitles)
     return nil
 }
 
-func (r AlitripGrouptoursProductUploadRequest) GetSubTitles() []String {
+func (r AlitripGrouptoursProductUploadRequest) GetSubTitles() []string {
     return r.subTitles
 }
 
-func (r *AlitripGrouptoursProductUploadRequest) SetPicUrls(picUrls []String) error {
+func (r *AlitripGrouptoursProductUploadRequest) SetPicUrls(picUrls []string) error {
     r.picUrls = picUrls
     r.Set("pic_urls", picUrls)
     return nil
 }
 
-func (r AlitripGrouptoursProductUploadRequest) GetPicUrls() []String {
+func (r AlitripGrouptoursProductUploadRequest) GetPicUrls() []string {
     return r.picUrls
 }
 
@@ -275,13 +275,13 @@ func (r AlitripGrouptoursProductUploadRequest) GetWapDesc() string {
     return r.wapDesc
 }
 
-func (r *AlitripGrouptoursProductUploadRequest) SetItineraries(itineraries []String) error {
+func (r *AlitripGrouptoursProductUploadRequest) SetItineraries(itineraries []string) error {
     r.itineraries = itineraries
     r.Set("itineraries", itineraries)
     return nil
 }
 
-func (r AlitripGrouptoursProductUploadRequest) GetItineraries() []String {
+func (r AlitripGrouptoursProductUploadRequest) GetItineraries() []string {
     return r.itineraries
 }
 
@@ -295,33 +295,33 @@ func (r AlitripGrouptoursProductUploadRequest) GetStructItineraries() []StructIt
     return r.structItineraries
 }
 
-func (r *AlitripGrouptoursProductUploadRequest) SetFeeInclude(feeInclude []String) error {
+func (r *AlitripGrouptoursProductUploadRequest) SetFeeInclude(feeInclude []string) error {
     r.feeInclude = feeInclude
     r.Set("fee_include", feeInclude)
     return nil
 }
 
-func (r AlitripGrouptoursProductUploadRequest) GetFeeInclude() []String {
+func (r AlitripGrouptoursProductUploadRequest) GetFeeInclude() []string {
     return r.feeInclude
 }
 
-func (r *AlitripGrouptoursProductUploadRequest) SetFeeExclude(feeExclude []String) error {
+func (r *AlitripGrouptoursProductUploadRequest) SetFeeExclude(feeExclude []string) error {
     r.feeExclude = feeExclude
     r.Set("fee_exclude", feeExclude)
     return nil
 }
 
-func (r AlitripGrouptoursProductUploadRequest) GetFeeExclude() []String {
+func (r AlitripGrouptoursProductUploadRequest) GetFeeExclude() []string {
     return r.feeExclude
 }
 
-func (r *AlitripGrouptoursProductUploadRequest) SetOrderInfo(orderInfo []String) error {
+func (r *AlitripGrouptoursProductUploadRequest) SetOrderInfo(orderInfo []string) error {
     r.orderInfo = orderInfo
     r.Set("order_info", orderInfo)
     return nil
 }
 
-func (r AlitripGrouptoursProductUploadRequest) GetOrderInfo() []String {
+func (r AlitripGrouptoursProductUploadRequest) GetOrderInfo() []string {
     return r.orderInfo
 }
 
@@ -335,13 +335,13 @@ func (r AlitripGrouptoursProductUploadRequest) GetRefundType() int64 {
     return r.refundType
 }
 
-func (r *AlitripGrouptoursProductUploadRequest) SetRefundRegulations(refundRegulations []String) error {
+func (r *AlitripGrouptoursProductUploadRequest) SetRefundRegulations(refundRegulations []string) error {
     r.refundRegulations = refundRegulations
     r.Set("refund_regulations", refundRegulations)
     return nil
 }
 
-func (r AlitripGrouptoursProductUploadRequest) GetRefundRegulations() []String {
+func (r AlitripGrouptoursProductUploadRequest) GetRefundRegulations() []string {
     return r.refundRegulations
 }
 

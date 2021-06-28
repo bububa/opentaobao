@@ -12,8 +12,22 @@ taobao.banamadpc.item.select.prop
 */
 type TaobaoBanamadpcItemSelectPropAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBanamadpcItemSelectPropResponse `json:"taobao_banamadpc_item_select_prop_response,omitempty"`
+    // Response *TaobaoBanamadpcItemSelectPropResponse `json:"banamadpc_item_select_prop_response,omitempty"` 
+    TaobaoBanamadpcItemSelectPropResponse
 }
+
+/* model for simplify = false
+type TaobaoBanamadpcItemSelectPropResponse struct {
+
+    // 无
+    
+    ApiResult  *struct {
+        TaobaoBanamadpcItemSelectPropApiResult  *TaobaoBanamadpcItemSelectPropApiResult `json:"taobao_banamadpc_item_select_prop_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBanamadpcItemSelectPropResponse struct {
 

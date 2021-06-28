@@ -15,8 +15,22 @@ taobao.oc.tradetags.get
 */
 type TaobaoOcTradetagsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOcTradetagsGetResponse `json:"taobao_oc_tradetags_get_response,omitempty"`
+    // Response *TaobaoOcTradetagsGetResponse `json:"oc_tradetags_get_response,omitempty"` 
+    TaobaoOcTradetagsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOcTradetagsGetResponse struct {
+
+    // 返回结果
+    
+    TradeTags  struct {
+        TradeTagRelationDo  []TradeTagRelationDo `json:"trade_tag_relation_do,omitempty"`
+    } `json:"trade_tags,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOcTradetagsGetResponse struct {
 

@@ -11,11 +11,11 @@ taobao.fuwu.purchase.order.pay
 
 通过接口获取某一订单的付款页面链接
 */
-func TaobaoFuwuPurchaseOrderPay(clt *core.SDKClient, req *servicecenter.TaobaoFuwuPurchaseOrderPayRequest, session string) (*servicecenter.TaobaoFuwuPurchaseOrderPayResponse, error) {
+func TaobaoFuwuPurchaseOrderPay(clt *core.SDKClient, req *servicecenter.TaobaoFuwuPurchaseOrderPayRequest, session string) (*servicecenter.TaobaoFuwuPurchaseOrderPayAPIResponse, error) {
     var resp servicecenter.TaobaoFuwuPurchaseOrderPayAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

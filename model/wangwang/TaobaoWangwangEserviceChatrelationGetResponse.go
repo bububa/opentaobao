@@ -15,8 +15,22 @@ A 和 B 在2016-09-01 和 2016-09-02 都说过话。以A为查询账号，则该
 */
 type TaobaoWangwangEserviceChatrelationGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWangwangEserviceChatrelationGetResponse `json:"taobao_wangwang_eservice_chatrelation_get_response,omitempty"`
+    // Response *TaobaoWangwangEserviceChatrelationGetResponse `json:"wangwang_eservice_chatrelation_get_response,omitempty"` 
+    TaobaoWangwangEserviceChatrelationGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWangwangEserviceChatrelationGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ChatRelationResult  *ChatRelationResult `json:"chat_relation_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWangwangEserviceChatrelationGetResponse struct {
 

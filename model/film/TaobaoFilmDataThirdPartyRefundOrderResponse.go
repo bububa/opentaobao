@@ -12,8 +12,22 @@ taobao.film.data.third.party.refund.order
 */
 type TaobaoFilmDataThirdPartyRefundOrderAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFilmDataThirdPartyRefundOrderResponse `json:"taobao_film_data_third_party_refund_order_response,omitempty"`
+    // Response *TaobaoFilmDataThirdPartyRefundOrderResponse `json:"film_data_third_party_refund_order_response,omitempty"` 
+    TaobaoFilmDataThirdPartyRefundOrderResponse
 }
+
+/* model for simplify = false
+type TaobaoFilmDataThirdPartyRefundOrderResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultGeneralModel  *ResultGeneralModel `json:"result_general_model,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFilmDataThirdPartyRefundOrderResponse struct {
 

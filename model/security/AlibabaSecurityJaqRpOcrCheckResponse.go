@@ -12,8 +12,22 @@ alibaba.security.jaq.rp.ocr.check
 */
 type AlibabaSecurityJaqRpOcrCheckAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqRpOcrCheckResponse `json:"alibaba_security_jaq_rp_ocr_check_response,omitempty"`
+    // Response *AlibabaSecurityJaqRpOcrCheckResponse `json:"alibaba_security_jaq_rp_ocr_check_response,omitempty"` 
+    AlibabaSecurityJaqRpOcrCheckResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqRpOcrCheckResponse struct {
+
+    // result
+    
+    Data  *struct {
+        RpidCard  *RpidCard `json:"rpid_card,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqRpOcrCheckResponse struct {
 

@@ -11,11 +11,11 @@ taobao.simba.report.city.get
 
 获取城市维度报表
 */
-func TaobaoSimbaReportCityGet(clt *core.SDKClient, req *simba.TaobaoSimbaReportCityGetRequest, session string) (*simba.TaobaoSimbaReportCityGetResponse, error) {
+func TaobaoSimbaReportCityGet(clt *core.SDKClient, req *simba.TaobaoSimbaReportCityGetRequest, session string) (*simba.TaobaoSimbaReportCityGetAPIResponse, error) {
     var resp simba.TaobaoSimbaReportCityGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

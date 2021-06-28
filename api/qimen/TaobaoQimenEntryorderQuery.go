@@ -11,11 +11,11 @@ taobao.qimen.entryorder.query
 
 ERP调用接口，查询入库单信息;
 */
-func TaobaoQimenEntryorderQuery(clt *core.SDKClient, req *qimen.TaobaoQimenEntryorderQueryRequest, session string) (*qimen.TaobaoQimenEntryorderQueryResponse, error) {
+func TaobaoQimenEntryorderQuery(clt *core.SDKClient, req *qimen.TaobaoQimenEntryorderQueryRequest, session string) (*qimen.TaobaoQimenEntryorderQueryAPIResponse, error) {
     var resp qimen.TaobaoQimenEntryorderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

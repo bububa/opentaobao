@@ -19,7 +19,7 @@ type TaobaoTmcTopicGroupDeleteRequest struct {
     groupName   string 
 
     // 消息topic名称，多个以逗号(,)分割
-    topics   []String 
+    topics   []string 
 
     // 消息分组Id，一般不用填写，如果分组已经被删除，则根据问题排查工具返回的ID删除路由关系
     groupId   int64 
@@ -55,13 +55,13 @@ func (r TaobaoTmcTopicGroupDeleteRequest) GetGroupName() string {
     return r.groupName
 }
 
-func (r *TaobaoTmcTopicGroupDeleteRequest) SetTopics(topics []String) error {
+func (r *TaobaoTmcTopicGroupDeleteRequest) SetTopics(topics []string) error {
     r.topics = topics
     r.Set("topics", topics)
     return nil
 }
 
-func (r TaobaoTmcTopicGroupDeleteRequest) GetTopics() []String {
+func (r TaobaoTmcTopicGroupDeleteRequest) GetTopics() []string {
     return r.topics
 }
 

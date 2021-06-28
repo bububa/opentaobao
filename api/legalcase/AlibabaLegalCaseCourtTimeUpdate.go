@@ -11,11 +11,11 @@ alibaba.legal.case.court.time.update
 
 修改案件的开庭时间
 */
-func AlibabaLegalCaseCourtTimeUpdate(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseCourtTimeUpdateRequest, session string) (*legalcase.AlibabaLegalCaseCourtTimeUpdateResponse, error) {
+func AlibabaLegalCaseCourtTimeUpdate(clt *core.SDKClient, req *legalcase.AlibabaLegalCaseCourtTimeUpdateRequest, session string) (*legalcase.AlibabaLegalCaseCourtTimeUpdateAPIResponse, error) {
     var resp legalcase.AlibabaLegalCaseCourtTimeUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

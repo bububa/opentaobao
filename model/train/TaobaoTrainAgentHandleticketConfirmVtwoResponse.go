@@ -12,8 +12,35 @@ taobao.train.agent.handleticket.confirm.vtwo
 */
 type TaobaoTrainAgentHandleticketConfirmVtwoAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentHandleticketConfirmVtwoResponse `json:"taobao_train_agent_handleticket_confirm_vtwo_response,omitempty"`
+    // Response *TaobaoTrainAgentHandleticketConfirmVtwoResponse `json:"train_agent_handleticket_confirm_vtwo_response,omitempty"` 
+    TaobaoTrainAgentHandleticketConfirmVtwoResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentHandleticketConfirmVtwoResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 错误码
+    
+    TrainErrorCode   string `json:"train_error_code,omitempty"`
+    
+
+    // 错误信息
+    
+    TrainErrorMsg   string `json:"train_error_msg,omitempty"`
+    
+
+    // 暂无
+    
+    ExtendParams   string `json:"extend_params,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentHandleticketConfirmVtwoResponse struct {
 

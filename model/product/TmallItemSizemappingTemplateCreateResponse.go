@@ -12,8 +12,22 @@ tmall.item.sizemapping.template.create
 */
 type TmallItemSizemappingTemplateCreateAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemSizemappingTemplateCreateResponse `json:"tmall_item_sizemapping_template_create_response,omitempty"`
+    // Response *TmallItemSizemappingTemplateCreateResponse `json:"tmall_item_sizemapping_template_create_response,omitempty"` 
+    TmallItemSizemappingTemplateCreateResponse
 }
+
+/* model for simplify = false
+type TmallItemSizemappingTemplateCreateResponse struct {
+
+    // 尺码表模板
+    
+    SizeMappingTemplate  *struct {
+        SizeMappingTemplateDo  *SizeMappingTemplateDo `json:"size_mapping_template_do,omitempty"`
+    } `json:"size_mapping_template,omitempty"`
+    
+
+}
+*/
 
 type TmallItemSizemappingTemplateCreateResponse struct {
 

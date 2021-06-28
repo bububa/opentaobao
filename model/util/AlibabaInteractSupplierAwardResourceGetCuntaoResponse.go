@@ -12,8 +12,22 @@ alibaba.interact.supplier.award.resource.get.cuntao
 */
 type AlibabaInteractSupplierAwardResourceGetCuntaoAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSupplierAwardResourceGetCuntaoResponse `json:"alibaba_interact_supplier_award_resource_get_cuntao_response,omitempty"`
+    // Response *AlibabaInteractSupplierAwardResourceGetCuntaoResponse `json:"alibaba_interact_supplier_award_resource_get_cuntao_response,omitempty"` 
+    AlibabaInteractSupplierAwardResourceGetCuntaoResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSupplierAwardResourceGetCuntaoResponse struct {
+
+    // 监控宝推送网站监控信息，返回结果
+    
+    Result  *struct {
+        AlibabaInteractSupplierAwardResourceGetCuntaoResultModel  *AlibabaInteractSupplierAwardResourceGetCuntaoResultModel `json:"alibaba_interact_supplier_award_resource_get_cuntao_result_model,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSupplierAwardResourceGetCuntaoResponse struct {
 

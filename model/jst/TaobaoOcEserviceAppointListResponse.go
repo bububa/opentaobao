@@ -12,8 +12,27 @@ taobao.oc.eservice.appoint.list
 */
 type TaobaoOcEserviceAppointListAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOcEserviceAppointListResponse `json:"taobao_oc_eservice_appoint_list_response,omitempty"`
+    // Response *TaobaoOcEserviceAppointListResponse `json:"oc_eservice_appoint_list_response,omitempty"` 
+    TaobaoOcEserviceAppointListResponse
 }
+
+/* model for simplify = false
+type TaobaoOcEserviceAppointListResponse struct {
+
+    // 返回的预约信息，多个预约信息按照预约时间升序排序
+    
+    Models  struct {
+        O2oAppointInfoDto  []O2oAppointInfoDto `json:"o2o_appoint_info_dto,omitempty"`
+    } `json:"models,omitempty"`
+    
+
+    // 返回的预约信息数目
+    
+    TotalNumber   int64 `json:"total_number,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOcEserviceAppointListResponse struct {
 

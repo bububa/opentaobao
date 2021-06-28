@@ -12,8 +12,22 @@ taobao.mobile.promotion.benefit.activity.send.share
 */
 type TaobaoMobilePromotionBenefitActivitySendShareAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMobilePromotionBenefitActivitySendShareResponse `json:"taobao_mobile_promotion_benefit_activity_send_share_response,omitempty"`
+    // Response *TaobaoMobilePromotionBenefitActivitySendShareResponse `json:"mobile_promotion_benefit_activity_send_share_response,omitempty"` 
+    TaobaoMobilePromotionBenefitActivitySendShareResponse
 }
+
+/* model for simplify = false
+type TaobaoMobilePromotionBenefitActivitySendShareResponse struct {
+
+    // 权益发放结果
+    
+    SendResult  *struct {
+        ShareBenefitSendResult  *ShareBenefitSendResult `json:"share_benefit_send_result,omitempty"`
+    } `json:"send_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMobilePromotionBenefitActivitySendShareResponse struct {
 

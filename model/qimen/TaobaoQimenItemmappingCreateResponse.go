@@ -12,8 +12,22 @@ taobao.qimen.itemmapping.create
 */
 type TaobaoQimenItemmappingCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenItemmappingCreateResponse `json:"taobao_qimen_itemmapping_create_response,omitempty"`
+    // Response *TaobaoQimenItemmappingCreateResponse `json:"qimen_itemmapping_create_response,omitempty"` 
+    TaobaoQimenItemmappingCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenItemmappingCreateResponse struct {
+
+    // 
+    
+    Response  *struct {
+        ResponseDO  *ResponseDO `json:"response_do,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenItemmappingCreateResponse struct {
 

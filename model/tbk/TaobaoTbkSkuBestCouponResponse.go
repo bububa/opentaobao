@@ -12,12 +12,26 @@ taobao.tbk.sku.best.coupon
 */
 type TaobaoTbkSkuBestCouponAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkSkuBestCouponResponse `json:"taobao_tbk_sku_best_coupon_response,omitempty"`
+    // Response *TaobaoTbkSkuBestCouponResponse `json:"tbk_sku_best_coupon_response,omitempty"` 
+    TaobaoTbkSkuBestCouponResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkSkuBestCouponResponse struct {
+
+    // 优惠券详细信息
+    
+    CouponInfo  *struct {
+        TaobaoTbkSkuBestCouponMapData  *TaobaoTbkSkuBestCouponMapData `json:"taobao_tbk_sku_best_coupon_map_data,omitempty"`
+    } `json:"coupon_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkSkuBestCouponResponse struct {
 
     // 优惠券详细信息
-    CouponInfo   *MapData `json:"coupon_info,omitempty"`
+    CouponInfo   *TaobaoTbkSkuBestCouponMapData `json:"coupon_info,omitempty"`
 
 }

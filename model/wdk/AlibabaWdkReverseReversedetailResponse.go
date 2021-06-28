@@ -12,8 +12,22 @@ alibaba.wdk.reverse.reversedetail
 */
 type AlibabaWdkReverseReversedetailAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkReverseReversedetailResponse `json:"alibaba_wdk_reverse_reversedetail_response,omitempty"`
+    // Response *AlibabaWdkReverseReversedetailResponse `json:"alibaba_wdk_reverse_reversedetail_response,omitempty"` 
+    AlibabaWdkReverseReversedetailResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkReverseReversedetailResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ReverseResult  *ReverseResult `json:"reverse_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkReverseReversedetailResponse struct {
 

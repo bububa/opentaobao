@@ -12,8 +12,22 @@ alibaba.retail.marketing.buygift.activity.sku.add
 */
 type AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaRetailMarketingBuygiftActivitySkuAddResponse `json:"alibaba_retail_marketing_buygift_activity_sku_add_response,omitempty"`
+    // Response *AlibabaRetailMarketingBuygiftActivitySkuAddResponse `json:"alibaba_retail_marketing_buygift_activity_sku_add_response,omitempty"` 
+    AlibabaRetailMarketingBuygiftActivitySkuAddResponse
 }
+
+/* model for simplify = false
+type AlibabaRetailMarketingBuygiftActivitySkuAddResponse struct {
+
+    // 操作结果
+    
+    Result  *struct {
+        OctopusOpenResult  *OctopusOpenResult `json:"octopus_open_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaRetailMarketingBuygiftActivitySkuAddResponse struct {
 

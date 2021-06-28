@@ -15,8 +15,22 @@ alibaba.ssc.supplyplatform.service.inventory.edit
 */
 type AlibabaSscSupplyplatformServiceInventoryEditAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSscSupplyplatformServiceInventoryEditResponse `json:"alibaba_ssc_supplyplatform_service_inventory_edit_response,omitempty"`
+    // Response *AlibabaSscSupplyplatformServiceInventoryEditResponse `json:"alibaba_ssc_supplyplatform_service_inventory_edit_response,omitempty"` 
+    AlibabaSscSupplyplatformServiceInventoryEditResponse
 }
+
+/* model for simplify = false
+type AlibabaSscSupplyplatformServiceInventoryEditResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaSscSupplyplatformServiceInventoryEditResult  *AlibabaSscSupplyplatformServiceInventoryEditResult `json:"alibaba_ssc_supplyplatform_service_inventory_edit_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSscSupplyplatformServiceInventoryEditResponse struct {
 

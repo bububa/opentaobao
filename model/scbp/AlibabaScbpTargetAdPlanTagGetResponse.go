@@ -12,8 +12,22 @@ alibaba.scbp.target.ad.plan.tag.get
 */
 type AlibabaScbpTargetAdPlanTagGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpTargetAdPlanTagGetResponse `json:"alibaba_scbp_target_ad_plan_tag_get_response,omitempty"`
+    // Response *AlibabaScbpTargetAdPlanTagGetResponse `json:"alibaba_scbp_target_ad_plan_tag_get_response,omitempty"` 
+    AlibabaScbpTargetAdPlanTagGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpTargetAdPlanTagGetResponse struct {
+
+    // TopP4pCampaignTargetingTagView
+    
+    Result  *struct {
+        TopP4pCampaignTargetingTagView  *TopP4pCampaignTargetingTagView `json:"top_p4p_campaign_targeting_tag_view,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpTargetAdPlanTagGetResponse struct {
 

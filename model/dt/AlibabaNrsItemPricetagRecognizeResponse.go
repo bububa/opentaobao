@@ -12,8 +12,22 @@ alibaba.nrs.item.pricetag.recognize
 */
 type AlibabaNrsItemPricetagRecognizeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaNrsItemPricetagRecognizeResponse `json:"alibaba_nrs_item_pricetag_recognize_response,omitempty"`
+    // Response *AlibabaNrsItemPricetagRecognizeResponse `json:"alibaba_nrs_item_pricetag_recognize_response,omitempty"` 
+    AlibabaNrsItemPricetagRecognizeResponse
 }
+
+/* model for simplify = false
+type AlibabaNrsItemPricetagRecognizeResponse struct {
+
+    // 出参
+    
+    NrsResult  *struct {
+        NrsResult  *NrsResult `json:"nrs_result,omitempty"`
+    } `json:"nrs_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaNrsItemPricetagRecognizeResponse struct {
 

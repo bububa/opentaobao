@@ -11,11 +11,11 @@ tmall.item.add.simpleschema.get
 
 通过商家信息获取商品发布字段和规则。
 */
-func TmallItemAddSimpleschemaGet(clt *core.SDKClient, req *product.TmallItemAddSimpleschemaGetRequest, session string) (*product.TmallItemAddSimpleschemaGetResponse, error) {
+func TmallItemAddSimpleschemaGet(clt *core.SDKClient, req *product.TmallItemAddSimpleschemaGetRequest, session string) (*product.TmallItemAddSimpleschemaGetAPIResponse, error) {
     var resp product.TmallItemAddSimpleschemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

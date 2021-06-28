@@ -25,7 +25,7 @@ type TaobaoMediaFileAddRequest struct {
     ext   int64 
 
     // 文件
-    fileData   []byte 
+    fileData   []*model.File 
 
     // 接入多媒体平台的业务code
 每个应用有一个特有的业务code
@@ -82,13 +82,13 @@ func (r TaobaoMediaFileAddRequest) GetExt() int64 {
     return r.ext
 }
 
-func (r *TaobaoMediaFileAddRequest) SetFileData(fileData []byte) error {
+func (r *TaobaoMediaFileAddRequest) SetFileData(fileData []*model.File) error {
     r.fileData = fileData
     r.Set("file_data", fileData)
     return nil
 }
 
-func (r TaobaoMediaFileAddRequest) GetFileData() []byte {
+func (r TaobaoMediaFileAddRequest) GetFileData() []*model.File {
     return r.fileData
 }
 

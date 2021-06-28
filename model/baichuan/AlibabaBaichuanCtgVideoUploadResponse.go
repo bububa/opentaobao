@@ -12,8 +12,22 @@ alibaba.baichuan.ctg.video.upload
 */
 type AlibabaBaichuanCtgVideoUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaBaichuanCtgVideoUploadResponse `json:"alibaba_baichuan_ctg_video_upload_response,omitempty"`
+    // Response *AlibabaBaichuanCtgVideoUploadResponse `json:"alibaba_baichuan_ctg_video_upload_response,omitempty"` 
+    AlibabaBaichuanCtgVideoUploadResponse
 }
+
+/* model for simplify = false
+type AlibabaBaichuanCtgVideoUploadResponse struct {
+
+    // result
+    
+    Result  *struct {
+        CtgResponse  *CtgResponse `json:"ctg_response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaBaichuanCtgVideoUploadResponse struct {
 

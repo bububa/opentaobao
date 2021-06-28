@@ -11,11 +11,11 @@ taobao.alitrip.ie.agent.refund.new.fillconfirmfee
 
 1. 回填退票费用
 */
-func TaobaoAlitripIeAgentRefundNewFillconfirmfee(clt *core.SDKClient, req *flight.TaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest, session string) (*flight.TaobaoAlitripIeAgentRefundNewFillconfirmfeeResponse, error) {
+func TaobaoAlitripIeAgentRefundNewFillconfirmfee(clt *core.SDKClient, req *flight.TaobaoAlitripIeAgentRefundNewFillconfirmfeeRequest, session string) (*flight.TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIResponse, error) {
     var resp flight.TaobaoAlitripIeAgentRefundNewFillconfirmfeeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

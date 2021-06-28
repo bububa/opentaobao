@@ -12,8 +12,22 @@ taobao.wdk.iot.deviceadmin.mqtt.device.getwithtoken
 */
 type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenResponse `json:"taobao_wdk_iot_deviceadmin_mqtt_device_getwithtoken_response,omitempty"`
+    // Response *TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenResponse `json:"wdk_iot_deviceadmin_mqtt_device_getwithtoken_response,omitempty"` 
+    TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenResponse
 }
+
+/* model for simplify = false
+type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenResponse struct {
+
+    // result
+    
+    Result  *struct {
+        HmResult  *HmResult `json:"hm_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenResponse struct {
 

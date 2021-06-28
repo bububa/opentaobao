@@ -12,8 +12,22 @@ alibaba.ais.assets.tag.generate
 */
 type AlibabaAisAssetsTagGenerateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAisAssetsTagGenerateResponse `json:"alibaba_ais_assets_tag_generate_response,omitempty"`
+    // Response *AlibabaAisAssetsTagGenerateResponse `json:"alibaba_ais_assets_tag_generate_response,omitempty"` 
+    AlibabaAisAssetsTagGenerateResponse
 }
+
+/* model for simplify = false
+type AlibabaAisAssetsTagGenerateResponse struct {
+
+    // 最外层结果
+    
+    Result  *struct {
+        BaseRep  *BaseRep `json:"base_rep,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAisAssetsTagGenerateResponse struct {
 

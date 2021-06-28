@@ -11,11 +11,11 @@ alibaba.wdk.marketing.open.version.apply
 
 数据同步版本号申请
 */
-func AlibabaWdkMarketingOpenVersionApply(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenVersionApplyRequest, session string) (*wdk.AlibabaWdkMarketingOpenVersionApplyResponse, error) {
+func AlibabaWdkMarketingOpenVersionApply(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingOpenVersionApplyRequest, session string) (*wdk.AlibabaWdkMarketingOpenVersionApplyAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingOpenVersionApplyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

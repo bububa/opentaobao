@@ -12,8 +12,22 @@ taobao.delivery.template.add
 */
 type TaobaoDeliveryTemplateAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoDeliveryTemplateAddResponse `json:"taobao_delivery_template_add_response,omitempty"`
+    // Response *TaobaoDeliveryTemplateAddResponse `json:"delivery_template_add_response,omitempty"` 
+    TaobaoDeliveryTemplateAddResponse
 }
+
+/* model for simplify = false
+type TaobaoDeliveryTemplateAddResponse struct {
+
+    // 模板对象
+    
+    DeliveryTemplate  *struct {
+        DeliveryTemplate  *DeliveryTemplate `json:"delivery_template,omitempty"`
+    } `json:"delivery_template,omitempty"`
+    
+
+}
+*/
 
 type TaobaoDeliveryTemplateAddResponse struct {
 

@@ -12,8 +12,20 @@ alibaba.interact.sensor.gmedia
 */
 type AlibabaInteractSensorGmediaAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorGmediaResponse `json:"alibaba_interact_sensor_gmedia_response,omitempty"`
+    // Response *AlibabaInteractSensorGmediaResponse `json:"alibaba_interact_sensor_gmedia_response,omitempty"` 
+    AlibabaInteractSensorGmediaResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorGmediaResponse struct {
+
+    // result=0 表示成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorGmediaResponse struct {
 

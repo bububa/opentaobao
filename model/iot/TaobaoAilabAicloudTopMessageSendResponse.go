@@ -12,8 +12,30 @@ taobao.ailab.aicloud.top.message.send
 */
 type TaobaoAilabAicloudTopMessageSendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopMessageSendResponse `json:"taobao_ailab_aicloud_top_message_send_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopMessageSendResponse `json:"ailab_aicloud_top_message_send_response,omitempty"` 
+    TaobaoAilabAicloudTopMessageSendResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopMessageSendResponse struct {
+
+    // msgInfo
+    
+    MsgInfo   string `json:"msg_info,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // model
+    
+    Model   bool `json:"model,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopMessageSendResponse struct {
 

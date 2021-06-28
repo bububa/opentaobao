@@ -12,8 +12,22 @@ alibaba.security.jaq.app.official.apply
 */
 type AlibabaSecurityJaqAppOfficialApplyAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqAppOfficialApplyResponse `json:"alibaba_security_jaq_app_official_apply_response,omitempty"`
+    // Response *AlibabaSecurityJaqAppOfficialApplyResponse `json:"alibaba_security_jaq_app_official_apply_response,omitempty"` 
+    AlibabaSecurityJaqAppOfficialApplyResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqAppOfficialApplyResponse struct {
+
+    // 申请结果
+    
+    Result  *struct {
+        OfficialAppApplyResponse  *OfficialAppApplyResponse `json:"official_app_apply_response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqAppOfficialApplyResponse struct {
 

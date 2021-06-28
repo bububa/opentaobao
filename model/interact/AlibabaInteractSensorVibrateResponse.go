@@ -12,8 +12,20 @@ alibaba.interact.sensor.vibrate
 */
 type AlibabaInteractSensorVibrateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorVibrateResponse `json:"alibaba_interact_sensor_vibrate_response,omitempty"`
+    // Response *AlibabaInteractSensorVibrateResponse `json:"alibaba_interact_sensor_vibrate_response,omitempty"` 
+    AlibabaInteractSensorVibrateResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorVibrateResponse struct {
+
+    // result=0表示成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorVibrateResponse struct {
 

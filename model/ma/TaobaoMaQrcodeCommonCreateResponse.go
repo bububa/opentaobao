@@ -12,8 +12,27 @@ taobao.ma.qrcode.common.create
 */
 type TaobaoMaQrcodeCommonCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMaQrcodeCommonCreateResponse `json:"taobao_ma_qrcode_common_create_response,omitempty"`
+    // Response *TaobaoMaQrcodeCommonCreateResponse `json:"ma_qrcode_common_create_response,omitempty"` 
+    TaobaoMaQrcodeCommonCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoMaQrcodeCommonCreateResponse struct {
+
+    // 二维码对像
+    
+    Modules  struct {
+        QrcodeDO  []QrcodeDO `json:"qrcode_do,omitempty"`
+    } `json:"modules,omitempty"`
+    
+
+    // 执行是否成功
+    
+    Suc   bool `json:"suc,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMaQrcodeCommonCreateResponse struct {
 

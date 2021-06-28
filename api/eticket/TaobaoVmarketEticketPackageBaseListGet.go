@@ -11,11 +11,11 @@ taobao.vmarket.eticket.package.base.list.get
 
 根据卖家id，获取关联的所有包
 */
-func TaobaoVmarketEticketPackageBaseListGet(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketPackageBaseListGetRequest, session string) (*eticket.TaobaoVmarketEticketPackageBaseListGetResponse, error) {
+func TaobaoVmarketEticketPackageBaseListGet(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketPackageBaseListGetRequest, session string) (*eticket.TaobaoVmarketEticketPackageBaseListGetAPIResponse, error) {
     var resp eticket.TaobaoVmarketEticketPackageBaseListGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,20 @@ alibaba.gpu.add.schema.get
 */
 type AlibabaGpuAddSchemaGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaGpuAddSchemaGetResponse `json:"alibaba_gpu_add_schema_get_response,omitempty"`
+    // Response *AlibabaGpuAddSchemaGetResponse `json:"alibaba_gpu_add_schema_get_response,omitempty"` 
+    AlibabaGpuAddSchemaGetResponse
 }
+
+/* model for simplify = false
+type AlibabaGpuAddSchemaGetResponse struct {
+
+    // 返回产品发布规则
+    
+    AddProductRule   string `json:"add_product_rule,omitempty"`
+    
+
+}
+*/
 
 type AlibabaGpuAddSchemaGetResponse struct {
 

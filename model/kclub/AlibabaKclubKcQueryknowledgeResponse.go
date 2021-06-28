@@ -12,8 +12,22 @@ alibaba.kclub.kc.queryknowledge
 */
 type AlibabaKclubKcQueryknowledgeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaKclubKcQueryknowledgeResponse `json:"alibaba_kclub_kc_queryknowledge_response,omitempty"`
+    // Response *AlibabaKclubKcQueryknowledgeResponse `json:"alibaba_kclub_kc_queryknowledge_response,omitempty"` 
+    AlibabaKclubKcQueryknowledgeResponse
 }
+
+/* model for simplify = false
+type AlibabaKclubKcQueryknowledgeResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        AlibabaKclubKcQueryknowledgeResult  *AlibabaKclubKcQueryknowledgeResult `json:"alibaba_kclub_kc_queryknowledge_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaKclubKcQueryknowledgeResponse struct {
 

@@ -11,11 +11,11 @@ taobao.simba.bidword.pricetools
 
 关键词出价指导工具（新）
 */
-func TaobaoSimbaBidwordPricetools(clt *core.SDKClient, req *simba.TaobaoSimbaBidwordPricetoolsRequest, session string) (*simba.TaobaoSimbaBidwordPricetoolsResponse, error) {
+func TaobaoSimbaBidwordPricetools(clt *core.SDKClient, req *simba.TaobaoSimbaBidwordPricetoolsRequest, session string) (*simba.TaobaoSimbaBidwordPricetoolsAPIResponse, error) {
     var resp simba.TaobaoSimbaBidwordPricetoolsAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

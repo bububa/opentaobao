@@ -11,11 +11,11 @@ alibaba.ssc.servicecenter.servicestore.query
 
 根据天猫id查询门店信息
 */
-func AlibabaSscServicecenterServicestoreQuery(clt *core.SDKClient, req *tmallservice.AlibabaSscServicecenterServicestoreQueryRequest, session string) (*tmallservice.AlibabaSscServicecenterServicestoreQueryResponse, error) {
+func AlibabaSscServicecenterServicestoreQuery(clt *core.SDKClient, req *tmallservice.AlibabaSscServicecenterServicestoreQueryRequest, session string) (*tmallservice.AlibabaSscServicecenterServicestoreQueryAPIResponse, error) {
     var resp tmallservice.AlibabaSscServicecenterServicestoreQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

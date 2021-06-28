@@ -12,8 +12,22 @@ cainiao.cboss.workplatform.workorder.process.notify
 */
 type CainiaoCbossWorkplatformWorkorderProcessNotifyAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCbossWorkplatformWorkorderProcessNotifyResponse `json:"cainiao_cboss_workplatform_workorder_process_notify_response,omitempty"`
+    // Response *CainiaoCbossWorkplatformWorkorderProcessNotifyResponse `json:"cainiao_cboss_workplatform_workorder_process_notify_response,omitempty"` 
+    CainiaoCbossWorkplatformWorkorderProcessNotifyResponse
 }
+
+/* model for simplify = false
+type CainiaoCbossWorkplatformWorkorderProcessNotifyResponse struct {
+
+    // 结果
+    
+    Response  *struct {
+        CainiaoCbossWorkplatformWorkorderProcessNotifyStruct  *CainiaoCbossWorkplatformWorkorderProcessNotifyStruct `json:"cainiao_cboss_workplatform_workorder_process_notify_struct,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCbossWorkplatformWorkorderProcessNotifyResponse struct {
 

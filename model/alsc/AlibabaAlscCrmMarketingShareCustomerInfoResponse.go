@@ -12,8 +12,22 @@ alibaba.alsc.crm.marketing.share.customer.info
 */
 type AlibabaAlscCrmMarketingShareCustomerInfoAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmMarketingShareCustomerInfoResponse `json:"alibaba_alsc_crm_marketing_share_customer_info_response,omitempty"`
+    // Response *AlibabaAlscCrmMarketingShareCustomerInfoResponse `json:"alibaba_alsc_crm_marketing_share_customer_info_response,omitempty"` 
+    AlibabaAlscCrmMarketingShareCustomerInfoResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmMarketingShareCustomerInfoResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmMarketingShareCustomerInfoResponse struct {
 

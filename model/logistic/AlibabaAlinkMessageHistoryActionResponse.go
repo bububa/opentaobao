@@ -12,8 +12,22 @@ alibaba.alink.message.history.action
 */
 type AlibabaAlinkMessageHistoryActionAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlinkMessageHistoryActionResponse `json:"alibaba_alink_message_history_action_response,omitempty"`
+    // Response *AlibabaAlinkMessageHistoryActionResponse `json:"alibaba_alink_message_history_action_response,omitempty"` 
+    AlibabaAlinkMessageHistoryActionResponse
 }
+
+/* model for simplify = false
+type AlibabaAlinkMessageHistoryActionResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        TopServiceResult  *TopServiceResult `json:"top_service_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlinkMessageHistoryActionResponse struct {
 

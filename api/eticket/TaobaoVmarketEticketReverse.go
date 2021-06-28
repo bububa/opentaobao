@@ -11,11 +11,11 @@ taobao.vmarket.eticket.reverse
 
 电子凭证平台冲正接口
 */
-func TaobaoVmarketEticketReverse(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketReverseRequest, session string) (*eticket.TaobaoVmarketEticketReverseResponse, error) {
+func TaobaoVmarketEticketReverse(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketReverseRequest, session string) (*eticket.TaobaoVmarketEticketReverseAPIResponse, error) {
     var resp eticket.TaobaoVmarketEticketReverseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

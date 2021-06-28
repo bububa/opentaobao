@@ -12,8 +12,22 @@ taobao.auction.gov.data.topn.get
 */
 type TaobaoAuctionGovDataTopnGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAuctionGovDataTopnGetResponse `json:"taobao_auction_gov_data_topn_get_response,omitempty"`
+    // Response *TaobaoAuctionGovDataTopnGetResponse `json:"auction_gov_data_topn_get_response,omitempty"` 
+    TaobaoAuctionGovDataTopnGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAuctionGovDataTopnGetResponse struct {
+
+    // 法院维度标的统计排行
+    
+    Ranks  struct {
+        CourtsBidStatTopnDto  []CourtsBidStatTopnDto `json:"courts_bid_stat_topn_dto,omitempty"`
+    } `json:"ranks,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAuctionGovDataTopnGetResponse struct {
 

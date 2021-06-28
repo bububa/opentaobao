@@ -12,8 +12,27 @@ taobao.miniapp.eleuserinfo.get
 */
 type TaobaoMiniappEleuserinfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMiniappEleuserinfoGetResponse `json:"taobao_miniapp_eleuserinfo_get_response,omitempty"`
+    // Response *TaobaoMiniappEleuserinfoGetResponse `json:"miniapp_eleuserinfo_get_response,omitempty"` 
+    TaobaoMiniappEleuserinfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoMiniappEleuserinfoGetResponse struct {
+
+    // traceId
+    
+    TraceId   string `json:"trace_id,omitempty"`
+    
+
+    // 1
+    
+    Result  *struct {
+        EleUicInfo  *EleUicInfo `json:"ele_uic_info,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMiniappEleuserinfoGetResponse struct {
 

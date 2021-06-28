@@ -11,11 +11,11 @@ taobao.ailab.aicloud.top.device.control.playurl
 
 点播url
 */
-func TaobaoAilabAicloudTopDeviceControlPlayurl(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlPlayurlRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlPlayurlResponse, error) {
+func TaobaoAilabAicloudTopDeviceControlPlayurl(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlPlayurlRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopDeviceControlPlayurlAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ tmall.promotag.taguser.save
 
 给用户载体打标
 */
-func TmallPromotagTaguserSave(clt *core.SDKClient, req *promotion.TmallPromotagTaguserSaveRequest, session string) (*promotion.TmallPromotagTaguserSaveResponse, error) {
+func TmallPromotagTaguserSave(clt *core.SDKClient, req *promotion.TmallPromotagTaguserSaveRequest, session string) (*promotion.TmallPromotagTaguserSaveAPIResponse, error) {
     var resp promotion.TmallPromotagTaguserSaveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

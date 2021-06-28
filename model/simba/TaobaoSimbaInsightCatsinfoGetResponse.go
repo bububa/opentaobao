@@ -12,8 +12,22 @@ taobao.simba.insight.catsinfo.get
 */
 type TaobaoSimbaInsightCatsinfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaInsightCatsinfoGetResponse `json:"taobao_simba_insight_catsinfo_get_response,omitempty"`
+    // Response *TaobaoSimbaInsightCatsinfoGetResponse `json:"simba_insight_catsinfo_get_response,omitempty"` 
+    TaobaoSimbaInsightCatsinfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaInsightCatsinfoGetResponse struct {
+
+    // 类目详细信息
+    
+    CategoryInfoList  struct {
+        InsightCategoryInfoDTO  []InsightCategoryInfoDTO `json:"insight_category_info_dto,omitempty"`
+    } `json:"category_info_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaInsightCatsinfoGetResponse struct {
 

@@ -12,8 +12,20 @@ taobao.simba.rpt.custbase.get
 */
 type TaobaoSimbaRptCustbaseGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaRptCustbaseGetResponse `json:"taobao_simba_rpt_custbase_get_response,omitempty"`
+    // Response *TaobaoSimbaRptCustbaseGetResponse `json:"simba_rpt_custbase_get_response,omitempty"` 
+    TaobaoSimbaRptCustbaseGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaRptCustbaseGetResponse struct {
+
+    // 用户帐户结果
+    
+    RptCustBaseList   string `json:"rpt_cust_base_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaRptCustbaseGetResponse struct {
 

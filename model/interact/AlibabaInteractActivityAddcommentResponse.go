@@ -12,8 +12,25 @@ alibaba.interact.activity.addcomment
 */
 type AlibabaInteractActivityAddcommentAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractActivityAddcommentResponse `json:"alibaba_interact_activity_addcomment_response,omitempty"`
+    // Response *AlibabaInteractActivityAddcommentResponse `json:"alibaba_interact_activity_addcomment_response,omitempty"` 
+    AlibabaInteractActivityAddcommentResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractActivityAddcommentResponse struct {
+
+    // 返回成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 评论的楼层数
+    
+    Floor   int64 `json:"floor,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractActivityAddcommentResponse struct {
 

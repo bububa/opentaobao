@@ -11,11 +11,11 @@ alibaba.alsc.crm.open.order.backflow
 
 回流isv订单接口
 */
-func AlibabaAlscCrmOpenOrderBackflow(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenOrderBackflowRequest, session string) (*alsc.AlibabaAlscCrmOpenOrderBackflowResponse, error) {
+func AlibabaAlscCrmOpenOrderBackflow(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenOrderBackflowRequest, session string) (*alsc.AlibabaAlscCrmOpenOrderBackflowAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmOpenOrderBackflowAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

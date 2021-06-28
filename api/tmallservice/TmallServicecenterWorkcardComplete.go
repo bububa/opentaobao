@@ -11,11 +11,11 @@ tmall.servicecenter.workcard.complete
 
 工单完结
 */
-func TmallServicecenterWorkcardComplete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardCompleteRequest, session string) (*tmallservice.TmallServicecenterWorkcardCompleteResponse, error) {
+func TmallServicecenterWorkcardComplete(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardCompleteRequest, session string) (*tmallservice.TmallServicecenterWorkcardCompleteAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardCompleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

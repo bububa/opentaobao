@@ -11,11 +11,11 @@ taobao.wdk.equipment.conveyor.containerinfo.get
 
 获取批次或波次中容器的信息
 */
-func TaobaoWdkEquipmentConveyorContainerinfoGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorContainerinfoGetRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorContainerinfoGetResponse, error) {
+func TaobaoWdkEquipmentConveyorContainerinfoGet(clt *core.SDKClient, req *wdk.TaobaoWdkEquipmentConveyorContainerinfoGetRequest, session string) (*wdk.TaobaoWdkEquipmentConveyorContainerinfoGetAPIResponse, error) {
     var resp wdk.TaobaoWdkEquipmentConveyorContainerinfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

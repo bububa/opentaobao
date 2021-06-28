@@ -12,8 +12,22 @@ taobao.life.reservation.trade.consume.notice
 */
 type TaobaoLifeReservationTradeConsumeNoticeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLifeReservationTradeConsumeNoticeResponse `json:"taobao_life_reservation_trade_consume_notice_response,omitempty"`
+    // Response *TaobaoLifeReservationTradeConsumeNoticeResponse `json:"life_reservation_trade_consume_notice_response,omitempty"` 
+    TaobaoLifeReservationTradeConsumeNoticeResponse
 }
+
+/* model for simplify = false
+type TaobaoLifeReservationTradeConsumeNoticeResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        LifeReservationTradeConsumeNoticeResult  *LifeReservationTradeConsumeNoticeResult `json:"life_reservation_trade_consume_notice_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLifeReservationTradeConsumeNoticeResponse struct {
 

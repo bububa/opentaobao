@@ -12,8 +12,30 @@ tmall.servicecenter.workcard.status.update
 */
 type TmallServicecenterWorkcardStatusUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardStatusUpdateResponse `json:"tmall_servicecenter_workcard_status_update_response,omitempty"`
+    // Response *TmallServicecenterWorkcardStatusUpdateResponse `json:"tmall_servicecenter_workcard_status_update_response,omitempty"` 
+    TmallServicecenterWorkcardStatusUpdateResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardStatusUpdateResponse struct {
+
+    // 返回结果
+    
+    Rs   bool `json:"rs,omitempty"`
+    
+
+    // 错误码
+    
+    ErrorCodeValue   string `json:"error_code_value,omitempty"`
+    
+
+    // 错误信息
+    
+    ErrorMsgInfo   string `json:"error_msg_info,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardStatusUpdateResponse struct {
 

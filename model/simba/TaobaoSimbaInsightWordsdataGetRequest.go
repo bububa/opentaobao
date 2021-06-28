@@ -16,7 +16,7 @@ type TaobaoSimbaInsightWordsdataGetRequest struct {
     model.Params
 
     // 关键词列表，最多可传100个。
-    bidwordList   []String 
+    bidwordList   []string 
 
     // 开始时间
     startDate   string 
@@ -45,13 +45,13 @@ func (r TaobaoSimbaInsightWordsdataGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoSimbaInsightWordsdataGetRequest) SetBidwordList(bidwordList []String) error {
+func (r *TaobaoSimbaInsightWordsdataGetRequest) SetBidwordList(bidwordList []string) error {
     r.bidwordList = bidwordList
     r.Set("bidword_list", bidwordList)
     return nil
 }
 
-func (r TaobaoSimbaInsightWordsdataGetRequest) GetBidwordList() []String {
+func (r TaobaoSimbaInsightWordsdataGetRequest) GetBidwordList() []string {
     return r.bidwordList
 }
 

@@ -12,8 +12,22 @@ alitrip.agent.flight.sell.modify.approve
 */
 type AlitripAgentFlightSellModifyApproveAPIResponse struct {
     model.CommonResponse
-    Response *AlitripAgentFlightSellModifyApproveResponse `json:"alitrip_agent_flight_sell_modify_approve_response,omitempty"`
+    // Response *AlitripAgentFlightSellModifyApproveResponse `json:"alitrip_agent_flight_sell_modify_approve_response,omitempty"` 
+    AlitripAgentFlightSellModifyApproveResponse
 }
+
+/* model for simplify = false
+type AlitripAgentFlightSellModifyApproveResponse struct {
+
+    // 异步获取历史数据接口返回结果
+    
+    Result  *struct {
+        AlitripAgentFlightSellModifyApproveResultDto  *AlitripAgentFlightSellModifyApproveResultDto `json:"alitrip_agent_flight_sell_modify_approve_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlitripAgentFlightSellModifyApproveResponse struct {
 

@@ -15,8 +15,22 @@ alitrip.ticket.skus.batch.upload
 */
 type AlitripTicketSkusBatchUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTicketSkusBatchUploadResponse `json:"alitrip_ticket_skus_batch_upload_response,omitempty"`
+    // Response *AlitripTicketSkusBatchUploadResponse `json:"alitrip_ticket_skus_batch_upload_response,omitempty"` 
+    AlitripTicketSkusBatchUploadResponse
 }
+
+/* model for simplify = false
+type AlitripTicketSkusBatchUploadResponse struct {
+
+    // 价格库存同步结果
+    
+    UpdateResult  *struct {
+        TicketItemResult  *TicketItemResult `json:"ticket_item_result,omitempty"`
+    } `json:"update_result,omitempty"`
+    
+
+}
+*/
 
 type AlitripTicketSkusBatchUploadResponse struct {
 

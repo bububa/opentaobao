@@ -12,8 +12,27 @@ taobao.tanx.qualification.advertiser.add
 */
 type TaobaoTanxQualificationAdvertiserAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTanxQualificationAdvertiserAddResponse `json:"taobao_tanx_qualification_advertiser_add_response,omitempty"`
+    // Response *TaobaoTanxQualificationAdvertiserAddResponse `json:"tanx_qualification_advertiser_add_response,omitempty"` 
+    TaobaoTanxQualificationAdvertiserAddResponse
 }
+
+/* model for simplify = false
+type TaobaoTanxQualificationAdvertiserAddResponse struct {
+
+    // 调用是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 返回的广告主dto对象
+    
+    AdvertiserList  struct {
+        AdvertiserDto  []AdvertiserDto `json:"advertiser_dto,omitempty"`
+    } `json:"advertiser_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTanxQualificationAdvertiserAddResponse struct {
 

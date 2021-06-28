@@ -12,8 +12,22 @@ OPENIM群成员获取
 */
 type TaobaoOpenimTribeGetmembersAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribeGetmembersResponse `json:"taobao_openim_tribe_getmembers_response,omitempty"`
+    // Response *TaobaoOpenimTribeGetmembersResponse `json:"openim_tribe_getmembers_response,omitempty"` 
+    TaobaoOpenimTribeGetmembersResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribeGetmembersResponse struct {
+
+    // OPENIM群成员列表
+    
+    TribeUserList  struct {
+        TribeUser  []TribeUser `json:"tribe_user,omitempty"`
+    } `json:"tribe_user_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribeGetmembersResponse struct {
 

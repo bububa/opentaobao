@@ -12,8 +12,30 @@ taobao.bus.tvmbookorder.set
 */
 type TaobaoBusTvmbookorderSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusTvmbookorderSetResponse `json:"taobao_bus_tvmbookorder_set_response,omitempty"`
+    // Response *TaobaoBusTvmbookorderSetResponse `json:"bus_tvmbookorder_set_response,omitempty"` 
+    TaobaoBusTvmbookorderSetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusTvmbookorderSetResponse struct {
+
+    // errorCode
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // errorMsg
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusTvmbookorderSetResponse struct {
 

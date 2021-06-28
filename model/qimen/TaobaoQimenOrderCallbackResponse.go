@@ -12,8 +12,22 @@ taobao.qimen.order.callback
 */
 type TaobaoQimenOrderCallbackAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenOrderCallbackResponse `json:"taobao_qimen_order_callback_response,omitempty"`
+    // Response *TaobaoQimenOrderCallbackResponse `json:"qimen_order_callback_response,omitempty"` 
+    TaobaoQimenOrderCallbackResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenOrderCallbackResponse struct {
+
+    // 
+    
+    Response  *struct {
+        OrderCallbackResponseDO  *OrderCallbackResponseDO `json:"order_callback_response_do,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenOrderCallbackResponse struct {
 

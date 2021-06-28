@@ -12,8 +12,22 @@ taobao.wlb.tradeorder.get
 */
 type TaobaoWlbTradeorderGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbTradeorderGetResponse `json:"taobao_wlb_tradeorder_get_response,omitempty"`
+    // Response *TaobaoWlbTradeorderGetResponse `json:"wlb_tradeorder_get_response,omitempty"` 
+    TaobaoWlbTradeorderGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbTradeorderGetResponse struct {
+
+    // 物流宝订单对象
+    
+    WlbOrderList  struct {
+        WlbOrder  []WlbOrder `json:"wlb_order,omitempty"`
+    } `json:"wlb_order_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbTradeorderGetResponse struct {
 

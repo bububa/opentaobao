@@ -11,11 +11,11 @@ alibaba.scbp.reckeyword.search
 
 推荐词-词推词
 */
-func AlibabaScbpReckeywordSearch(clt *core.SDKClient, req *scbp.AlibabaScbpReckeywordSearchRequest, session string) (*scbp.AlibabaScbpReckeywordSearchResponse, error) {
+func AlibabaScbpReckeywordSearch(clt *core.SDKClient, req *scbp.AlibabaScbpReckeywordSearchRequest, session string) (*scbp.AlibabaScbpReckeywordSearchAPIResponse, error) {
     var resp scbp.AlibabaScbpReckeywordSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ tmall.item.sizemapping.template.update
 */
 type TmallItemSizemappingTemplateUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemSizemappingTemplateUpdateResponse `json:"tmall_item_sizemapping_template_update_response,omitempty"`
+    // Response *TmallItemSizemappingTemplateUpdateResponse `json:"tmall_item_sizemapping_template_update_response,omitempty"` 
+    TmallItemSizemappingTemplateUpdateResponse
 }
+
+/* model for simplify = false
+type TmallItemSizemappingTemplateUpdateResponse struct {
+
+    // 尺码表模板
+    
+    SizeMappingTemplate  *struct {
+        SizeMappingTemplateDo  *SizeMappingTemplateDo `json:"size_mapping_template_do,omitempty"`
+    } `json:"size_mapping_template,omitempty"`
+    
+
+}
+*/
 
 type TmallItemSizemappingTemplateUpdateResponse struct {
 

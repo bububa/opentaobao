@@ -12,8 +12,27 @@ taobao.wireless.content.check
 */
 type TaobaoWirelessContentCheckAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWirelessContentCheckResponse `json:"taobao_wireless_content_check_response,omitempty"`
+    // Response *TaobaoWirelessContentCheckResponse `json:"wireless_content_check_response,omitempty"` 
+    TaobaoWirelessContentCheckResponse
 }
+
+/* model for simplify = false
+type TaobaoWirelessContentCheckResponse struct {
+
+    // 检查结果
+    
+    CheckResults  struct {
+        Checkpoints  []Checkpoints `json:"checkpoints,omitempty"`
+    } `json:"check_results,omitempty"`
+    
+
+    // 综合结果建议。建议用户执行的操作，取值范围： pass：文本正常； review：需要人工审核； block：文本违规，可以直接删除或者做限制处理
+    
+    Suggestion   string `json:"suggestion,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWirelessContentCheckResponse struct {
 

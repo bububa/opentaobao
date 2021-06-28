@@ -12,8 +12,22 @@ taobao.simba.campaign.timetemplate.find
 */
 type TaobaoSimbaCampaignTimetemplateFindAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCampaignTimetemplateFindResponse `json:"taobao_simba_campaign_timetemplate_find_response,omitempty"`
+    // Response *TaobaoSimbaCampaignTimetemplateFindResponse `json:"simba_campaign_timetemplate_find_response,omitempty"` 
+    TaobaoSimbaCampaignTimetemplateFindResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCampaignTimetemplateFindResponse struct {
+
+    // 返回的推广组分页对象
+    
+    Templates  struct {
+        ADGroupPage  []ADGroupPage `json:"ad_group_page,omitempty"`
+    } `json:"templates,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCampaignTimetemplateFindResponse struct {
 

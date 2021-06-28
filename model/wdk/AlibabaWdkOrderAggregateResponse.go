@@ -12,8 +12,22 @@ alibaba.wdk.order.aggregate
 */
 type AlibabaWdkOrderAggregateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkOrderAggregateResponse `json:"alibaba_wdk_order_aggregate_response,omitempty"`
+    // Response *AlibabaWdkOrderAggregateResponse `json:"alibaba_wdk_order_aggregate_response,omitempty"` 
+    AlibabaWdkOrderAggregateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkOrderAggregateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        OrderAggregateQueryResult  *OrderAggregateQueryResult `json:"order_aggregate_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkOrderAggregateResponse struct {
 

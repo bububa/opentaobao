@@ -12,8 +12,22 @@ taobao.interactive.list.getbyuser
 */
 type TaobaoInteractiveListGetbyuserAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoInteractiveListGetbyuserResponse `json:"taobao_interactive_list_getbyuser_response,omitempty"`
+    // Response *TaobaoInteractiveListGetbyuserResponse `json:"interactive_list_getbyuser_response,omitempty"` 
+    TaobaoInteractiveListGetbyuserResponse
 }
+
+/* model for simplify = false
+type TaobaoInteractiveListGetbyuserResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoInteractiveListGetbyuserResult  *TaobaoInteractiveListGetbyuserResult `json:"taobao_interactive_list_getbyuser_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoInteractiveListGetbyuserResponse struct {
 

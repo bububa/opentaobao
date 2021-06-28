@@ -16,8 +16,22 @@ alibaba.modifyaddress.isv.bindseller.check
 */
 type AlibabaModifyaddressIsvBindsellerCheckAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaModifyaddressIsvBindsellerCheckResponse `json:"alibaba_modifyaddress_isv_bindseller_check_response,omitempty"`
+    // Response *AlibabaModifyaddressIsvBindsellerCheckResponse `json:"alibaba_modifyaddress_isv_bindseller_check_response,omitempty"` 
+    AlibabaModifyaddressIsvBindsellerCheckResponse
 }
+
+/* model for simplify = false
+type AlibabaModifyaddressIsvBindsellerCheckResponse struct {
+
+    // model
+    
+    Model  *struct {
+        CheckSellerChooseErpResponse  *CheckSellerChooseErpResponse `json:"check_seller_choose_erp_response,omitempty"`
+    } `json:"model,omitempty"`
+    
+
+}
+*/
 
 type AlibabaModifyaddressIsvBindsellerCheckResponse struct {
 

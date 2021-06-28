@@ -12,8 +12,20 @@ taobao.qianniu.task.update
 */
 type TaobaoQianniuTaskUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQianniuTaskUpdateResponse `json:"taobao_qianniu_task_update_response,omitempty"`
+    // Response *TaobaoQianniuTaskUpdateResponse `json:"qianniu_task_update_response,omitempty"` 
+    TaobaoQianniuTaskUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoQianniuTaskUpdateResponse struct {
+
+    // 是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQianniuTaskUpdateResponse struct {
 

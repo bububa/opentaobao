@@ -12,8 +12,22 @@ taobao.logistics.address.search
 */
 type TaobaoLogisticsAddressSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsAddressSearchResponse `json:"taobao_logistics_address_search_response,omitempty"`
+    // Response *TaobaoLogisticsAddressSearchResponse `json:"logistics_address_search_response,omitempty"` 
+    TaobaoLogisticsAddressSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsAddressSearchResponse struct {
+
+    // 一组地址库数据，
+    
+    Addresses  struct {
+        AddressResult  []AddressResult `json:"address_result,omitempty"`
+    } `json:"addresses,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsAddressSearchResponse struct {
 

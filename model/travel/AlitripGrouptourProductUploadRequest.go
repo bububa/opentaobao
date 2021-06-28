@@ -61,7 +61,7 @@ type AlitripGrouptourProductUploadRequest struct {
     toLocations   string 
 
     // 新发布商品时必填。商品图片路径。最多支持5张，第一张为主图，必填，其余四张可选填。图片链接支持外链图片（即商家系统中图片链接，必须外网可访问，且格式为jpg或jpeg，大小在500k以内），或者用户淘宝空间内的图片链接。对于外链图片，将自动下载并上传用户淘宝图片空间，上传失败的外链图片将自动忽略不计。。注：在SDK中数组多个元素间以英文逗号分隔
-    picUrls   []String 
+    picUrls   []string 
 
     // 可选，该商品提前预定时间限制。格式：1_18_00，含义：该商品必须提前1天预定，且在18:00之前完成预定
     reserveLimit   string 
@@ -73,7 +73,7 @@ type AlitripGrouptourProductUploadRequest struct {
     refundType   int64 
 
     // 可选，商品亮点，最多支持4个亮点。注：在SDK中数组多个元素间以英文逗号分隔
-    subTitles   []String 
+    subTitles   []string 
 
     // 新发布商品时必填。出发地，多个出发地用英文逗号分隔。使用说明同“目的地”
     fromLocations   string 
@@ -100,7 +100,7 @@ type AlitripGrouptourProductUploadRequest struct {
     groupTourType   int64 
 
     // 关联商品与店铺类目 结构:"cid1,cid2,...,"。如何获取卖家店铺类目具体参见：http://open.taobao.com/doc2/apiDetail.htm?apiId=65
-    sellerCids   []String 
+    sellerCids   []string 
 
     // 商品秒杀，商品秒杀三个值：可选类型web_only(只能通过web网络秒杀)，wap_only(只能通过wap网络秒杀)，web_and_wap(既能通过web秒杀也能通过wap秒杀)
     secondKill   string 
@@ -279,13 +279,13 @@ func (r AlitripGrouptourProductUploadRequest) GetToLocations() string {
     return r.toLocations
 }
 
-func (r *AlitripGrouptourProductUploadRequest) SetPicUrls(picUrls []String) error {
+func (r *AlitripGrouptourProductUploadRequest) SetPicUrls(picUrls []string) error {
     r.picUrls = picUrls
     r.Set("pic_urls", picUrls)
     return nil
 }
 
-func (r AlitripGrouptourProductUploadRequest) GetPicUrls() []String {
+func (r AlitripGrouptourProductUploadRequest) GetPicUrls() []string {
     return r.picUrls
 }
 
@@ -319,13 +319,13 @@ func (r AlitripGrouptourProductUploadRequest) GetRefundType() int64 {
     return r.refundType
 }
 
-func (r *AlitripGrouptourProductUploadRequest) SetSubTitles(subTitles []String) error {
+func (r *AlitripGrouptourProductUploadRequest) SetSubTitles(subTitles []string) error {
     r.subTitles = subTitles
     r.Set("sub_titles", subTitles)
     return nil
 }
 
-func (r AlitripGrouptourProductUploadRequest) GetSubTitles() []String {
+func (r AlitripGrouptourProductUploadRequest) GetSubTitles() []string {
     return r.subTitles
 }
 
@@ -409,13 +409,13 @@ func (r AlitripGrouptourProductUploadRequest) GetGroupTourType() int64 {
     return r.groupTourType
 }
 
-func (r *AlitripGrouptourProductUploadRequest) SetSellerCids(sellerCids []String) error {
+func (r *AlitripGrouptourProductUploadRequest) SetSellerCids(sellerCids []string) error {
     r.sellerCids = sellerCids
     r.Set("seller_cids", sellerCids)
     return nil
 }
 
-func (r AlitripGrouptourProductUploadRequest) GetSellerCids() []String {
+func (r AlitripGrouptourProductUploadRequest) GetSellerCids() []string {
     return r.sellerCids
 }
 

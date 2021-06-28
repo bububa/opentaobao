@@ -11,11 +11,11 @@ tmall.servicecenter.servicestore.create
 
 用于创建门店/网点。多个业务共用
 */
-func TmallServicecenterServicestoreCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreCreateRequest, session string) (*tmallservice.TmallServicecenterServicestoreCreateResponse, error) {
+func TmallServicecenterServicestoreCreate(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreCreateRequest, session string) (*tmallservice.TmallServicecenterServicestoreCreateAPIResponse, error) {
     var resp tmallservice.TmallServicecenterServicestoreCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

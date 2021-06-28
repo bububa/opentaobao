@@ -12,8 +12,22 @@ taobao.wlb.waybill.i.search
 */
 type TaobaoWlbWaybillISearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWaybillISearchResponse `json:"taobao_wlb_waybill_i_search_response,omitempty"`
+    // Response *TaobaoWlbWaybillISearchResponse `json:"wlb_waybill_i_search_response,omitempty"` 
+    TaobaoWlbWaybillISearchResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWaybillISearchResponse struct {
+
+    // 订购关系
+    
+    Subscribtions  struct {
+        WaybillApplySubscriptionInfo  []WaybillApplySubscriptionInfo `json:"waybill_apply_subscription_info,omitempty"`
+    } `json:"subscribtions,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWaybillISearchResponse struct {
 

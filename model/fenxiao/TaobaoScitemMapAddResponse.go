@@ -12,8 +12,20 @@ taobao.scitem.map.add
 */
 type TaobaoScitemMapAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoScitemMapAddResponse `json:"taobao_scitem_map_add_response,omitempty"`
+    // Response *TaobaoScitemMapAddResponse `json:"scitem_map_add_response,omitempty"` 
+    TaobaoScitemMapAddResponse
 }
+
+/* model for simplify = false
+type TaobaoScitemMapAddResponse struct {
+
+    // 接口调用返回结果信息：商家编码
+    
+    OuterCode   string `json:"outer_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoScitemMapAddResponse struct {
 

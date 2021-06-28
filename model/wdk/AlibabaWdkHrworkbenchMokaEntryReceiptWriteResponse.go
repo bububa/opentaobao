@@ -12,8 +12,45 @@ alibaba.wdk.hrworkbench.moka.entry.receipt.write
 */
 type AlibabaWdkHrworkbenchMokaEntryReceiptWriteAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkHrworkbenchMokaEntryReceiptWriteResponse `json:"alibaba_wdk_hrworkbench_moka_entry_receipt_write_response,omitempty"`
+    // Response *AlibabaWdkHrworkbenchMokaEntryReceiptWriteResponse `json:"alibaba_wdk_hrworkbench_moka_entry_receipt_write_response,omitempty"` 
+    AlibabaWdkHrworkbenchMokaEntryReceiptWriteResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkHrworkbenchMokaEntryReceiptWriteResponse struct {
+
+    // data
+    
+    Data   bool `json:"data,omitempty"`
+    
+
+    // 失败
+    
+    Fail   bool `json:"fail,omitempty"`
+    
+
+    // 结果信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 成功并且结果非空
+    
+    SuccAndNotNull   bool `json:"succ_and_not_null,omitempty"`
+    
+
+    // 成功结果为空
+    
+    SuccAndNull   bool `json:"succ_and_null,omitempty"`
+    
+
+    // trace_id
+    
+    TraceId   string `json:"trace_id,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkHrworkbenchMokaEntryReceiptWriteResponse struct {
 

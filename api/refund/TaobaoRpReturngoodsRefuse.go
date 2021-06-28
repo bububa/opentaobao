@@ -11,11 +11,11 @@ taobao.rp.returngoods.refuse
 
 卖家拒绝退货，目前仅支持天猫退货。
 */
-func TaobaoRpReturngoodsRefuse(clt *core.SDKClient, req *refund.TaobaoRpReturngoodsRefuseRequest, session string) (*refund.TaobaoRpReturngoodsRefuseResponse, error) {
+func TaobaoRpReturngoodsRefuse(clt *core.SDKClient, req *refund.TaobaoRpReturngoodsRefuseRequest, session string) (*refund.TaobaoRpReturngoodsRefuseAPIResponse, error) {
     var resp refund.TaobaoRpReturngoodsRefuseAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

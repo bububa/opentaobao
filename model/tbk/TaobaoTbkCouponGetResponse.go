@@ -12,12 +12,26 @@ taobao.tbk.coupon.get
 */
 type TaobaoTbkCouponGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkCouponGetResponse `json:"taobao_tbk_coupon_get_response,omitempty"`
+    // Response *TaobaoTbkCouponGetResponse `json:"tbk_coupon_get_response,omitempty"` 
+    TaobaoTbkCouponGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkCouponGetResponse struct {
+
+    // data
+    
+    Data  *struct {
+        TaobaoTbkCouponGetMapData  *TaobaoTbkCouponGetMapData `json:"taobao_tbk_coupon_get_map_data,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkCouponGetResponse struct {
 
     // data
-    Data   *MapData `json:"data,omitempty"`
+    Data   *TaobaoTbkCouponGetMapData `json:"data,omitempty"`
 
 }

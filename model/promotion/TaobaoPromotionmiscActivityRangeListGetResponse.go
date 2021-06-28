@@ -12,8 +12,22 @@ taobao.promotionmisc.activity.range.list.get
 */
 type TaobaoPromotionmiscActivityRangeListGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionmiscActivityRangeListGetResponse `json:"taobao_promotionmisc_activity_range_list_get_response,omitempty"`
+    // Response *TaobaoPromotionmiscActivityRangeListGetResponse `json:"promotionmisc_activity_range_list_get_response,omitempty"` 
+    TaobaoPromotionmiscActivityRangeListGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionmiscActivityRangeListGetResponse struct {
+
+    // 活动参与的商品列表
+    
+    PromotionRangeList  struct {
+        PromotionRange  []PromotionRange `json:"promotion_range,omitempty"`
+    } `json:"promotion_range_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionmiscActivityRangeListGetResponse struct {
 

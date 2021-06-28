@@ -12,8 +12,22 @@ taobao.item.delete
 */
 type TaobaoItemDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemDeleteResponse `json:"taobao_item_delete_response,omitempty"`
+    // Response *TaobaoItemDeleteResponse `json:"item_delete_response,omitempty"` 
+    TaobaoItemDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoItemDeleteResponse struct {
+
+    // 被删除商品的相关信息
+    
+    Item  *struct {
+        Item  *Item `json:"item,omitempty"`
+    } `json:"item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemDeleteResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.pos.fund.cashier.shift.summary
 */
 type AlibabaPosFundCashierShiftSummaryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaPosFundCashierShiftSummaryResponse `json:"alibaba_pos_fund_cashier_shift_summary_response,omitempty"`
+    // Response *AlibabaPosFundCashierShiftSummaryResponse `json:"alibaba_pos_fund_cashier_shift_summary_response,omitempty"` 
+    AlibabaPosFundCashierShiftSummaryResponse
 }
+
+/* model for simplify = false
+type AlibabaPosFundCashierShiftSummaryResponse struct {
+
+    // 接口返回
+    
+    Result  *struct {
+        AlibabaPosFundCashierShiftSummaryResult  *AlibabaPosFundCashierShiftSummaryResult `json:"alibaba_pos_fund_cashier_shift_summary_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaPosFundCashierShiftSummaryResponse struct {
 

@@ -12,8 +12,30 @@ taobao.place.store.extend.add
 */
 type TaobaoPlaceStoreExtendAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPlaceStoreExtendAddResponse `json:"taobao_place_store_extend_add_response,omitempty"`
+    // Response *TaobaoPlaceStoreExtendAddResponse `json:"place_store_extend_add_response,omitempty"` 
+    TaobaoPlaceStoreExtendAddResponse
 }
+
+/* model for simplify = false
+type TaobaoPlaceStoreExtendAddResponse struct {
+
+    // 是否失败
+    
+    Failure   bool `json:"failure,omitempty"`
+    
+
+    // 返回结果：true成功；false失败
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+    // 个数
+    
+    TotalNum   int64 `json:"total_num,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPlaceStoreExtendAddResponse struct {
 

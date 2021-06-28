@@ -12,8 +12,22 @@ alibaba.aliqin.fc.voice.num.cancelcall
 */
 type AlibabaAliqinFcVoiceNumCancelcallAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcVoiceNumCancelcallResponse `json:"alibaba_aliqin_fc_voice_num_cancelcall_response,omitempty"`
+    // Response *AlibabaAliqinFcVoiceNumCancelcallResponse `json:"alibaba_aliqin_fc_voice_num_cancelcall_response,omitempty"` 
+    AlibabaAliqinFcVoiceNumCancelcallResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcVoiceNumCancelcallResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaAliqinFcVoiceNumCancelcallBizResult  *AlibabaAliqinFcVoiceNumCancelcallBizResult `json:"alibaba_aliqin_fc_voice_num_cancelcall_biz_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcVoiceNumCancelcallResponse struct {
 

@@ -12,8 +12,22 @@ taobao.tbk.activity.info.get
 */
 type TaobaoTbkActivityInfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkActivityInfoGetResponse `json:"taobao_tbk_activity_info_get_response,omitempty"`
+    // Response *TaobaoTbkActivityInfoGetResponse `json:"tbk_activity_info_get_response,omitempty"` 
+    TaobaoTbkActivityInfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkActivityInfoGetResponse struct {
+
+    // 返回结果对象
+    
+    Data  *struct {
+        TaobaoTbkActivityInfoGetData  *TaobaoTbkActivityInfoGetData `json:"taobao_tbk_activity_info_get_data,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkActivityInfoGetResponse struct {
 

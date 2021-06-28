@@ -11,11 +11,11 @@ alibaba.wdk.ums.inventory.adjust.get
 
 库调单-回流单
 */
-func AlibabaWdkUmsInventoryAdjustGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsInventoryAdjustGetRequest, session string) (*wdk.AlibabaWdkUmsInventoryAdjustGetResponse, error) {
+func AlibabaWdkUmsInventoryAdjustGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsInventoryAdjustGetRequest, session string) (*wdk.AlibabaWdkUmsInventoryAdjustGetAPIResponse, error) {
     var resp wdk.AlibabaWdkUmsInventoryAdjustGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ taobao.auction.gov.data.realtime.get
 */
 type TaobaoAuctionGovDataRealtimeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAuctionGovDataRealtimeGetResponse `json:"taobao_auction_gov_data_realtime_get_response,omitempty"`
+    // Response *TaobaoAuctionGovDataRealtimeGetResponse `json:"auction_gov_data_realtime_get_response,omitempty"` 
+    TaobaoAuctionGovDataRealtimeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAuctionGovDataRealtimeGetResponse struct {
+
+    // 今日拍卖统计数据
+    
+    RealTimeData  *struct {
+        RealTimeData  *RealTimeData `json:"real_time_data,omitempty"`
+    } `json:"real_time_data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAuctionGovDataRealtimeGetResponse struct {
 

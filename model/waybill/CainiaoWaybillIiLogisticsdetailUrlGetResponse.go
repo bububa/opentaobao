@@ -12,8 +12,20 @@ cainiao.waybill.ii.logisticsdetail.url.get
 */
 type CainiaoWaybillIiLogisticsdetailUrlGetAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoWaybillIiLogisticsdetailUrlGetResponse `json:"cainiao_waybill_ii_logisticsdetail_url_get_response,omitempty"`
+    // Response *CainiaoWaybillIiLogisticsdetailUrlGetResponse `json:"cainiao_waybill_ii_logisticsdetail_url_get_response,omitempty"` 
+    CainiaoWaybillIiLogisticsdetailUrlGetResponse
 }
+
+/* model for simplify = false
+type CainiaoWaybillIiLogisticsdetailUrlGetResponse struct {
+
+    // 授权访问的url
+    
+    Url   string `json:"url,omitempty"`
+    
+
+}
+*/
 
 type CainiaoWaybillIiLogisticsdetailUrlGetResponse struct {
 

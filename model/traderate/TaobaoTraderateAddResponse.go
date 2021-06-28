@@ -12,8 +12,22 @@ taobao.traderate.add
 */
 type TaobaoTraderateAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTraderateAddResponse `json:"taobao_traderate_add_response,omitempty"`
+    // Response *TaobaoTraderateAddResponse `json:"traderate_add_response,omitempty"` 
+    TaobaoTraderateAddResponse
 }
+
+/* model for simplify = false
+type TaobaoTraderateAddResponse struct {
+
+    // 返回tid、oid、create
+    
+    TradeRate  *struct {
+        TradeRateRequest  *TradeRateRequest `json:"trade_rate_request,omitempty"`
+    } `json:"trade_rate,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTraderateAddResponse struct {
 

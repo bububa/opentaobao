@@ -11,11 +11,11 @@ alibaba.wdk.finance.order.backflow
 
 星巴克拉取财务订单回流数据
 */
-func AlibabaWdkFinanceOrderBackflow(clt *core.SDKClient, req *wdk.AlibabaWdkFinanceOrderBackflowRequest, session string) (*wdk.AlibabaWdkFinanceOrderBackflowResponse, error) {
+func AlibabaWdkFinanceOrderBackflow(clt *core.SDKClient, req *wdk.AlibabaWdkFinanceOrderBackflowRequest, session string) (*wdk.AlibabaWdkFinanceOrderBackflowAPIResponse, error) {
     var resp wdk.AlibabaWdkFinanceOrderBackflowAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

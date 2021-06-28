@@ -12,8 +12,22 @@ tmall.servicecenter.spserviceorder.query
 */
 type TmallServicecenterSpserviceorderQueryAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterSpserviceorderQueryResponse `json:"tmall_servicecenter_spserviceorder_query_response,omitempty"`
+    // Response *TmallServicecenterSpserviceorderQueryResponse `json:"tmall_servicecenter_spserviceorder_query_response,omitempty"` 
+    TmallServicecenterSpserviceorderQueryResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterSpserviceorderQueryResponse struct {
+
+    // 返回参数
+    
+    Result  *struct {
+        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterSpserviceorderQueryResponse struct {
 

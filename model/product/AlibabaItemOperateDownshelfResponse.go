@@ -12,8 +12,20 @@ alibaba.item.operate.downshelf
 */
 type AlibabaItemOperateDownshelfAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaItemOperateDownshelfResponse `json:"alibaba_item_operate_downshelf_response,omitempty"`
+    // Response *AlibabaItemOperateDownshelfResponse `json:"alibaba_item_operate_downshelf_response,omitempty"` 
+    AlibabaItemOperateDownshelfResponse
 }
+
+/* model for simplify = false
+type AlibabaItemOperateDownshelfResponse struct {
+
+    // 商品下架是否成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaItemOperateDownshelfResponse struct {
 

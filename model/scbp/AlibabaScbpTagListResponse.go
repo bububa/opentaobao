@@ -12,8 +12,22 @@ alibaba.scbp.tag.list
 */
 type AlibabaScbpTagListAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpTagListResponse `json:"alibaba_scbp_tag_list_response,omitempty"`
+    // Response *AlibabaScbpTagListResponse `json:"alibaba_scbp_tag_list_response,omitempty"` 
+    AlibabaScbpTagListResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpTagListResponse struct {
+
+    // 所有分组
+    
+    TagList  struct {
+        TagGroup  []TagGroup `json:"tag_group,omitempty"`
+    } `json:"tag_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpTagListResponse struct {
 

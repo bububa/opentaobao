@@ -11,11 +11,11 @@ taobao.subway.cia.get
 
 查询单元智能出价信息
 */
-func TaobaoSubwayCiaGet(clt *core.SDKClient, req *simba.TaobaoSubwayCiaGetRequest, session string) (*simba.TaobaoSubwayCiaGetResponse, error) {
+func TaobaoSubwayCiaGet(clt *core.SDKClient, req *simba.TaobaoSubwayCiaGetRequest, session string) (*simba.TaobaoSubwayCiaGetAPIResponse, error) {
     var resp simba.TaobaoSubwayCiaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

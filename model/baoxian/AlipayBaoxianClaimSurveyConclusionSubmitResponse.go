@@ -12,8 +12,22 @@ alipay.baoxian.claim.survey.conclusion.submit
 */
 type AlipayBaoxianClaimSurveyConclusionSubmitAPIResponse struct {
     model.CommonResponse
-    Response *AlipayBaoxianClaimSurveyConclusionSubmitResponse `json:"alipay_baoxian_claim_survey_conclusion_submit_response,omitempty"`
+    // Response *AlipayBaoxianClaimSurveyConclusionSubmitResponse `json:"alipay_baoxian_claim_survey_conclusion_submit_response,omitempty"` 
+    AlipayBaoxianClaimSurveyConclusionSubmitResponse
 }
+
+/* model for simplify = false
+type AlipayBaoxianClaimSurveyConclusionSubmitResponse struct {
+
+    // 系统自动生成
+    
+    Result  *struct {
+        AliSceneResult  *AliSceneResult `json:"ali_scene_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlipayBaoxianClaimSurveyConclusionSubmitResponse struct {
 

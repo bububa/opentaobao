@@ -12,8 +12,22 @@ alibaba.legal.case.common.enumdata
 */
 type AlibabaLegalCaseCommonEnumdataAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaLegalCaseCommonEnumdataResponse `json:"alibaba_legal_case_common_enumdata_response,omitempty"`
+    // Response *AlibabaLegalCaseCommonEnumdataResponse `json:"alibaba_legal_case_common_enumdata_response,omitempty"` 
+    AlibabaLegalCaseCommonEnumdataResponse
 }
+
+/* model for simplify = false
+type AlibabaLegalCaseCommonEnumdataResponse struct {
+
+    // alinkappserver系统返回的通用结果类
+    
+    Result  *struct {
+        ServiceResult  *ServiceResult `json:"service_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaLegalCaseCommonEnumdataResponse struct {
 

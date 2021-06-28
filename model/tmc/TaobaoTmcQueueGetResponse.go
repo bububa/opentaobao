@@ -12,8 +12,22 @@ taobao.tmc.queue.get
 */
 type TaobaoTmcQueueGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcQueueGetResponse `json:"taobao_tmc_queue_get_response,omitempty"`
+    // Response *TaobaoTmcQueueGetResponse `json:"tmc_queue_get_response,omitempty"` 
+    TaobaoTmcQueueGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcQueueGetResponse struct {
+
+    // 队列详细信息
+    
+    Datas  struct {
+        TmcQueueInfo  []TmcQueueInfo `json:"tmc_queue_info,omitempty"`
+    } `json:"datas,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcQueueGetResponse struct {
 

@@ -12,8 +12,22 @@ taobao.sellercats.list.add
 */
 type TaobaoSellercatsListAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSellercatsListAddResponse `json:"taobao_sellercats_list_add_response,omitempty"`
+    // Response *TaobaoSellercatsListAddResponse `json:"sellercats_list_add_response,omitempty"` 
+    TaobaoSellercatsListAddResponse
 }
+
+/* model for simplify = false
+type TaobaoSellercatsListAddResponse struct {
+
+    // 返回seller_cat数据结构中的：cid,created
+    
+    SellerCat  *struct {
+        SellerCat  *SellerCat `json:"seller_cat,omitempty"`
+    } `json:"seller_cat,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSellercatsListAddResponse struct {
 

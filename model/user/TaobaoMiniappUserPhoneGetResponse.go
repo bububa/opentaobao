@@ -12,8 +12,20 @@ taobao.miniapp.user.phone.get
 */
 type TaobaoMiniappUserPhoneGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMiniappUserPhoneGetResponse `json:"taobao_miniapp_user_phone_get_response,omitempty"`
+    // Response *TaobaoMiniappUserPhoneGetResponse `json:"miniapp_user_phone_get_response,omitempty"` 
+    TaobaoMiniappUserPhoneGetResponse
 }
+
+/* model for simplify = false
+type TaobaoMiniappUserPhoneGetResponse struct {
+
+    // 用户手机号码
+    
+    Phone   string `json:"phone,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMiniappUserPhoneGetResponse struct {
 

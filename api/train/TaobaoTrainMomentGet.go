@@ -11,11 +11,11 @@ taobao.train.moment.get
 
 查询火车票车次时刻表
 */
-func TaobaoTrainMomentGet(clt *core.SDKClient, req *train.TaobaoTrainMomentGetRequest, session string) (*train.TaobaoTrainMomentGetResponse, error) {
+func TaobaoTrainMomentGet(clt *core.SDKClient, req *train.TaobaoTrainMomentGetRequest, session string) (*train.TaobaoTrainMomentGetAPIResponse, error) {
     var resp train.TaobaoTrainMomentGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

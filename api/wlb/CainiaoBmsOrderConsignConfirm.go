@@ -11,11 +11,11 @@ cainiao.bms.order.consign.confirm
 
 BMS出库后，通知ISV
 */
-func CainiaoBmsOrderConsignConfirm(clt *core.SDKClient, req *wlb.CainiaoBmsOrderConsignConfirmRequest, session string) (*wlb.CainiaoBmsOrderConsignConfirmResponse, error) {
+func CainiaoBmsOrderConsignConfirm(clt *core.SDKClient, req *wlb.CainiaoBmsOrderConsignConfirmRequest, session string) (*wlb.CainiaoBmsOrderConsignConfirmAPIResponse, error) {
     var resp wlb.CainiaoBmsOrderConsignConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

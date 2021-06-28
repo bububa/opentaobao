@@ -11,11 +11,11 @@ taobao.qimen.transferorder.report
 
 调拨单通知
 */
-func TaobaoQimenTransferorderReport(clt *core.SDKClient, req *qimen.TaobaoQimenTransferorderReportRequest, session string) (*qimen.TaobaoQimenTransferorderReportResponse, error) {
+func TaobaoQimenTransferorderReport(clt *core.SDKClient, req *qimen.TaobaoQimenTransferorderReportRequest, session string) (*qimen.TaobaoQimenTransferorderReportAPIResponse, error) {
     var resp qimen.TaobaoQimenTransferorderReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

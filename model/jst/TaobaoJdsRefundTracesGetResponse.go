@@ -12,8 +12,27 @@ taobao.jds.refund.traces.get
 */
 type TaobaoJdsRefundTracesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJdsRefundTracesGetResponse `json:"taobao_jds_refund_traces_get_response,omitempty"`
+    // Response *TaobaoJdsRefundTracesGetResponse `json:"jds_refund_traces_get_response,omitempty"` 
+    TaobaoJdsRefundTracesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoJdsRefundTracesGetResponse struct {
+
+    // 退款跟踪列表
+    
+    Traces  struct {
+        RefundTrace  []RefundTrace `json:"refund_trace,omitempty"`
+    } `json:"traces,omitempty"`
+    
+
+    // 用户在全链路系统中的状态(比如是否存在)
+    
+    UserStatus   string `json:"user_status,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJdsRefundTracesGetResponse struct {
 

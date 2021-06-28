@@ -12,8 +12,20 @@ alibaba.interact.sensor.openwindow
 */
 type AlibabaInteractSensorOpenwindowAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorOpenwindowResponse `json:"alibaba_interact_sensor_openwindow_response,omitempty"`
+    // Response *AlibabaInteractSensorOpenwindowResponse `json:"alibaba_interact_sensor_openwindow_response,omitempty"` 
+    AlibabaInteractSensorOpenwindowResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorOpenwindowResponse struct {
+
+    // result=0
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorOpenwindowResponse struct {
 

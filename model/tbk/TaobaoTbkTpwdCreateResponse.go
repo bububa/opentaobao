@@ -12,12 +12,26 @@ taobao.tbk.tpwd.create
 */
 type TaobaoTbkTpwdCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkTpwdCreateResponse `json:"taobao_tbk_tpwd_create_response,omitempty"`
+    // Response *TaobaoTbkTpwdCreateResponse `json:"tbk_tpwd_create_response,omitempty"` 
+    TaobaoTbkTpwdCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkTpwdCreateResponse struct {
+
+    // 返回结果对象
+    
+    Data  *struct {
+        TaobaoTbkTpwdCreateMapData  *TaobaoTbkTpwdCreateMapData `json:"taobao_tbk_tpwd_create_map_data,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkTpwdCreateResponse struct {
 
     // 返回结果对象
-    Data   *MapData `json:"data,omitempty"`
+    Data   *TaobaoTbkTpwdCreateMapData `json:"data,omitempty"`
 
 }

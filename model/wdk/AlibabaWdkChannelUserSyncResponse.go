@@ -12,8 +12,22 @@ alibaba.wdk.channel.user.sync
 */
 type AlibabaWdkChannelUserSyncAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkChannelUserSyncResponse `json:"alibaba_wdk_channel_user_sync_response,omitempty"`
+    // Response *AlibabaWdkChannelUserSyncResponse `json:"alibaba_wdk_channel_user_sync_response,omitempty"` 
+    AlibabaWdkChannelUserSyncResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkChannelUserSyncResponse struct {
+
+    // 返回内容
+    
+    ApiResult  *struct {
+        AlibabaWdkChannelUserSyncApiResult  *AlibabaWdkChannelUserSyncApiResult `json:"alibaba_wdk_channel_user_sync_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkChannelUserSyncResponse struct {
 

@@ -12,8 +12,22 @@ taobao.qimen.returnpackage.report
 */
 type TaobaoQimenReturnpackageReportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenReturnpackageReportResponse `json:"taobao_qimen_returnpackage_report_response,omitempty"`
+    // Response *TaobaoQimenReturnpackageReportResponse `json:"qimen_returnpackage_report_response,omitempty"` 
+    TaobaoQimenReturnpackageReportResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenReturnpackageReportResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenReturnpackageReportResponse struct {
 

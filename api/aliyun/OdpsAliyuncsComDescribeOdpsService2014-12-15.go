@@ -11,11 +11,11 @@ odps.aliyuncs.com.DescribeOdpsService.2014-12-15
 
 查询ODPS服务
 */
-func OdpsAliyuncsComDescribeOdpsService2014-12-15(clt *core.SDKClient, req *aliyun.OdpsAliyuncsComDescribeOdpsService2014-12-15Request, session string) (*aliyun.OdpsAliyuncsComDescribeOdpsService2014-12-15Response, error) {
+func OdpsAliyuncsComDescribeOdpsService2014-12-15(clt *core.SDKClient, req *aliyun.OdpsAliyuncsComDescribeOdpsService2014-12-15Request, session string) (*aliyun.OdpsAliyuncsComDescribeOdpsService2014-12-15APIResponse, error) {
     var resp aliyun.OdpsAliyuncsComDescribeOdpsService2014-12-15APIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

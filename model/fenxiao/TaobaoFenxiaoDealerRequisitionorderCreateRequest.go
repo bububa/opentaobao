@@ -19,7 +19,7 @@ type TaobaoFenxiaoDealerRequisitionorderCreateRequest struct {
     logisticsType   string 
 
     // 采购清单，存放多个采购明细，每个采购明细内部以‘:’隔开，多个采购明细之间以‘,’隔开. 例(分销产品id:skuid:购买数量:申请单价,分销产品id:skuid:购买数量:申请单价)，申请单价的单位为分。不存在sku请留空skuid，如（分销产品id::购买数量:申请单价）
-    orderDetail   []String 
+    orderDetail   []string 
 
     // 收货人所在省份
     province   string 
@@ -79,13 +79,13 @@ func (r TaobaoFenxiaoDealerRequisitionorderCreateRequest) GetLogisticsType() str
     return r.logisticsType
 }
 
-func (r *TaobaoFenxiaoDealerRequisitionorderCreateRequest) SetOrderDetail(orderDetail []String) error {
+func (r *TaobaoFenxiaoDealerRequisitionorderCreateRequest) SetOrderDetail(orderDetail []string) error {
     r.orderDetail = orderDetail
     r.Set("order_detail", orderDetail)
     return nil
 }
 
-func (r TaobaoFenxiaoDealerRequisitionorderCreateRequest) GetOrderDetail() []String {
+func (r TaobaoFenxiaoDealerRequisitionorderCreateRequest) GetOrderDetail() []string {
     return r.orderDetail
 }
 

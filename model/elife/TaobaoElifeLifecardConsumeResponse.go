@@ -12,8 +12,40 @@ taobao.elife.lifecard.consume
 */
 type TaobaoElifeLifecardConsumeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoElifeLifecardConsumeResponse `json:"taobao_elife_lifecard_consume_response,omitempty"`
+    // Response *TaobaoElifeLifecardConsumeResponse `json:"elife_lifecard_consume_response,omitempty"` 
+    TaobaoElifeLifecardConsumeResponse
 }
+
+/* model for simplify = false
+type TaobaoElifeLifecardConsumeResponse struct {
+
+    // 本金
+    
+    Amount   int64 `json:"amount,omitempty"`
+    
+
+    // 膨胀金
+    
+    InflateAmount   int64 `json:"inflate_amount,omitempty"`
+    
+
+    // 错误码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // 结果描述
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // 是否成功
+    
+    Successed   bool `json:"successed,omitempty"`
+    
+
+}
+*/
 
 type TaobaoElifeLifecardConsumeResponse struct {
 

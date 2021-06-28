@@ -12,8 +12,25 @@ taobao.fenxiao.product.sku.delete
 */
 type TaobaoFenxiaoProductSkuDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductSkuDeleteResponse `json:"taobao_fenxiao_product_sku_delete_response,omitempty"`
+    // Response *TaobaoFenxiaoProductSkuDeleteResponse `json:"fenxiao_product_sku_delete_response,omitempty"` 
+    TaobaoFenxiaoProductSkuDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductSkuDeleteResponse struct {
+
+    // 操作结果
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+    // 操作时间
+    
+    Created   string `json:"created,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoProductSkuDeleteResponse struct {
 

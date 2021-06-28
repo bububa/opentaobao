@@ -18,11 +18,11 @@ taobao.products.search
    传入suite_items_str 按规格搜索套装产品。
    返回字段增加suite_items_str,is_suite_effecitve支持。
 */
-func TaobaoProductsSearch(clt *core.SDKClient, req *product.TaobaoProductsSearchRequest, session string) (*product.TaobaoProductsSearchResponse, error) {
+func TaobaoProductsSearch(clt *core.SDKClient, req *product.TaobaoProductsSearchRequest, session string) (*product.TaobaoProductsSearchAPIResponse, error) {
     var resp product.TaobaoProductsSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

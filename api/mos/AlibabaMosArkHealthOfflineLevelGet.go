@@ -11,11 +11,11 @@ alibaba.mos.ark.health.offline.level.get
 
 获取mall的离线等级
 */
-func AlibabaMosArkHealthOfflineLevelGet(clt *core.SDKClient, req *mos.AlibabaMosArkHealthOfflineLevelGetRequest, session string) (*mos.AlibabaMosArkHealthOfflineLevelGetResponse, error) {
+func AlibabaMosArkHealthOfflineLevelGet(clt *core.SDKClient, req *mos.AlibabaMosArkHealthOfflineLevelGetRequest, session string) (*mos.AlibabaMosArkHealthOfflineLevelGetAPIResponse, error) {
     var resp mos.AlibabaMosArkHealthOfflineLevelGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

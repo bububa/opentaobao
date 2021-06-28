@@ -15,8 +15,22 @@ alitrip.daytours.product.upload
 */
 type AlitripDaytoursProductUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlitripDaytoursProductUploadResponse `json:"alitrip_daytours_product_upload_response,omitempty"`
+    // Response *AlitripDaytoursProductUploadResponse `json:"alitrip_daytours_product_upload_response,omitempty"` 
+    AlitripDaytoursProductUploadResponse
 }
+
+/* model for simplify = false
+type AlitripDaytoursProductUploadResponse struct {
+
+    // 商品维护结果
+    
+    FirstResult  *struct {
+        TopTravelItem  *TopTravelItem `json:"top_travel_item,omitempty"`
+    } `json:"first_result,omitempty"`
+    
+
+}
+*/
 
 type AlitripDaytoursProductUploadResponse struct {
 

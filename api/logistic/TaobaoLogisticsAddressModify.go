@@ -11,11 +11,11 @@ taobao.logistics.address.modify
 
 卖家地址库修改
 */
-func TaobaoLogisticsAddressModify(clt *core.SDKClient, req *logistic.TaobaoLogisticsAddressModifyRequest, session string) (*logistic.TaobaoLogisticsAddressModifyResponse, error) {
+func TaobaoLogisticsAddressModify(clt *core.SDKClient, req *logistic.TaobaoLogisticsAddressModifyRequest, session string) (*logistic.TaobaoLogisticsAddressModifyAPIResponse, error) {
     var resp logistic.TaobaoLogisticsAddressModifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

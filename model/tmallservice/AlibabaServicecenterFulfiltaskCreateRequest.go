@@ -16,7 +16,7 @@ type AlibabaServicecenterFulfiltaskCreateRequest struct {
     model.Params
 
     // 工单id列表
-    workcardIds   []Number 
+    workcardIds   []int64 
 
     // 外部单号
     outerId   string 
@@ -42,13 +42,13 @@ func (r AlibabaServicecenterFulfiltaskCreateRequest) GetApiParams() url.Values {
 }
 
 
-func (r *AlibabaServicecenterFulfiltaskCreateRequest) SetWorkcardIds(workcardIds []Number) error {
+func (r *AlibabaServicecenterFulfiltaskCreateRequest) SetWorkcardIds(workcardIds []int64) error {
     r.workcardIds = workcardIds
     r.Set("workcard_ids", workcardIds)
     return nil
 }
 
-func (r AlibabaServicecenterFulfiltaskCreateRequest) GetWorkcardIds() []Number {
+func (r AlibabaServicecenterFulfiltaskCreateRequest) GetWorkcardIds() []int64 {
     return r.workcardIds
 }
 

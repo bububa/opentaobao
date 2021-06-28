@@ -12,8 +12,20 @@ Schema体系发布一个产品
 */
 type TmallProductSchemaAddAPIResponse struct {
     model.CommonResponse
-    Response *TmallProductSchemaAddResponse `json:"tmall_product_schema_add_response,omitempty"`
+    // Response *TmallProductSchemaAddResponse `json:"tmall_product_schema_add_response,omitempty"` 
+    TmallProductSchemaAddResponse
 }
+
+/* model for simplify = false
+type TmallProductSchemaAddResponse struct {
+
+    // 新发产品结果
+    
+    AddProductResult   string `json:"add_product_result,omitempty"`
+    
+
+}
+*/
 
 type TmallProductSchemaAddResponse struct {
 

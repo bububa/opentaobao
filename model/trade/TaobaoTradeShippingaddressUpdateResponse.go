@@ -12,8 +12,22 @@ taobao.trade.shippingaddress.update
 */
 type TaobaoTradeShippingaddressUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeShippingaddressUpdateResponse `json:"taobao_trade_shippingaddress_update_response,omitempty"`
+    // Response *TaobaoTradeShippingaddressUpdateResponse `json:"trade_shippingaddress_update_response,omitempty"` 
+    TaobaoTradeShippingaddressUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeShippingaddressUpdateResponse struct {
+
+    // 交易结构
+    
+    Trade  *struct {
+        Trade  *Trade `json:"trade,omitempty"`
+    } `json:"trade,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeShippingaddressUpdateResponse struct {
 

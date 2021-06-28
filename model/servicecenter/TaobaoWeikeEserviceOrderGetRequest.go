@@ -31,7 +31,7 @@ type TaobaoWeikeEserviceOrderGetRequest struct {
     endDate   string 
 
     // 订单ID列表，最大不超过20个（这个参数指定后，其它过滤条件失效）
-    orderIdList   []Number 
+    orderIdList   []int64 
 
     // 页码（默认为1）
     pageNum   int64 
@@ -107,13 +107,13 @@ func (r TaobaoWeikeEserviceOrderGetRequest) GetEndDate() string {
     return r.endDate
 }
 
-func (r *TaobaoWeikeEserviceOrderGetRequest) SetOrderIdList(orderIdList []Number) error {
+func (r *TaobaoWeikeEserviceOrderGetRequest) SetOrderIdList(orderIdList []int64) error {
     r.orderIdList = orderIdList
     r.Set("order_id_list", orderIdList)
     return nil
 }
 
-func (r TaobaoWeikeEserviceOrderGetRequest) GetOrderIdList() []Number {
+func (r TaobaoWeikeEserviceOrderGetRequest) GetOrderIdList() []int64 {
     return r.orderIdList
 }
 

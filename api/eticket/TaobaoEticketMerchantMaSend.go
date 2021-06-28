@@ -11,11 +11,11 @@ taobao.eticket.merchant.ma.send
 
 码商发码成功回调接口
 */
-func TaobaoEticketMerchantMaSend(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaSendRequest, session string) (*eticket.TaobaoEticketMerchantMaSendResponse, error) {
+func TaobaoEticketMerchantMaSend(clt *core.SDKClient, req *eticket.TaobaoEticketMerchantMaSendRequest, session string) (*eticket.TaobaoEticketMerchantMaSendAPIResponse, error) {
     var resp eticket.TaobaoEticketMerchantMaSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

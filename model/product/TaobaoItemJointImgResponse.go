@@ -12,8 +12,22 @@ taobao.item.joint.img
 */
 type TaobaoItemJointImgAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemJointImgResponse `json:"taobao_item_joint_img_response,omitempty"`
+    // Response *TaobaoItemJointImgResponse `json:"item_joint_img_response,omitempty"` 
+    TaobaoItemJointImgResponse
 }
+
+/* model for simplify = false
+type TaobaoItemJointImgResponse struct {
+
+    // 商品图片信息
+    
+    ItemImg  *struct {
+        ItemImg  *ItemImg `json:"item_img,omitempty"`
+    } `json:"item_img,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemJointImgResponse struct {
 

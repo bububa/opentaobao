@@ -12,8 +12,20 @@ alibaba.interact.sensor.social
 */
 type AlibabaInteractSensorSocialAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorSocialResponse `json:"alibaba_interact_sensor_social_response,omitempty"`
+    // Response *AlibabaInteractSensorSocialResponse `json:"alibaba_interact_sensor_social_response,omitempty"` 
+    AlibabaInteractSensorSocialResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorSocialResponse struct {
+
+    // result=1
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorSocialResponse struct {
 

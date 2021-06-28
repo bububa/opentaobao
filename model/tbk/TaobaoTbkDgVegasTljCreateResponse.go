@@ -12,8 +12,22 @@ taobao.tbk.dg.vegas.tlj.create
 */
 type TaobaoTbkDgVegasTljCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkDgVegasTljCreateResponse `json:"taobao_tbk_dg_vegas_tlj_create_response,omitempty"`
+    // Response *TaobaoTbkDgVegasTljCreateResponse `json:"tbk_dg_vegas_tlj_create_response,omitempty"` 
+    TaobaoTbkDgVegasTljCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkDgVegasTljCreateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoTbkDgVegasTljCreateResult  *TaobaoTbkDgVegasTljCreateResult `json:"taobao_tbk_dg_vegas_tlj_create_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkDgVegasTljCreateResponse struct {
 

@@ -12,8 +12,22 @@ ERP调用奇门的接口,创建退货单信息;该接口和入库单的区别就
 */
 type TaobaoQimenReturnorderCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenReturnorderCreateResponse `json:"taobao_qimen_returnorder_create_response,omitempty"`
+    // Response *TaobaoQimenReturnorderCreateResponse `json:"qimen_returnorder_create_response,omitempty"` 
+    TaobaoQimenReturnorderCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenReturnorderCreateResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenReturnorderCreateResponse struct {
 

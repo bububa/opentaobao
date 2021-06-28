@@ -11,11 +11,11 @@ taobao.alitrip.travel.baseinfo.cities.get
 
 旅行度假新商品发布时可用的扩展接口，用于获取可用的出发地或目的地城市列表。
 */
-func TaobaoAlitripTravelBaseinfoCitiesGet(clt *core.SDKClient, req *travel.TaobaoAlitripTravelBaseinfoCitiesGetRequest, session string) (*travel.TaobaoAlitripTravelBaseinfoCitiesGetResponse, error) {
+func TaobaoAlitripTravelBaseinfoCitiesGet(clt *core.SDKClient, req *travel.TaobaoAlitripTravelBaseinfoCitiesGetRequest, session string) (*travel.TaobaoAlitripTravelBaseinfoCitiesGetAPIResponse, error) {
     var resp travel.TaobaoAlitripTravelBaseinfoCitiesGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

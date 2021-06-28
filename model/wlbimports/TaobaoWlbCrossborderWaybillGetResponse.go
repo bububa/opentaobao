@@ -13,8 +13,22 @@ taobao.wlb.crossborder.waybill.get
 */
 type TaobaoWlbCrossborderWaybillGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbCrossborderWaybillGetResponse `json:"taobao_wlb_crossborder_waybill_get_response,omitempty"`
+    // Response *TaobaoWlbCrossborderWaybillGetResponse `json:"wlb_crossborder_waybill_get_response,omitempty"` 
+    TaobaoWlbCrossborderWaybillGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbCrossborderWaybillGetResponse struct {
+
+    // 系统自动生成
+    
+    Result  *struct {
+        TopResult  *TopResult `json:"top_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbCrossborderWaybillGetResponse struct {
 

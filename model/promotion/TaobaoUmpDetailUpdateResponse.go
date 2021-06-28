@@ -12,8 +12,20 @@ taobao.ump.detail.update
 */
 type TaobaoUmpDetailUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpDetailUpdateResponse `json:"taobao_ump_detail_update_response,omitempty"`
+    // Response *TaobaoUmpDetailUpdateResponse `json:"ump_detail_update_response,omitempty"` 
+    TaobaoUmpDetailUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpDetailUpdateResponse struct {
+
+    // 调用是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpDetailUpdateResponse struct {
 

@@ -11,11 +11,11 @@ alitrip.agent.flight.sell.modify.backfill
 
 销售改签回填
 */
-func AlitripAgentFlightSellModifyBackfill(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyBackfillRequest, session string) (*flight.AlitripAgentFlightSellModifyBackfillResponse, error) {
+func AlitripAgentFlightSellModifyBackfill(clt *core.SDKClient, req *flight.AlitripAgentFlightSellModifyBackfillRequest, session string) (*flight.AlitripAgentFlightSellModifyBackfillAPIResponse, error) {
     var resp flight.AlitripAgentFlightSellModifyBackfillAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

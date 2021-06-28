@@ -12,8 +12,22 @@ alitrip.ticket.scenic.bind
 */
 type AlitripTicketScenicBindAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTicketScenicBindResponse `json:"alitrip_ticket_scenic_bind_response,omitempty"`
+    // Response *AlitripTicketScenicBindResponse `json:"alitrip_ticket_scenic_bind_response,omitempty"` 
+    AlitripTicketScenicBindResponse
 }
+
+/* model for simplify = false
+type AlitripTicketScenicBindResponse struct {
+
+    // 景点绑定结果
+    
+    FirstResult  *struct {
+        TicketScenicResult  *TicketScenicResult `json:"ticket_scenic_result,omitempty"`
+    } `json:"first_result,omitempty"`
+    
+
+}
+*/
 
 type AlitripTicketScenicBindResponse struct {
 

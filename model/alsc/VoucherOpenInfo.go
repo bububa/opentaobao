@@ -1,6 +1,121 @@
 package alsc
 
 // VoucherOpenInfo 
+/* model for simplify = false
+type VoucherOpenInfo struct {
+
+    // 面额
+    
+    Amount   int64 `json:"amount,omitempty"`
+    
+
+    // 失效时间
+    
+    EndTime   string `json:"end_time,omitempty"`
+    
+
+    // 满足金额阀值，单位：分
+    
+    StartFee   int64 `json:"start_fee,omitempty"`
+    
+
+    // 券开始时间
+    
+    StartTime   string `json:"start_time,omitempty"`
+    
+
+    // 状态
+    
+    Status   string `json:"status,omitempty"`
+    
+
+    // 券名称
+    
+    Title   string `json:"title,omitempty"`
+    
+
+    // 券实例id
+    
+    VoucherId   string `json:"voucher_id,omitempty"`
+    
+
+    // 券模板id
+    
+    VoucherTemplateId   string `json:"voucher_template_id,omitempty"`
+    
+
+    // 优惠券类型，CASH：代金券，DISCOUNT：折扣券，GIFT：礼品券
+    
+    VoucherType   string `json:"voucher_type,omitempty"`
+    
+
+    // 折扣率
+    
+    DiscountRate   string `json:"discount_rate,omitempty"`
+    
+
+    // 商品id列表
+    
+    ItemIdList  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"item_id_list,omitempty"`
+    
+
+    // 门店id列表
+    
+    ShopIdList  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"shop_id_list,omitempty"`
+    
+
+    // 每人限领，-1代表不限
+    
+    UserLimit   int64 `json:"user_limit,omitempty"`
+    
+
+    // 适用商品范围 值：ALL，PART_AVAILABLE，PART_UNAVAILABLE * 说明：全部商品可用，部分商品可用，部分商品不可用
+    
+    ItemCoverage   string `json:"item_coverage,omitempty"`
+    
+
+    // 适用商品范围 值：ALL，PART_AVAILABLE * 说明：全部门店可用，部分门店可用
+    
+    ShopCoverage   string `json:"shop_coverage,omitempty"`
+    
+
+    // {\"type\":0,\"settings\":[{\"dayStartTime\":\"00:00\",\"dayEndTime\":\"23:59\",\"week\":[]}]} type:0不限制，1限制 dayStartTime:开始时间 dayEndTime:结束时间 week:1,2,3,4,5,6,7
+    
+    AvailableTime   string `json:"available_time,omitempty"`
+    
+
+    // 商品信息
+    
+    ItemInfoList  struct {
+        VoucherItemInfo  []VoucherItemInfo `json:"voucher_item_info,omitempty"`
+    } `json:"item_info_list,omitempty"`
+    
+
+    // 门店信息
+    
+    ShopInfoList  struct {
+        VoucherShopInfo  []VoucherShopInfo `json:"voucher_shop_info,omitempty"`
+    } `json:"shop_info_list,omitempty"`
+    
+
+    // 扩展字段,包含了礼品券的信息
+    
+    ExtInfo   string `json:"ext_info,omitempty"`
+    
+
+    // DINE_IN堂食，TAKE_OUT外卖
+    
+    UseCondition   string `json:"use_condition,omitempty"`
+    
+
+}
+*/
+
+// VoucherOpenInfo 
 type VoucherOpenInfo struct {
 
     // 面额
@@ -34,10 +149,10 @@ type VoucherOpenInfo struct {
     DiscountRate   string `json:"discount_rate,omitempty"`
 
     // 商品id列表
-    ItemIdList   []String `json:"item_id_list,omitempty"`
+    ItemIdList   []string `json:"item_id_list,omitempty"`
 
     // 门店id列表
-    ShopIdList   []String `json:"shop_id_list,omitempty"`
+    ShopIdList   []string `json:"shop_id_list,omitempty"`
 
     // 每人限领，-1代表不限
     UserLimit   int64 `json:"user_limit,omitempty"`

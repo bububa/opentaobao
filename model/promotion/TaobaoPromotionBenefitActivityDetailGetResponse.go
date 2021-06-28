@@ -12,8 +12,25 @@ taobao.promotion.benefit.activity.detail.get
 */
 type TaobaoPromotionBenefitActivityDetailGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionBenefitActivityDetailGetResponse `json:"taobao_promotion_benefit_activity_detail_get_response,omitempty"`
+    // Response *TaobaoPromotionBenefitActivityDetailGetResponse `json:"promotion_benefit_activity_detail_get_response,omitempty"` 
+    TaobaoPromotionBenefitActivityDetailGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionBenefitActivityDetailGetResponse struct {
+
+    // 查询是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 活动关联的权益详情列表
+    
+    RelationBenefitDetails   string `json:"relation_benefit_details,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionBenefitActivityDetailGetResponse struct {
 

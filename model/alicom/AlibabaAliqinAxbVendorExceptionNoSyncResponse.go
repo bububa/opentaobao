@@ -12,8 +12,22 @@ alibaba.aliqin.axb.vendor.exception.no.sync
 */
 type AlibabaAliqinAxbVendorExceptionNoSyncAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinAxbVendorExceptionNoSyncResponse `json:"alibaba_aliqin_axb_vendor_exception_no_sync_response,omitempty"`
+    // Response *AlibabaAliqinAxbVendorExceptionNoSyncResponse `json:"alibaba_aliqin_axb_vendor_exception_no_sync_response,omitempty"` 
+    AlibabaAliqinAxbVendorExceptionNoSyncResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinAxbVendorExceptionNoSyncResponse struct {
+
+    // result
+    
+    Result  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinAxbVendorExceptionNoSyncResponse struct {
 

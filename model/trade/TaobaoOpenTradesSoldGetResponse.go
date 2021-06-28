@@ -15,8 +15,32 @@ taobao.open.trades.sold.get
 */
 type TaobaoOpenTradesSoldGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenTradesSoldGetResponse `json:"taobao_open_trades_sold_get_response,omitempty"`
+    // Response *TaobaoOpenTradesSoldGetResponse `json:"open_trades_sold_get_response,omitempty"` 
+    TaobaoOpenTradesSoldGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenTradesSoldGetResponse struct {
+
+    // 搜索到的交易信息总数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 是否存在下一页
+    
+    HasNext   bool `json:"has_next,omitempty"`
+    
+
+    // 搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息
+    
+    Trades  struct {
+        Trade  []Trade `json:"trade,omitempty"`
+    } `json:"trades,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenTradesSoldGetResponse struct {
 

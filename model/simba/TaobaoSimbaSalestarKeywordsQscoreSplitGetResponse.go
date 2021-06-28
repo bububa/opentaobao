@@ -12,8 +12,22 @@ taobao.simba.salestar.keywords.qscore.split.get
 */
 type TaobaoSimbaSalestarKeywordsQscoreSplitGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaSalestarKeywordsQscoreSplitGetResponse `json:"taobao_simba_salestar_keywords_qscore_split_get_response,omitempty"`
+    // Response *TaobaoSimbaSalestarKeywordsQscoreSplitGetResponse `json:"simba_salestar_keywords_qscore_split_get_response,omitempty"` 
+    TaobaoSimbaSalestarKeywordsQscoreSplitGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaSalestarKeywordsQscoreSplitGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoSimbaSalestarKeywordsQscoreSplitGetResultDto  *TaobaoSimbaSalestarKeywordsQscoreSplitGetResultDto `json:"taobao_simba_salestar_keywords_qscore_split_get_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaSalestarKeywordsQscoreSplitGetResponse struct {
 

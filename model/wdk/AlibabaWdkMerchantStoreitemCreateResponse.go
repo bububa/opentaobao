@@ -12,8 +12,30 @@ alibaba.wdk.merchant.storeitem.create
 */
 type AlibabaWdkMerchantStoreitemCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMerchantStoreitemCreateResponse `json:"alibaba_wdk_merchant_storeitem_create_response,omitempty"`
+    // Response *AlibabaWdkMerchantStoreitemCreateResponse `json:"alibaba_wdk_merchant_storeitem_create_response,omitempty"` 
+    AlibabaWdkMerchantStoreitemCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMerchantStoreitemCreateResponse struct {
+
+    // success
+    
+    Suc   bool `json:"suc,omitempty"`
+    
+
+    // errorCode
+    
+    Errorcode   string `json:"errorcode,omitempty"`
+    
+
+    // errorDesc
+    
+    Errordesc   string `json:"errordesc,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMerchantStoreitemCreateResponse struct {
 

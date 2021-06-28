@@ -12,8 +12,20 @@ tmall.mei.crm.callback.point.change
 */
 type TmallMeiCrmCallbackPointChangeAPIResponse struct {
     model.CommonResponse
-    Response *TmallMeiCrmCallbackPointChangeResponse `json:"tmall_mei_crm_callback_point_change_response,omitempty"`
+    // Response *TmallMeiCrmCallbackPointChangeResponse `json:"tmall_mei_crm_callback_point_change_response,omitempty"` 
+    TmallMeiCrmCallbackPointChangeResponse
 }
+
+/* model for simplify = false
+type TmallMeiCrmCallbackPointChangeResponse struct {
+
+    // 是否成功
+    
+    ResultSuccess   bool `json:"result_success,omitempty"`
+    
+
+}
+*/
 
 type TmallMeiCrmCallbackPointChangeResponse struct {
 

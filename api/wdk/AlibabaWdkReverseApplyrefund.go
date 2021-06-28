@@ -11,11 +11,11 @@ alibaba.wdk.reverse.applyrefund
 
 逆向渲染
 */
-func AlibabaWdkReverseApplyrefund(clt *core.SDKClient, req *wdk.AlibabaWdkReverseApplyrefundRequest, session string) (*wdk.AlibabaWdkReverseApplyrefundResponse, error) {
+func AlibabaWdkReverseApplyrefund(clt *core.SDKClient, req *wdk.AlibabaWdkReverseApplyrefundRequest, session string) (*wdk.AlibabaWdkReverseApplyrefundAPIResponse, error) {
     var resp wdk.AlibabaWdkReverseApplyrefundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

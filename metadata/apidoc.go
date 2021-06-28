@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"log"
 	"strings"
+
+	"github.com/bububa/opentaobao/metadata/util"
 )
 
 type ApiParamType = string
@@ -56,10 +58,12 @@ func (d ApiDoc) Title() string {
 }
 
 func (d ApiDoc) ApiTpl() ApiTpl {
+	snakeName := strings.ReplaceAll(d.Name, ".", "_")
 	tpl := ApiTpl{
 		Name:           d.Title(),
 		ApiName:        d.Name,
-		SnakeName:      strings.ReplaceAll(d.Name, ".", "_"),
+		SnakeName:      snakeName,
+		ResponseKey:    fmt.Sprintf("%s_response", strings.TrimPrefix(snakeName, "taobao_")),
 		ChineseName:    d.ChineseName,
 		Desc:           d.Description,
 		RequestParams:  make([]TplParam, len(d.RequestParams)),
@@ -119,8 +123,11 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 	case JSON_PARAM_TYPE:
 		param.Type = "string"
 	default:
+		param.ObjType = paramType
+		param.SnakeType = util.SnakeCase(paramType)
 		if strings.HasSuffix(p.Type, "[]") {
 			param.Type = fmt.Sprintf("[]%s", paramType)
+			param.IsList = true
 		} else {
 			param.Type = fmt.Sprintf("*%s", paramType)
 		}
@@ -134,10 +141,13 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 		param.IsObject = true
 	}
 	if p.Type != BYTES_PARAM_TYPE && strings.HasSuffix(p.Type, "[]") && !strings.HasPrefix(param.Type, "[]") {
-		param.Type = fmt.Sprintf("[]%s", paramType)
+		param.ObjType = paramType
+		param.SnakeType = param.Type
+		param.Type = fmt.Sprintf("[]%s", param.Type)
+		param.IsList = true
 	}
 	if p.UsePointer && !strings.HasPrefix(param.Name, "*") {
-		param.Type = fmt.Sprintf("*%s", paramType)
+		param.Type = fmt.Sprintf("*%s", param.Type)
 	}
 	return param
 }

@@ -12,8 +12,20 @@ taobao.place.store.tags.update
 */
 type TaobaoPlaceStoreTagsUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPlaceStoreTagsUpdateResponse `json:"taobao_place_store_tags_update_response,omitempty"`
+    // Response *TaobaoPlaceStoreTagsUpdateResponse `json:"place_store_tags_update_response,omitempty"` 
+    TaobaoPlaceStoreTagsUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoPlaceStoreTagsUpdateResponse struct {
+
+    // 返回结果：true成功；false失败
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPlaceStoreTagsUpdateResponse struct {
 

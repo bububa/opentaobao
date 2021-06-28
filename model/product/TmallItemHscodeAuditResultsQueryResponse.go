@@ -12,8 +12,22 @@ tmall.item.hscode.audit.results.query
 */
 type TmallItemHscodeAuditResultsQueryAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemHscodeAuditResultsQueryResponse `json:"tmall_item_hscode_audit_results_query_response,omitempty"`
+    // Response *TmallItemHscodeAuditResultsQueryResponse `json:"tmall_item_hscode_audit_results_query_response,omitempty"` 
+    TmallItemHscodeAuditResultsQueryResponse
 }
+
+/* model for simplify = false
+type TmallItemHscodeAuditResultsQueryResponse struct {
+
+    // 商品或sku的hscode信息审核状态。
+    
+    ResultList  struct {
+        HscodeAuditInfo  []HscodeAuditInfo `json:"hscode_audit_info,omitempty"`
+    } `json:"result_list,omitempty"`
+    
+
+}
+*/
 
 type TmallItemHscodeAuditResultsQueryResponse struct {
 

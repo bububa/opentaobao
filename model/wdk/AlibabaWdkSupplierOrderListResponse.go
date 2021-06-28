@@ -12,8 +12,22 @@ alibaba.wdk.supplier.order.list
 */
 type AlibabaWdkSupplierOrderListAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkSupplierOrderListResponse `json:"alibaba_wdk_supplier_order_list_response,omitempty"`
+    // Response *AlibabaWdkSupplierOrderListResponse `json:"alibaba_wdk_supplier_order_list_response,omitempty"` 
+    AlibabaWdkSupplierOrderListResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkSupplierOrderListResponse struct {
+
+    // result
+    
+    Result  *struct {
+        OrderListSyncPagedResult  *OrderListSyncPagedResult `json:"order_list_sync_paged_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkSupplierOrderListResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.ascp.cnsku.update
 
 供应链中台货品修改接口
 */
-func AlibabaAscpCnskuUpdate(clt *core.SDKClient, req *fenxiao.AlibabaAscpCnskuUpdateRequest, session string) (*fenxiao.AlibabaAscpCnskuUpdateResponse, error) {
+func AlibabaAscpCnskuUpdate(clt *core.SDKClient, req *fenxiao.AlibabaAscpCnskuUpdateRequest, session string) (*fenxiao.AlibabaAscpCnskuUpdateAPIResponse, error) {
     var resp fenxiao.AlibabaAscpCnskuUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

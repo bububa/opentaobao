@@ -11,11 +11,11 @@ taobao.simba.adgroup.mobilediscount.update
 
 对推广组进行单独移动溢价
 */
-func TaobaoSimbaAdgroupMobilediscountUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupMobilediscountUpdateRequest, session string) (*simba.TaobaoSimbaAdgroupMobilediscountUpdateResponse, error) {
+func TaobaoSimbaAdgroupMobilediscountUpdate(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupMobilediscountUpdateRequest, session string) (*simba.TaobaoSimbaAdgroupMobilediscountUpdateAPIResponse, error) {
     var resp simba.TaobaoSimbaAdgroupMobilediscountUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

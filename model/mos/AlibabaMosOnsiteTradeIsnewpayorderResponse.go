@@ -12,8 +12,22 @@ alibaba.mos.onsite.trade.isnewpayorder
 */
 type AlibabaMosOnsiteTradeIsnewpayorderAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosOnsiteTradeIsnewpayorderResponse `json:"alibaba_mos_onsite_trade_isnewpayorder_response,omitempty"`
+    // Response *AlibabaMosOnsiteTradeIsnewpayorderResponse `json:"alibaba_mos_onsite_trade_isnewpayorder_response,omitempty"` 
+    AlibabaMosOnsiteTradeIsnewpayorderResponse
 }
+
+/* model for simplify = false
+type AlibabaMosOnsiteTradeIsnewpayorderResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaMosOnsiteTradeIsnewpayorderResultDo  *AlibabaMosOnsiteTradeIsnewpayorderResultDo `json:"alibaba_mos_onsite_trade_isnewpayorder_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosOnsiteTradeIsnewpayorderResponse struct {
 

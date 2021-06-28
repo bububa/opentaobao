@@ -12,8 +12,22 @@ taobao.simba.report.city.get
 */
 type TaobaoSimbaReportCityGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaReportCityGetResponse `json:"taobao_simba_report_city_get_response,omitempty"`
+    // Response *TaobaoSimbaReportCityGetResponse `json:"simba_report_city_get_response,omitempty"` 
+    TaobaoSimbaReportCityGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaReportCityGetResponse struct {
+
+    // 11
+    
+    Results  *struct {
+        RtRptResultEntityDTO  *RtRptResultEntityDTO `json:"rt_rpt_result_entity_dto,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaReportCityGetResponse struct {
 

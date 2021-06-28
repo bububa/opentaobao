@@ -12,8 +12,22 @@ alitrip.hotel.detail.info.get
 */
 type AlitripHotelDetailInfoGetAPIResponse struct {
     model.CommonResponse
-    Response *AlitripHotelDetailInfoGetResponse `json:"alitrip_hotel_detail_info_get_response,omitempty"`
+    // Response *AlitripHotelDetailInfoGetResponse `json:"alitrip_hotel_detail_info_get_response,omitempty"` 
+    AlitripHotelDetailInfoGetResponse
 }
+
+/* model for simplify = false
+type AlitripHotelDetailInfoGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlitripHotelDetailInfoGetResult  *AlitripHotelDetailInfoGetResult `json:"alitrip_hotel_detail_info_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlitripHotelDetailInfoGetResponse struct {
 

@@ -11,11 +11,11 @@ taobao.qimen.events.produce
 
 批量发送消息
 */
-func TaobaoQimenEventsProduce(clt *core.SDKClient, req *util.TaobaoQimenEventsProduceRequest, session string) (*util.TaobaoQimenEventsProduceResponse, error) {
+func TaobaoQimenEventsProduce(clt *core.SDKClient, req *util.TaobaoQimenEventsProduceRequest, session string) (*util.TaobaoQimenEventsProduceAPIResponse, error) {
     var resp util.TaobaoQimenEventsProduceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

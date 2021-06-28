@@ -12,8 +12,22 @@ taobao.ump.promotion.get
 */
 type TaobaoUmpPromotionGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpPromotionGetResponse `json:"taobao_ump_promotion_get_response,omitempty"`
+    // Response *TaobaoUmpPromotionGetResponse `json:"ump_promotion_get_response,omitempty"` 
+    TaobaoUmpPromotionGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpPromotionGetResponse struct {
+
+    // 优惠详细信息
+    
+    Promotions  *struct {
+        PromotionDisplayTop  *PromotionDisplayTop `json:"promotion_display_top,omitempty"`
+    } `json:"promotions,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpPromotionGetResponse struct {
 

@@ -12,8 +12,20 @@ alibaba.item.operate.delete
 */
 type AlibabaItemOperateDeleteAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaItemOperateDeleteResponse `json:"alibaba_item_operate_delete_response,omitempty"`
+    // Response *AlibabaItemOperateDeleteResponse `json:"alibaba_item_operate_delete_response,omitempty"` 
+    AlibabaItemOperateDeleteResponse
 }
+
+/* model for simplify = false
+type AlibabaItemOperateDeleteResponse struct {
+
+    // 商品删除是否成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaItemOperateDeleteResponse struct {
 

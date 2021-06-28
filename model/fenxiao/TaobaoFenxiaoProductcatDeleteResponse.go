@@ -12,8 +12,20 @@ taobao.fenxiao.productcat.delete
 */
 type TaobaoFenxiaoProductcatDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductcatDeleteResponse `json:"taobao_fenxiao_productcat_delete_response,omitempty"`
+    // Response *TaobaoFenxiaoProductcatDeleteResponse `json:"fenxiao_productcat_delete_response,omitempty"` 
+    TaobaoFenxiaoProductcatDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductcatDeleteResponse struct {
+
+    // 操作是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoProductcatDeleteResponse struct {
 

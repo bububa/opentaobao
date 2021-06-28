@@ -11,11 +11,11 @@ alibaba.interact.sensor.gyro
 
 客户端陀螺仪
 */
-func AlibabaInteractSensorGyro(clt *core.SDKClient, req *interact.AlibabaInteractSensorGyroRequest, session string) (*interact.AlibabaInteractSensorGyroResponse, error) {
+func AlibabaInteractSensorGyro(clt *core.SDKClient, req *interact.AlibabaInteractSensorGyroRequest, session string) (*interact.AlibabaInteractSensorGyroAPIResponse, error) {
     var resp interact.AlibabaInteractSensorGyroAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

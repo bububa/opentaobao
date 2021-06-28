@@ -12,8 +12,20 @@ alibaba.scbp.ad.keyword.delete.keyword.batch
 */
 type AlibabaScbpAdKeywordDeleteKeywordBatchAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdKeywordDeleteKeywordBatchResponse `json:"alibaba_scbp_ad_keyword_delete_keyword_batch_response,omitempty"`
+    // Response *AlibabaScbpAdKeywordDeleteKeywordBatchResponse `json:"alibaba_scbp_ad_keyword_delete_keyword_batch_response,omitempty"` 
+    AlibabaScbpAdKeywordDeleteKeywordBatchResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdKeywordDeleteKeywordBatchResponse struct {
+
+    // 返回结果
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdKeywordDeleteKeywordBatchResponse struct {
 

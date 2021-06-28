@@ -11,11 +11,11 @@ alibaba.cuntao.interact.requisition.get
 
 供应商获取物料申请单列表
 */
-func AlibabaCuntaoInteractRequisitionGet(clt *core.SDKClient, req *util.AlibabaCuntaoInteractRequisitionGetRequest, session string) (*util.AlibabaCuntaoInteractRequisitionGetResponse, error) {
+func AlibabaCuntaoInteractRequisitionGet(clt *core.SDKClient, req *util.AlibabaCuntaoInteractRequisitionGetRequest, session string) (*util.AlibabaCuntaoInteractRequisitionGetAPIResponse, error) {
     var resp util.AlibabaCuntaoInteractRequisitionGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,20 @@ taobao.fuwu.purchase.order.confirm
 */
 type TaobaoFuwuPurchaseOrderConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFuwuPurchaseOrderConfirmResponse `json:"taobao_fuwu_purchase_order_confirm_response,omitempty"`
+    // Response *TaobaoFuwuPurchaseOrderConfirmResponse `json:"fuwu_purchase_order_confirm_response,omitempty"` 
+    TaobaoFuwuPurchaseOrderConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoFuwuPurchaseOrderConfirmResponse struct {
+
+    // 下单页面url
+    
+    Url   string `json:"url,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFuwuPurchaseOrderConfirmResponse struct {
 

@@ -13,8 +13,22 @@ alibaba.mos.onsite.trade.query
 */
 type AlibabaMosOnsiteTradeQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosOnsiteTradeQueryResponse `json:"alibaba_mos_onsite_trade_query_response,omitempty"`
+    // Response *AlibabaMosOnsiteTradeQueryResponse `json:"alibaba_mos_onsite_trade_query_response,omitempty"` 
+    AlibabaMosOnsiteTradeQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaMosOnsiteTradeQueryResponse struct {
+
+    // 查询结果对象。必然返回
+    
+    OnsiteTradeQueryResponse  *struct {
+        OnsiteTradeQueryResponse  *OnsiteTradeQueryResponse `json:"onsite_trade_query_response,omitempty"`
+    } `json:"onsite_trade_query_response,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosOnsiteTradeQueryResponse struct {
 

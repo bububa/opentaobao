@@ -12,8 +12,20 @@ taobao.region.price.manage
 */
 type TaobaoRegionPriceManageAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRegionPriceManageResponse `json:"taobao_region_price_manage_response,omitempty"`
+    // Response *TaobaoRegionPriceManageResponse `json:"region_price_manage_response,omitempty"` 
+    TaobaoRegionPriceManageResponse
 }
+
+/* model for simplify = false
+type TaobaoRegionPriceManageResponse struct {
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRegionPriceManageResponse struct {
 

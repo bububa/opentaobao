@@ -12,8 +12,22 @@ alibaba.alsc.crm.open.assert.verify
 */
 type AlibabaAlscCrmOpenAssertVerifyAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmOpenAssertVerifyResponse `json:"alibaba_alsc_crm_open_assert_verify_response,omitempty"`
+    // Response *AlibabaAlscCrmOpenAssertVerifyResponse `json:"alibaba_alsc_crm_open_assert_verify_response,omitempty"` 
+    AlibabaAlscCrmOpenAssertVerifyResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmOpenAssertVerifyResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmOpenAssertVerifyResponse struct {
 

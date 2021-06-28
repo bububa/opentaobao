@@ -15,11 +15,11 @@ taobao.wireless.video.check
 
 目前，该接口仅支持顽兔空间的视频扫描。
 */
-func TaobaoWirelessVideoCheck(clt *core.SDKClient, req *util.TaobaoWirelessVideoCheckRequest, session string) (*util.TaobaoWirelessVideoCheckResponse, error) {
+func TaobaoWirelessVideoCheck(clt *core.SDKClient, req *util.TaobaoWirelessVideoCheckRequest, session string) (*util.TaobaoWirelessVideoCheckAPIResponse, error) {
     var resp util.TaobaoWirelessVideoCheckAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

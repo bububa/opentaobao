@@ -12,8 +12,20 @@ taobao.tmc.messages.confirm
 */
 type TaobaoTmcMessagesConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcMessagesConfirmResponse `json:"taobao_tmc_messages_confirm_response,omitempty"`
+    // Response *TaobaoTmcMessagesConfirmResponse `json:"tmc_messages_confirm_response,omitempty"` 
+    TaobaoTmcMessagesConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcMessagesConfirmResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcMessagesConfirmResponse struct {
 

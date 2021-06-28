@@ -12,8 +12,22 @@ taobao.qimen.singleitem.query
 */
 type TaobaoQimenSingleitemQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenSingleitemQueryResponse `json:"taobao_qimen_singleitem_query_response,omitempty"`
+    // Response *TaobaoQimenSingleitemQueryResponse `json:"qimen_singleitem_query_response,omitempty"` 
+    TaobaoQimenSingleitemQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenSingleitemQueryResponse struct {
+
+    // 
+    
+    Response  *struct {
+        ResponseDO  *ResponseDO `json:"response_do,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenSingleitemQueryResponse struct {
 

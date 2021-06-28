@@ -12,8 +12,22 @@ tmall.mei.crm.member.getbypaycode
 */
 type TmallMeiCrmMemberGetbypaycodeAPIResponse struct {
     model.CommonResponse
-    Response *TmallMeiCrmMemberGetbypaycodeResponse `json:"tmall_mei_crm_member_getbypaycode_response,omitempty"`
+    // Response *TmallMeiCrmMemberGetbypaycodeResponse `json:"tmall_mei_crm_member_getbypaycode_response,omitempty"` 
+    TmallMeiCrmMemberGetbypaycodeResponse
 }
+
+/* model for simplify = false
+type TmallMeiCrmMemberGetbypaycodeResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultDTO  *ResultDTO `json:"result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallMeiCrmMemberGetbypaycodeResponse struct {
 

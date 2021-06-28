@@ -12,8 +12,20 @@ taobao.delivery.template.delete
 */
 type TaobaoDeliveryTemplateDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoDeliveryTemplateDeleteResponse `json:"taobao_delivery_template_delete_response,omitempty"`
+    // Response *TaobaoDeliveryTemplateDeleteResponse `json:"delivery_template_delete_response,omitempty"` 
+    TaobaoDeliveryTemplateDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoDeliveryTemplateDeleteResponse struct {
+
+    // 表示删除成功还是失败
+    
+    Complete   bool `json:"complete,omitempty"`
+    
+
+}
+*/
 
 type TaobaoDeliveryTemplateDeleteResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.latour.strategy.issue
 
 阿里巴巴权益平台权益发放接口
 */
-func AlibabaLatourStrategyIssue(clt *core.SDKClient, req *promotion.AlibabaLatourStrategyIssueRequest, session string) (*promotion.AlibabaLatourStrategyIssueResponse, error) {
+func AlibabaLatourStrategyIssue(clt *core.SDKClient, req *promotion.AlibabaLatourStrategyIssueRequest, session string) (*promotion.AlibabaLatourStrategyIssueAPIResponse, error) {
     var resp promotion.AlibabaLatourStrategyIssueAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

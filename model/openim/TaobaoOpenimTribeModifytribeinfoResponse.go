@@ -12,8 +12,20 @@ OPENIM群信息修改
 */
 type TaobaoOpenimTribeModifytribeinfoAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribeModifytribeinfoResponse `json:"taobao_openim_tribe_modifytribeinfo_response,omitempty"`
+    // Response *TaobaoOpenimTribeModifytribeinfoResponse `json:"openim_tribe_modifytribeinfo_response,omitempty"` 
+    TaobaoOpenimTribeModifytribeinfoResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribeModifytribeinfoResponse struct {
+
+    // 群服务code
+    
+    TribeCode   int64 `json:"tribe_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribeModifytribeinfoResponse struct {
 

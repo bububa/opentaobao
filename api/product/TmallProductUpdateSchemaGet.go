@@ -11,11 +11,11 @@ tmall.product.update.schema.get
 
 获取用户更新产品的规则
 */
-func TmallProductUpdateSchemaGet(clt *core.SDKClient, req *product.TmallProductUpdateSchemaGetRequest, session string) (*product.TmallProductUpdateSchemaGetResponse, error) {
+func TmallProductUpdateSchemaGet(clt *core.SDKClient, req *product.TmallProductUpdateSchemaGetRequest, session string) (*product.TmallProductUpdateSchemaGetAPIResponse, error) {
     var resp product.TmallProductUpdateSchemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

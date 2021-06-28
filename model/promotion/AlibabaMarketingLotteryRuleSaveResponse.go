@@ -12,8 +12,35 @@ alibaba.marketing.lottery.rule.save
 */
 type AlibabaMarketingLotteryRuleSaveAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMarketingLotteryRuleSaveResponse `json:"alibaba_marketing_lottery_rule_save_response,omitempty"`
+    // Response *AlibabaMarketingLotteryRuleSaveResponse `json:"alibaba_marketing_lottery_rule_save_response,omitempty"` 
+    AlibabaMarketingLotteryRuleSaveResponse
 }
+
+/* model for simplify = false
+type AlibabaMarketingLotteryRuleSaveResponse struct {
+
+    // 保存成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+    // code
+    
+    MsgCode   int64 `json:"msg_code,omitempty"`
+    
+
+    // 接口调用成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // msg
+    
+    MsgInfo   string `json:"msg_info,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMarketingLotteryRuleSaveResponse struct {
 

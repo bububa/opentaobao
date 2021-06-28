@@ -11,11 +11,11 @@ alibaba.scbp.ad.group.create.forbidden.product
 
 创建屏蔽品
 */
-func AlibabaScbpAdGroupCreateForbiddenProduct(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupCreateForbiddenProductRequest, session string) (*scbp.AlibabaScbpAdGroupCreateForbiddenProductResponse, error) {
+func AlibabaScbpAdGroupCreateForbiddenProduct(clt *core.SDKClient, req *scbp.AlibabaScbpAdGroupCreateForbiddenProductRequest, session string) (*scbp.AlibabaScbpAdGroupCreateForbiddenProductAPIResponse, error) {
     var resp scbp.AlibabaScbpAdGroupCreateForbiddenProductAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

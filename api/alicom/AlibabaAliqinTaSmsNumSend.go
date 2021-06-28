@@ -11,11 +11,11 @@ alibaba.aliqin.ta.sms.num.send
 
 短信发送
 */
-func AlibabaAliqinTaSmsNumSend(clt *core.SDKClient, req *alicom.AlibabaAliqinTaSmsNumSendRequest, session string) (*alicom.AlibabaAliqinTaSmsNumSendResponse, error) {
+func AlibabaAliqinTaSmsNumSend(clt *core.SDKClient, req *alicom.AlibabaAliqinTaSmsNumSendRequest, session string) (*alicom.AlibabaAliqinTaSmsNumSendAPIResponse, error) {
     var resp alicom.AlibabaAliqinTaSmsNumSendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

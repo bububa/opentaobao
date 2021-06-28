@@ -12,12 +12,26 @@ taobao.openim.users.delete
 */
 type TaobaoOpenimUsersDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimUsersDeleteResponse `json:"taobao_openim_users_delete_response,omitempty"`
+    // Response *TaobaoOpenimUsersDeleteResponse `json:"openim_users_delete_response,omitempty"` 
+    TaobaoOpenimUsersDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimUsersDeleteResponse struct {
+
+    // 操作成功
+    
+    Result  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimUsersDeleteResponse struct {
 
     // 操作成功
-    Result   []String `json:"result,omitempty"`
+    Result   []string `json:"result,omitempty"`
 
 }

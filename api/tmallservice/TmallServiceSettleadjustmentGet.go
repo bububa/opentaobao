@@ -11,11 +11,11 @@ tmall.service.settleadjustment.get
 
 提供给服务商通过结算调整单id获取结算调整单信息
 */
-func TmallServiceSettleadjustmentGet(clt *core.SDKClient, req *tmallservice.TmallServiceSettleadjustmentGetRequest, session string) (*tmallservice.TmallServiceSettleadjustmentGetResponse, error) {
+func TmallServiceSettleadjustmentGet(clt *core.SDKClient, req *tmallservice.TmallServiceSettleadjustmentGetRequest, session string) (*tmallservice.TmallServiceSettleadjustmentGetAPIResponse, error) {
     var resp tmallservice.TmallServiceSettleadjustmentGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

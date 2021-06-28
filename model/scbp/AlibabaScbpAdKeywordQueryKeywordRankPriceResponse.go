@@ -12,8 +12,22 @@ alibaba.scbp.ad.keyword.query.keyword.rank.price
 */
 type AlibabaScbpAdKeywordQueryKeywordRankPriceAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdKeywordQueryKeywordRankPriceResponse `json:"alibaba_scbp_ad_keyword_query_keyword_rank_price_response,omitempty"`
+    // Response *AlibabaScbpAdKeywordQueryKeywordRankPriceResponse `json:"alibaba_scbp_ad_keyword_query_keyword_rank_price_response,omitempty"` 
+    AlibabaScbpAdKeywordQueryKeywordRankPriceResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdKeywordQueryKeywordRankPriceResponse struct {
+
+    // 返回参数
+    
+    Result  *struct {
+        KeywordRankPriceDto  *KeywordRankPriceDto `json:"keyword_rank_price_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdKeywordQueryKeywordRankPriceResponse struct {
 

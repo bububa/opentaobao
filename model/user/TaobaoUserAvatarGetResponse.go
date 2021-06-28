@@ -12,8 +12,20 @@ taobao.user.avatar.get
 */
 type TaobaoUserAvatarGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUserAvatarGetResponse `json:"taobao_user_avatar_get_response,omitempty"`
+    // Response *TaobaoUserAvatarGetResponse `json:"user_avatar_get_response,omitempty"` 
+    TaobaoUserAvatarGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUserAvatarGetResponse struct {
+
+    // 用户头像地址
+    
+    Avatar   string `json:"avatar,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUserAvatarGetResponse struct {
 

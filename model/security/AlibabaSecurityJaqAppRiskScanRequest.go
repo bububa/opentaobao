@@ -19,7 +19,7 @@ type AlibabaSecurityJaqAppRiskScanRequest struct {
     appInfo   *ScanAppInfo 
 
     // 扫描类型：vuln-漏洞扫描 malware-恶意代码检测 fake-仿冒监测 plugin-插件扫描 注: dataType为2时 不支持 仿冒监测
-    scanTypes   []String 
+    scanTypes   []string 
 
     // 额外的信息，根据具体业务定
     extParam   string 
@@ -55,13 +55,13 @@ func (r AlibabaSecurityJaqAppRiskScanRequest) GetAppInfo() *ScanAppInfo {
     return r.appInfo
 }
 
-func (r *AlibabaSecurityJaqAppRiskScanRequest) SetScanTypes(scanTypes []String) error {
+func (r *AlibabaSecurityJaqAppRiskScanRequest) SetScanTypes(scanTypes []string) error {
     r.scanTypes = scanTypes
     r.Set("scan_types", scanTypes)
     return nil
 }
 
-func (r AlibabaSecurityJaqAppRiskScanRequest) GetScanTypes() []String {
+func (r AlibabaSecurityJaqAppRiskScanRequest) GetScanTypes() []string {
     return r.scanTypes
 }
 

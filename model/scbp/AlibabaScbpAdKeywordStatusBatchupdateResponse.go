@@ -12,8 +12,22 @@ alibaba.scbp.ad.keyword.status.batchupdate
 */
 type AlibabaScbpAdKeywordStatusBatchupdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdKeywordStatusBatchupdateResponse `json:"alibaba_scbp_ad_keyword_status_batchupdate_response,omitempty"`
+    // Response *AlibabaScbpAdKeywordStatusBatchupdateResponse `json:"alibaba_scbp_ad_keyword_status_batchupdate_response,omitempty"` 
+    AlibabaScbpAdKeywordStatusBatchupdateResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdKeywordStatusBatchupdateResponse struct {
+
+    // 修改失败关键词列表
+    
+    KeywordErrorResultList  struct {
+        KeywordErrorResultDto  []KeywordErrorResultDto `json:"keyword_error_result_dto,omitempty"`
+    } `json:"keyword_error_result_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdKeywordStatusBatchupdateResponse struct {
 

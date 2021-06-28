@@ -11,11 +11,11 @@ taobao.interactive.list.getbyuser
 
 根据用户来获取用户编辑的互动列表
 */
-func TaobaoInteractiveListGetbyuser(clt *core.SDKClient, req *media.TaobaoInteractiveListGetbyuserRequest, session string) (*media.TaobaoInteractiveListGetbyuserResponse, error) {
+func TaobaoInteractiveListGetbyuser(clt *core.SDKClient, req *media.TaobaoInteractiveListGetbyuserRequest, session string) (*media.TaobaoInteractiveListGetbyuserAPIResponse, error) {
     var resp media.TaobaoInteractiveListGetbyuserAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

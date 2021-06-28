@@ -12,8 +12,22 @@ taobao.bus.lastplace.get
 */
 type TaobaoBusLastplaceGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusLastplaceGetResponse `json:"taobao_bus_lastplace_get_response,omitempty"`
+    // Response *TaobaoBusLastplaceGetResponse `json:"bus_lastplace_get_response,omitempty"` 
+    TaobaoBusLastplaceGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusLastplaceGetResponse struct {
+
+    // 目的地返回结果
+    
+    Result  *struct {
+        TaobaoBusLastplaceGetResult  *TaobaoBusLastplaceGetResult `json:"taobao_bus_lastplace_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusLastplaceGetResponse struct {
 

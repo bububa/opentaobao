@@ -12,8 +12,22 @@ alibaba.wtt.offline.record.queryagentinfo
 */
 type AlibabaWttOfflineRecordQueryagentinfoAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWttOfflineRecordQueryagentinfoResponse `json:"alibaba_wtt_offline_record_queryagentinfo_response,omitempty"`
+    // Response *AlibabaWttOfflineRecordQueryagentinfoResponse `json:"alibaba_wtt_offline_record_queryagentinfo_response,omitempty"` 
+    AlibabaWttOfflineRecordQueryagentinfoResponse
 }
+
+/* model for simplify = false
+type AlibabaWttOfflineRecordQueryagentinfoResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWttOfflineRecordQueryagentinfoResponse struct {
 

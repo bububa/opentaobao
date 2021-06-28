@@ -12,8 +12,20 @@ alibaba.scbp.ad.campaign.delete
 */
 type AlibabaScbpAdCampaignDeleteAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdCampaignDeleteResponse `json:"alibaba_scbp_ad_campaign_delete_response,omitempty"`
+    // Response *AlibabaScbpAdCampaignDeleteResponse `json:"alibaba_scbp_ad_campaign_delete_response,omitempty"` 
+    AlibabaScbpAdCampaignDeleteResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdCampaignDeleteResponse struct {
+
+    // 删除成功条数
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdCampaignDeleteResponse struct {
 

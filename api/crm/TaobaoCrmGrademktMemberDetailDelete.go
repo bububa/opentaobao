@@ -11,11 +11,11 @@ taobao.crm.grademkt.member.detail.delete
 
 删除商品等级营销明细
 */
-func TaobaoCrmGrademktMemberDetailDelete(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberDetailDeleteRequest, session string) (*crm.TaobaoCrmGrademktMemberDetailDeleteResponse, error) {
+func TaobaoCrmGrademktMemberDetailDelete(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberDetailDeleteRequest, session string) (*crm.TaobaoCrmGrademktMemberDetailDeleteAPIResponse, error) {
     var resp crm.TaobaoCrmGrademktMemberDetailDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ taobao.wlb.imports.resource.get
 */
 type TaobaoWlbImportsResourceGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbImportsResourceGetResponse `json:"taobao_wlb_imports_resource_get_response,omitempty"`
+    // Response *TaobaoWlbImportsResourceGetResponse `json:"wlb_imports_resource_get_response,omitempty"` 
+    TaobaoWlbImportsResourceGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbImportsResourceGetResponse struct {
+
+    // 一般进口所有服务商列表
+    
+    Resources  struct {
+        ResourceResult  []ResourceResult `json:"resource_result,omitempty"`
+    } `json:"resources,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbImportsResourceGetResponse struct {
 

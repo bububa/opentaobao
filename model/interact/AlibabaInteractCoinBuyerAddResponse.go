@@ -12,8 +12,20 @@ alibaba.interact.coin.buyer.add
 */
 type AlibabaInteractCoinBuyerAddAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractCoinBuyerAddResponse `json:"alibaba_interact_coin_buyer_add_response,omitempty"`
+    // Response *AlibabaInteractCoinBuyerAddResponse `json:"alibaba_interact_coin_buyer_add_response,omitempty"` 
+    AlibabaInteractCoinBuyerAddResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractCoinBuyerAddResponse struct {
+
+    // result=0
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractCoinBuyerAddResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.aliqin.fc.iot.useroscontrol
 */
 type AlibabaAliqinFcIotUseroscontrolAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcIotUseroscontrolResponse `json:"alibaba_aliqin_fc_iot_useroscontrol_response,omitempty"`
+    // Response *AlibabaAliqinFcIotUseroscontrolResponse `json:"alibaba_aliqin_fc_iot_useroscontrol_response,omitempty"` 
+    AlibabaAliqinFcIotUseroscontrolResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcIotUseroscontrolResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaAliqinFcIotUseroscontrolResult  *AlibabaAliqinFcIotUseroscontrolResult `json:"alibaba_aliqin_fc_iot_useroscontrol_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcIotUseroscontrolResponse struct {
 

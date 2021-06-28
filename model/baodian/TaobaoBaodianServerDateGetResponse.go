@@ -12,8 +12,20 @@ taobao.baodian.server.date.get
 */
 type TaobaoBaodianServerDateGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaodianServerDateGetResponse `json:"taobao_baodian_server_date_get_response,omitempty"`
+    // Response *TaobaoBaodianServerDateGetResponse `json:"baodian_server_date_get_response,omitempty"` 
+    TaobaoBaodianServerDateGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBaodianServerDateGetResponse struct {
+
+    // 返回时间为毫秒
+    
+    ServerDate   int64 `json:"server_date,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaodianServerDateGetResponse struct {
 

@@ -12,8 +12,27 @@ taobao.wlb.orderdetail.date.get
 */
 type TaobaoWlbOrderdetailDateGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbOrderdetailDateGetResponse `json:"taobao_wlb_orderdetail_date_get_response,omitempty"`
+    // Response *TaobaoWlbOrderdetailDateGetResponse `json:"wlb_orderdetail_date_get_response,omitempty"` 
+    TaobaoWlbOrderdetailDateGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbOrderdetailDateGetResponse struct {
+
+    // 物流宝订单，并且包含订单详情
+    
+    OrderDetailList  struct {
+        WlbOrderDetail  []WlbOrderDetail `json:"wlb_order_detail,omitempty"`
+    } `json:"order_detail_list,omitempty"`
+    
+
+    // 总数
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbOrderdetailDateGetResponse struct {
 

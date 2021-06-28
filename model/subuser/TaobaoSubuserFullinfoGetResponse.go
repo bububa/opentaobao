@@ -12,8 +12,22 @@ taobao.subuser.fullinfo.get
 */
 type TaobaoSubuserFullinfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSubuserFullinfoGetResponse `json:"taobao_subuser_fullinfo_get_response,omitempty"`
+    // Response *TaobaoSubuserFullinfoGetResponse `json:"subuser_fullinfo_get_response,omitempty"` 
+    TaobaoSubuserFullinfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSubuserFullinfoGetResponse struct {
+
+    // 子账号详细信息，其中包括账号基本信息、员工信息和部门职务信息
+    
+    SubFullinfo  *struct {
+        SubUserFullInfo  *SubUserFullInfo `json:"sub_user_full_info,omitempty"`
+    } `json:"sub_fullinfo,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSubuserFullinfoGetResponse struct {
 

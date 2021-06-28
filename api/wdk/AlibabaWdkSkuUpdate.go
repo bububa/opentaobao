@@ -11,11 +11,11 @@ alibaba.wdk.sku.update
 
 开放商品更新接口
 */
-func AlibabaWdkSkuUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkSkuUpdateRequest, session string) (*wdk.AlibabaWdkSkuUpdateResponse, error) {
+func AlibabaWdkSkuUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkSkuUpdateRequest, session string) (*wdk.AlibabaWdkSkuUpdateAPIResponse, error) {
     var resp wdk.AlibabaWdkSkuUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

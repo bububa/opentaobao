@@ -19,7 +19,7 @@ type AlibabaWdkUmsRetrieveBatchConfirmRequest struct {
     warehouseCode   string 
 
     // warehouse_code
-    uuids   []String 
+    uuids   []string 
 
 }
 
@@ -52,13 +52,13 @@ func (r AlibabaWdkUmsRetrieveBatchConfirmRequest) GetWarehouseCode() string {
     return r.warehouseCode
 }
 
-func (r *AlibabaWdkUmsRetrieveBatchConfirmRequest) SetUuids(uuids []String) error {
+func (r *AlibabaWdkUmsRetrieveBatchConfirmRequest) SetUuids(uuids []string) error {
     r.uuids = uuids
     r.Set("uuids", uuids)
     return nil
 }
 
-func (r AlibabaWdkUmsRetrieveBatchConfirmRequest) GetUuids() []String {
+func (r AlibabaWdkUmsRetrieveBatchConfirmRequest) GetUuids() []string {
     return r.uuids
 }
 

@@ -12,8 +12,20 @@ taobao.ump.detail.add
 */
 type TaobaoUmpDetailAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpDetailAddResponse `json:"taobao_ump_detail_add_response,omitempty"`
+    // Response *TaobaoUmpDetailAddResponse `json:"ump_detail_add_response,omitempty"` 
+    TaobaoUmpDetailAddResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpDetailAddResponse struct {
+
+    // 活动详情的id
+    
+    DetailId   int64 `json:"detail_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpDetailAddResponse struct {
 

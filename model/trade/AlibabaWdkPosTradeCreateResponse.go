@@ -12,8 +12,22 @@ alibaba.wdk.pos.trade.create
 */
 type AlibabaWdkPosTradeCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkPosTradeCreateResponse `json:"alibaba_wdk_pos_trade_create_response,omitempty"`
+    // Response *AlibabaWdkPosTradeCreateResponse `json:"alibaba_wdk_pos_trade_create_response,omitempty"` 
+    AlibabaWdkPosTradeCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkPosTradeCreateResponse struct {
+
+    // 创单结果
+    
+    Result  *struct {
+        FastBuyPosCreateResult  *FastBuyPosCreateResult `json:"fast_buy_pos_create_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkPosTradeCreateResponse struct {
 

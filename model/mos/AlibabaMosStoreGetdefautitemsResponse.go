@@ -12,8 +12,22 @@ alibaba.mos.store.getdefautitems
 */
 type AlibabaMosStoreGetdefautitemsAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosStoreGetdefautitemsResponse `json:"alibaba_mos_store_getdefautitems_response,omitempty"`
+    // Response *AlibabaMosStoreGetdefautitemsResponse `json:"alibaba_mos_store_getdefautitems_response,omitempty"` 
+    AlibabaMosStoreGetdefautitemsResponse
 }
+
+/* model for simplify = false
+type AlibabaMosStoreGetdefautitemsResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaMosStoreGetdefautitemsResultDo  *AlibabaMosStoreGetdefautitemsResultDo `json:"alibaba_mos_store_getdefautitems_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosStoreGetdefautitemsResponse struct {
 

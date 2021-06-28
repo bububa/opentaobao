@@ -12,8 +12,22 @@ alibaba.wdk.series.sort
 */
 type AlibabaWdkSeriesSortAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkSeriesSortResponse `json:"alibaba_wdk_series_sort_response,omitempty"`
+    // Response *AlibabaWdkSeriesSortResponse `json:"alibaba_wdk_series_sort_response,omitempty"` 
+    AlibabaWdkSeriesSortResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkSeriesSortResponse struct {
+
+    // 调用结果
+    
+    ApiResult  *struct {
+        AlibabaWdkSeriesSortApiResult  *AlibabaWdkSeriesSortApiResult `json:"alibaba_wdk_series_sort_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkSeriesSortResponse struct {
 

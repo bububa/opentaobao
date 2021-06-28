@@ -16,7 +16,7 @@ type TaobaoUmpMbbsListGetRequest struct {
     model.Params
 
     // 营销积木块id组成的字符串。
-    ids   []Number 
+    ids   []int64 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoUmpMbbsListGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoUmpMbbsListGetRequest) SetIds(ids []Number) error {
+func (r *TaobaoUmpMbbsListGetRequest) SetIds(ids []int64) error {
     r.ids = ids
     r.Set("ids", ids)
     return nil
 }
 
-func (r TaobaoUmpMbbsListGetRequest) GetIds() []Number {
+func (r TaobaoUmpMbbsListGetRequest) GetIds() []int64 {
     return r.ids
 }
 

@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.signin
 */
 type TmallServicecenterWorkcardSigninAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardSigninResponse `json:"tmall_servicecenter_workcard_signin_response,omitempty"`
+    // Response *TmallServicecenterWorkcardSigninResponse `json:"tmall_servicecenter_workcard_signin_response,omitempty"` 
+    TmallServicecenterWorkcardSigninResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardSigninResponse struct {
+
+    // .
+    
+    Result  *struct {
+        TmallServicecenterWorkcardSigninResult  *TmallServicecenterWorkcardSigninResult `json:"tmall_servicecenter_workcard_signin_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardSigninResponse struct {
 

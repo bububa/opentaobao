@@ -16,7 +16,7 @@ type TaobaoSimbaKeywordFindbyidsRequest struct {
     model.Params
 
     // 关键词ids
-    bidwordIds   []Number 
+    bidwordIds   []int64 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoSimbaKeywordFindbyidsRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoSimbaKeywordFindbyidsRequest) SetBidwordIds(bidwordIds []Number) error {
+func (r *TaobaoSimbaKeywordFindbyidsRequest) SetBidwordIds(bidwordIds []int64) error {
     r.bidwordIds = bidwordIds
     r.Set("bidword_ids", bidwordIds)
     return nil
 }
 
-func (r TaobaoSimbaKeywordFindbyidsRequest) GetBidwordIds() []Number {
+func (r TaobaoSimbaKeywordFindbyidsRequest) GetBidwordIds() []int64 {
     return r.bidwordIds
 }
 

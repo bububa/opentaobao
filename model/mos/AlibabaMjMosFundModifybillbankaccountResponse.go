@@ -12,8 +12,20 @@ alibaba.mj.mos.fund.modifybillbankaccount
 */
 type AlibabaMjMosFundModifybillbankaccountAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjMosFundModifybillbankaccountResponse `json:"alibaba_mj_mos_fund_modifybillbankaccount_response,omitempty"`
+    // Response *AlibabaMjMosFundModifybillbankaccountResponse `json:"alibaba_mj_mos_fund_modifybillbankaccount_response,omitempty"` 
+    AlibabaMjMosFundModifybillbankaccountResponse
 }
+
+/* model for simplify = false
+type AlibabaMjMosFundModifybillbankaccountResponse struct {
+
+    // data
+    
+    Data   bool `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjMosFundModifybillbankaccountResponse struct {
 

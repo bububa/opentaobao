@@ -12,8 +12,22 @@ taobao.subway.wordpackage.update
 */
 type TaobaoSubwayWordpackageUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSubwayWordpackageUpdateResponse `json:"taobao_subway_wordpackage_update_response,omitempty"`
+    // Response *TaobaoSubwayWordpackageUpdateResponse `json:"subway_wordpackage_update_response,omitempty"` 
+    TaobaoSubwayWordpackageUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoSubwayWordpackageUpdateResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoSubwayWordpackageUpdateResult  *TaobaoSubwayWordpackageUpdateResult `json:"taobao_subway_wordpackage_update_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSubwayWordpackageUpdateResponse struct {
 

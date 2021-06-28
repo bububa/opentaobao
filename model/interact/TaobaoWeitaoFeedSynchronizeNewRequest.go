@@ -34,7 +34,7 @@ type TaobaoWeitaoFeedSynchronizeNewRequest struct {
     title   string 
 
     // 宝贝列表，用于card展示，0~2个宝贝ID
-    itemIds   []String 
+    itemIds   []string 
 
     // 活动ID
     sbizId   string 
@@ -120,13 +120,13 @@ func (r TaobaoWeitaoFeedSynchronizeNewRequest) GetTitle() string {
     return r.title
 }
 
-func (r *TaobaoWeitaoFeedSynchronizeNewRequest) SetItemIds(itemIds []String) error {
+func (r *TaobaoWeitaoFeedSynchronizeNewRequest) SetItemIds(itemIds []string) error {
     r.itemIds = itemIds
     r.Set("item_ids", itemIds)
     return nil
 }
 
-func (r TaobaoWeitaoFeedSynchronizeNewRequest) GetItemIds() []String {
+func (r TaobaoWeitaoFeedSynchronizeNewRequest) GetItemIds() []string {
     return r.itemIds
 }
 

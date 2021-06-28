@@ -11,11 +11,11 @@ alibaba.scbp.effect.product.report
 
 所有产品报表
 */
-func AlibabaScbpEffectProductReport(clt *core.SDKClient, req *scbp.AlibabaScbpEffectProductReportRequest, session string) (*scbp.AlibabaScbpEffectProductReportResponse, error) {
+func AlibabaScbpEffectProductReport(clt *core.SDKClient, req *scbp.AlibabaScbpEffectProductReportRequest, session string) (*scbp.AlibabaScbpEffectProductReportAPIResponse, error) {
     var resp scbp.AlibabaScbpEffectProductReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

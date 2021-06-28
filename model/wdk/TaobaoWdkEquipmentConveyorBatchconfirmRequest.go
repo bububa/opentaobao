@@ -19,7 +19,7 @@ type TaobaoWdkEquipmentConveyorBatchconfirmRequest struct {
     warehouseCode   string 
 
     // 待确认的uuid列表
-    uuids   []String 
+    uuids   []string 
 
 }
 
@@ -52,13 +52,13 @@ func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetWarehouseCode() string
     return r.warehouseCode
 }
 
-func (r *TaobaoWdkEquipmentConveyorBatchconfirmRequest) SetUuids(uuids []String) error {
+func (r *TaobaoWdkEquipmentConveyorBatchconfirmRequest) SetUuids(uuids []string) error {
     r.uuids = uuids
     r.Set("uuids", uuids)
     return nil
 }
 
-func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetUuids() []String {
+func (r TaobaoWdkEquipmentConveyorBatchconfirmRequest) GetUuids() []string {
     return r.uuids
 }
 

@@ -19,8 +19,22 @@ alibaba.wdk.item.changeprice.query
 */
 type AlibabaWdkItemChangepriceQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkItemChangepriceQueryResponse `json:"alibaba_wdk_item_changeprice_query_response,omitempty"`
+    // Response *AlibabaWdkItemChangepriceQueryResponse `json:"alibaba_wdk_item_changeprice_query_response,omitempty"` 
+    AlibabaWdkItemChangepriceQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkItemChangepriceQueryResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaWdkItemChangepriceQueryResult  *AlibabaWdkItemChangepriceQueryResult `json:"alibaba_wdk_item_changeprice_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkItemChangepriceQueryResponse struct {
 

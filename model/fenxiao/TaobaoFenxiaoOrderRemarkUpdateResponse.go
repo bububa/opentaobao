@@ -12,8 +12,20 @@ taobao.fenxiao.order.remark.update
 */
 type TaobaoFenxiaoOrderRemarkUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoOrderRemarkUpdateResponse `json:"taobao_fenxiao_order_remark_update_response,omitempty"`
+    // Response *TaobaoFenxiaoOrderRemarkUpdateResponse `json:"fenxiao_order_remark_update_response,omitempty"` 
+    TaobaoFenxiaoOrderRemarkUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoOrderRemarkUpdateResponse struct {
+
+    // 操作是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoOrderRemarkUpdateResponse struct {
 

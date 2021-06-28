@@ -11,11 +11,11 @@ taobao.simba.creative.delete
 
 删除一个创意
 */
-func TaobaoSimbaCreativeDelete(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeDeleteRequest, session string) (*simba.TaobaoSimbaCreativeDeleteResponse, error) {
+func TaobaoSimbaCreativeDelete(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeDeleteRequest, session string) (*simba.TaobaoSimbaCreativeDeleteAPIResponse, error) {
     var resp simba.TaobaoSimbaCreativeDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

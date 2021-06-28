@@ -12,8 +12,22 @@ alibaba.mos.store.getstorelist
 */
 type AlibabaMosStoreGetstorelistAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosStoreGetstorelistResponse `json:"alibaba_mos_store_getstorelist_response,omitempty"`
+    // Response *AlibabaMosStoreGetstorelistResponse `json:"alibaba_mos_store_getstorelist_response,omitempty"` 
+    AlibabaMosStoreGetstorelistResponse
 }
+
+/* model for simplify = false
+type AlibabaMosStoreGetstorelistResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaMosStoreGetstorelistResultDo  *AlibabaMosStoreGetstorelistResultDo `json:"alibaba_mos_store_getstorelist_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosStoreGetstorelistResponse struct {
 

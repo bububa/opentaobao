@@ -12,8 +12,22 @@ taobao.trade.ordersku.update
 */
 type TaobaoTradeOrderskuUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeOrderskuUpdateResponse `json:"taobao_trade_ordersku_update_response,omitempty"`
+    // Response *TaobaoTradeOrderskuUpdateResponse `json:"trade_ordersku_update_response,omitempty"` 
+    TaobaoTradeOrderskuUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeOrderskuUpdateResponse struct {
+
+    // 只返回oid和modified
+    
+    Order  *struct {
+        Order  *Order `json:"order,omitempty"`
+    } `json:"order,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeOrderskuUpdateResponse struct {
 

@@ -12,8 +12,20 @@ alibaba.interact.sensor.share
 */
 type AlibabaInteractSensorShareAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorShareResponse `json:"alibaba_interact_sensor_share_response,omitempty"`
+    // Response *AlibabaInteractSensorShareResponse `json:"alibaba_interact_sensor_share_response,omitempty"` 
+    AlibabaInteractSensorShareResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorShareResponse struct {
+
+    // return=0表示成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorShareResponse struct {
 

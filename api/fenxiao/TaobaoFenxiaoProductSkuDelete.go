@@ -11,11 +11,11 @@ taobao.fenxiao.product.sku.delete
 
 根据sku properties删除sku数据
 */
-func TaobaoFenxiaoProductSkuDelete(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductSkuDeleteRequest, session string) (*fenxiao.TaobaoFenxiaoProductSkuDeleteResponse, error) {
+func TaobaoFenxiaoProductSkuDelete(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductSkuDeleteRequest, session string) (*fenxiao.TaobaoFenxiaoProductSkuDeleteAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoProductSkuDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

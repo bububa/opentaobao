@@ -12,8 +12,37 @@ taobao.de.activity.luckydraw
 */
 type TaobaoDeActivityLuckydrawAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoDeActivityLuckydrawResponse `json:"taobao_de_activity_luckydraw_response,omitempty"`
+    // Response *TaobaoDeActivityLuckydrawResponse `json:"de_activity_luckydraw_response,omitempty"` 
+    TaobaoDeActivityLuckydrawResponse
 }
+
+/* model for simplify = false
+type TaobaoDeActivityLuckydrawResponse struct {
+
+    // 中奖奖品
+    
+    AwardVO  *struct {
+        AwardVO  *AwardVO `json:"award_vo,omitempty"`
+    } `json:"award_v_o,omitempty"`
+    
+
+    // 123
+    
+    IsLucky   bool `json:"is_lucky,omitempty"`
+    
+
+    // 数娱积分/金牌余额
+    
+    TotalAmount   int64 `json:"total_amount,omitempty"`
+    
+
+    // 可用抽奖次数
+    
+    AccessAmount   int64 `json:"access_amount,omitempty"`
+    
+
+}
+*/
 
 type TaobaoDeActivityLuckydrawResponse struct {
 

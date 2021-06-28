@@ -11,11 +11,11 @@ alibaba.security.jaq.app.official.apply
 
 官方应用申请接口
 */
-func AlibabaSecurityJaqAppOfficialApply(clt *core.SDKClient, req *security.AlibabaSecurityJaqAppOfficialApplyRequest, session string) (*security.AlibabaSecurityJaqAppOfficialApplyResponse, error) {
+func AlibabaSecurityJaqAppOfficialApply(clt *core.SDKClient, req *security.AlibabaSecurityJaqAppOfficialApplyRequest, session string) (*security.AlibabaSecurityJaqAppOfficialApplyAPIResponse, error) {
     var resp security.AlibabaSecurityJaqAppOfficialApplyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

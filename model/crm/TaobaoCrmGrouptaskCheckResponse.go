@@ -12,8 +12,20 @@ taobao.crm.grouptask.check
 */
 type TaobaoCrmGrouptaskCheckAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGrouptaskCheckResponse `json:"taobao_crm_grouptask_check_response,omitempty"`
+    // Response *TaobaoCrmGrouptaskCheckResponse `json:"crm_grouptask_check_response,omitempty"` 
+    TaobaoCrmGrouptaskCheckResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGrouptaskCheckResponse struct {
+
+    // 异步任务是否完成，true表示完成
+    
+    IsFinished   bool `json:"is_finished,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGrouptaskCheckResponse struct {
 

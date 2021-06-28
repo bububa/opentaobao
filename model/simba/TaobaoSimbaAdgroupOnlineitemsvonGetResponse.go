@@ -12,8 +12,22 @@ taobao.simba.adgroup.onlineitemsvon.get
 */
 type TaobaoSimbaAdgroupOnlineitemsvonGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaAdgroupOnlineitemsvonGetResponse `json:"taobao_simba_adgroup_onlineitemsvon_get_response,omitempty"`
+    // Response *TaobaoSimbaAdgroupOnlineitemsvonGetResponse `json:"simba_adgroup_onlineitemsvon_get_response,omitempty"` 
+    TaobaoSimbaAdgroupOnlineitemsvonGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaAdgroupOnlineitemsvonGetResponse struct {
+
+    // 带分页的淘宝商品
+    
+    PageItem  *struct {
+        SubwayItemPartition  *SubwayItemPartition `json:"subway_item_partition,omitempty"`
+    } `json:"page_item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaAdgroupOnlineitemsvonGetResponse struct {
 

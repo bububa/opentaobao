@@ -12,8 +12,22 @@ alibaba.wdk.oldpos.refund.create
 */
 type AlibabaWdkOldposRefundCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkOldposRefundCreateResponse `json:"alibaba_wdk_oldpos_refund_create_response,omitempty"`
+    // Response *AlibabaWdkOldposRefundCreateResponse `json:"alibaba_wdk_oldpos_refund_create_response,omitempty"` 
+    AlibabaWdkOldposRefundCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkOldposRefundCreateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        PosRefundCreateResult  *PosRefundCreateResult `json:"pos_refund_create_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkOldposRefundCreateResponse struct {
 

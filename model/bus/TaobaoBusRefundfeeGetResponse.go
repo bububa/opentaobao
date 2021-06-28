@@ -12,8 +12,22 @@ taobao.bus.refundfee.get
 */
 type TaobaoBusRefundfeeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusRefundfeeGetResponse `json:"taobao_bus_refundfee_get_response,omitempty"`
+    // Response *TaobaoBusRefundfeeGetResponse `json:"bus_refundfee_get_response,omitempty"` 
+    TaobaoBusRefundfeeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusRefundfeeGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        B2BQueryRefundFeeRp  *B2BQueryRefundFeeRp `json:"b2b_query_refund_fee_rp,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusRefundfeeGetResponse struct {
 

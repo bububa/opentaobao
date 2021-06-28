@@ -12,12 +12,26 @@ taobao.tbk.dg.newuser.order.get
 */
 type TaobaoTbkDgNewuserOrderGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkDgNewuserOrderGetResponse `json:"taobao_tbk_dg_newuser_order_get_response,omitempty"`
+    // Response *TaobaoTbkDgNewuserOrderGetResponse `json:"tbk_dg_newuser_order_get_response,omitempty"` 
+    TaobaoTbkDgNewuserOrderGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkDgNewuserOrderGetResponse struct {
+
+    // data
+    
+    Results  *struct {
+        TaobaoTbkDgNewuserOrderGetResults  *TaobaoTbkDgNewuserOrderGetResults `json:"taobao_tbk_dg_newuser_order_get_results,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkDgNewuserOrderGetResponse struct {
 
     // data
-    Results   *Results `json:"results,omitempty"`
+    Results   *TaobaoTbkDgNewuserOrderGetResults `json:"results,omitempty"`
 
 }

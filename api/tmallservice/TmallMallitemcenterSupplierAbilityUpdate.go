@@ -11,11 +11,11 @@ tmall.mallitemcenter.supplier.ability.update
 
 门店服务能力授权
 */
-func TmallMallitemcenterSupplierAbilityUpdate(clt *core.SDKClient, req *tmallservice.TmallMallitemcenterSupplierAbilityUpdateRequest, session string) (*tmallservice.TmallMallitemcenterSupplierAbilityUpdateResponse, error) {
+func TmallMallitemcenterSupplierAbilityUpdate(clt *core.SDKClient, req *tmallservice.TmallMallitemcenterSupplierAbilityUpdateRequest, session string) (*tmallservice.TmallMallitemcenterSupplierAbilityUpdateAPIResponse, error) {
     var resp tmallservice.TmallMallitemcenterSupplierAbilityUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

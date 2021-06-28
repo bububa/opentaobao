@@ -11,11 +11,11 @@ tmall.item.add.schema.get
 
 通过类目以及productId获取商品发布规则；
 */
-func TmallItemAddSchemaGet(clt *core.SDKClient, req *product.TmallItemAddSchemaGetRequest, session string) (*product.TmallItemAddSchemaGetResponse, error) {
+func TmallItemAddSchemaGet(clt *core.SDKClient, req *product.TmallItemAddSchemaGetRequest, session string) (*product.TmallItemAddSchemaGetAPIResponse, error) {
     var resp product.TmallItemAddSchemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

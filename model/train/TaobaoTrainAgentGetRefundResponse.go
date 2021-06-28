@@ -12,8 +12,20 @@ taobao.train.agent.get.refund
 */
 type TaobaoTrainAgentGetRefundAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentGetRefundResponse `json:"taobao_train_agent_get_refund_response,omitempty"`
+    // Response *TaobaoTrainAgentGetRefundResponse `json:"train_agent_get_refund_response,omitempty"` 
+    TaobaoTrainAgentGetRefundResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentGetRefundResponse struct {
+
+    // 系统自动生成
+    
+    TopRefundApplyList   string `json:"top_refund_apply_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentGetRefundResponse struct {
 

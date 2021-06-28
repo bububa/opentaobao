@@ -12,8 +12,30 @@ tmall.item.update.simpleschema.get
 */
 type TmallItemUpdateSimpleschemaGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemUpdateSimpleschemaGetResponse `json:"tmall_item_update_simpleschema_get_response,omitempty"`
+    // Response *TmallItemUpdateSimpleschemaGetResponse `json:"tmall_item_update_simpleschema_get_response,omitempty"` 
+    TmallItemUpdateSimpleschemaGetResponse
 }
+
+/* model for simplify = false
+type TmallItemUpdateSimpleschemaGetResponse struct {
+
+    // 返回结果
+    
+    Error   bool `json:"error,omitempty"`
+    
+
+    // 错误信息
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+    // 商品信息
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallItemUpdateSimpleschemaGetResponse struct {
 

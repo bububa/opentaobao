@@ -12,8 +12,37 @@ alibaba.icbu.product.list
 */
 type AlibabaIcbuProductListAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuProductListResponse `json:"alibaba_icbu_product_list_response,omitempty"`
+    // Response *AlibabaIcbuProductListResponse `json:"alibaba_icbu_product_list_response,omitempty"` 
+    AlibabaIcbuProductListResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuProductListResponse struct {
+
+    // 总数
+    
+    TotalItem   int64 `json:"total_item,omitempty"`
+    
+
+    // 当前页
+    
+    CurrentPage   int64 `json:"current_page,omitempty"`
+    
+
+    // 每页大小
+    
+    PageSize   int64 `json:"page_size,omitempty"`
+    
+
+    // 商品概要信息列表
+    
+    Products  struct {
+        AlibabaProductBriefResponse  []AlibabaProductBriefResponse `json:"alibaba_product_brief_response,omitempty"`
+    } `json:"products,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuProductListResponse struct {
 

@@ -12,8 +12,20 @@ taobao.crm.group.move
 */
 type TaobaoCrmGroupMoveAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGroupMoveResponse `json:"taobao_crm_group_move_response,omitempty"`
+    // Response *TaobaoCrmGroupMoveResponse `json:"crm_group_move_response,omitempty"` 
+    TaobaoCrmGroupMoveResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGroupMoveResponse struct {
+
+    // 异步任务请求成功，是否执行完毕需要通过taobao.crm.grouptask.check检测
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGroupMoveResponse struct {
 

@@ -12,8 +12,20 @@ taobao.train.agent.order.pay
 */
 type TaobaoTrainAgentOrderPayAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentOrderPayResponse `json:"taobao_train_agent_order_pay_response,omitempty"`
+    // Response *TaobaoTrainAgentOrderPayResponse `json:"train_agent_order_pay_response,omitempty"` 
+    TaobaoTrainAgentOrderPayResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentOrderPayResponse struct {
+
+    // 成功返回
+    
+    ExtendParams   string `json:"extend_params,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentOrderPayResponse struct {
 

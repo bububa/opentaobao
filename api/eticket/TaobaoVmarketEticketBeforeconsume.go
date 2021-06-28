@@ -11,11 +11,11 @@ taobao.vmarket.eticket.beforeconsume
 
 商家验码之前的调用接口，用来同步到最新的订单状态并判断是否可以进行验码操作
 */
-func TaobaoVmarketEticketBeforeconsume(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketBeforeconsumeRequest, session string) (*eticket.TaobaoVmarketEticketBeforeconsumeResponse, error) {
+func TaobaoVmarketEticketBeforeconsume(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketBeforeconsumeRequest, session string) (*eticket.TaobaoVmarketEticketBeforeconsumeAPIResponse, error) {
     var resp eticket.TaobaoVmarketEticketBeforeconsumeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

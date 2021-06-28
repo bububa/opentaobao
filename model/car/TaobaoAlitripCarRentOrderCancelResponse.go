@@ -12,8 +12,35 @@ taobao.alitrip.car.rent.order.cancel
 */
 type TaobaoAlitripCarRentOrderCancelAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripCarRentOrderCancelResponse `json:"taobao_alitrip_car_rent_order_cancel_response,omitempty"`
+    // Response *TaobaoAlitripCarRentOrderCancelResponse `json:"alitrip_car_rent_order_cancel_response,omitempty"` 
+    TaobaoAlitripCarRentOrderCancelResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripCarRentOrderCancelResponse struct {
+
+    // 错误消息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 扩展对象
+    
+    Models   string `json:"models,omitempty"`
+    
+
+    // 结果对象
+    
+    Model   string `json:"model,omitempty"`
+    
+
+    // 结果码
+    
+    C   int64 `json:"c,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripCarRentOrderCancelResponse struct {
 

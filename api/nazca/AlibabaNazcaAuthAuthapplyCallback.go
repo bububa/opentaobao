@@ -11,11 +11,11 @@ alibaba.nazca.auth.authapply.callback
 
 认证的统一回调接口
 */
-func AlibabaNazcaAuthAuthapplyCallback(clt *core.SDKClient, req *nazca.AlibabaNazcaAuthAuthapplyCallbackRequest, session string) (*nazca.AlibabaNazcaAuthAuthapplyCallbackResponse, error) {
+func AlibabaNazcaAuthAuthapplyCallback(clt *core.SDKClient, req *nazca.AlibabaNazcaAuthAuthapplyCallbackRequest, session string) (*nazca.AlibabaNazcaAuthAuthapplyCallbackAPIResponse, error) {
     var resp nazca.AlibabaNazcaAuthAuthapplyCallbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

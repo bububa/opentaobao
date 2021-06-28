@@ -12,8 +12,22 @@ taobao.rdc.aligenius.account.validate
 */
 type TaobaoRdcAligeniusAccountValidateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRdcAligeniusAccountValidateResponse `json:"taobao_rdc_aligenius_account_validate_response,omitempty"`
+    // Response *TaobaoRdcAligeniusAccountValidateResponse `json:"rdc_aligenius_account_validate_response,omitempty"` 
+    TaobaoRdcAligeniusAccountValidateResponse
 }
+
+/* model for simplify = false
+type TaobaoRdcAligeniusAccountValidateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoRdcAligeniusAccountValidateResult  *TaobaoRdcAligeniusAccountValidateResult `json:"taobao_rdc_aligenius_account_validate_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRdcAligeniusAccountValidateResponse struct {
 

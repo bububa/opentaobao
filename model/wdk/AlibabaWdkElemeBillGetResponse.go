@@ -12,8 +12,22 @@ alibaba.wdk.eleme.bill.get
 */
 type AlibabaWdkElemeBillGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkElemeBillGetResponse `json:"alibaba_wdk_eleme_bill_get_response,omitempty"`
+    // Response *AlibabaWdkElemeBillGetResponse `json:"alibaba_wdk_eleme_bill_get_response,omitempty"` 
+    AlibabaWdkElemeBillGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkElemeBillGetResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        AlibabaWdkElemeBillGetApiResult  *AlibabaWdkElemeBillGetApiResult `json:"alibaba_wdk_eleme_bill_get_api_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkElemeBillGetResponse struct {
 

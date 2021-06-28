@@ -12,8 +12,22 @@ alibaba.security.jaq.app.risksummary.get
 */
 type AlibabaSecurityJaqAppRisksummaryGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqAppRisksummaryGetResponse `json:"alibaba_security_jaq_app_risksummary_get_response,omitempty"`
+    // Response *AlibabaSecurityJaqAppRisksummaryGetResponse `json:"alibaba_security_jaq_app_risksummary_get_response,omitempty"` 
+    AlibabaSecurityJaqAppRisksummaryGetResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqAppRisksummaryGetResponse struct {
+
+    // 应用扫描概要信息
+    
+    Result  *struct {
+        RiskSummary  *RiskSummary `json:"risk_summary,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqAppRisksummaryGetResponse struct {
 

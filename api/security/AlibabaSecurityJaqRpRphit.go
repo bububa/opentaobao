@@ -11,11 +11,11 @@ alibaba.security.jaq.rp.rphit
 
 聚安全实人认证日志打点接口
 */
-func AlibabaSecurityJaqRpRphit(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpRphitRequest, session string) (*security.AlibabaSecurityJaqRpRphitResponse, error) {
+func AlibabaSecurityJaqRpRphit(clt *core.SDKClient, req *security.AlibabaSecurityJaqRpRphitRequest, session string) (*security.AlibabaSecurityJaqRpRphitAPIResponse, error) {
     var resp security.AlibabaSecurityJaqRpRphitAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

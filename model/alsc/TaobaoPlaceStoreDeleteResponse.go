@@ -12,8 +12,20 @@ taobao.place.store.delete
 */
 type TaobaoPlaceStoreDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPlaceStoreDeleteResponse `json:"taobao_place_store_delete_response,omitempty"`
+    // Response *TaobaoPlaceStoreDeleteResponse `json:"place_store_delete_response,omitempty"` 
+    TaobaoPlaceStoreDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoPlaceStoreDeleteResponse struct {
+
+    // 门店删除结果
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPlaceStoreDeleteResponse struct {
 

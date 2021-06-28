@@ -12,8 +12,20 @@ alibaba.aliqin.flow.wallet.sign
 */
 type AlibabaAliqinFlowWalletSignAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFlowWalletSignResponse `json:"alibaba_aliqin_flow_wallet_sign_response,omitempty"`
+    // Response *AlibabaAliqinFlowWalletSignResponse `json:"alibaba_aliqin_flow_wallet_sign_response,omitempty"` 
+    AlibabaAliqinFlowWalletSignResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFlowWalletSignResponse struct {
+
+    // 是否成功
+    
+    Value   string `json:"value,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFlowWalletSignResponse struct {
 

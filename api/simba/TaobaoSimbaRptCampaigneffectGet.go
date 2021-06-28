@@ -11,11 +11,11 @@ taobao.simba.rpt.campaigneffect.get
 
 推广计划效果报表数据对象
 */
-func TaobaoSimbaRptCampaigneffectGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCampaigneffectGetRequest, session string) (*simba.TaobaoSimbaRptCampaigneffectGetResponse, error) {
+func TaobaoSimbaRptCampaigneffectGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptCampaigneffectGetRequest, session string) (*simba.TaobaoSimbaRptCampaigneffectGetAPIResponse, error) {
     var resp simba.TaobaoSimbaRptCampaigneffectGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ taobao.xhotel.price.get.for.hello
 */
 type TaobaoXhotelPriceGetForHelloAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoXhotelPriceGetForHelloResponse `json:"taobao_xhotel_price_get_for_hello_response,omitempty"`
+    // Response *TaobaoXhotelPriceGetForHelloResponse `json:"xhotel_price_get_for_hello_response,omitempty"` 
+    TaobaoXhotelPriceGetForHelloResponse
 }
+
+/* model for simplify = false
+type TaobaoXhotelPriceGetForHelloResponse struct {
+
+    // 库价结果封装
+    
+    Result  *struct {
+        HotelPriceResultSet  *HotelPriceResultSet `json:"hotel_price_result_set,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoXhotelPriceGetForHelloResponse struct {
 

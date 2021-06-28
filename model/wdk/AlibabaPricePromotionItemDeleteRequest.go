@@ -16,7 +16,7 @@ type AlibabaPricePromotionItemDeleteRequest struct {
     model.Params
 
     // 商品code
-    skuCodes   []String 
+    skuCodes   []string 
 
     // toB渠道店OU
     ouCode   string 
@@ -48,13 +48,13 @@ func (r AlibabaPricePromotionItemDeleteRequest) GetApiParams() url.Values {
 }
 
 
-func (r *AlibabaPricePromotionItemDeleteRequest) SetSkuCodes(skuCodes []String) error {
+func (r *AlibabaPricePromotionItemDeleteRequest) SetSkuCodes(skuCodes []string) error {
     r.skuCodes = skuCodes
     r.Set("sku_codes", skuCodes)
     return nil
 }
 
-func (r AlibabaPricePromotionItemDeleteRequest) GetSkuCodes() []String {
+func (r AlibabaPricePromotionItemDeleteRequest) GetSkuCodes() []string {
     return r.skuCodes
 }
 

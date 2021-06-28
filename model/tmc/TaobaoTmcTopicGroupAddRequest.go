@@ -20,7 +20,7 @@ type TaobaoTmcTopicGroupAddRequest struct {
     groupName   string 
 
     // 消息topic名称，多个以逗号(,)分割
-    topics   []String 
+    topics   []string 
 
 }
 
@@ -53,13 +53,13 @@ func (r TaobaoTmcTopicGroupAddRequest) GetGroupName() string {
     return r.groupName
 }
 
-func (r *TaobaoTmcTopicGroupAddRequest) SetTopics(topics []String) error {
+func (r *TaobaoTmcTopicGroupAddRequest) SetTopics(topics []string) error {
     r.topics = topics
     r.Set("topics", topics)
     return nil
 }
 
-func (r TaobaoTmcTopicGroupAddRequest) GetTopics() []String {
+func (r TaobaoTmcTopicGroupAddRequest) GetTopics() []string {
     return r.topics
 }
 

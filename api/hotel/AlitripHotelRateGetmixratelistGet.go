@@ -11,11 +11,11 @@ alitrip.hotel.rate.getmixratelist.get
 
 酒店评论接口
 */
-func AlitripHotelRateGetmixratelistGet(clt *core.SDKClient, req *hotel.AlitripHotelRateGetmixratelistGetRequest, session string) (*hotel.AlitripHotelRateGetmixratelistGetResponse, error) {
+func AlitripHotelRateGetmixratelistGet(clt *core.SDKClient, req *hotel.AlitripHotelRateGetmixratelistGetRequest, session string) (*hotel.AlitripHotelRateGetmixratelistGetAPIResponse, error) {
     var resp hotel.AlitripHotelRateGetmixratelistGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

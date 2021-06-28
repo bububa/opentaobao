@@ -12,8 +12,22 @@ cainiao.waybill.ii.product
 */
 type CainiaoWaybillIiProductAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoWaybillIiProductResponse `json:"cainiao_waybill_ii_product_response,omitempty"`
+    // Response *CainiaoWaybillIiProductResponse `json:"cainiao_waybill_ii_product_response,omitempty"` 
+    CainiaoWaybillIiProductResponse
 }
+
+/* model for simplify = false
+type CainiaoWaybillIiProductResponse struct {
+
+    // 返回值
+    
+    ProductTypes  struct {
+        WaybillProductType  []WaybillProductType `json:"waybill_product_type,omitempty"`
+    } `json:"product_types,omitempty"`
+    
+
+}
+*/
 
 type CainiaoWaybillIiProductResponse struct {
 

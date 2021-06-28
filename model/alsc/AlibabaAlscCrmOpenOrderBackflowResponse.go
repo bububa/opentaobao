@@ -12,8 +12,22 @@ alibaba.alsc.crm.open.order.backflow
 */
 type AlibabaAlscCrmOpenOrderBackflowAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmOpenOrderBackflowResponse `json:"alibaba_alsc_crm_open_order_backflow_response,omitempty"`
+    // Response *AlibabaAlscCrmOpenOrderBackflowResponse `json:"alibaba_alsc_crm_open_order_backflow_response,omitempty"` 
+    AlibabaAlscCrmOpenOrderBackflowResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmOpenOrderBackflowResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmOpenOrderBackflowResponse struct {
 

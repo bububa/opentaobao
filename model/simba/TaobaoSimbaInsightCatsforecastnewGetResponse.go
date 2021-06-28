@@ -12,8 +12,22 @@ taobao.simba.insight.catsforecastnew.get
 */
 type TaobaoSimbaInsightCatsforecastnewGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaInsightCatsforecastnewGetResponse `json:"taobao_simba_insight_catsforecastnew_get_response,omitempty"`
+    // Response *TaobaoSimbaInsightCatsforecastnewGetResponse `json:"simba_insight_catsforecastnew_get_response,omitempty"` 
+    TaobaoSimbaInsightCatsforecastnewGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaInsightCatsforecastnewGetResponse struct {
+
+    // 词的相关类目列表
+    
+    CategoryForecastList  struct {
+        InsightCategoryForcastDTO  []InsightCategoryForcastDTO `json:"insight_category_forcast_dto,omitempty"`
+    } `json:"category_forecast_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaInsightCatsforecastnewGetResponse struct {
 

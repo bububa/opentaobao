@@ -12,8 +12,22 @@ taobao.wdk.equipment.conveyor.batchconfirm
 */
 type TaobaoWdkEquipmentConveyorBatchconfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWdkEquipmentConveyorBatchconfirmResponse `json:"taobao_wdk_equipment_conveyor_batchconfirm_response,omitempty"`
+    // Response *TaobaoWdkEquipmentConveyorBatchconfirmResponse `json:"wdk_equipment_conveyor_batchconfirm_response,omitempty"` 
+    TaobaoWdkEquipmentConveyorBatchconfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoWdkEquipmentConveyorBatchconfirmResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TopWcsResult  *TopWcsResult `json:"top_wcs_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWdkEquipmentConveyorBatchconfirmResponse struct {
 

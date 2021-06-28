@@ -12,8 +12,22 @@ alitrip.xhotel.channel.order.create.res.query
 */
 type AlitripXhotelChannelOrderCreateResQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlitripXhotelChannelOrderCreateResQueryResponse `json:"alitrip_xhotel_channel_order_create_res_query_response,omitempty"`
+    // Response *AlitripXhotelChannelOrderCreateResQueryResponse `json:"alitrip_xhotel_channel_order_create_res_query_response,omitempty"` 
+    AlitripXhotelChannelOrderCreateResQueryResponse
 }
+
+/* model for simplify = false
+type AlitripXhotelChannelOrderCreateResQueryResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        HbsResult  *HbsResult `json:"hbs_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlitripXhotelChannelOrderCreateResQueryResponse struct {
 

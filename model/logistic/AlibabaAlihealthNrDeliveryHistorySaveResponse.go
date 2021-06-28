@@ -12,8 +12,22 @@ alibaba.alihealth.nr.delivery.history.save
 */
 type AlibabaAlihealthNrDeliveryHistorySaveAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlihealthNrDeliveryHistorySaveResponse `json:"alibaba_alihealth_nr_delivery_history_save_response,omitempty"`
+    // Response *AlibabaAlihealthNrDeliveryHistorySaveResponse `json:"alibaba_alihealth_nr_delivery_history_save_response,omitempty"` 
+    AlibabaAlihealthNrDeliveryHistorySaveResponse
 }
+
+/* model for simplify = false
+type AlibabaAlihealthNrDeliveryHistorySaveResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        ResponseResult  *ResponseResult `json:"response_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlihealthNrDeliveryHistorySaveResponse struct {
 

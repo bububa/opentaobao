@@ -12,8 +12,22 @@ alibaba.ascp.logistics.offline.send
 */
 type AlibabaAscpLogisticsOfflineSendAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAscpLogisticsOfflineSendResponse `json:"alibaba_ascp_logistics_offline_send_response,omitempty"`
+    // Response *AlibabaAscpLogisticsOfflineSendResponse `json:"alibaba_ascp_logistics_offline_send_response,omitempty"` 
+    AlibabaAscpLogisticsOfflineSendResponse
 }
+
+/* model for simplify = false
+type AlibabaAscpLogisticsOfflineSendResponse struct {
+
+    // 异步获取历史数据接口返回结果
+    
+    Result  *struct {
+        AlibabaAscpLogisticsOfflineSendResultDto  *AlibabaAscpLogisticsOfflineSendResultDto `json:"alibaba_ascp_logistics_offline_send_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAscpLogisticsOfflineSendResponse struct {
 

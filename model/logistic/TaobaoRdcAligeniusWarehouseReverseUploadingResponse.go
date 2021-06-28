@@ -12,8 +12,30 @@ taobao.rdc.aligenius.warehouse.reverse.uploading
 */
 type TaobaoRdcAligeniusWarehouseReverseUploadingAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRdcAligeniusWarehouseReverseUploadingResponse `json:"taobao_rdc_aligenius_warehouse_reverse_uploading_response,omitempty"`
+    // Response *TaobaoRdcAligeniusWarehouseReverseUploadingResponse `json:"rdc_aligenius_warehouse_reverse_uploading_response,omitempty"` 
+    TaobaoRdcAligeniusWarehouseReverseUploadingResponse
 }
+
+/* model for simplify = false
+type TaobaoRdcAligeniusWarehouseReverseUploadingResponse struct {
+
+    // 错误描述
+    
+    FailInfo   string `json:"fail_info,omitempty"`
+    
+
+    // 错误码
+    
+    FailCode   string `json:"fail_code,omitempty"`
+    
+
+    // 是否成功
+    
+    SuccessFlag   bool `json:"success_flag,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRdcAligeniusWarehouseReverseUploadingResponse struct {
 

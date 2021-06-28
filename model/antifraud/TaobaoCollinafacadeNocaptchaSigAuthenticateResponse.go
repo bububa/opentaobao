@@ -12,8 +12,27 @@ taobao.collinafacade.nocaptcha.sig.authenticate
 */
 type TaobaoCollinafacadeNocaptchaSigAuthenticateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCollinafacadeNocaptchaSigAuthenticateResponse `json:"taobao_collinafacade_nocaptcha_sig_authenticate_response,omitempty"`
+    // Response *TaobaoCollinafacadeNocaptchaSigAuthenticateResponse `json:"collinafacade_nocaptcha_sig_authenticate_response,omitempty"` 
+    TaobaoCollinafacadeNocaptchaSigAuthenticateResponse
 }
+
+/* model for simplify = false
+type TaobaoCollinafacadeNocaptchaSigAuthenticateResponse struct {
+
+    // 服务出参
+    
+    Ret   int64 `json:"ret,omitempty"`
+    
+
+    // 返回authenticateResult
+    
+    RetDetail  *struct {
+        SigAuthenticateResult  *SigAuthenticateResult `json:"sig_authenticate_result,omitempty"`
+    } `json:"ret_detail,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCollinafacadeNocaptchaSigAuthenticateResponse struct {
 

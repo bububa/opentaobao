@@ -12,8 +12,22 @@ tmall.traceplatform.ccic.tracecode.check
 */
 type TmallTraceplatformCcicTracecodeCheckAPIResponse struct {
     model.CommonResponse
-    Response *TmallTraceplatformCcicTracecodeCheckResponse `json:"tmall_traceplatform_ccic_tracecode_check_response,omitempty"`
+    // Response *TmallTraceplatformCcicTracecodeCheckResponse `json:"tmall_traceplatform_ccic_tracecode_check_response,omitempty"` 
+    TmallTraceplatformCcicTracecodeCheckResponse
 }
+
+/* model for simplify = false
+type TmallTraceplatformCcicTracecodeCheckResponse struct {
+
+    // result
+    
+    Result  *struct {
+        DataResult  *DataResult `json:"data_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallTraceplatformCcicTracecodeCheckResponse struct {
 

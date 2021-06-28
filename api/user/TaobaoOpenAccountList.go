@@ -11,11 +11,11 @@ taobao.open.account.list
 
 OpenAccount账号信息查询
 */
-func TaobaoOpenAccountList(clt *core.SDKClient, req *user.TaobaoOpenAccountListRequest, session string) (*user.TaobaoOpenAccountListResponse, error) {
+func TaobaoOpenAccountList(clt *core.SDKClient, req *user.TaobaoOpenAccountListRequest, session string) (*user.TaobaoOpenAccountListAPIResponse, error) {
     var resp user.TaobaoOpenAccountListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ taobao.qimen.inventorybatch.query
 
 ERP 通过该接口查询指定商品的单仓批次库存
 */
-func TaobaoQimenInventorybatchQuery(clt *core.SDKClient, req *qimen.TaobaoQimenInventorybatchQueryRequest, session string) (*qimen.TaobaoQimenInventorybatchQueryResponse, error) {
+func TaobaoQimenInventorybatchQuery(clt *core.SDKClient, req *qimen.TaobaoQimenInventorybatchQueryRequest, session string) (*qimen.TaobaoQimenInventorybatchQueryAPIResponse, error) {
     var resp qimen.TaobaoQimenInventorybatchQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

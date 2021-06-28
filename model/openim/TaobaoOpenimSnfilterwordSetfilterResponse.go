@@ -12,8 +12,25 @@ taobao.openim.snfilterword.setfilter
 */
 type TaobaoOpenimSnfilterwordSetfilterAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimSnfilterwordSetfilterResponse `json:"taobao_openim_snfilterword_setfilter_response,omitempty"`
+    // Response *TaobaoOpenimSnfilterwordSetfilterResponse `json:"openim_snfilterword_setfilter_response,omitempty"` 
+    TaobaoOpenimSnfilterwordSetfilterResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimSnfilterwordSetfilterResponse struct {
+
+    // 成功
+    
+    Errid   int64 `json:"errid,omitempty"`
+    
+
+    // 错误原因
+    
+    Errmsg   string `json:"errmsg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimSnfilterwordSetfilterResponse struct {
 

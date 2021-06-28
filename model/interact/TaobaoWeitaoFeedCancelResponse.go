@@ -12,8 +12,22 @@ taobao.weitao.feed.cancel
 */
 type TaobaoWeitaoFeedCancelAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWeitaoFeedCancelResponse `json:"taobao_weitao_feed_cancel_response,omitempty"`
+    // Response *TaobaoWeitaoFeedCancelResponse `json:"weitao_feed_cancel_response,omitempty"` 
+    TaobaoWeitaoFeedCancelResponse
 }
+
+/* model for simplify = false
+type TaobaoWeitaoFeedCancelResponse struct {
+
+    // 推送结果
+    
+    Result  *struct {
+        PushResult  *PushResult `json:"push_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWeitaoFeedCancelResponse struct {
 

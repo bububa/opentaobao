@@ -12,8 +12,42 @@ taobao.qimen.storeitem.query
 */
 type TaobaoQimenStoreitemQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenStoreitemQueryResponse `json:"taobao_qimen_storeitem_query_response,omitempty"`
+    // Response *TaobaoQimenStoreitemQueryResponse `json:"qimen_storeitem_query_response,omitempty"` 
+    TaobaoQimenStoreitemQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenStoreitemQueryResponse struct {
+
+    // 响应消息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 商品列表
+    
+    ItemIds  struct {
+        Json  []string `json:"string,omitempty"`
+    } `json:"item_ids,omitempty"`
+    
+
+    // 响应标签
+    
+    Flag   string `json:"flag,omitempty"`
+    
+
+    // 商品总数
+    
+    TotalLines   int64 `json:"total_lines,omitempty"`
+    
+
+    // 响应code
+    
+    QimenCode   string `json:"qimen_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenStoreitemQueryResponse struct {
 
@@ -21,7 +55,7 @@ type TaobaoQimenStoreitemQueryResponse struct {
     Message   string `json:"message,omitempty"`
 
     // 商品列表
-    ItemIds   []Json `json:"item_ids,omitempty"`
+    ItemIds   []string `json:"item_ids,omitempty"`
 
     // 响应标签
     Flag   string `json:"flag,omitempty"`

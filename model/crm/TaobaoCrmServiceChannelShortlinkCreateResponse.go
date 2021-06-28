@@ -12,8 +12,20 @@ taobao.crm.service.channel.shortlink.create
 */
 type TaobaoCrmServiceChannelShortlinkCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmServiceChannelShortlinkCreateResponse `json:"taobao_crm_service_channel_shortlink_create_response,omitempty"`
+    // Response *TaobaoCrmServiceChannelShortlinkCreateResponse `json:"crm_service_channel_shortlink_create_response,omitempty"` 
+    TaobaoCrmServiceChannelShortlinkCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmServiceChannelShortlinkCreateResponse struct {
+
+    // 返回的淘短链。
+    
+    ShortLink   string `json:"short_link,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmServiceChannelShortlinkCreateResponse struct {
 

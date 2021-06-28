@@ -11,11 +11,11 @@ tmall.item.combine.get
 
 查询组合商品的SKU信息
 */
-func TmallItemCombineGet(clt *core.SDKClient, req *product.TmallItemCombineGetRequest, session string) (*product.TmallItemCombineGetResponse, error) {
+func TmallItemCombineGet(clt *core.SDKClient, req *product.TmallItemCombineGetRequest, session string) (*product.TmallItemCombineGetAPIResponse, error) {
     var resp product.TmallItemCombineGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,13 +12,32 @@ taobao.jds.trades.statistics.diff
 */
 type TaobaoJdsTradesStatisticsDiffAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJdsTradesStatisticsDiffResponse `json:"taobao_jds_trades_statistics_diff_response,omitempty"`
+    // Response *TaobaoJdsTradesStatisticsDiffResponse `json:"jds_trades_statistics_diff_response,omitempty"` 
+    TaobaoJdsTradesStatisticsDiffResponse
 }
+
+/* model for simplify = false
+type TaobaoJdsTradesStatisticsDiffResponse struct {
+
+    // pre_status比post_status多的tid列表
+    
+    Tids  struct {
+        Number  []int64 `json:"int64,omitempty"`
+    } `json:"tids,omitempty"`
+    
+
+    // 总记录数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJdsTradesStatisticsDiffResponse struct {
 
     // pre_status比post_status多的tid列表
-    Tids   []Number `json:"tids,omitempty"`
+    Tids   []int64 `json:"tids,omitempty"`
 
     // 总记录数
     TotalResults   int64 `json:"total_results,omitempty"`

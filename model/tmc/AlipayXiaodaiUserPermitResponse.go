@@ -12,8 +12,20 @@ alipay.xiaodai.user.permit
 */
 type AlipayXiaodaiUserPermitAPIResponse struct {
     model.CommonResponse
-    Response *AlipayXiaodaiUserPermitResponse `json:"alipay_xiaodai_user_permit_response,omitempty"`
+    // Response *AlipayXiaodaiUserPermitResponse `json:"alipay_xiaodai_user_permit_response,omitempty"` 
+    AlipayXiaodaiUserPermitResponse
 }
+
+/* model for simplify = false
+type AlipayXiaodaiUserPermitResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlipayXiaodaiUserPermitResponse struct {
 

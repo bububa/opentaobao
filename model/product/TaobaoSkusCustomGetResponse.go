@@ -12,8 +12,22 @@ taobao.skus.custom.get
 */
 type TaobaoSkusCustomGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSkusCustomGetResponse `json:"taobao_skus_custom_get_response,omitempty"`
+    // Response *TaobaoSkusCustomGetResponse `json:"skus_custom_get_response,omitempty"` 
+    TaobaoSkusCustomGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSkusCustomGetResponse struct {
+
+    // Sku对象，具体字段以fields决定
+    
+    Skus  struct {
+        Sku  []Sku `json:"sku,omitempty"`
+    } `json:"skus,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSkusCustomGetResponse struct {
 

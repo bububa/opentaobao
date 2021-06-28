@@ -11,11 +11,11 @@ alitrip.hotel.detail.staticinfo.get
 
 酒店静态信息TOP接口
 */
-func AlitripHotelDetailStaticinfoGet(clt *core.SDKClient, req *hotel.AlitripHotelDetailStaticinfoGetRequest, session string) (*hotel.AlitripHotelDetailStaticinfoGetResponse, error) {
+func AlitripHotelDetailStaticinfoGet(clt *core.SDKClient, req *hotel.AlitripHotelDetailStaticinfoGetRequest, session string) (*hotel.AlitripHotelDetailStaticinfoGetAPIResponse, error) {
     var resp hotel.AlitripHotelDetailStaticinfoGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

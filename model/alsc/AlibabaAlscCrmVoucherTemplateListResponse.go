@@ -12,8 +12,22 @@ alibaba.alsc.crm.voucher.template.list
 */
 type AlibabaAlscCrmVoucherTemplateListAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmVoucherTemplateListResponse `json:"alibaba_alsc_crm_voucher_template_list_response,omitempty"`
+    // Response *AlibabaAlscCrmVoucherTemplateListResponse `json:"alibaba_alsc_crm_voucher_template_list_response,omitempty"` 
+    AlibabaAlscCrmVoucherTemplateListResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmVoucherTemplateListResponse struct {
+
+    // 分页返回模型
+    
+    Result  *struct {
+        CommonPageResult  *CommonPageResult `json:"common_page_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmVoucherTemplateListResponse struct {
 

@@ -22,13 +22,13 @@ type AlibabaSscSupplyplatformServiceabilitySaveRequest struct {
     providerId   int64 
 
     // 目前包含三种。in_store 到店；at_home 上门；transmit_service 寄修。请根据实际支持的履约类型填写
-    fulfilTypeList   []String 
+    fulfilTypeList   []string 
 
     // 服务sku，具体的sku列表可以从服务商工作台的类目树获取
-    serviceSkuCodeList   []String 
+    serviceSkuCodeList   []string 
 
     // 菜鸟地址编码，各级地址均可（全国、省、市、区、街道），根据实际支持的地区填写。当支持的履约类型包含上门时，必填
-    areaCodeList   []Number 
+    areaCodeList   []int64 
 
 }
 
@@ -71,33 +71,33 @@ func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetProviderId() int64
     return r.providerId
 }
 
-func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetFulfilTypeList(fulfilTypeList []String) error {
+func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetFulfilTypeList(fulfilTypeList []string) error {
     r.fulfilTypeList = fulfilTypeList
     r.Set("fulfil_type_list", fulfilTypeList)
     return nil
 }
 
-func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetFulfilTypeList() []String {
+func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetFulfilTypeList() []string {
     return r.fulfilTypeList
 }
 
-func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetServiceSkuCodeList(serviceSkuCodeList []String) error {
+func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetServiceSkuCodeList(serviceSkuCodeList []string) error {
     r.serviceSkuCodeList = serviceSkuCodeList
     r.Set("service_sku_code_list", serviceSkuCodeList)
     return nil
 }
 
-func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetServiceSkuCodeList() []String {
+func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetServiceSkuCodeList() []string {
     return r.serviceSkuCodeList
 }
 
-func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetAreaCodeList(areaCodeList []Number) error {
+func (r *AlibabaSscSupplyplatformServiceabilitySaveRequest) SetAreaCodeList(areaCodeList []int64) error {
     r.areaCodeList = areaCodeList
     r.Set("area_code_list", areaCodeList)
     return nil
 }
 
-func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetAreaCodeList() []Number {
+func (r AlibabaSscSupplyplatformServiceabilitySaveRequest) GetAreaCodeList() []int64 {
     return r.areaCodeList
 }
 

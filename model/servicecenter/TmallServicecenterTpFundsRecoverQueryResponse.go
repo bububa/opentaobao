@@ -12,8 +12,22 @@ tmall.servicecenter.tp.funds.recover.query
 */
 type TmallServicecenterTpFundsRecoverQueryAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterTpFundsRecoverQueryResponse `json:"tmall_servicecenter_tp_funds_recover_query_response,omitempty"`
+    // Response *TmallServicecenterTpFundsRecoverQueryResponse `json:"tmall_servicecenter_tp_funds_recover_query_response,omitempty"` 
+    TmallServicecenterTpFundsRecoverQueryResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterTpFundsRecoverQueryResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterTpFundsRecoverQueryResponse struct {
 

@@ -12,8 +12,20 @@ taobao.caipiao.shop.info.input
 */
 type TaobaoCaipiaoShopInfoInputAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCaipiaoShopInfoInputResponse `json:"taobao_caipiao_shop_info_input_response,omitempty"`
+    // Response *TaobaoCaipiaoShopInfoInputResponse `json:"caipiao_shop_info_input_response,omitempty"` 
+    TaobaoCaipiaoShopInfoInputResponse
 }
+
+/* model for simplify = false
+type TaobaoCaipiaoShopInfoInputResponse struct {
+
+    // 录入操作是否成功
+    
+    InputResult   bool `json:"input_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCaipiaoShopInfoInputResponse struct {
 

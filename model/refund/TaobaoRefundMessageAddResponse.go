@@ -12,8 +12,22 @@ taobao.refund.message.add
 */
 type TaobaoRefundMessageAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRefundMessageAddResponse `json:"taobao_refund_message_add_response,omitempty"`
+    // Response *TaobaoRefundMessageAddResponse `json:"refund_message_add_response,omitempty"` 
+    TaobaoRefundMessageAddResponse
 }
+
+/* model for simplify = false
+type TaobaoRefundMessageAddResponse struct {
+
+    // 退款信息。包含id和created
+    
+    RefundMessage  *struct {
+        RefundMessage  *RefundMessage `json:"refund_message,omitempty"`
+    } `json:"refund_message,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRefundMessageAddResponse struct {
 

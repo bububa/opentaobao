@@ -12,8 +12,35 @@ taobao.train.agent.express.set.vtwo
 */
 type TaobaoTrainAgentExpressSetVtwoAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentExpressSetVtwoResponse `json:"taobao_train_agent_express_set_vtwo_response,omitempty"`
+    // Response *TaobaoTrainAgentExpressSetVtwoResponse `json:"train_agent_express_set_vtwo_response,omitempty"` 
+    TaobaoTrainAgentExpressSetVtwoResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentExpressSetVtwoResponse struct {
+
+    // 错误码
+    
+    ErrorMsgCode   string `json:"error_msg_code,omitempty"`
+    
+
+    // 错误描述
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+    // 扩展参数
+    
+    ExtendParams   string `json:"extend_params,omitempty"`
+    
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentExpressSetVtwoResponse struct {
 

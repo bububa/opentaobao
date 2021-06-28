@@ -12,8 +12,22 @@ taobao.baodian.deposit.get.with.sdkversion
 */
 type TaobaoBaodianDepositGetWithSdkversionAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaodianDepositGetWithSdkversionResponse `json:"taobao_baodian_deposit_get_with_sdkversion_response,omitempty"`
+    // Response *TaobaoBaodianDepositGetWithSdkversionResponse `json:"baodian_deposit_get_with_sdkversion_response,omitempty"` 
+    TaobaoBaodianDepositGetWithSdkversionResponse
 }
+
+/* model for simplify = false
+type TaobaoBaodianDepositGetWithSdkversionResponse struct {
+
+    // 结构体
+    
+    Result  *struct {
+        CoinUserDepositV2  *CoinUserDepositV2 `json:"coin_user_deposit_v2,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaodianDepositGetWithSdkversionResponse struct {
 

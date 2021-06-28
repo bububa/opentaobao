@@ -12,8 +12,22 @@ alibaba.alsc.crm.voucher.status.change
 */
 type AlibabaAlscCrmVoucherStatusChangeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmVoucherStatusChangeResponse `json:"alibaba_alsc_crm_voucher_status_change_response,omitempty"`
+    // Response *AlibabaAlscCrmVoucherStatusChangeResponse `json:"alibaba_alsc_crm_voucher_status_change_response,omitempty"` 
+    AlibabaAlscCrmVoucherStatusChangeResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmVoucherStatusChangeResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmVoucherStatusChangeResponse struct {
 

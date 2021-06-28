@@ -12,8 +12,22 @@ alibaba.wdk.item.serviceitem.query
 */
 type AlibabaWdkItemServiceitemQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkItemServiceitemQueryResponse `json:"alibaba_wdk_item_serviceitem_query_response,omitempty"`
+    // Response *AlibabaWdkItemServiceitemQueryResponse `json:"alibaba_wdk_item_serviceitem_query_response,omitempty"` 
+    AlibabaWdkItemServiceitemQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkItemServiceitemQueryResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaWdkItemServiceitemQueryResult  *AlibabaWdkItemServiceitemQueryResult `json:"alibaba_wdk_item_serviceitem_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkItemServiceitemQueryResponse struct {
 

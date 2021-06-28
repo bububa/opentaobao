@@ -31,7 +31,7 @@ type TaobaoTrainAgentBookticketConfirmRequest struct {
     agentId   int64 
 
     // 火车票子订单id;单价;坐席;座次号;车次;乘车人姓名;证件类型;证件号码;保单号;保单价格 (座次号格式:坐席_车厢号_座位号，eg1:硬卧_09_03号下铺 eg2:硬座_02_03c ,注意:票价、保险价格必须到分)
-    tickets   []String 
+    tickets   []string 
 
     // 订单中包含的票数量
     ticketNum   int64 
@@ -137,13 +137,13 @@ func (r TaobaoTrainAgentBookticketConfirmRequest) GetAgentId() int64 {
     return r.agentId
 }
 
-func (r *TaobaoTrainAgentBookticketConfirmRequest) SetTickets(tickets []String) error {
+func (r *TaobaoTrainAgentBookticketConfirmRequest) SetTickets(tickets []string) error {
     r.tickets = tickets
     r.Set("tickets", tickets)
     return nil
 }
 
-func (r TaobaoTrainAgentBookticketConfirmRequest) GetTickets() []String {
+func (r TaobaoTrainAgentBookticketConfirmRequest) GetTickets() []string {
     return r.tickets
 }
 

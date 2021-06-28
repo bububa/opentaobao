@@ -12,8 +12,22 @@ taobao.simba.serchcrowd.get
 */
 type TaobaoSimbaSerchcrowdGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaSerchcrowdGetResponse `json:"taobao_simba_serchcrowd_get_response,omitempty"`
+    // Response *TaobaoSimbaSerchcrowdGetResponse `json:"simba_serchcrowd_get_response,omitempty"` 
+    TaobaoSimbaSerchcrowdGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaSerchcrowdGetResponse struct {
+
+    // result
+    
+    Adgrouptargetingtags  struct {
+        TaobaoSimbaSerchcrowdGetResult  []TaobaoSimbaSerchcrowdGetResult `json:"taobao_simba_serchcrowd_get_result,omitempty"`
+    } `json:"adgrouptargetingtags,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaSerchcrowdGetResponse struct {
 

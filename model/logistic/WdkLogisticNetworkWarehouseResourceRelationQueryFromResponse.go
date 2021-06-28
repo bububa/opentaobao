@@ -12,8 +12,22 @@ wdk.logistic.network.warehouse.resource.relation.query.from
 */
 type WdkLogisticNetworkWarehouseResourceRelationQueryFromAPIResponse struct {
     model.CommonResponse
-    Response *WdkLogisticNetworkWarehouseResourceRelationQueryFromResponse `json:"wdk_logistic_network_warehouse_resource_relation_query_from_response,omitempty"`
+    // Response *WdkLogisticNetworkWarehouseResourceRelationQueryFromResponse `json:"wdk_logistic_network_warehouse_resource_relation_query_from_response,omitempty"` 
+    WdkLogisticNetworkWarehouseResourceRelationQueryFromResponse
 }
+
+/* model for simplify = false
+type WdkLogisticNetworkWarehouseResourceRelationQueryFromResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        LogisticsResult  *LogisticsResult `json:"logistics_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type WdkLogisticNetworkWarehouseResourceRelationQueryFromResponse struct {
 

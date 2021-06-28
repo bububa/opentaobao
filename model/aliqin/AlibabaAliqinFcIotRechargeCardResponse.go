@@ -12,8 +12,22 @@ alibaba.aliqin.fc.iot.rechargeCard
 */
 type AlibabaAliqinFcIotRechargeCardAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcIotRechargeCardResponse `json:"alibaba_aliqin_fc_iot_rechargeCard_response,omitempty"`
+    // Response *AlibabaAliqinFcIotRechargeCardResponse `json:"alibaba_aliqin_fc_iot_rechargeCard_response,omitempty"` 
+    AlibabaAliqinFcIotRechargeCardResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcIotRechargeCardResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaAliqinFcIotRechargeCardResult  *AlibabaAliqinFcIotRechargeCardResult `json:"alibaba_aliqin_fc_iot_recharge_card_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcIotRechargeCardResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.wdk.ums.outbound
 */
 type AlibabaWdkUmsOutboundAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkUmsOutboundResponse `json:"alibaba_wdk_ums_outbound_response,omitempty"`
+    // Response *AlibabaWdkUmsOutboundResponse `json:"alibaba_wdk_ums_outbound_response,omitempty"` 
+    AlibabaWdkUmsOutboundResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkUmsOutboundResponse struct {
+
+    // result
+    
+    Result  *struct {
+        UtmsResult  *UtmsResult `json:"utms_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkUmsOutboundResponse struct {
 

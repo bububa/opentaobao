@@ -12,8 +12,22 @@ taobao.simba.insight.catstopwordnew.get
 */
 type TaobaoSimbaInsightCatstopwordnewGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaInsightCatstopwordnewGetResponse `json:"taobao_simba_insight_catstopwordnew_get_response,omitempty"`
+    // Response *TaobaoSimbaInsightCatstopwordnewGetResponse `json:"simba_insight_catstopwordnew_get_response,omitempty"` 
+    TaobaoSimbaInsightCatstopwordnewGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaInsightCatstopwordnewGetResponse struct {
+
+    // 类目下热门词详细数据
+    
+    TopwordDataList  struct {
+        InsightWordDataUnderCatDTO  []InsightWordDataUnderCatDTO `json:"insight_word_data_under_cat_dto,omitempty"`
+    } `json:"topword_data_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaInsightCatstopwordnewGetResponse struct {
 

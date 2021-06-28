@@ -12,8 +12,20 @@ alibaba.item.publish.schema.get
 */
 type AlibabaItemPublishSchemaGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaItemPublishSchemaGetResponse `json:"alibaba_item_publish_schema_get_response,omitempty"`
+    // Response *AlibabaItemPublishSchemaGetResponse `json:"alibaba_item_publish_schema_get_response,omitempty"` 
+    AlibabaItemPublishSchemaGetResponse
 }
+
+/* model for simplify = false
+type AlibabaItemPublishSchemaGetResponse struct {
+
+    // 商品发布规则信息，XML格式.
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaItemPublishSchemaGetResponse struct {
 

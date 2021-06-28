@@ -11,11 +11,11 @@ taobao.wt.trade.order.resultcallback
 
 阿里通信定制服务，商家发货后进行调用该接口，用于自动发货并确认收货
 */
-func TaobaoWtTradeOrderResultcallback(clt *core.SDKClient, req *alicom.TaobaoWtTradeOrderResultcallbackRequest, session string) (*alicom.TaobaoWtTradeOrderResultcallbackResponse, error) {
+func TaobaoWtTradeOrderResultcallback(clt *core.SDKClient, req *alicom.TaobaoWtTradeOrderResultcallbackRequest, session string) (*alicom.TaobaoWtTradeOrderResultcallbackAPIResponse, error) {
     var resp alicom.TaobaoWtTradeOrderResultcallbackAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

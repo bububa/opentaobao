@@ -12,8 +12,27 @@ taobao.wlb.waybill.shengxian.get
 */
 type TaobaoWlbWaybillShengxianGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWaybillShengxianGetResponse `json:"taobao_wlb_waybill_shengxian_get_response,omitempty"`
+    // Response *TaobaoWlbWaybillShengxianGetResponse `json:"wlb_waybill_shengxian_get_response,omitempty"` 
+    TaobaoWlbWaybillShengxianGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWaybillShengxianGetResponse struct {
+
+    // 生成是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 成功后返回的生鲜电子面单信息
+    
+    FreshWaybill  *struct {
+        FreshWaybill  *FreshWaybill `json:"fresh_waybill,omitempty"`
+    } `json:"fresh_waybill,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWaybillShengxianGetResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.wdk.stock.publish
 
 五道口库存发布接口（针对外部渠道）
 */
-func AlibabaWdkStockPublish(clt *core.SDKClient, req *wdk.AlibabaWdkStockPublishRequest, session string) (*wdk.AlibabaWdkStockPublishResponse, error) {
+func AlibabaWdkStockPublish(clt *core.SDKClient, req *wdk.AlibabaWdkStockPublishRequest, session string) (*wdk.AlibabaWdkStockPublishAPIResponse, error) {
     var resp wdk.AlibabaWdkStockPublishAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

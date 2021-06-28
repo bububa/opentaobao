@@ -12,8 +12,25 @@ taobao.tmc.group.add
 */
 type TaobaoTmcGroupAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcGroupAddResponse `json:"taobao_tmc_group_add_response,omitempty"`
+    // Response *TaobaoTmcGroupAddResponse `json:"tmc_group_add_response,omitempty"` 
+    TaobaoTmcGroupAddResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcGroupAddResponse struct {
+
+    // 创建时间
+    
+    Created   string `json:"created,omitempty"`
+    
+
+    // 分组名称
+    
+    GroupName   string `json:"group_name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcGroupAddResponse struct {
 

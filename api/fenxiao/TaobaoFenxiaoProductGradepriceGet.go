@@ -11,11 +11,11 @@ taobao.fenxiao.product.gradeprice.get
 
 等级折扣查询
 */
-func TaobaoFenxiaoProductGradepriceGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductGradepriceGetRequest, session string) (*fenxiao.TaobaoFenxiaoProductGradepriceGetResponse, error) {
+func TaobaoFenxiaoProductGradepriceGet(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductGradepriceGetRequest, session string) (*fenxiao.TaobaoFenxiaoProductGradepriceGetAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoProductGradepriceGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

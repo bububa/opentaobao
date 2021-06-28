@@ -12,8 +12,22 @@ alibaba.scbp.ad.account.level.get
 */
 type AlibabaScbpAdAccountLevelGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdAccountLevelGetResponse `json:"alibaba_scbp_ad_account_level_get_response,omitempty"`
+    // Response *AlibabaScbpAdAccountLevelGetResponse `json:"alibaba_scbp_ad_account_level_get_response,omitempty"` 
+    AlibabaScbpAdAccountLevelGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdAccountLevelGetResponse struct {
+
+    // 推广账户等级
+    
+    CustLevelDto  *struct {
+        TopCustLevelDto  *TopCustLevelDto `json:"top_cust_level_dto,omitempty"`
+    } `json:"cust_level_dto,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdAccountLevelGetResponse struct {
 

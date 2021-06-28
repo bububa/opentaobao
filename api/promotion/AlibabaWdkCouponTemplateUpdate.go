@@ -11,11 +11,11 @@ alibaba.wdk.coupon.template.update
 
 优惠券模版修改
 */
-func AlibabaWdkCouponTemplateUpdate(clt *core.SDKClient, req *promotion.AlibabaWdkCouponTemplateUpdateRequest, session string) (*promotion.AlibabaWdkCouponTemplateUpdateResponse, error) {
+func AlibabaWdkCouponTemplateUpdate(clt *core.SDKClient, req *promotion.AlibabaWdkCouponTemplateUpdateRequest, session string) (*promotion.AlibabaWdkCouponTemplateUpdateAPIResponse, error) {
     var resp promotion.AlibabaWdkCouponTemplateUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

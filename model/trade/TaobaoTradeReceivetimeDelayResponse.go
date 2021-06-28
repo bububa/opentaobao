@@ -12,8 +12,22 @@ taobao.trade.receivetime.delay
 */
 type TaobaoTradeReceivetimeDelayAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeReceivetimeDelayResponse `json:"taobao_trade_receivetime_delay_response,omitempty"`
+    // Response *TaobaoTradeReceivetimeDelayResponse `json:"trade_receivetime_delay_response,omitempty"` 
+    TaobaoTradeReceivetimeDelayResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeReceivetimeDelayResponse struct {
+
+    // 更新后的交易数据，只包括tid和modified两个字段。
+    
+    Trade  *struct {
+        Trade  *Trade `json:"trade,omitempty"`
+    } `json:"trade,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeReceivetimeDelayResponse struct {
 

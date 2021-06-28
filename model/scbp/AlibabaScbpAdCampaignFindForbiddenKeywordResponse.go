@@ -12,8 +12,22 @@ alibaba.scbp.ad.campaign.find.forbidden.keyword
 */
 type AlibabaScbpAdCampaignFindForbiddenKeywordAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdCampaignFindForbiddenKeywordResponse `json:"alibaba_scbp_ad_campaign_find_forbidden_keyword_response,omitempty"`
+    // Response *AlibabaScbpAdCampaignFindForbiddenKeywordResponse `json:"alibaba_scbp_ad_campaign_find_forbidden_keyword_response,omitempty"` 
+    AlibabaScbpAdCampaignFindForbiddenKeywordResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdCampaignFindForbiddenKeywordResponse struct {
+
+    // 返回数据
+    
+    Result  *struct {
+        AlibabaScbpAdCampaignFindForbiddenKeywordResultDto  *AlibabaScbpAdCampaignFindForbiddenKeywordResultDto `json:"alibaba_scbp_ad_campaign_find_forbidden_keyword_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdCampaignFindForbiddenKeywordResponse struct {
 

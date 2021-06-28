@@ -12,8 +12,20 @@ taobao.crm.exchange.crowdinstance.add
 */
 type TaobaoCrmExchangeCrowdinstanceAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmExchangeCrowdinstanceAddResponse `json:"taobao_crm_exchange_crowdinstance_add_response,omitempty"`
+    // Response *TaobaoCrmExchangeCrowdinstanceAddResponse `json:"crm_exchange_crowdinstance_add_response,omitempty"` 
+    TaobaoCrmExchangeCrowdinstanceAddResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmExchangeCrowdinstanceAddResponse struct {
+
+    // 调用是否成功
+    
+    SubSuccess   bool `json:"sub_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmExchangeCrowdinstanceAddResponse struct {
 

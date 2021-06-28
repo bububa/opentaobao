@@ -22,7 +22,7 @@ type AlibabaItemEditSchemaGetRequest struct {
     itemId   int64 
 
     // 制定返回schema中field字段列表，可用于裁剪返回的schema信息。不填则为全部field
-    fields   []String 
+    fields   []string 
 
 }
 
@@ -65,13 +65,13 @@ func (r AlibabaItemEditSchemaGetRequest) GetItemId() int64 {
     return r.itemId
 }
 
-func (r *AlibabaItemEditSchemaGetRequest) SetFields(fields []String) error {
+func (r *AlibabaItemEditSchemaGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r AlibabaItemEditSchemaGetRequest) GetFields() []String {
+func (r AlibabaItemEditSchemaGetRequest) GetFields() []string {
     return r.fields
 }
 

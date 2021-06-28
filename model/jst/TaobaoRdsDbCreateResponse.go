@@ -12,8 +12,22 @@ taobao.rds.db.create
 */
 type TaobaoRdsDbCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRdsDbCreateResponse `json:"taobao_rds_db_create_response,omitempty"`
+    // Response *TaobaoRdsDbCreateResponse `json:"rds_db_create_response,omitempty"` 
+    TaobaoRdsDbCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoRdsDbCreateResponse struct {
+
+    // rds创建、查询、删除db返回结果的数据结构
+    
+    RdsDbInfo  *struct {
+        RdsDbInfo  *RdsDbInfo `json:"rds_db_info,omitempty"`
+    } `json:"rds_db_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRdsDbCreateResponse struct {
 

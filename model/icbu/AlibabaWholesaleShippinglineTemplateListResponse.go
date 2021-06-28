@@ -12,8 +12,22 @@ alibaba.wholesale.shippingline.template.list
 */
 type AlibabaWholesaleShippinglineTemplateListAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWholesaleShippinglineTemplateListResponse `json:"alibaba_wholesale_shippingline_template_list_response,omitempty"`
+    // Response *AlibabaWholesaleShippinglineTemplateListResponse `json:"alibaba_wholesale_shippingline_template_list_response,omitempty"` 
+    AlibabaWholesaleShippinglineTemplateListResponse
 }
+
+/* model for simplify = false
+type AlibabaWholesaleShippinglineTemplateListResponse struct {
+
+    // 运费模板列表
+    
+    ListTemplateResponse  *struct {
+        ListTemplateAPIResult  *ListTemplateAPIResult `json:"list_template_api_result,omitempty"`
+    } `json:"list_template_response,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWholesaleShippinglineTemplateListResponse struct {
 

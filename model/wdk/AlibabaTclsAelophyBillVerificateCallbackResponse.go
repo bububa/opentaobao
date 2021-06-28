@@ -12,8 +12,22 @@ alibaba.tcls.aelophy.bill.verificate.callback
 */
 type AlibabaTclsAelophyBillVerificateCallbackAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTclsAelophyBillVerificateCallbackResponse `json:"alibaba_tcls_aelophy_bill_verificate_callback_response,omitempty"`
+    // Response *AlibabaTclsAelophyBillVerificateCallbackResponse `json:"alibaba_tcls_aelophy_bill_verificate_callback_response,omitempty"` 
+    AlibabaTclsAelophyBillVerificateCallbackResponse
 }
+
+/* model for simplify = false
+type AlibabaTclsAelophyBillVerificateCallbackResponse struct {
+
+    // 处理结果
+    
+    ApiResult  *struct {
+        AlibabaTclsAelophyBillVerificateCallbackApiResult  *AlibabaTclsAelophyBillVerificateCallbackApiResult `json:"alibaba_tcls_aelophy_bill_verificate_callback_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTclsAelophyBillVerificateCallbackResponse struct {
 

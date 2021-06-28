@@ -11,11 +11,11 @@ alibaba.wdk.ums.returnitems.get
 
 退货库位商品查询（退货出库辅助）-回流单
 */
-func AlibabaWdkUmsReturnitemsGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsReturnitemsGetRequest, session string) (*wdk.AlibabaWdkUmsReturnitemsGetResponse, error) {
+func AlibabaWdkUmsReturnitemsGet(clt *core.SDKClient, req *wdk.AlibabaWdkUmsReturnitemsGetRequest, session string) (*wdk.AlibabaWdkUmsReturnitemsGetAPIResponse, error) {
     var resp wdk.AlibabaWdkUmsReturnitemsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

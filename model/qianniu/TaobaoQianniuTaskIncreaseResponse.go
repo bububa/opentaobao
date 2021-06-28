@@ -12,8 +12,20 @@ taobao.qianniu.task.increase
 */
 type TaobaoQianniuTaskIncreaseAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQianniuTaskIncreaseResponse `json:"taobao_qianniu_task_increase_response,omitempty"`
+    // Response *TaobaoQianniuTaskIncreaseResponse `json:"qianniu_task_increase_response,omitempty"` 
+    TaobaoQianniuTaskIncreaseResponse
 }
+
+/* model for simplify = false
+type TaobaoQianniuTaskIncreaseResponse struct {
+
+    // 是否添加成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQianniuTaskIncreaseResponse struct {
 

@@ -12,8 +12,22 @@ cts上传溯源信息
 */
 type TmallTraceplatformCtsInfoUploadAPIResponse struct {
     model.CommonResponse
-    Response *TmallTraceplatformCtsInfoUploadResponse `json:"tmall_traceplatform_cts_info_upload_response,omitempty"`
+    // Response *TmallTraceplatformCtsInfoUploadResponse `json:"tmall_traceplatform_cts_info_upload_response,omitempty"` 
+    TmallTraceplatformCtsInfoUploadResponse
 }
+
+/* model for simplify = false
+type TmallTraceplatformCtsInfoUploadResponse struct {
+
+    // result
+    
+    Result  *struct {
+        DataResult  *DataResult `json:"data_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallTraceplatformCtsInfoUploadResponse struct {
 

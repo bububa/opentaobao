@@ -12,8 +12,25 @@ alibaba.ele.fengniao.user.time.query
 */
 type AlibabaEleFengniaoUserTimeQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaEleFengniaoUserTimeQueryResponse `json:"alibaba_ele_fengniao_user_time_query_response,omitempty"`
+    // Response *AlibabaEleFengniaoUserTimeQueryResponse `json:"alibaba_ele_fengniao_user_time_query_response,omitempty"` 
+    AlibabaEleFengniaoUserTimeQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaEleFengniaoUserTimeQueryResponse struct {
+
+    // 骑手预计时间
+    
+    CarrierPredictDeliveryTime   int64 `json:"carrier_predict_delivery_time,omitempty"`
+    
+
+    // 用户预计时间
+    
+    CustomerPredictDeliveryTime   int64 `json:"customer_predict_delivery_time,omitempty"`
+    
+
+}
+*/
 
 type AlibabaEleFengniaoUserTimeQueryResponse struct {
 

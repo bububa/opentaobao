@@ -12,8 +12,22 @@ alitrip.travel.elements.search
 */
 type AlitripTravelElementsSearchAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTravelElementsSearchResponse `json:"alitrip_travel_elements_search_response,omitempty"`
+    // Response *AlitripTravelElementsSearchResponse `json:"alitrip_travel_elements_search_response,omitempty"` 
+    AlitripTravelElementsSearchResponse
 }
+
+/* model for simplify = false
+type AlitripTravelElementsSearchResponse struct {
+
+    // 返回对象
+    
+    Result  *struct {
+        ResourceData  *ResourceData `json:"resource_data,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlitripTravelElementsSearchResponse struct {
 

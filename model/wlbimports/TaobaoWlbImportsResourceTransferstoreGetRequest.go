@@ -22,7 +22,7 @@ type TaobaoWlbImportsResourceTransferstoreGetRequest struct {
     fromId   int64 
 
     // 商品前台叶子类目ID
-    cids   []Number 
+    cids   []int64 
 
     // 买家收货地信息
     toAddress   *ReciverAddressDo 
@@ -68,13 +68,13 @@ func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetFromId() int64 {
     return r.fromId
 }
 
-func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetCids(cids []Number) error {
+func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetCids(cids []int64) error {
     r.cids = cids
     r.Set("cids", cids)
     return nil
 }
 
-func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetCids() []Number {
+func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetCids() []int64 {
     return r.cids
 }
 

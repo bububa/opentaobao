@@ -12,8 +12,20 @@ taobao.fenxiao.product.gradeprice.update
 */
 type TaobaoFenxiaoProductGradepriceUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductGradepriceUpdateResponse `json:"taobao_fenxiao_product_gradeprice_update_response,omitempty"`
+    // Response *TaobaoFenxiaoProductGradepriceUpdateResponse `json:"fenxiao_product_gradeprice_update_response,omitempty"` 
+    TaobaoFenxiaoProductGradepriceUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductGradepriceUpdateResponse struct {
+
+    // 返回操作结果：成功或失败
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoProductGradepriceUpdateResponse struct {
 

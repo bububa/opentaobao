@@ -22,7 +22,7 @@ type TaobaoLogisticsTraceSearchRequest struct {
     isSplit   int64 
 
     // 拆单子订单列表，当is_split=1时，需要传人；对应的数据是：子订单号的列表。
-    subTid   []Number 
+    subTid   []int64 
 
 }
 
@@ -65,13 +65,13 @@ func (r TaobaoLogisticsTraceSearchRequest) GetIsSplit() int64 {
     return r.isSplit
 }
 
-func (r *TaobaoLogisticsTraceSearchRequest) SetSubTid(subTid []Number) error {
+func (r *TaobaoLogisticsTraceSearchRequest) SetSubTid(subTid []int64) error {
     r.subTid = subTid
     r.Set("sub_tid", subTid)
     return nil
 }
 
-func (r TaobaoLogisticsTraceSearchRequest) GetSubTid() []Number {
+func (r TaobaoLogisticsTraceSearchRequest) GetSubTid() []int64 {
     return r.subTid
 }
 

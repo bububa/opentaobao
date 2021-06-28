@@ -12,8 +12,32 @@ taobao.bill.book.bills.get
 */
 type TaobaoBillBookBillsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBillBookBillsGetResponse `json:"taobao_bill_book_bills_get_response,omitempty"`
+    // Response *TaobaoBillBookBillsGetResponse `json:"bill_book_bills_get_response,omitempty"` 
+    TaobaoBillBookBillsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBillBookBillsGetResponse struct {
+
+    // 是否有下一页
+    
+    HasNext   bool `json:"has_next,omitempty"`
+    
+
+    // 虚拟账户账单列表
+    
+    Bills  struct {
+        BookBill  []BookBill `json:"book_bill,omitempty"`
+    } `json:"bills,omitempty"`
+    
+
+    // 当前查询的结果数,非总数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBillBookBillsGetResponse struct {
 

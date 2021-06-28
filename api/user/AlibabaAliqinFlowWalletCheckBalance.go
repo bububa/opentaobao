@@ -11,11 +11,11 @@ alibaba.aliqin.flow.wallet.check.balance
 
 检查商家CRM预存余额是否足够进行活动
 */
-func AlibabaAliqinFlowWalletCheckBalance(clt *core.SDKClient, req *user.AlibabaAliqinFlowWalletCheckBalanceRequest, session string) (*user.AlibabaAliqinFlowWalletCheckBalanceResponse, error) {
+func AlibabaAliqinFlowWalletCheckBalance(clt *core.SDKClient, req *user.AlibabaAliqinFlowWalletCheckBalanceRequest, session string) (*user.AlibabaAliqinFlowWalletCheckBalanceAPIResponse, error) {
     var resp user.AlibabaAliqinFlowWalletCheckBalanceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ taobao.tbk.sc.publisher.info.get
 */
 type TaobaoTbkScPublisherInfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkScPublisherInfoGetResponse `json:"taobao_tbk_sc_publisher_info_get_response,omitempty"`
+    // Response *TaobaoTbkScPublisherInfoGetResponse `json:"tbk_sc_publisher_info_get_response,omitempty"` 
+    TaobaoTbkScPublisherInfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkScPublisherInfoGetResponse struct {
+
+    // data
+    
+    Data  *struct {
+        TaobaoTbkScPublisherInfoGetData  *TaobaoTbkScPublisherInfoGetData `json:"taobao_tbk_sc_publisher_info_get_data,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkScPublisherInfoGetResponse struct {
 

@@ -12,8 +12,32 @@ taobao.special.refunds.receive.get
 */
 type TaobaoSpecialRefundsReceiveGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSpecialRefundsReceiveGetResponse `json:"taobao_special_refunds_receive_get_response,omitempty"`
+    // Response *TaobaoSpecialRefundsReceiveGetResponse `json:"special_refunds_receive_get_response,omitempty"` 
+    TaobaoSpecialRefundsReceiveGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSpecialRefundsReceiveGetResponse struct {
+
+    // 搜索到的退款信息总数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 是否存在下一页
+    
+    HasNext   bool `json:"has_next,omitempty"`
+    
+
+    // 搜索到的退款信息列表
+    
+    Refunds  struct {
+        Refund  []Refund `json:"refund,omitempty"`
+    } `json:"refunds,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSpecialRefundsReceiveGetResponse struct {
 

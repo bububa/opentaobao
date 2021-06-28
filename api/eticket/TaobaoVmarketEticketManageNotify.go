@@ -11,11 +11,11 @@ taobao.vmarket.eticket.manage.notify
 
 外部合作商家主动发起通知接口
 */
-func TaobaoVmarketEticketManageNotify(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketManageNotifyRequest, session string) (*eticket.TaobaoVmarketEticketManageNotifyResponse, error) {
+func TaobaoVmarketEticketManageNotify(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketManageNotifyRequest, session string) (*eticket.TaobaoVmarketEticketManageNotifyAPIResponse, error) {
     var resp eticket.TaobaoVmarketEticketManageNotifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

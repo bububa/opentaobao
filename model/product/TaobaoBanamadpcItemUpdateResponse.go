@@ -12,8 +12,22 @@ taobao.banamadpc.item.update
 */
 type TaobaoBanamadpcItemUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBanamadpcItemUpdateResponse `json:"taobao_banamadpc_item_update_response,omitempty"`
+    // Response *TaobaoBanamadpcItemUpdateResponse `json:"banamadpc_item_update_response,omitempty"` 
+    TaobaoBanamadpcItemUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoBanamadpcItemUpdateResponse struct {
+
+    // 无
+    
+    ApiResult  *struct {
+        TaobaoBanamadpcItemUpdateApiResult  *TaobaoBanamadpcItemUpdateApiResult `json:"taobao_banamadpc_item_update_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBanamadpcItemUpdateResponse struct {
 

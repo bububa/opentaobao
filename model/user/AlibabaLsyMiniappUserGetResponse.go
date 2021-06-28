@@ -12,8 +12,22 @@ alibaba.lsy.miniapp.user.get
 */
 type AlibabaLsyMiniappUserGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaLsyMiniappUserGetResponse `json:"alibaba_lsy_miniapp_user_get_response,omitempty"`
+    // Response *AlibabaLsyMiniappUserGetResponse `json:"alibaba_lsy_miniapp_user_get_response,omitempty"` 
+    AlibabaLsyMiniappUserGetResponse
 }
+
+/* model for simplify = false
+type AlibabaLsyMiniappUserGetResponse struct {
+
+    // 响应内容
+    
+    Result  *struct {
+        MiniAppResult  *MiniAppResult `json:"mini_app_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaLsyMiniappUserGetResponse struct {
 

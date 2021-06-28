@@ -12,8 +12,22 @@ taobao.tbk.item.info.get
 */
 type TaobaoTbkItemInfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkItemInfoGetResponse `json:"taobao_tbk_item_info_get_response,omitempty"`
+    // Response *TaobaoTbkItemInfoGetResponse `json:"tbk_item_info_get_response,omitempty"` 
+    TaobaoTbkItemInfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkItemInfoGetResponse struct {
+
+    // 淘宝客商品
+    
+    Results  struct {
+        NTbkItem  []NTbkItem `json:"n_tbk_item,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkItemInfoGetResponse struct {
 

@@ -11,11 +11,11 @@ taobao.oc.order.ap.update
 
 对OC订单执行分账操作
 */
-func TaobaoOcOrderApUpdate(clt *core.SDKClient, req *jst.TaobaoOcOrderApUpdateRequest, session string) (*jst.TaobaoOcOrderApUpdateResponse, error) {
+func TaobaoOcOrderApUpdate(clt *core.SDKClient, req *jst.TaobaoOcOrderApUpdateRequest, session string) (*jst.TaobaoOcOrderApUpdateAPIResponse, error) {
     var resp jst.TaobaoOcOrderApUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,25 @@ taobao.apple.newuser.sign.notify
 */
 type TaobaoAppleNewuserSignNotifyAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAppleNewuserSignNotifyResponse `json:"taobao_apple_newuser_sign_notify_response,omitempty"`
+    // Response *TaobaoAppleNewuserSignNotifyResponse `json:"apple_newuser_sign_notify_response,omitempty"` 
+    TaobaoAppleNewuserSignNotifyResponse
 }
+
+/* model for simplify = false
+type TaobaoAppleNewuserSignNotifyResponse struct {
+
+    // 处理结果说明
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // 处理结果码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAppleNewuserSignNotifyResponse struct {
 

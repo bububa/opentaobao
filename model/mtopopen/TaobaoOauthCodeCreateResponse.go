@@ -12,8 +12,20 @@ taobao.oauth.code.create
 */
 type TaobaoOauthCodeCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOauthCodeCreateResponse `json:"taobao_oauth_code_create_response,omitempty"`
+    // Response *TaobaoOauthCodeCreateResponse `json:"oauth_code_create_response,omitempty"` 
+    TaobaoOauthCodeCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoOauthCodeCreateResponse struct {
+
+    // mock out params
+    
+    Test   int64 `json:"test,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOauthCodeCreateResponse struct {
 

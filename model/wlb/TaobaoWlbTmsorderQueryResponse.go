@@ -12,8 +12,27 @@ taobao.wlb.tmsorder.query
 */
 type TaobaoWlbTmsorderQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbTmsorderQueryResponse `json:"taobao_wlb_tmsorder_query_response,omitempty"`
+    // Response *TaobaoWlbTmsorderQueryResponse `json:"wlb_tmsorder_query_response,omitempty"` 
+    TaobaoWlbTmsorderQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbTmsorderQueryResponse struct {
+
+    // 物流订单运单信息列表
+    
+    TmsOrderList  struct {
+        WlbTmsOrder  []WlbTmsOrder `json:"wlb_tms_order,omitempty"`
+    } `json:"tms_order_list,omitempty"`
+    
+
+    // 结果总数
+    
+    TotalCount   int64 `json:"total_count,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbTmsorderQueryResponse struct {
 

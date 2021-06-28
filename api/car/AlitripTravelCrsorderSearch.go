@@ -11,11 +11,11 @@ alitrip.travel.crsorder.search
 
 提供给CRS商家搜索订单列表，仅返回订单号列表
 */
-func AlitripTravelCrsorderSearch(clt *core.SDKClient, req *car.AlitripTravelCrsorderSearchRequest, session string) (*car.AlitripTravelCrsorderSearchResponse, error) {
+func AlitripTravelCrsorderSearch(clt *core.SDKClient, req *car.AlitripTravelCrsorderSearchRequest, session string) (*car.AlitripTravelCrsorderSearchAPIResponse, error) {
     var resp car.AlitripTravelCrsorderSearchAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

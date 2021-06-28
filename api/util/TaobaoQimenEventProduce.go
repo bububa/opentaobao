@@ -11,11 +11,11 @@ taobao.qimen.event.produce
 
 当订单被处理时，用于通知奇门系统。
 */
-func TaobaoQimenEventProduce(clt *core.SDKClient, req *util.TaobaoQimenEventProduceRequest, session string) (*util.TaobaoQimenEventProduceResponse, error) {
+func TaobaoQimenEventProduce(clt *core.SDKClient, req *util.TaobaoQimenEventProduceRequest, session string) (*util.TaobaoQimenEventProduceAPIResponse, error) {
     var resp util.TaobaoQimenEventProduceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

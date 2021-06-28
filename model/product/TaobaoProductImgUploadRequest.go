@@ -22,7 +22,7 @@ type TaobaoProductImgUploadRequest struct {
     productId   int64 
 
     // 图片内容.图片最大为500K,只支持JPG,GIF格式.
-    image   []byte 
+    image   []*model.File 
 
     // 图片序号
     position   int64 
@@ -71,13 +71,13 @@ func (r TaobaoProductImgUploadRequest) GetProductId() int64 {
     return r.productId
 }
 
-func (r *TaobaoProductImgUploadRequest) SetImage(image []byte) error {
+func (r *TaobaoProductImgUploadRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoProductImgUploadRequest) GetImage() []byte {
+func (r TaobaoProductImgUploadRequest) GetImage() []*model.File {
     return r.image
 }
 

@@ -12,8 +12,22 @@ tmall.servicecenter.identifytask.create
 */
 type TmallServicecenterIdentifytaskCreateAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterIdentifytaskCreateResponse `json:"tmall_servicecenter_identifytask_create_response,omitempty"`
+    // Response *TmallServicecenterIdentifytaskCreateResponse `json:"tmall_servicecenter_identifytask_create_response,omitempty"` 
+    TmallServicecenterIdentifytaskCreateResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterIdentifytaskCreateResponse struct {
+
+    // -
+    
+    Result  *struct {
+        FulfilplatformResult  *FulfilplatformResult `json:"fulfilplatform_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterIdentifytaskCreateResponse struct {
 

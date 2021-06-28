@@ -12,8 +12,20 @@ alibaba.aliqin.flow.wallet.check.balance
 */
 type AlibabaAliqinFlowWalletCheckBalanceAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFlowWalletCheckBalanceResponse `json:"alibaba_aliqin_flow_wallet_check_balance_response,omitempty"`
+    // Response *AlibabaAliqinFlowWalletCheckBalanceResponse `json:"alibaba_aliqin_flow_wallet_check_balance_response,omitempty"` 
+    AlibabaAliqinFlowWalletCheckBalanceResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFlowWalletCheckBalanceResponse struct {
+
+    // 余额是否大于校验值，大于返回true，小于返回false
+    
+    Value   string `json:"value,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFlowWalletCheckBalanceResponse struct {
 

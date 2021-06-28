@@ -12,8 +12,22 @@ taobao.qianniu.task.create
 */
 type TaobaoQianniuTaskCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQianniuTaskCreateResponse `json:"taobao_qianniu_task_create_response,omitempty"`
+    // Response *TaobaoQianniuTaskCreateResponse `json:"qianniu_task_create_response,omitempty"` 
+    TaobaoQianniuTaskCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoQianniuTaskCreateResponse struct {
+
+    // 创建的任务元数据
+    
+    Result  *struct {
+        QTaskMetadata  *QTaskMetadata `json:"q_task_metadata,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQianniuTaskCreateResponse struct {
 

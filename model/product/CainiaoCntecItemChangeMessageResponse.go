@@ -12,8 +12,22 @@ cainiao.cntec.item.change.message
 */
 type CainiaoCntecItemChangeMessageAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCntecItemChangeMessageResponse `json:"cainiao_cntec_item_change_message_response,omitempty"`
+    // Response *CainiaoCntecItemChangeMessageResponse `json:"cainiao_cntec_item_change_message_response,omitempty"` 
+    CainiaoCntecItemChangeMessageResponse
 }
+
+/* model for simplify = false
+type CainiaoCntecItemChangeMessageResponse struct {
+
+    // 调用返回的result结构体
+    
+    Result  *struct {
+        CainiaoCntecItemChangeMessageResult  *CainiaoCntecItemChangeMessageResult `json:"cainiao_cntec_item_change_message_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCntecItemChangeMessageResponse struct {
 

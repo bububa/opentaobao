@@ -14,8 +14,20 @@ taobao.openim.tribe.setmembernick
 */
 type TaobaoOpenimTribeSetmembernickAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribeSetmembernickResponse `json:"taobao_openim_tribe_setmembernick_response,omitempty"`
+    // Response *TaobaoOpenimTribeSetmembernickResponse `json:"openim_tribe_setmembernick_response,omitempty"` 
+    TaobaoOpenimTribeSetmembernickResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribeSetmembernickResponse struct {
+
+    // 是否成功
+    
+    TribeCode   int64 `json:"tribe_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribeSetmembernickResponse struct {
 

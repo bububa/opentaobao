@@ -11,11 +11,11 @@ alibaba.tcls.aelophy.refund.csapplyrender
 
 提供商家代客售后逆向申请渲染获取的接口
 */
-func AlibabaTclsAelophyRefundCsapplyrender(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundCsapplyrenderRequest, session string) (*wdk.AlibabaTclsAelophyRefundCsapplyrenderResponse, error) {
+func AlibabaTclsAelophyRefundCsapplyrender(clt *core.SDKClient, req *wdk.AlibabaTclsAelophyRefundCsapplyrenderRequest, session string) (*wdk.AlibabaTclsAelophyRefundCsapplyrenderAPIResponse, error) {
     var resp wdk.AlibabaTclsAelophyRefundCsapplyrenderAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

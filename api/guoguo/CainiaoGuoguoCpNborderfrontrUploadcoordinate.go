@@ -11,11 +11,11 @@ cainiao.guoguo.cp.nborderfrontr.uploadcoordinate
 
 上传小件员GPS位置信息
 */
-func CainiaoGuoguoCpNborderfrontrUploadcoordinate(clt *core.SDKClient, req *guoguo.CainiaoGuoguoCpNborderfrontrUploadcoordinateRequest, session string) (*guoguo.CainiaoGuoguoCpNborderfrontrUploadcoordinateResponse, error) {
+func CainiaoGuoguoCpNborderfrontrUploadcoordinate(clt *core.SDKClient, req *guoguo.CainiaoGuoguoCpNborderfrontrUploadcoordinateRequest, session string) (*guoguo.CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIResponse, error) {
     var resp guoguo.CainiaoGuoguoCpNborderfrontrUploadcoordinateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

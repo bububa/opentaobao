@@ -12,8 +12,27 @@ taobao.bill.accounts.get
 */
 type TaobaoBillAccountsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBillAccountsGetResponse `json:"taobao_bill_accounts_get_response,omitempty"`
+    // Response *TaobaoBillAccountsGetResponse `json:"bill_accounts_get_response,omitempty"` 
+    TaobaoBillAccountsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBillAccountsGetResponse struct {
+
+    // 返回的科目信息
+    
+    Accounts  struct {
+        Account  []Account `json:"account,omitempty"`
+    } `json:"accounts,omitempty"`
+    
+
+    // 返回记录行数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBillAccountsGetResponse struct {
 

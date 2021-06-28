@@ -12,8 +12,22 @@ alibaba.mj.member.hasbind
 */
 type AlibabaMjMemberHasbindAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjMemberHasbindResponse `json:"alibaba_mj_member_hasbind_response,omitempty"`
+    // Response *AlibabaMjMemberHasbindResponse `json:"alibaba_mj_member_hasbind_response,omitempty"` 
+    AlibabaMjMemberHasbindResponse
 }
+
+/* model for simplify = false
+type AlibabaMjMemberHasbindResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        SingleResult  *SingleResult `json:"single_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjMemberHasbindResponse struct {
 

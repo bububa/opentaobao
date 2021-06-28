@@ -12,8 +12,22 @@ alibaba.lst.vas.tradeflow.save
 */
 type AlibabaLstVasTradeflowSaveAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaLstVasTradeflowSaveResponse `json:"alibaba_lst_vas_tradeflow_save_response,omitempty"`
+    // Response *AlibabaLstVasTradeflowSaveResponse `json:"alibaba_lst_vas_tradeflow_save_response,omitempty"` 
+    AlibabaLstVasTradeflowSaveResponse
 }
+
+/* model for simplify = false
+type AlibabaLstVasTradeflowSaveResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaLstVasTradeflowSaveResult  *AlibabaLstVasTradeflowSaveResult `json:"alibaba_lst_vas_tradeflow_save_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaLstVasTradeflowSaveResponse struct {
 

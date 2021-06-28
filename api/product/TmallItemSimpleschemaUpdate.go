@@ -11,11 +11,11 @@ tmall.item.simpleschema.update
 
 国外大商家天猫简化编辑商品
 */
-func TmallItemSimpleschemaUpdate(clt *core.SDKClient, req *product.TmallItemSimpleschemaUpdateRequest, session string) (*product.TmallItemSimpleschemaUpdateResponse, error) {
+func TmallItemSimpleschemaUpdate(clt *core.SDKClient, req *product.TmallItemSimpleschemaUpdateRequest, session string) (*product.TmallItemSimpleschemaUpdateAPIResponse, error) {
     var resp product.TmallItemSimpleschemaUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

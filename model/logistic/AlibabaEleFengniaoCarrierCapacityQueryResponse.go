@@ -12,8 +12,22 @@ alibaba.ele.fengniao.carrier.capacity.query
 */
 type AlibabaEleFengniaoCarrierCapacityQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaEleFengniaoCarrierCapacityQueryResponse `json:"alibaba_ele_fengniao_carrier_capacity_query_response,omitempty"`
+    // Response *AlibabaEleFengniaoCarrierCapacityQueryResponse `json:"alibaba_ele_fengniao_carrier_capacity_query_response,omitempty"` 
+    AlibabaEleFengniaoCarrierCapacityQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaEleFengniaoCarrierCapacityQueryResponse struct {
+
+    // 系统自动生成
+    
+    Results  struct {
+        Capacities  []Capacities `json:"capacities,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type AlibabaEleFengniaoCarrierCapacityQueryResponse struct {
 

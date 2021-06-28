@@ -12,8 +12,22 @@ alibaba.servicecenter.fulfiltask.query
 */
 type AlibabaServicecenterFulfiltaskQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaServicecenterFulfiltaskQueryResponse `json:"alibaba_servicecenter_fulfiltask_query_response,omitempty"`
+    // Response *AlibabaServicecenterFulfiltaskQueryResponse `json:"alibaba_servicecenter_fulfiltask_query_response,omitempty"` 
+    AlibabaServicecenterFulfiltaskQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaServicecenterFulfiltaskQueryResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaServicecenterFulfiltaskQueryResult  *AlibabaServicecenterFulfiltaskQueryResult `json:"alibaba_servicecenter_fulfiltask_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaServicecenterFulfiltaskQueryResponse struct {
 

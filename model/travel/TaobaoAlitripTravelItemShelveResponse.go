@@ -13,8 +13,20 @@ taobao.alitrip.travel.item.shelve
 */
 type TaobaoAlitripTravelItemShelveAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripTravelItemShelveResponse `json:"taobao_alitrip_travel_item_shelve_response,omitempty"`
+    // Response *TaobaoAlitripTravelItemShelveResponse `json:"alitrip_travel_item_shelve_response,omitempty"` 
+    TaobaoAlitripTravelItemShelveResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripTravelItemShelveResponse struct {
+
+    // 商品上下架操作是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripTravelItemShelveResponse struct {
 

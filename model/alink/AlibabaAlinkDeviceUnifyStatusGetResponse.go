@@ -12,8 +12,22 @@ alibaba.alink.device.unify.status.get
 */
 type AlibabaAlinkDeviceUnifyStatusGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlinkDeviceUnifyStatusGetResponse `json:"alibaba_alink_device_unify_status_get_response,omitempty"`
+    // Response *AlibabaAlinkDeviceUnifyStatusGetResponse `json:"alibaba_alink_device_unify_status_get_response,omitempty"` 
+    AlibabaAlinkDeviceUnifyStatusGetResponse
 }
+
+/* model for simplify = false
+type AlibabaAlinkDeviceUnifyStatusGetResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        TopServiceResult  *TopServiceResult `json:"top_service_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlinkDeviceUnifyStatusGetResponse struct {
 

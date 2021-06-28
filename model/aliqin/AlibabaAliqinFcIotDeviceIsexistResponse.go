@@ -12,8 +12,22 @@ alibaba.aliqin.fc.iot.device.isexist
 */
 type AlibabaAliqinFcIotDeviceIsexistAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinFcIotDeviceIsexistResponse `json:"alibaba_aliqin_fc_iot_device_isexist_response,omitempty"`
+    // Response *AlibabaAliqinFcIotDeviceIsexistResponse `json:"alibaba_aliqin_fc_iot_device_isexist_response,omitempty"` 
+    AlibabaAliqinFcIotDeviceIsexistResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinFcIotDeviceIsexistResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaAliqinFcIotDeviceIsexistResult  *AlibabaAliqinFcIotDeviceIsexistResult `json:"alibaba_aliqin_fc_iot_device_isexist_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinFcIotDeviceIsexistResponse struct {
 

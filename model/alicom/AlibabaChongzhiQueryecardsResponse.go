@@ -12,8 +12,39 @@ alibaba.chongzhi.queryecards
 */
 type AlibabaChongzhiQueryecardsAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaChongzhiQueryecardsResponse `json:"alibaba_chongzhi_queryecards_response,omitempty"`
+    // Response *AlibabaChongzhiQueryecardsResponse `json:"alibaba_chongzhi_queryecards_response,omitempty"` 
+    AlibabaChongzhiQueryecardsResponse
 }
+
+/* model for simplify = false
+type AlibabaChongzhiQueryecardsResponse struct {
+
+    // 结果
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+    // desc
+    
+    Desc   string `json:"desc,omitempty"`
+    
+
+    // 订单列表
+    
+    EcardList  struct {
+        EcardItemDo  []EcardItemDo `json:"ecard_item_do,omitempty"`
+    } `json:"ecard_list,omitempty"`
+    
+
+    // MtsInfoDo
+    
+    CatInfo  *struct {
+        MtsInfoDo  *MtsInfoDo `json:"mts_info_do,omitempty"`
+    } `json:"cat_info,omitempty"`
+    
+
+}
+*/
 
 type AlibabaChongzhiQueryecardsResponse struct {
 

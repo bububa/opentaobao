@@ -16,7 +16,7 @@ type TaobaoSimbaInsightCatsdataGetRequest struct {
     model.Params
 
     // 表示要查询的类目id
-    categoryIdList   []String 
+    categoryIdList   []string 
 
     // 开始时间，格式：yyyy-MM-dd
     startDate   string 
@@ -45,13 +45,13 @@ func (r TaobaoSimbaInsightCatsdataGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoSimbaInsightCatsdataGetRequest) SetCategoryIdList(categoryIdList []String) error {
+func (r *TaobaoSimbaInsightCatsdataGetRequest) SetCategoryIdList(categoryIdList []string) error {
     r.categoryIdList = categoryIdList
     r.Set("category_id_list", categoryIdList)
     return nil
 }
 
-func (r TaobaoSimbaInsightCatsdataGetRequest) GetCategoryIdList() []String {
+func (r TaobaoSimbaInsightCatsdataGetRequest) GetCategoryIdList() []string {
     return r.categoryIdList
 }
 

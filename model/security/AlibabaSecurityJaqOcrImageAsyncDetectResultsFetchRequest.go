@@ -16,7 +16,7 @@ type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest struct {
     model.Params
 
     // 值为图像检测接口异步调用时返回的图片task_id
-    taskIds   []String 
+    taskIds   []string 
 
 }
 
@@ -39,13 +39,13 @@ func (r AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest) GetApiParams()
 }
 
 
-func (r *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest) SetTaskIds(taskIds []String) error {
+func (r *AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest) SetTaskIds(taskIds []string) error {
     r.taskIds = taskIds
     r.Set("task_ids", taskIds)
     return nil
 }
 
-func (r AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest) GetTaskIds() []String {
+func (r AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchRequest) GetTaskIds() []string {
     return r.taskIds
 }
 

@@ -12,8 +12,22 @@ taobao.product.img.upload
 */
 type TaobaoProductImgUploadAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoProductImgUploadResponse `json:"taobao_product_img_upload_response,omitempty"`
+    // Response *TaobaoProductImgUploadResponse `json:"product_img_upload_response,omitempty"` 
+    TaobaoProductImgUploadResponse
 }
+
+/* model for simplify = false
+type TaobaoProductImgUploadResponse struct {
+
+    // 返回产品图片结构中的：url,id,created,modified
+    
+    ProductImg  *struct {
+        ProductImg  *ProductImg `json:"product_img,omitempty"`
+    } `json:"product_img,omitempty"`
+    
+
+}
+*/
 
 type TaobaoProductImgUploadResponse struct {
 

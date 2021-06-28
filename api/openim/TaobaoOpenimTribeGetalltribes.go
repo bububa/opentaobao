@@ -11,11 +11,11 @@ taobao.openim.tribe.getalltribes
 
 OPENIM群服务获取用户群列表
 */
-func TaobaoOpenimTribeGetalltribes(clt *core.SDKClient, req *openim.TaobaoOpenimTribeGetalltribesRequest, session string) (*openim.TaobaoOpenimTribeGetalltribesResponse, error) {
+func TaobaoOpenimTribeGetalltribes(clt *core.SDKClient, req *openim.TaobaoOpenimTribeGetalltribesRequest, session string) (*openim.TaobaoOpenimTribeGetalltribesAPIResponse, error) {
     var resp openim.TaobaoOpenimTribeGetalltribesAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

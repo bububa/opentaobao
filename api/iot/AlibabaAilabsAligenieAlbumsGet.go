@@ -11,11 +11,11 @@ alibaba.ailabs.aligenie.albums.get
 
 给予厂商查询专辑下的音频详情
 */
-func AlibabaAilabsAligenieAlbumsGet(clt *core.SDKClient, req *iot.AlibabaAilabsAligenieAlbumsGetRequest, session string) (*iot.AlibabaAilabsAligenieAlbumsGetResponse, error) {
+func AlibabaAilabsAligenieAlbumsGet(clt *core.SDKClient, req *iot.AlibabaAilabsAligenieAlbumsGetRequest, session string) (*iot.AlibabaAilabsAligenieAlbumsGetAPIResponse, error) {
     var resp iot.AlibabaAilabsAligenieAlbumsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

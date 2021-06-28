@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.assignworker
 */
 type TmallServicecenterWorkcardAssignworkerAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardAssignworkerResponse `json:"tmall_servicecenter_workcard_assignworker_response,omitempty"`
+    // Response *TmallServicecenterWorkcardAssignworkerResponse `json:"tmall_servicecenter_workcard_assignworker_response,omitempty"` 
+    TmallServicecenterWorkcardAssignworkerResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardAssignworkerResponse struct {
+
+    // -
+    
+    Result  *struct {
+        TmallServicecenterWorkcardAssignworkerResult  *TmallServicecenterWorkcardAssignworkerResult `json:"tmall_servicecenter_workcard_assignworker_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardAssignworkerResponse struct {
 

@@ -11,11 +11,11 @@ taobao.bus.numbers.stockprice.update
 
 用于汽车票代理商更新价格库存
 */
-func TaobaoBusNumbersStockpriceUpdate(clt *core.SDKClient, req *bus.TaobaoBusNumbersStockpriceUpdateRequest, session string) (*bus.TaobaoBusNumbersStockpriceUpdateResponse, error) {
+func TaobaoBusNumbersStockpriceUpdate(clt *core.SDKClient, req *bus.TaobaoBusNumbersStockpriceUpdateRequest, session string) (*bus.TaobaoBusNumbersStockpriceUpdateAPIResponse, error) {
     var resp bus.TaobaoBusNumbersStockpriceUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -16,7 +16,7 @@ type TmallServicecenterIdentifytaskCreateRequest struct {
     model.Params
 
     // 工单列表
-    workcardIds   []Number 
+    workcardIds   []int64 
 
     // 是否改派
     reassign   bool 
@@ -45,13 +45,13 @@ func (r TmallServicecenterIdentifytaskCreateRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TmallServicecenterIdentifytaskCreateRequest) SetWorkcardIds(workcardIds []Number) error {
+func (r *TmallServicecenterIdentifytaskCreateRequest) SetWorkcardIds(workcardIds []int64) error {
     r.workcardIds = workcardIds
     r.Set("workcard_ids", workcardIds)
     return nil
 }
 
-func (r TmallServicecenterIdentifytaskCreateRequest) GetWorkcardIds() []Number {
+func (r TmallServicecenterIdentifytaskCreateRequest) GetWorkcardIds() []int64 {
     return r.workcardIds
 }
 

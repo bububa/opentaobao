@@ -40,7 +40,7 @@ type TaobaoTaeBillsGetRequest struct {
     queryEndDate   string 
 
     // 传入需要返回的字段,参见Bill结构体
-    fields   []String 
+    fields   []string 
 
 }
 
@@ -143,13 +143,13 @@ func (r TaobaoTaeBillsGetRequest) GetQueryEndDate() string {
     return r.queryEndDate
 }
 
-func (r *TaobaoTaeBillsGetRequest) SetFields(fields []String) error {
+func (r *TaobaoTaeBillsGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoTaeBillsGetRequest) GetFields() []String {
+func (r TaobaoTaeBillsGetRequest) GetFields() []string {
     return r.fields
 }
 

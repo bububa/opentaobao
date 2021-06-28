@@ -12,8 +12,20 @@ alibaba.security.jaq.rp.rphit
 */
 type AlibabaSecurityJaqRpRphitAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqRpRphitResponse `json:"alibaba_security_jaq_rp_rphit_response,omitempty"`
+    // Response *AlibabaSecurityJaqRpRphitResponse `json:"alibaba_security_jaq_rp_rphit_response,omitempty"` 
+    AlibabaSecurityJaqRpRphitResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqRpRphitResponse struct {
+
+    // data
+    
+    Data   string `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqRpRphitResponse struct {
 

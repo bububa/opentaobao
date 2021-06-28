@@ -12,8 +12,22 @@ taobao.wlb.waybill.i.product
 */
 type TaobaoWlbWaybillIProductAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWaybillIProductResponse `json:"taobao_wlb_waybill_i_product_response,omitempty"`
+    // Response *TaobaoWlbWaybillIProductResponse `json:"wlb_waybill_i_product_response,omitempty"` 
+    TaobaoWlbWaybillIProductResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWaybillIProductResponse struct {
+
+    // 产品类型返回
+    
+    ProductTypes  struct {
+        WaybillProductType  []WaybillProductType `json:"waybill_product_type,omitempty"`
+    } `json:"product_types,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWaybillIProductResponse struct {
 

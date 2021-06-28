@@ -12,8 +12,20 @@ alibaba.interact.isvlottery.isvdraw
 */
 type AlibabaInteractIsvlotteryIsvdrawAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractIsvlotteryIsvdrawResponse `json:"alibaba_interact_isvlottery_isvdraw_response,omitempty"`
+    // Response *AlibabaInteractIsvlotteryIsvdrawResponse `json:"alibaba_interact_isvlottery_isvdraw_response,omitempty"` 
+    AlibabaInteractIsvlotteryIsvdrawResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractIsvlotteryIsvdrawResponse struct {
+
+    // 无用参数
+    
+    Stub   string `json:"stub,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractIsvlotteryIsvdrawResponse struct {
 

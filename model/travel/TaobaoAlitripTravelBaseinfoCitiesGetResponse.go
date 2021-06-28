@@ -12,8 +12,20 @@ taobao.alitrip.travel.baseinfo.cities.get
 */
 type TaobaoAlitripTravelBaseinfoCitiesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripTravelBaseinfoCitiesGetResponse `json:"taobao_alitrip_travel_baseinfo_cities_get_response,omitempty"`
+    // Response *TaobaoAlitripTravelBaseinfoCitiesGetResponse `json:"alitrip_travel_baseinfo_cities_get_response,omitempty"` 
+    TaobaoAlitripTravelBaseinfoCitiesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripTravelBaseinfoCitiesGetResponse struct {
+
+    // 地区级联城市列表，返回数据为json数组结构的字符串
+    
+    IocInfos   string `json:"ioc_infos,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripTravelBaseinfoCitiesGetResponse struct {
 

@@ -11,11 +11,11 @@ taobao.train.agent.get.refund
 
 代理商获取订单信息回调API
 */
-func TaobaoTrainAgentGetRefund(clt *core.SDKClient, req *train.TaobaoTrainAgentGetRefundRequest, session string) (*train.TaobaoTrainAgentGetRefundResponse, error) {
+func TaobaoTrainAgentGetRefund(clt *core.SDKClient, req *train.TaobaoTrainAgentGetRefundRequest, session string) (*train.TaobaoTrainAgentGetRefundAPIResponse, error) {
     var resp train.TaobaoTrainAgentGetRefundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,20 @@ alibaba.icbu.product.id.decrypt
 */
 type AlibabaIcbuProductIdDecryptAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuProductIdDecryptResponse `json:"alibaba_icbu_product_id_decrypt_response,omitempty"`
+    // Response *AlibabaIcbuProductIdDecryptResponse `json:"alibaba_icbu_product_id_decrypt_response,omitempty"` 
+    AlibabaIcbuProductIdDecryptResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuProductIdDecryptResponse struct {
+
+    // 商品ID
+    
+    Id   int64 `json:"id,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuProductIdDecryptResponse struct {
 

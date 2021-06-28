@@ -11,11 +11,11 @@ cainiao.waybill.ii.query.by.tradecode
 
 通过订单号查看面单的信息
 */
-func CainiaoWaybillIiQueryByTradecode(clt *core.SDKClient, req *waybill.CainiaoWaybillIiQueryByTradecodeRequest, session string) (*waybill.CainiaoWaybillIiQueryByTradecodeResponse, error) {
+func CainiaoWaybillIiQueryByTradecode(clt *core.SDKClient, req *waybill.CainiaoWaybillIiQueryByTradecodeRequest, session string) (*waybill.CainiaoWaybillIiQueryByTradecodeAPIResponse, error) {
     var resp waybill.CainiaoWaybillIiQueryByTradecodeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

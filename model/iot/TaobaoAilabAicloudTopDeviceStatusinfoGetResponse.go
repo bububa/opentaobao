@@ -12,8 +12,22 @@ taobao.ailab.aicloud.top.device.statusinfo.get
 */
 type TaobaoAilabAicloudTopDeviceStatusinfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopDeviceStatusinfoGetResponse `json:"taobao_ailab_aicloud_top_device_statusinfo_get_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopDeviceStatusinfoGetResponse `json:"ailab_aicloud_top_device_statusinfo_get_response,omitempty"` 
+    TaobaoAilabAicloudTopDeviceStatusinfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopDeviceStatusinfoGetResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoAilabAicloudTopDeviceStatusinfoGetResult  *TaobaoAilabAicloudTopDeviceStatusinfoGetResult `json:"taobao_ailab_aicloud_top_device_statusinfo_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopDeviceStatusinfoGetResponse struct {
 

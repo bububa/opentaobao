@@ -12,12 +12,26 @@ taobao.simba.creativeids.deleted.get
 */
 type TaobaoSimbaCreativeidsDeletedGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCreativeidsDeletedGetResponse `json:"taobao_simba_creativeids_deleted_get_response,omitempty"`
+    // Response *TaobaoSimbaCreativeidsDeletedGetResponse `json:"simba_creativeids_deleted_get_response,omitempty"` 
+    TaobaoSimbaCreativeidsDeletedGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCreativeidsDeletedGetResponse struct {
+
+    // 创意ID列表
+    
+    DeletedCreativeIds  struct {
+        Number  []int64 `json:"int64,omitempty"`
+    } `json:"deleted_creative_ids,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCreativeidsDeletedGetResponse struct {
 
     // 创意ID列表
-    DeletedCreativeIds   []Number `json:"deleted_creative_ids,omitempty"`
+    DeletedCreativeIds   []int64 `json:"deleted_creative_ids,omitempty"`
 
 }

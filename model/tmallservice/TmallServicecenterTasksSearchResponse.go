@@ -12,8 +12,22 @@ tmall.servicecenter.tasks.search
 */
 type TmallServicecenterTasksSearchAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterTasksSearchResponse `json:"tmall_servicecenter_tasks_search_response,omitempty"`
+    // Response *TmallServicecenterTasksSearchResponse `json:"tmall_servicecenter_tasks_search_response,omitempty"` 
+    TmallServicecenterTasksSearchResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterTasksSearchResponse struct {
+
+    // ServicePacket<ServiceTaskDO>
+    
+    ServiceTaskPacket  *struct {
+        ServiceTaskPacket  *ServiceTaskPacket `json:"service_task_packet,omitempty"`
+    } `json:"service_task_packet,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterTasksSearchResponse struct {
 

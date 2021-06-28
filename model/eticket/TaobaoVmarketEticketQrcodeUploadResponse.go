@@ -12,8 +12,25 @@ taobao.vmarket.eticket.qrcode.upload
 */
 type TaobaoVmarketEticketQrcodeUploadAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVmarketEticketQrcodeUploadResponse `json:"taobao_vmarket_eticket_qrcode_upload_response,omitempty"`
+    // Response *TaobaoVmarketEticketQrcodeUploadResponse `json:"vmarket_eticket_qrcode_upload_response,omitempty"` 
+    TaobaoVmarketEticketQrcodeUploadResponse
 }
+
+/* model for simplify = false
+type TaobaoVmarketEticketQrcodeUploadResponse struct {
+
+    // 1:成功  其它为失败
+    
+    RetCode   int64 `json:"ret_code,omitempty"`
+    
+
+    // 图片文件名称
+    
+    ImgFilename   string `json:"img_filename,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVmarketEticketQrcodeUploadResponse struct {
 

@@ -11,11 +11,11 @@ taobao.tbk.dg.newuser.order.get
 
 拉新API
 */
-func TaobaoTbkDgNewuserOrderGet(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderGetRequest, session string) (*tbk.TaobaoTbkDgNewuserOrderGetResponse, error) {
+func TaobaoTbkDgNewuserOrderGet(clt *core.SDKClient, req *tbk.TaobaoTbkDgNewuserOrderGetRequest, session string) (*tbk.TaobaoTbkDgNewuserOrderGetAPIResponse, error) {
     var resp tbk.TaobaoTbkDgNewuserOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

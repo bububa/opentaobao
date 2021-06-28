@@ -11,11 +11,11 @@ alibaba.icbu.photobank.group.list
 
 图片银行分组信息获取
 */
-func AlibabaIcbuPhotobankGroupList(clt *core.SDKClient, req *icbu.AlibabaIcbuPhotobankGroupListRequest, session string) (*icbu.AlibabaIcbuPhotobankGroupListResponse, error) {
+func AlibabaIcbuPhotobankGroupList(clt *core.SDKClient, req *icbu.AlibabaIcbuPhotobankGroupListRequest, session string) (*icbu.AlibabaIcbuPhotobankGroupListAPIResponse, error) {
     var resp icbu.AlibabaIcbuPhotobankGroupListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

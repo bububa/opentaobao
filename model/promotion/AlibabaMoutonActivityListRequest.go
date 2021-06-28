@@ -37,7 +37,7 @@ type AlibabaMoutonActivityListRequest struct {
     sourceRecordId   int64 
 
     // 状态
-    statusList   []String 
+    statusList   []string 
 
     // 当前页
     currentPage   int64 
@@ -133,13 +133,13 @@ func (r AlibabaMoutonActivityListRequest) GetSourceRecordId() int64 {
     return r.sourceRecordId
 }
 
-func (r *AlibabaMoutonActivityListRequest) SetStatusList(statusList []String) error {
+func (r *AlibabaMoutonActivityListRequest) SetStatusList(statusList []string) error {
     r.statusList = statusList
     r.Set("status_list", statusList)
     return nil
 }
 
-func (r AlibabaMoutonActivityListRequest) GetStatusList() []String {
+func (r AlibabaMoutonActivityListRequest) GetStatusList() []string {
     return r.statusList
 }
 

@@ -12,8 +12,20 @@ alibaba.ele.fengniao.chainstore.update
 */
 type AlibabaEleFengniaoChainstoreUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaEleFengniaoChainstoreUpdateResponse `json:"alibaba_ele_fengniao_chainstore_update_response,omitempty"`
+    // Response *AlibabaEleFengniaoChainstoreUpdateResponse `json:"alibaba_ele_fengniao_chainstore_update_response,omitempty"` 
+    AlibabaEleFengniaoChainstoreUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaEleFengniaoChainstoreUpdateResponse struct {
+
+    // 出参
+    
+    Message   string `json:"message,omitempty"`
+    
+
+}
+*/
 
 type AlibabaEleFengniaoChainstoreUpdateResponse struct {
 

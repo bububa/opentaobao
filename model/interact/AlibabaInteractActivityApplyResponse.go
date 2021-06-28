@@ -12,8 +12,32 @@ alibaba.interact.activity.apply
 */
 type AlibabaInteractActivityApplyAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractActivityApplyResponse `json:"alibaba_interact_activity_apply_response,omitempty"`
+    // Response *AlibabaInteractActivityApplyResponse `json:"alibaba_interact_activity_apply_response,omitempty"` 
+    AlibabaInteractActivityApplyResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractActivityApplyResponse struct {
+
+    // 服务结果对象
+    
+    Data  *struct {
+        ActivityWriteResult  *ActivityWriteResult `json:"activity_write_result,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+    // top接口执行成功与否
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 出错提示信息
+    
+    ErrMsg   string `json:"err_msg,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractActivityApplyResponse struct {
 

@@ -12,8 +12,22 @@ taobao.weike.subscinfo.get
 */
 type TaobaoWeikeSubscinfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWeikeSubscinfoGetResponse `json:"taobao_weike_subscinfo_get_response,omitempty"`
+    // Response *TaobaoWeikeSubscinfoGetResponse `json:"weike_subscinfo_get_response,omitempty"` 
+    TaobaoWeikeSubscinfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWeikeSubscinfoGetResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        SubscInfoWrapper  *SubscInfoWrapper `json:"subsc_info_wrapper,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWeikeSubscinfoGetResponse struct {
 

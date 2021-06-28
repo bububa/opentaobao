@@ -11,11 +11,11 @@ alibaba.mj.mos.fund.createbill
 
 创建一个付款单
 */
-func AlibabaMjMosFundCreatebill(clt *core.SDKClient, req *mos.AlibabaMjMosFundCreatebillRequest, session string) (*mos.AlibabaMjMosFundCreatebillResponse, error) {
+func AlibabaMjMosFundCreatebill(clt *core.SDKClient, req *mos.AlibabaMjMosFundCreatebillRequest, session string) (*mos.AlibabaMjMosFundCreatebillAPIResponse, error) {
     var resp mos.AlibabaMjMosFundCreatebillAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

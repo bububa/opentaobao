@@ -12,8 +12,27 @@ taobao.jds.trade.traces.get
 */
 type TaobaoJdsTradeTracesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJdsTradeTracesGetResponse `json:"taobao_jds_trade_traces_get_response,omitempty"`
+    // Response *TaobaoJdsTradeTracesGetResponse `json:"jds_trade_traces_get_response,omitempty"` 
+    TaobaoJdsTradeTracesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoJdsTradeTracesGetResponse struct {
+
+    // 跟踪信息列表
+    
+    Traces  struct {
+        TradeTrace  []TradeTrace `json:"trade_trace,omitempty"`
+    } `json:"traces,omitempty"`
+    
+
+    // 在订单全链路系统中的状态(比如是否存在)
+    
+    UserStatus   string `json:"user_status,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJdsTradeTracesGetResponse struct {
 

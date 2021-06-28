@@ -12,8 +12,22 @@ alibaba.baichuan.aso.query
 */
 type AlibabaBaichuanAsoQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaBaichuanAsoQueryResponse `json:"alibaba_baichuan_aso_query_response,omitempty"`
+    // Response *AlibabaBaichuanAsoQueryResponse `json:"alibaba_baichuan_aso_query_response,omitempty"` 
+    AlibabaBaichuanAsoQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaBaichuanAsoQueryResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AsoQueryDeviceResult  *AsoQueryDeviceResult `json:"aso_query_device_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaBaichuanAsoQueryResponse struct {
 

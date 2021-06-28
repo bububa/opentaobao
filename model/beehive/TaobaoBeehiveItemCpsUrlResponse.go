@@ -12,8 +12,22 @@ taobao.beehive.item.cps.url
 */
 type TaobaoBeehiveItemCpsUrlAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBeehiveItemCpsUrlResponse `json:"taobao_beehive_item_cps_url_response,omitempty"`
+    // Response *TaobaoBeehiveItemCpsUrlResponse `json:"beehive_item_cps_url_response,omitempty"` 
+    TaobaoBeehiveItemCpsUrlResponse
 }
+
+/* model for simplify = false
+type TaobaoBeehiveItemCpsUrlResponse struct {
+
+    // 结果对象
+    
+    Result  *struct {
+        TaobaoBeehiveItemCpsUrlResultDo  *TaobaoBeehiveItemCpsUrlResultDo `json:"taobao_beehive_item_cps_url_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBeehiveItemCpsUrlResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.wdk.trade.refund.query
 */
 type AlibabaWdkTradeRefundQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkTradeRefundQueryResponse `json:"alibaba_wdk_trade_refund_query_response,omitempty"`
+    // Response *AlibabaWdkTradeRefundQueryResponse `json:"alibaba_wdk_trade_refund_query_response,omitempty"` 
+    AlibabaWdkTradeRefundQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkTradeRefundQueryResponse struct {
+
+    // 查询结果
+    
+    RefundGoodsQueryResult  *struct {
+        RefundGoodsQueryResult  *RefundGoodsQueryResult `json:"refund_goods_query_result,omitempty"`
+    } `json:"refund_goods_query_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkTradeRefundQueryResponse struct {
 

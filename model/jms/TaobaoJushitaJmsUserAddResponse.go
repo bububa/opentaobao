@@ -12,8 +12,20 @@ taobao.jushita.jms.user.add
 */
 type TaobaoJushitaJmsUserAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJushitaJmsUserAddResponse `json:"taobao_jushita_jms_user_add_response,omitempty"`
+    // Response *TaobaoJushitaJmsUserAddResponse `json:"jushita_jms_user_add_response,omitempty"` 
+    TaobaoJushitaJmsUserAddResponse
 }
+
+/* model for simplify = false
+type TaobaoJushitaJmsUserAddResponse struct {
+
+    // 是否成功，如果失败请看错误信息
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJushitaJmsUserAddResponse struct {
 

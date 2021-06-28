@@ -11,11 +11,11 @@ taobao.simba.login.authsign.get
 
 获取登陆权限签名
 */
-func TaobaoSimbaLoginAuthsignGet(clt *core.SDKClient, req *simba.TaobaoSimbaLoginAuthsignGetRequest, session string) (*simba.TaobaoSimbaLoginAuthsignGetResponse, error) {
+func TaobaoSimbaLoginAuthsignGet(clt *core.SDKClient, req *simba.TaobaoSimbaLoginAuthsignGetRequest, session string) (*simba.TaobaoSimbaLoginAuthsignGetAPIResponse, error) {
     var resp simba.TaobaoSimbaLoginAuthsignGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

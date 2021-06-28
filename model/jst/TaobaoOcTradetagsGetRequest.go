@@ -25,10 +25,10 @@ type TaobaoOcTradetagsGetRequest struct {
     history   int64 
 
     // 不填，则默认只查询1,2。1为官方标，2为自定义标，3为主站只读标签
-    tagTypes   []String 
+    tagTypes   []string 
 
     // 不填，则不做标签名称过滤
-    tagNames   []String 
+    tagNames   []string 
 
 }
 
@@ -71,23 +71,23 @@ func (r TaobaoOcTradetagsGetRequest) GetHistory() int64 {
     return r.history
 }
 
-func (r *TaobaoOcTradetagsGetRequest) SetTagTypes(tagTypes []String) error {
+func (r *TaobaoOcTradetagsGetRequest) SetTagTypes(tagTypes []string) error {
     r.tagTypes = tagTypes
     r.Set("tag_types", tagTypes)
     return nil
 }
 
-func (r TaobaoOcTradetagsGetRequest) GetTagTypes() []String {
+func (r TaobaoOcTradetagsGetRequest) GetTagTypes() []string {
     return r.tagTypes
 }
 
-func (r *TaobaoOcTradetagsGetRequest) SetTagNames(tagNames []String) error {
+func (r *TaobaoOcTradetagsGetRequest) SetTagNames(tagNames []string) error {
     r.tagNames = tagNames
     r.Set("tag_names", tagNames)
     return nil
 }
 
-func (r TaobaoOcTradetagsGetRequest) GetTagNames() []String {
+func (r TaobaoOcTradetagsGetRequest) GetTagNames() []string {
     return r.tagNames
 }
 

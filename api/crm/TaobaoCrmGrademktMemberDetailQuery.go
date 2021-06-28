@@ -11,11 +11,11 @@ taobao.crm.grademkt.member.detail.query
 
 商家通过该接口查询等级营销活动
 */
-func TaobaoCrmGrademktMemberDetailQuery(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberDetailQueryRequest, session string) (*crm.TaobaoCrmGrademktMemberDetailQueryResponse, error) {
+func TaobaoCrmGrademktMemberDetailQuery(clt *core.SDKClient, req *crm.TaobaoCrmGrademktMemberDetailQueryRequest, session string) (*crm.TaobaoCrmGrademktMemberDetailQueryAPIResponse, error) {
     var resp crm.TaobaoCrmGrademktMemberDetailQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

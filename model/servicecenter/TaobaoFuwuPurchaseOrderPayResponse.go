@@ -12,8 +12,20 @@ taobao.fuwu.purchase.order.pay
 */
 type TaobaoFuwuPurchaseOrderPayAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFuwuPurchaseOrderPayResponse `json:"taobao_fuwu_purchase_order_pay_response,omitempty"`
+    // Response *TaobaoFuwuPurchaseOrderPayResponse `json:"fuwu_purchase_order_pay_response,omitempty"` 
+    TaobaoFuwuPurchaseOrderPayResponse
 }
+
+/* model for simplify = false
+type TaobaoFuwuPurchaseOrderPayResponse struct {
+
+    // 该url用于订单付款
+    
+    Url   string `json:"url,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFuwuPurchaseOrderPayResponse struct {
 

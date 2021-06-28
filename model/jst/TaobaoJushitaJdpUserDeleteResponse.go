@@ -12,8 +12,20 @@ taobao.jushita.jdp.user.delete
 */
 type TaobaoJushitaJdpUserDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJushitaJdpUserDeleteResponse `json:"taobao_jushita_jdp_user_delete_response,omitempty"`
+    // Response *TaobaoJushitaJdpUserDeleteResponse `json:"jushita_jdp_user_delete_response,omitempty"` 
+    TaobaoJushitaJdpUserDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoJushitaJdpUserDeleteResponse struct {
+
+    // 是否删除成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJushitaJdpUserDeleteResponse struct {
 

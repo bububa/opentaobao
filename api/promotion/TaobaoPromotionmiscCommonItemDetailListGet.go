@@ -11,11 +11,11 @@ taobao.promotionmisc.common.item.detail.list.get
 
 查询通用单品优惠详情列表。
 */
-func TaobaoPromotionmiscCommonItemDetailListGet(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscCommonItemDetailListGetRequest, session string) (*promotion.TaobaoPromotionmiscCommonItemDetailListGetResponse, error) {
+func TaobaoPromotionmiscCommonItemDetailListGet(clt *core.SDKClient, req *promotion.TaobaoPromotionmiscCommonItemDetailListGetRequest, session string) (*promotion.TaobaoPromotionmiscCommonItemDetailListGetAPIResponse, error) {
     var resp promotion.TaobaoPromotionmiscCommonItemDetailListGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

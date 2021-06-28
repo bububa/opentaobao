@@ -12,8 +12,22 @@ taobao.simba.keywords.delete
 */
 type TaobaoSimbaKeywordsDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaKeywordsDeleteResponse `json:"taobao_simba_keywords_delete_response,omitempty"`
+    // Response *TaobaoSimbaKeywordsDeleteResponse `json:"simba_keywords_delete_response,omitempty"` 
+    TaobaoSimbaKeywordsDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaKeywordsDeleteResponse struct {
+
+    // 成功删除的关键词列表
+    
+    Keywords  struct {
+        Keyword  []Keyword `json:"keyword,omitempty"`
+    } `json:"keywords,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaKeywordsDeleteResponse struct {
 

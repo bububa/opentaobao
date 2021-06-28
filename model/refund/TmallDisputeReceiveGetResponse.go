@@ -12,8 +12,22 @@ tmall.dispute.receive.get
 */
 type TmallDisputeReceiveGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallDisputeReceiveGetResponse `json:"tmall_dispute_receive_get_response,omitempty"`
+    // Response *TmallDisputeReceiveGetResponse `json:"tmall_dispute_receive_get_response,omitempty"` 
+    TmallDisputeReceiveGetResponse
 }
+
+/* model for simplify = false
+type TmallDisputeReceiveGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TmallDisputeReceiveGetResultSet  *TmallDisputeReceiveGetResultSet `json:"tmall_dispute_receive_get_result_set,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallDisputeReceiveGetResponse struct {
 

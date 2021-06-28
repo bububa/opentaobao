@@ -12,8 +12,22 @@ taobao.mobile.promotion.coupon.seller.search
 */
 type TaobaoMobilePromotionCouponSellerSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMobilePromotionCouponSellerSearchResponse `json:"taobao_mobile_promotion_coupon_seller_search_response,omitempty"`
+    // Response *TaobaoMobilePromotionCouponSellerSearchResponse `json:"mobile_promotion_coupon_seller_search_response,omitempty"` 
+    TaobaoMobilePromotionCouponSellerSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoMobilePromotionCouponSellerSearchResponse struct {
+
+    // 优惠券查询结果
+    
+    CouponSearchResult  *struct {
+        CouponSearchResult  *CouponSearchResult `json:"coupon_search_result,omitempty"`
+    } `json:"coupon_search_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMobilePromotionCouponSellerSearchResponse struct {
 

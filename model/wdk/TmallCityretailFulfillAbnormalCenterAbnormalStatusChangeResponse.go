@@ -12,8 +12,22 @@ tmall.cityretail.fulfill.abnormal.center.abnormal.status.change
 */
 type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponse struct {
     model.CommonResponse
-    Response *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse `json:"tmall_cityretail_fulfill_abnormal_center_abnormal_status_change_response,omitempty"`
+    // Response *TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse `json:"tmall_cityretail_fulfill_abnormal_center_abnormal_status_change_response,omitempty"` 
+    TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse
 }
+
+/* model for simplify = false
+type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse struct {
+
+    // 响应参数
+    
+    FulfillSingleResult  *struct {
+        FulfillSingleResult  *FulfillSingleResult `json:"fulfill_single_result,omitempty"`
+    } `json:"fulfill_single_result,omitempty"`
+    
+
+}
+*/
 
 type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse struct {
 

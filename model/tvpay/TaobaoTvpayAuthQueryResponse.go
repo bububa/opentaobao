@@ -12,8 +12,22 @@ taobao.tvpay.auth.query
 */
 type TaobaoTvpayAuthQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTvpayAuthQueryResponse `json:"taobao_tvpay_auth_query_response,omitempty"`
+    // Response *TaobaoTvpayAuthQueryResponse `json:"tvpay_auth_query_response,omitempty"` 
+    TaobaoTvpayAuthQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoTvpayAuthQueryResponse struct {
+
+    // Top返回对象
+    
+    Result  *struct {
+        TopResultDo  *TopResultDo `json:"top_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTvpayAuthQueryResponse struct {
 

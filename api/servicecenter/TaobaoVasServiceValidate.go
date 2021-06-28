@@ -11,11 +11,11 @@ taobao.vas.service.validate
 
 增值服务订购服务验证
 */
-func TaobaoVasServiceValidate(clt *core.SDKClient, req *servicecenter.TaobaoVasServiceValidateRequest, session string) (*servicecenter.TaobaoVasServiceValidateResponse, error) {
+func TaobaoVasServiceValidate(clt *core.SDKClient, req *servicecenter.TaobaoVasServiceValidateRequest, session string) (*servicecenter.TaobaoVasServiceValidateAPIResponse, error) {
     var resp servicecenter.TaobaoVasServiceValidateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ alipay.baoxian.claim.uploadattachment
 */
 type AlipayBaoxianClaimUploadattachmentAPIResponse struct {
     model.CommonResponse
-    Response *AlipayBaoxianClaimUploadattachmentResponse `json:"alipay_baoxian_claim_uploadattachment_response,omitempty"`
+    // Response *AlipayBaoxianClaimUploadattachmentResponse `json:"alipay_baoxian_claim_uploadattachment_response,omitempty"` 
+    AlipayBaoxianClaimUploadattachmentResponse
 }
+
+/* model for simplify = false
+type AlipayBaoxianClaimUploadattachmentResponse struct {
+
+    // result
+    
+    UploadResult  *struct {
+        UploadResult  *UploadResult `json:"upload_result,omitempty"`
+    } `json:"upload_result,omitempty"`
+    
+
+}
+*/
 
 type AlipayBaoxianClaimUploadattachmentResponse struct {
 

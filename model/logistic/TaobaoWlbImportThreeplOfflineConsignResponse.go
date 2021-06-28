@@ -12,8 +12,22 @@ taobao.wlb.import.threepl.offline.consign
 */
 type TaobaoWlbImportThreeplOfflineConsignAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbImportThreeplOfflineConsignResponse `json:"taobao_wlb_import_threepl_offline_consign_response,omitempty"`
+    // Response *TaobaoWlbImportThreeplOfflineConsignResponse `json:"wlb_import_threepl_offline_consign_response,omitempty"` 
+    TaobaoWlbImportThreeplOfflineConsignResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbImportThreeplOfflineConsignResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TopResult  *TopResult `json:"top_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbImportThreeplOfflineConsignResponse struct {
 

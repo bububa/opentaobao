@@ -11,11 +11,11 @@ taobao.ailab.aicloud.top.device.control.lamp
 
 台灯控制
 */
-func TaobaoAilabAicloudTopDeviceControlLamp(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlLampRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlLampResponse, error) {
+func TaobaoAilabAicloudTopDeviceControlLamp(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceControlLampRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceControlLampAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopDeviceControlLampAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

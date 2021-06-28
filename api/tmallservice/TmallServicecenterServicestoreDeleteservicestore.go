@@ -24,11 +24,11 @@ tmall.servicecenter.servicestore.deleteservicestore
 11, 网点不存在
 12, 系统错误
 */
-func TmallServicecenterServicestoreDeleteservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreDeleteservicestoreRequest, session string) (*tmallservice.TmallServicecenterServicestoreDeleteservicestoreResponse, error) {
+func TmallServicecenterServicestoreDeleteservicestore(clt *core.SDKClient, req *tmallservice.TmallServicecenterServicestoreDeleteservicestoreRequest, session string) (*tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIResponse, error) {
     var resp tmallservice.TmallServicecenterServicestoreDeleteservicestoreAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

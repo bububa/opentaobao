@@ -12,8 +12,22 @@ alibaba.ailabs.aligenie.albums.search
 */
 type AlibabaAilabsAligenieAlbumsSearchAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAilabsAligenieAlbumsSearchResponse `json:"alibaba_ailabs_aligenie_albums_search_response,omitempty"`
+    // Response *AlibabaAilabsAligenieAlbumsSearchResponse `json:"alibaba_ailabs_aligenie_albums_search_response,omitempty"` 
+    AlibabaAilabsAligenieAlbumsSearchResponse
 }
+
+/* model for simplify = false
+type AlibabaAilabsAligenieAlbumsSearchResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAilabsAligenieAlbumsSearchResponse struct {
 

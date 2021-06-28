@@ -16,10 +16,10 @@ type AlibabaWdkOrderRefundGetRequest struct {
     model.Params
 
     // 五道口订单列表（子订单）
-    bizOrderIds   []Number 
+    bizOrderIds   []int64 
 
     // 退款订单列表
-    refundIds   []Number 
+    refundIds   []int64 
 
     // 渠道来源 3：饿了么 4：盒马
     orderFrom   int64 
@@ -51,23 +51,23 @@ func (r AlibabaWdkOrderRefundGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *AlibabaWdkOrderRefundGetRequest) SetBizOrderIds(bizOrderIds []Number) error {
+func (r *AlibabaWdkOrderRefundGetRequest) SetBizOrderIds(bizOrderIds []int64) error {
     r.bizOrderIds = bizOrderIds
     r.Set("biz_order_ids", bizOrderIds)
     return nil
 }
 
-func (r AlibabaWdkOrderRefundGetRequest) GetBizOrderIds() []Number {
+func (r AlibabaWdkOrderRefundGetRequest) GetBizOrderIds() []int64 {
     return r.bizOrderIds
 }
 
-func (r *AlibabaWdkOrderRefundGetRequest) SetRefundIds(refundIds []Number) error {
+func (r *AlibabaWdkOrderRefundGetRequest) SetRefundIds(refundIds []int64) error {
     r.refundIds = refundIds
     r.Set("refund_ids", refundIds)
     return nil
 }
 
-func (r AlibabaWdkOrderRefundGetRequest) GetRefundIds() []Number {
+func (r AlibabaWdkOrderRefundGetRequest) GetRefundIds() []int64 {
     return r.refundIds
 }
 

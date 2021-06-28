@@ -12,8 +12,22 @@ taobao.banamadpc.item.render
 */
 type TaobaoBanamadpcItemRenderAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBanamadpcItemRenderResponse `json:"taobao_banamadpc_item_render_response,omitempty"`
+    // Response *TaobaoBanamadpcItemRenderResponse `json:"banamadpc_item_render_response,omitempty"` 
+    TaobaoBanamadpcItemRenderResponse
 }
+
+/* model for simplify = false
+type TaobaoBanamadpcItemRenderResponse struct {
+
+    // 根据站点名称查询产品
+    
+    ApiResult  *struct {
+        TaobaoBanamadpcItemRenderApiResult  *TaobaoBanamadpcItemRenderApiResult `json:"taobao_banamadpc_item_render_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBanamadpcItemRenderResponse struct {
 

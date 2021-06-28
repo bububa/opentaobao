@@ -12,8 +12,20 @@ alibaba.interact.sensor.takephoto
 */
 type AlibabaInteractSensorTakephotoAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorTakephotoResponse `json:"alibaba_interact_sensor_takephoto_response,omitempty"`
+    // Response *AlibabaInteractSensorTakephotoResponse `json:"alibaba_interact_sensor_takephoto_response,omitempty"` 
+    AlibabaInteractSensorTakephotoResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorTakephotoResponse struct {
+
+    // return=0表示成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorTakephotoResponse struct {
 

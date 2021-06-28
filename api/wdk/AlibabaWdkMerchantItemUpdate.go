@@ -11,11 +11,11 @@ alibaba.wdk.merchant.item.update
 
 修改商家商品
 */
-func AlibabaWdkMerchantItemUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantItemUpdateRequest, session string) (*wdk.AlibabaWdkMerchantItemUpdateResponse, error) {
+func AlibabaWdkMerchantItemUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkMerchantItemUpdateRequest, session string) (*wdk.AlibabaWdkMerchantItemUpdateAPIResponse, error) {
     var resp wdk.AlibabaWdkMerchantItemUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

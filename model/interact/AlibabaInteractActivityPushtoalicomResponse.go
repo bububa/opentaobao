@@ -12,8 +12,20 @@ alibaba.interact.activity.pushtoalicom
 */
 type AlibabaInteractActivityPushtoalicomAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractActivityPushtoalicomResponse `json:"alibaba_interact_activity_pushtoalicom_response,omitempty"`
+    // Response *AlibabaInteractActivityPushtoalicomResponse `json:"alibaba_interact_activity_pushtoalicom_response,omitempty"` 
+    AlibabaInteractActivityPushtoalicomResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractActivityPushtoalicomResponse struct {
+
+    // 推送成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractActivityPushtoalicomResponse struct {
 

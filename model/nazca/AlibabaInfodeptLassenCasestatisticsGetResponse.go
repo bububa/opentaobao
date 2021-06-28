@@ -12,8 +12,25 @@ alibaba.infodept.lassen.casestatistics.get
 */
 type AlibabaInfodeptLassenCasestatisticsGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInfodeptLassenCasestatisticsGetResponse `json:"alibaba_infodept_lassen_casestatistics_get_response,omitempty"`
+    // Response *AlibabaInfodeptLassenCasestatisticsGetResponse `json:"alibaba_infodept_lassen_casestatistics_get_response,omitempty"` 
+    AlibabaInfodeptLassenCasestatisticsGetResponse
 }
+
+/* model for simplify = false
+type AlibabaInfodeptLassenCasestatisticsGetResponse struct {
+
+    // result
+    
+    Result   string `json:"result,omitempty"`
+    
+
+    // result
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInfodeptLassenCasestatisticsGetResponse struct {
 

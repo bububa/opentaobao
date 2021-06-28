@@ -11,11 +11,11 @@ alibaba.aliqin.fc.iot.qry.personinfo
 
 查询物联卡个人实人认证信息
 */
-func AlibabaAliqinFcIotQryPersoninfo(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotQryPersoninfoRequest, session string) (*aliqin.AlibabaAliqinFcIotQryPersoninfoResponse, error) {
+func AlibabaAliqinFcIotQryPersoninfo(clt *core.SDKClient, req *aliqin.AlibabaAliqinFcIotQryPersoninfoRequest, session string) (*aliqin.AlibabaAliqinFcIotQryPersoninfoAPIResponse, error) {
     var resp aliqin.AlibabaAliqinFcIotQryPersoninfoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

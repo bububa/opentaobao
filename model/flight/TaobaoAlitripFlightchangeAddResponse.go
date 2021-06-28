@@ -14,8 +14,22 @@ taobao.alitrip.flightchange.add
 */
 type TaobaoAlitripFlightchangeAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripFlightchangeAddResponse `json:"taobao_alitrip_flightchange_add_response,omitempty"`
+    // Response *TaobaoAlitripFlightchangeAddResponse `json:"alitrip_flightchange_add_response,omitempty"` 
+    TaobaoAlitripFlightchangeAddResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripFlightchangeAddResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoAlitripFlightchangeAddResultDo  *TaobaoAlitripFlightchangeAddResultDo `json:"taobao_alitrip_flightchange_add_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripFlightchangeAddResponse struct {
 

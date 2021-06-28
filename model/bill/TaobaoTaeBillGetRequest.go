@@ -19,7 +19,7 @@ type TaobaoTaeBillGetRequest struct {
     bid   int64 
 
     // 传入需要返回的字段
-    fields   []String 
+    fields   []string 
 
     // 账单编号
     id   int64 
@@ -58,13 +58,13 @@ func (r TaobaoTaeBillGetRequest) GetBid() int64 {
     return r.bid
 }
 
-func (r *TaobaoTaeBillGetRequest) SetFields(fields []String) error {
+func (r *TaobaoTaeBillGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoTaeBillGetRequest) GetFields() []String {
+func (r TaobaoTaeBillGetRequest) GetFields() []string {
     return r.fields
 }
 

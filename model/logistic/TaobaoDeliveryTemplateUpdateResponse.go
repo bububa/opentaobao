@@ -12,8 +12,20 @@ taobao.delivery.template.update
 */
 type TaobaoDeliveryTemplateUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoDeliveryTemplateUpdateResponse `json:"taobao_delivery_template_update_response,omitempty"`
+    // Response *TaobaoDeliveryTemplateUpdateResponse `json:"delivery_template_update_response,omitempty"` 
+    TaobaoDeliveryTemplateUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoDeliveryTemplateUpdateResponse struct {
+
+    // 表示修改是否成功
+    
+    Complete   bool `json:"complete,omitempty"`
+    
+
+}
+*/
 
 type TaobaoDeliveryTemplateUpdateResponse struct {
 

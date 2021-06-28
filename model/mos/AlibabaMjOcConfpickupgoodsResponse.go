@@ -12,8 +12,20 @@ alibaba.mj.oc.confpickupgoods
 */
 type AlibabaMjOcConfpickupgoodsAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjOcConfpickupgoodsResponse `json:"alibaba_mj_oc_confpickupgoods_response,omitempty"`
+    // Response *AlibabaMjOcConfpickupgoodsResponse `json:"alibaba_mj_oc_confpickupgoods_response,omitempty"` 
+    AlibabaMjOcConfpickupgoodsResponse
 }
+
+/* model for simplify = false
+type AlibabaMjOcConfpickupgoodsResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjOcConfpickupgoodsResponse struct {
 

@@ -13,8 +13,22 @@ alitrip.ticket.rule.upload
 */
 type AlitripTicketRuleUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlitripTicketRuleUploadResponse `json:"alitrip_ticket_rule_upload_response,omitempty"`
+    // Response *AlitripTicketRuleUploadResponse `json:"alitrip_ticket_rule_upload_response,omitempty"` 
+    AlitripTicketRuleUploadResponse
 }
+
+/* model for simplify = false
+type AlitripTicketRuleUploadResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlitripTicketRuleUploadResultSet  *AlitripTicketRuleUploadResultSet `json:"alitrip_ticket_rule_upload_result_set,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlitripTicketRuleUploadResponse struct {
 

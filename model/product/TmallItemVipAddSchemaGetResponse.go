@@ -12,8 +12,20 @@ tmall.item.vip.add.schema.get
 */
 type TmallItemVipAddSchemaGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemVipAddSchemaGetResponse `json:"tmall_item_vip_add_schema_get_response,omitempty"`
+    // Response *TmallItemVipAddSchemaGetResponse `json:"tmall_item_vip_add_schema_get_response,omitempty"` 
+    TmallItemVipAddSchemaGetResponse
 }
+
+/* model for simplify = false
+type TmallItemVipAddSchemaGetResponse struct {
+
+    // 返回值是发布商品时需要的字段及基本类型
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallItemVipAddSchemaGetResponse struct {
 

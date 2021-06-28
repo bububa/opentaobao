@@ -12,8 +12,22 @@ taobao.rdc.aligenius.refunds.check
 */
 type TaobaoRdcAligeniusRefundsCheckAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRdcAligeniusRefundsCheckResponse `json:"taobao_rdc_aligenius_refunds_check_response,omitempty"`
+    // Response *TaobaoRdcAligeniusRefundsCheckResponse `json:"rdc_aligenius_refunds_check_response,omitempty"` 
+    TaobaoRdcAligeniusRefundsCheckResponse
 }
+
+/* model for simplify = false
+type TaobaoRdcAligeniusRefundsCheckResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoRdcAligeniusRefundsCheckResult  *TaobaoRdcAligeniusRefundsCheckResult `json:"taobao_rdc_aligenius_refunds_check_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRdcAligeniusRefundsCheckResponse struct {
 

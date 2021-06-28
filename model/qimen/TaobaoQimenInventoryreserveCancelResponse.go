@@ -12,8 +12,22 @@ taobao.qimen.inventoryreserve.cancel
 */
 type TaobaoQimenInventoryreserveCancelAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenInventoryreserveCancelResponse `json:"taobao_qimen_inventoryreserve_cancel_response,omitempty"`
+    // Response *TaobaoQimenInventoryreserveCancelResponse `json:"qimen_inventoryreserve_cancel_response,omitempty"` 
+    TaobaoQimenInventoryreserveCancelResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenInventoryreserveCancelResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenInventoryreserveCancelResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.wdk.coupon.template.create
 */
 type AlibabaWdkCouponTemplateCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkCouponTemplateCreateResponse `json:"alibaba_wdk_coupon_template_create_response,omitempty"`
+    // Response *AlibabaWdkCouponTemplateCreateResponse `json:"alibaba_wdk_coupon_template_create_response,omitempty"` 
+    AlibabaWdkCouponTemplateCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkCouponTemplateCreateResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        AlibabaWdkCouponTemplateCreateApiResult  *AlibabaWdkCouponTemplateCreateApiResult `json:"alibaba_wdk_coupon_template_create_api_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkCouponTemplateCreateResponse struct {
 

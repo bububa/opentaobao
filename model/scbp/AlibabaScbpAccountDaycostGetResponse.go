@@ -12,8 +12,20 @@ alibaba.scbp.account.daycost.get
 */
 type AlibabaScbpAccountDaycostGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAccountDaycostGetResponse `json:"alibaba_scbp_account_daycost_get_response,omitempty"`
+    // Response *AlibabaScbpAccountDaycostGetResponse `json:"alibaba_scbp_account_daycost_get_response,omitempty"` 
+    AlibabaScbpAccountDaycostGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAccountDaycostGetResponse struct {
+
+    // 返回今日消耗，单位元，两位小数
+    
+    DayCost   string `json:"day_cost,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAccountDaycostGetResponse struct {
 

@@ -11,11 +11,11 @@ taobao.crm.member.group.get
 
 获取买家身上的标签，不返回标签的总人数
 */
-func TaobaoCrmMemberGroupGet(clt *core.SDKClient, req *crm.TaobaoCrmMemberGroupGetRequest, session string) (*crm.TaobaoCrmMemberGroupGetResponse, error) {
+func TaobaoCrmMemberGroupGet(clt *core.SDKClient, req *crm.TaobaoCrmMemberGroupGetRequest, session string) (*crm.TaobaoCrmMemberGroupGetAPIResponse, error) {
     var resp crm.TaobaoCrmMemberGroupGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

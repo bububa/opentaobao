@@ -12,8 +12,20 @@ taobao.traderate.explain.add
 */
 type TaobaoTraderateExplainAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTraderateExplainAddResponse `json:"taobao_traderate_explain_add_response,omitempty"`
+    // Response *TaobaoTraderateExplainAddResponse `json:"traderate_explain_add_response,omitempty"` 
+    TaobaoTraderateExplainAddResponse
 }
+
+/* model for simplify = false
+type TaobaoTraderateExplainAddResponse struct {
+
+    // 商城卖家给评价解释是否成功。
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTraderateExplainAddResponse struct {
 

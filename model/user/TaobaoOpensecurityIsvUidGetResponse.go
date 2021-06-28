@@ -12,8 +12,20 @@ taobao.opensecurity.isv.uid.get
 */
 type TaobaoOpensecurityIsvUidGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpensecurityIsvUidGetResponse `json:"taobao_opensecurity_isv_uid_get_response,omitempty"`
+    // Response *TaobaoOpensecurityIsvUidGetResponse `json:"opensecurity_isv_uid_get_response,omitempty"` 
+    TaobaoOpensecurityIsvUidGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOpensecurityIsvUidGetResponse struct {
+
+    // open security tbUserId for ISV，淘宝账号对ISV级别的唯一open security ID，用于同一个ISV多个Appkey间数据共享。
+    
+    OpenUidIsv   string `json:"open_uid_isv,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpensecurityIsvUidGetResponse struct {
 

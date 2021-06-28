@@ -12,8 +12,22 @@ alibaba.xiami.api.artist.musiclist.get
 */
 type AlibabaXiamiApiArtistMusiclistGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaXiamiApiArtistMusiclistGetResponse `json:"alibaba_xiami_api_artist_musiclist_get_response,omitempty"`
+    // Response *AlibabaXiamiApiArtistMusiclistGetResponse `json:"alibaba_xiami_api_artist_musiclist_get_response,omitempty"` 
+    AlibabaXiamiApiArtistMusiclistGetResponse
 }
+
+/* model for simplify = false
+type AlibabaXiamiApiArtistMusiclistGetResponse struct {
+
+    // artist_music_list_result
+    
+    ArtistMusicListResult  *struct {
+        AlibabaXiamiApiArtistMusiclistGetStruct  *AlibabaXiamiApiArtistMusiclistGetStruct `json:"alibaba_xiami_api_artist_musiclist_get_struct,omitempty"`
+    } `json:"artist_music_list_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaXiamiApiArtistMusiclistGetResponse struct {
 

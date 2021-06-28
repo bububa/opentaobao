@@ -12,8 +12,20 @@ taobao.crm.group.append
 */
 type TaobaoCrmGroupAppendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGroupAppendResponse `json:"taobao_crm_group_append_response,omitempty"`
+    // Response *TaobaoCrmGroupAppendResponse `json:"crm_group_append_response,omitempty"` 
+    TaobaoCrmGroupAppendResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGroupAppendResponse struct {
+
+    // 异步任务请求成功，添加任务是否完成通过taobao.crm.grouptask.check检测
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGroupAppendResponse struct {
 

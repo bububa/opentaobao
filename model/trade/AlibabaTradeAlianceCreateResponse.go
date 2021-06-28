@@ -12,8 +12,22 @@ alibaba.trade.aliance.create
 */
 type AlibabaTradeAlianceCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTradeAlianceCreateResponse `json:"alibaba_trade_aliance_create_response,omitempty"`
+    // Response *AlibabaTradeAlianceCreateResponse `json:"alibaba_trade_aliance_create_response,omitempty"` 
+    AlibabaTradeAlianceCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaTradeAlianceCreateResponse struct {
+
+    // 订单创建结果
+    
+    Result  *struct {
+        AlibabaTradeAlianceCreateResultModel  *AlibabaTradeAlianceCreateResultModel `json:"alibaba_trade_aliance_create_result_model,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTradeAlianceCreateResponse struct {
 

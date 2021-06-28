@@ -11,11 +11,11 @@ alibaba.retail.marketing.buygift.activity.sku.delete
 
 删除单品买赠活动商品信息【同城零售】
 */
-func AlibabaRetailMarketingBuygiftActivitySkuDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest, session string) (*wdk.AlibabaRetailMarketingBuygiftActivitySkuDeleteResponse, error) {
+func AlibabaRetailMarketingBuygiftActivitySkuDelete(clt *core.SDKClient, req *wdk.AlibabaRetailMarketingBuygiftActivitySkuDeleteRequest, session string) (*wdk.AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse, error) {
     var resp wdk.AlibabaRetailMarketingBuygiftActivitySkuDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,27 @@ taobao.fenxiao.orders.get
 */
 type TaobaoFenxiaoOrdersGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoOrdersGetResponse `json:"taobao_fenxiao_orders_get_response,omitempty"`
+    // Response *TaobaoFenxiaoOrdersGetResponse `json:"fenxiao_orders_get_response,omitempty"` 
+    TaobaoFenxiaoOrdersGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoOrdersGetResponse struct {
+
+    // 搜索到的采购单记录总数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 采购单及子采购单信息。返回 PurchaseOrder 包含的字段信息。
+    
+    PurchaseOrders  struct {
+        TopDpOrderDo  []TopDpOrderDo `json:"top_dp_order_do,omitempty"`
+    } `json:"purchase_orders,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoOrdersGetResponse struct {
 

@@ -12,8 +12,20 @@ alibaba.interact.sensor.shake
 */
 type AlibabaInteractSensorShakeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorShakeResponse `json:"alibaba_interact_sensor_shake_response,omitempty"`
+    // Response *AlibabaInteractSensorShakeResponse `json:"alibaba_interact_sensor_shake_response,omitempty"` 
+    AlibabaInteractSensorShakeResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorShakeResponse struct {
+
+    // 0
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorShakeResponse struct {
 

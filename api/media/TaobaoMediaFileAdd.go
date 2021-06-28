@@ -11,11 +11,11 @@ taobao.media.file.add
 
 用户通过top上传文件到多媒体平台
 */
-func TaobaoMediaFileAdd(clt *core.SDKClient, req *media.TaobaoMediaFileAddRequest, session string) (*media.TaobaoMediaFileAddResponse, error) {
+func TaobaoMediaFileAdd(clt *core.SDKClient, req *media.TaobaoMediaFileAddRequest, session string) (*media.TaobaoMediaFileAddAPIResponse, error) {
     var resp media.TaobaoMediaFileAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

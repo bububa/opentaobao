@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.repairprogress.update
 */
 type TmallServicecenterWorkcardRepairprogressUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardRepairprogressUpdateResponse `json:"tmall_servicecenter_workcard_repairprogress_update_response,omitempty"`
+    // Response *TmallServicecenterWorkcardRepairprogressUpdateResponse `json:"tmall_servicecenter_workcard_repairprogress_update_response,omitempty"` 
+    TmallServicecenterWorkcardRepairprogressUpdateResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardRepairprogressUpdateResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        TmallServicecenterWorkcardRepairprogressUpdateResult  *TmallServicecenterWorkcardRepairprogressUpdateResult `json:"tmall_servicecenter_workcard_repairprogress_update_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardRepairprogressUpdateResponse struct {
 

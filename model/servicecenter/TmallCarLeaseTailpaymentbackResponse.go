@@ -12,8 +12,22 @@ tmall.car.lease.tailpaymentback
 */
 type TmallCarLeaseTailpaymentbackAPIResponse struct {
     model.CommonResponse
-    Response *TmallCarLeaseTailpaymentbackResponse `json:"tmall_car_lease_tailpaymentback_response,omitempty"`
+    // Response *TmallCarLeaseTailpaymentbackResponse `json:"tmall_car_lease_tailpaymentback_response,omitempty"` 
+    TmallCarLeaseTailpaymentbackResponse
 }
+
+/* model for simplify = false
+type TmallCarLeaseTailpaymentbackResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TmallCarLeaseTailpaymentbackResult  *TmallCarLeaseTailpaymentbackResult `json:"tmall_car_lease_tailpaymentback_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallCarLeaseTailpaymentbackResponse struct {
 

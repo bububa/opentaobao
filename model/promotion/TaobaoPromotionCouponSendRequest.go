@@ -19,7 +19,7 @@ type TaobaoPromotionCouponSendRequest struct {
     couponId   int64 
 
     // 买家昵称用半角','号分割
-    buyerNick   []String 
+    buyerNick   []string 
 
 }
 
@@ -52,13 +52,13 @@ func (r TaobaoPromotionCouponSendRequest) GetCouponId() int64 {
     return r.couponId
 }
 
-func (r *TaobaoPromotionCouponSendRequest) SetBuyerNick(buyerNick []String) error {
+func (r *TaobaoPromotionCouponSendRequest) SetBuyerNick(buyerNick []string) error {
     r.buyerNick = buyerNick
     r.Set("buyer_nick", buyerNick)
     return nil
 }
 
-func (r TaobaoPromotionCouponSendRequest) GetBuyerNick() []String {
+func (r TaobaoPromotionCouponSendRequest) GetBuyerNick() []string {
     return r.buyerNick
 }
 

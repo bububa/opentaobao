@@ -12,8 +12,20 @@ taobao.train.agent.bookticket.confirm
 */
 type TaobaoTrainAgentBookticketConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTrainAgentBookticketConfirmResponse `json:"taobao_train_agent_bookticket_confirm_response,omitempty"`
+    // Response *TaobaoTrainAgentBookticketConfirmResponse `json:"train_agent_bookticket_confirm_response,omitempty"` 
+    TaobaoTrainAgentBookticketConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoTrainAgentBookticketConfirmResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTrainAgentBookticketConfirmResponse struct {
 

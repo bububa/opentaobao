@@ -12,8 +12,22 @@ alibaba.wdk.marketing.version.commit
 */
 type AlibabaWdkMarketingVersionCommitAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingVersionCommitResponse `json:"alibaba_wdk_marketing_version_commit_response,omitempty"`
+    // Response *AlibabaWdkMarketingVersionCommitResponse `json:"alibaba_wdk_marketing_version_commit_response,omitempty"` 
+    AlibabaWdkMarketingVersionCommitResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingVersionCommitResponse struct {
+
+    // result
+    
+    Result  *struct {
+        MarketResult  *MarketResult `json:"market_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingVersionCommitResponse struct {
 

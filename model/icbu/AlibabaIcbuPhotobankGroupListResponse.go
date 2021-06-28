@@ -12,8 +12,22 @@ alibaba.icbu.photobank.group.list
 */
 type AlibabaIcbuPhotobankGroupListAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuPhotobankGroupListResponse `json:"alibaba_icbu_photobank_group_list_response,omitempty"`
+    // Response *AlibabaIcbuPhotobankGroupListResponse `json:"alibaba_icbu_photobank_group_list_response,omitempty"` 
+    AlibabaIcbuPhotobankGroupListResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuPhotobankGroupListResponse struct {
+
+    // groups
+    
+    Groups  struct {
+        PhotoAlbumGroup  []PhotoAlbumGroup `json:"photo_album_group,omitempty"`
+    } `json:"groups,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuPhotobankGroupListResponse struct {
 

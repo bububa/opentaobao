@@ -12,8 +12,27 @@ taobao.tbk.dg.vegas.send.status
 */
 type TaobaoTbkDgVegasSendStatusAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTbkDgVegasSendStatusResponse `json:"taobao_tbk_dg_vegas_send_status_response,omitempty"`
+    // Response *TaobaoTbkDgVegasSendStatusResponse `json:"tbk_dg_vegas_send_status_response,omitempty"` 
+    TaobaoTbkDgVegasSendStatusResponse
 }
+
+/* model for simplify = false
+type TaobaoTbkDgVegasSendStatusResponse struct {
+
+    // 返回结果描述信息
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // 返回结果封装对象
+    
+    Data  *struct {
+        TaobaoTbkDgVegasSendStatusData  *TaobaoTbkDgVegasSendStatusData `json:"taobao_tbk_dg_vegas_send_status_data,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTbkDgVegasSendStatusResponse struct {
 

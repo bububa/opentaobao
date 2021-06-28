@@ -11,11 +11,11 @@ alibaba.ssc.supplyplatform.servicestore.offline
 
 网点下线功能
 */
-func AlibabaSscSupplyplatformServicestoreOffline(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicestoreOfflineRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicestoreOfflineResponse, error) {
+func AlibabaSscSupplyplatformServicestoreOffline(clt *core.SDKClient, req *tmallservice.AlibabaSscSupplyplatformServicestoreOfflineRequest, session string) (*tmallservice.AlibabaSscSupplyplatformServicestoreOfflineAPIResponse, error) {
     var resp tmallservice.AlibabaSscSupplyplatformServicestoreOfflineAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

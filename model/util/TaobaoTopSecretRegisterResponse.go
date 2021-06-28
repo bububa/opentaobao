@@ -12,8 +12,20 @@ taobao.top.secret.register
 */
 type TaobaoTopSecretRegisterAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTopSecretRegisterResponse `json:"taobao_top_secret_register_response,omitempty"`
+    // Response *TaobaoTopSecretRegisterResponse `json:"top_secret_register_response,omitempty"` 
+    TaobaoTopSecretRegisterResponse
 }
+
+/* model for simplify = false
+type TaobaoTopSecretRegisterResponse struct {
+
+    // 返回操作是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTopSecretRegisterResponse struct {
 

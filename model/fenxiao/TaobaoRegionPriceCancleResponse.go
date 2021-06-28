@@ -12,8 +12,22 @@ taobao.region.price.cancle
 */
 type TaobaoRegionPriceCancleAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRegionPriceCancleResponse `json:"taobao_region_price_cancle_response,omitempty"`
+    // Response *TaobaoRegionPriceCancleResponse `json:"region_price_cancle_response,omitempty"` 
+    TaobaoRegionPriceCancleResponse
 }
+
+/* model for simplify = false
+type TaobaoRegionPriceCancleResponse struct {
+
+    // result
+    
+    Result  *struct {
+        BaseResult  *BaseResult `json:"base_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRegionPriceCancleResponse struct {
 

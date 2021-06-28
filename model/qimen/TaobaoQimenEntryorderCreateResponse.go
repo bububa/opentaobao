@@ -12,8 +12,22 @@ ERP调用接口，创建入库单;
 */
 type TaobaoQimenEntryorderCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenEntryorderCreateResponse `json:"taobao_qimen_entryorder_create_response,omitempty"`
+    // Response *TaobaoQimenEntryorderCreateResponse `json:"qimen_entryorder_create_response,omitempty"` 
+    TaobaoQimenEntryorderCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenEntryorderCreateResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenEntryorderCreateResponse struct {
 

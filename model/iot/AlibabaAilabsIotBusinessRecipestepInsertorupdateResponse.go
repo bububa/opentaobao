@@ -12,8 +12,35 @@ alibaba.ailabs.iot.business.recipestep.insertorupdate
 */
 type AlibabaAilabsIotBusinessRecipestepInsertorupdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAilabsIotBusinessRecipestepInsertorupdateResponse `json:"alibaba_ailabs_iot_business_recipestep_insertorupdate_response,omitempty"`
+    // Response *AlibabaAilabsIotBusinessRecipestepInsertorupdateResponse `json:"alibaba_ailabs_iot_business_recipestep_insertorupdate_response,omitempty"` 
+    AlibabaAilabsIotBusinessRecipestepInsertorupdateResponse
 }
+
+/* model for simplify = false
+type AlibabaAilabsIotBusinessRecipestepInsertorupdateResponse struct {
+
+    // 信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 响应code
+    
+    RetCode   int64 `json:"ret_code,omitempty"`
+    
+
+    // 返回结果
+    
+    RetValue   int64 `json:"ret_value,omitempty"`
+    
+
+    // 追踪id
+    
+    TraceId   string `json:"trace_id,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAilabsIotBusinessRecipestepInsertorupdateResponse struct {
 

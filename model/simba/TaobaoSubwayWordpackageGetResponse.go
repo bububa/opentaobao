@@ -12,8 +12,22 @@ taobao.subway.wordpackage.get
 */
 type TaobaoSubwayWordpackageGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSubwayWordpackageGetResponse `json:"taobao_subway_wordpackage_get_response,omitempty"`
+    // Response *TaobaoSubwayWordpackageGetResponse `json:"subway_wordpackage_get_response,omitempty"` 
+    TaobaoSubwayWordpackageGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSubwayWordpackageGetResponse struct {
+
+    // 词包结果列表
+    
+    ResultList  struct {
+        SiriusItemWordPackageDto  []SiriusItemWordPackageDto `json:"sirius_item_word_package_dto,omitempty"`
+    } `json:"result_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSubwayWordpackageGetResponse struct {
 

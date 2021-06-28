@@ -12,8 +12,22 @@ taobao.wdk.equipment.conveyor.exceptionslidewaylog.get
 */
 type TaobaoWdkEquipmentConveyorExceptionslidewaylogGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetResponse `json:"taobao_wdk_equipment_conveyor_exceptionslidewaylog_get_response,omitempty"`
+    // Response *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetResponse `json:"wdk_equipment_conveyor_exceptionslidewaylog_get_response,omitempty"` 
+    TaobaoWdkEquipmentConveyorExceptionslidewaylogGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWdkEquipmentConveyorExceptionslidewaylogGetResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        TaobaoWdkEquipmentConveyorExceptionslidewaylogGetResult  *TaobaoWdkEquipmentConveyorExceptionslidewaylogGetResult `json:"taobao_wdk_equipment_conveyor_exceptionslidewaylog_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWdkEquipmentConveyorExceptionslidewaylogGetResponse struct {
 

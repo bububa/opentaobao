@@ -11,11 +11,11 @@ taobao.bus.agent.bookticket.confirm
 
 代理商通过该接口通知汽车票系统订单出票结果。
 */
-func TaobaoBusAgentBookticketConfirm(clt *core.SDKClient, req *bus.TaobaoBusAgentBookticketConfirmRequest, session string) (*bus.TaobaoBusAgentBookticketConfirmResponse, error) {
+func TaobaoBusAgentBookticketConfirm(clt *core.SDKClient, req *bus.TaobaoBusAgentBookticketConfirmRequest, session string) (*bus.TaobaoBusAgentBookticketConfirmAPIResponse, error) {
     var resp bus.TaobaoBusAgentBookticketConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

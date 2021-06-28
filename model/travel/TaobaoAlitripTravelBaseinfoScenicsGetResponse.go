@@ -12,8 +12,20 @@ taobao.alitrip.travel.baseinfo.scenics.get
 */
 type TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripTravelBaseinfoScenicsGetResponse `json:"taobao_alitrip_travel_baseinfo_scenics_get_response,omitempty"`
+    // Response *TaobaoAlitripTravelBaseinfoScenicsGetResponse `json:"alitrip_travel_baseinfo_scenics_get_response,omitempty"` 
+    TaobaoAlitripTravelBaseinfoScenicsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripTravelBaseinfoScenicsGetResponse struct {
+
+    // 返回详细景点信息，返回数据为json数组结构的字符串
+    
+    ScenicInfos   string `json:"scenic_infos,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripTravelBaseinfoScenicsGetResponse struct {
 

@@ -12,8 +12,30 @@ cainiao.crm.oms.rule.sync
 */
 type CainiaoCrmOmsRuleSyncAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCrmOmsRuleSyncResponse `json:"cainiao_crm_oms_rule_sync_response,omitempty"`
+    // Response *CainiaoCrmOmsRuleSyncResponse `json:"cainiao_crm_oms_rule_sync_response,omitempty"` 
+    CainiaoCrmOmsRuleSyncResponse
 }
+
+/* model for simplify = false
+type CainiaoCrmOmsRuleSyncResponse struct {
+
+    // success
+    
+    WlSuccess   bool `json:"wl_success,omitempty"`
+    
+
+    // errorCode
+    
+    WlErrorCode   string `json:"wl_error_code,omitempty"`
+    
+
+    // errorMsg
+    
+    WlErrorMsg   string `json:"wl_error_msg,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCrmOmsRuleSyncResponse struct {
 

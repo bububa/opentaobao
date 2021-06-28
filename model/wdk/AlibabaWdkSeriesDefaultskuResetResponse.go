@@ -12,8 +12,22 @@ alibaba.wdk.series.defaultsku.reset
 */
 type AlibabaWdkSeriesDefaultskuResetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkSeriesDefaultskuResetResponse `json:"alibaba_wdk_series_defaultsku_reset_response,omitempty"`
+    // Response *AlibabaWdkSeriesDefaultskuResetResponse `json:"alibaba_wdk_series_defaultsku_reset_response,omitempty"` 
+    AlibabaWdkSeriesDefaultskuResetResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkSeriesDefaultskuResetResponse struct {
+
+    // 调用结果
+    
+    ApiResult  *struct {
+        AlibabaWdkSeriesDefaultskuResetApiResult  *AlibabaWdkSeriesDefaultskuResetApiResult `json:"alibaba_wdk_series_defaultsku_reset_api_result,omitempty"`
+    } `json:"api_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkSeriesDefaultskuResetResponse struct {
 

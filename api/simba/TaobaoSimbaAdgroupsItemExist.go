@@ -11,11 +11,11 @@ taobao.simba.adgroups.item.exist
 
 判断在一个推广计划中是否已经推广了一个商品
 */
-func TaobaoSimbaAdgroupsItemExist(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsItemExistRequest, session string) (*simba.TaobaoSimbaAdgroupsItemExistResponse, error) {
+func TaobaoSimbaAdgroupsItemExist(clt *core.SDKClient, req *simba.TaobaoSimbaAdgroupsItemExistRequest, session string) (*simba.TaobaoSimbaAdgroupsItemExistAPIResponse, error) {
     var resp simba.TaobaoSimbaAdgroupsItemExistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

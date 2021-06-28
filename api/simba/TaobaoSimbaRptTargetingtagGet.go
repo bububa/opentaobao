@@ -11,11 +11,11 @@ taobao.simba.rpt.targetingtag.get
 
 获取搜搜人群实时报表
 */
-func TaobaoSimbaRptTargetingtagGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptTargetingtagGetRequest, session string) (*simba.TaobaoSimbaRptTargetingtagGetResponse, error) {
+func TaobaoSimbaRptTargetingtagGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptTargetingtagGetRequest, session string) (*simba.TaobaoSimbaRptTargetingtagGetAPIResponse, error) {
     var resp simba.TaobaoSimbaRptTargetingtagGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

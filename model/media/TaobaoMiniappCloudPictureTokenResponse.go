@@ -19,8 +19,20 @@ taobao.miniapp.cloud.picture.token
 */
 type TaobaoMiniappCloudPictureTokenAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMiniappCloudPictureTokenResponse `json:"taobao_miniapp_cloud_picture_token_response,omitempty"`
+    // Response *TaobaoMiniappCloudPictureTokenResponse `json:"miniapp_cloud_picture_token_response,omitempty"` 
+    TaobaoMiniappCloudPictureTokenResponse
 }
+
+/* model for simplify = false
+type TaobaoMiniappCloudPictureTokenResponse struct {
+
+    // 返回的token
+    
+    Token   string `json:"token,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMiniappCloudPictureTokenResponse struct {
 

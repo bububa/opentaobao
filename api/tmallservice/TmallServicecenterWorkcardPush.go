@@ -11,11 +11,11 @@ tmall.servicecenter.workcard.push
 
 服务商家推送工单信息到天猫。
 */
-func TmallServicecenterWorkcardPush(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardPushRequest, session string) (*tmallservice.TmallServicecenterWorkcardPushResponse, error) {
+func TmallServicecenterWorkcardPush(clt *core.SDKClient, req *tmallservice.TmallServicecenterWorkcardPushRequest, session string) (*tmallservice.TmallServicecenterWorkcardPushAPIResponse, error) {
     var resp tmallservice.TmallServicecenterWorkcardPushAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

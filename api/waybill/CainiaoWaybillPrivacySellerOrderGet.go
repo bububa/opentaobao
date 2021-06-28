@@ -11,11 +11,11 @@ cainiao.waybill.privacy.seller.order.get
 
 商家查询最近100天隐私面单记录
 */
-func CainiaoWaybillPrivacySellerOrderGet(clt *core.SDKClient, req *waybill.CainiaoWaybillPrivacySellerOrderGetRequest, session string) (*waybill.CainiaoWaybillPrivacySellerOrderGetResponse, error) {
+func CainiaoWaybillPrivacySellerOrderGet(clt *core.SDKClient, req *waybill.CainiaoWaybillPrivacySellerOrderGetRequest, session string) (*waybill.CainiaoWaybillPrivacySellerOrderGetAPIResponse, error) {
     var resp waybill.CainiaoWaybillPrivacySellerOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

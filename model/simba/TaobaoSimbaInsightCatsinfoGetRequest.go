@@ -19,7 +19,7 @@ type TaobaoSimbaInsightCatsinfoGetRequest struct {
     type   int64 
 
     // 需要查询的类目id
-    categoryIdList   []String 
+    categoryIdList   []string 
 
 }
 
@@ -52,13 +52,13 @@ func (r TaobaoSimbaInsightCatsinfoGetRequest) GetType() int64 {
     return r.type
 }
 
-func (r *TaobaoSimbaInsightCatsinfoGetRequest) SetCategoryIdList(categoryIdList []String) error {
+func (r *TaobaoSimbaInsightCatsinfoGetRequest) SetCategoryIdList(categoryIdList []string) error {
     r.categoryIdList = categoryIdList
     r.Set("category_id_list", categoryIdList)
     return nil
 }
 
-func (r TaobaoSimbaInsightCatsinfoGetRequest) GetCategoryIdList() []String {
+func (r TaobaoSimbaInsightCatsinfoGetRequest) GetCategoryIdList() []string {
     return r.categoryIdList
 }
 

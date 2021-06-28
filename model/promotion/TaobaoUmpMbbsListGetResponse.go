@@ -12,12 +12,26 @@ taobao.ump.mbbs.list.get
 */
 type TaobaoUmpMbbsListGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpMbbsListGetResponse `json:"taobao_ump_mbbs_list_get_response,omitempty"`
+    // Response *TaobaoUmpMbbsListGetResponse `json:"ump_mbbs_list_get_response,omitempty"` 
+    TaobaoUmpMbbsListGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpMbbsListGetResponse struct {
+
+    // 营销积木块内容列表，内容为json格式的，可以通过ump sdk里面的MBB.fromJson来处理
+    
+    Mbbs  struct {
+        String  []string `json:"string,omitempty"`
+    } `json:"mbbs,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpMbbsListGetResponse struct {
 
     // 营销积木块内容列表，内容为json格式的，可以通过ump sdk里面的MBB.fromJson来处理
-    Mbbs   []String `json:"mbbs,omitempty"`
+    Mbbs   []string `json:"mbbs,omitempty"`
 
 }

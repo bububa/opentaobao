@@ -12,8 +12,22 @@ tmall.servicecenter.worker.querycapacitytask
 */
 type TmallServicecenterWorkerQuerycapacitytaskAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkerQuerycapacitytaskResponse `json:"tmall_servicecenter_worker_querycapacitytask_response,omitempty"`
+    // Response *TmallServicecenterWorkerQuerycapacitytaskResponse `json:"tmall_servicecenter_worker_querycapacitytask_response,omitempty"` 
+    TmallServicecenterWorkerQuerycapacitytaskResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkerQuerycapacitytaskResponse struct {
+
+    // ResultBase
+    
+    ResultBase  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result_base,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkerQuerycapacitytaskResponse struct {
 

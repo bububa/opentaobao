@@ -12,8 +12,22 @@ taobao.messageaccount.messsage.reply
 */
 type TaobaoMessageaccountMesssageReplyAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMessageaccountMesssageReplyResponse `json:"taobao_messageaccount_messsage_reply_response,omitempty"`
+    // Response *TaobaoMessageaccountMesssageReplyResponse `json:"messageaccount_messsage_reply_response,omitempty"` 
+    TaobaoMessageaccountMesssageReplyResponse
 }
+
+/* model for simplify = false
+type TaobaoMessageaccountMesssageReplyResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoMessageaccountMesssageReplyResult  *TaobaoMessageaccountMesssageReplyResult `json:"taobao_messageaccount_messsage_reply_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMessageaccountMesssageReplyResponse struct {
 

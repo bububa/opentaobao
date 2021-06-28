@@ -12,8 +12,20 @@ alibaba.scbp.product.preferential.update
 */
 type AlibabaScbpProductPreferentialUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpProductPreferentialUpdateResponse `json:"alibaba_scbp_product_preferential_update_response,omitempty"`
+    // Response *AlibabaScbpProductPreferentialUpdateResponse `json:"alibaba_scbp_product_preferential_update_response,omitempty"` 
+    AlibabaScbpProductPreferentialUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpProductPreferentialUpdateResponse struct {
+
+    // 设置成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpProductPreferentialUpdateResponse struct {
 

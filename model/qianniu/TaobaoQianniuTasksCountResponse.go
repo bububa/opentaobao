@@ -12,8 +12,20 @@ taobao.qianniu.tasks.count
 */
 type TaobaoQianniuTasksCountAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQianniuTasksCountResponse `json:"taobao_qianniu_tasks_count_response,omitempty"`
+    // Response *TaobaoQianniuTasksCountResponse `json:"qianniu_tasks_count_response,omitempty"` 
+    TaobaoQianniuTasksCountResponse
 }
+
+/* model for simplify = false
+type TaobaoQianniuTasksCountResponse struct {
+
+    // 符合查询条件的总条数
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQianniuTasksCountResponse struct {
 

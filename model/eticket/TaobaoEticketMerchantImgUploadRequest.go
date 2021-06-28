@@ -16,7 +16,7 @@ type TaobaoEticketMerchantImgUploadRequest struct {
     model.Params
 
     // 二维码图片
-    imgBytes   []byte 
+    imgBytes   []*model.File 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoEticketMerchantImgUploadRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoEticketMerchantImgUploadRequest) SetImgBytes(imgBytes []byte) error {
+func (r *TaobaoEticketMerchantImgUploadRequest) SetImgBytes(imgBytes []*model.File) error {
     r.imgBytes = imgBytes
     r.Set("img_bytes", imgBytes)
     return nil
 }
 
-func (r TaobaoEticketMerchantImgUploadRequest) GetImgBytes() []byte {
+func (r TaobaoEticketMerchantImgUploadRequest) GetImgBytes() []*model.File {
     return r.imgBytes
 }
 

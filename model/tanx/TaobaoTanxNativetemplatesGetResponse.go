@@ -12,8 +12,27 @@ taobao.tanx.nativetemplates.get
 */
 type TaobaoTanxNativetemplatesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTanxNativetemplatesGetResponse `json:"taobao_tanx_nativetemplates_get_response,omitempty"`
+    // Response *TaobaoTanxNativetemplatesGetResponse `json:"tanx_nativetemplates_get_response,omitempty"` 
+    TaobaoTanxNativetemplatesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTanxNativetemplatesGetResponse struct {
+
+    // 是否成功
+    
+    IsOk   bool `json:"is_ok,omitempty"`
+    
+
+    // 本地模板列表
+    
+    NativeTemplateList  struct {
+        NativeTemplateDto  []NativeTemplateDto `json:"native_template_dto,omitempty"`
+    } `json:"native_template_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTanxNativetemplatesGetResponse struct {
 

@@ -12,8 +12,22 @@ taobao.user.seller.get
 */
 type TaobaoUserSellerGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUserSellerGetResponse `json:"taobao_user_seller_get_response,omitempty"`
+    // Response *TaobaoUserSellerGetResponse `json:"user_seller_get_response,omitempty"` 
+    TaobaoUserSellerGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUserSellerGetResponse struct {
+
+    // 用户信息
+    
+    User  *struct {
+        User  *User `json:"user,omitempty"`
+    } `json:"user,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUserSellerGetResponse struct {
 

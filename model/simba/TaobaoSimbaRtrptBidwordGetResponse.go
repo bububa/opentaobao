@@ -12,8 +12,22 @@ taobao.simba.rtrpt.bidword.get
 */
 type TaobaoSimbaRtrptBidwordGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaRtrptBidwordGetResponse `json:"taobao_simba_rtrpt_bidword_get_response,omitempty"`
+    // Response *TaobaoSimbaRtrptBidwordGetResponse `json:"simba_rtrpt_bidword_get_response,omitempty"` 
+    TaobaoSimbaRtrptBidwordGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaRtrptBidwordGetResponse struct {
+
+    // bidword result
+    
+    Results  struct {
+        RtRptResultEntityDTO  []RtRptResultEntityDTO `json:"rt_rpt_result_entity_dto,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaRtrptBidwordGetResponse struct {
 

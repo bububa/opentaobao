@@ -11,11 +11,11 @@ alibaba.interact.sensor.titlebarhide
 
 隐藏titleBar
 */
-func AlibabaInteractSensorTitlebarhide(clt *core.SDKClient, req *interact.AlibabaInteractSensorTitlebarhideRequest, session string) (*interact.AlibabaInteractSensorTitlebarhideResponse, error) {
+func AlibabaInteractSensorTitlebarhide(clt *core.SDKClient, req *interact.AlibabaInteractSensorTitlebarhideRequest, session string) (*interact.AlibabaInteractSensorTitlebarhideAPIResponse, error) {
     var resp interact.AlibabaInteractSensorTitlebarhideAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

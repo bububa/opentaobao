@@ -12,8 +12,22 @@ taobao.simba.adgroup.update
 */
 type TaobaoSimbaAdgroupUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaAdgroupUpdateResponse `json:"taobao_simba_adgroup_update_response,omitempty"`
+    // Response *TaobaoSimbaAdgroupUpdateResponse `json:"simba_adgroup_update_response,omitempty"` 
+    TaobaoSimbaAdgroupUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaAdgroupUpdateResponse struct {
+
+    // 被修改的推广组
+    
+    Adgroup  *struct {
+        ADGroup  *ADGroup `json:"ad_group,omitempty"`
+    } `json:"adgroup,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaAdgroupUpdateResponse struct {
 

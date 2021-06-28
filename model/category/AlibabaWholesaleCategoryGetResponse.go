@@ -12,8 +12,22 @@ alibaba.wholesale.category.get
 */
 type AlibabaWholesaleCategoryGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWholesaleCategoryGetResponse `json:"alibaba_wholesale_category_get_response,omitempty"`
+    // Response *AlibabaWholesaleCategoryGetResponse `json:"alibaba_wholesale_category_get_response,omitempty"` 
+    AlibabaWholesaleCategoryGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWholesaleCategoryGetResponse struct {
+
+    // 类目结果
+    
+    WholesaleCategoryResult  *struct {
+        WholesaleCategoryOpenResult  *WholesaleCategoryOpenResult `json:"wholesale_category_open_result,omitempty"`
+    } `json:"wholesale_category_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWholesaleCategoryGetResponse struct {
 

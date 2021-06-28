@@ -12,8 +12,22 @@ taobao.weike.eservice.subusers.get
 */
 type TaobaoWeikeEserviceSubusersGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWeikeEserviceSubusersGetResponse `json:"taobao_weike_eservice_subusers_get_response,omitempty"`
+    // Response *TaobaoWeikeEserviceSubusersGetResponse `json:"weike_eservice_subusers_get_response,omitempty"` 
+    TaobaoWeikeEserviceSubusersGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWeikeEserviceSubusersGetResponse struct {
+
+    // 商家子账号查询结果
+    
+    Result  *struct {
+        AuthorizedAccountWrapper  *AuthorizedAccountWrapper `json:"authorized_account_wrapper,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWeikeEserviceSubusersGetResponse struct {
 

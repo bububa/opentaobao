@@ -22,7 +22,7 @@ type TaobaoSimbaKeywordsQscoreSplitGetRequest struct {
     adGroupId   int64 
 
     // 词id数组（最多批量获取20个）
-    bidwordIds   []Number 
+    bidwordIds   []int64 
 
 }
 
@@ -65,13 +65,13 @@ func (r TaobaoSimbaKeywordsQscoreSplitGetRequest) GetAdGroupId() int64 {
     return r.adGroupId
 }
 
-func (r *TaobaoSimbaKeywordsQscoreSplitGetRequest) SetBidwordIds(bidwordIds []Number) error {
+func (r *TaobaoSimbaKeywordsQscoreSplitGetRequest) SetBidwordIds(bidwordIds []int64) error {
     r.bidwordIds = bidwordIds
     r.Set("bidword_ids", bidwordIds)
     return nil
 }
 
-func (r TaobaoSimbaKeywordsQscoreSplitGetRequest) GetBidwordIds() []Number {
+func (r TaobaoSimbaKeywordsQscoreSplitGetRequest) GetBidwordIds() []int64 {
     return r.bidwordIds
 }
 

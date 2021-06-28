@@ -12,8 +12,22 @@ alibaba.wdk.marketing.open.data.relation.query
 */
 type AlibabaWdkMarketingOpenDataRelationQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingOpenDataRelationQueryResponse `json:"alibaba_wdk_marketing_open_data_relation_query_response,omitempty"`
+    // Response *AlibabaWdkMarketingOpenDataRelationQueryResponse `json:"alibaba_wdk_marketing_open_data_relation_query_response,omitempty"` 
+    AlibabaWdkMarketingOpenDataRelationQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingOpenDataRelationQueryResponse struct {
+
+    // 结果信息
+    
+    Result  *struct {
+        WdkMarketOpenResult  *WdkMarketOpenResult `json:"wdk_market_open_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingOpenDataRelationQueryResponse struct {
 

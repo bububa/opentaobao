@@ -12,8 +12,20 @@ taobao.store.followurl.get
 */
 type TaobaoStoreFollowurlGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoStoreFollowurlGetResponse `json:"taobao_store_followurl_get_response,omitempty"`
+    // Response *TaobaoStoreFollowurlGetResponse `json:"store_followurl_get_response,omitempty"` 
+    TaobaoStoreFollowurlGetResponse
 }
+
+/* model for simplify = false
+type TaobaoStoreFollowurlGetResponse struct {
+
+    // 店铺关注URL
+    
+    Url   string `json:"url,omitempty"`
+    
+
+}
+*/
 
 type TaobaoStoreFollowurlGetResponse struct {
 

@@ -12,8 +12,20 @@ taobao.baichuan.openaccount.loginbytoken
 */
 type TaobaoBaichuanOpenaccountLoginbytokenAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanOpenaccountLoginbytokenResponse `json:"taobao_baichuan_openaccount_loginbytoken_response,omitempty"`
+    // Response *TaobaoBaichuanOpenaccountLoginbytokenResponse `json:"baichuan_openaccount_loginbytoken_response,omitempty"` 
+    TaobaoBaichuanOpenaccountLoginbytokenResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanOpenaccountLoginbytokenResponse struct {
+
+    // name
+    
+    Name   string `json:"name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanOpenaccountLoginbytokenResponse struct {
 

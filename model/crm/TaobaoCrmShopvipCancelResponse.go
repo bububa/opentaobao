@@ -12,8 +12,20 @@ taobao.crm.shopvip.cancel
 */
 type TaobaoCrmShopvipCancelAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmShopvipCancelResponse `json:"taobao_crm_shopvip_cancel_response,omitempty"`
+    // Response *TaobaoCrmShopvipCancelResponse `json:"crm_shopvip_cancel_response,omitempty"` 
+    TaobaoCrmShopvipCancelResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmShopvipCancelResponse struct {
+
+    // 返回操作是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmShopvipCancelResponse struct {
 

@@ -12,8 +12,22 @@ taobao.simba.campaign.platform.get
 */
 type TaobaoSimbaCampaignPlatformGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCampaignPlatformGetResponse `json:"taobao_simba_campaign_platform_get_response,omitempty"`
+    // Response *TaobaoSimbaCampaignPlatformGetResponse `json:"simba_campaign_platform_get_response,omitempty"` 
+    TaobaoSimbaCampaignPlatformGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCampaignPlatformGetResponse struct {
+
+    // 取得的推广计划的投放平台设置
+    
+    CampaignPlatform  *struct {
+        CampaignPlatform  *CampaignPlatform `json:"campaign_platform,omitempty"`
+    } `json:"campaign_platform,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCampaignPlatformGetResponse struct {
 

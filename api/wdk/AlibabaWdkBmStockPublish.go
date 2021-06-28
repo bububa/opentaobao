@@ -11,11 +11,11 @@ alibaba.wdk.bm.stock.publish
 
 用于操作sku的库存
 */
-func AlibabaWdkBmStockPublish(clt *core.SDKClient, req *wdk.AlibabaWdkBmStockPublishRequest, session string) (*wdk.AlibabaWdkBmStockPublishResponse, error) {
+func AlibabaWdkBmStockPublish(clt *core.SDKClient, req *wdk.AlibabaWdkBmStockPublishRequest, session string) (*wdk.AlibabaWdkBmStockPublishAPIResponse, error) {
     var resp wdk.AlibabaWdkBmStockPublishAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,20 @@ taobao.alihealth.drug.user.shop.get
 */
 type TaobaoAlihealthDrugUserShopGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlihealthDrugUserShopGetResponse `json:"taobao_alihealth_drug_user_shop_get_response,omitempty"`
+    // Response *TaobaoAlihealthDrugUserShopGetResponse `json:"alihealth_drug_user_shop_get_response,omitempty"` 
+    TaobaoAlihealthDrugUserShopGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAlihealthDrugUserShopGetResponse struct {
+
+    // shopId
+    
+    ShopId   int64 `json:"shop_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlihealthDrugUserShopGetResponse struct {
 

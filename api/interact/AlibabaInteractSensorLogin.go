@@ -11,11 +11,11 @@ alibaba.interact.sensor.login
 
 获取登陆页面
 */
-func AlibabaInteractSensorLogin(clt *core.SDKClient, req *interact.AlibabaInteractSensorLoginRequest, session string) (*interact.AlibabaInteractSensorLoginResponse, error) {
+func AlibabaInteractSensorLogin(clt *core.SDKClient, req *interact.AlibabaInteractSensorLoginRequest, session string) (*interact.AlibabaInteractSensorLoginAPIResponse, error) {
     var resp interact.AlibabaInteractSensorLoginAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

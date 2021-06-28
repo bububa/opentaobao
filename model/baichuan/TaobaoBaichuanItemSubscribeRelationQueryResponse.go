@@ -12,8 +12,22 @@ taobao.baichuan.item.subscribe.relation.query
 */
 type TaobaoBaichuanItemSubscribeRelationQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanItemSubscribeRelationQueryResponse `json:"taobao_baichuan_item_subscribe_relation_query_response,omitempty"`
+    // Response *TaobaoBaichuanItemSubscribeRelationQueryResponse `json:"baichuan_item_subscribe_relation_query_response,omitempty"` 
+    TaobaoBaichuanItemSubscribeRelationQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanItemSubscribeRelationQueryResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoBaichuanItemSubscribeRelationQueryResult  *TaobaoBaichuanItemSubscribeRelationQueryResult `json:"taobao_baichuan_item_subscribe_relation_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanItemSubscribeRelationQueryResponse struct {
 

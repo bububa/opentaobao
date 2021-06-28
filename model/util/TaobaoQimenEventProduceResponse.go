@@ -12,8 +12,20 @@ taobao.qimen.event.produce
 */
 type TaobaoQimenEventProduceAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenEventProduceResponse `json:"taobao_qimen_event_produce_response,omitempty"`
+    // Response *TaobaoQimenEventProduceResponse `json:"qimen_event_produce_response,omitempty"` 
+    TaobaoQimenEventProduceResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenEventProduceResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenEventProduceResponse struct {
 

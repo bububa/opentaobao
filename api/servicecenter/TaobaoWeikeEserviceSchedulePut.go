@@ -11,11 +11,11 @@ taobao.weike.eservice.schedule.put
 
 添加、更新、删除排班信息
 */
-func TaobaoWeikeEserviceSchedulePut(clt *core.SDKClient, req *servicecenter.TaobaoWeikeEserviceSchedulePutRequest, session string) (*servicecenter.TaobaoWeikeEserviceSchedulePutResponse, error) {
+func TaobaoWeikeEserviceSchedulePut(clt *core.SDKClient, req *servicecenter.TaobaoWeikeEserviceSchedulePutRequest, session string) (*servicecenter.TaobaoWeikeEserviceSchedulePutAPIResponse, error) {
     var resp servicecenter.TaobaoWeikeEserviceSchedulePutAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

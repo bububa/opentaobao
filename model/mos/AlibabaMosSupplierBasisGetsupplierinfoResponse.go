@@ -12,8 +12,22 @@ alibaba.mos.supplier.basis.getsupplierinfo
 */
 type AlibabaMosSupplierBasisGetsupplierinfoAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosSupplierBasisGetsupplierinfoResponse `json:"alibaba_mos_supplier_basis_getsupplierinfo_response,omitempty"`
+    // Response *AlibabaMosSupplierBasisGetsupplierinfoResponse `json:"alibaba_mos_supplier_basis_getsupplierinfo_response,omitempty"` 
+    AlibabaMosSupplierBasisGetsupplierinfoResponse
 }
+
+/* model for simplify = false
+type AlibabaMosSupplierBasisGetsupplierinfoResponse struct {
+
+    // 返回数据
+    
+    Result  *struct {
+        JsonResponse  *JsonResponse `json:"json_response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosSupplierBasisGetsupplierinfoResponse struct {
 

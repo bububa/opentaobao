@@ -11,11 +11,11 @@ alibaba.alsc.crm.point.querypointflow
 
 分页查询积分流水
 */
-func AlibabaAlscCrmPointQuerypointflow(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointQuerypointflowRequest, session string) (*alsc.AlibabaAlscCrmPointQuerypointflowResponse, error) {
+func AlibabaAlscCrmPointQuerypointflow(clt *core.SDKClient, req *alsc.AlibabaAlscCrmPointQuerypointflowRequest, session string) (*alsc.AlibabaAlscCrmPointQuerypointflowAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmPointQuerypointflowAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

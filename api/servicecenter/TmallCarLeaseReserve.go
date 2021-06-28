@@ -11,11 +11,11 @@ tmall.car.lease.reserve
 
 租赁公司回传预约到店信息
 */
-func TmallCarLeaseReserve(clt *core.SDKClient, req *servicecenter.TmallCarLeaseReserveRequest, session string) (*servicecenter.TmallCarLeaseReserveResponse, error) {
+func TmallCarLeaseReserve(clt *core.SDKClient, req *servicecenter.TmallCarLeaseReserveRequest, session string) (*servicecenter.TmallCarLeaseReserveAPIResponse, error) {
     var resp servicecenter.TmallCarLeaseReserveAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

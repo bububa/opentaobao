@@ -12,8 +12,20 @@ taobao.promotion.coupon.add
 */
 type TaobaoPromotionCouponAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionCouponAddResponse `json:"taobao_promotion_coupon_add_response,omitempty"`
+    // Response *TaobaoPromotionCouponAddResponse `json:"promotion_coupon_add_response,omitempty"` 
+    TaobaoPromotionCouponAddResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionCouponAddResponse struct {
+
+    // 优惠券的id
+    
+    CouponId   int64 `json:"coupon_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionCouponAddResponse struct {
 

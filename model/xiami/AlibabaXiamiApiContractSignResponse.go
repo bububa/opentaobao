@@ -12,8 +12,20 @@ alibaba.xiami.api.contract.sign
 */
 type AlibabaXiamiApiContractSignAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaXiamiApiContractSignResponse `json:"alibaba_xiami_api_contract_sign_response,omitempty"`
+    // Response *AlibabaXiamiApiContractSignResponse `json:"alibaba_xiami_api_contract_sign_response,omitempty"` 
+    AlibabaXiamiApiContractSignResponse
 }
+
+/* model for simplify = false
+type AlibabaXiamiApiContractSignResponse struct {
+
+    // 签约链接
+    
+    Data   string `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaXiamiApiContractSignResponse struct {
 

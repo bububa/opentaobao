@@ -12,8 +12,22 @@ alibaba.wdkopen.cateorder.pull
 */
 type AlibabaWdkopenCateorderPullAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkopenCateorderPullResponse `json:"alibaba_wdkopen_cateorder_pull_response,omitempty"`
+    // Response *AlibabaWdkopenCateorderPullResponse `json:"alibaba_wdkopen_cateorder_pull_response,omitempty"` 
+    AlibabaWdkopenCateorderPullResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkopenCateorderPullResponse struct {
+
+    // 调用返回
+    
+    TopBaseResult  *struct {
+        TopBaseResult  *TopBaseResult `json:"top_base_result,omitempty"`
+    } `json:"top_base_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkopenCateorderPullResponse struct {
 

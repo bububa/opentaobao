@@ -12,8 +12,25 @@ tmall.item.schema.add
 */
 type TmallItemSchemaAddAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemSchemaAddResponse `json:"tmall_item_schema_add_response,omitempty"`
+    // Response *TmallItemSchemaAddResponse `json:"tmall_item_schema_add_response,omitempty"` 
+    TmallItemSchemaAddResponse
 }
+
+/* model for simplify = false
+type TmallItemSchemaAddResponse struct {
+
+    // 返回商品发布结果
+    
+    AddItemResult   string `json:"add_item_result,omitempty"`
+    
+
+    // 发布商品操作成功时间
+    
+    GmtCreate   string `json:"gmt_create,omitempty"`
+    
+
+}
+*/
 
 type TmallItemSchemaAddResponse struct {
 

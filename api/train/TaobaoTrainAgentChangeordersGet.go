@@ -11,11 +11,11 @@ taobao.train.agent.changeorders.get
 
 代理商用来获取待改签的订单列表及数量，防止代理商掉单。
 */
-func TaobaoTrainAgentChangeordersGet(clt *core.SDKClient, req *train.TaobaoTrainAgentChangeordersGetRequest, session string) (*train.TaobaoTrainAgentChangeordersGetResponse, error) {
+func TaobaoTrainAgentChangeordersGet(clt *core.SDKClient, req *train.TaobaoTrainAgentChangeordersGetRequest, session string) (*train.TaobaoTrainAgentChangeordersGetAPIResponse, error) {
     var resp train.TaobaoTrainAgentChangeordersGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

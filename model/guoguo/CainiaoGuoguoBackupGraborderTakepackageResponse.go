@@ -12,8 +12,22 @@ cainiao.guoguo.backup.graborder.takepackage
 */
 type CainiaoGuoguoBackupGraborderTakepackageAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoGuoguoBackupGraborderTakepackageResponse `json:"cainiao_guoguo_backup_graborder_takepackage_response,omitempty"`
+    // Response *CainiaoGuoguoBackupGraborderTakepackageResponse `json:"cainiao_guoguo_backup_graborder_takepackage_response,omitempty"` 
+    CainiaoGuoguoBackupGraborderTakepackageResponse
 }
+
+/* model for simplify = false
+type CainiaoGuoguoBackupGraborderTakepackageResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        CainiaoGuoguoBackupGraborderTakepackageResult  *CainiaoGuoguoBackupGraborderTakepackageResult `json:"cainiao_guoguo_backup_graborder_takepackage_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoGuoguoBackupGraborderTakepackageResponse struct {
 

@@ -12,8 +12,22 @@ taobao.simba.campaign.update
 */
 type TaobaoSimbaCampaignUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCampaignUpdateResponse `json:"taobao_simba_campaign_update_response,omitempty"`
+    // Response *TaobaoSimbaCampaignUpdateResponse `json:"simba_campaign_update_response,omitempty"` 
+    TaobaoSimbaCampaignUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCampaignUpdateResponse struct {
+
+    // 修改后的推广计划
+    
+    Campaign  *struct {
+        Campaign  *Campaign `json:"campaign,omitempty"`
+    } `json:"campaign,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCampaignUpdateResponse struct {
 

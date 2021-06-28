@@ -12,8 +12,22 @@ alibaba.retail.device.payUrl.get
 */
 type AlibabaRetailDevicePayUrlGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaRetailDevicePayUrlGetResponse `json:"alibaba_retail_device_payUrl_get_response,omitempty"`
+    // Response *AlibabaRetailDevicePayUrlGetResponse `json:"alibaba_retail_device_payUrl_get_response,omitempty"` 
+    AlibabaRetailDevicePayUrlGetResponse
 }
+
+/* model for simplify = false
+type AlibabaRetailDevicePayUrlGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaRetailDevicePayUrlGetResult  *AlibabaRetailDevicePayUrlGetResult `json:"alibaba_retail_device_pay_url_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaRetailDevicePayUrlGetResponse struct {
 

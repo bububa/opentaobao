@@ -13,8 +13,22 @@ taobao.areas.get
 */
 type TaobaoAreasGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAreasGetResponse `json:"taobao_areas_get_response,omitempty"`
+    // Response *TaobaoAreasGetResponse `json:"areas_get_response,omitempty"` 
+    TaobaoAreasGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAreasGetResponse struct {
+
+    // 地址区域信息列表.返回的Area包含的具体信息为入参fields请求的字段信息 。
+    
+    Areas  struct {
+        Area  []Area `json:"area,omitempty"`
+    } `json:"areas,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAreasGetResponse struct {
 

@@ -12,8 +12,25 @@ taobao.mixnick.change
 */
 type TaobaoMixnickChangeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMixnickChangeResponse `json:"taobao_mixnick_change_response,omitempty"`
+    // Response *TaobaoMixnickChangeResponse `json:"mixnick_change_response,omitempty"` 
+    TaobaoMixnickChangeResponse
 }
+
+/* model for simplify = false
+type TaobaoMixnickChangeResponse struct {
+
+    // 是否成功
+    
+    RetSuccess   bool `json:"ret_success,omitempty"`
+    
+
+    // 根据dstAppkey算出的mixnick
+    
+    Mixnick   string `json:"mixnick,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMixnickChangeResponse struct {
 

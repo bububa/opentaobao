@@ -12,8 +12,22 @@ alibaba.wdk.marketing.fullrange.deleteactivity
 */
 type AlibabaWdkMarketingFullrangeDeleteactivityAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingFullrangeDeleteactivityResponse `json:"alibaba_wdk_marketing_fullrange_deleteactivity_response,omitempty"`
+    // Response *AlibabaWdkMarketingFullrangeDeleteactivityResponse `json:"alibaba_wdk_marketing_fullrange_deleteactivity_response,omitempty"` 
+    AlibabaWdkMarketingFullrangeDeleteactivityResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingFullrangeDeleteactivityResponse struct {
+
+    // 删除活动返回结果
+    
+    Result  *struct {
+        MarketResult  *MarketResult `json:"market_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingFullrangeDeleteactivityResponse struct {
 

@@ -11,11 +11,11 @@ taobao.de.activity.delivery.addr.confirm
 
 用户收件地址确认
 */
-func TaobaoDeActivityDeliveryAddrConfirm(clt *core.SDKClient, req *gameact.TaobaoDeActivityDeliveryAddrConfirmRequest, session string) (*gameact.TaobaoDeActivityDeliveryAddrConfirmResponse, error) {
+func TaobaoDeActivityDeliveryAddrConfirm(clt *core.SDKClient, req *gameact.TaobaoDeActivityDeliveryAddrConfirmRequest, session string) (*gameact.TaobaoDeActivityDeliveryAddrConfirmAPIResponse, error) {
     var resp gameact.TaobaoDeActivityDeliveryAddrConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

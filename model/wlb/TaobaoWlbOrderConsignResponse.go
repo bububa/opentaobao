@@ -12,8 +12,20 @@ taobao.wlb.order.consign
 */
 type TaobaoWlbOrderConsignAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbOrderConsignResponse `json:"taobao_wlb_order_consign_response,omitempty"`
+    // Response *TaobaoWlbOrderConsignResponse `json:"wlb_order_consign_response,omitempty"` 
+    TaobaoWlbOrderConsignResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbOrderConsignResponse struct {
+
+    // 修改时间
+    
+    ModifyTime   string `json:"modify_time,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbOrderConsignResponse struct {
 

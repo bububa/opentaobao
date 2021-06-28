@@ -12,8 +12,22 @@ alibaba.ailabs.iot.business.recipe.getpage
 */
 type AlibabaAilabsIotBusinessRecipeGetpageAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAilabsIotBusinessRecipeGetpageResponse `json:"alibaba_ailabs_iot_business_recipe_getpage_response,omitempty"`
+    // Response *AlibabaAilabsIotBusinessRecipeGetpageResponse `json:"alibaba_ailabs_iot_business_recipe_getpage_response,omitempty"` 
+    AlibabaAilabsIotBusinessRecipeGetpageResponse
 }
+
+/* model for simplify = false
+type AlibabaAilabsIotBusinessRecipeGetpageResponse struct {
+
+    // 返回包装类
+    
+    Result  *struct {
+        BaseResult  *BaseResult `json:"base_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAilabsIotBusinessRecipeGetpageResponse struct {
 

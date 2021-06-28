@@ -13,8 +13,22 @@ taobao.products.get
 */
 type TaobaoProductsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoProductsGetResponse `json:"taobao_products_get_response,omitempty"`
+    // Response *TaobaoProductsGetResponse `json:"products_get_response,omitempty"` 
+    TaobaoProductsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoProductsGetResponse struct {
+
+    // 返回具体信息为入参fields请求的字段信息
+    
+    Products  struct {
+        Product  []Product `json:"product,omitempty"`
+    } `json:"products,omitempty"`
+    
+
+}
+*/
 
 type TaobaoProductsGetResponse struct {
 

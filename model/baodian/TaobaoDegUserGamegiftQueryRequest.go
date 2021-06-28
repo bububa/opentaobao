@@ -19,7 +19,7 @@ type TaobaoDegUserGamegiftQueryRequest struct {
     status   int64 
 
     // cp item id列表
-    cpItemIds   []String 
+    cpItemIds   []string 
 
 }
 
@@ -52,13 +52,13 @@ func (r TaobaoDegUserGamegiftQueryRequest) GetStatus() int64 {
     return r.status
 }
 
-func (r *TaobaoDegUserGamegiftQueryRequest) SetCpItemIds(cpItemIds []String) error {
+func (r *TaobaoDegUserGamegiftQueryRequest) SetCpItemIds(cpItemIds []string) error {
     r.cpItemIds = cpItemIds
     r.Set("cp_item_ids", cpItemIds)
     return nil
 }
 
-func (r TaobaoDegUserGamegiftQueryRequest) GetCpItemIds() []String {
+func (r TaobaoDegUserGamegiftQueryRequest) GetCpItemIds() []string {
     return r.cpItemIds
 }
 

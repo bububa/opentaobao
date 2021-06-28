@@ -12,8 +12,20 @@ sdk回调客户端基本信息到开放平台，用于做监控之类，有助�
 */
 type TaobaoTopSdkFeedbackUploadAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTopSdkFeedbackUploadResponse `json:"taobao_top_sdk_feedback_upload_response,omitempty"`
+    // Response *TaobaoTopSdkFeedbackUploadResponse `json:"top_sdk_feedback_upload_response,omitempty"` 
+    TaobaoTopSdkFeedbackUploadResponse
 }
+
+/* model for simplify = false
+type TaobaoTopSdkFeedbackUploadResponse struct {
+
+    // 控制回传间隔（单位：秒）
+    
+    UploadInterval   int64 `json:"upload_interval,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTopSdkFeedbackUploadResponse struct {
 

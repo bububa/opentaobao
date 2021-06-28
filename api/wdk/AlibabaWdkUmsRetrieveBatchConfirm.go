@@ -11,11 +11,11 @@ alibaba.wdk.ums.retrieve.batch.confirm
 
 批量消息确认
 */
-func AlibabaWdkUmsRetrieveBatchConfirm(clt *core.SDKClient, req *wdk.AlibabaWdkUmsRetrieveBatchConfirmRequest, session string) (*wdk.AlibabaWdkUmsRetrieveBatchConfirmResponse, error) {
+func AlibabaWdkUmsRetrieveBatchConfirm(clt *core.SDKClient, req *wdk.AlibabaWdkUmsRetrieveBatchConfirmRequest, session string) (*wdk.AlibabaWdkUmsRetrieveBatchConfirmAPIResponse, error) {
     var resp wdk.AlibabaWdkUmsRetrieveBatchConfirmAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

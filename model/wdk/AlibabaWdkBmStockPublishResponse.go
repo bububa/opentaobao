@@ -12,8 +12,22 @@ alibaba.wdk.bm.stock.publish
 */
 type AlibabaWdkBmStockPublishAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkBmStockPublishResponse `json:"alibaba_wdk_bm_stock_publish_response,omitempty"`
+    // Response *AlibabaWdkBmStockPublishResponse `json:"alibaba_wdk_bm_stock_publish_response,omitempty"` 
+    AlibabaWdkBmStockPublishResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkBmStockPublishResponse struct {
+
+    // 出参
+    
+    Result  *struct {
+        BmResult  *BmResult `json:"bm_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkBmStockPublishResponse struct {
 

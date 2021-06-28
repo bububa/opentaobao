@@ -11,11 +11,11 @@ taobao.wlb.orderstatus.get
 
 根据物流宝订单号查询物流宝订单至目前为止的流转状态列表
 */
-func TaobaoWlbOrderstatusGet(clt *core.SDKClient, req *wlb.TaobaoWlbOrderstatusGetRequest, session string) (*wlb.TaobaoWlbOrderstatusGetResponse, error) {
+func TaobaoWlbOrderstatusGet(clt *core.SDKClient, req *wlb.TaobaoWlbOrderstatusGetRequest, session string) (*wlb.TaobaoWlbOrderstatusGetAPIResponse, error) {
     var resp wlb.TaobaoWlbOrderstatusGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ alibaba.wdk.bm.trade.activity.query
 */
 type AlibabaWdkBmTradeActivityQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkBmTradeActivityQueryResponse `json:"alibaba_wdk_bm_trade_activity_query_response,omitempty"`
+    // Response *AlibabaWdkBmTradeActivityQueryResponse `json:"alibaba_wdk_bm_trade_activity_query_response,omitempty"` 
+    AlibabaWdkBmTradeActivityQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkBmTradeActivityQueryResponse struct {
+
+    // 结果数据
+    
+    Result  *struct {
+        BmResult  *BmResult `json:"bm_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkBmTradeActivityQueryResponse struct {
 

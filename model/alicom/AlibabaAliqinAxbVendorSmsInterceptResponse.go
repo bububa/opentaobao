@@ -12,8 +12,22 @@ alibaba.aliqin.axb.vendor.sms.intercept
 */
 type AlibabaAliqinAxbVendorSmsInterceptAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinAxbVendorSmsInterceptResponse `json:"alibaba_aliqin_axb_vendor_sms_intercept_response,omitempty"`
+    // Response *AlibabaAliqinAxbVendorSmsInterceptResponse `json:"alibaba_aliqin_axb_vendor_sms_intercept_response,omitempty"` 
+    AlibabaAliqinAxbVendorSmsInterceptResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinAxbVendorSmsInterceptResponse struct {
+
+    // 响应结构体
+    
+    Result  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinAxbVendorSmsInterceptResponse struct {
 

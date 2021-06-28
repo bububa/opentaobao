@@ -12,8 +12,27 @@ taobao.fenxiao.distributor.products.get
 */
 type TaobaoFenxiaoDistributorProductsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoDistributorProductsGetResponse `json:"taobao_fenxiao_distributor_products_get_response,omitempty"`
+    // Response *TaobaoFenxiaoDistributorProductsGetResponse `json:"fenxiao_distributor_products_get_response,omitempty"` 
+    TaobaoFenxiaoDistributorProductsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoDistributorProductsGetResponse struct {
+
+    // 是否存在下一页
+    
+    HasNext   bool `json:"has_next,omitempty"`
+    
+
+    // 产品对象记录集。返回 FenxiaoProduct 包含的字段信息。
+    
+    Products  struct {
+        FenxiaoProduct  []FenxiaoProduct `json:"fenxiao_product,omitempty"`
+    } `json:"products,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoDistributorProductsGetResponse struct {
 

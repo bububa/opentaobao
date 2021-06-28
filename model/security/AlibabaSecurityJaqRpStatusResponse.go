@@ -12,8 +12,22 @@ alibaba.security.jaq.rp.status
 */
 type AlibabaSecurityJaqRpStatusAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqRpStatusResponse `json:"alibaba_security_jaq_rp_status_response,omitempty"`
+    // Response *AlibabaSecurityJaqRpStatusResponse `json:"alibaba_security_jaq_rp_status_response,omitempty"` 
+    AlibabaSecurityJaqRpStatusResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqRpStatusResponse struct {
+
+    // 状态信息
+    
+    Data  *struct {
+        RpStatusResultBo  *RpStatusResultBo `json:"rp_status_result_bo,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqRpStatusResponse struct {
 

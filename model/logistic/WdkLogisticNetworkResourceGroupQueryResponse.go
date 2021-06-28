@@ -12,8 +12,22 @@ wdk.logistic.network.resource.group.query
 */
 type WdkLogisticNetworkResourceGroupQueryAPIResponse struct {
     model.CommonResponse
-    Response *WdkLogisticNetworkResourceGroupQueryResponse `json:"wdk_logistic_network_resource_group_query_response,omitempty"`
+    // Response *WdkLogisticNetworkResourceGroupQueryResponse `json:"wdk_logistic_network_resource_group_query_response,omitempty"` 
+    WdkLogisticNetworkResourceGroupQueryResponse
 }
+
+/* model for simplify = false
+type WdkLogisticNetworkResourceGroupQueryResponse struct {
+
+    // 出参
+    
+    Result  *struct {
+        LogisticsResult  *LogisticsResult `json:"logistics_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type WdkLogisticNetworkResourceGroupQueryResponse struct {
 

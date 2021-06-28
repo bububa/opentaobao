@@ -16,7 +16,7 @@ type TaobaoRefundsApplyGetRequest struct {
     model.Params
 
     // 需要返回的字段。目前支持有：refund_id, tid, title, buyer_nick, seller_nick, total_fee, status, created, refund_fee
-    fields   []String 
+    fields   []string 
 
     // 退款状态，默认查询所有退款状态的数据，除了默认值外每次只能查询一种状态。<br/>WAIT_SELLER_AGREE(买家已经申请退款，等待卖家同意) <br/>WAIT_BUYER_RETURN_GOODS(卖家已经同意退款，等待买家退货) <br/>WAIT_SELLER_CONFIRM_GOODS(买家已经退货，等待卖家确认收货) <br/>SELLER_REFUSE_BUYER(卖家拒绝退款) <br/>CLOSED(退款关闭) <br/>SUCCESS(退款成功)
     status   string 
@@ -54,13 +54,13 @@ func (r TaobaoRefundsApplyGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoRefundsApplyGetRequest) SetFields(fields []String) error {
+func (r *TaobaoRefundsApplyGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoRefundsApplyGetRequest) GetFields() []String {
+func (r TaobaoRefundsApplyGetRequest) GetFields() []string {
     return r.fields
 }
 

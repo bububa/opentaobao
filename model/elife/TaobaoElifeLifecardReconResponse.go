@@ -12,8 +12,40 @@ taobao.elife.lifecard.recon
 */
 type TaobaoElifeLifecardReconAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoElifeLifecardReconResponse `json:"taobao_elife_lifecard_recon_response,omitempty"`
+    // Response *TaobaoElifeLifecardReconResponse `json:"elife_lifecard_recon_response,omitempty"` 
+    TaobaoElifeLifecardReconResponse
 }
+
+/* model for simplify = false
+type TaobaoElifeLifecardReconResponse struct {
+
+    // 结果描述
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // 对账日期
+    
+    OpDate   string `json:"op_date,omitempty"`
+    
+
+    // 成功标志
+    
+    Successed   bool `json:"successed,omitempty"`
+    
+
+    // 错误码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // 下载下载文件
+    
+    ReconFileUrl   string `json:"recon_file_url,omitempty"`
+    
+
+}
+*/
 
 type TaobaoElifeLifecardReconResponse struct {
 

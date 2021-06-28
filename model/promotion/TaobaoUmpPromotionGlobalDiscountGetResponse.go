@@ -12,8 +12,22 @@ taobao.ump.promotion.global.discount.get
 */
 type TaobaoUmpPromotionGlobalDiscountGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpPromotionGlobalDiscountGetResponse `json:"taobao_ump_promotion_global_discount_get_response,omitempty"`
+    // Response *TaobaoUmpPromotionGlobalDiscountGetResponse `json:"ump_promotion_global_discount_get_response,omitempty"` 
+    TaobaoUmpPromotionGlobalDiscountGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpPromotionGlobalDiscountGetResponse struct {
+
+    // 结果对象
+    
+    Result  *struct {
+        TaobaoUmpPromotionGlobalDiscountGetResult  *TaobaoUmpPromotionGlobalDiscountGetResult `json:"taobao_ump_promotion_global_discount_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpPromotionGlobalDiscountGetResponse struct {
 

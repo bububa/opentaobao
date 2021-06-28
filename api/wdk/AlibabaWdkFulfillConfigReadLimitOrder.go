@@ -11,11 +11,11 @@ alibaba.wdk.fulfill.config.read.limit.order
 
 根据仓code查询仓限单配置
 */
-func AlibabaWdkFulfillConfigReadLimitOrder(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillConfigReadLimitOrderRequest, session string) (*wdk.AlibabaWdkFulfillConfigReadLimitOrderResponse, error) {
+func AlibabaWdkFulfillConfigReadLimitOrder(clt *core.SDKClient, req *wdk.AlibabaWdkFulfillConfigReadLimitOrderRequest, session string) (*wdk.AlibabaWdkFulfillConfigReadLimitOrderAPIResponse, error) {
     var resp wdk.AlibabaWdkFulfillConfigReadLimitOrderAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

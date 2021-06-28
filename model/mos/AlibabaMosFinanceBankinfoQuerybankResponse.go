@@ -12,8 +12,22 @@ alibaba.mos.finance.bankinfo.querybank
 */
 type AlibabaMosFinanceBankinfoQuerybankAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosFinanceBankinfoQuerybankResponse `json:"alibaba_mos_finance_bankinfo_querybank_response,omitempty"`
+    // Response *AlibabaMosFinanceBankinfoQuerybankResponse `json:"alibaba_mos_finance_bankinfo_querybank_response,omitempty"` 
+    AlibabaMosFinanceBankinfoQuerybankResponse
 }
+
+/* model for simplify = false
+type AlibabaMosFinanceBankinfoQuerybankResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        AlibabaMosFinanceBankinfoQuerybankResultDo  *AlibabaMosFinanceBankinfoQuerybankResultDo `json:"alibaba_mos_finance_bankinfo_querybank_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosFinanceBankinfoQuerybankResponse struct {
 

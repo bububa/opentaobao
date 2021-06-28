@@ -12,8 +12,22 @@ alibaba.ele.fengniao.service.package.query
 */
 type AlibabaEleFengniaoServicePackageQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaEleFengniaoServicePackageQueryResponse `json:"alibaba_ele_fengniao_service_package_query_response,omitempty"`
+    // Response *AlibabaEleFengniaoServicePackageQueryResponse `json:"alibaba_ele_fengniao_service_package_query_response,omitempty"` 
+    AlibabaEleFengniaoServicePackageQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaEleFengniaoServicePackageQueryResponse struct {
+
+    // servicePackages
+    
+    ServicePackages  struct {
+        AlibabaEleFengniaoServicePackageQueryResult  []AlibabaEleFengniaoServicePackageQueryResult `json:"alibaba_ele_fengniao_service_package_query_result,omitempty"`
+    } `json:"service_packages,omitempty"`
+    
+
+}
+*/
 
 type AlibabaEleFengniaoServicePackageQueryResponse struct {
 

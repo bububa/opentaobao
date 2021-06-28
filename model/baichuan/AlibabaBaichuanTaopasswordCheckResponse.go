@@ -12,8 +12,22 @@ alibaba.baichuan.taopassword.check
 */
 type AlibabaBaichuanTaopasswordCheckAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaBaichuanTaopasswordCheckResponse `json:"alibaba_baichuan_taopassword_check_response,omitempty"`
+    // Response *AlibabaBaichuanTaopasswordCheckResponse `json:"alibaba_baichuan_taopassword_check_response,omitempty"` 
+    AlibabaBaichuanTaopasswordCheckResponse
 }
+
+/* model for simplify = false
+type AlibabaBaichuanTaopasswordCheckResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaBaichuanTaopasswordCheckResult  *AlibabaBaichuanTaopasswordCheckResult `json:"alibaba_baichuan_taopassword_check_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaBaichuanTaopasswordCheckResponse struct {
 

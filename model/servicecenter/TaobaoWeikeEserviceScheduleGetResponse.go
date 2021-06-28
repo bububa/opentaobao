@@ -12,8 +12,22 @@ taobao.weike.eservice.schedule.get
 */
 type TaobaoWeikeEserviceScheduleGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWeikeEserviceScheduleGetResponse `json:"taobao_weike_eservice_schedule_get_response,omitempty"`
+    // Response *TaobaoWeikeEserviceScheduleGetResponse `json:"weike_eservice_schedule_get_response,omitempty"` 
+    TaobaoWeikeEserviceScheduleGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWeikeEserviceScheduleGetResponse struct {
+
+    // 排班信息查询结果
+    
+    Result  *struct {
+        CsSchedulingWrapper  *CsSchedulingWrapper `json:"cs_scheduling_wrapper,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWeikeEserviceScheduleGetResponse struct {
 

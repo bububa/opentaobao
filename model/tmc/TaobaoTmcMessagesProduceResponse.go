@@ -12,8 +12,27 @@ taobao.tmc.messages.produce
 */
 type TaobaoTmcMessagesProduceAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcMessagesProduceResponse `json:"taobao_tmc_messages_produce_response,omitempty"`
+    // Response *TaobaoTmcMessagesProduceResponse `json:"tmc_messages_produce_response,omitempty"` 
+    TaobaoTmcMessagesProduceResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcMessagesProduceResponse struct {
+
+    // 是否全部成功
+    
+    IsAllSuccess   bool `json:"is_all_success,omitempty"`
+    
+
+    // 发送结果，与发送时的参数顺序一致。如果is_all_success为true时，不用校验result是否成功
+    
+    Results  struct {
+        TmcProduceResult  []TmcProduceResult `json:"tmc_produce_result,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcMessagesProduceResponse struct {
 

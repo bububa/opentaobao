@@ -12,8 +12,22 @@ taobao.miniapp.userInfo.get
 */
 type TaobaoMiniappUserInfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMiniappUserInfoGetResponse `json:"taobao_miniapp_userInfo_get_response,omitempty"`
+    // Response *TaobaoMiniappUserInfoGetResponse `json:"miniapp_userInfo_get_response,omitempty"` 
+    TaobaoMiniappUserInfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoMiniappUserInfoGetResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoMiniappUserInfoGetResult  *TaobaoMiniappUserInfoGetResult `json:"taobao_miniapp_user_info_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMiniappUserInfoGetResponse struct {
 

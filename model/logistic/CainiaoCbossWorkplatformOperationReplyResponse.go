@@ -12,8 +12,22 @@ cainiao.cboss.workplatform.operation.reply
 */
 type CainiaoCbossWorkplatformOperationReplyAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCbossWorkplatformOperationReplyResponse `json:"cainiao_cboss_workplatform_operation_reply_response,omitempty"`
+    // Response *CainiaoCbossWorkplatformOperationReplyResponse `json:"cainiao_cboss_workplatform_operation_reply_response,omitempty"` 
+    CainiaoCbossWorkplatformOperationReplyResponse
 }
+
+/* model for simplify = false
+type CainiaoCbossWorkplatformOperationReplyResponse struct {
+
+    // result
+    
+    Result  *struct {
+        CainiaoCbossWorkplatformOperationReplyResult  *CainiaoCbossWorkplatformOperationReplyResult `json:"cainiao_cboss_workplatform_operation_reply_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCbossWorkplatformOperationReplyResponse struct {
 

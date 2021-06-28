@@ -12,8 +12,22 @@ alibaba.security.jaq.spamregisterprevention.feedback
 */
 type AlibabaSecurityJaqSpamregisterpreventionFeedbackAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqSpamregisterpreventionFeedbackResponse `json:"alibaba_security_jaq_spamregisterprevention_feedback_response,omitempty"`
+    // Response *AlibabaSecurityJaqSpamregisterpreventionFeedbackResponse `json:"alibaba_security_jaq_spamregisterprevention_feedback_response,omitempty"` 
+    AlibabaSecurityJaqSpamregisterpreventionFeedbackResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqSpamregisterpreventionFeedbackResponse struct {
+
+    // feedBack返回结果
+    
+    FeedBackResult  *struct {
+        JaqFeedBackResult  *JaqFeedBackResult `json:"jaq_feed_back_result,omitempty"`
+    } `json:"feed_back_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqSpamregisterpreventionFeedbackResponse struct {
 

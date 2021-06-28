@@ -11,11 +11,11 @@ taobao.fliggy.wrate.getmixratelist
 
 飞猪评价通用接口
 */
-func TaobaoFliggyWrateGetmixratelist(clt *core.SDKClient, req *traderate.TaobaoFliggyWrateGetmixratelistRequest, session string) (*traderate.TaobaoFliggyWrateGetmixratelistResponse, error) {
+func TaobaoFliggyWrateGetmixratelist(clt *core.SDKClient, req *traderate.TaobaoFliggyWrateGetmixratelistRequest, session string) (*traderate.TaobaoFliggyWrateGetmixratelistAPIResponse, error) {
     var resp traderate.TaobaoFliggyWrateGetmixratelistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

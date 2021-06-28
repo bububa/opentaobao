@@ -25,7 +25,7 @@ type AlibabaImapFixedmappingQueryRequest struct {
     srcChannelId   int64 
 
     // 目标渠道ID列表
-    targetChannelIdList   []Number 
+    targetChannelIdList   []int64 
 
     // 目标渠道ID
     targetCategoryId   int64 
@@ -84,13 +84,13 @@ func (r AlibabaImapFixedmappingQueryRequest) GetSrcChannelId() int64 {
     return r.srcChannelId
 }
 
-func (r *AlibabaImapFixedmappingQueryRequest) SetTargetChannelIdList(targetChannelIdList []Number) error {
+func (r *AlibabaImapFixedmappingQueryRequest) SetTargetChannelIdList(targetChannelIdList []int64) error {
     r.targetChannelIdList = targetChannelIdList
     r.Set("target_channel_id_list", targetChannelIdList)
     return nil
 }
 
-func (r AlibabaImapFixedmappingQueryRequest) GetTargetChannelIdList() []Number {
+func (r AlibabaImapFixedmappingQueryRequest) GetTargetChannelIdList() []int64 {
     return r.targetChannelIdList
 }
 

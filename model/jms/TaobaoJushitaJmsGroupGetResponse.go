@@ -12,8 +12,27 @@ taobao.jushita.jms.group.get
 */
 type TaobaoJushitaJmsGroupGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJushitaJmsGroupGetResponse `json:"taobao_jushita_jms_group_get_response,omitempty"`
+    // Response *TaobaoJushitaJmsGroupGetResponse `json:"jushita_jms_group_get_response,omitempty"` 
+    TaobaoJushitaJmsGroupGetResponse
 }
+
+/* model for simplify = false
+type TaobaoJushitaJmsGroupGetResponse struct {
+
+    // 返回的总数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 分组信息
+    
+    Groups  struct {
+        MsgGroupDO  []MsgGroupDO `json:"msg_group_do,omitempty"`
+    } `json:"groups,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJushitaJmsGroupGetResponse struct {
 

@@ -12,8 +12,22 @@ cainiao.cloudprint.single.customarea.get
 */
 type CainiaoCloudprintSingleCustomareaGetAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoCloudprintSingleCustomareaGetResponse `json:"cainiao_cloudprint_single_customarea_get_response,omitempty"`
+    // Response *CainiaoCloudprintSingleCustomareaGetResponse `json:"cainiao_cloudprint_single_customarea_get_response,omitempty"` 
+    CainiaoCloudprintSingleCustomareaGetResponse
 }
+
+/* model for simplify = false
+type CainiaoCloudprintSingleCustomareaGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        CloudPrintBaseResult  *CloudPrintBaseResult `json:"cloud_print_base_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoCloudprintSingleCustomareaGetResponse struct {
 

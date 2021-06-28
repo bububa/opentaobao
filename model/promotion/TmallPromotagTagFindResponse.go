@@ -12,8 +12,22 @@ tmall.promotag.tag.find
 */
 type TmallPromotagTagFindAPIResponse struct {
     model.CommonResponse
-    Response *TmallPromotagTagFindResponse `json:"tmall_promotag_tag_find_response,omitempty"`
+    // Response *TmallPromotagTagFindResponse `json:"tmall_promotag_tag_find_response,omitempty"` 
+    TmallPromotagTagFindResponse
 }
+
+/* model for simplify = false
+type TmallPromotagTagFindResponse struct {
+
+    // 查询结果类型
+    
+    QueryResult  *struct {
+        PromotionTagQuery  *PromotionTagQuery `json:"promotion_tag_query,omitempty"`
+    } `json:"query_result,omitempty"`
+    
+
+}
+*/
 
 type TmallPromotagTagFindResponse struct {
 

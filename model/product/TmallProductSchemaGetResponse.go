@@ -12,8 +12,20 @@ tmall.product.schema.get
 */
 type TmallProductSchemaGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallProductSchemaGetResponse `json:"tmall_product_schema_get_response,omitempty"`
+    // Response *TmallProductSchemaGetResponse `json:"tmall_product_schema_get_response,omitempty"` 
+    TmallProductSchemaGetResponse
 }
+
+/* model for simplify = false
+type TmallProductSchemaGetResponse struct {
+
+    // 产品信息数据。schema形式
+    
+    GetProductResult   string `json:"get_product_result,omitempty"`
+    
+
+}
+*/
 
 type TmallProductSchemaGetResponse struct {
 

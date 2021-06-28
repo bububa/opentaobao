@@ -12,8 +12,20 @@ alibaba.interact.login.alipayauth
 */
 type AlibabaInteractLoginAlipayauthAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractLoginAlipayauthResponse `json:"alibaba_interact_login_alipayauth_response,omitempty"`
+    // Response *AlibabaInteractLoginAlipayauthResponse `json:"alibaba_interact_login_alipayauth_response,omitempty"` 
+    AlibabaInteractLoginAlipayauthResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractLoginAlipayauthResponse struct {
+
+    // 返回值
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractLoginAlipayauthResponse struct {
 

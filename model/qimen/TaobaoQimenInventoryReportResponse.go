@@ -12,8 +12,22 @@ WMS调用奇门的接口,将库存盘点情况回传ERP
 */
 type TaobaoQimenInventoryReportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenInventoryReportResponse `json:"taobao_qimen_inventory_report_response,omitempty"`
+    // Response *TaobaoQimenInventoryReportResponse `json:"qimen_inventory_report_response,omitempty"` 
+    TaobaoQimenInventoryReportResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenInventoryReportResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenInventoryReportResponse struct {
 

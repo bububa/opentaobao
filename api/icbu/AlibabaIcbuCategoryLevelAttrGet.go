@@ -11,11 +11,11 @@ alibaba.icbu.category.level.attr.get
 
 用于获取层级属性（车型库）的子属性和属性值
 */
-func AlibabaIcbuCategoryLevelAttrGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryLevelAttrGetRequest, session string) (*icbu.AlibabaIcbuCategoryLevelAttrGetResponse, error) {
+func AlibabaIcbuCategoryLevelAttrGet(clt *core.SDKClient, req *icbu.AlibabaIcbuCategoryLevelAttrGetRequest, session string) (*icbu.AlibabaIcbuCategoryLevelAttrGetAPIResponse, error) {
     var resp icbu.AlibabaIcbuCategoryLevelAttrGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

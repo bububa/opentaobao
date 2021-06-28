@@ -12,8 +12,20 @@ alibaba.scbp.ad.group.count.ad.group
 */
 type AlibabaScbpAdGroupCountAdGroupAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdGroupCountAdGroupResponse `json:"alibaba_scbp_ad_group_count_ad_group_response,omitempty"`
+    // Response *AlibabaScbpAdGroupCountAdGroupResponse `json:"alibaba_scbp_ad_group_count_ad_group_response,omitempty"` 
+    AlibabaScbpAdGroupCountAdGroupResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdGroupCountAdGroupResponse struct {
+
+    // 返回结果
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdGroupCountAdGroupResponse struct {
 

@@ -11,11 +11,11 @@ taobao.qimen.channelinventory.query
 
 渠道库存查询
 */
-func TaobaoQimenChannelinventoryQuery(clt *core.SDKClient, req *qimen.TaobaoQimenChannelinventoryQueryRequest, session string) (*qimen.TaobaoQimenChannelinventoryQueryResponse, error) {
+func TaobaoQimenChannelinventoryQuery(clt *core.SDKClient, req *qimen.TaobaoQimenChannelinventoryQueryRequest, session string) (*qimen.TaobaoQimenChannelinventoryQueryAPIResponse, error) {
     var resp qimen.TaobaoQimenChannelinventoryQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

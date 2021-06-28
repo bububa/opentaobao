@@ -12,8 +12,22 @@ alibaba.interact.open.isattention
 */
 type AlibabaInteractOpenIsattentionAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractOpenIsattentionResponse `json:"alibaba_interact_open_isattention_response,omitempty"`
+    // Response *AlibabaInteractOpenIsattentionResponse `json:"alibaba_interact_open_isattention_response,omitempty"` 
+    AlibabaInteractOpenIsattentionResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractOpenIsattentionResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaInteractOpenIsattentionResultDo  *AlibabaInteractOpenIsattentionResultDo `json:"alibaba_interact_open_isattention_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractOpenIsattentionResponse struct {
 

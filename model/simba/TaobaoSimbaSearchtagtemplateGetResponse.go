@@ -12,8 +12,22 @@ taobao.simba.searchtagtemplate.get
 */
 type TaobaoSimbaSearchtagtemplateGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaSearchtagtemplateGetResponse `json:"taobao_simba_searchtagtemplate_get_response,omitempty"`
+    // Response *TaobaoSimbaSearchtagtemplateGetResponse `json:"simba_searchtagtemplate_get_response,omitempty"` 
+    TaobaoSimbaSearchtagtemplateGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaSearchtagtemplateGetResponse struct {
+
+    // result
+    
+    TemplateList  struct {
+        TaobaoSimbaSearchtagtemplateGetResult  []TaobaoSimbaSearchtagtemplateGetResult `json:"taobao_simba_searchtagtemplate_get_result,omitempty"`
+    } `json:"template_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaSearchtagtemplateGetResponse struct {
 

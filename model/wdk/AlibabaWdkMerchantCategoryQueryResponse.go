@@ -12,8 +12,35 @@ alibaba.wdk.merchant.category.query
 */
 type AlibabaWdkMerchantCategoryQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMerchantCategoryQueryResponse `json:"alibaba_wdk_merchant_category_query_response,omitempty"`
+    // Response *AlibabaWdkMerchantCategoryQueryResponse `json:"alibaba_wdk_merchant_category_query_response,omitempty"` 
+    AlibabaWdkMerchantCategoryQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMerchantCategoryQueryResponse struct {
+
+    // success
+    
+    Suc   bool `json:"suc,omitempty"`
+    
+
+    // errorCode
+    
+    Errorcode   string `json:"errorcode,omitempty"`
+    
+
+    // errorDesc
+    
+    Errordesc   string `json:"errordesc,omitempty"`
+    
+
+    // result
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMerchantCategoryQueryResponse struct {
 

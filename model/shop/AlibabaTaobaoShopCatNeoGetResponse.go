@@ -12,8 +12,20 @@ alibaba.taobao.shop.cat.neo.get
 */
 type AlibabaTaobaoShopCatNeoGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTaobaoShopCatNeoGetResponse `json:"alibaba_taobao_shop_cat_neo_get_response,omitempty"`
+    // Response *AlibabaTaobaoShopCatNeoGetResponse `json:"alibaba_taobao_shop_cat_neo_get_response,omitempty"` 
+    AlibabaTaobaoShopCatNeoGetResponse
 }
+
+/* model for simplify = false
+type AlibabaTaobaoShopCatNeoGetResponse struct {
+
+    // 客户端鉴权虚拟api
+    
+    Unnamed   string `json:"unnamed,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTaobaoShopCatNeoGetResponse struct {
 

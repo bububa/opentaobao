@@ -11,11 +11,11 @@ alibaba.xiami.api.artist.musiclist.get
 
 热门艺人
 */
-func AlibabaXiamiApiArtistMusiclistGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiArtistMusiclistGetRequest, session string) (*xiami.AlibabaXiamiApiArtistMusiclistGetResponse, error) {
+func AlibabaXiamiApiArtistMusiclistGet(clt *core.SDKClient, req *xiami.AlibabaXiamiApiArtistMusiclistGetRequest, session string) (*xiami.AlibabaXiamiApiArtistMusiclistGetAPIResponse, error) {
     var resp xiami.AlibabaXiamiApiArtistMusiclistGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -11,11 +11,11 @@ taobao.fenxiao.product.sku.update
 
 产品SKU信息更新
 */
-func TaobaoFenxiaoProductSkuUpdate(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductSkuUpdateRequest, session string) (*fenxiao.TaobaoFenxiaoProductSkuUpdateResponse, error) {
+func TaobaoFenxiaoProductSkuUpdate(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductSkuUpdateRequest, session string) (*fenxiao.TaobaoFenxiaoProductSkuUpdateAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoProductSkuUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

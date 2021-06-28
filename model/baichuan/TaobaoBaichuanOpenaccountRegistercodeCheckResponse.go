@@ -12,8 +12,20 @@ taobao.baichuan.openaccount.registercode.check
 */
 type TaobaoBaichuanOpenaccountRegistercodeCheckAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanOpenaccountRegistercodeCheckResponse `json:"taobao_baichuan_openaccount_registercode_check_response,omitempty"`
+    // Response *TaobaoBaichuanOpenaccountRegistercodeCheckResponse `json:"baichuan_openaccount_registercode_check_response,omitempty"` 
+    TaobaoBaichuanOpenaccountRegistercodeCheckResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanOpenaccountRegistercodeCheckResponse struct {
+
+    // name
+    
+    Name   string `json:"name,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanOpenaccountRegistercodeCheckResponse struct {
 

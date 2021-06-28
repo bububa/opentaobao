@@ -12,8 +12,22 @@ taobao.alitrip.car.order.accept
 */
 type TaobaoAlitripCarOrderAcceptAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripCarOrderAcceptResponse `json:"taobao_alitrip_car_order_accept_response,omitempty"`
+    // Response *TaobaoAlitripCarOrderAcceptResponse `json:"alitrip_car_order_accept_response,omitempty"` 
+    TaobaoAlitripCarOrderAcceptResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripCarOrderAcceptResponse struct {
+
+    // 根据站点名称查询产品
+    
+    Result  *struct {
+        TaobaoAlitripCarOrderAcceptApiResult  *TaobaoAlitripCarOrderAcceptApiResult `json:"taobao_alitrip_car_order_accept_api_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripCarOrderAcceptResponse struct {
 

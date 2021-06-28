@@ -22,7 +22,7 @@ type TaobaoSimbaKeywordsRealtimeRankingBatchGetRequest struct {
     adGroupId   int64 
 
     // 关键词列表集合,id用半角逗号分割，一次最多20个
-    bidwordIds   []Number 
+    bidwordIds   []int64 
 
 }
 
@@ -65,13 +65,13 @@ func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetRequest) GetAdGroupId() int64 
     return r.adGroupId
 }
 
-func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetRequest) SetBidwordIds(bidwordIds []Number) error {
+func (r *TaobaoSimbaKeywordsRealtimeRankingBatchGetRequest) SetBidwordIds(bidwordIds []int64) error {
     r.bidwordIds = bidwordIds
     r.Set("bidword_ids", bidwordIds)
     return nil
 }
 
-func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetRequest) GetBidwordIds() []Number {
+func (r TaobaoSimbaKeywordsRealtimeRankingBatchGetRequest) GetBidwordIds() []int64 {
     return r.bidwordIds
 }
 

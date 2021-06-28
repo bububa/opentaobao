@@ -11,11 +11,11 @@ alibaba.wdk.marketing.itempool.item.add.async
 
 新分组模型下新增商品
 */
-func AlibabaWdkMarketingItempoolItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolItemAddAsyncRequest, session string) (*wdk.AlibabaWdkMarketingItempoolItemAddAsyncResponse, error) {
+func AlibabaWdkMarketingItempoolItemAddAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingItempoolItemAddAsyncRequest, session string) (*wdk.AlibabaWdkMarketingItempoolItemAddAsyncAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingItempoolItemAddAsyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

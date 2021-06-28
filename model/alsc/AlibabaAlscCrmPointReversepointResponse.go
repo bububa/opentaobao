@@ -12,8 +12,22 @@ alibaba.alsc.crm.point.reversepoint
 */
 type AlibabaAlscCrmPointReversepointAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmPointReversepointResponse `json:"alibaba_alsc_crm_point_reversepoint_response,omitempty"`
+    // Response *AlibabaAlscCrmPointReversepointResponse `json:"alibaba_alsc_crm_point_reversepoint_response,omitempty"` 
+    AlibabaAlscCrmPointReversepointResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmPointReversepointResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmPointReversepointResponse struct {
 

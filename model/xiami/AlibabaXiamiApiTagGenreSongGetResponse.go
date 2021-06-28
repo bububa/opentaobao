@@ -12,8 +12,22 @@ alibaba.xiami.api.tag.genre.song.get
 */
 type AlibabaXiamiApiTagGenreSongGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaXiamiApiTagGenreSongGetResponse `json:"alibaba_xiami_api_tag_genre_song_get_response,omitempty"`
+    // Response *AlibabaXiamiApiTagGenreSongGetResponse `json:"alibaba_xiami_api_tag_genre_song_get_response,omitempty"` 
+    AlibabaXiamiApiTagGenreSongGetResponse
 }
+
+/* model for simplify = false
+type AlibabaXiamiApiTagGenreSongGetResponse struct {
+
+    // 风格歌曲
+    
+    Data  *struct {
+        TagGenreSongresult  *TagGenreSongresult `json:"tag_genre_songresult,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaXiamiApiTagGenreSongGetResponse struct {
 

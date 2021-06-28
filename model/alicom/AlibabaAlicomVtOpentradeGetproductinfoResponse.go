@@ -12,8 +12,22 @@ alibaba.alicom.vt.opentrade.getproductinfo
 */
 type AlibabaAlicomVtOpentradeGetproductinfoAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlicomVtOpentradeGetproductinfoResponse `json:"alibaba_alicom_vt_opentrade_getproductinfo_response,omitempty"`
+    // Response *AlibabaAlicomVtOpentradeGetproductinfoResponse `json:"alibaba_alicom_vt_opentrade_getproductinfo_response,omitempty"` 
+    AlibabaAlicomVtOpentradeGetproductinfoResponse
 }
+
+/* model for simplify = false
+type AlibabaAlicomVtOpentradeGetproductinfoResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TopResultDto  *TopResultDto `json:"top_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlicomVtOpentradeGetproductinfoResponse struct {
 

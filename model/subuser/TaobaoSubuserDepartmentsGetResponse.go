@@ -12,8 +12,22 @@ taobao.subuser.departments.get
 */
 type TaobaoSubuserDepartmentsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSubuserDepartmentsGetResponse `json:"taobao_subuser_departments_get_response,omitempty"`
+    // Response *TaobaoSubuserDepartmentsGetResponse `json:"subuser_departments_get_response,omitempty"` 
+    TaobaoSubuserDepartmentsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSubuserDepartmentsGetResponse struct {
+
+    // 部门信息
+    
+    Departments  struct {
+        Department  []Department `json:"department,omitempty"`
+    } `json:"departments,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSubuserDepartmentsGetResponse struct {
 

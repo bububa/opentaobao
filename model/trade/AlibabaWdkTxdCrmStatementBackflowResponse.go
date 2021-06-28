@@ -12,8 +12,22 @@ alibaba.wdk.txd.crm.statement.backflow
 */
 type AlibabaWdkTxdCrmStatementBackflowAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkTxdCrmStatementBackflowResponse `json:"alibaba_wdk_txd_crm_statement_backflow_response,omitempty"`
+    // Response *AlibabaWdkTxdCrmStatementBackflowResponse `json:"alibaba_wdk_txd_crm_statement_backflow_response,omitempty"` 
+    AlibabaWdkTxdCrmStatementBackflowResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkTxdCrmStatementBackflowResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        AlibabaWdkTxdCrmStatementBackflowApiResult  *AlibabaWdkTxdCrmStatementBackflowApiResult `json:"alibaba_wdk_txd_crm_statement_backflow_api_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkTxdCrmStatementBackflowResponse struct {
 

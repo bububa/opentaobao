@@ -11,11 +11,11 @@ taobao.marketing.promotion.kfc
 
 活动名称与描述违禁词检查
 */
-func TaobaoMarketingPromotionKfc(clt *core.SDKClient, req *promotion.TaobaoMarketingPromotionKfcRequest, session string) (*promotion.TaobaoMarketingPromotionKfcResponse, error) {
+func TaobaoMarketingPromotionKfc(clt *core.SDKClient, req *promotion.TaobaoMarketingPromotionKfcRequest, session string) (*promotion.TaobaoMarketingPromotionKfcAPIResponse, error) {
     var resp promotion.TaobaoMarketingPromotionKfcAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,15 @@ alibaba.mj.oc.bigpos.banksale.adjustment.apply
 */
 type AlibabaMjOcBigposBanksaleAdjustmentApplyAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjOcBigposBanksaleAdjustmentApplyResponse `json:"alibaba_mj_oc_bigpos_banksale_adjustment_apply_response,omitempty"`
+    // Response *AlibabaMjOcBigposBanksaleAdjustmentApplyResponse `json:"alibaba_mj_oc_bigpos_banksale_adjustment_apply_response,omitempty"` 
+    AlibabaMjOcBigposBanksaleAdjustmentApplyResponse
 }
+
+/* model for simplify = false
+type AlibabaMjOcBigposBanksaleAdjustmentApplyResponse struct {
+
+}
+*/
 
 type AlibabaMjOcBigposBanksaleAdjustmentApplyResponse struct {
 

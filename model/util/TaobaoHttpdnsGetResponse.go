@@ -12,8 +12,20 @@ taobao.httpdns.get
 */
 type TaobaoHttpdnsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoHttpdnsGetResponse `json:"taobao_httpdns_get_response,omitempty"`
+    // Response *TaobaoHttpdnsGetResponse `json:"httpdns_get_response,omitempty"` 
+    TaobaoHttpdnsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoHttpdnsGetResponse struct {
+
+    // HTTP DNS配置信息
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoHttpdnsGetResponse struct {
 

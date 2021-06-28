@@ -16,7 +16,7 @@ type TmallServicecenterWorkcardRepairprogressUpdateRequest struct {
     model.Params
 
     // 图片列表
-    picUrlList   []String 
+    picUrlList   []string 
 
     // 请求节点的动作描述，唯一标识一个节点
     action   string 
@@ -54,13 +54,13 @@ func (r TmallServicecenterWorkcardRepairprogressUpdateRequest) GetApiParams() ur
 }
 
 
-func (r *TmallServicecenterWorkcardRepairprogressUpdateRequest) SetPicUrlList(picUrlList []String) error {
+func (r *TmallServicecenterWorkcardRepairprogressUpdateRequest) SetPicUrlList(picUrlList []string) error {
     r.picUrlList = picUrlList
     r.Set("pic_url_list", picUrlList)
     return nil
 }
 
-func (r TmallServicecenterWorkcardRepairprogressUpdateRequest) GetPicUrlList() []String {
+func (r TmallServicecenterWorkcardRepairprogressUpdateRequest) GetPicUrlList() []string {
     return r.picUrlList
 }
 

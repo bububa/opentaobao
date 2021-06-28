@@ -12,8 +12,22 @@ alibaba.alsc.order.order.upload
 */
 type AlibabaAlscOrderOrderUploadAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscOrderOrderUploadResponse `json:"alibaba_alsc_order_order_upload_response,omitempty"`
+    // Response *AlibabaAlscOrderOrderUploadResponse `json:"alibaba_alsc_order_order_upload_response,omitempty"` 
+    AlibabaAlscOrderOrderUploadResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscOrderOrderUploadResponse struct {
+
+    // 返回包装类
+    
+    Result  *struct {
+        BaseResult  *BaseResult `json:"base_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscOrderOrderUploadResponse struct {
 

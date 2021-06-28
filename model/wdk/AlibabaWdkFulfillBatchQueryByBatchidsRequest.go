@@ -22,7 +22,7 @@ type AlibabaWdkFulfillBatchQueryByBatchidsRequest struct {
     nodeCode   string 
 
     // 批次号列表
-    batchIds   []String 
+    batchIds   []string 
 
 }
 
@@ -65,13 +65,13 @@ func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetNodeCode() string {
     return r.nodeCode
 }
 
-func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetBatchIds(batchIds []String) error {
+func (r *AlibabaWdkFulfillBatchQueryByBatchidsRequest) SetBatchIds(batchIds []string) error {
     r.batchIds = batchIds
     r.Set("batch_ids", batchIds)
     return nil
 }
 
-func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetBatchIds() []String {
+func (r AlibabaWdkFulfillBatchQueryByBatchidsRequest) GetBatchIds() []string {
     return r.batchIds
 }
 

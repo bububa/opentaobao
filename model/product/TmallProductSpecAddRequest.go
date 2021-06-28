@@ -40,7 +40,7 @@ type TmallProductSpecAddRequest struct {
     changeProp   string 
 
     // 产品图片
-    image   []byte 
+    image   []*model.File 
 
     // 产品二维码
     barcode   string 
@@ -152,13 +152,13 @@ func (r TmallProductSpecAddRequest) GetChangeProp() string {
     return r.changeProp
 }
 
-func (r *TmallProductSpecAddRequest) SetImage(image []byte) error {
+func (r *TmallProductSpecAddRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TmallProductSpecAddRequest) GetImage() []byte {
+func (r TmallProductSpecAddRequest) GetImage() []*model.File {
     return r.image
 }
 

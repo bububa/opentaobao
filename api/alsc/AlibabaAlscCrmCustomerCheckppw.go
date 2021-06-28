@@ -11,11 +11,11 @@ alibaba.alsc.crm.customer.checkppw
 
 校验支付密码
 */
-func AlibabaAlscCrmCustomerCheckppw(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerCheckppwRequest, session string) (*alsc.AlibabaAlscCrmCustomerCheckppwResponse, error) {
+func AlibabaAlscCrmCustomerCheckppw(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerCheckppwRequest, session string) (*alsc.AlibabaAlscCrmCustomerCheckppwAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmCustomerCheckppwAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

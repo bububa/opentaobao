@@ -16,7 +16,7 @@ type TaobaoPictureChangecategoryRequest struct {
     model.Params
 
     // 要移动的图片的id
-    pictureIds   []Number 
+    pictureIds   []int64 
 
     // 目标分类的id
     pictureCategoryId   int64 
@@ -42,13 +42,13 @@ func (r TaobaoPictureChangecategoryRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoPictureChangecategoryRequest) SetPictureIds(pictureIds []Number) error {
+func (r *TaobaoPictureChangecategoryRequest) SetPictureIds(pictureIds []int64) error {
     r.pictureIds = pictureIds
     r.Set("picture_ids", pictureIds)
     return nil
 }
 
-func (r TaobaoPictureChangecategoryRequest) GetPictureIds() []Number {
+func (r TaobaoPictureChangecategoryRequest) GetPictureIds() []int64 {
     return r.pictureIds
 }
 

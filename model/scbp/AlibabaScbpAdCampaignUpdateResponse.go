@@ -12,8 +12,20 @@ alibaba.scbp.ad.campaign.update
 */
 type AlibabaScbpAdCampaignUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdCampaignUpdateResponse `json:"alibaba_scbp_ad_campaign_update_response,omitempty"`
+    // Response *AlibabaScbpAdCampaignUpdateResponse `json:"alibaba_scbp_ad_campaign_update_response,omitempty"` 
+    AlibabaScbpAdCampaignUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdCampaignUpdateResponse struct {
+
+    // 修改成功数
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdCampaignUpdateResponse struct {
 

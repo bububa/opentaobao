@@ -13,8 +13,22 @@ tmall.servicecenter.servicestore.deleteservicestorecoverservice
 */
 type TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterServicestoreDeleteservicestorecoverserviceResponse `json:"tmall_servicecenter_servicestore_deleteservicestorecoverservice_response,omitempty"`
+    // Response *TmallServicecenterServicestoreDeleteservicestorecoverserviceResponse `json:"tmall_servicecenter_servicestore_deleteservicestorecoverservice_response,omitempty"` 
+    TmallServicecenterServicestoreDeleteservicestorecoverserviceResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterServicestoreDeleteservicestorecoverserviceResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterServicestoreDeleteservicestorecoverserviceResponse struct {
 

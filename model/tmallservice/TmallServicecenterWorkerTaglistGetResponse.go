@@ -12,8 +12,22 @@ tmall.servicecenter.worker.taglist.get
 */
 type TmallServicecenterWorkerTaglistGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkerTaglistGetResponse `json:"tmall_servicecenter_worker_taglist_get_response,omitempty"`
+    // Response *TmallServicecenterWorkerTaglistGetResponse `json:"tmall_servicecenter_worker_taglist_get_response,omitempty"` 
+    TmallServicecenterWorkerTaglistGetResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkerTaglistGetResponse struct {
+
+    // 工人的能力标签
+    
+    Result  *struct {
+        WorkerTag  *WorkerTag `json:"worker_tag,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkerTaglistGetResponse struct {
 

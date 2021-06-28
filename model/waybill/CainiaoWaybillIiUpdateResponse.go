@@ -12,8 +12,25 @@ cainiao.waybill.ii.update
 */
 type CainiaoWaybillIiUpdateAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoWaybillIiUpdateResponse `json:"cainiao_waybill_ii_update_response,omitempty"`
+    // Response *CainiaoWaybillIiUpdateResponse `json:"cainiao_waybill_ii_update_response,omitempty"` 
+    CainiaoWaybillIiUpdateResponse
 }
+
+/* model for simplify = false
+type CainiaoWaybillIiUpdateResponse struct {
+
+    // 面单号
+    
+    WaybillCode   string `json:"waybill_code,omitempty"`
+    
+
+    // 模板内容
+    
+    PrintData   string `json:"print_data,omitempty"`
+    
+
+}
+*/
 
 type CainiaoWaybillIiUpdateResponse struct {
 

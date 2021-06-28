@@ -12,8 +12,25 @@ taobao.wlb.order.jzwithins.consign
 */
 type TaobaoWlbOrderJzwithinsConsignAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbOrderJzwithinsConsignResponse `json:"taobao_wlb_order_jzwithins_consign_response,omitempty"`
+    // Response *TaobaoWlbOrderJzwithinsConsignResponse `json:"wlb_order_jzwithins_consign_response,omitempty"` 
+    TaobaoWlbOrderJzwithinsConsignResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbOrderJzwithinsConsignResponse struct {
+
+    // 发货成功或者失败
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 发货返回信息，如果发货错误则报出对应错误
+    
+    ResultInfo   string `json:"result_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbOrderJzwithinsConsignResponse struct {
 

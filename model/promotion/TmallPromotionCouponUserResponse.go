@@ -12,8 +12,22 @@ tmall.promotion.coupon.user
 */
 type TmallPromotionCouponUserAPIResponse struct {
     model.CommonResponse
-    Response *TmallPromotionCouponUserResponse `json:"tmall_promotion_coupon_user_response,omitempty"`
+    // Response *TmallPromotionCouponUserResponse `json:"tmall_promotion_coupon_user_response,omitempty"` 
+    TmallPromotionCouponUserResponse
 }
+
+/* model for simplify = false
+type TmallPromotionCouponUserResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TmallPromotionCouponUserResult  *TmallPromotionCouponUserResult `json:"tmall_promotion_coupon_user_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallPromotionCouponUserResponse struct {
 

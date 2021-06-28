@@ -22,7 +22,7 @@ type TmallServicecenterWorkcardEvaluateRequest struct {
     failCode   int64 
 
     // 鉴定结果图片列表
-    picUrlList   []String 
+    picUrlList   []string 
 
     // 工单id
     workcardId   int64 
@@ -68,13 +68,13 @@ func (r TmallServicecenterWorkcardEvaluateRequest) GetFailCode() int64 {
     return r.failCode
 }
 
-func (r *TmallServicecenterWorkcardEvaluateRequest) SetPicUrlList(picUrlList []String) error {
+func (r *TmallServicecenterWorkcardEvaluateRequest) SetPicUrlList(picUrlList []string) error {
     r.picUrlList = picUrlList
     r.Set("pic_url_list", picUrlList)
     return nil
 }
 
-func (r TmallServicecenterWorkcardEvaluateRequest) GetPicUrlList() []String {
+func (r TmallServicecenterWorkcardEvaluateRequest) GetPicUrlList() []string {
     return r.picUrlList
 }
 

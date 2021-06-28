@@ -22,7 +22,7 @@ type AlibabaLegalCaseStandpointQueryrefRequest struct {
     entrustId   int64 
 
     // 查询的口径id列表
-    standpointIds   []Number 
+    standpointIds   []int64 
 
 }
 
@@ -65,13 +65,13 @@ func (r AlibabaLegalCaseStandpointQueryrefRequest) GetEntrustId() int64 {
     return r.entrustId
 }
 
-func (r *AlibabaLegalCaseStandpointQueryrefRequest) SetStandpointIds(standpointIds []Number) error {
+func (r *AlibabaLegalCaseStandpointQueryrefRequest) SetStandpointIds(standpointIds []int64) error {
     r.standpointIds = standpointIds
     r.Set("standpoint_ids", standpointIds)
     return nil
 }
 
-func (r AlibabaLegalCaseStandpointQueryrefRequest) GetStandpointIds() []Number {
+func (r AlibabaLegalCaseStandpointQueryrefRequest) GetStandpointIds() []int64 {
     return r.standpointIds
 }
 

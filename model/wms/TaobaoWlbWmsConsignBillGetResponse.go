@@ -12,8 +12,22 @@ taobao.wlb.wms.consign.bill.get
 */
 type TaobaoWlbWmsConsignBillGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWmsConsignBillGetResponse `json:"taobao_wlb_wms_consign_bill_get_response,omitempty"`
+    // Response *TaobaoWlbWmsConsignBillGetResponse `json:"wlb_wms_consign_bill_get_response,omitempty"` 
+    TaobaoWlbWmsConsignBillGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWmsConsignBillGetResponse struct {
+
+    // 商品信息列表
+    
+    ConsignSendInfoList  struct {
+        Consignsendinfolist  []Consignsendinfolist `json:"consignsendinfolist,omitempty"`
+    } `json:"consign_send_info_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWmsConsignBillGetResponse struct {
 

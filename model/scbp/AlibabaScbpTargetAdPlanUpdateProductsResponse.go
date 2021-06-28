@@ -12,12 +12,26 @@ alibaba.scbp.target.ad.plan.update.products
 */
 type AlibabaScbpTargetAdPlanUpdateProductsAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpTargetAdPlanUpdateProductsResponse `json:"alibaba_scbp_target_ad_plan_update_products_response,omitempty"`
+    // Response *AlibabaScbpTargetAdPlanUpdateProductsResponse `json:"alibaba_scbp_target_ad_plan_update_products_response,omitempty"` 
+    AlibabaScbpTargetAdPlanUpdateProductsResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpTargetAdPlanUpdateProductsResponse struct {
+
+    // 操作成功的商品ID列表
+    
+    ProductIdList  struct {
+        Number  []int64 `json:"int64,omitempty"`
+    } `json:"product_id_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpTargetAdPlanUpdateProductsResponse struct {
 
     // 操作成功的商品ID列表
-    ProductIdList   []Number `json:"product_id_list,omitempty"`
+    ProductIdList   []int64 `json:"product_id_list,omitempty"`
 
 }

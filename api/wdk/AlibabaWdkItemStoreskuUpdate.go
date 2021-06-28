@@ -11,11 +11,11 @@ alibaba.wdk.item.storesku.update
 
 五道口商品中心门店商品修改
 */
-func AlibabaWdkItemStoreskuUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkItemStoreskuUpdateRequest, session string) (*wdk.AlibabaWdkItemStoreskuUpdateResponse, error) {
+func AlibabaWdkItemStoreskuUpdate(clt *core.SDKClient, req *wdk.AlibabaWdkItemStoreskuUpdateRequest, session string) (*wdk.AlibabaWdkItemStoreskuUpdateAPIResponse, error) {
     var resp wdk.AlibabaWdkItemStoreskuUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

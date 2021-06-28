@@ -12,8 +12,22 @@ taobao.skus.quantity.update
 */
 type TaobaoSkusQuantityUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSkusQuantityUpdateResponse `json:"taobao_skus_quantity_update_response,omitempty"`
+    // Response *TaobaoSkusQuantityUpdateResponse `json:"skus_quantity_update_response,omitempty"` 
+    TaobaoSkusQuantityUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoSkusQuantityUpdateResponse struct {
+
+    // iid、numIid、num和modified，skus中每个sku的skuId、quantity和modified
+    
+    Item  *struct {
+        Item  *Item `json:"item,omitempty"`
+    } `json:"item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSkusQuantityUpdateResponse struct {
 

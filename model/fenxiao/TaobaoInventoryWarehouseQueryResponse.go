@@ -12,8 +12,22 @@ taobao.inventory.warehouse.query
 */
 type TaobaoInventoryWarehouseQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoInventoryWarehouseQueryResponse `json:"taobao_inventory_warehouse_query_response,omitempty"`
+    // Response *TaobaoInventoryWarehouseQueryResponse `json:"inventory_warehouse_query_response,omitempty"` 
+    TaobaoInventoryWarehouseQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoInventoryWarehouseQueryResponse struct {
+
+    // result
+    
+    Result  *struct {
+        PaginationResult  *PaginationResult `json:"pagination_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoInventoryWarehouseQueryResponse struct {
 

@@ -12,8 +12,22 @@ tmall.servicecenter.task.feedbacknoneedservice
 */
 type TmallServicecenterTaskFeedbacknoneedserviceAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterTaskFeedbacknoneedserviceResponse `json:"tmall_servicecenter_task_feedbacknoneedservice_response,omitempty"`
+    // Response *TmallServicecenterTaskFeedbacknoneedserviceResponse `json:"tmall_servicecenter_task_feedbacknoneedservice_response,omitempty"` 
+    TmallServicecenterTaskFeedbacknoneedserviceResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterTaskFeedbacknoneedserviceResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultBase  *ResultBase `json:"result_base,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterTaskFeedbacknoneedserviceResponse struct {
 

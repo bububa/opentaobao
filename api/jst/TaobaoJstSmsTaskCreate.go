@@ -11,11 +11,11 @@ taobao.jst.sms.task.create
 
 聚石塔短信的任务创建接口，用于创建数字短信、公众号短信、权益短信的AB测试任务。
 */
-func TaobaoJstSmsTaskCreate(clt *core.SDKClient, req *jst.TaobaoJstSmsTaskCreateRequest, session string) (*jst.TaobaoJstSmsTaskCreateResponse, error) {
+func TaobaoJstSmsTaskCreate(clt *core.SDKClient, req *jst.TaobaoJstSmsTaskCreateRequest, session string) (*jst.TaobaoJstSmsTaskCreateAPIResponse, error) {
     var resp jst.TaobaoJstSmsTaskCreateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

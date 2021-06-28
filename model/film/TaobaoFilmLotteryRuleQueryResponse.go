@@ -12,8 +12,22 @@ taobao.film.lottery.rule.query
 */
 type TaobaoFilmLotteryRuleQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFilmLotteryRuleQueryResponse `json:"taobao_film_lottery_rule_query_response,omitempty"`
+    // Response *TaobaoFilmLotteryRuleQueryResponse `json:"film_lottery_rule_query_response,omitempty"` 
+    TaobaoFilmLotteryRuleQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoFilmLotteryRuleQueryResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultListModel  *ResultListModel `json:"result_list_model,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFilmLotteryRuleQueryResponse struct {
 

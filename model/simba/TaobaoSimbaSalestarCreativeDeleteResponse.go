@@ -12,8 +12,22 @@ taobao.simba.salestar.creative.delete
 */
 type TaobaoSimbaSalestarCreativeDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaSalestarCreativeDeleteResponse `json:"taobao_simba_salestar_creative_delete_response,omitempty"`
+    // Response *TaobaoSimbaSalestarCreativeDeleteResponse `json:"simba_salestar_creative_delete_response,omitempty"` 
+    TaobaoSimbaSalestarCreativeDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaSalestarCreativeDeleteResponse struct {
+
+    // 被删除的创意对象
+    
+    Creative  *struct {
+        Creative  *Creative `json:"creative,omitempty"`
+    } `json:"creative,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaSalestarCreativeDeleteResponse struct {
 

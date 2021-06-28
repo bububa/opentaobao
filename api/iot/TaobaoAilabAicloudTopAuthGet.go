@@ -11,11 +11,11 @@ taobao.ailab.aicloud.top.auth.get
 
 登陆
 */
-func TaobaoAilabAicloudTopAuthGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopAuthGetRequest, session string) (*iot.TaobaoAilabAicloudTopAuthGetResponse, error) {
+func TaobaoAilabAicloudTopAuthGet(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopAuthGetRequest, session string) (*iot.TaobaoAilabAicloudTopAuthGetAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopAuthGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

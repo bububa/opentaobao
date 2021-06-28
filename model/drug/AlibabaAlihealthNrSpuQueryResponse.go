@@ -12,8 +12,22 @@ alibaba.alihealth.nr.spu.query
 */
 type AlibabaAlihealthNrSpuQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlihealthNrSpuQueryResponse `json:"alibaba_alihealth_nr_spu_query_response,omitempty"`
+    // Response *AlibabaAlihealthNrSpuQueryResponse `json:"alibaba_alihealth_nr_spu_query_response,omitempty"` 
+    AlibabaAlihealthNrSpuQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaAlihealthNrSpuQueryResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        ResponseResult  *ResponseResult `json:"response_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlihealthNrSpuQueryResponse struct {
 

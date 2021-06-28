@@ -11,11 +11,11 @@ alibaba.alsc.crm.open.assert.refund
 
 回退已经核销的储值积分券资产
 */
-func AlibabaAlscCrmOpenAssertRefund(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenAssertRefundRequest, session string) (*alsc.AlibabaAlscCrmOpenAssertRefundResponse, error) {
+func AlibabaAlscCrmOpenAssertRefund(clt *core.SDKClient, req *alsc.AlibabaAlscCrmOpenAssertRefundRequest, session string) (*alsc.AlibabaAlscCrmOpenAssertRefundAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmOpenAssertRefundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,22 @@ alibaba.wdk.marketing.expire.promotion.query
 */
 type AlibabaWdkMarketingExpirePromotionQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingExpirePromotionQueryResponse `json:"alibaba_wdk_marketing_expire_promotion_query_response,omitempty"`
+    // Response *AlibabaWdkMarketingExpirePromotionQueryResponse `json:"alibaba_wdk_marketing_expire_promotion_query_response,omitempty"` 
+    AlibabaWdkMarketingExpirePromotionQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingExpirePromotionQueryResponse struct {
+
+    // result
+    
+    Result  *struct {
+        MarketResult  *MarketResult `json:"market_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingExpirePromotionQueryResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.wdk.reverse.creatrefund
 
 逆向申请提交
 */
-func AlibabaWdkReverseCreatrefund(clt *core.SDKClient, req *wdk.AlibabaWdkReverseCreatrefundRequest, session string) (*wdk.AlibabaWdkReverseCreatrefundResponse, error) {
+func AlibabaWdkReverseCreatrefund(clt *core.SDKClient, req *wdk.AlibabaWdkReverseCreatrefundRequest, session string) (*wdk.AlibabaWdkReverseCreatrefundAPIResponse, error) {
     var resp wdk.AlibabaWdkReverseCreatrefundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

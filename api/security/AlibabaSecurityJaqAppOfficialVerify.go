@@ -11,11 +11,11 @@ alibaba.security.jaq.app.official.verify
 
 接入用户来查询应用是否为官方应用
 */
-func AlibabaSecurityJaqAppOfficialVerify(clt *core.SDKClient, req *security.AlibabaSecurityJaqAppOfficialVerifyRequest, session string) (*security.AlibabaSecurityJaqAppOfficialVerifyResponse, error) {
+func AlibabaSecurityJaqAppOfficialVerify(clt *core.SDKClient, req *security.AlibabaSecurityJaqAppOfficialVerifyRequest, session string) (*security.AlibabaSecurityJaqAppOfficialVerifyAPIResponse, error) {
     var resp security.AlibabaSecurityJaqAppOfficialVerifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

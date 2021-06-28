@@ -12,8 +12,22 @@ alibaba.wdk.stock.cabinet.query
 */
 type AlibabaWdkStockCabinetQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkStockCabinetQueryResponse `json:"alibaba_wdk_stock_cabinet_query_response,omitempty"`
+    // Response *AlibabaWdkStockCabinetQueryResponse `json:"alibaba_wdk_stock_cabinet_query_response,omitempty"` 
+    AlibabaWdkStockCabinetQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkStockCabinetQueryResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaWdkStockCabinetQueryResultDo  *AlibabaWdkStockCabinetQueryResultDo `json:"alibaba_wdk_stock_cabinet_query_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkStockCabinetQueryResponse struct {
 

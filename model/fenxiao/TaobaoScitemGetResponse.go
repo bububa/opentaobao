@@ -12,8 +12,22 @@ taobao.scitem.get
 */
 type TaobaoScitemGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoScitemGetResponse `json:"taobao_scitem_get_response,omitempty"`
+    // Response *TaobaoScitemGetResponse `json:"scitem_get_response,omitempty"` 
+    TaobaoScitemGetResponse
 }
+
+/* model for simplify = false
+type TaobaoScitemGetResponse struct {
+
+    // 后端商品
+    
+    ScItem  *struct {
+        ScItem  *ScItem `json:"sc_item,omitempty"`
+    } `json:"sc_item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoScitemGetResponse struct {
 

@@ -11,11 +11,11 @@ alibaba.wdk.order.list
 
 五道口交易订单拉取接口
 */
-func AlibabaWdkOrderList(clt *core.SDKClient, req *wdk.AlibabaWdkOrderListRequest, session string) (*wdk.AlibabaWdkOrderListResponse, error) {
+func AlibabaWdkOrderList(clt *core.SDKClient, req *wdk.AlibabaWdkOrderListRequest, session string) (*wdk.AlibabaWdkOrderListAPIResponse, error) {
     var resp wdk.AlibabaWdkOrderListAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

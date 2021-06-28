@@ -12,8 +12,22 @@ alibaba.security.jaq.rp.cloud.start
 */
 type AlibabaSecurityJaqRpCloudStartAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqRpCloudStartResponse `json:"alibaba_security_jaq_rp_cloud_start_response,omitempty"`
+    // Response *AlibabaSecurityJaqRpCloudStartResponse `json:"alibaba_security_jaq_rp_cloud_start_response,omitempty"` 
+    AlibabaSecurityJaqRpCloudStartResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqRpCloudStartResponse struct {
+
+    // result
+    
+    Data  *struct {
+        RpStartResult  *RpStartResult `json:"rp_start_result,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqRpCloudStartResponse struct {
 

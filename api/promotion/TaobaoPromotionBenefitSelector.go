@@ -16,11 +16,11 @@ taobao.promotion.benefit.selector
 4、step=2用config_id查，即1，4，13，14  <br/>
 5、step=3权益id指具体采购的权益id，可以认为是采购的主键（权益id 可以通过step=2 获得 ）  <br/>
 */
-func TaobaoPromotionBenefitSelector(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitSelectorRequest, session string) (*promotion.TaobaoPromotionBenefitSelectorResponse, error) {
+func TaobaoPromotionBenefitSelector(clt *core.SDKClient, req *promotion.TaobaoPromotionBenefitSelectorRequest, session string) (*promotion.TaobaoPromotionBenefitSelectorAPIResponse, error) {
     var resp promotion.TaobaoPromotionBenefitSelectorAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

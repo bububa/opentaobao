@@ -12,8 +12,22 @@ taobao.simba.insight.relatedwords.get
 */
 type TaobaoSimbaInsightRelatedwordsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaInsightRelatedwordsGetResponse `json:"taobao_simba_insight_relatedwords_get_response,omitempty"`
+    // Response *TaobaoSimbaInsightRelatedwordsGetResponse `json:"simba_insight_relatedwords_get_response,omitempty"` 
+    TaobaoSimbaInsightRelatedwordsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaInsightRelatedwordsGetResponse struct {
+
+    // 相关词列表，最多可传100个。
+    
+    RelatedWordsResultList  struct {
+        InsightRelatedWords  []InsightRelatedWords `json:"insight_related_words,omitempty"`
+    } `json:"related_words_result_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaInsightRelatedwordsGetResponse struct {
 

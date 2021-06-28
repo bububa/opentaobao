@@ -12,8 +12,20 @@ alibaba.scbp.target.ad.plan.update
 */
 type AlibabaScbpTargetAdPlanUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpTargetAdPlanUpdateResponse `json:"alibaba_scbp_target_ad_plan_update_response,omitempty"`
+    // Response *AlibabaScbpTargetAdPlanUpdateResponse `json:"alibaba_scbp_target_ad_plan_update_response,omitempty"` 
+    AlibabaScbpTargetAdPlanUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpTargetAdPlanUpdateResponse struct {
+
+    // true修改成功，false修改失败
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpTargetAdPlanUpdateResponse struct {
 

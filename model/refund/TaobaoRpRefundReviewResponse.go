@@ -12,8 +12,20 @@ taobao.rp.refund.review
 */
 type TaobaoRpRefundReviewAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRpRefundReviewResponse `json:"taobao_rp_refund_review_response,omitempty"`
+    // Response *TaobaoRpRefundReviewResponse `json:"rp_refund_review_response,omitempty"` 
+    TaobaoRpRefundReviewResponse
 }
+
+/* model for simplify = false
+type TaobaoRpRefundReviewResponse struct {
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRpRefundReviewResponse struct {
 

@@ -12,8 +12,22 @@ taobao.user.buyer.get
 */
 type TaobaoUserBuyerGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUserBuyerGetResponse `json:"taobao_user_buyer_get_response,omitempty"`
+    // Response *TaobaoUserBuyerGetResponse `json:"user_buyer_get_response,omitempty"` 
+    TaobaoUserBuyerGetResponse
 }
+
+/* model for simplify = false
+type TaobaoUserBuyerGetResponse struct {
+
+    // 只返回nick,avatar参数
+    
+    User  *struct {
+        User  *User `json:"user,omitempty"`
+    } `json:"user,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUserBuyerGetResponse struct {
 

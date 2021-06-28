@@ -12,8 +12,20 @@ alibaba.interact.sensor.authorize
 */
 type AlibabaInteractSensorAuthorizeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorAuthorizeResponse `json:"alibaba_interact_sensor_authorize_response,omitempty"`
+    // Response *AlibabaInteractSensorAuthorizeResponse `json:"alibaba_interact_sensor_authorize_response,omitempty"` 
+    AlibabaInteractSensorAuthorizeResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorAuthorizeResponse struct {
+
+    // return=0 表示成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorAuthorizeResponse struct {
 

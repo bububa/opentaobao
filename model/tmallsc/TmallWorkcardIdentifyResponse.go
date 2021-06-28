@@ -14,8 +14,22 @@ tmall.workcard.identify
 */
 type TmallWorkcardIdentifyAPIResponse struct {
     model.CommonResponse
-    Response *TmallWorkcardIdentifyResponse `json:"tmall_workcard_identify_response,omitempty"`
+    // Response *TmallWorkcardIdentifyResponse `json:"tmall_workcard_identify_response,omitempty"` 
+    TmallWorkcardIdentifyResponse
 }
+
+/* model for simplify = false
+type TmallWorkcardIdentifyResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TmallWorkcardIdentifyResult  *TmallWorkcardIdentifyResult `json:"tmall_workcard_identify_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallWorkcardIdentifyResponse struct {
 

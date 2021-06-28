@@ -12,8 +12,20 @@ alibaba.interact.wireless.draw
 */
 type AlibabaInteractWirelessDrawAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractWirelessDrawResponse `json:"alibaba_interact_wireless_draw_response,omitempty"`
+    // Response *AlibabaInteractWirelessDrawResponse `json:"alibaba_interact_wireless_draw_response,omitempty"` 
+    AlibabaInteractWirelessDrawResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractWirelessDrawResponse struct {
+
+    // result
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractWirelessDrawResponse struct {
 

@@ -12,8 +12,22 @@ taobao.mixnick.wetoplay
 */
 type TaobaoMixnickWetoplayAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMixnickWetoplayResponse `json:"taobao_mixnick_wetoplay_response,omitempty"`
+    // Response *TaobaoMixnickWetoplayResponse `json:"mixnick_wetoplay_response,omitempty"` 
+    TaobaoMixnickWetoplayResponse
 }
+
+/* model for simplify = false
+type TaobaoMixnickWetoplayResponse struct {
+
+    // 微淘转互动混淆nick
+    
+    PlayMixnickData  *struct {
+        MixNickResult  *MixNickResult `json:"mix_nick_result,omitempty"`
+    } `json:"play_mixnick_data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMixnickWetoplayResponse struct {
 

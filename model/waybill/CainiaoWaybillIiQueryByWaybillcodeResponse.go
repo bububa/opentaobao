@@ -12,8 +12,22 @@ cainiao.waybill.ii.query.by.waybillcode
 */
 type CainiaoWaybillIiQueryByWaybillcodeAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoWaybillIiQueryByWaybillcodeResponse `json:"cainiao_waybill_ii_query_by_waybillcode_response,omitempty"`
+    // Response *CainiaoWaybillIiQueryByWaybillcodeResponse `json:"cainiao_waybill_ii_query_by_waybillcode_response,omitempty"` 
+    CainiaoWaybillIiQueryByWaybillcodeResponse
 }
+
+/* model for simplify = false
+type CainiaoWaybillIiQueryByWaybillcodeResponse struct {
+
+    // 查询返回值
+    
+    Modules  struct {
+        WaybillCloudPrintWithResultDescResponse  []WaybillCloudPrintWithResultDescResponse `json:"waybill_cloud_print_with_result_desc_response,omitempty"`
+    } `json:"modules,omitempty"`
+    
+
+}
+*/
 
 type CainiaoWaybillIiQueryByWaybillcodeResponse struct {
 

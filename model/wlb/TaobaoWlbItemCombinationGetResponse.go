@@ -12,12 +12,26 @@ taobao.wlb.item.combination.get
 */
 type TaobaoWlbItemCombinationGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbItemCombinationGetResponse `json:"taobao_wlb_item_combination_get_response,omitempty"`
+    // Response *TaobaoWlbItemCombinationGetResponse `json:"wlb_item_combination_get_response,omitempty"` 
+    TaobaoWlbItemCombinationGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbItemCombinationGetResponse struct {
+
+    // 组合子商品id列表
+    
+    ItemIdList  struct {
+        Number  []int64 `json:"int64,omitempty"`
+    } `json:"item_id_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbItemCombinationGetResponse struct {
 
     // 组合子商品id列表
-    ItemIdList   []Number `json:"item_id_list,omitempty"`
+    ItemIdList   []int64 `json:"item_id_list,omitempty"`
 
 }

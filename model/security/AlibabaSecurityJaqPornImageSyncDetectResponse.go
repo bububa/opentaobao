@@ -12,8 +12,22 @@ alibaba.security.jaq.porn.image.sync.detect
 */
 type AlibabaSecurityJaqPornImageSyncDetectAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqPornImageSyncDetectResponse `json:"alibaba_security_jaq_porn_image_sync_detect_response,omitempty"`
+    // Response *AlibabaSecurityJaqPornImageSyncDetectResponse `json:"alibaba_security_jaq_porn_image_sync_detect_response,omitempty"` 
+    AlibabaSecurityJaqPornImageSyncDetectResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqPornImageSyncDetectResponse struct {
+
+    // 出参结构体
+    
+    Data  *struct {
+        JaqPornImageDetectResult  *JaqPornImageDetectResult `json:"jaq_porn_image_detect_result,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqPornImageSyncDetectResponse struct {
 

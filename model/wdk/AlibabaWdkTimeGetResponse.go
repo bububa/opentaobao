@@ -12,8 +12,25 @@ alibaba.wdk.time.get
 */
 type AlibabaWdkTimeGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkTimeGetResponse `json:"alibaba_wdk_time_get_response,omitempty"`
+    // Response *AlibabaWdkTimeGetResponse `json:"alibaba_wdk_time_get_response,omitempty"` 
+    AlibabaWdkTimeGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkTimeGetResponse struct {
+
+    // dateTime
+    
+    DateTime   int64 `json:"date_time,omitempty"`
+    
+
+    // date
+    
+    Date   string `json:"date,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkTimeGetResponse struct {
 

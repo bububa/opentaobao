@@ -11,11 +11,11 @@ taobao.baodian.server.date.get
 
 获取服务器时间
 */
-func TaobaoBaodianServerDateGet(clt *core.SDKClient, req *baodian.TaobaoBaodianServerDateGetRequest, session string) (*baodian.TaobaoBaodianServerDateGetResponse, error) {
+func TaobaoBaodianServerDateGet(clt *core.SDKClient, req *baodian.TaobaoBaodianServerDateGetRequest, session string) (*baodian.TaobaoBaodianServerDateGetAPIResponse, error) {
     var resp baodian.TaobaoBaodianServerDateGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

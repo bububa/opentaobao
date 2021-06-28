@@ -12,8 +12,22 @@ taobao.picture.userinfo.get
 */
 type TaobaoPictureUserinfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPictureUserinfoGetResponse `json:"taobao_picture_userinfo_get_response,omitempty"`
+    // Response *TaobaoPictureUserinfoGetResponse `json:"picture_userinfo_get_response,omitempty"` 
+    TaobaoPictureUserinfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoPictureUserinfoGetResponse struct {
+
+    // 用户使用图片空间的信息
+    
+    UserInfo  *struct {
+        UserInfo  *UserInfo `json:"user_info,omitempty"`
+    } `json:"user_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPictureUserinfoGetResponse struct {
 

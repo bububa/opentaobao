@@ -11,11 +11,11 @@ alibaba.wdk.reverse.refund
 
 五道口退款打款开放能力接口
 */
-func AlibabaWdkReverseRefund(clt *core.SDKClient, req *wdk.AlibabaWdkReverseRefundRequest, session string) (*wdk.AlibabaWdkReverseRefundResponse, error) {
+func AlibabaWdkReverseRefund(clt *core.SDKClient, req *wdk.AlibabaWdkReverseRefundRequest, session string) (*wdk.AlibabaWdkReverseRefundAPIResponse, error) {
     var resp wdk.AlibabaWdkReverseRefundAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

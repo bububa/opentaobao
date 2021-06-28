@@ -12,8 +12,22 @@ alibaba.alsc.crm.customer.resetppw
 */
 type AlibabaAlscCrmCustomerResetppwAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmCustomerResetppwResponse `json:"alibaba_alsc_crm_customer_resetppw_response,omitempty"`
+    // Response *AlibabaAlscCrmCustomerResetppwResponse `json:"alibaba_alsc_crm_customer_resetppw_response,omitempty"` 
+    AlibabaAlscCrmCustomerResetppwResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmCustomerResetppwResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmCustomerResetppwResponse struct {
 

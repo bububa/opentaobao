@@ -11,11 +11,11 @@ taobao.delivery.templates.get
 
 根据用户ID获取用户下所有模板
 */
-func TaobaoDeliveryTemplatesGet(clt *core.SDKClient, req *logistic.TaobaoDeliveryTemplatesGetRequest, session string) (*logistic.TaobaoDeliveryTemplatesGetResponse, error) {
+func TaobaoDeliveryTemplatesGet(clt *core.SDKClient, req *logistic.TaobaoDeliveryTemplatesGetRequest, session string) (*logistic.TaobaoDeliveryTemplatesGetAPIResponse, error) {
     var resp logistic.TaobaoDeliveryTemplatesGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

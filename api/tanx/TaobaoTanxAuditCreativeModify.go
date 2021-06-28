@@ -11,11 +11,11 @@ taobao.tanx.audit.creative.modify
 
 创意修改接口
 */
-func TaobaoTanxAuditCreativeModify(clt *core.SDKClient, req *tanx.TaobaoTanxAuditCreativeModifyRequest, session string) (*tanx.TaobaoTanxAuditCreativeModifyResponse, error) {
+func TaobaoTanxAuditCreativeModify(clt *core.SDKClient, req *tanx.TaobaoTanxAuditCreativeModifyRequest, session string) (*tanx.TaobaoTanxAuditCreativeModifyAPIResponse, error) {
     var resp tanx.TaobaoTanxAuditCreativeModifyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,20 @@ alibaba.mj.mos.fund.cancelbill
 */
 type AlibabaMjMosFundCancelbillAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjMosFundCancelbillResponse `json:"alibaba_mj_mos_fund_cancelbill_response,omitempty"`
+    // Response *AlibabaMjMosFundCancelbillResponse `json:"alibaba_mj_mos_fund_cancelbill_response,omitempty"` 
+    AlibabaMjMosFundCancelbillResponse
 }
+
+/* model for simplify = false
+type AlibabaMjMosFundCancelbillResponse struct {
+
+    // data
+    
+    Data   bool `json:"data,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjMosFundCancelbillResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.interact.aopdata.register
 */
 type AlibabaInteractAopdataRegisterAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractAopdataRegisterResponse `json:"alibaba_interact_aopdata_register_response,omitempty"`
+    // Response *AlibabaInteractAopdataRegisterResponse `json:"alibaba_interact_aopdata_register_response,omitempty"` 
+    AlibabaInteractAopdataRegisterResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractAopdataRegisterResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaInteractAopdataRegisterResult  *AlibabaInteractAopdataRegisterResult `json:"alibaba_interact_aopdata_register_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractAopdataRegisterResponse struct {
 

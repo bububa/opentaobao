@@ -12,8 +12,20 @@ alibaba.scbp.ad.keyword.status.update
 */
 type AlibabaScbpAdKeywordStatusUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdKeywordStatusUpdateResponse `json:"alibaba_scbp_ad_keyword_status_update_response,omitempty"`
+    // Response *AlibabaScbpAdKeywordStatusUpdateResponse `json:"alibaba_scbp_ad_keyword_status_update_response,omitempty"` 
+    AlibabaScbpAdKeywordStatusUpdateResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdKeywordStatusUpdateResponse struct {
+
+    // 更新关键词推广状态是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdKeywordStatusUpdateResponse struct {
 

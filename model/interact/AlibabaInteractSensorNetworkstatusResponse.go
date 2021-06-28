@@ -12,8 +12,20 @@ alibaba.interact.sensor.networkstatus
 */
 type AlibabaInteractSensorNetworkstatusAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorNetworkstatusResponse `json:"alibaba_interact_sensor_networkstatus_response,omitempty"`
+    // Response *AlibabaInteractSensorNetworkstatusResponse `json:"alibaba_interact_sensor_networkstatus_response,omitempty"` 
+    AlibabaInteractSensorNetworkstatusResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorNetworkstatusResponse struct {
+
+    // return=0表示成功
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorNetworkstatusResponse struct {
 

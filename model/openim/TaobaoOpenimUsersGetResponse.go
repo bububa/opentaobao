@@ -12,8 +12,22 @@ taobao.openim.users.get
 */
 type TaobaoOpenimUsersGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimUsersGetResponse `json:"taobao_openim_users_get_response,omitempty"`
+    // Response *TaobaoOpenimUsersGetResponse `json:"openim_users_get_response,omitempty"` 
+    TaobaoOpenimUsersGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimUsersGetResponse struct {
+
+    // 获取的用户信息列表
+    
+    Userinfos  struct {
+        Userinfos  []Userinfos `json:"userinfos,omitempty"`
+    } `json:"userinfos,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimUsersGetResponse struct {
 

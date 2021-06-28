@@ -12,8 +12,22 @@ alibaba.wdk.reverse.refund
 */
 type AlibabaWdkReverseRefundAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkReverseRefundResponse `json:"alibaba_wdk_reverse_refund_response,omitempty"`
+    // Response *AlibabaWdkReverseRefundResponse `json:"alibaba_wdk_reverse_refund_response,omitempty"` 
+    AlibabaWdkReverseRefundResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkReverseRefundResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaWdkReverseRefundResult  *AlibabaWdkReverseRefundResult `json:"alibaba_wdk_reverse_refund_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkReverseRefundResponse struct {
 

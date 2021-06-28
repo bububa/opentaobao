@@ -11,11 +11,11 @@ alibaba.aliqin.flow.alipay.isbindingtbaccount
 
 判断支付宝用户是否绑定淘宝账号
 */
-func AlibabaAliqinFlowAlipayIsbindingtbaccount(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowAlipayIsbindingtbaccountRequest, session string) (*alicom.AlibabaAliqinFlowAlipayIsbindingtbaccountResponse, error) {
+func AlibabaAliqinFlowAlipayIsbindingtbaccount(clt *core.SDKClient, req *alicom.AlibabaAliqinFlowAlipayIsbindingtbaccountRequest, session string) (*alicom.AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse, error) {
     var resp alicom.AlibabaAliqinFlowAlipayIsbindingtbaccountAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

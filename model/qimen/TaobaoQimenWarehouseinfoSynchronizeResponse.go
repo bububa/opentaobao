@@ -12,8 +12,22 @@ taobao.qimen.warehouseinfo.synchronize
 */
 type TaobaoQimenWarehouseinfoSynchronizeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenWarehouseinfoSynchronizeResponse `json:"taobao_qimen_warehouseinfo_synchronize_response,omitempty"`
+    // Response *TaobaoQimenWarehouseinfoSynchronizeResponse `json:"qimen_warehouseinfo_synchronize_response,omitempty"` 
+    TaobaoQimenWarehouseinfoSynchronizeResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenWarehouseinfoSynchronizeResponse struct {
+
+    // 响应报文
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenWarehouseinfoSynchronizeResponse struct {
 

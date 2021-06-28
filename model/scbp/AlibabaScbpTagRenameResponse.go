@@ -12,8 +12,20 @@ alibaba.scbp.tag.rename
 */
 type AlibabaScbpTagRenameAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpTagRenameResponse `json:"alibaba_scbp_tag_rename_response,omitempty"`
+    // Response *AlibabaScbpTagRenameResponse `json:"alibaba_scbp_tag_rename_response,omitempty"` 
+    AlibabaScbpTagRenameResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpTagRenameResponse struct {
+
+    // 重命名分组成功或者失败
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpTagRenameResponse struct {
 

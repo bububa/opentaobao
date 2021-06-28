@@ -12,8 +12,22 @@ taobao.simba.creative.update
 */
 type TaobaoSimbaCreativeUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCreativeUpdateResponse `json:"taobao_simba_creative_update_response,omitempty"`
+    // Response *TaobaoSimbaCreativeUpdateResponse `json:"simba_creative_update_response,omitempty"` 
+    TaobaoSimbaCreativeUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCreativeUpdateResponse struct {
+
+    // 创意修改记录对象
+    
+    Creativerecord  *struct {
+        CreativeRecord  *CreativeRecord `json:"creative_record,omitempty"`
+    } `json:"creativerecord,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCreativeUpdateResponse struct {
 

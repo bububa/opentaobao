@@ -12,8 +12,22 @@ taobao.baichuan.item.unsubscribe
 */
 type TaobaoBaichuanItemUnsubscribeAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaichuanItemUnsubscribeResponse `json:"taobao_baichuan_item_unsubscribe_response,omitempty"`
+    // Response *TaobaoBaichuanItemUnsubscribeResponse `json:"baichuan_item_unsubscribe_response,omitempty"` 
+    TaobaoBaichuanItemUnsubscribeResponse
 }
+
+/* model for simplify = false
+type TaobaoBaichuanItemUnsubscribeResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoBaichuanItemUnsubscribeResult  *TaobaoBaichuanItemUnsubscribeResult `json:"taobao_baichuan_item_unsubscribe_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaichuanItemUnsubscribeResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.nazca.token.changeauthapply.get
 */
 type AlibabaNazcaTokenChangeauthapplyGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaNazcaTokenChangeauthapplyGetResponse `json:"alibaba_nazca_token_changeauthapply_get_response,omitempty"`
+    // Response *AlibabaNazcaTokenChangeauthapplyGetResponse `json:"alibaba_nazca_token_changeauthapply_get_response,omitempty"` 
+    AlibabaNazcaTokenChangeauthapplyGetResponse
 }
+
+/* model for simplify = false
+type AlibabaNazcaTokenChangeauthapplyGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ActionResult  *ActionResult `json:"action_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaNazcaTokenChangeauthapplyGetResponse struct {
 

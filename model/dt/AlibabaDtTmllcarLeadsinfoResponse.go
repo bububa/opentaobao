@@ -12,12 +12,26 @@ alibaba.dt.tmllcar.leadsinfo
 */
 type AlibabaDtTmllcarLeadsinfoAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaDtTmllcarLeadsinfoResponse `json:"alibaba_dt_tmllcar_leadsinfo_response,omitempty"`
+    // Response *AlibabaDtTmllcarLeadsinfoResponse `json:"alibaba_dt_tmllcar_leadsinfo_response,omitempty"` 
+    AlibabaDtTmllcarLeadsinfoResponse
 }
+
+/* model for simplify = false
+type AlibabaDtTmllcarLeadsinfoResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaDtTmllcarLeadsinfoResults  *AlibabaDtTmllcarLeadsinfoResults `json:"alibaba_dt_tmllcar_leadsinfo_results,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaDtTmllcarLeadsinfoResponse struct {
 
     // result
-    Result   *Results `json:"result,omitempty"`
+    Result   *AlibabaDtTmllcarLeadsinfoResults `json:"result,omitempty"`
 
 }

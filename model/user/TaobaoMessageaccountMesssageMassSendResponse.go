@@ -12,8 +12,22 @@ taobao.messageaccount.messsage.mass.send
 */
 type TaobaoMessageaccountMesssageMassSendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoMessageaccountMesssageMassSendResponse `json:"taobao_messageaccount_messsage_mass_send_response,omitempty"`
+    // Response *TaobaoMessageaccountMesssageMassSendResponse `json:"messageaccount_messsage_mass_send_response,omitempty"` 
+    TaobaoMessageaccountMesssageMassSendResponse
 }
+
+/* model for simplify = false
+type TaobaoMessageaccountMesssageMassSendResponse struct {
+
+    // result
+    
+    Result  *struct {
+        TaobaoMessageaccountMesssageMassSendResult  *TaobaoMessageaccountMesssageMassSendResult `json:"taobao_messageaccount_messsage_mass_send_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoMessageaccountMesssageMassSendResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.wdk.marketing.open.darunfa.activity.sku.sync
 */
 type AlibabaWdkMarketingOpenDarunfaActivitySkuSyncAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncResponse `json:"alibaba_wdk_marketing_open_darunfa_activity_sku_sync_response,omitempty"`
+    // Response *AlibabaWdkMarketingOpenDarunfaActivitySkuSyncResponse `json:"alibaba_wdk_marketing_open_darunfa_activity_sku_sync_response,omitempty"` 
+    AlibabaWdkMarketingOpenDarunfaActivitySkuSyncResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkMarketingOpenDarunfaActivitySkuSyncResponse struct {
+
+    // 返回结果信息
+    
+    Result  *struct {
+        WdkMarketOpenResult  *WdkMarketOpenResult `json:"wdk_market_open_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkMarketingOpenDarunfaActivitySkuSyncResponse struct {
 

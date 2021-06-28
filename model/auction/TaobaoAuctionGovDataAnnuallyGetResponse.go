@@ -17,8 +17,22 @@ taobao.auction.gov.data.annually.get
 */
 type TaobaoAuctionGovDataAnnuallyGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAuctionGovDataAnnuallyGetResponse `json:"taobao_auction_gov_data_annually_get_response,omitempty"`
+    // Response *TaobaoAuctionGovDataAnnuallyGetResponse `json:"auction_gov_data_annually_get_response,omitempty"` 
+    TaobaoAuctionGovDataAnnuallyGetResponse
 }
+
+/* model for simplify = false
+type TaobaoAuctionGovDataAnnuallyGetResponse struct {
+
+    // 按年统计结果列表
+    
+    Results  struct {
+        CourtsBidStatAnnuallyList  []CourtsBidStatAnnuallyList `json:"courts_bid_stat_annually_list,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAuctionGovDataAnnuallyGetResponse struct {
 

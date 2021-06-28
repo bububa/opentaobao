@@ -12,8 +12,22 @@ taobao.life.reservation.item.order.confirm
 */
 type TaobaoLifeReservationItemOrderConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLifeReservationItemOrderConfirmResponse `json:"taobao_life_reservation_item_order_confirm_response,omitempty"`
+    // Response *TaobaoLifeReservationItemOrderConfirmResponse `json:"life_reservation_item_order_confirm_response,omitempty"` 
+    TaobaoLifeReservationItemOrderConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoLifeReservationItemOrderConfirmResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        TaobaoLifeReservationItemOrderConfirmResult  *TaobaoLifeReservationItemOrderConfirmResult `json:"taobao_life_reservation_item_order_confirm_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLifeReservationItemOrderConfirmResponse struct {
 

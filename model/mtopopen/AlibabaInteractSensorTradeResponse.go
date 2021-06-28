@@ -12,8 +12,20 @@ alibaba.interact.sensor.trade
 */
 type AlibabaInteractSensorTradeAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaInteractSensorTradeResponse `json:"alibaba_interact_sensor_trade_response,omitempty"`
+    // Response *AlibabaInteractSensorTradeResponse `json:"alibaba_interact_sensor_trade_response,omitempty"` 
+    AlibabaInteractSensorTradeResponse
 }
+
+/* model for simplify = false
+type AlibabaInteractSensorTradeResponse struct {
+
+    // result=1
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaInteractSensorTradeResponse struct {
 

@@ -11,11 +11,11 @@ taobao.simba.rpt.adgroupeffect.get
 
 推广组效果报表数据对象
 */
-func TaobaoSimbaRptAdgroupeffectGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptAdgroupeffectGetRequest, session string) (*simba.TaobaoSimbaRptAdgroupeffectGetResponse, error) {
+func TaobaoSimbaRptAdgroupeffectGet(clt *core.SDKClient, req *simba.TaobaoSimbaRptAdgroupeffectGetRequest, session string) (*simba.TaobaoSimbaRptAdgroupeffectGetAPIResponse, error) {
     var resp simba.TaobaoSimbaRptAdgroupeffectGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

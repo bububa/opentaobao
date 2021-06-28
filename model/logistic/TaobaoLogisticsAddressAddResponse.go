@@ -12,8 +12,22 @@ taobao.logistics.address.add
 */
 type TaobaoLogisticsAddressAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsAddressAddResponse `json:"taobao_logistics_address_add_response,omitempty"`
+    // Response *TaobaoLogisticsAddressAddResponse `json:"logistics_address_add_response,omitempty"` 
+    TaobaoLogisticsAddressAddResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsAddressAddResponse struct {
+
+    // 只返回修改日期modify_date
+    
+    AddressResult  *struct {
+        AddressResult  *AddressResult `json:"address_result,omitempty"`
+    } `json:"address_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsAddressAddResponse struct {
 

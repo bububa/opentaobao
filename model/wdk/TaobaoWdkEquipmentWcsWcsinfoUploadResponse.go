@@ -12,8 +12,35 @@ taobao.wdk.equipment.wcs.wcsinfo.upload
 */
 type TaobaoWdkEquipmentWcsWcsinfoUploadAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWdkEquipmentWcsWcsinfoUploadResponse `json:"taobao_wdk_equipment_wcs_wcsinfo_upload_response,omitempty"`
+    // Response *TaobaoWdkEquipmentWcsWcsinfoUploadResponse `json:"wdk_equipment_wcs_wcsinfo_upload_response,omitempty"` 
+    TaobaoWdkEquipmentWcsWcsinfoUploadResponse
 }
+
+/* model for simplify = false
+type TaobaoWdkEquipmentWcsWcsinfoUploadResponse struct {
+
+    // model
+    
+    Model   string `json:"model,omitempty"`
+    
+
+    // errorCode
+    
+    ServiceErrorCode   string `json:"service_error_code,omitempty"`
+    
+
+    // errorMsg
+    
+    ServiceErrorMsg   string `json:"service_error_msg,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWdkEquipmentWcsWcsinfoUploadResponse struct {
 

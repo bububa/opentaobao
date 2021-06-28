@@ -12,8 +12,22 @@ taobao.baodian.deposit.get
 */
 type TaobaoBaodianDepositGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBaodianDepositGetResponse `json:"taobao_baodian_deposit_get_response,omitempty"`
+    // Response *TaobaoBaodianDepositGetResponse `json:"baodian_deposit_get_response,omitempty"` 
+    TaobaoBaodianDepositGetResponse
 }
+
+/* model for simplify = false
+type TaobaoBaodianDepositGetResponse struct {
+
+    // 用户宝点帐户信息
+    
+    UserCoinDeposit  *struct {
+        UserCoinDeposit  *UserCoinDeposit `json:"user_coin_deposit,omitempty"`
+    } `json:"user_coin_deposit,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBaodianDepositGetResponse struct {
 

@@ -12,8 +12,20 @@ alibaba.scbp.ad.group.delete.ad.group.batch
 */
 type AlibabaScbpAdGroupDeleteAdGroupBatchAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdGroupDeleteAdGroupBatchResponse `json:"alibaba_scbp_ad_group_delete_ad_group_batch_response,omitempty"`
+    // Response *AlibabaScbpAdGroupDeleteAdGroupBatchResponse `json:"alibaba_scbp_ad_group_delete_ad_group_batch_response,omitempty"` 
+    AlibabaScbpAdGroupDeleteAdGroupBatchResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdGroupDeleteAdGroupBatchResponse struct {
+
+    // 返回结果
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdGroupDeleteAdGroupBatchResponse struct {
 

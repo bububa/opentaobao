@@ -11,11 +11,11 @@ taobao.train.agent.change.refuse.vtwo
 
 代理商拒绝火车票改签服务
 */
-func TaobaoTrainAgentChangeRefuseVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentChangeRefuseVtwoRequest, session string) (*train.TaobaoTrainAgentChangeRefuseVtwoResponse, error) {
+func TaobaoTrainAgentChangeRefuseVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentChangeRefuseVtwoRequest, session string) (*train.TaobaoTrainAgentChangeRefuseVtwoAPIResponse, error) {
     var resp train.TaobaoTrainAgentChangeRefuseVtwoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

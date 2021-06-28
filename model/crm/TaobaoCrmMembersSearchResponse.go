@@ -12,8 +12,27 @@ taobao.crm.members.search
 */
 type TaobaoCrmMembersSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmMembersSearchResponse `json:"taobao_crm_members_search_response,omitempty"`
+    // Response *TaobaoCrmMembersSearchResponse `json:"crm_members_search_response,omitempty"` 
+    TaobaoCrmMembersSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmMembersSearchResponse struct {
+
+    // 根据一定条件查询的卖家会员
+    
+    Members  struct {
+        CrmMember  []CrmMember `json:"crm_member,omitempty"`
+    } `json:"members,omitempty"`
+    
+
+    // 记录的总条数
+    
+    TotalResult   int64 `json:"total_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmMembersSearchResponse struct {
 

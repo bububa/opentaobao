@@ -12,8 +12,22 @@ alibaba.retail.device.trade.ship
 */
 type AlibabaRetailDeviceTradeShipAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaRetailDeviceTradeShipResponse `json:"alibaba_retail_device_trade_ship_response,omitempty"`
+    // Response *AlibabaRetailDeviceTradeShipResponse `json:"alibaba_retail_device_trade_ship_response,omitempty"` 
+    AlibabaRetailDeviceTradeShipResponse
 }
+
+/* model for simplify = false
+type AlibabaRetailDeviceTradeShipResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlibabaRetailDeviceTradeShipResult  *AlibabaRetailDeviceTradeShipResult `json:"alibaba_retail_device_trade_ship_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaRetailDeviceTradeShipResponse struct {
 

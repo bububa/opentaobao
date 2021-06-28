@@ -11,11 +11,11 @@ taobao.vmarket.eticket.oplogs.get
 
 电子凭证核销日志查询
 */
-func TaobaoVmarketEticketOplogsGet(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketOplogsGetRequest, session string) (*eticket.TaobaoVmarketEticketOplogsGetResponse, error) {
+func TaobaoVmarketEticketOplogsGet(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketOplogsGetRequest, session string) (*eticket.TaobaoVmarketEticketOplogsGetAPIResponse, error) {
     var resp eticket.TaobaoVmarketEticketOplogsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

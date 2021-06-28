@@ -11,11 +11,11 @@ alibaba.marketing.lottery.award.append
 
 抽奖平台奖品添加接口，目前仅用于奖池众筹项目
 */
-func AlibabaMarketingLotteryAwardAppend(clt *core.SDKClient, req *promotion.AlibabaMarketingLotteryAwardAppendRequest, session string) (*promotion.AlibabaMarketingLotteryAwardAppendResponse, error) {
+func AlibabaMarketingLotteryAwardAppend(clt *core.SDKClient, req *promotion.AlibabaMarketingLotteryAwardAppendRequest, session string) (*promotion.AlibabaMarketingLotteryAwardAppendAPIResponse, error) {
     var resp promotion.AlibabaMarketingLotteryAwardAppendAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

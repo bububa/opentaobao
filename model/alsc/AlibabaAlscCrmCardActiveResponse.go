@@ -12,8 +12,22 @@ alibaba.alsc.crm.card.active
 */
 type AlibabaAlscCrmCardActiveAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmCardActiveResponse `json:"alibaba_alsc_crm_card_active_response,omitempty"`
+    // Response *AlibabaAlscCrmCardActiveResponse `json:"alibaba_alsc_crm_card_active_response,omitempty"` 
+    AlibabaAlscCrmCardActiveResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmCardActiveResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmCardActiveResponse struct {
 

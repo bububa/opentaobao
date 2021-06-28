@@ -11,11 +11,11 @@ cainiao.cloudprint.customarea.update
 
 自定义区内容更新
 */
-func CainiaoCloudprintCustomareaUpdate(clt *core.SDKClient, req *waybill.CainiaoCloudprintCustomareaUpdateRequest, session string) (*waybill.CainiaoCloudprintCustomareaUpdateResponse, error) {
+func CainiaoCloudprintCustomareaUpdate(clt *core.SDKClient, req *waybill.CainiaoCloudprintCustomareaUpdateRequest, session string) (*waybill.CainiaoCloudprintCustomareaUpdateAPIResponse, error) {
     var resp waybill.CainiaoCloudprintCustomareaUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

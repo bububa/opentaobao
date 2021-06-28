@@ -16,7 +16,7 @@ type TaobaoBillBillsGetRequest struct {
     model.Params
 
     // 传入需要返回的字段,参见Bill结构体
-    fields   []String 
+    fields   []string 
 
     // 科目编号
     accountId   int64 
@@ -63,13 +63,13 @@ func (r TaobaoBillBillsGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoBillBillsGetRequest) SetFields(fields []String) error {
+func (r *TaobaoBillBillsGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoBillBillsGetRequest) GetFields() []String {
+func (r TaobaoBillBillsGetRequest) GetFields() []string {
     return r.fields
 }
 

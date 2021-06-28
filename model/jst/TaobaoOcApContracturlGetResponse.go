@@ -12,8 +12,30 @@ taobao.oc.ap.contracturl.get
 */
 type TaobaoOcApContracturlGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOcApContracturlGetResponse `json:"taobao_oc_ap_contracturl_get_response,omitempty"`
+    // Response *TaobaoOcApContracturlGetResponse `json:"oc_ap_contracturl_get_response,omitempty"` 
+    TaobaoOcApContracturlGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOcApContracturlGetResponse struct {
+
+    // 判断操作是否执行成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 代扣url地址
+    
+    Url   string `json:"url,omitempty"`
+    
+
+    // 错误描述信息
+    
+    ErrorDescription   string `json:"error_description,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOcApContracturlGetResponse struct {
 

@@ -14,8 +14,30 @@ taobao.logistics.consign.tc.confirm
 */
 type TaobaoLogisticsConsignTcConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLogisticsConsignTcConfirmResponse `json:"taobao_logistics_consign_tc_confirm_response,omitempty"`
+    // Response *TaobaoLogisticsConsignTcConfirmResponse `json:"logistics_consign_tc_confirm_response,omitempty"` 
+    TaobaoLogisticsConsignTcConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoLogisticsConsignTcConfirmResponse struct {
+
+    // 菜鸟发货单据
+    
+    OrderConsignCode   string `json:"order_consign_code,omitempty"`
+    
+
+    // 是否重试
+    
+    Retry   bool `json:"retry,omitempty"`
+    
+
+    // 单次调用流程唯一id
+    
+    TraceId   string `json:"trace_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLogisticsConsignTcConfirmResponse struct {
 

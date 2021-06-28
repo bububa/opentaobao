@@ -25,7 +25,7 @@ type TaobaoTanxQualificationPictureUploadRequest struct {
     signTime   int64 
 
     // File文件getByte后的二进制数组
-    fileByte   []byte 
+    fileByte   []*model.File 
 
 }
 
@@ -78,13 +78,13 @@ func (r TaobaoTanxQualificationPictureUploadRequest) GetSignTime() int64 {
     return r.signTime
 }
 
-func (r *TaobaoTanxQualificationPictureUploadRequest) SetFileByte(fileByte []byte) error {
+func (r *TaobaoTanxQualificationPictureUploadRequest) SetFileByte(fileByte []*model.File) error {
     r.fileByte = fileByte
     r.Set("file_byte", fileByte)
     return nil
 }
 
-func (r TaobaoTanxQualificationPictureUploadRequest) GetFileByte() []byte {
+func (r TaobaoTanxQualificationPictureUploadRequest) GetFileByte() []*model.File {
     return r.fileByte
 }
 

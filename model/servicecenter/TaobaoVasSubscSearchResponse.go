@@ -12,8 +12,27 @@ taobao.vas.subsc.search
 */
 type TaobaoVasSubscSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVasSubscSearchResponse `json:"taobao_vas_subsc_search_response,omitempty"`
+    // Response *TaobaoVasSubscSearchResponse `json:"vas_subsc_search_response,omitempty"` 
+    TaobaoVasSubscSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoVasSubscSearchResponse struct {
+
+    // 订购关系对象
+    
+    ArticleSubs  struct {
+        ArticleSub  []ArticleSub `json:"article_sub,omitempty"`
+    } `json:"article_subs,omitempty"`
+    
+
+    // 总记录数
+    
+    TotalItem   int64 `json:"total_item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVasSubscSearchResponse struct {
 

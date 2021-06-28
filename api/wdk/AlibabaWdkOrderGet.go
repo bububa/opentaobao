@@ -11,11 +11,11 @@ alibaba.wdk.order.get
 
 五道口三江单据查询接口
 */
-func AlibabaWdkOrderGet(clt *core.SDKClient, req *wdk.AlibabaWdkOrderGetRequest, session string) (*wdk.AlibabaWdkOrderGetResponse, error) {
+func AlibabaWdkOrderGet(clt *core.SDKClient, req *wdk.AlibabaWdkOrderGetRequest, session string) (*wdk.AlibabaWdkOrderGetAPIResponse, error) {
     var resp wdk.AlibabaWdkOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

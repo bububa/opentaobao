@@ -12,8 +12,22 @@ alibaba.ailabs.aligenie.tracks.search
 */
 type AlibabaAilabsAligenieTracksSearchAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAilabsAligenieTracksSearchResponse `json:"alibaba_ailabs_aligenie_tracks_search_response,omitempty"`
+    // Response *AlibabaAilabsAligenieTracksSearchResponse `json:"alibaba_ailabs_aligenie_tracks_search_response,omitempty"` 
+    AlibabaAilabsAligenieTracksSearchResponse
 }
+
+/* model for simplify = false
+type AlibabaAilabsAligenieTracksSearchResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AiCloudResult  *AiCloudResult `json:"ai_cloud_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAilabsAligenieTracksSearchResponse struct {
 

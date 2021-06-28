@@ -12,8 +12,20 @@ alibaba.scbp.effect.account.date.get
 */
 type AlibabaScbpEffectAccountDateGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpEffectAccountDateGetResponse `json:"alibaba_scbp_effect_account_date_get_response,omitempty"`
+    // Response *AlibabaScbpEffectAccountDateGetResponse `json:"alibaba_scbp_effect_account_date_get_response,omitempty"` 
+    AlibabaScbpEffectAccountDateGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpEffectAccountDateGetResponse struct {
+
+    // 最近生成报表的时间(US)
+    
+    ReportDate   string `json:"report_date,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpEffectAccountDateGetResponse struct {
 

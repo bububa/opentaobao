@@ -12,8 +12,22 @@ taobao.qimen.deliveryorder.create
 */
 type TaobaoQimenDeliveryorderCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenDeliveryorderCreateResponse `json:"taobao_qimen_deliveryorder_create_response,omitempty"`
+    // Response *TaobaoQimenDeliveryorderCreateResponse `json:"qimen_deliveryorder_create_response,omitempty"` 
+    TaobaoQimenDeliveryorderCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenDeliveryorderCreateResponse struct {
+
+    // 
+    
+    Response  *struct {
+        DeliveryOrderCreateResponse  *DeliveryOrderCreateResponse `json:"delivery_order_create_response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenDeliveryorderCreateResponse struct {
 

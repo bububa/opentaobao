@@ -12,8 +12,22 @@ taobao.fenxiao.grades.get
 */
 type TaobaoFenxiaoGradesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoGradesGetResponse `json:"taobao_fenxiao_grades_get_response,omitempty"`
+    // Response *TaobaoFenxiaoGradesGetResponse `json:"fenxiao_grades_get_response,omitempty"` 
+    TaobaoFenxiaoGradesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoGradesGetResponse struct {
+
+    // 分销商等级信息
+    
+    FenxiaoGrades  struct {
+        FenxiaoGrade  []FenxiaoGrade `json:"fenxiao_grade,omitempty"`
+    } `json:"fenxiao_grades,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoGradesGetResponse struct {
 

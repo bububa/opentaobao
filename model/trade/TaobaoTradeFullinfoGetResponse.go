@@ -17,8 +17,22 @@ taobao.trade.fullinfo.get
 */
 type TaobaoTradeFullinfoGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeFullinfoGetResponse `json:"taobao_trade_fullinfo_get_response,omitempty"`
+    // Response *TaobaoTradeFullinfoGetResponse `json:"trade_fullinfo_get_response,omitempty"` 
+    TaobaoTradeFullinfoGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeFullinfoGetResponse struct {
+
+    // 交易主订单信息
+    
+    Trade  *struct {
+        Trade  *Trade `json:"trade,omitempty"`
+    } `json:"trade,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeFullinfoGetResponse struct {
 

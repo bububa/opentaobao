@@ -11,11 +11,11 @@ alibaba.interact.sensor.calendar
 
 天猫互动游戏开放平台需要授权的传感器类接口(日历提醒)
 */
-func AlibabaInteractSensorCalendar(clt *core.SDKClient, req *interact.AlibabaInteractSensorCalendarRequest, session string) (*interact.AlibabaInteractSensorCalendarResponse, error) {
+func AlibabaInteractSensorCalendar(clt *core.SDKClient, req *interact.AlibabaInteractSensorCalendarRequest, session string) (*interact.AlibabaInteractSensorCalendarAPIResponse, error) {
     var resp interact.AlibabaInteractSensorCalendarAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

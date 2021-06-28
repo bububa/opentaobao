@@ -12,8 +12,22 @@ alibaba.scbp.ad.keyword.create.keyword.batch
 */
 type AlibabaScbpAdKeywordCreateKeywordBatchAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdKeywordCreateKeywordBatchResponse `json:"alibaba_scbp_ad_keyword_create_keyword_batch_response,omitempty"`
+    // Response *AlibabaScbpAdKeywordCreateKeywordBatchResponse `json:"alibaba_scbp_ad_keyword_create_keyword_batch_response,omitempty"` 
+    AlibabaScbpAdKeywordCreateKeywordBatchResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdKeywordCreateKeywordBatchResponse struct {
+
+    // 返回错误集合
+    
+    ResultList  struct {
+        ErrorKeyword  []ErrorKeyword `json:"error_keyword,omitempty"`
+    } `json:"result_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdKeywordCreateKeywordBatchResponse struct {
 

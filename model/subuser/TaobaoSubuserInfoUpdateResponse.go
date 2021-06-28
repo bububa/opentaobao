@@ -12,8 +12,20 @@ taobao.subuser.info.update
 */
 type TaobaoSubuserInfoUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSubuserInfoUpdateResponse `json:"taobao_subuser_info_update_response,omitempty"`
+    // Response *TaobaoSubuserInfoUpdateResponse `json:"subuser_info_update_response,omitempty"` 
+    TaobaoSubuserInfoUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoSubuserInfoUpdateResponse struct {
+
+    // 操作是否成功 true:操作成功; false:操作失败
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSubuserInfoUpdateResponse struct {
 

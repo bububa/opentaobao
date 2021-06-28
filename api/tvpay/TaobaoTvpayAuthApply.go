@@ -11,11 +11,11 @@ taobao.tvpay.auth.apply
 
 为用户在指定设备上申请支付授权
 */
-func TaobaoTvpayAuthApply(clt *core.SDKClient, req *tvpay.TaobaoTvpayAuthApplyRequest, session string) (*tvpay.TaobaoTvpayAuthApplyResponse, error) {
+func TaobaoTvpayAuthApply(clt *core.SDKClient, req *tvpay.TaobaoTvpayAuthApplyRequest, session string) (*tvpay.TaobaoTvpayAuthApplyAPIResponse, error) {
     var resp tvpay.TaobaoTvpayAuthApplyAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

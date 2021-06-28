@@ -12,8 +12,32 @@ alibaba.scbp.reckeyword.search
 */
 type AlibabaScbpReckeywordSearchAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpReckeywordSearchResponse `json:"alibaba_scbp_reckeyword_search_response,omitempty"`
+    // Response *AlibabaScbpReckeywordSearchResponse `json:"alibaba_scbp_reckeyword_search_response,omitempty"` 
+    AlibabaScbpReckeywordSearchResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpReckeywordSearchResponse struct {
+
+    // 词推词结果列表
+    
+    ResultList  struct {
+        RecKeywordDto  []RecKeywordDto `json:"rec_keyword_dto,omitempty"`
+    } `json:"result_list,omitempty"`
+    
+
+    // 总个数
+    
+    TotalNum   int64 `json:"total_num,omitempty"`
+    
+
+    // 总页数
+    
+    TotalPage   int64 `json:"total_page,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpReckeywordSearchResponse struct {
 

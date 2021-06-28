@@ -12,8 +12,22 @@ alibaba.alsc.crm.customer.updateppw
 */
 type AlibabaAlscCrmCustomerUpdateppwAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAlscCrmCustomerUpdateppwResponse `json:"alibaba_alsc_crm_customer_updateppw_response,omitempty"`
+    // Response *AlibabaAlscCrmCustomerUpdateppwResponse `json:"alibaba_alsc_crm_customer_updateppw_response,omitempty"` 
+    AlibabaAlscCrmCustomerUpdateppwResponse
 }
+
+/* model for simplify = false
+type AlibabaAlscCrmCustomerUpdateppwResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAlscCrmCustomerUpdateppwResponse struct {
 

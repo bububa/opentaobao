@@ -19,7 +19,7 @@ type TaobaoSimbaInsightCatsworddataGetRequest struct {
     catId   string 
 
     // 需要查询的关键词列表，最大长度100。
-    bidwordList   []String 
+    bidwordList   []string 
 
     // 开始时间，格式只能为：yyyy-MM-dd
     startDate   string 
@@ -58,13 +58,13 @@ func (r TaobaoSimbaInsightCatsworddataGetRequest) GetCatId() string {
     return r.catId
 }
 
-func (r *TaobaoSimbaInsightCatsworddataGetRequest) SetBidwordList(bidwordList []String) error {
+func (r *TaobaoSimbaInsightCatsworddataGetRequest) SetBidwordList(bidwordList []string) error {
     r.bidwordList = bidwordList
     r.Set("bidword_list", bidwordList)
     return nil
 }
 
-func (r TaobaoSimbaInsightCatsworddataGetRequest) GetBidwordList() []String {
+func (r TaobaoSimbaInsightCatsworddataGetRequest) GetBidwordList() []string {
     return r.bidwordList
 }
 

@@ -19,7 +19,7 @@ type TaobaoTradeVoucherUploadRequest struct {
     fileName   string 
 
     // 文件
-    fileData   []byte 
+    fileData   []*model.File 
 
     // 该笔订单的卖家Nick
     sellerNick   string 
@@ -58,13 +58,13 @@ func (r TaobaoTradeVoucherUploadRequest) GetFileName() string {
     return r.fileName
 }
 
-func (r *TaobaoTradeVoucherUploadRequest) SetFileData(fileData []byte) error {
+func (r *TaobaoTradeVoucherUploadRequest) SetFileData(fileData []*model.File) error {
     r.fileData = fileData
     r.Set("file_data", fileData)
     return nil
 }
 
-func (r TaobaoTradeVoucherUploadRequest) GetFileData() []byte {
+func (r TaobaoTradeVoucherUploadRequest) GetFileData() []*model.File {
     return r.fileData
 }
 

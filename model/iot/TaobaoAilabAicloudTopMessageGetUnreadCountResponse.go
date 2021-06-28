@@ -12,8 +12,30 @@ taobao.ailab.aicloud.top.message.get.unread.count
 */
 type TaobaoAilabAicloudTopMessageGetUnreadCountAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAilabAicloudTopMessageGetUnreadCountResponse `json:"taobao_ailab_aicloud_top_message_get_unread_count_response,omitempty"`
+    // Response *TaobaoAilabAicloudTopMessageGetUnreadCountResponse `json:"ailab_aicloud_top_message_get_unread_count_response,omitempty"` 
+    TaobaoAilabAicloudTopMessageGetUnreadCountResponse
 }
+
+/* model for simplify = false
+type TaobaoAilabAicloudTopMessageGetUnreadCountResponse struct {
+
+    // 未读留言的数量
+    
+    Model   int64 `json:"model,omitempty"`
+    
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 异常描述
+    
+    MsgInfo   string `json:"msg_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAilabAicloudTopMessageGetUnreadCountResponse struct {
 

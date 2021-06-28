@@ -11,11 +11,11 @@ tmall.traceplatform.cts.info.upload
 
 cts上传溯源信息
 */
-func TmallTraceplatformCtsInfoUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformCtsInfoUploadRequest, session string) (*tmallhk.TmallTraceplatformCtsInfoUploadResponse, error) {
+func TmallTraceplatformCtsInfoUpload(clt *core.SDKClient, req *tmallhk.TmallTraceplatformCtsInfoUploadRequest, session string) (*tmallhk.TmallTraceplatformCtsInfoUploadAPIResponse, error) {
     var resp tmallhk.TmallTraceplatformCtsInfoUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

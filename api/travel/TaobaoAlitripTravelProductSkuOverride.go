@@ -11,11 +11,11 @@ taobao.alitrip.travel.product.sku.override
 
 （供销）产品级别日历价格库存修改，全量覆盖
 */
-func TaobaoAlitripTravelProductSkuOverride(clt *core.SDKClient, req *travel.TaobaoAlitripTravelProductSkuOverrideRequest, session string) (*travel.TaobaoAlitripTravelProductSkuOverrideResponse, error) {
+func TaobaoAlitripTravelProductSkuOverride(clt *core.SDKClient, req *travel.TaobaoAlitripTravelProductSkuOverrideRequest, session string) (*travel.TaobaoAlitripTravelProductSkuOverrideAPIResponse, error) {
     var resp travel.TaobaoAlitripTravelProductSkuOverrideAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

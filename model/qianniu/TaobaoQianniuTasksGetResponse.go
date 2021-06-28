@@ -12,8 +12,22 @@ taobao.qianniu.tasks.get
 */
 type TaobaoQianniuTasksGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQianniuTasksGetResponse `json:"taobao_qianniu_tasks_get_response,omitempty"`
+    // Response *TaobaoQianniuTasksGetResponse `json:"qianniu_tasks_get_response,omitempty"` 
+    TaobaoQianniuTasksGetResponse
 }
+
+/* model for simplify = false
+type TaobaoQianniuTasksGetResponse struct {
+
+    // 返回的任务列表
+    
+    Tasks  struct {
+        QTask  []QTask `json:"q_task,omitempty"`
+    } `json:"tasks,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQianniuTasksGetResponse struct {
 

@@ -12,8 +12,22 @@ WMS调用奇门的接口,在出库、发货、入库等场景下，ERP和WMS之�
 */
 type TaobaoQimenOrderSnReportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenOrderSnReportResponse `json:"taobao_qimen_order_sn_report_response,omitempty"`
+    // Response *TaobaoQimenOrderSnReportResponse `json:"qimen_order_sn_report_response,omitempty"` 
+    TaobaoQimenOrderSnReportResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenOrderSnReportResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenOrderSnReportResponse struct {
 

@@ -11,11 +11,11 @@ taobao.fenxiao.productcat.update
 
 修改产品线
 */
-func TaobaoFenxiaoProductcatUpdate(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatUpdateRequest, session string) (*fenxiao.TaobaoFenxiaoProductcatUpdateResponse, error) {
+func TaobaoFenxiaoProductcatUpdate(clt *core.SDKClient, req *fenxiao.TaobaoFenxiaoProductcatUpdateRequest, session string) (*fenxiao.TaobaoFenxiaoProductcatUpdateAPIResponse, error) {
     var resp fenxiao.TaobaoFenxiaoProductcatUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

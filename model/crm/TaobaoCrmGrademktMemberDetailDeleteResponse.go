@@ -12,8 +12,20 @@ taobao.crm.grademkt.member.detail.delete
 */
 type TaobaoCrmGrademktMemberDetailDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGrademktMemberDetailDeleteResponse `json:"taobao_crm_grademkt_member_detail_delete_response,omitempty"`
+    // Response *TaobaoCrmGrademktMemberDetailDeleteResponse `json:"crm_grademkt_member_detail_delete_response,omitempty"` 
+    TaobaoCrmGrademktMemberDetailDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGrademktMemberDetailDeleteResponse struct {
+
+    // 操作是否成功
+    
+    Module   bool `json:"module,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGrademktMemberDetailDeleteResponse struct {
 

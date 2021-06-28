@@ -13,8 +13,20 @@ taobao.tmc.topic.group.add
 */
 type TaobaoTmcTopicGroupAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcTopicGroupAddResponse `json:"taobao_tmc_topic_group_add_response,omitempty"`
+    // Response *TaobaoTmcTopicGroupAddResponse `json:"tmc_topic_group_add_response,omitempty"` 
+    TaobaoTmcTopicGroupAddResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcTopicGroupAddResponse struct {
+
+    // true
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcTopicGroupAddResponse struct {
 

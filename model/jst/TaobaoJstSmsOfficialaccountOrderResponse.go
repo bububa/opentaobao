@@ -12,8 +12,40 @@ taobao.jst.sms.officialaccount.order
 */
 type TaobaoJstSmsOfficialaccountOrderAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoJstSmsOfficialaccountOrderResponse `json:"taobao_jst_sms_officialaccount_order_response,omitempty"`
+    // Response *TaobaoJstSmsOfficialaccountOrderResponse `json:"jst_sms_officialaccount_order_response,omitempty"` 
+    TaobaoJstSmsOfficialaccountOrderResponse
 }
+
+/* model for simplify = false
+type TaobaoJstSmsOfficialaccountOrderResponse struct {
+
+    // 系统异常
+    
+    ResponseCode   string `json:"response_code,omitempty"`
+    
+
+    // 成功
+    
+    ResponseSuccess   bool `json:"response_success,omitempty"`
+    
+
+    // 请求id
+    
+    ResponseId   string `json:"response_id,omitempty"`
+    
+
+    // 上报成功
+    
+    Module   bool `json:"module,omitempty"`
+    
+
+    // 系统异常
+    
+    Message   string `json:"message,omitempty"`
+    
+
+}
+*/
 
 type TaobaoJstSmsOfficialaccountOrderResponse struct {
 

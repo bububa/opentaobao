@@ -12,8 +12,20 @@ taobao.vas.service.validate
 */
 type TaobaoVasServiceValidateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVasServiceValidateResponse `json:"taobao_vas_service_validate_response,omitempty"`
+    // Response *TaobaoVasServiceValidateResponse `json:"vas_service_validate_response,omitempty"` 
+    TaobaoVasServiceValidateResponse
 }
+
+/* model for simplify = false
+type TaobaoVasServiceValidateResponse struct {
+
+    // none 没有订购,open 已经开通服务,freeze 服务已经冻结,close 服务已经关闭,error 系统错误
+    
+    Status   string `json:"status,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVasServiceValidateResponse struct {
 

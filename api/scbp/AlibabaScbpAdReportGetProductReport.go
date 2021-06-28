@@ -11,11 +11,11 @@ alibaba.scbp.ad.report.get.product.report
 
 产品报告
 */
-func AlibabaScbpAdReportGetProductReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetProductReportRequest, session string) (*scbp.AlibabaScbpAdReportGetProductReportResponse, error) {
+func AlibabaScbpAdReportGetProductReport(clt *core.SDKClient, req *scbp.AlibabaScbpAdReportGetProductReportRequest, session string) (*scbp.AlibabaScbpAdReportGetProductReportAPIResponse, error) {
     var resp scbp.AlibabaScbpAdReportGetProductReportAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

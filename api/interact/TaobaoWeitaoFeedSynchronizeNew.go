@@ -11,11 +11,11 @@ taobao.weitao.feed.synchronize.new
 
 推广微淘互动应用活动到微淘
 */
-func TaobaoWeitaoFeedSynchronizeNew(clt *core.SDKClient, req *interact.TaobaoWeitaoFeedSynchronizeNewRequest, session string) (*interact.TaobaoWeitaoFeedSynchronizeNewResponse, error) {
+func TaobaoWeitaoFeedSynchronizeNew(clt *core.SDKClient, req *interact.TaobaoWeitaoFeedSynchronizeNewRequest, session string) (*interact.TaobaoWeitaoFeedSynchronizeNewAPIResponse, error) {
     var resp interact.TaobaoWeitaoFeedSynchronizeNewAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

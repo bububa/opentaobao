@@ -12,8 +12,30 @@ lbs数据采集
 */
 type TaobaoLbsMessageUploadAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoLbsMessageUploadResponse `json:"taobao_lbs_message_upload_response,omitempty"`
+    // Response *TaobaoLbsMessageUploadResponse `json:"lbs_message_upload_response,omitempty"` 
+    TaobaoLbsMessageUploadResponse
 }
+
+/* model for simplify = false
+type TaobaoLbsMessageUploadResponse struct {
+
+    // result
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+    // subCode
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // subMsg
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoLbsMessageUploadResponse struct {
 

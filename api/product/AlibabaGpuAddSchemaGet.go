@@ -11,11 +11,11 @@ alibaba.gpu.add.schema.get
 
 获取产品发布规则接口
 */
-func AlibabaGpuAddSchemaGet(clt *core.SDKClient, req *product.AlibabaGpuAddSchemaGetRequest, session string) (*product.AlibabaGpuAddSchemaGetResponse, error) {
+func AlibabaGpuAddSchemaGet(clt *core.SDKClient, req *product.AlibabaGpuAddSchemaGetRequest, session string) (*product.AlibabaGpuAddSchemaGetAPIResponse, error) {
     var resp product.AlibabaGpuAddSchemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

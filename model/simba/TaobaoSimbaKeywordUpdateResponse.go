@@ -12,8 +12,27 @@ taobao.simba.keyword.update
 */
 type TaobaoSimbaKeywordUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaKeywordUpdateResponse `json:"taobao_simba_keyword_update_response,omitempty"`
+    // Response *TaobaoSimbaKeywordUpdateResponse `json:"simba_keyword_update_response,omitempty"` 
+    TaobaoSimbaKeywordUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaKeywordUpdateResponse struct {
+
+    // 整体的返回值
+    
+    Results  struct {
+        SiriusBidwordDto  []SiriusBidwordDto `json:"sirius_bidword_dto,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+    // 错误原因
+    
+    ErrorMsg   string `json:"error_msg,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaKeywordUpdateResponse struct {
 

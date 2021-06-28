@@ -12,8 +12,30 @@ alibaba.wdk.fulfill.missfresh.warehouse.work.order.callback
 */
 type AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackResponse `json:"alibaba_wdk_fulfill_missfresh_warehouse_work_order_callback_response,omitempty"`
+    // Response *AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackResponse `json:"alibaba_wdk_fulfill_missfresh_warehouse_work_order_callback_response,omitempty"` 
+    AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackResponse struct {
+
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 响应提示信息
+    
+    RespMessage   string `json:"resp_message,omitempty"`
+    
+
+    // 响应code
+    
+    RespCode   string `json:"resp_code,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkFulfillMissfreshWarehouseWorkOrderCallbackResponse struct {
 

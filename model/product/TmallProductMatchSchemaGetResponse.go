@@ -12,8 +12,20 @@ ISV发布商品前，需要先查找到产品ID，这个接口返回查找产品
 */
 type TmallProductMatchSchemaGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallProductMatchSchemaGetResponse `json:"tmall_product_match_schema_get_response,omitempty"`
+    // Response *TmallProductMatchSchemaGetResponse `json:"tmall_product_match_schema_get_response,omitempty"` 
+    TmallProductMatchSchemaGetResponse
 }
+
+/* model for simplify = false
+type TmallProductMatchSchemaGetResponse struct {
+
+    // 返回匹配product的规则文档
+    
+    MatchResult   string `json:"match_result,omitempty"`
+    
+
+}
+*/
 
 type TmallProductMatchSchemaGetResponse struct {
 

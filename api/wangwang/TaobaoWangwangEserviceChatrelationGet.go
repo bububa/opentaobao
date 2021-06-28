@@ -14,11 +14,11 @@ A 和 B 在2016-09-01 和 2016-09-02 都说过话。以A为查询账号，则该
 2016-09-01， B
 2016-09-02， B
 */
-func TaobaoWangwangEserviceChatrelationGet(clt *core.SDKClient, req *wangwang.TaobaoWangwangEserviceChatrelationGetRequest, session string) (*wangwang.TaobaoWangwangEserviceChatrelationGetResponse, error) {
+func TaobaoWangwangEserviceChatrelationGet(clt *core.SDKClient, req *wangwang.TaobaoWangwangEserviceChatrelationGetRequest, session string) (*wangwang.TaobaoWangwangEserviceChatrelationGetAPIResponse, error) {
     var resp wangwang.TaobaoWangwangEserviceChatrelationGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,42 @@ alibaba.baichuan.ctg.content.get
 */
 type AlibabaBaichuanCtgContentGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaBaichuanCtgContentGetResponse `json:"alibaba_baichuan_ctg_content_get_response,omitempty"`
+    // Response *AlibabaBaichuanCtgContentGetResponse `json:"alibaba_baichuan_ctg_content_get_response,omitempty"` 
+    AlibabaBaichuanCtgContentGetResponse
 }
+
+/* model for simplify = false
+type AlibabaBaichuanCtgContentGetResponse struct {
+
+    // errorMessage
+    
+    ErrMessage   string `json:"err_message,omitempty"`
+    
+
+    // hasNext
+    
+    HasNext   bool `json:"has_next,omitempty"`
+    
+
+    // errorCode
+    
+    ErrCode   string `json:"err_code,omitempty"`
+    
+
+    // data
+    
+    DataList  struct {
+        AlibabaBaichuanCtgContentGetData  []AlibabaBaichuanCtgContentGetData `json:"alibaba_baichuan_ctg_content_get_data,omitempty"`
+    } `json:"data_list,omitempty"`
+    
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlibabaBaichuanCtgContentGetResponse struct {
 

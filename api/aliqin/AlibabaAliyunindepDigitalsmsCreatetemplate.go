@@ -11,11 +11,11 @@ alibaba.aliyunindep.digitalsms.createtemplate
 
 数字短信模板创建，给阿里云一方产品使用，类型：9
 */
-func AlibabaAliyunindepDigitalsmsCreatetemplate(clt *core.SDKClient, req *aliqin.AlibabaAliyunindepDigitalsmsCreatetemplateRequest, session string) (*aliqin.AlibabaAliyunindepDigitalsmsCreatetemplateResponse, error) {
+func AlibabaAliyunindepDigitalsmsCreatetemplate(clt *core.SDKClient, req *aliqin.AlibabaAliyunindepDigitalsmsCreatetemplateRequest, session string) (*aliqin.AlibabaAliyunindepDigitalsmsCreatetemplateAPIResponse, error) {
     var resp aliqin.AlibabaAliyunindepDigitalsmsCreatetemplateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

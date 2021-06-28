@@ -12,8 +12,20 @@ tmall.item.outerid.update
 */
 type TmallItemOuteridUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemOuteridUpdateResponse `json:"tmall_item_outerid_update_response,omitempty"`
+    // Response *TmallItemOuteridUpdateResponse `json:"tmall_item_outerid_update_response,omitempty"` 
+    TmallItemOuteridUpdateResponse
 }
+
+/* model for simplify = false
+type TmallItemOuteridUpdateResponse struct {
+
+    // 商家编码更新结果
+    
+    OuteridUpdateResult   string `json:"outerid_update_result,omitempty"`
+    
+
+}
+*/
 
 type TmallItemOuteridUpdateResponse struct {
 

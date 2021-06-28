@@ -14,8 +14,22 @@ taobao.trade.amount.get
 */
 type TaobaoTradeAmountGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeAmountGetResponse `json:"taobao_trade_amount_get_response,omitempty"`
+    // Response *TaobaoTradeAmountGetResponse `json:"trade_amount_get_response,omitempty"` 
+    TaobaoTradeAmountGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeAmountGetResponse struct {
+
+    // 主订单的财务信息详情
+    
+    TradeAmount  *struct {
+        TradeAmount  *TradeAmount `json:"trade_amount,omitempty"`
+    } `json:"trade_amount,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeAmountGetResponse struct {
 

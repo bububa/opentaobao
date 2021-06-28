@@ -12,8 +12,22 @@ alibaba.ele.fengniao.chainstore.ranges
 */
 type AlibabaEleFengniaoChainstoreRangesAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaEleFengniaoChainstoreRangesResponse `json:"alibaba_ele_fengniao_chainstore_ranges_response,omitempty"`
+    // Response *AlibabaEleFengniaoChainstoreRangesResponse `json:"alibaba_ele_fengniao_chainstore_ranges_response,omitempty"` 
+    AlibabaEleFengniaoChainstoreRangesResponse
 }
+
+/* model for simplify = false
+type AlibabaEleFengniaoChainstoreRangesResponse struct {
+
+    // 返回值
+    
+    RangeList  struct {
+        AlibabaEleFengniaoChainstoreRangesResult  []AlibabaEleFengniaoChainstoreRangesResult `json:"alibaba_ele_fengniao_chainstore_ranges_result,omitempty"`
+    } `json:"range_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaEleFengniaoChainstoreRangesResponse struct {
 

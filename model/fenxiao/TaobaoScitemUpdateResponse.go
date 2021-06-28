@@ -12,8 +12,20 @@ taobao.scitem.update
 */
 type TaobaoScitemUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoScitemUpdateResponse `json:"taobao_scitem_update_response,omitempty"`
+    // Response *TaobaoScitemUpdateResponse `json:"scitem_update_response,omitempty"` 
+    TaobaoScitemUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoScitemUpdateResponse struct {
+
+    // 更新商品数量,1表示成功更新了一条数据，0：表示未找到匹配的数据
+    
+    UpdateRows   int64 `json:"update_rows,omitempty"`
+    
+
+}
+*/
 
 type TaobaoScitemUpdateResponse struct {
 

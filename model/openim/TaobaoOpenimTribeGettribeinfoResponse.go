@@ -12,8 +12,22 @@ taobao.openim.tribe.gettribeinfo
 */
 type TaobaoOpenimTribeGettribeinfoAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimTribeGettribeinfoResponse `json:"taobao_openim_tribe_gettribeinfo_response,omitempty"`
+    // Response *TaobaoOpenimTribeGettribeinfoResponse `json:"openim_tribe_gettribeinfo_response,omitempty"` 
+    TaobaoOpenimTribeGettribeinfoResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimTribeGettribeinfoResponse struct {
+
+    // 群信息
+    
+    TribeInfo  *struct {
+        TribeInfo  *TribeInfo `json:"tribe_info,omitempty"`
+    } `json:"tribe_info,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimTribeGettribeinfoResponse struct {
 

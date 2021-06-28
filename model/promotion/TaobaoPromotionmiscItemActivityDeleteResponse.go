@@ -12,8 +12,20 @@ taobao.promotionmisc.item.activity.delete
 */
 type TaobaoPromotionmiscItemActivityDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPromotionmiscItemActivityDeleteResponse `json:"taobao_promotionmisc_item_activity_delete_response,omitempty"`
+    // Response *TaobaoPromotionmiscItemActivityDeleteResponse `json:"promotionmisc_item_activity_delete_response,omitempty"` 
+    TaobaoPromotionmiscItemActivityDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoPromotionmiscItemActivityDeleteResponse struct {
+
+    // 是否成功删除活动。
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPromotionmiscItemActivityDeleteResponse struct {
 

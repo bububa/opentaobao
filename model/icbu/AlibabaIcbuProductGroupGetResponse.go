@@ -12,8 +12,22 @@ alibaba.icbu.product.group.get
 */
 type AlibabaIcbuProductGroupGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuProductGroupGetResponse `json:"alibaba_icbu_product_group_get_response,omitempty"`
+    // Response *AlibabaIcbuProductGroupGetResponse `json:"alibaba_icbu_product_group_get_response,omitempty"` 
+    AlibabaIcbuProductGroupGetResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuProductGroupGetResponse struct {
+
+    // 分组信息
+    
+    ProductGroup  *struct {
+        ProductGroup  *ProductGroup `json:"product_group,omitempty"`
+    } `json:"product_group,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuProductGroupGetResponse struct {
 

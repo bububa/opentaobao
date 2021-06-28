@@ -12,8 +12,22 @@ taobao.simba.campaign.schedule.get
 */
 type TaobaoSimbaCampaignScheduleGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaCampaignScheduleGetResponse `json:"taobao_simba_campaign_schedule_get_response,omitempty"`
+    // Response *TaobaoSimbaCampaignScheduleGetResponse `json:"simba_campaign_schedule_get_response,omitempty"` 
+    TaobaoSimbaCampaignScheduleGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaCampaignScheduleGetResponse struct {
+
+    // 修改后的推广计划分时折扣
+    
+    CampaignSchedule  *struct {
+        CampaignSchedule  *CampaignSchedule `json:"campaign_schedule,omitempty"`
+    } `json:"campaign_schedule,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaCampaignScheduleGetResponse struct {
 

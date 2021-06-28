@@ -11,11 +11,11 @@ taobao.lbs.message.upload
 
 lbs数据采集
 */
-func TaobaoLbsMessageUpload(clt *core.SDKClient, req *lbs.TaobaoLbsMessageUploadRequest, session string) (*lbs.TaobaoLbsMessageUploadResponse, error) {
+func TaobaoLbsMessageUpload(clt *core.SDKClient, req *lbs.TaobaoLbsMessageUploadRequest, session string) (*lbs.TaobaoLbsMessageUploadAPIResponse, error) {
     var resp lbs.TaobaoLbsMessageUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

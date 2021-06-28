@@ -12,8 +12,22 @@ taobao.alitrip.ie.agent.shopping.push
 */
 type TaobaoAlitripIeAgentShoppingPushAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripIeAgentShoppingPushResponse `json:"taobao_alitrip_ie_agent_shopping_push_response,omitempty"`
+    // Response *TaobaoAlitripIeAgentShoppingPushResponse `json:"alitrip_ie_agent_shopping_push_response,omitempty"` 
+    TaobaoAlitripIeAgentShoppingPushResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripIeAgentShoppingPushResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ShoppingPushRs  *ShoppingPushRs `json:"shopping_push_rs,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripIeAgentShoppingPushResponse struct {
 

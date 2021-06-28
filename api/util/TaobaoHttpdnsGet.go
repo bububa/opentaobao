@@ -11,11 +11,11 @@ taobao.httpdns.get
 
 获取TOP DNS配置
 */
-func TaobaoHttpdnsGet(clt *core.SDKClient, req *util.TaobaoHttpdnsGetRequest, session string) (*util.TaobaoHttpdnsGetResponse, error) {
+func TaobaoHttpdnsGet(clt *core.SDKClient, req *util.TaobaoHttpdnsGetRequest, session string) (*util.TaobaoHttpdnsGetAPIResponse, error) {
     var resp util.TaobaoHttpdnsGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

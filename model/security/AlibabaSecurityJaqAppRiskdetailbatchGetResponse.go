@@ -12,8 +12,22 @@ alibaba.security.jaq.app.riskdetailbatch.get
 */
 type AlibabaSecurityJaqAppRiskdetailbatchGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaSecurityJaqAppRiskdetailbatchGetResponse `json:"alibaba_security_jaq_app_riskdetailbatch_get_response,omitempty"`
+    // Response *AlibabaSecurityJaqAppRiskdetailbatchGetResponse `json:"alibaba_security_jaq_app_riskdetailbatch_get_response,omitempty"` 
+    AlibabaSecurityJaqAppRiskdetailbatchGetResponse
 }
+
+/* model for simplify = false
+type AlibabaSecurityJaqAppRiskdetailbatchGetResponse struct {
+
+    // 批量扫描风险详情
+    
+    Result  *struct {
+        RiskDetailBatch  *RiskDetailBatch `json:"risk_detail_batch,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaSecurityJaqAppRiskdetailbatchGetResponse struct {
 

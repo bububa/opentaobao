@@ -11,11 +11,11 @@ alibaba.scbp.ad.keyword.query.keyword.rank.price
 
 查询关键词前五名排价
 */
-func AlibabaScbpAdKeywordQueryKeywordRankPrice(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordQueryKeywordRankPriceRequest, session string) (*scbp.AlibabaScbpAdKeywordQueryKeywordRankPriceResponse, error) {
+func AlibabaScbpAdKeywordQueryKeywordRankPrice(clt *core.SDKClient, req *scbp.AlibabaScbpAdKeywordQueryKeywordRankPriceRequest, session string) (*scbp.AlibabaScbpAdKeywordQueryKeywordRankPriceAPIResponse, error) {
     var resp scbp.AlibabaScbpAdKeywordQueryKeywordRankPriceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

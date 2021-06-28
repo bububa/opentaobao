@@ -12,8 +12,22 @@ alibaba.legal.case.entrust.get
 */
 type AlibabaLegalCaseEntrustGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaLegalCaseEntrustGetResponse `json:"alibaba_legal_case_entrust_get_response,omitempty"`
+    // Response *AlibabaLegalCaseEntrustGetResponse `json:"alibaba_legal_case_entrust_get_response,omitempty"` 
+    AlibabaLegalCaseEntrustGetResponse
 }
+
+/* model for simplify = false
+type AlibabaLegalCaseEntrustGetResponse struct {
+
+    // alinkappserver系统返回的通用结果类
+    
+    Result  *struct {
+        ServiceResult  *ServiceResult `json:"service_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaLegalCaseEntrustGetResponse struct {
 

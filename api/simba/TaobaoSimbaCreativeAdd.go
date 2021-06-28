@@ -11,11 +11,11 @@ taobao.simba.creative.add
 
 创建一个创意
 */
-func TaobaoSimbaCreativeAdd(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeAddRequest, session string) (*simba.TaobaoSimbaCreativeAddResponse, error) {
+func TaobaoSimbaCreativeAdd(clt *core.SDKClient, req *simba.TaobaoSimbaCreativeAddRequest, session string) (*simba.TaobaoSimbaCreativeAddAPIResponse, error) {
     var resp simba.TaobaoSimbaCreativeAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

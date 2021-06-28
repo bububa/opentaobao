@@ -12,8 +12,20 @@ tmall.servicecenter.anomalyrecourse.remark.update
 */
 type TmallServicecenterAnomalyrecourseRemarkUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterAnomalyrecourseRemarkUpdateResponse `json:"tmall_servicecenter_anomalyrecourse_remark_update_response,omitempty"`
+    // Response *TmallServicecenterAnomalyrecourseRemarkUpdateResponse `json:"tmall_servicecenter_anomalyrecourse_remark_update_response,omitempty"` 
+    TmallServicecenterAnomalyrecourseRemarkUpdateResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterAnomalyrecourseRemarkUpdateResponse struct {
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterAnomalyrecourseRemarkUpdateResponse struct {
 

@@ -12,8 +12,35 @@ taobao.bus.busnumber.set
 */
 type TaobaoBusBusnumberSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoBusBusnumberSetResponse `json:"taobao_bus_busnumber_set_response,omitempty"`
+    // Response *TaobaoBusBusnumberSetResponse `json:"bus_busnumber_set_response,omitempty"` 
+    TaobaoBusBusnumberSetResponse
 }
+
+/* model for simplify = false
+type TaobaoBusBusnumberSetResponse struct {
+
+    // 错误描述
+    
+    ResultMsg   string `json:"result_msg,omitempty"`
+    
+
+    // 返回对象
+    
+    Module   string `json:"module,omitempty"`
+    
+
+    // 错误编码
+    
+    ResultCode   string `json:"result_code,omitempty"`
+    
+
+    // 接口调用是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoBusBusnumberSetResponse struct {
 

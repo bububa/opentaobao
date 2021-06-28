@@ -12,8 +12,22 @@ tmall.supplychain.channel.product.upshelf
 */
 type TmallSupplychainChannelProductUpshelfAPIResponse struct {
     model.CommonResponse
-    Response *TmallSupplychainChannelProductUpshelfResponse `json:"tmall_supplychain_channel_product_upshelf_response,omitempty"`
+    // Response *TmallSupplychainChannelProductUpshelfResponse `json:"tmall_supplychain_channel_product_upshelf_response,omitempty"` 
+    TmallSupplychainChannelProductUpshelfResponse
 }
+
+/* model for simplify = false
+type TmallSupplychainChannelProductUpshelfResponse struct {
+
+    // 异步获取历史数据接口返回结果
+    
+    Result  *struct {
+        TmallSupplychainChannelProductUpshelfResultDto  *TmallSupplychainChannelProductUpshelfResultDto `json:"tmall_supplychain_channel_product_upshelf_result_dto,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallSupplychainChannelProductUpshelfResponse struct {
 

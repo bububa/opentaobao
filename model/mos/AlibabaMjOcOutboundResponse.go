@@ -12,8 +12,20 @@ alibaba.mj.oc.outbound
 */
 type AlibabaMjOcOutboundAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjOcOutboundResponse `json:"alibaba_mj_oc_outbound_response,omitempty"`
+    // Response *AlibabaMjOcOutboundResponse `json:"alibaba_mj_oc_outbound_response,omitempty"` 
+    AlibabaMjOcOutboundResponse
 }
+
+/* model for simplify = false
+type AlibabaMjOcOutboundResponse struct {
+
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjOcOutboundResponse struct {
 

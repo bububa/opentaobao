@@ -16,7 +16,7 @@ type TaobaoSimbaInsightWordssubdataGetRequest struct {
     model.Params
 
     // 关键词列表
-    bidwordList   []String 
+    bidwordList   []string 
 
     // 开始时间
     startDate   string 
@@ -45,13 +45,13 @@ func (r TaobaoSimbaInsightWordssubdataGetRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoSimbaInsightWordssubdataGetRequest) SetBidwordList(bidwordList []String) error {
+func (r *TaobaoSimbaInsightWordssubdataGetRequest) SetBidwordList(bidwordList []string) error {
     r.bidwordList = bidwordList
     r.Set("bidword_list", bidwordList)
     return nil
 }
 
-func (r TaobaoSimbaInsightWordssubdataGetRequest) GetBidwordList() []String {
+func (r TaobaoSimbaInsightWordssubdataGetRequest) GetBidwordList() []string {
     return r.bidwordList
 }
 

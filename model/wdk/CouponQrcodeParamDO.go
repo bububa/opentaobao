@@ -1,6 +1,38 @@
 package wdk
 
 // CouponQrcodeParamDO 
+/* model for simplify = false
+type CouponQrcodeParamDO struct {
+
+    // 导购员ID，需要保证唯一性
+    
+    GuideId   string `json:"guide_id,omitempty"`
+    
+
+    // 品牌名称
+    
+    BrandName   string `json:"brand_name,omitempty"`
+    
+
+    // 商家编码
+    
+    MerchantCode   string `json:"merchant_code,omitempty"`
+    
+
+    // 推广开始时间
+    
+    StartTime   string `json:"start_time,omitempty"`
+    
+
+    // 推广结束时间
+    
+    EndTime   string `json:"end_time,omitempty"`
+    
+
+}
+*/
+
+// CouponQrcodeParamDO 
 type CouponQrcodeParamDO struct {
 
     // 导购员ID，需要保证唯一性

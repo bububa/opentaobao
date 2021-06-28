@@ -12,8 +12,20 @@ taobao.qianniu.task.message.send
 */
 type TaobaoQianniuTaskMessageSendAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQianniuTaskMessageSendResponse `json:"taobao_qianniu_task_message_send_response,omitempty"`
+    // Response *TaobaoQianniuTaskMessageSendResponse `json:"qianniu_task_message_send_response,omitempty"` 
+    TaobaoQianniuTaskMessageSendResponse
 }
+
+/* model for simplify = false
+type TaobaoQianniuTaskMessageSendResponse struct {
+
+    // 是否成功
+    
+    Result   bool `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQianniuTaskMessageSendResponse struct {
 

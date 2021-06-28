@@ -12,8 +12,22 @@ tmall.traderate.feeds.get
 */
 type TmallTraderateFeedsGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallTraderateFeedsGetResponse `json:"tmall_traderate_feeds_get_response,omitempty"`
+    // Response *TmallTraderateFeedsGetResponse `json:"tmall_traderate_feeds_get_response,omitempty"` 
+    TmallTraderateFeedsGetResponse
 }
+
+/* model for simplify = false
+type TmallTraderateFeedsGetResponse struct {
+
+    // 返回评价信息
+    
+    TmallRateInfo  *struct {
+        TmallRateInfo  *TmallRateInfo `json:"tmall_rate_info,omitempty"`
+    } `json:"tmall_rate_info,omitempty"`
+    
+
+}
+*/
 
 type TmallTraderateFeedsGetResponse struct {
 

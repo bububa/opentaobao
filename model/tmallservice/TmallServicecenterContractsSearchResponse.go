@@ -12,8 +12,22 @@ tmall.servicecenter.contracts.search
 */
 type TmallServicecenterContractsSearchAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterContractsSearchResponse `json:"tmall_servicecenter_contracts_search_response,omitempty"`
+    // Response *TmallServicecenterContractsSearchResponse `json:"tmall_servicecenter_contracts_search_response,omitempty"` 
+    TmallServicecenterContractsSearchResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterContractsSearchResponse struct {
+
+    // 和同类服务包装类
+    
+    ServiceContractPacket  *struct {
+        ServiceContractPacket  *ServiceContractPacket `json:"service_contract_packet,omitempty"`
+    } `json:"service_contract_packet,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterContractsSearchResponse struct {
 

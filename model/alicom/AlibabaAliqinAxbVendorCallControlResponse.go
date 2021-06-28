@@ -12,8 +12,22 @@ alibaba.aliqin.axb.vendor.call.control
 */
 type AlibabaAliqinAxbVendorCallControlAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinAxbVendorCallControlResponse `json:"alibaba_aliqin_axb_vendor_call_control_response,omitempty"`
+    // Response *AlibabaAliqinAxbVendorCallControlResponse `json:"alibaba_aliqin_axb_vendor_call_control_response,omitempty"` 
+    AlibabaAliqinAxbVendorCallControlResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinAxbVendorCallControlResponse struct {
+
+    // 转呼控制接口响应
+    
+    Result  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinAxbVendorCallControlResponse struct {
 

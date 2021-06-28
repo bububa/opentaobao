@@ -42,8 +42,20 @@ tmall.item.shiptime.update
 */
 type TmallItemShiptimeUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TmallItemShiptimeUpdateResponse `json:"tmall_item_shiptime_update_response,omitempty"`
+    // Response *TmallItemShiptimeUpdateResponse `json:"tmall_item_shiptime_update_response,omitempty"` 
+    TmallItemShiptimeUpdateResponse
 }
+
+/* model for simplify = false
+type TmallItemShiptimeUpdateResponse struct {
+
+    // 被修改的商品ID
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallItemShiptimeUpdateResponse struct {
 

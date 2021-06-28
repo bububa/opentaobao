@@ -19,7 +19,7 @@ type AlibabaWdkItemCurrentpriceQueryRequest struct {
     shopId   int64 
 
     // sku编码列表
-    skuCodes   []String 
+    skuCodes   []string 
 
     // 渠道
     orderChannelCode   string 
@@ -55,13 +55,13 @@ func (r AlibabaWdkItemCurrentpriceQueryRequest) GetShopId() int64 {
     return r.shopId
 }
 
-func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetSkuCodes(skuCodes []String) error {
+func (r *AlibabaWdkItemCurrentpriceQueryRequest) SetSkuCodes(skuCodes []string) error {
     r.skuCodes = skuCodes
     r.Set("sku_codes", skuCodes)
     return nil
 }
 
-func (r AlibabaWdkItemCurrentpriceQueryRequest) GetSkuCodes() []String {
+func (r AlibabaWdkItemCurrentpriceQueryRequest) GetSkuCodes() []string {
     return r.skuCodes
 }
 

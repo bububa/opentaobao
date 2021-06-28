@@ -13,8 +13,22 @@ alibaba.taobao.wt.user.crowd
 */
 type AlibabaTaobaoWtUserCrowdAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaTaobaoWtUserCrowdResponse `json:"alibaba_taobao_wt_user_crowd_response,omitempty"`
+    // Response *AlibabaTaobaoWtUserCrowdResponse `json:"alibaba_taobao_wt_user_crowd_response,omitempty"` 
+    AlibabaTaobaoWtUserCrowdResponse
 }
+
+/* model for simplify = false
+type AlibabaTaobaoWtUserCrowdResponse struct {
+
+    // 接口结果
+    
+    Result  *struct {
+        CommonResult  *CommonResult `json:"common_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaTaobaoWtUserCrowdResponse struct {
 

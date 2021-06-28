@@ -11,11 +11,11 @@ taobao.simba.keyword.add
 
 （新）关键词更新相关接口
 */
-func TaobaoSimbaKeywordAdd(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordAddRequest, session string) (*simba.TaobaoSimbaKeywordAddResponse, error) {
+func TaobaoSimbaKeywordAdd(clt *core.SDKClient, req *simba.TaobaoSimbaKeywordAddRequest, session string) (*simba.TaobaoSimbaKeywordAddAPIResponse, error) {
     var resp simba.TaobaoSimbaKeywordAddAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

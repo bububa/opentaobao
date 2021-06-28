@@ -12,8 +12,22 @@ alibaba.aliqin.tcc.trade.identity.get
 */
 type AlibabaAliqinTccTradeIdentityGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAliqinTccTradeIdentityGetResponse `json:"alibaba_aliqin_tcc_trade_identity_get_response,omitempty"`
+    // Response *AlibabaAliqinTccTradeIdentityGetResponse `json:"alibaba_aliqin_tcc_trade_identity_get_response,omitempty"` 
+    AlibabaAliqinTccTradeIdentityGetResponse
 }
+
+/* model for simplify = false
+type AlibabaAliqinTccTradeIdentityGetResponse struct {
+
+    // 返回身份信息
+    
+    Result  *struct {
+        IdentityInfo  *IdentityInfo `json:"identity_info,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAliqinTccTradeIdentityGetResponse struct {
 

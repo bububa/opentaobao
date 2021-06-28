@@ -11,11 +11,11 @@ taobao.train.agent.change.agree.vtwo
 
 代理商同意改签接口服务
 */
-func TaobaoTrainAgentChangeAgreeVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentChangeAgreeVtwoRequest, session string) (*train.TaobaoTrainAgentChangeAgreeVtwoResponse, error) {
+func TaobaoTrainAgentChangeAgreeVtwo(clt *core.SDKClient, req *train.TaobaoTrainAgentChangeAgreeVtwoRequest, session string) (*train.TaobaoTrainAgentChangeAgreeVtwoAPIResponse, error) {
     var resp train.TaobaoTrainAgentChangeAgreeVtwoAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,30 @@ tmall.servicecenter.workcard.delivery
 */
 type TmallServicecenterWorkcardDeliveryAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardDeliveryResponse `json:"tmall_servicecenter_workcard_delivery_response,omitempty"`
+    // Response *TmallServicecenterWorkcardDeliveryResponse `json:"tmall_servicecenter_workcard_delivery_response,omitempty"` 
+    TmallServicecenterWorkcardDeliveryResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardDeliveryResponse struct {
+
+    // 是否成功
+    
+    MsgSuccess   bool `json:"msg_success,omitempty"`
+    
+
+    // 返回信息
+    
+    MsgCode   string `json:"msg_code,omitempty"`
+    
+
+    // 返回code
+    
+    MsgInfo   string `json:"msg_info,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardDeliveryResponse struct {
 

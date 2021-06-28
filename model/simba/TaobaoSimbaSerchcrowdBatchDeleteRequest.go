@@ -22,7 +22,7 @@ type TaobaoSimbaSerchcrowdBatchDeleteRequest struct {
     subNick   string 
 
     // 需要删除的人群id
-    adgroupCrowdIds   []Number 
+    adgroupCrowdIds   []int64 
 
 }
 
@@ -65,13 +65,13 @@ func (r TaobaoSimbaSerchcrowdBatchDeleteRequest) GetSubNick() string {
     return r.subNick
 }
 
-func (r *TaobaoSimbaSerchcrowdBatchDeleteRequest) SetAdgroupCrowdIds(adgroupCrowdIds []Number) error {
+func (r *TaobaoSimbaSerchcrowdBatchDeleteRequest) SetAdgroupCrowdIds(adgroupCrowdIds []int64) error {
     r.adgroupCrowdIds = adgroupCrowdIds
     r.Set("adgroup_crowd_ids", adgroupCrowdIds)
     return nil
 }
 
-func (r TaobaoSimbaSerchcrowdBatchDeleteRequest) GetAdgroupCrowdIds() []Number {
+func (r TaobaoSimbaSerchcrowdBatchDeleteRequest) GetAdgroupCrowdIds() []int64 {
     return r.adgroupCrowdIds
 }
 

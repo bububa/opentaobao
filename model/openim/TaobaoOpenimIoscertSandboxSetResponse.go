@@ -12,8 +12,20 @@ taobao.openim.ioscert.sandbox.set
 */
 type TaobaoOpenimIoscertSandboxSetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimIoscertSandboxSetResponse `json:"taobao_openim_ioscert_sandbox_set_response,omitempty"`
+    // Response *TaobaoOpenimIoscertSandboxSetResponse `json:"openim_ioscert_sandbox_set_response,omitempty"` 
+    TaobaoOpenimIoscertSandboxSetResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimIoscertSandboxSetResponse struct {
+
+    // 操作成功
+    
+    Code   string `json:"code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimIoscertSandboxSetResponse struct {
 

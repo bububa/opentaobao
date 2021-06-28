@@ -11,11 +11,11 @@ taobao.picture.update
 
 修改指定图片的图片名
 */
-func TaobaoPictureUpdate(clt *core.SDKClient, req *media.TaobaoPictureUpdateRequest, session string) (*media.TaobaoPictureUpdateResponse, error) {
+func TaobaoPictureUpdate(clt *core.SDKClient, req *media.TaobaoPictureUpdateRequest, session string) (*media.TaobaoPictureUpdateAPIResponse, error) {
     var resp media.TaobaoPictureUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

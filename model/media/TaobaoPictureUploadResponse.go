@@ -12,8 +12,22 @@ taobao.picture.upload
 */
 type TaobaoPictureUploadAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoPictureUploadResponse `json:"taobao_picture_upload_response,omitempty"`
+    // Response *TaobaoPictureUploadResponse `json:"picture_upload_response,omitempty"` 
+    TaobaoPictureUploadResponse
 }
+
+/* model for simplify = false
+type TaobaoPictureUploadResponse struct {
+
+    // 当前上传的一张图片信息
+    
+    Picture  *struct {
+        Picture  *Picture `json:"picture,omitempty"`
+    } `json:"picture,omitempty"`
+    
+
+}
+*/
 
 type TaobaoPictureUploadResponse struct {
 

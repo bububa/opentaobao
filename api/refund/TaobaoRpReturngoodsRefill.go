@@ -11,11 +11,11 @@ taobao.rp.returngoods.refill
 
 卖家收到货物回填物流信息，如果买家已经回填物流信息，则接口报错，目前仅支持天猫订单。
 */
-func TaobaoRpReturngoodsRefill(clt *core.SDKClient, req *refund.TaobaoRpReturngoodsRefillRequest, session string) (*refund.TaobaoRpReturngoodsRefillResponse, error) {
+func TaobaoRpReturngoodsRefill(clt *core.SDKClient, req *refund.TaobaoRpReturngoodsRefillRequest, session string) (*refund.TaobaoRpReturngoodsRefillAPIResponse, error) {
     var resp refund.TaobaoRpReturngoodsRefillAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

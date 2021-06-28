@@ -22,7 +22,7 @@ type TaobaoItemPropimgUploadRequest struct {
     properties   string 
 
     // 属性图片内容。类型:JPG,GIF;图片大小不超过:3M
-    image   []byte 
+    image   []*model.File 
 
     // 属性图片ID。如果是新增不需要填写
     id   int64 
@@ -71,13 +71,13 @@ func (r TaobaoItemPropimgUploadRequest) GetProperties() string {
     return r.properties
 }
 
-func (r *TaobaoItemPropimgUploadRequest) SetImage(image []byte) error {
+func (r *TaobaoItemPropimgUploadRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoItemPropimgUploadRequest) GetImage() []byte {
+func (r TaobaoItemPropimgUploadRequest) GetImage() []*model.File {
     return r.image
 }
 

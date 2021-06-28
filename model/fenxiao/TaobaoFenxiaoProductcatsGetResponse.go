@@ -12,8 +12,27 @@ taobao.fenxiao.productcats.get
 */
 type TaobaoFenxiaoProductcatsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductcatsGetResponse `json:"taobao_fenxiao_productcats_get_response,omitempty"`
+    // Response *TaobaoFenxiaoProductcatsGetResponse `json:"fenxiao_productcats_get_response,omitempty"` 
+    TaobaoFenxiaoProductcatsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductcatsGetResponse struct {
+
+    // 查询结果记录数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 产品线列表。返回 ProductCat 包含的字段信息。
+    
+    Productcats  struct {
+        ProductCat  []ProductCat `json:"product_cat,omitempty"`
+    } `json:"productcats,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoProductcatsGetResponse struct {
 

@@ -12,8 +12,20 @@ cainiao.smartdelivery.strategy.warehouse.i.delete
 */
 type CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoSmartdeliveryStrategyWarehouseIDeleteResponse `json:"cainiao_smartdelivery_strategy_warehouse_i_delete_response,omitempty"`
+    // Response *CainiaoSmartdeliveryStrategyWarehouseIDeleteResponse `json:"cainiao_smartdelivery_strategy_warehouse_i_delete_response,omitempty"` 
+    CainiaoSmartdeliveryStrategyWarehouseIDeleteResponse
 }
+
+/* model for simplify = false
+type CainiaoSmartdeliveryStrategyWarehouseIDeleteResponse struct {
+
+    // data
+    
+    IsDeleteSuccess   bool `json:"is_delete_success,omitempty"`
+    
+
+}
+*/
 
 type CainiaoSmartdeliveryStrategyWarehouseIDeleteResponse struct {
 

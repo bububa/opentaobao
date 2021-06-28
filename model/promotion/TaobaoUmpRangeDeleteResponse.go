@@ -12,8 +12,20 @@ taobao.ump.range.delete
 */
 type TaobaoUmpRangeDeleteAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoUmpRangeDeleteResponse `json:"taobao_ump_range_delete_response,omitempty"`
+    // Response *TaobaoUmpRangeDeleteResponse `json:"ump_range_delete_response,omitempty"` 
+    TaobaoUmpRangeDeleteResponse
 }
+
+/* model for simplify = false
+type TaobaoUmpRangeDeleteResponse struct {
+
+    // 调用是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoUmpRangeDeleteResponse struct {
 

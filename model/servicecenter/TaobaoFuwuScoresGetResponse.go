@@ -12,8 +12,22 @@ taobao.fuwu.scores.get
 */
 type TaobaoFuwuScoresGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFuwuScoresGetResponse `json:"taobao_fuwu_scores_get_response,omitempty"`
+    // Response *TaobaoFuwuScoresGetResponse `json:"fuwu_scores_get_response,omitempty"` 
+    TaobaoFuwuScoresGetResponse
 }
+
+/* model for simplify = false
+type TaobaoFuwuScoresGetResponse struct {
+
+    // 评价流水记录
+    
+    ScoreResult  struct {
+        ScoreResult  []ScoreResult `json:"score_result,omitempty"`
+    } `json:"score_result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFuwuScoresGetResponse struct {
 

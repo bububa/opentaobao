@@ -12,8 +12,22 @@ alibaba.isv.digitalsms.createtemplate
 */
 type AlibabaIsvDigitalsmsCreatetemplateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIsvDigitalsmsCreatetemplateResponse `json:"alibaba_isv_digitalsms_createtemplate_response,omitempty"`
+    // Response *AlibabaIsvDigitalsmsCreatetemplateResponse `json:"alibaba_isv_digitalsms_createtemplate_response,omitempty"` 
+    AlibabaIsvDigitalsmsCreatetemplateResponse
 }
+
+/* model for simplify = false
+type AlibabaIsvDigitalsmsCreatetemplateResponse struct {
+
+    // 返回值
+    
+    Result  *struct {
+        AlibabaIsvDigitalsmsCreatetemplateResult  *AlibabaIsvDigitalsmsCreatetemplateResult `json:"alibaba_isv_digitalsms_createtemplate_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIsvDigitalsmsCreatetemplateResponse struct {
 

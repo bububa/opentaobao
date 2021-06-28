@@ -19,7 +19,7 @@ type TaobaoTaeBookBillGetRequest struct {
     bid   int64 
 
     // 需要返回的字段:参见BookBill结构体
-    fields   []String 
+    fields   []string 
 
     // 虚拟账户流水编号
     id   int64 
@@ -58,13 +58,13 @@ func (r TaobaoTaeBookBillGetRequest) GetBid() int64 {
     return r.bid
 }
 
-func (r *TaobaoTaeBookBillGetRequest) SetFields(fields []String) error {
+func (r *TaobaoTaeBookBillGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TaobaoTaeBookBillGetRequest) GetFields() []String {
+func (r TaobaoTaeBookBillGetRequest) GetFields() []string {
     return r.fields
 }
 

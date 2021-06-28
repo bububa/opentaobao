@@ -12,8 +12,30 @@ taobao.alitrip.car.order.confirm
 */
 type TaobaoAlitripCarOrderConfirmAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripCarOrderConfirmResponse `json:"taobao_alitrip_car_order_confirm_response,omitempty"`
+    // Response *TaobaoAlitripCarOrderConfirmResponse `json:"alitrip_car_order_confirm_response,omitempty"` 
+    TaobaoAlitripCarOrderConfirmResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripCarOrderConfirmResponse struct {
+
+    // 错误码
+    
+    MessageCode   int64 `json:"message_code,omitempty"`
+    
+
+    // 其它数据
+    
+    Data   string `json:"data,omitempty"`
+    
+
+    // 错误信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripCarOrderConfirmResponse struct {
 

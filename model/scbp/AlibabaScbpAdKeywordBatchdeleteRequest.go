@@ -16,7 +16,7 @@ type AlibabaScbpAdKeywordBatchdeleteRequest struct {
     model.Params
 
     // 关键词Id列表
-    keywordIdList   []Number 
+    keywordIdList   []int64 
 
 }
 
@@ -39,13 +39,13 @@ func (r AlibabaScbpAdKeywordBatchdeleteRequest) GetApiParams() url.Values {
 }
 
 
-func (r *AlibabaScbpAdKeywordBatchdeleteRequest) SetKeywordIdList(keywordIdList []Number) error {
+func (r *AlibabaScbpAdKeywordBatchdeleteRequest) SetKeywordIdList(keywordIdList []int64) error {
     r.keywordIdList = keywordIdList
     r.Set("keyword_id_list", keywordIdList)
     return nil
 }
 
-func (r AlibabaScbpAdKeywordBatchdeleteRequest) GetKeywordIdList() []Number {
+func (r AlibabaScbpAdKeywordBatchdeleteRequest) GetKeywordIdList() []int64 {
     return r.keywordIdList
 }
 

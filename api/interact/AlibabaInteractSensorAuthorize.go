@@ -11,11 +11,11 @@ alibaba.interact.sensor.authorize
 
 客户端授权页
 */
-func AlibabaInteractSensorAuthorize(clt *core.SDKClient, req *interact.AlibabaInteractSensorAuthorizeRequest, session string) (*interact.AlibabaInteractSensorAuthorizeResponse, error) {
+func AlibabaInteractSensorAuthorize(clt *core.SDKClient, req *interact.AlibabaInteractSensorAuthorizeRequest, session string) (*interact.AlibabaInteractSensorAuthorizeAPIResponse, error) {
     var resp interact.AlibabaInteractSensorAuthorizeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

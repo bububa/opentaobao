@@ -11,11 +11,11 @@ taobao.wangwang.abstract.getwordlist
 
 获取关键词列表，只支持json返回
 */
-func TaobaoWangwangAbstractGetwordlist(clt *core.SDKClient, req *wangwang.TaobaoWangwangAbstractGetwordlistRequest, session string) (*wangwang.TaobaoWangwangAbstractGetwordlistResponse, error) {
+func TaobaoWangwangAbstractGetwordlist(clt *core.SDKClient, req *wangwang.TaobaoWangwangAbstractGetwordlistRequest, session string) (*wangwang.TaobaoWangwangAbstractGetwordlistAPIResponse, error) {
     var resp wangwang.TaobaoWangwangAbstractGetwordlistAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

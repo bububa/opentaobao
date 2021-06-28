@@ -12,8 +12,20 @@ alibaba.scbp.ad.account.balance.get
 */
 type AlibabaScbpAdAccountBalanceGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdAccountBalanceGetResponse `json:"alibaba_scbp_ad_account_balance_get_response,omitempty"`
+    // Response *AlibabaScbpAdAccountBalanceGetResponse `json:"alibaba_scbp_ad_account_balance_get_response,omitempty"` 
+    AlibabaScbpAdAccountBalanceGetResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdAccountBalanceGetResponse struct {
+
+    // result
+    
+    Balance   string `json:"balance,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdAccountBalanceGetResponse struct {
 

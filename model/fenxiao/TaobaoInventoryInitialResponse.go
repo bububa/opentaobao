@@ -13,8 +13,22 @@ taobao.inventory.initial
 */
 type TaobaoInventoryInitialAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoInventoryInitialResponse `json:"taobao_inventory_initial_response,omitempty"`
+    // Response *TaobaoInventoryInitialResponse `json:"inventory_initial_response,omitempty"` 
+    TaobaoInventoryInitialResponse
 }
+
+/* model for simplify = false
+type TaobaoInventoryInitialResponse struct {
+
+    // 提示信息
+    
+    TipInfos  struct {
+        TipInfo  []TipInfo `json:"tip_info,omitempty"`
+    } `json:"tip_infos,omitempty"`
+    
+
+}
+*/
 
 type TaobaoInventoryInitialResponse struct {
 

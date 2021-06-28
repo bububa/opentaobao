@@ -12,8 +12,22 @@ alibaba.wt.cif.coop.osstoken.get
 */
 type AlibabaWtCifCoopOsstokenGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWtCifCoopOsstokenGetResponse `json:"alibaba_wt_cif_coop_osstoken_get_response,omitempty"`
+    // Response *AlibabaWtCifCoopOsstokenGetResponse `json:"alibaba_wt_cif_coop_osstoken_get_response,omitempty"` 
+    AlibabaWtCifCoopOsstokenGetResponse
 }
+
+/* model for simplify = false
+type AlibabaWtCifCoopOsstokenGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        OssTokenGetResult  *OssTokenGetResult `json:"oss_token_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWtCifCoopOsstokenGetResponse struct {
 

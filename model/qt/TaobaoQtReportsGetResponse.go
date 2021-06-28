@@ -12,8 +12,22 @@ taobao.qt.reports.get
 */
 type TaobaoQtReportsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQtReportsGetResponse `json:"taobao_qt_reports_get_response,omitempty"`
+    // Response *TaobaoQtReportsGetResponse `json:"qt_reports_get_response,omitempty"` 
+    TaobaoQtReportsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoQtReportsGetResponse struct {
+
+    // 质检报告列表
+    
+    Reports  struct {
+        QtReport  []QtReport `json:"qt_report,omitempty"`
+    } `json:"reports,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQtReportsGetResponse struct {
 

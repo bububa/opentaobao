@@ -11,11 +11,11 @@ alibaba.alink.device.unbind
 
 阿里智能解绑设备
 */
-func AlibabaAlinkDeviceUnbind(clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnbindRequest, session string) (*alink.AlibabaAlinkDeviceUnbindResponse, error) {
+func AlibabaAlinkDeviceUnbind(clt *core.SDKClient, req *alink.AlibabaAlinkDeviceUnbindRequest, session string) (*alink.AlibabaAlinkDeviceUnbindAPIResponse, error) {
     var resp alink.AlibabaAlinkDeviceUnbindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

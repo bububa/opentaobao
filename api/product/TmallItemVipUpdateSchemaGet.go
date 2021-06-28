@@ -11,11 +11,11 @@ tmall.item.vip.update.schema.get
 
 获取vip商家编辑商品的规则
 */
-func TmallItemVipUpdateSchemaGet(clt *core.SDKClient, req *product.TmallItemVipUpdateSchemaGetRequest, session string) (*product.TmallItemVipUpdateSchemaGetResponse, error) {
+func TmallItemVipUpdateSchemaGet(clt *core.SDKClient, req *product.TmallItemVipUpdateSchemaGetRequest, session string) (*product.TmallItemVipUpdateSchemaGetAPIResponse, error) {
     var resp product.TmallItemVipUpdateSchemaGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

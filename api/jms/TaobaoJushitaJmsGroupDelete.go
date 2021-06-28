@@ -11,11 +11,11 @@ taobao.jushita.jms.group.delete
 
 删除ONS分组
 */
-func TaobaoJushitaJmsGroupDelete(clt *core.SDKClient, req *jms.TaobaoJushitaJmsGroupDeleteRequest, session string) (*jms.TaobaoJushitaJmsGroupDeleteResponse, error) {
+func TaobaoJushitaJmsGroupDelete(clt *core.SDKClient, req *jms.TaobaoJushitaJmsGroupDeleteRequest, session string) (*jms.TaobaoJushitaJmsGroupDeleteAPIResponse, error) {
     var resp jms.TaobaoJushitaJmsGroupDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,27 @@ taobao.caipiao.lotterytypes.get
 */
 type TaobaoCaipiaoLotterytypesGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCaipiaoLotterytypesGetResponse `json:"taobao_caipiao_lotterytypes_get_response,omitempty"`
+    // Response *TaobaoCaipiaoLotterytypesGetResponse `json:"caipiao_lotterytypes_get_response,omitempty"` 
+    TaobaoCaipiaoLotterytypesGetResponse
 }
+
+/* model for simplify = false
+type TaobaoCaipiaoLotterytypesGetResponse struct {
+
+    // 彩种个数
+    
+    TotalResults   int64 `json:"total_results,omitempty"`
+    
+
+    // 彩种的数据结构
+    
+    Results  struct {
+        LotteryType  []LotteryType `json:"lottery_type,omitempty"`
+    } `json:"results,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCaipiaoLotterytypesGetResponse struct {
 

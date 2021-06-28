@@ -11,11 +11,11 @@ taobao.tmc.messages.produce
 
 批量发送消息
 */
-func TaobaoTmcMessagesProduce(clt *core.SDKClient, req *tmc.TaobaoTmcMessagesProduceRequest, session string) (*tmc.TaobaoTmcMessagesProduceResponse, error) {
+func TaobaoTmcMessagesProduce(clt *core.SDKClient, req *tmc.TaobaoTmcMessagesProduceRequest, session string) (*tmc.TaobaoTmcMessagesProduceAPIResponse, error) {
     var resp tmc.TaobaoTmcMessagesProduceAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

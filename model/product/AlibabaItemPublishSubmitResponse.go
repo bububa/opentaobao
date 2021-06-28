@@ -12,8 +12,30 @@ alibaba.item.publish.submit
 */
 type AlibabaItemPublishSubmitAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaItemPublishSubmitResponse `json:"alibaba_item_publish_submit_response,omitempty"`
+    // Response *AlibabaItemPublishSubmitResponse `json:"alibaba_item_publish_submit_response,omitempty"` 
+    AlibabaItemPublishSubmitResponse
 }
+
+/* model for simplify = false
+type AlibabaItemPublishSubmitResponse struct {
+
+    // 商品创建时间
+    
+    CreateTime   string `json:"create_time,omitempty"`
+    
+
+    // 商品ID
+    
+    ItemId   int64 `json:"item_id,omitempty"`
+    
+
+    // 商品所属市场
+    
+    Market   string `json:"market,omitempty"`
+    
+
+}
+*/
 
 type AlibabaItemPublishSubmitResponse struct {
 

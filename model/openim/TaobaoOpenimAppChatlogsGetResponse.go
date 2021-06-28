@@ -12,8 +12,22 @@ taobao.openim.app.chatlogs.get
 */
 type TaobaoOpenimAppChatlogsGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoOpenimAppChatlogsGetResponse `json:"taobao_openim_app_chatlogs_get_response,omitempty"`
+    // Response *TaobaoOpenimAppChatlogsGetResponse `json:"openim_app_chatlogs_get_response,omitempty"` 
+    TaobaoOpenimAppChatlogsGetResponse
 }
+
+/* model for simplify = false
+type TaobaoOpenimAppChatlogsGetResponse struct {
+
+    // 查询结果
+    
+    Result  *struct {
+        EsMessageResult  *EsMessageResult `json:"es_message_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoOpenimAppChatlogsGetResponse struct {
 

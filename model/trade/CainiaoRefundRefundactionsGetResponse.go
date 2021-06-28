@@ -12,8 +12,22 @@ cainiao.refund.refundactions.get
 */
 type CainiaoRefundRefundactionsGetAPIResponse struct {
     model.CommonResponse
-    Response *CainiaoRefundRefundactionsGetResponse `json:"cainiao_refund_refundactions_get_response,omitempty"`
+    // Response *CainiaoRefundRefundactionsGetResponse `json:"cainiao_refund_refundactions_get_response,omitempty"` 
+    CainiaoRefundRefundactionsGetResponse
 }
+
+/* model for simplify = false
+type CainiaoRefundRefundactionsGetResponse struct {
+
+    // 返回结果对象
+    
+    Result  *struct {
+        CainiaoRefundRefundactionsGetBizResult  *CainiaoRefundRefundactionsGetBizResult `json:"cainiao_refund_refundactions_get_biz_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type CainiaoRefundRefundactionsGetResponse struct {
 

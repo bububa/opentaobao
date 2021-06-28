@@ -12,8 +12,22 @@ taobao.deg.user.gamegift.query
 */
 type TaobaoDegUserGamegiftQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoDegUserGamegiftQueryResponse `json:"taobao_deg_user_gamegift_query_response,omitempty"`
+    // Response *TaobaoDegUserGamegiftQueryResponse `json:"deg_user_gamegift_query_response,omitempty"` 
+    TaobaoDegUserGamegiftQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoDegUserGamegiftQueryResponse struct {
+
+    // 礼包信息
+    
+    Records  struct {
+        GameGiftRecordDto  []GameGiftRecordDto `json:"game_gift_record_dto,omitempty"`
+    } `json:"records,omitempty"`
+    
+
+}
+*/
 
 type TaobaoDegUserGamegiftQueryResponse struct {
 

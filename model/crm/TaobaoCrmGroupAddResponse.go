@@ -12,8 +12,25 @@ taobao.crm.group.add
 */
 type TaobaoCrmGroupAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoCrmGroupAddResponse `json:"taobao_crm_group_add_response,omitempty"`
+    // Response *TaobaoCrmGroupAddResponse `json:"crm_group_add_response,omitempty"` 
+    TaobaoCrmGroupAddResponse
 }
+
+/* model for simplify = false
+type TaobaoCrmGroupAddResponse struct {
+
+    // 添加分组是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+    // 新增分组的id
+    
+    GroupId   int64 `json:"group_id,omitempty"`
+    
+
+}
+*/
 
 type TaobaoCrmGroupAddResponse struct {
 

@@ -11,11 +11,11 @@ tmall.mallitemcenter.supplier.price.upload
 
 天猫服务商上传服务价格
 */
-func TmallMallitemcenterSupplierPriceUpload(clt *core.SDKClient, req *tmallservice.TmallMallitemcenterSupplierPriceUploadRequest, session string) (*tmallservice.TmallMallitemcenterSupplierPriceUploadResponse, error) {
+func TmallMallitemcenterSupplierPriceUpload(clt *core.SDKClient, req *tmallservice.TmallMallitemcenterSupplierPriceUploadRequest, session string) (*tmallservice.TmallMallitemcenterSupplierPriceUploadAPIResponse, error) {
     var resp tmallservice.TmallMallitemcenterSupplierPriceUploadAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

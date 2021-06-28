@@ -11,11 +11,11 @@ alitrip.tripvp.agent.order.get
 
 【国际机票】查询辅营订单详情
 */
-func AlitripTripvpAgentOrderGet(clt *core.SDKClient, req *flight.AlitripTripvpAgentOrderGetRequest, session string) (*flight.AlitripTripvpAgentOrderGetResponse, error) {
+func AlitripTripvpAgentOrderGet(clt *core.SDKClient, req *flight.AlitripTripvpAgentOrderGetRequest, session string) (*flight.AlitripTripvpAgentOrderGetAPIResponse, error) {
     var resp flight.AlitripTripvpAgentOrderGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

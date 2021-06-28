@@ -11,11 +11,11 @@ alibaba.mj.mos.fund.modifybillbankaccount
 
 修改付款单的银行账户信息
 */
-func AlibabaMjMosFundModifybillbankaccount(clt *core.SDKClient, req *mos.AlibabaMjMosFundModifybillbankaccountRequest, session string) (*mos.AlibabaMjMosFundModifybillbankaccountResponse, error) {
+func AlibabaMjMosFundModifybillbankaccount(clt *core.SDKClient, req *mos.AlibabaMjMosFundModifybillbankaccountRequest, session string) (*mos.AlibabaMjMosFundModifybillbankaccountAPIResponse, error) {
     var resp mos.AlibabaMjMosFundModifybillbankaccountAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

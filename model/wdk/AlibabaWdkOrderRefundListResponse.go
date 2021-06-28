@@ -12,8 +12,22 @@ alibaba.wdk.order.refund.list
 */
 type AlibabaWdkOrderRefundListAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkOrderRefundListResponse `json:"alibaba_wdk_order_refund_list_response,omitempty"`
+    // Response *AlibabaWdkOrderRefundListResponse `json:"alibaba_wdk_order_refund_list_response,omitempty"` 
+    AlibabaWdkOrderRefundListResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkOrderRefundListResponse struct {
+
+    // 结果内容
+    
+    Result  *struct {
+        OrderSyncRefundListResult  *OrderSyncRefundListResult `json:"order_sync_refund_list_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkOrderRefundListResponse struct {
 

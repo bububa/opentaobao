@@ -11,11 +11,11 @@ taobao.region.warehouse.manage
 
 编辑仓库覆盖范围
 */
-func TaobaoRegionWarehouseManage(clt *core.SDKClient, req *fenxiao.TaobaoRegionWarehouseManageRequest, session string) (*fenxiao.TaobaoRegionWarehouseManageResponse, error) {
+func TaobaoRegionWarehouseManage(clt *core.SDKClient, req *fenxiao.TaobaoRegionWarehouseManageRequest, session string) (*fenxiao.TaobaoRegionWarehouseManageAPIResponse, error) {
     var resp fenxiao.TaobaoRegionWarehouseManageAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

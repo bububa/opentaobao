@@ -20,7 +20,7 @@ type TaobaoLogisticsOnlineConfirmRequest struct {
     tid   int64 
 
     // 拆单子订单列表，对应的数据是：子订单号的列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集
-    subTid   []Number 
+    subTid   []int64 
 
     // 表明是否是拆单，默认值0，1表示拆单
     isSplit   int64 
@@ -62,13 +62,13 @@ func (r TaobaoLogisticsOnlineConfirmRequest) GetTid() int64 {
     return r.tid
 }
 
-func (r *TaobaoLogisticsOnlineConfirmRequest) SetSubTid(subTid []Number) error {
+func (r *TaobaoLogisticsOnlineConfirmRequest) SetSubTid(subTid []int64) error {
     r.subTid = subTid
     r.Set("sub_tid", subTid)
     return nil
 }
 
-func (r TaobaoLogisticsOnlineConfirmRequest) GetSubTid() []Number {
+func (r TaobaoLogisticsOnlineConfirmRequest) GetSubTid() []int64 {
     return r.subTid
 }
 

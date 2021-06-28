@@ -11,11 +11,11 @@ taobao.qimen.items.synchronize
 
 ERP调用奇门的接口,批量同步商品信息给WMS
 */
-func TaobaoQimenItemsSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenItemsSynchronizeRequest, session string) (*qimen.TaobaoQimenItemsSynchronizeResponse, error) {
+func TaobaoQimenItemsSynchronize(clt *core.SDKClient, req *qimen.TaobaoQimenItemsSynchronizeRequest, session string) (*qimen.TaobaoQimenItemsSynchronizeAPIResponse, error) {
     var resp qimen.TaobaoQimenItemsSynchronizeAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

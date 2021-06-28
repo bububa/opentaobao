@@ -12,8 +12,22 @@ taobao.recycle.ofnpreredpacket.tpdeductsuccess
 */
 type TaobaoRecycleOfnpreredpacketTpdeductsuccessAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoRecycleOfnpreredpacketTpdeductsuccessResponse `json:"taobao_recycle_ofnpreredpacket_tpdeductsuccess_response,omitempty"`
+    // Response *TaobaoRecycleOfnpreredpacketTpdeductsuccessResponse `json:"recycle_ofnpreredpacket_tpdeductsuccess_response,omitempty"` 
+    TaobaoRecycleOfnpreredpacketTpdeductsuccessResponse
 }
+
+/* model for simplify = false
+type TaobaoRecycleOfnpreredpacketTpdeductsuccessResponse struct {
+
+    // 操作
+    
+    Data  *struct {
+        OfnPreRedPacketActionDTO  *OfnPreRedPacketActionDTO `json:"ofn_pre_red_packet_action_dto,omitempty"`
+    } `json:"data,omitempty"`
+    
+
+}
+*/
 
 type TaobaoRecycleOfnpreredpacketTpdeductsuccessResponse struct {
 

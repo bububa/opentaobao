@@ -12,8 +12,22 @@ wdk.wms.pick.medicine.query
 */
 type WdkWmsPickMedicineQueryAPIResponse struct {
     model.CommonResponse
-    Response *WdkWmsPickMedicineQueryResponse `json:"wdk_wms_pick_medicine_query_response,omitempty"`
+    // Response *WdkWmsPickMedicineQueryResponse `json:"wdk_wms_pick_medicine_query_response,omitempty"` 
+    WdkWmsPickMedicineQueryResponse
 }
+
+/* model for simplify = false
+type WdkWmsPickMedicineQueryResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        WdkWmsPickMedicineQueryResult  *WdkWmsPickMedicineQueryResult `json:"wdk_wms_pick_medicine_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type WdkWmsPickMedicineQueryResponse struct {
 

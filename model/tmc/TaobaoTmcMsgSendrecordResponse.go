@@ -12,8 +12,35 @@ taobao.tmc.msg.sendrecord
 */
 type TaobaoTmcMsgSendrecordAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcMsgSendrecordResponse `json:"taobao_tmc_msg_sendrecord_response,omitempty"`
+    // Response *TaobaoTmcMsgSendrecordResponse `json:"tmc_msg_sendrecord_response,omitempty"` 
+    TaobaoTmcMsgSendrecordResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcMsgSendrecordResponse struct {
+
+    // tmc发送次数
+    
+    TmcSendTimes   int64 `json:"tmc_send_times,omitempty"`
+    
+
+    // 淘宝发送测试
+    
+    TbSendTimes   int64 `json:"tb_send_times,omitempty"`
+    
+
+    // 淘宝发送时间
+    
+    TbSendList   string `json:"tb_send_list,omitempty"`
+    
+
+    // TMC发送时间
+    
+    TmcSendList   string `json:"tmc_send_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcMsgSendrecordResponse struct {
 

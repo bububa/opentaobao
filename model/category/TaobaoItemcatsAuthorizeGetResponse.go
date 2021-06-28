@@ -12,8 +12,22 @@ taobao.itemcats.authorize.get
 */
 type TaobaoItemcatsAuthorizeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemcatsAuthorizeGetResponse `json:"taobao_itemcats_authorize_get_response,omitempty"`
+    // Response *TaobaoItemcatsAuthorizeGetResponse `json:"itemcats_authorize_get_response,omitempty"` 
+    TaobaoItemcatsAuthorizeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemcatsAuthorizeGetResponse struct {
+
+    // 里面有3个数组：<br/>Brand[]品牌列表,<br/>ItemCat[] 类目列表<br/>XinpinItemCat[] 针对于C卖家新品类目列表
+    
+    SellerAuthorize  *struct {
+        SellerAuthorize  *SellerAuthorize `json:"seller_authorize,omitempty"`
+    } `json:"seller_authorize,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemcatsAuthorizeGetResponse struct {
 

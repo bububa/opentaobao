@@ -11,11 +11,11 @@ taobao.vmarket.eticket.codes.get
 
 查询某个订单的所有码的列表
 */
-func TaobaoVmarketEticketCodesGet(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketCodesGetRequest, session string) (*eticket.TaobaoVmarketEticketCodesGetResponse, error) {
+func TaobaoVmarketEticketCodesGet(clt *core.SDKClient, req *eticket.TaobaoVmarketEticketCodesGetRequest, session string) (*eticket.TaobaoVmarketEticketCodesGetAPIResponse, error) {
     var resp eticket.TaobaoVmarketEticketCodesGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,20 @@ taobao.wireless.bunting.shop.shorturl.create
 */
 type TaobaoWirelessBuntingShopShorturlCreateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWirelessBuntingShopShorturlCreateResponse `json:"taobao_wireless_bunting_shop_shorturl_create_response,omitempty"`
+    // Response *TaobaoWirelessBuntingShopShorturlCreateResponse `json:"wireless_bunting_shop_shorturl_create_response,omitempty"` 
+    TaobaoWirelessBuntingShopShorturlCreateResponse
 }
+
+/* model for simplify = false
+type TaobaoWirelessBuntingShopShorturlCreateResponse struct {
+
+    // 短链
+    
+    Shorturl   string `json:"shorturl,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWirelessBuntingShopShorturlCreateResponse struct {
 

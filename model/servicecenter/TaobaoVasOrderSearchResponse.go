@@ -12,8 +12,27 @@ taobao.vas.order.search
 */
 type TaobaoVasOrderSearchAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoVasOrderSearchResponse `json:"taobao_vas_order_search_response,omitempty"`
+    // Response *TaobaoVasOrderSearchResponse `json:"vas_order_search_response,omitempty"` 
+    TaobaoVasOrderSearchResponse
 }
+
+/* model for simplify = false
+type TaobaoVasOrderSearchResponse struct {
+
+    // 商品订单对象
+    
+    ArticleBizOrders  struct {
+        ArticleBizOrder  []ArticleBizOrder `json:"article_biz_order,omitempty"`
+    } `json:"article_biz_orders,omitempty"`
+    
+
+    // 总记录数
+    
+    TotalItem   int64 `json:"total_item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoVasOrderSearchResponse struct {
 

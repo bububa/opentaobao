@@ -85,7 +85,7 @@ type TaobaoFenxiaoProductAddRequest struct {
     picPath   string 
 
     // 产品主图，大小不超过500k，格式为gif,jpg,jpeg,png,bmp等图片
-    image   []byte 
+    image   []*model.File 
 
     // 产品属性，格式为pid:vid;pid:vid
     properties   string 
@@ -377,13 +377,13 @@ func (r TaobaoFenxiaoProductAddRequest) GetPicPath() string {
     return r.picPath
 }
 
-func (r *TaobaoFenxiaoProductAddRequest) SetImage(image []byte) error {
+func (r *TaobaoFenxiaoProductAddRequest) SetImage(image []*model.File) error {
     r.image = image
     r.Set("image", image)
     return nil
 }
 
-func (r TaobaoFenxiaoProductAddRequest) GetImage() []byte {
+func (r TaobaoFenxiaoProductAddRequest) GetImage() []*model.File {
     return r.image
 }
 

@@ -11,11 +11,11 @@ alibaba.wdk.marketing.buygift.item.remove.async
 
 批量删除买赠商品
 */
-func AlibabaWdkMarketingBuygiftItemRemoveAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingBuygiftItemRemoveAsyncRequest, session string) (*wdk.AlibabaWdkMarketingBuygiftItemRemoveAsyncResponse, error) {
+func AlibabaWdkMarketingBuygiftItemRemoveAsync(clt *core.SDKClient, req *wdk.AlibabaWdkMarketingBuygiftItemRemoveAsyncRequest, session string) (*wdk.AlibabaWdkMarketingBuygiftItemRemoveAsyncAPIResponse, error) {
     var resp wdk.AlibabaWdkMarketingBuygiftItemRemoveAsyncAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -12,8 +12,20 @@ taobao.tmc.user.cancel
 */
 type TaobaoTmcUserCancelAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTmcUserCancelResponse `json:"taobao_tmc_user_cancel_response,omitempty"`
+    // Response *TaobaoTmcUserCancelResponse `json:"tmc_user_cancel_response,omitempty"` 
+    TaobaoTmcUserCancelResponse
 }
+
+/* model for simplify = false
+type TaobaoTmcUserCancelResponse struct {
+
+    // 是否成功,如果为false并且没有错误码，表示删除的用户不存在。
+    
+    IsSuccess   bool `json:"is_success,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTmcUserCancelResponse struct {
 

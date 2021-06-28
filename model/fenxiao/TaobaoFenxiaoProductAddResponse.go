@@ -12,8 +12,25 @@ taobao.fenxiao.product.add
 */
 type TaobaoFenxiaoProductAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoFenxiaoProductAddResponse `json:"taobao_fenxiao_product_add_response,omitempty"`
+    // Response *TaobaoFenxiaoProductAddResponse `json:"fenxiao_product_add_response,omitempty"` 
+    TaobaoFenxiaoProductAddResponse
 }
+
+/* model for simplify = false
+type TaobaoFenxiaoProductAddResponse struct {
+
+    // 产品ID
+    
+    Pid   int64 `json:"pid,omitempty"`
+    
+
+    // 产品创建时间 时间格式：yyyy-MM-dd HH:mm:ss
+    
+    Created   string `json:"created,omitempty"`
+    
+
+}
+*/
 
 type TaobaoFenxiaoProductAddResponse struct {
 

@@ -16,7 +16,7 @@ type TaobaoPictureDeleteRequest struct {
     model.Params
 
     // 图片ID字符串,可以一个也可以一组,用英文逗号间隔,如450,120,155.限制数量是100
-    pictureIds   []String 
+    pictureIds   []string 
 
 }
 
@@ -39,13 +39,13 @@ func (r TaobaoPictureDeleteRequest) GetApiParams() url.Values {
 }
 
 
-func (r *TaobaoPictureDeleteRequest) SetPictureIds(pictureIds []String) error {
+func (r *TaobaoPictureDeleteRequest) SetPictureIds(pictureIds []string) error {
     r.pictureIds = pictureIds
     r.Set("picture_ids", pictureIds)
     return nil
 }
 
-func (r TaobaoPictureDeleteRequest) GetPictureIds() []String {
+func (r TaobaoPictureDeleteRequest) GetPictureIds() []string {
     return r.pictureIds
 }
 

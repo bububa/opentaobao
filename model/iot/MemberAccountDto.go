@@ -1,6 +1,33 @@
 package iot
 
 // MemberAccountDto 
+/* model for simplify = false
+type MemberAccountDto struct {
+
+    // 等级名称
+    
+    GradeName   string `json:"grade_name,omitempty"`
+    
+
+    // 等级编号
+    
+    Grade   int64 `json:"grade,omitempty"`
+    
+
+    // gmtCreate
+    
+    GmtCreate   string `json:"gmt_create,omitempty"`
+    
+
+    // bindStatus 1：绑卡（已经是线下会员线上未绑定，或者解绑后再绑定），2：注册
+    
+    BindStatus   int64 `json:"bind_status,omitempty"`
+    
+
+}
+*/
+
+// MemberAccountDto 
 type MemberAccountDto struct {
 
     // 等级名称

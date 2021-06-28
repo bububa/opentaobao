@@ -12,8 +12,22 @@ taobao.inventory.store.manage
 */
 type TaobaoInventoryStoreManageAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoInventoryStoreManageResponse `json:"taobao_inventory_store_manage_response,omitempty"`
+    // Response *TaobaoInventoryStoreManageResponse `json:"inventory_store_manage_response,omitempty"` 
+    TaobaoInventoryStoreManageResponse
 }
+
+/* model for simplify = false
+type TaobaoInventoryStoreManageResponse struct {
+
+    // 返回结果
+    
+    StoreList  struct {
+        Store  []Store `json:"store,omitempty"`
+    } `json:"store_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoInventoryStoreManageResponse struct {
 

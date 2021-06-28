@@ -12,8 +12,20 @@ alibaba.icbu.category.id.mapping
 */
 type AlibabaIcbuCategoryIdMappingAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaIcbuCategoryIdMappingResponse `json:"alibaba_icbu_category_id_mapping_response,omitempty"`
+    // Response *AlibabaIcbuCategoryIdMappingResponse `json:"alibaba_icbu_category_id_mapping_response,omitempty"` 
+    AlibabaIcbuCategoryIdMappingResponse
 }
+
+/* model for simplify = false
+type AlibabaIcbuCategoryIdMappingResponse struct {
+
+    // 转化的类目id
+    
+    MappingResult   int64 `json:"mapping_result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaIcbuCategoryIdMappingResponse struct {
 

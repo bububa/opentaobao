@@ -12,8 +12,22 @@ alibaba.wdk.bm.paiyang.stat.data.query
 */
 type AlibabaWdkBmPaiyangStatDataQueryAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkBmPaiyangStatDataQueryResponse `json:"alibaba_wdk_bm_paiyang_stat_data_query_response,omitempty"`
+    // Response *AlibabaWdkBmPaiyangStatDataQueryResponse `json:"alibaba_wdk_bm_paiyang_stat_data_query_response,omitempty"` 
+    AlibabaWdkBmPaiyangStatDataQueryResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkBmPaiyangStatDataQueryResponse struct {
+
+    // 出参对象
+    
+    Result  *struct {
+        BmPageResult  *BmPageResult `json:"bm_page_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkBmPaiyangStatDataQueryResponse struct {
 

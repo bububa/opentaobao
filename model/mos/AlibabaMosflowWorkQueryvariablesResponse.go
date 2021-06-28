@@ -12,8 +12,22 @@ alibaba.mosflow.work.queryvariables
 */
 type AlibabaMosflowWorkQueryvariablesAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMosflowWorkQueryvariablesResponse `json:"alibaba_mosflow_work_queryvariables_response,omitempty"`
+    // Response *AlibabaMosflowWorkQueryvariablesResponse `json:"alibaba_mosflow_work_queryvariables_response,omitempty"` 
+    AlibabaMosflowWorkQueryvariablesResponse
 }
+
+/* model for simplify = false
+type AlibabaMosflowWorkQueryvariablesResponse struct {
+
+    // result
+    
+    Result  *struct {
+        MultiResult  *MultiResult `json:"multi_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMosflowWorkQueryvariablesResponse struct {
 

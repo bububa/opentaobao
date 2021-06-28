@@ -12,8 +12,22 @@ alitrip.hotel.search.list.get
 */
 type AlitripHotelSearchListGetAPIResponse struct {
     model.CommonResponse
-    Response *AlitripHotelSearchListGetResponse `json:"alitrip_hotel_search_list_get_response,omitempty"`
+    // Response *AlitripHotelSearchListGetResponse `json:"alitrip_hotel_search_list_get_response,omitempty"` 
+    AlitripHotelSearchListGetResponse
 }
+
+/* model for simplify = false
+type AlitripHotelSearchListGetResponse struct {
+
+    // result
+    
+    Result  *struct {
+        AlitripHotelSearchListGetResult  *AlitripHotelSearchListGetResult `json:"alitrip_hotel_search_list_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlitripHotelSearchListGetResponse struct {
 

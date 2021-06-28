@@ -11,11 +11,11 @@ taobao.place.store.tags.update
 
 门店打标去标
 */
-func TaobaoPlaceStoreTagsUpdate(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreTagsUpdateRequest, session string) (*alsc.TaobaoPlaceStoreTagsUpdateResponse, error) {
+func TaobaoPlaceStoreTagsUpdate(clt *core.SDKClient, req *alsc.TaobaoPlaceStoreTagsUpdateRequest, session string) (*alsc.TaobaoPlaceStoreTagsUpdateAPIResponse, error) {
     var resp alsc.TaobaoPlaceStoreTagsUpdateAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

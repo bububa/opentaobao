@@ -11,11 +11,11 @@ cainiao.smartdelivery.strategy.warehouse.i.delete
 
 删除智能发货引擎仓策略
 */
-func CainiaoSmartdeliveryStrategyWarehouseIDelete(clt *core.SDKClient, req *waybill.CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest, session string) (*waybill.CainiaoSmartdeliveryStrategyWarehouseIDeleteResponse, error) {
+func CainiaoSmartdeliveryStrategyWarehouseIDelete(clt *core.SDKClient, req *waybill.CainiaoSmartdeliveryStrategyWarehouseIDeleteRequest, session string) (*waybill.CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse, error) {
     var resp waybill.CainiaoSmartdeliveryStrategyWarehouseIDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

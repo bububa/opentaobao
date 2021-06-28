@@ -43,7 +43,7 @@ type TmallDisputeReceiveGetRequest struct {
     endModified   string 
 
     // 需要返回的字段。目前支持有：refund_id, alipay_no, tid, buyer_nick, seller_nick, status, created, modified, order_status, refund_fee, good_status, show_return_logistic(展现买家退货的物流信息), show_exchange_logistic(展现换货的物流信息), time_out, oid, refund_version, title, num, dispute_request, reason, desc
-    fields   []String 
+    fields   []string 
 
 }
 
@@ -156,13 +156,13 @@ func (r TmallDisputeReceiveGetRequest) GetEndModified() string {
     return r.endModified
 }
 
-func (r *TmallDisputeReceiveGetRequest) SetFields(fields []String) error {
+func (r *TmallDisputeReceiveGetRequest) SetFields(fields []string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
-func (r TmallDisputeReceiveGetRequest) GetFields() []String {
+func (r TmallDisputeReceiveGetRequest) GetFields() []string {
     return r.fields
 }
 

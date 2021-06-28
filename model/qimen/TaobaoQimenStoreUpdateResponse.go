@@ -12,8 +12,30 @@ taobao.qimen.store.update
 */
 type TaobaoQimenStoreUpdateAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenStoreUpdateResponse `json:"taobao_qimen_store_update_response,omitempty"`
+    // Response *TaobaoQimenStoreUpdateResponse `json:"qimen_store_update_response,omitempty"` 
+    TaobaoQimenStoreUpdateResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenStoreUpdateResponse struct {
+
+    // 响应信息
+    
+    Message   string `json:"message,omitempty"`
+    
+
+    // 响应标示
+    
+    Flag   string `json:"flag,omitempty"`
+    
+
+    // 响应编码
+    
+    QimenCode   string `json:"qimen_code,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenStoreUpdateResponse struct {
 

@@ -12,8 +12,22 @@ taobao.alitrip.travel.item.new.query
 */
 type TaobaoAlitripTravelItemNewQueryAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoAlitripTravelItemNewQueryResponse `json:"taobao_alitrip_travel_item_new_query_response,omitempty"`
+    // Response *TaobaoAlitripTravelItemNewQueryResponse `json:"alitrip_travel_item_new_query_response,omitempty"` 
+    TaobaoAlitripTravelItemNewQueryResponse
 }
+
+/* model for simplify = false
+type TaobaoAlitripTravelItemNewQueryResponse struct {
+
+    // 商品查询结果
+    
+    TravelItem  *struct {
+        FullTravelItem  *FullTravelItem `json:"full_travel_item,omitempty"`
+    } `json:"travel_item,omitempty"`
+    
+
+}
+*/
 
 type TaobaoAlitripTravelItemNewQueryResponse struct {
 

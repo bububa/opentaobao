@@ -12,8 +12,22 @@ alipay.baoxian.claim.returngoodsstatus.update
 */
 type AlipayBaoxianClaimReturngoodsstatusUpdateAPIResponse struct {
     model.CommonResponse
-    Response *AlipayBaoxianClaimReturngoodsstatusUpdateResponse `json:"alipay_baoxian_claim_returngoodsstatus_update_response,omitempty"`
+    // Response *AlipayBaoxianClaimReturngoodsstatusUpdateResponse `json:"alipay_baoxian_claim_returngoodsstatus_update_response,omitempty"` 
+    AlipayBaoxianClaimReturngoodsstatusUpdateResponse
 }
+
+/* model for simplify = false
+type AlipayBaoxianClaimReturngoodsstatusUpdateResponse struct {
+
+    // result
+    
+    Result  *struct {
+        MtopResult  *MtopResult `json:"mtop_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlipayBaoxianClaimReturngoodsstatusUpdateResponse struct {
 

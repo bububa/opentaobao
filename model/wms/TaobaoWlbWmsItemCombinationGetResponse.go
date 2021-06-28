@@ -12,8 +12,22 @@ taobao.wlb.wms.item.combination.get
 */
 type TaobaoWlbWmsItemCombinationGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoWlbWmsItemCombinationGetResponse `json:"taobao_wlb_wms_item_combination_get_response,omitempty"`
+    // Response *TaobaoWlbWmsItemCombinationGetResponse `json:"wlb_wms_item_combination_get_response,omitempty"` 
+    TaobaoWlbWmsItemCombinationGetResponse
 }
+
+/* model for simplify = false
+type TaobaoWlbWmsItemCombinationGetResponse struct {
+
+    // 接口返回结果
+    
+    Result  *struct {
+        TaobaoWlbWmsItemCombinationGetResult  *TaobaoWlbWmsItemCombinationGetResult `json:"taobao_wlb_wms_item_combination_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TaobaoWlbWmsItemCombinationGetResponse struct {
 

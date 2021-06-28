@@ -12,8 +12,20 @@ alibaba.scbp.ad.campaign.create
 */
 type AlibabaScbpAdCampaignCreateAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdCampaignCreateResponse `json:"alibaba_scbp_ad_campaign_create_response,omitempty"`
+    // Response *AlibabaScbpAdCampaignCreateResponse `json:"alibaba_scbp_ad_campaign_create_response,omitempty"` 
+    AlibabaScbpAdCampaignCreateResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdCampaignCreateResponse struct {
+
+    // 计划id
+    
+    Result   int64 `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdCampaignCreateResponse struct {
 

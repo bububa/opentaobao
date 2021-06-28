@@ -11,11 +11,11 @@ taobao.ailab.aicloud.top.device.openid.unbind
 
 openTaoBaoId解绑设备
 */
-func TaobaoAilabAicloudTopDeviceOpenidUnbind(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceOpenidUnbindRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceOpenidUnbindResponse, error) {
+func TaobaoAilabAicloudTopDeviceOpenidUnbind(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopDeviceOpenidUnbindRequest, session string) (*iot.TaobaoAilabAicloudTopDeviceOpenidUnbindAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopDeviceOpenidUnbindAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

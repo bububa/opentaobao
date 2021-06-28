@@ -12,8 +12,22 @@ WMS调用奇门的接口,在仓库出库单后, 把SN信息回传给ERP
 */
 type TaobaoQimenSnReportAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoQimenSnReportResponse `json:"taobao_qimen_sn_report_response,omitempty"`
+    // Response *TaobaoQimenSnReportResponse `json:"qimen_sn_report_response,omitempty"` 
+    TaobaoQimenSnReportResponse
 }
+
+/* model for simplify = false
+type TaobaoQimenSnReportResponse struct {
+
+    // 
+    
+    Response  *struct {
+        Response  *Response `json:"response,omitempty"`
+    } `json:"response,omitempty"`
+    
+
+}
+*/
 
 type TaobaoQimenSnReportResponse struct {
 

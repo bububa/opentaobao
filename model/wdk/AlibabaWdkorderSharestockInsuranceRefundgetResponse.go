@@ -12,8 +12,22 @@ alibaba.wdkorder.sharestock.insurance.refundget
 */
 type AlibabaWdkorderSharestockInsuranceRefundgetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkorderSharestockInsuranceRefundgetResponse `json:"alibaba_wdkorder_sharestock_insurance_refundget_response,omitempty"`
+    // Response *AlibabaWdkorderSharestockInsuranceRefundgetResponse `json:"alibaba_wdkorder_sharestock_insurance_refundget_response,omitempty"` 
+    AlibabaWdkorderSharestockInsuranceRefundgetResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkorderSharestockInsuranceRefundgetResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        MaochaoOrderInsuranceRefundQueryResult  *MaochaoOrderInsuranceRefundQueryResult `json:"maochao_order_insurance_refund_query_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkorderSharestockInsuranceRefundgetResponse struct {
 

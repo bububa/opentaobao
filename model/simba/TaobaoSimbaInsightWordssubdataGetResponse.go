@@ -12,8 +12,22 @@ taobao.simba.insight.wordssubdata.get
 */
 type TaobaoSimbaInsightWordssubdataGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoSimbaInsightWordssubdataGetResponse `json:"taobao_simba_insight_wordssubdata_get_response,omitempty"`
+    // Response *TaobaoSimbaInsightWordssubdataGetResponse `json:"simba_insight_wordssubdata_get_response,omitempty"` 
+    TaobaoSimbaInsightWordssubdataGetResponse
 }
+
+/* model for simplify = false
+type TaobaoSimbaInsightWordssubdataGetResponse struct {
+
+    // 关键词按流量细分的数据
+    
+    WordSubdataList  struct {
+        InsightWordSubDataDTO  []InsightWordSubDataDTO `json:"insight_word_sub_data_dto,omitempty"`
+    } `json:"word_subdata_list,omitempty"`
+    
+
+}
+*/
 
 type TaobaoSimbaInsightWordssubdataGetResponse struct {
 

@@ -12,8 +12,22 @@ alibaba.kclub.kc.qa.get
 */
 type AlibabaKclubKcQaGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaKclubKcQaGetResponse `json:"alibaba_kclub_kc_qa_get_response,omitempty"`
+    // Response *AlibabaKclubKcQaGetResponse `json:"alibaba_kclub_kc_qa_get_response,omitempty"` 
+    AlibabaKclubKcQaGetResponse
 }
+
+/* model for simplify = false
+type AlibabaKclubKcQaGetResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        AlibabaKclubKcQaGetResult  *AlibabaKclubKcQaGetResult `json:"alibaba_kclub_kc_qa_get_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaKclubKcQaGetResponse struct {
 

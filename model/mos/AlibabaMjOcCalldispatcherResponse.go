@@ -12,8 +12,22 @@ alibaba.mj.oc.calldispatcher
 */
 type AlibabaMjOcCalldispatcherAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjOcCalldispatcherResponse `json:"alibaba_mj_oc_calldispatcher_response,omitempty"`
+    // Response *AlibabaMjOcCalldispatcherResponse `json:"alibaba_mj_oc_calldispatcher_response,omitempty"` 
+    AlibabaMjOcCalldispatcherResponse
 }
+
+/* model for simplify = false
+type AlibabaMjOcCalldispatcherResponse struct {
+
+    // result
+    
+    Result  *struct {
+        ResultDO  *ResultDO `json:"result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjOcCalldispatcherResponse struct {
 

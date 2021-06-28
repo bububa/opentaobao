@@ -12,8 +12,22 @@ tmall.servicecenter.workcard.verifycode.resend
 */
 type TmallServicecenterWorkcardVerifycodeResendAPIResponse struct {
     model.CommonResponse
-    Response *TmallServicecenterWorkcardVerifycodeResendResponse `json:"tmall_servicecenter_workcard_verifycode_resend_response,omitempty"`
+    // Response *TmallServicecenterWorkcardVerifycodeResendResponse `json:"tmall_servicecenter_workcard_verifycode_resend_response,omitempty"` 
+    TmallServicecenterWorkcardVerifycodeResendResponse
 }
+
+/* model for simplify = false
+type TmallServicecenterWorkcardVerifycodeResendResponse struct {
+
+    // 调用结果
+    
+    Result  *struct {
+        TmallServicecenterWorkcardVerifycodeResendResult  *TmallServicecenterWorkcardVerifycodeResendResult `json:"tmall_servicecenter_workcard_verifycode_resend_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallServicecenterWorkcardVerifycodeResendResponse struct {
 

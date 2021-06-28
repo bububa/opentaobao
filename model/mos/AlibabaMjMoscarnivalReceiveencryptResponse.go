@@ -12,8 +12,22 @@ alibaba.mj.moscarnival.receiveencrypt
 */
 type AlibabaMjMoscarnivalReceiveencryptAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaMjMoscarnivalReceiveencryptResponse `json:"alibaba_mj_moscarnival_receiveencrypt_response,omitempty"`
+    // Response *AlibabaMjMoscarnivalReceiveencryptResponse `json:"alibaba_mj_moscarnival_receiveencrypt_response,omitempty"` 
+    AlibabaMjMoscarnivalReceiveencryptResponse
 }
+
+/* model for simplify = false
+type AlibabaMjMoscarnivalReceiveencryptResponse struct {
+
+    // 返回结果
+    
+    Result  *struct {
+        AlibabaMjMoscarnivalReceiveencryptResultDo  *AlibabaMjMoscarnivalReceiveencryptResultDo `json:"alibaba_mj_moscarnival_receiveencrypt_result_do,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaMjMoscarnivalReceiveencryptResponse struct {
 

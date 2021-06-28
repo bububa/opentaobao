@@ -16,7 +16,7 @@ type AlibabaScbpAdCampaignFindCampaignEffectRequest struct {
     model.Params
 
     // 计划id集合
-    campaignIdList   []Number 
+    campaignIdList   []int64 
 
     // 开始时间
     beginDate   string 
@@ -48,13 +48,13 @@ func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetApiParams() url.Value
 }
 
 
-func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetCampaignIdList(campaignIdList []Number) error {
+func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetCampaignIdList(campaignIdList []int64) error {
     r.campaignIdList = campaignIdList
     r.Set("campaign_id_list", campaignIdList)
     return nil
 }
 
-func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetCampaignIdList() []Number {
+func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetCampaignIdList() []int64 {
     return r.campaignIdList
 }
 

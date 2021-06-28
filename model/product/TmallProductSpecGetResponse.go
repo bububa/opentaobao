@@ -12,8 +12,22 @@ tmall.product.spec.get
 */
 type TmallProductSpecGetAPIResponse struct {
     model.CommonResponse
-    Response *TmallProductSpecGetResponse `json:"tmall_product_spec_get_response,omitempty"`
+    // Response *TmallProductSpecGetResponse `json:"tmall_product_spec_get_response,omitempty"` 
+    TmallProductSpecGetResponse
 }
+
+/* model for simplify = false
+type TmallProductSpecGetResponse struct {
+
+    // 返回的产品规格信息，注意，这个产品规格信息可能是等待审核的，不一定可用。根据状态判断1：表示审核通过<br/>3：表示等待审核。
+    
+    ProductSpec  *struct {
+        ProductSpec  *ProductSpec `json:"product_spec,omitempty"`
+    } `json:"product_spec,omitempty"`
+    
+
+}
+*/
 
 type TmallProductSpecGetResponse struct {
 

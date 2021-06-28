@@ -12,8 +12,20 @@ taobao.time.get
 */
 type TaobaoTimeGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTimeGetResponse `json:"taobao_time_get_response,omitempty"`
+    // Response *TaobaoTimeGetResponse `json:"time_get_response,omitempty"` 
+    TaobaoTimeGetResponse
 }
+
+/* model for simplify = false
+type TaobaoTimeGetResponse struct {
+
+    // 淘宝系统当前时间。格式:yyyy-MM-dd HH:mm:ss
+    
+    Time   string `json:"time,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTimeGetResponse struct {
 

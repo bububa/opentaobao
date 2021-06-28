@@ -12,8 +12,20 @@ slb.aliyuncs.com.SetLoadBalancerName.2013-02-21
 */
 type SlbAliyuncsComSetLoadBalancerName2013-02-21APIResponse struct {
     model.CommonResponse
-    Response *SlbAliyuncsComSetLoadBalancerName2013-02-21Response `json:"slb_aliyuncs_com_SetLoadBalancerName_2013-02-21_response,omitempty"`
+    // Response *SlbAliyuncsComSetLoadBalancerName2013-02-21Response `json:"slb_aliyuncs_com_SetLoadBalancerName_2013-02-21_response,omitempty"` 
+    SlbAliyuncsComSetLoadBalancerName2013-02-21Response
 }
+
+/* model for simplify = false
+type SlbAliyuncsComSetLoadBalancerName2013-02-21Response struct {
+
+    // request id
+    
+    Requestid   string `json:"requestid,omitempty"`
+    
+
+}
+*/
 
 type SlbAliyuncsComSetLoadBalancerName2013-02-21Response struct {
 

@@ -11,11 +11,11 @@ taobao.tvpay.order.query
 
 tv支付查询订单状态
 */
-func TaobaoTvpayOrderQuery(clt *core.SDKClient, req *tvpay.TaobaoTvpayOrderQueryRequest, session string) (*tvpay.TaobaoTvpayOrderQueryResponse, error) {
+func TaobaoTvpayOrderQuery(clt *core.SDKClient, req *tvpay.TaobaoTvpayOrderQueryRequest, session string) (*tvpay.TaobaoTvpayOrderQueryAPIResponse, error) {
     var resp tvpay.TaobaoTvpayOrderQueryAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

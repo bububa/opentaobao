@@ -13,8 +13,22 @@ taobao.items.seller.list.get
 */
 type TaobaoItemsSellerListGetAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoItemsSellerListGetResponse `json:"taobao_items_seller_list_get_response,omitempty"`
+    // Response *TaobaoItemsSellerListGetResponse `json:"items_seller_list_get_response,omitempty"` 
+    TaobaoItemsSellerListGetResponse
 }
+
+/* model for simplify = false
+type TaobaoItemsSellerListGetResponse struct {
+
+    // 商品详细信息列表
+    
+    Items  struct {
+        Item  []Item `json:"item,omitempty"`
+    } `json:"items,omitempty"`
+    
+
+}
+*/
 
 type TaobaoItemsSellerListGetResponse struct {
 

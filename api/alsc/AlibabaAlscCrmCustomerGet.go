@@ -11,11 +11,11 @@ alibaba.alsc.crm.customer.get
 
 查询顾客详情
 */
-func AlibabaAlscCrmCustomerGet(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerGetRequest, session string) (*alsc.AlibabaAlscCrmCustomerGetResponse, error) {
+func AlibabaAlscCrmCustomerGet(clt *core.SDKClient, req *alsc.AlibabaAlscCrmCustomerGetRequest, session string) (*alsc.AlibabaAlscCrmCustomerGetAPIResponse, error) {
     var resp alsc.AlibabaAlscCrmCustomerGetAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

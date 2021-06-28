@@ -11,11 +11,11 @@ taobao.ailab.aicloud.top.like.delete
 
 取消收藏
 */
-func TaobaoAilabAicloudTopLikeDelete(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopLikeDeleteRequest, session string) (*iot.TaobaoAilabAicloudTopLikeDeleteResponse, error) {
+func TaobaoAilabAicloudTopLikeDelete(clt *core.SDKClient, req *iot.TaobaoAilabAicloudTopLikeDeleteRequest, session string) (*iot.TaobaoAilabAicloudTopLikeDeleteAPIResponse, error) {
     var resp iot.TaobaoAilabAicloudTopLikeDeleteAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

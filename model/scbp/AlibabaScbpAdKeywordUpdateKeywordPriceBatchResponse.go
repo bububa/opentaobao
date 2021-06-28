@@ -12,8 +12,22 @@ alibaba.scbp.ad.keyword.update.keyword.price.batch
 */
 type AlibabaScbpAdKeywordUpdateKeywordPriceBatchAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaScbpAdKeywordUpdateKeywordPriceBatchResponse `json:"alibaba_scbp_ad_keyword_update_keyword_price_batch_response,omitempty"`
+    // Response *AlibabaScbpAdKeywordUpdateKeywordPriceBatchResponse `json:"alibaba_scbp_ad_keyword_update_keyword_price_batch_response,omitempty"` 
+    AlibabaScbpAdKeywordUpdateKeywordPriceBatchResponse
 }
+
+/* model for simplify = false
+type AlibabaScbpAdKeywordUpdateKeywordPriceBatchResponse struct {
+
+    // 错误信息集合
+    
+    ResultList  struct {
+        ErrorKeyword  []ErrorKeyword `json:"error_keyword,omitempty"`
+    } `json:"result_list,omitempty"`
+    
+
+}
+*/
 
 type AlibabaScbpAdKeywordUpdateKeywordPriceBatchResponse struct {
 

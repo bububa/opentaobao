@@ -12,8 +12,22 @@ alibaba.wdk.coupon.abandon
 */
 type AlibabaWdkCouponAbandonAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaWdkCouponAbandonResponse `json:"alibaba_wdk_coupon_abandon_response,omitempty"`
+    // Response *AlibabaWdkCouponAbandonResponse `json:"alibaba_wdk_coupon_abandon_response,omitempty"` 
+    AlibabaWdkCouponAbandonResponse
 }
+
+/* model for simplify = false
+type AlibabaWdkCouponAbandonResponse struct {
+
+    // 结果
+    
+    Result  *struct {
+        AlibabaWdkCouponAbandonApiResult  *AlibabaWdkCouponAbandonApiResult `json:"alibaba_wdk_coupon_abandon_api_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaWdkCouponAbandonResponse struct {
 

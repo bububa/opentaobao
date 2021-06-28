@@ -1,6 +1,30 @@
 package wdk
 
 // WdkOpenPurchasePrice 
+/* model for simplify = false
+type WdkOpenPurchasePrice struct {
+
+    // 经营店id，必填
+    
+    StoreId   string `json:"store_id,omitempty"`
+    
+
+    // 淘系主订单号，必填
+    
+    TbOrderId   string `json:"tb_order_id,omitempty"`
+    
+
+    // 子单信息
+    
+    WdkOpenPurchasePriceSubs  struct {
+        Wdkopenpurchasepricesubs  []Wdkopenpurchasepricesubs `json:"wdkopenpurchasepricesubs,omitempty"`
+    } `json:"wdk_open_purchase_price_subs,omitempty"`
+    
+
+}
+*/
+
+// WdkOpenPurchasePrice 
 type WdkOpenPurchasePrice struct {
 
     // 经营店id，必填

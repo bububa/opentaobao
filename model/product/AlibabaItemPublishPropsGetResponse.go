@@ -12,8 +12,20 @@ alibaba.item.publish.props.get
 */
 type AlibabaItemPublishPropsGetAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaItemPublishPropsGetResponse `json:"alibaba_item_publish_props_get_response,omitempty"`
+    // Response *AlibabaItemPublishPropsGetResponse `json:"alibaba_item_publish_props_get_response,omitempty"` 
+    AlibabaItemPublishPropsGetResponse
 }
+
+/* model for simplify = false
+type AlibabaItemPublishPropsGetResponse struct {
+
+    // 商品发布规则信息，XML格式.
+    
+    Result   string `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaItemPublishPropsGetResponse struct {
 

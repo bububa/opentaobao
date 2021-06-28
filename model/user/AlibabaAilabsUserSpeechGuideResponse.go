@@ -12,8 +12,22 @@ alibaba.ailabs.user.speech.guide
 */
 type AlibabaAilabsUserSpeechGuideAPIResponse struct {
     model.CommonResponse
-    Response *AlibabaAilabsUserSpeechGuideResponse `json:"alibaba_ailabs_user_speech_guide_response,omitempty"`
+    // Response *AlibabaAilabsUserSpeechGuideResponse `json:"alibaba_ailabs_user_speech_guide_response,omitempty"` 
+    AlibabaAilabsUserSpeechGuideResponse
 }
+
+/* model for simplify = false
+type AlibabaAilabsUserSpeechGuideResponse struct {
+
+    // 接口返回model
+    
+    Result  *struct {
+        AlibabaAilabsUserSpeechGuideResult  *AlibabaAilabsUserSpeechGuideResult `json:"alibaba_ailabs_user_speech_guide_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type AlibabaAilabsUserSpeechGuideResponse struct {
 

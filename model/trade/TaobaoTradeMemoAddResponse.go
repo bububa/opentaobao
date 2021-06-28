@@ -12,8 +12,22 @@ taobao.trade.memo.add
 */
 type TaobaoTradeMemoAddAPIResponse struct {
     model.CommonResponse
-    Response *TaobaoTradeMemoAddResponse `json:"taobao_trade_memo_add_response,omitempty"`
+    // Response *TaobaoTradeMemoAddResponse `json:"trade_memo_add_response,omitempty"` 
+    TaobaoTradeMemoAddResponse
 }
+
+/* model for simplify = false
+type TaobaoTradeMemoAddResponse struct {
+
+    // 对一笔交易添加备注后返回其对应的Trade，Trade中可用的返回字段有tid和created
+    
+    Trade  *struct {
+        Trade  *Trade `json:"trade,omitempty"`
+    } `json:"trade,omitempty"`
+    
+
+}
+*/
 
 type TaobaoTradeMemoAddResponse struct {
 

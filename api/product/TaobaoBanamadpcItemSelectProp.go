@@ -11,11 +11,11 @@ taobao.banamadpc.item.select.prop
 
 巴拿马供应商通过此接口获取子属性
 */
-func TaobaoBanamadpcItemSelectProp(clt *core.SDKClient, req *product.TaobaoBanamadpcItemSelectPropRequest, session string) (*product.TaobaoBanamadpcItemSelectPropResponse, error) {
+func TaobaoBanamadpcItemSelectProp(clt *core.SDKClient, req *product.TaobaoBanamadpcItemSelectPropRequest, session string) (*product.TaobaoBanamadpcItemSelectPropAPIResponse, error) {
     var resp product.TaobaoBanamadpcItemSelectPropAPIResponse
     err := clt.Post(req, &resp, session)
     if err != nil {
         return nil, err
     }
-    return resp.Response, nil
+    return &resp, nil
 }

@@ -1,6 +1,28 @@
 package wdk
 
 // MedicineItemDo 
+/* model for simplify = false
+type MedicineItemDo struct {
+
+    // 数量
+    
+    Count   int64 `json:"count,omitempty"`
+    
+
+    // sku名称
+    
+    SkuTitle   string `json:"sku_title,omitempty"`
+    
+
+    // sku编码
+    
+    SkuCode   string `json:"sku_code,omitempty"`
+    
+
+}
+*/
+
+// MedicineItemDo 
 type MedicineItemDo struct {
 
     // 数量

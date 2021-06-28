@@ -12,8 +12,22 @@ tmall.traceplatform.cts.order.stop
 */
 type TmallTraceplatformCtsOrderStopAPIResponse struct {
     model.CommonResponse
-    Response *TmallTraceplatformCtsOrderStopResponse `json:"tmall_traceplatform_cts_order_stop_response,omitempty"`
+    // Response *TmallTraceplatformCtsOrderStopResponse `json:"tmall_traceplatform_cts_order_stop_response,omitempty"` 
+    TmallTraceplatformCtsOrderStopResponse
 }
+
+/* model for simplify = false
+type TmallTraceplatformCtsOrderStopResponse struct {
+
+    // result
+    
+    Result  *struct {
+        DataResult  *DataResult `json:"data_result,omitempty"`
+    } `json:"result,omitempty"`
+    
+
+}
+*/
 
 type TmallTraceplatformCtsOrderStopResponse struct {
 
