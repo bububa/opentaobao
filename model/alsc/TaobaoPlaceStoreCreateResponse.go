@@ -14,16 +14,8 @@ taobao.place.store.create
 */
 type TaobaoPlaceStoreCreateAPIResponse struct {
     model.CommonResponse
-    TaobaoPlaceStoreCreateResponse
-}
-
-type TaobaoPlaceStoreCreateResponse struct {
-    XMLName xml.Name `xml:"place_store_create_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"place_store_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    StoreId   int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
-
-    
-}
+    StoreId   int64 `json:"store_id,omitempty" xml:"

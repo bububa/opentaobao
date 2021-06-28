@@ -14,16 +14,8 @@ alibaba.lsy.miniapp.user.get
 */
 type AlibabaLsyMiniappUserGetAPIResponse struct {
     model.CommonResponse
-    AlibabaLsyMiniappUserGetResponse
-}
-
-type AlibabaLsyMiniappUserGetResponse struct {
-    XMLName xml.Name `xml:"alibaba_lsy_miniapp_user_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_lsy_miniapp_user_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应内容
     
-    Result   *MiniAppResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *MiniAppResult `json:"result,omitempty" xml:"

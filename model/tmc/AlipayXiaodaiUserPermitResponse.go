@@ -14,16 +14,8 @@ alipay.xiaodai.user.permit
 */
 type AlipayXiaodaiUserPermitAPIResponse struct {
     model.CommonResponse
-    AlipayXiaodaiUserPermitResponse
-}
-
-type AlipayXiaodaiUserPermitResponse struct {
-    XMLName xml.Name `xml:"alipay_xiaodai_user_permit_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alipay_xiaodai_user_permit_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-}
+    IsSuccess   bool `json:"is_success,omitempty" xml:"

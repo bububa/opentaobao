@@ -14,16 +14,8 @@ alibaba.wdk.pos.trade.create
 */
 type AlibabaWdkPosTradeCreateAPIResponse struct {
     model.CommonResponse
-    AlibabaWdkPosTradeCreateResponse
-}
-
-type AlibabaWdkPosTradeCreateResponse struct {
-    XMLName xml.Name `xml:"alibaba_wdk_pos_trade_create_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdk_pos_trade_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 创单结果
     
-    Result   *FastBuyPosCreateResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *FastBuyPosCreateResult `json:"result,omitempty" xml:"

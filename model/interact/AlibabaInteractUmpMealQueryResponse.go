@@ -14,16 +14,8 @@ alibaba.interact.ump.meal.query
 */
 type AlibabaInteractUmpMealQueryAPIResponse struct {
     model.CommonResponse
-    AlibabaInteractUmpMealQueryResponse
-}
-
-type AlibabaInteractUmpMealQueryResponse struct {
-    XMLName xml.Name `xml:"alibaba_interact_ump_meal_query_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_interact_ump_meal_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 优惠平台搭配套餐对象
     
-    Meals   []OpenMealDo `json:"meals,omitempty" xml:"meals>open_meal_do,omitempty"`
-    
-    
-}
+    Meals   []OpenMealDo `json:"meals,omitempty" xml:"

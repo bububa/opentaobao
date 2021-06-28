@@ -14,16 +14,8 @@ alitrip.grouptour.product.upload
 */
 type AlitripGrouptourProductUploadAPIResponse struct {
     model.CommonResponse
-    AlitripGrouptourProductUploadResponse
-}
-
-type AlitripGrouptourProductUploadResponse struct {
-    XMLName xml.Name `xml:"alitrip_grouptour_product_upload_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_grouptour_product_upload_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // firstResult
     
-    FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"first_result,omitempty"`
-
-    
-}
+    FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"

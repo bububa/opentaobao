@@ -14,16 +14,8 @@ taobao.tmc.user.permit
 */
 type TaobaoTmcUserPermitAPIResponse struct {
     model.CommonResponse
-    TaobaoTmcUserPermitResponse
-}
-
-type TaobaoTmcUserPermitResponse struct {
-    XMLName xml.Name `xml:"tmc_user_permit_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmc_user_permit_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-}
+    IsSuccess   bool `json:"is_success,omitempty" xml:"

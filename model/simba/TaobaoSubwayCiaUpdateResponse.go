@@ -14,16 +14,8 @@ taobao.subway.cia.update
 */
 type TaobaoSubwayCiaUpdateAPIResponse struct {
     model.CommonResponse
-    TaobaoSubwayCiaUpdateResponse
-}
-
-type TaobaoSubwayCiaUpdateResponse struct {
-    XMLName xml.Name `xml:"subway_cia_update_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"subway_cia_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推广组Id列表
     
-    AdgroupList   []int64 `json:"adgroup_list,omitempty" xml:"adgroup_list>int64,omitempty"`
-    
-    
-}
+    AdgroupList   []int64 `json:"adgroup_list,omitempty" xml:"

@@ -14,16 +14,8 @@ ISV提供给卖家使用的业务数据，需要通过这个接口上传到千�
 */
 type TaobaoQianniuNumberPutAPIResponse struct {
     model.CommonResponse
-    TaobaoQianniuNumberPutResponse
-}
-
-type TaobaoQianniuNumberPutResponse struct {
-    XMLName xml.Name `xml:"qianniu_number_put_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"qianniu_number_put_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否上传成功。返回的是个json串，分别表示每条记录是否成功。
     
-    Result   string `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   string `json:"result,omitempty" xml:"

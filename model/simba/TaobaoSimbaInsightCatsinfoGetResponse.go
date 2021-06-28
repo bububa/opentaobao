@@ -14,16 +14,8 @@ taobao.simba.insight.catsinfo.get
 */
 type TaobaoSimbaInsightCatsinfoGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaInsightCatsinfoGetResponse
-}
-
-type TaobaoSimbaInsightCatsinfoGetResponse struct {
-    XMLName xml.Name `xml:"simba_insight_catsinfo_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_insight_catsinfo_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 类目详细信息
     
-    CategoryInfoList   []InsightCategoryInfoDTO `json:"category_info_list,omitempty" xml:"category_info_list>insight_category_info_dto,omitempty"`
-    
-    
-}
+    CategoryInfoList   []InsightCategoryInfoDTO `json:"category_info_list,omitempty" xml:"

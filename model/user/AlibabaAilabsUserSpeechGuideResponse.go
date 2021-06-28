@@ -14,16 +14,8 @@ alibaba.ailabs.user.speech.guide
 */
 type AlibabaAilabsUserSpeechGuideAPIResponse struct {
     model.CommonResponse
-    AlibabaAilabsUserSpeechGuideResponse
-}
-
-type AlibabaAilabsUserSpeechGuideResponse struct {
-    XMLName xml.Name `xml:"alibaba_ailabs_user_speech_guide_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_ailabs_user_speech_guide_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *AlibabaAilabsUserSpeechGuideResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AlibabaAilabsUserSpeechGuideResult `json:"result,omitempty" xml:"

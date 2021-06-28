@@ -15,41 +15,8 @@ taobao.qianniu.cloudkefu.onlinestatuslog.get
 */
 type TaobaoQianniuCloudkefuOnlinestatuslogGetAPIResponse struct {
     model.CommonResponse
-    TaobaoQianniuCloudkefuOnlinestatuslogGetResponse
-}
-
-type TaobaoQianniuCloudkefuOnlinestatuslogGetResponse struct {
-    XMLName xml.Name `xml:"qianniu_cloudkefu_onlinestatuslog_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"qianniu_cloudkefu_onlinestatuslog_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // module
     
-    RecordList   []RecordList `json:"record_list,omitempty" xml:"record_list>record_list,omitempty"`
-    
-    
-    // cause
-    
-    Cause   string `json:"cause,omitempty" xml:"cause,omitempty"`
-
-    
-    // errorMap
-    
-    ErrorMap   string `json:"error_map,omitempty" xml:"error_map,omitempty"`
-
-    
-    // attachment
-    
-    Attachment   string `json:"attachment,omitempty" xml:"attachment,omitempty"`
-
-    
-    // solution
-    
-    Solution   string `json:"solution,omitempty" xml:"solution,omitempty"`
-
-    
-    // version
-    
-    Version   int64 `json:"version,omitempty" xml:"version,omitempty"`
-
-    
-}
+    RecordList   []RecordList `json:"record_list,omitempty" xml:"

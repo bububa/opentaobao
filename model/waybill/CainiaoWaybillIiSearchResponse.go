@@ -14,16 +14,8 @@ cainiao.waybill.ii.search
 */
 type CainiaoWaybillIiSearchAPIResponse struct {
     model.CommonResponse
-    CainiaoWaybillIiSearchResponse
-}
-
-type CainiaoWaybillIiSearchResponse struct {
-    XMLName xml.Name `xml:"cainiao_waybill_ii_search_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"cainiao_waybill_ii_search_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // CP网点信息及对应的商家的发货信息
     
-    WaybillApplySubscriptionCols   []WaybillApplySubscriptionInfo `json:"waybill_apply_subscription_cols,omitempty" xml:"waybill_apply_subscription_cols>waybill_apply_subscription_info,omitempty"`
-    
-    
-}
+    WaybillApplySubscriptionCols   []WaybillApplySubscriptionInfo `json:"waybill_apply_subscription_cols,omitempty" xml:"

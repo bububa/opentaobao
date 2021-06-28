@@ -14,16 +14,8 @@ taobao.alitrip.travel.baseinfo.scenics.get
 */
 type TaobaoAlitripTravelBaseinfoScenicsGetAPIResponse struct {
     model.CommonResponse
-    TaobaoAlitripTravelBaseinfoScenicsGetResponse
-}
-
-type TaobaoAlitripTravelBaseinfoScenicsGetResponse struct {
-    XMLName xml.Name `xml:"alitrip_travel_baseinfo_scenics_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_travel_baseinfo_scenics_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回详细景点信息，返回数据为json数组结构的字符串
     
-    ScenicInfos   string `json:"scenic_infos,omitempty" xml:"scenic_infos,omitempty"`
-
-    
-}
+    ScenicInfos   string `json:"scenic_infos,omitempty" xml:"

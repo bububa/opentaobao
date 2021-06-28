@@ -14,16 +14,8 @@ delete_vip
 */
 type SlbAliyuncsComDeleteLoadBalancerListener2013-02-21APIResponse struct {
     model.CommonResponse
-    SlbAliyuncsComDeleteLoadBalancerListener2013-02-21Response
-}
-
-type SlbAliyuncsComDeleteLoadBalancerListener2013-02-21Response struct {
-    XMLName xml.Name `xml:"slb_aliyuncs_com_DeleteLoadBalancerListener_2013-02-21_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"slb_aliyuncs_com_DeleteLoadBalancerListener_2013-02-21_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // request id
     
-    Requestid   string `json:"requestid,omitempty" xml:"requestid,omitempty"`
-
-    
-}
+    Requestid   string `json:"requestid,omitempty" xml:"

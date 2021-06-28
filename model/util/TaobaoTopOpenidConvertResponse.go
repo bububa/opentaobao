@@ -14,16 +14,8 @@ taobao.top.openid.convert
 */
 type TaobaoTopOpenidConvertAPIResponse struct {
     model.CommonResponse
-    TaobaoTopOpenidConvertResponse
-}
-
-type TaobaoTopOpenidConvertResponse struct {
-    XMLName xml.Name `xml:"top_openid_convert_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"top_openid_convert_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // open_id
     
-    OpenId   string `json:"open_id,omitempty" xml:"open_id,omitempty"`
-
-    
-}
+    OpenId   string `json:"open_id,omitempty" xml:"

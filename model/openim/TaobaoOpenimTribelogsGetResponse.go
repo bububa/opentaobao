@@ -14,36 +14,8 @@ taobao.openim.tribelogs.get
 */
 type TaobaoOpenimTribelogsGetAPIResponse struct {
     model.CommonResponse
-    TaobaoOpenimTribelogsGetResponse
-}
-
-type TaobaoOpenimTribelogsGetResponse struct {
-    XMLName xml.Name `xml:"openim_tribelogs_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"openim_tribelogs_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 错误码
     
-    RetCode   int64 `json:"retCode,omitempty" xml:"retCode,omitempty"`
-
-    
-    // 返回结构
-    
-    Data   *TribeMessageResult `json:"data,omitempty" xml:"data,omitempty"`
-
-    
-    // 错误信息
-    
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
-
-    
-    // 错误原因
-    
-    Reason   string `json:"reason,omitempty" xml:"reason,omitempty"`
-
-    
-    // 是否成功
-    
-    Succ   bool `json:"succ,omitempty" xml:"succ,omitempty"`
-
-    
-}
+    RetCode   int64 `json:"retCode,omitempty" xml:"

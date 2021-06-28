@@ -14,16 +14,8 @@ taobao.simba.adgroupids.changed.get
 */
 type TaobaoSimbaAdgroupidsChangedGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaAdgroupidsChangedGetResponse
-}
-
-type TaobaoSimbaAdgroupidsChangedGetResponse struct {
-    XMLName xml.Name `xml:"simba_adgroupids_changed_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_adgroupids_changed_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推广组ID列表
     
-    ChangedAdgroupids   []int64 `json:"changed_adgroupids,omitempty" xml:"changed_adgroupids>int64,omitempty"`
-    
-    
-}
+    ChangedAdgroupids   []int64 `json:"changed_adgroupids,omitempty" xml:"

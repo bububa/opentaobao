@@ -14,16 +14,8 @@ alibaba.xiami.api.search.letter.get
 */
 type AlibabaXiamiApiSearchLetterGetAPIResponse struct {
     model.CommonResponse
-    AlibabaXiamiApiSearchLetterGetResponse
-}
-
-type AlibabaXiamiApiSearchLetterGetResponse struct {
-    XMLName xml.Name `xml:"alibaba_xiami_api_search_letter_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_xiami_api_search_letter_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // search_letter_result
     
-    SearchLetterResult   *AlibabaXiamiApiSearchLetterGetStruct `json:"search_letter_result,omitempty" xml:"search_letter_result,omitempty"`
-
-    
-}
+    SearchLetterResult   *AlibabaXiamiApiSearchLetterGetStruct `json:"search_letter_result,omitempty" xml:"

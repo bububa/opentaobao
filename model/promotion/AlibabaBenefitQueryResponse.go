@@ -20,16 +20,8 @@ appkey验证通过的，才会查数据 并透出，否则直接失败。
 */
 type AlibabaBenefitQueryAPIResponse struct {
     model.CommonResponse
-    AlibabaBenefitQueryResponse
-}
-
-type AlibabaBenefitQueryResponse struct {
-    XMLName xml.Name `xml:"alibaba_benefit_query_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_benefit_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *AlibabaBenefitQueryResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AlibabaBenefitQueryResult `json:"result,omitempty" xml:"

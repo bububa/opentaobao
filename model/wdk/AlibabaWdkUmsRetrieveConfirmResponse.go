@@ -14,16 +14,8 @@ alibaba.wdk.ums.retrieve.confirm
 */
 type AlibabaWdkUmsRetrieveConfirmAPIResponse struct {
     model.CommonResponse
-    AlibabaWdkUmsRetrieveConfirmResponse
-}
-
-type AlibabaWdkUmsRetrieveConfirmResponse struct {
-    XMLName xml.Name `xml:"alibaba_wdk_ums_retrieve_confirm_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdk_ums_retrieve_confirm_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *UtmsResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *UtmsResult `json:"result,omitempty" xml:"

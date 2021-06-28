@@ -14,21 +14,8 @@ taobao.qimen.trade.users.get
 */
 type TaobaoQimenTradeUsersGetAPIResponse struct {
     model.CommonResponse
-    TaobaoQimenTradeUsersGetResponse
-}
-
-type TaobaoQimenTradeUsersGetResponse struct {
-    XMLName xml.Name `xml:"qimen_trade_users_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"qimen_trade_users_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // totalCount
     
-    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
-
-    
-    // modal
-    
-    Users   []QimenUser `json:"users,omitempty" xml:"users>qimen_user,omitempty"`
-    
-    
-}
+    TotalCount   int64 `json:"total_count,omitempty" xml:"

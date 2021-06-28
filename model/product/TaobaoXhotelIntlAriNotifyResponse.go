@@ -14,16 +14,8 @@ taobao.xhotel.intl.ari.notify
 */
 type TaobaoXhotelIntlAriNotifyAPIResponse struct {
     model.CommonResponse
-    TaobaoXhotelIntlAriNotifyResponse
-}
-
-type TaobaoXhotelIntlAriNotifyResponse struct {
-    XMLName xml.Name `xml:"xhotel_intl_ari_notify_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"xhotel_intl_ari_notify_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 通知结果
     
-    Module   *CacheChangeNotifyResult `json:"module,omitempty" xml:"module,omitempty"`
-
-    
-}
+    Module   *CacheChangeNotifyResult `json:"module,omitempty" xml:"

@@ -14,16 +14,8 @@ taobao.alitrip.totoro.auxproduct.delete
 */
 type TaobaoAlitripTotoroAuxproductDeleteAPIResponse struct {
     model.CommonResponse
-    TaobaoAlitripTotoroAuxproductDeleteResponse
-}
-
-type TaobaoAlitripTotoroAuxproductDeleteResponse struct {
-    XMLName xml.Name `xml:"alitrip_totoro_auxproduct_delete_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_totoro_auxproduct_delete_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *DelAuxProductsRs `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *DelAuxProductsRs `json:"result,omitempty" xml:"

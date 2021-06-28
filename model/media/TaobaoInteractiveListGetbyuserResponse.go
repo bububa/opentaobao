@@ -14,16 +14,8 @@ taobao.interactive.list.getbyuser
 */
 type TaobaoInteractiveListGetbyuserAPIResponse struct {
     model.CommonResponse
-    TaobaoInteractiveListGetbyuserResponse
-}
-
-type TaobaoInteractiveListGetbyuserResponse struct {
-    XMLName xml.Name `xml:"interactive_list_getbyuser_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"interactive_list_getbyuser_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TaobaoInteractiveListGetbyuserResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TaobaoInteractiveListGetbyuserResult `json:"result,omitempty" xml:"

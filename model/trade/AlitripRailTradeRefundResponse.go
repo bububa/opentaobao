@@ -14,16 +14,8 @@ alitrip.rail.trade.refund
 */
 type AlitripRailTradeRefundAPIResponse struct {
     model.CommonResponse
-    AlitripRailTradeRefundResponse
-}
-
-type AlitripRailTradeRefundResponse struct {
-    XMLName xml.Name `xml:"alitrip_rail_trade_refund_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_rail_trade_refund_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回对象
     
-    Result   *AlitripRailTradeRefundResultSet `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AlitripRailTradeRefundResultSet `json:"result,omitempty" xml:"

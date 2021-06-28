@@ -14,16 +14,8 @@ alibaba.alicom.wtt.opentrade.getproductinfo
 */
 type AlibabaAlicomWttOpentradeGetproductinfoAPIResponse struct {
     model.CommonResponse
-    AlibabaAlicomWttOpentradeGetproductinfoResponse
-}
-
-type AlibabaAlicomWttOpentradeGetproductinfoResponse struct {
-    XMLName xml.Name `xml:"alibaba_alicom_wtt_opentrade_getproductinfo_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_alicom_wtt_opentrade_getproductinfo_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TopResultDto `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TopResultDto `json:"result,omitempty" xml:"

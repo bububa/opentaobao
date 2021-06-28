@@ -14,16 +14,8 @@ taobao.alihealth.drug.store.get
 */
 type TaobaoAlihealthDrugStoreGetAPIResponse struct {
     model.CommonResponse
-    TaobaoAlihealthDrugStoreGetResponse
-}
-
-type TaobaoAlihealthDrugStoreGetResponse struct {
-    XMLName xml.Name `xml:"alihealth_drug_store_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alihealth_drug_store_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // model
     
-    Model   *StoreDetailDto `json:"model,omitempty" xml:"model,omitempty"`
-
-    
-}
+    Model   *StoreDetailDto `json:"model,omitempty" xml:"

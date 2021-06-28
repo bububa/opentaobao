@@ -14,16 +14,8 @@ taobao.logistics.online.send
 */
 type TaobaoLogisticsOnlineSendAPIResponse struct {
     model.CommonResponse
-    TaobaoLogisticsOnlineSendResponse
-}
-
-type TaobaoLogisticsOnlineSendResponse struct {
-    XMLName xml.Name `xml:"logistics_online_send_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"logistics_online_send_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // de
     
-    Shipping   *Shipping `json:"shipping,omitempty" xml:"shipping,omitempty"`
-
-    
-}
+    Shipping   *Shipping `json:"shipping,omitempty" xml:"

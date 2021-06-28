@@ -14,16 +14,8 @@ taobao.ump.detail.add
 */
 type TaobaoUmpDetailAddAPIResponse struct {
     model.CommonResponse
-    TaobaoUmpDetailAddResponse
-}
-
-type TaobaoUmpDetailAddResponse struct {
-    XMLName xml.Name `xml:"ump_detail_add_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"ump_detail_add_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 活动详情的id
     
-    DetailId   int64 `json:"detail_id,omitempty" xml:"detail_id,omitempty"`
-
-    
-}
+    DetailId   int64 `json:"detail_id,omitempty" xml:"

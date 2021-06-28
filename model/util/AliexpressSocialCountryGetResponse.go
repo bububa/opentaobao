@@ -14,16 +14,8 @@ aliexpress.social.country.get
 */
 type AliexpressSocialCountryGetAPIResponse struct {
     model.CommonResponse
-    AliexpressSocialCountryGetResponse
-}
-
-type AliexpressSocialCountryGetResponse struct {
-    XMLName xml.Name `xml:"aliexpress_social_country_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"aliexpress_social_country_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // ItemPickPagingResult
     
-    Result   *ItemPickPagingResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *ItemPickPagingResult `json:"result,omitempty" xml:"

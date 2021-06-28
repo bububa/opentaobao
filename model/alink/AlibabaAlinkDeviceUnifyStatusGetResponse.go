@@ -14,16 +14,8 @@ alibaba.alink.device.unify.status.get
 */
 type AlibabaAlinkDeviceUnifyStatusGetAPIResponse struct {
     model.CommonResponse
-    AlibabaAlinkDeviceUnifyStatusGetResponse
-}
-
-type AlibabaAlinkDeviceUnifyStatusGetResponse struct {
-    XMLName xml.Name `xml:"alibaba_alink_device_unify_status_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_alink_device_unify_status_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result   *TopServiceResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TopServiceResult `json:"result,omitempty" xml:"

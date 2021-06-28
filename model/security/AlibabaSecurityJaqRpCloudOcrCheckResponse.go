@@ -14,16 +14,8 @@ alibaba.security.jaq.rp.cloud.ocr.check
 */
 type AlibabaSecurityJaqRpCloudOcrCheckAPIResponse struct {
     model.CommonResponse
-    AlibabaSecurityJaqRpCloudOcrCheckResponse
-}
-
-type AlibabaSecurityJaqRpCloudOcrCheckResponse struct {
-    XMLName xml.Name `xml:"alibaba_security_jaq_rp_cloud_ocr_check_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_security_jaq_rp_cloud_ocr_check_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Data   *RpidCard `json:"data,omitempty" xml:"data,omitempty"`
-
-    
-}
+    Data   *RpidCard `json:"data,omitempty" xml:"

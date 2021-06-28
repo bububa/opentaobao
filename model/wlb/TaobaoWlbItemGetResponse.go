@@ -14,16 +14,8 @@ taobao.wlb.item.get
 */
 type TaobaoWlbItemGetAPIResponse struct {
     model.CommonResponse
-    TaobaoWlbItemGetResponse
-}
-
-type TaobaoWlbItemGetResponse struct {
-    XMLName xml.Name `xml:"wlb_item_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"wlb_item_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品信息
     
-    Item   *WlbItem `json:"item,omitempty" xml:"item,omitempty"`
-
-    
-}
+    Item   *WlbItem `json:"item,omitempty" xml:"

@@ -14,16 +14,8 @@ taobao.simba.searchtagtemplate.get
 */
 type TaobaoSimbaSearchtagtemplateGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaSearchtagtemplateGetResponse
-}
-
-type TaobaoSimbaSearchtagtemplateGetResponse struct {
-    XMLName xml.Name `xml:"simba_searchtagtemplate_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_searchtagtemplate_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    TemplateList   []TaobaoSimbaSearchtagtemplateGetResult `json:"template_list,omitempty" xml:"template_list>taobao_simba_searchtagtemplate_get_result,omitempty"`
-    
-    
-}
+    TemplateList   []TaobaoSimbaSearchtagtemplateGetResult `json:"template_list,omitempty" xml:"

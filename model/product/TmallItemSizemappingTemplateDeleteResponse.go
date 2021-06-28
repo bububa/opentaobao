@@ -14,16 +14,8 @@ tmall.item.sizemapping.template.delete
 */
 type TmallItemSizemappingTemplateDeleteAPIResponse struct {
     model.CommonResponse
-    TmallItemSizemappingTemplateDeleteResponse
-}
-
-type TmallItemSizemappingTemplateDeleteResponse struct {
-    XMLName xml.Name `xml:"tmall_item_sizemapping_template_delete_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_item_sizemapping_template_delete_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 尺码表模板ID
     
-    TemplateId   int64 `json:"template_id,omitempty" xml:"template_id,omitempty"`
-
-    
-}
+    TemplateId   int64 `json:"template_id,omitempty" xml:"

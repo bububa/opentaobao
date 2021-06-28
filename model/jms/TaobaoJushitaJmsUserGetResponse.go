@@ -14,16 +14,8 @@ taobao.jushita.jms.user.get
 */
 type TaobaoJushitaJmsUserGetAPIResponse struct {
     model.CommonResponse
-    TaobaoJushitaJmsUserGetResponse
-}
-
-type TaobaoJushitaJmsUserGetResponse struct {
-    XMLName xml.Name `xml:"jushita_jms_user_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"jushita_jms_user_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 同步的用户信息
     
-    OnsUser   *TmcUser `json:"ons_user,omitempty" xml:"ons_user,omitempty"`
-
-    
-}
+    OnsUser   *TmcUser `json:"ons_user,omitempty" xml:"

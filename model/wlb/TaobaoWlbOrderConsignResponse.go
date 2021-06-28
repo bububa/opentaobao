@@ -14,16 +14,8 @@ taobao.wlb.order.consign
 */
 type TaobaoWlbOrderConsignAPIResponse struct {
     model.CommonResponse
-    TaobaoWlbOrderConsignResponse
-}
-
-type TaobaoWlbOrderConsignResponse struct {
-    XMLName xml.Name `xml:"wlb_order_consign_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"wlb_order_consign_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改时间
     
-    ModifyTime   string `json:"modify_time,omitempty" xml:"modify_time,omitempty"`
-
-    
-}
+    ModifyTime   string `json:"modify_time,omitempty" xml:"

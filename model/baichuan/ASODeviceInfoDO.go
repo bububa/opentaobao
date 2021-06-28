@@ -1,12 +1,7 @@
 package baichuan
 
-// ASODeviceInfoDO 
-type ASODeviceInfoDO struct {
-
-    // idfa
-    
-    Idfa   string `json:"idfa,omitempty" xml:"idfa,omitempty"`
-    
+// AsoDeviceInfoDo 
+type AsoDeviceInfoDo struct {
 
     // imei
     
@@ -16,6 +11,11 @@ type ASODeviceInfoDO struct {
     // imsi
     
     Imsi   string `json:"imsi,omitempty" xml:"imsi,omitempty"`
+    
+
+    // idfa
+    
+    Idfa   string `json:"idfa,omitempty" xml:"idfa,omitempty"`
     
 
 }

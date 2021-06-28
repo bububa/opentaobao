@@ -14,16 +14,8 @@ taobao.fenxiao.refund.get
 */
 type TaobaoFenxiaoRefundGetAPIResponse struct {
     model.CommonResponse
-    TaobaoFenxiaoRefundGetResponse
-}
-
-type TaobaoFenxiaoRefundGetResponse struct {
-    XMLName xml.Name `xml:"fenxiao_refund_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"fenxiao_refund_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 退款详情
     
-    RefundDetail   *RefundDetail `json:"refund_detail,omitempty" xml:"refund_detail,omitempty"`
-
-    
-}
+    RefundDetail   *RefundDetail `json:"refund_detail,omitempty" xml:"

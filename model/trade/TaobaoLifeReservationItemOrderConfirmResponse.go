@@ -14,16 +14,8 @@ taobao.life.reservation.item.order.confirm
 */
 type TaobaoLifeReservationItemOrderConfirmAPIResponse struct {
     model.CommonResponse
-    TaobaoLifeReservationItemOrderConfirmResponse
-}
-
-type TaobaoLifeReservationItemOrderConfirmResponse struct {
-    XMLName xml.Name `xml:"life_reservation_item_order_confirm_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"life_reservation_item_order_confirm_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *TaobaoLifeReservationItemOrderConfirmResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TaobaoLifeReservationItemOrderConfirmResult `json:"result,omitempty" xml:"

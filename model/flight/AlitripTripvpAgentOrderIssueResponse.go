@@ -14,16 +14,8 @@ alitrip.tripvp.agent.order.issue
 */
 type AlitripTripvpAgentOrderIssueAPIResponse struct {
     model.CommonResponse
-    AlitripTripvpAgentOrderIssueResponse
-}
-
-type AlitripTripvpAgentOrderIssueResponse struct {
-    XMLName xml.Name `xml:"alitrip_tripvp_agent_order_issue_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_tripvp_agent_order_issue_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-}
+    IsSuccess   bool `json:"is_success,omitempty" xml:"

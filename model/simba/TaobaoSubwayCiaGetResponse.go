@@ -14,16 +14,8 @@ taobao.subway.cia.get
 */
 type TaobaoSubwayCiaGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSubwayCiaGetResponse
-}
-
-type TaobaoSubwayCiaGetResponse struct {
-    XMLName xml.Name `xml:"subway_cia_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"subway_cia_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 单元智能出价信息
     
-    Result   *CiaConfig `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *CiaConfig `json:"result,omitempty" xml:"

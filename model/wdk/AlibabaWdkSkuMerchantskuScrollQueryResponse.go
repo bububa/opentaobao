@@ -14,16 +14,8 @@ alibaba.wdk.sku.merchantsku.scroll.query
 */
 type AlibabaWdkSkuMerchantskuScrollQueryAPIResponse struct {
     model.CommonResponse
-    AlibabaWdkSkuMerchantskuScrollQueryResponse
-}
-
-type AlibabaWdkSkuMerchantskuScrollQueryResponse struct {
-    XMLName xml.Name `xml:"alibaba_wdk_sku_merchantsku_scroll_query_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdk_sku_merchantsku_scroll_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 请求结果对象
     
-    Result   *ApiScrollPageResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *ApiScrollPageResult `json:"result,omitempty" xml:"

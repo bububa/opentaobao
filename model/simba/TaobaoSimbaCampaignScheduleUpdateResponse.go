@@ -14,16 +14,8 @@ taobao.simba.campaign.schedule.update
 */
 type TaobaoSimbaCampaignScheduleUpdateAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaCampaignScheduleUpdateResponse
-}
-
-type TaobaoSimbaCampaignScheduleUpdateResponse struct {
-    XMLName xml.Name `xml:"simba_campaign_schedule_update_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_campaign_schedule_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改后的推广计划分时折扣
     
-    CampaignSchedule   *CampaignSchedule `json:"campaign_schedule,omitempty" xml:"campaign_schedule,omitempty"`
-
-    
-}
+    CampaignSchedule   *CampaignSchedule `json:"campaign_schedule,omitempty" xml:"

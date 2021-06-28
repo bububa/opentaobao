@@ -19,21 +19,8 @@ taobao.promotion.benefit.selector
 */
 type TaobaoPromotionBenefitSelectorAPIResponse struct {
     model.CommonResponse
-    TaobaoPromotionBenefitSelectorResponse
-}
-
-type TaobaoPromotionBenefitSelectorResponse struct {
-    XMLName xml.Name `xml:"promotion_benefit_selector_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"promotion_benefit_selector_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口调用是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-    // 权益列表信息
-    
-    BenefitList   []BenefitSelectorVo `json:"benefit_list,omitempty" xml:"benefit_list>benefit_selector_vo,omitempty"`
-    
-    
-}
+    IsSuccess   bool `json:"is_success,omitempty" xml:"

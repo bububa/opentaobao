@@ -14,16 +14,8 @@ alibaba.aliyunindep.digitalsms.createtemplate
 */
 type AlibabaAliyunindepDigitalsmsCreatetemplateAPIResponse struct {
     model.CommonResponse
-    AlibabaAliyunindepDigitalsmsCreatetemplateResponse
-}
-
-type AlibabaAliyunindepDigitalsmsCreatetemplateResponse struct {
-    XMLName xml.Name `xml:"alibaba_aliyunindep_digitalsms_createtemplate_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_aliyunindep_digitalsms_createtemplate_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result   *AlibabaAliyunindepDigitalsmsCreatetemplateResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AlibabaAliyunindepDigitalsmsCreatetemplateResult `json:"result,omitempty" xml:"

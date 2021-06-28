@@ -14,16 +14,8 @@ Weex页面播放视频
 */
 type AlibabaInteractUiVideoAPIResponse struct {
     model.CommonResponse
-    AlibabaInteractUiVideoResponse
-}
-
-type AlibabaInteractUiVideoResponse struct {
-    XMLName xml.Name `xml:"alibaba_interact_ui_video_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_interact_ui_video_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 仅作鉴权使用，没有实际数据传输
     
-    Unnamed   string `json:"unnamed,omitempty" xml:"unnamed,omitempty"`
-
-    
-}
+    Unnamed   string `json:"unnamed,omitempty" xml:"

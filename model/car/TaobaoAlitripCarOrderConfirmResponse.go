@@ -14,26 +14,8 @@ taobao.alitrip.car.order.confirm
 */
 type TaobaoAlitripCarOrderConfirmAPIResponse struct {
     model.CommonResponse
-    TaobaoAlitripCarOrderConfirmResponse
-}
-
-type TaobaoAlitripCarOrderConfirmResponse struct {
-    XMLName xml.Name `xml:"alitrip_car_order_confirm_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_car_order_confirm_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 错误码
     
-    MessageCode   int64 `json:"message_code,omitempty" xml:"message_code,omitempty"`
-
-    
-    // 其它数据
-    
-    Data   string `json:"data,omitempty" xml:"data,omitempty"`
-
-    
-    // 错误信息
-    
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
-
-    
-}
+    MessageCode   int64 `json:"message_code,omitempty" xml:"

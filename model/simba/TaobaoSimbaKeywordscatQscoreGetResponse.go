@@ -14,16 +14,8 @@ taobao.simba.keywordscat.qscore.get
 */
 type TaobaoSimbaKeywordscatQscoreGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaKeywordscatQscoreGetResponse
-}
-
-type TaobaoSimbaKeywordscatQscoreGetResponse struct {
-    XMLName xml.Name `xml:"simba_keywordscat_qscore_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_keywordscat_qscore_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 类目出价和词的质量得分对象
     
-    Qscore   *Qscore `json:"qscore,omitempty" xml:"qscore,omitempty"`
-
-    
-}
+    Qscore   *Qscore `json:"qscore,omitempty" xml:"

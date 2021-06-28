@@ -14,21 +14,8 @@ taobao.promotion.limitdiscount.get
 */
 type TaobaoPromotionLimitdiscountGetAPIResponse struct {
     model.CommonResponse
-    TaobaoPromotionLimitdiscountGetResponse
-}
-
-type TaobaoPromotionLimitdiscountGetResponse struct {
-    XMLName xml.Name `xml:"promotion_limitdiscount_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"promotion_limitdiscount_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 满足该查询条件的限时打折总数量。
     
-    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
-
-    
-    // 限时打折列表。
-    
-    LimitDiscountList   []LimitDiscount `json:"limit_discount_list,omitempty" xml:"limit_discount_list>limit_discount,omitempty"`
-    
-    
-}
+    TotalCount   int64 `json:"total_count,omitempty" xml:"

@@ -14,16 +14,8 @@ taobao.picture.pictures.count
 */
 type TaobaoPicturePicturesCountAPIResponse struct {
     model.CommonResponse
-    TaobaoPicturePicturesCountResponse
-}
-
-type TaobaoPicturePicturesCountResponse struct {
-    XMLName xml.Name `xml:"picture_pictures_count_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"picture_pictures_count_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 查询的文件总数
     
-    Totals   int64 `json:"totals,omitempty" xml:"totals,omitempty"`
-
-    
-}
+    Totals   int64 `json:"totals,omitempty" xml:"

@@ -14,16 +14,8 @@ alibaba.baichuan.aso.query
 */
 type AlibabaBaichuanAsoQueryAPIResponse struct {
     model.CommonResponse
-    AlibabaBaichuanAsoQueryResponse
-}
-
-type AlibabaBaichuanAsoQueryResponse struct {
-    XMLName xml.Name `xml:"alibaba_baichuan_aso_query_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_baichuan_aso_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *AsoQueryDeviceResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AsoQueryDeviceResult `json:"result,omitempty" xml:"

@@ -14,16 +14,8 @@ taobao.top.ipout.get
 */
 type TaobaoTopIpoutGetAPIResponse struct {
     model.CommonResponse
-    TaobaoTopIpoutGetResponse
-}
-
-type TaobaoTopIpoutGetResponse struct {
-    XMLName xml.Name `xml:"top_ipout_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"top_ipout_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // TOP网关出口IP列表
     
-    IpList   string `json:"ip_list,omitempty" xml:"ip_list,omitempty"`
-
-    
-}
+    IpList   string `json:"ip_list,omitempty" xml:"

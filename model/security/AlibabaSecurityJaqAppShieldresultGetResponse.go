@@ -14,16 +14,8 @@ alibaba.security.jaq.app.shieldresult.get
 */
 type AlibabaSecurityJaqAppShieldresultGetAPIResponse struct {
     model.CommonResponse
-    AlibabaSecurityJaqAppShieldresultGetResponse
-}
-
-type AlibabaSecurityJaqAppShieldresultGetResponse struct {
-    XMLName xml.Name `xml:"alibaba_security_jaq_app_shieldresult_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_security_jaq_app_shieldresult_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 应用加固结果
     
-    Result   *ShieldResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *ShieldResult `json:"result,omitempty" xml:"

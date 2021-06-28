@@ -14,16 +14,8 @@ alibaba.lst.vas.tradeflow.save
 */
 type AlibabaLstVasTradeflowSaveAPIResponse struct {
     model.CommonResponse
-    AlibabaLstVasTradeflowSaveResponse
-}
-
-type AlibabaLstVasTradeflowSaveResponse struct {
-    XMLName xml.Name `xml:"alibaba_lst_vas_tradeflow_save_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_lst_vas_tradeflow_save_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *AlibabaLstVasTradeflowSaveResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AlibabaLstVasTradeflowSaveResult `json:"result,omitempty" xml:"

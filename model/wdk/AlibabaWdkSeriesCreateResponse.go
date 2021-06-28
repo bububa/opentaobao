@@ -14,16 +14,8 @@ alibaba.wdk.series.create
 */
 type AlibabaWdkSeriesCreateAPIResponse struct {
     model.CommonResponse
-    AlibabaWdkSeriesCreateResponse
-}
-
-type AlibabaWdkSeriesCreateResponse struct {
-    XMLName xml.Name `xml:"alibaba_wdk_series_create_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdk_series_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用结果
     
-    ApiResult   *AlibabaWdkSeriesCreateApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
-
-    
-}
+    ApiResult   *AlibabaWdkSeriesCreateApiResult `json:"api_result,omitempty" xml:"

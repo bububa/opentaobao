@@ -14,16 +14,8 @@ alibaba.ele.fengniao.merchant.contract.cancel
 */
 type AlibabaEleFengniaoMerchantContractCancelAPIResponse struct {
     model.CommonResponse
-    AlibabaEleFengniaoMerchantContractCancelResponse
-}
-
-type AlibabaEleFengniaoMerchantContractCancelResponse struct {
-    XMLName xml.Name `xml:"alibaba_ele_fengniao_merchant_contract_cancel_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_ele_fengniao_merchant_contract_cancel_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参
     
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
-
-    
-}
+    Message   string `json:"message,omitempty" xml:"

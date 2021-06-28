@@ -14,16 +14,8 @@ taobao.qimen.channelinventory.query
 */
 type TaobaoQimenChannelinventoryQueryAPIResponse struct {
     model.CommonResponse
-    TaobaoQimenChannelinventoryQueryResponse
-}
-
-type TaobaoQimenChannelinventoryQueryResponse struct {
-    XMLName xml.Name `xml:"qimen_channelinventory_query_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"qimen_channelinventory_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *ResponseDO `json:"response,omitempty" xml:"response,omitempty"`
-
-    
-}
+    Response   *ResponseDO `json:"response,omitempty" xml:"

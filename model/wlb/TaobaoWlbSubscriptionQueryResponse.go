@@ -14,21 +14,8 @@ taobao.wlb.subscription.query
 */
 type TaobaoWlbSubscriptionQueryAPIResponse struct {
     model.CommonResponse
-    TaobaoWlbSubscriptionQueryResponse
-}
-
-type TaobaoWlbSubscriptionQueryResponse struct {
-    XMLName xml.Name `xml:"wlb_subscription_query_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"wlb_subscription_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果总数
     
-    TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
-
-    
-    // 卖家定购的服务列表
-    
-    SellerSubscriptionList   []WlbSellerSubscription `json:"seller_subscription_list,omitempty" xml:"seller_subscription_list>wlb_seller_subscription,omitempty"`
-    
-    
-}
+    TotalCount   int64 `json:"total_count,omitempty" xml:"

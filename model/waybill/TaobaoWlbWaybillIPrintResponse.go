@@ -14,16 +14,8 @@ taobao.wlb.waybill.i.print
 */
 type TaobaoWlbWaybillIPrintAPIResponse struct {
     model.CommonResponse
-    TaobaoWlbWaybillIPrintResponse
-}
-
-type TaobaoWlbWaybillIPrintResponse struct {
-    XMLName xml.Name `xml:"wlb_waybill_i_print_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"wlb_waybill_i_print_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 面单打印信息
     
-    WaybillApplyPrintCheckInfos   []WaybillApplyPrintCheckInfo `json:"waybill_apply_print_check_infos,omitempty" xml:"waybill_apply_print_check_infos>waybill_apply_print_check_info,omitempty"`
-    
-    
-}
+    WaybillApplyPrintCheckInfos   []WaybillApplyPrintCheckInfo `json:"waybill_apply_print_check_infos,omitempty" xml:"

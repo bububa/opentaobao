@@ -14,16 +14,8 @@ tmall.product.specs.get
 */
 type TmallProductSpecsGetAPIResponse struct {
     model.CommonResponse
-    TmallProductSpecsGetResponse
-}
-
-type TmallProductSpecsGetResponse struct {
-    XMLName xml.Name `xml:"tmall_product_specs_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_product_specs_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回一组产品规格信息。
     
-    ProductSpecs   []ProductSpec `json:"product_specs,omitempty" xml:"product_specs>product_spec,omitempty"`
-    
-    
-}
+    ProductSpecs   []ProductSpec `json:"product_specs,omitempty" xml:"

@@ -4,9 +4,12 @@ import (
 	"bytes"
 	"encoding/json"
 	"encoding/xml"
+	"fmt"
 	"io"
 	"io/ioutil"
 	"log"
+
+	"github.com/bububa/opentaobao/model"
 )
 
 func PrintError(err error, debug bool) {
@@ -72,34 +75,65 @@ func DecodeJSONHttpResponse(r io.Reader, v interface{}, debug bool) error {
 }
 
 func DecodeXMLHttpResponse(r io.Reader, v interface{}, debug bool) error {
-	if !debug {
-		return xml.NewDecoder(r).Decode(v)
-	}
 	body, err := ioutil.ReadAll(r)
 	if err != nil {
 		return err
 	}
-
-	body2 := body
-	buf := bytes.NewBuffer(make([]byte, 0, len(body2)+1024))
-	decoder := xml.NewDecoder(bytes.NewReader(body2))
-	encoder := xml.NewEncoder(buf)
-	encoder.Indent("", "  ")
-	for {
-		token, err := decoder.Token()
-		if err == io.EOF {
-			encoder.Flush()
-			break
+	var isErrResponse bool
+	if !debug {
+		decoder := xml.NewDecoder(bytes.NewReader(body))
+		for {
+			t, err := decoder.Token()
+			if err != nil {
+				if err != io.EOF {
+					fmt.Println(err)
+					return err
+				}
+				break
+			}
+			t = xml.CopyToken(t)
+			switch t := t.(type) {
+			case xml.StartElement:
+				if t.Name.Local == "error_response" {
+					isErrResponse = true
+				}
+				break
+			}
 		}
-		if err != nil {
-			break
+	} else {
+		buf := bytes.NewBuffer(make([]byte, 0, len(body)+1024))
+		decoder := xml.NewDecoder(bytes.NewReader(body))
+		encoder := xml.NewEncoder(buf)
+		encoder.Indent("", "  ")
+		for {
+			t, err := decoder.Token()
+			if err == io.EOF {
+				encoder.Flush()
+				break
+			}
+			if err != nil {
+				return err
+			}
+			t = xml.CopyToken(t)
+			switch t := t.(type) {
+			case xml.StartElement:
+				if t.Name.Local == "error_response" {
+					isErrResponse = true
+				}
+			}
+			err = encoder.EncodeToken(t)
+			if err != nil {
+				return err
+			}
 		}
-		err = encoder.EncodeToken(token)
-		if err != nil {
-			break
-		}
+		log.Printf("[DEBUG] [API] http response body:\n%s\n", buf.String())
 	}
-	log.Printf("[DEBUG] [API] http response body:\n%s\n", buf.String())
-
+	if isErrResponse {
+		var errResp model.ErrorResponse
+		if err := xml.Unmarshal(body, &errResp); err != nil {
+			return err
+		}
+		return errResp
+	}
 	return xml.Unmarshal(body, v)
 }

@@ -14,21 +14,8 @@ alitrip.tripvp.agent.order.get
 */
 type AlitripTripvpAgentOrderGetAPIResponse struct {
     model.CommonResponse
-    AlitripTripvpAgentOrderGetResponse
-}
-
-type AlitripTripvpAgentOrderGetResponse struct {
-    XMLName xml.Name `xml:"alitrip_tripvp_agent_order_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_tripvp_agent_order_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // orderVO
     
-    OrderVo   *VirProOrderVo `json:"order_vo,omitempty" xml:"order_vo,omitempty"`
-
-    
-    // pageSize
-    
-    PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
-
-    
-}
+    OrderVo   *VirProOrderVo `json:"order_vo,omitempty" xml:"

@@ -14,16 +14,8 @@ taobao.item.joint.propimg
 */
 type TaobaoItemJointPropimgAPIResponse struct {
     model.CommonResponse
-    TaobaoItemJointPropimgResponse
-}
-
-type TaobaoItemJointPropimgResponse struct {
-    XMLName xml.Name `xml:"item_joint_propimg_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"item_joint_propimg_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 属性图片对象信息
     
-    PropImg   *PropImg `json:"prop_img,omitempty" xml:"prop_img,omitempty"`
-
-    
-}
+    PropImg   *PropImg `json:"prop_img,omitempty" xml:"

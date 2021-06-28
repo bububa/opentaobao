@@ -14,16 +14,8 @@ alibaba.mos.onsite.trade.pay
 */
 type AlibabaMosOnsiteTradePayAPIResponse struct {
     model.CommonResponse
-    AlibabaMosOnsiteTradePayResponse
-}
-
-type AlibabaMosOnsiteTradePayResponse struct {
-    XMLName xml.Name `xml:"alibaba_mos_onsite_trade_pay_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_mos_onsite_trade_pay_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 创建订单响应信息。必然返回
     
-    OnsiteTradePayResponse   *OnsiteTradePayResponse `json:"onsite_trade_pay_response,omitempty" xml:"onsite_trade_pay_response,omitempty"`
-
-    
-}
+    OnsiteTradePayResponse   *OnsiteTradePayResponse `json:"onsite_trade_pay_response,omitempty" xml:"

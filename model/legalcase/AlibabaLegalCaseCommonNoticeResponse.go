@@ -14,31 +14,8 @@ alibaba.legal.case.common.notice
 */
 type AlibabaLegalCaseCommonNoticeAPIResponse struct {
     model.CommonResponse
-    AlibabaLegalCaseCommonNoticeResponse
-}
-
-type AlibabaLegalCaseCommonNoticeResponse struct {
-    XMLName xml.Name `xml:"alibaba_legal_case_common_notice_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_legal_case_common_notice_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-    // error
-    
-    Errcode   string `json:"errcode,omitempty" xml:"errcode,omitempty"`
-
-    
-    // content
-    
-    Content   string `json:"content,omitempty" xml:"content,omitempty"`
-
-    
-    // msg
-    
-    Errmsg   string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
-
-    
-}
+    IsSuccess   bool `json:"is_success,omitempty" xml:"

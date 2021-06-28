@@ -18,16 +18,8 @@ taobao.item.img.upload
 */
 type TaobaoItemImgUploadAPIResponse struct {
     model.CommonResponse
-    TaobaoItemImgUploadResponse
-}
-
-type TaobaoItemImgUploadResponse struct {
-    XMLName xml.Name `xml:"item_img_upload_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"item_img_upload_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品图片结构
     
-    ItemImg   *ItemImg `json:"item_img,omitempty" xml:"item_img,omitempty"`
-
-    
-}
+    ItemImg   *ItemImg `json:"item_img,omitempty" xml:"

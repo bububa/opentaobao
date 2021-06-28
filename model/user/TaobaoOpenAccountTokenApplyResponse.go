@@ -14,16 +14,8 @@ taobao.open.account.token.apply
 */
 type TaobaoOpenAccountTokenApplyAPIResponse struct {
     model.CommonResponse
-    TaobaoOpenAccountTokenApplyResponse
-}
-
-type TaobaoOpenAccountTokenApplyResponse struct {
-    XMLName xml.Name `xml:"open_account_token_apply_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"open_account_token_apply_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的token结果
     
-    Data   *OpenAccountTokenApplyResult `json:"data,omitempty" xml:"data,omitempty"`
-
-    
-}
+    Data   *OpenAccountTokenApplyResult `json:"data,omitempty" xml:"

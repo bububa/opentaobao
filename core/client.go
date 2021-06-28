@@ -218,7 +218,6 @@ func (c *SDKClient) sign(commonReq *model.CommonRequest, req model.IRequest) url
 	if commonReq.SignMethod == model.MD5 {
 		query.WriteString(c.secret)
 	}
-	fmt.Println(query.String())
 	var h hash.Hash
 	switch commonReq.SignMethod {
 	case model.MD5:

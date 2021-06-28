@@ -14,16 +14,8 @@ alipay.baoxian.claim.survey.conclusion.submit
 */
 type AlipayBaoxianClaimSurveyConclusionSubmitAPIResponse struct {
     model.CommonResponse
-    AlipayBaoxianClaimSurveyConclusionSubmitResponse
-}
-
-type AlipayBaoxianClaimSurveyConclusionSubmitResponse struct {
-    XMLName xml.Name `xml:"alipay_baoxian_claim_survey_conclusion_submit_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alipay_baoxian_claim_survey_conclusion_submit_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 系统自动生成
     
-    Result   *AliSceneResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AliSceneResult `json:"result,omitempty" xml:"

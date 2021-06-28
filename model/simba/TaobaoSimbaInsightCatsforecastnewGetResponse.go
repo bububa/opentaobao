@@ -14,16 +14,8 @@ taobao.simba.insight.catsforecastnew.get
 */
 type TaobaoSimbaInsightCatsforecastnewGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaInsightCatsforecastnewGetResponse
-}
-
-type TaobaoSimbaInsightCatsforecastnewGetResponse struct {
-    XMLName xml.Name `xml:"simba_insight_catsforecastnew_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_insight_catsforecastnew_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 词的相关类目列表
     
-    CategoryForecastList   []InsightCategoryForcastDTO `json:"category_forecast_list,omitempty" xml:"category_forecast_list>insight_category_forcast_dto,omitempty"`
-    
-    
-}
+    CategoryForecastList   []InsightCategoryForcastDTO `json:"category_forecast_list,omitempty" xml:"

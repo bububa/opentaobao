@@ -14,16 +14,8 @@ alibaba.interact.activity.unregister
 */
 type AlibabaInteractActivityUnregisterAPIResponse struct {
     model.CommonResponse
-    AlibabaInteractActivityUnregisterResponse
-}
-
-type AlibabaInteractActivityUnregisterResponse struct {
-    XMLName xml.Name `xml:"alibaba_interact_activity_unregister_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_interact_activity_unregister_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 关闭活动结果
     
-    UnregisterResult   *AllsparkResult `json:"unregister_result,omitempty" xml:"unregister_result,omitempty"`
-
-    
-}
+    UnregisterResult   *AllsparkResult `json:"unregister_result,omitempty" xml:"

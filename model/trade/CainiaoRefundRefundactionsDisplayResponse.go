@@ -14,16 +14,8 @@ cainiao.refund.refundactions.display
 */
 type CainiaoRefundRefundactionsDisplayAPIResponse struct {
     model.CommonResponse
-    CainiaoRefundRefundactionsDisplayResponse
-}
-
-type CainiaoRefundRefundactionsDisplayResponse struct {
-    XMLName xml.Name `xml:"cainiao_refund_refundactions_display_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"cainiao_refund_refundactions_display_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果对象
     
-    Result   *CainiaoRefundRefundactionsDisplayBizResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *CainiaoRefundRefundactionsDisplayBizResult `json:"result,omitempty" xml:"

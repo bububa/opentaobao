@@ -14,16 +14,8 @@ tmall.servicecenter.workcard.suspend
 */
 type TmallServicecenterWorkcardSuspendAPIResponse struct {
     model.CommonResponse
-    TmallServicecenterWorkcardSuspendResponse
-}
-
-type TmallServicecenterWorkcardSuspendResponse struct {
-    XMLName xml.Name `xml:"tmall_servicecenter_workcard_suspend_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_servicecenter_workcard_suspend_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 系统自动生成
     
-    Result   *TmallServicecenterWorkcardSuspendResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TmallServicecenterWorkcardSuspendResult `json:"result,omitempty" xml:"

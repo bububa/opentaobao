@@ -14,16 +14,8 @@ taobao.scitem.map.query
 */
 type TaobaoScitemMapQueryAPIResponse struct {
     model.CommonResponse
-    TaobaoScitemMapQueryResponse
-}
-
-type TaobaoScitemMapQueryResponse struct {
-    XMLName xml.Name `xml:"scitem_map_query_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"scitem_map_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 后端商品映射列表
     
-    ScItemMaps   []ScItemMap `json:"sc_item_maps,omitempty" xml:"sc_item_maps>sc_item_map,omitempty"`
-    
-    
-}
+    ScItemMaps   []ScItemMap `json:"sc_item_maps,omitempty" xml:"

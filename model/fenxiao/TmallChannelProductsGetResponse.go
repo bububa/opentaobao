@@ -22,21 +22,8 @@ tmall.channel.products.get
 */
 type TmallChannelProductsGetAPIResponse struct {
     model.CommonResponse
-    TmallChannelProductsGetResponse
-}
-
-type TmallChannelProductsGetResponse struct {
-    XMLName xml.Name `xml:"tmall_channel_products_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_channel_products_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 产品对象记录集
     
-    Products   []TopProductDO `json:"products,omitempty" xml:"products>top_product_do,omitempty"`
-    
-    
-    // 查询结果记录数
-    
-    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
-
-    
-}
+    Products   []TopProductDO `json:"products,omitempty" xml:"

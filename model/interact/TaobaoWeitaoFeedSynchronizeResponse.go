@@ -14,21 +14,8 @@ taobao.weitao.feed.synchronize
 */
 type TaobaoWeitaoFeedSynchronizeAPIResponse struct {
     model.CommonResponse
-    TaobaoWeitaoFeedSynchronizeResponse
-}
-
-type TaobaoWeitaoFeedSynchronizeResponse struct {
-    XMLName xml.Name `xml:"weitao_feed_synchronize_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"weitao_feed_synchronize_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 同步到微淘成功与否
     
-    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-    // 增加错误信息
-    
-    Errmsg   string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
-
-    
-}
+    Result   bool `json:"result,omitempty" xml:"

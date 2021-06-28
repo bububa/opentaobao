@@ -14,16 +14,8 @@ taobao.qimen.itemmapping.create
 */
 type TaobaoQimenItemmappingCreateAPIResponse struct {
     model.CommonResponse
-    TaobaoQimenItemmappingCreateResponse
-}
-
-type TaobaoQimenItemmappingCreateResponse struct {
-    XMLName xml.Name `xml:"qimen_itemmapping_create_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"qimen_itemmapping_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *ResponseDO `json:"response,omitempty" xml:"response,omitempty"`
-
-    
-}
+    Response   *ResponseDO `json:"response,omitempty" xml:"

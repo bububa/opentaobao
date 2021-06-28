@@ -14,16 +14,8 @@ alibaba.security.jaq.ocr.image.async.detect.results.fetch
 */
 type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchAPIResponse struct {
     model.CommonResponse
-    AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse
-}
-
-type AlibabaSecurityJaqOcrImageAsyncDetectResultsFetchResponse struct {
-    XMLName xml.Name `xml:"alibaba_security_jaq_ocr_image_async_detect_results_fetch_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_security_jaq_ocr_image_async_detect_results_fetch_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参结构体
     
-    Data   *JaqImageDetectResultCollection `json:"data,omitempty" xml:"data,omitempty"`
-
-    
-}
+    Data   *JaqImageDetectResultCollection `json:"data,omitempty" xml:"

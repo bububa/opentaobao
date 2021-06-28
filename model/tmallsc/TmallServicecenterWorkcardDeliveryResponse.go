@@ -14,26 +14,8 @@ tmall.servicecenter.workcard.delivery
 */
 type TmallServicecenterWorkcardDeliveryAPIResponse struct {
     model.CommonResponse
-    TmallServicecenterWorkcardDeliveryResponse
-}
-
-type TmallServicecenterWorkcardDeliveryResponse struct {
-    XMLName xml.Name `xml:"tmall_servicecenter_workcard_delivery_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_servicecenter_workcard_delivery_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    MsgSuccess   bool `json:"msg_success,omitempty" xml:"msg_success,omitempty"`
-
-    
-    // 返回信息
-    
-    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
-
-    
-    // 返回code
-    
-    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
-
-    
-}
+    MsgSuccess   bool `json:"msg_success,omitempty" xml:"

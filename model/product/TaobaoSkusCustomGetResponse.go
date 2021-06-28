@@ -14,16 +14,8 @@ taobao.skus.custom.get
 */
 type TaobaoSkusCustomGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSkusCustomGetResponse
-}
-
-type TaobaoSkusCustomGetResponse struct {
-    XMLName xml.Name `xml:"skus_custom_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"skus_custom_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // Sku对象，具体字段以fields决定
     
-    Skus   []Sku `json:"skus,omitempty" xml:"skus>sku,omitempty"`
-    
-    
-}
+    Skus   []Sku `json:"skus,omitempty" xml:"

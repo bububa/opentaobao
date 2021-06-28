@@ -14,16 +14,8 @@ taobao.trade.confirmfee.get
 */
 type TaobaoTradeConfirmfeeGetAPIResponse struct {
     model.CommonResponse
-    TaobaoTradeConfirmfeeGetResponse
-}
-
-type TaobaoTradeConfirmfeeGetResponse struct {
-    XMLName xml.Name `xml:"trade_confirmfee_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"trade_confirmfee_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 获取到的交易确认收货费用
     
-    TradeConfirmFee   *TradeConfirmFee `json:"trade_confirm_fee,omitempty" xml:"trade_confirm_fee,omitempty"`
-
-    
-}
+    TradeConfirmFee   *TradeConfirmFee `json:"trade_confirm_fee,omitempty" xml:"

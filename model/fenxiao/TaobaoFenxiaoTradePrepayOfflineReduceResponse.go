@@ -14,16 +14,8 @@ taobao.fenxiao.trade.prepay.offline.reduce
 */
 type TaobaoFenxiaoTradePrepayOfflineReduceAPIResponse struct {
     model.CommonResponse
-    TaobaoFenxiaoTradePrepayOfflineReduceResponse
-}
-
-type TaobaoFenxiaoTradePrepayOfflineReduceResponse struct {
-    XMLName xml.Name `xml:"fenxiao_trade_prepay_offline_reduce_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"fenxiao_trade_prepay_offline_reduce_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *ResultTopDo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *ResultTopDo `json:"result,omitempty" xml:"

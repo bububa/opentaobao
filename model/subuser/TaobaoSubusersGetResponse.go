@@ -14,16 +14,8 @@ taobao.subusers.get
 */
 type TaobaoSubusersGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSubusersGetResponse
-}
-
-type TaobaoSubusersGetResponse struct {
-    XMLName xml.Name `xml:"subusers_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"subusers_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 子账号基本信息
     
-    Subaccounts   []SubAccountInfo `json:"subaccounts,omitempty" xml:"subaccounts>sub_account_info,omitempty"`
-    
-    
-}
+    Subaccounts   []SubAccountInfo `json:"subaccounts,omitempty" xml:"

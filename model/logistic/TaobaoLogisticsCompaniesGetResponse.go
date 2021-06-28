@@ -14,16 +14,8 @@ taobao.logistics.companies.get
 */
 type TaobaoLogisticsCompaniesGetAPIResponse struct {
     model.CommonResponse
-    TaobaoLogisticsCompaniesGetResponse
-}
-
-type TaobaoLogisticsCompaniesGetResponse struct {
-    XMLName xml.Name `xml:"logistics_companies_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"logistics_companies_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 物流公司信息。返回的LogisticCompany包含的具体信息为入参fields请求的字段信息。
     
-    LogisticsCompanies   []LogisticsCompany `json:"logistics_companies,omitempty" xml:"logistics_companies>logistics_company,omitempty"`
-    
-    
-}
+    LogisticsCompanies   []LogisticsCompany `json:"logistics_companies,omitempty" xml:"

@@ -14,16 +14,8 @@ alibaba.imap.pv.autofill
 */
 type AlibabaImapPvAutofillAPIResponse struct {
     model.CommonResponse
-    AlibabaImapPvAutofillResponse
-}
-
-type AlibabaImapPvAutofillResponse struct {
-    XMLName xml.Name `xml:"alibaba_imap_pv_autofill_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_imap_pv_autofill_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // imap通用返回DO
     
-    Result   *TopImapResultDo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TopImapResultDo `json:"result,omitempty" xml:"

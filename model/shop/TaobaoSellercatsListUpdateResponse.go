@@ -14,16 +14,8 @@ taobao.sellercats.list.update
 */
 type TaobaoSellercatsListUpdateAPIResponse struct {
     model.CommonResponse
-    TaobaoSellercatsListUpdateResponse
-}
-
-type TaobaoSellercatsListUpdateResponse struct {
-    XMLName xml.Name `xml:"sellercats_list_update_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"sellercats_list_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回sellercat数据结构中的：cid,modified
     
-    SellerCat   *SellerCat `json:"seller_cat,omitempty" xml:"seller_cat,omitempty"`
-
-    
-}
+    SellerCat   *SellerCat `json:"seller_cat,omitempty" xml:"

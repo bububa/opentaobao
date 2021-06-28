@@ -14,16 +14,8 @@ taobao.vmarket.eticket.failsend
 */
 type TaobaoVmarketEticketFailsendAPIResponse struct {
     model.CommonResponse
-    TaobaoVmarketEticketFailsendResponse
-}
-
-type TaobaoVmarketEticketFailsendResponse struct {
-    XMLName xml.Name `xml:"vmarket_eticket_failsend_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"vmarket_eticket_failsend_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 成功
     
-    RetCode   int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
-
-    
-}
+    RetCode   int64 `json:"ret_code,omitempty" xml:"

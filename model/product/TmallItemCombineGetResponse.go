@@ -14,16 +14,8 @@ tmall.item.combine.get
 */
 type TmallItemCombineGetAPIResponse struct {
     model.CommonResponse
-    TmallItemCombineGetResponse
-}
-
-type TmallItemCombineGetResponse struct {
-    XMLName xml.Name `xml:"tmall_item_combine_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_item_combine_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // results
     
-    Results   []string `json:"results,omitempty" xml:"results>string,omitempty"`
-    
-    
-}
+    Results   []string `json:"results,omitempty" xml:"

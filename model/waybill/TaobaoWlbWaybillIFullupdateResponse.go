@@ -14,16 +14,8 @@ taobao.wlb.waybill.i.fullupdate
 */
 type TaobaoWlbWaybillIFullupdateAPIResponse struct {
     model.CommonResponse
-    TaobaoWlbWaybillIFullupdateResponse
-}
-
-type TaobaoWlbWaybillIFullupdateResponse struct {
-    XMLName xml.Name `xml:"wlb_waybill_i_fullupdate_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"wlb_waybill_i_fullupdate_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 更新接口出参
     
-    WaybillApplyUpdateInfo   *WaybillApplyUpdateInfo `json:"waybill_apply_update_info,omitempty" xml:"waybill_apply_update_info,omitempty"`
-
-    
-}
+    WaybillApplyUpdateInfo   *WaybillApplyUpdateInfo `json:"waybill_apply_update_info,omitempty" xml:"

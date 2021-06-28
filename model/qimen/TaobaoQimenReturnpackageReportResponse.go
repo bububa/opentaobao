@@ -14,16 +14,8 @@ taobao.qimen.returnpackage.report
 */
 type TaobaoQimenReturnpackageReportAPIResponse struct {
     model.CommonResponse
-    TaobaoQimenReturnpackageReportResponse
-}
-
-type TaobaoQimenReturnpackageReportResponse struct {
-    XMLName xml.Name `xml:"qimen_returnpackage_report_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"qimen_returnpackage_report_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
-
-    
-}
+    Response   *Response `json:"response,omitempty" xml:"

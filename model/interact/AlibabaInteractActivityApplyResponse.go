@@ -14,26 +14,8 @@ alibaba.interact.activity.apply
 */
 type AlibabaInteractActivityApplyAPIResponse struct {
     model.CommonResponse
-    AlibabaInteractActivityApplyResponse
-}
-
-type AlibabaInteractActivityApplyResponse struct {
-    XMLName xml.Name `xml:"alibaba_interact_activity_apply_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_interact_activity_apply_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 服务结果对象
     
-    Data   *ActivityWriteResult `json:"data,omitempty" xml:"data,omitempty"`
-
-    
-    // top接口执行成功与否
-    
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-    // 出错提示信息
-    
-    ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
-
-    
-}
+    Data   *ActivityWriteResult `json:"data,omitempty" xml:"

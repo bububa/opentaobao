@@ -14,16 +14,8 @@ alibaba.telecom.zhima.ordernotify.callback
 */
 type AlibabaTelecomZhimaOrdernotifyCallbackAPIResponse struct {
     model.CommonResponse
-    AlibabaTelecomZhimaOrdernotifyCallbackResponse
-}
-
-type AlibabaTelecomZhimaOrdernotifyCallbackResponse struct {
-    XMLName xml.Name `xml:"alibaba_telecom_zhima_ordernotify_callback_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_telecom_zhima_ordernotify_callback_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参对象
     
-    Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *CommonResult `json:"result,omitempty" xml:"

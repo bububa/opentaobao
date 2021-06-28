@@ -14,16 +14,8 @@ taobao.beehive.item.cps.url
 */
 type TaobaoBeehiveItemCpsUrlAPIResponse struct {
     model.CommonResponse
-    TaobaoBeehiveItemCpsUrlResponse
-}
-
-type TaobaoBeehiveItemCpsUrlResponse struct {
-    XMLName xml.Name `xml:"beehive_item_cps_url_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"beehive_item_cps_url_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果对象
     
-    Result   *TaobaoBeehiveItemCpsUrlResultDo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TaobaoBeehiveItemCpsUrlResultDo `json:"result,omitempty" xml:"

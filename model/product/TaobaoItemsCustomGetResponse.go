@@ -15,16 +15,8 @@ taobao.items.custom.get
 */
 type TaobaoItemsCustomGetAPIResponse struct {
     model.CommonResponse
-    TaobaoItemsCustomGetResponse
-}
-
-type TaobaoItemsCustomGetResponse struct {
-    XMLName xml.Name `xml:"items_custom_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"items_custom_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品列表，具体返回字段以fields决定
     
-    Items   []Item `json:"items,omitempty" xml:"items>item,omitempty"`
-    
-    
-}
+    Items   []Item `json:"items,omitempty" xml:"

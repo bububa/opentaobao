@@ -14,16 +14,8 @@ taobao.promotionmisc.activity.range.all.remove
 */
 type TaobaoPromotionmiscActivityRangeAllRemoveAPIResponse struct {
     model.CommonResponse
-    TaobaoPromotionmiscActivityRangeAllRemoveResponse
-}
-
-type TaobaoPromotionmiscActivityRangeAllRemoveResponse struct {
-    XMLName xml.Name `xml:"promotionmisc_activity_range_all_remove_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"promotionmisc_activity_range_all_remove_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 清空活动参与商品是否成功。
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-}
+    IsSuccess   bool `json:"is_success,omitempty" xml:"

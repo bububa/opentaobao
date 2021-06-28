@@ -14,16 +14,8 @@ taobao.film.data.third.party.refund.order
 */
 type TaobaoFilmDataThirdPartyRefundOrderAPIResponse struct {
     model.CommonResponse
-    TaobaoFilmDataThirdPartyRefundOrderResponse
-}
-
-type TaobaoFilmDataThirdPartyRefundOrderResponse struct {
-    XMLName xml.Name `xml:"film_data_third_party_refund_order_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"film_data_third_party_refund_order_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *ResultGeneralModel `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *ResultGeneralModel `json:"result,omitempty" xml:"

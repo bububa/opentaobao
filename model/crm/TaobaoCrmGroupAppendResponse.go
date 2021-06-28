@@ -14,16 +14,8 @@ taobao.crm.group.append
 */
 type TaobaoCrmGroupAppendAPIResponse struct {
     model.CommonResponse
-    TaobaoCrmGroupAppendResponse
-}
-
-type TaobaoCrmGroupAppendResponse struct {
-    XMLName xml.Name `xml:"crm_group_append_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"crm_group_append_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异步任务请求成功，添加任务是否完成通过taobao.crm.grouptask.check检测
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-}
+    IsSuccess   bool `json:"is_success,omitempty" xml:"

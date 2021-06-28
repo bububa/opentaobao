@@ -14,16 +14,8 @@ taobao.oc.tradetrace.alerts.get
 */
 type TaobaoOcTradetraceAlertsGetAPIResponse struct {
     model.CommonResponse
-    TaobaoOcTradetraceAlertsGetResponse
-}
-
-type TaobaoOcTradetraceAlertsGetResponse struct {
-    XMLName xml.Name `xml:"oc_tradetrace_alerts_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"oc_tradetrace_alerts_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异常订单数据
     
-    ResultList   []SimpleAbnormalOrderDetail `json:"result_list,omitempty" xml:"result_list>simple_abnormal_order_detail,omitempty"`
-    
-    
-}
+    ResultList   []SimpleAbnormalOrderDetail `json:"result_list,omitempty" xml:"

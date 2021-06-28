@@ -14,16 +14,8 @@ cainiao.guoguo.backup.graborder.submitmailno
 */
 type CainiaoGuoguoBackupGraborderSubmitmailnoAPIResponse struct {
     model.CommonResponse
-    CainiaoGuoguoBackupGraborderSubmitmailnoResponse
-}
-
-type CainiaoGuoguoBackupGraborderSubmitmailnoResponse struct {
-    XMLName xml.Name `xml:"cainiao_guoguo_backup_graborder_submitmailno_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"cainiao_guoguo_backup_graborder_submitmailno_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回result对象
     
-    Result   *CainiaoGuoguoBackupGraborderSubmitmailnoResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *CainiaoGuoguoBackupGraborderSubmitmailnoResult `json:"result,omitempty" xml:"

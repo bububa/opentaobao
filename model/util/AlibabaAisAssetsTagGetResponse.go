@@ -14,16 +14,8 @@ alibaba.ais.assets.tag.get
 */
 type AlibabaAisAssetsTagGetAPIResponse struct {
     model.CommonResponse
-    AlibabaAisAssetsTagGetResponse
-}
-
-type AlibabaAisAssetsTagGetResponse struct {
-    XMLName xml.Name `xml:"alibaba_ais_assets_tag_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_ais_assets_tag_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 最外层结果
     
-    Result   *BaseRep `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *BaseRep `json:"result,omitempty" xml:"

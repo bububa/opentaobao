@@ -14,16 +14,8 @@ taobao.tmc.user.get
 */
 type TaobaoTmcUserGetAPIResponse struct {
     model.CommonResponse
-    TaobaoTmcUserGetResponse
-}
-
-type TaobaoTmcUserGetResponse struct {
-    XMLName xml.Name `xml:"tmc_user_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmc_user_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 开通的用户数据
     
-    TmcUser   *TmcUser `json:"tmc_user,omitempty" xml:"tmc_user,omitempty"`
-
-    
-}
+    TmcUser   *TmcUser `json:"tmc_user,omitempty" xml:"

@@ -15,16 +15,8 @@ tmall.servicecenter.workcard.virtualphone.bind
 */
 type TmallServicecenterWorkcardVirtualphoneBindAPIResponse struct {
     model.CommonResponse
-    TmallServicecenterWorkcardVirtualphoneBindResponse
-}
-
-type TmallServicecenterWorkcardVirtualphoneBindResponse struct {
-    XMLName xml.Name `xml:"tmall_servicecenter_workcard_virtualphone_bind_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_servicecenter_workcard_virtualphone_bind_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 系统自动生成
     
-    Result   *FulfilplatformResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *FulfilplatformResult `json:"result,omitempty" xml:"

@@ -14,16 +14,8 @@ isv能通过该接口发起确认申请单
 */
 type TaobaoFuwuSpConfirmApplyAPIResponse struct {
     model.CommonResponse
-    TaobaoFuwuSpConfirmApplyResponse
-}
-
-type TaobaoFuwuSpConfirmApplyResponse struct {
-    XMLName xml.Name `xml:"fuwu_sp_confirm_apply_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"fuwu_sp_confirm_apply_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的是服务市场的确认单ID
     
-    ApplyResult   int64 `json:"apply_result,omitempty" xml:"apply_result,omitempty"`
-
-    
-}
+    ApplyResult   int64 `json:"apply_result,omitempty" xml:"

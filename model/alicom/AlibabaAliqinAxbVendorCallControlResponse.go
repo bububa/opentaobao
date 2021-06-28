@@ -14,16 +14,8 @@ alibaba.aliqin.axb.vendor.call.control
 */
 type AlibabaAliqinAxbVendorCallControlAPIResponse struct {
     model.CommonResponse
-    AlibabaAliqinAxbVendorCallControlResponse
-}
-
-type AlibabaAliqinAxbVendorCallControlResponse struct {
-    XMLName xml.Name `xml:"alibaba_aliqin_axb_vendor_call_control_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_aliqin_axb_vendor_call_control_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 转呼控制接口响应
     
-    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *Response `json:"result,omitempty" xml:"

@@ -14,16 +14,8 @@ taobao.ailab.aicloud.smarthome.top.genielink.reportdevice
 */
 type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceAPIResponse struct {
     model.CommonResponse
-    TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResponse
-}
-
-type TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResponse struct {
-    XMLName xml.Name `xml:"ailab_aicloud_smarthome_top_genielink_reportdevice_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"ailab_aicloud_smarthome_top_genielink_reportdevice_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TaobaoAilabAicloudSmarthomeTopGenielinkReportdeviceResult `json:"result,omitempty" xml:"

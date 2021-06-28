@@ -14,16 +14,8 @@ taobao.picture.category.update
 */
 type TaobaoPictureCategoryUpdateAPIResponse struct {
     model.CommonResponse
-    TaobaoPictureCategoryUpdateResponse
-}
-
-type TaobaoPictureCategoryUpdateResponse struct {
-    XMLName xml.Name `xml:"picture_category_update_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"picture_category_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 更新图片分类是否成功
     
-    Done   bool `json:"done,omitempty" xml:"done,omitempty"`
-
-    
-}
+    Done   bool `json:"done,omitempty" xml:"

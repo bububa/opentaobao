@@ -14,16 +14,8 @@ taobao.vas.subscribe.get
 */
 type TaobaoVasSubscribeGetAPIResponse struct {
     model.CommonResponse
-    TaobaoVasSubscribeGetResponse
-}
-
-type TaobaoVasSubscribeGetResponse struct {
-    XMLName xml.Name `xml:"vas_subscribe_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"vas_subscribe_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户订购信息
     
-    ArticleUserSubscribes   []ArticleUserSubscribe `json:"article_user_subscribes,omitempty" xml:"article_user_subscribes>article_user_subscribe,omitempty"`
-    
-    
-}
+    ArticleUserSubscribes   []ArticleUserSubscribe `json:"article_user_subscribes,omitempty" xml:"

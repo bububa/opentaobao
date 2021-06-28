@@ -14,16 +14,8 @@ taobao.item.sku.add
 */
 type TaobaoItemSkuAddAPIResponse struct {
     model.CommonResponse
-    TaobaoItemSkuAddResponse
-}
-
-type TaobaoItemSkuAddResponse struct {
-    XMLName xml.Name `xml:"item_sku_add_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"item_sku_add_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // sku
     
-    Sku   *Sku `json:"sku,omitempty" xml:"sku,omitempty"`
-
-    
-}
+    Sku   *Sku `json:"sku,omitempty" xml:"

@@ -14,16 +14,8 @@ taobao.alitrip.travel.baseinfo.cruise.get
 */
 type TaobaoAlitripTravelBaseinfoCruiseGetAPIResponse struct {
     model.CommonResponse
-    TaobaoAlitripTravelBaseinfoCruiseGetResponse
-}
-
-type TaobaoAlitripTravelBaseinfoCruiseGetResponse struct {
-    XMLName xml.Name `xml:"alitrip_travel_baseinfo_cruise_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_travel_baseinfo_cruise_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 邮轮类目扩展信息的json格式字符串
     
-    CruiseExtInfos   string `json:"cruise_ext_infos,omitempty" xml:"cruise_ext_infos,omitempty"`
-
-    
-}
+    CruiseExtInfos   string `json:"cruise_ext_infos,omitempty" xml:"

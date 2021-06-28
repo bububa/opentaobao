@@ -14,16 +14,8 @@ taobao.simba.rpt.campaignbase.get
 */
 type TaobaoSimbaRptCampaignbaseGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaRptCampaignbaseGetResponse
-}
-
-type TaobaoSimbaRptCampaignbaseGetResponse struct {
-    XMLName xml.Name `xml:"simba_rpt_campaignbase_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_rpt_campaignbase_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推广计划查询结果
     
-    RptCampaignBaseList   string `json:"rpt_campaign_base_list,omitempty" xml:"rpt_campaign_base_list,omitempty"`
-
-    
-}
+    RptCampaignBaseList   string `json:"rpt_campaign_base_list,omitempty" xml:"

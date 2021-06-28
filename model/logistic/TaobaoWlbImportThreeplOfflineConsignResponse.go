@@ -14,16 +14,8 @@ taobao.wlb.import.threepl.offline.consign
 */
 type TaobaoWlbImportThreeplOfflineConsignAPIResponse struct {
     model.CommonResponse
-    TaobaoWlbImportThreeplOfflineConsignResponse
-}
-
-type TaobaoWlbImportThreeplOfflineConsignResponse struct {
-    XMLName xml.Name `xml:"wlb_import_threepl_offline_consign_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"wlb_import_threepl_offline_consign_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TopResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TopResult `json:"result,omitempty" xml:"

@@ -14,16 +14,8 @@ taobao.kfc.keyword.search
 */
 type TaobaoKfcKeywordSearchAPIResponse struct {
     model.CommonResponse
-    TaobaoKfcKeywordSearchResponse
-}
-
-type TaobaoKfcKeywordSearchResponse struct {
-    XMLName xml.Name `xml:"kfc_keyword_search_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"kfc_keyword_search_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // KFC 关键词过滤匹配结果
     
-    KfcSearchResult   *KfcSearchResult `json:"kfc_search_result,omitempty" xml:"kfc_search_result,omitempty"`
-
-    
-}
+    KfcSearchResult   *KfcSearchResult `json:"kfc_search_result,omitempty" xml:"

@@ -1,8 +1,6 @@
 package model
 
-import (
-	"encoding/xml"
-)
+import "encoding/xml"
 
 type ErrorResponse struct {
 	XMLName   xml.Name `xml:"error_response"`
@@ -14,6 +12,9 @@ type ErrorResponse struct {
 }
 
 func (c ErrorResponse) Error() string {
+	if c.SubMsg != "" {
+		return c.SubMsg
+	}
 	return c.Msg
 }
 

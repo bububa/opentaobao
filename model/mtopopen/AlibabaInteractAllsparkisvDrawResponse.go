@@ -14,16 +14,8 @@ alibaba.interact.allsparkisv.draw
 */
 type AlibabaInteractAllsparkisvDrawAPIResponse struct {
     model.CommonResponse
-    AlibabaInteractAllsparkisvDrawResponse
-}
-
-type AlibabaInteractAllsparkisvDrawResponse struct {
-    XMLName xml.Name `xml:"alibaba_interact_allsparkisv_draw_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_interact_allsparkisv_draw_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // ddd
     
-    Ddd   string `json:"ddd,omitempty" xml:"ddd,omitempty"`
-
-    
-}
+    Ddd   string `json:"ddd,omitempty" xml:"

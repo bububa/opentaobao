@@ -14,16 +14,8 @@ taobao.oc.tradetag.attach
 */
 type TaobaoOcTradetagAttachAPIResponse struct {
     model.CommonResponse
-    TaobaoOcTradetagAttachResponse
-}
-
-type TaobaoOcTradetagAttachResponse struct {
-    XMLName xml.Name `xml:"oc_tradetag_attach_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"oc_tradetag_attach_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作成功或者操作失败
     
-    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   bool `json:"result,omitempty" xml:"

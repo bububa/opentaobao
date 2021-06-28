@@ -14,16 +14,8 @@ tmall.crm.member.front.unbind
 */
 type TmallCrmMemberFrontUnbindAPIResponse struct {
     model.CommonResponse
-    TmallCrmMemberFrontUnbindResponse
-}
-
-type TmallCrmMemberFrontUnbindResponse struct {
-    XMLName xml.Name `xml:"tmall_crm_member_front_unbind_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_crm_member_front_unbind_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口调用是否成功
     
-    ResultSuccess   bool `json:"result_success,omitempty" xml:"result_success,omitempty"`
-
-    
-}
+    ResultSuccess   bool `json:"result_success,omitempty" xml:"

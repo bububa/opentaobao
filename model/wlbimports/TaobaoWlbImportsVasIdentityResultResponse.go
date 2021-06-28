@@ -14,16 +14,8 @@ taobao.wlb.imports.vas.identity.result
 */
 type TaobaoWlbImportsVasIdentityResultAPIResponse struct {
     model.CommonResponse
-    TaobaoWlbImportsVasIdentityResultResponse
-}
-
-type TaobaoWlbImportsVasIdentityResultResponse struct {
-    XMLName xml.Name `xml:"wlb_imports_vas_identity_result_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"wlb_imports_vas_identity_result_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回出参数结果
     
-    Result   *TopResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TopResult `json:"result,omitempty" xml:"

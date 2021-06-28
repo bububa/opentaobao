@@ -14,16 +14,8 @@ taobao.fuwu.purchase.order.confirm
 */
 type TaobaoFuwuPurchaseOrderConfirmAPIResponse struct {
     model.CommonResponse
-    TaobaoFuwuPurchaseOrderConfirmResponse
-}
-
-type TaobaoFuwuPurchaseOrderConfirmResponse struct {
-    XMLName xml.Name `xml:"fuwu_purchase_order_confirm_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"fuwu_purchase_order_confirm_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 下单页面url
     
-    Url   string `json:"url,omitempty" xml:"url,omitempty"`
-
-    
-}
+    Url   string `json:"url,omitempty" xml:"

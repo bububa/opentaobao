@@ -14,16 +14,8 @@ alibaba.scbp.ad.campaign.update
 */
 type AlibabaScbpAdCampaignUpdateAPIResponse struct {
     model.CommonResponse
-    AlibabaScbpAdCampaignUpdateResponse
-}
-
-type AlibabaScbpAdCampaignUpdateResponse struct {
-    XMLName xml.Name `xml:"alibaba_scbp_ad_campaign_update_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_scbp_ad_campaign_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改成功数
     
-    Result   int64 `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   int64 `json:"result,omitempty" xml:"

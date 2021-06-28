@@ -14,16 +14,8 @@ alibaba.wdkopen.cateorder.pull
 */
 type AlibabaWdkopenCateorderPullAPIResponse struct {
     model.CommonResponse
-    AlibabaWdkopenCateorderPullResponse
-}
-
-type AlibabaWdkopenCateorderPullResponse struct {
-    XMLName xml.Name `xml:"alibaba_wdkopen_cateorder_pull_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdkopen_cateorder_pull_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用返回
     
-    TopBaseResult   *TopBaseResult `json:"top_base_result,omitempty" xml:"top_base_result,omitempty"`
-
-    
-}
+    TopBaseResult   *TopBaseResult `json:"top_base_result,omitempty" xml:"

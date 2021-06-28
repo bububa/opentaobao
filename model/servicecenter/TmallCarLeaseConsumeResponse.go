@@ -14,16 +14,8 @@ tmall.car.lease.consume
 */
 type TmallCarLeaseConsumeAPIResponse struct {
     model.CommonResponse
-    TmallCarLeaseConsumeResponse
-}
-
-type TmallCarLeaseConsumeResponse struct {
-    XMLName xml.Name `xml:"tmall_car_lease_consume_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_car_lease_consume_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果集合
     
-    Result   *TmallCarLeaseConsumeResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TmallCarLeaseConsumeResult `json:"result,omitempty" xml:"

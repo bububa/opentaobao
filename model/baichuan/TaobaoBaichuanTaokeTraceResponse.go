@@ -14,16 +14,8 @@ taobao.baichuan.taoke.trace
 */
 type TaobaoBaichuanTaokeTraceAPIResponse struct {
     model.CommonResponse
-    TaobaoBaichuanTaokeTraceResponse
-}
-
-type TaobaoBaichuanTaokeTraceResponse struct {
-    XMLName xml.Name `xml:"baichuan_taoke_trace_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"baichuan_taoke_trace_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // name
     
-    Name   string `json:"name,omitempty" xml:"name,omitempty"`
-
-    
-}
+    Name   string `json:"name,omitempty" xml:"

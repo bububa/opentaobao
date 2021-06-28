@@ -14,16 +14,8 @@ taobao.ailab.aicloud.top.device.openid.authcode.get
 */
 type TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetAPIResponse struct {
     model.CommonResponse
-    TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetResponse
-}
-
-type TaobaoAilabAicloudTopDeviceOpenidAuthcodeGetResponse struct {
-    XMLName xml.Name `xml:"ailab_aicloud_top_device_openid_authcode_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"ailab_aicloud_top_device_openid_authcode_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 系统自动生成
     
-    Result   *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AiCloudResult `json:"result,omitempty" xml:"

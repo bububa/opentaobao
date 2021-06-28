@@ -14,21 +14,8 @@ tmall.device.carturl.get
 */
 type TmallDeviceCarturlGetAPIResponse struct {
     model.CommonResponse
-    TmallDeviceCarturlGetResponse
-}
-
-type TmallDeviceCarturlGetResponse struct {
-    XMLName xml.Name `xml:"tmall_device_carturl_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_device_carturl_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 二维码短链接地址
     
-    ShortUrl   string `json:"short_url,omitempty" xml:"short_url,omitempty"`
-
-    
-    // 二维码图片URL
-    
-    ShortImgUrl   string `json:"short_img_url,omitempty" xml:"short_img_url,omitempty"`
-
-    
-}
+    ShortUrl   string `json:"short_url,omitempty" xml:"

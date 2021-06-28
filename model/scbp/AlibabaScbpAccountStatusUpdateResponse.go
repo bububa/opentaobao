@@ -14,16 +14,8 @@ alibaba.scbp.account.status.update
 */
 type AlibabaScbpAccountStatusUpdateAPIResponse struct {
     model.CommonResponse
-    AlibabaScbpAccountStatusUpdateResponse
-}
-
-type AlibabaScbpAccountStatusUpdateResponse struct {
-    XMLName xml.Name `xml:"alibaba_scbp_account_status_update_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_scbp_account_status_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改成功
     
-    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   bool `json:"result,omitempty" xml:"

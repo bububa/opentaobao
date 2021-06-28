@@ -14,16 +14,8 @@ taobao.fenxiao.dealer.requisitionorder.close
 */
 type TaobaoFenxiaoDealerRequisitionorderCloseAPIResponse struct {
     model.CommonResponse
-    TaobaoFenxiaoDealerRequisitionorderCloseResponse
-}
-
-type TaobaoFenxiaoDealerRequisitionorderCloseResponse struct {
-    XMLName xml.Name `xml:"fenxiao_dealer_requisitionorder_close_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"fenxiao_dealer_requisitionorder_close_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作是否成功。true：成功；false：失败。
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-}
+    IsSuccess   bool `json:"is_success,omitempty" xml:"

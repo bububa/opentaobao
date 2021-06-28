@@ -14,16 +14,8 @@ taobao.subuser.fullinfo.get
 */
 type TaobaoSubuserFullinfoGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSubuserFullinfoGetResponse
-}
-
-type TaobaoSubuserFullinfoGetResponse struct {
-    XMLName xml.Name `xml:"subuser_fullinfo_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"subuser_fullinfo_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 子账号详细信息，其中包括账号基本信息、员工信息和部门职务信息
     
-    SubFullinfo   *SubUserFullInfo `json:"sub_fullinfo,omitempty" xml:"sub_fullinfo,omitempty"`
-
-    
-}
+    SubFullinfo   *SubUserFullInfo `json:"sub_fullinfo,omitempty" xml:"

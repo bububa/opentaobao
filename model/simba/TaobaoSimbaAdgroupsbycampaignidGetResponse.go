@@ -14,16 +14,8 @@ taobao.simba.adgroupsbycampaignid.get
 */
 type TaobaoSimbaAdgroupsbycampaignidGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaAdgroupsbycampaignidGetResponse
-}
-
-type TaobaoSimbaAdgroupsbycampaignidGetResponse struct {
-    XMLName xml.Name `xml:"simba_adgroupsbycampaignid_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_adgroupsbycampaignid_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的推广组分页对象
     
-    Adgroups   *ADGroupPage `json:"adgroups,omitempty" xml:"adgroups,omitempty"`
-
-    
-}
+    Adgroups   *ADGroupPage `json:"adgroups,omitempty" xml:"

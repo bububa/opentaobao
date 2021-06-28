@@ -14,16 +14,8 @@ taobao.picture.upload
 */
 type TaobaoPictureUploadAPIResponse struct {
     model.CommonResponse
-    TaobaoPictureUploadResponse
-}
-
-type TaobaoPictureUploadResponse struct {
-    XMLName xml.Name `xml:"picture_upload_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"picture_upload_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 当前上传的一张图片信息
     
-    Picture   *Picture `json:"picture,omitempty" xml:"picture,omitempty"`
-
-    
-}
+    Picture   *Picture `json:"picture,omitempty" xml:"

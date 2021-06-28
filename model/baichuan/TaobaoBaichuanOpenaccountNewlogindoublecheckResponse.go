@@ -14,16 +14,8 @@ taobao.baichuan.openaccount.newlogindoublecheck
 */
 type TaobaoBaichuanOpenaccountNewlogindoublecheckAPIResponse struct {
     model.CommonResponse
-    TaobaoBaichuanOpenaccountNewlogindoublecheckResponse
-}
-
-type TaobaoBaichuanOpenaccountNewlogindoublecheckResponse struct {
-    XMLName xml.Name `xml:"baichuan_openaccount_newlogindoublecheck_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"baichuan_openaccount_newlogindoublecheck_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // name
     
-    Name   string `json:"name,omitempty" xml:"name,omitempty"`
-
-    
-}
+    Name   string `json:"name,omitempty" xml:"

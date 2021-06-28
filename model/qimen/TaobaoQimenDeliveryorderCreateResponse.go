@@ -14,16 +14,8 @@ taobao.qimen.deliveryorder.create
 */
 type TaobaoQimenDeliveryorderCreateAPIResponse struct {
     model.CommonResponse
-    TaobaoQimenDeliveryorderCreateResponse
-}
-
-type TaobaoQimenDeliveryorderCreateResponse struct {
-    XMLName xml.Name `xml:"qimen_deliveryorder_create_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"qimen_deliveryorder_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *DeliveryOrderCreateResponse `json:"response,omitempty" xml:"response,omitempty"`
-
-    
-}
+    Response   *DeliveryOrderCreateResponse `json:"response,omitempty" xml:"

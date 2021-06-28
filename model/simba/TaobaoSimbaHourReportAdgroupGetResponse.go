@@ -14,16 +14,8 @@ taobao.simba.hour.report.adgroup.get
 */
 type TaobaoSimbaHourReportAdgroupGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaHourReportAdgroupGetResponse
-}
-
-type TaobaoSimbaHourReportAdgroupGetResponse struct {
-    XMLName xml.Name `xml:"simba_hour_report_adgroup_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_hour_report_adgroup_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 11
     
-    Results   *RtRptResultEntityDTO `json:"results,omitempty" xml:"results,omitempty"`
-
-    
-}
+    Results   *RtRptResultEntityDTO `json:"results,omitempty" xml:"

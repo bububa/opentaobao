@@ -14,16 +14,8 @@ alibaba.tcls.aelophy.bill.verificate.callback
 */
 type AlibabaTclsAelophyBillVerificateCallbackAPIResponse struct {
     model.CommonResponse
-    AlibabaTclsAelophyBillVerificateCallbackResponse
-}
-
-type AlibabaTclsAelophyBillVerificateCallbackResponse struct {
-    XMLName xml.Name `xml:"alibaba_tcls_aelophy_bill_verificate_callback_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_tcls_aelophy_bill_verificate_callback_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 处理结果
     
-    ApiResult   *AlibabaTclsAelophyBillVerificateCallbackApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
-
-    
-}
+    ApiResult   *AlibabaTclsAelophyBillVerificateCallbackApiResult `json:"api_result,omitempty" xml:"

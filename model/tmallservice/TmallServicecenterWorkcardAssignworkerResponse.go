@@ -14,16 +14,8 @@ tmall.servicecenter.workcard.assignworker
 */
 type TmallServicecenterWorkcardAssignworkerAPIResponse struct {
     model.CommonResponse
-    TmallServicecenterWorkcardAssignworkerResponse
-}
-
-type TmallServicecenterWorkcardAssignworkerResponse struct {
-    XMLName xml.Name `xml:"tmall_servicecenter_workcard_assignworker_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_servicecenter_workcard_assignworker_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // -
     
-    Result   *TmallServicecenterWorkcardAssignworkerResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TmallServicecenterWorkcardAssignworkerResult `json:"result,omitempty" xml:"

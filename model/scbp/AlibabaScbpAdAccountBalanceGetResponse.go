@@ -14,16 +14,8 @@ alibaba.scbp.ad.account.balance.get
 */
 type AlibabaScbpAdAccountBalanceGetAPIResponse struct {
     model.CommonResponse
-    AlibabaScbpAdAccountBalanceGetResponse
-}
-
-type AlibabaScbpAdAccountBalanceGetResponse struct {
-    XMLName xml.Name `xml:"alibaba_scbp_ad_account_balance_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_scbp_ad_account_balance_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Balance   string `json:"balance,omitempty" xml:"balance,omitempty"`
-
-    
-}
+    Balance   string `json:"balance,omitempty" xml:"

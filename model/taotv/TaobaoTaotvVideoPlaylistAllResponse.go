@@ -14,16 +14,8 @@ taobao.taotv.video.playlist.all
 */
 type TaobaoTaotvVideoPlaylistAllAPIResponse struct {
     model.CommonResponse
-    TaobaoTaotvVideoPlaylistAllResponse
-}
-
-type TaobaoTaotvVideoPlaylistAllResponse struct {
-    XMLName xml.Name `xml:"taotv_video_playlist_all_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"taotv_video_playlist_all_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TaobaoTaotvVideoPlaylistAllResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TaobaoTaotvVideoPlaylistAllResult `json:"result,omitempty" xml:"

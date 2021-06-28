@@ -14,16 +14,8 @@ alibaba.aliqin.fc.iot.device.post
 */
 type AlibabaAliqinFcIotDevicePostAPIResponse struct {
     model.CommonResponse
-    AlibabaAliqinFcIotDevicePostResponse
-}
-
-type AlibabaAliqinFcIotDevicePostResponse struct {
-    XMLName xml.Name `xml:"alibaba_aliqin_fc_iot_device_post_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_aliqin_fc_iot_device_post_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *AlibabaAliqinFcIotDevicePostResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AlibabaAliqinFcIotDevicePostResult `json:"result,omitempty" xml:"

@@ -14,16 +14,8 @@ alibaba.icbu.photobank.group.operate
 */
 type AlibabaIcbuPhotobankGroupOperateAPIResponse struct {
     model.CommonResponse
-    AlibabaIcbuPhotobankGroupOperateResponse
-}
-
-type AlibabaIcbuPhotobankGroupOperateResponse struct {
-    XMLName xml.Name `xml:"alibaba_icbu_photobank_group_operate_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_icbu_photobank_group_operate_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回的数据结果
     
-    PhotoGroupResult   *PhotoGroupResult `json:"photo_group_result,omitempty" xml:"photo_group_result,omitempty"`
-
-    
-}
+    PhotoGroupResult   *PhotoGroupResult `json:"photo_group_result,omitempty" xml:"

@@ -14,16 +14,8 @@ alibaba.scbp.ad.campaign.find.forbidden.keyword
 */
 type AlibabaScbpAdCampaignFindForbiddenKeywordAPIResponse struct {
     model.CommonResponse
-    AlibabaScbpAdCampaignFindForbiddenKeywordResponse
-}
-
-type AlibabaScbpAdCampaignFindForbiddenKeywordResponse struct {
-    XMLName xml.Name `xml:"alibaba_scbp_ad_campaign_find_forbidden_keyword_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_scbp_ad_campaign_find_forbidden_keyword_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回数据
     
-    Result   *AlibabaScbpAdCampaignFindForbiddenKeywordResultDto `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AlibabaScbpAdCampaignFindForbiddenKeywordResultDto `json:"result,omitempty" xml:"

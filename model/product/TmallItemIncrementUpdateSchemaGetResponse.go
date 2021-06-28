@@ -14,16 +14,8 @@ tmall.item.increment.update.schema.get
 */
 type TmallItemIncrementUpdateSchemaGetAPIResponse struct {
     model.CommonResponse
-    TmallItemIncrementUpdateSchemaGetResponse
-}
-
-type TmallItemIncrementUpdateSchemaGetResponse struct {
-    XMLName xml.Name `xml:"tmall_item_increment_update_schema_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_item_increment_update_schema_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回增量更新商品的规则文档
     
-    UpdateItemResult   string `json:"update_item_result,omitempty" xml:"update_item_result,omitempty"`
-
-    
-}
+    UpdateItemResult   string `json:"update_item_result,omitempty" xml:"

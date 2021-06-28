@@ -14,16 +14,8 @@ taobao.user.avatar.get
 */
 type TaobaoUserAvatarGetAPIResponse struct {
     model.CommonResponse
-    TaobaoUserAvatarGetResponse
-}
-
-type TaobaoUserAvatarGetResponse struct {
-    XMLName xml.Name `xml:"user_avatar_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"user_avatar_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户头像地址
     
-    Avatar   string `json:"avatar,omitempty" xml:"avatar,omitempty"`
-
-    
-}
+    Avatar   string `json:"avatar,omitempty" xml:"

@@ -14,16 +14,8 @@ taobao.wlb.waybill.i.search
 */
 type TaobaoWlbWaybillISearchAPIResponse struct {
     model.CommonResponse
-    TaobaoWlbWaybillISearchResponse
-}
-
-type TaobaoWlbWaybillISearchResponse struct {
-    XMLName xml.Name `xml:"wlb_waybill_i_search_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"wlb_waybill_i_search_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订购关系
     
-    Subscribtions   []WaybillApplySubscriptionInfo `json:"subscribtions,omitempty" xml:"subscribtions>waybill_apply_subscription_info,omitempty"`
-    
-    
-}
+    Subscribtions   []WaybillApplySubscriptionInfo `json:"subscribtions,omitempty" xml:"

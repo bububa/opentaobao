@@ -14,16 +14,8 @@ taobao.trade.close
 */
 type TaobaoTradeCloseAPIResponse struct {
     model.CommonResponse
-    TaobaoTradeCloseResponse
-}
-
-type TaobaoTradeCloseResponse struct {
-    XMLName xml.Name `xml:"trade_close_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"trade_close_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 关闭交易时返回的Trade信息，可用字段有tid和modified
     
-    Trade   *Trade `json:"trade,omitempty" xml:"trade,omitempty"`
-
-    
-}
+    Trade   *Trade `json:"trade,omitempty" xml:"

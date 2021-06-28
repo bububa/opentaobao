@@ -14,16 +14,8 @@ tmall.product.schema.get
 */
 type TmallProductSchemaGetAPIResponse struct {
     model.CommonResponse
-    TmallProductSchemaGetResponse
-}
-
-type TmallProductSchemaGetResponse struct {
-    XMLName xml.Name `xml:"tmall_product_schema_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_product_schema_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 产品信息数据。schema形式
     
-    GetProductResult   string `json:"get_product_result,omitempty" xml:"get_product_result,omitempty"`
-
-    
-}
+    GetProductResult   string `json:"get_product_result,omitempty" xml:"

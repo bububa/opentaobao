@@ -14,16 +14,8 @@ taobao.simba.creatives.changed.get
 */
 type TaobaoSimbaCreativesChangedGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaCreativesChangedGetResponse
-}
-
-type TaobaoSimbaCreativesChangedGetResponse struct {
-    XMLName xml.Name `xml:"simba_creatives_changed_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_creatives_changed_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 广告创意分页对象
     
-    Creatives   *CreativePage `json:"creatives,omitempty" xml:"creatives,omitempty"`
-
-    
-}
+    Creatives   *CreativePage `json:"creatives,omitempty" xml:"

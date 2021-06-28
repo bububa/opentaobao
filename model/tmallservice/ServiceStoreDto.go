@@ -1,7 +1,7 @@
 package tmallservice
 
-// ServiceStoreDto 
-type ServiceStoreDto struct {
+// ServiceStoreDTO 
+type ServiceStoreDTO struct {
 
     // 城市
     
@@ -73,16 +73,6 @@ type ServiceStoreDto struct {
     CompanyName   string `json:"company_name,omitempty" xml:"company_name,omitempty"`
     
 
-    // 品牌认证有效期
-    
-    GmtBrandCertificationExpire   string `json:"gmt_brand_certification_expire,omitempty" xml:"gmt_brand_certification_expire,omitempty"`
-    
-
-    // 门店id
-    
-    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
-    
-
     // 纬度
     
     Latitude   string `json:"latitude,omitempty" xml:"latitude,omitempty"`
@@ -125,7 +115,7 @@ type ServiceStoreDto struct {
 
     // 网点/门店编码
     
-    ServiceStoreAlias   string `json:"service_store_alias,omitempty" xml:"service_store_alias,omitempty"`
+    ServiceStoreCode   string `json:"service_store_code,omitempty" xml:"service_store_code,omitempty"`
     
 
     // 网点名称
@@ -133,19 +123,24 @@ type ServiceStoreDto struct {
     ServiceStoreName   string `json:"service_store_name,omitempty" xml:"service_store_name,omitempty"`
     
 
+    // 统一社会信用代码
+    
+    SocialCreditCode   string `json:"social_credit_code,omitempty" xml:"social_credit_code,omitempty"`
+    
+
     // 门店类型
     
     Type   int64 `json:"type,omitempty" xml:"type,omitempty"`
     
 
-    // 支付宝账号身份证
+    // 别名
     
-    AlipayAccountIdNumber   string `json:"alipay_account_id_number,omitempty" xml:"alipay_account_id_number,omitempty"`
+    ServiceStoreAlias   string `json:"service_store_alias,omitempty" xml:"service_store_alias,omitempty"`
     
 
-    // 照片集合
+    // 支付宝账户身份证号
     
-    PhotoCollections   string `json:"photo_collections,omitempty" xml:"photo_collections,omitempty"`
+    AlipayAccountIdNumber   string `json:"alipay_account_id_number,omitempty" xml:"alipay_account_id_number,omitempty"`
     
 
     // 法人身份证正面
@@ -166,11 +161,6 @@ type ServiceStoreDto struct {
     // 营业执照照片
     
     LicensePhoto   string `json:"license_photo,omitempty" xml:"license_photo,omitempty"`
-    
-
-    // 网点编码
-    
-    ServiceStoreCode   string `json:"service_store_code,omitempty" xml:"service_store_code,omitempty"`
     
 
 }

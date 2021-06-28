@@ -14,16 +14,8 @@ taobao.alitrip.travel.item.element.query
 */
 type TaobaoAlitripTravelItemElementQueryAPIResponse struct {
     model.CommonResponse
-    TaobaoAlitripTravelItemElementQueryResponse
-}
-
-type TaobaoAlitripTravelItemElementQueryResponse struct {
-    XMLName xml.Name `xml:"alitrip_travel_item_element_query_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_travel_item_element_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 资源元素列表
     
-    Results   []TopElementParam `json:"results,omitempty" xml:"results>top_element_param,omitempty"`
-    
-    
-}
+    Results   []TopElementParam `json:"results,omitempty" xml:"

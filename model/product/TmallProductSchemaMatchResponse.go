@@ -14,16 +14,8 @@ tmall.product.schema.match
 */
 type TmallProductSchemaMatchAPIResponse struct {
     model.CommonResponse
-    TmallProductSchemaMatchResponse
-}
-
-type TmallProductSchemaMatchResponse struct {
-    XMLName xml.Name `xml:"tmall_product_schema_match_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_product_schema_match_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回匹配产品ID，部分类目可能返回多个产品ID，以逗号分隔。
     
-    MatchResult   string `json:"match_result,omitempty" xml:"match_result,omitempty"`
-
-    
-}
+    MatchResult   string `json:"match_result,omitempty" xml:"

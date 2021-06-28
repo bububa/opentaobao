@@ -14,16 +14,8 @@ alibaba.wholesale.shippingline.template.init
 */
 type AlibabaWholesaleShippinglineTemplateInitAPIResponse struct {
     model.CommonResponse
-    AlibabaWholesaleShippinglineTemplateInitResponse
-}
-
-type AlibabaWholesaleShippinglineTemplateInitResponse struct {
-    XMLName xml.Name `xml:"alibaba_wholesale_shippingline_template_init_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wholesale_shippingline_template_init_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 模板是否创建成功
     
-    InitTemplateResponse   bool `json:"init_template_response,omitempty" xml:"init_template_response,omitempty"`
-
-    
-}
+    InitTemplateResponse   bool `json:"init_template_response,omitempty" xml:"

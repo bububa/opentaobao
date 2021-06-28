@@ -14,16 +14,8 @@ taobao.ump.tool.get
 */
 type TaobaoUmpToolGetAPIResponse struct {
     model.CommonResponse
-    TaobaoUmpToolGetResponse
-}
-
-type TaobaoUmpToolGetResponse struct {
-    XMLName xml.Name `xml:"ump_tool_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"ump_tool_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 工具信息内容，格式为json，可以通过提供给的sdk里面的MarketingBuilder来处理这个内容
     
-    Content   string `json:"content,omitempty" xml:"content,omitempty"`
-
-    
-}
+    Content   string `json:"content,omitempty" xml:"

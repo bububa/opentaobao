@@ -20,31 +20,8 @@ appkey验证通过的，才会进入抽奖流程，否则直接失败。
 */
 type AlibabaBenefitDrawAPIResponse struct {
     model.CommonResponse
-    AlibabaBenefitDrawResponse
-}
-
-type AlibabaBenefitDrawResponse struct {
-    XMLName xml.Name `xml:"alibaba_benefit_draw_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_benefit_draw_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *AlibabaBenefitDrawResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-    // 权益id
-    
-    PrizeId   string `json:"prize_id,omitempty" xml:"prize_id,omitempty"`
-
-    
-    // 奖品id
-    
-    RightId   string `json:"right_id,omitempty" xml:"right_id,omitempty"`
-
-    
-    // 扩展信息
-    
-    ExtAttribute   string `json:"ext_attribute,omitempty" xml:"ext_attribute,omitempty"`
-
-    
-}
+    Result   *AlibabaBenefitDrawResult `json:"result,omitempty" xml:"

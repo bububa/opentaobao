@@ -14,26 +14,8 @@ taobao.qimen.store.update
 */
 type TaobaoQimenStoreUpdateAPIResponse struct {
     model.CommonResponse
-    TaobaoQimenStoreUpdateResponse
-}
-
-type TaobaoQimenStoreUpdateResponse struct {
-    XMLName xml.Name `xml:"qimen_store_update_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"qimen_store_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应信息
     
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
-
-    
-    // 响应标示
-    
-    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
-
-    
-    // 响应编码
-    
-    QimenCode   string `json:"qimen_code,omitempty" xml:"qimen_code,omitempty"`
-
-    
-}
+    Message   string `json:"message,omitempty" xml:"

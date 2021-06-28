@@ -14,16 +14,8 @@ alitrip.travel.gereralproduct.update
 */
 type AlitripTravelGereralproductUpdateAPIResponse struct {
     model.CommonResponse
-    AlitripTravelGereralproductUpdateResponse
-}
-
-type AlitripTravelGereralproductUpdateResponse struct {
-    XMLName xml.Name `xml:"alitrip_travel_gereralproduct_update_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_travel_gereralproduct_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // firstResult
     
-    FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"first_result,omitempty"`
-
-    
-}
+    FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"

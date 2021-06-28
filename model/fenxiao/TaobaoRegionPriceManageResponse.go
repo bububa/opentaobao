@@ -14,16 +14,8 @@ taobao.region.price.manage
 */
 type TaobaoRegionPriceManageAPIResponse struct {
     model.CommonResponse
-    TaobaoRegionPriceManageResponse
-}
-
-type TaobaoRegionPriceManageResponse struct {
-    XMLName xml.Name `xml:"region_price_manage_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"region_price_manage_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // success
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-}
+    IsSuccess   bool `json:"is_success,omitempty" xml:"

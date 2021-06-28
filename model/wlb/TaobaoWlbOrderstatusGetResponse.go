@@ -14,16 +14,8 @@ taobao.wlb.orderstatus.get
 */
 type TaobaoWlbOrderstatusGetAPIResponse struct {
     model.CommonResponse
-    TaobaoWlbOrderstatusGetResponse
-}
-
-type TaobaoWlbOrderstatusGetResponse struct {
-    XMLName xml.Name `xml:"wlb_orderstatus_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"wlb_orderstatus_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订单流转信息状态列表
     
-    WlbOrderStatus   []WlbProcessStatus `json:"wlb_order_status,omitempty" xml:"wlb_order_status>wlb_process_status,omitempty"`
-    
-    
-}
+    WlbOrderStatus   []WlbProcessStatus `json:"wlb_order_status,omitempty" xml:"

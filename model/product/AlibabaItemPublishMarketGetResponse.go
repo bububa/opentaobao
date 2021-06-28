@@ -14,16 +14,8 @@ alibaba.item.publish.market.get
 */
 type AlibabaItemPublishMarketGetAPIResponse struct {
     model.CommonResponse
-    AlibabaItemPublishMarketGetResponse
-}
-
-type AlibabaItemPublishMarketGetResponse struct {
-    XMLName xml.Name `xml:"alibaba_item_publish_market_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_item_publish_market_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商家可发布的市场列表,多个以逗号(,)分隔
     
-    Markets   string `json:"markets,omitempty" xml:"markets,omitempty"`
-
-    
-}
+    Markets   string `json:"markets,omitempty" xml:"

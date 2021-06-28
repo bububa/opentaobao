@@ -15,16 +15,8 @@ taobao.alitrip.travel.item.shelve
 */
 type TaobaoAlitripTravelItemShelveAPIResponse struct {
     model.CommonResponse
-    TaobaoAlitripTravelItemShelveResponse
-}
-
-type TaobaoAlitripTravelItemShelveResponse struct {
-    XMLName xml.Name `xml:"alitrip_travel_item_shelve_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_travel_item_shelve_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品上下架操作是否成功
     
-    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   bool `json:"result,omitempty" xml:"

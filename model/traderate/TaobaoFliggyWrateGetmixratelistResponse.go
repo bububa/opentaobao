@@ -14,16 +14,8 @@ taobao.fliggy.wrate.getmixratelist
 */
 type TaobaoFliggyWrateGetmixratelistAPIResponse struct {
     model.CommonResponse
-    TaobaoFliggyWrateGetmixratelistResponse
-}
-
-type TaobaoFliggyWrateGetmixratelistResponse struct {
-    XMLName xml.Name `xml:"fliggy_wrate_getmixratelist_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"fliggy_wrate_getmixratelist_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *TaobaoFliggyWrateGetmixratelistResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *TaobaoFliggyWrateGetmixratelistResult `json:"result,omitempty" xml:"

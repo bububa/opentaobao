@@ -14,26 +14,8 @@ taobao.tmc.message.produce
 */
 type TaobaoTmcMessageProduceAPIResponse struct {
     model.CommonResponse
-    TaobaoTmcMessageProduceResponse
-}
-
-type TaobaoTmcMessageProduceResponse struct {
-    XMLName xml.Name `xml:"tmc_message_produce_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmc_message_produce_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
-    // 投递目标数
-    
-    Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
-
-    
-    // 消息ID
-    
-    MsgIds   []string `json:"msg_ids,omitempty" xml:"msg_ids>string,omitempty"`
-    
-    
-}
+    IsSuccess   bool `json:"is_success,omitempty" xml:"

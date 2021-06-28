@@ -14,16 +14,8 @@ WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP
 */
 type TaobaoQimenItemlackReportAPIResponse struct {
     model.CommonResponse
-    TaobaoQimenItemlackReportResponse
-}
-
-type TaobaoQimenItemlackReportResponse struct {
-    XMLName xml.Name `xml:"qimen_itemlack_report_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"qimen_itemlack_report_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
-
-    
-}
+    Response   *Response `json:"response,omitempty" xml:"

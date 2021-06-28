@@ -14,16 +14,8 @@ taobao.sellercenter.subuser.permissions.roles.get
 */
 type TaobaoSellercenterSubuserPermissionsRolesGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSellercenterSubuserPermissionsRolesGetResponse
-}
-
-type TaobaoSellercenterSubuserPermissionsRolesGetResponse struct {
-    XMLName xml.Name `xml:"sellercenter_subuser_permissions_roles_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"sellercenter_subuser_permissions_roles_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 子账号被所拥有的权限
     
-    SubuserPermission   *SubUserPermission `json:"subuser_permission,omitempty" xml:"subuser_permission,omitempty"`
-
-    
-}
+    SubuserPermission   *SubUserPermission `json:"subuser_permission,omitempty" xml:"

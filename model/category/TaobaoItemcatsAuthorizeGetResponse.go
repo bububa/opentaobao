@@ -14,16 +14,8 @@ taobao.itemcats.authorize.get
 */
 type TaobaoItemcatsAuthorizeGetAPIResponse struct {
     model.CommonResponse
-    TaobaoItemcatsAuthorizeGetResponse
-}
-
-type TaobaoItemcatsAuthorizeGetResponse struct {
-    XMLName xml.Name `xml:"itemcats_authorize_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"itemcats_authorize_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 里面有3个数组：<br/>Brand[]品牌列表,<br/>ItemCat[] 类目列表<br/>XinpinItemCat[] 针对于C卖家新品类目列表
     
-    SellerAuthorize   *SellerAuthorize `json:"seller_authorize,omitempty" xml:"seller_authorize,omitempty"`
-
-    
-}
+    SellerAuthorize   *SellerAuthorize `json:"seller_authorize,omitempty" xml:"

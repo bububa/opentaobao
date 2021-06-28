@@ -14,16 +14,8 @@ alibaba.aliqin.ta.voice.num.doublecall
 */
 type AlibabaAliqinTaVoiceNumDoublecallAPIResponse struct {
     model.CommonResponse
-    AlibabaAliqinTaVoiceNumDoublecallResponse
-}
-
-type AlibabaAliqinTaVoiceNumDoublecallResponse struct {
-    XMLName xml.Name `xml:"alibaba_aliqin_ta_voice_num_doublecall_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_aliqin_ta_voice_num_doublecall_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回参数
     
-    Result   *AlibabaAliqinTaVoiceNumDoublecallBizResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *AlibabaAliqinTaVoiceNumDoublecallBizResult `json:"result,omitempty" xml:"

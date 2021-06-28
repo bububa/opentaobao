@@ -14,16 +14,8 @@ taobao.simba.creative.update
 */
 type TaobaoSimbaCreativeUpdateAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaCreativeUpdateResponse
-}
-
-type TaobaoSimbaCreativeUpdateResponse struct {
-    XMLName xml.Name `xml:"simba_creative_update_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_creative_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 创意修改记录对象
     
-    Creativerecord   *CreativeRecord `json:"creativerecord,omitempty" xml:"creativerecord,omitempty"`
-
-    
-}
+    Creativerecord   *CreativeRecord `json:"creativerecord,omitempty" xml:"

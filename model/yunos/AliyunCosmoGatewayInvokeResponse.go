@@ -14,16 +14,8 @@ AliOS cosmo服务分发平台对外调用接口
 */
 type AliyunCosmoGatewayInvokeAPIResponse struct {
     model.CommonResponse
-    AliyunCosmoGatewayInvokeResponse
-}
-
-type AliyunCosmoGatewayInvokeResponse struct {
-    XMLName xml.Name `xml:"aliyun_cosmo_gateway_invoke_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"aliyun_cosmo_gateway_invoke_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *RdamResponse `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *RdamResponse `json:"result,omitempty" xml:"

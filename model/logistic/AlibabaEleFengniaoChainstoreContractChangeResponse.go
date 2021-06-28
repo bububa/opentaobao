@@ -14,16 +14,8 @@ alibaba.ele.fengniao.chainstore.contract.change
 */
 type AlibabaEleFengniaoChainstoreContractChangeAPIResponse struct {
     model.CommonResponse
-    AlibabaEleFengniaoChainstoreContractChangeResponse
-}
-
-type AlibabaEleFengniaoChainstoreContractChangeResponse struct {
-    XMLName xml.Name `xml:"alibaba_ele_fengniao_chainstore_contract_change_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_ele_fengniao_chainstore_contract_change_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // msg
     
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
-
-    
-}
+    Message   string `json:"message,omitempty" xml:"

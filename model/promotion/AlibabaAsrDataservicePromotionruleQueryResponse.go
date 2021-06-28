@@ -14,16 +14,8 @@ alibaba.asr.dataservice.promotionrule.query
 */
 type AlibabaAsrDataservicePromotionruleQueryAPIResponse struct {
     model.CommonResponse
-    AlibabaAsrDataservicePromotionruleQueryResponse
-}
-
-type AlibabaAsrDataservicePromotionruleQueryResponse struct {
-    XMLName xml.Name `xml:"alibaba_asr_dataservice_promotionrule_query_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_asr_dataservice_promotionrule_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result   *DataServiceResponse `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *DataServiceResponse `json:"result,omitempty" xml:"

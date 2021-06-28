@@ -14,16 +14,8 @@ tmall.car.leaseorder.get
 */
 type TmallCarLeaseorderGetAPIResponse struct {
     model.CommonResponse
-    TmallCarLeaseorderGetResponse
-}
-
-type TmallCarLeaseorderGetResponse struct {
-    XMLName xml.Name `xml:"tmall_car_leaseorder_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"tmall_car_leaseorder_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result   *ResultVo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
-}
+    Result   *ResultVo `json:"result,omitempty" xml:"

@@ -14,16 +14,8 @@ taobao.recycle.ofnpreredpacket.get
 */
 type TaobaoRecycleOfnpreredpacketGetAPIResponse struct {
     model.CommonResponse
-    TaobaoRecycleOfnpreredpacketGetResponse
-}
-
-type TaobaoRecycleOfnpreredpacketGetResponse struct {
-    XMLName xml.Name `xml:"recycle_ofnpreredpacket_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"recycle_ofnpreredpacket_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 前置补贴红包
     
-    Data   *OfnPreRedPacketDTO `json:"data,omitempty" xml:"data,omitempty"`
-
-    
-}
+    Data   *OfnPreRedPacketDTO `json:"data,omitempty" xml:"

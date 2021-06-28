@@ -14,16 +14,8 @@ alibaba.icbu.category.id.mapping
 */
 type AlibabaIcbuCategoryIdMappingAPIResponse struct {
     model.CommonResponse
-    AlibabaIcbuCategoryIdMappingResponse
-}
-
-type AlibabaIcbuCategoryIdMappingResponse struct {
-    XMLName xml.Name `xml:"alibaba_icbu_category_id_mapping_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_icbu_category_id_mapping_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 转化的类目id
     
-    MappingResult   int64 `json:"mapping_result,omitempty" xml:"mapping_result,omitempty"`
-
-    
-}
+    MappingResult   int64 `json:"mapping_result,omitempty" xml:"

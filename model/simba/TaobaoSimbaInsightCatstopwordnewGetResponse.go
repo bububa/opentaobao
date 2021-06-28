@@ -14,16 +14,8 @@ taobao.simba.insight.catstopwordnew.get
 */
 type TaobaoSimbaInsightCatstopwordnewGetAPIResponse struct {
     model.CommonResponse
-    TaobaoSimbaInsightCatstopwordnewGetResponse
-}
-
-type TaobaoSimbaInsightCatstopwordnewGetResponse struct {
-    XMLName xml.Name `xml:"simba_insight_catstopwordnew_get_response"`
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"simba_insight_catstopwordnew_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 类目下热门词详细数据
     
-    TopwordDataList   []InsightWordDataUnderCatDTO `json:"topword_data_list,omitempty" xml:"topword_data_list>insight_word_data_under_cat_dto,omitempty"`
-    
-    
-}
+    TopwordDataList   []InsightWordDataUnderCatDTO `json:"topword_data_list,omitempty" xml:"
