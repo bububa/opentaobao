@@ -10,6 +10,8 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Added
 
+- Support self made metadata in patch which not exists in downloaded metadata
+
 ### Changed
 
 ### Deprecated
