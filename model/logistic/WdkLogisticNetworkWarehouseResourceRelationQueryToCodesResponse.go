@@ -14,8 +14,16 @@ wdk.logistic.network.warehouse.resource.relation.query.to.codes
 */
 type WdkLogisticNetworkWarehouseResourceRelationQueryToCodesAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"wdk_logistic_network_warehouse_resource_relation_query_to_codes_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    WdkLogisticNetworkWarehouseResourceRelationQueryToCodesResponse
+}
+
+type WdkLogisticNetworkWarehouseResourceRelationQueryToCodesResponse struct {
+    XMLName xml.Name `xml:"wdk_logistic_network_warehouse_resource_relation_query_to_codes_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result   *LogisticsResult `json:"result,omitempty" xml:"
+    Result   *LogisticsResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

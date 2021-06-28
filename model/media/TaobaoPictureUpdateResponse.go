@@ -14,8 +14,16 @@ taobao.picture.update
 */
 type TaobaoPictureUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"picture_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoPictureUpdateResponse
+}
+
+type TaobaoPictureUpdateResponse struct {
+    XMLName xml.Name `xml:"picture_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 更新是否成功
     
-    Done   bool `json:"done,omitempty" xml:"
+    Done   bool `json:"done,omitempty" xml:"done,omitempty"`
+
+    
+}

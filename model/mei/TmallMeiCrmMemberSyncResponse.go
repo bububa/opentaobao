@@ -16,8 +16,16 @@ tmall.mei.crm.member.sync
 */
 type TmallMeiCrmMemberSyncAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_mei_crm_member_sync_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallMeiCrmMemberSyncResponse
+}
+
+type TmallMeiCrmMemberSyncResponse struct {
+    XMLName xml.Name `xml:"tmall_mei_crm_member_sync_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 处理的其他信息
     
-    MeiExtraInfo   string `json:"mei_extra_info,omitempty" xml:"
+    MeiExtraInfo   string `json:"mei_extra_info,omitempty" xml:"mei_extra_info,omitempty"`
+
+    
+}

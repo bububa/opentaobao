@@ -14,8 +14,16 @@ taobao.simba.rtrpt.bidword.get
 */
 type TaobaoSimbaRtrptBidwordGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_rtrpt_bidword_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaRtrptBidwordGetResponse
+}
+
+type TaobaoSimbaRtrptBidwordGetResponse struct {
+    XMLName xml.Name `xml:"simba_rtrpt_bidword_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // bidword result
     
-    Results   []RtRptResultEntityDTO `json:"results,omitempty" xml:"
+    Results   []RtRptResultEntityDTO `json:"results,omitempty" xml:"results>rt_rpt_result_entity_dto,omitempty"`
+    
+    
+}

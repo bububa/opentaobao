@@ -14,8 +14,16 @@ taobao.qimen.transferorder.create
 */
 type TaobaoQimenTransferorderCreateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qimen_transferorder_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQimenTransferorderCreateResponse
+}
+
+type TaobaoQimenTransferorderCreateResponse struct {
+    XMLName xml.Name `xml:"qimen_transferorder_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *TaobaoQimenTransferorderCreateStruct `json:"response,omitempty" xml:"
+    Response   *TaobaoQimenTransferorderCreateStruct `json:"response,omitempty" xml:"response,omitempty"`
+
+    
+}

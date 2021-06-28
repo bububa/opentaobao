@@ -14,8 +14,16 @@ taobao.delivery.template.delete
 */
 type TaobaoDeliveryTemplateDeleteAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"delivery_template_delete_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoDeliveryTemplateDeleteResponse
+}
+
+type TaobaoDeliveryTemplateDeleteResponse struct {
+    XMLName xml.Name `xml:"delivery_template_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 表示删除成功还是失败
     
-    Complete   bool `json:"complete,omitempty" xml:"
+    Complete   bool `json:"complete,omitempty" xml:"complete,omitempty"`
+
+    
+}

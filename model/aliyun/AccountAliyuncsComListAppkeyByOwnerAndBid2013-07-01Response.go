@@ -14,8 +14,16 @@ account.aliyuncs.com.ListAppkeyByOwnerAndBid.2013-07-01
 */
 type AccountAliyuncsComListAppkeyByOwnerAndBid2013-07-01APIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"account_aliyuncs_com_ListAppkeyByOwnerAndBid_2013-07-01_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AccountAliyuncsComListAppkeyByOwnerAndBid2013-07-01Response
+}
+
+type AccountAliyuncsComListAppkeyByOwnerAndBid2013-07-01Response struct {
+    XMLName xml.Name `xml:"account_aliyuncs_com_ListAppkeyByOwnerAndBid_2013-07-01_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // return result
     
-    ResultData   string `json:"result_data,omitempty" xml:"
+    ResultData   string `json:"result_data,omitempty" xml:"result_data,omitempty"`
+
+    
+}

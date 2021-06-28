@@ -14,8 +14,16 @@ tmall.item.store.update.schema.get
 */
 type TmallItemStoreUpdateSchemaGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_item_store_update_schema_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallItemStoreUpdateSchemaGetResponse
+}
+
+type TmallItemStoreUpdateSchemaGetResponse struct {
+    XMLName xml.Name `xml:"tmall_item_store_update_schema_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 无
     
-    ApiResult   *TmallItemStoreUpdateSchemaGetApiResult `json:"api_result,omitempty" xml:"
+    ApiResult   *TmallItemStoreUpdateSchemaGetApiResult `json:"api_result,omitempty" xml:"api_result,omitempty"`
+
+    
+}

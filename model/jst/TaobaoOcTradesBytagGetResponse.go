@@ -14,8 +14,21 @@ taobao.oc.trades.bytag.get
 */
 type TaobaoOcTradesBytagGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"oc_trades_bytag_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoOcTradesBytagGetResponse
+}
+
+type TaobaoOcTradesBytagGetResponse struct {
+    XMLName xml.Name `xml:"oc_trades_bytag_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 打了该标签的订单编号列表
     
-    Tids   []int64 `json:"tids,omitempty" xml:"
+    Tids   []int64 `json:"tids,omitempty" xml:"tids>int64,omitempty"`
+    
+    
+    // 总数
+    
+    Totals   int64 `json:"totals,omitempty" xml:"totals,omitempty"`
+
+    
+}

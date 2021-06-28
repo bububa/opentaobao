@@ -14,8 +14,16 @@ alibaba.aliqin.tcc.trade.identity.get
 */
 type AlibabaAliqinTccTradeIdentityGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_aliqin_tcc_trade_identity_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaAliqinTccTradeIdentityGetResponse
+}
+
+type AlibabaAliqinTccTradeIdentityGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_tcc_trade_identity_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回身份信息
     
-    Result   *IdentityInfo `json:"result,omitempty" xml:"
+    Result   *IdentityInfo `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

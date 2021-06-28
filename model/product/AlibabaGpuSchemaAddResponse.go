@@ -14,8 +14,16 @@ alibaba.gpu.schema.add
 */
 type AlibabaGpuSchemaAddAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_gpu_schema_add_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaGpuSchemaAddResponse
+}
+
+type AlibabaGpuSchemaAddResponse struct {
+    XMLName xml.Name `xml:"alibaba_gpu_schema_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 产品发布的结果
     
-    AddProductResult   string `json:"add_product_result,omitempty" xml:"
+    AddProductResult   string `json:"add_product_result,omitempty" xml:"add_product_result,omitempty"`
+
+    
+}

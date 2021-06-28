@@ -15,8 +15,21 @@ taobao.inventory.adjust.external
 */
 type TaobaoInventoryAdjustExternalAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"inventory_adjust_external_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoInventoryAdjustExternalResponse
+}
+
+type TaobaoInventoryAdjustExternalResponse struct {
+    XMLName xml.Name `xml:"inventory_adjust_external_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作返回码
     
-    OperateCode   string `json:"operate_code,omitempty" xml:"
+    OperateCode   string `json:"operate_code,omitempty" xml:"operate_code,omitempty"`
+
+    
+    // 提示信息
+    
+    TipInfos   []TipInfo `json:"tip_infos,omitempty" xml:"tip_infos>tip_info,omitempty"`
+    
+    
+}

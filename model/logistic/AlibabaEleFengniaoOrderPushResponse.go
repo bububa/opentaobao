@@ -14,8 +14,16 @@ alibaba.ele.fengniao.order.push
 */
 type AlibabaEleFengniaoOrderPushAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_ele_fengniao_order_push_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaEleFengniaoOrderPushResponse
+}
+
+type AlibabaEleFengniaoOrderPushResponse struct {
+    XMLName xml.Name `xml:"alibaba_ele_fengniao_order_push_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // msg
     
-    Message   string `json:"message,omitempty" xml:"
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+
+    
+}

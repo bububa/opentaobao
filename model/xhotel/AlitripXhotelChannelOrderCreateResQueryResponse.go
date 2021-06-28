@@ -14,8 +14,16 @@ alitrip.xhotel.channel.order.create.res.query
 */
 type AlitripXhotelChannelOrderCreateResQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_xhotel_channel_order_create_res_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlitripXhotelChannelOrderCreateResQueryResponse
+}
+
+type AlitripXhotelChannelOrderCreateResQueryResponse struct {
+    XMLName xml.Name `xml:"alitrip_xhotel_channel_order_create_res_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result   *HbsResult `json:"result,omitempty" xml:"
+    Result   *HbsResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

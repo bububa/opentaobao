@@ -14,8 +14,16 @@ cainiao.waybill.ii.product
 */
 type CainiaoWaybillIiProductAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"cainiao_waybill_ii_product_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    CainiaoWaybillIiProductResponse
+}
+
+type CainiaoWaybillIiProductResponse struct {
+    XMLName xml.Name `xml:"cainiao_waybill_ii_product_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    ProductTypes   []WaybillProductType `json:"product_types,omitempty" xml:"
+    ProductTypes   []WaybillProductType `json:"product_types,omitempty" xml:"product_types>waybill_product_type,omitempty"`
+    
+    
+}

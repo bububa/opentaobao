@@ -19,8 +19,16 @@ taobao.auction.gov.data.annually.get
 */
 type TaobaoAuctionGovDataAnnuallyGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"auction_gov_data_annually_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoAuctionGovDataAnnuallyGetResponse
+}
+
+type TaobaoAuctionGovDataAnnuallyGetResponse struct {
+    XMLName xml.Name `xml:"auction_gov_data_annually_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 按年统计结果列表
     
-    Results   []CourtsBidStatAnnuallyList `json:"results,omitempty" xml:"
+    Results   []CourtsBidStatAnnuallyList `json:"results,omitempty" xml:"results>courts_bid_stat_annually_list,omitempty"`
+    
+    
+}

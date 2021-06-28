@@ -14,8 +14,21 @@ taobao.wangwang.abstract.deleteword
 */
 type TaobaoWangwangAbstractDeletewordAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"wangwang_abstract_deleteword_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoWangwangAbstractDeletewordResponse
+}
+
+type TaobaoWangwangAbstractDeletewordResponse struct {
+    XMLName xml.Name `xml:"wangwang_abstract_deleteword_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 0或-1，表示错误或正确，错误时有错误信息
     
-    RetCode   int64 `json:"ret_code,omitempty" xml:"
+    RetCode   int64 `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
+
+    
+    // 例如单词长度太长等
+    
+    ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
+
+    
+}

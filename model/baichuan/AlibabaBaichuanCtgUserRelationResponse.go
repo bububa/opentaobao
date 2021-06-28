@@ -14,8 +14,16 @@ alibaba.baichuan.ctg.user.relation
 */
 type AlibabaBaichuanCtgUserRelationAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_baichuan_ctg_user_relation_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaBaichuanCtgUserRelationResponse
+}
+
+type AlibabaBaichuanCtgUserRelationResponse struct {
+    XMLName xml.Name `xml:"alibaba_baichuan_ctg_user_relation_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的整体结果
     
-    Result   *AlibabaBaichuanCtgUserRelationResult `json:"result,omitempty" xml:"
+    Result   *AlibabaBaichuanCtgUserRelationResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

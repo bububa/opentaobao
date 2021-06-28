@@ -14,8 +14,16 @@ alibaba.retail.marketing.buygift.activity.sku.add
 */
 type AlibabaRetailMarketingBuygiftActivitySkuAddAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_retail_marketing_buygift_activity_sku_add_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaRetailMarketingBuygiftActivitySkuAddResponse
+}
+
+type AlibabaRetailMarketingBuygiftActivitySkuAddResponse struct {
+    XMLName xml.Name `xml:"alibaba_retail_marketing_buygift_activity_sku_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 操作结果
     
-    Result   *OctopusOpenResult `json:"result,omitempty" xml:"
+    Result   *OctopusOpenResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

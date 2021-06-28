@@ -14,8 +14,16 @@ taobao.sellercats.list.get
 */
 type TaobaoSellercatsListGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"sellercats_list_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSellercatsListGetResponse
+}
+
+type TaobaoSellercatsListGetResponse struct {
+    XMLName xml.Name `xml:"sellercats_list_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 卖家自定义类目
     
-    SellerCats   []SellerCat `json:"seller_cats,omitempty" xml:"
+    SellerCats   []SellerCat `json:"seller_cats,omitempty" xml:"seller_cats>seller_cat,omitempty"`
+    
+    
+}

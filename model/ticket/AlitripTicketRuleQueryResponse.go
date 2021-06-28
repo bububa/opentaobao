@@ -14,8 +14,16 @@ alitrip.ticket.rule.query
 */
 type AlitripTicketRuleQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_ticket_rule_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlitripTicketRuleQueryResponse
+}
+
+type AlitripTicketRuleQueryResponse struct {
+    XMLName xml.Name `xml:"alitrip_ticket_rule_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 门票规则信息
     
-    FirstResult   *TicketRuleParam `json:"first_result,omitempty" xml:"
+    FirstResult   *TicketRuleParam `json:"first_result,omitempty" xml:"first_result,omitempty"`
+
+    
+}

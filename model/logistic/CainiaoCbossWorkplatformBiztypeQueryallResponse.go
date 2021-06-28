@@ -14,8 +14,31 @@ cainiao.cboss.workplatform.biztype.queryall
 */
 type CainiaoCbossWorkplatformBiztypeQueryallAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"cainiao_cboss_workplatform_biztype_queryall_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    CainiaoCbossWorkplatformBiztypeQueryallResponse
+}
+
+type CainiaoCbossWorkplatformBiztypeQueryallResponse struct {
+    XMLName xml.Name `xml:"cainiao_cboss_workplatform_biztype_queryall_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // bizTypeJson
     
-    BizTypeJson   string `json:"biz_type_json,omitempty" xml:"
+    BizTypeJson   string `json:"biz_type_json,omitempty" xml:"biz_type_json,omitempty"`
+
+    
+    // success
+    
+    ResSuccess   bool `json:"res_success,omitempty" xml:"res_success,omitempty"`
+
+    
+    // errorCode
+    
+    ResErrorCode   string `json:"res_error_code,omitempty" xml:"res_error_code,omitempty"`
+
+    
+    // errorMsg
+    
+    ResErrorMsg   string `json:"res_error_msg,omitempty" xml:"res_error_msg,omitempty"`
+
+    
+}

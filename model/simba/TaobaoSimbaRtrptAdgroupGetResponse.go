@@ -14,8 +14,16 @@ taobao.simba.rtrpt.adgroup.get
 */
 type TaobaoSimbaRtrptAdgroupGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_rtrpt_adgroup_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaRtrptAdgroupGetResponse
+}
+
+type TaobaoSimbaRtrptAdgroupGetResponse struct {
+    XMLName xml.Name `xml:"simba_rtrpt_adgroup_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 1111
     
-    Results   []RtRptResultEntityDTO `json:"results,omitempty" xml:"
+    Results   []RtRptResultEntityDTO `json:"results,omitempty" xml:"results>rt_rpt_result_entity_dto,omitempty"`
+    
+    
+}

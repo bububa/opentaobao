@@ -14,8 +14,16 @@ taobao.jst.sms.message.direct.batchsend
 */
 type TaobaoJstSmsMessageDirectBatchsendAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"jst_sms_message_direct_batchsend_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoJstSmsMessageDirectBatchsendResponse
+}
+
+type TaobaoJstSmsMessageDirectBatchsendResponse struct {
+    XMLName xml.Name `xml:"jst_sms_message_direct_batchsend_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 短信回执码
     
-    Module   string `json:"module,omitempty" xml:"
+    Module   string `json:"module,omitempty" xml:"module,omitempty"`
+
+    
+}

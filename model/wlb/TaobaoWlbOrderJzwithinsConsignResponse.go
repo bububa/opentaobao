@@ -14,8 +14,21 @@ taobao.wlb.order.jzwithins.consign
 */
 type TaobaoWlbOrderJzwithinsConsignAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"wlb_order_jzwithins_consign_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoWlbOrderJzwithinsConsignResponse
+}
+
+type TaobaoWlbOrderJzwithinsConsignResponse struct {
+    XMLName xml.Name `xml:"wlb_order_jzwithins_consign_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 发货成功或者失败
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+    // 发货返回信息，如果发货错误则报出对应错误
+    
+    ResultInfo   string `json:"result_info,omitempty" xml:"result_info,omitempty"`
+
+    
+}

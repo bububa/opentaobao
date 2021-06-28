@@ -14,8 +14,16 @@ taobao.item.qualification.display.get
 */
 type TaobaoItemQualificationDisplayGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"item_qualification_display_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoItemQualificationDisplayGetResponse
+}
+
+type TaobaoItemQualificationDisplayGetResponse struct {
+    XMLName xml.Name `xml:"item_qualification_display_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回资质采集配置
     
-    DisplayConf   *DisplayQualifications `json:"display_conf,omitempty" xml:"
+    DisplayConf   *DisplayQualifications `json:"display_conf,omitempty" xml:"display_conf,omitempty"`
+
+    
+}

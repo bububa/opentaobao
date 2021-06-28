@@ -14,8 +14,36 @@ tmall.ccf.crowd.activityuser.upload
 */
 type TmallCcfCrowdActivityuserUploadAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_ccf_crowd_activityuser_upload_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallCcfCrowdActivityuserUploadResponse
+}
+
+type TmallCcfCrowdActivityuserUploadResponse struct {
+    XMLName xml.Name `xml:"tmall_ccf_crowd_activityuser_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Data   bool `json:"data,omitempty" xml:"
+    Data   bool `json:"data,omitempty" xml:"data,omitempty"`
+
+    
+    // 错误码
+    
+    ECode   string `json:"e_code,omitempty" xml:"e_code,omitempty"`
+
+    
+    // 错误信息
+    
+    EMsg   string `json:"e_msg,omitempty" xml:"e_msg,omitempty"`
+
+    
+    // 是否失败
+    
+    Failed   bool `json:"failed,omitempty" xml:"failed,omitempty"`
+
+    
+    // 是否成功
+    
+    Suc   bool `json:"suc,omitempty" xml:"suc,omitempty"`
+
+    
+}

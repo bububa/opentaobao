@@ -14,8 +14,16 @@ alibaba.wdk.order.sync.withitem
 */
 type AlibabaWdkOrderSyncWithitemAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdk_order_sync_withitem_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaWdkOrderSyncWithitemResponse
+}
+
+type AlibabaWdkOrderSyncWithitemResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_order_sync_withitem_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用返回的结果
     
-    Result   *AlibabaWdkOrderSyncWithitemApiResult `json:"result,omitempty" xml:"
+    Result   *AlibabaWdkOrderSyncWithitemApiResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

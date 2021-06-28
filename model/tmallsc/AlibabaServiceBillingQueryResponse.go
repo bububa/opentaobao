@@ -14,8 +14,16 @@ alibaba.service.billing.query
 */
 type AlibabaServiceBillingQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_service_billing_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaServiceBillingQueryResponse
+}
+
+type AlibabaServiceBillingQueryResponse struct {
+    XMLName xml.Name `xml:"alibaba_service_billing_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结算明细查询结果
     
-    SettlementDetailQueryResult   *FulfilplatformResult `json:"settlement_detail_query_result,omitempty" xml:"
+    SettlementDetailQueryResult   *FulfilplatformResult `json:"settlement_detail_query_result,omitempty" xml:"settlement_detail_query_result,omitempty"`
+
+    
+}

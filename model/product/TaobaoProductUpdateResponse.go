@@ -14,8 +14,16 @@ taobao.product.update
 */
 type TaobaoProductUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"product_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoProductUpdateResponse
+}
+
+type TaobaoProductUpdateResponse struct {
+    XMLName xml.Name `xml:"product_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回product数据结构中的：product_id,modified
     
-    Product   *Product `json:"product,omitempty" xml:"
+    Product   *Product `json:"product,omitempty" xml:"product,omitempty"`
+
+    
+}

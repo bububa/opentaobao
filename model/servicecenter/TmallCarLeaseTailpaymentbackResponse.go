@@ -14,8 +14,16 @@ tmall.car.lease.tailpaymentback
 */
 type TmallCarLeaseTailpaymentbackAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_car_lease_tailpaymentback_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallCarLeaseTailpaymentbackResponse
+}
+
+type TmallCarLeaseTailpaymentbackResponse struct {
+    XMLName xml.Name `xml:"tmall_car_lease_tailpaymentback_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TmallCarLeaseTailpaymentbackResult `json:"result,omitempty" xml:"
+    Result   *TmallCarLeaseTailpaymentbackResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

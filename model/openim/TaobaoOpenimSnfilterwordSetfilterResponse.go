@@ -14,8 +14,21 @@ taobao.openim.snfilterword.setfilter
 */
 type TaobaoOpenimSnfilterwordSetfilterAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"openim_snfilterword_setfilter_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoOpenimSnfilterwordSetfilterResponse
+}
+
+type TaobaoOpenimSnfilterwordSetfilterResponse struct {
+    XMLName xml.Name `xml:"openim_snfilterword_setfilter_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 成功
     
-    Errid   int64 `json:"errid,omitempty" xml:"
+    Errid   int64 `json:"errid,omitempty" xml:"errid,omitempty"`
+
+    
+    // 错误原因
+    
+    Errmsg   string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
+
+    
+}

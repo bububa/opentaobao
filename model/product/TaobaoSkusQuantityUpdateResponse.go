@@ -14,8 +14,16 @@ taobao.skus.quantity.update
 */
 type TaobaoSkusQuantityUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"skus_quantity_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSkusQuantityUpdateResponse
+}
+
+type TaobaoSkusQuantityUpdateResponse struct {
+    XMLName xml.Name `xml:"skus_quantity_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // iid、numIid、num和modified，skus中每个sku的skuId、quantity和modified
     
-    Item   *Item `json:"item,omitempty" xml:"
+    Item   *Item `json:"item,omitempty" xml:"item,omitempty"`
+
+    
+}

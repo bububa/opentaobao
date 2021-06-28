@@ -14,8 +14,16 @@ taobao.ump.detail.delete
 */
 type TaobaoUmpDetailDeleteAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"ump_detail_delete_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoUmpDetailDeleteResponse
+}
+
+type TaobaoUmpDetailDeleteResponse struct {
+    XMLName xml.Name `xml:"ump_detail_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+}

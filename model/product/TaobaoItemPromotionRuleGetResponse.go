@@ -14,8 +14,21 @@ taobao.item.promotion.rule.get
 */
 type TaobaoItemPromotionRuleGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"item_promotion_rule_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoItemPromotionRuleGetResponse
+}
+
+type TaobaoItemPromotionRuleGetResponse struct {
+    XMLName xml.Name `xml:"item_promotion_rule_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品规则信息
     
-    Rules   []ItemPromotionRule `json:"rules,omitempty" xml:"
+    Rules   []ItemPromotionRule `json:"rules,omitempty" xml:"rules>item_promotion_rule,omitempty"`
+    
+    
+    // 商品是否命中更新规则
+    
+    Effec   bool `json:"effec,omitempty" xml:"effec,omitempty"`
+
+    
+}

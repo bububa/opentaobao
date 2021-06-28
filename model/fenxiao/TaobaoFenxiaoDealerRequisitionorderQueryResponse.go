@@ -14,8 +14,16 @@ taobao.fenxiao.dealer.requisitionorder.query
 */
 type TaobaoFenxiaoDealerRequisitionorderQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"fenxiao_dealer_requisitionorder_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoFenxiaoDealerRequisitionorderQueryResponse
+}
+
+type TaobaoFenxiaoDealerRequisitionorderQueryResponse struct {
+    XMLName xml.Name `xml:"fenxiao_dealer_requisitionorder_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 经销采购单结果列表
     
-    DealerOrders   []DealerOrder `json:"dealer_orders,omitempty" xml:"
+    DealerOrders   []DealerOrder `json:"dealer_orders,omitempty" xml:"dealer_orders>dealer_order,omitempty"`
+    
+    
+}

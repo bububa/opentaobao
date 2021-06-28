@@ -14,8 +14,16 @@ alibaba.servicecenter.fulfiltask.buyeraddress.change
 */
 type AlibabaServicecenterFulfiltaskBuyeraddressChangeAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_servicecenter_fulfiltask_buyeraddress_change_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse
+}
+
+type AlibabaServicecenterFulfiltaskBuyeraddressChangeResponse struct {
+    XMLName xml.Name `xml:"alibaba_servicecenter_fulfiltask_buyeraddress_change_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *AlibabaServicecenterFulfiltaskBuyeraddressChangeResult `json:"result,omitempty" xml:"
+    Result   *AlibabaServicecenterFulfiltaskBuyeraddressChangeResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

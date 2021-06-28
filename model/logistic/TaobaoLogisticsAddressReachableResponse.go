@@ -15,8 +15,16 @@ taobao.logistics.address.reachable
 */
 type TaobaoLogisticsAddressReachableAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"logistics_address_reachable_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoLogisticsAddressReachableResponse
+}
+
+type TaobaoLogisticsAddressReachableResponse struct {
+    XMLName xml.Name `xml:"logistics_address_reachable_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 地址可达返回结果，每个TP对应一个
     
-    ReachableResultList   []AddressReachableResult `json:"reachable_result_list,omitempty" xml:"
+    ReachableResultList   []AddressReachableResult `json:"reachable_result_list,omitempty" xml:"reachable_result_list>address_reachable_result,omitempty"`
+    
+    
+}

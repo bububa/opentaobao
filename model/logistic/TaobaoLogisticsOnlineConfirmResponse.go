@@ -15,8 +15,16 @@ taobao.logistics.online.confirm
 */
 type TaobaoLogisticsOnlineConfirmAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"logistics_online_confirm_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoLogisticsOnlineConfirmResponse
+}
+
+type TaobaoLogisticsOnlineConfirmResponse struct {
+    XMLName xml.Name `xml:"logistics_online_confirm_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 只返回is_success：是否成功。
     
-    Shipping   *Shipping `json:"shipping,omitempty" xml:"
+    Shipping   *Shipping `json:"shipping,omitempty" xml:"shipping,omitempty"`
+
+    
+}

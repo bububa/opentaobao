@@ -14,8 +14,16 @@ taobao.simba.campaign.update
 */
 type TaobaoSimbaCampaignUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_campaign_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaCampaignUpdateResponse
+}
+
+type TaobaoSimbaCampaignUpdateResponse struct {
+    XMLName xml.Name `xml:"simba_campaign_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改后的推广计划
     
-    Campaign   *Campaign `json:"campaign,omitempty" xml:"
+    Campaign   *Campaign `json:"campaign,omitempty" xml:"campaign,omitempty"`
+
+    
+}

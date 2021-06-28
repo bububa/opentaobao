@@ -14,8 +14,16 @@ taobao.item.update.listing
 */
 type TaobaoItemUpdateListingAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"item_update_listing_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoItemUpdateListingResponse
+}
+
+type TaobaoItemUpdateListingResponse struct {
+    XMLName xml.Name `xml:"item_update_listing_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 上架后返回的商品信息：返回的结果就是:num_iid和modified
     
-    Item   *Item `json:"item,omitempty" xml:"
+    Item   *Item `json:"item,omitempty" xml:"item,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ alibaba.xiami.api.mobile.figureimage.get
 */
 type AlibabaXiamiApiMobileFigureimageGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_xiami_api_mobile_figureimage_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaXiamiApiMobileFigureimageGetResponse
+}
+
+type AlibabaXiamiApiMobileFigureimageGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_xiami_api_mobile_figureimage_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // mobile_figure_image_result
     
-    MobileFigureImageList   []AlibabaXiamiApiMobileFigureimageGetStruct `json:"mobile_figure_image_list,omitempty" xml:"
+    MobileFigureImageList   []AlibabaXiamiApiMobileFigureimageGetStruct `json:"mobile_figure_image_list,omitempty" xml:"mobile_figure_image_list>alibaba_xiami_api_mobile_figureimage_get_struct,omitempty"`
+    
+    
+}

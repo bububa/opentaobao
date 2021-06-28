@@ -14,8 +14,21 @@ tmall.item.schema.add
 */
 type TmallItemSchemaAddAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_item_schema_add_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallItemSchemaAddResponse
+}
+
+type TmallItemSchemaAddResponse struct {
+    XMLName xml.Name `xml:"tmall_item_schema_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回商品发布结果
     
-    AddItemResult   string `json:"add_item_result,omitempty" xml:"
+    AddItemResult   string `json:"add_item_result,omitempty" xml:"add_item_result,omitempty"`
+
+    
+    // 发布商品操作成功时间
+    
+    GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
+
+    
+}

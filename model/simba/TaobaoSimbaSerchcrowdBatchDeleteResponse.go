@@ -14,8 +14,26 @@ taobao.simba.serchcrowd.batch.delete
 */
 type TaobaoSimbaSerchcrowdBatchDeleteAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_serchcrowd_batch_delete_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaSerchcrowdBatchDeleteResponse
+}
+
+type TaobaoSimbaSerchcrowdBatchDeleteResponse struct {
+    XMLName xml.Name `xml:"simba_serchcrowd_batch_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    DeleteList   []string `json:"delete_list,omitempty" xml:"
+    DeleteList   []string `json:"delete_list,omitempty" xml:"delete_list>string,omitempty"`
+    
+    
+    // errorDTOList
+    
+    ErrorDTOList   []string `json:"error_d_t_o_list,omitempty" xml:"error_d_t_o_list>string,omitempty"`
+    
+    
+    // key
+    
+    Key   string `json:"key,omitempty" xml:"key,omitempty"`
+
+    
+}

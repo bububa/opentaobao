@@ -14,8 +14,16 @@ taobao.bus.busnumber.get
 */
 type TaobaoBusBusnumberGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"bus_busnumber_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoBusBusnumberGetResponse
+}
+
+type TaobaoBusBusnumberGetResponse struct {
+    XMLName xml.Name `xml:"bus_busnumber_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TaobaoBusBusnumberGetResultSet `json:"result,omitempty" xml:"
+    Result   *TaobaoBusBusnumberGetResultSet `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

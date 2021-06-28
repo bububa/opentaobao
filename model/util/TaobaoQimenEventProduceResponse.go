@@ -14,8 +14,16 @@ taobao.qimen.event.produce
 */
 type TaobaoQimenEventProduceAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qimen_event_produce_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQimenEventProduceResponse
+}
+
+type TaobaoQimenEventProduceResponse struct {
+    XMLName xml.Name `xml:"qimen_event_produce_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ taobao.picture.replace
 */
 type TaobaoPictureReplaceAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"picture_replace_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoPictureReplaceResponse
+}
+
+type TaobaoPictureReplaceResponse struct {
+    XMLName xml.Name `xml:"picture_replace_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 图片替换是否成功
     
-    Done   bool `json:"done,omitempty" xml:"
+    Done   bool `json:"done,omitempty" xml:"done,omitempty"`
+
+    
+}

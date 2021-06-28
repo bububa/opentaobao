@@ -14,8 +14,16 @@ alibaba.wdk.sku.channelsku.update
 */
 type AlibabaWdkSkuChannelskuUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdk_sku_channelsku_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaWdkSkuChannelskuUpdateResponse
+}
+
+type AlibabaWdkSkuChannelskuUpdateResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_sku_channelsku_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用结果
     
-    Result   *AlibabaWdkSkuChannelskuUpdateApiResults `json:"result,omitempty" xml:"
+    Result   *AlibabaWdkSkuChannelskuUpdateApiResults `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

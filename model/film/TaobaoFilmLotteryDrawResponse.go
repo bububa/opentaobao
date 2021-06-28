@@ -14,8 +14,16 @@ taobao.film.lottery.draw
 */
 type TaobaoFilmLotteryDrawAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"film_lottery_draw_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoFilmLotteryDrawResponse
+}
+
+type TaobaoFilmLotteryDrawResponse struct {
+    XMLName xml.Name `xml:"film_lottery_draw_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result   *ResultGeneralModel `json:"result,omitempty" xml:"
+    Result   *ResultGeneralModel `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

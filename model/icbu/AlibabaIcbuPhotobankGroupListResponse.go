@@ -14,8 +14,16 @@ alibaba.icbu.photobank.group.list
 */
 type AlibabaIcbuPhotobankGroupListAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_icbu_photobank_group_list_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaIcbuPhotobankGroupListResponse
+}
+
+type AlibabaIcbuPhotobankGroupListResponse struct {
+    XMLName xml.Name `xml:"alibaba_icbu_photobank_group_list_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // groups
     
-    Groups   []PhotoAlbumGroup `json:"groups,omitempty" xml:"
+    Groups   []PhotoAlbumGroup `json:"groups,omitempty" xml:"groups>photo_album_group,omitempty"`
+    
+    
+}

@@ -14,8 +14,26 @@ ToB仓储发货
 */
 type TaobaoUopTobOrderCreateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"uop_tob_order_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoUopTobOrderCreateResponse
+}
+
+type TaobaoUopTobOrderCreateResponse struct {
+    XMLName xml.Name `xml:"uop_tob_order_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // flag
     
-    Flag   string `json:"flag,omitempty" xml:"
+    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
+
+    
+    // message
+    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+
+    
+    // 订单
+    
+    DeliveryOrders   []Deliveryorder `json:"delivery_orders,omitempty" xml:"delivery_orders>deliveryorder,omitempty"`
+    
+    
+}

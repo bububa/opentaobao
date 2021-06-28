@@ -14,8 +14,16 @@ alibaba.aliqin.fc.iot.rechargeCard
 */
 type AlibabaAliqinFcIotRechargeCardAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_aliqin_fc_iot_rechargeCard_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaAliqinFcIotRechargeCardResponse
+}
+
+type AlibabaAliqinFcIotRechargeCardResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_fc_iot_rechargeCard_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *AlibabaAliqinFcIotRechargeCardResult `json:"result,omitempty" xml:"
+    Result   *AlibabaAliqinFcIotRechargeCardResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

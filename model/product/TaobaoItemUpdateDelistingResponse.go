@@ -14,8 +14,16 @@ taobao.item.update.delisting
 */
 type TaobaoItemUpdateDelistingAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"item_update_delisting_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoItemUpdateDelistingResponse
+}
+
+type TaobaoItemUpdateDelistingResponse struct {
+    XMLName xml.Name `xml:"item_update_delisting_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回商品更新信息：返回的结果是:num_iid和modified
     
-    Item   *Item `json:"item,omitempty" xml:"
+    Item   *Item `json:"item,omitempty" xml:"item,omitempty"`
+
+    
+}

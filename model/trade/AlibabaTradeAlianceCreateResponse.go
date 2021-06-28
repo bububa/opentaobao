@@ -14,8 +14,16 @@ alibaba.trade.aliance.create
 */
 type AlibabaTradeAlianceCreateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_trade_aliance_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaTradeAlianceCreateResponse
+}
+
+type AlibabaTradeAlianceCreateResponse struct {
+    XMLName xml.Name `xml:"alibaba_trade_aliance_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订单创建结果
     
-    Result   *AlibabaTradeAlianceCreateResultModel `json:"result,omitempty" xml:"
+    Result   *AlibabaTradeAlianceCreateResultModel `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

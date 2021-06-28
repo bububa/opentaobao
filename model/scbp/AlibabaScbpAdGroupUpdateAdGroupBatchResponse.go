@@ -14,8 +14,16 @@ alibaba.scbp.ad.group.update.ad.group.batch
 */
 type AlibabaScbpAdGroupUpdateAdGroupBatchAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_scbp_ad_group_update_ad_group_batch_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaScbpAdGroupUpdateAdGroupBatchResponse
+}
+
+type AlibabaScbpAdGroupUpdateAdGroupBatchResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_group_update_ad_group_batch_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回结果
     
-    Result   int64 `json:"result,omitempty" xml:"
+    Result   int64 `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

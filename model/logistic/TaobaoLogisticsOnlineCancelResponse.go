@@ -14,8 +14,26 @@ taobao.logistics.online.cancel
 */
 type TaobaoLogisticsOnlineCancelAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"logistics_online_cancel_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoLogisticsOnlineCancelResponse
+}
+
+type TaobaoLogisticsOnlineCancelResponse struct {
+    XMLName xml.Name `xml:"logistics_online_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 成功与失败
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+    // 修改时间
+    
+    ModifyTime   string `json:"modify_time,omitempty" xml:"modify_time,omitempty"`
+
+    
+    // 重新创建物流订单id
+    
+    RecreatedOrderId   string `json:"recreated_order_id,omitempty" xml:"recreated_order_id,omitempty"`
+
+    
+}

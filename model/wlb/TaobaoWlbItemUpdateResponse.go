@@ -14,8 +14,16 @@ taobao.wlb.item.update
 */
 type TaobaoWlbItemUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"wlb_item_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoWlbItemUpdateResponse
+}
+
+type TaobaoWlbItemUpdateResponse struct {
+    XMLName xml.Name `xml:"wlb_item_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 修改时间
     
-    GmtModified   bool `json:"gmt_modified,omitempty" xml:"
+    GmtModified   bool `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+
+    
+}

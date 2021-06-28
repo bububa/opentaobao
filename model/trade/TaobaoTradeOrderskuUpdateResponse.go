@@ -14,8 +14,16 @@ taobao.trade.ordersku.update
 */
 type TaobaoTradeOrderskuUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"trade_ordersku_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoTradeOrderskuUpdateResponse
+}
+
+type TaobaoTradeOrderskuUpdateResponse struct {
+    XMLName xml.Name `xml:"trade_ordersku_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 只返回oid和modified
     
-    Order   *Order `json:"order,omitempty" xml:"
+    Order   *Order `json:"order,omitempty" xml:"order,omitempty"`
+
+    
+}

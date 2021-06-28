@@ -14,8 +14,16 @@ alibaba.asr.dataservice.promotionrule.write
 */
 type AlibabaAsrDataservicePromotionruleWriteAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_asr_dataservice_promotionrule_write_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaAsrDataservicePromotionruleWriteResponse
+}
+
+type AlibabaAsrDataservicePromotionruleWriteResponse struct {
+    XMLName xml.Name `xml:"alibaba_asr_dataservice_promotionrule_write_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result   *DataServiceResponse `json:"result,omitempty" xml:"
+    Result   *DataServiceResponse `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

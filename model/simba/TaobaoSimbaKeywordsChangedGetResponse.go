@@ -14,8 +14,16 @@ taobao.simba.keywords.changed.get
 */
 type TaobaoSimbaKeywordsChangedGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_keywords_changed_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaKeywordsChangedGetResponse
+}
+
+type TaobaoSimbaKeywordsChangedGetResponse struct {
+    XMLName xml.Name `xml:"simba_keywords_changed_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 关键词分页对象
     
-    Keywords   *KeywordPage `json:"keywords,omitempty" xml:"
+    Keywords   *KeywordPage `json:"keywords,omitempty" xml:"keywords,omitempty"`
+
+    
+}

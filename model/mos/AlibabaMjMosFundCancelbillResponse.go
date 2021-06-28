@@ -14,8 +14,16 @@ alibaba.mj.mos.fund.cancelbill
 */
 type AlibabaMjMosFundCancelbillAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_mj_mos_fund_cancelbill_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaMjMosFundCancelbillResponse
+}
+
+type AlibabaMjMosFundCancelbillResponse struct {
+    XMLName xml.Name `xml:"alibaba_mj_mos_fund_cancelbill_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // data
     
-    Data   bool `json:"data,omitempty" xml:"
+    Data   bool `json:"data,omitempty" xml:"data,omitempty"`
+
+    
+}

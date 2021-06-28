@@ -14,8 +14,21 @@ taobao.simba.serchcrowd.state.batch.update
 */
 type TaobaoSimbaSerchcrowdStateBatchUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_serchcrowd_state_batch_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaSerchcrowdStateBatchUpdateResponse
+}
+
+type TaobaoSimbaSerchcrowdStateBatchUpdateResponse struct {
+    XMLName xml.Name `xml:"simba_serchcrowd_state_batch_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 部分失败时返回错误List
     
-    ErrorList   []string `json:"error_list,omitempty" xml:"
+    ErrorList   []string `json:"error_list,omitempty" xml:"error_list>string,omitempty"`
+    
+    
+    // result
+    
+    Adgrouptargetingtags   []AdgroupTargetingTagDto `json:"adgrouptargetingtags,omitempty" xml:"adgrouptargetingtags>adgroup_targeting_tag_dto,omitempty"`
+    
+    
+}

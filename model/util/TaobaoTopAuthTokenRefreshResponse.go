@@ -14,8 +14,16 @@ taobao.top.auth.token.refresh
 */
 type TaobaoTopAuthTokenRefreshAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"top_auth_token_refresh_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoTopAuthTokenRefreshResponse
+}
+
+type TaobaoTopAuthTokenRefreshResponse struct {
+    XMLName xml.Name `xml:"top_auth_token_refresh_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的是json信息
     
-    TokenResult   string `json:"token_result,omitempty" xml:"
+    TokenResult   string `json:"token_result,omitempty" xml:"token_result,omitempty"`
+
+    
+}

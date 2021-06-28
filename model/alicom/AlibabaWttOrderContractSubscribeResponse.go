@@ -14,8 +14,16 @@ alibaba.wtt.order.contract.subscribe
 */
 type AlibabaWttOrderContractSubscribeAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wtt_order_contract_subscribe_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaWttOrderContractSubscribeResponse
+}
+
+type AlibabaWttOrderContractSubscribeResponse struct {
+    XMLName xml.Name `xml:"alibaba_wtt_order_contract_subscribe_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 合约产生陈宫
     
-    Issuccess   bool `json:"issuccess,omitempty" xml:"
+    Issuccess   bool `json:"issuccess,omitempty" xml:"issuccess,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ alibaba.base.order.supplier.notify
 */
 type AlibabaBaseOrderSupplierNotifyAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_base_order_supplier_notify_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaBaseOrderSupplierNotifyResponse
+}
+
+type AlibabaBaseOrderSupplierNotifyResponse struct {
+    XMLName xml.Name `xml:"alibaba_base_order_supplier_notify_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *CommonResult `json:"result,omitempty" xml:"
+    Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

@@ -15,8 +15,16 @@ taobao.ump.shoutaotag.add
 */
 type TaobaoUmpShoutaotagAddAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"ump_shoutaotag_add_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoUmpShoutaotagAddResponse
+}
+
+type TaobaoUmpShoutaotagAddResponse struct {
+    XMLName xml.Name `xml:"ump_shoutaotag_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否打标成功
     
-    AddResult   bool `json:"add_result,omitempty" xml:"
+    AddResult   bool `json:"add_result,omitempty" xml:"add_result,omitempty"`
+
+    
+}

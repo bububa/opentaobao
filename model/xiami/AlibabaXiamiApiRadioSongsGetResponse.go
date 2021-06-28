@@ -14,8 +14,16 @@ alibaba.xiami.api.radio.songs.get
 */
 type AlibabaXiamiApiRadioSongsGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_xiami_api_radio_songs_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaXiamiApiRadioSongsGetResponse
+}
+
+type AlibabaXiamiApiRadioSongsGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_xiami_api_radio_songs_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 歌曲列表
     
-    Data   []StandardSong `json:"data,omitempty" xml:"
+    Data   []StandardSong `json:"data,omitempty" xml:"data>standard_song,omitempty"`
+    
+    
+}

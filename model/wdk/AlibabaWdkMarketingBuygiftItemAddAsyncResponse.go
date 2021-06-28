@@ -14,8 +14,16 @@ alibaba.wdk.marketing.buygift.item.add.async
 */
 type AlibabaWdkMarketingBuygiftItemAddAsyncAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdk_marketing_buygift_item_add_async_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaWdkMarketingBuygiftItemAddAsyncResponse
+}
+
+type AlibabaWdkMarketingBuygiftItemAddAsyncResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_marketing_buygift_item_add_async_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果信息
     
-    Result   *MarketResult `json:"result,omitempty" xml:"
+    Result   *MarketResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

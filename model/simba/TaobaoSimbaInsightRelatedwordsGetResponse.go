@@ -14,8 +14,16 @@ taobao.simba.insight.relatedwords.get
 */
 type TaobaoSimbaInsightRelatedwordsGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_insight_relatedwords_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaInsightRelatedwordsGetResponse
+}
+
+type TaobaoSimbaInsightRelatedwordsGetResponse struct {
+    XMLName xml.Name `xml:"simba_insight_relatedwords_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 相关词列表，最多可传100个。
     
-    RelatedWordsResultList   []InsightRelatedWords `json:"related_words_result_list,omitempty" xml:"
+    RelatedWordsResultList   []InsightRelatedWords `json:"related_words_result_list,omitempty" xml:"related_words_result_list>insight_related_words,omitempty"`
+    
+    
+}

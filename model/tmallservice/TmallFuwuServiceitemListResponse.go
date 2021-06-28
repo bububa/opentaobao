@@ -14,8 +14,16 @@ tmall.fuwu.serviceitem.list
 */
 type TmallFuwuServiceitemListAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_fuwu_serviceitem_list_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallFuwuServiceitemListResponse
+}
+
+type TmallFuwuServiceitemListResponse struct {
+    XMLName xml.Name `xml:"tmall_fuwu_serviceitem_list_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TmallFuwuServiceitemListResult `json:"result,omitempty" xml:"
+    Result   *TmallFuwuServiceitemListResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

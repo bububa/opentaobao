@@ -14,8 +14,16 @@ taobao.promotion.activity.get
 */
 type TaobaoPromotionActivityGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"promotion_activity_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoPromotionActivityGetResponse
+}
+
+type TaobaoPromotionActivityGetResponse struct {
+    XMLName xml.Name `xml:"promotion_activity_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 活动列表
     
-    Activitys   []Activity `json:"activitys,omitempty" xml:"
+    Activitys   []Activity `json:"activitys,omitempty" xml:"activitys>activity,omitempty"`
+    
+    
+}

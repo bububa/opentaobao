@@ -14,8 +14,16 @@ taobao.picture.changecategory
 */
 type TaobaoPictureChangecategoryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"picture_changecategory_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoPictureChangecategoryResponse
+}
+
+type TaobaoPictureChangecategoryResponse struct {
+    XMLName xml.Name `xml:"picture_changecategory_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 移动图片是否成功：部分移动成功为true，全部移动失败为false。
     
-    Done   bool `json:"done,omitempty" xml:"
+    Done   bool `json:"done,omitempty" xml:"done,omitempty"`
+
+    
+}

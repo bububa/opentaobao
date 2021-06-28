@@ -14,8 +14,16 @@ taobao.openim.tribe.gettribeinfo
 */
 type TaobaoOpenimTribeGettribeinfoAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"openim_tribe_gettribeinfo_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoOpenimTribeGettribeinfoResponse
+}
+
+type TaobaoOpenimTribeGettribeinfoResponse struct {
+    XMLName xml.Name `xml:"openim_tribe_gettribeinfo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 群信息
     
-    TribeInfo   *TribeInfo `json:"tribe_info,omitempty" xml:"
+    TribeInfo   *TribeInfo `json:"tribe_info,omitempty" xml:"tribe_info,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ taobao.baichuan.items.unsubscribe.by.condition
 */
 type TaobaoBaichuanItemsUnsubscribeByConditionAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"baichuan_items_unsubscribe_by_condition_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoBaichuanItemsUnsubscribeByConditionResponse
+}
+
+type TaobaoBaichuanItemsUnsubscribeByConditionResponse struct {
+    XMLName xml.Name `xml:"baichuan_items_unsubscribe_by_condition_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *TaobaoBaichuanItemsUnsubscribeByConditionResult `json:"result,omitempty" xml:"
+    Result   *TaobaoBaichuanItemsUnsubscribeByConditionResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

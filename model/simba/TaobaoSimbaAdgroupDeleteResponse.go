@@ -14,8 +14,16 @@ taobao.simba.adgroup.delete
 */
 type TaobaoSimbaAdgroupDeleteAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_adgroup_delete_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaAdgroupDeleteResponse
+}
+
+type TaobaoSimbaAdgroupDeleteResponse struct {
+    XMLName xml.Name `xml:"simba_adgroup_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 被删除的推广组
     
-    Adgroup   *ADGroup `json:"adgroup,omitempty" xml:"
+    Adgroup   *ADGroup `json:"adgroup,omitempty" xml:"adgroup,omitempty"`
+
+    
+}

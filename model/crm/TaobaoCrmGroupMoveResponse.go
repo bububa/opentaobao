@@ -14,8 +14,16 @@ taobao.crm.group.move
 */
 type TaobaoCrmGroupMoveAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"crm_group_move_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoCrmGroupMoveResponse
+}
+
+type TaobaoCrmGroupMoveResponse struct {
+    XMLName xml.Name `xml:"crm_group_move_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异步任务请求成功，是否执行完毕需要通过taobao.crm.grouptask.check检测
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+}

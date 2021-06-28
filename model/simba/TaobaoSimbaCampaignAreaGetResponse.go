@@ -14,8 +14,16 @@ taobao.simba.campaign.area.get
 */
 type TaobaoSimbaCampaignAreaGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_campaign_area_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaCampaignAreaGetResponse
+}
+
+type TaobaoSimbaCampaignAreaGetResponse struct {
+    XMLName xml.Name `xml:"simba_campaign_area_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推广计划的投放地域配置
     
-    CampaignArea   *CampaignArea `json:"campaign_area,omitempty" xml:"
+    CampaignArea   *CampaignArea `json:"campaign_area,omitempty" xml:"campaign_area,omitempty"`
+
+    
+}

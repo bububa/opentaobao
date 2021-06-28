@@ -14,8 +14,16 @@ taobao.rdc.aligenius.identification.case.update
 */
 type TaobaoRdcAligeniusIdentificationCaseUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"rdc_aligenius_identification_case_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoRdcAligeniusIdentificationCaseUpdateResponse
+}
+
+type TaobaoRdcAligeniusIdentificationCaseUpdateResponse struct {
+    XMLName xml.Name `xml:"rdc_aligenius_identification_case_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TaobaoRdcAligeniusIdentificationCaseUpdateResult `json:"result,omitempty" xml:"
+    Result   *TaobaoRdcAligeniusIdentificationCaseUpdateResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

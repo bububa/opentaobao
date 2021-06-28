@@ -14,8 +14,16 @@ taobao.wlb.out.inventory.change.notify
 */
 type TaobaoWlbOutInventoryChangeNotifyAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"wlb_out_inventory_change_notify_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoWlbOutInventoryChangeNotifyResponse
+}
+
+type TaobaoWlbOutInventoryChangeNotifyResponse struct {
+    XMLName xml.Name `xml:"wlb_out_inventory_change_notify_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 库存变化通知成功时间
     
-    GmtModified   string `json:"gmt_modified,omitempty" xml:"
+    GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
+
+    
+}

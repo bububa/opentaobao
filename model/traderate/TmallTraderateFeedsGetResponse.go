@@ -14,8 +14,16 @@ tmall.traderate.feeds.get
 */
 type TmallTraderateFeedsGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_traderate_feeds_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallTraderateFeedsGetResponse
+}
+
+type TmallTraderateFeedsGetResponse struct {
+    XMLName xml.Name `xml:"tmall_traderate_feeds_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回评价信息
     
-    TmallRateInfo   *TmallRateInfo `json:"tmall_rate_info,omitempty" xml:"
+    TmallRateInfo   *TmallRateInfo `json:"tmall_rate_info,omitempty" xml:"tmall_rate_info,omitempty"`
+
+    
+}

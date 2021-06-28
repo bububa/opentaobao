@@ -14,8 +14,16 @@ taobao.crm.service.channel.shortlink.create
 */
 type TaobaoCrmServiceChannelShortlinkCreateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"crm_service_channel_shortlink_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoCrmServiceChannelShortlinkCreateResponse
+}
+
+type TaobaoCrmServiceChannelShortlinkCreateResponse struct {
+    XMLName xml.Name `xml:"crm_service_channel_shortlink_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的淘短链。
     
-    ShortLink   string `json:"short_link,omitempty" xml:"
+    ShortLink   string `json:"short_link,omitempty" xml:"short_link,omitempty"`
+
+    
+}

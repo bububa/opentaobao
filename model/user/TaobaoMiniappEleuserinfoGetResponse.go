@@ -14,8 +14,21 @@ taobao.miniapp.eleuserinfo.get
 */
 type TaobaoMiniappEleuserinfoGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"miniapp_eleuserinfo_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoMiniappEleuserinfoGetResponse
+}
+
+type TaobaoMiniappEleuserinfoGetResponse struct {
+    XMLName xml.Name `xml:"miniapp_eleuserinfo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // traceId
     
-    TraceId   string `json:"trace_id,omitempty" xml:"
+    TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
+
+    
+    // 1
+    
+    Result   *EleUicInfo `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

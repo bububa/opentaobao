@@ -14,8 +14,26 @@ alibaba.alsc.kms.access
 */
 type AlibabaAlscKmsAccessAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_alsc_kms_access_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaAlscKmsAccessResponse
+}
+
+type AlibabaAlscKmsAccessResponse struct {
+    XMLName xml.Name `xml:"alibaba_alsc_kms_access_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // code
     
-    Resultcode   string `json:"resultcode,omitempty" xml:"
+    Resultcode   string `json:"resultcode,omitempty" xml:"resultcode,omitempty"`
+
+    
+    // 是否成功
+    
+    Resultsuccess   bool `json:"resultsuccess,omitempty" xml:"resultsuccess,omitempty"`
+
+    
+    // message
+    
+    Resultmessage   string `json:"resultmessage,omitempty" xml:"resultmessage,omitempty"`
+
+    
+}

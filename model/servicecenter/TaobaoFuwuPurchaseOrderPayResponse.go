@@ -14,8 +14,16 @@ taobao.fuwu.purchase.order.pay
 */
 type TaobaoFuwuPurchaseOrderPayAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"fuwu_purchase_order_pay_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoFuwuPurchaseOrderPayResponse
+}
+
+type TaobaoFuwuPurchaseOrderPayResponse struct {
+    XMLName xml.Name `xml:"fuwu_purchase_order_pay_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 该url用于订单付款
     
-    Url   string `json:"url,omitempty" xml:"
+    Url   string `json:"url,omitempty" xml:"url,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ taobao.trades.sold.query
 */
 type TaobaoTradesSoldQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"trades_sold_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoTradesSoldQueryResponse
+}
+
+type TaobaoTradesSoldQueryResponse struct {
+    XMLName xml.Name `xml:"trades_sold_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订单ID列表。按照订单创建时间倒序，最多返回最近的100笔订单。
     
-    TidList   []string `json:"tid_list,omitempty" xml:"
+    TidList   []string `json:"tid_list,omitempty" xml:"tid_list>string,omitempty"`
+    
+    
+}

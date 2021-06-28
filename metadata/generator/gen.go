@@ -73,6 +73,8 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 	}
 	templatePath := filepath.Join(wd, "metadata/template")
 	var models []metadata.TplModel
+	var files []string
+	filesMp := make(map[string]struct{})
 	for _, fi := range catelogRd {
 		if fi.IsDir() {
 			continue
@@ -80,13 +82,31 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 		if fi.Name() == "catelog.json" {
 			continue
 		}
-		doc, err := getDoc(catelogPath, catelogPatchPath, fi.Name())
+		filesMp[fi.Name()] = struct{}{}
+		files = append(files, fi.Name())
+	}
+	if catelogPatchRd, err := ioutil.ReadDir(catelogPatchPath); err == nil {
+		for _, fi := range catelogPatchRd {
+			if fi.IsDir() {
+				continue
+			}
+			if fi.Name() == "catelog.json" {
+				continue
+			}
+			if _, found := filesMp[fi.Name()]; found {
+				continue
+			}
+			files = append(files, fi.Name())
+		}
+	}
+	for _, fi := range files {
+		doc, err := getDoc(catelogPath, catelogPatchPath, fi)
 		if err != nil {
-			log.Printf("[ERR] Pkg:%s, File:%s, %s\n", pkgCfg.Name, fi.Name(), err.Error())
+			log.Printf("[ERR] Pkg:%s, File:%s, %s\n", pkgCfg.Name, fi, err.Error())
 		}
 
 		if doc.Name == "" {
-			log.Printf("[ERR] Pkg:%s, File:%s, %+v\n", pkgCfg.Name, fi.Name(), doc)
+			log.Printf("[ERR] Pkg:%s, File:%s, %+v\n", pkgCfg.Name, fi, doc)
 			continue
 		}
 		if apiPkg.Link == "" {

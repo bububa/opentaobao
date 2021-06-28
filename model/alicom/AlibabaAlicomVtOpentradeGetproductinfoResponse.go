@@ -14,8 +14,16 @@ alibaba.alicom.vt.opentrade.getproductinfo
 */
 type AlibabaAlicomVtOpentradeGetproductinfoAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_alicom_vt_opentrade_getproductinfo_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaAlicomVtOpentradeGetproductinfoResponse
+}
+
+type AlibabaAlicomVtOpentradeGetproductinfoResponse struct {
+    XMLName xml.Name `xml:"alibaba_alicom_vt_opentrade_getproductinfo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TopResultDto `json:"result,omitempty" xml:"
+    Result   *TopResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

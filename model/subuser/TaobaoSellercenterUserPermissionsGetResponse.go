@@ -14,8 +14,16 @@ taobao.sellercenter.user.permissions.get
 */
 type TaobaoSellercenterUserPermissionsGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"sellercenter_user_permissions_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSellercenterUserPermissionsGetResponse
+}
+
+type TaobaoSellercenterUserPermissionsGetResponse struct {
+    XMLName xml.Name `xml:"sellercenter_user_permissions_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 权限列表
     
-    Permissions   []Permission `json:"permissions,omitempty" xml:"
+    Permissions   []Permission `json:"permissions,omitempty" xml:"permissions>permission,omitempty"`
+    
+    
+}

@@ -14,8 +14,26 @@ taobao.alitrip.domestic.rent.car.status.update
 */
 type TaobaoAlitripDomesticRentCarStatusUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_domestic_rent_car_status_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoAlitripDomesticRentCarStatusUpdateResponse
+}
+
+type TaobaoAlitripDomesticRentCarStatusUpdateResponse struct {
+    XMLName xml.Name `xml:"alitrip_domestic_rent_car_status_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 其它数据，预留，暂不使用
     
-    Data   string `json:"data,omitempty" xml:"
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
+
+    
+    // 错误信息
+    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+
+    
+    // 错误码.code为0时表示成功
+    
+    MessageCode   int64 `json:"message_code,omitempty" xml:"message_code,omitempty"`
+
+    
+}

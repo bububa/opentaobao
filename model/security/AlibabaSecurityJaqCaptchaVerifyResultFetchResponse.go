@@ -14,8 +14,16 @@ alibaba.security.jaq.captcha.verify.result.fetch
 */
 type AlibabaSecurityJaqCaptchaVerifyResultFetchAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_security_jaq_captcha_verify_result_fetch_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaSecurityJaqCaptchaVerifyResultFetchResponse
+}
+
+type AlibabaSecurityJaqCaptchaVerifyResultFetchResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_captcha_verify_result_fetch_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 验证检查结果结构体
     
-    Data   *JaqSecondCheckResult `json:"data,omitempty" xml:"
+    Data   *JaqSecondCheckResult `json:"data,omitempty" xml:"data,omitempty"`
+
+    
+}

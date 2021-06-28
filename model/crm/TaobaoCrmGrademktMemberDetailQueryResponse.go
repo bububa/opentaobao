@@ -14,8 +14,16 @@ taobao.crm.grademkt.member.detail.query
 */
 type TaobaoCrmGrademktMemberDetailQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"crm_grademkt_member_detail_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoCrmGrademktMemberDetailQueryResponse
+}
+
+type TaobaoCrmGrademktMemberDetailQueryResponse struct {
+    XMLName xml.Name `xml:"crm_grademkt_member_detail_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // totalCount为记录总数
     
-    Model   string `json:"model,omitempty" xml:"
+    Model   string `json:"model,omitempty" xml:"model,omitempty"`
+
+    
+}

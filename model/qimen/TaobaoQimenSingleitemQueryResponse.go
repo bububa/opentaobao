@@ -14,8 +14,16 @@ taobao.qimen.singleitem.query
 */
 type TaobaoQimenSingleitemQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qimen_singleitem_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQimenSingleitemQueryResponse
+}
+
+type TaobaoQimenSingleitemQueryResponse struct {
+    XMLName xml.Name `xml:"qimen_singleitem_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *ResponseDO `json:"response,omitempty" xml:"
+    Response   *ResponseDO `json:"response,omitempty" xml:"response,omitempty"`
+
+    
+}

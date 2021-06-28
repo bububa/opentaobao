@@ -14,8 +14,16 @@ taobao.subuser.departments.get
 */
 type TaobaoSubuserDepartmentsGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"subuser_departments_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSubuserDepartmentsGetResponse
+}
+
+type TaobaoSubuserDepartmentsGetResponse struct {
+    XMLName xml.Name `xml:"subuser_departments_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 部门信息
     
-    Departments   []Department `json:"departments,omitempty" xml:"
+    Departments   []Department `json:"departments,omitempty" xml:"departments>department,omitempty"`
+    
+    
+}

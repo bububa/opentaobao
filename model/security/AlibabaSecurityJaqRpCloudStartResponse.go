@@ -14,8 +14,16 @@ alibaba.security.jaq.rp.cloud.start
 */
 type AlibabaSecurityJaqRpCloudStartAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_security_jaq_rp_cloud_start_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaSecurityJaqRpCloudStartResponse
+}
+
+type AlibabaSecurityJaqRpCloudStartResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_rp_cloud_start_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Data   *RpStartResult `json:"data,omitempty" xml:"
+    Data   *RpStartResult `json:"data,omitempty" xml:"data,omitempty"`
+
+    
+}

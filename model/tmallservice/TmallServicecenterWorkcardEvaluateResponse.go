@@ -14,8 +14,16 @@ tmall.servicecenter.workcard.evaluate
 */
 type TmallServicecenterWorkcardEvaluateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_servicecenter_workcard_evaluate_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallServicecenterWorkcardEvaluateResponse
+}
+
+type TmallServicecenterWorkcardEvaluateResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_workcard_evaluate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值Result
     
-    Result   *TmallServicecenterWorkcardEvaluateResult `json:"result,omitempty" xml:"
+    Result   *TmallServicecenterWorkcardEvaluateResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

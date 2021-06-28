@@ -14,8 +14,16 @@ cainiao.cntec.item.change.message
 */
 type CainiaoCntecItemChangeMessageAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"cainiao_cntec_item_change_message_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    CainiaoCntecItemChangeMessageResponse
+}
+
+type CainiaoCntecItemChangeMessageResponse struct {
+    XMLName xml.Name `xml:"cainiao_cntec_item_change_message_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 调用返回的result结构体
     
-    Result   *CainiaoCntecItemChangeMessageResult `json:"result,omitempty" xml:"
+    Result   *CainiaoCntecItemChangeMessageResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

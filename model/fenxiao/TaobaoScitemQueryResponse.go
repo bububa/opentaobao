@@ -14,8 +14,26 @@ taobao.scitem.query
 */
 type TaobaoScitemQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"scitem_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoScitemQueryResponse
+}
+
+type TaobaoScitemQueryResponse struct {
+    XMLName xml.Name `xml:"scitem_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // List<ScItemDO>
     
-    ScItemList   []ScItem `json:"sc_item_list,omitempty" xml:"
+    ScItemList   []ScItem `json:"sc_item_list,omitempty" xml:"sc_item_list>sc_item,omitempty"`
+    
+    
+    // 商品条数
+    
+    TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
+
+    
+    // 分页
+    
+    QueryPagination   *QueryPagination `json:"query_pagination,omitempty" xml:"query_pagination,omitempty"`
+
+    
+}

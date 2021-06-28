@@ -14,8 +14,21 @@ taobao.weitao.feed.synchronize.new
 */
 type TaobaoWeitaoFeedSynchronizeNewAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"weitao_feed_synchronize_new_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoWeitaoFeedSynchronizeNewResponse
+}
+
+type TaobaoWeitaoFeedSynchronizeNewResponse struct {
+    XMLName xml.Name `xml:"weitao_feed_synchronize_new_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 增加错误信息
     
-    Errmsg   string `json:"errmsg,omitempty" xml:"
+    Errmsg   string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
+
+    
+    // 推送结果
+    
+    Result   *PushResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

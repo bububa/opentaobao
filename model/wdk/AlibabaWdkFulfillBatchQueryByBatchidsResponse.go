@@ -14,8 +14,16 @@ alibaba.wdk.fulfill.batch.query.by.batchids
 */
 type AlibabaWdkFulfillBatchQueryByBatchidsAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdk_fulfill_batch_query_by_batchids_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaWdkFulfillBatchQueryByBatchidsResponse
+}
+
+type AlibabaWdkFulfillBatchQueryByBatchidsResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_fulfill_batch_query_by_batchids_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 查询结果对象
     
-    FulfillLogisticListResult   *FulfillLogisticListResult `json:"fulfill_logistic_list_result,omitempty" xml:"
+    FulfillLogisticListResult   *FulfillLogisticListResult `json:"fulfill_logistic_list_result,omitempty" xml:"fulfill_logistic_list_result,omitempty"`
+
+    
+}

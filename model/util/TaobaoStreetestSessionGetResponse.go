@@ -14,8 +14,16 @@ taobao.streetest.session.get
 */
 type TaobaoStreetestSessionGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"streetest_session_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoStreetestSessionGetResponse
+}
+
+type TaobaoStreetestSessionGetResponse struct {
+    XMLName xml.Name `xml:"streetest_session_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 压测账号对应的sessionKey
     
-    StreeTestSessionKey   string `json:"stree_test_session_key,omitempty" xml:"
+    StreeTestSessionKey   string `json:"stree_test_session_key,omitempty" xml:"stree_test_session_key,omitempty"`
+
+    
+}

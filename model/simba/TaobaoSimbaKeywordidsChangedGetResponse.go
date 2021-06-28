@@ -14,8 +14,16 @@ taobao.simba.keywordids.changed.get
 */
 type TaobaoSimbaKeywordidsChangedGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_keywordids_changed_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaKeywordidsChangedGetResponse
+}
+
+type TaobaoSimbaKeywordidsChangedGetResponse struct {
+    XMLName xml.Name `xml:"simba_keywordids_changed_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 词的ID列表
     
-    ChangedKeywordIds   []int64 `json:"changed_keyword_ids,omitempty" xml:"
+    ChangedKeywordIds   []int64 `json:"changed_keyword_ids,omitempty" xml:"changed_keyword_ids>int64,omitempty"`
+    
+    
+}

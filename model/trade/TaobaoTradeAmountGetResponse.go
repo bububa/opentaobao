@@ -16,8 +16,16 @@ taobao.trade.amount.get
 */
 type TaobaoTradeAmountGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"trade_amount_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoTradeAmountGetResponse
+}
+
+type TaobaoTradeAmountGetResponse struct {
+    XMLName xml.Name `xml:"trade_amount_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 主订单的财务信息详情
     
-    TradeAmount   *TradeAmount `json:"trade_amount,omitempty" xml:"
+    TradeAmount   *TradeAmount `json:"trade_amount,omitempty" xml:"trade_amount,omitempty"`
+
+    
+}

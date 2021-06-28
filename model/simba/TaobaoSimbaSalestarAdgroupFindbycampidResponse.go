@@ -14,8 +14,16 @@ taobao.simba.salestar.adgroup.findbycampid
 */
 type TaobaoSimbaSalestarAdgroupFindbycampidAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_salestar_adgroup_findbycampid_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaSalestarAdgroupFindbycampidResponse
+}
+
+type TaobaoSimbaSalestarAdgroupFindbycampidResponse struct {
+    XMLName xml.Name `xml:"simba_salestar_adgroup_findbycampid_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回的推广组分页对象
     
-    Adgroups   *ADGroupPage `json:"adgroups,omitempty" xml:"
+    Adgroups   *ADGroupPage `json:"adgroups,omitempty" xml:"adgroups,omitempty"`
+
+    
+}

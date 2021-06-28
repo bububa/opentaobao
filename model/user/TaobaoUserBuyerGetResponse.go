@@ -14,8 +14,16 @@ taobao.user.buyer.get
 */
 type TaobaoUserBuyerGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"user_buyer_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoUserBuyerGetResponse
+}
+
+type TaobaoUserBuyerGetResponse struct {
+    XMLName xml.Name `xml:"user_buyer_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 只返回nick,avatar参数
     
-    User   *User `json:"user,omitempty" xml:"
+    User   *User `json:"user,omitempty" xml:"user,omitempty"`
+
+    
+}

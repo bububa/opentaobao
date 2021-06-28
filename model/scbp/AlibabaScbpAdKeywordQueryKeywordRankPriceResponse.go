@@ -14,8 +14,16 @@ alibaba.scbp.ad.keyword.query.keyword.rank.price
 */
 type AlibabaScbpAdKeywordQueryKeywordRankPriceAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_scbp_ad_keyword_query_keyword_rank_price_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaScbpAdKeywordQueryKeywordRankPriceResponse
+}
+
+type AlibabaScbpAdKeywordQueryKeywordRankPriceResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_keyword_query_keyword_rank_price_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回参数
     
-    Result   *KeywordRankPriceDto `json:"result,omitempty" xml:"
+    Result   *KeywordRankPriceDto `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ taobao.miniapp.items.get
 */
 type TaobaoMiniappItemsGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"miniapp_items_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoMiniappItemsGetResponse
+}
+
+type TaobaoMiniappItemsGetResponse struct {
+    XMLName xml.Name `xml:"miniapp_items_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // Item(商品)结构
     
-    Items   []Item `json:"items,omitempty" xml:"
+    Items   []Item `json:"items,omitempty" xml:"items>item,omitempty"`
+    
+    
+}

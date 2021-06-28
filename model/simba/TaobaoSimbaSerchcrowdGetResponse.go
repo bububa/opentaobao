@@ -14,8 +14,16 @@ taobao.simba.serchcrowd.get
 */
 type TaobaoSimbaSerchcrowdGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_serchcrowd_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaSerchcrowdGetResponse
+}
+
+type TaobaoSimbaSerchcrowdGetResponse struct {
+    XMLName xml.Name `xml:"simba_serchcrowd_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Adgrouptargetingtags   []TaobaoSimbaSerchcrowdGetResult `json:"adgrouptargetingtags,omitempty" xml:"
+    Adgrouptargetingtags   []TaobaoSimbaSerchcrowdGetResult `json:"adgrouptargetingtags,omitempty" xml:"adgrouptargetingtags>taobao_simba_serchcrowd_get_result,omitempty"`
+    
+    
+}

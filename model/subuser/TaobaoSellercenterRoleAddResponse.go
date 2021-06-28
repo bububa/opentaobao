@@ -14,8 +14,16 @@ taobao.sellercenter.role.add
 */
 type TaobaoSellercenterRoleAddAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"sellercenter_role_add_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSellercenterRoleAddResponse
+}
+
+type TaobaoSellercenterRoleAddResponse struct {
+    XMLName xml.Name `xml:"sellercenter_role_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 子账号角色
     
-    Role   *Role `json:"role,omitempty" xml:"
+    Role   *Role `json:"role,omitempty" xml:"role,omitempty"`
+
+    
+}

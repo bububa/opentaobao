@@ -14,8 +14,16 @@ alitrip.ticket.product.query
 */
 type AlitripTicketProductQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_ticket_product_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlitripTicketProductQueryResponse
+}
+
+type AlitripTicketProductQueryResponse struct {
+    XMLName xml.Name `xml:"alitrip_ticket_product_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 门票商品详情
     
-    FirstResult   *TopTicketItemFullinfoResult `json:"first_result,omitempty" xml:"
+    FirstResult   *TopTicketItemFullinfoResult `json:"first_result,omitempty" xml:"first_result,omitempty"`
+
+    
+}

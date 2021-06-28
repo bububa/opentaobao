@@ -14,8 +14,16 @@ taobao.simba.keywords.qscore.split.get
 */
 type TaobaoSimbaKeywordsQscoreSplitGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_keywords_qscore_split_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaKeywordsQscoreSplitGetResponse
+}
+
+type TaobaoSimbaKeywordsQscoreSplitGetResponse struct {
+    XMLName xml.Name `xml:"simba_keywords_qscore_split_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TaobaoSimbaKeywordsQscoreSplitGetResultDto `json:"result,omitempty" xml:"
+    Result   *TaobaoSimbaKeywordsQscoreSplitGetResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ taobao.simba.login.authsign.get
 */
 type TaobaoSimbaLoginAuthsignGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_login_authsign_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaLoginAuthsignGetResponse
+}
+
+type TaobaoSimbaLoginAuthsignGetResponse struct {
+    XMLName xml.Name `xml:"simba_login_authsign_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 登陆签名
     
-    SubwayToken   string `json:"subway_token,omitempty" xml:"
+    SubwayToken   string `json:"subway_token,omitempty" xml:"subway_token,omitempty"`
+
+    
+}

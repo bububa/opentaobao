@@ -14,8 +14,16 @@ taobao.simba.rpt.adgroupkeywordeffect.get
 */
 type TaobaoSimbaRptAdgroupkeywordeffectGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_rpt_adgroupkeywordeffect_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaRptAdgroupkeywordeffectGetResponse
+}
+
+type TaobaoSimbaRptAdgroupkeywordeffectGetResponse struct {
+    XMLName xml.Name `xml:"simba_rpt_adgroupkeywordeffect_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 词效果数据返回结果
     
-    RptAdgroupkeywordEffectList   string `json:"rpt_adgroupkeyword_effect_list,omitempty" xml:"
+    RptAdgroupkeywordEffectList   string `json:"rpt_adgroupkeyword_effect_list,omitempty" xml:"rpt_adgroupkeyword_effect_list,omitempty"`
+
+    
+}

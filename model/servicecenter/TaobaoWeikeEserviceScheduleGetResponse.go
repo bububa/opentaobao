@@ -14,8 +14,16 @@ taobao.weike.eservice.schedule.get
 */
 type TaobaoWeikeEserviceScheduleGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"weike_eservice_schedule_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoWeikeEserviceScheduleGetResponse
+}
+
+type TaobaoWeikeEserviceScheduleGetResponse struct {
+    XMLName xml.Name `xml:"weike_eservice_schedule_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 排班信息查询结果
     
-    Result   *CsSchedulingWrapper `json:"result,omitempty" xml:"
+    Result   *CsSchedulingWrapper `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

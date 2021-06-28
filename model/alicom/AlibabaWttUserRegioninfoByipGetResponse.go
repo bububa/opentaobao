@@ -14,8 +14,16 @@ alibaba.wtt.user.regioninfo.byip.get
 */
 type AlibabaWttUserRegioninfoByipGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wtt_user_regioninfo_byip_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaWttUserRegioninfoByipGetResponse
+}
+
+type AlibabaWttUserRegioninfoByipGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_wtt_user_regioninfo_byip_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 地址信息
     
-    Model   *RegionInfo `json:"model,omitempty" xml:"
+    Model   *RegionInfo `json:"model,omitempty" xml:"model,omitempty"`
+
+    
+}

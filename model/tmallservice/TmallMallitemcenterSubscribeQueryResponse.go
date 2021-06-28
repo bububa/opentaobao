@@ -14,8 +14,16 @@ tmall.mallitemcenter.subscribe.query
 */
 type TmallMallitemcenterSubscribeQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_mallitemcenter_subscribe_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallMallitemcenterSubscribeQueryResponse
+}
+
+type TmallMallitemcenterSubscribeQueryResponse struct {
+    XMLName xml.Name `xml:"tmall_mallitemcenter_subscribe_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *TmallMallitemcenterSubscribeQueryResult `json:"result,omitempty" xml:"
+    Result   *TmallMallitemcenterSubscribeQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

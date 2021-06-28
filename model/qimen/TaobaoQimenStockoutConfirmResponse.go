@@ -14,8 +14,16 @@ taobao.qimen.stockout.confirm
 */
 type TaobaoQimenStockoutConfirmAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qimen_stockout_confirm_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQimenStockoutConfirmResponse
+}
+
+type TaobaoQimenStockoutConfirmResponse struct {
+    XMLName xml.Name `xml:"qimen_stockout_confirm_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *TaobaoQimenStockoutConfirmStruct `json:"response,omitempty" xml:"
+    Response   *TaobaoQimenStockoutConfirmStruct `json:"response,omitempty" xml:"response,omitempty"`
+
+    
+}

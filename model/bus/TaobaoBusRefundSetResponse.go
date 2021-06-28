@@ -14,8 +14,16 @@ B2B业务支持退票
 */
 type TaobaoBusRefundSetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"bus_refund_set_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoBusRefundSetResponse
+}
+
+type TaobaoBusRefundSetResponse struct {
+    XMLName xml.Name `xml:"bus_refund_set_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *B2BRefundOrderRp `json:"result,omitempty" xml:"
+    Result   *B2BRefundOrderRp `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

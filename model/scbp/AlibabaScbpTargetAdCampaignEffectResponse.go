@@ -14,8 +14,16 @@ alibaba.scbp.target.ad.campaign.effect
 */
 type AlibabaScbpTargetAdCampaignEffectAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_scbp_target_ad_campaign_effect_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaScbpTargetAdCampaignEffectResponse
+}
+
+type AlibabaScbpTargetAdCampaignEffectResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_target_ad_campaign_effect_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 数据列表
     
-    EffectList   []TopP4pQuickCampaignEffectView `json:"effect_list,omitempty" xml:"
+    EffectList   []TopP4pQuickCampaignEffectView `json:"effect_list,omitempty" xml:"effect_list>top_p4p_quick_campaign_effect_view,omitempty"`
+    
+    
+}

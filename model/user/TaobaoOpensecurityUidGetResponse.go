@@ -14,8 +14,16 @@ taobao.opensecurity.uid.get
 */
 type TaobaoOpensecurityUidGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"opensecurity_uid_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoOpensecurityUidGetResponse
+}
+
+type TaobaoOpensecurityUidGetResponse struct {
+    XMLName xml.Name `xml:"opensecurity_uid_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // open security tbUserId，淘宝用户对每个Appkey会有唯一的一个open_uid
     
-    OpenUid   string `json:"open_uid,omitempty" xml:"
+    OpenUid   string `json:"open_uid,omitempty" xml:"open_uid,omitempty"`
+
+    
+}

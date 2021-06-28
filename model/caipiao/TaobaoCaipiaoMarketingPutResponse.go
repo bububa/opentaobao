@@ -24,8 +24,16 @@ https://gw.alicdn.com/tfs/TB1_gV.SXXXXXbZXpXXXXXXXXXX-790-280.png
 */
 type TaobaoCaipiaoMarketingPutAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"caipiao_marketing_put_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoCaipiaoMarketingPutResponse
+}
+
+type TaobaoCaipiaoMarketingPutResponse struct {
+    XMLName xml.Name `xml:"caipiao_marketing_put_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 业务操作结果,true成功/false失败
     
-    Result   bool `json:"result,omitempty" xml:"
+    Result   bool `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

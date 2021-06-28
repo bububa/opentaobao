@@ -14,8 +14,16 @@ alibaba.ele.fengniao.chainstore.update
 */
 type AlibabaEleFengniaoChainstoreUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_ele_fengniao_chainstore_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaEleFengniaoChainstoreUpdateResponse
+}
+
+type AlibabaEleFengniaoChainstoreUpdateResponse struct {
+    XMLName xml.Name `xml:"alibaba_ele_fengniao_chainstore_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 出参
     
-    Message   string `json:"message,omitempty" xml:"
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+
+    
+}

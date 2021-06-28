@@ -14,8 +14,16 @@ taobao.qimen.warehouseinfo.synchronize
 */
 type TaobaoQimenWarehouseinfoSynchronizeAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qimen_warehouseinfo_synchronize_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQimenWarehouseinfoSynchronizeResponse
+}
+
+type TaobaoQimenWarehouseinfoSynchronizeResponse struct {
+    XMLName xml.Name `xml:"qimen_warehouseinfo_synchronize_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应报文
     
-    Response   *Response `json:"response,omitempty" xml:"
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
+    
+}

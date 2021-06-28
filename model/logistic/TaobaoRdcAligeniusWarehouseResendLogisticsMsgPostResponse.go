@@ -14,8 +14,16 @@ taobao.rdc.aligenius.warehouse.resend.logistics.msg.post
 */
 type TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"rdc_aligenius_warehouse_resend_logistics_msg_post_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostResponse
+}
+
+type TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostResponse struct {
+    XMLName xml.Name `xml:"rdc_aligenius_warehouse_resend_logistics_msg_post_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostResult `json:"result,omitempty" xml:"
+    Result   *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ taobao.lark.pos.itemprod.findterminal
 */
 type TaobaoLarkPosItemprodFindterminalAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"lark_pos_itemprod_findterminal_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoLarkPosItemprodFindterminalResponse
+}
+
+type TaobaoLarkPosItemprodFindterminalResponse struct {
+    XMLName xml.Name `xml:"lark_pos_itemprod_findterminal_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 终端配置信息响应
     
-    Data   string `json:"data,omitempty" xml:"
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
+
+    
+}

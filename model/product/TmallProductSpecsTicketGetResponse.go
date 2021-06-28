@@ -14,8 +14,16 @@ tmall.product.specs.ticket.get
 */
 type TmallProductSpecsTicketGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_product_specs_ticket_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallProductSpecsTicketGetResponse
+}
+
+type TmallProductSpecsTicketGetResponse struct {
+    XMLName xml.Name `xml:"tmall_product_specs_ticket_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 产品规格审核单信息
     
-    Tickets   []Ticket `json:"tickets,omitempty" xml:"
+    Tickets   []Ticket `json:"tickets,omitempty" xml:"tickets>ticket,omitempty"`
+    
+    
+}

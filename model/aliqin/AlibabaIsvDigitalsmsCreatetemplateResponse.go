@@ -14,8 +14,16 @@ alibaba.isv.digitalsms.createtemplate
 */
 type AlibabaIsvDigitalsmsCreatetemplateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_isv_digitalsms_createtemplate_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaIsvDigitalsmsCreatetemplateResponse
+}
+
+type AlibabaIsvDigitalsmsCreatetemplateResponse struct {
+    XMLName xml.Name `xml:"alibaba_isv_digitalsms_createtemplate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result   *AlibabaIsvDigitalsmsCreatetemplateResult `json:"result,omitempty" xml:"
+    Result   *AlibabaIsvDigitalsmsCreatetemplateResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

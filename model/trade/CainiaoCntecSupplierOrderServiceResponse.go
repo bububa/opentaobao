@@ -15,8 +15,16 @@ cainiao.cntec.supplier.order.service
 */
 type CainiaoCntecSupplierOrderServiceAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"cainiao_cntec_supplier_order_service_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    CainiaoCntecSupplierOrderServiceResponse
+}
+
+type CainiaoCntecSupplierOrderServiceResponse struct {
+    XMLName xml.Name `xml:"cainiao_cntec_supplier_order_service_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *CainiaoCntecSupplierOrderServiceResult `json:"result,omitempty" xml:"
+    Result   *CainiaoCntecSupplierOrderServiceResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

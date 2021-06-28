@@ -14,8 +14,16 @@ taobao.qianniu.taskmetas.get
 */
 type TaobaoQianniuTaskmetasGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qianniu_taskmetas_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQianniuTaskmetasGetResponse
+}
+
+type TaobaoQianniuTaskmetasGetResponse struct {
+    XMLName xml.Name `xml:"qianniu_taskmetas_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // taskmetas
     
-    Taskmetas   []QTaskMetadata `json:"taskmetas,omitempty" xml:"
+    Taskmetas   []QTaskMetadata `json:"taskmetas,omitempty" xml:"taskmetas>q_task_metadata,omitempty"`
+    
+    
+}

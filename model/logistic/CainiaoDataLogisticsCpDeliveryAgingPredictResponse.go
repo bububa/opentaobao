@@ -20,8 +20,16 @@ cainiao.data.logistics.cp.delivery.aging.predict
 */
 type CainiaoDataLogisticsCpDeliveryAgingPredictAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"cainiao_data_logistics_cp_delivery_aging_predict_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    CainiaoDataLogisticsCpDeliveryAgingPredictResponse
+}
+
+type CainiaoDataLogisticsCpDeliveryAgingPredictResponse struct {
+    XMLName xml.Name `xml:"cainiao_data_logistics_cp_delivery_aging_predict_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回数据值
     
-    Data   *DeliveryTimingDto `json:"data,omitempty" xml:"
+    Data   *DeliveryTimingDto `json:"data,omitempty" xml:"data,omitempty"`
+
+    
+}

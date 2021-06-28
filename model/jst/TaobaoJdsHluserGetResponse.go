@@ -14,8 +14,16 @@ taobao.jds.hluser.get
 */
 type TaobaoJdsHluserGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"jds_hluser_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoJdsHluserGetResponse
+}
+
+type TaobaoJdsHluserGetResponse struct {
+    XMLName xml.Name `xml:"jds_hluser_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 回流用户信息
     
-    HlUser   *HlUserDO `json:"hl_user,omitempty" xml:"
+    HlUser   *HlUserDO `json:"hl_user,omitempty" xml:"hl_user,omitempty"`
+
+    
+}

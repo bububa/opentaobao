@@ -14,8 +14,16 @@ tmall.cityretail.fulfill.abnormal.center.abnormal.status.change
 */
 type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_cityretail_fulfill_abnormal_center_abnormal_status_change_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse
+}
+
+type TmallCityretailFulfillAbnormalCenterAbnormalStatusChangeResponse struct {
+    XMLName xml.Name `xml:"tmall_cityretail_fulfill_abnormal_center_abnormal_status_change_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应参数
     
-    FulfillSingleResult   *FulfillSingleResult `json:"fulfill_single_result,omitempty" xml:"
+    FulfillSingleResult   *FulfillSingleResult `json:"fulfill_single_result,omitempty" xml:"fulfill_single_result,omitempty"`
+
+    
+}

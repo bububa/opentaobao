@@ -14,8 +14,16 @@ taobao.subuser.dutys.get
 */
 type TaobaoSubuserDutysGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"subuser_dutys_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSubuserDutysGetResponse
+}
+
+type TaobaoSubuserDutysGetResponse struct {
+    XMLName xml.Name `xml:"subuser_dutys_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 职务信息
     
-    Dutys   []Duty `json:"dutys,omitempty" xml:"
+    Dutys   []Duty `json:"dutys,omitempty" xml:"dutys>duty,omitempty"`
+    
+    
+}

@@ -14,8 +14,16 @@ taobao.alihealth.drug.store.search
 */
 type TaobaoAlihealthDrugStoreSearchAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alihealth_drug_store_search_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoAlihealthDrugStoreSearchResponse
+}
+
+type TaobaoAlihealthDrugStoreSearchResponse struct {
+    XMLName xml.Name `xml:"alihealth_drug_store_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // model
     
-    Model   *O2OInShopSearchResponse `json:"model,omitempty" xml:"
+    Model   *O2OInShopSearchResponse `json:"model,omitempty" xml:"model,omitempty"`
+
+    
+}

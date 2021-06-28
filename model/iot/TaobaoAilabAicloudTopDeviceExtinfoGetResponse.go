@@ -14,8 +14,16 @@ taobao.ailab.aicloud.top.device.extinfo.get
 */
 type TaobaoAilabAicloudTopDeviceExtinfoGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"ailab_aicloud_top_device_extinfo_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoAilabAicloudTopDeviceExtinfoGetResponse
+}
+
+type TaobaoAilabAicloudTopDeviceExtinfoGetResponse struct {
+    XMLName xml.Name `xml:"ailab_aicloud_top_device_extinfo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *TaobaoAilabAicloudTopDeviceExtinfoGetResult `json:"result,omitempty" xml:"
+    Result   *TaobaoAilabAicloudTopDeviceExtinfoGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

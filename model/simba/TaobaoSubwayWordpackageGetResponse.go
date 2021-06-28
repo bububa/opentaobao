@@ -14,8 +14,16 @@ taobao.subway.wordpackage.get
 */
 type TaobaoSubwayWordpackageGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"subway_wordpackage_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSubwayWordpackageGetResponse
+}
+
+type TaobaoSubwayWordpackageGetResponse struct {
+    XMLName xml.Name `xml:"subway_wordpackage_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 词包结果列表
     
-    ResultList   []SiriusItemWordPackageDto `json:"result_list,omitempty" xml:"
+    ResultList   []SiriusItemWordPackageDto `json:"result_list,omitempty" xml:"result_list>sirius_item_word_package_dto,omitempty"`
+    
+    
+}

@@ -14,8 +14,26 @@ taobao.qimen.orderstatus.update
 */
 type TaobaoQimenOrderstatusUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qimen_orderstatus_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQimenOrderstatusUpdateResponse
+}
+
+type TaobaoQimenOrderstatusUpdateResponse struct {
+    XMLName xml.Name `xml:"qimen_orderstatus_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // message
     
-    Message   string `json:"message,omitempty" xml:"
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+
+    
+    // resultCode
+    
+    ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
+
+    
+    // success
+    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+}

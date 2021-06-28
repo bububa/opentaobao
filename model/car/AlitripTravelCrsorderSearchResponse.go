@@ -14,8 +14,16 @@ alitrip.travel.crsorder.search
 */
 type AlitripTravelCrsorderSearchAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_travel_crsorder_search_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlitripTravelCrsorderSearchResponse
+}
+
+type AlitripTravelCrsorderSearchResponse struct {
+    XMLName xml.Name `xml:"alitrip_travel_crsorder_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订单id列表（string类型）
     
-    OrderStringList   []string `json:"order_string_list,omitempty" xml:"
+    OrderStringList   []string `json:"order_string_list,omitempty" xml:"order_string_list>string,omitempty"`
+    
+    
+}

@@ -14,8 +14,16 @@ alibaba.mos.onsite.trade.isnewpayorder
 */
 type AlibabaMosOnsiteTradeIsnewpayorderAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_mos_onsite_trade_isnewpayorder_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaMosOnsiteTradeIsnewpayorderResponse
+}
+
+type AlibabaMosOnsiteTradeIsnewpayorderResponse struct {
+    XMLName xml.Name `xml:"alibaba_mos_onsite_trade_isnewpayorder_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *AlibabaMosOnsiteTradeIsnewpayorderResultDo `json:"result,omitempty" xml:"
+    Result   *AlibabaMosOnsiteTradeIsnewpayorderResultDo `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ taobao.delivery.template.add
 */
 type TaobaoDeliveryTemplateAddAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"delivery_template_add_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoDeliveryTemplateAddResponse
+}
+
+type TaobaoDeliveryTemplateAddResponse struct {
+    XMLName xml.Name `xml:"delivery_template_add_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 模板对象
     
-    DeliveryTemplate   *DeliveryTemplate `json:"delivery_template,omitempty" xml:"
+    DeliveryTemplate   *DeliveryTemplate `json:"delivery_template,omitempty" xml:"delivery_template,omitempty"`
+
+    
+}

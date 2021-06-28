@@ -14,8 +14,26 @@ taobao.eticket.merchant.ma.resend
 */
 type TaobaoEticketMerchantMaResendAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"eticket_merchant_ma_resend_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoEticketMerchantMaResendResponse
+}
+
+type TaobaoEticketMerchantMaResendResponse struct {
+    XMLName xml.Name `xml:"eticket_merchant_ma_resend_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 回复参数
     
-    RespBody   *SendMaCallbackResp `json:"resp_body,omitempty" xml:"
+    RespBody   *SendMaCallbackResp `json:"resp_body,omitempty" xml:"resp_body,omitempty"`
+
+    
+    // 子结果码
+    
+    RetCode   string `json:"ret_code,omitempty" xml:"ret_code,omitempty"`
+
+    
+    // 子结果信息
+    
+    RetMsg   string `json:"ret_msg,omitempty" xml:"ret_msg,omitempty"`
+
+    
+}

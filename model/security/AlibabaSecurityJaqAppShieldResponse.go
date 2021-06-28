@@ -14,8 +14,16 @@ alibaba.security.jaq.app.shield
 */
 type AlibabaSecurityJaqAppShieldAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_security_jaq_app_shield_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaSecurityJaqAppShieldResponse
+}
+
+type AlibabaSecurityJaqAppShieldResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_app_shield_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 加固任务信息
     
-    Result   *ScanTaskInfo `json:"result,omitempty" xml:"
+    Result   *ScanTaskInfo `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

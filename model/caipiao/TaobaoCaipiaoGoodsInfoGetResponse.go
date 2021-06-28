@@ -14,8 +14,21 @@ taobao.caipiao.goods.info.get
 */
 type TaobaoCaipiaoGoodsInfoGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"caipiao_goods_info_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoCaipiaoGoodsInfoGetResponse
+}
+
+type TaobaoCaipiaoGoodsInfoGetResponse struct {
+    XMLName xml.Name `xml:"caipiao_goods_info_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回列表的大小
     
-    TotalResults   int64 `json:"total_results,omitempty" xml:"
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+
+    
+    // 查询的结果列表
+    
+    Results   []LotteryWangcaiSellerGoodsInfo `json:"results,omitempty" xml:"results>lottery_wangcai_seller_goods_info,omitempty"`
+    
+    
+}

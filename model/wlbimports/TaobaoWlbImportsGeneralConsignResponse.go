@@ -17,8 +17,31 @@ taobao.wlb.imports.general.consign
 */
 type TaobaoWlbImportsGeneralConsignAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"wlb_imports_general_consign_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoWlbImportsGeneralConsignResponse
+}
+
+type TaobaoWlbImportsGeneralConsignResponse struct {
+    XMLName xml.Name `xml:"wlb_imports_general_consign_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 发货成功后的物流订单编号
     
-    LgorderCode   string `json:"lgorder_code,omitempty" xml:"
+    LgorderCode   string `json:"lgorder_code,omitempty" xml:"lgorder_code,omitempty"`
+
+    
+    // 业务错误描述
+    
+    ResultErrorMsg   string `json:"result_error_msg,omitempty" xml:"result_error_msg,omitempty"`
+
+    
+    // 是否发货成功,true:成功，false：失败
+    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+    // 业务错误编码
+    
+    ResultErrorCode   string `json:"result_error_code,omitempty" xml:"result_error_code,omitempty"`
+
+    
+}

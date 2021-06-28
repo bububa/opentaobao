@@ -14,8 +14,16 @@ taobao.antifraud.riskassessment.get
 */
 type TaobaoAntifraudRiskassessmentGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"antifraud_riskassessment_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoAntifraudRiskassessmentGetResponse
+}
+
+type TaobaoAntifraudRiskassessmentGetResponse struct {
+    XMLName xml.Name `xml:"antifraud_riskassessment_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    RiskResult   *ResultWrapper `json:"risk_result,omitempty" xml:"
+    RiskResult   *ResultWrapper `json:"risk_result,omitempty" xml:"risk_result,omitempty"`
+
+    
+}

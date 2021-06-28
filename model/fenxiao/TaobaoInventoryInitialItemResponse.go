@@ -15,8 +15,16 @@ taobao.inventory.initial.item
 */
 type TaobaoInventoryInitialItemAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"inventory_initial_item_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoInventoryInitialItemResponse
+}
+
+type TaobaoInventoryInitialItemResponse struct {
+    XMLName xml.Name `xml:"inventory_initial_item_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 提示信息
     
-    TipInfos   []TipInfo `json:"tip_infos,omitempty" xml:"
+    TipInfos   []TipInfo `json:"tip_infos,omitempty" xml:"tip_infos>tip_info,omitempty"`
+    
+    
+}

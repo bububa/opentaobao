@@ -14,8 +14,16 @@ tmall.servicecenter.worker.taglist.get
 */
 type TmallServicecenterWorkerTaglistGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_servicecenter_worker_taglist_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallServicecenterWorkerTaglistGetResponse
+}
+
+type TmallServicecenterWorkerTaglistGetResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_worker_taglist_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 工人的能力标签
     
-    Result   *WorkerTag `json:"result,omitempty" xml:"
+    Result   *WorkerTag `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

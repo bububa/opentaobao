@@ -14,8 +14,21 @@ taobao.tmc.groups.get
 */
 type TaobaoTmcGroupsGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmc_groups_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoTmcGroupsGetResponse
+}
+
+type TaobaoTmcGroupsGetResponse struct {
+    XMLName xml.Name `xml:"tmc_groups_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // dasdasd
     
-    Groups   []TmcGroup `json:"groups,omitempty" xml:"
+    Groups   []TmcGroup `json:"groups,omitempty" xml:"groups>tmc_group,omitempty"`
+    
+    
+    // 分组总数
+    
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+
+    
+}

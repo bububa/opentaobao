@@ -14,8 +14,26 @@ alibaba.wdk.fulfill.sf.btoc.fms.wms.work.order.callback
 */
 type AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdk_fulfill_sf_btoc_fms_wms_work_order_callback_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackResponse
+}
+
+type AlibabaWdkFulfillSfBtocFmsWmsWorkOrderCallbackResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_fulfill_sf_btoc_fms_wms_work_order_callback_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+    // 响应提示信息
+    
+    RespMessage   string `json:"resp_message,omitempty" xml:"resp_message,omitempty"`
+
+    
+    // 响应code(SUCCESS:回传成功； SYSTEM_ERROR :系统异常； PARAM_ERROR :参数错误； BUSINESS_ERROR:业务异常；)
+    
+    RespCode   string `json:"resp_code,omitempty" xml:"resp_code,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ alibaba.taobao.shop.cat.neo.get
 */
 type AlibabaTaobaoShopCatNeoGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_taobao_shop_cat_neo_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaTaobaoShopCatNeoGetResponse
+}
+
+type AlibabaTaobaoShopCatNeoGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_taobao_shop_cat_neo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 客户端鉴权虚拟api
     
-    Unnamed   string `json:"unnamed,omitempty" xml:"
+    Unnamed   string `json:"unnamed,omitempty" xml:"unnamed,omitempty"`
+
+    
+}

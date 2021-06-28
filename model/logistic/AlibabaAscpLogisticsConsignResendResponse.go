@@ -16,8 +16,16 @@ alibaba.ascp.logistics.consign.resend
 */
 type AlibabaAscpLogisticsConsignResendAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_ascp_logistics_consign_resend_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaAscpLogisticsConsignResendResponse
+}
+
+type AlibabaAscpLogisticsConsignResendResponse struct {
+    XMLName xml.Name `xml:"alibaba_ascp_logistics_consign_resend_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异步获取历史数据接口返回结果
     
-    Result   *AlibabaAscpLogisticsConsignResendResultDto `json:"result,omitempty" xml:"
+    Result   *AlibabaAscpLogisticsConsignResendResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

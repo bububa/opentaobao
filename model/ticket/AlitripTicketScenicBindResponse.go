@@ -14,8 +14,16 @@ alitrip.ticket.scenic.bind
 */
 type AlitripTicketScenicBindAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_ticket_scenic_bind_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlitripTicketScenicBindResponse
+}
+
+type AlitripTicketScenicBindResponse struct {
+    XMLName xml.Name `xml:"alitrip_ticket_scenic_bind_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 景点绑定结果
     
-    FirstResult   *TicketScenicResult `json:"first_result,omitempty" xml:"
+    FirstResult   *TicketScenicResult `json:"first_result,omitempty" xml:"first_result,omitempty"`
+
+    
+}

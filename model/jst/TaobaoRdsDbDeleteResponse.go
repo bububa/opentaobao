@@ -14,8 +14,16 @@ taobao.rds.db.delete
 */
 type TaobaoRdsDbDeleteAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"rds_db_delete_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoRdsDbDeleteResponse
+}
+
+type TaobaoRdsDbDeleteResponse struct {
+    XMLName xml.Name `xml:"rds_db_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 删除数据库，返回结果对象
     
-    RdsDbInfo   *RdsDbInfo `json:"rds_db_info,omitempty" xml:"
+    RdsDbInfo   *RdsDbInfo `json:"rds_db_info,omitempty" xml:"rds_db_info,omitempty"`
+
+    
+}

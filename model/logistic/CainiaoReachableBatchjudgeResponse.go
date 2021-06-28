@@ -14,8 +14,16 @@ cainiao.reachable.batchjudge
 */
 type CainiaoReachableBatchjudgeAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"cainiao_reachable_batchjudge_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    CainiaoReachableBatchjudgeResponse
+}
+
+type CainiaoReachableBatchjudgeResponse struct {
+    XMLName xml.Name `xml:"cainiao_reachable_batchjudge_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result   *BaseResultDto `json:"result,omitempty" xml:"
+    Result   *BaseResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

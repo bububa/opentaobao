@@ -14,8 +14,21 @@ taobao.crm.members.increment.get
 */
 type TaobaoCrmMembersIncrementGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"crm_members_increment_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoCrmMembersIncrementGetResponse
+}
+
+type TaobaoCrmMembersIncrementGetResponse struct {
+    XMLName xml.Name `xml:"crm_members_increment_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回当前页的会员列表
     
-    Members   []BasicMember `json:"members,omitempty" xml:"
+    Members   []BasicMember `json:"members,omitempty" xml:"members>basic_member,omitempty"`
+    
+    
+    // 记录的总条数
+    
+    TotalResult   int64 `json:"total_result,omitempty" xml:"total_result,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ taobao.simba.insight.wordspricedata.get
 */
 type TaobaoSimbaInsightWordspricedataGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"simba_insight_wordspricedata_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoSimbaInsightWordspricedataGetResponse
+}
+
+type TaobaoSimbaInsightWordspricedataGetResponse struct {
+    XMLName xml.Name `xml:"simba_insight_wordspricedata_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 竞价区间分布数据
     
-    WordPricedataList   []InsightWordPriceDistributeDataDTO `json:"word_pricedata_list,omitempty" xml:"
+    WordPricedataList   []InsightWordPriceDistributeDataDTO `json:"word_pricedata_list,omitempty" xml:"word_pricedata_list>insight_word_price_distribute_data_dto,omitempty"`
+    
+    
+}

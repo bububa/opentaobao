@@ -14,8 +14,16 @@ ERP调用接口，创建入库单;
 */
 type TaobaoQimenEntryorderCreateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qimen_entryorder_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQimenEntryorderCreateResponse
+}
+
+type TaobaoQimenEntryorderCreateResponse struct {
+    XMLName xml.Name `xml:"qimen_entryorder_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *Response `json:"response,omitempty" xml:"
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
+    
+}

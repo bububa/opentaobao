@@ -14,8 +14,16 @@ tmall.servicecenter.worker.querycapacitytask
 */
 type TmallServicecenterWorkerQuerycapacitytaskAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_servicecenter_worker_querycapacitytask_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallServicecenterWorkerQuerycapacitytaskResponse
+}
+
+type TmallServicecenterWorkerQuerycapacitytaskResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_worker_querycapacitytask_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // ResultBase
     
-    ResultBase   *ResultBase `json:"result_base,omitempty" xml:"
+    ResultBase   *ResultBase `json:"result_base,omitempty" xml:"result_base,omitempty"`
+
+    
+}

@@ -17,8 +17,16 @@ tmall.servicecenter.servicestore.updateservicestorecoverservice
 */
 type TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_servicecenter_servicestore_updateservicestorecoverservice_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallServicecenterServicestoreUpdateservicestorecoverserviceResponse
+}
+
+type TmallServicecenterServicestoreUpdateservicestorecoverserviceResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_servicestore_updateservicestorecoverservice_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *ResultBase `json:"result,omitempty" xml:"
+    Result   *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

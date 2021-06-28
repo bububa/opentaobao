@@ -14,8 +14,16 @@ taobao.koubei.tribe.open.verify.code.apply
 */
 type TaobaoKoubeiTribeOpenVerifyCodeApplyAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"koubei_tribe_open_verify_code_apply_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoKoubeiTribeOpenVerifyCodeApplyResponse
+}
+
+type TaobaoKoubeiTribeOpenVerifyCodeApplyResponse struct {
+    XMLName xml.Name `xml:"koubei_tribe_open_verify_code_apply_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *TaobaoKoubeiTribeOpenVerifyCodeApplyResult `json:"result,omitempty" xml:"
+    Result   *TaobaoKoubeiTribeOpenVerifyCodeApplyResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

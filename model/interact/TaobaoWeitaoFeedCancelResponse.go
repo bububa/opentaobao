@@ -14,8 +14,16 @@ taobao.weitao.feed.cancel
 */
 type TaobaoWeitaoFeedCancelAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"weitao_feed_cancel_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoWeitaoFeedCancelResponse
+}
+
+type TaobaoWeitaoFeedCancelResponse struct {
+    XMLName xml.Name `xml:"weitao_feed_cancel_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 推送结果
     
-    Result   *PushResult `json:"result,omitempty" xml:"
+    Result   *PushResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

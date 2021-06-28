@@ -14,8 +14,16 @@ taobao.inventory.store.query
 */
 type TaobaoInventoryStoreQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"inventory_store_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoInventoryStoreQueryResponse
+}
+
+type TaobaoInventoryStoreQueryResponse struct {
+    XMLName xml.Name `xml:"inventory_store_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 仓库列表
     
-    StoreList   []Store `json:"store_list,omitempty" xml:"
+    StoreList   []Store `json:"store_list,omitempty" xml:"store_list>store,omitempty"`
+    
+    
+}

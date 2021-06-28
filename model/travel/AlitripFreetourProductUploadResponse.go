@@ -17,8 +17,16 @@ alitrip.freetour.product.upload
 */
 type AlitripFreetourProductUploadAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_freetour_product_upload_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlitripFreetourProductUploadResponse
+}
+
+type AlitripFreetourProductUploadResponse struct {
+    XMLName xml.Name `xml:"alitrip_freetour_product_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // firstResult
     
-    FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"
+    FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"first_result,omitempty"`
+
+    
+}

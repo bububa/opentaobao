@@ -14,8 +14,21 @@ taobao.vas.subsc.search
 */
 type TaobaoVasSubscSearchAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"vas_subsc_search_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoVasSubscSearchResponse
+}
+
+type TaobaoVasSubscSearchResponse struct {
+    XMLName xml.Name `xml:"vas_subsc_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 订购关系对象
     
-    ArticleSubs   []ArticleSub `json:"article_subs,omitempty" xml:"
+    ArticleSubs   []ArticleSub `json:"article_subs,omitempty" xml:"article_subs>article_sub,omitempty"`
+    
+    
+    // 总记录数
+    
+    TotalItem   int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
+
+    
+}

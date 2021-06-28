@@ -14,8 +14,16 @@ taobao.shop.seller.get
 */
 type TaobaoShopSellerGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"shop_seller_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoShopSellerGetResponse
+}
+
+type TaobaoShopSellerGetResponse struct {
+    XMLName xml.Name `xml:"shop_seller_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 店铺信息
     
-    Shop   *Shop `json:"shop,omitempty" xml:"
+    Shop   *Shop `json:"shop,omitempty" xml:"shop,omitempty"`
+
+    
+}

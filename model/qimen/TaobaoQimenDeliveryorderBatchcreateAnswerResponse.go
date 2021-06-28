@@ -14,8 +14,16 @@ WMS调用接口，用于异步化的批量发货单创建结果通知。（如�
 */
 type TaobaoQimenDeliveryorderBatchcreateAnswerAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qimen_deliveryorder_batchcreate_answer_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQimenDeliveryorderBatchcreateAnswerResponse
+}
+
+type TaobaoQimenDeliveryorderBatchcreateAnswerResponse struct {
+    XMLName xml.Name `xml:"qimen_deliveryorder_batchcreate_answer_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *Response `json:"response,omitempty" xml:"
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
+    
+}

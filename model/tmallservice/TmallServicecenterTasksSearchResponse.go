@@ -14,8 +14,16 @@ tmall.servicecenter.tasks.search
 */
 type TmallServicecenterTasksSearchAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_servicecenter_tasks_search_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallServicecenterTasksSearchResponse
+}
+
+type TmallServicecenterTasksSearchResponse struct {
+    XMLName xml.Name `xml:"tmall_servicecenter_tasks_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // ServicePacket<ServiceTaskDO>
     
-    ServiceTaskPacket   *ServiceTaskPacket `json:"service_task_packet,omitempty" xml:"
+    ServiceTaskPacket   *ServiceTaskPacket `json:"service_task_packet,omitempty" xml:"service_task_packet,omitempty"`
+
+    
+}

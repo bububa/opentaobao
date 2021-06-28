@@ -14,8 +14,21 @@ taobao.fenxiao.product.update
 */
 type TaobaoFenxiaoProductUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"fenxiao_product_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoFenxiaoProductUpdateResponse
+}
+
+type TaobaoFenxiaoProductUpdateResponse struct {
+    XMLName xml.Name `xml:"fenxiao_product_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 产品ID
     
-    Pid   int64 `json:"pid,omitempty" xml:"
+    Pid   int64 `json:"pid,omitempty" xml:"pid,omitempty"`
+
+    
+    // 更新时间，时间格式：yyyy-MM-dd HH:mm:ss
+    
+    Modified   string `json:"modified,omitempty" xml:"modified,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ alibaba.icbu.product.id.decrypt
 */
 type AlibabaIcbuProductIdDecryptAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_icbu_product_id_decrypt_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaIcbuProductIdDecryptResponse
+}
+
+type AlibabaIcbuProductIdDecryptResponse struct {
+    XMLName xml.Name `xml:"alibaba_icbu_product_id_decrypt_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品ID
     
-    Id   int64 `json:"id,omitempty" xml:"
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
+
+    
+}

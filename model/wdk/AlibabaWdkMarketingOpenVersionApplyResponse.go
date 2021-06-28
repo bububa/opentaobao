@@ -14,8 +14,16 @@ alibaba.wdk.marketing.open.version.apply
 */
 type AlibabaWdkMarketingOpenVersionApplyAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_wdk_marketing_open_version_apply_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaWdkMarketingOpenVersionApplyResponse
+}
+
+type AlibabaWdkMarketingOpenVersionApplyResponse struct {
+    XMLName xml.Name `xml:"alibaba_wdk_marketing_open_version_apply_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 版本号申请结果
     
-    Result   *WdkMarketOpenResult `json:"result,omitempty" xml:"
+    Result   *WdkMarketOpenResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

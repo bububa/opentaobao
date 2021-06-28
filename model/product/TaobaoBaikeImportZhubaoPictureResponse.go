@@ -14,8 +14,16 @@ taobao.baike.import.zhubao.picture
 */
 type TaobaoBaikeImportZhubaoPictureAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"baike_import_zhubao_picture_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoBaikeImportZhubaoPictureResponse
+}
+
+type TaobaoBaikeImportZhubaoPictureResponse struct {
+    XMLName xml.Name `xml:"baike_import_zhubao_picture_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TaobaoBaikeImportZhubaoPictureResult `json:"result,omitempty" xml:"
+    Result   *TaobaoBaikeImportZhubaoPictureResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

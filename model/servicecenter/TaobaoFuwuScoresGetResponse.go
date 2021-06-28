@@ -14,8 +14,16 @@ taobao.fuwu.scores.get
 */
 type TaobaoFuwuScoresGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"fuwu_scores_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoFuwuScoresGetResponse
+}
+
+type TaobaoFuwuScoresGetResponse struct {
+    XMLName xml.Name `xml:"fuwu_scores_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 评价流水记录
     
-    ScoreResult   []ScoreResult `json:"score_result,omitempty" xml:"
+    ScoreResult   []ScoreResult `json:"score_result,omitempty" xml:"score_result>score_result,omitempty"`
+    
+    
+}

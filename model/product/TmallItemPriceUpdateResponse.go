@@ -14,8 +14,16 @@ tmall.item.price.update
 */
 type TmallItemPriceUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_item_price_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallItemPriceUpdateResponse
+}
+
+type TmallItemPriceUpdateResponse struct {
+    XMLName xml.Name `xml:"tmall_item_price_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 价格更新结果
     
-    PriceUpdateResult   string `json:"price_update_result,omitempty" xml:"
+    PriceUpdateResult   string `json:"price_update_result,omitempty" xml:"price_update_result,omitempty"`
+
+    
+}

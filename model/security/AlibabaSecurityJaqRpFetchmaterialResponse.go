@@ -14,8 +14,16 @@ alibaba.security.jaq.rp.fetchmaterial
 */
 type AlibabaSecurityJaqRpFetchmaterialAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_security_jaq_rp_fetchmaterial_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaSecurityJaqRpFetchmaterialResponse
+}
+
+type AlibabaSecurityJaqRpFetchmaterialResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_rp_fetchmaterial_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果信息
     
-    Data   string `json:"data,omitempty" xml:"
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
+
+    
+}

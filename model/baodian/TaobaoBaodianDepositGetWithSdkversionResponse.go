@@ -14,8 +14,16 @@ taobao.baodian.deposit.get.with.sdkversion
 */
 type TaobaoBaodianDepositGetWithSdkversionAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"baodian_deposit_get_with_sdkversion_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoBaodianDepositGetWithSdkversionResponse
+}
+
+type TaobaoBaodianDepositGetWithSdkversionResponse struct {
+    XMLName xml.Name `xml:"baodian_deposit_get_with_sdkversion_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结构体
     
-    Result   *CoinUserDepositV2 `json:"result,omitempty" xml:"
+    Result   *CoinUserDepositV2 `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

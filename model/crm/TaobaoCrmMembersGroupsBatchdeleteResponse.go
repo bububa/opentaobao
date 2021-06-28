@@ -14,8 +14,16 @@ taobao.crm.members.groups.batchdelete
 */
 type TaobaoCrmMembersGroupsBatchdeleteAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"crm_members_groups_batchdelete_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoCrmMembersGroupsBatchdeleteResponse
+}
+
+type TaobaoCrmMembersGroupsBatchdeleteResponse struct {
+    XMLName xml.Name `xml:"crm_members_groups_batchdelete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 删除是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+}

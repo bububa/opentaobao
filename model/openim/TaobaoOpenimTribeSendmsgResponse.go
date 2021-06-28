@@ -14,8 +14,21 @@ taobao.openim.tribe.sendmsg
 */
 type TaobaoOpenimTribeSendmsgAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"openim_tribe_sendmsg_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoOpenimTribeSendmsgResponse
+}
+
+type TaobaoOpenimTribeSendmsgResponse struct {
+    XMLName xml.Name `xml:"openim_tribe_sendmsg_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 错误码
     
-    TribeCode   int64 `json:"tribe_code,omitempty" xml:"
+    TribeCode   int64 `json:"tribe_code,omitempty" xml:"tribe_code,omitempty"`
+
+    
+    // 错误信息
+    
+    Message   string `json:"message,omitempty" xml:"message,omitempty"`
+
+    
+}

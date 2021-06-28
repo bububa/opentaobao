@@ -17,8 +17,16 @@ alitrip.daytours.product.upload
 */
 type AlitripDaytoursProductUploadAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_daytours_product_upload_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlitripDaytoursProductUploadResponse
+}
+
+type AlitripDaytoursProductUploadResponse struct {
+    XMLName xml.Name `xml:"alitrip_daytours_product_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品维护结果
     
-    FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"
+    FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"first_result,omitempty"`
+
+    
+}

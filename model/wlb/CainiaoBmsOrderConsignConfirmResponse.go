@@ -14,8 +14,16 @@ BMS出库后，通知ISV
 */
 type CainiaoBmsOrderConsignConfirmAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"cainiao_bms_order_consign_confirm_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    CainiaoBmsOrderConsignConfirmResponse
+}
+
+type CainiaoBmsOrderConsignConfirmResponse struct {
+    XMLName xml.Name `xml:"cainiao_bms_order_consign_confirm_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    Result   *ResultDO `json:"result,omitempty" xml:"
+    Result   *ResultDO `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

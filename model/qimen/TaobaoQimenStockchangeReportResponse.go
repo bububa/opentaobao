@@ -14,8 +14,16 @@ WMS调用奇门的接口,将库存异动信息信息回传给ERP
 */
 type TaobaoQimenStockchangeReportAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qimen_stockchange_report_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQimenStockchangeReportResponse
+}
+
+type TaobaoQimenStockchangeReportResponse struct {
+    XMLName xml.Name `xml:"qimen_stockchange_report_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 
     
-    Response   *Response `json:"response,omitempty" xml:"
+    Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
+
+    
+}

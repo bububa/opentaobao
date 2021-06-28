@@ -14,8 +14,16 @@ taobao.item.propimg.delete
 */
 type TaobaoItemPropimgDeleteAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"item_propimg_delete_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoItemPropimgDeleteResponse
+}
+
+type TaobaoItemPropimgDeleteResponse struct {
+    XMLName xml.Name `xml:"item_propimg_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 属性图片结构
     
-    PropImg   *PropImg `json:"prop_img,omitempty" xml:"
+    PropImg   *PropImg `json:"prop_img,omitempty" xml:"prop_img,omitempty"`
+
+    
+}

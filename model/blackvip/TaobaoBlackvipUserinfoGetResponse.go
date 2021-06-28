@@ -14,8 +14,16 @@ taobao.blackvip.userinfo.get
 */
 type TaobaoBlackvipUserinfoGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"blackvip_userinfo_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoBlackvipUserinfoGetResponse
+}
+
+type TaobaoBlackvipUserinfoGetResponse struct {
+    XMLName xml.Name `xml:"blackvip_userinfo_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果支持对象
     
-    Result   *ResultSupport `json:"result,omitempty" xml:"
+    Result   *ResultSupport `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

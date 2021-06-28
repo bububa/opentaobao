@@ -14,8 +14,16 @@ alibaba.security.jaq.app.riskdetailbatch.get
 */
 type AlibabaSecurityJaqAppRiskdetailbatchGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_security_jaq_app_riskdetailbatch_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaSecurityJaqAppRiskdetailbatchGetResponse
+}
+
+type AlibabaSecurityJaqAppRiskdetailbatchGetResponse struct {
+    XMLName xml.Name `xml:"alibaba_security_jaq_app_riskdetailbatch_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 批量扫描风险详情
     
-    Result   *RiskDetailBatch `json:"result,omitempty" xml:"
+    Result   *RiskDetailBatch `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

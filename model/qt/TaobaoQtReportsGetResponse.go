@@ -14,8 +14,16 @@ taobao.qt.reports.get
 */
 type TaobaoQtReportsGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"qt_reports_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoQtReportsGetResponse
+}
+
+type TaobaoQtReportsGetResponse struct {
+    XMLName xml.Name `xml:"qt_reports_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 质检报告列表
     
-    Reports   []QtReport `json:"reports,omitempty" xml:"
+    Reports   []QtReport `json:"reports,omitempty" xml:"reports>qt_report,omitempty"`
+    
+    
+}

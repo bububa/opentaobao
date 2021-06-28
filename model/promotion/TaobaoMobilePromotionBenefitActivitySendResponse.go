@@ -14,8 +14,16 @@ taobao.mobile.promotion.benefit.activity.send
 */
 type TaobaoMobilePromotionBenefitActivitySendAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"mobile_promotion_benefit_activity_send_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoMobilePromotionBenefitActivitySendResponse
+}
+
+type TaobaoMobilePromotionBenefitActivitySendResponse struct {
+    XMLName xml.Name `xml:"mobile_promotion_benefit_activity_send_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 权益发放结果
     
-    SendResult   *SingleBenefitSendResult `json:"send_result,omitempty" xml:"
+    SendResult   *SingleBenefitSendResult `json:"send_result,omitempty" xml:"send_result,omitempty"`
+
+    
+}

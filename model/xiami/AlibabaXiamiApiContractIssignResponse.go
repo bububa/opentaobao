@@ -14,8 +14,16 @@ alibaba.xiami.api.contract.issign
 */
 type AlibabaXiamiApiContractIssignAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_xiami_api_contract_issign_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaXiamiApiContractIssignResponse
+}
+
+type AlibabaXiamiApiContractIssignResponse struct {
+    XMLName xml.Name `xml:"alibaba_xiami_api_contract_issign_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否已经签约
     
-    Data   string `json:"data,omitempty" xml:"
+    Data   string `json:"data,omitempty" xml:"data,omitempty"`
+
+    
+}

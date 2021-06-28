@@ -1,11 +1,21 @@
 package servicecenter
 
-// OfnPreRedPacketActionDTO 
-type OfnPreRedPacketActionDTO struct {
+// OfnPreRedPacketActionDto 
+type OfnPreRedPacketActionDto struct {
 
-    // 状态。初始化=1，重试中=2，失败=3，成功=4
+    // 主键
     
-    Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
+    
+
+    // 创建时间
+    
+    GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
+    
+
+    // 修改时间
+    
+    GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     
 
     // 操作类型。1=天猫发预付红包；2=天猫发尾款红包；3=天猫扣回红包；4=回收商扣回红包
@@ -13,19 +23,9 @@ type OfnPreRedPacketActionDTO struct {
     ActionType   int64 `json:"action_type,omitempty" xml:"action_type,omitempty"`
     
 
-    // 创建时间
+    // 状态。初始化=1，重试中=2，失败=3，成功=4
     
-    GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
-    
-
-    // 修改时间
-    
-    GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-    
-
-    // 主键
-    
-    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
+    Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     
 
     // 资金池的记录

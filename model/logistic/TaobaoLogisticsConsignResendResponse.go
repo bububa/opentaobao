@@ -14,8 +14,16 @@ taobao.logistics.consign.resend
 */
 type TaobaoLogisticsConsignResendAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"logistics_consign_resend_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoLogisticsConsignResendResponse
+}
+
+type TaobaoLogisticsConsignResendResponse struct {
+    XMLName xml.Name `xml:"logistics_consign_resend_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回发货是否成功is_success
     
-    Shipping   *Shipping `json:"shipping,omitempty" xml:"
+    Shipping   *Shipping `json:"shipping,omitempty" xml:"shipping,omitempty"`
+
+    
+}

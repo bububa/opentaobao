@@ -14,8 +14,16 @@ alibaba.alsc.order.order.upload
 */
 type AlibabaAlscOrderOrderUploadAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_alsc_order_order_upload_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaAlscOrderOrderUploadResponse
+}
+
+type AlibabaAlscOrderOrderUploadResponse struct {
+    XMLName xml.Name `xml:"alibaba_alsc_order_order_upload_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回包装类
     
-    Result   *BaseResult `json:"result,omitempty" xml:"
+    Result   *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

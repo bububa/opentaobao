@@ -14,8 +14,16 @@ taobao.item.joint.img
 */
 type TaobaoItemJointImgAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"item_joint_img_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoItemJointImgResponse
+}
+
+type TaobaoItemJointImgResponse struct {
+    XMLName xml.Name `xml:"item_joint_img_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 商品图片信息
     
-    ItemImg   *ItemImg `json:"item_img,omitempty" xml:"
+    ItemImg   *ItemImg `json:"item_img,omitempty" xml:"item_img,omitempty"`
+
+    
+}

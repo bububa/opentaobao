@@ -14,8 +14,16 @@ alitrip.item.schema.update
 */
 type AlitripItemSchemaUpdateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alitrip_item_schema_update_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlitripItemSchemaUpdateResponse
+}
+
+type AlitripItemSchemaUpdateResponse struct {
+    XMLName xml.Name `xml:"alitrip_item_schema_update_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 结果
     
-    Result   *TopTravelItem `json:"result,omitempty" xml:"
+    Result   *TopTravelItem `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

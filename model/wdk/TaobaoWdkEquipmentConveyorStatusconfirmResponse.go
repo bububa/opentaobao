@@ -14,8 +14,16 @@ taobao.wdk.equipment.conveyor.statusconfirm
 */
 type TaobaoWdkEquipmentConveyorStatusconfirmAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"wdk_equipment_conveyor_statusconfirm_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoWdkEquipmentConveyorStatusconfirmResponse
+}
+
+type TaobaoWdkEquipmentConveyorStatusconfirmResponse struct {
+    XMLName xml.Name `xml:"wdk_equipment_conveyor_statusconfirm_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TopWcsResult `json:"result,omitempty" xml:"
+    Result   *TopWcsResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

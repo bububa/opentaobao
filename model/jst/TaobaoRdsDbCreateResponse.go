@@ -14,8 +14,16 @@ taobao.rds.db.create
 */
 type TaobaoRdsDbCreateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"rds_db_create_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoRdsDbCreateResponse
+}
+
+type TaobaoRdsDbCreateResponse struct {
+    XMLName xml.Name `xml:"rds_db_create_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // rds创建、查询、删除db返回结果的数据结构
     
-    RdsDbInfo   *RdsDbInfo `json:"rds_db_info,omitempty" xml:"
+    RdsDbInfo   *RdsDbInfo `json:"rds_db_info,omitempty" xml:"rds_db_info,omitempty"`
+
+    
+}

@@ -14,8 +14,16 @@ tmall.traceplatform.ccic.tracecode.check
 */
 type TmallTraceplatformCcicTracecodeCheckAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_traceplatform_ccic_tracecode_check_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallTraceplatformCcicTracecodeCheckResponse
+}
+
+type TmallTraceplatformCcicTracecodeCheckResponse struct {
+    XMLName xml.Name `xml:"tmall_traceplatform_ccic_tracecode_check_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *DataResult `json:"result,omitempty" xml:"
+    Result   *DataResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

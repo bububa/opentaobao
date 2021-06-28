@@ -14,8 +14,16 @@ alibaba.ele.fengniao.chainstore.ranges
 */
 type AlibabaEleFengniaoChainstoreRangesAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_ele_fengniao_chainstore_ranges_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaEleFengniaoChainstoreRangesResponse
+}
+
+type AlibabaEleFengniaoChainstoreRangesResponse struct {
+    XMLName xml.Name `xml:"alibaba_ele_fengniao_chainstore_ranges_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回值
     
-    RangeList   []AlibabaEleFengniaoChainstoreRangesResult `json:"range_list,omitempty" xml:"
+    RangeList   []AlibabaEleFengniaoChainstoreRangesResult `json:"range_list,omitempty" xml:"range_list>alibaba_ele_fengniao_chainstore_ranges_result,omitempty"`
+    
+    
+}

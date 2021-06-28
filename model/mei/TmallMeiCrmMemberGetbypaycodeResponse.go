@@ -14,8 +14,16 @@ tmall.mei.crm.member.getbypaycode
 */
 type TmallMeiCrmMemberGetbypaycodeAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_mei_crm_member_getbypaycode_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallMeiCrmMemberGetbypaycodeResponse
+}
+
+type TmallMeiCrmMemberGetbypaycodeResponse struct {
+    XMLName xml.Name `xml:"tmall_mei_crm_member_getbypaycode_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *ResultDTO `json:"result,omitempty" xml:"
+    Result   *ResultDTO `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

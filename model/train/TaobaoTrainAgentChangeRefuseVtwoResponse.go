@@ -14,8 +14,16 @@ taobao.train.agent.change.refuse.vtwo
 */
 type TaobaoTrainAgentChangeRefuseVtwoAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"train_agent_change_refuse_vtwo_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoTrainAgentChangeRefuseVtwoResponse
+}
+
+type TaobaoTrainAgentChangeRefuseVtwoResponse struct {
+    XMLName xml.Name `xml:"train_agent_change_refuse_vtwo_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否成功
     
-    IsSuccess   bool `json:"is_success,omitempty" xml:"
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+}

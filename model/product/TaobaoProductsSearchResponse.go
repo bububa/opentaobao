@@ -21,8 +21,21 @@ taobao.products.search
 */
 type TaobaoProductsSearchAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"products_search_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoProductsSearchResponse
+}
+
+type TaobaoProductsSearchResponse struct {
+    XMLName xml.Name `xml:"products_search_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回具体信息为入参fields请求的字段信息
     
-    Products   []Product `json:"products,omitempty" xml:"
+    Products   []Product `json:"products,omitempty" xml:"products>product,omitempty"`
+    
+    
+    // 结果总数
+    
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+
+    
+}

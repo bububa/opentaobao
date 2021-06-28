@@ -14,8 +14,16 @@ taobao.taotv.video.playlist.ottnav.get
 */
 type TaobaoTaotvVideoPlaylistOttnavGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"taotv_video_playlist_ottnav_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoTaotvVideoPlaylistOttnavGetResponse
+}
+
+type TaobaoTaotvVideoPlaylistOttnavGetResponse struct {
+    XMLName xml.Name `xml:"taotv_video_playlist_ottnav_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TaobaoTaotvVideoPlaylistOttnavGetResult `json:"result,omitempty" xml:"
+    Result   *TaobaoTaotvVideoPlaylistOttnavGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

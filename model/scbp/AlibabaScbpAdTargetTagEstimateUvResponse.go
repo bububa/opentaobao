@@ -14,8 +14,16 @@ alibaba.scbp.ad.target.tag.estimate.uv
 */
 type AlibabaScbpAdTargetTagEstimateUvAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_scbp_ad_target_tag_estimate_uv_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaScbpAdTargetTagEstimateUvResponse
+}
+
+type AlibabaScbpAdTargetTagEstimateUvResponse struct {
+    XMLName xml.Name `xml:"alibaba_scbp_ad_target_tag_estimate_uv_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 返回数据：key:optionValue, value: 人群id
     
-    Result   string `json:"result,omitempty" xml:"
+    Result   string `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

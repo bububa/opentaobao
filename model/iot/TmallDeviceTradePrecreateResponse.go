@@ -17,8 +17,31 @@ tmall.device.trade.precreate
 */
 type TmallDeviceTradePrecreateAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_device_trade_precreate_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallDeviceTradePrecreateResponse
+}
+
+type TmallDeviceTradePrecreateResponse struct {
+    XMLName xml.Name `xml:"tmall_device_trade_precreate_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 链接有效结束时间
     
-    LifeEnd   string `json:"life_end,omitempty" xml:"
+    LifeEnd   string `json:"life_end,omitempty" xml:"life_end,omitempty"`
+
+    
+    // 链接有效起始时间
+    
+    LifeStart   string `json:"life_start,omitempty" xml:"life_start,omitempty"`
+
+    
+    // 链接二维码图片
+    
+    QrCode   string `json:"qr_code,omitempty" xml:"qr_code,omitempty"`
+
+    
+    // 短链接
+    
+    ShortUrl   string `json:"short_url,omitempty" xml:"short_url,omitempty"`
+
+    
+}

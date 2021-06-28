@@ -14,8 +14,16 @@ taobao.koubei.tribe.open.user.query
 */
 type TaobaoKoubeiTribeOpenUserQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"koubei_tribe_open_user_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoKoubeiTribeOpenUserQueryResponse
+}
+
+type TaobaoKoubeiTribeOpenUserQueryResponse struct {
+    XMLName xml.Name `xml:"koubei_tribe_open_user_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 接口返回model
     
-    Result   *TaobaoKoubeiTribeOpenUserQueryResult `json:"result,omitempty" xml:"
+    Result   *TaobaoKoubeiTribeOpenUserQueryResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

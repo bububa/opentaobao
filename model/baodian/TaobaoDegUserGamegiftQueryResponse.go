@@ -14,8 +14,16 @@ taobao.deg.user.gamegift.query
 */
 type TaobaoDegUserGamegiftQueryAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"deg_user_gamegift_query_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoDegUserGamegiftQueryResponse
+}
+
+type TaobaoDegUserGamegiftQueryResponse struct {
+    XMLName xml.Name `xml:"deg_user_gamegift_query_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 礼包信息
     
-    Records   []GameGiftRecordDto `json:"records,omitempty" xml:"
+    Records   []GameGiftRecordDto `json:"records,omitempty" xml:"records>game_gift_record_dto,omitempty"`
+    
+    
+}

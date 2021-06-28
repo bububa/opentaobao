@@ -14,8 +14,16 @@ taobao.weitao.feed.isrelation
 */
 type TaobaoWeitaoFeedIsrelationAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"weitao_feed_isrelation_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoWeitaoFeedIsrelationResponse
+}
+
+type TaobaoWeitaoFeedIsrelationResponse struct {
+    XMLName xml.Name `xml:"weitao_feed_isrelation_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 是否关注
     
-    Result   int64 `json:"result,omitempty" xml:"
+    Result   int64 `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

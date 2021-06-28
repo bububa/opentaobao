@@ -14,8 +14,16 @@ alibaba.aliqin.axb.vendor.sms.intercept
 */
 type AlibabaAliqinAxbVendorSmsInterceptAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"alibaba_aliqin_axb_vendor_sms_intercept_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    AlibabaAliqinAxbVendorSmsInterceptResponse
+}
+
+type AlibabaAliqinAxbVendorSmsInterceptResponse struct {
+    XMLName xml.Name `xml:"alibaba_aliqin_axb_vendor_sms_intercept_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 响应结构体
     
-    Result   *Response `json:"result,omitempty" xml:"
+    Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

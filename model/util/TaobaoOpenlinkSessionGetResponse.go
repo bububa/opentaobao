@@ -14,8 +14,16 @@ taobao.openlink.session.get
 */
 type TaobaoOpenlinkSessionGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"openlink_session_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoOpenlinkSessionGetResponse
+}
+
+type TaobaoOpenlinkSessionGetResponse struct {
+    XMLName xml.Name `xml:"openlink_session_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // result
     
-    Result   *TaobaoOpenlinkSessionGetResult `json:"result,omitempty" xml:"
+    Result   *TaobaoOpenlinkSessionGetResult `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}

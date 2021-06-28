@@ -14,8 +14,26 @@ taobao.ailab.aicloud.top.like.delete
 */
 type TaobaoAilabAicloudTopLikeDeleteAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"ailab_aicloud_top_like_delete_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoAilabAicloudTopLikeDeleteResponse
+}
+
+type TaobaoAilabAicloudTopLikeDeleteResponse struct {
+    XMLName xml.Name `xml:"ailab_aicloud_top_like_delete_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 错误信息
     
-    MsgInfo   string `json:"msg_info,omitempty" xml:"
+    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
+
+    
+    // 是否成功
+    
+    IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
+
+    
+    // 具体结果值
+    
+    Model   bool `json:"model,omitempty" xml:"model,omitempty"`
+
+    
+}

@@ -14,8 +14,21 @@ taobao.jushita.jdp.users.get
 */
 type TaobaoJushitaJdpUsersGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"jushita_jdp_users_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TaobaoJushitaJdpUsersGetResponse
+}
+
+type TaobaoJushitaJdpUsersGetResponse struct {
+    XMLName xml.Name `xml:"jushita_jdp_users_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 用户列表
     
-    Users   []JdpUser `json:"users,omitempty" xml:"
+    Users   []JdpUser `json:"users,omitempty" xml:"users>jdp_user,omitempty"`
+    
+    
+    // 总记录数
+    
+    TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
+
+    
+}

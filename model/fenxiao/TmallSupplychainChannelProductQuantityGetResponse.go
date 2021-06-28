@@ -14,8 +14,16 @@ tmall.supplychain.channel.product.quantity.get
 */
 type TmallSupplychainChannelProductQuantityGetAPIResponse struct {
     model.CommonResponse
-	RequestId     string         `json:"request_id,omitempty" xml:"tmall_supplychain_channel_product_quantity_get_response>request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
+    TmallSupplychainChannelProductQuantityGetResponse
+}
+
+type TmallSupplychainChannelProductQuantityGetResponse struct {
+    XMLName xml.Name `xml:"tmall_supplychain_channel_product_quantity_get_response"`
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
 
     // 异步获取历史数据接口返回结果
     
-    Result   *TmallSupplychainChannelProductQuantityGetResultDto `json:"result,omitempty" xml:"
+    Result   *TmallSupplychainChannelProductQuantityGetResultDto `json:"result,omitempty" xml:"result,omitempty"`
+
+    
+}
