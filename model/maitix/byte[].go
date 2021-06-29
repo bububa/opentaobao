@@ -1,5 +1,5 @@
 package maitix
 
-// byte[] 
-type byte[] struct {
+// Byte[] 
+type Byte[] struct {
 }

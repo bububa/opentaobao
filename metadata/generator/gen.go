@@ -286,6 +286,7 @@ func genModel(templatePath string, modelPath string, tpl metadata.TplModel) erro
 	if err != nil {
 		return err
 	}
+	tpl.ImportModel = tpl.NeedImportModel()
 	targetFile := filepath.Join(modelPath, fmt.Sprintf("%s.go", tpl.Name))
 	fd, err := os.Create(targetFile)
 	if err != nil {

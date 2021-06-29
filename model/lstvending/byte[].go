@@ -1,5 +1,5 @@
 package lstvending
 
-// byte[] 
-type byte[] struct {
+// Byte[] 
+type Byte[] struct {
 }

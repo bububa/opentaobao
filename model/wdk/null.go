@@ -1,5 +1,5 @@
 package wdk
 
-// null 
-type null struct {
+// Null 
+type Null struct {
 }

@@ -25,7 +25,7 @@ type QueryTradeDto struct {
     // 订单号列表
     OrderNos   []string `json:"order_nos,omitempty" xml:"order_nos>string,omitempty"`
     // 状态列表
-    Status   []null `json:"status,omitempty" xml:"status>null,omitempty"`
+    Status   []Null `json:"status,omitempty" xml:"status>null,omitempty"`
     // 页码
     Page   int64 `json:"page,omitempty" xml:"page,omitempty"`
     // 每页显示数量

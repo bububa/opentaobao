@@ -1,4 +1,7 @@
 package xhotelitem
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // RoomType 
 type RoomType struct {

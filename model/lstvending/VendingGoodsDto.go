@@ -25,7 +25,7 @@ type VendingGoodsDto struct {
     // 商品图片ID
     ImgPathId   string `json:"img_path_id,omitempty" xml:"img_path_id,omitempty"`
     // 商品图片内容字节数组
-    ImgData   []byte[] `json:"img_data,omitempty" xml:"img_data>byte[],omitempty"`
+    ImgData   []Byte[] `json:"img_data,omitempty" xml:"img_data>byte[],omitempty"`
     // 建议摆放的货架层数
     ShelfNoList   []int64 `json:"shelf_no_list,omitempty" xml:"shelf_no_list>int64,omitempty"`
     // 供应商编码

@@ -5,7 +5,7 @@ type DeviceReportEventDTO struct {
     // 0:设备中心UUID ，1：外部id
     IdType   int64 `json:"id_type,omitempty" xml:"id_type,omitempty"`
     // 数据
-    Data   []null `json:"data,omitempty" xml:"data>null,omitempty"`
+    Data   []Null `json:"data,omitempty" xml:"data>null,omitempty"`
     // 消息唯一id
     TransId   string `json:"trans_id,omitempty" xml:"trans_id,omitempty"`
     // 消息时间戳

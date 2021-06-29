@@ -18,12 +18,6 @@ type ApiTpl struct {
 	HasRequestId   bool
 }
 
-type TplModel struct {
-	Pkg    string
-	Name   string
-	Params []TplParam
-}
-
 type TplParam struct {
 	Name      string
 	Label     string
@@ -44,6 +38,22 @@ func (p TplParam) IsMultipart() bool {
 	}
 	for _, obj := range p.Obj {
 		if obj.IsMultipart() {
+			return true
+		}
+	}
+	return false
+}
+
+type TplModel struct {
+	Pkg         string
+	Name        string
+	Params      []TplParam
+	ImportModel bool
+}
+
+func (t TplModel) NeedImportModel() bool {
+	for _, p := range t.Params {
+		if p.Type == "*model.File" {
 			return true
 		}
 	}

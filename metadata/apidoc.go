@@ -136,6 +136,7 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 	case JSON_PARAM_TYPE:
 		param.Type = "string"
 	default:
+		paramType = strings.Title(paramType)
 		param.ObjType = paramType
 		param.SnakeType = util.SnakeCase(paramType)
 		if strings.HasSuffix(p.Type, "[]") {

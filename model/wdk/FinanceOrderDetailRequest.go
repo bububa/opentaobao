@@ -13,7 +13,7 @@ type FinanceOrderDetailRequest struct {
     // 交易类型
     TradeType   string `json:"trade_type,omitempty" xml:"trade_type,omitempty"`
     // 门店编码list
-    ShopCodes   []null `json:"shop_codes,omitempty" xml:"shop_codes>null,omitempty"`
+    ShopCodes   []Null `json:"shop_codes,omitempty" xml:"shop_codes>null,omitempty"`
     // 结束时间
     EndTime   string `json:"end_time,omitempty" xml:"end_time,omitempty"`
     // 开始时间

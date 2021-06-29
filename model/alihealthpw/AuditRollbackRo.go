@@ -19,7 +19,7 @@ type AuditRollbackRo struct {
     // 收款金额
     ReceiptMoney   string `json:"receipt_money,omitempty" xml:"receipt_money,omitempty"`
     // 医院列表
-    HospitalsDesc   []null `json:"hospitals_desc,omitempty" xml:"hospitals_desc>null,omitempty"`
+    HospitalsDesc   []Null `json:"hospitals_desc,omitempty" xml:"hospitals_desc>null,omitempty"`
     // 收款人
     ReceiptName   string `json:"receipt_name,omitempty" xml:"receipt_name,omitempty"`
     // 收款账户

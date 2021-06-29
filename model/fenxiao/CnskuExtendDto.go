@@ -9,7 +9,7 @@ type CnskuExtendDto struct {
     // 商品图片
     PictureUrl   string `json:"picture_url,omitempty" xml:"picture_url,omitempty"`
     // sn 示例
-    CnskuSnSampleDTOList   []null `json:"cnsku_sn_sample_d_t_o_list,omitempty" xml:"cnsku_sn_sample_d_t_o_list>null,omitempty"`
+    CnskuSnSampleDTOList   []Null `json:"cnsku_sn_sample_d_t_o_list,omitempty" xml:"cnsku_sn_sample_d_t_o_list>null,omitempty"`
     // 主要成分
     MainComposition   string `json:"main_composition,omitempty" xml:"main_composition,omitempty"`
     // 是否进口

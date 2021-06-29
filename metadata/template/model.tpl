@@ -1,5 +1,11 @@
 package {{ .Pkg }}
 
+{{- if eq .ImportModel true}}
+import (
+    "github.com/bububa/opentaobao/model"
+)
+{{- end }}
+
 // {{ .Name }} 
 type {{ .Name }} struct {
 {{- range $v := .Params }}
