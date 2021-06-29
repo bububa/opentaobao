@@ -1,4 +1,7 @@
 package tmallcar
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // ResultVo 
 type ResultVo struct {

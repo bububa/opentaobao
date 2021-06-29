@@ -1,0 +1,269 @@
+{
+	"id": 36089,
+	"name": "taobao.uop.tob.order.create",
+	"apiChineseName": "ToB仓储发货",
+	"description": "ToB仓储发货",
+	"requestParams": [
+		{
+			"name": "delivery_order",
+			"type": "DeliveryOrder",
+			"description": "ERP出库对象",
+			"subParams": [
+				{
+					"name": "create_time",
+					"type": "Date",
+					"description": "发货单创建时间"
+				},
+				{
+					"name": "delivery_order_code",
+					"type": "String",
+					"description": "ERP出库单号,ERP系统内本次出库的唯一标示",
+					"required": true
+				},
+				{
+					"name": "logistics_code",
+					"type": "String",
+					"description": "物流公司编码"
+				},
+				{
+					"name": "rel_in_bound_order_code",
+					"type": "String",
+					"description": "交接入库单号,例如唯品会入库单号或者门店收货单号、商家仓入库单号等"
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "发货仓库"
+				},
+				{
+					"name": "order_type",
+					"type": "String",
+					"description": "单据类型,出库单类型(JYCK=一般交易出库单;HHCK=换货出库单;BFCK=补发出库单;QTCK=其他出库单;TOBCK=TOB出库;BIGTOBCK=大B2B发货)",
+					"required": true
+				},
+				{
+					"name": "arrive_channel_type",
+					"type": "String",
+					"description": "到货渠道类型，VIP＝1、门店＝2、经销商＝3、大润发=4、猫超=5、零售通=6、AE=7、京东=8、亚马逊=9、经销=10、代理=11、商超=12、其他=99",
+					"required": true
+				},
+				{
+					"name": "logistics_name",
+					"type": "String",
+					"description": "物流公司名称"
+				},
+				{
+					"name": "last_arrive_date",
+					"type": "Date",
+					"description": "最晚到货时间"
+				},
+				{
+					"name": "order_line",
+					"type": "OrderLine[]",
+					"description": "订单信息",
+					"subParams": [
+						{
+							"name": "inventory_type",
+							"type": "String",
+							"description": "库存类型，ZP=正品、CC=残次"
+						},
+						{
+							"name": "source_order_code",
+							"type": "String",
+							"description": "原交易单，供销平台交易单号、分销平台单号"
+						},
+						{
+							"name": "sub_source_order_code",
+							"type": "String",
+							"description": "子交易单号"
+						},
+						{
+							"name": "batch_code",
+							"type": "String",
+							"description": "批次编码"
+						},
+						{
+							"name": "product_date",
+							"type": "Date",
+							"description": "生产日期，生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "expire_date",
+							"type": "Date",
+							"description": "过期日期，生产日期(YYYY-MM-DD)"
+						},
+						{
+							"name": "produce_code",
+							"type": "String",
+							"description": "生产批号"
+						},
+						{
+							"name": "item_quantity",
+							"type": "Number",
+							"description": "商品数量"
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "商品编码"
+						},
+						{
+							"name": "item_name",
+							"type": "String",
+							"description": "商品名称"
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "order_line_no",
+							"type": "String",
+							"description": "订单行号",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "extend_props",
+					"type": "String",
+					"description": "扩展信息"
+				},
+				{
+					"name": "receiver_info",
+					"type": "ReceiverInfo",
+					"description": "收货人信息",
+					"subParams": [
+						{
+							"name": "mobile",
+							"type": "String",
+							"description": "收货人移动电话",
+							"required": true
+						},
+						{
+							"name": "name",
+							"type": "String",
+							"description": "收货人姓名",
+							"required": true
+						},
+						{
+							"name": "detail_address",
+							"type": "String",
+							"description": "收货人详细地址",
+							"required": true
+						},
+						{
+							"name": "town",
+							"type": "String",
+							"description": "收货人镇"
+						},
+						{
+							"name": "area",
+							"type": "String",
+							"description": "收货人区",
+							"required": true
+						},
+						{
+							"name": "city",
+							"type": "String",
+							"description": "收货人市",
+							"required": true
+						},
+						{
+							"name": "province",
+							"type": "String",
+							"description": "收货人省",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "sign_time",
+					"type": "String",
+					"description": "收货时间区间"
+				},
+				{
+					"name": "is_self_lifting",
+					"type": "String",
+					"description": "是否自提"
+				},
+				{
+					"name": "transport_mode",
+					"type": "String",
+					"description": "配送方式，1=整车直送、2=拼车直送、3=零担、4=快递、5=自提"
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "flag",
+			"type": "String",
+			"description": "flag"
+		},
+		{
+			"name": "message",
+			"type": "String",
+			"description": "message"
+		},
+		{
+			"name": "delivery_orders",
+			"type": "DeliveryOrder[]",
+			"description": "订单",
+			"subParams": [
+				{
+					"name": "cn_order_code",
+					"type": "String",
+					"description": "物流单号",
+					"required": true
+				},
+				{
+					"name": "warehouse_code",
+					"type": "String",
+					"description": "仓库编码",
+					"required": true
+				},
+				{
+					"name": "create_time",
+					"type": "String",
+					"description": "创建时间",
+					"required": true
+				},
+				{
+					"name": "order_lines",
+					"type": "OrderLine[]",
+					"description": "订单行",
+					"required": true,
+					"subParams": [
+						{
+							"name": "order_line_no",
+							"type": "String",
+							"description": "订单行号",
+							"required": true
+						},
+						{
+							"name": "item_id",
+							"type": "String",
+							"description": "商品ID",
+							"required": true
+						},
+						{
+							"name": "item_code",
+							"type": "String",
+							"description": "商品编码",
+							"required": true
+						},
+						{
+							"name": "amount",
+							"type": "String",
+							"description": "数量",
+							"required": true
+						}
+					]
+				}
+			]
+		}
+	]
+}

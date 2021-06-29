@@ -1,7 +1,7 @@
 package scbp
 
-// KeywordRankPriceDto 
-type KeywordRankPriceDto struct {
+// KeywordRankPriceDTO 
+type KeywordRankPriceDTO struct {
     // 关键词的id
     Keyword   string `json:"keyword,omitempty" xml:"keyword,omitempty"`
     // 公司ID
@@ -16,4 +16,6 @@ type KeywordRankPriceDto struct {
     CustPriceList   []int64 `json:"cust_price_list,omitempty" xml:"cust_price_list>int64,omitempty"`
     // 价格列表(客户)(元)(低价处理后结果)
     CustPriceArray   []string `json:"cust_price_array,omitempty" xml:"cust_price_array>string,omitempty"`
+    // 排价结果
+    RankPriceList   []string `json:"rank_price_list,omitempty" xml:"rank_price_list>string,omitempty"`
 }

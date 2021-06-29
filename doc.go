@@ -3,7 +3,7 @@ package opentaobao
 
 const (
 	GitVersion = "v1.1.5"
-	GitCommit = "5b02287b"
+	GitCommit = "345d42a2"
 	GitDate = "<no value>"
 	GitBuiltBy = "unknown"
 )

@@ -53,7 +53,7 @@ type TplModel struct {
 
 func (t TplModel) NeedImportModel() bool {
 	for _, p := range t.Params {
-		if p.Type == "*model.File" {
+		if strings.HasSuffix(p.Type, "model.File") {
 			return true
 		}
 	}

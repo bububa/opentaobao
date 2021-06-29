@@ -23,5 +23,5 @@ type AlibabaScbpAdKeywordQueryKeywordRankPriceResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回参数
-    Result   *KeywordRankPriceDto `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *KeywordRankPriceDTO `json:"result,omitempty" xml:"result,omitempty"`
 }
