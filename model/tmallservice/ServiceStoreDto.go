@@ -66,4 +66,10 @@ type ServiceStoreDTO struct {
     FrontPhoto   string `json:"front_photo,omitempty" xml:"front_photo,omitempty"`
     // 营业执照照片
     LicensePhoto   string `json:"license_photo,omitempty" xml:"license_photo,omitempty"`
+    // 品牌认证有效期
+    GmtBrandCertificationExpire   string `json:"gmt_brand_certification_expire,omitempty" xml:"gmt_brand_certification_expire,omitempty"`
+    // 门店id
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
+    // 照片集合
+    PhotoCollections   string `json:"photo_collections,omitempty" xml:"photo_collections,omitempty"`
 }

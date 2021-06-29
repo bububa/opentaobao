@@ -1,0 +1,137 @@
+{
+	"id": 42736,
+	"name": "tmall.mallitemcenter.serviceproduct.query",
+	"apiChineseName": "天猫服务商服务产品查询",
+	"description": "查询天猫服务的服务商发布的服务产品",
+	"requestParams": [
+		{
+			"name": "id",
+			"type": "Number",
+			"description": "服务产品id"
+		},
+		{
+			"name": "status",
+			"type": "Number",
+			"description": "产品状态"
+		},
+		{
+			"name": "service_code",
+			"type": "String",
+			"description": "服务名称"
+		},
+		{
+			"name": "service_product_type",
+			"type": "Number",
+			"description": "产品类型"
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "result_data_list",
+					"type": "ResultData[]",
+					"description": "返回数据",
+					"required": true,
+					"subParams": [
+						{
+							"name": "create_time",
+							"type": "String",
+							"description": "创建时间",
+							"required": true
+						},
+						{
+							"name": "title",
+							"type": "String",
+							"description": "服务产品title",
+							"required": true
+						},
+						{
+							"name": "service_product_content",
+							"type": "String",
+							"description": "服务产品介绍",
+							"required": true
+						},
+						{
+							"name": "service_product_id",
+							"type": "Number",
+							"description": "服务产品id",
+							"required": true
+						},
+						{
+							"name": "simple_service_sku_list",
+							"type": "SimpleServiceSkuDtOs[]",
+							"description": "服务产品sku列表",
+							"required": true,
+							"subParams": [
+								{
+									"name": "code",
+									"type": "String",
+									"description": "服务skuCode",
+									"required": true
+								},
+								{
+									"name": "display_name",
+									"type": "String",
+									"description": "服务sku名称",
+									"required": true
+								}
+							]
+						},
+						{
+							"name": "service_code",
+							"type": "String",
+							"description": "服务名称",
+							"required": true
+						},
+						{
+							"name": "service_product_status",
+							"type": "Number",
+							"description": "服务产品状态",
+							"required": true
+						},
+						{
+							"name": "service_product_type",
+							"type": "Number",
+							"description": "服务产品类型",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "system_error",
+					"type": "Boolean",
+					"description": "系统是否异常",
+					"required": true
+				},
+				{
+					"name": "business_check_fail",
+					"type": "Boolean",
+					"description": "业务校验是否正常",
+					"required": true
+				},
+				{
+					"name": "error_code",
+					"type": "String",
+					"description": "错误码",
+					"required": true
+				},
+				{
+					"name": "success",
+					"type": "Boolean",
+					"description": "是否成功",
+					"required": true
+				}
+			]
+		}
+	]
+}

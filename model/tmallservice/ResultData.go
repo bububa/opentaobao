@@ -70,6 +70,22 @@ type ResultData struct {
     CompanyName   string `json:"company_name,omitempty" xml:"company_name,omitempty"`
     // 统一社会信用代码
     SocialCreditCode   string `json:"social_credit_code,omitempty" xml:"social_credit_code,omitempty"`
+    // 创建时间
+    CreateTime   string `json:"create_time,omitempty" xml:"create_time,omitempty"`
+    // 服务产品title
+    Title   string `json:"title,omitempty" xml:"title,omitempty"`
+    // 服务产品介绍
+    ServiceProductContent   string `json:"service_product_content,omitempty" xml:"service_product_content,omitempty"`
+    // 服务产品id
+    ServiceProductId   int64 `json:"service_product_id,omitempty" xml:"service_product_id,omitempty"`
+    // 服务产品sku列表
+    SimpleServiceSkuList   []SimpleServiceSkuDtOs `json:"simple_service_sku_list,omitempty" xml:"simple_service_sku_list>simple_service_sku_dt_os,omitempty"`
+    // 服务名称
+    ServiceCode   string `json:"service_code,omitempty" xml:"service_code,omitempty"`
+    // 服务产品状态
+    ServiceProductStatus   int64 `json:"service_product_status,omitempty" xml:"service_product_status,omitempty"`
+    // 服务产品类型
+    ServiceProductType   int64 `json:"service_product_type,omitempty" xml:"service_product_type,omitempty"`
     // 上传结果是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

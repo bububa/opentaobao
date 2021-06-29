@@ -1,7 +1,7 @@
 package tmallservice
 
-// SpServiceorderDTO 
-type SpServiceorderDTO struct {
+// SpServiceOrderDTO 
+type SpServiceOrderDTO struct {
     // 取消的份数
     RefundServiceCount   int64 `json:"refund_service_count,omitempty" xml:"refund_service_count,omitempty"`
     // 实物子订单信息
@@ -34,4 +34,16 @@ type SpServiceorderDTO struct {
     UsingServiceCount   int64 `json:"using_service_count,omitempty" xml:"using_service_count,omitempty"`
     // 状态编码：create(创建)、effect(生效)、closed(关闭)、finish(完成)
     StatusCode   string `json:"status_code,omitempty" xml:"status_code,omitempty"`
+    // 服务定义
+    ServiceDefinitionDTO   *ServiceDefinitionDTO `json:"service_definition_d_t_o,omitempty" xml:"service_definition_d_t_o,omitempty"`
+    // 服务单id
+    Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
+    // 服务交易订单
+    ServiceTradeOrderDTO   *ServiceTradeOrderDTO `json:"service_trade_order_d_t_o,omitempty" xml:"service_trade_order_d_t_o,omitempty"`
+    // 服务单申请工单的幂等键
+    ServiceSequence   int64 `json:"service_sequence,omitempty" xml:"service_sequence,omitempty"`
+    // 履约类型:1, "到店"2, "到家"3, "寄送"
+    FulfilTypeCode   string `json:"fulfil_type_code,omitempty" xml:"fulfil_type_code,omitempty"`
+    // 服务提供者
+    ServiceProviderDTO   *ServiceProviderDto `json:"service_provider_d_t_o,omitempty" xml:"service_provider_d_t_o,omitempty"`
 }

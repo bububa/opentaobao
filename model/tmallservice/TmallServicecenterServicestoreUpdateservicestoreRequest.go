@@ -28,7 +28,7 @@ tmall.servicecenter.servicestore.updateservicestore
 type TmallServicecenterServicestoreUpdateservicestoreRequest struct {
     model.Params
     // 网点
-    _serviceStore   *ServiceStoreDto
+    _serviceStore   *ServiceStoreDTO
 }
 
 // 初始化TmallServicecenterServicestoreUpdateservicestoreRequest对象
@@ -53,13 +53,13 @@ func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetApiParams() 
 }
 // ServiceStore Setter
 // 网点
-func (r *TmallServicecenterServicestoreUpdateservicestoreRequest) SetServiceStore(_serviceStore *ServiceStoreDto) error {
+func (r *TmallServicecenterServicestoreUpdateservicestoreRequest) SetServiceStore(_serviceStore *ServiceStoreDTO) error {
     r._serviceStore = _serviceStore
     r.Set("service_store", _serviceStore)
     return nil
 }
 
 // ServiceStore Getter
-func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetServiceStore() *ServiceStoreDto {
+func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetServiceStore() *ServiceStoreDTO {
     return r._serviceStore
 }

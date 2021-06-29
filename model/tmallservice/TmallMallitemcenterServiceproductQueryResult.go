@@ -3,7 +3,7 @@ package tmallservice
 // TmallMallitemcenterServiceproductQueryResult 
 type TmallMallitemcenterServiceproductQueryResult struct {
     // 返回数据
-    ResultDataList   []Resultdata `json:"result_data_list,omitempty" xml:"result_data_list>resultdata,omitempty"`
+    ResultDataList   []ResultData `json:"result_data_list,omitempty" xml:"result_data_list>result_data,omitempty"`
     // message
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 系统是否异常
