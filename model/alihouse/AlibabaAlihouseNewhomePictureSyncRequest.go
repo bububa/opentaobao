@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.picture.sync
 type AlibabaAlihouseNewhomePictureSyncRequest struct {
     model.Params
     // 数据
-    _projectPictureData   *ProjectPictureDto
+    _projectPictureData   *ProjectPictureDTO
 }
 
 // 初始化AlibabaAlihouseNewhomePictureSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomePictureSyncRequest) GetApiParams() url.Values {
 }
 // ProjectPictureData Setter
 // 数据
-func (r *AlibabaAlihouseNewhomePictureSyncRequest) SetProjectPictureData(_projectPictureData *ProjectPictureDto) error {
+func (r *AlibabaAlihouseNewhomePictureSyncRequest) SetProjectPictureData(_projectPictureData *ProjectPictureDTO) error {
     r._projectPictureData = _projectPictureData
     r.Set("project_picture_data", _projectPictureData)
     return nil
 }
 
 // ProjectPictureData Getter
-func (r AlibabaAlihouseNewhomePictureSyncRequest) GetProjectPictureData() *ProjectPictureDto {
+func (r AlibabaAlihouseNewhomePictureSyncRequest) GetProjectPictureData() *ProjectPictureDTO {
     return r._projectPictureData
 }

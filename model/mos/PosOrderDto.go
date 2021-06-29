@@ -1,7 +1,7 @@
 package mos
 
-// PosOrderDto 
-type PosOrderDto struct {
+// PosOrderDTO 
+type PosOrderDTO struct {
     // POS交易流水号
     OutTradeNo   string `json:"out_trade_no,omitempty" xml:"out_trade_no,omitempty"`
     // 退款流水号（退款时必须有）
@@ -25,15 +25,15 @@ type PosOrderDto struct {
     // 付款/退款 时间
     PayTime   string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
     // 订单商品列表
-    SaleItems   []PosSaleItemDto `json:"sale_items,omitempty" xml:"sale_items>pos_sale_item_dto,omitempty"`
+    SaleItems   []PosSaleItemDTO `json:"sale_items,omitempty" xml:"sale_items>pos_sale_item_dto,omitempty"`
     // 支付列表
-    Payments   []PosPaymentDto `json:"payments,omitempty" xml:"payments>pos_payment_dto,omitempty"`
+    Payments   []PosPaymentDTO `json:"payments,omitempty" xml:"payments>pos_payment_dto,omitempty"`
     // 订单来源
     SaleChannle   int64 `json:"sale_channle,omitempty" xml:"sale_channle,omitempty"`
     // 收银机号
     TerminalNo   string `json:"terminal_no,omitempty" xml:"terminal_no,omitempty"`
     // 优惠分摊列表
-    SplitPromotions   []PosSplitPromotionDto `json:"split_promotions,omitempty" xml:"split_promotions>pos_split_promotion_dto,omitempty"`
+    SplitPromotions   []PosSplitPromotionDTO `json:"split_promotions,omitempty" xml:"split_promotions>pos_split_promotion_dto,omitempty"`
     // 扩展信息。
     ExtendParams   string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
 }

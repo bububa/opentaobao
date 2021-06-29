@@ -1,7 +1,7 @@
 package scbp
 
-// AlibabaScbpAdCampaignFindForbiddenKeywordResultDto 
-type AlibabaScbpAdCampaignFindForbiddenKeywordResultDto struct {
+// AlibabaScbpAdCampaignFindForbiddenKeywordResultDTO 
+type AlibabaScbpAdCampaignFindForbiddenKeywordResultDTO struct {
     // 信息
     Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     // 返回code

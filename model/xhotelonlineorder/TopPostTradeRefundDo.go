@@ -1,7 +1,7 @@
 package xhotelonlineorder
 
-// TopPostTradeRefundDo 
-type TopPostTradeRefundDo struct {
+// TopPostTradeRefundDO 
+type TopPostTradeRefundDO struct {
     // 退款成功时间
     RefundSucTime   string `json:"refund_suc_time,omitempty" xml:"refund_suc_time,omitempty"`
     // 创建退款申请时的额外描述

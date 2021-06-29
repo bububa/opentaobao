@@ -1,7 +1,7 @@
 package rhino
 
-// ClothingSkuDto 
-type ClothingSkuDto struct {
+// ClothingSkuDTO 
+type ClothingSkuDTO struct {
     // 发货数量item_count
     Amount   int64 `json:"amount,omitempty" xml:"amount,omitempty"`
     // 成衣物料名称ItemName

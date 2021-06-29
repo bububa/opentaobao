@@ -15,7 +15,7 @@ taobao.fenxiao.trade.prepay.offline.reduce
 type TaobaoFenxiaoTradePrepayOfflineReduceRequest struct {
     model.Params
     // 减少流水
-    _offlineReducePrepayParam   *TopOfflineReducePrepayDto
+    _offlineReducePrepayParam   *TopOfflineReducePrepayDTO
 }
 
 // 初始化TaobaoFenxiaoTradePrepayOfflineReduceRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFenxiaoTradePrepayOfflineReduceRequest) GetApiParams() url.Values 
 }
 // OfflineReducePrepayParam Setter
 // 减少流水
-func (r *TaobaoFenxiaoTradePrepayOfflineReduceRequest) SetOfflineReducePrepayParam(_offlineReducePrepayParam *TopOfflineReducePrepayDto) error {
+func (r *TaobaoFenxiaoTradePrepayOfflineReduceRequest) SetOfflineReducePrepayParam(_offlineReducePrepayParam *TopOfflineReducePrepayDTO) error {
     r._offlineReducePrepayParam = _offlineReducePrepayParam
     r.Set("offline_reduce_prepay_param", _offlineReducePrepayParam)
     return nil
 }
 
 // OfflineReducePrepayParam Getter
-func (r TaobaoFenxiaoTradePrepayOfflineReduceRequest) GetOfflineReducePrepayParam() *TopOfflineReducePrepayDto {
+func (r TaobaoFenxiaoTradePrepayOfflineReduceRequest) GetOfflineReducePrepayParam() *TopOfflineReducePrepayDTO {
     return r._offlineReducePrepayParam
 }

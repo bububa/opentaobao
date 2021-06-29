@@ -1,7 +1,7 @@
 package fans
 
-// PushMessageParamDo 
-type PushMessageParamDo struct {
+// PushMessageParamDO 
+type PushMessageParamDO struct {
     // 活动id
     ActivityId   string `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
     // 品牌名

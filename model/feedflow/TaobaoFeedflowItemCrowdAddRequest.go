@@ -15,7 +15,7 @@ taobao.feedflow.item.crowd.add
 type TaobaoFeedflowItemCrowdAddRequest struct {
     model.Params
     // 人群列表
-    _crowds   []CrowdDto
+    _crowds   []CrowdDTO
     // 单元id
     _adgroupId   int64
 }
@@ -42,14 +42,14 @@ func (r TaobaoFeedflowItemCrowdAddRequest) GetApiParams() url.Values {
 }
 // Crowds Setter
 // 人群列表
-func (r *TaobaoFeedflowItemCrowdAddRequest) SetCrowds(_crowds []CrowdDto) error {
+func (r *TaobaoFeedflowItemCrowdAddRequest) SetCrowds(_crowds []CrowdDTO) error {
     r._crowds = _crowds
     r.Set("crowds", _crowds)
     return nil
 }
 
 // Crowds Getter
-func (r TaobaoFeedflowItemCrowdAddRequest) GetCrowds() []CrowdDto {
+func (r TaobaoFeedflowItemCrowdAddRequest) GetCrowds() []CrowdDTO {
     return r._crowds
 }
 // AdgroupId Setter

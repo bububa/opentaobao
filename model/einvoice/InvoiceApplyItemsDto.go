@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceApplyItemsDto 
-type InvoiceApplyItemsDto struct {
+// InvoiceApplyItemsDTO 
+type InvoiceApplyItemsDTO struct {
     // 交易金额（含税）=?单价*数量。单位：元，格式为2位小数，精度2位小数。开红票时传正数。
     Amount   string `json:"amount,omitempty" xml:"amount,omitempty"`
     // 优惠金额（含税）可为0,交易金额-优惠金额=实付金额。单位：元，格式为2位小数，精度2位小数。开红票时传正数。

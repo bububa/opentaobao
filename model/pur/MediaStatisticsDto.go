@@ -1,7 +1,7 @@
 package pur
 
-// MediaStatisticsDto 
-type MediaStatisticsDto struct {
+// MediaStatisticsDTO 
+type MediaStatisticsDTO struct {
     // 文章摘要
     Summary   string `json:"summary,omitempty" xml:"summary,omitempty"`
     // 榜单排名

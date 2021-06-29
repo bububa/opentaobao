@@ -15,7 +15,7 @@ taobao.alitrip.axin.trans.fund.query.by.order
 type TaobaoAlitripAxinTransFundQueryByOrderRequest struct {
     model.Params
     // 入参
-    _paramAxinFundListQueryDTO   *AxinFundListQueryDto
+    _paramAxinFundListQueryDTO   *AxinFundListQueryDTO
 }
 
 // 初始化TaobaoAlitripAxinTransFundQueryByOrderRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransFundQueryByOrderRequest) GetApiParams() url.Values
 }
 // ParamAxinFundListQueryDTO Setter
 // 入参
-func (r *TaobaoAlitripAxinTransFundQueryByOrderRequest) SetParamAxinFundListQueryDTO(_paramAxinFundListQueryDTO *AxinFundListQueryDto) error {
+func (r *TaobaoAlitripAxinTransFundQueryByOrderRequest) SetParamAxinFundListQueryDTO(_paramAxinFundListQueryDTO *AxinFundListQueryDTO) error {
     r._paramAxinFundListQueryDTO = _paramAxinFundListQueryDTO
     r.Set("param_axin_fund_list_query_d_t_o", _paramAxinFundListQueryDTO)
     return nil
 }
 
 // ParamAxinFundListQueryDTO Getter
-func (r TaobaoAlitripAxinTransFundQueryByOrderRequest) GetParamAxinFundListQueryDTO() *AxinFundListQueryDto {
+func (r TaobaoAlitripAxinTransFundQueryByOrderRequest) GetParamAxinFundListQueryDTO() *AxinFundListQueryDTO {
     return r._paramAxinFundListQueryDTO
 }

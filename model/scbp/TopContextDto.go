@@ -1,7 +1,7 @@
 package scbp
 
-// TopContextDto 
-type TopContextDto struct {
+// TopContextDTO 
+type TopContextDTO struct {
     // 产品线id
     ProductLineId   int64 `json:"product_line_id,omitempty" xml:"product_line_id,omitempty"`
     // 产品id

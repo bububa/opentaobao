@@ -15,7 +15,7 @@ alibaba.mj.oc.writesaleslip
 type AlibabaMjOcWritesaleslipRequest struct {
     model.Params
     // 开票占库入参
-    _posSaleOrder   *PosSaleOrderDto
+    _posSaleOrder   *PosSaleOrderDTO
 }
 
 // 初始化AlibabaMjOcWritesaleslipRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjOcWritesaleslipRequest) GetApiParams() url.Values {
 }
 // PosSaleOrder Setter
 // 开票占库入参
-func (r *AlibabaMjOcWritesaleslipRequest) SetPosSaleOrder(_posSaleOrder *PosSaleOrderDto) error {
+func (r *AlibabaMjOcWritesaleslipRequest) SetPosSaleOrder(_posSaleOrder *PosSaleOrderDTO) error {
     r._posSaleOrder = _posSaleOrder
     r.Set("pos_sale_order", _posSaleOrder)
     return nil
 }
 
 // PosSaleOrder Getter
-func (r AlibabaMjOcWritesaleslipRequest) GetPosSaleOrder() *PosSaleOrderDto {
+func (r AlibabaMjOcWritesaleslipRequest) GetPosSaleOrder() *PosSaleOrderDTO {
     return r._posSaleOrder
 }

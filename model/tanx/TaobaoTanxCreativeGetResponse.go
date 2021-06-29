@@ -29,5 +29,5 @@ type TaobaoTanxCreativeGetResponse struct {
     // 是否成功
     IsOk   bool `json:"is_ok,omitempty" xml:"is_ok,omitempty"`
     // 创意查询返回结果列表
-    Result   *CreativeAuditDto `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *CreativeAuditDTO `json:"result,omitempty" xml:"result,omitempty"`
 }

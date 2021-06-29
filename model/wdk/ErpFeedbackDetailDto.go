@@ -1,7 +1,7 @@
 package wdk
 
-// ErpFeedbackDetailDto 
-type ErpFeedbackDetailDto struct {
+// ErpFeedbackDetailDTO 
+type ErpFeedbackDetailDTO struct {
     // 数量
     Count   string `json:"count,omitempty" xml:"count,omitempty"`
     // 商品code，盒马系统中的商品编码

@@ -15,7 +15,7 @@ taobao.feedflow.item.item.page
 type TaobaoFeedflowItemItemPageRequest struct {
     model.Params
     // 查询条件
-    _itemQuery   *ItemQueryDto
+    _itemQuery   *ItemQueryDTO
 }
 
 // 初始化TaobaoFeedflowItemItemPageRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemItemPageRequest) GetApiParams() url.Values {
 }
 // ItemQuery Setter
 // 查询条件
-func (r *TaobaoFeedflowItemItemPageRequest) SetItemQuery(_itemQuery *ItemQueryDto) error {
+func (r *TaobaoFeedflowItemItemPageRequest) SetItemQuery(_itemQuery *ItemQueryDTO) error {
     r._itemQuery = _itemQuery
     r.Set("item_query", _itemQuery)
     return nil
 }
 
 // ItemQuery Getter
-func (r TaobaoFeedflowItemItemPageRequest) GetItemQuery() *ItemQueryDto {
+func (r TaobaoFeedflowItemItemPageRequest) GetItemQuery() *ItemQueryDTO {
     return r._itemQuery
 }

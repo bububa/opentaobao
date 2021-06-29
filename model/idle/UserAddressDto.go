@@ -1,7 +1,7 @@
 package idle
 
-// UserAddressDto 
-type UserAddressDto struct {
+// UserAddressDTO 
+type UserAddressDTO struct {
     // 区
     Area   string `json:"area,omitempty" xml:"area,omitempty"`
     // 详细地址

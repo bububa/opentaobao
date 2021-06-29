@@ -1,7 +1,7 @@
 package alilabs
 
-// TopAuthReqDto 
-type TopAuthReqDto struct {
+// TopAuthReqDTO 
+type TopAuthReqDTO struct {
     // 二维码授权 只支持qrcode
     ResponseType   string `json:"response_type,omitempty" xml:"response_type,omitempty"`
     // 天猫精灵分配的clientId

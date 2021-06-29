@@ -1,7 +1,7 @@
 package maitix
 
-// IdNameDto 
-type IdNameDto struct {
+// IdNameDTO 
+type IdNameDTO struct {
     // 城市id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 城市名称

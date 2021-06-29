@@ -1,7 +1,7 @@
 package koubeimall
 
-// ShopShelfDto 
-type ShopShelfDto struct {
+// ShopShelfDTO 
+type ShopShelfDTO struct {
     // 是否有更多商品
     HasMore   bool `json:"has_more,omitempty" xml:"has_more,omitempty"`
     // 每页查询长度
@@ -11,5 +11,5 @@ type ShopShelfDto struct {
     // 下一页开始起始值
     NextStart   int64 `json:"next_start,omitempty" xml:"next_start,omitempty"`
     // 商品模型
-    ItemInfoList   []ItemDto `json:"item_info_list,omitempty" xml:"item_info_list>item_dto,omitempty"`
+    ItemInfoList   []ItemDTO `json:"item_info_list,omitempty" xml:"item_info_list>item_dto,omitempty"`
 }

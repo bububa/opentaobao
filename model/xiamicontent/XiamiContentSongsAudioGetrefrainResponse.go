@@ -25,5 +25,5 @@ type XiamiContentSongsAudioGetrefrainResponse struct {
     // 请求结果信息
     ResultCode   *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
     // 音频信息
-    Audios   []SongAudiosDto `json:"audios,omitempty" xml:"audios>song_audios_dto,omitempty"`
+    Audios   []SongAudiosDTO `json:"audios,omitempty" xml:"audios>song_audios_dto,omitempty"`
 }

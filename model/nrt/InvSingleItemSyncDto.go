@@ -1,7 +1,7 @@
 package nrt
 
-// InvSingleItemSyncDto 
-type InvSingleItemSyncDto struct {
+// InvSingleItemSyncDTO 
+type InvSingleItemSyncDTO struct {
     // 商品条形码,数字型，作为外部商品唯一外键优先选用该字段，唯一性由商家保证，如果没有请联系阿里小二。bar_code和outer_item_id必须传入其中一个
     BarCode   string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
     // 仓编码

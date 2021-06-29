@@ -1,7 +1,7 @@
 package moscm
 
-// AlibabaMosOrderRefundListGetResultDto 
-type AlibabaMosOrderRefundListGetResultDto struct {
+// AlibabaMosOrderRefundListGetResultDTO 
+type AlibabaMosOrderRefundListGetResultDTO struct {
     // 结果集
     Data   *PagedList `json:"data,omitempty" xml:"data,omitempty"`
     // 状态码

@@ -1,7 +1,7 @@
 package alimember
 
-// SyncMemberIdentityDto 
-type SyncMemberIdentityDto struct {
+// SyncMemberIdentityDTO 
+type SyncMemberIdentityDTO struct {
     // 时间戳
     TimeStamp   int64 `json:"time_stamp,omitempty" xml:"time_stamp,omitempty"`
     // 外部会员ID，识别商家会员的唯一身份标识

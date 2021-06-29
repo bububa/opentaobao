@@ -17,7 +17,7 @@ type TmallMallitemcenterSupplierPriceUploadRequest struct {
     // 服务code
     _serviceCode   string
     // 服务商门店价格列表
-    _providerPriceList   []StoreOfferPriceDto
+    _providerPriceList   []StoreOfferPriceDTO
 }
 
 // 初始化TmallMallitemcenterSupplierPriceUploadRequest对象
@@ -54,13 +54,13 @@ func (r TmallMallitemcenterSupplierPriceUploadRequest) GetServiceCode() string {
 }
 // ProviderPriceList Setter
 // 服务商门店价格列表
-func (r *TmallMallitemcenterSupplierPriceUploadRequest) SetProviderPriceList(_providerPriceList []StoreOfferPriceDto) error {
+func (r *TmallMallitemcenterSupplierPriceUploadRequest) SetProviderPriceList(_providerPriceList []StoreOfferPriceDTO) error {
     r._providerPriceList = _providerPriceList
     r.Set("provider_price_list", _providerPriceList)
     return nil
 }
 
 // ProviderPriceList Getter
-func (r TmallMallitemcenterSupplierPriceUploadRequest) GetProviderPriceList() []StoreOfferPriceDto {
+func (r TmallMallitemcenterSupplierPriceUploadRequest) GetProviderPriceList() []StoreOfferPriceDTO {
     return r._providerPriceList
 }

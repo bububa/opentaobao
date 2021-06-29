@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.refund.csapplyrender
 type AlibabaTclsAelophyRefundCsapplyrenderRequest struct {
     model.Params
     // 系统自动生成
-    _refundCsApplyRenderDTO   *RefundCsApplyRenderDto
+    _refundCsApplyRenderDTO   *RefundCsApplyRenderDTO
 }
 
 // 初始化AlibabaTclsAelophyRefundCsapplyrenderRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyRefundCsapplyrenderRequest) GetApiParams() url.Values 
 }
 // RefundCsApplyRenderDTO Setter
 // 系统自动生成
-func (r *AlibabaTclsAelophyRefundCsapplyrenderRequest) SetRefundCsApplyRenderDTO(_refundCsApplyRenderDTO *RefundCsApplyRenderDto) error {
+func (r *AlibabaTclsAelophyRefundCsapplyrenderRequest) SetRefundCsApplyRenderDTO(_refundCsApplyRenderDTO *RefundCsApplyRenderDTO) error {
     r._refundCsApplyRenderDTO = _refundCsApplyRenderDTO
     r.Set("refund_cs_apply_render_d_t_o", _refundCsApplyRenderDTO)
     return nil
 }
 
 // RefundCsApplyRenderDTO Getter
-func (r AlibabaTclsAelophyRefundCsapplyrenderRequest) GetRefundCsApplyRenderDTO() *RefundCsApplyRenderDto {
+func (r AlibabaTclsAelophyRefundCsapplyrenderRequest) GetRefundCsApplyRenderDTO() *RefundCsApplyRenderDTO {
     return r._refundCsApplyRenderDTO
 }

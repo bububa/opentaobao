@@ -17,7 +17,7 @@ type TaobaoWeikeEserviceSchedulePutRequest struct {
     // 订单ID
     _orderId   int64
     // 按天排班信息
-    _csSchedulings   []CsSchedulingOneDayDto
+    _csSchedulings   []CsSchedulingOneDayDTO
 }
 
 // 初始化TaobaoWeikeEserviceSchedulePutRequest对象
@@ -54,13 +54,13 @@ func (r TaobaoWeikeEserviceSchedulePutRequest) GetOrderId() int64 {
 }
 // CsSchedulings Setter
 // 按天排班信息
-func (r *TaobaoWeikeEserviceSchedulePutRequest) SetCsSchedulings(_csSchedulings []CsSchedulingOneDayDto) error {
+func (r *TaobaoWeikeEserviceSchedulePutRequest) SetCsSchedulings(_csSchedulings []CsSchedulingOneDayDTO) error {
     r._csSchedulings = _csSchedulings
     r.Set("cs_schedulings", _csSchedulings)
     return nil
 }
 
 // CsSchedulings Getter
-func (r TaobaoWeikeEserviceSchedulePutRequest) GetCsSchedulings() []CsSchedulingOneDayDto {
+func (r TaobaoWeikeEserviceSchedulePutRequest) GetCsSchedulings() []CsSchedulingOneDayDTO {
     return r._csSchedulings
 }

@@ -1,7 +1,7 @@
 package wdk
 
-// SkuDo 
-type SkuDo struct {
+// SkuDO 
+type SkuDO struct {
     // 条码，支持一品多码,多个条码以半角逗号分隔
     Barcodes   string `json:"barcodes,omitempty" xml:"barcodes,omitempty"`
     // 品牌名称
@@ -157,11 +157,11 @@ type SkuDo struct {
     // 在app上显示的商品图片cdn地址（同字段main_pic_urls和detail_pic_urls），https开头，多个图片用英文逗号切割。第一张图片会作为主图；优先使用本字段
     SkuPicUrls   string `json:"sku_pic_urls,omitempty" xml:"sku_pic_urls,omitempty"`
     // 供货商信息
-    SkuSuppliers   []SkuSupplierDo `json:"sku_suppliers,omitempty" xml:"sku_suppliers>sku_supplier_do,omitempty"`
+    SkuSuppliers   []SkuSupplierDO `json:"sku_suppliers,omitempty" xml:"sku_suppliers>sku_supplier_do,omitempty"`
     // 文描,（同字段txt_desc）；优先使用本字段
     RichText   string `json:"rich_text,omitempty" xml:"rich_text,omitempty"`
     // 行业属性
-    IndustryProps   *IndustryPropDo `json:"industry_props,omitempty" xml:"industry_props,omitempty"`
+    IndustryProps   *IndustryPropDO `json:"industry_props,omitempty" xml:"industry_props,omitempty"`
     // forest类目id
     ForestCateId   int64 `json:"forest_cate_id,omitempty" xml:"forest_cate_id,omitempty"`
     // 税收编码
@@ -189,7 +189,7 @@ type SkuDo struct {
     // 线上生效过期时间
     AppEffectEndTime   string `json:"app_effect_end_time,omitempty" xml:"app_effect_end_time,omitempty"`
     // 子商品信息
-    SubSkus   []SubSkuDo `json:"sub_skus,omitempty" xml:"sub_skus>sub_sku_do,omitempty"`
+    SubSkus   []SubSkuDO `json:"sub_skus,omitempty" xml:"sub_skus>sub_sku_do,omitempty"`
     // 机构编号
     OrgNo   string `json:"org_no,omitempty" xml:"org_no,omitempty"`
     // 商品别名

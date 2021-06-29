@@ -1,7 +1,7 @@
 package iot
 
-// ImageUrlDto 
-type ImageUrlDto struct {
+// ImageUrlDTO 
+type ImageUrlDTO struct {
     // 默认图片
     Img   string `json:"img,omitempty" xml:"img,omitempty"`
     // 大图

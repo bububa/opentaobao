@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceApplyDtlDto 
-type InvoiceApplyDtlDto struct {
+// InvoiceApplyDtlDTO 
+type InvoiceApplyDtlDTO struct {
     // 发票申请模式，可选值：  pre_apply_url: URL预申请模式；适用于扫码开票（一单一码）的业务场景：业务前台提交开票金额等信息，请求阿里发票平台生成一个对应的发票申请页面URL。用户可在该页面中填写抬头等信息，然后提交正式的发票申请。  normal(默认为此模式): 正式提交用户的发票申请，商户根据此发票申请自动或审核开票。
     ApplyMode   string `json:"apply_mode,omitempty" xml:"apply_mode,omitempty"`
     // 合计实付金额（申请开票的总金额，含税），格式为2位小数。开红票时传正数。  需满足公式：开票总金额(invoiceAmount) = 各项明细的交易金额(amount)之和 - 各项明细的优惠金额(discount)之和。  当指定auto_create_invoice=true或商户配置为自动开票时该字段必填。
@@ -13,9 +13,9 @@ type InvoiceApplyDtlDto struct {
     // 抬头类型。可选值：  0：个人  1：企业
     BusinessType   int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
     // 该申请单 请求开票的结果，拆单的场景下可能有多笔发票请求  当apply_status为creating_inv, inv_failed, inv_success, inv_part_success 时返回该字段
-    CreateInvResults   []InvoiceCreateSimpleResultDto `json:"create_inv_results,omitempty" xml:"create_inv_results>invoice_create_simple_result_dto,omitempty"`
+    CreateInvResults   []InvoiceCreateSimpleResultDTO `json:"create_inv_results,omitempty" xml:"create_inv_results>invoice_create_simple_result_dto,omitempty"`
     // 请求开票的销方信息  间联开票模式下，该字段无值。若调用方需要获取开具发票的销方信息，可调用查询发票详情接口
-    CreateInvPayeeInfo   *InvoiceCreatePayeeInfoDto `json:"create_inv_payee_info,omitempty" xml:"create_inv_payee_info,omitempty"`
+    CreateInvPayeeInfo   *InvoiceCreatePayeeInfoDTO `json:"create_inv_payee_info,omitempty" xml:"create_inv_payee_info,omitempty"`
     // 当前申请单是否为已终结状态。true: 是，false: 否。  主要用于区分inv_part_success状态下是终态还是中间态。
     IsFinally   bool `json:"is_finally,omitempty" xml:"is_finally,omitempty"`
     // 申请创建时间
@@ -23,7 +23,7 @@ type InvoiceApplyDtlDto struct {
     // 申请最近修改时间
     GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // 申请明细列表
-    InvoiceItems   []InvoiceApplyItemsDto `json:"invoice_items,omitempty" xml:"invoice_items>invoice_apply_items_dto,omitempty"`
+    InvoiceItems   []InvoiceApplyItemsDTO `json:"invoice_items,omitempty" xml:"invoice_items>invoice_apply_items_dto,omitempty"`
     // 申请开票类型，可选值：  0: 电票  1：纸质普票  2：纸质专票
     InvoiceKind   int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
     // 发票备注

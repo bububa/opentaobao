@@ -15,7 +15,7 @@ alibaba.ascp.cnsku.update
 type AlibabaAscpCnskuUpdateRequest struct {
     model.Params
     // 待新增的货品
-    _cnsku   *CnskuDto
+    _cnsku   *CnskuDTO
     // 修改选项
     _option   *UpdateCnskuOption
 }
@@ -42,14 +42,14 @@ func (r AlibabaAscpCnskuUpdateRequest) GetApiParams() url.Values {
 }
 // Cnsku Setter
 // 待新增的货品
-func (r *AlibabaAscpCnskuUpdateRequest) SetCnsku(_cnsku *CnskuDto) error {
+func (r *AlibabaAscpCnskuUpdateRequest) SetCnsku(_cnsku *CnskuDTO) error {
     r._cnsku = _cnsku
     r.Set("cnsku", _cnsku)
     return nil
 }
 
 // Cnsku Getter
-func (r AlibabaAscpCnskuUpdateRequest) GetCnsku() *CnskuDto {
+func (r AlibabaAscpCnskuUpdateRequest) GetCnsku() *CnskuDTO {
     return r._cnsku
 }
 // Option Setter

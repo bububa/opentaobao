@@ -1,7 +1,7 @@
 package lstmarketing
 
-// LstTopOrderDto 
-type LstTopOrderDto struct {
+// LstTopOrderDTO 
+type LstTopOrderDTO struct {
     // 子订单id
     SubOrderId   int64 `json:"sub_order_id,omitempty" xml:"sub_order_id,omitempty"`
     // 主订单id

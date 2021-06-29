@@ -15,7 +15,7 @@ tmall.fans.arena.push
 type TmallFansArenaPushRequest struct {
     model.Params
     // 推送列表
-    _pushList   []PushMessageParamDo
+    _pushList   []PushMessageParamDO
 }
 
 // 初始化TmallFansArenaPushRequest对象
@@ -40,13 +40,13 @@ func (r TmallFansArenaPushRequest) GetApiParams() url.Values {
 }
 // PushList Setter
 // 推送列表
-func (r *TmallFansArenaPushRequest) SetPushList(_pushList []PushMessageParamDo) error {
+func (r *TmallFansArenaPushRequest) SetPushList(_pushList []PushMessageParamDO) error {
     r._pushList = _pushList
     r.Set("push_list", _pushList)
     return nil
 }
 
 // PushList Getter
-func (r TmallFansArenaPushRequest) GetPushList() []PushMessageParamDo {
+func (r TmallFansArenaPushRequest) GetPushList() []PushMessageParamDO {
     return r._pushList
 }

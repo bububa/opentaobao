@@ -3,7 +3,7 @@ package promotion
 // TaobaoTradeOrdersortGetResult 
 type TaobaoTradeOrdersortGetResult struct {
     // 返回素材id
-    Data   *AwardOrderResultDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *AwardOrderResultDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 错误码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 错误信息

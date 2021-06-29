@@ -1,7 +1,7 @@
 package drugtrace
 
-// ProductDto 
-type ProductDto struct {
+// ProductDTO 
+type ProductDTO struct {
     // 备注
     Comment   string `json:"comment,omitempty" xml:"comment,omitempty"`
     // 子类

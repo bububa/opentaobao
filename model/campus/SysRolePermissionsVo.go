@@ -21,5 +21,5 @@ type SysRolePermissionsVo struct {
     // 角色描述
     RoleDesc   string `json:"role_desc,omitempty" xml:"role_desc,omitempty"`
     // permissions
-    Permissions   []TreeNodeDto `json:"permissions,omitempty" xml:"permissions>tree_node_dto,omitempty"`
+    Permissions   []TreeNodeDTO `json:"permissions,omitempty" xml:"permissions>tree_node_dto,omitempty"`
 }

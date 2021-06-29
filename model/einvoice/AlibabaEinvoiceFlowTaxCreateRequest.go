@@ -15,7 +15,7 @@ alibaba.einvoice.flow.tax.create
 type AlibabaEinvoiceFlowTaxCreateRequest struct {
     model.Params
     // 工单请求
-    _invoiceTaxFlowCreateDto   *InvoiceTaxFlowCreateDto
+    _invoiceTaxFlowCreateDto   *InvoiceTaxFlowCreateDTO
 }
 
 // 初始化AlibabaEinvoiceFlowTaxCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceFlowTaxCreateRequest) GetApiParams() url.Values {
 }
 // InvoiceTaxFlowCreateDto Setter
 // 工单请求
-func (r *AlibabaEinvoiceFlowTaxCreateRequest) SetInvoiceTaxFlowCreateDto(_invoiceTaxFlowCreateDto *InvoiceTaxFlowCreateDto) error {
+func (r *AlibabaEinvoiceFlowTaxCreateRequest) SetInvoiceTaxFlowCreateDto(_invoiceTaxFlowCreateDto *InvoiceTaxFlowCreateDTO) error {
     r._invoiceTaxFlowCreateDto = _invoiceTaxFlowCreateDto
     r.Set("invoice_tax_flow_create_dto", _invoiceTaxFlowCreateDto)
     return nil
 }
 
 // InvoiceTaxFlowCreateDto Getter
-func (r AlibabaEinvoiceFlowTaxCreateRequest) GetInvoiceTaxFlowCreateDto() *InvoiceTaxFlowCreateDto {
+func (r AlibabaEinvoiceFlowTaxCreateRequest) GetInvoiceTaxFlowCreateDto() *InvoiceTaxFlowCreateDTO {
     return r._invoiceTaxFlowCreateDto
 }

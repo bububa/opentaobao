@@ -15,7 +15,7 @@ cainiao.cntec.shopkeeper.supply.statistics.query
 type CainiaoCntecShopkeeperSupplyStatisticsQueryRequest struct {
     model.Params
     // 查询参数
-    _queryActivityDto   *QueryActivityDto
+    _queryActivityDto   *QueryActivityDTO
 }
 
 // 初始化CainiaoCntecShopkeeperSupplyStatisticsQueryRequest对象
@@ -40,13 +40,13 @@ func (r CainiaoCntecShopkeeperSupplyStatisticsQueryRequest) GetApiParams() url.V
 }
 // QueryActivityDto Setter
 // 查询参数
-func (r *CainiaoCntecShopkeeperSupplyStatisticsQueryRequest) SetQueryActivityDto(_queryActivityDto *QueryActivityDto) error {
+func (r *CainiaoCntecShopkeeperSupplyStatisticsQueryRequest) SetQueryActivityDto(_queryActivityDto *QueryActivityDTO) error {
     r._queryActivityDto = _queryActivityDto
     r.Set("query_activity_dto", _queryActivityDto)
     return nil
 }
 
 // QueryActivityDto Getter
-func (r CainiaoCntecShopkeeperSupplyStatisticsQueryRequest) GetQueryActivityDto() *QueryActivityDto {
+func (r CainiaoCntecShopkeeperSupplyStatisticsQueryRequest) GetQueryActivityDto() *QueryActivityDTO {
     return r._queryActivityDto
 }

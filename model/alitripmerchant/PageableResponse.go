@@ -19,7 +19,7 @@ type PageableResponse struct {
     // 总数量
     TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
     // 返回类型
-    Contents   []HotelListSearchDto `json:"contents,omitempty" xml:"contents>hotel_list_search_dto,omitempty"`
+    Contents   []HotelListSearchDTO `json:"contents,omitempty" xml:"contents>hotel_list_search_dto,omitempty"`
     // 错误信息
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 }

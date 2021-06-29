@@ -1,7 +1,7 @@
 package trade
 
-// TmallAscpOrdersSaleCreateResultDo 
-type TmallAscpOrdersSaleCreateResultDo struct {
+// TmallAscpOrdersSaleCreateResultDO 
+type TmallAscpOrdersSaleCreateResultDO struct {
     // errorMessage
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     // module

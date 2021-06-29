@@ -1,7 +1,7 @@
 package smartstore
 
-// TmallPopupstoreActivityDeviceQueryResultDto 
-type TmallPopupstoreActivityDeviceQueryResultDto struct {
+// TmallPopupstoreActivityDeviceQueryResultDTO 
+type TmallPopupstoreActivityDeviceQueryResultDTO struct {
     // 结果数据条数
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 返回结果

@@ -3,7 +3,7 @@ package ascpffo
 // PageQueryResult 
 type PageQueryResult struct {
     // dto list
-    DataList   []ErpFulfillmentForwardDto `json:"data_list,omitempty" xml:"data_list>erp_fulfillment_forward_dto,omitempty"`
+    DataList   []ErpFulfillmentForwardDTO `json:"data_list,omitempty" xml:"data_list>erp_fulfillment_forward_dto,omitempty"`
     // 错误码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 错误信息

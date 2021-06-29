@@ -1,7 +1,7 @@
 package icbuseller
 
-// PageDto 
-type PageDto struct {
+// PageDTO 
+type PageDTO struct {
     // 总数据量
     TotalItem   int64 `json:"total_item,omitempty" xml:"total_item,omitempty"`
     // 总页数

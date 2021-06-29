@@ -1,7 +1,7 @@
 package dutyfree
 
-// AlibabaDutyfreeStockQueryResultDo 
-type AlibabaDutyfreeStockQueryResultDo struct {
+// AlibabaDutyfreeStockQueryResultDO 
+type AlibabaDutyfreeStockQueryResultDO struct {
     // 错误码
     Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     // 调用是否成功
@@ -9,5 +9,5 @@ type AlibabaDutyfreeStockQueryResultDo struct {
     // 错误信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 具体库存信息
-    Object   *StockResultDto `json:"object,omitempty" xml:"object,omitempty"`
+    Object   *StockResultDTO `json:"object,omitempty" xml:"object,omitempty"`
 }

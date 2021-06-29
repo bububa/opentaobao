@@ -1,7 +1,7 @@
 package wdk
 
-// StockChangeDto 
-type StockChangeDto struct {
+// StockChangeDTO 
+type StockChangeDTO struct {
     // warehouseCode
     WarehouseCode   string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
     // documentNo
@@ -17,7 +17,7 @@ type StockChangeDto struct {
     // 部门编码
     DeptCode   string `json:"dept_code,omitempty" xml:"dept_code,omitempty"`
     // itemList
-    ItemList   []StockChangeDetailDto `json:"item_list,omitempty" xml:"item_list>stock_change_detail_dto,omitempty"`
+    ItemList   []StockChangeDetailDTO `json:"item_list,omitempty" xml:"item_list>stock_change_detail_dto,omitempty"`
     // remark
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 单据类型

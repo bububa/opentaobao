@@ -21,7 +21,7 @@ type TaobaoAlitripItPolicyUpdateRequest struct {
     // 淘宝政策id
     _taobaoId   int64
     // 国际机票销售规则
-    _topPolicyDo   *TopPolicyDo
+    _topPolicyDo   *TopPolicyDO
 }
 
 // 初始化TaobaoAlitripItPolicyUpdateRequest对象
@@ -82,13 +82,13 @@ func (r TaobaoAlitripItPolicyUpdateRequest) GetTaobaoId() int64 {
 }
 // TopPolicyDo Setter
 // 国际机票销售规则
-func (r *TaobaoAlitripItPolicyUpdateRequest) SetTopPolicyDo(_topPolicyDo *TopPolicyDo) error {
+func (r *TaobaoAlitripItPolicyUpdateRequest) SetTopPolicyDo(_topPolicyDo *TopPolicyDO) error {
     r._topPolicyDo = _topPolicyDo
     r.Set("top_policy_do", _topPolicyDo)
     return nil
 }
 
 // TopPolicyDo Getter
-func (r TaobaoAlitripItPolicyUpdateRequest) GetTopPolicyDo() *TopPolicyDo {
+func (r TaobaoAlitripItPolicyUpdateRequest) GetTopPolicyDo() *TopPolicyDO {
     return r._topPolicyDo
 }

@@ -1,7 +1,7 @@
 package smartstore
 
-// TmallPopupstoreItemDiscountPriceResultDto 
-type TmallPopupstoreItemDiscountPriceResultDto struct {
+// TmallPopupstoreItemDiscountPriceResultDTO 
+type TmallPopupstoreItemDiscountPriceResultDTO struct {
     // 数据条数
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 错误码code

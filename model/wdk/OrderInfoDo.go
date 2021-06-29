@@ -1,11 +1,11 @@
 package wdk
 
-// OrderInfoDo 
-type OrderInfoDo struct {
+// OrderInfoDO 
+type OrderInfoDO struct {
     // 小票付款渠道
-    PayChannels   []ReceiptPayChannelDo `json:"pay_channels,omitempty" xml:"pay_channels>receipt_pay_channel_do,omitempty"`
+    PayChannels   []ReceiptPayChannelDO `json:"pay_channels,omitempty" xml:"pay_channels>receipt_pay_channel_do,omitempty"`
     // 商品明细
-    SubOrders   []SubOrderInfoDo `json:"sub_orders,omitempty" xml:"sub_orders>sub_order_info_do,omitempty"`
+    SubOrders   []SubOrderInfoDO `json:"sub_orders,omitempty" xml:"sub_orders>sub_order_info_do,omitempty"`
     // 来源，商家级别，当前取值：RENRENLE / SANJIANG
     OrderFrom   string `json:"order_from,omitempty" xml:"order_from,omitempty"`
     // 原交易时间

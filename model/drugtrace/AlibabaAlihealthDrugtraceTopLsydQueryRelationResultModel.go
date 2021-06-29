@@ -3,7 +3,7 @@ package drugtrace
 // AlibabaAlihealthDrugtraceTopLsydQueryRelationResultModel 
 type AlibabaAlihealthDrugtraceTopLsydQueryRelationResultModel struct {
     // model
-    ModelList   []CodeRelationDto `json:"model_list,omitempty" xml:"model_list>code_relation_dto,omitempty"`
+    ModelList   []CodeRelationDTO `json:"model_list,omitempty" xml:"model_list>code_relation_dto,omitempty"`
     // msgCode
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // msgInfo

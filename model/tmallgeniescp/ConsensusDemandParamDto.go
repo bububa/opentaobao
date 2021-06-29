@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// ConsensusDemandParamDto 
-type ConsensusDemandParamDto struct {
+// ConsensusDemandParamDTO 
+type ConsensusDemandParamDTO struct {
     // 物料号
     PrdId   string `json:"prd_id,omitempty" xml:"prd_id,omitempty"`
     // 渠道

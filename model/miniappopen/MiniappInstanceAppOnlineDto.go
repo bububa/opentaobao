@@ -1,7 +1,7 @@
 package miniappopen
 
-// MiniappInstanceAppOnlineDto 
-type MiniappInstanceAppOnlineDto struct {
+// MiniappInstanceAppOnlineDTO 
+type MiniappInstanceAppOnlineDTO struct {
     // 端信息
     Client   string `json:"client,omitempty" xml:"client,omitempty"`
     // 错误信息

@@ -1,7 +1,7 @@
 package examination
 
-// IsvItemDto 
-type IsvItemDto struct {
+// IsvItemDTO 
+type IsvItemDTO struct {
     // isv的单项id
     IsvItemId   string `json:"isv_item_id,omitempty" xml:"isv_item_id,omitempty"`
     // 单项描述

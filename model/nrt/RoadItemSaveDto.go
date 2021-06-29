@@ -1,7 +1,7 @@
 package nrt
 
-// RoadItemSaveDto 
-type RoadItemSaveDto struct {
+// RoadItemSaveDTO 
+type RoadItemSaveDTO struct {
     // 货道编号，若无跟商品编码保持一致
     RoadIds   string `json:"road_ids,omitempty" xml:"road_ids,omitempty"`
     // true 可售 false 不可售

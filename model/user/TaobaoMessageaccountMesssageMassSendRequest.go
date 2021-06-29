@@ -15,7 +15,7 @@ taobao.messageaccount.messsage.mass.send
 type TaobaoMessageaccountMesssageMassSendRequest struct {
     model.Params
     // 参数
-    _param   *MassMessageDto
+    _param   *MassMessageDTO
 }
 
 // 初始化TaobaoMessageaccountMesssageMassSendRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMessageaccountMesssageMassSendRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 参数
-func (r *TaobaoMessageaccountMesssageMassSendRequest) SetParam(_param *MassMessageDto) error {
+func (r *TaobaoMessageaccountMesssageMassSendRequest) SetParam(_param *MassMessageDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoMessageaccountMesssageMassSendRequest) GetParam() *MassMessageDto {
+func (r TaobaoMessageaccountMesssageMassSendRequest) GetParam() *MassMessageDTO {
     return r._param
 }

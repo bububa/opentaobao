@@ -15,7 +15,7 @@ alibaba.marketing.lottery.activity.query
 type AlibabaMarketingLotteryActivityQueryRequest struct {
     model.Params
     // 查询抽奖活动请求对象
-    _lotteryActivityQuery   *LotteryActivityQueryDto
+    _lotteryActivityQuery   *LotteryActivityQueryDTO
 }
 
 // 初始化AlibabaMarketingLotteryActivityQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryActivityQueryRequest) GetApiParams() url.Values {
 }
 // LotteryActivityQuery Setter
 // 查询抽奖活动请求对象
-func (r *AlibabaMarketingLotteryActivityQueryRequest) SetLotteryActivityQuery(_lotteryActivityQuery *LotteryActivityQueryDto) error {
+func (r *AlibabaMarketingLotteryActivityQueryRequest) SetLotteryActivityQuery(_lotteryActivityQuery *LotteryActivityQueryDTO) error {
     r._lotteryActivityQuery = _lotteryActivityQuery
     r.Set("lottery_activity_query", _lotteryActivityQuery)
     return nil
 }
 
 // LotteryActivityQuery Getter
-func (r AlibabaMarketingLotteryActivityQueryRequest) GetLotteryActivityQuery() *LotteryActivityQueryDto {
+func (r AlibabaMarketingLotteryActivityQueryRequest) GetLotteryActivityQuery() *LotteryActivityQueryDTO {
     return r._lotteryActivityQuery
 }

@@ -1,7 +1,7 @@
 package campus
 
-// MeatDataApiDto 
-type MeatDataApiDto struct {
+// MeatDataApiDTO 
+type MeatDataApiDTO struct {
     // 参数code
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 是否报警值

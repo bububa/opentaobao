@@ -1,7 +1,7 @@
 package seaking
 
-// TaskResultDetailDto 
-type TaskResultDetailDto struct {
+// TaskResultDetailDTO 
+type TaskResultDetailDTO struct {
     // 图片翻译结果
     Result   string `json:"result,omitempty" xml:"result,omitempty"`
     // 子任务状态

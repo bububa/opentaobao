@@ -1,7 +1,7 @@
 package perfect
 
-// PerfectScProductInfoDto 
-type PerfectScProductInfoDto struct {
+// PerfectScProductInfoDTO 
+type PerfectScProductInfoDTO struct {
     // 货品编码
     OuterId   string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
     // 货品ID

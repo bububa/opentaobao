@@ -1,7 +1,7 @@
 package txcs
 
-// VerificationBillResponseDto 
-type VerificationBillResponseDto struct {
+// VerificationBillResponseDTO 
+type VerificationBillResponseDTO struct {
     // 核销单号
     VerificationNo   string `json:"verification_no,omitempty" xml:"verification_no,omitempty"`
     // 核销日期

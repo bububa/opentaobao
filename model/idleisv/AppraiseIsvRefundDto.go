@@ -1,7 +1,7 @@
 package idleisv
 
-// AppraiseIsvRefundDto 
-type AppraiseIsvRefundDto struct {
+// AppraiseIsvRefundDTO 
+type AppraiseIsvRefundDTO struct {
     // 订单号
     BizOrderId   int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
     // 商品购买数量
@@ -15,7 +15,7 @@ type AppraiseIsvRefundDto struct {
     // 货物状态
     GoodsStatus   int64 `json:"goods_status,omitempty" xml:"goods_status,omitempty"`
     // 商品信息
-    Item   *AppraiseIsvItemDto `json:"item,omitempty" xml:"item,omitempty"`
+    Item   *AppraiseIsvItemDTO `json:"item,omitempty" xml:"item,omitempty"`
     // 买家是否需要退货
     NeedReturnGoods   bool `json:"need_return_goods,omitempty" xml:"need_return_goods,omitempty"`
     // 订单状态
@@ -47,5 +47,5 @@ type AppraiseIsvRefundDto struct {
     // 卖家拒绝退款说明
     SellerRefuseMsg   string `json:"seller_refuse_msg,omitempty" xml:"seller_refuse_msg,omitempty"`
     // 退款超时信息
-    TimeoutData   *IsvRefundTimeoutDto `json:"timeout_data,omitempty" xml:"timeout_data,omitempty"`
+    TimeoutData   *IsvRefundTimeoutDTO `json:"timeout_data,omitempty" xml:"timeout_data,omitempty"`
 }

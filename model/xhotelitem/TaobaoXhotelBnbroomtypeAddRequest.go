@@ -85,11 +85,11 @@ type TaobaoXhotelBnbroomtypeAddRequest struct {
     // 视频地址
     _videoUrl   string
     // 民宿房源位置信息
-    _location   *BnbLocationDto
+    _location   *BnbLocationDTO
     // 最大入住人数 1-50
     _maxOccupancy   int64
     // 民宿入住要求&附加信息
-    _bnbBookingTime   *BnbBookingTimeDto
+    _bnbBookingTime   *BnbBookingTimeDTO
     // 入住须知
     _checkInNotes   string
     // 0：不限制，1：只限男性，2：只限女性'
@@ -111,7 +111,7 @@ type TaobaoXhotelBnbroomtypeAddRequest struct {
     // 押金金额
     _depositAmount   int64
     // 加人收费信息
-    _charge   *BnbChargeDto
+    _charge   *BnbChargeDTO
     // 清洁费是否收取 0：否 1：是
     _cleaningCharge   int64
     // 清洁费类型 0.线下；1.线上
@@ -572,14 +572,14 @@ func (r TaobaoXhotelBnbroomtypeAddRequest) GetVideoUrl() string {
 }
 // Location Setter
 // 民宿房源位置信息
-func (r *TaobaoXhotelBnbroomtypeAddRequest) SetLocation(_location *BnbLocationDto) error {
+func (r *TaobaoXhotelBnbroomtypeAddRequest) SetLocation(_location *BnbLocationDTO) error {
     r._location = _location
     r.Set("location", _location)
     return nil
 }
 
 // Location Getter
-func (r TaobaoXhotelBnbroomtypeAddRequest) GetLocation() *BnbLocationDto {
+func (r TaobaoXhotelBnbroomtypeAddRequest) GetLocation() *BnbLocationDTO {
     return r._location
 }
 // MaxOccupancy Setter
@@ -596,14 +596,14 @@ func (r TaobaoXhotelBnbroomtypeAddRequest) GetMaxOccupancy() int64 {
 }
 // BnbBookingTime Setter
 // 民宿入住要求&附加信息
-func (r *TaobaoXhotelBnbroomtypeAddRequest) SetBnbBookingTime(_bnbBookingTime *BnbBookingTimeDto) error {
+func (r *TaobaoXhotelBnbroomtypeAddRequest) SetBnbBookingTime(_bnbBookingTime *BnbBookingTimeDTO) error {
     r._bnbBookingTime = _bnbBookingTime
     r.Set("bnb_booking_time", _bnbBookingTime)
     return nil
 }
 
 // BnbBookingTime Getter
-func (r TaobaoXhotelBnbroomtypeAddRequest) GetBnbBookingTime() *BnbBookingTimeDto {
+func (r TaobaoXhotelBnbroomtypeAddRequest) GetBnbBookingTime() *BnbBookingTimeDTO {
     return r._bnbBookingTime
 }
 // CheckInNotes Setter
@@ -728,14 +728,14 @@ func (r TaobaoXhotelBnbroomtypeAddRequest) GetDepositAmount() int64 {
 }
 // Charge Setter
 // 加人收费信息
-func (r *TaobaoXhotelBnbroomtypeAddRequest) SetCharge(_charge *BnbChargeDto) error {
+func (r *TaobaoXhotelBnbroomtypeAddRequest) SetCharge(_charge *BnbChargeDTO) error {
     r._charge = _charge
     r.Set("charge", _charge)
     return nil
 }
 
 // Charge Getter
-func (r TaobaoXhotelBnbroomtypeAddRequest) GetCharge() *BnbChargeDto {
+func (r TaobaoXhotelBnbroomtypeAddRequest) GetCharge() *BnbChargeDTO {
     return r._charge
 }
 // CleaningCharge Setter

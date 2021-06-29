@@ -1,7 +1,7 @@
 package tmallservice
 
-// SubscribeMerchantDto 
-type SubscribeMerchantDto struct {
+// SubscribeMerchantDTO 
+type SubscribeMerchantDTO struct {
     // 技术电话
     TechPhone   string `json:"tech_phone,omitempty" xml:"tech_phone,omitempty"`
     // 操作人电话

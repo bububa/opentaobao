@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.bill.verificate.callback
 type AlibabaTclsAelophyBillVerificateCallbackRequest struct {
     model.Params
     // 回调对象
-    _module   *VerificateCallbackDto
+    _module   *VerificateCallbackDTO
 }
 
 // 初始化AlibabaTclsAelophyBillVerificateCallbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyBillVerificateCallbackRequest) GetApiParams() url.Valu
 }
 // Module Setter
 // 回调对象
-func (r *AlibabaTclsAelophyBillVerificateCallbackRequest) SetModule(_module *VerificateCallbackDto) error {
+func (r *AlibabaTclsAelophyBillVerificateCallbackRequest) SetModule(_module *VerificateCallbackDTO) error {
     r._module = _module
     r.Set("module", _module)
     return nil
 }
 
 // Module Getter
-func (r AlibabaTclsAelophyBillVerificateCallbackRequest) GetModule() *VerificateCallbackDto {
+func (r AlibabaTclsAelophyBillVerificateCallbackRequest) GetModule() *VerificateCallbackDTO {
     return r._module
 }

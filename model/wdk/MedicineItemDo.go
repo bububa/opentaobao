@@ -1,7 +1,7 @@
 package wdk
 
-// MedicineItemDo 
-type MedicineItemDo struct {
+// MedicineItemDO 
+type MedicineItemDO struct {
     // 数量
     Count   int64 `json:"count,omitempty" xml:"count,omitempty"`
     // sku名称

@@ -1,7 +1,7 @@
 package scbp
 
-// TopCustLevelDto 
-type TopCustLevelDto struct {
+// TopCustLevelDTO 
+type TopCustLevelDTO struct {
     // levelScore
     LevelScore   int64 `json:"level_score,omitempty" xml:"level_score,omitempty"`
     // growthLevel

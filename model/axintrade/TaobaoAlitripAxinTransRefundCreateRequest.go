@@ -15,7 +15,7 @@ taobao.alitrip.axin.trans.refund.create
 type TaobaoAlitripAxinTransRefundCreateRequest struct {
     model.Params
     // 阿信创建退款单入参
-    _axinRefundCreateDTO   *AxinRefundCreateDto
+    _axinRefundCreateDTO   *AxinRefundCreateDTO
 }
 
 // 初始化TaobaoAlitripAxinTransRefundCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransRefundCreateRequest) GetApiParams() url.Values {
 }
 // AxinRefundCreateDTO Setter
 // 阿信创建退款单入参
-func (r *TaobaoAlitripAxinTransRefundCreateRequest) SetAxinRefundCreateDTO(_axinRefundCreateDTO *AxinRefundCreateDto) error {
+func (r *TaobaoAlitripAxinTransRefundCreateRequest) SetAxinRefundCreateDTO(_axinRefundCreateDTO *AxinRefundCreateDTO) error {
     r._axinRefundCreateDTO = _axinRefundCreateDTO
     r.Set("axin_refund_create_d_t_o", _axinRefundCreateDTO)
     return nil
 }
 
 // AxinRefundCreateDTO Getter
-func (r TaobaoAlitripAxinTransRefundCreateRequest) GetAxinRefundCreateDTO() *AxinRefundCreateDto {
+func (r TaobaoAlitripAxinTransRefundCreateRequest) GetAxinRefundCreateDTO() *AxinRefundCreateDTO {
     return r._axinRefundCreateDTO
 }

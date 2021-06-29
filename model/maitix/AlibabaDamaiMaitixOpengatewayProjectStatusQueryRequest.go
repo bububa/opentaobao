@@ -15,7 +15,7 @@ queryProjectStatusByProjectId
 type AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest struct {
     model.Params
     // 入参dto
-    _disProjectStatusQueryParam   *DisProjectStatusQueryDto
+    _disProjectStatusQueryParam   *DisProjectStatusQueryDTO
 }
 
 // 初始化AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest) GetApiParams() u
 }
 // DisProjectStatusQueryParam Setter
 // 入参dto
-func (r *AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest) SetDisProjectStatusQueryParam(_disProjectStatusQueryParam *DisProjectStatusQueryDto) error {
+func (r *AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest) SetDisProjectStatusQueryParam(_disProjectStatusQueryParam *DisProjectStatusQueryDTO) error {
     r._disProjectStatusQueryParam = _disProjectStatusQueryParam
     r.Set("dis_project_status_query_param", _disProjectStatusQueryParam)
     return nil
 }
 
 // DisProjectStatusQueryParam Getter
-func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest) GetDisProjectStatusQueryParam() *DisProjectStatusQueryDto {
+func (r AlibabaDamaiMaitixOpengatewayProjectStatusQueryRequest) GetDisProjectStatusQueryParam() *DisProjectStatusQueryDTO {
     return r._disProjectStatusQueryParam
 }

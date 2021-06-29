@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrtCrmBenefitDto 
-type NrtCrmBenefitDto struct {
+// NrtCrmBenefitDTO 
+type NrtCrmBenefitDTO struct {
     // 限领总额
     TotalQuantity   string `json:"total_quantity,omitempty" xml:"total_quantity,omitempty"`
     // 个人限领

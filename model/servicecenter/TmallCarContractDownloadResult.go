@@ -1,4 +1,7 @@
 package servicecenter
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // TmallCarContractDownloadResult 
 type TmallCarContractDownloadResult struct {

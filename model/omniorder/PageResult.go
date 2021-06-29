@@ -9,7 +9,7 @@ type PageResult struct {
     // 页大小，请求的值
     PageNo   int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
     // 返回数据
-    OrderList   []OrderDto `json:"order_list,omitempty" xml:"order_list>order_dto,omitempty"`
+    OrderList   []OrderDTO `json:"order_list,omitempty" xml:"order_list>order_dto,omitempty"`
     // 每页多少条记录
     PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
     // 状态码，200-成功

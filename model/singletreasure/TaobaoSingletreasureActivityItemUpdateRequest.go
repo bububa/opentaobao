@@ -15,7 +15,7 @@ taobao.singletreasure.activity.item.update
 type TaobaoSingletreasureActivityItemUpdateRequest struct {
     model.Params
     // 修改接口的入参对象
-    _itemDetailInfo   *ItemDetailInfoCreateDto
+    _itemDetailInfo   *ItemDetailInfoCreateDTO
 }
 
 // 初始化TaobaoSingletreasureActivityItemUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSingletreasureActivityItemUpdateRequest) GetApiParams() url.Values
 }
 // ItemDetailInfo Setter
 // 修改接口的入参对象
-func (r *TaobaoSingletreasureActivityItemUpdateRequest) SetItemDetailInfo(_itemDetailInfo *ItemDetailInfoCreateDto) error {
+func (r *TaobaoSingletreasureActivityItemUpdateRequest) SetItemDetailInfo(_itemDetailInfo *ItemDetailInfoCreateDTO) error {
     r._itemDetailInfo = _itemDetailInfo
     r.Set("item_detail_info", _itemDetailInfo)
     return nil
 }
 
 // ItemDetailInfo Getter
-func (r TaobaoSingletreasureActivityItemUpdateRequest) GetItemDetailInfo() *ItemDetailInfoCreateDto {
+func (r TaobaoSingletreasureActivityItemUpdateRequest) GetItemDetailInfo() *ItemDetailInfoCreateDTO {
     return r._itemDetailInfo
 }

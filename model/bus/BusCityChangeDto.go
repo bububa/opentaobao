@@ -1,7 +1,7 @@
 package bus
 
-// BusCityChangeDto 
-type BusCityChangeDto struct {
+// BusCityChangeDTO 
+type BusCityChangeDTO struct {
     // 是否开通标示，0：已开通 1：未开通
     TypeNo   int64 `json:"type_no,omitempty" xml:"type_no,omitempty"`
     // 城市拼音

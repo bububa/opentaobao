@@ -15,7 +15,7 @@ tmall.servicecenter.worker.create
 type TmallServicecenterWorkerCreateRequest struct {
     model.Params
     // 11
-    _workerDto   *WorkerDto
+    _workerDto   *WorkerDTO
 }
 
 // 初始化TmallServicecenterWorkerCreateRequest对象
@@ -40,13 +40,13 @@ func (r TmallServicecenterWorkerCreateRequest) GetApiParams() url.Values {
 }
 // WorkerDto Setter
 // 11
-func (r *TmallServicecenterWorkerCreateRequest) SetWorkerDto(_workerDto *WorkerDto) error {
+func (r *TmallServicecenterWorkerCreateRequest) SetWorkerDto(_workerDto *WorkerDTO) error {
     r._workerDto = _workerDto
     r.Set("worker_dto", _workerDto)
     return nil
 }
 
 // WorkerDto Getter
-func (r TmallServicecenterWorkerCreateRequest) GetWorkerDto() *WorkerDto {
+func (r TmallServicecenterWorkerCreateRequest) GetWorkerDto() *WorkerDTO {
     return r._workerDto
 }

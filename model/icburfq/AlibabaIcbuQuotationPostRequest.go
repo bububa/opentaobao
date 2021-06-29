@@ -17,7 +17,7 @@ type AlibabaIcbuQuotationPostRequest struct {
     // 验证
     _md5key   string
     // 报价DTO
-    _dto   *RfqQuotationRemoteDto
+    _dto   *RfqQuotationRemoteDTO
 }
 
 // 初始化AlibabaIcbuQuotationPostRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaIcbuQuotationPostRequest) GetMd5key() string {
 }
 // Dto Setter
 // 报价DTO
-func (r *AlibabaIcbuQuotationPostRequest) SetDto(_dto *RfqQuotationRemoteDto) error {
+func (r *AlibabaIcbuQuotationPostRequest) SetDto(_dto *RfqQuotationRemoteDTO) error {
     r._dto = _dto
     r.Set("dto", _dto)
     return nil
 }
 
 // Dto Getter
-func (r AlibabaIcbuQuotationPostRequest) GetDto() *RfqQuotationRemoteDto {
+func (r AlibabaIcbuQuotationPostRequest) GetDto() *RfqQuotationRemoteDTO {
     return r._dto
 }

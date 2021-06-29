@@ -1,7 +1,7 @@
 package icbuseller
 
-// AlibabaSellerVendorOrderDetailResultDto 
-type AlibabaSellerVendorOrderDetailResultDto struct {
+// AlibabaSellerVendorOrderDetailResultDTO 
+type AlibabaSellerVendorOrderDetailResultDTO struct {
     // 接口返回对象
-    Dto   *OpenTradeDetailDto `json:"dto,omitempty" xml:"dto,omitempty"`
+    Dto   *OpenTradeDetailDTO `json:"dto,omitempty" xml:"dto,omitempty"`
 }

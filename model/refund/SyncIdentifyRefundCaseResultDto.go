@@ -1,7 +1,7 @@
 package refund
 
-// SyncIdentifyRefundCaseResultDto 
-type SyncIdentifyRefundCaseResultDto struct {
+// SyncIdentifyRefundCaseResultDTO 
+type SyncIdentifyRefundCaseResultDTO struct {
     // 子订单ID
     DetailOrderId   int64 `json:"detail_order_id,omitempty" xml:"detail_order_id,omitempty"`
     // 数据发生时间绝对秒数，如写入鉴定结果的时间

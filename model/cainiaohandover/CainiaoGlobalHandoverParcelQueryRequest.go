@@ -15,7 +15,7 @@ cainiao.global.handover.parcel.query
 type CainiaoGlobalHandoverParcelQueryRequest struct {
     model.Params
     // 用户信息
-    _userInfo   *UserInfoDto
+    _userInfo   *UserInfoDTO
     // 多语言
     _locale   string
     // 小包的物流订单号,和小包的国际运单号参数任选其一即可
@@ -48,14 +48,14 @@ func (r CainiaoGlobalHandoverParcelQueryRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 用户信息
-func (r *CainiaoGlobalHandoverParcelQueryRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+func (r *CainiaoGlobalHandoverParcelQueryRequest) SetUserInfo(_userInfo *UserInfoDTO) error {
     r._userInfo = _userInfo
     r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
-func (r CainiaoGlobalHandoverParcelQueryRequest) GetUserInfo() *UserInfoDto {
+func (r CainiaoGlobalHandoverParcelQueryRequest) GetUserInfo() *UserInfoDTO {
     return r._userInfo
 }
 // Locale Setter

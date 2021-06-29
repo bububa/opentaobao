@@ -47,7 +47,7 @@ type TopProductDO struct {
     // scItemId
     ScItemId   int64 `json:"sc_item_id,omitempty" xml:"sc_item_id,omitempty"`
     // 分销产品SKU列表
-    Skus   []ProductSkuDo `json:"skus,omitempty" xml:"skus>product_sku_do,omitempty"`
+    Skus   []ProductSkuDO `json:"skus,omitempty" xml:"skus>product_sku_do,omitempty"`
     // spuId
     SpuId   int64 `json:"spu_id,omitempty" xml:"spu_id,omitempty"`
     // 市场价：单位元

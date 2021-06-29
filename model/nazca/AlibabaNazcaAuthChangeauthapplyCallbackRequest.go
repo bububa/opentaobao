@@ -15,7 +15,7 @@ alibaba.nazca.auth.changeauthapply.callback
 type AlibabaNazcaAuthChangeauthapplyCallbackRequest struct {
     model.Params
     // 变更认证回调参数
-    _paramChangeAuthCallBackDo   *ChangeAuthCallBackDo
+    _paramChangeAuthCallBackDo   *ChangeAuthCallBackDO
 }
 
 // 初始化AlibabaNazcaAuthChangeauthapplyCallbackRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaNazcaAuthChangeauthapplyCallbackRequest) GetApiParams() url.Value
 }
 // ParamChangeAuthCallBackDo Setter
 // 变更认证回调参数
-func (r *AlibabaNazcaAuthChangeauthapplyCallbackRequest) SetParamChangeAuthCallBackDo(_paramChangeAuthCallBackDo *ChangeAuthCallBackDo) error {
+func (r *AlibabaNazcaAuthChangeauthapplyCallbackRequest) SetParamChangeAuthCallBackDo(_paramChangeAuthCallBackDo *ChangeAuthCallBackDO) error {
     r._paramChangeAuthCallBackDo = _paramChangeAuthCallBackDo
     r.Set("param_change_auth_call_back_do", _paramChangeAuthCallBackDo)
     return nil
 }
 
 // ParamChangeAuthCallBackDo Getter
-func (r AlibabaNazcaAuthChangeauthapplyCallbackRequest) GetParamChangeAuthCallBackDo() *ChangeAuthCallBackDo {
+func (r AlibabaNazcaAuthChangeauthapplyCallbackRequest) GetParamChangeAuthCallBackDo() *ChangeAuthCallBackDO {
     return r._paramChangeAuthCallBackDo
 }

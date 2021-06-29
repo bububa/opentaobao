@@ -16,7 +16,7 @@ cainiao.cntec.supplier.order.service
 type CainiaoCntecSupplierOrderServiceRequest struct {
     model.Params
     // 系统自动生成
-    _queryConditioin   *SupplierOrderQueryDto
+    _queryConditioin   *SupplierOrderQueryDTO
 }
 
 // 初始化CainiaoCntecSupplierOrderServiceRequest对象
@@ -41,13 +41,13 @@ func (r CainiaoCntecSupplierOrderServiceRequest) GetApiParams() url.Values {
 }
 // QueryConditioin Setter
 // 系统自动生成
-func (r *CainiaoCntecSupplierOrderServiceRequest) SetQueryConditioin(_queryConditioin *SupplierOrderQueryDto) error {
+func (r *CainiaoCntecSupplierOrderServiceRequest) SetQueryConditioin(_queryConditioin *SupplierOrderQueryDTO) error {
     r._queryConditioin = _queryConditioin
     r.Set("query_conditioin", _queryConditioin)
     return nil
 }
 
 // QueryConditioin Getter
-func (r CainiaoCntecSupplierOrderServiceRequest) GetQueryConditioin() *SupplierOrderQueryDto {
+func (r CainiaoCntecSupplierOrderServiceRequest) GetQueryConditioin() *SupplierOrderQueryDTO {
     return r._queryConditioin
 }

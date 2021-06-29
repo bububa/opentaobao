@@ -19,7 +19,7 @@ type HotelTopStaticDetailsVo struct {
     // 全景图
     Panoramas   []Panorama `json:"panoramas,omitempty" xml:"panoramas>panorama,omitempty"`
     // 图片信息
-    PicUrls   *PicStringArrayDo `json:"pic_urls,omitempty" xml:"pic_urls,omitempty"`
+    PicUrls   *PicStringArrayDO `json:"pic_urls,omitempty" xml:"pic_urls,omitempty"`
     // 评论数
     RateNumber   int64 `json:"rate_number,omitempty" xml:"rate_number,omitempty"`
     // 综合评分

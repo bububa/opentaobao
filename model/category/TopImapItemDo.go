@@ -1,7 +1,7 @@
 package category
 
-// TopImapItemDo 
-type TopImapItemDo struct {
+// TopImapItemDO 
+type TopImapItemDO struct {
     // 商品ID
     ItemId   string `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 【必填】目标渠道ID

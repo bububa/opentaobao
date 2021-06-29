@@ -15,7 +15,7 @@ type OpenCostCenterQueryRs struct {
     // 适用范围: 1全员，2部分员工
     Scope   int64 `json:"scope,omitempty" xml:"scope,omitempty"`
     // 绑定人员信息
-    EntityList   []OpenOrgEntityDo `json:"entity_list,omitempty" xml:"entity_list>open_org_entity_do,omitempty"`
+    EntityList   []OpenOrgEntityDO `json:"entity_list,omitempty" xml:"entity_list>open_org_entity_do,omitempty"`
     // 绑定支付宝账号
     AlipayNo   string `json:"alipay_no,omitempty" xml:"alipay_no,omitempty"`
 }

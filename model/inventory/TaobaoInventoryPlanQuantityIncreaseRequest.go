@@ -15,7 +15,7 @@ taobao.inventory.plan.quantity.increase
 type TaobaoInventoryPlanQuantityIncreaseRequest struct {
     model.Params
     // 增量编辑计划库存入参
-    _planInvAdjustTop   *PlanInvAdjustTopDto
+    _planInvAdjustTop   *PlanInvAdjustTopDTO
 }
 
 // 初始化TaobaoInventoryPlanQuantityIncreaseRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoInventoryPlanQuantityIncreaseRequest) GetApiParams() url.Values {
 }
 // PlanInvAdjustTop Setter
 // 增量编辑计划库存入参
-func (r *TaobaoInventoryPlanQuantityIncreaseRequest) SetPlanInvAdjustTop(_planInvAdjustTop *PlanInvAdjustTopDto) error {
+func (r *TaobaoInventoryPlanQuantityIncreaseRequest) SetPlanInvAdjustTop(_planInvAdjustTop *PlanInvAdjustTopDTO) error {
     r._planInvAdjustTop = _planInvAdjustTop
     r.Set("plan_inv_adjust_top", _planInvAdjustTop)
     return nil
 }
 
 // PlanInvAdjustTop Getter
-func (r TaobaoInventoryPlanQuantityIncreaseRequest) GetPlanInvAdjustTop() *PlanInvAdjustTopDto {
+func (r TaobaoInventoryPlanQuantityIncreaseRequest) GetPlanInvAdjustTop() *PlanInvAdjustTopDTO {
     return r._planInvAdjustTop
 }

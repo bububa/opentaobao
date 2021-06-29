@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMosOnsiteTradeRefundResultDo 
-type AlibabaMosOnsiteTradeRefundResultDo struct {
+// AlibabaMosOnsiteTradeRefundResultDO 
+type AlibabaMosOnsiteTradeRefundResultDO struct {
     // data
     Data   *RefundResponse `json:"data,omitempty" xml:"data,omitempty"`
     // 错误码

@@ -15,7 +15,7 @@ alibaba.scbp.target.ad.plan.operation
 type AlibabaScbpTargetAdPlanOperationRequest struct {
     model.Params
     // TopP4pModifyQuickCampaignDTO
-    _topP4pModifyQuickCampaignDTO   *TopP4pModifyQuickCampaignDto
+    _topP4pModifyQuickCampaignDTO   *TopP4pModifyQuickCampaignDTO
 }
 
 // 初始化AlibabaScbpTargetAdPlanOperationRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpTargetAdPlanOperationRequest) GetApiParams() url.Values {
 }
 // TopP4pModifyQuickCampaignDTO Setter
 // TopP4pModifyQuickCampaignDTO
-func (r *AlibabaScbpTargetAdPlanOperationRequest) SetTopP4pModifyQuickCampaignDTO(_topP4pModifyQuickCampaignDTO *TopP4pModifyQuickCampaignDto) error {
+func (r *AlibabaScbpTargetAdPlanOperationRequest) SetTopP4pModifyQuickCampaignDTO(_topP4pModifyQuickCampaignDTO *TopP4pModifyQuickCampaignDTO) error {
     r._topP4pModifyQuickCampaignDTO = _topP4pModifyQuickCampaignDTO
     r.Set("top_p4p_modify_quick_campaign_d_t_o", _topP4pModifyQuickCampaignDTO)
     return nil
 }
 
 // TopP4pModifyQuickCampaignDTO Getter
-func (r AlibabaScbpTargetAdPlanOperationRequest) GetTopP4pModifyQuickCampaignDTO() *TopP4pModifyQuickCampaignDto {
+func (r AlibabaScbpTargetAdPlanOperationRequest) GetTopP4pModifyQuickCampaignDTO() *TopP4pModifyQuickCampaignDTO {
     return r._topP4pModifyQuickCampaignDTO
 }

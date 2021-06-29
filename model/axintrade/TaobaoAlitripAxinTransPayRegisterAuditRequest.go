@@ -15,7 +15,7 @@ taobao.alitrip.axin.trans.pay.register.audit
 type TaobaoAlitripAxinTransPayRegisterAuditRequest struct {
     model.Params
     // 支付入驻审核对象
-    _axinPayRegisterAuditDto   *AxinPayRegisterAuditDto
+    _axinPayRegisterAuditDto   *AxinPayRegisterAuditDTO
 }
 
 // 初始化TaobaoAlitripAxinTransPayRegisterAuditRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransPayRegisterAuditRequest) GetApiParams() url.Values
 }
 // AxinPayRegisterAuditDto Setter
 // 支付入驻审核对象
-func (r *TaobaoAlitripAxinTransPayRegisterAuditRequest) SetAxinPayRegisterAuditDto(_axinPayRegisterAuditDto *AxinPayRegisterAuditDto) error {
+func (r *TaobaoAlitripAxinTransPayRegisterAuditRequest) SetAxinPayRegisterAuditDto(_axinPayRegisterAuditDto *AxinPayRegisterAuditDTO) error {
     r._axinPayRegisterAuditDto = _axinPayRegisterAuditDto
     r.Set("axin_pay_register_audit_dto", _axinPayRegisterAuditDto)
     return nil
 }
 
 // AxinPayRegisterAuditDto Getter
-func (r TaobaoAlitripAxinTransPayRegisterAuditRequest) GetAxinPayRegisterAuditDto() *AxinPayRegisterAuditDto {
+func (r TaobaoAlitripAxinTransPayRegisterAuditRequest) GetAxinPayRegisterAuditDto() *AxinPayRegisterAuditDTO {
     return r._axinPayRegisterAuditDto
 }

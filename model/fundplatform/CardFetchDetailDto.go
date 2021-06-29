@@ -1,7 +1,7 @@
 package fundplatform
 
-// CardFetchDetailDto 
-type CardFetchDetailDto struct {
+// CardFetchDetailDTO 
+type CardFetchDetailDTO struct {
     // 制卡数量
     Num   int64 `json:"num,omitempty" xml:"num,omitempty"`
     // 售价,单位为分。不填写则使用模板上配置的默认售价

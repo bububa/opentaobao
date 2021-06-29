@@ -45,5 +45,5 @@ type SpServiceOrderDTO struct {
     // 履约类型:1, "到店"2, "到家"3, "寄送"
     FulfilTypeCode   string `json:"fulfil_type_code,omitempty" xml:"fulfil_type_code,omitempty"`
     // 服务提供者
-    ServiceProviderDTO   *ServiceProviderDto `json:"service_provider_d_t_o,omitempty" xml:"service_provider_d_t_o,omitempty"`
+    ServiceProviderDTO   *ServiceProviderDTO `json:"service_provider_d_t_o,omitempty" xml:"service_provider_d_t_o,omitempty"`
 }

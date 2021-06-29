@@ -1,7 +1,7 @@
 package tanx
 
-// CreativeDto 
-type CreativeDto struct {
+// CreativeDTO 
+type CreativeDTO struct {
     // 创意ID
     CreativeId   string `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
     // 创意审核的状态（通过PASS,拒绝REFUSE,未审核WAITING）
@@ -13,5 +13,5 @@ type CreativeDto struct {
     // 广告位属性
     AdboardData   string `json:"adboard_data,omitempty" xml:"adboard_data,omitempty"`
     // 创意审核信息列表
-    CreativePublisherAuditDtoList   []CreativePublisherAuditDto `json:"creative_publisher_audit_dto_list,omitempty" xml:"creative_publisher_audit_dto_list>creative_publisher_audit_dto,omitempty"`
+    CreativePublisherAuditDtoList   []CreativePublisherAuditDTO `json:"creative_publisher_audit_dto_list,omitempty" xml:"creative_publisher_audit_dto_list>creative_publisher_audit_dto,omitempty"`
 }

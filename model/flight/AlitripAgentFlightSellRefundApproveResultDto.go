@@ -1,7 +1,7 @@
 package flight
 
-// AlitripAgentFlightSellRefundApproveResultDto 
-type AlitripAgentFlightSellRefundApproveResultDto struct {
+// AlitripAgentFlightSellRefundApproveResultDTO 
+type AlitripAgentFlightSellRefundApproveResultDTO struct {
     // 执行结果
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

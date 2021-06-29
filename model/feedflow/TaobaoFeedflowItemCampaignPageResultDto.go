@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemCampaignPageResultDto 
-type TaobaoFeedflowItemCampaignPageResultDto struct {
+// TaobaoFeedflowItemCampaignPageResultDTO 
+type TaobaoFeedflowItemCampaignPageResultDTO struct {
     // 信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 计划列表

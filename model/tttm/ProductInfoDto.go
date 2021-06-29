@@ -1,7 +1,7 @@
 package tttm
 
-// ProductInfoDto 
-type ProductInfoDto struct {
+// ProductInfoDTO 
+type ProductInfoDTO struct {
     // 货品编码
     ProductCode   string `json:"product_code,omitempty" xml:"product_code,omitempty"`
     // 货品名称

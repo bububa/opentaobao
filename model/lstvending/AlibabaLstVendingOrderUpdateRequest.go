@@ -15,7 +15,7 @@ alibaba.lst.vending.order.update
 type AlibabaLstVendingOrderUpdateRequest struct {
     model.Params
     // 零售通设备订单
-    _vendingOrderDTO   *VendingOrderDto
+    _vendingOrderDTO   *VendingOrderDTO
 }
 
 // 初始化AlibabaLstVendingOrderUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaLstVendingOrderUpdateRequest) GetApiParams() url.Values {
 }
 // VendingOrderDTO Setter
 // 零售通设备订单
-func (r *AlibabaLstVendingOrderUpdateRequest) SetVendingOrderDTO(_vendingOrderDTO *VendingOrderDto) error {
+func (r *AlibabaLstVendingOrderUpdateRequest) SetVendingOrderDTO(_vendingOrderDTO *VendingOrderDTO) error {
     r._vendingOrderDTO = _vendingOrderDTO
     r.Set("vending_order_d_t_o", _vendingOrderDTO)
     return nil
 }
 
 // VendingOrderDTO Getter
-func (r AlibabaLstVendingOrderUpdateRequest) GetVendingOrderDTO() *VendingOrderDto {
+func (r AlibabaLstVendingOrderUpdateRequest) GetVendingOrderDTO() *VendingOrderDTO {
     return r._vendingOrderDTO
 }

@@ -17,7 +17,7 @@ type AlibabaCampusCoreEmployeeModifyemployeeRequest struct {
     // WorkBenchContext
     _workBenchContext   *WorkBenchContext
     // EmployeeDto
-    _employeeDto   *EmployeeDto
+    _employeeDto   *EmployeeDTO
     // 用户ID
     _accountId   string
 }
@@ -56,14 +56,14 @@ func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetWorkBenchContext() *W
 }
 // EmployeeDto Setter
 // EmployeeDto
-func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetEmployeeDto(_employeeDto *EmployeeDto) error {
+func (r *AlibabaCampusCoreEmployeeModifyemployeeRequest) SetEmployeeDto(_employeeDto *EmployeeDTO) error {
     r._employeeDto = _employeeDto
     r.Set("employee_dto", _employeeDto)
     return nil
 }
 
 // EmployeeDto Getter
-func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetEmployeeDto() *EmployeeDto {
+func (r AlibabaCampusCoreEmployeeModifyemployeeRequest) GetEmployeeDto() *EmployeeDTO {
     return r._employeeDto
 }
 // AccountId Setter

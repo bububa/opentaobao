@@ -1,7 +1,7 @@
 package nrt
 
-// MacallineItemExtDto 
-type MacallineItemExtDto struct {
+// MacallineItemExtDTO 
+type MacallineItemExtDTO struct {
     // 品牌系列ID
     BrandSeriesId   string `json:"brand_series_id,omitempty" xml:"brand_series_id,omitempty"`
     // 品牌系列名称
@@ -13,7 +13,7 @@ type MacallineItemExtDto struct {
     // 标签价格类型
     LabelPriceType   int64 `json:"label_price_type,omitempty" xml:"label_price_type,omitempty"`
     // 产地
-    OriginalLocation   *LocationDto `json:"original_location,omitempty" xml:"original_location,omitempty"`
+    OriginalLocation   *LocationDTO `json:"original_location,omitempty" xml:"original_location,omitempty"`
     // 价格类型，1：明码实价，2：明码议价
     PriceType   int64 `json:"price_type,omitempty" xml:"price_type,omitempty"`
     // 物价员

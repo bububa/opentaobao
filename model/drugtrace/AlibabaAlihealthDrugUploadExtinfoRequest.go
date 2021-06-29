@@ -21,7 +21,7 @@ type AlibabaAlihealthDrugUploadExtinfoRequest struct {
     // 批次
     _batchNo   string
     // 扩展信息
-    _extInfoDto   *ExtInfoDto
+    _extInfoDto   *ExtInfoDTO
 }
 
 // 初始化AlibabaAlihealthDrugUploadExtinfoRequest对象
@@ -82,13 +82,13 @@ func (r AlibabaAlihealthDrugUploadExtinfoRequest) GetBatchNo() string {
 }
 // ExtInfoDto Setter
 // 扩展信息
-func (r *AlibabaAlihealthDrugUploadExtinfoRequest) SetExtInfoDto(_extInfoDto *ExtInfoDto) error {
+func (r *AlibabaAlihealthDrugUploadExtinfoRequest) SetExtInfoDto(_extInfoDto *ExtInfoDTO) error {
     r._extInfoDto = _extInfoDto
     r.Set("ext_info_dto", _extInfoDto)
     return nil
 }
 
 // ExtInfoDto Getter
-func (r AlibabaAlihealthDrugUploadExtinfoRequest) GetExtInfoDto() *ExtInfoDto {
+func (r AlibabaAlihealthDrugUploadExtinfoRequest) GetExtInfoDto() *ExtInfoDTO {
     return r._extInfoDto
 }

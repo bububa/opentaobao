@@ -15,7 +15,7 @@ cainiao.global.handover.update
 type CainiaoGlobalHandoverUpdateRequest struct {
     model.Params
     // 用户信息
-    _userInfo   *UserInfoDto
+    _userInfo   *UserInfoDTO
     // 重量单位，克:g, 千克:kg，默认g
     _weightUnit   string
     // 大包重量
@@ -25,9 +25,9 @@ type CainiaoGlobalHandoverUpdateRequest struct {
     // 大包备注
     _remark   string
     // 退件信息
-    _returnInfo   *ReturnerDto
+    _returnInfo   *ReturnerDTO
     // 揽收信息
-    _pickupInfo   *PickupDto
+    _pickupInfo   *PickupDTO
     // 交接单类型，菜鸟揽收(cainiao_pickup)或自寄(self_post)，默认菜鸟揽收
     _type   string
     // ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
@@ -60,14 +60,14 @@ func (r CainiaoGlobalHandoverUpdateRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 用户信息
-func (r *CainiaoGlobalHandoverUpdateRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+func (r *CainiaoGlobalHandoverUpdateRequest) SetUserInfo(_userInfo *UserInfoDTO) error {
     r._userInfo = _userInfo
     r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
-func (r CainiaoGlobalHandoverUpdateRequest) GetUserInfo() *UserInfoDto {
+func (r CainiaoGlobalHandoverUpdateRequest) GetUserInfo() *UserInfoDTO {
     return r._userInfo
 }
 // WeightUnit Setter
@@ -120,26 +120,26 @@ func (r CainiaoGlobalHandoverUpdateRequest) GetRemark() string {
 }
 // ReturnInfo Setter
 // 退件信息
-func (r *CainiaoGlobalHandoverUpdateRequest) SetReturnInfo(_returnInfo *ReturnerDto) error {
+func (r *CainiaoGlobalHandoverUpdateRequest) SetReturnInfo(_returnInfo *ReturnerDTO) error {
     r._returnInfo = _returnInfo
     r.Set("return_info", _returnInfo)
     return nil
 }
 
 // ReturnInfo Getter
-func (r CainiaoGlobalHandoverUpdateRequest) GetReturnInfo() *ReturnerDto {
+func (r CainiaoGlobalHandoverUpdateRequest) GetReturnInfo() *ReturnerDTO {
     return r._returnInfo
 }
 // PickupInfo Setter
 // 揽收信息
-func (r *CainiaoGlobalHandoverUpdateRequest) SetPickupInfo(_pickupInfo *PickupDto) error {
+func (r *CainiaoGlobalHandoverUpdateRequest) SetPickupInfo(_pickupInfo *PickupDTO) error {
     r._pickupInfo = _pickupInfo
     r.Set("pickup_info", _pickupInfo)
     return nil
 }
 
 // PickupInfo Getter
-func (r CainiaoGlobalHandoverUpdateRequest) GetPickupInfo() *PickupDto {
+func (r CainiaoGlobalHandoverUpdateRequest) GetPickupInfo() *PickupDTO {
     return r._pickupInfo
 }
 // Type Setter

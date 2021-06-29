@@ -1,7 +1,7 @@
 package moscm
 
-// PriceDto 
-type PriceDto struct {
+// PriceDTO 
+type PriceDTO struct {
     // 专柜id(counter_id和out_counter_id必填一个，如果都填以counter_id为准)
     CounterId   string `json:"counter_id,omitempty" xml:"counter_id,omitempty"`
     // 外部专柜id(经过配置后，可以传供应自己的专柜id)

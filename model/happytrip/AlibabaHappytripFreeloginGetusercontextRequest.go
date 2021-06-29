@@ -15,7 +15,7 @@ alibaba.happytrip.freelogin.getusercontext
 type AlibabaHappytripFreeloginGetusercontextRequest struct {
     model.Params
     // 请求入参
-    _req   *SsoParamDto
+    _req   *SsoParamDTO
 }
 
 // 初始化AlibabaHappytripFreeloginGetusercontextRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHappytripFreeloginGetusercontextRequest) GetApiParams() url.Value
 }
 // Req Setter
 // 请求入参
-func (r *AlibabaHappytripFreeloginGetusercontextRequest) SetReq(_req *SsoParamDto) error {
+func (r *AlibabaHappytripFreeloginGetusercontextRequest) SetReq(_req *SsoParamDTO) error {
     r._req = _req
     r.Set("req", _req)
     return nil
 }
 
 // Req Getter
-func (r AlibabaHappytripFreeloginGetusercontextRequest) GetReq() *SsoParamDto {
+func (r AlibabaHappytripFreeloginGetusercontextRequest) GetReq() *SsoParamDTO {
     return r._req
 }

@@ -3,7 +3,7 @@ package idle
 // TopPageResult 
 type TopPageResult struct {
     // 商品列表
-    ItemList   []IdleItemApiDo `json:"item_list,omitempty" xml:"item_list>idle_item_api_do,omitempty"`
+    ItemList   []IdleItemApiDO `json:"item_list,omitempty" xml:"item_list>idle_item_api_do,omitempty"`
     // 错误码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 错误描述

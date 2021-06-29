@@ -7,5 +7,5 @@ type TmallPromotionCouponUserResult struct {
     // errorMsg
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     // data
-    Data   *UserInfoDo `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *UserInfoDO `json:"data,omitempty" xml:"data,omitempty"`
 }

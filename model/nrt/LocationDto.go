@@ -1,7 +1,7 @@
 package nrt
 
-// LocationDto 
-type LocationDto struct {
+// LocationDTO 
+type LocationDTO struct {
     // 城市名
     City   string `json:"city,omitempty" xml:"city,omitempty"`
     // 城市ID

@@ -15,7 +15,7 @@ taobao.singletreasure.activity.item.batchadd
 type TaobaoSingletreasureActivityItemBatchaddRequest struct {
     model.Params
     // 系统入参
-    _itemDetailInfo   *ItemDetailInfoBatchCreateDto
+    _itemDetailInfo   *ItemDetailInfoBatchCreateDTO
 }
 
 // 初始化TaobaoSingletreasureActivityItemBatchaddRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSingletreasureActivityItemBatchaddRequest) GetApiParams() url.Valu
 }
 // ItemDetailInfo Setter
 // 系统入参
-func (r *TaobaoSingletreasureActivityItemBatchaddRequest) SetItemDetailInfo(_itemDetailInfo *ItemDetailInfoBatchCreateDto) error {
+func (r *TaobaoSingletreasureActivityItemBatchaddRequest) SetItemDetailInfo(_itemDetailInfo *ItemDetailInfoBatchCreateDTO) error {
     r._itemDetailInfo = _itemDetailInfo
     r.Set("item_detail_info", _itemDetailInfo)
     return nil
 }
 
 // ItemDetailInfo Getter
-func (r TaobaoSingletreasureActivityItemBatchaddRequest) GetItemDetailInfo() *ItemDetailInfoBatchCreateDto {
+func (r TaobaoSingletreasureActivityItemBatchaddRequest) GetItemDetailInfo() *ItemDetailInfoBatchCreateDTO {
     return r._itemDetailInfo
 }

@@ -1,7 +1,7 @@
 package scbp
 
-// AdProductEffectDto 
-type AdProductEffectDto struct {
+// AdProductEffectDTO 
+type AdProductEffectDTO struct {
     // 曝光
     ImprCnt   int64 `json:"impr_cnt,omitempty" xml:"impr_cnt,omitempty"`
     // 点击

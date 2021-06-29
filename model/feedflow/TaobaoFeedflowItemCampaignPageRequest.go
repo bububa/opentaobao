@@ -15,7 +15,7 @@ taobao.feedflow.item.campaign.page
 type TaobaoFeedflowItemCampaignPageRequest struct {
     model.Params
     // 入参
-    _campaignQuery   *CampaignQueryDto
+    _campaignQuery   *CampaignQueryDTO
 }
 
 // 初始化TaobaoFeedflowItemCampaignPageRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCampaignPageRequest) GetApiParams() url.Values {
 }
 // CampaignQuery Setter
 // 入参
-func (r *TaobaoFeedflowItemCampaignPageRequest) SetCampaignQuery(_campaignQuery *CampaignQueryDto) error {
+func (r *TaobaoFeedflowItemCampaignPageRequest) SetCampaignQuery(_campaignQuery *CampaignQueryDTO) error {
     r._campaignQuery = _campaignQuery
     r.Set("campaign_query", _campaignQuery)
     return nil
 }
 
 // CampaignQuery Getter
-func (r TaobaoFeedflowItemCampaignPageRequest) GetCampaignQuery() *CampaignQueryDto {
+func (r TaobaoFeedflowItemCampaignPageRequest) GetCampaignQuery() *CampaignQueryDTO {
     return r._campaignQuery
 }

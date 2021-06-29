@@ -27,7 +27,7 @@ type AlibabaChongzhiQueryflowResponse struct {
     // desc
     Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     // MtsInfoDo
-    CatInfo   *MtsInfoDo `json:"cat_info,omitempty" xml:"cat_info,omitempty"`
+    CatInfo   *MtsInfoDO `json:"cat_info,omitempty" xml:"cat_info,omitempty"`
     // flow_card_list
     FlowCardList   []Flowcardlist `json:"flow_card_list,omitempty" xml:"flow_card_list>flowcardlist,omitempty"`
     // cn_desc

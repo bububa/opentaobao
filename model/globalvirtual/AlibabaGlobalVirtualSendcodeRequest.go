@@ -17,7 +17,7 @@ type AlibabaGlobalVirtualSendcodeRequest struct {
     // trade order id
     _tradeOrderLineId   int64
     // code list
-    _codeList   []VirtualCertificateDo
+    _codeList   []VirtualCertificateDO
 }
 
 // 初始化AlibabaGlobalVirtualSendcodeRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaGlobalVirtualSendcodeRequest) GetTradeOrderLineId() int64 {
 }
 // CodeList Setter
 // code list
-func (r *AlibabaGlobalVirtualSendcodeRequest) SetCodeList(_codeList []VirtualCertificateDo) error {
+func (r *AlibabaGlobalVirtualSendcodeRequest) SetCodeList(_codeList []VirtualCertificateDO) error {
     r._codeList = _codeList
     r.Set("code_list", _codeList)
     return nil
 }
 
 // CodeList Getter
-func (r AlibabaGlobalVirtualSendcodeRequest) GetCodeList() []VirtualCertificateDo {
+func (r AlibabaGlobalVirtualSendcodeRequest) GetCodeList() []VirtualCertificateDO {
     return r._codeList
 }

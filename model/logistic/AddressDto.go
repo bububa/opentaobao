@@ -1,7 +1,7 @@
 package logistic
 
-// AddressDto 
-type AddressDto struct {
+// AddressDTO 
+type AddressDTO struct {
     // 镇/街道
     TownName   string `json:"town_name,omitempty" xml:"town_name,omitempty"`
     // 详细地址

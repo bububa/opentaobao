@@ -1,7 +1,7 @@
 package maitix
 
-// DisTicketItemStatusDto 
-type DisTicketItemStatusDto struct {
+// DisTicketItemStatusDTO 
+type DisTicketItemStatusDTO struct {
     // 项目id
     ProjectId   int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
     // 场次id

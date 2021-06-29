@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMosFinanceBankinfoQuerybankResultDo 
-type AlibabaMosFinanceBankinfoQuerybankResultDo struct {
+// AlibabaMosFinanceBankinfoQuerybankResultDO 
+type AlibabaMosFinanceBankinfoQuerybankResultDO struct {
     // 总量
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 扩展
@@ -11,7 +11,7 @@ type AlibabaMosFinanceBankinfoQuerybankResultDo struct {
     // 描述
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 是否成功
-    Data   *SupplierBankInfoDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *SupplierBankInfoDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 成功
     ErrCode   int64 `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 返回值

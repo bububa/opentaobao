@@ -15,7 +15,7 @@ taobao.inventory.plan.edit
 type TaobaoInventoryPlanEditRequest struct {
     model.Params
     // 计划库存设置入参
-    _planTop   *PlanTopDto
+    _planTop   *PlanTopDTO
 }
 
 // 初始化TaobaoInventoryPlanEditRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoInventoryPlanEditRequest) GetApiParams() url.Values {
 }
 // PlanTop Setter
 // 计划库存设置入参
-func (r *TaobaoInventoryPlanEditRequest) SetPlanTop(_planTop *PlanTopDto) error {
+func (r *TaobaoInventoryPlanEditRequest) SetPlanTop(_planTop *PlanTopDTO) error {
     r._planTop = _planTop
     r.Set("plan_top", _planTop)
     return nil
 }
 
 // PlanTop Getter
-func (r TaobaoInventoryPlanEditRequest) GetPlanTop() *PlanTopDto {
+func (r TaobaoInventoryPlanEditRequest) GetPlanTop() *PlanTopDTO {
     return r._planTop
 }

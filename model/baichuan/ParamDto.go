@@ -1,7 +1,7 @@
 package baichuan
 
-// ParamDto 
-type ParamDto struct {
+// ParamDTO 
+type ParamDTO struct {
     // 业务参数，传递需要判断的口令
     BizParam   string `json:"biz_param,omitempty" xml:"biz_param,omitempty"`
     // 扩展参数

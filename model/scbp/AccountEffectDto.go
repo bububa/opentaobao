@@ -1,7 +1,7 @@
 package scbp
 
-// AccountEffectDto 
-type AccountEffectDto struct {
+// AccountEffectDTO 
+type AccountEffectDTO struct {
     // 日期(yyyy-MM-dd)
     StatDate   string `json:"stat_date,omitempty" xml:"stat_date,omitempty"`
     // 曝光

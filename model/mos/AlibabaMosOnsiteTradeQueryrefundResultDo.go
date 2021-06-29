@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMosOnsiteTradeQueryrefundResultDo 
-type AlibabaMosOnsiteTradeQueryrefundResultDo struct {
+// AlibabaMosOnsiteTradeQueryrefundResultDO 
+type AlibabaMosOnsiteTradeQueryrefundResultDO struct {
     // data
     Data   *OnsiteRefundResponse `json:"data,omitempty" xml:"data,omitempty"`
     // errCode

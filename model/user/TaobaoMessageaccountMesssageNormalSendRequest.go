@@ -15,7 +15,7 @@ taobao.messageaccount.messsage.normal.send
 type TaobaoMessageaccountMesssageNormalSendRequest struct {
     model.Params
     // 下行普通消息
-    _param   *NormalMessageDto
+    _param   *NormalMessageDTO
 }
 
 // 初始化TaobaoMessageaccountMesssageNormalSendRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMessageaccountMesssageNormalSendRequest) GetApiParams() url.Values
 }
 // Param Setter
 // 下行普通消息
-func (r *TaobaoMessageaccountMesssageNormalSendRequest) SetParam(_param *NormalMessageDto) error {
+func (r *TaobaoMessageaccountMesssageNormalSendRequest) SetParam(_param *NormalMessageDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoMessageaccountMesssageNormalSendRequest) GetParam() *NormalMessageDto {
+func (r TaobaoMessageaccountMesssageNormalSendRequest) GetParam() *NormalMessageDTO {
     return r._param
 }

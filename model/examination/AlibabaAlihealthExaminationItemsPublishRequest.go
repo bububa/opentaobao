@@ -19,15 +19,15 @@ type AlibabaAlihealthExaminationItemsPublishRequest struct {
     // 套餐列表
     _isvPackages   []IsvPackage
     // 单项之间关系
-    _isvItemRelationDTOS   []IsvItemRelationDto
+    _isvItemRelationDTOS   []IsvItemRelationDTO
     // 体检机构标识
     _hospitalCodes   []string
     // 加项包列表
-    _isvItemPackDTOS   []IsvItemPackDto
+    _isvItemPackDTOS   []IsvItemPackDTO
     // 单项信息列表
-    _isvItemDTOS   []IsvItemDto
+    _isvItemDTOS   []IsvItemDTO
     // 加项包关系列表
-    _isvPackRelationDTOS   []IsvPackRelationDto
+    _isvPackRelationDTOS   []IsvPackRelationDTO
 }
 
 // 初始化AlibabaAlihealthExaminationItemsPublishRequest对象
@@ -76,14 +76,14 @@ func (r AlibabaAlihealthExaminationItemsPublishRequest) GetIsvPackages() []IsvPa
 }
 // IsvItemRelationDTOS Setter
 // 单项之间关系
-func (r *AlibabaAlihealthExaminationItemsPublishRequest) SetIsvItemRelationDTOS(_isvItemRelationDTOS []IsvItemRelationDto) error {
+func (r *AlibabaAlihealthExaminationItemsPublishRequest) SetIsvItemRelationDTOS(_isvItemRelationDTOS []IsvItemRelationDTO) error {
     r._isvItemRelationDTOS = _isvItemRelationDTOS
     r.Set("isv_item_relation_d_t_o_s", _isvItemRelationDTOS)
     return nil
 }
 
 // IsvItemRelationDTOS Getter
-func (r AlibabaAlihealthExaminationItemsPublishRequest) GetIsvItemRelationDTOS() []IsvItemRelationDto {
+func (r AlibabaAlihealthExaminationItemsPublishRequest) GetIsvItemRelationDTOS() []IsvItemRelationDTO {
     return r._isvItemRelationDTOS
 }
 // HospitalCodes Setter
@@ -100,37 +100,37 @@ func (r AlibabaAlihealthExaminationItemsPublishRequest) GetHospitalCodes() []str
 }
 // IsvItemPackDTOS Setter
 // 加项包列表
-func (r *AlibabaAlihealthExaminationItemsPublishRequest) SetIsvItemPackDTOS(_isvItemPackDTOS []IsvItemPackDto) error {
+func (r *AlibabaAlihealthExaminationItemsPublishRequest) SetIsvItemPackDTOS(_isvItemPackDTOS []IsvItemPackDTO) error {
     r._isvItemPackDTOS = _isvItemPackDTOS
     r.Set("isv_item_pack_d_t_o_s", _isvItemPackDTOS)
     return nil
 }
 
 // IsvItemPackDTOS Getter
-func (r AlibabaAlihealthExaminationItemsPublishRequest) GetIsvItemPackDTOS() []IsvItemPackDto {
+func (r AlibabaAlihealthExaminationItemsPublishRequest) GetIsvItemPackDTOS() []IsvItemPackDTO {
     return r._isvItemPackDTOS
 }
 // IsvItemDTOS Setter
 // 单项信息列表
-func (r *AlibabaAlihealthExaminationItemsPublishRequest) SetIsvItemDTOS(_isvItemDTOS []IsvItemDto) error {
+func (r *AlibabaAlihealthExaminationItemsPublishRequest) SetIsvItemDTOS(_isvItemDTOS []IsvItemDTO) error {
     r._isvItemDTOS = _isvItemDTOS
     r.Set("isv_item_d_t_o_s", _isvItemDTOS)
     return nil
 }
 
 // IsvItemDTOS Getter
-func (r AlibabaAlihealthExaminationItemsPublishRequest) GetIsvItemDTOS() []IsvItemDto {
+func (r AlibabaAlihealthExaminationItemsPublishRequest) GetIsvItemDTOS() []IsvItemDTO {
     return r._isvItemDTOS
 }
 // IsvPackRelationDTOS Setter
 // 加项包关系列表
-func (r *AlibabaAlihealthExaminationItemsPublishRequest) SetIsvPackRelationDTOS(_isvPackRelationDTOS []IsvPackRelationDto) error {
+func (r *AlibabaAlihealthExaminationItemsPublishRequest) SetIsvPackRelationDTOS(_isvPackRelationDTOS []IsvPackRelationDTO) error {
     r._isvPackRelationDTOS = _isvPackRelationDTOS
     r.Set("isv_pack_relation_d_t_o_s", _isvPackRelationDTOS)
     return nil
 }
 
 // IsvPackRelationDTOS Getter
-func (r AlibabaAlihealthExaminationItemsPublishRequest) GetIsvPackRelationDTOS() []IsvPackRelationDto {
+func (r AlibabaAlihealthExaminationItemsPublishRequest) GetIsvPackRelationDTOS() []IsvPackRelationDTO {
     return r._isvPackRelationDTOS
 }

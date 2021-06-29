@@ -27,5 +27,5 @@ type XiamiContentSongsCollectGetResponse struct {
     // 系统自动生成
     ResultCode   *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
     // 歌单详情
-    Collect   *CollectDto `json:"collect,omitempty" xml:"collect,omitempty"`
+    Collect   *CollectDTO `json:"collect,omitempty" xml:"collect,omitempty"`
 }

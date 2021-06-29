@@ -19,7 +19,7 @@ type TmallNrtItemMainSynchronizeRequest struct {
     // 叶子类目id
     _cid   int64
     // 类目属性
-    _props   []CategoryPropDto
+    _props   []CategoryPropDTO
     // 经销商编码
     _dealerCode   string
     // 卖场id
@@ -27,7 +27,7 @@ type TmallNrtItemMainSynchronizeRequest struct {
     // 商家编码
     _outerId   string
     // 系统自动生成
-    _outerProps   *MacallineItemExtDto
+    _outerProps   *MacallineItemExtDTO
     // 价格
     _price   string
     // 商品名
@@ -80,14 +80,14 @@ func (r TmallNrtItemMainSynchronizeRequest) GetCid() int64 {
 }
 // Props Setter
 // 类目属性
-func (r *TmallNrtItemMainSynchronizeRequest) SetProps(_props []CategoryPropDto) error {
+func (r *TmallNrtItemMainSynchronizeRequest) SetProps(_props []CategoryPropDTO) error {
     r._props = _props
     r.Set("props", _props)
     return nil
 }
 
 // Props Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetProps() []CategoryPropDto {
+func (r TmallNrtItemMainSynchronizeRequest) GetProps() []CategoryPropDTO {
     return r._props
 }
 // DealerCode Setter
@@ -128,14 +128,14 @@ func (r TmallNrtItemMainSynchronizeRequest) GetOuterId() string {
 }
 // OuterProps Setter
 // 系统自动生成
-func (r *TmallNrtItemMainSynchronizeRequest) SetOuterProps(_outerProps *MacallineItemExtDto) error {
+func (r *TmallNrtItemMainSynchronizeRequest) SetOuterProps(_outerProps *MacallineItemExtDTO) error {
     r._outerProps = _outerProps
     r.Set("outer_props", _outerProps)
     return nil
 }
 
 // OuterProps Getter
-func (r TmallNrtItemMainSynchronizeRequest) GetOuterProps() *MacallineItemExtDto {
+func (r TmallNrtItemMainSynchronizeRequest) GetOuterProps() *MacallineItemExtDTO {
     return r._outerProps
 }
 // Price Setter

@@ -15,7 +15,7 @@ alibaba.asr.dataservice.promotionrule.write
 type AlibabaAsrDataservicePromotionruleWriteRequest struct {
     model.Params
     // 入参对象
-    _poskeyPromotionRuleDto   *PosKeyPromotionRuleDto
+    _poskeyPromotionRuleDto   *PosKeyPromotionRuleDTO
 }
 
 // 初始化AlibabaAsrDataservicePromotionruleWriteRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAsrDataservicePromotionruleWriteRequest) GetApiParams() url.Value
 }
 // PoskeyPromotionRuleDto Setter
 // 入参对象
-func (r *AlibabaAsrDataservicePromotionruleWriteRequest) SetPoskeyPromotionRuleDto(_poskeyPromotionRuleDto *PosKeyPromotionRuleDto) error {
+func (r *AlibabaAsrDataservicePromotionruleWriteRequest) SetPoskeyPromotionRuleDto(_poskeyPromotionRuleDto *PosKeyPromotionRuleDTO) error {
     r._poskeyPromotionRuleDto = _poskeyPromotionRuleDto
     r.Set("poskey_promotion_rule_dto", _poskeyPromotionRuleDto)
     return nil
 }
 
 // PoskeyPromotionRuleDto Getter
-func (r AlibabaAsrDataservicePromotionruleWriteRequest) GetPoskeyPromotionRuleDto() *PosKeyPromotionRuleDto {
+func (r AlibabaAsrDataservicePromotionruleWriteRequest) GetPoskeyPromotionRuleDto() *PosKeyPromotionRuleDTO {
     return r._poskeyPromotionRuleDto
 }

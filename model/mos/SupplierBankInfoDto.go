@@ -1,7 +1,7 @@
 package mos
 
-// SupplierBankInfoDto 
-type SupplierBankInfoDto struct {
+// SupplierBankInfoDTO 
+type SupplierBankInfoDTO struct {
     // 修改时间
     GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // 国家名

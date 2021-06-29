@@ -1,7 +1,7 @@
 package wdk
 
-// DeviceInfoDto 
-type DeviceInfoDto struct {
+// DeviceInfoDTO 
+type DeviceInfoDTO struct {
     // 设备id
     DeviceId   string `json:"device_id,omitempty" xml:"device_id,omitempty"`
     // 设备名称

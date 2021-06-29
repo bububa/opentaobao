@@ -15,7 +15,7 @@ taobao.singletreasure.activity.update
 type TaobaoSingletreasureActivityUpdateRequest struct {
     model.Params
     // 系统入参
-    _activityInfo   *ActivityInfoCreateDto
+    _activityInfo   *ActivityInfoCreateDTO
 }
 
 // 初始化TaobaoSingletreasureActivityUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSingletreasureActivityUpdateRequest) GetApiParams() url.Values {
 }
 // ActivityInfo Setter
 // 系统入参
-func (r *TaobaoSingletreasureActivityUpdateRequest) SetActivityInfo(_activityInfo *ActivityInfoCreateDto) error {
+func (r *TaobaoSingletreasureActivityUpdateRequest) SetActivityInfo(_activityInfo *ActivityInfoCreateDTO) error {
     r._activityInfo = _activityInfo
     r.Set("activity_info", _activityInfo)
     return nil
 }
 
 // ActivityInfo Getter
-func (r TaobaoSingletreasureActivityUpdateRequest) GetActivityInfo() *ActivityInfoCreateDto {
+func (r TaobaoSingletreasureActivityUpdateRequest) GetActivityInfo() *ActivityInfoCreateDTO {
     return r._activityInfo
 }

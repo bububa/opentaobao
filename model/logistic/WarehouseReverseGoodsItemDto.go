@@ -1,7 +1,7 @@
 package logistic
 
-// WarehouseReverseGoodsItemDto 
-type WarehouseReverseGoodsItemDto struct {
+// WarehouseReverseGoodsItemDTO 
+type WarehouseReverseGoodsItemDTO struct {
     // 扩展字段，JSONObject格式
     Extra   string `json:"extra,omitempty" xml:"extra,omitempty"`
     // 商品名称

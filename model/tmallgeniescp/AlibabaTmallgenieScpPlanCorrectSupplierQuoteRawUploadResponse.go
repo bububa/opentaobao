@@ -29,5 +29,5 @@ type AlibabaTmallgenieScpPlanCorrectSupplierQuoteRawUploadResponse struct {
     // 返回码
     ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
     // 对象列表
-    DataList   []CurrentQuotaDto `json:"data_list,omitempty" xml:"data_list>current_quota_dto,omitempty"`
+    DataList   []CurrentQuotaDTO `json:"data_list,omitempty" xml:"data_list>current_quota_dto,omitempty"`
 }

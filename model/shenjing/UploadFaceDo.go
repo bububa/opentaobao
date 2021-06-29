@@ -1,7 +1,7 @@
 package shenjing
 
-// UploadFaceDo 
-type UploadFaceDo struct {
+// UploadFaceDO 
+type UploadFaceDO struct {
     // 中文消息
     Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     // 访客总数

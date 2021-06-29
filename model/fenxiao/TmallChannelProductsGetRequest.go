@@ -23,7 +23,7 @@ tmall.channel.products.get
 type TmallChannelProductsGetRequest struct {
     model.Params
     // top_query_product_d_o
-    _topQueryProductDO   *TopQueryProductDo
+    _topQueryProductDO   *TopQueryProductDO
 }
 
 // 初始化TmallChannelProductsGetRequest对象
@@ -48,13 +48,13 @@ func (r TmallChannelProductsGetRequest) GetApiParams() url.Values {
 }
 // TopQueryProductDO Setter
 // top_query_product_d_o
-func (r *TmallChannelProductsGetRequest) SetTopQueryProductDO(_topQueryProductDO *TopQueryProductDo) error {
+func (r *TmallChannelProductsGetRequest) SetTopQueryProductDO(_topQueryProductDO *TopQueryProductDO) error {
     r._topQueryProductDO = _topQueryProductDO
     r.Set("top_query_product_d_o", _topQueryProductDO)
     return nil
 }
 
 // TopQueryProductDO Getter
-func (r TmallChannelProductsGetRequest) GetTopQueryProductDO() *TopQueryProductDo {
+func (r TmallChannelProductsGetRequest) GetTopQueryProductDO() *TopQueryProductDO {
     return r._topQueryProductDO
 }

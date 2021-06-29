@@ -1,7 +1,7 @@
 package ott
 
-// ItemEntryDo 
-type ItemEntryDo struct {
+// ItemEntryDO 
+type ItemEntryDO struct {
     // 行为扩展
     Extra   string `json:"extra,omitempty" xml:"extra,omitempty"`
     // 跳转行为

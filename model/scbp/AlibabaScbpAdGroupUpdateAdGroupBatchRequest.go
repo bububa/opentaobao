@@ -17,9 +17,9 @@ type AlibabaScbpAdGroupUpdateAdGroupBatchRequest struct {
     // 计划id
     _campaignId   int64
     // 入参
-    _adGroupBatchOperation   *AdGroupBatchOperationDto
+    _adGroupBatchOperation   *AdGroupBatchOperationDTO
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdGroupUpdateAdGroupBatchRequest对象
@@ -56,25 +56,25 @@ func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetCampaignId() int64 {
 }
 // AdGroupBatchOperation Setter
 // 入参
-func (r *AlibabaScbpAdGroupUpdateAdGroupBatchRequest) SetAdGroupBatchOperation(_adGroupBatchOperation *AdGroupBatchOperationDto) error {
+func (r *AlibabaScbpAdGroupUpdateAdGroupBatchRequest) SetAdGroupBatchOperation(_adGroupBatchOperation *AdGroupBatchOperationDTO) error {
     r._adGroupBatchOperation = _adGroupBatchOperation
     r.Set("ad_group_batch_operation", _adGroupBatchOperation)
     return nil
 }
 
 // AdGroupBatchOperation Getter
-func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetAdGroupBatchOperation() *AdGroupBatchOperationDto {
+func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetAdGroupBatchOperation() *AdGroupBatchOperationDTO {
     return r._adGroupBatchOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdGroupUpdateAdGroupBatchRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdGroupUpdateAdGroupBatchRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdGroupUpdateAdGroupBatchRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

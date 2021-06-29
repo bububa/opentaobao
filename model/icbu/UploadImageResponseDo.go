@@ -1,7 +1,7 @@
 package icbu
 
-// UploadImageResponseDo 
-type UploadImageResponseDo struct {
+// UploadImageResponseDO 
+type UploadImageResponseDO struct {
     // 生成的图片名称
     FileName   string `json:"file_name,omitempty" xml:"file_name,omitempty"`
     // 生成的图片全路径URL

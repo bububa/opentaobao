@@ -1,7 +1,7 @@
 package nrt
 
-// NrtItemSyncResultDto 
-type NrtItemSyncResultDto struct {
+// NrtItemSyncResultDTO 
+type NrtItemSyncResultDTO struct {
     // 摊位商品ID
     SItemId   int64 `json:"s_item_id,omitempty" xml:"s_item_id,omitempty"`
     // 主商品ID

@@ -9,5 +9,5 @@ type AlibabaTclsAelophyRefundCsapplyrenderApiResult struct {
     // 回调错误信息
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 数据
-    Model   *RefundCsApplyRenderResponseDto `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *RefundCsApplyRenderResponseDTO `json:"model,omitempty" xml:"model,omitempty"`
 }

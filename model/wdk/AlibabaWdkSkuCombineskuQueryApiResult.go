@@ -9,5 +9,5 @@ type AlibabaWdkSkuCombineskuQueryApiResult struct {
     // 单个商品查询异常信息（异常才有值）
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 商品信息
-    Model   *SkuDo `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *SkuDO `json:"model,omitempty" xml:"model,omitempty"`
 }

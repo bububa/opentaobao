@@ -1,7 +1,7 @@
 package drugtrace
 
-// BillInOutDetailDto 
-type BillInOutDetailDto struct {
+// BillInOutDetailDTO 
+type BillInOutDetailDTO struct {
     // 修改时间
     ModDate   string `json:"mod_date,omitempty" xml:"mod_date,omitempty"`
     // 处理时间

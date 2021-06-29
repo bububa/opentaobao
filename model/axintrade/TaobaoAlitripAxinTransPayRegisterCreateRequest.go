@@ -15,7 +15,7 @@ taobao.alitrip.axin.trans.pay.register.create
 type TaobaoAlitripAxinTransPayRegisterCreateRequest struct {
     model.Params
     // 提交支付服务开通接口入参
-    _createDTO   *AxinPayRegisterCreateDto
+    _createDTO   *AxinPayRegisterCreateDTO
 }
 
 // 初始化TaobaoAlitripAxinTransPayRegisterCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoAlitripAxinTransPayRegisterCreateRequest) GetApiParams() url.Value
 }
 // CreateDTO Setter
 // 提交支付服务开通接口入参
-func (r *TaobaoAlitripAxinTransPayRegisterCreateRequest) SetCreateDTO(_createDTO *AxinPayRegisterCreateDto) error {
+func (r *TaobaoAlitripAxinTransPayRegisterCreateRequest) SetCreateDTO(_createDTO *AxinPayRegisterCreateDTO) error {
     r._createDTO = _createDTO
     r.Set("create_d_t_o", _createDTO)
     return nil
 }
 
 // CreateDTO Getter
-func (r TaobaoAlitripAxinTransPayRegisterCreateRequest) GetCreateDTO() *AxinPayRegisterCreateDto {
+func (r TaobaoAlitripAxinTransPayRegisterCreateRequest) GetCreateDTO() *AxinPayRegisterCreateDTO {
     return r._createDTO
 }

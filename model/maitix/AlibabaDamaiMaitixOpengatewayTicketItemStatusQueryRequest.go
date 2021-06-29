@@ -15,7 +15,7 @@ queryTicketItemStatusByTicketItemId
 type AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest struct {
     model.Params
     // 入参
-    _disTicketItemStatusQueryParam   *DisTicketItemStatusQueryDto
+    _disTicketItemStatusQueryParam   *DisTicketItemStatusQueryDTO
 }
 
 // 初始化AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest) GetApiParams(
 }
 // DisTicketItemStatusQueryParam Setter
 // 入参
-func (r *AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest) SetDisTicketItemStatusQueryParam(_disTicketItemStatusQueryParam *DisTicketItemStatusQueryDto) error {
+func (r *AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest) SetDisTicketItemStatusQueryParam(_disTicketItemStatusQueryParam *DisTicketItemStatusQueryDTO) error {
     r._disTicketItemStatusQueryParam = _disTicketItemStatusQueryParam
     r.Set("dis_ticket_item_status_query_param", _disTicketItemStatusQueryParam)
     return nil
 }
 
 // DisTicketItemStatusQueryParam Getter
-func (r AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest) GetDisTicketItemStatusQueryParam() *DisTicketItemStatusQueryDto {
+func (r AlibabaDamaiMaitixOpengatewayTicketItemStatusQueryRequest) GetDisTicketItemStatusQueryParam() *DisTicketItemStatusQueryDTO {
     return r._disTicketItemStatusQueryParam
 }

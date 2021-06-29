@@ -25,5 +25,5 @@ type TaobaoOpentradeActivityQueryResponse struct {
     // 总条数
     TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
     // 活动信息记录
-    Results   []McSceneActivityDto `json:"results,omitempty" xml:"results>mc_scene_activity_dto,omitempty"`
+    Results   []McSceneActivityDTO `json:"results,omitempty" xml:"results>mc_scene_activity_dto,omitempty"`
 }

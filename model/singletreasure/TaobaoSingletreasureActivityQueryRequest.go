@@ -15,7 +15,7 @@ taobao.singletreasure.activity.query
 type TaobaoSingletreasureActivityQueryRequest struct {
     model.Params
     // 查询对象
-    _query   *PageQueryDto
+    _query   *PageQueryDTO
 }
 
 // 初始化TaobaoSingletreasureActivityQueryRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSingletreasureActivityQueryRequest) GetApiParams() url.Values {
 }
 // Query Setter
 // 查询对象
-func (r *TaobaoSingletreasureActivityQueryRequest) SetQuery(_query *PageQueryDto) error {
+func (r *TaobaoSingletreasureActivityQueryRequest) SetQuery(_query *PageQueryDTO) error {
     r._query = _query
     r.Set("query", _query)
     return nil
 }
 
 // Query Getter
-func (r TaobaoSingletreasureActivityQueryRequest) GetQuery() *PageQueryDto {
+func (r TaobaoSingletreasureActivityQueryRequest) GetQuery() *PageQueryDTO {
     return r._query
 }

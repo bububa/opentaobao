@@ -3,7 +3,7 @@ package category
 // ItemPickPagingResult 
 type ItemPickPagingResult struct {
     // result
-    Results   []CategoryDto `json:"results,omitempty" xml:"results>category_dto,omitempty"`
+    Results   []CategoryDTO `json:"results,omitempty" xml:"results>category_dto,omitempty"`
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

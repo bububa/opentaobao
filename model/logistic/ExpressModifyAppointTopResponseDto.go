@@ -1,7 +1,7 @@
 package logistic
 
-// ExpressModifyAppointTopResponseDto 
-type ExpressModifyAppointTopResponseDto struct {
+// ExpressModifyAppointTopResponseDTO 
+type ExpressModifyAppointTopResponseDTO struct {
     // 是否执行成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 订单号

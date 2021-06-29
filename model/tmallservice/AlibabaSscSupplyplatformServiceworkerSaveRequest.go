@@ -15,7 +15,7 @@ alibaba.ssc.supplyplatform.serviceworker.save
 type AlibabaSscSupplyplatformServiceworkerSaveRequest struct {
     model.Params
     // 工人保存参数
-    _workerSaveForTopReqDto   *WorkerSaveForTopReqDto
+    _workerSaveForTopReqDto   *WorkerSaveForTopReqDTO
 }
 
 // 初始化AlibabaSscSupplyplatformServiceworkerSaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaSscSupplyplatformServiceworkerSaveRequest) GetApiParams() url.Val
 }
 // WorkerSaveForTopReqDto Setter
 // 工人保存参数
-func (r *AlibabaSscSupplyplatformServiceworkerSaveRequest) SetWorkerSaveForTopReqDto(_workerSaveForTopReqDto *WorkerSaveForTopReqDto) error {
+func (r *AlibabaSscSupplyplatformServiceworkerSaveRequest) SetWorkerSaveForTopReqDto(_workerSaveForTopReqDto *WorkerSaveForTopReqDTO) error {
     r._workerSaveForTopReqDto = _workerSaveForTopReqDto
     r.Set("worker_save_for_top_req_dto", _workerSaveForTopReqDto)
     return nil
 }
 
 // WorkerSaveForTopReqDto Getter
-func (r AlibabaSscSupplyplatformServiceworkerSaveRequest) GetWorkerSaveForTopReqDto() *WorkerSaveForTopReqDto {
+func (r AlibabaSscSupplyplatformServiceworkerSaveRequest) GetWorkerSaveForTopReqDto() *WorkerSaveForTopReqDTO {
     return r._workerSaveForTopReqDto
 }

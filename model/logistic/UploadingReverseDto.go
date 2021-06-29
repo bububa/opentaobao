@@ -1,11 +1,11 @@
 package logistic
 
-// UploadingReverseDto 
-type UploadingReverseDto struct {
+// UploadingReverseDTO 
+type UploadingReverseDTO struct {
     // 扩展字段，JSONObject格式
     Extra   string `json:"extra,omitempty" xml:"extra,omitempty"`
     // 商品行列表
-    GoodsItemDTOList   []WarehouseReverseGoodsItemDto `json:"goods_item_d_t_o_list,omitempty" xml:"goods_item_d_t_o_list>warehouse_reverse_goods_item_dto,omitempty"`
+    GoodsItemDTOList   []WarehouseReverseGoodsItemDTO `json:"goods_item_d_t_o_list,omitempty" xml:"goods_item_d_t_o_list>warehouse_reverse_goods_item_dto,omitempty"`
     // 仓库名称
     WarehouseName   string `json:"warehouse_name,omitempty" xml:"warehouse_name,omitempty"`
     // 详细地址

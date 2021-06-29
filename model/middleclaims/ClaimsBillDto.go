@@ -1,7 +1,7 @@
 package middleclaims
 
-// ClaimsBillDto 
-type ClaimsBillDto struct {
+// ClaimsBillDTO 
+type ClaimsBillDTO struct {
     // 服务工单ID
     ServiceWorkOrderId   int64 `json:"service_work_order_id,omitempty" xml:"service_work_order_id,omitempty"`
     // 报案号

@@ -1,7 +1,7 @@
 package flight
 
-// ModifyDetailDto 
-type ModifyDetailDto struct {
+// ModifyDetailDTO 
+type ModifyDetailDTO struct {
     // 申请单号
     ApplyId   string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     // 申请原因

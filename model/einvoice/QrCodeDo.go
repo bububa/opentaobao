@@ -1,7 +1,7 @@
 package einvoice
 
-// QrCodeDo 
-type QrCodeDo struct {
+// QrCodeDO 
+type QrCodeDO struct {
     // 二维码返回数据类型：1=二维码背后的URL，2=二维码图片CDN URL，3=二维码二进制数据流
     QrType   int64 `json:"qr_type,omitempty" xml:"qr_type,omitempty"`
     // 二维码logo

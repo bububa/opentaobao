@@ -15,7 +15,7 @@ alibaba.wdk.ums.outbound
 type AlibabaWdkUmsOutboundRequest struct {
     model.Params
     // 出库-ERP下发单请求dto
-    _erpOutputOrderDto   *ErpOutputOrderDto
+    _erpOutputOrderDto   *ErpOutputOrderDTO
 }
 
 // 初始化AlibabaWdkUmsOutboundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkUmsOutboundRequest) GetApiParams() url.Values {
 }
 // ErpOutputOrderDto Setter
 // 出库-ERP下发单请求dto
-func (r *AlibabaWdkUmsOutboundRequest) SetErpOutputOrderDto(_erpOutputOrderDto *ErpOutputOrderDto) error {
+func (r *AlibabaWdkUmsOutboundRequest) SetErpOutputOrderDto(_erpOutputOrderDto *ErpOutputOrderDTO) error {
     r._erpOutputOrderDto = _erpOutputOrderDto
     r.Set("erp_output_order_dto", _erpOutputOrderDto)
     return nil
 }
 
 // ErpOutputOrderDto Getter
-func (r AlibabaWdkUmsOutboundRequest) GetErpOutputOrderDto() *ErpOutputOrderDto {
+func (r AlibabaWdkUmsOutboundRequest) GetErpOutputOrderDto() *ErpOutputOrderDTO {
     return r._erpOutputOrderDto
 }

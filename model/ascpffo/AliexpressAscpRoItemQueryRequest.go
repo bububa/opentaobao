@@ -15,7 +15,7 @@ AE仓发 单个退供单明细查询
 type AliexpressAscpRoItemQueryRequest struct {
     model.Params
     // dto
-    _returnOrderItemQuery   *ReturnOrderItemQueryDto
+    _returnOrderItemQuery   *ReturnOrderItemQueryDTO
 }
 
 // 初始化AliexpressAscpRoItemQueryRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressAscpRoItemQueryRequest) GetApiParams() url.Values {
 }
 // ReturnOrderItemQuery Setter
 // dto
-func (r *AliexpressAscpRoItemQueryRequest) SetReturnOrderItemQuery(_returnOrderItemQuery *ReturnOrderItemQueryDto) error {
+func (r *AliexpressAscpRoItemQueryRequest) SetReturnOrderItemQuery(_returnOrderItemQuery *ReturnOrderItemQueryDTO) error {
     r._returnOrderItemQuery = _returnOrderItemQuery
     r.Set("return_order_item_query", _returnOrderItemQuery)
     return nil
 }
 
 // ReturnOrderItemQuery Getter
-func (r AliexpressAscpRoItemQueryRequest) GetReturnOrderItemQuery() *ReturnOrderItemQueryDto {
+func (r AliexpressAscpRoItemQueryRequest) GetReturnOrderItemQuery() *ReturnOrderItemQueryDTO {
     return r._returnOrderItemQuery
 }

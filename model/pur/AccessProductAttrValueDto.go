@@ -1,7 +1,7 @@
 package pur
 
-// AccessProductAttrValueDto 
-type AccessProductAttrValueDto struct {
+// AccessProductAttrValueDTO 
+type AccessProductAttrValueDTO struct {
     // 属性Key英文值
     AttrEnName   string `json:"attr_en_name,omitempty" xml:"attr_en_name,omitempty"`
     // 属性Key中文值

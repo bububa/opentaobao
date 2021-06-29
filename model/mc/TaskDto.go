@@ -1,7 +1,7 @@
 package mc
 
-// TaskDto 
-type TaskDto struct {
+// TaskDTO 
+type TaskDTO struct {
     // 投放计划id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 投放计划名称

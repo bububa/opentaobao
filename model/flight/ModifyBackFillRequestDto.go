@@ -1,7 +1,7 @@
 package flight
 
-// ModifyBackFillRequestDto 
-type ModifyBackFillRequestDto struct {
+// ModifyBackFillRequestDTO 
+type ModifyBackFillRequestDTO struct {
     // 申请单号
     ApplyId   string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     // 国际国内标识

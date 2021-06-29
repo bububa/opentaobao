@@ -1,7 +1,7 @@
 package seaking
 
-// TaskDetailReportDto 
-type TaskDetailReportDto struct {
+// TaskDetailReportDTO 
+type TaskDetailReportDTO struct {
     // 子任务编号，不填则表示更新所有子任务
     Idx   int64 `json:"idx,omitempty" xml:"idx,omitempty"`
     // 商品所在平台（ae/lazada)）

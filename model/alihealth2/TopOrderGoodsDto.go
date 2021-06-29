@@ -1,7 +1,7 @@
 package alihealth2
 
-// TopOrderGoodsDto 
-type TopOrderGoodsDto struct {
+// TopOrderGoodsDTO 
+type TopOrderGoodsDTO struct {
     // 商品编码
     GoodsCode   string `json:"goods_code,omitempty" xml:"goods_code,omitempty"`
     // 商品数量

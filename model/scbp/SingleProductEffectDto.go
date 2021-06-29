@@ -1,7 +1,7 @@
 package scbp
 
-// SingleProductEffectDto 
-type SingleProductEffectDto struct {
+// SingleProductEffectDTO 
+type SingleProductEffectDTO struct {
     // 产品title
     Subject   string `json:"subject,omitempty" xml:"subject,omitempty"`
     // 曝光

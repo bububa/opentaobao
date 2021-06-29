@@ -1,9 +1,9 @@
 package flight
 
-// AlitripAgentFlightSellModifyDetailResultDto 
-type AlitripAgentFlightSellModifyDetailResultDto struct {
+// AlitripAgentFlightSellModifyDetailResultDTO 
+type AlitripAgentFlightSellModifyDetailResultDTO struct {
     // 结果对象
-    Data   *ModifyDetailDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *ModifyDetailDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 执行结果
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

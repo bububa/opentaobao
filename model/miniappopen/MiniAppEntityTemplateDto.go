@@ -1,7 +1,7 @@
 package miniappopen
 
-// MiniAppEntityTemplateDto 
-type MiniAppEntityTemplateDto struct {
+// MiniAppEntityTemplateDTO 
+type MiniAppEntityTemplateDTO struct {
     // 小程序描述
     AppDescription   string `json:"app_description,omitempty" xml:"app_description,omitempty"`
     // 小程序名称

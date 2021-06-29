@@ -1,7 +1,7 @@
 package nazca
 
-// ChangeAuthApplyDo 
-type ChangeAuthApplyDo struct {
+// ChangeAuthApplyDO 
+type ChangeAuthApplyDO struct {
     // 是否认证
     Autherized   bool `json:"autherized,omitempty" xml:"autherized,omitempty"`
     // 企业名称

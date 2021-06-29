@@ -26,5 +26,5 @@ type TaobaoOcTradetagsGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    TradeTags   []TradeTagRelationDo `json:"trade_tags,omitempty" xml:"trade_tags>trade_tag_relation_do,omitempty"`
+    TradeTags   []TradeTagRelationDO `json:"trade_tags,omitempty" xml:"trade_tags>trade_tag_relation_do,omitempty"`
 }

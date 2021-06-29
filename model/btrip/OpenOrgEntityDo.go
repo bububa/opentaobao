@@ -1,7 +1,7 @@
 package btrip
 
-// OpenOrgEntityDo 
-type OpenOrgEntityDo struct {
+// OpenOrgEntityDO 
+type OpenOrgEntityDO struct {
     // 用户/部门/角色名称
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // 用户/部门/角色id

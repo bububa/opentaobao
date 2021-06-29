@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TopOfflineReducePrepayDto 
-type TopOfflineReducePrepayDto struct {
+// TopOfflineReducePrepayDTO 
+type TopOfflineReducePrepayDTO struct {
     // 资金流水类型：1.纸质承兑； 2.电子承兑；3.现金；4.优惠返点；5.奖励
     FlowType   int64 `json:"flow_type,omitempty" xml:"flow_type,omitempty"`
     // 线下流水类型 1票据作废 2线下使用

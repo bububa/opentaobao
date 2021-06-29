@@ -1,7 +1,7 @@
 package icbuseller
 
-// AlibabaSellerCouponAuthVerifyResultDto 
-type AlibabaSellerCouponAuthVerifyResultDto struct {
+// AlibabaSellerCouponAuthVerifyResultDTO 
+type AlibabaSellerCouponAuthVerifyResultDTO struct {
     // 是否正常返回
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 是否验证通过

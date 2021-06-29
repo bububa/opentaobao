@@ -1,7 +1,7 @@
 package tmallsc
 
-// VerifyRequestDto 
-type VerifyRequestDto struct {
+// VerifyRequestDTO 
+type VerifyRequestDTO struct {
     // 主订单id
     ParentOrderId   int64 `json:"parent_order_id,omitempty" xml:"parent_order_id,omitempty"`
     // 核销来源

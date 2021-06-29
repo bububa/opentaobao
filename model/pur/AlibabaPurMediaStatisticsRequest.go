@@ -15,7 +15,7 @@ alibaba.pur.media.statistics
 type AlibabaPurMediaStatisticsRequest struct {
     model.Params
     // 新媒体统计对象
-    _mediaStatisticsDTO   []MediaStatisticsDto
+    _mediaStatisticsDTO   []MediaStatisticsDTO
 }
 
 // 初始化AlibabaPurMediaStatisticsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPurMediaStatisticsRequest) GetApiParams() url.Values {
 }
 // MediaStatisticsDTO Setter
 // 新媒体统计对象
-func (r *AlibabaPurMediaStatisticsRequest) SetMediaStatisticsDTO(_mediaStatisticsDTO []MediaStatisticsDto) error {
+func (r *AlibabaPurMediaStatisticsRequest) SetMediaStatisticsDTO(_mediaStatisticsDTO []MediaStatisticsDTO) error {
     r._mediaStatisticsDTO = _mediaStatisticsDTO
     r.Set("media_statistics_d_t_o", _mediaStatisticsDTO)
     return nil
 }
 
 // MediaStatisticsDTO Getter
-func (r AlibabaPurMediaStatisticsRequest) GetMediaStatisticsDTO() []MediaStatisticsDto {
+func (r AlibabaPurMediaStatisticsRequest) GetMediaStatisticsDTO() []MediaStatisticsDTO {
     return r._mediaStatisticsDTO
 }

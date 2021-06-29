@@ -1,7 +1,7 @@
 package tmallhk
 
-// ClearanceTaxDo 
-type ClearanceTaxDo struct {
+// ClearanceTaxDO 
+type ClearanceTaxDO struct {
     // 关税，主&子
     CustomDutyFee   int64 `json:"custom_duty_fee,omitempty" xml:"custom_duty_fee,omitempty"`
     // 优惠，主&子

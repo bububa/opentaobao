@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.base.label.submit
 type AlibabaAlihouseNewhomeBaseLabelSubmitRequest struct {
     model.Params
     // 标签列表
-    _labels   []BaseLabelDto
+    _labels   []BaseLabelDTO
 }
 
 // 初始化AlibabaAlihouseNewhomeBaseLabelSubmitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeBaseLabelSubmitRequest) GetApiParams() url.Values 
 }
 // Labels Setter
 // 标签列表
-func (r *AlibabaAlihouseNewhomeBaseLabelSubmitRequest) SetLabels(_labels []BaseLabelDto) error {
+func (r *AlibabaAlihouseNewhomeBaseLabelSubmitRequest) SetLabels(_labels []BaseLabelDTO) error {
     r._labels = _labels
     r.Set("labels", _labels)
     return nil
 }
 
 // Labels Getter
-func (r AlibabaAlihouseNewhomeBaseLabelSubmitRequest) GetLabels() []BaseLabelDto {
+func (r AlibabaAlihouseNewhomeBaseLabelSubmitRequest) GetLabels() []BaseLabelDTO {
     return r._labels
 }

@@ -7,11 +7,11 @@ type WaybillCloudPrintUpdateRequest struct {
     // 物流服务内容<a href="http://open.taobao.com/doc2/detail.htm?spm=a219a.7629140.0.0.eK8aZm&treeId=17&articleId=26765&docType=2">链接</a>
     LogisticsServices   string `json:"logistics_services,omitempty" xml:"logistics_services,omitempty"`
     // 包裹信息
-    PackageInfo   *PackageInfoDto `json:"package_info,omitempty" xml:"package_info,omitempty"`
+    PackageInfo   *PackageInfoDTO `json:"package_info,omitempty" xml:"package_info,omitempty"`
     // 收件信息
-    Recipient   *UserInfoDto `json:"recipient,omitempty" xml:"recipient,omitempty"`
+    Recipient   *UserInfoDTO `json:"recipient,omitempty" xml:"recipient,omitempty"`
     // 发件信息
-    Sender   *UserInfoDto `json:"sender,omitempty" xml:"sender,omitempty"`
+    Sender   *UserInfoDTO `json:"sender,omitempty" xml:"sender,omitempty"`
     // 模板URL
     TemplateUrl   string `json:"template_url,omitempty" xml:"template_url,omitempty"`
     // 面单号

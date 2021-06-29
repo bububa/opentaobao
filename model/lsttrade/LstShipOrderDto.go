@@ -1,7 +1,7 @@
 package lsttrade
 
-// LstShipOrderDto 
-type LstShipOrderDto struct {
+// LstShipOrderDTO 
+type LstShipOrderDTO struct {
     // 主发货单号
     MainShipOrderId   string `json:"main_ship_order_id,omitempty" xml:"main_ship_order_id,omitempty"`
     // 交易订单号

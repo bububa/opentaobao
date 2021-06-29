@@ -67,9 +67,9 @@ type OpenApiZzdTrainOrderRs struct {
     // 商旅行程单号
     ItineraryNo   string `json:"itinerary_no,omitempty" xml:"itinerary_no,omitempty"`
     // 成本中心信息
-    CostCenterList   []CostCenterDo `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
+    CostCenterList   []CostCenterDO `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
     // 用户信息
-    ClientInfoDos   []ClientInfoDo `json:"client_info_dos,omitempty" xml:"client_info_dos>client_info_do,omitempty"`
+    ClientInfoDos   []ClientInfoDO `json:"client_info_dos,omitempty" xml:"client_info_dos>client_info_do,omitempty"`
     // 改签费（分），改签补的差价
     ChangeFee   int64 `json:"change_fee,omitempty" xml:"change_fee,omitempty"`
     // tmc收取的改签服务费（分）
@@ -79,7 +79,7 @@ type OpenApiZzdTrainOrderRs struct {
     // 乘客人数
     PassengerCount   int64 `json:"passenger_count,omitempty" xml:"passenger_count,omitempty"`
     // 票信息，老火车票的票信息为空
-    BtripTrainOpenTicketDoList   []BtripTrainOpenTicketDo `json:"btrip_train_open_ticket_do_list,omitempty" xml:"btrip_train_open_ticket_do_list>btrip_train_open_ticket_do,omitempty"`
+    BtripTrainOpenTicketDoList   []BtripTrainOpenTicketDO `json:"btrip_train_open_ticket_do_list,omitempty" xml:"btrip_train_open_ticket_do_list>btrip_train_open_ticket_do,omitempty"`
     // 12306收取的改签手续费（分）
     ChangeChargeFee   int64 `json:"change_charge_fee,omitempty" xml:"change_charge_fee,omitempty"`
     // 12306收取的退票手续费（分）

@@ -1,7 +1,7 @@
 package mirage
 
-// PermissionRequestDto 
-type PermissionRequestDto struct {
+// PermissionRequestDTO 
+type PermissionRequestDTO struct {
     // 播放场景
     DisplayScene   string `json:"display_scene,omitempty" xml:"display_scene,omitempty"`
     // pid

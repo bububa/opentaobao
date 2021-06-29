@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMjMoscarnivalReceiveencryptResultDo 
-type AlibabaMjMoscarnivalReceiveencryptResultDo struct {
+// AlibabaMjMoscarnivalReceiveencryptResultDO 
+type AlibabaMjMoscarnivalReceiveencryptResultDO struct {
     // 调用链id
     TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
     // 总行数

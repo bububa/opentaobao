@@ -1,7 +1,7 @@
 package koubeimall
 
-// StoreAlbumDto 
-type StoreAlbumDto struct {
+// StoreAlbumDTO 
+type StoreAlbumDTO struct {
     // 相册名称
     AlbumName   string `json:"album_name,omitempty" xml:"album_name,omitempty"`
     // 描述信息

@@ -1,7 +1,7 @@
 package fenxiao
 
-// TmallSupplychainChannelProductDownshelfResultDto 
-type TmallSupplychainChannelProductDownshelfResultDto struct {
+// TmallSupplychainChannelProductDownshelfResultDTO 
+type TmallSupplychainChannelProductDownshelfResultDTO struct {
     // 执行结果
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 下架结果

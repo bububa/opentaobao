@@ -1,7 +1,7 @@
 package opentrade
 
-// ItemResultDto 
-type ItemResultDto struct {
+// ItemResultDTO 
+type ItemResultDTO struct {
     // 失败商品id
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 失败原因

@@ -1,7 +1,7 @@
 package nrt
 
-// CouponTemplateDto 
-type CouponTemplateDto struct {
+// CouponTemplateDTO 
+type CouponTemplateDTO struct {
     // 渠道
     Channel   string `json:"channel,omitempty" xml:"channel,omitempty"`
     // 券名称

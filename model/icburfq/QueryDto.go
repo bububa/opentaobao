@@ -1,7 +1,7 @@
 package icburfq
 
-// QueryDto 
-type QueryDto struct {
+// QueryDTO 
+type QueryDTO struct {
     // 推荐数量
     Count   int64 `json:"count,omitempty" xml:"count,omitempty"`
     // 当前页面数

@@ -1,7 +1,7 @@
 package tmallcarenter
 
-// VersionVehicleInfoOriginalDto 
-type VersionVehicleInfoOriginalDto struct {
+// VersionVehicleInfoOriginalDTO 
+type VersionVehicleInfoOriginalDTO struct {
     // 换代
     Replacement   string `json:"replacement,omitempty" xml:"replacement,omitempty"`
     // 停产年份

@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// ChannelQuotaDto 
-type ChannelQuotaDto struct {
+// ChannelQuotaDTO 
+type ChannelQuotaDTO struct {
     // 关键日期值
     KeyFigureDate   string `json:"key_figure_date,omitempty" xml:"key_figure_date,omitempty"`
     // 比例（精确到2位小数：0.34）

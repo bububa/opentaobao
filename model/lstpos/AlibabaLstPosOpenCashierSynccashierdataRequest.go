@@ -15,7 +15,7 @@ alibaba.lst.pos.open.cashier.synccashierdata
 type AlibabaLstPosOpenCashierSynccashierdataRequest struct {
     model.Params
     // 订单对象列表
-    _cashierFlowDTOList   []CashierFlowDto
+    _cashierFlowDTOList   []CashierFlowDTO
     // 门店对应的主账号id
     _userId   int64
 }
@@ -42,14 +42,14 @@ func (r AlibabaLstPosOpenCashierSynccashierdataRequest) GetApiParams() url.Value
 }
 // CashierFlowDTOList Setter
 // 订单对象列表
-func (r *AlibabaLstPosOpenCashierSynccashierdataRequest) SetCashierFlowDTOList(_cashierFlowDTOList []CashierFlowDto) error {
+func (r *AlibabaLstPosOpenCashierSynccashierdataRequest) SetCashierFlowDTOList(_cashierFlowDTOList []CashierFlowDTO) error {
     r._cashierFlowDTOList = _cashierFlowDTOList
     r.Set("cashier_flow_d_t_o_list", _cashierFlowDTOList)
     return nil
 }
 
 // CashierFlowDTOList Getter
-func (r AlibabaLstPosOpenCashierSynccashierdataRequest) GetCashierFlowDTOList() []CashierFlowDto {
+func (r AlibabaLstPosOpenCashierSynccashierdataRequest) GetCashierFlowDTOList() []CashierFlowDTO {
     return r._cashierFlowDTOList
 }
 // UserId Setter

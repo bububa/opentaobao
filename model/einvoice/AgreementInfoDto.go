@@ -1,7 +1,7 @@
 package einvoice
 
-// AgreementInfoDto 
-type AgreementInfoDto struct {
+// AgreementInfoDTO 
+type AgreementInfoDTO struct {
     // 协议类型
     AgreementType   string `json:"agreement_type,omitempty" xml:"agreement_type,omitempty"`
     // 资产符号

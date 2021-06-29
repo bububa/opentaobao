@@ -1,7 +1,7 @@
 package wdk
 
-// ErpBillCallbackDto 
-type ErpBillCallbackDto struct {
+// ErpBillCallbackDTO 
+type ErpBillCallbackDTO struct {
     // s失败原因
     Reason   string `json:"reason,omitempty" xml:"reason,omitempty"`
     // 0：失败，1：成功

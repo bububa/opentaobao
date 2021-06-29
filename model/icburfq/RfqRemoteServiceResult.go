@@ -5,7 +5,7 @@ type RfqRemoteServiceResult struct {
     // 错误信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 返回结果信息
-    Result   *RfqQuotationRemoteDto `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *RfqQuotationRemoteDTO `json:"result,omitempty" xml:"result,omitempty"`
     // 错误类型
     ErrType   string `json:"err_type,omitempty" xml:"err_type,omitempty"`
     // 是否成功

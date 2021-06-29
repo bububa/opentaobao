@@ -23,7 +23,7 @@ type TaobaoLogisticsConsignTcConfirmRequest struct {
     // 扩展字段 K:V;
     _extendFields   string
     // 发货的包裹
-    _goodsList   []ConfirmConsignGoodsDto
+    _goodsList   []ConfirmConsignGoodsDTO
     // 已发货的外部订单号
     _outTradeNo   string
     // 卖家id
@@ -90,14 +90,14 @@ func (r TaobaoLogisticsConsignTcConfirmRequest) GetExtendFields() string {
 }
 // GoodsList Setter
 // 发货的包裹
-func (r *TaobaoLogisticsConsignTcConfirmRequest) SetGoodsList(_goodsList []ConfirmConsignGoodsDto) error {
+func (r *TaobaoLogisticsConsignTcConfirmRequest) SetGoodsList(_goodsList []ConfirmConsignGoodsDTO) error {
     r._goodsList = _goodsList
     r.Set("goods_list", _goodsList)
     return nil
 }
 
 // GoodsList Getter
-func (r TaobaoLogisticsConsignTcConfirmRequest) GetGoodsList() []ConfirmConsignGoodsDto {
+func (r TaobaoLogisticsConsignTcConfirmRequest) GetGoodsList() []ConfirmConsignGoodsDTO {
     return r._goodsList
 }
 // OutTradeNo Setter

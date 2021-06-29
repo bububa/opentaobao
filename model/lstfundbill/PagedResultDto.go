@@ -1,7 +1,7 @@
 package lstfundbill
 
-// PagedResultDto 
-type PagedResultDto struct {
+// PagedResultDTO 
+type PagedResultDTO struct {
     // 总记录数，请求参数page大于实际值时，total返回0
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 每页记录数
@@ -15,5 +15,5 @@ type PagedResultDto struct {
     // 页码
     Page   int64 `json:"page,omitempty" xml:"page,omitempty"`
     // 子订单包装类
-    ContentList   []LstFundBillOrderDto `json:"content_list,omitempty" xml:"content_list>lst_fund_bill_order_dto,omitempty"`
+    ContentList   []LstFundBillOrderDTO `json:"content_list,omitempty" xml:"content_list>lst_fund_bill_order_dto,omitempty"`
 }

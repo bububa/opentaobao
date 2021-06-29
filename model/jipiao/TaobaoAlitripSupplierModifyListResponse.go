@@ -23,5 +23,5 @@ type TaobaoAlitripSupplierModifyListResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 改签信息列表
-    OrderList   []BbSyncOrderDto `json:"order_list,omitempty" xml:"order_list>bb_sync_order_dto,omitempty"`
+    OrderList   []BbSyncOrderDTO `json:"order_list,omitempty" xml:"order_list>bb_sync_order_dto,omitempty"`
 }

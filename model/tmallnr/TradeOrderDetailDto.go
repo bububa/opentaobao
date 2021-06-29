@@ -1,9 +1,9 @@
 package tmallnr
 
-// TradeOrderDetailDto 
-type TradeOrderDetailDto struct {
+// TradeOrderDetailDTO 
+type TradeOrderDetailDTO struct {
     // 子订单列表
-    OrderDTOs   []NrOrderDto `json:"order_d_t_os,omitempty" xml:"order_d_t_os>nr_order_dto,omitempty"`
+    OrderDTOs   []NrOrderDTO `json:"order_d_t_os,omitempty" xml:"order_d_t_os>nr_order_dto,omitempty"`
     // 门店编码
     StoreCode   string `json:"store_code,omitempty" xml:"store_code,omitempty"`
     // 预约结束时间

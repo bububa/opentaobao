@@ -1,7 +1,7 @@
 package omniorder
 
-// OmniItemCategoryPropDto 
-type OmniItemCategoryPropDto struct {
+// OmniItemCategoryPropDTO 
+type OmniItemCategoryPropDTO struct {
     // 销售属性名称
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // pid

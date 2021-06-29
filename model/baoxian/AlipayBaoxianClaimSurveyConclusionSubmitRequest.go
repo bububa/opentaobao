@@ -15,7 +15,7 @@ alipay.baoxian.claim.survey.conclusion.submit
 type AlipayBaoxianClaimSurveyConclusionSubmitRequest struct {
     model.Params
     // 勘察结论
-    _facilitatorSurveyConclusions   []InsFacilitatorSurveyConclusionDto
+    _facilitatorSurveyConclusions   []InsFacilitatorSurveyConclusionDTO
 }
 
 // 初始化AlipayBaoxianClaimSurveyConclusionSubmitRequest对象
@@ -40,13 +40,13 @@ func (r AlipayBaoxianClaimSurveyConclusionSubmitRequest) GetApiParams() url.Valu
 }
 // FacilitatorSurveyConclusions Setter
 // 勘察结论
-func (r *AlipayBaoxianClaimSurveyConclusionSubmitRequest) SetFacilitatorSurveyConclusions(_facilitatorSurveyConclusions []InsFacilitatorSurveyConclusionDto) error {
+func (r *AlipayBaoxianClaimSurveyConclusionSubmitRequest) SetFacilitatorSurveyConclusions(_facilitatorSurveyConclusions []InsFacilitatorSurveyConclusionDTO) error {
     r._facilitatorSurveyConclusions = _facilitatorSurveyConclusions
     r.Set("facilitator_survey_conclusions", _facilitatorSurveyConclusions)
     return nil
 }
 
 // FacilitatorSurveyConclusions Getter
-func (r AlipayBaoxianClaimSurveyConclusionSubmitRequest) GetFacilitatorSurveyConclusions() []InsFacilitatorSurveyConclusionDto {
+func (r AlipayBaoxianClaimSurveyConclusionSubmitRequest) GetFacilitatorSurveyConclusions() []InsFacilitatorSurveyConclusionDTO {
     return r._facilitatorSurveyConclusions
 }

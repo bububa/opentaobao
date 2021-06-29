@@ -3,8 +3,8 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-// HotelDetailInfoDto 
-type HotelDetailInfoDto struct {
+// HotelDetailInfoDTO 
+type HotelDetailInfoDTO struct {
     // 房间数
     Rooms   int64 `json:"rooms,omitempty" xml:"rooms,omitempty"`
     // 旗舰店与标准酒店的绑定ID
@@ -80,9 +80,9 @@ type HotelDetailInfoDto struct {
     // 国家英文名
     CountryEn   string `json:"country_en,omitempty" xml:"country_en,omitempty"`
     // 酒店图片信息
-    HotelPictures   []HotelPictureDto `json:"hotel_pictures,omitempty" xml:"hotel_pictures>hotel_picture_dto,omitempty"`
+    HotelPictures   []HotelPictureDTO `json:"hotel_pictures,omitempty" xml:"hotel_pictures>hotel_picture_dto,omitempty"`
     // 房型详情
-    RoomDetails   []RoomDetailDto `json:"room_details,omitempty" xml:"room_details>room_detail_dto,omitempty"`
+    RoomDetails   []RoomDetailDTO `json:"room_details,omitempty" xml:"room_details>room_detail_dto,omitempty"`
     // 酒店政策
     HotelPolicys   []string `json:"hotel_policys,omitempty" xml:"hotel_policys>string,omitempty"`
 }

@@ -1,7 +1,7 @@
 package xiamicontent
 
-// AudioDto 
-type AudioDto struct {
+// AudioDTO 
+type AudioDTO struct {
     // 音频ID
     AudioId   int64 `json:"audio_id,omitempty" xml:"audio_id,omitempty"`
     // 音频时长，同一歌曲时长一致（单位：毫秒）

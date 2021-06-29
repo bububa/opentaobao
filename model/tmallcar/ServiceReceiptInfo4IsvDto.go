@@ -1,7 +1,7 @@
 package tmallcar
 
-// ServiceReceiptInfo4IsvDto 
-type ServiceReceiptInfo4IsvDto struct {
+// ServiceReceiptInfo4IsvDTO 
+type ServiceReceiptInfo4IsvDTO struct {
     // 具体地址
     Address   string `json:"address,omitempty" xml:"address,omitempty"`
     // 市

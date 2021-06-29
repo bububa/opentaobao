@@ -1,7 +1,7 @@
 package aliqin
 
-// FcPartnerSmsDetailDto 
-type FcPartnerSmsDetailDto struct {
+// FcPartnerSmsDetailDTO 
+type FcPartnerSmsDetailDTO struct {
     // 公共回传参数
     Extend   string `json:"extend,omitempty" xml:"extend,omitempty"`
     // 短信接收号码

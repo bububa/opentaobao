@@ -15,7 +15,7 @@ AE履约销退单查询接口
 type AliexpressAscpFroQueryRequest struct {
     model.Params
     // dto
-    _fulfillmentReverseOrderQuery   *FulfillmentReverseOrderQueryDto
+    _fulfillmentReverseOrderQuery   *FulfillmentReverseOrderQueryDTO
 }
 
 // 初始化AliexpressAscpFroQueryRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressAscpFroQueryRequest) GetApiParams() url.Values {
 }
 // FulfillmentReverseOrderQuery Setter
 // dto
-func (r *AliexpressAscpFroQueryRequest) SetFulfillmentReverseOrderQuery(_fulfillmentReverseOrderQuery *FulfillmentReverseOrderQueryDto) error {
+func (r *AliexpressAscpFroQueryRequest) SetFulfillmentReverseOrderQuery(_fulfillmentReverseOrderQuery *FulfillmentReverseOrderQueryDTO) error {
     r._fulfillmentReverseOrderQuery = _fulfillmentReverseOrderQuery
     r.Set("fulfillment_reverse_order_query", _fulfillmentReverseOrderQuery)
     return nil
 }
 
 // FulfillmentReverseOrderQuery Getter
-func (r AliexpressAscpFroQueryRequest) GetFulfillmentReverseOrderQuery() *FulfillmentReverseOrderQueryDto {
+func (r AliexpressAscpFroQueryRequest) GetFulfillmentReverseOrderQuery() *FulfillmentReverseOrderQueryDTO {
     return r._fulfillmentReverseOrderQuery
 }

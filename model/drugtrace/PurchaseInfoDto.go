@@ -1,7 +1,7 @@
 package drugtrace
 
-// PurchaseInfoDto 
-type PurchaseInfoDto struct {
+// PurchaseInfoDTO 
+type PurchaseInfoDTO struct {
     // 采购日期yyyy-MM-dd
     PurchaseDate   string `json:"purchase_date,omitempty" xml:"purchase_date,omitempty"`
     // 供应商名称

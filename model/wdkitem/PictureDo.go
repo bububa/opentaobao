@@ -1,7 +1,7 @@
 package wdkitem
 
-// PictureDo 
-type PictureDo struct {
+// PictureDO 
+type PictureDO struct {
     // 图片ID
     PictureId   int64 `json:"picture_id,omitempty" xml:"picture_id,omitempty"`
     // 图片分类ID

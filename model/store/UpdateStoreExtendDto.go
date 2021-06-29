@@ -1,7 +1,7 @@
 package store
 
-// UpdateStoreExtendDto 
-type UpdateStoreExtendDto struct {
+// UpdateStoreExtendDTO 
+type UpdateStoreExtendDTO struct {
     // 需要添加的TAGS
     AddTags   []int64 `json:"add_tags,omitempty" xml:"add_tags>int64,omitempty"`
     // 需要修改的attribute对应的key

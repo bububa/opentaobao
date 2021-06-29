@@ -1,7 +1,7 @@
 package fpm
 
-// FileUploadReponseDto 
-type FileUploadReponseDto struct {
+// FileUploadReponseDTO 
+type FileUploadReponseDTO struct {
     // outerSystemEncryptStr
     OuterSystemEncryptStr   string `json:"outer_system_encrypt_str,omitempty" xml:"outer_system_encrypt_str,omitempty"`
     // outerSystemSignStr

@@ -23,5 +23,5 @@ type TmallChannelTradeOrderStopResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    Result   *TmallChannelTradeOrderStopResultDto `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *TmallChannelTradeOrderStopResultDTO `json:"result,omitempty" xml:"result,omitempty"`
 }

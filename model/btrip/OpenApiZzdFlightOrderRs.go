@@ -71,9 +71,9 @@ type OpenApiZzdFlightOrderRs struct {
     // 行程id
     ItineraryNo   string `json:"itinerary_no,omitempty" xml:"itinerary_no,omitempty"`
     // 成本中心信息
-    CostCenterList   []CostCenterDo `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
+    CostCenterList   []CostCenterDO `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
     // 乘机人列表信息
-    ClientInfodos   []ClientInfoDo `json:"client_infodos,omitempty" xml:"client_infodos>client_info_do,omitempty"`
+    ClientInfodos   []ClientInfoDO `json:"client_infodos,omitempty" xml:"client_infodos>client_info_do,omitempty"`
     // 改签费用（分）
     ChangeFee   int64 `json:"change_fee,omitempty" xml:"change_fee,omitempty"`
     // tmc收取的改签服务费（分）
@@ -85,7 +85,7 @@ type OpenApiZzdFlightOrderRs struct {
     // 乘机人数量
     PassengerCount   int64 `json:"passenger_count,omitempty" xml:"passenger_count,omitempty"`
     // 票据信息
-    Ticketdos   []OpenTicketDo `json:"ticketdos,omitempty" xml:"ticketdos>open_ticket_do,omitempty"`
+    Ticketdos   []OpenTicketDO `json:"ticketdos,omitempty" xml:"ticketdos>open_ticket_do,omitempty"`
     // 航司收取的改签手续费
     ChangeChargeFee   int64 `json:"change_charge_fee,omitempty" xml:"change_charge_fee,omitempty"`
     // 航司收取的退票手续费

@@ -1,7 +1,7 @@
 package drugtrace
 
-// BillInOutDto 
-type BillInOutDto struct {
+// BillInOutDTO 
+type BillInOutDTO struct {
     // 收货单位名称
     ToUserName   string `json:"to_user_name,omitempty" xml:"to_user_name,omitempty"`
     // 发货单位名称

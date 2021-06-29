@@ -1,13 +1,13 @@
 package feedflow
 
-// CampaignDto 
-type CampaignDto struct {
+// CampaignDTO 
+type CampaignDTO struct {
     // 计划名称
     CampaignName   string `json:"campaign_name,omitempty" xml:"campaign_name,omitempty"`
     // 打折范围
     LaunchPeriodList   []LaunchPeriodDTO `json:"launch_period_list,omitempty" xml:"launch_period_list>launch_period_dto,omitempty"`
     // 投放时间
-    LaunchTime   *LaunchTimeDto `json:"launch_time,omitempty" xml:"launch_time,omitempty"`
+    LaunchTime   *LaunchTimeDTO `json:"launch_time,omitempty" xml:"launch_time,omitempty"`
     // 推广地域
     LaunchAreaList   []LaunchAreaDTO `json:"launch_area_list,omitempty" xml:"launch_area_list>launch_area_dto,omitempty"`
     // 每日预算，单位为分

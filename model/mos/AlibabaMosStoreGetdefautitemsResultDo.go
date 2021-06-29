@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMosStoreGetdefautitemsResultDo 
-type AlibabaMosStoreGetdefautitemsResultDo struct {
+// AlibabaMosStoreGetdefautitemsResultDO 
+type AlibabaMosStoreGetdefautitemsResultDO struct {
     // data
     Data   *MjStoreItemsTopVo `json:"data,omitempty" xml:"data,omitempty"`
     // errCode

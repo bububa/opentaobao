@@ -1,7 +1,7 @@
 package drugtrace
 
-// DrugTableDto 
-type DrugTableDto struct {
+// DrugTableDTO 
+type DrugTableDTO struct {
     // 药品详细类型
     PhysicDetailType   int64 `json:"physic_detail_type,omitempty" xml:"physic_detail_type,omitempty"`
     // 商品名称

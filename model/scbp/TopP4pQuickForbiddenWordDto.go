@@ -1,7 +1,7 @@
 package scbp
 
-// TopP4pQuickForbiddenWordDto 
-type TopP4pQuickForbiddenWordDto struct {
+// TopP4pQuickForbiddenWordDTO 
+type TopP4pQuickForbiddenWordDTO struct {
     // 屏蔽词
     ForbiddenWord   []string `json:"forbidden_word,omitempty" xml:"forbidden_word>string,omitempty"`
     // 1代表新增屏蔽词，2代表删除屏蔽词

@@ -1,7 +1,7 @@
 package cainiaoecc
 
-// DelayExceptionDetailDto 
-type DelayExceptionDetailDto struct {
+// DelayExceptionDetailDTO 
+type DelayExceptionDetailDTO struct {
     // 商家Id
     SellerId   int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
     // 运单号

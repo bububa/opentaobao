@@ -3,8 +3,8 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-// DistributionOrderOpenBizDto 
-type DistributionOrderOpenBizDto struct {
+// DistributionOrderOpenBizDTO 
+type DistributionOrderOpenBizDTO struct {
     // 唯一标识的id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 名字

@@ -1,7 +1,7 @@
 package smartstore
 
-// DeviceBizDataDo 
-type DeviceBizDataDo struct {
+// DeviceBizDataDO 
+type DeviceBizDataDO struct {
     // "ACTION枚举值： ITEM_CLICK（商品点击时必须设置ITEM_ID） ITEM_SENSOR（商品感应时必须设置ITEM_ID，如RFID、蓝牙、检测仪） RECEIVE_COUPONS（领取优惠券时必须设置COUPON_ID） BUY_CLICK（点击购买） SHARE_CLICK（点击分享）"
     Action   string `json:"action,omitempty" xml:"action,omitempty"`
     // 字段废弃，考虑兼容，等同于op_time，两个必须传一个

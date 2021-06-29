@@ -1,7 +1,7 @@
 package wdk
 
-// PaymentItemDo 
-type PaymentItemDo struct {
+// PaymentItemDO 
+type PaymentItemDO struct {
     // 商品sku码
     SkuCode   string `json:"sku_code,omitempty" xml:"sku_code,omitempty"`
     // 商品补差金额，单位为分

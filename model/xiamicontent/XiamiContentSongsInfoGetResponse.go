@@ -25,5 +25,5 @@ type XiamiContentSongsInfoGetResponse struct {
     // 系统自动生成
     ResultCode   *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
     // 歌曲信息
-    Songs   []SongInfoDto `json:"songs,omitempty" xml:"songs>song_info_dto,omitempty"`
+    Songs   []SongInfoDTO `json:"songs,omitempty" xml:"songs>song_info_dto,omitempty"`
 }

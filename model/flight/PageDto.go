@@ -1,7 +1,7 @@
 package flight
 
-// PageDto 
-type PageDto struct {
+// PageDTO 
+type PageDTO struct {
     // 123
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 结果集

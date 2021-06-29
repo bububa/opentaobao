@@ -1,9 +1,9 @@
 package nrt
 
-// TmallNrtItemGetResultDo 
-type TmallNrtItemGetResultDo struct {
+// TmallNrtItemGetResultDO 
+type TmallNrtItemGetResultDO struct {
     // 是否成功
-    Data   *TopHomeItemDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *TopHomeItemDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 错误码
     ErrCode   string `json:"err_code,omitempty" xml:"err_code,omitempty"`
     // 错误信息

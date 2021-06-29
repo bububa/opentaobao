@@ -17,9 +17,9 @@ type AlibabaScbpAdGroupCreateForbiddenProductRequest struct {
     // 计划id
     _campaignId   int64
     // 查询条件
-    _forbiddenProductBatchOperation   *ForbiddenProductBatchOperationDto
+    _forbiddenProductBatchOperation   *ForbiddenProductBatchOperationDTO
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdGroupCreateForbiddenProductRequest对象
@@ -56,25 +56,25 @@ func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetCampaignId() int64 {
 }
 // ForbiddenProductBatchOperation Setter
 // 查询条件
-func (r *AlibabaScbpAdGroupCreateForbiddenProductRequest) SetForbiddenProductBatchOperation(_forbiddenProductBatchOperation *ForbiddenProductBatchOperationDto) error {
+func (r *AlibabaScbpAdGroupCreateForbiddenProductRequest) SetForbiddenProductBatchOperation(_forbiddenProductBatchOperation *ForbiddenProductBatchOperationDTO) error {
     r._forbiddenProductBatchOperation = _forbiddenProductBatchOperation
     r.Set("forbidden_product_batch_operation", _forbiddenProductBatchOperation)
     return nil
 }
 
 // ForbiddenProductBatchOperation Getter
-func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetForbiddenProductBatchOperation() *ForbiddenProductBatchOperationDto {
+func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetForbiddenProductBatchOperation() *ForbiddenProductBatchOperationDTO {
     return r._forbiddenProductBatchOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdGroupCreateForbiddenProductRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdGroupCreateForbiddenProductRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdGroupCreateForbiddenProductRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

@@ -1,7 +1,7 @@
 package icbuseller
 
-// QueryTradeDto 
-type QueryTradeDto struct {
+// QueryTradeDTO 
+type QueryTradeDTO struct {
     // 交易单状态变更起始时间
     FireTimeStart   string `json:"fire_time_start,omitempty" xml:"fire_time_start,omitempty"`
     // 服务code列表

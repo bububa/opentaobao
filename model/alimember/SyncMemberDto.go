@@ -1,7 +1,7 @@
 package alimember
 
-// SyncMemberDto 
-type SyncMemberDto struct {
+// SyncMemberDTO 
+type SyncMemberDTO struct {
     // 生日，格式yyyy-mm-dd
     Birthday   string `json:"birthday,omitempty" xml:"birthday,omitempty"`
     // 城市

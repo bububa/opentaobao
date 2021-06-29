@@ -1,7 +1,7 @@
 package pur
 
-// SupplierPoDetailDto 
-type SupplierPoDetailDto struct {
+// SupplierPoDetailDTO 
+type SupplierPoDetailDTO struct {
     // 供应商名称
     SupplierName   string `json:"supplier_name,omitempty" xml:"supplier_name,omitempty"`
     // 订单编号

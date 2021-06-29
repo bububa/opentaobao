@@ -1,7 +1,7 @@
 package idleisv
 
-// AppraiseIsvAddressDto 
-type AppraiseIsvAddressDto struct {
+// AppraiseIsvAddressDTO 
+type AppraiseIsvAddressDTO struct {
     // 详细地址
     Address   string `json:"address,omitempty" xml:"address,omitempty"`
     // 行政区

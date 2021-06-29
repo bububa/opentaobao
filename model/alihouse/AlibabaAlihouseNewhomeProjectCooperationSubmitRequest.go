@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.project.cooperation.submit
 type AlibabaAlihouseNewhomeProjectCooperationSubmitRequest struct {
     model.Params
     // ka合作对象
-    _projectCooperationDto   *ProjectCooperationDto
+    _projectCooperationDto   *ProjectCooperationDTO
 }
 
 // 初始化AlibabaAlihouseNewhomeProjectCooperationSubmitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectCooperationSubmitRequest) GetApiParams() ur
 }
 // ProjectCooperationDto Setter
 // ka合作对象
-func (r *AlibabaAlihouseNewhomeProjectCooperationSubmitRequest) SetProjectCooperationDto(_projectCooperationDto *ProjectCooperationDto) error {
+func (r *AlibabaAlihouseNewhomeProjectCooperationSubmitRequest) SetProjectCooperationDto(_projectCooperationDto *ProjectCooperationDTO) error {
     r._projectCooperationDto = _projectCooperationDto
     r.Set("project_cooperation_dto", _projectCooperationDto)
     return nil
 }
 
 // ProjectCooperationDto Getter
-func (r AlibabaAlihouseNewhomeProjectCooperationSubmitRequest) GetProjectCooperationDto() *ProjectCooperationDto {
+func (r AlibabaAlihouseNewhomeProjectCooperationSubmitRequest) GetProjectCooperationDto() *ProjectCooperationDTO {
     return r._projectCooperationDto
 }

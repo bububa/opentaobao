@@ -31,5 +31,5 @@ type TopAlihealthSpuQuery struct {
     // 别名，也就是商品名称
     TitleAlias   string `json:"title_alias,omitempty" xml:"title_alias,omitempty"`
     // 药物说明书信息
-    AlihealthDrugInstructionDTO   *TopAlihealthDrugInstructionDto `json:"alihealth_drug_instruction_d_t_o,omitempty" xml:"alihealth_drug_instruction_d_t_o,omitempty"`
+    AlihealthDrugInstructionDTO   *TopAlihealthDrugInstructionDTO `json:"alihealth_drug_instruction_d_t_o,omitempty" xml:"alihealth_drug_instruction_d_t_o,omitempty"`
 }

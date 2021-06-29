@@ -1,7 +1,7 @@
 package btrip
 
-// CarInfoDo 
-type CarInfoDo struct {
+// CarInfoDO 
+type CarInfoDO struct {
     // 预订出发地
     FromAddr   string `json:"from_addr,omitempty" xml:"from_addr,omitempty"`
     // 预订到达地

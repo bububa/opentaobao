@@ -1,7 +1,7 @@
 package idle
 
-// AppraiseOrderInfoDto 
-type AppraiseOrderInfoDto struct {
+// AppraiseOrderInfoDTO 
+type AppraiseOrderInfoDTO struct {
     // 服务商appkey
     AppKey   string `json:"app_key,omitempty" xml:"app_key,omitempty"`
     // 订单号

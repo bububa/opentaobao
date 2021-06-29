@@ -3,7 +3,7 @@ package retail
 // AlibabaRetailElectronicCertificatePreConfirmResult 
 type AlibabaRetailElectronicCertificatePreConfirmResult struct {
     // module
-    Module   *ElectronicCertificateDto `json:"module,omitempty" xml:"module,omitempty"`
+    Module   *ElectronicCertificateDTO `json:"module,omitempty" xml:"module,omitempty"`
     // warningInfos
     WarningInfos   []string `json:"warning_infos,omitempty" xml:"warning_infos>string,omitempty"`
     // errorInfos

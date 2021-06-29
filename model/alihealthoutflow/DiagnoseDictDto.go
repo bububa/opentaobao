@@ -1,7 +1,7 @@
 package alihealthoutflow
 
-// DiagnoseDictDto 
-type DiagnoseDictDto struct {
+// DiagnoseDictDTO 
+type DiagnoseDictDTO struct {
     // icd10编码(非空)
     IcdCode   string `json:"icd_code,omitempty" xml:"icd_code,omitempty"`
     // icd10名称(非空)

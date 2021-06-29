@@ -1,7 +1,7 @@
 package idle
 
-// RefundBaseDto 
-type RefundBaseDto struct {
+// RefundBaseDTO 
+type RefundBaseDTO struct {
     // 订单号
     BizOrderId   int64 `json:"biz_order_id,omitempty" xml:"biz_order_id,omitempty"`
     // 退款状态

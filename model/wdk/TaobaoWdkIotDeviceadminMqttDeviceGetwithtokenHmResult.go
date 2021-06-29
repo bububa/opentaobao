@@ -3,7 +3,7 @@ package wdk
 // TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenHmResult 
 type TaobaoWdkIotDeviceadminMqttDeviceGetwithtokenHmResult struct {
     // model
-    Model   *MqttDeviceInfoDto `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *MqttDeviceInfoDTO `json:"model,omitempty" xml:"model,omitempty"`
     // success
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // msgCode

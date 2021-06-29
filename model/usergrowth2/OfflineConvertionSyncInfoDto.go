@@ -1,7 +1,7 @@
 package usergrowth2
 
-// OfflineConvertionSyncInfoDto 
-type OfflineConvertionSyncInfoDto struct {
+// OfflineConvertionSyncInfoDTO 
+type OfflineConvertionSyncInfoDTO struct {
     // 任务类型
     TaskType   string `json:"task_type,omitempty" xml:"task_type,omitempty"`
     // 数据是否更新完毕

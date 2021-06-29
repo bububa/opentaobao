@@ -1,7 +1,7 @@
 package alihouse
 
-// ProjectAdviserDto 
-type ProjectAdviserDto struct {
+// ProjectAdviserDTO 
+type ProjectAdviserDTO struct {
     // 排序
     Sort   int64 `json:"sort,omitempty" xml:"sort,omitempty"`
     // 公司ID

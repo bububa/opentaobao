@@ -15,7 +15,7 @@ alibaba.ascp.inventory.query
 type AlibabaAscpInventoryQueryRequest struct {
     model.Params
     // 系统自动生成
-    _invSingleItemSyncDto   *InvSingleItemSyncDto
+    _invSingleItemSyncDto   *InvSingleItemSyncDTO
 }
 
 // 初始化AlibabaAscpInventoryQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpInventoryQueryRequest) GetApiParams() url.Values {
 }
 // InvSingleItemSyncDto Setter
 // 系统自动生成
-func (r *AlibabaAscpInventoryQueryRequest) SetInvSingleItemSyncDto(_invSingleItemSyncDto *InvSingleItemSyncDto) error {
+func (r *AlibabaAscpInventoryQueryRequest) SetInvSingleItemSyncDto(_invSingleItemSyncDto *InvSingleItemSyncDTO) error {
     r._invSingleItemSyncDto = _invSingleItemSyncDto
     r.Set("inv_single_item_sync_dto", _invSingleItemSyncDto)
     return nil
 }
 
 // InvSingleItemSyncDto Getter
-func (r AlibabaAscpInventoryQueryRequest) GetInvSingleItemSyncDto() *InvSingleItemSyncDto {
+func (r AlibabaAscpInventoryQueryRequest) GetInvSingleItemSyncDto() *InvSingleItemSyncDTO {
     return r._invSingleItemSyncDto
 }

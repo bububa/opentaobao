@@ -1,7 +1,7 @@
 package drug
 
-// SuitSubItemDto 
-type SuitSubItemDto struct {
+// SuitSubItemDTO 
+type SuitSubItemDTO struct {
     // 单位
     Unit   string `json:"unit,omitempty" xml:"unit,omitempty"`
     // 商品ID

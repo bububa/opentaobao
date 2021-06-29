@@ -1,7 +1,7 @@
 package waybill
 
-// WarehouseDto 
-type WarehouseDto struct {
+// WarehouseDTO 
+type WarehouseDTO struct {
     // 仓id
     WarehouseId   int64 `json:"warehouse_id,omitempty" xml:"warehouse_id,omitempty"`
     // 仓名称

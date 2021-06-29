@@ -1,7 +1,7 @@
 package nlife
 
-// ProcurementDetailResponseDo 
-type ProcurementDetailResponseDo struct {
+// ProcurementDetailResponseDO 
+type ProcurementDetailResponseDO struct {
     // 采购单号
     ProcurementNo   string `json:"procurement_no,omitempty" xml:"procurement_no,omitempty"`
     // 收货门店id

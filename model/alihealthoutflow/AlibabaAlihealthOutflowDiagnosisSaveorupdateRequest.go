@@ -15,7 +15,7 @@ alibaba.alihealth.outflow.diagnosis.saveorupdate
 type AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest struct {
     model.Params
     // 诊断数据
-    _diagnoseDictDto   *DiagnoseDictDto
+    _diagnoseDictDto   *DiagnoseDictDTO
 }
 
 // 初始化AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest) GetApiParams() url.
 }
 // DiagnoseDictDto Setter
 // 诊断数据
-func (r *AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest) SetDiagnoseDictDto(_diagnoseDictDto *DiagnoseDictDto) error {
+func (r *AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest) SetDiagnoseDictDto(_diagnoseDictDto *DiagnoseDictDTO) error {
     r._diagnoseDictDto = _diagnoseDictDto
     r.Set("diagnose_dict_dto", _diagnoseDictDto)
     return nil
 }
 
 // DiagnoseDictDto Getter
-func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest) GetDiagnoseDictDto() *DiagnoseDictDto {
+func (r AlibabaAlihealthOutflowDiagnosisSaveorupdateRequest) GetDiagnoseDictDto() *DiagnoseDictDTO {
     return r._diagnoseDictDto
 }

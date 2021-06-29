@@ -15,7 +15,7 @@ taobao.sungari.dispose.submit
 type TaobaoSungariDisposeSubmitRequest struct {
     model.Params
     // 平台处置信息入参
-    _info   *DisposeInfoDo
+    _info   *DisposeInfoDO
 }
 
 // 初始化TaobaoSungariDisposeSubmitRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSungariDisposeSubmitRequest) GetApiParams() url.Values {
 }
 // Info Setter
 // 平台处置信息入参
-func (r *TaobaoSungariDisposeSubmitRequest) SetInfo(_info *DisposeInfoDo) error {
+func (r *TaobaoSungariDisposeSubmitRequest) SetInfo(_info *DisposeInfoDO) error {
     r._info = _info
     r.Set("info", _info)
     return nil
 }
 
 // Info Getter
-func (r TaobaoSungariDisposeSubmitRequest) GetInfo() *DisposeInfoDo {
+func (r TaobaoSungariDisposeSubmitRequest) GetInfo() *DisposeInfoDO {
     return r._info
 }

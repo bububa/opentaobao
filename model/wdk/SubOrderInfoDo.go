@@ -1,7 +1,7 @@
 package wdk
 
-// SubOrderInfoDo 
-type SubOrderInfoDo struct {
+// SubOrderInfoDO 
+type SubOrderInfoDO struct {
     // 单位
     Unit   string `json:"unit,omitempty" xml:"unit,omitempty"`
     // 扫描条码

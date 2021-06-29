@@ -15,7 +15,7 @@ tmall.nr.inventory.initial
 type TmallNrInventoryInitialRequest struct {
     model.Params
     // 请求入参
-    _param0   *NrStoreInvItemInitialReqDto
+    _param0   *NrStoreInvItemInitialReqDTO
 }
 
 // 初始化TmallNrInventoryInitialRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrInventoryInitialRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 请求入参
-func (r *TmallNrInventoryInitialRequest) SetParam0(_param0 *NrStoreInvItemInitialReqDto) error {
+func (r *TmallNrInventoryInitialRequest) SetParam0(_param0 *NrStoreInvItemInitialReqDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TmallNrInventoryInitialRequest) GetParam0() *NrStoreInvItemInitialReqDto {
+func (r TmallNrInventoryInitialRequest) GetParam0() *NrStoreInvItemInitialReqDTO {
     return r._param0
 }

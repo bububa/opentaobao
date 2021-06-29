@@ -1,7 +1,7 @@
 package nlife
 
-// RefundListResponseDo 
-type RefundListResponseDo struct {
+// RefundListResponseDO 
+type RefundListResponseDO struct {
     // 获取到的结果的总数量
     TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
     // 采购退货单列表

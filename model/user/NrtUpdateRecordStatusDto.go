@@ -1,7 +1,7 @@
 package user
 
-// NrtUpdateRecordStatusDto 
-type NrtUpdateRecordStatusDto struct {
+// NrtUpdateRecordStatusDTO 
+type NrtUpdateRecordStatusDTO struct {
     // 客资记录ID
     RecordId   int64 `json:"record_id,omitempty" xml:"record_id,omitempty"`
     // 创建人ID

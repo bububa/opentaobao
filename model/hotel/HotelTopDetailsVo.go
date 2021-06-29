@@ -13,7 +13,7 @@ type HotelTopDetailsVo struct {
     // 是否国际
     IsInternational   int64 `json:"is_international,omitempty" xml:"is_international,omitempty"`
     // 标签信息
-    Labels   []HotelLabelDto `json:"labels,omitempty" xml:"labels>hotel_label_dto,omitempty"`
+    Labels   []HotelLabelDTO `json:"labels,omitempty" xml:"labels>hotel_label_dto,omitempty"`
     // 套餐商品
     PackRoomTypes   []PackageRate `json:"pack_room_types,omitempty" xml:"pack_room_types>package_rate,omitempty"`
     // 房型信息

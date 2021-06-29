@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceOrderSimpleDto 
-type InvoiceOrderSimpleDto struct {
+// InvoiceOrderSimpleDTO 
+type InvoiceOrderSimpleDTO struct {
     // 所绑定的税控设备ID;  入驻成功 & 单机版税控产品时，包含该字段。
     DeviceId   string `json:"device_id,omitempty" xml:"device_id,omitempty"`
     // 订购单ID

@@ -15,7 +15,7 @@ alibaba.mos.commdy.posmerchandise.getmerchandise
 type AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest struct {
     model.Params
     // 查询参数列表
-    _posMerchandiseList   []QueryMerchandiseDto
+    _posMerchandiseList   []QueryMerchandiseDTO
 }
 
 // 初始化AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest) GetApiParams() url.
 }
 // PosMerchandiseList Setter
 // 查询参数列表
-func (r *AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest) SetPosMerchandiseList(_posMerchandiseList []QueryMerchandiseDto) error {
+func (r *AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest) SetPosMerchandiseList(_posMerchandiseList []QueryMerchandiseDTO) error {
     r._posMerchandiseList = _posMerchandiseList
     r.Set("pos_merchandise_list", _posMerchandiseList)
     return nil
 }
 
 // PosMerchandiseList Getter
-func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest) GetPosMerchandiseList() []QueryMerchandiseDto {
+func (r AlibabaMosCommdyPosmerchandiseGetmerchandiseRequest) GetPosMerchandiseList() []QueryMerchandiseDTO {
     return r._posMerchandiseList
 }

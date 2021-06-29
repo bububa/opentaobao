@@ -1,7 +1,7 @@
 package alihealth2
 
-// PageInfoDto 
-type PageInfoDto struct {
+// PageInfoDTO 
+type PageInfoDTO struct {
     // 总数
     TotalNum   int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
     // result

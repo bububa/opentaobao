@@ -1,7 +1,7 @@
 package cityretail
 
-// ChangeOrderResponseDto 
-type ChangeOrderResponseDto struct {
+// ChangeOrderResponseDTO 
+type ChangeOrderResponseDTO struct {
     // 淘宝订单id
     TbOrderId   string `json:"tb_order_id,omitempty" xml:"tb_order_id,omitempty"`
     // 转仓后的新仓

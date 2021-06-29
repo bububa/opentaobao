@@ -12,4 +12,6 @@ type BillItemDO struct {
     Specification   string `json:"specification,omitempty" xml:"specification,omitempty"`
     // 商品单位
     Unit   string `json:"unit,omitempty" xml:"unit,omitempty"`
+    // 1 折扣行 2被折扣行 0普通行
+    RowType   int64 `json:"row_type,omitempty" xml:"row_type,omitempty"`
 }

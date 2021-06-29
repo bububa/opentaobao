@@ -21,7 +21,7 @@ type TaobaoWlbImportsResourceTransferstoreGetRequest struct {
     // 商品前台叶子类目ID
     _cids   []int64
     // 买家收货地信息
-    _toAddress   *ReciverAddressDo
+    _toAddress   *ReciverAddressDO
 }
 
 // 初始化TaobaoWlbImportsResourceTransferstoreGetRequest对象
@@ -82,13 +82,13 @@ func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetCids() []int64 {
 }
 // ToAddress Setter
 // 买家收货地信息
-func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetToAddress(_toAddress *ReciverAddressDo) error {
+func (r *TaobaoWlbImportsResourceTransferstoreGetRequest) SetToAddress(_toAddress *ReciverAddressDO) error {
     r._toAddress = _toAddress
     r.Set("to_address", _toAddress)
     return nil
 }
 
 // ToAddress Getter
-func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetToAddress() *ReciverAddressDo {
+func (r TaobaoWlbImportsResourceTransferstoreGetRequest) GetToAddress() *ReciverAddressDO {
     return r._toAddress
 }

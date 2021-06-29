@@ -1,7 +1,7 @@
 package icburfq
 
-// RfqQuotationRemoteDto 
-type RfqQuotationRemoteDto struct {
+// RfqQuotationRemoteDTO 
+type RfqQuotationRemoteDTO struct {
     // 给买家留言
     Details   string `json:"details,omitempty" xml:"details,omitempty"`
     // 附件file_str,请通过调用alibaba.icbu.annex.upload结果作为入参

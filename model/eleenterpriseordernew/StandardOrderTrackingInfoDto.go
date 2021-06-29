@@ -1,7 +1,7 @@
 package eleenterpriseordernew
 
-// StandardOrderTrackingInfoDto 
-type StandardOrderTrackingInfoDto struct {
+// StandardOrderTrackingInfoDTO 
+type StandardOrderTrackingInfoDTO struct {
     // 地址信息
     AddressInfo   *AddressInfo `json:"address_info,omitempty" xml:"address_info,omitempty"`
     // 第三方业务订单编号

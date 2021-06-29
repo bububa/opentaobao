@@ -23,7 +23,7 @@ type AlibabaAlihealthDrugcodeDrugfactoryExportcategoryResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 导出的药品目录
-    Model   []ProductDto `json:"model,omitempty" xml:"model>product_dto,omitempty"`
+    Model   []ProductDTO `json:"model,omitempty" xml:"model>product_dto,omitempty"`
     // 操作码
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // 操作说明

@@ -29,5 +29,5 @@ type AlibabaMarketingLotteryActivityCreateResponse struct {
     // 错误信息
     MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     // 抽奖活动
-    LotteryActivity   *LotteryActivityExtendDto `json:"lottery_activity,omitempty" xml:"lottery_activity,omitempty"`
+    LotteryActivity   *LotteryActivityExtendDTO `json:"lottery_activity,omitempty" xml:"lottery_activity,omitempty"`
 }

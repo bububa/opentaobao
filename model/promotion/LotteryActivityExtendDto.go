@@ -1,7 +1,7 @@
 package promotion
 
-// LotteryActivityExtendDto 
-type LotteryActivityExtendDto struct {
+// LotteryActivityExtendDTO 
+type LotteryActivityExtendDTO struct {
     // 活动ID
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 活动名称
@@ -19,11 +19,11 @@ type LotteryActivityExtendDto struct {
     // 抽奖CODE
     RaffleCode   string `json:"raffle_code,omitempty" xml:"raffle_code,omitempty"`
     // 奖品列表
-    AwardList   []LotteryAwardExtendDto `json:"award_list,omitempty" xml:"award_list>lottery_award_extend_dto,omitempty"`
+    AwardList   []LotteryAwardExtendDTO `json:"award_list,omitempty" xml:"award_list>lottery_award_extend_dto,omitempty"`
     // 活动关联的规则
-    RuleList   []ExpressionRuleDto `json:"rule_list,omitempty" xml:"rule_list>expression_rule_dto,omitempty"`
+    RuleList   []ExpressionRuleDTO `json:"rule_list,omitempty" xml:"rule_list>expression_rule_dto,omitempty"`
     // 抽奖方案列表
-    SchemaList   []LotterySchemaDto `json:"schema_list,omitempty" xml:"schema_list>lottery_schema_dto,omitempty"`
+    SchemaList   []LotterySchemaDTO `json:"schema_list,omitempty" xml:"schema_list>lottery_schema_dto,omitempty"`
     // 外部关联列表
     RelationList   []string `json:"relation_list,omitempty" xml:"relation_list>string,omitempty"`
 }

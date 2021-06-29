@@ -1,7 +1,7 @@
 package wdk
 
-// MzPromotionDto 
-type MzPromotionDto struct {
+// MzPromotionDTO 
+type MzPromotionDTO struct {
     // 活动ID
     ActId   int64 `json:"act_id,omitempty" xml:"act_id,omitempty"`
     // 活动名称

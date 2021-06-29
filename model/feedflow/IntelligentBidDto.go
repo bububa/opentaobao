@@ -1,7 +1,7 @@
 package feedflow
 
-// IntelligentBidDto 
-type IntelligentBidDto struct {
+// IntelligentBidDTO 
+type IntelligentBidDTO struct {
     // 是否打开
     Open   bool `json:"open,omitempty" xml:"open,omitempty"`
     // 溢价范围

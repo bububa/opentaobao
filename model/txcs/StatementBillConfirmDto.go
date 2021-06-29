@@ -1,7 +1,7 @@
 package txcs
 
-// StatementBillConfirmDto 
-type StatementBillConfirmDto struct {
+// StatementBillConfirmDTO 
+type StatementBillConfirmDTO struct {
     // 结算公司编码
     SettlementCompanyCode   string `json:"settlement_company_code,omitempty" xml:"settlement_company_code,omitempty"`
     // 幂等ID

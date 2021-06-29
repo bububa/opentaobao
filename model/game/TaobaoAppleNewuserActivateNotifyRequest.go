@@ -19,7 +19,7 @@ type TaobaoAppleNewuserActivateNotifyRequest struct {
     // 处理结果中文描述
     _resultMsg   string
     // 主业务参数
-    _mainData   *AppleTopActivateNotifyDo
+    _mainData   *AppleTopActivateNotifyDO
 }
 
 // 初始化TaobaoAppleNewuserActivateNotifyRequest对象
@@ -68,13 +68,13 @@ func (r TaobaoAppleNewuserActivateNotifyRequest) GetResultMsg() string {
 }
 // MainData Setter
 // 主业务参数
-func (r *TaobaoAppleNewuserActivateNotifyRequest) SetMainData(_mainData *AppleTopActivateNotifyDo) error {
+func (r *TaobaoAppleNewuserActivateNotifyRequest) SetMainData(_mainData *AppleTopActivateNotifyDO) error {
     r._mainData = _mainData
     r.Set("main_data", _mainData)
     return nil
 }
 
 // MainData Getter
-func (r TaobaoAppleNewuserActivateNotifyRequest) GetMainData() *AppleTopActivateNotifyDo {
+func (r TaobaoAppleNewuserActivateNotifyRequest) GetMainData() *AppleTopActivateNotifyDO {
     return r._mainData
 }

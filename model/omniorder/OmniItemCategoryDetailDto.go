@@ -1,7 +1,7 @@
 package omniorder
 
-// OmniItemCategoryDetailDto 
-type OmniItemCategoryDetailDto struct {
+// OmniItemCategoryDetailDTO 
+type OmniItemCategoryDetailDTO struct {
     // 内部
     InnerName   string `json:"inner_name,omitempty" xml:"inner_name,omitempty"`
     // 分类ID（添加时不太填，修改时要填）

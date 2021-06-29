@@ -15,7 +15,7 @@ alibaba.member.identity.sync
 type AlibabaMemberIdentitySyncRequest struct {
     model.Params
     // 会员身份同步信息
-    _syncDto   *SyncMemberIdentityDto
+    _syncDto   *SyncMemberIdentityDTO
 }
 
 // 初始化AlibabaMemberIdentitySyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMemberIdentitySyncRequest) GetApiParams() url.Values {
 }
 // SyncDto Setter
 // 会员身份同步信息
-func (r *AlibabaMemberIdentitySyncRequest) SetSyncDto(_syncDto *SyncMemberIdentityDto) error {
+func (r *AlibabaMemberIdentitySyncRequest) SetSyncDto(_syncDto *SyncMemberIdentityDTO) error {
     r._syncDto = _syncDto
     r.Set("sync_dto", _syncDto)
     return nil
 }
 
 // SyncDto Getter
-func (r AlibabaMemberIdentitySyncRequest) GetSyncDto() *SyncMemberIdentityDto {
+func (r AlibabaMemberIdentitySyncRequest) GetSyncDto() *SyncMemberIdentityDTO {
     return r._syncDto
 }

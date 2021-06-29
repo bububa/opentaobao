@@ -9,5 +9,5 @@ type PageInfo struct {
     // 总条数
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 数据集
-    List   []BusinessRecipeOpenDto `json:"list,omitempty" xml:"list>business_recipe_open_dto,omitempty"`
+    List   []BusinessRecipeOpenDTO `json:"list,omitempty" xml:"list>business_recipe_open_dto,omitempty"`
 }

@@ -1,7 +1,7 @@
 package idle
 
-// AlipayOrderDto 
-type AlipayOrderDto struct {
+// AlipayOrderDTO 
+type AlipayOrderDTO struct {
     // 金额
     Amount   int64 `json:"amount,omitempty" xml:"amount,omitempty"`
     // 支付状态，1未支付，6已支付

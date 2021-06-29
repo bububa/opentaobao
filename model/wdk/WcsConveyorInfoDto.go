@@ -1,7 +1,7 @@
 package wdk
 
-// WcsConveyorInfoDto 
-type WcsConveyorInfoDto struct {
+// WcsConveyorInfoDTO 
+type WcsConveyorInfoDTO struct {
     // warehouseCode
     WarehouseCode   string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
     // warehouseId

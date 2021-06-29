@@ -17,7 +17,7 @@ type TaobaoWlbImportsResourceGetRequest struct {
     // 卖家发货地区域ID
     _fromId   int64
     // 买家收货地信息
-    _toAddress   *ReciverAddressDo
+    _toAddress   *ReciverAddressDO
 }
 
 // 初始化TaobaoWlbImportsResourceGetRequest对象
@@ -54,13 +54,13 @@ func (r TaobaoWlbImportsResourceGetRequest) GetFromId() int64 {
 }
 // ToAddress Setter
 // 买家收货地信息
-func (r *TaobaoWlbImportsResourceGetRequest) SetToAddress(_toAddress *ReciverAddressDo) error {
+func (r *TaobaoWlbImportsResourceGetRequest) SetToAddress(_toAddress *ReciverAddressDO) error {
     r._toAddress = _toAddress
     r.Set("to_address", _toAddress)
     return nil
 }
 
 // ToAddress Getter
-func (r TaobaoWlbImportsResourceGetRequest) GetToAddress() *ReciverAddressDo {
+func (r TaobaoWlbImportsResourceGetRequest) GetToAddress() *ReciverAddressDO {
     return r._toAddress
 }

@@ -1,7 +1,7 @@
 package wdk
 
-// PdStockDto 
-type PdStockDto struct {
+// PdStockDTO 
+type PdStockDTO struct {
     // 备注
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 盘点类型，可选值：1：大盘  2：周盘 ；
@@ -13,5 +13,5 @@ type PdStockDto struct {
     // 唯一识别码
     Uuid   string `json:"uuid,omitempty" xml:"uuid,omitempty"`
     // itemList
-    ItemList   []PdStockDetailDto `json:"item_list,omitempty" xml:"item_list>pd_stock_detail_dto,omitempty"`
+    ItemList   []PdStockDetailDTO `json:"item_list,omitempty" xml:"item_list>pd_stock_detail_dto,omitempty"`
 }

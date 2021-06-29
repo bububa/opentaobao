@@ -1,7 +1,7 @@
 package moscm
 
-// VirtualInventoryDto 
-type VirtualInventoryDto struct {
+// VirtualInventoryDTO 
+type VirtualInventoryDTO struct {
     // 可售库存数量
     AvailableQuantity   string `json:"available_quantity,omitempty" xml:"available_quantity,omitempty"`
     // 银泰专柜号

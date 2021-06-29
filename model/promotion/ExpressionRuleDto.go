@@ -1,7 +1,7 @@
 package promotion
 
-// ExpressionRuleDto 
-type ExpressionRuleDto struct {
+// ExpressionRuleDTO 
+type ExpressionRuleDTO struct {
     // 规则ID
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 创建时间

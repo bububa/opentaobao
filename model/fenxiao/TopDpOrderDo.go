@@ -1,7 +1,7 @@
 package fenxiao
 
-// TopDpOrderDo 
-type TopDpOrderDo struct {
+// TopDpOrderDO 
+type TopDpOrderDO struct {
     // 供应商来源网站, values: taobao, alibaba
     SupplierFrom   string `json:"supplier_from,omitempty" xml:"supplier_from,omitempty"`
     // 供应商在来源网站的帐号名。
@@ -27,7 +27,7 @@ type TopDpOrderDo struct {
     // 交易修改时间。格式:yyyy-MM-dd HH:mm:ss
     Modified   string `json:"modified,omitempty" xml:"modified,omitempty"`
     // 买家详细信息
-    Receiver   *TopReceiverDo `json:"receiver,omitempty" xml:"receiver,omitempty"`
+    Receiver   *TopReceiverDO `json:"receiver,omitempty" xml:"receiver,omitempty"`
     // 供应商备注
     SupplierMemo   string `json:"supplier_memo,omitempty" xml:"supplier_memo,omitempty"`
     // 分销流水号，分销平台产生的主键
@@ -71,7 +71,7 @@ type TopDpOrderDo struct {
     // 加密后的买家淘宝ID，长度为32位
     BuyerTaobaoId   string `json:"buyer_taobao_id,omitempty" xml:"buyer_taobao_id,omitempty"`
     // 主订单属性信息，key-value形式：<br/>orderNovice ：订单发票抬头；<br/>orderNoviceContent ：代表发票明细
-    Features   []FeatureDo `json:"features,omitempty" xml:"features>feature_do,omitempty"`
+    Features   []FeatureDO `json:"features,omitempty" xml:"features>feature_do,omitempty"`
     // [架海金梁独有字段，非架海金梁用户请勿关心]子单物流发货信息
     LogisticsInfos   []ErpLogisticsInfo `json:"logistics_infos,omitempty" xml:"logistics_infos>erp_logistics_info,omitempty"`
     // 支付宝交易号，国际担保交易用

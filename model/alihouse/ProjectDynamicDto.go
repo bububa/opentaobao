@@ -1,7 +1,7 @@
 package alihouse
 
-// ProjectDynamicDto 
-type ProjectDynamicDto struct {
+// ProjectDynamicDTO 
+type ProjectDynamicDTO struct {
     // 外部楼盘ID
     OuterId   string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
     // 快讯标题

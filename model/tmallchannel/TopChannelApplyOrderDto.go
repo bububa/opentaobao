@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TopChannelApplyOrderDto 
-type TopChannelApplyOrderDto struct {
+// TopChannelApplyOrderDTO 
+type TopChannelApplyOrderDTO struct {
     // 申请单单号
     ChannelPurchaseApplyOrderNo   string `json:"channel_purchase_apply_order_no,omitempty" xml:"channel_purchase_apply_order_no,omitempty"`
     // 渠道
@@ -21,7 +21,7 @@ type TopChannelApplyOrderDto struct {
     // 审核创建时间
     ApplyCreateTime   string `json:"apply_create_time,omitempty" xml:"apply_create_time,omitempty"`
     // 申请单详情
-    ApplyOrderDetail   *TopChannelApplyOrderDetailDto `json:"apply_order_detail,omitempty" xml:"apply_order_detail,omitempty"`
+    ApplyOrderDetail   *TopChannelApplyOrderDetailDTO `json:"apply_order_detail,omitempty" xml:"apply_order_detail,omitempty"`
     // 解析详情
     Schema   string `json:"schema,omitempty" xml:"schema,omitempty"`
 }

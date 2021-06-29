@@ -15,7 +15,7 @@ taobao.wt.trade.order.resultcallback
 type TaobaoWtTradeOrderResultcallbackRequest struct {
     model.Params
     // 系统自动生成
-    _param0   *OrderResultDto
+    _param0   *OrderResultDTO
 }
 
 // 初始化TaobaoWtTradeOrderResultcallbackRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoWtTradeOrderResultcallbackRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 系统自动生成
-func (r *TaobaoWtTradeOrderResultcallbackRequest) SetParam0(_param0 *OrderResultDto) error {
+func (r *TaobaoWtTradeOrderResultcallbackRequest) SetParam0(_param0 *OrderResultDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoWtTradeOrderResultcallbackRequest) GetParam0() *OrderResultDto {
+func (r TaobaoWtTradeOrderResultcallbackRequest) GetParam0() *OrderResultDTO {
     return r._param0
 }

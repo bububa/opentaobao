@@ -1,7 +1,7 @@
 package maitix
 
-// PriceInfoDto 
-type PriceInfoDto struct {
+// PriceInfoDTO 
+type PriceInfoDTO struct {
     // 售卖最大库存数量,没有含义,以是否可售为准
     MaxStock   int64 `json:"max_stock,omitempty" xml:"max_stock,omitempty"`
     // 场次ID
@@ -19,7 +19,7 @@ type PriceInfoDto struct {
     // 是否可售 true可售 false不可售
     AbleSell   bool `json:"able_sell,omitempty" xml:"able_sell,omitempty"`
     // 套票构成
-    OpenCombinePrices   []OpenCombinePriceDto `json:"open_combine_prices,omitempty" xml:"open_combine_prices>open_combine_price_dto,omitempty"`
+    OpenCombinePrices   []OpenCombinePriceDTO `json:"open_combine_prices,omitempty" xml:"open_combine_prices>open_combine_price_dto,omitempty"`
     // 票品子状态0 缺货登记,1开售提醒,2 售馨,只有able_sell为false里这个才可能有值
     SubStatus   int64 `json:"sub_status,omitempty" xml:"sub_status,omitempty"`
 }

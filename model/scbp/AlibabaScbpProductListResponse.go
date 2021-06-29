@@ -23,7 +23,7 @@ type AlibabaScbpProductListResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 产品列表
-    ProductList   []TopProductDto `json:"product_list,omitempty" xml:"product_list>top_product_dto,omitempty"`
+    ProductList   []TopProductDTO `json:"product_list,omitempty" xml:"product_list>top_product_dto,omitempty"`
     // 总数
     TotalNum   int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
     // 总页数

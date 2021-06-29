@@ -3,7 +3,7 @@ package axintrade
 // TaobaoAlitripAxinTransFundConfirmResult 
 type TaobaoAlitripAxinTransFundConfirmResult struct {
     // 接口出参
-    Data   *AxinFundConfirmResDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *AxinFundConfirmResDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 描述信息

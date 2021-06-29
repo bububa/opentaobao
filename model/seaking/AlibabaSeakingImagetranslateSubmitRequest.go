@@ -17,7 +17,7 @@ type AlibabaSeakingImagetranslateSubmitRequest struct {
     // token来源站点
     _tokenFrom   string
     // 子任务列表
-    _imageTranslateDetailList   []ImageTranslateDetailDto
+    _imageTranslateDetailList   []ImageTranslateDetailDTO
     // 用户token
     _token   string
 }
@@ -56,14 +56,14 @@ func (r AlibabaSeakingImagetranslateSubmitRequest) GetTokenFrom() string {
 }
 // ImageTranslateDetailList Setter
 // 子任务列表
-func (r *AlibabaSeakingImagetranslateSubmitRequest) SetImageTranslateDetailList(_imageTranslateDetailList []ImageTranslateDetailDto) error {
+func (r *AlibabaSeakingImagetranslateSubmitRequest) SetImageTranslateDetailList(_imageTranslateDetailList []ImageTranslateDetailDTO) error {
     r._imageTranslateDetailList = _imageTranslateDetailList
     r.Set("image_translate_detail_list", _imageTranslateDetailList)
     return nil
 }
 
 // ImageTranslateDetailList Getter
-func (r AlibabaSeakingImagetranslateSubmitRequest) GetImageTranslateDetailList() []ImageTranslateDetailDto {
+func (r AlibabaSeakingImagetranslateSubmitRequest) GetImageTranslateDetailList() []ImageTranslateDetailDTO {
     return r._imageTranslateDetailList
 }
 // Token Setter

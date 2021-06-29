@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopTpOperationLogDto 
-type GlobalAeopTpOperationLogDto struct {
+// GlobalAeopTpOperationLogDTO 
+type GlobalAeopTpOperationLogDTO struct {
     // id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // order modification time

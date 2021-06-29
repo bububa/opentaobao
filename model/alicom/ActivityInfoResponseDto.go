@@ -1,7 +1,7 @@
 package alicom
 
-// ActivityInfoResponseDto 
-type ActivityInfoResponseDto struct {
+// ActivityInfoResponseDTO 
+type ActivityInfoResponseDTO struct {
     // 活动ID
     ActivityId   string `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
     // 活动名称

@@ -3,7 +3,7 @@ package tbk
 // TaobaoTbkDgVegasTljInstanceReportResult 
 type TaobaoTbkDgVegasTljInstanceReportResult struct {
     // model
-    Model   *TljInstanceReportDto `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *TljInstanceReportDTO `json:"model,omitempty" xml:"model,omitempty"`
     // msgCode
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // msgInfo

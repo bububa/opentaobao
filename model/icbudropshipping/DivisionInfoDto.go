@@ -1,7 +1,7 @@
 package icbudropshipping
 
-// DivisionInfoDto 
-type DivisionInfoDto struct {
+// DivisionInfoDTO 
+type DivisionInfoDTO struct {
     // City Code
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // City Name

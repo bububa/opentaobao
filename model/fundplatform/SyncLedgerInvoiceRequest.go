@@ -15,7 +15,7 @@ type SyncLedgerInvoiceRequest struct {
     // 不含税金额
     ExcludingTaxAmount   string `json:"excluding_tax_amount,omitempty" xml:"excluding_tax_amount,omitempty"`
     // 发票行
-    InputInvoiceLineDTOList   []InputInvoiceLineLedgerDto `json:"input_invoice_line_d_t_o_list,omitempty" xml:"input_invoice_line_d_t_o_list>input_invoice_line_ledger_dto,omitempty"`
+    InputInvoiceLineDTOList   []InputInvoiceLineLedgerDTO `json:"input_invoice_line_d_t_o_list,omitempty" xml:"input_invoice_line_d_t_o_list>input_invoice_line_ledger_dto,omitempty"`
     // 发票代码
     InvoiceCode   string `json:"invoice_code,omitempty" xml:"invoice_code,omitempty"`
     // 开票日期

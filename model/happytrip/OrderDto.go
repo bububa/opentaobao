@@ -1,7 +1,7 @@
 package happytrip
 
-// OrderDto 
-type OrderDto struct {
+// OrderDTO 
+type OrderDTO struct {
     // 航旅交易号
     AlipayTradeNo   string `json:"alipay_trade_no,omitempty" xml:"alipay_trade_no,omitempty"`
     // 是否B2G的标记位0不是 1是

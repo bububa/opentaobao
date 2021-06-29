@@ -7,7 +7,7 @@ type AlibabaIdleAppraiseOrderQueryResult struct {
     // errMsg
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 订单信息
-    Module   *AppraiseOrderInfoDto `json:"module,omitempty" xml:"module,omitempty"`
+    Module   *AppraiseOrderInfoDTO `json:"module,omitempty" xml:"module,omitempty"`
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
 }

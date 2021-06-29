@@ -1,7 +1,7 @@
 package drugtrace
 
-// CodeRelationDetailInfoDo 
-type CodeRelationDetailInfoDo struct {
+// CodeRelationDetailInfoDO 
+type CodeRelationDetailInfoDO struct {
     // 处理日期
     ProcessDate   string `json:"process_date,omitempty" xml:"process_date,omitempty"`
     // 关联模式[2 后关联]

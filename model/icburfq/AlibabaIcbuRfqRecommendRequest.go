@@ -15,7 +15,7 @@ rfq推荐
 type AlibabaIcbuRfqRecommendRequest struct {
     model.Params
     // 入参数据
-    _queryDto   *QueryDto
+    _queryDto   *QueryDTO
 }
 
 // 初始化AlibabaIcbuRfqRecommendRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIcbuRfqRecommendRequest) GetApiParams() url.Values {
 }
 // QueryDto Setter
 // 入参数据
-func (r *AlibabaIcbuRfqRecommendRequest) SetQueryDto(_queryDto *QueryDto) error {
+func (r *AlibabaIcbuRfqRecommendRequest) SetQueryDto(_queryDto *QueryDTO) error {
     r._queryDto = _queryDto
     r.Set("query_dto", _queryDto)
     return nil
 }
 
 // QueryDto Getter
-func (r AlibabaIcbuRfqRecommendRequest) GetQueryDto() *QueryDto {
+func (r AlibabaIcbuRfqRecommendRequest) GetQueryDto() *QueryDTO {
     return r._queryDto
 }

@@ -1,7 +1,7 @@
 package btrip
 
-// OpenInvoiceDo 
-type OpenInvoiceDo struct {
+// OpenInvoiceDO 
+type OpenInvoiceDO struct {
     // 商旅发票id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 发票抬头

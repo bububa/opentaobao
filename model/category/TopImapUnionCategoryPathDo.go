@@ -1,7 +1,7 @@
 package category
 
-// TopImapUnionCategoryPathDo 
-type TopImapUnionCategoryPathDo struct {
+// TopImapUnionCategoryPathDO 
+type TopImapUnionCategoryPathDO struct {
     // 五级类目ID
     L5CatId   int64 `json:"l5_cat_id,omitempty" xml:"l5_cat_id,omitempty"`
     // 叶子类目名称

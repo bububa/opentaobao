@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopFindProductResultDto 
-type GlobalAeopFindProductResultDto struct {
+// GlobalAeopFindProductResultDTO 
+type GlobalAeopFindProductResultDTO struct {
     // Required when is_pack_sell equals to true. Value range for pieces to be added: 1-1000. Please refer to the field is_pack_sell for details.
     AddUnit   int64 `json:"add_unit,omitempty" xml:"add_unit,omitempty"`
     // Required when is_pack_sell equals to true. It means weight to be correspondingly added. Range value: 0.001-500.000, reserving three decimal places and applying scale; Unit: kilogram(s). Please refer to the field is_pack_sell for details.
@@ -81,5 +81,5 @@ type GlobalAeopFindProductResultDto struct {
     // multo language description list
     MultiLanguageDescriptionList   []GlobalDescription `json:"multi_language_description_list,omitempty" xml:"multi_language_description_list>global_description,omitempty"`
     // multi country price configuration
-    MultiCountryPriceConfiguration   *MultiCountryPriceConfigurationDto `json:"multi_country_price_configuration,omitempty" xml:"multi_country_price_configuration,omitempty"`
+    MultiCountryPriceConfiguration   *MultiCountryPriceConfigurationDTO `json:"multi_country_price_configuration,omitempty" xml:"multi_country_price_configuration,omitempty"`
 }

@@ -1,7 +1,7 @@
 package jst
 
-// HistoryTradeRelationDo 
-type HistoryTradeRelationDo struct {
+// HistoryTradeRelationDO 
+type HistoryTradeRelationDO struct {
     // 订单标签记录id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 记录的最新修改时间

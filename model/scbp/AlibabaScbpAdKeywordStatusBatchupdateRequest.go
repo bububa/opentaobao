@@ -15,7 +15,7 @@ alibaba.scbp.ad.keyword.status.batchupdate
 type AlibabaScbpAdKeywordStatusBatchupdateRequest struct {
     model.Params
     // 系统自动生成
-    _keywordUpdateDtoList   []KeywordUpdateDto
+    _keywordUpdateDtoList   []KeywordUpdateDTO
 }
 
 // 初始化AlibabaScbpAdKeywordStatusBatchupdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaScbpAdKeywordStatusBatchupdateRequest) GetApiParams() url.Values 
 }
 // KeywordUpdateDtoList Setter
 // 系统自动生成
-func (r *AlibabaScbpAdKeywordStatusBatchupdateRequest) SetKeywordUpdateDtoList(_keywordUpdateDtoList []KeywordUpdateDto) error {
+func (r *AlibabaScbpAdKeywordStatusBatchupdateRequest) SetKeywordUpdateDtoList(_keywordUpdateDtoList []KeywordUpdateDTO) error {
     r._keywordUpdateDtoList = _keywordUpdateDtoList
     r.Set("keyword_update_dto_list", _keywordUpdateDtoList)
     return nil
 }
 
 // KeywordUpdateDtoList Getter
-func (r AlibabaScbpAdKeywordStatusBatchupdateRequest) GetKeywordUpdateDtoList() []KeywordUpdateDto {
+func (r AlibabaScbpAdKeywordStatusBatchupdateRequest) GetKeywordUpdateDtoList() []KeywordUpdateDTO {
     return r._keywordUpdateDtoList
 }

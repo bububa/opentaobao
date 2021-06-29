@@ -1,7 +1,7 @@
 package flight
 
-// AlitripAgentFlightSellTicketingDetailResultDto 
-type AlitripAgentFlightSellTicketingDetailResultDto struct {
+// AlitripAgentFlightSellTicketingDetailResultDTO 
+type AlitripAgentFlightSellTicketingDetailResultDTO struct {
     // 出参对象
     Data   *AlitripAgentFlightSellTicketingDetailData `json:"data,omitempty" xml:"data,omitempty"`
     // 执行结果

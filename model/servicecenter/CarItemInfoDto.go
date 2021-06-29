@@ -1,7 +1,7 @@
 package servicecenter
 
-// CarItemInfoDto 
-type CarItemInfoDto struct {
+// CarItemInfoDTO 
+type CarItemInfoDTO struct {
     // 品牌
     Brand   string `json:"brand,omitempty" xml:"brand,omitempty"`
     // 商品id

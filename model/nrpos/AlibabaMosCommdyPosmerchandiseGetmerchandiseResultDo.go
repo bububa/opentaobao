@@ -1,13 +1,13 @@
 package nrpos
 
-// AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo 
-type AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDo struct {
+// AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDO 
+type AlibabaMosCommdyPosmerchandiseGetmerchandiseResultDO struct {
     // 返回头
     Headers   string `json:"headers,omitempty" xml:"headers,omitempty"`
     // null
     MappingCode   string `json:"mapping_code,omitempty" xml:"mapping_code,omitempty"`
     // 返回数据，
-    Datas   []MerchandiseInfoDto `json:"datas,omitempty" xml:"datas>merchandise_info_dto,omitempty"`
+    Datas   []MerchandiseInfoDTO `json:"datas,omitempty" xml:"datas>merchandise_info_dto,omitempty"`
     // http请求返回码
     HttpStatusCode   int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
     // null

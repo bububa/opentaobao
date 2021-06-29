@@ -1,7 +1,7 @@
 package axintrade
 
-// ExtUserInfoDto 
-type ExtUserInfoDto struct {
+// ExtUserInfoDTO 
+type ExtUserInfoDTO struct {
     // 指定买家支付宝实名证件号
     ExtUserCertNo   string `json:"ext_user_cert_no,omitempty" xml:"ext_user_cert_no,omitempty"`
     // 指定买家支付宝实名证件类型

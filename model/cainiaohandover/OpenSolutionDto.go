@@ -1,11 +1,11 @@
 package cainiaohandover
 
-// OpenSolutionDto 
-type OpenSolutionDto struct {
+// OpenSolutionDTO 
+type OpenSolutionDTO struct {
     // 时效信息
-    TimingList   []OpenTimingDto `json:"timing_list,omitempty" xml:"timing_list>open_timing_dto,omitempty"`
+    TimingList   []OpenTimingDTO `json:"timing_list,omitempty" xml:"timing_list>open_timing_dto,omitempty"`
     // 费用列表
-    FeeList   []OpenFeeDto `json:"fee_list,omitempty" xml:"fee_list>open_fee_dto,omitempty"`
+    FeeList   []OpenFeeDTO `json:"fee_list,omitempty" xml:"fee_list>open_fee_dto,omitempty"`
     // 推荐指数
     RecommendIndex   int64 `json:"recommend_index,omitempty" xml:"recommend_index,omitempty"`
     // 解决方案code

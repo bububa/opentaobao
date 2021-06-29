@@ -1,7 +1,7 @@
 package xiamiatrist
 
-// ArtistDto 
-type ArtistDto struct {
+// ArtistDTO 
+type ArtistDTO struct {
     // 地区
     Area   string `json:"area,omitempty" xml:"area,omitempty"`
     // 性别

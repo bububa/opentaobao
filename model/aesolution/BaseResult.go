@@ -11,5 +11,5 @@ type BaseResult struct {
     // error code
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // data
-    Data   *GlobalAeopTpOrderDetailDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *GlobalAeopTpOrderDetailDTO `json:"data,omitempty" xml:"data,omitempty"`
 }

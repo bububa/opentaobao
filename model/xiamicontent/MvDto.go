@@ -1,7 +1,7 @@
 package xiamicontent
 
-// MvDto 
-type MvDto struct {
+// MvDTO 
+type MvDTO struct {
     // 副标题
     SubTitle   string `json:"sub_title,omitempty" xml:"sub_title,omitempty"`
     // 标题

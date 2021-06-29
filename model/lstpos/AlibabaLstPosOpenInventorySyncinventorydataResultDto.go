@@ -1,7 +1,7 @@
 package lstpos
 
-// AlibabaLstPosOpenInventorySyncinventorydataResultDto 
-type AlibabaLstPosOpenInventorySyncinventorydataResultDto struct {
+// AlibabaLstPosOpenInventorySyncinventorydataResultDTO 
+type AlibabaLstPosOpenInventorySyncinventorydataResultDTO struct {
     // 错误消息
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     // 接口具体返回的业务数据对象

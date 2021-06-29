@@ -15,7 +15,7 @@ alibaba.htorder.hotel.sync.config
 type AlibabaHtorderHotelSyncConfigRequest struct {
     model.Params
     // 配置信息
-    _dataEntity   *HotelMessageConfigDto
+    _dataEntity   *HotelMessageConfigDTO
 }
 
 // 初始化AlibabaHtorderHotelSyncConfigRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHtorderHotelSyncConfigRequest) GetApiParams() url.Values {
 }
 // DataEntity Setter
 // 配置信息
-func (r *AlibabaHtorderHotelSyncConfigRequest) SetDataEntity(_dataEntity *HotelMessageConfigDto) error {
+func (r *AlibabaHtorderHotelSyncConfigRequest) SetDataEntity(_dataEntity *HotelMessageConfigDTO) error {
     r._dataEntity = _dataEntity
     r.Set("data_entity", _dataEntity)
     return nil
 }
 
 // DataEntity Getter
-func (r AlibabaHtorderHotelSyncConfigRequest) GetDataEntity() *HotelMessageConfigDto {
+func (r AlibabaHtorderHotelSyncConfigRequest) GetDataEntity() *HotelMessageConfigDTO {
     return r._dataEntity
 }

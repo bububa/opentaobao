@@ -1,7 +1,7 @@
 package nrt
 
-// TopHomeItemDto 
-type TopHomeItemDto struct {
+// TopHomeItemDTO 
+type TopHomeItemDTO struct {
     // features
     Features   string `json:"features,omitempty" xml:"features,omitempty"`
     // 商品状态
@@ -11,7 +11,7 @@ type TopHomeItemDto struct {
     // 叶子类目ID
     CId   int64 `json:"c_id,omitempty" xml:"c_id,omitempty"`
     // 类目属性
-    CProps   []CategoryPropDto `json:"c_props,omitempty" xml:"c_props>category_prop_dto,omitempty"`
+    CProps   []CategoryPropDTO `json:"c_props,omitempty" xml:"c_props>category_prop_dto,omitempty"`
     // 创建时间
     CreateTime   string `json:"create_time,omitempty" xml:"create_time,omitempty"`
     // 经销商编码
@@ -19,11 +19,11 @@ type TopHomeItemDto struct {
     // 描述
     Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     // 系统自动生成
-    Ext   *MacallineItemExtDto `json:"ext,omitempty" xml:"ext,omitempty"`
+    Ext   *MacallineItemExtDTO `json:"ext,omitempty" xml:"ext,omitempty"`
     // 商品ID
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 图片信息
-    Images   []ItemImageDto `json:"images,omitempty" xml:"images>item_image_dto,omitempty"`
+    Images   []ItemImageDTO `json:"images,omitempty" xml:"images>item_image_dto,omitempty"`
     // 商品类型，1：主商品，2：摊位商品，3：城市站商品
     ItemType   int64 `json:"item_type,omitempty" xml:"item_type,omitempty"`
     // 主商品ID
@@ -37,7 +37,7 @@ type TopHomeItemDto struct {
     // 数量
     Quantity   int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // SKU
-    Skus   []SkuDto `json:"skus,omitempty" xml:"skus>sku_dto,omitempty"`
+    Skus   []SkuDTO `json:"skus,omitempty" xml:"skus>sku_dto,omitempty"`
     // 商品名称
     Title   string `json:"title,omitempty" xml:"title,omitempty"`
     // 修改时间

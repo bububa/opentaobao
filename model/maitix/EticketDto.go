@@ -1,7 +1,7 @@
 package maitix
 
-// EticketDto 
-type EticketDto struct {
+// EticketDTO 
+type EticketDTO struct {
     // 票池批次号
     BatchCode   int64 `json:"batch_code,omitempty" xml:"batch_code,omitempty"`
     // 证件号

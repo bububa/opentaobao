@@ -15,7 +15,7 @@ ERP系统向天天特卖同步生产计划单的数据
 type AliyunIndustryTttmPlanSyncRequest struct {
     model.Params
     // 计划单
-    _syncPlan   *SyncPlanDto
+    _syncPlan   *SyncPlanDTO
 }
 
 // 初始化AliyunIndustryTttmPlanSyncRequest对象
@@ -40,13 +40,13 @@ func (r AliyunIndustryTttmPlanSyncRequest) GetApiParams() url.Values {
 }
 // SyncPlan Setter
 // 计划单
-func (r *AliyunIndustryTttmPlanSyncRequest) SetSyncPlan(_syncPlan *SyncPlanDto) error {
+func (r *AliyunIndustryTttmPlanSyncRequest) SetSyncPlan(_syncPlan *SyncPlanDTO) error {
     r._syncPlan = _syncPlan
     r.Set("sync_plan", _syncPlan)
     return nil
 }
 
 // SyncPlan Getter
-func (r AliyunIndustryTttmPlanSyncRequest) GetSyncPlan() *SyncPlanDto {
+func (r AliyunIndustryTttmPlanSyncRequest) GetSyncPlan() *SyncPlanDTO {
     return r._syncPlan
 }

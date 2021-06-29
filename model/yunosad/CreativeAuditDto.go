@@ -1,7 +1,7 @@
 package yunosad
 
-// CreativeAuditDto 
-type CreativeAuditDto struct {
+// CreativeAuditDTO 
+type CreativeAuditDTO struct {
     // 广告创意id
     CreativeId   string `json:"creative_id,omitempty" xml:"creative_id,omitempty"`
     // 是否审核通过，WAITING等待审核，PASS通过，REFUSE拒绝

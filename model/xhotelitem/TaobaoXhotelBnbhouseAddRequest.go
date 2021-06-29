@@ -69,9 +69,9 @@ type TaobaoXhotelBnbhouseAddRequest struct {
     // 是否有前台 0没有 1有
     _hasFrontDesk   int64
     // 位置信息
-    _location   *BnbLocationDto
+    _location   *BnbLocationDTO
     // 入住要求&附加信息
-    _bnbBookingTime   *BnbBookingTimeDto
+    _bnbBookingTime   *BnbBookingTimeDTO
     // 入住须知
     _checkInNotes   string
     // 可接待客人性别 0：不限制，1：只限男性，2：只限女性'
@@ -85,7 +85,7 @@ type TaobaoXhotelBnbhouseAddRequest struct {
     // 可加床数
     _extraBedsNum   int64
     // 加人收费信息
-    _charge   *BnbChargeDto
+    _charge   *BnbChargeDTO
 }
 
 // 初始化TaobaoXhotelBnbhouseAddRequest对象
@@ -434,26 +434,26 @@ func (r TaobaoXhotelBnbhouseAddRequest) GetHasFrontDesk() int64 {
 }
 // Location Setter
 // 位置信息
-func (r *TaobaoXhotelBnbhouseAddRequest) SetLocation(_location *BnbLocationDto) error {
+func (r *TaobaoXhotelBnbhouseAddRequest) SetLocation(_location *BnbLocationDTO) error {
     r._location = _location
     r.Set("location", _location)
     return nil
 }
 
 // Location Getter
-func (r TaobaoXhotelBnbhouseAddRequest) GetLocation() *BnbLocationDto {
+func (r TaobaoXhotelBnbhouseAddRequest) GetLocation() *BnbLocationDTO {
     return r._location
 }
 // BnbBookingTime Setter
 // 入住要求&附加信息
-func (r *TaobaoXhotelBnbhouseAddRequest) SetBnbBookingTime(_bnbBookingTime *BnbBookingTimeDto) error {
+func (r *TaobaoXhotelBnbhouseAddRequest) SetBnbBookingTime(_bnbBookingTime *BnbBookingTimeDTO) error {
     r._bnbBookingTime = _bnbBookingTime
     r.Set("bnb_booking_time", _bnbBookingTime)
     return nil
 }
 
 // BnbBookingTime Getter
-func (r TaobaoXhotelBnbhouseAddRequest) GetBnbBookingTime() *BnbBookingTimeDto {
+func (r TaobaoXhotelBnbhouseAddRequest) GetBnbBookingTime() *BnbBookingTimeDTO {
     return r._bnbBookingTime
 }
 // CheckInNotes Setter
@@ -530,13 +530,13 @@ func (r TaobaoXhotelBnbhouseAddRequest) GetExtraBedsNum() int64 {
 }
 // Charge Setter
 // 加人收费信息
-func (r *TaobaoXhotelBnbhouseAddRequest) SetCharge(_charge *BnbChargeDto) error {
+func (r *TaobaoXhotelBnbhouseAddRequest) SetCharge(_charge *BnbChargeDTO) error {
     r._charge = _charge
     r.Set("charge", _charge)
     return nil
 }
 
 // Charge Getter
-func (r TaobaoXhotelBnbhouseAddRequest) GetCharge() *BnbChargeDto {
+func (r TaobaoXhotelBnbhouseAddRequest) GetCharge() *BnbChargeDTO {
     return r._charge
 }

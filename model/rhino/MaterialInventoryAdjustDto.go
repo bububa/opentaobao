@@ -1,7 +1,7 @@
 package rhino
 
-// MaterialInventoryAdjustDto 
-type MaterialInventoryAdjustDto struct {
+// MaterialInventoryAdjustDTO 
+type MaterialInventoryAdjustDTO struct {
     // 工厂ID，货主编码
     FactoryId   int64 `json:"factory_id,omitempty" xml:"factory_id,omitempty"`
     // 物料名称

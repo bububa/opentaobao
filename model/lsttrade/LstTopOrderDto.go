@@ -1,7 +1,7 @@
 package lsttrade
 
-// LstTopOrderDto 
-type LstTopOrderDto struct {
+// LstTopOrderDTO 
+type LstTopOrderDTO struct {
     // 实际支付金额
     ActualPayFee   int64 `json:"actual_pay_fee,omitempty" xml:"actual_pay_fee,omitempty"`
     // 订单创建时间

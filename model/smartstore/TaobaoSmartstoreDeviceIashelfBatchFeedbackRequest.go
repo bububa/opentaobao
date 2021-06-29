@@ -21,7 +21,7 @@ type TaobaoSmartstoreDeviceIashelfBatchFeedbackRequest struct {
     // 硬件CODE
     _deviceCode   string
     // 回流数据数组，一次最多100条
-    _datas   []DeviceBizDataDo
+    _datas   []DeviceBizDataDO
 }
 
 // 初始化TaobaoSmartstoreDeviceIashelfBatchFeedbackRequest对象
@@ -58,13 +58,13 @@ func (r TaobaoSmartstoreDeviceIashelfBatchFeedbackRequest) GetDeviceCode() strin
 }
 // Datas Setter
 // 回流数据数组，一次最多100条
-func (r *TaobaoSmartstoreDeviceIashelfBatchFeedbackRequest) SetDatas(_datas []DeviceBizDataDo) error {
+func (r *TaobaoSmartstoreDeviceIashelfBatchFeedbackRequest) SetDatas(_datas []DeviceBizDataDO) error {
     r._datas = _datas
     r.Set("datas", _datas)
     return nil
 }
 
 // Datas Getter
-func (r TaobaoSmartstoreDeviceIashelfBatchFeedbackRequest) GetDatas() []DeviceBizDataDo {
+func (r TaobaoSmartstoreDeviceIashelfBatchFeedbackRequest) GetDatas() []DeviceBizDataDO {
     return r._datas
 }

@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceCreateSimpleResultDto 
-type InvoiceCreateSimpleResultDto struct {
+// InvoiceCreateSimpleResultDTO 
+type InvoiceCreateSimpleResultDTO struct {
     // 错误码
     BizErrorCode   string `json:"biz_error_code,omitempty" xml:"biz_error_code,omitempty"`
     // 错误描述

@@ -1,7 +1,7 @@
 package alicom
 
-// ProductActivityInfoResponseDto 
-type ProductActivityInfoResponseDto struct {
+// ProductActivityInfoResponseDTO 
+type ProductActivityInfoResponseDTO struct {
     // 产品ID
     ProductId   string `json:"product_id,omitempty" xml:"product_id,omitempty"`
     // 产品名称

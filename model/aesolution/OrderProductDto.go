@@ -1,7 +1,7 @@
 package aesolution
 
-// OrderProductDto 
-type OrderProductDto struct {
+// OrderProductDTO 
+type OrderProductDTO struct {
     // total product amount
     TotalProductAmount   *SimpleMoney `json:"total_product_amount,omitempty" xml:"total_product_amount,omitempty"`
     // child order status

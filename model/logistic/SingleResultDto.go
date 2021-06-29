@@ -1,11 +1,11 @@
 package logistic
 
-// SingleResultDto 
-type SingleResultDto struct {
+// SingleResultDTO 
+type SingleResultDTO struct {
     // 是否需要重试
     IsRetry   bool `json:"is_retry,omitempty" xml:"is_retry,omitempty"`
     // 业务返回结果
-    Result   *ExpressModifyAppointTopResponseDto `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *ExpressModifyAppointTopResponseDTO `json:"result,omitempty" xml:"result,omitempty"`
     // 错误描述
     ErrorDesc   string `json:"error_desc,omitempty" xml:"error_desc,omitempty"`
     // 调用码

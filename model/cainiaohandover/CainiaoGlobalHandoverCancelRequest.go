@@ -15,7 +15,7 @@ cainiao.global.handover.cancel
 type CainiaoGlobalHandoverCancelRequest struct {
     model.Params
     // 系统自动生成
-    _userInfo   *UserInfoDto
+    _userInfo   *UserInfoDTO
     // 要取消的交接物运单号，即大包运单号
     _trackingNumber   string
     // 要取消的交接单id
@@ -50,14 +50,14 @@ func (r CainiaoGlobalHandoverCancelRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 系统自动生成
-func (r *CainiaoGlobalHandoverCancelRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+func (r *CainiaoGlobalHandoverCancelRequest) SetUserInfo(_userInfo *UserInfoDTO) error {
     r._userInfo = _userInfo
     r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
-func (r CainiaoGlobalHandoverCancelRequest) GetUserInfo() *UserInfoDto {
+func (r CainiaoGlobalHandoverCancelRequest) GetUserInfo() *UserInfoDTO {
     return r._userInfo
 }
 // TrackingNumber Setter

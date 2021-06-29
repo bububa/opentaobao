@@ -15,7 +15,7 @@ cainiao.merchant.inventory.adjust
 type CainiaoMerchantInventoryAdjustRequest struct {
     model.Params
     // 商家仓编辑库存
-    _adjustRequest   []MerStoreInvAdjustDto
+    _adjustRequest   []MerStoreInvAdjustDTO
     // 调用方应用名
     _appName   string
     // 操作
@@ -44,14 +44,14 @@ func (r CainiaoMerchantInventoryAdjustRequest) GetApiParams() url.Values {
 }
 // AdjustRequest Setter
 // 商家仓编辑库存
-func (r *CainiaoMerchantInventoryAdjustRequest) SetAdjustRequest(_adjustRequest []MerStoreInvAdjustDto) error {
+func (r *CainiaoMerchantInventoryAdjustRequest) SetAdjustRequest(_adjustRequest []MerStoreInvAdjustDTO) error {
     r._adjustRequest = _adjustRequest
     r.Set("adjust_request", _adjustRequest)
     return nil
 }
 
 // AdjustRequest Getter
-func (r CainiaoMerchantInventoryAdjustRequest) GetAdjustRequest() []MerStoreInvAdjustDto {
+func (r CainiaoMerchantInventoryAdjustRequest) GetAdjustRequest() []MerStoreInvAdjustDTO {
     return r._adjustRequest
 }
 // AppName Setter

@@ -15,7 +15,7 @@ tmall.aliauto.autofinance.loan.receive
 type TmallAliautoAutofinanceLoanReceiveRequest struct {
     model.Params
     // 接收外部金融结构的放款结果通知参数
-    _loanReceiveDto   *LoanReceiveDto
+    _loanReceiveDto   *LoanReceiveDTO
 }
 
 // 初始化TmallAliautoAutofinanceLoanReceiveRequest对象
@@ -40,13 +40,13 @@ func (r TmallAliautoAutofinanceLoanReceiveRequest) GetApiParams() url.Values {
 }
 // LoanReceiveDto Setter
 // 接收外部金融结构的放款结果通知参数
-func (r *TmallAliautoAutofinanceLoanReceiveRequest) SetLoanReceiveDto(_loanReceiveDto *LoanReceiveDto) error {
+func (r *TmallAliautoAutofinanceLoanReceiveRequest) SetLoanReceiveDto(_loanReceiveDto *LoanReceiveDTO) error {
     r._loanReceiveDto = _loanReceiveDto
     r.Set("loan_receive_dto", _loanReceiveDto)
     return nil
 }
 
 // LoanReceiveDto Getter
-func (r TmallAliautoAutofinanceLoanReceiveRequest) GetLoanReceiveDto() *LoanReceiveDto {
+func (r TmallAliautoAutofinanceLoanReceiveRequest) GetLoanReceiveDto() *LoanReceiveDTO {
     return r._loanReceiveDto
 }

@@ -1,7 +1,7 @@
 package jym
 
-// AlibabaJymRequirementsReceiveResultDto 
-type AlibabaJymRequirementsReceiveResultDto struct {
+// AlibabaJymRequirementsReceiveResultDTO 
+type AlibabaJymRequirementsReceiveResultDTO struct {
     // 错误信息
     ExtraErrMsg   string `json:"extra_err_msg,omitempty" xml:"extra_err_msg,omitempty"`
     // 状态码

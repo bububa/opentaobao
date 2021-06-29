@@ -21,7 +21,7 @@ type TaobaoOmniorderItemTagOperateRequest struct {
     // 操作状态， 填 1 代表打标，填 -1 代表去标
     _status   int64
     // 分单&接单设置
-    _omniSetting   *OmniSettingDto
+    _omniSetting   *OmniSettingDTO
 }
 
 // 初始化TaobaoOmniorderItemTagOperateRequest对象
@@ -82,13 +82,13 @@ func (r TaobaoOmniorderItemTagOperateRequest) GetStatus() int64 {
 }
 // OmniSetting Setter
 // 分单&接单设置
-func (r *TaobaoOmniorderItemTagOperateRequest) SetOmniSetting(_omniSetting *OmniSettingDto) error {
+func (r *TaobaoOmniorderItemTagOperateRequest) SetOmniSetting(_omniSetting *OmniSettingDTO) error {
     r._omniSetting = _omniSetting
     r.Set("omni_setting", _omniSetting)
     return nil
 }
 
 // OmniSetting Getter
-func (r TaobaoOmniorderItemTagOperateRequest) GetOmniSetting() *OmniSettingDto {
+func (r TaobaoOmniorderItemTagOperateRequest) GetOmniSetting() *OmniSettingDTO {
     return r._omniSetting
 }

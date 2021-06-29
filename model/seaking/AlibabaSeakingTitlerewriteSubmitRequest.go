@@ -15,7 +15,7 @@ alibaba.seaking.titlerewrite.submit
 type AlibabaSeakingTitlerewriteSubmitRequest struct {
     model.Params
     // 任务详情列表
-    _titleRewriteDetailList   []TitleRewriteDetailDto
+    _titleRewriteDetailList   []TitleRewriteDetailDTO
     // token来源站点
     _tokenFrom   string
     // 用户token
@@ -44,14 +44,14 @@ func (r AlibabaSeakingTitlerewriteSubmitRequest) GetApiParams() url.Values {
 }
 // TitleRewriteDetailList Setter
 // 任务详情列表
-func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetTitleRewriteDetailList(_titleRewriteDetailList []TitleRewriteDetailDto) error {
+func (r *AlibabaSeakingTitlerewriteSubmitRequest) SetTitleRewriteDetailList(_titleRewriteDetailList []TitleRewriteDetailDTO) error {
     r._titleRewriteDetailList = _titleRewriteDetailList
     r.Set("title_rewrite_detail_list", _titleRewriteDetailList)
     return nil
 }
 
 // TitleRewriteDetailList Getter
-func (r AlibabaSeakingTitlerewriteSubmitRequest) GetTitleRewriteDetailList() []TitleRewriteDetailDto {
+func (r AlibabaSeakingTitlerewriteSubmitRequest) GetTitleRewriteDetailList() []TitleRewriteDetailDTO {
     return r._titleRewriteDetailList
 }
 // TokenFrom Setter

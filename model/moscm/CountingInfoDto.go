@@ -1,7 +1,7 @@
 package moscm
 
-// CountingInfoDto 
-type CountingInfoDto struct {
+// CountingInfoDTO 
+type CountingInfoDTO struct {
     // 专柜id
     CounterId   string `json:"counter_id,omitempty" xml:"counter_id,omitempty"`
     // 备注信息（必填）

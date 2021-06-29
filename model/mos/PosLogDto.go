@@ -1,7 +1,7 @@
 package mos
 
-// PosLogDto 
-type PosLogDto struct {
+// PosLogDTO 
+type PosLogDTO struct {
     // IP地址
     IpAddr   string `json:"ip_addr,omitempty" xml:"ip_addr,omitempty"`
     // 当前操作步骤

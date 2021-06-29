@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.metro.sync
 type AlibabaAlihouseNewhomeMetroSyncRequest struct {
     model.Params
     // 地铁入参数据
-    _baseMetroLineDto   *BaseMetroLineDto
+    _baseMetroLineDto   *BaseMetroLineDTO
 }
 
 // 初始化AlibabaAlihouseNewhomeMetroSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeMetroSyncRequest) GetApiParams() url.Values {
 }
 // BaseMetroLineDto Setter
 // 地铁入参数据
-func (r *AlibabaAlihouseNewhomeMetroSyncRequest) SetBaseMetroLineDto(_baseMetroLineDto *BaseMetroLineDto) error {
+func (r *AlibabaAlihouseNewhomeMetroSyncRequest) SetBaseMetroLineDto(_baseMetroLineDto *BaseMetroLineDTO) error {
     r._baseMetroLineDto = _baseMetroLineDto
     r.Set("base_metro_line_dto", _baseMetroLineDto)
     return nil
 }
 
 // BaseMetroLineDto Getter
-func (r AlibabaAlihouseNewhomeMetroSyncRequest) GetBaseMetroLineDto() *BaseMetroLineDto {
+func (r AlibabaAlihouseNewhomeMetroSyncRequest) GetBaseMetroLineDto() *BaseMetroLineDTO {
     return r._baseMetroLineDto
 }

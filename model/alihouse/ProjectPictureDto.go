@@ -1,7 +1,7 @@
 package alihouse
 
-// ProjectPictureDto 
-type ProjectPictureDto struct {
+// ProjectPictureDTO 
+type ProjectPictureDTO struct {
     // 是否删除 1 是 0 否
     IsDeleted   string `json:"is_deleted,omitempty" xml:"is_deleted,omitempty"`
     // 说明描述

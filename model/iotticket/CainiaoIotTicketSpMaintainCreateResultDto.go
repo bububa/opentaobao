@@ -1,7 +1,7 @@
 package iotticket
 
-// CainiaoIotTicketSpMaintainCreateResultDto 
-type CainiaoIotTicketSpMaintainCreateResultDto struct {
+// CainiaoIotTicketSpMaintainCreateResultDTO 
+type CainiaoIotTicketSpMaintainCreateResultDTO struct {
     // 执行结果
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 异常描述

@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TopChannelPurchaseOrderDto 
-type TopChannelPurchaseOrderDto struct {
+// TopChannelPurchaseOrderDTO 
+type TopChannelPurchaseOrderDTO struct {
     // 主采购单号
     MainPurchaseOrderNo   int64 `json:"main_purchase_order_no,omitempty" xml:"main_purchase_order_no,omitempty"`
     // 申请单单号
@@ -31,9 +31,9 @@ type TopChannelPurchaseOrderDto struct {
     // 付款时间
     PayTime   string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
     // 子采购单列表
-    SubOrderList   []TopChannelSubPurchaseOrderDto `json:"sub_order_list,omitempty" xml:"sub_order_list>top_channel_sub_purchase_order_dto,omitempty"`
+    SubOrderList   []TopChannelSubPurchaseOrderDTO `json:"sub_order_list,omitempty" xml:"sub_order_list>top_channel_sub_purchase_order_dto,omitempty"`
     // 物流单信息
-    ChannelLogisticsOrder   *TopChannelLogisticsOrderDto `json:"channel_logistics_order,omitempty" xml:"channel_logistics_order,omitempty"`
+    ChannelLogisticsOrder   *TopChannelLogisticsOrderDTO `json:"channel_logistics_order,omitempty" xml:"channel_logistics_order,omitempty"`
     // 解析详情
     Schema   string `json:"schema,omitempty" xml:"schema,omitempty"`
 }

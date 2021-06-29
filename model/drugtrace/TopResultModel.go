@@ -3,7 +3,7 @@ package drugtrace
 // TopResultModel 
 type TopResultModel struct {
     // 顶层结构
-    Model   *AdvanceCodeSearchDto `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *AdvanceCodeSearchDTO `json:"model,omitempty" xml:"model,omitempty"`
     // 操作码
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // 操作说明
@@ -11,5 +11,5 @@ type TopResultModel struct {
     // 调用成功
     ResponseSuccess   bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
     // 导出的项目和药品目录
-    Models   []TrialProjectDto `json:"models,omitempty" xml:"models>trial_project_dto,omitempty"`
+    Models   []TrialProjectDTO `json:"models,omitempty" xml:"models>trial_project_dto,omitempty"`
 }

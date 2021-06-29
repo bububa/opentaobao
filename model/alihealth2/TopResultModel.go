@@ -3,7 +3,7 @@ package alihealth2
 // TopResultModel 
 type TopResultModel struct {
     // model
-    Model   *DrugInfoDto `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *DrugInfoDTO `json:"model,omitempty" xml:"model,omitempty"`
     // msgCode
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // msgInfo

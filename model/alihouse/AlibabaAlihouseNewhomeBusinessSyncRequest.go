@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.business.sync
 type AlibabaAlihouseNewhomeBusinessSyncRequest struct {
     model.Params
     // 入参数据
-    _baseBusinessDto   *BaseBusinessDto
+    _baseBusinessDto   *BaseBusinessDTO
 }
 
 // 初始化AlibabaAlihouseNewhomeBusinessSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeBusinessSyncRequest) GetApiParams() url.Values {
 }
 // BaseBusinessDto Setter
 // 入参数据
-func (r *AlibabaAlihouseNewhomeBusinessSyncRequest) SetBaseBusinessDto(_baseBusinessDto *BaseBusinessDto) error {
+func (r *AlibabaAlihouseNewhomeBusinessSyncRequest) SetBaseBusinessDto(_baseBusinessDto *BaseBusinessDTO) error {
     r._baseBusinessDto = _baseBusinessDto
     r.Set("base_business_dto", _baseBusinessDto)
     return nil
 }
 
 // BaseBusinessDto Getter
-func (r AlibabaAlihouseNewhomeBusinessSyncRequest) GetBaseBusinessDto() *BaseBusinessDto {
+func (r AlibabaAlihouseNewhomeBusinessSyncRequest) GetBaseBusinessDto() *BaseBusinessDTO {
     return r._baseBusinessDto
 }

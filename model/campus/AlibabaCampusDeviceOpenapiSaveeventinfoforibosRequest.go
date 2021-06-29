@@ -17,7 +17,7 @@ type AlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest struct {
     // 系统自动生成
     _param0   *WorkBenchContext
     // 系统自动生成
-    _param1   *EventInfoApiDto
+    _param1   *EventInfoApiDTO
 }
 
 // 初始化AlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest) GetParam0() *Work
 }
 // Param1 Setter
 // 系统自动生成
-func (r *AlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest) SetParam1(_param1 *EventInfoApiDto) error {
+func (r *AlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest) SetParam1(_param1 *EventInfoApiDTO) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest) GetParam1() *EventInfoApiDto {
+func (r AlibabaCampusDeviceOpenapiSaveeventinfoforibosRequest) GetParam1() *EventInfoApiDTO {
     return r._param1
 }

@@ -1,7 +1,7 @@
 package waybill
 
-// AddressDto 
-type AddressDto struct {
+// AddressDTO 
+type AddressDTO struct {
     // 城市，长度小于20
     City   string `json:"city,omitempty" xml:"city,omitempty"`
     // 详细地址，长度小于256

@@ -1,7 +1,7 @@
 package scbp
 
-// KeywordReportOperationDto 
-type KeywordReportOperationDto struct {
+// KeywordReportOperationDTO 
+type KeywordReportOperationDTO struct {
     // 效果报告模糊搜索关键词
     Keyword   string `json:"keyword,omitempty" xml:"keyword,omitempty"`
     // 精确搜索关键词

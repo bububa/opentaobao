@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrCancelFulfillReqDto 
-type NrCancelFulfillReqDto struct {
+// NrCancelFulfillReqDTO 
+type NrCancelFulfillReqDTO struct {
     // 操作取消人员姓名
     CancelOperUserName   string `json:"cancel_oper_user_name,omitempty" xml:"cancel_oper_user_name,omitempty"`
     // 操作取消人员ID号

@@ -1,7 +1,7 @@
 package util
 
-// CountryDto 
-type CountryDto struct {
+// CountryDTO 
+type CountryDTO struct {
     // 国家ID
     Id   string `json:"id,omitempty" xml:"id,omitempty"`
     // 国家名称

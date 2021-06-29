@@ -51,9 +51,9 @@ type OpenApiFlightOrderRs struct {
     // 到达机场
     ArrAirport   string `json:"arr_airport,omitempty" xml:"arr_airport,omitempty"`
     // 发票信息对象
-    Invoice   *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
+    Invoice   *OpenInvoiceDO `json:"invoice,omitempty" xml:"invoice,omitempty"`
     // 成本中心对象
-    CostCenter   *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
+    CostCenter   *OpenCostCenterDO `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
     // 价目信息
     PriceInfoList   []OpenPriceInfo `json:"price_info_list,omitempty" xml:"price_info_list>open_price_info,omitempty"`
     // 保险信息
@@ -61,7 +61,7 @@ type OpenApiFlightOrderRs struct {
     // 第三方行程id
     ThirdpartItineraryId   string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
     // 出行人列表
-    UserAffiliateList   []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
+    UserAffiliateList   []OpenUserAffiliateDO `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
     // 第三方申请单ID
     ThirdpartApplyId   string `json:"thirdpart_apply_id,omitempty" xml:"thirdpart_apply_id,omitempty"`
     // 申请单名称

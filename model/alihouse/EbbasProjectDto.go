@@ -1,7 +1,7 @@
 package alihouse
 
-// EbbasProjectDto 
-type EbbasProjectDto struct {
+// EbbasProjectDTO 
+type EbbasProjectDTO struct {
     // 楼盘ecode
     ECode   string `json:"e_code,omitempty" xml:"e_code,omitempty"`
     // 外部id
@@ -199,9 +199,9 @@ type EbbasProjectDto struct {
     // 营销方式
     DirectSale   string `json:"direct_sale,omitempty" xml:"direct_sale,omitempty"`
     // 户型对象列表
-    Layouts   []SyncProjectLayoutDto `json:"layouts,omitempty" xml:"layouts>sync_project_layout_dto,omitempty"`
+    Layouts   []SyncProjectLayoutDTO `json:"layouts,omitempty" xml:"layouts>sync_project_layout_dto,omitempty"`
     // 图片对象列表
-    Pictures   []ProjectPictureDto `json:"pictures,omitempty" xml:"pictures>project_picture_dto,omitempty"`
+    Pictures   []ProjectPictureDTO `json:"pictures,omitempty" xml:"pictures>project_picture_dto,omitempty"`
     // 是否为测试楼盘 true-是测试楼盘
     IsTest   bool `json:"is_test,omitempty" xml:"is_test,omitempty"`
     // 装修类型，参见枚举

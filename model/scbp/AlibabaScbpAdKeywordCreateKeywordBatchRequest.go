@@ -19,7 +19,7 @@ type AlibabaScbpAdKeywordCreateKeywordBatchRequest struct {
     // 请求参数
     _keywordQuery   *KeywordQuery
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdKeywordCreateKeywordBatchRequest对象
@@ -68,13 +68,13 @@ func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetKeywordQuery() *Keywor
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdKeywordCreateKeywordBatchRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdKeywordCreateKeywordBatchRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

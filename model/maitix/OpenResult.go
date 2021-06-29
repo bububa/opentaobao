@@ -11,9 +11,9 @@ type OpenResult struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 结果
-    ModelList   []OpenExchangePointDto `json:"model_list,omitempty" xml:"model_list>open_exchange_point_dto,omitempty"`
+    ModelList   []OpenExchangePointDTO `json:"model_list,omitempty" xml:"model_list>open_exchange_point_dto,omitempty"`
     // 参数extMap
     ExtMap   string `json:"ext_map,omitempty" xml:"ext_map,omitempty"`
     // 电子票对象
-    ModelArrList   []EticketDto `json:"model_arr_list,omitempty" xml:"model_arr_list>eticket_dto,omitempty"`
+    ModelArrList   []EticketDTO `json:"model_arr_list,omitempty" xml:"model_arr_list>eticket_dto,omitempty"`
 }

@@ -25,7 +25,7 @@ type AliexpressSolutionFeedListGetResponse struct {
     // current page
     CurrentPage   int64 `json:"current_page,omitempty" xml:"current_page,omitempty"`
     // data
-    JobList   []BatchOperationJobDto `json:"job_list,omitempty" xml:"job_list>batch_operation_job_dto,omitempty"`
+    JobList   []BatchOperationJobDTO `json:"job_list,omitempty" xml:"job_list>batch_operation_job_dto,omitempty"`
     // page size
     PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
     // total count of jobs submitted for this seller

@@ -1,7 +1,7 @@
 package eleenterpriseordernew
 
-// DeliverymanInfoDto 
-type DeliverymanInfoDto struct {
+// DeliverymanInfoDTO 
+type DeliverymanInfoDTO struct {
     // 配送员姓名
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // 配送员电话

@@ -11,7 +11,7 @@ type TaobaoAlitripAxinTransFundAddResult struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 返回素材id
-    Data   *AxinFundCreateResDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *AxinFundCreateResDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 错误信息
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 }

@@ -1,7 +1,7 @@
 package iot
 
-// MemberAccountDto 
-type MemberAccountDto struct {
+// MemberAccountDTO 
+type MemberAccountDTO struct {
     // 等级名称
     GradeName   string `json:"grade_name,omitempty" xml:"grade_name,omitempty"`
     // 等级编号

@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.layout.sync
 type AlibabaAlihouseNewhomeLayoutSyncRequest struct {
     model.Params
     // 数据
-    _syncProjectLayoutData   *SyncProjectLayoutDto
+    _syncProjectLayoutData   *SyncProjectLayoutDTO
 }
 
 // 初始化AlibabaAlihouseNewhomeLayoutSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeLayoutSyncRequest) GetApiParams() url.Values {
 }
 // SyncProjectLayoutData Setter
 // 数据
-func (r *AlibabaAlihouseNewhomeLayoutSyncRequest) SetSyncProjectLayoutData(_syncProjectLayoutData *SyncProjectLayoutDto) error {
+func (r *AlibabaAlihouseNewhomeLayoutSyncRequest) SetSyncProjectLayoutData(_syncProjectLayoutData *SyncProjectLayoutDTO) error {
     r._syncProjectLayoutData = _syncProjectLayoutData
     r.Set("sync_project_layout_data", _syncProjectLayoutData)
     return nil
 }
 
 // SyncProjectLayoutData Getter
-func (r AlibabaAlihouseNewhomeLayoutSyncRequest) GetSyncProjectLayoutData() *SyncProjectLayoutDto {
+func (r AlibabaAlihouseNewhomeLayoutSyncRequest) GetSyncProjectLayoutData() *SyncProjectLayoutDTO {
     return r._syncProjectLayoutData
 }

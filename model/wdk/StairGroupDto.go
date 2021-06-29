@@ -1,7 +1,7 @@
 package wdk
 
-// StairGroupDto 
-type StairGroupDto struct {
+// StairGroupDTO 
+type StairGroupDTO struct {
     // 分组序号
     Number   int64 `json:"number,omitempty" xml:"number,omitempty"`
     // 优惠门槛

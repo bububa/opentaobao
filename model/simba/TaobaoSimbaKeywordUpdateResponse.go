@@ -23,7 +23,7 @@ type TaobaoSimbaKeywordUpdateResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 整体的返回值
-    Results   []SiriusBidwordDto `json:"results,omitempty" xml:"results>sirius_bidword_dto,omitempty"`
+    Results   []SiriusBidwordDTO `json:"results,omitempty" xml:"results>sirius_bidword_dto,omitempty"`
     // 错误原因
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
 }

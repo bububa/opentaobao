@@ -1,7 +1,7 @@
 package retail
 
-// AlibabaRetailVendingPriceWhitelistAddResultDo 
-type AlibabaRetailVendingPriceWhitelistAddResultDo struct {
+// AlibabaRetailVendingPriceWhitelistAddResultDO 
+type AlibabaRetailVendingPriceWhitelistAddResultDO struct {
     // 成功标识
     Succ   bool `json:"succ,omitempty" xml:"succ,omitempty"`
     // 错误码

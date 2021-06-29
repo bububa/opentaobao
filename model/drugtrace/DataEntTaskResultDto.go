@@ -1,7 +1,7 @@
 package drugtrace
 
-// DataEntTaskResultDto 
-type DataEntTaskResultDto struct {
+// DataEntTaskResultDTO 
+type DataEntTaskResultDTO struct {
     // model
     Model   bool `json:"model,omitempty" xml:"model,omitempty"`
     // httpStatusCode

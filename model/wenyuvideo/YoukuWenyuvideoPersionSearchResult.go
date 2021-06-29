@@ -3,7 +3,7 @@ package wenyuvideo
 // YoukuWenyuvideoPersionSearchResult 
 type YoukuWenyuvideoPersionSearchResult struct {
     // 人物列表
-    Model   *PersonDo `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *PersonDO `json:"model,omitempty" xml:"model,omitempty"`
     // HTTP请求状态
     HttpStatusCode   int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
     // 业务扩展数据

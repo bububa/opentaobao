@@ -15,7 +15,7 @@ alibaba.pur.basket.merge
 type AlibabaPurBasketMergeRequest struct {
     model.Params
     // 合并购物车入参
-    _paramMallMergeCartRequestDTO   *MallMergeCartRequestDto
+    _paramMallMergeCartRequestDTO   *MallMergeCartRequestDTO
 }
 
 // 初始化AlibabaPurBasketMergeRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPurBasketMergeRequest) GetApiParams() url.Values {
 }
 // ParamMallMergeCartRequestDTO Setter
 // 合并购物车入参
-func (r *AlibabaPurBasketMergeRequest) SetParamMallMergeCartRequestDTO(_paramMallMergeCartRequestDTO *MallMergeCartRequestDto) error {
+func (r *AlibabaPurBasketMergeRequest) SetParamMallMergeCartRequestDTO(_paramMallMergeCartRequestDTO *MallMergeCartRequestDTO) error {
     r._paramMallMergeCartRequestDTO = _paramMallMergeCartRequestDTO
     r.Set("param_mall_merge_cart_request_d_t_o", _paramMallMergeCartRequestDTO)
     return nil
 }
 
 // ParamMallMergeCartRequestDTO Getter
-func (r AlibabaPurBasketMergeRequest) GetParamMallMergeCartRequestDTO() *MallMergeCartRequestDto {
+func (r AlibabaPurBasketMergeRequest) GetParamMallMergeCartRequestDTO() *MallMergeCartRequestDTO {
     return r._paramMallMergeCartRequestDTO
 }

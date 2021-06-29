@@ -1,7 +1,7 @@
 package inventory
 
-// InventoryCheckDetailDto 
-type InventoryCheckDetailDto struct {
+// InventoryCheckDetailDTO 
+type InventoryCheckDetailDTO struct {
     // 如果是门店类型,则为必填。 ONLINE_INVENTORY  线上可售库存，  SHARE_INVENTORY 线下可售库存
     InvBizCode   string `json:"inv_biz_code,omitempty" xml:"inv_biz_code,omitempty"`
     // 调整数量，正数盘盈，负数盘亏

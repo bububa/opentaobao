@@ -1,7 +1,7 @@
 package tvupadmin
 
-// DfPageResultDto 
-type DfPageResultDto struct {
+// DfPageResultDTO 
+type DfPageResultDTO struct {
     // code
     Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     // codeName

@@ -1,7 +1,7 @@
 package tmallservice
 
-// EnableServiceStoreRequestDto 
-type EnableServiceStoreRequestDto struct {
+// EnableServiceStoreRequestDTO 
+type EnableServiceStoreRequestDTO struct {
     // 门店名称
     StoreName   string `json:"store_name,omitempty" xml:"store_name,omitempty"`
     // 是否启用

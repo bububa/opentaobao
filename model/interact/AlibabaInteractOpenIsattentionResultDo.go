@@ -1,7 +1,7 @@
 package interact
 
-// AlibabaInteractOpenIsattentionResultDo 
-type AlibabaInteractOpenIsattentionResultDo struct {
+// AlibabaInteractOpenIsattentionResultDO 
+type AlibabaInteractOpenIsattentionResultDO struct {
     // isRetry
     IsRetry   bool `json:"is_retry,omitempty" xml:"is_retry,omitempty"`
     // data

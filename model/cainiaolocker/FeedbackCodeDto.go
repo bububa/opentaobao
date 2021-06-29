@@ -1,7 +1,7 @@
 package cainiaolocker
 
-// FeedbackCodeDto 
-type FeedbackCodeDto struct {
+// FeedbackCodeDTO 
+type FeedbackCodeDTO struct {
     // 异常反馈编码
     FeedbackCode   string `json:"feedback_code,omitempty" xml:"feedback_code,omitempty"`
     // 异常反馈编码描述

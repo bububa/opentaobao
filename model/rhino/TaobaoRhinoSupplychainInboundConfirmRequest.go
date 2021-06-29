@@ -15,7 +15,7 @@ taobao.rhino.supplychain.inbound.confirm
 type TaobaoRhinoSupplychainInboundConfirmRequest struct {
     model.Params
     // 入库单确认对象
-    _clothingInboundConfirm   *ClothingInboundConfirmDto
+    _clothingInboundConfirm   *ClothingInboundConfirmDTO
 }
 
 // 初始化TaobaoRhinoSupplychainInboundConfirmRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRhinoSupplychainInboundConfirmRequest) GetApiParams() url.Values {
 }
 // ClothingInboundConfirm Setter
 // 入库单确认对象
-func (r *TaobaoRhinoSupplychainInboundConfirmRequest) SetClothingInboundConfirm(_clothingInboundConfirm *ClothingInboundConfirmDto) error {
+func (r *TaobaoRhinoSupplychainInboundConfirmRequest) SetClothingInboundConfirm(_clothingInboundConfirm *ClothingInboundConfirmDTO) error {
     r._clothingInboundConfirm = _clothingInboundConfirm
     r.Set("clothing_inbound_confirm", _clothingInboundConfirm)
     return nil
 }
 
 // ClothingInboundConfirm Getter
-func (r TaobaoRhinoSupplychainInboundConfirmRequest) GetClothingInboundConfirm() *ClothingInboundConfirmDto {
+func (r TaobaoRhinoSupplychainInboundConfirmRequest) GetClothingInboundConfirm() *ClothingInboundConfirmDTO {
     return r._clothingInboundConfirm
 }

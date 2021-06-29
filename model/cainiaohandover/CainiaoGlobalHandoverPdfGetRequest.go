@@ -15,7 +15,7 @@ cainiao.global.handover.pdf.get
 type CainiaoGlobalHandoverPdfGetRequest struct {
     model.Params
     // 用户信息
-    _userInfo   *UserInfoDto
+    _userInfo   *UserInfoDTO
     // 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
     _client   string
     // 多语言
@@ -48,14 +48,14 @@ func (r CainiaoGlobalHandoverPdfGetRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 用户信息
-func (r *CainiaoGlobalHandoverPdfGetRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+func (r *CainiaoGlobalHandoverPdfGetRequest) SetUserInfo(_userInfo *UserInfoDTO) error {
     r._userInfo = _userInfo
     r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
-func (r CainiaoGlobalHandoverPdfGetRequest) GetUserInfo() *UserInfoDto {
+func (r CainiaoGlobalHandoverPdfGetRequest) GetUserInfo() *UserInfoDTO {
     return r._userInfo
 }
 // Client Setter

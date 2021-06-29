@@ -25,5 +25,5 @@ type AlibabaNlifeStoreItemdetailGetResponse struct {
     // true-查询成功;false-查询失败
     Succes   bool `json:"succes,omitempty" xml:"succes,omitempty"`
     // 商品详情信息
-    Item   *RetailItemTopDo `json:"item,omitempty" xml:"item,omitempty"`
+    Item   *RetailItemTopDO `json:"item,omitempty" xml:"item,omitempty"`
 }

@@ -1,7 +1,7 @@
 package campus
 
-// TreeNodeDto 
-type TreeNodeDto struct {
+// TreeNodeDTO 
+type TreeNodeDTO struct {
     // 权限id
     Id   string `json:"id,omitempty" xml:"id,omitempty"`
     // 父id

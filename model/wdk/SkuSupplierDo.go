@@ -1,7 +1,7 @@
 package wdk
 
-// SkuSupplierDo 
-type SkuSupplierDo struct {
+// SkuSupplierDO 
+type SkuSupplierDO struct {
     // 商品针对该供应商是否可以退货；因为淘鲜达商家不使用平台的采配功能，建议传默认值， 1：是  0：否（默认为0）
     ReturnFlag   int64 `json:"return_flag,omitempty" xml:"return_flag,omitempty"`
     // 最小起订量

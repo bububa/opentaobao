@@ -27,5 +27,5 @@ type AlibabaScbpAdKeywordGetResponse struct {
     // 总页数
     TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
     // 查询关键词列表
-    KeywordList   []KeywordResultDto `json:"keyword_list,omitempty" xml:"keyword_list>keyword_result_dto,omitempty"`
+    KeywordList   []KeywordResultDTO `json:"keyword_list,omitempty" xml:"keyword_list>keyword_result_dto,omitempty"`
 }

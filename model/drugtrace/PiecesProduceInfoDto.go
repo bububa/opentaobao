@@ -1,7 +1,7 @@
 package drugtrace
 
-// PiecesProduceInfoDto 
-type PiecesProduceInfoDto struct {
+// PiecesProduceInfoDTO 
+type PiecesProduceInfoDTO struct {
     // 生产开始日期yyyy-MM-dd
     ProductionStartDate   string `json:"production_start_date,omitempty" xml:"production_start_date,omitempty"`
     // 包装规格

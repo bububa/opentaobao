@@ -1,7 +1,7 @@
 package promotion
 
-// ShowRuleDto 
-type ShowRuleDto struct {
+// ShowRuleDTO 
+type ShowRuleDTO struct {
     // 规则扩展信息
     Feature   string `json:"feature,omitempty" xml:"feature,omitempty"`
     // 规则是否通过

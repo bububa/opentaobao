@@ -1,7 +1,7 @@
 package axintrade
 
-// AxinFundConfirmResDto 
-type AxinFundConfirmResDto struct {
+// AxinFundConfirmResDTO 
+type AxinFundConfirmResDTO struct {
     // 外部订单号
     OuterOrderId   string `json:"outer_order_id,omitempty" xml:"outer_order_id,omitempty"`
     // 结算金额

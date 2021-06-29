@@ -1,7 +1,7 @@
 package moscm
 
-// InvoiceDto 
-type InvoiceDto struct {
+// InvoiceDTO 
+type InvoiceDTO struct {
     // 名称
     Title   string `json:"title,omitempty" xml:"title,omitempty"`
     // 发票类型:普通发票、电子发票、增值税发票

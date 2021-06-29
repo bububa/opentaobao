@@ -15,7 +15,7 @@ taobao.simba.keyword.update
 type TaobaoSimbaKeywordUpdateRequest struct {
     model.Params
     // 关键词相关信息
-    _bidwords   []SiriusBidwordDto
+    _bidwords   []SiriusBidwordDTO
 }
 
 // 初始化TaobaoSimbaKeywordUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoSimbaKeywordUpdateRequest) GetApiParams() url.Values {
 }
 // Bidwords Setter
 // 关键词相关信息
-func (r *TaobaoSimbaKeywordUpdateRequest) SetBidwords(_bidwords []SiriusBidwordDto) error {
+func (r *TaobaoSimbaKeywordUpdateRequest) SetBidwords(_bidwords []SiriusBidwordDTO) error {
     r._bidwords = _bidwords
     r.Set("bidwords", _bidwords)
     return nil
 }
 
 // Bidwords Getter
-func (r TaobaoSimbaKeywordUpdateRequest) GetBidwords() []SiriusBidwordDto {
+func (r TaobaoSimbaKeywordUpdateRequest) GetBidwords() []SiriusBidwordDTO {
     return r._bidwords
 }

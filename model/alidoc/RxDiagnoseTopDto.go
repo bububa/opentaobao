@@ -1,7 +1,7 @@
 package alidoc
 
-// RxDiagnoseTopDto 
-type RxDiagnoseTopDto struct {
+// RxDiagnoseTopDTO 
+type RxDiagnoseTopDTO struct {
     // icdCode名称
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // icdCode

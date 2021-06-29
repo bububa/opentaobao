@@ -17,7 +17,7 @@ type ListResult struct {
     // errorLevel
     ErrorLevel   string `json:"error_level,omitempty" xml:"error_level,omitempty"`
     // 设备历史数据内容
-    DeviceDataList   []DeviceHistoryBatchApiDto `json:"device_data_list,omitempty" xml:"device_data_list>device_history_batch_api_dto,omitempty"`
+    DeviceDataList   []DeviceHistoryBatchApiDTO `json:"device_data_list,omitempty" xml:"device_data_list>device_history_batch_api_dto,omitempty"`
     // 额外报错信息
     ErrorExtInfo   string `json:"error_ext_info,omitempty" xml:"error_ext_info,omitempty"`
     // 规则列表数据

@@ -23,5 +23,5 @@ type AlibabaEinvoiceTaxOptSalaryresultQueryResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 出参
-    Result   *TaxOptimizationSalaryPayResultQueryResultDto `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *TaxOptimizationSalaryPayResultQueryResultDTO `json:"result,omitempty" xml:"result,omitempty"`
 }

@@ -15,7 +15,7 @@ alibaba.wdk.sku.channelsku.add
 type AlibabaWdkSkuChannelskuAddRequest struct {
     model.Params
     // 入参模型
-    _chSkuDOList   []ChannelSkuDo
+    _chSkuDOList   []ChannelSkuDO
 }
 
 // 初始化AlibabaWdkSkuChannelskuAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuChannelskuAddRequest) GetApiParams() url.Values {
 }
 // ChSkuDOList Setter
 // 入参模型
-func (r *AlibabaWdkSkuChannelskuAddRequest) SetChSkuDOList(_chSkuDOList []ChannelSkuDo) error {
+func (r *AlibabaWdkSkuChannelskuAddRequest) SetChSkuDOList(_chSkuDOList []ChannelSkuDO) error {
     r._chSkuDOList = _chSkuDOList
     r.Set("ch_sku_d_o_list", _chSkuDOList)
     return nil
 }
 
 // ChSkuDOList Getter
-func (r AlibabaWdkSkuChannelskuAddRequest) GetChSkuDOList() []ChannelSkuDo {
+func (r AlibabaWdkSkuChannelskuAddRequest) GetChSkuDOList() []ChannelSkuDO {
     return r._chSkuDOList
 }

@@ -23,5 +23,5 @@ type TaobaoSubwayWordpackageGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 词包结果列表
-    ResultList   []SiriusItemWordPackageDto `json:"result_list,omitempty" xml:"result_list>sirius_item_word_package_dto,omitempty"`
+    ResultList   []SiriusItemWordPackageDTO `json:"result_list,omitempty" xml:"result_list>sirius_item_word_package_dto,omitempty"`
 }

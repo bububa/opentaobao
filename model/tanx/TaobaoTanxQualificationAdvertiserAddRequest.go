@@ -15,7 +15,7 @@ taobao.tanx.qualification.advertiser.add
 type TaobaoTanxQualificationAdvertiserAddRequest struct {
     model.Params
     // 广告主对象
-    _advertisers   []AdvertiserDto
+    _advertisers   []AdvertiserDTO
     // dsp用户memberId
     _memberId   int64
     // dsp用户验证token
@@ -46,14 +46,14 @@ func (r TaobaoTanxQualificationAdvertiserAddRequest) GetApiParams() url.Values {
 }
 // Advertisers Setter
 // 广告主对象
-func (r *TaobaoTanxQualificationAdvertiserAddRequest) SetAdvertisers(_advertisers []AdvertiserDto) error {
+func (r *TaobaoTanxQualificationAdvertiserAddRequest) SetAdvertisers(_advertisers []AdvertiserDTO) error {
     r._advertisers = _advertisers
     r.Set("advertisers", _advertisers)
     return nil
 }
 
 // Advertisers Getter
-func (r TaobaoTanxQualificationAdvertiserAddRequest) GetAdvertisers() []AdvertiserDto {
+func (r TaobaoTanxQualificationAdvertiserAddRequest) GetAdvertisers() []AdvertiserDTO {
     return r._advertisers
 }
 // MemberId Setter

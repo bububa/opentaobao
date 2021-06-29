@@ -15,7 +15,7 @@ taobao.rdc.aligenius.warehouse.resend.logistics.msg.post
 type TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest struct {
     model.Params
     // 参数
-    _param0   *SendResendLogisticsMsgDto
+    _param0   *SendResendLogisticsMsgDTO
 }
 
 // 初始化TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest) GetApiParams()
 }
 // Param0 Setter
 // 参数
-func (r *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest) SetParam0(_param0 *SendResendLogisticsMsgDto) error {
+func (r *TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest) SetParam0(_param0 *SendResendLogisticsMsgDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest) GetParam0() *SendResendLogisticsMsgDto {
+func (r TaobaoRdcAligeniusWarehouseResendLogisticsMsgPostRequest) GetParam0() *SendResendLogisticsMsgDTO {
     return r._param0
 }

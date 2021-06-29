@@ -3,7 +3,7 @@ package ascpffo
 // AliexpressAscpPoQueryResult 
 type AliexpressAscpPoQueryResult struct {
     // 采购单DTO
-    Data   *ErpPurchaseOrderDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *ErpPurchaseOrderDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 错误码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 错误信息

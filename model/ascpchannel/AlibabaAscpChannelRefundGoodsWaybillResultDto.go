@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaAscpChannelRefundGoodsWaybillResultDto 
-type AlibabaAscpChannelRefundGoodsWaybillResultDto struct {
+// AlibabaAscpChannelRefundGoodsWaybillResultDTO 
+type AlibabaAscpChannelRefundGoodsWaybillResultDTO struct {
     // 执行结果
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

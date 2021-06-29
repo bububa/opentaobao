@@ -1,11 +1,11 @@
 package einvoice
 
-// InvoiceTaxFlowCreateDto 
-type InvoiceTaxFlowCreateDto struct {
+// InvoiceTaxFlowCreateDTO 
+type InvoiceTaxFlowCreateDTO struct {
     // 企业税务信息
-    InvoiceCompany   *InvoiceCompanyDto `json:"invoice_company,omitempty" xml:"invoice_company,omitempty"`
+    InvoiceCompany   *InvoiceCompanyDTO `json:"invoice_company,omitempty" xml:"invoice_company,omitempty"`
     // 联系人信息
-    InvoiceContact   *InvoiceContactDto `json:"invoice_contact,omitempty" xml:"invoice_contact,omitempty"`
+    InvoiceContact   *InvoiceContactDTO `json:"invoice_contact,omitempty" xml:"invoice_contact,omitempty"`
     // 外部业务方创建税控开通工单的唯一幂等ID（即：相同outer_id 会被视为同一个请求，被幂等处理）, 由业务方自己生成。  只能由字母数字组成
     OuterId   string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
     // 业务平台code, 由阿里发票小二分配

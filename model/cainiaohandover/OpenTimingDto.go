@@ -1,7 +1,7 @@
 package cainiaohandover
 
-// OpenTimingDto 
-type OpenTimingDto struct {
+// OpenTimingDTO 
+type OpenTimingDTO struct {
     // 展示文案
     DisplayText   string `json:"display_text,omitempty" xml:"display_text,omitempty"`
     // 最慢时效

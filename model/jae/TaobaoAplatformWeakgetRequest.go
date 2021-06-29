@@ -17,7 +17,7 @@ type TaobaoAplatformWeakgetRequest struct {
     // 客户端自带参数
     _paramRichClientInfo   *RichClientInfo
     // 业务自定义参数
-    _paramDto   *ParamDto
+    _paramDto   *ParamDTO
 }
 
 // 初始化TaobaoAplatformWeakgetRequest对象
@@ -54,13 +54,13 @@ func (r TaobaoAplatformWeakgetRequest) GetParamRichClientInfo() *RichClientInfo 
 }
 // ParamDto Setter
 // 业务自定义参数
-func (r *TaobaoAplatformWeakgetRequest) SetParamDto(_paramDto *ParamDto) error {
+func (r *TaobaoAplatformWeakgetRequest) SetParamDto(_paramDto *ParamDTO) error {
     r._paramDto = _paramDto
     r.Set("param_dto", _paramDto)
     return nil
 }
 
 // ParamDto Getter
-func (r TaobaoAplatformWeakgetRequest) GetParamDto() *ParamDto {
+func (r TaobaoAplatformWeakgetRequest) GetParamDto() *ParamDTO {
     return r._paramDto
 }

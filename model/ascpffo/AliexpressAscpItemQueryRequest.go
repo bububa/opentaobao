@@ -15,7 +15,7 @@ AE货品查询API
 type AliexpressAscpItemQueryRequest struct {
     model.Params
     // DTO
-    _scItemQuery   *ScItemQueryDto
+    _scItemQuery   *ScItemQueryDTO
 }
 
 // 初始化AliexpressAscpItemQueryRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressAscpItemQueryRequest) GetApiParams() url.Values {
 }
 // ScItemQuery Setter
 // DTO
-func (r *AliexpressAscpItemQueryRequest) SetScItemQuery(_scItemQuery *ScItemQueryDto) error {
+func (r *AliexpressAscpItemQueryRequest) SetScItemQuery(_scItemQuery *ScItemQueryDTO) error {
     r._scItemQuery = _scItemQuery
     r.Set("sc_item_query", _scItemQuery)
     return nil
 }
 
 // ScItemQuery Getter
-func (r AliexpressAscpItemQueryRequest) GetScItemQuery() *ScItemQueryDto {
+func (r AliexpressAscpItemQueryRequest) GetScItemQuery() *ScItemQueryDTO {
     return r._scItemQuery
 }

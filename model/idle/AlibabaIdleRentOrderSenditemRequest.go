@@ -17,7 +17,7 @@ type AlibabaIdleRentOrderSenditemRequest struct {
     // 订单id
     _orderId   int64
     // 物流信息
-    _logisticsList   []LogisticsDto
+    _logisticsList   []LogisticsDTO
 }
 
 // 初始化AlibabaIdleRentOrderSenditemRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaIdleRentOrderSenditemRequest) GetOrderId() int64 {
 }
 // LogisticsList Setter
 // 物流信息
-func (r *AlibabaIdleRentOrderSenditemRequest) SetLogisticsList(_logisticsList []LogisticsDto) error {
+func (r *AlibabaIdleRentOrderSenditemRequest) SetLogisticsList(_logisticsList []LogisticsDTO) error {
     r._logisticsList = _logisticsList
     r.Set("logistics_list", _logisticsList)
     return nil
 }
 
 // LogisticsList Getter
-func (r AlibabaIdleRentOrderSenditemRequest) GetLogisticsList() []LogisticsDto {
+func (r AlibabaIdleRentOrderSenditemRequest) GetLogisticsList() []LogisticsDTO {
     return r._logisticsList
 }

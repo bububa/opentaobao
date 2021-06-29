@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceCompanyDto 
-type InvoiceCompanyDto struct {
+// InvoiceCompanyDTO 
+type InvoiceCompanyDTO struct {
     // 企业所在区
     Area   string `json:"area,omitempty" xml:"area,omitempty"`
     // 开户行账号，注意：开户行账号与名称必须拆开2个字段

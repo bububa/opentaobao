@@ -17,7 +17,7 @@ type PlaceOrderDTO struct {
     // 发货人地址
     ConsignorAddress   *ConsignorAddress `json:"consignor_address,omitempty" xml:"consignor_address,omitempty"`
     // 申报信息
-    ExpressCustoms   *ExpressCustomsDto `json:"express_customs,omitempty" xml:"express_customs,omitempty"`
+    ExpressCustoms   *ExpressCustomsDTO `json:"express_customs,omitempty" xml:"express_customs,omitempty"`
     // 信保单ID
     TradeBizId   string `json:"trade_biz_id,omitempty" xml:"trade_biz_id,omitempty"`
     // 发货批次ID
@@ -27,7 +27,7 @@ type PlaceOrderDTO struct {
     // 目的地邮编
     DestinationZipCode   string `json:"destination_zip_code,omitempty" xml:"destination_zip_code,omitempty"`
     // 交货到仓快递信息
-    DeliverWarehouseExpress   *DeliverWarehouseExpressDto `json:"deliver_warehouse_express,omitempty" xml:"deliver_warehouse_express,omitempty"`
+    DeliverWarehouseExpress   *DeliverWarehouseExpressDTO `json:"deliver_warehouse_express,omitempty" xml:"deliver_warehouse_express,omitempty"`
     // 目的地国家
     DestinationCountryCode   string `json:"destination_country_code,omitempty" xml:"destination_country_code,omitempty"`
     // 备用字段（上门揽收地址），目前按发货人地址

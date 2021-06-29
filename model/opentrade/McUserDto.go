@@ -1,7 +1,7 @@
 package opentrade
 
-// McUserDto 
-type McUserDto struct {
+// McUserDTO 
+type McUserDTO struct {
     // 用户状态
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
     // 排队活动ID

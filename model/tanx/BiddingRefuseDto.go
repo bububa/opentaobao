@@ -1,7 +1,7 @@
 package tanx
 
-// BiddingRefuseDto 
-type BiddingRefuseDto struct {
+// BiddingRefuseDTO 
+type BiddingRefuseDTO struct {
     // 创意级别对应的错误码
     FilterId   string `json:"filter_id,omitempty" xml:"filter_id,omitempty"`
     // 创意过滤次数

@@ -3,7 +3,7 @@ package feedflow
 // AdgroupDTo 
 type AdgroupDTo struct {
     // 智能出价信息
-    IntelligentBid   *IntelligentBidDto `json:"intelligent_bid,omitempty" xml:"intelligent_bid,omitempty"`
+    IntelligentBid   *IntelligentBidDTO `json:"intelligent_bid,omitempty" xml:"intelligent_bid,omitempty"`
     // 商品id
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 单元id

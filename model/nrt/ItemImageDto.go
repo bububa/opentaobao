@@ -1,7 +1,7 @@
 package nrt
 
-// ItemImageDto 
-type ItemImageDto struct {
+// ItemImageDTO 
+type ItemImageDTO struct {
     // 图片次序
     Position   int64 `json:"position,omitempty" xml:"position,omitempty"`
     // 图片地址

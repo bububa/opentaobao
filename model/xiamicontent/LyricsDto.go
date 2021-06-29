@@ -1,7 +1,7 @@
 package xiamicontent
 
-// LyricsDto 
-type LyricsDto struct {
+// LyricsDTO 
+type LyricsDTO struct {
     // 歌词文件地址
     LyricUrl   string `json:"lyric_url,omitempty" xml:"lyric_url,omitempty"`
     // 歌词类型:TXT(文本歌词) | LRC(逐行动态歌词) | TRC(逐字动态歌词) | TLRC(翻译LRC歌词) | OSS_TRANSLATE(翻译TRC歌词)

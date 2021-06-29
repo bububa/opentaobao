@@ -1,7 +1,7 @@
 package openmall
 
-// TaobaoOpenmallItemSaleareaGetResultDo 
-type TaobaoOpenmallItemSaleareaGetResultDo struct {
+// TaobaoOpenmallItemSaleareaGetResultDO 
+type TaobaoOpenmallItemSaleareaGetResultDO struct {
     // 可售区域结果
     SaleAreaList   []TopSaleAreaVo `json:"sale_area_list,omitempty" xml:"sale_area_list>top_sale_area_vo,omitempty"`
     // 调用是否成功

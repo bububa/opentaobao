@@ -3,7 +3,7 @@ package wdk
 // ItemPoolActivityOperateRequest 
 type ItemPoolActivityOperateRequest struct {
     // 周期配置
-    PeriodicConfig   *PeriodicConfigDto `json:"periodic_config,omitempty" xml:"periodic_config,omitempty"`
+    PeriodicConfig   *PeriodicConfigDTO `json:"periodic_config,omitempty" xml:"periodic_config,omitempty"`
     // 活动名称，最长15个字符
     ActivityName   string `json:"activity_name,omitempty" xml:"activity_name,omitempty"`
     // 操作人id
@@ -13,13 +13,13 @@ type ItemPoolActivityOperateRequest struct {
     // 活动描述，最长30个字符
     Description   string `json:"description,omitempty" xml:"description,omitempty"`
     // 阶梯分组
-    StairGroups   []StairGroupDto `json:"stair_groups,omitempty" xml:"stair_groups>stair_group_dto,omitempty"`
+    StairGroups   []StairGroupDTO `json:"stair_groups,omitempty" xml:"stair_groups>stair_group_dto,omitempty"`
     // 支持的终端，1：APP,2:POS
     Terminals   []int64 `json:"terminals,omitempty" xml:"terminals>int64,omitempty"`
     // 经营店
     StoreIds   []string `json:"store_ids,omitempty" xml:"store_ids>string,omitempty"`
     // 限购
-    Limit   *LimitDto `json:"limit,omitempty" xml:"limit,omitempty"`
+    Limit   *LimitDTO `json:"limit,omitempty" xml:"limit,omitempty"`
     // 外部商家erp活动id
     OutActId   string `json:"out_act_id,omitempty" xml:"out_act_id,omitempty"`
     // 活动开始时间戳
@@ -29,7 +29,7 @@ type ItemPoolActivityOperateRequest struct {
     // 限制人群,OLD_USER:老用户，NEW_USER:新用户，LIGHT_NEW_USER：闪购新客
     MemberCrowdCode   []string `json:"member_crowd_code,omitempty" xml:"member_crowd_code>string,omitempty"`
     // 逻辑分组
-    LogicGroups   []LogicGroupDto `json:"logic_groups,omitempty" xml:"logic_groups>logic_group_dto,omitempty"`
+    LogicGroups   []LogicGroupDTO `json:"logic_groups,omitempty" xml:"logic_groups>logic_group_dto,omitempty"`
     // 上不封顶标识，若设置{@link #enableMultiple}=true，则不支持多阶梯配置，且可以叠加优惠
     EnableMultiple   bool `json:"enable_multiple,omitempty" xml:"enable_multiple,omitempty"`
     // 同城零售活动id

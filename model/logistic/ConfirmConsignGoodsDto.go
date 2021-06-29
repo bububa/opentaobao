@@ -1,7 +1,7 @@
 package logistic
 
-// ConfirmConsignGoodsDto 
-type ConfirmConsignGoodsDto struct {
+// ConfirmConsignGoodsDTO 
+type ConfirmConsignGoodsDTO struct {
     // 待发货商品的前端宝贝id
     ItemId   string `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 待发货商品的数量

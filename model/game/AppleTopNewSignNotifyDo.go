@@ -1,7 +1,7 @@
 package game
 
-// AppleTopNewSignNotifyDo 
-type AppleTopNewSignNotifyDo struct {
+// AppleTopNewSignNotifyDO 
+type AppleTopNewSignNotifyDO struct {
     // 电子卡卡号
     CardNo   string `json:"card_no,omitempty" xml:"card_no,omitempty"`
     // TopUpTocken

@@ -17,7 +17,7 @@ type AlibabaCampusDeviceOpenapiFeedbackeventinfoRequest struct {
     // 系统上下文
     _param0   *WorkBenchContext
     // 请求封装类
-    _param1   *EventInfoApiDto
+    _param1   *EventInfoApiDTO
 }
 
 // 初始化AlibabaCampusDeviceOpenapiFeedbackeventinfoRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaCampusDeviceOpenapiFeedbackeventinfoRequest) GetParam0() *WorkBen
 }
 // Param1 Setter
 // 请求封装类
-func (r *AlibabaCampusDeviceOpenapiFeedbackeventinfoRequest) SetParam1(_param1 *EventInfoApiDto) error {
+func (r *AlibabaCampusDeviceOpenapiFeedbackeventinfoRequest) SetParam1(_param1 *EventInfoApiDTO) error {
     r._param1 = _param1
     r.Set("param1", _param1)
     return nil
 }
 
 // Param1 Getter
-func (r AlibabaCampusDeviceOpenapiFeedbackeventinfoRequest) GetParam1() *EventInfoApiDto {
+func (r AlibabaCampusDeviceOpenapiFeedbackeventinfoRequest) GetParam1() *EventInfoApiDTO {
     return r._param1
 }

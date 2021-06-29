@@ -17,7 +17,7 @@ alibaba.imap.category.predict
 type AlibabaImapCategoryPredictRequest struct {
     model.Params
     // 入参DO
-    _topImapItemDo   *TopImapItemDo
+    _topImapItemDo   *TopImapItemDO
     // 账号信息
     _fixedMappingAppInfo   *FixedMappingAppInfo
 }
@@ -44,14 +44,14 @@ func (r AlibabaImapCategoryPredictRequest) GetApiParams() url.Values {
 }
 // TopImapItemDo Setter
 // 入参DO
-func (r *AlibabaImapCategoryPredictRequest) SetTopImapItemDo(_topImapItemDo *TopImapItemDo) error {
+func (r *AlibabaImapCategoryPredictRequest) SetTopImapItemDo(_topImapItemDo *TopImapItemDO) error {
     r._topImapItemDo = _topImapItemDo
     r.Set("top_imap_item_do", _topImapItemDo)
     return nil
 }
 
 // TopImapItemDo Getter
-func (r AlibabaImapCategoryPredictRequest) GetTopImapItemDo() *TopImapItemDo {
+func (r AlibabaImapCategoryPredictRequest) GetTopImapItemDo() *TopImapItemDO {
     return r._topImapItemDo
 }
 // FixedMappingAppInfo Setter

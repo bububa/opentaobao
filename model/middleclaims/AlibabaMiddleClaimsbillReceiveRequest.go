@@ -15,7 +15,7 @@ alibaba.middle.claimsbill.receive
 type AlibabaMiddleClaimsbillReceiveRequest struct {
     model.Params
     // 理赔账单实体
-    _claimsBillDto   *ClaimsBillDto
+    _claimsBillDto   *ClaimsBillDTO
 }
 
 // 初始化AlibabaMiddleClaimsbillReceiveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMiddleClaimsbillReceiveRequest) GetApiParams() url.Values {
 }
 // ClaimsBillDto Setter
 // 理赔账单实体
-func (r *AlibabaMiddleClaimsbillReceiveRequest) SetClaimsBillDto(_claimsBillDto *ClaimsBillDto) error {
+func (r *AlibabaMiddleClaimsbillReceiveRequest) SetClaimsBillDto(_claimsBillDto *ClaimsBillDTO) error {
     r._claimsBillDto = _claimsBillDto
     r.Set("claims_bill_dto", _claimsBillDto)
     return nil
 }
 
 // ClaimsBillDto Getter
-func (r AlibabaMiddleClaimsbillReceiveRequest) GetClaimsBillDto() *ClaimsBillDto {
+func (r AlibabaMiddleClaimsbillReceiveRequest) GetClaimsBillDto() *ClaimsBillDTO {
     return r._claimsBillDto
 }

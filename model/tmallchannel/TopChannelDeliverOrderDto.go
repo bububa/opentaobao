@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TopChannelDeliverOrderDto 
-type TopChannelDeliverOrderDto struct {
+// TopChannelDeliverOrderDTO 
+type TopChannelDeliverOrderDTO struct {
     // 发货单单号
     MainDeliverOrderNo   int64 `json:"main_deliver_order_no,omitempty" xml:"main_deliver_order_no,omitempty"`
     // 发货单状态
@@ -17,9 +17,9 @@ type TopChannelDeliverOrderDto struct {
     // 最后更新时间
     OrderLastModifyTime   string `json:"order_last_modify_time,omitempty" xml:"order_last_modify_time,omitempty"`
     // 子发货单列表
-    SubDeliverOrderList   []TopChannelSubDeliverOrderDto `json:"sub_deliver_order_list,omitempty" xml:"sub_deliver_order_list>top_channel_sub_deliver_order_dto,omitempty"`
+    SubDeliverOrderList   []TopChannelSubDeliverOrderDTO `json:"sub_deliver_order_list,omitempty" xml:"sub_deliver_order_list>top_channel_sub_deliver_order_dto,omitempty"`
     // 物流单列表
-    LogisticsOrderList   []TopChannelLogisticsOrderDto `json:"logistics_order_list,omitempty" xml:"logistics_order_list>top_channel_logistics_order_dto,omitempty"`
+    LogisticsOrderList   []TopChannelLogisticsOrderDTO `json:"logistics_order_list,omitempty" xml:"logistics_order_list>top_channel_logistics_order_dto,omitempty"`
     // 解析详情
     Schema   string `json:"schema,omitempty" xml:"schema,omitempty"`
 }

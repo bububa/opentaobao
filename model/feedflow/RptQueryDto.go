@@ -1,7 +1,7 @@
 package feedflow
 
-// RptQueryDto 
-type RptQueryDto struct {
+// RptQueryDTO 
+type RptQueryDTO struct {
     // 查询开始日期
     StartTime   string `json:"start_time,omitempty" xml:"start_time,omitempty"`
     // 查询结束日期

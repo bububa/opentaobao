@@ -3,8 +3,8 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-// HotelDto 
-type HotelDto struct {
+// HotelDTO 
+type HotelDTO struct {
     // 地址
     Address   string `json:"address,omitempty" xml:"address,omitempty"`
     // 是否是客栈
@@ -46,7 +46,7 @@ type HotelDto struct {
     // 评分
     RateScore   string `json:"rate_score,omitempty" xml:"rate_score,omitempty"`
     // 房间列表
-    Rooms   []RoomTypeDto `json:"rooms,omitempty" xml:"rooms>room_type_dto,omitempty"`
+    Rooms   []RoomTypeDTO `json:"rooms,omitempty" xml:"rooms>room_type_dto,omitempty"`
     // 服务设施
     ServicesStr   string `json:"services_str,omitempty" xml:"services_str,omitempty"`
     // 酒店标准ID

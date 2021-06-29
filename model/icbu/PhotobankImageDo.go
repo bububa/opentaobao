@@ -1,7 +1,7 @@
 package icbu
 
-// PhotobankImageDo 
-type PhotobankImageDo struct {
+// PhotobankImageDO 
+type PhotobankImageDO struct {
     // full url
     Url   string `json:"url,omitempty" xml:"url,omitempty"`
     // gmtModified

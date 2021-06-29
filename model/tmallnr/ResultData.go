@@ -7,5 +7,5 @@ type ResultData struct {
     // 卖家id
     SellerId   int64 `json:"seller_id,omitempty" xml:"seller_id,omitempty"`
     // 服务范围，支持多服务范围返回
-    Ranges   []NrServiceRangeResponseDto `json:"ranges,omitempty" xml:"ranges>nr_service_range_response_dto,omitempty"`
+    Ranges   []NrServiceRangeResponseDTO `json:"ranges,omitempty" xml:"ranges>nr_service_range_response_dto,omitempty"`
 }

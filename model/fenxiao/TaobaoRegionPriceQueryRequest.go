@@ -19,7 +19,7 @@ type TaobaoRegionPriceQueryRequest struct {
     // 无sku可传0
     _skuId   int64
     // 不传则返回所有设置的区域价格
-    _regionalPriceDtos   []RegionalPriceDto
+    _regionalPriceDtos   []RegionalPriceDTO
 }
 
 // 初始化TaobaoRegionPriceQueryRequest对象
@@ -68,13 +68,13 @@ func (r TaobaoRegionPriceQueryRequest) GetSkuId() int64 {
 }
 // RegionalPriceDtos Setter
 // 不传则返回所有设置的区域价格
-func (r *TaobaoRegionPriceQueryRequest) SetRegionalPriceDtos(_regionalPriceDtos []RegionalPriceDto) error {
+func (r *TaobaoRegionPriceQueryRequest) SetRegionalPriceDtos(_regionalPriceDtos []RegionalPriceDTO) error {
     r._regionalPriceDtos = _regionalPriceDtos
     r.Set("regional_price_dtos", _regionalPriceDtos)
     return nil
 }
 
 // RegionalPriceDtos Getter
-func (r TaobaoRegionPriceQueryRequest) GetRegionalPriceDtos() []RegionalPriceDto {
+func (r TaobaoRegionPriceQueryRequest) GetRegionalPriceDtos() []RegionalPriceDTO {
     return r._regionalPriceDtos
 }

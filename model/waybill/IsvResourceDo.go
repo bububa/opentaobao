@@ -1,7 +1,7 @@
 package waybill
 
-// IsvResourceDo 
-type IsvResourceDo struct {
+// IsvResourceDO 
+type IsvResourceDO struct {
     // 资源内容（当资源类型为TEMPLATE时，为空）
     ResourceContent   string `json:"resource_content,omitempty" xml:"resource_content,omitempty"`
     // 资源id

@@ -23,7 +23,7 @@ type TaobaoAppleCardActiveCancelNotifyRequest struct {
     // 描述
     _resultMsg   string
     // 卡信息
-    _appleCardCancels   []AppleCardCancelDto
+    _appleCardCancels   []AppleCardCancelDTO
 }
 
 // 初始化TaobaoAppleCardActiveCancelNotifyRequest对象
@@ -96,13 +96,13 @@ func (r TaobaoAppleCardActiveCancelNotifyRequest) GetResultMsg() string {
 }
 // AppleCardCancels Setter
 // 卡信息
-func (r *TaobaoAppleCardActiveCancelNotifyRequest) SetAppleCardCancels(_appleCardCancels []AppleCardCancelDto) error {
+func (r *TaobaoAppleCardActiveCancelNotifyRequest) SetAppleCardCancels(_appleCardCancels []AppleCardCancelDTO) error {
     r._appleCardCancels = _appleCardCancels
     r.Set("apple_card_cancels", _appleCardCancels)
     return nil
 }
 
 // AppleCardCancels Getter
-func (r TaobaoAppleCardActiveCancelNotifyRequest) GetAppleCardCancels() []AppleCardCancelDto {
+func (r TaobaoAppleCardActiveCancelNotifyRequest) GetAppleCardCancels() []AppleCardCancelDTO {
     return r._appleCardCancels
 }

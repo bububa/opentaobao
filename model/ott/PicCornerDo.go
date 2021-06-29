@@ -1,7 +1,7 @@
 package ott
 
-// PicCornerDo 
-type PicCornerDo struct {
+// PicCornerDO 
+type PicCornerDO struct {
     // 角标类型
     Type   string `json:"type,omitempty" xml:"type,omitempty"`
     // 角标地址

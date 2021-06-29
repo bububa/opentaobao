@@ -15,7 +15,7 @@ alibaba.marketing.lottery.draw.dodraw
 type AlibabaMarketingLotteryDrawDodrawRequest struct {
     model.Params
     // 抽奖请求对象
-    _lotteryDrawQuery   *LotteryDrawQueryDto
+    _lotteryDrawQuery   *LotteryDrawQueryDTO
 }
 
 // 初始化AlibabaMarketingLotteryDrawDodrawRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryDrawDodrawRequest) GetApiParams() url.Values {
 }
 // LotteryDrawQuery Setter
 // 抽奖请求对象
-func (r *AlibabaMarketingLotteryDrawDodrawRequest) SetLotteryDrawQuery(_lotteryDrawQuery *LotteryDrawQueryDto) error {
+func (r *AlibabaMarketingLotteryDrawDodrawRequest) SetLotteryDrawQuery(_lotteryDrawQuery *LotteryDrawQueryDTO) error {
     r._lotteryDrawQuery = _lotteryDrawQuery
     r.Set("lottery_draw_query", _lotteryDrawQuery)
     return nil
 }
 
 // LotteryDrawQuery Getter
-func (r AlibabaMarketingLotteryDrawDodrawRequest) GetLotteryDrawQuery() *LotteryDrawQueryDto {
+func (r AlibabaMarketingLotteryDrawDodrawRequest) GetLotteryDrawQuery() *LotteryDrawQueryDTO {
     return r._lotteryDrawQuery
 }

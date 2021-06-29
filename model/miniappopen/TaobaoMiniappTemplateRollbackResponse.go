@@ -23,7 +23,7 @@ type TaobaoMiniappTemplateRollbackResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 分端回滚结果
-    OnlineResults   []MiniappInstanceAppOnlineDto `json:"online_results,omitempty" xml:"online_results>miniapp_instance_app_online_dto,omitempty"`
+    OnlineResults   []MiniappInstanceAppOnlineDTO `json:"online_results,omitempty" xml:"online_results>miniapp_instance_app_online_dto,omitempty"`
     // 基本信息
-    AppInfo   *MiniAppEntityTemplateDto `json:"app_info,omitempty" xml:"app_info,omitempty"`
+    AppInfo   *MiniAppEntityTemplateDTO `json:"app_info,omitempty" xml:"app_info,omitempty"`
 }

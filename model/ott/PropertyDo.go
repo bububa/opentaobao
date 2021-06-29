@@ -1,7 +1,7 @@
 package ott
 
-// PropertyDo 
-type PropertyDo struct {
+// PropertyDO 
+type PropertyDO struct {
     // 属性键值对
     Data   string `json:"data,omitempty" xml:"data,omitempty"`
     // 属性校验码

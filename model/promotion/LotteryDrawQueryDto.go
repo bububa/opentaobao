@@ -1,7 +1,7 @@
 package promotion
 
-// LotteryDrawQueryDto 
-type LotteryDrawQueryDto struct {
+// LotteryDrawQueryDTO 
+type LotteryDrawQueryDTO struct {
     // 抽奖参数
     Wua   string `json:"wua,omitempty" xml:"wua,omitempty"`
     // 关联ID

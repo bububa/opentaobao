@@ -1,11 +1,11 @@
 package lsttrade
 
-// AlibabaLstTradeOrderGetResultDto 
-type AlibabaLstTradeOrderGetResultDto struct {
+// AlibabaLstTradeOrderGetResultDTO 
+type AlibabaLstTradeOrderGetResultDTO struct {
     // 错误码
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     // 返回模型
-    Content   *LstTopOrderDto `json:"content,omitempty" xml:"content,omitempty"`
+    Content   *LstTopOrderDTO `json:"content,omitempty" xml:"content,omitempty"`
     // 错误码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 执行结果

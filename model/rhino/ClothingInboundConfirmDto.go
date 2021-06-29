@@ -1,7 +1,7 @@
 package rhino
 
-// ClothingInboundConfirmDto 
-type ClothingInboundConfirmDto struct {
+// ClothingInboundConfirmDTO 
+type ClothingInboundConfirmDTO struct {
     // 入库数量
     Amount   int64 `json:"amount,omitempty" xml:"amount,omitempty"`
     // 工厂ID，对应WMS002：Company

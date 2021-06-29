@@ -15,7 +15,7 @@ alibaba.wdk.ums.inventory.publish
 type AlibabaWdkUmsInventoryPublishRequest struct {
     model.Params
     // 1
-    _wdkErpArrivalNotice   *WdkErpArrivalNoticeDto
+    _wdkErpArrivalNotice   *WdkErpArrivalNoticeDTO
 }
 
 // 初始化AlibabaWdkUmsInventoryPublishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkUmsInventoryPublishRequest) GetApiParams() url.Values {
 }
 // WdkErpArrivalNotice Setter
 // 1
-func (r *AlibabaWdkUmsInventoryPublishRequest) SetWdkErpArrivalNotice(_wdkErpArrivalNotice *WdkErpArrivalNoticeDto) error {
+func (r *AlibabaWdkUmsInventoryPublishRequest) SetWdkErpArrivalNotice(_wdkErpArrivalNotice *WdkErpArrivalNoticeDTO) error {
     r._wdkErpArrivalNotice = _wdkErpArrivalNotice
     r.Set("wdk_erp_arrival_notice", _wdkErpArrivalNotice)
     return nil
 }
 
 // WdkErpArrivalNotice Getter
-func (r AlibabaWdkUmsInventoryPublishRequest) GetWdkErpArrivalNotice() *WdkErpArrivalNoticeDto {
+func (r AlibabaWdkUmsInventoryPublishRequest) GetWdkErpArrivalNotice() *WdkErpArrivalNoticeDTO {
     return r._wdkErpArrivalNotice
 }

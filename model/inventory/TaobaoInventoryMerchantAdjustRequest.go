@@ -15,7 +15,7 @@ taobao.inventory.merchant.adjust
 type TaobaoInventoryMerchantAdjustRequest struct {
     model.Params
     // 调整库存对象
-    _inventoryCheck   *InventoryCheckDto
+    _inventoryCheck   *InventoryCheckDTO
 }
 
 // 初始化TaobaoInventoryMerchantAdjustRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoInventoryMerchantAdjustRequest) GetApiParams() url.Values {
 }
 // InventoryCheck Setter
 // 调整库存对象
-func (r *TaobaoInventoryMerchantAdjustRequest) SetInventoryCheck(_inventoryCheck *InventoryCheckDto) error {
+func (r *TaobaoInventoryMerchantAdjustRequest) SetInventoryCheck(_inventoryCheck *InventoryCheckDTO) error {
     r._inventoryCheck = _inventoryCheck
     r.Set("inventory_check", _inventoryCheck)
     return nil
 }
 
 // InventoryCheck Getter
-func (r TaobaoInventoryMerchantAdjustRequest) GetInventoryCheck() *InventoryCheckDto {
+func (r TaobaoInventoryMerchantAdjustRequest) GetInventoryCheck() *InventoryCheckDTO {
     return r._inventoryCheck
 }

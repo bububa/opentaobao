@@ -1,7 +1,7 @@
 package scbp
 
-// ProductEffectDto 
-type ProductEffectDto struct {
+// ProductEffectDTO 
+type ProductEffectDTO struct {
     // 产品id
     ProductId   int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
     // 产品名称

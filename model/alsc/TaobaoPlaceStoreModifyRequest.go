@@ -15,7 +15,7 @@ taobao.place.store.modify
 type TaobaoPlaceStoreModifyRequest struct {
     model.Params
     // 门店创建入参
-    _storeUpdate   *StoreUpdateTopDto
+    _storeUpdate   *StoreUpdateTopDTO
 }
 
 // 初始化TaobaoPlaceStoreModifyRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPlaceStoreModifyRequest) GetApiParams() url.Values {
 }
 // StoreUpdate Setter
 // 门店创建入参
-func (r *TaobaoPlaceStoreModifyRequest) SetStoreUpdate(_storeUpdate *StoreUpdateTopDto) error {
+func (r *TaobaoPlaceStoreModifyRequest) SetStoreUpdate(_storeUpdate *StoreUpdateTopDTO) error {
     r._storeUpdate = _storeUpdate
     r.Set("store_update", _storeUpdate)
     return nil
 }
 
 // StoreUpdate Getter
-func (r TaobaoPlaceStoreModifyRequest) GetStoreUpdate() *StoreUpdateTopDto {
+func (r TaobaoPlaceStoreModifyRequest) GetStoreUpdate() *StoreUpdateTopDTO {
     return r._storeUpdate
 }

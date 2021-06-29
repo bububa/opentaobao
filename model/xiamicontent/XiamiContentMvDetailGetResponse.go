@@ -23,7 +23,7 @@ type XiamiContentMvDetailGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // mv列表
-    MvDtos   []MvDto `json:"mv_dtos,omitempty" xml:"mv_dtos>mv_dto,omitempty"`
+    MvDtos   []MvDTO `json:"mv_dtos,omitempty" xml:"mv_dtos>mv_dto,omitempty"`
     // 请求结果
     ResultCode   *ResultCode `json:"result_code,omitempty" xml:"result_code,omitempty"`
 }

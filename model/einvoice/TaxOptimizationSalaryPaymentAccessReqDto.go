@@ -1,7 +1,7 @@
 package einvoice
 
-// TaxOptimizationSalaryPaymentAccessReqDto 
-type TaxOptimizationSalaryPaymentAccessReqDto struct {
+// TaxOptimizationSalaryPaymentAccessReqDTO 
+type TaxOptimizationSalaryPaymentAccessReqDTO struct {
     // 账期
     AccountDate   string `json:"account_date,omitempty" xml:"account_date,omitempty"`
     // 发薪金额

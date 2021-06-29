@@ -1,7 +1,7 @@
 package xhotelitem
 
-// BnbBookingTimeDto 
-type BnbBookingTimeDto struct {
+// BnbBookingTimeDTO 
+type BnbBookingTimeDTO struct {
     // 最晚预定时间 hh:mm,24小时时间格式
     LatestBookingTime   string `json:"latest_booking_time,omitempty" xml:"latest_booking_time,omitempty"`
     // 最早入住时间 hh:mm,24小时时间格式住时间

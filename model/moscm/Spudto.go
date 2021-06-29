@@ -35,9 +35,9 @@ type Spudto struct {
     // 产品唯一标识
     ProductId   string `json:"product_id,omitempty" xml:"product_id,omitempty"`
     // 商品图片集合
-    ProductImgs   []ProductImgDto `json:"product_imgs,omitempty" xml:"product_imgs>product_img_dto,omitempty"`
+    ProductImgs   []ProductImgDTO `json:"product_imgs,omitempty" xml:"product_imgs>product_img_dto,omitempty"`
     // 属性
-    Props   []PropertyDto `json:"props,omitempty" xml:"props>property_dto,omitempty"`
+    Props   []PropertyDTO `json:"props,omitempty" xml:"props>property_dto,omitempty"`
     // 产品评分次数
     RateNum   int64 `json:"rate_num,omitempty" xml:"rate_num,omitempty"`
     // 产品卖点描述，长度限制在20个汉字

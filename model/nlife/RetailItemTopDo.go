@@ -1,9 +1,9 @@
 package nlife
 
-// RetailItemTopDo 
-type RetailItemTopDo struct {
+// RetailItemTopDO 
+type RetailItemTopDO struct {
     // sku列表
-    SkuList   []RetailSkuTopDo `json:"sku_list,omitempty" xml:"sku_list>retail_sku_top_do,omitempty"`
+    SkuList   []RetailSkuTopDO `json:"sku_list,omitempty" xml:"sku_list>retail_sku_top_do,omitempty"`
     // supportTaoke
     SupportTaoke   bool `json:"support_taoke,omitempty" xml:"support_taoke,omitempty"`
     // supportWzg

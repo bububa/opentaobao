@@ -7,7 +7,7 @@ type Response struct {
     // code
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // module
-    ControlRespDto   *ControlRespDto `json:"control_resp_dto,omitempty" xml:"control_resp_dto,omitempty"`
+    ControlRespDto   *ControlRespDTO `json:"control_resp_dto,omitempty" xml:"control_resp_dto,omitempty"`
     // module
     Module   bool `json:"module,omitempty" xml:"module,omitempty"`
 }

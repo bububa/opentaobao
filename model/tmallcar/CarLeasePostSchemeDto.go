@@ -1,7 +1,7 @@
 package tmallcar
 
-// CarLeasePostSchemeDto 
-type CarLeasePostSchemeDto struct {
+// CarLeasePostSchemeDTO 
+type CarLeasePostSchemeDTO struct {
     // 0:不能使用,1:可以使用
     CanSelect   int64 `json:"can_select,omitempty" xml:"can_select,omitempty"`
     // 分期月数
@@ -13,7 +13,7 @@ type CarLeasePostSchemeDto struct {
     // 不能使用原因描述
     ReasonDesc   string `json:"reason_desc,omitempty" xml:"reason_desc,omitempty"`
     // 续租到期后可选择方案列表
-    RenewSchemeList   []CarLeasePostSchemeDto `json:"renew_scheme_list,omitempty" xml:"renew_scheme_list>car_lease_post_scheme_dto,omitempty"`
+    RenewSchemeList   []CarLeasePostSchemeDTO `json:"renew_scheme_list,omitempty" xml:"renew_scheme_list>car_lease_post_scheme_dto,omitempty"`
     // 尾款，单位：分
     RestAmount   int64 `json:"rest_amount,omitempty" xml:"rest_amount,omitempty"`
     // 0.退车,1.买断,2.分期，3.续租

@@ -15,7 +15,7 @@ taobao.rdc.aligenius.sendgoods.cancel
 type TaobaoRdcAligeniusSendgoodsCancelRequest struct {
     model.Params
     // 请求参数
-    _param   *CancelGoodsDto
+    _param   *CancelGoodsDTO
 }
 
 // 初始化TaobaoRdcAligeniusSendgoodsCancelRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusSendgoodsCancelRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 请求参数
-func (r *TaobaoRdcAligeniusSendgoodsCancelRequest) SetParam(_param *CancelGoodsDto) error {
+func (r *TaobaoRdcAligeniusSendgoodsCancelRequest) SetParam(_param *CancelGoodsDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoRdcAligeniusSendgoodsCancelRequest) GetParam() *CancelGoodsDto {
+func (r TaobaoRdcAligeniusSendgoodsCancelRequest) GetParam() *CancelGoodsDTO {
     return r._param
 }

@@ -1,7 +1,7 @@
 package promotion
 
-// LotterySchemaDto 
-type LotterySchemaDto struct {
+// LotterySchemaDTO 
+type LotterySchemaDTO struct {
     // 方案id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 创建时间
@@ -15,9 +15,9 @@ type LotterySchemaDto struct {
     // 抽奖活动id
     LotteryActivityId   int64 `json:"lottery_activity_id,omitempty" xml:"lottery_activity_id,omitempty"`
     // 方案关联的规则列表
-    RuleList   []ExpressionRuleDto `json:"rule_list,omitempty" xml:"rule_list>expression_rule_dto,omitempty"`
+    RuleList   []ExpressionRuleDTO `json:"rule_list,omitempty" xml:"rule_list>expression_rule_dto,omitempty"`
     // 方案关联的奖品
-    AwardList   []LotteryAwardRelDto `json:"award_list,omitempty" xml:"award_list>lottery_award_rel_dto,omitempty"`
+    AwardList   []LotteryAwardRelDTO `json:"award_list,omitempty" xml:"award_list>lottery_award_rel_dto,omitempty"`
     // 业务标
     Flag   int64 `json:"flag,omitempty" xml:"flag,omitempty"`
 }

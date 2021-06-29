@@ -23,5 +23,5 @@ type XiamiApiSongListenfileGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 歌曲试听文件列表
-    SongPlayInfoList   []SongPlayInfoDo `json:"song_play_info_list,omitempty" xml:"song_play_info_list>song_play_info_do,omitempty"`
+    SongPlayInfoList   []SongPlayInfoDO `json:"song_play_info_list,omitempty" xml:"song_play_info_list>song_play_info_do,omitempty"`
 }

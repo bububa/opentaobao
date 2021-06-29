@@ -15,7 +15,7 @@ alibaba.idle.consignment.order.perform
 type AlibabaIdleConsignmentOrderPerformRequest struct {
     model.Params
     // 帮卖订单同步DTO
-    _param   *ConsignmentOrderSynDto
+    _param   *ConsignmentOrderSynDTO
 }
 
 // 初始化AlibabaIdleConsignmentOrderPerformRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleConsignmentOrderPerformRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 帮卖订单同步DTO
-func (r *AlibabaIdleConsignmentOrderPerformRequest) SetParam(_param *ConsignmentOrderSynDto) error {
+func (r *AlibabaIdleConsignmentOrderPerformRequest) SetParam(_param *ConsignmentOrderSynDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaIdleConsignmentOrderPerformRequest) GetParam() *ConsignmentOrderSynDto {
+func (r AlibabaIdleConsignmentOrderPerformRequest) GetParam() *ConsignmentOrderSynDTO {
     return r._param
 }

@@ -1,9 +1,9 @@
 package wdk
 
-// PackageResultDto 
-type PackageResultDto struct {
+// PackageResultDTO 
+type PackageResultDTO struct {
     // 路由节点
-    RouteNodes   []RouteNodeDto `json:"route_nodes,omitempty" xml:"route_nodes>route_node_dto,omitempty"`
+    RouteNodes   []RouteNodeDTO `json:"route_nodes,omitempty" xml:"route_nodes>route_node_dto,omitempty"`
     // 令牌列表
     TokenCodes   []string `json:"token_codes,omitempty" xml:"token_codes>string,omitempty"`
     // 作业要求

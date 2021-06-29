@@ -1,7 +1,7 @@
 package feedflow
 
-// AdzoneQueryDto 
-type AdzoneQueryDto struct {
+// AdzoneQueryDTO 
+type AdzoneQueryDTO struct {
     // 计划id
     CampaignId   int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
     // 广告位id列表

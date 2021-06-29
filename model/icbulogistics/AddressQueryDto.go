@@ -1,7 +1,7 @@
 package icbulogistics
 
-// AddressQueryDto 
-type AddressQueryDto struct {
+// AddressQueryDTO 
+type AddressQueryDTO struct {
     // 省ID
     ProvinceId   int64 `json:"province_id,omitempty" xml:"province_id,omitempty"`
     // 城市id

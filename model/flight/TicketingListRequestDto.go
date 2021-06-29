@@ -1,7 +1,7 @@
 package flight
 
-// TicketingListRequestDto 
-type TicketingListRequestDto struct {
+// TicketingListRequestDTO 
+type TicketingListRequestDTO struct {
     // 店铺id
     AgentIds   []int64 `json:"agent_ids,omitempty" xml:"agent_ids>int64,omitempty"`
     // 支付起始时间

@@ -27,7 +27,7 @@ type AlibabaChongzhiQueryecardsResponse struct {
     // desc
     Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     // 订单列表
-    EcardList   []EcardItemDo `json:"ecard_list,omitempty" xml:"ecard_list>ecard_item_do,omitempty"`
+    EcardList   []EcardItemDO `json:"ecard_list,omitempty" xml:"ecard_list>ecard_item_do,omitempty"`
     // MtsInfoDo
-    CatInfo   *MtsInfoDo `json:"cat_info,omitempty" xml:"cat_info,omitempty"`
+    CatInfo   *MtsInfoDO `json:"cat_info,omitempty" xml:"cat_info,omitempty"`
 }

@@ -1,7 +1,7 @@
 package tvupadmin
 
-// DeviceAdapterDto 
-type DeviceAdapterDto struct {
+// DeviceAdapterDTO 
+type DeviceAdapterDTO struct {
     // brandId
     BrandId   int64 `json:"brand_id,omitempty" xml:"brand_id,omitempty"`
     // brandName

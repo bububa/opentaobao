@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TmallChannelTradeApplyorderAgreeResultDto 
-type TmallChannelTradeApplyorderAgreeResultDto struct {
+// TmallChannelTradeApplyorderAgreeResultDTO 
+type TmallChannelTradeApplyorderAgreeResultDTO struct {
     // errorMessage
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     // errorCode

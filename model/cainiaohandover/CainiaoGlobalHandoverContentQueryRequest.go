@@ -15,7 +15,7 @@ cainiao.global.handover.content.query
 type CainiaoGlobalHandoverContentQueryRequest struct {
     model.Params
     // 用户信息
-    _userInfo   *UserInfoDto
+    _userInfo   *UserInfoDTO
     // 交接物运单号，和交接物物流订单编码参数任选其一即可
     _trackingNumber   string
     // 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
@@ -48,14 +48,14 @@ func (r CainiaoGlobalHandoverContentQueryRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 用户信息
-func (r *CainiaoGlobalHandoverContentQueryRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+func (r *CainiaoGlobalHandoverContentQueryRequest) SetUserInfo(_userInfo *UserInfoDTO) error {
     r._userInfo = _userInfo
     r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
-func (r CainiaoGlobalHandoverContentQueryRequest) GetUserInfo() *UserInfoDto {
+func (r CainiaoGlobalHandoverContentQueryRequest) GetUserInfo() *UserInfoDTO {
     return r._userInfo
 }
 // TrackingNumber Setter

@@ -15,7 +15,7 @@ alibaba.idle.isv.item.publish
 type AlibabaIdleIsvItemPublishRequest struct {
     model.Params
     // 商品数据参数
-    _itemParam   *IdleItemApiDo
+    _itemParam   *IdleItemApiDO
 }
 
 // 初始化AlibabaIdleIsvItemPublishRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleIsvItemPublishRequest) GetApiParams() url.Values {
 }
 // ItemParam Setter
 // 商品数据参数
-func (r *AlibabaIdleIsvItemPublishRequest) SetItemParam(_itemParam *IdleItemApiDo) error {
+func (r *AlibabaIdleIsvItemPublishRequest) SetItemParam(_itemParam *IdleItemApiDO) error {
     r._itemParam = _itemParam
     r.Set("item_param", _itemParam)
     return nil
 }
 
 // ItemParam Getter
-func (r AlibabaIdleIsvItemPublishRequest) GetItemParam() *IdleItemApiDo {
+func (r AlibabaIdleIsvItemPublishRequest) GetItemParam() *IdleItemApiDO {
     return r._itemParam
 }

@@ -1,7 +1,7 @@
 package lstvending
 
-// VendingTradeGoodsDetailDto 
-type VendingTradeGoodsDetailDto struct {
+// VendingTradeGoodsDetailDTO 
+type VendingTradeGoodsDetailDTO struct {
     // 修改时间
     GmtModified   int64 `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
     // 数量

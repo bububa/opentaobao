@@ -1,7 +1,7 @@
 package flight
 
-// TaobaoAlitripFlightchangeGetResultDo 
-type TaobaoAlitripFlightchangeGetResultDo struct {
+// TaobaoAlitripFlightchangeGetResultDO 
+type TaobaoAlitripFlightchangeGetResultDO struct {
     // results
     Results   []string `json:"results,omitempty" xml:"results>string,omitempty"`
     // errMsg

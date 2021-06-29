@@ -1,7 +1,7 @@
 package drug
 
-// SubOrderDto 
-type SubOrderDto struct {
+// SubOrderDTO 
+type SubOrderDTO struct {
     // 子订单ID
     SubOrderId   int64 `json:"sub_order_id,omitempty" xml:"sub_order_id,omitempty"`
     // 商品ID
@@ -21,5 +21,5 @@ type SubOrderDto struct {
     // 是否为处方药
     Rx   int64 `json:"rx,omitempty" xml:"rx,omitempty"`
     // 套装商品子商品系信息
-    SuitSubItemDtoList   []SuitSubItemDto `json:"suit_sub_item_dto_list,omitempty" xml:"suit_sub_item_dto_list>suit_sub_item_dto,omitempty"`
+    SuitSubItemDtoList   []SuitSubItemDTO `json:"suit_sub_item_dto_list,omitempty" xml:"suit_sub_item_dto_list>suit_sub_item_dto,omitempty"`
 }

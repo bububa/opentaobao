@@ -1,7 +1,7 @@
 package axintrade
 
-// AxinFundCreateResDto 
-type AxinFundCreateResDto struct {
+// AxinFundCreateResDTO 
+type AxinFundCreateResDTO struct {
     // 资金单ID
     FundId   string `json:"fund_id,omitempty" xml:"fund_id,omitempty"`
     // 阿信支付宝账号appID

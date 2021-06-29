@@ -47,7 +47,7 @@ type AlibabaAlihealthNrTradeOrderGetResponse struct {
     // 实付金额
     ActualPayFee   int64 `json:"actual_pay_fee,omitempty" xml:"actual_pay_fee,omitempty"`
     // 订单优惠列表
-    PromotionList   []OrderPromotionDto `json:"promotion_list,omitempty" xml:"promotion_list>order_promotion_dto,omitempty"`
+    PromotionList   []OrderPromotionDTO `json:"promotion_list,omitempty" xml:"promotion_list>order_promotion_dto,omitempty"`
     // 总优惠信息
     TotalPromotion   int64 `json:"total_promotion,omitempty" xml:"total_promotion,omitempty"`
     // 买家收货地址上的名字
@@ -67,7 +67,7 @@ type AlibabaAlihealthNrTradeOrderGetResponse struct {
     // 商家设置的运费
     Carriage   int64 `json:"carriage,omitempty" xml:"carriage,omitempty"`
     // 子订单
-    SubOrderList   []SubOrderDto `json:"sub_order_list,omitempty" xml:"sub_order_list>sub_order_dto,omitempty"`
+    SubOrderList   []SubOrderDTO `json:"sub_order_list,omitempty" xml:"sub_order_list>sub_order_dto,omitempty"`
     // 处方药标示
     Rx   int64 `json:"rx,omitempty" xml:"rx,omitempty"`
     // 处方药回拨电话

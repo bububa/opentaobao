@@ -15,7 +15,7 @@ aliexpress.logistics.buyer.freight.calculate
 type AliexpressLogisticsBuyerFreightCalculateRequest struct {
     model.Params
     // 运费计算请求参数
-    _paramAeopFreightCalculateForBuyerDTO   *AeopFreightCalculateForBuyerDto
+    _paramAeopFreightCalculateForBuyerDTO   *AeopFreightCalculateForBuyerDTO
 }
 
 // 初始化AliexpressLogisticsBuyerFreightCalculateRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressLogisticsBuyerFreightCalculateRequest) GetApiParams() url.Valu
 }
 // ParamAeopFreightCalculateForBuyerDTO Setter
 // 运费计算请求参数
-func (r *AliexpressLogisticsBuyerFreightCalculateRequest) SetParamAeopFreightCalculateForBuyerDTO(_paramAeopFreightCalculateForBuyerDTO *AeopFreightCalculateForBuyerDto) error {
+func (r *AliexpressLogisticsBuyerFreightCalculateRequest) SetParamAeopFreightCalculateForBuyerDTO(_paramAeopFreightCalculateForBuyerDTO *AeopFreightCalculateForBuyerDTO) error {
     r._paramAeopFreightCalculateForBuyerDTO = _paramAeopFreightCalculateForBuyerDTO
     r.Set("param_aeop_freight_calculate_for_buyer_d_t_o", _paramAeopFreightCalculateForBuyerDTO)
     return nil
 }
 
 // ParamAeopFreightCalculateForBuyerDTO Getter
-func (r AliexpressLogisticsBuyerFreightCalculateRequest) GetParamAeopFreightCalculateForBuyerDTO() *AeopFreightCalculateForBuyerDto {
+func (r AliexpressLogisticsBuyerFreightCalculateRequest) GetParamAeopFreightCalculateForBuyerDTO() *AeopFreightCalculateForBuyerDTO {
     return r._paramAeopFreightCalculateForBuyerDTO
 }

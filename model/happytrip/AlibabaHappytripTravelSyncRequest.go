@@ -15,7 +15,7 @@ alibaba.happytrip.travel.sync
 type AlibabaHappytripTravelSyncRequest struct {
     model.Params
     // 差旅申请单对象
-    _travelHeadDto   *TravelHeadDto
+    _travelHeadDto   *TravelHeadDTO
 }
 
 // 初始化AlibabaHappytripTravelSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaHappytripTravelSyncRequest) GetApiParams() url.Values {
 }
 // TravelHeadDto Setter
 // 差旅申请单对象
-func (r *AlibabaHappytripTravelSyncRequest) SetTravelHeadDto(_travelHeadDto *TravelHeadDto) error {
+func (r *AlibabaHappytripTravelSyncRequest) SetTravelHeadDto(_travelHeadDto *TravelHeadDTO) error {
     r._travelHeadDto = _travelHeadDto
     r.Set("travel_head_dto", _travelHeadDto)
     return nil
 }
 
 // TravelHeadDto Getter
-func (r AlibabaHappytripTravelSyncRequest) GetTravelHeadDto() *TravelHeadDto {
+func (r AlibabaHappytripTravelSyncRequest) GetTravelHeadDto() *TravelHeadDTO {
     return r._travelHeadDto
 }

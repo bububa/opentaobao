@@ -1,7 +1,7 @@
 package mos
 
-// CodeGoodsDto 
-type CodeGoodsDto struct {
+// CodeGoodsDTO 
+type CodeGoodsDTO struct {
     // 数量
     Quantity   string `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // id

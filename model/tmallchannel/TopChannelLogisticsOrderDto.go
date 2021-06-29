@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TopChannelLogisticsOrderDto 
-type TopChannelLogisticsOrderDto struct {
+// TopChannelLogisticsOrderDTO 
+type TopChannelLogisticsOrderDTO struct {
     // 物流单号
     LogisticsOrderNo   string `json:"logistics_order_no,omitempty" xml:"logistics_order_no,omitempty"`
     // 物流公司编号

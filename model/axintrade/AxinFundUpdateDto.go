@@ -1,7 +1,7 @@
 package axintrade
 
-// AxinFundUpdateDto 
-type AxinFundUpdateDto struct {
+// AxinFundUpdateDTO 
+type AxinFundUpdateDTO struct {
     // 请求版本号，用于幂等校验
     ReqVersion   string `json:"req_version,omitempty" xml:"req_version,omitempty"`
     // 扩展属性

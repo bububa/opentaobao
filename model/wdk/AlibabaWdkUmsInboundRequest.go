@@ -15,7 +15,7 @@ alibaba.wdk.ums.inbound
 type AlibabaWdkUmsInboundRequest struct {
     model.Params
     // 1
-    _erpArrivalnoticeDto   *ErpArrivalNoticeDto
+    _erpArrivalnoticeDto   *ErpArrivalNoticeDTO
 }
 
 // 初始化AlibabaWdkUmsInboundRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkUmsInboundRequest) GetApiParams() url.Values {
 }
 // ErpArrivalnoticeDto Setter
 // 1
-func (r *AlibabaWdkUmsInboundRequest) SetErpArrivalnoticeDto(_erpArrivalnoticeDto *ErpArrivalNoticeDto) error {
+func (r *AlibabaWdkUmsInboundRequest) SetErpArrivalnoticeDto(_erpArrivalnoticeDto *ErpArrivalNoticeDTO) error {
     r._erpArrivalnoticeDto = _erpArrivalnoticeDto
     r.Set("erp_arrivalnotice_dto", _erpArrivalnoticeDto)
     return nil
 }
 
 // ErpArrivalnoticeDto Getter
-func (r AlibabaWdkUmsInboundRequest) GetErpArrivalnoticeDto() *ErpArrivalNoticeDto {
+func (r AlibabaWdkUmsInboundRequest) GetErpArrivalnoticeDto() *ErpArrivalNoticeDTO {
     return r._erpArrivalnoticeDto
 }

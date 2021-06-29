@@ -15,7 +15,7 @@ alibaba.seaking.task.report
 type AlibabaSeakingTaskReportRequest struct {
     model.Params
     // 上报数据详情
-    _reportDetail   []TaskDetailReportDto
+    _reportDetail   []TaskDetailReportDTO
     // 任务类型(title/image)
     _taskType   string
     // 用户token
@@ -46,14 +46,14 @@ func (r AlibabaSeakingTaskReportRequest) GetApiParams() url.Values {
 }
 // ReportDetail Setter
 // 上报数据详情
-func (r *AlibabaSeakingTaskReportRequest) SetReportDetail(_reportDetail []TaskDetailReportDto) error {
+func (r *AlibabaSeakingTaskReportRequest) SetReportDetail(_reportDetail []TaskDetailReportDTO) error {
     r._reportDetail = _reportDetail
     r.Set("report_detail", _reportDetail)
     return nil
 }
 
 // ReportDetail Getter
-func (r AlibabaSeakingTaskReportRequest) GetReportDetail() []TaskDetailReportDto {
+func (r AlibabaSeakingTaskReportRequest) GetReportDetail() []TaskDetailReportDTO {
     return r._reportDetail
 }
 // TaskType Setter

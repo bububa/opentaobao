@@ -15,7 +15,7 @@ alibaba.lst.pos.open.inventory.syncinventorydata
 type AlibabaLstPosOpenInventorySyncinventorydataRequest struct {
     model.Params
     // 库存对象列表
-    _inventoryDTOList   []InventoryDto
+    _inventoryDTOList   []InventoryDTO
     // 门店对应的主账号id
     _userId   int64
 }
@@ -42,14 +42,14 @@ func (r AlibabaLstPosOpenInventorySyncinventorydataRequest) GetApiParams() url.V
 }
 // InventoryDTOList Setter
 // 库存对象列表
-func (r *AlibabaLstPosOpenInventorySyncinventorydataRequest) SetInventoryDTOList(_inventoryDTOList []InventoryDto) error {
+func (r *AlibabaLstPosOpenInventorySyncinventorydataRequest) SetInventoryDTOList(_inventoryDTOList []InventoryDTO) error {
     r._inventoryDTOList = _inventoryDTOList
     r.Set("inventory_d_t_o_list", _inventoryDTOList)
     return nil
 }
 
 // InventoryDTOList Getter
-func (r AlibabaLstPosOpenInventorySyncinventorydataRequest) GetInventoryDTOList() []InventoryDto {
+func (r AlibabaLstPosOpenInventorySyncinventorydataRequest) GetInventoryDTOList() []InventoryDTO {
     return r._inventoryDTOList
 }
 // UserId Setter

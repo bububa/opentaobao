@@ -1,7 +1,7 @@
 package alihealth2
 
-// LifeResultDo 
-type LifeResultDo struct {
+// LifeResultDO 
+type LifeResultDO struct {
     // RT
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     // 描述信息

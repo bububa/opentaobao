@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrtCrmActivityDetailDto 
-type NrtCrmActivityDetailDto struct {
+// NrtCrmActivityDetailDTO 
+type NrtCrmActivityDetailDTO struct {
     // 状态
     StatusStr   string `json:"status_str,omitempty" xml:"status_str,omitempty"`
     // 结束时间

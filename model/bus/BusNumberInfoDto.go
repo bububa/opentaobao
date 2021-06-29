@@ -1,7 +1,7 @@
 package bus
 
-// BusNumberInfoDto 
-type BusNumberInfoDto struct {
+// BusNumberInfoDTO 
+type BusNumberInfoDTO struct {
     // 代理商id
     AgentId   int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
     // 车次id

@@ -15,9 +15,9 @@ alibaba.scbp.ad.report.query.keyword.effect
 type AlibabaScbpAdReportQueryKeywordEffectRequest struct {
     model.Params
     // 请求参数
-    _keywordReportOperation   *KeywordReportOperationDto
+    _keywordReportOperation   *KeywordReportOperationDTO
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdReportQueryKeywordEffectRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdReportQueryKeywordEffectRequest) GetApiParams() url.Values 
 }
 // KeywordReportOperation Setter
 // 请求参数
-func (r *AlibabaScbpAdReportQueryKeywordEffectRequest) SetKeywordReportOperation(_keywordReportOperation *KeywordReportOperationDto) error {
+func (r *AlibabaScbpAdReportQueryKeywordEffectRequest) SetKeywordReportOperation(_keywordReportOperation *KeywordReportOperationDTO) error {
     r._keywordReportOperation = _keywordReportOperation
     r.Set("keyword_report_operation", _keywordReportOperation)
     return nil
 }
 
 // KeywordReportOperation Getter
-func (r AlibabaScbpAdReportQueryKeywordEffectRequest) GetKeywordReportOperation() *KeywordReportOperationDto {
+func (r AlibabaScbpAdReportQueryKeywordEffectRequest) GetKeywordReportOperation() *KeywordReportOperationDTO {
     return r._keywordReportOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdReportQueryKeywordEffectRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdReportQueryKeywordEffectRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdReportQueryKeywordEffectRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdReportQueryKeywordEffectRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

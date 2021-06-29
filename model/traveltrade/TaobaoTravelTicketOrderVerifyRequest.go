@@ -19,7 +19,7 @@ type TaobaoTravelTicketOrderVerifyRequest struct {
     // 外部订单ID
     _outOrderId   string
     // 使用凭证信息
-    _voucherInfos   []VoucherInfoDto
+    _voucherInfos   []VoucherInfoDTO
     // 供应商核销回调类型：0表示使用本次核销数量（常规），1表示使用总核销数量（已使用+本次）
     _writeOffType   int64
 }
@@ -70,14 +70,14 @@ func (r TaobaoTravelTicketOrderVerifyRequest) GetOutOrderId() string {
 }
 // VoucherInfos Setter
 // 使用凭证信息
-func (r *TaobaoTravelTicketOrderVerifyRequest) SetVoucherInfos(_voucherInfos []VoucherInfoDto) error {
+func (r *TaobaoTravelTicketOrderVerifyRequest) SetVoucherInfos(_voucherInfos []VoucherInfoDTO) error {
     r._voucherInfos = _voucherInfos
     r.Set("voucher_infos", _voucherInfos)
     return nil
 }
 
 // VoucherInfos Getter
-func (r TaobaoTravelTicketOrderVerifyRequest) GetVoucherInfos() []VoucherInfoDto {
+func (r TaobaoTravelTicketOrderVerifyRequest) GetVoucherInfos() []VoucherInfoDTO {
     return r._voucherInfos
 }
 // WriteOffType Setter

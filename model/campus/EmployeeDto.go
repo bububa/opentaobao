@@ -1,7 +1,7 @@
 package campus
 
-// EmployeeDto 
-type EmployeeDto struct {
+// EmployeeDTO 
+type EmployeeDTO struct {
     // 生日
     Birthday   string `json:"birthday,omitempty" xml:"birthday,omitempty"`
     // 性别

@@ -15,7 +15,7 @@ tmall.nr.sold.orderlist.query.jst
 type TmallNrSoldOrderlistQueryJstRequest struct {
     model.Params
     // 入参对象
-    _param0   *NrTimingOrderSoldQueryReqDto
+    _param0   *NrTimingOrderSoldQueryReqDTO
 }
 
 // 初始化TmallNrSoldOrderlistQueryJstRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrSoldOrderlistQueryJstRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参对象
-func (r *TmallNrSoldOrderlistQueryJstRequest) SetParam0(_param0 *NrTimingOrderSoldQueryReqDto) error {
+func (r *TmallNrSoldOrderlistQueryJstRequest) SetParam0(_param0 *NrTimingOrderSoldQueryReqDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TmallNrSoldOrderlistQueryJstRequest) GetParam0() *NrTimingOrderSoldQueryReqDto {
+func (r TmallNrSoldOrderlistQueryJstRequest) GetParam0() *NrTimingOrderSoldQueryReqDTO {
     return r._param0
 }

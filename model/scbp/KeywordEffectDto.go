@@ -1,7 +1,7 @@
 package scbp
 
-// KeywordEffectDto 
-type KeywordEffectDto struct {
+// KeywordEffectDTO 
+type KeywordEffectDTO struct {
     // 关键词
     Keyword   string `json:"keyword,omitempty" xml:"keyword,omitempty"`
     // 开始时间

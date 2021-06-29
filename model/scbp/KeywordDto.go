@@ -1,9 +1,9 @@
 package scbp
 
-// KeywordDto 
-type KeywordDto struct {
+// KeywordDTO 
+type KeywordDTO struct {
     // 效果数据
-    Effect   *KeywordEffectDto `json:"effect,omitempty" xml:"effect,omitempty"`
+    Effect   *KeywordEffectDTO `json:"effect,omitempty" xml:"effect,omitempty"`
     // 主键
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 创建时间
@@ -41,5 +41,5 @@ type KeywordDto struct {
     // 配置信息
     Properties   string `json:"properties,omitempty" xml:"properties,omitempty"`
     // 战略数据
-    BidStrategy   *BidStrategyDto `json:"bid_strategy,omitempty" xml:"bid_strategy,omitempty"`
+    BidStrategy   *BidStrategyDTO `json:"bid_strategy,omitempty" xml:"bid_strategy,omitempty"`
 }

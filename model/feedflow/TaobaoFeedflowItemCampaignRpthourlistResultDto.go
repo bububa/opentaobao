@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemCampaignRpthourlistResultDto 
-type TaobaoFeedflowItemCampaignRpthourlistResultDto struct {
+// TaobaoFeedflowItemCampaignRpthourlistResultDTO 
+type TaobaoFeedflowItemCampaignRpthourlistResultDTO struct {
     // 描述信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 总数
@@ -11,5 +11,5 @@ type TaobaoFeedflowItemCampaignRpthourlistResultDto struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 返回结果
-    RptList   []RptResultDto `json:"rpt_list,omitempty" xml:"rpt_list>rpt_result_dto,omitempty"`
+    RptList   []RptResultDTO `json:"rpt_list,omitempty" xml:"rpt_list>rpt_result_dto,omitempty"`
 }

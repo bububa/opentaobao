@@ -1,7 +1,7 @@
 package einvoice
 
-// SalaryDetailDto 
-type SalaryDetailDto struct {
+// SalaryDetailDTO 
+type SalaryDetailDTO struct {
     // 账期
     AccountDate   string `json:"account_date,omitempty" xml:"account_date,omitempty"`
     // 发薪金额

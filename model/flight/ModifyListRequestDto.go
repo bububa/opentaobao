@@ -1,7 +1,7 @@
 package flight
 
-// ModifyListRequestDto 
-type ModifyListRequestDto struct {
+// ModifyListRequestDTO 
+type ModifyListRequestDTO struct {
     // 店铺id
     AgentIds   []int64 `json:"agent_ids,omitempty" xml:"agent_ids>int64,omitempty"`
     // 申请结束时间

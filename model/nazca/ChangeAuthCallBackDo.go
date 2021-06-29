@@ -1,7 +1,7 @@
 package nazca
 
-// ChangeAuthCallBackDo 
-type ChangeAuthCallBackDo struct {
+// ChangeAuthCallBackDO 
+type ChangeAuthCallBackDO struct {
     // 身份证号
     Id   string `json:"id,omitempty" xml:"id,omitempty"`
     // 支付宝账号

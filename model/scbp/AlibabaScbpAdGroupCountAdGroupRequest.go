@@ -17,9 +17,9 @@ type AlibabaScbpAdGroupCountAdGroupRequest struct {
     // 计划id
     _campaignId   int64
     // 查询条件
-    _adGroupQuery   *AdGroupQueryDto
+    _adGroupQuery   *AdGroupQueryDTO
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdGroupCountAdGroupRequest对象
@@ -56,25 +56,25 @@ func (r AlibabaScbpAdGroupCountAdGroupRequest) GetCampaignId() int64 {
 }
 // AdGroupQuery Setter
 // 查询条件
-func (r *AlibabaScbpAdGroupCountAdGroupRequest) SetAdGroupQuery(_adGroupQuery *AdGroupQueryDto) error {
+func (r *AlibabaScbpAdGroupCountAdGroupRequest) SetAdGroupQuery(_adGroupQuery *AdGroupQueryDTO) error {
     r._adGroupQuery = _adGroupQuery
     r.Set("ad_group_query", _adGroupQuery)
     return nil
 }
 
 // AdGroupQuery Getter
-func (r AlibabaScbpAdGroupCountAdGroupRequest) GetAdGroupQuery() *AdGroupQueryDto {
+func (r AlibabaScbpAdGroupCountAdGroupRequest) GetAdGroupQuery() *AdGroupQueryDTO {
     return r._adGroupQuery
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdGroupCountAdGroupRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdGroupCountAdGroupRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdGroupCountAdGroupRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdGroupCountAdGroupRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

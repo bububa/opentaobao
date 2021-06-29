@@ -1,4 +1,7 @@
 package pur
+import (
+    "github.com/bububa/opentaobao/model"
+)
 
 // SupplierPreInvoiceInfoVO 
 type SupplierPreInvoiceInfoVO struct {

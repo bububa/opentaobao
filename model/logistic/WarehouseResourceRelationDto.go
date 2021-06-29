@@ -1,7 +1,7 @@
 package logistic
 
-// WarehouseResourceRelationDto 
-type WarehouseResourceRelationDto struct {
+// WarehouseResourceRelationDTO 
+type WarehouseResourceRelationDTO struct {
     // from资源外部编码
     FromOrgResourceCode   string `json:"from_org_resource_code,omitempty" xml:"from_org_resource_code,omitempty"`
     // from资源来源

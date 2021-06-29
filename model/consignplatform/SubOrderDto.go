@@ -1,7 +1,7 @@
 package consignplatform
 
-// SubOrderDto 
-type SubOrderDto struct {
+// SubOrderDTO 
+type SubOrderDTO struct {
     // 外部子订单id
     OuterOrderId   string `json:"outer_order_id,omitempty" xml:"outer_order_id,omitempty"`
     // 商品数量

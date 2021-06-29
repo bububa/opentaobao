@@ -1,7 +1,7 @@
 package nlife
 
-// DeliverDetailDo 
-type DeliverDetailDo struct {
+// DeliverDetailDO 
+type DeliverDetailDO struct {
     // 门店id
     StoreId   int64 `json:"store_id,omitempty" xml:"store_id,omitempty"`
     // 发货单批次

@@ -1,7 +1,7 @@
 package wdk
 
-// PromotionActivityDo 
-type PromotionActivityDo struct {
+// PromotionActivityDO 
+type PromotionActivityDO struct {
     // 档期活动开始时间
     StartTime   string `json:"start_time,omitempty" xml:"start_time,omitempty"`
     // 创建时间，可不传

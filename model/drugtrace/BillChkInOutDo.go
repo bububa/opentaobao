@@ -1,7 +1,7 @@
 package drugtrace
 
-// BillChkInOutDo 
-type BillChkInOutDo struct {
+// BillChkInOutDO 
+type BillChkInOutDO struct {
     // 单据类型
     BillType   string `json:"bill_type,omitempty" xml:"bill_type,omitempty"`
     // 单号号码

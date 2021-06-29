@@ -1,11 +1,11 @@
 package ott
 
-// LauncherDo 
-type LauncherDo struct {
+// LauncherDO 
+type LauncherDO struct {
     // 桌面坑位
     Items   []Items `json:"items,omitempty" xml:"items>items,omitempty"`
     // 设备属性
-    Property   *PropertyDo `json:"property,omitempty" xml:"property,omitempty"`
+    Property   *PropertyDO `json:"property,omitempty" xml:"property,omitempty"`
     // 桌面配置
-    Version   *VersionDo `json:"version,omitempty" xml:"version,omitempty"`
+    Version   *VersionDO `json:"version,omitempty" xml:"version,omitempty"`
 }

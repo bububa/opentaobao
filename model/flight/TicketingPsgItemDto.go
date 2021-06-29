@@ -1,7 +1,7 @@
 package flight
 
-// TicketingPsgItemDto 
-type TicketingPsgItemDto struct {
+// TicketingPsgItemDTO 
+type TicketingPsgItemDTO struct {
     // 乘客姓名
     PassengerName   string `json:"passenger_name,omitempty" xml:"passenger_name,omitempty"`
     // 票号

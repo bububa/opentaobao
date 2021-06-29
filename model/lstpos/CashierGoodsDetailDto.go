@@ -1,7 +1,7 @@
 package lstpos
 
-// CashierGoodsDetailDto 
-type CashierGoodsDetailDto struct {
+// CashierGoodsDetailDTO 
+type CashierGoodsDetailDTO struct {
     // 商品条码，可能有无码商品
     BarCode   string `json:"bar_code,omitempty" xml:"bar_code,omitempty"`
     // 商品进货价 单位:分

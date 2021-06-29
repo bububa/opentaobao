@@ -27,5 +27,5 @@ type AlibabaScbpReckeywordSysGetResponse struct {
     // 总页数
     TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
     // 系统推荐词结果列表
-    ResultList   []RecKeywordDto `json:"result_list,omitempty" xml:"result_list>rec_keyword_dto,omitempty"`
+    ResultList   []RecKeywordDTO `json:"result_list,omitempty" xml:"result_list>rec_keyword_dto,omitempty"`
 }

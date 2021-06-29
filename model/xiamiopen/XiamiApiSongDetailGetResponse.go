@@ -23,5 +23,5 @@ type XiamiApiSongDetailGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 歌曲信息
-    SongDetailList   []SongDetailDo `json:"song_detail_list,omitempty" xml:"song_detail_list>song_detail_do,omitempty"`
+    SongDetailList   []SongDetailDO `json:"song_detail_list,omitempty" xml:"song_detail_list>song_detail_do,omitempty"`
 }

@@ -15,7 +15,7 @@ taobao.apple.card.active.apply.notify
 type TaobaoAppleCardActiveApplyNotifyRequest struct {
     model.Params
     // 卡列表
-    _appleCards   []AppleCardDto
+    _appleCards   []AppleCardDTO
     // 网关订单号
     _gatewayOrderNo   string
     // 描述
@@ -48,14 +48,14 @@ func (r TaobaoAppleCardActiveApplyNotifyRequest) GetApiParams() url.Values {
 }
 // AppleCards Setter
 // 卡列表
-func (r *TaobaoAppleCardActiveApplyNotifyRequest) SetAppleCards(_appleCards []AppleCardDto) error {
+func (r *TaobaoAppleCardActiveApplyNotifyRequest) SetAppleCards(_appleCards []AppleCardDTO) error {
     r._appleCards = _appleCards
     r.Set("apple_cards", _appleCards)
     return nil
 }
 
 // AppleCards Getter
-func (r TaobaoAppleCardActiveApplyNotifyRequest) GetAppleCards() []AppleCardDto {
+func (r TaobaoAppleCardActiveApplyNotifyRequest) GetAppleCards() []AppleCardDTO {
     return r._appleCards
 }
 // GatewayOrderNo Setter

@@ -15,7 +15,7 @@ alibaba.mos.goods.bulkinputcspu
 type AlibabaMosGoodsBulkinputcspuRequest struct {
     model.Params
     // 录入商品信息列表（最大列表长度：20）
-    _cspuInputDtoList   []CspuInputDto
+    _cspuInputDtoList   []CspuInputDTO
 }
 
 // 初始化AlibabaMosGoodsBulkinputcspuRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosGoodsBulkinputcspuRequest) GetApiParams() url.Values {
 }
 // CspuInputDtoList Setter
 // 录入商品信息列表（最大列表长度：20）
-func (r *AlibabaMosGoodsBulkinputcspuRequest) SetCspuInputDtoList(_cspuInputDtoList []CspuInputDto) error {
+func (r *AlibabaMosGoodsBulkinputcspuRequest) SetCspuInputDtoList(_cspuInputDtoList []CspuInputDTO) error {
     r._cspuInputDtoList = _cspuInputDtoList
     r.Set("cspu_input_dto_list", _cspuInputDtoList)
     return nil
 }
 
 // CspuInputDtoList Getter
-func (r AlibabaMosGoodsBulkinputcspuRequest) GetCspuInputDtoList() []CspuInputDto {
+func (r AlibabaMosGoodsBulkinputcspuRequest) GetCspuInputDtoList() []CspuInputDTO {
     return r._cspuInputDtoList
 }

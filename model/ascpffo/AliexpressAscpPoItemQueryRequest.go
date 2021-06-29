@@ -15,7 +15,7 @@ AE 供应链仓发 采购单明细查询
 type AliexpressAscpPoItemQueryRequest struct {
     model.Params
     // demo
-    _purchaseOrderItemQuery   *PurchaseOrderItemQueryDto
+    _purchaseOrderItemQuery   *PurchaseOrderItemQueryDTO
 }
 
 // 初始化AliexpressAscpPoItemQueryRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressAscpPoItemQueryRequest) GetApiParams() url.Values {
 }
 // PurchaseOrderItemQuery Setter
 // demo
-func (r *AliexpressAscpPoItemQueryRequest) SetPurchaseOrderItemQuery(_purchaseOrderItemQuery *PurchaseOrderItemQueryDto) error {
+func (r *AliexpressAscpPoItemQueryRequest) SetPurchaseOrderItemQuery(_purchaseOrderItemQuery *PurchaseOrderItemQueryDTO) error {
     r._purchaseOrderItemQuery = _purchaseOrderItemQuery
     r.Set("purchase_order_item_query", _purchaseOrderItemQuery)
     return nil
 }
 
 // PurchaseOrderItemQuery Getter
-func (r AliexpressAscpPoItemQueryRequest) GetPurchaseOrderItemQuery() *PurchaseOrderItemQueryDto {
+func (r AliexpressAscpPoItemQueryRequest) GetPurchaseOrderItemQuery() *PurchaseOrderItemQueryDTO {
     return r._purchaseOrderItemQuery
 }

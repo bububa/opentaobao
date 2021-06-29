@@ -1,7 +1,7 @@
 package campus
 
-// DeviceHistoryBatchApiDto 
-type DeviceHistoryBatchApiDto struct {
+// DeviceHistoryBatchApiDTO 
+type DeviceHistoryBatchApiDTO struct {
     // 设备参数code
     PropertyCode   string `json:"property_code,omitempty" xml:"property_code,omitempty"`
     // 设备id

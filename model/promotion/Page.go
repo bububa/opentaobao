@@ -11,7 +11,7 @@ type Page struct {
     // 结果
     Datas   []AlibabaAsrDataservicePromotionruleQueryData `json:"datas,omitempty" xml:"datas>alibaba_asr_dataservice_promotionrule_query_data,omitempty"`
     // 活动列表
-    Activities   []ActivityDto `json:"activities,omitempty" xml:"activities>activity_dto,omitempty"`
+    Activities   []ActivityDTO `json:"activities,omitempty" xml:"activities>activity_dto,omitempty"`
     // 总页数
     TotalPage   int64 `json:"total_page,omitempty" xml:"total_page,omitempty"`
     // 当前页

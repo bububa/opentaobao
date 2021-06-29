@@ -1,7 +1,7 @@
 package miniappopen
 
-// MiniAppInstanceVersionDto 
-type MiniAppInstanceVersionDto struct {
+// MiniAppInstanceVersionDTO 
+type MiniAppInstanceVersionDTO struct {
     // 小程序版本号
     AppVersion   string `json:"app_version,omitempty" xml:"app_version,omitempty"`
     // 发布端

@@ -1,7 +1,7 @@
 package alsc
 
-// StoreUpdateTopDto 
-type StoreUpdateTopDto struct {
+// StoreUpdateTopDTO 
+type StoreUpdateTopDTO struct {
     // 门店主名
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // 分店名称
@@ -17,9 +17,9 @@ type StoreUpdateTopDto struct {
     // 门店结束营业时间
     EndTime   string `json:"end_time,omitempty" xml:"end_time,omitempty"`
     // 门店地址
-    StoreAdress   *StoreAdressDto `json:"store_adress,omitempty" xml:"store_adress,omitempty"`
+    StoreAdress   *StoreAdressDTO `json:"store_adress,omitempty" xml:"store_adress,omitempty"`
     // 门店信息
-    StoreKeeper   *StoreKeeperDto `json:"store_keeper,omitempty" xml:"store_keeper,omitempty"`
+    StoreKeeper   *StoreKeeperDTO `json:"store_keeper,omitempty" xml:"store_keeper,omitempty"`
     // 门店状态，枚举值。NORMAL：正常。CLOSE：关店。HOLD: 暂停营业
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
     // 备注
@@ -33,15 +33,15 @@ type StoreUpdateTopDto struct {
     // 24小时营业
     AllDay   bool `json:"all_day,omitempty" xml:"all_day,omitempty"`
     // 通用属性
-    Attributes   []AttributeValueTopDto `json:"attributes,omitempty" xml:"attributes>attribute_value_top_dto,omitempty"`
+    Attributes   []AttributeValueTopDTO `json:"attributes,omitempty" xml:"attributes>attribute_value_top_dto,omitempty"`
     // 类目属性
-    CategoryPropertyValues   []PropertyValueTopDto `json:"category_property_values,omitempty" xml:"category_property_values>property_value_top_dto,omitempty"`
+    CategoryPropertyValues   []PropertyValueTopDTO `json:"category_property_values,omitempty" xml:"category_property_values>property_value_top_dto,omitempty"`
     // 标准类目ID
     StandardCategoryId   string `json:"standard_category_id,omitempty" xml:"standard_category_id,omitempty"`
     // 业务身份
     BizCode   string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
     // 业务属性
-    BizAttributes   []AttributeValueTopDto `json:"biz_attributes,omitempty" xml:"biz_attributes>attribute_value_top_dto,omitempty"`
+    BizAttributes   []AttributeValueTopDTO `json:"biz_attributes,omitempty" xml:"biz_attributes>attribute_value_top_dto,omitempty"`
     // 门店logo
     Logo   string `json:"logo,omitempty" xml:"logo,omitempty"`
     // 是否v3

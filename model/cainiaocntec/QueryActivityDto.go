@@ -1,7 +1,7 @@
 package cainiaocntec
 
-// QueryActivityDto 
-type QueryActivityDto struct {
+// QueryActivityDTO 
+type QueryActivityDTO struct {
     // 门店id
     StoreId   string `json:"store_id,omitempty" xml:"store_id,omitempty"`
     // 是否分页

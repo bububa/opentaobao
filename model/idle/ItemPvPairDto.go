@@ -1,7 +1,7 @@
 package idle
 
-// ItemPvPairDto 
-type ItemPvPairDto struct {
+// ItemPvPairDTO 
+type ItemPvPairDTO struct {
     // sku属性名
     PropText   string `json:"prop_text,omitempty" xml:"prop_text,omitempty"`
     // sku属性值名称

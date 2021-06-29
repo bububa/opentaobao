@@ -1,9 +1,9 @@
 package tmallservice
 
-// WorkerDto 
-type WorkerDto struct {
+// WorkerDTO 
+type WorkerDTO struct {
     // 工人居住地址
-    Address   *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
+    Address   *AddressDTO `json:"address,omitempty" xml:"address,omitempty"`
     // 111
     IdentityId   string `json:"identity_id,omitempty" xml:"identity_id,omitempty"`
     // 11
@@ -17,7 +17,7 @@ type WorkerDto struct {
     // 111
     RegisterTime   string `json:"register_time,omitempty" xml:"register_time,omitempty"`
     // 1111
-    ServiceAreas   []DivisionDto `json:"service_areas,omitempty" xml:"service_areas>division_dto,omitempty"`
+    ServiceAreas   []DivisionDTO `json:"service_areas,omitempty" xml:"service_areas>division_dto,omitempty"`
     // 11
     ServiceTypes   []string `json:"service_types,omitempty" xml:"service_types>string,omitempty"`
     // 1111

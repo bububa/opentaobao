@@ -15,7 +15,7 @@ alibaba.ihome.ctom.content.img.upload
 type AlibabaIhomeCtomContentImgUploadRequest struct {
     model.Params
     // materialDTO
-    _materialDto   *UploadPicMaterialDto
+    _materialDto   *UploadPicMaterialDTO
 }
 
 // 初始化AlibabaIhomeCtomContentImgUploadRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIhomeCtomContentImgUploadRequest) GetApiParams() url.Values {
 }
 // MaterialDto Setter
 // materialDTO
-func (r *AlibabaIhomeCtomContentImgUploadRequest) SetMaterialDto(_materialDto *UploadPicMaterialDto) error {
+func (r *AlibabaIhomeCtomContentImgUploadRequest) SetMaterialDto(_materialDto *UploadPicMaterialDTO) error {
     r._materialDto = _materialDto
     r.Set("material_dto", _materialDto)
     return nil
 }
 
 // MaterialDto Getter
-func (r AlibabaIhomeCtomContentImgUploadRequest) GetMaterialDto() *UploadPicMaterialDto {
+func (r AlibabaIhomeCtomContentImgUploadRequest) GetMaterialDto() *UploadPicMaterialDTO {
     return r._materialDto
 }

@@ -1,7 +1,7 @@
 package logistic
 
-// DeliveryEventDto 
-type DeliveryEventDto struct {
+// DeliveryEventDTO 
+type DeliveryEventDTO struct {
     // 淘宝订单ID
     TaobaoOrderId   int64 `json:"taobao_order_id,omitempty" xml:"taobao_order_id,omitempty"`
     // 配送商名称

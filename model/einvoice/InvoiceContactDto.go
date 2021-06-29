@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceContactDto 
-type InvoiceContactDto struct {
+// InvoiceContactDTO 
+type InvoiceContactDTO struct {
     // 联系人姓名
     ContactName   string `json:"contact_name,omitempty" xml:"contact_name,omitempty"`
     // 联系人电话

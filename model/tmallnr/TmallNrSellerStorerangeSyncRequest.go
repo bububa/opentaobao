@@ -17,7 +17,7 @@ type TmallNrSellerStorerangeSyncRequest struct {
     // 业务身份标识,dss定时送；self_day 自配日达；self_hour 自配小时达
     _bizIdentity   string
     // 系统自动生成
-    _reqDTOList   []SyncServiceRangeRequestDto
+    _reqDTOList   []SyncServiceRangeRequestDTO
     // 卖家id，有可能和登录seller不是同一个id
     _sellerId   int64
 }
@@ -56,14 +56,14 @@ func (r TmallNrSellerStorerangeSyncRequest) GetBizIdentity() string {
 }
 // ReqDTOList Setter
 // 系统自动生成
-func (r *TmallNrSellerStorerangeSyncRequest) SetReqDTOList(_reqDTOList []SyncServiceRangeRequestDto) error {
+func (r *TmallNrSellerStorerangeSyncRequest) SetReqDTOList(_reqDTOList []SyncServiceRangeRequestDTO) error {
     r._reqDTOList = _reqDTOList
     r.Set("req_d_t_o_list", _reqDTOList)
     return nil
 }
 
 // ReqDTOList Getter
-func (r TmallNrSellerStorerangeSyncRequest) GetReqDTOList() []SyncServiceRangeRequestDto {
+func (r TmallNrSellerStorerangeSyncRequest) GetReqDTOList() []SyncServiceRangeRequestDTO {
     return r._reqDTOList
 }
 // SellerId Setter

@@ -1,7 +1,7 @@
 package fenxiao
 
-// TmallSupplychainChannelProductReleaseResultDto 
-type TmallSupplychainChannelProductReleaseResultDto struct {
+// TmallSupplychainChannelProductReleaseResultDTO 
+type TmallSupplychainChannelProductReleaseResultDTO struct {
     // 链路ID
     TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
     // 异常名

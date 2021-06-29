@@ -15,7 +15,7 @@ taobao.location.relation.edit
 type TaobaoLocationRelationEditRequest struct {
     model.Params
     // 关系对象列表
-    _locationRelationList   []LocationRelationDto
+    _locationRelationList   []LocationRelationDTO
 }
 
 // 初始化TaobaoLocationRelationEditRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoLocationRelationEditRequest) GetApiParams() url.Values {
 }
 // LocationRelationList Setter
 // 关系对象列表
-func (r *TaobaoLocationRelationEditRequest) SetLocationRelationList(_locationRelationList []LocationRelationDto) error {
+func (r *TaobaoLocationRelationEditRequest) SetLocationRelationList(_locationRelationList []LocationRelationDTO) error {
     r._locationRelationList = _locationRelationList
     r.Set("location_relation_list", _locationRelationList)
     return nil
 }
 
 // LocationRelationList Getter
-func (r TaobaoLocationRelationEditRequest) GetLocationRelationList() []LocationRelationDto {
+func (r TaobaoLocationRelationEditRequest) GetLocationRelationList() []LocationRelationDTO {
     return r._locationRelationList
 }

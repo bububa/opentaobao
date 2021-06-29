@@ -15,7 +15,7 @@ alibaba.marketing.lottery.award.query
 type AlibabaMarketingLotteryAwardQueryRequest struct {
     model.Params
     // 查询奖品请求对象
-    _lotteryAwardInstQuery   *LotteryAwardInstQueryDto
+    _lotteryAwardInstQuery   *LotteryAwardInstQueryDTO
 }
 
 // 初始化AlibabaMarketingLotteryAwardQueryRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryAwardQueryRequest) GetApiParams() url.Values {
 }
 // LotteryAwardInstQuery Setter
 // 查询奖品请求对象
-func (r *AlibabaMarketingLotteryAwardQueryRequest) SetLotteryAwardInstQuery(_lotteryAwardInstQuery *LotteryAwardInstQueryDto) error {
+func (r *AlibabaMarketingLotteryAwardQueryRequest) SetLotteryAwardInstQuery(_lotteryAwardInstQuery *LotteryAwardInstQueryDTO) error {
     r._lotteryAwardInstQuery = _lotteryAwardInstQuery
     r.Set("lottery_award_inst_query", _lotteryAwardInstQuery)
     return nil
 }
 
 // LotteryAwardInstQuery Getter
-func (r AlibabaMarketingLotteryAwardQueryRequest) GetLotteryAwardInstQuery() *LotteryAwardInstQueryDto {
+func (r AlibabaMarketingLotteryAwardQueryRequest) GetLotteryAwardInstQuery() *LotteryAwardInstQueryDTO {
     return r._lotteryAwardInstQuery
 }

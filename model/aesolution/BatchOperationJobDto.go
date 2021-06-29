@@ -1,7 +1,7 @@
 package aesolution
 
-// BatchOperationJobDto 
-type BatchOperationJobDto struct {
+// BatchOperationJobDTO 
+type BatchOperationJobDTO struct {
     // The status of the feed
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
     // feed type

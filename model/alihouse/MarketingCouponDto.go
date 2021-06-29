@@ -1,9 +1,9 @@
 package alihouse
 
-// MarketingCouponDto 
-type MarketingCouponDto struct {
+// MarketingCouponDTO 
+type MarketingCouponDTO struct {
     // 使用楼盘列表
-    ActivityProjectList   []ProjectDetailInfoDto `json:"activity_project_list,omitempty" xml:"activity_project_list>project_detail_info_dto,omitempty"`
+    ActivityProjectList   []ProjectDetailInfoDTO `json:"activity_project_list,omitempty" xml:"activity_project_list>project_detail_info_dto,omitempty"`
     // 券有效期
     ValidDate   int64 `json:"valid_date,omitempty" xml:"valid_date,omitempty"`
     // 活动结束时间

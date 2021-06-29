@@ -1,7 +1,7 @@
 package alicom
 
-// ControlRespDto 
-type ControlRespDto struct {
+// ControlRespDTO 
+type ControlRespDTO struct {
     // 接续控制信息:CONTINUE(接续),REJECT(拦截),IVR(收取用户键盘输入内容)
     ControlOperate   string `json:"control_operate,omitempty" xml:"control_operate,omitempty"`
     // controlMsg

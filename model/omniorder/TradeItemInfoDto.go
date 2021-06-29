@@ -1,7 +1,7 @@
 package omniorder
 
-// TradeItemInfoDto 
-type TradeItemInfoDto struct {
+// TradeItemInfoDTO 
+type TradeItemInfoDTO struct {
     // 商品单价，单位为分
     Amount   int64 `json:"amount,omitempty" xml:"amount,omitempty"`
     // 商品数量

@@ -17,7 +17,7 @@ type AlibabaIcbuRfqSearchRequest struct {
     // 验证
     _md5key   string
     // 查询条件
-    _cond   *RfqRequestSearchCondDto
+    _cond   *RfqRequestSearchCondDTO
 }
 
 // 初始化AlibabaIcbuRfqSearchRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaIcbuRfqSearchRequest) GetMd5key() string {
 }
 // Cond Setter
 // 查询条件
-func (r *AlibabaIcbuRfqSearchRequest) SetCond(_cond *RfqRequestSearchCondDto) error {
+func (r *AlibabaIcbuRfqSearchRequest) SetCond(_cond *RfqRequestSearchCondDTO) error {
     r._cond = _cond
     r.Set("cond", _cond)
     return nil
 }
 
 // Cond Getter
-func (r AlibabaIcbuRfqSearchRequest) GetCond() *RfqRequestSearchCondDto {
+func (r AlibabaIcbuRfqSearchRequest) GetCond() *RfqRequestSearchCondDTO {
     return r._cond
 }

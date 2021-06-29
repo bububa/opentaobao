@@ -1,7 +1,7 @@
 package promotion
 
-// LotteryActivityQueryDto 
-type LotteryActivityQueryDto struct {
+// LotteryActivityQueryDTO 
+type LotteryActivityQueryDTO struct {
     // 是否需要奖品信息
     IsNeedAward   bool `json:"is_need_award,omitempty" xml:"is_need_award,omitempty"`
     // 页大小

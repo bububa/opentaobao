@@ -1,7 +1,7 @@
 package seaking
 
-// ReportQueryApiDto 
-type ReportQueryApiDto struct {
+// ReportQueryApiDTO 
+type ReportQueryApiDTO struct {
     // 请求日期
     QueryDate   string `json:"query_date,omitempty" xml:"query_date,omitempty"`
     // 每页size

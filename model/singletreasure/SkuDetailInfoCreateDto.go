@@ -1,7 +1,7 @@
 package singletreasure
 
-// SkuDetailInfoCreateDto 
-type SkuDetailInfoCreateDto struct {
+// SkuDetailInfoCreateDTO 
+type SkuDetailInfoCreateDTO struct {
     // 猫客折上折，优惠力度，打折、减钱：单位分；打折，8折：800
     MkDiscount   int64 `json:"mk_discount,omitempty" xml:"mk_discount,omitempty"`
     // sku的Id

@@ -1,7 +1,7 @@
 package user
 
-// ReplyMessageDto 
-type ReplyMessageDto struct {
+// ReplyMessageDTO 
+type ReplyMessageDTO struct {
     // 毫秒时间戳
     CreateTime   int64 `json:"create_time,omitempty" xml:"create_time,omitempty"`
     // 来源消息 id

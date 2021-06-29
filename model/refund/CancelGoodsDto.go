@@ -1,7 +1,7 @@
 package refund
 
-// CancelGoodsDto 
-type CancelGoodsDto struct {
+// CancelGoodsDTO 
+type CancelGoodsDTO struct {
     // 子订单ID
     Oid   int64 `json:"oid,omitempty" xml:"oid,omitempty"`
     // 退款单ID

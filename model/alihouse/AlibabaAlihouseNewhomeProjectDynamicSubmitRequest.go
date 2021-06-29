@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.project.dynamic.submit
 type AlibabaAlihouseNewhomeProjectDynamicSubmitRequest struct {
     model.Params
     // 楼盘动态列表
-    _projectDynamics   []ProjectDynamicDto
+    _projectDynamics   []ProjectDynamicDTO
 }
 
 // 初始化AlibabaAlihouseNewhomeProjectDynamicSubmitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectDynamicSubmitRequest) GetApiParams() url.Va
 }
 // ProjectDynamics Setter
 // 楼盘动态列表
-func (r *AlibabaAlihouseNewhomeProjectDynamicSubmitRequest) SetProjectDynamics(_projectDynamics []ProjectDynamicDto) error {
+func (r *AlibabaAlihouseNewhomeProjectDynamicSubmitRequest) SetProjectDynamics(_projectDynamics []ProjectDynamicDTO) error {
     r._projectDynamics = _projectDynamics
     r.Set("project_dynamics", _projectDynamics)
     return nil
 }
 
 // ProjectDynamics Getter
-func (r AlibabaAlihouseNewhomeProjectDynamicSubmitRequest) GetProjectDynamics() []ProjectDynamicDto {
+func (r AlibabaAlihouseNewhomeProjectDynamicSubmitRequest) GetProjectDynamics() []ProjectDynamicDTO {
     return r._projectDynamics
 }

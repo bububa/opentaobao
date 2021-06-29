@@ -1,7 +1,7 @@
 package koubeimall
 
-// SuperDiscountDto 
-type SuperDiscountDto struct {
+// SuperDiscountDTO 
+type SuperDiscountDTO struct {
     // 商品信息list
-    ItemList   []ItemDto `json:"item_list,omitempty" xml:"item_list>item_dto,omitempty"`
+    ItemList   []ItemDTO `json:"item_list,omitempty" xml:"item_list>item_dto,omitempty"`
 }

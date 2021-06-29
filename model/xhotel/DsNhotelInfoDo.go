@@ -1,7 +1,7 @@
 package xhotel
 
-// DsNhotelInfoDo 
-type DsNhotelInfoDo struct {
+// DsNhotelInfoDO 
+type DsNhotelInfoDO struct {
     // onlineStatus
     OnlineStatus   int64 `json:"online_status,omitempty" xml:"online_status,omitempty"`
     // onlineDate

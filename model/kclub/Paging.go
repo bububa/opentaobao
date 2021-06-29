@@ -9,5 +9,5 @@ type Paging struct {
     // 当前页
     PageNo   int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
     // 数据
-    DataList   []KcSearchQuestionDto `json:"data_list,omitempty" xml:"data_list>kc_search_question_dto,omitempty"`
+    DataList   []KcSearchQuestionDTO `json:"data_list,omitempty" xml:"data_list>kc_search_question_dto,omitempty"`
 }

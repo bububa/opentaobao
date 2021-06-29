@@ -1,7 +1,7 @@
 package nrt
 
-// StallSigningRespDto 
-type StallSigningRespDto struct {
+// StallSigningRespDTO 
+type StallSigningRespDTO struct {
     // 申请单id
     OrderId   string `json:"order_id,omitempty" xml:"order_id,omitempty"`
     // 摊位/门店id

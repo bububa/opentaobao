@@ -9,5 +9,5 @@ type AlibabaBenefitQueryResult struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // datas
-    Datas   []OrightDto `json:"datas,omitempty" xml:"datas>oright_dto,omitempty"`
+    Datas   []OrightDTO `json:"datas,omitempty" xml:"datas>oright_dto,omitempty"`
 }

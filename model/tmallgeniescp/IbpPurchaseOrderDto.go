@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// IbpPurchaseOrderDto 
-type IbpPurchaseOrderDto struct {
+// IbpPurchaseOrderDTO 
+type IbpPurchaseOrderDTO struct {
     // 周
     WeekNO   string `json:"week_n_o,omitempty" xml:"week_n_o,omitempty"`
     // 生产实绩数量

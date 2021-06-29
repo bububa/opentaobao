@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrDeliveryBriefStatusDto 
-type NrDeliveryBriefStatusDto struct {
+// NrDeliveryBriefStatusDTO 
+type NrDeliveryBriefStatusDTO struct {
     // 状态产生时间
     LogisticsTime   string `json:"logistics_time,omitempty" xml:"logistics_time,omitempty"`
     // 取件失败的code

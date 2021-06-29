@@ -15,7 +15,7 @@ taobao.feedflow.item.algo.crowd.suggest
 type TaobaoFeedflowItemAlgoCrowdSuggestRequest struct {
     model.Params
     // 人群列表
-    _crowds   []CrowdDto
+    _crowds   []CrowdDTO
     // 预估的宝贝id
     _itemId   int64
     // 预估的计划id
@@ -44,14 +44,14 @@ func (r TaobaoFeedflowItemAlgoCrowdSuggestRequest) GetApiParams() url.Values {
 }
 // Crowds Setter
 // 人群列表
-func (r *TaobaoFeedflowItemAlgoCrowdSuggestRequest) SetCrowds(_crowds []CrowdDto) error {
+func (r *TaobaoFeedflowItemAlgoCrowdSuggestRequest) SetCrowds(_crowds []CrowdDTO) error {
     r._crowds = _crowds
     r.Set("crowds", _crowds)
     return nil
 }
 
 // Crowds Getter
-func (r TaobaoFeedflowItemAlgoCrowdSuggestRequest) GetCrowds() []CrowdDto {
+func (r TaobaoFeedflowItemAlgoCrowdSuggestRequest) GetCrowds() []CrowdDTO {
     return r._crowds
 }
 // ItemId Setter

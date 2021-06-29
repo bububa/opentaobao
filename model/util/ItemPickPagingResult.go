@@ -3,7 +3,7 @@ package util
 // ItemPickPagingResult 
 type ItemPickPagingResult struct {
     // 返回数据集合
-    Results   []CountryDto `json:"results,omitempty" xml:"results>country_dto,omitempty"`
+    Results   []CountryDTO `json:"results,omitempty" xml:"results>country_dto,omitempty"`
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

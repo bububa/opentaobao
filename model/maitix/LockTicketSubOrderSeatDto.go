@@ -3,8 +3,8 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-// LockTicketSubOrderSeatDto 
-type LockTicketSubOrderSeatDto struct {
+// LockTicketSubOrderSeatDTO 
+type LockTicketSubOrderSeatDTO struct {
     // 项目ID
     ProjectId   int64 `json:"project_id,omitempty" xml:"project_id,omitempty"`
     // 项目名称

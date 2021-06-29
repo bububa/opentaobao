@@ -1,7 +1,7 @@
 package wdk
 
-// WcsContainerAssignedToConveyorDto 
-type WcsContainerAssignedToConveyorDto struct {
+// WcsContainerAssignedToConveyorDTO 
+type WcsContainerAssignedToConveyorDTO struct {
     // warehouseCode
     WarehouseCode   string `json:"warehouse_code,omitempty" xml:"warehouse_code,omitempty"`
     // warehouseId

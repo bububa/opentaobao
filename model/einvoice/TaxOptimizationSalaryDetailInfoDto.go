@@ -1,7 +1,7 @@
 package einvoice
 
-// TaxOptimizationSalaryDetailInfoDto 
-type TaxOptimizationSalaryDetailInfoDto struct {
+// TaxOptimizationSalaryDetailInfoDTO 
+type TaxOptimizationSalaryDetailInfoDTO struct {
     // 明细金额
     Amount   int64 `json:"amount,omitempty" xml:"amount,omitempty"`
     // 承包商编码

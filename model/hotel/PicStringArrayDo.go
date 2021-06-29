@@ -1,7 +1,7 @@
 package hotel
 
-// PicStringArrayDo 
-type PicStringArrayDo struct {
+// PicStringArrayDO 
+type PicStringArrayDO struct {
     // prefix
     Prefix   string `json:"prefix,omitempty" xml:"prefix,omitempty"`
     // sources

@@ -1,7 +1,7 @@
 package mos
 
-// ConfPickupGoodsReqDto 
-type ConfPickupGoodsReqDto struct {
+// ConfPickupGoodsReqDTO 
+type ConfPickupGoodsReqDTO struct {
     // OC交易号
     TradeNo   string `json:"trade_no,omitempty" xml:"trade_no,omitempty"`
     // 核销码

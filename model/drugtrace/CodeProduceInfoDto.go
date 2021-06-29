@@ -1,7 +1,7 @@
 package drugtrace
 
-// CodeProduceInfoDto 
-type CodeProduceInfoDto struct {
+// CodeProduceInfoDTO 
+type CodeProduceInfoDTO struct {
     // 码生产日期
     ProduceDate   string `json:"produce_date,omitempty" xml:"produce_date,omitempty"`
     // 码批次号
@@ -11,7 +11,7 @@ type CodeProduceInfoDto struct {
     // 包装比例
     PkgRatio   string `json:"pkg_ratio,omitempty" xml:"pkg_ratio,omitempty"`
     // 生产信息集合
-    ProduceInfoList   []ProduceInfoDto `json:"produce_info_list,omitempty" xml:"produce_info_list>produce_info_dto,omitempty"`
+    ProduceInfoList   []ProduceInfoDTO `json:"produce_info_list,omitempty" xml:"produce_info_list>produce_info_dto,omitempty"`
     // 产品序列码
     ProdSeqNo   string `json:"prod_seq_no,omitempty" xml:"prod_seq_no,omitempty"`
     // 企业唯一标识

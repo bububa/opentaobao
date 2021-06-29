@@ -17,7 +17,7 @@ type AlibabaScbpAdCampaignFindForbiddenKeywordRequest struct {
     // 计划id
     _campaignId   int64
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdCampaignFindForbiddenKeywordRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaScbpAdCampaignFindForbiddenKeywordRequest) GetCampaignId() int64 
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignFindForbiddenKeywordRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdCampaignFindForbiddenKeywordRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdCampaignFindForbiddenKeywordRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdCampaignFindForbiddenKeywordRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

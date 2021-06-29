@@ -1,7 +1,7 @@
 package idleisv
 
-// IdleItemApiBookDo 
-type IdleItemApiBookDo struct {
+// IdleItemApiBookDO 
+type IdleItemApiBookDO struct {
     // 图书ISBN码
     Barcode   string `json:"barcode,omitempty" xml:"barcode,omitempty"`
     // 图书ISBN码对应的书名等信息

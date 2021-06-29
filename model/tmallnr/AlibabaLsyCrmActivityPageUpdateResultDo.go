@@ -1,7 +1,7 @@
 package tmallnr
 
-// AlibabaLsyCrmActivityPageUpdateResultDo 
-type AlibabaLsyCrmActivityPageUpdateResultDo struct {
+// AlibabaLsyCrmActivityPageUpdateResultDO 
+type AlibabaLsyCrmActivityPageUpdateResultDO struct {
     // 活动ID
     Data   int64 `json:"data,omitempty" xml:"data,omitempty"`
     // 调用是否成功

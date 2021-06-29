@@ -15,7 +15,7 @@ taobao.omniitem.classify.operator
 type TaobaoOmniitemClassifyOperatorRequest struct {
     model.Params
     // 分类信息
-    _category   *OmniItemCategoryDetailDto
+    _category   *OmniItemCategoryDetailDTO
     // 需要添加的关联关系的商品
     _addItemIds   []int64
     // 需要修改的关联关系的商品
@@ -46,14 +46,14 @@ func (r TaobaoOmniitemClassifyOperatorRequest) GetApiParams() url.Values {
 }
 // Category Setter
 // 分类信息
-func (r *TaobaoOmniitemClassifyOperatorRequest) SetCategory(_category *OmniItemCategoryDetailDto) error {
+func (r *TaobaoOmniitemClassifyOperatorRequest) SetCategory(_category *OmniItemCategoryDetailDTO) error {
     r._category = _category
     r.Set("category", _category)
     return nil
 }
 
 // Category Getter
-func (r TaobaoOmniitemClassifyOperatorRequest) GetCategory() *OmniItemCategoryDetailDto {
+func (r TaobaoOmniitemClassifyOperatorRequest) GetCategory() *OmniItemCategoryDetailDTO {
     return r._category
 }
 // AddItemIds Setter

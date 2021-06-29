@@ -1,17 +1,17 @@
 package eleenterprisecoupon
 
-// MyCouponsResDto 
-type MyCouponsResDto struct {
+// MyCouponsResDTO 
+type MyCouponsResDTO struct {
     // 是否可选择多张券
     GroupMulti   bool `json:"group_multi,omitempty" xml:"group_multi,omitempty"`
     // 券的明细数据
-    Groups   []CartCouponDto `json:"groups,omitempty" xml:"groups>cart_coupon_dto,omitempty"`
+    Groups   []CartCouponDTO `json:"groups,omitempty" xml:"groups>cart_coupon_dto,omitempty"`
     // 已选择券的总数量
     SelectedQuantity   int64 `json:"selected_quantity,omitempty" xml:"selected_quantity,omitempty"`
     // 已选择券的总价，包含溢出与裁剪之后的总价值
     SelectedTotalPrice   string `json:"selected_total_price,omitempty" xml:"selected_total_price,omitempty"`
     // 推荐券
-    Recommends   []CartCouponDto `json:"recommends,omitempty" xml:"recommends>cart_coupon_dto,omitempty"`
+    Recommends   []CartCouponDTO `json:"recommends,omitempty" xml:"recommends>cart_coupon_dto,omitempty"`
     // 选出最优券的数量
     RecommendsQuantity   int64 `json:"recommends_quantity,omitempty" xml:"recommends_quantity,omitempty"`
     // 选出最优券的总价

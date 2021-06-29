@@ -1,7 +1,7 @@
 package ieagency
 
-// BasePageDo 
-type BasePageDo struct {
+// BasePageDO 
+type BasePageDO struct {
     // 第几页
     PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
     // 分页大小

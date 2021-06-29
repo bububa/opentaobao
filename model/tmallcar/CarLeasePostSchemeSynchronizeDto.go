@@ -1,7 +1,7 @@
 package tmallcar
 
-// CarLeasePostSchemeSynchronizeDto 
-type CarLeasePostSchemeSynchronizeDto struct {
+// CarLeasePostSchemeSynchronizeDTO 
+type CarLeasePostSchemeSynchronizeDTO struct {
     // 0:不能使用,1:可以使用
     CanSelect   int64 `json:"can_select,omitempty" xml:"can_select,omitempty"`
     // 合同到期时间
@@ -15,5 +15,5 @@ type CarLeasePostSchemeSynchronizeDto struct {
     // 不能使用原因描述
     ReasonDesc   string `json:"reason_desc,omitempty" xml:"reason_desc,omitempty"`
     // 租后方案
-    SchemeAfterLeaseList   []CarLeasePostSchemeDto `json:"scheme_after_lease_list,omitempty" xml:"scheme_after_lease_list>car_lease_post_scheme_dto,omitempty"`
+    SchemeAfterLeaseList   []CarLeasePostSchemeDTO `json:"scheme_after_lease_list,omitempty" xml:"scheme_after_lease_list>car_lease_post_scheme_dto,omitempty"`
 }

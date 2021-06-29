@@ -1,7 +1,7 @@
 package icburfq
 
-// RfqRequestSearchResultDto 
-type RfqRequestSearchResultDto struct {
+// RfqRequestSearchResultDTO 
+type RfqRequestSearchResultDTO struct {
     // RFQ列表
     RequestList   []Requestlist `json:"request_list,omitempty" xml:"request_list>requestlist,omitempty"`
     // 总数

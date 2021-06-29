@@ -1,7 +1,7 @@
 package xhotelonlineorder
 
-// OrderSettleDo 
-type OrderSettleDo struct {
+// OrderSettleDO 
+type OrderSettleDO struct {
     // 平台优惠金额
     PlatPromotionPrice   int64 `json:"plat_promotion_price,omitempty" xml:"plat_promotion_price,omitempty"`
     // 其他费用
@@ -11,7 +11,7 @@ type OrderSettleDo struct {
     // 结账金额
     OrderSettlePrice   int64 `json:"order_settle_price,omitempty" xml:"order_settle_price,omitempty"`
     // 实际结账日历
-    SettleDailyPrice   *HbsDailyPriceDo `json:"settle_daily_price,omitempty" xml:"settle_daily_price,omitempty"`
+    SettleDailyPrice   *HbsDailyPriceDO `json:"settle_daily_price,omitempty" xml:"settle_daily_price,omitempty"`
     // 卖家优惠金额
     PromotionPrice   int64 `json:"promotion_price,omitempty" xml:"promotion_price,omitempty"`
 }

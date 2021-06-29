@@ -1,7 +1,7 @@
 package scbp
 
-// KeywordUpdateDto 
-type KeywordUpdateDto struct {
+// KeywordUpdateDTO 
+type KeywordUpdateDTO struct {
     // 要改的价格，单位元
     Value   string `json:"value,omitempty" xml:"value,omitempty"`
     // 词id

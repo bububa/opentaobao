@@ -1,7 +1,7 @@
 package scbp
 
-// CampaignOperationDto 
-type CampaignOperationDto struct {
+// CampaignOperationDTO 
+type CampaignOperationDTO struct {
     // 标题
     Title   string `json:"title,omitempty" xml:"title,omitempty"`
     // 最小价格

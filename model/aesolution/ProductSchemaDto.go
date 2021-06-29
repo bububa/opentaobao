@@ -1,7 +1,7 @@
 package aesolution
 
-// ProductSchemaDto 
-type ProductSchemaDto struct {
+// ProductSchemaDTO 
+type ProductSchemaDTO struct {
     // success flag
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // error code

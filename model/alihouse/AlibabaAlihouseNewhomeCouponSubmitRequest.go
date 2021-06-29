@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.coupon.submit
 type AlibabaAlihouseNewhomeCouponSubmitRequest struct {
     model.Params
     // 打车券活动对象
-    _couponDto   *MarketingCouponDto
+    _couponDto   *MarketingCouponDTO
 }
 
 // 初始化AlibabaAlihouseNewhomeCouponSubmitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeCouponSubmitRequest) GetApiParams() url.Values {
 }
 // CouponDto Setter
 // 打车券活动对象
-func (r *AlibabaAlihouseNewhomeCouponSubmitRequest) SetCouponDto(_couponDto *MarketingCouponDto) error {
+func (r *AlibabaAlihouseNewhomeCouponSubmitRequest) SetCouponDto(_couponDto *MarketingCouponDTO) error {
     r._couponDto = _couponDto
     r.Set("coupon_dto", _couponDto)
     return nil
 }
 
 // CouponDto Getter
-func (r AlibabaAlihouseNewhomeCouponSubmitRequest) GetCouponDto() *MarketingCouponDto {
+func (r AlibabaAlihouseNewhomeCouponSubmitRequest) GetCouponDto() *MarketingCouponDTO {
     return r._couponDto
 }

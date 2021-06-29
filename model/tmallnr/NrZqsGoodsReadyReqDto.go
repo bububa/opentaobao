@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrZqsGoodsReadyReqDto 
-type NrZqsGoodsReadyReqDto struct {
+// NrZqsGoodsReadyReqDTO 
+type NrZqsGoodsReadyReqDTO struct {
     // 配送人员姓名
     PerformerName   string `json:"performer_name,omitempty" xml:"performer_name,omitempty"`
     // 配送人员电话号码

@@ -19,7 +19,7 @@ type AlibabaScbpAdTargetTagMergeCampaignTargetTagRequest struct {
     // 标签数据，json格式。 最外层key：人群标签crowd/地域标签region、priceMode，第二层key: 增add、删del、改mod，第三层key：optionValue、bidRate、tagId  eg: 删除：{"crowd":{"del":[{"tagId":3595769030}]}}   修改：{"crowd":{"mod":[{"optionValue":"high_potential_order_user","bidRate":"151"}]}} 增加：{"crowd":{"add":[{"optionValue":"user_area_CA","bidRate":"133"}]}}
     _data   string
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdTargetTagMergeCampaignTargetTagRequest对象
@@ -68,13 +68,13 @@ func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagRequest) GetData() string {
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdTargetTagMergeCampaignTargetTagRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdTargetTagMergeCampaignTargetTagRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

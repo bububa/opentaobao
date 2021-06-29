@@ -15,7 +15,7 @@ alibaba.mj.oc.confpickupgoods
 type AlibabaMjOcConfpickupgoodsRequest struct {
     model.Params
     // 提货核销请求参数
-    _confPickupGoodsRequest   *ConfPickupGoodsReqDto
+    _confPickupGoodsRequest   *ConfPickupGoodsReqDTO
 }
 
 // 初始化AlibabaMjOcConfpickupgoodsRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjOcConfpickupgoodsRequest) GetApiParams() url.Values {
 }
 // ConfPickupGoodsRequest Setter
 // 提货核销请求参数
-func (r *AlibabaMjOcConfpickupgoodsRequest) SetConfPickupGoodsRequest(_confPickupGoodsRequest *ConfPickupGoodsReqDto) error {
+func (r *AlibabaMjOcConfpickupgoodsRequest) SetConfPickupGoodsRequest(_confPickupGoodsRequest *ConfPickupGoodsReqDTO) error {
     r._confPickupGoodsRequest = _confPickupGoodsRequest
     r.Set("conf_pickup_goods_request", _confPickupGoodsRequest)
     return nil
 }
 
 // ConfPickupGoodsRequest Getter
-func (r AlibabaMjOcConfpickupgoodsRequest) GetConfPickupGoodsRequest() *ConfPickupGoodsReqDto {
+func (r AlibabaMjOcConfpickupgoodsRequest) GetConfPickupGoodsRequest() *ConfPickupGoodsReqDTO {
     return r._confPickupGoodsRequest
 }

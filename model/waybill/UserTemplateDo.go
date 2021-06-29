@@ -1,7 +1,7 @@
 package waybill
 
-// UserTemplateDo 
-type UserTemplateDo struct {
+// UserTemplateDO 
+type UserTemplateDO struct {
     // keys
     Keys   []KeyResult `json:"keys,omitempty" xml:"keys>key_result,omitempty"`
     // 用户使用模板的url

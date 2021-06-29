@@ -7,11 +7,11 @@ type Response struct {
     // 错误编码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 返回结果
-    Contents   []AddressSearchDto `json:"contents,omitempty" xml:"contents>address_search_dto,omitempty"`
+    Contents   []AddressSearchDTO `json:"contents,omitempty" xml:"contents>address_search_dto,omitempty"`
     // 错误信息
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     // 返回城市列表
-    Content   *AddressListSearchDto `json:"content,omitempty" xml:"content,omitempty"`
+    Content   *AddressListSearchDTO `json:"content,omitempty" xml:"content,omitempty"`
     // 登出是否成功
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
     // 是否注册成功
@@ -19,9 +19,9 @@ type Response struct {
     // token
     Token   string `json:"token,omitempty" xml:"token,omitempty"`
     // offer列表
-    Offers   []OfferDetailsDto `json:"offers,omitempty" xml:"offers>offer_details_dto,omitempty"`
+    Offers   []OfferDetailsDTO `json:"offers,omitempty" xml:"offers>offer_details_dto,omitempty"`
     // 查询结果
-    OrderDtos   []OrderDto `json:"order_dtos,omitempty" xml:"order_dtos>order_dto,omitempty"`
+    OrderDtos   []OrderDTO `json:"order_dtos,omitempty" xml:"order_dtos>order_dto,omitempty"`
     // 每页的数量
     PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
     // 当前页的数量

@@ -1,7 +1,7 @@
 package campus
 
-// SysRoleDto 
-type SysRoleDto struct {
+// SysRoleDTO 
+type SysRoleDTO struct {
     // 角色主键id
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // 角色key

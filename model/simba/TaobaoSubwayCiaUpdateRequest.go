@@ -17,7 +17,7 @@ type TaobaoSubwayCiaUpdateRequest struct {
     // 主人昵称
     _nick   string
     // 系统自动生成
-    _ciaConfigs   []CiaUpdateDto
+    _ciaConfigs   []CiaUpdateDTO
 }
 
 // 初始化TaobaoSubwayCiaUpdateRequest对象
@@ -54,13 +54,13 @@ func (r TaobaoSubwayCiaUpdateRequest) GetNick() string {
 }
 // CiaConfigs Setter
 // 系统自动生成
-func (r *TaobaoSubwayCiaUpdateRequest) SetCiaConfigs(_ciaConfigs []CiaUpdateDto) error {
+func (r *TaobaoSubwayCiaUpdateRequest) SetCiaConfigs(_ciaConfigs []CiaUpdateDTO) error {
     r._ciaConfigs = _ciaConfigs
     r.Set("cia_configs", _ciaConfigs)
     return nil
 }
 
 // CiaConfigs Getter
-func (r TaobaoSubwayCiaUpdateRequest) GetCiaConfigs() []CiaUpdateDto {
+func (r TaobaoSubwayCiaUpdateRequest) GetCiaConfigs() []CiaUpdateDTO {
     return r._ciaConfigs
 }

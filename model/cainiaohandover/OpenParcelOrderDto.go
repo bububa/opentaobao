@@ -1,7 +1,7 @@
 package cainiaohandover
 
-// OpenParcelOrderDto 
-type OpenParcelOrderDto struct {
+// OpenParcelOrderDTO 
+type OpenParcelOrderDTO struct {
     // 小包状态code
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
     // 小包异常码

@@ -15,7 +15,7 @@ alibaba.mos.pos.alarm
 type AlibabaMosPosAlarmRequest struct {
     model.Params
     // 参数
-    _param0   *PosLogDto
+    _param0   *PosLogDTO
 }
 
 // 初始化AlibabaMosPosAlarmRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosPosAlarmRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 参数
-func (r *AlibabaMosPosAlarmRequest) SetParam0(_param0 *PosLogDto) error {
+func (r *AlibabaMosPosAlarmRequest) SetParam0(_param0 *PosLogDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r AlibabaMosPosAlarmRequest) GetParam0() *PosLogDto {
+func (r AlibabaMosPosAlarmRequest) GetParam0() *PosLogDTO {
     return r._param0
 }

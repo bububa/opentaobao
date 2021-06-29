@@ -1,7 +1,7 @@
 package einvoice
 
-// TaxOptimizationQueryAlipayAccountResultDto 
-type TaxOptimizationQueryAlipayAccountResultDto struct {
+// TaxOptimizationQueryAlipayAccountResultDTO 
+type TaxOptimizationQueryAlipayAccountResultDTO struct {
     // 账号类型
     AccountTypeEnum   int64 `json:"account_type_enum,omitempty" xml:"account_type_enum,omitempty"`
     // 是否正常发薪

@@ -1,7 +1,7 @@
 package nazca
 
-// IssueAuthCallBackDo 
-type IssueAuthCallBackDo struct {
+// IssueAuthCallBackDO 
+type IssueAuthCallBackDO struct {
     // 合同编号
     ContractNum   string `json:"contract_num,omitempty" xml:"contract_num,omitempty"`
     // 出证机构

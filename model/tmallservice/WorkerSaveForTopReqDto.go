@@ -1,7 +1,7 @@
 package tmallservice
 
-// WorkerSaveForTopReqDto 
-type WorkerSaveForTopReqDto struct {
+// WorkerSaveForTopReqDTO 
+type WorkerSaveForTopReqDTO struct {
     // 身份证号码
     IdNumber   string `json:"id_number,omitempty" xml:"id_number,omitempty"`
     // 用户地址

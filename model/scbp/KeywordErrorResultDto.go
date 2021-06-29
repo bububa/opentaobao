@@ -1,7 +1,7 @@
 package scbp
 
-// KeywordErrorResultDto 
-type KeywordErrorResultDto struct {
+// KeywordErrorResultDTO 
+type KeywordErrorResultDTO struct {
     // reason
     Reason   string `json:"reason,omitempty" xml:"reason,omitempty"`
     // value

@@ -1,7 +1,7 @@
 package cainiaohandover
 
-// AddressDto 
-type AddressDto struct {
+// AddressDTO 
+type AddressDTO struct {
     // 邮编
     ZipCode   string `json:"zip_code,omitempty" xml:"zip_code,omitempty"`
     // 详细地址

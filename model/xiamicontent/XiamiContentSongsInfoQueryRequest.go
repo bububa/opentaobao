@@ -15,9 +15,9 @@ xiami.content.songs.info.query
 type XiamiContentSongsInfoQueryRequest struct {
     model.Params
     // 搜索条件 key支持songName/singerName/copyrightStatus/publishStatus/keyword
-    _searchTerms   []SearchTermsDto
+    _searchTerms   []SearchTermsDTO
     // tag搜索条件，tag尽量不要超过50个
-    _tagOptional   *SongCatsSearchDto
+    _tagOptional   *SongCatsSearchDTO
     // 排序,默认按照最新排序 1最新 2本周最热 3本月最热
     _orderBy   int64
     // 分页信息
@@ -46,26 +46,26 @@ func (r XiamiContentSongsInfoQueryRequest) GetApiParams() url.Values {
 }
 // SearchTerms Setter
 // 搜索条件 key支持songName/singerName/copyrightStatus/publishStatus/keyword
-func (r *XiamiContentSongsInfoQueryRequest) SetSearchTerms(_searchTerms []SearchTermsDto) error {
+func (r *XiamiContentSongsInfoQueryRequest) SetSearchTerms(_searchTerms []SearchTermsDTO) error {
     r._searchTerms = _searchTerms
     r.Set("search_terms", _searchTerms)
     return nil
 }
 
 // SearchTerms Getter
-func (r XiamiContentSongsInfoQueryRequest) GetSearchTerms() []SearchTermsDto {
+func (r XiamiContentSongsInfoQueryRequest) GetSearchTerms() []SearchTermsDTO {
     return r._searchTerms
 }
 // TagOptional Setter
 // tag搜索条件，tag尽量不要超过50个
-func (r *XiamiContentSongsInfoQueryRequest) SetTagOptional(_tagOptional *SongCatsSearchDto) error {
+func (r *XiamiContentSongsInfoQueryRequest) SetTagOptional(_tagOptional *SongCatsSearchDTO) error {
     r._tagOptional = _tagOptional
     r.Set("tag_optional", _tagOptional)
     return nil
 }
 
 // TagOptional Getter
-func (r XiamiContentSongsInfoQueryRequest) GetTagOptional() *SongCatsSearchDto {
+func (r XiamiContentSongsInfoQueryRequest) GetTagOptional() *SongCatsSearchDTO {
     return r._tagOptional
 }
 // OrderBy Setter

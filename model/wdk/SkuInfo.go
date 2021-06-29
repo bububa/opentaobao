@@ -15,7 +15,7 @@ type SkuInfo struct {
     // 扩展属性：exchangeGoods代表换货信息；containerType代表箱子标识（正常传0、禁止开箱传1）；containerCodes代表箱码数组（不存在为空）；
     Attributes   string `json:"attributes,omitempty" xml:"attributes,omitempty"`
     // 容器
-    Containers   []ContainerDto `json:"containers,omitempty" xml:"containers>container_dto,omitempty"`
+    Containers   []ContainerDTO `json:"containers,omitempty" xml:"containers>container_dto,omitempty"`
     // 商品名称
     SkuName   string `json:"sku_name,omitempty" xml:"sku_name,omitempty"`
     // 商品单个价格，单位分

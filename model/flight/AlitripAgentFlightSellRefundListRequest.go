@@ -15,7 +15,7 @@ alitrip.agent.flight.sell.refund.list
 type AlitripAgentFlightSellRefundListRequest struct {
     model.Params
     // 请求对象
-    _param   *RefundListRequestDto
+    _param   *RefundListRequestDTO
 }
 
 // 初始化AlitripAgentFlightSellRefundListRequest对象
@@ -40,13 +40,13 @@ func (r AlitripAgentFlightSellRefundListRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 请求对象
-func (r *AlitripAgentFlightSellRefundListRequest) SetParam(_param *RefundListRequestDto) error {
+func (r *AlitripAgentFlightSellRefundListRequest) SetParam(_param *RefundListRequestDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlitripAgentFlightSellRefundListRequest) GetParam() *RefundListRequestDto {
+func (r AlitripAgentFlightSellRefundListRequest) GetParam() *RefundListRequestDTO {
     return r._param
 }

@@ -15,7 +15,7 @@ alibaba.idle.appraise.order.perform
 type AlibabaIdleAppraiseOrderPerformRequest struct {
     model.Params
     // AppraiseOrderSynDto
-    _appraiseOrderSynDto   *AppraiseOrderSynDto
+    _appraiseOrderSynDto   *AppraiseOrderSynDTO
 }
 
 // 初始化AlibabaIdleAppraiseOrderPerformRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleAppraiseOrderPerformRequest) GetApiParams() url.Values {
 }
 // AppraiseOrderSynDto Setter
 // AppraiseOrderSynDto
-func (r *AlibabaIdleAppraiseOrderPerformRequest) SetAppraiseOrderSynDto(_appraiseOrderSynDto *AppraiseOrderSynDto) error {
+func (r *AlibabaIdleAppraiseOrderPerformRequest) SetAppraiseOrderSynDto(_appraiseOrderSynDto *AppraiseOrderSynDTO) error {
     r._appraiseOrderSynDto = _appraiseOrderSynDto
     r.Set("appraise_order_syn_dto", _appraiseOrderSynDto)
     return nil
 }
 
 // AppraiseOrderSynDto Getter
-func (r AlibabaIdleAppraiseOrderPerformRequest) GetAppraiseOrderSynDto() *AppraiseOrderSynDto {
+func (r AlibabaIdleAppraiseOrderPerformRequest) GetAppraiseOrderSynDto() *AppraiseOrderSynDTO {
     return r._appraiseOrderSynDto
 }

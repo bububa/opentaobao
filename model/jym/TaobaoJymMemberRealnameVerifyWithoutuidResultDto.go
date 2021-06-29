@@ -1,9 +1,9 @@
 package jym
 
-// TaobaoJymMemberRealnameVerifyWithoutuidResultDto 
-type TaobaoJymMemberRealnameVerifyWithoutuidResultDto struct {
+// TaobaoJymMemberRealnameVerifyWithoutuidResultDTO 
+type TaobaoJymMemberRealnameVerifyWithoutuidResultDTO struct {
     // 1
-    Result   *RealNameVerifyTopDto `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *RealNameVerifyTopDTO `json:"result,omitempty" xml:"result,omitempty"`
     // 调用是否成功
     Succ   bool `json:"succ,omitempty" xml:"succ,omitempty"`
     // 调用接口结果编码

@@ -15,7 +15,7 @@ tmall.carcenter.vehicleinfo.register
 type TmallCarcenterVehicleinfoRegisterRequest struct {
     model.Params
     // 车型数据对象
-    _vehicleInfo   *OriginVehicleInfoDto
+    _vehicleInfo   *OriginVehicleInfoDTO
 }
 
 // 初始化TmallCarcenterVehicleinfoRegisterRequest对象
@@ -40,13 +40,13 @@ func (r TmallCarcenterVehicleinfoRegisterRequest) GetApiParams() url.Values {
 }
 // VehicleInfo Setter
 // 车型数据对象
-func (r *TmallCarcenterVehicleinfoRegisterRequest) SetVehicleInfo(_vehicleInfo *OriginVehicleInfoDto) error {
+func (r *TmallCarcenterVehicleinfoRegisterRequest) SetVehicleInfo(_vehicleInfo *OriginVehicleInfoDTO) error {
     r._vehicleInfo = _vehicleInfo
     r.Set("vehicle_info", _vehicleInfo)
     return nil
 }
 
 // VehicleInfo Getter
-func (r TmallCarcenterVehicleinfoRegisterRequest) GetVehicleInfo() *OriginVehicleInfoDto {
+func (r TmallCarcenterVehicleinfoRegisterRequest) GetVehicleInfo() *OriginVehicleInfoDTO {
     return r._vehicleInfo
 }

@@ -27,5 +27,5 @@ type TaobaoTaeBillsGetResponse struct {
     // 是否存在下一页
     HasNext   bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
     // 账单列表
-    Bills   []BillDto `json:"bills,omitempty" xml:"bills>bill_dto,omitempty"`
+    Bills   []BillDTO `json:"bills,omitempty" xml:"bills>bill_dto,omitempty"`
 }

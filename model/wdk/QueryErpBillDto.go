@@ -1,7 +1,7 @@
 package wdk
 
-// QueryErpBillDto 
-type QueryErpBillDto struct {
+// QueryErpBillDTO 
+type QueryErpBillDTO struct {
     // 单据创建的开始时间点
     BeginDate   string `json:"begin_date,omitempty" xml:"begin_date,omitempty"`
     // 单据创建的结束时间点

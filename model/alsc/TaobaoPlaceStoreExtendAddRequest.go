@@ -17,7 +17,7 @@ type TaobaoPlaceStoreExtendAddRequest struct {
     // 门店ID
     _storeId   int64
     // 扩展信息
-    _etv   []ExtendTypeValueTopDto
+    _etv   []ExtendTypeValueTopDTO
 }
 
 // 初始化TaobaoPlaceStoreExtendAddRequest对象
@@ -54,13 +54,13 @@ func (r TaobaoPlaceStoreExtendAddRequest) GetStoreId() int64 {
 }
 // Etv Setter
 // 扩展信息
-func (r *TaobaoPlaceStoreExtendAddRequest) SetEtv(_etv []ExtendTypeValueTopDto) error {
+func (r *TaobaoPlaceStoreExtendAddRequest) SetEtv(_etv []ExtendTypeValueTopDTO) error {
     r._etv = _etv
     r.Set("etv", _etv)
     return nil
 }
 
 // Etv Getter
-func (r TaobaoPlaceStoreExtendAddRequest) GetEtv() []ExtendTypeValueTopDto {
+func (r TaobaoPlaceStoreExtendAddRequest) GetEtv() []ExtendTypeValueTopDTO {
     return r._etv
 }

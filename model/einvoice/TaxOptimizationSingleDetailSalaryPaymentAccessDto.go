@@ -1,7 +1,7 @@
 package einvoice
 
-// TaxOptimizationSingleDetailSalaryPaymentAccessDto 
-type TaxOptimizationSingleDetailSalaryPaymentAccessDto struct {
+// TaxOptimizationSingleDetailSalaryPaymentAccessDTO 
+type TaxOptimizationSingleDetailSalaryPaymentAccessDTO struct {
     // 发薪金额
     ApplyAmount   int64 `json:"apply_amount,omitempty" xml:"apply_amount,omitempty"`
     // 业务提交时间

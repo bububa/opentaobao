@@ -3,7 +3,7 @@ package axintrade
 // TaobaoAlitripAxinTransRefundCreateResult 
 type TaobaoAlitripAxinTransRefundCreateResult struct {
     // 返回素材id
-    Data   *AxinRefundCreateResDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *AxinRefundCreateResDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 错误信息
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     // 错误码

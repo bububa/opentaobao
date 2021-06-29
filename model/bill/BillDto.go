@@ -1,7 +1,7 @@
 package bill
 
-// BillDto 
-type BillDto struct {
+// BillDTO 
+type BillDTO struct {
     // 账单金额,退款时返回的是负数
     TotalAmount   int64 `json:"total_amount,omitempty" xml:"total_amount,omitempty"`
     // 修改时间

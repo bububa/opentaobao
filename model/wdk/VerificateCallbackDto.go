@@ -1,7 +1,7 @@
 package wdk
 
-// VerificateCallbackDto 
-type VerificateCallbackDto struct {
+// VerificateCallbackDTO 
+type VerificateCallbackDTO struct {
     // 核销说明, 核销失败则填写核销失败原因
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 核销时间 YYYY-MM-DD HH:MI:SS

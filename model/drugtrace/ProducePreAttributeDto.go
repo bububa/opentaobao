@@ -1,7 +1,7 @@
 package drugtrace
 
-// ProducePreAttributeDto 
-type ProducePreAttributeDto struct {
+// ProducePreAttributeDTO 
+type ProducePreAttributeDTO struct {
     // 货品属性对象
     AttrInfoList   []Attrinfolist `json:"attr_info_list,omitempty" xml:"attr_info_list>attrinfolist,omitempty"`
     // 属性规则-英文

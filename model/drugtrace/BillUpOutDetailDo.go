@@ -1,7 +1,7 @@
 package drugtrace
 
-// BillUpOutDetailDo 
-type BillUpOutDetailDo struct {
+// BillUpOutDetailDO 
+type BillUpOutDetailDO struct {
     // 发货单位
     FromEntName   string `json:"from_ent_name,omitempty" xml:"from_ent_name,omitempty"`
     // 最小码量

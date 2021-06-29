@@ -15,7 +15,7 @@ alibaba.ascp.inventory.sync
 type AlibabaAscpInventorySyncRequest struct {
     model.Params
     // 库存同步DTO
-    _invSingleItemSyncDto   *InvSingleItemSyncDto
+    _invSingleItemSyncDto   *InvSingleItemSyncDTO
 }
 
 // 初始化AlibabaAscpInventorySyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAscpInventorySyncRequest) GetApiParams() url.Values {
 }
 // InvSingleItemSyncDto Setter
 // 库存同步DTO
-func (r *AlibabaAscpInventorySyncRequest) SetInvSingleItemSyncDto(_invSingleItemSyncDto *InvSingleItemSyncDto) error {
+func (r *AlibabaAscpInventorySyncRequest) SetInvSingleItemSyncDto(_invSingleItemSyncDto *InvSingleItemSyncDTO) error {
     r._invSingleItemSyncDto = _invSingleItemSyncDto
     r.Set("inv_single_item_sync_dto", _invSingleItemSyncDto)
     return nil
 }
 
 // InvSingleItemSyncDto Getter
-func (r AlibabaAscpInventorySyncRequest) GetInvSingleItemSyncDto() *InvSingleItemSyncDto {
+func (r AlibabaAscpInventorySyncRequest) GetInvSingleItemSyncDto() *InvSingleItemSyncDTO {
     return r._invSingleItemSyncDto
 }

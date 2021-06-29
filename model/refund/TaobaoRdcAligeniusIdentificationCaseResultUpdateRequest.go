@@ -15,7 +15,7 @@ taobao.rdc.aligenius.identification.case.result.update
 type TaobaoRdcAligeniusIdentificationCaseResultUpdateRequest struct {
     model.Params
     // 请求参数
-    _param   *SyncIdentifyRefundCaseResultDto
+    _param   *SyncIdentifyRefundCaseResultDTO
 }
 
 // 初始化TaobaoRdcAligeniusIdentificationCaseResultUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateRequest) GetApiParams() 
 }
 // Param Setter
 // 请求参数
-func (r *TaobaoRdcAligeniusIdentificationCaseResultUpdateRequest) SetParam(_param *SyncIdentifyRefundCaseResultDto) error {
+func (r *TaobaoRdcAligeniusIdentificationCaseResultUpdateRequest) SetParam(_param *SyncIdentifyRefundCaseResultDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateRequest) GetParam() *SyncIdentifyRefundCaseResultDto {
+func (r TaobaoRdcAligeniusIdentificationCaseResultUpdateRequest) GetParam() *SyncIdentifyRefundCaseResultDTO {
     return r._param
 }

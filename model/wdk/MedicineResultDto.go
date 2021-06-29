@@ -1,7 +1,7 @@
 package wdk
 
-// MedicineResultDto 
-type MedicineResultDto struct {
+// MedicineResultDTO 
+type MedicineResultDTO struct {
     // errorMsg
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     // success

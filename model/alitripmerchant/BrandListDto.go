@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// BrandListDto 
-type BrandListDto struct {
+// BrandListDTO 
+type BrandListDTO struct {
     // 品牌名称
     BrandName   string `json:"brand_name,omitempty" xml:"brand_name,omitempty"`
     // 品牌类型

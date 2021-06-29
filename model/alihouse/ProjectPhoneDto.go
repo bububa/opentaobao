@@ -1,7 +1,7 @@
 package alihouse
 
-// ProjectPhoneDto 
-type ProjectPhoneDto struct {
+// ProjectPhoneDTO 
+type ProjectPhoneDTO struct {
     // 分机号
     SubPhone   string `json:"sub_phone,omitempty" xml:"sub_phone,omitempty"`
     // 主号码

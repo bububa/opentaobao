@@ -1,7 +1,7 @@
 package feedflow
 
-// OptionDto 
-type OptionDto struct {
+// OptionDTO 
+type OptionDTO struct {
     // 标签值
     OptionValue   string `json:"option_value,omitempty" xml:"option_value,omitempty"`
     // 选项名称

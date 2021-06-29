@@ -1,7 +1,7 @@
 package tttm
 
-// WorkSyncDto 
-type WorkSyncDto struct {
+// WorkSyncDTO 
+type WorkSyncDTO struct {
     // 工单ID
     WorkId   string `json:"work_id,omitempty" xml:"work_id,omitempty"`
     // 货品
@@ -17,5 +17,5 @@ type WorkSyncDto struct {
     // 工单结束
     FinishTime   string `json:"finish_time,omitempty" xml:"finish_time,omitempty"`
     // 生产进度
-    SyncProduceDTOs   []ProduceSyncDto `json:"sync_produce_d_t_os,omitempty" xml:"sync_produce_d_t_os>produce_sync_dto,omitempty"`
+    SyncProduceDTOs   []ProduceSyncDTO `json:"sync_produce_d_t_os,omitempty" xml:"sync_produce_d_t_os>produce_sync_dto,omitempty"`
 }

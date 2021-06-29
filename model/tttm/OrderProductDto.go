@@ -1,7 +1,7 @@
 package tttm
 
-// OrderProductDto 
-type OrderProductDto struct {
+// OrderProductDTO 
+type OrderProductDTO struct {
     // 货品名称
     ProductName   string `json:"product_name,omitempty" xml:"product_name,omitempty"`
     // 货品价格

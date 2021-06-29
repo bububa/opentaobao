@@ -1,7 +1,7 @@
 package btrip
 
-// HotelInfoDo 
-type HotelInfoDo struct {
+// HotelInfoDO 
+type HotelInfoDO struct {
     // 酒店中文名
     HotelName   string `json:"hotel_name,omitempty" xml:"hotel_name,omitempty"`
     // 酒店联系方式

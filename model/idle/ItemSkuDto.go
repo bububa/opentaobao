@@ -1,11 +1,11 @@
 package idle
 
-// ItemSkuDto 
-type ItemSkuDto struct {
+// ItemSkuDTO 
+type ItemSkuDTO struct {
     // sku价格，单位分
     Price   int64 `json:"price,omitempty" xml:"price,omitempty"`
     // sku属性
-    PropList   []ItemPvPairDto `json:"prop_list,omitempty" xml:"prop_list>item_pv_pair_dto,omitempty"`
+    PropList   []ItemPvPairDTO `json:"prop_list,omitempty" xml:"prop_list>item_pv_pair_dto,omitempty"`
     // sku库存
     Quantity   int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // sku id

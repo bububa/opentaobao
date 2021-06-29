@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.project.phone.submit
 type AlibabaAlihouseNewhomeProjectPhoneSubmitRequest struct {
     model.Params
     // 楼盘电话
-    _projectPhoneDto   *ProjectPhoneDto
+    _projectPhoneDto   *ProjectPhoneDTO
 }
 
 // 初始化AlibabaAlihouseNewhomeProjectPhoneSubmitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectPhoneSubmitRequest) GetApiParams() url.Valu
 }
 // ProjectPhoneDto Setter
 // 楼盘电话
-func (r *AlibabaAlihouseNewhomeProjectPhoneSubmitRequest) SetProjectPhoneDto(_projectPhoneDto *ProjectPhoneDto) error {
+func (r *AlibabaAlihouseNewhomeProjectPhoneSubmitRequest) SetProjectPhoneDto(_projectPhoneDto *ProjectPhoneDTO) error {
     r._projectPhoneDto = _projectPhoneDto
     r.Set("project_phone_dto", _projectPhoneDto)
     return nil
 }
 
 // ProjectPhoneDto Getter
-func (r AlibabaAlihouseNewhomeProjectPhoneSubmitRequest) GetProjectPhoneDto() *ProjectPhoneDto {
+func (r AlibabaAlihouseNewhomeProjectPhoneSubmitRequest) GetProjectPhoneDto() *ProjectPhoneDTO {
     return r._projectPhoneDto
 }

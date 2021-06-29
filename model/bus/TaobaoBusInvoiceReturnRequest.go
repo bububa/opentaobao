@@ -15,7 +15,7 @@ taobao.bus.invoice.return
 type TaobaoBusInvoiceReturnRequest struct {
     model.Params
     // 入参对象
-    _invoiceParam   *ReceiptDo
+    _invoiceParam   *ReceiptDO
 }
 
 // 初始化TaobaoBusInvoiceReturnRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoBusInvoiceReturnRequest) GetApiParams() url.Values {
 }
 // InvoiceParam Setter
 // 入参对象
-func (r *TaobaoBusInvoiceReturnRequest) SetInvoiceParam(_invoiceParam *ReceiptDo) error {
+func (r *TaobaoBusInvoiceReturnRequest) SetInvoiceParam(_invoiceParam *ReceiptDO) error {
     r._invoiceParam = _invoiceParam
     r.Set("invoice_param", _invoiceParam)
     return nil
 }
 
 // InvoiceParam Getter
-func (r TaobaoBusInvoiceReturnRequest) GetInvoiceParam() *ReceiptDo {
+func (r TaobaoBusInvoiceReturnRequest) GetInvoiceParam() *ReceiptDO {
     return r._invoiceParam
 }

@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMosOnsiteTradeIsnewpayorderResultDo 
-type AlibabaMosOnsiteTradeIsnewpayorderResultDo struct {
+// AlibabaMosOnsiteTradeIsnewpayorderResultDO 
+type AlibabaMosOnsiteTradeIsnewpayorderResultDO struct {
     // 是否为新支付订单。true：是，false:不是
     Data   bool `json:"data,omitempty" xml:"data,omitempty"`
     // errCode

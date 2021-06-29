@@ -1,7 +1,7 @@
 package omniorder
 
-// JzReceiverDto 
-type JzReceiverDto struct {
+// JzReceiverDTO 
+type JzReceiverDTO struct {
     // 国家
     Country   string `json:"country,omitempty" xml:"country,omitempty"`
     // 邮编

@@ -15,7 +15,7 @@ alitrip.agent.flight.sell.modify.list
 type AlitripAgentFlightSellModifyListRequest struct {
     model.Params
     // 入参
-    _param   *ModifyListRequestDto
+    _param   *ModifyListRequestDTO
 }
 
 // 初始化AlitripAgentFlightSellModifyListRequest对象
@@ -40,13 +40,13 @@ func (r AlitripAgentFlightSellModifyListRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlitripAgentFlightSellModifyListRequest) SetParam(_param *ModifyListRequestDto) error {
+func (r *AlitripAgentFlightSellModifyListRequest) SetParam(_param *ModifyListRequestDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlitripAgentFlightSellModifyListRequest) GetParam() *ModifyListRequestDto {
+func (r AlitripAgentFlightSellModifyListRequest) GetParam() *ModifyListRequestDTO {
     return r._param
 }

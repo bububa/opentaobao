@@ -19,7 +19,7 @@ type TaobaoRegionPriceManageRequest struct {
     // 无sku传0
     _skuId   int64
     // 列表
-    _regionalPriceDtos   []RegionalPriceDto
+    _regionalPriceDtos   []RegionalPriceDTO
     // true:全量, false:增量
     _isFull   bool
 }
@@ -70,14 +70,14 @@ func (r TaobaoRegionPriceManageRequest) GetSkuId() int64 {
 }
 // RegionalPriceDtos Setter
 // 列表
-func (r *TaobaoRegionPriceManageRequest) SetRegionalPriceDtos(_regionalPriceDtos []RegionalPriceDto) error {
+func (r *TaobaoRegionPriceManageRequest) SetRegionalPriceDtos(_regionalPriceDtos []RegionalPriceDTO) error {
     r._regionalPriceDtos = _regionalPriceDtos
     r.Set("regional_price_dtos", _regionalPriceDtos)
     return nil
 }
 
 // RegionalPriceDtos Getter
-func (r TaobaoRegionPriceManageRequest) GetRegionalPriceDtos() []RegionalPriceDto {
+func (r TaobaoRegionPriceManageRequest) GetRegionalPriceDtos() []RegionalPriceDTO {
     return r._regionalPriceDtos
 }
 // IsFull Setter

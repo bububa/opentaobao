@@ -15,7 +15,7 @@ type BtriphomeResult struct {
     // module
     InvoiceList   []InvoiceList `json:"invoice_list,omitempty" xml:"invoice_list>invoice_list,omitempty"`
     // module
-    Invoice   *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
+    Invoice   *OpenInvoiceDO `json:"invoice,omitempty" xml:"invoice,omitempty"`
     // 订单列表
     VehicleOrderList   []OpenVehicleOrderRs `json:"vehicle_order_list,omitempty" xml:"vehicle_order_list>open_vehicle_order_rs,omitempty"`
 }

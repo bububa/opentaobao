@@ -1,7 +1,7 @@
 package wdk
 
-// OrderSyncRefundDto 
-type OrderSyncRefundDto struct {
+// OrderSyncRefundDTO 
+type OrderSyncRefundDTO struct {
     // 库存单位购买数量
     BuyAmountStock   string `json:"buy_amount_stock,omitempty" xml:"buy_amount_stock,omitempty"`
     // 商品skucode

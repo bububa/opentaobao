@@ -15,7 +15,7 @@ alibaba.onetouch.logistics.express.address.division.list
 type AlibabaOnetouchLogisticsExpressAddressDivisionListRequest struct {
     model.Params
     // 请求参数
-    _paramQuery   *AddressQueryDto
+    _paramQuery   *AddressQueryDTO
 }
 
 // 初始化AlibabaOnetouchLogisticsExpressAddressDivisionListRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaOnetouchLogisticsExpressAddressDivisionListRequest) GetApiParams(
 }
 // ParamQuery Setter
 // 请求参数
-func (r *AlibabaOnetouchLogisticsExpressAddressDivisionListRequest) SetParamQuery(_paramQuery *AddressQueryDto) error {
+func (r *AlibabaOnetouchLogisticsExpressAddressDivisionListRequest) SetParamQuery(_paramQuery *AddressQueryDTO) error {
     r._paramQuery = _paramQuery
     r.Set("param_query", _paramQuery)
     return nil
 }
 
 // ParamQuery Getter
-func (r AlibabaOnetouchLogisticsExpressAddressDivisionListRequest) GetParamQuery() *AddressQueryDto {
+func (r AlibabaOnetouchLogisticsExpressAddressDivisionListRequest) GetParamQuery() *AddressQueryDTO {
     return r._paramQuery
 }

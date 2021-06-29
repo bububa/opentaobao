@@ -1,7 +1,7 @@
 package trade
 
-// OrderInfoDto 
-type OrderInfoDto struct {
+// OrderInfoDTO 
+type OrderInfoDTO struct {
     // 订单状态描述
     OrderStatusDesc   string `json:"order_status_desc,omitempty" xml:"order_status_desc,omitempty"`
     // 店铺名称
@@ -17,7 +17,7 @@ type OrderInfoDto struct {
     // 支付金额
     PayAmount   string `json:"pay_amount,omitempty" xml:"pay_amount,omitempty"`
     // 商品摘要
-    ItemDigests   []ItemDigestDto `json:"item_digests,omitempty" xml:"item_digests>item_digest_dto,omitempty"`
+    ItemDigests   []ItemDigestDTO `json:"item_digests,omitempty" xml:"item_digests>item_digest_dto,omitempty"`
     // 订单详情url
     OrderDetailUrl   string `json:"order_detail_url,omitempty" xml:"order_detail_url,omitempty"`
     // 支付金额描述

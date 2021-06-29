@@ -15,7 +15,7 @@ tmall.car.lease.tailpaymentback
 type TmallCarLeaseTailpaymentbackRequest struct {
     model.Params
     // 尾款方案
-    _tailPaymentDTO   *TailPaymentDto
+    _tailPaymentDTO   *TailPaymentDTO
 }
 
 // 初始化TmallCarLeaseTailpaymentbackRequest对象
@@ -40,13 +40,13 @@ func (r TmallCarLeaseTailpaymentbackRequest) GetApiParams() url.Values {
 }
 // TailPaymentDTO Setter
 // 尾款方案
-func (r *TmallCarLeaseTailpaymentbackRequest) SetTailPaymentDTO(_tailPaymentDTO *TailPaymentDto) error {
+func (r *TmallCarLeaseTailpaymentbackRequest) SetTailPaymentDTO(_tailPaymentDTO *TailPaymentDTO) error {
     r._tailPaymentDTO = _tailPaymentDTO
     r.Set("tail_payment_d_t_o", _tailPaymentDTO)
     return nil
 }
 
 // TailPaymentDTO Getter
-func (r TmallCarLeaseTailpaymentbackRequest) GetTailPaymentDTO() *TailPaymentDto {
+func (r TmallCarLeaseTailpaymentbackRequest) GetTailPaymentDTO() *TailPaymentDTO {
     return r._tailPaymentDTO
 }

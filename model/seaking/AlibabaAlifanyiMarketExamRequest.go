@@ -15,7 +15,7 @@ alibaba.alifanyi.market.exam
 type AlibabaAlifanyiMarketExamRequest struct {
     model.Params
     // 请求参数
-    _reportQueryApiDTO   *ReportQueryApiDto
+    _reportQueryApiDTO   *ReportQueryApiDTO
 }
 
 // 初始化AlibabaAlifanyiMarketExamRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlifanyiMarketExamRequest) GetApiParams() url.Values {
 }
 // ReportQueryApiDTO Setter
 // 请求参数
-func (r *AlibabaAlifanyiMarketExamRequest) SetReportQueryApiDTO(_reportQueryApiDTO *ReportQueryApiDto) error {
+func (r *AlibabaAlifanyiMarketExamRequest) SetReportQueryApiDTO(_reportQueryApiDTO *ReportQueryApiDTO) error {
     r._reportQueryApiDTO = _reportQueryApiDTO
     r.Set("report_query_api_d_t_o", _reportQueryApiDTO)
     return nil
 }
 
 // ReportQueryApiDTO Getter
-func (r AlibabaAlifanyiMarketExamRequest) GetReportQueryApiDTO() *ReportQueryApiDto {
+func (r AlibabaAlifanyiMarketExamRequest) GetReportQueryApiDTO() *ReportQueryApiDTO {
     return r._reportQueryApiDTO
 }

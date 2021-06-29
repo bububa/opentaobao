@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// MemberBaseInfoDto 
-type MemberBaseInfoDto struct {
+// MemberBaseInfoDTO 
+type MemberBaseInfoDTO struct {
     // 用户英文姓
     FirstName   string `json:"first_name,omitempty" xml:"first_name,omitempty"`
     // 用户英文名

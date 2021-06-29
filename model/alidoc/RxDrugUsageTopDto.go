@@ -1,7 +1,7 @@
 package alidoc
 
-// RxDrugUsageTopDto 
-type RxDrugUsageTopDto struct {
+// RxDrugUsageTopDTO 
+type RxDrugUsageTopDTO struct {
     // 每次用量
     DoseValue   string `json:"dose_value,omitempty" xml:"dose_value,omitempty"`
     // 频次

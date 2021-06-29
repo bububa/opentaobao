@@ -1,7 +1,7 @@
 package ascpffo
 
-// ErpFulfillmentForwardDto 
-type ErpFulfillmentForwardDto struct {
+// ErpFulfillmentForwardDTO 
+type ErpFulfillmentForwardDTO struct {
     // 订单产生时间戳
     TradeCreateTime   int64 `json:"trade_create_time,omitempty" xml:"trade_create_time,omitempty"`
     // 发货金额

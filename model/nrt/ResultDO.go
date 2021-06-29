@@ -5,7 +5,7 @@ type ResultDO struct {
     // succ
     Succ   bool `json:"succ,omitempty" xml:"succ,omitempty"`
     // data
-    Data   *InvSingleItemSyncDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *InvSingleItemSyncDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 错误码
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 错误信息

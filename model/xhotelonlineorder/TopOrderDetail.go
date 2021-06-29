@@ -19,7 +19,7 @@ type TopOrderDetail struct {
     // 支付时间
     PayTime   string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
     // 订单关联包信息： topOrderPackageDO
-    TopOrderPackage   *TopOrderPackageDo `json:"top_order_package,omitempty" xml:"top_order_package,omitempty"`
+    TopOrderPackage   *TopOrderPackageDO `json:"top_order_package,omitempty" xml:"top_order_package,omitempty"`
     // 商家订单ID
     OutOid   string `json:"out_oid,omitempty" xml:"out_oid,omitempty"`
     // 下单时间
@@ -53,7 +53,7 @@ type TopOrderDetail struct {
     // 是否拆单
     SplitOrder   bool `json:"split_order,omitempty" xml:"split_order,omitempty"`
     // 酒店订单卖家信息
-    HotelOrderSeller   *HotelOrderSellerDo `json:"hotel_order_seller,omitempty" xml:"hotel_order_seller,omitempty"`
+    HotelOrderSeller   *HotelOrderSellerDO `json:"hotel_order_seller,omitempty" xml:"hotel_order_seller,omitempty"`
     // 联系人名称
     ContactName   string `json:"contact_name,omitempty" xml:"contact_name,omitempty"`
     // 渠道企业名称
@@ -77,7 +77,7 @@ type TopOrderDetail struct {
     // 离店时间
     CheckoutDate   string `json:"checkout_date,omitempty" xml:"checkout_date,omitempty"`
     // 海外酒店信息
-    TopOverseasPriceInfo   *TopOverseasPriceInfoDo `json:"top_overseas_price_info,omitempty" xml:"top_overseas_price_info,omitempty"`
+    TopOverseasPriceInfo   *TopOverseasPriceInfoDO `json:"top_overseas_price_info,omitempty" xml:"top_overseas_price_info,omitempty"`
     // 是否需要确认号
     NeedConfirmNo   bool `json:"need_confirm_no,omitempty" xml:"need_confirm_no,omitempty"`
     // 是否展示“卖家延迟按钮”
@@ -137,7 +137,7 @@ type TopOrderDetail struct {
     // 税和费，单位分
     TaxAndFee   int64 `json:"tax_and_fee,omitempty" xml:"tax_and_fee,omitempty"`
     // topDomesticPriceInfoDO
-    TopDomesticPriceInfo   *TopDomesticPriceInfoDo `json:"top_domestic_price_info,omitempty" xml:"top_domestic_price_info,omitempty"`
+    TopDomesticPriceInfo   *TopDomesticPriceInfoDO `json:"top_domestic_price_info,omitempty" xml:"top_domestic_price_info,omitempty"`
     // 用户实际支付金额
     UserRealPayment   int64 `json:"user_real_payment,omitempty" xml:"user_real_payment,omitempty"`
     // gmtModified
@@ -151,7 +151,7 @@ type TopOrderDetail struct {
     // 退款金额  单位为分
     RefundAmout   int64 `json:"refund_amout,omitempty" xml:"refund_amout,omitempty"`
     // 退款信息
-    PostTradeRefund   *TopPostTradeRefundDo `json:"post_trade_refund,omitempty" xml:"post_trade_refund,omitempty"`
+    PostTradeRefund   *TopPostTradeRefundDO `json:"post_trade_refund,omitempty" xml:"post_trade_refund,omitempty"`
     // 销售渠道
     Channel   string `json:"channel,omitempty" xml:"channel,omitempty"`
     // 买家id
@@ -165,7 +165,7 @@ type TopOrderDetail struct {
     // 订单来源类型
     OrderSourceType   string `json:"order_source_type,omitempty" xml:"order_source_type,omitempty"`
     // topInvoiceDO
-    TopInvoice   *TopInvoiceDo `json:"top_invoice,omitempty" xml:"top_invoice,omitempty"`
+    TopInvoice   *TopInvoiceDO `json:"top_invoice,omitempty" xml:"top_invoice,omitempty"`
     // 退款原因类型如101，503之类
     RefundReasonType   int64 `json:"refund_reason_type,omitempty" xml:"refund_reason_type,omitempty"`
 }

@@ -15,7 +15,7 @@ ihome 定制业务编辑器投稿素材上传
 type TaobaoIhomeAdvancepicUploadRequest struct {
     model.Params
     // 图片类
-    _materials   []AdvancePicMaterialDto
+    _materials   []AdvancePicMaterialDTO
 }
 
 // 初始化TaobaoIhomeAdvancepicUploadRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoIhomeAdvancepicUploadRequest) GetApiParams() url.Values {
 }
 // Materials Setter
 // 图片类
-func (r *TaobaoIhomeAdvancepicUploadRequest) SetMaterials(_materials []AdvancePicMaterialDto) error {
+func (r *TaobaoIhomeAdvancepicUploadRequest) SetMaterials(_materials []AdvancePicMaterialDTO) error {
     r._materials = _materials
     r.Set("materials", _materials)
     return nil
 }
 
 // Materials Getter
-func (r TaobaoIhomeAdvancepicUploadRequest) GetMaterials() []AdvancePicMaterialDto {
+func (r TaobaoIhomeAdvancepicUploadRequest) GetMaterials() []AdvancePicMaterialDTO {
     return r._materials
 }

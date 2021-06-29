@@ -1,7 +1,7 @@
 package jipiao
 
-// BbSyncOrderDto 
-type BbSyncOrderDto struct {
+// BbSyncOrderDTO 
+type BbSyncOrderDTO struct {
     // 申请单id
     ApplyId   int64 `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     // 改签后舱位

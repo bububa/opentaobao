@@ -1,7 +1,7 @@
 package icbuseller
 
-// VendorMerchantRecordBaseDto 
-type VendorMerchantRecordBaseDto struct {
+// VendorMerchantRecordBaseDTO 
+type VendorMerchantRecordBaseDTO struct {
     // 定制力是否双60
     Nrts6060   string `json:"nrts6060,omitempty" xml:"nrts6060,omitempty"`
     // 赛道，RTS/询盘

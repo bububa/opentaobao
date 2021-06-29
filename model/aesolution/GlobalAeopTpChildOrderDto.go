@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopTpChildOrderDto 
-type GlobalAeopTpChildOrderDto struct {
+// GlobalAeopTpChildOrderDTO 
+type GlobalAeopTpChildOrderDTO struct {
     // snapshot ID
     SnapshotId   string `json:"snapshot_id,omitempty" xml:"snapshot_id,omitempty"`
     // How many products in one piece or lot
@@ -15,7 +15,7 @@ type GlobalAeopTpChildOrderDto struct {
     // buyer memo
     BuyerMemo   string `json:"buyer_memo,omitempty" xml:"buyer_memo,omitempty"`
     // refund info
-    RefundInfo   *GlobalAeopTpRefundInfoDto `json:"refund_info,omitempty" xml:"refund_info,omitempty"`
+    RefundInfo   *GlobalAeopTpRefundInfoDTO `json:"refund_info,omitempty" xml:"refund_info,omitempty"`
     // product_unit
     ProductUnit   string `json:"product_unit,omitempty" xml:"product_unit,omitempty"`
     // order ID
@@ -33,11 +33,11 @@ type GlobalAeopTpChildOrderDto struct {
     // order amount
     InitOrderAmt   *GlobalMoneyStr `json:"init_order_amt,omitempty" xml:"init_order_amt,omitempty"`
     // child issue info
-    ChildIssueInfo   *GlobalAeopTpIssueInfoDto `json:"child_issue_info,omitempty" xml:"child_issue_info,omitempty"`
+    ChildIssueInfo   *GlobalAeopTpIssueInfoDTO `json:"child_issue_info,omitempty" xml:"child_issue_info,omitempty"`
     // logistics service name
     LogisticsServiceName   string `json:"logistics_service_name,omitempty" xml:"logistics_service_name,omitempty"`
     // order loan info
-    LoanInfo   *GlobalAeopTpLoanInfoDto `json:"loan_info,omitempty" xml:"loan_info,omitempty"`
+    LoanInfo   *GlobalAeopTpLoanInfoDTO `json:"loan_info,omitempty" xml:"loan_info,omitempty"`
     // product snapshot Url
     ProductSnapUrl   string `json:"product_snap_url,omitempty" xml:"product_snap_url,omitempty"`
     // Order Status：PLACE_ORDER_SUCCESS;  IN_CANCEL;  WAIT_SELLER_SEND_GOODS;  SELLER_PART_SEND_GOODS;  WAIT_BUYER_ACCEPT_GOODS;  FUND_PROCESSING; IN_ISSUE;  IN_FROZEN;  WAIT_SELLER_EXAMINE_MONEY;  RISK_CONTROL.

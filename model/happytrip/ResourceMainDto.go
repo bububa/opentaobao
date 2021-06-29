@@ -1,7 +1,7 @@
 package happytrip
 
-// ResourceMainDto 
-type ResourceMainDto struct {
+// ResourceMainDTO 
+type ResourceMainDTO struct {
     // 成人成本价
     AdultCost   string `json:"adult_cost,omitempty" xml:"adult_cost,omitempty"`
     // 成人数

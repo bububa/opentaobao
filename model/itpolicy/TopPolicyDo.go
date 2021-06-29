@@ -1,7 +1,7 @@
 package itpolicy
 
-// TopPolicyDo 
-type TopPolicyDo struct {
+// TopPolicyDO 
+type TopPolicyDO struct {
     // 产品编号，内容可空，支持字母和数字,最多50个字符
     PolicyId   string `json:"policy_id,omitempty" xml:"policy_id,omitempty"`
     // 1/2RT计算方式，空：表示取严，可录入各取各或者取严，表示1/2RT佣金计算方式是各取各或者取严。

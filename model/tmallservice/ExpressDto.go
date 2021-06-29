@@ -1,7 +1,7 @@
 package tmallservice
 
-// ExpressDto 
-type ExpressDto struct {
+// ExpressDTO 
+type ExpressDTO struct {
     // 取件员名称
     CourierName   string `json:"courier_name,omitempty" xml:"courier_name,omitempty"`
     // 取件员手机号码

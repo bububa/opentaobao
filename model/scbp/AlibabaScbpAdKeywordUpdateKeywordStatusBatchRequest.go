@@ -19,7 +19,7 @@ type AlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest struct {
     // 更新数据
     _keywordUpdateQuery   *KeywordUpdateQuery
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest对象
@@ -68,13 +68,13 @@ func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest) GetKeywordUpdateQue
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdKeywordUpdateKeywordStatusBatchRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

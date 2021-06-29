@@ -1,7 +1,7 @@
 package alidoc
 
-// RxDoctorTopDto 
-type RxDoctorTopDto struct {
+// RxDoctorTopDTO 
+type RxDoctorTopDTO struct {
     // 医生姓名
     DoctorName   string `json:"doctor_name,omitempty" xml:"doctor_name,omitempty"`
     // 医生部门

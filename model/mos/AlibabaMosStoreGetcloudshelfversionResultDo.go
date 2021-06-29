@@ -1,7 +1,7 @@
 package mos
 
-// AlibabaMosStoreGetcloudshelfversionResultDo 
-type AlibabaMosStoreGetcloudshelfversionResultDo struct {
+// AlibabaMosStoreGetcloudshelfversionResultDO 
+type AlibabaMosStoreGetcloudshelfversionResultDO struct {
     // data
     Data   int64 `json:"data,omitempty" xml:"data,omitempty"`
     // errCode

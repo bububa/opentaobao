@@ -25,7 +25,7 @@ type AlibabaServicecenterWorkcardCreateRequest struct {
     // 工单外部唯一键单号
     _outerId   string
     // 服务提供者信息
-    _serviceProvider   *ServiceProviderDto
+    _serviceProvider   *ServiceProviderDTO
 }
 
 // 初始化AlibabaServicecenterWorkcardCreateRequest对象
@@ -110,13 +110,13 @@ func (r AlibabaServicecenterWorkcardCreateRequest) GetOuterId() string {
 }
 // ServiceProvider Setter
 // 服务提供者信息
-func (r *AlibabaServicecenterWorkcardCreateRequest) SetServiceProvider(_serviceProvider *ServiceProviderDto) error {
+func (r *AlibabaServicecenterWorkcardCreateRequest) SetServiceProvider(_serviceProvider *ServiceProviderDTO) error {
     r._serviceProvider = _serviceProvider
     r.Set("service_provider", _serviceProvider)
     return nil
 }
 
 // ServiceProvider Getter
-func (r AlibabaServicecenterWorkcardCreateRequest) GetServiceProvider() *ServiceProviderDto {
+func (r AlibabaServicecenterWorkcardCreateRequest) GetServiceProvider() *ServiceProviderDTO {
     return r._serviceProvider
 }

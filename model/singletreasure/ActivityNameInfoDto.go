@@ -1,7 +1,7 @@
 package singletreasure
 
-// ActivityNameInfoDto 
-type ActivityNameInfoDto struct {
+// ActivityNameInfoDTO 
+type ActivityNameInfoDTO struct {
     // 类目
     Category   string `json:"category,omitempty" xml:"category,omitempty"`
     // 活动名称的列表

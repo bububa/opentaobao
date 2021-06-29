@@ -1,7 +1,7 @@
 package trade
 
-// SupplierOrderQueryDto 
-type SupplierOrderQueryDto struct {
+// SupplierOrderQueryDTO 
+type SupplierOrderQueryDTO struct {
     // 外部门店ID
     OuterStoreId   string `json:"outer_store_id,omitempty" xml:"outer_store_id,omitempty"`
     // 查询交易创建时间在2020-06-03的订单，只接受yyyy-MM-dd格式的字符串

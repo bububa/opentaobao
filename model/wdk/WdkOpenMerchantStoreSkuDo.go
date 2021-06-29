@@ -1,7 +1,7 @@
 package wdk
 
-// WdkOpenMerchantStoreSkuDo 
-type WdkOpenMerchantStoreSkuDo struct {
+// WdkOpenMerchantStoreSkuDO 
+type WdkOpenMerchantStoreSkuDO struct {
     // 商家编码
     MerchantCode   string `json:"merchant_code,omitempty" xml:"merchant_code,omitempty"`
     // 经营店ID

@@ -1,7 +1,7 @@
 package idleitem
 
-// RentAddressDto 
-type RentAddressDto struct {
+// RentAddressDTO 
+type RentAddressDTO struct {
     // 经度
     Lng   string `json:"lng,omitempty" xml:"lng,omitempty"`
     // 纬度

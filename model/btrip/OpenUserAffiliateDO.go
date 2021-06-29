@@ -1,7 +1,7 @@
 package btrip
 
-// OpenUserAffiliateDo 
-type OpenUserAffiliateDo struct {
+// OpenUserAffiliateDO 
+type OpenUserAffiliateDO struct {
     // 出行人ID
     UserId   string `json:"user_id,omitempty" xml:"user_id,omitempty"`
     // 出行人名称

@@ -1,9 +1,9 @@
 package tmallnr
 
-// NrtCrmSceneActivityDto 
-type NrtCrmSceneActivityDto struct {
+// NrtCrmSceneActivityDTO 
+type NrtCrmSceneActivityDTO struct {
     // 下挂模板DTO
-    NrtCrmBenefitList   []NrtCrmBenefitDto `json:"nrt_crm_benefit_list,omitempty" xml:"nrt_crm_benefit_list>nrt_crm_benefit_dto,omitempty"`
+    NrtCrmBenefitList   []NrtCrmBenefitDTO `json:"nrt_crm_benefit_list,omitempty" xml:"nrt_crm_benefit_list>nrt_crm_benefit_dto,omitempty"`
     // 有价礼包商品价格
     ReservePrice   int64 `json:"reserve_price,omitempty" xml:"reserve_price,omitempty"`
     // 有价礼包商品id

@@ -1,7 +1,7 @@
 package alilabs
 
-// TopDeviceReqDto 
-type TopDeviceReqDto struct {
+// TopDeviceReqDTO 
+type TopDeviceReqDTO struct {
     // 设备签名
     DeviceSignature   string `json:"device_signature,omitempty" xml:"device_signature,omitempty"`
     // 三方设备id

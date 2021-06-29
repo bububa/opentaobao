@@ -1,7 +1,7 @@
 package icbuseller
 
-// Dto 
-type Dto struct {
+// DTO 
+type DTO struct {
     // 订单类型
     OrderType   string `json:"order_type,omitempty" xml:"order_type,omitempty"`
     // 订单编号

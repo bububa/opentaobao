@@ -1,7 +1,7 @@
 package wdk
 
-// OrderBalanceBillDo 
-type OrderBalanceBillDo struct {
+// OrderBalanceBillDO 
+type OrderBalanceBillDO struct {
     // 订单原价
     ParentTotalPrice   string `json:"parent_total_price,omitempty" xml:"parent_total_price,omitempty"`
     // 订单付款时间

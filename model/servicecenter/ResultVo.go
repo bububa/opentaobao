@@ -11,7 +11,7 @@ type ResultVo struct {
     // 异常消息
     MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     // 真正返回对象
-    Object   *LeaseOrderInfoDto `json:"object,omitempty" xml:"object,omitempty"`
+    Object   *LeaseOrderInfoDTO `json:"object,omitempty" xml:"object,omitempty"`
     // 成功与否
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
 }

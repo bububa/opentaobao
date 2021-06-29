@@ -1,7 +1,7 @@
 package alihouse
 
-// BaseBusinessDto 
-type BaseBusinessDto struct {
+// BaseBusinessDTO 
+type BaseBusinessDTO struct {
     // 高的围栏
     Fencing   string `json:"fencing,omitempty" xml:"fencing,omitempty"`
     // 高德中心纬度坐标

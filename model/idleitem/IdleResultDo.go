@@ -1,7 +1,7 @@
 package idleitem
 
-// IdleResultDo 
-type IdleResultDo struct {
+// IdleResultDO 
+type IdleResultDO struct {
     // success
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // errorCode

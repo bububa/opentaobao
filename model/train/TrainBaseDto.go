@@ -1,7 +1,7 @@
 package train
 
-// TrainBaseDto 
-type TrainBaseDto struct {
+// TrainBaseDTO 
+type TrainBaseDTO struct {
     // 车次号
     TrainNumber   string `json:"train_number,omitempty" xml:"train_number,omitempty"`
     // 车次类型

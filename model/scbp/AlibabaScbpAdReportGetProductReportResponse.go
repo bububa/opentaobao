@@ -23,5 +23,5 @@ type AlibabaScbpAdReportGetProductReportResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回数据
-    Result   *ProductReportDto `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *ProductReportDTO `json:"result,omitempty" xml:"result,omitempty"`
 }

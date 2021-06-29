@@ -1,7 +1,7 @@
 package btrip
 
-// HotelDetailRateDto 
-type HotelDetailRateDto struct {
+// HotelDetailRateDTO 
+type HotelDetailRateDTO struct {
     // 早餐描述
     Breakfast   string `json:"breakfast,omitempty" xml:"breakfast,omitempty"`
     // 免费取消政策描述

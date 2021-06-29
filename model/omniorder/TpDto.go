@@ -1,7 +1,7 @@
 package omniorder
 
-// TpDto 
-type TpDto struct {
+// TpDTO 
+type TpDTO struct {
     // 公司编码
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 公司名称

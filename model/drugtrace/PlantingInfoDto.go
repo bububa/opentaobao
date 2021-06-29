@@ -1,7 +1,7 @@
 package drugtrace
 
-// PlantingInfoDto 
-type PlantingInfoDto struct {
+// PlantingInfoDTO 
+type PlantingInfoDTO struct {
     // 种植面积
     PlantingArea   string `json:"planting_area,omitempty" xml:"planting_area,omitempty"`
     // 种植时间yyyy-MM-dd

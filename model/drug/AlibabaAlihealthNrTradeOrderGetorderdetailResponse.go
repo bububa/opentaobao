@@ -43,7 +43,7 @@ type AlibabaAlihealthNrTradeOrderGetorderdetailResponse struct {
     // 处方药标示
     Rx   int64 `json:"rx,omitempty" xml:"rx,omitempty"`
     // 子订单
-    SubOrderList   []SubOrderDto `json:"sub_order_list,omitempty" xml:"sub_order_list>sub_order_dto,omitempty"`
+    SubOrderList   []SubOrderDTO `json:"sub_order_list,omitempty" xml:"sub_order_list>sub_order_dto,omitempty"`
     // 商家设置的运费
     Carriage   int64 `json:"carriage,omitempty" xml:"carriage,omitempty"`
     // 该店铺的老顾客
@@ -53,7 +53,7 @@ type AlibabaAlihealthNrTradeOrderGetorderdetailResponse struct {
     // 买家地址
     BuyerAddress   string `json:"buyer_address,omitempty" xml:"buyer_address,omitempty"`
     // 订单优惠列表
-    PromotionList   []OrderPromotionDto `json:"promotion_list,omitempty" xml:"promotion_list>order_promotion_dto,omitempty"`
+    PromotionList   []OrderPromotionDTO `json:"promotion_list,omitempty" xml:"promotion_list>order_promotion_dto,omitempty"`
     // 发票抬头
     InvoiceTitle   string `json:"invoice_title,omitempty" xml:"invoice_title,omitempty"`
     // 买家留言

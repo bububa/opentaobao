@@ -1,7 +1,7 @@
 package nrt
 
-// SkuDto 
-type SkuDto struct {
+// SkuDTO 
+type SkuDTO struct {
     // 条码
     Barcode   string `json:"barcode,omitempty" xml:"barcode,omitempty"`
     // 创建时间
@@ -11,7 +11,7 @@ type SkuDto struct {
     // 价格
     Price   string `json:"price,omitempty" xml:"price,omitempty"`
     // SKU属性
-    Properties   []CategoryPropDto `json:"properties,omitempty" xml:"properties>category_prop_dto,omitempty"`
+    Properties   []CategoryPropDTO `json:"properties,omitempty" xml:"properties>category_prop_dto,omitempty"`
     // 数量
     Quantity   int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // SKU ID

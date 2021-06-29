@@ -21,7 +21,7 @@ type AlibabaBaichuanAsoActivateRequest struct {
     // 1-android,2-ios
     _appOs   int64
     // 设备信息，ios为idfa ，android 为imei + imsi
-    _deviceInfo   *AsoDeviceInfoDo
+    _deviceInfo   *AsoDeviceInfoDO
 }
 
 // 初始化AlibabaBaichuanAsoActivateRequest对象
@@ -82,13 +82,13 @@ func (r AlibabaBaichuanAsoActivateRequest) GetAppOs() int64 {
 }
 // DeviceInfo Setter
 // 设备信息，ios为idfa ，android 为imei + imsi
-func (r *AlibabaBaichuanAsoActivateRequest) SetDeviceInfo(_deviceInfo *AsoDeviceInfoDo) error {
+func (r *AlibabaBaichuanAsoActivateRequest) SetDeviceInfo(_deviceInfo *AsoDeviceInfoDO) error {
     r._deviceInfo = _deviceInfo
     r.Set("device_info", _deviceInfo)
     return nil
 }
 
 // DeviceInfo Getter
-func (r AlibabaBaichuanAsoActivateRequest) GetDeviceInfo() *AsoDeviceInfoDo {
+func (r AlibabaBaichuanAsoActivateRequest) GetDeviceInfo() *AsoDeviceInfoDO {
     return r._deviceInfo
 }

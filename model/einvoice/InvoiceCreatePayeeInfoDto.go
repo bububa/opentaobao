@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceCreatePayeeInfoDto 
-type InvoiceCreatePayeeInfoDto struct {
+// InvoiceCreatePayeeInfoDTO 
+type InvoiceCreatePayeeInfoDTO struct {
     // 销方地址，销方电话加地址不超出100字符
     PayeeAddress   string `json:"payee_address,omitempty" xml:"payee_address,omitempty"`
     // 销方银行帐号

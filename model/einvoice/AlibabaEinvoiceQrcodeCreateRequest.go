@@ -15,7 +15,7 @@ alibaba.einvoice.qrcode.create
 type AlibabaEinvoiceQrcodeCreateRequest struct {
     model.Params
     // 发票商品明细
-    _invoiceItems   []BillItemDo
+    _invoiceItems   []BillItemDO
     // 收款方税务登记证号
     _payeeRegisterNo   string
     // 开票的订单号，同结算单订单号
@@ -58,14 +58,14 @@ func (r AlibabaEinvoiceQrcodeCreateRequest) GetApiParams() url.Values {
 }
 // InvoiceItems Setter
 // 发票商品明细
-func (r *AlibabaEinvoiceQrcodeCreateRequest) SetInvoiceItems(_invoiceItems []BillItemDo) error {
+func (r *AlibabaEinvoiceQrcodeCreateRequest) SetInvoiceItems(_invoiceItems []BillItemDO) error {
     r._invoiceItems = _invoiceItems
     r.Set("invoice_items", _invoiceItems)
     return nil
 }
 
 // InvoiceItems Getter
-func (r AlibabaEinvoiceQrcodeCreateRequest) GetInvoiceItems() []BillItemDo {
+func (r AlibabaEinvoiceQrcodeCreateRequest) GetInvoiceItems() []BillItemDO {
     return r._invoiceItems
 }
 // PayeeRegisterNo Setter

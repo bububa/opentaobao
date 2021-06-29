@@ -1,7 +1,7 @@
 package feedflow
 
-// AdzoneBindQueryDto 
-type AdzoneBindQueryDto struct {
+// AdzoneBindQueryDTO 
+type AdzoneBindQueryDTO struct {
     // 广告位id列表
     AdzoneIdList   []int64 `json:"adzone_id_list,omitempty" xml:"adzone_id_list>int64,omitempty"`
     // 单元id

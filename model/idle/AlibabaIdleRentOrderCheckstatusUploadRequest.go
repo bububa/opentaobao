@@ -17,7 +17,7 @@ type AlibabaIdleRentOrderCheckstatusUploadRequest struct {
     // 订单id
     _orderId   int64
     // 校验结果
-    _checkResult   *CheckResultDto
+    _checkResult   *CheckResultDTO
 }
 
 // 初始化AlibabaIdleRentOrderCheckstatusUploadRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaIdleRentOrderCheckstatusUploadRequest) GetOrderId() int64 {
 }
 // CheckResult Setter
 // 校验结果
-func (r *AlibabaIdleRentOrderCheckstatusUploadRequest) SetCheckResult(_checkResult *CheckResultDto) error {
+func (r *AlibabaIdleRentOrderCheckstatusUploadRequest) SetCheckResult(_checkResult *CheckResultDTO) error {
     r._checkResult = _checkResult
     r.Set("check_result", _checkResult)
     return nil
 }
 
 // CheckResult Getter
-func (r AlibabaIdleRentOrderCheckstatusUploadRequest) GetCheckResult() *CheckResultDto {
+func (r AlibabaIdleRentOrderCheckstatusUploadRequest) GetCheckResult() *CheckResultDTO {
     return r._checkResult
 }

@@ -17,7 +17,7 @@ type AlibabaCampusAclNewSaverolewithmenuRequest struct {
     // 系统入参
     _workbenchcontext   *WorkBenchContext
     // 系统自动生成
-    _sysRoleDTO   *SysRoleDto
+    _sysRoleDTO   *SysRoleDTO
     // 菜单id,权限id
     _treeNodeIds   []string
 }
@@ -56,14 +56,14 @@ func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetWorkbenchcontext() *WorkB
 }
 // SysRoleDTO Setter
 // 系统自动生成
-func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetSysRoleDTO(_sysRoleDTO *SysRoleDto) error {
+func (r *AlibabaCampusAclNewSaverolewithmenuRequest) SetSysRoleDTO(_sysRoleDTO *SysRoleDTO) error {
     r._sysRoleDTO = _sysRoleDTO
     r.Set("sys_role_d_t_o", _sysRoleDTO)
     return nil
 }
 
 // SysRoleDTO Getter
-func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetSysRoleDTO() *SysRoleDto {
+func (r AlibabaCampusAclNewSaverolewithmenuRequest) GetSysRoleDTO() *SysRoleDTO {
     return r._sysRoleDTO
 }
 // TreeNodeIds Setter

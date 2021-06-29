@@ -41,7 +41,7 @@ type OpenApiHotelOrderRs struct {
     // 价目详情列表
     PriceInfoList   []OpenPriceInfo `json:"price_info_list,omitempty" xml:"price_info_list>open_price_info,omitempty"`
     // 成本中心对象
-    CostCenter   *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
+    CostCenter   *OpenCostCenterDO `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
     // 入住顾客，多个用','分割
     Guest   string `json:"guest,omitempty" xml:"guest,omitempty"`
     // 订单类型描述
@@ -53,11 +53,11 @@ type OpenApiHotelOrderRs struct {
     // 订单状态
     OrderStatus   int64 `json:"order_status,omitempty" xml:"order_status,omitempty"`
     // 发票对象
-    Invoice   *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
+    Invoice   *OpenInvoiceDO `json:"invoice,omitempty" xml:"invoice,omitempty"`
     // 第三方行程id
     ThirdpartItineraryId   string `json:"thirdpart_itinerary_id,omitempty" xml:"thirdpart_itinerary_id,omitempty"`
     // 入住人列表
-    UserAffiliateList   []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
+    UserAffiliateList   []OpenUserAffiliateDO `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
     // 第三方申请单ID
     ThirdpartApplyId   string `json:"thirdpart_apply_id,omitempty" xml:"thirdpart_apply_id,omitempty"`
     // 申请单名称

@@ -1,9 +1,9 @@
 package alidoc
 
-// RxDrugTopDto 
-type RxDrugTopDto struct {
+// RxDrugTopDTO 
+type RxDrugTopDTO struct {
     // 药品用法用量
-    DrugUsageList   []RxDrugUsageTopDto `json:"drug_usage_list,omitempty" xml:"drug_usage_list>rx_drug_usage_top_dto,omitempty"`
+    DrugUsageList   []RxDrugUsageTopDTO `json:"drug_usage_list,omitempty" xml:"drug_usage_list>rx_drug_usage_top_dto,omitempty"`
     // 剂型
     DoseFrom   string `json:"dose_from,omitempty" xml:"dose_from,omitempty"`
     // 数量

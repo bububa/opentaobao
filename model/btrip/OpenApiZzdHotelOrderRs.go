@@ -69,9 +69,9 @@ type OpenApiZzdHotelOrderRs struct {
     // 商旅行程单号
     ItineraryNo   string `json:"itinerary_no,omitempty" xml:"itinerary_no,omitempty"`
     // 成本中心信息
-    CostCenterList   []CostCenterDo `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
+    CostCenterList   []CostCenterDO `json:"cost_center_list,omitempty" xml:"cost_center_list>cost_center_do,omitempty"`
     // 用户信息
-    ClientInfoDos   []ClientInfoDo `json:"client_info_dos,omitempty" xml:"client_info_dos>client_info_do,omitempty"`
+    ClientInfoDos   []ClientInfoDO `json:"client_info_dos,omitempty" xml:"client_info_dos>client_info_do,omitempty"`
     // 订单类型：1：全额支付、5：到店支付、6：信用住',
     Type   int64 `json:"type,omitempty" xml:"type,omitempty"`
     // 入住时间
@@ -79,7 +79,7 @@ type OpenApiZzdHotelOrderRs struct {
     // 离店时间
     CheckOutDate   string `json:"check_out_date,omitempty" xml:"check_out_date,omitempty"`
     // 酒店信息
-    HotelInfoDo   *HotelInfoDo `json:"hotel_info_do,omitempty" xml:"hotel_info_do,omitempty"`
+    HotelInfoDo   *HotelInfoDO `json:"hotel_info_do,omitempty" xml:"hotel_info_do,omitempty"`
     // 房间信息
-    RoomInfoDo   *RoomInfoDo `json:"room_info_do,omitempty" xml:"room_info_do,omitempty"`
+    RoomInfoDo   *RoomInfoDO `json:"room_info_do,omitempty" xml:"room_info_do,omitempty"`
 }

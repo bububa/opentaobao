@@ -1,7 +1,7 @@
 package scbp
 
-// BidStrategyDto 
-type BidStrategyDto struct {
+// BidStrategyDTO 
+type BidStrategyDTO struct {
     // 主键
     Id   string `json:"id,omitempty" xml:"id,omitempty"`
     // 创建时间

@@ -1,7 +1,7 @@
 package tvupadmin
 
-// AppDto 
-type AppDto struct {
+// AppDTO 
+type AppDTO struct {
     // 应用ID
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
     // name

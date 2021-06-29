@@ -1,7 +1,7 @@
 package feedflow
 
-// ItemQueryDto 
-type ItemQueryDto struct {
+// ItemQueryDTO 
+type ItemQueryDTO struct {
     // 计划id
     CampaignId   int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
     // 商品标题

@@ -15,7 +15,7 @@ alibaba.scbp.ad.keyword.rank.price.batchget
 type AlibabaScbpAdKeywordRankPriceBatchgetRequest struct {
     model.Params
     // 上下文
-    _context   *ContextDto
+    _context   *ContextDTO
     // keyword_request
     _keywordRequest   *TopKeywordListDTO
 }
@@ -42,14 +42,14 @@ func (r AlibabaScbpAdKeywordRankPriceBatchgetRequest) GetApiParams() url.Values 
 }
 // Context Setter
 // 上下文
-func (r *AlibabaScbpAdKeywordRankPriceBatchgetRequest) SetContext(_context *ContextDto) error {
+func (r *AlibabaScbpAdKeywordRankPriceBatchgetRequest) SetContext(_context *ContextDTO) error {
     r._context = _context
     r.Set("context", _context)
     return nil
 }
 
 // Context Getter
-func (r AlibabaScbpAdKeywordRankPriceBatchgetRequest) GetContext() *ContextDto {
+func (r AlibabaScbpAdKeywordRankPriceBatchgetRequest) GetContext() *ContextDTO {
     return r._context
 }
 // KeywordRequest Setter

@@ -1,7 +1,7 @@
 package wdk
 
-// ErpArrivalNoticeDto 
-type ErpArrivalNoticeDto struct {
+// ErpArrivalNoticeDTO 
+type ErpArrivalNoticeDTO struct {
     // 选填(单据子类型为送货单时为必填) 原始单据号，单据类型为采配单，子类型为送货单时，需要提供原始配货申请单据号
     OriginalBillCode   string `json:"original_bill_code,omitempty" xml:"original_bill_code,omitempty"`
     // 供应商code，可选值：当是供应商供货时，提供供应商编码；当是大仓供货时，提供大仓编码；当是调拨入库时，提供对方门店编码
@@ -19,7 +19,7 @@ type ErpArrivalNoticeDto struct {
     // 联系方式，门店联系电话，可以是移动电话
     ContactInfo   string `json:"contact_info,omitempty" xml:"contact_info,omitempty"`
     // 1
-    ItemList   []ErpArrivalNoticeDetailDto `json:"item_list,omitempty" xml:"item_list>erp_arrival_notice_detail_dto,omitempty"`
+    ItemList   []ErpArrivalNoticeDetailDTO `json:"item_list,omitempty" xml:"item_list>erp_arrival_notice_detail_dto,omitempty"`
     // 入库时间，商家系统中记录的本批次商品的实际入库时间
     ArrivalDate   string `json:"arrival_date,omitempty" xml:"arrival_date,omitempty"`
     // 如部分商品不存在，是否允许其他商品入库(1：允许，其他：不允许)

@@ -67,7 +67,7 @@ type Product struct {
     // JV佣金率
     RelevantMarketCommissionRate   string `json:"relevant_market_commission_rate,omitempty" xml:"relevant_market_commission_rate,omitempty"`
     // code信息
-    PromoCodeInfo   *PromoCodeDto `json:"promo_code_info,omitempty" xml:"promo_code_info,omitempty"`
+    PromoCodeInfo   *PromoCodeDTO `json:"promo_code_info,omitempty" xml:"promo_code_info,omitempty"`
     // 可达国家与到达时间
     ShipToDays   string `json:"ship_to_days,omitempty" xml:"ship_to_days,omitempty"`
     // 佣金率

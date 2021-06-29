@@ -25,7 +25,7 @@ type YunosTvscreenLauncherGetResponse struct {
     // headers
     Headers   string `json:"headers,omitempty" xml:"headers,omitempty"`
     // model
-    Model   *LauncherDo `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *LauncherDO `json:"model,omitempty" xml:"model,omitempty"`
     // 状态码
     HttpStatusCode   int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
     // 业务扩展

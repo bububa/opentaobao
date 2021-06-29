@@ -1,13 +1,13 @@
 package util
 
-// AlibabaMosFalconPosCounterQueryResultDo 
-type AlibabaMosFalconPosCounterQueryResultDo struct {
+// AlibabaMosFalconPosCounterQueryResultDO 
+type AlibabaMosFalconPosCounterQueryResultDO struct {
     // traceId
     TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
     // total
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 是否成功
-    Data   *PosInfoDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *PosInfoDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 调用是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

@@ -1,7 +1,7 @@
 package moscm
 
-// AlibabaMosGoodsAdjustResultDo 
-type AlibabaMosGoodsAdjustResultDo struct {
+// AlibabaMosGoodsAdjustResultDO 
+type AlibabaMosGoodsAdjustResultDO struct {
     // 返回生成的单据号
     Data   string `json:"data,omitempty" xml:"data,omitempty"`
 }

@@ -1,7 +1,7 @@
 package mos
 
-// PosSaleItemDto 
-type PosSaleItemDto struct {
+// PosSaleItemDTO 
+type PosSaleItemDTO struct {
     // 门店号
     MallNo   string `json:"mall_no,omitempty" xml:"mall_no,omitempty"`
     // 专柜号

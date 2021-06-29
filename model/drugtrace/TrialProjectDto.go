@@ -1,7 +1,7 @@
 package drugtrace
 
-// TrialProjectDto 
-type TrialProjectDto struct {
+// TrialProjectDTO 
+type TrialProjectDTO struct {
     // 项目名称
     TrialProjectName   string `json:"trial_project_name,omitempty" xml:"trial_project_name,omitempty"`
     // 项目编号

@@ -1,21 +1,21 @@
 package maitix
 
-// ProjectInfoDto 
-type ProjectInfoDto struct {
+// ProjectInfoDTO 
+type ProjectInfoDTO struct {
     // 演出城市
-    City   *IdNameDto `json:"city,omitempty" xml:"city,omitempty"`
+    City   *IdNameDTO `json:"city,omitempty" xml:"city,omitempty"`
     // 项目大类编码-取项目详情的值-废弃
     ClassifyCode   string `json:"classify_code,omitempty" xml:"classify_code,omitempty"`
     // 项目大类名称-取项目详情的值-废弃
     ClassifyName   string `json:"classify_name,omitempty" xml:"classify_name,omitempty"`
     // 国家
-    Country   *IdNameDto `json:"country,omitempty" xml:"country,omitempty"`
+    Country   *IdNameDTO `json:"country,omitempty" xml:"country,omitempty"`
     // 项目介绍
     Introduce   string `json:"introduce,omitempty" xml:"introduce,omitempty"`
     // 是否有座： 0=无座 1=有座
     IsHasSeat   int64 `json:"is_has_seat,omitempty" xml:"is_has_seat,omitempty"`
     // 场次
-    PerformInfoList   []PerformInfoDto `json:"perform_info_list,omitempty" xml:"perform_info_list>perform_info_dto,omitempty"`
+    PerformInfoList   []PerformInfoDTO `json:"perform_info_list,omitempty" xml:"perform_info_list>perform_info_dto,omitempty"`
     // 项目海报图片地址-没用。取项目详情接口的内容
     PosterUrl   string `json:"poster_url,omitempty" xml:"poster_url,omitempty"`
     // 项目ID
@@ -27,7 +27,7 @@ type ProjectInfoDto struct {
     // 项目类型 0:普通项目 1:预售项目 2:先付先抢-先付项目 3:先付先抢-先抢项目 4:搭售项目 5:超级票-暂时没用
     ProjectType   int64 `json:"project_type,omitempty" xml:"project_type,omitempty"`
     // 省
-    Province   *IdNameDto `json:"province,omitempty" xml:"province,omitempty"`
+    Province   *IdNameDTO `json:"province,omitempty" xml:"province,omitempty"`
     // 备注-没用
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 项目子类编码-取项目详情的值-废弃

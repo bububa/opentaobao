@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaAscpIndustryLogisticsSyncResultDto 
-type AlibabaAscpIndustryLogisticsSyncResultDto struct {
+// AlibabaAscpIndustryLogisticsSyncResultDTO 
+type AlibabaAscpIndustryLogisticsSyncResultDTO struct {
     // 错误描述
     Msg   string `json:"msg,omitempty" xml:"msg,omitempty"`
     // 错误编码

@@ -20,7 +20,7 @@ type TmallDeviceTradePrecreateRequest struct {
     // 交易类型。1，售卖。2，派样
     _type   int64
     // 商品列表
-    _itemList   []TradeItemDo
+    _itemList   []TradeItemDO
     // 设备业务编码
     _deviceCode   string
     // 外部订单ID，用户下保证唯一。最大长度22
@@ -67,14 +67,14 @@ func (r TmallDeviceTradePrecreateRequest) GetType() int64 {
 }
 // ItemList Setter
 // 商品列表
-func (r *TmallDeviceTradePrecreateRequest) SetItemList(_itemList []TradeItemDo) error {
+func (r *TmallDeviceTradePrecreateRequest) SetItemList(_itemList []TradeItemDO) error {
     r._itemList = _itemList
     r.Set("item_list", _itemList)
     return nil
 }
 
 // ItemList Getter
-func (r TmallDeviceTradePrecreateRequest) GetItemList() []TradeItemDo {
+func (r TmallDeviceTradePrecreateRequest) GetItemList() []TradeItemDO {
     return r._itemList
 }
 // DeviceCode Setter

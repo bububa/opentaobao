@@ -1,7 +1,7 @@
 package wdk
 
-// OrderSyncDto 
-type OrderSyncDto struct {
+// OrderSyncDTO 
+type OrderSyncDTO struct {
     // 渠道店id
     ShopId   string `json:"shop_id,omitempty" xml:"shop_id,omitempty"`
     // 外部订单号
@@ -49,7 +49,7 @@ type OrderSyncDto struct {
     // 订单渠道来源
     OrderFrom   int64 `json:"order_from,omitempty" xml:"order_from,omitempty"`
     // subOrders
-    SubOrders   []SubOrderSyncDto `json:"sub_orders,omitempty" xml:"sub_orders>sub_order_sync_dto,omitempty"`
+    SubOrders   []SubOrderSyncDTO `json:"sub_orders,omitempty" xml:"sub_orders>sub_order_sync_dto,omitempty"`
     // 下单终端: APP,POS
     OrderClient   string `json:"order_client,omitempty" xml:"order_client,omitempty"`
     // payChannels

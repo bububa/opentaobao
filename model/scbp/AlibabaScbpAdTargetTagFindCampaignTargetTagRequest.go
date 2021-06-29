@@ -17,9 +17,9 @@ type AlibabaScbpAdTargetTagFindCampaignTargetTagRequest struct {
     // 计划id
     _campaignId   int64
     // 请求参数
-    _targetTagOperation   *TargetTagOperationDto
+    _targetTagOperation   *TargetTagOperationDTO
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdTargetTagFindCampaignTargetTagRequest对象
@@ -56,25 +56,25 @@ func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetCampaignId() int6
 }
 // TargetTagOperation Setter
 // 请求参数
-func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetTargetTagOperation(_targetTagOperation *TargetTagOperationDto) error {
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetTargetTagOperation(_targetTagOperation *TargetTagOperationDTO) error {
     r._targetTagOperation = _targetTagOperation
     r.Set("target_tag_operation", _targetTagOperation)
     return nil
 }
 
 // TargetTagOperation Getter
-func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetTargetTagOperation() *TargetTagOperationDto {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetTargetTagOperation() *TargetTagOperationDTO {
     return r._targetTagOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdTargetTagFindCampaignTargetTagRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

@@ -1,7 +1,7 @@
 package bus
 
-// BusNumberDto 
-type BusNumberDto struct {
+// BusNumberDTO 
+type BusNumberDTO struct {
     // 始发城市ID
     AgentFromCityId   string `json:"agent_from_city_id,omitempty" xml:"agent_from_city_id,omitempty"`
     // 始发车站ID

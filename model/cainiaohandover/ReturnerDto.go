@@ -1,9 +1,9 @@
 package cainiaohandover
 
-// ReturnerDto 
-type ReturnerDto struct {
+// ReturnerDTO 
+type ReturnerDTO struct {
     // 退件地址
-    Address   *AddressDto `json:"address,omitempty" xml:"address,omitempty"`
+    Address   *AddressDTO `json:"address,omitempty" xml:"address,omitempty"`
     // 邮箱
     Email   string `json:"email,omitempty" xml:"email,omitempty"`
     // 移动电话, 校验格式：^1(3|4|5|6|7|8|9)\d{9}$

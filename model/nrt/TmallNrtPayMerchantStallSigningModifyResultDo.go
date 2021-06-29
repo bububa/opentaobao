@@ -1,11 +1,11 @@
 package nrt
 
-// TmallNrtPayMerchantStallSigningModifyResultDo 
-type TmallNrtPayMerchantStallSigningModifyResultDo struct {
+// TmallNrtPayMerchantStallSigningModifyResultDO 
+type TmallNrtPayMerchantStallSigningModifyResultDO struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 系统自动生成
-    Data   *StallSigningRespDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *StallSigningRespDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 系统自动生成
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 系统自动生成

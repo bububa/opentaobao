@@ -1,7 +1,7 @@
 package lstpos
 
-// InventoryDto 
-type InventoryDto struct {
+// InventoryDTO 
+type InventoryDTO struct {
     // 实时库存(库存实时结果(出参))
     Quantity   string `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // ISV商品Id

@@ -1,7 +1,7 @@
 package axintrade
 
-// AxinPayRegisterCreateDto 
-type AxinPayRegisterCreateDto struct {
+// AxinPayRegisterCreateDTO 
+type AxinPayRegisterCreateDTO struct {
     // 法人身份证
     LegalCertType   string `json:"legal_cert_type,omitempty" xml:"legal_cert_type,omitempty"`
     // 站点信息

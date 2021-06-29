@@ -1,7 +1,7 @@
 package aesolution
 
-// GlobalAeopTpOrderProductInfoDto 
-type GlobalAeopTpOrderProductInfoDto struct {
+// GlobalAeopTpOrderProductInfoDTO 
+type GlobalAeopTpOrderProductInfoDTO struct {
     // product quantity
     Quantity   int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // product unit price

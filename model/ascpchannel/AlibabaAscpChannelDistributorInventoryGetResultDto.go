@@ -1,7 +1,7 @@
 package ascpchannel
 
-// AlibabaAscpChannelDistributorInventoryGetResultDto 
-type AlibabaAscpChannelDistributorInventoryGetResultDto struct {
+// AlibabaAscpChannelDistributorInventoryGetResultDTO 
+type AlibabaAscpChannelDistributorInventoryGetResultDTO struct {
     // 调用链路ID
     TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
     // 执行结果
@@ -11,5 +11,5 @@ type AlibabaAscpChannelDistributorInventoryGetResultDto struct {
     // 错误码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 结果
-    Datas   []ChannelInventoryDto `json:"datas,omitempty" xml:"datas>channel_inventory_dto,omitempty"`
+    Datas   []ChannelInventoryDTO `json:"datas,omitempty" xml:"datas>channel_inventory_dto,omitempty"`
 }

@@ -23,5 +23,5 @@ type TaobaoWttTradeServiceGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回实例
-    Modules   *WtverticalDto `json:"modules,omitempty" xml:"modules,omitempty"`
+    Modules   *WtverticalDTO `json:"modules,omitempty" xml:"modules,omitempty"`
 }

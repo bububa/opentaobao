@@ -1,7 +1,7 @@
 package user
 
-// NrtRecordDto 
-type NrtRecordDto struct {
+// NrtRecordDTO 
+type NrtRecordDTO struct {
     // 业务类型
     BizCode   string `json:"biz_code,omitempty" xml:"biz_code,omitempty"`
     // 省编码

@@ -1,7 +1,7 @@
 package iot
 
-// TopDeviceStatusInfoDto 
-type TopDeviceStatusInfoDto struct {
+// TopDeviceStatusInfoDTO 
+type TopDeviceStatusInfoDTO struct {
     // 设备id
     DeviceId   string `json:"device_id,omitempty" xml:"device_id,omitempty"`
     // 设备联网的ip地址

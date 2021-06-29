@@ -1,7 +1,7 @@
 package fans
 
-// CreateCashPoolParamDo 
-type CreateCashPoolParamDo struct {
+// CreateCashPoolParamDO 
+type CreateCashPoolParamDO struct {
     // 红包使用开始时间
     UseEndTime   string `json:"use_end_time,omitempty" xml:"use_end_time,omitempty"`
     // 红包使用结束时间

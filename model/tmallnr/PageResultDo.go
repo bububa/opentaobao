@@ -1,7 +1,7 @@
 package tmallnr
 
-// PageResultDo 
-type PageResultDo struct {
+// PageResultDO 
+type PageResultDO struct {
     // 数据总数目
     TotalNum   int64 `json:"total_num,omitempty" xml:"total_num,omitempty"`
     // 错误码
@@ -9,7 +9,7 @@ type PageResultDo struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 门店集合
-    DataList   []NrtStoreDto `json:"data_list,omitempty" xml:"data_list>nrt_store_dto,omitempty"`
+    DataList   []NrtStoreDTO `json:"data_list,omitempty" xml:"data_list>nrt_store_dto,omitempty"`
     // 错误信息
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 每页记录数

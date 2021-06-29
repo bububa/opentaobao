@@ -1,7 +1,7 @@
 package tmallgeniescp
 
-// MonthFourPrParamDto 
-type MonthFourPrParamDto struct {
+// MonthFourPrParamDTO 
+type MonthFourPrParamDTO struct {
     // 关键值日期
     KeyFigureDate   string `json:"key_figure_date,omitempty" xml:"key_figure_date,omitempty"`
     // PR数量

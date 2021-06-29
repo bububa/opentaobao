@@ -1,7 +1,7 @@
 package drugtrace
 
-// ProcessInfoDto 
-type ProcessInfoDto struct {
+// ProcessInfoDTO 
+type ProcessInfoDTO struct {
     // 采收日期yyyy-MM-dd
     HarvestDate   string `json:"harvest_date,omitempty" xml:"harvest_date,omitempty"`
     // 采收部位

@@ -1,7 +1,7 @@
 package iot
 
-// RecipeIngredientDto 
-type RecipeIngredientDto struct {
+// RecipeIngredientDTO 
+type RecipeIngredientDTO struct {
     // 参数名
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // 重量及单位

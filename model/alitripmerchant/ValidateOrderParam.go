@@ -27,5 +27,5 @@ type ValidateOrderParam struct {
     // 内部酒店id
     Hid   int64 `json:"hid,omitempty" xml:"hid,omitempty"`
     // 房间类型
-    GuestByRoomDtos   []GuestByRoomDto `json:"guest_by_room_dtos,omitempty" xml:"guest_by_room_dtos>guest_by_room_dto,omitempty"`
+    GuestByRoomDtos   []GuestByRoomDTO `json:"guest_by_room_dtos,omitempty" xml:"guest_by_room_dtos>guest_by_room_dto,omitempty"`
 }

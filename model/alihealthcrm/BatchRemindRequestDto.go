@@ -1,7 +1,7 @@
 package alihealthcrm
 
-// BatchRemindRequestDto 
-type BatchRemindRequestDto struct {
+// BatchRemindRequestDTO 
+type BatchRemindRequestDTO struct {
     // 提醒宝宝ID
     BabyId   int64 `json:"baby_id,omitempty" xml:"baby_id,omitempty"`
     // 模板参数，可选,|分割

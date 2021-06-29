@@ -15,7 +15,7 @@ cainiao.global.handover.savedraft
 type CainiaoGlobalHandoverSavedraftRequest struct {
     model.Params
     // 用户信息
-    _userInfo   *UserInfoDto
+    _userInfo   *UserInfoDTO
     // 备注
     _remark   string
     // 大包重量
@@ -23,9 +23,9 @@ type CainiaoGlobalHandoverSavedraftRequest struct {
     // 重量单位，克:g, 千克:kg，默认g
     _weightUnit   string
     // 揽收信息
-    _pickupInfo   *PickupDto
+    _pickupInfo   *PickupDTO
     // 退件信息
-    _returnInfo   *ReturnerDto
+    _returnInfo   *ReturnerDTO
     // 客户端名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
     _client   string
     // 需要组装大包的小包编码集合，最多限制200个小包
@@ -56,14 +56,14 @@ func (r CainiaoGlobalHandoverSavedraftRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 用户信息
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetUserInfo(_userInfo *UserInfoDTO) error {
     r._userInfo = _userInfo
     r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
-func (r CainiaoGlobalHandoverSavedraftRequest) GetUserInfo() *UserInfoDto {
+func (r CainiaoGlobalHandoverSavedraftRequest) GetUserInfo() *UserInfoDTO {
     return r._userInfo
 }
 // Remark Setter
@@ -104,26 +104,26 @@ func (r CainiaoGlobalHandoverSavedraftRequest) GetWeightUnit() string {
 }
 // PickupInfo Setter
 // 揽收信息
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetPickupInfo(_pickupInfo *PickupDto) error {
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetPickupInfo(_pickupInfo *PickupDTO) error {
     r._pickupInfo = _pickupInfo
     r.Set("pickup_info", _pickupInfo)
     return nil
 }
 
 // PickupInfo Getter
-func (r CainiaoGlobalHandoverSavedraftRequest) GetPickupInfo() *PickupDto {
+func (r CainiaoGlobalHandoverSavedraftRequest) GetPickupInfo() *PickupDTO {
     return r._pickupInfo
 }
 // ReturnInfo Setter
 // 退件信息
-func (r *CainiaoGlobalHandoverSavedraftRequest) SetReturnInfo(_returnInfo *ReturnerDto) error {
+func (r *CainiaoGlobalHandoverSavedraftRequest) SetReturnInfo(_returnInfo *ReturnerDTO) error {
     r._returnInfo = _returnInfo
     r.Set("return_info", _returnInfo)
     return nil
 }
 
 // ReturnInfo Getter
-func (r CainiaoGlobalHandoverSavedraftRequest) GetReturnInfo() *ReturnerDto {
+func (r CainiaoGlobalHandoverSavedraftRequest) GetReturnInfo() *ReturnerDTO {
     return r._returnInfo
 }
 // Client Setter

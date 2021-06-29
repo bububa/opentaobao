@@ -1,7 +1,7 @@
 package homeai
 
-// BoundingBoxDto 
-type BoundingBoxDto struct {
+// BoundingBoxDTO 
+type BoundingBoxDTO struct {
     // x
     XLen   string `json:"x_len,omitempty" xml:"x_len,omitempty"`
     // y

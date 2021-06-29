@@ -3,7 +3,7 @@ package wdk
 // AlibabaWdkMemberQrcodeIdentifyMtopResult 
 type AlibabaWdkMemberQrcodeIdentifyMtopResult struct {
     // model
-    Model   *MemberInfoDto `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *MemberInfoDTO `json:"model,omitempty" xml:"model,omitempty"`
     // msgCode
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // msgInfo

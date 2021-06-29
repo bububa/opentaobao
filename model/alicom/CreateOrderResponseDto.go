@@ -1,7 +1,7 @@
 package alicom
 
-// CreateOrderResponseDto 
-type CreateOrderResponseDto struct {
+// CreateOrderResponseDTO 
+type CreateOrderResponseDTO struct {
     // 天猫订单号
     TmallOrderId   string `json:"tmall_order_id,omitempty" xml:"tmall_order_id,omitempty"`
     // 交易请求流水号

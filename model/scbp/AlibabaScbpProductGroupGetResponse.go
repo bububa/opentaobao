@@ -23,5 +23,5 @@ type AlibabaScbpProductGroupGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 下一层分组列表
-    RoductGroupList   []TopProductGroupDto `json:"roduct_group_list,omitempty" xml:"roduct_group_list>top_product_group_dto,omitempty"`
+    RoductGroupList   []TopProductGroupDTO `json:"roduct_group_list,omitempty" xml:"roduct_group_list>top_product_group_dto,omitempty"`
 }

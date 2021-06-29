@@ -1,7 +1,7 @@
 package promotion
 
-// ShowBenefitDto 
-type ShowBenefitDto struct {
+// ShowBenefitDTO 
+type ShowBenefitDTO struct {
     // 权益code
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 权益类型
@@ -33,7 +33,7 @@ type ShowBenefitDto struct {
     // 是否已领
     HadWin   bool `json:"had_win,omitempty" xml:"had_win,omitempty"`
     // 权益规则列表
-    ShowRules   []ShowRuleDto `json:"show_rules,omitempty" xml:"show_rules>show_rule_dto,omitempty"`
+    ShowRules   []ShowRuleDTO `json:"show_rules,omitempty" xml:"show_rules>show_rule_dto,omitempty"`
     // 面额单位
     AmountUnit   string `json:"amount_unit,omitempty" xml:"amount_unit,omitempty"`
     // 是否有库存

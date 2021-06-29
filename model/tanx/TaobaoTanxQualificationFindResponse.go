@@ -25,7 +25,7 @@ type TaobaoTanxQualificationFindResponse struct {
     // 是否成功
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
     // 返回的资质内容dto
-    QualificationList   []QualificationDto `json:"qualification_list,omitempty" xml:"qualification_list>qualification_dto,omitempty"`
+    QualificationList   []QualificationDTO `json:"qualification_list,omitempty" xml:"qualification_list>qualification_dto,omitempty"`
     // 查询返回总条数
     Count   string `json:"count,omitempty" xml:"count,omitempty"`
 }

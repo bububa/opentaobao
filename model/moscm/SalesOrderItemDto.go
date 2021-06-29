@@ -1,7 +1,7 @@
 package moscm
 
-// SalesOrderItemDto 
-type SalesOrderItemDto struct {
+// SalesOrderItemDTO 
+type SalesOrderItemDTO struct {
     // 外部商品Id
     OutId   string `json:"out_id,omitempty" xml:"out_id,omitempty"`
     // 商品Id

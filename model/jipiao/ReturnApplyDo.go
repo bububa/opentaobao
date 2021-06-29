@@ -1,7 +1,7 @@
 package jipiao
 
-// ReturnApplyDo 
-type ReturnApplyDo struct {
+// ReturnApplyDO 
+type ReturnApplyDO struct {
     // 到达时间
     DepTime   string `json:"dep_time,omitempty" xml:"dep_time,omitempty"`
     // 退款金额（单位：元）

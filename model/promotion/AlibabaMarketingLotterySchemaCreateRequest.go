@@ -15,7 +15,7 @@ alibaba.marketing.lottery.schema.create
 type AlibabaMarketingLotterySchemaCreateRequest struct {
     model.Params
     // 创建抽奖方案请求对象
-    _lotterySchemaCreate   *LotterySchemaCreateDto
+    _lotterySchemaCreate   *LotterySchemaCreateDTO
 }
 
 // 初始化AlibabaMarketingLotterySchemaCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotterySchemaCreateRequest) GetApiParams() url.Values {
 }
 // LotterySchemaCreate Setter
 // 创建抽奖方案请求对象
-func (r *AlibabaMarketingLotterySchemaCreateRequest) SetLotterySchemaCreate(_lotterySchemaCreate *LotterySchemaCreateDto) error {
+func (r *AlibabaMarketingLotterySchemaCreateRequest) SetLotterySchemaCreate(_lotterySchemaCreate *LotterySchemaCreateDTO) error {
     r._lotterySchemaCreate = _lotterySchemaCreate
     r.Set("lottery_schema_create", _lotterySchemaCreate)
     return nil
 }
 
 // LotterySchemaCreate Getter
-func (r AlibabaMarketingLotterySchemaCreateRequest) GetLotterySchemaCreate() *LotterySchemaCreateDto {
+func (r AlibabaMarketingLotterySchemaCreateRequest) GetLotterySchemaCreate() *LotterySchemaCreateDTO {
     return r._lotterySchemaCreate
 }

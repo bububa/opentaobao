@@ -1,7 +1,7 @@
 package xiamicontent
 
-// AlbumDto 
-type AlbumDto struct {
+// AlbumDTO 
+type AlbumDTO struct {
     // 专辑封面
     AlbumLogo   string `json:"album_logo,omitempty" xml:"album_logo,omitempty"`
     // 专辑名

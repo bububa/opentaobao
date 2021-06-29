@@ -15,7 +15,7 @@ alibaba.wdk.sku.category.update
 type AlibabaWdkSkuCategoryUpdateRequest struct {
     model.Params
     // 更新请求模型
-    _param   *CategoryDo
+    _param   *CategoryDO
 }
 
 // 初始化AlibabaWdkSkuCategoryUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaWdkSkuCategoryUpdateRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 更新请求模型
-func (r *AlibabaWdkSkuCategoryUpdateRequest) SetParam(_param *CategoryDo) error {
+func (r *AlibabaWdkSkuCategoryUpdateRequest) SetParam(_param *CategoryDO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlibabaWdkSkuCategoryUpdateRequest) GetParam() *CategoryDo {
+func (r AlibabaWdkSkuCategoryUpdateRequest) GetParam() *CategoryDO {
     return r._param
 }

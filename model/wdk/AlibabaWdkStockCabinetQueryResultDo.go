@@ -1,7 +1,7 @@
 package wdk
 
-// AlibabaWdkStockCabinetQueryResultDo 
-type AlibabaWdkStockCabinetQueryResultDo struct {
+// AlibabaWdkStockCabinetQueryResultDO 
+type AlibabaWdkStockCabinetQueryResultDO struct {
     // 错误信息详细描述
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 错误code

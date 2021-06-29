@@ -15,7 +15,7 @@ alibaba.mj.oc.pay
 type AlibabaMjOcPayRequest struct {
     model.Params
     // 订单数据
-    _posOrder   *PosOrderDto
+    _posOrder   *PosOrderDTO
 }
 
 // 初始化AlibabaMjOcPayRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjOcPayRequest) GetApiParams() url.Values {
 }
 // PosOrder Setter
 // 订单数据
-func (r *AlibabaMjOcPayRequest) SetPosOrder(_posOrder *PosOrderDto) error {
+func (r *AlibabaMjOcPayRequest) SetPosOrder(_posOrder *PosOrderDTO) error {
     r._posOrder = _posOrder
     r.Set("pos_order", _posOrder)
     return nil
 }
 
 // PosOrder Getter
-func (r AlibabaMjOcPayRequest) GetPosOrder() *PosOrderDto {
+func (r AlibabaMjOcPayRequest) GetPosOrder() *PosOrderDTO {
     return r._posOrder
 }

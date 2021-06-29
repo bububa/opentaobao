@@ -1,7 +1,7 @@
 package idleisv
 
-// IdleItemApiInspectedDo 
-type IdleItemApiInspectedDo struct {
+// IdleItemApiInspectedDO 
+type IdleItemApiInspectedDO struct {
     // 验货报告url链接(长度<=300)
     InspectReport   string `json:"inspect_report,omitempty" xml:"inspect_report,omitempty"`
     // 已验货入仓时间，时间戳，单位秒

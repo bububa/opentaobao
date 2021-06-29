@@ -1,7 +1,7 @@
 package moscm
 
-// CountingItemDto 
-type CountingItemDto struct {
+// CountingItemDTO 
+type CountingItemDTO struct {
     // 外部商品编码
     OutId   string `json:"out_id,omitempty" xml:"out_id,omitempty"`
     // 商品名称

@@ -1,7 +1,7 @@
 package fenxiao
 
-// ProductSkuDo 
-type ProductSkuDo struct {
+// ProductSkuDO 
+type ProductSkuDO struct {
     // 关联的前端宝贝skuid
     AuctionSkuId   int64 `json:"auction_sku_id,omitempty" xml:"auction_sku_id,omitempty"`
     // sku的销售属性组合字符串。格式:pid:vid;pid:vid,如:1627207:3232483;1630696:3284570,表示:机身颜色:军绿色;手机套餐:一电一充。

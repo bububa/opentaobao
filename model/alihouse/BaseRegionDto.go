@@ -1,7 +1,7 @@
 package alihouse
 
-// BaseRegionDto 
-type BaseRegionDto struct {
+// BaseRegionDTO 
+type BaseRegionDTO struct {
     // 高德围栏
     Fencing   string `json:"fencing,omitempty" xml:"fencing,omitempty"`
     // 名称全称

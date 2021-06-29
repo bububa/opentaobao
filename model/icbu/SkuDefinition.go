@@ -11,5 +11,5 @@ type SkuDefinition struct {
     // 商品的SKUid，唯一标识SKU
     SkuId   int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
     // 商品的库存列表
-    InventoryDtoList   []ProductInventoryDto `json:"inventory_dto_list,omitempty" xml:"inventory_dto_list>product_inventory_dto,omitempty"`
+    InventoryDtoList   []ProductInventoryDTO `json:"inventory_dto_list,omitempty" xml:"inventory_dto_list>product_inventory_dto,omitempty"`
 }

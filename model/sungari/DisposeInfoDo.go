@@ -1,7 +1,7 @@
 package sungari
 
-// DisposeInfoDo 
-type DisposeInfoDo struct {
+// DisposeInfoDO 
+type DisposeInfoDO struct {
     // 处置类型，1:商品处置  2：经营者处置
     ApiType   int64 `json:"api_type,omitempty" xml:"api_type,omitempty"`
     // 抽检报告编号

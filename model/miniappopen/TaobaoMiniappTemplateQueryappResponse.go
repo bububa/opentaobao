@@ -23,5 +23,5 @@ type TaobaoMiniappTemplateQueryappResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 所有版本信息
-    AllVersionInfos   []MiniappInstanceAppAllVersionsDto `json:"all_version_infos,omitempty" xml:"all_version_infos>miniapp_instance_app_all_versions_dto,omitempty"`
+    AllVersionInfos   []MiniappInstanceAppAllVersionsDTO `json:"all_version_infos,omitempty" xml:"all_version_infos>miniapp_instance_app_all_versions_dto,omitempty"`
 }

@@ -27,7 +27,7 @@ type TmallHkOrderClearanceQueryResponse struct {
     // 结果描述
     ResponseMessage   string `json:"response_message,omitempty" xml:"response_message,omitempty"`
     // 清关数据封装
-    Obj   *ClearanceDataDo `json:"obj,omitempty" xml:"obj,omitempty"`
+    Obj   *ClearanceDataDO `json:"obj,omitempty" xml:"obj,omitempty"`
     // 是否正常
     Succeeded   bool `json:"succeeded,omitempty" xml:"succeeded,omitempty"`
 }

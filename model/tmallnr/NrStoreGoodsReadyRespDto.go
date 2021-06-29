@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrStoreGoodsReadyRespDto 
-type NrStoreGoodsReadyRespDto struct {
+// NrStoreGoodsReadyRespDTO 
+type NrStoreGoodsReadyRespDTO struct {
     // 取件码
     GotCode   string `json:"got_code,omitempty" xml:"got_code,omitempty"`
     // 根据门店+sellerId按日期生成从1到N的数据

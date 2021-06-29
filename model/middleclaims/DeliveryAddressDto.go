@@ -1,7 +1,7 @@
 package middleclaims
 
-// DeliveryAddressDto 
-type DeliveryAddressDto struct {
+// DeliveryAddressDTO 
+type DeliveryAddressDTO struct {
     // 收货人姓名
     ReceiverName   string `json:"receiver_name,omitempty" xml:"receiver_name,omitempty"`
     // 收货人手机号码

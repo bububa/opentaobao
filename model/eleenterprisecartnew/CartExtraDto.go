@@ -1,7 +1,7 @@
 package eleenterprisecartnew
 
-// CartExtraDto 
-type CartExtraDto struct {
+// CartExtraDTO 
+type CartExtraDTO struct {
     // 数量
     Quantity   int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // 费用

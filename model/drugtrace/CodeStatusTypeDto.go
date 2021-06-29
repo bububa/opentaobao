@@ -1,7 +1,7 @@
 package drugtrace
 
-// CodeStatusTypeDto 
-type CodeStatusTypeDto struct {
+// CodeStatusTypeDTO 
+type CodeStatusTypeDTO struct {
     // 追溯码状态
     VerificationType   string `json:"verification_type,omitempty" xml:"verification_type,omitempty"`
     // 最后业务日期

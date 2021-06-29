@@ -1,7 +1,7 @@
 package promotion
 
-// PagingDto 
-type PagingDto struct {
+// PagingDTO 
+type PagingDTO struct {
     // 总数
     TotalSize   int64 `json:"total_size,omitempty" xml:"total_size,omitempty"`
     // 总页数
@@ -11,5 +11,5 @@ type PagingDto struct {
     // 第几页
     PageNo   int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
     // 抽奖活动列表
-    LotteryActivityList   []LotteryActivityExtendDto `json:"lottery_activity_list,omitempty" xml:"lottery_activity_list>lottery_activity_extend_dto,omitempty"`
+    LotteryActivityList   []LotteryActivityExtendDTO `json:"lottery_activity_list,omitempty" xml:"lottery_activity_list>lottery_activity_extend_dto,omitempty"`
 }

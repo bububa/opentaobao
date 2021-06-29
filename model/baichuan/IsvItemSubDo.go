@@ -3,8 +3,8 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-// IsvItemSubDo 
-type IsvItemSubDo struct {
+// IsvItemSubDO 
+type IsvItemSubDO struct {
     // 商品状态
     ItemStatus   *model.File `json:"item_status,omitempty" xml:"item_status,omitempty"`
     // 商品id

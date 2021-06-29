@@ -1,7 +1,7 @@
 package alsc
 
-// StoreKeeperDto 
-type StoreKeeperDto struct {
+// StoreKeeperDTO 
+type StoreKeeperDTO struct {
     // 门店联系人
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
     // 邮编

@@ -9,5 +9,5 @@ type MaochaoOrderQueryResult struct {
     // 返回码说明
     ReturnMsg   string `json:"return_msg,omitempty" xml:"return_msg,omitempty"`
     // 子订单列表
-    SubOrderList   []MaochaoWdkOrderDto `json:"sub_order_list,omitempty" xml:"sub_order_list>maochao_wdk_order_dto,omitempty"`
+    SubOrderList   []MaochaoWdkOrderDTO `json:"sub_order_list,omitempty" xml:"sub_order_list>maochao_wdk_order_dto,omitempty"`
 }

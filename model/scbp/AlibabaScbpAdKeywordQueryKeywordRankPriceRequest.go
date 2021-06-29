@@ -19,7 +19,7 @@ type AlibabaScbpAdKeywordQueryKeywordRankPriceRequest struct {
     // 请求参数
     _keywordQuery   *KeywordQuery
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdKeywordQueryKeywordRankPriceRequest对象
@@ -68,13 +68,13 @@ func (r AlibabaScbpAdKeywordQueryKeywordRankPriceRequest) GetKeywordQuery() *Key
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordQueryKeywordRankPriceRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdKeywordQueryKeywordRankPriceRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdKeywordQueryKeywordRankPriceRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdKeywordQueryKeywordRankPriceRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

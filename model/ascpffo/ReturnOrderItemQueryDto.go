@@ -1,7 +1,7 @@
 package ascpffo
 
-// ReturnOrderItemQueryDto 
-type ReturnOrderItemQueryDto struct {
+// ReturnOrderItemQueryDTO 
+type ReturnOrderItemQueryDTO struct {
     // 账套编码
     BizType   int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
     // 分页页码

@@ -1,7 +1,7 @@
 package alitripcar
 
-// ReceiptDo 
-type ReceiptDo struct {
+// ReceiptDO 
+type ReceiptDO struct {
     // 发票金额，单位分
     ReceiptAmount   int64 `json:"receipt_amount,omitempty" xml:"receipt_amount,omitempty"`
     // 业务类型编号（1：?国内机票，2：国际机票，3：火车票，4：汽车票，5：酒店，6：门票度假，7：打车，8：用车，9：套餐，10：欧铁，11：辅营，12：辅营保险）

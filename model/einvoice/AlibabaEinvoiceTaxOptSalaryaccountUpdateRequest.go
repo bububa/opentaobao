@@ -15,7 +15,7 @@ alibaba.einvoice.tax.opt.salaryaccount.update
 type AlibabaEinvoiceTaxOptSalaryaccountUpdateRequest struct {
     model.Params
     // 入参
-    _paramTaxOptimizationEmployeeAssetUpdateDTO   *TaxOptimizationEmployeeAssetUpdateDto
+    _paramTaxOptimizationEmployeeAssetUpdateDTO   *TaxOptimizationEmployeeAssetUpdateDTO
 }
 
 // 初始化AlibabaEinvoiceTaxOptSalaryaccountUpdateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaEinvoiceTaxOptSalaryaccountUpdateRequest) GetApiParams() url.Valu
 }
 // ParamTaxOptimizationEmployeeAssetUpdateDTO Setter
 // 入参
-func (r *AlibabaEinvoiceTaxOptSalaryaccountUpdateRequest) SetParamTaxOptimizationEmployeeAssetUpdateDTO(_paramTaxOptimizationEmployeeAssetUpdateDTO *TaxOptimizationEmployeeAssetUpdateDto) error {
+func (r *AlibabaEinvoiceTaxOptSalaryaccountUpdateRequest) SetParamTaxOptimizationEmployeeAssetUpdateDTO(_paramTaxOptimizationEmployeeAssetUpdateDTO *TaxOptimizationEmployeeAssetUpdateDTO) error {
     r._paramTaxOptimizationEmployeeAssetUpdateDTO = _paramTaxOptimizationEmployeeAssetUpdateDTO
     r.Set("param_tax_optimization_employee_asset_update_d_t_o", _paramTaxOptimizationEmployeeAssetUpdateDTO)
     return nil
 }
 
 // ParamTaxOptimizationEmployeeAssetUpdateDTO Getter
-func (r AlibabaEinvoiceTaxOptSalaryaccountUpdateRequest) GetParamTaxOptimizationEmployeeAssetUpdateDTO() *TaxOptimizationEmployeeAssetUpdateDto {
+func (r AlibabaEinvoiceTaxOptSalaryaccountUpdateRequest) GetParamTaxOptimizationEmployeeAssetUpdateDTO() *TaxOptimizationEmployeeAssetUpdateDTO {
     return r._paramTaxOptimizationEmployeeAssetUpdateDTO
 }

@@ -5,7 +5,7 @@ type BaseResult struct {
     // 错误信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 返回的数据实体
-    CommissionResultList   []CommissionResultDto `json:"commission_result_list,omitempty" xml:"commission_result_list>commission_result_dto,omitempty"`
+    CommissionResultList   []CommissionResultDTO `json:"commission_result_list,omitempty" xml:"commission_result_list>commission_result_dto,omitempty"`
     // 返回的执行状态吗
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 是否执行成功

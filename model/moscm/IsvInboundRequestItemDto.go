@@ -1,7 +1,7 @@
 package moscm
 
-// IsvInboundRequestItemDto 
-type IsvInboundRequestItemDto struct {
+// IsvInboundRequestItemDTO 
+type IsvInboundRequestItemDTO struct {
     // 库位编号
     LocationId   string `json:"location_id,omitempty" xml:"location_id,omitempty"`
     // 外部id

@@ -15,7 +15,7 @@ taobao.alitrip.axin.trans.pay.img.upload
 type TaobaoAlitripAxinTransPayImgUploadRequest struct {
     model.Params
     // 上传图片到支付宝图片空间接口入参
-    _axinPayImgUploadDTO   *AxinPayImgUploadDto
+    _axinPayImgUploadDTO   *AxinPayImgUploadDTO
     // 图片字节流
     _imgContents   []*model.File
 }
@@ -42,14 +42,14 @@ func (r TaobaoAlitripAxinTransPayImgUploadRequest) GetApiParams() url.Values {
 }
 // AxinPayImgUploadDTO Setter
 // 上传图片到支付宝图片空间接口入参
-func (r *TaobaoAlitripAxinTransPayImgUploadRequest) SetAxinPayImgUploadDTO(_axinPayImgUploadDTO *AxinPayImgUploadDto) error {
+func (r *TaobaoAlitripAxinTransPayImgUploadRequest) SetAxinPayImgUploadDTO(_axinPayImgUploadDTO *AxinPayImgUploadDTO) error {
     r._axinPayImgUploadDTO = _axinPayImgUploadDTO
     r.Set("axin_pay_img_upload_d_t_o", _axinPayImgUploadDTO)
     return nil
 }
 
 // AxinPayImgUploadDTO Getter
-func (r TaobaoAlitripAxinTransPayImgUploadRequest) GetAxinPayImgUploadDTO() *AxinPayImgUploadDto {
+func (r TaobaoAlitripAxinTransPayImgUploadRequest) GetAxinPayImgUploadDTO() *AxinPayImgUploadDTO {
     return r._axinPayImgUploadDTO
 }
 // ImgContents Setter

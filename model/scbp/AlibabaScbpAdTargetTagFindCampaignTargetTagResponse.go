@@ -23,5 +23,5 @@ type AlibabaScbpAdTargetTagFindCampaignTargetTagResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回实体
-    ResultList   []AdsTargetingTagDto `json:"result_list,omitempty" xml:"result_list>ads_targeting_tag_dto,omitempty"`
+    ResultList   []AdsTargetingTagDTO `json:"result_list,omitempty" xml:"result_list>ads_targeting_tag_dto,omitempty"`
 }

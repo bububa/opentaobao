@@ -15,7 +15,7 @@ alitrip.agent.flight.sell.refund.approve
 type AlitripAgentFlightSellRefundApproveRequest struct {
     model.Params
     // 入参
-    _param   *RefundApproveRequestDto
+    _param   *RefundApproveRequestDTO
 }
 
 // 初始化AlitripAgentFlightSellRefundApproveRequest对象
@@ -40,13 +40,13 @@ func (r AlitripAgentFlightSellRefundApproveRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *AlitripAgentFlightSellRefundApproveRequest) SetParam(_param *RefundApproveRequestDto) error {
+func (r *AlitripAgentFlightSellRefundApproveRequest) SetParam(_param *RefundApproveRequestDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r AlitripAgentFlightSellRefundApproveRequest) GetParam() *RefundApproveRequestDto {
+func (r AlitripAgentFlightSellRefundApproveRequest) GetParam() *RefundApproveRequestDTO {
     return r._param
 }

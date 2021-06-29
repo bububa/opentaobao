@@ -1,9 +1,9 @@
 package happytrip
 
-// AlibabaHtorderHotelSyncBookingResultDto 
-type AlibabaHtorderHotelSyncBookingResultDto struct {
+// AlibabaHtorderHotelSyncBookingResultDTO 
+type AlibabaHtorderHotelSyncBookingResultDTO struct {
     // 每个订单的信息发送结果
-    Content   *SyncHotelBookingDataResponseDto `json:"content,omitempty" xml:"content,omitempty"`
+    Content   *SyncHotelBookingDataResponseDTO `json:"content,omitempty" xml:"content,omitempty"`
     // 是否成功
     Succ   bool `json:"succ,omitempty" xml:"succ,omitempty"`
     // 错误码

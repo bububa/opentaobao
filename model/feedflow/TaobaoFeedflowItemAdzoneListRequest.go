@@ -15,7 +15,7 @@ taobao.feedflow.item.adzone.list
 type TaobaoFeedflowItemAdzoneListRequest struct {
     model.Params
     // 广告位查询条件
-    _adzoneQuery   *AdzoneQueryDto
+    _adzoneQuery   *AdzoneQueryDTO
 }
 
 // 初始化TaobaoFeedflowItemAdzoneListRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemAdzoneListRequest) GetApiParams() url.Values {
 }
 // AdzoneQuery Setter
 // 广告位查询条件
-func (r *TaobaoFeedflowItemAdzoneListRequest) SetAdzoneQuery(_adzoneQuery *AdzoneQueryDto) error {
+func (r *TaobaoFeedflowItemAdzoneListRequest) SetAdzoneQuery(_adzoneQuery *AdzoneQueryDTO) error {
     r._adzoneQuery = _adzoneQuery
     r.Set("adzone_query", _adzoneQuery)
     return nil
 }
 
 // AdzoneQuery Getter
-func (r TaobaoFeedflowItemAdzoneListRequest) GetAdzoneQuery() *AdzoneQueryDto {
+func (r TaobaoFeedflowItemAdzoneListRequest) GetAdzoneQuery() *AdzoneQueryDTO {
     return r._adzoneQuery
 }

@@ -17,7 +17,7 @@ type AliexpressSolutionFeedSubmitRequest struct {
     // Currently support 4 types of feeds:PRODUCT_CREATE,PRODUCT_FULL_UPDATE,PRODUCT_STOCKS_UPDATE,PRODUCT_PRICES_UPDATE
     _operationType   string
     // item list, maximum size: 2000.
-    _itemList   []SingleItemRequestDto
+    _itemList   []SingleItemRequestDTO
 }
 
 // 初始化AliexpressSolutionFeedSubmitRequest对象
@@ -54,13 +54,13 @@ func (r AliexpressSolutionFeedSubmitRequest) GetOperationType() string {
 }
 // ItemList Setter
 // item list, maximum size: 2000.
-func (r *AliexpressSolutionFeedSubmitRequest) SetItemList(_itemList []SingleItemRequestDto) error {
+func (r *AliexpressSolutionFeedSubmitRequest) SetItemList(_itemList []SingleItemRequestDTO) error {
     r._itemList = _itemList
     r.Set("item_list", _itemList)
     return nil
 }
 
 // ItemList Getter
-func (r AliexpressSolutionFeedSubmitRequest) GetItemList() []SingleItemRequestDto {
+func (r AliexpressSolutionFeedSubmitRequest) GetItemList() []SingleItemRequestDTO {
     return r._itemList
 }

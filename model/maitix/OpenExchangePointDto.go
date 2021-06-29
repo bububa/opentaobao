@@ -1,7 +1,7 @@
 package maitix
 
-// OpenExchangePointDto 
-type OpenExchangePointDto struct {
+// OpenExchangePointDTO 
+type OpenExchangePointDTO struct {
     // 换票点id
     PointId   int64 `json:"point_id,omitempty" xml:"point_id,omitempty"`
     // 换票点名称

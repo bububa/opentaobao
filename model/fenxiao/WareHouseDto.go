@@ -1,7 +1,7 @@
 package fenxiao
 
-// WareHouseDto 
-type WareHouseDto struct {
+// WareHouseDTO 
+type WareHouseDTO struct {
     // 详细地址描述
     Address   string `json:"address,omitempty" xml:"address,omitempty"`
     // 仓库地址信息,格式 :省~市~区县

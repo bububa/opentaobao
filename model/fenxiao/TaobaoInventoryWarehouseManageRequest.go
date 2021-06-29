@@ -15,7 +15,7 @@ taobao.inventory.warehouse.manage
 type TaobaoInventoryWarehouseManageRequest struct {
     model.Params
     // 仓库信息
-    _wareHouseDto   *WareHouseDto
+    _wareHouseDto   *WareHouseDTO
 }
 
 // 初始化TaobaoInventoryWarehouseManageRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoInventoryWarehouseManageRequest) GetApiParams() url.Values {
 }
 // WareHouseDto Setter
 // 仓库信息
-func (r *TaobaoInventoryWarehouseManageRequest) SetWareHouseDto(_wareHouseDto *WareHouseDto) error {
+func (r *TaobaoInventoryWarehouseManageRequest) SetWareHouseDto(_wareHouseDto *WareHouseDTO) error {
     r._wareHouseDto = _wareHouseDto
     r.Set("ware_house_dto", _wareHouseDto)
     return nil
 }
 
 // WareHouseDto Getter
-func (r TaobaoInventoryWarehouseManageRequest) GetWareHouseDto() *WareHouseDto {
+func (r TaobaoInventoryWarehouseManageRequest) GetWareHouseDto() *WareHouseDTO {
     return r._wareHouseDto
 }

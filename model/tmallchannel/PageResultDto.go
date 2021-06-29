@@ -1,11 +1,11 @@
 package tmallchannel
 
-// PageResultDto 
-type PageResultDto struct {
+// PageResultDTO 
+type PageResultDTO struct {
     // 异常信息
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     // 产品信息
-    ProductList   []ProductTopDto `json:"product_list,omitempty" xml:"product_list>product_top_dto,omitempty"`
+    ProductList   []ProductTopDTO `json:"product_list,omitempty" xml:"product_list>product_top_dto,omitempty"`
     // 总数
     TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
     // 是否有下一页

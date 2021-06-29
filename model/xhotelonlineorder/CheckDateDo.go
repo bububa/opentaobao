@@ -1,7 +1,7 @@
 package xhotelonlineorder
 
-// CheckDateDo 
-type CheckDateDo struct {
+// CheckDateDO 
+type CheckDateDO struct {
     // 入住时间
     CheckOut   string `json:"check_out,omitempty" xml:"check_out,omitempty"`
     // 离店时间

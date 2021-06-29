@@ -1,7 +1,7 @@
 package tmallnr
 
-// AlibabaLsyCrmCustomerAddResultDo 
-type AlibabaLsyCrmCustomerAddResultDo struct {
+// AlibabaLsyCrmCustomerAddResultDO 
+type AlibabaLsyCrmCustomerAddResultDO struct {
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误提示码

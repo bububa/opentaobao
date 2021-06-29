@@ -17,7 +17,7 @@ type TmallTxcsFinanceInvoiceInputRequest struct {
     // 门店ID
     _ouCode   string
     // 发票内容
-    _invoiceInputDTO1   []InvoiceInputDto
+    _invoiceInputDTO1   []InvoiceInputDTO
 }
 
 // 初始化TmallTxcsFinanceInvoiceInputRequest对象
@@ -54,13 +54,13 @@ func (r TmallTxcsFinanceInvoiceInputRequest) GetOuCode() string {
 }
 // InvoiceInputDTO1 Setter
 // 发票内容
-func (r *TmallTxcsFinanceInvoiceInputRequest) SetInvoiceInputDTO1(_invoiceInputDTO1 []InvoiceInputDto) error {
+func (r *TmallTxcsFinanceInvoiceInputRequest) SetInvoiceInputDTO1(_invoiceInputDTO1 []InvoiceInputDTO) error {
     r._invoiceInputDTO1 = _invoiceInputDTO1
     r.Set("invoice_input_d_t_o1", _invoiceInputDTO1)
     return nil
 }
 
 // InvoiceInputDTO1 Getter
-func (r TmallTxcsFinanceInvoiceInputRequest) GetInvoiceInputDTO1() []InvoiceInputDto {
+func (r TmallTxcsFinanceInvoiceInputRequest) GetInvoiceInputDTO1() []InvoiceInputDTO {
     return r._invoiceInputDTO1
 }

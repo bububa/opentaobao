@@ -1,7 +1,7 @@
 package dutyfree
 
-// StockResultDto 
-type StockResultDto struct {
+// StockResultDTO 
+type StockResultDTO struct {
     // 库存
     Stock   int64 `json:"stock,omitempty" xml:"stock,omitempty"`
     // 条形码

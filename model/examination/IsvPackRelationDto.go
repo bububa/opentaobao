@@ -1,7 +1,7 @@
 package examination
 
-// IsvPackRelationDto 
-type IsvPackRelationDto struct {
+// IsvPackRelationDTO 
+type IsvPackRelationDTO struct {
     // 加项包id
     IsvPackId   string `json:"isv_pack_id,omitempty" xml:"isv_pack_id,omitempty"`
     // 关联加项包id

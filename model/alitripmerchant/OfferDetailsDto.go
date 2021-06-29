@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// OfferDetailsDto 
-type OfferDetailsDto struct {
+// OfferDetailsDTO 
+type OfferDetailsDTO struct {
     // offerId
     OfferId   int64 `json:"offer_id,omitempty" xml:"offer_id,omitempty"`
     // offer名称
@@ -19,7 +19,7 @@ type OfferDetailsDto struct {
     // offer跳转url
     OfferRedirectUrl   string `json:"offer_redirect_url,omitempty" xml:"offer_redirect_url,omitempty"`
     // 关联品牌
-    JoinBrands   []JoinBrandDto `json:"join_brands,omitempty" xml:"join_brands>join_brand_dto,omitempty"`
+    JoinBrands   []JoinBrandDTO `json:"join_brands,omitempty" xml:"join_brands>join_brand_dto,omitempty"`
     // 起价
     FromPriceAmount   string `json:"from_price_amount,omitempty" xml:"from_price_amount,omitempty"`
     // 时区
@@ -39,5 +39,5 @@ type OfferDetailsDto struct {
     // 无线端图片
     OfferImageWireless   []string `json:"offer_image_wireless,omitempty" xml:"offer_image_wireless>string,omitempty"`
     // 酒店数据集合
-    HotelContentList   []HotelContentDto `json:"hotel_content_list,omitempty" xml:"hotel_content_list>hotel_content_dto,omitempty"`
+    HotelContentList   []HotelContentDTO `json:"hotel_content_list,omitempty" xml:"hotel_content_list>hotel_content_dto,omitempty"`
 }

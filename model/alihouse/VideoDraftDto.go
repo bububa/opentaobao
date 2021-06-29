@@ -1,7 +1,7 @@
 package alihouse
 
-// VideoDraftDto 
-type VideoDraftDto struct {
+// VideoDraftDTO 
+type VideoDraftDTO struct {
     // 二级栏目名称
     SubColumn   string `json:"sub_column,omitempty" xml:"sub_column,omitempty"`
     // 一级栏目名称

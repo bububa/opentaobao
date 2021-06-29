@@ -1,7 +1,7 @@
 package c2m
 
-// TaobaoSebpOrganizationGetorderinfoResultDo 
-type TaobaoSebpOrganizationGetorderinfoResultDo struct {
+// TaobaoSebpOrganizationGetorderinfoResultDO 
+type TaobaoSebpOrganizationGetorderinfoResultDO struct {
     // 调用是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 结果信息

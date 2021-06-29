@@ -23,7 +23,7 @@ type AlibabaMarketingLotteryActivityQueryResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 分页结果
-    PagingDto   *PagingDto `json:"paging_dto,omitempty" xml:"paging_dto,omitempty"`
+    PagingDto   *PagingDTO `json:"paging_dto,omitempty" xml:"paging_dto,omitempty"`
     // code
     MsgCode   int64 `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // success

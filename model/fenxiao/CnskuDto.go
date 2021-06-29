@@ -1,7 +1,7 @@
 package fenxiao
 
-// CnskuDto 
-type CnskuDto struct {
+// CnskuDTO 
+type CnskuDTO struct {
     // 货品id
     CnskuId   int64 `json:"cnsku_id,omitempty" xml:"cnsku_id,omitempty"`
     // 商品编码
@@ -31,9 +31,9 @@ type CnskuDto struct {
     // 包装材料
     PackageMaterial   string `json:"package_material,omitempty" xml:"package_material,omitempty"`
     // 扩展字段
-    CnskuExtendDTO   *CnskuExtendDto `json:"cnsku_extend_d_t_o,omitempty" xml:"cnsku_extend_d_t_o,omitempty"`
+    CnskuExtendDTO   *CnskuExtendDTO `json:"cnsku_extend_d_t_o,omitempty" xml:"cnsku_extend_d_t_o,omitempty"`
     // feature标签
-    CnskuFeatureDTO   *CnskuFeatureDto `json:"cnsku_feature_d_t_o,omitempty" xml:"cnsku_feature_d_t_o,omitempty"`
+    CnskuFeatureDTO   *CnskuFeatureDTO `json:"cnsku_feature_d_t_o,omitempty" xml:"cnsku_feature_d_t_o,omitempty"`
     // 长度
     Length   int64 `json:"length,omitempty" xml:"length,omitempty"`
     // 宽度

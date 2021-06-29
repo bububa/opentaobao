@@ -1,7 +1,7 @@
 package xhotelonlineorder
 
-// HbsDailyPriceDo 
-type HbsDailyPriceDo struct {
+// HbsDailyPriceDO 
+type HbsDailyPriceDO struct {
     // 币种
     CurrencyCode   string `json:"currency_code,omitempty" xml:"currency_code,omitempty"`
     // 汇率

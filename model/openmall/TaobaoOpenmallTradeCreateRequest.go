@@ -15,7 +15,7 @@ taobao.openmall.trade.create
 type TaobaoOpenmallTradeCreateRequest struct {
     model.Params
     // 请求入参
-    _paramTopTradeCreateDO   *TopTradeCreateDo
+    _paramTopTradeCreateDO   *TopTradeCreateDO
 }
 
 // 初始化TaobaoOpenmallTradeCreateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoOpenmallTradeCreateRequest) GetApiParams() url.Values {
 }
 // ParamTopTradeCreateDO Setter
 // 请求入参
-func (r *TaobaoOpenmallTradeCreateRequest) SetParamTopTradeCreateDO(_paramTopTradeCreateDO *TopTradeCreateDo) error {
+func (r *TaobaoOpenmallTradeCreateRequest) SetParamTopTradeCreateDO(_paramTopTradeCreateDO *TopTradeCreateDO) error {
     r._paramTopTradeCreateDO = _paramTopTradeCreateDO
     r.Set("param_top_trade_create_d_o", _paramTopTradeCreateDO)
     return nil
 }
 
 // ParamTopTradeCreateDO Getter
-func (r TaobaoOpenmallTradeCreateRequest) GetParamTopTradeCreateDO() *TopTradeCreateDo {
+func (r TaobaoOpenmallTradeCreateRequest) GetParamTopTradeCreateDO() *TopTradeCreateDO {
     return r._paramTopTradeCreateDO
 }

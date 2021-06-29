@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TopChannelSubDeliverOrderDto 
-type TopChannelSubDeliverOrderDto struct {
+// TopChannelSubDeliverOrderDTO 
+type TopChannelSubDeliverOrderDTO struct {
     // 子发货单单号
     SubDeliverOrderNo   int64 `json:"sub_deliver_order_no,omitempty" xml:"sub_deliver_order_no,omitempty"`
     // 主采购单号

@@ -1,7 +1,7 @@
 package servicecenter
 
-// LeaseOrderInfoDto 
-type LeaseOrderInfoDto struct {
+// LeaseOrderInfoDTO 
+type LeaseOrderInfoDTO struct {
     // 网商申请号
     ApplyNo   string `json:"apply_no,omitempty" xml:"apply_no,omitempty"`
     // 订单id

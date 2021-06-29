@@ -15,7 +15,7 @@ AE 履约发货单分页查询接口
 type AliexpressAscpFfoQueryRequest struct {
     model.Params
     // dto
-    _fulfillmentForwardOrderQuery   *FulfillmentForwardOrderQueryDto
+    _fulfillmentForwardOrderQuery   *FulfillmentForwardOrderQueryDTO
 }
 
 // 初始化AliexpressAscpFfoQueryRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressAscpFfoQueryRequest) GetApiParams() url.Values {
 }
 // FulfillmentForwardOrderQuery Setter
 // dto
-func (r *AliexpressAscpFfoQueryRequest) SetFulfillmentForwardOrderQuery(_fulfillmentForwardOrderQuery *FulfillmentForwardOrderQueryDto) error {
+func (r *AliexpressAscpFfoQueryRequest) SetFulfillmentForwardOrderQuery(_fulfillmentForwardOrderQuery *FulfillmentForwardOrderQueryDTO) error {
     r._fulfillmentForwardOrderQuery = _fulfillmentForwardOrderQuery
     r.Set("fulfillment_forward_order_query", _fulfillmentForwardOrderQuery)
     return nil
 }
 
 // FulfillmentForwardOrderQuery Getter
-func (r AliexpressAscpFfoQueryRequest) GetFulfillmentForwardOrderQuery() *FulfillmentForwardOrderQueryDto {
+func (r AliexpressAscpFfoQueryRequest) GetFulfillmentForwardOrderQuery() *FulfillmentForwardOrderQueryDTO {
     return r._fulfillmentForwardOrderQuery
 }

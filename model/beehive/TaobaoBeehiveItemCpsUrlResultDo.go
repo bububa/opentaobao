@@ -1,7 +1,7 @@
 package beehive
 
-// TaobaoBeehiveItemCpsUrlResultDo 
-type TaobaoBeehiveItemCpsUrlResultDo struct {
+// TaobaoBeehiveItemCpsUrlResultDO 
+type TaobaoBeehiveItemCpsUrlResultDO struct {
     // 商品id和对应的url map
     Model   string `json:"model,omitempty" xml:"model,omitempty"`
     // 错误码

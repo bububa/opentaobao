@@ -15,7 +15,7 @@ alibaba.alihouse.newhome.project.presalepermit.submit
 type AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest struct {
     model.Params
     // 预售证对象
-    _preSalePermitDto   *ProjectPreSalePermitDto
+    _preSalePermitDto   *ProjectPreSalePermitDTO
 }
 
 // 初始化AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest) GetApiParams() 
 }
 // PreSalePermitDto Setter
 // 预售证对象
-func (r *AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest) SetPreSalePermitDto(_preSalePermitDto *ProjectPreSalePermitDto) error {
+func (r *AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest) SetPreSalePermitDto(_preSalePermitDto *ProjectPreSalePermitDTO) error {
     r._preSalePermitDto = _preSalePermitDto
     r.Set("pre_sale_permit_dto", _preSalePermitDto)
     return nil
 }
 
 // PreSalePermitDto Getter
-func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest) GetPreSalePermitDto() *ProjectPreSalePermitDto {
+func (r AlibabaAlihouseNewhomeProjectPresalepermitSubmitRequest) GetPreSalePermitDto() *ProjectPreSalePermitDTO {
     return r._preSalePermitDto
 }

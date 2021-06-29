@@ -15,7 +15,7 @@ tmall.carcenter.vehicle.version.insert
 type TmallCarcenterVehicleVersionInsertRequest struct {
     model.Params
     // 版本压缩库入参
-    _dto   *VersionVehicleInfoOriginalDto
+    _dto   *VersionVehicleInfoOriginalDTO
 }
 
 // 初始化TmallCarcenterVehicleVersionInsertRequest对象
@@ -40,13 +40,13 @@ func (r TmallCarcenterVehicleVersionInsertRequest) GetApiParams() url.Values {
 }
 // Dto Setter
 // 版本压缩库入参
-func (r *TmallCarcenterVehicleVersionInsertRequest) SetDto(_dto *VersionVehicleInfoOriginalDto) error {
+func (r *TmallCarcenterVehicleVersionInsertRequest) SetDto(_dto *VersionVehicleInfoOriginalDTO) error {
     r._dto = _dto
     r.Set("dto", _dto)
     return nil
 }
 
 // Dto Getter
-func (r TmallCarcenterVehicleVersionInsertRequest) GetDto() *VersionVehicleInfoOriginalDto {
+func (r TmallCarcenterVehicleVersionInsertRequest) GetDto() *VersionVehicleInfoOriginalDTO {
     return r._dto
 }

@@ -1,7 +1,7 @@
 package baichuan
 
-// PasswordRuleResultDto 
-type PasswordRuleResultDto struct {
+// PasswordRuleResultDTO 
+type PasswordRuleResultDTO struct {
     // level
     Level   string `json:"level,omitempty" xml:"level,omitempty"`
     // miaoPasswordRegular

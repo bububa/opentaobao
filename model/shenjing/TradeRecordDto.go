@@ -1,7 +1,7 @@
 package shenjing
 
-// TradeRecordDto 
-type TradeRecordDto struct {
+// TradeRecordDTO 
+type TradeRecordDTO struct {
     // 账户币种
     CurrencyType   string `json:"currency_type,omitempty" xml:"currency_type,omitempty"`
     // 摘要

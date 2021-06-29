@@ -7,7 +7,7 @@ type ActionResult struct {
     // message
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // retValue
-    RetValue   *AuthApplyDoneCallBackDo `json:"ret_value,omitempty" xml:"ret_value,omitempty"`
+    RetValue   *AuthApplyDoneCallBackDO `json:"ret_value,omitempty" xml:"ret_value,omitempty"`
     // 错误信息
     SubErrorMessage   string `json:"sub_error_message,omitempty" xml:"sub_error_message,omitempty"`
     // 成功状态

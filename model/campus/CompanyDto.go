@@ -1,7 +1,7 @@
 package campus
 
-// CompanyDto 
-type CompanyDto struct {
+// CompanyDTO 
+type CompanyDTO struct {
     // 园区名称
     CampusName   string `json:"campus_name,omitempty" xml:"campus_name,omitempty"`
     // 园区ID

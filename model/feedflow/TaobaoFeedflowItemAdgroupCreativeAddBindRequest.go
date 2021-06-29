@@ -15,7 +15,7 @@ taobao.feedflow.item.adgroup.creative.add.bind
 type TaobaoFeedflowItemAdgroupCreativeAddBindRequest struct {
     model.Params
     // 新增绑定的创意，一次最多2个
-    _creativeBindList   []CreativeBindDto
+    _creativeBindList   []CreativeBindDTO
     // 单元id
     _adgroupId   int64
 }
@@ -42,14 +42,14 @@ func (r TaobaoFeedflowItemAdgroupCreativeAddBindRequest) GetApiParams() url.Valu
 }
 // CreativeBindList Setter
 // 新增绑定的创意，一次最多2个
-func (r *TaobaoFeedflowItemAdgroupCreativeAddBindRequest) SetCreativeBindList(_creativeBindList []CreativeBindDto) error {
+func (r *TaobaoFeedflowItemAdgroupCreativeAddBindRequest) SetCreativeBindList(_creativeBindList []CreativeBindDTO) error {
     r._creativeBindList = _creativeBindList
     r.Set("creative_bind_list", _creativeBindList)
     return nil
 }
 
 // CreativeBindList Getter
-func (r TaobaoFeedflowItemAdgroupCreativeAddBindRequest) GetCreativeBindList() []CreativeBindDto {
+func (r TaobaoFeedflowItemAdgroupCreativeAddBindRequest) GetCreativeBindList() []CreativeBindDTO {
     return r._creativeBindList
 }
 // AdgroupId Setter

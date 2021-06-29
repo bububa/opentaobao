@@ -1,7 +1,7 @@
 package tanx
 
-// CreativePublisherAuditDto 
-type CreativePublisherAuditDto struct {
+// CreativePublisherAuditDTO 
+type CreativePublisherAuditDTO struct {
     // 状态（PASS.通过；REFUSE.拒绝；WAITING.待审）
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
     // 媒体ID

@@ -1,7 +1,7 @@
 package util
 
-// PosInfoDto 
-type PosInfoDto struct {
+// PosInfoDTO 
+type PosInfoDTO struct {
     // 是否支持小数
     Support4Decimal   string `json:"support4_decimal,omitempty" xml:"support4_decimal,omitempty"`
     // 专柜号

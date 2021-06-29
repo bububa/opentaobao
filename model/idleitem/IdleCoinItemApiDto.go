@@ -1,7 +1,7 @@
 package idleitem
 
-// IdleCoinItemApiDto 
-type IdleCoinItemApiDto struct {
+// IdleCoinItemApiDTO 
+type IdleCoinItemApiDTO struct {
     // 描述
     Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     // 标题
@@ -29,7 +29,7 @@ type IdleCoinItemApiDto struct {
     // 新旧程度
     StuffStatus   int64 `json:"stuff_status,omitempty" xml:"stuff_status,omitempty"`
     // 地址信息
-    AddressDto   *RentAddressDto `json:"address_dto,omitempty" xml:"address_dto,omitempty"`
+    AddressDto   *RentAddressDTO `json:"address_dto,omitempty" xml:"address_dto,omitempty"`
     // 运费
     PostPrice   int64 `json:"post_price,omitempty" xml:"post_price,omitempty"`
     // 扫描码

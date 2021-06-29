@@ -17,7 +17,7 @@ type AlibabaIsvDigitalsmsCreatetemplateRequest struct {
     // 模板名称
     _templateName   string
     // 系统自动生成
-    _templateContents   []DigitalSmsTemplateContentDto
+    _templateContents   []DigitalSmsTemplateContentDTO
     // 申请说明
     _applyRemark   string
 }
@@ -56,14 +56,14 @@ func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetTemplateName() string {
 }
 // TemplateContents Setter
 // 系统自动生成
-func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDto) error {
+func (r *AlibabaIsvDigitalsmsCreatetemplateRequest) SetTemplateContents(_templateContents []DigitalSmsTemplateContentDTO) error {
     r._templateContents = _templateContents
     r.Set("template_contents", _templateContents)
     return nil
 }
 
 // TemplateContents Getter
-func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetTemplateContents() []DigitalSmsTemplateContentDto {
+func (r AlibabaIsvDigitalsmsCreatetemplateRequest) GetTemplateContents() []DigitalSmsTemplateContentDTO {
     return r._templateContents
 }
 // ApplyRemark Setter

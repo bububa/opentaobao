@@ -1,7 +1,7 @@
 package maitix
 
-// DisProjectStatusQueryDto 
-type DisProjectStatusQueryDto struct {
+// DisProjectStatusQueryDTO 
+type DisProjectStatusQueryDTO struct {
     // 是否查询对应场次的状态
     QueryPerformStatus   bool `json:"query_perform_status,omitempty" xml:"query_perform_status,omitempty"`
     // 项目id

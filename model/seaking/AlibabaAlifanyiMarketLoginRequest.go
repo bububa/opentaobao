@@ -15,7 +15,7 @@ alibaba.alifanyi.market.login
 type AlibabaAlifanyiMarketLoginRequest struct {
     model.Params
     // 请求参数
-    _reportQueryApiDTO   *ReportQueryApiDto
+    _reportQueryApiDTO   *ReportQueryApiDTO
 }
 
 // 初始化AlibabaAlifanyiMarketLoginRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlifanyiMarketLoginRequest) GetApiParams() url.Values {
 }
 // ReportQueryApiDTO Setter
 // 请求参数
-func (r *AlibabaAlifanyiMarketLoginRequest) SetReportQueryApiDTO(_reportQueryApiDTO *ReportQueryApiDto) error {
+func (r *AlibabaAlifanyiMarketLoginRequest) SetReportQueryApiDTO(_reportQueryApiDTO *ReportQueryApiDTO) error {
     r._reportQueryApiDTO = _reportQueryApiDTO
     r.Set("report_query_api_d_t_o", _reportQueryApiDTO)
     return nil
 }
 
 // ReportQueryApiDTO Getter
-func (r AlibabaAlifanyiMarketLoginRequest) GetReportQueryApiDTO() *ReportQueryApiDto {
+func (r AlibabaAlifanyiMarketLoginRequest) GetReportQueryApiDTO() *ReportQueryApiDTO {
     return r._reportQueryApiDTO
 }

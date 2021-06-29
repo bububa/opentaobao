@@ -1,7 +1,7 @@
 package ascpffo
 
-// FulfillmentForwardOrderQueryDto 
-type FulfillmentForwardOrderQueryDto struct {
+// FulfillmentForwardOrderQueryDTO 
+type FulfillmentForwardOrderQueryDTO struct {
     // 账套编码
     BizType   int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
     // 用户订单Id列表

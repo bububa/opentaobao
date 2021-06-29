@@ -15,11 +15,11 @@ alibaba.scbp.ad.campaign.create.forbidden.keyword
 type AlibabaScbpAdCampaignCreateForbiddenKeywordRequest struct {
     model.Params
     // 请求参数
-    _forbiddenKeywordBatchOperation   *ForbiddenKeywordBatchOperationDto
+    _forbiddenKeywordBatchOperation   *ForbiddenKeywordBatchOperationDTO
     // 计划id
     _campaignId   int64
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdCampaignCreateForbiddenKeywordRequest对象
@@ -44,14 +44,14 @@ func (r AlibabaScbpAdCampaignCreateForbiddenKeywordRequest) GetApiParams() url.V
 }
 // ForbiddenKeywordBatchOperation Setter
 // 请求参数
-func (r *AlibabaScbpAdCampaignCreateForbiddenKeywordRequest) SetForbiddenKeywordBatchOperation(_forbiddenKeywordBatchOperation *ForbiddenKeywordBatchOperationDto) error {
+func (r *AlibabaScbpAdCampaignCreateForbiddenKeywordRequest) SetForbiddenKeywordBatchOperation(_forbiddenKeywordBatchOperation *ForbiddenKeywordBatchOperationDTO) error {
     r._forbiddenKeywordBatchOperation = _forbiddenKeywordBatchOperation
     r.Set("forbidden_keyword_batch_operation", _forbiddenKeywordBatchOperation)
     return nil
 }
 
 // ForbiddenKeywordBatchOperation Getter
-func (r AlibabaScbpAdCampaignCreateForbiddenKeywordRequest) GetForbiddenKeywordBatchOperation() *ForbiddenKeywordBatchOperationDto {
+func (r AlibabaScbpAdCampaignCreateForbiddenKeywordRequest) GetForbiddenKeywordBatchOperation() *ForbiddenKeywordBatchOperationDTO {
     return r._forbiddenKeywordBatchOperation
 }
 // CampaignId Setter
@@ -68,13 +68,13 @@ func (r AlibabaScbpAdCampaignCreateForbiddenKeywordRequest) GetCampaignId() int6
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignCreateForbiddenKeywordRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdCampaignCreateForbiddenKeywordRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdCampaignCreateForbiddenKeywordRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdCampaignCreateForbiddenKeywordRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

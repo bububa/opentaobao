@@ -7,7 +7,7 @@ type HoldSeatParam struct {
     // 和出票失败错误码回填相同，666666代表占座失败转后占座
     ErrorCode   int64 `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 订单信息
-    OrderBase   *OrderInfoDto `json:"order_base,omitempty" xml:"order_base,omitempty"`
+    OrderBase   *OrderInfoDTO `json:"order_base,omitempty" xml:"order_base,omitempty"`
     // 是否占座成功
     HoldSeatStatus   bool `json:"hold_seat_status,omitempty" xml:"hold_seat_status,omitempty"`
     // 代理商id

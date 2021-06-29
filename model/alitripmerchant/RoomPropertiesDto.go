@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// RoomPropertiesDto 
-type RoomPropertiesDto struct {
+// RoomPropertiesDTO 
+type RoomPropertiesDTO struct {
     // 设施类型
     SubType   string `json:"sub_type,omitempty" xml:"sub_type,omitempty"`
     // 设施名称

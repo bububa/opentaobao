@@ -30,7 +30,7 @@ tmall.servicecenter.worker.update
 type TmallServicecenterWorkerUpdateRequest struct {
     model.Params
     // 工人信息
-    _worker   *WorkerDto
+    _worker   *WorkerDTO
 }
 
 // 初始化TmallServicecenterWorkerUpdateRequest对象
@@ -55,13 +55,13 @@ func (r TmallServicecenterWorkerUpdateRequest) GetApiParams() url.Values {
 }
 // Worker Setter
 // 工人信息
-func (r *TmallServicecenterWorkerUpdateRequest) SetWorker(_worker *WorkerDto) error {
+func (r *TmallServicecenterWorkerUpdateRequest) SetWorker(_worker *WorkerDTO) error {
     r._worker = _worker
     r.Set("worker", _worker)
     return nil
 }
 
 // Worker Getter
-func (r TmallServicecenterWorkerUpdateRequest) GetWorker() *WorkerDto {
+func (r TmallServicecenterWorkerUpdateRequest) GetWorker() *WorkerDTO {
     return r._worker
 }

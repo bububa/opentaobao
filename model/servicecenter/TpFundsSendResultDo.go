@@ -1,7 +1,7 @@
 package servicecenter
 
-// TpFundsSendResultDo 
-type TpFundsSendResultDo struct {
+// TpFundsSendResultDO 
+type TpFundsSendResultDO struct {
     // 红包ID
     RedPacketsId   string `json:"red_packets_id,omitempty" xml:"red_packets_id,omitempty"`
     // 金额，单位分

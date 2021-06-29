@@ -1,7 +1,7 @@
 package drug
 
-// OrderPromotionDto 
-type OrderPromotionDto struct {
+// OrderPromotionDTO 
+type OrderPromotionDTO struct {
     // 优惠类型
     Type   int64 `json:"type,omitempty" xml:"type,omitempty"`
     // 优惠名称

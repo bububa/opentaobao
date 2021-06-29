@@ -1,7 +1,7 @@
 package nlife
 
-// ProcurementResponseDo 
-type ProcurementResponseDo struct {
+// ProcurementResponseDO 
+type ProcurementResponseDO struct {
     // 企业ID
     EntId   int64 `json:"ent_id,omitempty" xml:"ent_id,omitempty"`
     // 获取到的企业采购单的总数量

@@ -1,7 +1,7 @@
 package tvpay
 
-// SdkAppConfigDo 
-type SdkAppConfigDo struct {
+// SdkAppConfigDO 
+type SdkAppConfigDO struct {
     // 是否上传日志
     EnableUploadLog   bool `json:"enable_upload_log,omitempty" xml:"enable_upload_log,omitempty"`
     // 是否开启友盟

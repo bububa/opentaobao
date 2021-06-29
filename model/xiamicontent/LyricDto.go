@@ -1,7 +1,7 @@
 package xiamicontent
 
-// LyricDto 
-type LyricDto struct {
+// LyricDTO 
+type LyricDTO struct {
     // 歌词类型 TXT LRC TRC TLRC TTRC
     LyricType   string `json:"lyric_type,omitempty" xml:"lyric_type,omitempty"`
     // 歌词id

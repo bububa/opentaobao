@@ -15,7 +15,7 @@ cainiao.global.handover.cloudprint.get
 type CainiaoGlobalHandoverCloudprintGetRequest struct {
     model.Params
     // 用户信息
-    _userInfo   *UserInfoDto
+    _userInfo   *UserInfoDTO
     // 大包运单号
     _trackingNumber   string
     // ISV名称，ISV：ISV-ISV英文或拼音名称、商家ERP：SELLER-商家英文或拼音名称
@@ -48,14 +48,14 @@ func (r CainiaoGlobalHandoverCloudprintGetRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 用户信息
-func (r *CainiaoGlobalHandoverCloudprintGetRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+func (r *CainiaoGlobalHandoverCloudprintGetRequest) SetUserInfo(_userInfo *UserInfoDTO) error {
     r._userInfo = _userInfo
     r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
-func (r CainiaoGlobalHandoverCloudprintGetRequest) GetUserInfo() *UserInfoDto {
+func (r CainiaoGlobalHandoverCloudprintGetRequest) GetUserInfo() *UserInfoDTO {
     return r._userInfo
 }
 // TrackingNumber Setter

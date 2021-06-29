@@ -1,7 +1,7 @@
 package lstspeacker
 
-// AlibabaLstSpeakerStatusGetResultDto 
-type AlibabaLstSpeakerStatusGetResultDto struct {
+// AlibabaLstSpeakerStatusGetResultDTO 
+type AlibabaLstSpeakerStatusGetResultDTO struct {
     // 执行结果
     Succ   bool `json:"succ,omitempty" xml:"succ,omitempty"`
     // 状态对象

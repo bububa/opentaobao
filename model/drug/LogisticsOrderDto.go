@@ -1,7 +1,7 @@
 package drug
 
-// LogisticsOrderDto 
-type LogisticsOrderDto struct {
+// LogisticsOrderDTO 
+type LogisticsOrderDTO struct {
     // 快递公司编码
     CpCode   string `json:"cp_code,omitempty" xml:"cp_code,omitempty"`
     // 快递单号

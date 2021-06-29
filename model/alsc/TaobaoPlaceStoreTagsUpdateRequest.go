@@ -15,7 +15,7 @@ taobao.place.store.tags.update
 type TaobaoPlaceStoreTagsUpdateRequest struct {
     model.Params
     // 门店信息
-    _storeUpdate   *StoreUpdateTopDto
+    _storeUpdate   *StoreUpdateTopDTO
     // 新增标list
     _addTags   []int64
     // 删除标list
@@ -44,14 +44,14 @@ func (r TaobaoPlaceStoreTagsUpdateRequest) GetApiParams() url.Values {
 }
 // StoreUpdate Setter
 // 门店信息
-func (r *TaobaoPlaceStoreTagsUpdateRequest) SetStoreUpdate(_storeUpdate *StoreUpdateTopDto) error {
+func (r *TaobaoPlaceStoreTagsUpdateRequest) SetStoreUpdate(_storeUpdate *StoreUpdateTopDTO) error {
     r._storeUpdate = _storeUpdate
     r.Set("store_update", _storeUpdate)
     return nil
 }
 
 // StoreUpdate Getter
-func (r TaobaoPlaceStoreTagsUpdateRequest) GetStoreUpdate() *StoreUpdateTopDto {
+func (r TaobaoPlaceStoreTagsUpdateRequest) GetStoreUpdate() *StoreUpdateTopDTO {
     return r._storeUpdate
 }
 // AddTags Setter

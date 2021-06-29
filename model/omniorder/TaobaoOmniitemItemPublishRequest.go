@@ -15,7 +15,7 @@ taobao.omniitem.item.publish
 type TaobaoOmniitemItemPublishRequest struct {
     model.Params
     // 发布商品信息
-    _lightPublishInfo   *ItemLightPublishDto
+    _lightPublishInfo   *ItemLightPublishDTO
     // 在全域商品或是门店商品中校验码是否重复，可选值对应为ALL或者STORE
     _operateType   string
 }
@@ -42,14 +42,14 @@ func (r TaobaoOmniitemItemPublishRequest) GetApiParams() url.Values {
 }
 // LightPublishInfo Setter
 // 发布商品信息
-func (r *TaobaoOmniitemItemPublishRequest) SetLightPublishInfo(_lightPublishInfo *ItemLightPublishDto) error {
+func (r *TaobaoOmniitemItemPublishRequest) SetLightPublishInfo(_lightPublishInfo *ItemLightPublishDTO) error {
     r._lightPublishInfo = _lightPublishInfo
     r.Set("light_publish_info", _lightPublishInfo)
     return nil
 }
 
 // LightPublishInfo Getter
-func (r TaobaoOmniitemItemPublishRequest) GetLightPublishInfo() *ItemLightPublishDto {
+func (r TaobaoOmniitemItemPublishRequest) GetLightPublishInfo() *ItemLightPublishDTO {
     return r._lightPublishInfo
 }
 // OperateType Setter

@@ -1,13 +1,13 @@
 package nrpos
 
-// AlibabaMosCommdyOfflineGetfileurlResultDo 
-type AlibabaMosCommdyOfflineGetfileurlResultDo struct {
+// AlibabaMosCommdyOfflineGetfileurlResultDO 
+type AlibabaMosCommdyOfflineGetfileurlResultDO struct {
     // 返回头
     Headers   string `json:"headers,omitempty" xml:"headers,omitempty"`
     // null
     MappingCode   string `json:"mapping_code,omitempty" xml:"mapping_code,omitempty"`
     // 返回结果合集
-    Datas   []OfflineFileDto `json:"datas,omitempty" xml:"datas>offline_file_dto,omitempty"`
+    Datas   []OfflineFileDTO `json:"datas,omitempty" xml:"datas>offline_file_dto,omitempty"`
     // http请求返回码
     HttpStatusCode   int64 `json:"http_status_code,omitempty" xml:"http_status_code,omitempty"`
     // null

@@ -1,7 +1,7 @@
 package bus
 
-// ReceiptDo 
-type ReceiptDo struct {
+// ReceiptDO 
+type ReceiptDO struct {
     // 代理商ID
     AgentId   int64 `json:"agent_id,omitempty" xml:"agent_id,omitempty"`
     // 开票时间

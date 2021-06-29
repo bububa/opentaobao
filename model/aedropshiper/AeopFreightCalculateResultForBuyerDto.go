@@ -1,7 +1,7 @@
 package aedropshiper
 
-// AeopFreightCalculateResultForBuyerDto 
-type AeopFreightCalculateResultForBuyerDto struct {
+// AeopFreightCalculateResultForBuyerDTO 
+type AeopFreightCalculateResultForBuyerDTO struct {
     // errorCode
     ErrorCode   int64 `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 预估运达时效

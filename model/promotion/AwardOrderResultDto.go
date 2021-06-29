@@ -1,7 +1,7 @@
 package promotion
 
-// AwardOrderResultDto 
-type AwardOrderResultDto struct {
+// AwardOrderResultDTO 
+type AwardOrderResultDTO struct {
     // 订单列表
     Orders   []AwardOrder `json:"orders,omitempty" xml:"orders>award_order,omitempty"`
     // 页码

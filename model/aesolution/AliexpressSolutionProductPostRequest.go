@@ -15,7 +15,7 @@ Product posting API for Oversea merchants, simplifying the complexity of integra
 type AliexpressSolutionProductPostRequest struct {
     model.Params
     // input param
-    _postProductRequest   *PostProductRequestDto
+    _postProductRequest   *PostProductRequestDTO
 }
 
 // 初始化AliexpressSolutionProductPostRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressSolutionProductPostRequest) GetApiParams() url.Values {
 }
 // PostProductRequest Setter
 // input param
-func (r *AliexpressSolutionProductPostRequest) SetPostProductRequest(_postProductRequest *PostProductRequestDto) error {
+func (r *AliexpressSolutionProductPostRequest) SetPostProductRequest(_postProductRequest *PostProductRequestDTO) error {
     r._postProductRequest = _postProductRequest
     r.Set("post_product_request", _postProductRequest)
     return nil
 }
 
 // PostProductRequest Getter
-func (r AliexpressSolutionProductPostRequest) GetPostProductRequest() *PostProductRequestDto {
+func (r AliexpressSolutionProductPostRequest) GetPostProductRequest() *PostProductRequestDTO {
     return r._postProductRequest
 }

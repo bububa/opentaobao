@@ -15,7 +15,7 @@ alibaba.mos.goods.adjust
 type AlibabaMosGoodsAdjustRequest struct {
     model.Params
     // 库存调整入参
-    _paramIsvStockAdjustRequestDTO   *IsvStockAdjustRequestDto
+    _paramIsvStockAdjustRequestDTO   *IsvStockAdjustRequestDTO
 }
 
 // 初始化AlibabaMosGoodsAdjustRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMosGoodsAdjustRequest) GetApiParams() url.Values {
 }
 // ParamIsvStockAdjustRequestDTO Setter
 // 库存调整入参
-func (r *AlibabaMosGoodsAdjustRequest) SetParamIsvStockAdjustRequestDTO(_paramIsvStockAdjustRequestDTO *IsvStockAdjustRequestDto) error {
+func (r *AlibabaMosGoodsAdjustRequest) SetParamIsvStockAdjustRequestDTO(_paramIsvStockAdjustRequestDTO *IsvStockAdjustRequestDTO) error {
     r._paramIsvStockAdjustRequestDTO = _paramIsvStockAdjustRequestDTO
     r.Set("param_isv_stock_adjust_request_d_t_o", _paramIsvStockAdjustRequestDTO)
     return nil
 }
 
 // ParamIsvStockAdjustRequestDTO Getter
-func (r AlibabaMosGoodsAdjustRequest) GetParamIsvStockAdjustRequestDTO() *IsvStockAdjustRequestDto {
+func (r AlibabaMosGoodsAdjustRequest) GetParamIsvStockAdjustRequestDTO() *IsvStockAdjustRequestDTO {
     return r._paramIsvStockAdjustRequestDTO
 }

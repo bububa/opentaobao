@@ -1,7 +1,7 @@
 package store
 
-// StoreRelationSimpleDo 
-type StoreRelationSimpleDo struct {
+// StoreRelationSimpleDO 
+type StoreRelationSimpleDO struct {
     // 业务类型
     BizType   int64 `json:"biz_type,omitempty" xml:"biz_type,omitempty"`
     // 门店名称

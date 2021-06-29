@@ -17,7 +17,7 @@ tmall.workcard.identify
 type TmallWorkcardIdentifyRequest struct {
     model.Params
     // 核销dto
-    _verifyRequestDTO   *VerifyRequestDto
+    _verifyRequestDTO   *VerifyRequestDTO
 }
 
 // 初始化TmallWorkcardIdentifyRequest对象
@@ -42,13 +42,13 @@ func (r TmallWorkcardIdentifyRequest) GetApiParams() url.Values {
 }
 // VerifyRequestDTO Setter
 // 核销dto
-func (r *TmallWorkcardIdentifyRequest) SetVerifyRequestDTO(_verifyRequestDTO *VerifyRequestDto) error {
+func (r *TmallWorkcardIdentifyRequest) SetVerifyRequestDTO(_verifyRequestDTO *VerifyRequestDTO) error {
     r._verifyRequestDTO = _verifyRequestDTO
     r.Set("verify_request_d_t_o", _verifyRequestDTO)
     return nil
 }
 
 // VerifyRequestDTO Getter
-func (r TmallWorkcardIdentifyRequest) GetVerifyRequestDTO() *VerifyRequestDto {
+func (r TmallWorkcardIdentifyRequest) GetVerifyRequestDTO() *VerifyRequestDTO {
     return r._verifyRequestDTO
 }

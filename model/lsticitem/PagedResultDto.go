@@ -1,7 +1,7 @@
 package lsticitem
 
-// PagedResultDto 
-type PagedResultDto struct {
+// PagedResultDTO 
+type PagedResultDTO struct {
     // 查询总数
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 每页条数
@@ -15,5 +15,5 @@ type PagedResultDto struct {
     // 当前页码
     Page   int64 `json:"page,omitempty" xml:"page,omitempty"`
     // 商品集合
-    ContentList   []TopLstItemDto `json:"content_list,omitempty" xml:"content_list>top_lst_item_dto,omitempty"`
+    ContentList   []TopLstItemDTO `json:"content_list,omitempty" xml:"content_list>top_lst_item_dto,omitempty"`
 }

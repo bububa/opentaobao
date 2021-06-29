@@ -1,7 +1,7 @@
 package cloudgame
 
-// ScoreReportDto 
-type ScoreReportDto struct {
+// ScoreReportDTO 
+type ScoreReportDTO struct {
     // 游戏结果
     Score   string `json:"score,omitempty" xml:"score,omitempty"`
     // SDK传入的gameSessionId

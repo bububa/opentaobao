@@ -17,7 +17,7 @@ type YunosAdAuditCreativeAddRequest struct {
     // 外部dsp的id
     _memberId   int64
     // 创意审核入参
-    _creative   *CreativeParamDto
+    _creative   *CreativeParamDTO
 }
 
 // 初始化YunosAdAuditCreativeAddRequest对象
@@ -54,13 +54,13 @@ func (r YunosAdAuditCreativeAddRequest) GetMemberId() int64 {
 }
 // Creative Setter
 // 创意审核入参
-func (r *YunosAdAuditCreativeAddRequest) SetCreative(_creative *CreativeParamDto) error {
+func (r *YunosAdAuditCreativeAddRequest) SetCreative(_creative *CreativeParamDTO) error {
     r._creative = _creative
     r.Set("creative", _creative)
     return nil
 }
 
 // Creative Getter
-func (r YunosAdAuditCreativeAddRequest) GetCreative() *CreativeParamDto {
+func (r YunosAdAuditCreativeAddRequest) GetCreative() *CreativeParamDTO {
     return r._creative
 }

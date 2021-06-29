@@ -1,7 +1,7 @@
 package traveltrade
 
-// VoucherInfoDto 
-type VoucherInfoDto struct {
+// VoucherInfoDTO 
+type VoucherInfoDTO struct {
     // 用户短信会收到的确认号
     ConfirmCode   string `json:"confirm_code,omitempty" xml:"confirm_code,omitempty"`
     // 凭证使用次数

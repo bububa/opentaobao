@@ -17,7 +17,7 @@ type AlibabaHealthVaccinNoticeUserBindRequest struct {
     // 支付宝ID
     _alipayUserId   string
     // 绑定人信息list
-    _bindUsers   []AlipayVaccineUserBindDto
+    _bindUsers   []AlipayVaccineUserBindDTO
     // ISV 侧用户 ID
     _outerUserId   string
     // 联系电话
@@ -60,14 +60,14 @@ func (r AlibabaHealthVaccinNoticeUserBindRequest) GetAlipayUserId() string {
 }
 // BindUsers Setter
 // 绑定人信息list
-func (r *AlibabaHealthVaccinNoticeUserBindRequest) SetBindUsers(_bindUsers []AlipayVaccineUserBindDto) error {
+func (r *AlibabaHealthVaccinNoticeUserBindRequest) SetBindUsers(_bindUsers []AlipayVaccineUserBindDTO) error {
     r._bindUsers = _bindUsers
     r.Set("bind_users", _bindUsers)
     return nil
 }
 
 // BindUsers Getter
-func (r AlibabaHealthVaccinNoticeUserBindRequest) GetBindUsers() []AlipayVaccineUserBindDto {
+func (r AlibabaHealthVaccinNoticeUserBindRequest) GetBindUsers() []AlipayVaccineUserBindDTO {
     return r._bindUsers
 }
 // OuterUserId Setter

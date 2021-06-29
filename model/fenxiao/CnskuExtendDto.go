@@ -1,7 +1,7 @@
 package fenxiao
 
-// CnskuExtendDto 
-type CnskuExtendDto struct {
+// CnskuExtendDTO 
+type CnskuExtendDTO struct {
     // 配送要求（1：顺丰优先配）
     DeliverRequirements   string `json:"deliver_requirements,omitempty" xml:"deliver_requirements,omitempty"`
     // 是否贵品

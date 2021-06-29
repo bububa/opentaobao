@@ -7,5 +7,5 @@ type ItemTopResponse struct {
     // 每页多少条
     PagSize   int64 `json:"pag_size,omitempty" xml:"pag_size,omitempty"`
     // 返回的商品信息
-    ItemTopDTOList   []ItemTopDto `json:"item_top_d_t_o_list,omitempty" xml:"item_top_d_t_o_list>item_top_dto,omitempty"`
+    ItemTopDTOList   []ItemTopDTO `json:"item_top_d_t_o_list,omitempty" xml:"item_top_d_t_o_list>item_top_dto,omitempty"`
 }

@@ -23,5 +23,5 @@ type TaobaoAlitripFlightchangeGetResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    ResultDO   *TaobaoAlitripFlightchangeGetResultDo `json:"result_d_o,omitempty" xml:"result_d_o,omitempty"`
+    ResultDO   *TaobaoAlitripFlightchangeGetResultDO `json:"result_d_o,omitempty" xml:"result_d_o,omitempty"`
 }

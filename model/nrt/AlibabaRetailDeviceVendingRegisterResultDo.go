@@ -1,11 +1,11 @@
 package nrt
 
-// AlibabaRetailDeviceVendingRegisterResultDo 
-type AlibabaRetailDeviceVendingRegisterResultDo struct {
+// AlibabaRetailDeviceVendingRegisterResultDO 
+type AlibabaRetailDeviceVendingRegisterResultDO struct {
     // 是否成功
     Succ   bool `json:"succ,omitempty" xml:"succ,omitempty"`
     // 数据
-    Data   *DeviceDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *DeviceDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 错误码
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 测试

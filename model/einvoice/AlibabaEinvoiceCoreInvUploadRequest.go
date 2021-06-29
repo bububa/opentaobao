@@ -87,7 +87,7 @@ type AlibabaEinvoiceCoreInvUploadRequest struct {
     // 销方开户行名称。
     _payeeBankName   string
     // 发票明细。source=apply时必填，其他source可为空
-    _invoiceItems   []InvoiceResultItemDto
+    _invoiceItems   []InvoiceResultItemDTO
     // 开票人
     _payeeOperator   string
     // 发票板式文件数据，字节数据。  电票时必传。
@@ -556,14 +556,14 @@ func (r AlibabaEinvoiceCoreInvUploadRequest) GetPayeeBankName() string {
 }
 // InvoiceItems Setter
 // 发票明细。source=apply时必填，其他source可为空
-func (r *AlibabaEinvoiceCoreInvUploadRequest) SetInvoiceItems(_invoiceItems []InvoiceResultItemDto) error {
+func (r *AlibabaEinvoiceCoreInvUploadRequest) SetInvoiceItems(_invoiceItems []InvoiceResultItemDTO) error {
     r._invoiceItems = _invoiceItems
     r.Set("invoice_items", _invoiceItems)
     return nil
 }
 
 // InvoiceItems Getter
-func (r AlibabaEinvoiceCoreInvUploadRequest) GetInvoiceItems() []InvoiceResultItemDto {
+func (r AlibabaEinvoiceCoreInvUploadRequest) GetInvoiceItems() []InvoiceResultItemDTO {
     return r._invoiceItems
 }
 // PayeeOperator Setter

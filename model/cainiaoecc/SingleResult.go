@@ -3,7 +3,7 @@ package cainiaoecc
 // SingleResult 
 type SingleResult struct {
     // 数据对象
-    Result   *DelayExceptionCountDto `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *DelayExceptionCountDTO `json:"result,omitempty" xml:"result,omitempty"`
     // 错误码
     ErrorCode   string `json:"error_code,omitempty" xml:"error_code,omitempty"`
     // 是否重试

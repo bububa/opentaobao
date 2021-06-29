@@ -15,7 +15,7 @@ tmall.nr.fulfill.sold.orderlist.query
 type TmallNrFulfillSoldOrderlistQueryRequest struct {
     model.Params
     // 入参对象
-    _param0   *NrTimingOrderSoldQueryReqDto
+    _param0   *NrTimingOrderSoldQueryReqDTO
 }
 
 // 初始化TmallNrFulfillSoldOrderlistQueryRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrFulfillSoldOrderlistQueryRequest) GetApiParams() url.Values {
 }
 // Param0 Setter
 // 入参对象
-func (r *TmallNrFulfillSoldOrderlistQueryRequest) SetParam0(_param0 *NrTimingOrderSoldQueryReqDto) error {
+func (r *TmallNrFulfillSoldOrderlistQueryRequest) SetParam0(_param0 *NrTimingOrderSoldQueryReqDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TmallNrFulfillSoldOrderlistQueryRequest) GetParam0() *NrTimingOrderSoldQueryReqDto {
+func (r TmallNrFulfillSoldOrderlistQueryRequest) GetParam0() *NrTimingOrderSoldQueryReqDTO {
     return r._param0
 }

@@ -1,7 +1,7 @@
 package drugtrace
 
-// DrugEntBaseDto 
-type DrugEntBaseDto struct {
+// DrugEntBaseDTO 
+type DrugEntBaseDTO struct {
     // 药品信息id
     DrugEntBaseId   string `json:"drug_ent_base_id,omitempty" xml:"drug_ent_base_id,omitempty"`
     // 药品基本信息id

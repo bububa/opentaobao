@@ -19,7 +19,7 @@ type AlibabaScbpAdKeywordDeleteKeywordBatchRequest struct {
     // 请求参数
     _keywordQuery   *KeywordQuery
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdKeywordDeleteKeywordBatchRequest对象
@@ -68,13 +68,13 @@ func (r AlibabaScbpAdKeywordDeleteKeywordBatchRequest) GetKeywordQuery() *Keywor
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordDeleteKeywordBatchRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdKeywordDeleteKeywordBatchRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdKeywordDeleteKeywordBatchRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdKeywordDeleteKeywordBatchRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

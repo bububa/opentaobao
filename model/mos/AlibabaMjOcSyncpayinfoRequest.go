@@ -15,7 +15,7 @@ alibaba.mj.oc.syncpayinfo
 type AlibabaMjOcSyncpayinfoRequest struct {
     model.Params
     // 支付参考号信息
-    _posPay   *PosPayDto
+    _posPay   *PosPayDTO
 }
 
 // 初始化AlibabaMjOcSyncpayinfoRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMjOcSyncpayinfoRequest) GetApiParams() url.Values {
 }
 // PosPay Setter
 // 支付参考号信息
-func (r *AlibabaMjOcSyncpayinfoRequest) SetPosPay(_posPay *PosPayDto) error {
+func (r *AlibabaMjOcSyncpayinfoRequest) SetPosPay(_posPay *PosPayDTO) error {
     r._posPay = _posPay
     r.Set("pos_pay", _posPay)
     return nil
 }
 
 // PosPay Getter
-func (r AlibabaMjOcSyncpayinfoRequest) GetPosPay() *PosPayDto {
+func (r AlibabaMjOcSyncpayinfoRequest) GetPosPay() *PosPayDTO {
     return r._posPay
 }

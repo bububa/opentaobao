@@ -1,7 +1,7 @@
 package lstvending
 
-// AlibabaLstVendingTradeflowSaveResultDto 
-type AlibabaLstVendingTradeflowSaveResultDto struct {
+// AlibabaLstVendingTradeflowSaveResultDTO 
+type AlibabaLstVendingTradeflowSaveResultDTO struct {
     // 错误信息
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     // 错误码

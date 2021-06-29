@@ -1,7 +1,7 @@
 package wdk
 
-// RouteNodeDto 
-type RouteNodeDto struct {
+// RouteNodeDTO 
+type RouteNodeDTO struct {
     // 节点序号
     NodeIndex   int64 `json:"node_index,omitempty" xml:"node_index,omitempty"`
     // 节点类型

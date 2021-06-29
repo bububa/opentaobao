@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrFetchCodeDto 
-type NrFetchCodeDto struct {
+// NrFetchCodeDTO 
+type NrFetchCodeDTO struct {
     // 主订单号
     MainOrderId   int64 `json:"main_order_id,omitempty" xml:"main_order_id,omitempty"`
     // 发货公司名称

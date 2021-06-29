@@ -1,7 +1,7 @@
 package waybill
 
-// StandardTemplateDo 
-type StandardTemplateDo struct {
+// StandardTemplateDO 
+type StandardTemplateDO struct {
     // 模板id
     StandardTemplateId   int64 `json:"standard_template_id,omitempty" xml:"standard_template_id,omitempty"`
     // 模板名称

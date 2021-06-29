@@ -1,7 +1,7 @@
 package tmallcar
 
-// XCarSysModelDto 
-type XCarSysModelDto struct {
+// XCarSysModelDTO 
+type XCarSysModelDTO struct {
     // 品牌pid
     BrandPid   int64 `json:"brand_pid,omitempty" xml:"brand_pid,omitempty"`
     // 品牌vid

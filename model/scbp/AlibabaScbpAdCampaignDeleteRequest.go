@@ -15,9 +15,9 @@ alibaba.scbp.ad.campaign.delete
 type AlibabaScbpAdCampaignDeleteRequest struct {
     model.Params
     // 操作对象
-    _batchOperation   *CampaignBatchOperationDto
+    _batchOperation   *CampaignBatchOperationDTO
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdCampaignDeleteRequest对象
@@ -42,25 +42,25 @@ func (r AlibabaScbpAdCampaignDeleteRequest) GetApiParams() url.Values {
 }
 // BatchOperation Setter
 // 操作对象
-func (r *AlibabaScbpAdCampaignDeleteRequest) SetBatchOperation(_batchOperation *CampaignBatchOperationDto) error {
+func (r *AlibabaScbpAdCampaignDeleteRequest) SetBatchOperation(_batchOperation *CampaignBatchOperationDTO) error {
     r._batchOperation = _batchOperation
     r.Set("batch_operation", _batchOperation)
     return nil
 }
 
 // BatchOperation Getter
-func (r AlibabaScbpAdCampaignDeleteRequest) GetBatchOperation() *CampaignBatchOperationDto {
+func (r AlibabaScbpAdCampaignDeleteRequest) GetBatchOperation() *CampaignBatchOperationDTO {
     return r._batchOperation
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignDeleteRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdCampaignDeleteRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdCampaignDeleteRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdCampaignDeleteRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

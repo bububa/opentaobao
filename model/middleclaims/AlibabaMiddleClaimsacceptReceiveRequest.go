@@ -15,7 +15,7 @@ alibaba.middle.claimsaccept.receive
 type AlibabaMiddleClaimsacceptReceiveRequest struct {
     model.Params
     // 理赔受理结果实体类
-    _claimsAcceptDto   *ClaimsAcceptDto
+    _claimsAcceptDto   *ClaimsAcceptDTO
 }
 
 // 初始化AlibabaMiddleClaimsacceptReceiveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMiddleClaimsacceptReceiveRequest) GetApiParams() url.Values {
 }
 // ClaimsAcceptDto Setter
 // 理赔受理结果实体类
-func (r *AlibabaMiddleClaimsacceptReceiveRequest) SetClaimsAcceptDto(_claimsAcceptDto *ClaimsAcceptDto) error {
+func (r *AlibabaMiddleClaimsacceptReceiveRequest) SetClaimsAcceptDto(_claimsAcceptDto *ClaimsAcceptDTO) error {
     r._claimsAcceptDto = _claimsAcceptDto
     r.Set("claims_accept_dto", _claimsAcceptDto)
     return nil
 }
 
 // ClaimsAcceptDto Getter
-func (r AlibabaMiddleClaimsacceptReceiveRequest) GetClaimsAcceptDto() *ClaimsAcceptDto {
+func (r AlibabaMiddleClaimsacceptReceiveRequest) GetClaimsAcceptDto() *ClaimsAcceptDTO {
     return r._claimsAcceptDto
 }

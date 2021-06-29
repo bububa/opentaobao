@@ -1,7 +1,7 @@
 package tanx
 
-// AdvertiserDto 
-type AdvertiserDto struct {
+// AdvertiserDTO 
+type AdvertiserDTO struct {
     // 英文名称
     EnglishName   string `json:"english_name,omitempty" xml:"english_name,omitempty"`
     // 昵称

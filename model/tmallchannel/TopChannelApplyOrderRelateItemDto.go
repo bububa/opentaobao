@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TopChannelApplyOrderRelateItemDto 
-type TopChannelApplyOrderRelateItemDto struct {
+// TopChannelApplyOrderRelateItemDTO 
+type TopChannelApplyOrderRelateItemDTO struct {
     // 货品ID
     ProductId   int64 `json:"product_id,omitempty" xml:"product_id,omitempty"`
     // 货品的skuId

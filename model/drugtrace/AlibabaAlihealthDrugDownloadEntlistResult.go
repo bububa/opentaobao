@@ -5,7 +5,7 @@ type AlibabaAlihealthDrugDownloadEntlistResult struct {
     // msgInfo
     MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     // model
-    Model   *DataEntTaskDto `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *DataEntTaskDTO `json:"model,omitempty" xml:"model,omitempty"`
     // success
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // httpStatusCode

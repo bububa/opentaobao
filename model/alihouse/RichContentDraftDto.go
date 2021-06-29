@@ -1,7 +1,7 @@
 package alihouse
 
-// RichContentDraftDto 
-type RichContentDraftDto struct {
+// RichContentDraftDTO 
+type RichContentDraftDTO struct {
     // 外部富文本id
     OuterRichContentId   string `json:"outer_rich_content_id,omitempty" xml:"outer_rich_content_id,omitempty"`
     // 菜鸟城市id

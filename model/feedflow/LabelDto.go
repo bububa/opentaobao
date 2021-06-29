@@ -1,13 +1,13 @@
 package feedflow
 
-// LabelDto 
-type LabelDto struct {
+// LabelDTO 
+type LabelDTO struct {
     // 标签id，可通过标签接口获取
     LabelId   int64 `json:"label_id,omitempty" xml:"label_id,omitempty"`
     // 标签值，可通过标签接口获取
     LabelValue   string `json:"label_value,omitempty" xml:"label_value,omitempty"`
     // 选项结构
-    Options   []OptionDto `json:"options,omitempty" xml:"options>option_dto,omitempty"`
+    Options   []OptionDTO `json:"options,omitempty" xml:"options>option_dto,omitempty"`
     // 定向id，可通过标签接口获取
     TargetId   int64 `json:"target_id,omitempty" xml:"target_id,omitempty"`
     // 定向类型

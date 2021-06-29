@@ -1,7 +1,7 @@
 package einvoice
 
-// PayerLogisticsInfoDto 
-type PayerLogisticsInfoDto struct {
+// PayerLogisticsInfoDTO 
+type PayerLogisticsInfoDTO struct {
     // 收件人地址
     ContactAddr   string `json:"contact_addr,omitempty" xml:"contact_addr,omitempty"`
     // 收件人电话

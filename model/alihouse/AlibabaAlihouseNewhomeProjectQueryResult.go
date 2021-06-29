@@ -3,7 +3,7 @@ package alihouse
 // AlibabaAlihouseNewhomeProjectQueryResult 
 type AlibabaAlihouseNewhomeProjectQueryResult struct {
     // 返回素材id
-    Data   *EbbasItemDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *EbbasItemDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // message

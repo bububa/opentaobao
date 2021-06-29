@@ -1,7 +1,7 @@
 package wdk
 
-// ReceiptPayChannelDo 
-type ReceiptPayChannelDo struct {
+// ReceiptPayChannelDO 
+type ReceiptPayChannelDO struct {
     // 序号
     Index   int64 `json:"index,omitempty" xml:"index,omitempty"`
     // 付款金额

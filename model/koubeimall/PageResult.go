@@ -11,7 +11,7 @@ type PageResult struct {
     // 分页长度
     PageSize   int64 `json:"page_size,omitempty" xml:"page_size,omitempty"`
     // 门店评论信息dto
-    CommentInfo   *CommentInfoDto `json:"comment_info,omitempty" xml:"comment_info,omitempty"`
+    CommentInfo   *CommentInfoDTO `json:"comment_info,omitempty" xml:"comment_info,omitempty"`
     // 门店信息模型
-    StoreList   []StoreDto `json:"store_list,omitempty" xml:"store_list>store_dto,omitempty"`
+    StoreList   []StoreDTO `json:"store_list,omitempty" xml:"store_list>store_dto,omitempty"`
 }

@@ -17,5 +17,5 @@ type TaobaoXhotelServicetimeGetResultSet struct {
     // errorMsg
     ErrorMsg   string `json:"error_msg,omitempty" xml:"error_msg,omitempty"`
     // firstResult
-    FirstResults   []ServiceTimeDataDo `json:"first_results,omitempty" xml:"first_results>service_time_data_do,omitempty"`
+    FirstResults   []ServiceTimeDataDO `json:"first_results,omitempty" xml:"first_results>service_time_data_do,omitempty"`
 }

@@ -1,7 +1,7 @@
 package happytrip
 
-// HotelBookDto 
-type HotelBookDto struct {
+// HotelBookDTO 
+type HotelBookDTO struct {
     // 创建时间
     GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
     // 创建者

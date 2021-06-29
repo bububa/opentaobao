@@ -1,7 +1,7 @@
 package ihome
 
-// UploadPicMaterialDto 
-type UploadPicMaterialDto struct {
+// UploadPicMaterialDTO 
+type UploadPicMaterialDTO struct {
     // 图片宽
     Width   int64 `json:"width,omitempty" xml:"width,omitempty"`
     // 标题

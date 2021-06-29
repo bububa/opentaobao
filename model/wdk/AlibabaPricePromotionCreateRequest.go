@@ -15,7 +15,7 @@ alibaba.price.promotion.create
 type AlibabaPricePromotionCreateRequest struct {
     model.Params
     // 档期活动参数
-    _promotionActivityDo   *PromotionActivityDo
+    _promotionActivityDo   *PromotionActivityDO
 }
 
 // 初始化AlibabaPricePromotionCreateRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaPricePromotionCreateRequest) GetApiParams() url.Values {
 }
 // PromotionActivityDo Setter
 // 档期活动参数
-func (r *AlibabaPricePromotionCreateRequest) SetPromotionActivityDo(_promotionActivityDo *PromotionActivityDo) error {
+func (r *AlibabaPricePromotionCreateRequest) SetPromotionActivityDo(_promotionActivityDo *PromotionActivityDO) error {
     r._promotionActivityDo = _promotionActivityDo
     r.Set("promotion_activity_do", _promotionActivityDo)
     return nil
 }
 
 // PromotionActivityDo Getter
-func (r AlibabaPricePromotionCreateRequest) GetPromotionActivityDo() *PromotionActivityDo {
+func (r AlibabaPricePromotionCreateRequest) GetPromotionActivityDo() *PromotionActivityDO {
     return r._promotionActivityDo
 }

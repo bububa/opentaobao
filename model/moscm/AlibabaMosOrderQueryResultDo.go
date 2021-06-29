@@ -1,7 +1,7 @@
 package moscm
 
-// AlibabaMosOrderQueryResultDo 
-type AlibabaMosOrderQueryResultDo struct {
+// AlibabaMosOrderQueryResultDO 
+type AlibabaMosOrderQueryResultDO struct {
     // 订单数据
     Data   *PagedList `json:"data,omitempty" xml:"data,omitempty"`
     // 异常信息

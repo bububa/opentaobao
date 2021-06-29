@@ -15,7 +15,7 @@ taobao.rdc.aligenius.refunds.check
 type TaobaoRdcAligeniusRefundsCheckRequest struct {
     model.Params
     // 入参
-    _param   *RefundCheckDto
+    _param   *RefundCheckDTO
 }
 
 // 初始化TaobaoRdcAligeniusRefundsCheckRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusRefundsCheckRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *TaobaoRdcAligeniusRefundsCheckRequest) SetParam(_param *RefundCheckDto) error {
+func (r *TaobaoRdcAligeniusRefundsCheckRequest) SetParam(_param *RefundCheckDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoRdcAligeniusRefundsCheckRequest) GetParam() *RefundCheckDto {
+func (r TaobaoRdcAligeniusRefundsCheckRequest) GetParam() *RefundCheckDTO {
     return r._param
 }

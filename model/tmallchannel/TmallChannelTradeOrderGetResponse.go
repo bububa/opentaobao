@@ -51,11 +51,11 @@ type TmallChannelTradeOrderGetResponse struct {
     // 付款时间
     PayTime   string `json:"pay_time,omitempty" xml:"pay_time,omitempty"`
     // 子采购单列表
-    SubOrderList   []TopChannelSubPurchaseOrderDto `json:"sub_order_list,omitempty" xml:"sub_order_list>top_channel_sub_purchase_order_dto,omitempty"`
+    SubOrderList   []TopChannelSubPurchaseOrderDTO `json:"sub_order_list,omitempty" xml:"sub_order_list>top_channel_sub_purchase_order_dto,omitempty"`
     // 物流单信息
-    ChannelLogisticsOrder   *TopChannelLogisticsOrderDto `json:"channel_logistics_order,omitempty" xml:"channel_logistics_order,omitempty"`
+    ChannelLogisticsOrder   *TopChannelLogisticsOrderDTO `json:"channel_logistics_order,omitempty" xml:"channel_logistics_order,omitempty"`
     // 解析描述
     Schema   string `json:"schema,omitempty" xml:"schema,omitempty"`
     // 支付信息
-    TopPurchasePayOrder   *TopPurchasePayOrderDto `json:"top_purchase_pay_order,omitempty" xml:"top_purchase_pay_order,omitempty"`
+    TopPurchasePayOrder   *TopPurchasePayOrderDTO `json:"top_purchase_pay_order,omitempty" xml:"top_purchase_pay_order,omitempty"`
 }

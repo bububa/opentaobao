@@ -15,7 +15,7 @@ taobao.miniapp.messsage.reply
 type TaobaoMiniappMesssageReplyRequest struct {
     model.Params
     // 入参
-    _param   *ReplyMessageDto
+    _param   *ReplyMessageDTO
 }
 
 // 初始化TaobaoMiniappMesssageReplyRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoMiniappMesssageReplyRequest) GetApiParams() url.Values {
 }
 // Param Setter
 // 入参
-func (r *TaobaoMiniappMesssageReplyRequest) SetParam(_param *ReplyMessageDto) error {
+func (r *TaobaoMiniappMesssageReplyRequest) SetParam(_param *ReplyMessageDTO) error {
     r._param = _param
     r.Set("param", _param)
     return nil
 }
 
 // Param Getter
-func (r TaobaoMiniappMesssageReplyRequest) GetParam() *ReplyMessageDto {
+func (r TaobaoMiniappMesssageReplyRequest) GetParam() *ReplyMessageDTO {
     return r._param
 }

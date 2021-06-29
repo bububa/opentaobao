@@ -1,7 +1,7 @@
 package tttm
 
-// OrderDto 
-type OrderDto struct {
+// OrderDTO 
+type OrderDTO struct {
     // 订单id
     OrderId   string `json:"order_id,omitempty" xml:"order_id,omitempty"`
     // 订单总金额
@@ -13,7 +13,7 @@ type OrderDto struct {
     // 备注
     Remark   string `json:"remark,omitempty" xml:"remark,omitempty"`
     // 下单货品
-    OrderProductList   []OrderProductDto `json:"order_product_list,omitempty" xml:"order_product_list>order_product_dto,omitempty"`
+    OrderProductList   []OrderProductDTO `json:"order_product_list,omitempty" xml:"order_product_list>order_product_dto,omitempty"`
     // 下单时间
     OrderTime   string `json:"order_time,omitempty" xml:"order_time,omitempty"`
     // 生产状态

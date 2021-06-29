@@ -3,7 +3,7 @@ package drugtrace
 // AlibabaAlihealthDrugKytListupoutResultModel 
 type AlibabaAlihealthDrugKytListupoutResultModel struct {
     // 返回对象
-    Model   *PageInfoDto `json:"model,omitempty" xml:"model,omitempty"`
+    Model   *PageInfoDTO `json:"model,omitempty" xml:"model,omitempty"`
     // 返回码
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
     // 返回值

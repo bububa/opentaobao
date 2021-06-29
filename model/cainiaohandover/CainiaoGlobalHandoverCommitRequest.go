@@ -15,13 +15,13 @@ cainiao.global.handover.commit
 type CainiaoGlobalHandoverCommitRequest struct {
     model.Params
     // 用户信息
-    _userInfo   *UserInfoDto
+    _userInfo   *UserInfoDTO
     // 大包备注
     _remark   string
     // 退件信息
-    _returnInfo   *ReturnerDto
+    _returnInfo   *ReturnerDTO
     // 揽收信息
-    _pickupInfo   *PickupDto
+    _pickupInfo   *PickupDTO
     // 大包重量
     _weight   int64
     // 交接单id
@@ -62,14 +62,14 @@ func (r CainiaoGlobalHandoverCommitRequest) GetApiParams() url.Values {
 }
 // UserInfo Setter
 // 用户信息
-func (r *CainiaoGlobalHandoverCommitRequest) SetUserInfo(_userInfo *UserInfoDto) error {
+func (r *CainiaoGlobalHandoverCommitRequest) SetUserInfo(_userInfo *UserInfoDTO) error {
     r._userInfo = _userInfo
     r.Set("user_info", _userInfo)
     return nil
 }
 
 // UserInfo Getter
-func (r CainiaoGlobalHandoverCommitRequest) GetUserInfo() *UserInfoDto {
+func (r CainiaoGlobalHandoverCommitRequest) GetUserInfo() *UserInfoDTO {
     return r._userInfo
 }
 // Remark Setter
@@ -86,26 +86,26 @@ func (r CainiaoGlobalHandoverCommitRequest) GetRemark() string {
 }
 // ReturnInfo Setter
 // 退件信息
-func (r *CainiaoGlobalHandoverCommitRequest) SetReturnInfo(_returnInfo *ReturnerDto) error {
+func (r *CainiaoGlobalHandoverCommitRequest) SetReturnInfo(_returnInfo *ReturnerDTO) error {
     r._returnInfo = _returnInfo
     r.Set("return_info", _returnInfo)
     return nil
 }
 
 // ReturnInfo Getter
-func (r CainiaoGlobalHandoverCommitRequest) GetReturnInfo() *ReturnerDto {
+func (r CainiaoGlobalHandoverCommitRequest) GetReturnInfo() *ReturnerDTO {
     return r._returnInfo
 }
 // PickupInfo Setter
 // 揽收信息
-func (r *CainiaoGlobalHandoverCommitRequest) SetPickupInfo(_pickupInfo *PickupDto) error {
+func (r *CainiaoGlobalHandoverCommitRequest) SetPickupInfo(_pickupInfo *PickupDTO) error {
     r._pickupInfo = _pickupInfo
     r.Set("pickup_info", _pickupInfo)
     return nil
 }
 
 // PickupInfo Getter
-func (r CainiaoGlobalHandoverCommitRequest) GetPickupInfo() *PickupDto {
+func (r CainiaoGlobalHandoverCommitRequest) GetPickupInfo() *PickupDTO {
     return r._pickupInfo
 }
 // Weight Setter

@@ -1,13 +1,13 @@
 package mos
 
-// AlibabaMosBunkBunkinfoQuerybunkResultDo 
-type AlibabaMosBunkBunkinfoQuerybunkResultDo struct {
+// AlibabaMosBunkBunkinfoQuerybunkResultDO 
+type AlibabaMosBunkBunkinfoQuerybunkResultDO struct {
     // 全链路追踪id
     TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
     // 总量
     Total   int64 `json:"total,omitempty" xml:"total,omitempty"`
     // 返回数据
-    DataList   []BunkSimpleDto `json:"data_list,omitempty" xml:"data_list>bunk_simple_dto,omitempty"`
+    DataList   []BunkSimpleDTO `json:"data_list,omitempty" xml:"data_list>bunk_simple_dto,omitempty"`
     // 调用是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

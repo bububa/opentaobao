@@ -1,7 +1,7 @@
 package singletreasure
 
-// ItemDetailInfoCreateDto 
-type ItemDetailInfoCreateDto struct {
+// ItemDetailInfoCreateDTO 
+type ItemDetailInfoCreateDTO struct {
     // 商品买家限购数量，-1表示不限购
     LimitCheck   int64 `json:"limit_check,omitempty" xml:"limit_check,omitempty"`
     // 是否取整
@@ -9,7 +9,7 @@ type ItemDetailInfoCreateDto struct {
     // 猫客折上折，优惠力度，打折、减钱：单位分；打折，8折：800
     MkDiscount   int64 `json:"mk_discount,omitempty" xml:"mk_discount,omitempty"`
     // sku对象列表
-    SkuVOs   []SkuDetailInfoCreateDto `json:"sku_v_os,omitempty" xml:"sku_v_os>sku_detail_info_create_dto,omitempty"`
+    SkuVOs   []SkuDetailInfoCreateDTO `json:"sku_v_os,omitempty" xml:"sku_v_os>sku_detail_info_create_dto,omitempty"`
     // 商品Id
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 是否抹分

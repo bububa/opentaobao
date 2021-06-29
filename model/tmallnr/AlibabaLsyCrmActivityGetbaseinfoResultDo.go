@@ -1,11 +1,11 @@
 package tmallnr
 
-// AlibabaLsyCrmActivityGetbaseinfoResultDo 
-type AlibabaLsyCrmActivityGetbaseinfoResultDo struct {
+// AlibabaLsyCrmActivityGetbaseinfoResultDO 
+type AlibabaLsyCrmActivityGetbaseinfoResultDO struct {
     // 错误信息
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // DTO
-    Data   *NrtCrmActivityDto `json:"data,omitempty" xml:"data,omitempty"`
+    Data   *NrtCrmActivityDTO `json:"data,omitempty" xml:"data,omitempty"`
     // 调用是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

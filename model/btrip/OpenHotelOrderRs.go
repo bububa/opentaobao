@@ -43,9 +43,9 @@ type OpenHotelOrderRs struct {
     // 价目详情列表
     PriceInfoList   []OpenPriceInfo `json:"price_info_list,omitempty" xml:"price_info_list>open_price_info,omitempty"`
     // 成本中心对象
-    CostCenter   *OpenCostCenterDo `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
+    CostCenter   *OpenCostCenterDO `json:"cost_center,omitempty" xml:"cost_center,omitempty"`
     // 发票对象
-    Invoice   *OpenInvoiceDo `json:"invoice,omitempty" xml:"invoice,omitempty"`
+    Invoice   *OpenInvoiceDO `json:"invoice,omitempty" xml:"invoice,omitempty"`
     // 订单状态描述
     OrderStatusDesc   string `json:"order_status_desc,omitempty" xml:"order_status_desc,omitempty"`
     // 订单类型描述
@@ -59,5 +59,5 @@ type OpenHotelOrderRs struct {
     // 订单类型
     OrderType   int64 `json:"order_type,omitempty" xml:"order_type,omitempty"`
     // 入住人员列表
-    UserAffiliateList   []OpenUserAffiliateDo `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
+    UserAffiliateList   []OpenUserAffiliateDO `json:"user_affiliate_list,omitempty" xml:"user_affiliate_list>open_user_affiliate_do,omitempty"`
 }

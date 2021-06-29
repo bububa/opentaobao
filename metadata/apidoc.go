@@ -71,11 +71,11 @@ func (d ApiDoc) ApiTpl() ApiTpl {
 	}
 	reqParamMp := make(map[string]struct{}, len(d.RequestParams))
 	for _, p := range d.RequestParams {
-		if _, found := reqParamMp[p.Name]; found {
+		param := p.TplParam(tpl.Name)
+		if _, found := reqParamMp[param.Name]; found {
 			continue
 		}
-		reqParamMp[p.Name] = struct{}{}
-		param := p.TplParam(tpl.Name)
+		reqParamMp[param.Name] = struct{}{}
 		tpl.RequestParams = append(tpl.RequestParams, param)
 		if !tpl.IsMultipart && param.IsMultipart() {
 			tpl.IsMultipart = true
@@ -83,11 +83,11 @@ func (d ApiDoc) ApiTpl() ApiTpl {
 	}
 	respParamMp := make(map[string]struct{}, len(d.ResponseParams))
 	for _, p := range d.ResponseParams {
-		if _, found := respParamMp[p.Name]; found {
+		param := p.TplParam(tpl.Name)
+		if _, found := respParamMp[param.Name]; found {
 			continue
 		}
-		respParamMp[p.Name] = struct{}{}
-		param := p.TplParam(tpl.Name)
+		respParamMp[param.Name] = struct{}{}
 		if param.Name == "RequestId" {
 			tpl.HasRequestId = true
 		}
@@ -139,6 +139,12 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 		param.Type = "string"
 	default:
 		paramType = strings.Title(paramType)
+		if strings.HasSuffix(paramType, "Dto") {
+			paramType = strings.TrimSuffix(paramType, "Dto") + "DTO"
+		}
+		if strings.HasSuffix(paramType, "Do") {
+			paramType = strings.TrimSuffix(paramType, "Do") + "DO"
+		}
 		param.ObjType = paramType
 		param.SnakeType = util.SnakeCase(paramType)
 		if strings.HasSuffix(p.Type, "[]") {

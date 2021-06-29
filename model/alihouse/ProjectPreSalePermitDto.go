@@ -1,7 +1,7 @@
 package alihouse
 
-// ProjectPreSalePermitDto 
-type ProjectPreSalePermitDto struct {
+// ProjectPreSalePermitDTO 
+type ProjectPreSalePermitDTO struct {
     // 公示时间
     PublicityTime   string `json:"publicity_time,omitempty" xml:"publicity_time,omitempty"`
     // 总价区间

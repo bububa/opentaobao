@@ -1,7 +1,7 @@
 package singletreasure
 
-// ActivityInfoListQueryDto 
-type ActivityInfoListQueryDto struct {
+// ActivityInfoListQueryDTO 
+type ActivityInfoListQueryDTO struct {
     // 活动 id
     ActivityId   int64 `json:"activity_id,omitempty" xml:"activity_id,omitempty"`
     // 活动名称

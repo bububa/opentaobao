@@ -1,7 +1,7 @@
 package tvpay
 
-// PreCreateResultDo 
-type PreCreateResultDo struct {
+// PreCreateResultDO 
+type PreCreateResultDO struct {
     // 外部订单号
     OutOrderNo   string `json:"out_order_no,omitempty" xml:"out_order_no,omitempty"`
     // 二维码

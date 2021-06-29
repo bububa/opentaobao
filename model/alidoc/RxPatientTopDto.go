@@ -1,7 +1,7 @@
 package alidoc
 
-// RxPatientTopDto 
-type RxPatientTopDto struct {
+// RxPatientTopDTO 
+type RxPatientTopDTO struct {
     // 性别
     Sex   string `json:"sex,omitempty" xml:"sex,omitempty"`
     // 年龄

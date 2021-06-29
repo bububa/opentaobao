@@ -1,7 +1,7 @@
 package alihealth2
 
-// DivisionDto 
-type DivisionDto struct {
+// DivisionDTO 
+type DivisionDTO struct {
     // divisionName
     DivisionName   string `json:"division_name,omitempty" xml:"division_name,omitempty"`
     // divisionId

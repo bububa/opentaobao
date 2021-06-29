@@ -19,7 +19,7 @@ type AlibabaScbpAdKeywordListCampaignKeywordsRequest struct {
     // 搜索条件
     _campaignKeywordQuery   *CampaignKeywordQuery
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdKeywordListCampaignKeywordsRequest对象
@@ -68,13 +68,13 @@ func (r AlibabaScbpAdKeywordListCampaignKeywordsRequest) GetCampaignKeywordQuery
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdKeywordListCampaignKeywordsRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdKeywordListCampaignKeywordsRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdKeywordListCampaignKeywordsRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdKeywordListCampaignKeywordsRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

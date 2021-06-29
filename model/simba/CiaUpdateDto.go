@@ -1,7 +1,7 @@
 package simba
 
-// CiaUpdateDto 
-type CiaUpdateDto struct {
+// CiaUpdateDTO 
+type CiaUpdateDTO struct {
     // 计划Id
     CampaignId   int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
     // 推广组Id

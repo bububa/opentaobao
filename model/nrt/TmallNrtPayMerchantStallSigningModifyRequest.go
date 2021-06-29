@@ -15,7 +15,7 @@ tmall.nrt.pay.merchant.stall.signing.modify
 type TmallNrtPayMerchantStallSigningModifyRequest struct {
     model.Params
     // 请求参数
-    _req   *StallSigningReqDto
+    _req   *StallSigningReqDTO
 }
 
 // 初始化TmallNrtPayMerchantStallSigningModifyRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrtPayMerchantStallSigningModifyRequest) GetApiParams() url.Values 
 }
 // Req Setter
 // 请求参数
-func (r *TmallNrtPayMerchantStallSigningModifyRequest) SetReq(_req *StallSigningReqDto) error {
+func (r *TmallNrtPayMerchantStallSigningModifyRequest) SetReq(_req *StallSigningReqDTO) error {
     r._req = _req
     r.Set("req", _req)
     return nil
 }
 
 // Req Getter
-func (r TmallNrtPayMerchantStallSigningModifyRequest) GetReq() *StallSigningReqDto {
+func (r TmallNrtPayMerchantStallSigningModifyRequest) GetReq() *StallSigningReqDTO {
     return r._req
 }

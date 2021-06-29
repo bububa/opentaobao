@@ -1,7 +1,7 @@
 package wdk
 
-// PosSubOrderDo 
-type PosSubOrderDo struct {
+// PosSubOrderDO 
+type PosSubOrderDO struct {
     // 库存单位，必填
     StockUnit   string `json:"stock_unit,omitempty" xml:"stock_unit,omitempty"`
     // 库存单位购买数量，必填

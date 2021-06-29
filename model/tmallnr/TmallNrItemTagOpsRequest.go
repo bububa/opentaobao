@@ -15,7 +15,7 @@ tmall.nr.item.tag.ops
 type TmallNrItemTagOpsRequest struct {
     model.Params
     // 请求入参
-    _tagReqDTO   *TagReqDto
+    _tagReqDTO   *TagReqDTO
 }
 
 // 初始化TmallNrItemTagOpsRequest对象
@@ -40,13 +40,13 @@ func (r TmallNrItemTagOpsRequest) GetApiParams() url.Values {
 }
 // TagReqDTO Setter
 // 请求入参
-func (r *TmallNrItemTagOpsRequest) SetTagReqDTO(_tagReqDTO *TagReqDto) error {
+func (r *TmallNrItemTagOpsRequest) SetTagReqDTO(_tagReqDTO *TagReqDTO) error {
     r._tagReqDTO = _tagReqDTO
     r.Set("tag_req_d_t_o", _tagReqDTO)
     return nil
 }
 
 // TagReqDTO Getter
-func (r TmallNrItemTagOpsRequest) GetTagReqDTO() *TagReqDto {
+func (r TmallNrItemTagOpsRequest) GetTagReqDTO() *TagReqDTO {
     return r._tagReqDTO
 }

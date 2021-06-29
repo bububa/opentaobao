@@ -1,7 +1,7 @@
 package alihouse
 
-// SyncProjectLayoutDto 
-type SyncProjectLayoutDto struct {
+// SyncProjectLayoutDTO 
+type SyncProjectLayoutDTO struct {
     // 户型图片多张以英文逗号隔开
     LayoutImages   string `json:"layout_images,omitempty" xml:"layout_images,omitempty"`
     // 户型均价

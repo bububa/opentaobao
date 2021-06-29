@@ -15,7 +15,7 @@ alibaba.retail.vending.road.item.sync
 type AlibabaRetailVendingRoadItemSyncRequest struct {
     model.Params
     // 入参
-    _roadItemSync   *RoadItemSyncDto
+    _roadItemSync   *RoadItemSyncDTO
 }
 
 // 初始化AlibabaRetailVendingRoadItemSyncRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaRetailVendingRoadItemSyncRequest) GetApiParams() url.Values {
 }
 // RoadItemSync Setter
 // 入参
-func (r *AlibabaRetailVendingRoadItemSyncRequest) SetRoadItemSync(_roadItemSync *RoadItemSyncDto) error {
+func (r *AlibabaRetailVendingRoadItemSyncRequest) SetRoadItemSync(_roadItemSync *RoadItemSyncDTO) error {
     r._roadItemSync = _roadItemSync
     r.Set("road_item_sync", _roadItemSync)
     return nil
 }
 
 // RoadItemSync Getter
-func (r AlibabaRetailVendingRoadItemSyncRequest) GetRoadItemSync() *RoadItemSyncDto {
+func (r AlibabaRetailVendingRoadItemSyncRequest) GetRoadItemSync() *RoadItemSyncDTO {
     return r._roadItemSync
 }

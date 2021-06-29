@@ -1,7 +1,7 @@
 package aedropshiper
 
-// AeopFreightCalculateForBuyerDto 
-type AeopFreightCalculateForBuyerDto struct {
+// AeopFreightCalculateForBuyerDTO 
+type AeopFreightCalculateForBuyerDTO struct {
     // 城市编码
     CityCode   string `json:"city_code,omitempty" xml:"city_code,omitempty"`
     // 国家编码

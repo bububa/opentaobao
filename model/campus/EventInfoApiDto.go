@@ -1,7 +1,7 @@
 package campus
 
-// EventInfoApiDto 
-type EventInfoApiDto struct {
+// EventInfoApiDTO 
+type EventInfoApiDTO struct {
     // 事件时间
     EventTime   string `json:"event_time,omitempty" xml:"event_time,omitempty"`
     // 事件信息ID

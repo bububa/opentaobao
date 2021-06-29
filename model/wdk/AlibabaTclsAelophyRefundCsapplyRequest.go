@@ -15,7 +15,7 @@ alibaba.tcls.aelophy.refund.csapply
 type AlibabaTclsAelophyRefundCsapplyRequest struct {
     model.Params
     // 逆向申请入参
-    _refundCsApplyDTO   *RefundCsApplyDto
+    _refundCsApplyDTO   *RefundCsApplyDTO
 }
 
 // 初始化AlibabaTclsAelophyRefundCsapplyRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaTclsAelophyRefundCsapplyRequest) GetApiParams() url.Values {
 }
 // RefundCsApplyDTO Setter
 // 逆向申请入参
-func (r *AlibabaTclsAelophyRefundCsapplyRequest) SetRefundCsApplyDTO(_refundCsApplyDTO *RefundCsApplyDto) error {
+func (r *AlibabaTclsAelophyRefundCsapplyRequest) SetRefundCsApplyDTO(_refundCsApplyDTO *RefundCsApplyDTO) error {
     r._refundCsApplyDTO = _refundCsApplyDTO
     r.Set("refund_cs_apply_d_t_o", _refundCsApplyDTO)
     return nil
 }
 
 // RefundCsApplyDTO Getter
-func (r AlibabaTclsAelophyRefundCsapplyRequest) GetRefundCsApplyDTO() *RefundCsApplyDto {
+func (r AlibabaTclsAelophyRefundCsapplyRequest) GetRefundCsApplyDTO() *RefundCsApplyDTO {
     return r._refundCsApplyDTO
 }

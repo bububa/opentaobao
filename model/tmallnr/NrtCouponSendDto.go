@@ -1,7 +1,7 @@
 package tmallnr
 
-// NrtCouponSendDto 
-type NrtCouponSendDto struct {
+// NrtCouponSendDTO 
+type NrtCouponSendDTO struct {
     // 加密后淘系ID
     OpenId   string `json:"open_id,omitempty" xml:"open_id,omitempty"`
     // 券类型，247：品类券，276：门店券，357：门店通用券

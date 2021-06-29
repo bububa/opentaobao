@@ -3,8 +3,8 @@ import (
     "github.com/bububa/opentaobao/model"
 )
 
-// HotelContentDto 
-type HotelContentDto struct {
+// HotelContentDTO 
+type HotelContentDTO struct {
     // 酒店id
     HotelId   string `json:"hotel_id,omitempty" xml:"hotel_id,omitempty"`
     // 酒店信息

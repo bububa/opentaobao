@@ -1,7 +1,7 @@
 package flight
 
-// ModifyApproveRequestDto 
-type ModifyApproveRequestDto struct {
+// ModifyApproveRequestDTO 
+type ModifyApproveRequestDTO struct {
     // 改签申请单号
     ApplyId   string `json:"apply_id,omitempty" xml:"apply_id,omitempty"`
     // 国内国际标识

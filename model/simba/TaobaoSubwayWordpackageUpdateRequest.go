@@ -19,7 +19,7 @@ type TaobaoSubwayWordpackageUpdateRequest struct {
     // 推广组Id
     _adgroupId   int64
     // 词包列表
-    _wordPackageDTOS   []ItemWordPackageDto
+    _wordPackageDTOS   []ItemWordPackageDTO
 }
 
 // 初始化TaobaoSubwayWordpackageUpdateRequest对象
@@ -68,13 +68,13 @@ func (r TaobaoSubwayWordpackageUpdateRequest) GetAdgroupId() int64 {
 }
 // WordPackageDTOS Setter
 // 词包列表
-func (r *TaobaoSubwayWordpackageUpdateRequest) SetWordPackageDTOS(_wordPackageDTOS []ItemWordPackageDto) error {
+func (r *TaobaoSubwayWordpackageUpdateRequest) SetWordPackageDTOS(_wordPackageDTOS []ItemWordPackageDTO) error {
     r._wordPackageDTOS = _wordPackageDTOS
     r.Set("word_package_d_t_o_s", _wordPackageDTOS)
     return nil
 }
 
 // WordPackageDTOS Getter
-func (r TaobaoSubwayWordpackageUpdateRequest) GetWordPackageDTOS() []ItemWordPackageDto {
+func (r TaobaoSubwayWordpackageUpdateRequest) GetWordPackageDTOS() []ItemWordPackageDTO {
     return r._wordPackageDTOS
 }

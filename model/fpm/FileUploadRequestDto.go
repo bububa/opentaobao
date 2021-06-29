@@ -1,7 +1,7 @@
 package fpm
 
-// FileUploadRequestDto 
-type FileUploadRequestDto struct {
+// FileUploadRequestDTO 
+type FileUploadRequestDTO struct {
     // 应用代码(必填)
     AppCode   string `json:"app_code,omitempty" xml:"app_code,omitempty"`
     // 签名字符串

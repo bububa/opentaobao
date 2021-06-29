@@ -3,7 +3,7 @@ package alihealth2
 // ResponseResult 
 type ResponseResult struct {
     // 订单详情对象
-    Result   *TopOrderDetailDto `json:"result,omitempty" xml:"result,omitempty"`
+    Result   *TopOrderDetailDTO `json:"result,omitempty" xml:"result,omitempty"`
     // 是否成功
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 错误码

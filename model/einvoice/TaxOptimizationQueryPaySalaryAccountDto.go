@@ -1,7 +1,7 @@
 package einvoice
 
-// TaxOptimizationQueryPaySalaryAccountDto 
-type TaxOptimizationQueryPaySalaryAccountDto struct {
+// TaxOptimizationQueryPaySalaryAccountDTO 
+type TaxOptimizationQueryPaySalaryAccountDTO struct {
     // 承包商编码
     ContractorCode   string `json:"contractor_code,omitempty" xml:"contractor_code,omitempty"`
     // 业务方编码

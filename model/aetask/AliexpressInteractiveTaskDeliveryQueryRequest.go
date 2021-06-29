@@ -15,7 +15,7 @@ aliexpress.interactive.task.delivery.query
 type AliexpressInteractiveTaskDeliveryQueryRequest struct {
     model.Params
     // 返回结果
-    _requestDto   *QueryDeliveryRequestDto
+    _requestDto   *QueryDeliveryRequestDTO
 }
 
 // 初始化AliexpressInteractiveTaskDeliveryQueryRequest对象
@@ -40,13 +40,13 @@ func (r AliexpressInteractiveTaskDeliveryQueryRequest) GetApiParams() url.Values
 }
 // RequestDto Setter
 // 返回结果
-func (r *AliexpressInteractiveTaskDeliveryQueryRequest) SetRequestDto(_requestDto *QueryDeliveryRequestDto) error {
+func (r *AliexpressInteractiveTaskDeliveryQueryRequest) SetRequestDto(_requestDto *QueryDeliveryRequestDTO) error {
     r._requestDto = _requestDto
     r.Set("request_dto", _requestDto)
     return nil
 }
 
 // RequestDto Getter
-func (r AliexpressInteractiveTaskDeliveryQueryRequest) GetRequestDto() *QueryDeliveryRequestDto {
+func (r AliexpressInteractiveTaskDeliveryQueryRequest) GetRequestDto() *QueryDeliveryRequestDTO {
     return r._requestDto
 }

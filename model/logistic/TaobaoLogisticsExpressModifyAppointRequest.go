@@ -15,7 +15,7 @@ taobao.logistics.express.modify.appoint
 type TaobaoLogisticsExpressModifyAppointRequest struct {
     model.Params
     // 改约请求对象
-    _expressModifyAppointTopRequest   *ExpressModifyAppointTopRequestDto
+    _expressModifyAppointTopRequest   *ExpressModifyAppointTopRequestDTO
 }
 
 // 初始化TaobaoLogisticsExpressModifyAppointRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoLogisticsExpressModifyAppointRequest) GetApiParams() url.Values {
 }
 // ExpressModifyAppointTopRequest Setter
 // 改约请求对象
-func (r *TaobaoLogisticsExpressModifyAppointRequest) SetExpressModifyAppointTopRequest(_expressModifyAppointTopRequest *ExpressModifyAppointTopRequestDto) error {
+func (r *TaobaoLogisticsExpressModifyAppointRequest) SetExpressModifyAppointTopRequest(_expressModifyAppointTopRequest *ExpressModifyAppointTopRequestDTO) error {
     r._expressModifyAppointTopRequest = _expressModifyAppointTopRequest
     r.Set("express_modify_appoint_top_request", _expressModifyAppointTopRequest)
     return nil
 }
 
 // ExpressModifyAppointTopRequest Getter
-func (r TaobaoLogisticsExpressModifyAppointRequest) GetExpressModifyAppointTopRequest() *ExpressModifyAppointTopRequestDto {
+func (r TaobaoLogisticsExpressModifyAppointRequest) GetExpressModifyAppointTopRequest() *ExpressModifyAppointTopRequestDTO {
     return r._expressModifyAppointTopRequest
 }

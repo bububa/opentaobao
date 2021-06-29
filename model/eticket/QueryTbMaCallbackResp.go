@@ -3,5 +3,5 @@ package eticket
 // QueryTbMaCallbackResp 
 type QueryTbMaCallbackResp struct {
     // certificateDTO
-    Certificate   *CertificateDto `json:"certificate,omitempty" xml:"certificate,omitempty"`
+    Certificate   *CertificateDTO `json:"certificate,omitempty" xml:"certificate,omitempty"`
 }

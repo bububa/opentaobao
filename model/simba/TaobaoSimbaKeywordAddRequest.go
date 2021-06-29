@@ -15,7 +15,7 @@ taobao.simba.keyword.add
 type TaobaoSimbaKeywordAddRequest struct {
     model.Params
     // 关键词相关信息
-    _bidwords   []SiriusBidwordDto
+    _bidwords   []SiriusBidwordDTO
     // 推广单元id
     _adgroupId   int64
 }
@@ -42,14 +42,14 @@ func (r TaobaoSimbaKeywordAddRequest) GetApiParams() url.Values {
 }
 // Bidwords Setter
 // 关键词相关信息
-func (r *TaobaoSimbaKeywordAddRequest) SetBidwords(_bidwords []SiriusBidwordDto) error {
+func (r *TaobaoSimbaKeywordAddRequest) SetBidwords(_bidwords []SiriusBidwordDTO) error {
     r._bidwords = _bidwords
     r.Set("bidwords", _bidwords)
     return nil
 }
 
 // Bidwords Getter
-func (r TaobaoSimbaKeywordAddRequest) GetBidwords() []SiriusBidwordDto {
+func (r TaobaoSimbaKeywordAddRequest) GetBidwords() []SiriusBidwordDTO {
     return r._bidwords
 }
 // AdgroupId Setter

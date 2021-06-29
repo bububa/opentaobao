@@ -17,7 +17,7 @@ type TmallTxcsFinanceBillConfirmRequest struct {
     // 门店ID
     _ouCode   string
     // 系统自动生成
-    _statementBillConfirmDTO   *StatementBillConfirmDto
+    _statementBillConfirmDTO   *StatementBillConfirmDTO
 }
 
 // 初始化TmallTxcsFinanceBillConfirmRequest对象
@@ -54,13 +54,13 @@ func (r TmallTxcsFinanceBillConfirmRequest) GetOuCode() string {
 }
 // StatementBillConfirmDTO Setter
 // 系统自动生成
-func (r *TmallTxcsFinanceBillConfirmRequest) SetStatementBillConfirmDTO(_statementBillConfirmDTO *StatementBillConfirmDto) error {
+func (r *TmallTxcsFinanceBillConfirmRequest) SetStatementBillConfirmDTO(_statementBillConfirmDTO *StatementBillConfirmDTO) error {
     r._statementBillConfirmDTO = _statementBillConfirmDTO
     r.Set("statement_bill_confirm_d_t_o", _statementBillConfirmDTO)
     return nil
 }
 
 // StatementBillConfirmDTO Getter
-func (r TmallTxcsFinanceBillConfirmRequest) GetStatementBillConfirmDTO() *StatementBillConfirmDto {
+func (r TmallTxcsFinanceBillConfirmRequest) GetStatementBillConfirmDTO() *StatementBillConfirmDTO {
     return r._statementBillConfirmDTO
 }

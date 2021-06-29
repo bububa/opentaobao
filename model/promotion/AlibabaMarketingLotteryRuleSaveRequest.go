@@ -15,7 +15,7 @@ alibaba.marketing.lottery.rule.save
 type AlibabaMarketingLotteryRuleSaveRequest struct {
     model.Params
     // 抽奖规则保存请求对象
-    _lotteryRuleCreate   *LotteryRuleCreateDto
+    _lotteryRuleCreate   *LotteryRuleCreateDTO
 }
 
 // 初始化AlibabaMarketingLotteryRuleSaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaMarketingLotteryRuleSaveRequest) GetApiParams() url.Values {
 }
 // LotteryRuleCreate Setter
 // 抽奖规则保存请求对象
-func (r *AlibabaMarketingLotteryRuleSaveRequest) SetLotteryRuleCreate(_lotteryRuleCreate *LotteryRuleCreateDto) error {
+func (r *AlibabaMarketingLotteryRuleSaveRequest) SetLotteryRuleCreate(_lotteryRuleCreate *LotteryRuleCreateDTO) error {
     r._lotteryRuleCreate = _lotteryRuleCreate
     r.Set("lottery_rule_create", _lotteryRuleCreate)
     return nil
 }
 
 // LotteryRuleCreate Getter
-func (r AlibabaMarketingLotteryRuleSaveRequest) GetLotteryRuleCreate() *LotteryRuleCreateDto {
+func (r AlibabaMarketingLotteryRuleSaveRequest) GetLotteryRuleCreate() *LotteryRuleCreateDTO {
     return r._lotteryRuleCreate
 }

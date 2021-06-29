@@ -1,7 +1,7 @@
 package einvoice
 
-// InvoiceApplyDto 
-type InvoiceApplyDto struct {
+// InvoiceApplyDTO 
+type InvoiceApplyDTO struct {
     // 合计实付金额（申请开票的总金额，含税），格式为2位小数。开红票时传正数。需满足公式：开票总金额(invoiceAmount) = 各项明细的交易金额(amount)之和 - 各项明细的优惠金额(discount)之和
     ApplyAmount   string `json:"apply_amount,omitempty" xml:"apply_amount,omitempty"`
     // 请求来源：order: 下单
@@ -11,7 +11,7 @@ type InvoiceApplyDto struct {
     // 抬头类型。可选值：0：个人1：企业；当apply_mode=pre_apply_url时可选
     BusinessType   int64 `json:"business_type,omitempty" xml:"business_type,omitempty"`
     // 开票明细
-    InvoiceItems   []InvoiceApplyItemsDto `json:"invoice_items,omitempty" xml:"invoice_items>invoice_apply_items_dto,omitempty"`
+    InvoiceItems   []InvoiceApplyItemsDTO `json:"invoice_items,omitempty" xml:"invoice_items>invoice_apply_items_dto,omitempty"`
     // 开票发票类型可选值：0: 电票1：纸质普票2：纸质专票
     InvoiceKind   int64 `json:"invoice_kind,omitempty" xml:"invoice_kind,omitempty"`
     // 发票(开票)类型，可选值：blue: 蓝票red: 红票
@@ -33,7 +33,7 @@ type InvoiceApplyDto struct {
     // 购方电子邮箱，需满足邮箱格式。  格式要求：\\w+([-+.]\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*
     PayerEmail   string `json:"payer_email,omitempty" xml:"payer_email,omitempty"`
     // 购方收票物流信息，用于纸票场景。
-    PayerLogisticsInfo   *PayerLogisticsInfoDto `json:"payer_logistics_info,omitempty" xml:"payer_logistics_info,omitempty"`
+    PayerLogisticsInfo   *PayerLogisticsInfoDTO `json:"payer_logistics_info,omitempty" xml:"payer_logistics_info,omitempty"`
     // 购方开票备注。不会显示在票面
     PayerMemo   string `json:"payer_memo,omitempty" xml:"payer_memo,omitempty"`
     // 购方抬头；当apply_mode=pre_apply_url时可选
@@ -69,7 +69,7 @@ type InvoiceApplyDto struct {
     // 发票申请模式，可选值：  pre_apply_url: URL预申请模式；适用于扫码开票（一单一码）的业务场景：业务前台提交开票金额等信息，请求阿里发票平台生成一个对应的发票申请页面URL。用户可在该页面中填写抬头等信息，然后提交正式的发票申请。  normal(默认为此模式): 正式提交用户的发票申请，商户根据此发票申请自动或审核开票。
     ApplyMode   string `json:"apply_mode,omitempty" xml:"apply_mode,omitempty"`
     // 请求开票的销方信息。 传了此参数，则使用传入的销方信息进行开票。 未传则会以商户维护在阿里发票平台的销方信息为准。 业务前台请根据商户在哪维护销方信息进行选择，推荐后者。
-    CreateInvPayeeInfo   *InvoiceCreatePayeeInfoDto `json:"create_inv_payee_info,omitempty" xml:"create_inv_payee_info,omitempty"`
+    CreateInvPayeeInfo   *InvoiceCreatePayeeInfoDTO `json:"create_inv_payee_info,omitempty" xml:"create_inv_payee_info,omitempty"`
     // 指定的开票税控设备ID 传了此参数，则使用传入的设备ID进行开票。 未传则会使用商户维护在阿里发票平台的默认设备开票。 业务前台请根据商户在哪维护税控设备进行选择，推荐后者。
     DeviceId   string `json:"device_id,omitempty" xml:"device_id,omitempty"`
     // 发票备注，会显示在票面

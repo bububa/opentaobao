@@ -1,7 +1,7 @@
 package promotion
 
-// BenefitDto 
-type BenefitDto struct {
+// BenefitDTO 
+type BenefitDTO struct {
     // 权益code
     Code   string `json:"code,omitempty" xml:"code,omitempty"`
     // 发放结束时间

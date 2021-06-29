@@ -15,7 +15,7 @@ alibaba.alihealth.nr.delivery.history.save
 type AlibabaAlihealthNrDeliveryHistorySaveRequest struct {
     model.Params
     // 入参
-    _deliveryEvent   *DeliveryEventDto
+    _deliveryEvent   *DeliveryEventDTO
 }
 
 // 初始化AlibabaAlihealthNrDeliveryHistorySaveRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaAlihealthNrDeliveryHistorySaveRequest) GetApiParams() url.Values 
 }
 // DeliveryEvent Setter
 // 入参
-func (r *AlibabaAlihealthNrDeliveryHistorySaveRequest) SetDeliveryEvent(_deliveryEvent *DeliveryEventDto) error {
+func (r *AlibabaAlihealthNrDeliveryHistorySaveRequest) SetDeliveryEvent(_deliveryEvent *DeliveryEventDTO) error {
     r._deliveryEvent = _deliveryEvent
     r.Set("delivery_event", _deliveryEvent)
     return nil
 }
 
 // DeliveryEvent Getter
-func (r AlibabaAlihealthNrDeliveryHistorySaveRequest) GetDeliveryEvent() *DeliveryEventDto {
+func (r AlibabaAlihealthNrDeliveryHistorySaveRequest) GetDeliveryEvent() *DeliveryEventDTO {
     return r._deliveryEvent
 }

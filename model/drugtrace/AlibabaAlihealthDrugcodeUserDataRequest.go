@@ -15,7 +15,7 @@ alibaba.alihealth.drugcode.user.data
 type AlibabaAlihealthDrugcodeUserDataRequest struct {
     model.Params
     // 用户信息
-    _list   []HaoxinqingDataDto
+    _list   []HaoxinqingDataDTO
     // 企业ID，用户区分 appkey下不同企业数据隔离的
     _refEntId   string
 }
@@ -42,14 +42,14 @@ func (r AlibabaAlihealthDrugcodeUserDataRequest) GetApiParams() url.Values {
 }
 // List Setter
 // 用户信息
-func (r *AlibabaAlihealthDrugcodeUserDataRequest) SetList(_list []HaoxinqingDataDto) error {
+func (r *AlibabaAlihealthDrugcodeUserDataRequest) SetList(_list []HaoxinqingDataDTO) error {
     r._list = _list
     r.Set("list", _list)
     return nil
 }
 
 // List Getter
-func (r AlibabaAlihealthDrugcodeUserDataRequest) GetList() []HaoxinqingDataDto {
+func (r AlibabaAlihealthDrugcodeUserDataRequest) GetList() []HaoxinqingDataDTO {
     return r._list
 }
 // RefEntId Setter

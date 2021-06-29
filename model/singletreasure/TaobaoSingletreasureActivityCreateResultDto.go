@@ -1,7 +1,7 @@
 package singletreasure
 
-// TaobaoSingletreasureActivityCreateResultDto 
-type TaobaoSingletreasureActivityCreateResultDto struct {
+// TaobaoSingletreasureActivityCreateResultDTO 
+type TaobaoSingletreasureActivityCreateResultDTO struct {
     // 错误信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 新建套餐 id

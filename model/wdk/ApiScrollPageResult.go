@@ -9,7 +9,7 @@ type ApiScrollPageResult struct {
     // 结果页数
     PageCount   int64 `json:"page_count,omitempty" xml:"page_count,omitempty"`
     // 商品主档对象
-    ModelList   []WdkOpenMerchantSkuDo `json:"model_list,omitempty" xml:"model_list>wdk_open_merchant_sku_do,omitempty"`
+    ModelList   []WdkOpenMerchantSkuDO `json:"model_list,omitempty" xml:"model_list>wdk_open_merchant_sku_do,omitempty"`
     // 错误信息
     ErrMsg   string `json:"err_msg,omitempty" xml:"err_msg,omitempty"`
     // 错误码
@@ -21,5 +21,5 @@ type ApiScrollPageResult struct {
     // 当前页码
     PageIndex   int64 `json:"page_index,omitempty" xml:"page_index,omitempty"`
     // 数据集合
-    Models   []WarehouseSkuDo `json:"models,omitempty" xml:"models>warehouse_sku_do,omitempty"`
+    Models   []WarehouseSkuDO `json:"models,omitempty" xml:"models>warehouse_sku_do,omitempty"`
 }

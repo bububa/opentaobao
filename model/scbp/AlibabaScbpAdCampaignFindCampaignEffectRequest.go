@@ -21,7 +21,7 @@ type AlibabaScbpAdCampaignFindCampaignEffectRequest struct {
     // 结束时间
     _endDate   string
     // 用户信息
-    _topContext   *TopContextDto
+    _topContext   *TopContextDTO
 }
 
 // 初始化AlibabaScbpAdCampaignFindCampaignEffectRequest对象
@@ -82,13 +82,13 @@ func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetEndDate() string {
 }
 // TopContext Setter
 // 用户信息
-func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetTopContext(_topContext *TopContextDto) error {
+func (r *AlibabaScbpAdCampaignFindCampaignEffectRequest) SetTopContext(_topContext *TopContextDTO) error {
     r._topContext = _topContext
     r.Set("top_context", _topContext)
     return nil
 }
 
 // TopContext Getter
-func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetTopContext() *TopContextDto {
+func (r AlibabaScbpAdCampaignFindCampaignEffectRequest) GetTopContext() *TopContextDTO {
     return r._topContext
 }

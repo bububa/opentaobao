@@ -1,7 +1,7 @@
 package aesolution
 
-// AttributeDto 
-type AttributeDto struct {
+// AttributeDTO 
+type AttributeDTO struct {
     // merchant's attribute name
     AttributeName   string `json:"attribute_name,omitempty" xml:"attribute_name,omitempty"`
     // merchant's attribute value

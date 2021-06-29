@@ -1,7 +1,7 @@
 package ihome
 
-// AdvancePicMaterialDto 
-type AdvancePicMaterialDto struct {
+// AdvancePicMaterialDTO 
+type AdvancePicMaterialDTO struct {
     // 标题
     Title   string `json:"title,omitempty" xml:"title,omitempty"`
     // 用户id

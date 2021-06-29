@@ -1,7 +1,7 @@
 package moscm
 
-// CspuInputDto 
-type CspuInputDto struct {
+// CspuInputDTO 
+type CspuInputDTO struct {
     // 货号
     ArtNo   string `json:"art_no,omitempty" xml:"art_no,omitempty"`
     // 商品条码
@@ -9,9 +9,9 @@ type CspuInputDto struct {
     // 源id（供应商自己的唯一标识）
     OuterId   string `json:"outer_id,omitempty" xml:"outer_id,omitempty"`
     // 销售属性
-    Properties   []PropertyDto `json:"properties,omitempty" xml:"properties>property_dto,omitempty"`
+    Properties   []PropertyDTO `json:"properties,omitempty" xml:"properties>property_dto,omitempty"`
     // 标准商品信息（款）
-    SpuInputDto   *SpuInputDto `json:"spu_input_dto,omitempty" xml:"spu_input_dto,omitempty"`
+    SpuInputDto   *SpuInputDTO `json:"spu_input_dto,omitempty" xml:"spu_input_dto,omitempty"`
     // 子标题
     SubTitle   string `json:"sub_title,omitempty" xml:"sub_title,omitempty"`
     // 吊牌价

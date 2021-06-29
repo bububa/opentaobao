@@ -1,7 +1,7 @@
 package inventory
 
-// PlanInstanceTopDto 
-type PlanInstanceTopDto struct {
+// PlanInstanceTopDTO 
+type PlanInstanceTopDTO struct {
     // 服务承诺信息
     PromiseList   []PromiseList `json:"promise_list,omitempty" xml:"promise_list>promise_list,omitempty"`
     // 设置的库存类型，0-全量覆盖，1-增量处理

@@ -1,7 +1,7 @@
 package scbp
 
-// AdProductDto 
-type AdProductDto struct {
+// AdProductDTO 
+type AdProductDTO struct {
     // 计划id
     CampaignId   int64 `json:"campaign_id,omitempty" xml:"campaign_id,omitempty"`
     // 计划类型
@@ -43,5 +43,5 @@ type AdProductDto struct {
     // posting修改时间
     GmtPostingModified   string `json:"gmt_posting_modified,omitempty" xml:"gmt_posting_modified,omitempty"`
     // 效果数据
-    Effect   *AdProductEffectDto `json:"effect,omitempty" xml:"effect,omitempty"`
+    Effect   *AdProductEffectDTO `json:"effect,omitempty" xml:"effect,omitempty"`
 }

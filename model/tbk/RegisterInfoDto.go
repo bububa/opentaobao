@@ -1,7 +1,7 @@
 package tbk
 
-// RegisterInfoDto 
-type RegisterInfoDto struct {
+// RegisterInfoDTO 
+type RegisterInfoDTO struct {
     // 渠道独有 -店铺名称
     ShopName   string `json:"shop_name,omitempty" xml:"shop_name,omitempty"`
     // 渠道独有 -店铺类型

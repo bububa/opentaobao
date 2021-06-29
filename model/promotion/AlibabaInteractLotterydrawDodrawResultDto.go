@@ -1,9 +1,9 @@
 package promotion
 
-// AlibabaInteractLotterydrawDodrawResultDto 
-type AlibabaInteractLotterydrawDodrawResultDto struct {
+// AlibabaInteractLotterydrawDodrawResultDTO 
+type AlibabaInteractLotterydrawDodrawResultDTO struct {
     // result
-    LotteryDrawResult   *LotteryDrawResultDto `json:"lottery_draw_result,omitempty" xml:"lottery_draw_result,omitempty"`
+    LotteryDrawResult   *LotteryDrawResultDTO `json:"lottery_draw_result,omitempty" xml:"lottery_draw_result,omitempty"`
     // code
     Code   int64 `json:"code,omitempty" xml:"code,omitempty"`
     // success

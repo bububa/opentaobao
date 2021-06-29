@@ -1,7 +1,7 @@
 package aedata
 
-// TrafficOrderResultDto 
-type TrafficOrderResultDto struct {
+// TrafficOrderResultDTO 
+type TrafficOrderResultDTO struct {
     // 当前页记录条数
     CurrentRecordCount   int64 `json:"current_record_count,omitempty" xml:"current_record_count,omitempty"`
     // 订单内容明细

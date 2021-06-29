@@ -1,7 +1,7 @@
 package alitripmerchant
 
-// OrderDto 
-type OrderDto struct {
+// OrderDTO 
+type OrderDTO struct {
     // 床型名称
     BedName   string `json:"bed_name,omitempty" xml:"bed_name,omitempty"`
     // 币种

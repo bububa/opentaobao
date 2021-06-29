@@ -1,7 +1,7 @@
 package aecreatives
 
-// PromoCodeDto 
-type PromoCodeDto struct {
+// PromoCodeDTO 
+type PromoCodeDTO struct {
     // 专属绑定PID的code码
     PromoCode   string `json:"promo_code,omitempty" xml:"promo_code,omitempty"`
     // 优惠方式 1 满减，2 满折

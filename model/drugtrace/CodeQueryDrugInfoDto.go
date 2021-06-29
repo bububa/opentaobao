@@ -1,7 +1,7 @@
 package drugtrace
 
-// CodeQueryDrugInfoDto 
-type CodeQueryDrugInfoDto struct {
+// CodeQueryDrugInfoDTO 
+type CodeQueryDrugInfoDTO struct {
     // 药品信息列表
-    InfoList   []CodeFullInfoDto `json:"info_list,omitempty" xml:"info_list>code_full_info_dto,omitempty"`
+    InfoList   []CodeFullInfoDTO `json:"info_list,omitempty" xml:"info_list>code_full_info_dto,omitempty"`
 }

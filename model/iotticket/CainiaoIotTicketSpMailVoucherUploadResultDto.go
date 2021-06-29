@@ -1,7 +1,7 @@
 package iotticket
 
-// CainiaoIotTicketSpMailVoucherUploadResultDto 
-type CainiaoIotTicketSpMailVoucherUploadResultDto struct {
+// CainiaoIotTicketSpMailVoucherUploadResultDTO 
+type CainiaoIotTicketSpMailVoucherUploadResultDTO struct {
     // 执行结果
     Success   bool `json:"success,omitempty" xml:"success,omitempty"`
     // 异常描述

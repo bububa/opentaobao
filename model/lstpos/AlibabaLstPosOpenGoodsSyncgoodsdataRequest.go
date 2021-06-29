@@ -15,7 +15,7 @@ alibaba.lst.pos.open.goods.syncgoodsdata
 type AlibabaLstPosOpenGoodsSyncgoodsdataRequest struct {
     model.Params
     // 商品对象列表
-    _goodsDTOList   []GoodsDto
+    _goodsDTOList   []GoodsDTO
     // 用户主账号Id
     _userId   int64
 }
@@ -42,14 +42,14 @@ func (r AlibabaLstPosOpenGoodsSyncgoodsdataRequest) GetApiParams() url.Values {
 }
 // GoodsDTOList Setter
 // 商品对象列表
-func (r *AlibabaLstPosOpenGoodsSyncgoodsdataRequest) SetGoodsDTOList(_goodsDTOList []GoodsDto) error {
+func (r *AlibabaLstPosOpenGoodsSyncgoodsdataRequest) SetGoodsDTOList(_goodsDTOList []GoodsDTO) error {
     r._goodsDTOList = _goodsDTOList
     r.Set("goods_d_t_o_list", _goodsDTOList)
     return nil
 }
 
 // GoodsDTOList Getter
-func (r AlibabaLstPosOpenGoodsSyncgoodsdataRequest) GetGoodsDTOList() []GoodsDto {
+func (r AlibabaLstPosOpenGoodsSyncgoodsdataRequest) GetGoodsDTOList() []GoodsDTO {
     return r._goodsDTOList
 }
 // UserId Setter

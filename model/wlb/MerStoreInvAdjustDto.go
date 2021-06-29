@@ -1,7 +1,7 @@
 package wlb
 
-// MerStoreInvAdjustDto 
-type MerStoreInvAdjustDto struct {
+// MerStoreInvAdjustDTO 
+type MerStoreInvAdjustDTO struct {
     // 库存类型
     InventoryType   int64 `json:"inventory_type,omitempty" xml:"inventory_type,omitempty"`
     // 扩展属性

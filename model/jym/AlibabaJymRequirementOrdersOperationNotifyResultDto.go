@@ -1,7 +1,7 @@
 package jym
 
-// AlibabaJymRequirementOrdersOperationNotifyResultDto 
-type AlibabaJymRequirementOrdersOperationNotifyResultDto struct {
+// AlibabaJymRequirementOrdersOperationNotifyResultDTO 
+type AlibabaJymRequirementOrdersOperationNotifyResultDTO struct {
     // 业务数据
     Result   bool `json:"result,omitempty" xml:"result,omitempty"`
     // 执行结果

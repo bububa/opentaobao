@@ -1,7 +1,7 @@
 package user
 
-// TopDivisionRecordReqDto 
-type TopDivisionRecordReqDto struct {
+// TopDivisionRecordReqDTO 
+type TopDivisionRecordReqDTO struct {
     // 页码
     PageNo   int64 `json:"page_no,omitempty" xml:"page_no,omitempty"`
     // 每页数量

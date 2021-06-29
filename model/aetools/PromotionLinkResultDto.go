@@ -1,7 +1,7 @@
 package aetools
 
-// PromotionLinkResultDto 
-type PromotionLinkResultDto struct {
+// PromotionLinkResultDTO 
+type PromotionLinkResultDTO struct {
     // 推广链接列表
     PromotionLinks   []PromotionLink `json:"promotion_links,omitempty" xml:"promotion_links>promotion_link,omitempty"`
     // 返回总量

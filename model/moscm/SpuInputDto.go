@@ -1,7 +1,7 @@
 package moscm
 
-// SpuInputDto 
-type SpuInputDto struct {
+// SpuInputDTO 
+type SpuInputDTO struct {
     // 产品条码信息
     BarcodeStr   string `json:"barcode_str,omitempty" xml:"barcode_str,omitempty"`
     // 银泰品牌Id
@@ -29,9 +29,9 @@ type SpuInputDto struct {
     // 产品ID
     ProductId   string `json:"product_id,omitempty" xml:"product_id,omitempty"`
     // 产品的子图片.目前最多支持50张。
-    ProductImgs   []ProductImgDto `json:"product_imgs,omitempty" xml:"product_imgs>product_img_dto,omitempty"`
+    ProductImgs   []ProductImgDTO `json:"product_imgs,omitempty" xml:"product_imgs>product_img_dto,omitempty"`
     // 产品参数描述，如：材质成分、裙长、年份季节等信息，最多50个属性
-    Props   []PropertyDto `json:"props,omitempty" xml:"props>property_dto,omitempty"`
+    Props   []PropertyDTO `json:"props,omitempty" xml:"props>property_dto,omitempty"`
     // 产品卖点描述，长度限制20个汉字
     SellPt   string `json:"sell_pt,omitempty" xml:"sell_pt,omitempty"`
     // 款号

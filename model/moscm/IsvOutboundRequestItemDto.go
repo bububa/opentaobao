@@ -1,7 +1,7 @@
 package moscm
 
-// IsvOutboundRequestItemDto 
-type IsvOutboundRequestItemDto struct {
+// IsvOutboundRequestItemDTO 
+type IsvOutboundRequestItemDTO struct {
     // 外部id
     OutId   string `json:"out_id,omitempty" xml:"out_id,omitempty"`
     // 数量

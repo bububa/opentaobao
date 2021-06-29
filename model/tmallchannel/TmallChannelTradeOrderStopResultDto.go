@@ -1,7 +1,7 @@
 package tmallchannel
 
-// TmallChannelTradeOrderStopResultDto 
-type TmallChannelTradeOrderStopResultDto struct {
+// TmallChannelTradeOrderStopResultDTO 
+type TmallChannelTradeOrderStopResultDTO struct {
     // 错误信息
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     // 错误码

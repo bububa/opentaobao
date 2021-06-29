@@ -1,7 +1,7 @@
 package scbp
 
-// TargetReportOperationDto 
-type TargetReportOperationDto struct {
+// TargetReportOperationDTO 
+type TargetReportOperationDTO struct {
     // crowd/region
     Type   string `json:"type,omitempty" xml:"type,omitempty"`
     // 开始时间(yyyy-MM-dd)

@@ -1,7 +1,7 @@
 package perfect
 
-// PerfectSalePropertyDto 
-type PerfectSalePropertyDto struct {
+// PerfectSalePropertyDTO 
+type PerfectSalePropertyDTO struct {
     // 属性key
     SalePropertyKey   string `json:"sale_property_key,omitempty" xml:"sale_property_key,omitempty"`
     // 自定义属性值

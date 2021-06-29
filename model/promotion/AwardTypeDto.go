@@ -1,7 +1,7 @@
 package promotion
 
-// AwardTypeDto 
-type AwardTypeDto struct {
+// AwardTypeDTO 
+type AwardTypeDTO struct {
     // 奖品创建url
     AwardCreateUrl   string `json:"award_create_url,omitempty" xml:"award_create_url,omitempty"`
     // 奖品类型名称

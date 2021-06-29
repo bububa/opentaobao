@@ -17,7 +17,7 @@ type AlibabaIdleIsvPvListRequest struct {
     // 闲鱼渠道类目的id
     _channelCatId   string
     // 系统自动生成
-    _brandModelInfo   []IdleNewPubValueDo
+    _brandModelInfo   []IdleNewPubValueDO
 }
 
 // 初始化AlibabaIdleIsvPvListRequest对象
@@ -54,13 +54,13 @@ func (r AlibabaIdleIsvPvListRequest) GetChannelCatId() string {
 }
 // BrandModelInfo Setter
 // 系统自动生成
-func (r *AlibabaIdleIsvPvListRequest) SetBrandModelInfo(_brandModelInfo []IdleNewPubValueDo) error {
+func (r *AlibabaIdleIsvPvListRequest) SetBrandModelInfo(_brandModelInfo []IdleNewPubValueDO) error {
     r._brandModelInfo = _brandModelInfo
     r.Set("brand_model_info", _brandModelInfo)
     return nil
 }
 
 // BrandModelInfo Getter
-func (r AlibabaIdleIsvPvListRequest) GetBrandModelInfo() []IdleNewPubValueDo {
+func (r AlibabaIdleIsvPvListRequest) GetBrandModelInfo() []IdleNewPubValueDO {
     return r._brandModelInfo
 }

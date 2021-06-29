@@ -1,7 +1,7 @@
 package perfect
 
-// PerfectItemLogisticsInfoDto 
-type PerfectItemLogisticsInfoDto struct {
+// PerfectItemLogisticsInfoDTO 
+type PerfectItemLogisticsInfoDTO struct {
     // 城市编码,默认北京
     CityCode   string `json:"city_code,omitempty" xml:"city_code,omitempty"`
     // 运费模板ID

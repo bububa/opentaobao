@@ -1,7 +1,7 @@
 package scbp
 
-// RecKeywordDto 
-type RecKeywordDto struct {
+// RecKeywordDTO 
+type RecKeywordDTO struct {
     // 同行平均出价，单位元，一位小数
     AvgPrice   string `json:"avg_price,omitempty" xml:"avg_price,omitempty"`
     // 词

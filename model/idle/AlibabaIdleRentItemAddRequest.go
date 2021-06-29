@@ -15,7 +15,7 @@ alibaba.idle.rent.item.add
 type AlibabaIdleRentItemAddRequest struct {
     model.Params
     // 商品信息
-    _paramRentItemDTO   *RentItemDto
+    _paramRentItemDTO   *RentItemDTO
 }
 
 // 初始化AlibabaIdleRentItemAddRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleRentItemAddRequest) GetApiParams() url.Values {
 }
 // ParamRentItemDTO Setter
 // 商品信息
-func (r *AlibabaIdleRentItemAddRequest) SetParamRentItemDTO(_paramRentItemDTO *RentItemDto) error {
+func (r *AlibabaIdleRentItemAddRequest) SetParamRentItemDTO(_paramRentItemDTO *RentItemDTO) error {
     r._paramRentItemDTO = _paramRentItemDTO
     r.Set("param_rent_item_d_t_o", _paramRentItemDTO)
     return nil
 }
 
 // ParamRentItemDTO Getter
-func (r AlibabaIdleRentItemAddRequest) GetParamRentItemDTO() *RentItemDto {
+func (r AlibabaIdleRentItemAddRequest) GetParamRentItemDTO() *RentItemDTO {
     return r._paramRentItemDTO
 }

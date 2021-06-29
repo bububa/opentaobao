@@ -15,7 +15,7 @@ taobao.channel.trade.prepay.offline.add
 type TaobaoChannelTradePrepayOfflineAddRequest struct {
     model.Params
     // 增加流水
-    _offlineAddPrepayParam   *TopOfflineAddPrepayDto
+    _offlineAddPrepayParam   *TopOfflineAddPrepayDTO
 }
 
 // 初始化TaobaoChannelTradePrepayOfflineAddRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoChannelTradePrepayOfflineAddRequest) GetApiParams() url.Values {
 }
 // OfflineAddPrepayParam Setter
 // 增加流水
-func (r *TaobaoChannelTradePrepayOfflineAddRequest) SetOfflineAddPrepayParam(_offlineAddPrepayParam *TopOfflineAddPrepayDto) error {
+func (r *TaobaoChannelTradePrepayOfflineAddRequest) SetOfflineAddPrepayParam(_offlineAddPrepayParam *TopOfflineAddPrepayDTO) error {
     r._offlineAddPrepayParam = _offlineAddPrepayParam
     r.Set("offline_add_prepay_param", _offlineAddPrepayParam)
     return nil
 }
 
 // OfflineAddPrepayParam Getter
-func (r TaobaoChannelTradePrepayOfflineAddRequest) GetOfflineAddPrepayParam() *TopOfflineAddPrepayDto {
+func (r TaobaoChannelTradePrepayOfflineAddRequest) GetOfflineAddPrepayParam() *TopOfflineAddPrepayDTO {
     return r._offlineAddPrepayParam
 }

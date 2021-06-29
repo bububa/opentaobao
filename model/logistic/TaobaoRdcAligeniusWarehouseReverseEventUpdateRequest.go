@@ -15,7 +15,7 @@ taobao.rdc.aligenius.warehouse.reverse.event.update
 type TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest struct {
     model.Params
     // 参数
-    _param0   *ReverseEventInfoDto
+    _param0   *ReverseEventInfoDTO
 }
 
 // 初始化TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest) GetApiParams() url
 }
 // Param0 Setter
 // 参数
-func (r *TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest) SetParam0(_param0 *ReverseEventInfoDto) error {
+func (r *TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest) SetParam0(_param0 *ReverseEventInfoDTO) error {
     r._param0 = _param0
     r.Set("param0", _param0)
     return nil
 }
 
 // Param0 Getter
-func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest) GetParam0() *ReverseEventInfoDto {
+func (r TaobaoRdcAligeniusWarehouseReverseEventUpdateRequest) GetParam0() *ReverseEventInfoDTO {
     return r._param0
 }

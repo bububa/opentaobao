@@ -15,7 +15,7 @@ alibaba.idle.consignmentii.order.perform
 type AlibabaIdleConsignmentiiOrderPerformRequest struct {
     model.Params
     // 同步参数
-    _consignmentV2OrderSynDto   *ConsignmentV2OrderSynDto
+    _consignmentV2OrderSynDto   *ConsignmentV2OrderSynDTO
 }
 
 // 初始化AlibabaIdleConsignmentiiOrderPerformRequest对象
@@ -40,13 +40,13 @@ func (r AlibabaIdleConsignmentiiOrderPerformRequest) GetApiParams() url.Values {
 }
 // ConsignmentV2OrderSynDto Setter
 // 同步参数
-func (r *AlibabaIdleConsignmentiiOrderPerformRequest) SetConsignmentV2OrderSynDto(_consignmentV2OrderSynDto *ConsignmentV2OrderSynDto) error {
+func (r *AlibabaIdleConsignmentiiOrderPerformRequest) SetConsignmentV2OrderSynDto(_consignmentV2OrderSynDto *ConsignmentV2OrderSynDTO) error {
     r._consignmentV2OrderSynDto = _consignmentV2OrderSynDto
     r.Set("consignment_v2_order_syn_dto", _consignmentV2OrderSynDto)
     return nil
 }
 
 // ConsignmentV2OrderSynDto Getter
-func (r AlibabaIdleConsignmentiiOrderPerformRequest) GetConsignmentV2OrderSynDto() *ConsignmentV2OrderSynDto {
+func (r AlibabaIdleConsignmentiiOrderPerformRequest) GetConsignmentV2OrderSynDto() *ConsignmentV2OrderSynDTO {
     return r._consignmentV2OrderSynDto
 }

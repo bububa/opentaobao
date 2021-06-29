@@ -15,7 +15,7 @@ taobao.place.store.extend.update
 type TaobaoPlaceStoreExtendUpdateRequest struct {
     model.Params
     // 更新数据
-    _paramUpdateStoreExtendDTO   *UpdateStoreExtendDto
+    _paramUpdateStoreExtendDTO   *UpdateStoreExtendDTO
 }
 
 // 初始化TaobaoPlaceStoreExtendUpdateRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoPlaceStoreExtendUpdateRequest) GetApiParams() url.Values {
 }
 // ParamUpdateStoreExtendDTO Setter
 // 更新数据
-func (r *TaobaoPlaceStoreExtendUpdateRequest) SetParamUpdateStoreExtendDTO(_paramUpdateStoreExtendDTO *UpdateStoreExtendDto) error {
+func (r *TaobaoPlaceStoreExtendUpdateRequest) SetParamUpdateStoreExtendDTO(_paramUpdateStoreExtendDTO *UpdateStoreExtendDTO) error {
     r._paramUpdateStoreExtendDTO = _paramUpdateStoreExtendDTO
     r.Set("param_update_store_extend_d_t_o", _paramUpdateStoreExtendDTO)
     return nil
 }
 
 // ParamUpdateStoreExtendDTO Getter
-func (r TaobaoPlaceStoreExtendUpdateRequest) GetParamUpdateStoreExtendDTO() *UpdateStoreExtendDto {
+func (r TaobaoPlaceStoreExtendUpdateRequest) GetParamUpdateStoreExtendDTO() *UpdateStoreExtendDTO {
     return r._paramUpdateStoreExtendDTO
 }

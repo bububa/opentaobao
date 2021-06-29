@@ -23,5 +23,5 @@ type AlibabaMosGoodsInventoryGetinventorysResponse struct {
     // 平台颁发的每次请求访问的唯一标识
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回的数据
-    Datas   []VirtualInventoryDto `json:"datas,omitempty" xml:"datas>virtual_inventory_dto,omitempty"`
+    Datas   []VirtualInventoryDTO `json:"datas,omitempty" xml:"datas>virtual_inventory_dto,omitempty"`
 }

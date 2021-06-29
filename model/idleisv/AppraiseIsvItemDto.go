@@ -1,7 +1,7 @@
 package idleisv
 
-// AppraiseIsvItemDto 
-type AppraiseIsvItemDto struct {
+// AppraiseIsvItemDTO 
+type AppraiseIsvItemDTO struct {
     // 商品ID
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 商品图片,绝对途径

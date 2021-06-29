@@ -1,7 +1,7 @@
 package idleisv
 
-// IdleItemApiDo 
-type IdleItemApiDo struct {
+// IdleItemApiDO 
+type IdleItemApiDO struct {
     // 商品描述(长度<=5000)
     Desc   string `json:"desc,omitempty" xml:"desc,omitempty"`
     // 商品Id（根据此数据进行相应商品更新）
@@ -15,11 +15,11 @@ type IdleItemApiDo struct {
     // 邮费, 单位：元(最大99999999)
     TransportFee   string `json:"transport_fee,omitempty" xml:"transport_fee,omitempty"`
     // 属性的键值对信息，包括品牌、型号、内存大小（手机）等，(不传入则不修改)
-    PvList   []IdleNewPubValueDo `json:"pv_list,omitempty" xml:"pv_list>idle_new_pub_value_do,omitempty"`
+    PvList   []IdleNewPubValueDO `json:"pv_list,omitempty" xml:"pv_list>idle_new_pub_value_do,omitempty"`
     // sku列表(不传入则不修改)
-    ItemSkuList   []IdleItemApiSkuDo `json:"item_sku_list,omitempty" xml:"item_sku_list>idle_item_api_sku_do,omitempty"`
+    ItemSkuList   []IdleItemApiSkuDO `json:"item_sku_list,omitempty" xml:"item_sku_list>idle_item_api_sku_do,omitempty"`
     // 图书业务数据(不传入则不修改)
-    BookData   *IdleItemApiBookDo `json:"book_data,omitempty" xml:"book_data,omitempty"`
+    BookData   *IdleItemApiBookDO `json:"book_data,omitempty" xml:"book_data,omitempty"`
     // 商品图片列表，使用图片上传接口返回的文件Id，支持多张(最多9张)
     Images   []int64 `json:"images,omitempty" xml:"images>int64,omitempty"`
     // 商品新旧程度, 值为0-100的整数，例如100代表全新，95代表95新；特殊场景会影响优品标
@@ -31,7 +31,7 @@ type IdleItemApiDo struct {
     // 经度
     Longitude   string `json:"longitude,omitempty" xml:"longitude,omitempty"`
     // 已验货业务数据
-    InspectedData   *IdleItemApiInspectedDo `json:"inspected_data,omitempty" xml:"inspected_data,omitempty"`
+    InspectedData   *IdleItemApiInspectedDO `json:"inspected_data,omitempty" xml:"inspected_data,omitempty"`
     // 宝贝库存数量
     Quantity   int64 `json:"quantity,omitempty" xml:"quantity,omitempty"`
     // 类目Id

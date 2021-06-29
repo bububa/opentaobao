@@ -1,7 +1,7 @@
 package idle
 
-// CheckResultDto 
-type CheckResultDto struct {
+// CheckResultDTO 
+type CheckResultDTO struct {
     // 商品id
     ItemId   int64 `json:"item_id,omitempty" xml:"item_id,omitempty"`
     // 不通过错误码

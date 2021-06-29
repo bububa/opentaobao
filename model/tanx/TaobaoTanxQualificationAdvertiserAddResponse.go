@@ -25,5 +25,5 @@ type TaobaoTanxQualificationAdvertiserAddResponse struct {
     // 调用是否成功
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
     // 返回的广告主dto对象
-    AdvertiserList   []AdvertiserDto `json:"advertiser_list,omitempty" xml:"advertiser_list>advertiser_dto,omitempty"`
+    AdvertiserList   []AdvertiserDTO `json:"advertiser_list,omitempty" xml:"advertiser_list>advertiser_dto,omitempty"`
 }

@@ -17,7 +17,7 @@ type TmallTxcsFinanceVerifyStatementBillRequest struct {
     // 门店ID
     _ouCode   string
     // 核销单内容
-    _verificationBillDTO   *VerificationBillDto
+    _verificationBillDTO   *VerificationBillDTO
 }
 
 // 初始化TmallTxcsFinanceVerifyStatementBillRequest对象
@@ -54,13 +54,13 @@ func (r TmallTxcsFinanceVerifyStatementBillRequest) GetOuCode() string {
 }
 // VerificationBillDTO Setter
 // 核销单内容
-func (r *TmallTxcsFinanceVerifyStatementBillRequest) SetVerificationBillDTO(_verificationBillDTO *VerificationBillDto) error {
+func (r *TmallTxcsFinanceVerifyStatementBillRequest) SetVerificationBillDTO(_verificationBillDTO *VerificationBillDTO) error {
     r._verificationBillDTO = _verificationBillDTO
     r.Set("verification_bill_d_t_o", _verificationBillDTO)
     return nil
 }
 
 // VerificationBillDTO Getter
-func (r TmallTxcsFinanceVerifyStatementBillRequest) GetVerificationBillDTO() *VerificationBillDto {
+func (r TmallTxcsFinanceVerifyStatementBillRequest) GetVerificationBillDTO() *VerificationBillDTO {
     return r._verificationBillDTO
 }

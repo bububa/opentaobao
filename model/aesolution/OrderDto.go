@@ -1,7 +1,7 @@
 package aesolution
 
-// OrderDto 
-type OrderDto struct {
+// OrderDTO 
+type OrderDTO struct {
     // The remain time of the current status (negative number indicates the timeout period)
     TimeoutLeftTime   int64 `json:"timeout_left_time,omitempty" xml:"timeout_left_time,omitempty"`
     // seller fuller name
@@ -11,7 +11,7 @@ type OrderDto struct {
     // seller login id
     SellerLoginId   string `json:"seller_login_id,omitempty" xml:"seller_login_id,omitempty"`
     // product list
-    ProductList   []OrderProductDto `json:"product_list,omitempty" xml:"product_list>order_product_dto,omitempty"`
+    ProductList   []OrderProductDTO `json:"product_list,omitempty" xml:"product_list>order_product_dto,omitempty"`
     // Whether mobile phone orders
     Phone   bool `json:"phone,omitempty" xml:"phone,omitempty"`
     // pay type: migs: Credit card payments go through the RMB channel; migs: 102MasterCard pays and takes the RMB channel; migs101:Visa Pay and take the RMB channel; pp101: PayPal; mb: MoneyBooker channel; tt101: Bank Transfer payment; wu101: West Union payment; wp101: Visa pays for the US dollar channel; wp102: Mastercard to pay for the US dollar channel; qw101: QIWI payment; cybs101: Visa takes the payment of the CYBS channel; cybs102: Mastercard to pay for CYBS channels; wm101: WebMoney payment; ebanx101: Brazilian Beloto payment;

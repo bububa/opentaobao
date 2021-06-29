@@ -1,7 +1,7 @@
 package middleclaims
 
-// ClaimsAcceptDto 
-type ClaimsAcceptDto struct {
+// ClaimsAcceptDTO 
+type ClaimsAcceptDTO struct {
     // 服务工单ID
     ServiceWorkOrderId   int64 `json:"service_work_order_id,omitempty" xml:"service_work_order_id,omitempty"`
     // 主订单ID
@@ -19,5 +19,5 @@ type ClaimsAcceptDto struct {
     // 预留扩展Map
     ExtensionMap   *Extensionmap `json:"extension_map,omitempty" xml:"extension_map,omitempty"`
     // 保险退货仓库地址实体类
-    DeliveryAddressDto   *DeliveryAddressDto `json:"delivery_address_dto,omitempty" xml:"delivery_address_dto,omitempty"`
+    DeliveryAddressDto   *DeliveryAddressDTO `json:"delivery_address_dto,omitempty" xml:"delivery_address_dto,omitempty"`
 }

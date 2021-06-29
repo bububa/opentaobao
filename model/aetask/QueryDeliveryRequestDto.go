@@ -1,7 +1,7 @@
 package aetask
 
-// QueryDeliveryRequestDto 
-type QueryDeliveryRequestDto struct {
+// QueryDeliveryRequestDTO 
+type QueryDeliveryRequestDTO struct {
     // 0:不展示预热 1：展示预热
     PreDisplay   int64 `json:"pre_display,omitempty" xml:"pre_display,omitempty"`
     // 投放场景id

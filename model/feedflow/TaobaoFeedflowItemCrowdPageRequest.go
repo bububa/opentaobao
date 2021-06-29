@@ -15,7 +15,7 @@ taobao.feedflow.item.crowd.page
 type TaobaoFeedflowItemCrowdPageRequest struct {
     model.Params
     // 查询条件
-    _crowdQuery   *CrowdQueryDto
+    _crowdQuery   *CrowdQueryDTO
 }
 
 // 初始化TaobaoFeedflowItemCrowdPageRequest对象
@@ -40,13 +40,13 @@ func (r TaobaoFeedflowItemCrowdPageRequest) GetApiParams() url.Values {
 }
 // CrowdQuery Setter
 // 查询条件
-func (r *TaobaoFeedflowItemCrowdPageRequest) SetCrowdQuery(_crowdQuery *CrowdQueryDto) error {
+func (r *TaobaoFeedflowItemCrowdPageRequest) SetCrowdQuery(_crowdQuery *CrowdQueryDTO) error {
     r._crowdQuery = _crowdQuery
     r.Set("crowd_query", _crowdQuery)
     return nil
 }
 
 // CrowdQuery Getter
-func (r TaobaoFeedflowItemCrowdPageRequest) GetCrowdQuery() *CrowdQueryDto {
+func (r TaobaoFeedflowItemCrowdPageRequest) GetCrowdQuery() *CrowdQueryDTO {
     return r._crowdQuery
 }

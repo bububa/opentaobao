@@ -1,7 +1,7 @@
 package tmallhk
 
-// ClearanceUnitDo 
-type ClearanceUnitDo struct {
+// ClearanceUnitDO 
+type ClearanceUnitDO struct {
     // 第一数量，最多4位小数
     FirstQuantity   string `json:"first_quantity,omitempty" xml:"first_quantity,omitempty"`
     // 第一单位，单位编码

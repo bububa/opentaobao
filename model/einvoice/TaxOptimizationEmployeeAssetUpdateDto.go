@@ -1,7 +1,7 @@
 package einvoice
 
-// TaxOptimizationEmployeeAssetUpdateDto 
-type TaxOptimizationEmployeeAssetUpdateDto struct {
+// TaxOptimizationEmployeeAssetUpdateDTO 
+type TaxOptimizationEmployeeAssetUpdateDTO struct {
     // 需要更新的资产账号
     AssetSymbol   string `json:"asset_symbol,omitempty" xml:"asset_symbol,omitempty"`
     // 需要更新的资产类型

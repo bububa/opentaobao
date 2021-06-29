@@ -1,7 +1,7 @@
 package icbuproduct
 
-// InventoryDto 
-type InventoryDto struct {
+// InventoryDTO 
+type InventoryDTO struct {
     // 待更新库存的SKUid,如果没有skuId,设置成-1
     SkuId   int64 `json:"sku_id,omitempty" xml:"sku_id,omitempty"`
     // 库存的仓编码,根据商品查询返回的仓编码进行设置,不同的客户类型,仓编码会不一样

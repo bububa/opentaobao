@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemCampaignDaybudgetResultDto 
-type TaobaoFeedflowItemCampaignDaybudgetResultDto struct {
+// TaobaoFeedflowItemCampaignDaybudgetResultDTO 
+type TaobaoFeedflowItemCampaignDaybudgetResultDTO struct {
     // 信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 预算总额

@@ -1,7 +1,7 @@
 package eleenterprisecoupon
 
-// CartCouponDto 
-type CartCouponDto struct {
+// CartCouponDTO 
+type CartCouponDTO struct {
     // 红包的SN或者券的ID
     Sn   string `json:"sn,omitempty" xml:"sn,omitempty"`
     // 类型：红包=1，券=2

@@ -3,7 +3,7 @@ package tmallnr
 // NewRetailResult 
 type NewRetailResult struct {
     // 请求结果
-    ResultData   *TagRespDto `json:"result_data,omitempty" xml:"result_data,omitempty"`
+    ResultData   *TagRespDTO `json:"result_data,omitempty" xml:"result_data,omitempty"`
     // 错误信息
     ErrorMessage   string `json:"error_message,omitempty" xml:"error_message,omitempty"`
     // 错误编码

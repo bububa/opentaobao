@@ -1,7 +1,7 @@
 package feedflow
 
-// TaobaoFeedflowItemAdgroupPageResultDto 
-type TaobaoFeedflowItemAdgroupPageResultDto struct {
+// TaobaoFeedflowItemAdgroupPageResultDTO 
+type TaobaoFeedflowItemAdgroupPageResultDTO struct {
     // 错误信息
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 返回数据结果
