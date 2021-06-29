@@ -65,7 +65,7 @@ func (d ApiDoc) ApiTpl() ApiTpl {
 		SnakeName:      snakeName,
 		ResponseKey:    fmt.Sprintf("%s_response", strings.TrimPrefix(snakeName, "taobao_")),
 		ChineseName:    d.ChineseName,
-		Desc:           d.Description,
+		Desc:           clearDesc(d.Description, false),
 		RequestParams:  make([]TplParam, len(d.RequestParams)),
 		ResponseParams: make([]TplParam, len(d.ResponseParams)),
 	}
@@ -103,7 +103,7 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 		Name:     name,
 		Label:    strings.ToLower(string(name[0])) + name[1:],
 		ParamKey: p.Name,
-		Desc:     strings.ReplaceAll(p.Description, "\n", ""),
+		Desc:     clearDesc(p.Description, true),
 		Required: p.Required,
 	}
 	paramType := strings.TrimSpace(strings.TrimSuffix(p.Type, "[]"))
@@ -162,4 +162,13 @@ func convertConflictModelName(apiName string, name string) string {
 		}
 	}
 	return name
+}
+
+func clearDesc(desc string, inline bool) string {
+	desc = strings.ReplaceAll(desc, "/*", "")
+	desc = strings.ReplaceAll(desc, "*/", "")
+	if inline {
+		desc = strings.ReplaceAll(desc, "\n", "")
+	}
+	return desc
 }

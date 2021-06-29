@@ -28,7 +28,7 @@ type PromotionFacadeOpenInfoList struct {
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
     // 促销活动适用人群 值：MEMBER，CUSTOMER，ALL      * 说明：会员,非会员，不限
     SuitablePeople   string `json:"suitable_people,omitempty" xml:"suitable_people,omitempty"`
-    // /**      * 满量促销      */     TYPE_FULL_AMOUNT,      /**      * 满额促销      */     TYPE_FULL_CAPACITY,      /**      * 买赠活动      */     TYPE_BOUGHT_GIFT;
+    // *      * 满量促销           TYPE_FULL_AMOUNT,      *      * 满额促销           TYPE_FULL_CAPACITY,      *      * 买赠活动           TYPE_BOUGHT_GIFT;
     Type   string `json:"type,omitempty" xml:"type,omitempty"`
     // 创建时间
     GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`

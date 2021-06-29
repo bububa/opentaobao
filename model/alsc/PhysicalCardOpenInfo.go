@@ -30,7 +30,7 @@ type PhysicalCardOpenInfo struct {
     PlanId   string `json:"plan_id,omitempty" xml:"plan_id,omitempty"`
     // 发行记录ID
     PublishId   string `json:"publish_id,omitempty" xml:"publish_id,omitempty"`
-    // WAIT_MAKE("WAIT_MAKE", "未制卡"),      /**      * 未出售      */     WAIT_SELL("WAIT_SELL", "未出售"),      /**      * 已出售      */     SOLD("SOLD", "已出售"),      /**      * 已作废      */     INVALID("INVALID", "已作废");
+    // WAIT_MAKE("WAIT_MAKE", "未制卡"),      *      * 未出售           WAIT_SELL("WAIT_SELL", "未出售"),      *      * 已出售           SOLD("SOLD", "已出售"),      *      * 已作废           INVALID("INVALID", "已作废");
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
     // 修改人
     UpdateBy   string `json:"update_by,omitempty" xml:"update_by,omitempty"`

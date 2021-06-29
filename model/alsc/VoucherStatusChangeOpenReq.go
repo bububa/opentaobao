@@ -24,7 +24,7 @@ type VoucherStatusChangeOpenReq struct {
     Source   string `json:"source,omitempty" xml:"source,omitempty"`
     // 优惠券集合
     VoucherIdList   []string `json:"voucher_id_list,omitempty" xml:"voucher_id_list>string,omitempty"`
-    // /**      * 核销，正常到核销      */     NORMAL_ISUSED,     /**      * 反核销，已使用到正常（补发一张新的优惠券）      */     ISUSED_NORMAL,
+    // *      * 核销，正常到核销           NORMAL_ISUSED,     *      * 反核销，已使用到正常（补发一张新的优惠券）           ISUSED_NORMAL,
     VoucherStatusAction   string `json:"voucher_status_action,omitempty" xml:"voucher_status_action,omitempty"`
     // 待核销点数，数组下标和券id对齐
     VoucherPointList   []string `json:"voucher_point_list,omitempty" xml:"voucher_point_list>string,omitempty"`
