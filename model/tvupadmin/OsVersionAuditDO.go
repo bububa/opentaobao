@@ -4,13 +4,13 @@ package tvupadmin
 type OsVersionAuditDO struct {
     // 主键ID
     Id   int64 `json:"id,omitempty" xml:"id,omitempty"`
-    // 内部设备型号
+    // 型号名
     ModelName   string `json:"model_name,omitempty" xml:"model_name,omitempty"`
-    // 设备型号
+    // 内部型号名
     RealTypeName   string `json:"real_type_name,omitempty" xml:"real_type_name,omitempty"`
-    // 版本
+    // 版本号
     Version   string `json:"version,omitempty" xml:"version,omitempty"`
-    // 描述
+    // 发布说明
     ReleaseNote   string `json:"release_note,omitempty" xml:"release_note,omitempty"`
     // 审核状态
     AuditStatus   string `json:"audit_status,omitempty" xml:"audit_status,omitempty"`
