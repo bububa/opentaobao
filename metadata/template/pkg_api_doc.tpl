@@ -1,0 +1,6 @@
+/*
+{{ .Name }}
+
+{{ .Link }}
+*/
+package {{ .Pkg }}

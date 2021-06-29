@@ -1,0 +1,87 @@
+{
+	"id": 57031,
+	"name": "taobao.usergrowth.offline.convertion.sync.info.get",
+	"apiChineseName": "查询 用增线下业务  转化数据是否同步完成",
+	"description": "为手淘线下合作的渠道，提供对外查询数据是否更新完毕接口",
+	"requestParams": [
+		{
+			"name": "query",
+			"type": "OfflineConvertionSyncInfoQuery",
+			"description": "入参",
+			"required": true,
+			"subParams": [
+				{
+					"name": "task_type",
+					"type": "String",
+					"description": "任务类型",
+					"required": true
+				},
+				{
+					"name": "channel_id",
+					"type": "Number",
+					"description": "渠道id",
+					"required": true
+				},
+				{
+					"name": "ds",
+					"type": "Number",
+					"description": "日期",
+					"required": true
+				}
+			]
+		}
+	],
+	"responseParams": [
+		{
+			"name": "result",
+			"type": "Result",
+			"description": "接口返回model",
+			"subParams": [
+				{
+					"name": "trace_id",
+					"type": "String",
+					"description": "跟踪id",
+					"required": true
+				},
+				{
+					"name": "data",
+					"type": "OfflineConvertionSyncInfoDto",
+					"description": "返回素材id",
+					"required": true,
+					"subParams": [
+						{
+							"name": "task_type",
+							"type": "String",
+							"description": "任务类型",
+							"required": true
+						},
+						{
+							"name": "is_synchronized",
+							"type": "Boolean",
+							"description": "数据是否更新完毕",
+							"required": true
+						},
+						{
+							"name": "ds",
+							"type": "Number",
+							"description": "日期",
+							"required": true
+						}
+					]
+				},
+				{
+					"name": "message",
+					"type": "String",
+					"description": "message",
+					"required": true
+				},
+				{
+					"name": "successful",
+					"type": "Boolean",
+					"description": "是否调用成功",
+					"required": true
+				}
+			]
+		}
+	]
+}
