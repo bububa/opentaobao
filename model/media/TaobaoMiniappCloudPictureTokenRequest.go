@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-云存储上传token获取 APIRequest
+云存储上传token获取 API请求
 taobao.miniapp.cloud.picture.token
 
 获取图片上传token，作为http://upload.cloud.tmall.com/api/proxy/upload接口上传的凭证。
@@ -21,22 +21,23 @@ taobao.miniapp.cloud.picture.token
 */
 type TaobaoMiniappCloudPictureTokenRequest struct {
     model.Params
-
     // 请求参数
-    generateTokenRequest   *GenerateTokenRequest 
-
+    generateTokenRequest   *GenerateTokenRequest
 }
 
+// 初始化TaobaoMiniappCloudPictureTokenRequest对象
 func NewTaobaoMiniappCloudPictureTokenRequest() *TaobaoMiniappCloudPictureTokenRequest{
     return &TaobaoMiniappCloudPictureTokenRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoMiniappCloudPictureTokenRequest) GetApiMethodName() string {
     return "taobao.miniapp.cloud.picture.token"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoMiniappCloudPictureTokenRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -44,15 +45,15 @@ func (r TaobaoMiniappCloudPictureTokenRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// GenerateTokenRequest Setter
+// 请求参数
 func (r *TaobaoMiniappCloudPictureTokenRequest) SetGenerateTokenRequest(generateTokenRequest *GenerateTokenRequest) error {
     r.generateTokenRequest = generateTokenRequest
     r.Set("generate_token_request", generateTokenRequest)
     return nil
 }
 
+// GenerateTokenRequest Getter
 func (r TaobaoMiniappCloudPictureTokenRequest) GetGenerateTokenRequest() *GenerateTokenRequest {
     return r.generateTokenRequest
 }
-

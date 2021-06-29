@@ -1,4 +1,5 @@
 {
+	"id": 10912,
 	"name": "taobao.picture.update",
 	"apiChineseName": "修改图片名字",
 	"description": "修改指定图片的图片名",

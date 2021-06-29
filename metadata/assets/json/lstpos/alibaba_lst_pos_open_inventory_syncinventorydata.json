@@ -1,4 +1,5 @@
 {
+	"id": 32944,
 	"name": "alibaba.lst.pos.open.inventory.syncinventorydata",
 	"apiChineseName": "商品库存修改同步接口(最多20条库存信息)",
 	"description": "商品库存修改同步接口(最多20条库存信息)",

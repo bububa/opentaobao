@@ -1,4 +1,5 @@
 {
+	"id": 26590,
 	"name": "alibaba.security.jaq.captcha.send",
 	"apiChineseName": "聚安全安全验证发起接口",
 	"description": "聚安全安全验证发起",

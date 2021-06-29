@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-修改采购单备注 APIResponse
+修改采购单备注 API返回值 
 taobao.fenxiao.order.remark.update
 
 供应商修改采购单备注
@@ -17,15 +17,11 @@ type TaobaoFenxiaoOrderRemarkUpdateAPIResponse struct {
     TaobaoFenxiaoOrderRemarkUpdateResponse
 }
 
+// 修改采购单备注 成功返回结果
 type TaobaoFenxiaoOrderRemarkUpdateResponse struct {
     XMLName xml.Name `xml:"fenxiao_order_remark_update_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 操作是否成功
-    
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
 }

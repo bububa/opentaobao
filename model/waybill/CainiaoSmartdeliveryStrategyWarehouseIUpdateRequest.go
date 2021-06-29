@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-智能发货引擎策略仓设置 APIRequest
+智能发货引擎策略仓设置 API请求
 cainiao.smartdelivery.strategy.warehouse.i.update
 
 智能发货引擎发货策略设置仓维度
 */
 type CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest struct {
     model.Params
-
     // 智能发货设置请求参数
-    deliveryStrategySetRequest   *DeliveryStrategySetRequest 
-
+    deliveryStrategySetRequest   *DeliveryStrategySetRequest
 }
 
+// 初始化CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest对象
 func NewCainiaoSmartdeliveryStrategyWarehouseIUpdateRequest() *CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest{
     return &CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest) GetApiMethodName() string {
     return "cainiao.smartdelivery.strategy.warehouse.i.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest) GetApiParams() url.
     }
     return params
 }
-
-
+// DeliveryStrategySetRequest Setter
+// 智能发货设置请求参数
 func (r *CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest) SetDeliveryStrategySetRequest(deliveryStrategySetRequest *DeliveryStrategySetRequest) error {
     r.deliveryStrategySetRequest = deliveryStrategySetRequest
     r.Set("delivery_strategy_set_request", deliveryStrategySetRequest)
     return nil
 }
 
+// DeliveryStrategySetRequest Getter
 func (r CainiaoSmartdeliveryStrategyWarehouseIUpdateRequest) GetDeliveryStrategySetRequest() *DeliveryStrategySetRequest {
     return r.deliveryStrategySetRequest
 }
-

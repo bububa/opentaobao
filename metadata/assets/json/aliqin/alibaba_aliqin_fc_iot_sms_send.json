@@ -1,4 +1,5 @@
 {
+	"id": 28775,
 	"name": "alibaba.aliqin.fc.iot.sms.send",
 	"apiChineseName": "物联网短信发送",
 	"description": "发送物联网短信，只允许使用物联网短信模板",

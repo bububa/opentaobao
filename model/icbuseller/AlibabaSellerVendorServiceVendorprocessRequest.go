@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-服务商客户关联信息 APIRequest
+服务商客户关联信息 API请求
 alibaba.seller.vendor.service.vendorprocess
 
 服务商客户关联信息
 */
 type AlibabaSellerVendorServiceVendorprocessRequest struct {
     model.Params
-
     // order_num
-    orderNum   string 
-
+    orderNum   string
 }
 
+// 初始化AlibabaSellerVendorServiceVendorprocessRequest对象
 func NewAlibabaSellerVendorServiceVendorprocessRequest() *AlibabaSellerVendorServiceVendorprocessRequest{
     return &AlibabaSellerVendorServiceVendorprocessRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaSellerVendorServiceVendorprocessRequest) GetApiMethodName() string {
     return "alibaba.seller.vendor.service.vendorprocess"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaSellerVendorServiceVendorprocessRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaSellerVendorServiceVendorprocessRequest) GetApiParams() url.Value
     }
     return params
 }
-
-
+// OrderNum Setter
+// order_num
 func (r *AlibabaSellerVendorServiceVendorprocessRequest) SetOrderNum(orderNum string) error {
     r.orderNum = orderNum
     r.Set("order_num", orderNum)
     return nil
 }
 
+// OrderNum Getter
 func (r AlibabaSellerVendorServiceVendorprocessRequest) GetOrderNum() string {
     return r.orderNum
 }
-

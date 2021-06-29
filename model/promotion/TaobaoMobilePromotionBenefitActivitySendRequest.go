@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-手淘专用单用户发放接口 APIRequest
+手淘专用单用户发放接口 API请求
 taobao.mobile.promotion.benefit.activity.send
 
 卖家活动中需要通过该API来发放对应的权益。手淘专用单用户发放接口。
 */
 type TaobaoMobilePromotionBenefitActivitySendRequest struct {
     model.Params
-
     // 单用户权益发放请求
-    singleBenefitRequest   *SingleBenefitRequest 
-
+    singleBenefitRequest   *SingleBenefitRequest
 }
 
+// 初始化TaobaoMobilePromotionBenefitActivitySendRequest对象
 func NewTaobaoMobilePromotionBenefitActivitySendRequest() *TaobaoMobilePromotionBenefitActivitySendRequest{
     return &TaobaoMobilePromotionBenefitActivitySendRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoMobilePromotionBenefitActivitySendRequest) GetApiMethodName() string {
     return "taobao.mobile.promotion.benefit.activity.send"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoMobilePromotionBenefitActivitySendRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoMobilePromotionBenefitActivitySendRequest) GetApiParams() url.Valu
     }
     return params
 }
-
-
+// SingleBenefitRequest Setter
+// 单用户权益发放请求
 func (r *TaobaoMobilePromotionBenefitActivitySendRequest) SetSingleBenefitRequest(singleBenefitRequest *SingleBenefitRequest) error {
     r.singleBenefitRequest = singleBenefitRequest
     r.Set("single_benefit_request", singleBenefitRequest)
     return nil
 }
 
+// SingleBenefitRequest Getter
 func (r TaobaoMobilePromotionBenefitActivitySendRequest) GetSingleBenefitRequest() *SingleBenefitRequest {
     return r.singleBenefitRequest
 }
-

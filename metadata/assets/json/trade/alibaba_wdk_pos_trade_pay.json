@@ -1,4 +1,5 @@
 {
+	"id": 44003,
 	"name": "alibaba.wdk.pos.trade.pay",
 	"apiChineseName": "轻pos品牌营销支付接口",
 	"description": "轻pos场景，外部商家支付后调用开放平台把支付信息回传给五道口交易",

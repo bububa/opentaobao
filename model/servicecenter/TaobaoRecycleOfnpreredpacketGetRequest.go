@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-服务商查询前置补贴红包的最新数据 APIRequest
+服务商查询前置补贴红包的最新数据 API请求
 taobao.recycle.ofnpreredpacket.get
 
 服务商查询前置补贴红包的最新数据
 */
 type TaobaoRecycleOfnpreredpacketGetRequest struct {
     model.Params
-
     // 旧机单id
-    oldOrderId   int64 
-
+    oldOrderId   int64
 }
 
+// 初始化TaobaoRecycleOfnpreredpacketGetRequest对象
 func NewTaobaoRecycleOfnpreredpacketGetRequest() *TaobaoRecycleOfnpreredpacketGetRequest{
     return &TaobaoRecycleOfnpreredpacketGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoRecycleOfnpreredpacketGetRequest) GetApiMethodName() string {
     return "taobao.recycle.ofnpreredpacket.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoRecycleOfnpreredpacketGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoRecycleOfnpreredpacketGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OldOrderId Setter
+// 旧机单id
 func (r *TaobaoRecycleOfnpreredpacketGetRequest) SetOldOrderId(oldOrderId int64) error {
     r.oldOrderId = oldOrderId
     r.Set("old_order_id", oldOrderId)
     return nil
 }
 
+// OldOrderId Getter
 func (r TaobaoRecycleOfnpreredpacketGetRequest) GetOldOrderId() int64 {
     return r.oldOrderId
 }
-

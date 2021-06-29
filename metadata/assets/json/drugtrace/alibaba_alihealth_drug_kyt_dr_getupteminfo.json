@@ -1,4 +1,5 @@
 {
+	"id": 46666,
 	"name": "alibaba.alihealth.drug.kyt.dr.getupteminfo",
 	"apiChineseName": "获取上游温度信息（疫苗）",
 	"description": "根据追溯码及企业ID获取上游运输及存储温度信息（疫苗）",

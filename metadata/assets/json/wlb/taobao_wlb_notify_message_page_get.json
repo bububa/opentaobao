@@ -1,4 +1,5 @@
 {
+	"id": 10604,
 	"name": "taobao.wlb.notify.message.page.get",
 	"apiChineseName": "物流宝通知消息查询接口",
 	"description": "物流宝提供的消息通知查询接口，消息内容包括;出入库单不一致消息，取消订单成功消息，盘点单消息",

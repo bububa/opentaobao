@@ -1,4 +1,5 @@
 {
+	"id": 53954,
 	"name": "alibaba.einvoice.merchant.add",
 	"apiChineseName": "发票中台-同平台授权税号适用商户",
 	"description": "适用于以下场景：\n业务税号入驻成功后，需要将税号授权给同平台下其他商户，使得其他商户也具备开票能力",

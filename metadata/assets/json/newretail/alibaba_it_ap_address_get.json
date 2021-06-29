@@ -1,4 +1,5 @@
 {
+	"id": 44781,
 	"name": "alibaba.it.ap.address.get",
 	"apiChineseName": "getApAddressByMacNew",
 	"description": "根据ap 的mac地址查询ap的结构化位置信息",

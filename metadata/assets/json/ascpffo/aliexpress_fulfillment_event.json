@@ -1,4 +1,5 @@
 {
+	"id": 50216,
 	"name": "aliexpress.fulfillment.event",
 	"apiChineseName": "AE履约事件处理",
 	"description": "AE用 履约底层声明发货能力",

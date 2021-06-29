@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询会员资产 APIRequest
+查询会员资产 API请求
 alibaba.alsc.crm.open.customer.get
 
 查询会员身份，资产等
 */
 type AlibabaAlscCrmOpenCustomerGetRequest struct {
     model.Params
-
     // 入参
-    paramCustomerGetOpenReq   *CustomerGetOpenReq 
-
+    paramCustomerGetOpenReq   *CustomerGetOpenReq
 }
 
+// 初始化AlibabaAlscCrmOpenCustomerGetRequest对象
 func NewAlibabaAlscCrmOpenCustomerGetRequest() *AlibabaAlscCrmOpenCustomerGetRequest{
     return &AlibabaAlscCrmOpenCustomerGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlscCrmOpenCustomerGetRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.open.customer.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlscCrmOpenCustomerGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlscCrmOpenCustomerGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamCustomerGetOpenReq Setter
+// 入参
 func (r *AlibabaAlscCrmOpenCustomerGetRequest) SetParamCustomerGetOpenReq(paramCustomerGetOpenReq *CustomerGetOpenReq) error {
     r.paramCustomerGetOpenReq = paramCustomerGetOpenReq
     r.Set("param_customer_get_open_req", paramCustomerGetOpenReq)
     return nil
 }
 
+// ParamCustomerGetOpenReq Getter
 func (r AlibabaAlscCrmOpenCustomerGetRequest) GetParamCustomerGetOpenReq() *CustomerGetOpenReq {
     return r.paramCustomerGetOpenReq
 }
-

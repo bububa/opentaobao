@@ -1,4 +1,5 @@
 {
+	"id": 33220,
 	"name": "taobao.openuid.get",
 	"apiChineseName": "获取授权账号对应的OpenUid",
 	"description": "获取授权账号对应的OpenUid",

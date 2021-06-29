@@ -1,4 +1,5 @@
 {
+	"id": 30506,
 	"name": "tmall.servicecenter.worker.query",
 	"apiChineseName": "工人信息查询",
 	"description": "查询服务商对应的工人信息",

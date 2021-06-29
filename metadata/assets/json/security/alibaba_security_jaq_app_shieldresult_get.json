@@ -1,4 +1,5 @@
 {
+	"id": 25665,
 	"name": "alibaba.security.jaq.app.shieldresult.get",
 	"apiChineseName": "用户查询加固结果",
 	"description": "用户通过alibaba.security.jaq.app.shield接口提交应用加固后,通过该接口查询加固结果,下载加固包",

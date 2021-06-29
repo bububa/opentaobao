@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询面单服务订购及面单使用情况 APIRequest
+查询面单服务订购及面单使用情况 API请求
 cainiao.waybill.ii.search
 
 获取发货地&CP开通状态&账户的使用情况
 */
 type CainiaoWaybillIiSearchRequest struct {
     model.Params
-
     // 物流公司code
-    cpCode   string 
-
+    cpCode   string
 }
 
+// 初始化CainiaoWaybillIiSearchRequest对象
 func NewCainiaoWaybillIiSearchRequest() *CainiaoWaybillIiSearchRequest{
     return &CainiaoWaybillIiSearchRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r CainiaoWaybillIiSearchRequest) GetApiMethodName() string {
     return "cainiao.waybill.ii.search"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r CainiaoWaybillIiSearchRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r CainiaoWaybillIiSearchRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// CpCode Setter
+// 物流公司code
 func (r *CainiaoWaybillIiSearchRequest) SetCpCode(cpCode string) error {
     r.cpCode = cpCode
     r.Set("cp_code", cpCode)
     return nil
 }
 
+// CpCode Getter
 func (r CainiaoWaybillIiSearchRequest) GetCpCode() string {
     return r.cpCode
 }
-

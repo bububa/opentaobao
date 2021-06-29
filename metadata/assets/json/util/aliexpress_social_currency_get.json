@@ -1,4 +1,5 @@
 {
+	"id": 47558,
 	"name": "aliexpress.social.currency.get",
 	"apiChineseName": "币种获取接口",
 	"description": "获取目前AE社交支持的币种",

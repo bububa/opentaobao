@@ -1,4 +1,5 @@
 {
+	"id": 21433,
 	"name": "taobao.item.anchor.get",
 	"apiChineseName": "获取可用宝贝描述规范化模块",
 	"description": "根据类目id和宝贝描述规范化打标类型获取该类目可用的宝贝描述模块中的锚点",

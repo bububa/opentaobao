@@ -1,4 +1,5 @@
 {
+	"id": 137,
 	"name": "taobao.picture.category.get",
 	"apiChineseName": "获取图片分类信息",
 	"description": "获取图片分类信息",

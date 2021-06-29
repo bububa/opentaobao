@@ -1,4 +1,5 @@
 {
+	"id": 41414,
 	"name": "alibaba.alihealth.drug.kyt.updatebillcode",
 	"apiChineseName": "零售修改出入库单追溯码",
 	"description": "零售修改出入库单追溯码",

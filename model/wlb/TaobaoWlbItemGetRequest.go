@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-根据商品ID获取商品信息 APIRequest
+根据商品ID获取商品信息 API请求
 taobao.wlb.item.get
 
 根据商品ID获取商品信息,除了获取商品信息外还可获取商品属性信息和库存信息。
 */
 type TaobaoWlbItemGetRequest struct {
     model.Params
-
     // 商品ID
-    itemId   int64 
-
+    itemId   int64
 }
 
+// 初始化TaobaoWlbItemGetRequest对象
 func NewTaobaoWlbItemGetRequest() *TaobaoWlbItemGetRequest{
     return &TaobaoWlbItemGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoWlbItemGetRequest) GetApiMethodName() string {
     return "taobao.wlb.item.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoWlbItemGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoWlbItemGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ItemId Setter
+// 商品ID
 func (r *TaobaoWlbItemGetRequest) SetItemId(itemId int64) error {
     r.itemId = itemId
     r.Set("item_id", itemId)
     return nil
 }
 
+// ItemId Getter
 func (r TaobaoWlbItemGetRequest) GetItemId() int64 {
     return r.itemId
 }
-

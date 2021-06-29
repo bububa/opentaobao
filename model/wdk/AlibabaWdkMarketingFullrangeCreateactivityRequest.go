@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-创建全场活动 APIRequest
+创建全场活动 API请求
 alibaba.wdk.marketing.fullrange.createactivity
 
 创建全场活动
 */
 type AlibabaWdkMarketingFullrangeCreateactivityRequest struct {
     model.Params
-
     // 创建活动请求入参
-    param   *FullRangeActivity 
-
+    param   *FullRangeActivity
 }
 
+// 初始化AlibabaWdkMarketingFullrangeCreateactivityRequest对象
 func NewAlibabaWdkMarketingFullrangeCreateactivityRequest() *AlibabaWdkMarketingFullrangeCreateactivityRequest{
     return &AlibabaWdkMarketingFullrangeCreateactivityRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkMarketingFullrangeCreateactivityRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.fullrange.createactivity"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkMarketingFullrangeCreateactivityRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkMarketingFullrangeCreateactivityRequest) GetApiParams() url.Va
     }
     return params
 }
-
-
+// Param Setter
+// 创建活动请求入参
 func (r *AlibabaWdkMarketingFullrangeCreateactivityRequest) SetParam(param *FullRangeActivity) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaWdkMarketingFullrangeCreateactivityRequest) GetParam() *FullRangeActivity {
     return r.param
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 49544,
 	"name": "tmall.supplychain.channel.product.release.status.get",
 	"apiChineseName": "产品铺货状态查询",
 	"description": "巴拿马战役渠道产品状态查询",

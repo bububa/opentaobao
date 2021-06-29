@@ -1,4 +1,5 @@
 {
+	"id": 28065,
 	"name": "taobao.wt.trade.order.resultcallback",
 	"apiChineseName": "商家回调接口",
 	"description": "阿里通信定制服务，商家发货后进行调用该接口，用于自动发货并确认收货",

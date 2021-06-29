@@ -1,4 +1,5 @@
 {
+	"id": 42601,
 	"name": "alibaba.wdk.merchant.routing.register",
 	"apiChineseName": "商家注册更新路由信息",
 	"description": "商家注册更新路由信息",

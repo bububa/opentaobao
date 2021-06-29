@@ -1,4 +1,5 @@
 {
+	"id": 44240,
 	"name": "alibaba.alicom.order.preauthorize.fulfillment",
 	"apiChineseName": "履约结果",
 	"description": "预授权-履约结果",

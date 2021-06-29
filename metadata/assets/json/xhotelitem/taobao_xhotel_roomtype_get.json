@@ -1,4 +1,5 @@
 {
+	"id": 22660,
 	"name": "taobao.xhotel.roomtype.get",
 	"apiChineseName": "房型查询接口",
 	"description": "房型查询房型查询接口返回结果增加date_confirm字段",

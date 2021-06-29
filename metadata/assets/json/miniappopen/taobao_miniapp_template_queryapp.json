@@ -1,4 +1,5 @@
 {
+	"id": 47798,
 	"name": "taobao.miniapp.template.queryapp",
 	"apiChineseName": "查询实例化应用版本",
 	"description": "根据模板id和商家信息，查询实例化小程序版本查询",

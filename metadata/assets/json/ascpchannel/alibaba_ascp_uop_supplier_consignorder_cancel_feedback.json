@@ -1,4 +1,5 @@
 {
+	"id": 49323,
 	"name": "alibaba.ascp.uop.supplier.consignorder.cancel.feedback",
 	"apiChineseName": "商家仓wms取消发货反馈回告服务",
 	"description": "履约单纬度通知商家仓wms取消发货结果反馈回告服务",

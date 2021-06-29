@@ -1,4 +1,5 @@
 {
+	"id": 56250,
 	"name": "alibaba.idle.user.permit",
 	"apiChineseName": "用户appkey授权",
 	"description": "用于记录登录用户与服务商的绑定关系，用于业务数据分发和授权校验",

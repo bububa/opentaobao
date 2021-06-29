@@ -1,4 +1,5 @@
 {
+	"id": 30843,
 	"name": "alibaba.nlife.b2c.member.discountrule.get",
 	"apiChineseName": "会员抵扣规则",
 	"description": "获取企业会员抵扣规则",

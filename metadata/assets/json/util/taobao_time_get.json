@@ -1,4 +1,5 @@
 {
+	"id": 120,
 	"name": "taobao.time.get",
 	"apiChineseName": "获取淘宝系统当前时间",
 	"description": "获取淘宝系统当前时间",

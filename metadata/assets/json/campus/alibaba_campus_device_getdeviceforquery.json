@@ -1,4 +1,5 @@
 {
+	"id": 32562,
 	"name": "alibaba.campus.device.getdeviceforquery",
 	"apiChineseName": "下发设备的分页接口(无需AOP控制)",
 	"description": "下发设备的分页接口(发布在TOP上，connect调用，无需AOP控制)",

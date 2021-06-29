@@ -1,4 +1,5 @@
 {
+	"id": 21249,
 	"name": "taobao.simba.adgroups.changed.get",
 	"apiChineseName": "分页获取修改的推广组ID和修改时间",
 	"description": "分页获取修改的推广组ID和修改时间",

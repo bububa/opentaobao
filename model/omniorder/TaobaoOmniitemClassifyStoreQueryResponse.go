@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据门店查分类信息 APIResponse
+根据门店查分类信息 API返回值 
 taobao.omniitem.classify.store.query
 
 根据门店查分类信息
@@ -17,15 +17,11 @@ type TaobaoOmniitemClassifyStoreQueryAPIResponse struct {
     TaobaoOmniitemClassifyStoreQueryResponse
 }
 
+// 根据门店查分类信息 成功返回结果
 type TaobaoOmniitemClassifyStoreQueryResponse struct {
     XMLName xml.Name `xml:"omniitem_classify_store_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TaobaoOmniitemClassifyStoreQueryResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

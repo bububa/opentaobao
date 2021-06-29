@@ -1,4 +1,5 @@
 {
+	"id": 30523,
 	"name": "yunos.osupdate.osfota.publish",
 	"apiChineseName": "系统升级发布",
 	"description": "发布osupdate系统升级任务",

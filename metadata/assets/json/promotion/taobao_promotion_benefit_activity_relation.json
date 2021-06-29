@@ -1,4 +1,5 @@
 {
+	"id": 25204,
 	"name": "taobao.promotion.benefit.activity.relation",
 	"apiChineseName": "关联活动权益",
 	"description": "卖家活动中需要通过该API来关联的对应的权益。",

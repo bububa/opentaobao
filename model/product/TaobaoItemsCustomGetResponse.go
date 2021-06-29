@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据外部ID取商品 APIResponse
+根据外部ID取商品 API返回值 
 taobao.items.custom.get
 
 跟据卖家设定的商品外部id获取商品，只能获取授权卖家的商品
@@ -18,15 +18,11 @@ type TaobaoItemsCustomGetAPIResponse struct {
     TaobaoItemsCustomGetResponse
 }
 
+// 根据外部ID取商品 成功返回结果
 type TaobaoItemsCustomGetResponse struct {
     XMLName xml.Name `xml:"items_custom_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 商品列表，具体返回字段以fields决定
-    
     Items   []Item `json:"items,omitempty" xml:"items>item,omitempty"`
-    
-    
 }

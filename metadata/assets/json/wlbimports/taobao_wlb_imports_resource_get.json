@@ -1,4 +1,5 @@
 {
+	"id": 24355,
 	"name": "taobao.wlb.imports.resource.get",
 	"apiChineseName": "获取所有服务列表",
 	"description": "一般进口TOP接口，获取所有服务列表。",

@@ -1,4 +1,5 @@
 {
+	"id": 37939,
 	"name": "tmall.nr.notice.goods.ready",
 	"apiChineseName": "同步天猫配送人员信息",
 	"description": "接收商家的配送人员信息，和第三公司信息及提货码",

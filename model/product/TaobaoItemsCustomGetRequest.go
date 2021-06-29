@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据外部ID取商品 APIRequest
+根据外部ID取商品 API请求
 taobao.items.custom.get
 
 跟据卖家设定的商品外部id获取商品，只能获取授权卖家的商品
@@ -15,25 +15,25 @@ taobao.items.custom.get
 */
 type TaobaoItemsCustomGetRequest struct {
     model.Params
-
     // 商品的外部商品ID，支持批量，最多不超过40个。
-    outerId   string 
-
+    outerId   string
     // 需返回的字段列表，参考：Item商品结构体说明，其中barcode、sku.barcode等条形码字段暂不支持；多个字段之间用“,”分隔。
-    fields   string 
-
+    fields   string
 }
 
+// 初始化TaobaoItemsCustomGetRequest对象
 func NewTaobaoItemsCustomGetRequest() *TaobaoItemsCustomGetRequest{
     return &TaobaoItemsCustomGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoItemsCustomGetRequest) GetApiMethodName() string {
     return "taobao.items.custom.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoItemsCustomGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -41,25 +41,27 @@ func (r TaobaoItemsCustomGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OuterId Setter
+// 商品的外部商品ID，支持批量，最多不超过40个。
 func (r *TaobaoItemsCustomGetRequest) SetOuterId(outerId string) error {
     r.outerId = outerId
     r.Set("outer_id", outerId)
     return nil
 }
 
+// OuterId Getter
 func (r TaobaoItemsCustomGetRequest) GetOuterId() string {
     return r.outerId
 }
-
+// Fields Setter
+// 需返回的字段列表，参考：Item商品结构体说明，其中barcode、sku.barcode等条形码字段暂不支持；多个字段之间用“,”分隔。
 func (r *TaobaoItemsCustomGetRequest) SetFields(fields string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
+// Fields Getter
 func (r TaobaoItemsCustomGetRequest) GetFields() string {
     return r.fields
 }
-

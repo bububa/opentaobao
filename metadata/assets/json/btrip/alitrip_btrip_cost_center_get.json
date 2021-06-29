@@ -1,4 +1,5 @@
 {
+	"id": 29198,
 	"name": "alitrip.btrip.cost.center.get",
 	"apiChineseName": "获取用户费用归属",
 	"description": "获取差旅申请用户的费用归属列表",

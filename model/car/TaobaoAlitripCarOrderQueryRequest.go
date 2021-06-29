@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-飞猪订单状态查询接口 APIRequest
+飞猪订单状态查询接口 API请求
 taobao.alitrip.car.order.query
 
 提供给直连商家查询在飞猪平台上产生的订单
 */
 type TaobaoAlitripCarOrderQueryRequest struct {
     model.Params
-
     // 飞猪平台订单id
-    orderId   string 
-
+    orderId   string
 }
 
+// 初始化TaobaoAlitripCarOrderQueryRequest对象
 func NewTaobaoAlitripCarOrderQueryRequest() *TaobaoAlitripCarOrderQueryRequest{
     return &TaobaoAlitripCarOrderQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAlitripCarOrderQueryRequest) GetApiMethodName() string {
     return "taobao.alitrip.car.order.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAlitripCarOrderQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoAlitripCarOrderQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OrderId Setter
+// 飞猪平台订单id
 func (r *TaobaoAlitripCarOrderQueryRequest) SetOrderId(orderId string) error {
     r.orderId = orderId
     r.Set("order_id", orderId)
     return nil
 }
 
+// OrderId Getter
 func (r TaobaoAlitripCarOrderQueryRequest) GetOrderId() string {
     return r.orderId
 }
-

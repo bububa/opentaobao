@@ -1,4 +1,5 @@
 {
+	"id": 57010,
 	"name": "alibaba.alicom.vt.opentrade.getproductinfo",
 	"apiChineseName": "查询新虚拟产品配置信息",
 	"description": "话费宝查询产品信息相关配置",

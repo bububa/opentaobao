@@ -7,44 +7,40 @@ import (
 )
 
 /* 
-品牌积分变更回调API APIRequest
+品牌积分变更回调API API请求
 tmall.mei.crm.callback.point.change
 
 线下品牌积分变更消息回调API，告诉积分扣减或者累加是否成功。
 */
 type TmallMeiCrmCallbackPointChangeRequest struct {
     model.Params
-
     // 混淆会员手机号码
-    mixMobile   string 
-
+    mixMobile   string
     // 变更记录ID
-    recordId   int64 
-
+    recordId   int64
     // 0:成功。1：失败
-    result   int64 
-
+    result   int64
     // 处理失败的错误码.
-    errorCode   string 
-
+    errorCode   string
     // 拓展信息
-    extInfo   string 
-
+    extInfo   string
     // 积分信息
-    point   int64 
-
+    point   int64
 }
 
+// 初始化TmallMeiCrmCallbackPointChangeRequest对象
 func NewTmallMeiCrmCallbackPointChangeRequest() *TmallMeiCrmCallbackPointChangeRequest{
     return &TmallMeiCrmCallbackPointChangeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallMeiCrmCallbackPointChangeRequest) GetApiMethodName() string {
     return "tmall.mei.crm.callback.point.change"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallMeiCrmCallbackPointChangeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -52,65 +48,75 @@ func (r TmallMeiCrmCallbackPointChangeRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// MixMobile Setter
+// 混淆会员手机号码
 func (r *TmallMeiCrmCallbackPointChangeRequest) SetMixMobile(mixMobile string) error {
     r.mixMobile = mixMobile
     r.Set("mix_mobile", mixMobile)
     return nil
 }
 
+// MixMobile Getter
 func (r TmallMeiCrmCallbackPointChangeRequest) GetMixMobile() string {
     return r.mixMobile
 }
-
+// RecordId Setter
+// 变更记录ID
 func (r *TmallMeiCrmCallbackPointChangeRequest) SetRecordId(recordId int64) error {
     r.recordId = recordId
     r.Set("record_id", recordId)
     return nil
 }
 
+// RecordId Getter
 func (r TmallMeiCrmCallbackPointChangeRequest) GetRecordId() int64 {
     return r.recordId
 }
-
+// Result Setter
+// 0:成功。1：失败
 func (r *TmallMeiCrmCallbackPointChangeRequest) SetResult(result int64) error {
     r.result = result
     r.Set("result", result)
     return nil
 }
 
+// Result Getter
 func (r TmallMeiCrmCallbackPointChangeRequest) GetResult() int64 {
     return r.result
 }
-
+// ErrorCode Setter
+// 处理失败的错误码.
 func (r *TmallMeiCrmCallbackPointChangeRequest) SetErrorCode(errorCode string) error {
     r.errorCode = errorCode
     r.Set("error_code", errorCode)
     return nil
 }
 
+// ErrorCode Getter
 func (r TmallMeiCrmCallbackPointChangeRequest) GetErrorCode() string {
     return r.errorCode
 }
-
+// ExtInfo Setter
+// 拓展信息
 func (r *TmallMeiCrmCallbackPointChangeRequest) SetExtInfo(extInfo string) error {
     r.extInfo = extInfo
     r.Set("ext_info", extInfo)
     return nil
 }
 
+// ExtInfo Getter
 func (r TmallMeiCrmCallbackPointChangeRequest) GetExtInfo() string {
     return r.extInfo
 }
-
+// Point Setter
+// 积分信息
 func (r *TmallMeiCrmCallbackPointChangeRequest) SetPoint(point int64) error {
     r.point = point
     r.Set("point", point)
     return nil
 }
 
+// Point Getter
 func (r TmallMeiCrmCallbackPointChangeRequest) GetPoint() int64 {
     return r.point
 }
-

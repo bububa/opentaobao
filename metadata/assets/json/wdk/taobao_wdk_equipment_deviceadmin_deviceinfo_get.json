@@ -1,4 +1,5 @@
 {
+	"id": 39408,
 	"name": "taobao.wdk.equipment.deviceadmin.deviceinfo.get",
 	"apiChineseName": "获取五道口设备管理信息",
 	"description": "通过仓编码获取五道口设备管理信息",

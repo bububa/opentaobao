@@ -1,4 +1,5 @@
 {
+	"id": 46097,
 	"name": "alibaba.mozi.acl.permissionpkg.add.permissions",
 	"apiChineseName": "权限套餐添加权限",
 	"description": "此接口的功能为：将一批应用下的权限添加到该应用下的权限套餐中",

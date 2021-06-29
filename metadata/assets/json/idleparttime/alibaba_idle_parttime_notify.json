@@ -1,4 +1,5 @@
 {
+	"id": 52621,
 	"name": "alibaba.idle.parttime.notify",
 	"apiChineseName": "兼职通知接口",
 	"description": "服务商侧有岗位状态变更对我们进行通知(岗位关闭, 录取状态)",

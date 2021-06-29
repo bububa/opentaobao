@@ -1,4 +1,5 @@
 {
+	"id": 43570,
 	"name": "alibaba.alihealth.asyncprescribe.prescription.detail",
 	"apiChineseName": "异步开方处方详情",
 	"description": "异步开方处方查询",

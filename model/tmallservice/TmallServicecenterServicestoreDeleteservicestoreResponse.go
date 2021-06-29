@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-删除网点 APIResponse
+删除网点 API返回值 
 tmall.servicecenter.servicestore.deleteservicestore
 
 删除网点信息。对于同一个服务商，通过 service_store_code 删除网点。
@@ -30,15 +30,11 @@ type TmallServicecenterServicestoreDeleteservicestoreAPIResponse struct {
     TmallServicecenterServicestoreDeleteservicestoreResponse
 }
 
+// 删除网点 成功返回结果
 type TmallServicecenterServicestoreDeleteservicestoreResponse struct {
     XMLName xml.Name `xml:"tmall_servicecenter_servicestore_deleteservicestore_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

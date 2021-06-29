@@ -1,4 +1,5 @@
 {
+	"id": 35786,
 	"name": "alibaba.mos.goods.adjust",
 	"apiChineseName": "调整库存",
 	"description": "库存调整接口",

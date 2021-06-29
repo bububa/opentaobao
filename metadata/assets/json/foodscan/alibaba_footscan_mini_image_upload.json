@@ -1,4 +1,5 @@
 {
+	"id": 50512,
 	"name": "alibaba.footscan.mini.image.upload",
 	"apiChineseName": "商家端图片上传",
 	"description": "提供图片上传功能，同时进行图片的检测",

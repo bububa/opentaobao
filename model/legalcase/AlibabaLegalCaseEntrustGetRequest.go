@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-委托 APIRequest
+委托 API请求
 alibaba.legal.case.entrust.get
 
 获取委托案件的基本信息
 */
 type AlibabaLegalCaseEntrustGetRequest struct {
     model.Params
-
     // 委托id
-    entrustId   int64 
-
+    entrustId   int64
 }
 
+// 初始化AlibabaLegalCaseEntrustGetRequest对象
 func NewAlibabaLegalCaseEntrustGetRequest() *AlibabaLegalCaseEntrustGetRequest{
     return &AlibabaLegalCaseEntrustGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaLegalCaseEntrustGetRequest) GetApiMethodName() string {
     return "alibaba.legal.case.entrust.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaLegalCaseEntrustGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaLegalCaseEntrustGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// EntrustId Setter
+// 委托id
 func (r *AlibabaLegalCaseEntrustGetRequest) SetEntrustId(entrustId int64) error {
     r.entrustId = entrustId
     r.Set("entrust_id", entrustId)
     return nil
 }
 
+// EntrustId Getter
 func (r AlibabaLegalCaseEntrustGetRequest) GetEntrustId() int64 {
     return r.entrustId
 }
-

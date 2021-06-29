@@ -1,4 +1,5 @@
 {
+	"id": 45860,
 	"name": "alibaba.alsc.crm.recharge.account.flowdetail.get",
 	"apiChineseName": "储值流水详细",
 	"description": "查询储值流水详细接口",

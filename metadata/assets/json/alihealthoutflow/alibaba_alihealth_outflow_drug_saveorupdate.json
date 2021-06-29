@@ -1,4 +1,5 @@
 {
+	"id": 45024,
 	"name": "alibaba.alihealth.outflow.drug.saveorupdate",
 	"apiChineseName": "处方外流-药品同步接口",
 	"description": "处方外流-药品同步接口",

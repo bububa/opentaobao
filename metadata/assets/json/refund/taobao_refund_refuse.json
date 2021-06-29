@@ -1,4 +1,5 @@
 {
+	"id": 10480,
 	"name": "taobao.refund.refuse",
 	"apiChineseName": "卖家拒绝退款",
 	"description": "卖家拒绝单笔退款（包含退款和退款退货）交易，要求如下：\u003cbr/\u003e1. 传入的refund_id和相应的tid, oid必须匹配\u003cbr/\u003e2. 如果一笔订单只有一笔子订单，则tid必须与oid相同\u003cbr/\u003e3. 只有卖家才能执行拒绝退款操作\u003cbr/\u003e4. 以下三种情况不能退款：卖家未发货；7天无理由退换货；网游订单",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-航司权益数据回流 APIResponse
+航司权益数据回流 API返回值 
 alitrip.uppc.member.gain
 
 航司权益数据回流
@@ -17,15 +17,11 @@ type AlitripUppcMemberGainAPIResponse struct {
     AlitripUppcMemberGainResponse
 }
 
+// 航司权益数据回流 成功返回结果
 type AlitripUppcMemberGainResponse struct {
     XMLName xml.Name `xml:"alitrip_uppc_member_gain_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *ResultDO `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

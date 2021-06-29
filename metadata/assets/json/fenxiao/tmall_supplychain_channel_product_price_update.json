@@ -1,4 +1,5 @@
 {
+	"id": 49545,
 	"name": "tmall.supplychain.channel.product.price.update",
 	"apiChineseName": "渠道价格更新接口",
 	"description": "更新渠道产品价格",

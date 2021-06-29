@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-企业上传出入库信息 APIResponse
+企业上传出入库信息 API返回值 
 alibaba.alihealth.drug.kyt.uploadinoutbill
 
 企业上传出入库信息，包括101, "生产入库"；102, "采购入库"；103, "退货入库"；104, "调拨入库"；106, "零头入库"；107, "供应入库"；108, "召回入库"；110,"赠品入库"；111,"盘盈入库"；112,"报废入库"；113,"其他入库"
@@ -20,30 +20,17 @@ type AlibabaAlihealthDrugKytUploadinoutbillAPIResponse struct {
     AlibabaAlihealthDrugKytUploadinoutbillResponse
 }
 
+// 企业上传出入库信息 成功返回结果
 type AlibabaAlihealthDrugKytUploadinoutbillResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_uploadinoutbill_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回值
-    
     Model   string `json:"model,omitempty" xml:"model,omitempty"`
-
-    
     // 返回编码(BILL_DECODE_ERROR 单据转码失败  BILL_FILE_NAME_DUPLICATE_UPLOAD 文件名重复)
-    
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
-
-    
     // 返回信息
-    
     MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
-
-    
     // 是否成功(true 成功 false 失败)
-    
     ResponseSuccess   bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
-
-    
 }

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-修改网点信息 APIRequest
+修改网点信息 API请求
 tmall.servicecenter.servicestore.updateservicestore
 
 修改网点信息。对于同一个服务商，通过 service_store_code 保证网点唯一性。需要保证网点存在才能修改。
@@ -27,22 +27,23 @@ tmall.servicecenter.servicestore.updateservicestore
 */
 type TmallServicecenterServicestoreUpdateservicestoreRequest struct {
     model.Params
-
     // 网点
-    serviceStore   *ServiceStoreDto 
-
+    serviceStore   *ServiceStoreDto
 }
 
+// 初始化TmallServicecenterServicestoreUpdateservicestoreRequest对象
 func NewTmallServicecenterServicestoreUpdateservicestoreRequest() *TmallServicecenterServicestoreUpdateservicestoreRequest{
     return &TmallServicecenterServicestoreUpdateservicestoreRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicestore.updateservicestore"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -50,15 +51,15 @@ func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetApiParams() 
     }
     return params
 }
-
-
+// ServiceStore Setter
+// 网点
 func (r *TmallServicecenterServicestoreUpdateservicestoreRequest) SetServiceStore(serviceStore *ServiceStoreDto) error {
     r.serviceStore = serviceStore
     r.Set("service_store", serviceStore)
     return nil
 }
 
+// ServiceStore Getter
 func (r TmallServicecenterServicestoreUpdateservicestoreRequest) GetServiceStore() *ServiceStoreDto {
     return r.serviceStore
 }
-

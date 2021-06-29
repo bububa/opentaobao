@@ -1,4 +1,5 @@
 {
+	"id": 45946,
 	"name": "alibaba.mozi.buc.account.list.accountids",
 	"apiChineseName": "根据一批账号ID查询账号列表",
 	"description": "根据一批账号ID查询账号列表",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-艺人详情 APIResponse
+艺人详情 API返回值 
 alibaba.xiami.api.artist.detail.get
 
 艺人详情
@@ -17,15 +17,11 @@ type AlibabaXiamiApiArtistDetailGetAPIResponse struct {
     AlibabaXiamiApiArtistDetailGetResponse
 }
 
+// 艺人详情 成功返回结果
 type AlibabaXiamiApiArtistDetailGetResponse struct {
     XMLName xml.Name `xml:"alibaba_xiami_api_artist_detail_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回数据
-    
     Data   *StandardArtist `json:"data,omitempty" xml:"data,omitempty"`
-
-    
 }

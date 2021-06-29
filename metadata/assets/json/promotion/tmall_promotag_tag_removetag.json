@@ -1,4 +1,5 @@
 {
+	"id": 22224,
 	"name": "tmall.promotag.tag.removetag",
 	"apiChineseName": "删除标签定义",
 	"description": "用于删除标签定义，但是要确保目前该标签没有人群在使用。",

@@ -1,4 +1,5 @@
 {
+	"id": 51832,
 	"name": "alibaba.alihealth.docbase.userinfo.alipayid.get",
 	"apiChineseName": "根据健康ID获取支付宝ID",
 	"description": "根据健康ID获取支付宝ID",

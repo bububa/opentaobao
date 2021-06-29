@@ -1,4 +1,5 @@
 {
+	"id": 50886,
 	"name": "alibaba.alsc.crm.open.point.operate",
 	"apiChineseName": "积分操作接口",
 	"description": "同步积分接口",

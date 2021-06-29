@@ -1,4 +1,5 @@
 {
+	"id": 52746,
 	"name": "taobao.opentrade.special.rule.update",
 	"apiChineseName": "专属下单更新限购规则",
 	"description": "对于专属下单的交易场景更新限购规则",

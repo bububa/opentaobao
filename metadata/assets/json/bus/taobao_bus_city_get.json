@@ -1,4 +1,5 @@
 {
+	"id": 27584,
 	"name": "taobao.bus.city.get",
 	"apiChineseName": "城市接口",
 	"description": "汽车票出发城市获取接口，获取所有出发城市",

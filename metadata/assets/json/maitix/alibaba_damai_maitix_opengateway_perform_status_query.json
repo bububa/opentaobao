@@ -1,4 +1,5 @@
 {
+	"id": 46026,
 	"name": "alibaba.damai.maitix.opengateway.perform.status.query",
 	"apiChineseName": "分销状态查询接口queryPerformStatusByPerformId",
 	"description": "queryPerformStatusByPerformId",

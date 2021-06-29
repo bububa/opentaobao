@@ -1,4 +1,5 @@
 {
+	"id": 23761,
 	"name": "alibaba.interact.sensor.takephoto",
 	"apiChineseName": "takePhoto",
 	"description": "客户端takePhoto",

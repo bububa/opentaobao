@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-编辑全局弹窗 APIRequest
+编辑全局弹窗 API请求
 yunos.tvpubadmin.manage.dialog.edit
 
 编辑全局弹窗
 */
 type YunosTvpubadminManageDialogEditRequest struct {
     model.Params
-
     // 待编辑的全局弹窗
-    dialogJson   string 
-
+    dialogJson   string
 }
 
+// 初始化YunosTvpubadminManageDialogEditRequest对象
 func NewYunosTvpubadminManageDialogEditRequest() *YunosTvpubadminManageDialogEditRequest{
     return &YunosTvpubadminManageDialogEditRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminManageDialogEditRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.manage.dialog.edit"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminManageDialogEditRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminManageDialogEditRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// DialogJson Setter
+// 待编辑的全局弹窗
 func (r *YunosTvpubadminManageDialogEditRequest) SetDialogJson(dialogJson string) error {
     r.dialogJson = dialogJson
     r.Set("dialog_json", dialogJson)
     return nil
 }
 
+// DialogJson Getter
 func (r YunosTvpubadminManageDialogEditRequest) GetDialogJson() string {
     return r.dialogJson
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 10897,
 	"name": "taobao.trade.postage.update",
 	"apiChineseName": "修改交易邮费价格",
 	"description": "修改订单邮费接口，通过传入订单编号和邮费价格，修改订单的邮费，返回修改时间modified,邮费post_fee,总费用total_fee。\n\u003cbr/\u003e \u003cspan style=\"color:red\"\u003e API取消加邮费功能通知：http://open.taobao.com/support/announcement_detail.htm?tid=24750\u003c/span\u003e",

@@ -1,4 +1,5 @@
 {
+	"id": 30697,
 	"name": "yunos.trade.admin.common.operation",
 	"apiChineseName": "交易迎客松通用服务接口",
 	"description": "迎客松交易相关通用接口",

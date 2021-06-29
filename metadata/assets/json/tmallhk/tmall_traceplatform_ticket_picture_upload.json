@@ -1,4 +1,5 @@
 {
+	"id": 48148,
 	"name": "tmall.traceplatform.ticket.picture.upload",
 	"apiChineseName": "上传小票图片",
 	"description": "uploadPicture",

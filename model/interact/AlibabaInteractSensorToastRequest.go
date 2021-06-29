@@ -7,26 +7,28 @@ import (
 )
 
 /* 
-toast APIRequest
+toast API请求
 alibaba.interact.sensor.toast
 
 toast提示
 */
 type AlibabaInteractSensorToastRequest struct {
     model.Params
-
 }
 
+// 初始化AlibabaInteractSensorToastRequest对象
 func NewAlibabaInteractSensorToastRequest() *AlibabaInteractSensorToastRequest{
     return &AlibabaInteractSensorToastRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaInteractSensorToastRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.toast"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaInteractSensorToastRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -34,5 +36,3 @@ func (r AlibabaInteractSensorToastRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-

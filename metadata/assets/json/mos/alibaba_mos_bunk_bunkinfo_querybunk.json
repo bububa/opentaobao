@@ -1,4 +1,5 @@
 {
+	"id": 44747,
 	"name": "alibaba.mos.bunk.bunkinfo.querybunk",
 	"apiChineseName": "根据合同号查询铺位信息",
 	"description": "根据合同号查询铺位信息",

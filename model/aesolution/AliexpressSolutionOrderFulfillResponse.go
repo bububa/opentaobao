@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-fulfill order APIResponse
+fulfill order API返回值 
 aliexpress.solution.order.fulfill
 
 fulfill order for seller
@@ -17,15 +17,11 @@ type AliexpressSolutionOrderFulfillAPIResponse struct {
     AliexpressSolutionOrderFulfillResponse
 }
 
+// fulfill order 成功返回结果
 type AliexpressSolutionOrderFulfillResponse struct {
     XMLName xml.Name `xml:"aliexpress_solution_order_fulfill_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // object
-    
     Result   *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

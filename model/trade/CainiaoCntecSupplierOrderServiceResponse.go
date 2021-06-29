@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-供货商查询订单数据接口 APIResponse
+供货商查询订单数据接口 API返回值 
 cainiao.cntec.supplier.order.service
 
 提供给供货商查询订单信息的接口，返回给供货商的订单数据已经是脱敏精简后的，比如订单ID用户ID已经用md5加密，用户昵称已经脱敏，商品信息本身是供货商提供的。
@@ -18,15 +18,11 @@ type CainiaoCntecSupplierOrderServiceAPIResponse struct {
     CainiaoCntecSupplierOrderServiceResponse
 }
 
+// 供货商查询订单数据接口 成功返回结果
 type CainiaoCntecSupplierOrderServiceResponse struct {
     XMLName xml.Name `xml:"cainiao_cntec_supplier_order_service_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *CainiaoCntecSupplierOrderServiceResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 44761,
 	"name": "alibaba.ailabs.tmallgenie.auth.refresh",
 	"apiChineseName": "刷新token",
 	"description": "通过此接口刷新天猫精灵授权token",

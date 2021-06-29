@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-新媒体统计信息 APIRequest
+新媒体统计信息 API请求
 alibaba.pur.media.statistics
 
 清博同步新媒体的统计信息给到采购平台
 */
 type AlibabaPurMediaStatisticsRequest struct {
     model.Params
-
     // 新媒体统计对象
-    mediaStatisticsDTO   []MediaStatisticsDto 
-
+    mediaStatisticsDTO   []MediaStatisticsDto
 }
 
+// 初始化AlibabaPurMediaStatisticsRequest对象
 func NewAlibabaPurMediaStatisticsRequest() *AlibabaPurMediaStatisticsRequest{
     return &AlibabaPurMediaStatisticsRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaPurMediaStatisticsRequest) GetApiMethodName() string {
     return "alibaba.pur.media.statistics"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaPurMediaStatisticsRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaPurMediaStatisticsRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// MediaStatisticsDTO Setter
+// 新媒体统计对象
 func (r *AlibabaPurMediaStatisticsRequest) SetMediaStatisticsDTO(mediaStatisticsDTO []MediaStatisticsDto) error {
     r.mediaStatisticsDTO = mediaStatisticsDTO
     r.Set("media_statistics_d_t_o", mediaStatisticsDTO)
     return nil
 }
 
+// MediaStatisticsDTO Getter
 func (r AlibabaPurMediaStatisticsRequest) GetMediaStatisticsDTO() []MediaStatisticsDto {
     return r.mediaStatisticsDTO
 }
-

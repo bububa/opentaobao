@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-新发商品发布页 APIRequest
+新发商品发布页 API请求
 taobao.banamadpc.item.render
 
 巴拿马供应商通过此接口新发商品发布页
 */
 type TaobaoBanamadpcItemRenderRequest struct {
     model.Params
-
     // 类目ID
-    catId   int64 
-
+    catId   int64
 }
 
+// 初始化TaobaoBanamadpcItemRenderRequest对象
 func NewTaobaoBanamadpcItemRenderRequest() *TaobaoBanamadpcItemRenderRequest{
     return &TaobaoBanamadpcItemRenderRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoBanamadpcItemRenderRequest) GetApiMethodName() string {
     return "taobao.banamadpc.item.render"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoBanamadpcItemRenderRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoBanamadpcItemRenderRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// CatId Setter
+// 类目ID
 func (r *TaobaoBanamadpcItemRenderRequest) SetCatId(catId int64) error {
     r.catId = catId
     r.Set("cat_id", catId)
     return nil
 }
 
+// CatId Getter
 func (r TaobaoBanamadpcItemRenderRequest) GetCatId() int64 {
     return r.catId
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 53981,
 	"name": "alibaba.lst.branddatashare.stockdata.query",
 	"apiChineseName": "查询品牌商品实仓库存/周转效能",
 	"description": "品牌商查询授权供应商实仓库存数据",

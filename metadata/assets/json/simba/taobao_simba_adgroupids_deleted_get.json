@@ -1,4 +1,5 @@
 {
+	"id": 10799,
 	"name": "taobao.simba.adgroupids.deleted.get",
 	"apiChineseName": "获取删除的推广组ID",
 	"description": "获取删除的推广组ID",

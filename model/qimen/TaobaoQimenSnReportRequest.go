@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-发货单SN通知接口 APIRequest
+发货单SN通知接口 API请求
 taobao.qimen.sn.report
 
 WMS调用奇门的接口,在仓库出库单后, 把SN信息回传给ERP
 */
 type TaobaoQimenSnReportRequest struct {
     model.Params
-
     // 
-    request   *SnReportRequest 
-
+    request   *SnReportRequest
 }
 
+// 初始化TaobaoQimenSnReportRequest对象
 func NewTaobaoQimenSnReportRequest() *TaobaoQimenSnReportRequest{
     return &TaobaoQimenSnReportRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenSnReportRequest) GetApiMethodName() string {
     return "taobao.qimen.sn.report"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenSnReportRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenSnReportRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenSnReportRequest) SetRequest(request *SnReportRequest) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenSnReportRequest) GetRequest() *SnReportRequest {
     return r.request
 }
-

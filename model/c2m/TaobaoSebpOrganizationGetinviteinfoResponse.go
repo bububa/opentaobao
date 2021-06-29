@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-淘小铺机构上下级关系 APIResponse
+淘小铺机构上下级关系 API返回值 
 taobao.sebp.organization.getinviteinfo
 
 机构人员获取机构上下级关系信息
@@ -17,15 +17,11 @@ type TaobaoSebpOrganizationGetinviteinfoAPIResponse struct {
     TaobaoSebpOrganizationGetinviteinfoResponse
 }
 
+// 淘小铺机构上下级关系 成功返回结果
 type TaobaoSebpOrganizationGetinviteinfoResponse struct {
     XMLName xml.Name `xml:"sebp_organization_getinviteinfo_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     Result   *TaobaoSebpOrganizationGetinviteinfoResultDo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

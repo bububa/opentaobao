@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-推送及更新订单确认号 APIRequest
+推送及更新订单确认号 API请求
 taobao.xhotel.order.update.confirmcode
 
 商家拿到订单确认号后，异步推送给飞猪或更新给飞猪。订单确认号用于到店查无时的紧急查单依据。
 */
 type TaobaoXhotelOrderUpdateConfirmcodeRequest struct {
     model.Params
-
     // 系统入参
-    param   *UpdateOrderConfirmCodeParam 
-
+    param   *UpdateOrderConfirmCodeParam
 }
 
+// 初始化TaobaoXhotelOrderUpdateConfirmcodeRequest对象
 func NewTaobaoXhotelOrderUpdateConfirmcodeRequest() *TaobaoXhotelOrderUpdateConfirmcodeRequest{
     return &TaobaoXhotelOrderUpdateConfirmcodeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoXhotelOrderUpdateConfirmcodeRequest) GetApiMethodName() string {
     return "taobao.xhotel.order.update.confirmcode"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoXhotelOrderUpdateConfirmcodeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoXhotelOrderUpdateConfirmcodeRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 系统入参
 func (r *TaobaoXhotelOrderUpdateConfirmcodeRequest) SetParam(param *UpdateOrderConfirmCodeParam) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r TaobaoXhotelOrderUpdateConfirmcodeRequest) GetParam() *UpdateOrderConfirmCodeParam {
     return r.param
 }
-

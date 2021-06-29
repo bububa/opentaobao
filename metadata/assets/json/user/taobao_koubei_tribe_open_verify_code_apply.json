@@ -1,4 +1,5 @@
 {
+	"id": 45448,
 	"name": "taobao.koubei.tribe.open.verify.code.apply",
 	"apiChineseName": "口碑综合体手机号获取验证码",
 	"description": "口碑综合体通过手机号获取验证码对外开放接口",

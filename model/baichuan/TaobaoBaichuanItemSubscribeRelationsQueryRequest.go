@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-按条件查询订阅关系 APIRequest
+按条件查询订阅关系 API请求
 taobao.baichuan.item.subscribe.relations.query
 
 按条件查询订阅关系
 */
 type TaobaoBaichuanItemSubscribeRelationsQueryRequest struct {
     model.Params
-
     // 查询条件
-    condition   *Condition 
-
+    condition   *Condition
 }
 
+// 初始化TaobaoBaichuanItemSubscribeRelationsQueryRequest对象
 func NewTaobaoBaichuanItemSubscribeRelationsQueryRequest() *TaobaoBaichuanItemSubscribeRelationsQueryRequest{
     return &TaobaoBaichuanItemSubscribeRelationsQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoBaichuanItemSubscribeRelationsQueryRequest) GetApiMethodName() string {
     return "taobao.baichuan.item.subscribe.relations.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoBaichuanItemSubscribeRelationsQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoBaichuanItemSubscribeRelationsQueryRequest) GetApiParams() url.Val
     }
     return params
 }
-
-
+// Condition Setter
+// 查询条件
 func (r *TaobaoBaichuanItemSubscribeRelationsQueryRequest) SetCondition(condition *Condition) error {
     r.condition = condition
     r.Set("condition", condition)
     return nil
 }
 
+// Condition Getter
 func (r TaobaoBaichuanItemSubscribeRelationsQueryRequest) GetCondition() *Condition {
     return r.condition
 }
-

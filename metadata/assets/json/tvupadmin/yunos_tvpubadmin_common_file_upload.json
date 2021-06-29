@@ -1,4 +1,5 @@
 {
+	"id": 30406,
 	"name": "yunos.tvpubadmin.common.file.upload",
 	"apiChineseName": "文件上传API",
 	"description": "文件上传服务",

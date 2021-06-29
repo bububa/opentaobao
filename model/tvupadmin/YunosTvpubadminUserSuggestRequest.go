@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取关联账户列表 APIRequest
+获取关联账户列表 API请求
 yunos.tvpubadmin.user.suggest
 
 获取关联账户列表
 */
 type YunosTvpubadminUserSuggestRequest struct {
     model.Params
-
     // 关键词
-    keyword   string 
-
+    keyword   string
 }
 
+// 初始化YunosTvpubadminUserSuggestRequest对象
 func NewYunosTvpubadminUserSuggestRequest() *YunosTvpubadminUserSuggestRequest{
     return &YunosTvpubadminUserSuggestRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminUserSuggestRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.user.suggest"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminUserSuggestRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminUserSuggestRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Keyword Setter
+// 关键词
 func (r *YunosTvpubadminUserSuggestRequest) SetKeyword(keyword string) error {
     r.keyword = keyword
     r.Set("keyword", keyword)
     return nil
 }
 
+// Keyword Getter
 func (r YunosTvpubadminUserSuggestRequest) GetKeyword() string {
     return r.keyword
 }
-

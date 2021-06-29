@@ -1,4 +1,5 @@
 {
+	"id": 36355,
 	"name": "alibaba.ai.user.quick.register",
 	"apiChineseName": "精灵用户注册申请",
 	"description": "人工智能实验室精灵用户注册申请接口，开放给Iot厂商做厂商会员数据上报",

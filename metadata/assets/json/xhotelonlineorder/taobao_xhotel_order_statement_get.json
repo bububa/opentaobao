@@ -1,4 +1,5 @@
 {
+	"id": 25911,
 	"name": "taobao.xhotel.order.statement.get",
 	"apiChineseName": "查询账单信息",
 	"description": "阿里根据此接口定义输出订单账务明细，结账状态发生变化时阿里需推送账单信息。系统商可实时调用该接口来查询订单的详情",

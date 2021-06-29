@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-更新/增加sku信息 APIRequest
+更新/增加sku信息 API请求
 alibaba.idle.rent.item.sku.update
 
 更新/增加sku信息
 */
 type AlibabaIdleRentItemSkuUpdateRequest struct {
     model.Params
-
     // sku信息，更新后skuId保持不变
-    sku   *ItemSkuDto 
-
+    sku   *ItemSkuDto
 }
 
+// 初始化AlibabaIdleRentItemSkuUpdateRequest对象
 func NewAlibabaIdleRentItemSkuUpdateRequest() *AlibabaIdleRentItemSkuUpdateRequest{
     return &AlibabaIdleRentItemSkuUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIdleRentItemSkuUpdateRequest) GetApiMethodName() string {
     return "alibaba.idle.rent.item.sku.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIdleRentItemSkuUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIdleRentItemSkuUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Sku Setter
+// sku信息，更新后skuId保持不变
 func (r *AlibabaIdleRentItemSkuUpdateRequest) SetSku(sku *ItemSkuDto) error {
     r.sku = sku
     r.Set("sku", sku)
     return nil
 }
 
+// Sku Getter
 func (r AlibabaIdleRentItemSkuUpdateRequest) GetSku() *ItemSkuDto {
     return r.sku
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 42089,
 	"name": "alibaba.alihealth.medicalbase.hospital.sync",
 	"apiChineseName": "互联网医院批量导入接口",
 	"description": "互联网医院isv批量通过接口批量导入",

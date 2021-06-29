@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取应用升级详情 APIRequest
+获取应用升级详情 API请求
 yunos.osupdate.appversion.info
 
 获取应用升级详情
 */
 type YunosOsupdateAppversionInfoRequest struct {
     model.Params
-
     // 升级任务ID
-    id   int64 
-
+    id   int64
 }
 
+// 初始化YunosOsupdateAppversionInfoRequest对象
 func NewYunosOsupdateAppversionInfoRequest() *YunosOsupdateAppversionInfoRequest{
     return &YunosOsupdateAppversionInfoRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosOsupdateAppversionInfoRequest) GetApiMethodName() string {
     return "yunos.osupdate.appversion.info"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosOsupdateAppversionInfoRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosOsupdateAppversionInfoRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Id Setter
+// 升级任务ID
 func (r *YunosOsupdateAppversionInfoRequest) SetId(id int64) error {
     r.id = id
     r.Set("id", id)
     return nil
 }
 
+// Id Getter
 func (r YunosOsupdateAppversionInfoRequest) GetId() int64 {
     return r.id
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 30013,
 	"name": "alibaba.alink.device.unify.status.set",
 	"apiChineseName": "设置设备标准属性状态",
 	"description": "操作用户绑定的设备",

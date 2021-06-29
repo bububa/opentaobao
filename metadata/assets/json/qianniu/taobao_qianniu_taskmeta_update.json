@@ -1,4 +1,5 @@
 {
+	"id": 22598,
 	"name": "taobao.qianniu.taskmeta.update",
 	"apiChineseName": "更新任务元数据",
 	"description": "由任务发起者调用",

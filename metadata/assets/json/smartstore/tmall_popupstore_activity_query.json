@@ -1,4 +1,5 @@
 {
+	"id": 37400,
 	"name": "tmall.popupstore.activity.query",
 	"apiChineseName": "查询某段时间内的快闪活动列表",
 	"description": "提供给ISV查询某一时间段内包含指定appKey的活动列表",

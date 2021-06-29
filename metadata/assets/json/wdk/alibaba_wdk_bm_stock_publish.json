@@ -1,4 +1,5 @@
 {
+	"id": 47816,
 	"name": "alibaba.wdk.bm.stock.publish",
 	"apiChineseName": "品牌营销涉及到的商品的库存同步接口",
 	"description": "用于操作sku的库存",

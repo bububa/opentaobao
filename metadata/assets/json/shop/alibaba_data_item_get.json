@@ -1,4 +1,5 @@
 {
+	"id": 30897,
 	"name": "alibaba.data.item.get",
 	"apiChineseName": "获取商品",
 	"description": "获取商品信息，作为客户端Weex鉴权的虚拟api",

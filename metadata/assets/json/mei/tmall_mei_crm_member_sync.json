@@ -1,4 +1,5 @@
 {
+	"id": 24492,
 	"name": "tmall.mei.crm.member.sync",
 	"apiChineseName": "同步推送会员信息",
 	"description": "品牌方通过该api主动推送会员信息。使用场景包括\n1.用户在线上注册后，线下补充信息后，同步到线上。\n2.其他情况的主动推送变更。",

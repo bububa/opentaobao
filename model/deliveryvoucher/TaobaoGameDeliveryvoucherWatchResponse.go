@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-监控预约数据 APIResponse
+监控预约数据 API返回值 
 taobao.game.deliveryvoucher.watch
 
 监控预约数据
@@ -17,25 +17,15 @@ type TaobaoGameDeliveryvoucherWatchAPIResponse struct {
     TaobaoGameDeliveryvoucherWatchResponse
 }
 
+// 监控预约数据 成功返回结果
 type TaobaoGameDeliveryvoucherWatchResponse struct {
     XMLName xml.Name `xml:"game_deliveryvoucher_watch_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // message
-    
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
-
-    
     // code
-    
     ResultCode   string `json:"result_code,omitempty" xml:"result_code,omitempty"`
-
-    
     // isSuccess
-    
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
 }

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-发货单创建结果通知接口(批量) APIResponse
+发货单创建结果通知接口(批量) API返回值 
 taobao.qimen.deliveryorder.batchcreate.answer
 
 WMS调用接口，用于异步化的批量发货单创建结果通知。（如菜鸟发货单批量创建结果的返回）
@@ -17,15 +17,11 @@ type TaobaoQimenDeliveryorderBatchcreateAnswerAPIResponse struct {
     TaobaoQimenDeliveryorderBatchcreateAnswerResponse
 }
 
+// 发货单创建结果通知接口(批量) 成功返回结果
 type TaobaoQimenDeliveryorderBatchcreateAnswerResponse struct {
     XMLName xml.Name `xml:"qimen_deliveryorder_batchcreate_answer_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 
-    
     Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
-
-    
 }

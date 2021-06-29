@@ -1,4 +1,5 @@
 {
+	"id": 28645,
 	"name": "alibaba.aliqin.fc.iot.cardStatus",
 	"apiChineseName": "物联卡状态查询",
 	"description": "物联卡状态查询",

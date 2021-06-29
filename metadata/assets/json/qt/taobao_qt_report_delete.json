@@ -1,4 +1,5 @@
 {
+	"id": 21226,
 	"name": "taobao.qt.report.delete",
 	"apiChineseName": "质检报告删除接口",
 	"description": "删除质检报告",

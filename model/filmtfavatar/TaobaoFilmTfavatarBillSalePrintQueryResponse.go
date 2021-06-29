@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取影院卖品账单-核销账单 APIResponse
+获取影院卖品账单-核销账单 API返回值 
 taobao.film.tfavatar.bill.sale.print.query
 
 获取影院卖品账单-核销账单
@@ -18,15 +18,11 @@ type TaobaoFilmTfavatarBillSalePrintQueryAPIResponse struct {
     TaobaoFilmTfavatarBillSalePrintQueryResponse
 }
 
+// 获取影院卖品账单-核销账单 成功返回结果
 type TaobaoFilmTfavatarBillSalePrintQueryResponse struct {
     XMLName xml.Name `xml:"film_tfavatar_bill_sale_print_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *TaobaoFilmTfavatarBillSalePrintQueryResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

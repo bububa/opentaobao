@@ -1,4 +1,5 @@
 {
+	"id": 24,
 	"name": "taobao.item.img.delete",
 	"apiChineseName": "删除商品图片",
 	"description": "删除商品图片",

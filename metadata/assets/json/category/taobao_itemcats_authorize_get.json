@@ -1,4 +1,5 @@
 {
+	"id": 161,
 	"name": "taobao.itemcats.authorize.get",
 	"apiChineseName": "查询商家被授权品牌列表和类目列表",
 	"description": "查询B商家被授权品牌列表、类目列表和 c 商家新品类目列表",

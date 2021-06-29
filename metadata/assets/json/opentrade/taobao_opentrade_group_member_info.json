@@ -1,4 +1,5 @@
 {
+	"id": 52997,
 	"name": "taobao.opentrade.group.member.info",
 	"apiChineseName": "组团购获取用户参团信息",
 	"description": "组团购场景下，获取用户参团信息",

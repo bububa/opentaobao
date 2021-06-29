@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-天猫精灵内容库视频分集数据推送接口 APIRequest
+天猫精灵内容库视频分集数据推送接口 API请求
 alibaba.ailabs.aligenie.openvideo.push
 
 天猫精灵内容库视频分集数据推送接口
 */
 type AlibabaAilabsAligenieOpenvideoPushRequest struct {
     model.Params
-
     // 待推送的视频数据
-    videos   []RawSingleVideo 
-
+    videos   []RawSingleVideo
 }
 
+// 初始化AlibabaAilabsAligenieOpenvideoPushRequest对象
 func NewAlibabaAilabsAligenieOpenvideoPushRequest() *AlibabaAilabsAligenieOpenvideoPushRequest{
     return &AlibabaAilabsAligenieOpenvideoPushRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAilabsAligenieOpenvideoPushRequest) GetApiMethodName() string {
     return "alibaba.ailabs.aligenie.openvideo.push"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAilabsAligenieOpenvideoPushRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAilabsAligenieOpenvideoPushRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Videos Setter
+// 待推送的视频数据
 func (r *AlibabaAilabsAligenieOpenvideoPushRequest) SetVideos(videos []RawSingleVideo) error {
     r.videos = videos
     r.Set("videos", videos)
     return nil
 }
 
+// Videos Getter
 func (r AlibabaAilabsAligenieOpenvideoPushRequest) GetVideos() []RawSingleVideo {
     return r.videos
 }
-

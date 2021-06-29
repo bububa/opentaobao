@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-修改物流公司和运单号 APIRequest
+修改物流公司和运单号 API请求
 alibaba.ascp.logistics.consign.resend
 
 支持卖家发货后修改运单号;支持在线下单和自己联系两种发货方式;使用条件：
@@ -16,28 +16,27 @@ alibaba.ascp.logistics.consign.resend
 */
 type AlibabaAscpLogisticsConsignResendRequest struct {
     model.Params
-
     // 订单id
-    tid   string 
-
+    tid   string
     // 拆单子订单列表，对应的数据是：子订单号列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集
-    subTids   string 
-
+    subTids   string
     // 包裹包含的运单号及快递公司编号,多包裹时，需要包含所有包裹的运单号等信息
-    consignPkgs   []TopConsignPkgRequest 
-
+    consignPkgs   []TopConsignPkgRequest
 }
 
+// 初始化AlibabaAscpLogisticsConsignResendRequest对象
 func NewAlibabaAscpLogisticsConsignResendRequest() *AlibabaAscpLogisticsConsignResendRequest{
     return &AlibabaAscpLogisticsConsignResendRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAscpLogisticsConsignResendRequest) GetApiMethodName() string {
     return "alibaba.ascp.logistics.consign.resend"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAscpLogisticsConsignResendRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -45,35 +44,39 @@ func (r AlibabaAscpLogisticsConsignResendRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Tid Setter
+// 订单id
 func (r *AlibabaAscpLogisticsConsignResendRequest) SetTid(tid string) error {
     r.tid = tid
     r.Set("tid", tid)
     return nil
 }
 
+// Tid Getter
 func (r AlibabaAscpLogisticsConsignResendRequest) GetTid() string {
     return r.tid
 }
-
+// SubTids Setter
+// 拆单子订单列表，对应的数据是：子订单号列表。可以不传，但是如果传了则必须符合传递的规则。子订单必须是操作的物流订单的子订单的真子集
 func (r *AlibabaAscpLogisticsConsignResendRequest) SetSubTids(subTids string) error {
     r.subTids = subTids
     r.Set("sub_tids", subTids)
     return nil
 }
 
+// SubTids Getter
 func (r AlibabaAscpLogisticsConsignResendRequest) GetSubTids() string {
     return r.subTids
 }
-
+// ConsignPkgs Setter
+// 包裹包含的运单号及快递公司编号,多包裹时，需要包含所有包裹的运单号等信息
 func (r *AlibabaAscpLogisticsConsignResendRequest) SetConsignPkgs(consignPkgs []TopConsignPkgRequest) error {
     r.consignPkgs = consignPkgs
     r.Set("consign_pkgs", consignPkgs)
     return nil
 }
 
+// ConsignPkgs Getter
 func (r AlibabaAscpLogisticsConsignResendRequest) GetConsignPkgs() []TopConsignPkgRequest {
     return r.consignPkgs
 }
-

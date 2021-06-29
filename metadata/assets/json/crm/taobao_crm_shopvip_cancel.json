@@ -1,4 +1,5 @@
 {
+	"id": 10825,
 	"name": "taobao.crm.shopvip.cancel",
 	"apiChineseName": "卖家取消店铺vip的优惠",
 	"description": "此接口用于取消VIP优惠",

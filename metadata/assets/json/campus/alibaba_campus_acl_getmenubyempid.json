@@ -1,4 +1,5 @@
 {
+	"id": 33207,
 	"name": "alibaba.campus.acl.getmenubyempid",
 	"apiChineseName": "查询用户的菜单",
 	"description": "查询用户的菜单",

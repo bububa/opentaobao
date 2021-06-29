@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-供应商铺货 APIRequest
+供应商铺货 API请求
 tmall.supplychain.channel.product.release
 
 供应商渠道铺货接口
 */
 type TmallSupplychainChannelProductReleaseRequest struct {
     model.Params
-
     // 产品数字ID
-    productId   int64 
-
+    productId   int64
     // 渠道ID
-    channelCode   int64 
-
+    channelCode   int64
 }
 
+// 初始化TmallSupplychainChannelProductReleaseRequest对象
 func NewTmallSupplychainChannelProductReleaseRequest() *TmallSupplychainChannelProductReleaseRequest{
     return &TmallSupplychainChannelProductReleaseRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallSupplychainChannelProductReleaseRequest) GetApiMethodName() string {
     return "tmall.supplychain.channel.product.release"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallSupplychainChannelProductReleaseRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r TmallSupplychainChannelProductReleaseRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// ProductId Setter
+// 产品数字ID
 func (r *TmallSupplychainChannelProductReleaseRequest) SetProductId(productId int64) error {
     r.productId = productId
     r.Set("product_id", productId)
     return nil
 }
 
+// ProductId Getter
 func (r TmallSupplychainChannelProductReleaseRequest) GetProductId() int64 {
     return r.productId
 }
-
+// ChannelCode Setter
+// 渠道ID
 func (r *TmallSupplychainChannelProductReleaseRequest) SetChannelCode(channelCode int64) error {
     r.channelCode = channelCode
     r.Set("channel_code", channelCode)
     return nil
 }
 
+// ChannelCode Getter
 func (r TmallSupplychainChannelProductReleaseRequest) GetChannelCode() int64 {
     return r.channelCode
 }
-

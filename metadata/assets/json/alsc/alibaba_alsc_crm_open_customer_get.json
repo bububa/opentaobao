@@ -1,4 +1,5 @@
 {
+	"id": 50743,
 	"name": "alibaba.alsc.crm.open.customer.get",
 	"apiChineseName": "查询会员资产",
 	"description": "查询会员身份，资产等",

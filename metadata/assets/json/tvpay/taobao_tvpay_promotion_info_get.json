@@ -1,4 +1,5 @@
 {
+	"id": 26218,
 	"name": "taobao.tvpay.promotion.info.get",
 	"apiChineseName": "tv支付查询消费抽奖配置",
 	"description": "查询消费抽奖配置",

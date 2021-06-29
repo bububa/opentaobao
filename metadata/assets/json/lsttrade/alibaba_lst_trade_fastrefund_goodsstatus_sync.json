@@ -1,4 +1,5 @@
 {
+	"id": 43690,
 	"name": "alibaba.lst.trade.fastrefund.goodsstatus.sync",
 	"apiChineseName": "卖家退款单商品状态同步",
 	"description": "卖家退款单商品状态同步",

@@ -1,4 +1,5 @@
 {
+	"id": 36465,
 	"name": "alibaba.ai.user.quick.bind",
 	"apiChineseName": "精灵用户绑定第三方账号信息",
 	"description": "人工智能实验室精灵用户绑定第三方账号信息接口，开放给Iot厂商做为厂商上送第三方账号信息的接口",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-创建代扣计划 APIRequest
+创建代扣计划 API请求
 alibaba.idle.pay.plan.create
 
 闲鱼平台代扣能力：
@@ -16,22 +16,23 @@ alibaba.idle.pay.plan.create
 */
 type AlibabaIdlePayPlanCreateRequest struct {
     model.Params
-
     // 业务入参
-    agreementPayPlanParam   *AgreementPayPlanParam 
-
+    agreementPayPlanParam   *AgreementPayPlanParam
 }
 
+// 初始化AlibabaIdlePayPlanCreateRequest对象
 func NewAlibabaIdlePayPlanCreateRequest() *AlibabaIdlePayPlanCreateRequest{
     return &AlibabaIdlePayPlanCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIdlePayPlanCreateRequest) GetApiMethodName() string {
     return "alibaba.idle.pay.plan.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIdlePayPlanCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -39,15 +40,15 @@ func (r AlibabaIdlePayPlanCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// AgreementPayPlanParam Setter
+// 业务入参
 func (r *AlibabaIdlePayPlanCreateRequest) SetAgreementPayPlanParam(agreementPayPlanParam *AgreementPayPlanParam) error {
     r.agreementPayPlanParam = agreementPayPlanParam
     r.Set("agreement_pay_plan_param", agreementPayPlanParam)
     return nil
 }
 
+// AgreementPayPlanParam Getter
 func (r AlibabaIdlePayPlanCreateRequest) GetAgreementPayPlanParam() *AgreementPayPlanParam {
     return r.agreementPayPlanParam
 }
-

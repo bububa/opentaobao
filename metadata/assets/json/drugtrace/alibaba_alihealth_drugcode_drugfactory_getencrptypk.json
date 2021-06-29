@@ -1,4 +1,5 @@
 {
+	"id": 50592,
 	"name": "alibaba.alihealth.drugcode.drugfactory.getencrptypk",
 	"apiChineseName": "获取加密公钥",
 	"description": "获取服务端给药厂用来加密的公钥",

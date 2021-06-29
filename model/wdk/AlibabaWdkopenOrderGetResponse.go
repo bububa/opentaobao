@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-五道口商户订单获取 APIResponse
+五道口商户订单获取 API返回值 
 alibaba.wdkopen.order.get
 
 商户通过五道口订单id获取订单信息
@@ -17,15 +17,11 @@ type AlibabaWdkopenOrderGetAPIResponse struct {
     AlibabaWdkopenOrderGetResponse
 }
 
+// 五道口商户订单获取 成功返回结果
 type AlibabaWdkopenOrderGetResponse struct {
     XMLName xml.Name `xml:"alibaba_wdkopen_order_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 结果对象
-    
     TopBaseResult   *TopBaseResult `json:"top_base_result,omitempty" xml:"top_base_result,omitempty"`
-
-    
 }

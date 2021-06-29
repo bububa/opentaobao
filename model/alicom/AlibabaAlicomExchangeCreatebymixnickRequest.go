@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-代理商积分兑换接口tae APIRequest
+代理商积分兑换接口tae API请求
 alibaba.alicom.exchange.createbymixnick
 
 代理商调用该接口来进行积分兑换，tae
 */
 type AlibabaAlicomExchangeCreatebymixnickRequest struct {
     model.Params
-
     // 入参
-    exchangeModel   *ExchangeModel 
-
+    exchangeModel   *ExchangeModel
 }
 
+// 初始化AlibabaAlicomExchangeCreatebymixnickRequest对象
 func NewAlibabaAlicomExchangeCreatebymixnickRequest() *AlibabaAlicomExchangeCreatebymixnickRequest{
     return &AlibabaAlicomExchangeCreatebymixnickRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlicomExchangeCreatebymixnickRequest) GetApiMethodName() string {
     return "alibaba.alicom.exchange.createbymixnick"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlicomExchangeCreatebymixnickRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlicomExchangeCreatebymixnickRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ExchangeModel Setter
+// 入参
 func (r *AlibabaAlicomExchangeCreatebymixnickRequest) SetExchangeModel(exchangeModel *ExchangeModel) error {
     r.exchangeModel = exchangeModel
     r.Set("exchange_model", exchangeModel)
     return nil
 }
 
+// ExchangeModel Getter
 func (r AlibabaAlicomExchangeCreatebymixnickRequest) GetExchangeModel() *ExchangeModel {
     return r.exchangeModel
 }
-

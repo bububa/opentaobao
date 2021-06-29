@@ -1,4 +1,5 @@
 {
+	"id": 43976,
 	"name": "taobao.brandhub.specialshow.rpt.campaign.get",
 	"apiChineseName": "品牌号品牌特秀计划报表数据查询",
 	"description": "获取品牌号品牌特秀广告campaign分日报表数据，只能查询近90天内的数据，包括展现量，点击量等",

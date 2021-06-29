@@ -1,4 +1,5 @@
 {
+	"id": 25185,
 	"name": "taobao.openim.custmsg.push",
 	"apiChineseName": "推送自定义openim消息",
 	"description": "isv通过该接口给openim用户推送自定义消息",

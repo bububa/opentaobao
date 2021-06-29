@@ -1,4 +1,5 @@
 {
+	"id": 29456,
 	"name": "alibaba.alisports.passport.account.ssotokenrefresh",
 	"apiChineseName": "sso_token刷新",
 	"description": "sso_token刷新",

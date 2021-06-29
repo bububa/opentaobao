@@ -1,4 +1,5 @@
 {
+	"id": 25033,
 	"name": "tmall.crm.member.point.change",
 	"apiChineseName": "会员积分变更",
 	"description": "品牌CRM项目中，会员积分变更接口。",

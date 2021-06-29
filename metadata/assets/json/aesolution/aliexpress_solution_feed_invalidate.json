@@ -1,4 +1,5 @@
 {
+	"id": 53481,
 	"name": "aliexpress.solution.feed.invalidate",
 	"apiChineseName": "aliexpress.solution.feed.invalidate",
 	"description": "Api for invalidating specific feeds based on job Ids. Please use aliexpress.solution.feed.list.get to determine which job Ids needs to be sent for invalidation.",

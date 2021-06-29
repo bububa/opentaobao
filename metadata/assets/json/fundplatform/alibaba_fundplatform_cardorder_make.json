@@ -1,4 +1,5 @@
 {
+	"id": 28550,
 	"name": "alibaba.fundplatform.cardorder.make",
 	"apiChineseName": "通知制卡商制卡",
 	"description": "该接口由内部定义，外部制卡商实现。当需要制卡商进行制卡操作时，将会调用该接口。",

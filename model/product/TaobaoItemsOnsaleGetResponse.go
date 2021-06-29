@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取当前会话用户出售中的商品列表 APIResponse
+获取当前会话用户出售中的商品列表 API返回值 
 taobao.items.onsale.get
 
 获取当前用户作为卖家的出售中的商品列表，并能根据传入的搜索条件对出售中的商品列表进行过滤
@@ -19,20 +19,13 @@ type TaobaoItemsOnsaleGetAPIResponse struct {
     TaobaoItemsOnsaleGetResponse
 }
 
+// 获取当前会话用户出售中的商品列表 成功返回结果
 type TaobaoItemsOnsaleGetResponse struct {
     XMLName xml.Name `xml:"items_onsale_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 搜索到的商品列表，具体字段根据设定的fields决定，不包括desc字段
-    
     Items   []Item `json:"items,omitempty" xml:"items>item,omitempty"`
-    
-    
     // 搜索到符合条件的结果总数
-    
     TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
-
-    
 }

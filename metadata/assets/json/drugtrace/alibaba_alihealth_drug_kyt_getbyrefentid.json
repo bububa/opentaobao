@@ -1,4 +1,5 @@
 {
+	"id": 41081,
 	"name": "alibaba.alihealth.drug.kyt.getbyrefentid",
 	"apiChineseName": "根据企业唯一标识查看企业详细信息",
 	"description": "根据企业唯一标识查看企业详细信息",

@@ -1,4 +1,5 @@
 {
+	"id": 43618,
 	"name": "alibaba.mos.finance.bankinfo.querybank",
 	"apiChineseName": "供应商银行账号查询",
 	"description": "查询供应商对应的银行账号信息",

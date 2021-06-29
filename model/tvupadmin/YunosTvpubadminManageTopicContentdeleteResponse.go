@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-删除专题下内容 APIResponse
+删除专题下内容 API返回值 
 yunos.tvpubadmin.manage.topic.contentdelete
 
 删除专题下内容信息
@@ -17,15 +17,11 @@ type YunosTvpubadminManageTopicContentdeleteAPIResponse struct {
     YunosTvpubadminManageTopicContentdeleteResponse
 }
 
+// 删除专题下内容 成功返回结果
 type YunosTvpubadminManageTopicContentdeleteResponse struct {
     XMLName xml.Name `xml:"yunos_tvpubadmin_manage_topic_contentdelete_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TopResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

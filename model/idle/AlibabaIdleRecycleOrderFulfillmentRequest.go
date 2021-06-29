@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-闲鱼回收订单履约V1 APIRequest
+闲鱼回收订单履约V1 API请求
 alibaba.idle.recycle.order.fulfillment
 
 外部回收商针对自有回收订单的履行
 */
 type AlibabaIdleRecycleOrderFulfillmentRequest struct {
     model.Params
-
     // 订单同步入参
-    param0   *RecycleOrderSynDto 
-
+    param0   *RecycleOrderSynDto
 }
 
+// 初始化AlibabaIdleRecycleOrderFulfillmentRequest对象
 func NewAlibabaIdleRecycleOrderFulfillmentRequest() *AlibabaIdleRecycleOrderFulfillmentRequest{
     return &AlibabaIdleRecycleOrderFulfillmentRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIdleRecycleOrderFulfillmentRequest) GetApiMethodName() string {
     return "alibaba.idle.recycle.order.fulfillment"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIdleRecycleOrderFulfillmentRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIdleRecycleOrderFulfillmentRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param0 Setter
+// 订单同步入参
 func (r *AlibabaIdleRecycleOrderFulfillmentRequest) SetParam0(param0 *RecycleOrderSynDto) error {
     r.param0 = param0
     r.Set("param0", param0)
     return nil
 }
 
+// Param0 Getter
 func (r AlibabaIdleRecycleOrderFulfillmentRequest) GetParam0() *RecycleOrderSynDto {
     return r.param0
 }
-

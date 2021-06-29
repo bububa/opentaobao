@@ -1,4 +1,5 @@
 {
+	"id": 285,
 	"name": "taobao.appstore.subscribe.get",
 	"apiChineseName": "查询appstore应用订购关系",
 	"description": "查询appstore应用订购关系(对于新上架的多版本应用，建议使用taobao.vas.subscribe.get)",

@@ -1,4 +1,5 @@
 {
+	"id": 50245,
 	"name": "cainiao.iot.ticket.detail.query",
 	"apiChineseName": "IoT售后工单详情查询",
 	"description": "Iot售后工单详情信息查询",

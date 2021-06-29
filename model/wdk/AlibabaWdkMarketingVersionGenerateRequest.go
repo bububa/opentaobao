@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-生成发布使用的版本号 APIRequest
+生成发布使用的版本号 API请求
 alibaba.wdk.marketing.version.generate
 
 生成发布使用的版本号
 */
 type AlibabaWdkMarketingVersionGenerateRequest struct {
     model.Params
-
     // 档期版本号参数信息
-    param   *SeasonVersionParam 
-
+    param   *SeasonVersionParam
 }
 
+// 初始化AlibabaWdkMarketingVersionGenerateRequest对象
 func NewAlibabaWdkMarketingVersionGenerateRequest() *AlibabaWdkMarketingVersionGenerateRequest{
     return &AlibabaWdkMarketingVersionGenerateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkMarketingVersionGenerateRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.version.generate"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkMarketingVersionGenerateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkMarketingVersionGenerateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 档期版本号参数信息
 func (r *AlibabaWdkMarketingVersionGenerateRequest) SetParam(param *SeasonVersionParam) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaWdkMarketingVersionGenerateRequest) GetParam() *SeasonVersionParam {
     return r.param
 }
-

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-口碑店铺列表推荐 APIRequest
+口碑店铺列表推荐 API请求
 alibaba.koubeishops.property.get
 
 推荐用户附近的美食门店
 */
 type AlibabaKoubeishopsPropertyGetRequest struct {
     model.Params
-
     // 入参
-    paramOpenApiSearchRequest   *OpenApiSearchRequest 
-
+    paramOpenApiSearchRequest   *OpenApiSearchRequest
 }
 
+// 初始化AlibabaKoubeishopsPropertyGetRequest对象
 func NewAlibabaKoubeishopsPropertyGetRequest() *AlibabaKoubeishopsPropertyGetRequest{
     return &AlibabaKoubeishopsPropertyGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaKoubeishopsPropertyGetRequest) GetApiMethodName() string {
     return "alibaba.koubeishops.property.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaKoubeishopsPropertyGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaKoubeishopsPropertyGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamOpenApiSearchRequest Setter
+// 入参
 func (r *AlibabaKoubeishopsPropertyGetRequest) SetParamOpenApiSearchRequest(paramOpenApiSearchRequest *OpenApiSearchRequest) error {
     r.paramOpenApiSearchRequest = paramOpenApiSearchRequest
     r.Set("param_open_api_search_request", paramOpenApiSearchRequest)
     return nil
 }
 
+// ParamOpenApiSearchRequest Getter
 func (r AlibabaKoubeishopsPropertyGetRequest) GetParamOpenApiSearchRequest() *OpenApiSearchRequest {
     return r.paramOpenApiSearchRequest
 }
-

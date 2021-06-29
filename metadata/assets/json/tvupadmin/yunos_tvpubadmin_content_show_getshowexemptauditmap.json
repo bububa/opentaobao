@@ -1,4 +1,5 @@
 {
+	"id": 28596,
 	"name": "yunos.tvpubadmin.content.show.getshowexemptauditmap",
 	"apiChineseName": "迎客松批量查询节目某个牌照的免审状态",
 	"description": "迎客松批量查询节目某个牌照的免审状态",

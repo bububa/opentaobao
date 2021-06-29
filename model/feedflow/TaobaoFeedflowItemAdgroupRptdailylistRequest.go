@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-推广单元分日数据查询 APIRequest
+推广单元分日数据查询 API请求
 taobao.feedflow.item.adgroup.rptdailylist
 
 推广单元分日数据查询
 */
 type TaobaoFeedflowItemAdgroupRptdailylistRequest struct {
     model.Params
-
     // 查询条件
-    rptQueryDTO   *RptQueryDto 
-
+    rptQueryDTO   *RptQueryDto
 }
 
+// 初始化TaobaoFeedflowItemAdgroupRptdailylistRequest对象
 func NewTaobaoFeedflowItemAdgroupRptdailylistRequest() *TaobaoFeedflowItemAdgroupRptdailylistRequest{
     return &TaobaoFeedflowItemAdgroupRptdailylistRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoFeedflowItemAdgroupRptdailylistRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.adgroup.rptdailylist"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoFeedflowItemAdgroupRptdailylistRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoFeedflowItemAdgroupRptdailylistRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// RptQueryDTO Setter
+// 查询条件
 func (r *TaobaoFeedflowItemAdgroupRptdailylistRequest) SetRptQueryDTO(rptQueryDTO *RptQueryDto) error {
     r.rptQueryDTO = rptQueryDTO
     r.Set("rpt_query_d_t_o", rptQueryDTO)
     return nil
 }
 
+// RptQueryDTO Getter
 func (r TaobaoFeedflowItemAdgroupRptdailylistRequest) GetRptQueryDTO() *RptQueryDto {
     return r.rptQueryDTO
 }
-

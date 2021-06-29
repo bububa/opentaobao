@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-微医数据号源回传 APIRequest
+微医数据号源回传 API请求
 alibaba.alihealth.medical.register.weiyi.sync
 
 微医号源数据回传
 */
 type AlibabaAlihealthMedicalRegisterWeiyiSyncRequest struct {
     model.Params
-
     // 号源数据实体
-    serviceRequest   *SourcesReturnVo 
-
+    serviceRequest   *SourcesReturnVo
 }
 
+// 初始化AlibabaAlihealthMedicalRegisterWeiyiSyncRequest对象
 func NewAlibabaAlihealthMedicalRegisterWeiyiSyncRequest() *AlibabaAlihealthMedicalRegisterWeiyiSyncRequest{
     return &AlibabaAlihealthMedicalRegisterWeiyiSyncRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medical.register.weiyi.sync"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) GetApiParams() url.Valu
     }
     return params
 }
-
-
+// ServiceRequest Setter
+// 号源数据实体
 func (r *AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) SetServiceRequest(serviceRequest *SourcesReturnVo) error {
     r.serviceRequest = serviceRequest
     r.Set("service_request", serviceRequest)
     return nil
 }
 
+// ServiceRequest Getter
 func (r AlibabaAlihealthMedicalRegisterWeiyiSyncRequest) GetServiceRequest() *SourcesReturnVo {
     return r.serviceRequest
 }
-

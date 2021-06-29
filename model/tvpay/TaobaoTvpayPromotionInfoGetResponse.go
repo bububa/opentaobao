@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-tv支付查询消费抽奖配置 APIResponse
+tv支付查询消费抽奖配置 API返回值 
 taobao.tvpay.promotion.info.get
 
 查询消费抽奖配置
@@ -17,15 +17,11 @@ type TaobaoTvpayPromotionInfoGetAPIResponse struct {
     TaobaoTvpayPromotionInfoGetResponse
 }
 
+// tv支付查询消费抽奖配置 成功返回结果
 type TaobaoTvpayPromotionInfoGetResponse struct {
     XMLName xml.Name `xml:"tvpay_promotion_info_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // Top返回对象
-    
     Result   *TopResultDo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

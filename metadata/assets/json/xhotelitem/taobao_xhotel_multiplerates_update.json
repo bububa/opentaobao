@@ -1,4 +1,5 @@
 {
+	"id": 25402,
 	"name": "taobao.xhotel.multiplerates.update",
 	"apiChineseName": "复杂价格推送接口（批量全量）",
 	"description": "批量更新复杂价格\n涵盖了taobao.xhotel.rates.update的功能",

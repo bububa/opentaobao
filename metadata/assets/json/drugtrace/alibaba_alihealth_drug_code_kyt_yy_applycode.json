@@ -1,4 +1,5 @@
 {
+	"id": 48274,
 	"name": "alibaba.alihealth.drug.code.kyt.yy.applycode",
 	"apiChineseName": "医院药品子码申请接口",
 	"description": "根据父码及所属企业ID生成子码信息",

@@ -1,4 +1,5 @@
 {
+	"id": 33688,
 	"name": "tmall.servicecenter.servicestore.updateservicestore",
 	"apiChineseName": "修改网点信息",
 	"description": "修改网点信息。对于同一个服务商，通过 service_store_code 保证网点唯一性。需要保证网点存在才能修改。\n错误码\n1, 服务商昵称无效\n2, 缺少省份\n3, 缺少城市\n4, 缺少区域\n5, 缺少详细地址\n6, 传入地址不在标准地址库中，无法解析\n7, 缺少网点编码\n8, 缺少网点名称\n9, 缺少网点电话\n10, 网点已存在\n11, 网点不存在\n12, 系统错误",

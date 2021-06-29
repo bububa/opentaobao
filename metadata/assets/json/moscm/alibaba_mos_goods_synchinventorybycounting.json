@@ -1,4 +1,5 @@
 {
+	"id": 35787,
 	"name": "alibaba.mos.goods.synchinventorybycounting",
 	"apiChineseName": "以盘点方式调整库存：传入商品实际库存",
 	"description": "以盘点方式调整库存：传入商品实际库存\n盘点单自动判断数量增减",

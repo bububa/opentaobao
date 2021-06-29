@@ -7,26 +7,28 @@ import (
 )
 
 /* 
-餐厅分类 APIRequest
+餐厅分类 API请求
 alibaba.ele.enterprise.restaurant.categories
 
 餐厅分类
 */
 type AlibabaEleEnterpriseRestaurantCategoriesRequest struct {
     model.Params
-
 }
 
+// 初始化AlibabaEleEnterpriseRestaurantCategoriesRequest对象
 func NewAlibabaEleEnterpriseRestaurantCategoriesRequest() *AlibabaEleEnterpriseRestaurantCategoriesRequest{
     return &AlibabaEleEnterpriseRestaurantCategoriesRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaEleEnterpriseRestaurantCategoriesRequest) GetApiMethodName() string {
     return "alibaba.ele.enterprise.restaurant.categories"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaEleEnterpriseRestaurantCategoriesRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -34,5 +36,3 @@ func (r AlibabaEleEnterpriseRestaurantCategoriesRequest) GetApiParams() url.Valu
     }
     return params
 }
-
-

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-TOPDNS配置 APIResponse
+TOPDNS配置 API返回值 
 taobao.httpdns.get
 
 获取TOP DNS配置
@@ -17,15 +17,11 @@ type TaobaoHttpdnsGetAPIResponse struct {
     TaobaoHttpdnsGetResponse
 }
 
+// TOPDNS配置 成功返回结果
 type TaobaoHttpdnsGetResponse struct {
     XMLName xml.Name `xml:"httpdns_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // HTTP DNS配置信息
-    
     Result   string `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-疫苗预约地市信息查询 APIRequest
+疫苗预约地市信息查询 API请求
 alibaba.alihealth.ms.area.district.list
 
 微信小程序疫苗预约地市信息查询
 */
 type AlibabaAlihealthMsAreaDistrictListRequest struct {
     model.Params
-
     // 省份ID
-    divisionId   int64 
-
+    divisionId   int64
 }
 
+// 初始化AlibabaAlihealthMsAreaDistrictListRequest对象
 func NewAlibabaAlihealthMsAreaDistrictListRequest() *AlibabaAlihealthMsAreaDistrictListRequest{
     return &AlibabaAlihealthMsAreaDistrictListRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthMsAreaDistrictListRequest) GetApiMethodName() string {
     return "alibaba.alihealth.ms.area.district.list"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthMsAreaDistrictListRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthMsAreaDistrictListRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// DivisionId Setter
+// 省份ID
 func (r *AlibabaAlihealthMsAreaDistrictListRequest) SetDivisionId(divisionId int64) error {
     r.divisionId = divisionId
     r.Set("division_id", divisionId)
     return nil
 }
 
+// DivisionId Getter
 func (r AlibabaAlihealthMsAreaDistrictListRequest) GetDivisionId() int64 {
     return r.divisionId
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 46817,
 	"name": "alibaba.ailabs.tmallgenie.auth.switchuser",
 	"apiChineseName": "切换用户",
 	"description": "设备切换授权用户",

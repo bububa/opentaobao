@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-阿里房产图文草稿信息同步 APIRequest
+阿里房产图文草稿信息同步 API请求
 alibaba.alihouse.newhome.rc.sync
 
 接收图文草稿信息
 */
 type AlibabaAlihouseNewhomeRcSyncRequest struct {
     model.Params
-
     // 图文内容
-    rc   *RichContentDraftDto 
-
+    rc   *RichContentDraftDto
 }
 
+// 初始化AlibabaAlihouseNewhomeRcSyncRequest对象
 func NewAlibabaAlihouseNewhomeRcSyncRequest() *AlibabaAlihouseNewhomeRcSyncRequest{
     return &AlibabaAlihouseNewhomeRcSyncRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihouseNewhomeRcSyncRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.rc.sync"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihouseNewhomeRcSyncRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihouseNewhomeRcSyncRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Rc Setter
+// 图文内容
 func (r *AlibabaAlihouseNewhomeRcSyncRequest) SetRc(rc *RichContentDraftDto) error {
     r.rc = rc
     r.Set("rc", rc)
     return nil
 }
 
+// Rc Getter
 func (r AlibabaAlihouseNewhomeRcSyncRequest) GetRc() *RichContentDraftDto {
     return r.rc
 }
-

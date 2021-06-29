@@ -1,4 +1,5 @@
 {
+	"id": 30556,
 	"name": "taobao.wdk.equipment.conveyor.containerinfo.get",
 	"apiChineseName": "获取批次或波次中容器的信息",
 	"description": "获取批次或波次中容器的信息",

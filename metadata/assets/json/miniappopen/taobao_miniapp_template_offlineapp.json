@@ -1,4 +1,5 @@
 {
+	"id": 52965,
 	"name": "taobao.miniapp.template.offlineapp",
 	"apiChineseName": "下线实例化应用",
 	"description": "对指定的实例化小程序进行下线,需要指定clients和app_version",

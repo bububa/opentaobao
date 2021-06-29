@@ -1,4 +1,5 @@
 {
+	"id": 42604,
 	"name": "alibaba.icbu.rfq.read",
 	"apiChineseName": "是否已读RFQ",
 	"description": "是否已读RFQ",

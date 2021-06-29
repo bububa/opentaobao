@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-虾米音乐－风格，流派专辑列表 APIResponse
+虾米音乐－风格，流派专辑列表 API返回值 
 alibaba.xiami.api.tag.genre.album.get
 
 虾米音乐－风格，流派专辑列表
@@ -17,15 +17,11 @@ type AlibabaXiamiApiTagGenreAlbumGetAPIResponse struct {
     AlibabaXiamiApiTagGenreAlbumGetResponse
 }
 
+// 虾米音乐－风格，流派专辑列表 成功返回结果
 type AlibabaXiamiApiTagGenreAlbumGetResponse struct {
     XMLName xml.Name `xml:"alibaba_xiami_api_tag_genre_album_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 风格，流派专辑列表
-    
     Data   *TagAlbumResult `json:"data,omitempty" xml:"data,omitempty"`
-
-    
 }

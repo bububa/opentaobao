@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-活动创建接口 APIResponse
+活动创建接口 API返回值 
 taobao.singletreasure.activity.create
 
 创建优惠活动
@@ -17,15 +17,11 @@ type TaobaoSingletreasureActivityCreateAPIResponse struct {
     TaobaoSingletreasureActivityCreateResponse
 }
 
+// 活动创建接口 成功返回结果
 type TaobaoSingletreasureActivityCreateResponse struct {
     XMLName xml.Name `xml:"singletreasure_activity_create_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TaobaoSingletreasureActivityCreateResultDto `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

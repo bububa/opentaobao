@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-rellocate APIResponse
+rellocate API返回值 
 taobao.omniorder.store.reallocate
 
 门店发货提供改派接口
@@ -17,15 +17,11 @@ type TaobaoOmniorderStoreReallocateAPIResponse struct {
     TaobaoOmniorderStoreReallocateResponse
 }
 
+// rellocate 成功返回结果
 type TaobaoOmniorderStoreReallocateResponse struct {
     XMLName xml.Name `xml:"omniorder_store_reallocate_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TaobaoOmniorderStoreReallocateResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-交易组件 APIRequest
+交易组件 API请求
 alibaba.interact.sensor.trade
 
 交易流程
 */
 type AlibabaInteractSensorTradeRequest struct {
     model.Params
-
     // 系统自动生成
-    id   string 
-
+    id   string
 }
 
+// 初始化AlibabaInteractSensorTradeRequest对象
 func NewAlibabaInteractSensorTradeRequest() *AlibabaInteractSensorTradeRequest{
     return &AlibabaInteractSensorTradeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaInteractSensorTradeRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.trade"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaInteractSensorTradeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaInteractSensorTradeRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Id Setter
+// 系统自动生成
 func (r *AlibabaInteractSensorTradeRequest) SetId(id string) error {
     r.id = id
     r.Set("id", id)
     return nil
 }
 
+// Id Getter
 func (r AlibabaInteractSensorTradeRequest) GetId() string {
     return r.id
 }
-

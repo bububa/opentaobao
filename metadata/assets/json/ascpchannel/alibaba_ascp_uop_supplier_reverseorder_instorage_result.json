@@ -1,4 +1,5 @@
 {
+	"id": 52093,
 	"name": "alibaba.ascp.uop.supplier.reverseorder.instorage.result",
 	"apiChineseName": "逆向销退入库单到仓结果回告",
 	"description": "ERP回告销退入库单到仓信息回告",

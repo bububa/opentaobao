@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-删除网点覆盖的服务 APIResponse
+删除网点覆盖的服务 API返回值 
 tmall.servicecenter.servicestore.deleteservicestorecoverservice
 
 天猫服务平台删除网点覆盖的服务，
@@ -18,15 +18,11 @@ type TmallServicecenterServicestoreDeleteservicestorecoverserviceAPIResponse str
     TmallServicecenterServicestoreDeleteservicestorecoverserviceResponse
 }
 
+// 删除网点覆盖的服务 成功返回结果
 type TmallServicecenterServicestoreDeleteservicestorecoverserviceResponse struct {
     XMLName xml.Name `xml:"tmall_servicecenter_servicestore_deleteservicestorecoverservice_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

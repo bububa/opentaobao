@@ -1,4 +1,5 @@
 {
+	"id": 45901,
 	"name": "alibaba.alsc.crm.customer.voucher.list",
 	"apiChineseName": "获取顾客优惠券列表",
 	"description": "获取顾客优惠券列表",

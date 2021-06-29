@@ -1,4 +1,5 @@
 {
+	"id": 21676,
 	"name": "taobao.simba.adgroupsbycampaignid.get",
 	"apiChineseName": "批量得到推广计划下的推广单元",
 	"description": "根据推广计划ID分页获取推广计划下的推广单元信息",

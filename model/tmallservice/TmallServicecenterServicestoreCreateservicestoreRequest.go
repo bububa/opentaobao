@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-服务网点创建 APIRequest
+服务网点创建 API请求
 tmall.servicecenter.servicestore.createservicestore
 
 创建网点信息。对于同一个服务商，通过 service_store_code 保证网点唯一性。需要保证网点不存在才能创建。地址信息：中文和编码二选一，都填则以编码address_code为准。
@@ -27,22 +27,23 @@ tmall.servicecenter.servicestore.createservicestore
 */
 type TmallServicecenterServicestoreCreateservicestoreRequest struct {
     model.Params
-
     // 网点
-    serviceStore   *ServiceStoreDTO 
-
+    serviceStore   *ServiceStoreDTO
 }
 
+// 初始化TmallServicecenterServicestoreCreateservicestoreRequest对象
 func NewTmallServicecenterServicestoreCreateservicestoreRequest() *TmallServicecenterServicestoreCreateservicestoreRequest{
     return &TmallServicecenterServicestoreCreateservicestoreRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterServicestoreCreateservicestoreRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicestore.createservicestore"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterServicestoreCreateservicestoreRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -50,15 +51,15 @@ func (r TmallServicecenterServicestoreCreateservicestoreRequest) GetApiParams() 
     }
     return params
 }
-
-
+// ServiceStore Setter
+// 网点
 func (r *TmallServicecenterServicestoreCreateservicestoreRequest) SetServiceStore(serviceStore *ServiceStoreDTO) error {
     r.serviceStore = serviceStore
     r.Set("service_store", serviceStore)
     return nil
 }
 
+// ServiceStore Getter
 func (r TmallServicecenterServicestoreCreateservicestoreRequest) GetServiceStore() *ServiceStoreDTO {
     return r.serviceStore
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 51012,
 	"name": "tmall.hk.clearance.distribution.get",
 	"apiChineseName": "分销供应商获取清关材料",
 	"description": "供销体系下，提供供应商可以直接获取其订单身份证信息的接口，以使其完成清关。",

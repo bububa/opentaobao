@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-星河-获取微信用户的信息 APIResponse
+星河-获取微信用户的信息 API返回值 
 alitrip.merchant.galaxy.wechat.info
 
 获取微信用户的openId和unionId
@@ -17,15 +17,11 @@ type AlitripMerchantGalaxyWechatInfoAPIResponse struct {
     AlitripMerchantGalaxyWechatInfoResponse
 }
 
+// 星河-获取微信用户的信息 成功返回结果
 type AlitripMerchantGalaxyWechatInfoResponse struct {
     XMLName xml.Name `xml:"alitrip_merchant_galaxy_wechat_info_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 默认描述
-    
     Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询买家信息API APIResponse
+查询买家信息API API返回值 
 taobao.user.buyer.get
 
 查询买家信息API，只能买家类应用调用。
@@ -17,15 +17,11 @@ type TaobaoUserBuyerGetAPIResponse struct {
     TaobaoUserBuyerGetResponse
 }
 
+// 查询买家信息API 成功返回结果
 type TaobaoUserBuyerGetResponse struct {
     XMLName xml.Name `xml:"user_buyer_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 只返回nick,avatar参数
-    
     User   *User `json:"user,omitempty" xml:"user,omitempty"`
-
-    
 }

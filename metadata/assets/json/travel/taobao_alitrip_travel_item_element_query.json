@@ -1,4 +1,5 @@
 {
+	"id": 27902,
 	"name": "taobao.alitrip.travel.item.element.query",
 	"apiChineseName": "【API3.0】资源元素查询接口",
 	"description": "提供资源元素查询接口，支持商家查询已经发布过的资源元素",

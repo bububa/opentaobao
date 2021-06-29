@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-供应商推送通话结束事件 APIResponse
+供应商推送通话结束事件 API返回值 
 alibaba.aliqin.axb.vendor.push.call.release
 
 通话结束挂断的时候，供应商推送通话结束事件给阿里侧
@@ -17,15 +17,11 @@ type AlibabaAliqinAxbVendorPushCallReleaseAPIResponse struct {
     AlibabaAliqinAxbVendorPushCallReleaseResponse
 }
 
+// 供应商推送通话结束事件 成功返回结果
 type AlibabaAliqinAxbVendorPushCallReleaseResponse struct {
     XMLName xml.Name `xml:"alibaba_aliqin_axb_vendor_push_call_release_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *Response `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

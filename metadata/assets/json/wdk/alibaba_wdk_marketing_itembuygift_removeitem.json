@@ -1,4 +1,5 @@
 {
+	"id": 31788,
 	"name": "alibaba.wdk.marketing.itembuygift.removeitem",
 	"apiChineseName": "移除买赠活动下的商品。【注意，此接口暂不支持并发！】",
 	"description": "移除买赠活动下的商品。【注意，此接口暂不支持并发！】",

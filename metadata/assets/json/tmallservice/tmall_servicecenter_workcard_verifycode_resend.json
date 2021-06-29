@@ -1,4 +1,5 @@
 {
+	"id": 42626,
 	"name": "tmall.servicecenter.workcard.verifycode.resend",
 	"apiChineseName": "重发核销码",
 	"description": "重发核销码",

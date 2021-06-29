@@ -1,4 +1,5 @@
 {
+	"id": 23616,
 	"name": "taobao.fenxiao.product.quantity.update",
 	"apiChineseName": "产品库存修改",
 	"description": "修改产品库存信息，支持全量修改以及增量修改两种方式",

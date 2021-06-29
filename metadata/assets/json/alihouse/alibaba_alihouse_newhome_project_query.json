@@ -1,4 +1,5 @@
 {
+	"id": 56500,
 	"name": "alibaba.alihouse.newhome.project.query",
 	"apiChineseName": "查询楼盘相关信息",
 	"description": "根据outerid查询楼盘相关信息",

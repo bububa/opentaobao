@@ -1,4 +1,5 @@
 {
+	"id": 55130,
 	"name": "alibaba.alihealth.examination.report.diagnose.order.status",
 	"apiChineseName": "报告解读订单状态更新",
 	"description": "报告解读订单状态更新",

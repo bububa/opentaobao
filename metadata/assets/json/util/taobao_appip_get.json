@@ -1,4 +1,5 @@
 {
+	"id": 21784,
 	"name": "taobao.appip.get",
 	"apiChineseName": "获取ISV发起请求服务器IP",
 	"description": "获取ISV发起请求服务器IP",

@@ -1,4 +1,5 @@
 {
+	"id": 10816,
 	"name": "taobao.sellercenter.roles.get",
 	"apiChineseName": "获取指定卖家的角色列表",
 	"description": "获取指定卖家的角色列表，只能获取属于登陆者自己的信息。",

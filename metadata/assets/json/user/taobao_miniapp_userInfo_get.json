@@ -1,4 +1,5 @@
 {
+	"id": 41744,
 	"name": "taobao.miniapp.userInfo.get",
 	"apiChineseName": "用户开放信息获取",
 	"description": "获取用户的 openId，snsNick（如果用户设置过的话），和加密头像链接",

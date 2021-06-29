@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-云游戏战绩上传 APIRequest
+云游戏战绩上传 API请求
 youku.cgame.score.report
 
 云游戏战绩上传API
 */
 type YoukuCgameScoreReportRequest struct {
     model.Params
-
     // 战绩上传Dto
-    scoreReportDto   *ScoreReportDto 
-
+    scoreReportDto   *ScoreReportDto
 }
 
+// 初始化YoukuCgameScoreReportRequest对象
 func NewYoukuCgameScoreReportRequest() *YoukuCgameScoreReportRequest{
     return &YoukuCgameScoreReportRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YoukuCgameScoreReportRequest) GetApiMethodName() string {
     return "youku.cgame.score.report"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YoukuCgameScoreReportRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YoukuCgameScoreReportRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ScoreReportDto Setter
+// 战绩上传Dto
 func (r *YoukuCgameScoreReportRequest) SetScoreReportDto(scoreReportDto *ScoreReportDto) error {
     r.scoreReportDto = scoreReportDto
     r.Set("score_report_dto", scoreReportDto)
     return nil
 }
 
+// ScoreReportDto Getter
 func (r YoukuCgameScoreReportRequest) GetScoreReportDto() *ScoreReportDto {
     return r.scoreReportDto
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 41317,
 	"name": "alibaba.wdk.hrworkbench.cdporgs.query",
 	"apiChineseName": "homs人力资源组织树查询接口",
 	"description": "提供查询homs人力组织树的接口，按照商家做权限隔离。",

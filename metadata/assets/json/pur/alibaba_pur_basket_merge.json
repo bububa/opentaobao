@@ -1,4 +1,5 @@
 {
+	"id": 49500,
 	"name": "alibaba.pur.basket.merge",
 	"apiChineseName": "合并购物车",
 	"description": "采购商城接入第三方商家合并购物车接口服务",

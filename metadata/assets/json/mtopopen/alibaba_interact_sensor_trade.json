@@ -1,4 +1,5 @@
 {
+	"id": 24225,
 	"name": "alibaba.interact.sensor.trade",
 	"apiChineseName": "交易组件",
 	"description": "交易流程",

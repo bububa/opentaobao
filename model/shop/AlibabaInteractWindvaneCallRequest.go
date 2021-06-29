@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-Weex页面调用windvane APIRequest
+Weex页面调用windvane API请求
 alibaba.interact.windvane.call
 
 客户端鉴权使用，实际不会发送或接收数据
 */
 type AlibabaInteractWindvaneCallRequest struct {
     model.Params
-
     // 客户端鉴权使用，实际不会发送或接收数据
-    unNamed   string 
-
+    unNamed   string
 }
 
+// 初始化AlibabaInteractWindvaneCallRequest对象
 func NewAlibabaInteractWindvaneCallRequest() *AlibabaInteractWindvaneCallRequest{
     return &AlibabaInteractWindvaneCallRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaInteractWindvaneCallRequest) GetApiMethodName() string {
     return "alibaba.interact.windvane.call"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaInteractWindvaneCallRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaInteractWindvaneCallRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// UnNamed Setter
+// 客户端鉴权使用，实际不会发送或接收数据
 func (r *AlibabaInteractWindvaneCallRequest) SetUnNamed(unNamed string) error {
     r.unNamed = unNamed
     r.Set("un_named", unNamed)
     return nil
 }
 
+// UnNamed Getter
 func (r AlibabaInteractWindvaneCallRequest) GetUnNamed() string {
     return r.unNamed
 }
-

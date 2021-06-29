@@ -1,4 +1,5 @@
 {
+	"id": 52622,
 	"name": "alibaba.idle.parttime.jobsync",
 	"apiChineseName": "兼职岗位同步",
 	"description": "服务商同步岗位信息给闲鱼",

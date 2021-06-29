@@ -1,4 +1,5 @@
 {
+	"id": 56524,
 	"name": "alibaba.alihealth.drug.code.error.report",
 	"apiChineseName": "码信息错误上报",
 	"description": "提供码信息错误上报功能，用于数据校对",

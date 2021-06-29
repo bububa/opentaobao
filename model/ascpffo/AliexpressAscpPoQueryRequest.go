@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-AliExpress采购单查询API APIRequest
+AliExpress采购单查询API API请求
 aliexpress.ascp.po.query
 
 AE仓发业务采购单查询
 */
 type AliexpressAscpPoQueryRequest struct {
     model.Params
-
     // 系统自动生成
-    purchaseOrderQuery   *PurchaseOrderQueryDto 
-
+    purchaseOrderQuery   *PurchaseOrderQueryDto
 }
 
+// 初始化AliexpressAscpPoQueryRequest对象
 func NewAliexpressAscpPoQueryRequest() *AliexpressAscpPoQueryRequest{
     return &AliexpressAscpPoQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AliexpressAscpPoQueryRequest) GetApiMethodName() string {
     return "aliexpress.ascp.po.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AliexpressAscpPoQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AliexpressAscpPoQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// PurchaseOrderQuery Setter
+// 系统自动生成
 func (r *AliexpressAscpPoQueryRequest) SetPurchaseOrderQuery(purchaseOrderQuery *PurchaseOrderQueryDto) error {
     r.purchaseOrderQuery = purchaseOrderQuery
     r.Set("purchase_order_query", purchaseOrderQuery)
     return nil
 }
 
+// PurchaseOrderQuery Getter
 func (r AliexpressAscpPoQueryRequest) GetPurchaseOrderQuery() *PurchaseOrderQueryDto {
     return r.purchaseOrderQuery
 }
-

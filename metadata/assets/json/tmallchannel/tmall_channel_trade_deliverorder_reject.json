@@ -1,4 +1,5 @@
 {
+	"id": 35419,
 	"name": "tmall.channel.trade.deliverorder.reject",
 	"apiChineseName": "供应商拒绝收货确认单",
 	"description": "供应商拒绝收货确认单",

@@ -1,4 +1,5 @@
 {
+	"id": 43357,
 	"name": "taobao.simba.salestar.adgroup.delete",
 	"apiChineseName": "(新)销量明星删除推广单元接口",
 	"description": "删除一个推广组",

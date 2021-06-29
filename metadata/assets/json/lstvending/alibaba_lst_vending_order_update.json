@@ -1,4 +1,5 @@
 {
+	"id": 36412,
 	"name": "alibaba.lst.vending.order.update",
 	"apiChineseName": "自动售货机订单物流信息回传",
 	"description": "零售通与设备供应商进行订单对接，通过此接口回流订单物流信息。",

@@ -1,4 +1,5 @@
 {
+	"id": 53383,
 	"name": "alibaba.tmallgenie.scp.plan.sale.qty.get",
 	"apiChineseName": "12-同步销售数据",
 	"description": "同步销售数据",

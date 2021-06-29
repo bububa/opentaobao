@@ -1,4 +1,5 @@
 {
+	"id": 23748,
 	"name": "alibaba.interact.sensor.gravity",
 	"apiChineseName": "重力感应",
 	"description": "native获取重力感应",

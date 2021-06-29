@@ -1,4 +1,5 @@
 {
+	"id": 41667,
 	"name": "tmall.nr.item.tag.ops",
 	"apiChineseName": "区域零售商品打标去标",
 	"description": "参加区域零售的商品，需要批量打标或去标，方便后续设置商品库存",

@@ -1,4 +1,5 @@
 {
+	"id": 46706,
 	"name": "alitrip.platform.poi.raw.poiout",
 	"apiChineseName": "飞猪poi输出",
 	"description": "输出指定城市poi指定信息",

@@ -1,4 +1,5 @@
 {
+	"id": 41389,
 	"name": "alibaba.alihealth.trace.code.search.get.drugresourcetop",
 	"apiChineseName": "根据码获取码信息",
 	"description": "根据码获取码信息",

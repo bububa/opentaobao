@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取流量档位 APIRequest
+获取流量档位 API请求
 alibaba.aliqin.flow.wallet.grade
 
 获取直充流量档位
 */
 type AlibabaAliqinFlowWalletGradeRequest struct {
     model.Params
-
     // 手机号码
-    phoneNum   string 
-
+    phoneNum   string
 }
 
+// 初始化AlibabaAliqinFlowWalletGradeRequest对象
 func NewAlibabaAliqinFlowWalletGradeRequest() *AlibabaAliqinFlowWalletGradeRequest{
     return &AlibabaAliqinFlowWalletGradeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAliqinFlowWalletGradeRequest) GetApiMethodName() string {
     return "alibaba.aliqin.flow.wallet.grade"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAliqinFlowWalletGradeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAliqinFlowWalletGradeRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// PhoneNum Setter
+// 手机号码
 func (r *AlibabaAliqinFlowWalletGradeRequest) SetPhoneNum(phoneNum string) error {
     r.phoneNum = phoneNum
     r.Set("phone_num", phoneNum)
     return nil
 }
 
+// PhoneNum Getter
 func (r AlibabaAliqinFlowWalletGradeRequest) GetPhoneNum() string {
     return r.phoneNum
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 25038,
 	"name": "taobao.cloudpush.message.android",
 	"apiChineseName": "百川云推送发送消息给android",
 	"description": "百川用户使用云推送发送消息给android",

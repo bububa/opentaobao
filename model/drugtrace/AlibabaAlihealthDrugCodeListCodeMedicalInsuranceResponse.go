@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据码获取码信息接口-医保 APIResponse
+根据码获取码信息接口-医保 API返回值 
 alibaba.alihealth.drug.code.list.code.medical.insurance
 
 服务描述
@@ -23,15 +23,11 @@ type AlibabaAlihealthDrugCodeListCodeMedicalInsuranceAPIResponse struct {
     AlibabaAlihealthDrugCodeListCodeMedicalInsuranceResponse
 }
 
+// 根据码获取码信息接口-医保 成功返回结果
 type AlibabaAlihealthDrugCodeListCodeMedicalInsuranceResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_drug_code_list_code_medical_insurance_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 最外层结果
-    
     Result   *AlibabaAlihealthDrugCodeListCodeMedicalInsuranceResultModel `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

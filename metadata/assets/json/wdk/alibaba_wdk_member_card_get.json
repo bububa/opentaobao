@@ -1,4 +1,5 @@
 {
+	"id": 40224,
 	"name": "alibaba.wdk.member.card.get",
 	"apiChineseName": "查询会员卡信息",
 	"description": "根据会员卡查询会员信息",

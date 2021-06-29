@@ -1,4 +1,5 @@
 {
+	"id": 10917,
 	"name": "taobao.delivery.template.delete",
 	"apiChineseName": "删除运费模板",
 	"description": "根据用户指定的模板ID删除指定的模板",

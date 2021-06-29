@@ -1,4 +1,5 @@
 {
+	"id": 43499,
 	"name": "alitrip.travel.gereralproduct.update",
 	"apiChineseName": "通用类目产品发布编辑",
 	"description": "提供给飞猪供销平台供应商发布编辑通用类目产品的API",

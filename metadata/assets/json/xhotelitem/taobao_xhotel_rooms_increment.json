@@ -1,4 +1,5 @@
 {
+	"id": 23006,
 	"name": "taobao.xhotel.rooms.increment",
 	"apiChineseName": "房型库存推送接口（批量增量）",
 	"description": "Room库存增量更新接口，用户仅需要更新ROOM库存中发生变化的库存日历即可。",

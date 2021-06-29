@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-服务商发票上传接口（非授权） APIResponse
+服务商发票上传接口（非授权） API返回值 
 alibaba.einvoice.partner.upload
 
 服务商发票上传接口（非授权）
@@ -17,15 +17,11 @@ type AlibabaEinvoicePartnerUploadAPIResponse struct {
     AlibabaEinvoicePartnerUploadResponse
 }
 
+// 服务商发票上传接口（非授权） 成功返回结果
 type AlibabaEinvoicePartnerUploadResponse struct {
     XMLName xml.Name `xml:"alibaba_einvoice_partner_upload_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 上传结果
-    
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
 }

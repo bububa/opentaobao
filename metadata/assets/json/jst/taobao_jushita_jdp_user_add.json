@@ -1,4 +1,5 @@
 {
+	"id": 21736,
 	"name": "taobao.jushita.jdp.user.add",
 	"apiChineseName": "添加数据推送用户",
 	"description": "提供给接入数据推送的应用添加数据推送服务的用户",

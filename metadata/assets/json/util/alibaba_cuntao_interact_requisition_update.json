@@ -1,4 +1,5 @@
 {
+	"id": 40393,
 	"name": "alibaba.cuntao.interact.requisition.update",
 	"apiChineseName": "更新物料制作状态",
 	"description": "村淘物料下沉，更新物料制作状态",

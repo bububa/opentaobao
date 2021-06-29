@@ -1,4 +1,5 @@
 {
+	"id": 52971,
 	"name": "taobao.alitrip.bus.tickets.insurance.recommend",
 	"apiChineseName": "汽车票保险推荐",
 	"description": "获取推荐保险内容",

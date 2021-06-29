@@ -1,4 +1,5 @@
 {
+	"id": 49120,
 	"name": "alibaba.damai.maitix.distribution.cmb.querypayresult",
 	"apiChineseName": "查询招行支付状态api",
 	"description": "queryPayResult",

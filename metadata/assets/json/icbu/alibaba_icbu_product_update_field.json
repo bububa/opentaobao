@@ -1,4 +1,5 @@
 {
+	"id": 27010,
 	"name": "alibaba.icbu.product.update.field",
 	"apiChineseName": "商品按字段更新",
 	"description": "按字段修改国际站商品，支持询盘商品和在线批发商品，支持英文商品和多语言商品",

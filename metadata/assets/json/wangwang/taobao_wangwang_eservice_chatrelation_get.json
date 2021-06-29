@@ -1,4 +1,5 @@
 {
+	"id": 27954,
 	"name": "taobao.wangwang.eservice.chatrelation.get",
 	"apiChineseName": "聊天关系获取接口",
 	"description": "获取指定时间区间内的聊天关系（查询账号，和谁，在哪天说过话）。如：\nA 和 B 在2016-09-01 和 2016-09-02 都说过话。以A为查询账号，则该接口将返回：\n2016-09-01， B\n2016-09-02， B",

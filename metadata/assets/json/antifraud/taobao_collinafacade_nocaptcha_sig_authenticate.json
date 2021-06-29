@@ -1,4 +1,5 @@
 {
+	"id": 24871,
 	"name": "taobao.collinafacade.nocaptcha.sig.authenticate",
 	"apiChineseName": "人机识别",
 	"description": "人机识别颁发签名串后,本接口负责向ISV提供签名串校验服务",

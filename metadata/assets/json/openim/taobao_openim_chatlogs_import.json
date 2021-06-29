@@ -1,4 +1,5 @@
 {
+	"id": 26112,
 	"name": "taobao.openim.chatlogs.import",
 	"apiChineseName": "openim单聊消息导入",
 	"description": "提供openim账号的聊天消息导入功能",

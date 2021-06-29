@@ -1,4 +1,5 @@
 {
+	"id": 26724,
 	"name": "taobao.wlb.wms.item.combination.get",
 	"apiChineseName": "查询组合商品的组合关系",
 	"description": "查询组合商品的组合关系",

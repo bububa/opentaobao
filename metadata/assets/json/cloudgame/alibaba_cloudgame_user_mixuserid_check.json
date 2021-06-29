@@ -1,4 +1,5 @@
 {
+	"id": 48949,
 	"name": "alibaba.cloudgame.user.mixuserid.check",
 	"apiChineseName": "云游戏混淆用户ID校验",
 	"description": "验证混淆用户ID是否合法",

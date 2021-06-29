@@ -1,4 +1,5 @@
 {
+	"id": 43041,
 	"name": "alibaba.legal.suit.court.entrust.get",
 	"apiChineseName": "委托开庭服务查询",
 	"description": "查询委托开庭信息",

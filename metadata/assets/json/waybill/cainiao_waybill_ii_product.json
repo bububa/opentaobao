@@ -1,4 +1,5 @@
 {
+	"id": 26765,
 	"name": "cainiao.waybill.ii.product",
 	"apiChineseName": "商家查询物流商产品类型接口",
 	"description": "商家可以查询物流商的产品类型和服务能力。",

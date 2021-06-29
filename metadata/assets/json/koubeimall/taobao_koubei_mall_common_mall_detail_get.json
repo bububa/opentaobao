@@ -1,4 +1,5 @@
 {
+	"id": 49829,
 	"name": "taobao.koubei.mall.common.mall.detail.get",
 	"apiChineseName": "查询商圈详细信息",
 	"description": "查询口碑综合体-商圈详细信息，包含商圈基础信息、门店类目分类、商圈推荐商品等模块信息",

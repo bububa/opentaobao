@@ -1,4 +1,5 @@
 {
+	"id": 31789,
 	"name": "alibaba.wdk.marketing.itembuygift.additem",
 	"apiChineseName": "增加买赠活动商品。【注意，此接口暂不支持并发！】",
 	"description": "增加买赠活动商品。【注意，此接口暂不支持并发！】",

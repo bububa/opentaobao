@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-校验商家身份 APIRequest
+校验商家身份 API请求
 alibaba.member.checkmerchant
 
 校验商家身份
 */
 type AlibabaMemberCheckmerchantRequest struct {
     model.Params
-
     // 混淆后的商家id
-    openMerchantId   string 
-
+    openMerchantId   string
 }
 
+// 初始化AlibabaMemberCheckmerchantRequest对象
 func NewAlibabaMemberCheckmerchantRequest() *AlibabaMemberCheckmerchantRequest{
     return &AlibabaMemberCheckmerchantRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaMemberCheckmerchantRequest) GetApiMethodName() string {
     return "alibaba.member.checkmerchant"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaMemberCheckmerchantRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaMemberCheckmerchantRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OpenMerchantId Setter
+// 混淆后的商家id
 func (r *AlibabaMemberCheckmerchantRequest) SetOpenMerchantId(openMerchantId string) error {
     r.openMerchantId = openMerchantId
     r.Set("open_merchant_id", openMerchantId)
     return nil
 }
 
+// OpenMerchantId Getter
 func (r AlibabaMemberCheckmerchantRequest) GetOpenMerchantId() string {
     return r.openMerchantId
 }
-

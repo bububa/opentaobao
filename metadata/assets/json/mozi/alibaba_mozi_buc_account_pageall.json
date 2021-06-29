@@ -1,4 +1,5 @@
 {
+	"id": 46007,
 	"name": "alibaba.mozi.buc.account.pageall",
 	"apiChineseName": "查询租户内内所有账号",
 	"description": "查询租户内内所有账号",

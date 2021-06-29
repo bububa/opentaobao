@@ -1,4 +1,5 @@
 {
+	"id": 38197,
 	"name": "alibaba.campus.core.companycampus.getcombycamid",
 	"apiChineseName": "根据园区ID获取运营公司信息",
 	"description": "根据园区ID获取运营公司信息",

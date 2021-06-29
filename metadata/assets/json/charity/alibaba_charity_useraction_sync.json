@@ -1,4 +1,5 @@
 {
+	"id": 45437,
 	"name": "alibaba.charity.useraction.sync",
 	"apiChineseName": "用户公益行为同步",
 	"description": "外部公益活动，用户公益行为同步",

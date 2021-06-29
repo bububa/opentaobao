@@ -1,4 +1,5 @@
 {
+	"id": 30739,
 	"name": "alibaba.happytrip.taxi.servicestatus.get",
 	"apiChineseName": "供应商服务开通状态",
 	"description": "获取服务供应商在每个地区的服务开通状态、支持的车型等",

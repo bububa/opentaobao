@@ -1,4 +1,5 @@
 {
+	"id": 10946,
 	"name": "taobao.fenxiao.product.sku.update",
 	"apiChineseName": "产品sku编辑接口",
 	"description": "产品SKU信息更新",

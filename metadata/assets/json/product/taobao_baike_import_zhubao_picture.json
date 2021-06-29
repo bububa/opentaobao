@@ -1,4 +1,5 @@
 {
+	"id": 30112,
 	"name": "taobao.baike.import.zhubao.picture",
 	"apiChineseName": "百科图片数据导入",
 	"description": "用于接入外部--图片--录入到商品百科中",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-按OC订单分账 APIRequest
+按OC订单分账 API请求
 taobao.oc.order.ap.update
 
 对OC订单执行分账操作
 */
 type TaobaoOcOrderApUpdateRequest struct {
     model.Params
-
     // 调用创建OC订单接口生成的id
-    ocOrderId   int64 
-
+    ocOrderId   int64
 }
 
+// 初始化TaobaoOcOrderApUpdateRequest对象
 func NewTaobaoOcOrderApUpdateRequest() *TaobaoOcOrderApUpdateRequest{
     return &TaobaoOcOrderApUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoOcOrderApUpdateRequest) GetApiMethodName() string {
     return "taobao.oc.order.ap.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoOcOrderApUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoOcOrderApUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OcOrderId Setter
+// 调用创建OC订单接口生成的id
 func (r *TaobaoOcOrderApUpdateRequest) SetOcOrderId(ocOrderId int64) error {
     r.ocOrderId = ocOrderId
     r.Set("oc_order_id", ocOrderId)
     return nil
 }
 
+// OcOrderId Getter
 func (r TaobaoOcOrderApUpdateRequest) GetOcOrderId() int64 {
     return r.ocOrderId
 }
-

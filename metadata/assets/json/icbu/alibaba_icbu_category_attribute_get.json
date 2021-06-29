@@ -1,4 +1,5 @@
 {
+	"id": 25348,
 	"name": "alibaba.icbu.category.attribute.get",
 	"apiChineseName": "类目属性获取",
 	"description": "根据类目ID获取系统定义的属性",

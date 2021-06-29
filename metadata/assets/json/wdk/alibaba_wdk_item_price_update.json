@@ -1,4 +1,5 @@
 {
+	"id": 29140,
 	"name": "alibaba.wdk.item.price.update",
 	"apiChineseName": "五道口商品中心价格修改",
 	"description": "修改门店商品售价和会员价",

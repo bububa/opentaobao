@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-帮卖订单履约 APIRequest
+帮卖订单履约 API请求
 alibaba.idle.consignment.order.perform
 
 帮卖订单履约，回收商同步订单信息，驱动交易流转
 */
 type AlibabaIdleConsignmentOrderPerformRequest struct {
     model.Params
-
     // 帮卖订单同步DTO
-    param   *ConsignmentOrderSynDto 
-
+    param   *ConsignmentOrderSynDto
 }
 
+// 初始化AlibabaIdleConsignmentOrderPerformRequest对象
 func NewAlibabaIdleConsignmentOrderPerformRequest() *AlibabaIdleConsignmentOrderPerformRequest{
     return &AlibabaIdleConsignmentOrderPerformRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIdleConsignmentOrderPerformRequest) GetApiMethodName() string {
     return "alibaba.idle.consignment.order.perform"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIdleConsignmentOrderPerformRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIdleConsignmentOrderPerformRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 帮卖订单同步DTO
 func (r *AlibabaIdleConsignmentOrderPerformRequest) SetParam(param *ConsignmentOrderSynDto) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaIdleConsignmentOrderPerformRequest) GetParam() *ConsignmentOrderSynDto {
     return r.param
 }
-

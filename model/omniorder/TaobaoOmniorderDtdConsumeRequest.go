@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-门店自送对码进行核销 APIRequest
+门店自送对码进行核销 API请求
 taobao.omniorder.dtd.consume
 
 该接口根据传入的码及订单信息，如果码与订单一致，则对门店自送服务进行核销。
 */
 type TaobaoOmniorderDtdConsumeRequest struct {
     model.Params
-
     // 核销信息
-    paramDoor2doorConsumeRequest   *Door2doorConsumeRequest 
-
+    paramDoor2doorConsumeRequest   *Door2doorConsumeRequest
 }
 
+// 初始化TaobaoOmniorderDtdConsumeRequest对象
 func NewTaobaoOmniorderDtdConsumeRequest() *TaobaoOmniorderDtdConsumeRequest{
     return &TaobaoOmniorderDtdConsumeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoOmniorderDtdConsumeRequest) GetApiMethodName() string {
     return "taobao.omniorder.dtd.consume"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoOmniorderDtdConsumeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoOmniorderDtdConsumeRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamDoor2doorConsumeRequest Setter
+// 核销信息
 func (r *TaobaoOmniorderDtdConsumeRequest) SetParamDoor2doorConsumeRequest(paramDoor2doorConsumeRequest *Door2doorConsumeRequest) error {
     r.paramDoor2doorConsumeRequest = paramDoor2doorConsumeRequest
     r.Set("param_door2door_consume_request", paramDoor2doorConsumeRequest)
     return nil
 }
 
+// ParamDoor2doorConsumeRequest Getter
 func (r TaobaoOmniorderDtdConsumeRequest) GetParamDoor2doorConsumeRequest() *Door2doorConsumeRequest {
     return r.paramDoor2doorConsumeRequest
 }
-

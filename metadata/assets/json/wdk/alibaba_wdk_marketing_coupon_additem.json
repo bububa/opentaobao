@@ -1,4 +1,5 @@
 {
+	"id": 35498,
 	"name": "alibaba.wdk.marketing.coupon.additem",
 	"apiChineseName": "在优惠券活动下添加商品。【注意，此接口暂不支持并发！】",
 	"description": "在优惠券活动下添加商品。【注意，此接口暂不支持并发！】\n如果是商品券，则添加的商品为券适用的商品；\n如果是品类券，则添加的商品为券排除的商品；",

@@ -1,4 +1,5 @@
 {
+	"id": 10915,
 	"name": "taobao.delivery.template.get",
 	"apiChineseName": "获取用户指定运费模板信息",
 	"description": "获取用户指定运费模板信息",

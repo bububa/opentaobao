@@ -1,4 +1,5 @@
 {
+	"id": 28330,
 	"name": "alibaba.alink.message.config.set",
 	"apiChineseName": "消息提醒开关",
 	"description": "阿里智能消息开关",

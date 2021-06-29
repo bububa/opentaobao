@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-入库单查询接口 APIRequest
+入库单查询接口 API请求
 taobao.qimen.entryorder.query
 
 ERP调用接口，查询入库单信息;
 */
 type TaobaoQimenEntryorderQueryRequest struct {
     model.Params
-
     // 
-    request   *EntryOrderQueryRequest 
-
+    request   *EntryOrderQueryRequest
 }
 
+// 初始化TaobaoQimenEntryorderQueryRequest对象
 func NewTaobaoQimenEntryorderQueryRequest() *TaobaoQimenEntryorderQueryRequest{
     return &TaobaoQimenEntryorderQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenEntryorderQueryRequest) GetApiMethodName() string {
     return "taobao.qimen.entryorder.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenEntryorderQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenEntryorderQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenEntryorderQueryRequest) SetRequest(request *EntryOrderQueryRequest) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenEntryorderQueryRequest) GetRequest() *EntryOrderQueryRequest {
     return r.request
 }
-

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据商品ID列表获取SKU信息 APIResponse
+根据商品ID列表获取SKU信息 API返回值 
 taobao.item.skus.get
 
 * 获取多个商品下的所有sku
@@ -18,15 +18,11 @@ type TaobaoItemSkusGetAPIResponse struct {
     TaobaoItemSkusGetResponse
 }
 
+// 根据商品ID列表获取SKU信息 成功返回结果
 type TaobaoItemSkusGetResponse struct {
     XMLName xml.Name `xml:"item_skus_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // Sku列表
-    
     Skus   []Sku `json:"skus,omitempty" xml:"skus>sku,omitempty"`
-    
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 31546,
 	"name": "alibaba.iwork.core.hrs.getperson",
 	"apiChineseName": "获取神鲸用户基本信息",
 	"description": "神鲸用户的基本信息查询，根据PERSON_ID或者用户ACCOUNT_ID查询",

@@ -1,4 +1,5 @@
 {
+	"id": 45598,
 	"name": "tmall.car.fpcar.restpay.receive",
 	"apiChineseName": "门店线下已收尾款",
 	"description": "提供给外部(大搜或其它合作方)的接口-门店线下已收尾款(不执行分佣)",

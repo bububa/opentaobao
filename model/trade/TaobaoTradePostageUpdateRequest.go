@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-修改交易邮费价格 APIRequest
+修改交易邮费价格 API请求
 taobao.trade.postage.update
 
 修改订单邮费接口，通过传入订单编号和邮费价格，修改订单的邮费，返回修改时间modified,邮费post_fee,总费用total_fee。
@@ -15,25 +15,25 @@ taobao.trade.postage.update
 */
 type TaobaoTradePostageUpdateRequest struct {
     model.Params
-
     // 主订单编号
-    tid   int64 
-
+    tid   int64
     // 邮费价格(邮费单位是元）
-    postFee   string 
-
+    postFee   string
 }
 
+// 初始化TaobaoTradePostageUpdateRequest对象
 func NewTaobaoTradePostageUpdateRequest() *TaobaoTradePostageUpdateRequest{
     return &TaobaoTradePostageUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoTradePostageUpdateRequest) GetApiMethodName() string {
     return "taobao.trade.postage.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoTradePostageUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -41,25 +41,27 @@ func (r TaobaoTradePostageUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Tid Setter
+// 主订单编号
 func (r *TaobaoTradePostageUpdateRequest) SetTid(tid int64) error {
     r.tid = tid
     r.Set("tid", tid)
     return nil
 }
 
+// Tid Getter
 func (r TaobaoTradePostageUpdateRequest) GetTid() int64 {
     return r.tid
 }
-
+// PostFee Setter
+// 邮费价格(邮费单位是元）
 func (r *TaobaoTradePostageUpdateRequest) SetPostFee(postFee string) error {
     r.postFee = postFee
     r.Set("post_fee", postFee)
     return nil
 }
 
+// PostFee Getter
 func (r TaobaoTradePostageUpdateRequest) GetPostFee() string {
     return r.postFee
 }
-

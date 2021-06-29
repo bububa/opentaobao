@@ -1,4 +1,5 @@
 {
+	"id": 53939,
 	"name": "alibaba.alihealth.examination.todoor.serviceinfo.sync",
 	"apiChineseName": "上门检测服务信息同步",
 	"description": "isv同步上门检测服务信息给健康",

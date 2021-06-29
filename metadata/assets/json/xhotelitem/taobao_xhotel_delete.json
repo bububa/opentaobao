@@ -1,4 +1,5 @@
 {
+	"id": 43194,
 	"name": "taobao.xhotel.delete",
 	"apiChineseName": "删除酒店接口",
 	"description": "删除飞猪酒店数据接口",

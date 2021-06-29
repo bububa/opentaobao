@@ -1,4 +1,5 @@
 {
+	"id": 43435,
 	"name": "alibaba.legal.suit.judgement.get",
 	"apiChineseName": "获取裁判登记信息",
 	"description": "供ISV供应商获取集团法务系统的裁判登记信息",

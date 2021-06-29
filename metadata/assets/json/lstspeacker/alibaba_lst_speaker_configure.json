@@ -1,4 +1,5 @@
 {
+	"id": 45361,
 	"name": "alibaba.lst.speaker.configure",
 	"apiChineseName": "零售通音箱配置通用泛化调用接口",
 	"description": "零售通音箱配置通用泛化调用接口，包括内容、音量、音频等内容",

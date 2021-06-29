@@ -1,4 +1,5 @@
 {
+	"id": 55900,
 	"name": "alibaba.alihealth.drug.code.kyt.querycodeflow",
 	"apiChineseName": "码流向查询",
 	"description": "追溯码流向查询",

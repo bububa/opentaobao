@@ -1,4 +1,5 @@
 {
+	"id": 33525,
 	"name": "taobao.smartstore.device.status.feedback",
 	"apiChineseName": "设备在线状态回流",
 	"description": "智能硬件设备状态回流",

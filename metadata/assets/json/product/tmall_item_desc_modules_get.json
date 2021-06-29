@@ -1,4 +1,5 @@
 {
+	"id": 22171,
 	"name": "tmall.item.desc.modules.get",
 	"apiChineseName": "商品描述模块信息获取",
 	"description": "商品描述模块信息获取，包括运营设定的类目级别的模块信息以及用户自定义模块数量约束。",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-删除工人 APIRequest
+删除工人 API请求
 tmall.servicecenter.worker.delete
 
 删除工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以删除。
@@ -29,28 +29,27 @@ tmall.servicecenter.worker.delete
 */
 type TmallServicecenterWorkerDeleteRequest struct {
     model.Params
-
     // 工人姓名
-    name   string 
-
+    name   string
     // 工人手机号
-    phone   int64 
-
+    phone   int64
     // 业务类型,电器预约安装业务填appliance_install
-    bizType   string 
-
+    bizType   string
 }
 
+// 初始化TmallServicecenterWorkerDeleteRequest对象
 func NewTmallServicecenterWorkerDeleteRequest() *TmallServicecenterWorkerDeleteRequest{
     return &TmallServicecenterWorkerDeleteRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterWorkerDeleteRequest) GetApiMethodName() string {
     return "tmall.servicecenter.worker.delete"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterWorkerDeleteRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -58,35 +57,39 @@ func (r TmallServicecenterWorkerDeleteRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Name Setter
+// 工人姓名
 func (r *TmallServicecenterWorkerDeleteRequest) SetName(name string) error {
     r.name = name
     r.Set("name", name)
     return nil
 }
 
+// Name Getter
 func (r TmallServicecenterWorkerDeleteRequest) GetName() string {
     return r.name
 }
-
+// Phone Setter
+// 工人手机号
 func (r *TmallServicecenterWorkerDeleteRequest) SetPhone(phone int64) error {
     r.phone = phone
     r.Set("phone", phone)
     return nil
 }
 
+// Phone Getter
 func (r TmallServicecenterWorkerDeleteRequest) GetPhone() int64 {
     return r.phone
 }
-
+// BizType Setter
+// 业务类型,电器预约安装业务填appliance_install
 func (r *TmallServicecenterWorkerDeleteRequest) SetBizType(bizType string) error {
     r.bizType = bizType
     r.Set("biz_type", bizType)
     return nil
 }
 
+// BizType Getter
 func (r TmallServicecenterWorkerDeleteRequest) GetBizType() string {
     return r.bizType
 }
-

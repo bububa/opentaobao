@@ -1,4 +1,5 @@
 {
+	"id": 21807,
 	"name": "taobao.wangwang.abstract.addword",
 	"apiChineseName": "增加关键词",
 	"description": "增加关键词，只支持json返回",

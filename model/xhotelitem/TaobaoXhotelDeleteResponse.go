@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-删除酒店接口 APIResponse
+删除酒店接口 API返回值 
 taobao.xhotel.delete
 
 删除飞猪酒店数据接口
@@ -17,15 +17,11 @@ type TaobaoXhotelDeleteAPIResponse struct {
     TaobaoXhotelDeleteResponse
 }
 
+// 删除酒店接口 成功返回结果
 type TaobaoXhotelDeleteResponse struct {
     XMLName xml.Name `xml:"xhotel_delete_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 删除结果
-    
     Result   *TaobaoXhotelDeleteResultSet `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

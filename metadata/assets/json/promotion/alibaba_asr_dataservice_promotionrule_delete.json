@@ -1,4 +1,5 @@
 {
+	"id": 53240,
 	"name": "alibaba.asr.dataservice.promotionrule.delete",
 	"apiChineseName": "优惠规则删除",
 	"description": "删除优惠规则，例如星巴克删除优惠规则",

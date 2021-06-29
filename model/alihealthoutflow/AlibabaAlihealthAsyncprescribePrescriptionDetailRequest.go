@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-异步开方处方详情 APIRequest
+异步开方处方详情 API请求
 alibaba.alihealth.asyncprescribe.prescription.detail
 
 异步开方处方查询
 */
 type AlibabaAlihealthAsyncprescribePrescriptionDetailRequest struct {
     model.Params
-
     // 入参
-    detailRequest   *AsyncPrescribeDetailRequest 
-
+    detailRequest   *AsyncPrescribeDetailRequest
 }
 
+// 初始化AlibabaAlihealthAsyncprescribePrescriptionDetailRequest对象
 func NewAlibabaAlihealthAsyncprescribePrescriptionDetailRequest() *AlibabaAlihealthAsyncprescribePrescriptionDetailRequest{
     return &AlibabaAlihealthAsyncprescribePrescriptionDetailRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) GetApiMethodName() string {
     return "alibaba.alihealth.asyncprescribe.prescription.detail"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) GetApiParams() 
     }
     return params
 }
-
-
+// DetailRequest Setter
+// 入参
 func (r *AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) SetDetailRequest(detailRequest *AsyncPrescribeDetailRequest) error {
     r.detailRequest = detailRequest
     r.Set("detail_request", detailRequest)
     return nil
 }
 
+// DetailRequest Getter
 func (r AlibabaAlihealthAsyncprescribePrescriptionDetailRequest) GetDetailRequest() *AsyncPrescribeDetailRequest {
     return r.detailRequest
 }
-

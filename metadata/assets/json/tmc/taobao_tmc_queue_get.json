@@ -1,4 +1,5 @@
 {
+	"id": 26275,
 	"name": "taobao.tmc.queue.get",
 	"apiChineseName": "获取消息队列积压情况",
 	"description": "根据appkey和groupName获取消息队列积压情况",

@@ -1,4 +1,5 @@
 {
+	"id": 10614,
 	"name": "taobao.wlb.item.map.get",
 	"apiChineseName": "根据物流宝商品ID查询商品映射关系",
 	"description": "根据物流宝商品ID查询商品映射关系",

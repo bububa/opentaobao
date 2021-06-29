@@ -1,4 +1,5 @@
 {
+	"id": 10692,
 	"name": "taobao.fenxiao.order.confirm.paid",
 	"apiChineseName": "确认收款",
 	"description": "供应商确认收款（非支付宝交易）。",

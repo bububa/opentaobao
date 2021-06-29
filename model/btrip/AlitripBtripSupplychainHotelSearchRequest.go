@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-【商旅】酒店订单查询 APIRequest
+【商旅】酒店订单查询 API请求
 alitrip.btrip.supplychain.hotel.search
 
 【商旅】酒店订单查询
 */
 type AlitripBtripSupplychainHotelSearchRequest struct {
     model.Params
-
     // 入参
-    rq   *OpenApiSearchRq 
-
+    rq   *OpenApiSearchRq
 }
 
+// 初始化AlitripBtripSupplychainHotelSearchRequest对象
 func NewAlitripBtripSupplychainHotelSearchRequest() *AlitripBtripSupplychainHotelSearchRequest{
     return &AlitripBtripSupplychainHotelSearchRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripBtripSupplychainHotelSearchRequest) GetApiMethodName() string {
     return "alitrip.btrip.supplychain.hotel.search"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripBtripSupplychainHotelSearchRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripBtripSupplychainHotelSearchRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Rq Setter
+// 入参
 func (r *AlitripBtripSupplychainHotelSearchRequest) SetRq(rq *OpenApiSearchRq) error {
     r.rq = rq
     r.Set("rq", rq)
     return nil
 }
 
+// Rq Getter
 func (r AlitripBtripSupplychainHotelSearchRequest) GetRq() *OpenApiSearchRq {
     return r.rq
 }
-

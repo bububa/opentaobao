@@ -1,4 +1,5 @@
 {
+	"id": 51948,
 	"name": "alibaba.einvoice.prod.apply",
 	"apiChineseName": "提交发票申请",
 	"description": "提交开票申请，如果商户授权自动开票则自动转开票，否则等待商户审核。",

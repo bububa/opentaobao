@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-供货商查询订单数据接口 APIRequest
+供货商查询订单数据接口 API请求
 cainiao.cntec.supplier.order.service
 
 提供给供货商查询订单信息的接口，返回给供货商的订单数据已经是脱敏精简后的，比如订单ID用户ID已经用md5加密，用户昵称已经脱敏，商品信息本身是供货商提供的。
@@ -15,22 +15,23 @@ cainiao.cntec.supplier.order.service
 */
 type CainiaoCntecSupplierOrderServiceRequest struct {
     model.Params
-
     // 系统自动生成
-    queryConditioin   *SupplierOrderQueryDto 
-
+    queryConditioin   *SupplierOrderQueryDto
 }
 
+// 初始化CainiaoCntecSupplierOrderServiceRequest对象
 func NewCainiaoCntecSupplierOrderServiceRequest() *CainiaoCntecSupplierOrderServiceRequest{
     return &CainiaoCntecSupplierOrderServiceRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r CainiaoCntecSupplierOrderServiceRequest) GetApiMethodName() string {
     return "cainiao.cntec.supplier.order.service"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r CainiaoCntecSupplierOrderServiceRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,15 +39,15 @@ func (r CainiaoCntecSupplierOrderServiceRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// QueryConditioin Setter
+// 系统自动生成
 func (r *CainiaoCntecSupplierOrderServiceRequest) SetQueryConditioin(queryConditioin *SupplierOrderQueryDto) error {
     r.queryConditioin = queryConditioin
     r.Set("query_conditioin", queryConditioin)
     return nil
 }
 
+// QueryConditioin Getter
 func (r CainiaoCntecSupplierOrderServiceRequest) GetQueryConditioin() *SupplierOrderQueryDto {
     return r.queryConditioin
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 41217,
 	"name": "alibaba.alihealth.drug.kyt.getcodebillinfo",
 	"apiChineseName": "根据码获取基本和单据信息",
 	"description": "根据码信息获取基本信息和单据信息",

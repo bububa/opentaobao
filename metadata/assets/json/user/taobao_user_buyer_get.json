@@ -1,4 +1,5 @@
 {
+	"id": 21348,
 	"name": "taobao.user.buyer.get",
 	"apiChineseName": "查询买家信息API",
 	"description": "查询买家信息API，只能买家类应用调用。",

@@ -1,4 +1,5 @@
 {
+	"id": 25634,
 	"name": "taobao.jushita.jms.group.get",
 	"apiChineseName": "查询ONS分组",
 	"description": "查询当前appkey在ONS中已有的分组",

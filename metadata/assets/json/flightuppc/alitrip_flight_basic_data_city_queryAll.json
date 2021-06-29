@@ -1,4 +1,5 @@
 {
+	"id": 42575,
 	"name": "alitrip.flight.basic.data.city.queryAll",
 	"apiChineseName": "机票基础数据城市数据查询",
 	"description": "机票基础数据城市数据查询top接口",

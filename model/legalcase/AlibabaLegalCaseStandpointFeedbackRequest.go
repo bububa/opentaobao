@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-新增或更新 反馈口径(采纳口径/不采纳口径) APIRequest
+新增或更新 反馈口径(采纳口径/不采纳口径) API请求
 alibaba.legal.case.standpoint.feedback
 
 新增或更新 反馈口径(采纳口径/不采纳口径)
 */
 type AlibabaLegalCaseStandpointFeedbackRequest struct {
     model.Params
-
     // 反馈对象
-    feedbackRequestModel   *FeedbackRequestModel 
-
+    feedbackRequestModel   *FeedbackRequestModel
 }
 
+// 初始化AlibabaLegalCaseStandpointFeedbackRequest对象
 func NewAlibabaLegalCaseStandpointFeedbackRequest() *AlibabaLegalCaseStandpointFeedbackRequest{
     return &AlibabaLegalCaseStandpointFeedbackRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaLegalCaseStandpointFeedbackRequest) GetApiMethodName() string {
     return "alibaba.legal.case.standpoint.feedback"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaLegalCaseStandpointFeedbackRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaLegalCaseStandpointFeedbackRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// FeedbackRequestModel Setter
+// 反馈对象
 func (r *AlibabaLegalCaseStandpointFeedbackRequest) SetFeedbackRequestModel(feedbackRequestModel *FeedbackRequestModel) error {
     r.feedbackRequestModel = feedbackRequestModel
     r.Set("feedback_request_model", feedbackRequestModel)
     return nil
 }
 
+// FeedbackRequestModel Getter
 func (r AlibabaLegalCaseStandpointFeedbackRequest) GetFeedbackRequestModel() *FeedbackRequestModel {
     return r.feedbackRequestModel
 }
-

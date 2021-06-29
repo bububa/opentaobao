@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-淘外分销逆向创单（未发货整单退） APIRequest
+淘外分销逆向创单（未发货整单退） API请求
 alibaba.ascp.channel.main.refund.create
 
 淘外分销解决方案--订单--逆向创单（未发货整单退）
 */
 type AlibabaAscpChannelMainRefundCreateRequest struct {
     model.Params
-
     // 逆向单创建请求
-    refundCreateRequest   *ExternalCreateRefundOrderRequest 
-
+    refundCreateRequest   *ExternalCreateRefundOrderRequest
 }
 
+// 初始化AlibabaAscpChannelMainRefundCreateRequest对象
 func NewAlibabaAscpChannelMainRefundCreateRequest() *AlibabaAscpChannelMainRefundCreateRequest{
     return &AlibabaAscpChannelMainRefundCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAscpChannelMainRefundCreateRequest) GetApiMethodName() string {
     return "alibaba.ascp.channel.main.refund.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAscpChannelMainRefundCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAscpChannelMainRefundCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// RefundCreateRequest Setter
+// 逆向单创建请求
 func (r *AlibabaAscpChannelMainRefundCreateRequest) SetRefundCreateRequest(refundCreateRequest *ExternalCreateRefundOrderRequest) error {
     r.refundCreateRequest = refundCreateRequest
     r.Set("refund_create_request", refundCreateRequest)
     return nil
 }
 
+// RefundCreateRequest Getter
 func (r AlibabaAscpChannelMainRefundCreateRequest) GetRefundCreateRequest() *ExternalCreateRefundOrderRequest {
     return r.refundCreateRequest
 }
-

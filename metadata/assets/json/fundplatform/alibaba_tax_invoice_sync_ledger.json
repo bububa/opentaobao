@@ -1,4 +1,5 @@
 {
+	"id": 46490,
 	"name": "alibaba.tax.invoice.sync.ledger",
 	"apiChineseName": "同步底账数据",
 	"description": "接收第三方服务（如：票易通）同步过来的底账发票数据",

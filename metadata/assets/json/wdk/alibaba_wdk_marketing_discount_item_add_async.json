@@ -1,4 +1,5 @@
 {
+	"id": 38635,
 	"name": "alibaba.wdk.marketing.discount.item.add.async",
 	"apiChineseName": "特价批量新增商品",
 	"description": "新分组模型下新增商品",

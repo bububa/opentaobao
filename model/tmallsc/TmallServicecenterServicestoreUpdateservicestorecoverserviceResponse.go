@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-更新网点覆盖的服务 APIResponse
+更新网点覆盖的服务 API返回值 
 tmall.servicecenter.servicestore.updateservicestorecoverservice
 
 更新网点覆盖的服务，唯一性校验：服务商淘宝账号+网点编码+biz_type
@@ -20,15 +20,11 @@ type TmallServicecenterServicestoreUpdateservicestorecoverserviceAPIResponse str
     TmallServicecenterServicestoreUpdateservicestorecoverserviceResponse
 }
 
+// 更新网点覆盖的服务 成功返回结果
 type TmallServicecenterServicestoreUpdateservicestorecoverserviceResponse struct {
     XMLName xml.Name `xml:"tmall_servicecenter_servicestore_updateservicestorecoverservice_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-取消确认 APIRequest
+取消确认 API请求
 alibaba.member.identity.rescindfinish
 
 取消确认
 */
 type AlibabaMemberIdentityRescindfinishRequest struct {
     model.Params
-
     // 取消确认信息
-    rescindFinish   *RescindIdentityFinishRequest 
-
+    rescindFinish   *RescindIdentityFinishRequest
 }
 
+// 初始化AlibabaMemberIdentityRescindfinishRequest对象
 func NewAlibabaMemberIdentityRescindfinishRequest() *AlibabaMemberIdentityRescindfinishRequest{
     return &AlibabaMemberIdentityRescindfinishRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaMemberIdentityRescindfinishRequest) GetApiMethodName() string {
     return "alibaba.member.identity.rescindfinish"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaMemberIdentityRescindfinishRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaMemberIdentityRescindfinishRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// RescindFinish Setter
+// 取消确认信息
 func (r *AlibabaMemberIdentityRescindfinishRequest) SetRescindFinish(rescindFinish *RescindIdentityFinishRequest) error {
     r.rescindFinish = rescindFinish
     r.Set("rescind_finish", rescindFinish)
     return nil
 }
 
+// RescindFinish Getter
 func (r AlibabaMemberIdentityRescindfinishRequest) GetRescindFinish() *RescindIdentityFinishRequest {
     return r.rescindFinish
 }
-

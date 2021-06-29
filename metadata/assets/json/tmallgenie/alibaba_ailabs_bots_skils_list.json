@@ -1,4 +1,5 @@
 {
+	"id": 36349,
 	"name": "alibaba.ailabs.bots.skils.list",
 	"apiChineseName": "对外设备获取技能列表",
 	"description": "获取ai开放平台技能列表",

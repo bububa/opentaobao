@@ -1,4 +1,5 @@
 {
+	"id": 55042,
 	"name": "alibaba.lsy.crm.create",
 	"apiChineseName": "创建客资",
 	"description": "欢客调用该接口进行客资创建",

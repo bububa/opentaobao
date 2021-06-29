@@ -1,4 +1,5 @@
 {
+	"id": 10385,
 	"name": "taobao.kfc.keyword.search",
 	"apiChineseName": "关键词过滤匹配",
 	"description": "对输入的文本信息进行禁忌关键词匹配，返回匹配的结果",

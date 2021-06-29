@@ -1,4 +1,5 @@
 {
+	"id": 27261,
 	"name": "taobao.qimen.inventory.report",
 	"apiChineseName": "库存盘点通知接口",
 	"description": "WMS调用奇门的接口,将库存盘点情况回传ERP",

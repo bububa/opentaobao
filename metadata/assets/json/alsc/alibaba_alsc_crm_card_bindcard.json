@@ -1,4 +1,5 @@
 {
+	"id": 45982,
 	"name": "alibaba.alsc.crm.card.bindcard",
 	"apiChineseName": "绑定物理卡",
 	"description": "将会员卡和实例物理卡绑定在一起",

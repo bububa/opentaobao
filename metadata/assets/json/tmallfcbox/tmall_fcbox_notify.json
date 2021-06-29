@@ -1,4 +1,5 @@
 {
+	"id": 39240,
 	"name": "tmall.fcbox.notify",
 	"apiChineseName": "丰巢通知接口",
 	"description": "tmax接收丰巢快递通知",

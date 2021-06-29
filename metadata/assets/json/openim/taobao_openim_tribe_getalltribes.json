@@ -1,4 +1,5 @@
 {
+	"id": 25580,
 	"name": "taobao.openim.tribe.getalltribes",
 	"apiChineseName": "获取用户群列表",
 	"description": "OPENIM群服务获取用户群列表",

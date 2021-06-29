@@ -1,4 +1,5 @@
 {
+	"id": 28629,
 	"name": "yunos.tvpubadmin.device.osupgradequery",
 	"apiChineseName": "系统升级查询",
 	"description": "系统升级查询",

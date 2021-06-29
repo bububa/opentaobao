@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-百川淘客打点 APIRequest
+百川淘客打点 API请求
 taobao.baichuan.taoke.trace
 
 百川淘客打点
 */
 type TaobaoBaichuanTaokeTraceRequest struct {
     model.Params
-
     // name
-    name   string 
-
+    name   string
 }
 
+// 初始化TaobaoBaichuanTaokeTraceRequest对象
 func NewTaobaoBaichuanTaokeTraceRequest() *TaobaoBaichuanTaokeTraceRequest{
     return &TaobaoBaichuanTaokeTraceRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoBaichuanTaokeTraceRequest) GetApiMethodName() string {
     return "taobao.baichuan.taoke.trace"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoBaichuanTaokeTraceRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoBaichuanTaokeTraceRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Name Setter
+// name
 func (r *TaobaoBaichuanTaokeTraceRequest) SetName(name string) error {
     r.name = name
     r.Set("name", name)
     return nil
 }
 
+// Name Getter
 func (r TaobaoBaichuanTaokeTraceRequest) GetName() string {
     return r.name
 }
-

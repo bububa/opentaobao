@@ -1,4 +1,5 @@
 {
+	"id": 51278,
 	"name": "alibaba.alihealth.medical.item.status",
 	"apiChineseName": "商品上下架",
 	"description": "医生通三方机构平台进行服务商品上下架操作",

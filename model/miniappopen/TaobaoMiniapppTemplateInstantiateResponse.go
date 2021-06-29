@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-（已废弃）构建实例化应用 APIResponse
+（已废弃）构建实例化应用 API返回值 
 taobao.miniappp.template.instantiate
 
 实例化saas化的小程序
@@ -17,15 +17,11 @@ type TaobaoMiniapppTemplateInstantiateAPIResponse struct {
     TaobaoMiniapppTemplateInstantiateResponse
 }
 
+// （已废弃）构建实例化应用 成功返回结果
 type TaobaoMiniapppTemplateInstantiateResponse struct {
     XMLName xml.Name `xml:"miniappp_template_instantiate_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *TaobaoMiniapppTemplateInstantiateResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

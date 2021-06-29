@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-用户投诉 APIResponse
+用户投诉 API返回值 
 alibaba.happytrip.taxi.order.complain
 
 一个订单只能投诉一次，不可重复投诉
@@ -33,25 +33,15 @@ type AlibabaHappytripTaxiOrderComplainAPIResponse struct {
     AlibabaHappytripTaxiOrderComplainResponse
 }
 
+// 用户投诉 成功返回结果
 type AlibabaHappytripTaxiOrderComplainResponse struct {
     XMLName xml.Name `xml:"alibaba_happytrip_taxi_order_complain_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 错误码
-    
     Errno   int64 `json:"errno,omitempty" xml:"errno,omitempty"`
-
-    
     // 错误信息
-    
     Errmsg   string `json:"errmsg,omitempty" xml:"errmsg,omitempty"`
-
-    
     // 投诉结果
-    
     Data   *AlibabaHappytripTaxiOrderComplainStruct `json:"data,omitempty" xml:"data,omitempty"`
-
-    
 }

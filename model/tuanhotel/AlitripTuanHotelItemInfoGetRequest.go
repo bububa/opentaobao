@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-宝贝信息查询接口 APIRequest
+宝贝信息查询接口 API请求
 alitrip.tuan.hotel.item.info.get
 
 商家查询发布的宝贝详情信息
 */
 type AlitripTuanHotelItemInfoGetRequest struct {
     model.Params
-
     // 宝贝ID
-    itemId   int64 
-
+    itemId   int64
 }
 
+// 初始化AlitripTuanHotelItemInfoGetRequest对象
 func NewAlitripTuanHotelItemInfoGetRequest() *AlitripTuanHotelItemInfoGetRequest{
     return &AlitripTuanHotelItemInfoGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripTuanHotelItemInfoGetRequest) GetApiMethodName() string {
     return "alitrip.tuan.hotel.item.info.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripTuanHotelItemInfoGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripTuanHotelItemInfoGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ItemId Setter
+// 宝贝ID
 func (r *AlitripTuanHotelItemInfoGetRequest) SetItemId(itemId int64) error {
     r.itemId = itemId
     r.Set("item_id", itemId)
     return nil
 }
 
+// ItemId Getter
 func (r AlitripTuanHotelItemInfoGetRequest) GetItemId() int64 {
     return r.itemId
 }
-

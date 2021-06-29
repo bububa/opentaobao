@@ -1,4 +1,5 @@
 {
+	"id": 23576,
 	"name": "taobao.simba.insight.wordsdata.get",
 	"apiChineseName": "获取关键词的大盘数据",
 	"description": "获取关键词的详细数据",

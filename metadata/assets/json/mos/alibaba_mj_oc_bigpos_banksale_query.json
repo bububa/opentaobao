@@ -1,4 +1,5 @@
 {
+	"id": 42791,
 	"name": "alibaba.mj.oc.bigpos.banksale.query",
 	"apiChineseName": "大pos银行卡查账接口",
 	"description": "大pos银行卡查账接口，给收银员查询银行卡销售记录，便于调账",

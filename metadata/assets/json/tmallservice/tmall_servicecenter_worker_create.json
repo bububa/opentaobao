@@ -1,4 +1,5 @@
 {
+	"id": 30001,
 	"name": "tmall.servicecenter.worker.create",
 	"apiChineseName": "服务商工人信息创建",
 	"description": "服务商工人信息创建",

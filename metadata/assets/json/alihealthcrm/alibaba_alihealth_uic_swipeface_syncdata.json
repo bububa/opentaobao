@@ -1,4 +1,5 @@
 {
+	"id": 40703,
 	"name": "alibaba.alihealth.uic.swipeface.syncdata",
 	"apiChineseName": "刷脸测睡眠数据同步",
 	"description": "刷脸测睡眠数据同步，三方数据回传",

@@ -1,4 +1,5 @@
 {
+	"id": 37933,
 	"name": "yunos.appstore.open.getads",
 	"apiChineseName": "获取外投广告",
 	"description": "将广告外投给外部合作伙伴",

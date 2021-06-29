@@ -1,4 +1,5 @@
 {
+	"id": 43726,
 	"name": "alibaba.ascp.salecategory.query",
 	"apiChineseName": "货品品类查询",
 	"description": "根据货品ID查询对应销售品类ID",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-仓内加工单确认接口 APIRequest
+仓内加工单确认接口 API请求
 taobao.qimen.storeprocess.confirm
 
 WMS调用奇门的接口,回传仓内加工单创建情况
 */
 type TaobaoQimenStoreprocessConfirmRequest struct {
     model.Params
-
     // 
-    request   *StoreProcessConfirmRequest 
-
+    request   *StoreProcessConfirmRequest
 }
 
+// 初始化TaobaoQimenStoreprocessConfirmRequest对象
 func NewTaobaoQimenStoreprocessConfirmRequest() *TaobaoQimenStoreprocessConfirmRequest{
     return &TaobaoQimenStoreprocessConfirmRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenStoreprocessConfirmRequest) GetApiMethodName() string {
     return "taobao.qimen.storeprocess.confirm"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenStoreprocessConfirmRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenStoreprocessConfirmRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenStoreprocessConfirmRequest) SetRequest(request *StoreProcessConfirmRequest) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenStoreprocessConfirmRequest) GetRequest() *StoreProcessConfirmRequest {
     return r.request
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 36867,
 	"name": "alibaba.wdk.sku.update",
 	"apiChineseName": "更新商品",
 	"description": "开放商品更新接口",

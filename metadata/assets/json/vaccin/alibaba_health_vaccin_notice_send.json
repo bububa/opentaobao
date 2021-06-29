@@ -1,4 +1,5 @@
 {
+	"id": 51163,
 	"name": "alibaba.health.vaccin.notice.send",
 	"apiChineseName": "发送消息提醒",
 	"description": "ISV 通过免疫规划中心给用户发送短信或者支付宝 PUSH 提醒。",

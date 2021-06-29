@@ -1,4 +1,5 @@
 {
+	"id": 35598,
 	"name": "alibaba.mos.goods.bulkinputcspu",
 	"apiChineseName": "批量录入商品信息",
 	"description": "用于商品信息的批量导入到银泰商品中台",

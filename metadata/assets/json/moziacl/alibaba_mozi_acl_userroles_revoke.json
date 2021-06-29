@@ -1,4 +1,5 @@
 {
+	"id": 45481,
 	"name": "alibaba.mozi.acl.userroles.revoke",
 	"apiChineseName": "回收账户被授予的角色接口",
 	"description": "调用此接口，会根据入参回收该账户下的该批角色",

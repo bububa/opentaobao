@@ -1,4 +1,5 @@
 {
+	"id": 45482,
 	"name": "alibaba.mozi.acl.permission.page.rolepermission",
 	"apiChineseName": "分页查询角色下包含的权限列表",
 	"description": "根据传入的角色name，分页查询该角色包含的权限列表",

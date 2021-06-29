@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取商品 APIRequest
+获取商品 API请求
 alibaba.data.item.get
 
 获取商品信息，作为客户端Weex鉴权的虚拟api
 */
 type AlibabaDataItemGetRequest struct {
     model.Params
-
     // 获取商品信息，作为客户端Weex鉴权的虚拟api
-    unNamed   string 
-
+    unNamed   string
 }
 
+// 初始化AlibabaDataItemGetRequest对象
 func NewAlibabaDataItemGetRequest() *AlibabaDataItemGetRequest{
     return &AlibabaDataItemGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaDataItemGetRequest) GetApiMethodName() string {
     return "alibaba.data.item.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaDataItemGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaDataItemGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// UnNamed Setter
+// 获取商品信息，作为客户端Weex鉴权的虚拟api
 func (r *AlibabaDataItemGetRequest) SetUnNamed(unNamed string) error {
     r.unNamed = unNamed
     r.Set("un_named", unNamed)
     return nil
 }
 
+// UnNamed Getter
 func (r AlibabaDataItemGetRequest) GetUnNamed() string {
     return r.unNamed
 }
-

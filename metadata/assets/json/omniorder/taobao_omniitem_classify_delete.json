@@ -1,4 +1,5 @@
 {
+	"id": 31919,
 	"name": "taobao.omniitem.classify.delete",
 	"apiChineseName": "删除一个分类",
 	"description": "删除一个分类",

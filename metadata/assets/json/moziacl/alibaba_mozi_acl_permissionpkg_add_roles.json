@@ -1,4 +1,5 @@
 {
+	"id": 46098,
 	"name": "alibaba.mozi.acl.permissionpkg.add.roles",
 	"apiChineseName": "将角色添加到权限套餐中",
 	"description": "此接口是将应用下的一批角色添加到该应用的某个权限套餐中",

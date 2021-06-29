@@ -1,4 +1,5 @@
 {
+	"id": 34531,
 	"name": "alibaba.aliqin.axb.vendor.heart.beat",
 	"apiChineseName": "供应商心跳上报接口",
 	"description": "供应商上报自己的心跳信息",

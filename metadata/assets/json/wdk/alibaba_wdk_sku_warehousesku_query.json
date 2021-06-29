@@ -1,4 +1,5 @@
 {
+	"id": 40927,
 	"name": "alibaba.wdk.sku.warehousesku.query",
 	"apiChineseName": "仓商品查询接口(指定商品编码)",
 	"description": "提供指定仓商品编码查询",

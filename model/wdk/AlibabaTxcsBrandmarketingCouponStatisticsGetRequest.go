@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-品牌营销导购员券推广统计数据回流 APIRequest
+品牌营销导购员券推广统计数据回流 API请求
 alibaba.txcs.brandmarketing.coupon.statistics.get
 
 请求券统计数据回流
 */
 type AlibabaTxcsBrandmarketingCouponStatisticsGetRequest struct {
     model.Params
-
     // 请求信息
-    couponStatisticsParamDo   *CouponStatisticsParamDO 
-
+    couponStatisticsParamDo   *CouponStatisticsParamDO
 }
 
+// 初始化AlibabaTxcsBrandmarketingCouponStatisticsGetRequest对象
 func NewAlibabaTxcsBrandmarketingCouponStatisticsGetRequest() *AlibabaTxcsBrandmarketingCouponStatisticsGetRequest{
     return &AlibabaTxcsBrandmarketingCouponStatisticsGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaTxcsBrandmarketingCouponStatisticsGetRequest) GetApiMethodName() string {
     return "alibaba.txcs.brandmarketing.coupon.statistics.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaTxcsBrandmarketingCouponStatisticsGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaTxcsBrandmarketingCouponStatisticsGetRequest) GetApiParams() url.
     }
     return params
 }
-
-
+// CouponStatisticsParamDo Setter
+// 请求信息
 func (r *AlibabaTxcsBrandmarketingCouponStatisticsGetRequest) SetCouponStatisticsParamDo(couponStatisticsParamDo *CouponStatisticsParamDO) error {
     r.couponStatisticsParamDo = couponStatisticsParamDo
     r.Set("coupon_statistics_param_do", couponStatisticsParamDo)
     return nil
 }
 
+// CouponStatisticsParamDo Getter
 func (r AlibabaTxcsBrandmarketingCouponStatisticsGetRequest) GetCouponStatisticsParamDo() *CouponStatisticsParamDO {
     return r.couponStatisticsParamDo
 }
-

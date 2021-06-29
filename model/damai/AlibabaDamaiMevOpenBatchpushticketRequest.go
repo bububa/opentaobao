@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-大麦换验平台-第三方对外开放-票单接口batchPushTicket APIRequest
+大麦换验平台-第三方对外开放-票单接口batchPushTicket API请求
 alibaba.damai.mev.open.batchpushticket
 
 批量推送票单
 */
 type AlibabaDamaiMevOpenBatchpushticketRequest struct {
     model.Params
-
     // 入参thirdTicketSetOpenParamList
-    thirdTicketSetOpenParamList   []ThirdTicketPushOpenParam 
-
+    thirdTicketSetOpenParamList   []ThirdTicketPushOpenParam
 }
 
+// 初始化AlibabaDamaiMevOpenBatchpushticketRequest对象
 func NewAlibabaDamaiMevOpenBatchpushticketRequest() *AlibabaDamaiMevOpenBatchpushticketRequest{
     return &AlibabaDamaiMevOpenBatchpushticketRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaDamaiMevOpenBatchpushticketRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.batchpushticket"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaDamaiMevOpenBatchpushticketRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaDamaiMevOpenBatchpushticketRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ThirdTicketSetOpenParamList Setter
+// 入参thirdTicketSetOpenParamList
 func (r *AlibabaDamaiMevOpenBatchpushticketRequest) SetThirdTicketSetOpenParamList(thirdTicketSetOpenParamList []ThirdTicketPushOpenParam) error {
     r.thirdTicketSetOpenParamList = thirdTicketSetOpenParamList
     r.Set("third_ticket_set_open_param_list", thirdTicketSetOpenParamList)
     return nil
 }
 
+// ThirdTicketSetOpenParamList Getter
 func (r AlibabaDamaiMevOpenBatchpushticketRequest) GetThirdTicketSetOpenParamList() []ThirdTicketPushOpenParam {
     return r.thirdTicketSetOpenParamList
 }
-

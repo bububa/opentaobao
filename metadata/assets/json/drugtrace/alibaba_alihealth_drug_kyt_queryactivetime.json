@@ -1,4 +1,5 @@
 {
+	"id": 45254,
 	"name": "alibaba.alihealth.drug.kyt.queryactivetime",
 	"apiChineseName": "药品激活状态同步",
 	"description": "根据赋码资源（CodeVersion + resCode）获得最新激活时间\n应用于各地市对接前进行药品目录匹配，医保中心存在的药品可能比较陈旧杂乱",

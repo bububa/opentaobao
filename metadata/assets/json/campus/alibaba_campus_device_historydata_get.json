@@ -1,4 +1,5 @@
 {
+	"id": 39847,
 	"name": "alibaba.campus.device.historydata.get",
 	"apiChineseName": "设备历史数据批量获取",
 	"description": "设备历史数据批量获取",

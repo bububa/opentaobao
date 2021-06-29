@@ -1,4 +1,5 @@
 {
+	"id": 31112,
 	"name": "yunos.tvmbos.common.operation",
 	"apiChineseName": "应用中心通用服务接口",
 	"description": "应用中心相关接口的代理",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取悬挂链系统事件 APIResponse
+获取悬挂链系统事件 API返回值 
 taobao.wdk.equipment.conveyor.systemevent.get
 
 五道口悬挂链系统事件查询
@@ -17,15 +17,11 @@ type TaobaoWdkEquipmentConveyorSystemeventGetAPIResponse struct {
     TaobaoWdkEquipmentConveyorSystemeventGetResponse
 }
 
+// 获取悬挂链系统事件 成功返回结果
 type TaobaoWdkEquipmentConveyorSystemeventGetResponse struct {
     XMLName xml.Name `xml:"wdk_equipment_conveyor_systemevent_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回值
-    
     Result   *TaobaoWdkEquipmentConveyorSystemeventGetResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

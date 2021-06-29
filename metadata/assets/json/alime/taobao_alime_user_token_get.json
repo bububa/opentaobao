@@ -1,4 +1,5 @@
 {
+	"id": 41699,
 	"name": "taobao.alime.user.token.get",
 	"apiChineseName": "获取用户免登录令牌",
 	"description": "根据第三账号信息获取用户的免登录令牌",

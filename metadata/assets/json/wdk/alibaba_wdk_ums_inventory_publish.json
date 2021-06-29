@@ -1,4 +1,5 @@
 {
+	"id": 40711,
 	"name": "alibaba.wdk.ums.inventory.publish",
 	"apiChineseName": "初始化覆盖实物库存",
 	"description": "先去库存这边查询当前实物库存有多少的量，然后算出来需要增加的量。接下来调用ums原来的入库语义的接口进行库存的增量补充",

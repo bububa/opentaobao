@@ -1,4 +1,5 @@
 {
+	"id": 38632,
 	"name": "alibaba.wdk.marketing.itempool.activity.create",
 	"apiChineseName": "创建活动新接口",
 	"description": "创建活动新接口，支持新工具玩法",

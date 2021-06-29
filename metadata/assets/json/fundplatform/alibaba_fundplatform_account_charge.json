@@ -1,4 +1,5 @@
 {
+	"id": 30278,
 	"name": "alibaba.fundplatform.account.charge",
 	"apiChineseName": "资金平台余额账户充值",
 	"description": "资金平台余额账户充值【创建账户\u0026返回付款URL】",

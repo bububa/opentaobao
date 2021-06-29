@@ -1,4 +1,5 @@
 {
+	"id": 23792,
 	"name": "alibaba.interact.activity.register",
 	"apiChineseName": "ISV互动应用活动注册服务",
 	"description": "为支持卖家由ISV互动应用可以在手淘店铺首页透出，提供ISV互动应用创建的活动注册到手淘的服务",

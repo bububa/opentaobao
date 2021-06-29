@@ -1,4 +1,5 @@
 {
+	"id": 54003,
 	"name": "alibaba.ascp.aic.supplier.aicinventory.negative.sale.query",
 	"apiChineseName": "商家查询负卖库存",
 	"description": "商家根据当前接口查询负卖货品的库存",

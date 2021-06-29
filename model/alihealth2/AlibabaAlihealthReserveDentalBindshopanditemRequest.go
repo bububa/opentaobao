@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-绑定门店信息，商品信息 APIRequest
+绑定门店信息，商品信息 API请求
 alibaba.alihealth.reserve.dental.bindshopanditem
 
 绑定门店信息，商品信息
 */
 type AlibabaAlihealthReserveDentalBindshopanditemRequest struct {
     model.Params
-
     // bind_list
-    bindList   []BindDTO 
-
+    bindList   []BindDTO
 }
 
+// 初始化AlibabaAlihealthReserveDentalBindshopanditemRequest对象
 func NewAlibabaAlihealthReserveDentalBindshopanditemRequest() *AlibabaAlihealthReserveDentalBindshopanditemRequest{
     return &AlibabaAlihealthReserveDentalBindshopanditemRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthReserveDentalBindshopanditemRequest) GetApiMethodName() string {
     return "alibaba.alihealth.reserve.dental.bindshopanditem"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthReserveDentalBindshopanditemRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthReserveDentalBindshopanditemRequest) GetApiParams() url.
     }
     return params
 }
-
-
+// BindList Setter
+// bind_list
 func (r *AlibabaAlihealthReserveDentalBindshopanditemRequest) SetBindList(bindList []BindDTO) error {
     r.bindList = bindList
     r.Set("bind_list", bindList)
     return nil
 }
 
+// BindList Getter
 func (r AlibabaAlihealthReserveDentalBindshopanditemRequest) GetBindList() []BindDTO {
     return r.bindList
 }
-

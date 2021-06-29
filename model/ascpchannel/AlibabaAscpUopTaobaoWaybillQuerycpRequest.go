@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询电子面单开放的CP列表 APIRequest
+查询电子面单开放的CP列表 API请求
 alibaba.ascp.uop.taobao.waybill.querycp
 
 查询电子面单开放的CP列表
 */
 type AlibabaAscpUopTaobaoWaybillQuerycpRequest struct {
     model.Params
-
     // 系统自动生成
-    queryCpRequest   *Querycprequest 
-
+    queryCpRequest   *Querycprequest
 }
 
+// 初始化AlibabaAscpUopTaobaoWaybillQuerycpRequest对象
 func NewAlibabaAscpUopTaobaoWaybillQuerycpRequest() *AlibabaAscpUopTaobaoWaybillQuerycpRequest{
     return &AlibabaAscpUopTaobaoWaybillQuerycpRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAscpUopTaobaoWaybillQuerycpRequest) GetApiMethodName() string {
     return "alibaba.ascp.uop.taobao.waybill.querycp"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAscpUopTaobaoWaybillQuerycpRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAscpUopTaobaoWaybillQuerycpRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// QueryCpRequest Setter
+// 系统自动生成
 func (r *AlibabaAscpUopTaobaoWaybillQuerycpRequest) SetQueryCpRequest(queryCpRequest *Querycprequest) error {
     r.queryCpRequest = queryCpRequest
     r.Set("query_cp_request", queryCpRequest)
     return nil
 }
 
+// QueryCpRequest Getter
 func (r AlibabaAscpUopTaobaoWaybillQuerycpRequest) GetQueryCpRequest() *Querycprequest {
     return r.queryCpRequest
 }
-

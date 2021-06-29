@@ -1,4 +1,5 @@
 {
+	"id": 47754,
 	"name": "taobao.miniapp.template.onlineapp",
 	"apiChineseName": "上线实例化应用",
 	"description": "将指定的预览版本发布上线，预览版本号由构建实例化或更新实例化接口返回。",

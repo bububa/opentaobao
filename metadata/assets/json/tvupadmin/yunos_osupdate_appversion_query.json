@@ -1,4 +1,5 @@
 {
+	"id": 30408,
 	"name": "yunos.osupdate.appversion.query",
 	"apiChineseName": "分页获取桌面升级任务",
 	"description": "分页获取桌面升级任务",

@@ -1,4 +1,5 @@
 {
+	"id": 30027,
 	"name": "tmall.mei.crm.member.getbypaycode",
 	"apiChineseName": "支付码获取会员信息",
 	"description": "通过支付码获取会员信息",

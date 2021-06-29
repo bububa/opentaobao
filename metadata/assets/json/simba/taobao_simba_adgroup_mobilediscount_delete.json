@@ -1,4 +1,5 @@
 {
+	"id": 25655,
 	"name": "taobao.simba.adgroup.mobilediscount.delete",
 	"apiChineseName": "批量删除adgroup的移动溢价",
 	"description": "批量删除adgroup的移动溢价",

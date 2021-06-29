@@ -1,4 +1,5 @@
 {
+	"id": 41249,
 	"name": "taobao.ailab.aicloud.top.device.openid.authresult.get",
 	"apiChineseName": "获取openId设备授权码验证结果",
 	"description": "获取openId设备授权码验证结果",

@@ -1,4 +1,5 @@
 {
+	"id": 30507,
 	"name": "tmall.servicecenter.service.type.queryall",
 	"apiChineseName": "服务供应链服务类型",
 	"description": "查询天猫服务类型列表",

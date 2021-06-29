@@ -1,4 +1,5 @@
 {
+	"id": 33370,
 	"name": "alibaba.campus.space.group.getspacegrouplistwithattr",
 	"apiChineseName": "分页查询空间分组业务属性",
 	"description": "分页查询空间分组业务属性",

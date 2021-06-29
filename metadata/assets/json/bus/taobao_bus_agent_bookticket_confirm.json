@@ -1,4 +1,5 @@
 {
+	"id": 25473,
 	"name": "taobao.bus.agent.bookticket.confirm",
 	"apiChineseName": "汽车票代理商接口—确认出票是否成功",
 	"description": "代理商通过该接口通知汽车票系统订单出票结果。",

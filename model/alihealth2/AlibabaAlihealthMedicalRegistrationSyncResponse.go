@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-阿里健康支付宝挂号记录回传接口 APIResponse
+阿里健康支付宝挂号记录回传接口 API返回值 
 alibaba.alihealth.medical.registration.sync
 
 阿里健康支付宝挂号记录回传接口
@@ -17,15 +17,11 @@ type AlibabaAlihealthMedicalRegistrationSyncAPIResponse struct {
     AlibabaAlihealthMedicalRegistrationSyncResponse
 }
 
+// 阿里健康支付宝挂号记录回传接口 成功返回结果
 type AlibabaAlihealthMedicalRegistrationSyncResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_medical_registration_sync_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // alinkappserver系统返回的通用结果类
-    
     Result   *ServiceResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

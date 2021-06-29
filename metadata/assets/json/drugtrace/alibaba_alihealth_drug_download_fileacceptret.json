@@ -1,4 +1,5 @@
 {
+	"id": 39660,
 	"name": "alibaba.alihealth.drug.download.fileacceptret",
 	"apiChineseName": "企业上传回执",
 	"description": "拿到企业下载回执，将企业已下载的和未下载成功的条目都相应的改变状态",

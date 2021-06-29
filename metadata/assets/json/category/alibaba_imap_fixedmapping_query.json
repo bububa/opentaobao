@@ -1,4 +1,5 @@
 {
+	"id": 47660,
 	"name": "alibaba.imap.fixedmapping.query",
 	"apiChineseName": "查询两个渠道之间的固定映射关系，不通过算法兜底",
 	"description": "查询两个渠道之间的固定映射关系，不通过算法兜底",

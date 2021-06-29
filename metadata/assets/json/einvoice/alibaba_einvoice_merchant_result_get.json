@@ -1,4 +1,5 @@
 {
+	"id": 28291,
 	"name": "alibaba.einvoice.merchant.result.get",
 	"apiChineseName": "商家自研ERP开票结果获取",
 	"description": "商家自研ERP开票结果获取",

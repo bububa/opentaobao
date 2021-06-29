@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-闲鱼帮卖同步服务商交易统计信息 APIResponse
+闲鱼帮卖同步服务商交易统计信息 API返回值 
 alibaba.idle.consignment.spu.statistics
 
 闲鱼帮卖同步服务商交易统计信息
@@ -17,15 +17,11 @@ type AlibabaIdleConsignmentSpuStatisticsAPIResponse struct {
     AlibabaIdleConsignmentSpuStatisticsResponse
 }
 
+// 闲鱼帮卖同步服务商交易统计信息 成功返回结果
 type AlibabaIdleConsignmentSpuStatisticsResponse struct {
     XMLName xml.Name `xml:"alibaba_idle_consignment_spu_statistics_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 是否成功
-    
     Result   bool `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

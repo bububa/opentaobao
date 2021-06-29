@@ -1,4 +1,5 @@
 {
+	"id": 53388,
 	"name": "alibaba.tmallgenie.scp.plan.materiel.get",
 	"apiChineseName": "1-IBP同步物料接口",
 	"description": "IBP同步物料接口",

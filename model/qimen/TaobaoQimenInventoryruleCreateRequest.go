@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-渠道间库存规则设置接口 APIRequest
+渠道间库存规则设置接口 API请求
 taobao.qimen.inventoryrule.create
 
 渠道间库存规则设置
 */
 type TaobaoQimenInventoryruleCreateRequest struct {
     model.Params
-
     // 
-    request   *RequestDO 
-
+    request   *RequestDO
 }
 
+// 初始化TaobaoQimenInventoryruleCreateRequest对象
 func NewTaobaoQimenInventoryruleCreateRequest() *TaobaoQimenInventoryruleCreateRequest{
     return &TaobaoQimenInventoryruleCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenInventoryruleCreateRequest) GetApiMethodName() string {
     return "taobao.qimen.inventoryrule.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenInventoryruleCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenInventoryruleCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenInventoryruleCreateRequest) SetRequest(request *RequestDO) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenInventoryruleCreateRequest) GetRequest() *RequestDO {
     return r.request
 }
-

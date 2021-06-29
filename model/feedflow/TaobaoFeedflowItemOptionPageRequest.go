@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-分页查询定向标签列表 APIRequest
+分页查询定向标签列表 API请求
 taobao.feedflow.item.option.page
 
 分页查询定向标签列表
 */
 type TaobaoFeedflowItemOptionPageRequest struct {
     model.Params
-
     // 标签查询条件
-    labelQuery   *LabelQueryDto 
-
+    labelQuery   *LabelQueryDto
 }
 
+// 初始化TaobaoFeedflowItemOptionPageRequest对象
 func NewTaobaoFeedflowItemOptionPageRequest() *TaobaoFeedflowItemOptionPageRequest{
     return &TaobaoFeedflowItemOptionPageRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoFeedflowItemOptionPageRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.option.page"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoFeedflowItemOptionPageRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoFeedflowItemOptionPageRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// LabelQuery Setter
+// 标签查询条件
 func (r *TaobaoFeedflowItemOptionPageRequest) SetLabelQuery(labelQuery *LabelQueryDto) error {
     r.labelQuery = labelQuery
     r.Set("label_query", labelQuery)
     return nil
 }
 
+// LabelQuery Getter
 func (r TaobaoFeedflowItemOptionPageRequest) GetLabelQuery() *LabelQueryDto {
     return r.labelQuery
 }
-

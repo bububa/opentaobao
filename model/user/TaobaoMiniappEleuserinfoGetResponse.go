@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取饿了么用户信息 APIResponse
+获取饿了么用户信息 API返回值 
 taobao.miniapp.eleuserinfo.get
 
 获取饿了么用户信息
@@ -17,20 +17,13 @@ type TaobaoMiniappEleuserinfoGetAPIResponse struct {
     TaobaoMiniappEleuserinfoGetResponse
 }
 
+// 获取饿了么用户信息 成功返回结果
 type TaobaoMiniappEleuserinfoGetResponse struct {
     XMLName xml.Name `xml:"miniapp_eleuserinfo_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // traceId
-    
     TraceId   string `json:"trace_id,omitempty" xml:"trace_id,omitempty"`
-
-    
     // 1
-    
     Result   *EleUicInfo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

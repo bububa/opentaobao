@@ -1,4 +1,5 @@
 {
+	"id": 33677,
 	"name": "alibaba.wdk.fulfill.batch.on.task.status.changed",
 	"apiChineseName": "物流管控作业状态回传",
 	"description": "物流管控作业状态回传",

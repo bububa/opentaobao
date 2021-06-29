@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-景点poi搜索-阿信 APIRequest
+景点poi搜索-阿信 API请求
 taobao.alitrip.travel.axin.poi.search
 
 给阿信提供景点poi搜索
 */
 type TaobaoAlitripTravelAxinPoiSearchRequest struct {
     model.Params
-
     // 搜索关键词
-    keyWord   string 
-
+    keyWord   string
 }
 
+// 初始化TaobaoAlitripTravelAxinPoiSearchRequest对象
 func NewTaobaoAlitripTravelAxinPoiSearchRequest() *TaobaoAlitripTravelAxinPoiSearchRequest{
     return &TaobaoAlitripTravelAxinPoiSearchRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAlitripTravelAxinPoiSearchRequest) GetApiMethodName() string {
     return "taobao.alitrip.travel.axin.poi.search"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAlitripTravelAxinPoiSearchRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoAlitripTravelAxinPoiSearchRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// KeyWord Setter
+// 搜索关键词
 func (r *TaobaoAlitripTravelAxinPoiSearchRequest) SetKeyWord(keyWord string) error {
     r.keyWord = keyWord
     r.Set("key_word", keyWord)
     return nil
 }
 
+// KeyWord Getter
 func (r TaobaoAlitripTravelAxinPoiSearchRequest) GetKeyWord() string {
     return r.keyWord
 }
-

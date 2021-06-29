@@ -1,4 +1,5 @@
 {
+	"id": 27559,
 	"name": "taobao.bus.seatprice.get",
 	"apiChineseName": "汽车票余票接口",
 	"description": "提供给商家，查询汽车票班次余票",

@@ -1,4 +1,5 @@
 {
+	"id": 43284,
 	"name": "alibaba.alihealth.medical.registration.syncnew",
 	"apiChineseName": "阿里健康新挂号数据回传",
 	"description": "阿里健康新挂号记录回传接口",

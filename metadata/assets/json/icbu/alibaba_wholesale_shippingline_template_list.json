@@ -1,4 +1,5 @@
 {
+	"id": 25394,
 	"name": "alibaba.wholesale.shippingline.template.list",
 	"apiChineseName": "获取运费模板",
 	"description": "查询运费模板信息",

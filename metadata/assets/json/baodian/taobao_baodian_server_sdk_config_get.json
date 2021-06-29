@@ -1,4 +1,5 @@
 {
+	"id": 23833,
 	"name": "taobao.baodian.server.sdk.config.get",
 	"apiChineseName": "获取宝点SDK的配置项（已迁移）",
 	"description": "获取SDK各种配置项（已迁移）",

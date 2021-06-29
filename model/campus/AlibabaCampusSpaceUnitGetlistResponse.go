@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-多条件查询空间单元信息 APIResponse
+多条件查询空间单元信息 API返回值 
 alibaba.campus.space.unit.getlist
 
 多条件查询空间单元信息
@@ -19,15 +19,11 @@ type AlibabaCampusSpaceUnitGetlistAPIResponse struct {
     AlibabaCampusSpaceUnitGetlistResponse
 }
 
+// 多条件查询空间单元信息 成功返回结果
 type AlibabaCampusSpaceUnitGetlistResponse struct {
     XMLName xml.Name `xml:"alibaba_campus_space_unit_getlist_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // results
-    
     Result   *ListResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

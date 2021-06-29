@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-【机票代理商】退票申请单详情 APIRequest
+【机票代理商】退票申请单详情 API请求
 taobao.alitrip.seller.refund.get
 
 查询退票申请单详情
 */
 type TaobaoAlitripSellerRefundGetRequest struct {
     model.Params
-
     // 申请单ID
-    applyId   int64 
-
+    applyId   int64
 }
 
+// 初始化TaobaoAlitripSellerRefundGetRequest对象
 func NewTaobaoAlitripSellerRefundGetRequest() *TaobaoAlitripSellerRefundGetRequest{
     return &TaobaoAlitripSellerRefundGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAlitripSellerRefundGetRequest) GetApiMethodName() string {
     return "taobao.alitrip.seller.refund.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAlitripSellerRefundGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoAlitripSellerRefundGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ApplyId Setter
+// 申请单ID
 func (r *TaobaoAlitripSellerRefundGetRequest) SetApplyId(applyId int64) error {
     r.applyId = applyId
     r.Set("apply_id", applyId)
     return nil
 }
 
+// ApplyId Getter
 func (r TaobaoAlitripSellerRefundGetRequest) GetApplyId() int64 {
     return r.applyId
 }
-

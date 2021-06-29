@@ -7,41 +7,38 @@ import (
 )
 
 /* 
-查询单据列表 APIRequest
+查询单据列表 API请求
 taobao.wlb.wms.cainiao.bill.query
 
 查询单据列表
 */
 type TaobaoWlbWmsCainiaoBillQueryRequest struct {
     model.Params
-
     // 结束时间，此字段检索订单最后修改时间， 格式 yyyy-MM-dd HH:mm:ss。
-    startModifiedTime   string 
-
+    startModifiedTime   string
     // 起始时间，此字段检索订单最后修改时间， 格式 yyyy-MM-dd HH:mm:ss。
-    endModifiedTime   string 
-
+    endModifiedTime   string
     // 订单类型 201 销售出库 501 退货入库 502 换货出库 503 补发出库904 普通入库 903 普通出库单 306 B2B入库单 305 B2B出库单 601 采购入库 901 退供出库单 701 盘点出库 702 盘点入库 711 库存异动单
-    orderType   string 
-
+    orderType   string
     // 页码。（大于0的整数。默认为1）
-    pageNo   int64 
-
+    pageNo   int64
     // 每页条数。（每页条数不超过50条。默认为50）
-    pageSize   int64 
-
+    pageSize   int64
 }
 
+// 初始化TaobaoWlbWmsCainiaoBillQueryRequest对象
 func NewTaobaoWlbWmsCainiaoBillQueryRequest() *TaobaoWlbWmsCainiaoBillQueryRequest{
     return &TaobaoWlbWmsCainiaoBillQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoWlbWmsCainiaoBillQueryRequest) GetApiMethodName() string {
     return "taobao.wlb.wms.cainiao.bill.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoWlbWmsCainiaoBillQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -49,55 +46,63 @@ func (r TaobaoWlbWmsCainiaoBillQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// StartModifiedTime Setter
+// 结束时间，此字段检索订单最后修改时间， 格式 yyyy-MM-dd HH:mm:ss。
 func (r *TaobaoWlbWmsCainiaoBillQueryRequest) SetStartModifiedTime(startModifiedTime string) error {
     r.startModifiedTime = startModifiedTime
     r.Set("start_modified_time", startModifiedTime)
     return nil
 }
 
+// StartModifiedTime Getter
 func (r TaobaoWlbWmsCainiaoBillQueryRequest) GetStartModifiedTime() string {
     return r.startModifiedTime
 }
-
+// EndModifiedTime Setter
+// 起始时间，此字段检索订单最后修改时间， 格式 yyyy-MM-dd HH:mm:ss。
 func (r *TaobaoWlbWmsCainiaoBillQueryRequest) SetEndModifiedTime(endModifiedTime string) error {
     r.endModifiedTime = endModifiedTime
     r.Set("end_modified_time", endModifiedTime)
     return nil
 }
 
+// EndModifiedTime Getter
 func (r TaobaoWlbWmsCainiaoBillQueryRequest) GetEndModifiedTime() string {
     return r.endModifiedTime
 }
-
+// OrderType Setter
+// 订单类型 201 销售出库 501 退货入库 502 换货出库 503 补发出库904 普通入库 903 普通出库单 306 B2B入库单 305 B2B出库单 601 采购入库 901 退供出库单 701 盘点出库 702 盘点入库 711 库存异动单
 func (r *TaobaoWlbWmsCainiaoBillQueryRequest) SetOrderType(orderType string) error {
     r.orderType = orderType
     r.Set("order_type", orderType)
     return nil
 }
 
+// OrderType Getter
 func (r TaobaoWlbWmsCainiaoBillQueryRequest) GetOrderType() string {
     return r.orderType
 }
-
+// PageNo Setter
+// 页码。（大于0的整数。默认为1）
 func (r *TaobaoWlbWmsCainiaoBillQueryRequest) SetPageNo(pageNo int64) error {
     r.pageNo = pageNo
     r.Set("page_no", pageNo)
     return nil
 }
 
+// PageNo Getter
 func (r TaobaoWlbWmsCainiaoBillQueryRequest) GetPageNo() int64 {
     return r.pageNo
 }
-
+// PageSize Setter
+// 每页条数。（每页条数不超过50条。默认为50）
 func (r *TaobaoWlbWmsCainiaoBillQueryRequest) SetPageSize(pageSize int64) error {
     r.pageSize = pageSize
     r.Set("page_size", pageSize)
     return nil
 }
 
+// PageSize Getter
 func (r TaobaoWlbWmsCainiaoBillQueryRequest) GetPageSize() int64 {
     return r.pageSize
 }
-

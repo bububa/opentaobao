@@ -1,4 +1,5 @@
 {
+	"id": 47659,
 	"name": "alibaba.imap.category.predict",
 	"apiChineseName": "类目预测接口",
 	"description": "* 类目预测接口\n     * 【必填字段】 title, srcChannelId, srcCategoryId, targetChannelId\n     * 【非必填，但有最好填上】itemId, barcode, brandName, pvPairDOList, srcCatNamePathList",

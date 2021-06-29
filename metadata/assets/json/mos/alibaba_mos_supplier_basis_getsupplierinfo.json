@@ -1,4 +1,5 @@
 {
+	"id": 47127,
 	"name": "alibaba.mos.supplier.basis.getsupplierinfo",
 	"apiChineseName": "获取供应商基础信息",
 	"description": "基于供应商id获取供应商基础脱敏信息",

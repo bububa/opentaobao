@@ -1,4 +1,5 @@
 {
+	"id": 33240,
 	"name": "taobao.omniitem.item.get",
 	"apiChineseName": "获取全渠道门店商品",
 	"description": "通过门店id/类目id/商品id单个或多个参数组合查询全渠道门店商品信息",

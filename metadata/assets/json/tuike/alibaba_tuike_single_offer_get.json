@@ -1,4 +1,5 @@
 {
+	"id": 29770,
 	"name": "alibaba.tuike.single.offer.get",
 	"apiChineseName": "查询1688推客平台卖家推广中的商品信息",
 	"description": "查询单个推客商品信息的接口",

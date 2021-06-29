@@ -1,4 +1,5 @@
 {
+	"id": 46667,
 	"name": "tmall.nr.seller.storerange.read",
 	"apiChineseName": "门店服务范围读取",
 	"description": "读取卖家所属门店的服务范围",

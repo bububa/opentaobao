@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取一个产品的信息 APIResponse
+获取一个产品的信息 API返回值 
 taobao.product.get
 
 天猫商家发布商品时，查询关联产品信息时使用，非商品查询接口。商品查询接口：taobao.item.seller.get<br>
@@ -20,15 +20,11 @@ type TaobaoProductGetAPIResponse struct {
     TaobaoProductGetResponse
 }
 
+// 获取一个产品的信息 成功返回结果
 type TaobaoProductGetResponse struct {
     XMLName xml.Name `xml:"product_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回具体信息为入参fields请求的字段信息
-    
     Product   *Product `json:"product,omitempty" xml:"product,omitempty"`
-
-    
 }

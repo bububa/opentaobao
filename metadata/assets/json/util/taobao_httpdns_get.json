@@ -1,4 +1,5 @@
 {
+	"id": 25414,
 	"name": "taobao.httpdns.get",
 	"apiChineseName": "TOPDNS配置",
 	"description": "获取TOP DNS配置",

@@ -1,4 +1,5 @@
 {
+	"id": 48223,
 	"name": "aliyun.industry.tttm.plan.sync",
 	"apiChineseName": "天天特卖生产计划单同步",
 	"description": "ERP系统向天天特卖同步生产计划单的数据",

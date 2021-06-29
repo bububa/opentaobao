@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取信息流账户详情 APIRequest
+获取信息流账户详情 API请求
 taobao.feedflow.account.get
 
 获取账户信息接口。
@@ -17,19 +17,21 @@ taobao.feedflow.account.get
 */
 type TaobaoFeedflowAccountGetRequest struct {
     model.Params
-
 }
 
+// 初始化TaobaoFeedflowAccountGetRequest对象
 func NewTaobaoFeedflowAccountGetRequest() *TaobaoFeedflowAccountGetRequest{
     return &TaobaoFeedflowAccountGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoFeedflowAccountGetRequest) GetApiMethodName() string {
     return "taobao.feedflow.account.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoFeedflowAccountGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,5 +39,3 @@ func (r TaobaoFeedflowAccountGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-优惠券模版修改 APIRequest
+优惠券模版修改 API请求
 alibaba.wdk.coupon.template.update
 
 优惠券模版修改
 */
 type AlibabaWdkCouponTemplateUpdateRequest struct {
     model.Params
-
     // 请求
-    paramCouponTemplateOperateRequest   *CouponTemplateOperateRequest 
-
+    paramCouponTemplateOperateRequest   *CouponTemplateOperateRequest
 }
 
+// 初始化AlibabaWdkCouponTemplateUpdateRequest对象
 func NewAlibabaWdkCouponTemplateUpdateRequest() *AlibabaWdkCouponTemplateUpdateRequest{
     return &AlibabaWdkCouponTemplateUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkCouponTemplateUpdateRequest) GetApiMethodName() string {
     return "alibaba.wdk.coupon.template.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkCouponTemplateUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkCouponTemplateUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamCouponTemplateOperateRequest Setter
+// 请求
 func (r *AlibabaWdkCouponTemplateUpdateRequest) SetParamCouponTemplateOperateRequest(paramCouponTemplateOperateRequest *CouponTemplateOperateRequest) error {
     r.paramCouponTemplateOperateRequest = paramCouponTemplateOperateRequest
     r.Set("param_coupon_template_operate_request", paramCouponTemplateOperateRequest)
     return nil
 }
 
+// ParamCouponTemplateOperateRequest Getter
 func (r AlibabaWdkCouponTemplateUpdateRequest) GetParamCouponTemplateOperateRequest() *CouponTemplateOperateRequest {
     return r.paramCouponTemplateOperateRequest
 }
-

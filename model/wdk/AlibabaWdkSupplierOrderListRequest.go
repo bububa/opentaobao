@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-五道口供应商维度正向订单拉取 APIRequest
+五道口供应商维度正向订单拉取 API请求
 alibaba.wdk.supplier.order.list
 
 五道口供应商维度正向订单拉取
 */
 type AlibabaWdkSupplierOrderListRequest struct {
     model.Params
-
     // 查询参数
-    supplierOrderQueryRequest   *SupplierOrderQueryRequest 
-
+    supplierOrderQueryRequest   *SupplierOrderQueryRequest
 }
 
+// 初始化AlibabaWdkSupplierOrderListRequest对象
 func NewAlibabaWdkSupplierOrderListRequest() *AlibabaWdkSupplierOrderListRequest{
     return &AlibabaWdkSupplierOrderListRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkSupplierOrderListRequest) GetApiMethodName() string {
     return "alibaba.wdk.supplier.order.list"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkSupplierOrderListRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkSupplierOrderListRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// SupplierOrderQueryRequest Setter
+// 查询参数
 func (r *AlibabaWdkSupplierOrderListRequest) SetSupplierOrderQueryRequest(supplierOrderQueryRequest *SupplierOrderQueryRequest) error {
     r.supplierOrderQueryRequest = supplierOrderQueryRequest
     r.Set("supplier_order_query_request", supplierOrderQueryRequest)
     return nil
 }
 
+// SupplierOrderQueryRequest Getter
 func (r AlibabaWdkSupplierOrderListRequest) GetSupplierOrderQueryRequest() *SupplierOrderQueryRequest {
     return r.supplierOrderQueryRequest
 }
-

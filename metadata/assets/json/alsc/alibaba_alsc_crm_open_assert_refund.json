@@ -1,4 +1,5 @@
 {
+	"id": 50742,
 	"name": "alibaba.alsc.crm.open.assert.refund",
 	"apiChineseName": "资产核销回退接口",
 	"description": "回退已经核销的储值积分券资产",

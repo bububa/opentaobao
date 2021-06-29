@@ -1,4 +1,5 @@
 {
+	"id": 24328,
 	"name": "tmall.item.sizemapping.template.get",
 	"apiChineseName": "获取天猫商品尺码表模板",
 	"description": "获取天猫商品尺码表模板",

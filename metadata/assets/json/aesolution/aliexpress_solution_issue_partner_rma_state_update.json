@@ -1,4 +1,5 @@
 {
+	"id": 41478,
 	"name": "aliexpress.solution.issue.partner.rma.state.update",
 	"apiChineseName": "aliexpress.solution.issue.partner.rma.state.update",
 	"description": "Receive changes in state updates for RMAs orders from after sales partners",

@@ -1,4 +1,5 @@
 {
+	"id": 25472,
 	"name": "alibaba.security.jaq.spamregisterprevention.feedback",
 	"apiChineseName": "保护结果反馈",
 	"description": "用户通过这个接口对垃圾注册防控结果进行反馈",

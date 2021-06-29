@@ -1,4 +1,5 @@
 {
+	"id": 27100,
 	"name": "alibaba.einvoice.partner.return",
 	"apiChineseName": "开票商回传开票结果",
 	"description": "开票商返回开票结果数据",

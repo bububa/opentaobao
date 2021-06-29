@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-大麦-直接退票 APIRequest
+大麦-直接退票 API请求
 alibaba.damai.maitix.order.directrefund
 
 大麦-退票
 */
 type AlibabaDamaiMaitixOrderDirectrefundRequest struct {
     model.Params
-
     // 退票入参
-    param   *MoaRefundAuditParam 
-
+    param   *MoaRefundAuditParam
 }
 
+// 初始化AlibabaDamaiMaitixOrderDirectrefundRequest对象
 func NewAlibabaDamaiMaitixOrderDirectrefundRequest() *AlibabaDamaiMaitixOrderDirectrefundRequest{
     return &AlibabaDamaiMaitixOrderDirectrefundRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaDamaiMaitixOrderDirectrefundRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.order.directrefund"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaDamaiMaitixOrderDirectrefundRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaDamaiMaitixOrderDirectrefundRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 退票入参
 func (r *AlibabaDamaiMaitixOrderDirectrefundRequest) SetParam(param *MoaRefundAuditParam) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaDamaiMaitixOrderDirectrefundRequest) GetParam() *MoaRefundAuditParam {
     return r.param
 }
-

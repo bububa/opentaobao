@@ -1,4 +1,5 @@
 {
+	"id": 42540,
 	"name": "alibaba.alihealth.drug.kyt.query.code.relation.from.billcode",
 	"apiChineseName": "根据单据号码查询码单据详情和码信息",
 	"description": "根据单据号码查询码单据详情和码信息",

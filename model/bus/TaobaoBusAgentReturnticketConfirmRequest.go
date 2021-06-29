@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-商家回调退票 APIRequest
+商家回调退票 API请求
 taobao.bus.agent.returnticket.confirm
 
 商家通过TOP接口调用来回传退票状态
 */
 type TaobaoBusAgentReturnticketConfirmRequest struct {
     model.Params
-
     // 退票入参
-    paramAgentConfirmReturnRQ   *AgentConfirmReturnRq 
-
+    paramAgentConfirmReturnRQ   *AgentConfirmReturnRq
 }
 
+// 初始化TaobaoBusAgentReturnticketConfirmRequest对象
 func NewTaobaoBusAgentReturnticketConfirmRequest() *TaobaoBusAgentReturnticketConfirmRequest{
     return &TaobaoBusAgentReturnticketConfirmRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoBusAgentReturnticketConfirmRequest) GetApiMethodName() string {
     return "taobao.bus.agent.returnticket.confirm"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoBusAgentReturnticketConfirmRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoBusAgentReturnticketConfirmRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamAgentConfirmReturnRQ Setter
+// 退票入参
 func (r *TaobaoBusAgentReturnticketConfirmRequest) SetParamAgentConfirmReturnRQ(paramAgentConfirmReturnRQ *AgentConfirmReturnRq) error {
     r.paramAgentConfirmReturnRQ = paramAgentConfirmReturnRQ
     r.Set("param_agent_confirm_return_r_q", paramAgentConfirmReturnRQ)
     return nil
 }
 
+// ParamAgentConfirmReturnRQ Getter
 func (r TaobaoBusAgentReturnticketConfirmRequest) GetParamAgentConfirmReturnRQ() *AgentConfirmReturnRq {
     return r.paramAgentConfirmReturnRQ
 }
-

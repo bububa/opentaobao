@@ -1,4 +1,5 @@
 {
+	"id": 56240,
 	"name": "taobao.miniapp.cloud.store.listfile",
 	"apiChineseName": "云存储根据文件名反查地址",
 	"description": "云存储中，根据文件名反查地址",

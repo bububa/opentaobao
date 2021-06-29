@@ -1,4 +1,5 @@
 {
+	"id": 45023,
 	"name": "alibaba.alihealth.outflow.diagnosis.saveorupdate",
 	"apiChineseName": "处方外流-诊断字典表",
 	"description": "阿里健康-处方外流-对外提供诊断字典表维护功能",

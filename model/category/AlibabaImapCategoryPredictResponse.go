@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-类目预测接口 APIResponse
+类目预测接口 API返回值 
 alibaba.imap.category.predict
 
 * 类目预测接口
@@ -19,15 +19,11 @@ type AlibabaImapCategoryPredictAPIResponse struct {
     AlibabaImapCategoryPredictResponse
 }
 
+// 类目预测接口 成功返回结果
 type AlibabaImapCategoryPredictResponse struct {
     XMLName xml.Name `xml:"alibaba_imap_category_predict_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *AlibabaImapCategoryPredictResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

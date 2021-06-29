@@ -1,4 +1,5 @@
 {
+	"id": 36908,
 	"name": "alibaba.nlife.store.tradedetail.get",
 	"apiChineseName": "查询采购单详情信息",
 	"description": "根据集团id和采购单号，查询采购单的详情信息",

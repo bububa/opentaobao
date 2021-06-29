@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-取消结算调整单 APIResponse
+取消结算调整单 API返回值 
 tmall.service.settleadjustment.cancel
 
 提供给服务商在对取消已经发起的结算调整单。
@@ -18,15 +18,11 @@ type TmallServiceSettleadjustmentCancelAPIResponse struct {
     TmallServiceSettleadjustmentCancelResponse
 }
 
+// 取消结算调整单 成功返回结果
 type TmallServiceSettleadjustmentCancelResponse struct {
     XMLName xml.Name `xml:"tmall_service_settleadjustment_cancel_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TmallServiceSettleadjustmentCancelResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

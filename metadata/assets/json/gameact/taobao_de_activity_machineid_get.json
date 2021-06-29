@@ -1,4 +1,5 @@
 {
+	"id": 23054,
 	"name": "taobao.de.activity.machineid.get",
 	"apiChineseName": "获取设备号",
 	"description": "获取机器设备id",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-品牌营销的订单活动信息查询 APIRequest
+品牌营销的订单活动信息查询 API请求
 alibaba.wdk.bm.trade.activity.query
 
 品牌营销的订单活动信息查询
 */
 type AlibabaWdkBmTradeActivityQueryRequest struct {
     model.Params
-
     // 入参
-    queryParam   *IsvOrderQueryParam 
-
+    queryParam   *IsvOrderQueryParam
 }
 
+// 初始化AlibabaWdkBmTradeActivityQueryRequest对象
 func NewAlibabaWdkBmTradeActivityQueryRequest() *AlibabaWdkBmTradeActivityQueryRequest{
     return &AlibabaWdkBmTradeActivityQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkBmTradeActivityQueryRequest) GetApiMethodName() string {
     return "alibaba.wdk.bm.trade.activity.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkBmTradeActivityQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkBmTradeActivityQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// QueryParam Setter
+// 入参
 func (r *AlibabaWdkBmTradeActivityQueryRequest) SetQueryParam(queryParam *IsvOrderQueryParam) error {
     r.queryParam = queryParam
     r.Set("query_param", queryParam)
     return nil
 }
 
+// QueryParam Getter
 func (r AlibabaWdkBmTradeActivityQueryRequest) GetQueryParam() *IsvOrderQueryParam {
     return r.queryParam
 }
-

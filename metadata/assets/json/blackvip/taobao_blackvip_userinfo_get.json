@@ -1,4 +1,5 @@
 {
+	"id": 46278,
 	"name": "taobao.blackvip.userinfo.get",
 	"apiChineseName": "88VIP用户信息查询",
 	"description": "查询88VIP用户信息，比如用户是否是88VIP，88VIP的失效时间等",

@@ -1,4 +1,5 @@
 {
+	"id": 43380,
 	"name": "alibaba.alihealth.booking.reserve.treat",
 	"apiChineseName": "确认就诊",
 	"description": "统一预约平台，ISV确认就诊",

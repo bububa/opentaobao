@@ -1,4 +1,5 @@
 {
+	"id": 28990,
 	"name": "alibaba.marketing.lottery.award.append",
 	"apiChineseName": "抽奖平台奖品添加接口",
 	"description": "抽奖平台奖品添加接口，目前仅用于奖池众筹项目",

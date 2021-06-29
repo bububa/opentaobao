@@ -1,4 +1,5 @@
 {
+	"id": 30638,
 	"name": "alibaba.wdk.ums.retrieve.confirm",
 	"apiChineseName": "回流单－外部对已拉取到的UMS单据进行确认",
 	"description": "回流单－外部对已拉取到的UMS单据进行确认",

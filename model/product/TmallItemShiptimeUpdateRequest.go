@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-更新商品发货时间 APIRequest
+更新商品发货时间 API请求
 tmall.item.shiptime.update
 
 增加更新删除商品/SKU发货时间(支持同一商品下的SKU同时批量更新)
@@ -44,31 +44,29 @@ tmall.item.shiptime.update
 */
 type TmallItemShiptimeUpdateRequest struct {
     model.Params
-
     // 商品ID
-    itemId   int64 
-
+    itemId   int64
     // 被更新发货时间（商品级）；格式和具体设置的发货时间格式相关。绝对发货时间填写yyyy-MM-dd;相对发货时间填写数字。发货时间必须在当前时间后三天。如果设置的绝对时间小于当前时间的三天后，会清除该商品的发货时间设置。如果是相对时间小于3，则会提示出错。如果shiptimeType为0，要清除商品上的发货时间，该字段可以填任意字符,也可以不填。
-    shipTime   string 
-
+    shipTime   string
     // 被更新SKU的发货时间，后台会根据三个子属性去查找匹配的sku，如果找到就默认对sku进行更新，当无匹配sku且更新类型针对sku，会报错。
-    skuShipTimes   []UpdateSkuShipTime 
-
+    skuShipTimes   []UpdateSkuShipTime
     // 批量更新商品/SKU发货时间的备选项
-    option   *UpdateItemShipTimeOption 
-
+    option   *UpdateItemShipTimeOption
 }
 
+// 初始化TmallItemShiptimeUpdateRequest对象
 func NewTmallItemShiptimeUpdateRequest() *TmallItemShiptimeUpdateRequest{
     return &TmallItemShiptimeUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallItemShiptimeUpdateRequest) GetApiMethodName() string {
     return "tmall.item.shiptime.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallItemShiptimeUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -76,45 +74,51 @@ func (r TmallItemShiptimeUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ItemId Setter
+// 商品ID
 func (r *TmallItemShiptimeUpdateRequest) SetItemId(itemId int64) error {
     r.itemId = itemId
     r.Set("item_id", itemId)
     return nil
 }
 
+// ItemId Getter
 func (r TmallItemShiptimeUpdateRequest) GetItemId() int64 {
     return r.itemId
 }
-
+// ShipTime Setter
+// 被更新发货时间（商品级）；格式和具体设置的发货时间格式相关。绝对发货时间填写yyyy-MM-dd;相对发货时间填写数字。发货时间必须在当前时间后三天。如果设置的绝对时间小于当前时间的三天后，会清除该商品的发货时间设置。如果是相对时间小于3，则会提示出错。如果shiptimeType为0，要清除商品上的发货时间，该字段可以填任意字符,也可以不填。
 func (r *TmallItemShiptimeUpdateRequest) SetShipTime(shipTime string) error {
     r.shipTime = shipTime
     r.Set("ship_time", shipTime)
     return nil
 }
 
+// ShipTime Getter
 func (r TmallItemShiptimeUpdateRequest) GetShipTime() string {
     return r.shipTime
 }
-
+// SkuShipTimes Setter
+// 被更新SKU的发货时间，后台会根据三个子属性去查找匹配的sku，如果找到就默认对sku进行更新，当无匹配sku且更新类型针对sku，会报错。
 func (r *TmallItemShiptimeUpdateRequest) SetSkuShipTimes(skuShipTimes []UpdateSkuShipTime) error {
     r.skuShipTimes = skuShipTimes
     r.Set("sku_ship_times", skuShipTimes)
     return nil
 }
 
+// SkuShipTimes Getter
 func (r TmallItemShiptimeUpdateRequest) GetSkuShipTimes() []UpdateSkuShipTime {
     return r.skuShipTimes
 }
-
+// Option Setter
+// 批量更新商品/SKU发货时间的备选项
 func (r *TmallItemShiptimeUpdateRequest) SetOption(option *UpdateItemShipTimeOption) error {
     r.option = option
     r.Set("option", option)
     return nil
 }
 
+// Option Getter
 func (r TmallItemShiptimeUpdateRequest) GetOption() *UpdateItemShipTimeOption {
     return r.option
 }
-

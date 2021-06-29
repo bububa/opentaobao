@@ -1,4 +1,5 @@
 {
+	"id": 41822,
 	"name": "alibaba.it.cloudlive.getagentconfig",
 	"apiChineseName": "线上巡店Agent获取配置",
 	"description": "线上巡店应用，外部Agent设备获取设备配置信息，根据配置信息链接mqtt，跟云端进行进一步的消息通信。",

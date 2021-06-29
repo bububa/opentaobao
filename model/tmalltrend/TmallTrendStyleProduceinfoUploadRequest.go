@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-款式生产信息同步API APIRequest
+款式生产信息同步API API请求
 tmall.trend.style.produceinfo.upload
 
 款式生产信息同步至平台
 */
 type TmallTrendStyleProduceinfoUploadRequest struct {
     model.Params
-
     // 款式生产信息列表，单次同步最对1000条
-    styleProduceInfoBoList   []StyleProduceInfoBO 
-
+    styleProduceInfoBoList   []StyleProduceInfoBO
 }
 
+// 初始化TmallTrendStyleProduceinfoUploadRequest对象
 func NewTmallTrendStyleProduceinfoUploadRequest() *TmallTrendStyleProduceinfoUploadRequest{
     return &TmallTrendStyleProduceinfoUploadRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallTrendStyleProduceinfoUploadRequest) GetApiMethodName() string {
     return "tmall.trend.style.produceinfo.upload"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallTrendStyleProduceinfoUploadRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallTrendStyleProduceinfoUploadRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// StyleProduceInfoBoList Setter
+// 款式生产信息列表，单次同步最对1000条
 func (r *TmallTrendStyleProduceinfoUploadRequest) SetStyleProduceInfoBoList(styleProduceInfoBoList []StyleProduceInfoBO) error {
     r.styleProduceInfoBoList = styleProduceInfoBoList
     r.Set("style_produce_info_bo_list", styleProduceInfoBoList)
     return nil
 }
 
+// StyleProduceInfoBoList Getter
 func (r TmallTrendStyleProduceinfoUploadRequest) GetStyleProduceInfoBoList() []StyleProduceInfoBO {
     return r.styleProduceInfoBoList
 }
-

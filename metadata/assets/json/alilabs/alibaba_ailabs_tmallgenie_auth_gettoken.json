@@ -1,4 +1,5 @@
 {
+	"id": 44921,
 	"name": "alibaba.ailabs.tmallgenie.auth.gettoken",
 	"apiChineseName": "设备授权",
 	"description": "获取设备授权码",

@@ -1,4 +1,5 @@
 {
+	"id": 44696,
 	"name": "alitrip.hotel.hms.partner.info.get",
 	"apiChineseName": "获取合作商信息",
 	"description": "用于给到未来酒店读取与飞猪酒店合作的合作商信息，开展单体联盟业务",

@@ -1,4 +1,5 @@
 {
+	"id": 55693,
 	"name": "taobao.alitrip.axin.trans.pay.register.create",
 	"apiChineseName": "提交支付服务开通",
 	"description": "阿信供销平台-提交支付服务开通接口",

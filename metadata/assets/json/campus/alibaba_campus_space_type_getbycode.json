@@ -1,4 +1,5 @@
 {
+	"id": 38131,
 	"name": "alibaba.campus.space.type.getbycode",
 	"apiChineseName": "根据类别编码查询类别",
 	"description": "根据类别编码查询类别\nHSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService\nHSF方法名称：getByCode",

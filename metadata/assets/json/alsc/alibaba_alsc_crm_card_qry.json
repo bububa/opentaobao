@@ -1,4 +1,5 @@
 {
+	"id": 45917,
 	"name": "alibaba.alsc.crm.card.qry",
 	"apiChineseName": "查询卡实例",
 	"description": "查询卡实例（优先使用卡实例ID查询，没有则用物理卡号查询）",

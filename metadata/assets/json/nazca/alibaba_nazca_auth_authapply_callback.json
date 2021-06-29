@@ -1,4 +1,5 @@
 {
+	"id": 28643,
 	"name": "alibaba.nazca.auth.authapply.callback",
 	"apiChineseName": "认证的统一回调接口",
 	"description": "认证的统一回调接口",

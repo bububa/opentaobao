@@ -1,4 +1,5 @@
 {
+	"id": 28845,
 	"name": "yunos.tvpubadmin.content.single.video.getlist",
 	"apiChineseName": "单视频审核获取视频列表",
 	"description": "牌照方在审核单视频时获取单视频列表接口",

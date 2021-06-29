@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-自助机失效二维码 APIRequest
+自助机失效二维码 API请求
 taobao.bus.disableqrcode.set
 
 使创建的二维码失效
 */
 type TaobaoBusDisableqrcodeSetRequest struct {
     model.Params
-
     // 飞猪订单号
-    alitripOrderId   string 
-
+    alitripOrderId   string
 }
 
+// 初始化TaobaoBusDisableqrcodeSetRequest对象
 func NewTaobaoBusDisableqrcodeSetRequest() *TaobaoBusDisableqrcodeSetRequest{
     return &TaobaoBusDisableqrcodeSetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoBusDisableqrcodeSetRequest) GetApiMethodName() string {
     return "taobao.bus.disableqrcode.set"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoBusDisableqrcodeSetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoBusDisableqrcodeSetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// AlitripOrderId Setter
+// 飞猪订单号
 func (r *TaobaoBusDisableqrcodeSetRequest) SetAlitripOrderId(alitripOrderId string) error {
     r.alitripOrderId = alitripOrderId
     r.Set("alitrip_order_id", alitripOrderId)
     return nil
 }
 
+// AlitripOrderId Getter
 func (r TaobaoBusDisableqrcodeSetRequest) GetAlitripOrderId() string {
     return r.alitripOrderId
 }
-

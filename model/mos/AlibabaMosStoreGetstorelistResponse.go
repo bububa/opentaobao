@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据屏编号获取专柜集 APIResponse
+根据屏编号获取专柜集 API返回值 
 alibaba.mos.store.getstorelist
 
 根据屏编号获取专柜集
@@ -17,15 +17,11 @@ type AlibabaMosStoreGetstorelistAPIResponse struct {
     AlibabaMosStoreGetstorelistResponse
 }
 
+// 根据屏编号获取专柜集 成功返回结果
 type AlibabaMosStoreGetstorelistResponse struct {
     XMLName xml.Name `xml:"alibaba_mos_store_getstorelist_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *AlibabaMosStoreGetstorelistResultDo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

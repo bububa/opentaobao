@@ -1,4 +1,5 @@
 {
+	"id": 44033,
 	"name": "tmall.fans.cashpool.create",
 	"apiChineseName": "创建资金池",
 	"description": "商家创建资金池接口",

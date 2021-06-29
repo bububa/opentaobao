@@ -1,4 +1,5 @@
 {
+	"id": 31190,
 	"name": "yunos.tvpubadmin.manage.topic.contentedit",
 	"apiChineseName": "专题关联内容编辑",
 	"description": "编辑专题关联的内容",

@@ -1,4 +1,5 @@
 {
+	"id": 28598,
 	"name": "yunos.tvpubadmin.content.show.getbyshowlongid",
 	"apiChineseName": "迎客松根据节目longid获取节目元数据",
 	"description": "迎客松根据节目longid获取节目元数据",

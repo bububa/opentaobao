@@ -1,4 +1,5 @@
 {
+	"id": 27500,
 	"name": "cainiao.cloudprint.templates.migrate",
 	"apiChineseName": "云打印模板迁移接口",
 	"description": "云打印模板迁移接口",

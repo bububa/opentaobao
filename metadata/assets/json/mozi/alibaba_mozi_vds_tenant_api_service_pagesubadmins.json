@@ -1,4 +1,5 @@
 {
+	"id": 49923,
 	"name": "alibaba.mozi.vds.tenant.api.service.pagesubadmins",
 	"apiChineseName": "分页查询租户子管理员",
 	"description": "分页查询租户子管理员",

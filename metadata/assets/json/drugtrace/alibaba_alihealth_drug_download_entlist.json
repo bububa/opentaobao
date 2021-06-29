@@ -1,4 +1,5 @@
 {
+	"id": 39666,
 	"name": "alibaba.alihealth.drug.download.entlist",
 	"apiChineseName": "企业下载列表",
 	"description": "获取企业的下载文件列表",

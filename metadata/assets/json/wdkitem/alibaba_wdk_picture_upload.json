@@ -1,4 +1,5 @@
 {
+	"id": 32686,
 	"name": "alibaba.wdk.picture.upload",
 	"apiChineseName": "图片上传接口",
 	"description": "上传图片",

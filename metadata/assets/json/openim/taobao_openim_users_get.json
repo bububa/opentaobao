@@ -1,4 +1,5 @@
 {
+	"id": 24157,
 	"name": "taobao.openim.users.get",
 	"apiChineseName": "批量获取用户信息",
 	"description": "批量获取用户信息",

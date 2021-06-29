@@ -1,4 +1,5 @@
 {
+	"id": 25727,
 	"name": "taobao.bus.agent.city.change",
 	"apiChineseName": "城市变更",
 	"description": "代理商通知城市变更，比如可售变为不可售等",

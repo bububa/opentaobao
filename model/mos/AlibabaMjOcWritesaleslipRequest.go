@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-开票占库 APIRequest
+开票占库 API请求
 alibaba.mj.oc.writesaleslip
 
 开票占库
 */
 type AlibabaMjOcWritesaleslipRequest struct {
     model.Params
-
     // 开票占库入参
-    posSaleOrder   *PosSaleOrderDto 
-
+    posSaleOrder   *PosSaleOrderDto
 }
 
+// 初始化AlibabaMjOcWritesaleslipRequest对象
 func NewAlibabaMjOcWritesaleslipRequest() *AlibabaMjOcWritesaleslipRequest{
     return &AlibabaMjOcWritesaleslipRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaMjOcWritesaleslipRequest) GetApiMethodName() string {
     return "alibaba.mj.oc.writesaleslip"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaMjOcWritesaleslipRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaMjOcWritesaleslipRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// PosSaleOrder Setter
+// 开票占库入参
 func (r *AlibabaMjOcWritesaleslipRequest) SetPosSaleOrder(posSaleOrder *PosSaleOrderDto) error {
     r.posSaleOrder = posSaleOrder
     r.Set("pos_sale_order", posSaleOrder)
     return nil
 }
 
+// PosSaleOrder Getter
 func (r AlibabaMjOcWritesaleslipRequest) GetPosSaleOrder() *PosSaleOrderDto {
     return r.posSaleOrder
 }
-

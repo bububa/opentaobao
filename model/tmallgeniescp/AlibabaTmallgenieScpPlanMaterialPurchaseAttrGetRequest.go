@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-物料的采购属性查询 APIRequest
+物料的采购属性查询 API请求
 alibaba.tmallgenie.scp.plan.material.purchase.attr.get
 
 物料的采购属性查询
 */
 type AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest struct {
     model.Params
-
     // 扩展字段
-    requestExtendJson   string 
-
+    requestExtendJson   string
 }
 
+// 初始化AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest对象
 func NewAlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest() *AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest{
     return &AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest) GetApiMethodName() string {
     return "alibaba.tmallgenie.scp.plan.material.purchase.attr.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest) GetApiParams() u
     }
     return params
 }
-
-
+// RequestExtendJson Setter
+// 扩展字段
 func (r *AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest) SetRequestExtendJson(requestExtendJson string) error {
     r.requestExtendJson = requestExtendJson
     r.Set("request_extend_json", requestExtendJson)
     return nil
 }
 
+// RequestExtendJson Getter
 func (r AlibabaTmallgenieScpPlanMaterialPurchaseAttrGetRequest) GetRequestExtendJson() string {
     return r.requestExtendJson
 }
-

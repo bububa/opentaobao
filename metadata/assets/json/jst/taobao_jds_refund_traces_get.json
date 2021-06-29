@@ -1,4 +1,5 @@
 {
+	"id": 23845,
 	"name": "taobao.jds.refund.traces.get",
 	"apiChineseName": "获取单条退款跟踪详情",
 	"description": "获取聚石塔数据共享的交易全链路的退款信息",

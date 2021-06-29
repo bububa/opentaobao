@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-手淘定向优惠打标接口 APIResponse
+手淘定向优惠打标接口 API返回值 
 taobao.ump.shoutaotag.add
 
 手淘定向优惠的优惠标签打标接口
@@ -18,15 +18,11 @@ type TaobaoUmpShoutaotagAddAPIResponse struct {
     TaobaoUmpShoutaotagAddResponse
 }
 
+// 手淘定向优惠打标接口 成功返回结果
 type TaobaoUmpShoutaotagAddResponse struct {
     XMLName xml.Name `xml:"ump_shoutaotag_add_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 是否打标成功
-    
     AddResult   bool `json:"add_result,omitempty" xml:"add_result,omitempty"`
-
-    
 }

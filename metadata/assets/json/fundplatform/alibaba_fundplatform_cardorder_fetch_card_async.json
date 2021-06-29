@@ -1,4 +1,5 @@
 {
+	"id": 30285,
 	"name": "alibaba.fundplatform.cardorder.fetch.card.async",
 	"apiChineseName": "异步批量生成储值卡",
 	"description": "外部业务方异步批量生成储值卡的接口。同步只返回接受成功，异步会通知制卡成功",

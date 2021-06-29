@@ -1,4 +1,5 @@
 {
+	"id": 48453,
 	"name": "alibaba.it.esl.eslimage.showimagecommon",
 	"apiChineseName": "对混合云提供的刷图接口",
 	"description": "混合云使用，提供给isv和我们混合云环境部署的应用刷图",

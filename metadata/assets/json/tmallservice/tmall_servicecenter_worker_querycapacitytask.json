@@ -1,4 +1,5 @@
 {
+	"id": 31305,
 	"name": "tmall.servicecenter.worker.querycapacitytask",
 	"apiChineseName": "查询需求容量",
 	"description": "查询需求容量",

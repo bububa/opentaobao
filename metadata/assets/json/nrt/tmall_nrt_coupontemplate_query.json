@@ -1,4 +1,5 @@
 {
+	"id": 45387,
 	"name": "tmall.nrt.coupontemplate.query",
 	"apiChineseName": "券模板查询",
 	"description": "新零售场景，商家拉取在新零售工作台设置的券数据",

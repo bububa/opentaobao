@@ -1,4 +1,5 @@
 {
+	"id": 23869,
 	"name": "taobao.wlb.waybill.i.get",
 	"apiChineseName": "获取物流服务商电子面单号v1.0",
 	"description": "商家根据订单信息，实时、批量获取指定物流服务商的电子面单号。",

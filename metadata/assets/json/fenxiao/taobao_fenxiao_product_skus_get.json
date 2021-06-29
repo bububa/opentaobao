@@ -1,4 +1,5 @@
 {
+	"id": 10947,
 	"name": "taobao.fenxiao.product.skus.get",
 	"apiChineseName": "SKU查询接口",
 	"description": "产品sku查询",

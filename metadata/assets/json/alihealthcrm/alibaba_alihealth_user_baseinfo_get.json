@@ -1,4 +1,5 @@
 {
+	"id": 30458,
 	"name": "alibaba.alihealth.user.baseinfo.get",
 	"apiChineseName": "获取用户基础信息",
 	"description": "获取用户基础信息",

@@ -1,4 +1,5 @@
 {
+	"id": 38723,
 	"name": "alibaba.campus.core.app.getappusages",
 	"apiChineseName": "根据应用ID获得应用所在的园区",
 	"description": "传入应用的id,  获得用户授权的园区",

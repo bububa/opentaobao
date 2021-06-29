@@ -1,4 +1,5 @@
 {
+	"id": 32946,
 	"name": "alibaba.lst.pos.open.goods.getgoodsbypaging",
 	"apiChineseName": "分页查询用户全量的门店域商品接口(每页最多20条)",
 	"description": "分页查询用户全量的门店域商品接口(每页最多20条)",

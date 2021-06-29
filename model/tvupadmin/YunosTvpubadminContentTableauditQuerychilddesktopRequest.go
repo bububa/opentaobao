@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-迎客松查看小酷宝桌面坑位元数据列表 APIRequest
+迎客松查看小酷宝桌面坑位元数据列表 API请求
 yunos.tvpubadmin.content.tableaudit.querychilddesktop
 
 迎客松查看小酷宝桌面坑位元数据列表
 */
 type YunosTvpubadminContentTableauditQuerychilddesktopRequest struct {
     model.Params
-
     // 小酷宝桌面坑位查询参数
-    query   string 
-
+    query   string
 }
 
+// 初始化YunosTvpubadminContentTableauditQuerychilddesktopRequest对象
 func NewYunosTvpubadminContentTableauditQuerychilddesktopRequest() *YunosTvpubadminContentTableauditQuerychilddesktopRequest{
     return &YunosTvpubadminContentTableauditQuerychilddesktopRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminContentTableauditQuerychilddesktopRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.tableaudit.querychilddesktop"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminContentTableauditQuerychilddesktopRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminContentTableauditQuerychilddesktopRequest) GetApiParams()
     }
     return params
 }
-
-
+// Query Setter
+// 小酷宝桌面坑位查询参数
 func (r *YunosTvpubadminContentTableauditQuerychilddesktopRequest) SetQuery(query string) error {
     r.query = query
     r.Set("query", query)
     return nil
 }
 
+// Query Getter
 func (r YunosTvpubadminContentTableauditQuerychilddesktopRequest) GetQuery() string {
     return r.query
 }
-

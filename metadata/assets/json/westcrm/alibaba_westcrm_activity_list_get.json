@@ -1,4 +1,5 @@
 {
+	"id": 41194,
 	"name": "alibaba.westcrm.activity.list.get",
 	"apiChineseName": "获取活动列表接口",
 	"description": "获取活动列表提供给友盟\u0026互动屏",

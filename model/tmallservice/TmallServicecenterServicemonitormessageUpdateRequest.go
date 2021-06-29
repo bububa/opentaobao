@@ -7,35 +7,34 @@ import (
 )
 
 /* 
-服务商更新预警消息状态 APIRequest
+服务商更新预警消息状态 API请求
 tmall.servicecenter.servicemonitormessage.update
 
 服务商收到预警后，需要进行回复已读状态，并可填写备注
 */
 type TmallServicecenterServicemonitormessageUpdateRequest struct {
     model.Params
-
     // 预警消息id
-    serviceMonitorMessageId   int64 
-
+    serviceMonitorMessageId   int64
     // 预警处理备注
-    memo   string 
-
+    memo   string
     // 可更新状态：3、已读
-    status   int64 
-
+    status   int64
 }
 
+// 初始化TmallServicecenterServicemonitormessageUpdateRequest对象
 func NewTmallServicecenterServicemonitormessageUpdateRequest() *TmallServicecenterServicemonitormessageUpdateRequest{
     return &TmallServicecenterServicemonitormessageUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterServicemonitormessageUpdateRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicemonitormessage.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterServicemonitormessageUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -43,35 +42,39 @@ func (r TmallServicecenterServicemonitormessageUpdateRequest) GetApiParams() url
     }
     return params
 }
-
-
+// ServiceMonitorMessageId Setter
+// 预警消息id
 func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetServiceMonitorMessageId(serviceMonitorMessageId int64) error {
     r.serviceMonitorMessageId = serviceMonitorMessageId
     r.Set("service_monitor_message_id", serviceMonitorMessageId)
     return nil
 }
 
+// ServiceMonitorMessageId Getter
 func (r TmallServicecenterServicemonitormessageUpdateRequest) GetServiceMonitorMessageId() int64 {
     return r.serviceMonitorMessageId
 }
-
+// Memo Setter
+// 预警处理备注
 func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetMemo(memo string) error {
     r.memo = memo
     r.Set("memo", memo)
     return nil
 }
 
+// Memo Getter
 func (r TmallServicecenterServicemonitormessageUpdateRequest) GetMemo() string {
     return r.memo
 }
-
+// Status Setter
+// 可更新状态：3、已读
 func (r *TmallServicecenterServicemonitormessageUpdateRequest) SetStatus(status int64) error {
     r.status = status
     r.Set("status", status)
     return nil
 }
 
+// Status Getter
 func (r TmallServicecenterServicemonitormessageUpdateRequest) GetStatus() int64 {
     return r.status
 }
-

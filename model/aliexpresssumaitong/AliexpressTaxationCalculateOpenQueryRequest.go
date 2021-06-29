@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-关务所需的申报清关字段 APIRequest
+关务所需的申报清关字段 API请求
 aliexpress.taxation.calculate.open.query
 
 关务所需的申报清关字段
 */
 type AliexpressTaxationCalculateOpenQueryRequest struct {
     model.Params
-
     // 主订单id
-    orderId   string 
-
+    orderId   string
 }
 
+// 初始化AliexpressTaxationCalculateOpenQueryRequest对象
 func NewAliexpressTaxationCalculateOpenQueryRequest() *AliexpressTaxationCalculateOpenQueryRequest{
     return &AliexpressTaxationCalculateOpenQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AliexpressTaxationCalculateOpenQueryRequest) GetApiMethodName() string {
     return "aliexpress.taxation.calculate.open.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AliexpressTaxationCalculateOpenQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AliexpressTaxationCalculateOpenQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OrderId Setter
+// 主订单id
 func (r *AliexpressTaxationCalculateOpenQueryRequest) SetOrderId(orderId string) error {
     r.orderId = orderId
     r.Set("order_id", orderId)
     return nil
 }
 
+// OrderId Getter
 func (r AliexpressTaxationCalculateOpenQueryRequest) GetOrderId() string {
     return r.orderId
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 55981,
 	"name": "alibaba.alihouse.newhome.project.presalepermit.delete",
 	"apiChineseName": "删除楼盘预售证",
 	"description": "删除楼盘预售证信息",

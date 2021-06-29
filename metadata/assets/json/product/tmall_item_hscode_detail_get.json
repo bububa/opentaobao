@@ -1,4 +1,5 @@
 {
+	"id": 30672,
 	"name": "tmall.item.hscode.detail.get",
 	"apiChineseName": "通过hscode获取计量单位",
 	"description": "通过hscode获取计量单位和销售单位",

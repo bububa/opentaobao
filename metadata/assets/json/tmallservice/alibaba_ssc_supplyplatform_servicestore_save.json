@@ -1,4 +1,5 @@
 {
+	"id": 49253,
 	"name": "alibaba.ssc.supplyplatform.servicestore.save",
 	"apiChineseName": "保存网点",
 	"description": "网点创建、修改",

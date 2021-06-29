@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-聚安全实人认证查询认证结果 APIRequest
+聚安全实人认证查询认证结果 API请求
 alibaba.security.jaq.rp.query
 
 聚安全实人认证查询认证结果
 */
 type AlibabaSecurityJaqRpQueryRequest struct {
     model.Params
-
     // token
-    verifyToken   string 
-
+    verifyToken   string
 }
 
+// 初始化AlibabaSecurityJaqRpQueryRequest对象
 func NewAlibabaSecurityJaqRpQueryRequest() *AlibabaSecurityJaqRpQueryRequest{
     return &AlibabaSecurityJaqRpQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaSecurityJaqRpQueryRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.rp.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaSecurityJaqRpQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaSecurityJaqRpQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// VerifyToken Setter
+// token
 func (r *AlibabaSecurityJaqRpQueryRequest) SetVerifyToken(verifyToken string) error {
     r.verifyToken = verifyToken
     r.Set("verify_token", verifyToken)
     return nil
 }
 
+// VerifyToken Getter
 func (r AlibabaSecurityJaqRpQueryRequest) GetVerifyToken() string {
     return r.verifyToken
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 25975,
 	"name": "taobao.alitrip.travel.trade.memo.update",
 	"apiChineseName": "修改一笔交易备注",
 	"description": "更新一笔交易备注",

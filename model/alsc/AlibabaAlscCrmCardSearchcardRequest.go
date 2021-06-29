@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-搜索卡实例列表(支持号段查询) APIRequest
+搜索卡实例列表(支持号段查询) API请求
 alibaba.alsc.crm.card.searchcard
 
 搜索卡实例列表(支持号段查询)
 */
 type AlibabaAlscCrmCardSearchcardRequest struct {
     model.Params
-
     // 请求对象
-    paramSearchCardOpenReq   *SearchCardOpenReq 
-
+    paramSearchCardOpenReq   *SearchCardOpenReq
 }
 
+// 初始化AlibabaAlscCrmCardSearchcardRequest对象
 func NewAlibabaAlscCrmCardSearchcardRequest() *AlibabaAlscCrmCardSearchcardRequest{
     return &AlibabaAlscCrmCardSearchcardRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlscCrmCardSearchcardRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.card.searchcard"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlscCrmCardSearchcardRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlscCrmCardSearchcardRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamSearchCardOpenReq Setter
+// 请求对象
 func (r *AlibabaAlscCrmCardSearchcardRequest) SetParamSearchCardOpenReq(paramSearchCardOpenReq *SearchCardOpenReq) error {
     r.paramSearchCardOpenReq = paramSearchCardOpenReq
     r.Set("param_search_card_open_req", paramSearchCardOpenReq)
     return nil
 }
 
+// ParamSearchCardOpenReq Getter
 func (r AlibabaAlscCrmCardSearchcardRequest) GetParamSearchCardOpenReq() *SearchCardOpenReq {
     return r.paramSearchCardOpenReq
 }
-

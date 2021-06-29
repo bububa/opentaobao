@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-视频播放 APIResponse
+视频播放 API返回值 
 alibaba.interact.sensor.glue
 
 视频播放
@@ -17,15 +17,11 @@ type AlibabaInteractSensorGlueAPIResponse struct {
     AlibabaInteractSensorGlueResponse
 }
 
+// 视频播放 成功返回结果
 type AlibabaInteractSensorGlueResponse struct {
     XMLName xml.Name `xml:"alibaba_interact_sensor_glue_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result=0
-    
     Result   string `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

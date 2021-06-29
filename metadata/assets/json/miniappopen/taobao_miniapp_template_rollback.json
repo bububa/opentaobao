@@ -1,4 +1,5 @@
 {
+	"id": 52984,
 	"name": "taobao.miniapp.template.rollback",
 	"apiChineseName": "回滚实例化应用",
 	"description": "将实例化小程序回滚到指定版本",

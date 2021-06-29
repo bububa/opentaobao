@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取国家列表 APIRequest
+获取国家列表 API请求
 aliexpress.social.country.get
 
 获取目前AE支持的国家列表
 */
 type AliexpressSocialCountryGetRequest struct {
     model.Params
-
     // 语言
-    language   string 
-
+    language   string
 }
 
+// 初始化AliexpressSocialCountryGetRequest对象
 func NewAliexpressSocialCountryGetRequest() *AliexpressSocialCountryGetRequest{
     return &AliexpressSocialCountryGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AliexpressSocialCountryGetRequest) GetApiMethodName() string {
     return "aliexpress.social.country.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AliexpressSocialCountryGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AliexpressSocialCountryGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Language Setter
+// 语言
 func (r *AliexpressSocialCountryGetRequest) SetLanguage(language string) error {
     r.language = language
     r.Set("language", language)
     return nil
 }
 
+// Language Getter
 func (r AliexpressSocialCountryGetRequest) GetLanguage() string {
     return r.language
 }
-

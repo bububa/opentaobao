@@ -1,4 +1,5 @@
 {
+	"id": 26204,
 	"name": "taobao.refund.refusereason.get",
 	"apiChineseName": "获取拒绝原因列表",
 	"description": "获取商家拒绝原因列表",

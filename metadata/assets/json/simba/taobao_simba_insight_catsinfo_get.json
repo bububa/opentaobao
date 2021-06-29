@@ -1,4 +1,5 @@
 {
+	"id": 23580,
 	"name": "taobao.simba.insight.catsinfo.get",
 	"apiChineseName": "类目信息获取",
 	"description": "获取类目信息，此接口既提供所有顶级类目的查询，又提供给定类目id自身信息和子类目信息的查询，所以可以根据此接口逐层获取所有的类目信息",

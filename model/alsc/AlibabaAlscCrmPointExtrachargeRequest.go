@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-积分补录 APIRequest
+积分补录 API请求
 alibaba.alsc.crm.point.extracharge
 
 积分补录
 */
 type AlibabaAlscCrmPointExtrachargeRequest struct {
     model.Params
-
     // 入参
-    paramExtraChargePointOpenReq   *ExtraChargePointOpenReq 
-
+    paramExtraChargePointOpenReq   *ExtraChargePointOpenReq
 }
 
+// 初始化AlibabaAlscCrmPointExtrachargeRequest对象
 func NewAlibabaAlscCrmPointExtrachargeRequest() *AlibabaAlscCrmPointExtrachargeRequest{
     return &AlibabaAlscCrmPointExtrachargeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlscCrmPointExtrachargeRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.point.extracharge"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlscCrmPointExtrachargeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlscCrmPointExtrachargeRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamExtraChargePointOpenReq Setter
+// 入参
 func (r *AlibabaAlscCrmPointExtrachargeRequest) SetParamExtraChargePointOpenReq(paramExtraChargePointOpenReq *ExtraChargePointOpenReq) error {
     r.paramExtraChargePointOpenReq = paramExtraChargePointOpenReq
     r.Set("param_extra_charge_point_open_req", paramExtraChargePointOpenReq)
     return nil
 }
 
+// ParamExtraChargePointOpenReq Getter
 func (r AlibabaAlscCrmPointExtrachargeRequest) GetParamExtraChargePointOpenReq() *ExtraChargePointOpenReq {
     return r.paramExtraChargePointOpenReq
 }
-

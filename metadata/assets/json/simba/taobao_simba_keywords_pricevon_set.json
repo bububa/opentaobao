@@ -1,4 +1,5 @@
 {
+	"id": 21685,
 	"name": "taobao.simba.keywords.pricevon.set",
 	"apiChineseName": "设置一批关键词的信息",
 	"description": "设置一批关键词的信息，包含无线出价、计算机出价和关键词匹配方式",

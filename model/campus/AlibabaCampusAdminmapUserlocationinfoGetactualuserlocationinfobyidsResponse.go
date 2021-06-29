@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据userId(支持单个或批量)获取用户实时位置信息 APIResponse
+根据userId(支持单个或批量)获取用户实时位置信息 API返回值 
 alibaba.campus.adminmap.userlocationinfo.getactualuserlocationinfobyids
 
 根据userId(支持单个或批量)获取用户实时位置信息 
@@ -19,15 +19,11 @@ type AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsAPIRespo
     AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsResponse
 }
 
+// 根据userId(支持单个或批量)获取用户实时位置信息 成功返回结果
 type AlibabaCampusAdminmapUserlocationinfoGetactualuserlocationinfobyidsResponse struct {
     XMLName xml.Name `xml:"alibaba_campus_adminmap_userlocationinfo_getactualuserlocationinfobyids_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *ListResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 49615,
 	"name": "taobao.opentrade.activity.query",
 	"apiChineseName": "查询尖货活动信息",
 	"description": "尖货交易活动信息配置，查询尖货活动信息",

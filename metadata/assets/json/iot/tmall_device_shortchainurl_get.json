@@ -1,4 +1,5 @@
 {
+	"id": 40497,
 	"name": "tmall.device.shortchainurl.get",
 	"apiChineseName": "获取二维码短链接",
 	"description": "获取二维码短链接",

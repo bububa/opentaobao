@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询应用信息 APIRequest
+查询应用信息 API请求
 yunos.tvpubadmin.content.app.queryapp
 
 查询应用信息
 */
 type YunosTvpubadminContentAppQueryappRequest struct {
     model.Params
-
     // 查询条件
-    query   string 
-
+    query   string
 }
 
+// 初始化YunosTvpubadminContentAppQueryappRequest对象
 func NewYunosTvpubadminContentAppQueryappRequest() *YunosTvpubadminContentAppQueryappRequest{
     return &YunosTvpubadminContentAppQueryappRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminContentAppQueryappRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.app.queryapp"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminContentAppQueryappRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminContentAppQueryappRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Query Setter
+// 查询条件
 func (r *YunosTvpubadminContentAppQueryappRequest) SetQuery(query string) error {
     r.query = query
     r.Set("query", query)
     return nil
 }
 
+// Query Getter
 func (r YunosTvpubadminContentAppQueryappRequest) GetQuery() string {
     return r.query
 }
-

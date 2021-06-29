@@ -1,4 +1,5 @@
 {
+	"id": 44695,
 	"name": "alitrip.hotel.single.info.get",
 	"apiChineseName": "获取单体酒店信息",
 	"description": "用于给到未来酒店读取与飞猪酒店合作的单体酒店信息，开展单体联盟业务",

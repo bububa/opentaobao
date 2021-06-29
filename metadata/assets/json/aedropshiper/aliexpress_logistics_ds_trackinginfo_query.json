@@ -1,4 +1,5 @@
 {
+	"id": 40656,
 	"name": "aliexpress.logistics.ds.trackinginfo.query",
 	"apiChineseName": "查询物流追踪信息",
 	"description": "Dropshipper查询物流追踪信息",

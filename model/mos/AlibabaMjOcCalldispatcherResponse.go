@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-呼叫运力 APIResponse
+呼叫运力 API返回值 
 alibaba.mj.oc.calldispatcher
 
 定时达呼叫运力接口
@@ -17,15 +17,11 @@ type AlibabaMjOcCalldispatcherAPIResponse struct {
     AlibabaMjOcCalldispatcherResponse
 }
 
+// 呼叫运力 成功返回结果
 type AlibabaMjOcCalldispatcherResponse struct {
     XMLName xml.Name `xml:"alibaba_mj_oc_calldispatcher_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *ResultDO `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

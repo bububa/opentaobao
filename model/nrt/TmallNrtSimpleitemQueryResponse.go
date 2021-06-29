@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-简易商品查询接口 APIResponse
+简易商品查询接口 API返回值 
 tmall.nrt.simpleitem.query
 
 为居然之家和阿里的合资公司 homeStyler提供简易的商品信息查询 包含商品名称  图片 状态
@@ -19,20 +19,13 @@ type TmallNrtSimpleitemQueryAPIResponse struct {
     TmallNrtSimpleitemQueryResponse
 }
 
+// 简易商品查询接口 成功返回结果
 type TmallNrtSimpleitemQueryResponse struct {
     XMLName xml.Name `xml:"tmall_nrt_simpleitem_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     Succ   bool `json:"succ,omitempty" xml:"succ,omitempty"`
-
-    
     // 对象
-    
     Models   []TmallNrtSimpleitemQueryModel `json:"models,omitempty" xml:"models>tmall_nrt_simpleitem_query_model,omitempty"`
-    
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 51314,
 	"name": "taobao.sebp.company.getorderinfo",
 	"apiChineseName": "淘小铺公司订单信息",
 	"description": "淘小铺合作公司获取公司订单信息，用于公司结算使用",

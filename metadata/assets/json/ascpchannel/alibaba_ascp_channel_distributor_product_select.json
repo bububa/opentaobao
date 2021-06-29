@@ -1,4 +1,5 @@
 {
+	"id": 55215,
 	"name": "alibaba.ascp.channel.distributor.product.select",
 	"apiChineseName": "供应链渠道中心品的选品接口（淘外分销商专用）",
 	"description": "此api为淘外分销的品的选品标准api，淘外分销商专用",

@@ -1,4 +1,5 @@
 {
+	"id": 26579,
 	"name": "alibaba.security.jaq.resource.fetch",
 	"apiChineseName": "获取资源文件",
 	"description": "在前向化验证流程中提供资源文件服务",

@@ -1,4 +1,5 @@
 {
+	"id": 43983,
 	"name": "aliyun.alios.pay.token.get",
 	"apiChineseName": "获取支付token",
 	"description": "商户用来获取支付的授权token",

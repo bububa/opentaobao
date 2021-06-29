@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-聚石塔订购公众号 APIRequest
+聚石塔订购公众号 API请求
 taobao.jst.sms.officialaccount.order
 
 聚石塔订购公众号接口
 */
 type TaobaoJstSmsOfficialaccountOrderRequest struct {
     model.Params
-
     // 聚石塔公众号订购
-    orderOfficialAccountRequest   *OrderOfficialAccountRequest 
-
+    orderOfficialAccountRequest   *OrderOfficialAccountRequest
 }
 
+// 初始化TaobaoJstSmsOfficialaccountOrderRequest对象
 func NewTaobaoJstSmsOfficialaccountOrderRequest() *TaobaoJstSmsOfficialaccountOrderRequest{
     return &TaobaoJstSmsOfficialaccountOrderRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoJstSmsOfficialaccountOrderRequest) GetApiMethodName() string {
     return "taobao.jst.sms.officialaccount.order"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoJstSmsOfficialaccountOrderRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoJstSmsOfficialaccountOrderRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OrderOfficialAccountRequest Setter
+// 聚石塔公众号订购
 func (r *TaobaoJstSmsOfficialaccountOrderRequest) SetOrderOfficialAccountRequest(orderOfficialAccountRequest *OrderOfficialAccountRequest) error {
     r.orderOfficialAccountRequest = orderOfficialAccountRequest
     r.Set("order_official_account_request", orderOfficialAccountRequest)
     return nil
 }
 
+// OrderOfficialAccountRequest Getter
 func (r TaobaoJstSmsOfficialaccountOrderRequest) GetOrderOfficialAccountRequest() *OrderOfficialAccountRequest {
     return r.orderOfficialAccountRequest
 }
-

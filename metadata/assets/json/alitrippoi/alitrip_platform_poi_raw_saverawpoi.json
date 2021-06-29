@@ -1,4 +1,5 @@
 {
+	"id": 46553,
 	"name": "alitrip.platform.poi.raw.saverawpoi",
 	"apiChineseName": "POI开放存储能力",
 	"description": "POI开放存储提供离线/在线/纬错更新的能力",

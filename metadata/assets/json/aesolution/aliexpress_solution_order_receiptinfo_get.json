@@ -1,4 +1,5 @@
 {
+	"id": 42369,
 	"name": "aliexpress.solution.order.receiptinfo.get",
 	"apiChineseName": "Get Order Receipt Info",
 	"description": "Get Order Receipt Info, Support multi stores requirements for Turkey sellers.",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-百川登录二次验证 APIResponse
+百川登录二次验证 API返回值 
 taobao.baichuan.openaccount.logindoublecheck
 
 百川登录二次验证
@@ -17,15 +17,11 @@ type TaobaoBaichuanOpenaccountLogindoublecheckAPIResponse struct {
     TaobaoBaichuanOpenaccountLogindoublecheckResponse
 }
 
+// 百川登录二次验证 成功返回结果
 type TaobaoBaichuanOpenaccountLogindoublecheckResponse struct {
     XMLName xml.Name `xml:"baichuan_openaccount_logindoublecheck_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // name
-    
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
-
-    
 }

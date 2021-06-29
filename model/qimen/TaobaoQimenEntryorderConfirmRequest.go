@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-入库单确认接口 APIRequest
+入库单确认接口 API请求
 taobao.qimen.entryorder.confirm
 
 WMS调用接口，回传入库单信息;
 */
 type TaobaoQimenEntryorderConfirmRequest struct {
     model.Params
-
     // 
-    request   *EntryOrderConfirmRequest 
-
+    request   *EntryOrderConfirmRequest
 }
 
+// 初始化TaobaoQimenEntryorderConfirmRequest对象
 func NewTaobaoQimenEntryorderConfirmRequest() *TaobaoQimenEntryorderConfirmRequest{
     return &TaobaoQimenEntryorderConfirmRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenEntryorderConfirmRequest) GetApiMethodName() string {
     return "taobao.qimen.entryorder.confirm"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenEntryorderConfirmRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenEntryorderConfirmRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenEntryorderConfirmRequest) SetRequest(request *EntryOrderConfirmRequest) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenEntryorderConfirmRequest) GetRequest() *EntryOrderConfirmRequest {
     return r.request
 }
-

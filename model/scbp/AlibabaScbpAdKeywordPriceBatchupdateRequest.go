@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-关键词批量改价 APIRequest
+关键词批量改价 API请求
 alibaba.scbp.ad.keyword.price.batchupdate
 
 关键词批量改价
 */
 type AlibabaScbpAdKeywordPriceBatchupdateRequest struct {
     model.Params
-
     // 系统自动生成
-    keywordUpdateDtoList   []KeywordUpdateDto 
-
+    keywordUpdateDtoList   []KeywordUpdateDto
 }
 
+// 初始化AlibabaScbpAdKeywordPriceBatchupdateRequest对象
 func NewAlibabaScbpAdKeywordPriceBatchupdateRequest() *AlibabaScbpAdKeywordPriceBatchupdateRequest{
     return &AlibabaScbpAdKeywordPriceBatchupdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaScbpAdKeywordPriceBatchupdateRequest) GetApiMethodName() string {
     return "alibaba.scbp.ad.keyword.price.batchupdate"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaScbpAdKeywordPriceBatchupdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaScbpAdKeywordPriceBatchupdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// KeywordUpdateDtoList Setter
+// 系统自动生成
 func (r *AlibabaScbpAdKeywordPriceBatchupdateRequest) SetKeywordUpdateDtoList(keywordUpdateDtoList []KeywordUpdateDto) error {
     r.keywordUpdateDtoList = keywordUpdateDtoList
     r.Set("keyword_update_dto_list", keywordUpdateDtoList)
     return nil
 }
 
+// KeywordUpdateDtoList Getter
 func (r AlibabaScbpAdKeywordPriceBatchupdateRequest) GetKeywordUpdateDtoList() []KeywordUpdateDto {
     return r.keywordUpdateDtoList
 }
-

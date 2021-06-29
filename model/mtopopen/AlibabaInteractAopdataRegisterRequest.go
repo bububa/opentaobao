@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-资源位数据推送接口 APIRequest
+资源位数据推送接口 API请求
 alibaba.interact.aopdata.register
 
 提供给isv，查询以及推送浮层资源位的三方活动数据
 */
 type AlibabaInteractAopdataRegisterRequest struct {
     model.Params
-
     // 入参
-    paramTopIsvDecorateParam   *TopIsvDecorateParam 
-
+    paramTopIsvDecorateParam   *TopIsvDecorateParam
 }
 
+// 初始化AlibabaInteractAopdataRegisterRequest对象
 func NewAlibabaInteractAopdataRegisterRequest() *AlibabaInteractAopdataRegisterRequest{
     return &AlibabaInteractAopdataRegisterRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaInteractAopdataRegisterRequest) GetApiMethodName() string {
     return "alibaba.interact.aopdata.register"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaInteractAopdataRegisterRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaInteractAopdataRegisterRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamTopIsvDecorateParam Setter
+// 入参
 func (r *AlibabaInteractAopdataRegisterRequest) SetParamTopIsvDecorateParam(paramTopIsvDecorateParam *TopIsvDecorateParam) error {
     r.paramTopIsvDecorateParam = paramTopIsvDecorateParam
     r.Set("param_top_isv_decorate_param", paramTopIsvDecorateParam)
     return nil
 }
 
+// ParamTopIsvDecorateParam Getter
 func (r AlibabaInteractAopdataRegisterRequest) GetParamTopIsvDecorateParam() *TopIsvDecorateParam {
     return r.paramTopIsvDecorateParam
 }
-

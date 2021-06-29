@@ -1,4 +1,5 @@
 {
+	"id": 41455,
 	"name": "taobao.apple.newuser.sign.notify.newversion",
 	"apiChineseName": "新用户签约结果通知接口v2",
 	"description": "资和信主动通知签约结果",

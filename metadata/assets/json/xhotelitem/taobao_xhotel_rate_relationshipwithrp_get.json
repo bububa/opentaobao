@@ -1,4 +1,5 @@
 {
+	"id": 23285,
 	"name": "taobao.xhotel.rate.relationshipwithrp.get",
 	"apiChineseName": "根据gid查询卖家下所有的rpId",
 	"description": "根据gid查询卖家下所有的rpId，可分页，默认展示第一页的数据",

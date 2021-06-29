@@ -1,4 +1,5 @@
 {
+	"id": 32943,
 	"name": "alibaba.lst.pos.open.cashier.synccashierdata",
 	"apiChineseName": "收银快照同步接口(最多10条订单信息)",
 	"description": "收银快照同步接口(最多10条订单信息)",

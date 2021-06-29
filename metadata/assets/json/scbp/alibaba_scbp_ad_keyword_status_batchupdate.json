@@ -1,4 +1,5 @@
 {
+	"id": 30996,
 	"name": "alibaba.scbp.ad.keyword.status.batchupdate",
 	"apiChineseName": "批量启动暂停推广词状态",
 	"description": "批量启动暂停关键词推广状态",

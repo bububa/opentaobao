@@ -1,4 +1,5 @@
 {
+	"id": 38578,
 	"name": "alibaba.mos.oc.trade.syncbanksale",
 	"apiChineseName": "云闪付、银行卡销售数据回传接口",
 	"description": "云闪付、银行卡销售数据回传",

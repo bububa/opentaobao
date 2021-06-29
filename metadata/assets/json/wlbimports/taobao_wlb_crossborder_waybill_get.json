@@ -1,4 +1,5 @@
 {
+	"id": 45980,
 	"name": "taobao.wlb.crossborder.waybill.get",
 	"apiChineseName": "集货商家pdf和云打印面单获取，pdf需要配置白名单",
 	"description": "【TOF】欧洲供应商PDF格式电子面单渲染下发\n 需求链接：https://aone.alibaba-inc.com/req/21210808",

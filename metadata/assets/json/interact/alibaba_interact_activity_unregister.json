@@ -1,4 +1,5 @@
 {
+	"id": 23793,
 	"name": "alibaba.interact.activity.unregister",
 	"apiChineseName": "ISV互动应用活动关闭服务",
 	"description": "卖家在ISV互动应用中设置的活动主动关闭的服务",

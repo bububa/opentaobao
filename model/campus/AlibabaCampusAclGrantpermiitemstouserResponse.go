@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-给人直接授权 APIResponse
+给人直接授权 API返回值 
 alibaba.campus.acl.grantpermiitemstouser
 
 给人直接授权
@@ -17,15 +17,11 @@ type AlibabaCampusAclGrantpermiitemstouserAPIResponse struct {
     AlibabaCampusAclGrantpermiitemstouserResponse
 }
 
+// 给人直接授权 成功返回结果
 type AlibabaCampusAclGrantpermiitemstouserResponse struct {
     XMLName xml.Name `xml:"alibaba_campus_acl_grantpermiitemstouser_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *PojoResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

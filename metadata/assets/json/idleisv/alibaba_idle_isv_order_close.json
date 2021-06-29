@@ -1,4 +1,5 @@
 {
+	"id": 57051,
 	"name": "alibaba.idle.isv.order.close",
 	"apiChineseName": "服务商闲鱼卖家主动关闭订单",
 	"description": "供外部服务商 isv 提供卖家主动关闭交易订单的功能",

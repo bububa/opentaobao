@@ -1,4 +1,5 @@
 {
+	"id": 22667,
 	"name": "taobao.xhotel.rateplan.get",
 	"apiChineseName": "价格计划rateplan查询",
 	"description": "酒店产品库rateplan查询",

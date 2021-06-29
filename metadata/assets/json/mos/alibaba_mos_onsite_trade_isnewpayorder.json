@@ -1,4 +1,5 @@
 {
+	"id": 37386,
 	"name": "alibaba.mos.onsite.trade.isnewpayorder",
 	"apiChineseName": "是否为新支付订单",
 	"description": "退款时，老支付宝手淘退款接口需要查一下该订单是否为新支付订单",

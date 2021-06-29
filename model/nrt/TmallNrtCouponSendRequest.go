@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-券发放接口 APIRequest
+券发放接口 API请求
 tmall.nrt.coupon.send
 
 新零售场景，商家自有渠道发放券
 */
 type TmallNrtCouponSendRequest struct {
     model.Params
-
     // 发券dto
-    nrtCouponSendDto   *NrtCouponSendDTO 
-
+    nrtCouponSendDto   *NrtCouponSendDTO
 }
 
+// 初始化TmallNrtCouponSendRequest对象
 func NewTmallNrtCouponSendRequest() *TmallNrtCouponSendRequest{
     return &TmallNrtCouponSendRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallNrtCouponSendRequest) GetApiMethodName() string {
     return "tmall.nrt.coupon.send"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallNrtCouponSendRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallNrtCouponSendRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// NrtCouponSendDto Setter
+// 发券dto
 func (r *TmallNrtCouponSendRequest) SetNrtCouponSendDto(nrtCouponSendDto *NrtCouponSendDTO) error {
     r.nrtCouponSendDto = nrtCouponSendDto
     r.Set("nrt_coupon_send_dto", nrtCouponSendDto)
     return nil
 }
 
+// NrtCouponSendDto Getter
 func (r TmallNrtCouponSendRequest) GetNrtCouponSendDto() *NrtCouponSendDTO {
     return r.nrtCouponSendDto
 }
-

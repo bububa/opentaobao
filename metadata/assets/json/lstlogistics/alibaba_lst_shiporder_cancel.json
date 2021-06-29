@@ -1,4 +1,5 @@
 {
+	"id": 39311,
 	"name": "alibaba.lst.shiporder.cancel",
 	"apiChineseName": "零售通发货单取消",
 	"description": "通过该接口可以取消零售通运保保发货单，并处理相关业务流程。",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-储值卡激活 APIResponse
+储值卡激活 API返回值 
 alibaba.fundplatform.cardorder.card.active
 
 储值卡接货接口，可以通过外部订单号或者卡号进行批量激活。如果储值卡已经被激活过仍然幂等返回成功。资金平台保证批量激活时一定全部成功或全部失败。
@@ -18,15 +18,11 @@ type AlibabaFundplatformCardorderCardActiveAPIResponse struct {
     AlibabaFundplatformCardorderCardActiveResponse
 }
 
+// 储值卡激活 成功返回结果
 type AlibabaFundplatformCardorderCardActiveResponse struct {
     XMLName xml.Name `xml:"alibaba_fundplatform_cardorder_card_active_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 出参对象
-    
     Result   *CardActiveResponse `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-删除ONS分组 APIResponse
+删除ONS分组 API返回值 
 taobao.jushita.jms.group.delete
 
 删除ONS分组
@@ -17,15 +17,11 @@ type TaobaoJushitaJmsGroupDeleteAPIResponse struct {
     TaobaoJushitaJmsGroupDeleteResponse
 }
 
+// 删除ONS分组 成功返回结果
 type TaobaoJushitaJmsGroupDeleteResponse struct {
     XMLName xml.Name `xml:"jushita_jms_group_delete_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 操作结果
-    
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
 }

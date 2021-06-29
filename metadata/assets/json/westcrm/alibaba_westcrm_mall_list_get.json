@@ -1,4 +1,5 @@
 {
+	"id": 41202,
 	"name": "alibaba.westcrm.mall.list.get",
 	"apiChineseName": "获取商场列表",
 	"description": "根据园区id获取商场列表",

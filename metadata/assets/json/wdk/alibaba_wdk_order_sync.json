@@ -1,4 +1,5 @@
 {
+	"id": 38796,
 	"name": "alibaba.wdk.order.sync",
 	"apiChineseName": "五道口外部订单同步",
 	"description": "外部商户使用自助POS下单订单同步到五道口",

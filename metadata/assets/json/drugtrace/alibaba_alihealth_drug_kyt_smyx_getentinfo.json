@@ -1,4 +1,5 @@
 {
+	"id": 50503,
 	"name": "alibaba.alihealth.drug.kyt.smyx.getentinfo",
 	"apiChineseName": "查企业标识信息",
 	"description": "根据企业名称查询企业唯一标识【ref_ent_id】和企业ID【ent_id】",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-地点关联关系查询 APIResponse
+地点关联关系查询 API返回值 
 taobao.location.relation.query
 
 地点关联关系查询 
@@ -18,15 +18,11 @@ type TaobaoLocationRelationQueryAPIResponse struct {
     TaobaoLocationRelationQueryResponse
 }
 
+// 地点关联关系查询 成功返回结果
 type TaobaoLocationRelationQueryResponse struct {
     XMLName xml.Name `xml:"location_relation_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *SingleResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

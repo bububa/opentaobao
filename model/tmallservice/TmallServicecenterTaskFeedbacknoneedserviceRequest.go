@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-服务商反馈无需安装工单接口 APIRequest
+服务商反馈无需安装工单接口 API请求
 tmall.servicecenter.task.feedbacknoneedservice
 
 服务商反馈无需安装工单接口
 */
 type TmallServicecenterTaskFeedbacknoneedserviceRequest struct {
     model.Params
-
     // 入参对象
-    param   *SuspendServiceDo 
-
+    param   *SuspendServiceDo
 }
 
+// 初始化TmallServicecenterTaskFeedbacknoneedserviceRequest对象
 func NewTmallServicecenterTaskFeedbacknoneedserviceRequest() *TmallServicecenterTaskFeedbacknoneedserviceRequest{
     return &TmallServicecenterTaskFeedbacknoneedserviceRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterTaskFeedbacknoneedserviceRequest) GetApiMethodName() string {
     return "tmall.servicecenter.task.feedbacknoneedservice"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterTaskFeedbacknoneedserviceRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallServicecenterTaskFeedbacknoneedserviceRequest) GetApiParams() url.V
     }
     return params
 }
-
-
+// Param Setter
+// 入参对象
 func (r *TmallServicecenterTaskFeedbacknoneedserviceRequest) SetParam(param *SuspendServiceDo) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r TmallServicecenterTaskFeedbacknoneedserviceRequest) GetParam() *SuspendServiceDo {
     return r.param
 }
-

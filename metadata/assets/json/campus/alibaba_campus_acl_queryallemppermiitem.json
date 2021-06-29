@@ -1,4 +1,5 @@
 {
+	"id": 32215,
 	"name": "alibaba.campus.acl.queryallemppermiitem",
 	"apiChineseName": "查询员工全部权限(包括角色下面的权限)",
 	"description": "查询员工全部权限(包括角色下面的权限)",

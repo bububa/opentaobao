@@ -1,4 +1,5 @@
 {
+	"id": 24616,
 	"name": "taobao.wlb.imports.order.cancel",
 	"apiChineseName": "一般进口取消物流订单",
 	"description": "商家在发货后，需要对订单进行取消，如果仓库已经收货则无法取消。",

@@ -1,4 +1,5 @@
 {
+	"id": 27177,
 	"name": "taobao.elife.lifecard.query",
 	"apiChineseName": "查询交易结果",
 	"description": "卖家在交易状态不明的情况下, 查询交易结果.",

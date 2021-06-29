@@ -1,4 +1,5 @@
 {
+	"id": 26105,
 	"name": "taobao.xhotel.order.offline.settle.cancel",
 	"apiChineseName": "线下信用住取消结账专用接口",
 	"description": "线下信用住取消结账专用接口",

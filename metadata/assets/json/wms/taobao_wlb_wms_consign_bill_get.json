@@ -1,4 +1,5 @@
 {
+	"id": 25681,
 	"name": "taobao.wlb.wms.consign.bill.get",
 	"apiChineseName": "获取销售订单发货信息",
 	"description": "获取销售订单发货信息",

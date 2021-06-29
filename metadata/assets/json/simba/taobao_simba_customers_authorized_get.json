@@ -1,4 +1,5 @@
 {
+	"id": 10528,
 	"name": "taobao.simba.customers.authorized.get",
 	"apiChineseName": "取得当前登录用户的授权账户列表",
 	"description": "取得当前登录用户的授权账户列表",

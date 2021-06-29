@@ -1,4 +1,5 @@
 {
+	"id": 39341,
 	"name": "alibaba.lst.shiporder.query",
 	"apiChineseName": "零售通发货单查询",
 	"description": "通过该接口可以查询零售通运保保发货单，并处理相关业务流程。",

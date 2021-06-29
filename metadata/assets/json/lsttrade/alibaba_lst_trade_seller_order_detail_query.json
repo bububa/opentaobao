@@ -1,4 +1,5 @@
 {
+	"id": 45487,
 	"name": "alibaba.lst.trade.seller.order.detail.query",
 	"apiChineseName": "订单详情查看(卖家视角)",
 	"description": "订单详情查看(卖家视角)",

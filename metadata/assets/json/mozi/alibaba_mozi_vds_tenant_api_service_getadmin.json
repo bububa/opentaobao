@@ -1,4 +1,5 @@
 {
+	"id": 49922,
 	"name": "alibaba.mozi.vds.tenant.api.service.getadmin",
 	"apiChineseName": "获取员工租户管理员信息（查询员工是否为租户管理员）",
 	"description": "获取员工租户管理员信息（查询员工是否为租户管理员）",

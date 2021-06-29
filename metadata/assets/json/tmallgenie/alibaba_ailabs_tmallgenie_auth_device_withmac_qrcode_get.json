@@ -1,4 +1,5 @@
 {
+	"id": 48513,
 	"name": "alibaba.ailabs.tmallgenie.auth.device.withmac.qrcode.get",
 	"apiChineseName": "根据mac查询设备的安全二维码",
 	"description": "根据mac查询二维码详细信息",

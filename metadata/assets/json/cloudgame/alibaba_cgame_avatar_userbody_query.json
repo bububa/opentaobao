@@ -1,4 +1,5 @@
 {
+	"id": 55012,
 	"name": "alibaba.cgame.avatar.userbody.query",
 	"apiChineseName": "用户Avatar body查询",
 	"description": "Avatar用户body数据查询",

@@ -1,4 +1,5 @@
 {
+	"id": 10689,
 	"name": "taobao.logistics.online.confirm",
 	"apiChineseName": "确认发货通知接口",
 	"description": "\u003cbr\u003e\u003cfont color='red'\u003e仅在使用taobao.logistics.online.send 发货时未输入运单号的情况下，需要使用该接口补充填写运单号，来确认发货。\u003cbr\u003e\n确认发货的目的是让交易流程继续走下去，确认发货后交易状态会由【买家已付款】变为【卖家已发货】。\u003c/font\u003e",

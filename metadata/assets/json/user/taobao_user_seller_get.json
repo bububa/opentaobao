@@ -1,4 +1,5 @@
 {
+	"id": 21349,
 	"name": "taobao.user.seller.get",
 	"apiChineseName": "查询卖家用户信息",
 	"description": "查询卖家用户信息（只能查询有店铺的用户） 只能卖家类应用调用。",

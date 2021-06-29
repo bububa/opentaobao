@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取五道口设备管理信息 APIResponse
+获取五道口设备管理信息 API返回值 
 taobao.wdk.equipment.deviceadmin.deviceinfo.get
 
 通过仓编码获取五道口设备管理信息
@@ -17,15 +17,11 @@ type TaobaoWdkEquipmentDeviceadminDeviceinfoGetAPIResponse struct {
     TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse
 }
 
+// 获取五道口设备管理信息 成功返回结果
 type TaobaoWdkEquipmentDeviceadminDeviceinfoGetResponse struct {
     XMLName xml.Name `xml:"wdk_equipment_deviceadmin_deviceinfo_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回值
-    
     Result   *HmResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

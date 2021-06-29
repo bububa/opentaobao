@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询流量充值状态 APIResponse
+查询流量充值状态 API返回值 
 alibaba.aliqin.flow.wallet.query.charge
 
 查询流量充值状态
@@ -17,15 +17,11 @@ type AlibabaAliqinFlowWalletQueryChargeAPIResponse struct {
     AlibabaAliqinFlowWalletQueryChargeResponse
 }
 
+// 查询流量充值状态 成功返回结果
 type AlibabaAliqinFlowWalletQueryChargeResponse struct {
     XMLName xml.Name `xml:"alibaba_aliqin_flow_wallet_query_charge_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 充值状态
-    
     Charge   string `json:"charge,omitempty" xml:"charge,omitempty"`
-
-    
 }

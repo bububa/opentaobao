@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据HID获取所有卖家房型匹配关系 APIResponse
+根据HID获取所有卖家房型匹配关系 API返回值 
 alitrip.hotel.hstdf.shotel.roomtype.mappings.list
 
 根据HID获取所有卖家房型匹配关系
@@ -17,15 +17,11 @@ type AlitripHotelHstdfShotelRoomtypeMappingsListAPIResponse struct {
     AlitripHotelHstdfShotelRoomtypeMappingsListResponse
 }
 
+// 根据HID获取所有卖家房型匹配关系 成功返回结果
 type AlitripHotelHstdfShotelRoomtypeMappingsListResponse struct {
     XMLName xml.Name `xml:"alitrip_hotel_hstdf_shotel_roomtype_mappings_list_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // top返回结果
-    
     Result   *TopResultSet `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

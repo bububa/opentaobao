@@ -7,26 +7,28 @@ import (
 )
 
 /* 
-获取ISV发起请求服务器IP APIRequest
+获取ISV发起请求服务器IP API请求
 taobao.appip.get
 
 获取ISV发起请求服务器IP
 */
 type TaobaoAppipGetRequest struct {
     model.Params
-
 }
 
+// 初始化TaobaoAppipGetRequest对象
 func NewTaobaoAppipGetRequest() *TaobaoAppipGetRequest{
     return &TaobaoAppipGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAppipGetRequest) GetApiMethodName() string {
     return "taobao.appip.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAppipGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -34,5 +36,3 @@ func (r TaobaoAppipGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-

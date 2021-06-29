@@ -1,4 +1,5 @@
 {
+	"id": 41260,
 	"name": "alibaba.alihealth.drug.kyt.upinoutfile",
 	"apiChineseName": "上传出入库单据(传文件)",
 	"description": "上传出入库单据(传文件)",

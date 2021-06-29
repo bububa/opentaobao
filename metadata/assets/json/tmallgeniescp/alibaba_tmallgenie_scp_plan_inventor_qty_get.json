@@ -1,4 +1,5 @@
 {
+	"id": 53391,
 	"name": "alibaba.tmallgenie.scp.plan.inventor.qty.get",
 	"apiChineseName": "10-同步库存现有量",
 	"description": "同步库存现有量",

@@ -1,4 +1,5 @@
 {
+	"id": 30899,
 	"name": "alibaba.data.recommond.get",
 	"apiChineseName": "获取推荐信息",
 	"description": "获取优惠券信息，仅作客户端鉴权虚拟api使用",

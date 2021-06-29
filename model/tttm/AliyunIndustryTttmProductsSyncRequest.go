@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-天天特卖货品信息同步 APIRequest
+天天特卖货品信息同步 API请求
 aliyun.industry.tttm.products.sync
 
 天天特卖货品信息同步
 */
 type AliyunIndustryTttmProductsSyncRequest struct {
     model.Params
-
     // 产品信息
-    syncProducts   []ProductInfoDto 
-
+    syncProducts   []ProductInfoDto
 }
 
+// 初始化AliyunIndustryTttmProductsSyncRequest对象
 func NewAliyunIndustryTttmProductsSyncRequest() *AliyunIndustryTttmProductsSyncRequest{
     return &AliyunIndustryTttmProductsSyncRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AliyunIndustryTttmProductsSyncRequest) GetApiMethodName() string {
     return "aliyun.industry.tttm.products.sync"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AliyunIndustryTttmProductsSyncRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AliyunIndustryTttmProductsSyncRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// SyncProducts Setter
+// 产品信息
 func (r *AliyunIndustryTttmProductsSyncRequest) SetSyncProducts(syncProducts []ProductInfoDto) error {
     r.syncProducts = syncProducts
     r.Set("sync_products", syncProducts)
     return nil
 }
 
+// SyncProducts Getter
 func (r AliyunIndustryTttmProductsSyncRequest) GetSyncProducts() []ProductInfoDto {
     return r.syncProducts
 }
-

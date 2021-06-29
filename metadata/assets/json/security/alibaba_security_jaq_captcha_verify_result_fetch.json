@@ -1,4 +1,5 @@
 {
+	"id": 26741,
 	"name": "alibaba.security.jaq.captcha.verify.result.fetch",
 	"apiChineseName": "聚安全安全验证检查结果获取接口",
 	"description": "获取二次验证的结果",

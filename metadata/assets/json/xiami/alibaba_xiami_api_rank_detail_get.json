@@ -1,4 +1,5 @@
 {
+	"id": 37565,
 	"name": "alibaba.xiami.api.rank.detail.get",
 	"apiChineseName": "排行榜详情",
 	"description": "虾米排行榜详情数据",

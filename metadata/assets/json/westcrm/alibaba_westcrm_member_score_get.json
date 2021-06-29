@@ -1,4 +1,5 @@
 {
+	"id": 41154,
 	"name": "alibaba.westcrm.member.score.get",
 	"apiChineseName": "获取会员某时间段积分",
 	"description": "获取会员某时间段积分",

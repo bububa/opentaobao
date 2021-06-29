@@ -1,4 +1,5 @@
 {
+	"id": 44766,
 	"name": "alibaba.ailabs.tmallgenie.auth.device.get",
 	"apiChineseName": "获取设备详情",
 	"description": "通过此接口获取设备详情",

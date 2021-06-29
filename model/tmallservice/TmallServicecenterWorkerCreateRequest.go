@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-服务商工人信息创建 APIRequest
+服务商工人信息创建 API请求
 tmall.servicecenter.worker.create
 
 服务商工人信息创建
 */
 type TmallServicecenterWorkerCreateRequest struct {
     model.Params
-
     // 11
-    workerDto   *WorkerDto 
-
+    workerDto   *WorkerDto
 }
 
+// 初始化TmallServicecenterWorkerCreateRequest对象
 func NewTmallServicecenterWorkerCreateRequest() *TmallServicecenterWorkerCreateRequest{
     return &TmallServicecenterWorkerCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterWorkerCreateRequest) GetApiMethodName() string {
     return "tmall.servicecenter.worker.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterWorkerCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallServicecenterWorkerCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// WorkerDto Setter
+// 11
 func (r *TmallServicecenterWorkerCreateRequest) SetWorkerDto(workerDto *WorkerDto) error {
     r.workerDto = workerDto
     r.Set("worker_dto", workerDto)
     return nil
 }
 
+// WorkerDto Getter
 func (r TmallServicecenterWorkerCreateRequest) GetWorkerDto() *WorkerDto {
     return r.workerDto
 }
-

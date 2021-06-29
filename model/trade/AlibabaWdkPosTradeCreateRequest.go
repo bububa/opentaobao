@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-轻pos品牌营销下单接口 APIRequest
+轻pos品牌营销下单接口 API请求
 alibaba.wdk.pos.trade.create
 
 提供给石基进行轻pos品牌营销下单
 */
 type AlibabaWdkPosTradeCreateRequest struct {
     model.Params
-
     // 下单请求
-    createRequest   *FastBuyPosCreateRequest 
-
+    createRequest   *FastBuyPosCreateRequest
 }
 
+// 初始化AlibabaWdkPosTradeCreateRequest对象
 func NewAlibabaWdkPosTradeCreateRequest() *AlibabaWdkPosTradeCreateRequest{
     return &AlibabaWdkPosTradeCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkPosTradeCreateRequest) GetApiMethodName() string {
     return "alibaba.wdk.pos.trade.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkPosTradeCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkPosTradeCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// CreateRequest Setter
+// 下单请求
 func (r *AlibabaWdkPosTradeCreateRequest) SetCreateRequest(createRequest *FastBuyPosCreateRequest) error {
     r.createRequest = createRequest
     r.Set("create_request", createRequest)
     return nil
 }
 
+// CreateRequest Getter
 func (r AlibabaWdkPosTradeCreateRequest) GetCreateRequest() *FastBuyPosCreateRequest {
     return r.createRequest
 }
-

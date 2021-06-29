@@ -1,4 +1,5 @@
 {
+	"id": 39371,
 	"name": "aliexpress.logistics.buyer.freight.calculate",
 	"apiChineseName": "提供给买家使用的运费计算接口",
 	"description": "提供给买家使用的运费计算接口",

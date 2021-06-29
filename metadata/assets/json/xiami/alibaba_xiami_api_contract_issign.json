@@ -1,4 +1,5 @@
 {
+	"id": 23252,
 	"name": "alibaba.xiami.api.contract.issign",
 	"apiChineseName": "查询是否签约",
 	"description": "查询是否签约",

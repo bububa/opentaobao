@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据码获取码信息-监管 APIResponse
+根据码获取码信息-监管 API返回值 
 alibaba.alihealth.drug.code.list.code.supervise
 
 服务描述
@@ -23,15 +23,11 @@ type AlibabaAlihealthDrugCodeListCodeSuperviseAPIResponse struct {
     AlibabaAlihealthDrugCodeListCodeSuperviseResponse
 }
 
+// 根据码获取码信息-监管 成功返回结果
 type AlibabaAlihealthDrugCodeListCodeSuperviseResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_drug_code_list_code_supervise_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 最外层结果
-    
     Result   *AlibabaAlihealthDrugCodeListCodeSuperviseResultModel `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-大麦电商对外搜索服务 APIRequest
+大麦电商对外搜索服务 API请求
 alibaba.damai.ec.search.project.search
 
 大麦电商对外搜索服务
 */
 type AlibabaDamaiEcSearchProjectSearchRequest struct {
     model.Params
-
     // 入参对象
-    param   *TopSearchProjectParam 
-
+    param   *TopSearchProjectParam
 }
 
+// 初始化AlibabaDamaiEcSearchProjectSearchRequest对象
 func NewAlibabaDamaiEcSearchProjectSearchRequest() *AlibabaDamaiEcSearchProjectSearchRequest{
     return &AlibabaDamaiEcSearchProjectSearchRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaDamaiEcSearchProjectSearchRequest) GetApiMethodName() string {
     return "alibaba.damai.ec.search.project.search"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaDamaiEcSearchProjectSearchRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaDamaiEcSearchProjectSearchRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 入参对象
 func (r *AlibabaDamaiEcSearchProjectSearchRequest) SetParam(param *TopSearchProjectParam) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaDamaiEcSearchProjectSearchRequest) GetParam() *TopSearchProjectParam {
     return r.param
 }
-

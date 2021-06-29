@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-EPC车型底盘压缩库新增接口 APIResponse
+EPC车型底盘压缩库新增接口 API返回值 
 tmall.carcenter.vehicle.chasis.insert
 
 EPC车型底盘压缩库新增接口
@@ -17,15 +17,11 @@ type TmallCarcenterVehicleChasisInsertAPIResponse struct {
     TmallCarcenterVehicleChasisInsertResponse
 }
 
+// EPC车型底盘压缩库新增接口 成功返回结果
 type TmallCarcenterVehicleChasisInsertResponse struct {
     XMLName xml.Name `xml:"tmall_carcenter_vehicle_chasis_insert_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TmallCarcenterVehicleChasisInsertResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

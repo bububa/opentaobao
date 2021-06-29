@@ -1,4 +1,5 @@
 {
+	"id": 21601,
 	"name": "taobao.inventory.store.query",
 	"apiChineseName": "查询仓库信息",
 	"description": "查询商家仓信息",

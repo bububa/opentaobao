@@ -1,4 +1,5 @@
 {
+	"id": 10835,
 	"name": "taobao.crm.group.add",
 	"apiChineseName": "卖家创建一个分组",
 	"description": "卖家创建一个新的分组，接口返回一个创建成功的分组的id",

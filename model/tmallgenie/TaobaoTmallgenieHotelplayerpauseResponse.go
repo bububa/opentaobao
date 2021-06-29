@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-天猫精灵酒店播放暂停 APIResponse
+天猫精灵酒店播放暂停 API返回值 
 taobao.tmallgenie.hotelplayerpause
 
 酒店推送指令给天猫精灵停止播放音乐
@@ -17,20 +17,13 @@ type TaobaoTmallgenieHotelplayerpauseAPIResponse struct {
     TaobaoTmallgenieHotelplayerpauseResponse
 }
 
+// 天猫精灵酒店播放暂停 成功返回结果
 type TaobaoTmallgenieHotelplayerpauseResponse struct {
     XMLName xml.Name `xml:"tmallgenie_hotelplayerpause_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // statusCode
-    
     StatusCode   int64 `json:"status_code,omitempty" xml:"status_code,omitempty"`
-
-    
     // message
-    
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
-
-    
 }

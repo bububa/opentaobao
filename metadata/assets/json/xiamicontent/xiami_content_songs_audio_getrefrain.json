@@ -1,4 +1,5 @@
 {
+	"id": 52445,
 	"name": "xiami.content.songs.audio.getrefrain",
 	"apiChineseName": "获取副歌信息",
 	"description": "获取歌曲音频副歌",

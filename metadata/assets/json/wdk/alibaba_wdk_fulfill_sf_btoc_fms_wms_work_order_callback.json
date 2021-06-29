@@ -1,4 +1,5 @@
 {
+	"id": 52087,
 	"name": "alibaba.wdk.fulfill.sf.btoc.fms.wms.work.order.callback",
 	"apiChineseName": "顺丰仓作业回传",
 	"description": "顺丰仓作业单回传接口",

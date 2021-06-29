@@ -7,38 +7,36 @@ import (
 )
 
 /* 
-获取删除的推广组ID APIRequest
+获取删除的推广组ID API请求
 taobao.simba.adgroupids.deleted.get
 
 获取删除的推广组ID
 */
 type TaobaoSimbaAdgroupidsDeletedGetRequest struct {
     model.Params
-
     // 主人昵称
-    nick   string 
-
+    nick   string
     // 得到此时间点之后的数据，不能大于一个月
-    startTime   string 
-
+    startTime   string
     // 返回的每页数据量大小,默认200最大1000
-    pageSize   int64 
-
+    pageSize   int64
     // 返回的第几页数据，默认为1
-    pageNo   int64 
-
+    pageNo   int64
 }
 
+// 初始化TaobaoSimbaAdgroupidsDeletedGetRequest对象
 func NewTaobaoSimbaAdgroupidsDeletedGetRequest() *TaobaoSimbaAdgroupidsDeletedGetRequest{
     return &TaobaoSimbaAdgroupidsDeletedGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetApiMethodName() string {
     return "taobao.simba.adgroupids.deleted.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -46,45 +44,51 @@ func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Nick Setter
+// 主人昵称
 func (r *TaobaoSimbaAdgroupidsDeletedGetRequest) SetNick(nick string) error {
     r.nick = nick
     r.Set("nick", nick)
     return nil
 }
 
+// Nick Getter
 func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetNick() string {
     return r.nick
 }
-
+// StartTime Setter
+// 得到此时间点之后的数据，不能大于一个月
 func (r *TaobaoSimbaAdgroupidsDeletedGetRequest) SetStartTime(startTime string) error {
     r.startTime = startTime
     r.Set("start_time", startTime)
     return nil
 }
 
+// StartTime Getter
 func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetStartTime() string {
     return r.startTime
 }
-
+// PageSize Setter
+// 返回的每页数据量大小,默认200最大1000
 func (r *TaobaoSimbaAdgroupidsDeletedGetRequest) SetPageSize(pageSize int64) error {
     r.pageSize = pageSize
     r.Set("page_size", pageSize)
     return nil
 }
 
+// PageSize Getter
 func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetPageSize() int64 {
     return r.pageSize
 }
-
+// PageNo Setter
+// 返回的第几页数据，默认为1
 func (r *TaobaoSimbaAdgroupidsDeletedGetRequest) SetPageNo(pageNo int64) error {
     r.pageNo = pageNo
     r.Set("page_no", pageNo)
     return nil
 }
 
+// PageNo Getter
 func (r TaobaoSimbaAdgroupidsDeletedGetRequest) GetPageNo() int64 {
     return r.pageNo
 }
-

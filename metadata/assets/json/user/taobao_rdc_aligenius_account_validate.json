@@ -1,4 +1,5 @@
 {
+	"id": 31159,
 	"name": "taobao.rdc.aligenius.account.validate",
 	"apiChineseName": "AG商家账号校验",
 	"description": "提供应对接AG的erp系统查询其旗下的商家是否为AG商家",

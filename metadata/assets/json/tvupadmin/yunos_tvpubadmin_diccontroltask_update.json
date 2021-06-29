@@ -1,4 +1,5 @@
 {
+	"id": 28584,
 	"name": "yunos.tvpubadmin.diccontroltask.update",
 	"apiChineseName": "停开服任务状态变更",
 	"description": "停开服任务状态变更",

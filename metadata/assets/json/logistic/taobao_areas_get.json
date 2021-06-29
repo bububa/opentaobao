@@ -1,4 +1,5 @@
 {
+	"id": 59,
 	"name": "taobao.areas.get",
 	"apiChineseName": "查询地址区域",
 	"description": "查询标准地址区域代码信息。可以直接参考最新的行政区域代码：\n\u003ca href=\"http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/\" target=\"_blank\"\u003e http://www.stats.gov.cn/tjsj/tjbz/tjyqhdmhcxhfdm/\u003c/a\u003e",

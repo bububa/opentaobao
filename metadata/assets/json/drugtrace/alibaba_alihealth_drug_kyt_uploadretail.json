@@ -1,4 +1,5 @@
 {
+	"id": 41075,
 	"name": "alibaba.alihealth.drug.kyt.uploadretail",
 	"apiChineseName": "门店销售扫码回传接口",
 	"description": "门店在销售给顾客时，扫描追溯码的数据按照单据回传；",

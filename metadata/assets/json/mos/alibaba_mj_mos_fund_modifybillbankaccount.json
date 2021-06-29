@@ -1,4 +1,5 @@
 {
+	"id": 37346,
 	"name": "alibaba.mj.mos.fund.modifybillbankaccount",
 	"apiChineseName": "修改付款单的银行账户信息",
 	"description": "修改付款单的银行账户信息",

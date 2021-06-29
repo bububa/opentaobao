@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-二级物料-LT内的POGAP数据回传 APIRequest
+二级物料-LT内的POGAP数据回传 API请求
 alibaba.tmallgenie.scp.plan.rawpo.gap.return
 
 二级物料-LT内的POGAP数据回传
 */
 type AlibabaTmallgenieScpPlanRawpoGapReturnRequest struct {
     model.Params
-
     // 请求对象
-    rawPogapRequest   *RawPurchaseOrderGapRequest 
-
+    rawPogapRequest   *RawPurchaseOrderGapRequest
 }
 
+// 初始化AlibabaTmallgenieScpPlanRawpoGapReturnRequest对象
 func NewAlibabaTmallgenieScpPlanRawpoGapReturnRequest() *AlibabaTmallgenieScpPlanRawpoGapReturnRequest{
     return &AlibabaTmallgenieScpPlanRawpoGapReturnRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaTmallgenieScpPlanRawpoGapReturnRequest) GetApiMethodName() string {
     return "alibaba.tmallgenie.scp.plan.rawpo.gap.return"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaTmallgenieScpPlanRawpoGapReturnRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaTmallgenieScpPlanRawpoGapReturnRequest) GetApiParams() url.Values
     }
     return params
 }
-
-
+// RawPogapRequest Setter
+// 请求对象
 func (r *AlibabaTmallgenieScpPlanRawpoGapReturnRequest) SetRawPogapRequest(rawPogapRequest *RawPurchaseOrderGapRequest) error {
     r.rawPogapRequest = rawPogapRequest
     r.Set("raw_pogap_request", rawPogapRequest)
     return nil
 }
 
+// RawPogapRequest Getter
 func (r AlibabaTmallgenieScpPlanRawpoGapReturnRequest) GetRawPogapRequest() *RawPurchaseOrderGapRequest {
     return r.rawPogapRequest
 }
-

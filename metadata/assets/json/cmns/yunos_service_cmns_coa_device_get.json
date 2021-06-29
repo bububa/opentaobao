@@ -1,4 +1,5 @@
 {
+	"id": 49740,
 	"name": "yunos.service.cmns.coa.device.get",
 	"apiChineseName": "设备详情查询",
 	"description": "第三方应用开发者调用此接口查询设备详情",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-提交发薪账单 APIRequest
+提交发薪账单 API请求
 alibaba.einvoice.tax.opt.salarybill.commitbill
 
 提交发薪账单
 */
 type AlibabaEinvoiceTaxOptSalarybillCommitbillRequest struct {
     model.Params
-
     // 入参
-    paramTaxOptimizationSalaryBillCommitReqDTO   *TaxOptimizationSalaryBillCommitReqDto 
-
+    paramTaxOptimizationSalaryBillCommitReqDTO   *TaxOptimizationSalaryBillCommitReqDto
 }
 
+// 初始化AlibabaEinvoiceTaxOptSalarybillCommitbillRequest对象
 func NewAlibabaEinvoiceTaxOptSalarybillCommitbillRequest() *AlibabaEinvoiceTaxOptSalarybillCommitbillRequest{
     return &AlibabaEinvoiceTaxOptSalarybillCommitbillRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaEinvoiceTaxOptSalarybillCommitbillRequest) GetApiMethodName() string {
     return "alibaba.einvoice.tax.opt.salarybill.commitbill"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaEinvoiceTaxOptSalarybillCommitbillRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaEinvoiceTaxOptSalarybillCommitbillRequest) GetApiParams() url.Val
     }
     return params
 }
-
-
+// ParamTaxOptimizationSalaryBillCommitReqDTO Setter
+// 入参
 func (r *AlibabaEinvoiceTaxOptSalarybillCommitbillRequest) SetParamTaxOptimizationSalaryBillCommitReqDTO(paramTaxOptimizationSalaryBillCommitReqDTO *TaxOptimizationSalaryBillCommitReqDto) error {
     r.paramTaxOptimizationSalaryBillCommitReqDTO = paramTaxOptimizationSalaryBillCommitReqDTO
     r.Set("param_tax_optimization_salary_bill_commit_req_d_t_o", paramTaxOptimizationSalaryBillCommitReqDTO)
     return nil
 }
 
+// ParamTaxOptimizationSalaryBillCommitReqDTO Getter
 func (r AlibabaEinvoiceTaxOptSalarybillCommitbillRequest) GetParamTaxOptimizationSalaryBillCommitReqDTO() *TaxOptimizationSalaryBillCommitReqDto {
     return r.paramTaxOptimizationSalaryBillCommitReqDTO
 }
-

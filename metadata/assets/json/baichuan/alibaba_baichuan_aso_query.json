@@ -1,4 +1,5 @@
 {
+	"id": 31055,
 	"name": "alibaba.baichuan.aso.query",
 	"apiChineseName": "查询app在设备上的安装信息",
 	"description": "查询app在设备上的安装信息",

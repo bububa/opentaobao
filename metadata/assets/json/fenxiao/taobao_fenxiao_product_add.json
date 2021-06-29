@@ -1,4 +1,5 @@
 {
+	"id": 325,
 	"name": "taobao.fenxiao.product.add",
 	"apiChineseName": "添加产品",
 	"description": "添加分销平台产品数据。业务逻辑与分销系统前台页面一致。\u003cbr/\u003e\u003cbr/\u003e    * 产品图片默认为空\u003cbr/\u003e    * 产品发布后默认为下架状态",

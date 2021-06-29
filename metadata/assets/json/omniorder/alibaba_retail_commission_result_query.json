@@ -1,4 +1,5 @@
 {
+	"id": 43948,
 	"name": "alibaba.retail.commission.result.query",
 	"apiChineseName": "分佣结果查询",
 	"description": "查询导购分佣记录",

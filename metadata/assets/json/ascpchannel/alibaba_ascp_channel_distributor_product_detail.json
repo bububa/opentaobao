@@ -1,4 +1,5 @@
 {
+	"id": 55214,
 	"name": "alibaba.ascp.channel.distributor.product.detail",
 	"apiChineseName": "获取供应链渠道中心品的详情接口（淘外分销商专用）",
 	"description": "此api为淘外分销的品批量查询标准api，淘外分销商专用",

@@ -1,4 +1,5 @@
 {
+	"id": 25203,
 	"name": "taobao.promotion.benefit.activity.update",
 	"apiChineseName": "修改关联的活动权益",
 	"description": "修改卖家活动中关联的对应的权益。",

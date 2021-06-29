@@ -1,4 +1,5 @@
 {
+	"id": 54868,
 	"name": "alibaba.einvoice.tax.opt.esignresult.query",
 	"apiChineseName": "查询用户签约税优结果",
 	"description": "查询用户是否已经签约",

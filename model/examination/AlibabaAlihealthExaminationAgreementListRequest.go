@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-isv协议获取 APIRequest
+isv协议获取 API请求
 alibaba.alihealth.examination.agreement.list
 
 isv协议获取
 */
 type AlibabaAlihealthExaminationAgreementListRequest struct {
     model.Params
-
     // isv传递过来的门店code
-    storeCode   string 
-
+    storeCode   string
 }
 
+// 初始化AlibabaAlihealthExaminationAgreementListRequest对象
 func NewAlibabaAlihealthExaminationAgreementListRequest() *AlibabaAlihealthExaminationAgreementListRequest{
     return &AlibabaAlihealthExaminationAgreementListRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthExaminationAgreementListRequest) GetApiMethodName() string {
     return "alibaba.alihealth.examination.agreement.list"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthExaminationAgreementListRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthExaminationAgreementListRequest) GetApiParams() url.Valu
     }
     return params
 }
-
-
+// StoreCode Setter
+// isv传递过来的门店code
 func (r *AlibabaAlihealthExaminationAgreementListRequest) SetStoreCode(storeCode string) error {
     r.storeCode = storeCode
     r.Set("store_code", storeCode)
     return nil
 }
 
+// StoreCode Getter
 func (r AlibabaAlihealthExaminationAgreementListRequest) GetStoreCode() string {
     return r.storeCode
 }
-

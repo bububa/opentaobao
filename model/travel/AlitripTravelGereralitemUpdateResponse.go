@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-除度假线路、门票以外的其他类目商品维护接口（商品ID重复将自动更新） APIResponse
+除度假线路、门票以外的其他类目商品维护接口（商品ID重复将自动更新） API返回值 
 alitrip.travel.gereralitem.update
 
 除度假线路、门票以外的商品维护接口；目前该接口支持以下类目；
@@ -18,15 +18,11 @@ type AlitripTravelGereralitemUpdateAPIResponse struct {
     AlitripTravelGereralitemUpdateResponse
 }
 
+// 除度假线路、门票以外的其他类目商品维护接口（商品ID重复将自动更新） 成功返回结果
 type AlitripTravelGereralitemUpdateResponse struct {
     XMLName xml.Name `xml:"alitrip_travel_gereralitem_update_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 商品发布结果
-    
     TravelItem   *TopTravelItem `json:"travel_item,omitempty" xml:"travel_item,omitempty"`
-
-    
 }

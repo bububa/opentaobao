@@ -1,4 +1,5 @@
 {
+	"id": 28747,
 	"name": "alibaba.baichuan.ctg.user.relation",
 	"apiChineseName": "用户",
 	"description": "提供给优酷查询道长和淘宝账户的绑定关系",

@@ -1,4 +1,5 @@
 {
+	"id": 30629,
 	"name": "alibaba.wdk.ums.outbound.process.get",
 	"apiChineseName": "出库业务UMS异步处理结果返回",
 	"description": "出库业务UMS异步处理结果返回",

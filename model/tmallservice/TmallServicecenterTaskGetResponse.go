@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-服务工单拉取 APIResponse
+服务工单拉取 API返回值 
 tmall.servicecenter.task.get
 
 接口供服务供应商通过交易主订单查询其未拉取的任务类工单
@@ -17,15 +17,11 @@ type TmallServicecenterTaskGetAPIResponse struct {
     TmallServicecenterTaskGetResponse
 }
 
+// 服务工单拉取 成功返回结果
 type TmallServicecenterTaskGetResponse struct {
     XMLName xml.Name `xml:"tmall_servicecenter_task_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // ServicePacket<ServiceTaskDO>
-    
     ServiceTaskPacket   *ServiceTaskPacket `json:"service_task_packet,omitempty" xml:"service_task_packet,omitempty"`
-
-    
 }

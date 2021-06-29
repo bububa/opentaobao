@@ -1,4 +1,5 @@
 {
+	"id": 10584,
 	"name": "taobao.promotion.coupon.add",
 	"apiChineseName": "创建店铺优惠券接口",
 	"description": "创建店铺优惠券。有效期内的店铺优惠券总数量不超过50张",

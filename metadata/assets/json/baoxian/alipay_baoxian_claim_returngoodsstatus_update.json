@@ -1,4 +1,5 @@
 {
+	"id": 37741,
 	"name": "alipay.baoxian.claim.returngoodsstatus.update",
 	"apiChineseName": "更新理赔单退货货物状态",
 	"description": "更新理赔单退货货物状态",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取商品详情物料 APIRequest
+获取商品详情物料 API请求
 taobao.openmall.item.get
 
 获取联盟开放的openmall商品
 */
 type TaobaoOpenmallItemGetRequest struct {
     model.Params
-
     // 商品ID
-    itemId   int64 
-
+    itemId   int64
 }
 
+// 初始化TaobaoOpenmallItemGetRequest对象
 func NewTaobaoOpenmallItemGetRequest() *TaobaoOpenmallItemGetRequest{
     return &TaobaoOpenmallItemGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoOpenmallItemGetRequest) GetApiMethodName() string {
     return "taobao.openmall.item.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoOpenmallItemGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoOpenmallItemGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ItemId Setter
+// 商品ID
 func (r *TaobaoOpenmallItemGetRequest) SetItemId(itemId int64) error {
     r.itemId = itemId
     r.Set("item_id", itemId)
     return nil
 }
 
+// ItemId Getter
 func (r TaobaoOpenmallItemGetRequest) GetItemId() int64 {
     return r.itemId
 }
-

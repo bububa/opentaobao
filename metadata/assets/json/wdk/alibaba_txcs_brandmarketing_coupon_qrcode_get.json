@@ -1,4 +1,5 @@
 {
+	"id": 43861,
 	"name": "alibaba.txcs.brandmarketing.coupon.qrcode.get",
 	"apiChineseName": "品牌营销导购员券页面二维码获取",
 	"description": "构建券页码二维码url",

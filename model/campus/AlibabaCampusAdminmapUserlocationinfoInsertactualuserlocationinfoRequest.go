@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-上传用户实时位置 APIRequest
+上传用户实时位置 API请求
 alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo
 
 上传用户实时位置
@@ -16,25 +16,25 @@ HSF方法名称：insertActualUserLocationInfo
 */
 type AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest struct {
     model.Params
-
     // 环境参数
-    param0   *WorkBenchContext 
-
+    param0   *WorkBenchContext
     // 查询参数
-    param1   *UserLocationInfo 
-
+    param1   *UserLocationInfo
 }
 
+// 初始化AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest对象
 func NewAlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest() *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest{
     return &AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) GetApiMethodName() string {
     return "alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -42,25 +42,27 @@ func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest
     }
     return params
 }
-
-
+// Param0 Setter
+// 环境参数
 func (r *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) SetParam0(param0 *WorkBenchContext) error {
     r.param0 = param0
     r.Set("param0", param0)
     return nil
 }
 
+// Param0 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) GetParam0() *WorkBenchContext {
     return r.param0
 }
-
+// Param1 Setter
+// 查询参数
 func (r *AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) SetParam1(param1 *UserLocationInfo) error {
     r.param1 = param1
     r.Set("param1", param1)
     return nil
 }
 
+// Param1 Getter
 func (r AlibabaCampusAdminmapUserlocationinfoInsertactualuserlocationinfoRequest) GetParam1() *UserLocationInfo {
     return r.param1
 }
-

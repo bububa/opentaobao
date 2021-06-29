@@ -1,4 +1,5 @@
 {
+	"id": 43999,
 	"name": "alibaba.wdk.pos.trade.create",
 	"apiChineseName": "轻pos品牌营销下单接口",
 	"description": "提供给石基进行轻pos品牌营销下单",

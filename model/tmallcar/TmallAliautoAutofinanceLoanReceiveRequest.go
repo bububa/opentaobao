@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-接收放款结果通知 APIRequest
+接收放款结果通知 API请求
 tmall.aliauto.autofinance.loan.receive
 
 天猫汽车的金融业务场景中，需要接收外部ISV对用户支用放款的通知结果
 */
 type TmallAliautoAutofinanceLoanReceiveRequest struct {
     model.Params
-
     // 接收外部金融结构的放款结果通知参数
-    loanReceiveDto   *LoanReceiveDto 
-
+    loanReceiveDto   *LoanReceiveDto
 }
 
+// 初始化TmallAliautoAutofinanceLoanReceiveRequest对象
 func NewTmallAliautoAutofinanceLoanReceiveRequest() *TmallAliautoAutofinanceLoanReceiveRequest{
     return &TmallAliautoAutofinanceLoanReceiveRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallAliautoAutofinanceLoanReceiveRequest) GetApiMethodName() string {
     return "tmall.aliauto.autofinance.loan.receive"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallAliautoAutofinanceLoanReceiveRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallAliautoAutofinanceLoanReceiveRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// LoanReceiveDto Setter
+// 接收外部金融结构的放款结果通知参数
 func (r *TmallAliautoAutofinanceLoanReceiveRequest) SetLoanReceiveDto(loanReceiveDto *LoanReceiveDto) error {
     r.loanReceiveDto = loanReceiveDto
     r.Set("loan_receive_dto", loanReceiveDto)
     return nil
 }
 
+// LoanReceiveDto Getter
 func (r TmallAliautoAutofinanceLoanReceiveRequest) GetLoanReceiveDto() *LoanReceiveDto {
     return r.loanReceiveDto
 }
-

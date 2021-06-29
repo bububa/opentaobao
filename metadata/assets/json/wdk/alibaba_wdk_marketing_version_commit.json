@@ -1,4 +1,5 @@
 {
+	"id": 40250,
 	"name": "alibaba.wdk.marketing.version.commit",
 	"apiChineseName": "提交版本号",
 	"description": "提交版本号，标识结束此版本操作",

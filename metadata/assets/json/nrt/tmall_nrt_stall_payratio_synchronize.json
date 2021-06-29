@@ -1,4 +1,5 @@
 {
+	"id": 48456,
 	"name": "tmall.nrt.stall.payratio.synchronize",
 	"apiChineseName": "同步摊位收银比例",
 	"description": "ISV同步摊位收银比例到阿里",

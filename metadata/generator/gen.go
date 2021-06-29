@@ -139,6 +139,12 @@ func catelogHandler(catelogPath string, catelogPatchPath string) ApiPkg {
 			continue
 		}
 		log.Printf("[INFO] Pkg:%s, Model:%s\n", pkgCfg.Name, model.Name)
+		if err := genPkgModelDoc(templatePath, catelogModelPath, apiPkg); err != nil {
+			log.Printf("[ERR] Pkg:%s, Model doc.go, %s\n", pkgCfg.Name, err.Error())
+		}
+	}
+	if err := genPkgApiDoc(templatePath, catelogApiPath, apiPkg); err != nil {
+		log.Printf("[ERR] Pkg:%s, API doc.go, %s\n", pkgCfg.Name, err.Error())
 	}
 	return apiPkg
 }
@@ -180,6 +186,38 @@ func getDoc(catelogPath string, catelogPatchPath string, filename string) (metad
 		return doc, err
 	}
 	return doc, nil
+}
+
+func genPkgApiDoc(templatePath string, apiPath string, pkg ApiPkg) error {
+	filePath := filepath.Join(templatePath, "pkg_api_doc.tpl")
+	tmpl, err := template.ParseFiles(filePath)
+	if err != nil {
+		return err
+	}
+	targetFile := filepath.Join(apiPath, "doc.go")
+	fd, err := os.Create(targetFile)
+	if err != nil {
+		return err
+	}
+	defer fd.Close()
+	tmpl.Execute(fd, pkg)
+	return nil
+}
+
+func genPkgModelDoc(templatePath string, modelPath string, pkg ApiPkg) error {
+	filePath := filepath.Join(templatePath, "pkg_model_doc.tpl")
+	tmpl, err := template.ParseFiles(filePath)
+	if err != nil {
+		return err
+	}
+	targetFile := filepath.Join(modelPath, "doc.go")
+	fd, err := os.Create(targetFile)
+	if err != nil {
+		return err
+	}
+	defer fd.Close()
+	tmpl.Execute(fd, pkg)
+	return nil
 }
 
 func genApi(templatePath string, apiPath string, tpl metadata.ApiTpl) error {

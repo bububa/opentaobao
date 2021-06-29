@@ -1,4 +1,5 @@
 {
+	"id": 42561,
 	"name": "youku.ott.pay.order.authpay",
 	"apiChineseName": "委托代扣服务",
 	"description": "应用中心sdk连续包月委托代扣服务",

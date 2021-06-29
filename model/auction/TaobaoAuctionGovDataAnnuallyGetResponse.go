@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-按年统计法院拍卖数据 APIResponse
+按年统计法院拍卖数据 API返回值 
 taobao.auction.gov.data.annually.get
 
 按月统计法院拍卖数据 包含：
@@ -22,15 +22,11 @@ type TaobaoAuctionGovDataAnnuallyGetAPIResponse struct {
     TaobaoAuctionGovDataAnnuallyGetResponse
 }
 
+// 按年统计法院拍卖数据 成功返回结果
 type TaobaoAuctionGovDataAnnuallyGetResponse struct {
     XMLName xml.Name `xml:"auction_gov_data_annually_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 按年统计结果列表
-    
     Results   []CourtsBidStatAnnuallyList `json:"results,omitempty" xml:"results>courts_bid_stat_annually_list,omitempty"`
-    
-    
 }

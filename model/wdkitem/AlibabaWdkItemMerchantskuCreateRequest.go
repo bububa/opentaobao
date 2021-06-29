@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-商家商品信息新建 APIRequest
+商家商品信息新建 API请求
 alibaba.wdk.item.merchantsku.create
 
 商家商品信息新建
 */
 type AlibabaWdkItemMerchantskuCreateRequest struct {
     model.Params
-
     // 新建商品参数，是个json字符串
-    params   string 
-
+    params   string
 }
 
+// 初始化AlibabaWdkItemMerchantskuCreateRequest对象
 func NewAlibabaWdkItemMerchantskuCreateRequest() *AlibabaWdkItemMerchantskuCreateRequest{
     return &AlibabaWdkItemMerchantskuCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkItemMerchantskuCreateRequest) GetApiMethodName() string {
     return "alibaba.wdk.item.merchantsku.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkItemMerchantskuCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkItemMerchantskuCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Params Setter
+// 新建商品参数，是个json字符串
 func (r *AlibabaWdkItemMerchantskuCreateRequest) SetParams(params string) error {
     r.params = params
     r.Set("params", params)
     return nil
 }
 
+// Params Getter
 func (r AlibabaWdkItemMerchantskuCreateRequest) GetParams() string {
     return r.params
 }
-

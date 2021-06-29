@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-修改工人信息 APIRequest
+修改工人信息 API请求
 tmall.servicecenter.worker.update
 
 修改工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以修改。
@@ -29,22 +29,23 @@ tmall.servicecenter.worker.update
 */
 type TmallServicecenterWorkerUpdateRequest struct {
     model.Params
-
     // 工人信息
-    worker   *WorkerDto 
-
+    worker   *WorkerDto
 }
 
+// 初始化TmallServicecenterWorkerUpdateRequest对象
 func NewTmallServicecenterWorkerUpdateRequest() *TmallServicecenterWorkerUpdateRequest{
     return &TmallServicecenterWorkerUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterWorkerUpdateRequest) GetApiMethodName() string {
     return "tmall.servicecenter.worker.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterWorkerUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -52,15 +53,15 @@ func (r TmallServicecenterWorkerUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Worker Setter
+// 工人信息
 func (r *TmallServicecenterWorkerUpdateRequest) SetWorker(worker *WorkerDto) error {
     r.worker = worker
     r.Set("worker", worker)
     return nil
 }
 
+// Worker Getter
 func (r TmallServicecenterWorkerUpdateRequest) GetWorker() *WorkerDto {
     return r.worker
 }
-

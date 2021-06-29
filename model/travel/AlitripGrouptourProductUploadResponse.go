@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-新版跟团游商品维护接口 APIResponse
+新版跟团游商品维护接口 API返回值 
 alitrip.grouptour.product.upload
 
 新版跟团游商品维护接口
@@ -17,15 +17,11 @@ type AlitripGrouptourProductUploadAPIResponse struct {
     AlitripGrouptourProductUploadResponse
 }
 
+// 新版跟团游商品维护接口 成功返回结果
 type AlitripGrouptourProductUploadResponse struct {
     XMLName xml.Name `xml:"alitrip_grouptour_product_upload_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // firstResult
-    
     FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"first_result,omitempty"`
-
-    
 }

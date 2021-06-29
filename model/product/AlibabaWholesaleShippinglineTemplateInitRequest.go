@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-创建初始模板 APIRequest
+创建初始模板 API请求
 alibaba.wholesale.shippingline.template.init
 
 创建默认的几种运费模板
 */
 type AlibabaWholesaleShippinglineTemplateInitRequest struct {
     model.Params
-
     // 创建初始运费模板参数
-    initialTemplate   []InitialTemplate 
-
+    initialTemplate   []InitialTemplate
 }
 
+// 初始化AlibabaWholesaleShippinglineTemplateInitRequest对象
 func NewAlibabaWholesaleShippinglineTemplateInitRequest() *AlibabaWholesaleShippinglineTemplateInitRequest{
     return &AlibabaWholesaleShippinglineTemplateInitRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWholesaleShippinglineTemplateInitRequest) GetApiMethodName() string {
     return "alibaba.wholesale.shippingline.template.init"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWholesaleShippinglineTemplateInitRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWholesaleShippinglineTemplateInitRequest) GetApiParams() url.Valu
     }
     return params
 }
-
-
+// InitialTemplate Setter
+// 创建初始运费模板参数
 func (r *AlibabaWholesaleShippinglineTemplateInitRequest) SetInitialTemplate(initialTemplate []InitialTemplate) error {
     r.initialTemplate = initialTemplate
     r.Set("initial_template", initialTemplate)
     return nil
 }
 
+// InitialTemplate Getter
 func (r AlibabaWholesaleShippinglineTemplateInitRequest) GetInitialTemplate() []InitialTemplate {
     return r.initialTemplate
 }
-

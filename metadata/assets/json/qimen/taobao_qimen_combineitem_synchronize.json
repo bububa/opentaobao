@@ -1,4 +1,5 @@
 {
+	"id": 27264,
 	"name": "taobao.qimen.combineitem.synchronize",
 	"apiChineseName": "组合商品接口",
 	"description": "ERP调用奇门的接口,将商品信息同步给WMS",

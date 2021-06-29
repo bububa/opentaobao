@@ -1,4 +1,5 @@
 {
+	"id": 41196,
 	"name": "alibaba.ib.shenjing.visitor.pad.fetchcodeverify",
 	"apiChineseName": "访客通过PAD提交访客码",
 	"description": "访客通过PAD提交访客码，录脸进入园区。",

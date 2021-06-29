@@ -1,4 +1,5 @@
 {
+	"id": 25726,
 	"name": "taobao.item.qualification.display.get",
 	"apiChineseName": "资质采集配置异步获取接口",
 	"description": "根据类目，商品，属性等参与动态获得资质采集配置",

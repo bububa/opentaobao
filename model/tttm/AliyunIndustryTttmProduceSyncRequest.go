@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-天天特卖生产进度同步 APIRequest
+天天特卖生产进度同步 API请求
 aliyun.industry.tttm.produce.sync
 
 天天特卖生产进度同步
 */
 type AliyunIndustryTttmProduceSyncRequest struct {
     model.Params
-
     // 计划单
-    syncPlan   *SyncPlanDto 
-
+    syncPlan   *SyncPlanDto
 }
 
+// 初始化AliyunIndustryTttmProduceSyncRequest对象
 func NewAliyunIndustryTttmProduceSyncRequest() *AliyunIndustryTttmProduceSyncRequest{
     return &AliyunIndustryTttmProduceSyncRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AliyunIndustryTttmProduceSyncRequest) GetApiMethodName() string {
     return "aliyun.industry.tttm.produce.sync"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AliyunIndustryTttmProduceSyncRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AliyunIndustryTttmProduceSyncRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// SyncPlan Setter
+// 计划单
 func (r *AliyunIndustryTttmProduceSyncRequest) SetSyncPlan(syncPlan *SyncPlanDto) error {
     r.syncPlan = syncPlan
     r.Set("sync_plan", syncPlan)
     return nil
 }
 
+// SyncPlan Getter
 func (r AliyunIndustryTttmProduceSyncRequest) GetSyncPlan() *SyncPlanDto {
     return r.syncPlan
 }
-

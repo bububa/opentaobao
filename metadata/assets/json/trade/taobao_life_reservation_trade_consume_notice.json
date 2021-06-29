@@ -1,4 +1,5 @@
 {
+	"id": 55039,
 	"name": "taobao.life.reservation.trade.consume.notice",
 	"apiChineseName": "生服购后预约外部核销",
 	"description": "生服团购商品，购后预约。外部ISV进行核销",

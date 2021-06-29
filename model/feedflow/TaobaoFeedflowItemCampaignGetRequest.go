@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-通过计划id查询计划 APIRequest
+通过计划id查询计划 API请求
 taobao.feedflow.item.campaign.get
 
 通过计划id查询计划
 */
 type TaobaoFeedflowItemCampaignGetRequest struct {
     model.Params
-
     // 计划id
-    campaginId   int64 
-
+    campaginId   int64
 }
 
+// 初始化TaobaoFeedflowItemCampaignGetRequest对象
 func NewTaobaoFeedflowItemCampaignGetRequest() *TaobaoFeedflowItemCampaignGetRequest{
     return &TaobaoFeedflowItemCampaignGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoFeedflowItemCampaignGetRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.campaign.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoFeedflowItemCampaignGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoFeedflowItemCampaignGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// CampaginId Setter
+// 计划id
 func (r *TaobaoFeedflowItemCampaignGetRequest) SetCampaginId(campaginId int64) error {
     r.campaginId = campaginId
     r.Set("campagin_id", campaginId)
     return nil
 }
 
+// CampaginId Getter
 func (r TaobaoFeedflowItemCampaignGetRequest) GetCampaginId() int64 {
     return r.campaginId
 }
-

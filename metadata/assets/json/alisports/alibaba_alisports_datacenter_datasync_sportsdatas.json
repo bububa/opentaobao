@@ -1,4 +1,5 @@
 {
+	"id": 50851,
 	"name": "alibaba.alisports.datacenter.datasync.sportsdatas",
 	"apiChineseName": "阿里体育运动数据同步统一接口",
 	"description": "给单方提供同步运动数据到阿里体育的接口",

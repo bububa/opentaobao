@@ -1,4 +1,5 @@
 {
+	"id": 52562,
 	"name": "alibaba.alihealth.drugtrace.top.yljg.query.upbilldetail",
 	"apiChineseName": "根据单据号查询单据的详情信息【注意：查询的是本企业的单据】",
 	"description": "根据单据号查询单据的详情信息【注意：这个接口查询的是本企业的单据，如果是查询上游的单据明细信息，使用xxxxxxx.listupout.detail接口】。",

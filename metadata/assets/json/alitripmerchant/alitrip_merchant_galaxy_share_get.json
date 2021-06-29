@@ -1,4 +1,5 @@
 {
+	"id": 55862,
 	"name": "alitrip.merchant.galaxy.share.get",
 	"apiChineseName": "星河-获取小程序分享文案和图片",
 	"description": "获取 雅高微信小程序分享素材文案和图片。",

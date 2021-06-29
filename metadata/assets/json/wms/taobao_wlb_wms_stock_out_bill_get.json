@@ -1,4 +1,5 @@
 {
+	"id": 25680,
 	"name": "taobao.wlb.wms.stock.out.bill.get",
 	"apiChineseName": "通过订单号获取单个出库单发货信息",
 	"description": "通过订单号获取单个出库单发货信息",

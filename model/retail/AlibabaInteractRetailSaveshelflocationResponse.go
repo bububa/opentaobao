@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-保存地理位置和货架关系 APIResponse
+保存地理位置和货架关系 API返回值 
 alibaba.interact.retail.saveshelflocation
 
 保存地理位置和货架关系
@@ -17,15 +17,11 @@ type AlibabaInteractRetailSaveshelflocationAPIResponse struct {
     AlibabaInteractRetailSaveshelflocationResponse
 }
 
+// 保存地理位置和货架关系 成功返回结果
 type AlibabaInteractRetailSaveshelflocationResponse struct {
     XMLName xml.Name `xml:"alibaba_interact_retail_saveshelflocation_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 保存结果
-    
     Result   *AlibabaInteractRetailSaveshelflocationResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

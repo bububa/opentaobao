@@ -1,4 +1,5 @@
 {
+	"id": 30632,
 	"name": "alibaba.wdk.ums.returnitems.get",
 	"apiChineseName": "退货库位商品查询（退货出库辅助）-回流单",
 	"description": "退货库位商品查询（退货出库辅助）-回流单",

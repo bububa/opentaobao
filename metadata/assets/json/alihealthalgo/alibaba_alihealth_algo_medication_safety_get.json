@@ -1,4 +1,5 @@
 {
+	"id": 48492,
 	"name": "alibaba.alihealth.algo.medication.safety.get",
 	"apiChineseName": "合理用药api",
 	"description": "合理用药规则引擎服务",

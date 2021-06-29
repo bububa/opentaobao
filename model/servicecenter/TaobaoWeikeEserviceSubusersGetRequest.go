@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-客服外包订单分配的商家子账号列表 APIRequest
+客服外包订单分配的商家子账号列表 API请求
 taobao.weike.eservice.subusers.get
 
 获取客服外包订单分配的商家子账号列表，以及授权状态
 */
 type TaobaoWeikeEserviceSubusersGetRequest struct {
     model.Params
-
     // 订单ID
-    orderId   int64 
-
+    orderId   int64
 }
 
+// 初始化TaobaoWeikeEserviceSubusersGetRequest对象
 func NewTaobaoWeikeEserviceSubusersGetRequest() *TaobaoWeikeEserviceSubusersGetRequest{
     return &TaobaoWeikeEserviceSubusersGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoWeikeEserviceSubusersGetRequest) GetApiMethodName() string {
     return "taobao.weike.eservice.subusers.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoWeikeEserviceSubusersGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoWeikeEserviceSubusersGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OrderId Setter
+// 订单ID
 func (r *TaobaoWeikeEserviceSubusersGetRequest) SetOrderId(orderId int64) error {
     r.orderId = orderId
     r.Set("order_id", orderId)
     return nil
 }
 
+// OrderId Getter
 func (r TaobaoWeikeEserviceSubusersGetRequest) GetOrderId() int64 {
     return r.orderId
 }
-

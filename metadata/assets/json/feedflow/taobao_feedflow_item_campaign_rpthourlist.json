@@ -1,4 +1,5 @@
 {
+	"id": 43476,
 	"name": "taobao.feedflow.item.campaign.rpthourlist",
 	"apiChineseName": "超级推荐【商品推广】计划分时报表查询",
 	"description": "广告主推广计划分时数据查询，支持广告主查询最近90天内某一天的计划维度分时报表数据",

@@ -1,4 +1,5 @@
 {
+	"id": 29026,
 	"name": "alibaba.marketing.lottery.rule.save",
 	"apiChineseName": "抽奖平台抽奖规则保存接口",
 	"description": "抽奖平台抽奖规则保存接口，对于同一主体，保存新规则会失效老的规则",

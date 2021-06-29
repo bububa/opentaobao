@@ -1,4 +1,5 @@
 {
+	"id": 52363,
 	"name": "alibaba.ascp.uop.taobao.waybill.querycp",
 	"apiChineseName": "查询电子面单开放的CP列表",
 	"description": "查询电子面单开放的CP列表",

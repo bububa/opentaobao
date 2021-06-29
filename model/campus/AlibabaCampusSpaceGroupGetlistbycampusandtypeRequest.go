@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据园区id及TypeId获取空间分组 APIRequest
+根据园区id及TypeId获取空间分组 API请求
 alibaba.campus.space.group.getlistbycampusandtype
 
 根据园区id及TypeId获取空间分组
@@ -16,25 +16,25 @@ HSF方法名称：getListByCampusAndType
 */
 type AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest struct {
     model.Params
-
     // 系统自动生成
-    param0   *WorkBenchContext 
-
+    param0   *WorkBenchContext
     // 查询参数封装
-    param1   *SpaceGroupQuery 
-
+    param1   *SpaceGroupQuery
 }
 
+// 初始化AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest对象
 func NewAlibabaCampusSpaceGroupGetlistbycampusandtypeRequest() *AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest{
     return &AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest) GetApiMethodName() string {
     return "alibaba.campus.space.group.getlistbycampusandtype"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -42,25 +42,27 @@ func (r AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest) GetApiParams() url
     }
     return params
 }
-
-
+// Param0 Setter
+// 系统自动生成
 func (r *AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest) SetParam0(param0 *WorkBenchContext) error {
     r.param0 = param0
     r.Set("param0", param0)
     return nil
 }
 
+// Param0 Getter
 func (r AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest) GetParam0() *WorkBenchContext {
     return r.param0
 }
-
+// Param1 Setter
+// 查询参数封装
 func (r *AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest) SetParam1(param1 *SpaceGroupQuery) error {
     r.param1 = param1
     r.Set("param1", param1)
     return nil
 }
 
+// Param1 Getter
 func (r AlibabaCampusSpaceGroupGetlistbycampusandtypeRequest) GetParam1() *SpaceGroupQuery {
     return r.param1
 }
-

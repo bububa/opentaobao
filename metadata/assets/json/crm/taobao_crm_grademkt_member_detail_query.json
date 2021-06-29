@@ -1,4 +1,5 @@
 {
+	"id": 21531,
 	"name": "taobao.crm.grademkt.member.detail.query",
 	"apiChineseName": "会员等级营销-等级营销活动查询",
 	"description": "商家通过该接口查询等级营销活动",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-菜鸟工单操作回传 APIResponse
+菜鸟工单操作回传 API返回值 
 cainiao.cboss.workplatform.operation.reply
 
 菜鸟工单进度下发接口，目前调用者ISV
@@ -17,15 +17,11 @@ type CainiaoCbossWorkplatformOperationReplyAPIResponse struct {
     CainiaoCbossWorkplatformOperationReplyResponse
 }
 
+// 菜鸟工单操作回传 成功返回结果
 type CainiaoCbossWorkplatformOperationReplyResponse struct {
     XMLName xml.Name `xml:"cainiao_cboss_workplatform_operation_reply_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *CainiaoCbossWorkplatformOperationReplyResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

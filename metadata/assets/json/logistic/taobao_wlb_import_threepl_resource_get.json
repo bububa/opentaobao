@@ -1,4 +1,5 @@
 {
+	"id": 28876,
 	"name": "taobao.wlb.import.threepl.resource.get",
 	"apiChineseName": "3PL直邮获取资源列表",
 	"description": "获取3pl直邮的发货可用资源",

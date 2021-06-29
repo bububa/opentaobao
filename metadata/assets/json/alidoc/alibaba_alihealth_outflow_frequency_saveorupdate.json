@@ -1,4 +1,5 @@
 {
+	"id": 45010,
 	"name": "alibaba.alihealth.outflow.frequency.saveorupdate",
 	"apiChineseName": "处方外流-药品频次同步接口",
 	"description": "处方外流-药品频次同步接口",

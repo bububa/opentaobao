@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据ID查询指定空间单元信息 APIResponse
+根据ID查询指定空间单元信息 API返回值 
 alibaba.campus.space.unit.getbyid
 
 根据ID查询指定空间单元信息
@@ -19,15 +19,11 @@ type AlibabaCampusSpaceUnitGetbyidAPIResponse struct {
     AlibabaCampusSpaceUnitGetbyidResponse
 }
 
+// 根据ID查询指定空间单元信息 成功返回结果
 type AlibabaCampusSpaceUnitGetbyidResponse struct {
     XMLName xml.Name `xml:"alibaba_campus_space_unit_getbyid_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *PojoResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

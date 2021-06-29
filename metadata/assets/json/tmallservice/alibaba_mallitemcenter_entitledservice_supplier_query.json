@@ -1,4 +1,5 @@
 {
+	"id": 49044,
 	"name": "alibaba.mallitemcenter.entitledservice.supplier.query",
 	"apiChineseName": "根据天猫id查询门店服务授权",
 	"description": "根据天猫id查询门店服务授权",

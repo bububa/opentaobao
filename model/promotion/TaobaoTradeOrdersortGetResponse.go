@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取前N有礼活动的开奖订单列表 APIResponse
+获取前N有礼活动的开奖订单列表 API返回值 
 taobao.trade.ordersort.get
 
 获取前N有礼活动的开奖订单列表
@@ -17,15 +17,11 @@ type TaobaoTradeOrdersortGetAPIResponse struct {
     TaobaoTradeOrdersortGetResponse
 }
 
+// 获取前N有礼活动的开奖订单列表 成功返回结果
 type TaobaoTradeOrdersortGetResponse struct {
     XMLName xml.Name `xml:"trade_ordersort_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *TaobaoTradeOrdersortGetResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 55696,
 	"name": "taobao.alitrip.axin.trans.fund.query.by.order",
 	"apiChineseName": "通过外部订单ID查询所有资金单",
 	"description": "阿信供销平台-通过外部订单ID查询所有资金单",

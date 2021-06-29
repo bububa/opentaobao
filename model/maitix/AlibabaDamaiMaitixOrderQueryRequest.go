@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-大麦-查询分销单 APIRequest
+大麦-查询分销单 API请求
 alibaba.damai.maitix.order.query
 
 查询分销单
 */
 type AlibabaDamaiMaitixOrderQueryRequest struct {
     model.Params
-
     // 分销单查询入参
-    param   *MoaOrderQueryParam 
-
+    param   *MoaOrderQueryParam
 }
 
+// 初始化AlibabaDamaiMaitixOrderQueryRequest对象
 func NewAlibabaDamaiMaitixOrderQueryRequest() *AlibabaDamaiMaitixOrderQueryRequest{
     return &AlibabaDamaiMaitixOrderQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaDamaiMaitixOrderQueryRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.order.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaDamaiMaitixOrderQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaDamaiMaitixOrderQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 分销单查询入参
 func (r *AlibabaDamaiMaitixOrderQueryRequest) SetParam(param *MoaOrderQueryParam) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaDamaiMaitixOrderQueryRequest) GetParam() *MoaOrderQueryParam {
     return r.param
 }
-

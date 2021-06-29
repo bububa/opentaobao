@@ -1,4 +1,5 @@
 {
+	"id": 45564,
 	"name": "taobao.miniappp.template.instantiate",
 	"apiChineseName": "（已废弃）构建实例化应用",
 	"description": "实例化saas化的小程序",

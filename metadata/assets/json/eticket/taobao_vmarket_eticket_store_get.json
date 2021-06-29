@@ -1,4 +1,5 @@
 {
+	"id": 23842,
 	"name": "taobao.vmarket.eticket.store.get",
 	"apiChineseName": "获取电子凭证预约门店信息",
 	"description": "用于给外部商家查询电子凭证预约门店信息",

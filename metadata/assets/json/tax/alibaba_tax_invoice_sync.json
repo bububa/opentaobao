@@ -1,4 +1,5 @@
 {
+	"id": 41740,
 	"name": "alibaba.tax.invoice.sync",
 	"apiChineseName": "第三方开票回调API",
 	"description": "该接口只提供给俄罗斯供应商开具发票使用，请勿申请。",

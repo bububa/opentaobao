@@ -1,4 +1,5 @@
 {
+	"id": 47314,
 	"name": "aliexpress.solution.feed.list.get",
 	"apiChineseName": "aliexpress.solution.feed.list.get",
 	"description": "API to query the feed list belonged to a seller",

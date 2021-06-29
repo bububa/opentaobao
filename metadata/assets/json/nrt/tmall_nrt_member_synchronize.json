@@ -1,4 +1,5 @@
 {
+	"id": 45392,
 	"name": "tmall.nrt.member.synchronize",
 	"apiChineseName": "新零售会员同步接口",
 	"description": "新零售会员上翻接口，商家的会员信息同步至阿里侧",

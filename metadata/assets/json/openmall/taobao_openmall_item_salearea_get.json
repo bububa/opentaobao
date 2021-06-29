@@ -1,4 +1,5 @@
 {
+	"id": 52009,
 	"name": "taobao.openmall.item.salearea.get",
 	"apiChineseName": "查询商品可售区域",
 	"description": "获取openmall商品的可售区域",

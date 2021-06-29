@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-三方入驻-开通服务 APIResponse
+三方入驻-开通服务 API返回值 
 alibaba.alihealth.medical.item.publish
 
 三方入驻-开通服务
@@ -17,15 +17,11 @@ type AlibabaAlihealthMedicalItemPublishAPIResponse struct {
     AlibabaAlihealthMedicalItemPublishResponse
 }
 
+// 三方入驻-开通服务 成功返回结果
 type AlibabaAlihealthMedicalItemPublishResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_medical_item_publish_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 系统返回的通用结果类
-    
     Result1   *ServiceResult `json:"result1,omitempty" xml:"result1,omitempty"`
-
-    
 }

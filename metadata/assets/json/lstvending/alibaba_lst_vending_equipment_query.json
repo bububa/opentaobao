@@ -1,4 +1,5 @@
 {
+	"id": 38020,
 	"name": "alibaba.lst.vending.equipment.query",
 	"apiChineseName": "自动售卖机设备信息查询",
 	"description": "为零售通品牌商提供已租赁的设备信息查询。",

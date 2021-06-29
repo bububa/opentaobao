@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-地点关联关系增量编辑 APIRequest
+地点关联关系增量编辑 API请求
 taobao.location.relation.edit
 
 地点关联关系增量编辑
 */
 type TaobaoLocationRelationEditRequest struct {
     model.Params
-
     // 关系对象列表
-    locationRelationList   []LocationRelationDto 
-
+    locationRelationList   []LocationRelationDto
 }
 
+// 初始化TaobaoLocationRelationEditRequest对象
 func NewTaobaoLocationRelationEditRequest() *TaobaoLocationRelationEditRequest{
     return &TaobaoLocationRelationEditRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoLocationRelationEditRequest) GetApiMethodName() string {
     return "taobao.location.relation.edit"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoLocationRelationEditRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoLocationRelationEditRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// LocationRelationList Setter
+// 关系对象列表
 func (r *TaobaoLocationRelationEditRequest) SetLocationRelationList(locationRelationList []LocationRelationDto) error {
     r.locationRelationList = locationRelationList
     r.Set("location_relation_list", locationRelationList)
     return nil
 }
 
+// LocationRelationList Getter
 func (r TaobaoLocationRelationEditRequest) GetLocationRelationList() []LocationRelationDto {
     return r.locationRelationList
 }
-

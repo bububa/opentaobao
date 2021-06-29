@@ -1,4 +1,5 @@
 {
+	"id": 28962,
 	"name": "taobao.bus.tvmcreateqrcode.set",
 	"apiChineseName": "自助机生成支付宝支付二维码",
 	"description": "用于汽车票线下自助机调用获取支付宝的二维码",

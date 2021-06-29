@@ -1,4 +1,5 @@
 {
+	"id": 45483,
 	"name": "alibaba.mozi.acl.role.remove.permissions",
 	"apiChineseName": "角色移除功能权限",
 	"description": "从角色中移除一批功能权限",

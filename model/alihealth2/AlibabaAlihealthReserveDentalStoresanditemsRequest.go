@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询商户门店，商品列表 APIRequest
+查询商户门店，商品列表 API请求
 alibaba.alihealth.reserve.dental.storesanditems
 
 查询商户门店，商品列表
 */
 type AlibabaAlihealthReserveDentalStoresanditemsRequest struct {
     model.Params
-
     // 页码，每页100个门店，超过100个门店分页请求
-    pageNo   int64 
-
+    pageNo   int64
 }
 
+// 初始化AlibabaAlihealthReserveDentalStoresanditemsRequest对象
 func NewAlibabaAlihealthReserveDentalStoresanditemsRequest() *AlibabaAlihealthReserveDentalStoresanditemsRequest{
     return &AlibabaAlihealthReserveDentalStoresanditemsRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthReserveDentalStoresanditemsRequest) GetApiMethodName() string {
     return "alibaba.alihealth.reserve.dental.storesanditems"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthReserveDentalStoresanditemsRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthReserveDentalStoresanditemsRequest) GetApiParams() url.V
     }
     return params
 }
-
-
+// PageNo Setter
+// 页码，每页100个门店，超过100个门店分页请求
 func (r *AlibabaAlihealthReserveDentalStoresanditemsRequest) SetPageNo(pageNo int64) error {
     r.pageNo = pageNo
     r.Set("page_no", pageNo)
     return nil
 }
 
+// PageNo Getter
 func (r AlibabaAlihealthReserveDentalStoresanditemsRequest) GetPageNo() int64 {
     return r.pageNo
 }
-

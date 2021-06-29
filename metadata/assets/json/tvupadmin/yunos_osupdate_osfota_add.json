@@ -1,4 +1,5 @@
 {
+	"id": 30521,
 	"name": "yunos.osupdate.osfota.add",
 	"apiChineseName": "添加系统升级任务",
 	"description": "添加osupdate系统升级任务",

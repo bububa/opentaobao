@@ -1,4 +1,5 @@
 {
+	"id": 29553,
 	"name": "taobao.xhotel.fastinvoice.request",
 	"apiChineseName": "极速开票开票请求回传",
 	"description": "极速开票开票请求回传,用于记录航信开票请求数据",

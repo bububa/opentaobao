@@ -1,4 +1,5 @@
 {
+	"id": 27196,
 	"name": "taobao.beehive.item.cps.url",
 	"apiChineseName": "分佣链接生成接口",
 	"description": "传入包括itemId,accountId,bizType在内的参数，对应参数返回分佣链接",

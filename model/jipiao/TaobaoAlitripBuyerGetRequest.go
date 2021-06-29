@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-敏感信息查询 APIRequest
+敏感信息查询 API请求
 taobao.alitrip.buyer.get
 
 针对商家提供统一的TOP接口，可以根据订单获取订单对应买家联系电话（阿里小号）。
 */
 type TaobaoAlitripBuyerGetRequest struct {
     model.Params
-
     // 敏感信息查询请求参数
-    requestAxb   *RequestAxbDo 
-
+    requestAxb   *RequestAxbDo
 }
 
+// 初始化TaobaoAlitripBuyerGetRequest对象
 func NewTaobaoAlitripBuyerGetRequest() *TaobaoAlitripBuyerGetRequest{
     return &TaobaoAlitripBuyerGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAlitripBuyerGetRequest) GetApiMethodName() string {
     return "taobao.alitrip.buyer.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAlitripBuyerGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoAlitripBuyerGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// RequestAxb Setter
+// 敏感信息查询请求参数
 func (r *TaobaoAlitripBuyerGetRequest) SetRequestAxb(requestAxb *RequestAxbDo) error {
     r.requestAxb = requestAxb
     r.Set("request_axb", requestAxb)
     return nil
 }
 
+// RequestAxb Getter
 func (r TaobaoAlitripBuyerGetRequest) GetRequestAxb() *RequestAxbDo {
     return r.requestAxb
 }
-

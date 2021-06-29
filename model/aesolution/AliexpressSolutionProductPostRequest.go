@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-Product posting API APIRequest
+Product posting API API请求
 aliexpress.solution.product.post
 
 Product posting API for Oversea merchants, simplifying the complexity of integration that sellers and merchants face. For example, these sellers can use their own category and attributes instead of mapping those from AE.
 */
 type AliexpressSolutionProductPostRequest struct {
     model.Params
-
     // input param
-    postProductRequest   *PostProductRequestDto 
-
+    postProductRequest   *PostProductRequestDto
 }
 
+// 初始化AliexpressSolutionProductPostRequest对象
 func NewAliexpressSolutionProductPostRequest() *AliexpressSolutionProductPostRequest{
     return &AliexpressSolutionProductPostRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AliexpressSolutionProductPostRequest) GetApiMethodName() string {
     return "aliexpress.solution.product.post"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AliexpressSolutionProductPostRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AliexpressSolutionProductPostRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// PostProductRequest Setter
+// input param
 func (r *AliexpressSolutionProductPostRequest) SetPostProductRequest(postProductRequest *PostProductRequestDto) error {
     r.postProductRequest = postProductRequest
     r.Set("post_product_request", postProductRequest)
     return nil
 }
 
+// PostProductRequest Getter
 func (r AliexpressSolutionProductPostRequest) GetPostProductRequest() *PostProductRequestDto {
     return r.postProductRequest
 }
-

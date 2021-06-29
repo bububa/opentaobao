@@ -1,4 +1,5 @@
 {
+	"id": 41601,
 	"name": "alibaba.mj.oc.offline.maxticketno.get",
 	"apiChineseName": "pos机获取线下最大小票号",
 	"description": "给pos机提供线下最大小票号查询",

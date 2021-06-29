@@ -1,4 +1,5 @@
 {
+	"id": 53915,
 	"name": "taobao.jst.interactive.assets.query",
 	"apiChineseName": "查询可配置任务素材接口",
 	"description": "查询可配置任务素材列表，用以配置任务素材",

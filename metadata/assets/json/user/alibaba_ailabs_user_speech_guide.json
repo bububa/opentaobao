@@ -1,4 +1,5 @@
 {
+	"id": 45312,
 	"name": "alibaba.ailabs.user.speech.guide",
 	"apiChineseName": "引导语推荐接口",
 	"description": "根据用户的语音query，返回相应的引导语推荐",

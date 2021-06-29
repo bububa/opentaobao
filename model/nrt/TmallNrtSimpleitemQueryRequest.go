@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-简易商品查询接口 APIRequest
+简易商品查询接口 API请求
 tmall.nrt.simpleitem.query
 
 为居然之家和阿里的合资公司 homeStyler提供简易的商品信息查询 包含商品名称  图片 状态
@@ -16,22 +16,23 @@ tmall.nrt.simpleitem.query
 */
 type TmallNrtSimpleitemQueryRequest struct {
     model.Params
-
     // 商品编码数组
-    ids   []int64 
-
+    ids   []int64
 }
 
+// 初始化TmallNrtSimpleitemQueryRequest对象
 func NewTmallNrtSimpleitemQueryRequest() *TmallNrtSimpleitemQueryRequest{
     return &TmallNrtSimpleitemQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallNrtSimpleitemQueryRequest) GetApiMethodName() string {
     return "tmall.nrt.simpleitem.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallNrtSimpleitemQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -39,15 +40,15 @@ func (r TmallNrtSimpleitemQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Ids Setter
+// 商品编码数组
 func (r *TmallNrtSimpleitemQueryRequest) SetIds(ids []int64) error {
     r.ids = ids
     r.Set("ids", ids)
     return nil
 }
 
+// Ids Getter
 func (r TmallNrtSimpleitemQueryRequest) GetIds() []int64 {
     return r.ids
 }
-

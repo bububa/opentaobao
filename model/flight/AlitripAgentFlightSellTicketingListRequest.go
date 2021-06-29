@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-销售出票列表 APIRequest
+销售出票列表 API请求
 alitrip.agent.flight.sell.ticketing.list
 
 销售出票列表
 */
 type AlitripAgentFlightSellTicketingListRequest struct {
     model.Params
-
     // 入参对象
-    param   *TicketingListRequestDto 
-
+    param   *TicketingListRequestDto
 }
 
+// 初始化AlitripAgentFlightSellTicketingListRequest对象
 func NewAlitripAgentFlightSellTicketingListRequest() *AlitripAgentFlightSellTicketingListRequest{
     return &AlitripAgentFlightSellTicketingListRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripAgentFlightSellTicketingListRequest) GetApiMethodName() string {
     return "alitrip.agent.flight.sell.ticketing.list"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripAgentFlightSellTicketingListRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripAgentFlightSellTicketingListRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 入参对象
 func (r *AlitripAgentFlightSellTicketingListRequest) SetParam(param *TicketingListRequestDto) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlitripAgentFlightSellTicketingListRequest) GetParam() *TicketingListRequestDto {
     return r.param
 }
-

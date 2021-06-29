@@ -1,4 +1,5 @@
 {
+	"id": 34736,
 	"name": "cainiao.merchant.inventory.adjust",
 	"apiChineseName": "商家库存调整",
 	"description": "商家仓库存调整接口，目前仅支持全量更新",

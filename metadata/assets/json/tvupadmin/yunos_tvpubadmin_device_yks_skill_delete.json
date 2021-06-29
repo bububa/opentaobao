@@ -1,4 +1,5 @@
 {
+	"id": 37910,
 	"name": "yunos.tvpubadmin.device.yks.skill.delete",
 	"apiChineseName": "技能删除",
 	"description": "删除技能",

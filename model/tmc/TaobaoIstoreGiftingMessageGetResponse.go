@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-gifting消息获取 APIResponse
+gifting消息获取 API返回值 
 taobao.istore.gifting.message.get
 
 该api通过参数查询对应的gifting消息
@@ -17,15 +17,11 @@ type TaobaoIstoreGiftingMessageGetAPIResponse struct {
     TaobaoIstoreGiftingMessageGetResponse
 }
 
+// gifting消息获取 成功返回结果
 type TaobaoIstoreGiftingMessageGetResponse struct {
     XMLName xml.Name `xml:"istore_gifting_message_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TaobaoIstoreGiftingMessageGetResultDto `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

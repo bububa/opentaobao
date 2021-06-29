@@ -1,4 +1,5 @@
 {
+	"id": 21611,
 	"name": "taobao.inventory.store.manage",
 	"apiChineseName": "创建或更新仓库",
 	"description": "创建商家仓或者更新商家仓信息",

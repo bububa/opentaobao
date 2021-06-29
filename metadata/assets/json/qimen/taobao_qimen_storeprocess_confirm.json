@@ -1,4 +1,5 @@
 {
+	"id": 27270,
 	"name": "taobao.qimen.storeprocess.confirm",
 	"apiChineseName": "仓内加工单确认接口",
 	"description": "WMS调用奇门的接口,回传仓内加工单创建情况",

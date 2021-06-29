@@ -1,4 +1,5 @@
 {
+	"id": 31024,
 	"name": "alibaba.fundplatform.account.jour.query.info",
 	"apiChineseName": "查询账户流水信息",
 	"description": "外部查询账户流水信息",

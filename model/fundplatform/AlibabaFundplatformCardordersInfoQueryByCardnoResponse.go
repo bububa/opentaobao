@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-通过卡号查询卡信息 APIResponse
+通过卡号查询卡信息 API返回值 
 alibaba.fundplatform.cardorders.info.query.by.cardno
 
 该接口由汇金实现，外部调用。通过制卡单号分页查询卡信息
@@ -17,15 +17,11 @@ type AlibabaFundplatformCardordersInfoQueryByCardnoAPIResponse struct {
     AlibabaFundplatformCardordersInfoQueryByCardnoResponse
 }
 
+// 通过卡号查询卡信息 成功返回结果
 type AlibabaFundplatformCardordersInfoQueryByCardnoResponse struct {
     XMLName xml.Name `xml:"alibaba_fundplatform_cardorders_info_query_by_cardno_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *CardMakingInfoQueryResponse `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

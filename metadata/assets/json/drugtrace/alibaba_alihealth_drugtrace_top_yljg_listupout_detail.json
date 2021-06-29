@@ -1,4 +1,5 @@
 {
+	"id": 53726,
 	"name": "alibaba.alihealth.drugtrace.top.yljg.listupout.detail",
 	"apiChineseName": "上游出库单单据明细查询",
 	"description": "查询上游出库单明细(带追溯码信息)",

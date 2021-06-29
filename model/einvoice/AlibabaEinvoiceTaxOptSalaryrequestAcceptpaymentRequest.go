@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-受理发薪 APIRequest
+受理发薪 API请求
 alibaba.einvoice.tax.opt.salaryrequest.acceptpayment
 
 发薪受理接口
 */
 type AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest struct {
     model.Params
-
     // 请求入参
-    paramTaxOptimizationSalaryPaymentAccessReqDTO   *TaxOptimizationSalaryPaymentAccessReqDto 
-
+    paramTaxOptimizationSalaryPaymentAccessReqDTO   *TaxOptimizationSalaryPaymentAccessReqDto
 }
 
+// 初始化AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest对象
 func NewAlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest() *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest{
     return &AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest) GetApiMethodName() string {
     return "alibaba.einvoice.tax.opt.salaryrequest.acceptpayment"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest) GetApiParams() u
     }
     return params
 }
-
-
+// ParamTaxOptimizationSalaryPaymentAccessReqDTO Setter
+// 请求入参
 func (r *AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest) SetParamTaxOptimizationSalaryPaymentAccessReqDTO(paramTaxOptimizationSalaryPaymentAccessReqDTO *TaxOptimizationSalaryPaymentAccessReqDto) error {
     r.paramTaxOptimizationSalaryPaymentAccessReqDTO = paramTaxOptimizationSalaryPaymentAccessReqDTO
     r.Set("param_tax_optimization_salary_payment_access_req_d_t_o", paramTaxOptimizationSalaryPaymentAccessReqDTO)
     return nil
 }
 
+// ParamTaxOptimizationSalaryPaymentAccessReqDTO Getter
 func (r AlibabaEinvoiceTaxOptSalaryrequestAcceptpaymentRequest) GetParamTaxOptimizationSalaryPaymentAccessReqDTO() *TaxOptimizationSalaryPaymentAccessReqDto {
     return r.paramTaxOptimizationSalaryPaymentAccessReqDTO
 }
-

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-渠道分销供应商上传线下流水预存款（减少） APIRequest
+渠道分销供应商上传线下流水预存款（减少） API请求
 taobao.channel.trade.prepay.offline.reduce
 
 渠道分销供应商上传线下流水预存款（减少）
 */
 type TaobaoChannelTradePrepayOfflineReduceRequest struct {
     model.Params
-
     // 减少流水
-    offlineReducePrepayParam   *TopOfflineReducePrepayDto 
-
+    offlineReducePrepayParam   *TopOfflineReducePrepayDto
 }
 
+// 初始化TaobaoChannelTradePrepayOfflineReduceRequest对象
 func NewTaobaoChannelTradePrepayOfflineReduceRequest() *TaobaoChannelTradePrepayOfflineReduceRequest{
     return &TaobaoChannelTradePrepayOfflineReduceRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoChannelTradePrepayOfflineReduceRequest) GetApiMethodName() string {
     return "taobao.channel.trade.prepay.offline.reduce"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoChannelTradePrepayOfflineReduceRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoChannelTradePrepayOfflineReduceRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// OfflineReducePrepayParam Setter
+// 减少流水
 func (r *TaobaoChannelTradePrepayOfflineReduceRequest) SetOfflineReducePrepayParam(offlineReducePrepayParam *TopOfflineReducePrepayDto) error {
     r.offlineReducePrepayParam = offlineReducePrepayParam
     r.Set("offline_reduce_prepay_param", offlineReducePrepayParam)
     return nil
 }
 
+// OfflineReducePrepayParam Getter
 func (r TaobaoChannelTradePrepayOfflineReduceRequest) GetOfflineReducePrepayParam() *TopOfflineReducePrepayDto {
     return r.offlineReducePrepayParam
 }
-

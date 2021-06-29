@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-无线开放视频内容安全检查 APIRequest
+无线开放视频内容安全检查 API请求
 taobao.wireless.video.check
 
 无线开放内容检查，提供涉黄暴力政治音视频的异步检查。更详情介绍见 <a href="https://help.aliyun.com/document_detail/70436.html" target="blank">阿里云内容安全</a>
@@ -18,25 +18,25 @@ taobao.wireless.video.check
 */
 type TaobaoWirelessVideoCheckRequest struct {
     model.Params
-
     // 视频的URL，必须为淘系安全域名地址。视频格式支持flv、mp4。
-    url   string 
-
+    url   string
     // 视频截帧间隔，取值范围为[1, 60]，单位为秒。 截帧最多张数为200张，请根据视频时长，合理设置截帧间隔。
-    interval   int64 
-
+    interval   int64
 }
 
+// 初始化TaobaoWirelessVideoCheckRequest对象
 func NewTaobaoWirelessVideoCheckRequest() *TaobaoWirelessVideoCheckRequest{
     return &TaobaoWirelessVideoCheckRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoWirelessVideoCheckRequest) GetApiMethodName() string {
     return "taobao.wireless.video.check"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoWirelessVideoCheckRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -44,25 +44,27 @@ func (r TaobaoWirelessVideoCheckRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Url Setter
+// 视频的URL，必须为淘系安全域名地址。视频格式支持flv、mp4。
 func (r *TaobaoWirelessVideoCheckRequest) SetUrl(url string) error {
     r.url = url
     r.Set("url", url)
     return nil
 }
 
+// Url Getter
 func (r TaobaoWirelessVideoCheckRequest) GetUrl() string {
     return r.url
 }
-
+// Interval Setter
+// 视频截帧间隔，取值范围为[1, 60]，单位为秒。 截帧最多张数为200张，请根据视频时长，合理设置截帧间隔。
 func (r *TaobaoWirelessVideoCheckRequest) SetInterval(interval int64) error {
     r.interval = interval
     r.Set("interval", interval)
     return nil
 }
 
+// Interval Getter
 func (r TaobaoWirelessVideoCheckRequest) GetInterval() int64 {
     return r.interval
 }
-

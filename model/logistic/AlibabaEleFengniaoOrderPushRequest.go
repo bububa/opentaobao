@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-推送订单 APIRequest
+推送订单 API请求
 alibaba.ele.fengniao.order.push
 
 推送淘宝订单至蜂鸟开放平台配送
 */
 type AlibabaEleFengniaoOrderPushRequest struct {
     model.Params
-
     // 参数param
-    param   *Param 
-
+    param   *Param
 }
 
+// 初始化AlibabaEleFengniaoOrderPushRequest对象
 func NewAlibabaEleFengniaoOrderPushRequest() *AlibabaEleFengniaoOrderPushRequest{
     return &AlibabaEleFengniaoOrderPushRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaEleFengniaoOrderPushRequest) GetApiMethodName() string {
     return "alibaba.ele.fengniao.order.push"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaEleFengniaoOrderPushRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaEleFengniaoOrderPushRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 参数param
 func (r *AlibabaEleFengniaoOrderPushRequest) SetParam(param *Param) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaEleFengniaoOrderPushRequest) GetParam() *Param {
     return r.param
 }
-

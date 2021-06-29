@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-图文草稿状态更新 APIRequest
+图文草稿状态更新 API请求
 alibaba.alihouse.newhome.rc.changestatus
 
 图文草稿状态更新
 */
 type AlibabaAlihouseNewhomeRcChangestatusRequest struct {
     model.Params
-
     // 外部图文id
-    outerId   string 
-
+    outerId   string
     // 0 失效 1 有效
-    status   int64 
-
+    status   int64
 }
 
+// 初始化AlibabaAlihouseNewhomeRcChangestatusRequest对象
 func NewAlibabaAlihouseNewhomeRcChangestatusRequest() *AlibabaAlihouseNewhomeRcChangestatusRequest{
     return &AlibabaAlihouseNewhomeRcChangestatusRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihouseNewhomeRcChangestatusRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.rc.changestatus"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihouseNewhomeRcChangestatusRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r AlibabaAlihouseNewhomeRcChangestatusRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OuterId Setter
+// 外部图文id
 func (r *AlibabaAlihouseNewhomeRcChangestatusRequest) SetOuterId(outerId string) error {
     r.outerId = outerId
     r.Set("outer_id", outerId)
     return nil
 }
 
+// OuterId Getter
 func (r AlibabaAlihouseNewhomeRcChangestatusRequest) GetOuterId() string {
     return r.outerId
 }
-
+// Status Setter
+// 0 失效 1 有效
 func (r *AlibabaAlihouseNewhomeRcChangestatusRequest) SetStatus(status int64) error {
     r.status = status
     r.Set("status", status)
     return nil
 }
 
+// Status Getter
 func (r AlibabaAlihouseNewhomeRcChangestatusRequest) GetStatus() int64 {
     return r.status
 }
-

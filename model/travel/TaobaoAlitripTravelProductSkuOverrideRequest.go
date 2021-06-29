@@ -7,35 +7,34 @@ import (
 )
 
 /* 
-（供销）产品级别日历价格库存修改，全量覆盖 APIRequest
+（供销）产品级别日历价格库存修改，全量覆盖 API请求
 taobao.alitrip.travel.product.sku.override
 
 （供销）产品级别日历价格库存修改，全量覆盖
 */
 type TaobaoAlitripTravelProductSkuOverrideRequest struct {
     model.Params
-
     // 商品 外部商家编码。itemId和outProductId至少填写一个
-    outProductId   string 
-
+    outProductId   string
     // 商品id。itemId和outProductId至少填写一个
-    itemId   int64 
-
+    itemId   int64
     // 商品日历价格库存套餐
-    skus   []ItemSkuInfo 
-
+    skus   []ItemSkuInfo
 }
 
+// 初始化TaobaoAlitripTravelProductSkuOverrideRequest对象
 func NewTaobaoAlitripTravelProductSkuOverrideRequest() *TaobaoAlitripTravelProductSkuOverrideRequest{
     return &TaobaoAlitripTravelProductSkuOverrideRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAlitripTravelProductSkuOverrideRequest) GetApiMethodName() string {
     return "taobao.alitrip.travel.product.sku.override"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAlitripTravelProductSkuOverrideRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -43,35 +42,39 @@ func (r TaobaoAlitripTravelProductSkuOverrideRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// OutProductId Setter
+// 商品 外部商家编码。itemId和outProductId至少填写一个
 func (r *TaobaoAlitripTravelProductSkuOverrideRequest) SetOutProductId(outProductId string) error {
     r.outProductId = outProductId
     r.Set("out_product_id", outProductId)
     return nil
 }
 
+// OutProductId Getter
 func (r TaobaoAlitripTravelProductSkuOverrideRequest) GetOutProductId() string {
     return r.outProductId
 }
-
+// ItemId Setter
+// 商品id。itemId和outProductId至少填写一个
 func (r *TaobaoAlitripTravelProductSkuOverrideRequest) SetItemId(itemId int64) error {
     r.itemId = itemId
     r.Set("item_id", itemId)
     return nil
 }
 
+// ItemId Getter
 func (r TaobaoAlitripTravelProductSkuOverrideRequest) GetItemId() int64 {
     return r.itemId
 }
-
+// Skus Setter
+// 商品日历价格库存套餐
 func (r *TaobaoAlitripTravelProductSkuOverrideRequest) SetSkus(skus []ItemSkuInfo) error {
     r.skus = skus
     r.Set("skus", skus)
     return nil
 }
 
+// Skus Getter
 func (r TaobaoAlitripTravelProductSkuOverrideRequest) GetSkus() []ItemSkuInfo {
     return r.skus
 }
-

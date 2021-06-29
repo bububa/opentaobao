@@ -1,4 +1,5 @@
 {
+	"id": 41340,
 	"name": "alibaba.scbp.target.ad.plan.list",
 	"apiChineseName": "定向推广-查询定向推广计划列表并返回计划基础信息",
 	"description": "定向推广-查询定向推广计划列表并返回计划基础信息",

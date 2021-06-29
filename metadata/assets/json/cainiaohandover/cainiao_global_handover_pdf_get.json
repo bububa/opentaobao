@@ -1,4 +1,5 @@
 {
+	"id": 47829,
 	"name": "cainiao.global.handover.pdf.get",
 	"apiChineseName": "获取面单PDF文件数据",
 	"description": "返回指定大包面单的PDF文件数据",

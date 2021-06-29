@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-商家类目修改接口 APIRequest
+商家类目修改接口 API请求
 alibaba.wdk.sku.category.update
 
 商家类目修改接口
 */
 type AlibabaWdkSkuCategoryUpdateRequest struct {
     model.Params
-
     // 更新请求模型
-    param   *CategoryDo 
-
+    param   *CategoryDo
 }
 
+// 初始化AlibabaWdkSkuCategoryUpdateRequest对象
 func NewAlibabaWdkSkuCategoryUpdateRequest() *AlibabaWdkSkuCategoryUpdateRequest{
     return &AlibabaWdkSkuCategoryUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkSkuCategoryUpdateRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.category.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkSkuCategoryUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkSkuCategoryUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 更新请求模型
 func (r *AlibabaWdkSkuCategoryUpdateRequest) SetParam(param *CategoryDo) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaWdkSkuCategoryUpdateRequest) GetParam() *CategoryDo {
     return r.param
 }
-

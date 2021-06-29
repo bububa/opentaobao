@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-阿里健康预约挂号医生同步接口 APIRequest
+阿里健康预约挂号医生同步接口 API请求
 alibaba.alihealth.medical.doctor.sync
 
 阿里健康预约挂号医生同步接口
 */
 type AlibabaAlihealthMedicalDoctorSyncRequest struct {
     model.Params
-
     // 接口入参
-    saveRequest   *CommonRequest4Top 
-
+    saveRequest   *CommonRequest4Top
 }
 
+// 初始化AlibabaAlihealthMedicalDoctorSyncRequest对象
 func NewAlibabaAlihealthMedicalDoctorSyncRequest() *AlibabaAlihealthMedicalDoctorSyncRequest{
     return &AlibabaAlihealthMedicalDoctorSyncRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthMedicalDoctorSyncRequest) GetApiMethodName() string {
     return "alibaba.alihealth.medical.doctor.sync"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthMedicalDoctorSyncRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthMedicalDoctorSyncRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// SaveRequest Setter
+// 接口入参
 func (r *AlibabaAlihealthMedicalDoctorSyncRequest) SetSaveRequest(saveRequest *CommonRequest4Top) error {
     r.saveRequest = saveRequest
     r.Set("save_request", saveRequest)
     return nil
 }
 
+// SaveRequest Getter
 func (r AlibabaAlihealthMedicalDoctorSyncRequest) GetSaveRequest() *CommonRequest4Top {
     return r.saveRequest
 }
-

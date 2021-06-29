@@ -1,4 +1,5 @@
 {
+	"id": 31375,
 	"name": "alitrip.platform.divisions.getdivisionbyname",
 	"apiChineseName": "根据中文名称与行政区划级别查询行政区划数据",
 	"description": "根据中文名称与行政区划级别查询行政区划数据",

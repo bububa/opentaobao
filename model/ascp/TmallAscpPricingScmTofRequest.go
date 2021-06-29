@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-TOF&SCM营销域对接-成本录入设置 APIRequest
+TOF&SCM营销域对接-成本录入设置 API请求
 tmall.ascp.pricing.scm.tof
 
 TOF&SCM营销域对接-成本录入设置
 */
 type TmallAscpPricingScmTofRequest struct {
     model.Params
-
     // 成本价集合
-    costs   []ItemSkuCost 
-
+    costs   []ItemSkuCost
 }
 
+// 初始化TmallAscpPricingScmTofRequest对象
 func NewTmallAscpPricingScmTofRequest() *TmallAscpPricingScmTofRequest{
     return &TmallAscpPricingScmTofRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallAscpPricingScmTofRequest) GetApiMethodName() string {
     return "tmall.ascp.pricing.scm.tof"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallAscpPricingScmTofRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallAscpPricingScmTofRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Costs Setter
+// 成本价集合
 func (r *TmallAscpPricingScmTofRequest) SetCosts(costs []ItemSkuCost) error {
     r.costs = costs
     r.Set("costs", costs)
     return nil
 }
 
+// Costs Getter
 func (r TmallAscpPricingScmTofRequest) GetCosts() []ItemSkuCost {
     return r.costs
 }
-

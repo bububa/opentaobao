@@ -1,4 +1,5 @@
 {
+	"id": 33366,
 	"name": "alibaba.campus.space.unit.getlistwithattrbygroupid",
 	"apiChineseName": "根据空间分组id、ids查空间单元信息【带空间单元业务属性信息】",
 	"description": "根据空间分组id、ids查空间单元信息【带空间单元业务属性信息】",

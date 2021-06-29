@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-应用加固接口 APIRequest
+应用加固接口 API请求
 alibaba.security.jaq.app.shield
 
 提交应用进行应用加固,加固后需通过alibaba.security.jaq.app.shieldresult.get接口查询加固结果
 */
 type AlibabaSecurityJaqAppShieldRequest struct {
     model.Params
-
     // 待加固的应用信息
-    appInfo   *ScanAppInfo 
-
+    appInfo   *ScanAppInfo
     // 渠道列表,多渠道加固时填写
-    channel   *ShieldChannel 
-
+    channel   *ShieldChannel
 }
 
+// 初始化AlibabaSecurityJaqAppShieldRequest对象
 func NewAlibabaSecurityJaqAppShieldRequest() *AlibabaSecurityJaqAppShieldRequest{
     return &AlibabaSecurityJaqAppShieldRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaSecurityJaqAppShieldRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.app.shield"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaSecurityJaqAppShieldRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r AlibabaSecurityJaqAppShieldRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// AppInfo Setter
+// 待加固的应用信息
 func (r *AlibabaSecurityJaqAppShieldRequest) SetAppInfo(appInfo *ScanAppInfo) error {
     r.appInfo = appInfo
     r.Set("app_info", appInfo)
     return nil
 }
 
+// AppInfo Getter
 func (r AlibabaSecurityJaqAppShieldRequest) GetAppInfo() *ScanAppInfo {
     return r.appInfo
 }
-
+// Channel Setter
+// 渠道列表,多渠道加固时填写
 func (r *AlibabaSecurityJaqAppShieldRequest) SetChannel(channel *ShieldChannel) error {
     r.channel = channel
     r.Set("channel", channel)
     return nil
 }
 
+// Channel Getter
 func (r AlibabaSecurityJaqAppShieldRequest) GetChannel() *ShieldChannel {
     return r.channel
 }
-

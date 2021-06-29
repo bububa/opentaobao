@@ -1,4 +1,5 @@
 {
+	"id": 41653,
 	"name": "alibaba.alihealth.drug.kyt.uploadinsign",
 	"apiChineseName": "仓库批量扫码回传接口",
 	"description": "连锁总部仓库在采购入库或者销售出库环节，批量采集追溯码之后回传到码上放心平台。",

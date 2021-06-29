@@ -1,4 +1,5 @@
 {
+	"id": 43495,
 	"name": "taobao.alitrip.travel.product.base.modify",
 	"apiChineseName": "供应商编辑产品API",
 	"description": "飞猪供销平台供应商可通过该API编辑产品",

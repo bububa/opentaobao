@@ -1,4 +1,5 @@
 {
+	"id": 42040,
 	"name": "taobao.lark.iot.order.getgoodslist",
 	"apiChineseName": "iot渠道获取卖品信息",
 	"description": "iot无人超市服务商通过接口获取影院的可售卖品数据",

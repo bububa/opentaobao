@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询卡模板列表(支持数据下行) APIRequest
+查询卡模板列表(支持数据下行) API请求
 alibaba.alsc.crm.card.pagetmp
 
 查询卡模板列表(支持数据下行)
@@ -17,22 +17,23 @@ alibaba.alsc.crm.card.pagetmp
 */
 type AlibabaAlscCrmCardPagetmpRequest struct {
     model.Params
-
     // 请求结果
-    paramPullCardTemplateOpenReq   *PullCardTemplateOpenReq 
-
+    paramPullCardTemplateOpenReq   *PullCardTemplateOpenReq
 }
 
+// 初始化AlibabaAlscCrmCardPagetmpRequest对象
 func NewAlibabaAlscCrmCardPagetmpRequest() *AlibabaAlscCrmCardPagetmpRequest{
     return &AlibabaAlscCrmCardPagetmpRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlscCrmCardPagetmpRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.card.pagetmp"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlscCrmCardPagetmpRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,15 +41,15 @@ func (r AlibabaAlscCrmCardPagetmpRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamPullCardTemplateOpenReq Setter
+// 请求结果
 func (r *AlibabaAlscCrmCardPagetmpRequest) SetParamPullCardTemplateOpenReq(paramPullCardTemplateOpenReq *PullCardTemplateOpenReq) error {
     r.paramPullCardTemplateOpenReq = paramPullCardTemplateOpenReq
     r.Set("param_pull_card_template_open_req", paramPullCardTemplateOpenReq)
     return nil
 }
 
+// ParamPullCardTemplateOpenReq Getter
 func (r AlibabaAlscCrmCardPagetmpRequest) GetParamPullCardTemplateOpenReq() *PullCardTemplateOpenReq {
     return r.paramPullCardTemplateOpenReq
 }
-

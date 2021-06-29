@@ -1,4 +1,5 @@
 {
+	"id": 47667,
 	"name": "taobao.simba.hour.report.account.get",
 	"apiChineseName": "账户级别小时报表获取",
 	"description": "获取账户小时实时报表数据",

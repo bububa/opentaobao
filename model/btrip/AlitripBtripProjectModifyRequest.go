@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-变更项目 APIRequest
+变更项目 API请求
 alitrip.btrip.project.modify
 
 变更项目
 */
 type AlitripBtripProjectModifyRequest struct {
     model.Params
-
     // 请求对象
-    rq   *OpenProjectRq 
-
+    rq   *OpenProjectRq
 }
 
+// 初始化AlitripBtripProjectModifyRequest对象
 func NewAlitripBtripProjectModifyRequest() *AlitripBtripProjectModifyRequest{
     return &AlitripBtripProjectModifyRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripBtripProjectModifyRequest) GetApiMethodName() string {
     return "alitrip.btrip.project.modify"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripBtripProjectModifyRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripBtripProjectModifyRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Rq Setter
+// 请求对象
 func (r *AlitripBtripProjectModifyRequest) SetRq(rq *OpenProjectRq) error {
     r.rq = rq
     r.Set("rq", rq)
     return nil
 }
 
+// Rq Getter
 func (r AlitripBtripProjectModifyRequest) GetRq() *OpenProjectRq {
     return r.rq
 }
-

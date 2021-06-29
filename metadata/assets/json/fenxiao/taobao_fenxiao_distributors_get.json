@@ -1,4 +1,5 @@
 {
+	"id": 10379,
 	"name": "taobao.fenxiao.distributors.get",
 	"apiChineseName": "获取分销商信息",
 	"description": "查询和当前登录供应商有合作关系的分销商的信息",

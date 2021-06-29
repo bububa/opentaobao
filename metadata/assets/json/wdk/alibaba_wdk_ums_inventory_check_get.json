@@ -1,4 +1,5 @@
 {
+	"id": 30635,
 	"name": "alibaba.wdk.ums.inventory.check.get",
 	"apiChineseName": "盘点结果单-回流单",
 	"description": "盘点结果单-回流单",

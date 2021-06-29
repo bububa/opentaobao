@@ -1,4 +1,5 @@
 {
+	"id": 37505,
 	"name": "alibaba.lst.vending.goods.save",
 	"apiChineseName": "自动售卖机商品回传",
 	"description": "零售通自动售卖机商品数据回流。",

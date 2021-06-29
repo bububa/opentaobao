@@ -1,4 +1,5 @@
 {
+	"id": 42522,
 	"name": "alibaba.wdk.item.merchant.category.query",
 	"apiChineseName": "查询商品的商家叶子类目",
 	"description": "查询商品的商家叶子类目",

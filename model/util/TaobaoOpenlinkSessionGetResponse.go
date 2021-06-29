@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取授权session信息 APIResponse
+获取授权session信息 API返回值 
 taobao.openlink.session.get
 
 帮助第三方isv生成三方session
@@ -17,15 +17,11 @@ type TaobaoOpenlinkSessionGetAPIResponse struct {
     TaobaoOpenlinkSessionGetResponse
 }
 
+// 获取授权session信息 成功返回结果
 type TaobaoOpenlinkSessionGetResponse struct {
     XMLName xml.Name `xml:"openlink_session_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TaobaoOpenlinkSessionGetResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

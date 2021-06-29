@@ -1,4 +1,5 @@
 {
+	"id": 31988,
 	"name": "alibaba.campus.device.openapi.getdevicelist",
 	"apiChineseName": "多条件查询设备分组",
 	"description": "多条件查询设备分组",

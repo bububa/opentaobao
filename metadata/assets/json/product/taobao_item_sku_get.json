@@ -1,4 +1,5 @@
 {
+	"id": 28,
 	"name": "taobao.item.sku.get",
 	"apiChineseName": "获取SKU",
 	"description": "获取sku_id所对应的sku数据 \nsku_id对应的sku要属于传入的nick对应的卖家\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",

@@ -1,4 +1,5 @@
 {
+	"id": 39070,
 	"name": "taobao.uscesl.biz.brand.insert",
 	"apiChineseName": "新增电子价签商家",
 	"description": "一个电子价签业务身份下新增商家接口",

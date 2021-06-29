@@ -1,4 +1,5 @@
 {
+	"id": 27389,
 	"name": "taobao.omniorder.store.accpeted",
 	"apiChineseName": "Pos端门店接单接口",
 	"description": "ISV Pos端门店接单，通知星盘",

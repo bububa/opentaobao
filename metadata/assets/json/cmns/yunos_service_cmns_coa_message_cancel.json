@@ -1,4 +1,5 @@
 {
+	"id": 25279,
 	"name": "yunos.service.cmns.coa.message.cancel",
 	"apiChineseName": "CMNS消息撤回",
 	"description": "此接口用户撤回之前已经发出去的消息，根据消息ID撤回，只能撤回此appKey创建的消息。",

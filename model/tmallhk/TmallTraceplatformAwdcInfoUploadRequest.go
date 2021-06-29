@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-AWDC提交溯源信息 APIRequest
+AWDC提交溯源信息 API请求
 tmall.traceplatform.awdc.info.upload
 
 天猫溯源-AWDC-上传溯源信息
 */
 type TmallTraceplatformAwdcInfoUploadRequest struct {
     model.Params
-
     // 入参traceInfo
-    traceInfo   *AwdcInfo 
-
+    traceInfo   *AwdcInfo
 }
 
+// 初始化TmallTraceplatformAwdcInfoUploadRequest对象
 func NewTmallTraceplatformAwdcInfoUploadRequest() *TmallTraceplatformAwdcInfoUploadRequest{
     return &TmallTraceplatformAwdcInfoUploadRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallTraceplatformAwdcInfoUploadRequest) GetApiMethodName() string {
     return "tmall.traceplatform.awdc.info.upload"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallTraceplatformAwdcInfoUploadRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallTraceplatformAwdcInfoUploadRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TraceInfo Setter
+// 入参traceInfo
 func (r *TmallTraceplatformAwdcInfoUploadRequest) SetTraceInfo(traceInfo *AwdcInfo) error {
     r.traceInfo = traceInfo
     r.Set("trace_info", traceInfo)
     return nil
 }
 
+// TraceInfo Getter
 func (r TmallTraceplatformAwdcInfoUploadRequest) GetTraceInfo() *AwdcInfo {
     return r.traceInfo
 }
-

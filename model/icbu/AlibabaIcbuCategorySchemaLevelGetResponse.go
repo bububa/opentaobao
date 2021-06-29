@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-(新)层级属性获取 APIResponse
+(新)层级属性获取 API返回值 
 alibaba.icbu.category.schema.level.get
 
 将表单中层级属性的子属性返回
@@ -17,15 +17,11 @@ type AlibabaIcbuCategorySchemaLevelGetAPIResponse struct {
     AlibabaIcbuCategorySchemaLevelGetResponse
 }
 
+// (新)层级属性获取 成功返回结果
 type AlibabaIcbuCategorySchemaLevelGetResponse struct {
     XMLName xml.Name `xml:"alibaba_icbu_category_schema_level_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // Top返回对象
-    
     Result   *TopResultDo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

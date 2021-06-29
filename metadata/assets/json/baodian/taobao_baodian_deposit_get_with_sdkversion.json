@@ -1,4 +1,5 @@
 {
+	"id": 25968,
 	"name": "taobao.baodian.deposit.get.with.sdkversion",
 	"apiChineseName": "查询用户宝点信息（带sdk版本，已迁移）",
 	"description": "获取用户宝点信息（带sdk版本，已迁移）",

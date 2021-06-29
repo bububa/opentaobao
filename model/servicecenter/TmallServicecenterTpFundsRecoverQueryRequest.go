@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-服务商资金权益逆向扣回的查询接口 APIRequest
+服务商资金权益逆向扣回的查询接口 API请求
 tmall.servicecenter.tp.funds.recover.query
 
 服务商资金权益逆向扣回的查询接口
 */
 type TmallServicecenterTpFundsRecoverQueryRequest struct {
     model.Params
-
     // query入参
-    query   *TpFundsRecoverQuery 
-
+    query   *TpFundsRecoverQuery
 }
 
+// 初始化TmallServicecenterTpFundsRecoverQueryRequest对象
 func NewTmallServicecenterTpFundsRecoverQueryRequest() *TmallServicecenterTpFundsRecoverQueryRequest{
     return &TmallServicecenterTpFundsRecoverQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterTpFundsRecoverQueryRequest) GetApiMethodName() string {
     return "tmall.servicecenter.tp.funds.recover.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterTpFundsRecoverQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallServicecenterTpFundsRecoverQueryRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// Query Setter
+// query入参
 func (r *TmallServicecenterTpFundsRecoverQueryRequest) SetQuery(query *TpFundsRecoverQuery) error {
     r.query = query
     r.Set("query", query)
     return nil
 }
 
+// Query Getter
 func (r TmallServicecenterTpFundsRecoverQueryRequest) GetQuery() *TpFundsRecoverQuery {
     return r.query
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 37069,
 	"name": "tmall.servicecenter.tp.funds.send.query",
 	"apiChineseName": "服务商资金权益发放的查询接口",
 	"description": "服务商资金权益发放结果的查询接口",

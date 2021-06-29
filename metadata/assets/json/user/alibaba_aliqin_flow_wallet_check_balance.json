@@ -1,4 +1,5 @@
 {
+	"id": 25978,
 	"name": "alibaba.aliqin.flow.wallet.check.balance",
 	"apiChineseName": "商家预存余额检查",
 	"description": "检查商家CRM预存余额是否足够进行活动",

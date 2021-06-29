@@ -1,4 +1,5 @@
 {
+	"id": 38786,
 	"name": "alibaba.mos.order.refund.list.get",
 	"apiChineseName": "批量查询交易退货信息",
 	"description": "批量查询多个退货单的退货明细",

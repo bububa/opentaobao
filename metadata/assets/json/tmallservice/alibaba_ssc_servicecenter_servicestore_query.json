@@ -1,4 +1,5 @@
 {
+	"id": 49043,
 	"name": "alibaba.ssc.servicecenter.servicestore.query",
 	"apiChineseName": "根据天猫id查询门店信息",
 	"description": "根据天猫id查询门店信息",

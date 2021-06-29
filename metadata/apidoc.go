@@ -103,7 +103,7 @@ func (p ApiParam) TplParam(apiName string) TplParam {
 		Name:     name,
 		Label:    strings.ToLower(string(name[0])) + name[1:],
 		ParamKey: p.Name,
-		Desc:     p.Description,
+		Desc:     strings.ReplaceAll(p.Description, "\n", ""),
 		Required: p.Required,
 	}
 	paramType := strings.TrimSpace(strings.TrimSuffix(p.Type, "[]"))

@@ -1,4 +1,5 @@
 {
+	"id": 55645,
 	"name": "taobao.alitrip.axin.trans.fund.confirm",
 	"apiChineseName": "确认资金单",
 	"description": "通过外部订单号进行资金结算",

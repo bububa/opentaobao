@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-少儿大厅类目内容下线接口 APIRequest
+少儿大厅类目内容下线接口 API请求
 yunos.tvpubadmin.content.child.nodeitem.offline
 
 少儿大厅类目内容下线接口
 */
 type YunosTvpubadminContentChildNodeitemOfflineRequest struct {
     model.Params
-
     // 类目内容ID
-    contentId   int64 
-
+    contentId   int64
 }
 
+// 初始化YunosTvpubadminContentChildNodeitemOfflineRequest对象
 func NewYunosTvpubadminContentChildNodeitemOfflineRequest() *YunosTvpubadminContentChildNodeitemOfflineRequest{
     return &YunosTvpubadminContentChildNodeitemOfflineRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminContentChildNodeitemOfflineRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.child.nodeitem.offline"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminContentChildNodeitemOfflineRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminContentChildNodeitemOfflineRequest) GetApiParams() url.Va
     }
     return params
 }
-
-
+// ContentId Setter
+// 类目内容ID
 func (r *YunosTvpubadminContentChildNodeitemOfflineRequest) SetContentId(contentId int64) error {
     r.contentId = contentId
     r.Set("content_id", contentId)
     return nil
 }
 
+// ContentId Getter
 func (r YunosTvpubadminContentChildNodeitemOfflineRequest) GetContentId() int64 {
     return r.contentId
 }
-

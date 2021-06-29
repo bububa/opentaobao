@@ -1,4 +1,5 @@
 {
+	"id": 23274,
 	"name": "alibaba.xiami.api.rank.songs.get",
 	"apiChineseName": "排行榜歌曲获取",
 	"description": "获取歌曲排行榜",

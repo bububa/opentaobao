@@ -1,4 +1,5 @@
 {
+	"id": 27387,
 	"name": "taobao.omniorder.allocatedinfo.sync",
 	"apiChineseName": "分单结果同步给星盘",
 	"description": "ISV分单完成，将分单结果同步给星盘",

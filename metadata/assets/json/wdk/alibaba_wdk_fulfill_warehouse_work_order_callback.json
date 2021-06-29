@@ -1,4 +1,5 @@
 {
+	"id": 47635,
 	"name": "alibaba.wdk.fulfill.warehouse.work.order.callback",
 	"apiChineseName": "标准化仓作业单回传接口",
 	"description": "标准化仓作业单回传接口",

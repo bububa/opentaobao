@@ -1,4 +1,5 @@
 {
+	"id": 28640,
 	"name": "alibaba.nazca.token.issuecertapply.get",
 	"apiChineseName": "根据token获取出证申请信息",
 	"description": "根据token获取出证申请信息",

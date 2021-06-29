@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取运单信息 APIRequest
+获取运单信息 API请求
 taobao.wlb.imports.waybill.get
 
 一般进口商家，获取订单的电子面单链接地址
 */
 type TaobaoWlbImportsWaybillGetRequest struct {
     model.Params
-
     // 物流订单号
-    orderCode   string 
-
+    orderCode   string
 }
 
+// 初始化TaobaoWlbImportsWaybillGetRequest对象
 func NewTaobaoWlbImportsWaybillGetRequest() *TaobaoWlbImportsWaybillGetRequest{
     return &TaobaoWlbImportsWaybillGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoWlbImportsWaybillGetRequest) GetApiMethodName() string {
     return "taobao.wlb.imports.waybill.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoWlbImportsWaybillGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoWlbImportsWaybillGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OrderCode Setter
+// 物流订单号
 func (r *TaobaoWlbImportsWaybillGetRequest) SetOrderCode(orderCode string) error {
     r.orderCode = orderCode
     r.Set("order_code", orderCode)
     return nil
 }
 
+// OrderCode Getter
 func (r TaobaoWlbImportsWaybillGetRequest) GetOrderCode() string {
     return r.orderCode
 }
-

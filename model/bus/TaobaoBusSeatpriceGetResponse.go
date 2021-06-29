@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-汽车票余票接口 APIResponse
+汽车票余票接口 API返回值 
 taobao.bus.seatprice.get
 
 提供给商家，查询汽车票班次余票
@@ -17,15 +17,11 @@ type TaobaoBusSeatpriceGetAPIResponse struct {
     TaobaoBusSeatpriceGetResponse
 }
 
+// 汽车票余票接口 成功返回结果
 type TaobaoBusSeatpriceGetResponse struct {
     XMLName xml.Name `xml:"bus_seatprice_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     Result   *TaobaoBusSeatpriceGetResultSet `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

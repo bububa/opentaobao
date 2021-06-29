@@ -1,4 +1,5 @@
 {
+	"id": 27158,
 	"name": "taobao.eticket.merchant.ma.consume",
 	"apiChineseName": "电子凭证核销接口",
 	"description": "电子凭证核销接口",

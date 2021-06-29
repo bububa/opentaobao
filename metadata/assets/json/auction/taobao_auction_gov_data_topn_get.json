@@ -1,4 +1,5 @@
 {
+	"id": 40552,
 	"name": "taobao.auction.gov.data.topn.get",
 	"apiChineseName": "根据不同维度，获取排行榜列表",
 	"description": "根据不同时间维度(周,月,年)，获取(成交额或发拍件数)排行榜列表",

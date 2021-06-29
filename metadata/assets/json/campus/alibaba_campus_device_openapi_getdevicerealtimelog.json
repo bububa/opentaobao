@@ -1,4 +1,5 @@
 {
+	"id": 31989,
 	"name": "alibaba.campus.device.openapi.getdevicerealtimelog",
 	"apiChineseName": "根据设备uuid获取设备采集信息",
 	"description": "根据设备uuid获取设备采集信息",

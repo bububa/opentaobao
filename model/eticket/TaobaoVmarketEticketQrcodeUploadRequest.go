@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-码商二维码图片上传 APIRequest
+码商二维码图片上传 API请求
 taobao.vmarket.eticket.qrcode.upload
 
 电子凭证的码商可以通过这个接口，上传他们发送的二维码图片
 */
 type TaobaoVmarketEticketQrcodeUploadRequest struct {
     model.Params
-
     // 码商ID
-    codeMerchantId   int64 
-
+    codeMerchantId   int64
     // 上传的图片byte[]  小于300K，图片尺寸400*400以内
-    imgBytes   []*model.File 
-
+    imgBytes   []*model.File
 }
 
+// 初始化TaobaoVmarketEticketQrcodeUploadRequest对象
 func NewTaobaoVmarketEticketQrcodeUploadRequest() *TaobaoVmarketEticketQrcodeUploadRequest{
     return &TaobaoVmarketEticketQrcodeUploadRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoVmarketEticketQrcodeUploadRequest) GetApiMethodName() string {
     return "taobao.vmarket.eticket.qrcode.upload"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoVmarketEticketQrcodeUploadRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r TaobaoVmarketEticketQrcodeUploadRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// CodeMerchantId Setter
+// 码商ID
 func (r *TaobaoVmarketEticketQrcodeUploadRequest) SetCodeMerchantId(codeMerchantId int64) error {
     r.codeMerchantId = codeMerchantId
     r.Set("code_merchant_id", codeMerchantId)
     return nil
 }
 
+// CodeMerchantId Getter
 func (r TaobaoVmarketEticketQrcodeUploadRequest) GetCodeMerchantId() int64 {
     return r.codeMerchantId
 }
-
+// ImgBytes Setter
+// 上传的图片byte[]  小于300K，图片尺寸400*400以内
 func (r *TaobaoVmarketEticketQrcodeUploadRequest) SetImgBytes(imgBytes []*model.File) error {
     r.imgBytes = imgBytes
     r.Set("img_bytes", imgBytes)
     return nil
 }
 
+// ImgBytes Getter
 func (r TaobaoVmarketEticketQrcodeUploadRequest) GetImgBytes() []*model.File {
     return r.imgBytes
 }
-

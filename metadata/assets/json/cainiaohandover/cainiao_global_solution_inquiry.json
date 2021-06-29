@@ -1,4 +1,5 @@
 {
+	"id": 51062,
 	"name": "cainiao.global.solution.inquiry",
 	"apiChineseName": "解决方案询盘",
 	"description": "根据交易单号查询可用的解决方案",

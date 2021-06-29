@@ -1,4 +1,5 @@
 {
+	"id": 25357,
 	"name": "alibaba.icbu.product.update",
 	"apiChineseName": "修改商品",
 	"description": "修改国际站商品，支持询盘商品和在线批发商品，支持英文商品和多语言商品",

@@ -1,4 +1,5 @@
 {
+	"id": 55919,
 	"name": "alibaba.retail.marketing.buygift.activity.sku.add",
 	"apiChineseName": "添加单品买赠活动商品",
 	"description": "新增或更新单品买赠活动商品信息【同城零售】",

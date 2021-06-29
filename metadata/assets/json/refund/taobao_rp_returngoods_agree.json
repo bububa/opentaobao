@@ -1,4 +1,5 @@
 {
+	"id": 22466,
 	"name": "taobao.rp.returngoods.agree",
 	"apiChineseName": "卖家同意退货",
 	"description": "卖家同意退货，支持淘宝和天猫的订单。",

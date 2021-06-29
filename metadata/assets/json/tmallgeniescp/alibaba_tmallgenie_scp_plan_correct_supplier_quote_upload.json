@@ -1,4 +1,5 @@
 {
+	"id": 53681,
 	"name": "alibaba.tmallgenie.scp.plan.correct.supplier.quote.upload",
 	"apiChineseName": "供应商校准后的配额同步",
 	"description": "供应商校准后的配额同步",

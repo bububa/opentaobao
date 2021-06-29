@@ -1,4 +1,5 @@
 {
+	"id": 37065,
 	"name": "tmall.servicecenter.tp.funds.recover.query",
 	"apiChineseName": "服务商资金权益逆向扣回的查询接口",
 	"description": "服务商资金权益逆向扣回的查询接口",

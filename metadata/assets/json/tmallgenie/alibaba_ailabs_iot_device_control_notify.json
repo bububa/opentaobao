@@ -1,4 +1,5 @@
 {
+	"id": 45959,
 	"name": "alibaba.ailabs.iot.device.control.notify",
 	"apiChineseName": "天猫精灵IoT异步控制回调接口",
 	"description": "用于天猫精灵IoT云云接入控制结果的异步回调",

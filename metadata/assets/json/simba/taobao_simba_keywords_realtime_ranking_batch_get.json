@@ -1,4 +1,5 @@
 {
+	"id": 26824,
 	"name": "taobao.simba.keywords.realtime.ranking.batch.get",
 	"apiChineseName": "获取关键词的新版实时排名",
 	"description": "根据关键词ID获取关键词的新版实时排名",

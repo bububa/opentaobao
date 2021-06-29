@@ -1,4 +1,5 @@
 {
+	"id": 49549,
 	"name": "tmall.supplychain.channel.product.quantity.get",
 	"apiChineseName": "渠道库存查询接口",
 	"description": "渠道库存查询接口",

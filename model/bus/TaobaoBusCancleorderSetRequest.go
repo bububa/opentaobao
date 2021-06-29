@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-取消订单 APIRequest
+取消订单 API请求
 taobao.bus.cancleorder.set
 
 取消订单
 */
 type TaobaoBusCancleorderSetRequest struct {
     model.Params
-
     // 阿里订单号
-    aliOrderId   string 
-
+    aliOrderId   string
 }
 
+// 初始化TaobaoBusCancleorderSetRequest对象
 func NewTaobaoBusCancleorderSetRequest() *TaobaoBusCancleorderSetRequest{
     return &TaobaoBusCancleorderSetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoBusCancleorderSetRequest) GetApiMethodName() string {
     return "taobao.bus.cancleorder.set"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoBusCancleorderSetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoBusCancleorderSetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// AliOrderId Setter
+// 阿里订单号
 func (r *TaobaoBusCancleorderSetRequest) SetAliOrderId(aliOrderId string) error {
     r.aliOrderId = aliOrderId
     r.Set("ali_order_id", aliOrderId)
     return nil
 }
 
+// AliOrderId Getter
 func (r TaobaoBusCancleorderSetRequest) GetAliOrderId() string {
     return r.aliOrderId
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 31288,
 	"name": "alibaba.einvoice.bill.sync",
 	"apiChineseName": "结算单同步",
 	"description": "电子发票业务，服务商同步结算单，包括结算单的增删改功能。最终用于开发票",

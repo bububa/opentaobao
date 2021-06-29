@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-聊天关系获取接口 APIResponse
+聊天关系获取接口 API返回值 
 taobao.wangwang.eservice.chatrelation.get
 
 获取指定时间区间内的聊天关系（查询账号，和谁，在哪天说过话）。如：
@@ -20,15 +20,11 @@ type TaobaoWangwangEserviceChatrelationGetAPIResponse struct {
     TaobaoWangwangEserviceChatrelationGetResponse
 }
 
+// 聊天关系获取接口 成功返回结果
 type TaobaoWangwangEserviceChatrelationGetResponse struct {
     XMLName xml.Name `xml:"wangwang_eservice_chatrelation_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *ChatRelationResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-全渠道商品轻发布类目信息 APIResponse
+全渠道商品轻发布类目信息 API返回值 
 taobao.omniitem.category.get
 
 全渠道商品轻发布类目信息
@@ -17,15 +17,11 @@ type TaobaoOmniitemCategoryGetAPIResponse struct {
     TaobaoOmniitemCategoryGetResponse
 }
 
+// 全渠道商品轻发布类目信息 成功返回结果
 type TaobaoOmniitemCategoryGetResponse struct {
     XMLName xml.Name `xml:"omniitem_category_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TaobaoOmniitemCategoryGetResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

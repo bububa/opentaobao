@@ -1,4 +1,5 @@
 {
+	"id": 28572,
 	"name": "alibaba.happytrip.taxi.city.getid",
 	"apiChineseName": "获取城市id",
 	"description": "通过经纬度坐标返回城市id",

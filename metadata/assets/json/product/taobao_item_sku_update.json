@@ -1,4 +1,5 @@
 {
+	"id": 29,
 	"name": "taobao.item.sku.update",
 	"apiChineseName": "更新SKU信息",
 	"description": "*更新一个sku的数据 \u003cbr/\u003e*需要更新的sku通过属性properties进行匹配查找 \u003cbr/\u003e*商品的数量和价格必须大于等于0 \u003cbr/\u003e*sku记录会更新到指定的num_iid对应的商品中 \u003cbr/\u003e*num_iid对应的商品必须属于当前的会话用户",

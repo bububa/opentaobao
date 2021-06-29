@@ -1,4 +1,5 @@
 {
+	"id": 30630,
 	"name": "alibaba.wdk.ums.inbound",
 	"apiChineseName": "入库-ERP下发单",
 	"description": "入库-ERP下发单",

@@ -1,4 +1,5 @@
 {
+	"id": 55249,
 	"name": "alitrip.merchant.galaxy.wechat.info",
 	"apiChineseName": "星河-获取微信用户的信息",
 	"description": "获取微信用户的openId和unionId",

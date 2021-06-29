@@ -1,4 +1,5 @@
 {
+	"id": 33494,
 	"name": "alibaba.aliqin.axb.vendor.push.call.release",
 	"apiChineseName": "供应商推送通话结束事件",
 	"description": "通话结束挂断的时候，供应商推送通话结束事件给阿里侧",

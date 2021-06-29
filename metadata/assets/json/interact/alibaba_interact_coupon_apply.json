@@ -1,4 +1,5 @@
 {
+	"id": 26102,
 	"name": "alibaba.interact.coupon.apply",
 	"apiChineseName": "优惠券领取鉴权接口",
 	"description": "鉴权接口，为coupon.apply接口鉴权",

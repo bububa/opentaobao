@@ -1,4 +1,5 @@
 {
+	"id": 37471,
 	"name": "alibaba.campus.acl.new.listusermenu",
 	"apiChineseName": "查询用户有权限的菜单树",
 	"description": "查询用户有权限的菜单树",

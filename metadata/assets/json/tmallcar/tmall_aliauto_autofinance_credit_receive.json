@@ -1,4 +1,5 @@
 {
+	"id": 49108,
 	"name": "tmall.aliauto.autofinance.credit.receive",
 	"apiChineseName": "接收授信结果通知",
 	"description": "天猫汽车的金融业务场景中，需要接收外部ISV对用户授信申请的通知结果.",

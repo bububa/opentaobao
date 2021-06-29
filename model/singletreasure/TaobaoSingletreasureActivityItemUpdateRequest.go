@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-更新单品优惠接口 APIRequest
+更新单品优惠接口 API请求
 taobao.singletreasure.activity.item.update
 
 更新单品优惠接口
 */
 type TaobaoSingletreasureActivityItemUpdateRequest struct {
     model.Params
-
     // 修改接口的入参对象
-    itemDetailInfo   *ItemDetailInfoCreateDto 
-
+    itemDetailInfo   *ItemDetailInfoCreateDto
 }
 
+// 初始化TaobaoSingletreasureActivityItemUpdateRequest对象
 func NewTaobaoSingletreasureActivityItemUpdateRequest() *TaobaoSingletreasureActivityItemUpdateRequest{
     return &TaobaoSingletreasureActivityItemUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoSingletreasureActivityItemUpdateRequest) GetApiMethodName() string {
     return "taobao.singletreasure.activity.item.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoSingletreasureActivityItemUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoSingletreasureActivityItemUpdateRequest) GetApiParams() url.Values
     }
     return params
 }
-
-
+// ItemDetailInfo Setter
+// 修改接口的入参对象
 func (r *TaobaoSingletreasureActivityItemUpdateRequest) SetItemDetailInfo(itemDetailInfo *ItemDetailInfoCreateDto) error {
     r.itemDetailInfo = itemDetailInfo
     r.Set("item_detail_info", itemDetailInfo)
     return nil
 }
 
+// ItemDetailInfo Getter
 func (r TaobaoSingletreasureActivityItemUpdateRequest) GetItemDetailInfo() *ItemDetailInfoCreateDto {
     return r.itemDetailInfo
 }
-

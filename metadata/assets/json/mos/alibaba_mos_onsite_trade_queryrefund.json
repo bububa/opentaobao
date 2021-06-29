@@ -1,4 +1,5 @@
 {
+	"id": 37387,
 	"name": "alibaba.mos.onsite.trade.queryrefund",
 	"apiChineseName": "退款查询",
 	"description": "商户可使用该接口查询退款请求是否执行成功。",

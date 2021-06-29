@@ -1,4 +1,5 @@
 {
+	"id": 51742,
 	"name": "alibaba.alihealth.rx.prescription.detail",
 	"apiChineseName": "处方详情",
 	"description": "获取处方结构化信息",

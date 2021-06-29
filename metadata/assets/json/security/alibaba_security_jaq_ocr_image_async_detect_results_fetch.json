@@ -1,4 +1,5 @@
 {
+	"id": 26550,
 	"name": "alibaba.security.jaq.ocr.image.async.detect.results.fetch",
 	"apiChineseName": "聚安全获取异步图文识别结果接口",
 	"description": "获取异步图像字符识别结果接口根据图像检测接口返回taskid来获取对应图像的检测结果",

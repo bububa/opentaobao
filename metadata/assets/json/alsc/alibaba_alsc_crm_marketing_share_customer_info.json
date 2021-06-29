@@ -1,4 +1,5 @@
 {
+	"id": 45530,
 	"name": "alibaba.alsc.crm.marketing.share.customer.info",
 	"apiChineseName": "查询分享营销客户领券信息",
 	"description": "查询分享营销活动的客户领券信息",

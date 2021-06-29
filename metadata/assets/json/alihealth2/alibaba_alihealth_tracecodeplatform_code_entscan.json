@@ -1,4 +1,5 @@
 {
+	"id": 32938,
 	"name": "alibaba.alihealth.tracecodeplatform.code.entscan",
 	"apiChineseName": "药品商家扫码",
 	"description": "药品商家扫描药品监管码，只有该商家的药才返回",

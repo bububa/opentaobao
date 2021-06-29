@@ -1,4 +1,5 @@
 {
+	"id": 22258,
 	"name": "taobao.promotionmisc.item.activity.add",
 	"apiChineseName": "创建无条件单品优惠活动",
 	"description": "创建无条件单品优惠活动。1、可以选择是全店参加或者部分商品参加：participate_range：0表示全部参与； 1表示部分商品参与。\u003cbr/\u003e2、如果是部分商品参加，则需要通过taobao.promotionmisc.activity.range.add接口来指定需要参加的商品。\u003cbr/\u003e3、该接口创建的优惠受店铺最低折扣限制，如优惠不生效，请让卖家检查该优惠是否低于店铺的最低折扣设置。",

@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-活动平台弱登录接口 APIRequest
+活动平台弱登录接口 API请求
 taobao.aplatform.weakget
 
 无线活动平台的开放接口，提供商品信息等的读操作
 */
 type TaobaoAplatformWeakgetRequest struct {
     model.Params
-
     // 客户端自带参数
-    paramRichClientInfo   *RichClientInfo 
-
+    paramRichClientInfo   *RichClientInfo
     // 业务自定义参数
-    paramDto   *ParamDto 
-
+    paramDto   *ParamDto
 }
 
+// 初始化TaobaoAplatformWeakgetRequest对象
 func NewTaobaoAplatformWeakgetRequest() *TaobaoAplatformWeakgetRequest{
     return &TaobaoAplatformWeakgetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAplatformWeakgetRequest) GetApiMethodName() string {
     return "taobao.aplatform.weakget"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAplatformWeakgetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r TaobaoAplatformWeakgetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamRichClientInfo Setter
+// 客户端自带参数
 func (r *TaobaoAplatformWeakgetRequest) SetParamRichClientInfo(paramRichClientInfo *RichClientInfo) error {
     r.paramRichClientInfo = paramRichClientInfo
     r.Set("param_rich_client_info", paramRichClientInfo)
     return nil
 }
 
+// ParamRichClientInfo Getter
 func (r TaobaoAplatformWeakgetRequest) GetParamRichClientInfo() *RichClientInfo {
     return r.paramRichClientInfo
 }
-
+// ParamDto Setter
+// 业务自定义参数
 func (r *TaobaoAplatformWeakgetRequest) SetParamDto(paramDto *ParamDto) error {
     r.paramDto = paramDto
     r.Set("param_dto", paramDto)
     return nil
 }
 
+// ParamDto Getter
 func (r TaobaoAplatformWeakgetRequest) GetParamDto() *ParamDto {
     return r.paramDto
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 50111,
 	"name": "taobao.place.store.relation.add",
 	"apiChineseName": "门店关系新增",
 	"description": "新增授权用户的门店关系信息",

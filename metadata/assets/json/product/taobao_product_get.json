@@ -1,4 +1,5 @@
 {
+	"id": 4,
 	"name": "taobao.product.get",
 	"apiChineseName": "获取一个产品的信息",
 	"description": "天猫商家发布商品时，查询关联产品信息时使用，非商品查询接口。商品查询接口：taobao.item.seller.get\u003cbr\u003e\n两种方式查看一个产品详细信息: \n传入product_id来查询；传入cid和props来查询\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",

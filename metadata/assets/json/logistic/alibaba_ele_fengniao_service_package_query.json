@@ -1,4 +1,5 @@
 {
+	"id": 40494,
 	"name": "alibaba.ele.fengniao.service.package.query",
 	"apiChineseName": "预采购服务包查询接口",
 	"description": "查询门店所在经纬度可用服务包的接口",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-判断设备是否存在 APIResponse
+判断设备是否存在 API返回值 
 alibaba.aliqin.fc.iot.device.isexist
 
 判断设备是否存在
@@ -17,15 +17,11 @@ type AlibabaAliqinFcIotDeviceIsexistAPIResponse struct {
     AlibabaAliqinFcIotDeviceIsexistResponse
 }
 
+// 判断设备是否存在 成功返回结果
 type AlibabaAliqinFcIotDeviceIsexistResponse struct {
     XMLName xml.Name `xml:"alibaba_aliqin_fc_iot_device_isexist_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *AlibabaAliqinFcIotDeviceIsexistResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

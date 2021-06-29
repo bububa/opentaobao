@@ -1,4 +1,5 @@
 {
+	"id": 11039,
 	"name": "taobao.ump.promotion.get",
 	"apiChineseName": "商品优惠详情查询",
 	"description": "商品优惠详情查询，可查询商品设置的详细优惠。包括限时折扣，满就送等官方优惠以及第三方优惠。",

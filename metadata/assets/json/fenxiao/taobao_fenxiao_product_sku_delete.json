@@ -1,4 +1,5 @@
 {
+	"id": 10944,
 	"name": "taobao.fenxiao.product.sku.delete",
 	"apiChineseName": "产品SKU删除接口",
 	"description": "根据sku properties删除sku数据",

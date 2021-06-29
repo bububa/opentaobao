@@ -1,4 +1,5 @@
 {
+	"id": 53967,
 	"name": "alibaba.item.edit.schema.get",
 	"apiChineseName": "商品编辑获取schema信息",
 	"description": "商品编辑时，获取商品规则信息",

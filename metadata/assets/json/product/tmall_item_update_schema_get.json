@@ -1,4 +1,5 @@
 {
+	"id": 23435,
 	"name": "tmall.item.update.schema.get",
 	"apiChineseName": "天猫编辑商品规则获取",
 	"description": "Schema方式编辑天猫商品时，编辑商品规则获取",

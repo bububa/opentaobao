@@ -1,4 +1,5 @@
 {
+	"id": 38268,
 	"name": "taobao.degoperation.do.luckydraw",
 	"apiChineseName": "激励抽奖",
 	"description": "激励平台抽奖接口。用户可以通过接口完成抽奖功能",

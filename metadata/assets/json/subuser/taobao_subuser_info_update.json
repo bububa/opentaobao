@@ -1,4 +1,5 @@
 {
+	"id": 21698,
 	"name": "taobao.subuser.info.update",
 	"apiChineseName": "修改指定账户子账号的基本信息",
 	"description": "修改指定账户子账号的基本信息（通过主账号登陆只能修改属于该主账号的子账号基本信息）",

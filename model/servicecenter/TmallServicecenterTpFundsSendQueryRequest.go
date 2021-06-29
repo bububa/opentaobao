@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-服务商资金权益发放的查询接口 APIRequest
+服务商资金权益发放的查询接口 API请求
 tmall.servicecenter.tp.funds.send.query
 
 服务商资金权益发放结果的查询接口
 */
 type TmallServicecenterTpFundsSendQueryRequest struct {
     model.Params
-
     // 入参对象
-    query   *TpFundsSendQuery 
-
+    query   *TpFundsSendQuery
 }
 
+// 初始化TmallServicecenterTpFundsSendQueryRequest对象
 func NewTmallServicecenterTpFundsSendQueryRequest() *TmallServicecenterTpFundsSendQueryRequest{
     return &TmallServicecenterTpFundsSendQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterTpFundsSendQueryRequest) GetApiMethodName() string {
     return "tmall.servicecenter.tp.funds.send.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterTpFundsSendQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallServicecenterTpFundsSendQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Query Setter
+// 入参对象
 func (r *TmallServicecenterTpFundsSendQueryRequest) SetQuery(query *TpFundsSendQuery) error {
     r.query = query
     r.Set("query", query)
     return nil
 }
 
+// Query Getter
 func (r TmallServicecenterTpFundsSendQueryRequest) GetQuery() *TpFundsSendQuery {
     return r.query
 }
-

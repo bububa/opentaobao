@@ -1,4 +1,5 @@
 {
+	"id": 43246,
 	"name": "taobao.feedflow.item.target.validlist",
 	"apiChineseName": "获取有权限的定向列表",
 	"description": "获取有权限的定向列表",

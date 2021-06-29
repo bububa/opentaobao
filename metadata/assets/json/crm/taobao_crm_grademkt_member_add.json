@@ -1,4 +1,5 @@
 {
+	"id": 21528,
 	"name": "taobao.crm.grademkt.member.add",
 	"apiChineseName": "会员等级营销-会员吸纳",
 	"description": "商家通过该接口吸纳线上店铺会员。",

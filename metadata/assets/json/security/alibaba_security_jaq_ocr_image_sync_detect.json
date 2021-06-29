@@ -1,4 +1,5 @@
 {
+	"id": 26553,
 	"name": "alibaba.security.jaq.ocr.image.sync.detect",
 	"apiChineseName": "聚安全图文识别同步检测接口",
 	"description": "图像字符识别同步检测接口",

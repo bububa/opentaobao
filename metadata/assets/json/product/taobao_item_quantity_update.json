@@ -1,4 +1,5 @@
 {
+	"id": 10591,
 	"name": "taobao.item.quantity.update",
 	"apiChineseName": "宝贝/SKU库存修改",
 	"description": "提供按照全量或增量形式修改宝贝/SKU库存的功能",

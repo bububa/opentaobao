@@ -1,4 +1,5 @@
 {
+	"id": 23005,
 	"name": "taobao.xhotel.rates.increment",
 	"apiChineseName": "价格推送接口（批量增量）",
 	"description": "Rate库存\u0026价格增量更新接口，用户仅需要更新Rate中发生变化的库存日历\u0026价格日历即可",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-【API3.0】资源元素查询接口 APIRequest
+【API3.0】资源元素查询接口 API请求
 taobao.alitrip.travel.item.element.query
 
 提供资源元素查询接口，支持商家查询已经发布过的资源元素
 */
 type TaobaoAlitripTravelItemElementQueryRequest struct {
     model.Params
-
     // 需要查询的资源元素列表，最大列表长度为50
-    outerIds   []string 
-
+    outerIds   []string
 }
 
+// 初始化TaobaoAlitripTravelItemElementQueryRequest对象
 func NewTaobaoAlitripTravelItemElementQueryRequest() *TaobaoAlitripTravelItemElementQueryRequest{
     return &TaobaoAlitripTravelItemElementQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAlitripTravelItemElementQueryRequest) GetApiMethodName() string {
     return "taobao.alitrip.travel.item.element.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAlitripTravelItemElementQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoAlitripTravelItemElementQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OuterIds Setter
+// 需要查询的资源元素列表，最大列表长度为50
 func (r *TaobaoAlitripTravelItemElementQueryRequest) SetOuterIds(outerIds []string) error {
     r.outerIds = outerIds
     r.Set("outer_ids", outerIds)
     return nil
 }
 
+// OuterIds Getter
 func (r TaobaoAlitripTravelItemElementQueryRequest) GetOuterIds() []string {
     return r.outerIds
 }
-

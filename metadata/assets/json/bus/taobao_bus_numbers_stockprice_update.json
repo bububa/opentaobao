@@ -1,4 +1,5 @@
 {
+	"id": 43569,
 	"name": "taobao.bus.numbers.stockprice.update",
 	"apiChineseName": "汽车票更新价格库存",
 	"description": "用于汽车票代理商更新价格库存",

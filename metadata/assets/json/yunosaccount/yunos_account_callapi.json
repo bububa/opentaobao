@@ -1,4 +1,5 @@
 {
+	"id": 27319,
 	"name": "yunos.account.callapi",
 	"apiChineseName": "调用YunOS账号开放API",
 	"description": "YunOS账号客户端对外开放的api通过top暴露",

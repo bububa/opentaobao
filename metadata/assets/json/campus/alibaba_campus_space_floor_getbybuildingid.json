@@ -1,4 +1,5 @@
 {
+	"id": 31949,
 	"name": "alibaba.campus.space.floor.getbybuildingid",
 	"apiChineseName": "根据楼宇ID获取楼层",
 	"description": "根据楼宇ID获取楼层\nHSF接口名称：com.alibaba.campus.api.space.service.top.FloorApiTopService\nHSF方法名称：getFloorList",

@@ -1,4 +1,5 @@
 {
+	"id": 24672,
 	"name": "taobao.opensecurity.uid.get",
 	"apiChineseName": "淘宝open security uid 获取接口",
 	"description": "根据明文 taobao user id 换取 app的 open_uid",

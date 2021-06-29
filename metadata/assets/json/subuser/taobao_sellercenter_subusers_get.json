@@ -1,4 +1,5 @@
 {
+	"id": 10762,
 	"name": "taobao.sellercenter.subusers.get",
 	"apiChineseName": "查询指定账户的子账号列表",
 	"description": "根据主账号nick查询该账号下所有的子账号列表，只能查询属于自己的账号信息 (主账号以及所属子账号)",

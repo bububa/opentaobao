@@ -1,4 +1,5 @@
 {
+	"id": 25349,
 	"name": "alibaba.icbu.category.get",
 	"apiChineseName": "商品发布类目获取",
 	"description": "获取商品发布类目",

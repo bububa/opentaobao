@@ -1,4 +1,5 @@
 {
+	"id": 33221,
 	"name": "taobao.openuid.get.bytrade",
 	"apiChineseName": "通过订单获取对应买家的openUID",
 	"description": "通过订单获取对应买家的openUID,需要卖家授权",

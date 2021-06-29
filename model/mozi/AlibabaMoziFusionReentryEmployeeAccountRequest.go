@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-重新入职并且重新启用账号 APIRequest
+重新入职并且重新启用账号 API请求
 alibaba.mozi.fusion.reentry.employee.account
 
 重新入职并且重新启用账号
 */
 type AlibabaMoziFusionReentryEmployeeAccountRequest struct {
     model.Params
-
     // 入参
-    reentryEmployeeAccount   *ReEntryTenantEmployeeAndAccountRequest 
-
+    reentryEmployeeAccount   *ReEntryTenantEmployeeAndAccountRequest
 }
 
+// 初始化AlibabaMoziFusionReentryEmployeeAccountRequest对象
 func NewAlibabaMoziFusionReentryEmployeeAccountRequest() *AlibabaMoziFusionReentryEmployeeAccountRequest{
     return &AlibabaMoziFusionReentryEmployeeAccountRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaMoziFusionReentryEmployeeAccountRequest) GetApiMethodName() string {
     return "alibaba.mozi.fusion.reentry.employee.account"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaMoziFusionReentryEmployeeAccountRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaMoziFusionReentryEmployeeAccountRequest) GetApiParams() url.Value
     }
     return params
 }
-
-
+// ReentryEmployeeAccount Setter
+// 入参
 func (r *AlibabaMoziFusionReentryEmployeeAccountRequest) SetReentryEmployeeAccount(reentryEmployeeAccount *ReEntryTenantEmployeeAndAccountRequest) error {
     r.reentryEmployeeAccount = reentryEmployeeAccount
     r.Set("reentry.employee.account", reentryEmployeeAccount)
     return nil
 }
 
+// ReentryEmployeeAccount Getter
 func (r AlibabaMoziFusionReentryEmployeeAccountRequest) GetReentryEmployeeAccount() *ReEntryTenantEmployeeAndAccountRequest {
     return r.reentryEmployeeAccount
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 38842,
 	"name": "alibaba.kclub.kc.qa.get",
 	"apiChineseName": "知识云-查询单个知识详情",
 	"description": "知识云-查询单个知识详情。通过租户id、问题id查询问题详情",

@@ -1,4 +1,5 @@
 {
+	"id": 47662,
 	"name": "taobao.simba.campaign.timetemplate.find",
 	"apiChineseName": "获取分时折扣模板",
 	"description": "批量得到智能推广推广计划下的推广组",

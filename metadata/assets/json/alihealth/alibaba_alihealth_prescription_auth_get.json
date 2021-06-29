@@ -1,4 +1,5 @@
 {
+	"id": 42645,
 	"name": "alibaba.alihealth.prescription.auth.get",
 	"apiChineseName": "阿里健康处方平台获取授权码",
 	"description": "获取处方用户授权",

@@ -1,4 +1,5 @@
 {
+	"id": 30392,
 	"name": "yunos.tvpubadmin.manage.topic.contentdelete",
 	"apiChineseName": "删除专题下内容",
 	"description": "删除专题下内容信息",

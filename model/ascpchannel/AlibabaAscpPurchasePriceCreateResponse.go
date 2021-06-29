@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-ascp采购价写入接口 APIResponse
+ascp采购价写入接口 API返回值 
 alibaba.ascp.purchase.price.create
 
 供应链平台采购价创建或修改接口
@@ -17,15 +17,11 @@ type AlibabaAscpPurchasePriceCreateAPIResponse struct {
     AlibabaAscpPurchasePriceCreateResponse
 }
 
+// ascp采购价写入接口 成功返回结果
 type AlibabaAscpPurchasePriceCreateResponse struct {
     XMLName xml.Name `xml:"alibaba_ascp_purchase_price_create_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *ResultWrapper `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

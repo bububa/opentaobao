@@ -1,4 +1,5 @@
 {
+	"id": 31701,
 	"name": "yunos.cosmo.data.push",
 	"apiChineseName": "COSMO-PUSH模式数据接入",
 	"description": "YunOS提供外部数据源接入，并输出到多端设备上，该接口提供了PUSH模式的数据接入",

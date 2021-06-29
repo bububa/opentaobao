@@ -1,4 +1,5 @@
 {
+	"id": 27440,
 	"name": "tmall.service.settleadjustment.cancel",
 	"apiChineseName": "取消结算调整单",
 	"description": "提供给服务商在对取消已经发起的结算调整单。\n通过说明调整单ID进行结算调整单取消。",

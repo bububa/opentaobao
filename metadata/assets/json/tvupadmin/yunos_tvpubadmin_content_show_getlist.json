@@ -1,4 +1,5 @@
 {
+	"id": 28850,
 	"name": "yunos.tvpubadmin.content.show.getlist",
 	"apiChineseName": "节目审核获取节目列表",
 	"description": "节目审核获取节目列表",

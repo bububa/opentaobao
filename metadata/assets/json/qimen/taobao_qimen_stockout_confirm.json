@@ -1,4 +1,5 @@
 {
+	"id": 27143,
 	"name": "taobao.qimen.stockout.confirm",
 	"apiChineseName": "出库单确认接口",
 	"description": "货品出库后，WMS将状态回传给ERP",

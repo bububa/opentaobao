@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-删除单品买赠活动 APIRequest
+删除单品买赠活动 API请求
 alibaba.retail.marketing.buygift.activity.delete
 
 同城零售单品特价活动删除
 */
 type AlibabaRetailMarketingBuygiftActivityDeleteRequest struct {
     model.Params
-
     // 删除活动参数
-    param   *ItemDiscountActivityOperateRequest 
-
+    param   *ItemDiscountActivityOperateRequest
 }
 
+// 初始化AlibabaRetailMarketingBuygiftActivityDeleteRequest对象
 func NewAlibabaRetailMarketingBuygiftActivityDeleteRequest() *AlibabaRetailMarketingBuygiftActivityDeleteRequest{
     return &AlibabaRetailMarketingBuygiftActivityDeleteRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaRetailMarketingBuygiftActivityDeleteRequest) GetApiMethodName() string {
     return "alibaba.retail.marketing.buygift.activity.delete"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaRetailMarketingBuygiftActivityDeleteRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaRetailMarketingBuygiftActivityDeleteRequest) GetApiParams() url.V
     }
     return params
 }
-
-
+// Param Setter
+// 删除活动参数
 func (r *AlibabaRetailMarketingBuygiftActivityDeleteRequest) SetParam(param *ItemDiscountActivityOperateRequest) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaRetailMarketingBuygiftActivityDeleteRequest) GetParam() *ItemDiscountActivityOperateRequest {
     return r.param
 }
-

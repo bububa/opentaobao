@@ -1,4 +1,5 @@
 {
+	"id": 64,
 	"name": "taobao.shopcats.list.get",
 	"apiChineseName": "获取前台展示的店铺类目",
 	"description": "获取淘宝面向买家的浏览导航类目（跟后台卖家商品管理的类目有差异）",

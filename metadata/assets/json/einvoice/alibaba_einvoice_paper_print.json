@@ -1,4 +1,5 @@
 {
+	"id": 40483,
 	"name": "alibaba.einvoice.paper.print",
 	"apiChineseName": "纸票打印接口",
 	"description": "打印一张已开具成功的纸票",

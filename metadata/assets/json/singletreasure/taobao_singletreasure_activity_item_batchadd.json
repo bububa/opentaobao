@@ -1,4 +1,5 @@
 {
+	"id": 31339,
 	"name": "taobao.singletreasure.activity.item.batchadd",
 	"apiChineseName": "批量添加商品接口",
 	"description": "向活动中批量添加商品优惠",

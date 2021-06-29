@@ -1,4 +1,5 @@
 {
+	"id": 30113,
 	"name": "taobao.baike.import.zhubao.data",
 	"apiChineseName": "导入数据到商品百科服务",
 	"description": "用于接入外部数据录入到商品百科中",

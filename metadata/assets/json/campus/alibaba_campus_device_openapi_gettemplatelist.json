@@ -1,4 +1,5 @@
 {
+	"id": 38253,
 	"name": "alibaba.campus.device.openapi.gettemplatelist",
 	"apiChineseName": "查询设备模板",
 	"description": "查询设备模板信息",

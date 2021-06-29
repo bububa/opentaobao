@@ -1,4 +1,5 @@
 {
+	"id": 32242,
 	"name": "alibaba.campus.acl.cancelrolesfromuser",
 	"apiChineseName": "撤销用户授予的角色",
 	"description": "撤销用户授予的角色",

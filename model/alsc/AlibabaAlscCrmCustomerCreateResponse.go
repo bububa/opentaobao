@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-创建顾客 APIResponse
+创建顾客 API返回值 
 alibaba.alsc.crm.customer.create
 
 开放本地生活创建顾客功能
@@ -17,15 +17,11 @@ type AlibabaAlscCrmCustomerCreateAPIResponse struct {
     AlibabaAlscCrmCustomerCreateResponse
 }
 
+// 创建顾客 成功返回结果
 type AlibabaAlscCrmCustomerCreateResponse struct {
     XMLName xml.Name `xml:"alibaba_alsc_crm_customer_create_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口结果
-    
     Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

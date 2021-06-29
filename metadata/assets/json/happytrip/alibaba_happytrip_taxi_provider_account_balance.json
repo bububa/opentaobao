@@ -1,4 +1,5 @@
 {
+	"id": 39450,
 	"name": "alibaba.happytrip.taxi.provider.account.balance",
 	"apiChineseName": "供应商渠道余额",
 	"description": "查询不同供应商不同渠道账户余额",

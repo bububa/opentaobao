@@ -1,4 +1,5 @@
 {
+	"id": 31455,
 	"name": "alibaba.interact.retail.saveshelflocation",
 	"apiChineseName": "保存地理位置和货架关系",
 	"description": "保存地理位置和货架关系",

@@ -1,4 +1,5 @@
 {
+	"id": 43082,
 	"name": "youku.mirage.query.permission",
 	"apiChineseName": "优酷播控查询是否可播API",
 	"description": "根据节目ID或者VID查询视频或者节目是否可以播放",

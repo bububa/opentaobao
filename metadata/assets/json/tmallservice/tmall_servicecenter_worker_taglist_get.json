@@ -1,4 +1,5 @@
 {
+	"id": 49244,
 	"name": "tmall.servicecenter.worker.taglist.get",
 	"apiChineseName": "获取工人标签",
 	"description": "服务商获取对应工人的标签",

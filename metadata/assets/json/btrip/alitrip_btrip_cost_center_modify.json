@@ -1,4 +1,5 @@
 {
+	"id": 33166,
 	"name": "alitrip.btrip.cost.center.modify",
 	"apiChineseName": "修改外部成本中心",
 	"description": "修改外部成本中心，设置成员，设置支付宝账号，设置名称，编号等",

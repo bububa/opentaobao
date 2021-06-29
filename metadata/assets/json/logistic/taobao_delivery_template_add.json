@@ -1,4 +1,5 @@
 {
+	"id": 10918,
 	"name": "taobao.delivery.template.add",
 	"apiChineseName": "新增运费模板",
 	"description": "增加运费模板的外部接口",

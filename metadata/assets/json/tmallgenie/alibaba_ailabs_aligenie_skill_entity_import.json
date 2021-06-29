@@ -1,4 +1,5 @@
 {
+	"id": 46825,
 	"name": "alibaba.ailabs.aligenie.skill.entity.import",
 	"apiChineseName": "实体动态更新",
 	"description": "根据用户上传的实体信息，进行制定技能实体的动态变更",

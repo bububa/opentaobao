@@ -1,4 +1,5 @@
 {
+	"id": 51838,
 	"name": "taobao.jst.interactive.point.decrease",
 	"apiChineseName": "互动积分扣减接口",
 	"description": "扣减用户的互动积分",

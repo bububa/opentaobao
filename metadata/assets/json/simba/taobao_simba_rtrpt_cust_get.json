@@ -1,4 +1,5 @@
 {
+	"id": 25054,
 	"name": "taobao.simba.rtrpt.cust.get",
 	"apiChineseName": "获取账户实时报表数据",
 	"description": "获取账户实时报表数据",

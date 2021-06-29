@@ -1,4 +1,5 @@
 {
+	"id": 10532,
 	"name": "taobao.simba.creative.update",
 	"apiChineseName": "修改创意与",
 	"description": "更新一个创意的信息，可以设置创意标题、创意图片",

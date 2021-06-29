@@ -1,4 +1,5 @@
 {
+	"id": 27414,
 	"name": "tmall.servicecenter.anomalyrecourse.querybyid",
 	"apiChineseName": "根据一键求助id查询指定服务商的一键求助单",
 	"description": "根据一键求助id查询指定服务商的一键求助单",

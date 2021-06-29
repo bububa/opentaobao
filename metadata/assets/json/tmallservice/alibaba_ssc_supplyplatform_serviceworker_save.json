@@ -1,4 +1,5 @@
 {
+	"id": 55413,
 	"name": "alibaba.ssc.supplyplatform.serviceworker.save",
 	"apiChineseName": "服务商绑定工人",
 	"description": "服务商将上传工人与服务商自己建立关系，需要将工人的服务区域和住址回传",

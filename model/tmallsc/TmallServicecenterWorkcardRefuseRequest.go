@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-买家拒收 APIRequest
+买家拒收 API请求
 tmall.servicecenter.workcard.refuse
 
 买家拒收通知接口
 */
 type TmallServicecenterWorkcardRefuseRequest struct {
     model.Params
-
     // 买家拒收信息
-    buyerRefuseAcceptRequest   *BuyerRefuseAcceptRequest 
-
+    buyerRefuseAcceptRequest   *BuyerRefuseAcceptRequest
 }
 
+// 初始化TmallServicecenterWorkcardRefuseRequest对象
 func NewTmallServicecenterWorkcardRefuseRequest() *TmallServicecenterWorkcardRefuseRequest{
     return &TmallServicecenterWorkcardRefuseRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterWorkcardRefuseRequest) GetApiMethodName() string {
     return "tmall.servicecenter.workcard.refuse"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterWorkcardRefuseRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallServicecenterWorkcardRefuseRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// BuyerRefuseAcceptRequest Setter
+// 买家拒收信息
 func (r *TmallServicecenterWorkcardRefuseRequest) SetBuyerRefuseAcceptRequest(buyerRefuseAcceptRequest *BuyerRefuseAcceptRequest) error {
     r.buyerRefuseAcceptRequest = buyerRefuseAcceptRequest
     r.Set("buyer_refuse_accept_request", buyerRefuseAcceptRequest)
     return nil
 }
 
+// BuyerRefuseAcceptRequest Getter
 func (r TmallServicecenterWorkcardRefuseRequest) GetBuyerRefuseAcceptRequest() *BuyerRefuseAcceptRequest {
     return r.buyerRefuseAcceptRequest
 }
-

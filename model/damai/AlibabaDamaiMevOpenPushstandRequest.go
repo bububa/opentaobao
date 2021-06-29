@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-大麦换验平台-第三方对外开放-看台接口pushStand APIRequest
+大麦换验平台-第三方对外开放-看台接口pushStand API请求
 alibaba.damai.mev.open.pushstand
 
 pushStand
 */
 type AlibabaDamaiMevOpenPushstandRequest struct {
     model.Params
-
     // 入参pushStandParam
-    pushStandParam   *ThirdStandPushOpenParam 
-
+    pushStandParam   *ThirdStandPushOpenParam
 }
 
+// 初始化AlibabaDamaiMevOpenPushstandRequest对象
 func NewAlibabaDamaiMevOpenPushstandRequest() *AlibabaDamaiMevOpenPushstandRequest{
     return &AlibabaDamaiMevOpenPushstandRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaDamaiMevOpenPushstandRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.pushstand"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaDamaiMevOpenPushstandRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaDamaiMevOpenPushstandRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// PushStandParam Setter
+// 入参pushStandParam
 func (r *AlibabaDamaiMevOpenPushstandRequest) SetPushStandParam(pushStandParam *ThirdStandPushOpenParam) error {
     r.pushStandParam = pushStandParam
     r.Set("push_stand_param", pushStandParam)
     return nil
 }
 
+// PushStandParam Getter
 func (r AlibabaDamaiMevOpenPushstandRequest) GetPushStandParam() *ThirdStandPushOpenParam {
     return r.pushStandParam
 }
-

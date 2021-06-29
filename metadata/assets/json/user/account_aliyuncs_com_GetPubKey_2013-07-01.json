@@ -1,4 +1,5 @@
 {
+	"id": 24938,
 	"name": "account.aliyuncs.com.GetPubKey.2013-07-01",
 	"apiChineseName": "获取用户公钥",
 	"description": "根据用户的appkey查询用户的pubkey",

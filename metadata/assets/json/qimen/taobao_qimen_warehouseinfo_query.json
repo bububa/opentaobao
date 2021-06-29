@@ -1,4 +1,5 @@
 {
+	"id": 27531,
 	"name": "taobao.qimen.warehouseinfo.query",
 	"apiChineseName": "货主仓库资源查询接口",
 	"description": "货主仓库资源查询",

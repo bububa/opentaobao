@@ -1,4 +1,5 @@
 {
+	"id": 40936,
 	"name": "alibaba.scbp.showcase.status",
 	"apiChineseName": "橱窗状态",
 	"description": "查询橱窗状态，如总数、可用数量",

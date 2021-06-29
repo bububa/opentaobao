@@ -1,4 +1,5 @@
 {
+	"id": 52211,
 	"name": "alitrip.travel.bookinfo.query",
 	"apiChineseName": "飞猪度假-订单二次预约查询接口",
 	"description": "飞猪度假订单二次预约详情查询接口",

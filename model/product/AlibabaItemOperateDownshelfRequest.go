@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-商品下架 APIRequest
+商品下架 API请求
 alibaba.item.operate.downshelf
 
 商品下架
 */
 type AlibabaItemOperateDownshelfRequest struct {
     model.Params
-
     // 商品ID
-    itemId   int64 
-
+    itemId   int64
 }
 
+// 初始化AlibabaItemOperateDownshelfRequest对象
 func NewAlibabaItemOperateDownshelfRequest() *AlibabaItemOperateDownshelfRequest{
     return &AlibabaItemOperateDownshelfRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaItemOperateDownshelfRequest) GetApiMethodName() string {
     return "alibaba.item.operate.downshelf"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaItemOperateDownshelfRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaItemOperateDownshelfRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ItemId Setter
+// 商品ID
 func (r *AlibabaItemOperateDownshelfRequest) SetItemId(itemId int64) error {
     r.itemId = itemId
     r.Set("item_id", itemId)
     return nil
 }
 
+// ItemId Getter
 func (r AlibabaItemOperateDownshelfRequest) GetItemId() int64 {
     return r.itemId
 }
-

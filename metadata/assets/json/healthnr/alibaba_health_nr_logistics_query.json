@@ -1,4 +1,5 @@
 {
+	"id": 41387,
 	"name": "alibaba.health.nr.logistics.query",
 	"apiChineseName": "阿里健康新零售物流详情接口",
 	"description": "对阿里健康o2o对接的商户提供查询物流单详情的能力",

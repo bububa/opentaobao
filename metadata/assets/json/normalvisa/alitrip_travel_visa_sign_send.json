@@ -1,4 +1,5 @@
 {
+	"id": 44424,
 	"name": "alitrip.travel.visa.sign.send",
 	"apiChineseName": "签证批量申请人送签接口",
 	"description": "签证批量申请人送签接口，用于商家批量送签。",

@@ -1,4 +1,5 @@
 {
+	"id": 46049,
 	"name": "alibaba.damai.mev.open.deletevenue",
 	"apiChineseName": "大麦换验平台-第三方对外开放-场馆接口deleteVenue",
 	"description": "开放接口，删除场馆",

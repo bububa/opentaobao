@@ -1,4 +1,5 @@
 {
+	"id": 51996,
 	"name": "alibaba.newretail.purchase.price.save",
 	"apiChineseName": "共享库存 采购价上传接口",
 	"description": "共享库存业务 供应商上传商品采购价",

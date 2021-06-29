@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-一般进口发货 APIRequest
+一般进口发货 API请求
 taobao.wlb.imports.general.consign
 
 将订单信息发送到菜鸟海外转运仓；
@@ -17,43 +17,37 @@ taobao.wlb.imports.general.consign
 */
 type TaobaoWlbImportsGeneralConsignRequest struct {
     model.Params
-
     // 交易订单id
-    tradeOrderId   int64 
-
+    tradeOrderId   int64
     // 物流资源ID
-    resourceId   int64 
-
+    resourceId   int64
     // 仓库编码
-    storeCode   string 
-
+    storeCode   string
     // 第1段物流承运商
-    firstLogistics   string 
-
+    firstLogistics   string
     // 第1段物流运单号
-    firstWaybillno   string 
-
+    firstWaybillno   string
     // 卖家发货地址库ID；不填的话取默认发货地址；如果填写的senderId对应多个地址，取第一个
-    senderId   int64 
-
+    senderId   int64
     // 卖家退货地址库ID；不填写的话取默认退货地址；如果填写的cancelId对应多个地址，取第一个
-    cancelId   int64 
-
+    cancelId   int64
     // 增值服务编码.多个以逗号分隔
-    vasCode   string 
-
+    vasCode   string
 }
 
+// 初始化TaobaoWlbImportsGeneralConsignRequest对象
 func NewTaobaoWlbImportsGeneralConsignRequest() *TaobaoWlbImportsGeneralConsignRequest{
     return &TaobaoWlbImportsGeneralConsignRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoWlbImportsGeneralConsignRequest) GetApiMethodName() string {
     return "taobao.wlb.imports.general.consign"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoWlbImportsGeneralConsignRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -61,85 +55,99 @@ func (r TaobaoWlbImportsGeneralConsignRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TradeOrderId Setter
+// 交易订单id
 func (r *TaobaoWlbImportsGeneralConsignRequest) SetTradeOrderId(tradeOrderId int64) error {
     r.tradeOrderId = tradeOrderId
     r.Set("trade_order_id", tradeOrderId)
     return nil
 }
 
+// TradeOrderId Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetTradeOrderId() int64 {
     return r.tradeOrderId
 }
-
+// ResourceId Setter
+// 物流资源ID
 func (r *TaobaoWlbImportsGeneralConsignRequest) SetResourceId(resourceId int64) error {
     r.resourceId = resourceId
     r.Set("resource_id", resourceId)
     return nil
 }
 
+// ResourceId Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetResourceId() int64 {
     return r.resourceId
 }
-
+// StoreCode Setter
+// 仓库编码
 func (r *TaobaoWlbImportsGeneralConsignRequest) SetStoreCode(storeCode string) error {
     r.storeCode = storeCode
     r.Set("store_code", storeCode)
     return nil
 }
 
+// StoreCode Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetStoreCode() string {
     return r.storeCode
 }
-
+// FirstLogistics Setter
+// 第1段物流承运商
 func (r *TaobaoWlbImportsGeneralConsignRequest) SetFirstLogistics(firstLogistics string) error {
     r.firstLogistics = firstLogistics
     r.Set("first_logistics", firstLogistics)
     return nil
 }
 
+// FirstLogistics Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetFirstLogistics() string {
     return r.firstLogistics
 }
-
+// FirstWaybillno Setter
+// 第1段物流运单号
 func (r *TaobaoWlbImportsGeneralConsignRequest) SetFirstWaybillno(firstWaybillno string) error {
     r.firstWaybillno = firstWaybillno
     r.Set("first_waybillno", firstWaybillno)
     return nil
 }
 
+// FirstWaybillno Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetFirstWaybillno() string {
     return r.firstWaybillno
 }
-
+// SenderId Setter
+// 卖家发货地址库ID；不填的话取默认发货地址；如果填写的senderId对应多个地址，取第一个
 func (r *TaobaoWlbImportsGeneralConsignRequest) SetSenderId(senderId int64) error {
     r.senderId = senderId
     r.Set("sender_id", senderId)
     return nil
 }
 
+// SenderId Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetSenderId() int64 {
     return r.senderId
 }
-
+// CancelId Setter
+// 卖家退货地址库ID；不填写的话取默认退货地址；如果填写的cancelId对应多个地址，取第一个
 func (r *TaobaoWlbImportsGeneralConsignRequest) SetCancelId(cancelId int64) error {
     r.cancelId = cancelId
     r.Set("cancel_id", cancelId)
     return nil
 }
 
+// CancelId Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetCancelId() int64 {
     return r.cancelId
 }
-
+// VasCode Setter
+// 增值服务编码.多个以逗号分隔
 func (r *TaobaoWlbImportsGeneralConsignRequest) SetVasCode(vasCode string) error {
     r.vasCode = vasCode
     r.Set("vas_code", vasCode)
     return nil
 }
 
+// VasCode Getter
 func (r TaobaoWlbImportsGeneralConsignRequest) GetVasCode() string {
     return r.vasCode
 }
-

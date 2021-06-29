@@ -1,4 +1,5 @@
 {
+	"id": 26107,
 	"name": "taobao.xhotel.order.offline.settle.put",
 	"apiChineseName": "线下信用住结账专用接口",
 	"description": "线下信用住结账专用接口",

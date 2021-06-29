@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-阿信支付入驻重新申请 APIResponse
+阿信支付入驻重新申请 API返回值 
 taobao.alitrip.axin.trans.pay.register.reapply
 
 阿信支付入驻重新申请
@@ -18,15 +18,11 @@ type TaobaoAlitripAxinTransPayRegisterReapplyAPIResponse struct {
     TaobaoAlitripAxinTransPayRegisterReapplyResponse
 }
 
+// 阿信支付入驻重新申请 成功返回结果
 type TaobaoAlitripAxinTransPayRegisterReapplyResponse struct {
     XMLName xml.Name `xml:"alitrip_axin_trans_pay_register_reapply_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 结果对象
-    
     Result   *BaseResultDto `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

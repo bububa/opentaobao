@@ -1,4 +1,5 @@
 {
+	"id": 10704,
 	"name": "taobao.item.templates.get",
 	"apiChineseName": "获取用户宝贝详情页模板名称",
 	"description": "查询当前登录用户的店铺的宝贝详情页的模板名称",

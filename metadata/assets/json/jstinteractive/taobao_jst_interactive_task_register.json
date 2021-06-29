@@ -1,4 +1,5 @@
 {
+	"id": 53884,
 	"name": "taobao.jst.interactive.task.register",
 	"apiChineseName": "互动任务开通接口",
 	"description": "调用互动任务开通接口为小程序开通互动任务",

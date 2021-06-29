@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-商品查询接口 APIResponse
+商品查询接口 API返回值 
 taobao.qimen.singleitem.query
 
 商品查询接口
@@ -17,15 +17,11 @@ type TaobaoQimenSingleitemQueryAPIResponse struct {
     TaobaoQimenSingleitemQueryResponse
 }
 
+// 商品查询接口 成功返回结果
 type TaobaoQimenSingleitemQueryResponse struct {
     XMLName xml.Name `xml:"qimen_singleitem_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 
-    
     Response   *ResponseDO `json:"response,omitempty" xml:"response,omitempty"`
-
-    
 }

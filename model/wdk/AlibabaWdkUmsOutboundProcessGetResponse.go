@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-出库业务UMS异步处理结果返回 APIResponse
+出库业务UMS异步处理结果返回 API返回值 
 alibaba.wdk.ums.outbound.process.get
 
 出库业务UMS异步处理结果返回
@@ -17,15 +17,11 @@ type AlibabaWdkUmsOutboundProcessGetAPIResponse struct {
     AlibabaWdkUmsOutboundProcessGetResponse
 }
 
+// 出库业务UMS异步处理结果返回 成功返回结果
 type AlibabaWdkUmsOutboundProcessGetResponse struct {
     XMLName xml.Name `xml:"alibaba_wdk_ums_outbound_process_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *UtmsResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

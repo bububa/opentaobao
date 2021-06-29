@@ -1,4 +1,5 @@
 {
+	"id": 45628,
 	"name": "alibaba.idle.rent.item.query",
 	"apiChineseName": "查询租赁商品信息",
 	"description": "查询租赁商品信息",

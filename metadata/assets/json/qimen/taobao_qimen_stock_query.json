@@ -1,4 +1,5 @@
 {
+	"id": 27271,
 	"name": "taobao.qimen.stock.query",
 	"apiChineseName": "库存查询接口（多条件）",
 	"description": "ERP调用奇门的接口,查询商品的库存量",

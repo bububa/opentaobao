@@ -1,4 +1,5 @@
 {
+	"id": 34773,
 	"name": "alibaba.campus.device.openapi.saveeventinfoforibos",
 	"apiChineseName": "saveeventinfoforibos",
 	"description": "IBos的事件信息上报与反馈的处理接口",

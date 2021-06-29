@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-通用用户抽奖次数限制 APIResponse
+通用用户抽奖次数限制 API返回值 
 taobao.degoperation.get.by.eventkey
 
 通用用户抽奖次数限制
@@ -17,15 +17,11 @@ type TaobaoDegoperationGetByEventkeyAPIResponse struct {
     TaobaoDegoperationGetByEventkeyResponse
 }
 
+// 通用用户抽奖次数限制 成功返回结果
 type TaobaoDegoperationGetByEventkeyResponse struct {
     XMLName xml.Name `xml:"degoperation_get_by_eventkey_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *BonusResultDto `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

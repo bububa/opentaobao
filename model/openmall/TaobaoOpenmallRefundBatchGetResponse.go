@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-批量获取openmall退款单 APIResponse
+批量获取openmall退款单 API返回值 
 taobao.openmall.refund.batch.get
 
 批量获取openmall退款单
@@ -18,20 +18,13 @@ type TaobaoOpenmallRefundBatchGetAPIResponse struct {
     TaobaoOpenmallRefundBatchGetResponse
 }
 
+// 批量获取openmall退款单 成功返回结果
 type TaobaoOpenmallRefundBatchGetResponse struct {
     XMLName xml.Name `xml:"openmall_refund_batch_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 退款列表
-    
     Entities   []TopRefundVo `json:"entities,omitempty" xml:"entities>top_refund_vo,omitempty"`
-    
-    
     // 范围内总的退款单个数
-    
     TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 43192,
 	"name": "alibaba.alihealth.drug.scan.querycode",
 	"apiChineseName": "查询药监码对应的有效期和包装规格",
 	"description": "查询药监码对应的有效期和包装规格",

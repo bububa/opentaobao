@@ -1,4 +1,5 @@
 {
+	"id": 23571,
 	"name": "taobao.simba.insight.catsforecastnew.get",
 	"apiChineseName": "获取词的相关类目预测数据",
 	"description": "根据给定的词，预测这些词的相关类目",

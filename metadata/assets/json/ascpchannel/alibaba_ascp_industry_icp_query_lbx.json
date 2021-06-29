@@ -1,4 +1,5 @@
 {
+	"id": 50362,
 	"name": "alibaba.ascp.industry.icp.query.lbx",
 	"apiChineseName": "icp订单号查询lbx订单号",
 	"description": "根据icp订单号查询lbx订单号",

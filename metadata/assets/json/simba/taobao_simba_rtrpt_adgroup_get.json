@@ -1,4 +1,5 @@
 {
+	"id": 25053,
 	"name": "taobao.simba.rtrpt.adgroup.get",
 	"apiChineseName": "获取推广组实时报表数据",
 	"description": "获取推广组实时报表数据",

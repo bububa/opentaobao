@@ -1,4 +1,5 @@
 {
+	"id": 51837,
 	"name": "taobao.jst.interactive.point.increase",
 	"apiChineseName": "互动积分发放接口",
 	"description": "向用户发放互动积分",

@@ -1,4 +1,5 @@
 {
+	"id": 28628,
 	"name": "yunos.tvpubadmin.user.rights",
 	"apiChineseName": "获取用户权益",
 	"description": "获取用户权益",

@@ -1,4 +1,5 @@
 {
+	"id": 29566,
 	"name": "alibaba.mj.oc.confpickupgoods",
 	"apiChineseName": "提货核销",
 	"description": "此API用于在银泰商场中，消费者在提货中心提货时， 商户后台调用此接口进行提货核销操作",

@@ -1,4 +1,5 @@
 {
+	"id": 46970,
 	"name": "taobao.film.tfavatar.bill.sale.print.query",
 	"apiChineseName": "获取影院卖品账单-核销账单",
 	"description": "获取影院卖品账单-核销账单\n返回值data属于加密字段, 并非大字段.",

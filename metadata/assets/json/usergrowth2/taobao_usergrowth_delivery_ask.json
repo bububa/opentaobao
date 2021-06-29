@@ -1,4 +1,5 @@
 {
+	"id": 43098,
 	"name": "taobao.usergrowth.delivery.ask",
 	"apiChineseName": "广告投放询问",
 	"description": "提供给媒体在曝光广告前调用， 返回是否曝光以及曝光的物料信息",

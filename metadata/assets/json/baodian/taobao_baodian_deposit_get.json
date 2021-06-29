@@ -1,4 +1,5 @@
 {
+	"id": 22800,
 	"name": "taobao.baodian.deposit.get",
 	"apiChineseName": "宝点用户帐户查询（已迁移）",
 	"description": "查询用户宝点帐户信息及当前宝点价格",

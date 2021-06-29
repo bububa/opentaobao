@@ -1,4 +1,5 @@
 {
+	"id": 27349,
 	"name": "alibaba.interact.sensor.trade.buy",
 	"apiChineseName": "手淘下单能力开放",
 	"description": "交易流程鉴权",

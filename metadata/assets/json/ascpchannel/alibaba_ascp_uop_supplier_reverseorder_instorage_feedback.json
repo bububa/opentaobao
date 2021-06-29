@@ -1,4 +1,5 @@
 {
+	"id": 49792,
 	"name": "alibaba.ascp.uop.supplier.reverseorder.instorage.feedback",
 	"apiChineseName": "逆向销退入库单入库结果回告",
 	"description": "ASCP按照逆向履约单纬度，通过该接口接收商家在退货完成时，自动创建销退单做入库回传。",

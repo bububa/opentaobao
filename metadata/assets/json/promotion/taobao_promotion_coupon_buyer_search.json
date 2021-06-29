@@ -1,4 +1,5 @@
 {
+	"id": 10855,
 	"name": "taobao.promotion.coupon.buyer.search",
 	"apiChineseName": "查询买家在相关app领取的优惠券信息",
 	"description": "查询买家在相关app领取的优惠券信息",

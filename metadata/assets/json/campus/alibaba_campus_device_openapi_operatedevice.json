@@ -1,4 +1,5 @@
 {
+	"id": 31987,
 	"name": "alibaba.campus.device.openapi.operatedevice",
 	"apiChineseName": "根据uuid操作设备",
 	"description": "根据uuid操作设备",

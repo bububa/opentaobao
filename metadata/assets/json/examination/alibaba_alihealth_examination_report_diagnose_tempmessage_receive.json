@@ -1,4 +1,5 @@
 {
+	"id": 55296,
 	"name": "alibaba.alihealth.examination.report.diagnose.tempmessage.receive",
 	"apiChineseName": "导医通报告解读临时消息接收",
 	"description": "导医通报告解读临时消息接收",

@@ -1,4 +1,5 @@
 {
+	"id": 55351,
 	"name": "alibaba.idle.isv.order.ship",
 	"apiChineseName": "闲鱼无忧购服务商发货",
 	"description": "闲鱼无忧购业务入仓模式下服务商订单发货的接口",

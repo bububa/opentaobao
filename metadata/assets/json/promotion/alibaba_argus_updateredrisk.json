@@ -1,4 +1,5 @@
 {
+	"id": 50923,
 	"name": "alibaba.argus.updateredrisk",
 	"apiChineseName": "更新红线价格",
 	"description": "商品健康中心新增红线价格规则",

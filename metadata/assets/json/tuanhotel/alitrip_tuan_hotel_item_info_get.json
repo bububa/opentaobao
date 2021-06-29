@@ -1,4 +1,5 @@
 {
+	"id": 46201,
 	"name": "alitrip.tuan.hotel.item.info.get",
 	"apiChineseName": "宝贝信息查询接口",
 	"description": "商家查询发布的宝贝详情信息",

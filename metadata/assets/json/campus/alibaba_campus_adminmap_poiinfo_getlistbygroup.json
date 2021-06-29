@@ -1,4 +1,5 @@
 {
+	"id": 35293,
 	"name": "alibaba.campus.adminmap.poiinfo.getlistbygroup",
 	"apiChineseName": "根据分组条件查询分组下的空间单元不包涵业务属性信息",
 	"description": "根据分组条件查询分组下的空间单元不包涵业务属性信息",

@@ -1,4 +1,5 @@
 {
+	"id": 33907,
 	"name": "alibaba.wdk.trade.order.query",
 	"apiChineseName": "查询外部交易订单接口",
 	"description": "通过该接口可以在盒马查询交易订单，并处理相关业务流程。主要用于和外部商户的订单进行同步和融合业务流程处理",

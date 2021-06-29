@@ -1,4 +1,5 @@
 {
+	"id": 55148,
 	"name": "alibaba.damai.ticklet.qrcode.decode",
 	"apiChineseName": "票夹-动态二维码-解码",
 	"description": "对于票夹的动态二维码进行解码",

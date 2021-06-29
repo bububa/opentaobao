@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-单量预测 APIRequest
+单量预测 API请求
 alibaba.wdk.scm.lrp.order.predict
 
 提供基于门店和配送站的订单量预测，可用于提前安排人力资源
 */
 type AlibabaWdkScmLrpOrderPredictRequest struct {
     model.Params
-
     // 单量预测查询参数
-    paramOrderPredictQuery   *OrderPredictQuery 
-
+    paramOrderPredictQuery   *OrderPredictQuery
 }
 
+// 初始化AlibabaWdkScmLrpOrderPredictRequest对象
 func NewAlibabaWdkScmLrpOrderPredictRequest() *AlibabaWdkScmLrpOrderPredictRequest{
     return &AlibabaWdkScmLrpOrderPredictRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkScmLrpOrderPredictRequest) GetApiMethodName() string {
     return "alibaba.wdk.scm.lrp.order.predict"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkScmLrpOrderPredictRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkScmLrpOrderPredictRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamOrderPredictQuery Setter
+// 单量预测查询参数
 func (r *AlibabaWdkScmLrpOrderPredictRequest) SetParamOrderPredictQuery(paramOrderPredictQuery *OrderPredictQuery) error {
     r.paramOrderPredictQuery = paramOrderPredictQuery
     r.Set("param_order_predict_query", paramOrderPredictQuery)
     return nil
 }
 
+// ParamOrderPredictQuery Getter
 func (r AlibabaWdkScmLrpOrderPredictRequest) GetParamOrderPredictQuery() *OrderPredictQuery {
     return r.paramOrderPredictQuery
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 26108,
 	"name": "taobao.alitrip.seller.order.confirm",
 	"apiChineseName": "代理商确认机票订单接口",
 	"description": "此接口用于代理商确认机票订单。",

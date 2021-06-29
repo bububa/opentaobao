@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据楼宇ID获取楼层 APIResponse
+根据楼宇ID获取楼层 API返回值 
 alibaba.campus.space.floor.getbybuildingid
 
 根据楼宇ID获取楼层
@@ -19,15 +19,11 @@ type AlibabaCampusSpaceFloorGetbybuildingidAPIResponse struct {
     AlibabaCampusSpaceFloorGetbybuildingidResponse
 }
 
+// 根据楼宇ID获取楼层 成功返回结果
 type AlibabaCampusSpaceFloorGetbybuildingidResponse struct {
     XMLName xml.Name `xml:"alibaba_campus_space_floor_getbybuildingid_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *ListResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

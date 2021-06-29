@@ -1,4 +1,5 @@
 {
+	"id": 38538,
 	"name": "taobao.degoperation.createqrcode",
 	"apiChineseName": "中奖生成二维码",
 	"description": "用户中奖后，生成二维码图片链接",

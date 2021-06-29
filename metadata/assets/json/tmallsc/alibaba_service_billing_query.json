@@ -1,4 +1,5 @@
 {
+	"id": 42709,
 	"name": "alibaba.service.billing.query",
 	"apiChineseName": "服务平台结算出账信息",
 	"description": "服务平台结算单明细查询服务",

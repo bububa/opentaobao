@@ -1,4 +1,5 @@
 {
+	"id": 10448,
 	"name": "taobao.aftersale.get",
 	"apiChineseName": "查询用户售后服务模板",
 	"description": "查询用户设置的售后服务模板，仅返回标题和id",

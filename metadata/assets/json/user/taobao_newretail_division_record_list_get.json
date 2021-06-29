@@ -1,4 +1,5 @@
 {
+	"id": 47029,
 	"name": "taobao.newretail.division.record.list.get",
 	"apiChineseName": "导购分佣明细列表",
 	"description": "提供分页查询导购分佣明细的能力",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-智能硬件云货架数据回流 APIResponse
+智能硬件云货架数据回流 API返回值 
 taobao.smartstore.device.shelf.feedback
 
 智慧门店云货架设备回流
@@ -20,15 +20,11 @@ type TaobaoSmartstoreDeviceShelfFeedbackAPIResponse struct {
     TaobaoSmartstoreDeviceShelfFeedbackResponse
 }
 
+// 智能硬件云货架数据回流 成功返回结果
 type TaobaoSmartstoreDeviceShelfFeedbackResponse struct {
     XMLName xml.Name `xml:"smartstore_device_shelf_feedback_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 回流结果
-    
     Result   string `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

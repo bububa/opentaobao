@@ -1,4 +1,5 @@
 {
+	"id": 33997,
 	"name": "alibaba.campus.device.openapi.feedbackeventinfo",
 	"apiChineseName": "IVS事件处理反馈接口",
 	"description": "提供给第三方ISV的的事件信息处理反馈的接口",

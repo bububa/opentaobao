@@ -1,4 +1,5 @@
 {
+	"id": 7,
 	"name": "taobao.product.img.upload",
 	"apiChineseName": "上传单张产品非主图，如果需要传多张，可调多次",
 	"description": "1.传入产品ID \u003cbr/\u003e2.传入图片内容 \u003cbr/\u003e注意：图片最大为500K,只支持JPG,GIF格式,如果需要传多张，可调多次",

@@ -1,4 +1,5 @@
 {
+	"id": 28633,
 	"name": "yunos.tvpubadmin.user.suggest",
 	"apiChineseName": "获取关联账户列表",
 	"description": "获取关联账户列表",

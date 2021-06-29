@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-闲鱼无需物流发货 APIResponse
+闲鱼无需物流发货 API返回值 
 alibaba.idle.order.dummy.send
 
 适用于电子卡券等虚拟商品不需要物流的商品发货。
@@ -17,15 +17,11 @@ type AlibabaIdleOrderDummySendAPIResponse struct {
     AlibabaIdleOrderDummySendResponse
 }
 
+// 闲鱼无需物流发货 成功返回结果
 type AlibabaIdleOrderDummySendResponse struct {
     XMLName xml.Name `xml:"alibaba_idle_order_dummy_send_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回包装类
-    
     Result   *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

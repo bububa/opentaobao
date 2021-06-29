@@ -1,4 +1,5 @@
 {
+	"id": 21982,
 	"name": "taobao.tmc.group.delete",
 	"apiChineseName": "删除指定的分组或分组下的用户",
 	"description": "删除指定的分组或分组下的用户，授权消息使用",

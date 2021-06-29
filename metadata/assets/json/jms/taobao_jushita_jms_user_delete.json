@@ -1,4 +1,5 @@
 {
+	"id": 25345,
 	"name": "taobao.jushita.jms.user.delete",
 	"apiChineseName": "删除ONS消息同步用户",
 	"description": "删除ONS消息同步用户，删除后用户的消息将不会推送到聚石塔的ONS中",

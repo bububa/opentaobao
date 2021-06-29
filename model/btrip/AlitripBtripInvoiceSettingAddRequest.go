@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-发票设置 APIRequest
+发票设置 API请求
 alitrip.btrip.invoice.setting.add
 
 发票设置
 */
 type AlitripBtripInvoiceSettingAddRequest struct {
     model.Params
-
     // 请求对象
-    rq   *OpenInvoiceModifyAndNewRq 
-
+    rq   *OpenInvoiceModifyAndNewRq
 }
 
+// 初始化AlitripBtripInvoiceSettingAddRequest对象
 func NewAlitripBtripInvoiceSettingAddRequest() *AlitripBtripInvoiceSettingAddRequest{
     return &AlitripBtripInvoiceSettingAddRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripBtripInvoiceSettingAddRequest) GetApiMethodName() string {
     return "alitrip.btrip.invoice.setting.add"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripBtripInvoiceSettingAddRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripBtripInvoiceSettingAddRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Rq Setter
+// 请求对象
 func (r *AlitripBtripInvoiceSettingAddRequest) SetRq(rq *OpenInvoiceModifyAndNewRq) error {
     r.rq = rq
     r.Set("rq", rq)
     return nil
 }
 
+// Rq Getter
 func (r AlitripBtripInvoiceSettingAddRequest) GetRq() *OpenInvoiceModifyAndNewRq {
     return r.rq
 }
-

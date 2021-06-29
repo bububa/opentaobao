@@ -1,4 +1,5 @@
 {
+	"id": 51616,
 	"name": "alibaba.alsc.crm.open.rule.get",
 	"apiChineseName": "查询规则",
 	"description": "查询会员规则",

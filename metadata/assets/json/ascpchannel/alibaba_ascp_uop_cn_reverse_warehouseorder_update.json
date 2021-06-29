@@ -1,4 +1,5 @@
 {
+	"id": 50190,
 	"name": "alibaba.ascp.uop.cn.reverse.warehouseorder.update",
 	"apiChineseName": "供应链中台逆向入库单修改服务",
 	"description": "供应链中台逆向入库单修改服务",

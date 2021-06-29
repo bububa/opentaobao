@@ -1,4 +1,5 @@
 {
+	"id": 50091,
 	"name": "alibaba.ascp.industry.disivison.query",
 	"apiChineseName": "查询服务支持地区列表",
 	"description": "商家获取服务支持地区",

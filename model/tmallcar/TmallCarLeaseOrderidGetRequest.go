@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-天猫开新车查询订单id APIRequest
+天猫开新车查询订单id API请求
 tmall.car.lease.orderid.get
 
 天猫开新车查询订单id
 */
 type TmallCarLeaseOrderidGetRequest struct {
     model.Params
-
     // openid
-    openId   string 
-
+    openId   string
 }
 
+// 初始化TmallCarLeaseOrderidGetRequest对象
 func NewTmallCarLeaseOrderidGetRequest() *TmallCarLeaseOrderidGetRequest{
     return &TmallCarLeaseOrderidGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallCarLeaseOrderidGetRequest) GetApiMethodName() string {
     return "tmall.car.lease.orderid.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallCarLeaseOrderidGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallCarLeaseOrderidGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OpenId Setter
+// openid
 func (r *TmallCarLeaseOrderidGetRequest) SetOpenId(openId string) error {
     r.openId = openId
     r.Set("open_id", openId)
     return nil
 }
 
+// OpenId Getter
 func (r TmallCarLeaseOrderidGetRequest) GetOpenId() string {
     return r.openId
 }
-

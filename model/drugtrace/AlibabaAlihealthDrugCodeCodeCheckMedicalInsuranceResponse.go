@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-码核查状态同步-医保 APIResponse
+码核查状态同步-医保 API返回值 
 alibaba.alihealth.drug.code.code.check.medical.insurance
 
 服务描述
@@ -22,15 +22,11 @@ type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceAPIResponse struct {
     AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResponse
 }
 
+// 码核查状态同步-医保 成功返回结果
 type AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_drug_code_code_check_medical_insurance_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 监控宝推送网站监控信息，返回结果
-    
     Result   *AlibabaAlihealthDrugCodeCodeCheckMedicalInsuranceResultModel `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

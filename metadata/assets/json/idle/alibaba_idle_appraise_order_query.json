@@ -1,4 +1,5 @@
 {
+	"id": 50520,
 	"name": "alibaba.idle.appraise.order.query",
 	"apiChineseName": "闲鱼验货担保订单详情查询V1",
 	"description": "鉴定商调用该接口获取订单状态",

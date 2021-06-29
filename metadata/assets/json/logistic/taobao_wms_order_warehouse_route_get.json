@@ -1,4 +1,5 @@
 {
+	"id": 25412,
 	"name": "taobao.wms.order.warehouse.route.get",
 	"apiChineseName": "获取订单仓库路由信息",
 	"description": "获取订单仓库路由信息",

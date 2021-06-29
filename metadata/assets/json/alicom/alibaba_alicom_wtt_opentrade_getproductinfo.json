@@ -1,4 +1,5 @@
 {
+	"id": 52737,
 	"name": "alibaba.alicom.wtt.opentrade.getproductinfo",
 	"apiChineseName": "查询存送产品信息",
 	"description": "话费宝查询产品信息相关配置",

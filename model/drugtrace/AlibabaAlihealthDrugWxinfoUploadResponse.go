@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-小程序数据回传 APIResponse
+小程序数据回传 API返回值 
 alibaba.alihealth.drug.wxinfo.upload
 
 小程序数据回传
@@ -17,25 +17,15 @@ type AlibabaAlihealthDrugWxinfoUploadAPIResponse struct {
     AlibabaAlihealthDrugWxinfoUploadResponse
 }
 
+// 小程序数据回传 成功返回结果
 type AlibabaAlihealthDrugWxinfoUploadResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_drug_wxinfo_upload_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // model
-    
     Model   bool `json:"model,omitempty" xml:"model,omitempty"`
-
-    
     // msgInfo
-    
     MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
-
-    
     // msgCode
-    
     MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 50338,
 	"name": "aliexpress.trade.order.open.query",
 	"apiChineseName": "Aliexpress开放平台订单查询",
 	"description": "Aliexpress开放平台订单信息查询",

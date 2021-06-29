@@ -1,4 +1,5 @@
 {
+	"id": 43686,
 	"name": "alibaba.alihealth.drug.kyt.getdruglicense",
 	"apiChineseName": "获取药品资质信息",
 	"description": "获取药品的资质信息。",

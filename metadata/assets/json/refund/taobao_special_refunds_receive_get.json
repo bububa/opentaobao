@@ -1,4 +1,5 @@
 {
+	"id": 50106,
 	"name": "taobao.special.refunds.receive.get",
 	"apiChineseName": "特殊退款类型的纠纷单列表查询",
 	"description": "特殊退款类型的纠纷单列表查询",

@@ -1,4 +1,5 @@
 {
+	"id": 39164,
 	"name": "alibaba.lst.shiporder.create",
 	"apiChineseName": "零售通发货单创建",
 	"description": "通过该接口可以创建零售通运保保发货单，并处理相关业务流程。",

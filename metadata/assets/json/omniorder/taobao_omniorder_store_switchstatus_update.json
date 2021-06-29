@@ -1,4 +1,5 @@
 {
+	"id": 30688,
 	"name": "taobao.omniorder.store.switchstatus.update",
 	"apiChineseName": "switchstatus.update",
 	"description": "变更门店发货、门店自提状态",

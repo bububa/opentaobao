@@ -1,4 +1,5 @@
 {
+	"id": 28594,
 	"name": "yunos.tvpubadmin.content.device.getterminaltypemap",
 	"apiChineseName": "获取终端类型表",
 	"description": "获取终端类型表",

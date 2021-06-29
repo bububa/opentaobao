@@ -1,4 +1,5 @@
 {
+	"id": 38902,
 	"name": "tmall.nr.sold.orderlist.query.jst",
 	"apiChineseName": "已入塔商家查询订单列表",
 	"description": "该服务用于已入聚石塔的商家，获取订单列表信息；",

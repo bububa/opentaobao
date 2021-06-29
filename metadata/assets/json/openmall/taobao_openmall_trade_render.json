@@ -1,4 +1,5 @@
 {
+	"id": 51025,
 	"name": "taobao.openmall.trade.render",
 	"apiChineseName": "渲染订单价格",
 	"description": "请求渲染订单价格",

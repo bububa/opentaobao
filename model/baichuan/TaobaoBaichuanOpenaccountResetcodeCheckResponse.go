@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-百川验证找回密码验证码 APIResponse
+百川验证找回密码验证码 API返回值 
 taobao.baichuan.openaccount.resetcode.check
 
 百川验证找回密码验证码
@@ -17,15 +17,11 @@ type TaobaoBaichuanOpenaccountResetcodeCheckAPIResponse struct {
     TaobaoBaichuanOpenaccountResetcodeCheckResponse
 }
 
+// 百川验证找回密码验证码 成功返回结果
 type TaobaoBaichuanOpenaccountResetcodeCheckResponse struct {
     XMLName xml.Name `xml:"baichuan_openaccount_resetcode_check_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // name
-    
     Name   string `json:"name,omitempty" xml:"name,omitempty"`
-
-    
 }

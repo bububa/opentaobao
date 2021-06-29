@@ -1,4 +1,5 @@
 {
+	"id": 37888,
 	"name": "alibaba.retail.device.payUrl.get",
 	"apiChineseName": "贩卖机支付二维链接获取",
 	"description": "贩卖机支付二维链接获取",

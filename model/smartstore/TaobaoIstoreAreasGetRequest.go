@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-智慧门店区域编码查询 APIRequest
+智慧门店区域编码查询 API请求
 taobao.istore.areas.get
 
 查询标准地址区域代码信息。可以直接参考最新的行政区域代码：
@@ -15,22 +15,23 @@ taobao.istore.areas.get
 */
 type TaobaoIstoreAreasGetRequest struct {
     model.Params
-
     // 需返回的字段列表.可选值:Area 结构中的所有字段;多个字段之间用","分隔.如:id,type,name,parent_id,zip.
-    fields   string 
-
+    fields   string
 }
 
+// 初始化TaobaoIstoreAreasGetRequest对象
 func NewTaobaoIstoreAreasGetRequest() *TaobaoIstoreAreasGetRequest{
     return &TaobaoIstoreAreasGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoIstoreAreasGetRequest) GetApiMethodName() string {
     return "taobao.istore.areas.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoIstoreAreasGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,15 +39,15 @@ func (r TaobaoIstoreAreasGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Fields Setter
+// 需返回的字段列表.可选值:Area 结构中的所有字段;多个字段之间用","分隔.如:id,type,name,parent_id,zip.
 func (r *TaobaoIstoreAreasGetRequest) SetFields(fields string) error {
     r.fields = fields
     r.Set("fields", fields)
     return nil
 }
 
+// Fields Getter
 func (r TaobaoIstoreAreasGetRequest) GetFields() string {
     return r.fields
 }
-

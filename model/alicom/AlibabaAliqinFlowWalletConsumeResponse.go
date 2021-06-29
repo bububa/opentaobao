@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-流量扣减 APIResponse
+流量扣减 API返回值 
 alibaba.aliqin.flow.wallet.consume
 
 流量钱包流量扣减接口
@@ -17,15 +17,11 @@ type AlibabaAliqinFlowWalletConsumeAPIResponse struct {
     AlibabaAliqinFlowWalletConsumeResponse
 }
 
+// 流量扣减 成功返回结果
 type AlibabaAliqinFlowWalletConsumeResponse struct {
     XMLName xml.Name `xml:"alibaba_aliqin_flow_wallet_consume_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // true为成功
-    
     Value   string `json:"value,omitempty" xml:"value,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 39054,
 	"name": "taobao.uscesl.iteminfo.batch.insert",
 	"apiChineseName": "按商家批量写入商品接口",
 	"description": "【电子价签】支持按照商家-门店维度批量写入商品数据",

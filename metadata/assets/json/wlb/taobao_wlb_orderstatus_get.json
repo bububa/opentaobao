@@ -1,4 +1,5 @@
 {
+	"id": 10625,
 	"name": "taobao.wlb.orderstatus.get",
 	"apiChineseName": "物流宝订单流转状态查询",
 	"description": "根据物流宝订单号查询物流宝订单至目前为止的流转状态列表",

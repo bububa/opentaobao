@@ -1,4 +1,5 @@
 {
+	"id": 49859,
 	"name": "alitrip.hotel.alliance.settle.order.syn",
 	"apiChineseName": "菲住联盟分账成功订单同步",
 	"description": "用于菲住联盟分账成功订单同步",

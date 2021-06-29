@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-通过商品ID获取标签列表 APIRequest
+通过商品ID获取标签列表 API请求
 tmall.traderate.itemtags.get
 
 通过商品ID获取标签详细信息
 */
 type TmallTraderateItemtagsGetRequest struct {
     model.Params
-
     // 商品ID
-    itemId   int64 
-
+    itemId   int64
 }
 
+// 初始化TmallTraderateItemtagsGetRequest对象
 func NewTmallTraderateItemtagsGetRequest() *TmallTraderateItemtagsGetRequest{
     return &TmallTraderateItemtagsGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallTraderateItemtagsGetRequest) GetApiMethodName() string {
     return "tmall.traderate.itemtags.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallTraderateItemtagsGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallTraderateItemtagsGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ItemId Setter
+// 商品ID
 func (r *TmallTraderateItemtagsGetRequest) SetItemId(itemId int64) error {
     r.itemId = itemId
     r.Set("item_id", itemId)
     return nil
 }
 
+// ItemId Getter
 func (r TmallTraderateItemtagsGetRequest) GetItemId() int64 {
     return r.itemId
 }
-

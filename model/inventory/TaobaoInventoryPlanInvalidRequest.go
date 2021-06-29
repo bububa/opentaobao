@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-失效计划库存 APIRequest
+失效计划库存 API请求
 taobao.inventory.plan.invalid
 
 计划库存的失效服务
 */
 type TaobaoInventoryPlanInvalidRequest struct {
     model.Params
-
     // 计划库存失效入参
-    planStopTop   *PlanStopTopDto 
-
+    planStopTop   *PlanStopTopDto
 }
 
+// 初始化TaobaoInventoryPlanInvalidRequest对象
 func NewTaobaoInventoryPlanInvalidRequest() *TaobaoInventoryPlanInvalidRequest{
     return &TaobaoInventoryPlanInvalidRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoInventoryPlanInvalidRequest) GetApiMethodName() string {
     return "taobao.inventory.plan.invalid"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoInventoryPlanInvalidRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoInventoryPlanInvalidRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// PlanStopTop Setter
+// 计划库存失效入参
 func (r *TaobaoInventoryPlanInvalidRequest) SetPlanStopTop(planStopTop *PlanStopTopDto) error {
     r.planStopTop = planStopTop
     r.Set("plan_stop_top", planStopTop)
     return nil
 }
 
+// PlanStopTop Getter
 func (r TaobaoInventoryPlanInvalidRequest) GetPlanStopTop() *PlanStopTopDto {
     return r.planStopTop
 }
-

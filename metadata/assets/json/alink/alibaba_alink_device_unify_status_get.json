@@ -1,4 +1,5 @@
 {
+	"id": 30014,
 	"name": "alibaba.alink.device.unify.status.get",
 	"apiChineseName": "查询设备标准属性最新状态",
 	"description": "查询设备最新标准属性状态",

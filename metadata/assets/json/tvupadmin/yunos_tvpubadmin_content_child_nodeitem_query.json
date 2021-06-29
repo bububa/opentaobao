@@ -1,4 +1,5 @@
 {
+	"id": 29098,
 	"name": "yunos.tvpubadmin.content.child.nodeitem.query",
 	"apiChineseName": "查询少儿大厅类目内容",
 	"description": "查询少儿大厅类目内容信息",

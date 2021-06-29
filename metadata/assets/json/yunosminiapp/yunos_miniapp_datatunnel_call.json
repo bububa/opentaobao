@@ -1,4 +1,5 @@
 {
+	"id": 56033,
 	"name": "yunos.miniapp.datatunnel.call",
 	"apiChineseName": "车载小程序外部服务调用",
 	"description": "对客户提供的api进行统一封装调用。",

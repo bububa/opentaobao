@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-前后端商品映射查询接口 APIRequest
+前后端商品映射查询接口 API请求
 taobao.qimen.itemmapping.query
 
 前后端商品映射查询接口
 */
 type TaobaoQimenItemmappingQueryRequest struct {
     model.Params
-
     // 
-    request   *Request 
-
+    request   *Request
 }
 
+// 初始化TaobaoQimenItemmappingQueryRequest对象
 func NewTaobaoQimenItemmappingQueryRequest() *TaobaoQimenItemmappingQueryRequest{
     return &TaobaoQimenItemmappingQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenItemmappingQueryRequest) GetApiMethodName() string {
     return "taobao.qimen.itemmapping.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenItemmappingQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenItemmappingQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenItemmappingQueryRequest) SetRequest(request *Request) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenItemmappingQueryRequest) GetRequest() *Request {
     return r.request
 }
-

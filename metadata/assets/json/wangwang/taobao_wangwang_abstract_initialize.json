@@ -1,4 +1,5 @@
 {
+	"id": 21808,
 	"name": "taobao.wangwang.abstract.initialize",
 	"apiChineseName": "模糊查询服务初始化",
 	"description": "模糊查询服务初始化，只支持json返回",

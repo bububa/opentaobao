@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-生成淘宝小程序短链接 APIRequest
+生成淘宝小程序短链接 API请求
 taobao.miniapp.shorturl.create
 
 提供淘宝小程序短链接生成的能力，只允许对淘宝小程序对应的域名：https://m.duanqu.com/ 生成对应的短链接，其他域名无效
@@ -15,22 +15,23 @@ taobao.miniapp.shorturl.create
 */
 type TaobaoMiniappShorturlCreateRequest struct {
     model.Params
-
     // 小程序链接地址。说明：链接地址，只允许https协议，域名只支持m.duanqu.com，链接必须包含_ariver_appid参数，链接不能够包含spm、short_name、app、tb_url_time_stamp这些系统保留参数
-    miniappUrl   string 
-
+    miniappUrl   string
 }
 
+// 初始化TaobaoMiniappShorturlCreateRequest对象
 func NewTaobaoMiniappShorturlCreateRequest() *TaobaoMiniappShorturlCreateRequest{
     return &TaobaoMiniappShorturlCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoMiniappShorturlCreateRequest) GetApiMethodName() string {
     return "taobao.miniapp.shorturl.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoMiniappShorturlCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,15 +39,15 @@ func (r TaobaoMiniappShorturlCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// MiniappUrl Setter
+// 小程序链接地址。说明：链接地址，只允许https协议，域名只支持m.duanqu.com，链接必须包含_ariver_appid参数，链接不能够包含spm、short_name、app、tb_url_time_stamp这些系统保留参数
 func (r *TaobaoMiniappShorturlCreateRequest) SetMiniappUrl(miniappUrl string) error {
     r.miniappUrl = miniappUrl
     r.Set("miniapp_url", miniappUrl)
     return nil
 }
 
+// MiniappUrl Getter
 func (r TaobaoMiniappShorturlCreateRequest) GetMiniappUrl() string {
     return r.miniappUrl
 }
-

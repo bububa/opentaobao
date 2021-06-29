@@ -1,4 +1,5 @@
 {
+	"id": 36870,
 	"name": "alibaba.wdk.sku.add",
 	"apiChineseName": "新增商品",
 	"description": "创建RT门店商品或DC商品",

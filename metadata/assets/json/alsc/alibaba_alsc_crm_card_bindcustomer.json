@@ -1,4 +1,5 @@
 {
+	"id": 46373,
 	"name": "alibaba.alsc.crm.card.bindcustomer",
 	"apiChineseName": "卡号绑定顾客",
 	"description": "为卡号绑定顾客",

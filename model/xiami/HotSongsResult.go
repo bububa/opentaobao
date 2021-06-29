@@ -2,10 +2,6 @@ package xiami
 
 // HotSongsResult 
 type HotSongsResult struct {
-
     // 歌曲列表
-    
-    Songs   []StandardSong `json:"songs,omitempty" xml:"songs,omitempty"`
-    
-
+    Songs   []StandardSong `json:"songs,omitempty" xml:"songs>standard_song,omitempty"`
 }

@@ -1,4 +1,5 @@
 {
+	"id": 49316,
 	"name": "alibaba.ascp.uop.supplier.consignorder.outofstock.callback",
 	"apiChineseName": "履约单纬度的仓缺货回告服务",
 	"description": "商家仓履约单纬度的仓缺货回告接口",

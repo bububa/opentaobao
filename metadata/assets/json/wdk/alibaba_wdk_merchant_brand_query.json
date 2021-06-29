@@ -1,4 +1,5 @@
 {
+	"id": 30235,
 	"name": "alibaba.wdk.merchant.brand.query",
 	"apiChineseName": "品牌查询接口",
 	"description": "三江erp对接时，提供品牌查询的接口",

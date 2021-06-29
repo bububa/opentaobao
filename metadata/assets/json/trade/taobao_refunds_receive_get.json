@@ -1,4 +1,5 @@
 {
+	"id": 52,
 	"name": "taobao.refunds.receive.get",
 	"apiChineseName": "查询卖家收到的退款列表",
 	"description": "查询卖家收到的退款列表",

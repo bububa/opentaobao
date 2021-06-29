@@ -1,4 +1,5 @@
 {
+	"id": 53962,
 	"name": "alibaba.item.publish.submit",
 	"apiChineseName": "商品发布",
 	"description": "新商品发布，提交商品发布信息",

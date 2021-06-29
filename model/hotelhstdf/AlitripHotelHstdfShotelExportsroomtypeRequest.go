@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-导出一个卖家房型下的所有标准房型 APIRequest
+导出一个卖家房型下的所有标准房型 API请求
 alitrip.hotel.hstdf.shotel.exportsroomtype
 
 导出一个卖家酒店下的所有标准房型
 */
 type AlitripHotelHstdfShotelExportsroomtypeRequest struct {
     model.Params
-
     // 卖家酒店id
-    hid   int64 
-
+    hid   int64
 }
 
+// 初始化AlitripHotelHstdfShotelExportsroomtypeRequest对象
 func NewAlitripHotelHstdfShotelExportsroomtypeRequest() *AlitripHotelHstdfShotelExportsroomtypeRequest{
     return &AlitripHotelHstdfShotelExportsroomtypeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripHotelHstdfShotelExportsroomtypeRequest) GetApiMethodName() string {
     return "alitrip.hotel.hstdf.shotel.exportsroomtype"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripHotelHstdfShotelExportsroomtypeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripHotelHstdfShotelExportsroomtypeRequest) GetApiParams() url.Values
     }
     return params
 }
-
-
+// Hid Setter
+// 卖家酒店id
 func (r *AlitripHotelHstdfShotelExportsroomtypeRequest) SetHid(hid int64) error {
     r.hid = hid
     r.Set("hid", hid)
     return nil
 }
 
+// Hid Getter
 func (r AlitripHotelHstdfShotelExportsroomtypeRequest) GetHid() int64 {
     return r.hid
 }
-

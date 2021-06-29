@@ -1,4 +1,5 @@
 {
+	"id": 38606,
 	"name": "tmall.promotion.coupon.user",
 	"apiChineseName": "用户信息查询接口",
 	"description": "开发给外部合作商（例如：苏宁），通过会员付款码获得会员nick",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-广告牌照管控查询 APIResponse
+广告牌照管控查询 API返回值 
 yunos.tvpubadmin.content.advert.queryschedule
 
 广告牌照管控查询
@@ -17,15 +17,11 @@ type YunosTvpubadminContentAdvertQueryscheduleAPIResponse struct {
     YunosTvpubadminContentAdvertQueryscheduleResponse
 }
 
+// 广告牌照管控查询 成功返回结果
 type YunosTvpubadminContentAdvertQueryscheduleResponse struct {
     XMLName xml.Name `xml:"yunos_tvpubadmin_content_advert_queryschedule_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 具体数据信息
-    
     Object   *PaginationDO `json:"object,omitempty" xml:"object,omitempty"`
-
-    
 }

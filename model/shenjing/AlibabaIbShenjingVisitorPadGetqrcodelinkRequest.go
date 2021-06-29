@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-pad获取二维码 APIRequest
+pad获取二维码 API请求
 alibaba.ib.shenjing.visitor.pad.getqrcodelink
 
 pad获取二维码链接。扫码录入人脸。
 */
 type AlibabaIbShenjingVisitorPadGetqrcodelinkRequest struct {
     model.Params
-
     // 终端id
-    termId   string 
-
+    termId   string
 }
 
+// 初始化AlibabaIbShenjingVisitorPadGetqrcodelinkRequest对象
 func NewAlibabaIbShenjingVisitorPadGetqrcodelinkRequest() *AlibabaIbShenjingVisitorPadGetqrcodelinkRequest{
     return &AlibabaIbShenjingVisitorPadGetqrcodelinkRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIbShenjingVisitorPadGetqrcodelinkRequest) GetApiMethodName() string {
     return "alibaba.ib.shenjing.visitor.pad.getqrcodelink"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIbShenjingVisitorPadGetqrcodelinkRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIbShenjingVisitorPadGetqrcodelinkRequest) GetApiParams() url.Valu
     }
     return params
 }
-
-
+// TermId Setter
+// 终端id
 func (r *AlibabaIbShenjingVisitorPadGetqrcodelinkRequest) SetTermId(termId string) error {
     r.termId = termId
     r.Set("term_id", termId)
     return nil
 }
 
+// TermId Getter
 func (r AlibabaIbShenjingVisitorPadGetqrcodelinkRequest) GetTermId() string {
     return r.termId
 }
-

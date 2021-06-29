@@ -1,4 +1,5 @@
 {
+	"id": 45055,
 	"name": "taobao.xhotel.commoninvoice.list.vtwo",
 	"apiChineseName": "用户常用发票信息查询接口",
 	"description": "获取用户常用发票信息接口",

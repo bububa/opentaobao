@@ -1,4 +1,5 @@
 {
+	"id": 55,
 	"name": "taobao.traderates.get",
 	"apiChineseName": "搜索评价信息",
 	"description": "搜索评价信息，只能获取距今180天内的评价记录(只支持查询卖家给出或得到的评价)。",

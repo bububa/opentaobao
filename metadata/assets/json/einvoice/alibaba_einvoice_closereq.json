@@ -1,4 +1,5 @@
 {
+	"id": 30289,
 	"name": "alibaba.einvoice.closereq",
 	"apiChineseName": "关闭开票失败请求（失败列表可重试）",
 	"description": "关闭失败开票请求，避免造成重复开票",

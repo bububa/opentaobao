@@ -1,4 +1,5 @@
 {
+	"id": 45550,
 	"name": "alibaba.seaking.imagetranslate.submit",
 	"apiChineseName": "提交图片翻译任务",
 	"description": "提交图片翻译任务",

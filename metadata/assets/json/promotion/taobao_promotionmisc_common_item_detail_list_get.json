@@ -1,4 +1,5 @@
 {
+	"id": 25847,
 	"name": "taobao.promotionmisc.common.item.detail.list.get",
 	"apiChineseName": "查询通用单品优惠详情列表",
 	"description": "查询通用单品优惠详情列表。",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-抽奖接口 APIRequest
+抽奖接口 API请求
 alibaba.benefit.draw
 
 功能：抽奖功能，供小程序抽奖调用
@@ -20,28 +20,27 @@ appkey验证通过的，才会进入抽奖流程，否则直接失败。
 */
 type AlibabaBenefitDrawRequest struct {
     model.Params
-
     // 奖池唯一标识，奖池创建时即生成
-    ename   string 
-
+    ename   string
     // 调用方AppName：规定为promotioncenter-${appId}
-    appName   string 
-
+    appName   string
     // 调用方应用ip，非必填
-    ip   string 
-
+    ip   string
 }
 
+// 初始化AlibabaBenefitDrawRequest对象
 func NewAlibabaBenefitDrawRequest() *AlibabaBenefitDrawRequest{
     return &AlibabaBenefitDrawRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaBenefitDrawRequest) GetApiMethodName() string {
     return "alibaba.benefit.draw"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaBenefitDrawRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -49,35 +48,39 @@ func (r AlibabaBenefitDrawRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Ename Setter
+// 奖池唯一标识，奖池创建时即生成
 func (r *AlibabaBenefitDrawRequest) SetEname(ename string) error {
     r.ename = ename
     r.Set("ename", ename)
     return nil
 }
 
+// Ename Getter
 func (r AlibabaBenefitDrawRequest) GetEname() string {
     return r.ename
 }
-
+// AppName Setter
+// 调用方AppName：规定为promotioncenter-${appId}
 func (r *AlibabaBenefitDrawRequest) SetAppName(appName string) error {
     r.appName = appName
     r.Set("app_name", appName)
     return nil
 }
 
+// AppName Getter
 func (r AlibabaBenefitDrawRequest) GetAppName() string {
     return r.appName
 }
-
+// Ip Setter
+// 调用方应用ip，非必填
 func (r *AlibabaBenefitDrawRequest) SetIp(ip string) error {
     r.ip = ip
     r.Set("ip", ip)
     return nil
 }
 
+// Ip Getter
 func (r AlibabaBenefitDrawRequest) GetIp() string {
     return r.ip
 }
-

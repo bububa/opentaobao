@@ -1,4 +1,5 @@
 {
+	"id": 28068,
 	"name": "cainiao.cloudprint.single.customarea.get",
 	"apiChineseName": "获取商家单一自定义区",
 	"description": "商家所有快递公司模板只有一个自定义区",

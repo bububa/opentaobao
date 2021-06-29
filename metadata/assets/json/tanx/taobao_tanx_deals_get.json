@@ -1,4 +1,5 @@
 {
+	"id": 24236,
 	"name": "taobao.tanx.deals.get",
 	"apiChineseName": "批量获取交易列表",
 	"description": "批量获取交易信息",

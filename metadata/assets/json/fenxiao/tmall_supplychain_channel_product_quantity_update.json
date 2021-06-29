@@ -1,4 +1,5 @@
 {
+	"id": 49550,
 	"name": "tmall.supplychain.channel.product.quantity.update",
 	"apiChineseName": "渠道无仓库存更新接口",
 	"description": "渠道无仓库存更新接口",

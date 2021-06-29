@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-AE履约事件处理 APIRequest
+AE履约事件处理 API请求
 aliexpress.fulfillment.event
 
 AE用 履约底层声明发货能力
 */
 type AliexpressFulfillmentEventRequest struct {
     model.Params
-
     // 入参对象
-    param   *FulfillmentOrderStatusUpdateRequest 
-
+    param   *FulfillmentOrderStatusUpdateRequest
 }
 
+// 初始化AliexpressFulfillmentEventRequest对象
 func NewAliexpressFulfillmentEventRequest() *AliexpressFulfillmentEventRequest{
     return &AliexpressFulfillmentEventRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AliexpressFulfillmentEventRequest) GetApiMethodName() string {
     return "aliexpress.fulfillment.event"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AliexpressFulfillmentEventRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AliexpressFulfillmentEventRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 入参对象
 func (r *AliexpressFulfillmentEventRequest) SetParam(param *FulfillmentOrderStatusUpdateRequest) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AliexpressFulfillmentEventRequest) GetParam() *FulfillmentOrderStatusUpdateRequest {
     return r.param
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 45432,
 	"name": "alitrip.tuan.hotel.adapt.store.get",
 	"apiChineseName": "酒店团购套餐关联适用门店",
 	"description": "输入shid，返回关联门店详情信息",

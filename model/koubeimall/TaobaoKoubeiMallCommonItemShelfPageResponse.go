@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-门店货架商品列表信息查询 APIResponse
+门店货架商品列表信息查询 API返回值 
 taobao.koubei.mall.common.item.shelf.page
 
 查询口碑综合体内门店货架商品列表信息接口
@@ -17,15 +17,11 @@ type TaobaoKoubeiMallCommonItemShelfPageAPIResponse struct {
     TaobaoKoubeiMallCommonItemShelfPageResponse
 }
 
+// 门店货架商品列表信息查询 成功返回结果
 type TaobaoKoubeiMallCommonItemShelfPageResponse struct {
     XMLName xml.Name `xml:"koubei_mall_common_item_shelf_page_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // API接口返回的result模型
-    
     Result   *TaobaoKoubeiMallCommonItemShelfPageResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 25401,
 	"name": "taobao.xhotel.multiplerate.get",
 	"apiChineseName": "复杂房价查询接口",
 	"description": "查询复杂房价，支持通过入住人数，连住天数，商品信息，房价信息查询",

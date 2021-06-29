@@ -1,4 +1,5 @@
 {
+	"id": 21599,
 	"name": "taobao.scitem.map.query",
 	"apiChineseName": "查找IC商品或分销商品与后端商品的关联信息",
 	"description": "查找IC商品或分销商品与后端商品的关联信息。skuId如果不传就查找该itemId下所有的sku",

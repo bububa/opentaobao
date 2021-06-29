@@ -1,4 +1,5 @@
 {
+	"id": 37447,
 	"name": "tmall.nr.inventory.update",
 	"apiChineseName": "门店业务同步库存",
 	"description": "用于商家每日同步更新门店库存",

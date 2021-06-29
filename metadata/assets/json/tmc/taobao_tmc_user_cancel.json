@@ -1,4 +1,5 @@
 {
+	"id": 21989,
 	"name": "taobao.tmc.user.cancel",
 	"apiChineseName": "取消用户的消息服务",
 	"description": "取消用户的消息服务",

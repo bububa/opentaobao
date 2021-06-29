@@ -1,4 +1,5 @@
 {
+	"id": 41033,
 	"name": "alibaba.ib.shenjing.visitor.pad.opendoor",
 	"apiChineseName": "访客发起开门",
 	"description": "访客PAD端录入完人脸后，可以点击开门按钮开门。",

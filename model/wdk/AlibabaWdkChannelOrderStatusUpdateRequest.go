@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-订单状态变更 APIRequest
+订单状态变更 API请求
 alibaba.wdk.channel.order.status.update
 
 订单状态变更
 */
 type AlibabaWdkChannelOrderStatusUpdateRequest struct {
     model.Params
-
     // 修改信息
-    orderStatusInfo   *OrderStatusInfo 
-
+    orderStatusInfo   *OrderStatusInfo
 }
 
+// 初始化AlibabaWdkChannelOrderStatusUpdateRequest对象
 func NewAlibabaWdkChannelOrderStatusUpdateRequest() *AlibabaWdkChannelOrderStatusUpdateRequest{
     return &AlibabaWdkChannelOrderStatusUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkChannelOrderStatusUpdateRequest) GetApiMethodName() string {
     return "alibaba.wdk.channel.order.status.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkChannelOrderStatusUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkChannelOrderStatusUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OrderStatusInfo Setter
+// 修改信息
 func (r *AlibabaWdkChannelOrderStatusUpdateRequest) SetOrderStatusInfo(orderStatusInfo *OrderStatusInfo) error {
     r.orderStatusInfo = orderStatusInfo
     r.Set("order_status_info", orderStatusInfo)
     return nil
 }
 
+// OrderStatusInfo Getter
 func (r AlibabaWdkChannelOrderStatusUpdateRequest) GetOrderStatusInfo() *OrderStatusInfo {
     return r.orderStatusInfo
 }
-

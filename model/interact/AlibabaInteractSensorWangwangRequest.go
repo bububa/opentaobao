@@ -7,26 +7,28 @@ import (
 )
 
 /* 
-手淘拉起旺旺接口 APIRequest
+手淘拉起旺旺接口 API请求
 alibaba.interact.sensor.wangwang
 
 手淘开放专用接口，没有数据返回，仅用于手淘容器中jssdk接口鉴权。手淘开放旺旺拉起功能给ISV。
 */
 type AlibabaInteractSensorWangwangRequest struct {
     model.Params
-
 }
 
+// 初始化AlibabaInteractSensorWangwangRequest对象
 func NewAlibabaInteractSensorWangwangRequest() *AlibabaInteractSensorWangwangRequest{
     return &AlibabaInteractSensorWangwangRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaInteractSensorWangwangRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.wangwang"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaInteractSensorWangwangRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -34,5 +36,3 @@ func (r AlibabaInteractSensorWangwangRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-

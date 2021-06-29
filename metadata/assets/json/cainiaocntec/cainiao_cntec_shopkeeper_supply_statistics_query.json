@@ -1,4 +1,5 @@
 {
+	"id": 46493,
 	"name": "cainiao.cntec.shopkeeper.supply.statistics.query",
 	"apiChineseName": "团购业务供货商查询门店统计数据",
 	"description": "查询门店售卖商品统计数据",

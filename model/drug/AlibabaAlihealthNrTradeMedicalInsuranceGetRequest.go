@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-阿里健康医保支付信息获取 APIRequest
+阿里健康医保支付信息获取 API请求
 alibaba.alihealth.nr.trade.medical.insurance.get
 
 阿里健康医保支付信息获取
 */
 type AlibabaAlihealthNrTradeMedicalInsuranceGetRequest struct {
     model.Params
-
     // 淘宝订单ID
-    orderId   int64 
-
+    orderId   int64
 }
 
+// 初始化AlibabaAlihealthNrTradeMedicalInsuranceGetRequest对象
 func NewAlibabaAlihealthNrTradeMedicalInsuranceGetRequest() *AlibabaAlihealthNrTradeMedicalInsuranceGetRequest{
     return &AlibabaAlihealthNrTradeMedicalInsuranceGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthNrTradeMedicalInsuranceGetRequest) GetApiMethodName() string {
     return "alibaba.alihealth.nr.trade.medical.insurance.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthNrTradeMedicalInsuranceGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthNrTradeMedicalInsuranceGetRequest) GetApiParams() url.Va
     }
     return params
 }
-
-
+// OrderId Setter
+// 淘宝订单ID
 func (r *AlibabaAlihealthNrTradeMedicalInsuranceGetRequest) SetOrderId(orderId int64) error {
     r.orderId = orderId
     r.Set("order_id", orderId)
     return nil
 }
 
+// OrderId Getter
 func (r AlibabaAlihealthNrTradeMedicalInsuranceGetRequest) GetOrderId() int64 {
     return r.orderId
 }
-

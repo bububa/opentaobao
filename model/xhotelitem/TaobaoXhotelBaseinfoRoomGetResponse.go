@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-酒店房型与房价查询 APIResponse
+酒店房型与房价查询 API返回值 
 taobao.xhotel.baseinfo.room.get
 
 根据outHid/hid获取酒店的房型和价格信息
@@ -17,15 +17,11 @@ type TaobaoXhotelBaseinfoRoomGetAPIResponse struct {
     TaobaoXhotelBaseinfoRoomGetResponse
 }
 
+// 酒店房型与房价查询 成功返回结果
 type TaobaoXhotelBaseinfoRoomGetResponse struct {
     XMLName xml.Name `xml:"xhotel_baseinfo_room_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TaobaoXhotelBaseinfoRoomGetResultSet `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

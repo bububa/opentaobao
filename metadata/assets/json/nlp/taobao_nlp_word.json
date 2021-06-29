@@ -1,4 +1,5 @@
 {
+	"id": 26129,
 	"name": "taobao.nlp.word",
 	"apiChineseName": "文本语言词法分析",
 	"description": "提供文本语言处理中的词法分析功能,开放中文分词和词权重计算功能。",

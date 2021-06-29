@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-服务商闲鱼商品编辑 APIRequest
+服务商闲鱼商品编辑 API请求
 alibaba.idle.isv.item.edit
 
 服务商ISV闲鱼商品编辑操作
 */
 type AlibabaIdleIsvItemEditRequest struct {
     model.Params
-
     // 商品数据参数
-    param   *IdleItemApiDo 
-
+    param   *IdleItemApiDo
 }
 
+// 初始化AlibabaIdleIsvItemEditRequest对象
 func NewAlibabaIdleIsvItemEditRequest() *AlibabaIdleIsvItemEditRequest{
     return &AlibabaIdleIsvItemEditRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIdleIsvItemEditRequest) GetApiMethodName() string {
     return "alibaba.idle.isv.item.edit"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIdleIsvItemEditRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIdleIsvItemEditRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 商品数据参数
 func (r *AlibabaIdleIsvItemEditRequest) SetParam(param *IdleItemApiDo) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaIdleIsvItemEditRequest) GetParam() *IdleItemApiDo {
     return r.param
 }
-

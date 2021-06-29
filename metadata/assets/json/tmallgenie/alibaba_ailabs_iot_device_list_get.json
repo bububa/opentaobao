@@ -1,4 +1,5 @@
 {
+	"id": 44553,
 	"name": "alibaba.ailabs.iot.device.list.get",
 	"apiChineseName": "获取iot设备列表",
 	"description": "通过此接口获取用户名下的iot设备列表",

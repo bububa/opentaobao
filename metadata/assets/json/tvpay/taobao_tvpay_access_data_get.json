@@ -1,4 +1,5 @@
 {
+	"id": 26205,
 	"name": "taobao.tvpay.access.data.get",
 	"apiChineseName": "tv支付",
 	"description": "在匿名用户支付后尝试为其登陆绑定的淘宝账号",

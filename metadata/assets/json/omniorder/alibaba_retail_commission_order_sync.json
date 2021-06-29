@@ -1,4 +1,5 @@
 {
+	"id": 41790,
 	"name": "alibaba.retail.commission.order.sync",
 	"apiChineseName": "分佣数据传输",
 	"description": "同步分佣结果",

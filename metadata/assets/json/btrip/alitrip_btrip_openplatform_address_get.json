@@ -1,4 +1,5 @@
 {
+	"id": 53431,
 	"name": "alitrip.btrip.openplatform.address.get",
 	"apiChineseName": "【商旅】开放平台对外页面跳转",
 	"description": "获取类目预定页跳转地址",

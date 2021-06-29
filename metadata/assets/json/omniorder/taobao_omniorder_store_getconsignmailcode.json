@@ -1,4 +1,5 @@
 {
+	"id": 29119,
 	"name": "taobao.omniorder.store.getconsignmailcode",
 	"apiChineseName": "全渠道门店物流菜鸟裹裹取号",
 	"description": "用于ISV获取全渠道门店物流订单菜鸟裹裹门店的物流快递取号",

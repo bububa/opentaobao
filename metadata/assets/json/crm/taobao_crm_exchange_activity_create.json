@@ -1,4 +1,5 @@
 {
+	"id": 25584,
 	"name": "taobao.crm.exchange.activity.create",
 	"apiChineseName": "创建积分兑换活动",
 	"description": "创建针对积分兑换类型的活动",

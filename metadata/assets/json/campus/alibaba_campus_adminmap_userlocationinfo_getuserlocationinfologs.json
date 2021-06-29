@@ -1,4 +1,5 @@
 {
+	"id": 33581,
 	"name": "alibaba.campus.adminmap.userlocationinfo.getuserlocationinfologs",
 	"apiChineseName": "分时间段获取用户历史位置信息",
 	"description": "分时间段获取用户历史位置信息",

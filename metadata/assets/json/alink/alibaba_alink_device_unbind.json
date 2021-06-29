@@ -1,4 +1,5 @@
 {
+	"id": 28335,
 	"name": "alibaba.alink.device.unbind",
 	"apiChineseName": "解绑设备",
 	"description": "阿里智能解绑设备",

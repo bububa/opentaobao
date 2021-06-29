@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-商品同步接口 APIRequest
+商品同步接口 API请求
 taobao.qimen.singleitem.synchronize
 
 ERP调用奇门的接口,同步商品信息给WMS
 */
 type TaobaoQimenSingleitemSynchronizeRequest struct {
     model.Params
-
     // 
-    request   *ItemSynRequest 
-
+    request   *ItemSynRequest
 }
 
+// 初始化TaobaoQimenSingleitemSynchronizeRequest对象
 func NewTaobaoQimenSingleitemSynchronizeRequest() *TaobaoQimenSingleitemSynchronizeRequest{
     return &TaobaoQimenSingleitemSynchronizeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenSingleitemSynchronizeRequest) GetApiMethodName() string {
     return "taobao.qimen.singleitem.synchronize"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenSingleitemSynchronizeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenSingleitemSynchronizeRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenSingleitemSynchronizeRequest) SetRequest(request *ItemSynRequest) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenSingleitemSynchronizeRequest) GetRequest() *ItemSynRequest {
     return r.request
 }
-

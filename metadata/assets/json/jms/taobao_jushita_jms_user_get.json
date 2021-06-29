@@ -1,4 +1,5 @@
 {
+	"id": 25343,
 	"name": "taobao.jushita.jms.user.get",
 	"apiChineseName": "查询某个用户是否同步消息",
 	"description": "查询某个用户是否同步消息，只支持单个查询",

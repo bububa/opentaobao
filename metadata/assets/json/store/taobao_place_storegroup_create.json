@@ -1,4 +1,5 @@
 {
+	"id": 49123,
 	"name": "taobao.place.storegroup.create",
 	"apiChineseName": "商户门店库创建接口",
 	"description": "用于商家创建线下门店库",

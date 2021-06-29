@@ -1,4 +1,5 @@
 {
+	"id": 29114,
 	"name": "alibaba.aliqin.fc.iot.cardoffer",
 	"apiChineseName": "查询物联网卡上订购的offer",
 	"description": "查询物联网卡上订购的offer",

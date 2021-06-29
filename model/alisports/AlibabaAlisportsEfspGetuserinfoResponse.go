@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取用户详细信息 APIResponse
+获取用户详细信息 API返回值 
 alibaba.alisports.efsp.getuserinfo
 
 阿里体育-体育健身-获取用户详细信息
@@ -17,15 +17,11 @@ type AlibabaAlisportsEfspGetuserinfoAPIResponse struct {
     AlibabaAlisportsEfspGetuserinfoResponse
 }
 
+// 获取用户详细信息 成功返回结果
 type AlibabaAlisportsEfspGetuserinfoResponse struct {
     XMLName xml.Name `xml:"alibaba_alisports_efsp_getuserinfo_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     Result   *TrilateralResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

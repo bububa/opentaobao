@@ -1,4 +1,5 @@
 {
+	"id": 40283,
 	"name": "alibaba.einvoice.income.device.return",
 	"apiChineseName": "服务商回传客户端设备列表",
 	"description": "服务商回传客户端agent所处环境的设备列表，比如扫描仪",

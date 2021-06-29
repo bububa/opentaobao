@@ -1,4 +1,5 @@
 {
+	"id": 23257,
 	"name": "tmall.product.add.schema.get",
 	"apiChineseName": "产品发布规则获取接口",
 	"description": "获取用户发布产品的规则",

@@ -1,4 +1,5 @@
 {
+	"id": 52105,
 	"name": "alibaba.lsy.miniapp.user.get",
 	"apiChineseName": "零售云小程序获取登录用户信息",
 	"description": "零售云小程序，通过授权码获取登录的卖家账号信息",

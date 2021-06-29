@@ -1,4 +1,5 @@
 {
+	"id": 50057,
 	"name": "tmall.tmjlapp.sap.serviceorder.cancel",
 	"apiChineseName": "取消售后服务单",
 	"description": "SAP跟天猫精灵app接口对接，用户在app取消sap售后服务工单",

@@ -1,4 +1,5 @@
 {
+	"id": 37469,
 	"name": "alibaba.campus.acl.new.checkuserpermission",
 	"apiChineseName": "校验用户是否有权限",
 	"description": "校验用户是否有权限",

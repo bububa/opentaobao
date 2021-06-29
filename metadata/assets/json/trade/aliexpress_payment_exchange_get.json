@@ -1,4 +1,5 @@
 {
+	"id": 49985,
 	"name": "aliexpress.payment.exchange.get",
 	"apiChineseName": "getExchange",
 	"description": "提供国际汇率服务",

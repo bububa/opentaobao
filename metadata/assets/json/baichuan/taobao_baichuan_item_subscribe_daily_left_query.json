@@ -1,4 +1,5 @@
 {
+	"id": 26978,
 	"name": "taobao.baichuan.item.subscribe.daily.left.query",
 	"apiChineseName": "查询当天可添加的余量",
 	"description": "查询当天可添加的余量",

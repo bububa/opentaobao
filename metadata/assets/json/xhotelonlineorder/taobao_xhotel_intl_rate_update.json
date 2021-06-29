@@ -1,4 +1,5 @@
 {
+	"id": 48720,
 	"name": "taobao.xhotel.intl.rate.update",
 	"apiChineseName": "不落库商家推送更新酒店rate",
 	"description": "商家主动推送不落库商品的酒店信息",

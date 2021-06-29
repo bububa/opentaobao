@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询面单服务订购及面单使用情况v1.0 APIRequest
+查询面单服务订购及面单使用情况v1.0 API请求
 taobao.wlb.waybill.i.search
 
 获取发货地&CP开通状态&账户的使用情况
 */
 type TaobaoWlbWaybillISearchRequest struct {
     model.Params
-
     // 查询网点信息
-    waybillApplyRequest   *WaybillApplyRequest 
-
+    waybillApplyRequest   *WaybillApplyRequest
 }
 
+// 初始化TaobaoWlbWaybillISearchRequest对象
 func NewTaobaoWlbWaybillISearchRequest() *TaobaoWlbWaybillISearchRequest{
     return &TaobaoWlbWaybillISearchRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoWlbWaybillISearchRequest) GetApiMethodName() string {
     return "taobao.wlb.waybill.i.search"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoWlbWaybillISearchRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoWlbWaybillISearchRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// WaybillApplyRequest Setter
+// 查询网点信息
 func (r *TaobaoWlbWaybillISearchRequest) SetWaybillApplyRequest(waybillApplyRequest *WaybillApplyRequest) error {
     r.waybillApplyRequest = waybillApplyRequest
     r.Set("waybill_apply_request", waybillApplyRequest)
     return nil
 }
 
+// WaybillApplyRequest Getter
 func (r TaobaoWlbWaybillISearchRequest) GetWaybillApplyRequest() *WaybillApplyRequest {
     return r.waybillApplyRequest
 }
-

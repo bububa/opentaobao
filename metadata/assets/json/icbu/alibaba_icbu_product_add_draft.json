@@ -1,4 +1,5 @@
 {
+	"id": 46164,
 	"name": "alibaba.icbu.product.add.draft",
 	"apiChineseName": "ICBU商品发布草稿接口",
 	"description": "发布商品草稿,支持sourcing/一口价商品，支持英文和多种语言原发商品",

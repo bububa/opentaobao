@@ -1,4 +1,5 @@
 {
+	"id": 53331,
 	"name": "alibaba.legal.case.common.notice",
 	"apiChineseName": "消息通知",
 	"description": "同步通知给诉讼系统",

@@ -1,4 +1,5 @@
 {
+	"id": 46064,
 	"name": "alibaba.damai.mev.open.delete.paperformat",
 	"apiChineseName": "大麦换验平台-第三方对外开放-票纸版式接口deletePaperFormat",
 	"description": "deletePaperFormat",

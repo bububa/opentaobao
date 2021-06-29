@@ -1,4 +1,5 @@
 {
+	"id": 26042,
 	"name": "alibaba.tianji.supplier.order.result",
 	"apiChineseName": "供应商处理订单接口（订购成功/失败、发货）",
 	"description": "供应商处理订单接口（订购成功/失败、发货）",

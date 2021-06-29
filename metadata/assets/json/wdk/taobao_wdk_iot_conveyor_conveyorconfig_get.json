@@ -1,4 +1,5 @@
 {
+	"id": 40123,
 	"name": "taobao.wdk.iot.conveyor.conveyorconfig.get",
 	"apiChineseName": "获取悬挂链基本配置信息",
 	"description": "用于从云端WCS获取悬挂链基本配置信息",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-扫码识别会员接口 APIRequest
+扫码识别会员接口 API请求
 alibaba.wdk.member.qrcode.identify
 
 根据用户输入的付款码（支付宝、盒马、淘宝）、商家等信息，查询当前用户的基本信息及对应会员卡信息
 */
 type AlibabaWdkMemberQrcodeIdentifyRequest struct {
     model.Params
-
     // 付款码
-    qrCode   string 
-
+    qrCode   string
 }
 
+// 初始化AlibabaWdkMemberQrcodeIdentifyRequest对象
 func NewAlibabaWdkMemberQrcodeIdentifyRequest() *AlibabaWdkMemberQrcodeIdentifyRequest{
     return &AlibabaWdkMemberQrcodeIdentifyRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkMemberQrcodeIdentifyRequest) GetApiMethodName() string {
     return "alibaba.wdk.member.qrcode.identify"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkMemberQrcodeIdentifyRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkMemberQrcodeIdentifyRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// QrCode Setter
+// 付款码
 func (r *AlibabaWdkMemberQrcodeIdentifyRequest) SetQrCode(qrCode string) error {
     r.qrCode = qrCode
     r.Set("qr_code", qrCode)
     return nil
 }
 
+// QrCode Getter
 func (r AlibabaWdkMemberQrcodeIdentifyRequest) GetQrCode() string {
     return r.qrCode
 }
-

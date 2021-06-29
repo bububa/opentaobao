@@ -1,4 +1,5 @@
 {
+	"id": 53394,
 	"name": "alibaba.tmallgenie.scp.plan.forecast.oem.upload",
 	"apiChineseName": "16-供应商预测（OEM-成品）回传接口",
 	"description": "供应商预测（OEM-成品）回传接口",

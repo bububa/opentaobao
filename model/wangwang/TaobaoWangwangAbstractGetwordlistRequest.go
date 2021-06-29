@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取关键词列表 APIRequest
+获取关键词列表 API请求
 taobao.wangwang.abstract.getwordlist
 
 获取关键词列表，只支持json返回
 */
 type TaobaoWangwangAbstractGetwordlistRequest struct {
     model.Params
-
     // 传入参数的字符集
-    charset   string 
-
+    charset   string
 }
 
+// 初始化TaobaoWangwangAbstractGetwordlistRequest对象
 func NewTaobaoWangwangAbstractGetwordlistRequest() *TaobaoWangwangAbstractGetwordlistRequest{
     return &TaobaoWangwangAbstractGetwordlistRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoWangwangAbstractGetwordlistRequest) GetApiMethodName() string {
     return "taobao.wangwang.abstract.getwordlist"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoWangwangAbstractGetwordlistRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoWangwangAbstractGetwordlistRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Charset Setter
+// 传入参数的字符集
 func (r *TaobaoWangwangAbstractGetwordlistRequest) SetCharset(charset string) error {
     r.charset = charset
     r.Set("charset", charset)
     return nil
 }
 
+// Charset Getter
 func (r TaobaoWangwangAbstractGetwordlistRequest) GetCharset() string {
     return r.charset
 }
-

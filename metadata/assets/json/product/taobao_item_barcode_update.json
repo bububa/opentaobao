@@ -1,4 +1,5 @@
 {
+	"id": 22894,
 	"name": "taobao.item.barcode.update",
 	"apiChineseName": "更新商品条形码信息",
 	"description": "通过该接口，将商品以及SKU上得条形码信息补全",

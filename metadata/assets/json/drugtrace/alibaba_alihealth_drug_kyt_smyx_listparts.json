@@ -1,4 +1,5 @@
 {
+	"id": 52262,
 	"name": "alibaba.alihealth.drug.kyt.smyx.listparts",
 	"apiChineseName": "药店查询往来单位",
 	"description": "查询往来单位列表",

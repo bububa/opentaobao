@@ -1,4 +1,5 @@
 {
+	"id": 56947,
 	"name": "taobao.wtt.trade.service.get",
 	"apiChineseName": "获取网厅号卡垂直标信息",
 	"description": "查询网厅订单信息",

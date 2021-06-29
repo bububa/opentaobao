@@ -1,4 +1,5 @@
 {
+	"id": 26096,
 	"name": "tmall.msf.identify.status.query",
 	"apiChineseName": "喵师傅定案核销状态查询",
 	"description": "喵师傅定案核销状态查询，供服务商erp系统调用",

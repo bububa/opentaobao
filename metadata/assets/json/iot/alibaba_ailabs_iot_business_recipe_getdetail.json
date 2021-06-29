@@ -1,4 +1,5 @@
 {
+	"id": 49976,
 	"name": "alibaba.ailabs.iot.business.recipe.getdetail",
 	"apiChineseName": "获取食谱详情",
 	"description": "获取食谱详情接口，获取ISV自己的食谱详情数据",

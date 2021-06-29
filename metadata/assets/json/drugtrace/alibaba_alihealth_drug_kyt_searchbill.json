@@ -1,4 +1,5 @@
 {
+	"id": 42429,
 	"name": "alibaba.alihealth.drug.kyt.searchbill",
 	"apiChineseName": "通过时间段批量查询入出库单信息",
 	"description": "通过时间段批量查询入出库单信息",

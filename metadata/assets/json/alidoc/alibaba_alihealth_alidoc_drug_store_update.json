@@ -1,4 +1,5 @@
 {
+	"id": 44809,
 	"name": "alibaba.alihealth.alidoc.drug.store.update",
 	"apiChineseName": "更新药店",
 	"description": "药店信息更新接口",

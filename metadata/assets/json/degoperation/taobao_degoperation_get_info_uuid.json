@@ -1,4 +1,5 @@
 {
+	"id": 38340,
 	"name": "taobao.degoperation.get.info.uuid",
 	"apiChineseName": "根据uuid用户抽奖次数限制",
 	"description": "根据uuid用户抽奖次数限制",

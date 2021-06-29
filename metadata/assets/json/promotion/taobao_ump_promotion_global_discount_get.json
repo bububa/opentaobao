@@ -1,4 +1,5 @@
 {
+	"id": 38626,
 	"name": "taobao.ump.promotion.global.discount.get",
 	"apiChineseName": "获取卖家最低折扣",
 	"description": "提供卖家最低折扣查询功能",

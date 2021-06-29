@@ -1,4 +1,5 @@
 {
+	"id": 42041,
 	"name": "taobao.lark.iot.order.getcinemas",
 	"apiChineseName": "获取iot渠道开放的影院",
 	"description": "iot渠道拉取有权限访问的影院",

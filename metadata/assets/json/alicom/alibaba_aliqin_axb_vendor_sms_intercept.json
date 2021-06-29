@@ -1,4 +1,5 @@
 {
+	"id": 33882,
 	"name": "alibaba.aliqin.axb.vendor.sms.intercept",
 	"apiChineseName": "AXB短信托收推送接口",
 	"description": "用于给供应商推送需要托收的短信",

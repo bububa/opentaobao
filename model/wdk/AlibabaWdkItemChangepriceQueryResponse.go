@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-按照价格变更时间段，查询会变更价格的单据的商品 APIResponse
+按照价格变更时间段，查询会变更价格的单据的商品 API返回值 
 alibaba.wdk.item.changeprice.query
 
 /**
@@ -24,15 +24,11 @@ type AlibabaWdkItemChangepriceQueryAPIResponse struct {
     AlibabaWdkItemChangepriceQueryResponse
 }
 
+// 按照价格变更时间段，查询会变更价格的单据的商品 成功返回结果
 type AlibabaWdkItemChangepriceQueryResponse struct {
     XMLName xml.Name `xml:"alibaba_wdk_item_changeprice_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *AlibabaWdkItemChangepriceQueryResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

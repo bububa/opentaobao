@@ -1,4 +1,5 @@
 {
+	"id": 49414,
 	"name": "tmall.servicecenter.workcard.updatelogistics",
 	"apiChineseName": "更新物流进度",
 	"description": "提供给外部合作服务商的物流进度更改接口",

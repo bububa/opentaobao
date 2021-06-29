@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据码查询码信息 APIResponse
+根据码查询码信息 API返回值 
 alibaba.alihealth.drugtrace.top.yljg.query.codedetail
 
 服务描述
@@ -19,15 +19,11 @@ type AlibabaAlihealthDrugtraceTopYljgQueryCodedetailAPIResponse struct {
     AlibabaAlihealthDrugtraceTopYljgQueryCodedetailResponse
 }
 
+// 根据码查询码信息 成功返回结果
 type AlibabaAlihealthDrugtraceTopYljgQueryCodedetailResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_drugtrace_top_yljg_query_codedetail_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 最外层结果
-    
     Result   *AlibabaAlihealthDrugtraceTopYljgQueryCodedetailResultModel `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

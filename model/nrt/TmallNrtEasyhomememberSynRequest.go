@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-会员信息同 APIRequest
+会员信息同 API请求
 tmall.nrt.easyhomemember.syn
 
 居然之家将会员信息同步到零售中台 包含基本的会员信息
 */
 type TmallNrtEasyhomememberSynRequest struct {
     model.Params
-
     // 入参
-    param   *ExternalMemberDTO 
-
+    param   *ExternalMemberDTO
 }
 
+// 初始化TmallNrtEasyhomememberSynRequest对象
 func NewTmallNrtEasyhomememberSynRequest() *TmallNrtEasyhomememberSynRequest{
     return &TmallNrtEasyhomememberSynRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallNrtEasyhomememberSynRequest) GetApiMethodName() string {
     return "tmall.nrt.easyhomemember.syn"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallNrtEasyhomememberSynRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallNrtEasyhomememberSynRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 入参
 func (r *TmallNrtEasyhomememberSynRequest) SetParam(param *ExternalMemberDTO) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r TmallNrtEasyhomememberSynRequest) GetParam() *ExternalMemberDTO {
     return r.param
 }
-

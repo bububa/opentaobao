@@ -1,4 +1,5 @@
 {
+	"id": 38021,
 	"name": "alibaba.lst.vending.tradeflow.query",
 	"apiChineseName": "自动售卖机交易流水查询",
 	"description": "零售通自动售卖机交易流水查询接口，品牌商通过此接口同步商品交易数据。",

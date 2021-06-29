@@ -1,4 +1,5 @@
 {
+	"id": 28631,
 	"name": "yunos.tvpubadmin.device.appupgradedetail",
 	"apiChineseName": "获取应用升级详情",
 	"description": "获取应用升级详情",

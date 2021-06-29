@@ -1,4 +1,5 @@
 {
+	"id": 26870,
 	"name": "cainiao.waybill.ii.update",
 	"apiChineseName": "电子面单云打印更新接口",
 	"description": "商家更新电子面单号对应的面单信息。",

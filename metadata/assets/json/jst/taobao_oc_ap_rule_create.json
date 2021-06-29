@@ -1,4 +1,5 @@
 {
+	"id": 25566,
 	"name": "taobao.oc.ap.rule.create",
 	"apiChineseName": "创建分账规则",
 	"description": "OC分账业务功能支持，用于创建分账规则",

@@ -1,4 +1,5 @@
 {
+	"id": 45484,
 	"name": "alibaba.mozi.acl.app.getpermisspkgs",
 	"apiChineseName": "分页获取应用的权限套餐",
 	"description": "分页查询应用下的权限套餐列表",

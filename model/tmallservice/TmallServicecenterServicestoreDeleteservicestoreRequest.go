@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-删除网点 APIRequest
+删除网点 API请求
 tmall.servicecenter.servicestore.deleteservicestore
 
 删除网点信息。对于同一个服务商，通过 service_store_code 删除网点。
@@ -27,22 +27,23 @@ tmall.servicecenter.servicestore.deleteservicestore
 */
 type TmallServicecenterServicestoreDeleteservicestoreRequest struct {
     model.Params
-
     // 网点名称
-    serviceStoreCode   string 
-
+    serviceStoreCode   string
 }
 
+// 初始化TmallServicecenterServicestoreDeleteservicestoreRequest对象
 func NewTmallServicecenterServicestoreDeleteservicestoreRequest() *TmallServicecenterServicestoreDeleteservicestoreRequest{
     return &TmallServicecenterServicestoreDeleteservicestoreRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterServicestoreDeleteservicestoreRequest) GetApiMethodName() string {
     return "tmall.servicecenter.servicestore.deleteservicestore"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterServicestoreDeleteservicestoreRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -50,15 +51,15 @@ func (r TmallServicecenterServicestoreDeleteservicestoreRequest) GetApiParams() 
     }
     return params
 }
-
-
+// ServiceStoreCode Setter
+// 网点名称
 func (r *TmallServicecenterServicestoreDeleteservicestoreRequest) SetServiceStoreCode(serviceStoreCode string) error {
     r.serviceStoreCode = serviceStoreCode
     r.Set("service_store_code", serviceStoreCode)
     return nil
 }
 
+// ServiceStoreCode Getter
 func (r TmallServicecenterServicestoreDeleteservicestoreRequest) GetServiceStoreCode() string {
     return r.serviceStoreCode
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 42648,
 	"name": "alibaba.alihealth.drug.kyt.dr.singlerelation",
 	"apiChineseName": "多融单码关联关系查询",
 	"description": "单码关联关系查询",

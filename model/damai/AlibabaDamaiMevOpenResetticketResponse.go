@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-大麦换验平台-第三方对外开放-票单接口resetTicket APIResponse
+大麦换验平台-第三方对外开放-票单接口resetTicket API返回值 
 alibaba.damai.mev.open.resetticket
 
 开放接口重打票
@@ -17,15 +17,11 @@ type AlibabaDamaiMevOpenResetticketAPIResponse struct {
     AlibabaDamaiMevOpenResetticketResponse
 }
 
+// 大麦换验平台-第三方对外开放-票单接口resetTicket 成功返回结果
 type AlibabaDamaiMevOpenResetticketResponse struct {
     XMLName xml.Name `xml:"alibaba_damai_mev_open_resetticket_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *AlibabaDamaiMevOpenResetticketResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

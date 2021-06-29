@@ -1,4 +1,5 @@
 {
+	"id": 50735,
 	"name": "aliyun.viapi.imageaudit.scantext",
 	"apiChineseName": "文字内容审核",
 	"description": "结合行为、内容，采用多维度、多模型、多检测手段，识别文本中的垃圾内容，规避色情、广告、灌水、渉政、辱骂等内容风险。\n注意：如果返回结果里面的results为空，也代表指定类型检测通过。",

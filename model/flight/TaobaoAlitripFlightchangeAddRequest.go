@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-航变信息录入接口 APIRequest
+航变信息录入接口 API请求
 taobao.alitrip.flightchange.add
 
 代理商调用航变录入接口,
@@ -16,22 +16,23 @@ taobao.alitrip.flightchange.add
 */
 type TaobaoAlitripFlightchangeAddRequest struct {
     model.Params
-
     // 录入参数类
-    flightChangeDataDo   *FlightChangeDataDO 
-
+    flightChangeDataDo   *FlightChangeDataDO
 }
 
+// 初始化TaobaoAlitripFlightchangeAddRequest对象
 func NewTaobaoAlitripFlightchangeAddRequest() *TaobaoAlitripFlightchangeAddRequest{
     return &TaobaoAlitripFlightchangeAddRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAlitripFlightchangeAddRequest) GetApiMethodName() string {
     return "taobao.alitrip.flightchange.add"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAlitripFlightchangeAddRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -39,15 +40,15 @@ func (r TaobaoAlitripFlightchangeAddRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// FlightChangeDataDo Setter
+// 录入参数类
 func (r *TaobaoAlitripFlightchangeAddRequest) SetFlightChangeDataDo(flightChangeDataDo *FlightChangeDataDO) error {
     r.flightChangeDataDo = flightChangeDataDo
     r.Set("flight_change_data_do", flightChangeDataDo)
     return nil
 }
 
+// FlightChangeDataDo Getter
 func (r TaobaoAlitripFlightchangeAddRequest) GetFlightChangeDataDo() *FlightChangeDataDO {
     return r.flightChangeDataDo
 }
-

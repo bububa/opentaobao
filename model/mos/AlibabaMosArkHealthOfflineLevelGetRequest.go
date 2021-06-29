@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取mall的离线等级 APIRequest
+获取mall的离线等级 API请求
 alibaba.mos.ark.health.offline.level.get
 
 获取mall的离线等级
 */
 type AlibabaMosArkHealthOfflineLevelGetRequest struct {
     model.Params
-
     // 商场id
-    mallId   string 
-
+    mallId   string
 }
 
+// 初始化AlibabaMosArkHealthOfflineLevelGetRequest对象
 func NewAlibabaMosArkHealthOfflineLevelGetRequest() *AlibabaMosArkHealthOfflineLevelGetRequest{
     return &AlibabaMosArkHealthOfflineLevelGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaMosArkHealthOfflineLevelGetRequest) GetApiMethodName() string {
     return "alibaba.mos.ark.health.offline.level.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaMosArkHealthOfflineLevelGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaMosArkHealthOfflineLevelGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// MallId Setter
+// 商场id
 func (r *AlibabaMosArkHealthOfflineLevelGetRequest) SetMallId(mallId string) error {
     r.mallId = mallId
     r.Set("mall_id", mallId)
     return nil
 }
 
+// MallId Getter
 func (r AlibabaMosArkHealthOfflineLevelGetRequest) GetMallId() string {
     return r.mallId
 }
-

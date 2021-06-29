@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查看专题内容列表 APIRequest
+查看专题内容列表 API请求
 yunos.tvpubadmin.manage.topic.contentlist
 
 查看专题内容列表
 */
 type YunosTvpubadminManageTopicContentlistRequest struct {
     model.Params
-
     // 节目查询参数
-    programQuery   string 
-
+    programQuery   string
 }
 
+// 初始化YunosTvpubadminManageTopicContentlistRequest对象
 func NewYunosTvpubadminManageTopicContentlistRequest() *YunosTvpubadminManageTopicContentlistRequest{
     return &YunosTvpubadminManageTopicContentlistRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminManageTopicContentlistRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.manage.topic.contentlist"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminManageTopicContentlistRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminManageTopicContentlistRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// ProgramQuery Setter
+// 节目查询参数
 func (r *YunosTvpubadminManageTopicContentlistRequest) SetProgramQuery(programQuery string) error {
     r.programQuery = programQuery
     r.Set("program_query", programQuery)
     return nil
 }
 
+// ProgramQuery Getter
 func (r YunosTvpubadminManageTopicContentlistRequest) GetProgramQuery() string {
     return r.programQuery
 }
-

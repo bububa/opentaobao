@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-删除工人 APIResponse
+删除工人 API返回值 
 tmall.servicecenter.worker.delete
 
 删除工人信息。该接口为多个业务公用，部分字段可忽略。对于电器预约安装业务，同一个服务商，通过工人姓名+手机号+biz_type 保证唯一性。工人已存在才可以删除。
@@ -32,15 +32,11 @@ type TmallServicecenterWorkerDeleteAPIResponse struct {
     TmallServicecenterWorkerDeleteResponse
 }
 
+// 删除工人 成功返回结果
 type TmallServicecenterWorkerDeleteResponse struct {
     XMLName xml.Name `xml:"tmall_servicecenter_worker_delete_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *ResultBase `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

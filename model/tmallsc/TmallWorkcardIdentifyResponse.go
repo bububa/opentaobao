@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-工单核销 APIResponse
+工单核销 API返回值 
 tmall.workcard.identify
 
 工单核销，当工单完成以后，通过调用此接口核销
@@ -19,15 +19,11 @@ type TmallWorkcardIdentifyAPIResponse struct {
     TmallWorkcardIdentifyResponse
 }
 
+// 工单核销 成功返回结果
 type TmallWorkcardIdentifyResponse struct {
     XMLName xml.Name `xml:"tmall_workcard_identify_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TmallWorkcardIdentifyResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

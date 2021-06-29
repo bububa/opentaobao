@@ -1,4 +1,5 @@
 {
+	"id": 21806,
 	"name": "taobao.wangwang.abstract.deleteword",
 	"apiChineseName": "删除关键词",
 	"description": "删除关键词，只支持json返回",

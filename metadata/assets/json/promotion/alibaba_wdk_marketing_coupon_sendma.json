@@ -1,4 +1,5 @@
 {
+	"id": 36399,
 	"name": "alibaba.wdk.marketing.coupon.sendma",
 	"apiChineseName": "发放匿名码",
 	"description": "根据优惠券活动id打印单个匿名码",

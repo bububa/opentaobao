@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-五道口库存发布接口（针对外部渠道） APIRequest
+五道口库存发布接口（针对外部渠道） API请求
 alibaba.wdk.stock.publish
 
 五道口库存发布接口（针对外部渠道）
 */
 type AlibabaWdkStockPublishRequest struct {
     model.Params
-
     // 批量参数
-    batchStockPublishDto   *BatchStockPublishDto 
-
+    batchStockPublishDto   *BatchStockPublishDto
 }
 
+// 初始化AlibabaWdkStockPublishRequest对象
 func NewAlibabaWdkStockPublishRequest() *AlibabaWdkStockPublishRequest{
     return &AlibabaWdkStockPublishRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkStockPublishRequest) GetApiMethodName() string {
     return "alibaba.wdk.stock.publish"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkStockPublishRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkStockPublishRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// BatchStockPublishDto Setter
+// 批量参数
 func (r *AlibabaWdkStockPublishRequest) SetBatchStockPublishDto(batchStockPublishDto *BatchStockPublishDto) error {
     r.batchStockPublishDto = batchStockPublishDto
     r.Set("batch_stock_publish_dto", batchStockPublishDto)
     return nil
 }
 
+// BatchStockPublishDto Getter
 func (r AlibabaWdkStockPublishRequest) GetBatchStockPublishDto() *BatchStockPublishDto {
     return r.batchStockPublishDto
 }
-

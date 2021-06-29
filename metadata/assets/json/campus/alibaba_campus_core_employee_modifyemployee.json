@@ -1,4 +1,5 @@
 {
+	"id": 40363,
 	"name": "alibaba.campus.core.employee.modifyemployee",
 	"apiChineseName": "修改员工基本信息",
 	"description": "根据用户ID和公司ID更新员工基本信息（头像、性别、昵称）",

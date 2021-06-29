@@ -1,4 +1,5 @@
 {
+	"id": 43381,
 	"name": "alibaba.alihealth.booking.reserve.cancel",
 	"apiChineseName": "取消预约",
 	"description": "消费医疗统一预约平台，ISV取消预约",

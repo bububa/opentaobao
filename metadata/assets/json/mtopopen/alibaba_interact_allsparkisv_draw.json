@@ -1,4 +1,5 @@
 {
+	"id": 26114,
 	"name": "alibaba.interact.allsparkisv.draw",
 	"apiChineseName": "allspark提供抽奖tida接口对应鉴权接口",
 	"description": "该接口没有实际对外使用。只是内部鉴权使用，不会有三方应用调用",

@@ -1,4 +1,5 @@
 {
+	"id": 32039,
 	"name": "alitrip.travel.gereralsku.update",
 	"apiChineseName": "发布SKU信息（如果properties重复 则更新）",
 	"description": "发布SKU信息（如果properties重复 则更新）",

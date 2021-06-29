@@ -1,4 +1,5 @@
 {
+	"id": 45012,
 	"name": "taobao.open.trade.get",
 	"apiChineseName": "获取单笔交易的部分信息(商家应用使用)",
 	"description": "获取单笔交易的部分信息\u003c/br\u003e\n1.入参fields中传入buyer_nick ，才能返回buyer_open_id",

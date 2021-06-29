@@ -1,4 +1,5 @@
 {
+	"id": 51164,
 	"name": "alibaba.health.vaccin.vaccinate.complete",
 	"apiChineseName": "接种完成反馈接口",
 	"description": "ISV 将用户完成接种的疫苗同步给免疫规划中心",

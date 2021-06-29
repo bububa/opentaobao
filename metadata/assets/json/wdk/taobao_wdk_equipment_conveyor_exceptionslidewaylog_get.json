@@ -1,4 +1,5 @@
 {
+	"id": 30558,
 	"name": "taobao.wdk.equipment.conveyor.exceptionslidewaylog.get",
 	"apiChineseName": "异常通道日志查询",
 	"description": "五道口悬挂链异常通道事件查询",

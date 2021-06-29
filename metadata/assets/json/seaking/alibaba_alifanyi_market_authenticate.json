@@ -1,4 +1,5 @@
 {
+	"id": 51871,
 	"name": "alibaba.alifanyi.market.authenticate",
 	"apiChineseName": "第三方授权",
 	"description": "第三方授权，获取授权码",

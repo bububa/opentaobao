@@ -1,4 +1,5 @@
 {
+	"id": 45997,
 	"name": "tmall.servicecenter.workcard.signin",
 	"apiChineseName": "服务商确认工人签到成功",
 	"description": "服务商确认工人签到成功。需要服务商自己保证工人是在现场服务中。否则虚假回传签到而引起的后续问题全部由服务商自己承担",

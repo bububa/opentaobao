@@ -1,4 +1,5 @@
 {
+	"id": 53326,
 	"name": "alibaba.legal.case.entrust.get",
 	"apiChineseName": "委托",
 	"description": "获取委托案件的基本信息",

@@ -1,4 +1,5 @@
 {
+	"id": 40358,
 	"name": "alibaba.alihealth.drug.getbarcode.bytraccode",
 	"apiChineseName": "根据追溯码获取69码",
 	"description": "根据追溯码获取69码",

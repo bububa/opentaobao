@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-天猫好房楼盘评测同步 APIRequest
+天猫好房楼盘评测同步 API请求
 alibaba.alihouse.newhome.review.sync
 
 接受楼盘测评图文信息
 */
 type AlibabaAlihouseNewhomeReviewSyncRequest struct {
     model.Params
-
     // 测评草稿信息
-    review   *ProjectReviewDraftDto 
-
+    review   *ProjectReviewDraftDto
 }
 
+// 初始化AlibabaAlihouseNewhomeReviewSyncRequest对象
 func NewAlibabaAlihouseNewhomeReviewSyncRequest() *AlibabaAlihouseNewhomeReviewSyncRequest{
     return &AlibabaAlihouseNewhomeReviewSyncRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihouseNewhomeReviewSyncRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.review.sync"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihouseNewhomeReviewSyncRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihouseNewhomeReviewSyncRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Review Setter
+// 测评草稿信息
 func (r *AlibabaAlihouseNewhomeReviewSyncRequest) SetReview(review *ProjectReviewDraftDto) error {
     r.review = review
     r.Set("review", review)
     return nil
 }
 
+// Review Getter
 func (r AlibabaAlihouseNewhomeReviewSyncRequest) GetReview() *ProjectReviewDraftDto {
     return r.review
 }
-

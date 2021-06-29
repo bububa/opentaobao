@@ -7,26 +7,28 @@ import (
 )
 
 /* 
-takePhoto APIRequest
+takePhoto API请求
 alibaba.interact.sensor.takephoto
 
 客户端takePhoto
 */
 type AlibabaInteractSensorTakephotoRequest struct {
     model.Params
-
 }
 
+// 初始化AlibabaInteractSensorTakephotoRequest对象
 func NewAlibabaInteractSensorTakephotoRequest() *AlibabaInteractSensorTakephotoRequest{
     return &AlibabaInteractSensorTakephotoRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaInteractSensorTakephotoRequest) GetApiMethodName() string {
     return "alibaba.interact.sensor.takephoto"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaInteractSensorTakephotoRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -34,5 +36,3 @@ func (r AlibabaInteractSensorTakephotoRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-

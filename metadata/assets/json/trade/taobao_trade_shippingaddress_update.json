@@ -1,4 +1,5 @@
 {
+	"id": 241,
 	"name": "taobao.trade.shippingaddress.update",
 	"apiChineseName": "更改交易的收货地址",
 	"description": "只能更新一笔交易里面的买家收货地址 \u003cbr/\u003e只能更新发货前（即买家已付款，等待卖家发货状态）的交易的买家收货地址 \u003cbr/\u003e更新后的发货地址可以通过taobao.trade.fullinfo.get查到 \u003cbr/\u003e参数中所说的字节为GBK编码的（英文和数字占1字节，中文占2字节）",

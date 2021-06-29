@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-根据id查询全局弹窗 APIRequest
+根据id查询全局弹窗 API请求
 yunos.tvpubadmin.manage.dialog.findbyid
 
 根据id查询全局弹窗
 */
 type YunosTvpubadminManageDialogFindbyidRequest struct {
     model.Params
-
     // 全局弹窗id
-    id   int64 
-
+    id   int64
 }
 
+// 初始化YunosTvpubadminManageDialogFindbyidRequest对象
 func NewYunosTvpubadminManageDialogFindbyidRequest() *YunosTvpubadminManageDialogFindbyidRequest{
     return &YunosTvpubadminManageDialogFindbyidRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminManageDialogFindbyidRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.manage.dialog.findbyid"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminManageDialogFindbyidRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminManageDialogFindbyidRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Id Setter
+// 全局弹窗id
 func (r *YunosTvpubadminManageDialogFindbyidRequest) SetId(id int64) error {
     r.id = id
     r.Set("id", id)
     return nil
 }
 
+// Id Getter
 func (r YunosTvpubadminManageDialogFindbyidRequest) GetId() int64 {
     return r.id
 }
-

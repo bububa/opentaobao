@@ -1,4 +1,5 @@
 {
+	"id": 28589,
 	"name": "yunos.tvpubadmin.device.tvid",
 	"apiChineseName": "查询终端信息",
 	"description": "通过UUID查询终端信息",

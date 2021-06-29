@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-处方外流-处方状态同步 APIRequest
+处方外流-处方状态同步 API请求
 alibaba.alihealth.outflow.prescription.syncstatus
 
 阿里健康-处方外流-对外提供同步处方状态功能
 */
 type AlibabaAlihealthOutflowPrescriptionSyncstatusRequest struct {
     model.Params
-
     // 入参
-    syncStatusRequest   *SyncPrescriptionStatusRequest 
-
+    syncStatusRequest   *SyncPrescriptionStatusRequest
 }
 
+// 初始化AlibabaAlihealthOutflowPrescriptionSyncstatusRequest对象
 func NewAlibabaAlihealthOutflowPrescriptionSyncstatusRequest() *AlibabaAlihealthOutflowPrescriptionSyncstatusRequest{
     return &AlibabaAlihealthOutflowPrescriptionSyncstatusRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) GetApiMethodName() string {
     return "alibaba.alihealth.outflow.prescription.syncstatus"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) GetApiParams() url
     }
     return params
 }
-
-
+// SyncStatusRequest Setter
+// 入参
 func (r *AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) SetSyncStatusRequest(syncStatusRequest *SyncPrescriptionStatusRequest) error {
     r.syncStatusRequest = syncStatusRequest
     r.Set("sync_status_request", syncStatusRequest)
     return nil
 }
 
+// SyncStatusRequest Getter
 func (r AlibabaAlihealthOutflowPrescriptionSyncstatusRequest) GetSyncStatusRequest() *SyncPrescriptionStatusRequest {
     return r.syncStatusRequest
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 55300,
 	"name": "alibaba.idle.isv.spu.search",
 	"apiChineseName": "spu搜索接口",
 	"description": "搜索的品牌和型号，供服务商进行选择",

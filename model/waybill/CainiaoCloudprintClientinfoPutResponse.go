@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-云打印客户端监控信息收集 APIResponse
+云打印客户端监控信息收集 API返回值 
 cainiao.cloudprint.clientinfo.put
 
 云打印客户端监控信息收集
@@ -17,15 +17,11 @@ type CainiaoCloudprintClientinfoPutAPIResponse struct {
     CainiaoCloudprintClientinfoPutResponse
 }
 
+// 云打印客户端监控信息收集 成功返回结果
 type CainiaoCloudprintClientinfoPutResponse struct {
     XMLName xml.Name `xml:"cainiao_cloudprint_clientinfo_put_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *CloudPrintBaseResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 24161,
 	"name": "taobao.openim.users.update",
 	"apiChineseName": "批量更新用户信息",
 	"description": "批量更新用户信息",

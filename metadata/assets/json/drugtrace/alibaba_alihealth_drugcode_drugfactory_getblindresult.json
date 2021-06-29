@@ -1,4 +1,5 @@
 {
+	"id": 51809,
 	"name": "alibaba.alihealth.drugcode.drugfactory.getblindresult",
 	"apiChineseName": "获取盲底文件处理结果",
 	"description": "获取盲底文件处理结果",

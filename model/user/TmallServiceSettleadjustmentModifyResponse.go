@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-修改结算调整单 APIResponse
+修改结算调整单 API返回值 
 tmall.service.settleadjustment.modify
 
 提供给服务商在对结算有异议时，发起结算调整单。
@@ -18,15 +18,11 @@ type TmallServiceSettleadjustmentModifyAPIResponse struct {
     TmallServiceSettleadjustmentModifyResponse
 }
 
+// 修改结算调整单 成功返回结果
 type TmallServiceSettleadjustmentModifyResponse struct {
     XMLName xml.Name `xml:"tmall_service_settleadjustment_modify_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TmallServiceSettleadjustmentModifyResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

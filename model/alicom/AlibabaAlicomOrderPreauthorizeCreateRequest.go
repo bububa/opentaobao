@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-业务办理结果 APIRequest
+业务办理结果 API请求
 alibaba.alicom.order.preauthorize.create
 
 授授权:签约结果通知
 */
 type AlibabaAlicomOrderPreauthorizeCreateRequest struct {
     model.Params
-
     // 入参
-    preAuthorizeModel   *PreAuthorizeModel 
-
+    preAuthorizeModel   *PreAuthorizeModel
 }
 
+// 初始化AlibabaAlicomOrderPreauthorizeCreateRequest对象
 func NewAlibabaAlicomOrderPreauthorizeCreateRequest() *AlibabaAlicomOrderPreauthorizeCreateRequest{
     return &AlibabaAlicomOrderPreauthorizeCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlicomOrderPreauthorizeCreateRequest) GetApiMethodName() string {
     return "alibaba.alicom.order.preauthorize.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlicomOrderPreauthorizeCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlicomOrderPreauthorizeCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// PreAuthorizeModel Setter
+// 入参
 func (r *AlibabaAlicomOrderPreauthorizeCreateRequest) SetPreAuthorizeModel(preAuthorizeModel *PreAuthorizeModel) error {
     r.preAuthorizeModel = preAuthorizeModel
     r.Set("pre_authorize_model", preAuthorizeModel)
     return nil
 }
 
+// PreAuthorizeModel Getter
 func (r AlibabaAlicomOrderPreauthorizeCreateRequest) GetPreAuthorizeModel() *PreAuthorizeModel {
     return r.preAuthorizeModel
 }
-

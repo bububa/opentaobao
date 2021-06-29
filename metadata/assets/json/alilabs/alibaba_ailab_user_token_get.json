@@ -1,4 +1,5 @@
 {
+	"id": 40929,
 	"name": "alibaba.ailab.user.token.get",
 	"apiChineseName": "三方账号获取 token",
 	"description": "inside 设备的三方 app，通过 extId、schema 生成 token",

@@ -1,4 +1,5 @@
 {
+	"id": 55059,
 	"name": "alibaba.ascp.channel.distributor.inventory.list.get",
 	"apiChineseName": "批量查询渠道库存",
 	"description": "淘外分销批量查询渠道产品的库存",

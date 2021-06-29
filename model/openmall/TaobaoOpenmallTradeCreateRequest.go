@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-创建订单 APIRequest
+创建订单 API请求
 taobao.openmall.trade.create
 
 创建Openmall订单
 */
 type TaobaoOpenmallTradeCreateRequest struct {
     model.Params
-
     // 请求入参
-    paramTopTradeCreateDO   *TopTradeCreateDo 
-
+    paramTopTradeCreateDO   *TopTradeCreateDo
 }
 
+// 初始化TaobaoOpenmallTradeCreateRequest对象
 func NewTaobaoOpenmallTradeCreateRequest() *TaobaoOpenmallTradeCreateRequest{
     return &TaobaoOpenmallTradeCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoOpenmallTradeCreateRequest) GetApiMethodName() string {
     return "taobao.openmall.trade.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoOpenmallTradeCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoOpenmallTradeCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamTopTradeCreateDO Setter
+// 请求入参
 func (r *TaobaoOpenmallTradeCreateRequest) SetParamTopTradeCreateDO(paramTopTradeCreateDO *TopTradeCreateDo) error {
     r.paramTopTradeCreateDO = paramTopTradeCreateDO
     r.Set("param_top_trade_create_d_o", paramTopTradeCreateDO)
     return nil
 }
 
+// ParamTopTradeCreateDO Getter
 func (r TaobaoOpenmallTradeCreateRequest) GetParamTopTradeCreateDO() *TopTradeCreateDo {
     return r.paramTopTradeCreateDO
 }
-

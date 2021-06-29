@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-提交发薪账单 APIResponse
+提交发薪账单 API返回值 
 alibaba.einvoice.tax.opt.salarybill.commitbill
 
 提交发薪账单
@@ -17,10 +17,9 @@ type AlibabaEinvoiceTaxOptSalarybillCommitbillAPIResponse struct {
     AlibabaEinvoiceTaxOptSalarybillCommitbillResponse
 }
 
+// 提交发薪账单 成功返回结果
 type AlibabaEinvoiceTaxOptSalarybillCommitbillResponse struct {
     XMLName xml.Name `xml:"alibaba_einvoice_tax_opt_salarybill_commitbill_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
 }

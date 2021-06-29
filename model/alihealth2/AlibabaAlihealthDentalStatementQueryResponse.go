@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-ISV查询对账单 APIResponse
+ISV查询对账单 API返回值 
 alibaba.alihealth.dental.statement.query
 
 ISV查询对账单
@@ -17,15 +17,11 @@ type AlibabaAlihealthDentalStatementQueryAPIResponse struct {
     AlibabaAlihealthDentalStatementQueryResponse
 }
 
+// ISV查询对账单 成功返回结果
 type AlibabaAlihealthDentalStatementQueryResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_dental_statement_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *AlibabaAlihealthDentalStatementQueryMtopResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

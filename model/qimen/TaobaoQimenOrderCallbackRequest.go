@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-配送拦截接口 APIRequest
+配送拦截接口 API请求
 taobao.qimen.order.callback
 
 配送拦截
 */
 type TaobaoQimenOrderCallbackRequest struct {
     model.Params
-
     // 
-    request   *OrderCallbackRequestDO 
-
+    request   *OrderCallbackRequestDO
 }
 
+// 初始化TaobaoQimenOrderCallbackRequest对象
 func NewTaobaoQimenOrderCallbackRequest() *TaobaoQimenOrderCallbackRequest{
     return &TaobaoQimenOrderCallbackRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenOrderCallbackRequest) GetApiMethodName() string {
     return "taobao.qimen.order.callback"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenOrderCallbackRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenOrderCallbackRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenOrderCallbackRequest) SetRequest(request *OrderCallbackRequestDO) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenOrderCallbackRequest) GetRequest() *OrderCallbackRequestDO {
     return r.request
 }
-

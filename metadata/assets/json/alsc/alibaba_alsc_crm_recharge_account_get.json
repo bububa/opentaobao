@@ -1,4 +1,5 @@
 {
+	"id": 45861,
 	"name": "alibaba.alsc.crm.recharge.account.get",
 	"apiChineseName": "查询储值账户信息",
 	"description": "查询储值账户信息接口",

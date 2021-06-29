@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-三方市内用车申请单查询 APIRequest
+三方市内用车申请单查询 API请求
 alitrip.btrip.city.car.apply.query
 
 三方市内用车申请单查询
 */
 type AlitripBtripCityCarApplyQueryRequest struct {
     model.Params
-
     // 入参对象
-    rq   *CityCarApplyQueryRq 
-
+    rq   *CityCarApplyQueryRq
 }
 
+// 初始化AlitripBtripCityCarApplyQueryRequest对象
 func NewAlitripBtripCityCarApplyQueryRequest() *AlitripBtripCityCarApplyQueryRequest{
     return &AlitripBtripCityCarApplyQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripBtripCityCarApplyQueryRequest) GetApiMethodName() string {
     return "alitrip.btrip.city.car.apply.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripBtripCityCarApplyQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripBtripCityCarApplyQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Rq Setter
+// 入参对象
 func (r *AlitripBtripCityCarApplyQueryRequest) SetRq(rq *CityCarApplyQueryRq) error {
     r.rq = rq
     r.Set("rq", rq)
     return nil
 }
 
+// Rq Getter
 func (r AlitripBtripCityCarApplyQueryRequest) GetRq() *CityCarApplyQueryRq {
     return r.rq
 }
-

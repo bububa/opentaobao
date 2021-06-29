@@ -1,4 +1,5 @@
 {
+	"id": 22214,
 	"name": "account.aliyuncs.com.ListAppkeyByOwnerAndBid.2013-07-01",
 	"apiChineseName": "根据渠道id和状态列出appkey",
 	"description": "根据渠道id和状态列出appkey",

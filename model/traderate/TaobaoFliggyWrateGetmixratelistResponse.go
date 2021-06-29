@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-飞猪通用评价接口 APIResponse
+飞猪通用评价接口 API返回值 
 taobao.fliggy.wrate.getmixratelist
 
 飞猪评价通用接口
@@ -17,15 +17,11 @@ type TaobaoFliggyWrateGetmixratelistAPIResponse struct {
     TaobaoFliggyWrateGetmixratelistResponse
 }
 
+// 飞猪通用评价接口 成功返回结果
 type TaobaoFliggyWrateGetmixratelistResponse struct {
     XMLName xml.Name `xml:"fliggy_wrate_getmixratelist_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *TaobaoFliggyWrateGetmixratelistResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

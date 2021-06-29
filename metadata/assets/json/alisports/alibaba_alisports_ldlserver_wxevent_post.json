@@ -1,4 +1,5 @@
 {
+	"id": 46277,
 	"name": "alibaba.alisports.ldlserver.wxevent.post",
 	"apiChineseName": "乐动力线-微信设备绑定通知",
 	"description": "转发弹外微信服务到弹内",

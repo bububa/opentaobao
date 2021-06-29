@@ -1,4 +1,5 @@
 {
+	"id": 28583,
 	"name": "yunos.tvpubadmin.device.apkinfo",
 	"apiChineseName": "获取停开服apk信息",
 	"description": "获取停开服apk信息",

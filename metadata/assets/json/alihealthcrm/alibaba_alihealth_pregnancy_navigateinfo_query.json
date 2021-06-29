@@ -1,4 +1,5 @@
 {
+	"id": 30294,
 	"name": "alibaba.alihealth.pregnancy.navigateinfo.query",
 	"apiChineseName": "查询底导数据",
 	"description": "备孕管理--获取底部导航信息",

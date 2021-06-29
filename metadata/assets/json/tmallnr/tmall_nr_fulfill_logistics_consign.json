@@ -1,4 +1,5 @@
 {
+	"id": 36936,
 	"name": "tmall.nr.fulfill.logistics.consign",
 	"apiChineseName": "同城配门店备货通知",
 	"description": "同城配业务备货通知，商家告诉平台门店的货已经准备好，可以发货了；",

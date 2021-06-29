@@ -1,4 +1,5 @@
 {
+	"id": 42634,
 	"name": "tmall.servicecenter.servicestore.updatestatus",
 	"apiChineseName": "网点/门店状态修改",
 	"description": "修改网点/门店状态",

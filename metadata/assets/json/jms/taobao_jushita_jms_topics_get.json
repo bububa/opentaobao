@@ -1,4 +1,5 @@
 {
+	"id": 26278,
 	"name": "taobao.jushita.jms.topics.get",
 	"apiChineseName": "根据用户nick获取开通的消息列表",
 	"description": "根据用户nick获取开通的消息列表",

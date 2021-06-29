@@ -1,4 +1,5 @@
 {
+	"id": 33584,
 	"name": "alibaba.campus.adminmap.userlocationinfo.getactualuserlocationinfobyids",
 	"apiChineseName": "根据userId(支持单个或批量)获取用户实时位置信息",
 	"description": "根据userId(支持单个或批量)获取用户实时位置信息 \nHSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService\nHSF方法名称：getActualUserLocationInfoByIds",

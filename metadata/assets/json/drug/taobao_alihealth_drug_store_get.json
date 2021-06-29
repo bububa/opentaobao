@@ -1,4 +1,5 @@
 {
+	"id": 30580,
 	"name": "taobao.alihealth.drug.store.get",
 	"apiChineseName": "根据店铺id获取店铺详情",
 	"description": "根据店铺id获取店铺详情",

@@ -1,4 +1,5 @@
 {
+	"id": 30888,
 	"name": "alibaba.interact.windvane.call",
 	"apiChineseName": "Weex页面调用windvane",
 	"description": "客户端鉴权使用，实际不会发送或接收数据",

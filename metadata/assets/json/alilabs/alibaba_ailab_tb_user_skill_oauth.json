@@ -1,4 +1,5 @@
 {
+	"id": 45531,
 	"name": "alibaba.ailab.tb.user.skill.oauth",
 	"apiChineseName": "用户技能 Oauth 授权（淘宝 openId）",
 	"description": "定制机厂商，在用户配网完成后，厂商调用此接口，写入特定技能的 Oauth 信息",

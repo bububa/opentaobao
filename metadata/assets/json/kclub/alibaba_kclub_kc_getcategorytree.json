@@ -1,4 +1,5 @@
 {
+	"id": 38771,
 	"name": "alibaba.kclub.kc.getcategorytree",
 	"apiChineseName": "知识云-查询租户下类目树",
 	"description": "知识云-查询租户下类目树。通过租户id、类型(外部类目、帮助中心类目、内部类目)。",

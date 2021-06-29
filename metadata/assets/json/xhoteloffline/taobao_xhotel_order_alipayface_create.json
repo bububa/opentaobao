@@ -1,4 +1,5 @@
 {
+	"id": 25622,
 	"name": "taobao.xhotel.order.alipayface.create",
 	"apiChineseName": "信用住支付创建接口",
 	"description": "用于创建一笔信用住支付，主要应用场景是线下信用住",

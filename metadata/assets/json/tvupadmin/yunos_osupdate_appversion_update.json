@@ -1,4 +1,5 @@
 {
+	"id": 30411,
 	"name": "yunos.osupdate.appversion.update",
 	"apiChineseName": "应用升级任务更新",
 	"description": "应用升级任务更新",

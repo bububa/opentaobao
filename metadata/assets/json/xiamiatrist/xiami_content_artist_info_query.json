@@ -1,4 +1,5 @@
 {
+	"id": 55125,
 	"name": "xiami.content.artist.info.query",
 	"apiChineseName": "搜索艺人列表",
 	"description": "根据查询条件，搜索相关艺人列表",

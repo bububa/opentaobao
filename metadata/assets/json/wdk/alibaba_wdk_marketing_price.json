@@ -1,4 +1,5 @@
 {
+	"id": 32601,
 	"name": "alibaba.wdk.marketing.price",
 	"apiChineseName": "促销价签服务",
 	"description": "获取营销-促销商品中的实时价格",

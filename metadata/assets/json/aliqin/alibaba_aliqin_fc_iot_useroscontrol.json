@@ -1,4 +1,5 @@
 {
+	"id": 29291,
 	"name": "alibaba.aliqin.fc.iot.useroscontrol",
 	"apiChineseName": "物联卡用户管理停开机功能",
 	"description": "物联网针对用户级管理停开支持",

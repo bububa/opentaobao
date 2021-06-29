@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-修改物流公司和运单号 APIResponse
+修改物流公司和运单号 API返回值 
 alibaba.ascp.logistics.consign.resend
 
 支持卖家发货后修改运单号;支持在线下单和自己联系两种发货方式;使用条件：
@@ -19,15 +19,11 @@ type AlibabaAscpLogisticsConsignResendAPIResponse struct {
     AlibabaAscpLogisticsConsignResendResponse
 }
 
+// 修改物流公司和运单号 成功返回结果
 type AlibabaAscpLogisticsConsignResendResponse struct {
     XMLName xml.Name `xml:"alibaba_ascp_logistics_consign_resend_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 异步获取历史数据接口返回结果
-    
     Result   *AlibabaAscpLogisticsConsignResendResultDto `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

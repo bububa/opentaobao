@@ -7,35 +7,34 @@ import (
 )
 
 /* 
-room实体查询 APIRequest
+room实体查询 API请求
 taobao.xhotel.room.get
 
 此接口用于查询一个商品，根据传入的gid查询商品信息。卖家只能查询自己的商品。
 */
 type TaobaoXhotelRoomGetRequest struct {
     model.Params
-
     // 卖家渠道 如果gid为空，那么out_rid和vendor都不能为空。 支持通过gid或者通过out_rid和vendor来获取商品
-    vendor   string 
-
+    vendor   string
     // 外部房型id 如果gid为空，那么out_rid和vendor都不能为空 支持通过gid或者通过out_rid和vendor来获取商品
-    outRid   string 
-
+    outRid   string
     // 废弃
-    gid   int64 
-
+    gid   int64
 }
 
+// 初始化TaobaoXhotelRoomGetRequest对象
 func NewTaobaoXhotelRoomGetRequest() *TaobaoXhotelRoomGetRequest{
     return &TaobaoXhotelRoomGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoXhotelRoomGetRequest) GetApiMethodName() string {
     return "taobao.xhotel.room.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoXhotelRoomGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -43,35 +42,39 @@ func (r TaobaoXhotelRoomGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Vendor Setter
+// 卖家渠道 如果gid为空，那么out_rid和vendor都不能为空。 支持通过gid或者通过out_rid和vendor来获取商品
 func (r *TaobaoXhotelRoomGetRequest) SetVendor(vendor string) error {
     r.vendor = vendor
     r.Set("vendor", vendor)
     return nil
 }
 
+// Vendor Getter
 func (r TaobaoXhotelRoomGetRequest) GetVendor() string {
     return r.vendor
 }
-
+// OutRid Setter
+// 外部房型id 如果gid为空，那么out_rid和vendor都不能为空 支持通过gid或者通过out_rid和vendor来获取商品
 func (r *TaobaoXhotelRoomGetRequest) SetOutRid(outRid string) error {
     r.outRid = outRid
     r.Set("out_rid", outRid)
     return nil
 }
 
+// OutRid Getter
 func (r TaobaoXhotelRoomGetRequest) GetOutRid() string {
     return r.outRid
 }
-
+// Gid Setter
+// 废弃
 func (r *TaobaoXhotelRoomGetRequest) SetGid(gid int64) error {
     r.gid = gid
     r.Set("gid", gid)
     return nil
 }
 
+// Gid Getter
 func (r TaobaoXhotelRoomGetRequest) GetGid() int64 {
     return r.gid
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 10629,
 	"name": "taobao.wlb.inventory.detail.get",
 	"apiChineseName": "查询库存详情",
 	"description": "查询库存详情，通过商品ID获取发送请求的卖家的库存详情",

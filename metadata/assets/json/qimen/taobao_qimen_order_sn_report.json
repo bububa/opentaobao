@@ -1,4 +1,5 @@
 {
+	"id": 27962,
 	"name": "taobao.qimen.order.sn.report",
 	"apiChineseName": "订单SN通知接口",
 	"description": "WMS调用奇门的接口,在出库、发货、入库等场景下，ERP和WMS之间同步操作的SN列表",

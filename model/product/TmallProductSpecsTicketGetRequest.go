@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-产品规格审核信息获取接口 APIRequest
+产品规格审核信息获取接口 API请求
 tmall.product.specs.ticket.get
 
 批量根据specId查询产品规格审核信息包括产品规格状态，申请人，拒绝原因等
 */
 type TmallProductSpecsTicketGetRequest struct {
     model.Params
-
     // 产品规格ID，多个用逗号分隔
-    specIds   string 
-
+    specIds   string
 }
 
+// 初始化TmallProductSpecsTicketGetRequest对象
 func NewTmallProductSpecsTicketGetRequest() *TmallProductSpecsTicketGetRequest{
     return &TmallProductSpecsTicketGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallProductSpecsTicketGetRequest) GetApiMethodName() string {
     return "tmall.product.specs.ticket.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallProductSpecsTicketGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallProductSpecsTicketGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// SpecIds Setter
+// 产品规格ID，多个用逗号分隔
 func (r *TmallProductSpecsTicketGetRequest) SetSpecIds(specIds string) error {
     r.specIds = specIds
     r.Set("spec_ids", specIds)
     return nil
 }
 
+// SpecIds Getter
 func (r TmallProductSpecsTicketGetRequest) GetSpecIds() string {
     return r.specIds
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 35264,
 	"name": "alitrip.hotel.detail.info.get",
 	"apiChineseName": "详情页动态信息接口",
 	"description": "酒店详情页动态信息TOP方法",

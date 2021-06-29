@@ -1,4 +1,5 @@
 {
+	"id": 40474,
 	"name": "alibaba.mos.ark.health.offline.level.get",
 	"apiChineseName": "获取mall的离线等级",
 	"description": "获取mall的离线等级",

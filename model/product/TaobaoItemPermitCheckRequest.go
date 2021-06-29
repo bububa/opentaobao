@@ -7,35 +7,34 @@ import (
 )
 
 /* 
-发品资质校验 APIRequest
+发品资质校验 API请求
 taobao.item.permit.check
 
 对淘宝商品发品、编辑前的预校验接口
 */
 type TaobaoItemPermitCheckRequest struct {
     model.Params
-
     // 商品id
-    itemId   int64 
-
+    itemId   int64
     // 类目id
-    cid   int64 
-
+    cid   int64
     // 发布类型。可选值:fixed(一口价),auction(拍卖)
-    type   string 
-
+    type   string
 }
 
+// 初始化TaobaoItemPermitCheckRequest对象
 func NewTaobaoItemPermitCheckRequest() *TaobaoItemPermitCheckRequest{
     return &TaobaoItemPermitCheckRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoItemPermitCheckRequest) GetApiMethodName() string {
     return "taobao.item.permit.check"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoItemPermitCheckRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -43,35 +42,39 @@ func (r TaobaoItemPermitCheckRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ItemId Setter
+// 商品id
 func (r *TaobaoItemPermitCheckRequest) SetItemId(itemId int64) error {
     r.itemId = itemId
     r.Set("item_id", itemId)
     return nil
 }
 
+// ItemId Getter
 func (r TaobaoItemPermitCheckRequest) GetItemId() int64 {
     return r.itemId
 }
-
+// Cid Setter
+// 类目id
 func (r *TaobaoItemPermitCheckRequest) SetCid(cid int64) error {
     r.cid = cid
     r.Set("cid", cid)
     return nil
 }
 
+// Cid Getter
 func (r TaobaoItemPermitCheckRequest) GetCid() int64 {
     return r.cid
 }
-
+// Type Setter
+// 发布类型。可选值:fixed(一口价),auction(拍卖)
 func (r *TaobaoItemPermitCheckRequest) SetType(type string) error {
     r.type = type
     r.Set("type", type)
     return nil
 }
 
+// Type Getter
 func (r TaobaoItemPermitCheckRequest) GetType() string {
     return r.type
 }
-

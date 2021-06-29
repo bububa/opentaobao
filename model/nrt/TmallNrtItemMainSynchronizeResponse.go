@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-家装新零售主商品同步至阿里 APIResponse
+家装新零售主商品同步至阿里 API返回值 
 tmall.nrt.item.main.synchronize
 
 同步红星美凯龙存量商品到阿里
@@ -17,15 +17,11 @@ type TmallNrtItemMainSynchronizeAPIResponse struct {
     TmallNrtItemMainSynchronizeResponse
 }
 
+// 家装新零售主商品同步至阿里 成功返回结果
 type TmallNrtItemMainSynchronizeResponse struct {
     XMLName xml.Name `xml:"tmall_nrt_item_main_synchronize_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     TmallNrtItemMainSynchronize   *TmallNrtItemMainSynchronizeResultDo `json:"tmall_nrt_item_main_synchronize,omitempty" xml:"tmall_nrt_item_main_synchronize,omitempty"`
-
-    
 }

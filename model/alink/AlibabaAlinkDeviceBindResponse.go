@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-绑定设备 APIResponse
+绑定设备 API返回值 
 alibaba.alink.device.bind
 
 阿里智能解绑设备
@@ -17,15 +17,11 @@ type AlibabaAlinkDeviceBindAPIResponse struct {
     AlibabaAlinkDeviceBindResponse
 }
 
+// 绑定设备 成功返回结果
 type AlibabaAlinkDeviceBindResponse struct {
     XMLName xml.Name `xml:"alibaba_alink_device_bind_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 结果
-    
     Result   *TopServiceResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

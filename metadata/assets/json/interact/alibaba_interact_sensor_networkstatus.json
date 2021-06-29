@@ -1,4 +1,5 @@
 {
+	"id": 23754,
 	"name": "alibaba.interact.sensor.networkstatus",
 	"apiChineseName": "网络状态",
 	"description": "客户端网络状态",

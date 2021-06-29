@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-订单列表查看(卖家视角) APIRequest
+订单列表查看(卖家视角) API请求
 alibaba.lst.trade.seller.order.list.query
 
 卖家视角订单查询，查询授权经销商订单列表
 */
 type AlibabaLstTradeSellerOrderListQueryRequest struct {
     model.Params
-
     // 入参
-    param   *LstTradeGetSellerOrderListParam 
-
+    param   *LstTradeGetSellerOrderListParam
 }
 
+// 初始化AlibabaLstTradeSellerOrderListQueryRequest对象
 func NewAlibabaLstTradeSellerOrderListQueryRequest() *AlibabaLstTradeSellerOrderListQueryRequest{
     return &AlibabaLstTradeSellerOrderListQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaLstTradeSellerOrderListQueryRequest) GetApiMethodName() string {
     return "alibaba.lst.trade.seller.order.list.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaLstTradeSellerOrderListQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaLstTradeSellerOrderListQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 入参
 func (r *AlibabaLstTradeSellerOrderListQueryRequest) SetParam(param *LstTradeGetSellerOrderListParam) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaLstTradeSellerOrderListQueryRequest) GetParam() *LstTradeGetSellerOrderListParam {
     return r.param
 }
-

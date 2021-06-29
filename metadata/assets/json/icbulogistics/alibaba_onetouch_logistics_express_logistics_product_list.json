@@ -1,4 +1,5 @@
 {
+	"id": 47872,
 	"name": "alibaba.onetouch.logistics.express.logistics.product.list",
 	"apiChineseName": "查询物流运力列表",
 	"description": "查询物流产品\u0026揽收仓库列表",

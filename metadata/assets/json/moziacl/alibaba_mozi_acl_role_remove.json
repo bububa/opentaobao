@@ -1,4 +1,5 @@
 {
+	"id": 50853,
 	"name": "alibaba.mozi.acl.role.remove",
 	"apiChineseName": "删除角色",
 	"description": "根据传入的角色code、租户id，删除租户内对应的角色",

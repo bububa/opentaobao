@@ -1,4 +1,5 @@
 {
+	"id": 50673,
 	"name": "alibaba.iot.device.corpus.get",
 	"apiChineseName": "IoT设备支持语料获取",
 	"description": "ISV通过该接口获取天猫精灵IoT设备支持控制或查询的语料",

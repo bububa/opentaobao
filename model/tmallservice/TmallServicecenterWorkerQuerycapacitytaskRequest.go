@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询需求容量 APIRequest
+查询需求容量 API请求
 tmall.servicecenter.worker.querycapacitytask
 
 查询需求容量
 */
 type TmallServicecenterWorkerQuerycapacitytaskRequest struct {
     model.Params
-
     // 查询对象
-    query   *CapacityTaskQueryDto 
-
+    query   *CapacityTaskQueryDto
 }
 
+// 初始化TmallServicecenterWorkerQuerycapacitytaskRequest对象
 func NewTmallServicecenterWorkerQuerycapacitytaskRequest() *TmallServicecenterWorkerQuerycapacitytaskRequest{
     return &TmallServicecenterWorkerQuerycapacitytaskRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterWorkerQuerycapacitytaskRequest) GetApiMethodName() string {
     return "tmall.servicecenter.worker.querycapacitytask"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterWorkerQuerycapacitytaskRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallServicecenterWorkerQuerycapacitytaskRequest) GetApiParams() url.Val
     }
     return params
 }
-
-
+// Query Setter
+// 查询对象
 func (r *TmallServicecenterWorkerQuerycapacitytaskRequest) SetQuery(query *CapacityTaskQueryDto) error {
     r.query = query
     r.Set("query", query)
     return nil
 }
 
+// Query Getter
 func (r TmallServicecenterWorkerQuerycapacitytaskRequest) GetQuery() *CapacityTaskQueryDto {
     return r.query
 }
-

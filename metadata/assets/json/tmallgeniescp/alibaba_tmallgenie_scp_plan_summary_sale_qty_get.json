@@ -1,4 +1,5 @@
 {
+	"id": 53956,
 	"name": "alibaba.tmallgenie.scp.plan.summary.sale.qty.get",
 	"apiChineseName": "同步销售数据按照渠道类型汇总",
 	"description": "同步销售数据按照渠道类型汇总",

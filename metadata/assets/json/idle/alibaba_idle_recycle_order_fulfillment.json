@@ -1,4 +1,5 @@
 {
+	"id": 32400,
 	"name": "alibaba.idle.recycle.order.fulfillment",
 	"apiChineseName": "闲鱼回收订单履约V1",
 	"description": "外部回收商针对自有回收订单的履行",

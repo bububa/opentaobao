@@ -1,4 +1,5 @@
 {
+	"id": 53335,
 	"name": "alibaba.middle.claimsaccept.receive",
 	"apiChineseName": "国际化中台服务域接收保险公司理赔受理结果",
 	"description": "国际化中台服务域与保险公司交互对接一个订单在保险公司方对该订单进行理赔受理结果的处理后，将该结果返回至服务域",

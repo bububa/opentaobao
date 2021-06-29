@@ -1,4 +1,5 @@
 {
+	"id": 27764,
 	"name": "alibaba.einvoice.amount.check",
 	"apiChineseName": "开票量核对接口",
 	"description": "跟开票服务商核对历史开票量，用来对账",

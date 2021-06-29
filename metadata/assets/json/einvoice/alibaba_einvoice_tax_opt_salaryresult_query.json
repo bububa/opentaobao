@@ -1,4 +1,5 @@
 {
+	"id": 55257,
 	"name": "alibaba.einvoice.tax.opt.salaryresult.query",
 	"apiChineseName": "查询发薪结果",
 	"description": "查询发薪结果",

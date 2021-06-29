@@ -1,4 +1,5 @@
 {
+	"id": 28413,
 	"name": "alibaba.security.jaq.app.official.verify",
 	"apiChineseName": "聚安全验证官方应用接口",
 	"description": "接入用户来查询应用是否为官方应用",

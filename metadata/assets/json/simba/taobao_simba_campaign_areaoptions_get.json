@@ -1,4 +1,5 @@
 {
+	"id": 10545,
 	"name": "taobao.simba.campaign.areaoptions.get",
 	"apiChineseName": "取得推广计划的可设置投放地域列表",
 	"description": "取得推广计划的可设置投放地域列表",

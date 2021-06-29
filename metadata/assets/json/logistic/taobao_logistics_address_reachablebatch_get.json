@@ -1,4 +1,5 @@
 {
+	"id": 23566,
 	"name": "taobao.logistics.address.reachablebatch.get",
 	"apiChineseName": "批量判定服务是否可达",
 	"description": "批量判定服务是否可达",

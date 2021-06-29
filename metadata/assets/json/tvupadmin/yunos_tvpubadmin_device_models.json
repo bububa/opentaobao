@@ -1,4 +1,5 @@
 {
+	"id": 28580,
 	"name": "yunos.tvpubadmin.device.models",
 	"apiChineseName": "获取品牌下设备列表",
 	"description": "获取品牌下设备列表",

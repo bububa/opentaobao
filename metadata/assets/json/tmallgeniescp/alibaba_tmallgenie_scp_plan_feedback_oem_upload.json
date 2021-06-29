@@ -1,4 +1,5 @@
 {
+	"id": 53390,
 	"name": "alibaba.tmallgenie.scp.plan.feedback.oem.upload",
 	"apiChineseName": "14-供应商反馈（OEM）同步接口",
 	"description": "供应商反馈（OEM）同步接口",

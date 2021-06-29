@@ -1,4 +1,5 @@
 {
+	"id": 26909,
 	"name": "alibaba.mydata.overview.industry.get",
 	"apiChineseName": "我的效果-获取Top行业列表",
 	"description": "获取数据管家我的效果API可以使用的行业",

@@ -1,4 +1,5 @@
 {
+	"id": 35592,
 	"name": "alitrip.hotel.detail.staticinfo.get",
 	"apiChineseName": "详情页静态信息",
 	"description": "酒店静态信息TOP接口",

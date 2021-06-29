@@ -1,4 +1,5 @@
 {
+	"id": 24001,
 	"name": "alibaba.interact.isv.gateway",
 	"apiChineseName": "isv调用gateway",
 	"description": "isv能够调用jae本身的server",

@@ -7,38 +7,36 @@ import (
 )
 
 /* 
-新增广告主接口 APIRequest
+新增广告主接口 API请求
 taobao.tanx.qualification.advertiser.add
 
 外部dsp调用接口时会根据广告主名称和类型在tanx系统中新增一个广告主
 */
 type TaobaoTanxQualificationAdvertiserAddRequest struct {
     model.Params
-
     // 广告主对象
-    advertisers   []AdvertiserDto 
-
+    advertisers   []AdvertiserDto
     // dsp用户memberId
-    memberId   int64 
-
+    memberId   int64
     // dsp用户验证token
-    token   string 
-
+    token   string
     // 从1970年到当前时间的秒
-    signTime   int64 
-
+    signTime   int64
 }
 
+// 初始化TaobaoTanxQualificationAdvertiserAddRequest对象
 func NewTaobaoTanxQualificationAdvertiserAddRequest() *TaobaoTanxQualificationAdvertiserAddRequest{
     return &TaobaoTanxQualificationAdvertiserAddRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoTanxQualificationAdvertiserAddRequest) GetApiMethodName() string {
     return "taobao.tanx.qualification.advertiser.add"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoTanxQualificationAdvertiserAddRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -46,45 +44,51 @@ func (r TaobaoTanxQualificationAdvertiserAddRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Advertisers Setter
+// 广告主对象
 func (r *TaobaoTanxQualificationAdvertiserAddRequest) SetAdvertisers(advertisers []AdvertiserDto) error {
     r.advertisers = advertisers
     r.Set("advertisers", advertisers)
     return nil
 }
 
+// Advertisers Getter
 func (r TaobaoTanxQualificationAdvertiserAddRequest) GetAdvertisers() []AdvertiserDto {
     return r.advertisers
 }
-
+// MemberId Setter
+// dsp用户memberId
 func (r *TaobaoTanxQualificationAdvertiserAddRequest) SetMemberId(memberId int64) error {
     r.memberId = memberId
     r.Set("member_id", memberId)
     return nil
 }
 
+// MemberId Getter
 func (r TaobaoTanxQualificationAdvertiserAddRequest) GetMemberId() int64 {
     return r.memberId
 }
-
+// Token Setter
+// dsp用户验证token
 func (r *TaobaoTanxQualificationAdvertiserAddRequest) SetToken(token string) error {
     r.token = token
     r.Set("token", token)
     return nil
 }
 
+// Token Getter
 func (r TaobaoTanxQualificationAdvertiserAddRequest) GetToken() string {
     return r.token
 }
-
+// SignTime Setter
+// 从1970年到当前时间的秒
 func (r *TaobaoTanxQualificationAdvertiserAddRequest) SetSignTime(signTime int64) error {
     r.signTime = signTime
     r.Set("sign_time", signTime)
     return nil
 }
 
+// SignTime Getter
 func (r TaobaoTanxQualificationAdvertiserAddRequest) GetSignTime() int64 {
     return r.signTime
 }
-

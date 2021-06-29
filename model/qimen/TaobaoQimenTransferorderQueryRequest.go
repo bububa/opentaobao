@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-调拨单查询 APIRequest
+调拨单查询 API请求
 taobao.qimen.transferorder.query
 
 调拨单查询
 */
 type TaobaoQimenTransferorderQueryRequest struct {
     model.Params
-
     // 
-    request   *TaobaoQimenTransferorderQueryStruct 
-
+    request   *TaobaoQimenTransferorderQueryStruct
 }
 
+// 初始化TaobaoQimenTransferorderQueryRequest对象
 func NewTaobaoQimenTransferorderQueryRequest() *TaobaoQimenTransferorderQueryRequest{
     return &TaobaoQimenTransferorderQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenTransferorderQueryRequest) GetApiMethodName() string {
     return "taobao.qimen.transferorder.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenTransferorderQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenTransferorderQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenTransferorderQueryRequest) SetRequest(request *TaobaoQimenTransferorderQueryStruct) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenTransferorderQueryRequest) GetRequest() *TaobaoQimenTransferorderQueryStruct {
     return r.request
 }
-

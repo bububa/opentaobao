@@ -1,4 +1,5 @@
 {
+	"id": 28767,
 	"name": "aliyun.alink.data.stat.report",
 	"apiChineseName": "外部离线统计数据上报",
 	"description": "外部合作厂商上报设备的明细数据，或者离线统计数据。",

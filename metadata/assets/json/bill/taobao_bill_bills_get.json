@@ -1,4 +1,5 @@
 {
+	"id": 21713,
 	"name": "taobao.bill.bills.get",
 	"apiChineseName": "查询账单明细数据(自研发商家专用)",
 	"description": "查询账单明细数据",

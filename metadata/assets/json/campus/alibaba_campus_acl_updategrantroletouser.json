@@ -1,4 +1,5 @@
 {
+	"id": 32231,
 	"name": "alibaba.campus.acl.updategrantroletouser",
 	"apiChineseName": "修改用户到角色关系",
 	"description": "修改用户到角色关系",

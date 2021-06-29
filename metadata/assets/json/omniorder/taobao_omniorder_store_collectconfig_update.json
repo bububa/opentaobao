@@ -1,4 +1,5 @@
 {
+	"id": 33753,
 	"name": "taobao.omniorder.store.collectconfig.update",
 	"apiChineseName": "门店自提配置修改",
 	"description": "修改门店自提配置内容",

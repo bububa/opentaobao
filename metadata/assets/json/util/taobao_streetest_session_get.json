@@ -1,4 +1,5 @@
 {
+	"id": 28185,
 	"name": "taobao.streetest.session.get",
 	"apiChineseName": "根据获取压测用户的sessionKey",
 	"description": "根据正常用户sessionKey获取对应压测用户的sessionKey，该sessionKey只能用户服务商全链路压测",

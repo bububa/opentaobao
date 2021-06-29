@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-三江erp对接类目查询接口 APIRequest
+三江erp对接类目查询接口 API请求
 alibaba.wdk.merchant.category.query
 
 三江erp对接类目查询接口
 */
 type AlibabaWdkMerchantCategoryQueryRequest struct {
     model.Params
-
     // 搜索关键词，可不填就查全部
-    keyword   string 
-
+    keyword   string
     // 类目起点，可不填从根目录开始查
-    rootCategoryCode   string 
-
+    rootCategoryCode   string
 }
 
+// 初始化AlibabaWdkMerchantCategoryQueryRequest对象
 func NewAlibabaWdkMerchantCategoryQueryRequest() *AlibabaWdkMerchantCategoryQueryRequest{
     return &AlibabaWdkMerchantCategoryQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkMerchantCategoryQueryRequest) GetApiMethodName() string {
     return "alibaba.wdk.merchant.category.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkMerchantCategoryQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r AlibabaWdkMerchantCategoryQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Keyword Setter
+// 搜索关键词，可不填就查全部
 func (r *AlibabaWdkMerchantCategoryQueryRequest) SetKeyword(keyword string) error {
     r.keyword = keyword
     r.Set("keyword", keyword)
     return nil
 }
 
+// Keyword Getter
 func (r AlibabaWdkMerchantCategoryQueryRequest) GetKeyword() string {
     return r.keyword
 }
-
+// RootCategoryCode Setter
+// 类目起点，可不填从根目录开始查
 func (r *AlibabaWdkMerchantCategoryQueryRequest) SetRootCategoryCode(rootCategoryCode string) error {
     r.rootCategoryCode = rootCategoryCode
     r.Set("root_category_code", rootCategoryCode)
     return nil
 }
 
+// RootCategoryCode Getter
 func (r AlibabaWdkMerchantCategoryQueryRequest) GetRootCategoryCode() string {
     return r.rootCategoryCode
 }
-

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-大麦-出票 APIRequest
+大麦-出票 API请求
 alibaba.damai.maitix.order.confirm
 
 出票
 */
 type AlibabaDamaiMaitixOrderConfirmRequest struct {
     model.Params
-
     // 出票入参
-    param   *MoaConfirmOrderParam 
-
+    param   *MoaConfirmOrderParam
 }
 
+// 初始化AlibabaDamaiMaitixOrderConfirmRequest对象
 func NewAlibabaDamaiMaitixOrderConfirmRequest() *AlibabaDamaiMaitixOrderConfirmRequest{
     return &AlibabaDamaiMaitixOrderConfirmRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaDamaiMaitixOrderConfirmRequest) GetApiMethodName() string {
     return "alibaba.damai.maitix.order.confirm"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaDamaiMaitixOrderConfirmRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaDamaiMaitixOrderConfirmRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 出票入参
 func (r *AlibabaDamaiMaitixOrderConfirmRequest) SetParam(param *MoaConfirmOrderParam) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaDamaiMaitixOrderConfirmRequest) GetParam() *MoaConfirmOrderParam {
     return r.param
 }
-

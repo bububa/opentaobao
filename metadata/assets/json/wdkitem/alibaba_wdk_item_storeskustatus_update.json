@@ -1,4 +1,5 @@
 {
+	"id": 32128,
 	"name": "alibaba.wdk.item.storeskustatus.update",
 	"apiChineseName": "修改门店商品状态",
 	"description": "五道口商品 修改门店商品状态",

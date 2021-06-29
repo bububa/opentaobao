@@ -1,4 +1,5 @@
 {
+	"id": 48257,
 	"name": "tmall.txcs.finance.bill.query",
 	"apiChineseName": "天猫超市外部商家财务账单信息查询",
 	"description": "提供天猫超市外部合作商家财务账单对账",

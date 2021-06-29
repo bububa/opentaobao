@@ -1,4 +1,5 @@
 {
+	"id": 38631,
 	"name": "alibaba.wdk.marketing.version.generate",
 	"apiChineseName": "生成发布使用的版本号",
 	"description": "生成发布使用的版本号",

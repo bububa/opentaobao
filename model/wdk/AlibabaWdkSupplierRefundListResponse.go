@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-五道口按供应商拉取退款单 APIResponse
+五道口按供应商拉取退款单 API返回值 
 alibaba.wdk.supplier.refund.list
 
 五道口按供应商拉取退款单
@@ -17,15 +17,11 @@ type AlibabaWdkSupplierRefundListAPIResponse struct {
     AlibabaWdkSupplierRefundListResponse
 }
 
+// 五道口按供应商拉取退款单 成功返回结果
 type AlibabaWdkSupplierRefundListResponse struct {
     XMLName xml.Name `xml:"alibaba_wdk_supplier_refund_list_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *OrderSyncRefundListResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

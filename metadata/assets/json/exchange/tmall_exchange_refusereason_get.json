@@ -1,4 +1,5 @@
 {
+	"id": 31214,
 	"name": "tmall.exchange.refusereason.get",
 	"apiChineseName": "获取拒绝换货原因列表",
 	"description": "获取拒绝换货原因列表",

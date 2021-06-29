@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-【国际机票】下单预定支付 APIRequest
+【国际机票】下单预定支付 API请求
 alitrip.ie.buyer.order.bookpay
 
 【国际机票】 生单预定支付接口
 */
 type AlitripIeBuyerOrderBookpayRequest struct {
     model.Params
-
     // 生单支付请求参数
-    bookPayOrderParam   *BookPayOrderRq 
-
+    bookPayOrderParam   *BookPayOrderRq
 }
 
+// 初始化AlitripIeBuyerOrderBookpayRequest对象
 func NewAlitripIeBuyerOrderBookpayRequest() *AlitripIeBuyerOrderBookpayRequest{
     return &AlitripIeBuyerOrderBookpayRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripIeBuyerOrderBookpayRequest) GetApiMethodName() string {
     return "alitrip.ie.buyer.order.bookpay"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripIeBuyerOrderBookpayRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripIeBuyerOrderBookpayRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// BookPayOrderParam Setter
+// 生单支付请求参数
 func (r *AlitripIeBuyerOrderBookpayRequest) SetBookPayOrderParam(bookPayOrderParam *BookPayOrderRq) error {
     r.bookPayOrderParam = bookPayOrderParam
     r.Set("book_pay_order_param", bookPayOrderParam)
     return nil
 }
 
+// BookPayOrderParam Getter
 func (r AlitripIeBuyerOrderBookpayRequest) GetBookPayOrderParam() *BookPayOrderRq {
     return r.bookPayOrderParam
 }
-

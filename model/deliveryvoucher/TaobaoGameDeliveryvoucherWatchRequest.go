@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-监控预约数据 APIRequest
+监控预约数据 API请求
 taobao.game.deliveryvoucher.watch
 
 监控预约数据
 */
 type TaobaoGameDeliveryvoucherWatchRequest struct {
     model.Params
-
     // 入参
-    param0   *WatchAppointmentRequest 
-
+    param0   *WatchAppointmentRequest
 }
 
+// 初始化TaobaoGameDeliveryvoucherWatchRequest对象
 func NewTaobaoGameDeliveryvoucherWatchRequest() *TaobaoGameDeliveryvoucherWatchRequest{
     return &TaobaoGameDeliveryvoucherWatchRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoGameDeliveryvoucherWatchRequest) GetApiMethodName() string {
     return "taobao.game.deliveryvoucher.watch"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoGameDeliveryvoucherWatchRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoGameDeliveryvoucherWatchRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param0 Setter
+// 入参
 func (r *TaobaoGameDeliveryvoucherWatchRequest) SetParam0(param0 *WatchAppointmentRequest) error {
     r.param0 = param0
     r.Set("param0", param0)
     return nil
 }
 
+// Param0 Getter
 func (r TaobaoGameDeliveryvoucherWatchRequest) GetParam0() *WatchAppointmentRequest {
     return r.param0
 }
-

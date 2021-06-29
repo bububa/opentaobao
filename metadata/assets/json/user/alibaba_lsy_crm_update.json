@@ -1,4 +1,5 @@
 {
+	"id": 55045,
 	"name": "alibaba.lsy.crm.update",
 	"apiChineseName": "跟进客资状态接口",
 	"description": "同步客资状态接口",

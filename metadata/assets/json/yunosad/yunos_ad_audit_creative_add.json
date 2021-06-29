@@ -1,4 +1,5 @@
 {
+	"id": 29086,
 	"name": "yunos.ad.audit.creative.add",
 	"apiChineseName": "单个创意预审接口",
 	"description": "YunOS广告业务第三方DSP单个创意预审接口",

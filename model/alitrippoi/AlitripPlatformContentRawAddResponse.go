@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-穷游内容写入接口 APIResponse
+穷游内容写入接口 API返回值 
 alitrip.platform.content.raw.add
 
 穷游内容写入飞猪接口
@@ -17,15 +17,11 @@ type AlitripPlatformContentRawAddAPIResponse struct {
     AlitripPlatformContentRawAddResponse
 }
 
+// 穷游内容写入接口 成功返回结果
 type AlitripPlatformContentRawAddResponse struct {
     XMLName xml.Name `xml:"alitrip_platform_content_raw_add_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回包装类
-    
     Result   *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

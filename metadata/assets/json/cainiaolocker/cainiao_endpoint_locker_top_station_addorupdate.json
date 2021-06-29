@@ -1,4 +1,5 @@
 {
+	"id": 31078,
 	"name": "cainiao.endpoint.locker.top.station.addorupdate",
 	"apiChineseName": "增加更新代收点",
 	"description": "新增或者修改代收点相关信息",

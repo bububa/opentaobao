@@ -1,4 +1,5 @@
 {
+	"id": 29701,
 	"name": "alibaba.alicom.exchange.createbymixnick",
 	"apiChineseName": "代理商积分兑换接口tae",
 	"description": "代理商调用该接口来进行积分兑换，tae",

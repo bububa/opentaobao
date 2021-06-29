@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-门店改签合同接口 APIRequest
+门店改签合同接口 API请求
 alibaba.ele.fengniao.chainstore.contract.change
 
 通过调用接口，门店改签物流服务包
 */
 type AlibabaEleFengniaoChainstoreContractChangeRequest struct {
     model.Params
-
     // 系统自动生成
-    param   *Param 
-
+    param   *Param
 }
 
+// 初始化AlibabaEleFengniaoChainstoreContractChangeRequest对象
 func NewAlibabaEleFengniaoChainstoreContractChangeRequest() *AlibabaEleFengniaoChainstoreContractChangeRequest{
     return &AlibabaEleFengniaoChainstoreContractChangeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaEleFengniaoChainstoreContractChangeRequest) GetApiMethodName() string {
     return "alibaba.ele.fengniao.chainstore.contract.change"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaEleFengniaoChainstoreContractChangeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaEleFengniaoChainstoreContractChangeRequest) GetApiParams() url.Va
     }
     return params
 }
-
-
+// Param Setter
+// 系统自动生成
 func (r *AlibabaEleFengniaoChainstoreContractChangeRequest) SetParam(param *Param) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaEleFengniaoChainstoreContractChangeRequest) GetParam() *Param {
     return r.param
 }
-

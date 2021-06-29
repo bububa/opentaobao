@@ -1,4 +1,5 @@
 {
+	"id": 32315,
 	"name": "taobao.openlink.session.get",
 	"apiChineseName": "获取授权session信息",
 	"description": "帮助第三方isv生成三方session",

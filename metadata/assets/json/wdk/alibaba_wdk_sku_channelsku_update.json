@@ -1,4 +1,5 @@
 {
+	"id": 36868,
 	"name": "alibaba.wdk.sku.channelsku.update",
 	"apiChineseName": "更新渠道商品",
 	"description": "批量更新渠道商品，商家通过Top接入",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-服务商闲鱼商品下架 APIRequest
+服务商闲鱼商品下架 API请求
 alibaba.idle.isv.item.downshelf
 
 供外部服务商ISV进行闲鱼商品下架操作
 */
 type AlibabaIdleIsvItemDownshelfRequest struct {
     model.Params
-
     // 返回结果result
-    param   *IdleItemBaseApiDo 
-
+    param   *IdleItemBaseApiDo
 }
 
+// 初始化AlibabaIdleIsvItemDownshelfRequest对象
 func NewAlibabaIdleIsvItemDownshelfRequest() *AlibabaIdleIsvItemDownshelfRequest{
     return &AlibabaIdleIsvItemDownshelfRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIdleIsvItemDownshelfRequest) GetApiMethodName() string {
     return "alibaba.idle.isv.item.downshelf"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIdleIsvItemDownshelfRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIdleIsvItemDownshelfRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 返回结果result
 func (r *AlibabaIdleIsvItemDownshelfRequest) SetParam(param *IdleItemBaseApiDo) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaIdleIsvItemDownshelfRequest) GetParam() *IdleItemBaseApiDo {
     return r.param
 }
-

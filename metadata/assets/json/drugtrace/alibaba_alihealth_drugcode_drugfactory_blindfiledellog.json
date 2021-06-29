@@ -1,4 +1,5 @@
 {
+	"id": 52983,
 	"name": "alibaba.alihealth.drugcode.drugfactory.blindfiledellog",
 	"apiChineseName": "接收盲底文件删除日志",
 	"description": "临床用药试验-接收盲底文件删除日志",

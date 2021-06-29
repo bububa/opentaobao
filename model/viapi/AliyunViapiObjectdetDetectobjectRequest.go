@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-物体检测 APIRequest
+物体检测 API请求
 aliyun.viapi.objectdet.detectobject
 
 检测图像中的物体。90类物体：
@@ -15,22 +15,23 @@ aliyun.viapi.objectdet.detectobject
 */
 type AliyunViapiObjectdetDetectobjectRequest struct {
     model.Params
-
     // 待检测图片链接
-    imageUrl   string 
-
+    imageUrl   string
 }
 
+// 初始化AliyunViapiObjectdetDetectobjectRequest对象
 func NewAliyunViapiObjectdetDetectobjectRequest() *AliyunViapiObjectdetDetectobjectRequest{
     return &AliyunViapiObjectdetDetectobjectRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AliyunViapiObjectdetDetectobjectRequest) GetApiMethodName() string {
     return "aliyun.viapi.objectdet.detectobject"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AliyunViapiObjectdetDetectobjectRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,15 +39,15 @@ func (r AliyunViapiObjectdetDetectobjectRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ImageUrl Setter
+// 待检测图片链接
 func (r *AliyunViapiObjectdetDetectobjectRequest) SetImageUrl(imageUrl string) error {
     r.imageUrl = imageUrl
     r.Set("image_url", imageUrl)
     return nil
 }
 
+// ImageUrl Getter
 func (r AliyunViapiObjectdetDetectobjectRequest) GetImageUrl() string {
     return r.imageUrl
 }
-

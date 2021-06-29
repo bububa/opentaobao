@@ -1,4 +1,5 @@
 {
+	"id": 42910,
 	"name": "alibaba.alihealth.drug.kyt.dr.searchstatus",
 	"apiChineseName": "疫苗企业上传单据后处理状态查询",
 	"description": "单据处理状态查询",

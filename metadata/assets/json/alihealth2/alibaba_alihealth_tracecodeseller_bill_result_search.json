@@ -1,4 +1,5 @@
 {
+	"id": 38016,
 	"name": "alibaba.alihealth.tracecodeseller.bill.result.search",
 	"apiChineseName": "查询出入库单处理结果api",
 	"description": "查询出入库单处理结果api",

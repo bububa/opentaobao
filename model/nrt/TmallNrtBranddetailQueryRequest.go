@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-品牌详情查询 APIRequest
+品牌详情查询 API请求
 tmall.nrt.branddetail.query
 
 根据品牌id查询品牌的详细信息
 */
 type TmallNrtBranddetailQueryRequest struct {
     model.Params
-
     // 品牌id
-    brandId   int64 
-
+    brandId   int64
 }
 
+// 初始化TmallNrtBranddetailQueryRequest对象
 func NewTmallNrtBranddetailQueryRequest() *TmallNrtBranddetailQueryRequest{
     return &TmallNrtBranddetailQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallNrtBranddetailQueryRequest) GetApiMethodName() string {
     return "tmall.nrt.branddetail.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallNrtBranddetailQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallNrtBranddetailQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// BrandId Setter
+// 品牌id
 func (r *TmallNrtBranddetailQueryRequest) SetBrandId(brandId int64) error {
     r.brandId = brandId
     r.Set("brand_id", brandId)
     return nil
 }
 
+// BrandId Getter
 func (r TmallNrtBranddetailQueryRequest) GetBrandId() int64 {
     return r.brandId
 }
-

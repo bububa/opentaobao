@@ -1,4 +1,5 @@
 {
+	"id": 25683,
 	"name": "taobao.wlb.wms.inventory.profitloss.get",
 	"apiChineseName": "通过订单列表批量获取库存损益单信息",
 	"description": "通过订单列表批量获取库存损益单信息",

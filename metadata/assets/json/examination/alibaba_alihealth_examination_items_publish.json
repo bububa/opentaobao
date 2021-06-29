@@ -1,4 +1,5 @@
 {
+	"id": 42985,
 	"name": "alibaba.alihealth.examination.items.publish",
 	"apiChineseName": "单项/加项包信息同步",
 	"description": "体检机构对接_单项/加项包信息发布／更新",

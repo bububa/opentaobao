@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-医院根据码查询码信息 APIResponse
+医院根据码查询码信息 API返回值 
 alibaba.alihealth.drug.code.kyt.yy.querycode
 
 服务描述
@@ -19,15 +19,11 @@ type AlibabaAlihealthDrugCodeKytYyQuerycodeAPIResponse struct {
     AlibabaAlihealthDrugCodeKytYyQuerycodeResponse
 }
 
+// 医院根据码查询码信息 成功返回结果
 type AlibabaAlihealthDrugCodeKytYyQuerycodeResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_drug_code_kyt_yy_querycode_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 最外层结果
-    
     Result   *AlibabaAlihealthDrugCodeKytYyQuerycodeResultModel `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-修改付款单的银行账户信息 APIRequest
+修改付款单的银行账户信息 API请求
 alibaba.mj.mos.fund.modifybillbankaccount
 
 修改付款单的银行账户信息
 */
 type AlibabaMjMosFundModifybillbankaccountRequest struct {
     model.Params
-
     // 修改入参
-    modifyDto   *ModifyBillDto 
-
+    modifyDto   *ModifyBillDto
 }
 
+// 初始化AlibabaMjMosFundModifybillbankaccountRequest对象
 func NewAlibabaMjMosFundModifybillbankaccountRequest() *AlibabaMjMosFundModifybillbankaccountRequest{
     return &AlibabaMjMosFundModifybillbankaccountRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaMjMosFundModifybillbankaccountRequest) GetApiMethodName() string {
     return "alibaba.mj.mos.fund.modifybillbankaccount"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaMjMosFundModifybillbankaccountRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaMjMosFundModifybillbankaccountRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// ModifyDto Setter
+// 修改入参
 func (r *AlibabaMjMosFundModifybillbankaccountRequest) SetModifyDto(modifyDto *ModifyBillDto) error {
     r.modifyDto = modifyDto
     r.Set("modify_dto", modifyDto)
     return nil
 }
 
+// ModifyDto Getter
 func (r AlibabaMjMosFundModifybillbankaccountRequest) GetModifyDto() *ModifyBillDto {
     return r.modifyDto
 }
-

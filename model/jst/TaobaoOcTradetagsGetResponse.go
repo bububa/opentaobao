@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据订单查询订单标签 APIResponse
+根据订单查询订单标签 API返回值 
 taobao.oc.tradetags.get
 
 根据订单查询订单标签。<br/>
@@ -20,15 +20,11 @@ type TaobaoOcTradetagsGetAPIResponse struct {
     TaobaoOcTradetagsGetResponse
 }
 
+// 根据订单查询订单标签 成功返回结果
 type TaobaoOcTradetagsGetResponse struct {
     XMLName xml.Name `xml:"oc_tradetags_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     TradeTags   []TradeTagRelationDo `json:"trade_tags,omitempty" xml:"trade_tags>trade_tag_relation_do,omitempty"`
-    
-    
 }

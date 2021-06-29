@@ -1,4 +1,5 @@
 {
+	"id": 24456,
 	"name": "taobao.oc.tradetags.get",
 	"apiChineseName": "根据订单查询订单标签",
 	"description": "根据订单查询订单标签。\u003cbr/\u003e\n返回的tag说明:1为官方标，2为自定义标，3为主站只读标签。\u003cbr/\u003e\n官方标签和自定义标签请看taobao.oc.tradetag.attach 接口说明\u003cbr/\u003e\n主站只读标签请看:http://open.taobao.com/doc/detail.htm?id=102865\u003cbr/\u003e",

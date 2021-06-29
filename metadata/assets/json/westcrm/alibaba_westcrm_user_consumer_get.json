@@ -1,4 +1,5 @@
 {
+	"id": 41200,
 	"name": "alibaba.westcrm.user.consumer.get",
 	"apiChineseName": "获取指定用户的消费总额",
 	"description": "获取指定用户的消费总额",

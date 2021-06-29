@@ -1,4 +1,5 @@
 {
+	"id": 28332,
 	"name": "alibaba.alink.message.history.count",
 	"apiChineseName": "查询消息总数",
 	"description": "查询消息总数",

@@ -1,4 +1,5 @@
 {
+	"id": 53700,
 	"name": "taobao.openmall.refund.batch.get",
 	"apiChineseName": "批量获取openmall退款单",
 	"description": "批量获取openmall退款单\n注意：该接口信息存在延迟，如需实时详情请访问taobao.openmall.refund.get",

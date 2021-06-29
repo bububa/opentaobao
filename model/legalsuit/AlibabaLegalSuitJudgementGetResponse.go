@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取裁判登记信息 APIResponse
+获取裁判登记信息 API返回值 
 alibaba.legal.suit.judgement.get
 
 供ISV供应商获取集团法务系统的裁判登记信息
@@ -17,15 +17,11 @@ type AlibabaLegalSuitJudgementGetAPIResponse struct {
     AlibabaLegalSuitJudgementGetResponse
 }
 
+// 获取裁判登记信息 成功返回结果
 type AlibabaLegalSuitJudgementGetResponse struct {
     XMLName xml.Name `xml:"alibaba_legal_suit_judgement_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // alinkappserver系统返回的通用结果类
-    
     Result   *ServiceResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

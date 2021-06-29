@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-ISV查询门店 APIRequest
+ISV查询门店 API请求
 alibaba.lsy.crm.activity.store.getstorelist
 
 ISV查询门店
 */
 type AlibabaLsyCrmActivityStoreGetstorelistRequest struct {
     model.Params
-
     // 系统自动生成
-    queryStoreReq   *NrtQueryStoreReq 
-
+    queryStoreReq   *NrtQueryStoreReq
 }
 
+// 初始化AlibabaLsyCrmActivityStoreGetstorelistRequest对象
 func NewAlibabaLsyCrmActivityStoreGetstorelistRequest() *AlibabaLsyCrmActivityStoreGetstorelistRequest{
     return &AlibabaLsyCrmActivityStoreGetstorelistRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaLsyCrmActivityStoreGetstorelistRequest) GetApiMethodName() string {
     return "alibaba.lsy.crm.activity.store.getstorelist"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaLsyCrmActivityStoreGetstorelistRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaLsyCrmActivityStoreGetstorelistRequest) GetApiParams() url.Values
     }
     return params
 }
-
-
+// QueryStoreReq Setter
+// 系统自动生成
 func (r *AlibabaLsyCrmActivityStoreGetstorelistRequest) SetQueryStoreReq(queryStoreReq *NrtQueryStoreReq) error {
     r.queryStoreReq = queryStoreReq
     r.Set("query_store_req", queryStoreReq)
     return nil
 }
 
+// QueryStoreReq Getter
 func (r AlibabaLsyCrmActivityStoreGetstorelistRequest) GetQueryStoreReq() *NrtQueryStoreReq {
     return r.queryStoreReq
 }
-

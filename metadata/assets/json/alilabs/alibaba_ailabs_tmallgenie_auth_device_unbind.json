@@ -1,4 +1,5 @@
 {
+	"id": 44767,
 	"name": "alibaba.ailabs.tmallgenie.auth.device.unbind",
 	"apiChineseName": "解绑设备",
 	"description": "通过此接口解绑天猫精灵设备",

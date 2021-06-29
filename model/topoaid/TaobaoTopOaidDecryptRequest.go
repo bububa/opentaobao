@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-OAID解密 APIRequest
+OAID解密 API请求
 taobao.top.oaid.decrypt
 
 解码OAID(Open Addressee ID)，返回收件人信息。
 */
 type TaobaoTopOaidDecryptRequest struct {
     model.Params
-
     // 解密请求列表，最多支持20个。
-    queryList   []ReceiverQuery 
-
+    queryList   []ReceiverQuery
 }
 
+// 初始化TaobaoTopOaidDecryptRequest对象
 func NewTaobaoTopOaidDecryptRequest() *TaobaoTopOaidDecryptRequest{
     return &TaobaoTopOaidDecryptRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoTopOaidDecryptRequest) GetApiMethodName() string {
     return "taobao.top.oaid.decrypt"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoTopOaidDecryptRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoTopOaidDecryptRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// QueryList Setter
+// 解密请求列表，最多支持20个。
 func (r *TaobaoTopOaidDecryptRequest) SetQueryList(queryList []ReceiverQuery) error {
     r.queryList = queryList
     r.Set("query_list", queryList)
     return nil
 }
 
+// QueryList Getter
 func (r TaobaoTopOaidDecryptRequest) GetQueryList() []ReceiverQuery {
     return r.queryList
 }
-

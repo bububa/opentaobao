@@ -7,26 +7,28 @@ import (
 )
 
 /* 
-TOPDNS配置 APIRequest
+TOPDNS配置 API请求
 taobao.httpdns.get
 
 获取TOP DNS配置
 */
 type TaobaoHttpdnsGetRequest struct {
     model.Params
-
 }
 
+// 初始化TaobaoHttpdnsGetRequest对象
 func NewTaobaoHttpdnsGetRequest() *TaobaoHttpdnsGetRequest{
     return &TaobaoHttpdnsGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoHttpdnsGetRequest) GetApiMethodName() string {
     return "taobao.httpdns.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoHttpdnsGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -34,5 +36,3 @@ func (r TaobaoHttpdnsGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-

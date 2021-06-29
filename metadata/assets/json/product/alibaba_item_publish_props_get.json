@@ -1,4 +1,5 @@
 {
+	"id": 53973,
 	"name": "alibaba.item.publish.props.get",
 	"apiChineseName": "商品级联属性信息获取",
 	"description": "新商品发布，商品级联属性信息获取",

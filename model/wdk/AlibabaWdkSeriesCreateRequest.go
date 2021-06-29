@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-系列品变更-新增系列 APIRequest
+系列品变更-新增系列 API请求
 alibaba.wdk.series.create
 
 系列品变更-新增系列
 */
 type AlibabaWdkSeriesCreateRequest struct {
     model.Params
-
     // 系列品创建系列请求
-    series   *SkuSeriesCreateRequest 
-
+    series   *SkuSeriesCreateRequest
 }
 
+// 初始化AlibabaWdkSeriesCreateRequest对象
 func NewAlibabaWdkSeriesCreateRequest() *AlibabaWdkSeriesCreateRequest{
     return &AlibabaWdkSeriesCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkSeriesCreateRequest) GetApiMethodName() string {
     return "alibaba.wdk.series.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkSeriesCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkSeriesCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Series Setter
+// 系列品创建系列请求
 func (r *AlibabaWdkSeriesCreateRequest) SetSeries(series *SkuSeriesCreateRequest) error {
     r.series = series
     r.Set("series", series)
     return nil
 }
 
+// Series Getter
 func (r AlibabaWdkSeriesCreateRequest) GetSeries() *SkuSeriesCreateRequest {
     return r.series
 }
-

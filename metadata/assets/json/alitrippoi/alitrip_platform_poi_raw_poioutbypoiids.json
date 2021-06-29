@@ -1,4 +1,5 @@
 {
+	"id": 50466,
 	"name": "alitrip.platform.poi.raw.poioutbypoiids",
 	"apiChineseName": "根据poiId输出飞猪poi数据",
 	"description": "根据poiId输出飞猪poi数据",

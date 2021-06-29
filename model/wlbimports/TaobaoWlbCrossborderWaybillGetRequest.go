@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-集货商家pdf和云打印面单获取，pdf需要配置白名单 APIRequest
+集货商家pdf和云打印面单获取，pdf需要配置白名单 API请求
 taobao.wlb.crossborder.waybill.get
 
 【TOF】欧洲供应商PDF格式电子面单渲染下发
@@ -15,22 +15,23 @@ taobao.wlb.crossborder.waybill.get
 */
 type TaobaoWlbCrossborderWaybillGetRequest struct {
     model.Params
-
     // 菜鸟物流单号
-    orderCode   string 
-
+    orderCode   string
 }
 
+// 初始化TaobaoWlbCrossborderWaybillGetRequest对象
 func NewTaobaoWlbCrossborderWaybillGetRequest() *TaobaoWlbCrossborderWaybillGetRequest{
     return &TaobaoWlbCrossborderWaybillGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoWlbCrossborderWaybillGetRequest) GetApiMethodName() string {
     return "taobao.wlb.crossborder.waybill.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoWlbCrossborderWaybillGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,15 +39,15 @@ func (r TaobaoWlbCrossborderWaybillGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OrderCode Setter
+// 菜鸟物流单号
 func (r *TaobaoWlbCrossborderWaybillGetRequest) SetOrderCode(orderCode string) error {
     r.orderCode = orderCode
     r.Set("order_code", orderCode)
     return nil
 }
 
+// OrderCode Getter
 func (r TaobaoWlbCrossborderWaybillGetRequest) GetOrderCode() string {
     return r.orderCode
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 10978,
 	"name": "taobao.trade.wtvertical.get",
 	"apiChineseName": "网厅垂直信息查询接口",
 	"description": "网厅订单垂直信息的查询",

@@ -1,4 +1,5 @@
 {
+	"id": 22587,
 	"name": "alipay.xiaodai.user.permit",
 	"apiChineseName": "阿里金融用户授权",
 	"description": "阿里金融为用户开通消息通道接口",

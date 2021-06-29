@@ -1,4 +1,5 @@
 {
+	"id": 45364,
 	"name": "alitrip.hotel.hstdf.shotel.roomtype.mappings.list",
 	"apiChineseName": "根据HID获取所有卖家房型匹配关系",
 	"description": "根据HID获取所有卖家房型匹配关系",

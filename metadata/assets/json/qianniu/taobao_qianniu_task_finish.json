@@ -1,4 +1,5 @@
 {
+	"id": 22596,
 	"name": "taobao.qianniu.task.finish",
 	"apiChineseName": "完成轻任务",
 	"description": "由任务执行者调用",

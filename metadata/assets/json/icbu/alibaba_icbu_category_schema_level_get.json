@@ -1,4 +1,5 @@
 {
+	"id": 51873,
 	"name": "alibaba.icbu.category.schema.level.get",
 	"apiChineseName": "(新)层级属性获取",
 	"description": "将表单中层级属性的子属性返回",

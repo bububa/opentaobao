@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-阿信支付宝验签服务 APIResponse
+阿信支付宝验签服务 API返回值 
 taobao.alitrip.axin.trans.pay.sign.check
 
 阿信支付宝验签服务
@@ -17,15 +17,11 @@ type TaobaoAlitripAxinTransPaySignCheckAPIResponse struct {
     TaobaoAlitripAxinTransPaySignCheckResponse
 }
 
+// 阿信支付宝验签服务 成功返回结果
 type TaobaoAlitripAxinTransPaySignCheckResponse struct {
     XMLName xml.Name `xml:"alitrip_axin_trans_pay_sign_check_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 结果对象
-    
     Result   *BaseResultDto `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

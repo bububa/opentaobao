@@ -1,4 +1,5 @@
 {
+	"id": 37856,
 	"name": "taobao.jst.astrolabe.storeinventory.iteminitial",
 	"apiChineseName": "库存初始化接口",
 	"description": "ERP调用奇门的接口，对门店的库存进行初始化",

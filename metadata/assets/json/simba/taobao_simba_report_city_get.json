@@ -1,4 +1,5 @@
 {
+	"id": 49505,
 	"name": "taobao.simba.report.city.get",
 	"apiChineseName": "获取城市维度报表",
 	"description": "获取城市维度报表",

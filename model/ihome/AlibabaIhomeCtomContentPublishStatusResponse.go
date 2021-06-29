@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-实拍图发布审核状态查询API APIResponse
+实拍图发布审核状态查询API API返回值 
 alibaba.ihome.ctom.content.publish.status
 
 实拍图发布审核状态查询API
@@ -17,15 +17,11 @@ type AlibabaIhomeCtomContentPublishStatusAPIResponse struct {
     AlibabaIhomeCtomContentPublishStatusResponse
 }
 
+// 实拍图发布审核状态查询API 成功返回结果
 type AlibabaIhomeCtomContentPublishStatusResponse struct {
     XMLName xml.Name `xml:"alibaba_ihome_ctom_content_publish_status_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 根据站点名称查询产品
-    
     Result   *AlibabaIhomeCtomContentPublishStatusApiResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

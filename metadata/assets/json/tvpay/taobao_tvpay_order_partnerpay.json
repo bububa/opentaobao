@@ -1,4 +1,5 @@
 {
+	"id": 26220,
 	"name": "taobao.tvpay.order.partnerpay",
 	"apiChineseName": "tv支付第三方支付订单",
 	"description": "tv支付第三方发起并支付订单（使用设备授权）",

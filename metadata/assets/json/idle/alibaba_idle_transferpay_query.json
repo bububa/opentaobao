@@ -1,4 +1,5 @@
 {
+	"id": 52456,
 	"name": "alibaba.idle.transferpay.query",
 	"apiChineseName": "闲鱼转账结果查询",
 	"description": "商家业务 转账支付的结果查询",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-修改成本中心 APIRequest
+修改成本中心 API请求
 alitrip.btrip.open.cost.center.modify
 
 修改成本中心
 */
 type AlitripBtripOpenCostCenterModifyRequest struct {
     model.Params
-
     // 入参对象
-    rq   *OpenCostCenterModifyRq 
-
+    rq   *OpenCostCenterModifyRq
 }
 
+// 初始化AlitripBtripOpenCostCenterModifyRequest对象
 func NewAlitripBtripOpenCostCenterModifyRequest() *AlitripBtripOpenCostCenterModifyRequest{
     return &AlitripBtripOpenCostCenterModifyRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripBtripOpenCostCenterModifyRequest) GetApiMethodName() string {
     return "alitrip.btrip.open.cost.center.modify"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripBtripOpenCostCenterModifyRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripBtripOpenCostCenterModifyRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Rq Setter
+// 入参对象
 func (r *AlitripBtripOpenCostCenterModifyRequest) SetRq(rq *OpenCostCenterModifyRq) error {
     r.rq = rq
     r.Set("rq", rq)
     return nil
 }
 
+// Rq Getter
 func (r AlitripBtripOpenCostCenterModifyRequest) GetRq() *OpenCostCenterModifyRq {
     return r.rq
 }
-

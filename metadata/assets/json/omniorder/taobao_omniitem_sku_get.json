@@ -1,4 +1,5 @@
 {
+	"id": 33529,
 	"name": "taobao.omniitem.sku.get",
 	"apiChineseName": "获取全渠道门店商品sku",
 	"description": "通过skuId或者skuOutId查询全渠道门店商品sku信息",

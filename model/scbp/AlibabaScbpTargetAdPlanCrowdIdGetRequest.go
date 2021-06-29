@@ -7,26 +7,28 @@ import (
 )
 
 /* 
-定向推广-人群标签ID获取(店铺老客、优选人群) APIRequest
+定向推广-人群标签ID获取(店铺老客、优选人群) API请求
 alibaba.scbp.target.ad.plan.crowd.id.get
 
 定向推广-人群标签ID获取(店铺老客、优选人群)
 */
 type AlibabaScbpTargetAdPlanCrowdIdGetRequest struct {
     model.Params
-
 }
 
+// 初始化AlibabaScbpTargetAdPlanCrowdIdGetRequest对象
 func NewAlibabaScbpTargetAdPlanCrowdIdGetRequest() *AlibabaScbpTargetAdPlanCrowdIdGetRequest{
     return &AlibabaScbpTargetAdPlanCrowdIdGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaScbpTargetAdPlanCrowdIdGetRequest) GetApiMethodName() string {
     return "alibaba.scbp.target.ad.plan.crowd.id.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaScbpTargetAdPlanCrowdIdGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -34,5 +36,3 @@ func (r AlibabaScbpTargetAdPlanCrowdIdGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-

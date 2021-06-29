@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询分组任务是否完成 APIRequest
+查询分组任务是否完成 API请求
 taobao.crm.grouptask.check
 
 检查一个分组上是否有异步任务,异步任务包括1.将一个分组下的所有用户添加到另外一个分组2.将一个分组下的所有用户移动到另外一个分组3.删除某个分组<br/>若分组上有任务则该属性不能被操作。
 */
 type TaobaoCrmGrouptaskCheckRequest struct {
     model.Params
-
     // 分组id
-    groupId   int64 
-
+    groupId   int64
 }
 
+// 初始化TaobaoCrmGrouptaskCheckRequest对象
 func NewTaobaoCrmGrouptaskCheckRequest() *TaobaoCrmGrouptaskCheckRequest{
     return &TaobaoCrmGrouptaskCheckRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoCrmGrouptaskCheckRequest) GetApiMethodName() string {
     return "taobao.crm.grouptask.check"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoCrmGrouptaskCheckRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoCrmGrouptaskCheckRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// GroupId Setter
+// 分组id
 func (r *TaobaoCrmGrouptaskCheckRequest) SetGroupId(groupId int64) error {
     r.groupId = groupId
     r.Set("group_id", groupId)
     return nil
 }
 
+// GroupId Getter
 func (r TaobaoCrmGrouptaskCheckRequest) GetGroupId() int64 {
     return r.groupId
 }
-

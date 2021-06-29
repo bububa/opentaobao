@@ -1,4 +1,5 @@
 {
+	"id": 52767,
 	"name": "taobao.pentaprism.task.queryitem",
 	"apiChineseName": "查询任务当前进度",
 	"description": "外网用户查询五棱镜任务系统当前进度",

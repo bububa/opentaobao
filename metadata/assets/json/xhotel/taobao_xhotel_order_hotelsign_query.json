@@ -1,4 +1,5 @@
 {
+	"id": 27152,
 	"name": "taobao.xhotel.order.hotelsign.query",
 	"apiChineseName": "获取直连酒店（客栈）签约上线进度信息",
 	"description": "获取直连酒店（客栈）签约上线进度信息",

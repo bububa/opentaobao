@@ -1,4 +1,5 @@
 {
+	"id": 43313,
 	"name": "alibaba.alihealth.drug.kyt.dr.drugrecal",
 	"apiChineseName": "疫苗药品召回",
 	"description": "生产企业发布的召回信息，按照批次进行召回，收货和发货环节的单据处理中调用接口进行查询；",

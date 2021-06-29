@@ -1,4 +1,5 @@
 {
+	"id": 24303,
 	"name": "account.aliyuncs.com.CreateAppForBid.2013-07-01",
 	"apiChineseName": "给当前渠道下的用户创建app",
 	"description": "给自己渠道下的用户创建app",

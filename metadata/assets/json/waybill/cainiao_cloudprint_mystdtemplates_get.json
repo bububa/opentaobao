@@ -1,4 +1,5 @@
 {
+	"id": 26758,
 	"name": "cainiao.cloudprint.mystdtemplates.get",
 	"apiChineseName": "获取用户使用的菜鸟电子面单模板信息",
 	"description": "获取用户使用的菜鸟电子面单",

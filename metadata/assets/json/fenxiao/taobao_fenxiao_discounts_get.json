@@ -1,4 +1,5 @@
 {
+	"id": 10571,
 	"name": "taobao.fenxiao.discounts.get",
 	"apiChineseName": "获取折扣信息",
 	"description": "查询折扣信息",

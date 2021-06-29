@@ -1,4 +1,5 @@
 {
+	"id": 22557,
 	"name": "taobao.tanx.creatives.get",
 	"apiChineseName": "批量获取DSP用户的创意审核结果",
 	"description": "批量获取DSP用户的创意审核结果",

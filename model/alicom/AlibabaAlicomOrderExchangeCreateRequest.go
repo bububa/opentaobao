@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-代理商积分兑换接口 APIRequest
+代理商积分兑换接口 API请求
 alibaba.alicom.order.exchange.create
 
 代理商调用该接口来进行积分兑换
 */
 type AlibabaAlicomOrderExchangeCreateRequest struct {
     model.Params
-
     // 入参
-    exchangeModel   *ExchangeModel 
-
+    exchangeModel   *ExchangeModel
 }
 
+// 初始化AlibabaAlicomOrderExchangeCreateRequest对象
 func NewAlibabaAlicomOrderExchangeCreateRequest() *AlibabaAlicomOrderExchangeCreateRequest{
     return &AlibabaAlicomOrderExchangeCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlicomOrderExchangeCreateRequest) GetApiMethodName() string {
     return "alibaba.alicom.order.exchange.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlicomOrderExchangeCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlicomOrderExchangeCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ExchangeModel Setter
+// 入参
 func (r *AlibabaAlicomOrderExchangeCreateRequest) SetExchangeModel(exchangeModel *ExchangeModel) error {
     r.exchangeModel = exchangeModel
     r.Set("exchange_model", exchangeModel)
     return nil
 }
 
+// ExchangeModel Getter
 func (r AlibabaAlicomOrderExchangeCreateRequest) GetExchangeModel() *ExchangeModel {
     return r.exchangeModel
 }
-

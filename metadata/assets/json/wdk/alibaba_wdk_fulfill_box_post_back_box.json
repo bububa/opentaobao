@@ -1,4 +1,5 @@
 {
+	"id": 46140,
 	"name": "alibaba.wdk.fulfill.box.post.back.box",
 	"apiChineseName": "RT收箱回传",
 	"description": "RT收箱后，信息同步履约，履约同通知UMS 容器管理",

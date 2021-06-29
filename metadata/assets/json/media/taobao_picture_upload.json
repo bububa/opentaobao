@@ -1,4 +1,5 @@
 {
+	"id": 140,
 	"name": "taobao.picture.upload",
 	"apiChineseName": "上传单张图片",
 	"description": "图片空间上传接口",

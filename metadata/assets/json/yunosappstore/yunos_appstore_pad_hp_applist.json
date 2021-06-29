@@ -1,4 +1,5 @@
 {
+	"id": 32152,
 	"name": "yunos.appstore.pad.hp.applist",
 	"apiChineseName": "查询HpPad appList",
 	"description": "提供hp pad应用群数据",

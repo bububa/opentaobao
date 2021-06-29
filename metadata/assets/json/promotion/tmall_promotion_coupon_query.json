@@ -1,4 +1,5 @@
 {
+	"id": 38496,
 	"name": "tmall.promotion.coupon.query",
 	"apiChineseName": "查询可用优惠券列表",
 	"description": "查询用户的可用优惠券列表，仅包含优惠券基本信息和用户nick",

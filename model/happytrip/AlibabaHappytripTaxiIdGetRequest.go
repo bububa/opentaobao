@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取请求id APIRequest
+获取请求id API请求
 alibaba.happytrip.taxi.id.get
 
 获取订单号
 */
 type AlibabaHappytripTaxiIdGetRequest struct {
     model.Params
-
     // 用户唯一标识
-    uid   string 
-
+    uid   string
 }
 
+// 初始化AlibabaHappytripTaxiIdGetRequest对象
 func NewAlibabaHappytripTaxiIdGetRequest() *AlibabaHappytripTaxiIdGetRequest{
     return &AlibabaHappytripTaxiIdGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaHappytripTaxiIdGetRequest) GetApiMethodName() string {
     return "alibaba.happytrip.taxi.id.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaHappytripTaxiIdGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaHappytripTaxiIdGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Uid Setter
+// 用户唯一标识
 func (r *AlibabaHappytripTaxiIdGetRequest) SetUid(uid string) error {
     r.uid = uid
     r.Set("uid", uid)
     return nil
 }
 
+// Uid Getter
 func (r AlibabaHappytripTaxiIdGetRequest) GetUid() string {
     return r.uid
 }
-

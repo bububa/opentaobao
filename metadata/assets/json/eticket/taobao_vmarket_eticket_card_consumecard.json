@@ -1,4 +1,5 @@
 {
+	"id": 25329,
 	"name": "taobao.vmarket.eticket.card.consumecard",
 	"apiChineseName": "电子凭证储值卡核销",
 	"description": "线下商户核销时，ISV调用电子凭证的isv接口来对电子凭证储值卡核销对应金额",

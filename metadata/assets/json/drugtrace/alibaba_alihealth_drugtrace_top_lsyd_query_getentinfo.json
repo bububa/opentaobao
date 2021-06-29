@@ -1,4 +1,5 @@
 {
+	"id": 52568,
 	"name": "alibaba.alihealth.drugtrace.top.lsyd.query.getentinfo",
 	"apiChineseName": "通过企业名得到唯一标识ref_ent_id及企业ent_id",
 	"description": "根据企业名称查询ID",

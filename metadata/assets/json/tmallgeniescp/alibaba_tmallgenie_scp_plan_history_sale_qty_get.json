@@ -1,4 +1,5 @@
 {
+	"id": 53955,
 	"name": "alibaba.tmallgenie.scp.plan.history.sale.qty.get",
 	"apiChineseName": "【已废除】同步历史的销售数据",
 	"description": "同步历史的销售数据",

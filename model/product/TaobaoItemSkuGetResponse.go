@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取SKU APIResponse
+获取SKU API返回值 
 taobao.item.sku.get
 
 获取sku_id所对应的sku数据 
@@ -19,15 +19,11 @@ type TaobaoItemSkuGetAPIResponse struct {
     TaobaoItemSkuGetResponse
 }
 
+// 获取SKU 成功返回结果
 type TaobaoItemSkuGetResponse struct {
     XMLName xml.Name `xml:"item_sku_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // Sku
-    
     Sku   *Sku `json:"sku,omitempty" xml:"sku,omitempty"`
-
-    
 }

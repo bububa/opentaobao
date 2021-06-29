@@ -1,4 +1,5 @@
 {
+	"id": 25769,
 	"name": "taobao.alitrip.it.policy.delete",
 	"apiChineseName": "【国际机票销售规则】单条删除",
 	"description": "销售规则删除接口，可以根据taobaoId或outId删除，根据outId删除时，如果outId不唯一，返回失败",

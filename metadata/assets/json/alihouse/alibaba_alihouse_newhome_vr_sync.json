@@ -1,4 +1,5 @@
 {
+	"id": 55912,
 	"name": "alibaba.alihouse.newhome.vr.sync",
 	"apiChineseName": "VR关系数据同步",
 	"description": "对接易居VR关系数据迁移",

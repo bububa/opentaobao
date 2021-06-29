@@ -1,4 +1,5 @@
 {
+	"id": 32288,
 	"name": "alibaba.auth.cert.get",
 	"apiChineseName": "获取证书数据",
 	"description": "获取证书数据",

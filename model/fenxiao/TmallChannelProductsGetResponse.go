@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询供应商的产品数据 APIResponse
+查询供应商的产品数据 API返回值 
 tmall.channel.products.get
 
 查询供应商的产品数据。 
@@ -25,20 +25,13 @@ type TmallChannelProductsGetAPIResponse struct {
     TmallChannelProductsGetResponse
 }
 
+// 查询供应商的产品数据 成功返回结果
 type TmallChannelProductsGetResponse struct {
     XMLName xml.Name `xml:"tmall_channel_products_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 产品对象记录集
-    
     Products   []TopProductDO `json:"products,omitempty" xml:"products>top_product_do,omitempty"`
-    
-    
     // 查询结果记录数
-    
     TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
-
-    
 }

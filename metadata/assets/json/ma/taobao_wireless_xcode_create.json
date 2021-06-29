@@ -1,4 +1,5 @@
 {
+	"id": 25425,
 	"name": "taobao.wireless.xcode.create",
 	"apiChineseName": "创建二维码/短连接",
 	"description": "创建码平台的普通二维码或者长连接转短连接服务",

@@ -1,4 +1,5 @@
 {
+	"id": 45234,
 	"name": "alibaba.idle.rent.media.upload",
 	"apiChineseName": "闲鱼多媒体上传接口",
 	"description": "上传多媒体信息，包括图片、视频（暂不支持）",

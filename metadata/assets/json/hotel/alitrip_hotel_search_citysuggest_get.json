@@ -1,4 +1,5 @@
 {
+	"id": 35590,
 	"name": "alitrip.hotel.search.citysuggest.get",
 	"apiChineseName": "城市Suggest接口",
 	"description": "城市Suggest接口",

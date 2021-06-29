@@ -1,4 +1,5 @@
 {
+	"id": 26200,
 	"name": "alibaba.security.jaq.spamregisterprevention.result.fetch.new",
 	"apiChineseName": "获取虚假注册保护结果",
 	"description": "获取虚假注册保护结果",

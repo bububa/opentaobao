@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-无线开放视频内容安全检查 APIResponse
+无线开放视频内容安全检查 API返回值 
 taobao.wireless.video.check
 
 无线开放内容检查，提供涉黄暴力政治音视频的异步检查。更详情介绍见 <a href="https://help.aliyun.com/document_detail/70436.html" target="blank">阿里云内容安全</a>
@@ -21,15 +21,11 @@ type TaobaoWirelessVideoCheckAPIResponse struct {
     TaobaoWirelessVideoCheckResponse
 }
 
+// 无线开放视频内容安全检查 成功返回结果
 type TaobaoWirelessVideoCheckResponse struct {
     XMLName xml.Name `xml:"wireless_video_check_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 系统自动生成
-    
     Result   *RopResultTo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

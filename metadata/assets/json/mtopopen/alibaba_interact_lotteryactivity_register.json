@@ -1,4 +1,5 @@
 {
+	"id": 26113,
 	"name": "alibaba.interact.lotteryactivity.register",
 	"apiChineseName": "回传抽奖相关参数",
 	"description": "提供接口供三方应用将数据回传到平台",

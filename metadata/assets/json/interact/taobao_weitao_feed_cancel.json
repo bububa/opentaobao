@@ -1,4 +1,5 @@
 {
+	"id": 25695,
 	"name": "taobao.weitao.feed.cancel",
 	"apiChineseName": "取消广播在timeline、广场中展示",
 	"description": "取消广播在timeline和广场中的展示。",

@@ -1,4 +1,5 @@
 {
+	"id": 46025,
 	"name": "alibaba.damai.maitix.opengateway.ticketItem.status.query",
 	"apiChineseName": "分销状态查询接口queryTicketItemStatusByTicketItemId",
 	"description": "queryTicketItemStatusByTicketItemId",

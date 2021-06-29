@@ -1,4 +1,5 @@
 {
+	"id": 22672,
 	"name": "taobao.xhotel.rates.update",
 	"apiChineseName": "价格推送接口（批量全量）",
 	"description": "酒店产品库rate批量更新房态信息",

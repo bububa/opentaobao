@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-三级商户进件修改 APIRequest
+三级商户进件修改 API请求
 tmall.nrt.pay.merchant.stall.signing.modify
 
 三级商户进件修改
 */
 type TmallNrtPayMerchantStallSigningModifyRequest struct {
     model.Params
-
     // 请求参数
-    req   *StallSigningReqDto 
-
+    req   *StallSigningReqDto
 }
 
+// 初始化TmallNrtPayMerchantStallSigningModifyRequest对象
 func NewTmallNrtPayMerchantStallSigningModifyRequest() *TmallNrtPayMerchantStallSigningModifyRequest{
     return &TmallNrtPayMerchantStallSigningModifyRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallNrtPayMerchantStallSigningModifyRequest) GetApiMethodName() string {
     return "tmall.nrt.pay.merchant.stall.signing.modify"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallNrtPayMerchantStallSigningModifyRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallNrtPayMerchantStallSigningModifyRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// Req Setter
+// 请求参数
 func (r *TmallNrtPayMerchantStallSigningModifyRequest) SetReq(req *StallSigningReqDto) error {
     r.req = req
     r.Set("req", req)
     return nil
 }
 
+// Req Getter
 func (r TmallNrtPayMerchantStallSigningModifyRequest) GetReq() *StallSigningReqDto {
     return r.req
 }
-

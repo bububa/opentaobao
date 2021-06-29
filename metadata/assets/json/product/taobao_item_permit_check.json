@@ -1,4 +1,5 @@
 {
+	"id": 52197,
 	"name": "taobao.item.permit.check",
 	"apiChineseName": "发品资质校验",
 	"description": "对淘宝商品发品、编辑前的预校验接口",

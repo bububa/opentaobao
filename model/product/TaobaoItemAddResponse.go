@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-添加一个商品 APIResponse
+添加一个商品 API返回值 
 taobao.item.add
 
 此接口用于新增一个淘宝商品  
@@ -22,15 +22,11 @@ type TaobaoItemAddAPIResponse struct {
     TaobaoItemAddResponse
 }
 
+// 添加一个商品 成功返回结果
 type TaobaoItemAddResponse struct {
     XMLName xml.Name `xml:"item_add_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 商品结构,仅有numIid和created返回
-    
     Item   *Item `json:"item,omitempty" xml:"item,omitempty"`
-
-    
 }

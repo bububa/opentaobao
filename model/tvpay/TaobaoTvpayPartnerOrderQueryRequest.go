@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-商户查询订单 APIRequest
+商户查询订单 API请求
 taobao.tvpay.partner.order.query
 
 给商户提供的查询订单状态的API
 */
 type TaobaoTvpayPartnerOrderQueryRequest struct {
     model.Params
-
     // 商户订单号
-    orderNo   string 
-
+    orderNo   string
 }
 
+// 初始化TaobaoTvpayPartnerOrderQueryRequest对象
 func NewTaobaoTvpayPartnerOrderQueryRequest() *TaobaoTvpayPartnerOrderQueryRequest{
     return &TaobaoTvpayPartnerOrderQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoTvpayPartnerOrderQueryRequest) GetApiMethodName() string {
     return "taobao.tvpay.partner.order.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoTvpayPartnerOrderQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoTvpayPartnerOrderQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OrderNo Setter
+// 商户订单号
 func (r *TaobaoTvpayPartnerOrderQueryRequest) SetOrderNo(orderNo string) error {
     r.orderNo = orderNo
     r.Set("order_no", orderNo)
     return nil
 }
 
+// OrderNo Getter
 func (r TaobaoTvpayPartnerOrderQueryRequest) GetOrderNo() string {
     return r.orderNo
 }
-

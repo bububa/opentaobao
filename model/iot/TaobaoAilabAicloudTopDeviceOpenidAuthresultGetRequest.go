@@ -7,44 +7,40 @@ import (
 )
 
 /* 
-获取openId设备授权码验证结果 APIRequest
+获取openId设备授权码验证结果 API请求
 taobao.ailab.aicloud.top.device.openid.authresult.get
 
 获取openId设备授权码验证结果
 */
 type TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest struct {
     model.Params
-
     // 淘宝openid
-    openId   string 
-
+    openId   string
     // 账户体系隔离
-    schema   string 
-
+    schema   string
     // 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
-    utdId   string 
-
+    utdId   string
     // 用户ID，此处传入第三方账户体系的用户id
-    userId   string 
-
+    userId   string
     // 扩展信息，用于存放APP类型等
-    ext   string 
-
+    ext   string
     // authcode list
-    authCodes   []string 
-
+    authCodes   []string
 }
 
+// 初始化TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest对象
 func NewTaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest() *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest{
     return &TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetApiMethodName() string {
     return "taobao.ailab.aicloud.top.device.openid.authresult.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -52,65 +48,75 @@ func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetApiParams() ur
     }
     return params
 }
-
-
+// OpenId Setter
+// 淘宝openid
 func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) SetOpenId(openId string) error {
     r.openId = openId
     r.Set("open_id", openId)
     return nil
 }
 
+// OpenId Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetOpenId() string {
     return r.openId
 }
-
+// Schema Setter
+// 账户体系隔离
 func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) SetSchema(schema string) error {
     r.schema = schema
     r.Set("schema", schema)
     return nil
 }
 
+// Schema Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetSchema() string {
     return r.schema
 }
-
+// UtdId Setter
+// 用户设备唯一识别码，长度限制32以内，建议使用系统接口获取deviceid,然后做一定的混淆处理来作为此输入参数
 func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) SetUtdId(utdId string) error {
     r.utdId = utdId
     r.Set("utd_id", utdId)
     return nil
 }
 
+// UtdId Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetUtdId() string {
     return r.utdId
 }
-
+// UserId Setter
+// 用户ID，此处传入第三方账户体系的用户id
 func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) SetUserId(userId string) error {
     r.userId = userId
     r.Set("user_id", userId)
     return nil
 }
 
+// UserId Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetUserId() string {
     return r.userId
 }
-
+// Ext Setter
+// 扩展信息，用于存放APP类型等
 func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) SetExt(ext string) error {
     r.ext = ext
     r.Set("ext", ext)
     return nil
 }
 
+// Ext Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetExt() string {
     return r.ext
 }
-
+// AuthCodes Setter
+// authcode list
 func (r *TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) SetAuthCodes(authCodes []string) error {
     r.authCodes = authCodes
     r.Set("auth_codes", authCodes)
     return nil
 }
 
+// AuthCodes Getter
 func (r TaobaoAilabAicloudTopDeviceOpenidAuthresultGetRequest) GetAuthCodes() []string {
     return r.authCodes
 }
-

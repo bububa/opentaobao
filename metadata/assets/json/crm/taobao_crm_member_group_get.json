@@ -1,4 +1,5 @@
 {
+	"id": 22293,
 	"name": "taobao.crm.member.group.get",
 	"apiChineseName": "获取买家身上的标签",
 	"description": "获取买家身上的标签，不返回标签的总人数",

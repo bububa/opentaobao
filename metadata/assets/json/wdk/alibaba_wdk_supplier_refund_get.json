@@ -1,4 +1,5 @@
 {
+	"id": 39372,
 	"name": "alibaba.wdk.supplier.refund.get",
 	"apiChineseName": "五道口按订单号批量查询供应商退款单",
 	"description": "五道口按订单号批量查询供应商退款单",

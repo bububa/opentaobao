@@ -1,4 +1,5 @@
 {
+	"id": 30620,
 	"name": "taobao.wdk.equipment.conveyor.conveyorinfo.get",
 	"apiChineseName": "获取五道口悬挂链信息",
 	"description": "获取五道口悬挂链信息",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-导入品牌商自有门店 APIRequest
+导入品牌商自有门店 API请求
 alibaba.lst.bm.store.add
 
 导入品牌商自有门店
 */
 type AlibabaLstBmStoreAddRequest struct {
     model.Params
-
     // 门店数据模型
-    openStoreDto   *LstTopOpenStoreDto 
-
+    openStoreDto   *LstTopOpenStoreDto
 }
 
+// 初始化AlibabaLstBmStoreAddRequest对象
 func NewAlibabaLstBmStoreAddRequest() *AlibabaLstBmStoreAddRequest{
     return &AlibabaLstBmStoreAddRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaLstBmStoreAddRequest) GetApiMethodName() string {
     return "alibaba.lst.bm.store.add"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaLstBmStoreAddRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaLstBmStoreAddRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OpenStoreDto Setter
+// 门店数据模型
 func (r *AlibabaLstBmStoreAddRequest) SetOpenStoreDto(openStoreDto *LstTopOpenStoreDto) error {
     r.openStoreDto = openStoreDto
     r.Set("open_store_dto", openStoreDto)
     return nil
 }
 
+// OpenStoreDto Getter
 func (r AlibabaLstBmStoreAddRequest) GetOpenStoreDto() *LstTopOpenStoreDto {
     return r.openStoreDto
 }
-

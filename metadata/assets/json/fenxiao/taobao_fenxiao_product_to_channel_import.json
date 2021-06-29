@@ -1,4 +1,5 @@
 {
+	"id": 33028,
 	"name": "taobao.fenxiao.product.to.channel.import",
 	"apiChineseName": "产品导入到渠道",
 	"description": "支持供应商将已有产品导入到某个渠道销售",

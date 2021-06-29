@@ -1,4 +1,5 @@
 {
+	"id": 26690,
 	"name": "taobao.qimen.store.create",
 	"apiChineseName": "门店新增接口",
 	"description": "isv调用接口来讲线下门店同步到线上",

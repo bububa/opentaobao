@@ -1,4 +1,5 @@
 {
+	"id": 46429,
 	"name": "cainiao.global.handover.cancel",
 	"apiChineseName": "取消交接单",
 	"description": "提供给ISV通过该接口取消交接单",

@@ -1,4 +1,5 @@
 {
+	"id": 51150,
 	"name": "taobao.lark.pos.basedata.getworkstation",
 	"apiChineseName": "根据影城id工作站和macId获取工作站",
 	"description": "获取单独工作站",

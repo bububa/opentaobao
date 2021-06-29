@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-根据一个关键词Id列表取得一组关键词 APIResponse
+根据一个关键词Id列表取得一组关键词 API返回值 
 taobao.simba.keywordsbykeywordids.get
 
 根据一个关键词Id列表取得一组关键词
@@ -17,15 +17,11 @@ type TaobaoSimbaKeywordsbykeywordidsGetAPIResponse struct {
     TaobaoSimbaKeywordsbykeywordidsGetResponse
 }
 
+// 根据一个关键词Id列表取得一组关键词 成功返回结果
 type TaobaoSimbaKeywordsbykeywordidsGetResponse struct {
     XMLName xml.Name `xml:"simba_keywordsbykeywordids_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 取得的关键词列表
-    
     Keywords   []Keyword `json:"keywords,omitempty" xml:"keywords>keyword,omitempty"`
-    
-    
 }

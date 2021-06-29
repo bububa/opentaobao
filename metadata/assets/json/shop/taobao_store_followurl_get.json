@@ -1,4 +1,5 @@
 {
+	"id": 40699,
 	"name": "taobao.store.followurl.get",
 	"apiChineseName": "获取店铺关注URL",
 	"description": "获取关注店铺的URL",

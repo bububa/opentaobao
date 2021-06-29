@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-商家产品服务-编辑产品 APIRequest
+商家产品服务-编辑产品 API请求
 alibaba.wdk.merchantproduct.edit
 
 商家产品服务-编辑产品
 */
 type AlibabaWdkMerchantproductEditRequest struct {
     model.Params
-
     // 产品编辑入参
-    req   *MerchantProductRequest 
-
+    req   *MerchantProductRequest
 }
 
+// 初始化AlibabaWdkMerchantproductEditRequest对象
 func NewAlibabaWdkMerchantproductEditRequest() *AlibabaWdkMerchantproductEditRequest{
     return &AlibabaWdkMerchantproductEditRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkMerchantproductEditRequest) GetApiMethodName() string {
     return "alibaba.wdk.merchantproduct.edit"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkMerchantproductEditRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkMerchantproductEditRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Req Setter
+// 产品编辑入参
 func (r *AlibabaWdkMerchantproductEditRequest) SetReq(req *MerchantProductRequest) error {
     r.req = req
     r.Set("req", req)
     return nil
 }
 
+// Req Getter
 func (r AlibabaWdkMerchantproductEditRequest) GetReq() *MerchantProductRequest {
     return r.req
 }
-

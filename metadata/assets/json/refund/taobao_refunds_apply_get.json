@@ -1,4 +1,5 @@
 {
+	"id": 51,
 	"name": "taobao.refunds.apply.get",
 	"apiChineseName": "查询买家申请的退款列表",
 	"description": "查询买家申请的退款列表，且查询外店的退款列表时需要指定交易类型",

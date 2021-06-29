@@ -1,4 +1,5 @@
 {
+	"id": 48589,
 	"name": "taobao.usergrowth.dhh.delivery.ask",
 	"apiChineseName": "广告曝光前判定接口V2",
 	"description": "提供给媒体在曝光广告前调用",

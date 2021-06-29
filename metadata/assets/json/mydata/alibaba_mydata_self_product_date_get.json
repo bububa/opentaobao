@@ -1,4 +1,5 @@
 {
+	"id": 38834,
 	"name": "alibaba.mydata.self.product.date.get",
 	"apiChineseName": "获取客户产品相关表现数据的可用时间范围",
 	"description": "获取客户产品相关表现数据的可用时间范围",

@@ -1,4 +1,5 @@
 {
+	"id": 36854,
 	"name": "alibaba.price.promotion.item.delete",
 	"apiChineseName": "批量删除档期",
 	"description": "盒马帮批量删除档期商品",

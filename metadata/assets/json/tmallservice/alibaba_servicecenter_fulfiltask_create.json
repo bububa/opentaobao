@@ -1,4 +1,5 @@
 {
+	"id": 55625,
 	"name": "alibaba.servicecenter.fulfiltask.create",
 	"apiChineseName": "合单生成核销单",
 	"description": "服务对工单进行合单，合单的结果是生成核销单",

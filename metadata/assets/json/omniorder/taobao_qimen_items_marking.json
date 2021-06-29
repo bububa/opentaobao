@@ -1,4 +1,5 @@
 {
+	"id": 27154,
 	"name": "taobao.qimen.items.marking",
 	"apiChineseName": "商品通自动打标",
 	"description": "调用该接口，对商品进行XXXX标的打标、去标的动作。",

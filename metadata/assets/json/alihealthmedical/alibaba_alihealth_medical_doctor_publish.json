@@ -1,4 +1,5 @@
 {
+	"id": 51261,
 	"name": "alibaba.alihealth.medical.doctor.publish",
 	"apiChineseName": "三方机构医生信息上传",
 	"description": "三方机构上传医生信息",

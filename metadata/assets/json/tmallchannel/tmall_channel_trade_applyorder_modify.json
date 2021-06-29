@@ -1,4 +1,5 @@
 {
+	"id": 35417,
 	"name": "tmall.channel.trade.applyorder.modify",
 	"apiChineseName": "供应商修改申请单",
 	"description": "上游供应商修改申请单, 目前只允许修改价格+件数且sku数量必须完全一致",

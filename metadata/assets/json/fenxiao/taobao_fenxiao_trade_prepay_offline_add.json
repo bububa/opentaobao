@@ -1,4 +1,5 @@
 {
+	"id": 33474,
 	"name": "taobao.fenxiao.trade.prepay.offline.add",
 	"apiChineseName": "线下预存款流水增加",
 	"description": "渠道分销供应商上传线下流水预存款（增加）",

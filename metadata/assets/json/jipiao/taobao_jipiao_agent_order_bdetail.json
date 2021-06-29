@@ -1,4 +1,5 @@
 {
+	"id": 26660,
 	"name": "taobao.jipiao.agent.order.bdetail",
 	"apiChineseName": "【机票代理商订单】采购订单详情",
 	"description": "根据淘宝系统订单号获取订单详情信息",

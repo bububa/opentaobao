@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-更新人员和账号属性 APIRequest
+更新人员和账号属性 API请求
 alibaba.mozi.fusion.update.employee.account
 
 更新人员和账号基本属性
 */
 type AlibabaMoziFusionUpdateEmployeeAccountRequest struct {
     model.Params
-
     // 入参
-    employeeAccount   *UpdateTenantEmployeeAndAccountRequest 
-
+    employeeAccount   *UpdateTenantEmployeeAndAccountRequest
 }
 
+// 初始化AlibabaMoziFusionUpdateEmployeeAccountRequest对象
 func NewAlibabaMoziFusionUpdateEmployeeAccountRequest() *AlibabaMoziFusionUpdateEmployeeAccountRequest{
     return &AlibabaMoziFusionUpdateEmployeeAccountRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaMoziFusionUpdateEmployeeAccountRequest) GetApiMethodName() string {
     return "alibaba.mozi.fusion.update.employee.account"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaMoziFusionUpdateEmployeeAccountRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaMoziFusionUpdateEmployeeAccountRequest) GetApiParams() url.Values
     }
     return params
 }
-
-
+// EmployeeAccount Setter
+// 入参
 func (r *AlibabaMoziFusionUpdateEmployeeAccountRequest) SetEmployeeAccount(employeeAccount *UpdateTenantEmployeeAndAccountRequest) error {
     r.employeeAccount = employeeAccount
     r.Set("employee_account", employeeAccount)
     return nil
 }
 
+// EmployeeAccount Getter
 func (r AlibabaMoziFusionUpdateEmployeeAccountRequest) GetEmployeeAccount() *UpdateTenantEmployeeAndAccountRequest {
     return r.employeeAccount
 }
-

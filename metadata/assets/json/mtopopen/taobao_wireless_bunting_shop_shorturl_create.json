@@ -1,4 +1,5 @@
 {
+	"id": 23398,
 	"name": "taobao.wireless.bunting.shop.shorturl.create",
 	"apiChineseName": "通过店铺id取得短链",
 	"description": "通过店铺id取得短链",

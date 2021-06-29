@@ -1,4 +1,5 @@
 {
+	"id": 40204,
 	"name": "tmall.traceplatform.cts.info.upload",
 	"apiChineseName": "CTS提交溯源信息",
 	"description": "cts上传溯源信息",

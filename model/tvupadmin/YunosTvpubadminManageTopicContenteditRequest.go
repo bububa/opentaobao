@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-专题关联内容编辑 APIRequest
+专题关联内容编辑 API请求
 yunos.tvpubadmin.manage.topic.contentedit
 
 编辑专题关联的内容
 */
 type YunosTvpubadminManageTopicContenteditRequest struct {
     model.Params
-
     // 入参，json格式
-    contentJson   string 
-
+    contentJson   string
 }
 
+// 初始化YunosTvpubadminManageTopicContenteditRequest对象
 func NewYunosTvpubadminManageTopicContenteditRequest() *YunosTvpubadminManageTopicContenteditRequest{
     return &YunosTvpubadminManageTopicContenteditRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminManageTopicContenteditRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.manage.topic.contentedit"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminManageTopicContenteditRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminManageTopicContenteditRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// ContentJson Setter
+// 入参，json格式
 func (r *YunosTvpubadminManageTopicContenteditRequest) SetContentJson(contentJson string) error {
     r.contentJson = contentJson
     r.Set("content_json", contentJson)
     return nil
 }
 
+// ContentJson Getter
 func (r YunosTvpubadminManageTopicContenteditRequest) GetContentJson() string {
     return r.contentJson
 }
-

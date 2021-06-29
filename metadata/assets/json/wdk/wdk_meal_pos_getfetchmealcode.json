@@ -1,4 +1,5 @@
 {
+	"id": 37541,
 	"name": "wdk.meal.pos.getfetchmealcode",
 	"apiChineseName": "五道口餐饮取餐号获取接口",
 	"description": "pos机创建订单前获取餐饮取餐号",

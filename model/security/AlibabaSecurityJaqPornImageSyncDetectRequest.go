@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-聚安全智能鉴黄同步检测接口 APIRequest
+聚安全智能鉴黄同步检测接口 API请求
 alibaba.security.jaq.porn.image.sync.detect
 
 同步黄图图像检测接口
 */
 type AlibabaSecurityJaqPornImageSyncDetectRequest struct {
     model.Params
-
     // 待检测图片链接
-    imageUrl   string 
-
+    imageUrl   string
 }
 
+// 初始化AlibabaSecurityJaqPornImageSyncDetectRequest对象
 func NewAlibabaSecurityJaqPornImageSyncDetectRequest() *AlibabaSecurityJaqPornImageSyncDetectRequest{
     return &AlibabaSecurityJaqPornImageSyncDetectRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaSecurityJaqPornImageSyncDetectRequest) GetApiMethodName() string {
     return "alibaba.security.jaq.porn.image.sync.detect"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaSecurityJaqPornImageSyncDetectRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaSecurityJaqPornImageSyncDetectRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// ImageUrl Setter
+// 待检测图片链接
 func (r *AlibabaSecurityJaqPornImageSyncDetectRequest) SetImageUrl(imageUrl string) error {
     r.imageUrl = imageUrl
     r.Set("image_url", imageUrl)
     return nil
 }
 
+// ImageUrl Getter
 func (r AlibabaSecurityJaqPornImageSyncDetectRequest) GetImageUrl() string {
     return r.imageUrl
 }
-

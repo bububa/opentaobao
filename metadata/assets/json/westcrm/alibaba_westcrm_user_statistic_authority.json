@@ -1,4 +1,5 @@
 {
+	"id": 41158,
 	"name": "alibaba.westcrm.user.statistic.authority",
 	"apiChineseName": "获取指定用户是否含有会员权益统计权限",
 	"description": "获取指定用户是否含有会员权益统计权限",

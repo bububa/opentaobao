@@ -1,4 +1,5 @@
 {
+	"id": 42908,
 	"name": "taobao.shop.seller.get",
 	"apiChineseName": "卖家店铺基础信息查询",
 	"description": "获取卖家店铺的基本信息",

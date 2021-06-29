@@ -1,4 +1,5 @@
 {
+	"id": 51836,
 	"name": "taobao.jst.interactive.point.query",
 	"apiChineseName": "互动积分查询接口",
 	"description": "查询用户的互动积分",

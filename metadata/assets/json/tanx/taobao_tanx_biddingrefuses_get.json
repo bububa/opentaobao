@@ -1,4 +1,5 @@
 {
+	"id": 24797,
 	"name": "taobao.tanx.biddingrefuses.get",
 	"apiChineseName": "tanx竞价失败反馈api",
 	"description": "竞价失败反馈根据创意id查询API提供",

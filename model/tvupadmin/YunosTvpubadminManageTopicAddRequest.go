@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-新增专题 APIRequest
+新增专题 API请求
 yunos.tvpubadmin.manage.topic.add
 
 专题新增
 */
 type YunosTvpubadminManageTopicAddRequest struct {
     model.Params
-
     // 新增topic的json信息
-    topicJson   string 
-
+    topicJson   string
 }
 
+// 初始化YunosTvpubadminManageTopicAddRequest对象
 func NewYunosTvpubadminManageTopicAddRequest() *YunosTvpubadminManageTopicAddRequest{
     return &YunosTvpubadminManageTopicAddRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminManageTopicAddRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.manage.topic.add"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminManageTopicAddRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminManageTopicAddRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TopicJson Setter
+// 新增topic的json信息
 func (r *YunosTvpubadminManageTopicAddRequest) SetTopicJson(topicJson string) error {
     r.topicJson = topicJson
     r.Set("topic_json", topicJson)
     return nil
 }
 
+// TopicJson Getter
 func (r YunosTvpubadminManageTopicAddRequest) GetTopicJson() string {
     return r.topicJson
 }
-

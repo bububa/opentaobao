@@ -1,4 +1,5 @@
 {
+	"id": 45823,
 	"name": "alibaba.alsc.crm.point.chkpntbypay",
 	"apiChineseName": "校验支付链路中的积分抵扣是否合法",
 	"description": "校验支付链路中的积分抵扣是否合法",

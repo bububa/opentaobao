@@ -1,4 +1,5 @@
 {
+	"id": 52121,
 	"name": "taobao.card.expandcard.query",
 	"apiChineseName": "购物金卡查询",
 	"description": "购物金充值信息查询接口，会返回余额等信息。",

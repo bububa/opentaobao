@@ -1,4 +1,5 @@
 {
+	"id": 49522,
 	"name": "alibaba.mozi.vds.tenant.api.service.tenantbyid",
 	"apiChineseName": "按租户ID查询租户信息",
 	"description": "按租户ID查询租户信息",

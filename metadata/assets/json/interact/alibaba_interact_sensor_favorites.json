@@ -1,4 +1,5 @@
 {
+	"id": 25003,
 	"name": "alibaba.interact.sensor.favorites",
 	"apiChineseName": "手淘开放收藏夹鉴权接口",
 	"description": "手淘开放鉴权专用接口，无数据输出输入，仅用于鉴权。",

@@ -1,4 +1,5 @@
 {
+	"id": 30405,
 	"name": "yunos.tvpubadmin.manage.topic.add",
 	"apiChineseName": "新增专题",
 	"description": "专题新增",

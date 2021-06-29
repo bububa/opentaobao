@@ -1,4 +1,5 @@
 {
+	"id": 47621,
 	"name": "taobao.miniapp.items.get",
 	"apiChineseName": "批量获取商品信息",
 	"description": "获取商品公开属性，只允许在商家应用环境中使用",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-计算补助金额 APIResponse
+计算补助金额 API返回值 
 alibaba.alisports.efsp.countsubsidy
 
 计算补助金额
@@ -17,15 +17,11 @@ type AlibabaAlisportsEfspCountsubsidyAPIResponse struct {
     AlibabaAlisportsEfspCountsubsidyResponse
 }
 
+// 计算补助金额 成功返回结果
 type AlibabaAlisportsEfspCountsubsidyResponse struct {
     XMLName xml.Name `xml:"alibaba_alisports_efsp_countsubsidy_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 系统自动生成
-    
     Result   *TrilateralResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

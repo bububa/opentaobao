@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-短链接获取 APIResponse
+短链接获取 API返回值 
 alibaba.retail.shorturl.get
 
 短链接获取
@@ -17,15 +17,11 @@ type AlibabaRetailShorturlGetAPIResponse struct {
     AlibabaRetailShorturlGetResponse
 }
 
+// 短链接获取 成功返回结果
 type AlibabaRetailShorturlGetResponse struct {
     XMLName xml.Name `xml:"alibaba_retail_shorturl_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *AlibabaRetailShorturlGetResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

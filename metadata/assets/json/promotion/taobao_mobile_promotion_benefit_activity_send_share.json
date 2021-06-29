@@ -1,4 +1,5 @@
 {
+	"id": 25732,
 	"name": "taobao.mobile.promotion.benefit.activity.send.share",
 	"apiChineseName": "手淘专用单用户发放接口",
 	"description": "卖家活动中需要通过该API来发放对应的权益。手淘专用、验证分享链路。",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询交易结果 APIRequest
+查询交易结果 API请求
 taobao.elife.lifecard.query
 
 卖家在交易状态不明的情况下, 查询交易结果.
 */
 type TaobaoElifeLifecardQueryRequest struct {
     model.Params
-
     // 入参
-    queryRequest   *ConsumeRequest 
-
+    queryRequest   *ConsumeRequest
 }
 
+// 初始化TaobaoElifeLifecardQueryRequest对象
 func NewTaobaoElifeLifecardQueryRequest() *TaobaoElifeLifecardQueryRequest{
     return &TaobaoElifeLifecardQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoElifeLifecardQueryRequest) GetApiMethodName() string {
     return "taobao.elife.lifecard.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoElifeLifecardQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoElifeLifecardQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// QueryRequest Setter
+// 入参
 func (r *TaobaoElifeLifecardQueryRequest) SetQueryRequest(queryRequest *ConsumeRequest) error {
     r.queryRequest = queryRequest
     r.Set("query_request", queryRequest)
     return nil
 }
 
+// QueryRequest Getter
 func (r TaobaoElifeLifecardQueryRequest) GetQueryRequest() *ConsumeRequest {
     return r.queryRequest
 }
-

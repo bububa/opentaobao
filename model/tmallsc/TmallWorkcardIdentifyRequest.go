@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-工单核销 APIRequest
+工单核销 API请求
 tmall.workcard.identify
 
 工单核销，当工单完成以后，通过调用此接口核销
@@ -16,22 +16,23 @@ tmall.workcard.identify
 */
 type TmallWorkcardIdentifyRequest struct {
     model.Params
-
     // 核销dto
-    verifyRequestDTO   *VerifyRequestDto 
-
+    verifyRequestDTO   *VerifyRequestDto
 }
 
+// 初始化TmallWorkcardIdentifyRequest对象
 func NewTmallWorkcardIdentifyRequest() *TmallWorkcardIdentifyRequest{
     return &TmallWorkcardIdentifyRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallWorkcardIdentifyRequest) GetApiMethodName() string {
     return "tmall.workcard.identify"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallWorkcardIdentifyRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -39,15 +40,15 @@ func (r TmallWorkcardIdentifyRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// VerifyRequestDTO Setter
+// 核销dto
 func (r *TmallWorkcardIdentifyRequest) SetVerifyRequestDTO(verifyRequestDTO *VerifyRequestDto) error {
     r.verifyRequestDTO = verifyRequestDTO
     r.Set("verify_request_d_t_o", verifyRequestDTO)
     return nil
 }
 
+// VerifyRequestDTO Getter
 func (r TmallWorkcardIdentifyRequest) GetVerifyRequestDTO() *VerifyRequestDto {
     return r.verifyRequestDTO
 }
-

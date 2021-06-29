@@ -1,4 +1,5 @@
 {
+	"id": 48659,
 	"name": "alibaba.icbu.category.level.attr.get",
 	"apiChineseName": "层级属性的子属性获取",
 	"description": "用于获取层级属性（车型库）的子属性和属性值",

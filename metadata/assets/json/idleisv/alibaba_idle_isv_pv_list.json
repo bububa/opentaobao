@@ -1,4 +1,5 @@
 {
+	"id": 55336,
 	"name": "alibaba.idle.isv.pv.list",
 	"apiChineseName": "闲鱼已验货pv查询",
 	"description": "根据闲鱼渠道类目查询对应的品牌和型号清单，供服务商进行选择",

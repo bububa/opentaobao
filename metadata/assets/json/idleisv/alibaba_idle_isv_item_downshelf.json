@@ -1,4 +1,5 @@
 {
+	"id": 49487,
 	"name": "alibaba.idle.isv.item.downshelf",
 	"apiChineseName": "服务商闲鱼商品下架",
 	"description": "供外部服务商ISV进行闲鱼商品下架操作",

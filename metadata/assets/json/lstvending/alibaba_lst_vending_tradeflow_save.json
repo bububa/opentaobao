@@ -1,4 +1,5 @@
 {
+	"id": 37508,
 	"name": "alibaba.lst.vending.tradeflow.save",
 	"apiChineseName": "自动售卖机交易信息回流",
 	"description": "自动售货机交易信息同步接口，ISV通过此接口上传售货机交易信息。",

@@ -1,4 +1,5 @@
 {
+	"id": 23575,
 	"name": "taobao.simba.insight.catsworddata.get",
 	"apiChineseName": "获取类目下关键词的数据",
 	"description": "获取给定词在给定类目下的详细数据",

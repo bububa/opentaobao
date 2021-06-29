@@ -1,4 +1,5 @@
 {
+	"id": 49149,
 	"name": "alibaba.ssc.supplyplatform.service.inventory.edit",
 	"apiChineseName": "编辑服务库存",
 	"description": "实时编辑服务库存。只支持增加或减少库存，不支持设置绝对库存值。\n需要自己处理好幂等逻辑。\n要先查询当前库存值，并基于返回结果做编辑操作。\n参考alibaba.ssc.supplyplatform.service.inventory.query和alibaba.ssc.supplyplatform.servicecapacity.save",

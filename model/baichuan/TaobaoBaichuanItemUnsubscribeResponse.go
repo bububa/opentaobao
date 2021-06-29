@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-单个删除订阅关系 APIResponse
+单个删除订阅关系 API返回值 
 taobao.baichuan.item.unsubscribe
 
 删除单个商品订阅关系
@@ -17,15 +17,11 @@ type TaobaoBaichuanItemUnsubscribeAPIResponse struct {
     TaobaoBaichuanItemUnsubscribeResponse
 }
 
+// 单个删除订阅关系 成功返回结果
 type TaobaoBaichuanItemUnsubscribeResponse struct {
     XMLName xml.Name `xml:"baichuan_item_unsubscribe_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *TaobaoBaichuanItemUnsubscribeResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

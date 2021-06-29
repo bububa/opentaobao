@@ -1,4 +1,5 @@
 {
+	"id": 33673,
 	"name": "taobao.wdk.iot.deviceadmin.mqtt.token.get",
 	"apiChineseName": "获取MQTT访问令牌",
 	"description": "智能硬件设备动态注册和获取mqtt设备信息",

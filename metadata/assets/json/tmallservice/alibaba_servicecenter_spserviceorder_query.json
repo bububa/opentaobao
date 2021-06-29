@@ -1,4 +1,5 @@
 {
+	"id": 49157,
 	"name": "alibaba.servicecenter.spserviceorder.query",
 	"apiChineseName": "服务供应链服务单查询",
 	"description": "服务供应链服务单查询，服务商通过此接口拉取用户的购买的服务信息，以此为依据为用户提供安装维修等服务",

@@ -1,4 +1,5 @@
 {
+	"id": 37901,
 	"name": "taobao.jst.astrolabe.storeinventory.itemquery",
 	"apiChineseName": "库存查询接口",
 	"description": "查询门店或电商仓库存，该接口一次可以同时查询多个门店或电商仓的多个商品的多种类型的库存",

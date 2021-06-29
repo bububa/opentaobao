@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-交易帐务查询 APIResponse
+交易帐务查询 API返回值 
 taobao.trade.amount.get
 
 卖家查询该笔交易的资金帐务相关的数据；
@@ -19,15 +19,11 @@ type TaobaoTradeAmountGetAPIResponse struct {
     TaobaoTradeAmountGetResponse
 }
 
+// 交易帐务查询 成功返回结果
 type TaobaoTradeAmountGetResponse struct {
     XMLName xml.Name `xml:"trade_amount_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 主订单的财务信息详情
-    
     TradeAmount   *TradeAmount `json:"trade_amount,omitempty" xml:"trade_amount,omitempty"`
-
-    
 }

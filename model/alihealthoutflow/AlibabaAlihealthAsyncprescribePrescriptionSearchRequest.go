@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-异步开方处方查询 APIRequest
+异步开方处方查询 API请求
 alibaba.alihealth.asyncprescribe.prescription.search
 
 异步开方处方查询
 */
 type AlibabaAlihealthAsyncprescribePrescriptionSearchRequest struct {
     model.Params
-
     // 查询入参
-    searchRequest   *AsyncPrescribeSearchRequest 
-
+    searchRequest   *AsyncPrescribeSearchRequest
 }
 
+// 初始化AlibabaAlihealthAsyncprescribePrescriptionSearchRequest对象
 func NewAlibabaAlihealthAsyncprescribePrescriptionSearchRequest() *AlibabaAlihealthAsyncprescribePrescriptionSearchRequest{
     return &AlibabaAlihealthAsyncprescribePrescriptionSearchRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthAsyncprescribePrescriptionSearchRequest) GetApiMethodName() string {
     return "alibaba.alihealth.asyncprescribe.prescription.search"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthAsyncprescribePrescriptionSearchRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthAsyncprescribePrescriptionSearchRequest) GetApiParams() 
     }
     return params
 }
-
-
+// SearchRequest Setter
+// 查询入参
 func (r *AlibabaAlihealthAsyncprescribePrescriptionSearchRequest) SetSearchRequest(searchRequest *AsyncPrescribeSearchRequest) error {
     r.searchRequest = searchRequest
     r.Set("search_request", searchRequest)
     return nil
 }
 
+// SearchRequest Getter
 func (r AlibabaAlihealthAsyncprescribePrescriptionSearchRequest) GetSearchRequest() *AsyncPrescribeSearchRequest {
     return r.searchRequest
 }
-

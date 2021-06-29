@@ -1,4 +1,5 @@
 {
+	"id": 31918,
 	"name": "taobao.omniitem.classify.store.batch.operate",
 	"apiChineseName": "批量添加/删除门店和分类的关联关系",
 	"description": "批量添加/删除门店和分类的关联关系",

@@ -1,4 +1,5 @@
 {
+	"id": 25004,
 	"name": "alibaba.scbp.reckeyword.sys.get",
 	"apiChineseName": "系统推荐",
 	"description": "查询系统推荐词",

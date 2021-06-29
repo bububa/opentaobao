@@ -1,4 +1,5 @@
 {
+	"id": 25767,
 	"name": "taobao.alitrip.travel.item.single.query",
 	"apiChineseName": "【API3.0】度假单个商品查询接口",
 	"description": "旅行度假新商品查询接口（单个商品查询） 第三版",

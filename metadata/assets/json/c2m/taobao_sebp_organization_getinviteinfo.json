@@ -1,4 +1,5 @@
 {
+	"id": 50720,
 	"name": "taobao.sebp.organization.getinviteinfo",
 	"apiChineseName": "淘小铺机构上下级关系",
 	"description": "机构人员获取机构上下级关系信息",

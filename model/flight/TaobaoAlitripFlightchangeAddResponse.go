@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-航变信息录入接口 APIResponse
+航变信息录入接口 API返回值 
 taobao.alitrip.flightchange.add
 
 代理商调用航变录入接口,
@@ -19,15 +19,11 @@ type TaobaoAlitripFlightchangeAddAPIResponse struct {
     TaobaoAlitripFlightchangeAddResponse
 }
 
+// 航变信息录入接口 成功返回结果
 type TaobaoAlitripFlightchangeAddResponse struct {
     XMLName xml.Name `xml:"alitrip_flightchange_add_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TaobaoAlitripFlightchangeAddResultDo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

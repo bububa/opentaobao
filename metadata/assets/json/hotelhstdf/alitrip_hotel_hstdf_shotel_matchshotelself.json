@@ -1,4 +1,5 @@
 {
+	"id": 42712,
 	"name": "alitrip.hotel.hstdf.shotel.matchshotelself",
 	"apiChineseName": "自主匹配标准酒店以及卖家酒店",
 	"description": "商家通过指定的标准酒店id和卖家酒店id进行匹配",

@@ -1,4 +1,5 @@
 {
+	"id": 25766,
 	"name": "taobao.openim.app.chatlogs.get",
 	"apiChineseName": "openim应用聊天记录查询",
 	"description": "查询openim应用的聊天记录",

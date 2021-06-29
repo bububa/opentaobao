@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-工单完结 APIResponse
+工单完结 API返回值 
 tmall.servicecenter.workcard.complete
 
 工单完结
@@ -17,15 +17,11 @@ type TmallServicecenterWorkcardCompleteAPIResponse struct {
     TmallServicecenterWorkcardCompleteResponse
 }
 
+// 工单完结 成功返回结果
 type TmallServicecenterWorkcardCompleteResponse struct {
     XMLName xml.Name `xml:"tmall_servicecenter_workcard_complete_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 响应结果
-    
     Result   *FulfilplatformResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

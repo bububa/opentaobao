@@ -1,4 +1,5 @@
 {
+	"id": 41305,
 	"name": "alibaba.alihealth.drug.kyt.getcodebaseinfo",
 	"apiChineseName": "码的药品信息查询",
 	"description": "提供根据码查询码基本信息接口",

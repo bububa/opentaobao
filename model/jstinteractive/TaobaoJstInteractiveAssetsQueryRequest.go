@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询可配置任务素材接口 APIRequest
+查询可配置任务素材接口 API请求
 taobao.jst.interactive.assets.query
 
 查询可配置任务素材列表，用以配置任务素材
 */
 type TaobaoJstInteractiveAssetsQueryRequest struct {
     model.Params
-
     // 小程序id
-    miniAppId   string 
-
+    miniAppId   string
 }
 
+// 初始化TaobaoJstInteractiveAssetsQueryRequest对象
 func NewTaobaoJstInteractiveAssetsQueryRequest() *TaobaoJstInteractiveAssetsQueryRequest{
     return &TaobaoJstInteractiveAssetsQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoJstInteractiveAssetsQueryRequest) GetApiMethodName() string {
     return "taobao.jst.interactive.assets.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoJstInteractiveAssetsQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoJstInteractiveAssetsQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// MiniAppId Setter
+// 小程序id
 func (r *TaobaoJstInteractiveAssetsQueryRequest) SetMiniAppId(miniAppId string) error {
     r.miniAppId = miniAppId
     r.Set("mini_app_id", miniAppId)
     return nil
 }
 
+// MiniAppId Getter
 func (r TaobaoJstInteractiveAssetsQueryRequest) GetMiniAppId() string {
     return r.miniAppId
 }
-

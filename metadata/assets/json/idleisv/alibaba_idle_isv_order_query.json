@@ -1,4 +1,5 @@
 {
+	"id": 50672,
 	"name": "alibaba.idle.isv.order.query",
 	"apiChineseName": "闲鱼已验货订单查询",
 	"description": "服务商ISV，根据订单号，查询闲鱼订单信息",
@@ -203,6 +204,12 @@
 									"required": true
 								}
 							]
+						},
+						{
+							"name": "out_pay_id",
+							"type": "String",
+							"description": "支付宝订单号",
+							"required": true
 						}
 					]
 				},

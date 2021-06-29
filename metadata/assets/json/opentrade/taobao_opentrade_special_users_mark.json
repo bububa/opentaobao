@@ -1,4 +1,5 @@
 {
+	"id": 51296,
 	"name": "taobao.opentrade.special.users.mark",
 	"apiChineseName": "专属下单可购买用户标记",
 	"description": "对于专属下单的交易场景，根据openid标记用户可购买商品",

@@ -1,4 +1,5 @@
 {
+	"id": 53918,
 	"name": "alibaba.asr.dataservice.promotionrule.query",
 	"apiChineseName": "星巴克优惠规则查询",
 	"description": "查询优惠规则，例如星巴克查询优惠规则",

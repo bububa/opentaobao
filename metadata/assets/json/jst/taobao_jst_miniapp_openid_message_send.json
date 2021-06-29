@@ -1,4 +1,5 @@
 {
+	"id": 53513,
 	"name": "taobao.jst.miniapp.openid.message.send",
 	"apiChineseName": "单个openId用户短信发送",
 	"description": "单个openId用户短信发送",

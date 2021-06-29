@@ -1,4 +1,5 @@
 {
+	"id": 26662,
 	"name": "taobao.oc.eservice.appoint.list",
 	"apiChineseName": "交互卡片预约信息读取接口",
 	"description": "允许外部的isv通过该接口读取门店预约信息",

@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-获取token APIRequest
+获取token API请求
 alibaba.ailabs.tmallgenie.auth.getcode
 
 获取天猫精灵authCode
 */
 type AlibabaAilabsTmallgenieAuthGetcodeRequest struct {
     model.Params
-
     // 授权参数
-    authParam   *TopAuthReqDto 
-
+    authParam   *TopAuthReqDto
     // 设备参数
-    deviceParam   *TopDeviceReqDto 
-
+    deviceParam   *TopDeviceReqDto
 }
 
+// 初始化AlibabaAilabsTmallgenieAuthGetcodeRequest对象
 func NewAlibabaAilabsTmallgenieAuthGetcodeRequest() *AlibabaAilabsTmallgenieAuthGetcodeRequest{
     return &AlibabaAilabsTmallgenieAuthGetcodeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAilabsTmallgenieAuthGetcodeRequest) GetApiMethodName() string {
     return "alibaba.ailabs.tmallgenie.auth.getcode"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAilabsTmallgenieAuthGetcodeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r AlibabaAilabsTmallgenieAuthGetcodeRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// AuthParam Setter
+// 授权参数
 func (r *AlibabaAilabsTmallgenieAuthGetcodeRequest) SetAuthParam(authParam *TopAuthReqDto) error {
     r.authParam = authParam
     r.Set("auth_param", authParam)
     return nil
 }
 
+// AuthParam Getter
 func (r AlibabaAilabsTmallgenieAuthGetcodeRequest) GetAuthParam() *TopAuthReqDto {
     return r.authParam
 }
-
+// DeviceParam Setter
+// 设备参数
 func (r *AlibabaAilabsTmallgenieAuthGetcodeRequest) SetDeviceParam(deviceParam *TopDeviceReqDto) error {
     r.deviceParam = deviceParam
     r.Set("device_param", deviceParam)
     return nil
 }
 
+// DeviceParam Getter
 func (r AlibabaAilabsTmallgenieAuthGetcodeRequest) GetDeviceParam() *TopDeviceReqDto {
     return r.deviceParam
 }
-

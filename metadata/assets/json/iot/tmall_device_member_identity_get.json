@@ -1,4 +1,5 @@
 {
+	"id": 39496,
 	"name": "tmall.device.member.identity.get",
 	"apiChineseName": "智能硬件会员判断",
 	"description": "用来识别该用户是否是商家会员·",

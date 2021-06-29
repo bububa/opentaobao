@@ -1,4 +1,5 @@
 {
+	"id": 37057,
 	"name": "alibaba.ai.ar.open.platform.detect",
 	"apiChineseName": "AR开发者平台marker图片检测服务",
 	"description": "AR开发者平台marker图片检测服务，给AR SDK 和 阿里火眼app使用",

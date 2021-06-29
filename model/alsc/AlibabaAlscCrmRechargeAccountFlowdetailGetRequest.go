@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-储值流水详细 APIRequest
+储值流水详细 API请求
 alibaba.alsc.crm.recharge.account.flowdetail.get
 
 查询储值流水详细接口
 */
 type AlibabaAlscCrmRechargeAccountFlowdetailGetRequest struct {
     model.Params
-
     // 入参
-    paramQueryRechargeAccountFlowOpenReq   *QueryRechargeAccountFlowOpenReq 
-
+    paramQueryRechargeAccountFlowOpenReq   *QueryRechargeAccountFlowOpenReq
 }
 
+// 初始化AlibabaAlscCrmRechargeAccountFlowdetailGetRequest对象
 func NewAlibabaAlscCrmRechargeAccountFlowdetailGetRequest() *AlibabaAlscCrmRechargeAccountFlowdetailGetRequest{
     return &AlibabaAlscCrmRechargeAccountFlowdetailGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlscCrmRechargeAccountFlowdetailGetRequest) GetApiMethodName() string {
     return "alibaba.alsc.crm.recharge.account.flowdetail.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlscCrmRechargeAccountFlowdetailGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlscCrmRechargeAccountFlowdetailGetRequest) GetApiParams() url.Va
     }
     return params
 }
-
-
+// ParamQueryRechargeAccountFlowOpenReq Setter
+// 入参
 func (r *AlibabaAlscCrmRechargeAccountFlowdetailGetRequest) SetParamQueryRechargeAccountFlowOpenReq(paramQueryRechargeAccountFlowOpenReq *QueryRechargeAccountFlowOpenReq) error {
     r.paramQueryRechargeAccountFlowOpenReq = paramQueryRechargeAccountFlowOpenReq
     r.Set("param_query_recharge_account_flow_open_req", paramQueryRechargeAccountFlowOpenReq)
     return nil
 }
 
+// ParamQueryRechargeAccountFlowOpenReq Getter
 func (r AlibabaAlscCrmRechargeAccountFlowdetailGetRequest) GetParamQueryRechargeAccountFlowOpenReq() *QueryRechargeAccountFlowOpenReq {
     return r.paramQueryRechargeAccountFlowOpenReq
 }
-

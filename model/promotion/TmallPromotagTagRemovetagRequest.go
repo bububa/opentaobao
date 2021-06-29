@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-删除标签定义 APIRequest
+删除标签定义 API请求
 tmall.promotag.tag.removetag
 
 用于删除标签定义，但是要确保目前该标签没有人群在使用。
 */
 type TmallPromotagTagRemovetagRequest struct {
     model.Params
-
     // 需要删除的标签id
-    tagId   int64 
-
+    tagId   int64
 }
 
+// 初始化TmallPromotagTagRemovetagRequest对象
 func NewTmallPromotagTagRemovetagRequest() *TmallPromotagTagRemovetagRequest{
     return &TmallPromotagTagRemovetagRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallPromotagTagRemovetagRequest) GetApiMethodName() string {
     return "tmall.promotag.tag.removetag"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallPromotagTagRemovetagRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallPromotagTagRemovetagRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TagId Setter
+// 需要删除的标签id
 func (r *TmallPromotagTagRemovetagRequest) SetTagId(tagId int64) error {
     r.tagId = tagId
     r.Set("tag_id", tagId)
     return nil
 }
 
+// TagId Getter
 func (r TmallPromotagTagRemovetagRequest) GetTagId() int64 {
     return r.tagId
 }
-

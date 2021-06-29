@@ -1,4 +1,5 @@
 {
+	"id": 23052,
 	"name": "taobao.de.activity.info.get",
 	"apiChineseName": "获取活动信息",
 	"description": "根据appKey和活动id获取活动",

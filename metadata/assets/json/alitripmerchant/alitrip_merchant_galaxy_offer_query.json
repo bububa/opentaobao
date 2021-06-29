@@ -1,4 +1,5 @@
 {
+	"id": 53562,
 	"name": "alitrip.merchant.galaxy.offer.query",
 	"apiChineseName": "星河-offer查询",
 	"description": "根据offer的ID查询offer信息",

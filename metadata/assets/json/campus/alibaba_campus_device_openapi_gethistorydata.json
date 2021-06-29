@@ -1,4 +1,5 @@
 {
+	"id": 33813,
 	"name": "alibaba.campus.device.openapi.gethistorydata",
 	"apiChineseName": "查询设备历史数据",
 	"description": "查询历史数据的接口",

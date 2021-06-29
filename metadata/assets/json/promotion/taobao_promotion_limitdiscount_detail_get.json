@@ -1,4 +1,5 @@
 {
+	"id": 10770,
 	"name": "taobao.promotion.limitdiscount.detail.get",
 	"apiChineseName": "限时打折详情查询",
 	"description": "限时打折详情查询。查询出指定限时打折的对应商品记录信息。",

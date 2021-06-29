@@ -1,4 +1,5 @@
 {
+	"id": 29874,
 	"name": "taobao.game.deliveryvoucher.cancelvoucher",
 	"apiChineseName": "作废券",
 	"description": "提货券发券接口：同步券和订单的关联信息",

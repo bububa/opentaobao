@@ -1,4 +1,5 @@
 {
+	"id": 48222,
 	"name": "taobao.xhotel.rates.lite.incr.update",
 	"apiChineseName": "酒店价格库存轻量级增量接口",
 	"description": "多个rate的库存房价开关的增量更新接口",

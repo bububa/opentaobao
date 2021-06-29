@@ -1,4 +1,5 @@
 {
+	"id": 29363,
 	"name": "taobao.qimen.inventoryrule.create",
 	"apiChineseName": "渠道间库存规则设置接口",
 	"description": "渠道间库存规则设置",

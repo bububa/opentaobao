@@ -1,4 +1,5 @@
 {
+	"id": 51443,
 	"name": "alibaba.alihealth.lab.item.sync",
 	"apiChineseName": "阿里健康检验检测商品发布",
 	"description": "iSV发布检验检测商品基本信息给健康，内部关联一个淘宝商品或SKU",

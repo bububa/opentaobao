@@ -1,4 +1,5 @@
 {
+	"id": 31908,
 	"name": "taobao.messageaccount.messsage.mass.send",
 	"apiChineseName": "消息号开放-消息群发",
 	"description": "外部 isv 调用该进口来进行消息号消息的群发",

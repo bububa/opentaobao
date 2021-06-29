@@ -1,4 +1,5 @@
 {
+	"id": 27680,
 	"name": "taobao.omniorder.print.sale.judge",
 	"apiChineseName": "导购员判断",
 	"description": "用于判断当前子账号是否导购员",

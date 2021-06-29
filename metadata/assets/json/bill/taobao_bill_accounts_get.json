@@ -1,4 +1,5 @@
 {
+	"id": 21709,
 	"name": "taobao.bill.accounts.get",
 	"apiChineseName": "查询费用科目信息(限自研商家)",
 	"description": "查询费用账户信息",

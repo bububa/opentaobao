@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-算法获取hscode APIRequest
+算法获取hscode API请求
 tmall.item.calculate.hscode.get
 
 算法获取hscode
 */
 type TmallItemCalculateHscodeGetRequest struct {
     model.Params
-
     // 商品id
-    itemId   int64 
-
+    itemId   int64
 }
 
+// 初始化TmallItemCalculateHscodeGetRequest对象
 func NewTmallItemCalculateHscodeGetRequest() *TmallItemCalculateHscodeGetRequest{
     return &TmallItemCalculateHscodeGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallItemCalculateHscodeGetRequest) GetApiMethodName() string {
     return "tmall.item.calculate.hscode.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallItemCalculateHscodeGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallItemCalculateHscodeGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ItemId Setter
+// 商品id
 func (r *TmallItemCalculateHscodeGetRequest) SetItemId(itemId int64) error {
     r.itemId = itemId
     r.Set("item_id", itemId)
     return nil
 }
 
+// ItemId Getter
 func (r TmallItemCalculateHscodeGetRequest) GetItemId() int64 {
     return r.itemId
 }
-

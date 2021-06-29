@@ -1,4 +1,5 @@
 {
+	"id": 28582,
 	"name": "yunos.tvpubadmin.device.stats",
 	"apiChineseName": "获取设备统计数据",
 	"description": "获取设备统计数据",

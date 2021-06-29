@@ -1,4 +1,5 @@
 {
+	"id": 10898,
 	"name": "taobao.qt.report.get",
 	"apiChineseName": "查询质检报告",
 	"description": "质检报告查询",

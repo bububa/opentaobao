@@ -1,4 +1,5 @@
 {
+	"id": 29157,
 	"name": "taobao.simba.customers.sid.get",
 	"apiChineseName": "查看功能权限",
 	"description": "查询用户是否拥有某个功能权限",

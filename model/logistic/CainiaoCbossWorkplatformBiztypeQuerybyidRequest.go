@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-菜鸟工单平台根据业务类型id查询业务类型详细信息 APIRequest
+菜鸟工单平台根据业务类型id查询业务类型详细信息 API请求
 cainiao.cboss.workplatform.biztype.querybyid
 
 菜鸟工单平台根据业务类型id查询业务类型详细信息。 目前调用者ISV
 */
 type CainiaoCbossWorkplatformBiztypeQuerybyidRequest struct {
     model.Params
-
     // 业务类型id
-    bizTypeId   string 
-
+    bizTypeId   string
 }
 
+// 初始化CainiaoCbossWorkplatformBiztypeQuerybyidRequest对象
 func NewCainiaoCbossWorkplatformBiztypeQuerybyidRequest() *CainiaoCbossWorkplatformBiztypeQuerybyidRequest{
     return &CainiaoCbossWorkplatformBiztypeQuerybyidRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r CainiaoCbossWorkplatformBiztypeQuerybyidRequest) GetApiMethodName() string {
     return "cainiao.cboss.workplatform.biztype.querybyid"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r CainiaoCbossWorkplatformBiztypeQuerybyidRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r CainiaoCbossWorkplatformBiztypeQuerybyidRequest) GetApiParams() url.Valu
     }
     return params
 }
-
-
+// BizTypeId Setter
+// 业务类型id
 func (r *CainiaoCbossWorkplatformBiztypeQuerybyidRequest) SetBizTypeId(bizTypeId string) error {
     r.bizTypeId = bizTypeId
     r.Set("biz_type_id", bizTypeId)
     return nil
 }
 
+// BizTypeId Getter
 func (r CainiaoCbossWorkplatformBiztypeQuerybyidRequest) GetBizTypeId() string {
     return r.bizTypeId
 }
-

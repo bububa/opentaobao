@@ -1,4 +1,5 @@
 {
+	"id": 42773,
 	"name": "alibaba.mos.commdy.posmerchandise.getmerchandise",
 	"apiChineseName": "去前置机商品在线查询",
 	"description": "去前置机商品在线查询接口",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-财务订单回流 APIRequest
+财务订单回流 API请求
 alibaba.wdk.finance.order.backflow
 
 星巴克拉取财务订单回流数据
 */
 type AlibabaWdkFinanceOrderBackflowRequest struct {
     model.Params
-
     // 财务订单回流入参
-    financeOrderDetailRequest   *FinanceOrderDetailRequest 
-
+    financeOrderDetailRequest   *FinanceOrderDetailRequest
 }
 
+// 初始化AlibabaWdkFinanceOrderBackflowRequest对象
 func NewAlibabaWdkFinanceOrderBackflowRequest() *AlibabaWdkFinanceOrderBackflowRequest{
     return &AlibabaWdkFinanceOrderBackflowRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkFinanceOrderBackflowRequest) GetApiMethodName() string {
     return "alibaba.wdk.finance.order.backflow"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkFinanceOrderBackflowRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkFinanceOrderBackflowRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// FinanceOrderDetailRequest Setter
+// 财务订单回流入参
 func (r *AlibabaWdkFinanceOrderBackflowRequest) SetFinanceOrderDetailRequest(financeOrderDetailRequest *FinanceOrderDetailRequest) error {
     r.financeOrderDetailRequest = financeOrderDetailRequest
     r.Set("finance_order_detail_request", financeOrderDetailRequest)
     return nil
 }
 
+// FinanceOrderDetailRequest Getter
 func (r AlibabaWdkFinanceOrderBackflowRequest) GetFinanceOrderDetailRequest() *FinanceOrderDetailRequest {
     return r.financeOrderDetailRequest
 }
-

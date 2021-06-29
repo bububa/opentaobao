@@ -1,4 +1,5 @@
 {
+	"id": 24740,
 	"name": "alibaba.autonavi.api.trafficboard.image.get",
 	"apiChineseName": "交通看板-栅格情报获取",
 	"description": "获取指定情报板ID的二进制数据（图片）",

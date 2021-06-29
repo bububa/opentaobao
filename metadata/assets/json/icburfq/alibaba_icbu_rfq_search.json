@@ -1,4 +1,5 @@
 {
+	"id": 32084,
 	"name": "alibaba.icbu.rfq.search",
 	"apiChineseName": "查询RFQ",
 	"description": "用于查询RFQ的信息",

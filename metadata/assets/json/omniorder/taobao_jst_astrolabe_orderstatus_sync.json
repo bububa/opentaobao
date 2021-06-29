@@ -1,4 +1,5 @@
 {
+	"id": 37940,
 	"name": "taobao.jst.astrolabe.orderstatus.sync",
 	"apiChineseName": "线下门店派单以及单据相关操作接口",
 	"description": "针对ERP系统部署在门店的商家，将派单状态回流到星盘",

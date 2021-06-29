@@ -1,4 +1,5 @@
 {
+	"id": 47575,
 	"name": "alibaba.wdk.logistics.pus.pickup.cararrived",
 	"apiChineseName": "自提业务-车辆到达上报车牌号",
 	"description": "自提业务-汽车自提,车辆到达上报车牌号",

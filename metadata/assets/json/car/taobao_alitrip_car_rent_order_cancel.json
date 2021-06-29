@@ -1,4 +1,5 @@
 {
+	"id": 26554,
 	"name": "taobao.alitrip.car.rent.order.cancel",
 	"apiChineseName": "租车-取消订单",
 	"description": "服务商主动取消用户订单或者拒绝取消订单.",

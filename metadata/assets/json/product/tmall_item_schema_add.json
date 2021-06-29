@@ -1,4 +1,5 @@
 {
+	"id": 23255,
 	"name": "tmall.item.schema.add",
 	"apiChineseName": "天猫根据规则发布商品",
 	"description": "天猫TopSchema发布商品。",

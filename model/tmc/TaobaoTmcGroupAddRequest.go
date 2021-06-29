@@ -7,35 +7,34 @@ import (
 )
 
 /* 
-为已开通用户添加用户分组 APIRequest
+为已开通用户添加用户分组 API请求
 taobao.tmc.group.add
 
 为已开通用户添加用户分组，授权消息使用
 */
 type TaobaoTmcGroupAddRequest struct {
     model.Params
-
     // 分组名称，同一个应用下需要保证唯一性，最长32个字符。添加分组后，消息通道会为用户的消息分配独立分组，但之前的消息还是存储于默认分组中。不能以default开头，default开头为系统默认组。
-    groupName   string 
-
+    groupName   string
     // 用户昵称列表，以半角逗号分隔，支持子账号，支持增量添加用户
-    nicks   []string 
-
+    nicks   []string
     // 用户所属于的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
-    userPlatform   string 
-
+    userPlatform   string
 }
 
+// 初始化TaobaoTmcGroupAddRequest对象
 func NewTaobaoTmcGroupAddRequest() *TaobaoTmcGroupAddRequest{
     return &TaobaoTmcGroupAddRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoTmcGroupAddRequest) GetApiMethodName() string {
     return "taobao.tmc.group.add"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoTmcGroupAddRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -43,35 +42,39 @@ func (r TaobaoTmcGroupAddRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// GroupName Setter
+// 分组名称，同一个应用下需要保证唯一性，最长32个字符。添加分组后，消息通道会为用户的消息分配独立分组，但之前的消息还是存储于默认分组中。不能以default开头，default开头为系统默认组。
 func (r *TaobaoTmcGroupAddRequest) SetGroupName(groupName string) error {
     r.groupName = groupName
     r.Set("group_name", groupName)
     return nil
 }
 
+// GroupName Getter
 func (r TaobaoTmcGroupAddRequest) GetGroupName() string {
     return r.groupName
 }
-
+// Nicks Setter
+// 用户昵称列表，以半角逗号分隔，支持子账号，支持增量添加用户
 func (r *TaobaoTmcGroupAddRequest) SetNicks(nicks []string) error {
     r.nicks = nicks
     r.Set("nicks", nicks)
     return nil
 }
 
+// Nicks Getter
 func (r TaobaoTmcGroupAddRequest) GetNicks() []string {
     return r.nicks
 }
-
+// UserPlatform Setter
+// 用户所属于的平台类型，tbUIC:淘宝用户; icbu: icbu用户;ae:ae用户
 func (r *TaobaoTmcGroupAddRequest) SetUserPlatform(userPlatform string) error {
     r.userPlatform = userPlatform
     r.Set("user_platform", userPlatform)
     return nil
 }
 
+// UserPlatform Getter
 func (r TaobaoTmcGroupAddRequest) GetUserPlatform() string {
     return r.userPlatform
 }
-

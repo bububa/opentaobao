@@ -1,4 +1,5 @@
 {
+	"id": 26800,
 	"name": "cainiao.cloudprint.customares.get",
 	"apiChineseName": "获取商家的自定义区模板信息",
 	"description": "供isv使用，获取商家的自定义区的模板信息",

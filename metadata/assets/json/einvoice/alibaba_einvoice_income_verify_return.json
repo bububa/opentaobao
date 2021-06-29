@@ -1,4 +1,5 @@
 {
+	"id": 40290,
 	"name": "alibaba.einvoice.income.verify.return",
 	"apiChineseName": "服务商回传发票查验的结果",
 	"description": "服务商回传发票查验的结果，分两种场景：扫描驱动服务商主动回传；阿里主动发起的查验回传",

@@ -7,38 +7,36 @@ import (
 )
 
 /* 
-门店商品批量游标方式查询接口 APIRequest
+门店商品批量游标方式查询接口 API请求
 alibaba.wdk.sku.scroll.query
 
 通过游标方式批量获取门店商品信息，包括商品条码，商品名称，价格，会员价等信息。
 */
 type AlibabaWdkSkuScrollQueryRequest struct {
     model.Params
-
     // 商家类目编码
-    merchantCatCode   string 
-
+    merchantCatCode   string
     // 门店编码
-    ouCode   string 
-
+    ouCode   string
     // 游标：第一次请求不用填写，否则请填写上一次请求返回的值，直到获取到足够的数据
-    scrollId   string 
-
+    scrollId   string
     // 英文逗号分隔的商品编码，最多20个。如果配合门店字段使用，直接非游标方式返回商品数据
-    skuCodes   string 
-
+    skuCodes   string
 }
 
+// 初始化AlibabaWdkSkuScrollQueryRequest对象
 func NewAlibabaWdkSkuScrollQueryRequest() *AlibabaWdkSkuScrollQueryRequest{
     return &AlibabaWdkSkuScrollQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkSkuScrollQueryRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.scroll.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkSkuScrollQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -46,45 +44,51 @@ func (r AlibabaWdkSkuScrollQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// MerchantCatCode Setter
+// 商家类目编码
 func (r *AlibabaWdkSkuScrollQueryRequest) SetMerchantCatCode(merchantCatCode string) error {
     r.merchantCatCode = merchantCatCode
     r.Set("merchant_cat_code", merchantCatCode)
     return nil
 }
 
+// MerchantCatCode Getter
 func (r AlibabaWdkSkuScrollQueryRequest) GetMerchantCatCode() string {
     return r.merchantCatCode
 }
-
+// OuCode Setter
+// 门店编码
 func (r *AlibabaWdkSkuScrollQueryRequest) SetOuCode(ouCode string) error {
     r.ouCode = ouCode
     r.Set("ou_code", ouCode)
     return nil
 }
 
+// OuCode Getter
 func (r AlibabaWdkSkuScrollQueryRequest) GetOuCode() string {
     return r.ouCode
 }
-
+// ScrollId Setter
+// 游标：第一次请求不用填写，否则请填写上一次请求返回的值，直到获取到足够的数据
 func (r *AlibabaWdkSkuScrollQueryRequest) SetScrollId(scrollId string) error {
     r.scrollId = scrollId
     r.Set("scroll_id", scrollId)
     return nil
 }
 
+// ScrollId Getter
 func (r AlibabaWdkSkuScrollQueryRequest) GetScrollId() string {
     return r.scrollId
 }
-
+// SkuCodes Setter
+// 英文逗号分隔的商品编码，最多20个。如果配合门店字段使用，直接非游标方式返回商品数据
 func (r *AlibabaWdkSkuScrollQueryRequest) SetSkuCodes(skuCodes string) error {
     r.skuCodes = skuCodes
     r.Set("sku_codes", skuCodes)
     return nil
 }
 
+// SkuCodes Getter
 func (r AlibabaWdkSkuScrollQueryRequest) GetSkuCodes() string {
     return r.skuCodes
 }
-

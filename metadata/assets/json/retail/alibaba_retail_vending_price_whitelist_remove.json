@@ -1,4 +1,5 @@
 {
+	"id": 42075,
 	"name": "alibaba.retail.vending.price.whitelist.remove",
 	"apiChineseName": "价格管控白名单去除",
 	"description": "商家价格管控白名单去除",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-服务商闲鱼卖家主动关闭订单 APIRequest
+服务商闲鱼卖家主动关闭订单 API请求
 alibaba.idle.isv.order.close
 
 供外部服务商 isv 提供卖家主动关闭交易订单的功能
 */
 type AlibabaIdleIsvOrderCloseRequest struct {
     model.Params
-
     // 输入参数
-    isvAppraiseIsvOrderCloseDto   *AppraiseIsvOrderCloseDto 
-
+    isvAppraiseIsvOrderCloseDto   *AppraiseIsvOrderCloseDto
 }
 
+// 初始化AlibabaIdleIsvOrderCloseRequest对象
 func NewAlibabaIdleIsvOrderCloseRequest() *AlibabaIdleIsvOrderCloseRequest{
     return &AlibabaIdleIsvOrderCloseRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIdleIsvOrderCloseRequest) GetApiMethodName() string {
     return "alibaba.idle.isv.order.close"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIdleIsvOrderCloseRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIdleIsvOrderCloseRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// IsvAppraiseIsvOrderCloseDto Setter
+// 输入参数
 func (r *AlibabaIdleIsvOrderCloseRequest) SetIsvAppraiseIsvOrderCloseDto(isvAppraiseIsvOrderCloseDto *AppraiseIsvOrderCloseDto) error {
     r.isvAppraiseIsvOrderCloseDto = isvAppraiseIsvOrderCloseDto
     r.Set("isv_appraise_isv_order_close_dto", isvAppraiseIsvOrderCloseDto)
     return nil
 }
 
+// IsvAppraiseIsvOrderCloseDto Getter
 func (r AlibabaIdleIsvOrderCloseRequest) GetIsvAppraiseIsvOrderCloseDto() *AppraiseIsvOrderCloseDto {
     return r.isvAppraiseIsvOrderCloseDto
 }
-

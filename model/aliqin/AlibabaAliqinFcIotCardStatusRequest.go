@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-物联卡状态查询 APIRequest
+物联卡状态查询 API请求
 alibaba.aliqin.fc.iot.cardStatus
 
 物联卡状态查询
 */
 type AlibabaAliqinFcIotCardStatusRequest struct {
     model.Params
-
     // SIM卡号
-    iccid   string 
-
+    iccid   string
 }
 
+// 初始化AlibabaAliqinFcIotCardStatusRequest对象
 func NewAlibabaAliqinFcIotCardStatusRequest() *AlibabaAliqinFcIotCardStatusRequest{
     return &AlibabaAliqinFcIotCardStatusRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAliqinFcIotCardStatusRequest) GetApiMethodName() string {
     return "alibaba.aliqin.fc.iot.cardStatus"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAliqinFcIotCardStatusRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAliqinFcIotCardStatusRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Iccid Setter
+// SIM卡号
 func (r *AlibabaAliqinFcIotCardStatusRequest) SetIccid(iccid string) error {
     r.iccid = iccid
     r.Set("iccid", iccid)
     return nil
 }
 
+// Iccid Getter
 func (r AlibabaAliqinFcIotCardStatusRequest) GetIccid() string {
     return r.iccid
 }
-

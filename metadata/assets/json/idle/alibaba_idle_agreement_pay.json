@@ -1,4 +1,5 @@
 {
+	"id": 48312,
 	"name": "alibaba.idle.agreement.pay",
 	"apiChineseName": "闲鱼平台商户代扣",
 	"description": "闲鱼平台代扣能力：用户和闲鱼签约代扣协议 服务商通过直付通产品挂载成为闲鱼二级商户 来完成用户和服务商的结算",

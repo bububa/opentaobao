@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-阿里巴巴dropshipping 产品信息获取 APIResponse
+阿里巴巴dropshipping 产品信息获取 API返回值 
 alibaba.dropshipping.product.get
 
 阿里巴巴dropshipping 产品信息获取
@@ -17,15 +17,11 @@ type AlibabaDropshippingProductGetAPIResponse struct {
     AlibabaDropshippingProductGetResponse
 }
 
+// 阿里巴巴dropshipping 产品信息获取 成功返回结果
 type AlibabaDropshippingProductGetResponse struct {
     XMLName xml.Name `xml:"alibaba_dropshipping_product_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // product pojo
-    
     Value   []DistributionSaleProduct `json:"value,omitempty" xml:"value>distribution_sale_product,omitempty"`
-    
-    
 }

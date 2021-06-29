@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-下pr单 APIResponse
+下pr单 API返回值 
 alibaba.pur.pr.create
 
 下pr单
@@ -17,15 +17,11 @@ type AlibabaPurPrCreateAPIResponse struct {
     AlibabaPurPrCreateResponse
 }
 
+// 下pr单 成功返回结果
 type AlibabaPurPrCreateResponse struct {
     XMLName xml.Name `xml:"alibaba_pur_pr_create_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回对象
-    
     Result   *MallReceivePrResponse `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

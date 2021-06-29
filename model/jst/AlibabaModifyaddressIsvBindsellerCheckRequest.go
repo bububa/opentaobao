@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询服务商下的商家是否开通了改地址 APIRequest
+查询服务商下的商家是否开通了改地址 API请求
 alibaba.modifyaddress.isv.bindseller.check
 
 鉴权服务商和商家的绑定关系，看商家是否开通了改地址
@@ -18,19 +18,21 @@ alibaba.modifyaddress.isv.bindseller.check
 */
 type AlibabaModifyaddressIsvBindsellerCheckRequest struct {
     model.Params
-
 }
 
+// 初始化AlibabaModifyaddressIsvBindsellerCheckRequest对象
 func NewAlibabaModifyaddressIsvBindsellerCheckRequest() *AlibabaModifyaddressIsvBindsellerCheckRequest{
     return &AlibabaModifyaddressIsvBindsellerCheckRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaModifyaddressIsvBindsellerCheckRequest) GetApiMethodName() string {
     return "alibaba.modifyaddress.isv.bindseller.check"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaModifyaddressIsvBindsellerCheckRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,5 +40,3 @@ func (r AlibabaModifyaddressIsvBindsellerCheckRequest) GetApiParams() url.Values
     }
     return params
 }
-
-

@@ -1,4 +1,5 @@
 {
+	"id": 33758,
 	"name": "taobao.omniorder.store.deliverconfig.get",
 	"apiChineseName": "查询门店发货配置内容",
 	"description": "查询门店发货配置内容",

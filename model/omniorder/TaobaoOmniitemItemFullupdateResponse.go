@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-全渠道商品全量更新 APIResponse
+全渠道商品全量更新 API返回值 
 taobao.omniitem.item.fullupdate
 
 全渠道商品全量更新，仅适用于全渠道门店商品
@@ -19,15 +19,11 @@ type TaobaoOmniitemItemFullupdateAPIResponse struct {
     TaobaoOmniitemItemFullupdateResponse
 }
 
+// 全渠道商品全量更新 成功返回结果
 type TaobaoOmniitemItemFullupdateResponse struct {
     XMLName xml.Name `xml:"omniitem_item_fullupdate_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     Result   *TaobaoOmniitemItemFullupdateResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

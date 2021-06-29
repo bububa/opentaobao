@@ -1,4 +1,5 @@
 {
+	"id": 44780,
 	"name": "alibaba.it.ap.address.set",
 	"apiChineseName": "setApAddressNew",
 	"description": "该接口可为ISV系统提供 ap位置信息维护的功能",

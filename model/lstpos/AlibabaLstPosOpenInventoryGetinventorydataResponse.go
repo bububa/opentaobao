@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-商品库存只读接口(最多20条库存信息) APIResponse
+商品库存只读接口(最多20条库存信息) API返回值 
 alibaba.lst.pos.open.inventory.getinventorydata
 
 商品库存只读接口(最多20条库存信息)
@@ -17,15 +17,11 @@ type AlibabaLstPosOpenInventoryGetinventorydataAPIResponse struct {
     AlibabaLstPosOpenInventoryGetinventorydataResponse
 }
 
+// 商品库存只读接口(最多20条库存信息) 成功返回结果
 type AlibabaLstPosOpenInventoryGetinventorydataResponse struct {
     XMLName xml.Name `xml:"alibaba_lst_pos_open_inventory_getinventorydata_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回结果对象
-    
     Result   *AlibabaLstPosOpenInventoryGetinventorydataResultDto `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

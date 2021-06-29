@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-营销券合同创建接口 APIRequest
+营销券合同创建接口 API请求
 alibaba.wdk.coupon.contract.create
 
 营销券合同创建接口
 */
 type AlibabaWdkCouponContractCreateRequest struct {
     model.Params
-
     // 调用入参
-    createContractInstanceRequest   *CreateContractInstanceRequest 
-
+    createContractInstanceRequest   *CreateContractInstanceRequest
 }
 
+// 初始化AlibabaWdkCouponContractCreateRequest对象
 func NewAlibabaWdkCouponContractCreateRequest() *AlibabaWdkCouponContractCreateRequest{
     return &AlibabaWdkCouponContractCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkCouponContractCreateRequest) GetApiMethodName() string {
     return "alibaba.wdk.coupon.contract.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkCouponContractCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkCouponContractCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// CreateContractInstanceRequest Setter
+// 调用入参
 func (r *AlibabaWdkCouponContractCreateRequest) SetCreateContractInstanceRequest(createContractInstanceRequest *CreateContractInstanceRequest) error {
     r.createContractInstanceRequest = createContractInstanceRequest
     r.Set("create_contract_instance_request", createContractInstanceRequest)
     return nil
 }
 
+// CreateContractInstanceRequest Getter
 func (r AlibabaWdkCouponContractCreateRequest) GetCreateContractInstanceRequest() *CreateContractInstanceRequest {
     return r.createContractInstanceRequest
 }
-

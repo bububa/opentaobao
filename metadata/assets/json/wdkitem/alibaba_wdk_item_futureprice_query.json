@@ -1,4 +1,5 @@
 {
+	"id": 49181,
 	"name": "alibaba.wdk.item.futureprice.query",
 	"apiChineseName": "单个商品未来价查询接口",
 	"description": "查询单个商品未来价，融合了未来基础售价+未来促销价",

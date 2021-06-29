@@ -1,4 +1,5 @@
 {
+	"id": 314,
 	"name": "taobao.item.sku.delete",
 	"apiChineseName": "删除SKU",
 	"description": "删除一个sku的数据\u003cbr/\u003e需要删除的sku通过属性properties进行匹配查找",

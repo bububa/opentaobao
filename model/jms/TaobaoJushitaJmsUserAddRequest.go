@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-添加ONS消息同步用户 APIRequest
+添加ONS消息同步用户 API请求
 taobao.jushita.jms.user.add
 
 添加ONS消息同步用户
 */
 type TaobaoJushitaJmsUserAddRequest struct {
     model.Params
-
     // topic列表,不填则继承appkey所订阅的topic
-    topicNames   []string 
-
+    topicNames   []string
 }
 
+// 初始化TaobaoJushitaJmsUserAddRequest对象
 func NewTaobaoJushitaJmsUserAddRequest() *TaobaoJushitaJmsUserAddRequest{
     return &TaobaoJushitaJmsUserAddRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoJushitaJmsUserAddRequest) GetApiMethodName() string {
     return "taobao.jushita.jms.user.add"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoJushitaJmsUserAddRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoJushitaJmsUserAddRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TopicNames Setter
+// topic列表,不填则继承appkey所订阅的topic
 func (r *TaobaoJushitaJmsUserAddRequest) SetTopicNames(topicNames []string) error {
     r.topicNames = topicNames
     r.Set("topic_names", topicNames)
     return nil
 }
 
+// TopicNames Getter
 func (r TaobaoJushitaJmsUserAddRequest) GetTopicNames() []string {
     return r.topicNames
 }
-

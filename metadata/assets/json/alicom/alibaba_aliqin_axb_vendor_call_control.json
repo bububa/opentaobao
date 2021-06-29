@@ -1,4 +1,5 @@
 {
+	"id": 33507,
 	"name": "alibaba.aliqin.axb.vendor.call.control",
 	"apiChineseName": "转呼控制接口",
 	"description": "转呼控制接口，用于查询小号绑定关系，控制呼叫转接目标",

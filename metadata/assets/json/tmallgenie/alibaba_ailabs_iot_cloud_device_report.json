@@ -1,4 +1,5 @@
 {
+	"id": 48926,
 	"name": "alibaba.ailabs.iot.cloud.device.report",
 	"apiChineseName": "天猫精灵云云接入设备状态、事件上报接口",
 	"description": "承接天猫精灵云云接入设备的状态、事件上报",

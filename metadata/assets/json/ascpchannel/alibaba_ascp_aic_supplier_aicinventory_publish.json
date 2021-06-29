@@ -1,4 +1,5 @@
 {
+	"id": 52348,
 	"name": "alibaba.ascp.aic.supplier.aicinventory.publish",
 	"apiChineseName": "商家仓操作aic库存发布服务",
 	"description": "商家调用这个接口来发布增加库存数据",

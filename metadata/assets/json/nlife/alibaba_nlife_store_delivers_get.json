@@ -1,4 +1,5 @@
 {
+	"id": 36778,
 	"name": "alibaba.nlife.store.delivers.get",
 	"apiChineseName": "获取门店采购单下的发货单列表",
 	"description": "获取门店采购单下的发货单列表",

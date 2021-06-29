@@ -1,4 +1,5 @@
 {
+	"id": 27244,
 	"name": "taobao.daogoubao.order.statistics.total",
 	"apiChineseName": "销售订单总额统计",
 	"description": "对接千牛端数字中心",

@@ -1,4 +1,5 @@
 {
+	"id": 50063,
 	"name": "alibaba.icbu.product.schema.get",
 	"apiChineseName": "（新）ICBU商品发布schema接口",
 	"description": "获取ICBU商品发布的页面规则和填写字段，适用于新发商品",

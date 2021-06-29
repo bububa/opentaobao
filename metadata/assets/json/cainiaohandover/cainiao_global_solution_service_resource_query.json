@@ -1,4 +1,5 @@
 {
+	"id": 50657,
 	"name": "cainiao.global.solution.service.resource.query",
 	"apiChineseName": "查询解决方案服务资源列表",
 	"description": "返回直接解决方案的指定物流服务的可用资源列表",

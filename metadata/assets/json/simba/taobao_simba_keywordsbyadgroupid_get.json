@@ -1,4 +1,5 @@
 {
+	"id": 21682,
 	"name": "taobao.simba.keywordsbyadgroupid.get",
 	"apiChineseName": "取得一个推广组的所有关键词",
 	"description": "取得一个推广组的所有关键词",

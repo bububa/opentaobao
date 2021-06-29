@@ -1,4 +1,5 @@
 {
+	"id": 25996,
 	"name": "taobao.qimen.stockchange.report",
 	"apiChineseName": "库存异动通知接口",
 	"description": "WMS调用奇门的接口,将库存异动信息信息回传给ERP",

@@ -1,4 +1,5 @@
 {
+	"id": 42670,
 	"name": "alibaba.ailabs.tvs.device.list",
 	"apiChineseName": "获取TVS设备列表",
 	"description": "获取用户所绑定的TVS设备列表",

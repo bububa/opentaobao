@@ -1,4 +1,5 @@
 {
+	"id": 51632,
 	"name": "alibaba.lst.trade.seller.offline.order.query",
 	"apiChineseName": "供应商-线下订单-查询接口",
 	"description": "供应商线下订单数据上传后查询物流状态",

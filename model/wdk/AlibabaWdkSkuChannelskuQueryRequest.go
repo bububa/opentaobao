@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询渠道商品 APIRequest
+查询渠道商品 API请求
 alibaba.wdk.sku.channelsku.query
 
 查询渠道商品
 */
 type AlibabaWdkSkuChannelskuQueryRequest struct {
     model.Params
-
     // 查询渠道商品的入参
-    param   *ChannelSkuQueryDo 
-
+    param   *ChannelSkuQueryDo
 }
 
+// 初始化AlibabaWdkSkuChannelskuQueryRequest对象
 func NewAlibabaWdkSkuChannelskuQueryRequest() *AlibabaWdkSkuChannelskuQueryRequest{
     return &AlibabaWdkSkuChannelskuQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkSkuChannelskuQueryRequest) GetApiMethodName() string {
     return "alibaba.wdk.sku.channelsku.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkSkuChannelskuQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkSkuChannelskuQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param Setter
+// 查询渠道商品的入参
 func (r *AlibabaWdkSkuChannelskuQueryRequest) SetParam(param *ChannelSkuQueryDo) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaWdkSkuChannelskuQueryRequest) GetParam() *ChannelSkuQueryDo {
     return r.param
 }
-

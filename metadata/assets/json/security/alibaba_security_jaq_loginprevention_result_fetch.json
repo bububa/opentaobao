@@ -1,4 +1,5 @@
 {
+	"id": 26144,
 	"name": "alibaba.security.jaq.loginprevention.result.fetch",
 	"apiChineseName": "获取登录保护结果",
 	"description": "获取登录保护结果",

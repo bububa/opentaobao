@@ -1,4 +1,5 @@
 {
+	"id": 37986,
 	"name": "alibaba.campus.device.openapi.getsimpledevicelist",
 	"apiChineseName": "查询设备基础信息集合(仅包含设备id,code,是否启用,位置信息,描述等基础信息)",
 	"description": "查询设备基础信息集合(仅包含设备id,code,是否启用,位置信息,描述等基础信息)",

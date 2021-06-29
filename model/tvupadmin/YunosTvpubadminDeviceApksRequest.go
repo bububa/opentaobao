@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取停开服apk列表 APIRequest
+获取停开服apk列表 API请求
 yunos.tvpubadmin.device.apks
 
 获取停开服apk列表
 */
 type YunosTvpubadminDeviceApksRequest struct {
     model.Params
-
     // 牌照
-    license   int64 
-
+    license   int64
 }
 
+// 初始化YunosTvpubadminDeviceApksRequest对象
 func NewYunosTvpubadminDeviceApksRequest() *YunosTvpubadminDeviceApksRequest{
     return &YunosTvpubadminDeviceApksRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminDeviceApksRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.device.apks"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminDeviceApksRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminDeviceApksRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// License Setter
+// 牌照
 func (r *YunosTvpubadminDeviceApksRequest) SetLicense(license int64) error {
     r.license = license
     r.Set("license", license)
     return nil
 }
 
+// License Getter
 func (r YunosTvpubadminDeviceApksRequest) GetLicense() int64 {
     return r.license
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 26791,
 	"name": "taobao.qimen.sn.report",
 	"apiChineseName": "发货单SN通知接口",
 	"description": "WMS调用奇门的接口,在仓库出库单后, 把SN信息回传给ERP",

@@ -1,4 +1,5 @@
 {
+	"id": 10710,
 	"name": "taobao.ump.mbbs.get",
 	"apiChineseName": "获取营销积木块列表",
 	"description": "获取营销积木块列表，可以根据类型获取，也可以将该字段设为空，获取所有的",

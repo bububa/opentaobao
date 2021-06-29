@@ -1,4 +1,5 @@
 {
+	"id": 30901,
 	"name": "taobao.aplatform.weakget",
 	"apiChineseName": "活动平台弱登录接口",
 	"description": "无线活动平台的开放接口，提供商品信息等的读操作",

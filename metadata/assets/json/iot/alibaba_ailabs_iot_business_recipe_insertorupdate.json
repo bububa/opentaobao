@@ -1,4 +1,5 @@
 {
+	"id": 49978,
 	"name": "alibaba.ailabs.iot.business.recipe.insertorupdate",
 	"apiChineseName": "插入和更新食谱",
 	"description": "插入和更新食谱，将isv的食谱添加到云端进行存储",

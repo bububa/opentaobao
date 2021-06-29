@@ -1,4 +1,5 @@
 {
+	"id": 28703,
 	"name": "alibaba.oversea.exchagerate.get",
 	"apiChineseName": "汇率信息获取",
 	"description": "提供外部汇率查询接口",

@@ -1,4 +1,5 @@
 {
+	"id": 51024,
 	"name": "alibaba.einvoice.prod.result.fileurl.get",
 	"apiChineseName": "发票中台-发票文件下载地址查询",
 	"description": "发票文件下载地址查询，外部ISV通过该接口可以查对应发票文件",

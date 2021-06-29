@@ -1,4 +1,5 @@
 {
+	"id": 27339,
 	"name": "alibaba.alihealth.examination.reserve.cancel",
 	"apiChineseName": "体检机构对接_预约取消",
 	"description": "体检机构对接_体检取消",

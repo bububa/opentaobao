@@ -1,4 +1,5 @@
 {
+	"id": 33913,
 	"name": "alibaba.telecom.zhima.ordernotify.callback",
 	"apiChineseName": "阿里通信芝麻订单通知",
 	"description": "商家通知阿里通信，芝麻订单状态，阿里通信侧进行代扣支付、发货并确认收货",

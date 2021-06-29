@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-商家代客售后逆向申请渲染获取 APIRequest
+商家代客售后逆向申请渲染获取 API请求
 alibaba.tcls.aelophy.refund.csapplyrender
 
 提供商家代客售后逆向申请渲染获取的接口
 */
 type AlibabaTclsAelophyRefundCsapplyrenderRequest struct {
     model.Params
-
     // 系统自动生成
-    refundCsApplyRenderDTO   *RefundCsApplyRenderDto 
-
+    refundCsApplyRenderDTO   *RefundCsApplyRenderDto
 }
 
+// 初始化AlibabaTclsAelophyRefundCsapplyrenderRequest对象
 func NewAlibabaTclsAelophyRefundCsapplyrenderRequest() *AlibabaTclsAelophyRefundCsapplyrenderRequest{
     return &AlibabaTclsAelophyRefundCsapplyrenderRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaTclsAelophyRefundCsapplyrenderRequest) GetApiMethodName() string {
     return "alibaba.tcls.aelophy.refund.csapplyrender"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaTclsAelophyRefundCsapplyrenderRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaTclsAelophyRefundCsapplyrenderRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// RefundCsApplyRenderDTO Setter
+// 系统自动生成
 func (r *AlibabaTclsAelophyRefundCsapplyrenderRequest) SetRefundCsApplyRenderDTO(refundCsApplyRenderDTO *RefundCsApplyRenderDto) error {
     r.refundCsApplyRenderDTO = refundCsApplyRenderDTO
     r.Set("refund_cs_apply_render_d_t_o", refundCsApplyRenderDTO)
     return nil
 }
 
+// RefundCsApplyRenderDTO Getter
 func (r AlibabaTclsAelophyRefundCsapplyrenderRequest) GetRefundCsApplyRenderDTO() *RefundCsApplyRenderDto {
     return r.refundCsApplyRenderDTO
 }
-

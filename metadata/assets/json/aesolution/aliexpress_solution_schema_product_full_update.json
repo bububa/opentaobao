@@ -1,4 +1,5 @@
 {
+	"id": 44113,
 	"name": "aliexpress.solution.schema.product.full.update",
 	"apiChineseName": "aliexpress.solution.schema.product.full.update",
 	"description": "Schema interface for product full update. QPS(Invoke per second) for this API is limited to 100 for each appkey and 50 for each seller.",

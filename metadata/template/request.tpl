@@ -7,29 +7,32 @@ import (
 )
 
 /* 
-{{ .ChineseName }} APIRequest
+{{ .ChineseName }} API请求
 {{ .ApiName }}
 
 {{ .Desc }}
 */
 type {{ .Name }}Request struct {
     model.Params
-{{ range $v := .RequestParams }}
+{{- range $v := .RequestParams }}
     // {{ $v.Desc }}
     {{ $v.Label }}   {{ $v.Type }} 
-{{ end }}
+{{- end }}
 }
 
+// 初始化{{ .Name }}Request对象
 func New{{ .Name }}Request() *{{ .Name }}Request{
     return &{{ .Name }}Request{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r {{ .Name }}Request) GetApiMethodName() string {
     return "{{ .ApiName }}"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r {{ .Name }}Request) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,14 +41,17 @@ func (r {{ .Name }}Request) GetApiParams() url.Values {
     return params
 }
 
-{{ range $v := .RequestParams }}
+{{- range $v := .RequestParams }}
+// {{ $v.Name }} Setter
+// {{ $v.Desc }}
 func (r *{{ $.Name }}Request) Set{{ $v.Name }}({{ $v.Label }} {{ $v.Type }}) error {
     r.{{ $v.Label }} = {{ $v.Label }}
     r.Set("{{ $v.ParamKey }}", {{ $v.Label }})
     return nil
 }
 
+// {{ $v.Name }} Getter
 func (r {{ $.Name }}Request) Get{{ $v.Name }}() {{ $v.Type }} {
     return r.{{ $v.Label }}
 }
-{{ end }}
+{{- end }}

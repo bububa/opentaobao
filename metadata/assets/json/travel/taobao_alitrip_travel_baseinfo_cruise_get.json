@@ -1,4 +1,5 @@
 {
+	"id": 26203,
 	"name": "taobao.alitrip.travel.baseinfo.cruise.get",
 	"apiChineseName": "【API3.0】度假线路商品发布时基础信息获取接口：邮轮扩展信息获取",
 	"description": "旅行度假新商品发布时可用的扩展接口，用于获取邮轮类目相关扩展信息。",

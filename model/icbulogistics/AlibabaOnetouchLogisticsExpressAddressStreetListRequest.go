@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-四级地址库-街道 APIRequest
+四级地址库-街道 API请求
 alibaba.onetouch.logistics.express.address.street.list
 
 四级地址库-街道模糊查询
 */
 type AlibabaOnetouchLogisticsExpressAddressStreetListRequest struct {
     model.Params
-
     // 请求参数
-    paramQuery   *AddressQueryDto 
-
+    paramQuery   *AddressQueryDto
 }
 
+// 初始化AlibabaOnetouchLogisticsExpressAddressStreetListRequest对象
 func NewAlibabaOnetouchLogisticsExpressAddressStreetListRequest() *AlibabaOnetouchLogisticsExpressAddressStreetListRequest{
     return &AlibabaOnetouchLogisticsExpressAddressStreetListRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaOnetouchLogisticsExpressAddressStreetListRequest) GetApiMethodName() string {
     return "alibaba.onetouch.logistics.express.address.street.list"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaOnetouchLogisticsExpressAddressStreetListRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaOnetouchLogisticsExpressAddressStreetListRequest) GetApiParams() 
     }
     return params
 }
-
-
+// ParamQuery Setter
+// 请求参数
 func (r *AlibabaOnetouchLogisticsExpressAddressStreetListRequest) SetParamQuery(paramQuery *AddressQueryDto) error {
     r.paramQuery = paramQuery
     r.Set("param_query", paramQuery)
     return nil
 }
 
+// ParamQuery Getter
 func (r AlibabaOnetouchLogisticsExpressAddressStreetListRequest) GetParamQuery() *AddressQueryDto {
     return r.paramQuery
 }
-

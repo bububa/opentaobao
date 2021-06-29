@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询税控开通工单详情 APIRequest
+查询税控开通工单详情 API请求
 alibaba.einvoice.flow.tax.get
 
 查询税控开通工单详情，接口返回工单状态、开票商户信息以及税控设备信息。
@@ -15,22 +15,23 @@ alibaba.einvoice.flow.tax.get
 */
 type AlibabaEinvoiceFlowTaxGetRequest struct {
     model.Params
-
     // 入驻开通工单ID
-    flowId   string 
-
+    flowId   string
 }
 
+// 初始化AlibabaEinvoiceFlowTaxGetRequest对象
 func NewAlibabaEinvoiceFlowTaxGetRequest() *AlibabaEinvoiceFlowTaxGetRequest{
     return &AlibabaEinvoiceFlowTaxGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaEinvoiceFlowTaxGetRequest) GetApiMethodName() string {
     return "alibaba.einvoice.flow.tax.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaEinvoiceFlowTaxGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,15 +39,15 @@ func (r AlibabaEinvoiceFlowTaxGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// FlowId Setter
+// 入驻开通工单ID
 func (r *AlibabaEinvoiceFlowTaxGetRequest) SetFlowId(flowId string) error {
     r.flowId = flowId
     r.Set("flow_id", flowId)
     return nil
 }
 
+// FlowId Getter
 func (r AlibabaEinvoiceFlowTaxGetRequest) GetFlowId() string {
     return r.flowId
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 46939,
 	"name": "alibaba.alihealth.outflow.operationinfo.sync",
 	"apiChineseName": "处方外流-操作信息同步",
 	"description": "阿里健康-处方外流-对外提供同步操作信息功能",

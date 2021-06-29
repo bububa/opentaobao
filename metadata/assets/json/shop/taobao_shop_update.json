@@ -1,4 +1,5 @@
 {
+	"id": 69,
 	"name": "taobao.shop.update",
 	"apiChineseName": "更新店铺基本信息",
 	"description": "目前只支持标题、公告和描述的更新",

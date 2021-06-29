@@ -1,4 +1,5 @@
 {
+	"id": 56064,
 	"name": "taobao.subway.wordpackage.get",
 	"apiChineseName": "获取词包列表",
 	"description": "获取流量智选、捡漏词包等词包列表",

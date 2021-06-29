@@ -1,4 +1,5 @@
 {
+	"id": 52752,
 	"name": "aliexpress.interactive.task.delivery.query",
 	"apiChineseName": "AE互动任务投放",
 	"description": "将内部配置好的任务，如浏览商品，店铺投放给外部ISV",

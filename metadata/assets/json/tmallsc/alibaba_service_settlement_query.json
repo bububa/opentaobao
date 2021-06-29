@@ -1,4 +1,5 @@
 {
+	"id": 43721,
 	"name": "alibaba.service.settlement.query",
 	"apiChineseName": "服务平台结算单明细查询服务",
 	"description": "给服务商提供结算单明细查询功能",

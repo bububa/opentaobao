@@ -1,4 +1,5 @@
 {
+	"id": 57060,
 	"name": "alibaba.alsc.chuda.template.send",
 	"apiChineseName": "本地生活触达模板消息发送接口",
 	"description": "允许三方小程序通过该api发送本地生活触达消息",

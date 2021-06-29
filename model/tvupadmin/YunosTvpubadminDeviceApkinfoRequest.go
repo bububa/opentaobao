@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取停开服apk信息 APIRequest
+获取停开服apk信息 API请求
 yunos.tvpubadmin.device.apkinfo
 
 获取停开服apk信息
 */
 type YunosTvpubadminDeviceApkinfoRequest struct {
     model.Params
-
     // apkid
-    id   int64 
-
+    id   int64
 }
 
+// 初始化YunosTvpubadminDeviceApkinfoRequest对象
 func NewYunosTvpubadminDeviceApkinfoRequest() *YunosTvpubadminDeviceApkinfoRequest{
     return &YunosTvpubadminDeviceApkinfoRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminDeviceApkinfoRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.device.apkinfo"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminDeviceApkinfoRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminDeviceApkinfoRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Id Setter
+// apkid
 func (r *YunosTvpubadminDeviceApkinfoRequest) SetId(id int64) error {
     r.id = id
     r.Set("id", id)
     return nil
 }
 
+// Id Getter
 func (r YunosTvpubadminDeviceApkinfoRequest) GetId() int64 {
     return r.id
 }
-

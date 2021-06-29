@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-淘外分销退货回传物流单号 APIRequest
+淘外分销退货回传物流单号 API请求
 alibaba.ascp.channel.refund.goods.waybill
 
 淘外分销退货回传物流单号
 */
 type AlibabaAscpChannelRefundGoodsWaybillRequest struct {
     model.Params
-
     // 请求
-    refundWayBillReq   *ExternalRefundGoodsWaybillRequest 
-
+    refundWayBillReq   *ExternalRefundGoodsWaybillRequest
 }
 
+// 初始化AlibabaAscpChannelRefundGoodsWaybillRequest对象
 func NewAlibabaAscpChannelRefundGoodsWaybillRequest() *AlibabaAscpChannelRefundGoodsWaybillRequest{
     return &AlibabaAscpChannelRefundGoodsWaybillRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAscpChannelRefundGoodsWaybillRequest) GetApiMethodName() string {
     return "alibaba.ascp.channel.refund.goods.waybill"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAscpChannelRefundGoodsWaybillRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAscpChannelRefundGoodsWaybillRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// RefundWayBillReq Setter
+// 请求
 func (r *AlibabaAscpChannelRefundGoodsWaybillRequest) SetRefundWayBillReq(refundWayBillReq *ExternalRefundGoodsWaybillRequest) error {
     r.refundWayBillReq = refundWayBillReq
     r.Set("refund_way_bill_req", refundWayBillReq)
     return nil
 }
 
+// RefundWayBillReq Getter
 func (r AlibabaAscpChannelRefundGoodsWaybillRequest) GetRefundWayBillReq() *ExternalRefundGoodsWaybillRequest {
     return r.refundWayBillReq
 }
-

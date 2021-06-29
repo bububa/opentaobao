@@ -1,4 +1,5 @@
 {
+	"id": 45161,
 	"name": "alibaba.alihealth.drug.kyt.yy.querysubcodes",
 	"apiChineseName": "查询一个码的所有子码",
 	"description": "单码的了码查询",

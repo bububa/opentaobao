@@ -1,4 +1,5 @@
 {
+	"id": 41080,
 	"name": "alibaba.alihealth.drug.kyt.getbyentid",
 	"apiChineseName": "根据企业主键查看企业详细信息",
 	"description": "根据企业主键查看企业详细信息",

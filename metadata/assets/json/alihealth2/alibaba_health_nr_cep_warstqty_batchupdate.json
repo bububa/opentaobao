@@ -1,4 +1,5 @@
 {
+	"id": 56279,
 	"name": "alibaba.health.nr.cep.warstqty.batchupdate",
 	"apiChineseName": "批量更新ISV库存",
 	"description": "青岛医保服务-ISV批量更新孔雀翎中库存数据",

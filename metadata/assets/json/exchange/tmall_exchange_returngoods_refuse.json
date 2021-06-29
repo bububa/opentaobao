@@ -1,4 +1,5 @@
 {
+	"id": 31204,
 	"name": "tmall.exchange.returngoods.refuse",
 	"apiChineseName": "卖家拒绝确认收货",
 	"description": "卖家拒绝买家换货申请",

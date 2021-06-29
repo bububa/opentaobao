@@ -1,4 +1,5 @@
 {
+	"id": 27293,
 	"name": "cainiao.nborderfront.user.outside.queryoutsideuser",
 	"apiChineseName": "查询外部小件员休息",
 	"description": "采用SPI方式查询外部公司的小件员信息",

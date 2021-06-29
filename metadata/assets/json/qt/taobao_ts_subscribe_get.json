@@ -1,4 +1,5 @@
 {
+	"id": 10900,
 	"name": "taobao.ts.subscribe.get",
 	"apiChineseName": "淘宝服务订购关系查询",
 	"description": "ts订购关系状态查询. 暂只支持1口价服务.",

@@ -1,4 +1,5 @@
 {
+	"id": 47785,
 	"name": "alitrip.tuan.hotel.image.upload",
 	"apiChineseName": "图片上传接口",
 	"description": "用户调用此接口完成外网图片上传至卖家图片中心，此接口返回图片中心的图片地址",

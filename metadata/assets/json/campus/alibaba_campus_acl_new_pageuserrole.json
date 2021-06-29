@@ -1,4 +1,5 @@
 {
+	"id": 37549,
 	"name": "alibaba.campus.acl.new.pageuserrole",
 	"apiChineseName": "分页查询管理员",
 	"description": "新增用户和角色的关系",

@@ -1,4 +1,5 @@
 {
+	"id": 22662,
 	"name": "taobao.xhotel.roomtype.add",
 	"apiChineseName": "房型新增接口（ID重复变更新）",
 	"description": "房型添加或更新",

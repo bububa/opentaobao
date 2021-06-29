@@ -1,4 +1,5 @@
 {
+	"id": 45054,
 	"name": "taobao.xhotel.pms.guestbill.get.vtwo",
 	"apiChineseName": "客人PMS账单信息查询",
 	"description": "从pms获取客人账单信息",

@@ -1,4 +1,5 @@
 {
+	"id": 55596,
 	"name": "taobao.miniapp.distribution.order.get",
 	"apiChineseName": "小程序投放-查询小程序投放计划信息",
 	"description": "服务商可通过该API，读取自己开发的小程序对应的投放计划的相关信息",

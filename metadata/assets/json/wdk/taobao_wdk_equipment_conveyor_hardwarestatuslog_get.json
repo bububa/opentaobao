@@ -1,4 +1,5 @@
 {
+	"id": 30557,
 	"name": "taobao.wdk.equipment.conveyor.hardwarestatuslog.get",
 	"apiChineseName": "硬件状态变化日志查询",
 	"description": "硬件状态变化日志查询",

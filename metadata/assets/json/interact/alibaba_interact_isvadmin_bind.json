@@ -1,4 +1,5 @@
 {
+	"id": 23766,
 	"name": "alibaba.interact.isvadmin.bind",
 	"apiChineseName": "创建及绑定互动实例",
 	"description": "创建互动实例，并绑定奖池",

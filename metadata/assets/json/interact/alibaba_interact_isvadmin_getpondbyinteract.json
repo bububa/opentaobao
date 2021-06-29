@@ -1,4 +1,5 @@
 {
+	"id": 23767,
 	"name": "alibaba.interact.isvadmin.getpondbyinteract",
 	"apiChineseName": "根据互动实例ID查询奖池信息",
 	"description": "根据互动实例ID查询奖池信息",

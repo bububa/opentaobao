@@ -1,4 +1,5 @@
 {
+	"id": 53432,
 	"name": "alitrip.btrip.corpop.user.sync",
 	"apiChineseName": "外部人员同步",
 	"description": "同步外部平台用户信息至商旅内部",

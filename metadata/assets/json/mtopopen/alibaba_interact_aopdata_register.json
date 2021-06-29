@@ -1,4 +1,5 @@
 {
+	"id": 26148,
 	"name": "alibaba.interact.aopdata.register",
 	"apiChineseName": "资源位数据推送接口",
 	"description": "提供给isv，查询以及推送浮层资源位的三方活动数据",

@@ -1,4 +1,5 @@
 {
+	"id": 41476,
 	"name": "aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create",
 	"apiChineseName": "aliexpress.solution.issue.partner.rma.reverselogistic.trackinginfo.create",
 	"description": "Receives information about reverse logistics tracking info",

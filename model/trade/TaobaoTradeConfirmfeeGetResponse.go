@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取交易确认收货费用 APIResponse
+获取交易确认收货费用 API返回值 
 taobao.trade.confirmfee.get
 
 获取交易确认收货费用，可以获取主订单或子订单的确认收货费用
@@ -17,15 +17,11 @@ type TaobaoTradeConfirmfeeGetAPIResponse struct {
     TaobaoTradeConfirmfeeGetResponse
 }
 
+// 获取交易确认收货费用 成功返回结果
 type TaobaoTradeConfirmfeeGetResponse struct {
     XMLName xml.Name `xml:"trade_confirmfee_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 获取到的交易确认收货费用
-    
     TradeConfirmFee   *TradeConfirmFee `json:"trade_confirm_fee,omitempty" xml:"trade_confirm_fee,omitempty"`
-
-    
 }

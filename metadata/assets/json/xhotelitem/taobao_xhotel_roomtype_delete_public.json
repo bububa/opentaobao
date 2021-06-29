@@ -1,4 +1,5 @@
 {
+	"id": 43195,
 	"name": "taobao.xhotel.roomtype.delete.public",
 	"apiChineseName": "商家删除房型数据接口",
 	"description": "房型删除TOP接口",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询商品池活动下的商品 APIRequest
+查询商品池活动下的商品 API请求
 alibaba.wdk.marketing.itempool.queryitems
 
 查询商品池活动下面的商品
 */
 type AlibabaWdkMarketingItempoolQueryitemsRequest struct {
     model.Params
-
     // 查询入参
-    param   *ActivitySkuQuery 
-
+    param   *ActivitySkuQuery
 }
 
+// 初始化AlibabaWdkMarketingItempoolQueryitemsRequest对象
 func NewAlibabaWdkMarketingItempoolQueryitemsRequest() *AlibabaWdkMarketingItempoolQueryitemsRequest{
     return &AlibabaWdkMarketingItempoolQueryitemsRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkMarketingItempoolQueryitemsRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.itempool.queryitems"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkMarketingItempoolQueryitemsRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkMarketingItempoolQueryitemsRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// Param Setter
+// 查询入参
 func (r *AlibabaWdkMarketingItempoolQueryitemsRequest) SetParam(param *ActivitySkuQuery) error {
     r.param = param
     r.Set("param", param)
     return nil
 }
 
+// Param Getter
 func (r AlibabaWdkMarketingItempoolQueryitemsRequest) GetParam() *ActivitySkuQuery {
     return r.param
 }
-

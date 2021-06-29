@@ -1,4 +1,5 @@
 {
+	"id": 55231,
 	"name": "alibaba.ascp.channel.sales.order.create",
 	"apiChineseName": "供应链渠道销售单创建接口",
 	"description": "阿里巴巴供应链渠道销售订单创建接口",

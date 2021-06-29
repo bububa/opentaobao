@@ -1,4 +1,5 @@
 {
+	"id": 35532,
 	"name": "alibaba.mos.store.getstorelist",
 	"apiChineseName": "根据屏编号获取专柜集",
 	"description": "根据屏编号获取专柜集",

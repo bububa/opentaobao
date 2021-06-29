@@ -1,4 +1,5 @@
 {
+	"id": 21990,
 	"name": "taobao.tmc.user.permit",
 	"apiChineseName": "为已授权的用户开通消息服务",
 	"description": "为已授权的用户开通消息服务，授权消息使用。\u003cbr/\u003e\u003cspan style=\"color:red\"\u003e注意：topic覆盖更新,务必传入全量topic，或者不传topics，使用appkey订阅的所有topic\u003c/span\u003e",

@@ -1,4 +1,5 @@
 {
+	"id": 36216,
 	"name": "alibaba.ascm.settlement.invoice.synchronization.im",
 	"apiChineseName": "英迈发票同步到结算",
 	"description": "外部供应商通过此API将发货的发票信息推送给供应链中台结算系统",

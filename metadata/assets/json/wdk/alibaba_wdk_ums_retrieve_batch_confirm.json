@@ -1,4 +1,5 @@
 {
+	"id": 31310,
 	"name": "alibaba.wdk.ums.retrieve.batch.confirm",
 	"apiChineseName": "批量消息确认",
 	"description": "批量消息确认",

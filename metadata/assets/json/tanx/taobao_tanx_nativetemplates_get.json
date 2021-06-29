@@ -1,4 +1,5 @@
 {
+	"id": 25442,
 	"name": "taobao.tanx.nativetemplates.get",
 	"apiChineseName": "批量获取本地模板信息",
 	"description": "根据传入的本地模板ID批量返回本地模板",

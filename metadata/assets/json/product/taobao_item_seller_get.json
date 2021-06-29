@@ -1,4 +1,5 @@
 {
+	"id": 24625,
 	"name": "taobao.item.seller.get",
 	"apiChineseName": "获取单个商品详细信息",
 	"description": "获取单个商品的全部信息\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",

@@ -1,4 +1,5 @@
 {
+	"id": 33055,
 	"name": "alitrip.freetour.product.upload",
 	"apiChineseName": "自由行商品发布及编辑接口",
 	"description": "自由行 产品维护接口。\n接口同时支持新商品发布 和 现有商品编辑：\n1）只上传out_product_id的情况：如果out_product_id已经关联过某个商品id，则认为是编辑现有商品，否则认为是新发布一个商品。\n2）同时上传out_product_id和item_id，则认为是将out_product_id与item_id进行关联，同时对该商品进行编辑。",

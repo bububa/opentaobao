@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取优惠券信息 APIResponse
+获取优惠券信息 API返回值 
 alibaba.data.coupon.get
 
 获取优惠券信息，仅作客户端鉴权虚拟api使用
@@ -17,15 +17,11 @@ type AlibabaDataCouponGetAPIResponse struct {
     AlibabaDataCouponGetResponse
 }
 
+// 获取优惠券信息 成功返回结果
 type AlibabaDataCouponGetResponse struct {
     XMLName xml.Name `xml:"alibaba_data_coupon_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // unnamed
-    
     Unnamed   string `json:"unnamed,omitempty" xml:"unnamed,omitempty"`
-
-    
 }

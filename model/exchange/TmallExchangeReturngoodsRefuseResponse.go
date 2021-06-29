@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-卖家拒绝确认收货 APIResponse
+卖家拒绝确认收货 API返回值 
 tmall.exchange.returngoods.refuse
 
 卖家拒绝买家换货申请
@@ -17,15 +17,11 @@ type TmallExchangeReturngoodsRefuseAPIResponse struct {
     TmallExchangeReturngoodsRefuseResponse
 }
 
+// 卖家拒绝确认收货 成功返回结果
 type TmallExchangeReturngoodsRefuseResponse struct {
     XMLName xml.Name `xml:"tmall_exchange_returngoods_refuse_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     Result   *ExchangeBaseResponse `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

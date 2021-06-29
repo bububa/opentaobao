@@ -1,4 +1,5 @@
 {
+	"id": 26453,
 	"name": "taobao.wlb.wms.sn.info.query",
 	"apiChineseName": "查询单据序列号信息",
 	"description": "查询仓库作业的各类单据记录的Sn信息",

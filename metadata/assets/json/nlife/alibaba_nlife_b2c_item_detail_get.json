@@ -1,4 +1,5 @@
 {
+	"id": 28664,
 	"name": "alibaba.nlife.b2c.item.detail.get",
 	"apiChineseName": "b2c码详情查询",
 	"description": "根据零售+平台生成的唯一码获取对应详情",

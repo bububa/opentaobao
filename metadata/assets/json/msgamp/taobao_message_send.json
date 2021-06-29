@@ -1,4 +1,5 @@
 {
+	"id": 50611,
 	"name": "taobao.message.send",
 	"apiChineseName": "消息发送",
 	"description": "消息发送接口",

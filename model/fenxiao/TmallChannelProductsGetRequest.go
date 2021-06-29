@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询供应商的产品数据 APIRequest
+查询供应商的产品数据 API请求
 tmall.channel.products.get
 
 查询供应商的产品数据。 
@@ -22,22 +22,23 @@ tmall.channel.products.get
 */
 type TmallChannelProductsGetRequest struct {
     model.Params
-
     // top_query_product_d_o
-    topQueryProductDO   *TopQueryProductDo 
-
+    topQueryProductDO   *TopQueryProductDo
 }
 
+// 初始化TmallChannelProductsGetRequest对象
 func NewTmallChannelProductsGetRequest() *TmallChannelProductsGetRequest{
     return &TmallChannelProductsGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallChannelProductsGetRequest) GetApiMethodName() string {
     return "tmall.channel.products.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallChannelProductsGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -45,15 +46,15 @@ func (r TmallChannelProductsGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TopQueryProductDO Setter
+// top_query_product_d_o
 func (r *TmallChannelProductsGetRequest) SetTopQueryProductDO(topQueryProductDO *TopQueryProductDo) error {
     r.topQueryProductDO = topQueryProductDO
     r.Set("top_query_product_d_o", topQueryProductDO)
     return nil
 }
 
+// TopQueryProductDO Getter
 func (r TmallChannelProductsGetRequest) GetTopQueryProductDO() *TopQueryProductDo {
     return r.topQueryProductDO
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 25992,
 	"name": "taobao.qimen.stockout.create",
 	"apiChineseName": "出库单创建接口",
 	"description": "ERP调用奇门接口，创建出库单信息",

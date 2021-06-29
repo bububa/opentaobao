@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-openTaoBaoId解绑设备 APIResponse
+openTaoBaoId解绑设备 API返回值 
 taobao.ailab.aicloud.top.device.openid.unbind
 
 openTaoBaoId解绑设备
@@ -17,15 +17,11 @@ type TaobaoAilabAicloudTopDeviceOpenidUnbindAPIResponse struct {
     TaobaoAilabAicloudTopDeviceOpenidUnbindResponse
 }
 
+// openTaoBaoId解绑设备 成功返回结果
 type TaobaoAilabAicloudTopDeviceOpenidUnbindResponse struct {
     XMLName xml.Name `xml:"ailab_aicloud_top_device_openid_unbind_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 结果
-    
     Result   *AiCloudResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

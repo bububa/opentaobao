@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-淘鲜达退款单按门店聚合查询 APIRequest
+淘鲜达退款单按门店聚合查询 API请求
 alibaba.wdk.refund.aggregate
 
 淘鲜达退款单按门店聚合查询
 */
 type AlibabaWdkRefundAggregateRequest struct {
     model.Params
-
     // 系统自动生成
-    refundAggregateQueryRequest   *RefundAggregateQueryRequest 
-
+    refundAggregateQueryRequest   *RefundAggregateQueryRequest
 }
 
+// 初始化AlibabaWdkRefundAggregateRequest对象
 func NewAlibabaWdkRefundAggregateRequest() *AlibabaWdkRefundAggregateRequest{
     return &AlibabaWdkRefundAggregateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkRefundAggregateRequest) GetApiMethodName() string {
     return "alibaba.wdk.refund.aggregate"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkRefundAggregateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkRefundAggregateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// RefundAggregateQueryRequest Setter
+// 系统自动生成
 func (r *AlibabaWdkRefundAggregateRequest) SetRefundAggregateQueryRequest(refundAggregateQueryRequest *RefundAggregateQueryRequest) error {
     r.refundAggregateQueryRequest = refundAggregateQueryRequest
     r.Set("refund_aggregate_query_request", refundAggregateQueryRequest)
     return nil
 }
 
+// RefundAggregateQueryRequest Getter
 func (r AlibabaWdkRefundAggregateRequest) GetRefundAggregateQueryRequest() *RefundAggregateQueryRequest {
     return r.refundAggregateQueryRequest
 }
-

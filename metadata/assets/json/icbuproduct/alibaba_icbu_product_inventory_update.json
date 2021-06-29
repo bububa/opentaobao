@@ -1,4 +1,5 @@
 {
+	"id": 53178,
 	"name": "alibaba.icbu.product.inventory.update",
 	"apiChineseName": "icbu商品库存更新",
 	"description": "更新库存信息",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-趋势词&款式绑定信息同步API APIRequest
+趋势词&款式绑定信息同步API API请求
 tmall.trend.style.bindinfo.upload
 
 趋势词&款式(服饰行业)绑定信息同步至平台
 */
 type TmallTrendStyleBindinfoUploadRequest struct {
     model.Params
-
     // 趋势词&款式绑定信息列表，一次最多1000条
-    trendStyleBindInfoBoList   []TrendStyleBindInfoBO 
-
+    trendStyleBindInfoBoList   []TrendStyleBindInfoBO
 }
 
+// 初始化TmallTrendStyleBindinfoUploadRequest对象
 func NewTmallTrendStyleBindinfoUploadRequest() *TmallTrendStyleBindinfoUploadRequest{
     return &TmallTrendStyleBindinfoUploadRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallTrendStyleBindinfoUploadRequest) GetApiMethodName() string {
     return "tmall.trend.style.bindinfo.upload"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallTrendStyleBindinfoUploadRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallTrendStyleBindinfoUploadRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TrendStyleBindInfoBoList Setter
+// 趋势词&款式绑定信息列表，一次最多1000条
 func (r *TmallTrendStyleBindinfoUploadRequest) SetTrendStyleBindInfoBoList(trendStyleBindInfoBoList []TrendStyleBindInfoBO) error {
     r.trendStyleBindInfoBoList = trendStyleBindInfoBoList
     r.Set("trend_style_bind_info_bo_list", trendStyleBindInfoBoList)
     return nil
 }
 
+// TrendStyleBindInfoBoList Getter
 func (r TmallTrendStyleBindinfoUploadRequest) GetTrendStyleBindInfoBoList() []TrendStyleBindInfoBO {
     return r.trendStyleBindInfoBoList
 }
-

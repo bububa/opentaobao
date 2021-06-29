@@ -1,4 +1,5 @@
 {
+	"id": 40260,
 	"name": "alibaba.wdk.fulfill.config.read.limit.order",
 	"apiChineseName": "根据仓code查询仓限单配置",
 	"description": "根据仓code查询仓限单配置",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-CTS提交溯源信息 APIRequest
+CTS提交溯源信息 API请求
 tmall.traceplatform.cts.info.upload
 
 cts上传溯源信息
 */
 type TmallTraceplatformCtsInfoUploadRequest struct {
     model.Params
-
     // 入参traceInfo
-    traceInfo   *CtsInfo 
-
+    traceInfo   *CtsInfo
 }
 
+// 初始化TmallTraceplatformCtsInfoUploadRequest对象
 func NewTmallTraceplatformCtsInfoUploadRequest() *TmallTraceplatformCtsInfoUploadRequest{
     return &TmallTraceplatformCtsInfoUploadRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallTraceplatformCtsInfoUploadRequest) GetApiMethodName() string {
     return "tmall.traceplatform.cts.info.upload"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallTraceplatformCtsInfoUploadRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallTraceplatformCtsInfoUploadRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TraceInfo Setter
+// 入参traceInfo
 func (r *TmallTraceplatformCtsInfoUploadRequest) SetTraceInfo(traceInfo *CtsInfo) error {
     r.traceInfo = traceInfo
     r.Set("trace_info", traceInfo)
     return nil
 }
 
+// TraceInfo Getter
 func (r TmallTraceplatformCtsInfoUploadRequest) GetTraceInfo() *CtsInfo {
     return r.traceInfo
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 48409,
 	"name": "alibaba.idle.agreement.pay.query",
 	"apiChineseName": "代扣详情查询",
 	"description": "查询代扣结果",

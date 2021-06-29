@@ -1,4 +1,5 @@
 {
+	"id": 30319,
 	"name": "yunos.tvpubadmin.data.query",
 	"apiChineseName": "魔盒统计数据查询接口",
 	"description": "用于华数查询魔盒上的一些用户统计数据",

@@ -2,10 +2,6 @@ package hotel
 
 // TopCitySuggestListVo 
 type TopCitySuggestListVo struct {
-
     // 联想词列表
-    
-    SuggestItemVOList   []SuggestItemVo `json:"suggest_item_v_o_list,omitempty" xml:"suggest_item_v_o_list,omitempty"`
-    
-
+    SuggestItemVOList   []SuggestItemVo `json:"suggest_item_v_o_list,omitempty" xml:"suggest_item_v_o_list>suggest_item_vo,omitempty"`
 }

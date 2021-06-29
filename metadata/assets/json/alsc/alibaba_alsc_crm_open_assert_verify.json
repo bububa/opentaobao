@@ -1,4 +1,5 @@
 {
+	"id": 50741,
 	"name": "alibaba.alsc.crm.open.assert.verify",
 	"apiChineseName": "资产核销接口",
 	"description": "核销储值，积分，券资产",

@@ -1,4 +1,5 @@
 {
+	"id": 39366,
 	"name": "alibaba.lst.vending.shipping.callback",
 	"apiChineseName": "售货机出货回传接口",
 	"description": "零售通自动售货机商品出货回传接口，同步商品出库最新状态。",

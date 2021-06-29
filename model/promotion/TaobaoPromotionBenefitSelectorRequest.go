@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-权益选择器接口 APIRequest
+权益选择器接口 API请求
 taobao.promotion.benefit.selector
 
 权益选择器，查询用户已有权益，提供用户进行已拥有权益的选择操作，权益发放的前置操作
@@ -19,22 +19,23 @@ taobao.promotion.benefit.selector
 */
 type TaobaoPromotionBenefitSelectorRequest struct {
     model.Params
-
     // 权益选择器请求
-    query   *BenefitSelectorQuery 
-
+    query   *BenefitSelectorQuery
 }
 
+// 初始化TaobaoPromotionBenefitSelectorRequest对象
 func NewTaobaoPromotionBenefitSelectorRequest() *TaobaoPromotionBenefitSelectorRequest{
     return &TaobaoPromotionBenefitSelectorRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoPromotionBenefitSelectorRequest) GetApiMethodName() string {
     return "taobao.promotion.benefit.selector"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoPromotionBenefitSelectorRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -42,15 +43,15 @@ func (r TaobaoPromotionBenefitSelectorRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Query Setter
+// 权益选择器请求
 func (r *TaobaoPromotionBenefitSelectorRequest) SetQuery(query *BenefitSelectorQuery) error {
     r.query = query
     r.Set("query", query)
     return nil
 }
 
+// Query Getter
 func (r TaobaoPromotionBenefitSelectorRequest) GetQuery() *BenefitSelectorQuery {
     return r.query
 }
-

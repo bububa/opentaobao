@@ -1,4 +1,5 @@
 {
+	"id": 43479,
 	"name": "taobao.feedflow.item.adzone.rpthourlist",
 	"apiChineseName": "超级推荐【商品推广】资源位分时报表查询",
 	"description": "广告主资源包分时数据查询，支持广告主查询最近90天内某一天的资源包维度分时报表数据",

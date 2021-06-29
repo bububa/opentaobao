@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-订单SN通知接口 APIResponse
+订单SN通知接口 API返回值 
 taobao.qimen.order.sn.report
 
 WMS调用奇门的接口,在出库、发货、入库等场景下，ERP和WMS之间同步操作的SN列表
@@ -17,15 +17,11 @@ type TaobaoQimenOrderSnReportAPIResponse struct {
     TaobaoQimenOrderSnReportResponse
 }
 
+// 订单SN通知接口 成功返回结果
 type TaobaoQimenOrderSnReportResponse struct {
     XMLName xml.Name `xml:"qimen_order_sn_report_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 
-    
     Response   *Response `json:"response,omitempty" xml:"response,omitempty"`
-
-    
 }

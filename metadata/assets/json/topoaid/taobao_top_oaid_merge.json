@@ -1,4 +1,5 @@
 {
+	"id": 55032,
 	"name": "taobao.top.oaid.merge",
 	"apiChineseName": "OAID订单合并",
 	"description": "基于OAID（收件人ID， Open Addressee ID)做订单合并，确保相同收件人信息的订单合并到相同组。",

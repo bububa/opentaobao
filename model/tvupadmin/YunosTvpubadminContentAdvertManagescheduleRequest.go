@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-广告牌照管控修改 APIRequest
+广告牌照管控修改 API请求
 yunos.tvpubadmin.content.advert.manageschedule
 
 广告牌照管控修改
 */
 type YunosTvpubadminContentAdvertManagescheduleRequest struct {
     model.Params
-
     // 管理参数
-    req   string 
-
+    req   string
 }
 
+// 初始化YunosTvpubadminContentAdvertManagescheduleRequest对象
 func NewYunosTvpubadminContentAdvertManagescheduleRequest() *YunosTvpubadminContentAdvertManagescheduleRequest{
     return &YunosTvpubadminContentAdvertManagescheduleRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r YunosTvpubadminContentAdvertManagescheduleRequest) GetApiMethodName() string {
     return "yunos.tvpubadmin.content.advert.manageschedule"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r YunosTvpubadminContentAdvertManagescheduleRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r YunosTvpubadminContentAdvertManagescheduleRequest) GetApiParams() url.Va
     }
     return params
 }
-
-
+// Req Setter
+// 管理参数
 func (r *YunosTvpubadminContentAdvertManagescheduleRequest) SetReq(req string) error {
     r.req = req
     r.Set("req", req)
     return nil
 }
 
+// Req Getter
 func (r YunosTvpubadminContentAdvertManagescheduleRequest) GetReq() string {
     return r.req
 }
-

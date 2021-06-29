@@ -1,4 +1,5 @@
 {
+	"id": 21981,
 	"name": "taobao.tmc.groups.get",
 	"apiChineseName": "获取自定义用户分组列表",
 	"description": "获取自定义用户分组列表",

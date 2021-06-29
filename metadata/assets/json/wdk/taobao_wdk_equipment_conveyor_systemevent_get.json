@@ -1,4 +1,5 @@
 {
+	"id": 30548,
 	"name": "taobao.wdk.equipment.conveyor.systemevent.get",
 	"apiChineseName": "获取悬挂链系统事件",
 	"description": "五道口悬挂链系统事件查询",

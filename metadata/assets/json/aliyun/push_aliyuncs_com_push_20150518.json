@@ -1,4 +1,5 @@
 {
+	"id": 24994,
 	"name": "push.aliyuncs.com.push.20150518",
 	"apiChineseName": "云推送指令API",
 	"description": "阿里云推送新增API，允许一条推送指令同时发布到多个终端上。",

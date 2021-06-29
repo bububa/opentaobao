@@ -1,4 +1,5 @@
 {
+	"id": 27409,
 	"name": "cainiao.cloudprint.isv.resources.get",
 	"apiChineseName": "isv资源查询",
 	"description": "isv资源查询，包括isv模板、打印项、预设的自定义区等",

@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-后端服务器健康检查 APIRequest
+后端服务器健康检查 API请求
 slb.aliyuncs.com.DescribeBackendServers.2013-02-21
 
 后端服务器健康检查，对SLB实例的后端服务器进行健康检查，返回后端服务器的健康状况。后端服务器的健康状况为normal,abnormal和Unavailable三种。其中Unavailable表示这个SLB实例没有配置健康检查，无法获取后端服务器的健康状况。如果没有传入ListenerPort，则表示对这个SLB实例下的所有Listener后端服务器进行健康检查。
 */
 type SlbAliyuncsComDescribeBackendServers2013_02_21Request struct {
     model.Params
-
     // loadBalancerId
-    loadBalancerId   string 
-
+    loadBalancerId   string
     // listenerPort
-    listenerPort   int64 
-
+    listenerPort   int64
 }
 
+// 初始化SlbAliyuncsComDescribeBackendServers2013_02_21Request对象
 func NewSlbAliyuncsComDescribeBackendServers2013_02_21Request() *SlbAliyuncsComDescribeBackendServers2013_02_21Request{
     return &SlbAliyuncsComDescribeBackendServers2013_02_21Request{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r SlbAliyuncsComDescribeBackendServers2013_02_21Request) GetApiMethodName() string {
     return "slb.aliyuncs.com.DescribeBackendServers.2013-02-21"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r SlbAliyuncsComDescribeBackendServers2013_02_21Request) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r SlbAliyuncsComDescribeBackendServers2013_02_21Request) GetApiParams() ur
     }
     return params
 }
-
-
+// LoadBalancerId Setter
+// loadBalancerId
 func (r *SlbAliyuncsComDescribeBackendServers2013_02_21Request) SetLoadBalancerId(loadBalancerId string) error {
     r.loadBalancerId = loadBalancerId
     r.Set("loadBalancerId", loadBalancerId)
     return nil
 }
 
+// LoadBalancerId Getter
 func (r SlbAliyuncsComDescribeBackendServers2013_02_21Request) GetLoadBalancerId() string {
     return r.loadBalancerId
 }
-
+// ListenerPort Setter
+// listenerPort
 func (r *SlbAliyuncsComDescribeBackendServers2013_02_21Request) SetListenerPort(listenerPort int64) error {
     r.listenerPort = listenerPort
     r.Set("listenerPort", listenerPort)
     return nil
 }
 
+// ListenerPort Getter
 func (r SlbAliyuncsComDescribeBackendServers2013_02_21Request) GetListenerPort() int64 {
     return r.listenerPort
 }
-

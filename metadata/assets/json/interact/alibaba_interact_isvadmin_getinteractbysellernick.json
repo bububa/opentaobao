@@ -1,4 +1,5 @@
 {
+	"id": 23897,
 	"name": "alibaba.interact.isvadmin.getinteractbysellernick",
 	"apiChineseName": "根据sellerNick获取互动实例列表",
 	"description": "根据sellerNick获取互动实例列表",

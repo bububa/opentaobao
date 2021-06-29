@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-批量获取用户信息 APIRequest
+批量获取用户信息 API请求
 taobao.openim.users.get
 
 批量获取用户信息
 */
 type TaobaoOpenimUsersGetRequest struct {
     model.Params
-
     // 用户id序列
-    userids   []string 
-
+    userids   []string
 }
 
+// 初始化TaobaoOpenimUsersGetRequest对象
 func NewTaobaoOpenimUsersGetRequest() *TaobaoOpenimUsersGetRequest{
     return &TaobaoOpenimUsersGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoOpenimUsersGetRequest) GetApiMethodName() string {
     return "taobao.openim.users.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoOpenimUsersGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoOpenimUsersGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Userids Setter
+// 用户id序列
 func (r *TaobaoOpenimUsersGetRequest) SetUserids(userids []string) error {
     r.userids = userids
     r.Set("userids", userids)
     return nil
 }
 
+// Userids Getter
 func (r TaobaoOpenimUsersGetRequest) GetUserids() []string {
     return r.userids
 }
-

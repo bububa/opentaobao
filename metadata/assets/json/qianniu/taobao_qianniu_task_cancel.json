@@ -1,4 +1,5 @@
 {
+	"id": 22595,
 	"name": "taobao.qianniu.task.cancel",
 	"apiChineseName": "取消轻任务",
 	"description": "由任务发起者调用",

@@ -1,4 +1,5 @@
 {
+	"id": 42633,
 	"name": "tmall.servicecenter.servicestore.create",
 	"apiChineseName": "创建门店",
 	"description": "用于创建门店/网点。多个业务共用",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-根据token获取出证申请信息 APIRequest
+根据token获取出证申请信息 API请求
 alibaba.nazca.token.issuecertapply.get
 
 根据token获取出证申请信息
 */
 type AlibabaNazcaTokenIssuecertapplyGetRequest struct {
     model.Params
-
     // token
-    token   string 
-
+    token   string
 }
 
+// 初始化AlibabaNazcaTokenIssuecertapplyGetRequest对象
 func NewAlibabaNazcaTokenIssuecertapplyGetRequest() *AlibabaNazcaTokenIssuecertapplyGetRequest{
     return &AlibabaNazcaTokenIssuecertapplyGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaNazcaTokenIssuecertapplyGetRequest) GetApiMethodName() string {
     return "alibaba.nazca.token.issuecertapply.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaNazcaTokenIssuecertapplyGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaNazcaTokenIssuecertapplyGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Token Setter
+// token
 func (r *AlibabaNazcaTokenIssuecertapplyGetRequest) SetToken(token string) error {
     r.token = token
     r.Set("token", token)
     return nil
 }
 
+// Token Getter
 func (r AlibabaNazcaTokenIssuecertapplyGetRequest) GetToken() string {
     return r.token
 }
-

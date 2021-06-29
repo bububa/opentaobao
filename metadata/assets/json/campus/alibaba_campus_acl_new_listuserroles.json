@@ -1,4 +1,5 @@
 {
+	"id": 37486,
 	"name": "alibaba.campus.acl.new.listuserroles",
 	"apiChineseName": "查询并标记用户选择的角色",
 	"description": "查询并标记用户选择的角色",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-更新商品信息 APIResponse
+更新商品信息 API返回值 
 taobao.item.update
 
 根据传入的num_iid更新对应的商品的数据。
@@ -21,15 +21,11 @@ type TaobaoItemUpdateAPIResponse struct {
     TaobaoItemUpdateResponse
 }
 
+// 更新商品信息 成功返回结果
 type TaobaoItemUpdateResponse struct {
     XMLName xml.Name `xml:"item_update_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 商品结构
-    
     Item   *Item `json:"item,omitempty" xml:"item,omitempty"`
-
-    
 }

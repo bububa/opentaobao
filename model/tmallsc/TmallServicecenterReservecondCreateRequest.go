@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-创建主动预约开通条件 APIRequest
+创建主动预约开通条件 API请求
 tmall.servicecenter.reservecond.create
 
 1、设置主动预约开通条件
 */
 type TmallServicecenterReservecondCreateRequest struct {
     model.Params
-
     // 主动预约开通条件
-    rocList   []ReserveOpenConditionDTO 
-
+    rocList   []ReserveOpenConditionDTO
 }
 
+// 初始化TmallServicecenterReservecondCreateRequest对象
 func NewTmallServicecenterReservecondCreateRequest() *TmallServicecenterReservecondCreateRequest{
     return &TmallServicecenterReservecondCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServicecenterReservecondCreateRequest) GetApiMethodName() string {
     return "tmall.servicecenter.reservecond.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServicecenterReservecondCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallServicecenterReservecondCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// RocList Setter
+// 主动预约开通条件
 func (r *TmallServicecenterReservecondCreateRequest) SetRocList(rocList []ReserveOpenConditionDTO) error {
     r.rocList = rocList
     r.Set("roc_list", rocList)
     return nil
 }
 
+// RocList Getter
 func (r TmallServicecenterReservecondCreateRequest) GetRocList() []ReserveOpenConditionDTO {
     return r.rocList
 }
-

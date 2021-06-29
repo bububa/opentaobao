@@ -1,4 +1,5 @@
 {
+	"id": 24930,
 	"name": "alibaba.aliqin.flow.wallet.grade",
 	"apiChineseName": "获取流量档位",
 	"description": "获取直充流量档位",

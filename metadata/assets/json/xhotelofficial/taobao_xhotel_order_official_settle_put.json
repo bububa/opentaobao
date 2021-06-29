@@ -1,4 +1,5 @@
 {
+	"id": 26071,
 	"name": "taobao.xhotel.order.official.settle.put",
 	"apiChineseName": "官网信用住结账接口",
 	"description": "用于酒店官网信用住商家结账调用",

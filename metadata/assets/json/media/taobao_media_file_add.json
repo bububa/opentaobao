@@ -1,4 +1,5 @@
 {
+	"id": 11028,
 	"name": "taobao.media.file.add",
 	"apiChineseName": "多媒体平台文件添加",
 	"description": "用户通过top上传文件到多媒体平台",

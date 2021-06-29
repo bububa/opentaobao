@@ -1,4 +1,5 @@
 {
+	"id": 28652,
 	"name": "alibaba.nazca.token.authapply.get",
 	"apiChineseName": "根据token获取认证申请信息",
 	"description": "根据token获取认证申请信息",

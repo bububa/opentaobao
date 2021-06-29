@@ -1,4 +1,5 @@
 {
+	"id": 56562,
 	"name": "alibaba.alihealth.druguse.query",
 	"apiChineseName": "合理用药规则查询",
 	"description": "查询用户购买的药品命中的风险规则",

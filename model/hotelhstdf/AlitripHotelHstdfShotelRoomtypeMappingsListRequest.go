@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-根据HID获取所有卖家房型匹配关系 APIRequest
+根据HID获取所有卖家房型匹配关系 API请求
 alitrip.hotel.hstdf.shotel.roomtype.mappings.list
 
 根据HID获取所有卖家房型匹配关系
 */
 type AlitripHotelHstdfShotelRoomtypeMappingsListRequest struct {
     model.Params
-
     // HID
-    hid   int64 
-
+    hid   int64
 }
 
+// 初始化AlitripHotelHstdfShotelRoomtypeMappingsListRequest对象
 func NewAlitripHotelHstdfShotelRoomtypeMappingsListRequest() *AlitripHotelHstdfShotelRoomtypeMappingsListRequest{
     return &AlitripHotelHstdfShotelRoomtypeMappingsListRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripHotelHstdfShotelRoomtypeMappingsListRequest) GetApiMethodName() string {
     return "alitrip.hotel.hstdf.shotel.roomtype.mappings.list"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripHotelHstdfShotelRoomtypeMappingsListRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripHotelHstdfShotelRoomtypeMappingsListRequest) GetApiParams() url.V
     }
     return params
 }
-
-
+// Hid Setter
+// HID
 func (r *AlitripHotelHstdfShotelRoomtypeMappingsListRequest) SetHid(hid int64) error {
     r.hid = hid
     r.Set("hid", hid)
     return nil
 }
 
+// Hid Getter
 func (r AlitripHotelHstdfShotelRoomtypeMappingsListRequest) GetHid() int64 {
     return r.hid
 }
-

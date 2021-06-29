@@ -1,4 +1,5 @@
 {
+	"id": 26041,
 	"name": "taobao.xhotel.order.official.qualification.get",
 	"apiChineseName": "官网信用住用户资质校验",
 	"description": "官网信用住在下单前对用户进行资质校验，资质校验通过才能进行信用支付",

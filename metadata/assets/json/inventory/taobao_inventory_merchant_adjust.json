@@ -1,4 +1,5 @@
 {
+	"id": 29008,
 	"name": "taobao.inventory.merchant.adjust",
 	"apiChineseName": "货品库存商家端调整",
 	"description": "货品库存商家端调整 ，入库，出库，盘点",

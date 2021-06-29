@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询发票申请 APIResponse
+查询发票申请 API返回值 
 alibaba.einvoice.prod.apply.get
 
 查询申请的详细信息，包含申请所关联的发票摘要信息+板式文件+预览图；
@@ -18,15 +18,11 @@ type AlibabaEinvoiceProdApplyGetAPIResponse struct {
     AlibabaEinvoiceProdApplyGetResponse
 }
 
+// 查询发票申请 成功返回结果
 type AlibabaEinvoiceProdApplyGetResponse struct {
     XMLName xml.Name `xml:"alibaba_einvoice_prod_apply_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 系统返回的通用结果类
-    
     Result   *ServiceResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

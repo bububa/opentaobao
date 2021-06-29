@@ -1,4 +1,5 @@
 {
+	"id": 50744,
 	"name": "alibaba.alsc.crm.open.customer.save",
 	"apiChineseName": "保存和更新顾客",
 	"description": "用来保存顾客，如果已经存在的话，则更新顾客",

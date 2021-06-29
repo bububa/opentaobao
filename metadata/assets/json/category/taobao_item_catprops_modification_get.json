@@ -1,4 +1,5 @@
 {
+	"id": 55801,
 	"name": "taobao.item.catprops.modification.get",
 	"apiChineseName": "查询商品类目属性变更",
 	"description": "查询商品类目属性变更信息",

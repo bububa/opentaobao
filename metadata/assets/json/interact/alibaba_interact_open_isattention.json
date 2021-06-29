@@ -1,4 +1,5 @@
 {
+	"id": 28706,
 	"name": "alibaba.interact.open.isattention",
 	"apiChineseName": "判断用户是否收藏某个店铺",
 	"description": "判断用户是否收藏某个店铺",

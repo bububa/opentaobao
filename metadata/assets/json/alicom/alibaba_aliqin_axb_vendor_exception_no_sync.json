@@ -1,4 +1,5 @@
 {
+	"id": 38346,
 	"name": "alibaba.aliqin.axb.vendor.exception.no.sync",
 	"apiChineseName": "中心化供应商异常号码状态同步接口",
 	"description": "用于中心化供应商同步异常号码",

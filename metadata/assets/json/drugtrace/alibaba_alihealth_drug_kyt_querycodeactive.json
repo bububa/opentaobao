@@ -1,4 +1,5 @@
 {
+	"id": 42834,
 	"name": "alibaba.alihealth.drug.kyt.querycodeactive",
 	"apiChineseName": "查询码是否激活",
 	"description": "查询码是否激活",

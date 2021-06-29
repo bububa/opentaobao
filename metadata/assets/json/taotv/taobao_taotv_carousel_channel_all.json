@@ -1,4 +1,5 @@
 {
+	"id": 35817,
 	"name": "taobao.taotv.carousel.channel.all",
 	"apiChineseName": "获取所有频道列表",
 	"description": "获取所有频道列表，按照序号升序",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-天天特卖生产计划单同步 APIResponse
+天天特卖生产计划单同步 API返回值 
 aliyun.industry.tttm.plan.sync
 
 ERP系统向天天特卖同步生产计划单的数据
@@ -17,15 +17,11 @@ type AliyunIndustryTttmPlanSyncAPIResponse struct {
     AliyunIndustryTttmPlanSyncResponse
 }
 
+// 天天特卖生产计划单同步 成功返回结果
 type AliyunIndustryTttmPlanSyncResponse struct {
     XMLName xml.Name `xml:"aliyun_industry_tttm_plan_sync_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 状态
-    
     Result   bool `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

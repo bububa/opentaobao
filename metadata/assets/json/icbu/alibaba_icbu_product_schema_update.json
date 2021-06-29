@@ -1,4 +1,5 @@
 {
+	"id": 50189,
 	"name": "alibaba.icbu.product.schema.update",
 	"apiChineseName": "（新）商品发布增量更新接口",
 	"description": "商品更新接口，方式为增量更新，只更新传入的字段",

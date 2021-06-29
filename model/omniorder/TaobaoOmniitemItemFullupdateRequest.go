@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-全渠道商品全量更新 APIRequest
+全渠道商品全量更新 API请求
 taobao.omniitem.item.fullupdate
 
 全渠道商品全量更新，仅适用于全渠道门店商品
@@ -16,25 +16,25 @@ taobao.omniitem.item.fullupdate
 */
 type TaobaoOmniitemItemFullupdateRequest struct {
     model.Params
-
     // 发布商品信息
-    lightPublishInfo   *ItemLightPublishDto 
-
+    lightPublishInfo   *ItemLightPublishDto
     // 操作类型，STORE表示门店域新增，ALL表示全域新增
-    operateType   string 
-
+    operateType   string
 }
 
+// 初始化TaobaoOmniitemItemFullupdateRequest对象
 func NewTaobaoOmniitemItemFullupdateRequest() *TaobaoOmniitemItemFullupdateRequest{
     return &TaobaoOmniitemItemFullupdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoOmniitemItemFullupdateRequest) GetApiMethodName() string {
     return "taobao.omniitem.item.fullupdate"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoOmniitemItemFullupdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -42,25 +42,27 @@ func (r TaobaoOmniitemItemFullupdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// LightPublishInfo Setter
+// 发布商品信息
 func (r *TaobaoOmniitemItemFullupdateRequest) SetLightPublishInfo(lightPublishInfo *ItemLightPublishDto) error {
     r.lightPublishInfo = lightPublishInfo
     r.Set("light_publish_info", lightPublishInfo)
     return nil
 }
 
+// LightPublishInfo Getter
 func (r TaobaoOmniitemItemFullupdateRequest) GetLightPublishInfo() *ItemLightPublishDto {
     return r.lightPublishInfo
 }
-
+// OperateType Setter
+// 操作类型，STORE表示门店域新增，ALL表示全域新增
 func (r *TaobaoOmniitemItemFullupdateRequest) SetOperateType(operateType string) error {
     r.operateType = operateType
     r.Set("operate_type", operateType)
     return nil
 }
 
+// OperateType Getter
 func (r TaobaoOmniitemItemFullupdateRequest) GetOperateType() string {
     return r.operateType
 }
-

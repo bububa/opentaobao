@@ -1,4 +1,5 @@
 {
+	"id": 42912,
 	"name": "alibaba.alihealth.drug.kyt.dr.getbyrefentid",
 	"apiChineseName": "多融通过一个企业唯一标识查询企业详细信息",
 	"description": "根据企业唯一标识查看企业详细信息",

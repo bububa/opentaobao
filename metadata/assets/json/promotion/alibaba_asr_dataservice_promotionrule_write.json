@@ -1,4 +1,5 @@
 {
+	"id": 53239,
 	"name": "alibaba.asr.dataservice.promotionrule.write",
 	"apiChineseName": "业务优惠规则写入",
 	"description": "星巴克优惠规则写入",

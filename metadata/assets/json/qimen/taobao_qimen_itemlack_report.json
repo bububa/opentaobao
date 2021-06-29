@@ -1,4 +1,5 @@
 {
+	"id": 27275,
 	"name": "taobao.qimen.itemlack.report",
 	"apiChineseName": "发货单缺货通知接口",
 	"description": "WMS调用奇门的接口,将商家在库某商品缺货的信息回传给ERP",

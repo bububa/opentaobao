@@ -1,4 +1,5 @@
 {
+	"id": 39193,
 	"name": "taobao.xhotel.servicetime.update",
 	"apiChineseName": "飞猪酒店多维度服务时间维护接口",
 	"description": "飞猪酒店多维度服务时间维护，支持卖家维度，supplier维度，酒店维度",

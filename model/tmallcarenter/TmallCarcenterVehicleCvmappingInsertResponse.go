@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-EPC车辆版本信息与底盘信息库关系绑定 APIResponse
+EPC车辆版本信息与底盘信息库关系绑定 API返回值 
 tmall.carcenter.vehicle.cvmapping.insert
 
 EPC车辆版本信息与底盘信息库关系绑定
@@ -17,15 +17,11 @@ type TmallCarcenterVehicleCvmappingInsertAPIResponse struct {
     TmallCarcenterVehicleCvmappingInsertResponse
 }
 
+// EPC车辆版本信息与底盘信息库关系绑定 成功返回结果
 type TmallCarcenterVehicleCvmappingInsertResponse struct {
     XMLName xml.Name `xml:"tmall_carcenter_vehicle_cvmapping_insert_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TmallCarcenterVehicleCvmappingInsertResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

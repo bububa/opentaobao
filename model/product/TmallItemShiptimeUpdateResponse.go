@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-更新商品发货时间 APIResponse
+更新商品发货时间 API返回值 
 tmall.item.shiptime.update
 
 增加更新删除商品/SKU发货时间(支持同一商品下的SKU同时批量更新)
@@ -47,15 +47,11 @@ type TmallItemShiptimeUpdateAPIResponse struct {
     TmallItemShiptimeUpdateResponse
 }
 
+// 更新商品发货时间 成功返回结果
 type TmallItemShiptimeUpdateResponse struct {
     XMLName xml.Name `xml:"tmall_item_shiptime_update_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 被修改的商品ID
-    
     Result   string `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 24522,
 	"name": "taobao.tbk.shop.recommend.get",
 	"apiChineseName": "淘宝客-公用-店铺关联推荐",
 	"description": "入参卖家id，可推荐与此店铺相关联的相关店铺。",

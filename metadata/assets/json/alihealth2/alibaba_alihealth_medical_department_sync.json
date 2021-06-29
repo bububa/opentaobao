@@ -1,4 +1,5 @@
 {
+	"id": 41244,
 	"name": "alibaba.alihealth.medical.department.sync",
 	"apiChineseName": "阿里健康预约挂号科室同步接口",
 	"description": "阿里健康预约挂号科室同步接口",

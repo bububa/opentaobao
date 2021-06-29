@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-po反馈创建 APIResponse
+po反馈创建 API返回值 
 alibaba.pur.supplier.porespcreate
 
 PO反馈接口
@@ -17,15 +17,11 @@ type AlibabaPurSupplierPorespcreateAPIResponse struct {
     AlibabaPurSupplierPorespcreateResponse
 }
 
+// po反馈创建 成功返回结果
 type AlibabaPurSupplierPorespcreateResponse struct {
     XMLName xml.Name `xml:"alibaba_pur_supplier_porespcreate_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 获取url的出参
-    
     Result   *ActionResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

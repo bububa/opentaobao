@@ -1,4 +1,5 @@
 {
+	"id": 38483,
 	"name": "tmall.promotion.coupon.use",
 	"apiChineseName": "券核销接口",
 	"description": "核销用户的一张优惠券，返回核销结果",

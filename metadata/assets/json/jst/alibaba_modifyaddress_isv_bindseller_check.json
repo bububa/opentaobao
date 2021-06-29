@@ -1,4 +1,5 @@
 {
+	"id": 55254,
 	"name": "alibaba.modifyaddress.isv.bindseller.check",
 	"apiChineseName": "查询服务商下的商家是否开通了改地址",
 	"description": "鉴权服务商和商家的绑定关系，看商家是否开通了改地址\n1. 没有授权\n2. 已与当前appkey签约\n3. 没有签约\n4. 与其他服务商软件签约，如果是同一个isv name，返回appkey，否则不返回。",

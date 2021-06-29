@@ -1,4 +1,5 @@
 {
+	"id": 10846,
 	"name": "taobao.ump.activities.list.get",
 	"apiChineseName": "营销活动列表查询",
 	"description": "按照营销活动id的列表ids，查询对应的营销活动列表。",

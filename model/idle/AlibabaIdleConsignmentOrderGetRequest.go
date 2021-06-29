@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-闲鱼帮卖订单查询 APIRequest
+闲鱼帮卖订单查询 API请求
 alibaba.idle.consignment.order.get
 
 闲鱼帮卖服务商以闲鱼交易买家身份查询订单信息
 */
 type AlibabaIdleConsignmentOrderGetRequest struct {
     model.Params
-
     // 闲鱼订单ID
-    bizOrderId   int64 
-
+    bizOrderId   int64
 }
 
+// 初始化AlibabaIdleConsignmentOrderGetRequest对象
 func NewAlibabaIdleConsignmentOrderGetRequest() *AlibabaIdleConsignmentOrderGetRequest{
     return &AlibabaIdleConsignmentOrderGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIdleConsignmentOrderGetRequest) GetApiMethodName() string {
     return "alibaba.idle.consignment.order.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIdleConsignmentOrderGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIdleConsignmentOrderGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// BizOrderId Setter
+// 闲鱼订单ID
 func (r *AlibabaIdleConsignmentOrderGetRequest) SetBizOrderId(bizOrderId int64) error {
     r.bizOrderId = bizOrderId
     r.Set("biz_order_id", bizOrderId)
     return nil
 }
 
+// BizOrderId Getter
 func (r AlibabaIdleConsignmentOrderGetRequest) GetBizOrderId() int64 {
     return r.bizOrderId
 }
-

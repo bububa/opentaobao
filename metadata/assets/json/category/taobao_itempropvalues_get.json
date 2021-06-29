@@ -1,4 +1,5 @@
 {
+	"id": 13,
 	"name": "taobao.itempropvalues.get",
 	"apiChineseName": "获取标准类目属性值",
 	"description": "获取标准类目属性值",

@@ -1,4 +1,5 @@
 {
+	"id": 50836,
 	"name": "taobao.openmall.item.get",
 	"apiChineseName": "获取商品详情物料",
 	"description": "获取联盟开放的openmall商品",

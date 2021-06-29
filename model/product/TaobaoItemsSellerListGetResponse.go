@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-批量获取商品详细信息 APIResponse
+批量获取商品详细信息 API返回值 
 taobao.items.seller.list.get
 
 批量获取商品详细信息
@@ -18,15 +18,11 @@ type TaobaoItemsSellerListGetAPIResponse struct {
     TaobaoItemsSellerListGetResponse
 }
 
+// 批量获取商品详细信息 成功返回结果
 type TaobaoItemsSellerListGetResponse struct {
     XMLName xml.Name `xml:"items_seller_list_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 商品详细信息列表
-    
     Items   []Item `json:"items,omitempty" xml:"items>item,omitempty"`
-    
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 51747,
 	"name": "taobao.txp.item.itemlistget",
 	"apiChineseName": "淘小铺商品接口",
 	"description": "淘小铺商品的查询服务。",

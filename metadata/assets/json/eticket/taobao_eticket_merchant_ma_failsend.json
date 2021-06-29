@@ -1,4 +1,5 @@
 {
+	"id": 27160,
 	"name": "taobao.eticket.merchant.ma.failsend",
 	"apiChineseName": "码商发码失败回调接口",
 	"description": "针对一次发码通知，码商无法完成发码，则可以通过此接口告知电子凭证",

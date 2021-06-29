@@ -1,4 +1,5 @@
 {
+	"id": 10684,
 	"name": "taobao.logistics.address.remove",
 	"apiChineseName": "删除卖家地址库",
 	"description": "用此接口删除卖家地址库",

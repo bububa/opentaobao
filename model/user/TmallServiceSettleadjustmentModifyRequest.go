@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-修改结算调整单 APIRequest
+修改结算调整单 API请求
 tmall.service.settleadjustment.modify
 
 提供给服务商在对结算有异议时，发起结算调整单。
@@ -15,22 +15,23 @@ tmall.service.settleadjustment.modify
 */
 type TmallServiceSettleadjustmentModifyRequest struct {
     model.Params
-
     // 结算调整单父节点
-    paramSettleAdjustmentRequest   *SettleAdjustmentRequest 
-
+    paramSettleAdjustmentRequest   *SettleAdjustmentRequest
 }
 
+// 初始化TmallServiceSettleadjustmentModifyRequest对象
 func NewTmallServiceSettleadjustmentModifyRequest() *TmallServiceSettleadjustmentModifyRequest{
     return &TmallServiceSettleadjustmentModifyRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallServiceSettleadjustmentModifyRequest) GetApiMethodName() string {
     return "tmall.service.settleadjustment.modify"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallServiceSettleadjustmentModifyRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,15 +39,15 @@ func (r TmallServiceSettleadjustmentModifyRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamSettleAdjustmentRequest Setter
+// 结算调整单父节点
 func (r *TmallServiceSettleadjustmentModifyRequest) SetParamSettleAdjustmentRequest(paramSettleAdjustmentRequest *SettleAdjustmentRequest) error {
     r.paramSettleAdjustmentRequest = paramSettleAdjustmentRequest
     r.Set("param_settle_adjustment_request", paramSettleAdjustmentRequest)
     return nil
 }
 
+// ParamSettleAdjustmentRequest Getter
 func (r TmallServiceSettleadjustmentModifyRequest) GetParamSettleAdjustmentRequest() *SettleAdjustmentRequest {
     return r.paramSettleAdjustmentRequest
 }
-

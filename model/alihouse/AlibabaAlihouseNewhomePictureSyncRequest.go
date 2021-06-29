@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-图片数据同步 APIRequest
+图片数据同步 API请求
 alibaba.alihouse.newhome.picture.sync
 
 图片数据同步
 */
 type AlibabaAlihouseNewhomePictureSyncRequest struct {
     model.Params
-
     // 数据
-    projectPictureData   *ProjectPictureDto 
-
+    projectPictureData   *ProjectPictureDto
 }
 
+// 初始化AlibabaAlihouseNewhomePictureSyncRequest对象
 func NewAlibabaAlihouseNewhomePictureSyncRequest() *AlibabaAlihouseNewhomePictureSyncRequest{
     return &AlibabaAlihouseNewhomePictureSyncRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihouseNewhomePictureSyncRequest) GetApiMethodName() string {
     return "alibaba.alihouse.newhome.picture.sync"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihouseNewhomePictureSyncRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihouseNewhomePictureSyncRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ProjectPictureData Setter
+// 数据
 func (r *AlibabaAlihouseNewhomePictureSyncRequest) SetProjectPictureData(projectPictureData *ProjectPictureDto) error {
     r.projectPictureData = projectPictureData
     r.Set("project_picture_data", projectPictureData)
     return nil
 }
 
+// ProjectPictureData Getter
 func (r AlibabaAlihouseNewhomePictureSyncRequest) GetProjectPictureData() *ProjectPictureDto {
     return r.projectPictureData
 }
-

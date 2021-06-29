@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-仓库同步接口 APIRequest
+仓库同步接口 API请求
 taobao.qimen.warehouseinfo.synchronize
 
 仓库同步接口
 */
 type TaobaoQimenWarehouseinfoSynchronizeRequest struct {
     model.Params
-
     // 请求报文
-    request   *Request 
-
+    request   *Request
 }
 
+// 初始化TaobaoQimenWarehouseinfoSynchronizeRequest对象
 func NewTaobaoQimenWarehouseinfoSynchronizeRequest() *TaobaoQimenWarehouseinfoSynchronizeRequest{
     return &TaobaoQimenWarehouseinfoSynchronizeRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenWarehouseinfoSynchronizeRequest) GetApiMethodName() string {
     return "taobao.qimen.warehouseinfo.synchronize"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenWarehouseinfoSynchronizeRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenWarehouseinfoSynchronizeRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 请求报文
 func (r *TaobaoQimenWarehouseinfoSynchronizeRequest) SetRequest(request *Request) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenWarehouseinfoSynchronizeRequest) GetRequest() *Request {
     return r.request
 }
-

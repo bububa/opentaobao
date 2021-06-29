@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-门店自送根据核销码查订单 APIRequest
+门店自送根据核销码查订单 API请求
 taobao.omniorder.dtd.query
 
 门店自送根据核销码码查询订单信息
 */
 type TaobaoOmniorderDtdQueryRequest struct {
     model.Params
-
     // 核销码
-    code   string 
-
+    code   string
 }
 
+// 初始化TaobaoOmniorderDtdQueryRequest对象
 func NewTaobaoOmniorderDtdQueryRequest() *TaobaoOmniorderDtdQueryRequest{
     return &TaobaoOmniorderDtdQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoOmniorderDtdQueryRequest) GetApiMethodName() string {
     return "taobao.omniorder.dtd.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoOmniorderDtdQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoOmniorderDtdQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Code Setter
+// 核销码
 func (r *TaobaoOmniorderDtdQueryRequest) SetCode(code string) error {
     r.code = code
     r.Set("code", code)
     return nil
 }
 
+// Code Getter
 func (r TaobaoOmniorderDtdQueryRequest) GetCode() string {
     return r.code
 }
-

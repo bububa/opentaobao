@@ -1,4 +1,5 @@
 {
+	"id": 39606,
 	"name": "taobao.qianniu.cloudkefu.onlinestatuslog.get",
 	"apiChineseName": "查询客服在线状态",
 	"description": "按天查询客服账号的在线状态记录。如：登录，下线，挂起等\n有别于taobao.qianniu.cloudkefu.statuslog.get接口，这个接口可以查询30天内的流水，不需要分页查询",

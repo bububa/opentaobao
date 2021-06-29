@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-isv查询服务工单详情 APIResponse
+isv查询服务工单详情 API返回值 
 tmall.aliauto.service.receipt.get
 
 isv查询服务工单详情
@@ -17,15 +17,11 @@ type TmallAliautoServiceReceiptGetAPIResponse struct {
     TmallAliautoServiceReceiptGetResponse
 }
 
+// isv查询服务工单详情 成功返回结果
 type TmallAliautoServiceReceiptGetResponse struct {
     XMLName xml.Name `xml:"tmall_aliauto_service_receipt_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回包装类
-    
     Result   *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

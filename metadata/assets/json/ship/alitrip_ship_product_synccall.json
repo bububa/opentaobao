@@ -1,4 +1,5 @@
 {
+	"id": 48174,
 	"name": "alitrip.ship.product.synccall",
 	"apiChineseName": "全量同步回调",
 	"description": "全量同步接口",

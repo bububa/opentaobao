@@ -1,4 +1,5 @@
 {
+	"id": 46428,
 	"name": "cainiao.global.handover.parcel.query",
 	"apiChineseName": "获取交接单小包信息",
 	"description": "提供给ISV通过该接口查询小包信息",

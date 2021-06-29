@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-发货单波次通知接口 APIRequest
+发货单波次通知接口 API请求
 taobao.qimen.wavenum.report
 
 WMS调用奇门的接口,该接口用来给ERP或者OMS回传波次号及对应的发货单号，以支持商家货票同行、波次内包裹的处理等需求
 */
 type TaobaoQimenWavenumReportRequest struct {
     model.Params
-
     // 
-    request   *WaveNumReportRequest 
-
+    request   *WaveNumReportRequest
 }
 
+// 初始化TaobaoQimenWavenumReportRequest对象
 func NewTaobaoQimenWavenumReportRequest() *TaobaoQimenWavenumReportRequest{
     return &TaobaoQimenWavenumReportRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenWavenumReportRequest) GetApiMethodName() string {
     return "taobao.qimen.wavenum.report"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenWavenumReportRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenWavenumReportRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenWavenumReportRequest) SetRequest(request *WaveNumReportRequest) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenWavenumReportRequest) GetRequest() *WaveNumReportRequest {
     return r.request
 }
-

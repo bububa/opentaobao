@@ -1,4 +1,5 @@
 {
+	"id": 51055,
 	"name": "alibaba.mozi.vds.tenant.api.service.addadmin",
 	"apiChineseName": "新建租户管理员",
 	"description": "新建租户管理员\nalibaba.mozi.vds.tenant.api.service.addadmin",

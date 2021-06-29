@@ -1,4 +1,5 @@
 {
+	"id": 30410,
 	"name": "yunos.osupdate.appversion.create",
 	"apiChineseName": "创建应用升级任务",
 	"description": "创建应用升级任务",

@@ -5,13 +5,17 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"strconv"
 	"text/template"
+	"time"
 )
 
 var (
-	GitTag      string // set at compile time with -ldflags
-	GitRevision string // set at compile time with -ldflags
-	GitSummary  string // set at compile time with -ldflags
+	version = "dev"     // set at compile time with -ldflags
+	commit  = "none"    // set at compile time with -ldflags
+	date    = "unknown" // set at compile time with -ldflags
+	GitDate = ""
+	builtBy = "unknown" // set at compile time with -ldflags
 )
 
 func main() {
@@ -51,10 +55,16 @@ func genGoDoc() error {
 		return err
 	}
 	defer fd.Close()
+	if date == "unknown" && GitDate != "" {
+		if t, err := strconv.ParseInt(GitDate, 10, 64); err == nil {
+			date = time.Unix(t, 0).UTC().Format(time.RFC3339)
+		}
+	}
 	tpl := map[string]string{
-		"GitTag":      GitTag,
-		"GitRevision": GitRevision,
-		"GitSummary":  GitSummary,
+		"GitVersion": version,
+		"GitCommit":  commit,
+		"GitDate":    date,
+		"GitBuiltBy": builtBy,
 	}
 	tmpl.Execute(fd, tpl)
 	return nil

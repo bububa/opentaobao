@@ -1,4 +1,5 @@
 {
+	"id": 31030,
 	"name": "alibaba.scbp.ad.account.level.get",
 	"apiChineseName": "查询推广账户等级",
 	"description": "查询推广账户等级",

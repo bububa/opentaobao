@@ -1,4 +1,5 @@
 {
+	"id": 22664,
 	"name": "taobao.xhotel.update",
 	"apiChineseName": "酒店更新接口（ID不存在自动新增）",
 	"description": "酒店更新接口",

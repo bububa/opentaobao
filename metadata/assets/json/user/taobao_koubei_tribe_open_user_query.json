@@ -1,4 +1,5 @@
 {
+	"id": 45449,
 	"name": "taobao.koubei.tribe.open.user.query",
 	"apiChineseName": "获取用户openId",
 	"description": "口碑综合体通过手机号码获取加密后的用户openId",

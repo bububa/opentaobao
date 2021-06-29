@@ -1,4 +1,5 @@
 {
+	"id": 53105,
 	"name": "taobao.openmall.trade.shipaddress.update",
 	"apiChineseName": "Openmall订单收货地址修改",
 	"description": "Openmall订单收货地址修改",

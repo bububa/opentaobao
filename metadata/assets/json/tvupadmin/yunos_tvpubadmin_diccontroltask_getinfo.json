@@ -1,4 +1,5 @@
 {
+	"id": 28587,
 	"name": "yunos.tvpubadmin.diccontroltask.getinfo",
 	"apiChineseName": "获取停开服任务详情",
 	"description": "获取停开服任务详情",

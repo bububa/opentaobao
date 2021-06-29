@@ -1,4 +1,5 @@
 {
+	"id": 31870,
 	"name": "taobao.omniorder.dtd.consume",
 	"apiChineseName": "门店自送对码进行核销",
 	"description": "该接口根据传入的码及订单信息，如果码与订单一致，则对门店自送服务进行核销。",

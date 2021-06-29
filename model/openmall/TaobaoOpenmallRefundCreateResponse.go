@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-创建OpenMall退款单 APIResponse
+创建OpenMall退款单 API返回值 
 taobao.openmall.refund.create
 
 创建OpenMall退款单
@@ -18,20 +18,13 @@ type TaobaoOpenmallRefundCreateAPIResponse struct {
     TaobaoOpenmallRefundCreateResponse
 }
 
+// 创建OpenMall退款单 成功返回结果
 type TaobaoOpenmallRefundCreateResponse struct {
     XMLName xml.Name `xml:"openmall_refund_create_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 退款ID
-    
     RefundId   int64 `json:"refund_id,omitempty" xml:"refund_id,omitempty"`
-
-    
     // 退款单状态
-    
     Status   string `json:"status,omitempty" xml:"status,omitempty"`
-
-    
 }

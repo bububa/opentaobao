@@ -1,4 +1,5 @@
 {
+	"id": 26214,
 	"name": "taobao.tvpay.auth.query",
 	"apiChineseName": "tv支付授权查询",
 	"description": "查询该用户在指定设备上是否有支付授权",

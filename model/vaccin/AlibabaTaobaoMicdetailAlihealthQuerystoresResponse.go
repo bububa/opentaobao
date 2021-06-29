@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-疫苗预约门店列表查询 APIResponse
+疫苗预约门店列表查询 API返回值 
 alibaba.taobao.micdetail.alihealth.querystores
 
 微信小程序疫苗预约门店列表查询
@@ -17,15 +17,11 @@ type AlibabaTaobaoMicdetailAlihealthQuerystoresAPIResponse struct {
     AlibabaTaobaoMicdetailAlihealthQuerystoresResponse
 }
 
+// 疫苗预约门店列表查询 成功返回结果
 type AlibabaTaobaoMicdetailAlihealthQuerystoresResponse struct {
     XMLName xml.Name `xml:"alibaba_taobao_micdetail_alihealth_querystores_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *AlibabaTaobaoMicdetailAlihealthQuerystoresResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

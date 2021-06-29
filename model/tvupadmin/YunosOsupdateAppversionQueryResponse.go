@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-分页获取桌面升级任务 APIResponse
+分页获取桌面升级任务 API返回值 
 yunos.osupdate.appversion.query
 
 分页获取桌面升级任务
@@ -17,20 +17,13 @@ type YunosOsupdateAppversionQueryAPIResponse struct {
     YunosOsupdateAppversionQueryResponse
 }
 
+// 分页获取桌面升级任务 成功返回结果
 type YunosOsupdateAppversionQueryResponse struct {
     XMLName xml.Name `xml:"yunos_osupdate_appversion_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // resultList
-    
     ResultList   []TvAppVersion `json:"result_list,omitempty" xml:"result_list>tv_app_version,omitempty"`
-    
-    
     // 总数
-    
     TotalCount   int64 `json:"total_count,omitempty" xml:"total_count,omitempty"`
-
-    
 }

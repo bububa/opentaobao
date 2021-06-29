@@ -1,4 +1,5 @@
 {
+	"id": 27333,
 	"name": "alibaba.alihealth.examination.reserve.confirm",
 	"apiChineseName": "体检机构对接_体检套餐预定确认",
 	"description": "向体检机构确认用户购买的体检套餐信息",

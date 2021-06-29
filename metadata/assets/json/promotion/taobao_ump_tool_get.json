@@ -1,4 +1,5 @@
 {
+	"id": 10711,
 	"name": "taobao.ump.tool.get",
 	"apiChineseName": "查询工具",
 	"description": "根据工具id获取一个工具对象",

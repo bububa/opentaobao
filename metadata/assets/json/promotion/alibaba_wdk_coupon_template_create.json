@@ -1,4 +1,5 @@
 {
+	"id": 46118,
 	"name": "alibaba.wdk.coupon.template.create",
 	"apiChineseName": "优惠券模版创建",
 	"description": "开放给外部商家创建优惠券模版",

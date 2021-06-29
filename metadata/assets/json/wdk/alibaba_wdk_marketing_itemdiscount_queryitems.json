@@ -1,4 +1,5 @@
 {
+	"id": 31413,
 	"name": "alibaba.wdk.marketing.itemdiscount.queryitems",
 	"apiChineseName": "查询特价商品",
 	"description": "查询参加特价活动的商品优惠详情",

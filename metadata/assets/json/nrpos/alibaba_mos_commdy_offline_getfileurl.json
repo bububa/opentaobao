@@ -1,4 +1,5 @@
 {
+	"id": 42992,
 	"name": "alibaba.mos.commdy.offline.getfileurl",
 	"apiChineseName": "去前置机pos商品离线文件下载地址查询接口",
 	"description": "去前置机-pos查询离线文件下载地址接口",

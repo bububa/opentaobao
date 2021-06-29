@@ -1,4 +1,5 @@
 {
+	"id": 38749,
 	"name": "alibaba.campus.space.type.getpageresult",
 	"apiChineseName": "分页查询空间类别接口",
 	"description": "分页查询空间类别接口\nHSF接口名称：com.alibaba.campus.space.api.top.SpaceTypeApiTopService\nHSF方法名称：getPageResult",

@@ -1,4 +1,5 @@
 {
+	"id": 30846,
 	"name": "alibaba.nlife.store.itemdetails.get",
 	"apiChineseName": "批量获取零售加商品详情信息",
 	"description": "批量获取零售加平台上的商品详情信息",

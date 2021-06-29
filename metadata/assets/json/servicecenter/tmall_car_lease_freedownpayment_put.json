@@ -1,4 +1,5 @@
 {
+	"id": 43845,
 	"name": "tmall.car.lease.freedownpayment.put",
 	"apiChineseName": "同步直租车免首付商品活动信息",
 	"description": "汽车行业直租车免首付需求中，用与对商品打标，活动范围设置，在消费者端商品详情页、订单等环节透出，表示该商品为直租免首付商品。",

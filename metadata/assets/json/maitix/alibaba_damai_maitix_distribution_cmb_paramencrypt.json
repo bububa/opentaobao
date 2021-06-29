@@ -1,4 +1,5 @@
 {
+	"id": 49119,
 	"name": "alibaba.damai.maitix.distribution.cmb.paramencrypt",
 	"apiChineseName": "加密招商一网能支付入参",
 	"description": "encryptParam4Cmb",

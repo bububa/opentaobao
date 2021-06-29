@@ -1,4 +1,5 @@
 {
+	"id": 33585,
 	"name": "alibaba.campus.adminmap.userlocationinfo.insertactualuserlocationinfo",
 	"apiChineseName": "上传用户实时位置",
 	"description": "上传用户实时位置\nHSF接口名称：com.alibaba.campus.api.adminmap.service.top.UserLocationQueryApiTopService\nHSF方法名称：insertActualUserLocationInfo",

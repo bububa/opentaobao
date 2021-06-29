@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询和词匹配的推广产品 APIRequest
+查询和词匹配的推广产品 API请求
 alibaba.scbp.keyword.matched.products.get
 
 查询和词匹配的推广产品
 */
 type AlibabaScbpKeywordMatchedProductsGetRequest struct {
     model.Params
-
     // 已购买的关键词
-    adKeyword   string 
-
+    adKeyword   string
 }
 
+// 初始化AlibabaScbpKeywordMatchedProductsGetRequest对象
 func NewAlibabaScbpKeywordMatchedProductsGetRequest() *AlibabaScbpKeywordMatchedProductsGetRequest{
     return &AlibabaScbpKeywordMatchedProductsGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaScbpKeywordMatchedProductsGetRequest) GetApiMethodName() string {
     return "alibaba.scbp.keyword.matched.products.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaScbpKeywordMatchedProductsGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaScbpKeywordMatchedProductsGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// AdKeyword Setter
+// 已购买的关键词
 func (r *AlibabaScbpKeywordMatchedProductsGetRequest) SetAdKeyword(adKeyword string) error {
     r.adKeyword = adKeyword
     r.Set("ad_keyword", adKeyword)
     return nil
 }
 
+// AdKeyword Getter
 func (r AlibabaScbpKeywordMatchedProductsGetRequest) GetAdKeyword() string {
     return r.adKeyword
 }
-

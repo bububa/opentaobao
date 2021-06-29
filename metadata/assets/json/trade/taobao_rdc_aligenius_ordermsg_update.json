@@ -1,4 +1,5 @@
 {
+	"id": 39964,
 	"name": "taobao.rdc.aligenius.ordermsg.update",
 	"apiChineseName": "订单消息状态回传",
 	"description": "用于订单消息处理状态回传",

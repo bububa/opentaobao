@@ -1,4 +1,5 @@
 {
+	"id": 42526,
 	"name": "alibaba.lst.trade.order.get",
 	"apiChineseName": "零售通交易订单查询--品牌商视角",
 	"description": "根据订单id查询零售通交易订单",

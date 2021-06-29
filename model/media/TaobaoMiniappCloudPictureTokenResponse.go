@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-云存储上传token获取 APIResponse
+云存储上传token获取 API返回值 
 taobao.miniapp.cloud.picture.token
 
 获取图片上传token，作为http://upload.cloud.tmall.com/api/proxy/upload接口上传的凭证。
@@ -24,15 +24,11 @@ type TaobaoMiniappCloudPictureTokenAPIResponse struct {
     TaobaoMiniappCloudPictureTokenResponse
 }
 
+// 云存储上传token获取 成功返回结果
 type TaobaoMiniappCloudPictureTokenResponse struct {
     XMLName xml.Name `xml:"miniapp_cloud_picture_token_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回的token
-    
     Token   string `json:"token,omitempty" xml:"token,omitempty"`
-
-    
 }

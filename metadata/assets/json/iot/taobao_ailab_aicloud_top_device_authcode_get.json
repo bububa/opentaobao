@@ -1,4 +1,5 @@
 {
+	"id": 33059,
 	"name": "taobao.ailab.aicloud.top.device.authcode.get",
 	"apiChineseName": "获取设备授权码",
 	"description": "获取设备授权码",

@@ -1,4 +1,5 @@
 {
+	"id": 27966,
 	"name": "alibaba.einvoice.invoiceapply.get",
 	"apiChineseName": "获取商家的开票申请",
 	"description": "开票服务商接收到商家发起的开票申请消息后，调用此接口拉取商家详细的开票申请内容",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-不落库商家推送更新酒店rate APIRequest
+不落库商家推送更新酒店rate API请求
 taobao.xhotel.intl.rate.update
 
 商家主动推送不落库商品的酒店信息
 */
 type TaobaoXhotelIntlRateUpdateRequest struct {
     model.Params
-
     // rate更新参数
-    updateRateParam   *UpdateRateParam 
-
+    updateRateParam   *UpdateRateParam
 }
 
+// 初始化TaobaoXhotelIntlRateUpdateRequest对象
 func NewTaobaoXhotelIntlRateUpdateRequest() *TaobaoXhotelIntlRateUpdateRequest{
     return &TaobaoXhotelIntlRateUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoXhotelIntlRateUpdateRequest) GetApiMethodName() string {
     return "taobao.xhotel.intl.rate.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoXhotelIntlRateUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoXhotelIntlRateUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// UpdateRateParam Setter
+// rate更新参数
 func (r *TaobaoXhotelIntlRateUpdateRequest) SetUpdateRateParam(updateRateParam *UpdateRateParam) error {
     r.updateRateParam = updateRateParam
     r.Set("update_rate_param", updateRateParam)
     return nil
 }
 
+// UpdateRateParam Getter
 func (r TaobaoXhotelIntlRateUpdateRequest) GetUpdateRateParam() *UpdateRateParam {
     return r.updateRateParam
 }
-

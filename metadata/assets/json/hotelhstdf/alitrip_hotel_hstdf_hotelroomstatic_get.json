@@ -1,4 +1,5 @@
 {
+	"id": 44899,
 	"name": "alitrip.hotel.hstdf.hotelroomstatic.get",
 	"apiChineseName": "根据类型查询静态字段",
 	"description": "根据类型查询分页静态字段",

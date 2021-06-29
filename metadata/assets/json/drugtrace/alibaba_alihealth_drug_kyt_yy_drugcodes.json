@@ -1,4 +1,5 @@
 {
+	"id": 46021,
 	"name": "alibaba.alihealth.drug.kyt.yy.drugcodes",
 	"apiChineseName": "查询药品是否赋码",
 	"description": "药品是否赋码",

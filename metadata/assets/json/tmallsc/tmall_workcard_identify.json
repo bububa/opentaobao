@@ -1,4 +1,5 @@
 {
+	"id": 33695,
 	"name": "tmall.workcard.identify",
 	"apiChineseName": "工单核销",
 	"description": "工单核销，当工单完成以后，通过调用此接口核销\n可以按照多维度核销工单，\n电器预约安装按照工单维度核销，必选字段workcard_id,buyer_id,identify_code，可选字段attrs，通过扩展字段attrs回传机器码，格式{sn:'机器码'}",

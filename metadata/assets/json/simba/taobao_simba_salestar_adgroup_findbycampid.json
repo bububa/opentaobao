@@ -1,4 +1,5 @@
 {
+	"id": 43358,
 	"name": "taobao.simba.salestar.adgroup.findbycampid",
 	"apiChineseName": "(销量明星)批量获取推广计划下的推广组信息",
 	"description": "批量得到推广计划下的推广组",

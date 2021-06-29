@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-权益选择器接口 APIResponse
+权益选择器接口 API返回值 
 taobao.promotion.benefit.selector
 
 权益选择器，查询用户已有权益，提供用户进行已拥有权益的选择操作，权益发放的前置操作
@@ -22,20 +22,13 @@ type TaobaoPromotionBenefitSelectorAPIResponse struct {
     TaobaoPromotionBenefitSelectorResponse
 }
 
+// 权益选择器接口 成功返回结果
 type TaobaoPromotionBenefitSelectorResponse struct {
     XMLName xml.Name `xml:"promotion_benefit_selector_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口调用是否成功
-    
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
     // 权益列表信息
-    
     BenefitList   []BenefitSelectorVo `json:"benefit_list,omitempty" xml:"benefit_list>benefit_selector_vo,omitempty"`
-    
-    
 }

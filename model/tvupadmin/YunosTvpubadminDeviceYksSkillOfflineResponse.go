@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-技能下架 APIResponse
+技能下架 API返回值 
 yunos.tvpubadmin.device.yks.skill.offline
 
 迎客松平台技能下架
@@ -17,15 +17,11 @@ type YunosTvpubadminDeviceYksSkillOfflineAPIResponse struct {
     YunosTvpubadminDeviceYksSkillOfflineResponse
 }
 
+// 技能下架 成功返回结果
 type YunosTvpubadminDeviceYksSkillOfflineResponse struct {
     XMLName xml.Name `xml:"yunos_tvpubadmin_device_yks_skill_offline_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *BaseResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

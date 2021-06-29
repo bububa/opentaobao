@@ -7,35 +7,34 @@ import (
 )
 
 /* 
-视频单集场景接入API APIRequest
+视频单集场景接入API API请求
 alibaba.ailabs.aligenie.openvideo.scenepush
 
 视频单集场景接入API
 */
 type AlibabaAilabsAligenieOpenvideoScenepushRequest struct {
     model.Params
-
     // 内容接入场景0 无应用挂靠 1 应用挂靠
-    sceneType   int64 
-
+    sceneType   int64
     // 挂靠的应用id,在智能应用平台的地址栏可见
-    sceneValue   string 
-
+    sceneValue   string
     // 待推送的视频数据
-    paramList   []RawSingleVideo 
-
+    paramList   []RawSingleVideo
 }
 
+// 初始化AlibabaAilabsAligenieOpenvideoScenepushRequest对象
 func NewAlibabaAilabsAligenieOpenvideoScenepushRequest() *AlibabaAilabsAligenieOpenvideoScenepushRequest{
     return &AlibabaAilabsAligenieOpenvideoScenepushRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAilabsAligenieOpenvideoScenepushRequest) GetApiMethodName() string {
     return "alibaba.ailabs.aligenie.openvideo.scenepush"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAilabsAligenieOpenvideoScenepushRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -43,35 +42,39 @@ func (r AlibabaAilabsAligenieOpenvideoScenepushRequest) GetApiParams() url.Value
     }
     return params
 }
-
-
+// SceneType Setter
+// 内容接入场景0 无应用挂靠 1 应用挂靠
 func (r *AlibabaAilabsAligenieOpenvideoScenepushRequest) SetSceneType(sceneType int64) error {
     r.sceneType = sceneType
     r.Set("scene_type", sceneType)
     return nil
 }
 
+// SceneType Getter
 func (r AlibabaAilabsAligenieOpenvideoScenepushRequest) GetSceneType() int64 {
     return r.sceneType
 }
-
+// SceneValue Setter
+// 挂靠的应用id,在智能应用平台的地址栏可见
 func (r *AlibabaAilabsAligenieOpenvideoScenepushRequest) SetSceneValue(sceneValue string) error {
     r.sceneValue = sceneValue
     r.Set("scene_value", sceneValue)
     return nil
 }
 
+// SceneValue Getter
 func (r AlibabaAilabsAligenieOpenvideoScenepushRequest) GetSceneValue() string {
     return r.sceneValue
 }
-
+// ParamList Setter
+// 待推送的视频数据
 func (r *AlibabaAilabsAligenieOpenvideoScenepushRequest) SetParamList(paramList []RawSingleVideo) error {
     r.paramList = paramList
     r.Set("param_list", paramList)
     return nil
 }
 
+// ParamList Getter
 func (r AlibabaAilabsAligenieOpenvideoScenepushRequest) GetParamList() []RawSingleVideo {
     return r.paramList
 }
-

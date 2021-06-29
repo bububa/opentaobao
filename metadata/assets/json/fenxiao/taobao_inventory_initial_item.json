@@ -1,4 +1,5 @@
 {
+	"id": 21728,
 	"name": "taobao.inventory.initial.item",
 	"apiChineseName": "商品库存初始化",
 	"description": "建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。\n商家仓商品初始化在各个仓中库存",

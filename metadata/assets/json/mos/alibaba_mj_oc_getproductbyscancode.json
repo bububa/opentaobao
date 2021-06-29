@@ -1,4 +1,5 @@
 {
+	"id": 29541,
 	"name": "alibaba.mj.oc.getproductbyscancode",
 	"apiChineseName": "POS商品查询接口",
 	"description": "此API用于在银泰商场中，POS端扫码获取商品信息",

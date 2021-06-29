@@ -1,4 +1,5 @@
 {
+	"id": 52271,
 	"name": "tmall.aliauto.wisdomdata.model.recive",
 	"apiChineseName": "第三方车型数据上传",
 	"description": "天猫汽车对外提供的汽车车型数据上传接口",

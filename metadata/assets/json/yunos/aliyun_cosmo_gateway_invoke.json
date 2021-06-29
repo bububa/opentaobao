@@ -1,4 +1,5 @@
 {
+	"id": 33101,
 	"name": "aliyun.cosmo.gateway.invoke",
 	"apiChineseName": "alios cosmo服务调用",
 	"description": "AliOS cosmo服务分发平台对外调用接口",

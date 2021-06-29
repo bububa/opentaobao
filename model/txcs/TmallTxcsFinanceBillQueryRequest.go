@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-天猫超市外部商家财务账单信息查询 APIRequest
+天猫超市外部商家财务账单信息查询 API请求
 tmall.txcs.finance.bill.query
 
 提供天猫超市外部合作商家财务账单对账
 */
 type TmallTxcsFinanceBillQueryRequest struct {
     model.Params
-
     // 对账单号
-    statementBillQuery   *StatementBillQuery 
-
+    statementBillQuery   *StatementBillQuery
 }
 
+// 初始化TmallTxcsFinanceBillQueryRequest对象
 func NewTmallTxcsFinanceBillQueryRequest() *TmallTxcsFinanceBillQueryRequest{
     return &TmallTxcsFinanceBillQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallTxcsFinanceBillQueryRequest) GetApiMethodName() string {
     return "tmall.txcs.finance.bill.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallTxcsFinanceBillQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallTxcsFinanceBillQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// StatementBillQuery Setter
+// 对账单号
 func (r *TmallTxcsFinanceBillQueryRequest) SetStatementBillQuery(statementBillQuery *StatementBillQuery) error {
     r.statementBillQuery = statementBillQuery
     r.Set("statement_bill_query", statementBillQuery)
     return nil
 }
 
+// StatementBillQuery Getter
 func (r TmallTxcsFinanceBillQueryRequest) GetStatementBillQuery() *StatementBillQuery {
     return r.statementBillQuery
 }
-

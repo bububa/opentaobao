@@ -1,4 +1,5 @@
 {
+	"id": 23577,
 	"name": "taobao.simba.insight.wordssubdata.get",
 	"apiChineseName": "获取关键词按流量细分的数据",
 	"description": "获取关键词按流量进行细分的数据，返回结果中network表示流量的来源，意义如下：1-\u003ePC站内，2-\u003ePC站外,4-\u003e无线站内 5-\u003e无线站外",

@@ -1,4 +1,5 @@
 {
+	"id": 31274,
 	"name": "alibaba.einvoice.bill.forword.create",
 	"apiChineseName": "扫码开票结算单同步前开发票",
 	"description": "扫码开票结算单同步前开发票，会将数据同步到结算单中",

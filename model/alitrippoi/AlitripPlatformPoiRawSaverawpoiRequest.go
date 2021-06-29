@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-POI开放存储能力 APIRequest
+POI开放存储能力 API请求
 alitrip.platform.poi.raw.saverawpoi
 
 POI开放存储提供离线/在线/纬错更新的能力
 */
 type AlitripPlatformPoiRawSaverawpoiRequest struct {
     model.Params
-
     // poi存储参数
-    tripPoiRawSaveParam   *TripPoiRawSaveParamV2 
-
+    tripPoiRawSaveParam   *TripPoiRawSaveParamV2
 }
 
+// 初始化AlitripPlatformPoiRawSaverawpoiRequest对象
 func NewAlitripPlatformPoiRawSaverawpoiRequest() *AlitripPlatformPoiRawSaverawpoiRequest{
     return &AlitripPlatformPoiRawSaverawpoiRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripPlatformPoiRawSaverawpoiRequest) GetApiMethodName() string {
     return "alitrip.platform.poi.raw.saverawpoi"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripPlatformPoiRawSaverawpoiRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripPlatformPoiRawSaverawpoiRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TripPoiRawSaveParam Setter
+// poi存储参数
 func (r *AlitripPlatformPoiRawSaverawpoiRequest) SetTripPoiRawSaveParam(tripPoiRawSaveParam *TripPoiRawSaveParamV2) error {
     r.tripPoiRawSaveParam = tripPoiRawSaveParam
     r.Set("trip_poi_raw_save_param", tripPoiRawSaveParam)
     return nil
 }
 
+// TripPoiRawSaveParam Getter
 func (r AlitripPlatformPoiRawSaverawpoiRequest) GetTripPoiRawSaveParam() *TripPoiRawSaveParamV2 {
     return r.tripPoiRawSaveParam
 }
-

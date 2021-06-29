@@ -1,4 +1,5 @@
 {
+	"id": 27464,
 	"name": "alibaba.security.jaq.rp.rphit",
 	"apiChineseName": "聚安全-实人认证日志打点接口",
 	"description": "聚安全实人认证日志打点接口",

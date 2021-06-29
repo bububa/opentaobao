@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-库存查询接口（多商品） APIRequest
+库存查询接口（多商品） API请求
 taobao.qimen.inventory.query
 
 ERP调用奇门的接口,查询商品的库存量
 */
 type TaobaoQimenInventoryQueryRequest struct {
     model.Params
-
     // 
-    request   *InventoryQueryRequest 
-
+    request   *InventoryQueryRequest
 }
 
+// 初始化TaobaoQimenInventoryQueryRequest对象
 func NewTaobaoQimenInventoryQueryRequest() *TaobaoQimenInventoryQueryRequest{
     return &TaobaoQimenInventoryQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenInventoryQueryRequest) GetApiMethodName() string {
     return "taobao.qimen.inventory.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenInventoryQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenInventoryQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenInventoryQueryRequest) SetRequest(request *InventoryQueryRequest) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenInventoryQueryRequest) GetRequest() *InventoryQueryRequest {
     return r.request
 }
-

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-智能硬件云货架数据回流 APIResponse
+智能硬件云货架数据回流 API返回值 
 taobao.smartstore.device.iashelf.feedback
 
 智慧门店云货架设备回流规则：（互动云货架、VR云货架通用）</br>
@@ -23,15 +23,11 @@ type TaobaoSmartstoreDeviceIashelfFeedbackAPIResponse struct {
     TaobaoSmartstoreDeviceIashelfFeedbackResponse
 }
 
+// 智能硬件云货架数据回流 成功返回结果
 type TaobaoSmartstoreDeviceIashelfFeedbackResponse struct {
     XMLName xml.Name `xml:"smartstore_device_iashelf_feedback_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 回流结果
-    
     Result   string `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

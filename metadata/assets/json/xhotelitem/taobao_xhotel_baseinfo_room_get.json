@@ -1,4 +1,5 @@
 {
+	"id": 28763,
 	"name": "taobao.xhotel.baseinfo.room.get",
 	"apiChineseName": "酒店房型与房价查询",
 	"description": "根据outHid/hid获取酒店的房型和价格信息",

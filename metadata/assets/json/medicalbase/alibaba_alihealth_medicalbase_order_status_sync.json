@@ -1,4 +1,5 @@
 {
+	"id": 55216,
 	"name": "alibaba.alihealth.medicalbase.order.status.sync",
 	"apiChineseName": "号源直连订单状态同步接口",
 	"description": "互联网医院isv批量通过接口批量导入",

@@ -1,4 +1,5 @@
 {
+	"id": 43456,
 	"name": "aliexpress.solution.product.schema.get",
 	"apiChineseName": "get product schema",
 	"description": "provide a new schema way to post product. With a pair of API, one for getting schema, one for posting instance",

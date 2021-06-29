@@ -1,4 +1,5 @@
 {
+	"id": 56257,
 	"name": "alibaba.dutyfree.stock.query",
 	"apiChineseName": "对外库存查询接口",
 	"description": "对外部服务提供库存查询接口",

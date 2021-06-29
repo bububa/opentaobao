@@ -1,4 +1,5 @@
 {
+	"id": 33679,
 	"name": "alibaba.wdk.fulfill.batch.query.by.batchids",
 	"apiChineseName": "作业小票查询接口",
 	"description": "根据节点等条件查询履约单小票信息",

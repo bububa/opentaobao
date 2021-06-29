@@ -1,4 +1,5 @@
 {
+	"id": 22479,
 	"name": "taobao.qt.reports.get",
 	"apiChineseName": "批量查询质检报告",
 	"description": "批量查询质检报告，目前只支持查询qtType=11（天猫真假鉴定）类型的报告",

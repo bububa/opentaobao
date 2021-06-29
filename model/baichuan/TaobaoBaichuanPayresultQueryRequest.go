@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-百川支付完成回调 APIRequest
+百川支付完成回调 API请求
 taobao.baichuan.payresult.query
 
 百川支付完成回调
 */
 type TaobaoBaichuanPayresultQueryRequest struct {
     model.Params
-
     // name
-    name   string 
-
+    name   string
 }
 
+// 初始化TaobaoBaichuanPayresultQueryRequest对象
 func NewTaobaoBaichuanPayresultQueryRequest() *TaobaoBaichuanPayresultQueryRequest{
     return &TaobaoBaichuanPayresultQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoBaichuanPayresultQueryRequest) GetApiMethodName() string {
     return "taobao.baichuan.payresult.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoBaichuanPayresultQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoBaichuanPayresultQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Name Setter
+// name
 func (r *TaobaoBaichuanPayresultQueryRequest) SetName(name string) error {
     r.name = name
     r.Set("name", name)
     return nil
 }
 
+// Name Getter
 func (r TaobaoBaichuanPayresultQueryRequest) GetName() string {
     return r.name
 }
-

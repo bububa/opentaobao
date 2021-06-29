@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询税控开通工单详情 APIResponse
+查询税控开通工单详情 API返回值 
 alibaba.einvoice.flow.tax.get
 
 查询税控开通工单详情，接口返回工单状态、开票商户信息以及税控设备信息。
@@ -18,15 +18,11 @@ type AlibabaEinvoiceFlowTaxGetAPIResponse struct {
     AlibabaEinvoiceFlowTaxGetResponse
 }
 
+// 查询税控开通工单详情 成功返回结果
 type AlibabaEinvoiceFlowTaxGetResponse struct {
     XMLName xml.Name `xml:"alibaba_einvoice_flow_tax_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 系统返回的通用结果类
-    
     Result   *ServiceResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

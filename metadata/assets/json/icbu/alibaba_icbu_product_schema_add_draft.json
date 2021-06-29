@@ -1,4 +1,5 @@
 {
+	"id": 50107,
 	"name": "alibaba.icbu.product.schema.add.draft",
 	"apiChineseName": "（新）ICBU商品发布草稿",
 	"description": "提供发布ICBU商品草稿的入口",

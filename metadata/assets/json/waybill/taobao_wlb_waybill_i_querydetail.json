@@ -1,4 +1,5 @@
 {
+	"id": 23873,
 	"name": "taobao.wlb.waybill.i.querydetail",
 	"apiChineseName": "查面单号状态v1.0",
 	"description": "查看面单号的当前状态，如签收、发货、失效等。",

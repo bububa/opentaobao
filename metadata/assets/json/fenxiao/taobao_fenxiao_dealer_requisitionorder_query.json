@@ -1,4 +1,5 @@
 {
+	"id": 22033,
 	"name": "taobao.fenxiao.dealer.requisitionorder.query",
 	"apiChineseName": "按编号查询采购申请/经销采购单",
 	"description": "按编号查询采购申请/经销采购单，目前支持供应商和分销商查询。",

@@ -1,4 +1,5 @@
 {
+	"id": 39194,
 	"name": "taobao.xhotel.servicetime.get",
 	"apiChineseName": "查询实体对应的服务时间数据",
 	"description": "通过实体来获取对应的服务时间数据",

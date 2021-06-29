@@ -1,4 +1,5 @@
 {
+	"id": 50686,
 	"name": "alibaba.wdk.bm.paiyang.supply.publish",
 	"apiChineseName": "派样商品库存变更同步接口",
 	"description": "淘鲜达接入第三方进行派样，第三方同步大仓和门店的库存变更信息。",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-rt回传采购价 APIRequest
+rt回传采购价 API请求
 alibaba.wdk.purchase.price
 
 猫超共享库存项目-rt回传采购价
 */
 type AlibabaWdkPurchasePriceRequest struct {
     model.Params
-
     // 入参
-    wdkOpenPurchasePrice   *WdkOpenPurchasePrice 
-
+    wdkOpenPurchasePrice   *WdkOpenPurchasePrice
 }
 
+// 初始化AlibabaWdkPurchasePriceRequest对象
 func NewAlibabaWdkPurchasePriceRequest() *AlibabaWdkPurchasePriceRequest{
     return &AlibabaWdkPurchasePriceRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkPurchasePriceRequest) GetApiMethodName() string {
     return "alibaba.wdk.purchase.price"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkPurchasePriceRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkPurchasePriceRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// WdkOpenPurchasePrice Setter
+// 入参
 func (r *AlibabaWdkPurchasePriceRequest) SetWdkOpenPurchasePrice(wdkOpenPurchasePrice *WdkOpenPurchasePrice) error {
     r.wdkOpenPurchasePrice = wdkOpenPurchasePrice
     r.Set("wdk_open_purchase_price", wdkOpenPurchasePrice)
     return nil
 }
 
+// WdkOpenPurchasePrice Getter
 func (r AlibabaWdkPurchasePriceRequest) GetWdkOpenPurchasePrice() *WdkOpenPurchasePrice {
     return r.wdkOpenPurchasePrice
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 41073,
 	"name": "alibaba.mos.order.query",
 	"apiChineseName": "批量查询订单信息",
 	"description": "查询多笔交易信息",

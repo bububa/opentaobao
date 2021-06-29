@@ -1,4 +1,5 @@
 {
+	"id": 22251,
 	"name": "taobao.promotionmisc.activity.range.add",
 	"apiChineseName": "增加活动参与的商品",
 	"description": "增加活动参与的商品，部分商品参与的活动，最大支持指定150个商品。",

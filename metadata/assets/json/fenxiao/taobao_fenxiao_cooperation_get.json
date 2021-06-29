@@ -1,4 +1,5 @@
 {
+	"id": 10694,
 	"name": "taobao.fenxiao.cooperation.get",
 	"apiChineseName": "供应商或分销商获取合作关系信息",
 	"description": "获取供应商的合作关系信息",

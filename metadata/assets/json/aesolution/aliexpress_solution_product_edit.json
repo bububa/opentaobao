@@ -1,4 +1,5 @@
 {
+	"id": 39695,
 	"name": "aliexpress.solution.product.edit",
 	"apiChineseName": "Edit Product API",
 	"description": "API for editing product, customized for Oversea merchants. Most of the input fields of this API is similar with aliexpress.solution.product.post. For editing, just fill in the fields you would like to edit, leave other fields to be blank.",

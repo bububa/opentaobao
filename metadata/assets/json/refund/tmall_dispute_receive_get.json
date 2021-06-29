@@ -1,4 +1,5 @@
 {
+	"id": 33878,
 	"name": "tmall.dispute.receive.get",
 	"apiChineseName": "天猫逆向纠纷查询",
 	"description": "展示商家所有退款信息",

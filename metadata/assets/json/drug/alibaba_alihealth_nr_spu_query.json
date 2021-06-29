@@ -1,4 +1,5 @@
 {
+	"id": 48557,
 	"name": "alibaba.alihealth.nr.spu.query",
 	"apiChineseName": "获取标品库标品信息",
 	"description": "提供给ERP使用的，获取健康标品库信息",

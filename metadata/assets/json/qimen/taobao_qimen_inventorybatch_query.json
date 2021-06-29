@@ -1,4 +1,5 @@
 {
+	"id": 55337,
 	"name": "taobao.qimen.inventorybatch.query",
 	"apiChineseName": "商品单仓批次库存查询接口",
 	"description": "ERP 通过该接口查询指定商品的单仓批次库存",

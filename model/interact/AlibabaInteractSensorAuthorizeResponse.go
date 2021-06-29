@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-客户端授权页 APIResponse
+客户端授权页 API返回值 
 alibaba.interact.sensor.authorize
 
 客户端授权页
@@ -17,15 +17,11 @@ type AlibabaInteractSensorAuthorizeAPIResponse struct {
     AlibabaInteractSensorAuthorizeResponse
 }
 
+// 客户端授权页 成功返回结果
 type AlibabaInteractSensorAuthorizeResponse struct {
     XMLName xml.Name `xml:"alibaba_interact_sensor_authorize_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // return=0 表示成功
-    
     Result   string `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

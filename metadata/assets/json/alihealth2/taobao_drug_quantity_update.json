@@ -1,4 +1,5 @@
 {
+	"id": 26482,
 	"name": "taobao.drug.quantity.update",
 	"apiChineseName": "商家更新库存",
 	"description": "商家通过top接口可以直接修改商品库存",

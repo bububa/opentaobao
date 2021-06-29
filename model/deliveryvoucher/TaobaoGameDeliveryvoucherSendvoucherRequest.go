@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-提货券发券接口 APIRequest
+提货券发券接口 API请求
 taobao.game.deliveryvoucher.sendvoucher
 
 提货券发券接口：同步券和订单的关联信息
 */
 type TaobaoGameDeliveryvoucherSendvoucherRequest struct {
     model.Params
-
     // 发券参数
-    param0   *SendVoucherRequest 
-
+    param0   *SendVoucherRequest
 }
 
+// 初始化TaobaoGameDeliveryvoucherSendvoucherRequest对象
 func NewTaobaoGameDeliveryvoucherSendvoucherRequest() *TaobaoGameDeliveryvoucherSendvoucherRequest{
     return &TaobaoGameDeliveryvoucherSendvoucherRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoGameDeliveryvoucherSendvoucherRequest) GetApiMethodName() string {
     return "taobao.game.deliveryvoucher.sendvoucher"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoGameDeliveryvoucherSendvoucherRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoGameDeliveryvoucherSendvoucherRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param0 Setter
+// 发券参数
 func (r *TaobaoGameDeliveryvoucherSendvoucherRequest) SetParam0(param0 *SendVoucherRequest) error {
     r.param0 = param0
     r.Set("param0", param0)
     return nil
 }
 
+// Param0 Getter
 func (r TaobaoGameDeliveryvoucherSendvoucherRequest) GetParam0() *SendVoucherRequest {
     return r.param0
 }
-

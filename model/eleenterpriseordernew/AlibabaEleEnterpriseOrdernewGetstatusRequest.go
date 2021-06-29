@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-订单状态查询接口 APIRequest
+订单状态查询接口 API请求
 alibaba.ele.enterprise.ordernew.getstatus
 
 订单状态查询接口
 */
 type AlibabaEleEnterpriseOrdernewGetstatusRequest struct {
     model.Params
-
     // 订单号
-    elemeOrderId   string 
-
+    elemeOrderId   string
 }
 
+// 初始化AlibabaEleEnterpriseOrdernewGetstatusRequest对象
 func NewAlibabaEleEnterpriseOrdernewGetstatusRequest() *AlibabaEleEnterpriseOrdernewGetstatusRequest{
     return &AlibabaEleEnterpriseOrdernewGetstatusRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaEleEnterpriseOrdernewGetstatusRequest) GetApiMethodName() string {
     return "alibaba.ele.enterprise.ordernew.getstatus"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaEleEnterpriseOrdernewGetstatusRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaEleEnterpriseOrdernewGetstatusRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// ElemeOrderId Setter
+// 订单号
 func (r *AlibabaEleEnterpriseOrdernewGetstatusRequest) SetElemeOrderId(elemeOrderId string) error {
     r.elemeOrderId = elemeOrderId
     r.Set("eleme_order_id", elemeOrderId)
     return nil
 }
 
+// ElemeOrderId Getter
 func (r AlibabaEleEnterpriseOrdernewGetstatusRequest) GetElemeOrderId() string {
     return r.elemeOrderId
 }
-

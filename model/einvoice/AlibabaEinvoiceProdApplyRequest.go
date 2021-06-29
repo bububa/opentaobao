@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-提交发票申请 APIRequest
+提交发票申请 API请求
 alibaba.einvoice.prod.apply
 
 提交开票申请，如果商户授权自动开票则自动转开票，否则等待商户审核。
 */
 type AlibabaEinvoiceProdApplyRequest struct {
     model.Params
-
     // 申请开票请求
-    paramInvoiceApplyDto   *InvoiceApplyDto 
-
+    paramInvoiceApplyDto   *InvoiceApplyDto
 }
 
+// 初始化AlibabaEinvoiceProdApplyRequest对象
 func NewAlibabaEinvoiceProdApplyRequest() *AlibabaEinvoiceProdApplyRequest{
     return &AlibabaEinvoiceProdApplyRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaEinvoiceProdApplyRequest) GetApiMethodName() string {
     return "alibaba.einvoice.prod.apply"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaEinvoiceProdApplyRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaEinvoiceProdApplyRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamInvoiceApplyDto Setter
+// 申请开票请求
 func (r *AlibabaEinvoiceProdApplyRequest) SetParamInvoiceApplyDto(paramInvoiceApplyDto *InvoiceApplyDto) error {
     r.paramInvoiceApplyDto = paramInvoiceApplyDto
     r.Set("param_invoice_apply_dto", paramInvoiceApplyDto)
     return nil
 }
 
+// ParamInvoiceApplyDto Getter
 func (r AlibabaEinvoiceProdApplyRequest) GetParamInvoiceApplyDto() *InvoiceApplyDto {
     return r.paramInvoiceApplyDto
 }
-

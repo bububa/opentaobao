@@ -1,4 +1,5 @@
 {
+	"id": 24933,
 	"name": "alibaba.aliqin.flow.wallet.query.charge",
 	"apiChineseName": "查询流量充值状态",
 	"description": "查询流量充值状态",

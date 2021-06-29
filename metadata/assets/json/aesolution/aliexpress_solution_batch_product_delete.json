@@ -1,4 +1,5 @@
 {
+	"id": 47378,
 	"name": "aliexpress.solution.batch.product.delete",
 	"apiChineseName": "aliexpress.solution.batch.product.delete",
 	"description": "Product delete API. Please note that there is no reverse way to retrieve the products which have been deleted. Use this API in cautious.",

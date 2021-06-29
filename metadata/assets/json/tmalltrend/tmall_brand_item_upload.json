@@ -1,4 +1,5 @@
 {
+	"id": 53378,
 	"name": "tmall.brand.item.upload",
 	"apiChineseName": "天猫品牌新品同步API",
 	"description": "支撑天猫品牌将各渠道新品信息同步至平台",

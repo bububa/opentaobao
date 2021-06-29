@@ -1,4 +1,5 @@
 {
+	"id": 47278,
 	"name": "taobao.qimen.supplier.synchronize",
 	"apiChineseName": "供应商同步接口",
 	"description": "这个接口用来同步供应商信息",

@@ -1,4 +1,5 @@
 {
+	"id": 10837,
 	"name": "taobao.crm.memberinfo.update",
 	"apiChineseName": "编辑会员资料",
 	"description": "编辑会员的基本资料，接口返回会员信息修改是否成功",

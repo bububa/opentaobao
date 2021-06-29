@@ -1,4 +1,5 @@
 {
+	"id": 28606,
 	"name": "yunos.tvpubadmin.content.device.getvendor",
 	"apiChineseName": "查询设备Vendor信息",
 	"description": "查询设备Vendor信息",

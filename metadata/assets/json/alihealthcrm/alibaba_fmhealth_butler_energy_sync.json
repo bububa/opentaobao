@@ -1,4 +1,5 @@
 {
+	"id": 37677,
 	"name": "alibaba.fmhealth.butler.energy.sync",
 	"apiChineseName": "同步用户消耗能量",
 	"description": "同步用户消耗能量，用户消耗s点或卡路里后，同步给健康平台",

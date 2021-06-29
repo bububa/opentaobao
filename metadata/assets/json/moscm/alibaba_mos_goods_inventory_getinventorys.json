@@ -1,4 +1,5 @@
 {
+	"id": 39499,
 	"name": "alibaba.mos.goods.inventory.getinventorys",
 	"apiChineseName": "可售库存查询",
 	"description": "查询商品的可售、在库和占库数量",

@@ -1,4 +1,5 @@
 {
+	"id": 23431,
 	"name": "taobao.mtop.upload.token.get",
 	"apiChineseName": "获取文件上传授权",
 	"description": "获取mtop文件上传授权",

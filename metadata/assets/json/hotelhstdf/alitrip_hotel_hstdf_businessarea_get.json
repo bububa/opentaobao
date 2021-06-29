@@ -1,4 +1,5 @@
 {
+	"id": 44900,
 	"name": "alitrip.hotel.hstdf.businessarea.get",
 	"apiChineseName": "根据城市查询商圈",
 	"description": "根据cityId分页查询商圈信息",

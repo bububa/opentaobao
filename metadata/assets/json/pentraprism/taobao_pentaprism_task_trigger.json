@@ -1,4 +1,5 @@
 {
+	"id": 52751,
 	"name": "taobao.pentaprism.task.trigger",
 	"apiChineseName": "推进单条任务进度",
 	"description": "外网用户推进单条五棱镜任务进度",

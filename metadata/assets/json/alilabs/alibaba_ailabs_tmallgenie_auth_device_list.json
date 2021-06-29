@@ -1,4 +1,5 @@
 {
+	"id": 44762,
 	"name": "alibaba.ailabs.tmallgenie.auth.device.list",
 	"apiChineseName": "获取用户设备列表",
 	"description": "通过此接口获取用户绑定的设备信息列表",

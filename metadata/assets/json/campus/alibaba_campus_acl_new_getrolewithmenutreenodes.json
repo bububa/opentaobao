@@ -1,4 +1,5 @@
 {
+	"id": 37481,
 	"name": "alibaba.campus.acl.new.getrolewithmenutreenodes",
 	"apiChineseName": "根据角色id查询权限",
 	"description": "根据角色id查询权限",

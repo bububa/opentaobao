@@ -1,4 +1,5 @@
 {
+	"id": 27227,
 	"name": "tmall.item.combine.get",
 	"apiChineseName": "组合商品获取接口",
 	"description": "查询组合商品的SKU信息",

@@ -1,4 +1,5 @@
 {
+	"id": 27430,
 	"name": "alibaba.wt.cif.coop.osstoken.get",
 	"apiChineseName": "获取oss签名接口",
 	"description": "商家合作上传oss图片获取token接口",

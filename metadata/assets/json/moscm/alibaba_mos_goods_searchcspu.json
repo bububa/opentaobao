@@ -1,4 +1,5 @@
 {
+	"id": 35789,
 	"name": "alibaba.mos.goods.searchcspu",
 	"apiChineseName": "cspu查询",
 	"description": "商品信息查询（仅用于商品上传数据验证，不能用于商品下载，有限流）",

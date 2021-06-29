@@ -1,4 +1,5 @@
 {
+	"id": 38245,
 	"name": "alibaba.pictures.dengta.wxaccount.price.change",
 	"apiChineseName": "微信公众号价格变化通知",
 	"description": "微信公众号推广价格变更通知接口",

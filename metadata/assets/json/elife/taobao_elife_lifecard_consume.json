@@ -1,4 +1,5 @@
 {
+	"id": 26189,
 	"name": "taobao.elife.lifecard.consume",
 	"apiChineseName": "品牌惠卡券核销",
 	"description": "用户线上购买生活汇品牌惠虚拟消费卡，线下购物时，商家码枪核销，涉及用户虚拟卡余额扣减操作",

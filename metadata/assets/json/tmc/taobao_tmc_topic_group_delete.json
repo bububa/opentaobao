@@ -1,4 +1,5 @@
 {
+	"id": 36767,
 	"name": "taobao.tmc.topic.group.delete",
 	"apiChineseName": "删除消息topic分组路由",
 	"description": "删除根据topic名称路由消息到不同的分组关系",

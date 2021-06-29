@@ -1,4 +1,5 @@
 {
+	"id": 37912,
 	"name": "yunos.tvpubadmin.device.yks.skills",
 	"apiChineseName": "根据设备id获取技能列表",
 	"description": "根据设备id获取技能列表",

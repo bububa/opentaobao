@@ -1,4 +1,5 @@
 {
+	"id": 55110,
 	"name": "alibaba.einvoice.tax.opt.salaryaccount.update",
 	"apiChineseName": "更新用户发薪资产",
 	"description": "更新用户的发薪账号",

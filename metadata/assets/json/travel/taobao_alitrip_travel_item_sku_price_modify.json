@@ -1,4 +1,5 @@
 {
+	"id": 25811,
 	"name": "taobao.alitrip.travel.item.sku.price.modify",
 	"apiChineseName": "【API3.0】日期级别日历价格库存修改，增量维护",
 	"description": "【API3.0】日期级别日历价格库存增量维护",

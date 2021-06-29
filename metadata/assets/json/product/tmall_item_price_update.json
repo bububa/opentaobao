@@ -1,4 +1,5 @@
 {
+	"id": 24249,
 	"name": "tmall.item.price.update",
 	"apiChineseName": "天猫商品/SKU价格更新接口",
 	"description": "天猫商品/SKU价格更新接口，支持商品、SKU价格同时更新，支持同一商品下的SKU批量更新。",

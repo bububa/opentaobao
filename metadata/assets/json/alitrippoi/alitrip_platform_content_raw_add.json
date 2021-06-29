@@ -1,4 +1,5 @@
 {
+	"id": 45315,
 	"name": "alitrip.platform.content.raw.add",
 	"apiChineseName": "穷游内容写入接口",
 	"description": "穷游内容写入飞猪接口",

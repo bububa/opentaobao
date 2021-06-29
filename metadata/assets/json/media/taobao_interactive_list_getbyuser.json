@@ -1,4 +1,5 @@
 {
+	"id": 27943,
 	"name": "taobao.interactive.list.getbyuser",
 	"apiChineseName": "用户获取视频互动列表",
 	"description": "根据用户来获取用户编辑的互动列表",

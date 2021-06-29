@@ -1,4 +1,5 @@
 {
+	"id": 28607,
 	"name": "yunos.tvpubadmin.content.advert.gettypes",
 	"apiChineseName": "获取广告位类型",
 	"description": "获取广告位类型",

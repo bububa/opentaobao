@@ -1,4 +1,5 @@
 {
+	"id": 45850,
 	"name": "alibaba.ib.campus.tmi.query",
 	"apiChineseName": "IB智慧园区-查询TMI流水",
 	"description": "获取特定银行账户的银行流水",

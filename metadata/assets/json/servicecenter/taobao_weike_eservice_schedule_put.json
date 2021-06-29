@@ -1,4 +1,5 @@
 {
+	"id": 27505,
 	"name": "taobao.weike.eservice.schedule.put",
 	"apiChineseName": "提交客服排班信息",
 	"description": "添加、更新、删除排班信息",

@@ -1,4 +1,5 @@
 {
+	"id": 49754,
 	"name": "alitrip.hotel.alliance.hid.get",
 	"apiChineseName": "获取联盟hid",
 	"description": "获取符合条件的菲住联盟hid，目前支持指定日期上线的菲住联盟hid查询",

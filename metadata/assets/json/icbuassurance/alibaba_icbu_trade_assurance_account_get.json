@@ -1,4 +1,5 @@
 {
+	"id": 31686,
 	"name": "alibaba.icbu.trade.assurance.account.get",
 	"apiChineseName": "icbu信保账户信息",
 	"description": "icbu交易信用保障开通状态\u0026额度信息查询",

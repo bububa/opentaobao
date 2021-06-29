@@ -1,4 +1,5 @@
 {
+	"id": 27371,
 	"name": "taobao.simba.rpt.targetingtag.get",
 	"apiChineseName": "搜索人群离线报表",
 	"description": "获取搜搜人群实时报表",

@@ -1,4 +1,5 @@
 {
+	"id": 41362,
 	"name": "alibaba.scbp.target.ad.plan.update.products",
 	"apiChineseName": "定向推广 按照id操作推广计划的产品，包括新增，删除和更新",
 	"description": "定向推广 按照id操作推广计划的产品，包括新增，删除和更新",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-Open Account数据更新 APIRequest
+Open Account数据更新 API请求
 taobao.open.account.update
 
 Open Account数据更新
 */
 type TaobaoOpenAccountUpdateRequest struct {
     model.Params
-
     // Open Account
-    paramList   []OpenAccount 
-
+    paramList   []OpenAccount
 }
 
+// 初始化TaobaoOpenAccountUpdateRequest对象
 func NewTaobaoOpenAccountUpdateRequest() *TaobaoOpenAccountUpdateRequest{
     return &TaobaoOpenAccountUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoOpenAccountUpdateRequest) GetApiMethodName() string {
     return "taobao.open.account.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoOpenAccountUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoOpenAccountUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamList Setter
+// Open Account
 func (r *TaobaoOpenAccountUpdateRequest) SetParamList(paramList []OpenAccount) error {
     r.paramList = paramList
     r.Set("param_list", paramList)
     return nil
 }
 
+// ParamList Getter
 func (r TaobaoOpenAccountUpdateRequest) GetParamList() []OpenAccount {
     return r.paramList
 }
-

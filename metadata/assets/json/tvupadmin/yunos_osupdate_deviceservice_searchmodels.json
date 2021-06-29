@@ -1,4 +1,5 @@
 {
+	"id": 30525,
 	"name": "yunos.osupdate.deviceservice.searchmodels",
 	"apiChineseName": "根据关键词检索设备型号",
 	"description": "根据关键词检索设备型号",

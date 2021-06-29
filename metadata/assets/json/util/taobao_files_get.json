@@ -1,4 +1,5 @@
 {
+	"id": 32298,
 	"name": "taobao.files.get",
 	"apiChineseName": "业务文件获取",
 	"description": "获取业务方暂存给ISV的文件列表",

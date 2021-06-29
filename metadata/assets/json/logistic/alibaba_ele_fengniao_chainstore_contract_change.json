@@ -1,4 +1,5 @@
 {
+	"id": 41492,
 	"name": "alibaba.ele.fengniao.chainstore.contract.change",
 	"apiChineseName": "门店改签合同接口",
 	"description": "通过调用接口，门店改签物流服务包",

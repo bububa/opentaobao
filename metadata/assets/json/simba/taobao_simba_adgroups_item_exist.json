@@ -1,4 +1,5 @@
 {
+	"id": 10535,
 	"name": "taobao.simba.adgroups.item.exist",
 	"apiChineseName": "商品是否推广",
 	"description": "判断在一个推广计划中是否已经推广了一个商品",

@@ -1,4 +1,5 @@
 {
+	"id": 44924,
 	"name": "alibaba.ailabs.tmallgenie.auth.getcode",
 	"apiChineseName": "获取token",
 	"description": "获取天猫精灵authCode",

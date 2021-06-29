@@ -1,4 +1,5 @@
 {
+	"id": 54046,
 	"name": "alibaba.middle.claimsbill.receive",
 	"apiChineseName": "国际化中台服务域接收理赔账单",
 	"description": "国际化中台服务域与保险公司交互对接一个订单在保险公司方对该订单进行理赔打款的处理后，将该打款结果返回至服务域",

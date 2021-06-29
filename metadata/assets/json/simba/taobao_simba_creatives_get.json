@@ -1,4 +1,5 @@
 {
+	"id": 10530,
 	"name": "taobao.simba.creatives.get",
 	"apiChineseName": "批量获得创意",
 	"description": "取得一个推广组的所有创意或者根据一个创意Id列表取得一组创意；\u003cbr/\u003e如果同时提供了推广组Id和创意id列表，则优先使用推广组Id；",

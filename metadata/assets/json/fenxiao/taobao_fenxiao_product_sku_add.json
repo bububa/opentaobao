@@ -1,4 +1,5 @@
 {
+	"id": 10945,
 	"name": "taobao.fenxiao.product.sku.add",
 	"apiChineseName": "产品sku添加接口",
 	"description": "添加产品SKU信息",

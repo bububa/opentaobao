@@ -1,4 +1,5 @@
 {
+	"id": 40201,
 	"name": "tmall.traceplatform.awdc.info.upload",
 	"apiChineseName": "AWDC提交溯源信息",
 	"description": "天猫溯源-AWDC-上传溯源信息",

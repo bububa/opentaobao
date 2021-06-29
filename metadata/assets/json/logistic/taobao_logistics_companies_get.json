@@ -1,4 +1,5 @@
 {
+	"id": 233,
 	"name": "taobao.logistics.companies.get",
 	"apiChineseName": "查询物流公司信息",
 	"description": "查询淘宝网合作的物流公司信息，用于发货接口。",

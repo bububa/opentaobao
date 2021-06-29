@@ -1,4 +1,5 @@
 {
+	"id": 31528,
 	"name": "alitrip.travel.trade.template.query",
 	"apiChineseName": "订单服务详情模版查询",
 	"description": "通过订单ID获取标注模版信息，商家可以根据模版来填充行业信息",

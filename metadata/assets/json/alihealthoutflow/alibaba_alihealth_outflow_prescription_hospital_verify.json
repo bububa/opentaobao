@@ -1,4 +1,5 @@
 {
+	"id": 47118,
 	"name": "alibaba.alihealth.outflow.prescription.hospital.verify",
 	"apiChineseName": "处方同步至医院返回校验结果",
 	"description": "处方同步至医院返回校验结果",

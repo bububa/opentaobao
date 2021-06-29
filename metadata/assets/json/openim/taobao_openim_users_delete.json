@@ -1,4 +1,5 @@
 {
+	"id": 24160,
 	"name": "taobao.openim.users.delete",
 	"apiChineseName": "删除用户",
 	"description": "批量删除用户",

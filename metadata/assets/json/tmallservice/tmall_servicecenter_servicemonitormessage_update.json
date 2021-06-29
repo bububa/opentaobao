@@ -1,4 +1,5 @@
 {
+	"id": 33931,
 	"name": "tmall.servicecenter.servicemonitormessage.update",
 	"apiChineseName": "服务商更新预警消息状态",
 	"description": "服务商收到预警后，需要进行回复已读状态，并可填写备注",

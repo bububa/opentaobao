@@ -7,35 +7,34 @@ import (
 )
 
 /* 
-零售商获取品牌商的单笔订单 APIRequest
+零售商获取品牌商的单笔订单 API请求
 tmall.nr.fulfill.order.query
 
 零售商获取品牌商的单笔订单，后端服务有零售商和品牌商的绑定关系，存在开关控制；返回值存在品牌方用户的电话号码，当前电话号码是屏蔽中间四位
 */
 type TmallNrFulfillOrderQueryRequest struct {
     model.Params
-
     // 业务标识，dss标识定时送业务；jsd表示极速达业务
-    bizIdentity   string 
-
+    bizIdentity   string
     // 交易主订单号
-    orderId   int64 
-
+    orderId   int64
     // 预留-扩展信息
-    extParam   string 
-
+    extParam   string
 }
 
+// 初始化TmallNrFulfillOrderQueryRequest对象
 func NewTmallNrFulfillOrderQueryRequest() *TmallNrFulfillOrderQueryRequest{
     return &TmallNrFulfillOrderQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallNrFulfillOrderQueryRequest) GetApiMethodName() string {
     return "tmall.nr.fulfill.order.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallNrFulfillOrderQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -43,35 +42,39 @@ func (r TmallNrFulfillOrderQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// BizIdentity Setter
+// 业务标识，dss标识定时送业务；jsd表示极速达业务
 func (r *TmallNrFulfillOrderQueryRequest) SetBizIdentity(bizIdentity string) error {
     r.bizIdentity = bizIdentity
     r.Set("biz_identity", bizIdentity)
     return nil
 }
 
+// BizIdentity Getter
 func (r TmallNrFulfillOrderQueryRequest) GetBizIdentity() string {
     return r.bizIdentity
 }
-
+// OrderId Setter
+// 交易主订单号
 func (r *TmallNrFulfillOrderQueryRequest) SetOrderId(orderId int64) error {
     r.orderId = orderId
     r.Set("order_id", orderId)
     return nil
 }
 
+// OrderId Getter
 func (r TmallNrFulfillOrderQueryRequest) GetOrderId() int64 {
     return r.orderId
 }
-
+// ExtParam Setter
+// 预留-扩展信息
 func (r *TmallNrFulfillOrderQueryRequest) SetExtParam(extParam string) error {
     r.extParam = extParam
     r.Set("ext_param", extParam)
     return nil
 }
 
+// ExtParam Getter
 func (r TmallNrFulfillOrderQueryRequest) GetExtParam() string {
     return r.extParam
 }
-

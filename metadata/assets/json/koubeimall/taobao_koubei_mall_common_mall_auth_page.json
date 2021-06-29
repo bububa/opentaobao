@@ -1,4 +1,5 @@
 {
+	"id": 49824,
 	"name": "taobao.koubei.mall.common.mall.auth.page",
 	"apiChineseName": "分页查询已授权的商圈列表信息",
 	"description": "分页查询口碑已授权商圈的列表信息",

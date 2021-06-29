@@ -1,4 +1,5 @@
 {
+	"id": 23790,
 	"name": "taobao.baodian.server.date.get",
 	"apiChineseName": "服务器时间获取",
 	"description": "获取服务器时间",

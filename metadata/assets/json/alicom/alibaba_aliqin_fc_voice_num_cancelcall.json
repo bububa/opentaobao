@@ -1,4 +1,5 @@
 {
+	"id": 30773,
 	"name": "alibaba.aliqin.fc.voice.num.cancelcall",
 	"apiChineseName": "取消呼叫",
 	"description": "当通话通过阿里大于呼出后可以通过调用这个接口取消本次通话",

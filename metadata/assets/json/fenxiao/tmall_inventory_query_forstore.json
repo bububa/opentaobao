@@ -1,4 +1,5 @@
 {
+	"id": 26481,
 	"name": "tmall.inventory.query.forstore",
 	"apiChineseName": "查询后端商品仓库库存",
 	"description": "商家查询后端商品仓库库存",

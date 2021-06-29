@@ -1,4 +1,5 @@
 {
+	"id": 25717,
 	"name": "alibaba.security.jaq.wsgriskdata.report",
 	"apiChineseName": "无线保镖SDK风控数据上报",
 	"description": "无线保镖sdk根据用户的需要，上报数据到聚安全云端",

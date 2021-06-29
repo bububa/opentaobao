@@ -1,4 +1,5 @@
 {
+	"id": 23581,
 	"name": "taobao.simba.insight.catsdata.get",
 	"apiChineseName": "获取类目的大盘数据",
 	"description": "根据类目id获取类目的大盘数据，包括展现指数，点击指数，点击率，本次提供的insight相关的其它接口的都是这种情况。",

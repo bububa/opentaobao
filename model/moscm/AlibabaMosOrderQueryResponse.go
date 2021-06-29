@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-批量查询订单信息 APIResponse
+批量查询订单信息 API返回值 
 alibaba.mos.order.query
 
 查询多笔交易信息
@@ -17,15 +17,11 @@ type AlibabaMosOrderQueryAPIResponse struct {
     AlibabaMosOrderQueryResponse
 }
 
+// 批量查询订单信息 成功返回结果
 type AlibabaMosOrderQueryResponse struct {
     XMLName xml.Name `xml:"alibaba_mos_order_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     Result   *AlibabaMosOrderQueryResultDo `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

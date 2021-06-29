@@ -1,4 +1,5 @@
 {
+	"id": 33771,
 	"name": "alibaba.aliqin.flow.cobrandcard.sysn",
 	"apiChineseName": "联名卡信息同步",
 	"description": "提供给浙江移动同步联名卡信息接口。",

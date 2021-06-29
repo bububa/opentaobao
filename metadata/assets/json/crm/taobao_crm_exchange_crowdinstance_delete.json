@@ -1,4 +1,5 @@
 {
+	"id": 25583,
 	"name": "taobao.crm.exchange.crowdinstance.delete",
 	"apiChineseName": "删除人群实例中的指定买家",
 	"description": "删除人群实例中的指定买家",

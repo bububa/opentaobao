@@ -1,4 +1,5 @@
 {
+	"id": 24263,
 	"name": "taobao.tanx.qualification.advertiser.add",
 	"apiChineseName": "新增广告主接口",
 	"description": "外部dsp调用接口时会根据广告主名称和类型在tanx系统中新增一个广告主",

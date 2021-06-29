@@ -1,4 +1,5 @@
 {
+	"id": 31240,
 	"name": "alibaba.wdk.stock.cabinet.query",
 	"apiChineseName": "仓内实时库位库存查询",
 	"description": "查询仓内实时库位库存信息",

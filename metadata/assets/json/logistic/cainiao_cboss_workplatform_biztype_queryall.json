@@ -1,4 +1,5 @@
 {
+	"id": 27054,
 	"name": "cainiao.cboss.workplatform.biztype.queryall",
 	"apiChineseName": "菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型",
 	"description": "菜鸟工单平台根据交易订单查询某条业务线上的所有业务类型。 目前调用者ISV",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-服务商闲鱼商品发布 APIRequest
+服务商闲鱼商品发布 API请求
 alibaba.idle.isv.item.publish
 
 服务商ISV闲鱼商品发布
 */
 type AlibabaIdleIsvItemPublishRequest struct {
     model.Params
-
     // 商品数据参数
-    itemParam   *IdleItemApiDo 
-
+    itemParam   *IdleItemApiDo
 }
 
+// 初始化AlibabaIdleIsvItemPublishRequest对象
 func NewAlibabaIdleIsvItemPublishRequest() *AlibabaIdleIsvItemPublishRequest{
     return &AlibabaIdleIsvItemPublishRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIdleIsvItemPublishRequest) GetApiMethodName() string {
     return "alibaba.idle.isv.item.publish"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIdleIsvItemPublishRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIdleIsvItemPublishRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ItemParam Setter
+// 商品数据参数
 func (r *AlibabaIdleIsvItemPublishRequest) SetItemParam(itemParam *IdleItemApiDo) error {
     r.itemParam = itemParam
     r.Set("item_param", itemParam)
     return nil
 }
 
+// ItemParam Getter
 func (r AlibabaIdleIsvItemPublishRequest) GetItemParam() *IdleItemApiDo {
     return r.itemParam
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 48679,
 	"name": "alibaba.ele.enterprise.employee.batchdelete",
 	"apiChineseName": "批量删除员工",
 	"description": "批量删除员工",

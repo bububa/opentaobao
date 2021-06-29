@@ -1,4 +1,5 @@
 {
+	"id": 24691,
 	"name": "taobao.qimen.entryorder.query",
 	"apiChineseName": "入库单查询接口",
 	"description": "ERP调用接口，查询入库单信息;",

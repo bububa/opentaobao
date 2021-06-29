@@ -1,4 +1,5 @@
 {
+	"id": 51983,
 	"name": "alibaba.wdkorder.sharestock.insurance.callback",
 	"apiChineseName": "共享库存订单投保后回传保单号",
 	"description": "共享库存订单投保消息获取",

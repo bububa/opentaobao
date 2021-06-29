@@ -1,4 +1,5 @@
 {
+	"id": 42980,
 	"name": "taobao.ailab.aicloud.top.device.extinfo.get",
 	"apiChineseName": "获取设备扩展信息",
 	"description": "获取设备扩展信息",

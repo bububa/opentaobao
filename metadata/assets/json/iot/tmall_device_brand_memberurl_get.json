@@ -1,4 +1,5 @@
 {
+	"id": 39398,
 	"name": "tmall.device.brand.memberurl.get",
 	"apiChineseName": "获取智能硬件旗舰店入会码",
 	"description": "获取旗舰店在智能硬件上的入会码",

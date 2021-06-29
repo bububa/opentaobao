@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-回收订单履约V2 APIRequest
+回收订单履约V2 API请求
 alibaba.idle.recycle.order.perform
 
 闲鱼回收业务中,外部服务商作为买家 需要驱动交易节点变化
 */
 type AlibabaIdleRecycleOrderPerformRequest struct {
     model.Params
-
     // 参数
-    param0   *RecycleOrderSynDto 
-
+    param0   *RecycleOrderSynDto
 }
 
+// 初始化AlibabaIdleRecycleOrderPerformRequest对象
 func NewAlibabaIdleRecycleOrderPerformRequest() *AlibabaIdleRecycleOrderPerformRequest{
     return &AlibabaIdleRecycleOrderPerformRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIdleRecycleOrderPerformRequest) GetApiMethodName() string {
     return "alibaba.idle.recycle.order.perform"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIdleRecycleOrderPerformRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIdleRecycleOrderPerformRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param0 Setter
+// 参数
 func (r *AlibabaIdleRecycleOrderPerformRequest) SetParam0(param0 *RecycleOrderSynDto) error {
     r.param0 = param0
     r.Set("param0", param0)
     return nil
 }
 
+// Param0 Getter
 func (r AlibabaIdleRecycleOrderPerformRequest) GetParam0() *RecycleOrderSynDto {
     return r.param0
 }
-

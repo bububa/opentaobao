@@ -1,4 +1,5 @@
 {
+	"id": 10718,
 	"name": "taobao.ump.activity.delete",
 	"apiChineseName": "删除营销活动",
 	"description": "删除营销活动。对应的活动详情等将会被全部删除。",

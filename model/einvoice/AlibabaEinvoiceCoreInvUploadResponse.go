@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-发票中台-发票结果回传 APIResponse
+发票中台-发票结果回传 API返回值 
 alibaba.einvoice.core.inv.upload
 
 发票回传接口适用于以下场景：
@@ -19,15 +19,11 @@ type AlibabaEinvoiceCoreInvUploadAPIResponse struct {
     AlibabaEinvoiceCoreInvUploadResponse
 }
 
+// 发票中台-发票结果回传 成功返回结果
 type AlibabaEinvoiceCoreInvUploadResponse struct {
     XMLName xml.Name `xml:"alibaba_einvoice_core_inv_upload_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // success
-    
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
 }

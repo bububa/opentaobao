@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-接收授信结果通知 APIRequest
+接收授信结果通知 API请求
 tmall.aliauto.autofinance.credit.receive
 
 天猫汽车的金融业务场景中，需要接收外部ISV对用户授信申请的通知结果.
 */
 type TmallAliautoAutofinanceCreditReceiveRequest struct {
     model.Params
-
     // 授信通知描述
-    creditReceiveDto   *CreditReceiveDto 
-
+    creditReceiveDto   *CreditReceiveDto
 }
 
+// 初始化TmallAliautoAutofinanceCreditReceiveRequest对象
 func NewTmallAliautoAutofinanceCreditReceiveRequest() *TmallAliautoAutofinanceCreditReceiveRequest{
     return &TmallAliautoAutofinanceCreditReceiveRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TmallAliautoAutofinanceCreditReceiveRequest) GetApiMethodName() string {
     return "tmall.aliauto.autofinance.credit.receive"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TmallAliautoAutofinanceCreditReceiveRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TmallAliautoAutofinanceCreditReceiveRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// CreditReceiveDto Setter
+// 授信通知描述
 func (r *TmallAliautoAutofinanceCreditReceiveRequest) SetCreditReceiveDto(creditReceiveDto *CreditReceiveDto) error {
     r.creditReceiveDto = creditReceiveDto
     r.Set("credit_receive_dto", creditReceiveDto)
     return nil
 }
 
+// CreditReceiveDto Getter
 func (r TmallAliautoAutofinanceCreditReceiveRequest) GetCreditReceiveDto() *CreditReceiveDto {
     return r.creditReceiveDto
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 44648,
 	"name": "taobao.ailab.aicloud.top.hotwords.get",
 	"apiChineseName": "获取热词",
 	"description": "获取ASR热词",

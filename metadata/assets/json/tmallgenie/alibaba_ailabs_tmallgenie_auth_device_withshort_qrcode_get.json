@@ -1,4 +1,5 @@
 {
+	"id": 47380,
 	"name": "alibaba.ailabs.tmallgenie.auth.device.withshort.qrcode.get",
 	"apiChineseName": "根据安全简码查询二维码详细信息",
 	"description": "根据安全简码查询二维码详细信息",

@@ -1,4 +1,5 @@
 {
+	"id": 55497,
 	"name": "alibaba.alihealth.examination.report.diagnose.file.code.get",
 	"apiChineseName": "ISV获取报告文件查看验证码",
 	"description": "体检报告人工解读_ISV获取报告文件验证码进行查看报告文件",

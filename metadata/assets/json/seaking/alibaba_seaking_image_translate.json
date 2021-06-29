@@ -1,4 +1,5 @@
 {
+	"id": 50961,
 	"name": "alibaba.seaking.image.translate",
 	"apiChineseName": "图片翻译（识别）",
 	"description": "图片翻译，提供识别信息输出",

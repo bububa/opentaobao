@@ -1,4 +1,5 @@
 {
+	"id": 48550,
 	"name": "aliyun.industry.tttm.order.query",
 	"apiChineseName": "天天特卖数字工厂订单获取",
 	"description": "获取阿里云数字工厂内天天特卖业务的订单",

@@ -1,4 +1,5 @@
 {
+	"id": 52736,
 	"name": "alibaba.alicom.wtt.opentrade.getgiftdetails",
 	"apiChineseName": "存送业务查询奖品信息",
 	"description": "话费宝充值送查询奖品信息",

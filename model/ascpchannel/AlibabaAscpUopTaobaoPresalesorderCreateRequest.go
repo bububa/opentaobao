@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-预售商家仓接单 APIRequest
+预售商家仓接单 API请求
 alibaba.ascp.uop.taobao.presalesorder.create
 
 预售商家仓接单
 */
 type AlibabaAscpUopTaobaoPresalesorderCreateRequest struct {
     model.Params
-
     // 预售商家仓接单对象
-    presalesOrderCreateRequest   *PresalesordercreaterequestTest 
-
+    presalesOrderCreateRequest   *PresalesordercreaterequestTest
 }
 
+// 初始化AlibabaAscpUopTaobaoPresalesorderCreateRequest对象
 func NewAlibabaAscpUopTaobaoPresalesorderCreateRequest() *AlibabaAscpUopTaobaoPresalesorderCreateRequest{
     return &AlibabaAscpUopTaobaoPresalesorderCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAscpUopTaobaoPresalesorderCreateRequest) GetApiMethodName() string {
     return "alibaba.ascp.uop.taobao.presalesorder.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAscpUopTaobaoPresalesorderCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAscpUopTaobaoPresalesorderCreateRequest) GetApiParams() url.Value
     }
     return params
 }
-
-
+// PresalesOrderCreateRequest Setter
+// 预售商家仓接单对象
 func (r *AlibabaAscpUopTaobaoPresalesorderCreateRequest) SetPresalesOrderCreateRequest(presalesOrderCreateRequest *PresalesordercreaterequestTest) error {
     r.presalesOrderCreateRequest = presalesOrderCreateRequest
     r.Set("presales_order_create_request", presalesOrderCreateRequest)
     return nil
 }
 
+// PresalesOrderCreateRequest Getter
 func (r AlibabaAscpUopTaobaoPresalesorderCreateRequest) GetPresalesOrderCreateRequest() *PresalesordercreaterequestTest {
     return r.presalesOrderCreateRequest
 }
-

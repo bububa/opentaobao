@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-全场活动查询换购品 APIRequest
+全场活动查询换购品 API请求
 alibaba.wdk.marketing.fullrange.queryitem
 
 全场活动查询换购品
 */
 type AlibabaWdkMarketingFullrangeQueryitemRequest struct {
     model.Params
-
     // 换购商品查询参数
-    param0   *ActivitySkuQuery 
-
+    param0   *ActivitySkuQuery
 }
 
+// 初始化AlibabaWdkMarketingFullrangeQueryitemRequest对象
 func NewAlibabaWdkMarketingFullrangeQueryitemRequest() *AlibabaWdkMarketingFullrangeQueryitemRequest{
     return &AlibabaWdkMarketingFullrangeQueryitemRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkMarketingFullrangeQueryitemRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.fullrange.queryitem"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkMarketingFullrangeQueryitemRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkMarketingFullrangeQueryitemRequest) GetApiParams() url.Values 
     }
     return params
 }
-
-
+// Param0 Setter
+// 换购商品查询参数
 func (r *AlibabaWdkMarketingFullrangeQueryitemRequest) SetParam0(param0 *ActivitySkuQuery) error {
     r.param0 = param0
     r.Set("param0", param0)
     return nil
 }
 
+// Param0 Getter
 func (r AlibabaWdkMarketingFullrangeQueryitemRequest) GetParam0() *ActivitySkuQuery {
     return r.param0
 }
-

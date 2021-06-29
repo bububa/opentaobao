@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-商家汽车票车次更新通知接口 APIRequest
+商家汽车票车次更新通知接口 API请求
 taobao.bus.busnumber.set
 
 商家汽车票车次更新后，调用该接口通知平台。
 */
 type TaobaoBusBusnumberSetRequest struct {
     model.Params
-
     // 车次更新通知参数
-    pushParam   *TopBusNumerPushRq 
-
+    pushParam   *TopBusNumerPushRq
 }
 
+// 初始化TaobaoBusBusnumberSetRequest对象
 func NewTaobaoBusBusnumberSetRequest() *TaobaoBusBusnumberSetRequest{
     return &TaobaoBusBusnumberSetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoBusBusnumberSetRequest) GetApiMethodName() string {
     return "taobao.bus.busnumber.set"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoBusBusnumberSetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoBusBusnumberSetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// PushParam Setter
+// 车次更新通知参数
 func (r *TaobaoBusBusnumberSetRequest) SetPushParam(pushParam *TopBusNumerPushRq) error {
     r.pushParam = pushParam
     r.Set("push_param", pushParam)
     return nil
 }
 
+// PushParam Getter
 func (r TaobaoBusBusnumberSetRequest) GetPushParam() *TopBusNumerPushRq {
     return r.pushParam
 }
-

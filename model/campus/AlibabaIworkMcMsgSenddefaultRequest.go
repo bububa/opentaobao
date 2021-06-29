@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-给注册用户发送消息 APIRequest
+给注册用户发送消息 API请求
 alibaba.iwork.mc.msg.senddefault
 
 给神鲸注册用户发送对应操作结果的消息
 */
 type AlibabaIworkMcMsgSenddefaultRequest struct {
     model.Params
-
     // 消息对象
-    messageEvent   *DefaultMessageEvent 
-
+    messageEvent   *DefaultMessageEvent
 }
 
+// 初始化AlibabaIworkMcMsgSenddefaultRequest对象
 func NewAlibabaIworkMcMsgSenddefaultRequest() *AlibabaIworkMcMsgSenddefaultRequest{
     return &AlibabaIworkMcMsgSenddefaultRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaIworkMcMsgSenddefaultRequest) GetApiMethodName() string {
     return "alibaba.iwork.mc.msg.senddefault"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaIworkMcMsgSenddefaultRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaIworkMcMsgSenddefaultRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// MessageEvent Setter
+// 消息对象
 func (r *AlibabaIworkMcMsgSenddefaultRequest) SetMessageEvent(messageEvent *DefaultMessageEvent) error {
     r.messageEvent = messageEvent
     r.Set("message_event", messageEvent)
     return nil
 }
 
+// MessageEvent Getter
 func (r AlibabaIworkMcMsgSenddefaultRequest) GetMessageEvent() *DefaultMessageEvent {
     return r.messageEvent
 }
-

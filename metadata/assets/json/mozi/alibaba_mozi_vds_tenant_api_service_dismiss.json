@@ -1,4 +1,5 @@
 {
+	"id": 49255,
 	"name": "alibaba.mozi.vds.tenant.api.service.dismiss",
 	"apiChineseName": "MOZI解除组织主管服务",
 	"description": "解除组织主管",

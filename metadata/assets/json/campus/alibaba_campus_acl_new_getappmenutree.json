@@ -1,4 +1,5 @@
 {
+	"id": 37470,
 	"name": "alibaba.campus.acl.new.getappmenutree",
 	"apiChineseName": "查询应用下的菜单树",
 	"description": "查询应用下的菜单树",

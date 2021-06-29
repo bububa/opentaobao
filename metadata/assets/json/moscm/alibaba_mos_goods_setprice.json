@@ -1,4 +1,5 @@
 {
+	"id": 35816,
 	"name": "alibaba.mos.goods.setprice",
 	"apiChineseName": "价格变更接口",
 	"description": "价格变更接口，供供应商修改价格时使用。",

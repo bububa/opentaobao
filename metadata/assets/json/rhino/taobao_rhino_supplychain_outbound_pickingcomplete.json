@@ -1,4 +1,5 @@
 {
+	"id": 39533,
 	"name": "taobao.rhino.supplychain.outbound.pickingcomplete",
 	"apiChineseName": "【WMS005】接收成衣捡配完成通知",
 	"description": "接收成衣捡配完成通知,WMS005",

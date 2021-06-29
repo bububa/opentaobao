@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询商品类目属性变更 APIResponse
+查询商品类目属性变更 API返回值 
 taobao.item.catprops.modification.get
 
 查询商品类目属性变更信息
@@ -17,15 +17,11 @@ type TaobaoItemCatpropsModificationGetAPIResponse struct {
     TaobaoItemCatpropsModificationGetResponse
 }
 
+// 查询商品类目属性变更 成功返回结果
 type TaobaoItemCatpropsModificationGetResponse struct {
     XMLName xml.Name `xml:"item_catprops_modification_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     Results   []PropsModificationResult `json:"results,omitempty" xml:"results>props_modification_result,omitempty"`
-    
-    
 }

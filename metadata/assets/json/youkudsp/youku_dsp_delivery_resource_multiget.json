@@ -1,4 +1,5 @@
 {
+	"id": 39065,
 	"name": "youku.dsp.delivery.resource.multiget",
 	"apiChineseName": "优酷实时批量获取可投放设备资源",
 	"description": "优酷实时获取可投放设备资源信息,为第三方渠道提供素材获取人群识别的api,支持批量获取",

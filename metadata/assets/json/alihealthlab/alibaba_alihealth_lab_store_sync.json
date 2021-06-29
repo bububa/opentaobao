@@ -1,4 +1,5 @@
 {
+	"id": 51577,
 	"name": "alibaba.alihealth.lab.store.sync",
 	"apiChineseName": "阿里健康检验检测业务，isv门店同步到健康",
 	"description": "阿里健康检验检测业务，isv门店同步到健康。支持门店的上线、下线操作",

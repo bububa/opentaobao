@@ -1,4 +1,5 @@
 {
+	"id": 45470,
 	"name": "alibaba.mozi.acl.role.add.permissions",
 	"apiChineseName": "角色添加功能权限",
 	"description": "往角色中添加一批功能权限",

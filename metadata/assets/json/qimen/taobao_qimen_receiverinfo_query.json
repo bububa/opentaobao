@@ -1,4 +1,5 @@
 {
+	"id": 55142,
 	"name": "taobao.qimen.receiverinfo.query",
 	"apiChineseName": "OAID 收件人信息解密接口",
 	"description": "WMS 调用该接口，通过 OAID 查询解密后的收件人信息",

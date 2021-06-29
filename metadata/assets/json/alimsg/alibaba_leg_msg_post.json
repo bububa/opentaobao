@@ -1,4 +1,5 @@
 {
+	"id": 53020,
 	"name": "alibaba.leg.msg.post",
 	"apiChineseName": "集团法务消息发送",
 	"description": "消息发送能力",

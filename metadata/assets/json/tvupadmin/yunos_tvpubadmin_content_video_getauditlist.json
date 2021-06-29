@@ -1,4 +1,5 @@
 {
+	"id": 28604,
 	"name": "yunos.tvpubadmin.content.video.getauditlist",
 	"apiChineseName": "迎客松视频审核记录查询",
 	"description": "迎客松视频审核记录查询",

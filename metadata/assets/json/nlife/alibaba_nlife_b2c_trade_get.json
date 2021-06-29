@@ -1,4 +1,5 @@
 {
+	"id": 28162,
 	"name": "alibaba.nlife.b2c.trade.get",
 	"apiChineseName": "零售+平台查询订单",
 	"description": "查询零售+平台创建出来的订单详情",

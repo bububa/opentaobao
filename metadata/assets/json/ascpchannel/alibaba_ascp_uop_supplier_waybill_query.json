@@ -1,4 +1,5 @@
 {
+	"id": 52092,
 	"name": "alibaba.ascp.uop.supplier.waybill.query",
 	"apiChineseName": "ERP调用打印面单取号接口",
 	"description": "ERP调用打印面单取号接口",

@@ -1,4 +1,5 @@
 {
+	"id": 29094,
 	"name": "yunos.tvpubadmin.content.child.rootnode.get",
 	"apiChineseName": "获取少儿大厅根类目接口",
 	"description": "通过此接口可获取少儿大厅根类目列表",

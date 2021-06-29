@@ -1,4 +1,5 @@
 {
+	"id": 36213,
 	"name": "alibaba.wdk.trade.refund.inform",
 	"apiChineseName": "外部渠道通知淘鲜达退款成功接口",
 	"description": "该接口用于外部渠道退款成功后，通知淘鲜达底层履约完成退款流程。",

@@ -1,4 +1,5 @@
 {
+	"id": 43273,
 	"name": "taobao.feedflow.item.campaign.daybudget",
 	"apiChineseName": "获取当日投放日预算总额",
 	"description": "获取当日投放日预算总额",

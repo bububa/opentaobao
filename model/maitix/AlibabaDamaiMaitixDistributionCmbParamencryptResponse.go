@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-加密招商一网能支付入参 APIResponse
+加密招商一网能支付入参 API返回值 
 alibaba.damai.maitix.distribution.cmb.paramencrypt
 
 encryptParam4Cmb
@@ -17,15 +17,11 @@ type AlibabaDamaiMaitixDistributionCmbParamencryptAPIResponse struct {
     AlibabaDamaiMaitixDistributionCmbParamencryptResponse
 }
 
+// 加密招商一网能支付入参 成功返回结果
 type AlibabaDamaiMaitixDistributionCmbParamencryptResponse struct {
     XMLName xml.Name `xml:"alibaba_damai_maitix_distribution_cmb_paramencrypt_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     Result   *OpenResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

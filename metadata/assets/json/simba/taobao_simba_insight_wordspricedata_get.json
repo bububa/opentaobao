@@ -1,4 +1,5 @@
 {
+	"id": 23579,
 	"name": "taobao.simba.insight.wordspricedata.get",
 	"apiChineseName": "关键词按竞价区间的分布数据",
 	"description": "获取关键词按竞价区间进行细分的数据",

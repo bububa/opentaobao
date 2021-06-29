@@ -1,4 +1,5 @@
 {
+	"id": 52188,
 	"name": "taobao.xhotel.intl.ari.notify",
 	"apiChineseName": "国际酒店集团价库变更通知",
 	"description": "国际酒店集团价库变更时通知变更内容，平台及时更新价库信息，保证价库新鲜度",

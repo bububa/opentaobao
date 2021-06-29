@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-线索报价价格校验 APIResponse
+线索报价价格校验 API返回值 
 alibaba.dt.tmllcar.pricevalidate
 
 根据选定的车型和城市，校验汽车价格是否通过
@@ -19,15 +19,11 @@ type AlibabaDtTmllcarPricevalidateAPIResponse struct {
     AlibabaDtTmllcarPricevalidateResponse
 }
 
+// 线索报价价格校验 成功返回结果
 type AlibabaDtTmllcarPricevalidateResponse struct {
     XMLName xml.Name `xml:"alibaba_dt_tmllcar_pricevalidate_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *AlibabaDtTmllcarPricevalidateResults `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

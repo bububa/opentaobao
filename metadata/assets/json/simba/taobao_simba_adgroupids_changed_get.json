@@ -1,4 +1,5 @@
 {
+	"id": 10800,
 	"name": "taobao.simba.adgroupids.changed.get",
 	"apiChineseName": "获取修改的推广组ID",
 	"description": "获取修改的推广组ID",

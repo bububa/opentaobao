@@ -1,4 +1,5 @@
 {
+	"id": 51705,
 	"name": "alibaba.lst.trade.seller.warehouse.query",
 	"apiChineseName": "供应商-本云商家-仓库查询接口",
 	"description": "查询本地云仓商家的仓库",

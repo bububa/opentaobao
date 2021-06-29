@@ -2,15 +2,8 @@ package product
 
 // PromotionDisplayTop 
 type PromotionDisplayTop struct {
-
     // 单品级优惠信息
-    
-    PromotionInItem   []PromotionInItem `json:"promotion_in_item,omitempty" xml:"promotion_in_item,omitempty"`
-    
-
+    PromotionInItem   []PromotionInItem `json:"promotion_in_item,omitempty" xml:"promotion_in_item>promotion_in_item,omitempty"`
     // 店铺级优惠信息
-    
-    PromotionInShop   []PromotionInShop `json:"promotion_in_shop,omitempty" xml:"promotion_in_shop,omitempty"`
-    
-
+    PromotionInShop   []PromotionInShop `json:"promotion_in_shop,omitempty" xml:"promotion_in_shop>promotion_in_shop,omitempty"`
 }

@@ -1,4 +1,5 @@
 {
+	"id": 36628,
 	"name": "taobao.uscesl.iteminfo.batch.put",
 	"apiChineseName": "批量写入商品信息接口",
 	"description": "电子架签批量写入商品数据，用于电子价签展示",

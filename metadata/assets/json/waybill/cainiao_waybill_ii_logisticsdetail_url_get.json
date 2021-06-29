@@ -1,4 +1,5 @@
 {
+	"id": 54036,
 	"name": "cainiao.waybill.ii.logisticsdetail.url.get",
 	"apiChineseName": "电子面单物流详情授权url获取",
 	"description": "获取电子面单物流详情授权访问的H5 url",

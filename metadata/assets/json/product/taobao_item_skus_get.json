@@ -1,4 +1,5 @@
 {
+	"id": 30,
 	"name": "taobao.item.skus.get",
 	"apiChineseName": "根据商品ID列表获取SKU信息",
 	"description": "* 获取多个商品下的所有sku\n\u003cbr/\u003e\u003cstrong\u003e\u003ca href=\"https://console.open.taobao.com/dingWeb.htm?from=itemapi\" target=\"_blank\"\u003e点击查看更多商品API说明\u003c/a\u003e\u003c/strong\u003e",

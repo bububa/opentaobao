@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-同步用户消耗能量 APIResponse
+同步用户消耗能量 API返回值 
 alibaba.fmhealth.butler.energy.sync
 
 同步用户消耗能量，用户消耗s点或卡路里后，同步给健康平台
@@ -17,15 +17,11 @@ type AlibabaFmhealthButlerEnergySyncAPIResponse struct {
     AlibabaFmhealthButlerEnergySyncResponse
 }
 
+// 同步用户消耗能量 成功返回结果
 type AlibabaFmhealthButlerEnergySyncResponse struct {
     XMLName xml.Name `xml:"alibaba_fmhealth_butler_energy_sync_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *TopResultModel `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

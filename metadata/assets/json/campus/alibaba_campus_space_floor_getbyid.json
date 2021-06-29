@@ -1,4 +1,5 @@
 {
+	"id": 36387,
 	"name": "alibaba.campus.space.floor.getbyid",
 	"apiChineseName": "根据id获取楼层",
 	"description": "根据id获取楼层",

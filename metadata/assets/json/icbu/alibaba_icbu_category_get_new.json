@@ -1,4 +1,5 @@
 {
+	"id": 50064,
 	"name": "alibaba.icbu.category.get.new",
 	"apiChineseName": "（新）ICBU类目树获取接口",
 	"description": "获取商品发布类目",

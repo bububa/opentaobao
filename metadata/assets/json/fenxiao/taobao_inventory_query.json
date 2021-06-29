@@ -1,4 +1,5 @@
 {
+	"id": 21613,
 	"name": "taobao.inventory.query",
 	"apiChineseName": "查询商品库存信息",
 	"description": "建议使用新接口：tmall.inventory.query.forstore ，新ISV不推荐使用。\n商家查询商品总体库存信息",

@@ -1,4 +1,5 @@
 {
+	"id": 36780,
 	"name": "taobao.taotv.video.playlist.all",
 	"apiChineseName": "获取播单列表",
 	"description": "根据牌照和视频源等获取播单列表",

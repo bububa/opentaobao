@@ -1,4 +1,5 @@
 {
+	"id": 38925,
 	"name": "alibaba.wdk.shop.query",
 	"apiChineseName": "门店查询接口",
 	"description": "根据门店code查询门店信息",

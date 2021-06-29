@@ -1,4 +1,5 @@
 {
+	"id": 30520,
 	"name": "yunos.osupdate.osfota.query",
 	"apiChineseName": "系统升级分页查询",
 	"description": "分页查询osoupdate系统升级列表",

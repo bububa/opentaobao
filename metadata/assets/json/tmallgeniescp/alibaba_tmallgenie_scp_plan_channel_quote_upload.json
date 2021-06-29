@@ -1,4 +1,5 @@
 {
+	"id": 53393,
 	"name": "alibaba.tmallgenie.scp.plan.channel.quote.upload",
 	"apiChineseName": "9.1-同步渠道配额",
 	"description": "同步渠道配额",

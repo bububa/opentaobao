@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取信息流账户详情 APIResponse
+获取信息流账户详情 API返回值 
 taobao.feedflow.account.get
 
 获取账户信息接口。
@@ -20,15 +20,11 @@ type TaobaoFeedflowAccountGetAPIResponse struct {
     TaobaoFeedflowAccountGetResponse
 }
 
+// 获取信息流账户详情 成功返回结果
 type TaobaoFeedflowAccountGetResponse struct {
     XMLName xml.Name `xml:"feedflow_account_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果
-    
     Result   *ResultDTO `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

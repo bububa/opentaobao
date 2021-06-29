@@ -1,4 +1,5 @@
 {
+	"id": 47115,
 	"name": "alibaba.ailabs.tmallgenie.auth.device.withdeviceid.get",
 	"apiChineseName": "根据三方ID查询设备注册激活信息",
 	"description": "根据三方ID查询设备注册激活信息",

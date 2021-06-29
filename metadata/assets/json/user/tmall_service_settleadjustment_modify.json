@@ -1,4 +1,5 @@
 {
+	"id": 27436,
 	"name": "tmall.service.settleadjustment.modify",
 	"apiChineseName": "修改结算调整单",
 	"description": "提供给服务商在对结算有异议时，发起结算调整单。\n通过说明调整单ID，调整费用值，调整原因进行结算调整单修改。",

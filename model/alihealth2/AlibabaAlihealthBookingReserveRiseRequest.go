@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-ISV 新增/修改复诊预约信息 APIRequest
+ISV 新增/修改复诊预约信息 API请求
 alibaba.alihealth.booking.reserve.rise
 
 ISV 新增/修改复诊预约信息
 */
 type AlibabaAlihealthBookingReserveRiseRequest struct {
     model.Params
-
     // 参数
-    riseRequest   *IsvRiseReserveRequest 
-
+    riseRequest   *IsvRiseReserveRequest
 }
 
+// 初始化AlibabaAlihealthBookingReserveRiseRequest对象
 func NewAlibabaAlihealthBookingReserveRiseRequest() *AlibabaAlihealthBookingReserveRiseRequest{
     return &AlibabaAlihealthBookingReserveRiseRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthBookingReserveRiseRequest) GetApiMethodName() string {
     return "alibaba.alihealth.booking.reserve.rise"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthBookingReserveRiseRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthBookingReserveRiseRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// RiseRequest Setter
+// 参数
 func (r *AlibabaAlihealthBookingReserveRiseRequest) SetRiseRequest(riseRequest *IsvRiseReserveRequest) error {
     r.riseRequest = riseRequest
     r.Set("rise_request", riseRequest)
     return nil
 }
 
+// RiseRequest Getter
 func (r AlibabaAlihealthBookingReserveRiseRequest) GetRiseRequest() *IsvRiseReserveRequest {
     return r.riseRequest
 }
-

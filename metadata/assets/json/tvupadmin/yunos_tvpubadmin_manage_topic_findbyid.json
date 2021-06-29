@@ -1,4 +1,5 @@
 {
+	"id": 30400,
 	"name": "yunos.tvpubadmin.manage.topic.findbyid",
 	"apiChineseName": "根据id获取专题信息",
 	"description": "根据id获取专题信息",

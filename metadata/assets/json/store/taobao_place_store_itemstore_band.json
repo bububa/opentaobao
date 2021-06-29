@@ -1,4 +1,5 @@
 {
+	"id": 51118,
 	"name": "taobao.place.store.itemstore.band",
 	"apiChineseName": "门店商品关联绑定接口",
 	"description": "商品和多个门店关系绑定接口",

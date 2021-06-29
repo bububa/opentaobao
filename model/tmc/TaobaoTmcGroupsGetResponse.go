@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取自定义用户分组列表 APIResponse
+获取自定义用户分组列表 API返回值 
 taobao.tmc.groups.get
 
 获取自定义用户分组列表
@@ -17,20 +17,13 @@ type TaobaoTmcGroupsGetAPIResponse struct {
     TaobaoTmcGroupsGetResponse
 }
 
+// 获取自定义用户分组列表 成功返回结果
 type TaobaoTmcGroupsGetResponse struct {
     XMLName xml.Name `xml:"tmc_groups_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // dasdasd
-    
     Groups   []TmcGroup `json:"groups,omitempty" xml:"groups>tmc_group,omitempty"`
-    
-    
     // 分组总数
-    
     TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
-
-    
 }

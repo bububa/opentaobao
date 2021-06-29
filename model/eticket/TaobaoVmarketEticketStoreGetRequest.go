@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-获取电子凭证预约门店信息 APIRequest
+获取电子凭证预约门店信息 API请求
 taobao.vmarket.eticket.store.get
 
 用于给外部商家查询电子凭证预约门店信息
 */
 type TaobaoVmarketEticketStoreGetRequest struct {
     model.Params
-
     // 订单ID
-    orderId   int64 
-
+    orderId   int64
 }
 
+// 初始化TaobaoVmarketEticketStoreGetRequest对象
 func NewTaobaoVmarketEticketStoreGetRequest() *TaobaoVmarketEticketStoreGetRequest{
     return &TaobaoVmarketEticketStoreGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoVmarketEticketStoreGetRequest) GetApiMethodName() string {
     return "taobao.vmarket.eticket.store.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoVmarketEticketStoreGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoVmarketEticketStoreGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// OrderId Setter
+// 订单ID
 func (r *TaobaoVmarketEticketStoreGetRequest) SetOrderId(orderId int64) error {
     r.orderId = orderId
     r.Set("order_id", orderId)
     return nil
 }
 
+// OrderId Getter
 func (r TaobaoVmarketEticketStoreGetRequest) GetOrderId() int64 {
     return r.orderId
 }
-

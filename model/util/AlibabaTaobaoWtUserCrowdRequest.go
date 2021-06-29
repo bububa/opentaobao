@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-校验用户是否为新人 APIRequest
+校验用户是否为新人 API请求
 alibaba.taobao.wt.user.crowd
 
 增加isv接口
@@ -15,22 +15,23 @@ alibaba.taobao.wt.user.crowd
 */
 type AlibabaTaobaoWtUserCrowdRequest struct {
     model.Params
-
     // 手机号
-    phone   int64 
-
+    phone   int64
 }
 
+// 初始化AlibabaTaobaoWtUserCrowdRequest对象
 func NewAlibabaTaobaoWtUserCrowdRequest() *AlibabaTaobaoWtUserCrowdRequest{
     return &AlibabaTaobaoWtUserCrowdRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaTaobaoWtUserCrowdRequest) GetApiMethodName() string {
     return "alibaba.taobao.wt.user.crowd"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaTaobaoWtUserCrowdRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,15 +39,15 @@ func (r AlibabaTaobaoWtUserCrowdRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Phone Setter
+// 手机号
 func (r *AlibabaTaobaoWtUserCrowdRequest) SetPhone(phone int64) error {
     r.phone = phone
     r.Set("phone", phone)
     return nil
 }
 
+// Phone Getter
 func (r AlibabaTaobaoWtUserCrowdRequest) GetPhone() int64 {
     return r.phone
 }
-

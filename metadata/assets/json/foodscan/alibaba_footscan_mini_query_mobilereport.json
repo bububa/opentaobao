@@ -1,4 +1,5 @@
 {
+	"id": 50510,
 	"name": "alibaba.footscan.mini.query.mobilereport",
 	"apiChineseName": "根据scanId查询报告",
 	"description": "根据scanId查询报告",

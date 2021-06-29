@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-大麦换验平台-第三方对外开放-票单接口invalidTicket APIRequest
+大麦换验平台-第三方对外开放-票单接口invalidTicket API请求
 alibaba.damai.mev.open.invalidticket
 
 开放接口 使票无效
 */
 type AlibabaDamaiMevOpenInvalidticketRequest struct {
     model.Params
-
     // 入参ticketIdOpenParam
-    ticketIdOpenParam   *TicketIdOpenParam 
-
+    ticketIdOpenParam   *TicketIdOpenParam
 }
 
+// 初始化AlibabaDamaiMevOpenInvalidticketRequest对象
 func NewAlibabaDamaiMevOpenInvalidticketRequest() *AlibabaDamaiMevOpenInvalidticketRequest{
     return &AlibabaDamaiMevOpenInvalidticketRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaDamaiMevOpenInvalidticketRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.invalidticket"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaDamaiMevOpenInvalidticketRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaDamaiMevOpenInvalidticketRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TicketIdOpenParam Setter
+// 入参ticketIdOpenParam
 func (r *AlibabaDamaiMevOpenInvalidticketRequest) SetTicketIdOpenParam(ticketIdOpenParam *TicketIdOpenParam) error {
     r.ticketIdOpenParam = ticketIdOpenParam
     r.Set("ticket_id_open_param", ticketIdOpenParam)
     return nil
 }
 
+// TicketIdOpenParam Getter
 func (r AlibabaDamaiMevOpenInvalidticketRequest) GetTicketIdOpenParam() *TicketIdOpenParam {
     return r.ticketIdOpenParam
 }
-

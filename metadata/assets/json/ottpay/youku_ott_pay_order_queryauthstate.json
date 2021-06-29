@@ -1,4 +1,5 @@
 {
+	"id": 56138,
 	"name": "youku.ott.pay.order.queryauthstate",
 	"apiChineseName": "查询连包签约状态",
 	"description": "查询CP用户连包商品签约状态",

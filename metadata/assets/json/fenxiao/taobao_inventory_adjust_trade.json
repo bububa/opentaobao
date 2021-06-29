@@ -1,4 +1,5 @@
 {
+	"id": 21607,
 	"name": "taobao.inventory.adjust.trade",
 	"apiChineseName": "交易库存调整单",
 	"description": "商家交易调整库存，淘宝交易、B2B经销等",

@@ -1,4 +1,5 @@
 {
+	"id": 32223,
 	"name": "alibaba.campus.acl.grantpermiitemtorole",
 	"apiChineseName": "权限赋予角色",
 	"description": "权限赋予角色",

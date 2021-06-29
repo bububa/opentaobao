@@ -1,4 +1,5 @@
 {
+	"id": 39580,
 	"name": "alibaba.wdk.sku.combinesku.query",
 	"apiChineseName": "组合商品查询接口",
 	"description": "查询组合商品接口",

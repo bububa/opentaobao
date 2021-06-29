@@ -1,4 +1,5 @@
 {
+	"id": 50272,
 	"name": "tmall.ccf.crowd.activityuser.upload",
 	"apiChineseName": "品牌营销活动用户上传",
 	"description": "搜集ISV的活动用户信息，将其沉淀为活动人群数据",

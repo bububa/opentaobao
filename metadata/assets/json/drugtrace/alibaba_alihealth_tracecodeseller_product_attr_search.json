@@ -1,4 +1,5 @@
 {
+	"id": 41975,
 	"name": "alibaba.alihealth.tracecodeseller.product.attr.search",
 	"apiChineseName": "根据商品id获取商品属性",
 	"description": "根据商品id获取商品属性",

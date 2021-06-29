@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-库存预占取消接口 APIRequest
+库存预占取消接口 API请求
 taobao.qimen.inventoryreserve.cancel
 
 库存预占取消
 */
 type TaobaoQimenInventoryreserveCancelRequest struct {
     model.Params
-
     // 
-    request   *Request 
-
+    request   *Request
 }
 
+// 初始化TaobaoQimenInventoryreserveCancelRequest对象
 func NewTaobaoQimenInventoryreserveCancelRequest() *TaobaoQimenInventoryreserveCancelRequest{
     return &TaobaoQimenInventoryreserveCancelRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenInventoryreserveCancelRequest) GetApiMethodName() string {
     return "taobao.qimen.inventoryreserve.cancel"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenInventoryreserveCancelRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenInventoryreserveCancelRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenInventoryreserveCancelRequest) SetRequest(request *Request) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenInventoryreserveCancelRequest) GetRequest() *Request {
     return r.request
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 51038,
 	"name": "alibaba.wdk.bm.coupon.query",
 	"apiChineseName": "淘鲜达券信息查询接口",
 	"description": "淘鲜达品牌营销的券信息查询接口，基于券id查询券相关信息：券id、券名称、分摊信息、面额、创建时间、开始时间、结束时间",

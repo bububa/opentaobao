@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-【门票API2.0】门票价格库存同步接口（多票种批量更新） APIResponse
+【门票API2.0】门票价格库存同步接口（多票种批量更新） API返回值 
 alitrip.ticket.skus.batch.upload
 
 飞猪度假新版门票商品价格库存同步接口（多票种批量更新）。
@@ -20,15 +20,11 @@ type AlitripTicketSkusBatchUploadAPIResponse struct {
     AlitripTicketSkusBatchUploadResponse
 }
 
+// 【门票API2.0】门票价格库存同步接口（多票种批量更新） 成功返回结果
 type AlitripTicketSkusBatchUploadResponse struct {
     XMLName xml.Name `xml:"alitrip_ticket_skus_batch_upload_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 价格库存同步结果
-    
     UpdateResult   *TicketItemResult `json:"update_result,omitempty" xml:"update_result,omitempty"`
-
-    
 }

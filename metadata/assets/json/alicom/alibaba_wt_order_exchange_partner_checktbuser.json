@@ -1,4 +1,5 @@
 {
+	"id": 29279,
 	"name": "alibaba.wt.order.exchange.partner.checktbuser",
 	"apiChineseName": "积分兑换校验淘宝账号是否存在",
 	"description": "积分兑换之前校验淘宝账号是否存在",

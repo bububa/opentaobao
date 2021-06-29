@@ -1,4 +1,5 @@
 {
+	"id": 53385,
 	"name": "alibaba.tmallgenie.scp.plan.location.quote.upload",
 	"apiChineseName": "9.2-同步地点配额",
 	"description": "同步地点配额",

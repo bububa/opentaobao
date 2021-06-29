@@ -1,4 +1,5 @@
 {
+	"id": 38370,
 	"name": "tmall.nr.fulfill.logistics.sync",
 	"apiChineseName": "同城配物流信息回传",
 	"description": "同城配业务物流信息回传，通过接口将物流信息同步给天猫",

@@ -1,4 +1,5 @@
 {
+	"id": 43494,
 	"name": "taobao.alitrip.travel.product.base.add",
 	"apiChineseName": "供应商新增产品API",
 	"description": "飞猪供销平台供应商可通过该API发布新产品",

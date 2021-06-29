@@ -1,4 +1,5 @@
 {
+	"id": 46427,
 	"name": "cainiao.global.handover.cloudprint.get",
 	"apiChineseName": "获取面单云打印数据",
 	"description": "提供给ISV通过该接口获取面单云打印数据",

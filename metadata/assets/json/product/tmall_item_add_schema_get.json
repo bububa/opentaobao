@@ -1,4 +1,5 @@
 {
+	"id": 23256,
 	"name": "tmall.item.add.schema.get",
 	"apiChineseName": "天猫发布商品规则获取",
 	"description": "通过类目以及productId获取商品发布规则；",

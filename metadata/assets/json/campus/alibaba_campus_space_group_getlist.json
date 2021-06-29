@@ -1,4 +1,5 @@
 {
+	"id": 31922,
 	"name": "alibaba.campus.space.group.getlist",
 	"apiChineseName": "多条件查询空间分组信息",
 	"description": "多条件查询空间分组信息\nHSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService\nHSF方法名称：getList",

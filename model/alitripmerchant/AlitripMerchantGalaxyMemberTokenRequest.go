@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-星河-校验token APIRequest
+星河-校验token API请求
 alitrip.merchant.galaxy.member.token
 
 校验或者刷新token
 */
 type AlitripMerchantGalaxyMemberTokenRequest struct {
     model.Params
-
     // 租户身份信息
-    tenantKey   string 
-
+    tenantKey   string
     // 访问携带toekn
-    token   string 
-
+    token   string
 }
 
+// 初始化AlitripMerchantGalaxyMemberTokenRequest对象
 func NewAlitripMerchantGalaxyMemberTokenRequest() *AlitripMerchantGalaxyMemberTokenRequest{
     return &AlitripMerchantGalaxyMemberTokenRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripMerchantGalaxyMemberTokenRequest) GetApiMethodName() string {
     return "alitrip.merchant.galaxy.member.token"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripMerchantGalaxyMemberTokenRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r AlitripMerchantGalaxyMemberTokenRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// TenantKey Setter
+// 租户身份信息
 func (r *AlitripMerchantGalaxyMemberTokenRequest) SetTenantKey(tenantKey string) error {
     r.tenantKey = tenantKey
     r.Set("tenant_key", tenantKey)
     return nil
 }
 
+// TenantKey Getter
 func (r AlitripMerchantGalaxyMemberTokenRequest) GetTenantKey() string {
     return r.tenantKey
 }
-
+// Token Setter
+// 访问携带toekn
 func (r *AlitripMerchantGalaxyMemberTokenRequest) SetToken(token string) error {
     r.token = token
     r.Set("token", token)
     return nil
 }
 
+// Token Getter
 func (r AlitripMerchantGalaxyMemberTokenRequest) GetToken() string {
     return r.token
 }
-

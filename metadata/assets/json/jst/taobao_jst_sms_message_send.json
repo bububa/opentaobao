@@ -1,4 +1,5 @@
 {
+	"id": 51459,
 	"name": "taobao.jst.sms.message.send",
 	"apiChineseName": "聚石塔数据paas短信发送接口",
 	"description": "聚石塔短信PAAS场景中，ISV通过该API帮商家发送短信给用户。",

@@ -1,4 +1,5 @@
 {
+	"id": 40664,
 	"name": "alibaba.ailabs.aligenie.albums.search",
 	"apiChineseName": "查询专辑",
 	"description": "搜索类目下的专辑信息",

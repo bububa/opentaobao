@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-商品一品多码维护操作 APIResponse
+商品一品多码维护操作 API返回值 
 alibaba.wdk.item.morebarcode.ops
 
 商品一品多码维护操作
@@ -17,15 +17,11 @@ type AlibabaWdkItemMorebarcodeOpsAPIResponse struct {
     AlibabaWdkItemMorebarcodeOpsResponse
 }
 
+// 商品一品多码维护操作 成功返回结果
 type AlibabaWdkItemMorebarcodeOpsResponse struct {
     XMLName xml.Name `xml:"alibaba_wdk_item_morebarcode_ops_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *AlibabaWdkItemMorebarcodeOpsResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 26304,
 	"name": "taobao.vmarket.eticket.failsend",
 	"apiChineseName": "无法发码回调",
 	"description": "针对一次发码通知，码商无法完成发码，则可以通过此接口告知电子凭证",

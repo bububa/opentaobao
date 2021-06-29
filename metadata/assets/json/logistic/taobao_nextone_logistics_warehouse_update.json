@@ -1,4 +1,5 @@
 {
+	"id": 28206,
 	"name": "taobao.nextone.logistics.warehouse.update",
 	"apiChineseName": "AG退货入仓状态写接口",
 	"description": "商家上传退货入仓状态给ag",

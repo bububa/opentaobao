@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-普通发券 APIRequest
+普通发券 API请求
 alibaba.wdk.coupon.spread.apply
 
 优惠券发放
 */
 type AlibabaWdkCouponSpreadApplyRequest struct {
     model.Params
-
     // 参数对象
-    paramWdkCouponApplyParam   *WdkCouponApplyParam 
-
+    paramWdkCouponApplyParam   *WdkCouponApplyParam
 }
 
+// 初始化AlibabaWdkCouponSpreadApplyRequest对象
 func NewAlibabaWdkCouponSpreadApplyRequest() *AlibabaWdkCouponSpreadApplyRequest{
     return &AlibabaWdkCouponSpreadApplyRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkCouponSpreadApplyRequest) GetApiMethodName() string {
     return "alibaba.wdk.coupon.spread.apply"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkCouponSpreadApplyRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkCouponSpreadApplyRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamWdkCouponApplyParam Setter
+// 参数对象
 func (r *AlibabaWdkCouponSpreadApplyRequest) SetParamWdkCouponApplyParam(paramWdkCouponApplyParam *WdkCouponApplyParam) error {
     r.paramWdkCouponApplyParam = paramWdkCouponApplyParam
     r.Set("param_wdk_coupon_apply_param", paramWdkCouponApplyParam)
     return nil
 }
 
+// ParamWdkCouponApplyParam Getter
 func (r AlibabaWdkCouponSpreadApplyRequest) GetParamWdkCouponApplyParam() *WdkCouponApplyParam {
     return r.paramWdkCouponApplyParam
 }
-

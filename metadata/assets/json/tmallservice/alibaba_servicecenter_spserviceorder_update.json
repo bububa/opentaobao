@@ -1,4 +1,5 @@
 {
+	"id": 49160,
 	"name": "alibaba.servicecenter.spserviceorder.update",
 	"apiChineseName": "服务供应链服务单更新",
 	"description": "服务供应链服务单更新，服务商通过此接口将商品的sn等信息推送到服务单中",

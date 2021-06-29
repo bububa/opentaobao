@@ -1,4 +1,5 @@
 {
+	"id": 45306,
 	"name": "alibaba.wdk.sopo.push.trigger",
 	"apiChineseName": "猫超共享库存寄售sopo推送触发",
 	"description": "猫超共享库存寄售sopo触发推送给商家",

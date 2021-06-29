@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-阿信支付入驻重新申请 APIRequest
+阿信支付入驻重新申请 API请求
 taobao.alitrip.axin.trans.pay.register.reapply
 
 阿信支付入驻重新申请
@@ -15,22 +15,23 @@ taobao.alitrip.axin.trans.pay.register.reapply
 */
 type TaobaoAlitripAxinTransPayRegisterReapplyRequest struct {
     model.Params
-
     // 阿信支付入驻重新申请参数
-    axinPayRegisterCreateDTO   *AxinPayRegisterCreateDto 
-
+    axinPayRegisterCreateDTO   *AxinPayRegisterCreateDto
 }
 
+// 初始化TaobaoAlitripAxinTransPayRegisterReapplyRequest对象
 func NewTaobaoAlitripAxinTransPayRegisterReapplyRequest() *TaobaoAlitripAxinTransPayRegisterReapplyRequest{
     return &TaobaoAlitripAxinTransPayRegisterReapplyRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoAlitripAxinTransPayRegisterReapplyRequest) GetApiMethodName() string {
     return "taobao.alitrip.axin.trans.pay.register.reapply"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoAlitripAxinTransPayRegisterReapplyRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,15 +39,15 @@ func (r TaobaoAlitripAxinTransPayRegisterReapplyRequest) GetApiParams() url.Valu
     }
     return params
 }
-
-
+// AxinPayRegisterCreateDTO Setter
+// 阿信支付入驻重新申请参数
 func (r *TaobaoAlitripAxinTransPayRegisterReapplyRequest) SetAxinPayRegisterCreateDTO(axinPayRegisterCreateDTO *AxinPayRegisterCreateDto) error {
     r.axinPayRegisterCreateDTO = axinPayRegisterCreateDTO
     r.Set("axin_pay_register_create_d_t_o", axinPayRegisterCreateDTO)
     return nil
 }
 
+// AxinPayRegisterCreateDTO Getter
 func (r TaobaoAlitripAxinTransPayRegisterReapplyRequest) GetAxinPayRegisterCreateDTO() *AxinPayRegisterCreateDto {
     return r.axinPayRegisterCreateDTO
 }
-

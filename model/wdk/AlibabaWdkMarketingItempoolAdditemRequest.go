@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-增加商品池里面的商品 APIRequest
+增加商品池里面的商品 API请求
 alibaba.wdk.marketing.itempool.additem
 
 增加商品池里面的商品
 */
 type AlibabaWdkMarketingItempoolAdditemRequest struct {
     model.Params
-
     // 商品对象
-    param0   *ItemPoolSku 
-
+    param0   *ItemPoolSku
     // 活动基本信息
-    param1   *CommonActivityParam 
-
+    param1   *CommonActivityParam
 }
 
+// 初始化AlibabaWdkMarketingItempoolAdditemRequest对象
 func NewAlibabaWdkMarketingItempoolAdditemRequest() *AlibabaWdkMarketingItempoolAdditemRequest{
     return &AlibabaWdkMarketingItempoolAdditemRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkMarketingItempoolAdditemRequest) GetApiMethodName() string {
     return "alibaba.wdk.marketing.itempool.additem"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkMarketingItempoolAdditemRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r AlibabaWdkMarketingItempoolAdditemRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Param0 Setter
+// 商品对象
 func (r *AlibabaWdkMarketingItempoolAdditemRequest) SetParam0(param0 *ItemPoolSku) error {
     r.param0 = param0
     r.Set("param0", param0)
     return nil
 }
 
+// Param0 Getter
 func (r AlibabaWdkMarketingItempoolAdditemRequest) GetParam0() *ItemPoolSku {
     return r.param0
 }
-
+// Param1 Setter
+// 活动基本信息
 func (r *AlibabaWdkMarketingItempoolAdditemRequest) SetParam1(param1 *CommonActivityParam) error {
     r.param1 = param1
     r.Set("param1", param1)
     return nil
 }
 
+// Param1 Getter
 func (r AlibabaWdkMarketingItempoolAdditemRequest) GetParam1() *CommonActivityParam {
     return r.param1
 }
-

@@ -1,4 +1,5 @@
 {
+	"id": 10549,
 	"name": "taobao.simba.campaign.budget.get",
 	"apiChineseName": "取得一个推广计划的日限额",
 	"description": "取得一个推广计划的日限额",

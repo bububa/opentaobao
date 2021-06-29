@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-物流管控作业状态回传 APIRequest
+物流管控作业状态回传 API请求
 alibaba.wdk.fulfill.batch.on.task.status.changed
 
 物流管控作业状态回传
 */
 type AlibabaWdkFulfillBatchOnTaskStatusChangedRequest struct {
     model.Params
-
     // 作业状态回传对象
-    taskStatus   *TaskStatus 
-
+    taskStatus   *TaskStatus
 }
 
+// 初始化AlibabaWdkFulfillBatchOnTaskStatusChangedRequest对象
 func NewAlibabaWdkFulfillBatchOnTaskStatusChangedRequest() *AlibabaWdkFulfillBatchOnTaskStatusChangedRequest{
     return &AlibabaWdkFulfillBatchOnTaskStatusChangedRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) GetApiMethodName() string {
     return "alibaba.wdk.fulfill.batch.on.task.status.changed"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) GetApiParams() url.Val
     }
     return params
 }
-
-
+// TaskStatus Setter
+// 作业状态回传对象
 func (r *AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) SetTaskStatus(taskStatus *TaskStatus) error {
     r.taskStatus = taskStatus
     r.Set("task_status", taskStatus)
     return nil
 }
 
+// TaskStatus Getter
 func (r AlibabaWdkFulfillBatchOnTaskStatusChangedRequest) GetTaskStatus() *TaskStatus {
     return r.taskStatus
 }
-

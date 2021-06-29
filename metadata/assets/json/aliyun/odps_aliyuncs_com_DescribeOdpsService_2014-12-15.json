@@ -1,4 +1,5 @@
 {
+	"id": 24073,
 	"name": "odps.aliyuncs.com.DescribeOdpsService.2014-12-15",
 	"apiChineseName": "查询ODPS服务",
 	"description": "查询ODPS服务",

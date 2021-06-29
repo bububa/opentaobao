@@ -1,4 +1,5 @@
 {
+	"id": 27990,
 	"name": "taobao.media.video.list",
 	"apiChineseName": "获取商家视频列表",
 	"description": "用于获取授权商家的视频列表",

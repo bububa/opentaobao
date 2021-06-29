@@ -1,4 +1,5 @@
 {
+	"id": 35536,
 	"name": "alibaba.mos.store.getcloudshelfversion",
 	"apiChineseName": "获取云货架版本信息",
 	"description": "根据屏编号获取云货架版本信息",

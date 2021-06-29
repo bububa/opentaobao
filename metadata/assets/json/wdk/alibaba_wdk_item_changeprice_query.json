@@ -1,4 +1,5 @@
 {
+	"id": 49182,
 	"name": "alibaba.wdk.item.changeprice.query",
 	"apiChineseName": "按照价格变更时间段，查询会变更价格的单据的商品",
 	"description": "/**\n     * 按照价格变更时间段，查询会变更价格的单据的商品\n     * 传入QueryPriceChangeTypeEnum.BASE_PRICE,返回变价时间在startTime-endTime之间的所有单据\n     * 传入QueryPriceChangeTypeEnum.SKU_PROMOTION_START,\n     * 返回活动开始时间在 startTime\u003c=活动开始时间\u003cendTime 之间的所有单品促销单据\n     * 传入QueryPriceChangeTypeEnum.SKU_PROMOTION_END,\n     * 返回活动结束时间在 startTime\u003c=活动结束时间\u003cendTime 之间的所有单品促销单据\n     */",

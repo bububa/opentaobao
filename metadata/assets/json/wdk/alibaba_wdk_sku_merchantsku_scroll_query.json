@@ -1,4 +1,5 @@
 {
+	"id": 43208,
 	"name": "alibaba.wdk.sku.merchantsku.scroll.query",
 	"apiChineseName": "商家商品批量查询接口",
 	"description": "提供主档商品数据接口查询",

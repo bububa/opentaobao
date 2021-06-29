@@ -1,4 +1,5 @@
 {
+	"id": 21589,
 	"name": "taobao.fenxiao.product.map.add",
 	"apiChineseName": "创建分销和后端商品映射关系",
 	"description": "创建分销和供应链商品映射关系。",

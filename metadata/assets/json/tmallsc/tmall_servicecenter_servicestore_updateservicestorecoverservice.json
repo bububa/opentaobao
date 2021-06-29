@@ -1,4 +1,5 @@
 {
+	"id": 33697,
 	"name": "tmall.servicecenter.servicestore.updateservicestorecoverservice",
 	"apiChineseName": "更新网点覆盖的服务",
 	"description": "更新网点覆盖的服务，唯一性校验：服务商淘宝账号+网点编码+biz_type\n前提是网点要存在，\n如果需要新增的网点覆盖的服务不存在，会更新失败。\n网点覆盖的服务包含了业务类型(比如电器预约安装)、天猫服务的servicecode列表、授权的类目和品牌",

@@ -1,4 +1,5 @@
 {
+	"id": 10728,
 	"name": "taobao.ump.range.get",
 	"apiChineseName": "查询活动范围",
 	"description": "查询某个卖家所有参加或者不参加某项活动的物品",

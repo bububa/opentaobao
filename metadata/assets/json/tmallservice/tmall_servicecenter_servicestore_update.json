@@ -1,4 +1,5 @@
 {
+	"id": 42627,
 	"name": "tmall.servicecenter.servicestore.update",
 	"apiChineseName": "修改门店信息",
 	"description": "用于修改门店/网点信息。多个业务共用",

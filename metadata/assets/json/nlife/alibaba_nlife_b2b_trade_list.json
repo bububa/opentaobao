@@ -1,4 +1,5 @@
 {
+	"id": 36762,
 	"name": "alibaba.nlife.b2b.trade.list",
 	"apiChineseName": "获取企业下的采购单列表",
 	"description": "获取指定门店下的采购单列表",

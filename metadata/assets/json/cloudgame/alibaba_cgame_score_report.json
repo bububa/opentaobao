@@ -1,4 +1,5 @@
 {
+	"id": 50608,
 	"name": "alibaba.cgame.score.report",
 	"apiChineseName": "云游戏战绩上传通用接口",
 	"description": "阿里云游戏, CP游戏合作方通用游戏结果回传接口",

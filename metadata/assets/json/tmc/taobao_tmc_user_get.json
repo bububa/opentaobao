@@ -1,4 +1,5 @@
 {
+	"id": 22554,
 	"name": "taobao.tmc.user.get",
 	"apiChineseName": "获取用户已开通消息",
 	"description": "查询指定用户开通的消息通道和组",

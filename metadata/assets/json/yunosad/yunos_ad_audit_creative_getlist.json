@@ -1,4 +1,5 @@
 {
+	"id": 29084,
 	"name": "yunos.ad.audit.creative.getlist",
 	"apiChineseName": "批量获取创意审核状态",
 	"description": "批量获取创意审核状态",

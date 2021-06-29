@@ -1,4 +1,5 @@
 {
+	"id": 29007,
 	"name": "taobao.location.relation.query",
 	"apiChineseName": "地点关联关系查询",
 	"description": "地点关联关系查询 \n门店和仓库关联关系查询",

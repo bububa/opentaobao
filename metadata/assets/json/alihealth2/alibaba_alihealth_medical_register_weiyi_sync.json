@@ -1,4 +1,5 @@
 {
+	"id": 42993,
 	"name": "alibaba.alihealth.medical.register.weiyi.sync",
 	"apiChineseName": "微医数据号源回传",
 	"description": "微医号源数据回传",

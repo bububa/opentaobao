@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-仓内加工单创建接口 APIRequest
+仓内加工单创建接口 API请求
 taobao.qimen.storeprocess.create
 
 ERP调用奇门的接口,创建仓内加工单
 */
 type TaobaoQimenStoreprocessCreateRequest struct {
     model.Params
-
     // 
-    request   *StoreProcessCreateRequest 
-
+    request   *StoreProcessCreateRequest
 }
 
+// 初始化TaobaoQimenStoreprocessCreateRequest对象
 func NewTaobaoQimenStoreprocessCreateRequest() *TaobaoQimenStoreprocessCreateRequest{
     return &TaobaoQimenStoreprocessCreateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoQimenStoreprocessCreateRequest) GetApiMethodName() string {
     return "taobao.qimen.storeprocess.create"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoQimenStoreprocessCreateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoQimenStoreprocessCreateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Request Setter
+// 
 func (r *TaobaoQimenStoreprocessCreateRequest) SetRequest(request *StoreProcessCreateRequest) error {
     r.request = request
     r.Set("request", request)
     return nil
 }
 
+// Request Getter
 func (r TaobaoQimenStoreprocessCreateRequest) GetRequest() *StoreProcessCreateRequest {
     return r.request
 }
-

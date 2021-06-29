@@ -1,4 +1,5 @@
 {
+	"id": 33757,
 	"name": "taobao.omniorder.store.collectconfig.get",
 	"apiChineseName": "查询门店自提配置内容",
 	"description": "查询门店自提配置内容",

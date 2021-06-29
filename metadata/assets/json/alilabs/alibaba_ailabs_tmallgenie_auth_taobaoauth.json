@@ -1,4 +1,5 @@
 {
+	"id": 44760,
 	"name": "alibaba.ailabs.tmallgenie.auth.taobaoauth",
 	"apiChineseName": "天猫精灵淘宝登录授权绑定接口",
 	"description": "厂商获取用户淘宝授权之后，通过此接口获取天猫精灵授权，并绑定一台设备",

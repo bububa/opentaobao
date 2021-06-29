@@ -1,4 +1,5 @@
 {
+	"id": 46647,
 	"name": "youku.ott.iot.devicelist.change",
 	"apiChineseName": "iot设备列表变化接口",
 	"description": "iot设备列表变化接口",

@@ -1,4 +1,5 @@
 {
+	"id": 51290,
 	"name": "alibaba.alihealth.medical.doctor.msg.send",
 	"apiChineseName": "三方医生消息写入",
 	"description": "三方机构医生端发送消息同步写入阿里健康IM",

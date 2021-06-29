@@ -1,4 +1,5 @@
 {
+	"id": 26525,
 	"name": "taobao.openim.tribe.sendmsg",
 	"apiChineseName": "发送群消息",
 	"description": "发送群消息，目前支持发送4种类型的群消息，普通文本，图片，语音，自定义消息",

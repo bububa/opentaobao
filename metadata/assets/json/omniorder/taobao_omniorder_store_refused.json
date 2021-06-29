@@ -1,4 +1,5 @@
 {
+	"id": 27390,
 	"name": "taobao.omniorder.store.refused",
 	"apiChineseName": "Pos端门店拒单",
 	"description": "ISV Pos端门店拒单，通知星盘",

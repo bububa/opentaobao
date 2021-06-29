@@ -1,4 +1,5 @@
 {
+	"id": 21828,
 	"name": "taobao.caipiao.goods.info.get",
 	"apiChineseName": "根据卖家id与appkey获取商品信息",
 	"description": "根据卖家id与appkey获取商品信息。",

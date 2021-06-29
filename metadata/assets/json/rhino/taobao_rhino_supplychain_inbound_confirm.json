@@ -1,4 +1,5 @@
 {
+	"id": 39535,
 	"name": "taobao.rhino.supplychain.inbound.confirm",
 	"apiChineseName": "WMS003成衣入库确认",
 	"description": "【WMS003】【同步成衣入库完成信息】",

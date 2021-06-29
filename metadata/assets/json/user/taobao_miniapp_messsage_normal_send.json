@@ -1,4 +1,5 @@
 {
+	"id": 38414,
 	"name": "taobao.miniapp.messsage.normal.send",
 	"apiChineseName": "轻店铺下行普通消息给用户",
 	"description": "小程序下行单个普通消息",

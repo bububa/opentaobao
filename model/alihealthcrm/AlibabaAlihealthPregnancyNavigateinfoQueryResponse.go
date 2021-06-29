@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询底导数据 APIResponse
+查询底导数据 API返回值 
 alibaba.alihealth.pregnancy.navigateinfo.query
 
 备孕管理--获取底部导航信息
@@ -17,15 +17,11 @@ type AlibabaAlihealthPregnancyNavigateinfoQueryAPIResponse struct {
     AlibabaAlihealthPregnancyNavigateinfoQueryResponse
 }
 
+// 查询底导数据 成功返回结果
 type AlibabaAlihealthPregnancyNavigateinfoQueryResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_pregnancy_navigateinfo_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 结果集
-    
     Result   *TopResultModel `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 122,
 	"name": "taobao.itemcats.get",
 	"apiChineseName": "获取后台供卖家发布商品的标准商品类目",
 	"description": "获取后台供卖家发布商品的标准商品类目。",

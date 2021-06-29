@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-查询服务支持地区列表 APIRequest
+查询服务支持地区列表 API请求
 alibaba.ascp.industry.disivison.query
 
 商家获取服务支持地区
 */
 type AlibabaAscpIndustryDisivisonQueryRequest struct {
     model.Params
-
     // 服务编码
-    serviceCode   string 
-
+    serviceCode   string
 }
 
+// 初始化AlibabaAscpIndustryDisivisonQueryRequest对象
 func NewAlibabaAscpIndustryDisivisonQueryRequest() *AlibabaAscpIndustryDisivisonQueryRequest{
     return &AlibabaAscpIndustryDisivisonQueryRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAscpIndustryDisivisonQueryRequest) GetApiMethodName() string {
     return "alibaba.ascp.industry.disivison.query"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAscpIndustryDisivisonQueryRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAscpIndustryDisivisonQueryRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ServiceCode Setter
+// 服务编码
 func (r *AlibabaAscpIndustryDisivisonQueryRequest) SetServiceCode(serviceCode string) error {
     r.serviceCode = serviceCode
     r.Set("service_code", serviceCode)
     return nil
 }
 
+// ServiceCode Getter
 func (r AlibabaAscpIndustryDisivisonQueryRequest) GetServiceCode() string {
     return r.serviceCode
 }
-

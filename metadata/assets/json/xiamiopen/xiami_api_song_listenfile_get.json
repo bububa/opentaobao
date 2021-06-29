@@ -1,4 +1,5 @@
 {
+	"id": 35997,
 	"name": "xiami.api.song.listenfile.get",
 	"apiChineseName": "获取歌曲试听文件",
 	"description": "获取歌曲试听文件",

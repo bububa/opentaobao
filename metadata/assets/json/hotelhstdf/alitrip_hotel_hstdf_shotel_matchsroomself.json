@@ -1,4 +1,5 @@
 {
+	"id": 42711,
 	"name": "alitrip.hotel.hstdf.shotel.matchsroomself",
 	"apiChineseName": "匹配标准房型以及卖家房型",
 	"description": "匹配卖家房型以及标准房型，返回匹配结果",

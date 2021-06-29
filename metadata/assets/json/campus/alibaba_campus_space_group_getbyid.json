@@ -1,4 +1,5 @@
 {
+	"id": 31921,
 	"name": "alibaba.campus.space.group.getbyid",
 	"apiChineseName": "根据分组ID查询相关的空间分组信息",
 	"description": "根据分组ID查询相关的空间分组信息\nHSF接口名称：com.alibaba.campus.api.space.service.top.SpaceGroupApiTopService\nHSF方法名称：getById",

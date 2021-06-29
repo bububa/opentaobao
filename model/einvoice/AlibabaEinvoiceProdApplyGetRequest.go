@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询发票申请 APIRequest
+查询发票申请 API请求
 alibaba.einvoice.prod.apply.get
 
 查询申请的详细信息，包含申请所关联的发票摘要信息+板式文件+预览图；
@@ -15,22 +15,23 @@ alibaba.einvoice.prod.apply.get
 */
 type AlibabaEinvoiceProdApplyGetRequest struct {
     model.Params
-
     // 查询申请请求
-    invoiceApplyQueryDto   *InvoiceApplyDtlQueryDto 
-
+    invoiceApplyQueryDto   *InvoiceApplyDtlQueryDto
 }
 
+// 初始化AlibabaEinvoiceProdApplyGetRequest对象
 func NewAlibabaEinvoiceProdApplyGetRequest() *AlibabaEinvoiceProdApplyGetRequest{
     return &AlibabaEinvoiceProdApplyGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaEinvoiceProdApplyGetRequest) GetApiMethodName() string {
     return "alibaba.einvoice.prod.apply.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaEinvoiceProdApplyGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -38,15 +39,15 @@ func (r AlibabaEinvoiceProdApplyGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// InvoiceApplyQueryDto Setter
+// 查询申请请求
 func (r *AlibabaEinvoiceProdApplyGetRequest) SetInvoiceApplyQueryDto(invoiceApplyQueryDto *InvoiceApplyDtlQueryDto) error {
     r.invoiceApplyQueryDto = invoiceApplyQueryDto
     r.Set("invoice_apply_query_dto", invoiceApplyQueryDto)
     return nil
 }
 
+// InvoiceApplyQueryDto Getter
 func (r AlibabaEinvoiceProdApplyGetRequest) GetInvoiceApplyQueryDto() *InvoiceApplyDtlQueryDto {
     return r.invoiceApplyQueryDto
 }
-

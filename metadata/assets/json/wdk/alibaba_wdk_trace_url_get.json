@@ -1,4 +1,5 @@
 {
+	"id": 32324,
 	"name": "alibaba.wdk.trace.url.get",
 	"apiChineseName": "溯源url透出",
 	"description": "根据shopId和skuCode返回商品溯源url",

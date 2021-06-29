@@ -1,4 +1,5 @@
 {
+	"id": 32115,
 	"name": "alibaba.campus.device.openapi.getdevicerealtimedata",
 	"apiChineseName": "获取指定设备下指定参数的实时值",
 	"description": "获取指定设备下指定参数的实时值",

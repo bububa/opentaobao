@@ -1,4 +1,5 @@
 {
+	"id": 51052,
 	"name": "alibaba.alihealth.drugcode.scan",
 	"apiChineseName": "查询扫码信息",
 	"description": "查询扫码信息",

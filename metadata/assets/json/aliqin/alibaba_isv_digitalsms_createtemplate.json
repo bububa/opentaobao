@@ -1,4 +1,5 @@
 {
+	"id": 40353,
 	"name": "alibaba.isv.digitalsms.createtemplate",
 	"apiChineseName": "数字短信模板创建",
 	"description": "数字短信模板创建，给聚石塔，类型：2",

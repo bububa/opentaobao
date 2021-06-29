@@ -1,4 +1,5 @@
 {
+	"id": 45900,
 	"name": "alibaba.alsc.crm.promotion.list",
 	"apiChineseName": "获取促销规则列表",
 	"description": "获取品牌的促销规则列表",

@@ -1,4 +1,5 @@
 {
+	"id": 40768,
 	"name": "taobao.ailab.aicloud.top.skils.list",
 	"apiChineseName": "获取硬件平台设备下挂载的技能列表",
 	"description": "提供给在硬件平台接入设备的技能列表",

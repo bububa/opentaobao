@@ -1,4 +1,5 @@
 {
+	"id": 40634,
 	"name": "alitrip.platform.poi.raw.feed",
 	"apiChineseName": "存储poi原始数据",
 	"description": "对接外部数据源，外部数据推送poi数据到飞猪",

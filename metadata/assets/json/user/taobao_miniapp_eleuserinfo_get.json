@@ -1,4 +1,5 @@
 {
+	"id": 55602,
 	"name": "taobao.miniapp.eleuserinfo.get",
 	"apiChineseName": "获取饿了么用户信息",
 	"description": "获取饿了么用户信息",

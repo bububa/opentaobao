@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-修改活动接口 APIRequest
+修改活动接口 API请求
 taobao.singletreasure.activity.update
 
 修改活动接口
 */
 type TaobaoSingletreasureActivityUpdateRequest struct {
     model.Params
-
     // 系统入参
-    activityInfo   *ActivityInfoCreateDto 
-
+    activityInfo   *ActivityInfoCreateDto
 }
 
+// 初始化TaobaoSingletreasureActivityUpdateRequest对象
 func NewTaobaoSingletreasureActivityUpdateRequest() *TaobaoSingletreasureActivityUpdateRequest{
     return &TaobaoSingletreasureActivityUpdateRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoSingletreasureActivityUpdateRequest) GetApiMethodName() string {
     return "taobao.singletreasure.activity.update"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoSingletreasureActivityUpdateRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoSingletreasureActivityUpdateRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ActivityInfo Setter
+// 系统入参
 func (r *TaobaoSingletreasureActivityUpdateRequest) SetActivityInfo(activityInfo *ActivityInfoCreateDto) error {
     r.activityInfo = activityInfo
     r.Set("activity_info", activityInfo)
     return nil
 }
 
+// ActivityInfo Getter
 func (r TaobaoSingletreasureActivityUpdateRequest) GetActivityInfo() *ActivityInfoCreateDto {
     return r.activityInfo
 }
-

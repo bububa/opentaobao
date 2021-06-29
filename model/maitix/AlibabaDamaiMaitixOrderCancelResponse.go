@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-大麦-库存释放 APIResponse
+大麦-库存释放 API返回值 
 alibaba.damai.maitix.order.cancel
 
 库存释放
@@ -17,15 +17,11 @@ type AlibabaDamaiMaitixOrderCancelAPIResponse struct {
     AlibabaDamaiMaitixOrderCancelResponse
 }
 
+// 大麦-库存释放 成功返回结果
 type AlibabaDamaiMaitixOrderCancelResponse struct {
     XMLName xml.Name `xml:"alibaba_damai_maitix_order_cancel_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 返回结果集
-    
     Result   *MxResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

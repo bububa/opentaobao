@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-【门票API2.0】景点门票规则维护接口 APIResponse
+【门票API2.0】景点门票规则维护接口 API返回值 
 alitrip.ticket.rule.upload
 
 景点门票规则维护接口。该接口同时支持新发规则和编辑现有规则，如果out_rule_id下没有发布过规则，则系统将判断为新发一个规则，否则认为是编辑现有规则。
@@ -18,15 +18,11 @@ type AlitripTicketRuleUploadAPIResponse struct {
     AlitripTicketRuleUploadResponse
 }
 
+// 【门票API2.0】景点门票规则维护接口 成功返回结果
 type AlitripTicketRuleUploadResponse struct {
     XMLName xml.Name `xml:"alitrip_ticket_rule_upload_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *AlitripTicketRuleUploadResultSet `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

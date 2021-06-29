@@ -1,4 +1,5 @@
 {
+	"id": 40674,
 	"name": "alibaba.ailabs.aligenie.albums.get",
 	"apiChineseName": "专辑详情",
 	"description": "给予厂商查询专辑下的音频详情",

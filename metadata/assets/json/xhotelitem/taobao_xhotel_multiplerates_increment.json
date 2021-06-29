@@ -1,4 +1,5 @@
 {
+	"id": 25404,
 	"name": "taobao.xhotel.multiplerates.increment",
 	"apiChineseName": "复杂房价推送接口（批量增量）",
 	"description": "复杂房价批量增量更新，只会更新指定日期的信息\n完全涵盖了taobao.xhotel.rates.increment接口的功能",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-获取单笔交易的详细信息 APIResponse
+获取单笔交易的详细信息 API返回值 
 taobao.trade.fullinfo.get
 
 获取单笔交易的详细信息
@@ -22,15 +22,11 @@ type TaobaoTradeFullinfoGetAPIResponse struct {
     TaobaoTradeFullinfoGetResponse
 }
 
+// 获取单笔交易的详细信息 成功返回结果
 type TaobaoTradeFullinfoGetResponse struct {
     XMLName xml.Name `xml:"trade_fullinfo_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 交易主订单信息
-    
     Trade   *Trade `json:"trade,omitempty" xml:"trade,omitempty"`
-
-    
 }

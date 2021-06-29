@@ -1,4 +1,5 @@
 {
+	"id": 38618,
 	"name": "taobao.paimai.itemprops.get",
 	"apiChineseName": "拍卖相关类目属性",
 	"description": "读取拍卖相关类目属性",

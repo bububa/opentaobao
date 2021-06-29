@@ -1,4 +1,5 @@
 {
+	"id": 21608,
 	"name": "taobao.inventory.adjust.external",
 	"apiChineseName": "非交易库存调整单",
 	"description": "建议使用新接口：taobao.inventory.merchant.adjust ，该接口会逐步停用。\n商家非交易调整库存，调拨出库、盘点等时调用",

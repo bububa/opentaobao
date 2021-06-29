@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-代购订单代付接口 APIResponse
+代购订单代付接口 API返回值 
 taobao.train.agent.order.pay
 
 代购订单代付接口
@@ -17,15 +17,11 @@ type TaobaoTrainAgentOrderPayAPIResponse struct {
     TaobaoTrainAgentOrderPayResponse
 }
 
+// 代购订单代付接口 成功返回结果
 type TaobaoTrainAgentOrderPayResponse struct {
     XMLName xml.Name `xml:"train_agent_order_pay_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 成功返回
-    
     ExtendParams   string `json:"extend_params,omitempty" xml:"extend_params,omitempty"`
-
-    
 }

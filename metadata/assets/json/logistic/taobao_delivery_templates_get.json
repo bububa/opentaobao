@@ -1,4 +1,5 @@
 {
+	"id": 10916,
 	"name": "taobao.delivery.templates.get",
 	"apiChineseName": "获取用户下所有模板",
 	"description": "根据用户ID获取用户下所有模板",

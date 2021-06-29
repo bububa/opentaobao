@@ -1,4 +1,5 @@
 {
+	"id": 25199,
 	"name": "alibaba.scbp.account.daycost.get",
 	"apiChineseName": "查询今日消耗",
 	"description": "查询今日消耗",

@@ -1,4 +1,5 @@
 {
+	"id": 23573,
 	"name": "taobao.simba.insight.relatedwords.get",
 	"apiChineseName": "获取词的相关词",
 	"description": "获取给定词的若干相关词，返回结果中越相关的权重越大，排在越前面，根据number参数对返回结果进行截断。",

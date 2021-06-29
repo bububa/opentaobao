@@ -1,4 +1,5 @@
 {
+	"id": 23578,
 	"name": "taobao.simba.insight.wordsareadata.get",
 	"apiChineseName": "获取关键词按地域进行细分的数据",
 	"description": "获取关键词按地域细分的详细数据，目前地域只能细化到省级别，返回的结果中包括市，是为了方便以后扩展，目前结果中市的值等于省。",

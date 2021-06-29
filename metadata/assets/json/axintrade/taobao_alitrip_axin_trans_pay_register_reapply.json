@@ -1,4 +1,5 @@
 {
+	"id": 55955,
 	"name": "taobao.alitrip.axin.trans.pay.register.reapply",
 	"apiChineseName": "阿信支付入驻重新申请",
 	"description": "阿信支付入驻重新申请\n用于支付平台驳回，商户提交时的业务场景",

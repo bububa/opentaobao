@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-编辑区域价格 APIResponse
+编辑区域价格 API返回值 
 taobao.region.price.manage
 
 编辑区域价格
@@ -17,15 +17,11 @@ type TaobaoRegionPriceManageAPIResponse struct {
     TaobaoRegionPriceManageResponse
 }
 
+// 编辑区域价格 成功返回结果
 type TaobaoRegionPriceManageResponse struct {
     XMLName xml.Name `xml:"region_price_manage_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // success
-    
     IsSuccess   bool `json:"is_success,omitempty" xml:"is_success,omitempty"`
-
-    
 }

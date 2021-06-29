@@ -1,4 +1,5 @@
 {
+	"id": 36344,
 	"name": "alibaba.wdk.trade.order.balance.bill.query",
 	"apiChineseName": "分页拉取订单数据",
 	"description": "提供接口供外部调用，分页拉取订单数据",

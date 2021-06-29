@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-摩卡确认入职后往入职单据表写数据接口 APIRequest
+摩卡确认入职后往入职单据表写数据接口 API请求
 alibaba.wdk.hrworkbench.moka.entry.receipt.write
 
 摩卡确认入职后往入职单据表写数据接口
 */
 type AlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest struct {
     model.Params
-
     // 确认入职后入职单据请求
-    paramSyncEntryReceiptRequest   *SyncEntryReceiptRequest 
-
+    paramSyncEntryReceiptRequest   *SyncEntryReceiptRequest
 }
 
+// 初始化AlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest对象
 func NewAlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest() *AlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest{
     return &AlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest) GetApiMethodName() string {
     return "alibaba.wdk.hrworkbench.moka.entry.receipt.write"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest) GetApiParams() url.Va
     }
     return params
 }
-
-
+// ParamSyncEntryReceiptRequest Setter
+// 确认入职后入职单据请求
 func (r *AlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest) SetParamSyncEntryReceiptRequest(paramSyncEntryReceiptRequest *SyncEntryReceiptRequest) error {
     r.paramSyncEntryReceiptRequest = paramSyncEntryReceiptRequest
     r.Set("param_sync_entry_receipt_request", paramSyncEntryReceiptRequest)
     return nil
 }
 
+// ParamSyncEntryReceiptRequest Getter
 func (r AlibabaWdkHrworkbenchMokaEntryReceiptWriteRequest) GetParamSyncEntryReceiptRequest() *SyncEntryReceiptRequest {
     return r.paramSyncEntryReceiptRequest
 }
-

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-【门票API2.0】门票收费项目管理接口 APIResponse
+【门票API2.0】门票收费项目管理接口 API返回值 
 alitrip.ticket.product.upload
 
 航旅度假新版门票商品（门票收费项目）管理接口：支持门票商品的发布、编辑。如果在ali_product_id下没有发布过门票商品，则系统将判断为新发布商品，否则是编辑已有商品。可以通过辅助查询接口判断是否已在某个ali_product_id下发布过门票商品。
@@ -18,15 +18,11 @@ type AlitripTicketProductUploadAPIResponse struct {
     AlitripTicketProductUploadResponse
 }
 
+// 【门票API2.0】门票收费项目管理接口 成功返回结果
 type AlitripTicketProductUploadResponse struct {
     XMLName xml.Name `xml:"alitrip_ticket_product_upload_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 门票商品发布、编辑结果
-    
     FirstResult   *TicketItemResult `json:"first_result,omitempty" xml:"first_result,omitempty"`
-
-    
 }

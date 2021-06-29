@@ -1,4 +1,5 @@
 {
+	"id": 50074,
 	"name": "taobao.place.store.query",
 	"apiChineseName": "门店信息查询接口",
 	"description": "根据用户授权信息，获取用户的门店公开信息",

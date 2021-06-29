@@ -1,4 +1,5 @@
 {
+	"id": 48548,
 	"name": "taobao.opentrade.queue.users.mark",
 	"apiChineseName": "尖货交易可购买用户标记",
 	"description": "尖货交易用户标记信息回传，根据openId标记用户可购买商品",

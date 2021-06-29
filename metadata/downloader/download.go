@@ -59,6 +59,7 @@ func Download(dir string, specificPkg string) error {
 				log.Printf("[ERR] %d: %s->%s, %s\n", catelogTree.Id, catelogTree.Name, catelog.Name, err.Error())
 				continue
 			}
+			doc.Id = catelog.Id
 			if err := saveDoc(doc, catelogPath); err != nil {
 				log.Printf("[ERR] %d: %s->%s, %s\n", catelogTree.Id, catelogTree.Name, catelog.Name, err.Error())
 				continue

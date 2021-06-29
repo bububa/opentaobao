@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-【商旅】搜索审批单列表 APIRequest
+【商旅】搜索审批单列表 API请求
 alitrip.btrip.corpop.apply.search
 
 【商旅】搜索审批单列表
 */
 type AlitripBtripCorpopApplySearchRequest struct {
     model.Params
-
     // 请求对象
-    rq   *OpenIsvSearchRq 
-
+    rq   *OpenIsvSearchRq
 }
 
+// 初始化AlitripBtripCorpopApplySearchRequest对象
 func NewAlitripBtripCorpopApplySearchRequest() *AlitripBtripCorpopApplySearchRequest{
     return &AlitripBtripCorpopApplySearchRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlitripBtripCorpopApplySearchRequest) GetApiMethodName() string {
     return "alitrip.btrip.corpop.apply.search"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlitripBtripCorpopApplySearchRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlitripBtripCorpopApplySearchRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Rq Setter
+// 请求对象
 func (r *AlitripBtripCorpopApplySearchRequest) SetRq(rq *OpenIsvSearchRq) error {
     r.rq = rq
     r.Set("rq", rq)
     return nil
 }
 
+// Rq Getter
 func (r AlitripBtripCorpopApplySearchRequest) GetRq() *OpenIsvSearchRq {
     return r.rq
 }
-

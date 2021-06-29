@@ -7,32 +7,32 @@ import (
 )
 
 /* 
-批量写入商品信息接口 APIRequest
+批量写入商品信息接口 API请求
 taobao.uscesl.iteminfo.batch.put
 
 电子架签批量写入商品数据，用于电子价签展示
 */
 type TaobaoUsceslIteminfoBatchPutRequest struct {
     model.Params
-
     // 商品变更信息集合
-    itemChangeBOList   []ItemChangeBo 
-
+    itemChangeBOList   []ItemChangeBo
     // 门店ID
-    shopId   int64 
-
+    shopId   int64
 }
 
+// 初始化TaobaoUsceslIteminfoBatchPutRequest对象
 func NewTaobaoUsceslIteminfoBatchPutRequest() *TaobaoUsceslIteminfoBatchPutRequest{
     return &TaobaoUsceslIteminfoBatchPutRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoUsceslIteminfoBatchPutRequest) GetApiMethodName() string {
     return "taobao.uscesl.iteminfo.batch.put"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoUsceslIteminfoBatchPutRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -40,25 +40,27 @@ func (r TaobaoUsceslIteminfoBatchPutRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ItemChangeBOList Setter
+// 商品变更信息集合
 func (r *TaobaoUsceslIteminfoBatchPutRequest) SetItemChangeBOList(itemChangeBOList []ItemChangeBo) error {
     r.itemChangeBOList = itemChangeBOList
     r.Set("item_change_b_o_list", itemChangeBOList)
     return nil
 }
 
+// ItemChangeBOList Getter
 func (r TaobaoUsceslIteminfoBatchPutRequest) GetItemChangeBOList() []ItemChangeBo {
     return r.itemChangeBOList
 }
-
+// ShopId Setter
+// 门店ID
 func (r *TaobaoUsceslIteminfoBatchPutRequest) SetShopId(shopId int64) error {
     r.shopId = shopId
     r.Set("shop_id", shopId)
     return nil
 }
 
+// ShopId Getter
 func (r TaobaoUsceslIteminfoBatchPutRequest) GetShopId() int64 {
     return r.shopId
 }
-

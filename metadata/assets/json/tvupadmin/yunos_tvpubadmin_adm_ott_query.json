@@ -1,4 +1,5 @@
 {
+	"id": 30627,
 	"name": "yunos.tvpubadmin.adm.ott.query",
 	"apiChineseName": "优酷OTT端广告素材查询",
 	"description": "查询广告素材",

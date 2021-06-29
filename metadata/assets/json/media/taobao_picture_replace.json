@@ -1,4 +1,5 @@
 {
+	"id": 10910,
 	"name": "taobao.picture.replace",
 	"apiChineseName": "替换图片",
 	"description": "替换一张图片，只替换图片数据，图片名称，图片分类等保持不变。",

@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-多媒体平台文件添加 APIResponse
+多媒体平台文件添加 API返回值 
 taobao.media.file.add
 
 用户通过top上传文件到多媒体平台
@@ -17,15 +17,11 @@ type TaobaoMediaFileAddAPIResponse struct {
     TaobaoMediaFileAddResponse
 }
 
+// 多媒体平台文件添加 成功返回结果
 type TaobaoMediaFileAddResponse struct {
     XMLName xml.Name `xml:"media_file_add_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 上传到多媒体平台的文件
-    
     File   *File `json:"file,omitempty" xml:"file,omitempty"`
-
-    
 }

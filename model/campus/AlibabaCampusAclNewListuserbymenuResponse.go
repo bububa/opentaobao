@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询菜单下的人员 APIResponse
+查询菜单下的人员 API返回值 
 alibaba.campus.acl.new.listuserbymenu
 
 查询拥有菜单权限的用户
@@ -17,15 +17,11 @@ type AlibabaCampusAclNewListuserbymenuAPIResponse struct {
     AlibabaCampusAclNewListuserbymenuResponse
 }
 
+// 查询菜单下的人员 成功返回结果
 type AlibabaCampusAclNewListuserbymenuResponse struct {
     XMLName xml.Name `xml:"alibaba_campus_acl_new_listuserbymenu_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *ListResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

@@ -1,4 +1,5 @@
 {
+	"id": 43536,
 	"name": "alibaba.it.esl.sendled",
 	"apiChineseName": "厂测LED控制",
 	"description": "针对厂测生产的的价签，增加led闪灯的接口，进行led 闪灯测试",

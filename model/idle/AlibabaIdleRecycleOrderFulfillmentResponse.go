@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-闲鱼回收订单履约V1 APIResponse
+闲鱼回收订单履约V1 API返回值 
 alibaba.idle.recycle.order.fulfillment
 
 外部回收商针对自有回收订单的履行
@@ -17,15 +17,11 @@ type AlibabaIdleRecycleOrderFulfillmentAPIResponse struct {
     AlibabaIdleRecycleOrderFulfillmentResponse
 }
 
+// 闲鱼回收订单履约V1 成功返回结果
 type AlibabaIdleRecycleOrderFulfillmentResponse struct {
     XMLName xml.Name `xml:"alibaba_idle_recycle_order_fulfillment_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *AlibabaIdleRecycleOrderFulfillmentResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

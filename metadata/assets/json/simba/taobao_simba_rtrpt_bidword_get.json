@@ -1,4 +1,5 @@
 {
+	"id": 25052,
 	"name": "taobao.simba.rtrpt.bidword.get",
 	"apiChineseName": "获取推广词实时报表数据",
 	"description": "获取推广词报表数据",

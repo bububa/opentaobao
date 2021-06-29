@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-企业下载列表 APIRequest
+企业下载列表 API请求
 alibaba.alihealth.drug.download.entlist
 
 获取企业的下载文件列表
 */
 type AlibabaAlihealthDrugDownloadEntlistRequest struct {
     model.Params
-
     // appKey
-    appKeyN   string 
-
+    appKeyN   string
 }
 
+// 初始化AlibabaAlihealthDrugDownloadEntlistRequest对象
 func NewAlibabaAlihealthDrugDownloadEntlistRequest() *AlibabaAlihealthDrugDownloadEntlistRequest{
     return &AlibabaAlihealthDrugDownloadEntlistRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAlihealthDrugDownloadEntlistRequest) GetApiMethodName() string {
     return "alibaba.alihealth.drug.download.entlist"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAlihealthDrugDownloadEntlistRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAlihealthDrugDownloadEntlistRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// AppKeyN Setter
+// appKey
 func (r *AlibabaAlihealthDrugDownloadEntlistRequest) SetAppKeyN(appKeyN string) error {
     r.appKeyN = appKeyN
     r.Set("app_key_n", appKeyN)
     return nil
 }
 
+// AppKeyN Getter
 func (r AlibabaAlihealthDrugDownloadEntlistRequest) GetAppKeyN() string {
     return r.appKeyN
 }
-

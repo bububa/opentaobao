@@ -1,4 +1,5 @@
 {
+	"id": 51057,
 	"name": "alibaba.mozi.vds.tenant.api.service.removeadmin",
 	"apiChineseName": "删除租户管理员服务",
 	"description": "删除租户管理员top服务",

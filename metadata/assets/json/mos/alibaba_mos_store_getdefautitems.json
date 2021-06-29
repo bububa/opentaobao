@@ -1,4 +1,5 @@
 {
+	"id": 35535,
 	"name": "alibaba.mos.store.getdefautitems",
 	"apiChineseName": "获取默认状态下商品列表",
 	"description": "获取默认状态下商品列表",

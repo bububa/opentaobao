@@ -1,4 +1,5 @@
 {
+	"id": 32380,
 	"name": "alibaba.campus.space.campus.getbyid",
 	"apiChineseName": "根据园区id获取园区信息",
 	"description": "根据园区id获取园区信息\nHSF接口名称：com.alibaba.campus.api.space.service.top.CampusApiTopService\nHSF方法名称：getCampusById",

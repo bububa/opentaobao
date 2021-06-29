@@ -1,4 +1,5 @@
 {
+	"id": 30894,
 	"name": "taobao.omniitem.item.delete",
 	"apiChineseName": "全渠道商品删除",
 	"description": "全渠道商品删除，能够对门店商品库商品进行删除动作",

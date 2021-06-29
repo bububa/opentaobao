@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-服务容量删除 APIResponse
+服务容量删除 API返回值 
 alibaba.ssc.supplyplatform.servicecapacity.delete
 
 服务容量删除
@@ -17,15 +17,11 @@ type AlibabaSscSupplyplatformServicecapacityDeleteAPIResponse struct {
     AlibabaSscSupplyplatformServicecapacityDeleteResponse
 }
 
+// 服务容量删除 成功返回结果
 type AlibabaSscSupplyplatformServicecapacityDeleteResponse struct {
     XMLName xml.Name `xml:"alibaba_ssc_supplyplatform_servicecapacity_delete_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *AlibabaSscSupplyplatformServicecapacityDeleteResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

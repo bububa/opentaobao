@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-退货库位商品查询（退货出库辅助）-回流单 APIRequest
+退货库位商品查询（退货出库辅助）-回流单 API请求
 alibaba.wdk.ums.returnitems.get
 
 退货库位商品查询（退货出库辅助）-回流单
 */
 type AlibabaWdkUmsReturnitemsGetRequest struct {
     model.Params
-
     // 店仓code，指的是作业对象，对应一个物理店或仓编码
-    warehouseCode   string 
-
+    warehouseCode   string
 }
 
+// 初始化AlibabaWdkUmsReturnitemsGetRequest对象
 func NewAlibabaWdkUmsReturnitemsGetRequest() *AlibabaWdkUmsReturnitemsGetRequest{
     return &AlibabaWdkUmsReturnitemsGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaWdkUmsReturnitemsGetRequest) GetApiMethodName() string {
     return "alibaba.wdk.ums.returnitems.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaWdkUmsReturnitemsGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaWdkUmsReturnitemsGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// WarehouseCode Setter
+// 店仓code，指的是作业对象，对应一个物理店或仓编码
 func (r *AlibabaWdkUmsReturnitemsGetRequest) SetWarehouseCode(warehouseCode string) error {
     r.warehouseCode = warehouseCode
     r.Set("warehouse_code", warehouseCode)
     return nil
 }
 
+// WarehouseCode Getter
 func (r AlibabaWdkUmsReturnitemsGetRequest) GetWarehouseCode() string {
     return r.warehouseCode
 }
-

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-判断支付宝用户是否绑定淘宝账号 APIRequest
+判断支付宝用户是否绑定淘宝账号 API请求
 alibaba.aliqin.flow.alipay.isbindingtbaccount
 
 判断支付宝用户是否绑定淘宝账号
 */
 type AlibabaAliqinFlowAlipayIsbindingtbaccountRequest struct {
     model.Params
-
     // 支付宝ID
-    alipayId   string 
-
+    alipayId   string
 }
 
+// 初始化AlibabaAliqinFlowAlipayIsbindingtbaccountRequest对象
 func NewAlibabaAliqinFlowAlipayIsbindingtbaccountRequest() *AlibabaAliqinFlowAlipayIsbindingtbaccountRequest{
     return &AlibabaAliqinFlowAlipayIsbindingtbaccountRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaAliqinFlowAlipayIsbindingtbaccountRequest) GetApiMethodName() string {
     return "alibaba.aliqin.flow.alipay.isbindingtbaccount"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaAliqinFlowAlipayIsbindingtbaccountRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaAliqinFlowAlipayIsbindingtbaccountRequest) GetApiParams() url.Val
     }
     return params
 }
-
-
+// AlipayId Setter
+// 支付宝ID
 func (r *AlibabaAliqinFlowAlipayIsbindingtbaccountRequest) SetAlipayId(alipayId string) error {
     r.alipayId = alipayId
     r.Set("alipay_id", alipayId)
     return nil
 }
 
+// AlipayId Getter
 func (r AlibabaAliqinFlowAlipayIsbindingtbaccountRequest) GetAlipayId() string {
     return r.alipayId
 }
-

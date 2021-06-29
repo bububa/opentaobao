@@ -1,4 +1,5 @@
 {
+	"id": 47799,
 	"name": "taobao.miniapp.template.updateapp",
 	"apiChineseName": "更新实例化应用",
 	"description": "商家应用c端模板实例化小程序更新，生成新的版本，但不会自动上线新版本",

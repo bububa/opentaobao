@@ -1,4 +1,5 @@
 {
+	"id": 43310,
 	"name": "alibaba.alihealth.drug.kyt.dr.billcheck",
 	"apiChineseName": "疫苗追溯验证",
 	"description": "各级疾控在入库完成后，需要做追溯信息验证",

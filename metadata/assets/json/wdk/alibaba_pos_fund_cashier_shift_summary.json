@@ -1,4 +1,5 @@
 {
+	"id": 51205,
 	"name": "alibaba.pos.fund.cashier.shift.summary",
 	"apiChineseName": "收银换班数据同步",
 	"description": "收银换班数据同步，将每天收银换班的数据回流给商家。",

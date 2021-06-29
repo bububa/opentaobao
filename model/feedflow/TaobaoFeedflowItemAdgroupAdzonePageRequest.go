@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-信息流单元下查看绑定资源位 APIRequest
+信息流单元下查看绑定资源位 API请求
 taobao.feedflow.item.adgroup.adzone.page
 
 信息流单元下查看绑定资源位
 */
 type TaobaoFeedflowItemAdgroupAdzonePageRequest struct {
     model.Params
-
     // 查询条件
-    adzoneBindQuery   *AdzoneBindQueryDto 
-
+    adzoneBindQuery   *AdzoneBindQueryDto
 }
 
+// 初始化TaobaoFeedflowItemAdgroupAdzonePageRequest对象
 func NewTaobaoFeedflowItemAdgroupAdzonePageRequest() *TaobaoFeedflowItemAdgroupAdzonePageRequest{
     return &TaobaoFeedflowItemAdgroupAdzonePageRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoFeedflowItemAdgroupAdzonePageRequest) GetApiMethodName() string {
     return "taobao.feedflow.item.adgroup.adzone.page"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoFeedflowItemAdgroupAdzonePageRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoFeedflowItemAdgroupAdzonePageRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// AdzoneBindQuery Setter
+// 查询条件
 func (r *TaobaoFeedflowItemAdgroupAdzonePageRequest) SetAdzoneBindQuery(adzoneBindQuery *AdzoneBindQueryDto) error {
     r.adzoneBindQuery = adzoneBindQuery
     r.Set("adzone_bind_query", adzoneBindQuery)
     return nil
 }
 
+// AdzoneBindQuery Getter
 func (r TaobaoFeedflowItemAdgroupAdzonePageRequest) GetAdzoneBindQuery() *AdzoneBindQueryDto {
     return r.adzoneBindQuery
 }
-

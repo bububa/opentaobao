@@ -1,4 +1,5 @@
 {
+	"id": 42447,
 	"name": "alibaba.aliyunindep.digitalsms.createtemplate",
 	"apiChineseName": "数字短信模板创建",
 	"description": "数字短信模板创建，给阿里云一方产品使用，类型：9",

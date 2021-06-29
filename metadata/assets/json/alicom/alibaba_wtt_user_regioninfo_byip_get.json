@@ -1,4 +1,5 @@
 {
+	"id": 26186,
 	"name": "alibaba.wtt.user.regioninfo.byip.get",
 	"apiChineseName": "根据ip获取省市信息",
 	"description": "通过ip获取省市信息",

@@ -1,4 +1,5 @@
 {
+	"id": 21983,
 	"name": "taobao.tmc.group.add",
 	"apiChineseName": "为已开通用户添加用户分组",
 	"description": "为已开通用户添加用户分组，授权消息使用",

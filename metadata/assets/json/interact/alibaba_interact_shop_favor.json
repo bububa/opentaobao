@@ -1,4 +1,5 @@
 {
+	"id": 25241,
 	"name": "alibaba.interact.shop.favor",
 	"apiChineseName": "店铺收藏",
 	"description": "店铺收藏mtop接口开放鉴权接口，无入参出参，无安全风险，mtop接口开发 酒仙。",

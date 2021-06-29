@@ -1,4 +1,5 @@
 {
+	"id": 49821,
 	"name": "taobao.xhotel.get.entity.by.tag",
 	"apiChineseName": "根据标签查询实体",
 	"description": "根据标签查询实体",

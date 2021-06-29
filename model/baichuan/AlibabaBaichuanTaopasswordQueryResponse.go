@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询解析淘口令 APIResponse
+查询解析淘口令 API返回值 
 alibaba.baichuan.taopassword.query
 
 查询，解析淘口令
@@ -17,15 +17,11 @@ type AlibabaBaichuanTaopasswordQueryAPIResponse struct {
     AlibabaBaichuanTaopasswordQueryResponse
 }
 
+// 查询解析淘口令 成功返回结果
 type AlibabaBaichuanTaopasswordQueryResponse struct {
     XMLName xml.Name `xml:"alibaba_baichuan_taopassword_query_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
-    
     Result   *BcTaoPasswordResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

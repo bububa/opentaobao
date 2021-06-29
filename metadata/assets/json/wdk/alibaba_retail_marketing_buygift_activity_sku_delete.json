@@ -1,4 +1,5 @@
 {
+	"id": 55911,
 	"name": "alibaba.retail.marketing.buygift.activity.sku.delete",
 	"apiChineseName": "删除单品买赠活动商品",
 	"description": "删除单品买赠活动商品信息【同城零售】",

@@ -1,4 +1,5 @@
 {
+	"id": 51217,
 	"name": "xiami.content.songs.info.get",
 	"apiChineseName": "获取歌曲信息",
 	"description": "(批量)获取歌曲信息",

@@ -1,4 +1,5 @@
 {
+	"id": 46020,
 	"name": "alibaba.alihealth.drug.kyt.yy.uploadretail",
 	"apiChineseName": "医院上传出库信息",
 	"description": "医院上传出库信息接口",

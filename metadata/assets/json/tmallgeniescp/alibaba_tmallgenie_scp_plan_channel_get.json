@@ -1,4 +1,5 @@
 {
+	"id": 53382,
 	"name": "alibaba.tmallgenie.scp.plan.channel.get",
 	"apiChineseName": "5-IBP同步渠道接口",
 	"description": "IBP同步渠道接口",

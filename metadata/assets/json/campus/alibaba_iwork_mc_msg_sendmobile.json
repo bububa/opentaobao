@@ -1,4 +1,5 @@
 {
+	"id": 31548,
 	"name": "alibaba.iwork.mc.msg.sendmobile",
 	"apiChineseName": "发送消息给手机用户",
 	"description": "给手机用户发送对应操作结果的消息",

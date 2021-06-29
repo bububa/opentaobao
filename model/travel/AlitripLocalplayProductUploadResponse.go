@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-当地玩乐 产品维护接口 APIResponse
+当地玩乐 产品维护接口 API返回值 
 alitrip.localplay.product.upload
 
 当地玩乐（境内当地玩乐/境外玩乐套餐） 产品维护接口。
@@ -20,15 +20,11 @@ type AlitripLocalplayProductUploadAPIResponse struct {
     AlitripLocalplayProductUploadResponse
 }
 
+// 当地玩乐 产品维护接口 成功返回结果
 type AlitripLocalplayProductUploadResponse struct {
     XMLName xml.Name `xml:"alitrip_localplay_product_upload_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 商品发布/更新结果
-    
     FirstResult   *TopTravelItem `json:"first_result,omitempty" xml:"first_result,omitempty"`
-
-    
 }

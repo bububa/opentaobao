@@ -1,4 +1,5 @@
 {
+	"id": 29544,
 	"name": "alibaba.mj.oc.pay",
 	"apiChineseName": "POS收银成功后订单同步",
 	"description": "此API用于在银泰商场中，消费者在收银台收银/退款时， POS系统在收银或退款成功后，调用此接口进行订单同步",

@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-全量车型导入 APIRequest
+全量车型导入 API请求
 taobao.car.vehicleinfo.register
 
 全量车型导入
 */
 type TaobaoCarVehicleinfoRegisterRequest struct {
     model.Params
-
     // 参数集合
-    paramList   []FullInfoCarModelDTO 
-
+    paramList   []FullInfoCarModelDTO
 }
 
+// 初始化TaobaoCarVehicleinfoRegisterRequest对象
 func NewTaobaoCarVehicleinfoRegisterRequest() *TaobaoCarVehicleinfoRegisterRequest{
     return &TaobaoCarVehicleinfoRegisterRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoCarVehicleinfoRegisterRequest) GetApiMethodName() string {
     return "taobao.car.vehicleinfo.register"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoCarVehicleinfoRegisterRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoCarVehicleinfoRegisterRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// ParamList Setter
+// 参数集合
 func (r *TaobaoCarVehicleinfoRegisterRequest) SetParamList(paramList []FullInfoCarModelDTO) error {
     r.paramList = paramList
     r.Set("param_list", paramList)
     return nil
 }
 
+// ParamList Getter
 func (r TaobaoCarVehicleinfoRegisterRequest) GetParamList() []FullInfoCarModelDTO {
     return r.paramList
 }
-

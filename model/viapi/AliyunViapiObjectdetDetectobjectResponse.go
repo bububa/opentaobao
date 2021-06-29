@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-物体检测 APIResponse
+物体检测 API返回值 
 aliyun.viapi.objectdet.detectobject
 
 检测图像中的物体。90类物体：
@@ -18,20 +18,13 @@ type AliyunViapiObjectdetDetectobjectAPIResponse struct {
     AliyunViapiObjectdetDetectobjectResponse
 }
 
+// 物体检测 成功返回结果
 type AliyunViapiObjectdetDetectobjectResponse struct {
     XMLName xml.Name `xml:"aliyun_viapi_objectdet_detectobject_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 请求ID
-    
     TaobaoRequestId   string `json:"taobao_request_id,omitempty" xml:"taobao_request_id,omitempty"`
-
-    
     // 系统自动生成
-    
     Data   *AliyunViapiObjectdetDetectobjectData `json:"data,omitempty" xml:"data,omitempty"`
-
-    
 }

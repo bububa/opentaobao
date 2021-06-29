@@ -1,4 +1,5 @@
 {
+	"id": 26737,
 	"name": "taobao.qimen.store.query",
 	"apiChineseName": "门店信息查询接口",
 	"description": "商家在ERP等系统中调用该接口，查询门店相关信息",

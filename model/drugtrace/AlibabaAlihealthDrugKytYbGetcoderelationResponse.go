@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-医保-查询码的所有子码 APIResponse
+医保-查询码的所有子码 API返回值 
 alibaba.alihealth.drug.kyt.yb.getcoderelation
 
 应用于药店或医院入库环节，通过扫码获取下级码进行入库；
@@ -18,15 +18,11 @@ type AlibabaAlihealthDrugKytYbGetcoderelationAPIResponse struct {
     AlibabaAlihealthDrugKytYbGetcoderelationResponse
 }
 
+// 医保-查询码的所有子码 成功返回结果
 type AlibabaAlihealthDrugKytYbGetcoderelationResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_drug_kyt_yb_getcoderelation_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口返回model
-    
     Result   *AlibabaAlihealthDrugKytYbGetcoderelationResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

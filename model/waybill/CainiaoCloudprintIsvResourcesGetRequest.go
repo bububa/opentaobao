@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-isv资源查询 APIRequest
+isv资源查询 API请求
 cainiao.cloudprint.isv.resources.get
 
 isv资源查询，包括isv模板、打印项、预设的自定义区等
 */
 type CainiaoCloudprintIsvResourcesGetRequest struct {
     model.Params
-
     // isv资源类型，分为：TEMPLATE（表示模板），PRINT_ITEM（打印项），CUSTOM_AREA（预设自定义区）
-    isvResourceType   string 
-
+    isvResourceType   string
 }
 
+// 初始化CainiaoCloudprintIsvResourcesGetRequest对象
 func NewCainiaoCloudprintIsvResourcesGetRequest() *CainiaoCloudprintIsvResourcesGetRequest{
     return &CainiaoCloudprintIsvResourcesGetRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r CainiaoCloudprintIsvResourcesGetRequest) GetApiMethodName() string {
     return "cainiao.cloudprint.isv.resources.get"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r CainiaoCloudprintIsvResourcesGetRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r CainiaoCloudprintIsvResourcesGetRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// IsvResourceType Setter
+// isv资源类型，分为：TEMPLATE（表示模板），PRINT_ITEM（打印项），CUSTOM_AREA（预设自定义区）
 func (r *CainiaoCloudprintIsvResourcesGetRequest) SetIsvResourceType(isvResourceType string) error {
     r.isvResourceType = isvResourceType
     r.Set("isv_resource_type", isvResourceType)
     return nil
 }
 
+// IsvResourceType Getter
 func (r CainiaoCloudprintIsvResourcesGetRequest) GetIsvResourceType() string {
     return r.isvResourceType
 }
-

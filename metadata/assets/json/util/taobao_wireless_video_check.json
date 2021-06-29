@@ -1,4 +1,5 @@
 {
+	"id": 46484,
 	"name": "taobao.wireless.video.check",
 	"apiChineseName": "无线开放视频内容安全检查",
 	"description": "无线开放内容检查，提供涉黄暴力政治音视频的异步检查。更详情介绍见 \u003ca href=\"https://help.aliyun.com/document_detail/70436.html\" target=\"blank\"\u003e阿里云内容安全\u003c/a\u003e\n\n此API会进行三个场景的审核，检测不通过的视频将被隐藏，用户无法访问被隐藏的视频。\n\n目前，该接口仅支持顽兔空间的视频扫描。",

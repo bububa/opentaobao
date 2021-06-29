@@ -7,35 +7,34 @@ import (
 )
 
 /* 
-互动到店抽奖 APIRequest
+互动到店抽奖 API请求
 alibaba.interact.isvlottery.idraw
 
 互动到店抽奖
 */
 type AlibabaInteractIsvlotteryIdrawRequest struct {
     model.Params
-
     // 互动实例ID
-    interactId   string 
-
+    interactId   string
     // 抽奖ID列表 用逗号隔开
-    awardIds   string 
-
+    awardIds   string
     // 埋点参数
-    ua   string 
-
+    ua   string
 }
 
+// 初始化AlibabaInteractIsvlotteryIdrawRequest对象
 func NewAlibabaInteractIsvlotteryIdrawRequest() *AlibabaInteractIsvlotteryIdrawRequest{
     return &AlibabaInteractIsvlotteryIdrawRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaInteractIsvlotteryIdrawRequest) GetApiMethodName() string {
     return "alibaba.interact.isvlottery.idraw"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaInteractIsvlotteryIdrawRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -43,35 +42,39 @@ func (r AlibabaInteractIsvlotteryIdrawRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// InteractId Setter
+// 互动实例ID
 func (r *AlibabaInteractIsvlotteryIdrawRequest) SetInteractId(interactId string) error {
     r.interactId = interactId
     r.Set("interact_id", interactId)
     return nil
 }
 
+// InteractId Getter
 func (r AlibabaInteractIsvlotteryIdrawRequest) GetInteractId() string {
     return r.interactId
 }
-
+// AwardIds Setter
+// 抽奖ID列表 用逗号隔开
 func (r *AlibabaInteractIsvlotteryIdrawRequest) SetAwardIds(awardIds string) error {
     r.awardIds = awardIds
     r.Set("award_ids", awardIds)
     return nil
 }
 
+// AwardIds Getter
 func (r AlibabaInteractIsvlotteryIdrawRequest) GetAwardIds() string {
     return r.awardIds
 }
-
+// Ua Setter
+// 埋点参数
 func (r *AlibabaInteractIsvlotteryIdrawRequest) SetUa(ua string) error {
     r.ua = ua
     r.Set("ua", ua)
     return nil
 }
 
+// Ua Getter
 func (r AlibabaInteractIsvlotteryIdrawRequest) GetUa() string {
     return r.ua
 }
-

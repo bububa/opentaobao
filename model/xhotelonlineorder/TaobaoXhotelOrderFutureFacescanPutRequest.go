@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-未来酒店扫脸信息上传 APIRequest
+未来酒店扫脸信息上传 API请求
 taobao.xhotel.order.future.facescan.put
 
 未来酒店扫脸信息上传服务，用于悉尔等厂商的扫脸设备对接
 */
 type TaobaoXhotelOrderFutureFacescanPutRequest struct {
     model.Params
-
     // 扫脸参数
-    faceScanParam   *FaceScanParam 
-
+    faceScanParam   *FaceScanParam
 }
 
+// 初始化TaobaoXhotelOrderFutureFacescanPutRequest对象
 func NewTaobaoXhotelOrderFutureFacescanPutRequest() *TaobaoXhotelOrderFutureFacescanPutRequest{
     return &TaobaoXhotelOrderFutureFacescanPutRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r TaobaoXhotelOrderFutureFacescanPutRequest) GetApiMethodName() string {
     return "taobao.xhotel.order.future.facescan.put"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r TaobaoXhotelOrderFutureFacescanPutRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r TaobaoXhotelOrderFutureFacescanPutRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// FaceScanParam Setter
+// 扫脸参数
 func (r *TaobaoXhotelOrderFutureFacescanPutRequest) SetFaceScanParam(faceScanParam *FaceScanParam) error {
     r.faceScanParam = faceScanParam
     r.Set("face_scan_param", faceScanParam)
     return nil
 }
 
+// FaceScanParam Getter
 func (r TaobaoXhotelOrderFutureFacescanPutRequest) GetFaceScanParam() *FaceScanParam {
     return r.faceScanParam
 }
-

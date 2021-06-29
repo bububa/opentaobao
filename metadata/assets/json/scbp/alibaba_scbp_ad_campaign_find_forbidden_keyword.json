@@ -1,4 +1,5 @@
 {
+	"id": 55000,
 	"name": "alibaba.scbp.ad.campaign.find.forbidden.keyword",
 	"apiChineseName": "查询屏蔽词",
 	"description": "查询屏蔽词",

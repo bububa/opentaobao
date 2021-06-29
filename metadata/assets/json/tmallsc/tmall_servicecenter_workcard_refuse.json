@@ -1,4 +1,5 @@
 {
+	"id": 52273,
 	"name": "tmall.servicecenter.workcard.refuse",
 	"apiChineseName": "买家拒收",
 	"description": "买家拒收通知接口",

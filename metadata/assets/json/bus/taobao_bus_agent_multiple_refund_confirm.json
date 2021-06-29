@@ -1,4 +1,5 @@
 {
+	"id": 49134,
 	"name": "taobao.bus.agent.multiple.refund.confirm",
 	"apiChineseName": "综合交通多次退款接口",
 	"description": "此接口支持多次按照单客进行多次退款操作，只进行退款操作。",

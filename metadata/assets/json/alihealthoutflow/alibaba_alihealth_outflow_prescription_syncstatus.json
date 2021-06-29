@@ -1,4 +1,5 @@
 {
+	"id": 44993,
 	"name": "alibaba.alihealth.outflow.prescription.syncstatus",
 	"apiChineseName": "处方外流-处方状态同步",
 	"description": "阿里健康-处方外流-对外提供同步处方状态功能",

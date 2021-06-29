@@ -1,4 +1,5 @@
 {
+	"id": 52356,
 	"name": "alibaba.mos.falcon.pos.counter.query",
 	"apiChineseName": "云POS查看专柜属性",
 	"description": "银泰商业获取专柜是否支持小数等属性查看",

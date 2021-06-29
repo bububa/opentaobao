@@ -1,4 +1,5 @@
 {
+	"id": 45615,
 	"name": "alibaba.lst.speaker.status.get",
 	"apiChineseName": "音箱设备在线状态",
 	"description": "音箱设备在线状态查询",

@@ -1,4 +1,5 @@
 {
+	"id": 38741,
 	"name": "taobao.rdc.aligenius.warehouse.resend.logistics.msg.post",
 	"apiChineseName": "补发单物流信息回传",
 	"description": "补发单erp物流信息回传平台",

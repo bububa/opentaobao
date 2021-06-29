@@ -1,4 +1,5 @@
 {
+	"id": 26210,
 	"name": "taobao.tvpay.appinfo.get",
 	"apiChineseName": "tv支付获取应用信息",
 	"description": "tv支付获取应用信息",

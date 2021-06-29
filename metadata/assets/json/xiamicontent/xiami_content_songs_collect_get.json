@@ -1,4 +1,5 @@
 {
+	"id": 53739,
 	"name": "xiami.content.songs.collect.get",
 	"apiChineseName": "获取歌单详情接口",
 	"description": "根据歌单id，获取歌单详情",

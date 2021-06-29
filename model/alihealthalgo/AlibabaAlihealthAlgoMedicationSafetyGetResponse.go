@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-合理用药api APIResponse
+合理用药api API返回值 
 alibaba.alihealth.algo.medication.safety.get
 
 合理用药规则引擎服务
@@ -17,15 +17,11 @@ type AlibabaAlihealthAlgoMedicationSafetyGetAPIResponse struct {
     AlibabaAlihealthAlgoMedicationSafetyGetResponse
 }
 
+// 合理用药api 成功返回结果
 type AlibabaAlihealthAlgoMedicationSafetyGetResponse struct {
     XMLName xml.Name `xml:"alibaba_alihealth_algo_medication_safety_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 系统自动生成
-    
     Result   *SolutionResultTopSupport `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

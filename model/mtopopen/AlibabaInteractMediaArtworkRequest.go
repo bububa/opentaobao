@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-原图相关鉴权接口 APIRequest
+原图相关鉴权接口 API请求
 alibaba.interact.media.artwork
 
 拍摄并上传原图相关鉴权接口
 */
 type AlibabaInteractMediaArtworkRequest struct {
     model.Params
-
     // 系统自动生成
-    id   string 
-
+    id   string
 }
 
+// 初始化AlibabaInteractMediaArtworkRequest对象
 func NewAlibabaInteractMediaArtworkRequest() *AlibabaInteractMediaArtworkRequest{
     return &AlibabaInteractMediaArtworkRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaInteractMediaArtworkRequest) GetApiMethodName() string {
     return "alibaba.interact.media.artwork"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaInteractMediaArtworkRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaInteractMediaArtworkRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// Id Setter
+// 系统自动生成
 func (r *AlibabaInteractMediaArtworkRequest) SetId(id string) error {
     r.id = id
     r.Set("id", id)
     return nil
 }
 
+// Id Getter
 func (r AlibabaInteractMediaArtworkRequest) GetId() string {
     return r.id
 }
-

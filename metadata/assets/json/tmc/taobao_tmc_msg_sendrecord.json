@@ -1,4 +1,5 @@
 {
+	"id": 26606,
 	"name": "taobao.tmc.msg.sendrecord",
 	"apiChineseName": "消息发送记录查询",
 	"description": "查询单条消息发送记录，只返回返回条数和时间。",

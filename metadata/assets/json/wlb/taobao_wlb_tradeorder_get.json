@@ -1,4 +1,5 @@
 {
+	"id": 10628,
 	"name": "taobao.wlb.tradeorder.get",
 	"apiChineseName": "根据交易号获取物流宝订单",
 	"description": "根据交易类型和交易id查询物流宝订单详情",

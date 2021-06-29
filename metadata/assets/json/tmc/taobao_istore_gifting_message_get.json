@@ -1,4 +1,5 @@
 {
+	"id": 39873,
 	"name": "taobao.istore.gifting.message.get",
 	"apiChineseName": "gifting消息获取",
 	"description": "该api通过参数查询对应的gifting消息",

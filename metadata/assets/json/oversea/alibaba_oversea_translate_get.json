@@ -1,4 +1,5 @@
 {
+	"id": 28548,
 	"name": "alibaba.oversea.translate.get",
 	"apiChineseName": "获取文本翻译信息",
 	"description": "根据传入的文本信息，获取其目标语言的翻译结果",

@@ -1,4 +1,5 @@
 {
+	"id": 32654,
 	"name": "alibaba.alihealth.tracecodeseller.code.active",
 	"apiChineseName": "上传激活码的文件",
 	"description": "上传商品的激活码文件，存到系统中",

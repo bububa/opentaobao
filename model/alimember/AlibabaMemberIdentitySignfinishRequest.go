@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-签约确认 APIRequest
+签约确认 API请求
 alibaba.member.identity.signfinish
 
 签约确认
 */
 type AlibabaMemberIdentitySignfinishRequest struct {
     model.Params
-
     // 签约确认信息
-    signFinish   *SignIdentityFinishRequest 
-
+    signFinish   *SignIdentityFinishRequest
 }
 
+// 初始化AlibabaMemberIdentitySignfinishRequest对象
 func NewAlibabaMemberIdentitySignfinishRequest() *AlibabaMemberIdentitySignfinishRequest{
     return &AlibabaMemberIdentitySignfinishRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaMemberIdentitySignfinishRequest) GetApiMethodName() string {
     return "alibaba.member.identity.signfinish"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaMemberIdentitySignfinishRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaMemberIdentitySignfinishRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// SignFinish Setter
+// 签约确认信息
 func (r *AlibabaMemberIdentitySignfinishRequest) SetSignFinish(signFinish *SignIdentityFinishRequest) error {
     r.signFinish = signFinish
     r.Set("sign_finish", signFinish)
     return nil
 }
 
+// SignFinish Getter
 func (r AlibabaMemberIdentitySignfinishRequest) GetSignFinish() *SignIdentityFinishRequest {
     return r.signFinish
 }
-

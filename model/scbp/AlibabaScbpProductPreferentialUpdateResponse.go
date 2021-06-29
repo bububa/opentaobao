@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-设置P4P产品优先推广状态 APIResponse
+设置P4P产品优先推广状态 API返回值 
 alibaba.scbp.product.preferential.update
 
 设置P4P产品优先推广状态
@@ -17,15 +17,11 @@ type AlibabaScbpProductPreferentialUpdateAPIResponse struct {
     AlibabaScbpProductPreferentialUpdateResponse
 }
 
+// 设置P4P产品优先推广状态 成功返回结果
 type AlibabaScbpProductPreferentialUpdateResponse struct {
     XMLName xml.Name `xml:"alibaba_scbp_product_preferential_update_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 设置成功
-    
     Result   bool `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

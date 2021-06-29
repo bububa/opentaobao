@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-修改OpenMall退款申请 APIResponse
+修改OpenMall退款申请 API返回值 
 taobao.openmall.refund.modify
 
 修改OpenMall退款申请
@@ -17,15 +17,11 @@ type TaobaoOpenmallRefundModifyAPIResponse struct {
     TaobaoOpenmallRefundModifyResponse
 }
 
+// 修改OpenMall退款申请 成功返回结果
 type TaobaoOpenmallRefundModifyResponse struct {
     XMLName xml.Name `xml:"openmall_refund_modify_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 结果
-    
     Result   bool `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

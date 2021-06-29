@@ -7,29 +7,30 @@ import (
 )
 
 /* 
-大麦换验平台-第三方对外开放-票面接口pushFace APIRequest
+大麦换验平台-第三方对外开放-票面接口pushFace API请求
 alibaba.damai.mev.open.pushface
 
 pushFace
 */
 type AlibabaDamaiMevOpenPushfaceRequest struct {
     model.Params
-
     // 入参pushFaceParam
-    pushFaceParam   *ThirdTicketFacePushOpenParam 
-
+    pushFaceParam   *ThirdTicketFacePushOpenParam
 }
 
+// 初始化AlibabaDamaiMevOpenPushfaceRequest对象
 func NewAlibabaDamaiMevOpenPushfaceRequest() *AlibabaDamaiMevOpenPushfaceRequest{
     return &AlibabaDamaiMevOpenPushfaceRequest{
         Params: model.NewParams(),
     }
 }
 
+// IRequest interface 方法, 获取Api method
 func (r AlibabaDamaiMevOpenPushfaceRequest) GetApiMethodName() string {
     return "alibaba.damai.mev.open.pushface"
 }
 
+// IRequest interface 方法, 获取API参数
 func (r AlibabaDamaiMevOpenPushfaceRequest) GetApiParams() url.Values {
     params := url.Values{}
     for k, v := range r.GetRawParams() {
@@ -37,15 +38,15 @@ func (r AlibabaDamaiMevOpenPushfaceRequest) GetApiParams() url.Values {
     }
     return params
 }
-
-
+// PushFaceParam Setter
+// 入参pushFaceParam
 func (r *AlibabaDamaiMevOpenPushfaceRequest) SetPushFaceParam(pushFaceParam *ThirdTicketFacePushOpenParam) error {
     r.pushFaceParam = pushFaceParam
     r.Set("push_face_param", pushFaceParam)
     return nil
 }
 
+// PushFaceParam Getter
 func (r AlibabaDamaiMevOpenPushfaceRequest) GetPushFaceParam() *ThirdTicketFacePushOpenParam {
     return r.pushFaceParam
 }
-

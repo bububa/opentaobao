@@ -1,4 +1,5 @@
 {
+	"id": 29001,
 	"name": "tmall.car.lease.itemcarinfo",
 	"apiChineseName": "整车租赁商品四级车型信息",
 	"description": "整车租赁项目发布宝贝需要4级车型库，4级车型库信息需要回传",

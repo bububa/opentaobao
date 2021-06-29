@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-智能硬件互动大屏数据回流 APIResponse
+智能硬件互动大屏数据回流 API返回值 
 taobao.smartstore.device.storegame.feedback
 
 智慧门店互动引流屏设备回流规则：（适用于智慧迎宾屏、互动游戏、互动拍照、娃娃机等）</br>
@@ -23,15 +23,11 @@ type TaobaoSmartstoreDeviceStoregameFeedbackAPIResponse struct {
     TaobaoSmartstoreDeviceStoregameFeedbackResponse
 }
 
+// 智能硬件互动大屏数据回流 成功返回结果
 type TaobaoSmartstoreDeviceStoregameFeedbackResponse struct {
     XMLName xml.Name `xml:"smartstore_device_storegame_feedback_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 回流结果
-    
     Result   string `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

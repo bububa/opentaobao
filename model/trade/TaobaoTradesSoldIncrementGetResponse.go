@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-查询卖家已卖出的增量交易数据（根据修改时间） APIResponse
+查询卖家已卖出的增量交易数据（根据修改时间） API返回值 
 taobao.trades.sold.increment.get
 
 搜索当前会话用户作为卖家已卖出的增量交易数据（只能获取到三个月以内的交易信息）
@@ -21,25 +21,15 @@ type TaobaoTradesSoldIncrementGetAPIResponse struct {
     TaobaoTradesSoldIncrementGetResponse
 }
 
+// 查询卖家已卖出的增量交易数据（根据修改时间） 成功返回结果
 type TaobaoTradesSoldIncrementGetResponse struct {
     XMLName xml.Name `xml:"trades_sold_increment_get_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 搜索到的交易信息总数
-    
     TotalResults   int64 `json:"total_results,omitempty" xml:"total_results,omitempty"`
-
-    
     // 搜索到的交易信息列表，返回的Trade和Order中包含的具体信息为入参fields请求的字段信息
-    
     Trades   []Trade `json:"trades,omitempty" xml:"trades>trade,omitempty"`
-    
-    
     // 是否存在下一页
-    
     HasNext   bool `json:"has_next,omitempty" xml:"has_next,omitempty"`
-
-    
 }

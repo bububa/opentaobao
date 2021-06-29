@@ -1,4 +1,5 @@
 {
+	"id": 39983,
 	"name": "tmall.nrt.brandinfo.query",
 	"apiChineseName": "品牌数据查询",
 	"description": "商家获取自己旗舰店授权的品牌id列表",

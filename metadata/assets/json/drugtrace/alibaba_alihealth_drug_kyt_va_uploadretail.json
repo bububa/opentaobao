@@ -1,4 +1,5 @@
 {
+	"id": 48912,
 	"name": "alibaba.alihealth.drug.kyt.va.uploadretail",
 	"apiChineseName": "零售单据上传接口",
 	"description": "零售上传单据信息接口",

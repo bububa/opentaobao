@@ -1,4 +1,5 @@
 {
+	"id": 46849,
 	"name": "alibaba.alihealth.mdeer.science.deletearticle",
 	"apiChineseName": "文章删除",
 	"description": "三方同步文章删除",

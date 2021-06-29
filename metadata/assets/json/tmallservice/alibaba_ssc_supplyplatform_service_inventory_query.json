@@ -1,4 +1,5 @@
 {
+	"id": 49150,
 	"name": "alibaba.ssc.supplyplatform.service.inventory.query",
 	"apiChineseName": "服务库存查询",
 	"description": "查询服务库存。需要保存服务容量成功后，才能进行查询，参数中的provider信息（provider_id和provider_type）与alibaba.ssc.supplyplatform.servicecapacity.save接口中保持一致。",

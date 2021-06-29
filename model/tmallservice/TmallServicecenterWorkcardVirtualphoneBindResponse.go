@@ -7,7 +7,7 @@ import (
 )
 
 /* 
-工单维度虚拟中间号绑定 APIResponse
+工单维度虚拟中间号绑定 API返回值 
 tmall.servicecenter.workcard.virtualphone.bind
 
 服务供应链洗护服务ERP项目中，客服呼叫消费者的功能。
@@ -18,15 +18,11 @@ type TmallServicecenterWorkcardVirtualphoneBindAPIResponse struct {
     TmallServicecenterWorkcardVirtualphoneBindResponse
 }
 
+// 工单维度虚拟中间号绑定 成功返回结果
 type TmallServicecenterWorkcardVirtualphoneBindResponse struct {
     XMLName xml.Name `xml:"tmall_servicecenter_workcard_virtualphone_bind_response"`
-    
-	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`         // 平台颁发的每次请求访问的唯一标识
-    
-
+    // 平台颁发的每次请求访问的唯一标识
+	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 系统自动生成
-    
     Result   *FulfilplatformResult `json:"result,omitempty" xml:"result,omitempty"`
-
-    
 }

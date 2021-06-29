@@ -1,4 +1,5 @@
 {
+	"id": 25076,
 	"name": "tmall.item.outerid.update",
 	"apiChineseName": "天猫商品/SKU商家编码更新接口",
 	"description": "天猫商品/SKU商家编码更新接口；支持商品、SKU的商家编码同时更新；支持同一商品下的SKU批量更新。（感谢sample小雨提供接口命名）",
