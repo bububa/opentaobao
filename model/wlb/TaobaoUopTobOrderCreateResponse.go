@@ -27,5 +27,5 @@ type TaobaoUopTobOrderCreateResponse struct {
     // message
     Message   string `json:"message,omitempty" xml:"message,omitempty"`
     // 订单
-    DeliveryOrders   []Deliveryorder `json:"delivery_orders,omitempty" xml:"delivery_orders>deliveryorder,omitempty"`
+    DeliveryOrders   []DeliveryOrder `json:"delivery_orders,omitempty" xml:"delivery_orders>delivery_order,omitempty"`
 }

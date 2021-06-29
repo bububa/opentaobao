@@ -32,4 +32,8 @@ type DeliveryOrder struct {
     IsSelfLifting   string `json:"is_self_lifting,omitempty" xml:"is_self_lifting,omitempty"`
     // 配送方式，1=整车直送、2=拼车直送、3=零担、4=快递、5=自提
     TransportMode   string `json:"transport_mode,omitempty" xml:"transport_mode,omitempty"`
+    // 物流单号
+    CnOrderCode   string `json:"cn_order_code,omitempty" xml:"cn_order_code,omitempty"`
+    // 订单行
+    OrderLines   []OrderLine `json:"order_lines,omitempty" xml:"order_lines>order_line,omitempty"`
 }
