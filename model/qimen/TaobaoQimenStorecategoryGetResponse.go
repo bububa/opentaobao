@@ -30,12 +30,12 @@ type TaobaoQimenStorecategoryGetResponse struct {
     QimenCode   string `json:"qimen_code,omitempty" xml:"qimen_code,omitempty"`
     // 类目json字符串
     StoreCategory   string `json:"store_category,omitempty" xml:"store_category,omitempty"`
-    // 响应信息
-    Message   string `json:"message,omitempty" xml:"message,omitempty"`
-    // 响应标示
-    Flag   string `json:"flag,omitempty" xml:"flag,omitempty"`
-    // 响应code
-    QimenCode   string `json:"qimen_code,omitempty" xml:"qimen_code,omitempty"`
-    // 类目json字符串
-    StoreCategory   string `json:"store_category,omitempty" xml:"store_category,omitempty"`
+    // 
+        `json:",omitempty" xml:",omitempty"`
+    // 
+        `json:",omitempty" xml:",omitempty"`
+    // 
+        `json:",omitempty" xml:",omitempty"`
+    // 
+        `json:",omitempty" xml:",omitempty"`
 }

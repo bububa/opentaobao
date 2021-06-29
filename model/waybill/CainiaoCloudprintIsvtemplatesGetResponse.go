@@ -24,6 +24,6 @@ type CainiaoCloudprintIsvtemplatesGetResponse struct {
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // result
     Result   *CloudPrintBaseResult `json:"result,omitempty" xml:"result,omitempty"`
-    // result
-    Result   *CloudPrintBaseResult `json:"result,omitempty" xml:"result,omitempty"`
+    // 
+        `json:",omitempty" xml:",omitempty"`
 }

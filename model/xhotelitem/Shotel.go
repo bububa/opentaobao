@@ -1,7 +1,7 @@
 package xhotelitem
 
-// SHotel 
-type SHotel struct {
+// Shotel 
+type Shotel struct {
     // 酒店ID
     Shid   int64 `json:"shid,omitempty" xml:"shid,omitempty"`
     // name
@@ -50,7 +50,7 @@ type SHotel struct {
     PicUrl   string `json:"pic_url,omitempty" xml:"pic_url,omitempty"`
     // 扩展信息的JSON
     Extend   string `json:"extend,omitempty" xml:"extend,omitempty"`
-    // 状态:0：待系统匹配1：已系统匹配，匹配成功，待卖家确认2：已系统匹配，匹配失败，待人工匹配3：已人工匹配，匹配成功，待卖家确认4：已人工匹配，匹配失败5：卖家已确认，确认&ldquo;YES&rdquo;6：卖家已确认，确认&ldquo;NO&rdquo;7：停售
+    // 0：营业中；-1：筹建中；- 4：失效
     Status   int64 `json:"status,omitempty" xml:"status,omitempty"`
     // 创建时间
     CreatedTime   string `json:"created_time,omitempty" xml:"created_time,omitempty"`
@@ -70,30 +70,6 @@ type SHotel struct {
     PostalCode   string `json:"postal_code,omitempty" xml:"postal_code,omitempty"`
     // 杂费
     Fee   string `json:"fee,omitempty" xml:"fee,omitempty"`
-    // srid
-    Srid   int64 `json:"srid,omitempty" xml:"srid,omitempty"`
-    // pics
-    Pics   string `json:"pics,omitempty" xml:"pics,omitempty"`
-    // area
-    Area   string `json:"area,omitempty" xml:"area,omitempty"`
-    // facility
-    Facility   string `json:"facility,omitempty" xml:"facility,omitempty"`
-    // floor
-    Floor   string `json:"floor,omitempty" xml:"floor,omitempty"`
-    // maxOccupancy
-    MaxOccupancy   int64 `json:"max_occupancy,omitempty" xml:"max_occupancy,omitempty"`
-    // addBed
-    AddBed   int64 `json:"add_bed,omitempty" xml:"add_bed,omitempty"`
-    // bed
-    Bed   string `json:"bed,omitempty" xml:"bed,omitempty"`
-    // gmtCreate
-    GmtCreate   string `json:"gmt_create,omitempty" xml:"gmt_create,omitempty"`
-    // networkService
-    NetworkService   string `json:"network_service,omitempty" xml:"network_service,omitempty"`
-    // gmtModified
-    GmtModified   string `json:"gmt_modified,omitempty" xml:"gmt_modified,omitempty"`
-    // windowType
-    WindowType   string `json:"window_type,omitempty" xml:"window_type,omitempty"`
     // 标准酒店英文名
     NameE   string `json:"name_e,omitempty" xml:"name_e,omitempty"`
     // 0：酒店 1：客栈

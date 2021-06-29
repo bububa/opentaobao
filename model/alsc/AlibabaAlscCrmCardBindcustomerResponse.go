@@ -24,6 +24,6 @@ type AlibabaAlscCrmCardBindcustomerResponse struct {
 	RequestId     string         `json:"request_id,omitempty" xml:"request_id,omitempty"`
     // 接口结果
     Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
-    // 接口结果
-    Result   *CommonResult `json:"result,omitempty" xml:"result,omitempty"`
+    // 
+        `json:",omitempty" xml:",omitempty"`
 }

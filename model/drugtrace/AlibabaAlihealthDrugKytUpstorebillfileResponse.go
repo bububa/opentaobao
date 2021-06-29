@@ -30,12 +30,12 @@ type AlibabaAlihealthDrugKytUpstorebillfileResponse struct {
     MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
     // 返回接口
     ResponseSuccess   bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
-    // 返回ID
-    Model   string `json:"model,omitempty" xml:"model,omitempty"`
-    // 请求编码
-    MsgCode   string `json:"msg_code,omitempty" xml:"msg_code,omitempty"`
-    // 请求描述
-    MsgInfo   string `json:"msg_info,omitempty" xml:"msg_info,omitempty"`
-    // 返回接口
-    ResponseSuccess   bool `json:"response_success,omitempty" xml:"response_success,omitempty"`
+    // 
+        `json:",omitempty" xml:",omitempty"`
+    // 
+        `json:",omitempty" xml:",omitempty"`
+    // 
+        `json:",omitempty" xml:",omitempty"`
+    // 
+        `json:",omitempty" xml:",omitempty"`
 }
